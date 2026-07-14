@@ -3,6 +3,8 @@ from pathlib import Path
 
 from tools.extract.contracts import dump_bundle
 from tools.extract.mod_static import extract_mod_static
+from tools.extract.runtime_import import load_runtime_bundle
+from tools.extract.runtime_runner import run_runtime_probe
 from tools.extract.source_manifest import ARCHIVES, snapshot_game_sources
 
 
@@ -31,7 +33,16 @@ def build_parser() -> argparse.ArgumentParser:
     extract_static.add_argument(
         "--output", type=Path, default=Path("data/raw/mod_static.json")
     )
-    for name in ("run-runtime", "import-runtime", "enrich-base", "build-db", "export", "validate", "all"):
+    run_runtime = sub.add_parser("run-runtime")
+    run_runtime.add_argument("--server-bin", type=Path, required=True)
+    run_runtime.add_argument("--game-mods-dir", type=Path, required=True)
+    run_runtime.add_argument("--workspace", type=Path, default=Path("."))
+    run_runtime.add_argument("--timeout", type=float, default=180)
+    import_runtime = sub.add_parser("import-runtime")
+    import_runtime.add_argument(
+        "--input", type=Path, default=Path("data/raw/runtime.json")
+    )
+    for name in ("enrich-base", "build-db", "export", "validate", "all"):
         sub.add_parser(name)
     return parser
 
@@ -54,6 +65,21 @@ def main() -> int:
         asset_count = sum(fact.kind == "asset" for fact in bundle.facts)
         print(
             f"{args.output} entities={entity_count} assets={asset_count} errors={len(bundle.errors)}"
+        )
+        return 0
+    if args.command == "run-runtime":
+        output = run_runtime_probe(
+            args.server_bin,
+            args.game_mods_dir,
+            args.workspace,
+            args.timeout,
+        )
+        print(output)
+        return 0
+    if args.command == "import-runtime":
+        bundle = load_runtime_bundle(args.input)
+        print(
+            f"{args.input} facts={len(bundle.facts)} errors={len(bundle.errors)}"
         )
         return 0
     raise SystemExit(f"stage not wired: {args.command}")

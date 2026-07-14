@@ -1,0 +1,9 @@
+name = "DST Wiki Runtime Extractor"
+description = "Exports registry facts into an isolated test cluster"
+author = "dst_wiki"
+version = "1.0.0"
+api_version = 10
+dst_compatible = true
+all_clients_require_mod = false
+client_only_mod = false
+priority = -1000

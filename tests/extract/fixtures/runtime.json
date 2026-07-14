@@ -1,0 +1,38 @@
+{
+  "errors": [],
+  "mod_version": "18.0.10",
+  "prefabs": [
+    {
+      "entity_type": "inventory_item",
+      "harvest": [],
+      "loot": [],
+      "prefab": "xd_test_sword",
+      "relations": [],
+      "stats": [
+        {
+          "key": "damage",
+          "unit": "hp",
+          "value": 68
+        }
+      ]
+    }
+  ],
+  "recipes": [
+    {
+      "builder_tags": [],
+      "filters": [
+        "WEAPONS"
+      ],
+      "ingredients": [
+        {
+          "amount": 2,
+          "prefab": "goldnugget"
+        }
+      ],
+      "output_count": 1,
+      "product": "xd_test_sword",
+      "tech": "SCIENCE_ONE"
+    }
+  ],
+  "schema_version": 1
+}
