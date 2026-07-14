@@ -13,6 +13,7 @@ from tools.extract.base_game import (
     derive_dependency_requests,
     discover_prefab_modules,
     enrich_dependencies,
+    enrich_prefab_modules,
     verify_snapshot_archive,
 )
 from tools.extract.cli import build_parser, main
@@ -91,6 +92,53 @@ return Prefab("mystery", fn)
 '''
 
         self.assertEqual(classify_prefab_module("mystery", source), "other")
+
+    def test_enriches_every_prefab_module_without_dependency_gate(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            archive = self._archive(
+                root,
+                {
+                    "scripts/recipes.lua": "",
+                    "scripts/strings.lua": "",
+                    "scripts/prefabs/axe.lua": '''
+local function fn()
+  inst:AddComponent("inventoryitem")
+  return inst
+end
+return Prefab("axe", fn)
+''',
+                    "scripts/prefabs/spider.lua": '''
+local function fn()
+  inst:AddTag("monster")
+  return inst
+end
+return Prefab("spider", fn)
+''',
+                    "scripts/prefabs/spark_fx.lua": 'return Prefab("spark_fx", fn)',
+                    "scripts/prefabs/nested/ignored.lua": 'return Prefab("ignored", fn)',
+                },
+            )
+
+            bundle = enrich_prefab_modules(
+                archive,
+                [DependencyRequest("axe", "ingredient", "tu_tien:xd_tool")],
+                root / "missing.po",
+            )
+
+        entities = {
+            fact.subject.prefab_id: fact.payload
+            for fact in bundle.facts
+            if fact.kind == "entity"
+        }
+        self.assertEqual(set(entities), {"axe", "spider", "spark_fx"})
+        self.assertEqual(entities["axe"]["entity_type"], "item")
+        self.assertEqual(entities["spider"]["entity_type"], "mob")
+        self.assertEqual(entities["spark_fx"]["entity_type"], "effect")
+        self.assertEqual(
+            entities["axe"]["requested_by"],
+            [{"relation": "ingredient", "subject": "tu_tien:xd_tool"}],
+        )
 
     def test_script_index_reads_the_archive_through_one_zip_handle(self):
         with tempfile.TemporaryDirectory() as tmp:

@@ -1139,8 +1139,10 @@ def enrich_dependencies(
     archive: Path,
     requests: Iterable[DependencyRequest],
     base_translation_po: Path,
+    *,
+    include_all_modules: bool = False,
 ) -> FactBundle:
-    """Resolve exact requested IDs and enrich only them plus one recipe level."""
+    """Resolve requested IDs, optionally including every prefab module."""
 
     archive = Path(archive)
     index = ScriptIndex(archive)
@@ -1187,14 +1189,31 @@ def enrich_dependencies(
         prefab_id: _direct_request_evidence(values)
         for prefab_id, values in direct.items()
     }
+    module_categories: Dict[str, str] = {}
+    if include_all_modules:
+        module_categories = {
+            prefab_id: classify_prefab_module(
+                prefab_id,
+                index.prefab_sources[member],
+            )
+            for prefab_id, member in index.prefab_members.items()
+        }
+        for prefab_id in module_categories:
+            selected.setdefault(prefab_id, [])
+
     direct_resolved = {
         prefab_id for prefab_id in direct if index.resolution(prefab_id) is not None
     }
-    for prefab_id in sorted(direct_resolved):
+    recipe_roots = (
+        set(index.prefab_members)
+        if include_all_modules
+        else direct_resolved
+    )
+    for prefab_id in sorted(recipe_roots):
         recipe = index.recipes.get(prefab_id)
         if recipe is None:
             continue
-        roots = _direct_request_evidence(direct[prefab_id])
+        roots = _direct_request_evidence(direct.get(prefab_id, []))
         for ingredient_id, _amount in recipe.ingredients:
             if index.resolution(ingredient_id) is None:
                 continue
@@ -1232,7 +1251,7 @@ def enrich_dependencies(
                 "entity",
                 subject,
                 {
-                    "entity_type": "unknown",
+                    "entity_type": module_categories.get(prefab_id, "unknown"),
                     "discovered_by": discovered_by,
                     "requested_by": sorted(
                         selected[prefab_id], key=lambda value: json.dumps(value, sort_keys=True)
@@ -1305,7 +1324,9 @@ def enrich_dependencies(
                         )
                     )
 
-        if prefab_id in direct_resolved and prefab_id in index.recipes:
+        if prefab_id in index.recipes and (
+            prefab_id in direct_resolved or prefab_id in module_categories
+        ):
             recipe = index.recipes[prefab_id]
             for warning_line, warning_expression in recipe.warnings:
                 errors.append(
@@ -1395,6 +1416,21 @@ def enrich_dependencies(
     )
     errors.sort(key=lambda value: json.dumps(value, ensure_ascii=False, sort_keys=True))
     return FactBundle(1, sorted(sources), facts, errors)
+
+
+def enrich_prefab_modules(
+    archive: Path,
+    requests: Iterable[DependencyRequest],
+    base_translation_po: Path,
+) -> FactBundle:
+    """Enrich every prefab module while preserving dependency evidence."""
+
+    return enrich_dependencies(
+        archive,
+        requests,
+        base_translation_po,
+        include_all_modules=True,
+    )
 
 
 def extract_base_game_dependencies(

@@ -4,7 +4,7 @@ from pathlib import Path
 from tools.extract.assets import add_base_game_asset_facts
 from tools.extract.base_game import (
     derive_dependency_requests,
-    enrich_dependencies,
+    enrich_prefab_modules,
     verify_snapshot_archive,
 )
 from tools.extract.contracts import dump_bundle, load_bundle
@@ -183,7 +183,7 @@ def _enrich_base_stage(
         expected_targets=static_runtime_target_ids(static_bundle),
     )
     requests = derive_dependency_requests(static_bundle, runtime_bundle)
-    bundle = enrich_dependencies(scripts, requests, translation)
+    bundle = enrich_prefab_modules(scripts, requests, translation)
     bundle = add_base_game_asset_facts(bundle, images, manifest)
     dump_bundle(output, bundle)
     resolved = len({fact.subject.prefab_id for fact in bundle.facts if fact.kind == "entity"})
