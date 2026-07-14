@@ -1,5 +1,5 @@
-import { render, screen } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { fireEvent, render, screen } from "@testing-library/react";
+import { describe, expect, it, vi } from "vitest";
 
 import type { ItemListEntry } from "@/app/lib/item-catalog";
 import { ItemResult } from "./item-result";
@@ -23,6 +23,17 @@ const item: ItemListEntry = {
       },
     ],
   },
+};
+
+const ingredientItem: ItemListEntry = {
+  id: "base_game:goldnugget",
+  prefabId: "goldnugget",
+  namespace: "base_game",
+  name: "Vàng",
+  englishName: "Gold Nugget",
+  description: "Một cục vàng.",
+  sprite: null,
+  recipe: null,
 };
 
 describe("ItemResult", () => {
@@ -51,5 +62,20 @@ describe("ItemResult", () => {
     );
 
     expect(screen.getByText("DST gốc liên quan")).toBeDefined();
+  });
+
+  it("forwards the selected full ingredient item", () => {
+    const onSelectItem = vi.fn();
+    render(
+      <ItemResult
+        item={item}
+        query=""
+        itemsById={new Map([[ingredientItem.id, ingredientItem]])}
+        onSelectItem={onSelectItem}
+      />,
+    );
+
+    fireEvent.click(screen.getByRole("button", { name: "Vàng, số lượng 2" }));
+    expect(onSelectItem).toHaveBeenCalledWith(ingredientItem);
   });
 });

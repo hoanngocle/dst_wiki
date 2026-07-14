@@ -21,7 +21,19 @@ function HighlightedText({ text, query }: { text: string; query: string }) {
   );
 }
 
-export function ItemResult({ item, query }: { item: ItemListEntry; query: string }) {
+type ItemResultProps = {
+  item: ItemListEntry;
+  query: string;
+  itemsById?: ReadonlyMap<string, ItemListEntry>;
+  onSelectItem?: (item: ItemListEntry) => void;
+};
+
+export function ItemResult({
+  item,
+  query,
+  itemsById,
+  onSelectItem,
+}: ItemResultProps) {
   const sourceLabel = item.namespace === "tu_tien" ? "Tu Tiên" : "DST gốc liên quan";
 
   return (
@@ -47,7 +59,11 @@ export function ItemResult({ item, query }: { item: ItemListEntry; query: string
 
       <div className="mt-4 border-t border-[#d5dde6] pt-3">
         <p className="mb-2 text-xs font-semibold text-[#43556d]">Công thức</p>
-        <RecipeIngredients recipe={item.recipe} />
+        <RecipeIngredients
+          recipe={item.recipe}
+          itemsById={itemsById}
+          onSelectItem={onSelectItem}
+        />
       </div>
     </article>
   );

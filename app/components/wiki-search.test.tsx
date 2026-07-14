@@ -37,6 +37,17 @@ const items: readonly ItemListEntry[] = [
   },
 ];
 
+const goldItem: ItemListEntry = {
+  id: "base_game:goldnugget",
+  prefabId: "goldnugget",
+  namespace: "base_game",
+  name: "Vàng",
+  englishName: "Gold Nugget",
+  description: "Một cục vàng.",
+  sprite: null,
+  recipe: null,
+};
+
 function makeItems(count: number): ItemListEntry[] {
   return Array.from({ length: count }, (_, index) => ({
     id: `tu_tien:item_${index + 1}`,
@@ -223,5 +234,24 @@ describe("WikiSearch", () => {
     });
 
     expect(screen.getAllByRole("listitem")).toHaveLength(40);
+  });
+
+  it("opens the referenced full item in a shared detail modal", () => {
+    render(<WikiSearch items={[...items, goldItem]} />);
+
+    const swordCard = screen.getByText("Kiếm Thử").closest("li") as HTMLElement;
+    const ingredient = within(swordCard).getByRole("button", {
+      name: "Vàng, số lượng 2",
+    });
+    ingredient.focus();
+    fireEvent.click(ingredient);
+
+    const dialog = screen.getByRole("dialog", { name: "Chi tiết Vàng" });
+    expect(within(dialog).getByText("Gold Nugget")).toBeDefined();
+    expect(within(dialog).getByText("Một cục vàng.")).toBeDefined();
+
+    fireEvent.click(within(dialog).getByRole("button", { name: "Đóng chi tiết" }));
+    expect(screen.queryByRole("dialog")).toBeNull();
+    expect(document.activeElement).toBe(ingredient);
   });
 });

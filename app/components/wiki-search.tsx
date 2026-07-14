@@ -1,8 +1,9 @@
 "use client";
 
 import { MagnifyingGlass, X } from "@phosphor-icons/react";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
+import { ItemDetailModal } from "@/app/components/item-detail-modal";
 import { ItemResult } from "@/app/components/item-result";
 import type { ItemFilter, ItemListEntry } from "@/app/lib/item-catalog";
 import { filterItems, normalizeSearchText } from "@/app/lib/wiki-search";
@@ -20,7 +21,12 @@ export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState<ItemFilter>("all");
   const [visibleLimit, setVisibleLimit] = useState(RESULT_BATCH_SIZE);
+  const [selectedItem, setSelectedItem] = useState<ItemListEntry | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const itemsById = useMemo(
+    () => new Map(items.map((item) => [item.id, item] as const)),
+    [items],
+  );
   const results = useMemo(
     () => filterItems(items, query, filter),
     [filter, items, query],
@@ -70,6 +76,8 @@ export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
     setVisibleLimit(RESULT_BATCH_SIZE);
     inputRef.current?.focus();
   }
+
+  const closeItemDetails = useCallback(() => setSelectedItem(null), []);
 
   const countLabel = `${results.length} ${results.length === 1 ? "Item" : "Items"}`;
   const activeFilterLabel =
@@ -174,7 +182,12 @@ export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
           >
             {visibleResults.map((item) => (
               <li key={item.id}>
-                <ItemResult item={item} query={query} />
+                <ItemResult
+                  item={item}
+                  query={query}
+                  itemsById={itemsById}
+                  onSelectItem={setSelectedItem}
+                />
               </li>
             ))}
           </ul>
@@ -214,6 +227,9 @@ export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
           </button>
         </div>
       )}
+      {selectedItem ? (
+        <ItemDetailModal item={selectedItem} onClose={closeItemDetails} />
+      ) : null}
     </section>
   );
 }
