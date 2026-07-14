@@ -134,6 +134,8 @@ def build_parser() -> argparse.ArgumentParser:
     validate.add_argument("--database", type=Path, default=DATABASE)
     validate.add_argument("--coverage", type=Path, default=COVERAGE)
     validate.add_argument("--manifest", type=Path, default=GAME_SOURCES / "manifest.json")
+    validate.add_argument("--scripts", type=Path, default=GAME_SOURCES / "scripts.zip")
+    validate.add_argument("--items", type=Path, default=ITEMS_JSON)
     all_stages = sub.add_parser("all")
     all_stages.add_argument("--static", type=Path, default=STATIC_FACTS)
     return parser
@@ -235,8 +237,10 @@ def _validate_stage(
     database: Path = DATABASE,
     coverage: Path = COVERAGE,
     manifest: Path = GAME_SOURCES / "manifest.json",
+    scripts: Path = GAME_SOURCES / "scripts.zip",
+    items: Path = ITEMS_JSON,
 ):
-    report = validate_catalog(database, manifest)
+    report = validate_catalog(database, manifest, scripts, items)
     write_validation_report(coverage, report)
     print(
         f"{coverage} tu_tien={report['entity_counts'].get('tu_tien', 0)} "
@@ -311,7 +315,9 @@ def main() -> int:
         print(f"{args.output} textures={len(published)}")
         return 0
     if args.command == "validate":
-        report = _validate_stage(args.database, args.coverage, args.manifest)
+        report = _validate_stage(
+            args.database, args.coverage, args.manifest, args.scripts, args.items
+        )
         return 1 if report["hard_failures"] else 0
     if args.command == "all":
         report = run_all(args.static)

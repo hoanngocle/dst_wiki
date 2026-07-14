@@ -214,6 +214,18 @@ class ExportItemsTests(unittest.TestCase):
 
     def test_applies_name_description_recipe_and_sprite_fallbacks(self):
         catalog, assets = self.fixtures()
+        sword = next(
+            entity
+            for entity in catalog["entities"]
+            if entity["key"] == "tu_tien:xd_sword"
+        )
+        sword["recipes"][0]["ingredients"].append(
+            {
+                "key": "base_game:character_tool",
+                "amount": 0.0,
+                "position": 1,
+            }
+        )
 
         items, _textures = build_item_export(catalog, assets)
         by_id = {item["id"]: item for item in items["items"]}
@@ -225,6 +237,13 @@ class ExportItemsTests(unittest.TestCase):
         self.assertEqual(by_id["tu_tien:xd_fallback"]["name"], "xd_fallback")
         self.assertIsNone(by_id["tu_tien:xd_fallback"]["description"])
         self.assertIsNone(by_id["tu_tien:xd_fallback"]["recipe"])
+        self.assertEqual(
+            [
+                ingredient["id"]
+                for ingredient in by_id["tu_tien:xd_sword"]["recipe"]["ingredients"]
+            ],
+            ["base_game:goldnugget"],
+        )
 
     def test_export_is_deterministic_and_atomic(self):
         catalog, assets = self.fixtures()

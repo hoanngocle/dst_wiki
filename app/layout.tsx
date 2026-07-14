@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Wiki vật phẩm Tu Tiên | Don't Starve Together",
+  title: "Wiki Prefab DST & Tu Tiên | Don't Starve Together",
   description:
-    "Tra cứu tên, prefab, hình ảnh và công thức vật phẩm Tu Tiên trong Don't Starve Together.",
+    "Tra cứu toàn bộ prefab DST và Tu Tiên theo category, hình ảnh và công thức.",
 };
 
 export default function RootLayout({

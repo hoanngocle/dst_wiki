@@ -5,6 +5,7 @@ import tempfile
 import unittest
 from pathlib import Path
 from unittest import mock
+from zipfile import ZipFile
 
 from tools.extract.database import create_schema
 from tools.extract.export_json import export_catalog
@@ -14,6 +15,54 @@ from tools.extract import cli
 
 
 class ExportValidateTests(unittest.TestCase):
+    def test_validation_hard_fails_prefab_module_export_mismatches(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            db_path = root / "wiki.sqlite"
+            db = sqlite3.connect(db_path)
+            create_schema(db)
+            db.commit()
+            db.close()
+            scripts_path = root / "scripts.zip"
+            with ZipFile(scripts_path, "w") as archive:
+                archive.writestr("scripts/prefabs/alpha.lua", "return {}")
+                archive.writestr("scripts/prefabs/beta.lua", "return {}")
+            items_path = root / "items.json"
+            items_path.write_text(
+                json.dumps(
+                    {
+                        "schema_version": 2,
+                        "items": [
+                            {
+                                "id": "base_game:alpha",
+                                "prefabId": "alpha",
+                                "namespace": "base_game",
+                                "category": "other",
+                            },
+                            {
+                                "id": "base_game:gamma",
+                                "prefabId": "gamma",
+                                "namespace": "base_game",
+                                "category": "other",
+                            },
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            report = validate_catalog(
+                db_path,
+                prefab_scripts_path=scripts_path,
+                items_path=items_path,
+            )
+
+        self.assertEqual(
+            report["prefab_export_coverage_errors"],
+            [{"missing": ["beta"], "unexpected": ["gamma"]}],
+        )
+        self.assertIn("prefab_export_coverage_errors", report["hard_failures"])
+
     def write_archive_fixture(self, root: Path):
         sources = root / "data" / "sources" / "game"
         sources.mkdir(parents=True, exist_ok=True)

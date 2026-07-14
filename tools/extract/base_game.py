@@ -1251,7 +1251,10 @@ def enrich_dependencies(
                 "entity",
                 subject,
                 {
-                    "entity_type": module_categories.get(prefab_id, "unknown"),
+                    "entity_type": module_categories.get(
+                        prefab_id,
+                        "dependency" if include_all_modules else "unknown",
+                    ),
                     "discovered_by": discovered_by,
                     "requested_by": sorted(
                         selected[prefab_id], key=lambda value: json.dumps(value, sort_keys=True)

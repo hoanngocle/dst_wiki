@@ -14,15 +14,15 @@ export default function Home() {
           <div className="grid items-end gap-5 md:grid-cols-[minmax(0,1fr)_320px] md:gap-12">
             <div>
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-[#2e5fb3]">
-                Danh mục chế tạo
+                Danh mục DST &amp; Tu Tiên
               </p>
               <h1 className="max-w-2xl text-4xl font-semibold leading-[1.04] tracking-[-0.04em] text-[#14233b] sm:text-5xl lg:text-6xl">
-                Tra cứu vật phẩm
+                Tra cứu Prefab
               </h1>
             </div>
             <p className="max-w-[38ch] text-base leading-7 text-[#53647a] md:justify-self-end">
-              Tìm nhanh tên, prefab và công thức của vật phẩm Tu Tiên cùng các nguyên
-              liệu DST gốc liên quan.
+              Tìm toàn bộ prefab DST và Tu Tiên theo tên, namespace, category hoặc
+              nguyên liệu trong công thức.
             </p>
           </div>
           <WikiSearch items={items} />

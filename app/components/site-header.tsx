@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const links = [
-  { id: "items", href: "/", label: "Items" },
+  { id: "items", href: "/", label: "Prefabs" },
   { id: "base", href: "/base", label: "Base" },
 ] as const;
 

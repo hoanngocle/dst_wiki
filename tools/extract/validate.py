@@ -6,7 +6,9 @@ from pathlib import Path
 import re
 import sqlite3
 from typing import Any, Dict, Iterable, Iterator, List, Optional
+from zipfile import ZipFile
 
+from tools.extract.base_game import discover_prefab_modules
 from tools.extract.source_manifest import ARCHIVES
 from tools.extract.runtime_import import COVERAGE_CATEGORIES
 
@@ -245,7 +247,34 @@ def _urls(values: Iterable[Dict[str, str]]) -> List[Dict[str, str]]:
     ]
 
 
-def validate_catalog(db_path: Path, manifest_path: Optional[Path] = None) -> Dict[str, Any]:
+def _prefab_export_coverage(
+    scripts_path: Optional[Path], items_path: Optional[Path]
+) -> List[Dict[str, Any]]:
+    if scripts_path is None or items_path is None:
+        return []
+    with ZipFile(Path(scripts_path)) as archive:
+        expected = set(discover_prefab_modules(archive.namelist()))
+    payload = json.loads(Path(items_path).read_text(encoding="utf-8"))
+    if payload.get("schema_version") != 2 or not isinstance(payload.get("items"), list):
+        return [{"code": "invalid_prefab_export_payload"}]
+    actual = {
+        item.get("prefabId")
+        for item in payload["items"]
+        if isinstance(item, dict)
+        and item.get("namespace") == "base_game"
+        and isinstance(item.get("prefabId"), str)
+    }
+    missing = sorted(expected - actual)
+    unexpected = sorted(actual - expected)
+    return [{"missing": missing, "unexpected": unexpected}] if missing or unexpected else []
+
+
+def validate_catalog(
+    db_path: Path,
+    manifest_path: Optional[Path] = None,
+    prefab_scripts_path: Optional[Path] = None,
+    items_path: Optional[Path] = None,
+) -> Dict[str, Any]:
     """Return deterministic hard failures, extraction diagnostics and coverage."""
 
     db_path = Path(db_path)
@@ -390,6 +419,9 @@ def validate_catalog(db_path: Path, manifest_path: Optional[Path] = None) -> Dic
                 db, archive["manifest_path"], archive["manifest_data"]
             )
         )
+        prefab_export_coverage_errors = _prefab_export_coverage(
+            prefab_scripts_path, items_path
+        )
     finally:
         db.close()
 
@@ -433,6 +465,8 @@ def validate_catalog(db_path: Path, manifest_path: Optional[Path] = None) -> Dic
         hard_failures.append("wiki_urls")
     if runtime_coverage_errors:
         hard_failures.append("runtime_coverage_errors")
+    if prefab_export_coverage_errors:
+        hard_failures.append("prefab_export_coverage_errors")
     return {
         "schema_version": 1,
         "entity_counts": counts,
@@ -450,6 +484,7 @@ def validate_catalog(db_path: Path, manifest_path: Optional[Path] = None) -> Dic
         "wiki_urls": wiki_urls,
         "archive_checksums": archive["checks"],
         "archive_checksum_errors": archive["errors"],
+        "prefab_export_coverage_errors": prefab_export_coverage_errors,
         "warnings": warnings,
         "hard_failures": hard_failures,
     }

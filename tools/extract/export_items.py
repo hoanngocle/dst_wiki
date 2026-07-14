@@ -204,6 +204,13 @@ def _build_item_entry(
                 str(value.get("key") or ""),
             ),
         ):
+            raw_amount = ingredient.get("amount")
+            if (
+                isinstance(raw_amount, (int, float))
+                and not isinstance(raw_amount, bool)
+                and float(raw_amount) == 0.0
+            ):
+                continue
             ingredient_id = str(ingredient["key"])
             ingredient_entity = entities.get(ingredient_id)
             ingredient_icon = (
@@ -213,7 +220,7 @@ def _build_item_entry(
                 {
                     "id": ingredient_id,
                     "name": _display_name(ingredient_entity, ingredient_id.split(":")[-1]),
-                    "amount": _positive_integer(ingredient.get("amount"), "ingredient amount"),
+                    "amount": _positive_integer(raw_amount, "ingredient amount"),
                     "sprite": _sprite(ingredient_icon, selected_assets, textures),
                 }
             )

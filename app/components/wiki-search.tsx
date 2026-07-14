@@ -104,7 +104,7 @@ export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
 
   const closeItemDetails = useCallback(() => setSelectedItem(null), []);
 
-  const countLabel = `${results.length} ${results.length === 1 ? "Item" : "Items"}`;
+  const countLabel = `${results.length} ${results.length === 1 ? "Prefab" : "Prefabs"}`;
   const activeFilterLabel =
     filters.find((candidate) => candidate.value === filter)?.label ?? "Tất cả";
   const activeCategoryLabel =
@@ -128,7 +128,7 @@ export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
           htmlFor="item-search"
           className="mb-2 block text-sm font-medium text-[#263b58]"
         >
-          Tìm kiếm Items.
+          Tìm kiếm Prefabs.
         </label>
         <div className="relative">
           <MagnifyingGlass
@@ -191,7 +191,7 @@ export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
       <div
         role="group"
         className="mt-3 flex gap-2 overflow-x-auto pb-2"
-        aria-label="Lọc Items"
+        aria-label="Lọc Prefabs"
       >
         {filters.map((candidate) => (
           <button
@@ -211,7 +211,7 @@ export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
           id="item-results"
           className="text-lg font-semibold tracking-tight text-[#14233b]"
         >
-          Danh sách Items
+          Danh sách Prefabs
         </h2>
         <p aria-hidden="true" className="text-sm text-[#53647a]">
           {countLabel}
@@ -260,7 +260,7 @@ export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
           className="mt-4 rounded-2xl border border-[#cbd5e1] bg-[#f8fafc] px-6 py-14 text-center motion-safe:animate-[atlas-result-in_180ms_ease-out]"
         >
           <h3 className="text-lg font-semibold text-[#14233b]">
-            Không tìm thấy Item
+            Không tìm thấy Prefab
           </h3>
           <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-[#53647a]">
             Thử từ khóa khác hoặc xóa bộ lọc hiện tại.

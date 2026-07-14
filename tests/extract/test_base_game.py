@@ -106,7 +106,7 @@ local function fn()
   inst:AddComponent("inventoryitem")
   return inst
 end
-return Prefab("axe", fn)
+return Prefab("axe", fn), Prefab("bonus", fn)
 ''',
                     "scripts/prefabs/spider.lua": '''
 local function fn()
@@ -122,7 +122,10 @@ return Prefab("spider", fn)
 
             bundle = enrich_prefab_modules(
                 archive,
-                [DependencyRequest("axe", "ingredient", "tu_tien:xd_tool")],
+                [
+                    DependencyRequest("axe", "ingredient", "tu_tien:xd_tool"),
+                    DependencyRequest("bonus", "relation", "tu_tien:xd_bonus"),
+                ],
                 root / "missing.po",
             )
 
@@ -131,8 +134,9 @@ return Prefab("spider", fn)
             for fact in bundle.facts
             if fact.kind == "entity"
         }
-        self.assertEqual(set(entities), {"axe", "spider", "spark_fx"})
+        self.assertEqual(set(entities), {"axe", "bonus", "spider", "spark_fx"})
         self.assertEqual(entities["axe"]["entity_type"], "item")
+        self.assertEqual(entities["bonus"]["entity_type"], "dependency")
         self.assertEqual(entities["spider"]["entity_type"], "mob")
         self.assertEqual(entities["spark_fx"]["entity_type"], "effect")
         self.assertEqual(
