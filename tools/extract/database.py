@@ -81,6 +81,17 @@ SCHEMA = (
       duration REAL,
       FOREIGN KEY(namespace, prefab_id) REFERENCES entities(namespace, prefab_id)
     )""",
+    """CREATE TABLE runtime_coverage (
+      coverage_id TEXT PRIMARY KEY,
+      namespace TEXT NOT NULL,
+      prefab_id TEXT NOT NULL,
+      category TEXT NOT NULL,
+      status TEXT NOT NULL CHECK(status IN ('observed', 'unobserved', 'unsupported')),
+      reason TEXT NOT NULL,
+      details_json TEXT NOT NULL,
+      UNIQUE(namespace, prefab_id, category),
+      FOREIGN KEY(namespace, prefab_id) REFERENCES entities(namespace, prefab_id)
+    )""",
     """CREATE TABLE entity_relations (
       relation_id TEXT PRIMARY KEY,
       from_namespace TEXT NOT NULL,
@@ -178,6 +189,7 @@ def write_database(path: Path, catalog: NormalizedCatalog) -> None:
             ("acquisition_sources", ("acquisition_id", "target_namespace", "target_id", "source_type", "source_namespace", "source_id", "chance", "min_count", "max_count", "conditions_json"), ("acquisition_id",)),
             ("stats", ("namespace", "prefab_id", "stat_key", "value_num", "value_text", "unit", "confidence"), ("namespace", "prefab_id", "stat_key")),
             ("effects", ("effect_id", "namespace", "prefab_id", "trigger_name", "effect_key", "value_json", "duration"), ("effect_id",)),
+            ("runtime_coverage", ("coverage_id", "namespace", "prefab_id", "category", "status", "reason", "details_json"), ("coverage_id",)),
             ("entity_relations", ("relation_id", "from_namespace", "from_id", "relation_type", "to_namespace", "to_id", "metadata_json"), ("relation_id",)),
             ("assets", ("asset_id", "namespace", "prefab_id", "asset_type", "atlas", "texture", "element", "uv_json"), ("asset_id",)),
             ("evidence", ("evidence_id", "record_type", "record_id", "source_id", "locator", "raw_value_json", "confidence", "selected"), ("evidence_id",)),

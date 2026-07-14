@@ -1,6 +1,18 @@
 local Exporter = {}
+local TARGET_IDS = require("target_ids")
 
 local SENTINEL = "DST_WIKI_EXTRACT_COMPLETE"
+local COVERAGE_CATEGORIES = {
+    "buff_debuff",
+    "cooldown_recharge",
+    "craft",
+    "drop",
+    "harvest",
+    "progression",
+    "start_gift",
+    "trade_shop",
+    "world_spawn",
+}
 
 local function JsonEscape(value)
     return value:gsub('[%z\1-\31\\"]', function(character)
@@ -196,7 +208,7 @@ local function RecipeRows(prefab_ids)
     local names = {}
     for recipe_name, recipe in pairs(AllRecipes or {}) do
         local product = string.lower(tostring(recipe.product or recipe_name))
-        if product:sub(1, 3) == "xd_" then
+        if prefab_ids[product] or product:sub(1, 3) == "xd_" then
             prefab_ids[product] = true
             table.insert(names, recipe_name)
         end
@@ -277,11 +289,53 @@ local function SortAcquisition(rows)
     end)
 end
 
+local function Coverage(status, reason, details)
+    return {
+        status = status,
+        reason = reason,
+        details = details or {},
+    }
+end
+
+local function StartingItemEvidence(prefab_ids)
+    local evidence = {}
+    local function Visit(value, path)
+        if type(value) == "string" then
+            local prefab = string.lower(value)
+            if prefab_ids[prefab] then
+                evidence[prefab] = evidence[prefab] or {}
+                table.insert(evidence[prefab], path)
+            end
+        elseif type(value) == "table" then
+            local keys = {}
+            for key in pairs(value) do
+                table.insert(keys, key)
+            end
+            table.sort(keys, function(left, right)
+                return tostring(left) < tostring(right)
+            end)
+            for _, key in ipairs(keys) do
+                Visit(value[key], path .. "." .. tostring(key))
+            end
+        end
+    end
+    Visit(TUNING.GAMEMODE_STARTING_ITEMS or {}, "GAMEMODE_STARTING_ITEMS")
+    Visit(TUNING.EXTRA_STARTING_ITEMS or {}, "EXTRA_STARTING_ITEMS")
+    Visit(TUNING.SEASONAL_STARTING_ITEMS or {}, "SEASONAL_STARTING_ITEMS")
+    for _, paths in pairs(evidence) do
+        table.sort(paths)
+    end
+    return evidence
+end
+
 local function InspectInstance(instance, prefab)
     local stats = {}
     local loot = {}
     local harvest = {}
+    local trade = {}
+    local effects = {}
     local relations = {}
+    local coverage = {}
     local components = instance.components or {}
 
     local weapon = components.weapon
@@ -348,6 +402,27 @@ local function InspectInstance(instance, prefab)
             regrowth_seconds = Primitive(pickable.baseregentime or pickable.regentime),
         })
     end
+    coverage.drop = #loot > 0
+        and Coverage("observed", "lootdropper entries captured", { count = #loot })
+        or Coverage(
+            "unobserved",
+            lootdropper ~= nil and "lootdropper has no static entries at spawn"
+                or "no lootdropper component at spawn"
+        )
+    coverage.harvest = #harvest > 0
+        and Coverage("observed", "pickable product captured", { count = #harvest })
+        or Coverage(
+            "unobserved",
+            pickable ~= nil and "pickable has no product at spawn"
+                or "no pickable component at spawn"
+        )
+
+    local trader = components.trader
+    if trader ~= nil then
+        AddStat(stats, "trader_enabled", trader.enabled, "boolean")
+        AddStat(stats, "trader_deletes_item", trader.deleteitemonaccept, "boolean")
+        AddStat(stats, "trader_accepts_stacks", trader.acceptstacks, "boolean")
+    end
     local tradable = components.tradable
     if tradable ~= nil then
         AddStat(stats, "trade_gold_value", tradable.goldvalue, "value")
@@ -358,8 +433,93 @@ local function InspectInstance(instance, prefab)
                     relation = "trades_for",
                     target_prefab_id = string.lower(target),
                 })
+                AddLoot(trade, target, 1, 1, {
+                    cost_prefab = prefab,
+                    cost_count = 1,
+                })
             end
         end
+    end
+    if #trade > 0 then
+        coverage.trade_shop = Coverage(
+            "observed",
+            "tradable.tradefor entries captured without executing trade callbacks",
+            { count = #trade }
+        )
+    elseif trader ~= nil then
+        coverage.trade_shop = Coverage(
+            "unsupported",
+            "trader acceptance and rewards are opaque callbacks; probe does not execute them",
+            {
+                enabled = Primitive(trader.enabled),
+                accepts_stacks = Primitive(trader.acceptstacks),
+            }
+        )
+    elseif tradable ~= nil then
+        coverage.trade_shop = Coverage(
+            "observed",
+            "tradable component inspected; no tradefor entries registered",
+            { count = 0 }
+        )
+    else
+        coverage.trade_shop = Coverage(
+            "unobserved",
+            "no standard trader or tradable component at spawn"
+        )
+    end
+
+    local rechargeable = components.rechargeable
+    if rechargeable ~= nil then
+        AddStat(stats, "recharge_time", rechargeable.chargetime, "seconds")
+        AddStat(stats, "charge_capacity", rechargeable.total, "charge")
+        AddStat(stats, "current_charge", rechargeable.current, "charge")
+    end
+    local cooldown = components.cooldown
+    if cooldown ~= nil then
+        AddStat(stats, "cooldown_duration", cooldown.cooldown_duration, "seconds")
+        AddStat(stats, "cooldown_charged", cooldown.charged, "boolean")
+    end
+    if rechargeable ~= nil or cooldown ~= nil then
+        coverage.cooldown_recharge = Coverage(
+            "observed",
+            "standard cooldown/recharge component fields captured",
+            {
+                rechargeable = rechargeable ~= nil,
+                cooldown = cooldown ~= nil,
+            }
+        )
+    else
+        coverage.cooldown_recharge = Coverage(
+            "unobserved",
+            "no cooldown or rechargeable component at spawn"
+        )
+    end
+
+    local debuff = components.debuff
+    if debuff ~= nil and type(debuff.name) == "string" then
+        table.insert(effects, {
+            effect_key = "debuff:" .. string.lower(debuff.name),
+            trigger = "attached",
+            value = { name = debuff.name },
+        })
+    end
+    local timer = components.timer
+    if #effects > 0 then
+        coverage.buff_debuff = Coverage(
+            "observed",
+            "exact debuff identity or active timer duration captured",
+            { count = #effects }
+        )
+    elseif debuff ~= nil or components.debuffable ~= nil or timer ~= nil then
+        coverage.buff_debuff = Coverage(
+            "unsupported",
+            "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+        )
+    else
+        coverage.buff_debuff = Coverage(
+            "unobserved",
+            "no debuff, debuffable, or timer component at spawn"
+        )
     end
     local stackable = components.stackable
     if stackable ~= nil then
@@ -375,6 +535,10 @@ local function InspectInstance(instance, prefab)
     end)
     SortAcquisition(loot)
     SortAcquisition(harvest)
+    SortAcquisition(trade)
+    table.sort(effects, function(left, right)
+        return left.effect_key < right.effect_key
+    end)
     table.sort(relations, function(left, right)
         local left_key = tostring(left.relation) .. ":" .. tostring(left.target_prefab_id)
         local right_key = tostring(right.relation) .. ":" .. tostring(right.target_prefab_id)
@@ -395,7 +559,10 @@ local function InspectInstance(instance, prefab)
         stats = stats,
         loot = loot,
         harvest = harvest,
+        trade = trade,
+        effects = effects,
         relations = relations,
+        coverage = coverage,
     }
 end
 
@@ -416,9 +583,73 @@ local function SpawnAndInspect(prefab)
     return result
 end
 
+local function BuildCoverageRows(ids, recipes, starting_items, overrides)
+    local recipe_by_product = {}
+    for _, recipe in ipairs(recipes) do
+        recipe_by_product[recipe.product] = recipe
+    end
+    local rows = {}
+    for _, prefab in ipairs(ids) do
+        local recipe = recipe_by_product[prefab]
+        local starting_paths = starting_items[prefab]
+        local by_category = {
+            craft = recipe ~= nil
+                and Coverage("observed", "AllRecipes entry captured", {
+                    output_count = recipe.output_count,
+                })
+                or Coverage("unobserved", "no AllRecipes entry for target"),
+            progression = recipe ~= nil
+                and Coverage("observed", "recipe progression fields captured", {
+                    tech = recipe.tech,
+                    filters = recipe.filters,
+                    builder_tags = recipe.builder_tags,
+                })
+                or Coverage(
+                    "unobserved",
+                    "no standard recipe progression entry for target"
+                ),
+            start_gift = starting_paths ~= nil
+                and Coverage("observed", "starting-item registry entries captured", {
+                    paths = starting_paths,
+                    count = #starting_paths,
+                })
+                or Coverage(
+                    "unobserved",
+                    "standard starting-item registries inspected with no target entry"
+                ),
+            world_spawn = {
+                category = "world_spawn",
+                status = "unsupported",
+                reason = "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world",
+                details = {},
+            },
+        }
+        for category, value in pairs(overrides[prefab] or {}) do
+            by_category[category] = value
+        end
+        for _, category in ipairs(COVERAGE_CATEGORIES) do
+            local value = by_category[category] or Coverage(
+                "unsupported",
+                "prefab inspection failed before this category could be observed"
+            )
+            table.insert(rows, {
+                prefab = prefab,
+                category = value.category or category,
+                status = value.status,
+                reason = value.reason,
+                details = value.details or {},
+            })
+        end
+    end
+    return rows
+end
+
 function Exporter.Run()
     print("DST wiki runtime exporter begin")
     local prefab_ids = {}
+    for _, prefab in ipairs(TARGET_IDS) do
+        prefab_ids[string.lower(prefab)] = true
+    end
     for name in pairs((STRINGS and STRINGS.NAMES) or {}) do
         if type(name) == "string" and name:sub(1, 3) == "XD_" then
             prefab_ids[string.lower(name)] = true
@@ -435,12 +666,37 @@ function Exporter.Run()
 
     local prefabs = {}
     local errors = {}
+    local coverage_overrides = {}
     for _, prefab in ipairs(ids) do
         print("DST wiki runtime inspecting " .. prefab)
         local ok, result = pcall(SpawnAndInspect, prefab)
         if ok then
+            coverage_overrides[prefab] = result.coverage
+            result.coverage = nil
             table.insert(prefabs, result)
         else
+            coverage_overrides[prefab] = {
+                buff_debuff = Coverage(
+                    "unsupported",
+                    "prefab inspection failed before buff/debuff fields could be read"
+                ),
+                cooldown_recharge = Coverage(
+                    "unsupported",
+                    "prefab inspection failed before cooldown fields could be read"
+                ),
+                drop = Coverage(
+                    "unsupported",
+                    "prefab inspection failed before lootdropper fields could be read"
+                ),
+                harvest = Coverage(
+                    "unsupported",
+                    "prefab inspection failed before pickable fields could be read"
+                ),
+                trade_shop = Coverage(
+                    "unsupported",
+                    "prefab inspection failed before trader fields could be read"
+                ),
+            }
             table.insert(errors, {
                 code = "prefab_inspection_failed",
                 prefab = prefab,
@@ -448,11 +704,19 @@ function Exporter.Run()
             })
         end
     end
+    local coverage = BuildCoverageRows(
+        ids,
+        recipes,
+        StartingItemEvidence(prefab_ids),
+        coverage_overrides
+    )
     local payload = {
-        schema_version = 1,
+        schema_version = 2,
         mod_version = ModVersion(),
+        targets = ids,
         recipes = recipes,
         prefabs = prefabs,
+        coverage = coverage,
         errors = errors,
     }
     local ok, encoded = pcall(JsonEncode, payload)

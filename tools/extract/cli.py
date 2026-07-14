@@ -12,7 +12,7 @@ from tools.extract.database import write_database
 from tools.extract.export_json import export_catalog
 from tools.extract.mod_static import extract_mod_static
 from tools.extract.normalize import normalize
-from tools.extract.runtime_import import load_runtime_bundle
+from tools.extract.runtime_import import load_runtime_bundle, static_mod_version
 from tools.extract.runtime_runner import run_runtime_probe
 from tools.extract.source_manifest import ARCHIVES, snapshot_game_sources
 from tools.extract.validate import validate_catalog, write_validation_report
@@ -61,10 +61,12 @@ def build_parser() -> argparse.ArgumentParser:
     run_runtime.add_argument("--game-mods-dir", type=Path, required=True)
     run_runtime.add_argument("--workspace", type=Path, default=Path("."))
     run_runtime.add_argument("--timeout", type=float, default=180)
+    run_runtime.add_argument("--static", type=Path, default=STATIC_FACTS)
     import_runtime = sub.add_parser("import-runtime")
     import_runtime.add_argument(
         "--input", type=Path, default=RUNTIME_FACTS
     )
+    import_runtime.add_argument("--static", type=Path, default=STATIC_FACTS)
     enrich_base = sub.add_parser("enrich-base")
     enrich_base.add_argument(
         "--static", type=Path, default=STATIC_FACTS
@@ -128,8 +130,13 @@ def _extract_static_stage(
     return bundle
 
 
-def _import_runtime_stage(path: Path = RUNTIME_FACTS):
-    bundle = load_runtime_bundle(path)
+def _import_runtime_stage(
+    path: Path = RUNTIME_FACTS, static_path: Path = STATIC_FACTS
+):
+    static_bundle = load_bundle(static_path)
+    bundle = load_runtime_bundle(
+        path, expected_mod_version=static_mod_version(static_bundle)
+    )
     print(f"{path} facts={len(bundle.facts)} errors={len(bundle.errors)}")
     return bundle
 
@@ -145,7 +152,9 @@ def _enrich_base_stage(
 ):
     verify_snapshot_archive(scripts, manifest)
     static_bundle = load_bundle(static_path)
-    runtime_bundle = load_runtime_bundle(runtime_path)
+    runtime_bundle = load_runtime_bundle(
+        runtime_path, expected_mod_version=static_mod_version(static_bundle)
+    )
     requests = derive_dependency_requests(static_bundle, runtime_bundle)
     bundle = enrich_dependencies(scripts, requests, translation)
     bundle = add_base_game_asset_facts(bundle, images, manifest)
@@ -170,7 +179,11 @@ def _build_db_stage(
     base_path: Path = BASE_FACTS,
     output: Path = DATABASE,
 ):
-    bundles = [load_bundle(static_path), load_runtime_bundle(runtime_path), load_bundle(base_path)]
+    static_bundle = load_bundle(static_path)
+    runtime_bundle = load_runtime_bundle(
+        runtime_path, expected_mod_version=static_mod_version(static_bundle)
+    )
+    bundles = [static_bundle, runtime_bundle, load_bundle(base_path)]
     catalog = normalize(bundles)
     write_database(output, catalog)
     print(f"{output} entities={len(catalog.entities)} evidence={len(catalog.evidence)} conflicts={len(catalog.conflicts)}")
@@ -230,11 +243,12 @@ def main() -> int:
             args.game_mods_dir,
             args.workspace,
             args.timeout,
+            args.static,
         )
         print(output)
         return 0
     if args.command == "import-runtime":
-        _import_runtime_stage(args.input)
+        _import_runtime_stage(args.input, args.static)
         return 0
     if args.command == "enrich-base":
         _enrich_base_stage(

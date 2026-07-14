@@ -67,7 +67,16 @@
       "type": "inventory_item"
     },
     {
-      "acquisition": [],
+      "acquisition": [
+        {
+          "chance": 1.0,
+          "conditions": {},
+          "max_count": 1.0,
+          "min_count": 1.0,
+          "source": "tu_tien:fence_gate_luoshen",
+          "type": "drop"
+        }
+      ],
       "confidence": 1.0,
       "description": {
         "en": "Like logs, but flatter.",
@@ -2847,7 +2856,16 @@
       "type": "inventory_item"
     },
     {
-      "acquisition": [],
+      "acquisition": [
+        {
+          "chance": 1.0,
+          "conditions": {},
+          "max_count": 1.0,
+          "min_count": 1.0,
+          "source": "tu_tien:fence_gate_luoshen",
+          "type": "drop"
+        }
+      ],
       "confidence": 1.0,
       "description": {
         "en": "Tightly woven coils of usefulness.",
@@ -3928,6 +3946,14 @@
           "type": "drop"
         },
         {
+          "chance": 1.0,
+          "conditions": {},
+          "max_count": 1.0,
+          "min_count": 1.0,
+          "source": "tu_tien:fence_luoshen",
+          "type": "drop"
+        },
+        {
           "chance": 0.5,
           "conditions": {
             "loot_table": "xd_shatangshunut"
@@ -4227,10 +4253,19 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "creature"
     },
     {
-      "acquisition": [],
+      "acquisition": [
+        {
+          "chance": null,
+          "conditions": {},
+          "max_count": null,
+          "min_count": null,
+          "source": null,
+          "type": "craft"
+        }
+      ],
       "confidence": 1.0,
       "description": {
         "en": null,
@@ -4246,9 +4281,41 @@
       },
       "namespace": "tu_tien",
       "prefab_id": "fence_gate_luoshen_item",
-      "recipes": [],
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "amount": 6.0,
+              "key": "base_game:petals",
+              "position": 0
+            },
+            {
+              "amount": 6.0,
+              "key": "base_game:log",
+              "position": 1
+            }
+          ],
+          "output_count": 1,
+          "restrictions": {
+            "builder_tags": [
+              "xd_luoshen"
+            ],
+            "character_ingredients": [],
+            "filters": [],
+            "tech_ingredients": []
+          },
+          "tech": "NONE"
+        }
+      ],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "stack_size",
+          "unit": "items",
+          "value": 20.0
+        }
+      ],
       "type": "inventory_item"
     },
     {
@@ -4271,10 +4338,19 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "creature"
     },
     {
-      "acquisition": [],
+      "acquisition": [
+        {
+          "chance": null,
+          "conditions": {},
+          "max_count": null,
+          "min_count": null,
+          "source": null,
+          "type": "craft"
+        }
+      ],
       "confidence": 1.0,
       "description": {
         "en": null,
@@ -4290,9 +4366,41 @@
       },
       "namespace": "tu_tien",
       "prefab_id": "fence_luoshen_item",
-      "recipes": [],
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "amount": 6.0,
+              "key": "base_game:petals",
+              "position": 0
+            },
+            {
+              "amount": 3.0,
+              "key": "base_game:log",
+              "position": 1
+            }
+          ],
+          "output_count": 6,
+          "restrictions": {
+            "builder_tags": [
+              "xd_luoshen"
+            ],
+            "character_ingredients": [],
+            "filters": [],
+            "tech_ingredients": []
+          },
+          "tech": "NONE"
+        }
+      ],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "stack_size",
+          "unit": "items",
+          "value": 20.0
+        }
+      ],
       "type": "inventory_item"
     },
     {
@@ -4340,7 +4448,16 @@
       "type": "unknown"
     },
     {
-      "acquisition": [],
+      "acquisition": [
+        {
+          "chance": null,
+          "conditions": {},
+          "max_count": null,
+          "min_count": null,
+          "source": null,
+          "type": "craft"
+        }
+      ],
       "confidence": 1.0,
       "description": {
         "en": null,
@@ -4356,9 +4473,41 @@
       },
       "namespace": "tu_tien",
       "prefab_id": "turf_jingweitile",
-      "recipes": [],
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "amount": 1.0,
+              "key": "tu_tien:xd_xuanyu",
+              "position": 0
+            },
+            {
+              "amount": 4.0,
+              "key": "base_game:twigs",
+              "position": 1
+            }
+          ],
+          "output_count": 4,
+          "restrictions": {
+            "builder_tags": [
+              "xd_jingwei"
+            ],
+            "character_ingredients": [],
+            "filters": [],
+            "tech_ingredients": []
+          },
+          "tech": "NONE"
+        }
+      ],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "stack_size",
+          "unit": "items",
+          "value": 20.0
+        }
+      ],
       "type": "inventory_item"
     },
     {
@@ -4380,7 +4529,14 @@
       "prefab_id": "turf_xdtile1",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "stack_size",
+          "unit": "items",
+          "value": 20.0
+        }
+      ],
       "type": "inventory_item"
     },
     {
@@ -4402,7 +4558,14 @@
       "prefab_id": "turf_xdtile2",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "stack_size",
+          "unit": "items",
+          "value": 20.0
+        }
+      ],
       "type": "inventory_item"
     },
     {
@@ -4424,7 +4587,14 @@
       "prefab_id": "turf_xdtile3",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "stack_size",
+          "unit": "items",
+          "value": 20.0
+        }
+      ],
       "type": "inventory_item"
     },
     {
@@ -4447,10 +4617,19 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "creature"
     },
     {
-      "acquisition": [],
+      "acquisition": [
+        {
+          "chance": null,
+          "conditions": {},
+          "max_count": null,
+          "min_count": null,
+          "source": null,
+          "type": "craft"
+        }
+      ],
       "confidence": 1.0,
       "description": {
         "en": null,
@@ -4466,14 +4645,200 @@
       },
       "namespace": "tu_tien",
       "prefab_id": "wall_luoshen_item",
-      "recipes": [],
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "amount": 6.0,
+              "key": "base_game:petals",
+              "position": 0
+            },
+            {
+              "amount": 2.0,
+              "key": "base_game:twigs",
+              "position": 1
+            }
+          ],
+          "output_count": 6,
+          "restrictions": {
+            "builder_tags": [
+              "xd_luoshen"
+            ],
+            "character_ingredients": [],
+            "filters": [],
+            "tech_ingredients": []
+          },
+          "tech": "NONE"
+        }
+      ],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "stack_size",
+          "unit": "items",
+          "value": 20.0
+        }
+      ],
       "type": "inventory_item"
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
+      "description": {
+        "en": null,
+        "vi": null
+      },
+      "effects": [],
+      "icon_key": null,
+      "is_inventory_item": false,
+      "key": "tu_tien:xd_1",
+      "name": {
+        "en": null,
+        "vi": null
+      },
+      "namespace": "tu_tien",
+      "prefab_id": "xd_1",
+      "recipes": [],
+      "relations": [],
+      "stats": [],
+      "type": "unknown"
+    },
+    {
+      "acquisition": [],
+      "confidence": 1.0,
+      "description": {
+        "en": null,
+        "vi": null
+      },
+      "effects": [],
+      "icon_key": null,
+      "is_inventory_item": false,
+      "key": "tu_tien:xd_2",
+      "name": {
+        "en": null,
+        "vi": null
+      },
+      "namespace": "tu_tien",
+      "prefab_id": "xd_2",
+      "recipes": [],
+      "relations": [],
+      "stats": [],
+      "type": "unknown"
+    },
+    {
+      "acquisition": [],
+      "confidence": 1.0,
+      "description": {
+        "en": null,
+        "vi": null
+      },
+      "effects": [],
+      "icon_key": null,
+      "is_inventory_item": false,
+      "key": "tu_tien:xd_3",
+      "name": {
+        "en": null,
+        "vi": null
+      },
+      "namespace": "tu_tien",
+      "prefab_id": "xd_3",
+      "recipes": [],
+      "relations": [],
+      "stats": [],
+      "type": "unknown"
+    },
+    {
+      "acquisition": [],
+      "confidence": 1.0,
+      "description": {
+        "en": null,
+        "vi": null
+      },
+      "effects": [],
+      "icon_key": null,
+      "is_inventory_item": false,
+      "key": "tu_tien:xd_4",
+      "name": {
+        "en": null,
+        "vi": null
+      },
+      "namespace": "tu_tien",
+      "prefab_id": "xd_4",
+      "recipes": [],
+      "relations": [],
+      "stats": [],
+      "type": "unknown"
+    },
+    {
+      "acquisition": [],
+      "confidence": 1.0,
+      "description": {
+        "en": null,
+        "vi": null
+      },
+      "effects": [],
+      "icon_key": null,
+      "is_inventory_item": false,
+      "key": "tu_tien:xd_5",
+      "name": {
+        "en": null,
+        "vi": null
+      },
+      "namespace": "tu_tien",
+      "prefab_id": "xd_5",
+      "recipes": [],
+      "relations": [],
+      "stats": [],
+      "type": "unknown"
+    },
+    {
+      "acquisition": [],
+      "confidence": 1.0,
+      "description": {
+        "en": null,
+        "vi": null
+      },
+      "effects": [],
+      "icon_key": null,
+      "is_inventory_item": false,
+      "key": "tu_tien:xd_6",
+      "name": {
+        "en": null,
+        "vi": null
+      },
+      "namespace": "tu_tien",
+      "prefab_id": "xd_6",
+      "recipes": [],
+      "relations": [],
+      "stats": [],
+      "type": "unknown"
+    },
+    {
+      "acquisition": [],
+      "confidence": 1.0,
+      "description": {
+        "en": null,
+        "vi": null
+      },
+      "effects": [],
+      "icon_key": null,
+      "is_inventory_item": false,
+      "key": "tu_tien:xd_7",
+      "name": {
+        "en": null,
+        "vi": null
+      },
+      "namespace": "tu_tien",
+      "prefab_id": "xd_7",
+      "recipes": [],
+      "relations": [],
+      "stats": [],
+      "type": "unknown"
+    },
+    {
+      "acquisition": [],
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -4495,7 +4860,29 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
+      "description": {
+        "en": null,
+        "vi": null
+      },
+      "effects": [],
+      "icon_key": null,
+      "is_inventory_item": false,
+      "key": "tu_tien:xd_8",
+      "name": {
+        "en": null,
+        "vi": null
+      },
+      "namespace": "tu_tien",
+      "prefab_id": "xd_8",
+      "recipes": [],
+      "relations": [],
+      "stats": [],
+      "type": "unknown"
+    },
+    {
+      "acquisition": [],
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -4517,7 +4904,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -4759,7 +5146,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -4777,11 +5164,11 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -4849,7 +5236,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -4867,7 +5254,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
@@ -4898,7 +5285,20 @@
           "type": "string_alias"
         }
       ],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "trader_deletes_item",
+          "unit": "boolean",
+          "value": "true"
+        },
+        {
+          "confidence": 1.0,
+          "key": "trader_enabled",
+          "unit": "boolean",
+          "value": "true"
+        }
+      ],
       "type": "creature"
     },
     {
@@ -5029,7 +5429,20 @@
       "type": "creature"
     },
     {
-      "acquisition": [],
+      "acquisition": [
+        {
+          "chance": 1.0,
+          "conditions": {
+            "registry_paths": [
+              "GAMEMODE_STARTING_ITEMS.DEFAULT.WORMWOOD.1"
+            ]
+          },
+          "max_count": 1.0,
+          "min_count": 1.0,
+          "source": null,
+          "type": "start"
+        }
+      ],
       "confidence": 1.0,
       "description": {
         "en": null,
@@ -5071,7 +5484,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -5089,7 +5502,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
@@ -5122,7 +5535,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -5140,11 +5553,11 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -5162,7 +5575,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
@@ -5183,11 +5596,37 @@
       "prefab_id": "xd_choujiangji",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "trader_deletes_item",
+          "unit": "boolean",
+          "value": "true"
+        },
+        {
+          "confidence": 1.0,
+          "key": "trader_enabled",
+          "unit": "boolean",
+          "value": "true"
+        }
+      ],
       "type": "prefab"
     },
     {
-      "acquisition": [],
+      "acquisition": [
+        {
+          "chance": 1.0,
+          "conditions": {
+            "registry_paths": [
+              "GAMEMODE_STARTING_ITEMS.DEFAULT.WATHGRITHR.7"
+            ]
+          },
+          "max_count": 1.0,
+          "min_count": 1.0,
+          "source": null,
+          "type": "start"
+        }
+      ],
       "confidence": 1.0,
       "description": {
         "en": null,
@@ -5346,7 +5785,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -5364,7 +5803,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
@@ -5578,7 +6017,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -5596,7 +6035,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
@@ -5705,7 +6144,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -5723,7 +6162,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
@@ -6180,7 +6619,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -6198,7 +6637,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "creature"
     },
     {
       "acquisition": [],
@@ -6224,7 +6663,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -6246,7 +6685,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -6339,12 +6778,25 @@
           "type": "string_alias"
         }
       ],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "trader_deletes_item",
+          "unit": "boolean",
+          "value": "true"
+        },
+        {
+          "confidence": 1.0,
+          "key": "trader_enabled",
+          "unit": "boolean",
+          "value": "true"
+        }
+      ],
       "type": "creature"
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -6366,7 +6818,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -6388,7 +6840,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -6406,7 +6858,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
@@ -8364,7 +8816,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -8382,7 +8834,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
@@ -8623,7 +9075,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -8641,11 +9093,11 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -8663,11 +9115,11 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "creature"
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -8685,7 +9137,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "creature"
     },
     {
       "acquisition": [],
@@ -8755,7 +9207,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -8773,11 +9225,11 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -8795,7 +9247,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
@@ -8913,7 +9365,20 @@
       "type": "prefab"
     },
     {
-      "acquisition": [],
+      "acquisition": [
+        {
+          "chance": 1.0,
+          "conditions": {
+            "registry_paths": [
+              "GAMEMODE_STARTING_ITEMS.DEFAULT.WAXWELL.8"
+            ]
+          },
+          "max_count": 1.0,
+          "min_count": 1.0,
+          "source": null,
+          "type": "start"
+        }
+      ],
       "confidence": 1.0,
       "description": {
         "en": null,
@@ -8955,7 +9420,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -8972,12 +9437,19 @@
       "prefab_id": "xd_flamethrower_fx",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "damage",
+          "unit": "hp",
+          "value": 116.7
+        }
+      ],
       "type": "prefab"
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -8995,7 +9467,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [
@@ -9618,7 +10090,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -9636,11 +10108,11 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -9658,7 +10130,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [
@@ -9799,6 +10271,36 @@
       "stats": [
         {
           "confidence": 1.0,
+          "key": "charge_capacity",
+          "unit": "charge",
+          "value": 180.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "current_charge",
+          "unit": "charge",
+          "value": 180.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "recharge_time",
+          "unit": "seconds",
+          "value": 30.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "trader_deletes_item",
+          "unit": "boolean",
+          "value": "true"
+        },
+        {
+          "confidence": 1.0,
+          "key": "trader_enabled",
+          "unit": "boolean",
+          "value": "true"
+        },
+        {
+          "confidence": 1.0,
           "key": "uses",
           "unit": "uses",
           "value": 10.0
@@ -9894,7 +10396,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -9912,7 +10414,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
@@ -9960,7 +10462,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -9978,7 +10480,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
@@ -9999,12 +10501,25 @@
       "prefab_id": "xd_gcsz",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "trader_deletes_item",
+          "unit": "boolean",
+          "value": "true"
+        },
+        {
+          "confidence": 1.0,
+          "key": "trader_enabled",
+          "unit": "boolean",
+          "value": "true"
+        }
+      ],
       "type": "prefab"
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -10022,7 +10537,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "creature"
     },
     {
       "acquisition": [
@@ -10200,7 +10715,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -10218,11 +10733,11 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "creature"
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -10244,7 +10759,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -10266,7 +10781,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -10288,7 +10803,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -10328,11 +10843,11 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -10350,7 +10865,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
@@ -10555,6 +11070,18 @@
       "stats": [
         {
           "confidence": 1.0,
+          "key": "trader_deletes_item",
+          "unit": "boolean",
+          "value": "true"
+        },
+        {
+          "confidence": 1.0,
+          "key": "trader_enabled",
+          "unit": "boolean",
+          "value": "true"
+        },
+        {
+          "confidence": 1.0,
           "key": "uses",
           "unit": "uses",
           "value": 100.0
@@ -10672,7 +11199,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -10689,11 +11216,31 @@
       "prefab_id": "xd_htz_firefx",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "damage",
+          "unit": "hp",
+          "value": 116.7
+        }
+      ],
       "type": "prefab"
     },
     {
-      "acquisition": [],
+      "acquisition": [
+        {
+          "chance": 1.0,
+          "conditions": {
+            "registry_paths": [
+              "GAMEMODE_STARTING_ITEMS.DEFAULT.XD_HANTIANZUN.2"
+            ]
+          },
+          "max_count": 1.0,
+          "min_count": 1.0,
+          "source": null,
+          "type": "start"
+        }
+      ],
       "confidence": 1.0,
       "description": {
         "en": null,
@@ -10712,6 +11259,24 @@
       "recipes": [],
       "relations": [],
       "stats": [
+        {
+          "confidence": 1.0,
+          "key": "charge_capacity",
+          "unit": "charge",
+          "value": 180.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "current_charge",
+          "unit": "charge",
+          "value": 180.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "recharge_time",
+          "unit": "seconds",
+          "value": 30.0
+        },
         {
           "confidence": 1.0,
           "key": "uses",
@@ -10744,7 +11309,20 @@
       "type": "unknown"
     },
     {
-      "acquisition": [],
+      "acquisition": [
+        {
+          "chance": 1.0,
+          "conditions": {
+            "registry_paths": [
+              "GAMEMODE_STARTING_ITEMS.DEFAULT.XD_HANTIANZUN.5"
+            ]
+          },
+          "max_count": 1.0,
+          "min_count": 1.0,
+          "source": null,
+          "type": "start"
+        }
+      ],
       "confidence": 1.0,
       "description": {
         "en": null,
@@ -10803,7 +11381,26 @@
       "prefab_id": "xd_htz_qzxy",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "charge_capacity",
+          "unit": "charge",
+          "value": 180.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "current_charge",
+          "unit": "charge",
+          "value": 180.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "recharge_time",
+          "unit": "seconds",
+          "value": 30.0
+        }
+      ],
       "type": "inventory_item"
     },
     {
@@ -10892,19 +11489,38 @@
         }
       ],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "charge_capacity",
+          "unit": "charge",
+          "value": 180.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "current_charge",
+          "unit": "charge",
+          "value": 180.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "recharge_time",
+          "unit": "seconds",
+          "value": 30.0
+        }
+      ],
       "type": "inventory_item"
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
       },
       "effects": [],
       "icon_key": null,
-      "is_inventory_item": false,
+      "is_inventory_item": true,
       "key": "tu_tien:xd_htz_spell",
       "name": {
         "en": null,
@@ -10915,7 +11531,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "inventory_item"
     },
     {
       "acquisition": [
@@ -10926,6 +11542,19 @@
           "min_count": null,
           "source": null,
           "type": "craft"
+        },
+        {
+          "chance": 1.0,
+          "conditions": {
+            "registry_paths": [
+              "GAMEMODE_STARTING_ITEMS.DEFAULT.XD_HANTIANZUN.3",
+              "GAMEMODE_STARTING_ITEMS.DEFAULT.XD_HANTIANZUN.4"
+            ]
+          },
+          "max_count": 2.0,
+          "min_count": 2.0,
+          "source": null,
+          "type": "start"
         }
       ],
       "confidence": 1.0,
@@ -11048,7 +11677,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -11066,7 +11695,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
@@ -11154,11 +11783,37 @@
         }
       ],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "trader_deletes_item",
+          "unit": "boolean",
+          "value": "true"
+        },
+        {
+          "confidence": 1.0,
+          "key": "trader_enabled",
+          "unit": "boolean",
+          "value": "true"
+        }
+      ],
       "type": "inventory_item"
     },
     {
-      "acquisition": [],
+      "acquisition": [
+        {
+          "chance": 1.0,
+          "conditions": {
+            "registry_paths": [
+              "GAMEMODE_STARTING_ITEMS.DEFAULT.XD_HANTIANZUN.1"
+            ]
+          },
+          "max_count": 1.0,
+          "min_count": 1.0,
+          "source": null,
+          "type": "start"
+        }
+      ],
       "confidence": 1.0,
       "description": {
         "en": null,
@@ -11364,11 +12019,37 @@
         }
       ],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "trader_deletes_item",
+          "unit": "boolean",
+          "value": "true"
+        },
+        {
+          "confidence": 1.0,
+          "key": "trader_enabled",
+          "unit": "boolean",
+          "value": "true"
+        }
+      ],
       "type": "structure"
     },
     {
-      "acquisition": [],
+      "acquisition": [
+        {
+          "chance": 1.0,
+          "conditions": {
+            "registry_paths": [
+              "GAMEMODE_STARTING_ITEMS.DEFAULT.WOODIE.2"
+            ]
+          },
+          "max_count": 1.0,
+          "min_count": 1.0,
+          "source": null,
+          "type": "start"
+        }
+      ],
       "confidence": 1.0,
       "description": {
         "en": null,
@@ -11410,7 +12091,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -11432,7 +12113,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -11450,7 +12131,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "creature"
     },
     {
       "acquisition": [],
@@ -11530,7 +12211,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -11548,11 +12229,11 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -11570,11 +12251,11 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -11592,7 +12273,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
@@ -11662,7 +12343,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -11680,11 +12361,11 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "creature"
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -11702,10 +12383,23 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "creature"
     },
     {
-      "acquisition": [],
+      "acquisition": [
+        {
+          "chance": 1.0,
+          "conditions": {
+            "registry_paths": [
+              "GAMEMODE_STARTING_ITEMS.DEFAULT.WONKEY.1"
+            ]
+          },
+          "max_count": 1.0,
+          "min_count": 1.0,
+          "source": null,
+          "type": "start"
+        }
+      ],
       "confidence": 1.0,
       "description": {
         "en": null,
@@ -11762,6 +12456,226 @@
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_jingwei",
+      "recipes": [],
+      "relations": [],
+      "stats": [],
+      "type": "unknown"
+    },
+    {
+      "acquisition": [],
+      "confidence": 1.0,
+      "description": {
+        "en": null,
+        "vi": null
+      },
+      "effects": [],
+      "icon_key": null,
+      "is_inventory_item": false,
+      "key": "tu_tien:xd_jingwei1",
+      "name": {
+        "en": null,
+        "vi": null
+      },
+      "namespace": "tu_tien",
+      "prefab_id": "xd_jingwei1",
+      "recipes": [],
+      "relations": [],
+      "stats": [],
+      "type": "unknown"
+    },
+    {
+      "acquisition": [],
+      "confidence": 1.0,
+      "description": {
+        "en": null,
+        "vi": null
+      },
+      "effects": [],
+      "icon_key": null,
+      "is_inventory_item": false,
+      "key": "tu_tien:xd_jingwei10",
+      "name": {
+        "en": null,
+        "vi": null
+      },
+      "namespace": "tu_tien",
+      "prefab_id": "xd_jingwei10",
+      "recipes": [],
+      "relations": [],
+      "stats": [],
+      "type": "unknown"
+    },
+    {
+      "acquisition": [],
+      "confidence": 1.0,
+      "description": {
+        "en": null,
+        "vi": null
+      },
+      "effects": [],
+      "icon_key": null,
+      "is_inventory_item": false,
+      "key": "tu_tien:xd_jingwei2",
+      "name": {
+        "en": null,
+        "vi": null
+      },
+      "namespace": "tu_tien",
+      "prefab_id": "xd_jingwei2",
+      "recipes": [],
+      "relations": [],
+      "stats": [],
+      "type": "unknown"
+    },
+    {
+      "acquisition": [],
+      "confidence": 1.0,
+      "description": {
+        "en": null,
+        "vi": null
+      },
+      "effects": [],
+      "icon_key": null,
+      "is_inventory_item": false,
+      "key": "tu_tien:xd_jingwei3",
+      "name": {
+        "en": null,
+        "vi": null
+      },
+      "namespace": "tu_tien",
+      "prefab_id": "xd_jingwei3",
+      "recipes": [],
+      "relations": [],
+      "stats": [],
+      "type": "unknown"
+    },
+    {
+      "acquisition": [],
+      "confidence": 1.0,
+      "description": {
+        "en": null,
+        "vi": null
+      },
+      "effects": [],
+      "icon_key": null,
+      "is_inventory_item": false,
+      "key": "tu_tien:xd_jingwei4",
+      "name": {
+        "en": null,
+        "vi": null
+      },
+      "namespace": "tu_tien",
+      "prefab_id": "xd_jingwei4",
+      "recipes": [],
+      "relations": [],
+      "stats": [],
+      "type": "unknown"
+    },
+    {
+      "acquisition": [],
+      "confidence": 1.0,
+      "description": {
+        "en": null,
+        "vi": null
+      },
+      "effects": [],
+      "icon_key": null,
+      "is_inventory_item": false,
+      "key": "tu_tien:xd_jingwei5",
+      "name": {
+        "en": null,
+        "vi": null
+      },
+      "namespace": "tu_tien",
+      "prefab_id": "xd_jingwei5",
+      "recipes": [],
+      "relations": [],
+      "stats": [],
+      "type": "unknown"
+    },
+    {
+      "acquisition": [],
+      "confidence": 1.0,
+      "description": {
+        "en": null,
+        "vi": null
+      },
+      "effects": [],
+      "icon_key": null,
+      "is_inventory_item": false,
+      "key": "tu_tien:xd_jingwei6",
+      "name": {
+        "en": null,
+        "vi": null
+      },
+      "namespace": "tu_tien",
+      "prefab_id": "xd_jingwei6",
+      "recipes": [],
+      "relations": [],
+      "stats": [],
+      "type": "unknown"
+    },
+    {
+      "acquisition": [],
+      "confidence": 1.0,
+      "description": {
+        "en": null,
+        "vi": null
+      },
+      "effects": [],
+      "icon_key": null,
+      "is_inventory_item": false,
+      "key": "tu_tien:xd_jingwei7",
+      "name": {
+        "en": null,
+        "vi": null
+      },
+      "namespace": "tu_tien",
+      "prefab_id": "xd_jingwei7",
+      "recipes": [],
+      "relations": [],
+      "stats": [],
+      "type": "unknown"
+    },
+    {
+      "acquisition": [],
+      "confidence": 1.0,
+      "description": {
+        "en": null,
+        "vi": null
+      },
+      "effects": [],
+      "icon_key": null,
+      "is_inventory_item": false,
+      "key": "tu_tien:xd_jingwei8",
+      "name": {
+        "en": null,
+        "vi": null
+      },
+      "namespace": "tu_tien",
+      "prefab_id": "xd_jingwei8",
+      "recipes": [],
+      "relations": [],
+      "stats": [],
+      "type": "unknown"
+    },
+    {
+      "acquisition": [],
+      "confidence": 1.0,
+      "description": {
+        "en": null,
+        "vi": null
+      },
+      "effects": [],
+      "icon_key": null,
+      "is_inventory_item": false,
+      "key": "tu_tien:xd_jingwei9",
+      "name": {
+        "en": null,
+        "vi": null
+      },
+      "namespace": "tu_tien",
+      "prefab_id": "xd_jingwei9",
       "recipes": [],
       "relations": [],
       "stats": [],
@@ -11930,6 +12844,18 @@
       "stats": [
         {
           "confidence": 1.0,
+          "key": "trader_deletes_item",
+          "unit": "boolean",
+          "value": "true"
+        },
+        {
+          "confidence": 1.0,
+          "key": "trader_enabled",
+          "unit": "boolean",
+          "value": "true"
+        },
+        {
+          "confidence": 1.0,
           "key": "uses",
           "unit": "uses",
           "value": 20.0
@@ -11939,7 +12865,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -11957,7 +12883,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
@@ -12196,7 +13122,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -12214,10 +13140,23 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
-      "acquisition": [],
+      "acquisition": [
+        {
+          "chance": 1.0,
+          "conditions": {
+            "registry_paths": [
+              "GAMEMODE_STARTING_ITEMS.DEFAULT.XD_JINGWEI.1"
+            ]
+          },
+          "max_count": 1.0,
+          "min_count": 1.0,
+          "source": null,
+          "type": "start"
+        }
+      ],
       "confidence": 1.0,
       "description": {
         "en": null,
@@ -12276,12 +13215,25 @@
       "prefab_id": "xd_jitan",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "trader_deletes_item",
+          "unit": "boolean",
+          "value": "true"
+        },
+        {
+          "confidence": 1.0,
+          "key": "trader_enabled",
+          "unit": "boolean",
+          "value": "true"
+        }
+      ],
       "type": "prefab"
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -12302,7 +13254,20 @@
       "type": "prefab"
     },
     {
-      "acquisition": [],
+      "acquisition": [
+        {
+          "chance": 1.0,
+          "conditions": {
+            "registry_paths": [
+              "GAMEMODE_STARTING_ITEMS.DEFAULT.WURT.1"
+            ]
+          },
+          "max_count": 1.0,
+          "min_count": 1.0,
+          "source": null,
+          "type": "start"
+        }
+      ],
       "confidence": 1.0,
       "description": {
         "en": null,
@@ -12577,7 +13542,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -12599,7 +13564,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -12621,7 +13586,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -13642,7 +14607,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -13751,7 +14716,20 @@
       "type": "inventory_item"
     },
     {
-      "acquisition": [],
+      "acquisition": [
+        {
+          "chance": 1.0,
+          "conditions": {
+            "registry_paths": [
+              "GAMEMODE_STARTING_ITEMS.DEFAULT.WARLY.5"
+            ]
+          },
+          "max_count": 1.0,
+          "min_count": 1.0,
+          "source": null,
+          "type": "start"
+        }
+      ],
       "confidence": 1.0,
       "description": {
         "en": null,
@@ -13886,7 +14864,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -13904,7 +14882,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
@@ -13940,7 +14918,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -13958,11 +14936,11 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -13980,7 +14958,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [
@@ -14292,7 +15270,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -14310,10 +15288,23 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
-      "acquisition": [],
+      "acquisition": [
+        {
+          "chance": 1.0,
+          "conditions": {
+            "registry_paths": [
+              "GAMEMODE_STARTING_ITEMS.DEFAULT.XD_LONGTAIZI.1"
+            ]
+          },
+          "max_count": 1.0,
+          "min_count": 1.0,
+          "source": null,
+          "type": "start"
+        }
+      ],
       "confidence": 1.0,
       "description": {
         "en": null,
@@ -14361,7 +15352,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [
@@ -14489,7 +15480,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -14507,7 +15498,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
@@ -14747,7 +15738,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -14765,7 +15756,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [
@@ -14843,6 +15834,18 @@
           "key": "trade_gold_value",
           "unit": "value",
           "value": 0.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "trader_deletes_item",
+          "unit": "boolean",
+          "value": "true"
+        },
+        {
+          "confidence": 1.0,
+          "key": "trader_enabled",
+          "unit": "boolean",
+          "value": "true"
         },
         {
           "confidence": 1.0,
@@ -14929,7 +15932,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -14950,7 +15953,20 @@
       "type": "prefab"
     },
     {
-      "acquisition": [],
+      "acquisition": [
+        {
+          "chance": 1.0,
+          "conditions": {
+            "registry_paths": [
+              "GAMEMODE_STARTING_ITEMS.DEFAULT.XD_LUOSHEN.21"
+            ]
+          },
+          "max_count": 1.0,
+          "min_count": 1.0,
+          "source": null,
+          "type": "start"
+        }
+      ],
       "confidence": 1.0,
       "description": {
         "en": null,
@@ -15117,7 +16133,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -15135,7 +16151,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
@@ -15333,7 +16349,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -15351,7 +16367,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [
@@ -15718,7 +16734,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -15736,7 +16752,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [
@@ -15970,7 +16986,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -15988,7 +17004,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [
@@ -16086,7 +17102,20 @@
       "type": "inventory_item"
     },
     {
-      "acquisition": [],
+      "acquisition": [
+        {
+          "chance": 1.0,
+          "conditions": {
+            "registry_paths": [
+              "GAMEMODE_STARTING_ITEMS.DEFAULT.WICKERBOTTOM.3"
+            ]
+          },
+          "max_count": 1.0,
+          "min_count": 1.0,
+          "source": null,
+          "type": "start"
+        }
+      ],
       "confidence": 1.0,
       "description": {
         "en": null,
@@ -16128,7 +17157,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -16146,10 +17175,23 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
-      "acquisition": [],
+      "acquisition": [
+        {
+          "chance": 1.0,
+          "conditions": {
+            "registry_paths": [
+              "GAMEMODE_STARTING_ITEMS.DEFAULT.WEBBER.5"
+            ]
+          },
+          "max_count": 1.0,
+          "min_count": 1.0,
+          "source": null,
+          "type": "start"
+        }
+      ],
       "confidence": 1.0,
       "description": {
         "en": null,
@@ -16323,7 +17365,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -16341,7 +17383,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
@@ -16477,7 +17519,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -16495,7 +17537,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
@@ -16516,7 +17558,20 @@
       "prefab_id": "xd_pog",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "trader_deletes_item",
+          "unit": "boolean",
+          "value": "false"
+        },
+        {
+          "confidence": 1.0,
+          "key": "trader_enabled",
+          "unit": "boolean",
+          "value": "true"
+        }
+      ],
       "type": "creature"
     },
     {
@@ -16648,7 +17703,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -16669,7 +17724,20 @@
       "type": "prefab"
     },
     {
-      "acquisition": [],
+      "acquisition": [
+        {
+          "chance": 1.0,
+          "conditions": {
+            "registry_paths": [
+              "GAMEMODE_STARTING_ITEMS.DEFAULT.WANDA.5"
+            ]
+          },
+          "max_count": 1.0,
+          "min_count": 1.0,
+          "source": null,
+          "type": "start"
+        }
+      ],
       "confidence": 1.0,
       "description": {
         "en": null,
@@ -16856,7 +17924,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -16900,7 +17968,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -16918,7 +17986,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [
@@ -17188,12 +18256,25 @@
       "prefab_id": "xd_qxdx_npc",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "trader_deletes_item",
+          "unit": "boolean",
+          "value": "true"
+        },
+        {
+          "confidence": 1.0,
+          "key": "trader_enabled",
+          "unit": "boolean",
+          "value": "true"
+        }
+      ],
       "type": "creature"
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -17214,7 +18295,20 @@
       "type": "unknown"
     },
     {
-      "acquisition": [],
+      "acquisition": [
+        {
+          "chance": 1.0,
+          "conditions": {
+            "registry_paths": [
+              "GAMEMODE_STARTING_ITEMS.DEFAULT.WINONA.4"
+            ]
+          },
+          "max_count": 1.0,
+          "min_count": 1.0,
+          "source": null,
+          "type": "start"
+        }
+      ],
       "confidence": 1.0,
       "description": {
         "en": null,
@@ -17256,7 +18350,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -17274,11 +18368,11 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "creature"
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -17296,7 +18390,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "creature"
     },
     {
       "acquisition": [],
@@ -17388,7 +18482,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -17406,11 +18500,11 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -17428,7 +18522,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
@@ -17542,7 +18636,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -17560,11 +18654,11 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "creature"
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -17586,7 +18680,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -17604,7 +18698,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
@@ -17630,7 +18724,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -17696,7 +18790,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -17806,7 +18900,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -17846,11 +18940,11 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -17868,11 +18962,11 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -18034,7 +19128,26 @@
         }
       ],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "charge_capacity",
+          "unit": "charge",
+          "value": 180.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "current_charge",
+          "unit": "charge",
+          "value": 180.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "recharge_time",
+          "unit": "seconds",
+          "value": 30.0
+        }
+      ],
       "type": "inventory_item"
     },
     {
@@ -18423,21 +19536,64 @@
         },
         {
           "confidence": 1.0,
+          "key": "charge_capacity",
+          "unit": "charge",
+          "value": 180.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "current_charge",
+          "unit": "charge",
+          "value": 180.0
+        },
+        {
+          "confidence": 1.0,
           "key": "damage_absorption",
           "unit": "ratio",
           "value": 0.85
         },
         {
           "confidence": 1.0,
+          "key": "recharge_time",
+          "unit": "seconds",
+          "value": 30.0
+        },
+        {
+          "confidence": 1.0,
           "key": "trade_gold_value",
           "unit": "value",
           "value": 0.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "trader_deletes_item",
+          "unit": "boolean",
+          "value": "true"
+        },
+        {
+          "confidence": 1.0,
+          "key": "trader_enabled",
+          "unit": "boolean",
+          "value": "true"
         }
       ],
       "type": "inventory_item"
     },
     {
-      "acquisition": [],
+      "acquisition": [
+        {
+          "chance": 1.0,
+          "conditions": {
+            "registry_paths": [
+              "GAMEMODE_STARTING_ITEMS.DEFAULT.XD_SHIJI.31"
+            ]
+          },
+          "max_count": 1.0,
+          "min_count": 1.0,
+          "source": null,
+          "type": "start"
+        }
+      ],
       "confidence": 1.0,
       "description": {
         "en": null,
@@ -18904,7 +20060,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -19629,7 +20785,20 @@
       "type": "inventory_item"
     },
     {
-      "acquisition": [],
+      "acquisition": [
+        {
+          "chance": 1.0,
+          "conditions": {
+            "registry_paths": [
+              "GAMEMODE_STARTING_ITEMS.DEFAULT.XD_LONGTAIZI.2"
+            ]
+          },
+          "max_count": 1.0,
+          "min_count": 1.0,
+          "source": null,
+          "type": "start"
+        }
+      ],
       "confidence": 1.0,
       "description": {
         "en": null,
@@ -19671,7 +20840,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -19689,7 +20858,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
@@ -19862,7 +21031,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -19904,6 +21073,24 @@
       "stats": [
         {
           "confidence": 1.0,
+          "key": "charge_capacity",
+          "unit": "charge",
+          "value": 180.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "current_charge",
+          "unit": "charge",
+          "value": 180.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "recharge_time",
+          "unit": "seconds",
+          "value": 30.0
+        },
+        {
+          "confidence": 1.0,
           "key": "trade_gold_value",
           "unit": "value",
           "value": 0.0
@@ -19913,7 +21100,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -19931,7 +21118,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
@@ -19967,7 +21154,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -19985,7 +21172,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
@@ -20060,7 +21247,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -20164,11 +21351,11 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -20186,10 +21373,23 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
-      "acquisition": [],
+      "acquisition": [
+        {
+          "chance": 1.0,
+          "conditions": {
+            "registry_paths": [
+              "GAMEMODE_STARTING_ITEMS.DEFAULT.XD_SUDAJI.2"
+            ]
+          },
+          "max_count": 1.0,
+          "min_count": 1.0,
+          "source": null,
+          "type": "start"
+        }
+      ],
       "confidence": 1.0,
       "description": {
         "en": null,
@@ -20231,7 +21431,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -20249,7 +21449,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [
@@ -20482,7 +21682,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -20499,7 +21699,14 @@
       "prefab_id": "xd_sudaji_soul_spawn",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "damage",
+          "unit": "hp",
+          "value": 0.0
+        }
+      ],
       "type": "prefab"
     },
     {
@@ -20599,11 +21806,37 @@
       "prefab_id": "xd_sudaji_xyj",
       "recipes": [],
       "relations": [],
-      "stats": [],
-      "type": "prefab"
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 2.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "damage",
+          "unit": "hp",
+          "value": 100.0
+        }
+      ],
+      "type": "inventory_item"
     },
     {
-      "acquisition": [],
+      "acquisition": [
+        {
+          "chance": 1.0,
+          "conditions": {
+            "registry_paths": [
+              "GAMEMODE_STARTING_ITEMS.DEFAULT.XD_SUDAJI.1"
+            ]
+          },
+          "max_count": 1.0,
+          "min_count": 1.0,
+          "source": null,
+          "type": "start"
+        }
+      ],
       "confidence": 1.0,
       "description": {
         "en": null,
@@ -20860,7 +22093,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -20878,11 +22111,11 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -20900,11 +22133,11 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -20922,7 +22155,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
@@ -21001,7 +22234,20 @@
       "prefab_id": "xd_tianjiwu",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "trader_deletes_item",
+          "unit": "boolean",
+          "value": "true"
+        },
+        {
+          "confidence": 1.0,
+          "key": "trader_enabled",
+          "unit": "boolean",
+          "value": "true"
+        }
+      ],
       "type": "structure"
     },
     {
@@ -21492,7 +22738,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -21510,10 +22756,23 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
-      "acquisition": [],
+      "acquisition": [
+        {
+          "chance": 1.0,
+          "conditions": {
+            "registry_paths": [
+              "GAMEMODE_STARTING_ITEMS.DEFAULT.WALTER.13"
+            ]
+          },
+          "max_count": 1.0,
+          "min_count": 1.0,
+          "source": null,
+          "type": "start"
+        }
+      ],
       "confidence": 1.0,
       "description": {
         "en": null,
@@ -21555,7 +22814,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -21573,11 +22832,11 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -21599,7 +22858,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -21617,7 +22876,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
@@ -21639,11 +22898,11 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -21661,11 +22920,11 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -21683,7 +22942,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
@@ -21714,12 +22973,25 @@
           "type": "string_alias"
         }
       ],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "trader_deletes_item",
+          "unit": "boolean",
+          "value": "true"
+        },
+        {
+          "confidence": 1.0,
+          "key": "trader_enabled",
+          "unit": "boolean",
+          "value": "true"
+        }
+      ],
       "type": "prefab"
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -21737,7 +23009,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
@@ -21843,7 +23115,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -21861,7 +23133,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [
@@ -22478,19 +23750,38 @@
         }
       ],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "charge_capacity",
+          "unit": "charge",
+          "value": 180.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "current_charge",
+          "unit": "charge",
+          "value": 180.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "recharge_time",
+          "unit": "seconds",
+          "value": 30.0
+        }
+      ],
       "type": "inventory_item"
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
       },
       "effects": [],
       "icon_key": null,
-      "is_inventory_item": false,
+      "is_inventory_item": true,
       "key": "tu_tien:xd_wmz_spell",
       "name": {
         "en": null,
@@ -22501,10 +23792,23 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "inventory_item"
     },
     {
-      "acquisition": [],
+      "acquisition": [
+        {
+          "chance": 1.0,
+          "conditions": {
+            "registry_paths": [
+              "GAMEMODE_STARTING_ITEMS.DEFAULT.XD_WANGMAZI.1"
+            ]
+          },
+          "max_count": 1.0,
+          "min_count": 1.0,
+          "source": null,
+          "type": "start"
+        }
+      ],
       "confidence": 1.0,
       "description": {
         "en": null,
@@ -22583,7 +23887,20 @@
       "type": "prefab"
     },
     {
-      "acquisition": [],
+      "acquisition": [
+        {
+          "chance": 1.0,
+          "conditions": {
+            "registry_paths": [
+              "GAMEMODE_STARTING_ITEMS.DEFAULT.XD_WANGMAZI.3"
+            ]
+          },
+          "max_count": 1.0,
+          "min_count": 1.0,
+          "source": null,
+          "type": "start"
+        }
+      ],
       "confidence": 1.0,
       "description": {
         "en": null,
@@ -22624,7 +23941,20 @@
       "type": "inventory_item"
     },
     {
-      "acquisition": [],
+      "acquisition": [
+        {
+          "chance": 1.0,
+          "conditions": {
+            "registry_paths": [
+              "GAMEMODE_STARTING_ITEMS.DEFAULT.XD_WANGMAZI.2"
+            ]
+          },
+          "max_count": 1.0,
+          "min_count": 1.0,
+          "source": null,
+          "type": "start"
+        }
+      ],
       "confidence": 1.0,
       "description": {
         "en": null,
@@ -22690,7 +24020,20 @@
       "type": "creature"
     },
     {
-      "acquisition": [],
+      "acquisition": [
+        {
+          "chance": 1.0,
+          "conditions": {
+            "registry_paths": [
+              "GAMEMODE_STARTING_ITEMS.DEFAULT.WOLFGANG.2"
+            ]
+          },
+          "max_count": 1.0,
+          "min_count": 1.0,
+          "source": null,
+          "type": "start"
+        }
+      ],
       "confidence": 1.0,
       "description": {
         "en": null,
@@ -22732,7 +24075,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -22865,11 +24208,11 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -22953,7 +24296,20 @@
       "type": "inventory_item"
     },
     {
-      "acquisition": [],
+      "acquisition": [
+        {
+          "chance": 1.0,
+          "conditions": {
+            "registry_paths": [
+              "GAMEMODE_STARTING_ITEMS.DEFAULT.XD_WUKONG.1"
+            ]
+          },
+          "max_count": 1.0,
+          "min_count": 1.0,
+          "source": null,
+          "type": "start"
+        }
+      ],
       "confidence": 1.0,
       "description": {
         "en": null,
@@ -22995,7 +24351,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -23017,7 +24373,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -23035,7 +24391,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
@@ -23082,7 +24438,20 @@
       "type": "creature"
     },
     {
-      "acquisition": [],
+      "acquisition": [
+        {
+          "chance": 1.0,
+          "conditions": {
+            "registry_paths": [
+              "GAMEMODE_STARTING_ITEMS.DEFAULT.WILSON.1"
+            ]
+          },
+          "max_count": 1.0,
+          "min_count": 1.0,
+          "source": null,
+          "type": "start"
+        }
+      ],
       "confidence": 1.0,
       "description": {
         "en": null,
@@ -23123,7 +24492,20 @@
       "type": "inventory_item"
     },
     {
-      "acquisition": [],
+      "acquisition": [
+        {
+          "chance": 1.0,
+          "conditions": {
+            "registry_paths": [
+              "GAMEMODE_STARTING_ITEMS.DEFAULT.WORTOX.7"
+            ]
+          },
+          "max_count": 1.0,
+          "min_count": 1.0,
+          "source": null,
+          "type": "start"
+        }
+      ],
       "confidence": 1.0,
       "description": {
         "en": null,
@@ -23257,7 +24639,20 @@
       "type": "inventory_item"
     },
     {
-      "acquisition": [],
+      "acquisition": [
+        {
+          "chance": 1.0,
+          "conditions": {
+            "registry_paths": [
+              "GAMEMODE_STARTING_ITEMS.DEFAULT.WENDY.2"
+            ]
+          },
+          "max_count": 1.0,
+          "min_count": 1.0,
+          "source": null,
+          "type": "start"
+        }
+      ],
       "confidence": 1.0,
       "description": {
         "en": null,
@@ -23437,7 +24832,20 @@
       "type": "creature"
     },
     {
-      "acquisition": [],
+      "acquisition": [
+        {
+          "chance": 1.0,
+          "conditions": {
+            "registry_paths": [
+              "GAMEMODE_STARTING_ITEMS.DEFAULT.WILLOW.3"
+            ]
+          },
+          "max_count": 1.0,
+          "min_count": 1.0,
+          "source": null,
+          "type": "start"
+        }
+      ],
       "confidence": 1.0,
       "description": {
         "en": null,
@@ -23478,7 +24886,20 @@
       "type": "inventory_item"
     },
     {
-      "acquisition": [],
+      "acquisition": [
+        {
+          "chance": 1.0,
+          "conditions": {
+            "registry_paths": [
+              "GAMEMODE_STARTING_ITEMS.DEFAULT.WES.2"
+            ]
+          },
+          "max_count": 1.0,
+          "min_count": 1.0,
+          "source": null,
+          "type": "start"
+        }
+      ],
       "confidence": 1.0,
       "description": {
         "en": null,
@@ -23520,7 +24941,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -23541,7 +24962,20 @@
       "type": "prefab"
     },
     {
-      "acquisition": [],
+      "acquisition": [
+        {
+          "chance": 1.0,
+          "conditions": {
+            "registry_paths": [
+              "GAMEMODE_STARTING_ITEMS.DEFAULT.WX78.3"
+            ]
+          },
+          "max_count": 1.0,
+          "min_count": 1.0,
+          "source": null,
+          "type": "start"
+        }
+      ],
       "confidence": 1.0,
       "description": {
         "en": null,
@@ -23651,15 +25085,45 @@
         },
         {
           "confidence": 1.0,
+          "key": "charge_capacity",
+          "unit": "charge",
+          "value": 180.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "current_charge",
+          "unit": "charge",
+          "value": 180.0
+        },
+        {
+          "confidence": 1.0,
           "key": "damage_absorption",
           "unit": "ratio",
           "value": 0.9
         },
         {
           "confidence": 1.0,
+          "key": "recharge_time",
+          "unit": "seconds",
+          "value": 30.0
+        },
+        {
+          "confidence": 1.0,
           "key": "trade_gold_value",
           "unit": "value",
           "value": 0.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "trader_deletes_item",
+          "unit": "boolean",
+          "value": "true"
+        },
+        {
+          "confidence": 1.0,
+          "key": "trader_enabled",
+          "unit": "boolean",
+          "value": "true"
         }
       ],
       "type": "inventory_item"
@@ -23951,6 +25415,24 @@
       "recipes": [],
       "relations": [],
       "stats": [
+        {
+          "confidence": 1.0,
+          "key": "charge_capacity",
+          "unit": "charge",
+          "value": 180.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "current_charge",
+          "unit": "charge",
+          "value": 180.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "recharge_time",
+          "unit": "seconds",
+          "value": 30.0
+        },
         {
           "confidence": 1.0,
           "key": "trade_gold_value",
@@ -24262,7 +25744,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -24284,7 +25766,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -24306,7 +25788,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -24328,7 +25810,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -24368,11 +25850,11 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -24456,6 +25938,18 @@
       ],
       "relations": [],
       "stats": [
+        {
+          "confidence": 1.0,
+          "key": "trader_deletes_item",
+          "unit": "boolean",
+          "value": "true"
+        },
+        {
+          "confidence": 1.0,
+          "key": "trader_enabled",
+          "unit": "boolean",
+          "value": "true"
+        },
         {
           "confidence": 1.0,
           "key": "uses",
@@ -24606,9 +26100,39 @@
       "stats": [
         {
           "confidence": 1.0,
+          "key": "charge_capacity",
+          "unit": "charge",
+          "value": 180.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "current_charge",
+          "unit": "charge",
+          "value": 180.0
+        },
+        {
+          "confidence": 1.0,
           "key": "damage",
           "unit": "hp",
           "value": 17.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "recharge_time",
+          "unit": "seconds",
+          "value": 30.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "trader_deletes_item",
+          "unit": "boolean",
+          "value": "true"
+        },
+        {
+          "confidence": 1.0,
+          "key": "trader_enabled",
+          "unit": "boolean",
+          "value": "true"
         },
         {
           "confidence": 1.0,
@@ -24707,6 +26231,24 @@
       "stats": [
         {
           "confidence": 1.0,
+          "key": "charge_capacity",
+          "unit": "charge",
+          "value": 180.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "current_charge",
+          "unit": "charge",
+          "value": 180.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "recharge_time",
+          "unit": "seconds",
+          "value": 30.0
+        },
+        {
+          "confidence": 1.0,
           "key": "trade_gold_value",
           "unit": "value",
           "value": 0.0
@@ -24803,7 +26345,20 @@
       "type": "prefab"
     },
     {
-      "acquisition": [],
+      "acquisition": [
+        {
+          "chance": 1.0,
+          "conditions": {
+            "registry_paths": [
+              "GAMEMODE_STARTING_ITEMS.DEFAULT.XD_YUNXIAO.8"
+            ]
+          },
+          "max_count": 1.0,
+          "min_count": 1.0,
+          "source": null,
+          "type": "start"
+        }
+      ],
       "confidence": 1.0,
       "description": {
         "en": null,
@@ -24845,7 +26400,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -24863,7 +26418,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [
@@ -24957,7 +26512,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -24975,7 +26530,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "creature"
     },
     {
       "acquisition": [
@@ -25053,6 +26608,18 @@
           "key": "trade_gold_value",
           "unit": "value",
           "value": 0.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "trader_deletes_item",
+          "unit": "boolean",
+          "value": "true"
+        },
+        {
+          "confidence": 1.0,
+          "key": "trader_enabled",
+          "unit": "boolean",
+          "value": "true"
         }
       ],
       "type": "inventory_item"
@@ -25136,6 +26703,18 @@
           "key": "trade_gold_value",
           "unit": "value",
           "value": 0.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "trader_deletes_item",
+          "unit": "boolean",
+          "value": "true"
+        },
+        {
+          "confidence": 1.0,
+          "key": "trader_enabled",
+          "unit": "boolean",
+          "value": "true"
         }
       ],
       "type": "inventory_item"
@@ -25365,6 +26944,36 @@
       "stats": [
         {
           "confidence": 1.0,
+          "key": "charge_capacity",
+          "unit": "charge",
+          "value": 180.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "current_charge",
+          "unit": "charge",
+          "value": 180.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "recharge_time",
+          "unit": "seconds",
+          "value": 30.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "trader_deletes_item",
+          "unit": "boolean",
+          "value": "true"
+        },
+        {
+          "confidence": 1.0,
+          "key": "trader_enabled",
+          "unit": "boolean",
+          "value": "true"
+        },
+        {
+          "confidence": 1.0,
           "key": "uses",
           "unit": "uses",
           "value": 10.0
@@ -25484,7 +27093,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -25528,7 +27137,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -25546,11 +27155,11 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "creature"
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -25568,11 +27177,11 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -25594,7 +27203,7 @@
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -25612,11 +27221,11 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "prefab"
+      "type": "unknown"
     },
     {
       "acquisition": [],
-      "confidence": 0.9,
+      "confidence": 1.0,
       "description": {
         "en": null,
         "vi": null
@@ -25816,7 +27425,20 @@
       "prefab_id": "xd_zyg_npc",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "trader_deletes_item",
+          "unit": "boolean",
+          "value": "true"
+        },
+        {
+          "confidence": 1.0,
+          "key": "trader_enabled",
+          "unit": "boolean",
+          "value": "true"
+        }
+      ],
       "type": "prefab"
     },
     {

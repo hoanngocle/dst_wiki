@@ -3,12 +3,19 @@ import subprocess
 import time
 import uuid
 from pathlib import Path
-from typing import List
+import re
+from typing import List, Optional
 
-from tools.extract.runtime_import import load_runtime_bundle, read_runtime_json_bytes
+from tools.extract.contracts import load_bundle
+from tools.extract.runtime_import import (
+    load_runtime_bundle,
+    read_runtime_json_bytes,
+    static_mod_version,
+)
 
 
 SENTINEL = "DST_WIKI_EXTRACT_COMPLETE"
+PREFAB_ID = re.compile(r"^[a-z0-9_]+$")
 
 
 class RuntimeProbeError(RuntimeError):
@@ -114,7 +121,9 @@ def _wait_for_sentinel(
     )
 
 
-def _find_runtime_json(persistent_root: Path) -> Path:
+def _find_runtime_json(
+    persistent_root: Path, expected_version: str, expected_targets: List[str]
+) -> Path:
     candidates = sorted(
         path
         for path in persistent_root.rglob("runtime.json")
@@ -124,8 +133,34 @@ def _find_runtime_json(persistent_root: Path) -> Path:
         raise RuntimeProbeError(
             f"expected exactly one runtime.json under {persistent_root}, found {len(candidates)}"
         )
-    load_runtime_bundle(candidates[0])
+    load_runtime_bundle(
+        candidates[0],
+        expected_mod_version=expected_version,
+        expected_targets=expected_targets,
+    )
     return candidates[0]
+
+
+def _static_target_ids(bundle) -> List[str]:
+    targets = sorted(
+        {
+            fact.subject.prefab_id.lower()
+            for fact in bundle.facts
+            if fact.kind == "entity" and fact.subject.namespace == "tu_tien"
+        }
+    )
+    invalid = [prefab_id for prefab_id in targets if not PREFAB_ID.fullmatch(prefab_id)]
+    if invalid:
+        raise ValueError(f"static runtime target IDs are not safe prefab IDs: {invalid}")
+    if not targets:
+        raise ValueError("static runtime target allowlist is empty")
+    return targets
+
+
+def _write_target_ids(path: Path, targets: List[str]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    body = "return {\n" + "".join(f'    "{target}",\n' for target in targets) + "}\n"
+    path.write_text(body, encoding="utf-8")
 
 
 def run_runtime_probe(
@@ -133,12 +168,20 @@ def run_runtime_probe(
     game_mods_dir: Path,
     workspace: Path,
     timeout_seconds: float,
+    static_path: Optional[Path] = None,
 ) -> Path:
     """Run the exporter in an isolated cluster and return the validated raw output."""
 
     workspace = Path(workspace).resolve()
     server_bin = Path(server_bin).resolve()
     game_mods_dir = Path(game_mods_dir).resolve()
+    static_path = Path(static_path or "data/raw/mod_static.json")
+    if not static_path.is_absolute():
+        static_path = workspace / static_path
+    assert_within_workspace(workspace, static_path)
+    static_bundle = load_bundle(static_path)
+    expected_version = static_mod_version(static_bundle)
+    expected_targets = _static_target_ids(static_bundle)
     if not server_bin.is_file():
         raise FileNotFoundError(f"dedicated server not found: {server_bin}")
     if not game_mods_dir.is_dir():
@@ -169,6 +212,8 @@ def run_runtime_probe(
                 raise RuntimeProbeError(f"refusing to replace existing game mod: {target}")
             copied.append(target)
             shutil.copytree(source, target, symlinks=False)
+            if name == probe_name:
+                _write_target_ids(target / "scripts/target_ids.lua", expected_targets)
 
         command = [
             str(server_bin),
@@ -197,13 +242,19 @@ def run_runtime_probe(
             finally:
                 _terminate_started_process(process)
 
-        runtime_path = _find_runtime_json(persistent_root)
+        runtime_path = _find_runtime_json(
+            persistent_root, expected_version, expected_targets
+        )
         destination = workspace / "data/raw/runtime.json"
         assert_within_workspace(workspace, destination)
         destination.parent.mkdir(parents=True, exist_ok=True)
         temporary = destination.with_name(f".{destination.name}.{run_id}.tmp")
         temporary.write_bytes(read_runtime_json_bytes(runtime_path))
-        load_runtime_bundle(temporary)
+        load_runtime_bundle(
+            temporary,
+            expected_mod_version=expected_version,
+            expected_targets=expected_targets,
+        )
         temporary.replace(destination)
         return destination
     finally:

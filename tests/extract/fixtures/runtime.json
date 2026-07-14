@@ -1,13 +1,26 @@
 {
   "errors": [],
   "mod_version": "18.0.10",
+  "coverage": [
+    {"category": "buff_debuff", "details": {}, "prefab": "xd_test_sword", "reason": "fixture", "status": "unobserved"},
+    {"category": "cooldown_recharge", "details": {}, "prefab": "xd_test_sword", "reason": "fixture", "status": "unobserved"},
+    {"category": "craft", "details": {}, "prefab": "xd_test_sword", "reason": "fixture", "status": "observed"},
+    {"category": "drop", "details": {}, "prefab": "xd_test_sword", "reason": "fixture", "status": "unobserved"},
+    {"category": "harvest", "details": {}, "prefab": "xd_test_sword", "reason": "fixture", "status": "unobserved"},
+    {"category": "progression", "details": {}, "prefab": "xd_test_sword", "reason": "fixture", "status": "observed"},
+    {"category": "start_gift", "details": {}, "prefab": "xd_test_sword", "reason": "fixture", "status": "unobserved"},
+    {"category": "trade_shop", "details": {}, "prefab": "xd_test_sword", "reason": "fixture", "status": "unobserved"},
+    {"category": "world_spawn", "details": {}, "prefab": "xd_test_sword", "reason": "fixture", "status": "unsupported"}
+  ],
   "prefabs": [
     {
       "entity_type": "inventory_item",
+      "effects": [],
       "harvest": [],
       "loot": [],
       "prefab": "xd_test_sword",
       "relations": [],
+      "trade": [],
       "stats": [
         {
           "key": "damage",
@@ -38,5 +51,6 @@
       "tech": "SCIENCE_ONE"
     }
   ],
-  "schema_version": 1
+  "schema_version": 2,
+  "targets": ["xd_test_sword"]
 }

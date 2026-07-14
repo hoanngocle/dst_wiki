@@ -5,18 +5,84 @@ import unittest
 from pathlib import Path
 from unittest import mock
 
-from tools.extract.contracts import EntityKey
+from tools.extract.contracts import EntityKey, Fact, FactBundle, SourceRef, dump_bundle
 from tools.extract.runtime_import import load_runtime_bundle
 from tools.extract.runtime_runner import assert_within_workspace, run_runtime_probe
+from tools.extract import cli
 from tools.extract.cli import build_parser
+
+
+COVERAGE_CATEGORIES = (
+    "buff_debuff",
+    "cooldown_recharge",
+    "craft",
+    "drop",
+    "harvest",
+    "progression",
+    "start_gift",
+    "trade_shop",
+    "world_spawn",
+)
+
+
+def runtime_payload(*, recipes=None, prefabs=None, targets=None, coverage=None, errors=None, mod_version="18.0.10"):
+    recipes = list(recipes or [])
+    prefabs = list(prefabs or [])
+    if targets is None:
+        targets = sorted(
+            {str(recipe["product"]).lower() for recipe in recipes}
+            | {str(prefab["prefab"]).lower() for prefab in prefabs}
+        )
+    if coverage is None:
+        coverage = [
+            {
+                "prefab": prefab,
+                "category": category,
+                "status": "unobserved",
+                "reason": "fixture",
+                "details": {},
+            }
+            for prefab in targets
+            for category in COVERAGE_CATEGORIES
+        ]
+    return {
+        "schema_version": 2,
+        "mod_version": mod_version,
+        "targets": list(targets),
+        "recipes": recipes,
+        "prefabs": prefabs,
+        "coverage": coverage,
+        "errors": list(errors or []),
+    }
+
+
+def write_static_fixture(workspace: Path, prefab_ids=("xd_test",), version="18.0.10") -> Path:
+    source = SourceRef(
+        "mod-static",
+        "mod_static",
+        "mod/3721846643/modinfo.lua",
+        version,
+        "a" * 64,
+    )
+    facts = [
+        Fact(
+            "entity",
+            EntityKey("tu_tien", prefab_id),
+            {"entity_type": "unknown", "discovered_by": "fixture"},
+            source,
+            1.0,
+        )
+        for prefab_id in prefab_ids
+    ]
+    path = workspace / "data/raw/mod_static.json"
+    dump_bundle(path, FactBundle(1, [source], facts, []))
+    return path
 
 
 class RuntimeImportTests(unittest.TestCase):
     def test_recipe_ingredients_become_dependency_facts(self):
-        payload = {
-            "schema_version": 1,
-            "mod_version": "18.0.10",
-            "recipes": [
+        payload = runtime_payload(
+            recipes=[
                 {
                     "product": "xd_test_sword",
                     "ingredients": [
@@ -38,10 +104,8 @@ class RuntimeImportTests(unittest.TestCase):
                     "builder_tags": [],
                     "output_count": 1,
                 }
-            ],
-            "prefabs": [],
-            "errors": [],
-        }
+            ]
+        )
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "runtime.json"
             path.write_text(json.dumps(payload), encoding="utf-8")
@@ -75,11 +139,8 @@ class RuntimeImportTests(unittest.TestCase):
         )
 
     def test_runtime_references_remain_unresolved_until_base_game_enrichment(self):
-        payload = {
-            "schema_version": 1,
-            "mod_version": "18.0.10",
-            "recipes": [],
-            "prefabs": [
+        payload = runtime_payload(
+            prefabs=[
                 {
                     "prefab": "xd_source",
                     "entity_type": "creature",
@@ -93,8 +154,8 @@ class RuntimeImportTests(unittest.TestCase):
                     ],
                 }
             ],
-            "errors": [],
-        }
+            targets=["xd_lingshi1", "xd_source"],
+        )
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "runtime.json"
             path.write_text(json.dumps(payload), encoding="utf-8")
@@ -137,11 +198,8 @@ class RuntimeImportTests(unittest.TestCase):
         self.assertNotIn("target_namespace", relation.payload)
 
     def test_empty_runtime_conditions_normalize_to_an_object(self):
-        payload = {
-            "schema_version": 1,
-            "mod_version": "18.0.10",
-            "recipes": [],
-            "prefabs": [
+        payload = runtime_payload(
+            prefabs=[
                 {
                     "prefab": "xd_source",
                     "stats": [],
@@ -156,9 +214,8 @@ class RuntimeImportTests(unittest.TestCase):
                     "harvest": [],
                     "relations": [],
                 }
-            ],
-            "errors": [],
-        }
+            ]
+        )
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "runtime.json"
             path.write_text(json.dumps(payload), encoding="utf-8")
@@ -188,10 +245,12 @@ class RuntimeImportTests(unittest.TestCase):
             path.write_text(
                 json.dumps(
                     {
-                        "schema_version": 2,
+                        "schema_version": 99,
                         "mod_version": "18.0.10",
+                        "targets": [],
                         "recipes": [],
                         "prefabs": [],
+                        "coverage": [],
                         "errors": [],
                     }
                 ),
@@ -201,10 +260,8 @@ class RuntimeImportTests(unittest.TestCase):
                 load_runtime_bundle(path)
 
     def test_rejects_invalid_nested_runtime_shapes(self):
-        payload = {
-            "schema_version": 1,
-            "mod_version": "18.0.10",
-            "recipes": [
+        payload = runtime_payload(
+            recipes=[
                 {
                     "product": "xd_bad",
                     "ingredients": [
@@ -222,10 +279,8 @@ class RuntimeImportTests(unittest.TestCase):
                     "builder_tags": [],
                     "output_count": True,
                 }
-            ],
-            "prefabs": [],
-            "errors": [],
-        }
+            ]
+        )
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "runtime.json"
             path.write_text(json.dumps(payload), encoding="utf-8")
@@ -233,19 +288,146 @@ class RuntimeImportTests(unittest.TestCase):
                 load_runtime_bundle(path)
 
     def test_imports_dst_persistent_envelope(self):
-        payload = {
-            "schema_version": 1,
-            "mod_version": "18.0.10",
-            "recipes": [],
-            "prefabs": [],
-            "errors": [],
-        }
+        payload = runtime_payload()
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "runtime.json"
             encoded = json.dumps(payload, separators=(",", ":")).encode("utf-8")
             path.write_bytes(b"KLEI     1 " + encoded)
             bundle = load_runtime_bundle(path)
         self.assertEqual(bundle.schema_version, 1)
+
+    def test_expected_mod_version_mismatch_hard_fails(self):
+        payload = runtime_payload(mod_version="18.0.9")
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "runtime.json"
+            path.write_text(json.dumps(payload), encoding="utf-8")
+            with self.assertRaisesRegex(
+                ValueError, r"runtime mod_version 18\.0\.9.*static mod version 18\.0\.10"
+            ):
+                load_runtime_bundle(path, expected_mod_version="18.0.10")
+
+    def test_imports_non_xd_targets_trade_effects_and_explicit_coverage(self):
+        prefab = {
+            "prefab": "fence_luoshen",
+            "entity_type": "structure",
+            "stats": [
+                {"key": "cooldown_duration", "value": 12, "unit": "seconds"}
+            ],
+            "effects": [
+                {
+                    "effect_key": "timer:shield",
+                    "trigger": "timer",
+                    "value": {"time_left": 4},
+                    "duration": 10,
+                }
+            ],
+            "loot": [],
+            "harvest": [],
+            "trade": [
+                {
+                    "prefab": "wall_luoshen",
+                    "chance": 1,
+                    "count": 1,
+                    "conditions": {"cost_prefab": "fence_luoshen"},
+                }
+            ],
+            "relations": [
+                {"relation": "trades_for", "target_prefab_id": "wall_luoshen"}
+            ],
+        }
+        payload = runtime_payload(
+            prefabs=[prefab], targets=["fence_luoshen", "wall_luoshen"]
+        )
+        payload["coverage"][0].update(
+            {"status": "observed", "reason": "timer component", "details": {"count": 1}}
+        )
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "runtime.json"
+            path.write_text(json.dumps(payload), encoding="utf-8")
+            bundle = load_runtime_bundle(path)
+
+        self.assertTrue(
+            any(
+                fact.kind == "entity"
+                and fact.subject == EntityKey("tu_tien", "fence_luoshen")
+                for fact in bundle.facts
+            )
+        )
+        trade = next(
+            fact
+            for fact in bundle.facts
+            if fact.kind == "acquisition" and fact.payload["type"] == "trade"
+        )
+        self.assertEqual(
+            trade.payload["target"],
+            {
+                "namespace": "tu_tien",
+                "prefab_id": "wall_luoshen",
+                "resolution": "resolved",
+            },
+        )
+        effect = next(fact for fact in bundle.facts if fact.kind == "effect")
+        self.assertEqual(effect.payload["duration"], 10)
+        coverage = [fact for fact in bundle.facts if fact.kind == "coverage"]
+        self.assertEqual(len(coverage), 2 * len(COVERAGE_CATEGORIES))
+        self.assertEqual(coverage[0].source.kind, "runtime_probe")
+
+    def test_rejects_incomplete_runtime_coverage_matrix(self):
+        payload = runtime_payload(targets=["xd_test"])
+        payload["coverage"].pop()
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "runtime.json"
+            path.write_text(json.dumps(payload), encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "coverage matrix"):
+                load_runtime_bundle(path)
+
+    def test_empty_lua_coverage_details_normalize_to_object(self):
+        payload = runtime_payload(targets=["xd_test"])
+        payload["coverage"][0]["details"] = []
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "runtime.json"
+            path.write_text(json.dumps(payload), encoding="utf-8")
+            bundle = load_runtime_bundle(path)
+        row = next(
+            fact
+            for fact in bundle.facts
+            if fact.kind == "coverage"
+            and fact.payload["category"] == COVERAGE_CATEGORIES[0]
+        )
+        self.assertEqual(row.payload["details"], {})
+
+    def test_observed_start_registry_becomes_start_acquisition(self):
+        payload = runtime_payload(targets=["xd_start_gift"])
+        start_row = next(
+            row for row in payload["coverage"] if row["category"] == "start_gift"
+        )
+        start_row.update(
+            {
+                "status": "observed",
+                "reason": "starting-item registry entries captured",
+                "details": {
+                    "count": 2,
+                    "paths": [
+                        "GAMEMODE_STARTING_ITEMS.DEFAULT.XD_TEST.1",
+                        "GAMEMODE_STARTING_ITEMS.DEFAULT.XD_TEST.2",
+                    ],
+                },
+            }
+        )
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "runtime.json"
+            path.write_text(json.dumps(payload), encoding="utf-8")
+            bundle = load_runtime_bundle(path)
+        acquisition = next(
+            fact
+            for fact in bundle.facts
+            if fact.kind == "acquisition" and fact.payload["type"] == "start"
+        )
+        self.assertEqual(acquisition.subject, EntityKey("tu_tien", "xd_start_gift"))
+        self.assertEqual(
+            acquisition.payload["conditions"]["registry_paths"],
+            start_row["details"]["paths"],
+        )
 
 
 class RuntimeRunnerTests(unittest.TestCase):
@@ -264,6 +446,7 @@ class RuntimeRunnerTests(unittest.TestCase):
             ]
         )
         self.assertEqual(args.timeout, 45)
+        self.assertEqual(args.static, Path("data/raw/mod_static.json"))
         imported = build_parser().parse_args(
             ["import-runtime", "--input", "capture/runtime.json"]
         )
@@ -277,6 +460,40 @@ class RuntimeRunnerTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "outside workspace"):
                 assert_within_workspace(workspace, workspace.parent / "escape")
 
+    def test_import_runtime_and_build_db_reject_stale_runtime_before_normalize(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            static_path = write_static_fixture(root, version="18.0.10")
+            runtime_path = root / "runtime.json"
+            runtime_path.write_text(
+                json.dumps(runtime_payload(mod_version="18.0.9")), encoding="utf-8"
+            )
+            base_path = root / "base.json"
+            dump_bundle(base_path, FactBundle(1, [], [], []))
+
+            with self.assertRaisesRegex(ValueError, "runtime mod_version"):
+                cli._import_runtime_stage(runtime_path, static_path)
+            with mock.patch.object(cli, "normalize") as normalize:
+                with self.assertRaisesRegex(ValueError, "runtime mod_version"):
+                    cli._build_db_stage(
+                        static_path, runtime_path, base_path, root / "wiki.sqlite"
+                    )
+                normalize.assert_not_called()
+
+    def test_all_stops_on_runtime_version_mismatch(self):
+        mismatch = ValueError(
+            "runtime mod_version 18.0.9 does not match static mod version 18.0.10"
+        )
+        with mock.patch.object(cli, "_extract_static_stage"), mock.patch.object(
+            cli, "_import_runtime_stage", side_effect=mismatch
+        ), mock.patch.object(cli, "_enrich_base_stage") as enrich, mock.patch.object(
+            cli, "_build_db_stage"
+        ) as build:
+            with self.assertRaisesRegex(ValueError, "runtime mod_version"):
+                cli.run_all()
+        enrich.assert_not_called()
+        build.assert_not_called()
+
     def test_runner_copies_mods_uses_unique_root_and_cleans_only_own_mods(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -288,15 +505,23 @@ class RuntimeRunnerTests(unittest.TestCase):
             (workspace / "mod/3721846643/modinfo.lua").write_text("version='test'\n")
             (workspace / "tools/runtime_mod").mkdir(parents=True)
             (workspace / "tools/runtime_mod/modinfo.lua").write_text("version='test'\n")
+            write_static_fixture(
+                workspace, ("wall_luoshen", "xd_test"), version="test"
+            )
 
             server = root / "fake-server"
             server.write_text(
                 "#!/usr/bin/env python3\n"
-                "import json, pathlib, sys\n"
+                "import json, pathlib, re, sys\n"
                 "root = pathlib.Path(sys.argv[sys.argv.index('-persistent_storage_root') + 1])\n"
                 "target = root / 'probe-output' / 'runtime.json'\n"
                 "target.parent.mkdir(parents=True, exist_ok=True)\n"
-                "payload = json.dumps({'schema_version': 1, 'mod_version': 'test', 'recipes': [], 'prefabs': [], 'errors': []}).encode()\n"
+                "mods = pathlib.Path(__file__).parent / 'game-mods'\n"
+                "probe = next(mods.glob('dst_wiki_probe_*'))\n"
+                "ids = re.findall(r'\\\"([^\\\"]+)\\\"', (probe / 'scripts/target_ids.lua').read_text())\n"
+                f"categories = {COVERAGE_CATEGORIES!r}\n"
+                "coverage = [{'prefab': prefab, 'category': category, 'status': 'unobserved', 'reason': 'fixture', 'details': {}} for prefab in ids for category in categories]\n"
+                "payload = json.dumps({'schema_version': 2, 'mod_version': 'test', 'targets': ids, 'recipes': [], 'prefabs': [], 'coverage': coverage, 'errors': []}).encode()\n"
                 "target.write_bytes(b'KLEI     1 ' + payload)\n"
                 "print('DST_WIKI_EXTRACT_COMPLETE', flush=True)\n",
                 encoding="utf-8",
@@ -307,7 +532,9 @@ class RuntimeRunnerTests(unittest.TestCase):
             second = run_runtime_probe(server, game_mods, workspace, timeout_seconds=10)
 
             self.assertEqual(first, (workspace / "data/raw/runtime.json").resolve())
-            self.assertEqual(json.loads(second.read_text())["schema_version"], 1)
+            result = json.loads(second.read_text())
+            self.assertEqual(result["schema_version"], 2)
+            self.assertEqual(result["targets"], ["wall_luoshen", "xd_test"])
             self.assertTrue((game_mods / "keep-me").is_dir())
             self.assertEqual(
                 sorted(path.name for path in game_mods.iterdir()), ["keep-me"]
@@ -326,6 +553,7 @@ class RuntimeRunnerTests(unittest.TestCase):
             (game_mods / "keep-me").mkdir()
             (workspace / "mod/3721846643").mkdir(parents=True)
             (workspace / "tools/runtime_mod").mkdir(parents=True)
+            write_static_fixture(workspace)
             server = root / "server"
             server.write_text("not executed", encoding="utf-8")
 
@@ -353,13 +581,14 @@ class RuntimeRunnerTests(unittest.TestCase):
             game_mods.mkdir()
             (workspace / "mod/3721846643").mkdir(parents=True)
             (workspace / "tools/runtime_mod").mkdir(parents=True)
+            write_static_fixture(workspace)
             server = root / "fake-server"
             server.write_text(
                 "#!/usr/bin/env python3\n"
                 "import json, pathlib, sys\n"
                 "root = pathlib.Path(sys.argv[sys.argv.index('-persistent_storage_root') + 1])\n"
                 "target = root / 'runtime.json'\n"
-                "target.write_text(json.dumps({'schema_version': 1, 'mod_version': 'test', 'recipes': [], 'prefabs': [], 'errors': []}))\n"
+                f"target.write_text({json.dumps(runtime_payload(targets=['xd_test']))!r})\n"
                 "print('DST_WIKI_EXTRACT_COMPLETE', flush=True)\n",
                 encoding="utf-8",
             )
@@ -402,8 +631,21 @@ class RuntimeLuaContractTests(unittest.TestCase):
             "tradable",
             "stackable",
             "container",
+            "trader",
+            "rechargeable",
+            "cooldown",
+            "debuff",
+            "debuffable",
+            "timer",
         ):
             self.assertIn(f"components.{component}", exporter)
+        self.assertIn('require("target_ids")', exporter)
+        self.assertIn("TUNING.GAMEMODE_STARTING_ITEMS", exporter)
+        self.assertIn('category = "world_spawn"', exporter)
+        self.assertIn('status = "unsupported"', exporter)
+        self.assertNotIn("timer_data.initial_time", exporter)
+        self.assertNotIn("timer_data.timeleft", exporter)
+        self.assertIn("runtime timer state is instance-specific", exporter)
         self.assertIn("local function SanitizeError", exporter)
         self.assertIn('recipe.character_ingredients', exporter)
         self.assertIn('recipe.tech_ingredients', exporter)

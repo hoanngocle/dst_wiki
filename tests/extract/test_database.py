@@ -15,6 +15,59 @@ def source(source_id, kind, marker):
 
 
 class DatabaseTests(unittest.TestCase):
+    def test_runtime_coverage_facts_are_persisted_with_provenance(self):
+        runtime = source("runtime", "runtime_probe", "b")
+        key = EntityKey("tu_tien", "wall_luoshen")
+        facts = [
+            Fact(
+                "entity",
+                key,
+                {"entity_type": "structure"},
+                runtime,
+                1.0,
+                "targets:0",
+            ),
+            Fact(
+                "coverage",
+                key,
+                {
+                    "category": "world_spawn",
+                    "status": "unsupported",
+                    "reason": "no safe reverse world-spawn registry",
+                    "details": {},
+                },
+                runtime,
+                1.0,
+                "coverage:0",
+            ),
+        ]
+
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "wiki.sqlite"
+            write_database(path, normalize([FactBundle(1, [runtime], facts, [])]))
+            db = sqlite3.connect(path)
+            self.assertEqual(
+                db.execute(
+                    "select namespace,prefab_id,category,status,reason,details_json "
+                    "from runtime_coverage"
+                ).fetchone(),
+                (
+                    "tu_tien",
+                    "wall_luoshen",
+                    "world_spawn",
+                    "unsupported",
+                    "no safe reverse world-spawn registry",
+                    "{}",
+                ),
+            )
+            self.assertEqual(
+                db.execute(
+                    "select record_type from evidence where locator='coverage:0'"
+                ).fetchone()[0],
+                "coverage",
+            )
+            db.close()
+
     def test_runtime_wins_and_conflict_keeps_both_evidence_rows(self):
         static = source("static", "mod_static", "a")
         runtime = source("runtime", "runtime_probe", "b")

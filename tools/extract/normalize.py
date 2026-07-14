@@ -49,6 +49,7 @@ class NormalizedCatalog:
     acquisition_sources: List[Dict[str, Any]] = field(default_factory=list)
     stats: List[Dict[str, Any]] = field(default_factory=list)
     effects: List[Dict[str, Any]] = field(default_factory=list)
+    runtime_coverage: List[Dict[str, Any]] = field(default_factory=list)
     entity_relations: List[Dict[str, Any]] = field(default_factory=list)
     assets: List[Dict[str, Any]] = field(default_factory=list)
     evidence: List[Dict[str, Any]] = field(default_factory=list)
@@ -288,6 +289,7 @@ def normalize(bundles: Sequence[FactBundle]) -> NormalizedCatalog:
         "acquisition",
         "stat",
         "effect",
+        "coverage",
         "relation",
         "asset",
     }
@@ -598,6 +600,39 @@ def normalize(bundles: Sequence[FactBundle]) -> NormalizedCatalog:
             semantic = _json(row)
             semantic_groups.setdefault(("effect", semantic), []).append(candidate)
             semantic_rows[("effect", semantic)] = row
+        elif fact.kind == "coverage":
+            payload = fact.payload
+            category = payload.get("category")
+            status = payload.get("status")
+            reason = payload.get("reason")
+            details = payload.get("details", {})
+            if not isinstance(category, str) or not category:
+                raise ValueError(
+                    f"coverage for {_entity_id(fact.subject)} has no category"
+                )
+            if status not in {"observed", "unobserved", "unsupported"}:
+                raise ValueError(
+                    f"coverage for {_entity_id(fact.subject)} has invalid status"
+                )
+            if not isinstance(reason, str) or not reason:
+                raise ValueError(
+                    f"coverage for {_entity_id(fact.subject)} has no reason"
+                )
+            if not isinstance(details, dict):
+                raise ValueError(
+                    f"coverage for {_entity_id(fact.subject)} details must be an object"
+                )
+            row = {
+                "namespace": fact.subject.namespace,
+                "prefab_id": fact.subject.prefab_id,
+                "category": category,
+                "status": status,
+                "reason": reason,
+                "details_json": _json(details),
+            }
+            semantic = _json(row)
+            semantic_groups.setdefault(("coverage", semantic), []).append(candidate)
+            semantic_rows[("coverage", semantic)] = row
 
     for semantic_key, group in sorted(semantic_groups.items()):
         kind, semantic = semantic_key
@@ -612,6 +647,9 @@ def normalize(bundles: Sequence[FactBundle]) -> NormalizedCatalog:
         elif kind == "asset":
             row["asset_id"] = record_id
             catalog.assets.append(row)
+        elif kind == "coverage":
+            row["coverage_id"] = record_id
+            catalog.runtime_coverage.append(row)
         else:
             row["effect_id"] = record_id
             catalog.effects.append(row)
@@ -700,6 +738,7 @@ def normalize(bundles: Sequence[FactBundle]) -> NormalizedCatalog:
         "acquisition_sources",
         "stats",
         "effects",
+        "runtime_coverage",
         "entity_relations",
         "assets",
         "evidence",

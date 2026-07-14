@@ -320,6 +320,27 @@ def validate_catalog(db_path: Path, manifest_path: Optional[Path] = None) -> Dic
             }
             for row in db.execute("select * from conflicts order by subject_key,field_key,conflict_id")
         ]
+        runtime_coverage = [
+            {
+                "coverage_id": row["coverage_id"],
+                "namespace": row["namespace"],
+                "prefab_id": row["prefab_id"],
+                "category": row["category"],
+                "status": row["status"],
+                "reason": row["reason"],
+                "details": _loads(row["details_json"]),
+            }
+            for row in db.execute(
+                "select * from runtime_coverage "
+                "order by namespace,prefab_id,category,coverage_id"
+            )
+        ]
+        runtime_coverage_summary: Dict[str, int] = {}
+        for row in runtime_coverage:
+            status = row["status"]
+            runtime_coverage_summary[status] = (
+                runtime_coverage_summary.get(status, 0) + 1
+            )
         archive = _archive_report(db, db_path, manifest_path)
         wiki_urls = _urls(
             _provenance_strings(
@@ -344,6 +365,13 @@ def validate_catalog(db_path: Path, manifest_path: Optional[Path] = None) -> Dic
                 "count": len(low_confidence_fields),
             }
         )
+    runtime_gaps = sum(
+        count
+        for status, count in runtime_coverage_summary.items()
+        if status != "observed"
+    )
+    if runtime_gaps:
+        warnings.append({"code": "runtime_coverage_gaps", "count": runtime_gaps})
     hard_failures = []
     if foreign_keys:
         hard_failures.append("foreign_key_errors")
@@ -360,6 +388,8 @@ def validate_catalog(db_path: Path, manifest_path: Optional[Path] = None) -> Dic
         "unresolved_dependencies": unresolved,
         "foreign_key_errors": foreign_keys,
         "runtime_errors": runtime_errors,
+        "runtime_coverage": runtime_coverage,
+        "runtime_coverage_summary": runtime_coverage_summary,
         "low_confidence_fields": low_confidence_fields,
         "extraction_errors": extraction_errors,
         "conflicts": conflicts,

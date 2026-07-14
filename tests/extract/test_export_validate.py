@@ -192,6 +192,52 @@ class ExportValidateTests(unittest.TestCase):
                 report["warnings"],
             )
 
+    def test_validation_surfaces_explicit_runtime_coverage_rows(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            path = self.build_catalog(root)
+            db = sqlite3.connect(path)
+            db.executemany(
+                "insert into runtime_coverage values(?,?,?,?,?,?,?)",
+                [
+                    (
+                        "coverage-a",
+                        "tu_tien",
+                        "xd_test_sword",
+                        "buff_debuff",
+                        "unobserved",
+                        "no debuff component at spawn",
+                        "{}",
+                    ),
+                    (
+                        "coverage-b",
+                        "tu_tien",
+                        "xd_test_sword",
+                        "world_spawn",
+                        "unsupported",
+                        "no safe reverse world-spawn registry",
+                        "{}",
+                    ),
+                ],
+            )
+            db.commit()
+            db.close()
+
+            report = validate_catalog(path)
+
+            self.assertEqual(
+                report["runtime_coverage_summary"],
+                {"unobserved": 1, "unsupported": 1},
+            )
+            self.assertEqual(
+                [row["category"] for row in report["runtime_coverage"]],
+                ["buff_debuff", "world_spawn"],
+            )
+            self.assertIn(
+                {"code": "runtime_coverage_gaps", "count": 2},
+                report["warnings"],
+            )
+
     def test_validation_scans_evidence_locator_and_nested_manifest_strings(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
