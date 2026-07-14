@@ -114,7 +114,7 @@ export function WikiSearch({ entries }: { entries: readonly WikiEntry[] }) {
             className="h-14 w-full rounded-[10px] border border-[#a8b8cc] bg-[#f8fafc] pl-12 pr-28 text-base text-[#14233b] placeholder:text-[#53647a] shadow-[0_10px_28px_rgba(34,61,96,0.08)] outline-none transition focus:border-[#2e5fb3] focus:ring-4 focus:ring-[#2e5fb3]/15"
           />
           {query ? (
-            <button type="button" onClick={clearQueryAndFocus} aria-label="Clear search" className="absolute right-3 top-1/2 inline-flex -translate-y-1/2 items-center gap-1 rounded-md px-2 py-1 text-sm text-[#53647a] hover:bg-[#e9eff6] active:scale-[0.98]">
+            <button type="button" onClick={clearQueryAndFocus} aria-label="Clear search" className="absolute right-3 top-1/2 inline-flex min-h-10 -translate-y-1/2 items-center gap-1 rounded-md px-2 py-1 text-sm text-[#53647a] hover:bg-[#e9eff6] active:scale-[0.98]">
               <X aria-hidden="true" size={16} /> Clear
             </button>
           ) : (

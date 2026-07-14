@@ -83,6 +83,16 @@ describe("WikiSearch", () => {
     expect(document.activeElement).toBe(search);
   });
 
+  it("keeps the clear search touch target at least 40px tall", () => {
+    render(<WikiSearch entries={entries} />);
+    fireEvent.change(screen.getByRole("searchbox", { name: "Search the atlas" }), {
+      target: { value: "mire" },
+    });
+
+    const clear = screen.getByRole("button", { name: "Clear search" });
+    expect(clear.className.split(/\s+/)).toContain("min-h-10");
+  });
+
   it("focuses search when slash is pressed outside an editable control", () => {
     render(<WikiSearch entries={entries} />);
     fireEvent.keyDown(window, { key: "/" });
