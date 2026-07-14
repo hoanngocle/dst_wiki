@@ -8,7 +8,9 @@ from tools.extract.base_game import (
     verify_snapshot_archive,
 )
 from tools.extract.contracts import dump_bundle, load_bundle
+from tools.extract.database import write_database
 from tools.extract.mod_static import extract_mod_static
+from tools.extract.normalize import normalize
 from tools.extract.runtime_import import load_runtime_bundle
 from tools.extract.runtime_runner import run_runtime_probe
 from tools.extract.source_manifest import ARCHIVES, snapshot_game_sources
@@ -72,7 +74,20 @@ def build_parser() -> argparse.ArgumentParser:
     enrich_base.add_argument(
         "--output", type=Path, default=Path("data/raw/base_game.json")
     )
-    for name in ("build-db", "export", "validate", "all"):
+    build_db = sub.add_parser("build-db")
+    build_db.add_argument(
+        "--static", type=Path, default=Path("data/raw/mod_static.json")
+    )
+    build_db.add_argument(
+        "--runtime", type=Path, default=Path("data/raw/runtime.json")
+    )
+    build_db.add_argument(
+        "--base", type=Path, default=Path("data/raw/base_game.json")
+    )
+    build_db.add_argument(
+        "--output", type=Path, default=Path("data/generated/wiki.sqlite")
+    )
+    for name in ("export", "validate", "all"):
         sub.add_parser(name)
     return parser
 
@@ -141,6 +156,19 @@ def main() -> int:
             f"{args.output} requests={len(requests)} resolved={resolved} "
             f"unresolved={unresolved} closure={closure} facts={len(bundle.facts)} "
             f"errors={len(bundle.errors)}"
+        )
+        return 0
+    if args.command == "build-db":
+        bundles = [
+            load_bundle(args.static),
+            load_runtime_bundle(args.runtime),
+            load_bundle(args.base),
+        ]
+        catalog = normalize(bundles)
+        write_database(args.output, catalog)
+        print(
+            f"{args.output} entities={len(catalog.entities)} "
+            f"evidence={len(catalog.evidence)} conflicts={len(catalog.conflicts)}"
         )
         return 0
     raise SystemExit(f"stage not wired: {args.command}")
