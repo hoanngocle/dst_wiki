@@ -1,6 +1,7 @@
 import argparse
 from pathlib import Path
 
+from tools.extract.assets import add_base_game_asset_facts
 from tools.extract.base_game import (
     derive_dependency_requests,
     enrich_dependencies,
@@ -61,6 +62,9 @@ def build_parser() -> argparse.ArgumentParser:
         "--manifest", type=Path, default=Path("data/sources/game/manifest.json")
     )
     enrich_base.add_argument(
+        "--images", type=Path, default=Path("data/sources/game/images.zip")
+    )
+    enrich_base.add_argument(
         "--base-translation-po",
         type=Path,
         default=Path("mod/3731181944/viethoa.po"),
@@ -116,6 +120,7 @@ def main() -> int:
         bundle = enrich_dependencies(
             args.scripts, requests, args.base_translation_po
         )
+        bundle = add_base_game_asset_facts(bundle, args.images, args.manifest)
         dump_bundle(args.output, bundle)
         resolved = len(
             {fact.subject.prefab_id for fact in bundle.facts if fact.kind == "entity"}

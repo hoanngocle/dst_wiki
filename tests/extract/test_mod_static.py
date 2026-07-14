@@ -78,14 +78,20 @@ class ModStaticTests(unittest.TestCase):
             )
             (mod_root / "scripts/prefabs/xd_prefab.lua").write_text("return {}\n", encoding="utf-8")
             (mod_root / "images/inventoryimages/xd_icon.xml").write_text(
-                '<Atlas><Elements><Element name="xd_icon.tex" /></Elements></Atlas>', encoding="utf-8"
+                '<Atlas><Texture filename="xd_icon.tex"/><Elements>'
+                '<Element name="xd_icon.tex" u1="0" u2="1" v1="0" v2="1"/>'
+                '</Elements></Atlas>', encoding="utf-8"
             )
             (mod_root / "images/inventoryimages/xd_icon.tex").write_bytes(b"tex")
             (mod_root / "images/inventoryimages/xd_missing.xml").write_text(
-                '<Atlas><Elements><Element name="xd_missing.tex" /></Elements></Atlas>', encoding="utf-8"
+                '<Atlas><Texture filename="xd_missing.tex"/><Elements>'
+                '<Element name="xd_missing.tex" u1="0" u2="1" v1="0" v2="1"/>'
+                '</Elements></Atlas>', encoding="utf-8"
             )
             (mod_root / "images/xd_info_1.xml").write_text(
-                '<Atlas><Elements><Element name="xd_info_1.tex" /></Elements></Atlas>', encoding="utf-8"
+                '<Atlas><Texture filename="xd_info_1.tex"/><Elements>'
+                '<Element name="xd_info_1.tex" u1="0" u2="1" v1="0" v2="1"/>'
+                '</Elements></Atlas>', encoding="utf-8"
             )
             (mod_root / "images/xd_info_1.tex").write_bytes(b"page")
             translation = root / "translation.lua"
@@ -108,9 +114,9 @@ class ModStaticTests(unittest.TestCase):
             )
             asset_payloads = [fact.payload for fact in bundle.facts if fact.kind == "asset"]
             self.assertTrue(any(value.get("asset_type") == "inventory" for value in asset_payloads))
-            self.assertTrue(any(value.get("asset_type") == "handbook" for value in asset_payloads))
+            self.assertTrue(any(value.get("asset_type") == "handbook_image" for value in asset_payloads))
             self.assertTrue(
-                any(error.get("code") == "missing_asset_pair" for error in bundle.errors)
+                any(error.get("code") == "missing_asset_texture" for error in bundle.errors)
             )
             self.assertTrue(all(fact.subject.namespace == "tu_tien" for fact in bundle.facts))
             self.assertTrue(all(fact.source.sha256 for fact in bundle.facts))

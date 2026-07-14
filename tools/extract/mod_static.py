@@ -1,9 +1,9 @@
 import hashlib
 import re
 from pathlib import Path
-from typing import Dict, Iterable, List, Optional, Set, Tuple
-import xml.etree.ElementTree as ET
+from typing import Dict, List, Optional, Tuple
 
+from tools.extract.assets import index_mod_assets
 from tools.extract.contracts import EntityKey, Fact, FactBundle, SourceRef
 from tools.extract.lua_strings import parse_simple_names_table, parse_string_assignments
 from tools.extract.po_strings import load_po_by_context
@@ -125,62 +125,6 @@ def _entity_fact(
     )
 
 
-def _xml_asset_facts(
-    xml_path: Path,
-    mod_root: Path,
-    version: str,
-    asset_type: str,
-) -> Tuple[List[SourceRef], List[Fact], List[Dict[str, object]]]:
-    relative = _relative_to_mod(xml_path, mod_root)
-    source = _source(xml_path, f"mod-asset:{relative}", "handbook_image" if asset_type == "handbook" else "mod_static", version)
-    facts: List[Fact] = []
-    errors: List[Dict[str, object]] = []
-    try:
-        root = ET.fromstring(xml_path.read_text(encoding="utf-8-sig"))
-    except (OSError, ET.ParseError) as exc:
-        errors.append({"code": "invalid_atlas_xml", "path": _display_path(xml_path), "detail": str(exc)})
-        return [source], facts, errors
-
-    texture_node = root.find("Texture")
-    texture_name = texture_node.attrib.get("filename", "") if texture_node is not None else ""
-    texture_path = xml_path.parent / texture_name if texture_name else xml_path.with_suffix(".tex")
-    texture_available = texture_path.is_file()
-    if not texture_available:
-        errors.append(
-            {
-                "code": "missing_asset_pair",
-                "path": _display_path(xml_path),
-                "missing": _display_path(texture_path),
-            }
-        )
-
-    element_nodes = list(root.findall("./Elements/Element"))
-    if not element_nodes:
-        element_nodes = [None]
-    for index, element in enumerate(element_nodes):
-        element_name = element.attrib.get("name", "") if element is not None else ""
-        fallback = xml_path.stem + ".tex"
-        prefab_id = Path(element_name or fallback).stem.lower()
-        payload: Dict[str, object] = {
-            "asset_type": asset_type,
-            "atlas": relative,
-            "texture": _relative_to_mod(texture_path, mod_root),
-            "element": element_name or fallback,
-            "available": texture_available,
-        }
-        if texture_available:
-            payload["texture_sha256"] = _sha256(texture_path)
-        if element is not None:
-            uv = {key: element.attrib[key] for key in ("u1", "u2", "v1", "v2") if key in element.attrib}
-            if uv:
-                payload["uv"] = uv
-        locator = f"element:{index + 1}"
-        facts.append(Fact("asset", EntityKey("tu_tien", prefab_id), payload, source, 1.0 if texture_available else 0.7, locator))
-        if asset_type == "inventory":
-            facts.append(_entity_fact(prefab_id, source, locator, "inventory_atlas", "item", 0.9))
-    return [source], facts, errors
-
-
 def extract_mod_static(
     mod_root: Path, tu_tien_translation: Path, base_translation_po: Path
 ) -> FactBundle:
@@ -277,20 +221,24 @@ def extract_mod_static(
         errors.append({"code": "missing_source", "path": _display_path(prefab_root), "role": "prefab_directory"})
 
     inventory_root = mod_root / "images/inventoryimages"
-    if inventory_root.is_dir():
-        for path in sorted(inventory_root.glob("*.xml")):
-            new_sources, new_facts, new_errors = _xml_asset_facts(path, mod_root, version, "inventory")
-            sources.update((source.source_id, source) for source in new_sources)
-            facts.extend(new_facts)
-            errors.extend(new_errors)
-    else:
+    if not inventory_root.is_dir():
         errors.append({"code": "missing_source", "path": _display_path(inventory_root), "role": "inventory_directory"})
-
-    for path in sorted((mod_root / "images").glob("xd_info_*.xml")):
-        new_sources, new_facts, new_errors = _xml_asset_facts(path, mod_root, version, "handbook")
-        sources.update((source.source_id, source) for source in new_sources)
-        facts.extend(new_facts)
-        errors.extend(new_errors)
+    asset_bundle = index_mod_assets(mod_root, version)
+    sources.update((source.source_id, source) for source in asset_bundle.sources)
+    facts.extend(asset_bundle.facts)
+    errors.extend(asset_bundle.errors)
+    for asset_fact in asset_bundle.facts:
+        if asset_fact.payload.get("asset_type") == "inventory":
+            facts.append(
+                _entity_fact(
+                    asset_fact.subject.prefab_id,
+                    asset_fact.source,
+                    asset_fact.locator,
+                    "inventory_atlas",
+                    "item",
+                    0.9,
+                )
+            )
 
     facts.sort(
         key=lambda fact: (

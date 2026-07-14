@@ -433,6 +433,11 @@
       "source_prefab_id": "junk_pile_big"
     },
     {
+      "code": "missing_asset_texture",
+      "missing": "images/inventoryimages.tex",
+      "path": "images/inventoryimages.xml"
+    },
+    {
       "code": "unsupported_base_source_subexpression",
       "expression": "CHARACTER_INGREDIENT.HEALTH",
       "line": 338,
@@ -729,6 +734,36 @@
   "facts": [
     {
       "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages1.xml:element:331:beefalo.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages1.xml",
+        "available": true,
+        "element": "beefalo.tex",
+        "texture": "images/inventoryimages1.tex",
+        "texture_sha256": "7fe94715ca23b6fb030cf809b42792625c64511198813952f2acd200927422fb",
+        "uv": {
+          "u1": 0.250244140625,
+          "u2": 0.281005859375,
+          "v1": 0.656494140625,
+          "v2": 0.687255859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "beefalo"
+      }
+    },
+    {
+      "confidence": 1.0,
       "kind": "entity",
       "locator": "scripts/prefabs/beefalo.lua:filename",
       "payload": {
@@ -815,6 +850,65 @@
       "subject": {
         "namespace": "base_game",
         "prefab_id": "beefalo"
+      }
+    },
+    {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:83:beefalowool.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "beefalowool.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.562744140625,
+          "u2": 0.593505859375,
+          "v1": 0.906494140625,
+          "v2": 0.937255859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "beefalowool"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages1.xml:element:351:beefalowool.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages1.xml",
+        "available": true,
+        "element": "beefalowool.tex",
+        "texture": "images/inventoryimages1.tex",
+        "texture_sha256": "7fe94715ca23b6fb030cf809b42792625c64511198813952f2acd200927422fb",
+        "uv": {
+          "u1": 0.531494140625,
+          "u2": 0.562255859375,
+          "v1": 0.656494140625,
+          "v2": 0.687255859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "beefalowool"
       }
     },
     {
@@ -912,6 +1006,65 @@
       "subject": {
         "namespace": "base_game",
         "prefab_id": "beefalowool"
+      }
+    },
+    {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:113:bluegem.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "bluegem.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.406494140625,
+          "u2": 0.437255859375,
+          "v1": 0.875244140625,
+          "v2": 0.906005859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "bluegem"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages1.xml:element:400:bluegem.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages1.xml",
+        "available": true,
+        "element": "bluegem.tex",
+        "texture": "images/inventoryimages1.tex",
+        "texture_sha256": "7fe94715ca23b6fb030cf809b42792625c64511198813952f2acd200927422fb",
+        "uv": {
+          "u1": 0.375244140625,
+          "u2": 0.406005859375,
+          "v1": 0.593994140625,
+          "v2": 0.624755859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "bluegem"
       }
     },
     {
@@ -1485,6 +1638,65 @@
       }
     },
     {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:117:boards.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "boards.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.625244140625,
+          "u2": 0.656005859375,
+          "v1": 0.875244140625,
+          "v2": 0.906005859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "boards"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages1.xml:element:407:boards.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages1.xml",
+        "available": true,
+        "element": "boards.tex",
+        "texture": "images/inventoryimages1.tex",
+        "texture_sha256": "7fe94715ca23b6fb030cf809b42792625c64511198813952f2acd200927422fb",
+        "uv": {
+          "u1": 0.687744140625,
+          "u2": 0.718505859375,
+          "v1": 0.593994140625,
+          "v2": 0.624755859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "boards"
+      }
+    },
+    {
       "confidence": 0.9,
       "kind": "description",
       "locator": "context:STRINGS.CHARACTERS.GENERIC.DESCRIBE.BOARDS",
@@ -1813,6 +2025,65 @@
       }
     },
     {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:118:boneshard.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "boneshard.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.656494140625,
+          "u2": 0.687255859375,
+          "v1": 0.875244140625,
+          "v2": 0.906005859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "boneshard"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages1.xml:element:439:boneshard.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages1.xml",
+        "available": true,
+        "element": "boneshard.tex",
+        "texture": "images/inventoryimages1.tex",
+        "texture_sha256": "7fe94715ca23b6fb030cf809b42792625c64511198813952f2acd200927422fb",
+        "uv": {
+          "u1": 0.687744140625,
+          "u2": 0.718505859375,
+          "v1": 0.562744140625,
+          "v2": 0.593505859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "boneshard"
+      }
+    },
+    {
       "confidence": 0.9,
       "kind": "description",
       "locator": "context:STRINGS.CHARACTERS.GENERIC.DESCRIBE.BONESHARD",
@@ -1921,6 +2192,65 @@
       "subject": {
         "namespace": "base_game",
         "prefab_id": "boneshard"
+      }
+    },
+    {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:138:butterfly.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "butterfly.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.281494140625,
+          "u2": 0.312255859375,
+          "v1": 0.843994140625,
+          "v2": 0.874755859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "butterfly"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages1.xml:element:519:butterfly.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages1.xml",
+        "available": true,
+        "element": "butterfly.tex",
+        "texture": "images/inventoryimages1.tex",
+        "texture_sha256": "7fe94715ca23b6fb030cf809b42792625c64511198813952f2acd200927422fb",
+        "uv": {
+          "u1": 0.187744140625,
+          "u2": 0.218505859375,
+          "v1": 0.468994140625,
+          "v2": 0.499755859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "butterfly"
       }
     },
     {
@@ -2168,6 +2498,65 @@
       }
     },
     {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:195:coontail.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "coontail.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.062744140625,
+          "u2": 0.093505859375,
+          "v1": 0.781494140625,
+          "v2": 0.812255859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "coontail"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages1.xml:element:865:coontail.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages1.xml",
+        "available": true,
+        "element": "coontail.tex",
+        "texture": "images/inventoryimages1.tex",
+        "texture_sha256": "7fe94715ca23b6fb030cf809b42792625c64511198813952f2acd200927422fb",
+        "uv": {
+          "u1": 0.000244140625,
+          "u2": 0.031005859375,
+          "v1": 0.125244140625,
+          "v2": 0.156005859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "coontail"
+      }
+    },
+    {
       "confidence": 0.9,
       "kind": "description",
       "locator": "context:STRINGS.CHARACTERS.GENERIC.DESCRIBE.COONTAIL",
@@ -2329,6 +2718,65 @@
         "path": "data/sources/game/scripts.zip",
         "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
         "source_id": "base-game-scripts",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "cutgrass"
+      }
+    },
+    {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:206:cutgrass.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "cutgrass.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.406494140625,
+          "u2": 0.437255859375,
+          "v1": 0.781494140625,
+          "v2": 0.812255859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "cutgrass"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages1.xml:element:900:cutgrass.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages1.xml",
+        "available": true,
+        "element": "cutgrass.tex",
+        "texture": "images/inventoryimages1.tex",
+        "texture_sha256": "7fe94715ca23b6fb030cf809b42792625c64511198813952f2acd200927422fb",
+        "uv": {
+          "u1": 0.093994140625,
+          "u2": 0.124755859375,
+          "v1": 0.093994140625,
+          "v2": 0.124755859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
         "version": "snapshot"
       },
       "subject": {
@@ -2695,6 +3143,65 @@
         "path": "data/sources/game/scripts.zip",
         "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
         "source_id": "base-game-scripts",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "cutreeds"
+      }
+    },
+    {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:208:cutreeds.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "cutreeds.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.468994140625,
+          "u2": 0.499755859375,
+          "v1": 0.781494140625,
+          "v2": 0.812255859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "cutreeds"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages1.xml:element:903:cutreeds.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages1.xml",
+        "available": true,
+        "element": "cutreeds.tex",
+        "texture": "images/inventoryimages1.tex",
+        "texture_sha256": "7fe94715ca23b6fb030cf809b42792625c64511198813952f2acd200927422fb",
+        "uv": {
+          "u1": 0.187744140625,
+          "u2": 0.218505859375,
+          "v1": 0.093994140625,
+          "v2": 0.124755859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
         "version": "snapshot"
       },
       "subject": {
@@ -3115,6 +3622,65 @@
       }
     },
     {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:209:cutstone.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "cutstone.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.500244140625,
+          "u2": 0.531005859375,
+          "v1": 0.781494140625,
+          "v2": 0.812255859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "cutstone"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages1.xml:element:904:cutstone.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages1.xml",
+        "available": true,
+        "element": "cutstone.tex",
+        "texture": "images/inventoryimages1.tex",
+        "texture_sha256": "7fe94715ca23b6fb030cf809b42792625c64511198813952f2acd200927422fb",
+        "uv": {
+          "u1": 0.218994140625,
+          "u2": 0.249755859375,
+          "v1": 0.093994140625,
+          "v2": 0.124755859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "cutstone"
+      }
+    },
+    {
       "confidence": 0.9,
       "kind": "description",
       "locator": "context:STRINGS.CHARACTERS.GENERIC.DESCRIBE.CUTSTONE",
@@ -3527,6 +4093,65 @@
       }
     },
     {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:219:dragon_scales.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "dragon_scales.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.187744140625,
+          "u2": 0.218505859375,
+          "v1": 0.750244140625,
+          "v2": 0.781005859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "dragon_scales"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages1.xml:element:998:dragon_scales.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages1.xml",
+        "available": true,
+        "element": "dragon_scales.tex",
+        "texture": "images/inventoryimages1.tex",
+        "texture_sha256": "7fe94715ca23b6fb030cf809b42792625c64511198813952f2acd200927422fb",
+        "uv": {
+          "u1": 0.906494140625,
+          "u2": 0.937255859375,
+          "v1": 0.000244140625,
+          "v2": 0.031005859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "dragon_scales"
+      }
+    },
+    {
       "confidence": 0.9,
       "kind": "description",
       "locator": "context:STRINGS.CHARACTERS.GENERIC.DESCRIBE.DRAGON_SCALES",
@@ -3735,6 +4360,36 @@
       }
     },
     {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages1.xml:element:1023:dreadstone.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages1.xml",
+        "available": true,
+        "element": "dreadstone.tex",
+        "texture": "images/inventoryimages1.tex",
+        "texture_sha256": "7fe94715ca23b6fb030cf809b42792625c64511198813952f2acd200927422fb",
+        "uv": {
+          "u1": 0.937744140625,
+          "u2": 0.968505859375,
+          "v1": 0.000244140625,
+          "v2": 0.031005859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "dreadstone"
+      }
+    },
+    {
       "confidence": 0.9,
       "kind": "description",
       "locator": "context:STRINGS.CHARACTERS.GENERIC.DESCRIBE.DREADSTONE",
@@ -3809,6 +4464,65 @@
       "subject": {
         "namespace": "base_game",
         "prefab_id": "dreadstone"
+      }
+    },
+    {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:256:feather_canary.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "feather_canary.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.093994140625,
+          "u2": 0.124755859375,
+          "v1": 0.718994140625,
+          "v2": 0.749755859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "feather_canary"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages2.xml:element:88:feather_canary.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages2.xml",
+        "available": true,
+        "element": "feather_canary.tex",
+        "texture": "images/inventoryimages2.tex",
+        "texture_sha256": "8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666",
+        "uv": {
+          "u1": 0.937744140625,
+          "u2": 0.968505859375,
+          "v1": 0.906494140625,
+          "v2": 0.937255859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "feather_canary"
       }
     },
     {
@@ -3970,6 +4684,65 @@
         "path": "data/sources/game/scripts.zip",
         "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
         "source_id": "base-game-scripts",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "flint"
+      }
+    },
+    {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:290:flint.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "flint.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.031494140625,
+          "u2": 0.062255859375,
+          "v1": 0.687744140625,
+          "v2": 0.718505859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "flint"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages2.xml:element:181:flint.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages2.xml",
+        "available": true,
+        "element": "flint.tex",
+        "texture": "images/inventoryimages2.tex",
+        "texture_sha256": "8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666",
+        "uv": {
+          "u1": 0.625244140625,
+          "u2": 0.656005859375,
+          "v1": 0.812744140625,
+          "v2": 0.843505859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
         "version": "snapshot"
       },
       "subject": {
@@ -4285,6 +5058,65 @@
       }
     },
     {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:308:gears.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "gears.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.593994140625,
+          "u2": 0.624755859375,
+          "v1": 0.687744140625,
+          "v2": 0.718505859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "gears"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages2.xml:element:242:gears.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages2.xml",
+        "available": true,
+        "element": "gears.tex",
+        "texture": "images/inventoryimages2.tex",
+        "texture_sha256": "8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666",
+        "uv": {
+          "u1": 0.531494140625,
+          "u2": 0.562255859375,
+          "v1": 0.750244140625,
+          "v2": 0.781005859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "gears"
+      }
+    },
+    {
       "confidence": 0.9,
       "kind": "description",
       "locator": "context:STRINGS.CHARACTERS.GENERIC.DESCRIBE.GEARS",
@@ -4490,6 +5322,65 @@
         "path": "data/sources/game/scripts.zip",
         "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
         "source_id": "base-game-scripts",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "goldnugget"
+      }
+    },
+    {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:329:goldnugget.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "goldnugget.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.250244140625,
+          "u2": 0.281005859375,
+          "v1": 0.656494140625,
+          "v2": 0.687255859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "goldnugget"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages2.xml:element:303:goldnugget.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages2.xml",
+        "available": true,
+        "element": "goldnugget.tex",
+        "texture": "images/inventoryimages2.tex",
+        "texture_sha256": "8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666",
+        "uv": {
+          "u1": 0.437744140625,
+          "u2": 0.468505859375,
+          "v1": 0.687744140625,
+          "v2": 0.718505859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
         "version": "snapshot"
       },
       "subject": {
@@ -5316,6 +6207,65 @@
       }
     },
     {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:332:green_cap.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "green_cap.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.468994140625,
+          "u2": 0.499755859375,
+          "v1": 0.656494140625,
+          "v2": 0.687255859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "green_cap"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages2.xml:element:309:green_cap.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages2.xml",
+        "available": true,
+        "element": "green_cap.tex",
+        "texture": "images/inventoryimages2.tex",
+        "texture_sha256": "8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666",
+        "uv": {
+          "u1": 0.843994140625,
+          "u2": 0.874755859375,
+          "v1": 0.687744140625,
+          "v2": 0.718505859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "green_cap"
+      }
+    },
+    {
       "confidence": 0.9,
       "kind": "description",
       "locator": "context:STRINGS.CHARACTERS.GENERIC.DESCRIBE.GREEN_CAP",
@@ -5510,6 +6460,65 @@
         "path": "data/sources/game/scripts.zip",
         "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
         "source_id": "base-game-scripts",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "greengem"
+      }
+    },
+    {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:336:greengem.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "greengem.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.375244140625,
+          "u2": 0.406005859375,
+          "v1": 0.656494140625,
+          "v2": 0.687255859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "greengem"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages2.xml:element:313:greengem.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages2.xml",
+        "available": true,
+        "element": "greengem.tex",
+        "texture": "images/inventoryimages2.tex",
+        "texture_sha256": "8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666",
+        "uv": {
+          "u1": 0.656494140625,
+          "u2": 0.687255859375,
+          "v1": 0.687744140625,
+          "v2": 0.718505859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
         "version": "snapshot"
       },
       "subject": {
@@ -5965,6 +6974,65 @@
       }
     },
     {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:401:horn.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "horn.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.500244140625,
+          "u2": 0.531005859375,
+          "v1": 0.593994140625,
+          "v2": 0.624755859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "horn"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages2.xml:element:457:horn.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages2.xml",
+        "available": true,
+        "element": "horn.tex",
+        "texture": "images/inventoryimages2.tex",
+        "texture_sha256": "8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666",
+        "uv": {
+          "u1": 0.250244140625,
+          "u2": 0.281005859375,
+          "v1": 0.531494140625,
+          "v2": 0.562255859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "horn"
+      }
+    },
+    {
       "confidence": 0.9,
       "kind": "description",
       "locator": "context:STRINGS.CHARACTERS.GENERIC.DESCRIBE.HORN",
@@ -6109,6 +7177,36 @@
         "path": "data/sources/game/scripts.zip",
         "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
         "source_id": "base-game-scripts",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "horrorfuel"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages2.xml:element:458:horrorfuel.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages2.xml",
+        "available": true,
+        "element": "horrorfuel.tex",
+        "texture": "images/inventoryimages2.tex",
+        "texture_sha256": "8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666",
+        "uv": {
+          "u1": 0.281494140625,
+          "u2": 0.312255859375,
+          "v1": 0.531494140625,
+          "v2": 0.562255859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
         "version": "snapshot"
       },
       "subject": {
@@ -6308,6 +7406,65 @@
       "subject": {
         "namespace": "base_game",
         "prefab_id": "koalefant_summer"
+      }
+    },
+    {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:460:lavae_egg.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "lavae_egg.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.343994140625,
+          "u2": 0.374755859375,
+          "v1": 0.531494140625,
+          "v2": 0.562255859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "lavae_egg"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages2.xml:element:574:lavae_egg.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages2.xml",
+        "available": true,
+        "element": "lavae_egg.tex",
+        "texture": "images/inventoryimages2.tex",
+        "texture_sha256": "8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666",
+        "uv": {
+          "u1": 0.906494140625,
+          "u2": 0.937255859375,
+          "v1": 0.437744140625,
+          "v2": 0.468505859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "lavae_egg"
       }
     },
     {
@@ -6613,6 +7770,65 @@
       }
     },
     {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:464:lightbulb.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "lightbulb.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.468994140625,
+          "u2": 0.499755859375,
+          "v1": 0.531494140625,
+          "v2": 0.562255859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "lightbulb"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages2.xml:element:582:lightbulb.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages2.xml",
+        "available": true,
+        "element": "lightbulb.tex",
+        "texture": "images/inventoryimages2.tex",
+        "texture_sha256": "8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666",
+        "uv": {
+          "u1": 0.156494140625,
+          "u2": 0.187255859375,
+          "v1": 0.406494140625,
+          "v2": 0.437255859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "lightbulb"
+      }
+    },
+    {
       "confidence": 0.9,
       "kind": "description",
       "locator": "context:STRINGS.CHARACTERS.GENERIC.DESCRIBE.LIGHTBULB",
@@ -6827,6 +8043,65 @@
       }
     },
     {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:467:lightninggoathorn.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "lightninggoathorn.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.531494140625,
+          "u2": 0.562255859375,
+          "v1": 0.531494140625,
+          "v2": 0.562255859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "lightninggoathorn"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages2.xml:element:598:lightninggoathorn.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages2.xml",
+        "available": true,
+        "element": "lightninggoathorn.tex",
+        "texture": "images/inventoryimages2.tex",
+        "texture_sha256": "8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666",
+        "uv": {
+          "u1": 0.468994140625,
+          "u2": 0.499755859375,
+          "v1": 0.406494140625,
+          "v2": 0.437255859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "lightninggoathorn"
+      }
+    },
+    {
       "confidence": 0.9,
       "kind": "description",
       "locator": "context:STRINGS.CHARACTERS.GENERIC.DESCRIBE.LIGHTNINGGOATHORN",
@@ -7032,6 +8307,65 @@
         "path": "data/sources/game/scripts.zip",
         "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
         "source_id": "base-game-scripts",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "livinglog"
+      }
+    },
+    {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:468:livinglog.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "livinglog.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.593994140625,
+          "u2": 0.624755859375,
+          "v1": 0.531494140625,
+          "v2": 0.562255859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "livinglog"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages2.xml:element:599:livinglog.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages2.xml",
+        "available": true,
+        "element": "livinglog.tex",
+        "texture": "images/inventoryimages2.tex",
+        "texture_sha256": "8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666",
+        "uv": {
+          "u1": 0.687744140625,
+          "u2": 0.718505859375,
+          "v1": 0.406494140625,
+          "v2": 0.437255859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
         "version": "snapshot"
       },
       "subject": {
@@ -7487,6 +8821,65 @@
         "path": "data/sources/game/scripts.zip",
         "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
         "source_id": "base-game-scripts",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "log"
+      }
+    },
+    {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:471:log.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "log.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.687744140625,
+          "u2": 0.718505859375,
+          "v1": 0.531494140625,
+          "v2": 0.562255859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "log"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages2.xml:element:604:log.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages2.xml",
+        "available": true,
+        "element": "log.tex",
+        "texture": "images/inventoryimages2.tex",
+        "texture_sha256": "8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666",
+        "uv": {
+          "u1": 0.843994140625,
+          "u2": 0.874755859375,
+          "v1": 0.406494140625,
+          "v2": 0.437255859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
         "version": "snapshot"
       },
       "subject": {
@@ -8219,6 +9612,65 @@
       }
     },
     {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:481:marble.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "marble.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.000244140625,
+          "u2": 0.031005859375,
+          "v1": 0.500244140625,
+          "v2": 0.531005859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "marble"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages2.xml:element:635:marble.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages2.xml",
+        "available": true,
+        "element": "marble.tex",
+        "texture": "images/inventoryimages2.tex",
+        "texture_sha256": "8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666",
+        "uv": {
+          "u1": 0.812744140625,
+          "u2": 0.843505859375,
+          "v1": 0.375244140625,
+          "v2": 0.406005859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "marble"
+      }
+    },
+    {
       "confidence": 0.9,
       "kind": "description",
       "locator": "context:STRINGS.CHARACTERS.GENERIC.DESCRIBE.MARBLE",
@@ -8600,6 +10052,65 @@
         "path": "data/sources/game/scripts.zip",
         "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
         "source_id": "base-game-scripts",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "meat"
+      }
+    },
+    {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:483:meat.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "meat.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.062744140625,
+          "u2": 0.093505859375,
+          "v1": 0.500244140625,
+          "v2": 0.531005859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "meat"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages2.xml:element:670:meat.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages2.xml",
+        "available": true,
+        "element": "meat.tex",
+        "texture": "images/inventoryimages2.tex",
+        "texture_sha256": "8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666",
+        "uv": {
+          "u1": 0.906494140625,
+          "u2": 0.937255859375,
+          "v1": 0.343994140625,
+          "v2": 0.374755859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
         "version": "snapshot"
       },
       "subject": {
@@ -9309,6 +10820,65 @@
       }
     },
     {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:497:monstermeat.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "monstermeat.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.500244140625,
+          "u2": 0.531005859375,
+          "v1": 0.500244140625,
+          "v2": 0.531005859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "monstermeat"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages2.xml:element:743:monstermeat.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages2.xml",
+        "available": true,
+        "element": "monstermeat.tex",
+        "texture": "images/inventoryimages2.tex",
+        "texture_sha256": "8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666",
+        "uv": {
+          "u1": 0.187744140625,
+          "u2": 0.218505859375,
+          "v1": 0.250244140625,
+          "v2": 0.281005859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "monstermeat"
+      }
+    },
+    {
       "confidence": 0.9,
       "kind": "description",
       "locator": "context:STRINGS.CHARACTERS.GENERIC.DESCRIBE.MONSTERMEAT",
@@ -9575,6 +11145,36 @@
       "subject": {
         "namespace": "base_game",
         "prefab_id": "monstermeat"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages2.xml:element:762:moonglass.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages2.xml",
+        "available": true,
+        "element": "moonglass.tex",
+        "texture": "images/inventoryimages2.tex",
+        "texture_sha256": "8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666",
+        "uv": {
+          "u1": 0.406494140625,
+          "u2": 0.437255859375,
+          "v1": 0.250244140625,
+          "v2": 0.281005859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "moonglass"
       }
     },
     {
@@ -9967,6 +11567,65 @@
       }
     },
     {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:516:nightmarefuel.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "nightmarefuel.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.000244140625,
+          "u2": 0.031005859375,
+          "v1": 0.468994140625,
+          "v2": 0.499755859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "nightmarefuel"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages2.xml:element:820:nightmarefuel.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages2.xml",
+        "available": true,
+        "element": "nightmarefuel.tex",
+        "texture": "images/inventoryimages2.tex",
+        "texture_sha256": "8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666",
+        "uv": {
+          "u1": 0.468994140625,
+          "u2": 0.499755859375,
+          "v1": 0.187744140625,
+          "v2": 0.218505859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "nightmarefuel"
+      }
+    },
+    {
       "confidence": 0.9,
       "kind": "description",
       "locator": "context:STRINGS.CHARACTERS.GENERIC.DESCRIBE.NIGHTMAREFUEL",
@@ -10225,6 +11884,65 @@
       }
     },
     {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:521:opalpreciousgem.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "opalpreciousgem.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.250244140625,
+          "u2": 0.281005859375,
+          "v1": 0.468994140625,
+          "v2": 0.499755859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "opalpreciousgem"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages2.xml:element:892:opalpreciousgem.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages2.xml",
+        "available": true,
+        "element": "opalpreciousgem.tex",
+        "texture": "images/inventoryimages2.tex",
+        "texture_sha256": "8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666",
+        "uv": {
+          "u1": 0.843994140625,
+          "u2": 0.874755859375,
+          "v1": 0.125244140625,
+          "v2": 0.156005859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "opalpreciousgem"
+      }
+    },
+    {
       "confidence": 0.9,
       "kind": "description",
       "locator": "context:STRINGS.CHARACTERS.GENERIC.DESCRIBE.OPALPRECIOUSGEM",
@@ -10419,6 +12137,65 @@
         "path": "data/sources/game/scripts.zip",
         "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
         "source_id": "base-game-scripts",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "orangegem"
+      }
+    },
+    {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:524:orangegem.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "orangegem.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.343994140625,
+          "u2": 0.374755859375,
+          "v1": 0.468994140625,
+          "v2": 0.499755859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "orangegem"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages2.xml:element:895:orangegem.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages2.xml",
+        "available": true,
+        "element": "orangegem.tex",
+        "texture": "images/inventoryimages2.tex",
+        "texture_sha256": "8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666",
+        "uv": {
+          "u1": 0.937744140625,
+          "u2": 0.968505859375,
+          "v1": 0.125244140625,
+          "v2": 0.156005859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
         "version": "snapshot"
       },
       "subject": {
@@ -10874,6 +12651,65 @@
       }
     },
     {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:530:papyrus.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "papyrus.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.531494140625,
+          "u2": 0.562255859375,
+          "v1": 0.468994140625,
+          "v2": 0.499755859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "papyrus"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages2.xml:element:913:papyrus.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages2.xml",
+        "available": true,
+        "element": "papyrus.tex",
+        "texture": "images/inventoryimages2.tex",
+        "texture_sha256": "8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666",
+        "uv": {
+          "u1": 0.500244140625,
+          "u2": 0.531005859375,
+          "v1": 0.093994140625,
+          "v2": 0.124755859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "papyrus"
+      }
+    },
+    {
       "confidence": 0.9,
       "kind": "description",
       "locator": "context:STRINGS.CHARACTERS.GENERIC.DESCRIBE.PAPYRUS",
@@ -11259,6 +13095,65 @@
       }
     },
     {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:536:petals.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "petals.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.718994140625,
+          "u2": 0.749755859375,
+          "v1": 0.468994140625,
+          "v2": 0.499755859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "petals"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages2.xml:element:932:petals.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages2.xml",
+        "available": true,
+        "element": "petals.tex",
+        "texture": "images/inventoryimages2.tex",
+        "texture_sha256": "8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666",
+        "uv": {
+          "u1": 0.093994140625,
+          "u2": 0.124755859375,
+          "v1": 0.062744140625,
+          "v2": 0.093505859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "petals"
+      }
+    },
+    {
       "confidence": 0.9,
       "kind": "description",
       "locator": "context:STRINGS.CHARACTERS.GENERIC.DESCRIBE.PETALS",
@@ -11510,6 +13405,65 @@
         "path": "data/sources/game/scripts.zip",
         "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
         "source_id": "base-game-scripts",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "petals_evil"
+      }
+    },
+    {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:537:petals_evil.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "petals_evil.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.750244140625,
+          "u2": 0.781005859375,
+          "v1": 0.468994140625,
+          "v2": 0.499755859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "petals_evil"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages2.xml:element:934:petals_evil.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages2.xml",
+        "available": true,
+        "element": "petals_evil.tex",
+        "texture": "images/inventoryimages2.tex",
+        "texture_sha256": "8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666",
+        "uv": {
+          "u1": 0.156494140625,
+          "u2": 0.187255859375,
+          "v1": 0.062744140625,
+          "v2": 0.093505859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
         "version": "snapshot"
       },
       "subject": {
@@ -11861,6 +13815,65 @@
       }
     },
     {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:547:plantmeat.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "plantmeat.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.062744140625,
+          "u2": 0.093505859375,
+          "v1": 0.437744140625,
+          "v2": 0.468505859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "plantmeat"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages2.xml:element:964:plantmeat.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages2.xml",
+        "available": true,
+        "element": "plantmeat.tex",
+        "texture": "images/inventoryimages2.tex",
+        "texture_sha256": "8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666",
+        "uv": {
+          "u1": 0.093994140625,
+          "u2": 0.124755859375,
+          "v1": 0.031494140625,
+          "v2": 0.062255859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "plantmeat"
+      }
+    },
+    {
       "confidence": 0.9,
       "kind": "description",
       "locator": "context:STRINGS.CHARACTERS.GENERIC.DESCRIBE.PLANTMEAT",
@@ -12061,6 +14074,36 @@
       }
     },
     {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages3.xml:element:28:purebrilliance.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages3.xml",
+        "available": true,
+        "element": "purebrilliance.tex",
+        "texture": "images/inventoryimages3.tex",
+        "texture_sha256": "692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce",
+        "uv": {
+          "u1": 0.843994140625,
+          "u2": 0.874755859375,
+          "v1": 0.968994140625,
+          "v2": 0.999755859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "purebrilliance"
+      }
+    },
+    {
       "confidence": 0.9,
       "kind": "description",
       "locator": "context:STRINGS.CHARACTERS.GENERIC.DESCRIBE.PUREBRILLIANCE",
@@ -12183,6 +14226,65 @@
       "subject": {
         "namespace": "base_game",
         "prefab_id": "purebrilliance"
+      }
+    },
+    {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:565:purplegem.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "purplegem.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.625244140625,
+          "u2": 0.656005859375,
+          "v1": 0.437744140625,
+          "v2": 0.468505859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "purplegem"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages3.xml:element:30:purplegem.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages3.xml",
+        "available": true,
+        "element": "purplegem.tex",
+        "texture": "images/inventoryimages3.tex",
+        "texture_sha256": "692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce",
+        "uv": {
+          "u1": 0.906494140625,
+          "u2": 0.937255859375,
+          "v1": 0.968994140625,
+          "v2": 0.999755859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "purplegem"
       }
     },
     {
@@ -12649,6 +14751,65 @@
       "subject": {
         "namespace": "base_game",
         "prefab_id": "purplegem"
+      }
+    },
+    {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:659:redgem.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "redgem.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.468994140625,
+          "u2": 0.499755859375,
+          "v1": 0.343994140625,
+          "v2": 0.374755859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "redgem"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages3.xml:element:147:redgem.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages3.xml",
+        "available": true,
+        "element": "redgem.tex",
+        "texture": "images/inventoryimages3.tex",
+        "texture_sha256": "692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce",
+        "uv": {
+          "u1": 0.468994140625,
+          "u2": 0.499755859375,
+          "v1": 0.843994140625,
+          "v2": 0.874755859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "redgem"
       }
     },
     {
@@ -13726,6 +15887,65 @@
         "path": "data/sources/game/scripts.zip",
         "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
         "source_id": "base-game-scripts",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "rocks"
+      }
+    },
+    {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:689:rocks.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "rocks.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.500244140625,
+          "u2": 0.531005859375,
+          "v1": 0.312744140625,
+          "v2": 0.343505859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "rocks"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages3.xml:element:237:rocks.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages3.xml",
+        "available": true,
+        "element": "rocks.tex",
+        "texture": "images/inventoryimages3.tex",
+        "texture_sha256": "692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce",
+        "uv": {
+          "u1": 0.250244140625,
+          "u2": 0.281005859375,
+          "v1": 0.750244140625,
+          "v2": 0.781005859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
         "version": "snapshot"
       },
       "subject": {
@@ -14833,6 +17053,65 @@
       }
     },
     {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:690:rope.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "rope.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.531494140625,
+          "u2": 0.562255859375,
+          "v1": 0.312744140625,
+          "v2": 0.343505859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "rope"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages3.xml:element:238:rope.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages3.xml",
+        "available": true,
+        "element": "rope.tex",
+        "texture": "images/inventoryimages3.tex",
+        "texture_sha256": "692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce",
+        "uv": {
+          "u1": 0.406494140625,
+          "u2": 0.437255859375,
+          "v1": 0.750244140625,
+          "v2": 0.781005859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "rope"
+      }
+    },
+    {
       "confidence": 0.9,
       "kind": "description",
       "locator": "context:STRINGS.CHARACTERS.GENERIC.DESCRIBE.ROPE",
@@ -15116,6 +17395,65 @@
       "subject": {
         "namespace": "base_game",
         "prefab_id": "rope"
+      }
+    },
+    {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:720:shadowheart.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "shadowheart.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.468994140625,
+          "u2": 0.499755859375,
+          "v1": 0.281494140625,
+          "v2": 0.312255859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "shadowheart"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages3.xml:element:322:shadowheart.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages3.xml",
+        "available": true,
+        "element": "shadowheart.tex",
+        "texture": "images/inventoryimages3.tex",
+        "texture_sha256": "692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce",
+        "uv": {
+          "u1": 0.781494140625,
+          "u2": 0.812255859375,
+          "v1": 0.687744140625,
+          "v2": 0.718505859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "shadowheart"
       }
     },
     {
@@ -15502,6 +17840,65 @@
         "path": "data/sources/game/scripts.zip",
         "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
         "source_id": "base-game-scripts",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "silk"
+      }
+    },
+    {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:727:silk.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "silk.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.687744140625,
+          "u2": 0.718505859375,
+          "v1": 0.281494140625,
+          "v2": 0.312255859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "silk"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages3.xml:element:344:silk.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages3.xml",
+        "available": true,
+        "element": "silk.tex",
+        "texture": "images/inventoryimages3.tex",
+        "texture_sha256": "692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce",
+        "uv": {
+          "u1": 0.718994140625,
+          "u2": 0.749755859375,
+          "v1": 0.656494140625,
+          "v2": 0.687255859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
         "version": "snapshot"
       },
       "subject": {
@@ -15904,6 +18301,65 @@
       }
     },
     {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:747:smallmeat.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "smallmeat.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.312744140625,
+          "u2": 0.343505859375,
+          "v1": 0.250244140625,
+          "v2": 0.281005859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "smallmeat"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages3.xml:element:454:smallmeat.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages3.xml",
+        "available": true,
+        "element": "smallmeat.tex",
+        "texture": "images/inventoryimages3.tex",
+        "texture_sha256": "692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce",
+        "uv": {
+          "u1": 0.156494140625,
+          "u2": 0.187255859375,
+          "v1": 0.531494140625,
+          "v2": 0.562255859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "smallmeat"
+      }
+    },
+    {
       "confidence": 0.9,
       "kind": "description",
       "locator": "context:STRINGS.CHARACTERS.GENERIC.DESCRIBE.SMALLMEAT",
@@ -16059,6 +18515,65 @@
       "subject": {
         "namespace": "base_game",
         "prefab_id": "smallmeat"
+      }
+    },
+    {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:759:spidereggsack.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "spidereggsack.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.687744140625,
+          "u2": 0.718505859375,
+          "v1": 0.250244140625,
+          "v2": 0.281005859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "spidereggsack"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages3.xml:element:510:spidereggsack.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages3.xml",
+        "available": true,
+        "element": "spidereggsack.tex",
+        "texture": "images/inventoryimages3.tex",
+        "texture_sha256": "692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce",
+        "uv": {
+          "u1": 0.593994140625,
+          "u2": 0.624755859375,
+          "v1": 0.500244140625,
+          "v2": 0.531005859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "spidereggsack"
       }
     },
     {
@@ -16582,6 +19097,65 @@
       }
     },
     {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:760:spidergland.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "spidergland.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.718994140625,
+          "u2": 0.749755859375,
+          "v1": 0.250244140625,
+          "v2": 0.281005859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "spidergland"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages3.xml:element:511:spidergland.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages3.xml",
+        "available": true,
+        "element": "spidergland.tex",
+        "texture": "images/inventoryimages3.tex",
+        "texture_sha256": "692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce",
+        "uv": {
+          "u1": 0.625244140625,
+          "u2": 0.656005859375,
+          "v1": 0.500244140625,
+          "v2": 0.531005859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "spidergland"
+      }
+    },
+    {
       "confidence": 0.9,
       "kind": "description",
       "locator": "context:STRINGS.CHARACTERS.GENERIC.DESCRIBE.SPIDERGLAND",
@@ -16695,6 +19269,36 @@
       "subject": {
         "namespace": "base_game",
         "prefab_id": "spidergland"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages3.xml:element:514:spoiled_fish_small.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages3.xml",
+        "available": true,
+        "element": "spoiled_fish_small.tex",
+        "texture": "images/inventoryimages3.tex",
+        "texture_sha256": "692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce",
+        "uv": {
+          "u1": 0.031494140625,
+          "u2": 0.062255859375,
+          "v1": 0.468994140625,
+          "v2": 0.499755859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "spoiled_fish_small"
       }
     },
     {
@@ -16945,6 +19549,65 @@
         "path": "data/sources/game/scripts.zip",
         "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
         "source_id": "base-game-scripts",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "spoiled_food"
+      }
+    },
+    {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:762:spoiled_food.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "spoiled_food.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.781494140625,
+          "u2": 0.812255859375,
+          "v1": 0.250244140625,
+          "v2": 0.281005859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "spoiled_food"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages3.xml:element:515:spoiled_food.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages3.xml",
+        "available": true,
+        "element": "spoiled_food.tex",
+        "texture": "images/inventoryimages3.tex",
+        "texture_sha256": "692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce",
+        "uv": {
+          "u1": 0.062744140625,
+          "u2": 0.093505859375,
+          "v1": 0.468994140625,
+          "v2": 0.499755859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
         "version": "snapshot"
       },
       "subject": {
@@ -17335,6 +19998,65 @@
       }
     },
     {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:764:spore_small.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "spore_small.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.843994140625,
+          "u2": 0.874755859375,
+          "v1": 0.250244140625,
+          "v2": 0.281005859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "spore_small"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages3.xml:element:517:spore_small.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages3.xml",
+        "available": true,
+        "element": "spore_small.tex",
+        "texture": "images/inventoryimages3.tex",
+        "texture_sha256": "692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce",
+        "uv": {
+          "u1": 0.125244140625,
+          "u2": 0.156005859375,
+          "v1": 0.468994140625,
+          "v2": 0.499755859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "spore_small"
+      }
+    },
+    {
       "confidence": 1.0,
       "kind": "entity",
       "locator": "scripts/strings.lua:line:1322",
@@ -17680,6 +20402,65 @@
       }
     },
     {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:795:thulecite.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "thulecite.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.812744140625,
+          "u2": 0.843505859375,
+          "v1": 0.218994140625,
+          "v2": 0.249755859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "thulecite"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages3.xml:element:629:thulecite.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages3.xml",
+        "available": true,
+        "element": "thulecite.tex",
+        "texture": "images/inventoryimages3.tex",
+        "texture_sha256": "692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce",
+        "uv": {
+          "u1": 0.625244140625,
+          "u2": 0.656005859375,
+          "v1": 0.375244140625,
+          "v2": 0.406005859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "thulecite"
+      }
+    },
+    {
       "confidence": 0.9,
       "kind": "description",
       "locator": "context:STRINGS.CHARACTERS.GENERIC.DESCRIBE.THULECITE",
@@ -17923,6 +20704,65 @@
       }
     },
     {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:796:thulecite_pieces.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "thulecite_pieces.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.843994140625,
+          "u2": 0.874755859375,
+          "v1": 0.218994140625,
+          "v2": 0.249755859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "thulecite_pieces"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages3.xml:element:630:thulecite_pieces.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages3.xml",
+        "available": true,
+        "element": "thulecite_pieces.tex",
+        "texture": "images/inventoryimages3.tex",
+        "texture_sha256": "692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce",
+        "uv": {
+          "u1": 0.687744140625,
+          "u2": 0.718505859375,
+          "v1": 0.375244140625,
+          "v2": 0.406005859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "thulecite_pieces"
+      }
+    },
+    {
       "confidence": 0.9,
       "kind": "description",
       "locator": "context:STRINGS.CHARACTERS.GENERIC.DESCRIBE.THULECITE_PIECES",
@@ -18046,6 +20886,65 @@
       }
     },
     {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:809:townportaltalisman.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "townportaltalisman.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.250244140625,
+          "u2": 0.281005859375,
+          "v1": 0.187744140625,
+          "v2": 0.218505859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "townportaltalisman"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages3.xml:element:680:townportaltalisman.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages3.xml",
+        "available": true,
+        "element": "townportaltalisman.tex",
+        "texture": "images/inventoryimages3.tex",
+        "texture_sha256": "692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce",
+        "uv": {
+          "u1": 0.187744140625,
+          "u2": 0.218505859375,
+          "v1": 0.312744140625,
+          "v2": 0.343505859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "townportaltalisman"
+      }
+    },
+    {
       "confidence": 1.0,
       "kind": "entity",
       "locator": "scripts/prefabs/townportaltalisman.lua:filename",
@@ -18147,6 +21046,65 @@
       "subject": {
         "namespace": "base_game",
         "prefab_id": "townportaltalisman"
+      }
+    },
+    {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:872:trunk_summer.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "trunk_summer.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.281494140625,
+          "u2": 0.312255859375,
+          "v1": 0.125244140625,
+          "v2": 0.156005859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "trunk_summer"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages3.xml:element:767:trunk_summer.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages3.xml",
+        "available": true,
+        "element": "trunk_summer.tex",
+        "texture": "images/inventoryimages3.tex",
+        "texture_sha256": "692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce",
+        "uv": {
+          "u1": 0.000244140625,
+          "u2": 0.031005859375,
+          "v1": 0.218994140625,
+          "v2": 0.249755859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "trunk_summer"
       }
     },
     {
@@ -18284,6 +21242,65 @@
       "subject": {
         "namespace": "base_game",
         "prefab_id": "trunk_summer"
+      }
+    },
+    {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:873:trunk_winter.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "trunk_winter.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.312744140625,
+          "u2": 0.343505859375,
+          "v1": 0.125244140625,
+          "v2": 0.156005859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "trunk_winter"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages3.xml:element:768:trunk_winter.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages3.xml",
+        "available": true,
+        "element": "trunk_winter.tex",
+        "texture": "images/inventoryimages3.tex",
+        "texture_sha256": "692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce",
+        "uv": {
+          "u1": 0.031494140625,
+          "u2": 0.062255859375,
+          "v1": 0.218994140625,
+          "v2": 0.249755859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "trunk_winter"
       }
     },
     {
@@ -18590,6 +21607,65 @@
         "path": "data/sources/game/scripts.zip",
         "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
         "source_id": "base-game-scripts",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "twigs"
+      }
+    },
+    {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:897:twigs.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "twigs.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.000244140625,
+          "u2": 0.031005859375,
+          "v1": 0.093994140625,
+          "v2": 0.124755859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "twigs"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages3.xml:element:814:twigs.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages3.xml",
+        "available": true,
+        "element": "twigs.tex",
+        "texture": "images/inventoryimages3.tex",
+        "texture_sha256": "692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce",
+        "uv": {
+          "u1": 0.406494140625,
+          "u2": 0.437255859375,
+          "v1": 0.187744140625,
+          "v2": 0.218505859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
         "version": "snapshot"
       },
       "subject": {
@@ -19006,6 +22082,65 @@
         "path": "data/sources/game/scripts.zip",
         "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
         "source_id": "base-game-scripts",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "yellowgem"
+      }
+    },
+    {
+      "confidence": 0.7,
+      "kind": "asset",
+      "locator": "images/inventoryimages.xml:element:1002:yellowgem.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages.xml",
+        "available": false,
+        "element": "yellowgem.tex",
+        "texture": "images/inventoryimages.tex",
+        "uv": {
+          "u1": 0.281494140625,
+          "u2": 0.312255859375,
+          "v1": 0.000244140625,
+          "v2": 0.031005859375
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
+        "version": "snapshot"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "yellowgem"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "asset",
+      "locator": "images/inventoryimages4.xml:element:174:yellowgem.tex",
+      "payload": {
+        "asset_type": "inventory",
+        "atlas": "images/inventoryimages4.xml",
+        "available": true,
+        "element": "yellowgem.tex",
+        "texture": "images/inventoryimages4.tex",
+        "texture_sha256": "4cab5b4faef790259ef173fcd52eb927f3455424ab8c7262a7c2cbdc509b8aa2",
+        "uv": {
+          "u1": 0.406494140625,
+          "u2": 0.437255859375,
+          "v1": 0.62548828125,
+          "v2": 0.68701171875
+        }
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/images.zip",
+        "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+        "source_id": "base-game-images",
         "version": "snapshot"
       },
       "subject": {
@@ -19505,6 +22640,13 @@
   ],
   "schema_version": 1,
   "sources": [
+    {
+      "kind": "base_game_source",
+      "path": "data/sources/game/images.zip",
+      "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+      "source_id": "base-game-images",
+      "version": "snapshot"
+    },
     {
       "kind": "base_game_source",
       "path": "data/sources/game/scripts.zip",
