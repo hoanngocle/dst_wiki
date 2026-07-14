@@ -9,7 +9,9 @@ from zipfile import ZipFile
 from tools.extract.base_game import (
     DependencyRequest,
     ScriptIndex,
+    classify_prefab_module,
     derive_dependency_requests,
+    discover_prefab_modules,
     enrich_dependencies,
     verify_snapshot_archive,
 )
@@ -30,6 +32,65 @@ class BaseGameTests(unittest.TestCase):
             for name, source in members.items():
                 handle.writestr(name, source)
         return archive
+
+    def test_discovers_every_direct_prefab_module_and_rejects_duplicate_ids(self):
+        self.assertEqual(
+            discover_prefab_modules(
+                [
+                    "scripts/prefabs/zeta.lua",
+                    "scripts/prefabs/alpha.lua",
+                    "scripts/prefabs/nested/ignored.lua",
+                    "scripts/prefabs/readme.txt",
+                    "scripts/not-prefabs.lua",
+                ]
+            ),
+            {
+                "alpha": "scripts/prefabs/alpha.lua",
+                "zeta": "scripts/prefabs/zeta.lua",
+            },
+        )
+
+        with self.assertRaisesRegex(ValueError, "duplicate prefab module id alpha"):
+            discover_prefab_modules(
+                [
+                    "scripts/prefabs/Alpha.lua",
+                    "scripts/prefabs/alpha.lua",
+                ]
+            )
+
+    def test_classifies_prefab_modules_with_stable_priority(self):
+        cases = {
+            "spark_fx": ('inst:AddTag("epic")', "effect"),
+            "wilson": ("return MakePlayerCharacter('wilson', prefabs, assets, fn)", "character"),
+            "deerclops": ('inst:AddTag("epic")', "boss"),
+            "spider": ('inst:AddTag("monster")', "mob"),
+            "hound": (
+                'inst:AddComponent("health")\n'
+                'inst:AddComponent("combat")\n'
+                'inst:AddComponent("locomotor")',
+                "mob",
+            ),
+            "axe": ('inst:AddComponent("inventoryitem")', "item"),
+            "wall": ('inst:AddTag("structure")', "structure"),
+            "boulder": ('inst:AddComponent("workable")', "structure"),
+            "mystery": ("return Prefab('mystery', fn)", "other"),
+        }
+
+        for prefab_id, (source, expected) in cases.items():
+            with self.subTest(prefab_id=prefab_id):
+                self.assertEqual(
+                    classify_prefab_module(prefab_id, source),
+                    expected,
+                )
+
+    def test_prefab_category_ignores_signals_in_comments_and_strings(self):
+        source = '''
+-- inst:AddTag("epic")
+local note = "inst:AddComponent(\\\"inventoryitem\\\")"
+return Prefab("mystery", fn)
+'''
+
+        self.assertEqual(classify_prefab_module("mystery", source), "other")
 
     def test_script_index_reads_the_archive_through_one_zip_handle(self):
         with tempfile.TemporaryDirectory() as tmp:

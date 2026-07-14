@@ -2,7 +2,7 @@ from collections import Counter
 from dataclasses import dataclass
 import hashlib
 import json
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 import re
 from typing import Any, Dict, Iterable, Iterator, List, Optional, Sequence, Tuple
 from zipfile import ZipFile
@@ -13,6 +13,30 @@ from tools.extract.po_strings import load_po_by_context
 
 
 VERSION = re.compile(r'^\s*version\s*=\s*["\']([^"\']+)["\']', re.MULTILINE)
+PREFAB_CATEGORIES = (
+    "item",
+    "mob",
+    "boss",
+    "character",
+    "structure",
+    "effect",
+    "other",
+)
+
+
+def discover_prefab_modules(members: Iterable[str]) -> Dict[str, str]:
+    """Return one stable prefab ID for every direct prefab Lua module."""
+
+    discovered: Dict[str, str] = {}
+    for member in sorted(members):
+        path = PurePosixPath(member)
+        if path.parent.as_posix() != "scripts/prefabs" or path.suffix != ".lua":
+            continue
+        prefab_id = path.stem.lower()
+        if prefab_id in discovered:
+            raise ValueError(f"duplicate prefab module id {prefab_id}")
+        discovered[prefab_id] = member
+    return discovered
 
 
 def _version_from_modinfo(path: Path, fallback: str) -> str:
@@ -335,6 +359,65 @@ def _literal_string(expression: str) -> Optional[str]:
         return None
 
 
+def classify_prefab_module(prefab_id: str, source: str) -> str:
+    """Classify a prefab module using deterministic literal source signals."""
+
+    normalized_id = prefab_id.lower()
+    if (
+        "_fx" in normalized_id
+        or normalized_id.endswith("fx")
+        or any(
+            marker in normalized_id
+            for marker in (
+                "_projectile",
+                "_placer",
+                "_classified",
+                "_marker",
+            )
+        )
+        or re.search(r"\bpersists\s*=\s*false\b", _code_mask(source))
+    ):
+        return "effect"
+
+    calls = list(_iter_calls(source, ("MakePlayerCharacter", "AddTag", "AddComponent")))
+    if any(call.name == "MakePlayerCharacter" for call in calls):
+        return "character"
+
+    tags = {
+        value.lower()
+        for call in calls
+        if call.name == "AddTag" and call.arguments
+        for value in [_literal_string(call.arguments[0])]
+        if value is not None
+    }
+    if "epic" in tags:
+        return "boss"
+
+    components = {
+        value.lower()
+        for call in calls
+        if call.name == "AddComponent" and call.arguments
+        for value in [_literal_string(call.arguments[0])]
+        if value is not None
+    }
+    masked = _code_mask(source)
+    for component in ("health", "combat", "locomotor", "inventoryitem", "workable"):
+        if re.search(rf"\.components\.{component}\b", masked):
+            components.add(component)
+
+    if tags.intersection({"animal", "character", "hostile", "monster", "smallcreature"}) or {
+        "health",
+        "combat",
+        "locomotor",
+    }.issubset(components):
+        return "mob"
+    if "inventoryitem" in components:
+        return "item"
+    if "structure" in tags or "workable" in components:
+        return "structure"
+    return "other"
+
+
 def _literal_number(expression: str) -> Optional[Any]:
     expression = expression.strip()
     if not re.fullmatch(r"[-+]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][-+]?\d+)?", expression):
@@ -631,10 +714,7 @@ class ScriptIndex:
                 for name in sorted(cached_members)
                 if name in self.members
             }
-        self.prefab_members = {
-            Path(name).stem.lower(): name
-            for name in prefab_members
-        }
+        self.prefab_members = discover_prefab_modules(prefab_members)
         self.prefab_sources: Dict[str, str] = {
             name: source_cache[name] for name in prefab_members
         }
