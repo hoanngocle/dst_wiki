@@ -1,0 +1,89 @@
+<style>
+  #wiki-directions { --ink: #f4f4f0; }
+  #wiki-directions .direction-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 24px; }
+  #wiki-directions .direction { cursor: pointer; overflow: hidden; padding: 0; border: 1px solid var(--border); transition: transform 180ms ease, border-color 180ms ease; }
+  #wiki-directions .direction:hover { transform: translateY(-3px); }
+  #wiki-directions .direction.selected { border-color: var(--primary); }
+  #wiki-directions .preview { min-height: 330px; padding: 18px; text-align: left; }
+  #wiki-directions .preview-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 34px; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+  #wiki-directions .mark { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; }
+  #wiki-directions .mark-shape { width: 14px; height: 14px; border: 2px solid currentColor; transform: rotate(45deg); }
+  #wiki-directions .count { opacity: .65; }
+  #wiki-directions .preview h4 { max-width: 260px; margin: 0 0 8px; font-size: 25px; line-height: 1.02; letter-spacing: -.04em; }
+  #wiki-directions .preview-copy { max-width: 260px; margin: 0 0 18px; font-size: 11px; line-height: 1.5; opacity: .65; }
+  #wiki-directions .search { display: flex; align-items: center; gap: 10px; height: 46px; margin-bottom: 20px; padding: 0 14px; border: 1px solid currentColor; font-size: 11px; }
+  #wiki-directions .search-icon { width: 10px; height: 10px; border: 1.5px solid currentColor; border-radius: 999px; position: relative; opacity: .8; }
+  #wiki-directions .search-icon::after { content: ''; position: absolute; width: 5px; height: 1.5px; background: currentColor; right: -4px; bottom: -2px; transform: rotate(45deg); }
+  #wiki-directions .item { display: grid; grid-template-columns: 34px 1fr auto; gap: 10px; align-items: center; padding: 9px 0; border-top: 1px solid currentColor; font-size: 10px; }
+  #wiki-directions .thumb { width: 34px; height: 30px; background: currentColor; opacity: .12; }
+  #wiki-directions .item strong { display: block; font-size: 11px; }
+  #wiki-directions .item small { opacity: .55; }
+  #wiki-directions .tag { padding: 4px 7px; border: 1px solid currentColor; opacity: .7; }
+  #wiki-directions .caption { padding: 15px 16px 17px; text-align: left; }
+  #wiki-directions .caption h3 { margin: 0 0 5px; }
+  #wiki-directions .caption p { margin: 0; }
+  #wiki-directions .obsidian { color: #f1f1ea; background: #111411; }
+  #wiki-directions .obsidian .preview-top, #wiki-directions .obsidian .tag { color: #a9d36f; }
+  #wiki-directions .obsidian .search { background: #1d211b; border-color: #59624f; }
+  #wiki-directions .obsidian .item { border-color: #343a31; }
+  #wiki-directions .atlas { color: #152239; background: #edf1f5; }
+  #wiki-directions .atlas .preview-top, #wiki-directions .atlas .tag { color: #2e5fb3; }
+  #wiki-directions .atlas .search { background: #ffffff; border-color: #a9b8cc; border-radius: 10px; box-shadow: 0 8px 22px rgba(25,47,78,.08); }
+  #wiki-directions .atlas .item { border-color: #cad3de; }
+  #wiki-directions .atlas .thumb { border-radius: 5px; }
+  #wiki-directions .atlas .tag { border-radius: 999px; }
+  #wiki-directions .signal { color: #f0f0e8; background: #242424; }
+  #wiki-directions .signal .preview-top, #wiki-directions .signal .tag { color: #e4f04a; }
+  #wiki-directions .signal .preview-top { padding-bottom: 10px; border-bottom: 2px solid #e4f04a; }
+  #wiki-directions .signal .search { background: #e4f04a; color: #202020; border: 0; box-shadow: 5px 5px 0 #0e0e0e; }
+  #wiki-directions .signal .item { border-color: #575757; }
+  #wiki-directions .signal .thumb { border: 1px solid #e4f04a; background: transparent; }
+  #wiki-directions .signal .tag { border-color: #e4f04a; }
+  @media (max-width: 860px) {
+    #wiki-directions .direction-grid { grid-template-columns: 1fr; }
+    #wiki-directions .preview { min-height: 300px; }
+  }
+</style>
+
+<div id="wiki-directions">
+  <h2>Bạn muốn game wiki mang cảm giác nào?</h2>
+  <p class="subtitle">Cả ba đều giữ search là điểm chính. Hãy chọn hướng khiến bạn muốn khám phá dữ liệu lâu nhất.</p>
+
+  <div class="direction-grid cards">
+    <div class="direction card" data-choice="obsidian-codex" onclick="toggleSelect(this)">
+      <div class="preview obsidian">
+        <div class="preview-top"><span class="mark"><span class="mark-shape"></span> Codex</span><span class="count">128 entries</span></div>
+        <h4>Everything worth knowing.</h4>
+        <p class="preview-copy">Items, creatures, locations and mechanics in one focused compendium.</p>
+        <div class="search"><span class="search-icon"></span><span>Search the codex...</span></div>
+        <div class="item"><span class="thumb"></span><span><strong>Ancient Blade</strong><small>Weapon</small></span><span class="tag">Rare</span></div>
+        <div class="item"><span class="thumb"></span><span><strong>Mire Stalker</strong><small>Creature</small></span><span class="tag">Beast</span></div>
+      </div>
+      <div class="caption card-body"><h3>A. Obsidian Codex</h3><p>Dark, atmospheric, premium. Game-like without sacrificing readability.</p></div>
+    </div>
+
+    <div class="direction card" data-choice="frost-atlas" onclick="toggleSelect(this)">
+      <div class="preview atlas">
+        <div class="preview-top"><span class="mark"><span class="mark-shape"></span> Atlas</span><span class="count">Game knowledge</span></div>
+        <h4>Find answers. Keep playing.</h4>
+        <p class="preview-copy">A clean reference layer built for quick scanning and confident search.</p>
+        <div class="search"><span class="search-icon"></span><span>Search items, quests, NPCs...</span></div>
+        <div class="item"><span class="thumb"></span><span><strong>Ancient Blade</strong><small>Weapon</small></span><span class="tag">Rare</span></div>
+        <div class="item"><span class="thumb"></span><span><strong>Mire Stalker</strong><small>Creature</small></span><span class="tag">Beast</span></div>
+      </div>
+      <div class="caption card-body"><h3>B. Frost Atlas</h3><p>Bright, structured, accessible. The strongest option for content-heavy growth.</p></div>
+    </div>
+
+    <div class="direction card" data-choice="signal-archive" onclick="toggleSelect(this)">
+      <div class="preview signal">
+        <div class="preview-top"><span class="mark"><span class="mark-shape"></span> Archive</span><span class="count">Index online</span></div>
+        <h4>Knowledge is a weapon.</h4>
+        <p class="preview-copy">A sharp, mechanical field manual with compact information density.</p>
+        <div class="search"><span class="search-icon"></span><span>QUERY THE ARCHIVE</span></div>
+        <div class="item"><span class="thumb"></span><span><strong>ANCIENT BLADE</strong><small>WEAPON CLASS</small></span><span class="tag">R-04</span></div>
+        <div class="item"><span class="thumb"></span><span><strong>MIRE STALKER</strong><small>CREATURE CLASS</small></span><span class="tag">B-12</span></div>
+      </div>
+      <div class="caption card-body"><h3>C. Signal Archive</h3><p>Industrial, high-contrast, distinctive. Best for sci-fi or tactical games.</p></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,102 @@
+<style>
+  #frost-layout { --frost-bg: #edf1f5; --frost-surface: #f8fafc; --frost-ink: #14233b; --frost-muted: #67758a; --frost-line: #cbd5e1; --frost-blue: #2e5fb3; }
+  #frost-layout .stage { margin-top: 22px; padding: 18px; border: 1px solid var(--border); border-radius: 16px; background: var(--muted); }
+  #frost-layout .browser-bar { display: flex; align-items: center; gap: 6px; padding: 0 2px 12px; }
+  #frost-layout .browser-bar span { width: 7px; height: 7px; border-radius: 999px; background: var(--muted-foreground); opacity: .35; }
+  #frost-layout .desktop { overflow: hidden; border: 1px solid #bcc8d7; border-radius: 11px; color: var(--frost-ink); background: var(--frost-bg); box-shadow: 0 22px 60px rgba(31, 52, 78, .12); }
+  #frost-layout .topbar { display: flex; align-items: center; justify-content: space-between; height: 55px; padding: 0 22px; border-bottom: 1px solid var(--frost-line); background: rgba(248, 250, 252, .9); }
+  #frost-layout .brand { display: flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 700; letter-spacing: .05em; }
+  #frost-layout .brand-mark { width: 15px; height: 15px; border: 2px solid var(--frost-blue); transform: rotate(45deg); }
+  #frost-layout .nav { display: flex; gap: 20px; color: var(--frost-muted); font-size: 9px; }
+  #frost-layout .page { max-width: 900px; margin: 0 auto; padding: 46px 34px 54px; }
+  #frost-layout .headline { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 30px; align-items: end; margin-bottom: 24px; }
+  #frost-layout .headline h3 { max-width: 430px; margin: 0; color: var(--frost-ink); font-size: 35px; line-height: 1.02; letter-spacing: -.045em; }
+  #frost-layout .headline p { max-width: 220px; margin: 0; color: var(--frost-muted); font-size: 10px; line-height: 1.5; }
+  #frost-layout .searchbox { display: flex; align-items: center; gap: 12px; height: 54px; padding: 0 17px; border: 1px solid #a8b8cc; border-radius: 10px; color: var(--frost-muted); background: var(--frost-surface); box-shadow: 0 10px 28px rgba(34, 61, 96, .08); font-size: 11px; }
+  #frost-layout .glass { width: 12px; height: 12px; border: 1.5px solid var(--frost-blue); border-radius: 999px; position: relative; }
+  #frost-layout .glass::after { content: ''; position: absolute; width: 5px; height: 1.5px; right: -4px; bottom: -2px; background: var(--frost-blue); transform: rotate(45deg); }
+  #frost-layout .shortcut { margin-left: auto; padding: 4px 7px; border: 1px solid var(--frost-line); border-radius: 5px; color: var(--frost-muted); background: #eef3f8; font-size: 8px; }
+  #frost-layout .filters { display: flex; gap: 7px; margin: 13px 0 34px; }
+  #frost-layout .filter { padding: 6px 10px; border: 1px solid var(--frost-line); border-radius: 999px; color: var(--frost-muted); background: transparent; font-size: 8px; }
+  #frost-layout .filter.active { border-color: var(--frost-blue); color: #fff; background: var(--frost-blue); }
+  #frost-layout .section-label { display: flex; align-items: end; justify-content: space-between; margin-bottom: 12px; }
+  #frost-layout .section-label strong { font-size: 12px; }
+  #frost-layout .section-label span { color: var(--frost-muted); font-size: 8px; }
+  #frost-layout .result-list { border-top: 1px solid var(--frost-line); }
+  #frost-layout .result { display: grid; grid-template-columns: 44px minmax(0, 1.4fr) minmax(90px, .6fr) 20px; gap: 13px; align-items: center; padding: 12px 2px; border-bottom: 1px solid var(--frost-line); }
+  #frost-layout .art { width: 44px; height: 38px; border-radius: 6px; background: linear-gradient(145deg, #a6b8ca, #dae2ea); }
+  #frost-layout .art.two { background: linear-gradient(145deg, #b7c7af, #e0e8dc); }
+  #frost-layout .art.three { background: linear-gradient(145deg, #c8b9a7, #e9e1d7); }
+  #frost-layout .result strong { display: block; font-size: 10px; }
+  #frost-layout .result small { color: var(--frost-muted); font-size: 8px; }
+  #frost-layout .type { justify-self: start; padding: 4px 7px; border-radius: 999px; color: var(--frost-blue); background: #dce6f4; font-size: 8px; }
+  #frost-layout .arrow { color: var(--frost-blue); font-size: 13px; }
+  #frost-layout .state-note { display: grid; grid-template-columns: 1fr 230px; gap: 18px; align-items: start; margin-top: 20px; }
+  #frost-layout .active-state { padding: 16px; border: 1px solid var(--frost-line); border-radius: 10px; color: var(--frost-ink); background: var(--frost-surface); }
+  #frost-layout .active-state .mini-search { display: flex; align-items: center; height: 34px; padding: 0 9px; border: 1px solid var(--frost-blue); border-radius: 7px; color: var(--frost-ink); font-size: 9px; }
+  #frost-layout .active-state .caret { width: 1px; height: 13px; margin-left: 2px; background: var(--frost-blue); }
+  #frost-layout .active-state p { margin: 9px 0 0; color: var(--frost-muted); font-size: 8px; }
+  #frost-layout .mobile { display: none; }
+  #frost-layout .decisions { margin-top: 22px; }
+  @media (max-width: 760px) {
+    #frost-layout .stage { padding: 10px; }
+    #frost-layout .desktop { display: none; }
+    #frost-layout .mobile { display: block; overflow: hidden; border: 1px solid #bcc8d7; border-radius: 15px; color: var(--frost-ink); background: var(--frost-bg); }
+    #frost-layout .topbar { padding: 0 15px; }
+    #frost-layout .nav { display: none; }
+    #frost-layout .page { padding: 30px 16px 40px; }
+    #frost-layout .headline { display: block; margin-bottom: 18px; }
+    #frost-layout .headline h3 { max-width: 270px; font-size: 29px; }
+    #frost-layout .headline p { margin-top: 10px; }
+    #frost-layout .filters { overflow: hidden; white-space: nowrap; }
+    #frost-layout .result { grid-template-columns: 40px 1fr auto; }
+    #frost-layout .result .type { display: none; }
+    #frost-layout .state-note { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div id="frost-layout">
+  <h2>Frost Atlas, search-first layout</h2>
+  <p class="subtitle">Search ở đầu luồng, category chỉ hỗ trợ khám phá, kết quả dùng hàng dữ liệu thay vì dàn nhiều card.</p>
+
+  <div class="stage">
+    <div class="browser-bar"><span></span><span></span><span></span></div>
+    <div class="desktop">
+      <div class="topbar"><div class="brand"><span class="brand-mark"></span> FROST ATLAS</div><div class="nav"><span>Browse</span><span>Collections</span><span>About</span></div></div>
+      <div class="page">
+        <div class="headline"><h3>Find answers.<br>Keep playing.</h3><p>A fast reference for items, creatures, quests and locations.</p></div>
+        <div class="searchbox"><span class="glass"></span><span>Search items, creatures, locations...</span><span class="shortcut">⌘ K</span></div>
+        <div class="filters"><span class="filter active">All entries</span><span class="filter">Items</span><span class="filter">Creatures</span><span class="filter">Locations</span><span class="filter">Quests</span></div>
+        <div class="section-label"><strong>Explore the atlas</strong><span>128 entries</span></div>
+        <div class="result-list">
+          <div class="result"><span class="art"></span><span><strong>Ancient Blade</strong><small>A relic weapon recovered from the northern ruins.</small></span><span class="type">Item</span><span class="arrow">›</span></div>
+          <div class="result"><span class="art two"></span><span><strong>Mire Stalker</strong><small>A territorial creature found near flooded paths.</small></span><span class="type">Creature</span><span class="arrow">›</span></div>
+          <div class="result"><span class="art three"></span><span><strong>The Hollow Crossing</strong><small>A forgotten route beneath the old city.</small></span><span class="type">Location</span><span class="arrow">›</span></div>
+        </div>
+        <div class="state-note">
+          <div><div class="section-label"><strong>Instant search behavior</strong><span>No submit button</span></div><p style="margin:0;color:var(--frost-muted);font-size:9px;line-height:1.5">Typing filters name, category and description immediately. Empty and no-result states keep the same layout width.</p></div>
+          <div class="active-state"><div class="mini-search">mire<span class="caret"></span></div><p>1 result found in Creatures</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile">
+      <div class="topbar"><div class="brand"><span class="brand-mark"></span> FROST ATLAS</div><div class="shortcut">Menu</div></div>
+      <div class="page">
+        <div class="headline"><h3>Find answers.<br>Keep playing.</h3><p>A fast reference for game knowledge.</p></div>
+        <div class="searchbox"><span class="glass"></span><span>Search the atlas...</span></div>
+        <div class="filters"><span class="filter active">All</span><span class="filter">Items</span><span class="filter">Creatures</span></div>
+        <div class="section-label"><strong>Explore</strong><span>128 entries</span></div>
+        <div class="result-list">
+          <div class="result"><span class="art"></span><span><strong>Ancient Blade</strong><small>Item</small></span><span class="arrow">›</span></div>
+          <div class="result"><span class="art two"></span><span><strong>Mire Stalker</strong><small>Creature</small></span><span class="arrow">›</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="options decisions">
+    <div class="option" data-choice="approve-frost-layout" onclick="toggleSelect(this)"><div class="letter">✓</div><div class="content"><h3>Duyệt layout này</h3><p>Giữ cấu trúc và tiếp tục chốt component, state.</p></div></div>
+    <div class="option" data-choice="revise-frost-layout" onclick="toggleSelect(this)"><div class="letter">↻</div><div class="content"><h3>Cần chỉnh layout</h3><p>Chọn mục này rồi mô tả phần muốn thay đổi trong terminal.</p></div></div>
+  </div>
+</div>

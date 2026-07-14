@@ -47,3 +47,4 @@ next-env.d.ts
 /data/sources/game/*.zip
 /data/raw/runtime.json
 /data/runtime/
+/mod

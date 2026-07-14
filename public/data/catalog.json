@@ -4416,7 +4416,7 @@
       "key": "tu_tien:gezhixing_amiaohouse",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "A Miêu Tiểu Ốc"
       },
       "namespace": "tu_tien",
       "prefab_id": "gezhixing_amiaohouse",
@@ -5047,7 +5047,7 @@
       "key": "tu_tien:xd_backpack3_skin1",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Bối Nang Tu Tiên · Ngoại Quan 1"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_backpack3_skin1",
@@ -5069,7 +5069,7 @@
       "key": "tu_tien:xd_backpack3_skin4",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Bối Nang Tu Tiên · Ngoại Quan 4"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_backpack3_skin4",
@@ -5091,7 +5091,7 @@
       "key": "tu_tien:xd_backpack3_skin5",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Bối Nang Tu Tiên · Ngoại Quan 5"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_backpack3_skin5",
@@ -5113,7 +5113,7 @@
       "key": "tu_tien:xd_backpack3_skin6",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Bối Nang Tu Tiên · Ngoại Quan 6"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_backpack3_skin6",
@@ -5745,7 +5745,7 @@
       "key": "tu_tien:xd_crc_skins_hqyx",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Trữ Nhục Thương · Ngoại Quan HQYX"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_crc_skins_hqyx",
@@ -6493,7 +6493,7 @@
       "key": "tu_tien:xd_dbg_skins_llt",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Đa Bảo Các · Ngoại Quan LLT"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_dbg_skins_llt",
@@ -6515,7 +6515,7 @@
       "key": "tu_tien:xd_dbg_skins_ybg",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Đa Bảo Các · Ngoại Quan YBG"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_dbg_skins_ybg",
@@ -6608,7 +6608,7 @@
       "key": "tu_tien:xd_dc_skins_hh",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Đăng Thải · Ngoại Quan HH"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_dc_skins_hh",
@@ -7519,7 +7519,7 @@
       "confidence": 1.0,
       "description": {
         "en": null,
-        "vi": "Được luyện chế từ Lôi Minh Cố, phú dư thuộc tính lôi điện cho đòn tấn công"
+        "vi": "Được luyện chế từ Lôi Minh Cô, ban cho thuộc tính lôi điện cho đòn tấn công"
       },
       "effects": [],
       "icon_key": "tu_tien:xd_dy_lmsqd_3",
@@ -7589,7 +7589,7 @@
       "confidence": 1.0,
       "description": {
         "en": null,
-        "vi": "Đan dược lôi điện cơ bản, bước đầu cụ bị uy lực của lôi đình"
+        "vi": "Đan dược lôi điện cơ bản, bước đầu mang uy lực của lôi đình"
       },
       "effects": [],
       "icon_key": "tu_tien:xd_dy_lmsqd_5",
@@ -8192,7 +8192,7 @@
       "key": "tu_tien:xd_dy_tsfhd_1",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Nhất Phẩm Thế Tử Phản Hồn Đan"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_dy_tsfhd_1",
@@ -8214,7 +8214,7 @@
       "key": "tu_tien:xd_dy_tsfhd_2",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Nhị Phẩm Thế Tử Phản Hồn Đan"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_dy_tsfhd_2",
@@ -8236,7 +8236,7 @@
       "key": "tu_tien:xd_dy_tsfhd_3",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Tam Phẩm Thế Tử Phản Hồn Đan"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_dy_tsfhd_3",
@@ -8258,7 +8258,7 @@
       "key": "tu_tien:xd_dy_tsfhd_4",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Tứ Phẩm Thế Tử Phản Hồn Đan"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_dy_tsfhd_4",
@@ -8280,7 +8280,7 @@
       "key": "tu_tien:xd_dy_tsfhd_5",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngũ Phẩm Thế Tử Phản Hồn Đan"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_dy_tsfhd_5",
@@ -8329,7 +8329,7 @@
       "confidence": 1.0,
       "description": {
         "en": null,
-        "vi": "Ngưng tụ từ thị huyết tinh hoa, khi công địch sẽ phản bổ lại bản thân"
+        "vi": "Ngưng tụ từ thị huyết tinh hoa, khi tấn công kẻ địch sẽ bồi bổ lại bản thân"
       },
       "effects": [],
       "icon_key": "tu_tien:xd_dy_xttyd_2",
@@ -8364,7 +8364,7 @@
       "confidence": 1.0,
       "description": {
         "en": null,
-        "vi": "Được luyện chế từ U Hồn Hoa, phú dư hiệu ứng hút máu cho đòn tấn công"
+        "vi": "Được luyện chế từ U Hồn Hoa, ban cho hiệu ứng hút máu cho đòn tấn công"
       },
       "effects": [],
       "icon_key": "tu_tien:xd_dy_xttyd_3",
@@ -8714,7 +8714,7 @@
       "confidence": 1.0,
       "description": {
         "en": null,
-        "vi": "Được luyện chế từ Thanh Phong Nhứ, phú dư năng lực di chuyển siêu phàm"
+        "vi": "Được luyện chế từ Thanh Phong Nhứ, ban cho năng lực di chuyển siêu phàm"
       },
       "effects": [],
       "icon_key": "tu_tien:xd_dy_yfsxd_3",
@@ -9600,7 +9600,7 @@
       "key": "tu_tien:xd_flower_bmg_skins_srlg",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Bạch Mân Côi · Ngoại Quan SRLG"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_flower_bmg_skins_srlg",
@@ -9740,7 +9740,7 @@
       "key": "tu_tien:xd_flower_md_skins_rjfg",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Mẫu Đơn · Ngoại Quan RJFG"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_flower_md_skins_rjfg",
@@ -9939,7 +9939,7 @@
       "key": "tu_tien:xd_flower_sfr_skins_fr",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Thủy Phù Dung · Ngoại Quan FR"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_flower_sfr_skins_fr",
@@ -9961,7 +9961,7 @@
       "key": "tu_tien:xd_flower_sfr_skins_xy",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Thủy Phù Dung · Ngoại Quan XY"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_flower_sfr_skins_xy",
@@ -10385,7 +10385,7 @@
       "key": "tu_tien:xd_ftys_skins_zjzy",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Chuồng Dê Điện · Ngoại Quan ZJZY"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_ftys_skins_zjzy",
@@ -10616,7 +10616,7 @@
       "key": "tu_tien:xd_gj_skins_lrq",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Cam Tỉnh · Ngoại Quan LRQ"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_gj_skins_lrq",
@@ -10704,7 +10704,7 @@
       "key": "tu_tien:xd_gjx_skins_jsth",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Công Cụ Hạp · Ngoại Quan JSTH"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_gjx_skins_jsth",
@@ -10994,7 +10994,7 @@
       "key": "tu_tien:xd_hhlmz_skins_htjc",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Hoàng Hoa Lê Mộc Trác · Ngoại Quan HTJC"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_hhlmz_skins_htjc",
@@ -11016,7 +11016,7 @@
       "key": "tu_tien:xd_hhlmz_skins_wfz",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Hoàng Hoa Lê Mộc Trác · Ngoại Quan WFZ"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_hhlmz_skins_wfz",
@@ -11185,7 +11185,7 @@
       "key": "tu_tien:xd_hmsw_skins_bzxw",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Hoán Miêu Thụ Ốc · Ngoại Quan BZXW"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_hmsw_skins_bzxw",
@@ -11543,7 +11543,7 @@
       "key": "tu_tien:xd_htz_spell",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Hạo Thiên Tôn Pháp Thuật"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_htz_spell",
@@ -11968,7 +11968,7 @@
       "key": "tu_tien:xd_hxyp_cd",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Hộ Tâm Ngọc Bội · Hồi Phục"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_hxyp_cd",
@@ -13451,7 +13451,7 @@
       "key": "tu_tien:xd_jwtcd_skins_hqy",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Kim Ô Đằng Thải Đăng · Ngoại Quan HQY"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_jwtcd_skins_hqy",
@@ -13473,7 +13473,7 @@
       "key": "tu_tien:xd_jwtcd_skins_qzyc",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Kim Ô Đằng Thải Đăng · Ngoại Quan QZYC"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_jwtcd_skins_qzyc",
@@ -13716,7 +13716,7 @@
       "key": "tu_tien:xd_lbjlt_skins_zgrpt",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Linh Bảo Tế Luyện Đài · Ngoại Quan ZGRPT"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_lbjlt_skins_zgrpt",
@@ -14744,7 +14744,7 @@
       "key": "tu_tien:xd_lgzbh_skins_jlyc",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Lưu Quang Châu Bảo Hạp · Ngoại Quan JLYC"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_lgzbh_skins_jlyc",
@@ -14891,7 +14891,7 @@
       "key": "tu_tien:xd_liandanlu_skins_ysx",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Đan Lô · Ngoại Quan YSX"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_liandanlu_skins_ysx",
@@ -15150,7 +15150,7 @@
       "confidence": 1.0,
       "description": {
         "en": null,
-        "vi": "Khi tế luyện pháp bảo có thể gia tăng một lượng tỷ lệ thành công nhất định."
+        "vi": "Khi tế luyện pháp bảo có thể gia tăng tỷ lệ thành công nhất định."
       },
       "effects": [],
       "icon_key": "tu_tien:xd_lingshi3",
@@ -16780,7 +16780,7 @@
       "key": "tu_tien:xd_lyd_skins_fhgz",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Liên Diệp Đông · Ngoại Quan FHGZ"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_lyd_skins_fhgz",
@@ -16895,7 +16895,7 @@
       "key": "tu_tien:xd_mg_skins_qwg",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Mật Quán · Ngoại Quan QWG"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_mg_skins_qwg",
@@ -16988,7 +16988,7 @@
       "key": "tu_tien:xd_mglz_skins_hhyy",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Giỏ Nấm · Ngoại Quan HHYY"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_mglz_skins_hhyy",
@@ -17127,7 +17127,7 @@
       "key": "tu_tien:xd_mo_builder_skins_duanzui",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ma Kiếm · Đoạn Tội"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_mo_builder_skins_duanzui",
@@ -17149,7 +17149,7 @@
       "key": "tu_tien:xd_mo_builder_skins_wendao",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ma Kiếm · Vấn Đạo"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_mo_builder_skins_wendao",
@@ -17411,7 +17411,7 @@
       "key": "tu_tien:xd_pflnw_skins_qns",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Chuồng Bò Lai · Ngoại Quan QNS"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_pflnw_skins_qns",
@@ -17926,7 +17926,7 @@
       "key": "tu_tien:xd_qianyu_1",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Tiêm Vũ · Nhất Thức"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_qianyu_1",
@@ -17948,7 +17948,7 @@
       "key": "tu_tien:xd_qianyu_2",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Tiêm Vũ · Nhị Thức"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_qianyu_2",
@@ -18129,7 +18129,7 @@
       "key": "tu_tien:xd_qljq_skins_hlq",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Quỳnh Lâu Kim Khuyết · Ngoại Quan HLQ"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_qljq_skins_hlq",
@@ -18263,7 +18263,7 @@
       "key": "tu_tien:xd_qwsk_xznw",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Thiên Vị Thực Khám · Ngoại Quan XZNW"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_qwsk_xznw",
@@ -18682,7 +18682,7 @@
       "key": "tu_tien:xd_sgc_skins_wgc",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Sơ Quả Thương · Ngoại Quan WGC"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_sgc_skins_wgc",
@@ -19155,7 +19155,7 @@
       "confidence": 1.0,
       "description": {
         "en": null,
-        "vi": "Phú dư cho thân ngoại hóa thân năng lực của Hoàng Cân Lực Sĩ"
+        "vi": "Ban cho cho thân ngoại hóa thân năng lực của Hoàng Cân Lực Sĩ"
       },
       "effects": [],
       "icon_key": "tu_tien:xd_sj_bgygp",
@@ -19319,7 +19319,7 @@
       "key": "tu_tien:xd_sj_by_skin1",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Bích Vân Đồng Tử · Ngoại Quan 1"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_sj_by_skin1",
@@ -19421,7 +19421,7 @@
       "key": "tu_tien:xd_sj_cy_skin1",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Thải Vân Đồng Tử · Ngoại Quan 1"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_sj_cy_skin1",
@@ -19883,7 +19883,7 @@
       "key": "tu_tien:xd_skin_cgsh",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · CGSH"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_cgsh",
@@ -19905,7 +19905,7 @@
       "key": "tu_tien:xd_skin_clzgj",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · CLZGJ"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_clzgj",
@@ -19927,7 +19927,7 @@
       "key": "tu_tien:xd_skin_cxlt",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · CXLT"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_cxlt",
@@ -19949,7 +19949,7 @@
       "key": "tu_tien:xd_skin_cygh",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · CYGH"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_cygh",
@@ -19971,7 +19971,7 @@
       "key": "tu_tien:xd_skin_fgy",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · FGY"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_fgy",
@@ -19993,7 +19993,7 @@
       "key": "tu_tien:xd_skin_fhjd",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · FHJD"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_fhjd",
@@ -20015,7 +20015,7 @@
       "key": "tu_tien:xd_skin_flzr",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · FLZR"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_flzr",
@@ -20037,7 +20037,7 @@
       "key": "tu_tien:xd_skin_fsfmg",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · FSFMG"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_fsfmg",
@@ -20059,7 +20059,7 @@
       "key": "tu_tien:xd_skin_fshm",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · FSHM"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_fshm",
@@ -20081,7 +20081,7 @@
       "key": "tu_tien:xd_skin_fyzz",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · FYZZ"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_fyzz",
@@ -20103,7 +20103,7 @@
       "key": "tu_tien:xd_skin_hasaki",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · Hasaki"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_hasaki",
@@ -20125,7 +20125,7 @@
       "key": "tu_tien:xd_skin_hyys",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · HYYS"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_hyys",
@@ -20169,7 +20169,7 @@
       "key": "tu_tien:xd_skin_jj",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · JJ"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_jj",
@@ -20191,7 +20191,7 @@
       "key": "tu_tien:xd_skin_jj_skillbuild",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · JJ (Dạng Kỹ Năng)"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_jj_skillbuild",
@@ -20213,7 +20213,7 @@
       "key": "tu_tien:xd_skin_jydm",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · JYDM"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_jydm",
@@ -20235,7 +20235,7 @@
       "key": "tu_tien:xd_skin_jypk",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · JYPK"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_jypk",
@@ -20257,7 +20257,7 @@
       "key": "tu_tien:xd_skin_kt",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · KT"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_kt",
@@ -20279,7 +20279,7 @@
       "key": "tu_tien:xd_skin_kt_skillbuild",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · KT (Dạng Kỹ Năng)"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_kt_skillbuild",
@@ -20301,7 +20301,7 @@
       "key": "tu_tien:xd_skin_ly",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · LY"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_ly",
@@ -20323,7 +20323,7 @@
       "key": "tu_tien:xd_skin_lysy",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · LYSY"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_lysy",
@@ -20345,7 +20345,7 @@
       "key": "tu_tien:xd_skin_mzhcd",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · MZHCD"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_mzhcd",
@@ -20367,7 +20367,7 @@
       "key": "tu_tien:xd_skin_mzly",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · MZLY"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_mzly",
@@ -20389,7 +20389,7 @@
       "key": "tu_tien:xd_skin_nczx",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · NCZX"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_nczx",
@@ -20411,7 +20411,7 @@
       "key": "tu_tien:xd_skin_ny",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · NY"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_ny",
@@ -20433,7 +20433,7 @@
       "key": "tu_tien:xd_skin_nyhr",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · NYHR"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_nyhr",
@@ -20455,7 +20455,7 @@
       "key": "tu_tien:xd_skin_smy",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · SMY"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_smy",
@@ -20477,7 +20477,7 @@
       "key": "tu_tien:xd_skin_tf",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · TF"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_tf",
@@ -20499,7 +20499,7 @@
       "key": "tu_tien:xd_skin_wxj",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · WXJ"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_wxj",
@@ -20521,7 +20521,7 @@
       "key": "tu_tien:xd_skin_wzsb",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · WZSB"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_wzsb",
@@ -20543,7 +20543,7 @@
       "key": "tu_tien:xd_skin_xgl",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · XGL"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_xgl",
@@ -20565,7 +20565,7 @@
       "key": "tu_tien:xd_skin_xqc",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · XQC"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_xqc",
@@ -20587,7 +20587,7 @@
       "key": "tu_tien:xd_skin_xuanyuan",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · Hiên Viên"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_xuanyuan",
@@ -20609,7 +20609,7 @@
       "key": "tu_tien:xd_skin_xyb",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · XYB"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_xyb",
@@ -20631,7 +20631,7 @@
       "key": "tu_tien:xd_skin_yfcy",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · YFCY"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_yfcy",
@@ -20653,7 +20653,7 @@
       "key": "tu_tien:xd_skin_yfly",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · YFLY"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_yfly",
@@ -20675,7 +20675,7 @@
       "key": "tu_tien:xd_skin_ylxh",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · YLXH"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_ylxh",
@@ -20697,7 +20697,7 @@
       "key": "tu_tien:xd_skin_ys",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · YS"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_ys",
@@ -20719,7 +20719,7 @@
       "key": "tu_tien:xd_skin_ysb",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · YSB"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_ysb",
@@ -20741,7 +20741,7 @@
       "key": "tu_tien:xd_skin_ysb_skillbuild",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · YSB (Dạng Kỹ Năng)"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_ysb_skillbuild",
@@ -20763,7 +20763,7 @@
       "key": "tu_tien:xd_skin_zste",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · ZSTE"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_zste",
@@ -20785,7 +20785,7 @@
       "key": "tu_tien:xd_skin_zsxm",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · ZSXM"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_zsxm",
@@ -20807,7 +20807,7 @@
       "key": "tu_tien:xd_skin_zw",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · ZW"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_zw",
@@ -20829,7 +20829,7 @@
       "key": "tu_tien:xd_skin_zw_skillbuild",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · ZW (Dạng Kỹ Năng)"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_zw_skillbuild",
@@ -20851,7 +20851,7 @@
       "key": "tu_tien:xd_skin_zyj",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngoại Quan Tu Tiên · ZYJ"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_skin_zyj",
@@ -21625,7 +21625,7 @@
       "key": "tu_tien:xd_sudaji_redlantern_zyx",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngư Long Đăng · Ngoại Quan ZYX"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_sudaji_redlantern_zyx",
@@ -21737,7 +21737,7 @@
       "key": "tu_tien:xd_sudaji_sjpn_jssc",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Thập Cẩm Bội Nang · Ngoại Quan JSSC"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_sudaji_sjpn_jssc",
@@ -21873,7 +21873,7 @@
       "key": "tu_tien:xd_sudaji_tsmd_ykmd",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Thế Thân Mộc Điêu · Ngoại Quan YKMD"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_sudaji_tsmd_ykmd",
@@ -21895,7 +21895,7 @@
       "key": "tu_tien:xd_sudaji_xyj",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Tô Đát Kỷ · Phụ Kiện XYJ"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_sudaji_xyj",
@@ -21972,7 +21972,7 @@
       "key": "tu_tien:xd_sudaji_yhly_charged",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Dưỡng Hồn Linh Ngọc · Đã Nạp"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_sudaji_yhly_charged",
@@ -21994,7 +21994,7 @@
       "key": "tu_tien:xd_sudaji_yhly_yhm",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Dưỡng Hồn Linh Ngọc · Ngoại Quan YHM"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_sudaji_yhly_yhm",
@@ -22016,7 +22016,7 @@
       "key": "tu_tien:xd_sudaji_yhly_yhm_charged",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Dưỡng Hồn Linh Ngọc · Ngoại Quan YHM (Đã Nạp)"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_sudaji_yhly_yhm_charged",
@@ -22104,7 +22104,7 @@
       "key": "tu_tien:xd_sudaji_ywfh_lxzy",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Nhất Vũ Phương Hoa · Ngoại Quan LXZY"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_sudaji_ywfh_lxzy",
@@ -22358,7 +22358,7 @@
       "key": "tu_tien:xd_tianjiwu_skins_byj",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Thiên Cơ Ốc · Ngoại Quan BYJ"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_tianjiwu_skins_byj",
@@ -22461,7 +22461,7 @@
       "key": "tu_tien:xd_tree_df_skins_zsyj",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Đan Phong · Ngoại Quan ZSYJ"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_tree_df_skins_zsyj",
@@ -22601,7 +22601,7 @@
       "key": "tu_tien:xd_tree_xhs_skins_lgs",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Hạnh Hoa Thụ · Ngoại Quan LGS"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_tree_xhs_skins_lgs",
@@ -22682,7 +22682,7 @@
       "key": "tu_tien:xd_tree_yhs_skins_fd",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Anh Đào Thụ · Ngoại Quan FD"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_tree_yhs_skins_fd",
@@ -22822,7 +22822,7 @@
       "key": "tu_tien:xd_tree_yxs_skins_jqs",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngân Hạnh · Ngoại Quan JQS"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_tree_yxs_skins_jqs",
@@ -23271,7 +23271,7 @@
       "key": "tu_tien:xd_wmz_md1",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Mê Điệp · Nhất Giai"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_wmz_md1",
@@ -23340,7 +23340,7 @@
       "key": "tu_tien:xd_wmz_md2",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Mê Điệp · Nhị Giai"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_wmz_md2",
@@ -23409,7 +23409,7 @@
       "key": "tu_tien:xd_wmz_md3",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Mê Điệp · Tam Giai"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_wmz_md3",
@@ -23478,7 +23478,7 @@
       "key": "tu_tien:xd_wmz_md4",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Mê Điệp · Tứ Giai"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_wmz_md4",
@@ -23547,7 +23547,7 @@
       "key": "tu_tien:xd_wmz_md5",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Mê Điệp · Ngũ Giai"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_wmz_md5",
@@ -23616,7 +23616,7 @@
       "key": "tu_tien:xd_wmz_md6",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Mê Điệp · Lục Giai"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_wmz_md6",
@@ -23685,7 +23685,7 @@
       "key": "tu_tien:xd_wmz_md7",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Mê Điệp · Thất Giai"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_wmz_md7",
@@ -23754,7 +23754,7 @@
       "key": "tu_tien:xd_wmz_md8",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Mê Điệp · Bát Giai"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_wmz_md8",
@@ -23899,7 +23899,7 @@
       "key": "tu_tien:xd_wmz_spell",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Vương Ma Tử Pháp Thuật"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_wmz_spell",
@@ -24293,7 +24293,7 @@
       "key": "tu_tien:xd_wsjx_skins_yzjx",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Vô Song Kiếm Hạp · Ngoại Quan YZJX"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_wsjx_skins_yzjx",
@@ -24762,7 +24762,7 @@
       "key": "tu_tien:xd_xcdf_skins_sysx",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Tinh Thối Đan Phủ · Ngoại Quan SYSX"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_xcdf_skins_sysx",
@@ -24911,7 +24911,7 @@
       "key": "tu_tien:xd_xianjian_builder_skins_duanzui",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Tiên Kiếm · Đoạn Tội"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_xianjian_builder_skins_duanzui",
@@ -24933,7 +24933,7 @@
       "key": "tu_tien:xd_xianjian_builder_skins_wendao",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Tiên Kiếm · Vấn Đạo"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_xianjian_builder_skins_wendao",
@@ -25274,7 +25274,7 @@
       "key": "tu_tien:xd_xshj_bbzy",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Tà Sát Hộ Giáp · Ngoại Quan BBZY"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_xshj_bbzy",
@@ -25296,7 +25296,7 @@
       "key": "tu_tien:xd_xshj_fhlh",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Tà Sát Hộ Giáp · Ngoại Quan FHLH"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_xshj_fhlh",
@@ -25389,7 +25389,7 @@
       "key": "tu_tien:xd_xtbh_skins_wxxxh",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Huyền Thiên Bảo Hồ · Ngoại Quan WXXXH"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_xtbh_skins_wxxxh",
@@ -25497,7 +25497,7 @@
       "key": "tu_tien:xd_yaoarmor",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Yêu Linh Chiến Giáp"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_yaoarmor",
@@ -25519,7 +25519,7 @@
       "key": "tu_tien:xd_yaohat",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Yêu Linh Pháp Quan"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_yaohat",
@@ -25588,7 +25588,7 @@
       "key": "tu_tien:xd_yhbs_zmyh",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Dưỡng Hồn Chủy Thủ · Ngoại Quan ZMYH"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_yhbs_zmyh",
@@ -25687,7 +25687,7 @@
       "key": "tu_tien:xd_yhsyz_skins_qlyyz",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Nguyệt Hoa Nhiếp Dược Chi · Ngoại Quan QLYYZ"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_yhsyz_skins_qlyyz",
@@ -25780,7 +25780,7 @@
       "key": "tu_tien:xd_ylxc_skins_qhnlc",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngọc Lộ Huyền Thương · Ngoại Quan QHNLC"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_ylxc_skins_qhnlc",
@@ -25866,7 +25866,7 @@
       "key": "tu_tien:xd_ylxq_skins_fynl",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Ngọc Lộ Tiên Khu · Ngoại Quan FYNL"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_ylxq_skins_fynl",
@@ -26653,7 +26653,7 @@
       "key": "tu_tien:xd_yunxiao_portableslot",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Vân Tiêu Tùy Thân Trữ Vị"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_yunxiao_portableslot",
@@ -26884,7 +26884,7 @@
       "key": "tu_tien:xd_zcmj_jhxs",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Tử Xá Diện Giáp · Ngoại Quan JHXS"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_zcmj_jhxs",
@@ -26906,7 +26906,7 @@
       "key": "tu_tien:xd_zcmj_trxz",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Tử Xá Diện Giáp · Ngoại Quan TRXZ"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_zcmj_trxz",
@@ -27439,7 +27439,7 @@
       "key": "tu_tien:xd_ztp_skins_lmxq",
       "name": {
         "en": null,
-        "vi": null
+        "vi": "Chưởng Thiên Bình · Ngoại Quan LMXQ"
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_ztp_skins_lmxq",
