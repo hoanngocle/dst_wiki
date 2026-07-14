@@ -547,7 +547,7 @@ export function WikiSearch({ entries }: { entries: readonly WikiEntry[] }) {
 
       <div className="mt-3 flex gap-2 overflow-x-auto pb-2" aria-label="Filter entries by category">
         {filters.map((filter) => (
-          <button key={filter.value} type="button" aria-pressed={category === filter.value} onClick={() => setCategory(filter.value)} className="shrink-0 rounded-full border border-[#cbd5e1] px-3 py-1.5 text-sm font-medium text-[#5c6b80] transition hover:border-[#2e5fb3] hover:text-[#2e5fb3] active:scale-[0.98] aria-pressed:border-[#2e5fb3] aria-pressed:bg-[#2e5fb3] aria-pressed:text-white">
+          <button key={filter.value} type="button" aria-pressed={category === filter.value} onClick={() => setCategory(filter.value)} className="shrink-0 rounded-full border border-[#cbd5e1] px-3 py-1.5 text-sm font-medium text-[#5c6b80] transition hover:border-[#2e5fb3] hover:text-[#2e5fb3] active:scale-[0.98] aria-pressed:border-[#2e5fb3] aria-pressed:bg-[#2e5fb3] aria-pressed:text-[#f8fafc]">
             {filter.label}
           </button>
         ))}
@@ -575,7 +575,7 @@ export function WikiSearch({ entries }: { entries: readonly WikiEntry[] }) {
         <div className="mt-3 border-y border-[#cbd5e1] py-14 text-center">
           <h3 className="text-lg font-semibold text-[#14233b]">No entries found</h3>
           <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-[#67758a]">Try another search or clear the current filters.</p>
-          <button type="button" onClick={resetFilters} className="mt-5 rounded-[10px] bg-[#2e5fb3] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#264f96] active:scale-[0.98]">Clear filters</button>
+          <button type="button" onClick={resetFilters} className="mt-5 rounded-[10px] bg-[#2e5fb3] px-4 py-2.5 text-sm font-semibold text-[#f8fafc] transition hover:bg-[#264f96] active:scale-[0.98]">Clear filters</button>
         </div>
       )}
     </section>
