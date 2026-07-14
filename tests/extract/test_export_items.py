@@ -15,6 +15,7 @@ class ExportItemsTests(unittest.TestCase):
                     "key": "base_game:goldnugget",
                     "namespace": "base_game",
                     "prefab_id": "goldnugget",
+                    "type": "inventory_item",
                     "is_inventory_item": True,
                     "name": {"vi": "Vàng", "en": "Gold Nugget"},
                     "description": {"vi": None, "en": "A gold nugget."},
@@ -25,6 +26,7 @@ class ExportItemsTests(unittest.TestCase):
                     "key": "tu_tien:xd_sword",
                     "namespace": "tu_tien",
                     "prefab_id": "xd_sword",
+                    "type": "inventory_item",
                     "is_inventory_item": True,
                     "name": {"vi": "Kiếm Thử", "en": "Test Sword"},
                     "description": {"vi": "Một thanh kiếm", "en": None},
@@ -46,6 +48,7 @@ class ExportItemsTests(unittest.TestCase):
                     "key": "tu_tien:xd_special",
                     "namespace": "tu_tien",
                     "prefab_id": "xd_special",
+                    "type": "inventory_item",
                     "is_inventory_item": True,
                     "name": {"vi": None, "en": "Special Item"},
                     "description": {"vi": None, "en": None},
@@ -56,6 +59,7 @@ class ExportItemsTests(unittest.TestCase):
                     "key": "tu_tien:xd_fallback",
                     "namespace": "tu_tien",
                     "prefab_id": "xd_fallback",
+                    "type": "unknown",
                     "is_inventory_item": True,
                     "name": {"vi": None, "en": None},
                     "description": {"vi": None, "en": None},
@@ -66,8 +70,31 @@ class ExportItemsTests(unittest.TestCase):
                     "key": "tu_tien:xd_creature",
                     "namespace": "tu_tien",
                     "prefab_id": "xd_creature",
+                    "type": "creature",
                     "is_inventory_item": False,
                     "name": {"vi": "Sinh vật", "en": "Creature"},
+                    "description": {"vi": None, "en": None},
+                    "icon_key": None,
+                    "recipes": [],
+                },
+                {
+                    "key": "base_game:deerclops",
+                    "namespace": "base_game",
+                    "prefab_id": "deerclops",
+                    "type": "boss",
+                    "is_inventory_item": False,
+                    "name": {"vi": None, "en": "Deerclops"},
+                    "description": {"vi": None, "en": None},
+                    "icon_key": None,
+                    "recipes": [],
+                },
+                {
+                    "key": "base_game:dependency_alias",
+                    "namespace": "base_game",
+                    "prefab_id": "dependency_alias",
+                    "type": "unknown",
+                    "is_inventory_item": False,
+                    "name": {"vi": None, "en": None},
                     "description": {"vi": None, "en": None},
                     "icon_key": None,
                     "recipes": [],
@@ -123,7 +150,7 @@ class ExportItemsTests(unittest.TestCase):
         }
         return catalog, assets
 
-    def test_builds_inventory_items_with_resolved_recipe_sprites(self):
+    def test_builds_all_prefabs_with_categories_and_resolved_recipe_sprites(self):
         catalog, assets = self.fixtures()
 
         items, textures = build_item_export(catalog, assets)
@@ -131,12 +158,21 @@ class ExportItemsTests(unittest.TestCase):
         self.assertEqual(
             [item["id"] for item in items["items"]],
             [
+                "base_game:deerclops",
                 "base_game:goldnugget",
+                "tu_tien:xd_creature",
                 "tu_tien:xd_fallback",
                 "tu_tien:xd_special",
                 "tu_tien:xd_sword",
             ],
         )
+        self.assertEqual(items["schema_version"], 2)
+        by_id = {item["id"]: item for item in items["items"]}
+        self.assertEqual(by_id["base_game:deerclops"]["category"], "boss")
+        self.assertEqual(by_id["base_game:goldnugget"]["category"], "item")
+        self.assertEqual(by_id["tu_tien:xd_creature"]["category"], "mob")
+        self.assertEqual(by_id["tu_tien:xd_fallback"]["category"], "other")
+        self.assertNotIn("base_game:dependency_alias", by_id)
         sword = next(
             item for item in items["items"] if item["id"] == "tu_tien:xd_sword"
         )

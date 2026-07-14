@@ -7,6 +7,20 @@ from typing import Any, Dict, List, Optional, Tuple
 
 
 JsonObject = Dict[str, Any]
+PREFAB_CATEGORIES = {
+    "item",
+    "mob",
+    "boss",
+    "character",
+    "structure",
+    "effect",
+    "other",
+}
+LEGACY_CATEGORY_MAP = {
+    "inventory_item": "item",
+    "creature": "mob",
+    "player": "character",
+}
 
 
 def _atomic_json(path: Path, value: JsonObject) -> None:
@@ -101,6 +115,19 @@ def _description(entity: JsonObject) -> Optional[str]:
     return None
 
 
+def _category(entity: JsonObject) -> Optional[str]:
+    namespace = entity.get("namespace")
+    if namespace not in ("tu_tien", "base_game"):
+        raise ValueError("entity namespace is invalid")
+    entity_type = entity.get("type")
+    if not isinstance(entity_type, str):
+        raise ValueError("entity type must be a string")
+    category = LEGACY_CATEGORY_MAP.get(entity_type, entity_type)
+    if category in PREFAB_CATEGORIES:
+        return category
+    return "other" if namespace == "tu_tien" else None
+
+
 def _positive_integer(value: Any, field: str) -> int:
     if not isinstance(value, (int, float)) or isinstance(value, bool):
         raise ValueError(f"{field} must be a positive integer")
@@ -161,6 +188,9 @@ def _build_item_entry(
 ) -> JsonObject:
     entity_id = str(entity["key"])
     prefab_id = str(entity["prefab_id"])
+    category = _category(entity)
+    if category is None:
+        raise ValueError(f"base-game entity {entity_id} has no prefab category")
     recipes = entity.get("recipes")
     recipe_payload = None
     if isinstance(recipes, list) and recipes:
@@ -197,6 +227,7 @@ def _build_item_entry(
         "id": entity_id,
         "prefabId": prefab_id,
         "namespace": entity["namespace"],
+        "category": category,
         "name": _display_name(entity, prefab_id),
         "englishName": _english_name(entity),
         "description": _description(entity),
@@ -221,14 +252,18 @@ def build_item_export(catalog: JsonObject, assets: JsonObject) -> Tuple[JsonObje
         [asset for asset in source_assets if isinstance(asset, dict)]
     )
     textures: Dict[str, JsonObject] = {}
+    exportable_entities = [
+        entity
+        for entity in source_entities
+        if isinstance(entity, dict) and _category(entity) is not None
+    ]
     items = [
         _build_item_entry(entity, entities, selected_assets, textures)
-        for entity in source_entities
-        if isinstance(entity, dict) and entity.get("is_inventory_item") is True
+        for entity in exportable_entities
     ]
     items.sort(key=lambda item: item["id"])
     return (
-        {"schema_version": 1, "items": items},
+        {"schema_version": 2, "items": items},
         {
             "schema_version": 1,
             "textures": [textures[key] for key in sorted(textures)],
