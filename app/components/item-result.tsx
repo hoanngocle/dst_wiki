@@ -1,5 +1,3 @@
-import { Package } from "@phosphor-icons/react";
-
 import type { ItemListEntry } from "@/app/lib/item-catalog";
 import { findNormalizedTextMatch } from "@/app/lib/wiki-search";
 import { GameSprite } from "./game-sprite";
@@ -28,13 +26,7 @@ export function ItemResult({ item, query }: { item: ItemListEntry; query: string
 
   return (
     <article className="h-full rounded-2xl border border-[#c8d3df] bg-[#f8fafc] p-4 shadow-[0_12px_32px_rgba(40,66,98,0.07)] transition duration-200 hover:-translate-y-0.5 hover:border-[#9fb3cb] hover:shadow-[0_16px_36px_rgba(40,66,98,0.11)] motion-reduce:transform-none motion-reduce:transition-none sm:p-5">
-      <div className="grid grid-cols-[44px_64px_minmax(0,1fr)] items-center gap-3">
-        <span
-          aria-label="Loại: Item"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[#dce6f4] text-[#2e5fb3]"
-        >
-          <Package aria-hidden="true" size={22} weight="duotone" />
-        </span>
+      <div className="grid grid-cols-[64px_minmax(0,1fr)] items-center gap-3">
         <GameSprite sprite={item.sprite} size={64} className="ring-1 ring-[#c8d3df]" />
         <div className="min-w-0">
           <h3 className="truncate text-base font-semibold text-[#172943]">

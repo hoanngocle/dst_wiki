@@ -32,7 +32,7 @@ describe("ItemResult", () => {
     expect(screen.getByRole("heading", { name: "Kiếm Thử" })).toBeDefined();
     expect(screen.getByText("Tu Tiên")).toBeDefined();
     expect(screen.getByText("xd_sword")).toBeDefined();
-    expect(screen.getByLabelText("Loại: Item")).toBeDefined();
+    expect(screen.queryByLabelText("Loại: Item")).toBeNull();
     expect(screen.getByText("×2")).toBeDefined();
   });
 
