@@ -1,3 +1,5 @@
+import type { ItemFilter, ItemListEntry } from "./item-catalog";
+
 export const wikiCategories = ["item", "creature", "location", "quest"] as const;
 
 export type WikiCategory = (typeof wikiCategories)[number];
@@ -80,6 +82,34 @@ export function filterWikiEntries(
 
     const searchableText = normalizeSearchText(
       [entry.name, entry.description, entry.category, ...entry.keywords].join(" "),
+    );
+
+    return searchableText.includes(normalizedQuery);
+  });
+}
+
+export function filterItems(
+  items: readonly ItemListEntry[],
+  query: string,
+  filter: ItemFilter,
+): ItemListEntry[] {
+  const normalizedQuery = normalizeSearchText(query);
+
+  return items.filter((item) => {
+    const matchesFilter =
+      filter === "all" ||
+      (filter === "craftable" ? item.recipe !== null : item.namespace === filter);
+    if (!matchesFilter) return false;
+    if (!normalizedQuery) return true;
+
+    const searchableText = normalizeSearchText(
+      [
+        item.name,
+        item.englishName ?? "",
+        item.prefabId,
+        item.description ?? "",
+        ...(item.recipe?.ingredients.map((ingredient) => ingredient.name) ?? []),
+      ].join(" "),
     );
 
     return searchableText.includes(normalizedQuery);

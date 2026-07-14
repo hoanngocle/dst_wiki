@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
-import { normalizeSearchText } from "./wiki-search";
+import type { ItemListEntry } from "./item-catalog";
+import { filterItems, normalizeSearchText } from "./wiki-search";
 
 describe("normalizeSearchText", () => {
   it("normalizes case and surrounding whitespace", () => {
@@ -12,46 +13,63 @@ describe("normalizeSearchText", () => {
   });
 });
 
-import type { WikiEntry } from "./wiki-search";
-import { filterWikiEntries } from "./wiki-search";
-
-const entries: readonly WikiEntry[] = [
+const items: readonly ItemListEntry[] = [
   {
-    id: "ancient-blade",
-    name: "Ancient Blade",
-    category: "item",
-    description: "A relic weapon from the northern ruins.",
-    keywords: ["sword", "rare"],
-    accent: "ice",
+    id: "tu_tien:xd_sword",
+    prefabId: "xd_sword",
+    namespace: "tu_tien",
+    name: "Kiếm Thử",
+    englishName: "Test Sword",
+    description: "Một thanh kiếm từ phương bắc.",
+    sprite: null,
+    recipe: {
+      outputCount: 1,
+      ingredients: [
+        {
+          id: "base_game:goldnugget",
+          name: "Vàng",
+          amount: 2,
+          sprite: null,
+        },
+      ],
+    },
   },
   {
-    id: "mire-stalker",
-    name: "Mire Stalker",
-    category: "creature",
-    description: "A territorial beast near flooded paths.",
-    keywords: ["swamp", "beast"],
-    accent: "moss",
+    id: "base_game:log",
+    prefabId: "log",
+    namespace: "base_game",
+    name: "Gỗ",
+    englishName: "Log",
+    description: "Nguyên liệu cơ bản.",
+    sprite: null,
+    recipe: null,
   },
 ];
 
-describe("filterWikiEntries", () => {
-  it("preserves all entries for an empty query and all categories", () => {
-    expect(filterWikiEntries(entries, "", "all")).toEqual(entries);
+describe("filterItems", () => {
+  it("preserves all items for an empty query and all filter", () => {
+    expect(filterItems(items, "", "all")).toEqual(items);
   });
 
-  it.each(["blade", "relic", "item", "sword"])(
-    "matches the searchable field %s",
+  it.each(["kiem", "test sword", "xd_sword", "phuong bac", "vang"])(
+    "matches the real searchable field %s",
     (query) => {
-      expect(filterWikiEntries(entries, query, "all").map((entry) => entry.id)).toEqual([
-        "ancient-blade",
+      expect(filterItems(items, query, "all").map((item) => item.id)).toEqual([
+        "tu_tien:xd_sword",
       ]);
     },
   );
 
-  it("combines category and text filters", () => {
-    expect(filterWikiEntries(entries, "mire", "creature").map((entry) => entry.id)).toEqual([
-      "mire-stalker",
+  it("combines namespace and text filters", () => {
+    expect(filterItems(items, "kiem", "tu_tien").map((item) => item.id)).toEqual([
+      "tu_tien:xd_sword",
     ]);
-    expect(filterWikiEntries(entries, "mire", "item")).toEqual([]);
+    expect(filterItems(items, "kiem", "base_game")).toEqual([]);
+  });
+
+  it("filters craftable items", () => {
+    expect(filterItems(items, "", "craftable").map((item) => item.id)).toEqual([
+      "tu_tien:xd_sword",
+    ]);
   });
 });
