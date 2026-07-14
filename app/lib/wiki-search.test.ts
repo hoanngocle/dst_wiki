@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { normalizeSearchText } from "./wiki-search";
+import { findNormalizedTextMatch, normalizeSearchText } from "./wiki-search";
 
 describe("normalizeSearchText", () => {
   it("normalizes case and surrounding whitespace", () => {
@@ -9,6 +9,19 @@ describe("normalizeSearchText", () => {
 
   it("removes combining diacritics", () => {
     expect(normalizeSearchText("Café Ruins")).toBe("cafe ruins");
+  });
+
+  it("folds Vietnamese d with stroke", () => {
+    expect(normalizeSearchText("Đèn Dẫn Lối")).toBe("den dan loi");
+  });
+});
+
+describe("findNormalizedTextMatch", () => {
+  it.each([
+    ["Đèn Dẫn Lối", "den", { start: 0, end: 3 }],
+    ["Thắp đèn", "den", { start: 5, end: 8 }],
+  ])("maps %s back to the original source range", (text, query, expectedRange) => {
+    expect(findNormalizedTextMatch(text, query)).toEqual(expectedRange);
   });
 });
 
@@ -53,5 +66,22 @@ describe("filterWikiEntries", () => {
       "mire-stalker",
     ]);
     expect(filterWikiEntries(entries, "mire", "item")).toEqual([]);
+  });
+
+  it("finds Vietnamese names when the query omits diacritics and d stroke", () => {
+    const vietnameseEntries: readonly WikiEntry[] = [
+      {
+        id: "wayfinder-lantern",
+        name: "Đèn Dẫn Lối",
+        category: "item",
+        description: "Một công cụ phát sáng khi ở gần lối đi bí mật.",
+        keywords: ["công cụ", "ánh sáng", "vật phẩm"],
+        accent: "sand",
+      },
+    ];
+
+    expect(
+      filterWikiEntries(vietnameseEntries, "den dan loi", "all").map((entry) => entry.id),
+    ).toEqual(["wayfinder-lantern"]);
   });
 });

@@ -199,4 +199,14 @@ describe("WikiSearch", () => {
     });
     expect(screen.getByText(expectedName)).toBeDefined();
   });
+
+  it("finds the Vietnamese location category when the query omits diacritics and d stroke", () => {
+    render(<WikiSearch entries={wikiEntries} />);
+    fireEvent.change(screen.getByRole("searchbox", { name: searchName }), {
+      target: { value: "dia diem" },
+    });
+
+    expect(screen.getByText("Lối Qua Vùng Trũng")).toBeDefined();
+    expect(screen.getByText("Đài Quan Sát Windrest")).toBeDefined();
+  });
 });
