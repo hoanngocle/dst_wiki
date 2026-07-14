@@ -79,6 +79,11 @@ export function WikiSearch({ entries }: { entries: readonly WikiEntry[] }) {
     return () => window.removeEventListener("keydown", handleShortcut);
   }, []);
 
+  function clearQueryAndFocus() {
+    setQuery("");
+    inputRef.current?.focus();
+  }
+
   function resetFilters() {
     setQuery("");
     setCategory("all");
@@ -109,17 +114,17 @@ export function WikiSearch({ entries }: { entries: readonly WikiEntry[] }) {
             className="h-14 w-full rounded-[10px] border border-[#a8b8cc] bg-[#f8fafc] pl-12 pr-28 text-base text-[#14233b] shadow-[0_10px_28px_rgba(34,61,96,0.08)] outline-none transition focus:border-[#2e5fb3] focus:ring-4 focus:ring-[#2e5fb3]/15"
           />
           {query ? (
-            <button type="button" onClick={() => setQuery("")} aria-label="Clear search" className="absolute right-3 top-1/2 inline-flex -translate-y-1/2 items-center gap-1 rounded-md px-2 py-1 text-sm text-[#53647a] hover:bg-[#e9eff6] active:scale-[0.98]">
+            <button type="button" onClick={clearQueryAndFocus} aria-label="Clear search" className="absolute right-3 top-1/2 inline-flex -translate-y-1/2 items-center gap-1 rounded-md px-2 py-1 text-sm text-[#53647a] hover:bg-[#e9eff6] active:scale-[0.98]">
               <X aria-hidden="true" size={16} /> Clear
             </button>
           ) : (
-            <kbd className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 rounded-md border border-[#c7d1de] bg-[#eef3f8] px-2 py-1 font-mono text-xs text-[#637287]">⌘ K</kbd>
+            <kbd className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 rounded-md border border-[#c7d1de] bg-[#eef3f8] px-2 py-1 font-mono text-xs text-[#53647a]">⌘ K</kbd>
           )}
         </div>
         <p id="atlas-search-help" className="sr-only">Search by name, description, category, or keyword.</p>
       </div>
 
-      <div className="mt-3 flex gap-2 overflow-x-auto pb-2" aria-label="Filter entries by category">
+      <div role="group" className="mt-3 flex gap-2 overflow-x-auto pb-2" aria-label="Filter entries by category">
         {filters.map((filter) => (
           <button key={filter.value} type="button" aria-pressed={category === filter.value} onClick={() => setCategory(filter.value)} className="shrink-0 rounded-full border border-[#cbd5e1] px-3 py-1.5 text-sm font-medium text-[#5c6b80] transition hover:border-[#2e5fb3] hover:text-[#2e5fb3] active:scale-[0.98] aria-pressed:border-[#2e5fb3] aria-pressed:bg-[#2e5fb3] aria-pressed:text-[#f8fafc]">
             {filter.label}

@@ -48,6 +48,11 @@ describe("WikiSearch", () => {
     expect(screen.queryByText("Mire Stalker")).toBeNull();
   });
 
+  it("exposes category filters as a named group", () => {
+    render(<WikiSearch entries={entries} />);
+    expect(screen.getByRole("group", { name: "Filter entries by category" })).toBeDefined();
+  });
+
   it("clears query and category from the empty state", () => {
     render(<WikiSearch entries={entries} />);
     fireEvent.click(screen.getByRole("button", { name: "Items" }));
@@ -65,6 +70,17 @@ describe("WikiSearch", () => {
       target: { value: "blade" },
     });
     expect(screen.getByText("Blade").tagName).toBe("MARK");
+  });
+
+  it("returns focus to search after clearing the query", () => {
+    render(<WikiSearch entries={entries} />);
+    const search = screen.getByRole("searchbox", { name: "Search the atlas" });
+    fireEvent.change(search, { target: { value: "mire" } });
+    const clear = screen.getByRole("button", { name: "Clear search" });
+    clear.focus();
+    fireEvent.click(clear);
+    expect(search).toHaveProperty("value", "");
+    expect(document.activeElement).toBe(search);
   });
 
   it("focuses search when slash is pressed outside an editable control", () => {
