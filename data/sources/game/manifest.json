@@ -1,0 +1,14 @@
+{
+  "copied_at": "2026-07-14T01:30:35.532248+00:00",
+  "files": {
+    "images.zip": {
+      "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
+      "size": 33310757
+    },
+    "scripts.zip": {
+      "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+      "size": 56134175
+    }
+  },
+  "schema_version": 1
+}
