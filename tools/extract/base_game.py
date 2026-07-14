@@ -17,6 +17,14 @@ class DependencyRequest:
     prefab_id: str
     relation: str
     requested_by: str
+    fact_kind: str = ""
+    locator: str = ""
+    confidence: float = 0.0
+    source_id: str = ""
+    source_kind: str = ""
+    source_path: str = ""
+    source_version: str = ""
+    source_sha256: str = ""
 
 
 @dataclass(frozen=True)
@@ -36,6 +44,21 @@ class RecipeRecord:
     config_expression: str
     expression: str
     line: int
+    warnings: Tuple[Tuple[int, str], ...] = ()
+
+
+@dataclass(frozen=True)
+class FunctionScope:
+    name: str
+    source: str
+    line: int
+
+
+@dataclass(frozen=True)
+class ConstructorBinding:
+    member: str
+    line: int
+    expression: str
 
 
 def _sha256(path: Path) -> str:
@@ -104,6 +127,87 @@ def _skip_string_or_comment(source: str, index: int) -> Optional[int]:
                 index += 1
         return len(source)
     return _long_bracket_end(source, index)
+
+
+def _code_mask(source: str) -> str:
+    """Return same-length Lua with strings/comments blanked and newlines kept."""
+
+    masked = list(source)
+    index = 0
+    while index < len(source):
+        skipped = _skip_string_or_comment(source, index)
+        if skipped is None:
+            index += 1
+            continue
+        for position in range(index, skipped):
+            if masked[position] not in "\r\n":
+                masked[position] = " "
+        index = skipped
+    return "".join(masked)
+
+
+def _function_end(masked: str, function_offset: int) -> Optional[int]:
+    tokens = list(re.finditer(r"\b[A-Za-z_][A-Za-z0-9_]*\b", masked))
+    start_index = next(
+        (index for index, token in enumerate(tokens) if token.start() == function_offset),
+        None,
+    )
+    if start_index is None:
+        return None
+    stack: List[Dict[str, Any]] = [{"kind": "function", "awaiting_do": False}]
+    for token in tokens[start_index + 1 :]:
+        word = token.group(0)
+        if word == "function":
+            stack.append({"kind": "function", "awaiting_do": False})
+        elif word == "if":
+            stack.append({"kind": "if", "awaiting_do": False})
+        elif word in ("for", "while"):
+            stack.append({"kind": word, "awaiting_do": True})
+        elif word == "repeat":
+            stack.append({"kind": "repeat", "awaiting_do": False})
+        elif word == "do":
+            pending = next(
+                (
+                    entry
+                    for entry in reversed(stack)
+                    if entry.get("awaiting_do") is True
+                ),
+                None,
+            )
+            if pending is not None:
+                pending["awaiting_do"] = False
+            else:
+                stack.append({"kind": "do", "awaiting_do": False})
+        elif word == "until":
+            if stack and stack[-1]["kind"] == "repeat":
+                stack.pop()
+        elif word == "end":
+            if stack:
+                stack.pop()
+            if not stack:
+                return token.end()
+    return None
+
+
+def _function_scopes(source: str) -> Dict[str, FunctionScope]:
+    masked = _code_mask(source)
+    definitions = re.compile(
+        r"\blocal\s+(?:function\s+([A-Za-z_][A-Za-z0-9_]*)|"
+        r"([A-Za-z_][A-Za-z0-9_]*)\s*=\s*function)\s*\("
+    )
+    result: Dict[str, FunctionScope] = {}
+    for match in definitions.finditer(masked):
+        name = match.group(1) or match.group(2)
+        function_offset = masked.find("function", match.start(), match.end())
+        end = _function_end(masked, function_offset)
+        if end is None:
+            continue
+        result[name] = FunctionScope(
+            name,
+            source[function_offset:end],
+            source.count("\n", 0, function_offset) + 1,
+        )
+    return result
 
 
 def _matching_delimiter(source: str, opening: int) -> int:
@@ -275,13 +379,18 @@ def _has_receiver(source: str, call: LuaCall, receiver: str) -> bool:
 
 
 def _assigned_strings(source: str, prefix: str) -> Dict[str, Tuple[str, int]]:
+    masked = _code_mask(source)
     pattern = re.compile(
-        rf'^\s*{re.escape(prefix)}\.([A-Z0-9_]+)\s*=\s*((?:"(?:\\.|[^"])*")|(?:\'(?:\\.|[^\'])*\'))\s*$',
+        rf'^[\t ]*{re.escape(prefix)}\.([A-Z0-9_]+)[\t ]*=',
         re.MULTILINE,
     )
     result: Dict[str, Tuple[str, int]] = {}
-    for match in pattern.finditer(source):
-        value = _literal_string(match.group(2))
+    for match in pattern.finditer(masked):
+        line_end = source.find("\n", match.end())
+        if line_end < 0:
+            line_end = len(source)
+        expression = source[match.end() : line_end].strip()
+        value = _literal_string(expression)
         if value is not None:
             result[match.group(1).lower()] = (
                 value,
@@ -312,12 +421,21 @@ def _recipe_record(call: LuaCall) -> Optional[RecipeRecord]:
     ):
         return None
     ingredients: List[Tuple[str, str]] = []
+    warnings: List[Tuple[int, str]] = []
+    table_offset = call.expression.find(ingredient_table)
+    table_line_offset = call.expression[: max(table_offset, 0)].count("\n")
     for ingredient_call in _iter_calls(ingredient_table[1:-1], ("Ingredient",)):
+        ingredient_line = call.line + table_line_offset + ingredient_call.line - 1
         if len(ingredient_call.arguments) < 2:
+            warnings.append((ingredient_line, ingredient_call.expression))
             continue
         prefab_id = _literal_string(ingredient_call.arguments[0])
-        if prefab_id is not None:
-            ingredients.append((prefab_id.lower(), ingredient_call.arguments[1].strip()))
+        if prefab_id is None:
+            warnings.append(
+                (ingredient_line, ingredient_call.arguments[0].strip())
+            )
+            continue
+        ingredients.append((prefab_id.lower(), ingredient_call.arguments[1].strip()))
     return RecipeRecord(
         product.lower(),
         tuple(ingredients),
@@ -325,6 +443,7 @@ def _recipe_record(call: LuaCall) -> Optional[RecipeRecord]:
         call.arguments[3].strip() if len(call.arguments) > 3 else "{}",
         call.expression,
         call.line,
+        tuple(warnings),
     )
 
 
@@ -338,6 +457,7 @@ class ScriptIndex:
             for name in self.members
             if name.startswith("scripts/prefabs/") and name.endswith(".lua")
         }
+        self.prefab_sources: Dict[str, str] = {}
         self.strings_source = self._read_optional("scripts/strings.lua")
         self.recipes_source = self._read_optional("scripts/recipes.lua")
         self.names = _assigned_strings(self.strings_source, "STRINGS.NAMES")
@@ -353,24 +473,32 @@ class ScriptIndex:
             record = _recipe_record(call)
             if record is not None and record.product not in self.recipes:
                 self.recipes[record.product] = record
-        self.prefab_declarations: Dict[str, Tuple[str, int]] = {}
+        self.prefab_declarations: Dict[str, ConstructorBinding] = {}
+        self.function_scopes: Dict[str, Dict[str, FunctionScope]] = {}
         for member in self.members:
             if not member.startswith("scripts/prefabs/") or not member.endswith(".lua"):
                 continue
             source = self.read(member)
+            self.prefab_sources[member] = source
+            self.function_scopes[member] = _function_scopes(source)
             for call in _iter_calls(source, ("Prefab",)):
-                if not call.arguments:
+                if len(call.arguments) < 2:
                     continue
                 prefab_id = _literal_string(call.arguments[0])
                 if prefab_id is not None:
                     self.prefab_declarations.setdefault(
-                        prefab_id.lower(), (member, call.line)
+                        prefab_id.lower(),
+                        ConstructorBinding(
+                            member, call.line, call.arguments[1].strip()
+                        ),
                     )
 
     def _read_optional(self, member: str) -> str:
         return self.read(member) if member in self.members else ""
 
     def read(self, member: str) -> str:
+        if member in self.prefab_sources:
+            return self.prefab_sources[member]
         with ZipFile(self.archive) as handle:
             return handle.read(member).decode("utf-8-sig")
 
@@ -379,20 +507,96 @@ class ScriptIndex:
         if prefab_id in self.prefab_members:
             return ("prefab_filename", f"{self.prefab_members[prefab_id]}:filename")
         if prefab_id in self.prefab_declarations:
-            member, line = self.prefab_declarations[prefab_id]
-            return ("prefab_declaration", f"{member}:line:{line}")
+            binding = self.prefab_declarations[prefab_id]
+            return (
+                "prefab_declaration",
+                f"{binding.member}:line:{binding.line}",
+            )
         if prefab_id in self.recipes:
             return ("recipe_product", f"scripts/recipes.lua:line:{self.recipes[prefab_id].line}")
         if prefab_id in self.names:
             return ("string_registry", f"scripts/strings.lua:line:{self.names[prefab_id][1]}")
         return None
 
+    def constructor_scopes(
+        self, prefab_id: str
+    ) -> Tuple[Optional[str], List[FunctionScope], Optional[Dict[str, Any]]]:
+        binding = self.prefab_declarations.get(prefab_id)
+        if binding is None:
+            return (
+                self.prefab_members.get(prefab_id),
+                [],
+                {
+                    "code": "unsupported_constructor_binding",
+                    "prefab_id": prefab_id,
+                    "expression": "missing exact Prefab declaration",
+                    "path": self.prefab_members.get(prefab_id, ""),
+                },
+            )
+        expression = binding.expression.strip()
+        functions = self.function_scopes[binding.member]
+        initial: Optional[FunctionScope] = None
+        if re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", expression):
+            initial = functions.get(expression)
+        elif expression.startswith("function"):
+            initial = FunctionScope(
+                "<inline>", expression, binding.line
+            )
+        if initial is None:
+            return (
+                binding.member,
+                [],
+                {
+                    "code": "unsupported_constructor_binding",
+                    "prefab_id": prefab_id,
+                    "expression": expression,
+                    "path": binding.member,
+                    "line": binding.line,
+                },
+            )
 
-def _direct_request_evidence(requests: Iterable[DependencyRequest]) -> List[Dict[str, str]]:
-    return [
-        {"relation": request.relation, "subject": request.requested_by}
-        for request in sorted(set(requests))
-    ]
+        ordered: List[FunctionScope] = []
+        visited = set()
+
+        def visit(scope: FunctionScope) -> None:
+            if scope.name in visited:
+                return
+            visited.add(scope.name)
+            ordered.append(scope)
+            for call in _iter_calls(scope.source, tuple(functions)):
+                target = functions.get(call.name)
+                if target is not None:
+                    visit(target)
+
+        visit(initial)
+        return binding.member, ordered, None
+
+
+def _direct_request_evidence(
+    requests: Iterable[DependencyRequest],
+) -> List[Dict[str, Any]]:
+    result: List[Dict[str, Any]] = []
+    for request in sorted(set(requests)):
+        record: Dict[str, Any] = {
+            "relation": request.relation,
+            "subject": request.requested_by,
+        }
+        if request.fact_kind:
+            record["fact_kind"] = request.fact_kind
+        if request.locator:
+            record["locator"] = request.locator
+        if request.confidence:
+            record["confidence"] = request.confidence
+        if request.source_id:
+            record["source"] = {
+                "source_id": request.source_id,
+                "kind": request.source_kind,
+                "path": request.source_path,
+                "version": request.source_version,
+                "sha256": request.source_sha256,
+            }
+        result.append(record)
+    return result
 
 
 def _walk_dependency_markers(value: Any) -> Iterator[str]:
@@ -420,8 +624,27 @@ def derive_dependency_requests(*bundles: FactBundle) -> List[DependencyRequest]:
             if fact.subject.namespace != "tu_tien":
                 continue
             requested_by = f"tu_tien:{fact.subject.prefab_id}"
+            relation = fact.kind
+            if fact.kind == "relation" and isinstance(fact.payload.get("relation"), str):
+                relation = fact.payload["relation"]
+            elif fact.kind == "acquisition" and isinstance(fact.payload.get("type"), str):
+                relation = fact.payload["type"]
             for prefab_id in _walk_dependency_markers(fact.payload):
-                requests.add(DependencyRequest(prefab_id, fact.kind, requested_by))
+                requests.add(
+                    DependencyRequest(
+                        prefab_id,
+                        relation,
+                        requested_by,
+                        fact.kind,
+                        fact.locator,
+                        fact.confidence,
+                        fact.source.source_id,
+                        fact.source.kind,
+                        fact.source.path,
+                        fact.source.version,
+                        fact.source.sha256,
+                    )
+                )
     return sorted(requests)
 
 
@@ -436,162 +659,214 @@ def _expression_payload(expression: str) -> Dict[str, Any]:
 def _source_facts(
     index: ScriptIndex, prefab_id: str, source_ref: SourceRef
 ) -> Tuple[List[Fact], List[Dict[str, Any]]]:
-    member = index.prefab_members.get(prefab_id)
-    if member is None:
-        return [], []
-    source = index.read(member)
+    member, scopes, binding_warning = index.constructor_scopes(prefab_id)
     subject = EntityKey("base_game", prefab_id)
     facts: List[Fact] = []
     errors: List[Dict[str, Any]] = []
+    if binding_warning is not None:
+        errors.append(binding_warning)
+    if member is None or not scopes:
+        return facts, errors
 
     stat_calls = {
         "SetDamage": (("damage", 0),),
         "InitCondition": (("armor_condition", 0), ("armor_absorption", 1)),
         "SetMaxUses": (("max_uses", 0),),
     }
-    for call in _iter_calls(source, tuple(stat_calls)):
-        expected_receiver = {
-            "SetDamage": "inst.components.weapon:",
-            "InitCondition": "inst.components.armor:",
-            "SetMaxUses": "inst.components.finiteuses:",
-        }[call.name]
-        if not _has_receiver(source, call, expected_receiver):
-            continue
-        positions = stat_calls[call.name]
-        if any(position >= len(call.arguments) for _, position in positions):
-            errors.append(
-                {
-                    "code": "unsupported_base_source_pattern",
-                    "path": member,
-                    "line": call.line,
-                    "expression": call.expression,
-                }
-            )
-            continue
-        for key, position in positions:
+    for scope in scopes:
+        source = scope.source
+        line_offset = scope.line - 1
+        for call in _iter_calls(source, tuple(stat_calls)):
+            expected_receiver = {
+                "SetDamage": "inst.components.weapon:",
+                "InitCondition": "inst.components.armor:",
+                "SetMaxUses": "inst.components.finiteuses:",
+            }[call.name]
+            if not _has_receiver(source, call, expected_receiver):
+                continue
+            positions = stat_calls[call.name]
+            if any(position >= len(call.arguments) for _, position in positions):
+                errors.append(
+                    {
+                        "code": "unsupported_base_source_pattern",
+                        "path": member,
+                        "line": line_offset + call.line,
+                        "expression": call.expression,
+                    }
+                )
+                continue
+            for key, position in positions:
+                facts.append(
+                    Fact(
+                        "stat",
+                        subject,
+                        {"key": key, **_expression_payload(call.arguments[position])},
+                        source_ref,
+                        0.9,
+                        f"{member}:line:{line_offset + call.line}",
+                    )
+                )
+
+        edible = re.compile(
+            r"^[\t ]*inst\.components\.edible\.(healthvalue|hungervalue|sanityvalue)[\t ]*=[\t ]*",
+            re.MULTILINE,
+        )
+        edible_keys = {"healthvalue": "health", "hungervalue": "hunger", "sanityvalue": "sanity"}
+        masked_scope = _code_mask(source)
+        for match in edible.finditer(masked_scope):
+            line = line_offset + source.count("\n", 0, match.start()) + 1
+            line_end = masked_scope.find("\n", match.end())
+            if line_end < 0:
+                line_end = len(masked_scope)
+            expression = masked_scope[match.end() : line_end].strip()
             facts.append(
                 Fact(
                     "stat",
                     subject,
-                    {"key": key, **_expression_payload(call.arguments[position])},
+                    {"key": edible_keys[match.group(1)], **_expression_payload(expression)},
                     source_ref,
                     0.9,
-                    f"{member}:line:{call.line}",
+                    f"{member}:line:{line}",
                 )
             )
 
-    edible = re.compile(
-        r"^\s*inst\.components\.edible\.(healthvalue|hungervalue|sanityvalue)\s*=\s*(.+?)\s*$",
-        re.MULTILINE,
-    )
-    edible_keys = {"healthvalue": "health", "hungervalue": "hunger", "sanityvalue": "sanity"}
-    for match in edible.finditer(source):
-        line = source.count("\n", 0, match.start()) + 1
-        facts.append(
-            Fact(
-                "stat",
-                subject,
-                {"key": edible_keys[match.group(1)], **_expression_payload(match.group(2))},
-                source_ref,
-                0.9,
-                f"{member}:line:{line}",
-            )
-        )
+    return facts, errors
 
-    for call in _iter_calls(source, ("SetLoot", "AddChanceLoot", "SetUp")):
-        expected_receiver = (
-            "inst.components.pickable:"
-            if call.name == "SetUp"
-            else "inst.components.lootdropper:"
-        )
-        if not _has_receiver(source, call, expected_receiver):
+
+def _reverse_acquisition_facts(
+    index: ScriptIndex, selected_ids: Iterable[str], source_ref: SourceRef
+) -> Tuple[List[Fact], List[Dict[str, Any]]]:
+    selected = set(selected_ids)
+    facts: List[Fact] = []
+    errors: List[Dict[str, Any]] = []
+    seen = set()
+    for source_prefab in sorted(index.prefab_declarations):
+        member, scopes, warning = index.constructor_scopes(source_prefab)
+        if member is None:
             continue
-        if call.name == "SetLoot" and call.arguments:
-            table = call.arguments[0].strip()
-            if table.startswith("{") and table.endswith("}"):
-                loot = [
-                    value
-                    for value in (_literal_string(entry) for entry in _split_top_level(table[1:-1]))
-                    if value is not None
-                ]
-                for target, count in sorted(Counter(value.lower() for value in loot).items()):
+        if warning is not None:
+            # Emit reverse-index binding warnings only when this member contains a
+            # selected literal and could therefore hide a relevant acquisition.
+            member_source = index.read(member)
+            if any(
+                re.search(rf'["\']{re.escape(prefab_id)}["\']', member_source)
+                for prefab_id in selected
+            ):
+                errors.append({**warning, "stage": "reverse_acquisition"})
+            continue
+        for scope in scopes:
+            line_offset = scope.line - 1
+            for call in _iter_calls(
+                scope.source,
+                ("SetLoot", "AddChanceLoot", "AddRandomLoot", "SetUp"),
+            ):
+                loot_call = call.name in (
+                    "SetLoot",
+                    "AddChanceLoot",
+                    "AddRandomLoot",
+                )
+                receiver = (
+                    "inst.components.lootdropper:"
+                    if loot_call
+                    else "inst.components.pickable:"
+                )
+                if not _has_receiver(scope.source, call, receiver):
+                    continue
+                line = line_offset + call.line
+                candidates: List[Tuple[str, Dict[str, Any]]] = []
+                def warn(expression: str) -> None:
+                    errors.append(
+                        {
+                            "code": "unsupported_base_source_subexpression",
+                            "path": member,
+                            "line": line,
+                            "expression": expression.strip(),
+                            "source_prefab_id": source_prefab,
+                            "call": call.name,
+                        }
+                    )
+
+                if call.name == "SetLoot" and call.arguments:
+                    table = call.arguments[0].strip()
+                    if table.startswith("{") and table.endswith("}"):
+                        values = []
+                        for entry in _split_top_level(table[1:-1]):
+                            value = _literal_string(entry)
+                            if value is None:
+                                if entry.strip():
+                                    warn(entry)
+                            else:
+                                values.append(value.lower())
+                        for target, count in sorted(Counter(values).items()):
+                            candidates.append(
+                                (target, {"chance": 1, "count": count})
+                            )
+                    else:
+                        warn(table)
+                elif call.name in ("AddChanceLoot", "AddRandomLoot") and len(call.arguments) >= 2:
+                    target = _literal_string(call.arguments[0])
+                    if target is not None:
+                        value = _expression_payload(call.arguments[1])
+                        key = "chance" if call.name == "AddChanceLoot" else "weight"
+                        detail: Dict[str, Any] = {
+                            "count": 1,
+                            f"{key}_expression": value["source_expression"],
+                        }
+                        if "value" in value:
+                            detail[key] = value["value"]
+                        candidates.append((target.lower(), detail))
+                    else:
+                        warn(call.arguments[0])
+                elif call.name == "SetUp" and len(call.arguments) >= 2:
+                    target = _literal_string(call.arguments[0])
+                    if target is not None:
+                        regrow = _expression_payload(call.arguments[1])
+                        detail = {
+                            "chance": 1,
+                            "count": 1,
+                            "regrow_expression": regrow["source_expression"],
+                        }
+                        if "value" in regrow:
+                            detail["regrow_time"] = regrow["value"]
+                        candidates.append((target.lower(), detail))
+                    else:
+                        warn(call.arguments[0])
+                else:
+                    warn(call.expression)
+
+                for target, detail in candidates:
+                    if target not in selected:
+                        continue
+                    key = (source_prefab, target, call.name, member, line)
+                    if key in seen:
+                        continue
+                    seen.add(key)
                     facts.append(
                         Fact(
                             "acquisition",
-                            subject,
+                            EntityKey("base_game", target),
                             {
-                                "type": "drop",
-                                "source": {"namespace": "base_game", "prefab_id": prefab_id},
-                                "target": {"prefab_id": target, "resolution": "not_imported"},
-                                "count": count,
-                                "chance": 1,
+                                "type": "harvest" if call.name == "SetUp" else "drop",
+                                "source": {
+                                    "namespace": "base_game",
+                                    "prefab_id": source_prefab,
+                                    "resolution": "evidence_only",
+                                },
+                                "target": {
+                                    "namespace": "base_game",
+                                    "prefab_id": target,
+                                    "resolution": "resolved",
+                                },
                                 "conditions": {},
+                                "source_member": member,
                                 "source_expression": call.expression,
+                                **detail,
                             },
                             source_ref,
                             0.9,
-                            f"{member}:line:{call.line}",
+                            f"{member}:line:{line}",
                         )
                     )
-                if loot:
-                    continue
-        elif call.name == "AddChanceLoot" and len(call.arguments) >= 2:
-            target = _literal_string(call.arguments[0])
-            if target is not None:
-                chance_payload = _expression_payload(call.arguments[1])
-                facts.append(
-                    Fact(
-                        "acquisition",
-                        subject,
-                        {
-                            "type": "drop",
-                            "source": {"namespace": "base_game", "prefab_id": prefab_id},
-                            "target": {"prefab_id": target.lower(), "resolution": "not_imported"},
-                            "count": 1,
-                            "chance_expression": chance_payload["source_expression"],
-                            **({"chance": chance_payload["value"]} if "value" in chance_payload else {}),
-                            "conditions": {},
-                            "source_expression": call.expression,
-                        },
-                        source_ref,
-                        0.9,
-                        f"{member}:line:{call.line}",
-                    )
-                )
-                continue
-        elif call.name == "SetUp" and len(call.arguments) >= 2:
-            target = _literal_string(call.arguments[0])
-            if target is not None:
-                regrow = _expression_payload(call.arguments[1])
-                facts.append(
-                    Fact(
-                        "acquisition",
-                        subject,
-                        {
-                            "type": "harvest",
-                            "source": {"namespace": "base_game", "prefab_id": prefab_id},
-                            "target": {"prefab_id": target.lower(), "resolution": "not_imported"},
-                            "chance": 1,
-                            "count": 1,
-                            "conditions": {},
-                            "regrow_expression": regrow["source_expression"],
-                            **({"regrow_time": regrow["value"]} if "value" in regrow else {}),
-                            "source_expression": call.expression,
-                        },
-                        source_ref,
-                        0.9,
-                        f"{member}:line:{call.line}",
-                    )
-                )
-                continue
-        errors.append(
-            {
-                "code": "unsupported_base_source_pattern",
-                "path": member,
-                "line": call.line,
-                "expression": call.expression,
-            }
-        )
     return facts, errors
 
 
@@ -629,11 +904,21 @@ def enrich_dependencies(
     direct: Dict[str, List[DependencyRequest]] = {}
     for request in requests:
         normalized = DependencyRequest(
-            request.prefab_id.lower(), request.relation, request.requested_by
+            request.prefab_id.lower(),
+            request.relation,
+            request.requested_by,
+            request.fact_kind,
+            request.locator,
+            request.confidence,
+            request.source_id,
+            request.source_kind,
+            request.source_path,
+            request.source_version,
+            request.source_sha256,
         )
         direct.setdefault(normalized.prefab_id, []).append(normalized)
 
-    selected: Dict[str, List[Dict[str, str]]] = {
+    selected: Dict[str, List[Dict[str, Any]]] = {
         prefab_id: _direct_request_evidence(values)
         for prefab_id, values in direct.items()
     }
@@ -644,7 +929,7 @@ def enrich_dependencies(
         recipe = index.recipes.get(prefab_id)
         if recipe is None:
             continue
-        roots = sorted({request.requested_by for request in direct[prefab_id]})
+        roots = _direct_request_evidence(direct[prefab_id])
         for ingredient_id, _amount in recipe.ingredients:
             if index.resolution(ingredient_id) is None:
                 continue
@@ -653,7 +938,8 @@ def enrich_dependencies(
                 record = {
                     "relation": "recipe_ingredient",
                     "subject": f"base_game:{prefab_id}",
-                    "root_requested_by": root,
+                    "root_requested_by": root["subject"],
+                    "root_evidence": root,
                 }
                 if record not in evidence:
                     evidence.append(record)
@@ -744,6 +1030,16 @@ def enrich_dependencies(
 
         if prefab_id in direct_resolved and prefab_id in index.recipes:
             recipe = index.recipes[prefab_id]
+            for warning_line, warning_expression in recipe.warnings:
+                errors.append(
+                    {
+                        "code": "unsupported_base_source_subexpression",
+                        "path": "scripts/recipes.lua",
+                        "line": warning_line,
+                        "expression": warning_expression,
+                        "recipe": prefab_id,
+                    }
+                )
             config = _table_fields(recipe.config_expression)
             output_count_expression = config.get("numtogive", "1")
             output_count = _literal_number(output_count_expression)
@@ -804,6 +1100,12 @@ def enrich_dependencies(
         new_facts, new_errors = _source_facts(index, prefab_id, scripts_source)
         facts.extend(new_facts)
         errors.extend(new_errors)
+
+    acquisition_facts, acquisition_errors = _reverse_acquisition_facts(
+        index, selected, scripts_source
+    )
+    facts.extend(acquisition_facts)
+    errors.extend(acquisition_errors)
 
     facts.sort(
         key=lambda fact: (

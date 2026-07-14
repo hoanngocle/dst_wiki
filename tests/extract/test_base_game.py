@@ -159,6 +159,10 @@ STRINGS = {
                     "relation": "recipe_ingredient",
                     "subject": "base_game:pickaxe",
                     "root_requested_by": "tu_tien:xd_tool",
+                    "root_evidence": {
+                        "relation": "ingredient",
+                        "subject": "tu_tien:xd_tool",
+                    },
                 }
             ],
         )
@@ -254,35 +258,8 @@ return Prefab("testitem", fn)
         self.assertEqual(stats["max_uses"]["value"], 25)
         self.assertEqual(stats["health"]["value"], -3)
         self.assertEqual(stats["sanity"]["value"], 2.5)
-        acquisitions = [
-            fact for fact in bundle.facts if fact.kind == "acquisition"
-        ]
         self.assertTrue(
-            any(
-                fact.payload.get("target", {}).get("prefab_id") == "silk"
-                and fact.payload.get("count") == 2
-                for fact in acquisitions
-            )
-        )
-        self.assertTrue(
-            any(
-                fact.payload.get("target", {}).get("prefab_id") == "nightmarefuel"
-                and fact.payload.get("chance") == 0.25
-                for fact in acquisitions
-            )
-        )
-        harvest = next(
-            fact for fact in acquisitions if fact.payload["type"] == "harvest"
-        )
-        self.assertEqual(harvest.payload["regrow_expression"], "TUNING.REGROW_TIME")
-        self.assertFalse(
-            any(
-                fact.payload.get("target", {}).get("prefab_id") == "not_pickable"
-                for fact in acquisitions
-            )
-        )
-        self.assertTrue(
-            all("line:" in fact.locator for fact in bundle.facts if fact.kind in {"stat", "acquisition"})
+            all("line:" in fact.locator for fact in bundle.facts if fact.kind == "stat")
         )
 
     def test_commented_string_table_does_not_resolve_an_id(self):
@@ -307,6 +284,289 @@ STRINGS = { NAMES = { REAL = "Real" } }
         self.assertEqual(
             [error["prefab_id"] for error in bundle.errors], ["comment_only"]
         )
+
+    def test_binds_stats_to_the_declared_constructor_scope(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            archive = self._archive(
+                root,
+                {
+                    "scripts/recipes.lua": "",
+                    "scripts/strings.lua": "",
+                    "scripts/prefabs/shared.lua": """
+local function goldfn()
+  inst.components.weapon:SetDamage(10)
+  return inst
+end
+local function luckyfn()
+  inst.components.weapon:SetDamage(99)
+  return inst
+end
+local function cookedfn()
+  inst.components.edible.hungervalue = 5
+  return inst
+end
+return Prefab("gold", goldfn),
+       Prefab("lucky_gold", luckyfn),
+       Prefab("cookedmeat", cookedfn),
+       Prefab("wrapped", MakeWrapped("wrapped"))
+""",
+                },
+            )
+            bundle = enrich_dependencies(
+                archive,
+                [
+                    DependencyRequest("gold", "ingredient", "tu_tien:xd_gold"),
+                    DependencyRequest(
+                        "cookedmeat", "ingredient", "tu_tien:xd_food"
+                    ),
+                    DependencyRequest("wrapped", "relation", "tu_tien:xd_wrap"),
+                ],
+                root / "missing.po",
+            )
+
+        gold_damage = [
+            fact.payload.get("value")
+            for fact in bundle.facts
+            if fact.kind == "stat"
+            and fact.subject.prefab_id == "gold"
+            and fact.payload["key"] == "damage"
+        ]
+        self.assertEqual(gold_damage, [10])
+        cooked_hunger = next(
+            fact
+            for fact in bundle.facts
+            if fact.kind == "stat"
+            and fact.subject.prefab_id == "cookedmeat"
+            and fact.payload["key"] == "hunger"
+        )
+        self.assertEqual(cooked_hunger.payload["value"], 5)
+        warning = next(
+            error
+            for error in bundle.errors
+            if error["code"] == "unsupported_constructor_binding"
+        )
+        self.assertEqual(warning["prefab_id"], "wrapped")
+        self.assertEqual(warning["expression"], 'MakeWrapped("wrapped")')
+
+    def test_reverse_acquisition_indexes_only_selected_targets(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            archive = self._archive(
+                root,
+                {
+                    "scripts/recipes.lua": "",
+                    "scripts/strings.lua": "",
+                    "scripts/prefabs/silk.lua": 'return Prefab("silk", silkfn)',
+                    "scripts/prefabs/nightmarefuel.lua": 'return Prefab("nightmarefuel", fuelfn)',
+                    "scripts/prefabs/spider.lua": """
+local function common()
+  inst.components.lootdropper:AddRandomLoot("silk", .5)
+  return inst
+end
+local function spiderfn()
+  return common()
+end
+return Prefab("spider", spiderfn)
+""",
+                    "scripts/prefabs/shadow.lua": """
+local function shadowfn()
+  inst.components.lootdropper:SetLoot({"nightmarefuel", "rocks"})
+  return inst
+end
+return Prefab("shadow", shadowfn)
+""",
+                    "scripts/prefabs/bush.lua": """
+local function bushfn()
+  inst.components.pickable:SetUp("silk", TUNING.REGROW)
+  return inst
+end
+return Prefab("bush", bushfn)
+""",
+                    "scripts/prefabs/unrelated.lua": """
+local function unrelatedfn()
+  inst.components.lootdropper:AddChanceLoot("rocks", .25)
+  return inst
+end
+return Prefab("unrelated", unrelatedfn)
+""",
+                },
+            )
+            bundle = enrich_dependencies(
+                archive,
+                [
+                    DependencyRequest("silk", "ingredient", "tu_tien:xd_web"),
+                    DependencyRequest(
+                        "nightmarefuel", "ingredient", "tu_tien:xd_shadow"
+                    ),
+                ],
+                root / "missing.po",
+            )
+
+        acquisitions = [fact for fact in bundle.facts if fact.kind == "acquisition"]
+        self.assertEqual(
+            {
+                (
+                    fact.subject.prefab_id,
+                    fact.payload["type"],
+                    fact.payload["source"]["prefab_id"],
+                )
+                for fact in acquisitions
+            },
+            {
+                ("silk", "drop", "spider"),
+                ("silk", "harvest", "bush"),
+                ("nightmarefuel", "drop", "shadow"),
+            },
+        )
+        spider = next(
+            fact
+            for fact in acquisitions
+            if fact.payload["source"]["prefab_id"] == "spider"
+        )
+        self.assertEqual(spider.payload["weight_expression"], ".5")
+        self.assertEqual(spider.payload["weight"], 0.5)
+        self.assertIn("scripts/prefabs/spider.lua:line:", spider.locator)
+        self.assertNotIn(
+            "rocks",
+            {
+                fact.subject.prefab_id
+                for fact in bundle.facts
+                if fact.kind in {"entity", "acquisition"}
+            },
+        )
+
+    def test_string_and_edible_assignments_ignore_comments_and_strings(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            archive = self._archive(
+                root,
+                {
+                    "scripts/recipes.lua": "",
+                    "scripts/strings.lua": '''
+--[[
+STRINGS.NAMES.COMMENT_ONLY = "Comment"
+]]
+local sample = [=[
+STRINGS.NAMES.STRING_ONLY = "String"
+]=]
+STRINGS.NAMES.REALFOOD = "Real Food"
+''',
+                    "scripts/prefabs/realfood.lua": '''
+local function fn()
+  local sample = [=[
+  inst.components.edible.hungervalue = 999
+  ]=]
+  --[[ inst.components.edible.hungervalue = 888 ]]
+  inst.components.edible.hungervalue = 10
+  return inst
+end
+return Prefab("realfood", fn)
+''',
+                },
+            )
+            bundle = enrich_dependencies(
+                archive,
+                [
+                    DependencyRequest("realfood", "ingredient", "tu_tien:xd_food"),
+                    DependencyRequest(
+                        "comment_only", "relation", "tu_tien:xd_comment"
+                    ),
+                    DependencyRequest(
+                        "string_only", "relation", "tu_tien:xd_string"
+                    ),
+                ],
+                root / "missing.po",
+            )
+
+        hunger = [
+            fact.payload.get("value")
+            for fact in bundle.facts
+            if fact.kind == "stat"
+            and fact.subject.prefab_id == "realfood"
+            and fact.payload["key"] == "hunger"
+        ]
+        self.assertEqual(hunger, [10])
+        entities = {
+            fact.subject.prefab_id
+            for fact in bundle.facts
+            if fact.kind == "entity"
+        }
+        self.assertNotIn("comment_only", entities)
+        self.assertNotIn("string_only", entities)
+
+    def test_dynamic_recipe_and_loot_subexpressions_emit_exact_warnings(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            archive = self._archive(
+                root,
+                {
+                    "scripts/recipes.lua": '''
+Recipe2("pickaxe", {
+  Ingredient(dynamic_prefab, 1),
+  Ingredient("twigs", TUNING.TWIG_COST)
+}, TECH.NONE)
+''',
+                    "scripts/strings.lua": "",
+                    "scripts/prefabs/pickaxe.lua": '''
+local function fn() return inst end
+return Prefab("pickaxe", fn)
+''',
+                    "scripts/prefabs/twigs.lua": '''
+local function fn() return inst end
+return Prefab("twigs", fn)
+''',
+                    "scripts/prefabs/silk.lua": '''
+local function fn() return inst end
+return Prefab("silk", fn)
+''',
+                    "scripts/prefabs/dropper.lua": '''
+local function fn()
+  inst.components.lootdropper:SetLoot({"silk", dynamic_loot})
+  inst.components.lootdropper:AddChanceLoot(dynamic_target, .25)
+  return inst
+end
+return Prefab("dropper", fn)
+''',
+                },
+            )
+            bundle = enrich_dependencies(
+                archive,
+                [
+                    DependencyRequest("pickaxe", "ingredient", "tu_tien:xd_tool"),
+                    DependencyRequest("silk", "ingredient", "tu_tien:xd_web"),
+                ],
+                root / "missing.po",
+            )
+
+        warnings = [
+            error
+            for error in bundle.errors
+            if error["code"] == "unsupported_base_source_subexpression"
+        ]
+        self.assertEqual(
+            {warning["expression"] for warning in warnings},
+            {"dynamic_prefab", "dynamic_loot", "dynamic_target"},
+        )
+        self.assertTrue(
+            all(warning["path"].startswith("scripts/") for warning in warnings)
+        )
+        self.assertTrue(all(isinstance(warning["line"], int) for warning in warnings))
+        silk_drop = next(
+            fact
+            for fact in bundle.facts
+            if fact.kind == "acquisition"
+            and fact.subject.prefab_id == "silk"
+            and fact.payload["source"]["prefab_id"] == "dropper"
+        )
+        self.assertEqual(silk_drop.payload["count"], 1)
+        twigs = next(
+            fact
+            for fact in bundle.facts
+            if fact.kind == "ingredient"
+            and fact.payload["ingredient"]["prefab_id"] == "twigs"
+        )
+        self.assertEqual(twigs.payload["amount_expression"], "TUNING.TWIG_COST")
 
     def test_derives_unique_unresolved_markers_from_static_and_runtime_facts(self):
         source = SourceRef("fixture", "runtime_probe", "fixture", "1", "abc")
@@ -369,11 +629,86 @@ STRINGS = { NAMES = { REAL = "Real" } }
         requests = derive_dependency_requests(static, runtime)
 
         self.assertEqual(
-            requests,
+            [(request.prefab_id, request.relation, request.requested_by) for request in requests],
             [
-                DependencyRequest("goldnugget", "relation", "tu_tien:xd_alias"),
-                DependencyRequest("silk", "ingredient", "tu_tien:xd_sword"),
+                ("goldnugget", "string_alias", "tu_tien:xd_alias"),
+                ("silk", "ingredient", "tu_tien:xd_sword"),
             ],
+        )
+        self.assertTrue(all(request.source_id == "fixture" for request in requests))
+
+    def test_dependency_request_retains_originating_fact_evidence(self):
+        source = SourceRef(
+            "runtime-probe",
+            "runtime_probe",
+            "data/raw/runtime.json",
+            "18.0.10",
+            "abc123",
+        )
+        bundle = FactBundle(
+            1,
+            [source],
+            [
+                Fact(
+                    "relation",
+                    EntityKey("tu_tien", "xd_portal"),
+                    {
+                        "relation": "transforms_to",
+                        "target": {
+                            "prefab_id": "goldnugget",
+                            "dependency_candidate": True,
+                            "resolution": "unresolved",
+                        },
+                    },
+                    source,
+                    0.75,
+                    "prefabs:2:relations:0",
+                )
+            ],
+            [],
+        )
+
+        request = derive_dependency_requests(bundle)[0]
+
+        self.assertEqual(request.fact_kind, "relation")
+        self.assertEqual(request.relation, "transforms_to")
+        self.assertEqual(request.locator, "prefabs:2:relations:0")
+        self.assertEqual(request.confidence, 0.75)
+        self.assertEqual(request.source_id, "runtime-probe")
+        self.assertEqual(request.source_path, "data/raw/runtime.json")
+        self.assertEqual(request.source_sha256, "abc123")
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            archive = self._archive(
+                root,
+                {
+                    "scripts/recipes.lua": "",
+                    "scripts/strings.lua": "",
+                    "scripts/prefabs/goldnugget.lua": '''
+local function fn() return inst end
+return Prefab("goldnugget", fn)
+''',
+                },
+            )
+            enriched = enrich_dependencies(
+                archive, [request], root / "missing.po"
+            )
+        entity = next(fact for fact in enriched.facts if fact.kind == "entity")
+        evidence = entity.payload["requested_by"][0]
+        self.assertEqual(evidence["fact_kind"], "relation")
+        self.assertEqual(evidence["relation"], "transforms_to")
+        self.assertEqual(evidence["locator"], "prefabs:2:relations:0")
+        self.assertEqual(evidence["confidence"], 0.75)
+        self.assertEqual(
+            evidence["source"],
+            {
+                "source_id": "runtime-probe",
+                "kind": "runtime_probe",
+                "path": "data/raw/runtime.json",
+                "version": "18.0.10",
+                "sha256": "abc123",
+            },
         )
 
     def test_snapshot_hash_must_match_before_archive_is_used(self):
