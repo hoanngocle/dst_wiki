@@ -1,126 +1,160 @@
 import { fireEvent, render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
-import type { WikiEntry } from "@/app/lib/wiki-search";
+import type { ItemListEntry } from "@/app/lib/item-catalog";
 import { WikiSearch } from "./wiki-search";
 
-const entries: readonly WikiEntry[] = [
+const items: readonly ItemListEntry[] = [
   {
-    id: "ancient-blade",
-    name: "Ancient Blade",
-    category: "item",
-    description: "A relic weapon from the northern ruins.",
-    keywords: ["sword"],
-    accent: "ice",
+    id: "tu_tien:xd_sword",
+    prefabId: "xd_sword",
+    namespace: "tu_tien",
+    name: "Kiếm Thử",
+    englishName: "Test Sword",
+    description: "Một thanh kiếm từ phương bắc.",
+    sprite: null,
+    recipe: {
+      outputCount: 1,
+      ingredients: [
+        {
+          id: "base_game:goldnugget",
+          name: "Vàng",
+          amount: 2,
+          sprite: null,
+        },
+      ],
+    },
   },
   {
-    id: "mire-stalker",
-    name: "Mire Stalker",
-    category: "creature",
-    description: "A beast near flooded paths.",
-    keywords: ["swamp"],
-    accent: "moss",
+    id: "base_game:log",
+    prefabId: "log",
+    namespace: "base_game",
+    name: "Gỗ",
+    englishName: "Log",
+    description: "Nguyên liệu cơ bản.",
+    sprite: null,
+    recipe: null,
   },
 ];
 
+function makeItems(count: number): ItemListEntry[] {
+  return Array.from({ length: count }, (_, index) => ({
+    id: `tu_tien:item_${index + 1}`,
+    prefabId: `item_${index + 1}`,
+    namespace: "tu_tien" as const,
+    name: `Mục ${index + 1}`,
+    englishName: null,
+    description: null,
+    sprite: null,
+    recipe: null,
+  }));
+}
+
 describe("WikiSearch", () => {
-  it("shows every entry before the user filters", () => {
-    render(<WikiSearch entries={entries} />);
-    expect(screen.getByText("Ancient Blade")).toBeDefined();
-    expect(screen.getByText("Mire Stalker")).toBeDefined();
-    expect(screen.getByText("2 entries")).toBeDefined();
+  it("shows every item before the user filters", () => {
+    render(<WikiSearch items={items} />);
+    expect(screen.getByText("Kiếm Thử")).toBeDefined();
+    expect(screen.getByText("Gỗ")).toBeDefined();
+    expect(screen.getByText("2 Items")).toBeDefined();
   });
 
-  it("filters immediately as the user types", () => {
-    render(<WikiSearch entries={entries} />);
-    fireEvent.change(screen.getByRole("searchbox", { name: "Search the atlas" }), {
-      target: { value: "mire" },
+  it("filters immediately as the user types without requiring diacritics", () => {
+    render(<WikiSearch items={items} />);
+    fireEvent.change(screen.getByRole("searchbox", { name: "Tìm kiếm Items." }), {
+      target: { value: "kiem" },
     });
-    expect(screen.queryByText("Ancient Blade")).toBeNull();
-    expect(screen.getByText("Mire Stalker")).toBeDefined();
-    expect(screen.getByText("1 entry")).toBeDefined();
+    expect(screen.getByText("Kiếm Thử")).toBeDefined();
+    expect(screen.queryByText("Gỗ")).toBeNull();
+    expect(screen.getByText("1 Item")).toBeDefined();
   });
 
   it("announces result context when equal-count result sets change", () => {
-    render(<WikiSearch entries={entries} />);
-    const search = screen.getByRole("searchbox", { name: "Search the atlas" });
+    render(<WikiSearch items={items} />);
+    const search = screen.getByRole("searchbox", { name: "Tìm kiếm Items." });
 
-    fireEvent.change(search, { target: { value: "ancient" } });
+    fireEvent.change(search, { target: { value: "kiem" } });
     const status = screen.getByRole("status");
-    expect(status.textContent).toBe('1 entry matching "ancient" in All entries.');
+    expect(status.textContent).toBe('1 Item khớp với "kiem" trong Tất cả.');
 
-    fireEvent.change(search, { target: { value: "mire" } });
-    expect(status.textContent).toBe('1 entry matching "mire" in All entries.');
+    fireEvent.change(search, { target: { value: "go" } });
+    expect(status.textContent).toBe('1 Item khớp với "go" trong Tất cả.');
   });
 
-  it("filters by category", () => {
-    render(<WikiSearch entries={entries} />);
-    fireEvent.click(screen.getByRole("button", { name: "Items" }));
-    expect(screen.getByText("Ancient Blade")).toBeDefined();
-    expect(screen.queryByText("Mire Stalker")).toBeNull();
+  it("filters by namespace and craftability", () => {
+    render(<WikiSearch items={items} />);
+    fireEvent.click(screen.getByRole("button", { name: "Tu Tiên" }));
+    expect(screen.getByText("Kiếm Thử")).toBeDefined();
+    expect(screen.queryByText("Gỗ")).toBeNull();
+
+    fireEvent.click(screen.getByRole("button", { name: "Có công thức" }));
+    expect(screen.getByText("Kiếm Thử")).toBeDefined();
+    expect(screen.queryByText("Gỗ")).toBeNull();
   });
 
-  it("keeps each result category visible and available to assistive technology on mobile", () => {
-    render(<WikiSearch entries={entries} />);
-    const ancientBladeRow = screen.getByText("Ancient Blade").closest("li");
+  it("keeps source metadata visible and available to assistive technology", () => {
+    render(<WikiSearch items={items} />);
+    const swordCard = screen.getByText("Kiếm Thử").closest("li");
 
-    expect(ancientBladeRow).not.toBeNull();
-    const category = within(ancientBladeRow as HTMLElement).getByText("item");
-    expect(category.className.split(/\s+/)).toContain("inline-flex");
-    expect(category.className.split(/\s+/)).not.toContain("hidden");
-    expect(ancientBladeRow?.textContent).toContain("item");
+    expect(swordCard).not.toBeNull();
+    const source = within(swordCard as HTMLElement).getByText("Tu Tiên");
+    expect(source.className.split(/\s+/)).not.toContain("hidden");
+    expect(swordCard?.textContent).toContain("xd_sword");
   });
 
-  it("exposes category filters as a named group", () => {
-    render(<WikiSearch entries={entries} />);
-    expect(screen.getByRole("group", { name: "Filter entries by category" })).toBeDefined();
+  it("exposes item filters as a named group", () => {
+    render(<WikiSearch items={items} />);
+    expect(screen.getByRole("group", { name: "Lọc Items" })).toBeDefined();
   });
 
-  it("clears query and category from the empty state", () => {
-    render(<WikiSearch entries={entries} />);
-    fireEvent.click(screen.getByRole("button", { name: "Items" }));
-    fireEvent.change(screen.getByRole("searchbox", { name: "Search the atlas" }), {
-      target: { value: "mire" },
+  it("clears query and filter from the empty state", () => {
+    render(<WikiSearch items={items} />);
+    fireEvent.click(screen.getByRole("button", { name: "DST gốc" }));
+    fireEvent.change(screen.getByRole("searchbox", { name: "Tìm kiếm Items." }), {
+      target: { value: "kiem" },
     });
-    fireEvent.click(screen.getByRole("button", { name: "Clear filters" }));
-    expect(screen.getByRole("searchbox", { name: "Search the atlas" })).toHaveProperty("value", "");
-    expect(screen.getByRole("button", { name: "All entries" }).getAttribute("aria-pressed")).toBe("true");
+    fireEvent.click(screen.getByRole("button", { name: "Xóa bộ lọc" }));
+    expect(screen.getByRole("searchbox", { name: "Tìm kiếm Items." })).toHaveProperty(
+      "value",
+      "",
+    );
+    expect(screen.getByRole("button", { name: "Tất cả" }).getAttribute("aria-pressed")).toBe(
+      "true",
+    );
   });
 
   it("highlights matching text", () => {
-    render(<WikiSearch entries={entries} />);
-    fireEvent.change(screen.getByRole("searchbox", { name: "Search the atlas" }), {
-      target: { value: "blade" },
+    render(<WikiSearch items={items} />);
+    fireEvent.change(screen.getByRole("searchbox", { name: "Tìm kiếm Items." }), {
+      target: { value: "kiem" },
     });
-    expect(screen.getByText("Blade").tagName).toBe("MARK");
+    expect(screen.getByText("Kiếm").tagName).toBe("MARK");
   });
 
   it("highlights the complete original grapheme for decomposed Unicode text", () => {
-    const decomposedEntries: readonly WikiEntry[] = [
+    const decomposedItems: readonly ItemListEntry[] = [
       {
-        id: "cafe-trail",
-        name: "Cafe\u0301 Trail",
-        category: "location",
-        description: "A quiet route beside the ridge.",
-        keywords: ["cafe"],
-        accent: "slate",
+        ...items[0],
+        id: "tu_tien:cafe_item",
+        prefabId: "cafe_item",
+        name: "Cafe\u0301 Item",
+        englishName: null,
       },
     ];
 
-    render(<WikiSearch entries={decomposedEntries} />);
-    fireEvent.change(screen.getByRole("searchbox", { name: "Search the atlas" }), {
+    render(<WikiSearch items={decomposedItems} />);
+    fireEvent.change(screen.getByRole("searchbox", { name: "Tìm kiếm Items." }), {
       target: { value: "cafe" },
     });
 
     expect(document.querySelector("mark")?.textContent).toBe("Cafe\u0301");
   });
 
-  it("restarts result-boundary motion when filtering retains keyed rows", () => {
-    render(<WikiSearch entries={entries} />);
+  it("restarts result-boundary motion when filtering retains keyed cards", () => {
+    render(<WikiSearch items={items} />);
     const firstBoundary = screen.getByRole("list");
 
-    fireEvent.change(screen.getByRole("searchbox", { name: "Search the atlas" }), {
-      target: { value: "ancient" },
+    fireEvent.change(screen.getByRole("searchbox", { name: "Tìm kiếm Items." }), {
+      target: { value: "kiem" },
     });
 
     const nextBoundary = screen.getByRole("list");
@@ -128,16 +162,13 @@ describe("WikiSearch", () => {
     expect(nextBoundary.className).toContain(
       "motion-safe:animate-[atlas-result-in_180ms_ease-out]",
     );
-    expect(within(nextBoundary).getByRole("listitem").className).not.toContain(
-      "motion-safe:animate-[atlas-result-in_180ms_ease-out]",
-    );
   });
 
   it("returns focus to search after clearing the query", () => {
-    render(<WikiSearch entries={entries} />);
-    const search = screen.getByRole("searchbox", { name: "Search the atlas" });
-    fireEvent.change(search, { target: { value: "mire" } });
-    const clear = screen.getByRole("button", { name: "Clear search" });
+    render(<WikiSearch items={items} />);
+    const search = screen.getByRole("searchbox", { name: "Tìm kiếm Items." });
+    fireEvent.change(search, { target: { value: "kiem" } });
+    const clear = screen.getByRole("button", { name: "Xóa tìm kiếm" });
     clear.focus();
     fireEvent.click(clear);
     expect(search).toHaveProperty("value", "");
@@ -145,32 +176,52 @@ describe("WikiSearch", () => {
   });
 
   it("keeps the clear search touch target at least 40px tall", () => {
-    render(<WikiSearch entries={entries} />);
-    fireEvent.change(screen.getByRole("searchbox", { name: "Search the atlas" }), {
-      target: { value: "mire" },
+    render(<WikiSearch items={items} />);
+    fireEvent.change(screen.getByRole("searchbox", { name: "Tìm kiếm Items." }), {
+      target: { value: "kiem" },
     });
 
-    const clear = screen.getByRole("button", { name: "Clear search" });
-    expect(clear.className.split(/\s+/)).toContain("min-h-10");
+    expect(screen.getByRole("button", { name: "Xóa tìm kiếm" }).className).toContain(
+      "min-h-10",
+    );
   });
 
-  it("focuses search when slash is pressed outside an editable control", () => {
-    render(<WikiSearch entries={entries} />);
+  it("focuses search with slash and Control K", () => {
+    render(<WikiSearch items={items} />);
+    const search = screen.getByRole("searchbox", { name: "Tìm kiếm Items." });
     fireEvent.keyDown(window, { key: "/" });
-    expect(document.activeElement).toBe(screen.getByRole("searchbox", { name: "Search the atlas" }));
-  });
+    expect(document.activeElement).toBe(search);
 
-  it("focuses search when Control K is pressed", () => {
-    render(<WikiSearch entries={entries} />);
+    document.body.focus();
     fireEvent.keyDown(window, { key: "k", ctrlKey: true });
-    expect(document.activeElement).toBe(screen.getByRole("searchbox", { name: "Search the atlas" }));
+    expect(document.activeElement).toBe(search);
   });
 
   it("clears the query with Escape", () => {
-    render(<WikiSearch entries={entries} />);
-    const search = screen.getByRole("searchbox", { name: "Search the atlas" });
-    fireEvent.change(search, { target: { value: "mire" } });
+    render(<WikiSearch items={items} />);
+    const search = screen.getByRole("searchbox", { name: "Tìm kiếm Items." });
+    fireEvent.change(search, { target: { value: "kiem" } });
     fireEvent.keyDown(search, { key: "Escape" });
     expect(search).toHaveProperty("value", "");
+  });
+
+  it("reveals results in batches of 40", () => {
+    render(<WikiSearch items={makeItems(41)} />);
+
+    expect(screen.getAllByRole("listitem")).toHaveLength(40);
+    fireEvent.click(screen.getByRole("button", { name: "Xem thêm" }));
+    expect(screen.getAllByRole("listitem")).toHaveLength(41);
+  });
+
+  it("resets the visible batch when the query changes", () => {
+    render(<WikiSearch items={makeItems(81)} />);
+    fireEvent.click(screen.getByRole("button", { name: "Xem thêm" }));
+    expect(screen.getAllByRole("listitem")).toHaveLength(80);
+
+    fireEvent.change(screen.getByRole("searchbox", { name: "Tìm kiếm Items." }), {
+      target: { value: "Mục" },
+    });
+
+    expect(screen.getAllByRole("listitem")).toHaveLength(40);
   });
 });
