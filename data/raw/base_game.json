@@ -735,7 +735,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages1.xml:element:331:beefalo.tex",
+      "locator": "images/inventoryimages1.xml:element:471:beefalo.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages1.xml",
@@ -855,7 +855,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:83:beefalowool.tex",
+      "locator": "images/inventoryimages.xml:element:152:beefalowool.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -884,7 +884,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages1.xml:element:351:beefalowool.tex",
+      "locator": "images/inventoryimages1.xml:element:152:beefalowool.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages1.xml",
@@ -1011,7 +1011,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:113:bluegem.tex",
+      "locator": "images/inventoryimages.xml:element:363:bluegem.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -1040,7 +1040,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages1.xml:element:400:bluegem.tex",
+      "locator": "images/inventoryimages1.xml:element:366:bluegem.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages1.xml",
@@ -1640,7 +1640,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:117:boards.tex",
+      "locator": "images/inventoryimages.xml:element:549:boards.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -1669,7 +1669,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages1.xml:element:407:boards.tex",
+      "locator": "images/inventoryimages1.xml:element:550:boards.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages1.xml",
@@ -2027,7 +2027,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:118:boneshard.tex",
+      "locator": "images/inventoryimages.xml:element:145:boneshard.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -2056,7 +2056,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages1.xml:element:439:boneshard.tex",
+      "locator": "images/inventoryimages1.xml:element:146:boneshard.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages1.xml",
@@ -2197,7 +2197,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:138:butterfly.tex",
+      "locator": "images/inventoryimages.xml:element:264:butterfly.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -2226,7 +2226,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages1.xml:element:519:butterfly.tex",
+      "locator": "images/inventoryimages1.xml:element:263:butterfly.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages1.xml",
@@ -2500,7 +2500,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:195:coontail.tex",
+      "locator": "images/inventoryimages.xml:element:600:coontail.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -2529,7 +2529,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages1.xml:element:865:coontail.tex",
+      "locator": "images/inventoryimages1.xml:element:613:coontail.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages1.xml",
@@ -2728,7 +2728,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:206:cutgrass.tex",
+      "locator": "images/inventoryimages.xml:element:362:cutgrass.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -2757,7 +2757,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages1.xml:element:900:cutgrass.tex",
+      "locator": "images/inventoryimages1.xml:element:165:cutgrass.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages1.xml",
@@ -3153,7 +3153,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:208:cutreeds.tex",
+      "locator": "images/inventoryimages.xml:element:270:cutreeds.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -3182,7 +3182,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages1.xml:element:903:cutreeds.tex",
+      "locator": "images/inventoryimages1.xml:element:270:cutreeds.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages1.xml",
@@ -3624,7 +3624,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:209:cutstone.tex",
+      "locator": "images/inventoryimages.xml:element:922:cutstone.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -3653,7 +3653,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages1.xml:element:904:cutstone.tex",
+      "locator": "images/inventoryimages1.xml:element:962:cutstone.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages1.xml",
@@ -4095,7 +4095,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:219:dragon_scales.tex",
+      "locator": "images/inventoryimages.xml:element:843:dragon_scales.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -4124,7 +4124,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages1.xml:element:998:dragon_scales.tex",
+      "locator": "images/inventoryimages1.xml:element:220:dragon_scales.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages1.xml",
@@ -4362,7 +4362,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages1.xml:element:1023:dreadstone.tex",
+      "locator": "images/inventoryimages1.xml:element:943:dreadstone.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages1.xml",
@@ -4469,7 +4469,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:256:feather_canary.tex",
+      "locator": "images/inventoryimages.xml:element:963:feather_canary.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -4498,7 +4498,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages2.xml:element:88:feather_canary.tex",
+      "locator": "images/inventoryimages2.xml:element:976:feather_canary.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages2.xml",
@@ -4694,7 +4694,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:290:flint.tex",
+      "locator": "images/inventoryimages.xml:element:782:flint.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -4723,7 +4723,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages2.xml:element:181:flint.tex",
+      "locator": "images/inventoryimages2.xml:element:812:flint.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages2.xml",
@@ -5060,7 +5060,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:308:gears.tex",
+      "locator": "images/inventoryimages.xml:element:610:gears.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -5089,7 +5089,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages2.xml:element:242:gears.tex",
+      "locator": "images/inventoryimages2.xml:element:635:gears.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages2.xml",
@@ -5332,7 +5332,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:329:goldnugget.tex",
+      "locator": "images/inventoryimages.xml:element:43:goldnugget.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -5361,7 +5361,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages2.xml:element:303:goldnugget.tex",
+      "locator": "images/inventoryimages2.xml:element:38:goldnugget.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages2.xml",
@@ -6209,7 +6209,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:332:green_cap.tex",
+      "locator": "images/inventoryimages.xml:element:125:green_cap.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -6238,7 +6238,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages2.xml:element:309:green_cap.tex",
+      "locator": "images/inventoryimages2.xml:element:126:green_cap.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages2.xml",
@@ -6470,7 +6470,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:336:greengem.tex",
+      "locator": "images/inventoryimages.xml:element:486:greengem.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -6499,7 +6499,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages2.xml:element:313:greengem.tex",
+      "locator": "images/inventoryimages2.xml:element:507:greengem.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages2.xml",
@@ -6976,7 +6976,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:401:horn.tex",
+      "locator": "images/inventoryimages.xml:element:1005:horn.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -7005,7 +7005,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages2.xml:element:457:horn.tex",
+      "locator": "images/inventoryimages2.xml:element:1021:horn.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages2.xml",
@@ -7187,7 +7187,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages2.xml:element:458:horrorfuel.tex",
+      "locator": "images/inventoryimages2.xml:element:720:horrorfuel.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages2.xml",
@@ -7411,7 +7411,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:460:lavae_egg.tex",
+      "locator": "images/inventoryimages.xml:element:99:lavae_egg.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -7440,7 +7440,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages2.xml:element:574:lavae_egg.tex",
+      "locator": "images/inventoryimages2.xml:element:615:lavae_egg.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages2.xml",
@@ -7772,7 +7772,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:464:lightbulb.tex",
+      "locator": "images/inventoryimages.xml:element:851:lightbulb.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -7801,7 +7801,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages2.xml:element:582:lightbulb.tex",
+      "locator": "images/inventoryimages2.xml:element:872:lightbulb.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages2.xml",
@@ -8045,7 +8045,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:467:lightninggoathorn.tex",
+      "locator": "images/inventoryimages.xml:element:20:lightninggoathorn.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -8074,7 +8074,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages2.xml:element:598:lightninggoathorn.tex",
+      "locator": "images/inventoryimages2.xml:element:18:lightninggoathorn.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages2.xml",
@@ -8317,7 +8317,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:468:livinglog.tex",
+      "locator": "images/inventoryimages.xml:element:874:livinglog.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -8346,7 +8346,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages2.xml:element:599:livinglog.tex",
+      "locator": "images/inventoryimages2.xml:element:251:livinglog.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages2.xml",
@@ -8831,7 +8831,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:471:log.tex",
+      "locator": "images/inventoryimages.xml:element:368:log.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -8860,7 +8860,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages2.xml:element:604:log.tex",
+      "locator": "images/inventoryimages2.xml:element:378:log.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages2.xml",
@@ -9614,7 +9614,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:481:marble.tex",
+      "locator": "images/inventoryimages.xml:element:658:marble.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -9643,7 +9643,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages2.xml:element:635:marble.tex",
+      "locator": "images/inventoryimages2.xml:element:762:marble.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages2.xml",
@@ -10062,7 +10062,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:483:meat.tex",
+      "locator": "images/inventoryimages.xml:element:999:meat.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -10091,7 +10091,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages2.xml:element:670:meat.tex",
+      "locator": "images/inventoryimages2.xml:element:72:meat.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages2.xml",
@@ -10822,7 +10822,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:497:monstermeat.tex",
+      "locator": "images/inventoryimages.xml:element:544:monstermeat.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -10851,7 +10851,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages2.xml:element:743:monstermeat.tex",
+      "locator": "images/inventoryimages2.xml:element:564:monstermeat.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages2.xml",
@@ -11150,7 +11150,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages2.xml:element:762:moonglass.tex",
+      "locator": "images/inventoryimages2.xml:element:63:moonglass.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages2.xml",
@@ -11569,7 +11569,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:516:nightmarefuel.tex",
+      "locator": "images/inventoryimages.xml:element:594:nightmarefuel.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -11598,7 +11598,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages2.xml:element:820:nightmarefuel.tex",
+      "locator": "images/inventoryimages2.xml:element:620:nightmarefuel.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages2.xml",
@@ -11886,7 +11886,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:521:opalpreciousgem.tex",
+      "locator": "images/inventoryimages.xml:element:740:opalpreciousgem.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -11915,7 +11915,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages2.xml:element:892:opalpreciousgem.tex",
+      "locator": "images/inventoryimages2.xml:element:514:opalpreciousgem.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages2.xml",
@@ -12147,7 +12147,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:524:orangegem.tex",
+      "locator": "images/inventoryimages.xml:element:461:orangegem.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -12176,7 +12176,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages2.xml:element:895:orangegem.tex",
+      "locator": "images/inventoryimages2.xml:element:485:orangegem.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages2.xml",
@@ -12653,7 +12653,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:530:papyrus.tex",
+      "locator": "images/inventoryimages.xml:element:539:papyrus.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -12682,7 +12682,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages2.xml:element:913:papyrus.tex",
+      "locator": "images/inventoryimages2.xml:element:212:papyrus.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages2.xml",
@@ -13097,7 +13097,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:536:petals.tex",
+      "locator": "images/inventoryimages.xml:element:517:petals.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -13126,7 +13126,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages2.xml:element:932:petals.tex",
+      "locator": "images/inventoryimages2.xml:element:538:petals.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages2.xml",
@@ -13415,7 +13415,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:537:petals_evil.tex",
+      "locator": "images/inventoryimages.xml:element:160:petals_evil.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -13444,7 +13444,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages2.xml:element:934:petals_evil.tex",
+      "locator": "images/inventoryimages2.xml:element:159:petals_evil.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages2.xml",
@@ -13817,7 +13817,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:547:plantmeat.tex",
+      "locator": "images/inventoryimages.xml:element:170:plantmeat.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -13846,7 +13846,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages2.xml:element:964:plantmeat.tex",
+      "locator": "images/inventoryimages2.xml:element:170:plantmeat.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages2.xml",
@@ -14076,7 +14076,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages3.xml:element:28:purebrilliance.tex",
+      "locator": "images/inventoryimages3.xml:element:633:purebrilliance.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages3.xml",
@@ -14231,7 +14231,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:565:purplegem.tex",
+      "locator": "images/inventoryimages.xml:element:618:purplegem.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -14260,7 +14260,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages3.xml:element:30:purplegem.tex",
+      "locator": "images/inventoryimages3.xml:element:102:purplegem.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages3.xml",
@@ -14756,7 +14756,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:659:redgem.tex",
+      "locator": "images/inventoryimages.xml:element:624:redgem.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -14785,7 +14785,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages3.xml:element:147:redgem.tex",
+      "locator": "images/inventoryimages3.xml:element:645:redgem.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages3.xml",
@@ -15897,7 +15897,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:689:rocks.tex",
+      "locator": "images/inventoryimages.xml:element:224:rocks.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -15926,7 +15926,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages3.xml:element:237:rocks.tex",
+      "locator": "images/inventoryimages3.xml:element:236:rocks.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages3.xml",
@@ -17055,7 +17055,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:690:rope.tex",
+      "locator": "images/inventoryimages.xml:element:89:rope.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -17084,7 +17084,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages3.xml:element:238:rope.tex",
+      "locator": "images/inventoryimages3.xml:element:98:rope.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages3.xml",
@@ -17400,7 +17400,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:720:shadowheart.tex",
+      "locator": "images/inventoryimages.xml:element:148:shadowheart.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -17429,7 +17429,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages3.xml:element:322:shadowheart.tex",
+      "locator": "images/inventoryimages3.xml:element:554:shadowheart.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages3.xml",
@@ -17850,7 +17850,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:727:silk.tex",
+      "locator": "images/inventoryimages.xml:element:102:silk.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -17879,7 +17879,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages3.xml:element:344:silk.tex",
+      "locator": "images/inventoryimages3.xml:element:114:silk.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages3.xml",
@@ -18303,7 +18303,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:747:smallmeat.tex",
+      "locator": "images/inventoryimages.xml:element:579:smallmeat.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -18332,7 +18332,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages3.xml:element:454:smallmeat.tex",
+      "locator": "images/inventoryimages3.xml:element:597:smallmeat.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages3.xml",
@@ -18520,7 +18520,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:759:spidereggsack.tex",
+      "locator": "images/inventoryimages.xml:element:274:spidereggsack.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -18549,7 +18549,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages3.xml:element:510:spidereggsack.tex",
+      "locator": "images/inventoryimages3.xml:element:294:spidereggsack.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages3.xml",
@@ -19099,7 +19099,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:760:spidergland.tex",
+      "locator": "images/inventoryimages.xml:element:412:spidergland.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -19128,7 +19128,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages3.xml:element:511:spidergland.tex",
+      "locator": "images/inventoryimages3.xml:element:925:spidergland.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages3.xml",
@@ -19274,7 +19274,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages3.xml:element:514:spoiled_fish_small.tex",
+      "locator": "images/inventoryimages3.xml:element:8:spoiled_fish_small.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages3.xml",
@@ -19559,7 +19559,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:762:spoiled_food.tex",
+      "locator": "images/inventoryimages.xml:element:837:spoiled_food.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -19588,7 +19588,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages3.xml:element:515:spoiled_food.tex",
+      "locator": "images/inventoryimages3.xml:element:867:spoiled_food.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages3.xml",
@@ -20000,7 +20000,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:764:spore_small.tex",
+      "locator": "images/inventoryimages.xml:element:640:spore_small.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -20029,7 +20029,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages3.xml:element:517:spore_small.tex",
+      "locator": "images/inventoryimages3.xml:element:664:spore_small.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages3.xml",
@@ -20404,7 +20404,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:795:thulecite.tex",
+      "locator": "images/inventoryimages.xml:element:184:thulecite.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -20433,7 +20433,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages3.xml:element:629:thulecite.tex",
+      "locator": "images/inventoryimages3.xml:element:886:thulecite.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages3.xml",
@@ -20706,7 +20706,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:796:thulecite_pieces.tex",
+      "locator": "images/inventoryimages.xml:element:941:thulecite_pieces.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -20735,7 +20735,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages3.xml:element:630:thulecite_pieces.tex",
+      "locator": "images/inventoryimages3.xml:element:956:thulecite_pieces.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages3.xml",
@@ -20888,7 +20888,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:809:townportaltalisman.tex",
+      "locator": "images/inventoryimages.xml:element:542:townportaltalisman.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -20917,7 +20917,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages3.xml:element:680:townportaltalisman.tex",
+      "locator": "images/inventoryimages3.xml:element:567:townportaltalisman.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages3.xml",
@@ -21051,7 +21051,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:872:trunk_summer.tex",
+      "locator": "images/inventoryimages.xml:element:993:trunk_summer.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -21080,7 +21080,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages3.xml:element:767:trunk_summer.tex",
+      "locator": "images/inventoryimages3.xml:element:952:trunk_summer.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages3.xml",
@@ -21247,7 +21247,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:873:trunk_winter.tex",
+      "locator": "images/inventoryimages.xml:element:273:trunk_winter.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -21276,7 +21276,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages3.xml:element:768:trunk_winter.tex",
+      "locator": "images/inventoryimages3.xml:element:635:trunk_winter.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages3.xml",
@@ -21617,7 +21617,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:897:twigs.tex",
+      "locator": "images/inventoryimages.xml:element:58:twigs.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -21646,7 +21646,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages3.xml:element:814:twigs.tex",
+      "locator": "images/inventoryimages3.xml:element:61:twigs.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages3.xml",
@@ -22092,7 +22092,7 @@
     {
       "confidence": 0.7,
       "kind": "asset",
-      "locator": "images/inventoryimages.xml:element:1002:yellowgem.tex",
+      "locator": "images/inventoryimages.xml:element:392:yellowgem.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages.xml",
@@ -22121,7 +22121,7 @@
     {
       "confidence": 1.0,
       "kind": "asset",
-      "locator": "images/inventoryimages4.xml:element:174:yellowgem.tex",
+      "locator": "images/inventoryimages4.xml:element:82:yellowgem.tex",
       "payload": {
         "asset_type": "inventory",
         "atlas": "images/inventoryimages4.xml",

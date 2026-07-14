@@ -34,12 +34,46 @@ class AssetTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Texture"):
             parse_atlas_bytes(b"<Atlas><Elements /></Atlas>")
 
+    def test_rejects_duplicate_element_name_in_one_atlas(self):
+        duplicate = b"""<Atlas><Texture filename="items.tex"/><Elements>
+<Element name="goldnugget.tex" u1="0" u2="1" v1="0" v2="1"/>
+<Element name="goldnugget.tex" u1="0.1" u2="0.9" v1="0.1" v2="0.9"/>
+</Elements></Atlas>"""
+        with self.assertRaisesRegex(ValueError, "duplicate.*goldnugget.tex"):
+            parse_atlas_bytes(duplicate)
+
+    def test_mod_fact_sorting_preserves_original_element_positions(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            mod_root = Path(tmp) / "mod"
+            inventory = mod_root / "images/inventoryimages"
+            inventory.mkdir(parents=True)
+            (inventory / "mixed.xml").write_text(
+                '<Atlas><Texture filename="mixed.tex"/><Elements>'
+                '<Element name="zeta.tex" u1="0" u2="1" v1="0" v2="1"/>'
+                '<Element name="alpha.tex" u1="0" u2="1" v1="0" v2="1"/>'
+                "</Elements></Atlas>",
+                encoding="utf-8",
+            )
+            (inventory / "mixed.tex").write_bytes(b"tex")
+
+            bundle = index_mod_assets(mod_root, "test")
+
+            self.assertEqual(
+                [fact.subject.prefab_id for fact in bundle.facts],
+                ["alpha", "zeta"],
+            )
+            self.assertEqual(
+                [fact.locator for fact in bundle.facts],
+                ["element:2:alpha.tex", "element:1:zeta.tex"],
+            )
+
     def test_indexes_exactly_five_base_atlases_and_reports_missing_tex(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             archive = root / "images.zip"
             atlas = (
                 '<Atlas><Texture filename="{texture}"/><Elements>'
+                "{extra}"
                 '<Element name="{element}.tex" u1="0" u2="1" v1="0" v2="1"/>'
                 "</Elements></Atlas>"
             )
@@ -54,14 +88,25 @@ class AssetTests(unittest.TestCase):
                     texture = f"inventoryimages{suffix}.tex"
                     handle.writestr(
                         f"images/inventoryimages{suffix}.xml",
-                        atlas.format(texture=texture, element=element),
+                        atlas.format(
+                            texture=texture,
+                            element=element,
+                            extra=(
+                                '<Element name="goldnugget.tex" u1="0" u2="1" '
+                                'v1="0" v2="1"/>'
+                                if suffix == "1"
+                                else ""
+                            ),
+                        ),
                     )
                     if suffix != "2":
                         handle.writestr(f"images/{texture}", b"tex")
                 handle.writestr(
                     "images/inventoryimages5.xml",
                     atlas.format(
-                        texture="inventoryimages5.tex", element="should_ignore"
+                        texture="inventoryimages5.tex",
+                        element="should_ignore",
+                        extra="",
                     ),
                 )
                 handle.writestr("images/inventoryimages5.tex", b"tex")
@@ -108,6 +153,18 @@ class AssetTests(unittest.TestCase):
                 {fact.subject.prefab_id for fact in assets},
                 {"goldnugget", "silk", "nightmarefuel", "twigs", "flint"},
             )
+            gold_evidence = [
+                fact for fact in assets if fact.subject.prefab_id == "goldnugget"
+            ]
+            self.assertEqual(len(gold_evidence), 2)
+            self.assertEqual(
+                {fact.payload["atlas"] for fact in gold_evidence},
+                {"images/inventoryimages.xml", "images/inventoryimages1.xml"},
+            )
+            silk = next(
+                fact for fact in assets if fact.subject.prefab_id == "silk"
+            )
+            self.assertIn(":element:2:silk.tex", silk.locator)
             missing = next(
                 fact
                 for fact in assets

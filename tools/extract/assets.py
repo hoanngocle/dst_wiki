@@ -20,6 +20,7 @@ BASE_INVENTORY_ATLASES = tuple(
 class Atlas:
     texture: str
     elements: Dict[str, UvCoordinates]
+    element_positions: Dict[str, int]
 
 
 def _sha256(path: Path) -> str:
@@ -51,17 +52,21 @@ def parse_atlas_bytes(data: bytes) -> Atlas:
     if elements_node is None:
         raise ValueError("atlas is missing Elements")
     elements: Dict[str, UvCoordinates] = {}
-    for node in elements_node.findall("Element"):
+    element_positions: Dict[str, int] = {}
+    for position, node in enumerate(elements_node.findall("Element"), 1):
         name = node.attrib.get("name")
         if not name:
             raise ValueError("atlas Element is missing name")
+        if name in elements:
+            raise ValueError(f"atlas has duplicate Element name {name!r}")
         try:
             elements[name] = tuple(
                 float(node.attrib[key]) for key in ("u1", "u2", "v1", "v2")
             )
         except (KeyError, ValueError) as exc:
             raise ValueError(f"atlas Element {name!r} has invalid UV coordinates") from exc
-    return Atlas(texture_node.attrib["filename"], elements)
+        element_positions[name] = position
+    return Atlas(texture_node.attrib["filename"], elements, element_positions)
 
 
 def parse_atlas(path: Path) -> Atlas:
@@ -134,7 +139,8 @@ def index_mod_assets(mod_root: Path, version: str) -> FactBundle:
             )
         if not atlas.elements:
             errors.append({"code": "empty_atlas", "path": source.path})
-        for position, (element, uv) in enumerate(sorted(atlas.elements.items()), 1):
+        for element, uv in sorted(atlas.elements.items()):
+            position = atlas.element_positions[element]
             payload: Dict[str, object] = {
                 "asset_type": asset_type,
                 "atlas": relative,
@@ -220,9 +226,8 @@ def add_base_game_asset_facts(
                 if available
                 else None
             )
-            for position, (element, uv) in enumerate(
-                sorted(atlas.elements.items()), 1
-            ):
+            for element, uv in sorted(atlas.elements.items()):
+                position = atlas.element_positions[element]
                 prefab_id = PurePosixPath(element).stem.lower()
                 if prefab_id not in selected:
                     continue
