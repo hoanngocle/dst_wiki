@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Frost Atlas | Game Wiki Search",
-  description: "Search a clear, fast reference for game items, creatures, quests and locations.",
+  title: "Don't Starve Together | Tra cứu Items",
+  description:
+    "Tra cứu nhanh vật phẩm, sinh vật, nhiệm vụ và địa điểm trong Don't Starve Together.",
 };
 
 export default function RootLayout({
@@ -24,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="vi"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>

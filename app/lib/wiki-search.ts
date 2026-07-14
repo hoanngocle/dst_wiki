@@ -14,7 +14,7 @@ export type WikiEntry = {
 };
 
 function foldSearchText(value: string): string {
-  return value.normalize("NFD").replace(/\p{M}/gu, "").toLowerCase();
+  return value.normalize("NFD").replace(/\p{M}/gu, "").toLowerCase().replaceAll("đ", "d");
 }
 
 export function normalizeSearchText(value: string): string {
