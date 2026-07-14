@@ -3,7 +3,6 @@ import subprocess
 import time
 import uuid
 from pathlib import Path
-import re
 from typing import List, Optional
 
 from tools.extract.contracts import load_bundle
@@ -11,11 +10,11 @@ from tools.extract.runtime_import import (
     load_runtime_bundle,
     read_runtime_json_bytes,
     static_mod_version,
+    static_runtime_target_ids,
 )
 
 
 SENTINEL = "DST_WIKI_EXTRACT_COMPLETE"
-PREFAB_ID = re.compile(r"^[a-z0-9_]+$")
 
 
 class RuntimeProbeError(RuntimeError):
@@ -141,22 +140,6 @@ def _find_runtime_json(
     return candidates[0]
 
 
-def _static_target_ids(bundle) -> List[str]:
-    targets = sorted(
-        {
-            fact.subject.prefab_id.lower()
-            for fact in bundle.facts
-            if fact.kind == "entity" and fact.subject.namespace == "tu_tien"
-        }
-    )
-    invalid = [prefab_id for prefab_id in targets if not PREFAB_ID.fullmatch(prefab_id)]
-    if invalid:
-        raise ValueError(f"static runtime target IDs are not safe prefab IDs: {invalid}")
-    if not targets:
-        raise ValueError("static runtime target allowlist is empty")
-    return targets
-
-
 def _write_target_ids(path: Path, targets: List[str]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     body = "return {\n" + "".join(f'    "{target}",\n' for target in targets) + "}\n"
@@ -181,7 +164,7 @@ def run_runtime_probe(
     assert_within_workspace(workspace, static_path)
     static_bundle = load_bundle(static_path)
     expected_version = static_mod_version(static_bundle)
-    expected_targets = _static_target_ids(static_bundle)
+    expected_targets = static_runtime_target_ids(static_bundle)
     if not server_bin.is_file():
         raise FileNotFoundError(f"dedicated server not found: {server_bin}")
     if not game_mods_dir.is_dir():

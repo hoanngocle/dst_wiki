@@ -31,6 +31,7 @@ COVERAGE_CATEGORIES = {
 }
 COVERAGE_STATUSES = {"observed", "unobserved", "unsupported"}
 PERSISTENT_HEADER = re.compile(rb"\AKLEI +[0-9]+ ")
+STATIC_TARGET_ID = re.compile(r"^[a-z0-9_]+$")
 
 
 def _sha256(path: Path) -> str:
@@ -156,6 +157,26 @@ def static_mod_version(bundle: FactBundle) -> str:
             f"static facts must contain exactly one mod_static version, found {sorted(versions)}"
         )
     return next(iter(versions))
+
+
+def static_runtime_target_ids(bundle: FactBundle) -> List[str]:
+    """Return the deterministic Tu Tien prefab allowlist represented by static facts."""
+
+    targets = sorted(
+        {
+            fact.subject.prefab_id.lower()
+            for fact in bundle.facts
+            if fact.kind == "entity" and fact.subject.namespace == "tu_tien"
+        }
+    )
+    invalid = [
+        prefab_id for prefab_id in targets if not STATIC_TARGET_ID.fullmatch(prefab_id)
+    ]
+    if invalid:
+        raise ValueError(f"static runtime target IDs are not safe prefab IDs: {invalid}")
+    if not targets:
+        raise ValueError("static runtime target allowlist is empty")
+    return targets
 
 
 def load_runtime_bundle(

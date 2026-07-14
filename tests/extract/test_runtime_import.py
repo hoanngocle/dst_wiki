@@ -451,6 +451,10 @@ class RuntimeRunnerTests(unittest.TestCase):
             ["import-runtime", "--input", "capture/runtime.json"]
         )
         self.assertEqual(imported.input, Path("capture/runtime.json"))
+        all_args = build_parser().parse_args(
+            ["all", "--static", "capture/static.json"]
+        )
+        self.assertEqual(all_args.static, Path("capture/static.json"))
 
     def test_persistent_candidate_must_be_inside_workspace(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -479,6 +483,71 @@ class RuntimeRunnerTests(unittest.TestCase):
                         static_path, runtime_path, base_path, root / "wiki.sqlite"
                     )
                 normalize.assert_not_called()
+
+    def test_all_runtime_loading_stages_reject_same_version_target_subset(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            static_path = write_static_fixture(
+                root, prefab_ids=("xd_missing", "xd_present")
+            )
+            runtime_path = root / "runtime.json"
+            runtime_path.write_text(
+                json.dumps(runtime_payload(targets=["xd_present"])),
+                encoding="utf-8",
+            )
+            base_path = root / "base.json"
+            dump_bundle(base_path, FactBundle(1, [], [], []))
+
+            with self.assertRaisesRegex(
+                ValueError, "missing static allowlist entries.*xd_missing"
+            ):
+                cli._import_runtime_stage(runtime_path, static_path)
+
+            with mock.patch.object(cli, "verify_snapshot_archive"), mock.patch.object(
+                cli, "derive_dependency_requests"
+            ) as requests:
+                with self.assertRaisesRegex(
+                    ValueError, "missing static allowlist entries.*xd_missing"
+                ):
+                    cli._enrich_base_stage(
+                        static_path=static_path,
+                        runtime_path=runtime_path,
+                        scripts=root / "scripts.zip",
+                        manifest=root / "manifest.json",
+                        images=root / "images.zip",
+                        translation=root / "translation.po",
+                        output=root / "base-output.json",
+                    )
+                requests.assert_not_called()
+
+            with mock.patch.object(cli, "normalize") as normalize:
+                with self.assertRaisesRegex(
+                    ValueError, "missing static allowlist entries.*xd_missing"
+                ):
+                    cli._build_db_stage(
+                        static_path, runtime_path, base_path, root / "wiki.sqlite"
+                    )
+                normalize.assert_not_called()
+
+    def test_all_propagates_its_static_path_to_every_runtime_loading_stage(self):
+        static_path = Path("capture/static.json")
+        with mock.patch.object(cli, "_extract_static_stage") as extract, mock.patch.object(
+            cli, "_import_runtime_stage"
+        ) as import_runtime, mock.patch.object(
+            cli, "_enrich_base_stage"
+        ) as enrich, mock.patch.object(
+            cli, "_build_db_stage"
+        ) as build, mock.patch.object(
+            cli, "_export_stage"
+        ), mock.patch.object(
+            cli, "_validate_stage", return_value={"hard_failures": []}
+        ):
+            cli.run_all(static_path=static_path)
+
+        extract.assert_called_once_with(output=static_path)
+        import_runtime.assert_called_once_with(static_path=static_path)
+        enrich.assert_called_once_with(static_path=static_path)
+        build.assert_called_once_with(static_path=static_path)
 
     def test_all_stops_on_runtime_version_mismatch(self):
         mismatch = ValueError(

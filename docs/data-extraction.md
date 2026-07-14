@@ -68,10 +68,11 @@ Importer yêu cầu một coverage row cho mỗi cặp `target × category` củ
 Sau khi có snapshot và `data/raw/runtime.json` đúng version:
 
 ```bash
-python3 -m tools.extract.cli all
+python3 -m tools.extract.cli all \
+  --static data/raw/mod_static.json
 ```
 
-`import-runtime`, `build-db` và `all` đều có hard gate so sánh chính xác `runtime.mod_version` với version lấy từ static bundle. Sai version sẽ dừng pipeline trước normalize; không sửa tay version hoặc tái sử dụng capture cũ.
+`import-runtime`, `enrich-base`, `build-db` và `all` đều có hai hard gate lấy từ static bundle: `runtime.mod_version` phải khớp chính xác, đồng thời `runtime.targets` phải chứa toàn bộ tập entity `tu_tien` static đã sắp xếp. Sai version hoặc thiếu dù chỉ một static target sẽ dừng pipeline trước normalize/downstream write; không sửa tay capture hoặc tái sử dụng capture cũ. `--static` của `all` mặc định là `data/raw/mod_static.json`, nên lệnh ngắn `python3 -m tools.extract.cli all` vẫn giữ nguyên hành vi.
 
 `all` dùng các default sau và chạy tuần tự:
 
@@ -92,6 +93,7 @@ Các stage có thể chạy riêng; xem argument/default chính xác bằng `pyt
 - `foreign_key_errors`: ingredient/source/relation không resolve entity. Đây là hard failure.
 - `archive_checksum_errors`: ZIP thực tế, manifest và SHA lưu trong database không khớp. Đây là hard failure; snapshot lại nguyên archive.
 - `wiki_urls`: URL phát hiện trong source/evidence/manifest. Đây là hard failure vì dataset cấm nguồn web.
+- `runtime_coverage_errors`: mỗi entity `tu_tien` phải có đúng một row cho từng category runtime bắt buộc. Category thiếu, ngoài allowlist hoặc bị lặp đều là hard failure.
 - `conflicts`: nhiều fact khác nhau cho cùng field. Normalizer vẫn chọn giá trị theo ưu tiên source/confidence, giữ mọi candidate và đánh dấu evidence thắng; conflict là warning cần review, không bị ghi đè im lặng.
 - `runtime_errors`: lỗi probe theo prefab/locator. Chúng vẫn hiện cả khi pipeline có thể hoàn tất; review trước khi coi field liên quan là đầy đủ.
 - `low_confidence_fields`: evidence có confidence `< 0.7`, gồm record/source/locator và trạng thái `selected`. Đây là danh sách cần manual review, đồng thời sinh warning `low_confidence_fields_present`.

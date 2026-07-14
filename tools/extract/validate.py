@@ -8,6 +8,7 @@ import sqlite3
 from typing import Any, Dict, Iterable, Iterator, List, Optional
 
 from tools.extract.source_manifest import ARCHIVES
+from tools.extract.runtime_import import COVERAGE_CATEGORIES
 
 
 URL_PATTERN = re.compile(
@@ -349,6 +350,40 @@ def validate_catalog(db_path: Path, manifest_path: Optional[Path] = None) -> Dic
             runtime_coverage_summary[status] = (
                 runtime_coverage_summary.get(status, 0) + 1
             )
+        runtime_coverage_errors = []
+        expected_categories = set(COVERAGE_CATEGORIES)
+        for entity in db.execute(
+            "select prefab_id from entities where namespace='tu_tien' "
+            "order by prefab_id"
+        ):
+            prefab_id = entity["prefab_id"]
+            category_counts = {
+                row["category"]: row["count"]
+                for row in db.execute(
+                    "select category,count(*) count from runtime_coverage "
+                    "where namespace='tu_tien' and prefab_id=? "
+                    "group by category order by category",
+                    (prefab_id,),
+                )
+            }
+            actual_categories = set(category_counts)
+            missing_categories = sorted(expected_categories - actual_categories)
+            unexpected_categories = sorted(actual_categories - expected_categories)
+            duplicate_categories = sorted(
+                category
+                for category, count in category_counts.items()
+                if count != 1
+            )
+            if missing_categories or unexpected_categories or duplicate_categories:
+                runtime_coverage_errors.append(
+                    {
+                        "namespace": "tu_tien",
+                        "prefab_id": prefab_id,
+                        "missing_categories": missing_categories,
+                        "unexpected_categories": unexpected_categories,
+                        "duplicate_categories": duplicate_categories,
+                    }
+                )
         archive = _archive_report(db, db_path, manifest_path)
         wiki_urls = _urls(
             _provenance_strings(
@@ -396,6 +431,8 @@ def validate_catalog(db_path: Path, manifest_path: Optional[Path] = None) -> Dic
         hard_failures.append("archive_checksum_errors")
     if wiki_urls:
         hard_failures.append("wiki_urls")
+    if runtime_coverage_errors:
+        hard_failures.append("runtime_coverage_errors")
     return {
         "schema_version": 1,
         "entity_counts": counts,
@@ -406,6 +443,7 @@ def validate_catalog(db_path: Path, manifest_path: Optional[Path] = None) -> Dic
         "runtime_errors": runtime_errors,
         "runtime_coverage": runtime_coverage,
         "runtime_coverage_summary": runtime_coverage_summary,
+        "runtime_coverage_errors": runtime_coverage_errors,
         "low_confidence_fields": low_confidence_fields,
         "extraction_errors": extraction_errors,
         "conflicts": conflicts,

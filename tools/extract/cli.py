@@ -12,7 +12,11 @@ from tools.extract.database import write_database
 from tools.extract.export_json import export_catalog
 from tools.extract.mod_static import extract_mod_static
 from tools.extract.normalize import normalize
-from tools.extract.runtime_import import load_runtime_bundle, static_mod_version
+from tools.extract.runtime_import import (
+    load_runtime_bundle,
+    static_mod_version,
+    static_runtime_target_ids,
+)
 from tools.extract.runtime_runner import run_runtime_probe
 from tools.extract.source_manifest import ARCHIVES, snapshot_game_sources
 from tools.extract.validate import validate_catalog, write_validation_report
@@ -112,7 +116,8 @@ def build_parser() -> argparse.ArgumentParser:
     validate.add_argument("--database", type=Path, default=DATABASE)
     validate.add_argument("--coverage", type=Path, default=COVERAGE)
     validate.add_argument("--manifest", type=Path, default=GAME_SOURCES / "manifest.json")
-    sub.add_parser("all")
+    all_stages = sub.add_parser("all")
+    all_stages.add_argument("--static", type=Path, default=STATIC_FACTS)
     return parser
 
 
@@ -135,7 +140,9 @@ def _import_runtime_stage(
 ):
     static_bundle = load_bundle(static_path)
     bundle = load_runtime_bundle(
-        path, expected_mod_version=static_mod_version(static_bundle)
+        path,
+        expected_mod_version=static_mod_version(static_bundle),
+        expected_targets=static_runtime_target_ids(static_bundle),
     )
     print(f"{path} facts={len(bundle.facts)} errors={len(bundle.errors)}")
     return bundle
@@ -153,7 +160,9 @@ def _enrich_base_stage(
     verify_snapshot_archive(scripts, manifest)
     static_bundle = load_bundle(static_path)
     runtime_bundle = load_runtime_bundle(
-        runtime_path, expected_mod_version=static_mod_version(static_bundle)
+        runtime_path,
+        expected_mod_version=static_mod_version(static_bundle),
+        expected_targets=static_runtime_target_ids(static_bundle),
     )
     requests = derive_dependency_requests(static_bundle, runtime_bundle)
     bundle = enrich_dependencies(scripts, requests, translation)
@@ -181,7 +190,9 @@ def _build_db_stage(
 ):
     static_bundle = load_bundle(static_path)
     runtime_bundle = load_runtime_bundle(
-        runtime_path, expected_mod_version=static_mod_version(static_bundle)
+        runtime_path,
+        expected_mod_version=static_mod_version(static_bundle),
+        expected_targets=static_runtime_target_ids(static_bundle),
     )
     bundles = [static_bundle, runtime_bundle, load_bundle(base_path)]
     catalog = normalize(bundles)
@@ -214,13 +225,13 @@ def _validate_stage(
     return report
 
 
-def run_all():
+def run_all(static_path: Path = STATIC_FACTS):
     """Run the offline pipeline only; runtime capture is intentionally excluded."""
 
-    _extract_static_stage()
-    _import_runtime_stage()
-    _enrich_base_stage()
-    _build_db_stage()
+    _extract_static_stage(output=static_path)
+    _import_runtime_stage(static_path=static_path)
+    _enrich_base_stage(static_path=static_path)
+    _build_db_stage(static_path=static_path)
     _export_stage()
     return _validate_stage()
 
@@ -271,7 +282,7 @@ def main() -> int:
         report = _validate_stage(args.database, args.coverage, args.manifest)
         return 1 if report["hard_failures"] else 0
     if args.command == "all":
-        report = run_all()
+        report = run_all(args.static)
         return 1 if report["hard_failures"] else 0
     raise SystemExit(f"stage not wired: {args.command}")
 

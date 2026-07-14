@@ -9,6 +9,7 @@ from unittest import mock
 from tools.extract.database import create_schema
 from tools.extract.export_json import export_catalog
 from tools.extract.validate import validate_catalog
+from tools.extract.runtime_import import COVERAGE_CATEGORIES
 from tools.extract import cli
 
 
@@ -67,6 +68,21 @@ class ExportValidateTests(unittest.TestCase):
         db.execute(
             "insert into acquisition_sources values(?,?,?,?,?,?,?,?,?,?)",
             ("acq", "tu_tien", "xd_test_sword", "craft", None, None, None, None, None, "{}"),
+        )
+        db.executemany(
+            "insert into runtime_coverage values(?,?,?,?,?,?,?)",
+            [
+                (
+                    f"coverage-{category}",
+                    "tu_tien",
+                    "xd_test_sword",
+                    category,
+                    "unobserved",
+                    "fixture",
+                    "{}",
+                )
+                for category in sorted(COVERAGE_CATEGORIES)
+            ],
         )
         db.execute(
             "insert into stats values(?,?,?,?,?,?,?)",
@@ -198,25 +214,22 @@ class ExportValidateTests(unittest.TestCase):
             path = self.build_catalog(root)
             db = sqlite3.connect(path)
             db.executemany(
-                "insert into runtime_coverage values(?,?,?,?,?,?,?)",
+                "update runtime_coverage set status=?,reason=? "
+                "where namespace=? and prefab_id=? and category=?",
                 [
                     (
-                        "coverage-a",
+                        "unobserved",
+                        "no debuff component at spawn",
                         "tu_tien",
                         "xd_test_sword",
                         "buff_debuff",
-                        "unobserved",
-                        "no debuff component at spawn",
-                        "{}",
                     ),
                     (
-                        "coverage-b",
+                        "unsupported",
+                        "no safe reverse world-spawn registry",
                         "tu_tien",
                         "xd_test_sword",
                         "world_spawn",
-                        "unsupported",
-                        "no safe reverse world-spawn registry",
-                        "{}",
                     ),
                 ],
             )
@@ -227,16 +240,53 @@ class ExportValidateTests(unittest.TestCase):
 
             self.assertEqual(
                 report["runtime_coverage_summary"],
-                {"unobserved": 1, "unsupported": 1},
+                {"unobserved": 8, "unsupported": 1},
             )
-            self.assertEqual(
-                [row["category"] for row in report["runtime_coverage"]],
-                ["buff_debuff", "world_spawn"],
-            )
+            self.assertEqual(len(report["runtime_coverage"]), 9)
             self.assertIn(
-                {"code": "runtime_coverage_gaps", "count": 2},
+                {"code": "runtime_coverage_gaps", "count": 9},
                 report["warnings"],
             )
+
+    def test_validation_hard_fails_missing_or_unexpected_runtime_category(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            path = self.build_catalog(root)
+            db = sqlite3.connect(path)
+            db.execute(
+                "delete from runtime_coverage where namespace='tu_tien' "
+                "and prefab_id='xd_test_sword' and category='world_spawn'"
+            )
+            db.execute(
+                "insert into runtime_coverage values(?,?,?,?,?,?,?)",
+                (
+                    "coverage-unexpected",
+                    "tu_tien",
+                    "xd_test_sword",
+                    "unknown_category",
+                    "unobserved",
+                    "fixture",
+                    "{}",
+                ),
+            )
+            db.commit()
+            db.close()
+
+            report = validate_catalog(path)
+
+            self.assertEqual(
+                report["runtime_coverage_errors"],
+                [
+                    {
+                        "namespace": "tu_tien",
+                        "prefab_id": "xd_test_sword",
+                        "missing_categories": ["world_spawn"],
+                        "unexpected_categories": ["unknown_category"],
+                        "duplicate_categories": [],
+                    }
+                ],
+            )
+            self.assertIn("runtime_coverage_errors", report["hard_failures"])
 
     def test_validation_lists_every_tu_tien_inventory_item_missing_a_name(self):
         with tempfile.TemporaryDirectory() as tmp:
