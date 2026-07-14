@@ -34,7 +34,7 @@
 - Create `app/data/base-entries.ts`: typed names and six local asset paths.
 - Create `app/base/page.tsx`: server-rendered gallery route.
 - Create `app/base/page.test.tsx`: gallery structure and card count.
-- Create `public/base-placeholders/base-01.svg` through `base-06.svg`: neutral local 16:9 gallery artwork.
+- Create `public/base-placeholders/base-01.webp` through `base-06.webp`: generated neutral local 16:9 gallery artwork.
 
 ---
 
@@ -210,12 +210,12 @@ git commit -m "feat: localize Don't Starve Together items"
 - Create: `app/data/base-entries.ts`
 - Create: `app/base/page.tsx`
 - Create: `app/base/page.test.tsx`
-- Create: `public/base-placeholders/base-01.svg`
-- Create: `public/base-placeholders/base-02.svg`
-- Create: `public/base-placeholders/base-03.svg`
-- Create: `public/base-placeholders/base-04.svg`
-- Create: `public/base-placeholders/base-05.svg`
-- Create: `public/base-placeholders/base-06.svg`
+- Create: `public/base-placeholders/base-01.webp`
+- Create: `public/base-placeholders/base-02.webp`
+- Create: `public/base-placeholders/base-03.webp`
+- Create: `public/base-placeholders/base-04.webp`
+- Create: `public/base-placeholders/base-05.webp`
+- Create: `public/base-placeholders/base-06.webp`
 
 **Interfaces:**
 - Consumes: `SiteHeader({ active: "base" })` from Task 1.
@@ -261,18 +261,18 @@ export type BaseEntry = {
 };
 
 export const baseEntries: readonly BaseEntry[] = [
-  { id: "starter", name: "Base Khởi Đầu", image: "/base-placeholders/base-01.svg" },
-  { id: "meadow", name: "Base Ven Đồng Cỏ", image: "/base-placeholders/base-02.svg" },
-  { id: "forest", name: "Base Rìa Rừng", image: "/base-placeholders/base-03.svg" },
-  { id: "winter", name: "Base Mùa Đông", image: "/base-placeholders/base-04.svg" },
-  { id: "coast", name: "Base Ven Biển", image: "/base-placeholders/base-05.svg" },
-  { id: "mega", name: "Mega Base", image: "/base-placeholders/base-06.svg" },
+  { id: "starter", name: "Base Khởi Đầu", image: "/base-placeholders/base-01.webp" },
+  { id: "meadow", name: "Base Ven Đồng Cỏ", image: "/base-placeholders/base-02.webp" },
+  { id: "forest", name: "Base Rìa Rừng", image: "/base-placeholders/base-03.webp" },
+  { id: "winter", name: "Base Mùa Đông", image: "/base-placeholders/base-04.webp" },
+  { id: "coast", name: "Base Ven Biển", image: "/base-placeholders/base-05.webp" },
+  { id: "mega", name: "Mega Base", image: "/base-placeholders/base-06.webp" },
 ];
 ```
 
-- [ ] **Step 3: Create six local neutral SVG images**
+- [ ] **Step 3: Generate six local neutral WebP images**
 
-Each SVG uses `viewBox="0 0 960 540"`, an opaque cool neutral background, thin cobalt/slate map lines, simple circles/rectangles representing a top-down layout, and a small `BASE 01` through `BASE 06` label. Do not use gradients, embedded fonts, external resources, or game characters.
+Use the built-in image-generation tool once per asset and save every selected output into `public/base-placeholders/`. Generate six distinct 16:9 top-down survival-base concept thumbnails using cool silver-blue, slate, muted moss, and restrained cobalt. Keep them clearly generic: no Don't Starve characters, logos, copyrighted UI, words, watermarks, gradients, or photorealistic people. The six compositions should vary by starter camp, meadow edge, forest edge, winter camp, coast camp, and larger organized base.
 
 - [ ] **Step 4: Implement the Server Component gallery**
 
