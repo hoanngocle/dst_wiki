@@ -1,22 +1,31 @@
 import { SiteHeader } from "@/app/components/site-header";
 import { WikiSearch } from "@/app/components/wiki-search";
-import { wikiEntries } from "@/app/data/wiki-entries";
+import { parseItemPayload } from "@/app/lib/item-catalog";
+import itemPayload from "@/public/data/items.json";
+
+const items = parseItemPayload(itemPayload);
 
 export default function Home() {
   return (
     <div className="min-h-[100dvh] bg-[#edf1f5] text-[#14233b]">
       <SiteHeader active="items" />
       <main>
-        <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-          <div className="grid items-end gap-5 md:grid-cols-[minmax(0,1fr)_280px] md:gap-10">
-            <h1 className="max-w-2xl text-4xl font-semibold leading-[1.02] tracking-[-0.045em] text-[#14233b] sm:text-5xl lg:text-6xl">
-              Tìm nhanh.<br />Chơi tiếp.
-            </h1>
-            <p className="max-w-[34ch] text-base leading-7 text-[#53647a] md:justify-self-end">
-              Tra cứu nhanh vật phẩm, sinh vật, nhiệm vụ và địa điểm.
+        <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
+          <div className="grid items-end gap-5 md:grid-cols-[minmax(0,1fr)_320px] md:gap-12">
+            <div>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-[#2e5fb3]">
+                Danh mục chế tạo
+              </p>
+              <h1 className="max-w-2xl text-4xl font-semibold leading-[1.04] tracking-[-0.04em] text-[#14233b] sm:text-5xl lg:text-6xl">
+                Tra cứu vật phẩm
+              </h1>
+            </div>
+            <p className="max-w-[38ch] text-base leading-7 text-[#53647a] md:justify-self-end">
+              Tìm nhanh tên, prefab và công thức của vật phẩm Tu Tiên cùng các nguyên
+              liệu DST gốc liên quan.
             </p>
           </div>
-          <WikiSearch entries={wikiEntries} />
+          <WikiSearch items={items} />
         </div>
       </main>
     </div>

@@ -1,17 +1,4 @@
-export const wikiCategories = ["item", "creature", "location", "quest"] as const;
-
-export type WikiCategory = (typeof wikiCategories)[number];
-export type SearchCategory = "all" | WikiCategory;
-export type WikiEntryAccent = "ice" | "moss" | "sand" | "slate";
-
-export type WikiEntry = {
-  id: string;
-  name: string;
-  category: WikiCategory;
-  description: string;
-  keywords: readonly string[];
-  accent: WikiEntryAccent;
-};
+import type { ItemFilter, ItemListEntry } from "./item-catalog";
 
 function foldSearchText(value: string): string {
   return value.normalize("NFD").replace(/\p{M}/gu, "").toLowerCase().replaceAll("đ", "d");
@@ -66,20 +53,28 @@ export function findNormalizedTextMatch(
   return { start: firstRange.start, end: lastRange.end };
 }
 
-export function filterWikiEntries(
-  entries: readonly WikiEntry[],
+export function filterItems(
+  items: readonly ItemListEntry[],
   query: string,
-  category: SearchCategory,
-): WikiEntry[] {
+  filter: ItemFilter,
+): ItemListEntry[] {
   const normalizedQuery = normalizeSearchText(query);
 
-  return entries.filter((entry) => {
-    const matchesCategory = category === "all" || entry.category === category;
-    if (!matchesCategory) return false;
+  return items.filter((item) => {
+    const matchesFilter =
+      filter === "all" ||
+      (filter === "craftable" ? item.recipe !== null : item.namespace === filter);
+    if (!matchesFilter) return false;
     if (!normalizedQuery) return true;
 
     const searchableText = normalizeSearchText(
-      [entry.name, entry.description, entry.category, ...entry.keywords].join(" "),
+      [
+        item.name,
+        item.englishName ?? "",
+        item.prefabId,
+        item.description ?? "",
+        ...(item.recipe?.ingredients.map((ingredient) => ingredient.name) ?? []),
+      ].join(" "),
     );
 
     return searchableText.includes(normalizedQuery);
