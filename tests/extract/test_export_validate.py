@@ -149,6 +149,49 @@ class ExportValidateTests(unittest.TestCase):
             self.assertIn("coverage", report)
             self.assertIn("warnings", report)
 
+    def test_validation_surfaces_low_confidence_fields(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            path = self.build_catalog(root)
+            db = sqlite3.connect(path)
+            db.execute(
+                "insert into evidence values(?,?,?,?,?,?,?,?)",
+                (
+                    "low-confidence-relation",
+                    "relation",
+                    "relation",
+                    "fixture",
+                    "line:17",
+                    '{"relation_type":"string_alias"}',
+                    0.5,
+                    1,
+                ),
+            )
+            db.commit()
+            db.close()
+
+            report = validate_catalog(path)
+
+            self.assertEqual(
+                report["low_confidence_fields"],
+                [
+                    {
+                        "evidence_id": "low-confidence-relation",
+                        "record_type": "relation",
+                        "record_id": "relation",
+                        "source_id": "fixture",
+                        "source_kind": "mod_static",
+                        "locator": "line:17",
+                        "confidence": 0.5,
+                        "selected": True,
+                    }
+                ],
+            )
+            self.assertIn(
+                {"code": "low_confidence_fields_present", "count": 1},
+                report["warnings"],
+            )
+
     def test_validation_scans_evidence_locator_and_nested_manifest_strings(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

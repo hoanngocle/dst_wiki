@@ -17508,6 +17508,148 @@
   ],
   "foreign_key_errors": [],
   "hard_failures": [],
+  "low_confidence_fields": [
+    {
+      "confidence": 0.5,
+      "evidence_id": "69e54c6f94b2aad3c115533f6854a4247783491e26dad145680c6cbbd9a17dd8",
+      "locator": "line:103",
+      "record_id": "00332b474cd663bef2b80d8216b72c1e6c3f76eb8e045abbce72573ea23d748f",
+      "record_type": "relation",
+      "selected": true,
+      "source_id": "mod-strings",
+      "source_kind": "mod_static"
+    },
+    {
+      "confidence": 0.5,
+      "evidence_id": "4c28c76e7008fa2551e68fbea5a8a77a9ba317195d04a8e4d3de41c58ec4fdc3",
+      "locator": "line:101",
+      "record_id": "03e1b36a52144809a410882f8a1bb19d4b829ab6067fbbfcfe540f918cdb0526",
+      "record_type": "relation",
+      "selected": true,
+      "source_id": "mod-strings",
+      "source_kind": "mod_static"
+    },
+    {
+      "confidence": 0.5,
+      "evidence_id": "7fe6556d0954293b248510543283f1846970ce8349022b064bf088ec077528dd",
+      "locator": "line:581",
+      "record_id": "0478281e301b8d530784976e0cf2c461327e647a2c88fe30e548074c6186f360",
+      "record_type": "relation",
+      "selected": true,
+      "source_id": "mod-strings",
+      "source_kind": "mod_static"
+    },
+    {
+      "confidence": 0.5,
+      "evidence_id": "e3f60155981553dddbe78956538e7aa36275bd0e7702695d90dca64e31c3c545",
+      "locator": "line:106",
+      "record_id": "103c4cb67b7a268b90b2a9d3f3655ce533f8b367e3c8dda72dcd4d2242f0f983",
+      "record_type": "relation",
+      "selected": true,
+      "source_id": "mod-strings",
+      "source_kind": "mod_static"
+    },
+    {
+      "confidence": 0.5,
+      "evidence_id": "f1c2fe5856a2b40a051fdb5cca084f47008b339fb8f6864bd9d4126c961de863",
+      "locator": "line:579",
+      "record_id": "40da8bead6e61f3a9a9a2e39d8c7e66e8021ea2e74d58cb1808632dd3c8fc181",
+      "record_type": "relation",
+      "selected": true,
+      "source_id": "mod-strings",
+      "source_kind": "mod_static"
+    },
+    {
+      "confidence": 0.5,
+      "evidence_id": "5c7dcbf53943fb449b3969750e3cfc2c3ad04e8209e10d949428faf83f41307d",
+      "locator": "line:104",
+      "record_id": "4c1d4705577af3b2a3c58980a9ff35c777d607df5eb81591411680d4a4c7e30c",
+      "record_type": "relation",
+      "selected": true,
+      "source_id": "mod-strings",
+      "source_kind": "mod_static"
+    },
+    {
+      "confidence": 0.5,
+      "evidence_id": "5df7055cbbd1c40ec3a5980359b40fe453851f8e3082fe452b874f62c5c1706a",
+      "locator": "line:580",
+      "record_id": "4df394b64f0f3b70ae3ff3933c11618b8e30b76a6472809422f6cc8a9b322a72",
+      "record_type": "relation",
+      "selected": true,
+      "source_id": "mod-strings",
+      "source_kind": "mod_static"
+    },
+    {
+      "confidence": 0.5,
+      "evidence_id": "fe8ed8e6b472457373f612910a659b17ade6df1c45106849613b82ca85234960",
+      "locator": "line:1382",
+      "record_id": "5e4fcbf500e9362e8f18698d4c6deb0ba9ba19f698e592f9e6cfd3003c0306b8",
+      "record_type": "relation",
+      "selected": true,
+      "source_id": "mod-strings",
+      "source_kind": "mod_static"
+    },
+    {
+      "confidence": 0.5,
+      "evidence_id": "b6d6351baf3ef4048ba70b86261459ab903008d9021577886e886d1651a915b8",
+      "locator": "line:578",
+      "record_id": "72c4e0d0f26aebfe1065601fda45a25c3ac61f8f2005a734ec0ce8aa5569b8e6",
+      "record_type": "relation",
+      "selected": true,
+      "source_id": "mod-strings",
+      "source_kind": "mod_static"
+    },
+    {
+      "confidence": 0.5,
+      "evidence_id": "4cc16dc10a17032c59804b5da04123147d565c192720e96f669b27ecbedc0ed2",
+      "locator": "line:107",
+      "record_id": "821b2909090c7c86438b34fd1e001056fa97f24cc11d1ce3572c3541ea64c634",
+      "record_type": "relation",
+      "selected": true,
+      "source_id": "mod-strings",
+      "source_kind": "mod_static"
+    },
+    {
+      "confidence": 0.5,
+      "evidence_id": "3d4624f58e7b3b9f4d7ce00b266c99a69cab3c775fc298a60474e79652cbaee2",
+      "locator": "line:843",
+      "record_id": "a35e5c68900b37b5624cb20f85c2422a3a860e88a95a176301eb44b9f9829f43",
+      "record_type": "relation",
+      "selected": true,
+      "source_id": "mod-strings",
+      "source_kind": "mod_static"
+    },
+    {
+      "confidence": 0.5,
+      "evidence_id": "a9d2f994ba250cda982fc3dcfb1974fcd8af42279c1a87cdbef5fb8e6c55f354",
+      "locator": "line:109",
+      "record_id": "ac6387f1f36b3f9d7d7c5a28905fa13624489e7c04499d2bcd715f8d8e17f889",
+      "record_type": "relation",
+      "selected": true,
+      "source_id": "mod-strings",
+      "source_kind": "mod_static"
+    },
+    {
+      "confidence": 0.5,
+      "evidence_id": "3064a75a40632ecac9e186d8c48628e671c0efd1388f422051562e7d4e379ecd",
+      "locator": "line:571",
+      "record_id": "cea8e0c0500b61c6976c4afd91601e09183e18c3595557312cb1f2431700a854",
+      "record_type": "relation",
+      "selected": true,
+      "source_id": "mod-strings",
+      "source_kind": "mod_static"
+    },
+    {
+      "confidence": 0.5,
+      "evidence_id": "8e0911b9312a6cfde15af6d208cdadaf8d7dcc57ff5b7c5c3fc4f8f1845e7d64",
+      "locator": "line:577",
+      "record_id": "cea8e0c0500b61c6976c4afd91601e09183e18c3595557312cb1f2431700a854",
+      "record_type": "relation",
+      "selected": true,
+      "source_id": "mod-strings",
+      "source_kind": "mod_static"
+    }
+  ],
   "runtime_errors": [
     {
       "code": "prefab_inspection_failed",
@@ -18061,6 +18203,10 @@
     {
       "code": "conflicts_present",
       "count": 403
+    },
+    {
+      "code": "low_confidence_fields_present",
+      "count": 14
     }
   ],
   "wiki_urls": []

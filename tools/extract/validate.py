@@ -289,6 +289,27 @@ def validate_catalog(db_path: Path, manifest_path: Optional[Path] = None) -> Dic
             if row["source_kind"] == "runtime_probe":
                 runtime_errors.append(error)
 
+        low_confidence_fields = [
+            {
+                "evidence_id": row["evidence_id"],
+                "record_type": row["record_type"],
+                "record_id": row["record_id"],
+                "source_id": row["source_id"],
+                "source_kind": row["source_kind"],
+                "locator": row["locator"],
+                "confidence": row["confidence"],
+                "selected": bool(row["selected"]),
+            }
+            for row in db.execute(
+                "select e.evidence_id,e.record_type,e.record_id,e.source_id,"
+                "s.kind source_kind,e.locator,e.confidence,e.selected "
+                "from evidence e join sources s on s.source_id=e.source_id "
+                "where e.confidence < 0.7 "
+                "order by e.confidence,e.record_type,e.record_id,e.source_id,"
+                "e.locator,e.evidence_id"
+            )
+        ]
+
         conflicts = [
             {
                 "conflict_id": row["conflict_id"],
@@ -316,6 +337,13 @@ def validate_catalog(db_path: Path, manifest_path: Optional[Path] = None) -> Dic
         warnings.append({"code": "extraction_errors_present", "count": len(extraction_errors)})
     if conflicts:
         warnings.append({"code": "conflicts_present", "count": len(conflicts)})
+    if low_confidence_fields:
+        warnings.append(
+            {
+                "code": "low_confidence_fields_present",
+                "count": len(low_confidence_fields),
+            }
+        )
     hard_failures = []
     if foreign_keys:
         hard_failures.append("foreign_key_errors")
@@ -332,6 +360,7 @@ def validate_catalog(db_path: Path, manifest_path: Optional[Path] = None) -> Dic
         "unresolved_dependencies": unresolved,
         "foreign_key_errors": foreign_keys,
         "runtime_errors": runtime_errors,
+        "low_confidence_fields": low_confidence_fields,
         "extraction_errors": extraction_errors,
         "conflicts": conflicts,
         "wiki_urls": wiki_urls,
