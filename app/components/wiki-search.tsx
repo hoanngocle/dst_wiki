@@ -126,7 +126,7 @@ export function WikiSearch({ entries }: { entries: readonly WikiEntry[] }) {
 
       <div role="group" className="mt-3 flex gap-2 overflow-x-auto pb-2" aria-label="Filter entries by category">
         {filters.map((filter) => (
-          <button key={filter.value} type="button" aria-pressed={category === filter.value} onClick={() => setCategory(filter.value)} className="shrink-0 rounded-full border border-[#cbd5e1] px-3 py-1.5 text-sm font-medium text-[#5c6b80] transition hover:border-[#2e5fb3] hover:text-[#2e5fb3] active:scale-[0.98] aria-pressed:border-[#2e5fb3] aria-pressed:bg-[#2e5fb3] aria-pressed:text-[#f8fafc]">
+          <button key={filter.value} type="button" aria-pressed={category === filter.value} onClick={() => setCategory(filter.value)} className="min-h-11 shrink-0 rounded-full border border-[#cbd5e1] px-3 py-1.5 text-sm font-medium text-[#5c6b80] transition hover:border-[#2e5fb3] hover:text-[#2e5fb3] active:scale-[0.98] aria-pressed:border-[#2e5fb3] aria-pressed:bg-[#2e5fb3] aria-pressed:text-[#f8fafc]">
             {filter.label}
           </button>
         ))}
@@ -134,7 +134,7 @@ export function WikiSearch({ entries }: { entries: readonly WikiEntry[] }) {
 
       <div className="mt-7 flex items-end justify-between gap-4">
         <h2 id="atlas-results" className="text-lg font-semibold tracking-tight text-[#14233b]">Explore the atlas</h2>
-        <p aria-live="polite" className="text-sm text-[#67758a]">{countLabel}</p>
+        <p aria-live="polite" className="text-sm text-[#53647a]">{countLabel}</p>
       </div>
 
       {results.length ? (
@@ -144,7 +144,7 @@ export function WikiSearch({ entries }: { entries: readonly WikiEntry[] }) {
               <div aria-hidden="true" className={`flex h-11 w-12 items-center justify-center rounded-md font-mono text-xs font-semibold uppercase ${accentClasses[entry.accent]}`}>{entry.category.slice(0, 2)}</div>
               <div className="min-w-0">
                 <h3 className="font-semibold text-[#172943]"><HighlightedText text={entry.name} query={query} /></h3>
-                <p className="mt-1 line-clamp-2 text-sm leading-6 text-[#67758a]"><HighlightedText text={entry.description} query={query} /></p>
+                <p className="mt-1 line-clamp-2 text-sm leading-6 text-[#53647a]"><HighlightedText text={entry.description} query={query} /></p>
               </div>
               <span className="hidden rounded-full bg-[#dce6f4] px-2.5 py-1 text-xs font-medium capitalize text-[#2e5fb3] sm:inline-flex">{entry.category}</span>
             </li>
@@ -153,7 +153,7 @@ export function WikiSearch({ entries }: { entries: readonly WikiEntry[] }) {
       ) : (
         <div className="mt-3 border-y border-[#cbd5e1] py-14 text-center">
           <h3 className="text-lg font-semibold text-[#14233b]">No entries found</h3>
-          <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-[#67758a]">Try another search or clear the current filters.</p>
+          <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-[#53647a]">Try another search or clear the current filters.</p>
           <button type="button" onClick={resetFilters} className="mt-5 rounded-[10px] bg-[#2e5fb3] px-4 py-2.5 text-sm font-semibold text-[#f8fafc] transition hover:bg-[#264f96] active:scale-[0.98]">Clear filters</button>
         </div>
       )}

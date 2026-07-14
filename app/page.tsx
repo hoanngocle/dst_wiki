@@ -10,7 +10,7 @@ export default function Home() {
             <span aria-hidden="true" className="h-4 w-4 rotate-45 border-2 border-[#2e5fb3]" />
             <span>FROST ATLAS</span>
           </div>
-          <span className="hidden font-mono text-xs text-[#67758a] sm:block">{wikiEntries.length} entries</span>
+          <span className="hidden font-mono text-xs text-[#53647a] sm:block">{wikiEntries.length} entries</span>
         </div>
       </header>
 
@@ -19,7 +19,7 @@ export default function Home() {
           <h1 className="max-w-2xl text-4xl font-semibold leading-[1.02] tracking-[-0.045em] text-[#14233b] sm:text-5xl lg:text-6xl">
             Find answers.<br />Keep playing.
           </h1>
-          <p className="max-w-[34ch] text-base leading-7 text-[#67758a] md:justify-self-end">
+          <p className="max-w-[34ch] text-base leading-7 text-[#53647a] md:justify-self-end">
             A fast reference for items, creatures, quests and locations.
           </p>
         </div>
