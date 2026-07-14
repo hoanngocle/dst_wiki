@@ -2517,9 +2517,10 @@
       "kind": "relation",
       "locator": "line:581",
       "payload": {
+        "dependency_candidate": true,
         "field": "name",
         "relation": "string_alias",
-        "target_namespace": "base_game",
+        "resolution": "unresolved",
         "target_prefab_id": "mutatedbearger"
       },
       "source": {
@@ -2639,9 +2640,10 @@
       "kind": "relation",
       "locator": "line:571",
       "payload": {
+        "dependency_candidate": true,
         "field": "name",
         "relation": "string_alias",
-        "target_namespace": "base_game",
+        "resolution": "unresolved",
         "target_prefab_id": "beefalo"
       },
       "source": {
@@ -2661,9 +2663,10 @@
       "kind": "relation",
       "locator": "line:577",
       "payload": {
+        "dependency_candidate": true,
         "field": "name",
         "relation": "string_alias",
-        "target_namespace": "base_game",
+        "resolution": "unresolved",
         "target_prefab_id": "beefalo"
       },
       "source": {
@@ -7198,9 +7201,10 @@
       "kind": "relation",
       "locator": "line:580",
       "payload": {
+        "dependency_candidate": true,
         "field": "name",
         "relation": "string_alias",
-        "target_namespace": "base_game",
+        "resolution": "unresolved",
         "target_prefab_id": "dragonfly"
       },
       "source": {
@@ -26595,9 +26599,10 @@
       "kind": "relation",
       "locator": "line:578",
       "payload": {
+        "dependency_candidate": true,
         "field": "name",
         "relation": "string_alias",
-        "target_namespace": "base_game",
+        "resolution": "unresolved",
         "target_prefab_id": "koalefant_summer"
       },
       "source": {
@@ -29418,9 +29423,10 @@
       "kind": "relation",
       "locator": "line:579",
       "payload": {
+        "dependency_candidate": true,
         "field": "name",
         "relation": "string_alias",
-        "target_namespace": "base_game",
+        "resolution": "unresolved",
         "target_prefab_id": "lightninggoat"
       },
       "source": {
@@ -32459,9 +32465,10 @@
       "kind": "relation",
       "locator": "line:104",
       "payload": {
+        "dependency_candidate": true,
         "field": "name",
         "relation": "string_alias",
-        "target_namespace": "base_game",
+        "resolution": "unresolved",
         "target_prefab_id": "petals"
       },
       "source": {
@@ -32481,9 +32488,10 @@
       "kind": "relation",
       "locator": "line:106",
       "payload": {
+        "dependency_candidate": true,
         "field": "description",
         "relation": "string_alias",
-        "target_namespace": "base_game",
+        "resolution": "unresolved",
         "target_prefab_id": "petals"
       },
       "source": {
@@ -32625,9 +32633,10 @@
       "kind": "relation",
       "locator": "line:107",
       "payload": {
+        "dependency_candidate": true,
         "field": "name",
         "relation": "string_alias",
-        "target_namespace": "base_game",
+        "resolution": "unresolved",
         "target_prefab_id": "petals_evil"
       },
       "source": {
@@ -32647,9 +32656,10 @@
       "kind": "relation",
       "locator": "line:109",
       "payload": {
+        "dependency_candidate": true,
         "field": "description",
         "relation": "string_alias",
-        "target_namespace": "base_game",
+        "resolution": "unresolved",
         "target_prefab_id": "petals_evil"
       },
       "source": {
@@ -32791,9 +32801,10 @@
       "kind": "relation",
       "locator": "line:101",
       "payload": {
+        "dependency_candidate": true,
         "field": "name",
         "relation": "string_alias",
-        "target_namespace": "base_game",
+        "resolution": "unresolved",
         "target_prefab_id": "plantmeat"
       },
       "source": {
@@ -32813,9 +32824,10 @@
       "kind": "relation",
       "locator": "line:103",
       "payload": {
+        "dependency_candidate": true,
         "field": "description",
         "relation": "string_alias",
-        "target_namespace": "base_game",
+        "resolution": "unresolved",
         "target_prefab_id": "plantmeat"
       },
       "source": {
@@ -45427,9 +45439,10 @@
       "kind": "relation",
       "locator": "line:843",
       "payload": {
+        "dependency_candidate": true,
         "field": "name",
         "relation": "string_alias",
-        "target_namespace": "base_game",
+        "resolution": "unresolved",
         "target_prefab_id": "stalker_atrium"
       },
       "source": {
@@ -49910,9 +49923,10 @@
       "kind": "relation",
       "locator": "line:1382",
       "payload": {
+        "dependency_candidate": true,
         "field": "name",
         "relation": "string_alias",
-        "target_namespace": "base_game",
+        "resolution": "unresolved",
         "target_prefab_id": "wickerbottom"
       },
       "source": {

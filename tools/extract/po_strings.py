@@ -19,10 +19,11 @@ def _decode_po_string(value: str) -> str:
 
 
 def load_po_by_context(path: Path) -> Dict[str, str]:
-    """Map exact PO contexts to translated text, falling back to ``msgid``.
+    """Map exact PO contexts to non-empty translated text.
 
     Standard continued quoted lines are concatenated. Empty header entries and
-    entries without a context are intentionally excluded.
+    untranslated/empty entries are intentionally excluded so callers cannot
+    mislabel an English ``msgid`` fallback as localized text.
     """
 
     result: Dict[str, str] = {}
@@ -31,8 +32,9 @@ def load_po_by_context(path: Path) -> Dict[str, str]:
 
     def flush() -> None:
         context = entry.get("msgctxt")
-        if context:
-            result[context] = entry.get("msgstr") or entry.get("msgid", "")
+        translated = entry.get("msgstr", "")
+        if context and translated:
+            result[context] = translated
 
     for raw_line in path.read_text(encoding="utf-8-sig").splitlines() + [""]:
         line = raw_line.strip()

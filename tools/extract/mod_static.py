@@ -26,10 +26,16 @@ def _sha256(path: Path) -> str:
 
 
 def _display_path(path: Path) -> str:
-    try:
-        return path.resolve().relative_to(Path.cwd().resolve()).as_posix()
-    except ValueError:
-        return path.resolve().as_posix()
+    parts = path.resolve().parts
+    for marker in ("mod", "data"):
+        indices = [index for index, part in enumerate(parts) if part == marker]
+        if indices:
+            return Path(*parts[indices[-1] :]).as_posix()
+    for marker in ("scripts", "images"):
+        indices = [index for index, part in enumerate(parts) if part == marker]
+        if indices:
+            return Path(*parts[indices[-1] :]).as_posix()
+    return path.name
 
 
 def _source(path: Path, source_id: str, kind: str, version: str) -> SourceRef:
@@ -90,8 +96,9 @@ def _fact_for_row(row: Dict[str, object], source: SourceRef) -> Optional[Fact]:
             {
                 "relation": "string_alias",
                 "field": row["field"],
-                "target_namespace": "base_game",
                 "target_prefab_id": alias,
+                "dependency_candidate": True,
+                "resolution": "unresolved",
             },
             source,
             0.5,

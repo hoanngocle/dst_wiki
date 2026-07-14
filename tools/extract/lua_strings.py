@@ -1,4 +1,3 @@
-import ast
 import re
 from pathlib import Path
 from typing import Dict, List
@@ -24,12 +23,105 @@ TABLE_START = re.compile(r"^\s*local\s+names\s*=\s*\{\s*$")
 TABLE_ENTRY = re.compile(r'^\s*\["([A-Za-z0-9_]+)"\]\s*=\s*(.+?)\s*,?\s*$')
 
 
+ESCAPES = {
+    "a": b"\a",
+    "b": b"\b",
+    "f": b"\f",
+    "n": b"\n",
+    "r": b"\r",
+    "t": b"\t",
+    "v": b"\v",
+    "\\": b"\\",
+    '"': b'"',
+    "'": b"'",
+}
+
+
+def decode_lua_string_literal(expression: str) -> str:
+    """Decode one Lua short-string literal without evaluating Lua code.
+
+    Lua decimal escapes represent bytes rather than Python's octal escapes. The
+    resulting byte sequence is decoded as UTF-8, matching the encoding used by
+    the mod sources. Long-bracket strings and expressions are intentionally out
+    of scope.
+    """
+
+    if len(expression) < 2 or expression[0] not in ('"', "'"):
+        raise ValueError("not a Lua short-string literal")
+    quote = expression[0]
+    if expression[-1] != quote:
+        raise ValueError("unterminated Lua short-string literal")
+
+    body = expression[1:-1]
+    output = bytearray()
+    index = 0
+    while index < len(body):
+        char = body[index]
+        if char != "\\":
+            output.extend(char.encode("utf-8"))
+            index += 1
+            continue
+
+        index += 1
+        if index >= len(body):
+            raise ValueError("trailing backslash in Lua string")
+        escaped = body[index]
+        if escaped in ESCAPES:
+            output.extend(ESCAPES[escaped])
+            index += 1
+            continue
+        if escaped.isdigit() and escaped.isascii():
+            end = index
+            while (
+                end < len(body)
+                and end < index + 3
+                and body[end].isdigit()
+                and body[end].isascii()
+            ):
+                end += 1
+            value = int(body[index:end], 10)
+            if value > 255:
+                raise ValueError("Lua decimal escape exceeds one byte")
+            output.append(value)
+            index = end
+            continue
+        if escaped == "x":
+            digits = body[index + 1 : index + 3]
+            if len(digits) != 2 or not all(
+                value in "0123456789abcdefABCDEF" for value in digits
+            ):
+                raise ValueError("invalid Lua hexadecimal escape")
+            output.append(int(digits, 16))
+            index += 3
+            continue
+        if escaped == "z":
+            index += 1
+            while index < len(body) and body[index].isspace():
+                index += 1
+            continue
+        if escaped == "\n":
+            output.append(10)
+            index += 1
+            continue
+        if escaped == "\r":
+            output.append(10)
+            index += 1
+            if index < len(body) and body[index] == "\n":
+                index += 1
+            continue
+        raise ValueError(f"unsupported Lua escape: \\{escaped}")
+
+    try:
+        return output.decode("utf-8")
+    except UnicodeDecodeError as exc:
+        raise ValueError("Lua string bytes are not valid UTF-8") from exc
+
+
 def _literal(expression: str):
     try:
-        value = ast.literal_eval(expression)
-    except (SyntaxError, ValueError):
+        return decode_lua_string_literal(expression)
+    except ValueError:
         return None
-    return value if isinstance(value, str) else None
 
 
 def parse_string_assignments(path: Path) -> List[Dict[str, object]]:
