@@ -13,13 +13,41 @@ from tools.extract import cli
 
 
 class ExportValidateTests(unittest.TestCase):
+    def write_archive_fixture(self, root: Path):
+        sources = root / "data" / "sources" / "game"
+        sources.mkdir(parents=True, exist_ok=True)
+        paths = {
+            "scripts.zip": sources / "scripts.zip",
+            "images.zip": sources / "images.zip",
+        }
+        paths["scripts.zip"].write_bytes(b"scripts")
+        paths["images.zip"].write_bytes(b"images")
+        manifest = {
+            "schema_version": 1,
+            "files": {
+                name: {
+                    "size": path.stat().st_size,
+                    "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+                }
+                for name, path in paths.items()
+            },
+        }
+        manifest_path = sources / "manifest.json"
+        manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+        return manifest_path, manifest, paths
+
     def build_catalog(self, root: Path) -> Path:
+        _manifest_path, manifest, _paths = self.write_archive_fixture(root)
         path = root / "catalog.sqlite"
         db = sqlite3.connect(path)
         create_schema(db)
-        db.execute(
+        db.executemany(
             "insert into sources values(?,?,?,?,?)",
-            ("fixture", "mod_static", "mod/fixture.lua", "1", "a" * 64),
+            [
+                ("fixture", "mod_static", "mod/fixture.lua", "1", "a" * 64),
+                ("scripts", "snapshot", "data/sources/game/scripts.zip", "snapshot", manifest["files"]["scripts.zip"]["sha256"]),
+                ("images", "snapshot", "data/sources/game/images.zip", "snapshot", manifest["files"]["images.zip"]["sha256"]),
+            ],
         )
         db.executemany(
             "insert into entities(namespace,prefab_id,entity_type,is_inventory_item,name_vi,name_en,description_vi,description_en,icon_key,confidence) values(?,?,?,?,?,?,?,?,?,?)",
@@ -121,6 +149,31 @@ class ExportValidateTests(unittest.TestCase):
             self.assertIn("coverage", report)
             self.assertIn("warnings", report)
 
+    def test_validation_scans_evidence_locator_and_nested_manifest_strings(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            path = self.build_catalog(root)
+            db = sqlite3.connect(path)
+            db.execute(
+                "insert into evidence values(?,?,?,?,?,?,?,?)",
+                ("locator-url", "name", "tu_tien:xd_test_sword", "fixture", "https://locator.invalid/wiki", "{}", 1.0, 0),
+            )
+            db.commit()
+            db.close()
+            manifest_path = root / "data/sources/game/manifest.json"
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+            manifest["metadata"] = {
+                "nested": [{"https://manifest-key.invalid/wiki": "https://manifest-value.invalid/wiki"}]
+            }
+            manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+
+            report = validate_catalog(path)
+
+            locations = {item["location"] for item in report["wiki_urls"]}
+            self.assertTrue(any(location.startswith("evidence:locator-url.locator") for location in locations))
+            self.assertTrue(any(location.startswith("manifest:") for location in locations))
+            self.assertEqual(len(report["wiki_urls"]), 3)
+
     def test_validation_hard_fails_foreign_keys_and_unresolved_dependencies(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -182,6 +235,51 @@ class ExportValidateTests(unittest.TestCase):
             self.assertEqual(validate_catalog(db_path)["archive_checksum_errors"], [])
             scripts.write_bytes(b"changed")
             self.assertEqual(len(validate_catalog(db_path)["archive_checksum_errors"]), 1)
+
+    def test_validation_requires_both_archive_provenance_rows_for_base_catalog(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            db_path = root / "wiki.sqlite"
+            db = sqlite3.connect(db_path)
+            create_schema(db)
+            db.execute(
+                "insert into entities values(?,?,?,?,?,?,?,?,?,?)",
+                ("base_game", "goldnugget", "inventory_item", 1, None, None, None, None, None, 1.0),
+            )
+            db.commit()
+            db.close()
+
+            report = validate_catalog(db_path)
+
+            missing = {
+                error.get("archive")
+                for error in report["archive_checksum_errors"]
+                if error["code"] == "missing_source_archive"
+            }
+            self.assertEqual(missing, {"scripts.zip", "images.zip"})
+            self.assertIn("archive_checksum_errors", report["hard_failures"])
+
+    def test_validation_rejects_one_missing_archive_provenance_row(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            manifest_path, manifest, _paths = self.write_archive_fixture(root)
+            db_path = root / "wiki.sqlite"
+            db = sqlite3.connect(db_path)
+            create_schema(db)
+            db.execute(
+                "insert into sources values(?,?,?,?,?)",
+                ("scripts", "custom_snapshot_kind", "data/sources/game/scripts.zip", "snapshot", manifest["files"]["scripts.zip"]["sha256"]),
+            )
+            db.commit()
+            db.close()
+
+            report = validate_catalog(db_path, manifest_path)
+
+            missing = [
+                error for error in report["archive_checksum_errors"]
+                if error["code"] == "missing_source_archive"
+            ]
+            self.assertEqual([error["archive"] for error in missing], ["images.zip"])
 
     def test_all_runs_exact_offline_stage_order_without_runtime_server(self):
         calls = []

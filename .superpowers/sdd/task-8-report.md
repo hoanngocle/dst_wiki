@@ -57,3 +57,26 @@ returned no foreign-key rows and `ok`.
 - No network/wiki crawler was used.
 - No files under the three mod directories were modified.
 - Runtime server execution/installation was not invoked by `all`.
+
+## Important review fixes
+
+Two Important review findings were fixed with new RED/GREEN tests:
+
+- Provenance URL validation now recursively scans every source column, evidence
+  locator/raw value, extraction-error provenance/payload, conflict candidate/selected
+  value, and every nested manifest key/value. HTTP(S), `www`, and wiki-host URLs are
+  deterministic hard failures.
+- Archive validation is now mandatory whenever a manifest is supplied, archive source
+  provenance exists, or any `base_game` entity is present. Both `scripts.zip` and
+  `images.zip` must have exact-basename source rows and matching on-disk, manifest, and
+  database SHA-256/size provenance. Source kind is intentionally not used as a gate.
+
+Review-fix verification:
+
+- Focused suite: 8/8 tests passed; full extraction suite: 62/62 tests passed.
+- The real `all` pipeline exited 0 with zero hard failures, zero discovered URLs, and
+  zero archive errors. Both archive hashes matched the files, manifest, and database.
+- Coverage was identical before and after `all` with SHA-256
+  `7919a4e8627f103ebc4f09ae641a3c78e148c57b7d4fdda4b7412b42d034c4d7`.
+- Catalog and assets remained unchanged at their prior hashes; SQLite foreign keys
+  remained clean and integrity check returned `ok`.

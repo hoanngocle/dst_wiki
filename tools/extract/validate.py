@@ -5,12 +5,18 @@ import json
 from pathlib import Path
 import re
 import sqlite3
-from typing import Any, Dict, Iterable, List, Optional
+from typing import Any, Dict, Iterable, Iterator, List, Optional
 
 from tools.extract.source_manifest import ARCHIVES
 
 
-URL_PATTERN = re.compile(r"(?i)\b(?:https?://|www\.)[^\s\"'<>]+")
+URL_PATTERN = re.compile(
+    r"(?ix)\b(?:"
+    r"https?://[^\s\"'<>]+|"
+    r"www\.[^\s\"'<>]+|"
+    r"(?:[a-z0-9-]+\.)*wiki\.[a-z]{2,}(?:/[^\s\"'<>]*)?"
+    r")"
+)
 
 
 def _sha256(path: Path) -> str:
@@ -40,32 +46,103 @@ def _coverage(db: sqlite3.Connection, predicate: str) -> float:
 
 def _archive_report(
     db: sqlite3.Connection, db_path: Path, manifest_path: Optional[Path]
-) -> Dict[str, List[Dict[str, Any]]]:
+) -> Dict[str, Any]:
     rows = db.execute(
-        "select source_id,path,sha256 from sources where kind='base_game_source' order by path,source_id"
+        "select source_id,kind,path,version,sha256 from sources order by path,source_id"
     ).fetchall()
-    archives = {Path(row["path"]).name: row for row in rows if Path(row["path"]).name in ARCHIVES}
-    if not archives:
-        return {"checks": [], "errors": []}
+    archives: Dict[str, List[sqlite3.Row]] = {name: [] for name in ARCHIVES}
+    for row in rows:
+        basename = Path(row["path"]).name
+        if basename in archives:
+            archives[basename].append(row)
+    base_count = db.execute(
+        "select count(*) from entities where namespace='base_game'"
+    ).fetchone()[0]
+    required = bool(manifest_path is not None or base_count or any(archives.values()))
+    if not required:
+        return {
+            "checks": [],
+            "errors": [],
+            "manifest_path": None,
+            "manifest_data": None,
+        }
 
-    project_root = db_path.resolve().parents[2] if db_path.parent.name == "generated" else db_path.resolve().parent
-    manifest = Path(manifest_path) if manifest_path is not None else project_root / "data/sources/game/manifest.json"
+    resolved_db = db_path.resolve()
+    project_root = (
+        resolved_db.parents[2]
+        if resolved_db.parent.name == "generated"
+        and resolved_db.parent.parent.name == "data"
+        else resolved_db.parent
+    )
+    manifest = (
+        Path(manifest_path)
+        if manifest_path is not None
+        else project_root / "data/sources/game/manifest.json"
+    )
     errors: List[Dict[str, Any]] = []
     checks: List[Dict[str, Any]] = []
+    for name in ARCHIVES:
+        if not archives[name]:
+            errors.append({"code": "missing_source_archive", "archive": name})
     try:
         manifest_data = json.loads(manifest.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as exc:
         return {
             "checks": checks,
-            "errors": [{"code": "invalid_source_manifest", "path": str(manifest), "detail": str(exc)}],
+            "errors": errors
+            + [
+                {
+                    "code": "invalid_source_manifest",
+                    "path": str(manifest),
+                    "detail": str(exc),
+                }
+            ],
+            "manifest_path": str(manifest),
+            "manifest_data": None,
         }
-    files = manifest_data.get("files", {})
+    if not isinstance(manifest_data, dict):
+        errors.append(
+            {
+                "code": "invalid_source_manifest",
+                "path": str(manifest),
+                "detail": "manifest root must be an object",
+            }
+        )
+        files = {}
+    else:
+        files = manifest_data.get("files", {})
+        if not isinstance(files, dict):
+            errors.append(
+                {
+                    "code": "invalid_source_manifest",
+                    "path": str(manifest),
+                    "detail": "manifest files must be an object",
+                }
+            )
+            files = {}
     for name in ARCHIVES:
-        source = archives.get(name)
-        expected = files.get(name)
-        if source is None or not isinstance(expected, dict):
-            errors.append({"code": "missing_source_archive", "archive": name})
+        candidates = archives[name]
+        expected = next(
+            (
+                value
+                for key, value in files.items()
+                if Path(str(key)).name == name and isinstance(value, dict)
+            ),
+            None,
+        )
+        if expected is None:
+            errors.append({"code": "missing_manifest_archive", "archive": name})
             continue
+        if not candidates:
+            continue
+        source = next(
+            (
+                candidate
+                for candidate in candidates
+                if candidate["sha256"] == expected.get("sha256")
+            ),
+            candidates[0],
+        )
         source_path = Path(source["path"])
         if not source_path.is_absolute():
             source_path = project_root / source_path
@@ -77,6 +154,8 @@ def _archive_report(
             continue
         check = {
             "archive": name,
+            "source_id": source["source_id"],
+            "source_kind": source["kind"],
             "path": source["path"],
             "size": actual_size,
             "sha256": actual_hash,
@@ -90,7 +169,12 @@ def _archive_report(
             or actual_size != expected.get("size")
         ):
             errors.append({"code": "source_archive_checksum_mismatch", **check})
-    return {"checks": checks, "errors": errors}
+    return {
+        "checks": checks,
+        "errors": errors,
+        "manifest_path": str(manifest),
+        "manifest_data": manifest_data,
+    }
 
 
 def _error_subject(payload: Dict[str, Any], locator: str) -> Optional[str]:
@@ -101,12 +185,63 @@ def _error_subject(payload: Dict[str, Any], locator: str) -> Optional[str]:
     return locator or None
 
 
+def _recursive_strings(value: Any, location: str) -> Iterator[Dict[str, str]]:
+    if isinstance(value, dict):
+        for key in sorted(value, key=lambda item: str(item)):
+            key_text = str(key)
+            yield {"location": location + ".key", "value": key_text}
+            yield from _recursive_strings(value[key], location + "." + key_text)
+    elif isinstance(value, list):
+        for index, item in enumerate(value):
+            yield from _recursive_strings(item, f"{location}[{index}]")
+    elif isinstance(value, str):
+        yield {"location": location, "value": value}
+
+
+def _provenance_strings(
+    db: sqlite3.Connection, manifest_path: Optional[str], manifest_data: Any
+) -> Iterator[Dict[str, str]]:
+    table_specs = (
+        ("sources", "source_id", "source", ()),
+        ("evidence", "evidence_id", "evidence", ("raw_value_json",)),
+        (
+            "extraction_errors",
+            "error_id",
+            "extraction_error",
+            ("payload_json",),
+        ),
+        (
+            "conflicts",
+            "conflict_id",
+            "conflict",
+            ("candidates_json", "selected_json"),
+        ),
+    )
+    for table, id_column, prefix, json_columns in table_specs:
+        for row in db.execute(f"select * from {table} order by {id_column}"):
+            row_id = str(row[id_column])
+            for column in row.keys():
+                value = row[column]
+                if column in json_columns and isinstance(value, str):
+                    value = _loads(value)
+                yield from _recursive_strings(
+                    value, f"{prefix}:{row_id}.{column}"
+                )
+    if manifest_data is not None:
+        yield from _recursive_strings(
+            manifest_data, "manifest:" + str(manifest_path or "manifest.json")
+        )
+
+
 def _urls(values: Iterable[Dict[str, str]]) -> List[Dict[str, str]]:
-    found = []
+    found = set()
     for value in values:
         for match in URL_PATTERN.findall(value["value"]):
-            found.append({"location": value["location"], "url": match.rstrip(".,);]")})
-    return sorted(found, key=lambda row: (row["location"], row["url"]))
+            found.add((value["location"], match.rstrip(".,);]")))
+    return [
+        {"location": location, "url": url}
+        for location, url in sorted(found)
+    ]
 
 
 def validate_catalog(db_path: Path, manifest_path: Optional[Path] = None) -> Dict[str, Any]:
@@ -164,16 +299,12 @@ def validate_catalog(db_path: Path, manifest_path: Optional[Path] = None) -> Dic
             }
             for row in db.execute("select * from conflicts order by subject_key,field_key,conflict_id")
         ]
-        url_values = [
-            {"location": "source:" + row["source_id"], "value": row["path"]}
-            for row in db.execute("select source_id,path from sources order by source_id")
-        ]
-        url_values.extend(
-            {"location": "evidence:" + row["evidence_id"], "value": row["raw_value_json"]}
-            for row in db.execute("select evidence_id,raw_value_json from evidence order by evidence_id")
-        )
-        wiki_urls = _urls(url_values)
         archive = _archive_report(db, db_path, manifest_path)
+        wiki_urls = _urls(
+            _provenance_strings(
+                db, archive["manifest_path"], archive["manifest_data"]
+            )
+        )
     finally:
         db.close()
 

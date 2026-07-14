@@ -7,7 +7,9 @@
       "manifest_sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
       "path": "data/sources/game/scripts.zip",
       "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
-      "size": 56134175
+      "size": 56134175,
+      "source_id": "base-game-scripts",
+      "source_kind": "base_game_source"
     },
     {
       "archive": "images.zip",
@@ -15,7 +17,9 @@
       "manifest_sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
       "path": "data/sources/game/images.zip",
       "sha256": "9c1303265c5ade6a3614e3b2096b8c33a173d88cb1eab5c11219cdc6bb3af240",
-      "size": 33310757
+      "size": 33310757,
+      "source_id": "base-game-images",
+      "source_kind": "base_game_source"
     }
   ],
   "conflicts": [
