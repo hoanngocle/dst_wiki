@@ -471,6 +471,63 @@ class ExportValidateTests(unittest.TestCase):
         )
         runtime.assert_not_called()
 
+    def test_export_stage_writes_compact_frontend_contract(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            database = root / "wiki.sqlite"
+            catalog = root / "catalog.json"
+            assets = root / "assets.json"
+            items = root / "items.json"
+            textures = root / "item-textures.json"
+
+            with mock.patch.object(cli, "export_catalog") as export_catalog, \
+                 mock.patch.object(cli, "export_items") as export_items:
+                cli._export_stage(database, catalog, assets, items, textures)
+
+            export_catalog.assert_called_once_with(database, catalog, assets)
+            export_items.assert_called_once_with(catalog, assets, items, textures)
+
+    def test_publish_assets_cli_has_explicit_inputs(self):
+        args = cli.build_parser().parse_args(["publish-assets"])
+
+        self.assertEqual(args.textures, Path("data/generated/item-textures.json"))
+        self.assertEqual(args.mod_root, Path("mod/3721846643"))
+        self.assertEqual(args.images, Path("data/sources/game/images.zip"))
+        self.assertEqual(args.manifest, Path("data/sources/game/manifest.json"))
+        self.assertEqual(args.output, Path("public/assets/game"))
+        self.assertEqual(args.decoder, "ktech")
+
+    def test_publish_assets_cli_dispatches_explicit_paths(self):
+        arguments = [
+            "dst-extract",
+            "publish-assets",
+            "--textures",
+            "custom-textures.json",
+            "--mod-root",
+            "custom-mod",
+            "--images",
+            "custom-images.zip",
+            "--manifest",
+            "custom-manifest.json",
+            "--output",
+            "custom-output",
+            "--decoder",
+            "custom-ktech",
+        ]
+        published = [Path("custom-output/a.png")]
+        with mock.patch("sys.argv", arguments), \
+             mock.patch.object(cli, "publish_web_assets", return_value=published) as publish:
+            self.assertEqual(cli.main(), 0)
+
+        publish.assert_called_once_with(
+            Path("custom-textures.json"),
+            Path("custom-mod"),
+            Path("custom-images.zip"),
+            Path("custom-manifest.json"),
+            Path("custom-output"),
+            "custom-ktech",
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

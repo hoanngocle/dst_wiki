@@ -80,10 +80,18 @@ python3 -m tools.extract.cli all \
 2. `import-runtime`: validate `data/raw/runtime.json`; không khởi chạy server.
 3. `enrich-base`: đọc bản copy `data/sources/game/scripts.zip`, `images.zip` và manifest -> `data/raw/base_game.json`.
 4. `build-db`: normalize ba raw bundle -> `data/generated/wiki.sqlite`.
-5. `export`: -> `public/data/catalog.json` và `public/data/assets.json`.
+5. `export`: -> `public/data/catalog.json`, `public/data/assets.json`, `public/data/items.json` và `data/generated/item-textures.json`.
 6. `validate`: -> `data/generated/coverage.json`.
 
 Các stage có thể chạy riêng; xem argument/default chính xác bằng `python3 -m tools.extract.cli <stage> --help`. Khi refresh chính thức, luôn chạy `all` để tránh trộn output cũ và mới.
+
+`all` không gọi decoder ảnh ngoài. Sau khi refresh JSON, publish các texture web bằng một bản `ktech` đã được review và cài rõ ràng:
+
+```bash
+python3 -m tools.extract.cli publish-assets --decoder "$(command -v ktech)"
+```
+
+Lệnh này chỉ đọc texture được `item-textures.json` tham chiếu, verify `images.zip` trước khi mở, decode toàn bộ vào staging và chỉ thay `public/assets/game` khi cả batch thành công.
 
 ## 4. Đọc lỗi và coverage
 
@@ -107,6 +115,9 @@ Các stage có thể chạy riêng; xem argument/default chính xác bằng `pyt
 - `data/generated/wiki.sqlite`: database chuẩn hóa có entities, recipes, ingredients, acquisition, stats/effects/relations/assets, evidence, conflicts và extraction errors. Đây là nguồn audit/provenance đầy đủ.
 - `public/data/catalog.json`: JSON entity đã nest, sắp xếp ổn định; là input chính cho tìm kiếm và trang chi tiết của wiki tương lai.
 - `public/data/assets.json`: asset map và provenance cho icon/atlas; là input asset của wiki tương lai.
+- `public/data/items.json`: payload gọn cho màn tìm kiếm Items, đã join tên, công thức và sprite descriptor.
+- `data/generated/item-textures.json`: manifest texture tối thiểu cần decode cho `items.json`.
+- `public/assets/game/*.png`: texture trình duyệt dùng được, tên file theo SHA-256 và được tạo bởi `publish-assets`.
 - `data/generated/coverage.json`: quality gate và danh sách việc cần review; không phải payload hiển thị chính.
 - `data/raw/mod_static.json`, `data/raw/runtime.json`, `data/raw/base_game.json`: raw facts để tái hiện normalize. Runtime JSON, source ZIP và `data/runtime/` là local-only.
 

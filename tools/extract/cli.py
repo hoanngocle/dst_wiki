@@ -9,6 +9,7 @@ from tools.extract.base_game import (
 )
 from tools.extract.contracts import dump_bundle, load_bundle
 from tools.extract.database import write_database
+from tools.extract.export_items import export_items
 from tools.extract.export_json import export_catalog
 from tools.extract.mod_static import extract_mod_static
 from tools.extract.normalize import normalize
@@ -18,6 +19,7 @@ from tools.extract.runtime_import import (
     static_runtime_target_ids,
 )
 from tools.extract.runtime_runner import run_runtime_probe
+from tools.extract.publish_web_assets import publish_web_assets
 from tools.extract.source_manifest import ARCHIVES, snapshot_game_sources
 from tools.extract.validate import validate_catalog, write_validation_report
 
@@ -33,6 +35,9 @@ DATABASE = Path("data/generated/wiki.sqlite")
 COVERAGE = Path("data/generated/coverage.json")
 CATALOG_JSON = Path("public/data/catalog.json")
 ASSETS_JSON = Path("public/data/assets.json")
+ITEMS_JSON = Path("public/data/items.json")
+ITEM_TEXTURES = Path("data/generated/item-textures.json")
+WEB_ASSETS = Path("public/assets/game")
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -112,6 +117,19 @@ def build_parser() -> argparse.ArgumentParser:
     export.add_argument("--database", type=Path, default=DATABASE)
     export.add_argument("--catalog", type=Path, default=CATALOG_JSON)
     export.add_argument("--assets", type=Path, default=ASSETS_JSON)
+    export.add_argument("--items", type=Path, default=ITEMS_JSON)
+    export.add_argument("--textures", type=Path, default=ITEM_TEXTURES)
+    publish_assets = sub.add_parser("publish-assets")
+    publish_assets.add_argument("--textures", type=Path, default=ITEM_TEXTURES)
+    publish_assets.add_argument("--mod-root", type=Path, default=MOD_ROOT)
+    publish_assets.add_argument(
+        "--images", type=Path, default=GAME_SOURCES / "images.zip"
+    )
+    publish_assets.add_argument(
+        "--manifest", type=Path, default=GAME_SOURCES / "manifest.json"
+    )
+    publish_assets.add_argument("--output", type=Path, default=WEB_ASSETS)
+    publish_assets.add_argument("--decoder", default="ktech")
     validate = sub.add_parser("validate")
     validate.add_argument("--database", type=Path, default=DATABASE)
     validate.add_argument("--coverage", type=Path, default=COVERAGE)
@@ -205,9 +223,12 @@ def _export_stage(
     database: Path = DATABASE,
     catalog: Path = CATALOG_JSON,
     assets: Path = ASSETS_JSON,
+    items: Path = ITEMS_JSON,
+    textures: Path = ITEM_TEXTURES,
 ) -> None:
     export_catalog(database, catalog, assets)
-    print(f"{catalog} {assets}")
+    export_items(catalog, assets, items, textures)
+    print(f"{catalog} {assets} {items} {textures}")
 
 
 def _validate_stage(
@@ -276,7 +297,18 @@ def main() -> int:
         _build_db_stage(args.static, args.runtime, args.base, args.output)
         return 0
     if args.command == "export":
-        _export_stage(args.database, args.catalog, args.assets)
+        _export_stage(args.database, args.catalog, args.assets, args.items, args.textures)
+        return 0
+    if args.command == "publish-assets":
+        published = publish_web_assets(
+            args.textures,
+            args.mod_root,
+            args.images,
+            args.manifest,
+            args.output,
+            args.decoder,
+        )
+        print(f"{args.output} textures={len(published)}")
         return 0
     if args.command == "validate":
         report = _validate_stage(args.database, args.coverage, args.manifest)
