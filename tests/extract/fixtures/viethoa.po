@@ -1,0 +1,16 @@
+msgid ""
+msgstr ""
+"Language: vi\n"
+
+msgctxt "STRINGS.NAMES.GOLDNUGGET"
+msgid "Gold Nugget"
+msgstr "Vàng "
+"Thỏi"
+
+msgctxt "STRINGS.CHARACTERS.GENERIC.DESCRIBE.GOLDNUGGET"
+msgid "A precious metal."
+msgstr "Kim loại quý."
+
+msgctxt "STRINGS.NAMES.EMPTY"
+msgid "Empty"
+msgstr ""

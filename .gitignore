@@ -42,3 +42,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local extraction inputs and runtime scratch
+/data/sources/game/*.zip
+/data/raw/runtime.json
+/data/runtime/
