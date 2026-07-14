@@ -332,37 +332,71 @@ def _literal_number(expression: str) -> Optional[Any]:
 
 
 def _find_assignment_table(source: str, table_name: str) -> Optional[int]:
-    index = 0
-    while index < len(source):
-        skipped = _skip_string_or_comment(source, index)
-        if skipped is not None:
-            index = skipped
-            continue
-        if source[index].isalpha() or source[index] == "_":
-            end = index + 1
-            while end < len(source) and (
-                source[end].isalnum() or source[end] == "_"
-            ):
-                end += 1
-            if source[index:end] != table_name:
-                index = end
-                continue
-            cursor = end
-            while cursor < len(source) and source[cursor].isspace():
+    masked = _code_mask(source)
+    tokens = list(re.finditer(r"\b[A-Za-z_][A-Za-z0-9_]*\b", masked))
+    delimiters: List[str] = []
+    blocks: List[Dict[str, Any]] = []
+    pairs = {"(": ")", "[": "]", "{": "}"}
+    scan_offset = 0
+    previous_word = ""
+    previous_was_top_level = False
+
+    for token in tokens:
+        for char in masked[scan_offset : token.start()]:
+            if char in pairs:
+                delimiters.append(pairs[char])
+            elif char in ")]}":
+                if delimiters and char == delimiters[-1]:
+                    delimiters.pop()
+
+        word = token.group(0)
+        is_top_level = not blocks and not delimiters
+        if (
+            word == table_name
+            and is_top_level
+            and not (previous_word == "local" and previous_was_top_level)
+        ):
+            cursor = token.end()
+            while cursor < len(masked) and masked[cursor].isspace():
                 cursor += 1
-            if cursor >= len(source) or source[cursor] != "=":
-                index = end
-                continue
-            cursor += 1
-            while cursor < len(source) and source[cursor].isspace():
+            if masked[cursor : cursor + 1] == "=":
                 cursor += 1
-            if cursor >= len(source) or source[cursor] != "{":
-                index = end
-                continue
-            return cursor
-        else:
-            index += 1
-            continue
+                while cursor < len(masked) and masked[cursor].isspace():
+                    cursor += 1
+                if masked[cursor : cursor + 1] == "{":
+                    return cursor
+
+        if word == "function":
+            blocks.append({"kind": "function", "awaiting_do": False})
+        elif word == "if":
+            blocks.append({"kind": "if", "awaiting_do": False})
+        elif word in ("for", "while"):
+            blocks.append({"kind": word, "awaiting_do": True})
+        elif word == "repeat":
+            blocks.append({"kind": "repeat", "awaiting_do": False})
+        elif word == "do":
+            pending = next(
+                (
+                    entry
+                    for entry in reversed(blocks)
+                    if entry.get("awaiting_do") is True
+                ),
+                None,
+            )
+            if pending is not None:
+                pending["awaiting_do"] = False
+            else:
+                blocks.append({"kind": "do", "awaiting_do": False})
+        elif word == "until":
+            if blocks and blocks[-1]["kind"] == "repeat":
+                blocks.pop()
+        elif word == "end":
+            if blocks:
+                blocks.pop()
+
+        previous_word = word
+        previous_was_top_level = is_top_level
+        scan_offset = token.end()
     return None
 
 

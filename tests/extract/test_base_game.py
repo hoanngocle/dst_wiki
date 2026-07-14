@@ -570,6 +570,75 @@ STRINGS = {
         )
         self.assertEqual(real_description.payload["value"], "Real Description")
 
+    def test_string_registry_rejects_local_strings_table(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            archive = self._archive(
+                root,
+                {
+                    "scripts/recipes.lua": "",
+                    "scripts/strings.lua": '''
+local STRINGS = { NAMES = { LOCAL_FAKE = "Local Fake" } }
+STRINGS = { NAMES = { GLOBAL_REAL = "Global Real" } }
+''',
+                },
+            )
+            bundle = enrich_dependencies(
+                archive,
+                [
+                    DependencyRequest("local_fake", "relation", "tu_tien:xd_local"),
+                    DependencyRequest("global_real", "relation", "tu_tien:xd_real"),
+                ],
+                root / "missing.po",
+            )
+        self.assertEqual(
+            {
+                fact.subject.prefab_id
+                for fact in bundle.facts
+                if fact.kind == "entity"
+            },
+            {"global_real"},
+        )
+
+    def test_string_registry_rejects_function_scoped_strings_table(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            archive = self._archive(
+                root,
+                {
+                    "scripts/recipes.lua": "",
+                    "scripts/strings.lua": '''
+local function shadow_registry()
+  STRINGS = { NAMES = { FUNCTION_FAKE = "Function Fake" } }
+end
+if enabled then
+  do
+    local ignored = "end until STRINGS = { NAMES = {} }"
+  end
+end
+STRINGS = { NAMES = { GLOBAL_REAL = "Global Real" } }
+''',
+                },
+            )
+            bundle = enrich_dependencies(
+                archive,
+                [
+                    DependencyRequest(
+                        "function_fake", "relation", "tu_tien:xd_function"
+                    ),
+                    DependencyRequest("global_real", "relation", "tu_tien:xd_real"),
+                ],
+                root / "missing.po",
+            )
+        self.assertEqual(
+            {
+                fact.subject.prefab_id
+                for fact in bundle.facts
+                if fact.kind == "entity"
+            },
+            {"global_real"},
+        )
+
     def test_dynamic_recipe_and_loot_subexpressions_emit_exact_warnings(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
