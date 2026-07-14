@@ -1,0 +1,157 @@
+"use client";
+
+import { MagnifyingGlass, X } from "@phosphor-icons/react";
+import { useEffect, useMemo, useRef, useState } from "react";
+
+import {
+  filterWikiEntries,
+  normalizeSearchText,
+  type SearchCategory,
+  type WikiEntry,
+} from "@/app/lib/wiki-search";
+
+const filters: readonly { value: SearchCategory; label: string }[] = [
+  { value: "all", label: "All entries" },
+  { value: "item", label: "Items" },
+  { value: "creature", label: "Creatures" },
+  { value: "location", label: "Locations" },
+  { value: "quest", label: "Quests" },
+];
+
+const accentClasses: Record<WikiEntry["accent"], string> = {
+  ice: "bg-[#d6e2ef] text-[#315d91]",
+  moss: "bg-[#dce5da] text-[#436247]",
+  sand: "bg-[#e8dfd1] text-[#795f3d]",
+  slate: "bg-[#d9dee6] text-[#46566d]",
+};
+
+function HighlightedText({ text, query }: { text: string; query: string }) {
+  const normalizedQuery = normalizeSearchText(query);
+  if (!normalizedQuery) return text;
+
+  const normalizedText = normalizeSearchText(text);
+  const matchIndex = normalizedText.indexOf(normalizedQuery);
+  if (matchIndex < 0) return text;
+
+  const matchEnd = matchIndex + normalizedQuery.length;
+  return (
+    <>
+      <span className="sr-only">{text}</span>
+      <span aria-hidden="true">
+        {text.slice(0, matchIndex)}
+        <mark className="rounded-sm bg-[#dce7f7] px-0.5 text-inherit">
+          {text.slice(matchIndex, matchEnd)}
+        </mark>
+        {text.slice(matchEnd)}
+      </span>
+    </>
+  );
+}
+
+export function WikiSearch({ entries }: { entries: readonly WikiEntry[] }) {
+  const [query, setQuery] = useState("");
+  const [category, setCategory] = useState<SearchCategory>("all");
+  const inputRef = useRef<HTMLInputElement>(null);
+  const results = useMemo(
+    () => filterWikiEntries(entries, query, category),
+    [entries, query, category],
+  );
+
+  useEffect(() => {
+    function handleShortcut(event: KeyboardEvent) {
+      const target = event.target as HTMLElement | null;
+      const isEditable =
+        target?.isContentEditable ||
+        target?.tagName === "INPUT" ||
+        target?.tagName === "TEXTAREA" ||
+        target?.tagName === "SELECT";
+
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
+        event.preventDefault();
+        inputRef.current?.focus();
+      } else if (event.key === "/" && !isEditable) {
+        event.preventDefault();
+        inputRef.current?.focus();
+      }
+    }
+
+    window.addEventListener("keydown", handleShortcut);
+    return () => window.removeEventListener("keydown", handleShortcut);
+  }, []);
+
+  function resetFilters() {
+    setQuery("");
+    setCategory("all");
+    inputRef.current?.focus();
+  }
+
+  const countLabel = `${results.length} ${results.length === 1 ? "entry" : "entries"}`;
+
+  return (
+    <section aria-labelledby="atlas-results" className="mt-8">
+      <div className="relative">
+        <label htmlFor="atlas-search" className="mb-2 block text-sm font-medium text-[#263b58]">
+          Search the atlas
+        </label>
+        <div className="relative">
+          <MagnifyingGlass aria-hidden="true" size={20} weight="regular" className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[#2e5fb3]" />
+          <input
+            ref={inputRef}
+            id="atlas-search"
+            type="search"
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            onKeyDown={(event) => {
+              if (event.key === "Escape") setQuery("");
+            }}
+            placeholder="Search items, creatures, locations..."
+            aria-describedby="atlas-search-help"
+            className="h-14 w-full rounded-[10px] border border-[#a8b8cc] bg-[#f8fafc] pl-12 pr-28 text-base text-[#14233b] shadow-[0_10px_28px_rgba(34,61,96,0.08)] outline-none transition focus:border-[#2e5fb3] focus:ring-4 focus:ring-[#2e5fb3]/15"
+          />
+          {query ? (
+            <button type="button" onClick={() => setQuery("")} aria-label="Clear search" className="absolute right-3 top-1/2 inline-flex -translate-y-1/2 items-center gap-1 rounded-md px-2 py-1 text-sm text-[#53647a] hover:bg-[#e9eff6] active:scale-[0.98]">
+              <X aria-hidden="true" size={16} /> Clear
+            </button>
+          ) : (
+            <kbd className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 rounded-md border border-[#c7d1de] bg-[#eef3f8] px-2 py-1 font-mono text-xs text-[#637287]">⌘ K</kbd>
+          )}
+        </div>
+        <p id="atlas-search-help" className="sr-only">Search by name, description, category, or keyword.</p>
+      </div>
+
+      <div className="mt-3 flex gap-2 overflow-x-auto pb-2" aria-label="Filter entries by category">
+        {filters.map((filter) => (
+          <button key={filter.value} type="button" aria-pressed={category === filter.value} onClick={() => setCategory(filter.value)} className="shrink-0 rounded-full border border-[#cbd5e1] px-3 py-1.5 text-sm font-medium text-[#5c6b80] transition hover:border-[#2e5fb3] hover:text-[#2e5fb3] active:scale-[0.98] aria-pressed:border-[#2e5fb3] aria-pressed:bg-[#2e5fb3] aria-pressed:text-[#f8fafc]">
+            {filter.label}
+          </button>
+        ))}
+      </div>
+
+      <div className="mt-7 flex items-end justify-between gap-4">
+        <h2 id="atlas-results" className="text-lg font-semibold tracking-tight text-[#14233b]">Explore the atlas</h2>
+        <p aria-live="polite" className="text-sm text-[#67758a]">{countLabel}</p>
+      </div>
+
+      {results.length ? (
+        <ul className="mt-3 border-t border-[#cbd5e1]">
+          {results.map((entry) => (
+            <li key={entry.id} className="grid grid-cols-[48px_minmax(0,1fr)_auto] items-center gap-3 border-b border-[#cbd5e1] py-4 motion-safe:animate-[atlas-result-in_180ms_ease-out] md:grid-cols-[48px_minmax(0,1fr)_auto] md:gap-4">
+              <div aria-hidden="true" className={`flex h-11 w-12 items-center justify-center rounded-md font-mono text-xs font-semibold uppercase ${accentClasses[entry.accent]}`}>{entry.category.slice(0, 2)}</div>
+              <div className="min-w-0">
+                <h3 className="font-semibold text-[#172943]"><HighlightedText text={entry.name} query={query} /></h3>
+                <p className="mt-1 line-clamp-2 text-sm leading-6 text-[#67758a]"><HighlightedText text={entry.description} query={query} /></p>
+              </div>
+              <span className="hidden rounded-full bg-[#dce6f4] px-2.5 py-1 text-xs font-medium capitalize text-[#2e5fb3] sm:inline-flex">{entry.category}</span>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <div className="mt-3 border-y border-[#cbd5e1] py-14 text-center">
+          <h3 className="text-lg font-semibold text-[#14233b]">No entries found</h3>
+          <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-[#67758a]">Try another search or clear the current filters.</p>
+          <button type="button" onClick={resetFilters} className="mt-5 rounded-[10px] bg-[#2e5fb3] px-4 py-2.5 text-sm font-semibold text-[#f8fafc] transition hover:bg-[#264f96] active:scale-[0.98]">Clear filters</button>
+        </div>
+      )}
+    </section>
+  );
+}
