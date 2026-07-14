@@ -19175,6 +19175,90 @@
       }
     },
     {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "line:48",
+      "payload": {
+        "description_type": "character_profile",
+        "lang": "vi",
+        "value": "*Tán tu hải ngoại Lệ Phi Vũ\n*Cứu khổ cứu nạn Hàn Thiên Tôn\n*Sở hữu pháp bảo và thần thông riêng"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_hantianzun"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "effect",
+      "locator": "line:30",
+      "payload": {
+        "effect_key": "character_title",
+        "trigger": "character_profile",
+        "value": "Đệ Nhất Kiếm Tu Thiên Nam"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_hantianzun"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "effect",
+      "locator": "line:35",
+      "payload": {
+        "effect_key": "character_survivability",
+        "trigger": "character_profile",
+        "value": "Thoát Chết Trong Gang Tấc"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_hantianzun"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "effect",
+      "locator": "line:57",
+      "payload": {
+        "effect_key": "character_quote",
+        "trigger": "character_profile",
+        "value": "\"Ta là Lệ Phi Vũ của Hoàng Phong Cốc, chẳng đáng nhắc tới.\""
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_hantianzun"
+      }
+    },
+    {
       "confidence": 0.9,
       "kind": "entity",
       "locator": "filename",
@@ -19201,6 +19285,86 @@
       "payload": {
         "discovered_by": "strings",
         "entity_type": "unknown"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_hantianzun"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "entity",
+      "locator": "line:30",
+      "payload": {
+        "discovered_by": "character_metadata",
+        "entity_type": "character"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_hantianzun"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "entity",
+      "locator": "line:35",
+      "payload": {
+        "discovered_by": "character_metadata",
+        "entity_type": "character"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_hantianzun"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "entity",
+      "locator": "line:48",
+      "payload": {
+        "discovered_by": "character_metadata",
+        "entity_type": "character"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_hantianzun"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "entity",
+      "locator": "line:57",
+      "payload": {
+        "discovered_by": "character_metadata",
+        "entity_type": "character"
       },
       "source": {
         "kind": "mod_translation",
@@ -24356,6 +24520,90 @@
       }
     },
     {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "line:45",
+      "payload": {
+        "description_type": "character_profile",
+        "lang": "vi",
+        "value": "*Luôn có Huyền Điểu bên cạnh\n*Có thể bay vượt một khoảng cách nhất định\n*Có thể dùng địa hình riêng để lấp biển"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_jingwei"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "effect",
+      "locator": "line:27",
+      "payload": {
+        "effect_key": "character_title",
+        "trigger": "character_profile",
+        "value": "Con Gái Út Viêm Đế"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_jingwei"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "effect",
+      "locator": "line:33",
+      "payload": {
+        "effect_key": "character_survivability",
+        "trigger": "character_profile",
+        "value": "Dễ Như Trở Bàn Tay"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_jingwei"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "effect",
+      "locator": "line:54",
+      "payload": {
+        "effect_key": "character_quote",
+        "trigger": "character_profile",
+        "value": "\"Không tích từng bước nhỏ, sao đến được ngàn dặm.\""
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_jingwei"
+      }
+    },
+    {
       "confidence": 0.9,
       "kind": "entity",
       "locator": "filename",
@@ -24396,6 +24644,46 @@
       }
     },
     {
+      "confidence": 1.0,
+      "kind": "entity",
+      "locator": "line:27",
+      "payload": {
+        "discovered_by": "character_metadata",
+        "entity_type": "character"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_jingwei"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "entity",
+      "locator": "line:33",
+      "payload": {
+        "discovered_by": "character_metadata",
+        "entity_type": "character"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_jingwei"
+      }
+    },
+    {
       "confidence": 0.9,
       "kind": "entity",
       "locator": "line:429",
@@ -24409,6 +24697,46 @@
         "sha256": "824eb99ad5ec4175079272f11fd7fc20dde490b5b8cdd62a7d513eeef0aeaa1c",
         "source_id": "mod-strings",
         "version": "18.0.10"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_jingwei"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "entity",
+      "locator": "line:45",
+      "payload": {
+        "discovered_by": "character_metadata",
+        "entity_type": "character"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_jingwei"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "entity",
+      "locator": "line:54",
+      "payload": {
+        "discovered_by": "character_metadata",
+        "entity_type": "character"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
       },
       "subject": {
         "namespace": "tu_tien",
@@ -30419,6 +30747,90 @@
       }
     },
     {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "line:41",
+      "payload": {
+        "description_type": "character_profile",
+        "lang": "vi",
+        "value": "*Có thể trồng hoa Lạc Thần\n*Mang hai mặt sinh và diệt\n*Nhẹ tựa chim hồng, uyển chuyển như rồng bơi"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_luoshen"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "effect",
+      "locator": "line:23",
+      "payload": {
+        "effect_key": "character_title",
+        "trigger": "character_profile",
+        "value": "Con Gái Phục Hy"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_luoshen"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "effect",
+      "locator": "line:32",
+      "payload": {
+        "effect_key": "character_survivability",
+        "trigger": "character_profile",
+        "value": "Gai Góc Trùng Trùng"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_luoshen"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "effect",
+      "locator": "line:50",
+      "payload": {
+        "effect_key": "character_quote",
+        "trigger": "character_profile",
+        "value": "\"Tàn úa… cũng là khởi đầu của tái sinh.\""
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_luoshen"
+      }
+    },
+    {
       "confidence": 0.9,
       "kind": "entity",
       "locator": "filename",
@@ -30432,6 +30844,86 @@
         "sha256": "0fe1dcf1dcffc8ce0a235ff4d4b5f70d35d8d1abb07e0e3ce529c907fdb3b7dc",
         "source_id": "mod-prefab:scripts/prefabs/xd_luoshen.lua",
         "version": "18.0.10"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_luoshen"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "entity",
+      "locator": "line:23",
+      "payload": {
+        "discovered_by": "character_metadata",
+        "entity_type": "character"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_luoshen"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "entity",
+      "locator": "line:32",
+      "payload": {
+        "discovered_by": "character_metadata",
+        "entity_type": "character"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_luoshen"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "entity",
+      "locator": "line:41",
+      "payload": {
+        "discovered_by": "character_metadata",
+        "entity_type": "character"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_luoshen"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "entity",
+      "locator": "line:50",
+      "payload": {
+        "discovered_by": "character_metadata",
+        "entity_type": "character"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
       },
       "subject": {
         "namespace": "tu_tien",
@@ -39560,6 +40052,90 @@
       }
     },
     {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "line:43",
+      "payload": {
+        "description_type": "character_profile",
+        "lang": "vi",
+        "value": "*Có thể sai khiến Thạch Hà\n*Hóa thân từ đá vá trời\n*Dưới trướng có hai đồng tử"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_shiji"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "effect",
+      "locator": "line:24",
+      "payload": {
+        "effect_key": "character_title",
+        "trigger": "character_profile",
+        "value": "Yêu Tiên Tiệt Giáo"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_shiji"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "effect",
+      "locator": "line:34",
+      "payload": {
+        "effect_key": "character_survivability",
+        "trigger": "character_profile",
+        "value": "Đường Đầy Chông Gai"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_shiji"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "effect",
+      "locator": "line:52",
+      "payload": {
+        "effect_key": "character_quote",
+        "trigger": "character_profile",
+        "value": "\"Còn núi xanh thì không lo thiếu củi đốt.\""
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_shiji"
+      }
+    },
+    {
       "confidence": 0.9,
       "kind": "entity",
       "locator": "filename",
@@ -39586,6 +40162,86 @@
       "payload": {
         "discovered_by": "strings",
         "entity_type": "unknown"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_shiji"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "entity",
+      "locator": "line:24",
+      "payload": {
+        "discovered_by": "character_metadata",
+        "entity_type": "character"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_shiji"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "entity",
+      "locator": "line:34",
+      "payload": {
+        "discovered_by": "character_metadata",
+        "entity_type": "character"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_shiji"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "entity",
+      "locator": "line:43",
+      "payload": {
+        "discovered_by": "character_metadata",
+        "entity_type": "character"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_shiji"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "entity",
+      "locator": "line:52",
+      "payload": {
+        "discovered_by": "character_metadata",
+        "entity_type": "character"
       },
       "source": {
         "kind": "mod_translation",
@@ -45801,6 +46457,90 @@
       }
     },
     {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "line:47",
+      "payload": {
+        "description_type": "character_profile",
+        "lang": "vi",
+        "value": "*Thỉnh thoảng tỏa ra yêu khí\n*Có kỳ trân do Trụ Vương ban tặng\n*Thích dùng nguyên thần yêu vật để ôn dưỡng Linh Ngọc"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_sudaji"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "effect",
+      "locator": "line:29",
+      "payload": {
+        "effect_key": "character_title",
+        "trigger": "character_profile",
+        "value": "Yêu Phi Tuyệt Đại"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_sudaji"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "effect",
+      "locator": "line:39",
+      "payload": {
+        "effect_key": "character_survivability",
+        "trigger": "character_profile",
+        "value": "Thuần Thục Tự Nhiên"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_sudaji"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "effect",
+      "locator": "line:56",
+      "payload": {
+        "effect_key": "character_quote",
+        "trigger": "character_profile",
+        "value": "\"Cuối cùng thiếp cũng trở thành người trong cuộc.\""
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_sudaji"
+      }
+    },
+    {
       "confidence": 0.9,
       "kind": "entity",
       "locator": "filename",
@@ -45827,6 +46567,86 @@
       "payload": {
         "discovered_by": "strings",
         "entity_type": "unknown"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_sudaji"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "entity",
+      "locator": "line:29",
+      "payload": {
+        "discovered_by": "character_metadata",
+        "entity_type": "character"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_sudaji"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "entity",
+      "locator": "line:39",
+      "payload": {
+        "discovered_by": "character_metadata",
+        "entity_type": "character"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_sudaji"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "entity",
+      "locator": "line:47",
+      "payload": {
+        "discovered_by": "character_metadata",
+        "entity_type": "character"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_sudaji"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "entity",
+      "locator": "line:56",
+      "payload": {
+        "discovered_by": "character_metadata",
+        "entity_type": "character"
       },
       "source": {
         "kind": "mod_translation",
@@ -49759,6 +50579,90 @@
       }
     },
     {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "line:46",
+      "payload": {
+        "description_type": "character_profile",
+        "lang": "vi",
+        "value": "*Cửu Tinh Cổ Thần\n*Người đứng đầu Nghịch Trần Giới\n*Sở hữu chí bảo Định Giới La Bàn"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_wangmazi"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "effect",
+      "locator": "line:25",
+      "payload": {
+        "effect_key": "character_title",
+        "trigger": "character_profile",
+        "value": "Ma Đầu"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_wangmazi"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "effect",
+      "locator": "line:37",
+      "payload": {
+        "effect_key": "character_survivability",
+        "trigger": "character_profile",
+        "value": "Ngược Gió Dữ Sóng"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_wangmazi"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "effect",
+      "locator": "line:53",
+      "payload": {
+        "effect_key": "character_quote",
+        "trigger": "character_profile",
+        "value": "\"Thuận là phàm, nghịch là tiên.\""
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_wangmazi"
+      }
+    },
+    {
       "confidence": 0.9,
       "kind": "entity",
       "locator": "filename",
@@ -49772,6 +50676,86 @@
         "sha256": "f343c46838ba991d235ef5ebeda0456655a18b16b526e7d8ca5a493a431224e9",
         "source_id": "mod-prefab:scripts/prefabs/xd_wangmazi.lua",
         "version": "18.0.10"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_wangmazi"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "entity",
+      "locator": "line:25",
+      "payload": {
+        "discovered_by": "character_metadata",
+        "entity_type": "character"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_wangmazi"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "entity",
+      "locator": "line:37",
+      "payload": {
+        "discovered_by": "character_metadata",
+        "entity_type": "character"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_wangmazi"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "entity",
+      "locator": "line:46",
+      "payload": {
+        "discovered_by": "character_metadata",
+        "entity_type": "character"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_wangmazi"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "entity",
+      "locator": "line:53",
+      "payload": {
+        "discovered_by": "character_metadata",
+        "entity_type": "character"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
       },
       "subject": {
         "namespace": "tu_tien",
@@ -52077,6 +53061,90 @@
       }
     },
     {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "line:42",
+      "payload": {
+        "description_type": "character_profile",
+        "lang": "vi",
+        "value": "*Đầu đội vòng Kim Cô\n*Thừa kế ý chí của Đại Thánh\n*Cần thu thập đủ căn khí để hoàn thiện bản thân"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_wukong"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "effect",
+      "locator": "line:28",
+      "payload": {
+        "effect_key": "character_title",
+        "trigger": "character_profile",
+        "value": "Thiên Mệnh Nhân"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_wukong"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "effect",
+      "locator": "line:38",
+      "payload": {
+        "effect_key": "character_survivability",
+        "trigger": "character_profile",
+        "value": "Dễ Như Trở Bàn Tay"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_wukong"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "effect",
+      "locator": "line:55",
+      "payload": {
+        "effect_key": "character_quote",
+        "trigger": "character_profile",
+        "value": "\"Lão Tôn đến đây!\""
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_wukong"
+      }
+    },
+    {
       "confidence": 0.9,
       "kind": "entity",
       "locator": "filename",
@@ -52103,6 +53171,86 @@
       "payload": {
         "discovered_by": "strings",
         "entity_type": "unknown"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_wukong"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "entity",
+      "locator": "line:28",
+      "payload": {
+        "discovered_by": "character_metadata",
+        "entity_type": "character"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_wukong"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "entity",
+      "locator": "line:38",
+      "payload": {
+        "discovered_by": "character_metadata",
+        "entity_type": "character"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_wukong"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "entity",
+      "locator": "line:42",
+      "payload": {
+        "discovered_by": "character_metadata",
+        "entity_type": "character"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_wukong"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "entity",
+      "locator": "line:55",
+      "payload": {
+        "discovered_by": "character_metadata",
+        "entity_type": "character"
       },
       "source": {
         "kind": "mod_translation",
@@ -56115,6 +57263,90 @@
       }
     },
     {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "line:44",
+      "payload": {
+        "description_type": "character_profile",
+        "lang": "vi",
+        "value": "*Vân Tiêu thông minh, khéo tay\n*Bích Tiêu luôn tự mình xử lý mọi việc\n*Quỳnh Tiêu hiếu chiến, chuộng võ"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_yunxiao"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "effect",
+      "locator": "line:26",
+      "payload": {
+        "effect_key": "character_title",
+        "trigger": "character_profile",
+        "value": "Đệ Tử Ngoại Môn Tiệt Giáo"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_yunxiao"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "effect",
+      "locator": "line:36",
+      "payload": {
+        "effect_key": "character_survivability",
+        "trigger": "character_profile",
+        "value": "Dễ Như Nhặt Cỏ"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_yunxiao"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "effect",
+      "locator": "line:51",
+      "payload": {
+        "effect_key": "character_quote",
+        "trigger": "character_profile",
+        "value": "\"Hỗn Nguyên Kim Đấu, mở!\""
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_yunxiao"
+      }
+    },
+    {
       "confidence": 0.9,
       "kind": "entity",
       "locator": "filename",
@@ -56141,6 +57373,86 @@
       "payload": {
         "discovered_by": "strings",
         "entity_type": "unknown"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_yunxiao"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "entity",
+      "locator": "line:26",
+      "payload": {
+        "discovered_by": "character_metadata",
+        "entity_type": "character"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_yunxiao"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "entity",
+      "locator": "line:36",
+      "payload": {
+        "discovered_by": "character_metadata",
+        "entity_type": "character"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_yunxiao"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "entity",
+      "locator": "line:44",
+      "payload": {
+        "discovered_by": "character_metadata",
+        "entity_type": "character"
+      },
+      "source": {
+        "kind": "mod_translation",
+        "path": "mod/3721859355/modmain.lua",
+        "sha256": "5d0fb358eddeb3d217eed617c43757047559aa6b29bafa133f557892ae64553f",
+        "source_id": "tu-tien-translation",
+        "version": "1.0.11"
+      },
+      "subject": {
+        "namespace": "tu_tien",
+        "prefab_id": "xd_yunxiao"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "entity",
+      "locator": "line:51",
+      "payload": {
+        "discovered_by": "character_metadata",
+        "entity_type": "character"
       },
       "source": {
         "kind": "mod_translation",

@@ -12,6 +12,16 @@ from tools.extract.lua_strings import decode_lua_string_literal
 from tools.extract.po_strings import load_po_by_context
 
 
+VERSION = re.compile(r'^\s*version\s*=\s*["\']([^"\']+)["\']', re.MULTILINE)
+
+
+def _version_from_modinfo(path: Path, fallback: str) -> str:
+    if not path.is_file():
+        return fallback
+    match = VERSION.search(path.read_text(encoding="utf-8-sig"))
+    return match.group(1) if match else fallback
+
+
 @dataclass(frozen=True, order=True)
 class DependencyRequest:
     prefab_id: str
@@ -99,6 +109,8 @@ def verify_snapshot_archive(archive: Path, manifest_path: Path) -> Dict[str, Any
 
 
 def _long_bracket_end(source: str, start: int) -> Optional[int]:
+    if start >= len(source) or source[start] != "[":
+        return None
     match = re.match(r"\[(=*)\[", source[start:])
     if match is None:
         return None
@@ -473,6 +485,55 @@ def _table_string_entries(source: str, table_name: str) -> Dict[str, Tuple[str, 
     return result
 
 
+def _child_table_string_entries(
+    source: str, parent_opening: int, parent_closing: int, table_name: str
+) -> Dict[str, Tuple[str, int]]:
+    opening = _find_direct_child_table(
+        source, parent_opening, parent_closing, table_name
+    )
+    if opening is None:
+        return {}
+    try:
+        closing = _matching_delimiter(source, opening)
+    except ValueError:
+        return {}
+    body = source[opening + 1 : closing]
+    result: Dict[str, Tuple[str, int]] = {}
+    cursor = 0
+    for entry in _split_top_level(body):
+        entry_match = re.match(
+            r'^\s*(?:\[\s*["\']([A-Za-z0-9_]+)["\']\s*\]|([A-Za-z0-9_]+))\s*=\s*(.+?)\s*$',
+            entry,
+            re.DOTALL,
+        )
+        if entry_match is None:
+            continue
+        value = _literal_string(entry_match.group(3))
+        if value is None:
+            continue
+        key = (entry_match.group(1) or entry_match.group(2)).lower()
+        local = body.find(entry, cursor)
+        cursor = max(cursor, local + len(entry))
+        line = source.count("\n", 0, opening + 1 + max(local, 0)) + 1
+        result[key] = (value, line)
+    return result
+
+
+def _returned_child_table_strings(
+    source: str, table_name: str
+) -> Dict[str, Tuple[str, int]]:
+    masked = _code_mask(source)
+    match = re.search(r"\breturn\s*\{", masked)
+    if match is None:
+        return {}
+    opening = masked.find("{", match.start(), match.end())
+    try:
+        closing = _matching_delimiter(source, opening)
+    except ValueError:
+        return {}
+    return _child_table_string_entries(source, opening, closing, table_name)
+
+
 def _has_receiver(source: str, call: LuaCall, receiver: str) -> bool:
     line_start = source.rfind("\n", 0, call.offset) + 1
     return source[line_start : call.offset].rstrip().endswith(receiver)
@@ -552,14 +613,33 @@ class ScriptIndex:
         self.archive = Path(archive)
         with ZipFile(self.archive) as handle:
             self.members = tuple(sorted(handle.namelist()))
+            prefab_members = tuple(
+                name
+                for name in self.members
+                if name.startswith("scripts/prefabs/") and name.endswith(".lua")
+            )
+            cached_members = set(prefab_members)
+            cached_members.update(
+                {
+                    "scripts/strings.lua",
+                    "scripts/recipes.lua",
+                    "scripts/speech_wilson.lua",
+                }
+            )
+            source_cache = {
+                name: handle.read(name).decode("utf-8-sig")
+                for name in sorted(cached_members)
+                if name in self.members
+            }
         self.prefab_members = {
             Path(name).stem.lower(): name
-            for name in self.members
-            if name.startswith("scripts/prefabs/") and name.endswith(".lua")
+            for name in prefab_members
         }
-        self.prefab_sources: Dict[str, str] = {}
-        self.strings_source = self._read_optional("scripts/strings.lua")
-        self.recipes_source = self._read_optional("scripts/recipes.lua")
+        self.prefab_sources: Dict[str, str] = {
+            name: source_cache[name] for name in prefab_members
+        }
+        self.strings_source = source_cache.get("scripts/strings.lua", "")
+        self.recipes_source = source_cache.get("scripts/recipes.lua", "")
         self.names = _assigned_strings(self.strings_source, "STRINGS.NAMES")
         self.names.update(_table_string_entries(self.strings_source, "NAMES"))
         self.recipe_descriptions = _assigned_strings(
@@ -568,6 +648,11 @@ class ScriptIndex:
         self.recipe_descriptions.update(
             _table_string_entries(self.strings_source, "RECIPE_DESC")
         )
+        self.generic_descriptions: Dict[str, Tuple[str, int]] = {}
+        if "scripts/speech_wilson.lua" in source_cache:
+            self.generic_descriptions = _returned_child_table_strings(
+                source_cache["scripts/speech_wilson.lua"], "DESCRIBE"
+            )
         self.recipes: Dict[str, RecipeRecord] = {}
         for call in _iter_calls(self.recipes_source, ("Recipe2",)):
             record = _recipe_record(call)
@@ -575,11 +660,8 @@ class ScriptIndex:
                 self.recipes[record.product] = record
         self.prefab_declarations: Dict[str, ConstructorBinding] = {}
         self.function_scopes: Dict[str, Dict[str, FunctionScope]] = {}
-        for member in self.members:
-            if not member.startswith("scripts/prefabs/") or not member.endswith(".lua"):
-                continue
-            source = self.read(member)
-            self.prefab_sources[member] = source
+        for member in prefab_members:
+            source = self.prefab_sources[member]
             self.function_scopes[member] = _function_scopes(source)
             for call in _iter_calls(source, ("Prefab",)):
                 if len(call.arguments) < 2:
@@ -999,7 +1081,7 @@ def enrich_dependencies(
             "base-game-vi-translation",
             "mod_translation",
             _display_path(po_path),
-            "snapshot",
+            _version_from_modinfo(po_path.parent / "modinfo.lua", "unknown"),
             _sha256(po_path),
         )
         sources.append(po_source)
@@ -1103,6 +1185,18 @@ def enrich_dependencies(
                     scripts_source,
                     1.0,
                     f"scripts/strings.lua:line:{line}",
+                )
+            )
+        if prefab_id in index.generic_descriptions:
+            value, line = index.generic_descriptions[prefab_id]
+            facts.append(
+                Fact(
+                    "description",
+                    subject,
+                    {"lang": "en", "value": value, "description_type": "generic"},
+                    scripts_source,
+                    1.0,
+                    f"scripts/speech_wilson.lua:line:{line}",
                 )
             )
         if po_source is not None:

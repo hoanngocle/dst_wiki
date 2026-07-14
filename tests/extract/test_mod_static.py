@@ -13,6 +13,73 @@ from tools.extract.po_strings import load_po_by_context
 
 
 class ModStaticTests(unittest.TestCase):
+    def test_extracts_exact_character_profile_metadata_without_executing_lua(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            mod_root = root / "content"
+            (mod_root / "scripts/main").mkdir(parents=True)
+            (mod_root / "scripts/prefabs").mkdir(parents=True)
+            (mod_root / "images/inventoryimages").mkdir(parents=True)
+            (mod_root / "modinfo.lua").write_text(
+                'version = "18.0.10"\n', encoding="utf-8"
+            )
+            (mod_root / "scripts/main/strings.lua").write_text(
+                "", encoding="utf-8"
+            )
+            translation_root = root / "translation"
+            translation_root.mkdir()
+            (translation_root / "modinfo.lua").write_text(
+                'version = "1.0.11"\n', encoding="utf-8"
+            )
+            translation = translation_root / "modmain.lua"
+            translation.write_text(
+                '''
+local names = { ["xd_hero"] = "Anh Hùng" }
+STRINGS.CHARACTER_TITLES["xd_hero"] = "Kiếm Tu"
+STRINGS.CHARACTER_SURVIVABILITY["xd_hero"] = "Gai Góc"
+STRINGS.CHARACTER_DESCRIPTIONS["xd_hero"] = "*Dòng một\\n*Dòng hai"
+STRINGS.CHARACTER_QUOTES["xd_hero"] = "\\\"Một câu nói.\\\""
+-- STRINGS.CHARACTER_DESCRIPTIONS["xd_comment"] = "Không được lấy"
+STRINGS.CHARACTER_DESCRIPTIONS[dynamic_id] = "Không có ID chính xác"
+STRINGS.CHARACTER_QUOTES["xd_dynamic"] = make_quote()
+''',
+                encoding="utf-8",
+            )
+
+            bundle = extract_mod_static(
+                mod_root, translation, root / "missing.po"
+            )
+
+        description = next(
+            fact
+            for fact in bundle.facts
+            if fact.kind == "description" and fact.subject.prefab_id == "xd_hero"
+        )
+        self.assertEqual(description.payload["value"], "*Dòng một\n*Dòng hai")
+        self.assertEqual(description.payload["description_type"], "character_profile")
+        self.assertEqual(description.source.version, "1.0.11")
+        self.assertRegex(description.locator, r"^line:\d+$")
+        self.assertEqual(description.confidence, 1.0)
+        effects = {
+            fact.payload["effect_key"]: fact.payload["value"]
+            for fact in bundle.facts
+            if fact.kind == "effect" and fact.subject.prefab_id == "xd_hero"
+        }
+        self.assertEqual(
+            effects,
+            {
+                "character_quote": '"Một câu nói."',
+                "character_survivability": "Gai Góc",
+                "character_title": "Kiếm Tu",
+            },
+        )
+        self.assertFalse(
+            any(
+                fact.subject.prefab_id in {"xd_comment", "xd_dynamic"}
+                for fact in bundle.facts
+            )
+        )
+
     def test_decodes_lua_short_string_escapes_without_python_semantics(self):
         self.assertEqual(decode_lua_string_literal(r'"\065"'), "A")
         self.assertEqual(

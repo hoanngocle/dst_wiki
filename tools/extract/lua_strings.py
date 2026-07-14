@@ -21,6 +21,11 @@ ALIAS = re.compile(
 )
 TABLE_START = re.compile(r"^\s*local\s+names\s*=\s*\{\s*$")
 TABLE_ENTRY = re.compile(r'^\s*\["([A-Za-z0-9_]+)"\]\s*=\s*(.+?)\s*,?\s*$')
+CHARACTER_METADATA = re.compile(
+    r'^STRINGS\.(CHARACTER_TITLES|CHARACTER_SURVIVABILITY|'
+    r'CHARACTER_DESCRIPTIONS|CHARACTER_QUOTES)\s*'
+    r'\[\s*["\']([A-Za-z0-9_]+)["\']\s*\]\s*=\s*(.+?)\s*$'
+)
 
 
 ESCAPES = {
@@ -185,6 +190,41 @@ def parse_simple_names_table(path: Path) -> List[Dict[str, object]]:
         value = _literal(expression)
         row: Dict[str, object] = {
             "field": "name",
+            "prefab_id": prefab_id.lower(),
+            "line": line_number,
+        }
+        if value is None:
+            row["unparsed_expression"] = expression
+        else:
+            row["value"] = value
+        rows.append(row)
+    return rows
+
+
+def parse_character_metadata_assignments(path: Path) -> List[Dict[str, object]]:
+    """Parse exact literal character-profile assignments from a language mod.
+
+    Only a quoted prefab key and a Lua short-string value on the same line are
+    accepted. Comments, computed keys and function calls are never evaluated.
+    """
+
+    field_names = {
+        "CHARACTER_TITLES": "character_title",
+        "CHARACTER_SURVIVABILITY": "character_survivability",
+        "CHARACTER_DESCRIPTIONS": "character_description",
+        "CHARACTER_QUOTES": "character_quote",
+    }
+    rows: List[Dict[str, object]] = []
+    for line_number, line in enumerate(
+        path.read_text(encoding="utf-8-sig").splitlines(), 1
+    ):
+        match = CHARACTER_METADATA.match(line.strip())
+        if match is None:
+            continue
+        table_name, prefab_id, expression = match.groups()
+        value = _literal(expression)
+        row: Dict[str, object] = {
+            "field": field_names[table_name],
             "prefab_id": prefab_id.lower(),
             "line": line_number,
         }

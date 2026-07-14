@@ -5,7 +5,11 @@ from typing import Dict, List, Optional, Tuple
 
 from tools.extract.assets import index_mod_assets
 from tools.extract.contracts import EntityKey, Fact, FactBundle, SourceRef
-from tools.extract.lua_strings import parse_simple_names_table, parse_string_assignments
+from tools.extract.lua_strings import (
+    parse_character_metadata_assignments,
+    parse_simple_names_table,
+    parse_string_assignments,
+)
 from tools.extract.po_strings import load_po_by_context
 
 
@@ -173,6 +177,61 @@ def extract_mod_static(
         rows = parse_string_assignments(path)
         if include_names_table:
             rows.extend(parse_simple_names_table(path))
+            for metadata in parse_character_metadata_assignments(path):
+                prefab_id = str(metadata["prefab_id"])
+                locator = f"line:{metadata['line']}"
+                value = metadata.get("value")
+                if value is None:
+                    errors.append(
+                        {
+                            "code": "unparsed_character_metadata_expression",
+                            "path": source.path,
+                            "line": metadata["line"],
+                            "field": metadata["field"],
+                            "expression": metadata.get("unparsed_expression"),
+                        }
+                    )
+                    continue
+                facts.append(
+                    _entity_fact(
+                        prefab_id,
+                        source,
+                        locator,
+                        "character_metadata",
+                        "character",
+                        1.0,
+                    )
+                )
+                if metadata["field"] == "character_description":
+                    facts.append(
+                        Fact(
+                            "description",
+                            EntityKey("tu_tien", prefab_id),
+                            {
+                                "lang": "vi",
+                                "value": value,
+                                "description_type": "character_profile",
+                            },
+                            source,
+                            1.0,
+                            locator,
+                        )
+                    )
+                else:
+                    facts.append(
+                        Fact(
+                            "effect",
+                            EntityKey("tu_tien", prefab_id),
+                            {
+                                "trigger": "character_profile",
+                                "effect_key": metadata["field"],
+                                "value": value,
+                            },
+                            source,
+                            1.0,
+                            locator,
+                        )
+                    )
         for row in rows:
             prefab_id = str(row["prefab_id"])
             locator = f"line:{row['line']}"

@@ -8,6 +8,7 @@ from zipfile import ZipFile
 
 from tools.extract.base_game import (
     DependencyRequest,
+    ScriptIndex,
     derive_dependency_requests,
     enrich_dependencies,
     verify_snapshot_archive,
@@ -29,6 +30,33 @@ class BaseGameTests(unittest.TestCase):
             for name, source in members.items():
                 handle.writestr(name, source)
         return archive
+
+    def test_script_index_reads_the_archive_through_one_zip_handle(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            archive = self._archive(
+                root,
+                {
+                    "scripts/recipes.lua": "",
+                    "scripts/strings.lua": "",
+                    "scripts/speech_wilson.lua": "return { DESCRIBE = {} }",
+                    "scripts/prefabs/one.lua": 'return Prefab("one", fn)',
+                    "scripts/prefabs/two.lua": 'return Prefab("two", fn)',
+                },
+            )
+            opens = []
+
+            def counting_zip(path, *args, **kwargs):
+                opens.append(Path(path))
+                return ZipFile(path, *args, **kwargs)
+
+            with mock.patch(
+                "tools.extract.base_game.ZipFile", side_effect=counting_zip
+            ):
+                index = ScriptIndex(archive)
+
+        self.assertEqual(index.resolution("one")[0], "prefab_filename")
+        self.assertEqual(opens, [archive])
 
     def test_enriches_requested_item_without_unrelated_prefabs(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -87,6 +115,65 @@ class BaseGameTests(unittest.TestCase):
                 }
             ],
         )
+
+    def test_extracts_exact_generic_english_description_and_translation_version(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            archive = self._archive(
+                root,
+                {
+                    "scripts/recipes.lua": "",
+                    "scripts/strings.lua": 'STRINGS.NAMES.GOLDNUGGET = "Gold Nugget"',
+                    "scripts/speech_wilson.lua": '''
+return {
+    DESCRIBE = {
+        GOLDNUGGET = "A precious metal.",
+        DYNAMIC = make_description(),
+        -- COMMENTED = "Not evidence",
+    },
+}
+''',
+                    "scripts/prefabs/goldnugget.lua": 'return Prefab("goldnugget", fn)',
+                },
+            )
+            translation_root = root / "translation"
+            translation_root.mkdir()
+            (translation_root / "modinfo.lua").write_text(
+                'version = "2026.1.3"\n', encoding="utf-8"
+            )
+            po = translation_root / "viethoa.po"
+            po.write_text(
+                'msgctxt "STRINGS.NAMES.GOLDNUGGET"\n'
+                'msgid "Gold Nugget"\n'
+                'msgstr "Vàng"\n',
+                encoding="utf-8",
+            )
+
+            bundle = enrich_dependencies(
+                archive,
+                [DependencyRequest("goldnugget", "ingredient", "tu_tien:xd_item")],
+                po,
+            )
+
+        description = next(
+            fact
+            for fact in bundle.facts
+            if fact.kind == "description"
+            and fact.subject.prefab_id == "goldnugget"
+            and fact.payload["lang"] == "en"
+        )
+        self.assertEqual(description.payload["value"], "A precious metal.")
+        self.assertEqual(description.payload["description_type"], "generic")
+        self.assertRegex(
+            description.locator, r"^scripts/speech_wilson\.lua:line:\d+$"
+        )
+        translation_source = next(
+            source
+            for source in bundle.sources
+            if source.source_id == "base-game-vi-translation"
+        )
+        self.assertEqual(translation_source.version, "2026.1.3")
+
 
     def test_recipe_closure_is_exactly_one_level_and_string_aware(self):
         with tempfile.TemporaryDirectory() as tmp:

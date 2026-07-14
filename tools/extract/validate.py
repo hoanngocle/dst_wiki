@@ -261,6 +261,14 @@ def validate_catalog(db_path: Path, manifest_path: Optional[Path] = None) -> Dic
             "acquisition": _coverage(db, "exists(select 1 from acquisition_sources a where a.target_namespace=e.namespace and a.target_id=e.prefab_id)"),
             "stats": _coverage(db, "exists(select 1 from stats s where s.namespace=e.namespace and s.prefab_id=e.prefab_id)"),
         }
+        missing_inventory_names = [
+            row[0]
+            for row in db.execute(
+                "select prefab_id from entities "
+                "where namespace='tu_tien' and is_inventory_item=1 "
+                "and (name_vi is null or name_vi='') order by prefab_id"
+            )
+        ]
         foreign_keys = [
             {"table": row[0], "rowid": row[1], "parent": row[2], "foreign_key": row[3]}
             for row in db.execute("pragma foreign_key_check")
@@ -365,6 +373,13 @@ def validate_catalog(db_path: Path, manifest_path: Optional[Path] = None) -> Dic
                 "count": len(low_confidence_fields),
             }
         )
+    if missing_inventory_names:
+        warnings.append(
+            {
+                "code": "missing_inventory_names",
+                "count": len(missing_inventory_names),
+            }
+        )
     runtime_gaps = sum(
         count
         for status, count in runtime_coverage_summary.items()
@@ -385,6 +400,7 @@ def validate_catalog(db_path: Path, manifest_path: Optional[Path] = None) -> Dic
         "schema_version": 1,
         "entity_counts": counts,
         "coverage": coverage,
+        "missing_inventory_names": missing_inventory_names,
         "unresolved_dependencies": unresolved,
         "foreign_key_errors": foreign_keys,
         "runtime_errors": runtime_errors,

@@ -26,6 +26,28 @@
     {
       "candidates": [
         {
+          "confidence": 1.0,
+          "locator": "scripts/speech_wilson.lua:line:2060",
+          "source_id": "base-game-scripts",
+          "source_kind": "base_game_source",
+          "value": "It sparkles with cold energy."
+        },
+        {
+          "confidence": 1.0,
+          "locator": "scripts/strings.lua:line:5880",
+          "source_id": "base-game-scripts",
+          "source_kind": "base_game_source",
+          "value": "Bears the color of blue."
+        }
+      ],
+      "conflict_id": "707de917c84d41d5921fec8a795561f15cc02a656833234fb48e962db4508a9b",
+      "field": "description:en",
+      "selected": "It sparkles with cold energy.",
+      "subject": "base_game:bluegem"
+    },
+    {
+      "candidates": [
+        {
           "confidence": 0.9,
           "locator": "context:STRINGS.CHARACTERS.GENERIC.DESCRIBE.BLUEGEM",
           "source_id": "base-game-vi-translation",
@@ -40,10 +62,32 @@
           "value": "Mang màu xanh lam."
         }
       ],
-      "conflict_id": "c18be4e15b7e7239c24b16bb26df95bac34b5a23de44087e216502879222e639",
+      "conflict_id": "496fdbbf8d3eb232fcf8d7f0766c4887a42970ab2ad6e08c9e1adf290f77a50f",
       "field": "description:vi",
-      "selected": "Mang màu xanh lam.",
+      "selected": "Nó lấp lánh với năng lượng lạnh.",
       "subject": "base_game:bluegem"
+    },
+    {
+      "candidates": [
+        {
+          "confidence": 1.0,
+          "locator": "scripts/speech_wilson.lua:line:2079",
+          "source_id": "base-game-scripts",
+          "source_kind": "base_game_source",
+          "value": "Boards."
+        },
+        {
+          "confidence": 1.0,
+          "locator": "scripts/strings.lua:line:4845",
+          "source_id": "base-game-scripts",
+          "source_kind": "base_game_source",
+          "value": "Like logs, but flatter."
+        }
+      ],
+      "conflict_id": "a3f89197c575ec675dfad601d74ee2819c93635cf31127502d91cc507627dcc1",
+      "field": "description:en",
+      "selected": "Boards.",
+      "subject": "base_game:boards"
     },
     {
       "candidates": [
@@ -62,10 +106,32 @@
           "value": "Giống gỗ nhưng phẳng hơn."
         }
       ],
-      "conflict_id": "20660f595a7f7fb10f492de842c59f735c66e80605de46d97264e558c62c703b",
+      "conflict_id": "9d42b5b4688a1c24b9c17e68471d92a8cf8ebe5d6ef3689c77074f4707f574d8",
       "field": "description:vi",
-      "selected": "Giống gỗ nhưng phẳng hơn.",
+      "selected": "Bảng.",
       "subject": "base_game:boards"
+    },
+    {
+      "candidates": [
+        {
+          "confidence": 1.0,
+          "locator": "scripts/speech_wilson.lua:line:2252",
+          "source_id": "base-game-scripts",
+          "source_kind": "base_game_source",
+          "value": "Cut grass, ready for arts and crafts."
+        },
+        {
+          "confidence": 1.0,
+          "locator": "scripts/strings.lua:line:5875",
+          "source_id": "base-game-scripts",
+          "source_kind": "base_game_source",
+          "value": "The fiberous strands bind together."
+        }
+      ],
+      "conflict_id": "ce5ead2f44e7e9752095a247399e52f4bc77c0d52bd9ee512db5a3a62c8335c5",
+      "field": "description:en",
+      "selected": "Cut grass, ready for arts and crafts.",
+      "subject": "base_game:cutgrass"
     },
     {
       "candidates": [
@@ -84,10 +150,32 @@
           "value": "Các sợi xơ liên kết với nhau."
         }
       ],
-      "conflict_id": "8589197f4c687865a2ed8b68f4ac33d3b1fb3ab47e2e11cee4fd52153d8d3026",
+      "conflict_id": "4be19764892db987adc3841fa0b38588cc4ed0ac0d9814f87087cf52d26c832b",
       "field": "description:vi",
-      "selected": "Các sợi xơ liên kết với nhau.",
+      "selected": "Cắt cỏ, sẵn sàng cho nghệ thuật và hàng thủ công.",
       "subject": "base_game:cutgrass"
+    },
+    {
+      "candidates": [
+        {
+          "confidence": 1.0,
+          "locator": "scripts/speech_wilson.lua:line:2253",
+          "source_id": "base-game-scripts",
+          "source_kind": "base_game_source",
+          "value": "Cut reeds, ready for crafting and hobbying."
+        },
+        {
+          "confidence": 1.0,
+          "locator": "scripts/strings.lua:line:5877",
+          "source_id": "base-game-scripts",
+          "source_kind": "base_game_source",
+          "value": "Tubular."
+        }
+      ],
+      "conflict_id": "56f516d454a658d3aec3b08e4bc56ba91e80e86f6dd8589cfbd4f8da190aa4c4",
+      "field": "description:en",
+      "selected": "Cut reeds, ready for crafting and hobbying.",
+      "subject": "base_game:cutreeds"
     },
     {
       "candidates": [
@@ -106,10 +194,32 @@
           "value": "Hình ống."
         }
       ],
-      "conflict_id": "1e13b784f144fddaa0ab5e180c575c1b8fc5bb022a197141593b597521368be6",
+      "conflict_id": "db892019e95770f47b634f5538d7ce79ddf9c42139b44ca0d10cc8370c399251",
       "field": "description:vi",
-      "selected": "Hình ống.",
+      "selected": "Sậy cắt, sẵn sàng để chế tác và làm theo sở thích.",
       "subject": "base_game:cutreeds"
+    },
+    {
+      "candidates": [
+        {
+          "confidence": 1.0,
+          "locator": "scripts/speech_wilson.lua:line:2254",
+          "source_id": "base-game-scripts",
+          "source_kind": "base_game_source",
+          "value": "Seductively smooth."
+        },
+        {
+          "confidence": 1.0,
+          "locator": "scripts/strings.lua:line:4840",
+          "source_id": "base-game-scripts",
+          "source_kind": "base_game_source",
+          "value": "Nicely squared rocks."
+        }
+      ],
+      "conflict_id": "684b27f21ca7d1d1f45f5bee606b9d4c9a118278bd7eaf07d7cac6a00f33cc84",
+      "field": "description:en",
+      "selected": "Seductively smooth.",
+      "subject": "base_game:cutstone"
     },
     {
       "candidates": [
@@ -128,10 +238,32 @@
           "value": "Những viên đá cắt vuông vắn."
         }
       ],
-      "conflict_id": "741071ded34b14c9b74dd20712a4ece14d4b4e53813cb6ea0f076fd060330b9b",
+      "conflict_id": "8974049344db697fbb582fb108e55d7997e34570104c3edeb4f761348f583a74",
       "field": "description:vi",
-      "selected": "Những viên đá cắt vuông vắn.",
+      "selected": "Quyến rũ trơn tru.",
       "subject": "base_game:cutstone"
+    },
+    {
+      "candidates": [
+        {
+          "confidence": 1.0,
+          "locator": "scripts/speech_wilson.lua:line:2458",
+          "source_id": "base-game-scripts",
+          "source_kind": "base_game_source",
+          "value": "It's a very sharp rock."
+        },
+        {
+          "confidence": 1.0,
+          "locator": "scripts/strings.lua:line:5876",
+          "source_id": "base-game-scripts",
+          "source_kind": "base_game_source",
+          "value": "Naturally sharp and dressed for the occasion."
+        }
+      ],
+      "conflict_id": "c0417f9c8b3505e539bac5ec9c66cbe8211cea2a2ab5bc5147dd7f984106a630",
+      "field": "description:en",
+      "selected": "It's a very sharp rock.",
+      "subject": "base_game:flint"
     },
     {
       "candidates": [
@@ -150,9 +282,9 @@
           "value": "Tự nhiên sắc nét và ăn mặc cho dịp này."
         }
       ],
-      "conflict_id": "76ddc859b5f9ff340ebbcb95d77bef2d54fe4f81f6159b5b54ec4289c11d9fd4",
+      "conflict_id": "0835d21a33ca29f0065be8c40b60b8b108ff9f61530b36190571413c242edd5e",
       "field": "description:vi",
-      "selected": "Tự nhiên sắc nét và ăn mặc cho dịp này.",
+      "selected": "Đó là một tảng đá rất sắc nét.",
       "subject": "base_game:flint"
     },
     {
@@ -172,9 +304,9 @@
           "value": "Bánh răng cho các thiết bị kỳ lạ của bạn."
         }
       ],
-      "conflict_id": "fa91b21dfe7bee4989f972bdf32497eec3d47c55af27cc956668f2fc845063fd",
+      "conflict_id": "dad00db85c5dae36c0a2a623077a1d5d724f58aa481755b9471ade56d4e3860c",
       "field": "description:vi",
-      "selected": "Bánh răng cho các thiết bị kỳ lạ của bạn.",
+      "selected": "Một đống của các bộ phận cơ khí.",
       "subject": "base_game:gears"
     },
     {
@@ -194,10 +326,32 @@
           "value": "Đặt mình vào công việc của bạn."
         }
       ],
-      "conflict_id": "3124faab23ab804617d1d0ef92205627a82b0bfa0b1b29640f176539fd9eaefb",
+      "conflict_id": "2c7dd860fcc50ee7ecfa61bafb4c29120833b1502ad0a1c85b3829f676c9ada7",
       "field": "description:vi",
-      "selected": "Đặt mình vào công việc của bạn.",
+      "selected": "Có vẻ lo lắng.",
       "subject": "base_game:livinglog"
+    },
+    {
+      "candidates": [
+        {
+          "confidence": 1.0,
+          "locator": "scripts/speech_wilson.lua:line:3951",
+          "source_id": "base-game-scripts",
+          "source_kind": "base_game_source",
+          "value": "It's very sharp."
+        },
+        {
+          "confidence": 1.0,
+          "locator": "scripts/strings.lua:line:5881",
+          "source_id": "base-game-scripts",
+          "source_kind": "base_game_source",
+          "value": "A fragment from the Moon."
+        }
+      ],
+      "conflict_id": "d210ca48ba10be547953e8225b4f55237e4e25fc0062338f4f7b82d91504fe6b",
+      "field": "description:en",
+      "selected": "It's very sharp.",
+      "subject": "base_game:moonglass"
     },
     {
       "candidates": [
@@ -216,10 +370,32 @@
           "value": "Một mảnh từ Mặt trăng."
         }
       ],
-      "conflict_id": "4617676b788a1090e3e0cf2c8f8da6be1ebba3986c54c07bef4281e7629defec",
+      "conflict_id": "363e226c639fb46b7ad474248793c8bf5d8c567c3b11bd8ae4defa8a780f9822",
       "field": "description:vi",
-      "selected": "Một mảnh từ Mặt trăng.",
+      "selected": "Nó rất sắc nét.",
       "subject": "base_game:moonglass"
+    },
+    {
+      "candidates": [
+        {
+          "confidence": 1.0,
+          "locator": "scripts/speech_wilson.lua:line:2707",
+          "source_id": "base-game-scripts",
+          "source_kind": "base_game_source",
+          "value": "This stuff is crazy!"
+        },
+        {
+          "confidence": 1.0,
+          "locator": "scripts/strings.lua:line:4933",
+          "source_id": "base-game-scripts",
+          "source_kind": "base_game_source",
+          "value": "Evil residue used by the foolish and crazy."
+        }
+      ],
+      "conflict_id": "b2ca7bdf5270cd014eae43def9317c8057afae39fe3e58e94a59e19098f95366",
+      "field": "description:en",
+      "selected": "This stuff is crazy!",
+      "subject": "base_game:nightmarefuel"
     },
     {
       "candidates": [
@@ -238,10 +414,32 @@
           "value": "Dư lượng ác quỷ dùng bởi kẻ điên cuồng và khờ dại."
         }
       ],
-      "conflict_id": "86701efd36723494eb1efc3070a2bd6e61c961addfc78535c98294b2928292f3",
+      "conflict_id": "a12b6621f936bb65ddf5b42d1c2d3351ae4b92869f55aee8d9801873d8d15b4d",
       "field": "description:vi",
-      "selected": "Dư lượng ác quỷ dùng bởi kẻ điên cuồng và khờ dại.",
+      "selected": "Công cụ này là điên rồ!",
       "subject": "base_game:nightmarefuel"
+    },
+    {
+      "candidates": [
+        {
+          "confidence": 1.0,
+          "locator": "scripts/speech_wilson.lua:line:2718",
+          "source_id": "base-game-scripts",
+          "source_kind": "base_game_source",
+          "value": "Some sheets of paper."
+        },
+        {
+          "confidence": 1.0,
+          "locator": "scripts/strings.lua:line:4857",
+          "source_id": "base-game-scripts",
+          "source_kind": "base_game_source",
+          "value": "For writing things."
+        }
+      ],
+      "conflict_id": "10186fd2685ae87e23c5f7cdf8cd88fff7cccd1cae277ab04919270ea91af2ae",
+      "field": "description:en",
+      "selected": "Some sheets of paper.",
+      "subject": "base_game:papyrus"
     },
     {
       "candidates": [
@@ -260,10 +458,32 @@
           "value": "Để viết các thứ."
         }
       ],
-      "conflict_id": "54f6cbc9e83c8ee91fb0ff87af6fa6249cdd27a26f1d176486d0c79100537c7d",
+      "conflict_id": "26543ba56307e75227d07481dd6df2bc797a7c4b96df725bb553be79ccf80ae3",
       "field": "description:vi",
-      "selected": "Để viết các thứ.",
+      "selected": "Một số tờ giấy.",
       "subject": "base_game:papyrus"
+    },
+    {
+      "candidates": [
+        {
+          "confidence": 1.0,
+          "locator": "scripts/speech_wilson.lua:line:2723",
+          "source_id": "base-game-scripts",
+          "source_kind": "base_game_source",
+          "value": "Sure showed those flowers who's boss!"
+        },
+        {
+          "confidence": 1.0,
+          "locator": "scripts/strings.lua:line:5403",
+          "source_id": "base-game-scripts",
+          "source_kind": "base_game_source",
+          "value": "Purify your petals."
+        }
+      ],
+      "conflict_id": "8273e7e28820e63c0ebe9f81ad113e62f23dcfc8d4d4f6ffaf9ab3aa3d6530e2",
+      "field": "description:en",
+      "selected": "Sure showed those flowers who's boss!",
+      "subject": "base_game:petals"
     },
     {
       "candidates": [
@@ -282,10 +502,32 @@
           "value": "Làm sạch cánh hoa của bạn."
         }
       ],
-      "conflict_id": "131ebf935e3322cf850e60a8f2b8136ecdd5e75a528f1fde5244ec49a612de2c",
+      "conflict_id": "634bd86b40f7a9141fca38b8bfa7588b38f52eb23133f7be0d3bfbba673c6cb2",
       "field": "description:vi",
-      "selected": "Làm sạch cánh hoa của bạn.",
+      "selected": "Chắc chắn đã cho thấy ai là ông chủ của những bông hoa đó!",
       "subject": "base_game:petals"
+    },
+    {
+      "candidates": [
+        {
+          "confidence": 1.0,
+          "locator": "scripts/speech_wilson.lua:line:2724",
+          "source_id": "base-game-scripts",
+          "source_kind": "base_game_source",
+          "value": "I'm not sure I want to hold those."
+        },
+        {
+          "confidence": 1.0,
+          "locator": "scripts/strings.lua:line:5404",
+          "source_id": "base-game-scripts",
+          "source_kind": "base_game_source",
+          "value": "Stain your petals."
+        }
+      ],
+      "conflict_id": "52aec9b007496ad383a302167217d5b6a51c5f1e1b3953d4f3cb02715bd25449",
+      "field": "description:en",
+      "selected": "I'm not sure I want to hold those.",
+      "subject": "base_game:petals_evil"
     },
     {
       "candidates": [
@@ -304,10 +546,32 @@
           "value": "Nhuộm cánh hoa của bạn."
         }
       ],
-      "conflict_id": "0b304fe4bc5d67906cea57cdea4dcec55a0af8f00af6cc931541d987e97eb332",
+      "conflict_id": "47491b2d09a8a85a1564d4320158c18cb35199199cb150f4c684666ed1728ba5",
       "field": "description:vi",
-      "selected": "Nhuộm cánh hoa của bạn.",
+      "selected": "Tôi không chắc mình muốn giữ những thứ đó.",
       "subject": "base_game:petals_evil"
+    },
+    {
+      "candidates": [
+        {
+          "confidence": 1.0,
+          "locator": "scripts/speech_wilson.lua:line:2777",
+          "source_id": "base-game-scripts",
+          "source_kind": "base_game_source",
+          "value": "It contains the mysteries of the universe."
+        },
+        {
+          "confidence": 1.0,
+          "locator": "scripts/strings.lua:line:4934",
+          "source_id": "base-game-scripts",
+          "source_kind": "base_game_source",
+          "value": "By your colors combined!"
+        }
+      ],
+      "conflict_id": "b5a3fc3f14a62d713bfe9d245aac67cb0726b60f505252d63c4ee6391ff3ce32",
+      "field": "description:en",
+      "selected": "It contains the mysteries of the universe.",
+      "subject": "base_game:purplegem"
     },
     {
       "candidates": [
@@ -326,10 +590,32 @@
           "value": "Kết hợp bằng màu sắc của bạn!"
         }
       ],
-      "conflict_id": "71f0f36a664d05f0899cb8dc2b7ebbf5b5b897c84249d6825ed9770f217a7827",
+      "conflict_id": "9f424742eea837b876997ff466a19896784986b357955d099c3b676f641941b1",
       "field": "description:vi",
-      "selected": "Kết hợp bằng màu sắc của bạn!",
+      "selected": "Nó chứa những bí ẩn của vũ trụ.",
       "subject": "base_game:purplegem"
+    },
+    {
+      "candidates": [
+        {
+          "confidence": 1.0,
+          "locator": "scripts/speech_wilson.lua:line:2797",
+          "source_id": "base-game-scripts",
+          "source_kind": "base_game_source",
+          "value": "It sparkles with inner warmth."
+        },
+        {
+          "confidence": 1.0,
+          "locator": "scripts/strings.lua:line:5879",
+          "source_id": "base-game-scripts",
+          "source_kind": "base_game_source",
+          "value": "Retains the color of red."
+        }
+      ],
+      "conflict_id": "905a5e8cb135d06f67576d3d7ddc7aa2bc8e6fedb6571d88634c4baf6877083a",
+      "field": "description:en",
+      "selected": "It sparkles with inner warmth.",
+      "subject": "base_game:redgem"
     },
     {
       "candidates": [
@@ -348,10 +634,32 @@
           "value": "Giữ nguyên màu đỏ."
         }
       ],
-      "conflict_id": "0348d17d4c823d234a88c4c6d20b21890ebb5e73d8a9678d423c30619018a924",
+      "conflict_id": "abab35df2aeb72dd76e35c42a31fc69859e3031dedfd13b4b074b1998921b7bb",
       "field": "description:vi",
-      "selected": "Giữ nguyên màu đỏ.",
+      "selected": "Nó lấp lánh với sự ấm áp bên trong.",
       "subject": "base_game:redgem"
+    },
+    {
+      "candidates": [
+        {
+          "confidence": 1.0,
+          "locator": "scripts/speech_wilson.lua:line:2877",
+          "source_id": "base-game-scripts",
+          "source_kind": "base_game_source",
+          "value": "Some short lengths of rope."
+        },
+        {
+          "confidence": 1.0,
+          "locator": "scripts/strings.lua:line:4819",
+          "source_id": "base-game-scripts",
+          "source_kind": "base_game_source",
+          "value": "Tightly woven coils of usefulness."
+        }
+      ],
+      "conflict_id": "98dc7e526e1777e275022bea289769427fc2d5a19ad91379300bddfa49b90326",
+      "field": "description:en",
+      "selected": "Some short lengths of rope.",
+      "subject": "base_game:rope"
     },
     {
       "candidates": [
@@ -370,10 +678,32 @@
           "value": "1 đống sợi cuộn chặt đầy công dụng."
         }
       ],
-      "conflict_id": "5c0faccf988874573116bd1fbd8e610cb4736e676847176534b07c104650df7c",
+      "conflict_id": "8fdaa1adc233c77a19daf19ffca254a3094e7c6de2dfb73f7b1462cf6fe9e1d1",
       "field": "description:vi",
-      "selected": "1 đống sợi cuộn chặt đầy công dụng.",
+      "selected": "Một số độ dài ngắn của sợi dây thừng.",
       "subject": "base_game:rope"
+    },
+    {
+      "candidates": [
+        {
+          "confidence": 1.0,
+          "locator": "scripts/speech_wilson.lua:line:2974",
+          "source_id": "base-game-scripts",
+          "source_kind": "base_game_source",
+          "value": "I hope these don't hatch. Period."
+        },
+        {
+          "confidence": 1.0,
+          "locator": "scripts/strings.lua:line:5017",
+          "source_id": "base-game-scripts",
+          "source_kind": "base_game_source",
+          "value": "Get a little help from your friends."
+        }
+      ],
+      "conflict_id": "61a453a995037a4472b2c60857edd4d2d9bda5b5ce75bcce1cb3a8f5cf656197",
+      "field": "description:en",
+      "selected": "I hope these don't hatch. Period.",
+      "subject": "base_game:spidereggsack"
     },
     {
       "candidates": [
@@ -392,10 +722,32 @@
           "value": "Một chút giúp đỡ từ các người bạn."
         }
       ],
-      "conflict_id": "65c67b0c114b9fd3ebcbfc910f60b2fc79f193226a9888f87574f99cf5572ff4",
+      "conflict_id": "a682853a77843068a1e70e9080c722aa88dfe99e596ce8725b152b6354a7d891",
       "field": "description:vi",
-      "selected": "Một chút giúp đỡ từ các người bạn.",
+      "selected": "Tôi hi vọng nó sẽ không nở. Trời đất.",
       "subject": "base_game:spidereggsack"
+    },
+    {
+      "candidates": [
+        {
+          "confidence": 1.0,
+          "locator": "scripts/speech_wilson.lua:line:1652",
+          "source_id": "base-game-scripts",
+          "source_kind": "base_game_source",
+          "value": "I wonder where this is from?"
+        },
+        {
+          "confidence": 1.0,
+          "locator": "scripts/strings.lua:line:5015",
+          "source_id": "base-game-scripts",
+          "source_kind": "base_game_source",
+          "value": "Combine tiny bits into a big chunk."
+        }
+      ],
+      "conflict_id": "3760662e15fde494564426feb1de1fd2b81fa5d9f21ea3a773c588a4895132e2",
+      "field": "description:en",
+      "selected": "I wonder where this is from?",
+      "subject": "base_game:thulecite"
     },
     {
       "candidates": [
@@ -414,10 +766,32 @@
           "value": "Kết hợp các mảnh nhỏ thành một đoạn lớn."
         }
       ],
-      "conflict_id": "e5dd0391446c33e5e82d20fecb209af475f53ab314b25b1460a384f0bdbefe80",
+      "conflict_id": "7f695c23849a5099d17e5100755ee5c5661c43f1ac101c4c462a5f1b70499546",
       "field": "description:vi",
-      "selected": "Kết hợp các mảnh nhỏ thành một đoạn lớn.",
+      "selected": "Tôi tự hỏi, nơi này là từ đâu?",
       "subject": "base_game:thulecite"
+    },
+    {
+      "candidates": [
+        {
+          "confidence": 1.0,
+          "locator": "scripts/speech_wilson.lua:line:3351",
+          "source_id": "base-game-scripts",
+          "source_kind": "base_game_source",
+          "value": "It's a bunch of small twigs."
+        },
+        {
+          "confidence": 1.0,
+          "locator": "scripts/strings.lua:line:5874",
+          "source_id": "base-game-scripts",
+          "source_kind": "base_game_source",
+          "value": "A single twig can make all the difference."
+        }
+      ],
+      "conflict_id": "9b22332fbac783403cdd32c9576bbdcf11aceab3ac40a088475e0d82396f758e",
+      "field": "description:en",
+      "selected": "It's a bunch of small twigs.",
+      "subject": "base_game:twigs"
     },
     {
       "candidates": [
@@ -436,9 +810,9 @@
           "value": "Một cành cây có thể tạo nên sự khác biệt."
         }
       ],
-      "conflict_id": "d3054f5e0e6f05f570109f04f5968fad708f39d03a76c13d5b708e807968c9f0",
+      "conflict_id": "6a6c60042692a6202545ee807eaea59f7d87e66c1c69830fb5dd86979c4c8646",
       "field": "description:vi",
-      "selected": "Một cành cây có thể tạo nên sự khác biệt.",
+      "selected": "Đó là một loạt các cành cây nhỏ.",
       "subject": "base_game:twigs"
     },
     {
@@ -7787,6 +8161,34 @@
           "value": "unknown"
         },
         {
+          "confidence": 1.0,
+          "locator": "line:30",
+          "source_id": "tu-tien-translation",
+          "source_kind": "mod_translation",
+          "value": "character"
+        },
+        {
+          "confidence": 1.0,
+          "locator": "line:35",
+          "source_id": "tu-tien-translation",
+          "source_kind": "mod_translation",
+          "value": "character"
+        },
+        {
+          "confidence": 1.0,
+          "locator": "line:48",
+          "source_id": "tu-tien-translation",
+          "source_kind": "mod_translation",
+          "value": "character"
+        },
+        {
+          "confidence": 1.0,
+          "locator": "line:57",
+          "source_id": "tu-tien-translation",
+          "source_kind": "mod_translation",
+          "value": "character"
+        },
+        {
           "confidence": 0.9,
           "locator": "filename",
           "source_id": "mod-prefab:scripts/prefabs/xd_hantianzun.lua",
@@ -7801,7 +8203,7 @@
           "value": "unknown"
         }
       ],
-      "conflict_id": "075cb4caa3f7e96a97a1ba06e8f1d0ce19cc89676c9ef30a83142a03b9742d68",
+      "conflict_id": "10940fd23e205062cb928787a71637ff881b88541e7a6ae145c85f404fd1c5ed",
       "field": "entity_type",
       "selected": "unknown",
       "subject": "tu_tien:xd_hantianzun"
@@ -9467,6 +9869,34 @@
           "value": "unknown"
         },
         {
+          "confidence": 1.0,
+          "locator": "line:27",
+          "source_id": "tu-tien-translation",
+          "source_kind": "mod_translation",
+          "value": "character"
+        },
+        {
+          "confidence": 1.0,
+          "locator": "line:33",
+          "source_id": "tu-tien-translation",
+          "source_kind": "mod_translation",
+          "value": "character"
+        },
+        {
+          "confidence": 1.0,
+          "locator": "line:45",
+          "source_id": "tu-tien-translation",
+          "source_kind": "mod_translation",
+          "value": "character"
+        },
+        {
+          "confidence": 1.0,
+          "locator": "line:54",
+          "source_id": "tu-tien-translation",
+          "source_kind": "mod_translation",
+          "value": "character"
+        },
+        {
           "confidence": 0.9,
           "locator": "filename",
           "source_id": "mod-prefab:scripts/prefabs/xd_jingwei.lua",
@@ -9488,7 +9918,7 @@
           "value": "unknown"
         }
       ],
-      "conflict_id": "16dbf063914d5fd84af4551f0ee052c4a687c91e9eda160b43c964318392e39f",
+      "conflict_id": "2879352a1d9ffc724b0d71afab1aed32a431f8c0ce1eb55f3afe313f5dbb61a8",
       "field": "entity_type",
       "selected": "unknown",
       "subject": "tu_tien:xd_jingwei"
@@ -11843,6 +12273,34 @@
           "value": "unknown"
         },
         {
+          "confidence": 1.0,
+          "locator": "line:23",
+          "source_id": "tu-tien-translation",
+          "source_kind": "mod_translation",
+          "value": "character"
+        },
+        {
+          "confidence": 1.0,
+          "locator": "line:32",
+          "source_id": "tu-tien-translation",
+          "source_kind": "mod_translation",
+          "value": "character"
+        },
+        {
+          "confidence": 1.0,
+          "locator": "line:41",
+          "source_id": "tu-tien-translation",
+          "source_kind": "mod_translation",
+          "value": "character"
+        },
+        {
+          "confidence": 1.0,
+          "locator": "line:50",
+          "source_id": "tu-tien-translation",
+          "source_kind": "mod_translation",
+          "value": "character"
+        },
+        {
           "confidence": 0.9,
           "locator": "filename",
           "source_id": "mod-prefab:scripts/prefabs/xd_luoshen.lua",
@@ -11857,7 +12315,7 @@
           "value": "unknown"
         }
       ],
-      "conflict_id": "449d9e1bad8dca80a97c3e1b68c0769c152d7a5477d33ceee4e2d182ba9b826d",
+      "conflict_id": "624bad38b8f9a0863216db13b0a042efb2cff7e0d6f58173ff82b8684e4c56b8",
       "field": "entity_type",
       "selected": "unknown",
       "subject": "tu_tien:xd_luoshen"
@@ -12654,9 +13112,9 @@
           "value": "Tiêu hao 10 điểm máu để tạo ra một cánh hoa"
         }
       ],
-      "conflict_id": "851536bf2ded60ca11b5479234466a37184ffccb6f6fe06349b79230ad34adaf",
+      "conflict_id": "16010b47de6ccc89193c90529d206b06c5c55ad22e72fd87665e4af6b3ae0ab9",
       "field": "description:vi",
-      "selected": "Tiêu hao 10 điểm máu để tạo ra một cánh hoa",
+      "selected": "Chắc chắn đã cho thấy ai là ông chủ của những bông hoa đó!",
       "subject": "tu_tien:xd_luoshen_petals"
     },
     {
@@ -12676,9 +13134,9 @@
           "value": "Tiêu hao 10 điểm máu để tạo ra một cánh hoa sẫm màu"
         }
       ],
-      "conflict_id": "c4e0d07b4d58fdf76df2fbae84f047819d304d410130a7bef8f68c09cec03d84",
+      "conflict_id": "d64a8a0eabeb3fc25e5415f64022a71d8e66ec0bd588283404d4c3b199046d28",
       "field": "description:vi",
-      "selected": "Tiêu hao 10 điểm máu để tạo ra một cánh hoa sẫm màu",
+      "selected": "Tôi không chắc mình muốn giữ những thứ đó.",
       "subject": "tu_tien:xd_luoshen_petals_evil"
     },
     {
@@ -12698,9 +13156,9 @@
           "value": "Huyết nhục của cây cối"
         }
       ],
-      "conflict_id": "c1730bff7e6b04d580e75110a26423a564f4e61111f1186c820a521d77e0ab10",
+      "conflict_id": "735782e4c2f0e048be7860f67fbb866dbd61c886e5cc211bd39495e8e4afbbec",
       "field": "description:vi",
-      "selected": "Huyết nhục của cây cối",
+      "selected": "Đó không trông rất hấp dẫn.",
       "subject": "tu_tien:xd_luoshen_plantmeat"
     },
     {
@@ -15570,6 +16028,34 @@
           "value": "unknown"
         },
         {
+          "confidence": 1.0,
+          "locator": "line:24",
+          "source_id": "tu-tien-translation",
+          "source_kind": "mod_translation",
+          "value": "character"
+        },
+        {
+          "confidence": 1.0,
+          "locator": "line:34",
+          "source_id": "tu-tien-translation",
+          "source_kind": "mod_translation",
+          "value": "character"
+        },
+        {
+          "confidence": 1.0,
+          "locator": "line:43",
+          "source_id": "tu-tien-translation",
+          "source_kind": "mod_translation",
+          "value": "character"
+        },
+        {
+          "confidence": 1.0,
+          "locator": "line:52",
+          "source_id": "tu-tien-translation",
+          "source_kind": "mod_translation",
+          "value": "character"
+        },
+        {
           "confidence": 0.9,
           "locator": "filename",
           "source_id": "mod-prefab:scripts/prefabs/xd_shiji.lua",
@@ -15584,7 +16070,7 @@
           "value": "unknown"
         }
       ],
-      "conflict_id": "c2c4a337f6e6bd987cc68589fedf6542b1cf7d995a5d64b22497c697d5ac51e8",
+      "conflict_id": "6e4beb798f9aad9ef8c72e278889838dc9b7cb9c52e862b2553551fa4ca03cb1",
       "field": "entity_type",
       "selected": "unknown",
       "subject": "tu_tien:xd_shiji"
@@ -18078,6 +18564,34 @@
           "value": "unknown"
         },
         {
+          "confidence": 1.0,
+          "locator": "line:29",
+          "source_id": "tu-tien-translation",
+          "source_kind": "mod_translation",
+          "value": "character"
+        },
+        {
+          "confidence": 1.0,
+          "locator": "line:39",
+          "source_id": "tu-tien-translation",
+          "source_kind": "mod_translation",
+          "value": "character"
+        },
+        {
+          "confidence": 1.0,
+          "locator": "line:47",
+          "source_id": "tu-tien-translation",
+          "source_kind": "mod_translation",
+          "value": "character"
+        },
+        {
+          "confidence": 1.0,
+          "locator": "line:56",
+          "source_id": "tu-tien-translation",
+          "source_kind": "mod_translation",
+          "value": "character"
+        },
+        {
           "confidence": 0.9,
           "locator": "filename",
           "source_id": "mod-prefab:scripts/prefabs/xd_sudaji.lua",
@@ -18092,7 +18606,7 @@
           "value": "unknown"
         }
       ],
-      "conflict_id": "f32c1e64721911e9cb07bba7c60d950890c6b6ac07e9acd21918dc6dc952faa5",
+      "conflict_id": "d0922c97fb9957949319ccbdaa5fb658846d6398bec9b200113c5670410e452f",
       "field": "entity_type",
       "selected": "unknown",
       "subject": "tu_tien:xd_sudaji"
@@ -19640,6 +20154,34 @@
           "value": "unknown"
         },
         {
+          "confidence": 1.0,
+          "locator": "line:25",
+          "source_id": "tu-tien-translation",
+          "source_kind": "mod_translation",
+          "value": "character"
+        },
+        {
+          "confidence": 1.0,
+          "locator": "line:37",
+          "source_id": "tu-tien-translation",
+          "source_kind": "mod_translation",
+          "value": "character"
+        },
+        {
+          "confidence": 1.0,
+          "locator": "line:46",
+          "source_id": "tu-tien-translation",
+          "source_kind": "mod_translation",
+          "value": "character"
+        },
+        {
+          "confidence": 1.0,
+          "locator": "line:53",
+          "source_id": "tu-tien-translation",
+          "source_kind": "mod_translation",
+          "value": "character"
+        },
+        {
           "confidence": 0.9,
           "locator": "filename",
           "source_id": "mod-prefab:scripts/prefabs/xd_wangmazi.lua",
@@ -19654,7 +20196,7 @@
           "value": "unknown"
         }
       ],
-      "conflict_id": "77a052b16901c17e59d1254ea3b7ebc1ac1e6d25d64b89bc777dc366cc1eb8c2",
+      "conflict_id": "0d35ae189193ab68b61045a52379cbe454d4c1b87204d1a9b51f4e32548cfd99",
       "field": "entity_type",
       "selected": "unknown",
       "subject": "tu_tien:xd_wangmazi"
@@ -20740,6 +21282,34 @@
           "value": "unknown"
         },
         {
+          "confidence": 1.0,
+          "locator": "line:28",
+          "source_id": "tu-tien-translation",
+          "source_kind": "mod_translation",
+          "value": "character"
+        },
+        {
+          "confidence": 1.0,
+          "locator": "line:38",
+          "source_id": "tu-tien-translation",
+          "source_kind": "mod_translation",
+          "value": "character"
+        },
+        {
+          "confidence": 1.0,
+          "locator": "line:42",
+          "source_id": "tu-tien-translation",
+          "source_kind": "mod_translation",
+          "value": "character"
+        },
+        {
+          "confidence": 1.0,
+          "locator": "line:55",
+          "source_id": "tu-tien-translation",
+          "source_kind": "mod_translation",
+          "value": "character"
+        },
+        {
           "confidence": 0.9,
           "locator": "filename",
           "source_id": "mod-prefab:scripts/prefabs/xd_wukong.lua",
@@ -20754,7 +21324,7 @@
           "value": "unknown"
         }
       ],
-      "conflict_id": "730b1491e5399eb9ce4752ea54378e5b5f9fa272284f82d1e1738dc3dce00f21",
+      "conflict_id": "d4c779037e4f797a62d92aa3b611b9b1c1a26f0490a6b379231a50aefb15a719",
       "field": "entity_type",
       "selected": "unknown",
       "subject": "tu_tien:xd_wukong"
@@ -22364,6 +22934,34 @@
           "value": "unknown"
         },
         {
+          "confidence": 1.0,
+          "locator": "line:26",
+          "source_id": "tu-tien-translation",
+          "source_kind": "mod_translation",
+          "value": "character"
+        },
+        {
+          "confidence": 1.0,
+          "locator": "line:36",
+          "source_id": "tu-tien-translation",
+          "source_kind": "mod_translation",
+          "value": "character"
+        },
+        {
+          "confidence": 1.0,
+          "locator": "line:44",
+          "source_id": "tu-tien-translation",
+          "source_kind": "mod_translation",
+          "value": "character"
+        },
+        {
+          "confidence": 1.0,
+          "locator": "line:51",
+          "source_id": "tu-tien-translation",
+          "source_kind": "mod_translation",
+          "value": "character"
+        },
+        {
           "confidence": 0.9,
           "locator": "filename",
           "source_id": "mod-prefab:scripts/prefabs/xd_yunxiao.lua",
@@ -22378,7 +22976,7 @@
           "value": "unknown"
         }
       ],
-      "conflict_id": "ad1d2bc436ffcc1cdea6a7305614ef1b611f39972d37132f0fc805adf28ac3e3",
+      "conflict_id": "33e756aff489bec907b5f52f7238628e1b0a1cf44bcce296f464b3c8840c268c",
       "field": "entity_type",
       "selected": "unknown",
       "subject": "tu_tien:xd_yunxiao"
@@ -23952,7 +24550,7 @@
         "missing": "images/inventoryimages.tex",
         "path": "images/inventoryimages.xml"
       },
-      "error_id": "2e5f3a98c0f5ed1df0052638f157bcf33eb7b46cd36c589e9492147799500f2b",
+      "error_id": "c54fabc22101a1f1fab4d906920278dc22b11d5ba689a98d674920af8257af31",
       "locator": "images/inventoryimages.xml",
       "source_kind": "bundle",
       "subject": "images/inventoryimages.xml"
@@ -23967,7 +24565,7 @@
         "path": "scripts/prefabs/bananabush.lua",
         "source_prefab_id": "bananabush"
       },
-      "error_id": "5731f562e4b06fe16ca0325639da3c3263bbe56e0bbb47277e6a5b16364856b0",
+      "error_id": "660a0ba23ce331a5c8666c4525218c163dfadac925f71653853b26b45bf436a9",
       "locator": "scripts/prefabs/bananabush.lua:line:186",
       "source_kind": "bundle",
       "subject": "bananabush"
@@ -23982,7 +24580,7 @@
         "path": "scripts/prefabs/dock_woodposts.lua",
         "source_prefab_id": "dock_woodposts"
       },
-      "error_id": "ea72a454b7aff5a8e4bba2d08667ef20029ff46ac4eb1ed05aee2e6331cb4d73",
+      "error_id": "55f06036db244ea408cc1fb40269a0695aa87a827173007c0f4e1c15d8844a2e",
       "locator": "scripts/prefabs/dock_woodposts.lua:line:85",
       "source_kind": "bundle",
       "subject": "dock_woodposts"
@@ -23997,7 +24595,7 @@
         "path": "scripts/prefabs/fence_electric.lua",
         "source_prefab_id": "fence_electric"
       },
-      "error_id": "f966180e82ac98060b14189a8f88339b3e62e606cfd9d00f4de30dc81e71a293",
+      "error_id": "1357ae2c783e7e16e124dec0cdfee3a020894fb2d864d93d93aafd2ea3263c98",
       "locator": "scripts/prefabs/fence_electric.lua:line:176",
       "source_kind": "bundle",
       "subject": "fence_electric"
@@ -24012,7 +24610,7 @@
         "path": "scripts/prefabs/gingerbreadpig.lua",
         "source_prefab_id": "gingerbreadpig"
       },
-      "error_id": "fd9e4ecffa95a4e1aa88325e1dd55515b3b44ea23aec87d0e5fbf38cf68f7529",
+      "error_id": "36a61175714baa0dc75a989bc45743cf2456cb825b00ced146a3e4ca318f9df1",
       "locator": "scripts/prefabs/gingerbreadpig.lua:line:142",
       "source_kind": "bundle",
       "subject": "gingerbreadpig"
@@ -24027,7 +24625,7 @@
         "path": "scripts/prefabs/gnarwail.lua",
         "source_prefab_id": "gnarwail_attack_horn"
       },
-      "error_id": "4216cc871011b5ee3d0e59883c04d804626ea4502659a64c2bb4bccfdf4d8a59",
+      "error_id": "15983e34238407a6237083e9e274436d8b18c5005e7119d8f373c174cbec6d48",
       "locator": "scripts/prefabs/gnarwail.lua:line:170",
       "source_kind": "bundle",
       "subject": "gnarwail_attack_horn"
@@ -24042,7 +24640,7 @@
         "path": "scripts/prefabs/gnarwail.lua",
         "source_prefab_id": "gnarwail"
       },
-      "error_id": "b63636816839563c206f38bba049f890654da3f9b5caa94792373a1bdfe3261e",
+      "error_id": "8dd0f56609fbb1b71c0d39ffae4bfaecda54d4dfd35c269c38cf9e32cdef65f3",
       "locator": "scripts/prefabs/gnarwail.lua:line:390",
       "source_kind": "bundle",
       "subject": "gnarwail"
@@ -24057,7 +24655,7 @@
         "path": "scripts/prefabs/gnarwail.lua",
         "source_prefab_id": "gnarwail"
       },
-      "error_id": "9733d9673995972312499b4a913e39f5ed06895587685def79adac8284ab0721",
+      "error_id": "9820e212acc5951beeb366d66792a56da463fc0e96a63639030a9f42c542c4c1",
       "locator": "scripts/prefabs/gnarwail.lua:line:394",
       "source_kind": "bundle",
       "subject": "gnarwail"
@@ -24072,7 +24670,7 @@
         "path": "scripts/prefabs/grassgator.lua",
         "source_prefab_id": "grassgator"
       },
-      "error_id": "1f9124efb77c58652cae6137195b126bcb9b3b1437ec68145a383497a199be1f",
+      "error_id": "4f623da11ae57fbbec34b09bf225f5bd7cb354731c6baf50ca324ab98637affa",
       "locator": "scripts/prefabs/grassgator.lua:line:193",
       "source_kind": "bundle",
       "subject": "grassgator"
@@ -24087,7 +24685,7 @@
         "path": "scripts/prefabs/hotspring.lua",
         "source_prefab_id": "hotspring"
       },
-      "error_id": "2a4ceff644e306c6be70c4df2c81610d86d3ad66e0d279a76f02dbdc4dfaf70a",
+      "error_id": "f0d5f3cb1d54fd82aacc406b15367610999e096a3369a48be62b8601d9ffacf3",
       "locator": "scripts/prefabs/hotspring.lua:line:394",
       "source_kind": "bundle",
       "subject": "hotspring"
@@ -24102,7 +24700,7 @@
         "path": "scripts/prefabs/junk_pile.lua",
         "source_prefab_id": "junk_pile"
       },
-      "error_id": "f8b24b950ee7ea064f56a1d36d399d8e427dfdd6573103bca002286e7fce5a29",
+      "error_id": "dcb673f9243fba47aaff02b72f2ba86918cd13bb9601ff5528c4201f0a03e46d",
       "locator": "scripts/prefabs/junk_pile.lua:line:303",
       "source_kind": "bundle",
       "subject": "junk_pile"
@@ -24117,7 +24715,7 @@
         "path": "scripts/prefabs/junk_pile_big.lua",
         "source_prefab_id": "junk_pile_big"
       },
-      "error_id": "1198bd5b0302d941172b25b2b46826383dc083c7ddd0ac72d1f876f57daa4d9c",
+      "error_id": "b53f3d0b63f0a137b7e2ed06fcfbdb8692f1a5b82fbb393d3fb548078761a649",
       "locator": "scripts/prefabs/junk_pile_big.lua:line:580",
       "source_kind": "bundle",
       "subject": "junk_pile_big"
@@ -24132,7 +24730,7 @@
         "path": "scripts/prefabs/klaus.lua",
         "source_prefab_id": "klaus"
       },
-      "error_id": "fc96042d542a5287b2a1b16cb6c219038e9270ccf16551dba5f7d11e92c08208",
+      "error_id": "724993cc9675fc8e55af811955df29ce0db1db5e615d94e37e8e428b249457f2",
       "locator": "scripts/prefabs/klaus.lua:line:551",
       "source_kind": "bundle",
       "subject": "klaus"
@@ -24147,7 +24745,7 @@
         "path": "scripts/prefabs/koalefant.lua",
         "source_prefab_id": "koalefant_summer"
       },
-      "error_id": "2fcf8e0dd7e97f798c54bf73faf537c1d81f43083ff0ea127a0e7b45d5bc2ed8",
+      "error_id": "dac75bc77c8576d5a27c7a14209fa14e0a082b9127234a291026bf1583e76683",
       "locator": "scripts/prefabs/koalefant.lua:line:161",
       "source_kind": "bundle",
       "subject": "koalefant_summer"
@@ -24162,7 +24760,7 @@
         "path": "scripts/prefabs/koalefant.lua",
         "source_prefab_id": "koalefant_winter"
       },
-      "error_id": "9426c7855b221942f17f2502d05850123cda046a9a7041ca043d38abbdd16fc2",
+      "error_id": "7ebcaed669f83a1192aa33cff57e49096cd1fe89d0709e22198db05a2400ec07",
       "locator": "scripts/prefabs/koalefant.lua:line:173",
       "source_kind": "bundle",
       "subject": "koalefant_winter"
@@ -24177,7 +24775,7 @@
         "path": "scripts/prefabs/lightflier_flower.lua",
         "source_prefab_id": "lightflier_flower"
       },
-      "error_id": "240b69e79df96f54004bb530382f3143b67d0c63214f256c37f6c2be57fb76ed",
+      "error_id": "3e5f98952a60bf29a027722e92ab23b88244f1cf21b0056581cab1a79e23913b",
       "locator": "scripts/prefabs/lightflier_flower.lua:line:481",
       "source_kind": "bundle",
       "subject": "lightflier_flower"
@@ -24192,7 +24790,7 @@
         "path": "scripts/prefabs/lunarthrall_plant.lua",
         "source_prefab_id": "lunarthrall_plant"
       },
-      "error_id": "f54ee806db1e541923361409ee69330df1ab566ea669508cfd03e4000a4f997f",
+      "error_id": "57936fda36976a6df8f19b84a7efb72965fa176d4d948e8befb58af9be51b928",
       "locator": "scripts/prefabs/lunarthrall_plant.lua:line:486",
       "source_kind": "bundle",
       "subject": "lunarthrall_plant"
@@ -24207,7 +24805,7 @@
         "path": "scripts/prefabs/mermking.lua",
         "source_prefab_id": "mermking"
       },
-      "error_id": "bbdbca0c0f60e895f61ec6ae18105bfc67269c8af6613051499911c578b7ea0a",
+      "error_id": "2bf1f206d28967eea418e1e8453a424173fb930789d8d0883f9a5ba09dc83d2e",
       "locator": "scripts/prefabs/mermking.lua:line:594",
       "source_kind": "bundle",
       "subject": "mermking"
@@ -24222,7 +24820,7 @@
         "path": "scripts/prefabs/molebathill.lua",
         "source_prefab_id": "molebathill"
       },
-      "error_id": "4dbaacca9f27846f07a9226207a1389d28654adc79d5d63b951f43bc4a288a95",
+      "error_id": "79c9f27c3ef1689d5bd91d4c908483b87ea97a2ecc56a16a7c40040f33ca41c2",
       "locator": "scripts/prefabs/molebathill.lua:line:99",
       "source_kind": "bundle",
       "subject": "molebathill"
@@ -24237,7 +24835,7 @@
         "path": "scripts/prefabs/monkey.lua",
         "source_prefab_id": "monkey"
       },
-      "error_id": "a766ec7e303153586ddeda7c47322edb878705c85e9f55bf97690deeaeb43ef2",
+      "error_id": "f6a7a1b9e1dba07128655de4ccb7e8836e6aa9af64bfd22ebc6ed8ee593a5e9a",
       "locator": "scripts/prefabs/monkey.lua:line:476",
       "source_kind": "bundle",
       "subject": "monkey"
@@ -24252,7 +24850,7 @@
         "path": "scripts/prefabs/monkeyhut.lua",
         "source_prefab_id": "monkeyhut"
       },
-      "error_id": "7105153da63bb9b39110fccd7ff534f73dc152c08259ebf23f78827975cc610d",
+      "error_id": "a854ca2918d7f0321df480600fd1d12887532609a841c028e0ad5dc35a6e774b",
       "locator": "scripts/prefabs/monkeyhut.lua:line:314",
       "source_kind": "bundle",
       "subject": "monkeyhut"
@@ -24267,7 +24865,7 @@
         "path": "scripts/prefabs/perd.lua",
         "source_prefab_id": "perd"
       },
-      "error_id": "30f7655f5e91511360fe6b7b1f70cf4fd2dc227e79dc20de2d4b054ff7088caf",
+      "error_id": "ba2139990913d3474701e134f0186b01dbede70a2a4f96f799dd8be105505835",
       "locator": "scripts/prefabs/perd.lua:line:155",
       "source_kind": "bundle",
       "subject": "perd"
@@ -24282,7 +24880,7 @@
         "path": "scripts/prefabs/pigtorch.lua",
         "source_prefab_id": "pigtorch"
       },
-      "error_id": "2943f86cd431fb455ec69eb5e256d9b92f918351669cede7dc8072ba6ee8885a",
+      "error_id": "3a62acf34e863b4ea95e7fa75861dab2ea8b4cf7d1ee8b9074c31fe539649c94",
       "locator": "scripts/prefabs/pigtorch.lua:line:140",
       "source_kind": "bundle",
       "subject": "pigtorch"
@@ -24297,7 +24895,7 @@
         "path": "scripts/prefabs/pondfish.lua",
         "source_prefab_id": "pondeel"
       },
-      "error_id": "72592fd0922e16bc161766a022fb396e065daaad5fa141ab8a93036600d78b27",
+      "error_id": "34d537c9aa944b8337061556d9f61111071938ab27b478b6eb57073fb1fb4810",
       "locator": "scripts/prefabs/pondfish.lua:line:129",
       "source_kind": "bundle",
       "subject": "pondeel"
@@ -24312,7 +24910,7 @@
         "path": "scripts/prefabs/pondfish.lua",
         "source_prefab_id": "pondfish"
       },
-      "error_id": "f58f0ea58bb8b46edc2e374b30a191568c53b6b16e8fc7bed5b2acd80bb20be7",
+      "error_id": "f92e28cdb826717e1a7b04de31a82c6b23edecef0bedf12099a9377859ee3c79",
       "locator": "scripts/prefabs/pondfish.lua:line:129",
       "source_kind": "bundle",
       "subject": "pondfish"
@@ -24327,7 +24925,7 @@
         "path": "scripts/prefabs/rabbitking.lua",
         "source_prefab_id": "rabbitking_passive"
       },
-      "error_id": "e3edc9b5ac2d6b97ac07a8eb3eebdf971604af35151e6fc6f43835932103d1d9",
+      "error_id": "a2959595984666c7100c248ca42f9e281d727da74acbc9523ca63d6338be6f2e",
       "locator": "scripts/prefabs/rabbitking.lua:line:133",
       "source_kind": "bundle",
       "subject": "rabbitking_passive"
@@ -24342,7 +24940,7 @@
         "path": "scripts/prefabs/rabbitking.lua",
         "source_prefab_id": "rabbitking_aggressive"
       },
-      "error_id": "b7e70648da6d8099a0af91f835c1c20ee64fb3a2ccc4e63b1b3792e065703c60",
+      "error_id": "39abfa9606b9004face5ef1ed2d1f7f8a632253c87d026c074d66c5246e25312",
       "locator": "scripts/prefabs/rabbitking.lua:line:281",
       "source_kind": "bundle",
       "subject": "rabbitking_aggressive"
@@ -24357,7 +24955,7 @@
         "path": "scripts/prefabs/rabbitking.lua",
         "source_prefab_id": "rabbitking_lucky"
       },
-      "error_id": "4e51710f4f0046660f046d4cbda7b9f55fd75069fc8d143b56cb40554b9518c8",
+      "error_id": "9af06ab919bf676f97826bb0ae3f3305eeb290dc3bd3763130c624d3352f537d",
       "locator": "scripts/prefabs/rabbitking.lua:line:585",
       "source_kind": "bundle",
       "subject": "rabbitking_lucky"
@@ -24372,7 +24970,7 @@
         "path": "scripts/prefabs/rock_ice.lua",
         "source_prefab_id": "rock_ice"
       },
-      "error_id": "585c9b7f3f1fa5cda662510732cc2bc2d82ca14ab89b741e3a694cc04be76da7",
+      "error_id": "e864305018573b82d220027844d216ebc3a4004d7762e0910f05fb5b3ad51a30",
       "locator": "scripts/prefabs/rock_ice.lua:line:15",
       "source_kind": "bundle",
       "subject": "rock_ice"
@@ -24387,7 +24985,7 @@
         "path": "scripts/prefabs/ruins_shadeling.lua",
         "source_prefab_id": "ruins_shadeling"
       },
-      "error_id": "ccabb74d8b50252be3e9bf9bced7d04eeb120f8e28c5635ec77a88379bf1dfc4",
+      "error_id": "a43a8fdecf4eb37ca3b9d8db20c6bc6eecdfa62b0b2005c3d5c7f36282624b13",
       "locator": "scripts/prefabs/ruins_shadeling.lua:line:149",
       "source_kind": "bundle",
       "subject": "ruins_shadeling"
@@ -24402,7 +25000,7 @@
         "path": "scripts/prefabs/ruins_shadeling.lua",
         "source_prefab_id": "ruins_shadeling"
       },
-      "error_id": "63276ad2a9fbdae44a6a4ced1fd372c0139cd2099bab7d35a394b154a50cb072",
+      "error_id": "72f95d3943f48b0c7fe3eac608a2426eadb30dc4f5fa1272cb23f53fe774c853",
       "locator": "scripts/prefabs/ruins_shadeling.lua:line:162",
       "source_kind": "bundle",
       "subject": "ruins_shadeling"
@@ -24417,7 +25015,7 @@
         "path": "scripts/prefabs/ruins_shadeling.lua",
         "source_prefab_id": "ruins_shadeling"
       },
-      "error_id": "b946d1ac57bd1f5c7e590ebb58d157d796d4cd884476153f6e0fbe0b4c584a30",
+      "error_id": "8e677575125079eb2a0696dbff797eb47f5ac6a0a4af64bd316882617aafccfb",
       "locator": "scripts/prefabs/ruins_shadeling.lua:line:169",
       "source_kind": "bundle",
       "subject": "ruins_shadeling"
@@ -24432,7 +25030,7 @@
         "path": "scripts/prefabs/shadow_leech.lua",
         "source_prefab_id": "shadow_leech"
       },
-      "error_id": "c007faadbb09a637d025e9cf4f596f03d581204548454adf2050e09105f0c831",
+      "error_id": "d50c652e0ab10cafc41e9cf7899129014844b0af84c991e9a942b2a784b6f935",
       "locator": "scripts/prefabs/shadow_leech.lua:line:114",
       "source_kind": "bundle",
       "subject": "shadow_leech"
@@ -24447,7 +25045,7 @@
         "path": "scripts/prefabs/shadowheart_infused.lua",
         "source_prefab_id": "shadowheart_infused"
       },
-      "error_id": "5126cf00ed41e7fd3499a051b3ed6d837f9a66ccd94da243157e7d391e40f4bc",
+      "error_id": "023aca53781737ab40193bf2bf20d55d235563f40af9a47ce4f1dab14625ea94",
       "locator": "scripts/prefabs/shadowheart_infused.lua:line:131",
       "source_kind": "bundle",
       "subject": "shadowheart_infused"
@@ -24462,7 +25060,7 @@
         "path": "scripts/prefabs/spiderqueen.lua",
         "source_prefab_id": "spiderqueen"
       },
-      "error_id": "d5bf903c478ed4b2f3c28befe8ef1da313458315099a1c2bb9ff4c2006ba0531",
+      "error_id": "ab88b3f678f00559ed398309a963d206bdabbee19a335fda154ea9aba50d770b",
       "locator": "scripts/prefabs/spiderqueen.lua:line:154",
       "source_kind": "bundle",
       "subject": "spiderqueen"
@@ -24477,7 +25075,7 @@
         "path": "scripts/prefabs/statueruins.lua",
         "source_prefab_id": "ruins_statue_head"
       },
-      "error_id": "4022727e650478e9a8b99d919485c23e4c1500644c59ed8e69292eb3ea144909",
+      "error_id": "7cdb9b79501b0c8320f33db68e0642dc7f37bd15f3211aaad0231c7e00d8a216",
       "locator": "scripts/prefabs/statueruins.lua:line:197",
       "source_kind": "bundle",
       "subject": "ruins_statue_head"
@@ -24492,7 +25090,7 @@
         "path": "scripts/prefabs/statueruins.lua",
         "source_prefab_id": "ruins_statue_mage"
       },
-      "error_id": "780a9655bd124b54852050cef561f5cc26213ed639075c7ff15290ecfbb1c253",
+      "error_id": "a6ef99e8025ada3a0d25b6c569165a8b5a93abaf307ac215c465e209c366ebc8",
       "locator": "scripts/prefabs/statueruins.lua:line:197",
       "source_kind": "bundle",
       "subject": "ruins_statue_mage"
@@ -24507,7 +25105,7 @@
         "path": "scripts/prefabs/succulent_plant.lua",
         "source_prefab_id": "succulent_plant"
       },
-      "error_id": "57408c2a696e15af195227138c9bbea861ab17fbc923396c6d70543b6473bc4f",
+      "error_id": "d94d6dd2657b46f68b7b4d16625e4b66aec647dcb3480bb8dc5f09b9f7f223de",
       "locator": "scripts/prefabs/succulent_plant.lua:line:66",
       "source_kind": "bundle",
       "subject": "succulent_plant"
@@ -24522,7 +25120,7 @@
         "path": "scripts/prefabs/tallbird.lua",
         "source_prefab_id": "tallbird"
       },
-      "error_id": "6bce8b18c7e9fc0ada30445dbbcafd5e826abcf0c956820ebf5fe23743e9b5c0",
+      "error_id": "ed8360a1aab6288557fca8504afc281361267f07801438745d86d2742da6b02e",
       "locator": "scripts/prefabs/tallbird.lua:line:201",
       "source_kind": "bundle",
       "subject": "tallbird"
@@ -24537,7 +25135,7 @@
         "path": "scripts/prefabs/toadstool.lua",
         "source_prefab_id": "toadstool_dark"
       },
-      "error_id": "7e7b42eb71fb2d8b0f25c7b707ad04866e5c7449e4e23e330a662d2898f5a01b",
+      "error_id": "a98d9ca8c65874aff6de820dad677ef9f22a181080bbe80967a5887291b0c462",
       "locator": "scripts/prefabs/toadstool.lua:line:63",
       "source_kind": "bundle",
       "subject": "toadstool_dark"
@@ -24552,7 +25150,7 @@
         "path": "scripts/prefabs/toadstool.lua",
         "source_prefab_id": "toadstool"
       },
-      "error_id": "f2f3855da92f5f7c8ec5947703431cf0e521a0f3f2bf52f1354f143a04ea95bf",
+      "error_id": "da45948bb249253fa6172860859b3173ce8e1fdba52a3230a2d14ad05be8b4a3",
       "locator": "scripts/prefabs/toadstool.lua:line:63",
       "source_kind": "bundle",
       "subject": "toadstool"
@@ -24567,7 +25165,7 @@
         "path": "scripts/prefabs/toadstool.lua",
         "source_prefab_id": "toadstool"
       },
-      "error_id": "7458bbf67a5dec6e95066be966fb5675027b6d186093800e432584a2b5c72488",
+      "error_id": "9d4bf01e3b1c951704dfb527a8987ed9681f2229840b2b4d995702094e7b8a99",
       "locator": "scripts/prefabs/toadstool.lua:line:64",
       "source_kind": "bundle",
       "subject": "toadstool"
@@ -24582,7 +25180,7 @@
         "path": "scripts/prefabs/toadstool.lua",
         "source_prefab_id": "toadstool_dark"
       },
-      "error_id": "a0367a25034fd0944917ecc3e303a28bd40bf18830b657e281a42c8c67b875f3",
+      "error_id": "f7c2f9fe7ca60ba1f2b8ec1f18d744a0a5d4f2dcf85986d66fe9ad72a64c095b",
       "locator": "scripts/prefabs/toadstool.lua:line:64",
       "source_kind": "bundle",
       "subject": "toadstool_dark"
@@ -24597,7 +25195,7 @@
         "path": "scripts/prefabs/toadstool.lua",
         "source_prefab_id": "toadstool"
       },
-      "error_id": "3cc1a3dc393eadbb96568238190a585b1e804fc28bf0de3a7f1ac45854307577",
+      "error_id": "114016183f277a37625b66255b7c735a177c17d07b56c58291cd83aad85d3884",
       "locator": "scripts/prefabs/toadstool.lua:line:65",
       "source_kind": "bundle",
       "subject": "toadstool"
@@ -24612,7 +25210,7 @@
         "path": "scripts/prefabs/toadstool.lua",
         "source_prefab_id": "toadstool_dark"
       },
-      "error_id": "f1a0a581da26878f01063c3da12f13e3d07fcefe2b590d8ed9eb3b2857d4668a",
+      "error_id": "6bfd4c2cf73cba86e761249f85d067be1483c5c87bac88bad683568ecbe72941",
       "locator": "scripts/prefabs/toadstool.lua:line:65",
       "source_kind": "bundle",
       "subject": "toadstool_dark"
@@ -24627,7 +25225,7 @@
         "path": "scripts/prefabs/toadstool.lua",
         "source_prefab_id": "toadstool"
       },
-      "error_id": "8dda166786db3099703d00e106d80f0ce5e39adc8b18070a91fcc84b42adf771",
+      "error_id": "fa24f8504713745dbc49c2e3491b6686075934a6da2655e347fb209288d0997a",
       "locator": "scripts/prefabs/toadstool.lua:line:71",
       "source_kind": "bundle",
       "subject": "toadstool"
@@ -24642,7 +25240,7 @@
         "path": "scripts/prefabs/toadstool.lua",
         "source_prefab_id": "toadstool"
       },
-      "error_id": "9cc4d7c50042c78c0a9b22086fb453bec6caa7ea33455d498c4e9fe97b4085b4",
+      "error_id": "4eb33b2526aaef59c03919a5f8b1796ac78731ff89fd6fde21ac5588a55ff394",
       "locator": "scripts/prefabs/toadstool.lua:line:74",
       "source_kind": "bundle",
       "subject": "toadstool"
@@ -24657,7 +25255,7 @@
         "path": "scripts/prefabs/toadstool.lua",
         "source_prefab_id": "toadstool_dark"
       },
-      "error_id": "8734d36dd014c0d702728f19498211b6a77c3ca53a711f2b3141ec192d5c921a",
+      "error_id": "898683b2b31e572a6e59884301bf4ba843521c8371cf3e2de4781351b921b3c7",
       "locator": "scripts/prefabs/toadstool.lua:line:82",
       "source_kind": "bundle",
       "subject": "toadstool_dark"
@@ -24672,7 +25270,7 @@
         "path": "scripts/prefabs/toadstool.lua",
         "source_prefab_id": "toadstool_dark"
       },
-      "error_id": "7fe10cc3dd9110cc6b5420da62461a9d2633120f1acd88f1ff16027b891d9f1f",
+      "error_id": "fac6892d655892fef71d42802df8220b9f42de0726483ade673cf980309eeeac",
       "locator": "scripts/prefabs/toadstool.lua:line:83",
       "source_kind": "bundle",
       "subject": "toadstool_dark"
@@ -24687,7 +25285,7 @@
         "path": "scripts/prefabs/vault_switch.lua",
         "source_prefab_id": "vault_switch"
       },
-      "error_id": "120fb57ba89418a8b23137a6bc4f2543f86531004219a5409130009c7e8133e1",
+      "error_id": "e74bf37638229a07c6325a531be65a6d81c52cd21c46ab2ebbf16b87b924240e",
       "locator": "scripts/prefabs/vault_switch.lua:line:73",
       "source_kind": "bundle",
       "subject": "vault_switch"
@@ -24700,12 +25298,12 @@
         "expression": "inst.fish_def.loot",
         "line": 368,
         "path": "scripts/prefabs/wobster.lua",
-        "source_prefab_id": "wobster_moonglass_land"
+        "source_prefab_id": "wobster_sheller_land"
       },
-      "error_id": "9d87906458f99d09bf358d96bc30a2cae56c3f9b4751c9d77a5b905294eb6ba5",
+      "error_id": "0552a3fc66cae5961eff688da1f0a40d9609967aad91850c37dfe76bc62d1798",
       "locator": "scripts/prefabs/wobster.lua:line:368",
       "source_kind": "bundle",
-      "subject": "wobster_moonglass_land"
+      "subject": "wobster_sheller_land"
     },
     {
       "code": "unsupported_base_source_subexpression",
@@ -24715,12 +25313,12 @@
         "expression": "inst.fish_def.loot",
         "line": 368,
         "path": "scripts/prefabs/wobster.lua",
-        "source_prefab_id": "wobster_sheller_land"
+        "source_prefab_id": "wobster_moonglass_land"
       },
-      "error_id": "ec5a97442cbd44af795fa99147bd4485ffeba8020e400405d26b961f76179eed",
+      "error_id": "443ecdba4f55523bd0b2ffa735704d4bace035503c9b15a93a034c2744ce594e",
       "locator": "scripts/prefabs/wobster.lua:line:368",
       "source_kind": "bundle",
-      "subject": "wobster_sheller_land"
+      "subject": "wobster_moonglass_land"
     },
     {
       "code": "unsupported_base_source_subexpression",
@@ -24732,7 +25330,7 @@
         "path": "scripts/prefabs/wx78_inventorycontainer.lua",
         "source_prefab_id": "wx78_inventorycontainer"
       },
-      "error_id": "adaefcc8db5f6f3a9b6bead826191c10a35d6efed38d703673ca5a47b089dd46",
+      "error_id": "a032c8354057ff716a35664a8f0582f34fe8a4cf6637b79e5bbd5018e2205468",
       "locator": "scripts/prefabs/wx78_inventorycontainer.lua:line:193",
       "source_kind": "bundle",
       "subject": "wx78_inventorycontainer"
@@ -24746,7 +25344,7 @@
         "path": "scripts/recipes.lua",
         "recipe": "livinglog"
       },
-      "error_id": "3d025b270f67e79e49e0b7acd12274129ab2c95ec46b14d2ac85cb01557137ad",
+      "error_id": "3be5b802216e2f311e7034e422298f1ab4e29bfcc369edd2430f13f46d81c64e",
       "locator": "scripts/recipes.lua:line:338",
       "source_kind": "bundle",
       "subject": "livinglog"
@@ -24757,48 +25355,9 @@
         "code": "unsupported_constructor_binding",
         "expression": "missing exact Prefab declaration",
         "path": "",
-        "prefab_id": "feather_canary"
-      },
-      "error_id": "04ffff0d6453d7769f6ff209e0d1b16d65c5e7bedbc0724a92e0a00f21ce54db",
-      "locator": "",
-      "source_kind": "bundle",
-      "subject": "feather_canary"
-    },
-    {
-      "code": "unsupported_constructor_binding",
-      "detail": {
-        "code": "unsupported_constructor_binding",
-        "expression": "missing exact Prefab declaration",
-        "path": "",
-        "prefab_id": "redgem"
-      },
-      "error_id": "31926c0e4d863fcae93ae1670e99e98edf93e53e9c3a04bc37fafac182d3e28a",
-      "locator": "",
-      "source_kind": "bundle",
-      "subject": "redgem"
-    },
-    {
-      "code": "unsupported_constructor_binding",
-      "detail": {
-        "code": "unsupported_constructor_binding",
-        "expression": "missing exact Prefab declaration",
-        "path": "",
-        "prefab_id": "greengem"
-      },
-      "error_id": "34c6b06a767fd2db9dec1d2ed103367b73d7ed1bc10e1eb05ce0e9a0f67732e4",
-      "locator": "",
-      "source_kind": "bundle",
-      "subject": "greengem"
-    },
-    {
-      "code": "unsupported_constructor_binding",
-      "detail": {
-        "code": "unsupported_constructor_binding",
-        "expression": "missing exact Prefab declaration",
-        "path": "",
         "prefab_id": "green_cap"
       },
-      "error_id": "49fae981ed14bf6cb3a4401d18372d93e2916f6e4df408024f0160e8a0736b9d",
+      "error_id": "006572c4031c93ccf30b84a1d383e5005c601940465eda1e4d1e1eb943d88936",
       "locator": "",
       "source_kind": "bundle",
       "subject": "green_cap"
@@ -24811,7 +25370,7 @@
         "path": "",
         "prefab_id": "spore_small"
       },
-      "error_id": "55beb700738f8532ba7f924a0767326aeedb8ba0b04320b7e2c10086d29d12ca",
+      "error_id": "12bd17c21a99df04a4c3adb93181dc5c10dca4da4356357422e597b589abab09",
       "locator": "",
       "source_kind": "bundle",
       "subject": "spore_small"
@@ -24822,35 +25381,9 @@
         "code": "unsupported_constructor_binding",
         "expression": "missing exact Prefab declaration",
         "path": "",
-        "prefab_id": "orangegem"
-      },
-      "error_id": "a22a13053ace1c1e10ab91bfe76429c0031f42b7589d6192abacc1d2d5dc88af",
-      "locator": "",
-      "source_kind": "bundle",
-      "subject": "orangegem"
-    },
-    {
-      "code": "unsupported_constructor_binding",
-      "detail": {
-        "code": "unsupported_constructor_binding",
-        "expression": "missing exact Prefab declaration",
-        "path": "",
-        "prefab_id": "opalpreciousgem"
-      },
-      "error_id": "a6638e5e40a7963975c80897b855fb1518ffeec7c0a7f3a72f5ad5123dff1689",
-      "locator": "",
-      "source_kind": "bundle",
-      "subject": "opalpreciousgem"
-    },
-    {
-      "code": "unsupported_constructor_binding",
-      "detail": {
-        "code": "unsupported_constructor_binding",
-        "expression": "missing exact Prefab declaration",
-        "path": "",
         "prefab_id": "purplegem"
       },
-      "error_id": "a6dbc292c7b17e770ba44d2993238580c7415054f1c84f97fc082e868f8bcfc5",
+      "error_id": "18ee911688dbf4d77ec3b1709ab933f2f09cb828ead10d772fbd77d58d393a10",
       "locator": "",
       "source_kind": "bundle",
       "subject": "purplegem"
@@ -24861,9 +25394,48 @@
         "code": "unsupported_constructor_binding",
         "expression": "missing exact Prefab declaration",
         "path": "",
+        "prefab_id": "opalpreciousgem"
+      },
+      "error_id": "511385f02dba45892a678b963de6d96de4e36f5d29d5a962c649e9606b3bcaec",
+      "locator": "",
+      "source_kind": "bundle",
+      "subject": "opalpreciousgem"
+    },
+    {
+      "code": "unsupported_constructor_binding",
+      "detail": {
+        "code": "unsupported_constructor_binding",
+        "expression": "missing exact Prefab declaration",
+        "path": "",
+        "prefab_id": "orangegem"
+      },
+      "error_id": "9079b80439909a3a11323a04569e18bc0bab70b06cb93c731f561a0a12a8ed01",
+      "locator": "",
+      "source_kind": "bundle",
+      "subject": "orangegem"
+    },
+    {
+      "code": "unsupported_constructor_binding",
+      "detail": {
+        "code": "unsupported_constructor_binding",
+        "expression": "missing exact Prefab declaration",
+        "path": "",
+        "prefab_id": "yellowgem"
+      },
+      "error_id": "90c7653f06b198ff2603966455d1aa6ebe0bedb39d4c00385580f79d4546d868",
+      "locator": "",
+      "source_kind": "bundle",
+      "subject": "yellowgem"
+    },
+    {
+      "code": "unsupported_constructor_binding",
+      "detail": {
+        "code": "unsupported_constructor_binding",
+        "expression": "missing exact Prefab declaration",
+        "path": "",
         "prefab_id": "stalker_atrium"
       },
-      "error_id": "aa8f56cf14140b4ffc895ccb454a0b8dc50df5267165497f5e8836e07d4a47e7",
+      "error_id": "9f05acc2cd82e276656977e451c536ee292642c1aa4b761f3fcb2c6c809e20fd",
       "locator": "",
       "source_kind": "bundle",
       "subject": "stalker_atrium"
@@ -24874,9 +25446,22 @@
         "code": "unsupported_constructor_binding",
         "expression": "missing exact Prefab declaration",
         "path": "",
+        "prefab_id": "greengem"
+      },
+      "error_id": "b3585104bcc6663d45c10940c59732a600c428dc926661c7bf10889b12f64261",
+      "locator": "",
+      "source_kind": "bundle",
+      "subject": "greengem"
+    },
+    {
+      "code": "unsupported_constructor_binding",
+      "detail": {
+        "code": "unsupported_constructor_binding",
+        "expression": "missing exact Prefab declaration",
+        "path": "",
         "prefab_id": "bluegem"
       },
-      "error_id": "e18ea3f57b4ed1355d49efc616213c799a78c5c105fb4cc3d361b598fa7ada54",
+      "error_id": "bbbe750fde717f6633001a71516156a863e1cf0019aa3aa841a2e744b95f5e01",
       "locator": "",
       "source_kind": "bundle",
       "subject": "bluegem"
@@ -24887,12 +25472,25 @@
         "code": "unsupported_constructor_binding",
         "expression": "missing exact Prefab declaration",
         "path": "",
-        "prefab_id": "yellowgem"
+        "prefab_id": "redgem"
       },
-      "error_id": "fc762b481ec4a9959ec26c3d939c46e868ac6f9897d3f3c7a93bdb9e958eb0b0",
+      "error_id": "d0ba0fd35529abcd3d1d690d65ad82c2d087a09de2e86c5192d72c208d84af60",
       "locator": "",
       "source_kind": "bundle",
-      "subject": "yellowgem"
+      "subject": "redgem"
+    },
+    {
+      "code": "unsupported_constructor_binding",
+      "detail": {
+        "code": "unsupported_constructor_binding",
+        "expression": "missing exact Prefab declaration",
+        "path": "",
+        "prefab_id": "feather_canary"
+      },
+      "error_id": "e87c0d3aa8526ba61c291721b95f7db48249a00502a972506ff2fc62861d87fd",
+      "locator": "",
+      "source_kind": "bundle",
+      "subject": "feather_canary"
     },
     {
       "code": "unsupported_constructor_binding",
@@ -24904,7 +25502,7 @@
         "prefab_id": "abigailsummonfx",
         "stage": "reverse_acquisition"
       },
-      "error_id": "33f9b0fb7cdd9e92e5acf67ee70a79dca34d0e335a7ba00b324ff88b59c3e4d4",
+      "error_id": "c94063d29e9a3ac520f2333bf7a09dacc6c76053883a8c45262651c775970059",
       "locator": "scripts/prefabs/abigail_flower.lua:line:457",
       "source_kind": "bundle",
       "subject": "abigailsummonfx"
@@ -24919,7 +25517,7 @@
         "prefab_id": "abigailsummonfx_mount",
         "stage": "reverse_acquisition"
       },
-      "error_id": "612025e74d5ddef27d68605f17f3a7deb43e7159168b9e61e6a4b17df5ae6809",
+      "error_id": "d1c6128752474e17a1ace92899340c505ccccb8f32b8d5524c3d644182dd33fa",
       "locator": "scripts/prefabs/abigail_flower.lua:line:458",
       "source_kind": "bundle",
       "subject": "abigailsummonfx_mount"
@@ -24934,7 +25532,7 @@
         "prefab_id": "abigailunsummonfx",
         "stage": "reverse_acquisition"
       },
-      "error_id": "9508118d14443b77f50d9ffb1ef255d7f8ab5433a4a42e27d6b0bceaca65bd89",
+      "error_id": "94a5d8f3a5593f239847bf63080636945b658a8efd245d4ed64c89ee0757eea7",
       "locator": "scripts/prefabs/abigail_flower.lua:line:459",
       "source_kind": "bundle",
       "subject": "abigailunsummonfx"
@@ -24949,7 +25547,7 @@
         "prefab_id": "abigailunsummonfx_mount",
         "stage": "reverse_acquisition"
       },
-      "error_id": "976f9855cb5cd28e77889ed9567bc23a6c96aad82f54c650525cb4a193ca183d",
+      "error_id": "18fd499f435800dcecb214c8477caa9ee1410629acb3eebbecb3661ca4fe9114",
       "locator": "scripts/prefabs/abigail_flower.lua:line:460",
       "source_kind": "bundle",
       "subject": "abigailunsummonfx_mount"
@@ -24964,7 +25562,7 @@
         "prefab_id": "abigaillevelupfx",
         "stage": "reverse_acquisition"
       },
-      "error_id": "93a2b843f335c43bed9d8322020d8754945fe91a8627c51060c3d2c6e72cf080",
+      "error_id": "580eac16f9cb7b32191aae3fa9a219a8899b4dc90a8dc191b796bb0c0dab7e63",
       "locator": "scripts/prefabs/abigail_flower.lua:line:461",
       "source_kind": "bundle",
       "subject": "abigaillevelupfx"
@@ -24979,7 +25577,7 @@
         "prefab_id": "chessjunk1",
         "stage": "reverse_acquisition"
       },
-      "error_id": "cc6d236d399fc2ea7c10493df32ae2150d9e95dc62e06d29c66105a5b57a341d",
+      "error_id": "40bbfd81c6574ff5bb357d5f833b2f4bfa10af7c1cc80ba3260909f4b4520b7e",
       "locator": "scripts/prefabs/chessjunk.lua:line:247",
       "source_kind": "bundle",
       "subject": "chessjunk1"
@@ -24994,7 +25592,7 @@
         "prefab_id": "chessjunk2",
         "stage": "reverse_acquisition"
       },
-      "error_id": "619586fba06dc591ca107518211cf0d82a0502e44863de6c2f63c3ee4b35c31c",
+      "error_id": "f74b7693fcee8f238af72baeabc070d113105a4e0e16d809b96ede42516bc559",
       "locator": "scripts/prefabs/chessjunk.lua:line:248",
       "source_kind": "bundle",
       "subject": "chessjunk2"
@@ -25009,7 +25607,7 @@
         "prefab_id": "chessjunk3",
         "stage": "reverse_acquisition"
       },
-      "error_id": "98f96541c31b1cc0f70322957a0946fde35a388b13e9953477fae4ca4a37bbb3",
+      "error_id": "ede48fb409143ab29abbe3beec7389f759b159050de8edac1b42a6e8d7cd74e0",
       "locator": "scripts/prefabs/chessjunk.lua:line:249",
       "source_kind": "bundle",
       "subject": "chessjunk3"
@@ -25024,7 +25622,7 @@
         "prefab_id": "minerhatlight",
         "stage": "reverse_acquisition"
       },
-      "error_id": "6a96f5a21e7eaec8434d4e018a8762038f36ef46aa82cd18209ed2a114175577",
+      "error_id": "64fa90a7aec9f20320bcc6ff44702e5b78952058bf8523746d1a5c97cd5b3e0e",
       "locator": "scripts/prefabs/hats.lua:line:7680",
       "source_kind": "bundle",
       "subject": "minerhatlight"
@@ -25039,7 +25637,7 @@
         "prefab_id": "alterguardianhatlight",
         "stage": "reverse_acquisition"
       },
-      "error_id": "818030c47a50d50e84be2e5e875706b1a7a5086efbd442ebe79e4a41d37f3438",
+      "error_id": "81cde87d9efa78bf13191dfd983feec10a335a234a4db0560a3e28968f8aa6cb",
       "locator": "scripts/prefabs/hats.lua:line:7681",
       "source_kind": "bundle",
       "subject": "alterguardianhatlight"
@@ -25054,7 +25652,7 @@
         "prefab_id": "tophat_container",
         "stage": "reverse_acquisition"
       },
-      "error_id": "a6dc9d0a3eb2d699fc4f1c4800bdc3dbe72b56ae26a45686779d84f8f5b64cc9",
+      "error_id": "967d127ed13944cee570e0873e349dc32845bd2436d9f5a9dcf9c1d89ef285b0",
       "locator": "scripts/prefabs/hats.lua:line:7683",
       "source_kind": "bundle",
       "subject": "tophat_container"
@@ -25067,7 +25665,7 @@
         "path": "scripts/prefabs/moonglass.lua",
         "prefab_id": "moonglass"
       },
-      "error_id": "6673313c5fe360a8f23a19e64adc331d773ca6c3a0cfb1e0d356b6565d369b30",
+      "error_id": "102b0d920af76902c731c59c92e45690be5beb81906ff9676edeba6e12afe856",
       "locator": "scripts/prefabs/moonglass.lua",
       "source_kind": "bundle",
       "subject": "moonglass"
@@ -25082,7 +25680,7 @@
         "prefab_id": "pinecone_sapling",
         "stage": "reverse_acquisition"
       },
-      "error_id": "7d242987dd439d2531f7c56f05a8d76338a72806c84352f2eaf19c2d414377f0",
+      "error_id": "26b03b95b564a0c3dc37e82b76d6df389797ce7137f910ba2b85bdf25becc594",
       "locator": "scripts/prefabs/planted_tree.lua:line:183",
       "source_kind": "bundle",
       "subject": "pinecone_sapling"
@@ -25097,7 +25695,7 @@
         "prefab_id": "lumpy_sapling",
         "stage": "reverse_acquisition"
       },
-      "error_id": "0c67e65377d140a74459ba1207e2d9dc935f9947e401927838637bd825b2e37d",
+      "error_id": "681ad9eaef041bbc55de9b93763de2feabe8b2b33d2799ffa30d484cbc2958ae",
       "locator": "scripts/prefabs/planted_tree.lua:line:184",
       "source_kind": "bundle",
       "subject": "lumpy_sapling"
@@ -25112,7 +25710,7 @@
         "prefab_id": "acorn_sapling",
         "stage": "reverse_acquisition"
       },
-      "error_id": "b605a6dedf4bcb78cb8178cb98a131cb4af931658dfcf7f7a4da5c2441c0e9ca",
+      "error_id": "867cfee6f846c1cb53122a3c6435b8b8d43e76e39f39f6a6e2ca88dc9dcc1053",
       "locator": "scripts/prefabs/planted_tree.lua:line:185",
       "source_kind": "bundle",
       "subject": "acorn_sapling"
@@ -25127,7 +25725,7 @@
         "prefab_id": "twiggy_nut_sapling",
         "stage": "reverse_acquisition"
       },
-      "error_id": "3743c29f318680405447dac646e4b374f7bbd996dc1c5ad0f9247f2224d69c6c",
+      "error_id": "1cb287ed598a2be8e2f70e45a9716dfe48213377834ab132a2b987b17e3c16af",
       "locator": "scripts/prefabs/planted_tree.lua:line:186",
       "source_kind": "bundle",
       "subject": "twiggy_nut_sapling"
@@ -25142,7 +25740,7 @@
         "prefab_id": "marblebean_sapling",
         "stage": "reverse_acquisition"
       },
-      "error_id": "297226fba136fc5929984d7ab2533a00f7661ad858725593701d0c1918e21794",
+      "error_id": "af535b4fcf639a4c045a5aa2eaf90ae3ed528c0b9fbfab16f2cffef5ee2b4944",
       "locator": "scripts/prefabs/planted_tree.lua:line:187",
       "source_kind": "bundle",
       "subject": "marblebean_sapling"
@@ -25157,7 +25755,7 @@
         "prefab_id": "moonbutterfly_sapling",
         "stage": "reverse_acquisition"
       },
-      "error_id": "2552672dc7c47446b0027ab4e079a1174fdaac4f057f2404eae488013beb97e3",
+      "error_id": "b0d9835c0d6199caaa72485c3f2ff1b1817c24ba4dc26554e60959928cbde67a",
       "locator": "scripts/prefabs/planted_tree.lua:line:188",
       "source_kind": "bundle",
       "subject": "moonbutterfly_sapling"
@@ -25172,7 +25770,7 @@
         "prefab_id": "palmcone_sapling",
         "stage": "reverse_acquisition"
       },
-      "error_id": "79bccb21613d80b5b9a0c7779e2c3a25daa0fd5a74d5670c321f0a8487a9b598",
+      "error_id": "ef398a23a376dc7ca47ff0e02139767fef4e8dc6b6039561560b780cd5c1f207",
       "locator": "scripts/prefabs/planted_tree.lua:line:189",
       "source_kind": "bundle",
       "subject": "palmcone_sapling"
@@ -25187,7 +25785,7 @@
         "prefab_id": "tree_rock_sapling",
         "stage": "reverse_acquisition"
       },
-      "error_id": "6b74972d808244f0ba4e8bc8bedc0359e094a6de6cb871e22e880ff3f40fe2ec",
+      "error_id": "3e6a060bec57384bade90f0e342cc6972f85716ccb236c6b461a0edcd2927da0",
       "locator": "scripts/prefabs/planted_tree.lua:line:190",
       "source_kind": "bundle",
       "subject": "tree_rock_sapling"
@@ -25202,7 +25800,7 @@
         "prefab_id": "quagmire_planted_soil_front",
         "stage": "reverse_acquisition"
       },
-      "error_id": "127b5ba16601d4b5826f0b7750430497456565d53f59dc697e78f3312d24929d",
+      "error_id": "8619aba4297981d2a96735a84c38aa6cf3109b0ff556a83635dcc9287d6e8261",
       "locator": "scripts/prefabs/quagmire_plantables.lua:line:409",
       "source_kind": "bundle",
       "subject": "quagmire_planted_soil_front"
@@ -25217,7 +25815,7 @@
         "prefab_id": "quagmire_planted_soil_back",
         "stage": "reverse_acquisition"
       },
-      "error_id": "2609899efff19cae969a6414226e620a8b04f7e007788ad50549f4dd833f07fe",
+      "error_id": "ed2b1b0a28da809aa660921ea313678ca1798a0ff00818f2d9f84d06fa02e6be",
       "locator": "scripts/prefabs/quagmire_plantables.lua:line:410",
       "source_kind": "bundle",
       "subject": "quagmire_planted_soil_back"
@@ -25232,7 +25830,7 @@
         "prefab_id": "spiderden",
         "stage": "reverse_acquisition"
       },
-      "error_id": "bedd03ef496a521256705d974b7d0e53ef4487d7d64a440f4019486b53afa3fa",
+      "error_id": "d9187404240f49ff5dd22463e818fb50b57c23b4cd3faa1d7ae5e69d4259edb8",
       "locator": "scripts/prefabs/spiderden.lua:line:839",
       "source_kind": "bundle",
       "subject": "spiderden"
@@ -25247,7 +25845,7 @@
         "prefab_id": "spiderden_2",
         "stage": "reverse_acquisition"
       },
-      "error_id": "7b5a1cccea8f50c82d334b3217d7e3c46df92aec666a1a9750c3630f4438d678",
+      "error_id": "0bc1bc310aad2a29a337828f887d9f8b84fd77c49760d4c48fa272fb0e369dbf",
       "locator": "scripts/prefabs/spiderden.lua:line:840",
       "source_kind": "bundle",
       "subject": "spiderden_2"
@@ -25262,7 +25860,7 @@
         "prefab_id": "spiderden_3",
         "stage": "reverse_acquisition"
       },
-      "error_id": "a7495af53defeb96136a7fc335e30376be9b0ad1d83abeb653bbdd25b7110e26",
+      "error_id": "fcbcb948b06e1d7d16181ea6fcbedb3cdd13f8e4cf1585c87af01438f94c6f57",
       "locator": "scripts/prefabs/spiderden.lua:line:841",
       "source_kind": "bundle",
       "subject": "spiderden_3"
@@ -25277,7 +25875,7 @@
         "prefab_id": "statue_marble_muse",
         "stage": "reverse_acquisition"
       },
-      "error_id": "518b3cc7388ce5d8385193f5f125b347db96aa01d05b9972549ececa504e4652",
+      "error_id": "4fcd9a07e75b3d8a2c99d648c386cb88d11992a2aae584b91014d71a540bc47e",
       "locator": "scripts/prefabs/statue_marble.lua:line:200",
       "source_kind": "bundle",
       "subject": "statue_marble_muse"
@@ -25292,7 +25890,7 @@
         "prefab_id": "statue_marble_pawn",
         "stage": "reverse_acquisition"
       },
-      "error_id": "33e443b7cad9244b314f79622e5f109cbbac2a41cb819b1000d7a5359d2bc97d",
+      "error_id": "fa3e80a8e83fc48d8ef5b294454b56607796d697d88784fc6d52a5c4f5d1d73b",
       "locator": "scripts/prefabs/statue_marble.lua:line:201",
       "source_kind": "bundle",
       "subject": "statue_marble_pawn"
@@ -25305,7 +25903,7 @@
         "path": "scripts/prefabs/wickerbottom.lua",
         "prefab_id": "wickerbottom"
       },
-      "error_id": "962a84e6c55eab69318c3a92bc7391a90bd14dc91ac2acd390bc364bf4266291",
+      "error_id": "2a55205c5cb3b999d67b17b50412f773600309e7c7bcbfaa4b64419382951c44",
       "locator": "scripts/prefabs/wickerbottom.lua",
       "source_kind": "bundle",
       "subject": "wickerbottom"
@@ -28183,6 +28781,135 @@
       "source_id": "mod-strings",
       "source_kind": "mod_static"
     }
+  ],
+  "missing_inventory_names": [
+    "gezhixing_amiaohouse",
+    "xd_backpack3_skin1",
+    "xd_backpack3_skin4",
+    "xd_backpack3_skin5",
+    "xd_backpack3_skin6",
+    "xd_crc_skins_hqyx",
+    "xd_dbg_skins_llt",
+    "xd_dbg_skins_ybg",
+    "xd_dc_skins_hh",
+    "xd_dy_tsfhd_1",
+    "xd_dy_tsfhd_2",
+    "xd_dy_tsfhd_3",
+    "xd_dy_tsfhd_4",
+    "xd_dy_tsfhd_5",
+    "xd_flower_bmg_skins_srlg",
+    "xd_flower_md_skins_rjfg",
+    "xd_flower_sfr_skins_fr",
+    "xd_flower_sfr_skins_xy",
+    "xd_ftys_skins_zjzy",
+    "xd_gj_skins_lrq",
+    "xd_gjx_skins_jsth",
+    "xd_hhlmz_skins_htjc",
+    "xd_hhlmz_skins_wfz",
+    "xd_hmsw_skins_bzxw",
+    "xd_htz_spell",
+    "xd_hxyp_cd",
+    "xd_jwtcd_skins_hqy",
+    "xd_jwtcd_skins_qzyc",
+    "xd_lbjlt_skins_zgrpt",
+    "xd_lgzbh_skins_jlyc",
+    "xd_liandanlu_skins_ysx",
+    "xd_lyd_skins_fhgz",
+    "xd_mg_skins_qwg",
+    "xd_mglz_skins_hhyy",
+    "xd_mo_builder_skins_duanzui",
+    "xd_mo_builder_skins_wendao",
+    "xd_pflnw_skins_qns",
+    "xd_qianyu_1",
+    "xd_qianyu_2",
+    "xd_qljq_skins_hlq",
+    "xd_qwsk_xznw",
+    "xd_sgc_skins_wgc",
+    "xd_sj_by_skin1",
+    "xd_sj_cy_skin1",
+    "xd_skin_cgsh",
+    "xd_skin_clzgj",
+    "xd_skin_cxlt",
+    "xd_skin_cygh",
+    "xd_skin_fgy",
+    "xd_skin_fhjd",
+    "xd_skin_flzr",
+    "xd_skin_fsfmg",
+    "xd_skin_fshm",
+    "xd_skin_fyzz",
+    "xd_skin_hasaki",
+    "xd_skin_hyys",
+    "xd_skin_jj",
+    "xd_skin_jj_skillbuild",
+    "xd_skin_jydm",
+    "xd_skin_jypk",
+    "xd_skin_kt",
+    "xd_skin_kt_skillbuild",
+    "xd_skin_ly",
+    "xd_skin_lysy",
+    "xd_skin_mzhcd",
+    "xd_skin_mzly",
+    "xd_skin_nczx",
+    "xd_skin_ny",
+    "xd_skin_nyhr",
+    "xd_skin_smy",
+    "xd_skin_tf",
+    "xd_skin_wxj",
+    "xd_skin_wzsb",
+    "xd_skin_xgl",
+    "xd_skin_xqc",
+    "xd_skin_xuanyuan",
+    "xd_skin_xyb",
+    "xd_skin_yfcy",
+    "xd_skin_yfly",
+    "xd_skin_ylxh",
+    "xd_skin_ys",
+    "xd_skin_ysb",
+    "xd_skin_ysb_skillbuild",
+    "xd_skin_zste",
+    "xd_skin_zsxm",
+    "xd_skin_zw",
+    "xd_skin_zw_skillbuild",
+    "xd_skin_zyj",
+    "xd_sudaji_redlantern_zyx",
+    "xd_sudaji_sjpn_jssc",
+    "xd_sudaji_tsmd_ykmd",
+    "xd_sudaji_xyj",
+    "xd_sudaji_yhly_charged",
+    "xd_sudaji_yhly_yhm",
+    "xd_sudaji_yhly_yhm_charged",
+    "xd_sudaji_ywfh_lxzy",
+    "xd_tianjiwu_skins_byj",
+    "xd_tree_df_skins_zsyj",
+    "xd_tree_xhs_skins_lgs",
+    "xd_tree_yhs_skins_fd",
+    "xd_tree_yxs_skins_jqs",
+    "xd_wmz_md1",
+    "xd_wmz_md2",
+    "xd_wmz_md3",
+    "xd_wmz_md4",
+    "xd_wmz_md5",
+    "xd_wmz_md6",
+    "xd_wmz_md7",
+    "xd_wmz_md8",
+    "xd_wmz_spell",
+    "xd_wsjx_skins_yzjx",
+    "xd_xcdf_skins_sysx",
+    "xd_xianjian_builder_skins_duanzui",
+    "xd_xianjian_builder_skins_wendao",
+    "xd_xshj_bbzy",
+    "xd_xshj_fhlh",
+    "xd_xtbh_skins_wxxxh",
+    "xd_yaoarmor",
+    "xd_yaohat",
+    "xd_yhbs_zmyh",
+    "xd_yhsyz_skins_qlyyz",
+    "xd_ylxc_skins_qhnlc",
+    "xd_ylxq_skins_fynl",
+    "xd_yunxiao_portableslot",
+    "xd_zcmj_jhxs",
+    "xd_zcmj_trxz",
+    "xd_ztp_skins_lmxq"
   ],
   "runtime_coverage": [
     {
@@ -84655,11 +85382,15 @@
     },
     {
       "code": "conflicts_present",
-      "count": 641
+      "count": 658
     },
     {
       "code": "low_confidence_fields_present",
       "count": 14
+    },
+    {
+      "code": "missing_inventory_names",
+      "count": 127
     },
     {
       "code": "runtime_coverage_gaps",

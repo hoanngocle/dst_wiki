@@ -55,7 +55,13 @@ Các argument `--server-bin` và `--game-mods-dir` là bắt buộc. `--workspac
 
 Runner tạo hai bản copy mod có tên ngẫu nhiên trong `--game-mods-dir`, từ chối ghi đè thư mục đã tồn tại và xóa đúng hai bản copy này trong `finally`. Dedicated server luôn nhận `-persistent_storage_root` là `data/runtime/probe-<run-id>` nằm dưới workspace. Đây là cluster offline/isolated mới; runner không mở hoặc ghi vào save thật. Log và world thử nghiệm nằm trong `data/runtime/` (local-only). Output hợp lệ được thay atomically vào `data/raw/runtime.json` (local-only).
 
-Probe dừng với lỗi nếu dedicated server thoát trước sentinel, quá timeout, không tạo đúng một `runtime.json`, hoặc JSON sai schema. Các lỗi inspect/spawn từng prefab bên trong một run thành công không làm mất toàn bộ run; chúng được giữ làm extraction error để hiện trong coverage.
+Probe hiện ghi **runtime schema version 2** với các khóa bắt buộc `schema_version`, `mod_version`, `targets`, `recipes`, `prefabs`, `coverage` và `errors`. Probe dừng với lỗi nếu dedicated server thoát trước sentinel, quá timeout, không tạo đúng một `runtime.json`, hoặc JSON sai schema. Các lỗi inspect/spawn từng prefab bên trong một run thành công không làm mất toàn bộ run; chúng được giữ làm extraction error để hiện trong coverage.
+
+Importer yêu cầu một coverage row cho mỗi cặp `target × category` của chín category: `buff_debuff`, `cooldown_recharge`, `craft`, `drop`, `harvest`, `progression`, `start_gift`, `trade_shop`, `world_spawn`. Trạng thái có ba giá trị:
+
+- `observed`: probe thu được fact cụ thể và giữ evidence của quan sát đó.
+- `unobserved`: probe hỗ trợ kiểm tra category nhưng không thấy dữ liệu ở prefab/run hiện tại; đây không phải bằng chứng rằng cơ chế không tồn tại ở mọi trạng thái game.
+- `unsupported`: probe không có reverse registry hoặc cách quan sát an toàn/chính xác cho category đó. Giá trị này biểu thị giới hạn extractor, **không** có nghĩa item chắc chắn không có cơ chế tương ứng.
 
 ## 3. Chạy pipeline offline
 
@@ -64,6 +70,8 @@ Sau khi có snapshot và `data/raw/runtime.json` đúng version:
 ```bash
 python3 -m tools.extract.cli all
 ```
+
+`import-runtime`, `build-db` và `all` đều có hard gate so sánh chính xác `runtime.mod_version` với version lấy từ static bundle. Sai version sẽ dừng pipeline trước normalize; không sửa tay version hoặc tái sử dụng capture cũ.
 
 `all` dùng các default sau và chạy tuần tự:
 
@@ -88,6 +96,7 @@ Các stage có thể chạy riêng; xem argument/default chính xác bằng `pyt
 - `runtime_errors`: lỗi probe theo prefab/locator. Chúng vẫn hiện cả khi pipeline có thể hoàn tất; review trước khi coi field liên quan là đầy đủ.
 - `low_confidence_fields`: evidence có confidence `< 0.7`, gồm record/source/locator và trạng thái `selected`. Đây là danh sách cần manual review, đồng thời sinh warning `low_confidence_fields_present`.
 - `coverage` và warning `optional_coverage_incomplete`: tỷ lệ entity có tên Việt, icon, recipe, acquisition và stats. Thiếu field tùy chọn là warning, không phải lý do tạo dữ liệu suy đoán.
+- `missing_inventory_names`: danh sách sắp xếp ổn định chứa **mọi** entity `tu_tien` có `is_inventory_item = 1` nhưng `name_vi` null/rỗng; warning cùng tên ghi count. Invariant hoàn tất là mỗi inventory item hoặc có `name_vi`, hoặc xuất hiện đúng trong danh sách này. Đây là soft coverage gate, không phải lý do đoán tên hoặc hard-fail pipeline.
 
 `extraction_errors` chứa toàn bộ lỗi parser/probe; `warnings` tóm tắt coverage thiếu, extraction errors, conflicts và low-confidence fields. Chỉ `hard_failures` quyết định exit code của `validate`/`all`.
 

@@ -26,7 +26,7 @@
       "acquisition": [],
       "confidence": 1.0,
       "description": {
-        "en": null,
+        "en": "It smells like beefalo tears.",
         "vi": "Nó có mùi giống như nước mắt beefalo."
       },
       "effects": [],
@@ -48,8 +48,8 @@
       "acquisition": [],
       "confidence": 1.0,
       "description": {
-        "en": "Bears the color of blue.",
-        "vi": "Mang màu xanh lam."
+        "en": "It sparkles with cold energy.",
+        "vi": "Nó lấp lánh với năng lượng lạnh."
       },
       "effects": [],
       "icon_key": "base_game:bluegem",
@@ -79,8 +79,8 @@
       ],
       "confidence": 1.0,
       "description": {
-        "en": "Like logs, but flatter.",
-        "vi": "Giống gỗ nhưng phẳng hơn."
+        "en": "Boards.",
+        "vi": "Bảng."
       },
       "effects": [],
       "icon_key": "base_game:boards",
@@ -131,7 +131,7 @@
       "acquisition": [],
       "confidence": 1.0,
       "description": {
-        "en": null,
+        "en": "Bits of bone.",
         "vi": "Các mảnh xương."
       },
       "effects": [],
@@ -175,7 +175,7 @@
       "acquisition": [],
       "confidence": 1.0,
       "description": {
-        "en": null,
+        "en": "I think it's still swishing.",
         "vi": "Tôi nghĩ rằng nó vẫn vút."
       },
       "effects": [],
@@ -234,8 +234,8 @@
       ],
       "confidence": 1.0,
       "description": {
-        "en": "The fiberous strands bind together.",
-        "vi": "Các sợi xơ liên kết với nhau."
+        "en": "Cut grass, ready for arts and crafts.",
+        "vi": "Cắt cỏ, sẵn sàng cho nghệ thuật và hàng thủ công."
       },
       "effects": [],
       "icon_key": "base_game:cutgrass",
@@ -287,8 +287,8 @@
       ],
       "confidence": 1.0,
       "description": {
-        "en": "Tubular.",
-        "vi": "Hình ống."
+        "en": "Cut reeds, ready for crafting and hobbying.",
+        "vi": "Sậy cắt, sẵn sàng để chế tác và làm theo sở thích."
       },
       "effects": [],
       "icon_key": "base_game:cutreeds",
@@ -377,8 +377,8 @@
       ],
       "confidence": 1.0,
       "description": {
-        "en": "Nicely squared rocks.",
-        "vi": "Những viên đá cắt vuông vắn."
+        "en": "Seductively smooth.",
+        "vi": "Quyến rũ trơn tru."
       },
       "effects": [],
       "icon_key": "base_game:cutstone",
@@ -416,7 +416,7 @@
       "acquisition": [],
       "confidence": 1.0,
       "description": {
-        "en": null,
+        "en": "They're still warm.",
         "vi": "Chúng vẫn còn ấm."
       },
       "effects": [],
@@ -482,7 +482,7 @@
       "acquisition": [],
       "confidence": 1.0,
       "description": {
-        "en": null,
+        "en": "A canary feather.",
         "vi": "Một con chim hoàng yến."
       },
       "effects": [],
@@ -559,8 +559,8 @@
       ],
       "confidence": 1.0,
       "description": {
-        "en": "Naturally sharp and dressed for the occasion.",
-        "vi": "Tự nhiên sắc nét và ăn mặc cho dịp này."
+        "en": "It's a very sharp rock.",
+        "vi": "Đó là một tảng đá rất sắc nét."
       },
       "effects": [],
       "icon_key": "base_game:flint",
@@ -643,8 +643,8 @@
       ],
       "confidence": 1.0,
       "description": {
-        "en": null,
-        "vi": "Bánh răng cho các thiết bị kỳ lạ của bạn."
+        "en": "A pile of mechanical parts.",
+        "vi": "Một đống của các bộ phận cơ khí."
       },
       "effects": [],
       "icon_key": "base_game:gears",
@@ -733,7 +733,7 @@
       ],
       "confidence": 1.0,
       "description": {
-        "en": null,
+        "en": "I can't eat it, but it sure is shiny.",
         "vi": "Tôi không thể ăn nó, nhưng nó chắc chắn là sáng bóng."
       },
       "effects": [],
@@ -762,7 +762,7 @@
       "acquisition": [],
       "confidence": 1.0,
       "description": {
-        "en": null,
+        "en": "It seems pretty normal.",
         "vi": "Nó có vẻ khá bình thường."
       },
       "effects": [],
@@ -905,7 +905,7 @@
       ],
       "confidence": 1.0,
       "description": {
-        "en": null,
+        "en": "It's green and gemmy.",
         "vi": "Đó là màu xanh lá cây và Gemmy."
       },
       "effects": [],
@@ -927,7 +927,7 @@
       "acquisition": [],
       "confidence": 1.0,
       "description": {
-        "en": null,
+        "en": "It sounds like a beefalo field in there.",
         "vi": "Nghe có vẻ giống như một lĩnh vực beefalo trong đó."
       },
       "effects": [],
@@ -974,7 +974,7 @@
       ],
       "confidence": 1.0,
       "description": {
-        "en": null,
+        "en": "It sends a terrible shiver down my spine.",
         "vi": "Nó khiến tôi có cảm giác rùng minh xuống cột sống của tôi."
       },
       "effects": [],
@@ -996,7 +996,7 @@
       "acquisition": [],
       "confidence": 1.0,
       "description": {
-        "en": null,
+        "en": "Adorably delicious.",
         "vi": "Đáng yêu ngon."
       },
       "effects": [],
@@ -1146,7 +1146,7 @@
       ],
       "confidence": 1.0,
       "description": {
-        "en": null,
+        "en": "It's strangely tasty looking.",
         "vi": "Đó là lạ ngon tìm kiếm."
       },
       "effects": [],
@@ -1203,7 +1203,7 @@
       "acquisition": [],
       "confidence": 1.0,
       "description": {
-        "en": null,
+        "en": "It's like a miniature lightning rod.",
         "vi": "Nó giống như một cột thu lôi thu nhỏ."
       },
       "effects": [],
@@ -1284,8 +1284,8 @@
       ],
       "confidence": 1.0,
       "description": {
-        "en": null,
-        "vi": "Đặt mình vào công việc của bạn."
+        "en": "It looks worried.",
+        "vi": "Có vẻ lo lắng."
       },
       "effects": [],
       "icon_key": "base_game:livinglog",
@@ -1429,7 +1429,7 @@
       ],
       "confidence": 1.0,
       "description": {
-        "en": null,
+        "en": "Fancy!",
         "vi": "Fancy!"
       },
       "effects": [],
@@ -1840,7 +1840,7 @@
       ],
       "confidence": 1.0,
       "description": {
-        "en": null,
+        "en": "Ugh. I don't think I should eat that.",
         "vi": "Ugh. Tôi không nghĩ rằng tôi nên ăn đó."
       },
       "effects": [],
@@ -1881,8 +1881,8 @@
       "acquisition": [],
       "confidence": 1.0,
       "description": {
-        "en": "A fragment from the Moon.",
-        "vi": "Một mảnh từ Mặt trăng."
+        "en": "It's very sharp.",
+        "vi": "Nó rất sắc nét."
       },
       "effects": [],
       "icon_key": "base_game:moonglass",
@@ -1903,7 +1903,7 @@
       "acquisition": [],
       "confidence": 1.0,
       "description": {
-        "en": null,
+        "en": "Things are about to get hairy...",
         "vi": "Mọi thứ trở lên khá là lông lá đây..."
       },
       "effects": [],
@@ -2006,8 +2006,8 @@
       ],
       "confidence": 1.0,
       "description": {
-        "en": "Evil residue used by the foolish and crazy.",
-        "vi": "Dư lượng ác quỷ dùng bởi kẻ điên cuồng và khờ dại."
+        "en": "This stuff is crazy!",
+        "vi": "Công cụ này là điên rồ!"
       },
       "effects": [],
       "icon_key": "base_game:nightmarefuel",
@@ -2045,7 +2045,7 @@
       "acquisition": [],
       "confidence": 1.0,
       "description": {
-        "en": null,
+        "en": "This gem seems special.",
         "vi": "Viên ngọc này có vẻ đặc biệt."
       },
       "effects": [],
@@ -2198,7 +2198,7 @@
       ],
       "confidence": 1.0,
       "description": {
-        "en": null,
+        "en": "It's an orange gem.",
         "vi": "Đó là một viên ngọc màu cam."
       },
       "effects": [],
@@ -2231,8 +2231,8 @@
       ],
       "confidence": 1.0,
       "description": {
-        "en": "For writing things.",
-        "vi": "Để viết các thứ."
+        "en": "Some sheets of paper.",
+        "vi": "Một số tờ giấy."
       },
       "effects": [],
       "icon_key": "base_game:papyrus",
@@ -2325,8 +2325,8 @@
       ],
       "confidence": 1.0,
       "description": {
-        "en": "Purify your petals.",
-        "vi": "Làm sạch cánh hoa của bạn."
+        "en": "Sure showed those flowers who's boss!",
+        "vi": "Chắc chắn đã cho thấy ai là ông chủ của những bông hoa đó!"
       },
       "effects": [],
       "icon_key": "base_game:petals",
@@ -2366,8 +2366,8 @@
       ],
       "confidence": 1.0,
       "description": {
-        "en": "Stain your petals.",
-        "vi": "Nhuộm cánh hoa của bạn."
+        "en": "I'm not sure I want to hold those.",
+        "vi": "Tôi không chắc mình muốn giữ những thứ đó."
       },
       "effects": [],
       "icon_key": "base_game:petals_evil",
@@ -2407,7 +2407,7 @@
       "acquisition": [],
       "confidence": 1.0,
       "description": {
-        "en": null,
+        "en": "That doesn't look very appealing.",
         "vi": "Đó không trông rất hấp dẫn."
       },
       "effects": [],
@@ -2448,7 +2448,7 @@
       "acquisition": [],
       "confidence": 1.0,
       "description": {
-        "en": null,
+        "en": "It's blinding me with science!",
         "vi": "Nó làm tôi mù quáng vì khoa học!"
       },
       "effects": [],
@@ -2507,8 +2507,8 @@
       ],
       "confidence": 1.0,
       "description": {
-        "en": "By your colors combined!",
-        "vi": "Kết hợp bằng màu sắc của bạn!"
+        "en": "It contains the mysteries of the universe.",
+        "vi": "Nó chứa những bí ẩn của vũ trụ."
       },
       "effects": [],
       "icon_key": "base_game:purplegem",
@@ -2572,8 +2572,8 @@
       ],
       "confidence": 1.0,
       "description": {
-        "en": "Retains the color of red.",
-        "vi": "Giữ nguyên màu đỏ."
+        "en": "It sparkles with inner warmth.",
+        "vi": "Nó lấp lánh với sự ấm áp bên trong."
       },
       "effects": [],
       "icon_key": "base_game:redgem",
@@ -2830,7 +2830,7 @@
       ],
       "confidence": 1.0,
       "description": {
-        "en": null,
+        "en": "We could make stuff with these.",
         "vi": "Chúng ta có thể chế tạo những thứ này."
       },
       "effects": [],
@@ -2868,8 +2868,8 @@
       ],
       "confidence": 1.0,
       "description": {
-        "en": "Tightly woven coils of usefulness.",
-        "vi": "1 đống sợi cuộn chặt đầy công dụng."
+        "en": "Some short lengths of rope.",
+        "vi": "Một số độ dài ngắn của sợi dây thừng."
       },
       "effects": [],
       "icon_key": "base_game:rope",
@@ -2928,7 +2928,7 @@
       ],
       "confidence": 1.0,
       "description": {
-        "en": null,
+        "en": "The power of science must have reanimated it...",
         "vi": "Sức mạnh của khoa học phải làm lại nó ..."
       },
       "effects": [],
@@ -3121,7 +3121,7 @@
       ],
       "confidence": 1.0,
       "description": {
-        "en": null,
+        "en": "It comes from a spider's butt.",
         "vi": "Nó đến từ mông của nhện."
       },
       "effects": [],
@@ -3186,7 +3186,7 @@
       ],
       "confidence": 1.0,
       "description": {
-        "en": null,
+        "en": "A tiny chunk of dead animal.",
         "vi": "Một phần nhỏ của động vật chết."
       },
       "effects": [],
@@ -3227,8 +3227,8 @@
       "acquisition": [],
       "confidence": 1.0,
       "description": {
-        "en": "Get a little help from your friends.",
-        "vi": "Một chút giúp đỡ từ các người bạn."
+        "en": "I hope these don't hatch. Period.",
+        "vi": "Tôi hi vọng nó sẽ không nở. Trời đất."
       },
       "effects": [],
       "icon_key": "base_game:spidereggsack",
@@ -3431,7 +3431,7 @@
       ],
       "confidence": 1.0,
       "description": {
-        "en": null,
+        "en": "It has a tangy, antiseptic smell.",
         "vi": "Nó có một hương thơm, mùi thuốc sát trùng."
       },
       "effects": [],
@@ -3624,7 +3624,7 @@
       "acquisition": [],
       "confidence": 1.0,
       "description": {
-        "en": null,
+        "en": "Why'd it have to be so big?",
         "vi": "Tại sao nó lại phải to lớn như vậy?"
       },
       "effects": [],
@@ -3729,8 +3729,8 @@
       ],
       "confidence": 1.0,
       "description": {
-        "en": "Combine tiny bits into a big chunk.",
-        "vi": "Kết hợp các mảnh nhỏ thành một đoạn lớn."
+        "en": "I wonder where this is from?",
+        "vi": "Tôi tự hỏi, nơi này là từ đâu?"
       },
       "effects": [],
       "icon_key": "base_game:thulecite",
@@ -3792,7 +3792,7 @@
       ],
       "confidence": 1.0,
       "description": {
-        "en": null,
+        "en": "It's some smaller chunks of Thulecite.",
         "vi": "Đó là một số những phần nhỏ hơn của Thulecite."
       },
       "effects": [],
@@ -3843,7 +3843,7 @@
       "acquisition": [],
       "confidence": 1.0,
       "description": {
-        "en": null,
+        "en": "A light breezy trunk.",
         "vi": "Một ánh sáng thân cây mát mẻ."
       },
       "effects": [],
@@ -3878,7 +3878,7 @@
       "acquisition": [],
       "confidence": 1.0,
       "description": {
-        "en": null,
+        "en": "A thick, hairy trunk.",
         "vi": "Một dày, thân cây có lông."
       },
       "effects": [],
@@ -4027,8 +4027,8 @@
       ],
       "confidence": 1.0,
       "description": {
-        "en": "A single twig can make all the difference.",
-        "vi": "Một cành cây có thể tạo nên sự khác biệt."
+        "en": "It's a bunch of small twigs.",
+        "vi": "Đó là một loạt các cành cây nhỏ."
       },
       "effects": [],
       "icon_key": "base_game:twigs",
@@ -4215,7 +4215,7 @@
       ],
       "confidence": 1.0,
       "description": {
-        "en": null,
+        "en": "This gem is yellow.",
         "vi": "Đá quý này có màu vàng."
       },
       "effects": [],
@@ -10828,9 +10828,28 @@
       "confidence": 1.0,
       "description": {
         "en": null,
-        "vi": null
+        "vi": "*Tán tu hải ngoại Lệ Phi Vũ\n*Cứu khổ cứu nạn Hàn Thiên Tôn\n*Sở hữu pháp bảo và thần thông riêng"
       },
-      "effects": [],
+      "effects": [
+        {
+          "duration": null,
+          "key": "character_quote",
+          "trigger": "character_profile",
+          "value": "\"Ta là Lệ Phi Vũ của Hoàng Phong Cốc, chẳng đáng nhắc tới.\""
+        },
+        {
+          "duration": null,
+          "key": "character_survivability",
+          "trigger": "character_profile",
+          "value": "Thoát Chết Trong Gang Tấc"
+        },
+        {
+          "duration": null,
+          "key": "character_title",
+          "trigger": "character_profile",
+          "value": "Đệ Nhất Kiếm Tu Thiên Nam"
+        }
+      ],
       "icon_key": null,
       "is_inventory_item": false,
       "key": "tu_tien:xd_hantianzun",
@@ -12444,9 +12463,28 @@
       "confidence": 1.0,
       "description": {
         "en": null,
-        "vi": null
+        "vi": "*Luôn có Huyền Điểu bên cạnh\n*Có thể bay vượt một khoảng cách nhất định\n*Có thể dùng địa hình riêng để lấp biển"
       },
-      "effects": [],
+      "effects": [
+        {
+          "duration": null,
+          "key": "character_quote",
+          "trigger": "character_profile",
+          "value": "\"Không tích từng bước nhỏ, sao đến được ngàn dặm.\""
+        },
+        {
+          "duration": null,
+          "key": "character_survivability",
+          "trigger": "character_profile",
+          "value": "Dễ Như Trở Bàn Tay"
+        },
+        {
+          "duration": null,
+          "key": "character_title",
+          "trigger": "character_profile",
+          "value": "Con Gái Út Viêm Đế"
+        }
+      ],
       "icon_key": null,
       "is_inventory_item": false,
       "key": "tu_tien:xd_jingwei",
@@ -15337,9 +15375,28 @@
       "confidence": 1.0,
       "description": {
         "en": null,
-        "vi": null
+        "vi": "*Có thể trồng hoa Lạc Thần\n*Mang hai mặt sinh và diệt\n*Nhẹ tựa chim hồng, uyển chuyển như rồng bơi"
       },
-      "effects": [],
+      "effects": [
+        {
+          "duration": null,
+          "key": "character_quote",
+          "trigger": "character_profile",
+          "value": "\"Tàn úa… cũng là khởi đầu của tái sinh.\""
+        },
+        {
+          "duration": null,
+          "key": "character_survivability",
+          "trigger": "character_profile",
+          "value": "Gai Góc Trùng Trùng"
+        },
+        {
+          "duration": null,
+          "key": "character_title",
+          "trigger": "character_profile",
+          "value": "Con Gái Phục Hy"
+        }
+      ],
       "icon_key": null,
       "is_inventory_item": false,
       "key": "tu_tien:xd_luoshen",
@@ -16158,7 +16215,7 @@
       "confidence": 1.0,
       "description": {
         "en": null,
-        "vi": "Tiêu hao 10 điểm máu để tạo ra một cánh hoa"
+        "vi": "Chắc chắn đã cho thấy ai là ông chủ của những bông hoa đó!"
       },
       "effects": [],
       "icon_key": null,
@@ -16199,7 +16256,7 @@
       "confidence": 1.0,
       "description": {
         "en": null,
-        "vi": "Tiêu hao 10 điểm máu để tạo ra một cánh hoa sẫm màu"
+        "vi": "Tôi không chắc mình muốn giữ những thứ đó."
       },
       "effects": [],
       "icon_key": null,
@@ -16240,7 +16297,7 @@
       "confidence": 1.0,
       "description": {
         "en": null,
-        "vi": "Huyết nhục của cây cối"
+        "vi": "Đó không trông rất hấp dẫn."
       },
       "effects": [],
       "icon_key": null,
@@ -18925,9 +18982,28 @@
       "confidence": 1.0,
       "description": {
         "en": null,
-        "vi": null
+        "vi": "*Có thể sai khiến Thạch Hà\n*Hóa thân từ đá vá trời\n*Dưới trướng có hai đồng tử"
       },
-      "effects": [],
+      "effects": [
+        {
+          "duration": null,
+          "key": "character_quote",
+          "trigger": "character_profile",
+          "value": "\"Còn núi xanh thì không lo thiếu củi đốt.\""
+        },
+        {
+          "duration": null,
+          "key": "character_survivability",
+          "trigger": "character_profile",
+          "value": "Đường Đầy Chông Gai"
+        },
+        {
+          "duration": null,
+          "key": "character_title",
+          "trigger": "character_profile",
+          "value": "Yêu Tiên Tiệt Giáo"
+        }
+      ],
       "icon_key": null,
       "is_inventory_item": false,
       "key": "tu_tien:xd_shiji",
@@ -21336,9 +21412,28 @@
       "confidence": 1.0,
       "description": {
         "en": null,
-        "vi": null
+        "vi": "*Thỉnh thoảng tỏa ra yêu khí\n*Có kỳ trân do Trụ Vương ban tặng\n*Thích dùng nguyên thần yêu vật để ôn dưỡng Linh Ngọc"
       },
-      "effects": [],
+      "effects": [
+        {
+          "duration": null,
+          "key": "character_quote",
+          "trigger": "character_profile",
+          "value": "\"Cuối cùng thiếp cũng trở thành người trong cuộc.\""
+        },
+        {
+          "duration": null,
+          "key": "character_survivability",
+          "trigger": "character_profile",
+          "value": "Thuần Thục Tự Nhiên"
+        },
+        {
+          "duration": null,
+          "key": "character_title",
+          "trigger": "character_profile",
+          "value": "Yêu Phi Tuyệt Đại"
+        }
+      ],
       "icon_key": null,
       "is_inventory_item": false,
       "key": "tu_tien:xd_sudaji",
@@ -22883,9 +22978,28 @@
       "confidence": 1.0,
       "description": {
         "en": null,
-        "vi": null
+        "vi": "*Cửu Tinh Cổ Thần\n*Người đứng đầu Nghịch Trần Giới\n*Sở hữu chí bảo Định Giới La Bàn"
       },
-      "effects": [],
+      "effects": [
+        {
+          "duration": null,
+          "key": "character_quote",
+          "trigger": "character_profile",
+          "value": "\"Thuận là phàm, nghịch là tiên.\""
+        },
+        {
+          "duration": null,
+          "key": "character_survivability",
+          "trigger": "character_profile",
+          "value": "Ngược Gió Dữ Sóng"
+        },
+        {
+          "duration": null,
+          "key": "character_title",
+          "trigger": "character_profile",
+          "value": "Ma Đầu"
+        }
+      ],
       "icon_key": null,
       "is_inventory_item": false,
       "key": "tu_tien:xd_wangmazi",
@@ -24193,9 +24307,28 @@
       "confidence": 1.0,
       "description": {
         "en": null,
-        "vi": null
+        "vi": "*Đầu đội vòng Kim Cô\n*Thừa kế ý chí của Đại Thánh\n*Cần thu thập đủ căn khí để hoàn thiện bản thân"
       },
-      "effects": [],
+      "effects": [
+        {
+          "duration": null,
+          "key": "character_quote",
+          "trigger": "character_profile",
+          "value": "\"Lão Tôn đến đây!\""
+        },
+        {
+          "duration": null,
+          "key": "character_survivability",
+          "trigger": "character_profile",
+          "value": "Dễ Như Trở Bàn Tay"
+        },
+        {
+          "duration": null,
+          "key": "character_title",
+          "trigger": "character_profile",
+          "value": "Thiên Mệnh Nhân"
+        }
+      ],
       "icon_key": null,
       "is_inventory_item": false,
       "key": "tu_tien:xd_wukong",
@@ -25835,9 +25968,28 @@
       "confidence": 1.0,
       "description": {
         "en": null,
-        "vi": null
+        "vi": "*Vân Tiêu thông minh, khéo tay\n*Bích Tiêu luôn tự mình xử lý mọi việc\n*Quỳnh Tiêu hiếu chiến, chuộng võ"
       },
-      "effects": [],
+      "effects": [
+        {
+          "duration": null,
+          "key": "character_quote",
+          "trigger": "character_profile",
+          "value": "\"Hỗn Nguyên Kim Đấu, mở!\""
+        },
+        {
+          "duration": null,
+          "key": "character_survivability",
+          "trigger": "character_profile",
+          "value": "Dễ Như Nhặt Cỏ"
+        },
+        {
+          "duration": null,
+          "key": "character_title",
+          "trigger": "character_profile",
+          "value": "Đệ Tử Ngoại Môn Tiệt Giáo"
+        }
+      ],
       "icon_key": null,
       "is_inventory_item": false,
       "key": "tu_tien:xd_yunxiao",

@@ -238,6 +238,32 @@ class ExportValidateTests(unittest.TestCase):
                 report["warnings"],
             )
 
+    def test_validation_lists_every_tu_tien_inventory_item_missing_a_name(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            path = self.build_catalog(root)
+            db = sqlite3.connect(path)
+            db.executemany(
+                "insert into entities(namespace,prefab_id,entity_type,is_inventory_item,name_vi,name_en,description_vi,description_en,icon_key,confidence) values(?,?,?,?,?,?,?,?,?,?)",
+                [
+                    ("tu_tien", "xd_zeta", "inventory_item", 1, None, None, None, None, None, 1.0),
+                    ("tu_tien", "xd_alpha", "inventory_item", 1, "", None, None, None, None, 1.0),
+                    ("tu_tien", "xd_named", "inventory_item", 1, "Có tên", None, None, None, None, 1.0),
+                    ("base_game", "base_missing", "inventory_item", 1, None, None, None, None, None, 1.0),
+                    ("tu_tien", "xd_non_item", "unknown", 0, None, None, None, None, None, 1.0),
+                ],
+            )
+            db.commit()
+            db.close()
+
+            report = validate_catalog(path)
+
+        self.assertEqual(report["missing_inventory_names"], ["xd_alpha", "xd_zeta"])
+        self.assertIn(
+            {"code": "missing_inventory_names", "count": 2}, report["warnings"]
+        )
+        self.assertNotIn("missing_inventory_names", report["hard_failures"])
+
     def test_validation_scans_evidence_locator_and_nested_manifest_strings(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

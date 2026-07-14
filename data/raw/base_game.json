@@ -825,7 +825,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -925,6 +925,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "beefalowool"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:2009",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "It smells like beefalo tears."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -981,7 +1002,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -1081,7 +1102,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -1102,6 +1123,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "bluegem"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:2060",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "It sparkles with cold energy."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -1610,7 +1652,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -1710,7 +1752,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -1731,6 +1773,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "boards"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:2079",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "Boards."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -1960,7 +2023,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -2125,6 +2188,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "boneshard"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:2080",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "Bits of bone."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -2195,7 +2279,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -2295,7 +2379,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -2498,7 +2582,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -2598,6 +2682,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "coontail"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:2132",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "I think it's still swishing."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -2654,7 +2759,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -2826,7 +2931,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -2847,6 +2952,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "cutgrass"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:2252",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "Cut grass, ready for arts and crafts."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -3095,7 +3221,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -3270,7 +3396,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -3291,6 +3417,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "cutreeds"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:2253",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "Cut reeds, ready for crafting and hobbying."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -3496,7 +3643,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -3741,7 +3888,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -3762,6 +3909,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "cutstone"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:2254",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "Seductively smooth."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -4089,7 +4257,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -4212,6 +4380,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "dragon_scales"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:2293",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "They're still warm."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -4282,7 +4471,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -4323,7 +4512,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -4379,7 +4568,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -4450,7 +4639,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -4506,7 +4695,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -4586,6 +4775,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "feather_canary"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:2417",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "A canary feather."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -4642,7 +4852,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -4811,7 +5021,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -4832,6 +5042,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "flint"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:2458",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "It's a very sharp rock."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -4951,7 +5182,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -5177,7 +5408,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -5198,6 +5429,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "gears"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:2492",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "A pile of mechanical parts."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -5254,7 +5506,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -5449,6 +5701,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "goldnugget"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:2498",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "I can't eat it, but it sure is shiny."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -6205,7 +6478,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -6326,6 +6599,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "green_cap"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:2514",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "It seems pretty normal."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -6382,7 +6676,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -6587,6 +6881,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "greengem"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:1675",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "It's green and gemmy."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -6993,7 +7308,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -7093,6 +7408,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "horn"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:2557",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "It sounds like a beefalo field in there."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -7149,7 +7485,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -7275,6 +7611,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "horrorfuel"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:5307",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "It sends a terrible shiver down my spine."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -7331,7 +7688,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -7372,6 +7729,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "koalefant_summer"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:2584",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "Adorably delicious."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -7428,7 +7806,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -7577,7 +7955,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -7889,6 +8267,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "lightbulb"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:1743",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "It's strangely tasty looking."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -7945,7 +8344,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -8062,7 +8461,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -8162,6 +8561,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "lightninggoathorn"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:2602",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "It's like a miniature lightning rod."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -8232,7 +8652,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -8434,7 +8854,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -8455,6 +8875,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "livinglog"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:2605",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "It looks worried."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -8749,7 +9190,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -9621,7 +10062,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -9797,6 +10238,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "marble"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:2623",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "Fancy!"
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -10007,7 +10469,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -10245,7 +10707,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -10427,7 +10889,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -11005,6 +11467,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "monstermeat"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:2685",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "Ugh. I don't think I should eat that."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -11173,7 +11656,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -11304,7 +11787,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -11325,6 +11808,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "moonglass"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:3951",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "It's very sharp."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -11416,7 +11920,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -11457,6 +11961,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "mutatedbearger"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:5422",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "Things are about to get hairy..."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -11513,7 +12038,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -11752,7 +12277,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -11773,6 +12298,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "nightmarefuel"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:2707",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "This stuff is crazy!"
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -11946,7 +12492,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -12069,6 +12615,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "opalpreciousgem"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:1690",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "This gem seems special."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -12125,7 +12692,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -12330,6 +12897,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "orangegem"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:1688",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "It's an orange gem."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -12736,7 +13324,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -12836,7 +13424,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -12857,6 +13445,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "papyrus"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:2718",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "Some sheets of paper."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -13049,7 +13658,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -13280,7 +13889,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -13301,6 +13910,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "petals"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:2723",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "Sure showed those flowers who's boss!"
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -13504,7 +14134,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -13640,7 +14270,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -13661,6 +14291,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "petals_evil"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:2724",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "I'm not sure I want to hold those."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -13880,7 +14531,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -14042,6 +14693,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "plantmeat"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:2756",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "That doesn't look very appealing."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -14140,7 +14812,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -14272,6 +14944,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "purebrilliance"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:5336",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "It's blinding me with science!"
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -14356,7 +15049,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -14456,7 +15149,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -14477,6 +15170,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "purplegem"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:2777",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "It contains the mysteries of the universe."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -14858,7 +15572,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -14981,7 +15695,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -15002,6 +15716,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "redgem"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:2797",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "It sparkles with inner warmth."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -15678,7 +16413,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -16122,6 +16857,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "rocks"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:2875",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "We could make stuff with these."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -17159,7 +17915,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -17280,7 +18036,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -17301,6 +18057,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "rope"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:2877",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "Some short lengths of rope."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -17516,7 +18293,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -17639,6 +18416,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "shadowheart"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:3500",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "The power of science must have reanimated it..."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -17709,7 +18507,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -18089,6 +18887,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "silk"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:2949",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "It comes from a spider's butt."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -18374,7 +19193,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -18542,6 +19361,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "smallmeat"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:2961",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "A tiny chunk of dead animal."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -18598,7 +19438,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -18759,7 +19599,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -18780,6 +19620,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "spidereggsack"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:2974",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "I hope these don't hatch. Period."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -18935,7 +19796,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -19338,6 +20199,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "spidergland"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:2975",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "It has a tangy, antiseptic smell."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -19413,7 +20295,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -19519,7 +20401,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -20099,7 +20981,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -20274,7 +21156,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -20315,6 +21197,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "stalker_atrium"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:2477",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "Why'd it have to be so big?"
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -20371,7 +21274,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -20643,7 +21546,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -20664,6 +21567,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "thulecite"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:1652",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "I wonder where this is from?"
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -20767,7 +21691,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -20945,6 +21869,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "thulecite_pieces"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:1610",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "It's some smaller chunks of Thulecite."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -21006,7 +21951,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -21190,7 +22135,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -21290,6 +22235,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "trunk_summer"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:3347",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "A light breezy trunk."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -21346,7 +22312,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -21486,6 +22452,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "trunk_winter"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:3348",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "A thick, hairy trunk."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -21542,7 +22529,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -21856,7 +22843,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -21877,6 +22864,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "twigs"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:3351",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "It's a bunch of small twigs."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -22052,7 +23060,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -22168,7 +23176,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -22373,6 +23381,27 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
+        "version": "2026.1.3"
+      },
+      "subject": {
+        "namespace": "base_game",
+        "prefab_id": "yellowgem"
+      }
+    },
+    {
+      "confidence": 1.0,
+      "kind": "description",
+      "locator": "scripts/speech_wilson.lua:line:1687",
+      "payload": {
+        "description_type": "generic",
+        "lang": "en",
+        "value": "This gem is yellow."
+      },
+      "source": {
+        "kind": "base_game_source",
+        "path": "data/sources/game/scripts.zip",
+        "sha256": "5c8a4303cd92884c1980b8d7ded9e3a2641df3e32ccc8e77918cd82b08618250",
+        "source_id": "base-game-scripts",
         "version": "snapshot"
       },
       "subject": {
@@ -22821,7 +23850,7 @@
         "path": "mod/3731181944/viethoa.po",
         "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
         "source_id": "base-game-vi-translation",
-        "version": "snapshot"
+        "version": "2026.1.3"
       },
       "subject": {
         "namespace": "base_game",
@@ -22870,7 +23899,7 @@
       "path": "mod/3731181944/viethoa.po",
       "sha256": "34f28ee4adabd3ba40c82ef8bbde5adcaecb93060e209cbb62d77a40f1b16072",
       "source_id": "base-game-vi-translation",
-      "version": "snapshot"
+      "version": "2026.1.3"
     }
   ]
 }

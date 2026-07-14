@@ -80,6 +80,19 @@ def _choose(candidates: Sequence[_Candidate]) -> _Candidate:
     return max(candidates, key=lambda candidate: fact_rank(candidate.fact))
 
 
+def _choose_description(candidates: Sequence[_Candidate]) -> _Candidate:
+    type_priority = {"recipe": 1, "generic": 2, "character_profile": 3}
+    return max(
+        candidates,
+        key=lambda candidate: (
+            type_priority.get(
+                str(candidate.fact.payload.get("description_type", "")), 0
+            ),
+            fact_rank(candidate.fact),
+        ),
+    )
+
+
 def _candidate_description(candidate: _Candidate, value: Any) -> Dict[str, Any]:
     fact = candidate.fact
     return {
@@ -352,7 +365,7 @@ def normalize(bundles: Sequence[FactBundle]) -> NormalizedCatalog:
         chosen_names[(key, lang)] = winner.fact.payload.get("value")
         _add_conflict(catalog, key, f"name:{lang}", group, winner, lambda fact: fact.payload.get("value"))
     for (key, lang), group in description_groups.items():
-        winner = _choose(group)
+        winner = _choose_description(group)
         selected[winner.index] = True
         chosen_descriptions[(key, lang)] = winner.fact.payload.get("value")
         _add_conflict(catalog, key, f"description:{lang}", group, winner, lambda fact: fact.payload.get("value"))

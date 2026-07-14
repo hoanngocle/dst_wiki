@@ -15,6 +15,42 @@ def source(source_id, kind, marker):
 
 
 class DatabaseTests(unittest.TestCase):
+    def test_generic_description_wins_display_while_recipe_conflict_is_preserved(self):
+        static = source("static", "mod_translation", "a")
+        key = EntityKey("base_game", "goldnugget")
+        facts = [
+            Fact("entity", key, {"entity_type": "unknown"}, static, 1.0, "entity"),
+            Fact(
+                "description",
+                key,
+                {"lang": "vi", "value": "Mô tả vật thể", "description_type": "generic"},
+                static,
+                0.9,
+                "context:generic",
+            ),
+            Fact(
+                "description",
+                key,
+                {"lang": "vi", "value": "Mô tả công thức", "description_type": "recipe"},
+                static,
+                0.9,
+                "context:recipe",
+            ),
+        ]
+
+        catalog = normalize([FactBundle(1, [static], facts, [])])
+
+        self.assertEqual(catalog.entities[0]["description_vi"], "Mô tả vật thể")
+        self.assertEqual(len(catalog.conflicts), 1)
+        self.assertEqual(catalog.conflicts[0]["field_key"], "description:vi")
+        selected = [
+            row
+            for row in catalog.evidence
+            if row["record_type"] == "description" and row["selected"]
+        ]
+        self.assertEqual(len(selected), 1)
+        self.assertEqual(json.loads(selected[0]["raw_value_json"])["description_type"], "generic")
+
     def test_runtime_coverage_facts_are_persisted_with_provenance(self):
         runtime = source("runtime", "runtime_probe", "b")
         key = EntityKey("tu_tien", "wall_luoshen")
