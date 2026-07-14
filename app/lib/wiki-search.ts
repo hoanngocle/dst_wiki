@@ -1,4 +1,8 @@
-import type { ItemFilter, ItemListEntry } from "./item-catalog";
+import type {
+  ItemFilter,
+  ItemListEntry,
+  PrefabCategoryFilter,
+} from "./item-catalog";
 
 function foldSearchText(value: string): string {
   return value.normalize("NFD").replace(/\p{M}/gu, "").toLowerCase().replaceAll("đ", "d");
@@ -57,6 +61,7 @@ export function filterItems(
   items: readonly ItemListEntry[],
   query: string,
   filter: ItemFilter,
+  category: PrefabCategoryFilter,
 ): ItemListEntry[] {
   const normalizedQuery = normalizeSearchText(query);
 
@@ -64,7 +69,8 @@ export function filterItems(
     const matchesFilter =
       filter === "all" ||
       (filter === "craftable" ? item.recipe !== null : item.namespace === filter);
-    if (!matchesFilter) return false;
+    const matchesCategory = category === "all" || item.category === category;
+    if (!matchesFilter || !matchesCategory) return false;
     if (!normalizedQuery) return true;
 
     const searchableText = normalizeSearchText(

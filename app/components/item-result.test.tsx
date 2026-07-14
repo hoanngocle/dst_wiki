@@ -8,6 +8,7 @@ const item: ItemListEntry = {
   id: "tu_tien:xd_sword",
   prefabId: "xd_sword",
   namespace: "tu_tien",
+  category: "item",
   name: "Kiếm Thử",
   englishName: "Test Sword",
   description: "Một thanh kiếm",
@@ -29,6 +30,7 @@ const ingredientItem: ItemListEntry = {
   id: "base_game:goldnugget",
   prefabId: "goldnugget",
   namespace: "base_game",
+  category: "item",
   name: "Vàng",
   englishName: "Gold Nugget",
   description: "Một cục vàng.",
@@ -43,8 +45,15 @@ describe("ItemResult", () => {
     expect(screen.getByRole("heading", { name: "Kiếm Thử" })).toBeDefined();
     expect(screen.getByText("Tu Tiên")).toBeDefined();
     expect(screen.getByText("xd_sword")).toBeDefined();
-    expect(screen.queryByLabelText("Loại: Item")).toBeNull();
+    expect(screen.getByLabelText("Loại: Item")).toBeDefined();
     expect(screen.getByText("×2")).toBeDefined();
+  });
+
+  it("renders the localized prefab category", () => {
+    render(<ItemResult item={{ ...item, category: "boss" }} query="" />);
+
+    expect(screen.getByLabelText("Loại: Boss")).toBeDefined();
+    expect(screen.getByText("Boss")).toBeDefined();
   });
 
   it("highlights a normalized Vietnamese name match", () => {

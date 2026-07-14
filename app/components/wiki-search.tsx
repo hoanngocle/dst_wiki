@@ -5,7 +5,11 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import { ItemDetailModal } from "@/app/components/item-detail-modal";
 import { ItemResult } from "@/app/components/item-result";
-import type { ItemFilter, ItemListEntry } from "@/app/lib/item-catalog";
+import type {
+  ItemFilter,
+  ItemListEntry,
+  PrefabCategoryFilter,
+} from "@/app/lib/item-catalog";
 import { filterItems, normalizeSearchText } from "@/app/lib/wiki-search";
 
 const RESULT_BATCH_SIZE = 40;
@@ -17,9 +21,24 @@ const filters: readonly { value: ItemFilter; label: string }[] = [
   { value: "craftable", label: "Có công thức" },
 ];
 
+const categoryFilters: readonly {
+  value: PrefabCategoryFilter;
+  label: string;
+}[] = [
+  { value: "all", label: "Tất cả loại" },
+  { value: "item", label: "Item" },
+  { value: "mob", label: "Mob" },
+  { value: "boss", label: "Boss" },
+  { value: "character", label: "Nhân vật" },
+  { value: "structure", label: "Công trình" },
+  { value: "effect", label: "Hiệu ứng" },
+  { value: "other", label: "Khác" },
+];
+
 export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState<ItemFilter>("all");
+  const [category, setCategory] = useState<PrefabCategoryFilter>("all");
   const [visibleLimit, setVisibleLimit] = useState(RESULT_BATCH_SIZE);
   const [selectedItem, setSelectedItem] = useState<ItemListEntry | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -28,8 +47,8 @@ export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
     [items],
   );
   const results = useMemo(
-    () => filterItems(items, query, filter),
-    [filter, items, query],
+    () => filterItems(items, query, filter, category),
+    [category, filter, items, query],
   );
   const visibleResults = results.slice(0, visibleLimit);
 
@@ -65,6 +84,11 @@ export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
     setVisibleLimit(RESULT_BATCH_SIZE);
   }
 
+  function updateCategory(nextCategory: PrefabCategoryFilter) {
+    setCategory(nextCategory);
+    setVisibleLimit(RESULT_BATCH_SIZE);
+  }
+
   function clearQueryAndFocus() {
     updateQuery("");
     inputRef.current?.focus();
@@ -73,6 +97,7 @@ export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
   function resetFilters() {
     setQuery("");
     setFilter("all");
+    setCategory("all");
     setVisibleLimit(RESULT_BATCH_SIZE);
     inputRef.current?.focus();
   }
@@ -82,12 +107,16 @@ export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
   const countLabel = `${results.length} ${results.length === 1 ? "Item" : "Items"}`;
   const activeFilterLabel =
     filters.find((candidate) => candidate.value === filter)?.label ?? "Tất cả";
+  const activeCategoryLabel =
+    categoryFilters.find((candidate) => candidate.value === category)?.label ??
+    "Tất cả loại";
   const trimmedQuery = query.trim();
   const statusLabel = trimmedQuery
-    ? `${countLabel} khớp với "${trimmedQuery}" trong ${activeFilterLabel}.`
-    : `${countLabel} trong ${activeFilterLabel}.`;
+    ? `${countLabel} khớp với "${trimmedQuery}" trong ${activeFilterLabel}, ${activeCategoryLabel}.`
+    : `${countLabel} trong ${activeFilterLabel}, ${activeCategoryLabel}.`;
   const resultsKey = JSON.stringify([
     filter,
+    category,
     normalizeSearchText(query),
     results.map((item) => item.id),
   ]);
@@ -139,6 +168,24 @@ export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
         <p id="item-search-help" className="sr-only">
           Tìm theo tên tiếng Việt, tên tiếng Anh, prefab, mô tả hoặc nguyên liệu.
         </p>
+      </div>
+
+      <div
+        role="group"
+        className="mt-1 flex gap-2 overflow-x-auto pb-2"
+        aria-label="Lọc theo category"
+      >
+        {categoryFilters.map((candidate) => (
+          <button
+            key={candidate.value}
+            type="button"
+            aria-pressed={category === candidate.value}
+            onClick={() => updateCategory(candidate.value)}
+            className="min-h-11 shrink-0 rounded-full border border-[#cbd5e1] px-3 py-1.5 text-sm font-medium text-[#5c6b80] transition hover:border-[#2e5fb3] hover:text-[#2e5fb3] active:scale-[0.98] aria-pressed:border-[#172943] aria-pressed:bg-[#172943] aria-pressed:text-[#f8fafc]"
+          >
+            {candidate.label}
+          </button>
+        ))}
       </div>
 
       <div

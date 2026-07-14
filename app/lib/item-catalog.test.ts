@@ -3,12 +3,13 @@ import { describe, expect, it } from "vitest";
 import { parseItemPayload } from "./item-catalog";
 
 const validPayload = {
-  schema_version: 1,
+  schema_version: 2,
   items: [
     {
       id: "tu_tien:xd_sword",
       prefabId: "xd_sword",
       namespace: "tu_tien",
+      category: "item",
       name: "Kiếm Thử",
       englishName: "Test Sword",
       description: "Một thanh kiếm",
@@ -49,6 +50,18 @@ describe("parseItemPayload", () => {
     payload.items[0].recipe.ingredients = [];
 
     expect(parseItemPayload(payload)[0].recipe?.ingredients).toEqual([]);
+  });
+
+  it("rejects legacy payloads and invalid prefab categories", () => {
+    expect(() =>
+      parseItemPayload({ ...validPayload, schema_version: 1 }),
+    ).toThrow(/schema version 2/i);
+
+    const payload = structuredClone(validPayload) as unknown as {
+      items: Array<{ category: string }>;
+    };
+    payload.items[0].category = "unknown-category";
+    expect(() => parseItemPayload(payload)).toThrow(/category/i);
   });
 
   it("rejects non-integer ingredient quantities", () => {

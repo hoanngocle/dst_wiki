@@ -1,5 +1,14 @@
 export type ItemNamespace = "tu_tien" | "base_game";
 export type ItemFilter = "all" | ItemNamespace | "craftable";
+export type PrefabCategory =
+  | "item"
+  | "mob"
+  | "boss"
+  | "character"
+  | "structure"
+  | "effect"
+  | "other";
+export type PrefabCategoryFilter = "all" | PrefabCategory;
 
 export type SpriteDescriptor = {
   src: string;
@@ -27,6 +36,7 @@ export type ItemListEntry = {
   id: string;
   prefabId: string;
   namespace: ItemNamespace;
+  category: PrefabCategory;
   name: string;
   englishName: string | null;
   description: string | null;
@@ -48,6 +58,21 @@ function requiredString(value: unknown, field: string): string {
 function nullableString(value: unknown, field: string): string | null {
   if (value === null) return null;
   return requiredString(value, field);
+}
+
+function parseCategory(value: unknown, itemIndex: number): PrefabCategory {
+  if (
+    value !== "item" &&
+    value !== "mob" &&
+    value !== "boss" &&
+    value !== "character" &&
+    value !== "structure" &&
+    value !== "effect" &&
+    value !== "other"
+  ) {
+    throw new Error(`item ${itemIndex} category is invalid`);
+  }
+  return value;
 }
 
 function positiveInteger(value: unknown, field: string): number {
@@ -121,6 +146,7 @@ function parseItem(value: unknown, index: number): ItemListEntry {
     id: requiredString(value.id, `item ${index} id`),
     prefabId: requiredString(value.prefabId, `item ${index} prefabId`),
     namespace: value.namespace,
+    category: parseCategory(value.category, index),
     name: requiredString(value.name, `item ${index} name`),
     englishName: nullableString(value.englishName, `item ${index} englishName`),
     description: nullableString(value.description, `item ${index} description`),
@@ -132,10 +158,10 @@ function parseItem(value: unknown, index: number): ItemListEntry {
 export function parseItemPayload(value: unknown): readonly ItemListEntry[] {
   if (
     !isRecord(value) ||
-    value.schema_version !== 1 ||
+    value.schema_version !== 2 ||
     !Array.isArray(value.items)
   ) {
-    throw new Error("item payload must use schema version 1 and contain items");
+    throw new Error("item payload must use schema version 2 and contain items");
   }
   return value.items.map(parseItem);
 }

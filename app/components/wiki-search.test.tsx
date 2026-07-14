@@ -9,6 +9,7 @@ const items: readonly ItemListEntry[] = [
     id: "tu_tien:xd_sword",
     prefabId: "xd_sword",
     namespace: "tu_tien",
+    category: "item",
     name: "Kiếm Thử",
     englishName: "Test Sword",
     description: "Một thanh kiếm từ phương bắc.",
@@ -29,6 +30,7 @@ const items: readonly ItemListEntry[] = [
     id: "base_game:log",
     prefabId: "log",
     namespace: "base_game",
+    category: "structure",
     name: "Gỗ",
     englishName: "Log",
     description: "Nguyên liệu cơ bản.",
@@ -41,6 +43,7 @@ const goldItem: ItemListEntry = {
   id: "base_game:goldnugget",
   prefabId: "goldnugget",
   namespace: "base_game",
+  category: "item",
   name: "Vàng",
   englishName: "Gold Nugget",
   description: "Một cục vàng.",
@@ -53,6 +56,7 @@ function makeItems(count: number): ItemListEntry[] {
     id: `tu_tien:item_${index + 1}`,
     prefabId: `item_${index + 1}`,
     namespace: "tu_tien" as const,
+    category: "other" as const,
     name: `Mục ${index + 1}`,
     englishName: null,
     description: null,
@@ -85,10 +89,14 @@ describe("WikiSearch", () => {
 
     fireEvent.change(search, { target: { value: "kiem" } });
     const status = screen.getByRole("status");
-    expect(status.textContent).toBe('1 Item khớp với "kiem" trong Tất cả.');
+    expect(status.textContent).toBe(
+      '1 Item khớp với "kiem" trong Tất cả, Tất cả loại.',
+    );
 
     fireEvent.change(search, { target: { value: "go" } });
-    expect(status.textContent).toBe('1 Item khớp với "go" trong Tất cả.');
+    expect(status.textContent).toBe(
+      '1 Item khớp với "go" trong Tất cả, Tất cả loại.',
+    );
   });
 
   it("filters by namespace and craftability", () => {
@@ -99,6 +107,18 @@ describe("WikiSearch", () => {
 
     fireEvent.click(screen.getByRole("button", { name: "Có công thức" }));
     expect(screen.getByText("Kiếm Thử")).toBeDefined();
+    expect(screen.queryByText("Gỗ")).toBeNull();
+  });
+
+  it("combines category and namespace filters", () => {
+    render(<WikiSearch items={items} />);
+
+    expect(screen.getByRole("group", { name: "Lọc theo category" })).toBeDefined();
+    fireEvent.click(screen.getByRole("button", { name: "Công trình" }));
+    expect(screen.getByText("Gỗ")).toBeDefined();
+    expect(screen.queryByText("Kiếm Thử")).toBeNull();
+
+    fireEvent.click(screen.getByRole("button", { name: "Tu Tiên" }));
     expect(screen.queryByText("Gỗ")).toBeNull();
   });
 
@@ -232,6 +252,16 @@ describe("WikiSearch", () => {
     fireEvent.change(screen.getByRole("searchbox", { name: "Tìm kiếm Items." }), {
       target: { value: "Mục" },
     });
+
+    expect(screen.getAllByRole("listitem")).toHaveLength(40);
+  });
+
+  it("resets the visible batch when the category changes", () => {
+    render(<WikiSearch items={makeItems(81)} />);
+    fireEvent.click(screen.getByRole("button", { name: "Xem thêm" }));
+    expect(screen.getAllByRole("listitem")).toHaveLength(80);
+
+    fireEvent.click(screen.getByRole("button", { name: "Khác" }));
 
     expect(screen.getAllByRole("listitem")).toHaveLength(40);
   });

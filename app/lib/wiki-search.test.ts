@@ -35,6 +35,7 @@ const items: readonly ItemListEntry[] = [
     id: "tu_tien:xd_sword",
     prefabId: "xd_sword",
     namespace: "tu_tien",
+    category: "item",
     name: "Kiếm Thử",
     englishName: "Test Sword",
     description: "Một thanh kiếm từ phương bắc.",
@@ -55,9 +56,21 @@ const items: readonly ItemListEntry[] = [
     id: "base_game:log",
     prefabId: "log",
     namespace: "base_game",
+    category: "item",
     name: "Gỗ",
     englishName: "Log",
     description: "Nguyên liệu cơ bản.",
+    sprite: null,
+    recipe: null,
+  },
+  {
+    id: "base_game:deerclops",
+    prefabId: "deerclops",
+    namespace: "base_game",
+    category: "boss",
+    name: "Deerclops",
+    englishName: "Deerclops",
+    description: "Một boss khổng lồ.",
     sprite: null,
     recipe: null,
   },
@@ -65,29 +78,36 @@ const items: readonly ItemListEntry[] = [
 
 describe("filterItems", () => {
   it("preserves all items for an empty query and all filter", () => {
-    expect(filterItems(items, "", "all")).toEqual(items);
+    expect(filterItems(items, "", "all", "all")).toEqual(items);
   });
 
   it.each(["kiem", "test sword", "xd_sword", "phuong bac", "vang"])(
     "matches the real searchable field %s",
     (query) => {
-      expect(filterItems(items, query, "all").map((item) => item.id)).toEqual([
+      expect(filterItems(items, query, "all", "all").map((item) => item.id)).toEqual([
         "tu_tien:xd_sword",
       ]);
     },
   );
 
   it("combines namespace and text filters", () => {
-    expect(filterItems(items, "kiem", "tu_tien").map((item) => item.id)).toEqual([
+    expect(filterItems(items, "kiem", "tu_tien", "all").map((item) => item.id)).toEqual([
       "tu_tien:xd_sword",
     ]);
-    expect(filterItems(items, "kiem", "base_game")).toEqual([]);
+    expect(filterItems(items, "kiem", "base_game", "all")).toEqual([]);
   });
 
   it("filters craftable items", () => {
-    expect(filterItems(items, "", "craftable").map((item) => item.id)).toEqual([
+    expect(filterItems(items, "", "craftable", "all").map((item) => item.id)).toEqual([
       "tu_tien:xd_sword",
     ]);
+  });
+
+  it("combines namespace and prefab category filters", () => {
+    expect(
+      filterItems(items, "", "base_game", "boss").map((item) => item.id),
+    ).toEqual(["base_game:deerclops"]);
+    expect(filterItems(items, "", "tu_tien", "boss")).toEqual([]);
   });
 
 });
