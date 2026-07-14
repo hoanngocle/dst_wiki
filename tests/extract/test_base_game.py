@@ -495,6 +495,81 @@ return Prefab("realfood", fn)
         self.assertNotIn("comment_only", entities)
         self.assertNotIn("string_only", entities)
 
+    def test_edible_expression_preserves_original_quoted_subscript(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            archive = self._archive(
+                root,
+                {
+                    "scripts/recipes.lua": "",
+                    "scripts/strings.lua": "",
+                    "scripts/prefabs/food.lua": '''
+local function fn()
+  inst.components.edible.hungervalue = VALUES["food"] -- exact lookup
+  return inst
+end
+return Prefab("food", fn)
+''',
+                },
+            )
+            bundle = enrich_dependencies(
+                archive,
+                [DependencyRequest("food", "ingredient", "tu_tien:xd_food")],
+                root / "missing.po",
+            )
+
+        hunger = next(
+            fact
+            for fact in bundle.facts
+            if fact.kind == "stat" and fact.payload["key"] == "hunger"
+        )
+        self.assertEqual(hunger.payload["source_expression"], 'VALUES["food"]')
+
+    def test_string_tables_require_the_structural_strings_path(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            archive = self._archive(
+                root,
+                {
+                    "scripts/recipes.lua": "",
+                    "scripts/strings.lua": '''
+local NAMES = { FAKE = "Fake Local Name" }
+local RECIPE_DESC = { FAKE = "Fake Local Description" }
+STRINGS = {
+  NAMES = { REAL = "Real Name" },
+  RECIPE_DESC = { REAL = "Real Description" },
+}
+''',
+                },
+            )
+            bundle = enrich_dependencies(
+                archive,
+                [
+                    DependencyRequest("fake", "relation", "tu_tien:xd_fake"),
+                    DependencyRequest("real", "relation", "tu_tien:xd_real"),
+                ],
+                root / "missing.po",
+            )
+
+        entities = {
+            fact.subject.prefab_id
+            for fact in bundle.facts
+            if fact.kind == "entity"
+        }
+        self.assertEqual(entities, {"real"})
+        real_name = next(
+            fact
+            for fact in bundle.facts
+            if fact.kind == "name" and fact.subject.prefab_id == "real"
+        )
+        self.assertEqual(real_name.payload["value"], "Real Name")
+        real_description = next(
+            fact
+            for fact in bundle.facts
+            if fact.kind == "description" and fact.subject.prefab_id == "real"
+        )
+        self.assertEqual(real_description.payload["value"], "Real Description")
+
     def test_dynamic_recipe_and_loot_subexpressions_emit_exact_warnings(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

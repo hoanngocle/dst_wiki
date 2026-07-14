@@ -146,6 +146,21 @@ def _code_mask(source: str) -> str:
     return "".join(masked)
 
 
+def _code_end_before_comment(source: str, start: int, end: int) -> int:
+    """Return the first real Lua comment offset, ignoring comment text in strings."""
+
+    index = start
+    while index < end:
+        if source.startswith("--", index):
+            return index
+        skipped = _skip_string_or_comment(source, index)
+        if skipped is not None:
+            index = min(skipped, end)
+        else:
+            index += 1
+    return end
+
+
 def _function_end(masked: str, function_offset: int) -> Optional[int]:
     tokens = list(re.finditer(r"\b[A-Za-z_][A-Za-z0-9_]*\b", masked))
     start_index = next(
@@ -316,7 +331,7 @@ def _literal_number(expression: str) -> Optional[Any]:
     return int(value) if value.is_integer() and not any(c in expression for c in ".eE") else value
 
 
-def _table_string_entries(source: str, table_name: str) -> Dict[str, Tuple[str, int]]:
+def _find_assignment_table(source: str, table_name: str) -> Optional[int]:
     index = 0
     while index < len(source):
         skipped = _skip_string_or_comment(source, index)
@@ -344,33 +359,84 @@ def _table_string_entries(source: str, table_name: str) -> Dict[str, Tuple[str, 
             if cursor >= len(source) or source[cursor] != "{":
                 index = end
                 continue
-            opening = cursor
+            return cursor
         else:
             index += 1
             continue
-        try:
-            closing = _matching_delimiter(source, opening)
-        except ValueError:
-            return {}
-        body = source[opening + 1 : closing]
-        result: Dict[str, Tuple[str, int]] = {}
-        cursor = 0
-        for entry in _split_top_level(body):
-            entry_match = re.match(
-                r'^\s*(?:\[\s*["\']([A-Za-z0-9_]+)["\']\s*\]|([A-Za-z0-9_]+))\s*=\s*(.+?)\s*$',
-                entry,
-                re.DOTALL,
-            )
-            if entry_match:
-                key = (entry_match.group(1) or entry_match.group(2)).lower()
-                value = _literal_string(entry_match.group(3))
-                if value is not None:
-                    local = body.find(entry, cursor)
-                    cursor = max(cursor, local + len(entry))
-                    line = source.count("\n", 0, opening + 1 + max(local, 0)) + 1
-                    result[key] = (value, line)
-        return result
-    return {}
+    return None
+
+
+def _find_direct_child_table(
+    source: str, parent_opening: int, parent_closing: int, child_name: str
+) -> Optional[int]:
+    index = parent_opening + 1
+    while index < parent_closing:
+        skipped = _skip_string_or_comment(source, index)
+        if skipped is not None:
+            index = skipped
+            continue
+        if source[index].isalpha() or source[index] == "_":
+            end = index + 1
+            while end < parent_closing and (
+                source[end].isalnum() or source[end] == "_"
+            ):
+                end += 1
+            cursor = end
+            while cursor < parent_closing and source[cursor].isspace():
+                cursor += 1
+            if source[index:end] == child_name and source[cursor : cursor + 1] == "=":
+                cursor += 1
+                while cursor < parent_closing and source[cursor].isspace():
+                    cursor += 1
+                if source[cursor : cursor + 1] == "{":
+                    return cursor
+            index = end
+            continue
+        if source[index] in "{([":
+            try:
+                index = _matching_delimiter(source, index) + 1
+            except ValueError:
+                return None
+            continue
+        index += 1
+    return None
+
+
+def _table_string_entries(source: str, table_name: str) -> Dict[str, Tuple[str, int]]:
+    root_opening = _find_assignment_table(source, "STRINGS")
+    if root_opening is None:
+        return {}
+    try:
+        root_closing = _matching_delimiter(source, root_opening)
+    except ValueError:
+        return {}
+    opening = _find_direct_child_table(
+        source, root_opening, root_closing, table_name
+    )
+    if opening is None:
+        return {}
+    try:
+        closing = _matching_delimiter(source, opening)
+    except ValueError:
+        return {}
+    body = source[opening + 1 : closing]
+    result: Dict[str, Tuple[str, int]] = {}
+    cursor = 0
+    for entry in _split_top_level(body):
+        entry_match = re.match(
+            r'^\s*(?:\[\s*["\']([A-Za-z0-9_]+)["\']\s*\]|([A-Za-z0-9_]+))\s*=\s*(.+?)\s*$',
+            entry,
+            re.DOTALL,
+        )
+        if entry_match:
+            key = (entry_match.group(1) or entry_match.group(2)).lower()
+            value = _literal_string(entry_match.group(3))
+            if value is not None:
+                local = body.find(entry, cursor)
+                cursor = max(cursor, local + len(entry))
+                line = source.count("\n", 0, opening + 1 + max(local, 0)) + 1
+                result[key] = (value, line)
+    return result
 
 
 def _has_receiver(source: str, call: LuaCall, receiver: str) -> bool:
@@ -715,10 +781,13 @@ def _source_facts(
         masked_scope = _code_mask(source)
         for match in edible.finditer(masked_scope):
             line = line_offset + source.count("\n", 0, match.start()) + 1
-            line_end = masked_scope.find("\n", match.end())
+            line_end = source.find("\n", match.end())
             if line_end < 0:
-                line_end = len(masked_scope)
-            expression = masked_scope[match.end() : line_end].strip()
+                line_end = len(source)
+            expression_end = _code_end_before_comment(
+                source, match.end(), line_end
+            )
+            expression = source[match.end() : expression_end].strip()
             facts.append(
                 Fact(
                     "stat",
