@@ -10,7 +10,7 @@ export default function Home() {
             <span aria-hidden="true" className="h-4 w-4 rotate-45 border-2 border-[#2e5fb3]" />
             <span>FROST ATLAS</span>
           </div>
-          <span className="hidden font-mono text-xs text-[#53647a] sm:block">{wikiEntries.length} entries</span>
+          <span className="hidden font-mono text-xs text-[#53647a] md:block">{wikiEntries.length} entries</span>
         </div>
       </header>
 

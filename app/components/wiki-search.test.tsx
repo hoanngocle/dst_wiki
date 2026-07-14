@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import type { WikiEntry } from "@/app/lib/wiki-search";
@@ -41,11 +41,34 @@ describe("WikiSearch", () => {
     expect(screen.getByText("1 entry")).toBeDefined();
   });
 
+  it("announces result context when equal-count result sets change", () => {
+    render(<WikiSearch entries={entries} />);
+    const search = screen.getByRole("searchbox", { name: "Search the atlas" });
+
+    fireEvent.change(search, { target: { value: "ancient" } });
+    const status = screen.getByRole("status");
+    expect(status.textContent).toBe('1 entry matching "ancient" in All entries.');
+
+    fireEvent.change(search, { target: { value: "mire" } });
+    expect(status.textContent).toBe('1 entry matching "mire" in All entries.');
+  });
+
   it("filters by category", () => {
     render(<WikiSearch entries={entries} />);
     fireEvent.click(screen.getByRole("button", { name: "Items" }));
     expect(screen.getByText("Ancient Blade")).toBeDefined();
     expect(screen.queryByText("Mire Stalker")).toBeNull();
+  });
+
+  it("keeps each result category visible and available to assistive technology on mobile", () => {
+    render(<WikiSearch entries={entries} />);
+    const ancientBladeRow = screen.getByText("Ancient Blade").closest("li");
+
+    expect(ancientBladeRow).not.toBeNull();
+    const category = within(ancientBladeRow as HTMLElement).getByText("item");
+    expect(category.className.split(/\s+/)).toContain("inline-flex");
+    expect(category.className.split(/\s+/)).not.toContain("hidden");
+    expect(ancientBladeRow?.textContent).toContain("item");
   });
 
   it("exposes category filters as a named group", () => {
@@ -70,6 +93,44 @@ describe("WikiSearch", () => {
       target: { value: "blade" },
     });
     expect(screen.getByText("Blade").tagName).toBe("MARK");
+  });
+
+  it("highlights the complete original grapheme for decomposed Unicode text", () => {
+    const decomposedEntries: readonly WikiEntry[] = [
+      {
+        id: "cafe-trail",
+        name: "Cafe\u0301 Trail",
+        category: "location",
+        description: "A quiet route beside the ridge.",
+        keywords: ["cafe"],
+        accent: "slate",
+      },
+    ];
+
+    render(<WikiSearch entries={decomposedEntries} />);
+    fireEvent.change(screen.getByRole("searchbox", { name: "Search the atlas" }), {
+      target: { value: "cafe" },
+    });
+
+    expect(document.querySelector("mark")?.textContent).toBe("Cafe\u0301");
+  });
+
+  it("restarts result-boundary motion when filtering retains keyed rows", () => {
+    render(<WikiSearch entries={entries} />);
+    const firstBoundary = screen.getByRole("list");
+
+    fireEvent.change(screen.getByRole("searchbox", { name: "Search the atlas" }), {
+      target: { value: "ancient" },
+    });
+
+    const nextBoundary = screen.getByRole("list");
+    expect(nextBoundary).not.toBe(firstBoundary);
+    expect(nextBoundary.className).toContain(
+      "motion-safe:animate-[atlas-result-in_180ms_ease-out]",
+    );
+    expect(within(nextBoundary).getByRole("listitem").className).not.toContain(
+      "motion-safe:animate-[atlas-result-in_180ms_ease-out]",
+    );
   });
 
   it("returns focus to search after clearing the query", () => {

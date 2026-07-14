@@ -4,6 +4,7 @@ import { MagnifyingGlass, X } from "@phosphor-icons/react";
 import { useEffect, useMemo, useRef, useState } from "react";
 
 import {
+  findNormalizedTextMatch,
   filterWikiEntries,
   normalizeSearchText,
   type SearchCategory,
@@ -26,23 +27,18 @@ const accentClasses: Record<WikiEntry["accent"], string> = {
 };
 
 function HighlightedText({ text, query }: { text: string; query: string }) {
-  const normalizedQuery = normalizeSearchText(query);
-  if (!normalizedQuery) return text;
+  const match = findNormalizedTextMatch(text, query);
+  if (!match) return text;
 
-  const normalizedText = normalizeSearchText(text);
-  const matchIndex = normalizedText.indexOf(normalizedQuery);
-  if (matchIndex < 0) return text;
-
-  const matchEnd = matchIndex + normalizedQuery.length;
   return (
     <>
       <span className="sr-only">{text}</span>
       <span aria-hidden="true">
-        {text.slice(0, matchIndex)}
+        {text.slice(0, match.start)}
         <mark className="rounded-sm bg-[#dce7f7] px-0.5 text-inherit">
-          {text.slice(matchIndex, matchEnd)}
+          {text.slice(match.start, match.end)}
         </mark>
-        {text.slice(matchEnd)}
+        {text.slice(match.end)}
       </span>
     </>
   );
@@ -91,6 +87,17 @@ export function WikiSearch({ entries }: { entries: readonly WikiEntry[] }) {
   }
 
   const countLabel = `${results.length} ${results.length === 1 ? "entry" : "entries"}`;
+  const activeFilterLabel =
+    filters.find((filter) => filter.value === category)?.label ?? "All entries";
+  const trimmedQuery = query.trim();
+  const statusLabel = trimmedQuery
+    ? `${countLabel} matching "${trimmedQuery}" in ${activeFilterLabel}.`
+    : `${countLabel} in ${activeFilterLabel}.`;
+  const resultsKey = JSON.stringify([
+    category,
+    normalizeSearchText(query),
+    results.map((entry) => entry.id),
+  ]);
 
   return (
     <section aria-labelledby="atlas-results" className="mt-8">
@@ -134,24 +141,35 @@ export function WikiSearch({ entries }: { entries: readonly WikiEntry[] }) {
 
       <div className="mt-7 flex items-end justify-between gap-4">
         <h2 id="atlas-results" className="text-lg font-semibold tracking-tight text-[#14233b]">Explore the atlas</h2>
-        <p aria-live="polite" className="text-sm text-[#53647a]">{countLabel}</p>
+        <p aria-hidden="true" className="text-sm text-[#53647a]">
+          {countLabel}
+        </p>
+        <p role="status" className="sr-only">
+          {statusLabel}
+        </p>
       </div>
 
       {results.length ? (
-        <ul className="mt-3 border-t border-[#cbd5e1]">
+        <ul
+          key={resultsKey}
+          className="mt-3 border-t border-[#cbd5e1] motion-safe:animate-[atlas-result-in_180ms_ease-out]"
+        >
           {results.map((entry) => (
-            <li key={entry.id} className="grid grid-cols-[48px_minmax(0,1fr)_auto] items-center gap-3 border-b border-[#cbd5e1] py-4 motion-safe:animate-[atlas-result-in_180ms_ease-out] md:grid-cols-[48px_minmax(0,1fr)_auto] md:gap-4">
+            <li key={entry.id} className="grid grid-cols-[48px_minmax(0,1fr)_auto] items-center gap-3 border-b border-[#cbd5e1] py-4 md:grid-cols-[48px_minmax(0,1fr)_auto] md:gap-4">
               <div aria-hidden="true" className={`flex h-11 w-12 items-center justify-center rounded-md font-mono text-xs font-semibold uppercase ${accentClasses[entry.accent]}`}>{entry.category.slice(0, 2)}</div>
               <div className="min-w-0">
                 <h3 className="font-semibold text-[#172943]"><HighlightedText text={entry.name} query={query} /></h3>
                 <p className="mt-1 line-clamp-2 text-sm leading-6 text-[#53647a]"><HighlightedText text={entry.description} query={query} /></p>
               </div>
-              <span className="hidden rounded-full bg-[#dce6f4] px-2.5 py-1 text-xs font-medium capitalize text-[#2e5fb3] sm:inline-flex">{entry.category}</span>
+              <span className="inline-flex rounded-full bg-[#dce6f4] px-2.5 py-1 text-xs font-medium capitalize text-[#2e5fb3]">{entry.category}</span>
             </li>
           ))}
         </ul>
       ) : (
-        <div className="mt-3 border-y border-[#cbd5e1] py-14 text-center">
+        <div
+          key={resultsKey}
+          className="mt-3 border-y border-[#cbd5e1] py-14 text-center motion-safe:animate-[atlas-result-in_180ms_ease-out]"
+        >
           <h3 className="text-lg font-semibold text-[#14233b]">No entries found</h3>
           <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-[#53647a]">Try another search or clear the current filters.</p>
           <button type="button" onClick={resetFilters} className="mt-5 rounded-[10px] bg-[#2e5fb3] px-4 py-2.5 text-sm font-semibold text-[#f8fafc] transition hover:bg-[#264f96] active:scale-[0.98]">Clear filters</button>
