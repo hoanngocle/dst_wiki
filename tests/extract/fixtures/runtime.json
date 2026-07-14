@@ -26,9 +26,13 @@
       "ingredients": [
         {
           "amount": 2,
+          "group": "item",
+          "type": "goldnugget",
           "prefab": "goldnugget"
         }
       ],
+      "character_ingredients": [],
+      "tech_ingredients": [],
       "output_count": 1,
       "product": "xd_test_sword",
       "tech": "SCIENCE_ONE"

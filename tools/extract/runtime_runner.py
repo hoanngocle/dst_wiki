@@ -161,6 +161,7 @@ def run_runtime_probe(
     log_path = persistent_root / "server.log"
     copied: List[Path] = []
     process = None
+    temporary = None
     try:
         for source, name in ((core_source, core_name), (probe_source, probe_name)):
             target = game_mods_dir / name
@@ -208,6 +209,8 @@ def run_runtime_probe(
     finally:
         if process is not None:
             _terminate_started_process(process)
+        if temporary is not None and temporary.is_file():
+            temporary.unlink()
         for target in reversed(copied):
             if (
                 target.parent == game_mods_dir

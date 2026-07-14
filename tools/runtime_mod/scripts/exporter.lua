@@ -88,7 +88,10 @@ local function Primitive(value)
     if value_type == "number" then
         return value == value and value ~= math.huge and value ~= -math.huge and value or nil
     end
-    return (value_type == "string" or value_type == "boolean") and value or nil
+    if value_type == "string" or value_type == "boolean" then
+        return value
+    end
+    return nil
 end
 
 local function SanitizeError(value)
@@ -171,6 +174,22 @@ local function ModVersion()
     return "unknown"
 end
 
+local function RecipeIngredientRows(source, options)
+    local rows = {}
+    for index, ingredient in ipairs(source or {}) do
+        local ingredient_type = string.lower(tostring(ingredient.type))
+        rows[index] = {
+            group = options.group,
+            type = ingredient_type,
+            amount = Primitive(ingredient.amount) or 0,
+        }
+        if options.has_prefab then
+            rows[index].prefab = ingredient_type
+        end
+    end
+    return rows
+end
+
 local function RecipeRows(prefab_ids)
     print("DST wiki runtime recipe scan begin")
     local rows = {}
@@ -187,13 +206,18 @@ local function RecipeRows(prefab_ids)
     for _, recipe_name in ipairs(names) do
         local recipe = AllRecipes[recipe_name]
         print("DST wiki runtime recipe begin " .. tostring(recipe_name))
-        local ingredients = {}
-        for index, ingredient in ipairs(recipe.ingredients or {}) do
-            ingredients[index] = {
-                prefab = string.lower(tostring(ingredient.type)),
-                amount = Primitive(ingredient.amount) or 0,
-            }
-        end
+        local ingredients = RecipeIngredientRows(recipe.ingredients, {
+            group = "item",
+            has_prefab = true,
+        })
+        local character_ingredients = RecipeIngredientRows(
+            recipe.character_ingredients,
+            { group = "character" }
+        )
+        local tech_ingredients = RecipeIngredientRows(
+            recipe.tech_ingredients,
+            { group = "tech" }
+        )
         local builder_tags = {}
         for _, tag in ipairs({ recipe.builder_tag, recipe.no_builder_tag }) do
             if Primitive(tag) ~= nil then
@@ -209,6 +233,8 @@ local function RecipeRows(prefab_ids)
         table.insert(rows, {
             product = string.lower(tostring(recipe.product or recipe_name)),
             ingredients = ingredients,
+            character_ingredients = character_ingredients,
+            tech_ingredients = tech_ingredients,
             tech = tech,
             filters = SortedPrimitiveList(recipe.filter),
             builder_tags = builder_tags,
