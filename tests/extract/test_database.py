@@ -3,6 +3,7 @@ import sqlite3
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 from tools.extract.contracts import EntityKey, Fact, FactBundle, SourceRef
 from tools.extract.database import write_database
@@ -170,6 +171,116 @@ class DatabaseTests(unittest.TestCase):
                 ["alpha", "zeta"],
             )
             db.close()
+
+    def test_only_explicit_evidence_only_acquisition_sources_may_be_unselected(self):
+        runtime = source("runtime", "runtime_probe", "b")
+        target = EntityKey("tu_tien", "xd_target")
+
+        invalid_references = [
+            {"namespace": "base_game", "prefab_id": "missing", "resolution": "resolved"},
+            {"namespace": "base_game", "resolution": "resolved"},
+        ]
+        for reference in invalid_references:
+            with self.subTest(reference=reference):
+                fact = Fact(
+                    "acquisition",
+                    target,
+                    {"type": "drop", "source": reference, "conditions": {}},
+                    runtime,
+                    1.0,
+                    "loot:0",
+                )
+                with self.assertRaisesRegex(ValueError, "acquisition source"):
+                    normalize([FactBundle(1, [runtime], [fact], [])])
+
+        shared_base = EntityKey("base_game", "shared")
+        shared_mod = EntityKey("tu_tien", "shared")
+        ambiguous = [
+            Fact("entity", shared_base, {"entity_type": "unknown"}, runtime, 1.0),
+            Fact("entity", shared_mod, {"entity_type": "unknown"}, runtime, 1.0),
+            Fact(
+                "acquisition",
+                target,
+                {"type": "drop", "source": {"prefab_id": "shared", "resolution": "resolved"}, "conditions": {}},
+                runtime,
+                1.0,
+            ),
+        ]
+        with self.assertRaisesRegex(ValueError, "acquisition source.*ambiguous"):
+            normalize([FactBundle(1, [runtime], ambiguous, [])])
+
+    def test_error_provenance_distinguishes_bundles_and_exact_source_path(self):
+        alpha = SourceRef("alpha", "runtime_probe", "data/alpha.json", "1", "a" * 64)
+        bravo = SourceRef("bravo", "runtime_probe", "data/bravo.json", "1", "b" * 64)
+        scripts = SourceRef("scripts", "base_game_source", "data/scripts.zip", "1", "c" * 64)
+        translation = SourceRef("translation", "mod_translation", "mod/viethoa.po", "1", "d" * 64)
+        repeated = {"code": "same_error", "detail": "same payload"}
+        located = {"code": "parse_error", "path": "data/scripts.zip", "line": 12}
+        catalog = normalize(
+            [
+                FactBundle(1, [alpha], [], [repeated, dict(repeated)]),
+                FactBundle(1, [bravo], [], [dict(repeated)]),
+                FactBundle(1, [scripts, translation], [], [located]),
+            ]
+        )
+
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "wiki.sqlite"
+            write_database(path, catalog)
+            db = sqlite3.connect(path)
+            repeated_rows = db.execute(
+                "select bundle_id,source_id,source_kind from extraction_errors where code='same_error' order by source_id"
+            ).fetchall()
+            self.assertEqual(len(repeated_rows), 2)
+            self.assertEqual([row[1:] for row in repeated_rows], [("alpha", "runtime_probe"), ("bravo", "runtime_probe")])
+            self.assertNotEqual(repeated_rows[0][0], repeated_rows[1][0])
+            self.assertEqual(
+                db.execute(
+                    "select source_id,source_kind,locator from extraction_errors where code='parse_error'"
+                ).fetchone(),
+                ("scripts", "base_game_source", "data/scripts.zip:line:12"),
+            )
+            db.close()
+
+    def test_recipe_counts_and_ingredient_positions_are_exact_positive_integers(self):
+        runtime = source("runtime", "runtime_probe", "b")
+        product = EntityKey("tu_tien", "xd_product")
+        ingredient = EntityKey("base_game", "goldnugget")
+        for invalid_count in (0, -1, 1.5, True):
+            with self.subTest(output_count=invalid_count):
+                recipe = Fact("recipe", product, {"output_count": invalid_count}, runtime, 1.0)
+                with self.assertRaisesRegex(ValueError, "positive integer output_count"):
+                    normalize([FactBundle(1, [runtime], [recipe], [])])
+
+        for invalid_position in (-1, 0.5, "0", True):
+            with self.subTest(position=invalid_position):
+                facts = [
+                    Fact("entity", ingredient, {"entity_type": "inventory_item"}, runtime, 1.0),
+                    Fact("recipe", product, {"output_count": 1}, runtime, 1.0),
+                    Fact(
+                        "ingredient",
+                        product,
+                        {"position": invalid_position, "amount": 1, "ingredient": {"namespace": "base_game", "prefab_id": "goldnugget"}},
+                        runtime,
+                        1.0,
+                    ),
+                ]
+                with self.assertRaisesRegex(ValueError, "non-negative integer position"):
+                    normalize([FactBundle(1, [runtime], facts, [])])
+
+    def test_atomic_replace_failure_cleans_temporary_database(self):
+        catalog = normalize([])
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "wiki.sqlite"
+            path.write_bytes(b"original")
+            temporary = path.with_name(f".{path.name}.tmp")
+
+            with mock.patch("tools.extract.database.os.replace", side_effect=OSError("replace failed")):
+                with self.assertRaisesRegex(OSError, "replace failed"):
+                    write_database(path, catalog)
+
+            self.assertEqual(path.read_bytes(), b"original")
+            self.assertFalse(temporary.exists())
 
 
 if __name__ == "__main__":

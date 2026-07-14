@@ -170,10 +170,9 @@ def _optional_reference(
 ) -> Optional[EntityKey]:
     if reference is None:
         return None
-    try:
-        return _resolve_reference(reference, entities, "acquisition source")
-    except ValueError:
+    if reference.get("resolution") == "evidence_only":
         return None
+    return _resolve_reference(reference, entities, "acquisition source")
 
 
 def _stat_value(payload: Dict[str, Any]) -> Dict[str, Any]:
@@ -194,14 +193,62 @@ def _entity_type(value: Any) -> str:
     return "inventory_item" if value == "item" else str(value or "unknown")
 
 
+def _bundle_identifier(index: int, bundle: FactBundle) -> str:
+    return _identifier(
+        {
+            "index": index,
+            "schema_version": bundle.schema_version,
+            "sources": [
+                {
+                    "source_id": source.source_id,
+                    "kind": source.kind,
+                    "path": source.path,
+                    "version": source.version,
+                    "sha256": source.sha256,
+                }
+                for source in sorted(bundle.sources)
+            ],
+        }
+    )
+
+
+def _error_source(
+    error: Dict[str, Any], sources: Sequence[SourceRef]
+) -> Optional[SourceRef]:
+    source_id = error.get("source_id")
+    if isinstance(source_id, str):
+        matches = [source for source in sources if source.source_id == source_id]
+        if len(matches) == 1:
+            return matches[0]
+    path = error.get("path")
+    if isinstance(path, str):
+        matches = [source for source in sources if source.path == path]
+        if len(matches) == 1:
+            return matches[0]
+    if len(sources) == 1:
+        return sources[0]
+    return None
+
+
+def _error_locator(error: Dict[str, Any]) -> str:
+    locator = error.get("locator")
+    if isinstance(locator, str):
+        return locator
+    path = error.get("path")
+    line = error.get("line")
+    if isinstance(path, str) and isinstance(line, (int, str)) and not isinstance(line, bool):
+        return f"{path}:line:{line}"
+    return path if isinstance(path, str) else ""
+
+
 def normalize(bundles: Sequence[FactBundle]) -> NormalizedCatalog:
     """Merge extractor facts without discarding provenance or conflicts."""
 
     catalog = NormalizedCatalog()
     source_map: Dict[str, SourceRef] = {}
     all_facts: List[Fact] = []
-    error_rows: List[Tuple[str, Dict[str, Any]]] = []
-    for bundle in bundles:
+    error_rows: List[Tuple[str, Sequence[SourceRef], Dict[str, Any]]] = []
+    for bundle_index, bundle in enumerate(bundles):
         if bundle.schema_version != 1:
             raise ValueError(f"unsupported fact schema_version {bundle.schema_version!r}")
         for source in bundle.sources:
@@ -215,10 +262,9 @@ def normalize(bundles: Sequence[FactBundle]) -> NormalizedCatalog:
                 raise ValueError(f"conflicting source metadata for {fact.source.source_id}")
             source_map[fact.source.source_id] = fact.source
             all_facts.append(fact)
-        kinds = sorted({source.kind for source in bundle.sources})
-        origin = kinds[0] if len(kinds) == 1 else ",".join(kinds) or "unknown"
+        bundle_id = _bundle_identifier(bundle_index, bundle)
         for error in bundle.errors:
-            error_rows.append((origin, dict(error)))
+            error_rows.append((bundle_id, tuple(sorted(bundle.sources)), dict(error)))
 
     catalog.sources = [
         {
@@ -348,10 +394,16 @@ def normalize(bundles: Sequence[FactBundle]) -> NormalizedCatalog:
         if fact.kind == "recipe":
             recipe_groups.setdefault(fact.subject, []).append(candidate)
         elif fact.kind == "ingredient":
-            try:
-                position = int(fact.payload["position"])
-            except (KeyError, TypeError, ValueError) as exc:
-                raise ValueError(f"recipe ingredient for {_entity_id(fact.subject)} has invalid position") from exc
+            position = fact.payload.get("position")
+            if (
+                not isinstance(position, int)
+                or isinstance(position, bool)
+                or position < 0
+            ):
+                raise ValueError(
+                    f"recipe ingredient for {_entity_id(fact.subject)} "
+                    "requires a non-negative integer position"
+                )
             ingredient_groups.setdefault((fact.subject, position), []).append(candidate)
         elif fact.kind == "stat":
             stat_key = fact.payload.get("key")
@@ -364,8 +416,14 @@ def normalize(bundles: Sequence[FactBundle]) -> NormalizedCatalog:
         selected[winner.index] = True
         payload = winner.fact.payload
         output_count = payload.get("output_count", 1)
-        if not isinstance(output_count, (int, float)) or isinstance(output_count, bool):
-            raise ValueError(f"recipe {_entity_id(key)} has non-numeric output_count")
+        if (
+            not isinstance(output_count, int)
+            or isinstance(output_count, bool)
+            or output_count <= 0
+        ):
+            raise ValueError(
+                f"recipe {_entity_id(key)} requires a positive integer output_count"
+            )
         recipe_id = _entity_id(key)
         restrictions = {
             field: value
@@ -592,13 +650,44 @@ def normalize(bundles: Sequence[FactBundle]) -> NormalizedCatalog:
             }
         )
 
+    error_occurrences: Dict[Tuple[str, str], int] = {}
+    for bundle_id in sorted({row[0] for row in error_rows}):
+        signatures = sorted(
+            {
+                _json(error)
+                for row_bundle_id, _sources, error in error_rows
+                if row_bundle_id == bundle_id
+            }
+        )
+        for occurrence, signature in enumerate(signatures):
+            error_occurrences[(bundle_id, signature)] = occurrence
+
     normalized_errors: Dict[str, Dict[str, Any]] = {}
-    for origin, error in sorted(error_rows, key=lambda row: (row[0], _json(row[1]))):
+    for bundle_id, sources, error in sorted(
+        error_rows, key=lambda row: (row[0], _json(row[2]))
+    ):
         payload_json = _json(error)
-        error_id = _identifier({"source_kind": origin, "payload": error})
+        source = _error_source(error, sources)
+        source_id = source.source_id if source is not None else None
+        source_kind = source.kind if source is not None else "bundle"
+        locator = _error_locator(error)
+        occurrence = error_occurrences[(bundle_id, payload_json)]
+        error_id = _identifier(
+            {
+                "bundle_id": bundle_id,
+                "source_id": source_id,
+                "locator": locator,
+                "occurrence": occurrence,
+                "payload": error,
+            }
+        )
         normalized_errors[error_id] = {
             "error_id": error_id,
-            "source_kind": origin,
+            "bundle_id": bundle_id,
+            "source_id": source_id,
+            "source_kind": source_kind,
+            "locator": locator,
+            "occurrence": occurrence,
             "code": str(error.get("code") or "unknown"),
             "payload_json": payload_json,
         }

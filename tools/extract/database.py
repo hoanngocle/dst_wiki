@@ -123,9 +123,14 @@ SCHEMA = (
     )""",
     """CREATE TABLE extraction_errors (
       error_id TEXT PRIMARY KEY,
+      bundle_id TEXT NOT NULL,
+      source_id TEXT,
       source_kind TEXT NOT NULL,
+      locator TEXT NOT NULL,
+      occurrence INTEGER NOT NULL,
       code TEXT NOT NULL,
-      payload_json TEXT NOT NULL
+      payload_json TEXT NOT NULL,
+      FOREIGN KEY(source_id) REFERENCES sources(source_id)
     )""",
 )
 
@@ -177,7 +182,7 @@ def write_database(path: Path, catalog: NormalizedCatalog) -> None:
             ("assets", ("asset_id", "namespace", "prefab_id", "asset_type", "atlas", "texture", "element", "uv_json"), ("asset_id",)),
             ("evidence", ("evidence_id", "record_type", "record_id", "source_id", "locator", "raw_value_json", "confidence", "selected"), ("evidence_id",)),
             ("conflicts", ("conflict_id", "subject_key", "field_key", "candidates_json", "selected_json"), ("conflict_id",)),
-            ("extraction_errors", ("error_id", "source_kind", "code", "payload_json"), ("error_id",)),
+            ("extraction_errors", ("error_id", "bundle_id", "source_id", "source_kind", "locator", "occurrence", "code", "payload_json"), ("error_id",)),
         )
         for table, columns, primary_key in table_columns:
             rows = sorted(
@@ -197,4 +202,9 @@ def write_database(path: Path, catalog: NormalizedCatalog) -> None:
         raise
     else:
         connection.close()
-    os.replace(temporary, path)
+    try:
+        os.replace(temporary, path)
+    except BaseException:
+        if temporary.exists():
+            temporary.unlink()
+        raise
