@@ -1,12 +1,12 @@
 import type { WikiEntry } from "@/app/lib/wiki-search";
 
 export const wikiEntries: readonly WikiEntry[] = [
-  { id: "ancient-blade", name: "Ancient Blade", category: "item", description: "A relic weapon recovered from the northern ruins.", keywords: ["sword", "rare", "relic"], accent: "ice" },
-  { id: "wayfinder-lantern", name: "Wayfinder Lantern", category: "item", description: "A travel tool that glows near hidden passages.", keywords: ["tool", "light", "exploration"], accent: "sand" },
-  { id: "mire-stalker", name: "Mire Stalker", category: "creature", description: "A territorial creature found beside flooded paths.", keywords: ["swamp", "beast", "hostile"], accent: "moss" },
-  { id: "glasswing-moth", name: "Glasswing Moth", category: "creature", description: "A passive night creature drawn to cold light.", keywords: ["flying", "passive", "night"], accent: "ice" },
-  { id: "hollow-crossing", name: "The Hollow Crossing", category: "location", description: "A forgotten route beneath the old city.", keywords: ["underground", "ruins", "route"], accent: "slate" },
-  { id: "windrest-observatory", name: "Windrest Observatory", category: "location", description: "A mountain station built to chart distant storms.", keywords: ["mountain", "tower", "weather"], accent: "ice" },
-  { id: "borrowed-map", name: "The Borrowed Map", category: "quest", description: "Return a marked survey map before the next expedition.", keywords: ["exploration", "delivery", "survey"], accent: "sand" },
-  { id: "quiet-bell", name: "The Quiet Bell", category: "quest", description: "Discover why the village signal no longer sounds.", keywords: ["mystery", "village", "investigation"], accent: "slate" },
+  { id: "ancient-blade", name: "Lưỡi Kiếm Cổ", category: "item", description: "Một vũ khí cổ được tìm thấy trong tàn tích phương bắc.", keywords: ["kiếm", "hiếm", "di vật", "vật phẩm"], accent: "ice" },
+  { id: "wayfinder-lantern", name: "Đèn Dẫn Lối", category: "item", description: "Một công cụ phát sáng khi ở gần lối đi bí mật.", keywords: ["công cụ", "ánh sáng", "khám phá", "vật phẩm"], accent: "sand" },
+  { id: "mire-stalker", name: "Kẻ Rình Đầm Lầy", category: "creature", description: "Một sinh vật bảo vệ lãnh thổ bên những lối đi ngập nước.", keywords: ["đầm lầy", "quái thú", "thù địch", "sinh vật"], accent: "moss" },
+  { id: "glasswing-moth", name: "Bướm Cánh Kính", category: "creature", description: "Một sinh vật đêm hiền lành bị thu hút bởi ánh sáng lạnh.", keywords: ["bay", "hiền lành", "ban đêm", "sinh vật"], accent: "ice" },
+  { id: "hollow-crossing", name: "Lối Qua Vùng Trũng", category: "location", description: "Một tuyến đường bị lãng quên bên dưới thành phố cổ.", keywords: ["dưới lòng đất", "tàn tích", "tuyến đường", "địa điểm"], accent: "slate" },
+  { id: "windrest-observatory", name: "Đài Quan Sát Windrest", category: "location", description: "Một trạm trên núi được dựng để theo dõi những cơn bão xa.", keywords: ["núi", "tháp", "thời tiết", "địa điểm"], accent: "ice" },
+  { id: "borrowed-map", name: "Tấm Bản Đồ Mượn", category: "quest", description: "Trả lại bản đồ khảo sát đã đánh dấu trước chuyến thám hiểm tiếp theo.", keywords: ["khám phá", "giao trả", "khảo sát", "nhiệm vụ"], accent: "sand" },
+  { id: "quiet-bell", name: "Chiếc Chuông Im Lặng", category: "quest", description: "Tìm hiểu vì sao chuông báo hiệu của ngôi làng không còn vang lên.", keywords: ["bí ẩn", "ngôi làng", "điều tra", "nhiệm vụ"], accent: "slate" },
 ];
