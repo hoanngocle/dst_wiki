@@ -162,6 +162,7 @@ class MediaWikiClient:
                     raise raised
                 return decoded
             except urllib.error.HTTPError as error:
+                error.close()
                 retryable = error.code == 429 or 500 <= error.code <= 599
                 raised = ClientError(
                     "HTTP {} for {}".format(error.code, self.api_url),
@@ -359,6 +360,7 @@ class MediaWikiClient:
                 raise
             except urllib.error.HTTPError as error:
                 destination.unlink(missing_ok=True)
+                error.close()
                 retryable = error.code == 429 or 500 <= error.code <= 599
                 raised = ClientError(
                     "HTTP {} downloading image".format(error.code),

@@ -1,9 +1,11 @@
 import hashlib
+import gc
 import json
 import tempfile
 import threading
 import unittest
 import urllib.parse
+import warnings
 from collections import Counter
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -147,52 +149,73 @@ class WikiServer:
 
 class ClientTests(unittest.TestCase):
     def test_retries_http_and_api_errors_and_streams_download(self):
-        with WikiServer() as server, tempfile.TemporaryDirectory() as tempdir:
-            sleeps = []
-            client = MediaWikiClient(
-                server.base_url,
-                delay=0,
-                timeout=2,
-                max_attempts=3,
-                sleep=sleeps.append,
-                jitter=lambda: 0,
-                require_https_downloads=False,
-            )
+        with warnings.catch_warnings(record=True) as caught:
+            warnings.simplefilter("always", ResourceWarning)
+            with WikiServer() as server, tempfile.TemporaryDirectory() as tempdir:
+                sleeps = []
+                client = MediaWikiClient(
+                    server.base_url,
+                    delay=0,
+                    timeout=2,
+                    max_attempts=3,
+                    sleep=sleeps.append,
+                    jitter=lambda: 0,
+                    require_https_downloads=False,
+                )
 
-            pages, token = client.list_allpages(0)
-            self.assertEqual(
-                pages, [{"pageid": 1, "ns": 0, "title": "Wilson"}]
-            )
-            self.assertEqual(token, "next-token")
-            self.assertGreaterEqual(server.server.counts["allpages"], 2)
-            self.assertEqual(client.get_page(1)["title"], "Wilson")
+                pages, token = client.list_allpages(0)
+                self.assertEqual(
+                    pages, [{"pageid": 1, "ns": 0, "title": "Wilson"}]
+                )
+                self.assertEqual(token, "next-token")
+                self.assertGreaterEqual(server.server.counts["allpages"], 2)
+                self.assertEqual(client.get_page(1)["title"], "Wilson")
 
-            parsed = client.parse_page(1)
-            self.assertEqual(parsed["title"], "Wilson")
-            self.assertTrue(sleeps)
+                parsed = client.parse_page(1)
+                self.assertEqual(parsed["title"], "Wilson")
+                self.assertTrue(sleeps)
 
-            image = client.get_image_info("File:Wilson.png")
-            self.assertEqual(image["title"], "File:Wilson.png")
-            target = Path(tempdir) / "asset.part"
-            result = client.download(server.base_url + "asset.png", target)
-            self.assertEqual(target.read_bytes(), b"png-bytes")
-            self.assertEqual(result.byte_size, 9)
-            self.assertEqual(
-                result.sha256, hashlib.sha256(b"png-bytes").hexdigest()
-            )
+                image = client.get_image_info("File:Wilson.png")
+                self.assertEqual(image["title"], "File:Wilson.png")
+                target = Path(tempdir) / "asset.part"
+                result = client.download(server.base_url + "asset.png", target)
+                self.assertEqual(target.read_bytes(), b"png-bytes")
+                self.assertEqual(result.byte_size, 9)
+                self.assertEqual(
+                    result.sha256, hashlib.sha256(b"png-bytes").hexdigest()
+                )
+                gc.collect()
+            gc.collect()
+        resource_warnings = [
+            warning
+            for warning in caught
+            if issubclass(warning.category, ResourceWarning)
+        ]
+        self.assertEqual(resource_warnings, [])
 
     def test_does_not_retry_permanent_http_error(self):
-        with WikiServer(always_404=True) as server:
-            client = MediaWikiClient(
-                server.base_url,
-                delay=0,
-                max_attempts=3,
-                require_https_downloads=False,
-            )
-            with self.assertRaises(ClientError) as raised:
-                client.list_allpages(0)
-            self.assertFalse(raised.exception.retryable)
-            self.assertEqual(raised.exception.status, 404)
+        with warnings.catch_warnings(record=True) as caught:
+            warnings.simplefilter("always", ResourceWarning)
+            with WikiServer(always_404=True) as server:
+                client = MediaWikiClient(
+                    server.base_url,
+                    delay=0,
+                    max_attempts=3,
+                    require_https_downloads=False,
+                )
+                with self.assertRaises(ClientError) as raised:
+                    client.list_allpages(0)
+                self.assertFalse(raised.exception.retryable)
+                self.assertEqual(raised.exception.status, 404)
+                del raised
+                gc.collect()
+            gc.collect()
+        resource_warnings = [
+            warning
+            for warning in caught
+            if issubclass(warning.category, ResourceWarning)
+        ]
+        self.assertEqual(resource_warnings, [])
 
     def test_rejects_non_https_original_download(self):
         with WikiServer() as server, tempfile.TemporaryDirectory() as tempdir:
