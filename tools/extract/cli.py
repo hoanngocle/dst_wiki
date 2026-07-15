@@ -238,7 +238,7 @@ def _export_stage(
     textures: Path = ITEM_TEXTURES,
 ) -> None:
     export_catalog(database, catalog, assets)
-    export_items(catalog, assets, items, textures)
+    export_items(database, catalog, assets, items, textures)
     print(f"{catalog} {assets} {items} {textures}")
 
 

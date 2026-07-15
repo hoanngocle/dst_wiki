@@ -2,6 +2,7 @@
 
 import json
 import os
+import sqlite3
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
@@ -21,6 +22,7 @@ LEGACY_CATEGORY_MAP = {
     "creature": "mob",
     "player": "character",
 }
+RECIPE_DESC_PREFIX = "STRINGS.RECIPE_DESC."
 
 
 def _atomic_json(path: Path, value: JsonObject) -> None:
@@ -94,6 +96,14 @@ def _display_name(entity: Optional[JsonObject], fallback: str) -> str:
                 return value.strip()
     prefab_id = entity.get("prefab_id")
     return prefab_id if isinstance(prefab_id, str) and prefab_id else fallback
+
+
+def _vietnamese_name(entity: JsonObject) -> Optional[str]:
+    names = entity.get("name")
+    if not isinstance(names, dict):
+        return None
+    value = names.get("vi")
+    return value.strip() if isinstance(value, str) and value.strip() else None
 
 
 def _english_name(entity: JsonObject) -> Optional[str]:
@@ -185,6 +195,7 @@ def _build_item_entry(
     entities: Dict[str, JsonObject],
     selected_assets: Dict[str, JsonObject],
     textures: Dict[str, JsonObject],
+    crafting_notes: Dict[str, str],
 ) -> JsonObject:
     entity_id = str(entity["key"])
     prefab_id = str(entity["prefab_id"])
@@ -238,12 +249,40 @@ def _build_item_entry(
         "name": _display_name(entity, prefab_id),
         "englishName": _english_name(entity),
         "description": _description(entity),
+        "craftingNote": crafting_notes.get(prefab_id.lower()),
         "sprite": _sprite(entity.get("icon_key"), selected_assets, textures),
         "recipe": recipe_payload,
     }
 
 
-def build_item_export(catalog: JsonObject, assets: JsonObject) -> Tuple[JsonObject, JsonObject]:
+def load_crafting_notes(database_path: Path) -> Dict[str, str]:
+    """Load deterministic Tu Tiên recipe descriptions from the audit database."""
+
+    grouped: Dict[str, set[str]] = {}
+    with sqlite3.connect(database_path) as connection:
+        rows = connection.execute(
+            "select text_key,value_vi from game_text "
+            "where text_key glob 'STRINGS.RECIPE_DESC.*' "
+            "order by text_key,value_vi"
+        )
+        for text_key, value_vi in rows:
+            grouped.setdefault(str(text_key), set()).add(str(value_vi))
+
+    conflicts = sorted(key for key, values in grouped.items() if len(values) > 1)
+    if conflicts:
+        raise ValueError(f"conflicting crafting note for {conflicts[0]}")
+
+    return {
+        text_key[len(RECIPE_DESC_PREFIX) :].lower(): next(iter(values))
+        for text_key, values in sorted(grouped.items())
+    }
+
+
+def build_item_export(
+    catalog: JsonObject,
+    assets: JsonObject,
+    crafting_notes: Optional[Dict[str, str]] = None,
+) -> Tuple[JsonObject, JsonObject]:
     """Build compact item and texture payloads from the public audit exports."""
 
     source_entities = catalog.get("entities")
@@ -259,18 +298,21 @@ def build_item_export(catalog: JsonObject, assets: JsonObject) -> Tuple[JsonObje
         [asset for asset in source_assets if isinstance(asset, dict)]
     )
     textures: Dict[str, JsonObject] = {}
-    exportable_entities = [
-        entity
-        for entity in source_entities
-        if isinstance(entity, dict) and _category(entity) is not None
-    ]
+    exportable_entities = []
+    for entity in source_entities:
+        if not isinstance(entity, dict) or _category(entity) is None:
+            continue
+        if entity.get("namespace") == "tu_tien" and _vietnamese_name(entity) is None:
+            continue
+        exportable_entities.append(entity)
+    note_lookup = crafting_notes or {}
     items = [
-        _build_item_entry(entity, entities, selected_assets, textures)
+        _build_item_entry(entity, entities, selected_assets, textures, note_lookup)
         for entity in exportable_entities
     ]
     items.sort(key=lambda item: item["id"])
     return (
-        {"schema_version": 2, "items": items},
+        {"schema_version": 3, "items": items},
         {
             "schema_version": 1,
             "textures": [textures[key] for key in sorted(textures)],
@@ -279,6 +321,7 @@ def build_item_export(catalog: JsonObject, assets: JsonObject) -> Tuple[JsonObje
 
 
 def export_items(
+    database_path: Path,
     catalog_path: Path,
     assets_path: Path,
     items_path: Path,
@@ -288,6 +331,7 @@ def export_items(
 
     catalog = json.loads(Path(catalog_path).read_text(encoding="utf-8"))
     assets = json.loads(Path(assets_path).read_text(encoding="utf-8"))
-    items, textures = build_item_export(catalog, assets)
+    crafting_notes = load_crafting_notes(database_path)
+    items, textures = build_item_export(catalog, assets, crafting_notes)
     _atomic_json(Path(items_path), items)
     _atomic_json(Path(textures_path), textures)

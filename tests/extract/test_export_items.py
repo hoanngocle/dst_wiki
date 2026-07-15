@@ -1,9 +1,14 @@
 import json
+import sqlite3
 import tempfile
 import unittest
 from pathlib import Path
 
-from tools.extract.export_items import build_item_export, export_items
+from tools.extract.export_items import (
+    build_item_export,
+    export_items,
+    load_crafting_notes,
+)
 
 
 class ExportItemsTests(unittest.TestCase):
@@ -150,10 +155,14 @@ class ExportItemsTests(unittest.TestCase):
         }
         return catalog, assets
 
-    def test_builds_all_prefabs_with_categories_and_resolved_recipe_sprites(self):
+    def test_builds_named_tu_tien_prefabs_with_crafting_notes_and_base_game(self):
         catalog, assets = self.fixtures()
 
-        items, textures = build_item_export(catalog, assets)
+        items, textures = build_item_export(
+            catalog,
+            assets,
+            {"xd_sword": "Rèn một thanh kiếm thử"},
+        )
 
         self.assertEqual(
             [item["id"] for item in items["items"]],
@@ -161,23 +170,22 @@ class ExportItemsTests(unittest.TestCase):
                 "base_game:deerclops",
                 "base_game:goldnugget",
                 "tu_tien:xd_creature",
-                "tu_tien:xd_fallback",
-                "tu_tien:xd_special",
                 "tu_tien:xd_sword",
             ],
         )
-        self.assertEqual(items["schema_version"], 2)
+        self.assertEqual(items["schema_version"], 3)
         by_id = {item["id"]: item for item in items["items"]}
         self.assertEqual(by_id["base_game:deerclops"]["category"], "boss")
         self.assertEqual(by_id["base_game:goldnugget"]["category"], "item")
         self.assertEqual(by_id["tu_tien:xd_creature"]["category"], "mob")
-        self.assertEqual(by_id["tu_tien:xd_fallback"]["category"], "other")
         self.assertNotIn("base_game:dependency_alias", by_id)
         sword = next(
             item for item in items["items"] if item["id"] == "tu_tien:xd_sword"
         )
         self.assertEqual(sword["name"], "Kiếm Thử")
         self.assertEqual(sword["description"], "Một thanh kiếm")
+        self.assertEqual(sword["craftingNote"], "Rèn một thanh kiếm thử")
+        self.assertIsNone(by_id["base_game:deerclops"]["craftingNote"])
         self.assertEqual(
             sword["sprite"]["src"], "/assets/game/" + "a" * 64 + ".png"
         )
@@ -231,12 +239,8 @@ class ExportItemsTests(unittest.TestCase):
         by_id = {item["id"]: item for item in items["items"]}
 
         self.assertEqual(by_id["base_game:goldnugget"]["description"], "A gold nugget.")
-        self.assertEqual(by_id["tu_tien:xd_special"]["name"], "Special Item")
-        self.assertEqual(by_id["tu_tien:xd_special"]["recipe"]["ingredients"], [])
-        self.assertIsNone(by_id["tu_tien:xd_special"]["sprite"])
-        self.assertEqual(by_id["tu_tien:xd_fallback"]["name"], "xd_fallback")
-        self.assertIsNone(by_id["tu_tien:xd_fallback"]["description"])
-        self.assertIsNone(by_id["tu_tien:xd_fallback"]["recipe"])
+        self.assertNotIn("tu_tien:xd_special", by_id)
+        self.assertNotIn("tu_tien:xd_fallback", by_id)
         self.assertEqual(
             [
                 ingredient["id"]
@@ -251,20 +255,71 @@ class ExportItemsTests(unittest.TestCase):
             root = Path(tmp)
             catalog_path = root / "catalog.json"
             assets_path = root / "assets.json"
+            database_path = root / "wiki.sqlite"
             items_path = root / "items.json"
             textures_path = root / "textures.json"
             catalog_path.write_text(json.dumps(catalog), encoding="utf-8")
             assets_path.write_text(json.dumps(assets), encoding="utf-8")
+            with sqlite3.connect(database_path) as connection:
+                connection.execute(
+                    "create table game_text (text_key text not null, value_vi text not null)"
+                )
 
-            export_items(catalog_path, assets_path, items_path, textures_path)
+            export_items(
+                database_path,
+                catalog_path,
+                assets_path,
+                items_path,
+                textures_path,
+            )
             first_items = items_path.read_bytes()
             first_textures = textures_path.read_bytes()
-            export_items(catalog_path, assets_path, items_path, textures_path)
+            export_items(
+                database_path,
+                catalog_path,
+                assets_path,
+                items_path,
+                textures_path,
+            )
 
             self.assertEqual(items_path.read_bytes(), first_items)
             self.assertEqual(textures_path.read_bytes(), first_textures)
             self.assertFalse((root / ".items.json.tmp").exists())
             self.assertFalse((root / ".textures.json.tmp").exists())
+
+    def test_loads_deduplicated_crafting_notes_and_rejects_conflicts(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            database = Path(tmp) / "wiki.sqlite"
+            note = "Đá có linh khiếu, thần niệm có thể thông đạt"
+            with sqlite3.connect(database) as connection:
+                connection.execute(
+                    "create table game_text (text_key text not null, value_vi text not null)"
+                )
+                connection.executemany(
+                    "insert into game_text(text_key,value_vi) values(?,?)",
+                    [
+                        ("STRINGS.RECIPE_DESC.XD_SJ_TLSQ", note),
+                        ("STRINGS.RECIPE_DESC.XD_SJ_TLSQ", note),
+                        ("STRINGS.NAMES.XD_SJ_TLSQ", "Thông Linh Thạch Khiếu"),
+                    ],
+                )
+
+            self.assertEqual(
+                load_crafting_notes(database),
+                {"xd_sj_tlsq": note},
+            )
+
+            with sqlite3.connect(database) as connection:
+                connection.execute(
+                    "insert into game_text(text_key,value_vi) values(?,?)",
+                    ("STRINGS.RECIPE_DESC.XD_SJ_TLSQ", "Nội dung khác"),
+                )
+
+            with self.assertRaisesRegex(
+                ValueError,
+                "STRINGS.RECIPE_DESC.XD_SJ_TLSQ",
+            ):
+                load_crafting_notes(database)
 
 
 if __name__ == "__main__":

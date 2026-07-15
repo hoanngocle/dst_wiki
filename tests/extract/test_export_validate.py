@@ -534,7 +534,13 @@ class ExportValidateTests(unittest.TestCase):
                 cli._export_stage(database, catalog, assets, items, textures)
 
             export_catalog.assert_called_once_with(database, catalog, assets)
-            export_items.assert_called_once_with(catalog, assets, items, textures)
+            export_items.assert_called_once_with(
+                database,
+                catalog,
+                assets,
+                items,
+                textures,
+            )
 
     def test_publish_assets_cli_has_explicit_inputs(self):
         args = cli.build_parser().parse_args(["publish-assets"])
