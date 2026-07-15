@@ -5,6 +5,7 @@ import unittest
 from pathlib import Path
 from unittest import mock
 
+from tools.extract import cli
 from tools.extract.contracts import EntityKey, Fact, FactBundle, SourceRef
 from tools.extract.database import write_database
 from tools.extract.normalize import normalize
@@ -15,6 +16,72 @@ def source(source_id, kind, marker):
 
 
 class DatabaseTests(unittest.TestCase):
+    def test_build_database_stage_passes_collected_game_text_to_writer(self):
+        static = source("static", "mod_static", "a")
+        bundle = FactBundle(1, [static], [], [])
+        catalog = normalize([bundle])
+        text_source = SourceRef(
+            "game-text:mod/strings.lua",
+            "mod_static",
+            "mod/strings.lua",
+            "18.0.10",
+            "b" * 64,
+        )
+        text_rows = [
+            {
+                "text_id": "c" * 64,
+                "text_key": "STRINGS.XD_UI.OPEN",
+                "value_vi": "Mở ra",
+                "source_id": text_source.source_id,
+                "locator": "line:1",
+            }
+        ]
+        with mock.patch.object(cli, "load_bundle", return_value=bundle), \
+             mock.patch.object(cli, "load_runtime_bundle", return_value=bundle), \
+             mock.patch.object(cli, "static_mod_version", return_value="18.0.10"), \
+             mock.patch.object(cli, "static_runtime_target_ids", return_value=[]), \
+             mock.patch.object(cli, "normalize", return_value=catalog), \
+             mock.patch.object(cli, "collect_game_text", return_value=([text_source], text_rows), create=True), \
+             mock.patch.object(cli, "write_database") as write:
+            cli._build_db_stage(Path("static.json"), Path("runtime.json"), Path("base.json"), Path("wiki.sqlite"))
+
+        write.assert_called_once_with(Path("wiki.sqlite"), catalog, [text_source], text_rows)
+
+    def test_persists_game_text_with_source_foreign_key(self):
+        text_source = SourceRef(
+            "game-text:mod/strings.lua",
+            "mod_static",
+            "mod/strings.lua",
+            "18.0.10",
+            "a" * 64,
+        )
+        text_row = {
+            "text_id": "b" * 64,
+            "text_key": "STRINGS.XD_UI.OPEN",
+            "value_vi": "Mở ra",
+            "source_id": text_source.source_id,
+            "locator": "line:42",
+        }
+        catalog = normalize([FactBundle(1, [], [], [])])
+
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "wiki.sqlite"
+            write_database(
+                path,
+                catalog,
+                game_text_sources=[text_source],
+                game_text_rows=[text_row],
+            )
+            db = sqlite3.connect(path)
+            self.assertEqual(
+                db.execute(
+                    "select text_key,value_vi,source_id,locator from game_text"
+                ).fetchone(),
+                ("STRINGS.XD_UI.OPEN", "Mở ra", text_source.source_id, "line:42"),
+            )
+            self.assertEqual(db.execute("pragma foreign_key_check").fetchall(), [])
+            db.close()
+
     def test_generic_description_wins_display_while_recipe_conflict_is_preserved(self):
         static = source("static", "mod_translation", "a")
         key = EntityKey("base_game", "goldnugget")

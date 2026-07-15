@@ -14,6 +14,16 @@ const FOCUSABLE_SELECTOR = [
   '[tabindex]:not([tabindex="-1"])',
 ].join(",");
 
+const categoryLabel = {
+  item: "Item",
+  mob: "Mob",
+  boss: "Boss",
+  character: "Nhân vật",
+  structure: "Công trình",
+  effect: "Hiệu ứng",
+  other: "Khác",
+} as const;
+
 export function ItemDetailModal({
   item,
   onClose,
@@ -25,6 +35,7 @@ export function ItemDetailModal({
   const dialogRef = useRef<HTMLElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const sourceLabel = item.namespace === "tu_tien" ? "Tu Tiên" : "DST gốc liên quan";
+  const category = categoryLabel[item.category];
 
   useEffect(() => {
     const previouslyFocused = document.activeElement as HTMLElement | null;
@@ -88,16 +99,18 @@ export function ItemDetailModal({
           />
           <div className="min-w-0 flex-1">
             <h2 id={titleId} className="text-xl font-semibold text-[#172943] sm:text-2xl">
-              Chi tiết {item.name}
+              {item.name}
             </h2>
             {item.englishName ? (
               <p className="mt-1 text-sm text-[#607188]">{item.englishName}</p>
             ) : null}
-            <div className="mt-2 flex min-w-0 flex-wrap items-center gap-x-2 gap-y-1 text-xs">
-              <span className="font-semibold text-[#2e5fb3]">{sourceLabel}</span>
-              <code className="truncate font-mono text-[11px] text-[#68798e]">
-                {item.prefabId}
-              </code>
+            <div className="mt-3 flex flex-wrap gap-2 text-xs font-semibold">
+              <span className="rounded-full border border-[#c8d3df] bg-[#eef3f8] px-2.5 py-1 text-[#43556d]">
+                {category}
+              </span>
+              <span className="rounded-full border border-[#b9cce8] bg-[#e9f1fb] px-2.5 py-1 text-[#2e5fb3]">
+                {sourceLabel}
+              </span>
             </div>
           </div>
           <button
@@ -111,27 +124,66 @@ export function ItemDetailModal({
           </button>
         </div>
 
-        <div className="space-y-6 p-5 sm:p-6">
-          <section aria-labelledby={`${titleId}-description`}>
+        <div className="space-y-4 p-5 sm:p-6">
+          <section
+            aria-labelledby={`${titleId}-source`}
+            className="overflow-hidden rounded-2xl border border-[#c8d3df]"
+          >
             <h3
-              id={`${titleId}-description`}
-              className="text-sm font-semibold text-[#43556d]"
+              id={`${titleId}-source`}
+              className="bg-[#263b58] px-4 py-2 text-sm font-semibold text-[#f8fafc]"
             >
-              Mô tả
+              Source
             </h3>
-            <p className="mt-2 text-sm leading-6 text-[#53647a]">
-              {item.description ?? "Chưa có mô tả."}
-            </p>
+            <p className="px-4 py-3 text-sm font-medium text-[#607188]">Dropped by</p>
           </section>
 
+          {item.recipe ? (
+            <section
+              aria-labelledby={`${titleId}-crafting`}
+              className="overflow-hidden rounded-2xl border border-[#c8d3df]"
+            >
+              <h3
+                id={`${titleId}-crafting`}
+                className="bg-[#263b58] px-4 py-2 text-sm font-semibold text-[#f8fafc]"
+              >
+                Công thức
+              </h3>
+              <div className="flex flex-wrap items-center gap-3 p-4">
+                <RecipeIngredients recipe={item.recipe} />
+                <span aria-hidden="true" className="text-lg font-semibold text-[#607188]">
+                  =
+                </span>
+                <span
+                  aria-label={`Kết quả: ${item.name}, số lượng ${item.recipe.outputCount}`}
+                  className="inline-flex min-h-10 items-center gap-2 rounded-xl border border-[#b9cce8] bg-[#e9f1fb] py-1 pl-1 pr-3 text-sm font-semibold text-[#263b58]"
+                >
+                  <GameSprite sprite={item.sprite} size={32} />
+                  <span>{item.name}</span>
+                  {item.recipe.outputCount > 1 ? <span>×{item.recipe.outputCount}</span> : null}
+                </span>
+              </div>
+            </section>
+          ) : null}
+
           <section
-            aria-labelledby={`${titleId}-recipe`}
-            className="border-t border-[#d5dde6] pt-5"
+            aria-labelledby={`${titleId}-miscellaneous`}
+            className="overflow-hidden rounded-2xl border border-[#c8d3df]"
           >
-            <h3 id={`${titleId}-recipe`} className="mb-3 text-sm font-semibold text-[#43556d]">
-              Công thức
+            <h3
+              id={`${titleId}-miscellaneous`}
+              className="bg-[#263b58] px-4 py-2 text-sm font-semibold text-[#f8fafc]"
+            >
+              Miscellaneous
             </h3>
-            <RecipeIngredients recipe={item.recipe} />
+            <dl className="divide-y divide-[#dce3eb]">
+              <div className="flex items-center justify-between gap-4 px-4 py-3 text-sm">
+                <dt className="text-[#607188]">Prefab ID</dt>
+                <dd className="max-w-[60%] truncate font-mono text-xs font-semibold text-[#263b58]">
+                  {item.prefabId}
+                </dd>
+              </div>
+            </dl>
           </section>
         </div>
       </section>

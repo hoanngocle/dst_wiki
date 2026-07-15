@@ -14,6 +14,15 @@ SCHEMA = (
       version TEXT NOT NULL,
       sha256 TEXT NOT NULL
     )""",
+    """CREATE TABLE game_text (
+      text_id TEXT PRIMARY KEY,
+      text_key TEXT NOT NULL,
+      value_vi TEXT NOT NULL,
+      source_id TEXT NOT NULL,
+      locator TEXT NOT NULL,
+      UNIQUE(source_id, text_key, locator),
+      FOREIGN KEY(source_id) REFERENCES sources(source_id)
+    )""",
     """CREATE TABLE entities (
       namespace TEXT NOT NULL,
       prefab_id TEXT NOT NULL,
@@ -166,10 +175,29 @@ def _insert_rows(
     )
 
 
-def write_database(path: Path, catalog: NormalizedCatalog) -> None:
+def write_database(
+    path: Path,
+    catalog: NormalizedCatalog,
+    game_text_sources: Iterable[Any] = (),
+    game_text_rows: Iterable[Dict[str, Any]] = (),
+) -> None:
     """Write a catalog in one transaction, then atomically replace the output."""
 
     path = Path(path)
+    source_rows = {row["source_id"]: dict(row) for row in catalog.sources}
+    for source in game_text_sources:
+        row = {
+            "source_id": source.source_id,
+            "kind": source.kind,
+            "path": source.path,
+            "version": source.version,
+            "sha256": source.sha256,
+        }
+        previous = source_rows.get(row["source_id"])
+        if previous is not None and previous != row:
+            raise ValueError(f"conflicting source metadata for {row['source_id']}")
+        source_rows[row["source_id"]] = row
+    game_text_rows = [dict(row) for row in game_text_rows]
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_name(f".{path.name}.tmp")
     if temporary.exists():
@@ -183,6 +211,7 @@ def write_database(path: Path, catalog: NormalizedCatalog) -> None:
         create_schema(connection)
         table_columns = (
             ("sources", ("source_id", "kind", "path", "version", "sha256"), ("source_id",)),
+            ("game_text", ("text_id", "text_key", "value_vi", "source_id", "locator"), ("text_id",)),
             ("entities", ("namespace", "prefab_id", "entity_type", "is_inventory_item", "name_vi", "name_en", "description_vi", "description_en", "icon_key", "confidence"), ("namespace", "prefab_id")),
             ("recipes", ("recipe_id", "product_namespace", "product_id", "output_count", "tech", "restrictions_json"), ("recipe_id",)),
             ("recipe_ingredients", ("recipe_id", "position", "ingredient_namespace", "ingredient_id", "amount"), ("recipe_id", "position")),
@@ -197,8 +226,15 @@ def write_database(path: Path, catalog: NormalizedCatalog) -> None:
             ("extraction_errors", ("error_id", "bundle_id", "source_id", "source_kind", "locator", "occurrence", "code", "payload_json"), ("error_id",)),
         )
         for table, columns, primary_key in table_columns:
+            table_rows = (
+                source_rows.values()
+                if table == "sources"
+                else game_text_rows
+                if table == "game_text"
+                else getattr(catalog, table)
+            )
             rows = sorted(
-                getattr(catalog, table),
+                table_rows,
                 key=lambda row: tuple(row[column] for column in primary_key),
             )
             _insert_rows(connection, table, columns, rows)

@@ -11,6 +11,7 @@ from tools.extract.contracts import dump_bundle, load_bundle
 from tools.extract.database import write_database
 from tools.extract.export_items import export_items
 from tools.extract.export_json import export_catalog
+from tools.extract.export_mod_markdown import collect_game_text, export_mod_markdown
 from tools.extract.mod_static import extract_mod_static
 from tools.extract.normalize import normalize
 from tools.extract.runtime_import import (
@@ -38,6 +39,7 @@ ASSETS_JSON = Path("public/data/assets.json")
 ITEMS_JSON = Path("public/data/items.json")
 ITEM_TEXTURES = Path("data/generated/item-textures.json")
 WEB_ASSETS = Path("public/assets/game")
+MOD_TEXT = Path("docs/mod-text")
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -119,6 +121,10 @@ def build_parser() -> argparse.ArgumentParser:
     export.add_argument("--assets", type=Path, default=ASSETS_JSON)
     export.add_argument("--items", type=Path, default=ITEMS_JSON)
     export.add_argument("--textures", type=Path, default=ITEM_TEXTURES)
+    export_markdown = sub.add_parser("export-markdown")
+    export_markdown.add_argument("--catalog", type=Path, default=CATALOG_JSON)
+    export_markdown.add_argument("--runtime", type=Path, default=RUNTIME_FACTS)
+    export_markdown.add_argument("--output", type=Path, default=MOD_TEXT)
     publish_assets = sub.add_parser("publish-assets")
     publish_assets.add_argument("--textures", type=Path, default=ITEM_TEXTURES)
     publish_assets.add_argument("--mod-root", type=Path, default=MOD_ROOT)
@@ -216,7 +222,10 @@ def _build_db_stage(
     )
     bundles = [static_bundle, runtime_bundle, load_bundle(base_path)]
     catalog = normalize(bundles)
-    write_database(output, catalog)
+    game_text_sources, game_text_rows = collect_game_text(
+        [MOD_ROOT, TU_TIEN_TRANSLATION.parent]
+    )
+    write_database(output, catalog, game_text_sources, game_text_rows)
     print(f"{output} entities={len(catalog.entities)} evidence={len(catalog.evidence)} conflicts={len(catalog.conflicts)}")
     return catalog
 
@@ -231,6 +240,20 @@ def _export_stage(
     export_catalog(database, catalog, assets)
     export_items(catalog, assets, items, textures)
     print(f"{catalog} {assets} {items} {textures}")
+
+
+def _export_markdown_stage(
+    catalog: Path = CATALOG_JSON,
+    runtime: Path = RUNTIME_FACTS,
+    output: Path = MOD_TEXT,
+) -> None:
+    export_mod_markdown(
+        catalog,
+        runtime,
+        [MOD_ROOT, TU_TIEN_TRANSLATION.parent],
+        output,
+    )
+    print(output)
 
 
 def _validate_stage(
@@ -302,6 +325,9 @@ def main() -> int:
         return 0
     if args.command == "export":
         _export_stage(args.database, args.catalog, args.assets, args.items, args.textures)
+        return 0
+    if args.command == "export-markdown":
+        _export_markdown_stage(args.catalog, args.runtime, args.output)
         return 0
     if args.command == "publish-assets":
         published = publish_web_assets(

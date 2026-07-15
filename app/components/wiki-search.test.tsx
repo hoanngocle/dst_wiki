@@ -276,9 +276,9 @@ describe("WikiSearch", () => {
     ingredient.focus();
     fireEvent.click(ingredient);
 
-    const dialog = screen.getByRole("dialog", { name: "Chi tiết Vàng" });
+    const dialog = screen.getByRole("dialog", { name: "Vàng" });
     expect(within(dialog).getByText("Gold Nugget")).toBeDefined();
-    expect(within(dialog).getByText("Một cục vàng.")).toBeDefined();
+    expect(within(dialog).getByText("Prefab ID")).toBeDefined();
 
     fireEvent.click(within(dialog).getByRole("button", { name: "Đóng chi tiết" }));
     expect(screen.queryByRole("dialog")).toBeNull();

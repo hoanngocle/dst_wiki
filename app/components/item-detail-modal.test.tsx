@@ -8,6 +8,7 @@ const item: ItemListEntry = {
   id: "base_game:goldnugget",
   prefabId: "goldnugget",
   namespace: "base_game",
+  category: "item",
   name: "Vàng",
   englishName: "Gold Nugget",
   description: "Một cục vàng.",
@@ -29,11 +30,21 @@ describe("ItemDetailModal", () => {
   it("renders full item details and focuses the close button", () => {
     render(<ItemDetailModal item={item} onClose={vi.fn()} />);
 
-    expect(screen.getByRole("dialog", { name: "Chi tiết Vàng" })).toBeDefined();
+    expect(screen.getByRole("dialog", { name: "Vàng" })).toBeDefined();
     expect(screen.getByText("Gold Nugget")).toBeDefined();
     expect(screen.getByText("goldnugget")).toBeDefined();
-    expect(screen.getByText("Một cục vàng.")).toBeDefined();
     expect(screen.getByLabelText("Đá, số lượng 1")).toBeDefined();
+    expect(screen.getByText("Item")).toBeDefined();
+    expect(screen.getByText("DST gốc liên quan")).toBeDefined();
+    expect(screen.getByRole("heading", { name: "Công thức" })).toBeDefined();
+    expect(screen.getByText("=")).toBeDefined();
+    expect(screen.getByLabelText("Kết quả: Vàng, số lượng 1")).toBeDefined();
+    expect(screen.getByRole("heading", { name: "Source" })).toBeDefined();
+    expect(screen.getByText("Dropped by")).toBeDefined();
+    expect(screen.getByRole("heading", { name: "Miscellaneous" })).toBeDefined();
+    expect(screen.getByText("Prefab ID")).toBeDefined();
+    expect(screen.queryByRole("heading", { name: "Object Info" })).toBeNull();
+    expect(screen.queryByRole("heading", { name: "Description" })).toBeNull();
     expect(document.activeElement).toBe(
       screen.getByRole("button", { name: "Đóng chi tiết" }),
     );
@@ -53,7 +64,7 @@ describe("ItemDetailModal", () => {
     const onClose = vi.fn();
     render(<ItemDetailModal item={item} onClose={onClose} />);
 
-    const dialog = screen.getByRole("dialog", { name: "Chi tiết Vàng" });
+    const dialog = screen.getByRole("dialog", { name: "Vàng" });
     const backdrop = dialog.parentElement as HTMLElement;
     fireEvent.click(dialog);
     expect(onClose).not.toHaveBeenCalled();
@@ -86,5 +97,17 @@ describe("ItemDetailModal", () => {
     expect(document.activeElement).toBe(opener);
     expect(document.body.style.overflow).toBe(previousOverflow);
     opener.remove();
+  });
+
+  it("omits the recipe panel when no recipe exists", () => {
+    render(
+      <ItemDetailModal
+        item={{ ...item, description: null, recipe: null }}
+        onClose={vi.fn()}
+      />,
+    );
+
+    expect(screen.queryByRole("heading", { name: "Công thức" })).toBeNull();
+    expect(screen.getByRole("heading", { name: "Miscellaneous" })).toBeDefined();
   });
 });
