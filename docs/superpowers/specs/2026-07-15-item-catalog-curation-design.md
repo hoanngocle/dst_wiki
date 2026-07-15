@@ -7,6 +7,7 @@ The wiki currently exposes internal prefab variants in the search results. This 
 ## Requirements
 
 - Display `DST` everywhere the UI currently displays `DST gốc` or `DST gốc liên quan`.
+- Display an item's English name directly below its Vietnamese name on result cards when `englishName` is available.
 - Exclude every catalog entry whose `prefabId` ends with the exact suffix `_fx`.
 - For entries in the same namespace whose prefab IDs form an exact `foo` and `foo_item` pair:
   - keep only `foo_item` when it has a sprite;
@@ -41,7 +42,7 @@ This produces a smaller generated payload, but broadens the change into the extr
 
 Pairing by both namespace and prefab ID stem prevents a Tu Tiên prefab from suppressing a base-game prefab with the same technical name. The rule only applies to exact suffix relationships, so unrelated names containing `_item` are unaffected.
 
-The filter button, item card, and item detail modal will use the single label `DST` for the `base_game` namespace.
+The filter button, item card, and item detail modal will use the single label `DST` for the `base_game` namespace. Result cards will render `englishName` as secondary text immediately below the Vietnamese heading when the field is non-null; cards without an English name will retain their current compact layout. The detail modal already follows this behavior and will remain unchanged apart from its source label.
 
 ## Data Flow
 
@@ -61,10 +62,10 @@ Catalog tests will cover these independent behaviors:
 - standalone `_item` entries remain;
 - retained entries preserve their original order and namespace isolation.
 
-Component tests will assert that the base-game filter, result card, and detail modal render `DST` and no longer render the old labels. Existing search and interaction tests must continue to pass.
+Component tests will assert that the base-game filter, result card, and detail modal render `DST` and no longer render the old labels. Result-card tests will also verify that an available English name appears below the Vietnamese heading and that no empty secondary row is rendered when it is unavailable. Existing search and interaction tests must continue to pass.
 
 ## Out of Scope
 
 - Rewriting or shrinking `public/data/items.json`.
 - Fuzzy duplicate detection based on translated names or descriptions.
-- Changing card layout, category labels, sprites, or recipe presentation.
+- Changing category labels, sprites, recipe presentation, or card structure beyond the English-name subtitle.
