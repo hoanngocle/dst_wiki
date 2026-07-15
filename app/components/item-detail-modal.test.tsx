@@ -111,4 +111,35 @@ describe("ItemDetailModal", () => {
     expect(screen.queryByRole("heading", { name: "Công thức" })).toBeNull();
     expect(screen.getByRole("heading", { name: "Miscellaneous" })).toBeDefined();
   });
+
+  it("shows a crafting note inside the runtime recipe panel", () => {
+    render(
+      <ItemDetailModal
+        item={{ ...item, craftingNote: "Rèn bằng linh lực tinh khiết." }}
+        onClose={vi.fn()}
+      />,
+    );
+
+    expect(screen.getByRole("heading", { name: "Công thức" })).toBeDefined();
+    expect(screen.getByText("Rèn bằng linh lực tinh khiết.")).toBeDefined();
+  });
+
+  it("shows a note-only crafting panel without inventing ingredients", () => {
+    render(
+      <ItemDetailModal
+        item={{
+          ...item,
+          recipe: null,
+          craftingNote: "Tiêu hao 10 điểm máu để tạo ra một cánh hoa.",
+        }}
+        onClose={vi.fn()}
+      />,
+    );
+
+    expect(
+      screen.getByRole("heading", { name: "Cách tạo / ghi chú chế tạo" }),
+    ).toBeDefined();
+    expect(screen.getByText("Tiêu hao 10 điểm máu để tạo ra một cánh hoa.")).toBeDefined();
+    expect(screen.queryByText("=")).toBeNull();
+  });
 });

@@ -163,6 +163,28 @@ export function ItemDetailModal({
                   {item.recipe.outputCount > 1 ? <span>×{item.recipe.outputCount}</span> : null}
                 </span>
               </div>
+              {item.craftingNote ? (
+                <p className="border-t border-[#dce3eb] px-4 py-3 text-sm leading-6 text-[#53647a]">
+                  {item.craftingNote}
+                </p>
+              ) : null}
+            </section>
+          ) : null}
+
+          {!item.recipe && item.craftingNote ? (
+            <section
+              aria-labelledby={`${titleId}-crafting-note`}
+              className="overflow-hidden rounded-2xl border border-[#c8d3df]"
+            >
+              <h3
+                id={`${titleId}-crafting-note`}
+                className="bg-[#263b58] px-4 py-2 text-sm font-semibold text-[#f8fafc]"
+              >
+                Cách tạo / ghi chú chế tạo
+              </h3>
+              <p className="px-4 py-3 text-sm leading-6 text-[#53647a]">
+                {item.craftingNote}
+              </p>
             </section>
           ) : null}
 
