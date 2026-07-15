@@ -1,4 +1,5 @@
 import hashlib
+import http.client
 import json
 import os
 import random
@@ -9,7 +10,7 @@ import urllib.parse
 import urllib.request
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Callable, Dict, List, Mapping, Optional, Tuple
+from typing import Any, Callable, Dict, List, Mapping, Optional, Sequence, Tuple
 
 from tools.crawl_wiki.parser import normalize_base_url
 
@@ -174,7 +175,13 @@ class MediaWikiClient:
                     last_error = raised
                     continue
                 raise raised
-            except (urllib.error.URLError, TimeoutError, socket.timeout) as error:
+            except (
+                urllib.error.URLError,
+                TimeoutError,
+                socket.timeout,
+                ConnectionError,
+                http.client.RemoteDisconnected,
+            ) as error:
                 raised = ClientError(
                     "network error for {}: {}".format(self.api_url, error),
                     retryable=True,
@@ -264,6 +271,61 @@ class MediaWikiClient:
                 "parse response is missing parse object", retryable=False
             )
         return parsed
+
+    def parse_page_by_title(self, title: str) -> Dict[str, Any]:
+        if not title.strip():
+            raise ValueError("page title must not be empty")
+        response = self._api(
+            {
+                "action": "parse",
+                "page": title,
+                "prop": "text|links|categories|images|displaytitle|properties",
+            }
+        )
+        parsed = response.get("parse")
+        if not isinstance(parsed, dict):
+            raise ClientError(
+                "parse response is missing parse object", retryable=False
+            )
+        return parsed
+
+    def resolve_titles(
+        self, titles: Sequence[str]
+    ) -> List[Dict[str, Any]]:
+        normalized = [title.strip() for title in titles]
+        if any(not title for title in normalized):
+            raise ValueError("page titles must not be empty")
+        pages: List[Dict[str, Any]] = []
+        for start in range(0, len(normalized), 50):
+            chunk = normalized[start : start + 50]
+            response = self._api(
+                {
+                    "action": "query",
+                    "titles": "|".join(chunk),
+                    "prop": "info",
+                    "redirects": 1,
+                }
+            )
+            query = response.get("query")
+            resolved = query.get("pages") if isinstance(query, Mapping) else None
+            if not isinstance(resolved, list) or not all(
+                isinstance(page, dict) for page in resolved
+            ):
+                raise ClientError(
+                    "title response is missing query.pages", retryable=False
+                )
+            for page in resolved:
+                if page.get("missing") is True:
+                    continue
+                if not isinstance(page.get("pageid"), int) or not isinstance(
+                    page.get("ns"), int
+                ) or not isinstance(page.get("title"), str):
+                    raise ClientError(
+                        "resolved page has invalid ID, namespace, or title",
+                        retryable=False,
+                    )
+                pages.append(page)
+        return pages
 
     def get_image_info(self, title: str) -> Dict[str, Any]:
         response = self._api(

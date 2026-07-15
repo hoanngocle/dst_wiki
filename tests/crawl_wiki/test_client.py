@@ -1,5 +1,6 @@
 import hashlib
 import gc
+import http.client
 import json
 import tempfile
 import threading
@@ -11,6 +12,66 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 from tools.crawl_wiki.client import ClientError, MediaWikiClient
+
+
+class _ByteResponse:
+    def __init__(self, payload):
+        self.payload = json.dumps(payload).encode("utf-8")
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        del exc_type, exc_value, traceback
+
+    def read(self):
+        return self.payload
+
+
+class _DisconnectOnceOpener:
+    def __init__(self, payload):
+        self.payload = payload
+        self.attempts = 0
+
+    def open(self, request, timeout):
+        del request, timeout
+        self.attempts += 1
+        if self.attempts == 1:
+            raise http.client.RemoteDisconnected(
+                "Remote end closed connection without response"
+            )
+        return _ByteResponse(self.payload)
+
+
+class _TitleAPIOpener:
+    def __init__(self):
+        self.queries = []
+
+    def open(self, request, timeout):
+        del timeout
+        query = urllib.parse.parse_qs(
+            urllib.parse.urlsplit(request.full_url).query
+        )
+        self.queries.append(query)
+        if query.get("action") == ["parse"]:
+            return _ByteResponse(
+                {
+                    "parse": {
+                        "title": query["page"][0],
+                        "text": "<p>source</p>",
+                    }
+                }
+            )
+        return _ByteResponse(
+            {
+                "query": {
+                    "pages": [
+                        {"pageid": 1, "ns": 0, "title": "Cut Grass"},
+                        {"pageid": 2, "ns": 0, "title": "Twigs"},
+                    ]
+                }
+            }
+        )
 
 
 class _WikiHandler(BaseHTTPRequestHandler):
@@ -148,6 +209,51 @@ class WikiServer:
 
 
 class ClientTests(unittest.TestCase):
+    def test_retries_remote_disconnected_api_request(self):
+        opener = _DisconnectOnceOpener(
+            {
+                "query": {
+                    "allpages": [
+                        {"pageid": 1, "ns": 0, "title": "Wilson"}
+                    ]
+                }
+            }
+        )
+        client = MediaWikiClient(
+            "https://dontstarve.wiki.gg/",
+            delay=0,
+            max_attempts=2,
+            opener=opener,
+            sleep=lambda value: None,
+            jitter=lambda: 0,
+        )
+
+        pages, token = client.list_allpages(0)
+
+        self.assertEqual(pages[0]["title"], "Wilson")
+        self.assertIsNone(token)
+        self.assertEqual(opener.attempts, 2)
+
+    def test_parses_source_page_and_resolves_titles(self):
+        opener = _TitleAPIOpener()
+        client = MediaWikiClient(
+            "https://dontstarve.wiki.gg/",
+            delay=0,
+            opener=opener,
+        )
+
+        parsed = client.parse_page_by_title("Items")
+        pages = client.resolve_titles(["Cut Grass", "Twigs"])
+
+        self.assertEqual(parsed["title"], "Items")
+        self.assertEqual(
+            [page["title"] for page in pages], ["Cut Grass", "Twigs"]
+        )
+        self.assertEqual(opener.queries[0]["page"], ["Items"])
+        self.assertEqual(
+            opener.queries[1]["titles"], ["Cut Grass|Twigs"]
+        )
+
     def test_retries_http_and_api_errors_and_streams_download(self):
         with warnings.catch_warnings(record=True) as caught:
             warnings.simplefilter("always", ResourceWarning)
