@@ -78,7 +78,7 @@ export function ItemDetailModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-end justify-center bg-[#0f1d30]/55 p-0 backdrop-blur-[2px] sm:items-center sm:p-6"
+      className="fixed inset-0 z-50 flex cursor-pointer items-end justify-center bg-[#0f1d30]/55 p-0 backdrop-blur-[2px] sm:items-center sm:p-6"
       onClick={(event) => {
         if (event.target === event.currentTarget) onClose();
       }}
@@ -88,7 +88,7 @@ export function ItemDetailModal({
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
-        className="max-h-[90vh] w-full overflow-y-auto rounded-t-3xl border border-[#c8d3df] bg-[#f8fafc] shadow-[0_28px_80px_rgba(15,29,48,0.32)] sm:max-w-2xl sm:rounded-3xl"
+        className="max-h-[90vh] w-full cursor-default overflow-y-auto rounded-t-3xl border border-[#c8d3df] bg-[#f8fafc] shadow-[0_28px_80px_rgba(15,29,48,0.32)] sm:max-w-2xl sm:rounded-3xl"
       >
         <div className="flex items-start gap-4 border-b border-[#d5dde6] p-5 sm:p-6">
           <GameSprite
@@ -118,7 +118,7 @@ export function ItemDetailModal({
             type="button"
             aria-label="Đóng chi tiết"
             onClick={onClose}
-            className="inline-flex min-h-11 min-w-11 shrink-0 items-center justify-center rounded-xl border border-[#c8d3df] text-[#53647a] transition hover:border-[#2e5fb3] hover:bg-[#e9eff6] hover:text-[#2e5fb3] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2e5fb3]/30 active:scale-[0.98]"
+            className="inline-flex min-h-11 min-w-11 shrink-0 cursor-pointer items-center justify-center rounded-xl border border-[#c8d3df] text-[#53647a] transition hover:border-[#2e5fb3] hover:bg-[#e9eff6] hover:text-[#2e5fb3] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2e5fb3]/30 active:scale-[0.98]"
           >
             <X aria-hidden="true" size={20} />
           </button>

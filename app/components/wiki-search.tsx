@@ -155,7 +155,7 @@ export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
               type="button"
               onClick={clearQueryAndFocus}
               aria-label="Xóa tìm kiếm"
-              className="absolute right-3 top-1/2 inline-flex min-h-11 -translate-y-1/2 items-center gap-1 rounded-lg px-2 py-1 text-sm text-[#53647a] transition hover:bg-[#e9eff6] active:scale-[0.98]"
+              className="absolute right-3 top-1/2 inline-flex min-h-11 -translate-y-1/2 cursor-pointer items-center gap-1 rounded-lg px-2 py-1 text-sm text-[#53647a] transition hover:bg-[#e9eff6] active:scale-[0.98]"
             >
               <X aria-hidden="true" size={16} /> Xóa
             </button>
@@ -181,7 +181,7 @@ export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
             type="button"
             aria-pressed={category === candidate.value}
             onClick={() => updateCategory(candidate.value)}
-            className="min-h-11 shrink-0 rounded-full border border-[#cbd5e1] px-3 py-1.5 text-sm font-medium text-[#5c6b80] transition hover:border-[#2e5fb3] hover:text-[#2e5fb3] active:scale-[0.98] aria-pressed:border-[#172943] aria-pressed:bg-[#172943] aria-pressed:text-[#f8fafc]"
+            className="min-h-11 shrink-0 cursor-pointer rounded-full border border-[#cbd5e1] px-3 py-1.5 text-sm font-medium text-[#5c6b80] transition hover:border-[#2e5fb3] hover:text-[#2e5fb3] active:scale-[0.98] aria-pressed:border-[#172943] aria-pressed:bg-[#172943] aria-pressed:text-[#f8fafc]"
           >
             {candidate.label}
           </button>
@@ -199,7 +199,7 @@ export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
             type="button"
             aria-pressed={filter === candidate.value}
             onClick={() => updateFilter(candidate.value)}
-            className="min-h-11 shrink-0 rounded-full border border-[#cbd5e1] px-3 py-1.5 text-sm font-medium text-[#5c6b80] transition hover:border-[#2e5fb3] hover:text-[#2e5fb3] active:scale-[0.98] aria-pressed:border-[#2e5fb3] aria-pressed:bg-[#2e5fb3] aria-pressed:text-[#f8fafc]"
+            className="min-h-11 shrink-0 cursor-pointer rounded-full border border-[#cbd5e1] px-3 py-1.5 text-sm font-medium text-[#5c6b80] transition hover:border-[#2e5fb3] hover:text-[#2e5fb3] active:scale-[0.98] aria-pressed:border-[#2e5fb3] aria-pressed:bg-[#2e5fb3] aria-pressed:text-[#f8fafc]"
           >
             {candidate.label}
           </button>
@@ -247,7 +247,7 @@ export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
                     Math.min(current + RESULT_BATCH_SIZE, results.length),
                   )
                 }
-                className="min-h-11 rounded-xl border border-[#2e5fb3] px-5 py-2.5 text-sm font-semibold text-[#2e5fb3] transition hover:bg-[#e9eff6] active:scale-[0.98]"
+                className="min-h-11 cursor-pointer rounded-xl border border-[#2e5fb3] px-5 py-2.5 text-sm font-semibold text-[#2e5fb3] transition hover:bg-[#e9eff6] active:scale-[0.98]"
               >
                 Xem thêm
               </button>
@@ -268,7 +268,7 @@ export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
           <button
             type="button"
             onClick={resetFilters}
-            className="mt-5 min-h-11 rounded-xl bg-[#2e5fb3] px-4 py-2.5 text-sm font-semibold text-[#f8fafc] transition hover:bg-[#264f96] active:scale-[0.98]"
+            className="mt-5 min-h-11 cursor-pointer rounded-xl bg-[#2e5fb3] px-4 py-2.5 text-sm font-semibold text-[#f8fafc] transition hover:bg-[#264f96] active:scale-[0.98]"
           >
             Xóa bộ lọc
           </button>

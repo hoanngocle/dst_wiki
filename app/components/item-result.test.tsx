@@ -75,6 +75,17 @@ describe("ItemResult", () => {
     expect(screen.getByText("DST gốc liên quan")).toBeDefined();
   });
 
+  it("forwards the result item when its identity is clicked", () => {
+    const onSelectItem = vi.fn();
+    render(<ItemResult item={item} query="" onSelectItem={onSelectItem} />);
+
+    const resultButton = screen.getByRole("button", { name: "Xem chi tiết Kiếm Thử" });
+    expect(resultButton.className).toContain("cursor-pointer");
+    fireEvent.click(resultButton);
+
+    expect(onSelectItem).toHaveBeenCalledWith(item);
+  });
+
   it("forwards the selected full ingredient item", () => {
     const onSelectItem = vi.fn();
     render(

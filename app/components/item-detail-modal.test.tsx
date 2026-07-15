@@ -46,9 +46,9 @@ describe("ItemDetailModal", () => {
     expect(screen.getByText("Prefab ID")).toBeDefined();
     expect(screen.queryByRole("heading", { name: "Object Info" })).toBeNull();
     expect(screen.queryByRole("heading", { name: "Description" })).toBeNull();
-    expect(document.activeElement).toBe(
-      screen.getByRole("button", { name: "Đóng chi tiết" }),
-    );
+    const close = screen.getByRole("button", { name: "Đóng chi tiết" });
+    expect(close.className).toContain("cursor-pointer");
+    expect(document.activeElement).toBe(close);
   });
 
   it("closes from the close button and Escape", () => {

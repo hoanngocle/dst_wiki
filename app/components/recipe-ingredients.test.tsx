@@ -51,6 +51,7 @@ describe("RecipeIngredients", () => {
     const ingredient = screen.getByRole("button", { name: "Vàng, số lượng 2" });
     const tooltip = screen.getByRole("tooltip", { name: "Vàng" });
     expect(ingredient.getAttribute("aria-describedby")).toBe(tooltip.id);
+    expect(ingredient.className).toContain("cursor-pointer");
 
     fireEvent.click(ingredient);
     expect(onSelectItem).toHaveBeenCalledWith(fullItem);

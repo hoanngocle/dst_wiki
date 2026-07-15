@@ -46,7 +46,7 @@ export function RecipeIngredients({
               aria-label={accessibleName}
               aria-describedby={tooltipId}
               onClick={() => onSelectItem(fullItem)}
-              className="group relative inline-flex min-h-10 items-center gap-1.5 rounded-xl border border-[#c8d3df] bg-[#f8fafc] py-1 pl-1 pr-2.5 text-sm font-semibold text-[#263b58] transition hover:border-[#2e5fb3] hover:bg-[#eef4fb] focus-visible:border-[#2e5fb3] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2e5fb3]/30 active:scale-[0.98]"
+              className="group relative inline-flex min-h-10 cursor-pointer items-center gap-1.5 rounded-xl border border-[#c8d3df] bg-[#f8fafc] py-1 pl-1 pr-2.5 text-sm font-semibold text-[#263b58] transition hover:border-[#2e5fb3] hover:bg-[#eef4fb] focus-visible:border-[#2e5fb3] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2e5fb3]/30 active:scale-[0.98]"
             >
               {content}
               <span

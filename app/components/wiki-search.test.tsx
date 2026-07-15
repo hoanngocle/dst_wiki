@@ -105,7 +105,9 @@ describe("WikiSearch", () => {
 
   it("filters by namespace and craftability", () => {
     render(<WikiSearch items={items} />);
-    fireEvent.click(screen.getByRole("button", { name: "Tu Tiên" }));
+    const namespaceFilter = screen.getByRole("button", { name: "Tu Tiên" });
+    expect(namespaceFilter.className).toContain("cursor-pointer");
+    fireEvent.click(namespaceFilter);
     expect(screen.getByText("Kiếm Thử")).toBeDefined();
     expect(screen.queryByText("Gỗ")).toBeNull();
 
@@ -268,6 +270,14 @@ describe("WikiSearch", () => {
     fireEvent.click(screen.getByRole("button", { name: "Khác" }));
 
     expect(screen.getAllByRole("listitem")).toHaveLength(40);
+  });
+
+  it("opens item detail when a result item is clicked", () => {
+    render(<WikiSearch items={items} />);
+
+    fireEvent.click(screen.getByRole("button", { name: "Xem chi tiết Kiếm Thử" }));
+
+    expect(screen.getByRole("dialog", { name: "Kiếm Thử" })).toBeDefined();
   });
 
   it("opens the referenced full item in a shared detail modal", () => {
