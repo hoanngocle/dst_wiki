@@ -15,10 +15,10 @@ describe("Prefabs page", () => {
     expect(
       screen.getByRole("searchbox", { name: "Tìm kiếm Prefabs." }),
     ).toBeDefined();
-    expect(screen.getByText("1975 Prefabs")).toBeDefined();
+    expect(screen.getByText("1887 Prefabs")).toBeDefined();
     expect(
-      screen.getByRole("heading", { level: 3, name: "abigail_attack_fx" }),
-    ).toBeDefined();
+      screen.queryByRole("heading", { level: 3, name: "abigail_attack_fx" }),
+    ).toBeNull();
     expect(screen.getByRole("link", { name: "Base" }).getAttribute("href")).toBe(
       "/base",
     );

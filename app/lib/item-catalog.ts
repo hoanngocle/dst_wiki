@@ -157,6 +157,30 @@ function parseItem(value: unknown, index: number): ItemListEntry {
   };
 }
 
+function catalogKey(item: Pick<ItemListEntry, "namespace" | "prefabId">): string {
+  return `${item.namespace}:${item.prefabId}`;
+}
+
+function curateItems(items: readonly ItemListEntry[]): ItemListEntry[] {
+  const candidates = items.filter((item) => !item.prefabId.endsWith("_fx"));
+  const itemsByKey = new Map(candidates.map((item) => [catalogKey(item), item]));
+
+  return candidates.filter((item) => {
+    if (item.prefabId.endsWith("_item")) {
+      const basePrefabId = item.prefabId.slice(0, -"_item".length);
+      const baseItem = itemsByKey.get(
+        catalogKey({ namespace: item.namespace, prefabId: basePrefabId }),
+      );
+      return !baseItem || item.sprite !== null;
+    }
+
+    const itemVariant = itemsByKey.get(
+      catalogKey({ namespace: item.namespace, prefabId: `${item.prefabId}_item` }),
+    );
+    return !itemVariant || itemVariant.sprite === null;
+  });
+}
+
 export function parseItemPayload(value: unknown): readonly ItemListEntry[] {
   if (
     !isRecord(value) ||
@@ -165,5 +189,5 @@ export function parseItemPayload(value: unknown): readonly ItemListEntry[] {
   ) {
     throw new Error("item payload must use schema version 3 and contain items");
   }
-  return value.items.map(parseItem);
+  return curateItems(value.items.map(parseItem));
 }

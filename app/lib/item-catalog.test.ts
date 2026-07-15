@@ -33,6 +33,25 @@ const validPayload = {
   ],
 };
 
+function makeValidItem(
+  prefabId: string,
+  {
+    namespace = "tu_tien",
+    sprite = structuredClone(validPayload.items[0].sprite),
+  }: {
+    namespace?: "tu_tien" | "base_game";
+    sprite?: (typeof validPayload.items)[number]["sprite"] | null;
+  } = {},
+) {
+  return {
+    ...structuredClone(validPayload.items[0]),
+    id: `${namespace}:${prefabId}`,
+    prefabId,
+    namespace,
+    sprite,
+  };
+}
+
 describe("parseItemPayload", () => {
   it("accepts the generated compact item contract", () => {
     const items = parseItemPayload(validPayload);
@@ -89,5 +108,50 @@ describe("parseItemPayload", () => {
     delete payload.items[0].craftingNote;
 
     expect(() => parseItemPayload(payload)).toThrow(/craftingNote/i);
+  });
+
+  it("removes effect-only prefabs while preserving retained order", () => {
+    const payload = {
+      schema_version: 3,
+      items: [
+        makeValidItem("first"),
+        makeValidItem("spark_fx"),
+        makeValidItem("last"),
+      ],
+    };
+
+    expect(parseItemPayload(payload).map((item) => item.prefabId)).toEqual([
+      "first",
+      "last",
+    ]);
+  });
+
+  it("prefers a pictured _item counterpart without crossing namespaces", () => {
+    const payload = {
+      schema_version: 3,
+      items: [
+        makeValidItem("gate"),
+        makeValidItem("gate", { namespace: "base_game" }),
+        makeValidItem("gate_item"),
+        makeValidItem("standalone_item", { sprite: null }),
+      ],
+    };
+
+    expect(
+      parseItemPayload(payload).map((item) => `${item.namespace}:${item.prefabId}`),
+    ).toEqual([
+      "base_game:gate",
+      "tu_tien:gate_item",
+      "tu_tien:standalone_item",
+    ]);
+  });
+
+  it("keeps the base prefab when its _item counterpart has no image", () => {
+    const payload = {
+      schema_version: 3,
+      items: [makeValidItem("gate"), makeValidItem("gate_item", { sprite: null })],
+    };
+
+    expect(parseItemPayload(payload).map((item) => item.prefabId)).toEqual(["gate"]);
   });
 });
