@@ -120,6 +120,13 @@ class CrawlStorage:
                 timestamp text not null,
                 primary key(stage, subject)
             );
+            create table if not exists compaction_offsets (
+                kind text not null,
+                record_key text not null,
+                sort_key text not null,
+                source_offset integer not null,
+                primary key(kind, record_key)
+            );
             """
         )
         self.connection.commit()
@@ -413,27 +420,57 @@ class CrawlStorage:
         return destination.relative_to(self.output).as_posix()
 
     @staticmethod
-    def _record_key(filename: str, record: Mapping[str, Any]) -> Any:
+    def _record_keys(
+        filename: str, record: Mapping[str, Any]
+    ) -> Tuple[str, str]:
         if filename == "pages.jsonl":
-            return int(record["page_id"])
+            page_id = int(record["page_id"])
+            return str(page_id), "{:020d}".format(page_id)
         if filename == "images.jsonl":
-            return str(record["title"])
+            title = str(record["title"])
+            return title, title.casefold() + "\0" + title
         if filename == "links.jsonl":
-            return (
-                int(record["source_page_id"]),
-                int(record["target_namespace"]),
-                str(record["target_title"]),
+            source_page_id = int(record["source_page_id"])
+            target_namespace = int(record["target_namespace"])
+            target_title = str(record["target_title"])
+            identity = json.dumps(
+                [source_page_id, target_namespace, target_title],
+                ensure_ascii=False,
+                separators=(",", ":"),
             )
-        return (str(record["stage"]), str(record["subject"]))
+            sort_key = "{:020d}\0{:010d}\0{}\0{}".format(
+                source_page_id,
+                target_namespace,
+                target_title.casefold(),
+                target_title,
+            )
+            return identity, sort_key
+        stage = str(record["stage"])
+        subject = str(record["subject"])
+        identity = json.dumps(
+            [stage, subject], ensure_ascii=False, separators=(",", ":")
+        )
+        return identity, stage.casefold() + "\0" + stage + "\0" + subject
 
     def _compact(
         self, filename: str
-    ) -> Tuple[List[Dict[str, Any]], Dict[Any, int]]:
+    ) -> Tuple[int, Dict[str, Dict[str, int]]]:
         path = self.output / filename
         path.touch(exist_ok=True)
-        records: Dict[Any, Dict[str, Any]] = {}
+        with self.connection:
+            self.connection.execute(
+                "delete from compaction_offsets where kind=?", (filename,)
+            )
+
+        scanned = 0
         with path.open("rb") as handle:
-            for line_number, line in enumerate(handle, start=1):
+            line_number = 0
+            while True:
+                source_offset = handle.tell()
+                line = handle.readline()
+                if not line:
+                    break
+                line_number += 1
                 try:
                     record = json.loads(line)
                 except json.JSONDecodeError as error:
@@ -448,19 +485,56 @@ class CrawlStorage:
                             filename, line_number
                         )
                     )
-                records[self._record_key(filename, record)] = record
+                record_key, sort_key = self._record_keys(filename, record)
+                self.connection.execute(
+                    "insert into compaction_offsets(kind,record_key,sort_key,source_offset) "
+                    "values(?,?,?,?) on conflict(kind,record_key) do update set "
+                    "sort_key=excluded.sort_key,source_offset=excluded.source_offset",
+                    (filename, record_key, sort_key, source_offset),
+                )
+                scanned += 1
+                if scanned % 5000 == 0:
+                    self.connection.commit()
+        self.connection.commit()
 
-        sorted_items = sorted(records.items(), key=lambda item: item[0])
         temporary = path.with_name(path.name + ".tmp")
-        offsets: Dict[Any, int] = {}
-        with temporary.open("wb") as handle:
-            for key, record in sorted_items:
-                offsets[key] = handle.tell()
-                handle.write(encode_json_line(record))
-            handle.flush()
-            os.fsync(handle.fileno())
+        index_data: Dict[str, Dict[str, int]] = {}
+        count = 0
+        with path.open("rb") as source, temporary.open("wb") as output:
+            rows = self.connection.execute(
+                "select source_offset from compaction_offsets where kind=? "
+                "order by sort_key,record_key",
+                (filename,),
+            )
+            for row in rows:
+                source.seek(int(row["source_offset"]))
+                line = source.readline()
+                try:
+                    record = json.loads(line)
+                except json.JSONDecodeError as error:
+                    raise StorageError(
+                        "{} changed during compaction: {}".format(
+                            filename, error
+                        )
+                    )
+                final_offset = output.tell()
+                output.write(encode_json_line(record))
+                count += 1
+                if filename == "pages.jsonl":
+                    index_data.setdefault("by_id", {})[
+                        str(record["page_id"])
+                    ] = final_offset
+                    index_data.setdefault("by_title", {})[
+                        str(record["title"])
+                    ] = final_offset
+                elif filename == "images.jsonl":
+                    index_data.setdefault("by_title", {})[
+                        str(record["title"])
+                    ] = final_offset
+            output.flush()
+            os.fsync(output.fileno())
         os.replace(str(temporary), str(path))
-        return [record for _, record in sorted_items], offsets
+        return count, index_data
 
     def _write_errors(self) -> None:
         path = self.output / "errors.jsonl"
@@ -502,29 +576,18 @@ class CrawlStorage:
 
     def finalize(self, options: Mapping[str, Any]) -> CrawlSummary:
         self._write_errors()
-        pages, page_offsets = self._compact("pages.jsonl")
-        images, image_offsets = self._compact("images.jsonl")
-        links, _ = self._compact("links.jsonl")
-        errors, _ = self._compact("errors.jsonl")
+        page_count, page_index = self._compact("pages.jsonl")
+        image_count, image_index = self._compact("images.jsonl")
+        link_count, _ = self._compact("links.jsonl")
+        error_count, _ = self._compact("errors.jsonl")
 
         index = {
             "schema_version": SCHEMA_VERSION,
             "pages": {
-                "by_id": {
-                    str(record["page_id"]): page_offsets[int(record["page_id"])]
-                    for record in pages
-                },
-                "by_title": {
-                    str(record["title"]): page_offsets[int(record["page_id"])]
-                    for record in pages
-                },
+                "by_id": page_index.get("by_id", {}),
+                "by_title": page_index.get("by_title", {}),
             },
-            "images": {
-                "by_title": {
-                    str(record["title"]): image_offsets[str(record["title"])]
-                    for record in images
-                }
-            },
+            "images": {"by_title": image_index.get("by_title", {})},
         }
         self._write_json_atomic(self.output / "index.json", index)
         checksums = {
@@ -538,18 +601,18 @@ class CrawlStorage:
             "completed_at": self.clock(),
             "options": dict(options),
             "counts": {
-                "pages": len(pages),
-                "images": len(images),
-                "links": len(links),
-                "failures": len(errors),
+                "pages": page_count,
+                "images": image_count,
+                "links": link_count,
+                "failures": error_count,
             },
-            "unresolved_errors": len(errors),
+            "unresolved_errors": error_count,
             "checksums": checksums,
         }
         self._write_json_atomic(self.output / "manifest.json", manifest)
         return CrawlSummary(
-            pages=len(pages),
-            images=len(images),
-            links=len(links),
-            failures=len(errors),
+            pages=page_count,
+            images=image_count,
+            links=link_count,
+            failures=error_count,
         )

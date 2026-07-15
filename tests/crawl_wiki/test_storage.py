@@ -2,8 +2,11 @@ import hashlib
 import json
 import tempfile
 import unittest
+import weakref
 from pathlib import Path
+from unittest.mock import patch
 
+import tools.crawl_wiki.storage as storage_module
 from tools.crawl_wiki.storage import CrawlStorage, StorageError
 
 
@@ -150,6 +153,42 @@ class StorageTests(unittest.TestCase):
             self.assertEqual(
                 originals[0].name, expected_hash + ".png"
             )
+
+    def test_compaction_streams_page_payloads_instead_of_retaining_them(self):
+        class TrackedDict(dict):
+            pass
+
+        with tempfile.TemporaryDirectory() as tempdir:
+            output = Path(tempdir)
+            with self.make_storage(output) as storage:
+                with (output / "pages.jsonl").open("w", encoding="utf-8") as handle:
+                    for page_id in range(1, 21):
+                        record = _page(page_id, "Page {}".format(page_id))
+                        record["html"] = "x" * 10_000
+                        handle.write(json.dumps(record) + "\n")
+
+                original_loads = storage_module.json.loads
+                references = []
+                peak_live_records = [0]
+
+                def tracking_loads(value, *args, **kwargs):
+                    result = original_loads(value, *args, **kwargs)
+                    if not isinstance(result, dict):
+                        return result
+                    tracked = TrackedDict(result)
+                    references.append(weakref.ref(tracked))
+                    peak_live_records[0] = max(
+                        peak_live_records[0],
+                        sum(reference() is not None for reference in references),
+                    )
+                    return tracked
+
+                with patch.object(
+                    storage_module.json, "loads", side_effect=tracking_loads
+                ):
+                    storage.finalize({"skip_images": True})
+
+            self.assertLessEqual(peak_live_records[0], 3)
 
     def test_finalizes_errors_checksums_and_rejects_fresh_overwrite(self):
         with tempfile.TemporaryDirectory() as tempdir:
