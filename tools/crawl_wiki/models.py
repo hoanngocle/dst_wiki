@@ -20,4 +20,3 @@ class CrawlSummary:
     @property
     def exit_code(self) -> int:
         return 1 if self.failures else 0
-
