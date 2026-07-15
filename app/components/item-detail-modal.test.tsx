@@ -36,7 +36,8 @@ describe("ItemDetailModal", () => {
     expect(screen.getByText("goldnugget")).toBeDefined();
     expect(screen.getByLabelText("Đá, số lượng 1")).toBeDefined();
     expect(screen.getByText("Item")).toBeDefined();
-    expect(screen.getByText("DST gốc liên quan")).toBeDefined();
+    expect(screen.getByText("DST")).toBeDefined();
+    expect(screen.queryByText("DST gốc liên quan")).toBeNull();
     expect(screen.getByRole("heading", { name: "Công thức" })).toBeDefined();
     expect(screen.getByText("=")).toBeDefined();
     expect(screen.getByLabelText("Kết quả: Vàng, số lượng 1")).toBeDefined();

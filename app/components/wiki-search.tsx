@@ -17,7 +17,7 @@ const RESULT_BATCH_SIZE = 40;
 const filters: readonly { value: ItemFilter; label: string }[] = [
   { value: "all", label: "Tất cả" },
   { value: "tu_tien", label: "Tu Tiên" },
-  { value: "base_game", label: "DST gốc" },
+  { value: "base_game", label: "DST" },
   { value: "craftable", label: "Có công thức" },
 ];
 

@@ -34,7 +34,7 @@ export function ItemDetailModal({
   const titleId = useId();
   const dialogRef = useRef<HTMLElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
-  const sourceLabel = item.namespace === "tu_tien" ? "Tu Tiên" : "DST gốc liên quan";
+  const sourceLabel = item.namespace === "tu_tien" ? "Tu Tiên" : "DST";
   const category = categoryLabel[item.category];
 
   useEffect(() => {

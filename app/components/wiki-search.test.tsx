@@ -145,7 +145,7 @@ describe("WikiSearch", () => {
 
   it("clears query and filter from the empty state", () => {
     render(<WikiSearch items={items} />);
-    fireEvent.click(screen.getByRole("button", { name: "DST gốc" }));
+    fireEvent.click(screen.getByRole("button", { name: "DST" }));
     fireEvent.change(screen.getByRole("searchbox", { name: "Tìm kiếm Prefabs." }), {
       target: { value: "kiem" },
     });

@@ -72,7 +72,20 @@ describe("ItemResult", () => {
       />,
     );
 
-    expect(screen.getByText("DST gốc liên quan")).toBeDefined();
+    expect(screen.getByText("DST")).toBeDefined();
+    expect(screen.queryByText("DST gốc liên quan")).toBeNull();
+  });
+
+  it("shows an available English name below Vietnamese and omits an empty subtitle", () => {
+    const { container, rerender } = render(<ItemResult item={item} query="" />);
+    const vietnameseHeading = screen.getByRole("heading", { name: "Kiếm Thử" });
+    const englishName = screen.getByText("Test Sword");
+
+    expect(vietnameseHeading.nextElementSibling).toBe(englishName);
+    expect(englishName.getAttribute("lang")).toBe("en");
+
+    rerender(<ItemResult item={{ ...item, englishName: null }} query="" />);
+    expect(container.querySelector('[lang="en"]')).toBeNull();
   });
 
   it("forwards the result item when its identity is clicked", () => {

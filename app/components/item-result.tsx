@@ -61,7 +61,7 @@ export function ItemResult({
   itemsById,
   onSelectItem,
 }: ItemResultProps) {
-  const sourceLabel = item.namespace === "tu_tien" ? "Tu Tiên" : "DST gốc liên quan";
+  const sourceLabel = item.namespace === "tu_tien" ? "Tu Tiên" : "DST";
   const category = categoryMetadata[item.category];
   const CategoryIcon = category.icon;
 
@@ -80,6 +80,11 @@ export function ItemResult({
             <h3 className="truncate text-base font-semibold text-[#172943]">
               <HighlightedText text={item.name} query={query} />
             </h3>
+            {item.englishName ? (
+              <p lang="en" className="mt-0.5 truncate text-sm text-[#607188]">
+                {item.englishName}
+              </p>
+            ) : null}
             <div className="mt-1 flex min-w-0 flex-wrap items-center gap-x-2 gap-y-1 text-xs text-[#607188]">
               <span className="font-medium text-[#2e5fb3]">{sourceLabel}</span>
               <code className="truncate font-mono text-[11px] text-[#68798e]">{item.prefabId}</code>
