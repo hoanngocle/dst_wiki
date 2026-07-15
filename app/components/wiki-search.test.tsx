@@ -13,6 +13,7 @@ const items: readonly ItemListEntry[] = [
     name: "Kiếm Thử",
     englishName: "Test Sword",
     description: "Một thanh kiếm từ phương bắc.",
+    craftingNote: "Rèn bằng linh lực tinh khiết.",
     sprite: null,
     recipe: {
       outputCount: 1,
@@ -34,6 +35,7 @@ const items: readonly ItemListEntry[] = [
     name: "Gỗ",
     englishName: "Log",
     description: "Nguyên liệu cơ bản.",
+    craftingNote: null,
     sprite: null,
     recipe: null,
   },
@@ -47,6 +49,7 @@ const goldItem: ItemListEntry = {
   name: "Vàng",
   englishName: "Gold Nugget",
   description: "Một cục vàng.",
+  craftingNote: null,
   sprite: null,
   recipe: null,
 };
@@ -60,6 +63,7 @@ function makeItems(count: number): ItemListEntry[] {
     name: `Mục ${index + 1}`,
     englishName: null,
     description: null,
+    craftingNote: null,
     sprite: null,
     recipe: null,
   }));

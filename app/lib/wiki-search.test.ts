@@ -39,6 +39,7 @@ const items: readonly ItemListEntry[] = [
     name: "Kiếm Thử",
     englishName: "Test Sword",
     description: "Một thanh kiếm từ phương bắc.",
+    craftingNote: "Rèn bằng linh lực tinh khiết.",
     sprite: null,
     recipe: {
       outputCount: 1,
@@ -60,6 +61,7 @@ const items: readonly ItemListEntry[] = [
     name: "Gỗ",
     englishName: "Log",
     description: "Nguyên liệu cơ bản.",
+    craftingNote: null,
     sprite: null,
     recipe: null,
   },
@@ -71,6 +73,7 @@ const items: readonly ItemListEntry[] = [
     name: "Deerclops",
     englishName: "Deerclops",
     description: "Một boss khổng lồ.",
+    craftingNote: null,
     sprite: null,
     recipe: null,
   },
@@ -81,7 +84,14 @@ describe("filterItems", () => {
     expect(filterItems(items, "", "all", "all")).toEqual(items);
   });
 
-  it.each(["kiem", "test sword", "xd_sword", "phuong bac", "vang"])(
+  it.each([
+    "kiem",
+    "test sword",
+    "xd_sword",
+    "phuong bac",
+    "vang",
+    "linh luc tinh khiet",
+  ])(
     "matches the real searchable field %s",
     (query) => {
       expect(filterItems(items, query, "all", "all").map((item) => item.id)).toEqual([

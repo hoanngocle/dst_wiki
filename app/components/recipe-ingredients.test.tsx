@@ -20,9 +20,11 @@ const fullItem: ItemListEntry = {
   id: "base_game:goldnugget",
   prefabId: "goldnugget",
   namespace: "base_game",
+  category: "item",
   name: "Vàng",
   englishName: "Gold Nugget",
   description: "Một cục vàng.",
+  craftingNote: null,
   sprite: null,
   recipe: null,
 };

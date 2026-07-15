@@ -40,6 +40,7 @@ export type ItemListEntry = {
   name: string;
   englishName: string | null;
   description: string | null;
+  craftingNote: string | null;
   sprite: SpriteDescriptor | null;
   recipe: ItemRecipe | null;
 };
@@ -150,6 +151,7 @@ function parseItem(value: unknown, index: number): ItemListEntry {
     name: requiredString(value.name, `item ${index} name`),
     englishName: nullableString(value.englishName, `item ${index} englishName`),
     description: nullableString(value.description, `item ${index} description`),
+    craftingNote: nullableString(value.craftingNote, `item ${index} craftingNote`),
     sprite: parseSprite(value.sprite, `item ${index}`),
     recipe: parseRecipe(value.recipe, index),
   };
@@ -158,10 +160,10 @@ function parseItem(value: unknown, index: number): ItemListEntry {
 export function parseItemPayload(value: unknown): readonly ItemListEntry[] {
   if (
     !isRecord(value) ||
-    value.schema_version !== 2 ||
+    value.schema_version !== 3 ||
     !Array.isArray(value.items)
   ) {
-    throw new Error("item payload must use schema version 2 and contain items");
+    throw new Error("item payload must use schema version 3 and contain items");
   }
   return value.items.map(parseItem);
 }

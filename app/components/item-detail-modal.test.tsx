@@ -12,6 +12,7 @@ const item: ItemListEntry = {
   name: "Vàng",
   englishName: "Gold Nugget",
   description: "Một cục vàng.",
+  craftingNote: null,
   sprite: null,
   recipe: {
     outputCount: 1,

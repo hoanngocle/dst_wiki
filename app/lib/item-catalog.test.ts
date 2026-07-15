@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 import { parseItemPayload } from "./item-catalog";
 
 const validPayload = {
-  schema_version: 2,
+  schema_version: 3,
   items: [
     {
       id: "tu_tien:xd_sword",
@@ -13,6 +13,7 @@ const validPayload = {
       name: "Kiếm Thử",
       englishName: "Test Sword",
       description: "Một thanh kiếm",
+      craftingNote: "Rèn một thanh kiếm thử",
       sprite: {
         src: "/assets/game/asset.png",
         uv: { u1: 0, u2: 1, v1: 0, v2: 1 },
@@ -43,6 +44,7 @@ describe("parseItemPayload", () => {
       amount: 2,
       sprite: null,
     });
+    expect(items[0].craftingNote).toBe("Rèn một thanh kiếm thử");
   });
 
   it("accepts special recipes with no normal ingredients", () => {
@@ -54,8 +56,8 @@ describe("parseItemPayload", () => {
 
   it("rejects legacy payloads and invalid prefab categories", () => {
     expect(() =>
-      parseItemPayload({ ...validPayload, schema_version: 1 }),
-    ).toThrow(/schema version 2/i);
+      parseItemPayload({ ...validPayload, schema_version: 2 }),
+    ).toThrow(/schema version 3/i);
 
     const payload = structuredClone(validPayload) as unknown as {
       items: Array<{ category: string }>;
@@ -78,5 +80,14 @@ describe("parseItemPayload", () => {
     payload.items[0].sprite.uv.u2 = "1";
 
     expect(() => parseItemPayload(payload)).toThrow(/sprite/i);
+  });
+
+  it("rejects a missing crafting note field", () => {
+    const payload = structuredClone(validPayload) as unknown as {
+      items: Array<{ craftingNote?: string | null }>;
+    };
+    delete payload.items[0].craftingNote;
+
+    expect(() => parseItemPayload(payload)).toThrow(/craftingNote/i);
   });
 });

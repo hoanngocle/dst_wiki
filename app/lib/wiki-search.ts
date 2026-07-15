@@ -79,6 +79,7 @@ export function filterItems(
         item.englishName ?? "",
         item.prefabId,
         item.description ?? "",
+        item.craftingNote ?? "",
         ...(item.recipe?.ingredients.map((ingredient) => ingredient.name) ?? []),
       ].join(" "),
     );

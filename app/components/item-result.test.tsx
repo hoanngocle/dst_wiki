@@ -12,6 +12,7 @@ const item: ItemListEntry = {
   name: "Kiếm Thử",
   englishName: "Test Sword",
   description: "Một thanh kiếm",
+  craftingNote: "Rèn bằng linh lực tinh khiết.",
   sprite: null,
   recipe: {
     outputCount: 1,
@@ -34,6 +35,7 @@ const ingredientItem: ItemListEntry = {
   name: "Vàng",
   englishName: "Gold Nugget",
   description: "Một cục vàng.",
+  craftingNote: null,
   sprite: null,
   recipe: null,
 };
