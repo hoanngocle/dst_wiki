@@ -51,10 +51,12 @@ class CrawlStorage:
         namespaces: Sequence[int],
         fresh: bool = False,
         clock: Callable[[], str] = _utc_now,
+        profile: str = "full",
     ) -> None:
         self.output = Path(output)
         self.base_url = normalize_base_url(base_url)
         self.namespaces = tuple(int(value) for value in namespaces)
+        self.profile = profile
         self.clock = clock
         self.state_path = self.output / "state.sqlite"
         if fresh and self.state_path.exists():
@@ -164,6 +166,7 @@ class CrawlStorage:
             "schema_version": str(SCHEMA_VERSION),
             "base_url": self.base_url,
             "namespaces": json.dumps(list(self.namespaces), separators=(",", ":")),
+            "profile": self.profile,
         }
         for key, value in expected.items():
             current = self._metadata(key)

@@ -9,14 +9,15 @@ from tools.crawl_wiki.client import (
     ClientError,
     MediaWikiClient,
 )
-from tools.crawl_wiki.crawler import WikiCrawler
+from tools.crawl_wiki.crawler import SelectiveItemsCrawler, WikiCrawler
 from tools.crawl_wiki.models import CrawlSummary, SUPPORTED_NAMESPACES
 from tools.crawl_wiki.parser import normalize_base_url
 from tools.crawl_wiki.storage import CrawlStorage, StorageError
 
 
 DEFAULT_BASE_URL = "https://dontstarve.wiki.gg/"
-DEFAULT_OUTPUT = Path("data/crawled/dontstarve-wiki")
+DEFAULT_FULL_OUTPUT = Path("data/crawled/dontstarve-wiki")
+DEFAULT_ITEMS_OUTPUT = Path("data/crawled/dontstarve-items")
 DEFAULT_NAMESPACES = (0, 14, 6)
 
 
@@ -71,16 +72,35 @@ def _namespaces(value: str) -> Tuple[int, ...]:
     return parsed
 
 
+class _ItemBudgetAction(argparse.Action):
+    def __call__(self, parser, namespace, values, option_string=None):
+        del parser, option_string
+        setattr(namespace, self.dest, values)
+        setattr(namespace, "item_budget_explicit", True)
+
+
+def resolve_output(args: argparse.Namespace) -> Path:
+    if args.output is not None:
+        return args.output
+    if args.profile == "items":
+        return DEFAULT_ITEMS_OUTPUT
+    return DEFAULT_FULL_OUTPUT
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="dontstarve-wiki-crawler",
         description=(
-            "Export latest Main, Category, and File pages from a MediaWiki "
-            "site as resumable JSONL plus original images."
+            "Export either the full wiki or approved item-list sections as "
+            "resumable JSONL plus selected original images."
         ),
     )
+    parser.set_defaults(item_budget_explicit=False)
+    parser.add_argument(
+        "--profile", choices=("full", "items"), default="full"
+    )
     parser.add_argument("--base-url", type=_base_url, default=DEFAULT_BASE_URL)
-    parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
+    parser.add_argument("--output", type=Path)
     parser.add_argument(
         "--namespaces", type=_namespaces, default=DEFAULT_NAMESPACES
     )
@@ -89,6 +109,13 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--max-attempts", type=_positive_int, default=5)
     parser.add_argument("--user-agent", default=DEFAULT_USER_AGENT)
     parser.add_argument("--max-pages", type=_positive_int)
+    parser.add_argument(
+        "--item-budget",
+        type=_positive_int,
+        default=100,
+        action=_ItemBudgetAction,
+        help="maximum selected item detail pages processed this invocation",
+    )
     parser.add_argument("--skip-images", action="store_true")
     parser.add_argument("--fresh", action="store_true")
     parser.add_argument("--retry-errors", action="store_true")
@@ -101,21 +128,30 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def run_crawl(args: argparse.Namespace) -> CrawlSummary:
+    if args.profile == "full" and args.item_budget_explicit:
+        raise ValueError("--item-budget is only valid for the items profile")
+    if args.profile == "items" and args.max_pages is not None:
+        raise ValueError("--max-pages is only valid for the full profile")
+    output = resolve_output(args)
+    namespaces = (0,) if args.profile == "items" else args.namespaces
     options = {
+        "profile": args.profile,
         "base_url": args.base_url,
-        "namespaces": list(args.namespaces),
+        "namespaces": list(namespaces),
         "delay": args.delay,
         "timeout": args.timeout,
         "max_attempts": args.max_attempts,
         "user_agent": args.user_agent,
         "max_pages": args.max_pages,
+        "item_budget": args.item_budget if args.profile == "items" else None,
         "skip_images": args.skip_images,
     }
     with CrawlStorage(
-        args.output,
+        output,
         args.base_url,
-        args.namespaces,
+        namespaces,
         fresh=args.fresh,
+        profile=args.profile,
     ) as storage:
         if args.retry_errors:
             storage.retry_errors()
@@ -126,13 +162,21 @@ def run_crawl(args: argparse.Namespace) -> CrawlSummary:
             max_attempts=args.max_attempts,
             user_agent=args.user_agent,
         )
-        crawler = WikiCrawler(
-            client,
-            storage,
-            args.namespaces,
-            skip_images=args.skip_images,
-            max_pages=args.max_pages,
-        )
+        if args.profile == "items":
+            crawler = SelectiveItemsCrawler(
+                client,
+                storage,
+                item_budget=args.item_budget,
+                skip_images=args.skip_images,
+            )
+        else:
+            crawler = WikiCrawler(
+                client,
+                storage,
+                namespaces,
+                skip_images=args.skip_images,
+                max_pages=args.max_pages,
+            )
         return crawler.run(options)
 
 
@@ -152,12 +196,15 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         print("crawler setup/fatal error: {}".format(error), file=sys.stderr)
         return 2
     print(
-        "pages={} images={} links={} failures={} output={}".format(
+        "pages={} images={} links={} failures={} pending_pages={} "
+        "pending_images={} output={}".format(
             summary.pages,
             summary.images,
             summary.links,
             summary.failures,
-            args.output.resolve(),
+            summary.pending_pages,
+            summary.pending_images,
+            resolve_output(args).resolve(),
         )
     )
     return summary.exit_code

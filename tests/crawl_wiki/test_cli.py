@@ -4,7 +4,7 @@ from contextlib import redirect_stderr, redirect_stdout
 from pathlib import Path
 from unittest.mock import patch
 
-from tools.crawl_wiki.cli import build_parser, main
+from tools.crawl_wiki.cli import build_parser, main, resolve_output, run_crawl
 from tools.crawl_wiki.models import CrawlSummary
 
 
@@ -12,11 +12,31 @@ class CliTests(unittest.TestCase):
     def test_parser_has_safe_full_crawl_defaults(self):
         args = build_parser().parse_args([])
         self.assertEqual(args.base_url, "https://dontstarve.wiki.gg/")
-        self.assertEqual(args.output, Path("data/crawled/dontstarve-wiki"))
+        self.assertIsNone(args.output)
+        self.assertEqual(
+            resolve_output(args), Path("data/crawled/dontstarve-wiki")
+        )
         self.assertEqual(args.namespaces, (0, 14, 6))
         self.assertEqual(args.delay, 0.5)
         self.assertEqual(args.timeout, 30.0)
         self.assertEqual(args.max_attempts, 5)
+
+    def test_items_profile_defaults_to_selective_output_and_budget(self):
+        args = build_parser().parse_args(["--profile", "items"])
+
+        self.assertEqual(args.profile, "items")
+        self.assertEqual(args.item_budget, 100)
+        self.assertEqual(
+            resolve_output(args), Path("data/crawled/dontstarve-items")
+        )
+
+    def test_rejects_explicit_item_budget_for_full_profile(self):
+        args = build_parser().parse_args(
+            ["--profile", "full", "--item-budget", "5"]
+        )
+
+        with self.assertRaisesRegex(ValueError, "items profile"):
+            run_crawl(args)
 
     def test_invalid_arguments_exit_before_run(self):
         invalid = [
@@ -25,6 +45,7 @@ class CliTests(unittest.TestCase):
             ["--timeout", "0"],
             ["--max-attempts", "0"],
             ["--max-pages", "0"],
+            ["--item-budget", "0"],
             ["--base-url", "file:///tmp/wiki"],
         ]
         for argv in invalid:
