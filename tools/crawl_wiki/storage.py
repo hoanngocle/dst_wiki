@@ -7,6 +7,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Callable, Dict, Iterable, List, Mapping, Optional, Sequence, Set, Tuple
 
+from tools.crawl_wiki.item_seeds import ItemSeed
 from tools.crawl_wiki.models import CrawlSummary, SCHEMA_VERSION
 from tools.crawl_wiki.parser import normalize_base_url, safe_image_extension
 
@@ -34,7 +35,14 @@ def encode_json_line(record: Mapping[str, Any]) -> bytes:
 
 
 class CrawlStorage:
-    JSONL_NAMES = ("pages.jsonl", "images.jsonl", "links.jsonl", "errors.jsonl")
+    JSONL_NAMES = (
+        "seeds.jsonl",
+        "pages.jsonl",
+        "recipes.jsonl",
+        "images.jsonl",
+        "links.jsonl",
+        "errors.jsonl",
+    )
 
     def __init__(
         self,
@@ -106,6 +114,13 @@ class CrawlStorage:
                 attempts integer not null default 0,
                 record_offset integer,
                 last_error text
+            );
+            create table if not exists seed_metadata (
+                title text primary key,
+                href text not null,
+                icon_title text,
+                icon_thumbnail_url text,
+                source_sections text not null
             );
             create table if not exists errors (
                 stage text not null,
@@ -220,6 +235,75 @@ class CrawlStorage:
             self.connection.execute("select count(*) from page_queue").fetchone()[0]
         )
 
+    def pending_page_count(self) -> int:
+        return int(
+            self.connection.execute(
+                "select count(*) from page_queue where status='pending'"
+            ).fetchone()[0]
+        )
+
+    def pending_image_count(self) -> int:
+        return int(
+            self.connection.execute(
+                "select count(*) from image_queue where status='pending'"
+            ).fetchone()[0]
+        )
+
+    def save_seeds(self, seeds: Iterable[ItemSeed]) -> None:
+        with self.connection:
+            for seed in seeds:
+                self.connection.execute(
+                    "insert into seed_metadata(title,href,icon_title,icon_thumbnail_url,source_sections) "
+                    "values(?,?,?,?,?) on conflict(title) do update set "
+                    "href=excluded.href,icon_title=excluded.icon_title,"
+                    "icon_thumbnail_url=excluded.icon_thumbnail_url,"
+                    "source_sections=excluded.source_sections",
+                    (
+                        seed.title,
+                        seed.href,
+                        seed.icon_title,
+                        seed.icon_thumbnail_url,
+                        json.dumps(
+                            list(seed.source_sections),
+                            ensure_ascii=False,
+                            separators=(",", ":"),
+                        ),
+                    ),
+                )
+        self._write_seeds()
+
+    def seed_for_title(self, title: str) -> Optional[Dict[str, Any]]:
+        row = self.connection.execute(
+            "select title,href,icon_title,icon_thumbnail_url,source_sections "
+            "from seed_metadata where title=?",
+            (title,),
+        ).fetchone()
+        if row is None:
+            return None
+        record = dict(row)
+        record["schema_version"] = SCHEMA_VERSION
+        record["source_sections"] = json.loads(record["source_sections"])
+        return record
+
+    def _write_seeds(self) -> None:
+        path = self.output / "seeds.jsonl"
+        temporary = path.with_name(path.name + ".tmp")
+        rows = self.connection.execute(
+            "select title,href,icon_title,icon_thumbnail_url,source_sections "
+            "from seed_metadata order by title collate nocase,title"
+        )
+        with temporary.open("wb") as handle:
+            for row in rows:
+                record = dict(row)
+                record["schema_version"] = SCHEMA_VERSION
+                record["source_sections"] = json.loads(
+                    record["source_sections"]
+                )
+                handle.write(encode_json_line(record))
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(str(temporary), str(path))
+
     def _claim(self, table: str, order_by: str) -> Optional[Dict[str, Any]]:
         try:
             self.connection.execute("begin immediate")
@@ -282,10 +366,13 @@ class CrawlStorage:
         page_record: Mapping[str, Any],
         link_records: Iterable[Mapping[str, Any]],
         image_titles: Set[str],
+        recipe_records: Iterable[Mapping[str, Any]] = (),
     ) -> None:
         page_offset = self._append_record("pages.jsonl", page_record)
         for record in link_records:
             self._append_record("links.jsonl", record)
+        for record in recipe_records:
+            self._append_record("recipes.jsonl", record)
         with self.connection:
             for title in sorted(image_titles, key=lambda value: (value.casefold(), value)):
                 self.connection.execute(
@@ -392,6 +479,13 @@ class CrawlStorage:
             )
             self._set_metadata("discovery:{}:complete".format(namespace), "1")
 
+    def is_item_discovery_complete(self) -> bool:
+        return self._metadata("items:discovery:complete") == "1"
+
+    def mark_item_discovery_complete(self) -> None:
+        with self.connection:
+            self._set_metadata("items:discovery:complete", "1")
+
     def new_image_part(self) -> Path:
         file_descriptor, name = tempfile.mkstemp(
             prefix="image-", suffix=".part", dir=str(self.parts_dir)
@@ -443,6 +537,25 @@ class CrawlStorage:
                 target_namespace,
                 target_title.casefold(),
                 target_title,
+            )
+            return identity, sort_key
+        if filename == "seeds.jsonl":
+            title = str(record["title"])
+            return title, title.casefold() + "\0" + title
+        if filename == "recipes.jsonl":
+            page_id = int(record["page_id"])
+            identity = json.dumps(
+                record, ensure_ascii=False, sort_keys=True, separators=(",", ":")
+            )
+            result = str(record["result"])
+            source = str(record["source"])
+            variant = str(record["variant"])
+            sort_key = "{:020d}\0{}\0{}\0{}\0{}".format(
+                page_id,
+                result.casefold(),
+                source.casefold(),
+                variant.casefold(),
+                identity,
             )
             return identity, sort_key
         stage = str(record["stage"])
@@ -575,8 +688,11 @@ class CrawlStorage:
         os.replace(str(temporary), str(path))
 
     def finalize(self, options: Mapping[str, Any]) -> CrawlSummary:
+        self._write_seeds()
         self._write_errors()
+        seed_count, _ = self._compact("seeds.jsonl")
         page_count, page_index = self._compact("pages.jsonl")
+        recipe_count, _ = self._compact("recipes.jsonl")
         image_count, image_index = self._compact("images.jsonl")
         link_count, _ = self._compact("links.jsonl")
         error_count, _ = self._compact("errors.jsonl")
@@ -593,18 +709,27 @@ class CrawlStorage:
         checksums = {
             name: self._sha256(self.output / name) for name in self.JSONL_NAMES
         }
+        pending_pages = self.pending_page_count()
+        pending_images = self.pending_image_count()
         manifest = {
             "schema_version": SCHEMA_VERSION,
             "base_url": self.base_url,
             "namespaces": list(self.namespaces),
             "started_at": self._metadata("started_at"),
             "completed_at": self.clock(),
+            "status": (
+                "partial" if pending_pages or pending_images else "complete"
+            ),
             "options": dict(options),
             "counts": {
+                "seeds": seed_count,
                 "pages": page_count,
+                "recipes": recipe_count,
                 "images": image_count,
                 "links": link_count,
                 "failures": error_count,
+                "pending_pages": pending_pages,
+                "pending_images": pending_images,
             },
             "unresolved_errors": error_count,
             "checksums": checksums,
@@ -615,4 +740,6 @@ class CrawlStorage:
             images=image_count,
             links=link_count,
             failures=error_count,
+            pending_pages=pending_pages,
+            pending_images=pending_images,
         )

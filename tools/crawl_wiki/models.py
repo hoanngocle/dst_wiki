@@ -16,6 +16,8 @@ class CrawlSummary:
     images: int
     links: int
     failures: int
+    pending_pages: int = 0
+    pending_images: int = 0
 
     @property
     def exit_code(self) -> int:

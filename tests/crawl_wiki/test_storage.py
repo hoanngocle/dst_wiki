@@ -7,6 +7,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 import tools.crawl_wiki.storage as storage_module
+from tools.crawl_wiki.item_seeds import ItemSeed
 from tools.crawl_wiki.storage import CrawlStorage, StorageError
 
 
@@ -85,6 +86,69 @@ class StorageTests(unittest.TestCase):
                 self.assertEqual(
                     storage.claim_image()["title"], "File:Wilson.png"
                 )
+
+    def test_persists_seeds_recipes_and_partial_queue_progress(self):
+        with tempfile.TemporaryDirectory() as tempdir:
+            output = Path(tempdir)
+            seed = ItemSeed(
+                "Cut Grass",
+                "/wiki/Cut_Grass",
+                "File:Cut Grass.png",
+                "https://dontstarve.wiki.gg/images/Cut_Grass.png",
+                ("Items#Resources-0",),
+            )
+            recipe = {
+                "schema_version": 1,
+                "page_id": 1,
+                "result": "Cut Grass",
+                "source": "Object Infobox",
+                "variant": "base",
+                "ingredients": [{"title": "Grass", "count": 1.0}],
+                "station": None,
+                "tab": None,
+                "tier": None,
+                "dlc": None,
+                "character": None,
+                "note": None,
+            }
+            with self.make_storage(output) as storage:
+                storage.save_seeds([seed])
+                self.assertEqual(
+                    storage.seed_for_title("Cut Grass")["icon_title"],
+                    "File:Cut Grass.png",
+                )
+                storage.enqueue_pages(
+                    [
+                        {"pageid": 1, "ns": 0, "title": "Cut Grass"},
+                        {"pageid": 2, "ns": 0, "title": "Twigs"},
+                    ]
+                )
+                storage.claim_page()
+                storage.complete_page(
+                    1,
+                    _page(1, "Cut Grass"),
+                    [],
+                    set(),
+                    recipe_records=[recipe],
+                )
+                summary = storage.finalize({"profile": "items"})
+
+            self.assertEqual(summary.pending_pages, 1)
+            self.assertEqual(summary.pending_images, 0)
+            self.assertEqual(
+                json.loads((output / "manifest.json").read_text())["status"],
+                "partial",
+            )
+            seeds = [
+                json.loads(line)
+                for line in (output / "seeds.jsonl").read_text().splitlines()
+            ]
+            recipes = [
+                json.loads(line)
+                for line in (output / "recipes.jsonl").read_text().splitlines()
+            ]
+            self.assertEqual(seeds[0]["title"], "Cut Grass")
+            self.assertEqual(recipes, [recipe])
 
     def test_truncates_incomplete_tail_and_compacts_duplicate_records(self):
         with tempfile.TemporaryDirectory() as tempdir:

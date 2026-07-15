@@ -3,8 +3,14 @@ from pathlib import Path
 from typing import Any, Callable, Dict, Mapping, Optional, Sequence
 
 from tools.crawl_wiki.client import ClientError, MediaWikiClient
+from tools.crawl_wiki.item_seeds import (
+    ITEM_SOURCE_SECTIONS,
+    extract_item_seeds,
+    merge_item_seeds,
+)
 from tools.crawl_wiki.models import CrawlSummary, SCHEMA_VERSION
 from tools.crawl_wiki.parser import normalize_page
+from tools.crawl_wiki.recipes import extract_recipes
 from tools.crawl_wiki.storage import CrawlStorage, _utc_now
 
 
@@ -177,3 +183,119 @@ class WikiCrawler:
             "retryable": retryable,
             "timestamp": self.clock(),
         }
+
+
+class SelectiveItemsCrawler(WikiCrawler):
+    def __init__(
+        self,
+        client: MediaWikiClient,
+        storage: CrawlStorage,
+        item_budget: int = 100,
+        skip_images: bool = False,
+        clock: Callable[[], str] = _utc_now,
+    ) -> None:
+        if item_budget <= 0:
+            raise ValueError("item budget must be positive")
+        super().__init__(
+            client,
+            storage,
+            (0,),
+            skip_images=skip_images,
+            clock=clock,
+        )
+        self.item_budget = item_budget
+
+    def run(self, options: Mapping[str, Any]) -> CrawlSummary:
+        self._discover_items()
+        self._process_selected_pages()
+        if not self.skip_images:
+            self._process_images()
+        return self.storage.finalize(options)
+
+    def _discover_items(self) -> None:
+        if self.storage.is_item_discovery_complete():
+            return
+        groups = []
+        for page_title in ITEM_SOURCE_SECTIONS:
+            parsed = self.client.parse_page_by_title(page_title)
+            rendered_html = parsed.get("text", "")
+            if isinstance(rendered_html, Mapping):
+                rendered_html = rendered_html.get("*", "")
+            if not isinstance(rendered_html, str):
+                raise ClientError(
+                    "source page HTML must be a string", retryable=False
+                )
+            groups.append(
+                extract_item_seeds(
+                    page_title, rendered_html, self.client.base_url
+                )
+            )
+        seeds = merge_item_seeds(groups)
+        if not seeds:
+            raise ClientError(
+                "approved item sections produced no item links",
+                retryable=False,
+            )
+        self.storage.save_seeds(seeds)
+        resolved = self.client.resolve_titles(
+            [seed.title for seed in seeds]
+        )
+        main_pages = [page for page in resolved if page.get("ns") == 0]
+        self.storage.enqueue_pages(main_pages)
+        self.storage.mark_item_discovery_complete()
+        LOGGER.info(
+            "discovered selective item seeds=%s resolved_pages=%s",
+            len(seeds),
+            len(main_pages),
+        )
+
+    def _process_selected_pages(self) -> None:
+        for _ in range(self.item_budget):
+            claimed = self.storage.claim_page()
+            if claimed is None:
+                return
+            page_id = int(claimed["page_id"])
+            title = str(claimed["title"])
+            try:
+                query_page = self.client.get_page(page_id)
+                parsed = self.client.parse_page(page_id)
+                page, links, _ = normalize_page(
+                    query_page,
+                    parsed,
+                    self.client.base_url,
+                    self.clock(),
+                    {0},
+                )
+                seed = self.storage.seed_for_title(title)
+                selected_images = set()
+                if seed is not None and isinstance(
+                    seed.get("icon_title"), str
+                ):
+                    selected_images.add(seed["icon_title"])
+                recipes = extract_recipes(
+                    page_id, title, str(page["wikitext"])
+                )
+                self.storage.complete_page(
+                    page_id,
+                    page,
+                    links,
+                    selected_images,
+                    recipe_records=recipes,
+                )
+                LOGGER.info(
+                    "completed selected item id=%s title=%s recipes=%s",
+                    page_id,
+                    title,
+                    len(recipes),
+                )
+            except (ClientError, ValueError) as error:
+                self.storage.fail_page(
+                    page_id,
+                    self._error_record("page", str(page_id), error),
+                )
+                LOGGER.error(
+                    "failed selected item id=%s title=%s: %s",
+                    page_id,
+                    title,
+                    error,
+                )

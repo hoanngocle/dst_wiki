@@ -7,7 +7,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 from tools.crawl_wiki.client import MediaWikiClient
-from tools.crawl_wiki.crawler import WikiCrawler
+from tools.crawl_wiki.crawler import SelectiveItemsCrawler, WikiCrawler
 from tools.crawl_wiki.storage import CrawlStorage
 
 
@@ -15,6 +15,8 @@ PAGES = {
     1: {"pageid": 1, "ns": 0, "title": "Wilson"},
     2: {"pageid": 2, "ns": 14, "title": "Category:Characters"},
     3: {"pageid": 3, "ns": 6, "title": "File:Wilson.png"},
+    10: {"pageid": 10, "ns": 0, "title": "Cut Grass"},
+    11: {"pageid": 11, "ns": 0, "title": "Twigs"},
 }
 
 
@@ -32,8 +34,8 @@ class _CrawlerHandler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         parsed_url = urllib.parse.urlsplit(self.path)
-        if parsed_url.path == "/images/Wilson.png":
-            body = b"original-wilson-image"
+        if parsed_url.path.startswith("/images/"):
+            body = ("original:" + parsed_url.path).encode("utf-8")
             self.send_response(200)
             self.send_header("Content-Type", "image/png")
             self.send_header("Content-Length", str(len(body)))
@@ -45,6 +47,45 @@ class _CrawlerHandler(BaseHTTPRequestHandler):
             return
 
         query = urllib.parse.parse_qs(parsed_url.query)
+        if query.get("action") == ["parse"] and "page" in query:
+            title = query["page"][0]
+            source_html = {
+                "Items": """
+                  <article id="Resources-0">
+                    <a href="/wiki/Cut_Grass" title="Cut Grass">
+                      <img alt="Cut Grass.png" src="/images/thumb/Cut_Grass.png">
+                    </a>
+                    <a href="/wiki/Twigs" title="Twigs">
+                      <img alt="Twigs.png" src="/images/thumb/Twigs.png">
+                    </a>
+                  </article>
+                  <article id="Food-0">
+                    <a href="/wiki/Cut_Grass" title="Cut Grass">
+                      <img alt="Cut Grass.png" src="/images/thumb/Cut_Grass.png">
+                    </a>
+                  </article>
+                """,
+                "Plants": """
+                  <article id="DST-0">
+                    <a href="/wiki/Twigs" title="Twigs">
+                      <img alt="Twigs.png" src="/images/thumb/Twigs.png">
+                    </a>
+                  </article>
+                """,
+            }[title]
+            self._json({"parse": {"title": title, "text": source_html}})
+            return
+
+        if query.get("prop") == ["info"] and "titles" in query:
+            by_title = {page["title"]: page for page in PAGES.values()}
+            pages = [
+                by_title[title]
+                for title in query["titles"][0].split("|")
+                if title in by_title
+            ]
+            self._json({"query": {"pages": pages}})
+            return
+
         if query.get("list") == ["allpages"]:
             namespace = int(query["apnamespace"][0])
             continuation = query.get("apcontinue", [None])[0]
@@ -70,6 +111,8 @@ class _CrawlerHandler(BaseHTTPRequestHandler):
                 1: "'''Wilson''' is a character.",
                 2: "A category for characters.",
                 3: "The original Wilson portrait.",
+                10: "{{Object Infobox|ingredient1=Grass|multiplier1=1}}",
+                11: "'''Twigs''' are a resource.",
             }[page_id]
             page["revisions"] = [
                 {
@@ -97,6 +140,8 @@ class _CrawlerHandler(BaseHTTPRequestHandler):
                     1: "<p><b>Wilson</b> is a character.</p>",
                     2: "<p>A category for characters.</p>",
                     3: "<p>The original Wilson portrait.</p>",
+                    10: "<p><b>Cut Grass</b> is a resource.</p>",
+                    11: "<p><b>Twigs</b> are a resource.</p>",
                 }[page_id],
                 "links": [],
                 "categories": [],
@@ -114,10 +159,17 @@ class _CrawlerHandler(BaseHTTPRequestHandler):
                         "images": ["Wilson.png", "Wilson.png"],
                     }
                 )
+            elif page_id in (10, 11):
+                parsed["images"] = [
+                    "Unrelated Navbox.png",
+                    "{}.png".format(PAGES[page_id]["title"]),
+                ]
             self._json({"parse": parsed})
             return
 
         if query.get("prop") == ["imageinfo"]:
+            title = query["titles"][0]
+            filename = title.removeprefix("File:").replace(" ", "_")
             self._json(
                 {
                     "query": {
@@ -125,11 +177,11 @@ class _CrawlerHandler(BaseHTTPRequestHandler):
                             {
                                 "pageid": 3,
                                 "ns": 6,
-                                "title": "File:Wilson.png",
+                                "title": title,
                                 "imageinfo": [
                                     {
-                                        "url": self.server.base_url + "images/Wilson.png",
-                                        "size": 21,
+                                        "url": self.server.base_url + "images/" + filename,
+                                        "size": len(("original:/images/" + filename).encode("utf-8")),
                                         "width": 64,
                                         "height": 64,
                                         "mime": "image/png",
@@ -187,6 +239,57 @@ class CrawlerTests(unittest.TestCase):
             (0, 14, 6),
             clock=lambda: "2026-07-15T00:00:00Z",
         )
+
+    def make_item_storage(self, output, server):
+        return CrawlStorage(
+            output,
+            server.base_url,
+            (0,),
+            clock=lambda: "2026-07-15T00:00:00Z",
+        )
+
+    def test_selective_items_resume_by_budget_and_download_only_seed_icons(self):
+        with CrawlerServer() as server, tempfile.TemporaryDirectory() as tempdir:
+            output = Path(tempdir)
+            with self.make_item_storage(output, server) as storage:
+                first = SelectiveItemsCrawler(
+                    self.make_client(server),
+                    storage,
+                    item_budget=1,
+                    clock=lambda: "2026-07-15T00:00:00Z",
+                ).run({"profile": "items"})
+
+            self.assertEqual(first.pages, 1)
+            self.assertEqual(first.images, 1)
+            self.assertEqual(first.pending_pages, 1)
+            self.assertEqual(
+                [record["title"] for record in _records(output / "pages.jsonl")],
+                ["Cut Grass"],
+            )
+            self.assertEqual(
+                [record["title"] for record in _records(output / "images.jsonl")],
+                ["File:Cut Grass.png"],
+            )
+
+            with self.make_item_storage(output, server) as storage:
+                second = SelectiveItemsCrawler(
+                    self.make_client(server),
+                    storage,
+                    item_budget=1,
+                    clock=lambda: "2026-07-16T00:00:00Z",
+                ).run({"profile": "items"})
+
+            self.assertEqual(second.pages, 2)
+            self.assertEqual(second.images, 2)
+            self.assertEqual(second.pending_pages, 0)
+            self.assertEqual(
+                {record["title"] for record in _records(output / "images.jsonl")},
+                {"File:Cut Grass.png", "File:Twigs.png"},
+            )
+            self.assertEqual(len(_records(output / "seeds.jsonl")), 2)
+            recipes = _records(output / "recipes.jsonl")
+            self.assertEqual(len(recipes), 1)
+            self.assertEqual(recipes[0]["result"], "Cut Grass")
 
     def test_crawls_all_namespaces_links_and_original_image(self):
         with CrawlerServer() as server, tempfile.TemporaryDirectory() as tempdir:
