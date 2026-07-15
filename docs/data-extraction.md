@@ -117,7 +117,7 @@ Lệnh này chỉ đọc texture được `item-textures.json` tham chiếu, ver
 - `data/generated/wiki.sqlite`: database chuẩn hóa có entities, recipes, ingredients, acquisition, stats/effects/relations/assets, evidence, conflicts và extraction errors. Đây là nguồn audit/provenance đầy đủ.
 - `public/data/catalog.json`: JSON entity đã nest, sắp xếp ổn định; là input chính cho tìm kiếm và trang chi tiết của wiki tương lai.
 - `public/data/assets.json`: asset map và provenance cho icon/atlas; là input asset của wiki tương lai.
-- `public/data/items.json`: payload schema version 2 cho màn tìm kiếm Prefabs, gồm category, tên, công thức và sprite descriptor; hiện chứa toàn bộ Tu Tiên cùng đúng một entry cho mỗi module prefab DST.
+- `public/data/items.json`: payload schema version 3 cho màn tìm kiếm Prefabs, gồm category, tên, công thức runtime, `craftingNote` từ `STRINGS.RECIPE_DESC` và sprite descriptor. Namespace Tu Tiên chỉ công bố entity có tên tiếng Việt; prefab DST gốc vẫn có đúng một entry cho mỗi module. `craftingNote` chỉ là ghi chú trong menu chế tạo, không được dùng để suy đoán nguyên liệu hoặc số lượng.
 - `data/generated/item-textures.json`: manifest texture tối thiểu cần decode cho `items.json`.
 - `public/assets/game/*.png`: texture trình duyệt dùng được, tên file theo SHA-256 và được tạo bởi `publish-assets`.
 - `data/generated/coverage.json`: quality gate và danh sách việc cần review; không phải payload hiển thị chính.

@@ -15,7 +15,7 @@ describe("Prefabs page", () => {
     expect(
       screen.getByRole("searchbox", { name: "Tìm kiếm Prefabs." }),
     ).toBeDefined();
-    expect(screen.getByText("2241 Prefabs")).toBeDefined();
+    expect(screen.getByText("1975 Prefabs")).toBeDefined();
     expect(
       screen.getByRole("heading", { level: 3, name: "abigail_attack_fx" }),
     ).toBeDefined();

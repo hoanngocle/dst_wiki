@@ -12,29 +12,9 @@
       "texture": "images/inventoryimages/xd_lc_lmg.tex"
     },
     {
-      "sha256": "00b7f7c0465eb92048b0e628126018af37af4fbbfb88e89d5c51f84f122d4699",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_yunxiao_portableslot.tex"
-    },
-    {
       "sha256": "00f210e340c6af17e63e1bddfa1b8dc4e8802377c7cf0cb3853b3d0e6815ab35",
       "source": "mod",
       "texture": "images/inventoryimages/xd_tianji_juanzhou.tex"
-    },
-    {
-      "sha256": "0245ca1dc9b489dbd89162bfa66ec909ca6dbb107b71bc5babc5294e1f445c57",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_flower_bmg_skins_srlg.tex"
-    },
-    {
-      "sha256": "047e19802f0e14de35c6b8e85ff9041581236ae4a65ec8d0a71e38e380eaba61",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_sudaji_yhly_yhm_charged.tex"
-    },
-    {
-      "sha256": "052209140e5ebbdf3a414c0c60e57ad90240025c103745c535cc099b6ea9ac6c",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_xcdf_skins_sysx.tex"
     },
     {
       "sha256": "05a7cae784ac1b4fe493c4771f4041494a1081f767f5c82318a6aba41c55c3b6",
@@ -52,11 +32,6 @@
       "texture": "images/inventoryimages/xd_tree_yxs.tex"
     },
     {
-      "sha256": "08420f120f3d6ddedfa8d239229ebb4b5e2d201ddaf320641c328f17b0947128",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_sudaji_redlantern_zyx.tex"
-    },
-    {
       "sha256": "08ecbb373f05ed3d77efe33b60e728f79c2d1f269a896a16452db05d34fe7053",
       "source": "mod",
       "texture": "images/inventoryimages/xd_wsjx.tex"
@@ -67,11 +42,6 @@
       "texture": "images/inventoryimages/xd_xuanyu.tex"
     },
     {
-      "sha256": "0bc0aba6020f5cf99dba75cd035ff6f5f2f9bae27ef633da9f719d420b2b7a7b",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_liandanlu_skins_ysx.tex"
-    },
-    {
       "sha256": "0c3508a4422e020451f500c2983e3b6e30227964a5fc1f5f288074b4950bbb73",
       "source": "mod",
       "texture": "images/inventoryimages/xd_tree_xhs.tex"
@@ -80,11 +50,6 @@
       "sha256": "0c8b92b5bdc843b24674d62f7bb24f3aae07d178e2e7bc957b8afc33d916977d",
       "source": "mod",
       "texture": "images/inventoryimages/xd_dy_xttyd_1.tex"
-    },
-    {
-      "sha256": "0ce1c9c4a7ed25d2486c0d9eac7b1783003267f36f62f681fb7d98e69e75d146",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_wmz_md6.tex"
     },
     {
       "sha256": "0cf113f47a343b11f83c9b7e2fe508b9d282dd516b92c49bb7fb12a794992f4d",
@@ -102,11 +67,6 @@
       "texture": "images/inventoryimages/xd_lc_qfx.tex"
     },
     {
-      "sha256": "0d922078f40f6953201c1603d03b1a5797b4da39a3417ad03232a7a767a80b76",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_wmz_md5.tex"
-    },
-    {
       "sha256": "0e35d49723d82ea4c172aacd10481d22d40e209cade0104ea023638358174a2b",
       "source": "mod",
       "texture": "images/inventoryimages/xd_lc_yhh_seed.tex"
@@ -120,11 +80,6 @@
       "sha256": "10103dff40594dd6812165bf6b49a31910a61560bfd0bd0a9b76465678260e0d",
       "source": "mod",
       "texture": "images/inventoryimages/xd_hxyp.tex"
-    },
-    {
-      "sha256": "10424ee520626853aa0f4a8534f8e40f19c65236cb48c8fc75b8664adccccf37",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_sudaji_yhly_charged.tex"
     },
     {
       "sha256": "106853cc2ca2bca7d7a2f37552eeeda0b1699669d1da5f5bfd0553e26ba6c665",
@@ -147,11 +102,6 @@
       "texture": "images/inventoryimages/xd_danyao_yx.tex"
     },
     {
-      "sha256": "13b3fb8a7e48de0fa6ab6c3b31a50411f2c0cbe32854c0267d2448c61c56932a",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_ny.tex"
-    },
-    {
       "sha256": "13d194c0f22eb66a77030ed1fd015ce8fe164d8cb63a0fee279316802cd4bb53",
       "source": "mod",
       "texture": "images/inventoryimages/xd_flower_ll.tex"
@@ -160,11 +110,6 @@
       "sha256": "13d77f54e3d3b1f5c831210a014df2db5d11c57454c4cb2c57590c9b2eb985cb",
       "source": "mod",
       "texture": "images/inventoryimages/xd_luoshen_yin.tex"
-    },
-    {
-      "sha256": "13e696a9991aacaf34cec77b06ebbf49d5944d5a52d0e57ad2abd673d14623fb",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_lgzbh_skins_jlyc.tex"
     },
     {
       "sha256": "14836c7e44063d343bad83776a9629ab86d8a074bd583a370235ef7308550258",
@@ -177,11 +122,6 @@
       "texture": "images/inventoryimages/xd_wukong_dsmo.tex"
     },
     {
-      "sha256": "15f78452cfd8d5f7484ae23e5a4751ca562fe94337391bc1a778bee565dec410",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_flower_sfr_skins_xy.tex"
-    },
-    {
       "sha256": "17c1888c1851bd28276ee3caf4b2810b105d4ba9a484f221108911ecc17ab1c2",
       "source": "mod",
       "texture": "images/inventoryimages/xd_sj_tej.tex"
@@ -192,34 +132,9 @@
       "texture": "images/inventoryimages/xd_qianyu.tex"
     },
     {
-      "sha256": "18b75cb43674f418465975638ea7b8523e06ee42d206edfd7c450a3a523f8c91",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_tree_df_skins_zsyj.tex"
-    },
-    {
-      "sha256": "18e63b52008158f9bc3fc7638a9f50a95debd041935dd2922ba636336a0c80a8",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_fhjd.tex"
-    },
-    {
-      "sha256": "196b26837a9479109fabd2faf1989b864f45735879d43c39201f68055e56cd1b",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_zyj.tex"
-    },
-    {
-      "sha256": "19b4af99d056e54571b6f64569c6fa30eaa22c27b978a5c6b04601981bc5a14b",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_xtbh_skins_wxxxh.tex"
-    },
-    {
       "sha256": "1a3a80f92d9ca89b16158588aabb388b64a30516052821d963a6b79957a726ea",
       "source": "mod",
       "texture": "images/inventoryimages/xd_danyao_hj.tex"
-    },
-    {
-      "sha256": "1da18ac94105cba27b5891b526396c5c35625ecb04bf41fb87f5563952fafcc2",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_wsjx_skins_yzjx.tex"
     },
     {
       "sha256": "1dcd649ff811d61b1f94220cb0f536b77fe5948a9c59449e841983356423b3cc",
@@ -232,11 +147,6 @@
       "texture": "images/inventoryimages/xd_htz_sjcx.tex"
     },
     {
-      "sha256": "1f7367e7dc16975bb5f42af8941cf7272832dc169b68976b8c83e426b2aac2cc",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_zcmj_jhxs.tex"
-    },
-    {
       "sha256": "201de69717450c283ba927c59e278a9ce3317d5d5a6f287ee5bb2028785e2faf",
       "source": "mod",
       "texture": "images/inventoryimages/xd_yunxiao_fgfq.tex"
@@ -245,16 +155,6 @@
       "sha256": "224b2ca3a782ddb4f2e38bed2610c4579885f2f91b08d4ce278c5730741a01a2",
       "source": "mod",
       "texture": "images/inventoryimages/xd_cl.tex"
-    },
-    {
-      "sha256": "228489eb3f521fbb7fc2e16b9afb74bbfe539eaead2e7e10cdf597751743425e",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_yfly.tex"
-    },
-    {
-      "sha256": "23dc791a1ee2f0b33aaed6c3f3b88bead01b7b8db40d37c436828adc668abc48",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_hyys.tex"
     },
     {
       "sha256": "24fed7d73ea7db0f224dde9e2610b260d5e5164d402c20f6524c6b3ac98b43c3",
@@ -280,11 +180,6 @@
       "sha256": "28469a8847069d1652c2df31d34a26d901f24b596c0df11792ec80a8564e2a44",
       "source": "mod",
       "texture": "images/inventoryimages/xd_klxw.tex"
-    },
-    {
-      "sha256": "28abe704ff1ae2b6c5ca8dfa36a0e19f9a1631262aa63a5b50e06e2b9f0d3988",
-      "source": "mod",
-      "texture": "images/inventoryimages/gezhixing_amiaohouse.tex"
     },
     {
       "sha256": "295f473cdc05a6b04ee63d813035457245691fc04f77cb72168217694dc27dfe",
@@ -322,21 +217,6 @@
       "texture": "images/inventoryimages/xd_lc_hsc_seed.tex"
     },
     {
-      "sha256": "2e0fd9be8b880765cca8a2ca1094fa5fb2606c50a9176dac74ffeecd5b8215ba",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_wmz_md2.tex"
-    },
-    {
-      "sha256": "2e8978c91f3e56f1ac4a49804eecde40aecf306658f475200ef8111d5cff0da7",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_hhlmz_skins_wfz.tex"
-    },
-    {
-      "sha256": "2ee7b037dbc4340775d17ed9252ea2c66ff6bae41c40d72c1c642c1e773265d5",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_yhsyz_skins_qlyyz.tex"
-    },
-    {
       "sha256": "2f4ffadc7cbd4b1beab8775cb17873f7089b37dcb6766365a166929a5abf2b51",
       "source": "mod",
       "texture": "images/inventoryimages/xd_nl.tex"
@@ -345,16 +225,6 @@
       "sha256": "2f73803f192337a1aafe47302ba65912932f4510fe41f4cb9f999a7495412507",
       "source": "mod",
       "texture": "images/inventoryimages/xd_pflnw.tex"
-    },
-    {
-      "sha256": "2ff795c0bbcfc43abc0f46d9cef28609e78b4c4a7de50d92b39bb2df1859887c",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_gjx_skins_jsth.tex"
-    },
-    {
-      "sha256": "3003bc4f4e28339b92b9535585e332ea0fbf0d322ceacca9e058fcbbd89691b5",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_ztp_skins_lmxq.tex"
     },
     {
       "sha256": "3177402e7bc8ce37032427346f05fe0b9dbb588af92579aeff9b3c74d9dd13fb",
@@ -377,11 +247,6 @@
       "texture": "images/inventoryimages/xd_ws.tex"
     },
     {
-      "sha256": "347df03b290021f5c3e6e90e096e6f2e1b4c783d07111ae145d5768a36fe3e1b",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_mo_builder_skins_duanzui.tex"
-    },
-    {
       "sha256": "35158a91b585a10202eb2b4f3181ecc2d245bbe908bda4fd7422a792e66db502",
       "source": "mod",
       "texture": "images/inventoryimages/xd_lbjlt.tex"
@@ -395,11 +260,6 @@
       "sha256": "364e29a8d802dd2b6df89c9612434f56da99e371e3be6efd1276dbc911d68e5a",
       "source": "mod",
       "texture": "images/inventoryimages/xd_yhbs.tex"
-    },
-    {
-      "sha256": "3714e42ca7dee18ac706be23b9fecccf10aaa970b481ef67919b6e28010cc8b5",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_sudaji_xyj.tex"
     },
     {
       "sha256": "37cf5b5109374b926bd544fcc0672a21bdfce7ee4d8423180a4f4fd1c33f6d1c",
@@ -427,11 +287,6 @@
       "texture": "images/inventoryimages/xd_luoshen_huayin.tex"
     },
     {
-      "sha256": "3a3e125d3f3c8401d1655fb9cadde4452ed2f1569d43f462a07c967d7c8358a1",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_xshj_bbzy.tex"
-    },
-    {
       "sha256": "3ab4abcf8168e709eeb35eb175114ce7c1a80d98ffce3a097278ff9de39aa15e",
       "source": "mod",
       "texture": "images/inventoryimages/xd_longzhu.tex"
@@ -440,21 +295,6 @@
       "sha256": "3ae9c0e84150ba0625d41150533aa4be07768f9fc7a986b4de94839e91baeead",
       "source": "mod",
       "texture": "images/inventoryimages/xd_jingwei_blowdart.tex"
-    },
-    {
-      "sha256": "3b2ae1eb454255db6ff3f19cfab876855a0efd242117fd95eac8146d3b203e43",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_zsxm.tex"
-    },
-    {
-      "sha256": "3b5d446a1f9c55c9073fb72a8a2260c460f67597f0f109caede428db3cbfbbf5",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_xyb.tex"
-    },
-    {
-      "sha256": "3b63838f39b064c4dd359cfba598a81694047f7592299d80f39d6bf5cd633733",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_hasaki.tex"
     },
     {
       "sha256": "3c4090c484e5ff0723d2546fa6f2bc2770a28ce67a6ab6268eff98f0c438c459",
@@ -467,16 +307,6 @@
       "texture": "images/inventoryimages/xd_spider_leg.tex"
     },
     {
-      "sha256": "3d0c6cbad90ef6593d2f742c4e47d9b069a03463344139ee3e73d2b5a62aa0cf",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_yhbs_zmyh.tex"
-    },
-    {
-      "sha256": "3e2e5f13f0fe7a4b872b4e4564e7e7b775f656932d4420204acd1b259a7cdaba",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_zw_skillbuild.tex"
-    },
-    {
       "sha256": "4162fecda46fc0567b9143df8551d8777e404cbea022f8cb451d0fdcc0a3be73",
       "source": "mod",
       "texture": "images/inventoryimages/xd_sskl.tex"
@@ -485,11 +315,6 @@
       "sha256": "4183db668f9bd7327929563088d553de13f38f9ef6185b4b7170f9bf2b2b786f",
       "source": "mod",
       "texture": "images/inventoryimages/xd_flower_bh.tex"
-    },
-    {
-      "sha256": "4230651d275c86f6e56927d6bd7696cbbb960600b912e7ad3d3fa8e20df575a2",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_jj.tex"
     },
     {
       "sha256": "42ce47a39ae223894fdc6376a058fb21e36aac3a51f611959b8fe5d7b9cc5eb1",
@@ -502,16 +327,6 @@
       "texture": "images/inventoryimages/xd_danyao_hs.tex"
     },
     {
-      "sha256": "43d82d44ec78da0da82d99e03081da9faa9e4703bf0c43a51ba1fd82e602d5f7",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_jwtcd_skins_hqy.tex"
-    },
-    {
-      "sha256": "43f36716f631885df2e5c631f5302a210062db18a3f3466088335baa73c709d8",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_flower_md_skins_rjfg.tex"
-    },
-    {
       "sha256": "441446cc7d535839d192d5944c48f6c2f0b45425e951f40e2674d9d026b57cb0",
       "source": "mod",
       "texture": "images/inventoryimages/xd_fj.tex"
@@ -520,16 +335,6 @@
       "sha256": "442b97557455e028cad416624656db9400f9d81fb0be168303a16f5ccc490b69",
       "source": "mod",
       "texture": "images/inventoryimages/xd_pog_tail.tex"
-    },
-    {
-      "sha256": "45bf408ecafd741611fb45c6f470473504992d5876064efd44ccd1fc79464072",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_ly.tex"
-    },
-    {
-      "sha256": "46c3d2baedb92e96324aabfb5aa773e69b04a5db12799cb174e95c9dc4ade7a8",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_pflnw_skins_qns.tex"
     },
     {
       "sha256": "47cc3ce885b1b03c9ee0c4b5c508b42fadeed6574f2be833a5076d3911255cb3",
@@ -572,11 +377,6 @@
       "texture": "images/inventoryimages4.tex"
     },
     {
-      "sha256": "4d82c383b80fc8182bfdbd0100f255880b72514b6ef006131f9de00f16be800b",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_wmz_md4.tex"
-    },
-    {
       "sha256": "4d9cb766bd5b8bc4ed6ecb68cb8c59c1958cbf2cad5881fe34f275bffdd5b506",
       "source": "mod",
       "texture": "images/inventoryimages/xd_tree_yls.tex"
@@ -617,19 +417,9 @@
       "texture": "images/inventoryimages/xd_sudaji_ywfh.tex"
     },
     {
-      "sha256": "50bd97178b37e08ec1814821903ea3c0f70e606751a0f7bea4c59ed0b47b5303",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_hxyp_cd.tex"
-    },
-    {
       "sha256": "523d76d61f1a2f4807ec35531c4cbf822c3f8c1bc96eeabe77ba621c9b33a854",
       "source": "mod",
       "texture": "images/inventoryimages/xd_danyao_rl.tex"
-    },
-    {
-      "sha256": "538751d431fcb00c312f2b6ef01f15457606d07092b3cb89e3fce1ffcbbd9df4",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_yaohat.tex"
     },
     {
       "sha256": "55cdaaab5bc61e1b0feb01ad5fd23c8c531306d3f184f7ded89f024f1a8df43b",
@@ -682,11 +472,6 @@
       "texture": "images/inventoryimages/xd_yunxiao_jjj.tex"
     },
     {
-      "sha256": "5e88fefd6b70b7666c17c670a04e2c6922c6d42bc4dddb0f778a83985d533441",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_xianjian_builder_skins_duanzui.tex"
-    },
-    {
       "sha256": "5ec7b115a325e6192423a0076923b6abda91759fc5866851827c74d09b4335f9",
       "source": "mod",
       "texture": "images/inventoryimages/xd_lingshi3.tex"
@@ -732,39 +517,9 @@
       "texture": "images/inventoryimages/xd_luoshen_huaxia.tex"
     },
     {
-      "sha256": "6a8ed0688e2a46287e869dfca50bf895954d2de85f7f3080ccfdb0a0498f24cd",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_ylxh.tex"
-    },
-    {
       "sha256": "6abcbcd9f367db93a539794d7276d15506064bffeaccbadaa62304c68fae6020",
       "source": "mod",
       "texture": "images/inventoryimages/xd_lc_yhh.tex"
-    },
-    {
-      "sha256": "6b92b98e1c1303e8ae32b4693d179e10af8b9cc8b4a43fc3697260a54de2c743",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_cgsh.tex"
-    },
-    {
-      "sha256": "6bedc9e09a666f6101c32cb796366e26ee87ddbd35bf4c0a43bae0362f5b86de",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_xianjian_builder_skins_wendao.tex"
-    },
-    {
-      "sha256": "6bf2b97699c412b1aabfcab1ebd675e1b45aed52b88002db7f9bd3212c336832",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_tree_xhs_skins_lgs.tex"
-    },
-    {
-      "sha256": "6cd995c5a5824264195b6d995839e478b9e97c0e5a585da5dd51eb20d83183b9",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_hmsw_skins_bzxw.tex"
-    },
-    {
-      "sha256": "6d235926c9753a394c628270db75271e9f305050ab3d401e45816b8d7a881c0f",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_fgy.tex"
     },
     {
       "sha256": "6d399f20121544ae5423656e886d5acdcc9a2d938c14d42240d1f6aec377931f",
@@ -792,24 +547,9 @@
       "texture": "images/inventoryimages/xd_flower_pgy.tex"
     },
     {
-      "sha256": "70c94450bc8741e74d6bf1c48e1724f95a7cd434cbd2af57189ea92ddc8f961a",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_mg_skins_qwg.tex"
-    },
-    {
-      "sha256": "7170a18f07cadfe41dd51bd327a75de80423254e041c4d07bcd8111e613aedd4",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_xuanyuan.tex"
-    },
-    {
       "sha256": "720c6389d1a2730716743d268d1ebc6d2453d290304e52ca0ecd781ad6c16761",
       "source": "mod",
       "texture": "images/inventoryimages/xd_bysp.tex"
-    },
-    {
-      "sha256": "725f79a7c2caddc7726b835cb0887c5659e6594ed2b114de547f20f956a22cf3",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_zcmj_trxz.tex"
     },
     {
       "sha256": "7353e2513fc7d1c2a9c03e19d6f81e496c49f402ab2bd7a79cbe800d6bb41a45",
@@ -817,19 +557,9 @@
       "texture": "images/inventoryimages/xd_lc_dms.tex"
     },
     {
-      "sha256": "73b17c83d24aa7dceb1f1b5d96e6ccaebe2c7d223978147892dbb150ff104b1c",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_sudaji_tsmd_ykmd.tex"
-    },
-    {
       "sha256": "7478f350986f729a320b522cde493e3cc7a51f899b84a6d6a90016f2c87d17a5",
       "source": "mod",
       "texture": "images/inventoryimages/xd_jwtcd.tex"
-    },
-    {
-      "sha256": "766394b56fd51f1a5d7f7bf0178b5134215dc687b30ddf8c7128766432bce533",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_ysb_skillbuild.tex"
     },
     {
       "sha256": "77eaf2177e167e594734b168a0d9559e2ddb626d55e7288c7da90aee68b0b5a7",
@@ -852,24 +582,9 @@
       "texture": "images/inventoryimages/xd_xjs.tex"
     },
     {
-      "sha256": "7bcccb7237f311f2927f14090ee36b947b0c38fc4a576dea7a6cde4d8e5fdf34",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_flower_sfr_skins_fr.tex"
-    },
-    {
-      "sha256": "7c5eaa0614047dee8ac92c83a8062d889db2b64f238e365cf2c634aba6b83c6b",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_ys.tex"
-    },
-    {
       "sha256": "7cdcf679f753abe1c7e3997d1af86293a3b54140c8ada56a1403e5588b30147d",
       "source": "mod",
       "texture": "images/inventoryimages/xd_fanhunguopu.tex"
-    },
-    {
-      "sha256": "7d314d8d9f17eea699cfa7239727941611c5c7b7425f6b9bde4824d0f00d138c",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_jj_skillbuild.tex"
     },
     {
       "sha256": "7e2b87bea3f5a01fc9c300d240bb969b948f99ec5f5e40ca1b0d1488c959eacb",
@@ -877,34 +592,14 @@
       "texture": "images/inventoryimages/xd_danyao_sm.tex"
     },
     {
-      "sha256": "7ed8e296bb1aeeb8ddc097a10585bc09f4e57ccdb0d762cebfb706ed652ac498",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_yaoarmor.tex"
-    },
-    {
       "sha256": "7fe94715ca23b6fb030cf809b42792625c64511198813952f2acd200927422fb",
       "source": "base_game",
       "texture": "images/inventoryimages1.tex"
     },
     {
-      "sha256": "7ffb21d3eee3a9ea867b096b1bae67f05a1397b48785e4be2befca384f3c383e",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_backpack3_skin4.tex"
-    },
-    {
       "sha256": "804ac73198c20ab1cf888559a85d74cd12c0d2faf3dd8214613d89300121e789",
       "source": "mod",
       "texture": "images/inventoryimages/xd_hjjm.tex"
-    },
-    {
-      "sha256": "808f7cd8b44d7c03a77f4d9c1eb358fb6e80d7481bc80a7e02720e5afc59c243",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_lbjlt_skins_zgrpt.tex"
-    },
-    {
-      "sha256": "80d37362dcd88626f15bcf7a7d3e0e4170abee3c74e892708ee311857939fd2b",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_tree_yhs_skins_fd.tex"
     },
     {
       "sha256": "81731fb9b048ef453fd41c4dbc8a8327d666219eafc16d3cc8397c236732d24a",
@@ -922,11 +617,6 @@
       "texture": "images/inventoryimages/xd_mgqg.tex"
     },
     {
-      "sha256": "83136894fdee44361916c43d1333c203f255de26db23c68aeb2bea2bf0b390f6",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_jypk.tex"
-    },
-    {
       "sha256": "854413bec32b2c8e46a3dd838f834d3615d6a1e220d44b861af22c8bf293b928",
       "source": "mod",
       "texture": "images/inventoryimages/xd_wmz_tnz.tex"
@@ -942,19 +632,9 @@
       "texture": "images/inventoryimages/xd_mr.tex"
     },
     {
-      "sha256": "877dfd880263a8588b7503b6afc83398e629a94139a01afc4d80f03e6a024b2b",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_fshm.tex"
-    },
-    {
       "sha256": "87f628fdcb2b258067da6ea54538ad3399c56ab437508cded81f6501dde146b5",
       "source": "mod",
       "texture": "images/inventoryimages/xd_sj_xsydz.tex"
-    },
-    {
-      "sha256": "8af1df78a04ce89b8e7146b42776cec667fa431880985cc18c0842c168ed0944",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_lyd_skins_fhgz.tex"
     },
     {
       "sha256": "8b144fc414f3b67a7a2494f36ccd283c3885fc8655d79136434f2b40dfb502ee",
@@ -977,21 +657,6 @@
       "texture": "images/inventoryimages/xd_qlr.tex"
     },
     {
-      "sha256": "8d0d6cbe361bf4a6b6fc872e898720e560eecaf036555c4ca964d990d9b87386",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_qianyu_2.tex"
-    },
-    {
-      "sha256": "8d6a82b5d43490a53bd4a5a1b20431fb58c24b2d8ac3d6c23ce9972c657ae910",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_qianyu_1.tex"
-    },
-    {
-      "sha256": "8ded80400d91702a9cbaf2f4971c7dbd8964086ec7a7b6c2032adc86961d2a71",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_gj_skins_lrq.tex"
-    },
-    {
       "sha256": "8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666",
       "source": "base_game",
       "texture": "images/inventoryimages2.tex"
@@ -1007,24 +672,9 @@
       "texture": "images/inventoryimages/xd_ztp.tex"
     },
     {
-      "sha256": "8f9dd5a53b8969793ff990146fdedee6cf12ee87e2095391d0a749a94b323343",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_crc_skins_hqyx.tex"
-    },
-    {
-      "sha256": "8fc4ffe7f0401cf517e5d94a137b39a9b7984512eaf29c7ba788bb43532e8a67",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_clzgj.tex"
-    },
-    {
       "sha256": "906124d9b8c98f48fe69d1df7bb0d27693ce35b6e551ac2d871417ff18f7a6d1",
       "source": "mod",
       "texture": "images/inventoryimages/turf_jingweitile.tex"
-    },
-    {
-      "sha256": "91c23ff6f3375d5d8b1a0e1fbe9032d2a910e49bec8ac4a6f99cbc97b015d9db",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_nyhr.tex"
     },
     {
       "sha256": "93da3fc66c6dc107c908bf7a48def78a3af425b31d2d24c00b36c3264c5d6886",
@@ -1035,11 +685,6 @@
       "sha256": "93f271a28a13c7d1401458b33dd57b8f4db5c3105e07159eacdd8015d7ed526a",
       "source": "mod",
       "texture": "images/inventoryimages/xd_lyd.tex"
-    },
-    {
-      "sha256": "943524bf75af19848c8842e32da1c9de17cde7240217aa4228e5bdbd7a3c8c3c",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_jwtcd_skins_qzyc.tex"
     },
     {
       "sha256": "94d802ef5c5f25f7e600daa7648f9231f214696e790b365378218ed454dae92d",
@@ -1067,39 +712,14 @@
       "texture": "images/inventoryimages/xd_wmz_xsj.tex"
     },
     {
-      "sha256": "97708148350f48491991037f7cfa6ecf83d9733b10f66fc8df0c6880947fda38",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_mzhcd.tex"
-    },
-    {
       "sha256": "988fbe694ed1ea38c1ed747d8bfbb2ad1e9f681d347212ffe252e1834770c3be",
       "source": "mod",
       "texture": "images/inventoryimages/xd_yunxiao_hyjditem.tex"
     },
     {
-      "sha256": "98e13c511471f3164daee21b3060a04fccb20da1d2a22a89e03b2c2647847f09",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_ylxq_skins_fynl.tex"
-    },
-    {
-      "sha256": "9925dd6f3689166092ebc1d8a612e037fb7861d9fe5b0f5fcc5c9dca4a5f7240",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_dc_skins_hh.tex"
-    },
-    {
-      "sha256": "999d487e0cb8c78dc27558a95c9f06408281aac95f63acc2ff78467f74329a9c",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_ysb.tex"
-    },
-    {
       "sha256": "99d076de8999d101be3f0ce2bcc2f2142733b6c0c7dd3ed6f44c4548c0955667",
       "source": "mod",
       "texture": "images/inventoryimages/xd_bjms.tex"
-    },
-    {
-      "sha256": "9a42478182429863131ac4eb37e8cf511d150b888fa6adff82b5817cc54aed89",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_tree_yxs_skins_jqs.tex"
     },
     {
       "sha256": "9b9514f2a7ee68dacc17c4d8b6abc9a3c08a519e415db121e4c48363b35c5ec8",
@@ -1115,21 +735,6 @@
       "sha256": "9c440c633f95b940d2bbd46b5c7728138ab751d56f7b769c48d0f6dcc4d46d3f",
       "source": "mod",
       "texture": "images/inventoryimages/xd_danyao_jy.tex"
-    },
-    {
-      "sha256": "9c4e78e3c35e8f0a17d247b091be04117c02051af8184bc98c995a92e01df117",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_sudaji_ywfh_lxzy.tex"
-    },
-    {
-      "sha256": "9c759d0daa41101d9ad6c7af85fae65abbca70f360ab51ac5b12da985b763551",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_dbg_skins_llt.tex"
-    },
-    {
-      "sha256": "9cb928fc0dd2a16c8c81c64fda3db90c76fdcbcf973d00b900982fd86c3d5f2c",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_kt_skillbuild.tex"
     },
     {
       "sha256": "9e8b0d024337f35fbd3ed11b9da386af4caefa857a181e145bd13d34dcfcaafd",
@@ -1162,21 +767,6 @@
       "texture": "images/inventoryimages/xd_hyf.tex"
     },
     {
-      "sha256": "a2c62c66691296fe6c767dd0ef6bb9b66304bc20cef4b88448fb89d4c175438c",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_kt.tex"
-    },
-    {
-      "sha256": "a65ca550165c49d0f12be54084074363c2e9036db9f910ea0d133afe5091bb3e",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_qljq_skins_hlq.tex"
-    },
-    {
-      "sha256": "a861851696ac8188e336281860b0e75aadcfc45e4bd48f5739a68d5b8c7f66ca",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_sj_by_skin1.tex"
-    },
-    {
       "sha256": "a90702999ae421363f4811e19537b4564ed3b397c0a69cfd57f2141eda5e5b53",
       "source": "mod",
       "texture": "images/inventoryimages/xd_sudaji_redlantern.tex"
@@ -1185,16 +775,6 @@
       "sha256": "a9919fc0305dff3454ed90eb4afb186c6d04680c4b2badeeed225c9de465e9b3",
       "source": "mod",
       "texture": "images/inventoryimages/xd_ftys.tex"
-    },
-    {
-      "sha256": "aa24255b34cddfe0578cd0f7fccbf7c77fad07b1d1eadcbe51e036d3ba0f337b",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_tianjiwu_skins_byj.tex"
-    },
-    {
-      "sha256": "ab2dbf261af9ec6fbd2ce5c16edc1a5b7c61775c06db04f721450a440bb804ff",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_sj_cy_skin1.tex"
     },
     {
       "sha256": "ab3e2045d75f6fc3d2d05587a6047e1dcb99253274e818681ea84dcf0c6f4208",
@@ -1252,29 +832,9 @@
       "texture": "images/inventoryimages/xd_jingwei_fenice_builder.tex"
     },
     {
-      "sha256": "b7610daa61b0c340048b121d2f3c700fa8fc24b9a2a386d052aba85c62e9a914",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_mo_builder_skins_wendao.tex"
-    },
-    {
-      "sha256": "b77833e5cb54f3fd5e0eb25929d396eba52b2ce2cfa74fda14f2b1c10d7de2e1",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_xshj_fhlh.tex"
-    },
-    {
       "sha256": "b7dfb0705734159df086ed5690cccc1f298e593e660321d8a03aca4f2719d135",
       "source": "mod",
       "texture": "images/inventoryimages/xd_dy_hsphd_1.tex"
-    },
-    {
-      "sha256": "b88d1046e6056e4efea2d48f184f1d263ae33024a5ff27b5ce244661c8983e5e",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_hhlmz_skins_htjc.tex"
-    },
-    {
-      "sha256": "bb9f5cf5ae2710ee958bbb7b45cc81ba38b803dd582613af48756826cc9dd1ee",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_dbg_skins_ybg.tex"
     },
     {
       "sha256": "bc4a449b0296b98123c624f583abd602269f1610750b398ae1523e59e0b4e895",
@@ -1285,11 +845,6 @@
       "sha256": "bd44d05abab5741e7e3804516ce9d61382384328ad719431193e5d92ad8ab90e",
       "source": "mod",
       "texture": "images/inventoryimages/xd_jingwei_zzql.tex"
-    },
-    {
-      "sha256": "bdc0fe099eba0f5a28358f75255b81d459dd88ad6c9d65f69b108d230f183b44",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_smy.tex"
     },
     {
       "sha256": "bdd9389a5d0aa8cc4af3fe17510fa30c6f83b57c760f08efaaf65e7d0bd5196a",
@@ -1307,16 +862,6 @@
       "texture": "images/inventoryimages/xd_wmz_zhf.tex"
     },
     {
-      "sha256": "c2c190918c04364f9fb632dfe712e1371d2204b97e56ad951fe0c3d256252cb2",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_backpack3_skin1.tex"
-    },
-    {
-      "sha256": "c2ed240a9cd53a135dade01008af18d6a4fe35cde685856fc571df9145c7fe68",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_backpack3_skin6.tex"
-    },
-    {
       "sha256": "c34c54c45e72077f6efb25005ab0ef4a1753537bb3dbcfc12d038b96ebe5a0a0",
       "source": "mod",
       "texture": "images/inventoryimages/xd_dy_yfsxd_1.tex"
@@ -1325,16 +870,6 @@
       "sha256": "c63c8df897608064e0dc04c7c0a36a04b461aadbe205bce7df459ecbd8794fdb",
       "source": "mod",
       "texture": "images/inventoryimages/xd_luoshen_lifeflower_builder.tex"
-    },
-    {
-      "sha256": "c6f7025d6cedda0d92f42e35815e49d19b8776a54e353ae516ec26a97d07bfcf",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_backpack3_skin5.tex"
-    },
-    {
-      "sha256": "c761fb84e1f793c1722c291f5be9a9704b6ca97bae04c37d5d68cf845cd1ec6a",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_mzly.tex"
     },
     {
       "sha256": "c9254dc22da1cc156550a2cac8b4057ef425c510cc8bc9f7442ae4356ac76a6c",
@@ -1352,11 +887,6 @@
       "texture": "images/inventoryimages/xd_lc_cyh_seed.tex"
     },
     {
-      "sha256": "ca5bd4a7b3db2815638282047cbca63e4d87cc77e31ba56890ff119183ae76ec",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_xgl.tex"
-    },
-    {
       "sha256": "cb3801a49c81d7107d7c954d9e7e4fbd65ca49ec04d6cb52307efc03bacb536f",
       "source": "mod",
       "texture": "images/inventoryimages/xd_wyj.tex"
@@ -1372,29 +902,9 @@
       "texture": "images/inventoryimages/wall_luoshen_item.tex"
     },
     {
-      "sha256": "cc2cdb921c0752299521fa7817e3bb6870b14d885933e8bb037c511cf0121985",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_wmz_md8.tex"
-    },
-    {
-      "sha256": "cc9ebc333b9e2a9f15cf215523b2d07b485d5c2adfa44f6622c2f23ff5c8c47d",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_zste.tex"
-    },
-    {
-      "sha256": "cdd7bd2b469fdf873b1c839aa8503e4635616b27c3aba95ba355c741a97b5afa",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_wmz_md1.tex"
-    },
-    {
       "sha256": "ce49b8c09ed98d8070d9fa2ada3ffe39b942c2ab3b65fcbf66a0ec02d31828f2",
       "source": "mod",
       "texture": "images/inventoryimages/xd_sudaji_tsmd.tex"
-    },
-    {
-      "sha256": "cfddb28ab76c614b62efb8f541afc7e6c3c9f668205262ebe8cbe9a752754d54",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_qwsk_xznw.tex"
     },
     {
       "sha256": "cffb5f4abfc0252d6efe776c23e7785b21bd4d5dec6f3f0efc2345af600cd957",
@@ -1410,11 +920,6 @@
       "sha256": "d1664d7a0b741471dbef8d226069501628e41d3ee549e82f52e8cb804b44d650",
       "source": "mod",
       "texture": "images/inventoryimages/xd_danyao_hy.tex"
-    },
-    {
-      "sha256": "d2008dc2ce14d9b476fa6c62246d24cc1e0520249852dc2b7fd8d75ffcff96df",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_flzr.tex"
     },
     {
       "sha256": "d6bc9b15e1c7cc2fed0226c153df905b3f2740086fb6971cf49ebd0567b762f2",
@@ -1447,19 +952,9 @@
       "texture": "images/inventoryimages/xd_lc_qfx_seed.tex"
     },
     {
-      "sha256": "da9a159d6ad74c67c78bb342e83583127130137dc0316a5270c509c90618a698",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_xqc.tex"
-    },
-    {
       "sha256": "dace69281ce3089016899095af0b7949bb17da5c26156723017838f923d81e17",
       "source": "mod",
       "texture": "images/inventoryimages/xd_liandanlu.tex"
-    },
-    {
-      "sha256": "dcb2cab77a37161e5df7c8f0ac8bf48c298944c3fead449799d12e9982dfc80a",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_fyzz.tex"
     },
     {
       "sha256": "dd21ce92181c338ae0ffce3da3412b43b9a2ec8823ddf7332a59cc76e3d1e9fc",
@@ -1467,29 +962,9 @@
       "texture": "images/inventoryimages/xd_flower_bmg.tex"
     },
     {
-      "sha256": "dd6b8a73e291c69c43890e9e742f1b9d61aa0de8e14738b93edfb2846c9ff336",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_fsfmg.tex"
-    },
-    {
       "sha256": "de16b5c3dda5ce794c96816cf6bf31c45a7fe79267d281d35956a3f76a540649",
       "source": "mod",
       "texture": "images/inventoryimages/xd_mglz.tex"
-    },
-    {
-      "sha256": "e0699b0d477faf8037c3248353f5b4e3d8ff69333dc786fa2e7d10d55653c7c6",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_mglz_skins_hhyy.tex"
-    },
-    {
-      "sha256": "e193fb65c82ecc103f5483cb11b5d5008ed05e243931c98329e42847c4047bd4",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_jydm.tex"
-    },
-    {
-      "sha256": "e1e8c3ea053952de83bdddb6b084e4296f5a343c23d26f37ee2235026bd512a2",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_wxj.tex"
     },
     {
       "sha256": "e293fa7062730df311148c2bea420c65c62731c06f0f7107e25a651df4e7b63c",
@@ -1517,29 +992,14 @@
       "texture": "images/inventoryimages/xd_zhf.tex"
     },
     {
-      "sha256": "e5f6a42f6693a2acfe82a348abc35cf8cce850c5c1c5ed7409ccc2116d77fb4c",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_wmz_md7.tex"
-    },
-    {
       "sha256": "e62a2e2f9242aeb817aad34ab3b7f2515f4cbc8dad0cc62e9da874bb54e4890f",
       "source": "mod",
       "texture": "images/inventoryimages/xd_zzxhcx.tex"
     },
     {
-      "sha256": "e68509697c9cd9e266c535562ddfbac44ed21cdd143c0ddb28cc8cdfa5d56497",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_ftys_skins_zjzy.tex"
-    },
-    {
       "sha256": "e7fb8a207dd1268105349460d988c806f65cdd6d0a71b82fa7ffc88b5a2ebe85",
       "source": "mod",
       "texture": "images/inventoryimages/xd_lycx.tex"
-    },
-    {
-      "sha256": "e81fa447479851d90e8cfddd245aabeae02063e6b6eb7448ceb82412995af38e",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_wzsb.tex"
     },
     {
       "sha256": "e9522dd59c60ee80e17e218746d71454e977543216c1206c12b2b8fb744f2b7b",
@@ -1562,49 +1022,14 @@
       "texture": "images/inventoryimages/xd_danyao_hl.tex"
     },
     {
-      "sha256": "ee41279266883addd97d6208f5be5fdb7a514321f145134a747f74d73f3616be",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_wmz_md3.tex"
-    },
-    {
-      "sha256": "ee6bdcad58580540f37f3e5ba183a3ed0c9544256a422627c6691863711a3885",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_sgc_skins_wgc.tex"
-    },
-    {
-      "sha256": "ee9f7d42d94135e821865252d447b52199b38e39f74e8b01abc63d6c1d110b69",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_yfcy.tex"
-    },
-    {
       "sha256": "ef50385e9001df8dd4e05a2aa02081a793c49320fb6a9fb4db34ae79b3395343",
       "source": "mod",
       "texture": "images/inventoryimages/xd_htz_tlz.tex"
     },
     {
-      "sha256": "efcf344fc9a0830d05c75dc0f7fdd1565deb8972ea7bc58390402a1b51fea946",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_cxlt.tex"
-    },
-    {
-      "sha256": "efe493592371145f0e6aaa272d8b520558238020bf7cb9405285b35aca60037a",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_zw.tex"
-    },
-    {
       "sha256": "f05906ff6949c01b2fef8eadb2c1210ebc5bf522f1da664fe9127fed86d8a561",
       "source": "mod",
       "texture": "images/inventoryimages/xd_sudaji_sjpn.tex"
-    },
-    {
-      "sha256": "f2ee64f0ffe73f77f65d56c018259f061b40a7f9e19689532c85dd8652290901",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_cygh.tex"
-    },
-    {
-      "sha256": "f346c1f8e8a9088e56d6e9580e40e835e84d0b28695a9e304a47fb8f6897e7e2",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_lysy.tex"
     },
     {
       "sha256": "f3cdecfd84c17504aba74b7d50c549d99b3eecb66084c854d923a279c92567dc",
@@ -1615,11 +1040,6 @@
       "sha256": "f4ae785781c3e6bc469dfe199d416d277e9be346e64350aa7fe358e32767b678",
       "source": "mod",
       "texture": "images/inventoryimages/xd_jgb.tex"
-    },
-    {
-      "sha256": "f60878d90198e0992095d3bb6b95455324564cb929e7a21e29cedc3376d6ccda",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_tf.tex"
     },
     {
       "sha256": "f6705fdbb411270c9984b3589771825a9b22cb236ee3d7c5cb2a95b1716fbc36",
@@ -1652,29 +1072,9 @@
       "texture": "images/inventoryimages/xd_lc_dms_seed.tex"
     },
     {
-      "sha256": "fcecb5ad9b6570f96e5cf3459916724d130eb6426d7c8e8f4ae8d83209b9f7aa",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_sudaji_sjpn_jssc.tex"
-    },
-    {
-      "sha256": "fe28d75c0331c836ffd8524ec84fce9da86d0b858b115969c0aef9a282640302",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_ylxc_skins_qhnlc.tex"
-    },
-    {
-      "sha256": "feb52a53f5897cd06b57908609f2e9dec36b921b9888c113e1109fab16c30470",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_skin_nczx.tex"
-    },
-    {
       "sha256": "ff296a7e0ff6d60a537d61b4e7af54229156c994705e67706b2fde3a94d44cf2",
       "source": "mod",
       "texture": "images/inventoryimages/xd_sj_kls.tex"
-    },
-    {
-      "sha256": "ff33e2c31406dcaa33e9ad51c69ee88a4d3af5aff27ec4c2bbc84b881fa6ab31",
-      "source": "mod",
-      "texture": "images/inventoryimages/xd_sudaji_yhly_yhm.tex"
     }
   ]
 }

@@ -255,7 +255,7 @@ def _prefab_export_coverage(
     with ZipFile(Path(scripts_path)) as archive:
         expected = set(discover_prefab_modules(archive.namelist()))
     payload = json.loads(Path(items_path).read_text(encoding="utf-8"))
-    if payload.get("schema_version") != 2 or not isinstance(payload.get("items"), list):
+    if payload.get("schema_version") != 3 or not isinstance(payload.get("items"), list):
         return [{"code": "invalid_prefab_export_payload"}]
     actual = {
         item.get("prefabId")

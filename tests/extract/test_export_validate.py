@@ -31,7 +31,7 @@ class ExportValidateTests(unittest.TestCase):
             items_path.write_text(
                 json.dumps(
                     {
-                        "schema_version": 2,
+                        "schema_version": 3,
                         "items": [
                             {
                                 "id": "base_game:alpha",
