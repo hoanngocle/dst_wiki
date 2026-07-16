@@ -106,6 +106,48 @@ const sections: NormalizedWikiSections = {
         character: "Warly",
         note: "Chỉ dùng trong DLC.",
       },
+      {
+        result: {
+          title: "Dark Sword",
+          url: "https://dontstarve.wiki.gg/wiki/Dark_Sword",
+          entityId: null,
+        },
+        resultAmount: 1,
+        nightmareFuelAmount: 5,
+        ingredients: [],
+        station: "Shadow Manipulator",
+        dlc: "Hamlet",
+        character: null,
+        note: "Chỉ dùng trong Hamlet.",
+      },
+      {
+        result: {
+          title: "Seaworthy",
+          url: "https://dontstarve.wiki.gg/wiki/Seaworthy",
+          entityId: null,
+        },
+        resultAmount: 1,
+        nightmareFuelAmount: 4,
+        ingredients: [],
+        station: "Shadow Manipulator",
+        dlc: null,
+        character: null,
+        note: "Only available in the world linked with a Shipwrecked world.",
+      },
+      {
+        result: {
+          title: "Skyworthy",
+          url: "https://dontstarve.wiki.gg/wiki/Skyworthy",
+          entityId: null,
+        },
+        resultAmount: 1,
+        nightmareFuelAmount: 4,
+        ingredients: [],
+        station: "Shadow Manipulator",
+        dlc: null,
+        character: null,
+        note: "Only available in the world linked with a Hamlet world.",
+      },
     ],
   },
 };
@@ -134,9 +176,10 @@ describe("WikiStructuredSections", () => {
     expect(screen.getByText("40%")).toBeDefined();
     expect(screen.getByText("Khi mất trí")).toBeDefined();
     expect(screen.getByRole("heading", { name: "Usage" })).toBeDefined();
-    expect(screen.getByText("2 công thức từ Wiki")).toBeDefined();
+    expect(screen.getByText("1 công thức từ Wiki")).toBeDefined();
     expect(screen.queryByRole("heading", { name: "Don't Starve" })).toBeNull();
-    expect(screen.getByRole("heading", { name: "Shipwrecked" })).toBeDefined();
+    expect(screen.queryByRole("heading", { name: "Shipwrecked" })).toBeNull();
+    expect(screen.queryByRole("heading", { name: "Hamlet" })).toBeNull();
     const baseUsageTable = screen.getByRole("table", {
       name: "Usage: Don't Starve",
     });
@@ -217,9 +260,19 @@ describe("WikiStructuredSections", () => {
     expect(brokenStation.getAttribute("aria-describedby")).toBe(
       screen.getByRole("tooltip", { name: "Broken Pseudoscience Station" }).id,
     );
-    expect(screen.getByRole("link", { name: "Prestihatitator" })).toBeDefined();
-    expect(screen.getByText("Warly")).toBeDefined();
-    expect(screen.getByText("Chỉ dùng trong DLC.")).toBeDefined();
+    expect(screen.queryByRole("link", { name: "Prestihatitator" })).toBeNull();
+    expect(screen.queryByText("Warly")).toBeNull();
+    expect(screen.queryByText("Chỉ dùng trong DLC.")).toBeNull();
+    expect(screen.queryByRole("link", { name: "Shadow Manipulator" })).toBeNull();
+    expect(screen.queryByText("Chỉ dùng trong Hamlet.")).toBeNull();
+    expect(screen.queryByRole("link", { name: "Seaworthy, số lượng 1" })).toBeNull();
+    expect(screen.queryByRole("link", { name: "Skyworthy, số lượng 1" })).toBeNull();
+    expect(
+      screen.queryByText("Only available in the world linked with a Shipwrecked world."),
+    ).toBeNull();
+    expect(
+      screen.queryByText("Only available in the world linked with a Hamlet world."),
+    ).toBeNull();
     const beardlingLink = screen.getByRole("link", { name: "Beardling" });
     expect(beardlingLink.className).toContain("whitespace-nowrap");
     expect(beardlingLink.firstElementChild?.getAttribute("data-testid")).toBe(

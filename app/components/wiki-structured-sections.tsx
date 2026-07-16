@@ -31,6 +31,8 @@ const STATION_ICON_URLS: Readonly<Record<string, string>> = {
     "https://dontstarve.wiki.gg/images/thumb/Navbox_Broken_Pseudoscience_Station.png/50px-Navbox_Broken_Pseudoscience_Station.png?926476",
 };
 
+const HIDDEN_USAGE_DLC_PATTERN = /\b(?:shipwrecked|hamlet)\b/i;
+
 function normalizedTitle(value: string) {
   return value.trim().toLocaleLowerCase("en");
 }
@@ -231,6 +233,13 @@ function groupRecipes(recipes: readonly NormalizedWikiUsageRecipe[]) {
   return [...groups.entries()];
 }
 
+function visibleUsageRecipes(recipes: readonly NormalizedWikiUsageRecipe[]) {
+  return recipes.filter((recipe) => {
+    const dlcContext = `${recipe.dlc ?? ""} ${recipe.note ?? ""}`;
+    return !HIDDEN_USAGE_DLC_PATTERN.test(dlcContext);
+  });
+}
+
 export function WikiStructuredSections({
   sections,
   itemsById,
@@ -241,6 +250,10 @@ export function WikiStructuredSections({
   onSelectItem: (item: ItemListEntry) => void;
 }) {
   const itemsByTitle = useMemo(() => indexItemsByTitle(itemsById), [itemsById]);
+  const usageRecipes = useMemo(
+    () => visibleUsageRecipes(sections.usage.recipes),
+    [sections.usage.recipes],
+  );
 
   return (
     <div className="space-y-4">
@@ -320,11 +333,11 @@ export function WikiStructuredSections({
         <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-[#d5dde6] px-4 py-3 sm:px-5">
           <h3 className="font-semibold text-[#172943]">Usage</h3>
           <p className="font-mono text-xs font-semibold text-[#607188]">
-            {sections.usage.recipes.length} công thức từ Wiki
+            {usageRecipes.length} công thức từ Wiki
           </p>
         </div>
         <div className="space-y-5 py-4 sm:py-5">
-          {groupRecipes(sections.usage.recipes).map(([group, recipes]) => (
+          {groupRecipes(usageRecipes).map(([group, recipes]) => (
             <section
               key={group}
               aria-label={group === "Don't Starve" ? "Công thức cơ bản" : undefined}
