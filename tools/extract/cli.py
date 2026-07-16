@@ -23,6 +23,7 @@ from tools.extract.runtime_runner import run_runtime_probe
 from tools.extract.publish_web_assets import publish_web_assets
 from tools.extract.source_manifest import ARCHIVES, snapshot_game_sources
 from tools.extract.validate import validate_catalog, write_validation_report
+from tools.extract.wiki_import import import_wiki
 
 
 MOD_ROOT = Path("mod/3721846643")
@@ -40,6 +41,7 @@ ITEMS_JSON = Path("public/data/items.json")
 ITEM_TEXTURES = Path("data/generated/item-textures.json")
 WEB_ASSETS = Path("public/assets/game")
 MOD_TEXT = Path("docs/mod-text")
+WIKI_CRAWL = Path("data/crawled/dontstarve-items")
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -115,6 +117,9 @@ def build_parser() -> argparse.ArgumentParser:
     build_db.add_argument(
         "--output", type=Path, default=DATABASE
     )
+    import_wiki_parser = sub.add_parser("import-wiki")
+    import_wiki_parser.add_argument("--input", type=Path, default=WIKI_CRAWL)
+    import_wiki_parser.add_argument("--database", type=Path, default=DATABASE)
     export = sub.add_parser("export")
     export.add_argument("--database", type=Path, default=DATABASE)
     export.add_argument("--catalog", type=Path, default=CATALOG_JSON)
@@ -242,6 +247,19 @@ def _export_stage(
     print(f"{catalog} {assets} {items} {textures}")
 
 
+def _import_wiki_stage(
+    input_path: Path = WIKI_CRAWL,
+    database: Path = DATABASE,
+):
+    summary = import_wiki(database, input_path)
+    print(
+        f"{database} wiki_pages={summary.pages} recipes={summary.recipes} "
+        f"ingredients={summary.ingredients} images={summary.images} "
+        f"mapped={summary.mapped} unmatched={summary.unmatched}"
+    )
+    return summary
+
+
 def _export_markdown_stage(
     catalog: Path = CATALOG_JSON,
     runtime: Path = RUNTIME_FACTS,
@@ -280,6 +298,7 @@ def run_all(static_path: Path = STATIC_FACTS):
     _import_runtime_stage(static_path=static_path)
     _enrich_base_stage(static_path=static_path)
     _build_db_stage(static_path=static_path)
+    _import_wiki_stage()
     _export_stage()
     return _validate_stage()
 
@@ -322,6 +341,9 @@ def main() -> int:
         return 0
     if args.command == "build-db":
         _build_db_stage(args.static, args.runtime, args.base, args.output)
+        return 0
+    if args.command == "import-wiki":
+        _import_wiki_stage(args.input, args.database)
         return 0
     if args.command == "export":
         _export_stage(args.database, args.catalog, args.assets, args.items, args.textures)

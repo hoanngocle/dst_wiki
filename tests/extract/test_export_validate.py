@@ -509,6 +509,7 @@ class ExportValidateTests(unittest.TestCase):
              mock.patch.object(cli, "_import_runtime_stage", stage("import-runtime")), \
              mock.patch.object(cli, "_enrich_base_stage", stage("enrich-base")), \
              mock.patch.object(cli, "_build_db_stage", stage("build-db")), \
+             mock.patch.object(cli, "_import_wiki_stage", stage("import-wiki")), \
              mock.patch.object(cli, "_export_stage", stage("export")), \
              mock.patch.object(cli, "_validate_stage", stage("validate", clean_report)), \
              mock.patch.object(cli, "run_runtime_probe") as runtime:
@@ -516,7 +517,15 @@ class ExportValidateTests(unittest.TestCase):
 
         self.assertEqual(
             calls,
-            ["extract-static", "import-runtime", "enrich-base", "build-db", "export", "validate"],
+            [
+                "extract-static",
+                "import-runtime",
+                "enrich-base",
+                "build-db",
+                "import-wiki",
+                "export",
+                "validate",
+            ],
         )
         runtime.assert_not_called()
 

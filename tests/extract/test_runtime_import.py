@@ -538,6 +538,8 @@ class RuntimeRunnerTests(unittest.TestCase):
         ) as enrich, mock.patch.object(
             cli, "_build_db_stage"
         ) as build, mock.patch.object(
+            cli, "_import_wiki_stage"
+        ) as import_wiki, mock.patch.object(
             cli, "_export_stage"
         ), mock.patch.object(
             cli, "_validate_stage", return_value={"hard_failures": []}
@@ -548,6 +550,7 @@ class RuntimeRunnerTests(unittest.TestCase):
         import_runtime.assert_called_once_with(static_path=static_path)
         enrich.assert_called_once_with(static_path=static_path)
         build.assert_called_once_with(static_path=static_path)
+        import_wiki.assert_called_once_with()
 
     def test_all_stops_on_runtime_version_mismatch(self):
         mismatch = ValueError(

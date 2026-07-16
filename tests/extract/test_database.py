@@ -16,6 +16,27 @@ def source(source_id, kind, marker):
 
 
 class DatabaseTests(unittest.TestCase):
+    def test_parser_exposes_import_wiki_defaults(self):
+        args = cli.build_parser().parse_args(["import-wiki"])
+
+        self.assertEqual(args.input, Path("data/crawled/dontstarve-items"))
+        self.assertEqual(args.database, Path("data/generated/wiki.sqlite"))
+
+    def test_import_wiki_stage_uses_explicit_paths(self):
+        summary = mock.Mock(
+            pages=1,
+            recipes=2,
+            ingredients=3,
+            images=4,
+            mapped=1,
+            unmatched=0,
+        )
+        with mock.patch.object(cli, "import_wiki", return_value=summary) as importer:
+            result = cli._import_wiki_stage(Path("crawl"), Path("wiki.sqlite"))
+
+        self.assertIs(result, summary)
+        importer.assert_called_once_with(Path("wiki.sqlite"), Path("crawl"))
+
     def test_build_database_stage_passes_collected_game_text_to_writer(self):
         static = source("static", "mod_static", "a")
         bundle = FactBundle(1, [static], [], [])
