@@ -141,6 +141,8 @@ class WikiSectionsTests(unittest.TestCase):
 
     def test_strips_normalized_html_and_preserves_following_article(self):
         value = (
+            '<h2><span id="Infobox_section">Infobox section</span></h2>'
+            '<h3><span id="Gathering_note">Gathering note</span></h3>'
             '<p id="Gathering">Gathering</p>'
             '<h3><span id="Drop_table">Drop table</span></h3>'
             '<table><tr><td>drop</td></tr></table>'

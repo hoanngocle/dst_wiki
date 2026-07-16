@@ -351,12 +351,12 @@ def strip_drop_and_usage_html(value: str) -> str:
     """Remove contiguous normalized sections from sanitized Wiki HTML."""
 
     drop_heading = re.search(
-        r'<h3[^>]*>.*?id="Drop_table".*?</h3>',
+        r'<h3\b[^>]*>(?:(?!</h3>).)*id="Drop_table"(?:(?!</h3>).)*</h3>',
         value,
         re.IGNORECASE | re.DOTALL,
     )
     usage_heading = re.search(
-        r'<h2[^>]*>.*?id="Usage".*?</h2>',
+        r'<h2\b[^>]*>(?:(?!</h2>).)*id="Usage"(?:(?!</h2>).)*</h2>',
         value,
         re.IGNORECASE | re.DOTALL,
     )
