@@ -88,12 +88,13 @@ function WikiUsageIcon({
   const item =
     (reference.entityId ? itemsById.get(reference.entityId) : undefined) ??
     itemsByTitle.get(normalizedTitle(reference.title));
+  const displayTitle = item?.name ?? reference.title;
   const accessibleName =
     amount === undefined
-      ? reference.title
-      : `${reference.title}, số lượng ${amount}`;
+      ? displayTitle
+      : `${displayTitle}, số lượng ${amount}`;
   const image = item?.sprite ? (
-    <GameSprite sprite={item.sprite} size={34} />
+    <GameSprite sprite={item.sprite} size={34} rounded={false} />
   ) : (
     <Image
       src={reference.iconUrl ?? wikiFileUrl(reference.title)}
@@ -101,7 +102,7 @@ function WikiUsageIcon({
       width={34}
       height={34}
       data-testid="wiki-usage-icon"
-      className="size-[34px] shrink-0 rounded-xl border border-[#c8d3df] bg-[#e5ebf1] object-contain"
+      className="size-[34px] shrink-0 border border-[#c8d3df] bg-[#e5ebf1] object-contain"
     />
   );
   const content = (
@@ -117,7 +118,7 @@ function WikiUsageIcon({
         role="tooltip"
         className="pointer-events-none invisible absolute left-1/2 top-full z-20 mt-2 -translate-x-1/2 whitespace-nowrap rounded-lg bg-[#172943] px-2.5 py-1.5 text-xs font-medium text-white opacity-0 shadow-lg transition group-hover:visible group-hover:opacity-100 group-focus-visible:visible group-focus-visible:opacity-100"
       >
-        {reference.title}
+        {displayTitle}
       </span>
     </>
   );

@@ -8,6 +8,7 @@ type GameSpriteProps = {
   size: number;
   className?: string;
   label?: string;
+  rounded?: boolean;
 };
 
 function cropStyle(sprite: SpriteDescriptor, size: number): CSSProperties {
@@ -28,10 +29,17 @@ function cropStyle(sprite: SpriteDescriptor, size: number): CSSProperties {
   };
 }
 
-export function GameSprite({ sprite, size, className = "", label }: GameSpriteProps) {
+export function GameSprite({
+  sprite,
+  size,
+  className = "",
+  label,
+  rounded = true,
+}: GameSpriteProps) {
   const semantics = label
     ? { role: "img", "aria-label": label }
     : { "aria-hidden": true as const };
+  const cornerClass = rounded ? "rounded-xl" : "";
 
   if (!sprite) {
     return (
@@ -39,7 +47,7 @@ export function GameSprite({ sprite, size, className = "", label }: GameSpritePr
         {...semantics}
         data-missing="true"
         data-testid="game-sprite"
-        className={`inline-flex shrink-0 items-center justify-center overflow-hidden rounded-xl border border-[#c8d3df] bg-[#e5ebf1] text-[#607188] ${className}`}
+        className={`inline-flex shrink-0 items-center justify-center overflow-hidden border border-[#c8d3df] bg-[#e5ebf1] text-[#607188] ${cornerClass} ${className}`}
         style={{ width: size, height: size }}
       >
         <ImageBroken aria-hidden="true" size={Math.max(16, Math.round(size * 0.42))} />
@@ -51,7 +59,7 @@ export function GameSprite({ sprite, size, className = "", label }: GameSpritePr
     <span
       {...semantics}
       data-testid="game-sprite"
-      className={`inline-block shrink-0 overflow-hidden rounded-xl bg-[#e5ebf1] ${className}`}
+      className={`inline-block shrink-0 overflow-hidden bg-[#e5ebf1] ${cornerClass} ${className}`}
       style={cropStyle(sprite, size)}
     />
   );

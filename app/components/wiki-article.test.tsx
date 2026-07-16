@@ -174,7 +174,7 @@ describe("WikiArticle", () => {
       dropHeading.compareDocumentPosition(articleHeading) & Node.DOCUMENT_POSITION_FOLLOWING,
     ).toBeTruthy();
     fireEvent.click(
-      screen.getByRole("button", { name: "Night Light, số lượng 1" }),
+      screen.getByRole("button", { name: "Đèn bóng đêm, số lượng 1" }),
     );
     expect(onSelectItem).toHaveBeenCalledWith(nightLight);
   });

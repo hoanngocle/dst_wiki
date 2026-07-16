@@ -303,7 +303,7 @@ describe("ItemDetailModal", () => {
     );
 
     fireEvent.click(
-      await screen.findByRole("button", { name: "Night Light, số lượng 1" }),
+      await screen.findByRole("button", { name: "Đèn bóng đêm, số lượng 1" }),
     );
     expect(onSelectItem).toHaveBeenCalledWith(nightLight);
   });

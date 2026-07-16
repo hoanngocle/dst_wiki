@@ -154,7 +154,7 @@ describe("WikiStructuredSections", () => {
     const recipeCells = within(baseUsageTable).getAllByRole("cell");
     expect(recipeCells).toHaveLength(3);
     expect(
-      within(recipeCells[0]).getByLabelText("Nightmare Fuel, số lượng 2"),
+      within(recipeCells[0]).getByLabelText("Nhiên liệu Ác Mộng, số lượng 2"),
     ).toBeDefined();
     expect(
       within(recipeCells[0]).getByRole("link", {
@@ -168,29 +168,32 @@ describe("WikiStructuredSections", () => {
     ).toBeDefined();
     expect(
       within(recipeCells[2]).getByRole("button", {
-        name: "Night Light, số lượng 1",
+        name: "Đèn bóng đêm, số lượng 1",
       }),
     ).toBeDefined();
     const result = screen.getByRole("button", {
-      name: "Night Light, số lượng 1",
+      name: "Đèn bóng đêm, số lượng 1",
     });
-    expect(within(result).getByTestId("game-sprite")).toBeDefined();
-    expect(within(result).queryByText("Đèn bóng đêm")).toBeNull();
+    expect(within(result).getByTestId("game-sprite").className).not.toContain(
+      "rounded-xl",
+    );
     expect(result.getAttribute("aria-describedby")).toBe(
-      screen.getByRole("tooltip", { name: "Night Light" }).id,
+      screen.getByRole("tooltip", { name: "Đèn bóng đêm" }).id,
     );
 
-    const fuel = screen.getAllByLabelText("Nightmare Fuel, số lượng 2")[0];
+    const fuel = screen.getAllByLabelText("Nhiên liệu Ác Mộng, số lượng 2")[0];
     expect(within(fuel).getByTestId("game-sprite")).toBeDefined();
-    expect(within(fuel).getAllByText("Nightmare Fuel")).toHaveLength(1);
+    expect(within(fuel).getAllByText("Nhiên liệu Ác Mộng")).toHaveLength(1);
     expect(fuel.getAttribute("aria-describedby")).toBe(
-      screen.getAllByRole("tooltip", { name: "Nightmare Fuel" })[0].id,
+      screen.getAllByRole("tooltip", { name: "Nhiên liệu Ác Mộng" })[0].id,
     );
 
     const gold = screen.getByRole("link", {
       name: "Gold Nugget, số lượng 8",
     });
-    expect(within(gold).getByTestId("wiki-usage-icon")).toBeDefined();
+    expect(within(gold).getByTestId("wiki-usage-icon").className).not.toContain(
+      "rounded-xl",
+    );
     expect(within(gold).getByText("Gold Nugget").getAttribute("role")).toBe("tooltip");
 
     const brokenStation = screen.getByRole("link", {
@@ -244,7 +247,9 @@ describe("WikiStructuredSections", () => {
       />,
     );
 
-    fireEvent.click(screen.getByRole("button", { name: "Night Light, số lượng 1" }));
+    fireEvent.click(
+      screen.getByRole("button", { name: "Đèn bóng đêm, số lượng 1" }),
+    );
 
     expect(onSelectItem).toHaveBeenCalledWith(nightLight);
   });
