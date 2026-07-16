@@ -90,9 +90,12 @@ describe("ItemDetailModal", () => {
 
     const dialog = screen.getByRole("dialog", { name: "Vàng" });
     expect(dialog).toBeDefined();
-    expect(dialog.className).not.toContain("overflow-y-auto");
-    expect(dialog.className).not.toContain("max-h-");
-    expect(dialog.parentElement?.className).toContain("overflow-y-auto");
+    expect(dialog.className).toContain("overflow-y-auto");
+    expect(dialog.className).toContain("max-h-[92vh]");
+    expect(dialog.className).toContain("overscroll-contain");
+    expect(dialog.className).toContain("[scrollbar-width:none]");
+    expect(dialog.className).toContain("[&::-webkit-scrollbar]:hidden");
+    expect(dialog.parentElement?.className).not.toContain("overflow-y-auto");
     expect(screen.getByText("Gold Nugget")).toBeDefined();
     expect(screen.queryByText("goldnugget")).toBeNull();
     expect(screen.getByLabelText("Đá, số lượng 1")).toBeDefined();

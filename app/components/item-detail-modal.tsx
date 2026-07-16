@@ -87,7 +87,7 @@ export function ItemDetailModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex cursor-pointer flex-col overflow-y-auto bg-[#0f1d30]/55 p-0 backdrop-blur-[2px] sm:p-6"
+      className="fixed inset-0 z-50 flex cursor-pointer items-end justify-center bg-[#0f1d30]/55 p-0 backdrop-blur-[2px] sm:items-center sm:p-6"
       onClick={(event) => {
         if (event.target === event.currentTarget) onClose();
       }}
@@ -97,7 +97,7 @@ export function ItemDetailModal({
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
-        className="mt-auto w-full shrink-0 cursor-default rounded-t-3xl border border-[#c8d3df] bg-[#edf1f5] shadow-[0_28px_80px_rgba(15,29,48,0.32)] sm:my-auto sm:max-w-4xl sm:rounded-3xl"
+        className="max-h-[92vh] w-full cursor-default overflow-y-auto overscroll-contain rounded-t-3xl border border-[#c8d3df] bg-[#edf1f5] shadow-[0_28px_80px_rgba(15,29,48,0.32)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:max-w-4xl sm:rounded-3xl"
       >
         <div className="sticky top-0 z-10 flex items-start gap-4 border-b border-[#d5dde6] bg-[#f8fafc]/95 p-5 backdrop-blur sm:p-6">
           <GameSprite
