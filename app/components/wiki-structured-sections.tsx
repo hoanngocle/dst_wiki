@@ -2,6 +2,7 @@
 
 import { ArrowSquareOut } from "@phosphor-icons/react";
 import Image from "next/image";
+import { useId, useMemo } from "react";
 
 import type { ItemListEntry } from "@/app/lib/item-catalog";
 import type {
@@ -11,6 +12,145 @@ import type {
 } from "@/app/lib/wiki-detail";
 import { GameSprite } from "./game-sprite";
 
+const WIKI_PAGE_BASE = "https://dontstarve.wiki.gg/wiki/";
+const WIKI_FILE_BASE = `${WIKI_PAGE_BASE}Special:Redirect/file/`;
+
+const NIGHTMARE_FUEL_REFERENCE: NormalizedWikiReference = {
+  title: "Nightmare Fuel",
+  url: `${WIKI_PAGE_BASE}Nightmare_Fuel`,
+  entityId: null,
+  iconUrl: `${WIKI_FILE_BASE}Nightmare_Fuel.png`,
+};
+
+const STATION_ICON_FILES: Readonly<Record<string, string>> = {
+  "Ancient Pseudoscience Station": "AncientAltar.png",
+};
+
+const STATION_ICON_URLS: Readonly<Record<string, string>> = {
+  "Broken Pseudoscience Station":
+    "https://dontstarve.wiki.gg/images/thumb/Navbox_Broken_Pseudoscience_Station.png/50px-Navbox_Broken_Pseudoscience_Station.png?926476",
+};
+
+function normalizedTitle(value: string) {
+  return value.trim().toLocaleLowerCase("en");
+}
+
+function wikiPageUrl(title: string) {
+  return WIKI_PAGE_BASE + encodeURIComponent(title.replaceAll(" ", "_")).replaceAll("%2F", "/");
+}
+
+function wikiFileUrl(title: string) {
+  const filename = /\.(?:gif|jpe?g|png|webp)$/i.test(title) ? title : `${title}.png`;
+  return WIKI_FILE_BASE + encodeURIComponent(filename.replaceAll(" ", "_"));
+}
+
+function stationReference(station: string): NormalizedWikiReference {
+  const pageTitle =
+    station === "Broken Pseudoscience Station"
+      ? "Ancient Pseudoscience Station"
+      : station;
+  return {
+    title: station,
+    url: wikiPageUrl(pageTitle),
+    entityId: null,
+    iconUrl:
+      STATION_ICON_URLS[station] ?? wikiFileUrl(STATION_ICON_FILES[station] ?? station),
+  };
+}
+
+function indexItemsByTitle(itemsById: ReadonlyMap<string, ItemListEntry>) {
+  const result = new Map<string, ItemListEntry>();
+  for (const item of itemsById.values()) {
+    for (const title of [item.name, item.englishName, item.wiki?.title]) {
+      if (!title) continue;
+      const key = normalizedTitle(title);
+      const existing = result.get(key);
+      if (!existing || (!existing.sprite && item.sprite)) result.set(key, item);
+    }
+  }
+  return result;
+}
+
+function WikiUsageIcon({
+  reference,
+  amount,
+  itemsById,
+  itemsByTitle,
+  onSelectItem,
+}: {
+  reference: NormalizedWikiReference;
+  amount?: number;
+  itemsById: ReadonlyMap<string, ItemListEntry>;
+  itemsByTitle: ReadonlyMap<string, ItemListEntry>;
+  onSelectItem: (item: ItemListEntry) => void;
+}) {
+  const tooltipId = useId();
+  const item =
+    (reference.entityId ? itemsById.get(reference.entityId) : undefined) ??
+    itemsByTitle.get(normalizedTitle(reference.title));
+  const accessibleName =
+    amount === undefined
+      ? reference.title
+      : `${reference.title}, số lượng ${amount}`;
+  const image = item?.sprite ? (
+    <GameSprite sprite={item.sprite} size={34} />
+  ) : (
+    <Image
+      src={reference.iconUrl ?? wikiFileUrl(reference.title)}
+      alt=""
+      width={34}
+      height={34}
+      data-testid="wiki-usage-icon"
+      className="size-[34px] shrink-0 rounded-xl border border-[#c8d3df] bg-[#e5ebf1] object-contain"
+    />
+  );
+  const content = (
+    <>
+      {image}
+      {amount === undefined ? null : (
+        <span aria-hidden="true" className="font-mono text-xs font-semibold text-[#53647a]">
+          ×{amount}
+        </span>
+      )}
+      <span
+        id={tooltipId}
+        role="tooltip"
+        className="pointer-events-none invisible absolute left-1/2 top-full z-20 mt-2 -translate-x-1/2 whitespace-nowrap rounded-lg bg-[#172943] px-2.5 py-1.5 text-xs font-medium text-white opacity-0 shadow-lg transition group-hover:visible group-hover:opacity-100 group-focus-visible:visible group-focus-visible:opacity-100"
+      >
+        {reference.title}
+      </span>
+    </>
+  );
+  const className =
+    "group relative inline-flex min-h-10 items-center gap-1.5 rounded-xl border border-transparent px-1.5 py-1 transition hover:border-[#b9cce8] hover:bg-[#e9f1fb] focus-visible:border-[#2e5fb3] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2e5fb3]/30 active:scale-[0.98]";
+
+  if (item) {
+    return (
+      <button
+        type="button"
+        aria-label={accessibleName}
+        aria-describedby={tooltipId}
+        onClick={() => onSelectItem(item)}
+        className={`${className} cursor-pointer`}
+      >
+        {content}
+      </button>
+    );
+  }
+
+  return (
+    <a
+      href={reference.url}
+      target="_blank"
+      rel="noreferrer"
+      aria-label={accessibleName}
+      aria-describedby={tooltipId}
+      className={className}
+    >
+      {content}
+    </a>
+  );
+}
 
 function WikiReference({
   reference,
@@ -84,6 +224,8 @@ export function WikiStructuredSections({
   itemsById: ReadonlyMap<string, ItemListEntry>;
   onSelectItem: (item: ItemListEntry) => void;
 }) {
+  const itemsByTitle = useMemo(() => indexItemsByTitle(itemsById), [itemsById]);
+
   return (
     <div className="space-y-4">
       <section className="overflow-hidden rounded-2xl border border-[#c8d3df] bg-[#f8fafc]">
@@ -180,47 +322,51 @@ export function WikiStructuredSections({
                     key={`${recipe.result.url}:${index}`}
                     className="rounded-xl border border-[#d5dde6] bg-[#eef3f8] p-3"
                   >
-                    <div className="flex items-center justify-between gap-3">
-                      <WikiReference
+                    <div className="flex items-center gap-3">
+                      <WikiUsageIcon
                         reference={recipe.result}
+                        amount={recipe.resultAmount}
                         itemsById={itemsById}
+                        itemsByTitle={itemsByTitle}
                         onSelectItem={onSelectItem}
                       />
-                      {recipe.resultAmount > 1 ? (
-                        <span className="shrink-0 font-mono text-xs font-semibold text-[#43556d]">
-                          ×{recipe.resultAmount}
-                        </span>
-                      ) : null}
                     </div>
-                    <div className="mt-2 rounded-lg bg-[#f8fafc] px-2.5 py-2 text-xs text-[#53647a]">
-                      <span className="font-semibold text-[#263b58]">Nightmare Fuel</span>
-                      <span className="ml-1 font-mono">×{recipe.nightmareFuelAmount}</span>
+                    <div className="mt-2 rounded-lg bg-[#f8fafc] px-1.5 py-1">
+                      <WikiUsageIcon
+                        reference={NIGHTMARE_FUEL_REFERENCE}
+                        amount={recipe.nightmareFuelAmount}
+                        itemsById={itemsById}
+                        itemsByTitle={itemsByTitle}
+                        onSelectItem={onSelectItem}
+                      />
                     </div>
                     {recipe.ingredients.length ? (
-                      <div className="mt-2 flex flex-wrap items-center gap-x-1 gap-y-0 text-sm">
+                      <div className="mt-2 flex flex-wrap items-center gap-1 text-sm">
                         {recipe.ingredients.map((ingredient) => (
-                          <span
+                          <WikiUsageIcon
                             key={ingredient.item.url}
-                            className="inline-flex items-center gap-1"
-                          >
-                            <WikiReference
-                              reference={ingredient.item}
-                              itemsById={itemsById}
-                              onSelectItem={onSelectItem}
-                            />
-                            <span className="font-mono text-xs font-semibold text-[#607188]">
-                              ×{ingredient.amount}
-                            </span>
-                          </span>
+                            reference={ingredient.item}
+                            amount={ingredient.amount}
+                            itemsById={itemsById}
+                            itemsByTitle={itemsByTitle}
+                            onSelectItem={onSelectItem}
+                          />
                         ))}
                       </div>
                     ) : null}
                     {recipe.station || recipe.character ? (
                       <dl className="mt-2 grid gap-1 text-xs leading-5 text-[#53647a]">
                         {recipe.station ? (
-                          <div className="flex gap-2">
+                          <div className="flex items-center gap-2">
                             <dt className="font-semibold text-[#43556d]">Trạm:</dt>
-                            <dd>{recipe.station}</dd>
+                            <dd>
+                              <WikiUsageIcon
+                                reference={stationReference(recipe.station)}
+                                itemsById={itemsById}
+                                itemsByTitle={itemsByTitle}
+                                onSelectItem={onSelectItem}
+                              />
+                            </dd>
                           </div>
                         ) : null}
                         {recipe.character ? (

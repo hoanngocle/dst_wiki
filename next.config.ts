@@ -10,6 +10,12 @@ const nextConfig: NextConfig = {
         pathname: "/wiki/Special:Redirect/file/**",
         search: "",
       },
+      {
+        protocol: "https",
+        hostname: "dontstarve.wiki.gg",
+        port: "",
+        pathname: "/images/thumb/**",
+      },
     ],
   },
 };

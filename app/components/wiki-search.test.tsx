@@ -411,7 +411,9 @@ describe("WikiSearch", () => {
     render(<WikiSearch items={[wikiItem, nightLight]} />);
 
     fireEvent.click(screen.getByRole("button", { name: "Xem chi tiết Halberd" }));
-    fireEvent.click(await screen.findByRole("button", { name: "Đèn bóng đêm" }));
+    fireEvent.click(
+      await screen.findByRole("button", { name: "Night Light, số lượng 1" }),
+    );
 
     expect(screen.getByRole("dialog", { name: "Đèn bóng đêm" })).toBeDefined();
   });

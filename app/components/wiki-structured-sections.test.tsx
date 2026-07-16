@@ -15,10 +15,35 @@ const nightLight: ItemListEntry = {
   englishName: "Night Light",
   description: null,
   craftingNote: null,
-  sprite: null,
+  sprite: {
+    src: "/assets/wiki/night-light.png",
+    uv: { u1: 0, u2: 1, v1: 0, v2: 1 },
+  },
   recipe: null,
   wiki: null,
 };
+
+const nightmareFuel: ItemListEntry = {
+  id: "base_game:nightmarefuel",
+  prefabId: "nightmarefuel",
+  namespace: "base_game",
+  category: "item",
+  name: "Nhiên liệu Ác Mộng",
+  englishName: "Nightmare Fuel",
+  description: null,
+  craftingNote: null,
+  sprite: {
+    src: "/assets/game/nightmare-fuel.png",
+    uv: { u1: 0, u2: 1, v1: 0, v2: 1 },
+  },
+  recipe: null,
+  wiki: null,
+};
+
+const catalogItems = new Map([
+  [nightLight.id, nightLight],
+  [nightmareFuel.id, nightmareFuel],
+]);
 
 const sections: NormalizedWikiSections = {
   dropTable: {
@@ -62,7 +87,7 @@ const sections: NormalizedWikiSections = {
             amount: 8,
           },
         ],
-        station: "Prestihatitator",
+        station: "Broken Pseudoscience Station",
         dlc: null,
         character: null,
         note: null,
@@ -90,7 +115,7 @@ describe("WikiStructuredSections", () => {
     render(
       <WikiStructuredSections
         sections={sections}
-        itemsById={new Map([[nightLight.id, nightLight]])}
+        itemsById={catalogItems}
         onSelectItem={vi.fn()}
       />,
     );
@@ -110,7 +135,48 @@ describe("WikiStructuredSections", () => {
     expect(screen.getByText("2 công thức từ Wiki")).toBeDefined();
     expect(screen.getByRole("heading", { name: "Don't Starve" })).toBeDefined();
     expect(screen.getByRole("heading", { name: "Shipwrecked" })).toBeDefined();
-    expect(screen.getAllByText("Prestihatitator")).toHaveLength(2);
+    const result = screen.getByRole("button", {
+      name: "Night Light, số lượng 1",
+    });
+    expect(within(result).getByTestId("game-sprite")).toBeDefined();
+    expect(within(result).queryByText("Đèn bóng đêm")).toBeNull();
+    expect(result.getAttribute("aria-describedby")).toBe(
+      screen.getByRole("tooltip", { name: "Night Light" }).id,
+    );
+
+    const fuel = screen.getAllByLabelText("Nightmare Fuel, số lượng 2")[0];
+    expect(within(fuel).getByTestId("game-sprite")).toBeDefined();
+    expect(within(fuel).getAllByText("Nightmare Fuel")).toHaveLength(1);
+    expect(fuel.getAttribute("aria-describedby")).toBe(
+      screen.getAllByRole("tooltip", { name: "Nightmare Fuel" })[0].id,
+    );
+
+    const gold = screen.getByRole("link", {
+      name: "Gold Nugget, số lượng 8",
+    });
+    expect(within(gold).getByTestId("wiki-usage-icon")).toBeDefined();
+    expect(within(gold).getByText("Gold Nugget").getAttribute("role")).toBe("tooltip");
+
+    const brokenStation = screen.getByRole("link", {
+      name: "Broken Pseudoscience Station",
+    });
+    expect(within(brokenStation).getByTestId("wiki-usage-icon")).toBeDefined();
+    expect(
+      decodeURIComponent(
+        within(brokenStation).getByTestId("wiki-usage-icon").getAttribute("src") ?? "",
+      ),
+    ).toContain(
+      "https://dontstarve.wiki.gg/images/thumb/Navbox_Broken_Pseudoscience_Station.png/50px-Navbox_Broken_Pseudoscience_Station.png?926476",
+    );
+    expect(
+      within(brokenStation)
+        .getByText("Broken Pseudoscience Station")
+        .getAttribute("role"),
+    ).toBe("tooltip");
+    expect(brokenStation.getAttribute("aria-describedby")).toBe(
+      screen.getByRole("tooltip", { name: "Broken Pseudoscience Station" }).id,
+    );
+    expect(screen.getByRole("link", { name: "Prestihatitator" })).toBeDefined();
     expect(screen.getByText("Warly")).toBeDefined();
     expect(screen.getByText("Chỉ dùng trong DLC.")).toBeDefined();
     const beardlingLink = screen.getByRole("link", { name: "Beardling" });
@@ -127,7 +193,9 @@ describe("WikiStructuredSections", () => {
       "href",
       "https://dontstarve.wiki.gg/wiki/Beardling",
     );
-    expect(screen.getByRole("link", { name: "Gold Nugget" })).toBeDefined();
+    expect(
+      screen.getByRole("link", { name: "Gold Nugget, số lượng 8" }),
+    ).toBeDefined();
   });
 
   it("opens a resolved catalog item inside the current detail flow", () => {
@@ -135,12 +203,12 @@ describe("WikiStructuredSections", () => {
     render(
       <WikiStructuredSections
         sections={sections}
-        itemsById={new Map([[nightLight.id, nightLight]])}
+        itemsById={catalogItems}
         onSelectItem={onSelectItem}
       />,
     );
 
-    fireEvent.click(screen.getByRole("button", { name: "Đèn bóng đêm" }));
+    fireEvent.click(screen.getByRole("button", { name: "Night Light, số lượng 1" }));
 
     expect(onSelectItem).toHaveBeenCalledWith(nightLight);
   });
