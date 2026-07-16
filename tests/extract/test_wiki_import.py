@@ -54,8 +54,11 @@ def write_crawl(root, recipe_page_id=10):
                 "sha1": "page-sha1",
             },
             "content_model": "wikitext",
-            "html": "<p>A nugget of gold.</p>",
-            "wikitext": '|spawnCode = "goldnugget"',
+            "html": (
+                "<p>A nugget of gold.</p><script>alert('bad')</script>"
+                '<div class="navbox">Repeated navigation</div>'
+            ),
+            "wikitext": '|spawnCode = "goldnugget"\n|icon = Gold Nugget.png',
             "plain_text": "A nugget of gold.",
             "categories": ["Category:Items", "Category:Resources"],
             "redirect_target": None,

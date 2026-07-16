@@ -173,7 +173,7 @@ class ExportItemsTests(unittest.TestCase):
                 "tu_tien:xd_sword",
             ],
         )
-        self.assertEqual(items["schema_version"], 3)
+        self.assertEqual(items["schema_version"], 4)
         by_id = {item["id"]: item for item in items["items"]}
         self.assertEqual(by_id["base_game:deerclops"]["category"], "boss")
         self.assertEqual(by_id["base_game:goldnugget"]["category"], "item")
@@ -186,6 +186,7 @@ class ExportItemsTests(unittest.TestCase):
         self.assertEqual(sword["description"], "Một thanh kiếm")
         self.assertEqual(sword["craftingNote"], "Rèn một thanh kiếm thử")
         self.assertIsNone(by_id["base_game:deerclops"]["craftingNote"])
+        self.assertIsNone(by_id["base_game:deerclops"]["wiki"])
         self.assertEqual(
             sword["sprite"]["src"], "/assets/game/" + "a" * 64 + ".png"
         )

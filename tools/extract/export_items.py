@@ -6,6 +6,12 @@ import sqlite3
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
+from tools.extract.wiki_export import (
+    export_wiki_artifacts,
+    load_wiki_export,
+    merge_wiki_items,
+)
+
 
 JsonObject = Dict[str, Any]
 PREFAB_CATEGORIES = {
@@ -252,6 +258,7 @@ def _build_item_entry(
         "craftingNote": crafting_notes.get(prefab_id.lower()),
         "sprite": _sprite(entity.get("icon_key"), selected_assets, textures),
         "recipe": recipe_payload,
+        "wiki": None,
     }
 
 
@@ -312,7 +319,7 @@ def build_item_export(
     ]
     items.sort(key=lambda item: item["id"])
     return (
-        {"schema_version": 3, "items": items},
+        {"schema_version": 4, "items": items},
         {
             "schema_version": 1,
             "textures": [textures[key] for key in sorted(textures)],
@@ -326,6 +333,9 @@ def export_items(
     assets_path: Path,
     items_path: Path,
     textures_path: Path,
+    wiki_crawl_path: Path = Path("data/crawled/dontstarve-items"),
+    wiki_details_path: Path = Path("public/data/wiki/pages"),
+    wiki_assets_path: Path = Path("public/assets/wiki"),
 ) -> None:
     """Read audit JSON and atomically publish the compact frontend contracts."""
 
@@ -333,5 +343,9 @@ def export_items(
     assets = json.loads(Path(assets_path).read_text(encoding="utf-8"))
     crafting_notes = load_crafting_notes(database_path)
     items, textures = build_item_export(catalog, assets, crafting_notes)
+    wiki = load_wiki_export(database_path, wiki_crawl_path)
+    items["items"] = merge_wiki_items(items["items"], wiki)
     _atomic_json(Path(items_path), items)
     _atomic_json(Path(textures_path), textures)
+    if wiki.details or wiki.assets:
+        export_wiki_artifacts(wiki, wiki_details_path, wiki_assets_path)
