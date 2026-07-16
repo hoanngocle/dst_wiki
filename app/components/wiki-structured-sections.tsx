@@ -307,82 +307,121 @@ export function WikiStructuredSections({
             {sections.usage.recipes.length} công thức từ Wiki
           </p>
         </div>
-        <div className="space-y-5 p-4 sm:p-5">
+        <div className="space-y-5 py-4 sm:py-5">
           {groupRecipes(sections.usage.recipes).map(([group, recipes]) => (
             <section key={group} aria-labelledby={`wiki-usage-${group.replace(/\W+/g, "-")}`}>
               <h4
                 id={`wiki-usage-${group.replace(/\W+/g, "-")}`}
-                className="text-sm font-semibold text-[#43556d]"
+                className="px-4 text-sm font-semibold text-[#43556d] sm:px-5"
               >
                 {group}
               </h4>
-              <ul className="mt-2 grid grid-cols-1 gap-3 md:grid-cols-2">
-                {recipes.map((recipe, index) => (
-                  <li
-                    key={`${recipe.result.url}:${index}`}
-                    className="rounded-xl border border-[#d5dde6] bg-[#eef3f8] p-3"
-                  >
-                    <div className="flex items-center gap-3">
-                      <WikiUsageIcon
-                        reference={recipe.result}
-                        amount={recipe.resultAmount}
-                        itemsById={itemsById}
-                        itemsByTitle={itemsByTitle}
-                        onSelectItem={onSelectItem}
-                      />
-                    </div>
-                    <div className="mt-2 rounded-lg bg-[#f8fafc] px-1.5 py-1">
-                      <WikiUsageIcon
-                        reference={NIGHTMARE_FUEL_REFERENCE}
-                        amount={recipe.nightmareFuelAmount}
-                        itemsById={itemsById}
-                        itemsByTitle={itemsByTitle}
-                        onSelectItem={onSelectItem}
-                      />
-                    </div>
-                    {recipe.ingredients.length ? (
-                      <div className="mt-2 flex flex-wrap items-center gap-1 text-sm">
-                        {recipe.ingredients.map((ingredient) => (
-                          <WikiUsageIcon
-                            key={ingredient.item.url}
-                            reference={ingredient.item}
-                            amount={ingredient.amount}
-                            itemsById={itemsById}
-                            itemsByTitle={itemsByTitle}
-                            onSelectItem={onSelectItem}
-                          />
-                        ))}
-                      </div>
-                    ) : null}
-                    {recipe.station || recipe.character ? (
-                      <dl className="mt-2 grid gap-1 text-xs leading-5 text-[#53647a]">
-                        {recipe.station ? (
-                          <div className="flex items-center gap-2">
-                            <dt className="font-semibold text-[#43556d]">Trạm:</dt>
-                            <dd>
+              <div className="mt-2 overflow-x-auto border-y border-[#d5dde6]">
+                <table
+                  aria-label={`Usage: ${group}`}
+                  className="w-full min-w-[760px] border-collapse text-left"
+                >
+                  <thead className="bg-[#eaf0f6]">
+                    <tr className="border-b border-[#c8d3df]">
+                      <th
+                        scope="col"
+                        className="w-[56%] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[#607188] sm:px-5"
+                      >
+                        Công thức
+                      </th>
+                      <th
+                        scope="col"
+                        className="w-[22%] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[#607188]"
+                      >
+                        Trạm / Nhân vật
+                      </th>
+                      <th
+                        scope="col"
+                        className="w-[22%] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[#607188] sm:pr-5"
+                      >
+                        Thành phẩm
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-[#d5dde6]">
+                    {recipes.map((recipe, index) => (
+                      <tr
+                        key={`${recipe.result.url}:${index}`}
+                        className="bg-[#f8fafc] align-middle transition-colors hover:bg-[#f1f5f9]"
+                      >
+                        <td className="px-4 py-2 sm:px-5">
+                          <div className="flex min-w-max items-center gap-1">
+                            <WikiUsageIcon
+                              reference={NIGHTMARE_FUEL_REFERENCE}
+                              amount={recipe.nightmareFuelAmount}
+                              itemsById={itemsById}
+                              itemsByTitle={itemsByTitle}
+                              onSelectItem={onSelectItem}
+                            />
+                            {recipe.ingredients.map((ingredient) => (
+                              <span
+                                key={ingredient.item.url}
+                                className="inline-flex items-center gap-1"
+                              >
+                                <span
+                                  aria-hidden="true"
+                                  className="font-mono text-sm font-semibold text-[#8290a3]"
+                                >
+                                  +
+                                </span>
+                                <WikiUsageIcon
+                                  reference={ingredient.item}
+                                  amount={ingredient.amount}
+                                  itemsById={itemsById}
+                                  itemsByTitle={itemsByTitle}
+                                  onSelectItem={onSelectItem}
+                                />
+                              </span>
+                            ))}
+                          </div>
+                          {recipe.note ? (
+                            <p className="mt-1 text-xs leading-5 text-[#53647a]">
+                              {recipe.note}
+                            </p>
+                          ) : null}
+                        </td>
+                        <td className="px-4 py-2">
+                          <div className="flex min-h-10 items-center gap-2">
+                            {recipe.station ? (
                               <WikiUsageIcon
                                 reference={stationReference(recipe.station)}
                                 itemsById={itemsById}
                                 itemsByTitle={itemsByTitle}
                                 onSelectItem={onSelectItem}
                               />
-                            </dd>
+                            ) : null}
+                            {recipe.character ? (
+                              <span className="whitespace-nowrap text-xs text-[#53647a]">
+                                <span className="font-semibold text-[#43556d]">
+                                  Nhân vật:
+                                </span>{" "}
+                                {recipe.character}
+                              </span>
+                            ) : null}
+                            {!recipe.station && !recipe.character ? (
+                              <span className="text-xs text-[#8290a3]">Không có</span>
+                            ) : null}
                           </div>
-                        ) : null}
-                        {recipe.character ? (
-                          <div className="flex gap-2">
-                            <dt className="font-semibold text-[#43556d]">Nhân vật:</dt>
-                            <dd>{recipe.character}</dd>
-                          </div>
-                        ) : null}
-                      </dl>
-                    ) : null}
-                    {recipe.note ? (
-                      <p className="mt-2 text-xs leading-5 text-[#53647a]">{recipe.note}</p>
-                    ) : null}
-                  </li>
-                ))}
-              </ul>
+                        </td>
+                        <td className="px-4 py-2 sm:pr-5">
+                          <WikiUsageIcon
+                            reference={recipe.result}
+                            amount={recipe.resultAmount}
+                            itemsById={itemsById}
+                            itemsByTitle={itemsByTitle}
+                            onSelectItem={onSelectItem}
+                          />
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </section>
           ))}
         </div>

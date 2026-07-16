@@ -135,6 +135,42 @@ describe("WikiStructuredSections", () => {
     expect(screen.getByText("2 công thức từ Wiki")).toBeDefined();
     expect(screen.getByRole("heading", { name: "Don't Starve" })).toBeDefined();
     expect(screen.getByRole("heading", { name: "Shipwrecked" })).toBeDefined();
+    const baseUsageTable = screen.getByRole("table", {
+      name: "Usage: Don't Starve",
+    });
+    expect(within(baseUsageTable).getAllByRole("row")).toHaveLength(2);
+    expect(
+      within(baseUsageTable).getByRole("columnheader", { name: "Công thức" }),
+    ).toBeDefined();
+    expect(
+      within(baseUsageTable).getByRole("columnheader", {
+        name: "Trạm / Nhân vật",
+      }),
+    ).toBeDefined();
+    expect(
+      within(baseUsageTable).getByRole("columnheader", { name: "Thành phẩm" }),
+    ).toBeDefined();
+
+    const recipeCells = within(baseUsageTable).getAllByRole("cell");
+    expect(recipeCells).toHaveLength(3);
+    expect(
+      within(recipeCells[0]).getByLabelText("Nightmare Fuel, số lượng 2"),
+    ).toBeDefined();
+    expect(
+      within(recipeCells[0]).getByRole("link", {
+        name: "Gold Nugget, số lượng 8",
+      }),
+    ).toBeDefined();
+    expect(
+      within(recipeCells[1]).getByRole("link", {
+        name: "Broken Pseudoscience Station",
+      }),
+    ).toBeDefined();
+    expect(
+      within(recipeCells[2]).getByRole("button", {
+        name: "Night Light, số lượng 1",
+      }),
+    ).toBeDefined();
     const result = screen.getByRole("button", {
       name: "Night Light, số lượng 1",
     });
