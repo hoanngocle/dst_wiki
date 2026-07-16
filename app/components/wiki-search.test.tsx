@@ -26,6 +26,7 @@ const items: readonly ItemListEntry[] = [
         },
       ],
     },
+    wiki: null,
   },
   {
     id: "base_game:log",
@@ -38,6 +39,7 @@ const items: readonly ItemListEntry[] = [
     craftingNote: null,
     sprite: null,
     recipe: null,
+    wiki: null,
   },
 ];
 
@@ -52,6 +54,7 @@ const goldItem: ItemListEntry = {
   craftingNote: null,
   sprite: null,
   recipe: null,
+  wiki: null,
 };
 
 function makeItems(count: number): ItemListEntry[] {
@@ -66,6 +69,7 @@ function makeItems(count: number): ItemListEntry[] {
     craftingNote: null,
     sprite: null,
     recipe: null,
+    wiki: null,
   }));
 }
 

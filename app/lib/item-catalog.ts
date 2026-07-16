@@ -32,6 +32,23 @@ export type ItemRecipe = {
   ingredients: readonly RecipeIngredient[];
 };
 
+export type WikiRelatedPage = {
+  pageId: number;
+  title: string;
+  canonicalUrl: string;
+  detailUrl: string;
+};
+
+export type WikiItemMetadata = {
+  pageId: number;
+  title: string;
+  canonicalUrl: string;
+  categories: readonly string[];
+  mappingState: "mapped" | "unmatched";
+  detailUrl: string;
+  relatedPages: readonly WikiRelatedPage[];
+};
+
 export type ItemListEntry = {
   id: string;
   prefabId: string;
@@ -43,6 +60,7 @@ export type ItemListEntry = {
   craftingNote: string | null;
   sprite: SpriteDescriptor | null;
   recipe: ItemRecipe | null;
+  wiki: WikiItemMetadata | null;
 };
 
 function isRecord(value: unknown): value is Record<string, unknown> {
@@ -79,6 +97,13 @@ function parseCategory(value: unknown, itemIndex: number): PrefabCategory {
 function positiveInteger(value: unknown, field: string): number {
   if (typeof value !== "number" || !Number.isInteger(value) || value <= 0) {
     throw new Error(`${field} must be a positive integer`);
+  }
+  return value;
+}
+
+function positiveNumber(value: unknown, field: string): number {
+  if (typeof value !== "number" || !Number.isFinite(value) || value <= 0) {
+    throw new Error(`${field} must be a positive number`);
   }
   return value;
 }
@@ -120,8 +145,47 @@ function parseIngredient(value: unknown, index: number): RecipeIngredient {
   return {
     id: requiredString(value.id, `ingredient ${index} id`),
     name: requiredString(value.name, `ingredient ${index} name`),
-    amount: positiveInteger(value.amount, `ingredient amount at index ${index}`),
+    amount: positiveNumber(value.amount, `ingredient amount at index ${index}`),
     sprite: parseSprite(value.sprite, `ingredient ${index}`),
+  };
+}
+
+function parseRelatedPage(value: unknown, index: number): WikiRelatedPage {
+  if (!isRecord(value)) {
+    throw new Error(`wiki related page ${index} must be an object`);
+  }
+  return {
+    pageId: positiveInteger(value.pageId, `wiki related page ${index} pageId`),
+    title: requiredString(value.title, `wiki related page ${index} title`),
+    canonicalUrl: requiredString(
+      value.canonicalUrl,
+      `wiki related page ${index} canonicalUrl`,
+    ),
+    detailUrl: requiredString(value.detailUrl, `wiki related page ${index} detailUrl`),
+  };
+}
+
+function parseWiki(value: unknown, itemIndex: number): WikiItemMetadata | null {
+  if (value === null) return null;
+  if (!isRecord(value) || !Array.isArray(value.categories) || !Array.isArray(value.relatedPages)) {
+    throw new Error(`item ${itemIndex} wiki metadata is invalid`);
+  }
+  if (value.mappingState !== "mapped" && value.mappingState !== "unmatched") {
+    throw new Error(`item ${itemIndex} wiki mappingState is invalid`);
+  }
+  return {
+    pageId: positiveInteger(value.pageId, `item ${itemIndex} wiki pageId`),
+    title: requiredString(value.title, `item ${itemIndex} wiki title`),
+    canonicalUrl: requiredString(
+      value.canonicalUrl,
+      `item ${itemIndex} wiki canonicalUrl`,
+    ),
+    categories: value.categories.map((category, categoryIndex) =>
+      requiredString(category, `item ${itemIndex} wiki category ${categoryIndex}`),
+    ),
+    mappingState: value.mappingState,
+    detailUrl: requiredString(value.detailUrl, `item ${itemIndex} wiki detailUrl`),
+    relatedPages: value.relatedPages.map(parseRelatedPage),
   };
 }
 
@@ -154,6 +218,7 @@ function parseItem(value: unknown, index: number): ItemListEntry {
     craftingNote: nullableString(value.craftingNote, `item ${index} craftingNote`),
     sprite: parseSprite(value.sprite, `item ${index}`),
     recipe: parseRecipe(value.recipe, index),
+    wiki: parseWiki(value.wiki, index),
   };
 }
 
@@ -184,10 +249,10 @@ function curateItems(items: readonly ItemListEntry[]): ItemListEntry[] {
 export function parseItemPayload(value: unknown): readonly ItemListEntry[] {
   if (
     !isRecord(value) ||
-    value.schema_version !== 3 ||
+    value.schema_version !== 4 ||
     !Array.isArray(value.items)
   ) {
-    throw new Error("item payload must use schema version 3 and contain items");
+    throw new Error("item payload must use schema version 4 and contain items");
   }
   return curateItems(value.items.map(parseItem));
 }

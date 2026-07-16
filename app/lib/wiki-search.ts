@@ -80,6 +80,10 @@ export function filterItems(
         item.prefabId,
         item.description ?? "",
         item.craftingNote ?? "",
+        item.wiki?.title ?? "",
+        ...(item.wiki?.categories ?? []),
+        ...(item.wiki?.relatedPages.map((page) => page.title) ?? []),
+        ...(item.wiki?.relatedPages.map((page) => page.title.replaceAll("/", " ")) ?? []),
         ...(item.recipe?.ingredients.map((ingredient) => ingredient.name) ?? []),
       ].join(" "),
     );

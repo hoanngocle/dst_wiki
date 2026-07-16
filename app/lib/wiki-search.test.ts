@@ -52,6 +52,22 @@ const items: readonly ItemListEntry[] = [
         },
       ],
     },
+    wiki: {
+      pageId: 501,
+      title: "Sacred Wiki Blade",
+      canonicalUrl: "https://dontstarve.wiki.gg/wiki/Sacred_Wiki_Blade",
+      categories: ["Ancient Weapons"],
+      mappingState: "mapped",
+      detailUrl: "/data/wiki/pages/501.json",
+      relatedPages: [
+        {
+          pageId: 502,
+          title: "Sacred Wiki Blade/DST",
+          canonicalUrl: "https://dontstarve.wiki.gg/wiki/Sacred_Wiki_Blade/DST",
+          detailUrl: "/data/wiki/pages/502.json",
+        },
+      ],
+    },
   },
   {
     id: "base_game:log",
@@ -64,6 +80,7 @@ const items: readonly ItemListEntry[] = [
     craftingNote: null,
     sprite: null,
     recipe: null,
+    wiki: null,
   },
   {
     id: "base_game:deerclops",
@@ -76,6 +93,7 @@ const items: readonly ItemListEntry[] = [
     craftingNote: null,
     sprite: null,
     recipe: null,
+    wiki: null,
   },
 ];
 
@@ -91,6 +109,9 @@ describe("filterItems", () => {
     "phuong bac",
     "vang",
     "linh luc tinh khiet",
+    "sacred wiki blade",
+    "ancient weapons",
+    "sacred wiki blade dst",
   ])(
     "matches the real searchable field %s",
     (query) => {

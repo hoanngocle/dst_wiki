@@ -25,6 +25,7 @@ const item: ItemListEntry = {
       },
     ],
   },
+  wiki: null,
 };
 
 const ingredientItem: ItemListEntry = {
@@ -38,6 +39,7 @@ const ingredientItem: ItemListEntry = {
   craftingNote: null,
   sprite: null,
   recipe: null,
+  wiki: null,
 };
 
 describe("ItemResult", () => {

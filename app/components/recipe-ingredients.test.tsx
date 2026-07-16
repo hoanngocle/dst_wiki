@@ -27,6 +27,7 @@ const fullItem: ItemListEntry = {
   craftingNote: null,
   sprite: null,
   recipe: null,
+  wiki: null,
 };
 
 describe("RecipeIngredients", () => {

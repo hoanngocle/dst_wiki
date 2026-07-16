@@ -25,6 +25,7 @@ const item: ItemListEntry = {
       },
     ],
   },
+  wiki: null,
 };
 
 describe("ItemDetailModal", () => {

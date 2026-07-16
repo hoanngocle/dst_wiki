@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 import { parseItemPayload } from "./item-catalog";
 
 const validPayload = {
-  schema_version: 3,
+  schema_version: 4,
   items: [
     {
       id: "tu_tien:xd_sword",
@@ -29,6 +29,7 @@ const validPayload = {
           },
         ],
       },
+      wiki: null,
     },
   ],
 };
@@ -75,8 +76,8 @@ describe("parseItemPayload", () => {
 
   it("rejects legacy payloads and invalid prefab categories", () => {
     expect(() =>
-      parseItemPayload({ ...validPayload, schema_version: 2 }),
-    ).toThrow(/schema version 3/i);
+      parseItemPayload({ ...validPayload, schema_version: 3 }),
+    ).toThrow(/schema version 4/i);
 
     const payload = structuredClone(validPayload) as unknown as {
       items: Array<{ category: string }>;
@@ -85,9 +86,16 @@ describe("parseItemPayload", () => {
     expect(() => parseItemPayload(payload)).toThrow(/category/i);
   });
 
-  it("rejects non-integer ingredient quantities", () => {
+  it("accepts positive fractional ingredient quantities", () => {
     const payload = structuredClone(validPayload);
     payload.items[0].recipe.ingredients[0].amount = 1.5;
+
+    expect(parseItemPayload(payload)[0].recipe?.ingredients[0].amount).toBe(1.5);
+  });
+
+  it("rejects non-positive ingredient quantities", () => {
+    const payload = structuredClone(validPayload);
+    payload.items[0].recipe.ingredients[0].amount = 0;
 
     expect(() => parseItemPayload(payload)).toThrow(/ingredient amount/i);
   });
@@ -110,9 +118,37 @@ describe("parseItemPayload", () => {
     expect(() => parseItemPayload(payload)).toThrow(/craftingNote/i);
   });
 
+  it("accepts complete wiki metadata and related pages", () => {
+    const payload = structuredClone(validPayload) as unknown as {
+      schema_version: number;
+      items: Array<Record<string, unknown>>;
+    };
+    payload.items[0].wiki = {
+      pageId: 158,
+      title: "Fish Morsel",
+      canonicalUrl: "https://dontstarve.wiki.gg/wiki/Fish_Morsel",
+      categories: ["Food", "Fishes"],
+      mappingState: "mapped",
+      detailUrl: "/data/wiki/pages/158.json",
+      relatedPages: [
+        {
+          pageId: 159,
+          title: "Fish Morsel/DST",
+          canonicalUrl: "https://dontstarve.wiki.gg/wiki/Fish_Morsel/DST",
+          detailUrl: "/data/wiki/pages/159.json",
+        },
+      ],
+    };
+
+    const wiki = parseItemPayload(payload)[0].wiki;
+
+    expect(wiki?.pageId).toBe(158);
+    expect(wiki?.relatedPages[0].title).toBe("Fish Morsel/DST");
+  });
+
   it("removes effect-only prefabs while preserving retained order", () => {
     const payload = {
-      schema_version: 3,
+      schema_version: 4,
       items: [
         makeValidItem("first"),
         makeValidItem("spark_fx"),
@@ -128,7 +164,7 @@ describe("parseItemPayload", () => {
 
   it("prefers a pictured _item counterpart without crossing namespaces", () => {
     const payload = {
-      schema_version: 3,
+      schema_version: 4,
       items: [
         makeValidItem("gate"),
         makeValidItem("gate", { namespace: "base_game" }),
@@ -148,7 +184,7 @@ describe("parseItemPayload", () => {
 
   it("keeps the base prefab when its _item counterpart has no image", () => {
     const payload = {
-      schema_version: 3,
+      schema_version: 4,
       items: [makeValidItem("gate"), makeValidItem("gate_item", { sprite: null })],
     };
 
