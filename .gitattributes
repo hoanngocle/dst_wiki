@@ -1,3 +1,4 @@
+data/generated/wiki.sqlite filter=lfs diff=lfs merge=lfs -text
 data/crawled/dontstarve-items/links.jsonl filter=lfs diff=lfs merge=lfs -text
 data/crawled/dontstarve-items/pages.jsonl filter=lfs diff=lfs merge=lfs -text
 data/crawled/dontstarve-items/state.sqlite filter=lfs diff=lfs merge=lfs -text
