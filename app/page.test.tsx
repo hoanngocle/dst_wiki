@@ -1,8 +1,12 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
+import { parseItemPayload } from "@/app/lib/item-catalog";
+import itemPayload from "@/public/data/items.json";
 import Loading from "./loading";
 import Home from "./page";
+
+const itemCount = parseItemPayload(itemPayload).length;
 
 describe("Prefabs page", () => {
   it("renders the complete prefab catalog and primary navigation", () => {
@@ -15,7 +19,7 @@ describe("Prefabs page", () => {
     expect(
       screen.getByRole("searchbox", { name: "Tìm kiếm Prefabs." }),
     ).toBeDefined();
-    expect(screen.getByText("1887 Prefabs")).toBeDefined();
+    expect(screen.getByText(`${itemCount} Prefabs`)).toBeDefined();
     expect(
       screen.queryByRole("heading", { level: 3, name: "abigail_attack_fx" }),
     ).toBeNull();

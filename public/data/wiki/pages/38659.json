@@ -1,0 +1,54 @@
+{
+  "canonicalUrl": "https://dontstarve.wiki.gg/wiki/Fish_Heads_on_a_Stick",
+  "categories": [
+    "DST-Specific_Pages",
+    "Lunar_New_Year",
+    "Offerings_Filter",
+    "Pages_using_Tabber_parser_tag",
+    "Pages_with_navboxes"
+  ],
+  "displayTitle": "<span class=\"mw-page-title-main\">Fish Heads on a Stick</span>",
+  "html": "<div class=\"mw-content-ltr mw-parser-output\"><p class=\"mw-empty-elt\"></p>\n\n<p><i>Exclusive to:</i> <a href=\"https://dontstarve.wiki.gg/wiki/Don%27t_Starve_Together\" title=\"Don&#x27;t Starve Together\"><img alt=\"Don&#x27;t Starve Together icon.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Don%27t_Starve_Together_icon.png/32px-Don%27t_Starve_Together_icon.png?3bc208\" width=\"32\" height=\"35\"></a><br>\n<i>Only during the <a href=\"https://dontstarve.wiki.gg/wiki/Category:Events\" title=\"Category:Events\">Event</a>:</i> <a href=\"https://dontstarve.wiki.gg/wiki/Year_of_the_Pig_King\" title=\"Year of the Pig King\"><img alt=\"Pig Shrine Map Icon.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Pig_Shrine_Map_Icon.png/50px-Pig_Shrine_Map_Icon.png?5c829c\" width=\"50\" height=\"50\"></a> <a href=\"https://dontstarve.wiki.gg/wiki/Year_of_the_Pig_King\" title=\"Year of the Pig King\">Year of the Pig King</a><br>\n</p><p class=\"mw-empty-elt\"></p>\n\n<p><b>Fish Heads on a Stick</b> can be acquired at the <a href=\"https://dontstarve.wiki.gg/wiki/Pig_Shrine\" class=\"mw-redirect\" title=\"Pig Shrine\">Pig Shrine</a> in exchange for 4 <a href=\"https://dontstarve.wiki.gg/wiki/Lucky_Gold_Nugget\" title=\"Lucky Gold Nugget\">Lucky Gold Nuggets</a>. It is a <a href=\"https://dontstarve.wiki.gg/wiki/Food\" title=\"Food\">Food</a> item, and restores a day worth of calories for most characters. In contrast to most prepared foods, it only grants one <a href=\"https://dontstarve.wiki.gg/wiki/Sanity\" title=\"Sanity\">Sanity</a> point upon consumption.\n</p>\n<div></div>\n<div class=\"tabber tabber--init\"><a class=\"tabber__tab\" id=\"By_Type-0-label\" href=\"https://dontstarve.wiki.gg/wiki/Fish_Heads_on_a_Stick#By_Type-0\">By Type</a><a class=\"tabber__tab\" id=\"By_Crock_Pot_Value-0-label\" href=\"https://dontstarve.wiki.gg/wiki/Fish_Heads_on_a_Stick#By_Crock_Pot_Value-0\">By Crock Pot Value</a><section class=\"tabber__section\"><p class=\"mw-empty-elt\"></p>\n<p class=\"mw-empty-elt\"></p><p class=\"mw-empty-elt\"></p>\n<p class=\"mw-empty-elt\"></p></section></div>\n\n\n\n\n</div>",
+  "images": [
+    {
+      "height": 64,
+      "mime": "image/png",
+      "src": "/assets/wiki/2f7758dbc5958b89027fcb158417da3f99987a9ca85f3cd4624ed2ba153bc55a.png",
+      "title": "File:Fish Heads on a Stick.png",
+      "width": 64
+    }
+  ],
+  "pageId": 38659,
+  "plainText": "Fish Heads on a Stick\n\"Prosperity on a stick.\"\nFood Info\n75\n6\n1\nMeat\nObject Info\n15 Days\n40\nCrafting\n×4\nFilters\nTier\nMiscellaneous\n\"yotpfood3\"\nExclusive to:\nOnly during the Event: Year of the Pig King\n“Nothing fancy.”\n–Wilson\n“A little snack to fill my belly.”\n–Willow\n“Is for making Wolfgang little bit mighty.”\n–Wolfgang\n“It'll keep me alive a little longer.”\n–Wendy\n“BASIC FOODFUEL”\n–WX-78\n“I do enjoy a snack now and then.”\n–Wickerbottom\n“I don't need nothin' fancy.”\n–Woodie\n“Nothing fancy, but it will do.”\n–Maxwell\n“I shall cönsume it!”\n–Wigfrid\n“Smells good.”\n–Webber\n“Bon Appétit.”\n–Warly\n“Cooked glub glub heads.”\n–Wormwood\n“Somethin' to chew on.”\n–Winona\n“Maybe just a little bite.”\n–Wortox\n“This insulting to fish.”\n–Wurt\n“Who ate all the good parts?”\n–Walter\n“This will fill me up for a while.”\n–Wanda\nFish Heads on a Stick can be acquired at the Pig Shrine in exchange for 4 Lucky Gold Nuggets. It is a Food item, and restores a day worth of calories for most characters. In contrast to most prepared foods, it only grants one Sanity point upon consumption.\nBy TypeBy Crock Pot Value\nView or edit this template\nFood and Edible Items (by Food Type)\nVeggie\nSeeds\nMeat\nGoodies\nGeneric\nHorrible\nRoughage\nElementals\nBurnt\nRaw\nGears\nGold Dust\nBerry\nWood\nNitre\nLunar Shards\nView or edit this template\nFood and Edible Items (by Food Value)\nMeats\nFishes\nVegetables\nFruits\nMonster Food\nEggs\nDairy\nSweetener\nFrozen\nInedibles\nMagic\nFat\nSeed\nJellyfish\nBone\nFilter\nAntihistamine\nDecoration\nBug\nNo Value Food",
+  "recipes": [
+    {
+      "character": null,
+      "dlc": null,
+      "ingredients": [
+        {
+          "amount": 4.0,
+          "amountText": null,
+          "position": 0,
+          "title": "Lucky Gold Nugget"
+        }
+      ],
+      "note": null,
+      "recipeId": "wiki-recipe:66d9cb078941d582c2ff0db991fd9466092d1b855d58ca6030a004b846f0f8a3:0",
+      "result": "Fish Heads on a Stick",
+      "source": "Object Infobox",
+      "station": null,
+      "tab": null,
+      "tier": "18",
+      "variant": "base"
+    }
+  ],
+  "redirectTarget": null,
+  "revision": {
+    "id": 547212,
+    "sha1": "2e43a47996f77893605dd61823c8c582753e9e7e",
+    "timestamp": "2025-08-01T19:17:43Z"
+  },
+  "schema_version": 1,
+  "title": "Fish Heads on a Stick",
+  "wikitext": "{{Object Infobox\n|foodType = [[Food_Type#Meat|Meat]] [[File:Meats.png|32px|link=Food_Type#Meat]]\n|name = Fish Heads on a Stick\n|image = Fish Heads on a Stick Dropped.png\n|icon = Fish Heads on a Stick.png\n|stack          = 40\n|spoil          = 15 Days\n|hpRestored     = 6\n|hungerRestored = 75\n|sanityRestored = 1\n|spawnCode      = \"yotpfood3\"\n|description=Prosperity on a stick.\n|ingredient1 = Lucky Gold Nugget\n|multiplier1 = 4\n|filter = {{Pic32|Offerings Filter}}\n|tier = 18}}\n{{Exclusivity|Don't Starve Together}}\n{{Event|Year of the Pig King}}\n{{Quotes\n|wilson = Nothing fancy.\n|willow = A little snack to fill my belly.\n|wolfgang = Is for making Wolfgang little bit mighty.\n|wendy = It'll keep me alive a little longer.\n|wx78 = BASIC FOODFUEL\n|wickerbottom = I do enjoy a snack now and then.\n|woodie = I don't need nothin' fancy.\n|maxwell = Nothing fancy, but it will do.\n|wigfrid = I shall cönsume it!\n|webber = Smells good.\n|winona = Somethin' to chew on.\n|warly= Bon Appétit.\n|wormwood= Cooked glub glub heads.\n|wortox = Maybe just a little bite.\n|wurt = This insulting to fish.\n|walter = Who ate all the good parts?\n|wanda = This will fill me up for a while.\n|choose = wolfgang}}\n'''Fish Heads on a Stick''' can be acquired at the [[Pig Shrine]] in exchange for 4 [[Lucky Gold Nugget]]s. It is a [[Food]] item, and restores a day worth of calories for most characters. In contrast to most prepared foods, it only grants one [[Sanity]] point upon consumption.\n\n{{Clear}}\n{{Food}}\n[[Category:Lunar New Year]]\n[[Category:Offerings Filter]]"
+}

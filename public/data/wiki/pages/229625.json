@@ -1,0 +1,40 @@
+{
+  "canonicalUrl": "https://dontstarve.wiki.gg/wiki/Boulderbough_Seed",
+  "categories": [
+    "DST-Specific_Pages",
+    "Flammable_Objects",
+    "Food",
+    "Fuel",
+    "Healing",
+    "Items",
+    "Mob_Dropped_Items",
+    "Pages_with_image_sizes_containing_extra_px",
+    "Pages_with_navboxes",
+    "Perishables",
+    "Plants",
+    "Trees"
+  ],
+  "displayTitle": "<span class=\"mw-page-title-main\">Boulderbough Seed</span>",
+  "html": "<div class=\"mw-content-ltr mw-parser-output\"><p class=\"mw-empty-elt\"></p>\n\n<p><i>Exclusive to:</i> <a href=\"https://dontstarve.wiki.gg/wiki/DST\" title=\"DST\"><img alt=\"Don&#x27;t Starve Together icon.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Don%27t_Starve_Together_icon.png/32px-Don%27t_Starve_Together_icon.png?3bc208\" width=\"32\" height=\"35\"></a><br>\n</p><p class=\"mw-empty-elt\"></p>\n\n<p>A <b>Boulderbough Seed</b> can be planted to grow into a <a href=\"https://dontstarve.wiki.gg/wiki/Boulderbough\" title=\"Boulderbough\">Boulderbough</a> tree. It can be planted on any kind of <a href=\"https://dontstarve.wiki.gg/wiki/Turf\" class=\"mw-redirect\" title=\"Turf\">Turfs</a> and will drop different loot based on location. It takes 3 to 5 days for them to grow from saplings into small trees. \n</p><p>Felled Boulderbough trees can drop seeds after mining, but only when chopped as opposed to being burned. Each segment of the <a href=\"https://dontstarve.wiki.gg/wiki/Great_Depths_Worm\" title=\"Great Depths Worm\">Great Depths Worm</a> has a 2.38% chance to drop a seed.\n</p>\n<h2><span class=\"mw-headline\" id=\"Trivia\"><a href=\"https://dontstarve.wiki.gg/wiki/Placeholder\" title=\"Placeholder\"><img alt=\"Placeholder.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Placeholder.png/32px-Placeholder.png?210282\" width=\"32\" height=\"32\"></a> Trivia</span></h2>\n<ul><li>Boulderbough Seeds were added in the <i><a href=\"https://dontstarve.wiki.gg/wiki/Ancient_Echoes\" class=\"mw-redirect\" title=\"Ancient Echoes\">Ancient Echoes</a></i> update.</li></ul>\n<h2><span class=\"mw-headline\" id=\"Gallery\"><a href=\"https://dontstarve.wiki.gg/wiki/Blueprint\" title=\"Blueprint\"><img alt=\"Blueprint.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Blueprint.png/32px-Blueprint.png?80b6b5\" width=\"32\" height=\"32\"></a> Gallery</span></h2>\n<ul class=\"gallery mw-gallery-traditional\">\n</ul>\n\n\n\n\n\n</div>",
+  "images": [
+    {
+      "height": 64,
+      "mime": "image/png",
+      "src": "/assets/wiki/7202891c8f576e8ceeb221d852caad17034b21694f40e706d81930a0343eefae.png",
+      "title": "File:Boulderbough Seed.png",
+      "width": 64
+    }
+  ],
+  "pageId": 229625,
+  "plainText": "Boulderbough Seed\nFood Info\n9.375\n1\n0\nRaw\nObject Info\n10 days\nCan be Burned\n40\nSource\nDropped by\n(2.38% per segment)\nMiscellaneous\n\"tree_rock_seed\"\nExclusive to:\n“It's a seed.”\n–Wilson\n“You're still young. Burn you later.”\n–Willow\n“Hello little baby seed. Wolfgang plant you somewhere nice.”\n–Wolfgang\n“Everything is born to one day die.”\n–Wendy\n“MUST BE INSTALLED”\n–WX-78\n“The seed of the great Boulderbough.”\n–Wickerbottom\n“It makes me a little emotional.”\n–Woodie\n“Do I have to dig in the dirt? With my hands?”\n–Maxwell\n“'Tis said this humble seed hölds mighty pötential.”\n–Wigfrid\n“What a cute little seed!”\n–Webber\n“First we plant, then we harvest.”\n–Warly\n“Baby friend!”\n–Wormwood\n“It's just full of potential.”\n–Winona\n“A seed, indeed!”\n–Wortox\n“A sweet baby, florpt!”\n–Wurt\n“Where should we plant this little one, Woby?”\n–Walter\n“I could plant this anywhere.”\n–Wanda\nA Boulderbough Seed can be planted to grow into a Boulderbough tree. It can be planted on any kind of Turfs and will drop different loot based on location. It takes 3 to 5 days for them to grow from saplings into small trees.\nFelled Boulderbough trees can drop seeds after mining, but only when chopped as opposed to being burned. Each segment of the Great Depths Worm has a 2.38% chance to drop a seed.\nTrivia[edit | edit source]\nBoulderbough Seeds were added in the Ancient Echoes update.\nGallery[edit | edit source]\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
+  "recipes": [],
+  "redirectTarget": null,
+  "revision": {
+    "id": 555970,
+    "sha1": "243bc2dc6e61577a9e5e026bd72404e0b560644d",
+    "timestamp": "2026-02-19T15:42:25Z"
+  },
+  "schema_version": 1,
+  "title": "Boulderbough Seed",
+  "wikitext": "{{Object Infobox\n|image = Boulderbough Seed Dropped.png\n|icon = Boulderbough Seed.png\n|stack = 40\n|foodType = [[Food Type#Raw|Raw]] [[File:Raw.png|32px|]]\n|hpRestored = 1\n|canBeBurned = 1\n|hungerRestored = 9.375\n|sanityRestored = 0\n|place = {{pic|32px|Boulderbough_Sapling|Boulderbough}}\n|spoil = 10 days\n|droppedBy = {{Pic|32|Boulderbough}} {{Pic|28|Great Depths Worm}} (2.38% per segment)\n|spawnCode = \"tree_rock_seed\"\n}}\n{{Exclusivity|DST}}\n{{Quotes\n|wilson = It's a seed.\n|willow = You're still young. Burn you later.\n|wolfgang = Hello little baby seed. Wolfgang plant you somewhere nice.\n|wendy = Everything is born to one day die.\n|wx78 = MUST BE INSTALLED\n|wickerbottom = The seed of the great Boulderbough.\n|woodie = It makes me a little emotional.\n|maxwell = Do I have to dig in the dirt? With my hands?\n|wigfrid = 'Tis said this humble seed hölds mighty pötential.\n|webber = What a cute little seed!\n|winona = It's just full of potential.\n|warly = First we plant, then we harvest.\n|wortox = A seed, indeed!\n|wormwood = Baby friend!\n|wurt = A sweet baby, florpt!\n|walter = Where should we plant this little one, Woby?\n|wanda = I could plant this anywhere.\n|choose = wanda\n}}\n\nA '''Boulderbough Seed''' can be planted to grow into a [[Boulderbough]] tree. It can be planted on any kind of [[Turf]]s and will drop different loot based on location. It takes 3 to 5 days for them to grow from saplings into small trees. \n\nFelled Boulderbough trees can drop seeds after mining, but only when chopped as opposed to being burned. Each segment of the [[Great Depths Worm]] has a 2.38% chance to drop a seed.\n\n=={{pic|32|Placeholder}} Trivia==\n* Boulderbough Seeds were added in the ''[[Ancient Echoes]]'' update.\n\n=={{pic|32|Blueprint}} Gallery ==\n<gallery captionalign=\"center\">\n</gallery>\n\n{{Resources}}\n[[Category:Items]]\n[[Category:Plants]]\n[[Category:Fuel]]\n[[Category:Flammable Objects]]\n[[Category:Trees]]\n[[Category:Food]]\n[[Category:Perishables]]\n[[Category:Healing]]\n[[Category:Mob Dropped Items]]\n[[vi:Boulderbough Seed]]"
+}

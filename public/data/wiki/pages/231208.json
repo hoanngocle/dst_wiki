@@ -1,0 +1,30 @@
+{
+  "canonicalUrl": "https://dontstarve.wiki.gg/wiki/Lucky_Horseshoe",
+  "categories": [
+    "DST-Specific_Pages",
+    "Pages_with_navboxes"
+  ],
+  "displayTitle": "<span class=\"mw-page-title-main\">Lucky Horseshoe</span>",
+  "html": "<div class=\"mw-content-ltr mw-parser-output\"><p class=\"mw-empty-elt\"></p>\n\n<p><i>Exclusive to:</i> <a href=\"https://dontstarve.wiki.gg/wiki/DST\" title=\"DST\"><img alt=\"Don&#x27;t Starve Together icon.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Don%27t_Starve_Together_icon.png/32px-Don%27t_Starve_Together_icon.png?3bc208\" width=\"32\" height=\"35\"></a><br>\n<i>Only during the <a href=\"https://dontstarve.wiki.gg/wiki/Category:Events\" title=\"Category:Events\">Event</a>:</i> <a href=\"https://dontstarve.wiki.gg/wiki/Year_of_the_Clockwork_Knight\" title=\"Year of the Clockwork Knight\"><img alt=\"Clockwork Knight Shrine Map Icon.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Clockwork_Knight_Shrine_Map_Icon.png/50px-Clockwork_Knight_Shrine_Map_Icon.png?5ae338\" width=\"50\" height=\"50\"></a> <a href=\"https://dontstarve.wiki.gg/wiki/Year_of_the_Clockwork_Knight\" title=\"Year of the Clockwork Knight\">Year of the Clockwork Knight</a><br>\n</p><p class=\"mw-empty-elt\"></p>\n\n<p><b>Lucky Horseshoe</b> is an item that is dropped by the <a href=\"https://dontstarve.wiki.gg/wiki/Gilded_Knight\" title=\"Gilded Knight\">Gilded Knight</a>. When carrying it in the inventory, the Lucky Horseshoes can increase the player&#x27;s <a href=\"https://dontstarve.wiki.gg/wiki/Luck\" title=\"Luck\">Luck</a>.\n</p><p>A single Lucky Horseshoe increases Luck by 0.05. The <a href=\"https://dontstarve.wiki.gg/wiki/Year_of_the_Clockwork_Knight\" title=\"Year of the Clockwork Knight\">Year of the Clockwork Knight</a> event triples the effect and if the player is wearing the <a href=\"https://dontstarve.wiki.gg/wiki/Gilded_Knight%27s_Costume\" title=\"Gilded Knight&#x27;s Costume\">Gilded Knight&#x27;s Costume</a> set, the number doubles. Combining both of the effects makes a single Lucky Horseshoe grant 0.3 Luck.\n</p>\n<div></div>\n\n\n\n\n\n</div>",
+  "images": [
+    {
+      "height": 64,
+      "mime": "image/png",
+      "src": "/assets/wiki/e213fdde86287d47eec4b7360cc68f0e1763ad4c0b8fdaf09cf3ced01718b274.png",
+      "title": "File:Lucky Horseshoe.png",
+      "width": 64
+    }
+  ],
+  "pageId": 231208,
+  "plainText": "Lucky Horseshoe\nObject Info\nPerk\nIncreases Luck when held.\n10\nSource\nDropped by\nMiscellaneous\n\"horseshoe\"\nExclusive to:\nOnly during the Event: Year of the Clockwork Knight\n“It would behoove me to keep this.”\n–Wilson\n“Gimme all the luck!”\n–Willow\n“Lucky Wolfgang?”\n–Wolfgang\n“Will it make a difference for me?”\n–Wendy\n“SUPERSTITIOUS FLESHLINGS... MINE”\n–WX-78\n“This trinket confers a favorable advantage, yet its effect cannot be quantified.”\n–Wickerbottom\n“Of course you're more lucky, Luce!”\n–Woodie\n“Luck? Sure, why not?”\n–Maxwell\n“A warriör shapes her luck, yet spurning Ödin's favör is fölly.”\n–Wigfrid\n“It's lucky!”\n–Webber\n“I could use a little luck.”\n–Warly\n“What lucky?”\n–Wormwood\n“Where was this when I needed it?”\n–Winona\n“Could it be true? A lucky horseshoe?”\n–Wortox\n“Me best at luck, glurph.”\n–Wurt\n“Woby, you'll always be my good luck charm!”\n–Walter\n“A little luck never hurt.”\n–Wanda\nLucky Horseshoe is an item that is dropped by the Gilded Knight. When carrying it in the inventory, the Lucky Horseshoes can increase the player's Luck.\nA single Lucky Horseshoe increases Luck by 0.05. The Year of the Clockwork Knight event triples the effect and if the player is wearing the Gilded Knight's Costume set, the number doubles. Combining both of the effects makes a single Lucky Horseshoe grant 0.3 Luck.\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
+  "recipes": [],
+  "redirectTarget": null,
+  "revision": {
+    "id": 560006,
+    "sha1": "2db6686f84318c38ee50553e000d3b6626785092",
+    "timestamp": "2026-05-07T18:28:25Z"
+  },
+  "schema_version": 1,
+  "title": "Lucky Horseshoe",
+  "wikitext": "{{Object Infobox\n|name = Lucky Horseshoe\n|icon = Lucky Horseshoe.png\n|image = Lucky Horseshoe Dropped.png\n|perk = Increases Luck when held.\n|droppedBy = {{Pic32|Gilded Knight}}\n|stack = 10\n|spawnCode =\"horseshoe\"\n}}\n{{Exclusivity|DST}}\n{{Event|Year of the Clockwork Knight}}\n{{Quotes\n|wilson = It would behoove me to keep this.\n|willow = Gimme all the luck!\n|wolfgang = Lucky Wolfgang?\n|wendy = Will it make a difference for me?\n|wx78 = SUPERSTITIOUS FLESHLINGS... MINE\n|wickerbottom = This trinket confers a favorable advantage, yet its effect cannot be quantified.\n|woodie = Of course you're more lucky, Luce!\n|maxwell = Luck? Sure, why not?\n|wigfrid = A warriör shapes her luck, yet spurning Ödin's favör is fölly.\n|webber = It's lucky!\n|winona = Where was this when I needed it?\n|warly = I could use a little luck.\n|wortox = Could it be true? A lucky horseshoe?\n|wormwood = What lucky?\n|wurt = Me best at luck, glurph.\n|walter = Woby, you'll always be my good luck charm!\n|wanda = A little luck never hurt.\n|choose = wilson\n}}\n\n'''Lucky Horseshoe''' is an item that is dropped by the [[Gilded Knight]]. When carrying it in the inventory, the Lucky Horseshoes can increase the player's [[Luck]].\n\nA single Lucky Horseshoe increases Luck by 0.05. The [[Year of the Clockwork Knight]] event triples the effect and if the player is wearing the [[Gilded Knight's Costume]] set, the number doubles. Combining both of the effects makes a single Lucky Horseshoe grant 0.3 Luck.\n{{Clear}}\n{{Resources}}\n[[zh:幸运马蹄铁]]\n[[vi:Lucky Horseshoe]]"
+}

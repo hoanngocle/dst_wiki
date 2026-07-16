@@ -31,7 +31,7 @@ class ExportValidateTests(unittest.TestCase):
             items_path.write_text(
                 json.dumps(
                     {
-                        "schema_version": 3,
+                        "schema_version": 4,
                         "items": [
                             {
                                 "id": "base_game:alpha",
@@ -62,6 +62,50 @@ class ExportValidateTests(unittest.TestCase):
             [{"missing": ["beta"], "unexpected": ["gamma"]}],
         )
         self.assertIn("prefab_export_coverage_errors", report["hard_failures"])
+
+    def test_prefab_coverage_ignores_standalone_wiki_items(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            db_path = root / "wiki.sqlite"
+            db = sqlite3.connect(db_path)
+            create_schema(db)
+            db.commit()
+            db.close()
+            scripts_path = root / "scripts.zip"
+            with ZipFile(scripts_path, "w") as archive:
+                archive.writestr("scripts/prefabs/alpha.lua", "return {}")
+            items_path = root / "items.json"
+            items_path.write_text(
+                json.dumps(
+                    {
+                        "schema_version": 4,
+                        "items": [
+                            {
+                                "id": "base_game:alpha",
+                                "prefabId": "alpha",
+                                "namespace": "base_game",
+                                "wiki": None,
+                            },
+                            {
+                                "id": "wiki:999",
+                                "prefabId": "wiki-999",
+                                "namespace": "base_game",
+                                "wiki": {"mappingState": "unmatched"},
+                            },
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            report = validate_catalog(
+                db_path,
+                prefab_scripts_path=scripts_path,
+                items_path=items_path,
+            )
+
+        self.assertEqual(report["prefab_export_coverage_errors"], [])
+        self.assertNotIn("prefab_export_coverage_errors", report["hard_failures"])
 
     def write_archive_fixture(self, root: Path):
         sources = root / "data" / "sources" / "game"

@@ -1,0 +1,34 @@
+{
+  "canonicalUrl": "https://dontstarve.wiki.gg/wiki/Nectar",
+  "categories": [
+    "DST-Specific_Pages",
+    "Food",
+    "Healing",
+    "Pages_using_Tabber_parser_tag",
+    "Pages_with_navboxes",
+    "Perishables"
+  ],
+  "displayTitle": "<span class=\"mw-page-title-main\">Nectar</span>",
+  "html": "<div class=\"mw-content-ltr mw-parser-output\"><p><i>Exclusive to:</i> <a href=\"https://dontstarve.wiki.gg/wiki/Hamlet\" title=\"Hamlet\"><img alt=\"Hamlet icon.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Hamlet_icon.png/32px-Hamlet_icon.png?e04a83\" width=\"32\" height=\"35\"></a><br>\n</p>\n\n<p class=\"mw-empty-elt\"></p>\n\n<p><b>Nectar</b> is a <a href=\"https://dontstarve.wiki.gg/wiki/Food\" title=\"Food\">Food</a> <a href=\"https://dontstarve.wiki.gg/wiki/Item\" class=\"mw-redirect\" title=\"Item\">Item</a> exclusive to the <i><a href=\"https://dontstarve.wiki.gg/wiki/Don%27t_Starve:_Hamlet\" title=\"Don&#x27;t Starve: Hamlet\">Hamlet</a></i> DLC, dropped by any levels of <a href=\"https://dontstarve.wiki.gg/wiki/Snaptooth_Seedling\" class=\"mw-redirect\" title=\"Snaptooth Seedling\">Snaptooth Seedlings</a> and <a href=\"https://dontstarve.wiki.gg/wiki/Snaptooth_Flytrap\" class=\"mw-redirect\" title=\"Snaptooth Flytrap\">Snaptooth Flytraps</a>.\n</p><p>It cannot be cooked or used in the <a href=\"https://dontstarve.wiki.gg/wiki/Crock_Pot\" title=\"Crock Pot\">Crock Pot</a>, however it can be placed in a <a href=\"https://dontstarve.wiki.gg/wiki/Honey_Chest\" title=\"Honey Chest\">Honey Chest</a> to produce <a href=\"https://dontstarve.wiki.gg/wiki/Honey\" title=\"Honey\">Honey</a> after 1/10 day (48 seconds).\n</p>\n<div></div>\n<div class=\"tabber tabber--init\"><a class=\"tabber__tab\" id=\"By_Type-0-label\" href=\"https://dontstarve.wiki.gg/wiki/Nectar#By_Type-0\">By Type</a><a class=\"tabber__tab\" id=\"By_Crock_Pot_Value-0-label\" href=\"https://dontstarve.wiki.gg/wiki/Nectar#By_Crock_Pot_Value-0\">By Crock Pot Value</a><section class=\"tabber__section\"><p class=\"mw-empty-elt\"></p>\n<p class=\"mw-empty-elt\"></p><p class=\"mw-empty-elt\"></p>\n<p class=\"mw-empty-elt\"></p></section></div>\n\n\n\n\n</div>",
+  "images": [
+    {
+      "height": 64,
+      "mime": "image/png",
+      "src": "/assets/wiki/a8c00db215855229af85b8973e23a15e0efd2699698dd08ba456294d70b8a895.png",
+      "title": "File:Nectar.png",
+      "width": 64
+    }
+  ],
+  "pageId": 175527,
+  "plainText": "Exclusive to:\nNectar\nFood Info\n9.375\n3\n0\nGeneric\nObject Info\n40 days\n40\nSource\nDropped by\n,\nMiscellaneous\n\"nectar_pod\"\n“I could use this to make honey.”\n–Wilson\n“Is this even good for anything?”\n–Willow\n“Is sweet like honey.”\n–Wolfgang\n“Is it even worth turning this to honey?”\n–Wendy\n“REQUIRES HONEY CONVERTER TO BECOME USEFUL”\n–WX-78\n“I wonder if this could somehow be turned to honey.”\n–Wickerbottom\n“Nectar makes honey, eh.”\n–Woodie\n“Needs a suitable container to be turned into honey.”\n–Maxwell\n“Requires an enzymatic processor to convert it to honey.”\n–Wagstaff\n“Fööd för insects, nöt wörthy öf a shieldmaiden.”\n–Wigfrid\n“Spiders don't like this, but other bugs do!”\n–Webber\n“I wonder if I can make honey out of this.”\n–Walani\n“The ingredients for honey making.”\n–Warly\n“Tha sweet, sweet nectar!”\n–Woodlegs\n“HOWFORE WILBA TURN IT TO THE SWEET YUMS?”\n–Wilba\n“Sweet!”\n–Wormwood\n“Now to find something that'll make this into something good.”\n–Wheeler\nNectar is a Food Item exclusive to the Hamlet DLC, dropped by any levels of Snaptooth Seedlings and Snaptooth Flytraps.\nIt cannot be cooked or used in the Crock Pot, however it can be placed in a Honey Chest to produce Honey after 1/10 day (48 seconds).\nBy TypeBy Crock Pot Value\nView or edit this template\nFood and Edible Items (by Food Type)\nVeggie\nSeeds\nMeat\nGoodies\nGeneric\nHorrible\nRoughage\nElementals\nBurnt\nRaw\nGears\nGold Dust\nBerry\nWood\nNitre\nLunar Shards\nView or edit this template\nFood and Edible Items (by Food Value)\nMeats\nFishes\nVegetables\nFruits\nMonster Food\nEggs\nDairy\nSweetener\nFrozen\nInedibles\nMagic\nFat\nSeed\nJellyfish\nBone\nFilter\nAntihistamine\nDecoration\nBug\nNo Value Food",
+  "recipes": [],
+  "redirectTarget": null,
+  "revision": {
+    "id": 547808,
+    "sha1": "28918bb7702738d06f3cc3cb68c01764d1efac91",
+    "timestamp": "2025-08-01T22:01:33Z"
+  },
+  "schema_version": 1,
+  "title": "Nectar",
+  "wikitext": "{{Exclusivity|Hamlet}}\n{{Object Infobox\n|icon = Nectar.png\n|image = Nectar Dropped.png\n|foodType = [[Generic]] {{pic|32|Generic}}\n|name = Nectar\n|hpRestored = 3\n|hungerRestored = 9.375\n|sanityRestored = 0\n|spoil = 40 days\n|burnTime = \n|droppedBy = {{Pic32|Snaptooth Seedling}}, {{Pic32|Snaptooth Flytrap}}\n|stack = 40\n|spawnCode = \"nectar_pod\"}}\n{{Quotes\n|wilson = I could use this to make honey.\n|willow = Is this even good for anything?\n|wolfgang = Is sweet like honey.\n|wendy = Is it even worth turning this to honey?\n|wx78 = REQUIRES HONEY CONVERTER TO BECOME USEFUL\n|wickerbottom = I wonder if this could somehow be turned to honey.\n|woodie = Nectar makes honey, eh.\n|maxwell = Needs a suitable container to be turned into honey.\n|wagstaff = Requires an enzymatic processor to convert it to honey.\n|wigfrid = Fööd för insects, nöt wörthy öf a shieldmaiden.\n|webber = Spiders don't like this, but other bugs do!\n|walani = I wonder if I can make honey out of this.\n|warly = The ingredients for honey making.\n|woodlegs = Tha sweet, sweet nectar!\n|wilba = HOWFORE WILBA TURN IT TO THE SWEET YUMS?\n|wormwood = Sweet!\n|wheeler = Now to find something that'll make this into something good.\n|choose = wagstaff}}\n'''Nectar''' is a [[Food]] [[Item]] exclusive to the ''[[Don't Starve: Hamlet|Hamlet]]'' DLC, dropped by any levels of [[Snaptooth Seedling]]s and [[Snaptooth Flytrap]]s.\n\nIt cannot be cooked or used in the [[Crock Pot]], however it can be placed in a [[Honey Chest]] to produce [[Honey]] after 1/10 day (48 seconds).\n{{clear}}\n{{Food and Edible Items}}\n[[zh:花蜜]]\n[[vi:Mật Hoa]]\n[[Category:Food]]\n[[Category:Healing]]\n[[Category:Perishables]]"
+}

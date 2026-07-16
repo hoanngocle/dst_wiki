@@ -1,0 +1,54 @@
+{
+  "canonicalUrl": "https://dontstarve.wiki.gg/wiki/Seed_Clusters",
+  "categories": [
+    "Craftable_Items_and_Structures_on_DST",
+    "DST-Specific_Pages",
+    "Midsummer_Cawnival",
+    "Pages_with_navboxes",
+    "Trinket_Trove_Filter"
+  ],
+  "displayTitle": "<span class=\"mw-page-title-main\">Seed Clusters</span>",
+  "html": "<div class=\"mw-content-ltr mw-parser-output\"><p><i>Exclusive to:</i> <a href=\"https://dontstarve.wiki.gg/wiki/Don%27t_Starve_Together\" title=\"Don&#x27;t Starve Together\"><img alt=\"Don&#x27;t Starve Together icon.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Don%27t_Starve_Together_icon.png/32px-Don%27t_Starve_Together_icon.png?3bc208\" width=\"32\" height=\"35\"></a><br>\n<i>Only during the <a href=\"https://dontstarve.wiki.gg/wiki/Category:Events\" title=\"Category:Events\">Event</a>:</i> <a href=\"https://dontstarve.wiki.gg/wiki/Midsummer_Cawnival\" title=\"Midsummer Cawnival\"><img alt=\"Cawnival Sapling.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Cawnival_Sapling.png/50px-Cawnival_Sapling.png?312d6a\" width=\"50\" height=\"50\"></a> <a href=\"https://dontstarve.wiki.gg/wiki/Midsummer_Cawnival\" title=\"Midsummer Cawnival\">Midsummer Cawnival</a><br>\n</p>\n\n<p class=\"mw-empty-elt\"></p>\n\n<p>The <b>Seed Clusters</b> can be crafted from the <a href=\"https://dontstarve.wiki.gg/wiki/Prize_Booth\" class=\"mw-redirect\" title=\"Prize Booth\">Prize Booth</a> at a cost of 12 <a href=\"https://dontstarve.wiki.gg/wiki/Prize_Ticket\" class=\"mw-redirect\" title=\"Prize Ticket\">Prize Tickets</a>. Opening them will give 4 <a href=\"https://dontstarve.wiki.gg/wiki/Clustered_Seeds\" class=\"mw-redirect\" title=\"Clustered Seeds\">Corn Seeds</a>.\n</p>\n<div></div>\n\n\n\n\n\n</div>",
+  "images": [
+    {
+      "height": 64,
+      "mime": "image/png",
+      "src": "/assets/wiki/5432a8e65e65860bf1156acb40a28fd22f04d09c2f30e9ebbcac44037c6d9d86.png",
+      "title": "File:Seed Clusters.png",
+      "width": 64
+    }
+  ],
+  "pageId": 222919,
+  "plainText": "Exclusive to:\nOnly during the Event: Midsummer Cawnival\nSeed Clusters\n\"A crunchy Cawnival favorite.\"\nMob Info\nDrops\nx4\nObject Info\nDoes not stack\nCrafting\n×12\nFilters\nMiscellaneous\n\"carnival_seedpacket\"\n“I was feeling a bit peckish.”\n–Wilson\n“Ugh, bird food.”\n–Willow\n“Bird snack.”\n–Wolfgang\n“It tastes like disappointment.”\n–Wendy\n“MEAGER SUSTENANCE”\n–WX-78\n“A bit of extra fiber added to one's diet never hurts.”\n–Wickerbottom\n“Hmph. Bird food.”\n–Woodie\n“About as pleasant as you'd expect.”\n–Maxwell\n“'Tis föod för birds, nöt Vikings.”\n–Wigfrid\n“We should've gotten the popcorn instead...”\n–Webber\n“They could use a bit of seasoning.”\n–Warly\n“Thanks Tweeters!”\n–Wormwood\n“Looks like a bag of bird food.”\n–Winona\n“I'm sure they won't be offended if I dump these on the ground.”\n–Wortox\n“Mmmm, crunchy snack.”\n–Wurt\n“I guess it's sort of like trail mix. Sort of.”\n–Walter\n“A little snack to keep in my pocket.”\n–Wanda\nThe Seed Clusters can be crafted from the Prize Booth at a cost of 12 Prize Tickets. Opening them will give 4 Corn Seeds.\nView or edit this template\nDon't Starve Together Craftable Items\nRegular Filters\nSurvivor Items\nWilson\nWillow\nWolfgang\nWendy\nWX-78\nWickerbottom\nWoodie\nWes\nMaxwell\nWigfrid\nWebber\nWarly\nWortox\nWormwood\nWinona\nWurt\nWalter\nWanda\nTools\nLight Sources\nPrototypers & Stations\nRefined Materials\nWeapons\nArmor\nClothing\nHealing\nMagic\nDecorations\nStructures\nStorage Solutions\nCooking\nFood & Gardening\nFishing\nSeafaring\nBeefalo Riding\nWinter Items\nSummer Items\nRain Gear\nCrafting Station Filters\nSpecial Event\nAncient Pseudoscience\nCarpentry\nCartography\nCritters\nCelestial\nBrightsmithy\nShadowcraft\nFabrication\nBottle Exchange\nCombrining Filter\nTea Brewing Filter\nSculptures\nSeasonings\nTrading\nTrading Hutch\nOfferings\nCawnival Creation\nTrinket Trove\nMad Science\nWinter's Feast Cooking\nSanctum Smithy Filter\nCustom Course Shack Filter",
+  "recipes": [
+    {
+      "character": null,
+      "dlc": null,
+      "ingredients": [
+        {
+          "amount": 12.0,
+          "amountText": null,
+          "position": 0,
+          "title": "Prize Ticket"
+        }
+      ],
+      "note": null,
+      "recipeId": "wiki-recipe:6c8fbd7526c9385c8e084fcba789f32a8aaaeb8f0fdcbd2f7edef51287174831:0",
+      "result": "Seed Clusters",
+      "source": "Object Infobox",
+      "station": null,
+      "tab": null,
+      "tier": null,
+      "variant": "base"
+    }
+  ],
+  "redirectTarget": null,
+  "revision": {
+    "id": 567647,
+    "sha1": "b21191922798465da68087dac0737bde636b0991",
+    "timestamp": "2026-06-29T15:22:13Z"
+  },
+  "schema_version": 1,
+  "title": "Seed Clusters",
+  "wikitext": "{{Exclusivity|Don't Starve Together}}\n{{Event|Midsummer Cawnival}}\n{{Object Infobox\n|name = Seed Clusters\n|image = Seed Clusters Dropped.png\n|icon = Seed Clusters.png\n|description = A crunchy Cawnival favorite.\n|ingredient1 = Prize Ticket\n|multiplier1 = 12\n|drops        = {{pic24|Clustered Seeds}} x4\n|stack = Does not stack\n|spawnCode = \"carnival_seedpacket\"\n|filter = {{Pic|32|Trinket Trove Filter}}\n}}\n{{Quotes\n|wilson = I was feeling a bit peckish.\n|willow = Ugh, bird food.\n|wolfgang = Bird snack.\n|wendy = It tastes like disappointment.\n|wx78 = MEAGER SUSTENANCE\n|wickerbottom = A bit of extra fiber added to one's diet never hurts.\n|woodie = Hmph. Bird food.\n|maxwell = About as pleasant as you'd expect.\n|wigfrid = 'Tis föod för birds, nöt Vikings.\n|webber = We should've gotten the popcorn instead...\n|warly = They could use a bit of seasoning.\n|wormwood = Thanks Tweeters!\n|winona = Looks like a bag of bird food.\n|wortox = I'm sure they won't be offended if I dump these on the ground.\n|wurt = Mmmm, crunchy snack.\n|walter = I guess it's sort of like trail mix. Sort of.\n|wanda = A little snack to keep in my pocket.\n|choose = wickerbottom}}\nThe '''Seed Clusters''' can be crafted from the [[Prize Booth]] at a cost of 12 [[Prize Ticket]]s. Opening them will give 4 [[Clustered Seeds|Corn Seeds]].\n{{Clear}}\n{{Craftable Items and Structures on DST}}\n[[Category:Midsummer Cawnival]]\n[[Category:Trinket Trove Filter]]"
+}

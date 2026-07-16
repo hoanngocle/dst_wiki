@@ -1,0 +1,32 @@
+{
+  "canonicalUrl": "https://dontstarve.wiki.gg/wiki/Broken_Shell",
+  "categories": [
+    "Items",
+    "Mob_Dropped_Items",
+    "Non-Flammable",
+    "Pages_with_navboxes"
+  ],
+  "displayTitle": "<span class=\"mw-page-title-main\">Broken Shell</span>",
+  "html": "<div class=\"mw-content-ltr mw-parser-output\">\n<p class=\"mw-empty-elt\"></p>\n\n<p class=\"mw-empty-elt\"></p>\n\n<p>A <b>Broken Shell</b> is an <a href=\"https://dontstarve.wiki.gg/wiki/Items\" title=\"Items\">Item</a> dropped by <a href=\"https://dontstarve.wiki.gg/wiki/Slurtle\" title=\"Slurtle\">Slurtles</a>, <a href=\"https://dontstarve.wiki.gg/wiki/Snurtle\" class=\"mw-redirect\" title=\"Snurtle\">Snurtles</a>, and <a href=\"https://dontstarve.wiki.gg/wiki/Slurtle_Mound\" title=\"Slurtle Mound\">Slurtle Mounds</a> when killed or destroyed. Broken Shells can be used to craft a <a href=\"https://dontstarve.wiki.gg/wiki/Potted_Fern\" title=\"Potted Fern\">Potted Fern</a>.\n</p>\n<div></div>\n<h2><span class=\"mw-headline\" id=\"Usage\"><a href=\"https://dontstarve.wiki.gg/wiki/Icon_Tools\" title=\"Icon Tools\"><img alt=\"Icon Tools.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Icon_Tools.png/32px-Icon_Tools.png?f672d4\" width=\"32\" height=\"39\"></a> Usage</span></h2>\n<table><tbody><tr><td><div class=\"icon-frame\"><div><a href=\"https://dontstarve.wiki.gg/wiki/Broken_Shell\" title=\"Broken Shell\"><img alt=\"Broken Shell.png\" src=\"https://dontstarve.wiki.gg/images/Broken_Shell.png?294be5\" width=\"64\" height=\"64\"></a></div></div></td><td><div class=\"icon-frame\"><div><a href=\"https://dontstarve.wiki.gg/wiki/Foliage\" title=\"Foliage\"><img alt=\"Foliage.png\" src=\"https://dontstarve.wiki.gg/images/Foliage.png?69c04c\" width=\"64\" height=\"64\"></a></div></div></td><td><p>×<b>5</b></p></td><td><a href=\"https://dontstarve.wiki.gg/wiki/Alchemy_Engine\" title=\"Alchemy Engine\"><img alt=\"Alchemy Engine.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Alchemy_Engine.png/42px-Alchemy_Engine.png?937c5f\" width=\"42\" height=\"42\"></a></td><td><div class=\"icon-frame\"><div><a href=\"https://dontstarve.wiki.gg/wiki/Potted_Fern\" title=\"Potted Fern\"><img alt=\"Potted Fern.png\" src=\"https://dontstarve.wiki.gg/images/Potted_Fern.png?e4dc31\" width=\"64\" height=\"64\"></a></div></div></td></tr></tbody></table>\n<p><br>\n</p>\n\n\n\n\n\n</div>",
+  "images": [
+    {
+      "height": 64,
+      "mime": "image/png",
+      "src": "/assets/wiki/962671f402756d570ebedef9dc28efaf873ed239a61ed65c0992f7ade9154880.png",
+      "title": "File:Broken Shell.png",
+      "width": 64
+    }
+  ],
+  "pageId": 153912,
+  "plainText": "Don't Starve\nTogether\nBroken Shell\n10\nDropped by\n, ,\n\"slurtle_shellpieces\"\n“A puzzle with no solution.”\n–Wilson\n“Heh. It broke.”\n–Willow\n“Is broken.”\n–Wolfgang\n“Pieces of broken slurtle dreams.”\n–Wendy\n“THEY DON'T FIT BACK TOGETHER”\n–WX-78\n“Pieces of the broken.”\n–Wickerbottom\n“I broke his home. I feel bad.”\n–Woodie\n“They don't fit back together.”\n–Maxwell\n“Perhaps they can be re-fused somehow.”\n–Wagstaff\n“They're smashed up gööd.”\n–Wigfrid\n“We hit it a little too hard.”\n–Webber\n“Holding on to these doesn't even seem worth it.”\n–Walani\n“If only I had crazy glue.”\n–Warly\n“I ain't one fer puzzlers.”\n–Woodlegs\n“BROKEN HOME O' SLIME BEASTIES”\n–Wilba\n“Spiky Shell bits”\n–Wormwood\n“Pfft. Not even good as ammunition.”\n–Wheeler\n“Broke, but I might salvage something useful.”\n–Winona\n“Shards of shell I do see here.”\n–Wortox\n“Aw, it broke!”\n–Wurt\n“Sorry slurtle.”\n–Walter\n“A handful of shattered shell bits.”\n–Wanda\nA Broken Shell is an Item dropped by Slurtles, Snurtles, and Slurtle Mounds when killed or destroyed. Broken Shells can be used to craft a Potted Fern.\nUsage[edit | edit source]\n×5\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
+  "recipes": [],
+  "redirectTarget": null,
+  "revision": {
+    "id": 565315,
+    "sha1": "3f225e1e752013acf4bce4b1e317616ffc6b6dfb",
+    "timestamp": "2026-06-14T11:29:49Z"
+  },
+  "schema_version": 1,
+  "title": "Broken Shell",
+  "wikitext": "{{Navbutton/Separation}}\n{{Item Infobox\n|droppedBy = {{pic|30|Slurtle}}, {{pic|30|Snurtle}}, {{pic|30|Slurtle Mound}}\n|image = Broken Shell.png\n|stack = 10\n|spawnCode = \"slurtle_shellpieces\"}}\n{{Quotes\n|wilson = A puzzle with no solution.\n|willow = Heh. It broke.\n|wolfgang = Is broken.\n|wendy = Pieces of broken slurtle dreams.\n|wx78 = THEY DON'T FIT BACK TOGETHER\n|wickerbottom = Pieces of the broken.\n|woodie = I broke his home. I feel bad.\n|maxwell = They don't fit back together.\n|wagstaff = Perhaps they can be re-fused somehow.\n|wigfrid = They're smashed up gööd.\n|webber = We hit it a little too hard.\n|walani = Holding on to these doesn't even seem worth it.\n|warly = If only I had crazy glue.\n|woodlegs = I ain't one fer puzzlers.\n|wilba = BROKEN HOME O' SLIME BEASTIES\n|wormwood = Spiky Shell bits\n|wheeler = Pfft. Not even good as ammunition.\n|winona = Broke, but I might salvage something useful.\n|wortox = Shards of shell I do see here.\n|wurt = Aw, it broke!\n|walter = Sorry slurtle.\n|wanda = A handful of shattered shell bits.\n|choose = woodie}}\n\nA '''Broken Shell''' is an [[Items|Item]] dropped by [[Slurtle]]s, [[Snurtle]]s, and [[Slurtle Mound]]s when killed or destroyed. Broken Shells can be used to craft a [[Potted Fern]].\n{{clear}}\n\n=={{pic|32|Icon Tools}} Usage==\n{{Recipe\n|item1 = Broken Shell\n|item2 = Foliage\n|count2 = 5\n|result = Potted Fern\n|Science 2 = yes}}\n\n\n{{Mob Dropped Items}}\n[[Category:Mob Dropped Items]]\n[[Category:Non-Flammable]]\n[[vi:Broken Shell]]"
+}

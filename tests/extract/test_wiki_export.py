@@ -70,7 +70,9 @@ class WikiExportTests(unittest.TestCase):
 
         item = merge_wiki_items([], wiki)[0]
 
-        self.assertEqual(item["id"], "base_game:goldnugget")
+        self.assertEqual(item["id"], "wiki:10")
+        self.assertEqual(item["prefabId"], "wiki-10")
+        self.assertEqual(item["wiki"]["mappingState"], "mapped")
         self.assertEqual(item["recipe"]["ingredients"][0]["amount"], 0.5)
         self.assertEqual(item["recipe"]["ingredients"][0]["name"], "Rocks")
 
@@ -130,7 +132,7 @@ class WikiExportTests(unittest.TestCase):
         wiki = load_wiki_export(self.database, self.crawl)
         merged = merge_wiki_items([], wiki)
 
-        self.assertEqual([item["id"] for item in merged], ["base_game:goldnugget", "wiki:11"])
+        self.assertEqual([item["id"] for item in merged], ["wiki:10", "wiki:11"])
         self.assertEqual(
             [page["pageId"] for page in merged[0]["wiki"]["relatedPages"]],
             [12],

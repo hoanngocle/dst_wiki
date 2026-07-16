@@ -1,0 +1,54 @@
+{
+  "canonicalUrl": "https://dontstarve.wiki.gg/wiki/Moon_Cake",
+  "categories": [
+    "DST-Specific_Pages",
+    "Lunar_New_Year",
+    "Offerings_Filter",
+    "Pages_using_Tabber_parser_tag",
+    "Pages_with_navboxes"
+  ],
+  "displayTitle": "<span class=\"mw-page-title-main\">Moon Cake</span>",
+  "html": "<div class=\"mw-content-ltr mw-parser-output\"><p><i>Exclusive to:</i> <a href=\"https://dontstarve.wiki.gg/wiki/DST\" title=\"DST\"><img alt=\"Don&#x27;t Starve Together icon.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Don%27t_Starve_Together_icon.png/32px-Don%27t_Starve_Together_icon.png?3bc208\" width=\"32\" height=\"35\"></a><br>\n<i>Only during the <a href=\"https://dontstarve.wiki.gg/wiki/Category:Events\" title=\"Category:Events\">Event</a>:</i> <a href=\"https://dontstarve.wiki.gg/wiki/Year_of_the_Bunnyman\" title=\"Year of the Bunnyman\"><img alt=\"Bunnyman Shrine Map Icon.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Bunnyman_Shrine_Map_Icon.png/50px-Bunnyman_Shrine_Map_Icon.png?e99ab8\" width=\"50\" height=\"50\"></a> <a href=\"https://dontstarve.wiki.gg/wiki/Year_of_the_Bunnyman\" title=\"Year of the Bunnyman\">Year of the Bunnyman</a><br>\n</p>\n\n<p class=\"mw-empty-elt\"></p>\n\n<p><b>Moon Cake</b> is a <a href=\"https://dontstarve.wiki.gg/wiki/Food\" title=\"Food\">Food</a> <a href=\"https://dontstarve.wiki.gg/wiki/Item\" class=\"mw-redirect\" title=\"Item\">Item</a> that can be obtained at a <a href=\"https://dontstarve.wiki.gg/wiki/Bunnyman_Shrine\" class=\"mw-redirect\" title=\"Bunnyman Shrine\">Bunnyman Shrine</a> for 5 <a href=\"https://dontstarve.wiki.gg/wiki/Lucky_Gold_Nugget\" title=\"Lucky Gold Nugget\">Lucky Gold Nuggets</a>. It cannot be eaten by <a href=\"https://dontstarve.wiki.gg/wiki/Wigfrid\" title=\"Wigfrid\">Wigfrid</a>.\n</p>\n<div></div>\n<div class=\"tabber tabber--init\"><a class=\"tabber__tab\" id=\"By_Type-0-label\" href=\"https://dontstarve.wiki.gg/wiki/Moon_Cake#By_Type-0\">By Type</a><a class=\"tabber__tab\" id=\"By_Crock_Pot_Value-0-label\" href=\"https://dontstarve.wiki.gg/wiki/Moon_Cake#By_Crock_Pot_Value-0\">By Crock Pot Value</a><section class=\"tabber__section\"><p class=\"mw-empty-elt\"></p>\n<p class=\"mw-empty-elt\"></p><p class=\"mw-empty-elt\"></p>\n<p class=\"mw-empty-elt\"></p></section></div>\n\n\n\n\n</div>",
+  "images": [
+    {
+      "height": 64,
+      "mime": "image/png",
+      "src": "/assets/wiki/ea292046145d78978864753486d37a7357609b7ded6f156707471689a3c76299.png",
+      "title": "File:Moon Cake.png",
+      "width": 64
+    }
+  ],
+  "pageId": 55452,
+  "plainText": "Exclusive to:\nOnly during the Event: Year of the Bunnyman\nMoon Cake\n\"\"It's \"blue\" flavored!\"\"\nFood Info\n19\n60\n8\nGoodies\nObject Info\n15\n40\nCrafting\n×5\nFilters\nTier\nMiscellaneous\n\"yotr_food2\"\n“Blue is the most scientific flavor.”\n–Wilson\n“It sure tastes... blue?”\n–Willow\n“Ah. Wolfgang expected cheese.”\n–Wolfgang\n“Now my lips have turned blue...”\n–Wendy\n“THE MOON IS DELICIOUS”\n–WX-78\n“\"Blue\" is an odd adjective for a flavor, but I can't disagree.”\n–Wickerbottom\n“Whew. It's not givin' me the transformation tingles.”\n–Woodie\n“What a mysterious flavor.”\n–Maxwell\n“I dö nöt trust whatever lies within.”\n–Wigfrid\n“Mmm, the moon is tasty!”\n–Webber\n“A part of me expected it to be cheesecake.”\n–Warly\n“Mmmmm...”\n–Wormwood\n“Can't quite pin down the flavor, but I like it!”\n–Winona\n“Once in a blue moon I'll sample mortal food... but not today, hyuyu.”\n–Wortox\n“Yummy!”\n–Wurt\n“Is that what the moon tastes like?”\n–Walter\n“I'd nearly forgotten what \"blue\" tasted like.”\n–Wanda\nMoon Cake is a Food Item that can be obtained at a Bunnyman Shrine for 5 Lucky Gold Nuggets. It cannot be eaten by Wigfrid.\nBy TypeBy Crock Pot Value\nView or edit this template\nFood and Edible Items (by Food Type)\nVeggie\nSeeds\nMeat\nGoodies\nGeneric\nHorrible\nRoughage\nElementals\nBurnt\nRaw\nGears\nGold Dust\nBerry\nWood\nNitre\nLunar Shards\nView or edit this template\nFood and Edible Items (by Food Value)\nMeats\nFishes\nVegetables\nFruits\nMonster Food\nEggs\nDairy\nSweetener\nFrozen\nInedibles\nMagic\nFat\nSeed\nJellyfish\nBone\nFilter\nAntihistamine\nDecoration\nBug\nNo Value Food",
+  "recipes": [
+    {
+      "character": null,
+      "dlc": null,
+      "ingredients": [
+        {
+          "amount": 5.0,
+          "amountText": null,
+          "position": 0,
+          "title": "Lucky Gold Nugget"
+        }
+      ],
+      "note": null,
+      "recipeId": "wiki-recipe:82cfb826121d333353deb44354932c026dc6937905c4c2146d0a98ddabb7a6af:0",
+      "result": "Moon Cake",
+      "source": "Object Infobox",
+      "station": null,
+      "tab": null,
+      "tier": "29",
+      "variant": "base"
+    }
+  ],
+  "redirectTarget": null,
+  "revision": {
+    "id": 547296,
+    "sha1": "2e23b7880e957f8fa120107d2010da0760a94ba8",
+    "timestamp": "2025-08-01T19:41:27Z"
+  },
+  "schema_version": 1,
+  "title": "Moon Cake",
+  "wikitext": "{{Exclusivity|DST}}\n{{Event|Year of the Bunnyman}}\n{{Object Infobox\n|foodType =[[Goodies]] [[File:Goodies.png|32px|link=Goodies]]\n|tier = 29\n|name = Moon Cake\n|image = Moon Cake Dropped.png\n|icon = Moon Cake.png\n|stack          = 40\n|spoil          = 15\n|hpRestored     = 60 \n|hungerRestored = 19 \n|sanityRestored = 8 \n|spawnCode      = \"yotr_food2\"\n|description =  \"It's \"blue\" flavored!\"\n|ingredient1 = Lucky Gold Nugget \n|multiplier1 = 5 \n|filter = {{Pic32|Offerings Filter}} \n}}\n{{Quotes\n|walter=Is that what the moon tastes like?\n|wanda=I'd nearly forgotten what \"blue\" tasted like.\n|warly=A part of me expected it to be cheesecake.\n|wigfrid=I dö nöt trust whatever lies within.\n|maxwell=What a mysterious flavor.\n|webber=Mmm, the moon is tasty!\n|wendy=Now my lips have turned blue...\n|wickerbottom=\"Blue\" is an odd adjective for a flavor, but I can't disagree.\n|willow=It sure tastes... blue?\n|wilson=Blue is the most scientific flavor.\n|winona=Can't quite pin down the flavor, but I like it!\n|wolfgang=Ah. Wolfgang expected cheese.\n|woodie=Whew. It's not givin' me the transformation tingles.\n|wormwood=Mmmmm...\n|wortox=Once in a blue moon I'll sample mortal food... but not today, hyuyu.\n|wurt=Yummy!\n|wx78=THE MOON IS DELICIOUS\n|choose=wilson}}\n'''Moon Cake''' is a [[Food]] [[Item]] that can be obtained at a [[Bunnyman Shrine]] for 5 [[Lucky Gold Nugget]]s. It cannot be eaten by [[Wigfrid]].\n{{Clear}}\n{{Food and Edible Items}}\n[[Category:Lunar New Year]]\n[[Category:Offerings Filter]]"
+}

@@ -1,0 +1,30 @@
+{
+  "canonicalUrl": "https://dontstarve.wiki.gg/wiki/Wire_Hanger",
+  "categories": [
+    "DST-Specific_Pages",
+    "Pages_with_navboxes"
+  ],
+  "displayTitle": "<span class=\"mw-page-title-main\">Wire Hanger</span>",
+  "html": "<div class=\"mw-content-ltr mw-parser-output\"><p class=\"mw-empty-elt\"></p>\n<p><i>Exclusive to:</i> <a href=\"https://dontstarve.wiki.gg/wiki/Don%27t_Starve_Together\" title=\"Don&#x27;t Starve Together\"><img alt=\"Don&#x27;t Starve Together icon.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Don%27t_Starve_Together_icon.png/32px-Don%27t_Starve_Together_icon.png?3bc208\" width=\"32\" height=\"35\"></a><br>\n</p><p class=\"mw-empty-elt\"></p>\n\n<p>When given to the Antlion as tribute, this trinket delays its rage by 0.66 days.\n</p><p>The <b>Wire Hanger</b> can be spawned into the game with the code <code>&quot;trinket_27&quot;</code>.\n</p>\n<table><tbody><tr><td><div class=\"icon-frame\"><div><a href=\"https://dontstarve.wiki.gg/wiki/Wire_Hanger\" title=\"Wire Hanger\"><img alt=\"Wire Hanger.png\" src=\"https://dontstarve.wiki.gg/images/Wire_Hanger.png?f966c6\" width=\"64\" height=\"64\"></a></div></div></td><td><a href=\"https://dontstarve.wiki.gg/wiki/Pig_King\" title=\"Pig King\"><img alt=\"Pig King Icon.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Pig_King_Icon.png/42px-Pig_King_Icon.png?163825\" width=\"42\" height=\"40\"></a></td><td><div class=\"icon-frame\"><div><a href=\"https://dontstarve.wiki.gg/wiki/Gold_Nugget\" title=\"Gold Nugget\"><img alt=\"Gold Nugget.png\" src=\"https://dontstarve.wiki.gg/images/Gold_Nugget.png?f67236\" width=\"64\" height=\"64\"></a></div></div></td><td><p>×<b>4</b></p></td></tr></tbody></table>\n<table><tbody><tr><td><div class=\"icon-frame\"><div><a href=\"https://dontstarve.wiki.gg/wiki/Wire_Hanger\" title=\"Wire Hanger\"><img alt=\"Wire Hanger.png\" src=\"https://dontstarve.wiki.gg/images/Wire_Hanger.png?f966c6\" width=\"64\" height=\"64\"></a></div></div></td><td><a href=\"https://dontstarve.wiki.gg/wiki/Antlion\" title=\"Antlion\"><img alt=\"Antlion.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Antlion.png/42px-Antlion.png?712d3c\" width=\"42\" height=\"50\"></a></td><td><div class=\"icon-frame\"><div><a href=\"https://dontstarve.wiki.gg/wiki/Desert_Stone\" title=\"Desert Stone\"><img alt=\"Desert Stone.png\" src=\"https://dontstarve.wiki.gg/images/Desert_Stone.png?8494ee\" width=\"64\" height=\"64\"></a></div></div></td></tr></tbody></table>\n<div></div>\n\n\n\n\n</div>",
+  "images": [
+    {
+      "height": 64,
+      "mime": "image/png",
+      "src": "/assets/wiki/7e9d9c17abb9a3f5246d7082358663bf6dc2227fbf6fdf36619d8d42c4da0029.png",
+      "title": "File:Wire Hanger.png",
+      "width": 64
+    }
+  ],
+  "pageId": 3877,
+  "plainText": "Wire Hanger\nObject Info\n40\nSource\nDropped by\nMiscellaneous\n\"trinket_27\"\nExclusive to:\n“Good, I can hang my clothes up if I ever find a hook.”\n–Wilson\n“I want to stick it in a fire!”\n–Willow\n“Is skinny and bendy, like clownman.”\n–Wolfgang\n“Now at least the wardrobe can be organized.”\n–Wendy\n“THE ROBOT EQUIVALENT OF AN AMOEBA”\n–WX-78\n“I miss the comforts of home.”\n–Wickerbottom\n“Nowhere to hang clothes in the woods.”\n–Woodie\n“Finally. My suits were getting wrinkles. Wrinkles!”\n–Maxwell\n“This weak, flimsy wire reminds me... I must töughen Maxwell up!”\n–Wigfrid\n“This is stupid.”\n–Webber\n“I don't have much to hang up anymore.”\n–Warly\n“Stick? No not stick”\n–Wormwood\n“Not a lotta use for that out here.”\n–Winona\n“I don't wear clothes.”\n–Wortox\n“Has little claw at the end!”\n–Wurt\n“I wonder if I can use it to pick up radio signals...”\n–Walter\n“I would've rather found the coat.”\n–Wanda\nWhen given to the Antlion as tribute, this trinket delays its rage by 0.66 days.\nThe Wire Hanger can be spawned into the game with the code \"trinket_27\".\n×4\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
+  "recipes": [],
+  "redirectTarget": null,
+  "revision": {
+    "id": 547041,
+    "sha1": "2a642fff61c174b1b381254316f55be4b2c615a4",
+    "timestamp": "2025-08-01T18:30:45Z"
+  },
+  "schema_version": 1,
+  "title": "Wire Hanger",
+  "wikitext": "{{Object Infobox\n|icon = Wire Hanger.png\n|image = Wire Hanger Dropped.png\n|name = Wire Hanger\n|spawnCode = \"trinket_27\"\n|droppedBy = {{Pic|32|Ancient Pseudoscience Station Build}}{{Pic|32|Broken Pseudoscience Station Build}}{{Pic|32|Grave}}{{Pic|32|Sunken Chest}}\n|stack=40}}{{Exclusivity|Don't Starve Together}}\n{{Quotes\n|wilson = Good, I can hang my clothes up if I ever find a hook.\n|willow = I want to stick it in a fire!\n|wolfgang = Is skinny and bendy, like clownman.\n|wendy = Now at least the wardrobe can be organized.\n|wx78 = THE ROBOT EQUIVALENT OF AN AMOEBA\n|wickerbottom = I miss the comforts of home.\n|woodie = Nowhere to hang clothes in the woods.\n|maxwell = Finally. My suits were getting wrinkles. Wrinkles!\n|wigfrid = This weak, flimsy wire reminds me... I must töughen Maxwell up!\n|webber = This is stupid.\n|winona = Not a lotta use for that out here.\n|warly = I don't have much to hang up anymore.\n|wortox = I don't wear clothes.\n|wormwood = Stick? No not stick\n|wurt = Has little claw at the end!\n|walter = I wonder if I can use it to pick up radio signals...\n|wanda = I would've rather found the coat.\n|choose = maxwell\n}}\nWhen given to the Antlion as tribute, this trinket delays its rage by 0.66 days.\n\nThe '''Wire Hanger''' can be spawned into the game with the code <code>\"trinket_27\"</code>.\n\n{{Recipe\n|item = Wire Hanger\n|gold = yes\n|result = Gold Nugget\n|resultcount = 4\n}}\n{{Recipe\n|item = Wire Hanger\n|tool = Antlion\n|result = Desert Stone\n}}\n\n{{clear}}{{Resources}}"
+}

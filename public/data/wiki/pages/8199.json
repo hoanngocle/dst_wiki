@@ -1,0 +1,30 @@
+{
+  "canonicalUrl": "https://dontstarve.wiki.gg/wiki/Lucky_Cat_Jar",
+  "categories": [
+    "DST-Specific_Pages",
+    "Pages_with_navboxes"
+  ],
+  "displayTitle": "<span class=\"mw-page-title-main\">Lucky Cat Jar</span>",
+  "html": "<div class=\"mw-content-ltr mw-parser-output\"><p class=\"mw-empty-elt\"></p>\n<p><i>Exclusive to:</i> <a href=\"https://dontstarve.wiki.gg/wiki/Don%27t_Starve_Together\" title=\"Don&#x27;t Starve Together\"><img alt=\"Don&#x27;t Starve Together icon.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Don%27t_Starve_Together_icon.png/32px-Don%27t_Starve_Together_icon.png?3bc208\" width=\"32\" height=\"35\"></a><br>\n</p><p class=\"mw-empty-elt\"></p>\n\n<p>When given to the Antlion as tribute, this trinket delays its rage by 0.99 days.\n</p><p>The <b>Lucky Cat Jar</b> can be spawned into the game with the code <code>&quot;trinket_24&quot;</code>.\n</p>\n<table><tbody><tr><td><div class=\"icon-frame\"><div><a href=\"https://dontstarve.wiki.gg/wiki/Lucky_Cat_Jar\" title=\"Lucky Cat Jar\"><img alt=\"Lucky Cat Jar.png\" src=\"https://dontstarve.wiki.gg/images/Lucky_Cat_Jar.png?8462e7\" width=\"64\" height=\"64\"></a></div></div></td><td><a href=\"https://dontstarve.wiki.gg/wiki/Pig_King\" title=\"Pig King\"><img alt=\"Pig King Icon.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Pig_King_Icon.png/42px-Pig_King_Icon.png?163825\" width=\"42\" height=\"40\"></a></td><td><div class=\"icon-frame\"><div><a href=\"https://dontstarve.wiki.gg/wiki/Gold_Nugget\" title=\"Gold Nugget\"><img alt=\"Gold Nugget.png\" src=\"https://dontstarve.wiki.gg/images/Gold_Nugget.png?f67236\" width=\"64\" height=\"64\"></a></div></div></td><td><p>×<b>8</b></p></td></tr></tbody></table>\n<table><tbody><tr><td><div class=\"icon-frame\"><div><a href=\"https://dontstarve.wiki.gg/wiki/Lucky_Cat_Jar\" title=\"Lucky Cat Jar\"><img alt=\"Lucky Cat Jar.png\" src=\"https://dontstarve.wiki.gg/images/Lucky_Cat_Jar.png?8462e7\" width=\"64\" height=\"64\"></a></div></div></td><td><a href=\"https://dontstarve.wiki.gg/wiki/Antlion\" title=\"Antlion\"><img alt=\"Antlion.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Antlion.png/42px-Antlion.png?712d3c\" width=\"42\" height=\"50\"></a></td><td><div class=\"icon-frame\"><div><a href=\"https://dontstarve.wiki.gg/wiki/Desert_Stone\" title=\"Desert Stone\"><img alt=\"Desert Stone.png\" src=\"https://dontstarve.wiki.gg/images/Desert_Stone.png?8494ee\" width=\"64\" height=\"64\"></a></div></div></td></tr></tbody></table>\n<div></div>\n\n\n\n\n</div>",
+  "images": [
+    {
+      "height": 64,
+      "mime": "image/png",
+      "src": "/assets/wiki/863dcffbf14f18a7d43150f16a447200fdba1380acbb32f683f737af22b829e0.png",
+      "title": "File:Lucky Cat Jar.png",
+      "width": 64
+    }
+  ],
+  "pageId": 8199,
+  "plainText": "Lucky Cat Jar\nObject Info\n40\nSource\nDropped by\nMiscellaneous\n\"trinket_24\"\nExclusive to:\n“I think Wickerbottom had a cat.”\n–Wilson\n“I don't want Ms. Wickerbottom to be sad. Let's burn it!”\n–Willow\n“Kitty has nice round tum.”\n–Wolfgang\n“I've never been lucky.”\n–Wendy\n“WHAT'S A CAT?”\n–WX-78\n“What a positively adorable kitty cat. Sigh.”\n–Wickerbottom\n“We should whip up some pumpkin cookies to put in there, eh?”\n–Woodie\n“It's been beheaded.”\n–Maxwell\n“Grant me luck ön the battlefield!”\n–Wigfrid\n“No cookies.”\n–Webber\n“I think Mme. Wickerbottom had a cat.”\n–Warly\n“Me-Raow? Oh. Not alive”\n–Wormwood\n“The reliable quality of a mass manufactured product!”\n–Winona\n“Perhaps a cat genie awaits inside?”\n–Wortox\n“Look happy.”\n–Wurt\n“Woby doesn't seem to like it very much.”\n–Walter\n“I'm not much of a cat person.”\n–Wanda\nWhen given to the Antlion as tribute, this trinket delays its rage by 0.99 days.\nThe Lucky Cat Jar can be spawned into the game with the code \"trinket_24\".\n×8\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
+  "recipes": [],
+  "redirectTarget": null,
+  "revision": {
+    "id": 547067,
+    "sha1": "7ae30290be9ff1eef8d9eb53175c098b8196f7de",
+    "timestamp": "2025-08-01T18:38:25Z"
+  },
+  "schema_version": 1,
+  "title": "Lucky Cat Jar",
+  "wikitext": "{{Object Infobox\n|icon = Lucky Cat Jar.png\n|image = Lucky Cat Jar Dropped.png\n|name = Lucky Cat Jar\n|spawnCode = \"trinket_24\"\n|droppedBy = {{Pic|32|Ancient Pseudoscience Station Build}}{{Pic|32|Broken Pseudoscience Station Build}}{{Pic|32|Grave}}\n|stack=40}}{{Exclusivity|Don't Starve Together}}\n{{Quotes\n|wilson = I think Wickerbottom had a cat.\n|willow = I don't want Ms. Wickerbottom to be sad. Let's burn it!\n|wolfgang = Kitty has nice round tum.\n|wendy = I've never been lucky.\n|wx78 = WHAT'S A CAT?\n|wickerbottom = What a positively adorable kitty cat. Sigh.\n|woodie = We should whip up some pumpkin cookies to put in there, eh?\n|maxwell = It's been beheaded.\n|wigfrid = Grant me luck ön the battlefield!\n|webber = No cookies.\n|winona = The reliable quality of a mass manufactured product!\n|warly = I think Mme. Wickerbottom had a cat.\n|wortox = Perhaps a cat genie awaits inside?\n|wormwood = Me-Raow? Oh. Not alive\n|wurt = Look happy.\n|walter = Woby doesn't seem to like it very much.\n|wanda = I'm not much of a cat person.\n|choose = wickerbottom\n}}\nWhen given to the Antlion as tribute, this trinket delays its rage by 0.99 days.\n\nThe '''Lucky Cat Jar''' can be spawned into the game with the code <code>\"trinket_24\"</code>.\n\n{{Recipe\n|item = Lucky Cat Jar\n|gold = yes\n|result = Gold Nugget\n|resultcount = 8\n}}\n{{Recipe\n|item = Lucky Cat Jar\n|tool = Antlion\n|result = Desert Stone\n}}\n{{clear}}{{Resources}}"
+}

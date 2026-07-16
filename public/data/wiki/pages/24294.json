@@ -1,0 +1,53 @@
+{
+  "canonicalUrl": "https://dontstarve.wiki.gg/wiki/Kit_Collar",
+  "categories": [
+    "DST-Specific_Pages",
+    "Lunar_New_Year",
+    "Offerings_Filter",
+    "Pages_with_navboxes"
+  ],
+  "displayTitle": "<span class=\"mw-page-title-main\">Kit Collar</span>",
+  "html": "<div class=\"mw-content-ltr mw-parser-output\"><p><i>Exclusive to:</i> <a href=\"https://dontstarve.wiki.gg/wiki/Don%27t_Starve_Together\" title=\"Don&#x27;t Starve Together\"><img alt=\"Don&#x27;t Starve Together icon.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Don%27t_Starve_Together_icon.png/32px-Don%27t_Starve_Together_icon.png?3bc208\" width=\"32\" height=\"35\"></a><br>\n<i>Only during the <a href=\"https://dontstarve.wiki.gg/wiki/Category:Events\" title=\"Category:Events\">Event</a>:</i> <a href=\"https://dontstarve.wiki.gg/wiki/Year_of_the_Catcoon\" title=\"Year of the Catcoon\"><img alt=\"Catcoon Shrine Map Icon.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Catcoon_Shrine_Map_Icon.png/50px-Catcoon_Shrine_Map_Icon.png?8d7903\" width=\"50\" height=\"50\"></a> <a href=\"https://dontstarve.wiki.gg/wiki/Year_of_the_Catcoon\" title=\"Year of the Catcoon\">Year of the Catcoon</a><br>\n</p>\n\n<p class=\"mw-empty-elt\"></p>\n\n<p>The <b>Kit Collar</b> can be crafted and used on a <a href=\"https://dontstarve.wiki.gg/wiki/Kitcoon\" title=\"Kitcoon\">Kitcoon</a> to give it a name. Similar to the <a href=\"https://dontstarve.wiki.gg/wiki/Beefalo_Bell\" title=\"Beefalo Bell\">Beefalo Bell</a>, left clicking on a Kitcoon while holding the Kit Collar will cause an interface to appear that allows the player to enter a name for the Kitcoon, or select a pre-generated name by clicking the &quot;Random&quot; button. Named Kitcoons will display their given name when hovering over them instead of the word &quot;Kitcoon&quot;.\n</p>\n<h2><span class=\"mw-headline\" id=\"Gallery\"><a href=\"https://dontstarve.wiki.gg/wiki/Blueprint\" title=\"Blueprint\"><img alt=\"Blueprint.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Blueprint.png/32px-Blueprint.png?80b6b5\" width=\"32\" height=\"32\"></a> Gallery</span></h2>\n<ul class=\"gallery mw-gallery-traditional\">\n\t\t<li class=\"gallerybox\"><div>\n\t\t\t<div class=\"thumb\"><div><a href=\"https://dontstarve.wiki.gg/wiki/File:Kitcoon_naming_interface.png\" class=\"image\" title=\"The interface to type in a name for player&#x27;s Kitcoon.\"><img alt=\"The interface to type in a name for player&#x27;s Kitcoon.\" src=\"https://dontstarve.wiki.gg/images/thumb/Kitcoon_naming_interface.png/120px-Kitcoon_naming_interface.png?5191ae\" width=\"120\" height=\"89\"></a></div></div>\n\t\t\t<div class=\"gallerytext\">The interface to type in a name for player&#x27;s Kitcoon.</div>\n\t\t</div></li>\n</ul>\n<div></div>\n\n\n\n\n\n</div>",
+  "images": [
+    {
+      "height": 64,
+      "mime": "image/png",
+      "src": "/assets/wiki/204d0880dd840ba7b89aa3794090ed62ecb9f12b96a1574bccc400685dbdc94a.png",
+      "title": "File:Kit Collar.png",
+      "width": 64
+    }
+  ],
+  "pageId": 24294,
+  "plainText": "Exclusive to:\nOnly during the Event: Year of the Catcoon\nKit Collar\n\"Put a name to a cute little face.\"\nObject Info\nPerk\nCan be used to name a Kitcoon.\nDoes not stack\nCrafting\n×6\nFilters\nTier\nMiscellaneous\n\"kitcoon_nametag\"\n“I should think of some names! Let's see, Wilson Jr., Wilson Jr. 2...”\n–Wilson\n“I should test its fire resistance. Y'know, to make sure it's safe.”\n–Willow\n“Wolfgang will give tiny kitty good, strong name!”\n–Wolfgang\n“It's too painful to grow attached to things.”\n–Wendy\n“WHY BOTHER ASSIGNING A DESIGNATION TO A USELESS FLESH CREATURE”\n–WX-78\n“Ah, it does bring back memories of my dear old cat...”\n–Wickerbottom\n“Thought up any good names, Luce?”\n–Woodie\n“I've named so many creatures at this point, the novelty has worn off.”\n–Maxwell\n“To me, tiny beastie! I shall gift thee with a warrior's name!”\n–Wigfrid\n“We always wanted a pet!”\n–Webber\n“What shall I call you, mes petits chats?”\n–Warly\n“For furry friends to wear”\n–Wormwood\n“Name tags can be pretty handy in the workplace.”\n–Winona\n“To help identify who's theirs and who's mine.”\n–Wortox\n“Fish necklace for little kitties.”\n–Wurt\n“It looks almost like yours, Woby!”\n–Walter\n“This will make it easier to remember who's who at least.”\n–Wanda\nThe Kit Collar can be crafted and used on a Kitcoon to give it a name. Similar to the Beefalo Bell, left clicking on a Kitcoon while holding the Kit Collar will cause an interface to appear that allows the player to enter a name for the Kitcoon, or select a pre-generated name by clicking the \"Random\" button. Named Kitcoons will display their given name when hovering over them instead of the word \"Kitcoon\".\nGallery[edit | edit source]\nThe interface to type in a name for player's Kitcoon.\nView or edit this template\nOfferings Filter\nLunar New Year Events\nYear of the Gobbler\nYear of the Varg\nYear of the Pig King\nYear of the Carrat\nYear of the Beefalo\nYear of the Catcoon\nYear of the Bunnyman\nYear of the Dragonfly\nYear of the Depths Worm\nYear of the Clockwork Knight",
+  "recipes": [
+    {
+      "character": null,
+      "dlc": null,
+      "ingredients": [
+        {
+          "amount": 6.0,
+          "amountText": null,
+          "position": 0,
+          "title": "Lucky Gold Nugget"
+        }
+      ],
+      "note": null,
+      "recipeId": "wiki-recipe:dd1bf27861204a8801c7a0c7e463efc58628fc8925232c29810cdd750a5b0599:0",
+      "result": "Kit Collar",
+      "source": "Object Infobox",
+      "station": null,
+      "tab": null,
+      "tier": "28",
+      "variant": "base"
+    }
+  ],
+  "redirectTarget": null,
+  "revision": {
+    "id": 564667,
+    "sha1": "d6c09728250d1edd41894d234caf533797469093",
+    "timestamp": "2026-06-10T18:32:29Z"
+  },
+  "schema_version": 1,
+  "title": "Kit Collar",
+  "wikitext": "{{Exclusivity|Don't Starve Together}}\n{{Event|Year of the Catcoon}}\n{{Object Infobox\n|name=Kit Collar\n|icon=Kit Collar.png\n|image=Kit Collar Dropped.png\n|description=Put a name to a cute little face.\n|ingredient1 = Lucky Gold Nugget\n|multiplier1 = 6\n|tier = 28\n|perk = Can be used to name a Kitcoon.\n|stack = Does not stack\n|spawnCode=\"kitcoon_nametag\"\n|filter={{Pic|32|Offerings Filter}}\n}}\n{{Quotes\n|wilson = I should think of some names! Let's see, Wilson Jr., Wilson Jr. 2...\n|willow = I should test its fire resistance. Y'know, to make sure it's safe.\n|wolfgang = Wolfgang will give tiny kitty good, strong name!\n|wendy = It's too painful to grow attached to things.\n|wx78 = WHY BOTHER ASSIGNING A DESIGNATION TO A USELESS FLESH CREATURE\n|wickerbottom = Ah, it does bring back memories of my dear old cat...\n|woodie = Thought up any good names, Luce?\n|maxwell = I've named so many creatures at this point, the novelty has worn off.\n|wigfrid = To me, tiny beastie! I shall gift thee with a warrior's name!\n|webber = We always wanted a pet!\n|winona = Name tags can be pretty handy in the workplace.\n|warly = What shall I call you, mes petits chats?\n|wortox = To help identify who's theirs and who's mine.\n|wormwood = For furry friends to wear\n|wurt = Fish necklace for little kitties.\n|walter = It looks almost like yours, Woby!\n|wanda = This will make it easier to remember who's who at least.\n|choose = wickerbottom}}\nThe '''Kit Collar''' can be crafted and used on a [[Kitcoon]] to give it a name. Similar to the [[Beefalo Bell]], left clicking on a Kitcoon while holding the Kit Collar will cause an interface to appear that allows the player to enter a name for the Kitcoon, or select a pre-generated name by clicking the \"Random\" button. Named Kitcoons will display their given name when hovering over them instead of the word \"Kitcoon\".\n\n== {{Pic|32|Blueprint}} Gallery ==\n<gallery>\nKitcoon naming interface.png|The interface to type in a name for player's Kitcoon.\n</gallery>\n{{Clear}}\n{{Lunar New Year Events}}\n[[Category:Lunar New Year]]\n[[Category:Offerings Filter]]"
+}

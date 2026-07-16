@@ -1,0 +1,30 @@
+{
+  "canonicalUrl": "https://dontstarve.wiki.gg/wiki/Leaky_Teacup",
+  "categories": [
+    "DST-Specific_Pages",
+    "Pages_with_navboxes"
+  ],
+  "displayTitle": "<span class=\"mw-page-title-main\">Leaky Teacup</span>",
+  "html": "<div class=\"mw-content-ltr mw-parser-output\"><p class=\"mw-empty-elt\"></p>\n<p><i>Exclusive to:</i> <a href=\"https://dontstarve.wiki.gg/wiki/Don%27t_Starve_Together\" title=\"Don&#x27;t Starve Together\"><img alt=\"Don&#x27;t Starve Together icon.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Don%27t_Starve_Together_icon.png/32px-Don%27t_Starve_Together_icon.png?3bc208\" width=\"32\" height=\"35\"></a><br>\n</p><p class=\"mw-empty-elt\"></p>\n\n<p>When given to the Antlion as tribute, this trinket delays its rage by 0.33 days.\n</p><p>The <b>Leaky Teacup</b> can be spawned into the game with the code <code>&quot;trinket_14&quot;</code>.\n</p>\n<table><tbody><tr><td><div class=\"icon-frame\"><div><a href=\"https://dontstarve.wiki.gg/wiki/Leaky_Teacup\" title=\"Leaky Teacup\"><img alt=\"Leaky Teacup.png\" src=\"https://dontstarve.wiki.gg/images/Leaky_Teacup.png?b0b309\" width=\"64\" height=\"64\"></a></div></div></td><td><a href=\"https://dontstarve.wiki.gg/wiki/Pig_King\" title=\"Pig King\"><img alt=\"Pig King Icon.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Pig_King_Icon.png/42px-Pig_King_Icon.png?163825\" width=\"42\" height=\"40\"></a></td><td><div class=\"icon-frame\"><div><a href=\"https://dontstarve.wiki.gg/wiki/Gold_Nugget\" title=\"Gold Nugget\"><img alt=\"Gold Nugget.png\" src=\"https://dontstarve.wiki.gg/images/Gold_Nugget.png?f67236\" width=\"64\" height=\"64\"></a></div></div></td><td><p>×<b>3</b></p></td></tr></tbody></table>\n<table><tbody><tr><td><div class=\"icon-frame\"><div><a href=\"https://dontstarve.wiki.gg/wiki/Leaky_Teacup\" title=\"Leaky Teacup\"><img alt=\"Leaky Teacup.png\" src=\"https://dontstarve.wiki.gg/images/Leaky_Teacup.png?b0b309\" width=\"64\" height=\"64\"></a></div></div></td><td><a href=\"https://dontstarve.wiki.gg/wiki/Antlion\" title=\"Antlion\"><img alt=\"Antlion.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Antlion.png/42px-Antlion.png?712d3c\" width=\"42\" height=\"50\"></a></td><td><div class=\"icon-frame\"><div><a href=\"https://dontstarve.wiki.gg/wiki/Desert_Stone\" title=\"Desert Stone\"><img alt=\"Desert Stone.png\" src=\"https://dontstarve.wiki.gg/images/Desert_Stone.png?8494ee\" width=\"64\" height=\"64\"></a></div></div></td></tr></tbody></table>\n<div></div>\n\n\n\n\n</div>",
+  "images": [
+    {
+      "height": 64,
+      "mime": "image/png",
+      "src": "/assets/wiki/978f5e72d94843cabbcc2062499f657a07b7024e7ce456bccb0b3f85ff0f15dc.png",
+      "title": "File:Leaky Teacup.png",
+      "width": 64
+    }
+  ],
+  "pageId": 64072,
+  "plainText": "Leaky Teacup\nObject Info\n40\nSource\nDropped by\nMiscellaneous\n\"trinket_14\"\nExclusive to:\n“Now if I only had some tea...”\n–Wilson\n“You can make tea over a fire.”\n–Willow\n“Beard will not like such pictures.”\n–Wolfgang\n“I wish my life force would drain away like the tea.”\n–Wendy\n“THIS DUMB CERAMIC THING SPILLS LEAFWATER EVERYWHERE”\n–WX-78\n“This is a leaky vessel.”\n–Wickerbottom\n“Gaudy as all get-out.”\n–Woodie\n“Perhaps I'll invite Ms. Wickerbottom for a nice mandrake tea.”\n–Maxwell\n“Tea is a luxury that warriörs cannöt afförd.”\n–Wigfrid\n“We want some hot cocoa.”\n–Webber\n“I could still use this for measuring.”\n–Warly\n“Can't drink from it”\n–Wormwood\n“Tea's not really my taste.”\n–Winona\n“Tea's always spilling through the cracks!”\n–Wortox\n“For drinking or bath, flort.”\n–Wurt\n“My mom would kill me if I cracked her fine china.”\n–Walter\n“It's just for display.”\n–Wanda\nWhen given to the Antlion as tribute, this trinket delays its rage by 0.33 days.\nThe Leaky Teacup can be spawned into the game with the code \"trinket_14\".\n×3\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
+  "recipes": [],
+  "redirectTarget": null,
+  "revision": {
+    "id": 547327,
+    "sha1": "1f4560b58b034b6b3140cb310753f4d806872fff",
+    "timestamp": "2025-08-01T19:49:02Z"
+  },
+  "schema_version": 1,
+  "title": "Leaky Teacup",
+  "wikitext": "{{Object Infobox\n|icon = Leaky Teacup.png\n|image = Leaky Teacup Dropped.png\n|name = Leaky Teacup\n|spawnCode = \"trinket_14\"\n|droppedBy = {{Pic|32|Ancient Pseudoscience Station Build}}{{Pic|32|Broken Pseudoscience Station Build}}{{Pic|32|Grave}}\n|stack=40}}{{Exclusivity|Don't Starve Together}}\n{{Quotes\n|wilson = Now if I only had some tea...\n|willow = You can make tea over a fire.\n|wolfgang = Beard will not like such pictures.\n|wendy = I wish my life force would drain away like the tea.\n|wx78 = THIS DUMB CERAMIC THING SPILLS LEAFWATER EVERYWHERE\n|wickerbottom = This is a leaky vessel.\n|woodie = Gaudy as all get-out.\n|maxwell = Perhaps I'll invite Ms. Wickerbottom for a nice mandrake tea.\n|wigfrid = Tea is a luxury that warriörs cannöt afförd.\n|webber = We want some hot cocoa.\n|winona = Tea's not really my taste.\n|warly = I could still use this for measuring.\n|wortox = Tea's always spilling through the cracks!\n|wormwood = Can't drink from it\n|wurt = For drinking or bath, flort.\n|walter = My mom would kill me if I cracked her fine china.\n|wanda = It's just for display.\n|choose = wx78\n}}\nWhen given to the Antlion as tribute, this trinket delays its rage by 0.33 days.\n\nThe '''Leaky Teacup''' can be spawned into the game with the code <code>\"trinket_14\"</code>.\n\n{{Recipe\n|item = Leaky Teacup\n|gold = yes\n|result = Gold Nugget\n|resultcount = 3\n}}\n{{Recipe\n|item = Leaky Teacup\n|tool = Antlion\n|result = Desert Stone\n}}\n{{clear}}{{Resources}}"
+}

@@ -1,0 +1,34 @@
+{
+  "canonicalUrl": "https://dontstarve.wiki.gg/wiki/Royal_Gallery_Key",
+  "categories": [
+    "Articles_need_revision",
+    "Articles_to_be_expanded",
+    "Articles_with_missing_item_infobox_stack_value",
+    "DST-Specific_Pages",
+    "Items",
+    "Resources"
+  ],
+  "displayTitle": "<span class=\"mw-page-title-main\">Royal Gallery Key</span>",
+  "html": "<div class=\"mw-content-ltr mw-parser-output\"><p><i>Exclusive to:</i> <a href=\"https://dontstarve.wiki.gg/wiki/Hamlet\" title=\"Hamlet\"><img alt=\"Hamlet icon.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Hamlet_icon.png/32px-Hamlet_icon.png?e04a83\" width=\"32\" height=\"35\"></a><br>\n</p>\n<div class=\"notice incomplete\">\n<table><tbody><tr>\n<td><img alt=\"Harp Statue.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Harp_Statue.png/60px-Harp_Statue.png?a5b3b8\" width=\"60\" height=\"94\"></td>\n<td>This article is <b>incomplete</b> <i>because of the evil sabotage by <a href=\"https://dontstarve.wiki.gg/wiki/Maxwell/NPC\" title=\"Maxwell/NPC\">Maxwell</a>...</i>.<br>Please help to <a class=\"text\" href=\"https://dontstarve.wiki.gg/wiki/Royal_Gallery_Key?action=edit\">improve the article</a>, or discuss the issue with the community on the <a href=\"https://dontstarve.wiki.gg/wiki/Talk:Royal_Gallery_Key?action=edit&amp;redlink=1\" class=\"new\" title=\"Talk:Royal Gallery Key (page does not exist)\">talk page</a> according to the <a href=\"https://dontstarve.wiki.gg/wiki/Don%27t_Starve_Wiki:Rules#Talk_page_etiquette\" title=\"Don&#x27;t Starve Wiki:Rules\">talk page etiquette</a> or on our Discord.</td>\n</tr></tbody></table></div>\n<p class=\"mw-empty-elt\"></p>\n\n<p class=\"mw-empty-elt\"></p>\n\n<p>The <b>Royal Gallery Key</b> is an <a href=\"https://dontstarve.wiki.gg/wiki/Item\" class=\"mw-redirect\" title=\"Item\">item</a> exclusive to the <i><a href=\"https://dontstarve.wiki.gg/wiki/Don%27t_Starve:_Hamlet\" title=\"Don&#x27;t Starve: Hamlet\">Hamlet</a></i> DLC.\n</p><p>It is given to players from the <a href=\"https://dontstarve.wiki.gg/wiki/Pig_Queen\" class=\"mw-redirect\" title=\"Pig Queen\">Pig Queen</a> in exchange for the <a href=\"https://dontstarve.wiki.gg/wiki/Regal_Scepter\" title=\"Regal Scepter\">Regal Scepter</a>, <a href=\"https://dontstarve.wiki.gg/wiki/Royal_Crown\" title=\"Royal Crown\">Royal Crown</a>, <a href=\"https://dontstarve.wiki.gg/wiki/Lost_Relics#The_Blue_Sow\" title=\"Lost Relics\">The Blue Sow</a> or <a href=\"https://dontstarve.wiki.gg/wiki/Lost_Relics#The_Jeweled_Truffle\" title=\"Lost Relics\">The Jeweled Truffle</a>. It is used to unlock one of the items in the <a href=\"https://dontstarve.wiki.gg/wiki/Royal_Gallery_Exhibit\" class=\"mw-redirect\" title=\"Royal Gallery Exhibit\">Royal Gallery</a>.\n</p>\n\n\n\n\n</div>",
+  "images": [
+    {
+      "height": 64,
+      "mime": "image/png",
+      "src": "/assets/wiki/a6f5d2ebf3923a7776e7b40931a613c6f0fe8dd312500019110ad874569ff1fc.png",
+      "title": "File:Royal Gallery Key.png",
+      "width": 64
+    }
+  ],
+  "pageId": 109913,
+  "plainText": "Exclusive to:\nThis article is incomplete because of the evil sabotage by Maxwell....\nPlease help to improve the article, or discuss the issue with the community on the talk page according to the talk page etiquette or on our Discord.\nRoyal Gallery Key\n\"pedestal_key\"\n“Royal-key.”\n–Wilson\n“I just have to find out what it locks.”\n–Willow\n“Is key.”\n–Wolfgang\n“A key to trinkets.”\n–Wendy\n“PASSKEY”\n–WX-78\n“A key. But to what?”\n–Wickerbottom\n“What do you think this opens?”\n–Woodie\n“This seems rather ornate.”\n–Maxwell\n“Theoretically, it fits a lock somewhere.”\n–Wagstaff\n“A key for which to open treasures.”\n–Wigfrid\n“It's a key to open stuff.”\n–Webber\n“Wonder what it opens.”\n–Walani\n“It must unlock something.”\n–Warly\n“Argh! 'Tis fer tha'treasure?”\n–Woodlegs\n“WHATFORE IT OPEN-ETH?”\n–Wilba\n“Little key”\n–Wormwood\n“Locks and keys. The cornerstone of every good adventure.”\n–Wheeler\nThe Royal Gallery Key is an item exclusive to the Hamlet DLC.\nIt is given to players from the Pig Queen in exchange for the Regal Scepter, Royal Crown, The Blue Sow or The Jeweled Truffle. It is used to unlock one of the items in the Royal Gallery.",
+  "recipes": [],
+  "redirectTarget": null,
+  "revision": {
+    "id": 246894,
+    "sha1": "e692aa767ff41440efb21c9e87e45d1083c526e4",
+    "timestamp": "2021-08-07T01:25:17Z"
+  },
+  "schema_version": 1,
+  "title": "Royal Gallery Key",
+  "wikitext": "{{Exclusivity|Hamlet}}\n{{Incomplete}}\n{{Item Infobox\n|name = Royal Gallery Key\n|image = Royal Gallery Key.png\n|spawnCode = \"pedestal_key\"\n}}\n{{Quotes\n|wilson = Royal-key.\n|willow = I just have to find out what it locks.\n|wolfgang = Is key.\n|wendy = A key to trinkets.\n|wx78 = PASSKEY\n|wickerbottom = A key. But to what?\n|woodie = What do you think this opens?\n|maxwell = This seems rather ornate.\n|wagstaff = Theoretically, it fits a lock somewhere.\n|wigfrid = A key for which to open treasures.\n|webber = It's a key to open stuff.\n|walani = Wonder what it opens.\n|warly = It must unlock something.\n|woodlegs = Argh! 'Tis fer tha'treasure?\n|warbucks = One wonders what it unlocks.\n|wilba = WHATFORE IT OPEN-ETH?\n|wormwood = Little key\n|wheeler = Locks and keys. The cornerstone of every good adventure.\n|choose = wilson}}\n\nThe '''Royal Gallery Key''' is an [[item]] exclusive to the ''[[Don't Starve: Hamlet|Hamlet]]'' DLC.\n\nIt is given to players from the [[Pig Queen]] in exchange for the [[Regal Scepter]], [[Royal Crown]], [[Lost_Relics#The_Blue_Sow|The Blue Sow]] or [[Lost_Relics#The_Jeweled_Truffle|The Jeweled Truffle]]. It is used to unlock one of the items in the [[Royal Gallery Exhibit|Royal Gallery]].\n[[vi:Chìa Khóa Bộ Sưu Tập Hoàng Gia]]\n[[Category:Resources]]"
+}

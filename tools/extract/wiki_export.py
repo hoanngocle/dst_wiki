@@ -479,8 +479,16 @@ def merge_wiki_items(items: List[JsonObject], wiki: WikiExport) -> List[JsonObje
     for item in wiki.standalone_items:
         if item["id"] in seen:
             continue
-        merged.append(item)
-        seen.add(item["id"])
+        published = item
+        if item["id"] in wiki.overlays:
+            page_id = item["wiki"]["pageId"]
+            published = dict(item)
+            published["id"] = f"wiki:{page_id}"
+            published["prefabId"] = f"wiki-{page_id}"
+        if published["id"] in seen:
+            raise ValueError(f"duplicate item id: {published['id']}")
+        merged.append(published)
+        seen.add(published["id"])
     return sorted(merged, key=lambda item: item["id"])
 
 

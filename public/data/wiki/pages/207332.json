@@ -1,0 +1,54 @@
+{
+  "canonicalUrl": "https://dontstarve.wiki.gg/wiki/Tribute_Roast",
+  "categories": [
+    "DST-Specific_Pages",
+    "Lunar_New_Year",
+    "Offerings_Filter",
+    "Pages_using_Tabber_parser_tag",
+    "Pages_with_navboxes"
+  ],
+  "displayTitle": "<span class=\"mw-page-title-main\">Tribute Roast</span>",
+  "html": "<div class=\"mw-content-ltr mw-parser-output\"><p class=\"mw-empty-elt\"></p>\n\n<p><i>Exclusive to:</i> <a href=\"https://dontstarve.wiki.gg/wiki/Don%27t_Starve_Together\" title=\"Don&#x27;t Starve Together\"><img alt=\"Don&#x27;t Starve Together icon.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Don%27t_Starve_Together_icon.png/32px-Don%27t_Starve_Together_icon.png?3bc208\" width=\"32\" height=\"35\"></a><br>\n<i>Only during the <a href=\"https://dontstarve.wiki.gg/wiki/Category:Events\" title=\"Category:Events\">Event</a>:</i> <a href=\"https://dontstarve.wiki.gg/wiki/Year_of_the_Pig_King\" title=\"Year of the Pig King\"><img alt=\"Pig Shrine Map Icon.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Pig_Shrine_Map_Icon.png/50px-Pig_Shrine_Map_Icon.png?5c829c\" width=\"50\" height=\"50\"></a> <a href=\"https://dontstarve.wiki.gg/wiki/Year_of_the_Pig_King\" title=\"Year of the Pig King\">Year of the Pig King</a><br>\n</p><p class=\"mw-empty-elt\"></p>\n\n<p><b>Tribute Roast</b> can be acquired at the <a href=\"https://dontstarve.wiki.gg/wiki/Pig_Shrine\" class=\"mw-redirect\" title=\"Pig Shrine\">Pig Shrine</a> in exchange for 6 <a href=\"https://dontstarve.wiki.gg/wiki/Lucky_Gold_Nugget\" title=\"Lucky Gold Nugget\">Lucky Gold Nuggets</a>. It is a <a href=\"https://dontstarve.wiki.gg/wiki/Food\" title=\"Food\">Food</a> item, and has the exact same stats as the <a href=\"https://dontstarve.wiki.gg/wiki/Meaty_Stew\" title=\"Meaty Stew\">Meaty Stew</a>.\n</p><p>Even though this dish isn&#x27;t cooked in a <a href=\"https://dontstarve.wiki.gg/wiki/Crock_Pot/DST\" title=\"Crock Pot/DST\">Crock Pot</a>, <a href=\"https://dontstarve.wiki.gg/wiki/Warly\" title=\"Warly\">Warly</a> is still able to eat it.\n</p>\n<div></div>\n<div class=\"tabber tabber--init\"><a class=\"tabber__tab\" id=\"By_Type-0-label\" href=\"https://dontstarve.wiki.gg/wiki/Tribute_Roast#By_Type-0\">By Type</a><a class=\"tabber__tab\" id=\"By_Crock_Pot_Value-0-label\" href=\"https://dontstarve.wiki.gg/wiki/Tribute_Roast#By_Crock_Pot_Value-0\">By Crock Pot Value</a><section class=\"tabber__section\"><p class=\"mw-empty-elt\"></p>\n<p class=\"mw-empty-elt\"></p><p class=\"mw-empty-elt\"></p>\n<p class=\"mw-empty-elt\"></p></section></div>\n\n\n\n\n</div>",
+  "images": [
+    {
+      "height": 64,
+      "mime": "image/png",
+      "src": "/assets/wiki/acb38980f30d200667826384b765c14cceb2000412375b4ab5647ba16b43af16.png",
+      "title": "File:Tribute Roast.png",
+      "width": 64
+    }
+  ],
+  "pageId": 207332,
+  "plainText": "Tribute Roast\n\"A roasted tribute to the Pig King.\"\nFood Info\n150\n12\n5\nMeat\nObject Info\n15 Days\n40\nCrafting\n×6\nFilters\nTier\nMiscellaneous\n\"yotpfood1\"\nExclusive to:\nOnly during the Event: Year of the Pig King\n“A feast fit for me.”\n–Wilson\n“I'm gonna eat it all!”\n–Willow\n“Make Wolfgang mighty!”\n–Wolfgang\n“Something died for that feast.”\n–Wendy\n“FANCY FOODFUEL”\n–WX-78\n“A feast fit for a festival!”\n–Wickerbottom\n“Want some, Lucy?”\n–Woodie\n“Ah. I do enjoy a nice meal.”\n–Maxwell\n“A meaty feast!”\n–Wigfrid\n“Yummy!”\n–Webber\n“It might need a little more paprika.”\n–Warly\n“Looks good.”\n–Wormwood\n“Now that's a feast!”\n–Winona\n“I'll take a little tiny nibble.”\n–Wortox\n“Blegh! Has nasty Pig face!”\n–Wurt\n“We'll have his head on a platter!”\n–Walter\n“I wish it would stop glaring at me like that.”\n–Wanda\nTribute Roast can be acquired at the Pig Shrine in exchange for 6 Lucky Gold Nuggets. It is a Food item, and has the exact same stats as the Meaty Stew.\nEven though this dish isn't cooked in a Crock Pot, Warly is still able to eat it.\nBy TypeBy Crock Pot Value\nView or edit this template\nFood and Edible Items (by Food Type)\nVeggie\nSeeds\nMeat\nGoodies\nGeneric\nHorrible\nRoughage\nElementals\nBurnt\nRaw\nGears\nGold Dust\nBerry\nWood\nNitre\nLunar Shards\nView or edit this template\nFood and Edible Items (by Food Value)\nMeats\nFishes\nVegetables\nFruits\nMonster Food\nEggs\nDairy\nSweetener\nFrozen\nInedibles\nMagic\nFat\nSeed\nJellyfish\nBone\nFilter\nAntihistamine\nDecoration\nBug\nNo Value Food",
+  "recipes": [
+    {
+      "character": null,
+      "dlc": null,
+      "ingredients": [
+        {
+          "amount": 6.0,
+          "amountText": null,
+          "position": 0,
+          "title": "Lucky Gold Nugget"
+        }
+      ],
+      "note": null,
+      "recipeId": "wiki-recipe:bd7b6d2e1c5ae51fdd573338a72fce3eba9757d74de07f6e1833f41d7940ac46:0",
+      "result": "Tribute Roast",
+      "source": "Object Infobox",
+      "station": null,
+      "tab": null,
+      "tier": "18",
+      "variant": "base"
+    }
+  ],
+  "redirectTarget": null,
+  "revision": {
+    "id": 547961,
+    "sha1": "191a5c7f07faa0c31ae58be17c050bc07d1aa7a1",
+    "timestamp": "2025-08-01T22:41:01Z"
+  },
+  "schema_version": 1,
+  "title": "Tribute Roast",
+  "wikitext": "{{Object Infobox\n|foodType = [[Food_Type#Meat|Meat]] [[File:Meats.png|32px|link=Food_Type#Meat]]\n|name = Tribute Roast\n|image = Tribute Roast Dropped.png\n|icon = Tribute Roast.png\n|stack          = 40\n|spoil          = 15 Days\n|hpRestored     = 12\n|hungerRestored = 150\n|sanityRestored = 5\n|spawnCode      = \"yotpfood1\"\n|description=A roasted tribute to the Pig King.\n|ingredient1 = Lucky Gold Nugget\n|multiplier1 = 6\n|filter = {{Pic32|Offerings Filter}}\n|tier = 18}}\n{{Exclusivity|Don't Starve Together}}\n{{Event|Year of the Pig King}}\n{{Quotes\n|wilson = A feast fit for me.\n|willow = I'm gonna eat it all!\n|wolfgang = Make Wolfgang mighty!\n|wendy = Something died for that feast.\n|wx78 = FANCY FOODFUEL\n|wickerbottom = A feast fit for a festival!\n|woodie = Want some, Lucy?\n|maxwell = Ah. I do enjoy a nice meal.\n|wigfrid = A meaty feast!\n|webber = Yummy!\n|winona = Now that's a feast!\n|warly = It might need a little more paprika.\n|wormwood = Looks good.\n|wortox = I'll take a little tiny nibble.\n|wurt = Blegh! Has nasty Pig face!\n|walter = We'll have his head on a platter!\n|wanda = I wish it would stop glaring at me like that.\n|choose = wendy}}\n'''Tribute Roast''' can be acquired at the [[Pig Shrine]] in exchange for 6 [[Lucky Gold Nugget]]s. It is a [[Food]] item, and has the exact same stats as the [[Meaty Stew]].\n\nEven though this dish isn't cooked in a [[Crock Pot/DST|Crock Pot]], [[Warly]] is still able to eat it.\n{{Clear}}\n{{Food}}\n[[Category:Lunar New Year]]\n[[Category:Offerings Filter]]"
+}

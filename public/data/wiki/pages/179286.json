@@ -1,0 +1,54 @@
+{
+  "canonicalUrl": "https://dontstarve.wiki.gg/wiki/Bunny_Roll",
+  "categories": [
+    "DST-Specific_Pages",
+    "Lunar_New_Year",
+    "Offerings_Filter",
+    "Pages_using_Tabber_parser_tag",
+    "Pages_with_navboxes"
+  ],
+  "displayTitle": "<span class=\"mw-page-title-main\">Bunny Roll</span>",
+  "html": "<div class=\"mw-content-ltr mw-parser-output\"><p><i>Exclusive to:</i> <a href=\"https://dontstarve.wiki.gg/wiki/DST\" title=\"DST\"><img alt=\"Don&#x27;t Starve Together icon.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Don%27t_Starve_Together_icon.png/32px-Don%27t_Starve_Together_icon.png?3bc208\" width=\"32\" height=\"35\"></a><br>\n<i>Only during the <a href=\"https://dontstarve.wiki.gg/wiki/Category:Events\" title=\"Category:Events\">Event</a>:</i> <a href=\"https://dontstarve.wiki.gg/wiki/Year_of_the_Bunnyman\" title=\"Year of the Bunnyman\"><img alt=\"Bunnyman Shrine Map Icon.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Bunnyman_Shrine_Map_Icon.png/50px-Bunnyman_Shrine_Map_Icon.png?e99ab8\" width=\"50\" height=\"50\"></a> <a href=\"https://dontstarve.wiki.gg/wiki/Year_of_the_Bunnyman\" title=\"Year of the Bunnyman\">Year of the Bunnyman</a><br>\n</p>\n\n<p class=\"mw-empty-elt\"></p>\n\n<p><b>Bunny Roll</b> is a <a href=\"https://dontstarve.wiki.gg/wiki/Food\" title=\"Food\">Food</a> <a href=\"https://dontstarve.wiki.gg/wiki/Item\" class=\"mw-redirect\" title=\"Item\">Item</a> that can be obtained at a <a href=\"https://dontstarve.wiki.gg/wiki/Bunnyman_Shrine\" class=\"mw-redirect\" title=\"Bunnyman Shrine\">Bunnyman Shrine</a> for 5 <a href=\"https://dontstarve.wiki.gg/wiki/Lucky_Gold_Nugget\" title=\"Lucky Gold Nugget\">Lucky Gold Nuggets</a>. It cannot be eaten by <a href=\"https://dontstarve.wiki.gg/wiki/Wigfrid\" title=\"Wigfrid\">Wigfrid</a>.\n</p>\n<div></div>\n<div class=\"tabber tabber--init\"><a class=\"tabber__tab\" id=\"By_Type-0-label\" href=\"https://dontstarve.wiki.gg/wiki/Bunny_Roll#By_Type-0\">By Type</a><a class=\"tabber__tab\" id=\"By_Crock_Pot_Value-0-label\" href=\"https://dontstarve.wiki.gg/wiki/Bunny_Roll#By_Crock_Pot_Value-0\">By Crock Pot Value</a><section class=\"tabber__section\"><p class=\"mw-empty-elt\"></p>\n<p class=\"mw-empty-elt\"></p><p class=\"mw-empty-elt\"></p>\n<p class=\"mw-empty-elt\"></p></section></div>\n\n\n\n\n</div>",
+  "images": [
+    {
+      "height": 64,
+      "mime": "image/png",
+      "src": "/assets/wiki/51220e696e26aea0fbdd949a948d0bc45bba41adf4ad76775fd61e73d0118d32.png",
+      "title": "File:Bunny Roll.png",
+      "width": 64
+    }
+  ],
+  "pageId": 179286,
+  "plainText": "Exclusive to:\nOnly during the Event: Year of the Bunnyman\nBunny Roll\n\"No bunnies were harmed in the making of this cake.\"\nFood Info\n75\n15\n8\nGoodies\nObject Info\n15\nCrafting\n×5\nFilters\nTier\nMiscellaneous\n\"yotr_food1\"\n“It's made with carrots, so science says it must be healthy.”\n–Wilson\n“Nice, the rabbits brought cake!”\n–Willow\n“Wolfgang likes the funny rabbit cake.”\n–Wolfgang\n“I think... I would like a bit of cake.”\n–Wendy\n“NO TRACE OF RABBIT DETECTED. DISAPPOINTING”\n–WX-78\n“Putting carrots in your dessert does not make it healthy, I'm afraid.”\n–Wickerbottom\n“Rabbits love carrots so much, they'll even put 'em in cakes.”\n–Woodie\n“Cake shaped like a rabbit, how novel.”\n–Maxwell\n“Bah! 'Tis naught but a meat-shaped veggie cake!”\n–Wigfrid\n“It looks like cake, but it smells like veggies...”\n–Webber\n“It's been so long since I've had such a scrumptious bite of carrot cake!”\n–Warly\n“Hopper?”\n–Wormwood\n“I guess a little cake break won't hurt anything.”\n–Winona\n“A funny shape for carrot cake.”\n–Wortox\n“Grrr, will gobble you up, rabbit! Hee-hee.”\n–Wurt\n“Time for a dessert break!”\n–Walter\n“Oh, well, perhaps just a quick slice or two.”\n–Wanda\nBunny Roll is a Food Item that can be obtained at a Bunnyman Shrine for 5 Lucky Gold Nuggets. It cannot be eaten by Wigfrid.\nBy TypeBy Crock Pot Value\nView or edit this template\nFood and Edible Items (by Food Type)\nVeggie\nSeeds\nMeat\nGoodies\nGeneric\nHorrible\nRoughage\nElementals\nBurnt\nRaw\nGears\nGold Dust\nBerry\nWood\nNitre\nLunar Shards\nView or edit this template\nFood and Edible Items (by Food Value)\nMeats\nFishes\nVegetables\nFruits\nMonster Food\nEggs\nDairy\nSweetener\nFrozen\nInedibles\nMagic\nFat\nSeed\nJellyfish\nBone\nFilter\nAntihistamine\nDecoration\nBug\nNo Value Food",
+  "recipes": [
+    {
+      "character": null,
+      "dlc": null,
+      "ingredients": [
+        {
+          "amount": 5.0,
+          "amountText": null,
+          "position": 0,
+          "title": "Lucky Gold Nugget"
+        }
+      ],
+      "note": null,
+      "recipeId": "wiki-recipe:80b3f4411178b133b4fe4f2f0d88c2508022e102f8adf2dcd31f71734a091ecf:0",
+      "result": "Bunny Roll",
+      "source": "Object Infobox",
+      "station": null,
+      "tab": null,
+      "tier": "29",
+      "variant": "base"
+    }
+  ],
+  "redirectTarget": null,
+  "revision": {
+    "id": 547832,
+    "sha1": "a75f2bea7fe72e55daf125ec038113a2019a0b80",
+    "timestamp": "2025-08-01T22:07:45Z"
+  },
+  "schema_version": 1,
+  "title": "Bunny Roll",
+  "wikitext": "{{Exclusivity|DST}}\n{{Event|Year of the Bunnyman}}\n{{Object Infobox\n|foodType =[[Goodies]] [[File:Goodies.png|32px|link=Goodies]]\n|tier = 29\n|name = Bunny Roll\n|image = Bunny Roll Dropped.png\n|icon = Bunny Roll.png\n|stack          = \n|spoil          = 15\n|hpRestored     = 15 \n|hungerRestored = 75 \n|sanityRestored = 8 \n|spawnCode      = \"yotr_food1\"\n|description = No bunnies were harmed in the making of this cake.\n|ingredient1 = Lucky Gold Nugget \n|multiplier1 = 5 \n|filter = {{Pic32|Offerings Filter}} \n}}\n{{Quotes\n|walter=Time for a dessert break!\n|wanda=Oh, well, perhaps just a quick slice or two.\n|warly=It's been so long since I've had such a scrumptious bite of carrot cake!\n|wigfrid=Bah! 'Tis naught but a meat-shaped veggie cake!\n|maxwell=Cake shaped like a rabbit, how novel.\n|webber=It looks like cake, but it smells like veggies...\n|wendy=I think... I would like a bit of cake.\n|wickerbottom=Putting carrots in your dessert does not make it healthy, I'm afraid.\n|willow=Nice, the rabbits brought cake!\n|wilson=It's made with carrots, so science says it must be healthy.\n|winona=I guess a little cake break won't hurt anything.\n|wolfgang=Wolfgang likes the funny rabbit cake.\n|woodie=Rabbits love carrots so much, they'll even put 'em in cakes.\n|wormwood=Hopper?\n|wortox=A funny shape for carrot cake.\n|wurt=Grrr, will gobble you up, rabbit! Hee-hee.\n|wx78=NO TRACE OF RABBIT DETECTED. DISAPPOINTING\n|choose=wilson}}\n'''Bunny Roll''' is a [[Food]] [[Item]] that can be obtained at a [[Bunnyman Shrine]] for 5 [[Lucky Gold Nugget]]s. It cannot be eaten by [[Wigfrid]].\n{{Clear}}\n{{Food and Edible Items}}\n[[Category:Lunar New Year]]\n[[Category:Offerings Filter]]"
+}

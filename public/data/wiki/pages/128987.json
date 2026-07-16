@@ -1,0 +1,30 @@
+{
+  "canonicalUrl": "https://dontstarve.wiki.gg/wiki/Potato_Cup",
+  "categories": [
+    "DST-Specific_Pages",
+    "Pages_with_navboxes"
+  ],
+  "displayTitle": "<span class=\"mw-page-title-main\">Potato Cup</span>",
+  "html": "<div class=\"mw-content-ltr mw-parser-output\"><p class=\"mw-empty-elt\"></p>\n<p><i>Exclusive to:</i> <a href=\"https://dontstarve.wiki.gg/wiki/Don%27t_Starve_Together\" title=\"Don&#x27;t Starve Together\"><img alt=\"Don&#x27;t Starve Together icon.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Don%27t_Starve_Together_icon.png/32px-Don%27t_Starve_Together_icon.png?3bc208\" width=\"32\" height=\"35\"></a><br>\n</p><p class=\"mw-empty-elt\"></p>\n\n<p>When given to the Antlion as tribute, this trinket delays its rage by 0.99 days.\n</p><p>The <b>Potato Cup</b> can be spawned into the game with the code <code>&quot;trinket_26&quot;</code>.\n</p>\n<table><tbody><tr><td><div class=\"icon-frame\"><div><a href=\"https://dontstarve.wiki.gg/wiki/Potato_Cup\" title=\"Potato Cup\"><img alt=\"Potato Cup.png\" src=\"https://dontstarve.wiki.gg/images/Potato_Cup.png?46e75b\" width=\"64\" height=\"64\"></a></div></div></td><td><a href=\"https://dontstarve.wiki.gg/wiki/Pig_King\" title=\"Pig King\"><img alt=\"Pig King Icon.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Pig_King_Icon.png/42px-Pig_King_Icon.png?163825\" width=\"42\" height=\"40\"></a></td><td><div class=\"icon-frame\"><div><a href=\"https://dontstarve.wiki.gg/wiki/Gold_Nugget\" title=\"Gold Nugget\"><img alt=\"Gold Nugget.png\" src=\"https://dontstarve.wiki.gg/images/Gold_Nugget.png?f67236\" width=\"64\" height=\"64\"></a></div></div></td><td><p>×<b>9</b></p></td></tr></tbody></table>\n<table><tbody><tr><td><div class=\"icon-frame\"><div><a href=\"https://dontstarve.wiki.gg/wiki/Potato_Cup\" title=\"Potato Cup\"><img alt=\"Potato Cup.png\" src=\"https://dontstarve.wiki.gg/images/Potato_Cup.png?46e75b\" width=\"64\" height=\"64\"></a></div></div></td><td><a href=\"https://dontstarve.wiki.gg/wiki/Antlion\" title=\"Antlion\"><img alt=\"Antlion.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Antlion.png/42px-Antlion.png?712d3c\" width=\"42\" height=\"50\"></a></td><td><div class=\"icon-frame\"><div><a href=\"https://dontstarve.wiki.gg/wiki/Desert_Stone\" title=\"Desert Stone\"><img alt=\"Desert Stone.png\" src=\"https://dontstarve.wiki.gg/images/Desert_Stone.png?8494ee\" width=\"64\" height=\"64\"></a></div></div></td></tr></tbody></table>\n<div></div>\n\n\n\n\n\n</div>",
+  "images": [
+    {
+      "height": 64,
+      "mime": "image/png",
+      "src": "/assets/wiki/2d4a235b8d793b81a65b3ac6b59c9d22be7249f540e281ad9c3e17a5ea560310.png",
+      "title": "File:Potato Cup.png",
+      "width": 64
+    }
+  ],
+  "pageId": 128987,
+  "plainText": "Potato Cup\nObject Info\n40\nSource\nDropped by\nMiscellaneous\n\"trinket_26\"\nExclusive to:\n“Food and a cup! The ultimate survival container.”\n–Wilson\n“I would have roasted it.”\n–Willow\n“Is cup made of potato, I think.”\n–Wolfgang\n“That potato is as hollow as I am.”\n–Wendy\n“NO”\n–WX-78\n“It appears to be a primitive cup fashioned from a tuber.”\n–Wickerbottom\n“Genius! A cup for a proper woodsman.”\n–Woodie\n“This was important to one very specific person once.”\n–Maxwell\n“My allies will appreciate the survival training I've bestöwed.”\n–Wigfrid\n“You're our cuppy cup!”\n–Webber\n“Who hurt you, sweet tuber.”\n–Warly\n“Hmm... What's this for?”\n–Wormwood\n“That thing's an affront to manufacturing.”\n–Winona\n“I don't think I get this joke.”\n–Wortox\n“Where all the insides?!”\n–Wurt\n“One less dish to wash!”\n–Walter\n“Something to sip and snack on all at once!”\n–Wanda\nWhen given to the Antlion as tribute, this trinket delays its rage by 0.99 days.\nThe Potato Cup can be spawned into the game with the code \"trinket_26\".\n×9\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
+  "recipes": [],
+  "redirectTarget": null,
+  "revision": {
+    "id": 547610,
+    "sha1": "5a7675a9c08394fa68e8e46090d12487b2bf6332",
+    "timestamp": "2025-08-01T21:04:52Z"
+  },
+  "schema_version": 1,
+  "title": "Potato Cup",
+  "wikitext": "{{Object Infobox\n|icon = Potato Cup.png\n|image = Potato Cup Dropped.png\n|name = Potato Cup\n|spawnCode = \"trinket_26\"\n|droppedBy = {{Pic|32|Ancient Pseudoscience Station Build}}{{Pic|32|Broken Pseudoscience Station Build}}{{Pic|32|Grave}}{{Pic|32|Crumpled Package}}\n|stack=40}}{{Exclusivity|Don't Starve Together}}\n{{Quotes\n|wilson = Food and a cup! The ultimate survival container.\n|willow = I would have roasted it.\n|wolfgang = Is cup made of potato, I think.\n|wendy = That potato is as hollow as I am.\n|wx78 = NO\n|wickerbottom = It appears to be a primitive cup fashioned from a tuber.\n|woodie = Genius! A cup for a proper woodsman.\n|maxwell = This was important to one very specific person once.\n|wigfrid = My allies will appreciate the survival training I've bestöwed.\n|webber = You're our cuppy cup!\n|winona = That thing's an affront to manufacturing.\n|warly = Who hurt you, sweet tuber.\n|wortox = I don't think I get this joke.\n|wormwood = Hmm... What's this for?\n|wurt = Where all the insides?!\n|walter = One less dish to wash!\n|wanda = Something to sip and snack on all at once!\n|choose = wx78\n}}\nWhen given to the Antlion as tribute, this trinket delays its rage by 0.99 days.\n\nThe '''Potato Cup''' can be spawned into the game with the code <code>\"trinket_26\"</code>.\n\n{{Recipe\n|item = Potato Cup\n|gold = yes\n|result = Gold Nugget\n|resultcount = 9\n}}\n{{Recipe\n|item = Potato Cup\n|tool = Antlion\n|result = Desert Stone\n}}\n{{clear}}\n{{Resources}}"
+}

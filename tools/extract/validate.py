@@ -255,13 +255,14 @@ def _prefab_export_coverage(
     with ZipFile(Path(scripts_path)) as archive:
         expected = set(discover_prefab_modules(archive.namelist()))
     payload = json.loads(Path(items_path).read_text(encoding="utf-8"))
-    if payload.get("schema_version") != 3 or not isinstance(payload.get("items"), list):
+    if payload.get("schema_version") != 4 or not isinstance(payload.get("items"), list):
         return [{"code": "invalid_prefab_export_payload"}]
     actual = {
         item.get("prefabId")
         for item in payload["items"]
         if isinstance(item, dict)
         and item.get("namespace") == "base_game"
+        and not str(item.get("id", "")).startswith("wiki:")
         and isinstance(item.get("prefabId"), str)
     }
     missing = sorted(expected - actual)

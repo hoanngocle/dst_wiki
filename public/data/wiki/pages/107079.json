@@ -1,0 +1,54 @@
+{
+  "canonicalUrl": "https://dontstarve.wiki.gg/wiki/Floating_Lantern",
+  "categories": [
+    "DST-Specific_Pages",
+    "Light_Sources",
+    "Lunar_New_Year",
+    "Offerings_Filter",
+    "Pages_with_navboxes"
+  ],
+  "displayTitle": "<span class=\"mw-page-title-main\">Floating Lantern</span>",
+  "html": "<div class=\"mw-content-ltr mw-parser-output\"><p class=\"mw-empty-elt\"></p>\n\n<p><i>Exclusive to:</i> <a href=\"https://dontstarve.wiki.gg/wiki/Don%27t_Starve_Together\" title=\"Don&#x27;t Starve Together\"><img alt=\"Don&#x27;t Starve Together icon.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Don%27t_Starve_Together_icon.png/32px-Don%27t_Starve_Together_icon.png?3bc208\" width=\"32\" height=\"35\"></a><br>\n<i>Only during the <a href=\"https://dontstarve.wiki.gg/wiki/Category:Events\" title=\"Category:Events\">Event</a>:</i> <a href=\"https://dontstarve.wiki.gg/wiki/Lunar_New_Year_Events\" title=\"Lunar New Year Events\"><img alt=\"Offerings Station Icon.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Offerings_Station_Icon.png/50px-Offerings_Station_Icon.png?6928f9\" width=\"50\" height=\"50\"></a> <a href=\"https://dontstarve.wiki.gg/wiki/Lunar_New_Year_Events\" class=\"mw-redirect\" title=\"Lunar New Year Events\">Lunar New Year Events</a><br>\n</p><p class=\"mw-empty-elt\"></p>\n\n<p><b>Floating Lanterns</b> are <a href=\"https://dontstarve.wiki.gg/wiki/Items\" title=\"Items\">Items</a> exclusive to Lunar New Year <a href=\"https://dontstarve.wiki.gg/wiki/Events\" class=\"mw-redirect\" title=\"Events\">Events</a> in <i><a href=\"https://dontstarve.wiki.gg/wiki/Don%27t_Starve_Together\" title=\"Don&#x27;t Starve Together\">Don&#x27;t Starve Together</a></i>. They can be acquired in exchange for 3 <a href=\"https://dontstarve.wiki.gg/wiki/Lucky_Gold_Nugget\" title=\"Lucky Gold Nugget\">Lucky Gold Nugget</a> at a Shrine.\n</p><p>When placed on the ground, they emit light in a small radius for a duration of 6 Days. They also float around slowly when placed in the <a href=\"https://dontstarve.wiki.gg/wiki/Ocean\" title=\"Ocean\">Ocean</a>. They spontaneously combust upon expiring.\n</p>\n<h2><span class=\"mw-headline\" id=\"Trivia\"><a href=\"https://dontstarve.wiki.gg/wiki/Placeholder\" title=\"Placeholder\"><img alt=\"Placeholder.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Placeholder.png/32px-Placeholder.png?210282\" width=\"32\" height=\"32\"></a> Trivia</span></h2>\n<ul><li>The Floating Lantern was introduced during the <a href=\"https://dontstarve.wiki.gg/wiki/Year_of_the_Carrat\" title=\"Year of the Carrat\">Year of the Carrat</a> event in 2020.</li></ul>\n<div></div>\n\n\n\n\n\n</div>",
+  "images": [
+    {
+      "height": 64,
+      "mime": "image/png",
+      "src": "/assets/wiki/4f821eda48e81c55c7dec5987ea8b9c519c79c0b93f9994d62ca1b769c2c01ae.png",
+      "title": "File:Floating Lantern.png",
+      "width": 64
+    }
+  ],
+  "pageId": 107079,
+  "plainText": "Floating Lantern\n\"It flickers with a warm glow.\"\nObject Info\nPerk\nFloats around on Ocean.\n15 sec.\nDoes not stack\n6 Days\nCrafting\n×3\nFilters\nTier\nMiscellaneous\n\"miniboatlantern\"\nExclusive to:\nOnly during the Event: Lunar New Year Events\n“How illuminating!”\n–Wilson\n“Ha! Fire beats water!”\n–Willow\n“Is floaty water light.”\n–Wolfgang\n“Such a happy little glow... I despise it.”\n–Wendy\n“GET OUT OF THE WATER BROTHER, IT'S UNSAFE!”\n–WX-78\n“The balloon seems a bit redundant, doesn't it?”\n–Wickerbottom\n“Light the way, little lantern!”\n–Woodie\n“It's oddly beautiful.”\n–Maxwell\n“The small vessel shall light my way.”\n–Wigfrid\n“We like to watch it paddle around.”\n–Webber\n“Float along, little lantern.”\n–Warly\n“Little Floater”\n–Wormwood\n“Nice to have some more light out here on the water.”\n–Winona\n“I'm sorry, but the souls I take cannot follow you.”\n–Wortox\n“Pretty water floaty.”\n–Wurt\n“It'll help us find the sea monsters. I know they're out there!”\n–Walter\n“The ocean could use a bit more light.”\n–Wanda\nFloating Lanterns are Items exclusive to Lunar New Year Events in Don't Starve Together. They can be acquired in exchange for 3 Lucky Gold Nugget at a Shrine.\nWhen placed on the ground, they emit light in a small radius for a duration of 6 Days. They also float around slowly when placed in the Ocean. They spontaneously combust upon expiring.\nTrivia[edit | edit source]\nThe Floating Lantern was introduced during the Year of the Carrat event in 2020.\nView or edit this template\nOfferings Filter\nLunar New Year Events\nYear of the Gobbler\nYear of the Varg\nYear of the Pig King\nYear of the Carrat\nYear of the Beefalo\nYear of the Catcoon\nYear of the Bunnyman\nYear of the Dragonfly\nYear of the Depths Worm\nYear of the Clockwork Knight",
+  "recipes": [
+    {
+      "character": null,
+      "dlc": null,
+      "ingredients": [
+        {
+          "amount": 3.0,
+          "amountText": null,
+          "position": 0,
+          "title": "Lucky Gold Nugget"
+        }
+      ],
+      "note": null,
+      "recipeId": "wiki-recipe:e0f0f19d1bb700438df41d8e6102f160612fa188456b4fc8404a9e4bafde6c63:0",
+      "result": "Floating Lantern",
+      "source": "Object Infobox",
+      "station": null,
+      "tab": null,
+      "tier": "14",
+      "variant": "base"
+    }
+  ],
+  "redirectTarget": null,
+  "revision": {
+    "id": 547518,
+    "sha1": "ae0ef4a9eee468bcbaf37ecd7d2eb4141ad229af",
+    "timestamp": "2025-08-01T20:39:44Z"
+  },
+  "schema_version": 1,
+  "title": "Floating Lantern",
+  "wikitext": "{{Object Infobox\n|name = Floating Lantern\n|image = Floating Lantern Dropped.png\n|icon = Floating Lantern.png\n|description = It flickers with a warm glow.\n|ingredient1 = Lucky Gold Nugget\n|multiplier1 = 3\n|filter = {{Pic|32|Offerings Filter}}\n|tier = 14\n|stack = Does not stack\n|perk = Floats around on Ocean.\n|dischargeRate=[[File:Prohibition sign.png|32px|link=Fuel/DST#None Fuel]] 6 Days\n|burnTime = {{Pic32|Light_Sources_Filter|Fire}} 15 sec.\n|spawnCode=\"miniboatlantern\"}}\n{{Exclusivity|Don't Starve Together}}\n{{Event|Lunar New Year Events}}\n{{Quotes\n|wilson = How illuminating!\n|willow = Ha! Fire beats water!\n|wolfgang = Is floaty water light.\n|wendy = Such a happy little glow... I despise it.\n|wx78 = GET OUT OF THE WATER BROTHER, IT'S UNSAFE!\n|wickerbottom = The balloon seems a bit redundant, doesn't it?\n|woodie = Light the way, little lantern!\n|maxwell = It's oddly beautiful.\n|wigfrid = The small vessel shall light my way.\n|webber = We like to watch it paddle around.\n|winona = Nice to have some more light out here on the water.\n|warly = Float along, little lantern.\n|wortox = I'm sorry, but the souls I take cannot follow you.\n|wormwood = Little Floater\n|wurt = Pretty water floaty.\n|walter = It'll help us find the sea monsters. I know they're out there!\n|wanda = The ocean could use a bit more light.\n|choose = webber}}\n'''Floating Lanterns''' are [[Items]] exclusive to Lunar New Year [[Events]] in ''[[Don't Starve Together]]''. They can be acquired in exchange for 3 [[Lucky Gold Nugget]] at a Shrine.\n\nWhen placed on the ground, they emit light in a small radius for a duration of 6 Days. They also float around slowly when placed in the [[Ocean]]. They spontaneously combust upon expiring.\n\n=={{pic|32|Placeholder}} Trivia==\n* The Floating Lantern was introduced during the [[Year of the Carrat]] event in 2020.\n{{clear}}\n{{Lunar New Year Events}}\n[[Category:Lunar New Year]]\n[[Category:Offerings Filter]]\n[[Category:Light Sources]]\n[[vi:Floating Lantern]]"
+}

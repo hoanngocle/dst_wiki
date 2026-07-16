@@ -1,0 +1,54 @@
+{
+  "canonicalUrl": "https://dontstarve.wiki.gg/wiki/Moon_Jelly",
+  "categories": [
+    "DST-Specific_Pages",
+    "Lunar_New_Year",
+    "Offerings_Filter",
+    "Pages_using_Tabber_parser_tag",
+    "Pages_with_navboxes"
+  ],
+  "displayTitle": "<span class=\"mw-page-title-main\">Moon Jelly</span>",
+  "html": "<div class=\"mw-content-ltr mw-parser-output\"><p><i>Exclusive to:</i> <a href=\"https://dontstarve.wiki.gg/wiki/DST\" title=\"DST\"><img alt=\"Don&#x27;t Starve Together icon.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Don%27t_Starve_Together_icon.png/32px-Don%27t_Starve_Together_icon.png?3bc208\" width=\"32\" height=\"35\"></a><br>\n<i>Only during the <a href=\"https://dontstarve.wiki.gg/wiki/Category:Events\" title=\"Category:Events\">Event</a>:</i> <a href=\"https://dontstarve.wiki.gg/wiki/Year_of_the_Bunnyman\" title=\"Year of the Bunnyman\"><img alt=\"Bunnyman Shrine Map Icon.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Bunnyman_Shrine_Map_Icon.png/50px-Bunnyman_Shrine_Map_Icon.png?e99ab8\" width=\"50\" height=\"50\"></a> <a href=\"https://dontstarve.wiki.gg/wiki/Year_of_the_Bunnyman\" title=\"Year of the Bunnyman\">Year of the Bunnyman</a><br>\n</p>\n\n\n<p><b>Moon Jelly</b> is a <a href=\"https://dontstarve.wiki.gg/wiki/Food\" title=\"Food\">Food</a> <a href=\"https://dontstarve.wiki.gg/wiki/Item\" class=\"mw-redirect\" title=\"Item\">Item</a> that can be obtained at a <a href=\"https://dontstarve.wiki.gg/wiki/Bunnyman_Shrine\" class=\"mw-redirect\" title=\"Bunnyman Shrine\">Bunnyman Shrine</a> for 5 <a href=\"https://dontstarve.wiki.gg/wiki/Lucky_Gold_Nugget\" title=\"Lucky Gold Nugget\">Lucky Gold Nuggets</a>.\n</p>\n<div></div>\n<div class=\"tabber tabber--init\"><a class=\"tabber__tab\" id=\"By_Type-0-label\" href=\"https://dontstarve.wiki.gg/wiki/Moon_Jelly#By_Type-0\">By Type</a><a class=\"tabber__tab\" id=\"By_Crock_Pot_Value-0-label\" href=\"https://dontstarve.wiki.gg/wiki/Moon_Jelly#By_Crock_Pot_Value-0\">By Crock Pot Value</a><section class=\"tabber__section\"><p class=\"mw-empty-elt\"></p>\n<p class=\"mw-empty-elt\"></p><p class=\"mw-empty-elt\"></p>\n<p class=\"mw-empty-elt\"></p></section></div>\n\n\n\n\n</div>",
+  "images": [
+    {
+      "height": 64,
+      "mime": "image/png",
+      "src": "/assets/wiki/2d2a48ceeda25ff1505f564942d97f88664072ce3811c6958c3fc240583c2d59.png",
+      "title": "File:Moon Jelly.png",
+      "width": 64
+    }
+  ],
+  "pageId": 193999,
+  "plainText": "Exclusive to:\nOnly during the Event: Year of the Bunnyman\nMoon Jelly\n\"\"This dessert looks almost too good to eat.\"\"\nFood Info\n19\n15\n33\nGoodies\nObject Info\n15\n40\nCrafting\n×5\nFilters\nTier\nMiscellaneous\n\"yotr_food3\"\n“A jiggly treat.”\n–Wilson\n“Eww, it looks like a big jelly eyeball.”\n–Willow\n“Is funny wobble dessert.”\n–Wolfgang\n“I'm sorry Abigail, I'd share if I could.”\n–Wendy\n“THE MOON JELLY IS MINE”\n–WX-78\n“What a fascinating confection!”\n–Wickerbottom\n“Looks like it's got a little snowcap on top.”\n–Woodie\n“A small piece of fruit, imprisoned in gelatin.”\n–Maxwell\n“A deliciöus sight indeed!”\n–Wigfrid\n“We kinda want to poke it.”\n–Webber\n“A feast for the eyes and my stomach.”\n–Warly\n“Looking?”\n–Wormwood\n“It looks like one of Warly's more fancy-pants desserts.”\n–Winona\n“A jelly ball. That is all.”\n–Wortox\n“That really okay for eating?”\n–Wurt\n“It's so jiggly!”\n–Walter\n“What a fashionable jelly dessert!”\n–Wanda\nMoon Jelly is a Food Item that can be obtained at a Bunnyman Shrine for 5 Lucky Gold Nuggets.\nBy TypeBy Crock Pot Value\nView or edit this template\nFood and Edible Items (by Food Type)\nVeggie\nSeeds\nMeat\nGoodies\nGeneric\nHorrible\nRoughage\nElementals\nBurnt\nRaw\nGears\nGold Dust\nBerry\nWood\nNitre\nLunar Shards\nView or edit this template\nFood and Edible Items (by Food Value)\nMeats\nFishes\nVegetables\nFruits\nMonster Food\nEggs\nDairy\nSweetener\nFrozen\nInedibles\nMagic\nFat\nSeed\nJellyfish\nBone\nFilter\nAntihistamine\nDecoration\nBug\nNo Value Food",
+  "recipes": [
+    {
+      "character": null,
+      "dlc": null,
+      "ingredients": [
+        {
+          "amount": 5.0,
+          "amountText": null,
+          "position": 0,
+          "title": "Lucky Gold Nugget"
+        }
+      ],
+      "note": null,
+      "recipeId": "wiki-recipe:2f92ca8316984290b4581f0c9275cf6bf5f83f1baee2a13d8ff4ad680aaa397c:0",
+      "result": "Moon Jelly",
+      "source": "Object Infobox",
+      "station": null,
+      "tab": null,
+      "tier": "29",
+      "variant": "base"
+    }
+  ],
+  "redirectTarget": null,
+  "revision": {
+    "id": 547903,
+    "sha1": "af696ed0a6b0a40d28c0cb4db308fef6ecf82383",
+    "timestamp": "2025-08-01T22:25:50Z"
+  },
+  "schema_version": 1,
+  "title": "Moon Jelly",
+  "wikitext": "{{Exclusivity|DST}}\n{{Event|Year of the Bunnyman}}\n{{Object Infobox\n|foodType =[[Goodies]] [[File:Goodies.png|32px|link=Goodies]]\n|tier = 29\n|name = Moon Jelly\n|icon = Moon Jelly.png\n|image = Moon Jelly Dropped.png\n|stack          = 40\n|spoil          =15\n|hpRestored     =15 \n|hungerRestored =19 \n|sanityRestored =33 \n|spawnCode      =\"yotr_food3\"\n|description = \"This dessert looks almost too good to eat.\"\n|ingredient1 =Lucky Gold Nugget \n|multiplier1 =5 \n|filter ={{Pic32|Offerings Filter}} \n}}{{Quotes\n|walter=It's so jiggly!\n|wanda=What a fashionable jelly dessert!\n|warly=A feast for the eyes and my stomach.\n|wigfrid=A deliciöus sight indeed!\n|maxwell=A small piece of fruit, imprisoned in gelatin.\n|webber=We kinda want to poke it.\n|wendy=I'm sorry Abigail, I'd share if I could.\n|wickerbottom=What a fascinating confection!\n|willow=Eww, it looks like a big jelly eyeball.\n|wilson=A jiggly treat.\n|winona=It looks like one of Warly's more fancy-pants desserts.\n|wolfgang=Is funny wobble dessert.\n|woodie=Looks like it's got a little snowcap on top.\n|wormwood=Looking?\n|wortox=A jelly ball. That is all.\n|wurt=That really okay for eating?\n|wx78=THE MOON JELLY IS MINE\n|choose=wilson}}\n'''Moon Jelly''' is a [[Food]] [[Item]] that can be obtained at a [[Bunnyman Shrine]] for 5 [[Lucky Gold Nugget]]s.\n{{Clear}}\n{{Food and Edible Items}}\n[[Category:Lunar New Year]]\n[[Category:Offerings Filter]]"
+}
