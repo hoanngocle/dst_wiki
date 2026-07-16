@@ -242,6 +242,49 @@ describe("ItemDetailModal", () => {
     expect(await screen.findByText("Full Halberd article.")).toBeDefined();
   });
 
+  it("places the Wiki summary before the crafting section", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: async () => ({
+          schema_version: 1,
+          pageId: 100736,
+          title: "Halberd",
+          canonicalUrl: "https://dontstarve.wiki.gg/wiki/Halberd",
+          html: "<p>Full Halberd article.</p>",
+          summaryViHtml: "<h2>Tóm tắt</h2><p>Tóm tắt tiếng Việt.</p>",
+          categories: ["Items"],
+          images: [],
+          recipes: [],
+          revision: {
+            id: 569319,
+            sha1: "5bf67f6c77b1a0d0c5bb66b0ef02ccf5c04dba64",
+            timestamp: "2026-07-12T08:43:43Z",
+          },
+        }),
+      }),
+    );
+
+    render(
+      <ItemDetailModal
+        {...modalProps({ ...wikiItem, recipe: item.recipe })}
+      />,
+    );
+
+    const summaryHeading = await screen.findByRole("heading", { name: "Tóm tắt" });
+    const craftingHeading = screen.getByRole("heading", { name: "Công thức" });
+    const articleHeading = screen.getByRole("heading", { name: "Bài viết Wiki" });
+    expect(
+      summaryHeading.compareDocumentPosition(craftingHeading) &
+        Node.DOCUMENT_POSITION_FOLLOWING,
+    ).toBeTruthy();
+    expect(
+      craftingHeading.compareDocumentPosition(articleHeading) &
+        Node.DOCUMENT_POSITION_FOLLOWING,
+    ).toBeTruthy();
+  });
+
   it("forwards mapped Wiki item selections to the shared detail flow", async () => {
     const onSelectItem = vi.fn();
     vi.stubGlobal(

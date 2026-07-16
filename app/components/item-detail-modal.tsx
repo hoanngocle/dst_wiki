@@ -25,6 +25,68 @@ const categoryLabel = {
   other: "Khác",
 } as const;
 
+function CraftingSections({
+  item,
+  titleId,
+}: {
+  item: ItemListEntry;
+  titleId: string;
+}) {
+  return (
+    <>
+      {item.recipe ? (
+        <section
+          aria-labelledby={`${titleId}-crafting`}
+          className="overflow-hidden rounded-2xl border border-[#c8d3df] bg-[#f8fafc]"
+        >
+          <h3
+            id={`${titleId}-crafting`}
+            className="border-b border-[#d5dde6] px-4 py-3 text-sm font-semibold text-[#172943]"
+          >
+            Công thức
+          </h3>
+          <div className="flex flex-wrap items-center gap-3 p-4">
+            <RecipeIngredients recipe={item.recipe} />
+            <span aria-hidden="true" className="text-lg font-semibold text-[#607188]">
+              =
+            </span>
+            <span
+              aria-label={`Kết quả: ${item.name}, số lượng ${item.recipe.outputCount}`}
+              className="inline-flex min-h-10 items-center gap-2 rounded-xl border border-[#b9cce8] bg-[#e9f1fb] py-1 pl-1 pr-3 text-sm font-semibold text-[#263b58]"
+            >
+              <GameSprite sprite={item.sprite} size={32} />
+              <span>{item.name}</span>
+              {item.recipe.outputCount > 1 ? <span>×{item.recipe.outputCount}</span> : null}
+            </span>
+          </div>
+          {item.craftingNote ? (
+            <p className="border-t border-[#dce3eb] px-4 py-3 text-sm leading-6 text-[#53647a]">
+              {item.craftingNote}
+            </p>
+          ) : null}
+        </section>
+      ) : null}
+
+      {!item.recipe && item.craftingNote ? (
+        <section
+          aria-labelledby={`${titleId}-crafting-note`}
+          className="overflow-hidden rounded-2xl border border-[#c8d3df] bg-[#f8fafc]"
+        >
+          <h3
+            id={`${titleId}-crafting-note`}
+            className="border-b border-[#d5dde6] px-4 py-3 text-sm font-semibold text-[#172943]"
+          >
+            Cách tạo / ghi chú chế tạo
+          </h3>
+          <p className="px-4 py-3 text-sm leading-6 text-[#53647a]">
+            {item.craftingNote}
+          </p>
+        </section>
+      ) : null}
+    </>
+  );
+}
+
 export function ItemDetailModal({
   item,
   itemsById,
@@ -45,6 +107,7 @@ export function ItemDetailModal({
       ? "Tu Tiên"
       : "DST";
   const category = categoryLabel[item.category];
+  const craftingContent = <CraftingSections item={item} titleId={titleId} />;
 
   useEffect(() => {
     const previouslyFocused = document.activeElement as HTMLElement | null;
@@ -134,56 +197,6 @@ export function ItemDetailModal({
         </div>
 
         <div className="space-y-4 p-5 sm:p-6">
-          {item.recipe ? (
-            <section
-              aria-labelledby={`${titleId}-crafting`}
-              className="overflow-hidden rounded-2xl border border-[#c8d3df] bg-[#f8fafc]"
-            >
-              <h3
-                id={`${titleId}-crafting`}
-                className="border-b border-[#d5dde6] px-4 py-3 text-sm font-semibold text-[#172943]"
-              >
-                Công thức
-              </h3>
-              <div className="flex flex-wrap items-center gap-3 p-4">
-                <RecipeIngredients recipe={item.recipe} />
-                <span aria-hidden="true" className="text-lg font-semibold text-[#607188]">
-                  =
-                </span>
-                <span
-                  aria-label={`Kết quả: ${item.name}, số lượng ${item.recipe.outputCount}`}
-                  className="inline-flex min-h-10 items-center gap-2 rounded-xl border border-[#b9cce8] bg-[#e9f1fb] py-1 pl-1 pr-3 text-sm font-semibold text-[#263b58]"
-                >
-                  <GameSprite sprite={item.sprite} size={32} />
-                  <span>{item.name}</span>
-                  {item.recipe.outputCount > 1 ? <span>×{item.recipe.outputCount}</span> : null}
-                </span>
-              </div>
-              {item.craftingNote ? (
-                <p className="border-t border-[#dce3eb] px-4 py-3 text-sm leading-6 text-[#53647a]">
-                  {item.craftingNote}
-                </p>
-              ) : null}
-            </section>
-          ) : null}
-
-          {!item.recipe && item.craftingNote ? (
-            <section
-              aria-labelledby={`${titleId}-crafting-note`}
-              className="overflow-hidden rounded-2xl border border-[#c8d3df] bg-[#f8fafc]"
-            >
-              <h3
-                id={`${titleId}-crafting-note`}
-                className="border-b border-[#d5dde6] px-4 py-3 text-sm font-semibold text-[#172943]"
-              >
-                Cách tạo / ghi chú chế tạo
-              </h3>
-              <p className="px-4 py-3 text-sm leading-6 text-[#53647a]">
-                {item.craftingNote}
-              </p>
-            </section>
-          ) : null}
-
           {item.wiki ? (
             <WikiArticle
               key={item.wiki.detailUrl}
@@ -191,8 +204,11 @@ export function ItemDetailModal({
               canonicalUrl={item.wiki.canonicalUrl}
               itemsById={itemsById}
               onSelectItem={onSelectItem}
+              contentAfterSummary={craftingContent}
             />
-          ) : null}
+          ) : (
+            craftingContent
+          )}
         </div>
       </section>
     </div>
