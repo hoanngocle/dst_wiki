@@ -105,8 +105,8 @@ describe("ItemDetailModal", () => {
     expect(screen.getByRole("heading", { name: "Công thức" })).toBeDefined();
     expect(screen.getByText("=")).toBeDefined();
     expect(screen.getByLabelText("Kết quả: Vàng, số lượng 1")).toBeDefined();
-    expect(screen.getByRole("heading", { name: "Mô tả" })).toBeDefined();
-    expect(screen.getByText("Một cục vàng.")).toBeDefined();
+    expect(screen.queryByRole("heading", { name: "Mô tả" })).toBeNull();
+    expect(screen.queryByText("Một cục vàng.")).toBeNull();
     expect(screen.queryByRole("heading", { name: "Source" })).toBeNull();
     expect(screen.queryByText("Dropped by")).toBeNull();
     expect(screen.queryByRole("heading", { name: "Thông tin kỹ thuật" })).toBeNull();

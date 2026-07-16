@@ -134,23 +134,6 @@ export function ItemDetailModal({
         </div>
 
         <div className="space-y-4 p-5 sm:p-6">
-          {item.description ? (
-            <section
-              aria-labelledby={`${titleId}-description`}
-              className="overflow-hidden rounded-2xl border border-[#c8d3df] bg-[#f8fafc]"
-            >
-              <h3
-                id={`${titleId}-description`}
-                className="border-b border-[#d5dde6] px-4 py-3 text-sm font-semibold text-[#172943]"
-              >
-                Mô tả
-              </h3>
-              <p className="px-4 py-3 text-sm leading-6 text-[#53647a]">
-                {item.description}
-              </p>
-            </section>
-          ) : null}
-
           {item.recipe ? (
             <section
               aria-labelledby={`${titleId}-crafting`}
