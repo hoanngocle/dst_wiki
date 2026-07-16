@@ -166,6 +166,9 @@ describe("WikiStructuredSections", () => {
     expect(screen.getByText("10 nguồn từ Wiki")).toBeDefined();
     const dropTable = screen.getByRole("table", { name: "Drop table" });
     expect(within(dropTable).getAllByRole("row")).toHaveLength(11);
+    expect(dropTable.className).toContain("table-fixed");
+    expect(dropTable.className).not.toContain("min-w-");
+    expect(dropTable.parentElement?.className).not.toContain("overflow-x-auto");
     expect(
       within(dropTable).getByRole("columnheader", { name: "Nguồn" }).className,
     ).toContain("w-[58%]");
@@ -173,6 +176,12 @@ describe("WikiStructuredSections", () => {
     expect(within(dropTable).getByRole("columnheader", { name: "Tỷ lệ" })).toBeDefined();
     expect(within(dropTable).getByRole("columnheader", { name: "Điều kiện" })).toBeDefined();
     expect(screen.getByText("1-3")).toBeDefined();
+    expect(screen.getByText("1-3").closest("td")?.className).not.toContain(
+      "whitespace-nowrap",
+    );
+    expect(screen.getByText("1-3").closest("td")?.className).toContain(
+      "break-words",
+    );
     expect(screen.getByText("40%")).toBeDefined();
     expect(screen.getByText("Khi mất trí")).toBeDefined();
     expect(screen.getByRole("heading", { name: "Usage" })).toBeDefined();
@@ -281,7 +290,17 @@ describe("WikiStructuredSections", () => {
       screen.queryByText("Only available in the world linked with a Hamlet world."),
     ).toBeNull();
     const beardlingLink = screen.getByRole("link", { name: "Beardling" });
+    expect(beardlingLink.closest("td")?.firstElementChild?.className).toContain(
+      "flex-wrap",
+    );
+    expect(beardlingLink.closest("td")?.firstElementChild?.className).not.toContain(
+      "flex-nowrap",
+    );
     expect(beardlingLink.className).toContain("whitespace-nowrap");
+    expect(beardlingLink.className).toContain("max-w-full");
+    expect(within(beardlingLink).getByText("Beardling").className).toContain(
+      "truncate",
+    );
     expect(beardlingLink.firstElementChild?.getAttribute("data-testid")).toBe(
       "wiki-source-icon",
     );

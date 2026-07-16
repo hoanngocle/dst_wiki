@@ -88,7 +88,11 @@ describe("ItemDetailModal", () => {
   it("renders full item details and focuses the close button", () => {
     render(<ItemDetailModal {...modalProps(item)} />);
 
-    expect(screen.getByRole("dialog", { name: "Vàng" })).toBeDefined();
+    const dialog = screen.getByRole("dialog", { name: "Vàng" });
+    expect(dialog).toBeDefined();
+    expect(dialog.className).not.toContain("overflow-y-auto");
+    expect(dialog.className).not.toContain("max-h-");
+    expect(dialog.parentElement?.className).toContain("overflow-y-auto");
     expect(screen.getByText("Gold Nugget")).toBeDefined();
     expect(screen.queryByText("goldnugget")).toBeNull();
     expect(screen.getByLabelText("Đá, số lượng 1")).toBeDefined();

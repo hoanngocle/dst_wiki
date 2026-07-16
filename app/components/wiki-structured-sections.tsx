@@ -177,8 +177,9 @@ function WikiReference({
     return (
       <button
         type="button"
+        title={item.name}
         onClick={() => onSelectItem(item)}
-        className="inline-flex min-h-11 cursor-pointer items-center gap-2 whitespace-nowrap rounded-xl px-1.5 py-1 text-left font-semibold text-[#263b58] transition hover:bg-[#e9f1fb] hover:text-[#2e5fb3] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2e5fb3]/30"
+        className="inline-flex min-h-11 max-w-full cursor-pointer items-center gap-2 whitespace-nowrap rounded-xl px-1.5 py-1 text-left font-semibold text-[#263b58] transition hover:bg-[#e9f1fb] hover:text-[#2e5fb3] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2e5fb3]/30"
       >
         <GameSprite
           sprite={item.sprite}
@@ -186,7 +187,7 @@ function WikiReference({
           rounded={false}
           className="rounded-[4px]"
         />
-        <span>{item.name}</span>
+        <span className="min-w-0 truncate">{item.name}</span>
       </button>
     );
   }
@@ -196,7 +197,8 @@ function WikiReference({
       href={reference.url}
       target="_blank"
       rel="noreferrer"
-      className="inline-flex min-h-11 items-center gap-2 whitespace-nowrap rounded-xl px-1.5 py-1 font-semibold text-[#2e5fb3] transition hover:bg-[#e9f1fb] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2e5fb3]/30"
+      title={reference.title}
+      className="inline-flex min-h-11 max-w-full items-center gap-2 whitespace-nowrap rounded-xl px-1.5 py-1 font-semibold text-[#2e5fb3] transition hover:bg-[#e9f1fb] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2e5fb3]/30"
     >
       {showFallbackIcon ? (
         reference.iconUrl ? (
@@ -217,8 +219,8 @@ function WikiReference({
           />
         )
       ) : null}
-      <span>{reference.title}</span>
-      <ArrowSquareOut aria-hidden="true" size={14} />
+      <span className="min-w-0 truncate">{reference.title}</span>
+      <ArrowSquareOut aria-hidden="true" size={14} className="shrink-0" />
     </a>
   );
 }
@@ -265,8 +267,8 @@ export function WikiStructuredSections({
             {sections.dropTable.rows.length} nguồn từ Wiki
           </p>
         </div>
-        <div className="overflow-x-auto">
-          <table aria-label="Drop table" className="w-full min-w-[860px] border-collapse text-left">
+        <div className="min-w-0">
+          <table aria-label="Drop table" className="w-full table-fixed border-collapse text-left">
             <thead className="bg-[#eaf0f6]">
               <tr className="border-b border-[#c8d3df]">
                 <th
@@ -302,7 +304,7 @@ export function WikiStructuredSections({
                   className="bg-[#f8fafc] align-middle transition-colors hover:bg-[#f1f5f9]"
                 >
                   <td className="px-4 py-2 sm:px-5">
-                    <div className="flex flex-nowrap gap-x-1">
+                    <div className="flex flex-wrap gap-x-1 gap-y-1">
                       {row.sources.map((source) => (
                         <WikiReference
                           key={source.url}
@@ -314,7 +316,7 @@ export function WikiStructuredSections({
                       ))}
                     </div>
                   </td>
-                  <td className="whitespace-nowrap px-4 py-2 font-mono text-sm font-semibold text-[#172943]">
+                  <td className="break-words px-4 py-2 font-mono text-sm font-semibold text-[#172943]">
                     {row.quantity}
                   </td>
                   <td className="whitespace-nowrap px-4 py-2 font-mono text-sm font-semibold text-[#172943]">
