@@ -105,6 +105,30 @@ def _page_image_identities(wikitext: str) -> Tuple[str, ...]:
     return tuple(dict.fromkeys(preferred + referenced))
 
 
+def _seed_image_identities(crawl_root: Path) -> Dict[str, str]:
+    path = Path(crawl_root) / "seeds.jsonl"
+    if not path.is_file():
+        return {}
+    identities: Dict[str, str] = {}
+    with path.open(encoding="utf-8") as source:
+        for line_number, line in enumerate(source, start=1):
+            if not line.strip():
+                continue
+            try:
+                seed = json.loads(line)
+            except json.JSONDecodeError as error:
+                raise ValueError(
+                    f"invalid seed record at {path}:{line_number}"
+                ) from error
+            title = seed.get("title") if isinstance(seed, dict) else None
+            icon_title = seed.get("icon_title") if isinstance(seed, dict) else None
+            if isinstance(title, str) and isinstance(icon_title, str):
+                identities.setdefault(
+                    normalize_identity(title), _file_identity(icon_title)
+                )
+    return identities
+
+
 class _Sanitizer(HTMLParser):
     allowed_tags = {
         "a", "aside", "b", "blockquote", "br", "code", "dd", "div", "dl",
@@ -316,6 +340,7 @@ def load_wiki_export(database_path: Path, crawl_root: Path) -> WikiExport:
             "select * from wiki_recipe_ingredients order by recipe_id,position"
         ).fetchall()
 
+    seed_image_identities = _seed_image_identities(crawl_root)
     images_by_identity: Dict[str, WikiAsset] = {}
     for row in image_rows:
         suffix = Path(row["local_path"]).suffix.casefold()
@@ -340,7 +365,13 @@ def load_wiki_export(database_path: Path, crawl_root: Path) -> WikiExport:
     for row in page_rows:
         value = dict(row)
         value["categories"] = _categories(row["categories_json"])
-        identities = _page_image_identities(row["wikitext"])
+        seed_identity = seed_image_identities.get(normalize_identity(row["title"]))
+        identities = tuple(
+            dict.fromkeys(
+                ([seed_identity] if seed_identity else [])
+                + list(_page_image_identities(row["wikitext"]))
+            )
+        )
         page_assets = tuple(
             images_by_identity[identity]
             for identity in identities

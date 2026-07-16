@@ -65,6 +65,41 @@ class WikiExportTests(unittest.TestCase):
         self.assertEqual(by_id["wiki:11"]["prefabId"], "wiki-11")
         self.assertEqual(by_id["wiki:11"]["wiki"]["mappingState"], "unmatched")
 
+    def test_uses_crawled_seed_icon_when_wikitext_omits_image_field(self):
+        (self.crawl / "seeds.jsonl").write_text(
+            json.dumps(
+                {
+                    "schema_version": 1,
+                    "title": "Gold Nugget",
+                    "href": "/wiki/Gold_Nugget",
+                    "icon_title": "File:Gold Nugget.png",
+                    "icon_thumbnail_url": (
+                        "https://dontstarve.wiki.gg/images/thumb/"
+                        "Gold_Nugget.png/40px-Gold_Nugget.png"
+                    ),
+                    "source_sections": ["Items#Resources-0"],
+                },
+                sort_keys=True,
+            )
+            + "\n",
+            encoding="utf-8",
+        )
+        with sqlite3.connect(self.database) as connection:
+            connection.execute(
+                "update wiki_pages set wikitext=? where page_id=10",
+                ('|spawnCode = "goldnugget"',),
+            )
+
+        wiki = load_wiki_export(self.database, self.crawl)
+        item = merge_wiki_items([], wiki)[0]
+
+        self.assertEqual(
+            item["sprite"]["src"],
+            "/assets/wiki/"
+            + hashlib.sha256(b"original-image").hexdigest()
+            + ".png",
+        )
+
     def test_fractional_wiki_recipe_amount_is_preserved(self):
         wiki = load_wiki_export(self.database, self.crawl)
 
