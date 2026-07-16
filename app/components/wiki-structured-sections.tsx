@@ -2,7 +2,7 @@
 
 import { ArrowSquareOut } from "@phosphor-icons/react";
 import Image from "next/image";
-import { useId, useMemo } from "react";
+import { useId, useMemo, useState } from "react";
 
 import type { ItemListEntry } from "@/app/lib/item-catalog";
 import type {
@@ -32,10 +32,21 @@ const STATION_ICON_URLS: Readonly<Record<string, string>> = {
     "https://dontstarve.wiki.gg/images/thumb/Navbox_Broken_Pseudoscience_Station.png/50px-Navbox_Broken_Pseudoscience_Station.png?926476",
 };
 
+const LOCAL_USAGE_ICON_PATHS: Readonly<Record<string, string>> = {
+  "sleepytime stories": "/assets/wiki/usage/sleepytime-stories.png",
+  "broken pseudoscience station":
+    "/assets/wiki/usage/broken-pseudoscience-station.png",
+  "ancient pseudoscience station":
+    "/assets/wiki/usage/ancient-pseudoscience-station.png",
+};
+
 const HIDDEN_USAGE_DLC_PATTERN = /\b(?:shipwrecked|hamlet)\b/i;
 
 function normalizedTitle(value: string) {
-  return value.trim().toLocaleLowerCase("en");
+  return value
+    .trim()
+    .toLocaleLowerCase("en")
+    .replace(/\barmour\b/g, "armor");
 }
 
 function wikiPageUrl(title: string) {
@@ -74,6 +85,35 @@ function indexItemsByTitle(itemsById: ReadonlyMap<string, ItemListEntry>) {
   return result;
 }
 
+function WikiUsageImage({ src }: { src: string }) {
+  const [failed, setFailed] = useState(false);
+
+  if (failed) {
+    return (
+      <GameSprite
+        sprite={null}
+        size={STRUCTURED_ICON_SIZE}
+        rounded={false}
+        className="rounded-[4px]"
+      />
+    );
+  }
+
+  return (
+    <Image
+      src={src}
+      alt=""
+      width={STRUCTURED_ICON_SIZE}
+      height={STRUCTURED_ICON_SIZE}
+      unoptimized={src.startsWith("/")}
+      loading="eager"
+      data-testid="wiki-usage-icon"
+      onError={() => setFailed(true)}
+      className="size-[48px] shrink-0 rounded-[4px] border border-[#c8d3df] bg-[#e5ebf1] object-contain"
+    />
+  );
+}
+
 function WikiUsageIcon({
   reference,
   amount,
@@ -96,6 +136,10 @@ function WikiUsageIcon({
     amount === undefined
       ? displayTitle
       : `${displayTitle}, số lượng ${amount}`;
+  const iconUrl =
+    LOCAL_USAGE_ICON_PATHS[normalizedTitle(reference.title)] ??
+    reference.iconUrl ??
+    wikiFileUrl(reference.title);
   const image = item?.sprite ? (
     <GameSprite
       sprite={item.sprite}
@@ -104,14 +148,7 @@ function WikiUsageIcon({
       className="rounded-[4px]"
     />
   ) : (
-    <Image
-      src={reference.iconUrl ?? wikiFileUrl(reference.title)}
-      alt=""
-      width={STRUCTURED_ICON_SIZE}
-      height={STRUCTURED_ICON_SIZE}
-      data-testid="wiki-usage-icon"
-      className="size-[48px] shrink-0 rounded-[4px] border border-[#c8d3df] bg-[#e5ebf1] object-contain"
-    />
+    <WikiUsageImage key={iconUrl} src={iconUrl} />
   );
   const content = (
     <>

@@ -40,9 +40,27 @@ const nightmareFuel: ItemListEntry = {
   wiki: null,
 };
 
+const nightArmor: ItemListEntry = {
+  id: "base_game:armor_sanity",
+  prefabId: "armor_sanity",
+  namespace: "base_game",
+  category: "item",
+  name: "Giáp Bóng Tối",
+  englishName: "Night Armor",
+  description: null,
+  craftingNote: null,
+  sprite: {
+    src: "/assets/game/night-armor.png",
+    uv: { u1: 0, u2: 1, v1: 0, v2: 1 },
+  },
+  recipe: null,
+  wiki: null,
+};
+
 const catalogItems = new Map([
   [nightLight.id, nightLight],
   [nightmareFuel.id, nightmareFuel],
+  [nightArmor.id, nightArmor],
 ]);
 
 const sections: NormalizedWikiSections = {
@@ -266,7 +284,7 @@ describe("WikiStructuredSections", () => {
         within(brokenStation).getByTestId("wiki-usage-icon").getAttribute("src") ?? "",
       ),
     ).toContain(
-      "https://dontstarve.wiki.gg/images/thumb/Navbox_Broken_Pseudoscience_Station.png/50px-Navbox_Broken_Pseudoscience_Station.png?926476",
+      "/assets/wiki/usage/broken-pseudoscience-station.png",
     );
     expect(
       within(brokenStation)
@@ -338,5 +356,105 @@ describe("WikiStructuredSections", () => {
     );
 
     expect(onSelectItem).toHaveBeenCalledWith(nightLight);
+  });
+
+  it("uses local Usage assets and resolves the Wiki armour spelling", () => {
+    const iconSections: NormalizedWikiSections = {
+      dropTable: { rows: [] },
+      usage: {
+        recipes: [
+          {
+            result: {
+              title: "Sleepytime Stories",
+              url: "https://dontstarve.wiki.gg/wiki/Sleepytime_Stories",
+              entityId: null,
+            },
+            resultAmount: 1,
+            nightmareFuelAmount: 2,
+            ingredients: [],
+            station: "Broken Pseudoscience Station",
+            dlc: null,
+            character: "Wickerbottom",
+            note: null,
+          },
+          {
+            result: {
+              title: "Night Armour",
+              url: "https://dontstarve.wiki.gg/wiki/Night_Armor",
+              entityId: null,
+            },
+            resultAmount: 1,
+            nightmareFuelAmount: 5,
+            ingredients: [],
+            station: "Ancient Pseudoscience Station",
+            dlc: null,
+            character: null,
+            note: null,
+          },
+        ],
+      },
+    };
+
+    render(
+      <WikiStructuredSections
+        sections={iconSections}
+        itemsById={catalogItems}
+        onSelectItem={vi.fn()}
+      />,
+    );
+
+    const sleepytime = screen.getByRole("link", {
+      name: "Sleepytime Stories, số lượng 1",
+    });
+    expect(
+      within(sleepytime).getByTestId("wiki-usage-icon").getAttribute("loading"),
+    ).toBe("eager");
+    expect(
+      new URL(
+        within(sleepytime).getByTestId("wiki-usage-icon").getAttribute("src") ?? "",
+      ).pathname,
+    ).toBe("/assets/wiki/usage/sleepytime-stories.png");
+
+    const brokenStation = screen.getByRole("link", {
+      name: "Broken Pseudoscience Station",
+    });
+    expect(
+      new URL(
+        within(brokenStation).getByTestId("wiki-usage-icon").getAttribute("src") ?? "",
+      ).pathname,
+    ).toBe("/assets/wiki/usage/broken-pseudoscience-station.png");
+
+    const ancientStation = screen.getByRole("link", {
+      name: "Ancient Pseudoscience Station",
+    });
+    expect(
+      new URL(
+        within(ancientStation).getByTestId("wiki-usage-icon").getAttribute("src") ?? "",
+      ).pathname,
+    ).toBe("/assets/wiki/usage/ancient-pseudoscience-station.png");
+
+    expect(
+      within(
+        screen.getByRole("button", { name: "Giáp Bóng Tối, số lượng 1" }),
+      ).getByTestId("game-sprite"),
+    ).toBeDefined();
+  });
+
+  it("shows a visible fallback when a remote Usage image fails", () => {
+    render(
+      <WikiStructuredSections
+        sections={sections}
+        itemsById={catalogItems}
+        onSelectItem={vi.fn()}
+      />,
+    );
+
+    const gold = screen.getByRole("link", {
+      name: "Gold Nugget, số lượng 8",
+    });
+    fireEvent.error(within(gold).getByTestId("wiki-usage-icon"));
+
+    expect(within(gold).queryByTestId("wiki-usage-icon")).toBeNull();
+    expect(within(gold).getByTestId("game-sprite").dataset.missing).toBe("true");
   });
 });
