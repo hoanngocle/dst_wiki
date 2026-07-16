@@ -10,6 +10,7 @@ export type NormalizedWikiReference = {
   title: string;
   url: string;
   entityId: string | null;
+  iconUrl?: string | null;
 };
 
 export type NormalizedWikiDropRow = {
@@ -111,6 +112,8 @@ function parseReference(value: unknown, field: string): NormalizedWikiReference 
     title: requiredString(value.title, `${field} title`),
     url: requiredString(value.url, `${field} url`),
     entityId: nullableString(value.entityId, `${field} entityId`),
+    iconUrl:
+      value.iconUrl == null ? null : requiredString(value.iconUrl, `${field} iconUrl`),
   };
 }
 

@@ -36,6 +36,8 @@ const normalized = {
             title: "Beardling",
             url: "https://dontstarve.wiki.gg/wiki/Beardling",
             entityId: null,
+            iconUrl:
+              "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Beardling.png",
           },
         ],
         quantity: "1-3",
@@ -103,6 +105,9 @@ describe("parseWikiPageDetail", () => {
     const parsed = parseWikiPageDetail({ ...validDetail, normalized });
 
     expect(parsed.normalized?.dropTable.rows).toHaveLength(1);
+    expect(parsed.normalized?.dropTable.rows[0].sources[0].iconUrl).toBe(
+      "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Beardling.png",
+    );
     expect(parsed.normalized?.usage.recipes[0]).toMatchObject({
       nightmareFuelAmount: 2,
       station: "Prestihatitator",

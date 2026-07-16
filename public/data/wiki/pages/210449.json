@@ -42,11 +42,13 @@
           "sources": [
             {
               "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Beardling.png",
               "title": "Beardling",
               "url": "https://dontstarve.wiki.gg/wiki/Beardling"
             },
             {
               "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Crab_%28insanity%29.png",
               "title": "Crab Beardling",
               "url": "https://dontstarve.wiki.gg/wiki/Crab_%28insanity%29"
             }
@@ -59,11 +61,13 @@
           "sources": [
             {
               "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Splumonkey.png",
               "title": "Splumonkey",
               "url": "https://dontstarve.wiki.gg/wiki/Splumonkey"
             },
             {
               "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Shadow_Splumonkey.png",
               "title": "Shadow Splumonkey",
               "url": "https://dontstarve.wiki.gg/wiki/Shadow_Splumonkey"
             }
@@ -76,16 +80,19 @@
           "sources": [
             {
               "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Damaged_Knight.png",
               "title": "Damaged Knight",
               "url": "https://dontstarve.wiki.gg/wiki/Damaged_Knight"
             },
             {
               "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Damaged_bishop.png",
               "title": "Damaged Bishop",
               "url": "https://dontstarve.wiki.gg/wiki/Damaged_bishop"
             },
             {
               "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Damaged_Clockwork.png",
               "title": "Damaged Rook",
               "url": "https://dontstarve.wiki.gg/wiki/Damaged_Clockwork"
             }
@@ -98,6 +105,7 @@
           "sources": [
             {
               "entityId": "base_game:mound",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Grave.png",
               "title": "Grave",
               "url": "https://dontstarve.wiki.gg/wiki/Grave"
             }
@@ -110,6 +118,7 @@
           "sources": [
             {
               "entityId": "base_game:chest_mimic",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ornate_Chest.png",
               "title": "Ornate Chest",
               "url": "https://dontstarve.wiki.gg/wiki/Ornate_Chest"
             }
@@ -122,11 +131,13 @@
           "sources": [
             {
               "entityId": "base_game:atrium_statue",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ancient.png",
               "title": "Ancient Statue",
               "url": "https://dontstarve.wiki.gg/wiki/Ancient"
             },
             {
               "entityId": "base_game:resurrectionstone",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Touch_Stone.png",
               "title": "Touch Stone",
               "url": "https://dontstarve.wiki.gg/wiki/Touch_Stone"
             }
@@ -139,31 +150,37 @@
           "sources": [
             {
               "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Pig_Head.png",
               "title": "Pig Head",
               "url": "https://dontstarve.wiki.gg/wiki/Pig_Head"
             },
             {
               "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Merm_Head.png",
               "title": "Merm Head",
               "url": "https://dontstarve.wiki.gg/wiki/Merm_Head"
             },
             {
               "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Wildbore_Head.png",
               "title": "Wildbore Head",
               "url": "https://dontstarve.wiki.gg/wiki/Wildbore_Head"
             },
             {
               "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Crawling_Horror.png",
               "title": "Crawling Horror",
               "url": "https://dontstarve.wiki.gg/wiki/Crawling_Horror"
             },
             {
               "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Terrorbeak.png",
               "title": "Terrorbeak",
               "url": "https://dontstarve.wiki.gg/wiki/Terrorbeak"
             },
             {
               "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Swimming_Horror.png",
               "title": "Swimming Horror",
               "url": "https://dontstarve.wiki.gg/wiki/Swimming_Horror"
             }
@@ -176,6 +193,7 @@
           "sources": [
             {
               "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Slotmachine.png",
               "title": "Slotmachine",
               "url": "https://dontstarve.wiki.gg/wiki/Slotmachine"
             }
@@ -188,6 +206,7 @@
           "sources": [
             {
               "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/A_Smashing_Pot.png",
               "title": "A Smashing Pot",
               "url": "https://dontstarve.wiki.gg/wiki/A_Smashing_Pot"
             }
@@ -200,6 +219,7 @@
           "sources": [
             {
               "entityId": "base_game:chest_mimic",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ornate_Chest.png",
               "title": "Large Ornate Chest",
               "url": "https://dontstarve.wiki.gg/wiki/Ornate_Chest"
             }
@@ -218,6 +238,7 @@
               "amount": 1,
               "item": {
                 "entityId": "base_game:twigs",
+                "iconUrl": null,
                 "title": "Twigs",
                 "url": "https://dontstarve.wiki.gg/wiki/Twigs"
               }
@@ -226,6 +247,7 @@
               "amount": 1,
               "item": {
                 "entityId": "base_game:gears",
+                "iconUrl": null,
                 "title": "Gears",
                 "url": "https://dontstarve.wiki.gg/wiki/Gears"
               }
@@ -235,6 +257,7 @@
           "note": null,
           "result": {
             "entityId": "base_game:diviningrod",
+            "iconUrl": null,
             "title": "Divining Rod",
             "url": "https://dontstarve.wiki.gg/wiki/Divining_Rod"
           },
@@ -249,6 +272,7 @@
               "amount": 3,
               "item": {
                 "entityId": "base_game:livinglog",
+                "iconUrl": null,
                 "title": "Living Log",
                 "url": "https://dontstarve.wiki.gg/wiki/Living_Log"
               }
@@ -257,6 +281,7 @@
               "amount": 1,
               "item": {
                 "entityId": "base_game:purplegem",
+                "iconUrl": null,
                 "title": "Purple Gem",
                 "url": "https://dontstarve.wiki.gg/wiki/Purple_Gem"
               }
@@ -266,6 +291,7 @@
           "note": null,
           "result": {
             "entityId": null,
+            "iconUrl": null,
             "title": "Shadow Manipulator",
             "url": "https://dontstarve.wiki.gg/wiki/Shadow_Manipulator"
           },
@@ -280,6 +306,7 @@
               "amount": 2,
               "item": {
                 "entityId": "base_game:goldnugget",
+                "iconUrl": null,
                 "title": "Gold Nugget",
                 "url": "https://dontstarve.wiki.gg/wiki/Gold_Nugget"
               }
@@ -288,6 +315,7 @@
               "amount": 2,
               "item": {
                 "entityId": "base_game:pigskin",
+                "iconUrl": null,
                 "title": "Pig Skin",
                 "url": "https://dontstarve.wiki.gg/wiki/Pig_Skin"
               }
@@ -297,6 +325,7 @@
           "note": null,
           "result": {
             "entityId": "base_game:onemanband",
+            "iconUrl": null,
             "title": "One-man Band",
             "url": "https://dontstarve.wiki.gg/wiki/One-man_Band"
           },
@@ -311,6 +340,7 @@
               "amount": 8,
               "item": {
                 "entityId": "base_game:goldnugget",
+                "iconUrl": null,
                 "title": "Gold Nugget",
                 "url": "https://dontstarve.wiki.gg/wiki/Gold_Nugget"
               }
@@ -319,6 +349,7 @@
               "amount": 1,
               "item": {
                 "entityId": "base_game:redgem",
+                "iconUrl": null,
                 "title": "Red Gem",
                 "url": "https://dontstarve.wiki.gg/wiki/Red_Gem"
               }
@@ -328,6 +359,7 @@
           "note": null,
           "result": {
             "entityId": "base_game:nightlight",
+            "iconUrl": null,
             "title": "Night Light",
             "url": "https://dontstarve.wiki.gg/wiki/Night_Light"
           },
@@ -342,6 +374,7 @@
               "amount": 3,
               "item": {
                 "entityId": "base_game:goldnugget",
+                "iconUrl": null,
                 "title": "Gold Nugget",
                 "url": "https://dontstarve.wiki.gg/wiki/Gold_Nugget"
               }
@@ -350,6 +383,7 @@
               "amount": 1,
               "item": {
                 "entityId": "base_game:redgem",
+                "iconUrl": null,
                 "title": "Red Gem",
                 "url": "https://dontstarve.wiki.gg/wiki/Red_Gem"
               }
@@ -359,6 +393,7 @@
           "note": null,
           "result": {
             "entityId": "base_game:amulet",
+            "iconUrl": null,
             "title": "Life Giving Amulet",
             "url": "https://dontstarve.wiki.gg/wiki/Life_Giving_Amulet"
           },
@@ -373,6 +408,7 @@
               "amount": 2,
               "item": {
                 "entityId": "base_game:papyrus",
+                "iconUrl": null,
                 "title": "Papyrus",
                 "url": "https://dontstarve.wiki.gg/wiki/Papyrus"
               }
@@ -382,6 +418,7 @@
           "note": null,
           "result": {
             "entityId": null,
+            "iconUrl": null,
             "title": "Sleepytime Stories",
             "url": "https://dontstarve.wiki.gg/wiki/Sleepytime_Stories"
           },
@@ -396,6 +433,7 @@
               "amount": 3,
               "item": {
                 "entityId": "base_game:papyrus",
+                "iconUrl": null,
                 "title": "Papyrus",
                 "url": "https://dontstarve.wiki.gg/wiki/Papyrus"
               }
@@ -405,6 +443,7 @@
           "note": null,
           "result": {
             "entityId": null,
+            "iconUrl": null,
             "title": "Night Armour",
             "url": "https://dontstarve.wiki.gg/wiki/Night_Armour"
           },
@@ -419,6 +458,7 @@
               "amount": 1,
               "item": {
                 "entityId": "base_game:livinglog",
+                "iconUrl": null,
                 "title": "Living Log",
                 "url": "https://dontstarve.wiki.gg/wiki/Living_Log"
               }
@@ -428,6 +468,7 @@
           "note": null,
           "result": {
             "entityId": "base_game:nightsword",
+            "iconUrl": null,
             "title": "Dark Sword",
             "url": "https://dontstarve.wiki.gg/wiki/Dark_Sword"
           },
@@ -442,6 +483,7 @@
               "amount": 6,
               "item": {
                 "entityId": "base_game:goldnugget",
+                "iconUrl": null,
                 "title": "Gold Nugget",
                 "url": "https://dontstarve.wiki.gg/wiki/Gold_Nugget"
               }
@@ -450,6 +492,7 @@
               "amount": 2,
               "item": {
                 "entityId": "base_game:purplegem",
+                "iconUrl": null,
                 "title": "Purple Gem",
                 "url": "https://dontstarve.wiki.gg/wiki/Purple_Gem"
               }
@@ -459,6 +502,7 @@
           "note": null,
           "result": {
             "entityId": null,
+            "iconUrl": null,
             "title": "Nightmare Amulet",
             "url": "https://dontstarve.wiki.gg/wiki/Nightmare_Amulet"
           },
@@ -473,6 +517,7 @@
               "amount": 1,
               "item": {
                 "entityId": "base_game:spear",
+                "iconUrl": null,
                 "title": "Spear",
                 "url": "https://dontstarve.wiki.gg/wiki/Spear"
               }
@@ -481,6 +526,7 @@
               "amount": 1,
               "item": {
                 "entityId": "base_game:redgem",
+                "iconUrl": null,
                 "title": "Red Gem",
                 "url": "https://dontstarve.wiki.gg/wiki/Red_Gem"
               }
@@ -490,6 +536,7 @@
           "note": null,
           "result": {
             "entityId": null,
+            "iconUrl": null,
             "title": "Fire Staff",
             "url": "https://dontstarve.wiki.gg/wiki/Fire_Staff"
           },
@@ -504,6 +551,7 @@
               "amount": 2,
               "item": {
                 "entityId": "base_game:livinglog",
+                "iconUrl": null,
                 "title": "Living Log",
                 "url": "https://dontstarve.wiki.gg/wiki/Living_Log"
               }
@@ -512,6 +560,7 @@
               "amount": 2,
               "item": {
                 "entityId": "base_game:purplegem",
+                "iconUrl": null,
                 "title": "Purple Gem",
                 "url": "https://dontstarve.wiki.gg/wiki/Purple_Gem"
               }
@@ -521,6 +570,7 @@
           "note": null,
           "result": {
             "entityId": null,
+            "iconUrl": null,
             "title": "Telelocator Staff",
             "url": "https://dontstarve.wiki.gg/wiki/Telelocator_Staff"
           },
@@ -535,6 +585,7 @@
               "amount": 4,
               "item": {
                 "entityId": "base_game:livinglog",
+                "iconUrl": null,
                 "title": "Living Log",
                 "url": "https://dontstarve.wiki.gg/wiki/Living_Log"
               }
@@ -543,6 +594,7 @@
               "amount": 8,
               "item": {
                 "entityId": "base_game:goldnugget",
+                "iconUrl": null,
                 "title": "Gold Nugget",
                 "url": "https://dontstarve.wiki.gg/wiki/Gold_Nugget"
               }
@@ -552,6 +604,7 @@
           "note": null,
           "result": {
             "entityId": "base_game:telebase",
+            "iconUrl": null,
             "title": "Telelocator Focus",
             "url": "https://dontstarve.wiki.gg/wiki/Telelocator_Focus"
           },
@@ -566,6 +619,7 @@
               "amount": 2,
               "item": {
                 "entityId": "base_game:rope",
+                "iconUrl": null,
                 "title": "Rope",
                 "url": "https://dontstarve.wiki.gg/wiki/Rope"
               }
@@ -574,6 +628,7 @@
               "amount": 6,
               "item": {
                 "entityId": null,
+                "iconUrl": null,
                 "title": "Slurper Pelt",
                 "url": "https://dontstarve.wiki.gg/wiki/Slurper_Pelt"
               }
@@ -583,6 +638,7 @@
           "note": null,
           "result": {
             "entityId": null,
+            "iconUrl": null,
             "title": "Belt of Hunger",
             "url": "https://dontstarve.wiki.gg/wiki/Belt_of_Hunger"
           },
@@ -597,6 +653,7 @@
               "amount": 2,
               "item": {
                 "entityId": "base_game:thulecite",
+                "iconUrl": null,
                 "title": "Thulecite",
                 "url": "https://dontstarve.wiki.gg/wiki/Thulecite"
               }
@@ -606,6 +663,7 @@
           "note": null,
           "result": {
             "entityId": "base_game:nightmare_timepiece",
+            "iconUrl": null,
             "title": "Thulecite Medallion",
             "url": "https://dontstarve.wiki.gg/wiki/Thulecite_Medallion"
           },
@@ -620,6 +678,7 @@
               "amount": 2,
               "item": {
                 "entityId": "base_game:thulecite",
+                "iconUrl": null,
                 "title": "Thulecite",
                 "url": "https://dontstarve.wiki.gg/wiki/Thulecite"
               }
@@ -628,6 +687,7 @@
               "amount": 1,
               "item": {
                 "entityId": "base_game:yellowgem",
+                "iconUrl": null,
                 "title": "Yellow Gem",
                 "url": "https://dontstarve.wiki.gg/wiki/Yellow_Gem"
               }
@@ -637,6 +697,7 @@
           "note": null,
           "result": {
             "entityId": null,
+            "iconUrl": null,
             "title": "Magiluminescence",
             "url": "https://dontstarve.wiki.gg/wiki/Magiluminescence"
           },
@@ -651,6 +712,7 @@
               "amount": 2,
               "item": {
                 "entityId": "base_game:thulecite",
+                "iconUrl": null,
                 "title": "Thulecite",
                 "url": "https://dontstarve.wiki.gg/wiki/Thulecite"
               }
@@ -659,6 +721,7 @@
               "amount": 1,
               "item": {
                 "entityId": "base_game:greengem",
+                "iconUrl": null,
                 "title": "Green Gem",
                 "url": "https://dontstarve.wiki.gg/wiki/Green_Gem"
               }
@@ -668,6 +731,7 @@
           "note": null,
           "result": {
             "entityId": null,
+            "iconUrl": null,
             "title": "Construction Amulet",
             "url": "https://dontstarve.wiki.gg/wiki/Construction_Amulet"
           },
@@ -682,6 +746,7 @@
               "amount": 2,
               "item": {
                 "entityId": "base_game:livinglog",
+                "iconUrl": null,
                 "title": "Living Log",
                 "url": "https://dontstarve.wiki.gg/wiki/Living_Log"
               }
@@ -690,6 +755,7 @@
               "amount": 2,
               "item": {
                 "entityId": "base_game:yellowgem",
+                "iconUrl": null,
                 "title": "Yellow Gem",
                 "url": "https://dontstarve.wiki.gg/wiki/Yellow_Gem"
               }
@@ -699,6 +765,7 @@
           "note": null,
           "result": {
             "entityId": "base_game:stafflight",
+            "iconUrl": null,
             "title": "Star Caller's Staff",
             "url": "https://dontstarve.wiki.gg/wiki/Star_Caller%27s_Staff"
           },
@@ -713,6 +780,7 @@
               "amount": 2,
               "item": {
                 "entityId": "base_game:livinglog",
+                "iconUrl": null,
                 "title": "Living Log",
                 "url": "https://dontstarve.wiki.gg/wiki/Living_Log"
               }
@@ -721,6 +789,7 @@
               "amount": 2,
               "item": {
                 "entityId": "base_game:greengem",
+                "iconUrl": null,
                 "title": "Green Gem",
                 "url": "https://dontstarve.wiki.gg/wiki/Green_Gem"
               }
@@ -730,6 +799,7 @@
           "note": null,
           "result": {
             "entityId": null,
+            "iconUrl": null,
             "title": "Deconstruction Staff",
             "url": "https://dontstarve.wiki.gg/wiki/Deconstruction_Staff"
           },
@@ -744,6 +814,7 @@
               "amount": 2,
               "item": {
                 "entityId": "base_game:thulecite",
+                "iconUrl": null,
                 "title": "Thulecite",
                 "url": "https://dontstarve.wiki.gg/wiki/Thulecite"
               }
@@ -752,6 +823,7 @@
               "amount": 1,
               "item": {
                 "entityId": "base_game:orangegem",
+                "iconUrl": null,
                 "title": "Orange Gem",
                 "url": "https://dontstarve.wiki.gg/wiki/Orange_Gem"
               }
@@ -761,6 +833,7 @@
           "note": null,
           "result": {
             "entityId": null,
+            "iconUrl": null,
             "title": "The Lazy Forager",
             "url": "https://dontstarve.wiki.gg/wiki/The_Lazy_Forager"
           },
@@ -775,6 +848,7 @@
               "amount": 1,
               "item": {
                 "entityId": "base_game:cane",
+                "iconUrl": null,
                 "title": "Walking Cane",
                 "url": "https://dontstarve.wiki.gg/wiki/Walking_Cane"
               }
@@ -783,6 +857,7 @@
               "amount": 2,
               "item": {
                 "entityId": "base_game:orangegem",
+                "iconUrl": null,
                 "title": "Orange Gem",
                 "url": "https://dontstarve.wiki.gg/wiki/Orange_Gem"
               }
@@ -792,6 +867,7 @@
           "note": null,
           "result": {
             "entityId": null,
+            "iconUrl": null,
             "title": "The Lazy Explorer",
             "url": "https://dontstarve.wiki.gg/wiki/The_Lazy_Explorer"
           },
@@ -806,6 +882,7 @@
               "amount": 4,
               "item": {
                 "entityId": "base_game:thulecite",
+                "iconUrl": null,
                 "title": "Thulecite",
                 "url": "https://dontstarve.wiki.gg/wiki/Thulecite"
               }
@@ -815,6 +892,7 @@
           "note": null,
           "result": {
             "entityId": null,
+            "iconUrl": null,
             "title": "Thulecite Crown",
             "url": "https://dontstarve.wiki.gg/wiki/Thulecite_Crown"
           },
@@ -829,6 +907,7 @@
               "amount": 6,
               "item": {
                 "entityId": "base_game:thulecite",
+                "iconUrl": null,
                 "title": "Thulecite",
                 "url": "https://dontstarve.wiki.gg/wiki/Thulecite"
               }
@@ -838,6 +917,7 @@
           "note": null,
           "result": {
             "entityId": null,
+            "iconUrl": null,
             "title": "Thulecite Suit",
             "url": "https://dontstarve.wiki.gg/wiki/Thulecite_Suit"
           },
@@ -852,6 +932,7 @@
               "amount": 4,
               "item": {
                 "entityId": "base_game:thulecite",
+                "iconUrl": null,
                 "title": "Thulecite",
                 "url": "https://dontstarve.wiki.gg/wiki/Thulecite"
               }
@@ -860,6 +941,7 @@
               "amount": 3,
               "item": {
                 "entityId": "base_game:livinglog",
+                "iconUrl": null,
                 "title": "Living Log",
                 "url": "https://dontstarve.wiki.gg/wiki/Living_Log"
               }
@@ -869,6 +951,7 @@
           "note": null,
           "result": {
             "entityId": "base_game:ruins_bat",
+            "iconUrl": null,
             "title": "Thulecite Club",
             "url": "https://dontstarve.wiki.gg/wiki/Thulecite_Club"
           },
@@ -883,6 +966,7 @@
               "amount": 1,
               "item": {
                 "entityId": null,
+                "iconUrl": null,
                 "title": "Sea Worther",
                 "url": "https://dontstarve.wiki.gg/wiki/Sea_Worther"
               }
@@ -891,6 +975,7 @@
               "amount": 4,
               "item": {
                 "entityId": "base_game:livinglog",
+                "iconUrl": null,
                 "title": "Living Log",
                 "url": "https://dontstarve.wiki.gg/wiki/Living_Log"
               }
@@ -900,6 +985,7 @@
           "note": "Only available in the world linked with a Shipwrecked world.",
           "result": {
             "entityId": null,
+            "iconUrl": null,
             "title": "Seaworthy",
             "url": "https://dontstarve.wiki.gg/wiki/Seaworthy"
           },
@@ -914,6 +1000,7 @@
               "amount": 1,
               "item": {
                 "entityId": null,
+                "iconUrl": null,
                 "title": "Horn",
                 "url": "https://dontstarve.wiki.gg/wiki/Horn"
               }
@@ -922,6 +1009,7 @@
               "amount": 1,
               "item": {
                 "entityId": "base_game:rope",
+                "iconUrl": null,
                 "title": "Rope",
                 "url": "https://dontstarve.wiki.gg/wiki/Rope"
               }
@@ -931,6 +1019,7 @@
           "note": null,
           "result": {
             "entityId": null,
+            "iconUrl": null,
             "title": "Dripple Pipes",
             "url": "https://dontstarve.wiki.gg/wiki/Dripple_Pipes"
           },
@@ -945,6 +1034,7 @@
               "amount": 2,
               "item": {
                 "entityId": null,
+                "iconUrl": null,
                 "title": "Obsidian",
                 "url": "https://dontstarve.wiki.gg/wiki/Obsidian"
               }
@@ -953,6 +1043,7 @@
               "amount": 1,
               "item": {
                 "entityId": null,
+                "iconUrl": null,
                 "title": "Magic Seal",
                 "url": "https://dontstarve.wiki.gg/wiki/Magic_Seal"
               }
@@ -962,6 +1053,7 @@
           "note": null,
           "result": {
             "entityId": null,
+            "iconUrl": null,
             "title": "Sail Stick",
             "url": "https://dontstarve.wiki.gg/wiki/Sail_Stick"
           },
@@ -976,6 +1068,7 @@
           "note": null,
           "result": {
             "entityId": null,
+            "iconUrl": null,
             "title": "Oinc",
             "url": "https://dontstarve.wiki.gg/wiki/Oinc"
           },
@@ -990,6 +1083,7 @@
               "amount": 1,
               "item": {
                 "entityId": "base_game:boneshard",
+                "iconUrl": null,
                 "title": "Bone Shards",
                 "url": "https://dontstarve.wiki.gg/wiki/Bone_Shards"
               }
@@ -998,6 +1092,7 @@
               "amount": 1,
               "item": {
                 "entityId": null,
+                "iconUrl": null,
                 "title": "Pugalisk Skull",
                 "url": "https://dontstarve.wiki.gg/wiki/Pugalisk_Skull"
               }
@@ -1007,6 +1102,7 @@
           "note": null,
           "result": {
             "entityId": null,
+            "iconUrl": null,
             "title": "Pugalisk Wand",
             "url": "https://dontstarve.wiki.gg/wiki/Pugalisk_Wand"
           },
@@ -1021,6 +1117,7 @@
               "amount": 1,
               "item": {
                 "entityId": null,
+                "iconUrl": null,
                 "title": "Can of Silly String",
                 "url": "https://dontstarve.wiki.gg/wiki/Can_of_Silly_String"
               }
@@ -1029,6 +1126,7 @@
               "amount": 4,
               "item": {
                 "entityId": "base_game:livinglog",
+                "iconUrl": null,
                 "title": "Living Log",
                 "url": "https://dontstarve.wiki.gg/wiki/Living_Log"
               }
@@ -1038,6 +1136,7 @@
           "note": "Only available in the world linked with a Hamlet world.",
           "result": {
             "entityId": null,
+            "iconUrl": null,
             "title": "Skyworthy",
             "url": "https://dontstarve.wiki.gg/wiki/Skyworthy"
           },
@@ -1052,6 +1151,7 @@
               "amount": 4,
               "item": {
                 "entityId": "base_game:pigskin",
+                "iconUrl": null,
                 "title": "Pig Skin",
                 "url": "https://dontstarve.wiki.gg/wiki/Pig_Skin"
               }
@@ -1060,6 +1160,7 @@
               "amount": 4,
               "item": {
                 "entityId": "base_game:boards",
+                "iconUrl": null,
                 "title": "Boards",
                 "url": "https://dontstarve.wiki.gg/wiki/Boards"
               }
@@ -1069,6 +1170,7 @@
           "note": null,
           "result": {
             "entityId": null,
+            "iconUrl": null,
             "title": "The Flying Pig Arcane Shop",
             "url": "https://dontstarve.wiki.gg/wiki/The_Flying_Pig_Arcane_Shop"
           },

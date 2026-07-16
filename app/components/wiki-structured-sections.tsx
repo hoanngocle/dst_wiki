@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowSquareOut } from "@phosphor-icons/react";
+import Image from "next/image";
 
 import type { ItemListEntry } from "@/app/lib/item-catalog";
 import type {
@@ -15,10 +16,12 @@ function WikiReference({
   reference,
   itemsById,
   onSelectItem,
+  showFallbackIcon = false,
 }: {
   reference: NormalizedWikiReference;
   itemsById: ReadonlyMap<string, ItemListEntry>;
   onSelectItem: (item: ItemListEntry) => void;
+  showFallbackIcon?: boolean;
 }) {
   const item = reference.entityId ? itemsById.get(reference.entityId) : undefined;
   if (item) {
@@ -39,8 +42,22 @@ function WikiReference({
       href={reference.url}
       target="_blank"
       rel="noreferrer"
-      className="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-1.5 py-1 font-semibold text-[#2e5fb3] transition hover:bg-[#e9f1fb] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2e5fb3]/30"
+      className="inline-flex min-h-11 items-center gap-2 rounded-xl px-1.5 py-1 font-semibold text-[#2e5fb3] transition hover:bg-[#e9f1fb] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2e5fb3]/30"
     >
+      {showFallbackIcon ? (
+        reference.iconUrl ? (
+          <Image
+            src={reference.iconUrl}
+            alt=""
+            width={30}
+            height={30}
+            data-testid="wiki-source-icon"
+            className="size-[30px] shrink-0 rounded-xl border border-[#c8d3df] bg-[#e5ebf1] object-contain"
+          />
+        ) : (
+          <GameSprite sprite={null} size={30} />
+        )
+      ) : null}
       <span>{reference.title}</span>
       <ArrowSquareOut aria-hidden="true" size={14} />
     </a>
@@ -76,46 +93,69 @@ export function WikiStructuredSections({
             {sections.dropTable.rows.length} nguồn từ Wiki
           </p>
         </div>
-        <ul className="grid grid-cols-1 gap-3 p-4 md:grid-cols-2">
-          {sections.dropTable.rows.map((row, index) => (
-            <li
-              key={`${row.sources.map((source) => source.url).join(":")}:${index}`}
-              className="rounded-xl border border-[#d5dde6] bg-[#eef3f8] p-3"
-            >
-              <div className="flex flex-wrap gap-x-1 gap-y-0">
-                {row.sources.map((source) => (
-                  <WikiReference
-                    key={source.url}
-                    reference={source}
-                    itemsById={itemsById}
-                    onSelectItem={onSelectItem}
-                  />
-                ))}
-              </div>
-              <dl className="mt-2 grid grid-cols-2 gap-2">
-                <div className="rounded-lg bg-[#f8fafc] px-2.5 py-2">
-                  <dt className="text-[11px] font-semibold uppercase tracking-[0.08em] text-[#607188]">
-                    Số lượng
-                  </dt>
-                  <dd className="mt-1 font-mono text-sm font-semibold text-[#172943]">
+        <div className="overflow-x-auto">
+          <table aria-label="Drop table" className="w-full min-w-[720px] border-collapse text-left">
+            <thead className="bg-[#eaf0f6]">
+              <tr className="border-b border-[#c8d3df]">
+                <th
+                  scope="col"
+                  className="w-[42%] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[#607188] sm:px-5"
+                >
+                  Nguồn
+                </th>
+                <th
+                  scope="col"
+                  className="w-[15%] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[#607188]"
+                >
+                  Số lượng
+                </th>
+                <th
+                  scope="col"
+                  className="w-[13%] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[#607188]"
+                >
+                  Tỷ lệ
+                </th>
+                <th
+                  scope="col"
+                  className="w-[30%] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[#607188] sm:pr-5"
+                >
+                  Điều kiện
+                </th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-[#d5dde6]">
+              {sections.dropTable.rows.map((row, index) => (
+                <tr
+                  key={`${row.sources.map((source) => source.url).join(":")}:${index}`}
+                  className="bg-[#f8fafc] align-middle transition-colors hover:bg-[#f1f5f9]"
+                >
+                  <td className="px-4 py-2 sm:px-5">
+                    <div className="flex flex-wrap gap-x-1 gap-y-0">
+                      {row.sources.map((source) => (
+                        <WikiReference
+                          key={source.url}
+                          reference={source}
+                          itemsById={itemsById}
+                          onSelectItem={onSelectItem}
+                          showFallbackIcon
+                        />
+                      ))}
+                    </div>
+                  </td>
+                  <td className="whitespace-nowrap px-4 py-2 font-mono text-sm font-semibold text-[#172943]">
                     {row.quantity}
-                  </dd>
-                </div>
-                <div className="rounded-lg bg-[#f8fafc] px-2.5 py-2">
-                  <dt className="text-[11px] font-semibold uppercase tracking-[0.08em] text-[#607188]">
-                    Tỷ lệ
-                  </dt>
-                  <dd className="mt-1 font-mono text-sm font-semibold text-[#172943]">
+                  </td>
+                  <td className="whitespace-nowrap px-4 py-2 font-mono text-sm font-semibold text-[#172943]">
                     {row.chance}
-                  </dd>
-                </div>
-              </dl>
-              {row.context ? (
-                <p className="mt-2 text-xs leading-5 text-[#53647a]">{row.context}</p>
-              ) : null}
-            </li>
-          ))}
-        </ul>
+                  </td>
+                  <td className="px-4 py-2 text-xs leading-5 text-[#53647a] sm:pr-5">
+                    {row.context ?? <span aria-label="Không có điều kiện">—</span>}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </section>
 
       <section className="overflow-hidden rounded-2xl border border-[#c8d3df] bg-[#f8fafc]">

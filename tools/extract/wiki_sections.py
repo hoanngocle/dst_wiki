@@ -10,6 +10,7 @@ from tools.extract.wiki_mapping import normalize_identity
 
 JsonObject = Dict[str, Any]
 WIKI_PAGE_BASE = "https://dontstarve.wiki.gg/wiki/"
+WIKI_FILE_REDIRECT_BASE = WIKI_PAGE_BASE + "Special:Redirect/file/"
 
 
 def _split_top_level(value: str, separator: str = "|") -> List[str]:
@@ -148,10 +149,18 @@ def _wiki_url(target: str) -> str:
     return WIKI_PAGE_BASE + quote(slug, safe="/")
 
 
+def _wiki_file_url(target: str) -> str:
+    filename = target.strip()
+    if not re.search(r"\.(?:gif|jpe?g|png|webp)$", filename, re.IGNORECASE):
+        filename += ".png"
+    return WIKI_FILE_REDIRECT_BASE + quote(filename.replace(" ", "_"), safe="")
+
+
 def _reference(
     title: str,
     target: str,
     entity_ids_by_title: Mapping[str, str],
+    icon_target: Optional[str] = None,
 ) -> JsonObject:
     entity_id = entity_ids_by_title.get(normalize_identity(target))
     if entity_id is None:
@@ -160,6 +169,7 @@ def _reference(
         "title": title.strip(),
         "url": _wiki_url(target),
         "entityId": entity_id,
+        "iconUrl": _wiki_file_url(icon_target) if icon_target else None,
     }
 
 
@@ -197,7 +207,14 @@ def _source_references(
             target, label = pic
             identity = normalize_identity(label)
             if identity and identity not in seen:
-                sources.append(_reference(label, target, entity_ids_by_title))
+                sources.append(
+                    _reference(
+                        label,
+                        target,
+                        entity_ids_by_title,
+                        icon_target=target,
+                    )
+                )
                 seen.add(identity)
         if found_pic:
             continue

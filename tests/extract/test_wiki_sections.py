@@ -47,6 +47,14 @@ class WikiSectionsTests(unittest.TestCase):
         self.assertEqual(rows[0]["quantity"], "1-3")
         self.assertEqual(rows[0]["chance"], "40%")
         self.assertEqual(rows[0]["sources"][0]["entityId"], "base_game:beardling")
+        self.assertEqual(
+            rows[0]["sources"][0]["iconUrl"],
+            "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Beardling.png",
+        )
+        self.assertEqual(
+            rows[0]["sources"][1]["iconUrl"],
+            "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Crab_%28insanity%29.png",
+        )
         self.assertIsNone(rows[0]["sources"][1]["entityId"])
         self.assertIsNone(rows[0]["context"])
         self.assertIsNone(rows[1]["context"])
