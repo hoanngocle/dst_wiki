@@ -138,6 +138,60 @@ class WikiExportTests(unittest.TestCase):
             [12],
         )
 
+    def test_normalizes_only_the_nightmare_fuel_pilot(self):
+        fixture = json.loads(
+            (
+                Path(__file__).resolve().parents[2]
+                / "public/data/wiki/pages/210449.json"
+            ).read_text(encoding="utf-8")
+        )
+        rendered_html = (
+            '<p id="Gathering">Gathering</p>'
+            '<h3><span id="Drop_table">Drop table</span></h3>'
+            '<table><tr><td>drop</td></tr></table>'
+            '<h2><span id="Usage">Usage</span></h2>'
+            '<div>recipes</div>'
+            '<h2><span id="Trivia">Trivia</span></h2>'
+            '<p>Trivia body</p>'
+        )
+        with sqlite3.connect(self.database) as connection:
+            connection.execute(
+                "insert into entities(namespace,prefab_id,name_en) values(?,?,?)",
+                ("base_game", "nightmarefuel", "Nightmare Fuel"),
+            )
+            connection.execute(
+                "insert into wiki_pages select 210449,'Nightmare Fuel','Nightmare Fuel',"
+                "'https://dontstarve.wiki.gg/wiki/Nightmare_Fuel',revision_id,"
+                "revision_timestamp,revision_sha1,content_model,?,?,plain_text,"
+                "categories_json,redirect_target,fetched_at,source_schema_version "
+                "from wiki_pages where page_id=10",
+                (rendered_html, fixture["wikitext"]),
+            )
+            connection.execute(
+                "insert into wiki_entity_mappings values(?,?,?,?,?,?,?)",
+                (
+                    210449,
+                    "base_game",
+                    "nightmarefuel",
+                    "canonical_alias",
+                    1.0,
+                    "{}",
+                    1,
+                ),
+            )
+
+        wiki = load_wiki_export(self.database, self.crawl)
+        detail = next(value for value in wiki.details if value["pageId"] == 210449)
+        ordinary = next(value for value in wiki.details if value["pageId"] == 10)
+
+        self.assertEqual(detail["normalized"]["schema_version"], 1)
+        self.assertEqual(len(detail["normalized"]["dropTable"]["rows"]), 10)
+        self.assertEqual(len(detail["normalized"]["usage"]["recipes"]), 30)
+        self.assertNotIn('id="Drop_table"', detail["html"])
+        self.assertNotIn('id="Usage"', detail["html"])
+        self.assertIn('id="Trivia"', detail["html"])
+        self.assertNotIn("normalized", ordinary)
+
 
 if __name__ == "__main__":
     unittest.main()

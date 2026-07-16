@@ -13,11 +13,16 @@ from typing import Any, Dict, Iterable, List, Mapping, Optional, Sequence, Tuple
 from urllib.parse import urljoin, urlparse
 
 from tools.extract.wiki_mapping import normalize_identity
+from tools.extract.wiki_sections import (
+    normalize_drop_and_usage_sections,
+    strip_drop_and_usage_html,
+)
 
 
 JsonObject = Dict[str, Any]
 FULL_UV = {"u1": 0.0, "u2": 1.0, "v1": 0.0, "v2": 1.0}
 IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".gif", ".webp"}
+NORMALIZED_SECTION_PAGE_IDS = frozenset({210449})
 
 
 @dataclass(frozen=True)
@@ -378,6 +383,13 @@ def load_wiki_export(database_path: Path, crawl_root: Path) -> WikiExport:
     pages_by_name: Dict[str, List[Mapping[str, Any]]] = {}
     for page in pages:
         pages_by_name.setdefault(normalize_identity(page["title"]), []).append(page)
+    entity_ids_by_title = {
+        normalize_identity(page["title"]): (
+            f"{page['entity_namespace']}:{page['entity_prefab_id']}"
+        )
+        for page in pages
+        if page["selected"]
+    }
 
     groups: Dict[str, List[Mapping[str, Any]]] = {}
     unmatched = []
@@ -419,36 +431,46 @@ def load_wiki_export(database_path: Path, crawl_root: Path) -> WikiExport:
 
     details = []
     for page in pages:
-        details.append(
-            {
-                "schema_version": 1,
-                "pageId": page["page_id"],
-                "title": page["title"],
-                "displayTitle": page["display_title"],
-                "canonicalUrl": page["canonical_url"],
-                "revision": {
-                    "id": page["revision_id"],
-                    "timestamp": page["revision_timestamp"],
-                    "sha1": page["revision_sha1"],
-                },
-                "html": sanitize_html(page["html"], page["canonical_url"]),
-                "wikitext": page["wikitext"],
-                "plainText": page["plain_text"],
-                "categories": list(page["categories"]),
-                "redirectTarget": page["redirect_target"],
-                "images": [
-                    {
-                        "title": asset.title,
-                        "src": asset.public_path,
-                        "mime": asset.mime,
-                        "width": asset.width,
-                        "height": asset.height,
-                    }
-                    for asset in page["assets"]
-                ],
-                "recipes": recipes_by_page.get(page["page_id"], []),
-            }
-        )
+        detail = {
+            "schema_version": 1,
+            "pageId": page["page_id"],
+            "title": page["title"],
+            "displayTitle": page["display_title"],
+            "canonicalUrl": page["canonical_url"],
+            "revision": {
+                "id": page["revision_id"],
+                "timestamp": page["revision_timestamp"],
+                "sha1": page["revision_sha1"],
+            },
+            "html": sanitize_html(page["html"], page["canonical_url"]),
+            "wikitext": page["wikitext"],
+            "plainText": page["plain_text"],
+            "categories": list(page["categories"]),
+            "redirectTarget": page["redirect_target"],
+            "images": [
+                {
+                    "title": asset.title,
+                    "src": asset.public_path,
+                    "mime": asset.mime,
+                    "width": asset.width,
+                    "height": asset.height,
+                }
+                for asset in page["assets"]
+            ],
+            "recipes": recipes_by_page.get(page["page_id"], []),
+        }
+        if page["page_id"] in NORMALIZED_SECTION_PAGE_IDS:
+            try:
+                sections = normalize_drop_and_usage_sections(
+                    page["wikitext"], page["title"], entity_ids_by_title
+                )
+                detail["normalized"] = {"schema_version": 1, **sections}
+                detail["html"] = strip_drop_and_usage_html(detail["html"])
+            except ValueError as error:
+                raise ValueError(
+                    f"wiki page {page['page_id']} structured export failed: {error}"
+                ) from error
+        details.append(detail)
     return WikiExport(
         overlays=dict(sorted(overlays.items())),
         standalone_items=tuple(sorted(fallbacks, key=lambda item: item["id"])),
