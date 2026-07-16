@@ -105,8 +105,14 @@ describe("ItemDetailModal", () => {
     expect(screen.getByRole("heading", { name: "Công thức" })).toBeDefined();
     expect(screen.getByText("=")).toBeDefined();
     expect(screen.getByLabelText("Kết quả: Vàng, số lượng 1")).toBeDefined();
+    const summaryHeading = screen.getByRole("heading", { name: "Tóm tắt" });
+    const craftingHeading = screen.getByRole("heading", { name: "Công thức" });
+    expect(screen.getByText("Một cục vàng.")).toBeDefined();
+    expect(
+      summaryHeading.compareDocumentPosition(craftingHeading) &
+        Node.DOCUMENT_POSITION_FOLLOWING,
+    ).toBeTruthy();
     expect(screen.queryByRole("heading", { name: "Mô tả" })).toBeNull();
-    expect(screen.queryByText("Một cục vàng.")).toBeNull();
     expect(screen.queryByRole("heading", { name: "Source" })).toBeNull();
     expect(screen.queryByText("Dropped by")).toBeNull();
     expect(screen.queryByRole("heading", { name: "Thông tin kỹ thuật" })).toBeNull();
@@ -240,6 +246,13 @@ describe("ItemDetailModal", () => {
     expect(screen.queryByRole("heading", { name: "Trang liên quan" })).toBeNull();
     expect(screen.queryByRole("link", { name: "Halberd/DST" })).toBeNull();
     expect(await screen.findByText("Full Halberd article.")).toBeDefined();
+    const summaryHeading = screen.getByRole("heading", { name: "Tóm tắt" });
+    const articleHeading = screen.getByRole("heading", { name: "Bài viết Wiki" });
+    expect(screen.getByText("Pointy and hurty.")).toBeDefined();
+    expect(
+      summaryHeading.compareDocumentPosition(articleHeading) &
+        Node.DOCUMENT_POSITION_FOLLOWING,
+    ).toBeTruthy();
   });
 
   it("places the Wiki summary before the crafting section", async () => {
@@ -275,6 +288,7 @@ describe("ItemDetailModal", () => {
     const summaryHeading = await screen.findByRole("heading", { name: "Tóm tắt" });
     const craftingHeading = screen.getByRole("heading", { name: "Công thức" });
     const articleHeading = screen.getByRole("heading", { name: "Bài viết Wiki" });
+    expect(screen.queryByText("Pointy and hurty.")).toBeNull();
     expect(
       summaryHeading.compareDocumentPosition(craftingHeading) &
         Node.DOCUMENT_POSITION_FOLLOWING,

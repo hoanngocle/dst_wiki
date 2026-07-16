@@ -87,6 +87,31 @@ function CraftingSections({
   );
 }
 
+function ItemSummary({
+  description,
+  titleId,
+}: {
+  description: string | null;
+  titleId: string;
+}) {
+  if (!description) return null;
+
+  return (
+    <section
+      aria-labelledby={`${titleId}-summary`}
+      className="overflow-hidden rounded-2xl border border-[#c8d3df] bg-[#f8fafc]"
+    >
+      <h3
+        id={`${titleId}-summary`}
+        className="border-b border-[#d5dde6] px-4 py-3 text-sm font-semibold text-[#172943]"
+      >
+        Tóm tắt
+      </h3>
+      <p className="px-4 py-3 text-sm leading-6 text-[#53647a]">{description}</p>
+    </section>
+  );
+}
+
 export function ItemDetailModal({
   item,
   itemsById,
@@ -108,6 +133,9 @@ export function ItemDetailModal({
       : "DST";
   const category = categoryLabel[item.category];
   const craftingContent = <CraftingSections item={item} titleId={titleId} />;
+  const fallbackSummary = item.description ? (
+    <ItemSummary description={item.description} titleId={titleId} />
+  ) : null;
 
   useEffect(() => {
     const previouslyFocused = document.activeElement as HTMLElement | null;
@@ -204,10 +232,14 @@ export function ItemDetailModal({
               canonicalUrl={item.wiki.canonicalUrl}
               itemsById={itemsById}
               onSelectItem={onSelectItem}
+              fallbackSummary={fallbackSummary}
               contentAfterSummary={craftingContent}
             />
           ) : (
-            craftingContent
+            <>
+              {fallbackSummary}
+              {craftingContent}
+            </>
           )}
         </div>
       </section>

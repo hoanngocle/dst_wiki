@@ -38,12 +38,14 @@ export function WikiArticle({
   canonicalUrl,
   itemsById = EMPTY_ITEMS,
   onSelectItem = IGNORE_ITEM_SELECTION,
+  fallbackSummary = null,
   contentAfterSummary = null,
 }: {
   detailUrl: string;
   canonicalUrl: string;
   itemsById?: ReadonlyMap<string, ItemListEntry>;
   onSelectItem?: (item: ItemListEntry) => void;
+  fallbackSummary?: ReactNode;
   contentAfterSummary?: ReactNode;
 }) {
   const [attempt, setAttempt] = useState(0);
@@ -74,57 +76,77 @@ export function WikiArticle({
   }, [attempt, detailUrl]);
 
   if (state.status === "loading") {
-    return (
+    const loadingState = (
+      <section
+        role="status"
+        aria-label="Đang tải bài viết Wiki"
+        className="rounded-2xl border border-[#c8d3df] bg-[#f8fafc] p-5"
+      >
+        <p className="text-sm font-semibold text-[#263b58]">Đang tải bài viết Wiki...</p>
+        <div aria-hidden="true" className="mt-4 animate-pulse space-y-3 motion-reduce:animate-none">
+          <div className="h-5 w-2/5 rounded bg-[#d5dde6]" />
+          <div className="h-3 w-full rounded bg-[#e1e7ee]" />
+          <div className="h-3 w-5/6 rounded bg-[#e1e7ee]" />
+        </div>
+      </section>
+    );
+
+    return fallbackSummary ? (
       <>
-        <section
-          role="status"
-          aria-label="Đang tải bài viết Wiki"
-          className="rounded-2xl border border-[#c8d3df] bg-[#f8fafc] p-5"
-        >
-          <p className="text-sm font-semibold text-[#263b58]">Đang tải bài viết Wiki...</p>
-          <div aria-hidden="true" className="mt-4 animate-pulse space-y-3 motion-reduce:animate-none">
-            <div className="h-5 w-2/5 rounded bg-[#d5dde6]" />
-            <div className="h-3 w-full rounded bg-[#e1e7ee]" />
-            <div className="h-3 w-5/6 rounded bg-[#e1e7ee]" />
-          </div>
-        </section>
+        {fallbackSummary}
+        {contentAfterSummary}
+        {loadingState}
+      </>
+    ) : (
+      <>
+        {loadingState}
         {contentAfterSummary}
       </>
     );
   }
 
   if (state.status === "error") {
-    return (
+    const errorState = (
+      <section className="rounded-2xl border border-[#c8d3df] bg-[#f8fafc] p-5">
+        <div className="flex items-start gap-3">
+          <WarningCircle
+            aria-hidden="true"
+            size={22}
+            weight="duotone"
+            className="mt-0.5 shrink-0 text-[#9a5a2a]"
+          />
+          <div>
+            <h3 className="font-semibold text-[#172943]">Không tải được bài viết Wiki</h3>
+            <p className="mt-1 text-sm leading-6 text-[#607188]">
+              Chi tiết cơ bản vẫn dùng được. Bạn có thể thử lại hoặc mở nguồn gốc.
+            </p>
+          </div>
+        </div>
+        <div className="mt-4 flex flex-wrap gap-2">
+          <button
+            type="button"
+            onClick={() => {
+              setState({ status: "loading" });
+              setAttempt((current) => current + 1);
+            }}
+            className="min-h-11 cursor-pointer rounded-xl bg-[#2e5fb3] px-4 py-2 text-sm font-semibold text-[#f8fafc] transition hover:bg-[#264f96] active:scale-[0.98]"
+          >
+            Thử lại
+          </button>
+          <CanonicalLink href={canonicalUrl} />
+        </div>
+      </section>
+    );
+
+    return fallbackSummary ? (
       <>
-        <section className="rounded-2xl border border-[#c8d3df] bg-[#f8fafc] p-5">
-          <div className="flex items-start gap-3">
-            <WarningCircle
-              aria-hidden="true"
-              size={22}
-              weight="duotone"
-              className="mt-0.5 shrink-0 text-[#9a5a2a]"
-            />
-            <div>
-              <h3 className="font-semibold text-[#172943]">Không tải được bài viết Wiki</h3>
-              <p className="mt-1 text-sm leading-6 text-[#607188]">
-                Chi tiết cơ bản vẫn dùng được. Bạn có thể thử lại hoặc mở nguồn gốc.
-              </p>
-            </div>
-          </div>
-          <div className="mt-4 flex flex-wrap gap-2">
-            <button
-              type="button"
-              onClick={() => {
-                setState({ status: "loading" });
-                setAttempt((current) => current + 1);
-              }}
-              className="min-h-11 cursor-pointer rounded-xl bg-[#2e5fb3] px-4 py-2 text-sm font-semibold text-[#f8fafc] transition hover:bg-[#264f96] active:scale-[0.98]"
-            >
-              Thử lại
-            </button>
-            <CanonicalLink href={canonicalUrl} />
-          </div>
-        </section>
+        {fallbackSummary}
+        {contentAfterSummary}
+        {errorState}
+      </>
+    ) : (
+      <>
+        {errorState}
         {contentAfterSummary}
       </>
     );
@@ -141,7 +163,9 @@ export function WikiArticle({
             dangerouslySetInnerHTML={{ __html: state.detail.summaryViHtml ?? "" }}
           />
         </section>
-      ) : null}
+      ) : (
+        fallbackSummary
+      )}
 
       {contentAfterSummary}
 
