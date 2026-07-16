@@ -46,6 +46,7 @@ export type WikiPageDetail = {
   title: string;
   canonicalUrl: string;
   html: string;
+  summaryViHtml: string | null;
   categories: readonly string[];
   images: readonly WikiDetailImage[];
   revision: {
@@ -211,6 +212,10 @@ export function parseWikiPageDetail(value: unknown): WikiPageDetail {
     title: requiredString(value.title, "wiki detail title"),
     canonicalUrl: requiredString(value.canonicalUrl, "wiki detail canonicalUrl"),
     html: requiredString(value.html, "wiki detail html"),
+    summaryViHtml:
+      value.summaryViHtml == null
+        ? null
+        : requiredString(value.summaryViHtml, "wiki detail summaryViHtml"),
     categories: value.categories.map((category, index) =>
       requiredString(category, `wiki detail category ${index}`),
     ),

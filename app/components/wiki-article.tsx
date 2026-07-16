@@ -164,7 +164,9 @@ export function WikiArticle({
       ) : null}
       <div
         className="wiki-article p-4 sm:p-5"
-        dangerouslySetInnerHTML={{ __html: state.detail.html }}
+        dangerouslySetInnerHTML={{
+          __html: state.detail.summaryViHtml ?? state.detail.html,
+        }}
       />
     </section>
   );

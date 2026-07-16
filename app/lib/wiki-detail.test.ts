@@ -82,6 +82,7 @@ describe("parseWikiPageDetail", () => {
       title: "Halberd",
       canonicalUrl: "https://dontstarve.wiki.gg/wiki/Halberd",
       html: "<p>Pointy and hurty.</p>",
+      summaryViHtml: null,
       categories: ["Items", "Weapons"],
       images: [
         {
@@ -99,6 +100,14 @@ describe("parseWikiPageDetail", () => {
       },
       normalized: null,
     });
+  });
+
+  it("parses an optional Vietnamese summary", () => {
+    const summaryViHtml = "<h2>Tóm tắt</h2><p>Vũ khí cận chiến.</p>";
+
+    expect(
+      parseWikiPageDetail({ ...validDetail, summaryViHtml }).summaryViHtml,
+    ).toBe(summaryViHtml);
   });
 
   it("parses normalized Drop table and Usage sections", () => {

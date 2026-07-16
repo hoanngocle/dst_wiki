@@ -72,6 +72,31 @@ describe("WikiArticle", () => {
     ).toHaveProperty("href", detail.canonicalUrl);
   });
 
+  it("prefers a concise Vietnamese summary over the raw Wiki article", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: async () => ({
+          ...detail,
+          summaryViHtml:
+            "<h2>Tóm tắt</h2><p>Nhiên liệu dùng cho ma thuật bóng tối.</p>",
+        }),
+      }),
+    );
+
+    render(
+      <WikiArticle
+        detailUrl="/data/wiki/pages/210449.json"
+        canonicalUrl="https://dontstarve.wiki.gg/wiki/Nightmare_Fuel"
+      />,
+    );
+
+    expect(await screen.findByRole("heading", { name: "Tóm tắt" })).toBeDefined();
+    expect(screen.getByText("Nhiên liệu dùng cho ma thuật bóng tối.")).toBeDefined();
+    expect(screen.queryByText("Pointy and hurty.")).toBeNull();
+  });
+
   it("keeps the external source available and retries a failed local request", async () => {
     const fetchMock = vi
       .fn()
