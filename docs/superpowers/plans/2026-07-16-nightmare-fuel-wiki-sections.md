@@ -35,7 +35,7 @@
 - Consumes: `normalize_identity`, Nightmare Fuel wikitext, canonical Wiki base URL, and `Mapping[str, str]` from normalized Wiki title to selected entity ID.
 - Produces: `normalize_drop_and_usage_sections(wikitext, subject_title, entity_ids_by_title) -> Dict[str, Any]` and `strip_drop_and_usage_html(value) -> str`.
 
-- [ ] **Step 1: Write realistic failing Drop table tests**
+- [x] **Step 1: Write realistic failing Drop table tests**
 
 Create a fixture containing the complete 10-row Nightmare Fuel Drop table from page `210449`. Assert exact source order, quantity, chance, context preservation, canonical URLs, and resolved entity IDs:
 
@@ -62,7 +62,7 @@ self.assertEqual(
 )
 ```
 
-- [ ] **Step 2: Write realistic failing Usage tests**
+- [x] **Step 2: Write realistic failing Usage tests**
 
 Include the complete 30 Recipe templates from page `210449`. Assert source order, default counts, station, DLC, character, note, and internal mapping:
 
@@ -83,7 +83,7 @@ self.assertEqual(
 )
 ```
 
-- [ ] **Step 3: Run the focused test and confirm RED**
+- [x] **Step 3: Run the focused test and confirm RED**
 
 ```bash
 python3 -m unittest tests.extract.test_wiki_sections -v
@@ -91,7 +91,7 @@ python3 -m unittest tests.extract.test_wiki_sections -v
 
 Expected: import failure because `tools.extract.wiki_sections` does not exist.
 
-- [ ] **Step 4: Implement balanced template and section parsing**
+- [x] **Step 4: Implement balanced template and section parsing**
 
 Implement standard-library helpers with these exact public signatures:
 
@@ -152,7 +152,7 @@ The implementation must:
 - raise `ValueError` naming Drop table or Usage when missing;
 - remove the sanitized HTML range from `id="Drop_table"` through the next level-2 heading after `id="Usage"`.
 
-- [ ] **Step 5: Run focused tests and confirm GREEN**
+- [x] **Step 5: Run focused tests and confirm GREEN**
 
 ```bash
 python3 -m unittest tests.extract.test_wiki_sections -v
@@ -160,7 +160,7 @@ python3 -m unittest tests.extract.test_wiki_sections -v
 
 Expected: all normalization and HTML de-duplication tests pass.
 
-- [ ] **Step 6: Commit the normalizer**
+- [x] **Step 6: Commit the normalizer**
 
 ```bash
 git add tools/extract/wiki_sections.py tests/extract/test_wiki_sections.py
@@ -179,7 +179,7 @@ git commit -m "feat: normalize wiki drop and usage sections"
 - Consumes: Task 1 normalizer, selected Wiki entity mappings, page detail rows.
 - Produces: optional `normalized` detail object for page `210449` and de-duplicated `html` for that page only.
 
-- [ ] **Step 1: Write a failing pilot export test**
+- [x] **Step 1: Write a failing pilot export test**
 
 Insert a page `210449` fixture with the full Nightmare Fuel wikitext and representative rendered HTML. Map it to `base_game:nightmarefuel`, then assert:
 
@@ -195,7 +195,7 @@ self.assertIn('id="Trivia"', detail["html"])
 
 Also assert that the existing fixture page does not receive a `normalized` key.
 
-- [ ] **Step 2: Run the export test and confirm RED**
+- [x] **Step 2: Run the export test and confirm RED**
 
 ```bash
 python3 -m unittest tests.extract.test_wiki_export.WikiExportTests.test_normalizes_only_the_nightmare_fuel_pilot -v
@@ -203,7 +203,7 @@ python3 -m unittest tests.extract.test_wiki_export.WikiExportTests.test_normaliz
 
 Expected: failure because the detail exporter does not publish normalized sections.
 
-- [ ] **Step 3: Wire the pilot into `load_wiki_export`**
+- [x] **Step 3: Wire the pilot into `load_wiki_export`**
 
 Add:
 
@@ -226,7 +226,7 @@ When a page ID is allowlisted, call Task 1 functions, add
 `normalized.schema_version = 1`, and publish stripped HTML. All other detail
 objects keep the existing fields and HTML.
 
-- [ ] **Step 4: Run focused export suites and confirm GREEN**
+- [x] **Step 4: Run focused export suites and confirm GREEN**
 
 ```bash
 python3 -m unittest tests.extract.test_wiki_export tests.extract.test_wiki_sections -v
@@ -234,7 +234,7 @@ python3 -m unittest tests.extract.test_wiki_export tests.extract.test_wiki_secti
 
 Expected: all Wiki export and section tests pass.
 
-- [ ] **Step 5: Commit pilot export wiring**
+- [x] **Step 5: Commit pilot export wiring**
 
 ```bash
 git add tools/extract/wiki_export.py tests/extract/test_wiki_export.py
@@ -257,7 +257,7 @@ git commit -m "feat: publish nightmare fuel wiki sections"
 - Consumes: optional `normalized` detail JSON, item lookup map, and item-selection callback.
 - Produces: `NormalizedWikiSections`, strict optional parser support, and `WikiStructuredSections`.
 
-- [ ] **Step 1: Write failing TypeScript contract tests**
+- [x] **Step 1: Write failing TypeScript contract tests**
 
 Extend the valid detail fixture with one Drop row and one Usage recipe. Assert exact parsed output and rejection of malformed counts, missing references, empty arrays, and schema version 2:
 
@@ -275,7 +275,7 @@ expect(() =>
 ).toThrow();
 ```
 
-- [ ] **Step 2: Run the parser test and confirm RED**
+- [x] **Step 2: Run the parser test and confirm RED**
 
 ```bash
 npm test -- app/lib/wiki-detail.test.ts
@@ -283,7 +283,7 @@ npm test -- app/lib/wiki-detail.test.ts
 
 Expected: failure because `WikiPageDetail` has no normalized contract.
 
-- [ ] **Step 3: Implement strict optional parsing**
+- [x] **Step 3: Implement strict optional parsing**
 
 Add exact exported types:
 
@@ -304,7 +304,7 @@ Validate non-empty strings, nullable strings, positive amounts, non-empty source
 arrays, non-empty Drop rows, non-empty Usage recipes, URL strings, and exact
 normalized schema version 1. Return `normalized: null` when absent.
 
-- [ ] **Step 4: Write failing structured-region component tests**
+- [x] **Step 4: Write failing structured-region component tests**
 
 Render one Drop row and two Usage recipes, one with a mapped internal item.
 Assert headings, counts, exact quantity/chance, ingredient amounts, DLC group,
@@ -319,7 +319,7 @@ fireEvent.click(screen.getByRole("button", { name: "Đèn bóng đêm" }));
 expect(onSelectItem).toHaveBeenCalledWith(nightLight);
 ```
 
-- [ ] **Step 5: Run the component test and confirm RED**
+- [x] **Step 5: Run the component test and confirm RED**
 
 ```bash
 npm test -- app/components/wiki-structured-sections.test.tsx
@@ -327,14 +327,14 @@ npm test -- app/components/wiki-structured-sections.test.tsx
 
 Expected: import failure because the component does not exist.
 
-- [ ] **Step 6: Implement `WikiStructuredSections`**
+- [x] **Step 6: Implement `WikiStructuredSections`**
 
 Render semantic lists inside two bordered regions. Use `grid-cols-1 md:grid-cols-2`,
 mono numeric facts, DLC subgroup headings, `GameSprite` for resolved internal
 items, internal buttons for selectable mapped items, and external anchors for
 unresolved references. Do not truncate rows or recipes.
 
-- [ ] **Step 7: Integrate normalized data into `WikiArticle`**
+- [x] **Step 7: Integrate normalized data into `WikiArticle`**
 
 Add optional props:
 
@@ -347,7 +347,7 @@ Render `WikiStructuredSections` after the article header and saved-image strip,
 but before `.wiki-article`. Preserve loading, error, retry, and canonical link
 behavior.
 
-- [ ] **Step 8: Run focused frontend tests and confirm GREEN**
+- [x] **Step 8: Run focused frontend tests and confirm GREEN**
 
 ```bash
 npm test -- app/lib/wiki-detail.test.ts app/components/wiki-structured-sections.test.tsx app/components/wiki-article.test.tsx
@@ -355,7 +355,7 @@ npm test -- app/lib/wiki-detail.test.ts app/components/wiki-structured-sections.
 
 Expected: all parser, structured-region, and article tests pass.
 
-- [ ] **Step 9: Commit the frontend contract and regions**
+- [x] **Step 9: Commit the frontend contract and regions**
 
 ```bash
 git add app/lib/wiki-detail.ts app/lib/wiki-detail.test.ts app/components/wiki-structured-sections.tsx app/components/wiki-structured-sections.test.tsx app/components/wiki-article.tsx app/components/wiki-article.test.tsx
@@ -376,7 +376,7 @@ git commit -m "feat: render structured wiki item sections"
 - Consumes: the existing `itemsById` map, selected item state, and Task 3 `WikiArticle` props.
 - Produces: a detail modal without Technical information or Related pages and with structured-section internal item navigation.
 
-- [ ] **Step 1: Write failing modal-removal tests**
+- [x] **Step 1: Write failing modal-removal tests**
 
 Update modal tests to assert:
 
@@ -390,7 +390,7 @@ expect(screen.queryByText("Halberd/DST")).toBeNull();
 Add a test proving `itemsById` and `onSelectItem` reach the structured Wiki
 component and selecting a resolved Usage result calls the callback.
 
-- [ ] **Step 2: Run focused modal tests and confirm RED**
+- [x] **Step 2: Run focused modal tests and confirm RED**
 
 ```bash
 npm test -- app/components/item-detail-modal.test.tsx app/components/wiki-search.test.tsx
@@ -398,13 +398,13 @@ npm test -- app/components/item-detail-modal.test.tsx app/components/wiki-search
 
 Expected: failures because both panels still render and navigation props are not connected.
 
-- [ ] **Step 3: Remove obsolete modal panels**
+- [x] **Step 3: Remove obsolete modal panels**
 
 Delete the `hasRealPrefab` import, real-Prefab local, Technical information
 section, and Related pages section. Keep metadata in the list contract for
 search compatibility, but do not render it in the modal.
 
-- [ ] **Step 4: Connect item selection**
+- [x] **Step 4: Connect item selection**
 
 Change the modal signature to:
 
@@ -425,7 +425,7 @@ export function ItemDetailModal({
 Pass the map and callback to `WikiArticle`. In `WikiSearch`, pass its memoized
 `itemsById` and `setSelectedItem` to the modal.
 
-- [ ] **Step 5: Run focused modal and search tests and confirm GREEN**
+- [x] **Step 5: Run focused modal and search tests and confirm GREEN**
 
 ```bash
 npm test -- app/components/item-detail-modal.test.tsx app/components/wiki-search.test.tsx app/components/wiki-article.test.tsx
@@ -433,7 +433,7 @@ npm test -- app/components/item-detail-modal.test.tsx app/components/wiki-search
 
 Expected: all detail, selection, focus, and search behavior tests pass.
 
-- [ ] **Step 6: Commit the modal simplification**
+- [x] **Step 6: Commit the modal simplification**
 
 ```bash
 git add app/components/item-detail-modal.tsx app/components/item-detail-modal.test.tsx app/components/wiki-search.tsx app/components/wiki-search.test.tsx
@@ -453,7 +453,7 @@ git commit -m "refactor: simplify item detail metadata"
 - Consumes: the completed parser, exporter, frontend contract, and UI.
 - Produces: verified generated pilot data and final master commit state.
 
-- [ ] **Step 1: Run the deterministic export**
+- [x] **Step 1: Run the deterministic export**
 
 ```bash
 python3 -m tools.extract.cli export
@@ -461,7 +461,7 @@ python3 -m tools.extract.cli export
 
 Expected: exit 0 and only deterministic generated changes.
 
-- [ ] **Step 2: Inspect the exact pilot artifact**
+- [x] **Step 2: Inspect the exact pilot artifact**
 
 ```bash
 jq '{pageId, normalized, hasDropHtml: (.html | contains("Drop_table")), hasUsageHtml: (.html | contains("id=\"Usage\""))}' public/data/wiki/pages/210449.json
@@ -469,7 +469,7 @@ jq '{pageId, normalized, hasDropHtml: (.html | contains("Drop_table")), hasUsage
 
 Expected: `pageId` is 210449, Drop rows are 10, Usage recipes are 30, and both HTML flags are false.
 
-- [ ] **Step 3: Run all automated verification**
+- [x] **Step 3: Run all automated verification**
 
 ```bash
 python3 -m unittest discover -s tests -v
@@ -482,7 +482,7 @@ npm run build
 Expected: 156 or more Python tests pass, all Vitest suites pass, lint exits 0,
 validation reports `hard_failures=0`, and the static production build succeeds.
 
-- [ ] **Step 4: Audit visible copy and duplication**
+- [x] **Step 4: Audit visible copy and duplication**
 
 ```bash
 rg -n 'Thông tin kỹ thuật|Trang liên quan|id="Drop_table"|id="Usage"|—|–' app public/data/wiki/pages/210449.json
@@ -492,7 +492,7 @@ Expected: obsolete modal headings and duplicated article section IDs have no
 visible matches. Wiki source prose may contain dash characters inside imported
 content; authored UI copy must contain none.
 
-- [ ] **Step 5: Verify desktop and mobile behavior in a browser**
+- [x] **Step 5: Verify desktop and mobile behavior in a browser**
 
 At desktop and 390 px mobile width:
 
@@ -504,7 +504,7 @@ At desktop and 390 px mobile width:
 - confirm the remaining article has no duplicate Drop table or Usage;
 - confirm no page-level horizontal overflow and no console errors.
 
-- [ ] **Step 6: Complete the plan and review staged scope**
+- [x] **Step 6: Complete the plan and review staged scope**
 
 ```bash
 git diff --check
@@ -514,7 +514,7 @@ git status --short
 Expected: `.yarnrc.yml` remains untracked and excluded. Only source, tests,
 generated page `210449`, and this plan are staged.
 
-- [ ] **Step 7: Commit delivery state**
+- [x] **Step 7: Commit delivery state**
 
 ```bash
 git add public/data/wiki/pages/210449.json docs/superpowers/plans/2026-07-16-nightmare-fuel-wiki-sections.md
