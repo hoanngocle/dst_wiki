@@ -129,29 +129,40 @@ export function WikiArticle({
         <CanonicalLink href={state.detail.canonicalUrl} />
       </div>
       {state.detail.images.length ? (
-        <div className="border-b border-[#d5dde6] bg-[#eef3f8] px-4 py-4 sm:px-5">
-          <p className="text-xs font-semibold text-[#43556d]">Ảnh gốc đã lưu</p>
-          <div className="mt-3 flex gap-3 overflow-x-auto pb-1">
-            {state.detail.images.slice(0, 12).map((image) => (
-              <figure
-                key={`${image.title}:${image.src}`}
-                className="w-32 shrink-0 rounded-xl border border-[#c8d3df] bg-[#f8fafc] p-2"
-              >
-                <Image
-                  src={image.src}
-                  alt={image.title}
-                  width={image.width ?? 256}
-                  height={image.height ?? 256}
-                  unoptimized
-                  className="h-24 w-full object-contain"
-                />
-                <figcaption className="mt-2 line-clamp-2 text-[11px] leading-4 text-[#607188]">
-                  {image.title.replace(/^File:/i, "")}
-                </figcaption>
-              </figure>
-            ))}
+        <section
+          aria-label="Gallery"
+          className="border-b border-[#d5dde6] bg-[#eef3f8] px-4 py-4 sm:px-5"
+        >
+          <h4 className="text-sm font-semibold text-[#263b58]">Gallery</h4>
+          <div
+            data-gallery-grid
+            className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4"
+          >
+            {state.detail.images.slice(0, 12).map((image) => {
+              const caption = image.title.replace(/^File:/i, "");
+              return (
+                <figure
+                  key={`${image.title}:${image.src}`}
+                  tabIndex={0}
+                  aria-label={caption}
+                  className="group relative aspect-square overflow-hidden rounded-xl border border-[#c8d3df] bg-[#f8fafc] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2e5fb3]/40"
+                >
+                  <Image
+                    src={image.src}
+                    alt={image.title}
+                    width={image.width ?? 256}
+                    height={image.height ?? 256}
+                    unoptimized
+                    className="h-full w-full object-contain p-3"
+                  />
+                  <figcaption className="absolute inset-x-0 bottom-0 line-clamp-3 bg-[#172943]/90 px-3 py-2 text-xs leading-5 text-white opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
+                    {caption}
+                  </figcaption>
+                </figure>
+              );
+            })}
           </div>
-        </div>
+        </section>
       ) : null}
       {state.detail.normalized ? (
         <div className="border-b border-[#d5dde6] bg-[#edf1f5] p-4 sm:p-5">

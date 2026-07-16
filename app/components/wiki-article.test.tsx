@@ -67,6 +67,17 @@ describe("WikiArticle", () => {
       "src",
       "http://localhost:3000/assets/wiki/halberd.png",
     );
+    const gallery = screen.getByRole("region", { name: "Gallery" });
+    expect(gallery.querySelector("[data-gallery-grid]")?.className).toContain(
+      "grid",
+    );
+    const galleryItem = screen.getByRole("figure", { name: "Halberd.png" });
+    expect(galleryItem.className).toContain("group");
+    expect(galleryItem.tabIndex).toBe(0);
+    const caption = screen.getByText("Halberd.png");
+    expect(caption.className).toContain("opacity-0");
+    expect(caption.className).toContain("group-hover:opacity-100");
+    expect(caption.className).toContain("group-focus-visible:opacity-100");
     expect(
       screen.getByRole("link", { name: "Mở trên Don't Starve Wiki" }),
     ).toHaveProperty("href", detail.canonicalUrl);
