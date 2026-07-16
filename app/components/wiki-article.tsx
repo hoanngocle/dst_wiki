@@ -4,10 +4,15 @@ import { ArrowSquareOut, WarningCircle } from "@phosphor-icons/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
+import type { ItemListEntry } from "@/app/lib/item-catalog";
 import {
   parseWikiPageDetail,
   type WikiPageDetail,
 } from "@/app/lib/wiki-detail";
+import { WikiStructuredSections } from "./wiki-structured-sections";
+
+const EMPTY_ITEMS = new Map<string, ItemListEntry>();
+const IGNORE_ITEM_SELECTION = () => undefined;
 
 type ArticleState =
   | { status: "loading" }
@@ -31,9 +36,13 @@ function CanonicalLink({ href }: { href: string }) {
 export function WikiArticle({
   detailUrl,
   canonicalUrl,
+  itemsById = EMPTY_ITEMS,
+  onSelectItem = IGNORE_ITEM_SELECTION,
 }: {
   detailUrl: string;
   canonicalUrl: string;
+  itemsById?: ReadonlyMap<string, ItemListEntry>;
+  onSelectItem?: (item: ItemListEntry) => void;
 }) {
   const [attempt, setAttempt] = useState(0);
   const [state, setState] = useState<ArticleState>({ status: "loading" });
@@ -142,6 +151,15 @@ export function WikiArticle({
               </figure>
             ))}
           </div>
+        </div>
+      ) : null}
+      {state.detail.normalized ? (
+        <div className="border-b border-[#d5dde6] bg-[#edf1f5] p-4 sm:p-5">
+          <WikiStructuredSections
+            sections={state.detail.normalized}
+            itemsById={itemsById}
+            onSelectItem={onSelectItem}
+          />
         </div>
       ) : null}
       <div

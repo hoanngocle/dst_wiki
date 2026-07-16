@@ -6,6 +6,40 @@ export type WikiDetailImage = {
   height: number | null;
 };
 
+export type NormalizedWikiReference = {
+  title: string;
+  url: string;
+  entityId: string | null;
+};
+
+export type NormalizedWikiDropRow = {
+  sources: readonly NormalizedWikiReference[];
+  quantity: string;
+  chance: string;
+  context: string | null;
+};
+
+export type NormalizedWikiIngredient = {
+  item: NormalizedWikiReference;
+  amount: number;
+};
+
+export type NormalizedWikiUsageRecipe = {
+  result: NormalizedWikiReference;
+  resultAmount: number;
+  nightmareFuelAmount: number;
+  ingredients: readonly NormalizedWikiIngredient[];
+  station: string | null;
+  dlc: string | null;
+  character: string | null;
+  note: string | null;
+};
+
+export type NormalizedWikiSections = {
+  dropTable: { rows: readonly NormalizedWikiDropRow[] };
+  usage: { recipes: readonly NormalizedWikiUsageRecipe[] };
+};
+
 export type WikiPageDetail = {
   pageId: number;
   title: string;
@@ -18,6 +52,7 @@ export type WikiPageDetail = {
     sha1: string;
     timestamp: string;
   };
+  normalized: NormalizedWikiSections | null;
 };
 
 function isRecord(value: unknown): value is Record<string, unknown> {
@@ -38,6 +73,18 @@ function positiveInteger(value: unknown, field: string): number {
   return value;
 }
 
+function positiveNumber(value: unknown, field: string): number {
+  if (typeof value !== "number" || !Number.isFinite(value) || value <= 0) {
+    throw new Error(`${field} must be a positive number`);
+  }
+  return value;
+}
+
+function nullableString(value: unknown, field: string): string | null {
+  if (value === null) return null;
+  return requiredString(value, field);
+}
+
 function nullableDimension(value: unknown, field: string): number | null {
   if (value === null) return null;
   return positiveInteger(value, field);
@@ -53,6 +100,95 @@ function parseImage(value: unknown, index: number): WikiDetailImage {
     mime: requiredString(value.mime, `wiki detail image ${index} mime`),
     width: nullableDimension(value.width, `wiki detail image ${index} width`),
     height: nullableDimension(value.height, `wiki detail image ${index} height`),
+  };
+}
+
+function parseReference(value: unknown, field: string): NormalizedWikiReference {
+  if (!isRecord(value)) {
+    throw new Error(`${field} must be an object`);
+  }
+  return {
+    title: requiredString(value.title, `${field} title`),
+    url: requiredString(value.url, `${field} url`),
+    entityId: nullableString(value.entityId, `${field} entityId`),
+  };
+}
+
+function parseDropRow(value: unknown, index: number): NormalizedWikiDropRow {
+  if (!isRecord(value) || !Array.isArray(value.sources) || !value.sources.length) {
+    throw new Error(`normalized Drop row ${index} must contain sources`);
+  }
+  return {
+    sources: value.sources.map((source, sourceIndex) =>
+      parseReference(source, `normalized Drop row ${index} source ${sourceIndex}`),
+    ),
+    quantity: requiredString(value.quantity, `normalized Drop row ${index} quantity`),
+    chance: requiredString(value.chance, `normalized Drop row ${index} chance`),
+    context: nullableString(value.context, `normalized Drop row ${index} context`),
+  };
+}
+
+function parseUsageRecipe(
+  value: unknown,
+  index: number,
+): NormalizedWikiUsageRecipe {
+  if (!isRecord(value) || !Array.isArray(value.ingredients)) {
+    throw new Error(`normalized Usage recipe ${index} must be an object`);
+  }
+  return {
+    result: parseReference(value.result, `normalized Usage recipe ${index} result`),
+    resultAmount: positiveNumber(
+      value.resultAmount,
+      `normalized Usage recipe ${index} resultAmount`,
+    ),
+    nightmareFuelAmount: positiveNumber(
+      value.nightmareFuelAmount,
+      `normalized Usage recipe ${index} nightmareFuelAmount`,
+    ),
+    ingredients: value.ingredients.map((ingredient, ingredientIndex) => {
+      if (!isRecord(ingredient)) {
+        throw new Error(
+          `normalized Usage recipe ${index} ingredient ${ingredientIndex} must be an object`,
+        );
+      }
+      return {
+        item: parseReference(
+          ingredient.item,
+          `normalized Usage recipe ${index} ingredient ${ingredientIndex}`,
+        ),
+        amount: positiveNumber(
+          ingredient.amount,
+          `normalized Usage recipe ${index} ingredient ${ingredientIndex} amount`,
+        ),
+      };
+    }),
+    station: nullableString(value.station, `normalized Usage recipe ${index} station`),
+    dlc: nullableString(value.dlc, `normalized Usage recipe ${index} dlc`),
+    character: nullableString(
+      value.character,
+      `normalized Usage recipe ${index} character`,
+    ),
+    note: nullableString(value.note, `normalized Usage recipe ${index} note`),
+  };
+}
+
+function parseNormalizedSections(value: unknown): NormalizedWikiSections | null {
+  if (value === undefined) return null;
+  if (
+    !isRecord(value) ||
+    value.schema_version !== 1 ||
+    !isRecord(value.dropTable) ||
+    !Array.isArray(value.dropTable.rows) ||
+    !value.dropTable.rows.length ||
+    !isRecord(value.usage) ||
+    !Array.isArray(value.usage.recipes) ||
+    !value.usage.recipes.length
+  ) {
+    throw new Error("normalized Wiki sections must use schema version 1 and contain rows");
+  }
+  return {
+    dropTable: { rows: value.dropTable.rows.map(parseDropRow) },
+    usage: { recipes: value.usage.recipes.map(parseUsageRecipe) },
   };
 }
 
@@ -84,5 +220,6 @@ export function parseWikiPageDetail(value: unknown): WikiPageDetail {
         "wiki detail revision timestamp",
       ),
     },
+    normalized: parseNormalizedSections(value.normalized),
   };
 }

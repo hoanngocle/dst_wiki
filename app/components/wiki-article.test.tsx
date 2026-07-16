@@ -1,6 +1,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
+import type { ItemListEntry } from "@/app/lib/item-catalog";
 import { WikiArticle } from "./wiki-article";
 
 const detail = {
@@ -94,5 +95,85 @@ describe("WikiArticle", () => {
 
     expect(await screen.findByText("Pointy and hurty.")).toBeDefined();
     expect(fetchMock).toHaveBeenCalledTimes(2);
+  });
+
+  it("renders normalized Wiki regions before the remaining article", async () => {
+    const nightLight: ItemListEntry = {
+      id: "base_game:nightlight",
+      prefabId: "nightlight",
+      namespace: "base_game",
+      category: "structure",
+      name: "Đèn bóng đêm",
+      englishName: "Night Light",
+      description: null,
+      craftingNote: null,
+      sprite: null,
+      recipe: null,
+      wiki: null,
+    };
+    const onSelectItem = vi.fn();
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: async () => ({
+          ...detail,
+          normalized: {
+            schema_version: 1,
+            dropTable: {
+              rows: [
+                {
+                  sources: [
+                    {
+                      title: "Beardling",
+                      url: "https://dontstarve.wiki.gg/wiki/Beardling",
+                      entityId: null,
+                    },
+                  ],
+                  quantity: "1-3",
+                  chance: "40%",
+                  context: null,
+                },
+              ],
+            },
+            usage: {
+              recipes: [
+                {
+                  result: {
+                    title: "Night Light",
+                    url: "https://dontstarve.wiki.gg/wiki/Night_Light",
+                    entityId: "base_game:nightlight",
+                  },
+                  resultAmount: 1,
+                  nightmareFuelAmount: 2,
+                  ingredients: [],
+                  station: "Prestihatitator",
+                  dlc: null,
+                  character: null,
+                  note: null,
+                },
+              ],
+            },
+          },
+        }),
+      }),
+    );
+
+    render(
+      <WikiArticle
+        detailUrl="/data/wiki/pages/100736.json"
+        canonicalUrl={detail.canonicalUrl}
+        itemsById={new Map([[nightLight.id, nightLight]])}
+        onSelectItem={onSelectItem}
+      />,
+    );
+
+    const dropHeading = await screen.findByRole("heading", { name: "Drop table" });
+    const articleHeading = screen.getByRole("heading", { name: "Halberd" });
+    expect(
+      dropHeading.compareDocumentPosition(articleHeading) & Node.DOCUMENT_POSITION_FOLLOWING,
+    ).toBeTruthy();
+    fireEvent.click(screen.getByRole("button", { name: "Đèn bóng đêm" }));
+    expect(onSelectItem).toHaveBeenCalledWith(nightLight);
   });
 });
