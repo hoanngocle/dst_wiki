@@ -48,6 +48,8 @@ class WikiSectionsTests(unittest.TestCase):
         self.assertEqual(rows[0]["chance"], "40%")
         self.assertEqual(rows[0]["sources"][0]["entityId"], "base_game:beardling")
         self.assertIsNone(rows[0]["sources"][1]["entityId"])
+        self.assertIsNone(rows[0]["context"])
+        self.assertIsNone(rows[1]["context"])
         self.assertEqual(
             rows[0]["sources"][1]["url"],
             "https://dontstarve.wiki.gg/wiki/Crab_%28insanity%29",
@@ -70,6 +72,10 @@ class WikiSectionsTests(unittest.TestCase):
         self.assertEqual(
             [row["chance"] for row in rows],
             ["40%", "50%", "60%", "3.07%", "20%", "100%", "100%", "0.46%", "0.1%", "75%"],
+        )
+        self.assertEqual(
+            [source["title"] for source in rows[5]["sources"]],
+            ["Ancient Statue", "Touch Stone"],
         )
         self.assertIn("sans gems", rows[5]["context"])
         self.assertIn("Broken by Resurrection", rows[5]["context"])

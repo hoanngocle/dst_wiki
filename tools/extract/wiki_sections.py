@@ -195,7 +195,7 @@ def _source_references(
                 continue
             found_pic = True
             target, label = pic
-            identity = normalize_identity(target)
+            identity = normalize_identity(label)
             if identity and identity not in seen:
                 sources.append(_reference(label, target, entity_ids_by_title))
                 seen.add(identity)
@@ -207,13 +207,13 @@ def _source_references(
             if re.match(r"^(?:File|Image):", target, re.IGNORECASE):
                 continue
             label = parts[-1].strip() if len(parts) > 1 else target
-            identity = normalize_identity(target)
+            identity = normalize_identity(label or target)
             if identity and identity not in seen:
                 sources.append(_reference(label or target, target, entity_ids_by_title))
                 seen.add(identity)
 
     context = _plain_text(source_cell)
-    for source in sources:
+    for source in sorted(sources, key=lambda value: len(value["title"]), reverse=True):
         context = re.sub(re.escape(source["title"]), " ", context, flags=re.IGNORECASE)
     context = re.sub(r"\s+", " ", context).strip(" +")
     return sources, context or None
