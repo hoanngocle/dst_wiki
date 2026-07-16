@@ -14,6 +14,7 @@ import { GameSprite } from "./game-sprite";
 
 const WIKI_PAGE_BASE = "https://dontstarve.wiki.gg/wiki/";
 const WIKI_FILE_BASE = `${WIKI_PAGE_BASE}Special:Redirect/file/`;
+const STRUCTURED_ICON_SIZE = 48;
 
 const NIGHTMARE_FUEL_REFERENCE: NormalizedWikiReference = {
   title: "Nightmare Fuel",
@@ -98,7 +99,7 @@ function WikiUsageIcon({
   const image = item?.sprite ? (
     <GameSprite
       sprite={item.sprite}
-      size={34}
+      size={STRUCTURED_ICON_SIZE}
       rounded={false}
       className="rounded-[4px]"
     />
@@ -106,10 +107,10 @@ function WikiUsageIcon({
     <Image
       src={reference.iconUrl ?? wikiFileUrl(reference.title)}
       alt=""
-      width={34}
-      height={34}
+      width={STRUCTURED_ICON_SIZE}
+      height={STRUCTURED_ICON_SIZE}
       data-testid="wiki-usage-icon"
-      className="size-[34px] shrink-0 rounded-[4px] border border-[#c8d3df] bg-[#e5ebf1] object-contain"
+      className="size-[48px] shrink-0 rounded-[4px] border border-[#c8d3df] bg-[#e5ebf1] object-contain"
     />
   );
   const content = (
@@ -181,7 +182,7 @@ function WikiReference({
       >
         <GameSprite
           sprite={item.sprite}
-          size={30}
+          size={STRUCTURED_ICON_SIZE}
           rounded={false}
           className="rounded-[4px]"
         />
@@ -202,15 +203,15 @@ function WikiReference({
           <Image
             src={reference.iconUrl}
             alt=""
-            width={30}
-            height={30}
+            width={STRUCTURED_ICON_SIZE}
+            height={STRUCTURED_ICON_SIZE}
             data-testid="wiki-source-icon"
-            className="size-[30px] shrink-0 rounded-[4px] border border-[#c8d3df] bg-[#e5ebf1] object-contain"
+            className="size-[48px] shrink-0 rounded-[4px] border border-[#c8d3df] bg-[#e5ebf1] object-contain"
           />
         ) : (
           <GameSprite
             sprite={null}
-            size={30}
+            size={STRUCTURED_ICON_SIZE}
             rounded={false}
             className="rounded-[4px]"
           />

@@ -219,9 +219,12 @@ describe("WikiStructuredSections", () => {
     const result = screen.getByRole("button", {
       name: "Đèn bóng đêm, số lượng 1",
     });
-    expect(within(result).getByTestId("game-sprite").className).toContain(
+    const resultSprite = within(result).getByTestId("game-sprite");
+    expect(resultSprite.className).toContain(
       "rounded-[4px]",
     );
+    expect(resultSprite.style.width).toBe("48px");
+    expect(resultSprite.style.height).toBe("48px");
     expect(result.getAttribute("aria-describedby")).toBe(
       screen.getByRole("tooltip", { name: "Đèn bóng đêm" }).id,
     );
@@ -236,9 +239,13 @@ describe("WikiStructuredSections", () => {
     const gold = screen.getByRole("link", {
       name: "Gold Nugget, số lượng 8",
     });
-    expect(within(gold).getByTestId("wiki-usage-icon").className).toContain(
+    const goldIcon = within(gold).getByTestId("wiki-usage-icon");
+    expect(goldIcon.className).toContain(
       "rounded-[4px]",
     );
+    expect(goldIcon.getAttribute("width")).toBe("48");
+    expect(goldIcon.getAttribute("height")).toBe("48");
+    expect(goldIcon.className).toContain("size-[48px]");
     expect(within(gold).getByText("Gold Nugget").getAttribute("role")).toBe("tooltip");
 
     const brokenStation = screen.getByRole("link", {
@@ -279,6 +286,9 @@ describe("WikiStructuredSections", () => {
       "wiki-source-icon",
     );
     expect(beardlingLink.firstElementChild?.className).toContain("rounded-[4px]");
+    expect(beardlingLink.firstElementChild?.getAttribute("width")).toBe("48");
+    expect(beardlingLink.firstElementChild?.getAttribute("height")).toBe("48");
+    expect(beardlingLink.firstElementChild?.className).toContain("size-[48px]");
     expect(beardlingLink.firstElementChild?.tagName).toBe("IMG");
     expect(
       decodeURIComponent(beardlingLink.firstElementChild?.getAttribute("src") ?? ""),
