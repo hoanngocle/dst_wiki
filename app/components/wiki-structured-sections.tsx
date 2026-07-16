@@ -396,11 +396,11 @@ export function WikiStructuredSections({
                 </h4>
               )}
               <div
-                className={`${group === "Don't Starve" ? "" : "mt-2"} overflow-x-auto border-y border-[#d5dde6]`}
+                className={`${group === "Don't Starve" ? "" : "mt-2"} min-w-0 border-y border-[#d5dde6]`}
               >
                 <table
                   aria-label={`Usage: ${group}`}
-                  className="w-full min-w-[760px] border-collapse text-left"
+                  className="w-full table-fixed border-collapse text-left"
                 >
                   <thead className="bg-[#eaf0f6]">
                     <tr className="border-b border-[#c8d3df]">
@@ -431,7 +431,7 @@ export function WikiStructuredSections({
                         className="bg-[#f8fafc] align-middle transition-colors hover:bg-[#f1f5f9]"
                       >
                         <td className="px-4 py-2 sm:px-5">
-                          <div className="flex min-w-max items-center gap-1">
+                          <div className="flex min-w-0 flex-wrap items-center gap-1">
                             <WikiUsageIcon
                               reference={NIGHTMARE_FUEL_REFERENCE}
                               amount={recipe.nightmareFuelAmount}

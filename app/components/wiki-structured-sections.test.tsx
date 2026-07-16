@@ -210,6 +210,9 @@ describe("WikiStructuredSections", () => {
     const baseUsageTable = screen.getByRole("table", {
       name: "Usage: Don't Starve",
     });
+    expect(baseUsageTable.parentElement?.className).not.toContain("overflow-");
+    expect(baseUsageTable.className).toContain("table-fixed");
+    expect(baseUsageTable.className).not.toContain("min-w-");
     expect(within(baseUsageTable).getAllByRole("row")).toHaveLength(2);
     expect(
       within(baseUsageTable).getByRole("columnheader", { name: "Công thức" }),
@@ -225,6 +228,10 @@ describe("WikiStructuredSections", () => {
 
     const recipeCells = within(baseUsageTable).getAllByRole("cell");
     expect(recipeCells).toHaveLength(3);
+    expect(recipeCells[0].firstElementChild?.className).toContain("flex-wrap");
+    expect(recipeCells[0].firstElementChild?.className).not.toContain(
+      "min-w-max",
+    );
     expect(
       within(recipeCells[0]).getByLabelText("Nhiên liệu Ác Mộng, số lượng 2"),
     ).toBeDefined();
