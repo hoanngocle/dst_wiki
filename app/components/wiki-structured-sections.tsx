@@ -94,7 +94,12 @@ function WikiUsageIcon({
       ? displayTitle
       : `${displayTitle}, số lượng ${amount}`;
   const image = item?.sprite ? (
-    <GameSprite sprite={item.sprite} size={34} rounded={false} />
+    <GameSprite
+      sprite={item.sprite}
+      size={34}
+      rounded={false}
+      className="rounded-[4px]"
+    />
   ) : (
     <Image
       src={reference.iconUrl ?? wikiFileUrl(reference.title)}
@@ -102,7 +107,7 @@ function WikiUsageIcon({
       width={34}
       height={34}
       data-testid="wiki-usage-icon"
-      className="size-[34px] shrink-0 border border-[#c8d3df] bg-[#e5ebf1] object-contain"
+      className="size-[34px] shrink-0 rounded-[4px] border border-[#c8d3df] bg-[#e5ebf1] object-contain"
     />
   );
   const content = (
@@ -170,9 +175,14 @@ function WikiReference({
       <button
         type="button"
         onClick={() => onSelectItem(item)}
-        className="inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-xl px-1.5 py-1 text-left font-semibold text-[#263b58] transition hover:bg-[#e9f1fb] hover:text-[#2e5fb3] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2e5fb3]/30"
+        className="inline-flex min-h-11 cursor-pointer items-center gap-2 whitespace-nowrap rounded-xl px-1.5 py-1 text-left font-semibold text-[#263b58] transition hover:bg-[#e9f1fb] hover:text-[#2e5fb3] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2e5fb3]/30"
       >
-        <GameSprite sprite={item.sprite} size={30} />
+        <GameSprite
+          sprite={item.sprite}
+          size={30}
+          rounded={false}
+          className="rounded-[4px]"
+        />
         <span>{item.name}</span>
       </button>
     );
@@ -183,7 +193,7 @@ function WikiReference({
       href={reference.url}
       target="_blank"
       rel="noreferrer"
-      className="inline-flex min-h-11 items-center gap-2 rounded-xl px-1.5 py-1 font-semibold text-[#2e5fb3] transition hover:bg-[#e9f1fb] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2e5fb3]/30"
+      className="inline-flex min-h-11 items-center gap-2 whitespace-nowrap rounded-xl px-1.5 py-1 font-semibold text-[#2e5fb3] transition hover:bg-[#e9f1fb] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2e5fb3]/30"
     >
       {showFallbackIcon ? (
         reference.iconUrl ? (
@@ -193,10 +203,15 @@ function WikiReference({
             width={30}
             height={30}
             data-testid="wiki-source-icon"
-            className="size-[30px] shrink-0 rounded-xl border border-[#c8d3df] bg-[#e5ebf1] object-contain"
+            className="size-[30px] shrink-0 rounded-[4px] border border-[#c8d3df] bg-[#e5ebf1] object-contain"
           />
         ) : (
-          <GameSprite sprite={null} size={30} />
+          <GameSprite
+            sprite={null}
+            size={30}
+            rounded={false}
+            className="rounded-[4px]"
+          />
         )
       ) : null}
       <span>{reference.title}</span>
@@ -237,30 +252,30 @@ export function WikiStructuredSections({
           </p>
         </div>
         <div className="overflow-x-auto">
-          <table aria-label="Drop table" className="w-full min-w-[720px] border-collapse text-left">
+          <table aria-label="Drop table" className="w-full min-w-[860px] border-collapse text-left">
             <thead className="bg-[#eaf0f6]">
               <tr className="border-b border-[#c8d3df]">
                 <th
                   scope="col"
-                  className="w-[42%] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[#607188] sm:px-5"
+                  className="w-[58%] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[#607188] sm:px-5"
                 >
                   Nguồn
                 </th>
                 <th
                   scope="col"
-                  className="w-[15%] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[#607188]"
+                  className="w-[12%] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[#607188]"
                 >
                   Số lượng
                 </th>
                 <th
                   scope="col"
-                  className="w-[13%] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[#607188]"
+                  className="w-[10%] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[#607188]"
                 >
                   Tỷ lệ
                 </th>
                 <th
                   scope="col"
-                  className="w-[30%] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[#607188] sm:pr-5"
+                  className="w-[20%] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[#607188] sm:pr-5"
                 >
                   Điều kiện
                 </th>
@@ -273,7 +288,7 @@ export function WikiStructuredSections({
                   className="bg-[#f8fafc] align-middle transition-colors hover:bg-[#f1f5f9]"
                 >
                   <td className="px-4 py-2 sm:px-5">
-                    <div className="flex flex-wrap gap-x-1 gap-y-0">
+                    <div className="flex flex-nowrap gap-x-1">
                       {row.sources.map((source) => (
                         <WikiReference
                           key={source.url}
@@ -310,14 +325,26 @@ export function WikiStructuredSections({
         </div>
         <div className="space-y-5 py-4 sm:py-5">
           {groupRecipes(sections.usage.recipes).map(([group, recipes]) => (
-            <section key={group} aria-labelledby={`wiki-usage-${group.replace(/\W+/g, "-")}`}>
-              <h4
-                id={`wiki-usage-${group.replace(/\W+/g, "-")}`}
-                className="px-4 text-sm font-semibold text-[#43556d] sm:px-5"
+            <section
+              key={group}
+              aria-label={group === "Don't Starve" ? "Công thức cơ bản" : undefined}
+              aria-labelledby={
+                group === "Don't Starve"
+                  ? undefined
+                  : `wiki-usage-${group.replace(/\W+/g, "-")}`
+              }
+            >
+              {group === "Don't Starve" ? null : (
+                <h4
+                  id={`wiki-usage-${group.replace(/\W+/g, "-")}`}
+                  className="px-4 text-sm font-semibold text-[#43556d] sm:px-5"
+                >
+                  {group}
+                </h4>
+              )}
+              <div
+                className={`${group === "Don't Starve" ? "" : "mt-2"} overflow-x-auto border-y border-[#d5dde6]`}
               >
-                {group}
-              </h4>
-              <div className="mt-2 overflow-x-auto border-y border-[#d5dde6]">
                 <table
                   aria-label={`Usage: ${group}`}
                   className="w-full min-w-[760px] border-collapse text-left"

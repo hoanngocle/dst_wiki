@@ -124,7 +124,9 @@ describe("WikiStructuredSections", () => {
     expect(screen.getByText("10 nguồn từ Wiki")).toBeDefined();
     const dropTable = screen.getByRole("table", { name: "Drop table" });
     expect(within(dropTable).getAllByRole("row")).toHaveLength(11);
-    expect(within(dropTable).getByRole("columnheader", { name: "Nguồn" })).toBeDefined();
+    expect(
+      within(dropTable).getByRole("columnheader", { name: "Nguồn" }).className,
+    ).toContain("w-[58%]");
     expect(within(dropTable).getByRole("columnheader", { name: "Số lượng" })).toBeDefined();
     expect(within(dropTable).getByRole("columnheader", { name: "Tỷ lệ" })).toBeDefined();
     expect(within(dropTable).getByRole("columnheader", { name: "Điều kiện" })).toBeDefined();
@@ -133,7 +135,7 @@ describe("WikiStructuredSections", () => {
     expect(screen.getByText("Khi mất trí")).toBeDefined();
     expect(screen.getByRole("heading", { name: "Usage" })).toBeDefined();
     expect(screen.getByText("2 công thức từ Wiki")).toBeDefined();
-    expect(screen.getByRole("heading", { name: "Don't Starve" })).toBeDefined();
+    expect(screen.queryByRole("heading", { name: "Don't Starve" })).toBeNull();
     expect(screen.getByRole("heading", { name: "Shipwrecked" })).toBeDefined();
     const baseUsageTable = screen.getByRole("table", {
       name: "Usage: Don't Starve",
@@ -174,8 +176,8 @@ describe("WikiStructuredSections", () => {
     const result = screen.getByRole("button", {
       name: "Đèn bóng đêm, số lượng 1",
     });
-    expect(within(result).getByTestId("game-sprite").className).not.toContain(
-      "rounded-xl",
+    expect(within(result).getByTestId("game-sprite").className).toContain(
+      "rounded-[4px]",
     );
     expect(result.getAttribute("aria-describedby")).toBe(
       screen.getByRole("tooltip", { name: "Đèn bóng đêm" }).id,
@@ -191,8 +193,8 @@ describe("WikiStructuredSections", () => {
     const gold = screen.getByRole("link", {
       name: "Gold Nugget, số lượng 8",
     });
-    expect(within(gold).getByTestId("wiki-usage-icon").className).not.toContain(
-      "rounded-xl",
+    expect(within(gold).getByTestId("wiki-usage-icon").className).toContain(
+      "rounded-[4px]",
     );
     expect(within(gold).getByText("Gold Nugget").getAttribute("role")).toBe("tooltip");
 
@@ -219,9 +221,11 @@ describe("WikiStructuredSections", () => {
     expect(screen.getByText("Warly")).toBeDefined();
     expect(screen.getByText("Chỉ dùng trong DLC.")).toBeDefined();
     const beardlingLink = screen.getByRole("link", { name: "Beardling" });
+    expect(beardlingLink.className).toContain("whitespace-nowrap");
     expect(beardlingLink.firstElementChild?.getAttribute("data-testid")).toBe(
       "wiki-source-icon",
     );
+    expect(beardlingLink.firstElementChild?.className).toContain("rounded-[4px]");
     expect(beardlingLink.firstElementChild?.tagName).toBe("IMG");
     expect(
       decodeURIComponent(beardlingLink.firstElementChild?.getAttribute("src") ?? ""),
