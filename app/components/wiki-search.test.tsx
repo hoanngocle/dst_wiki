@@ -1,5 +1,5 @@
 import { fireEvent, render, screen, within } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 
 import type { ItemListEntry } from "@/app/lib/item-catalog";
 import { WikiSearch } from "./wiki-search";
@@ -94,6 +94,10 @@ function makeItems(count: number): ItemListEntry[] {
     wiki: null,
   }));
 }
+
+afterEach(() => {
+  vi.unstubAllGlobals();
+});
 
 describe("WikiSearch", () => {
   it("shows every item before the user filters", () => {
@@ -331,10 +335,84 @@ describe("WikiSearch", () => {
 
     const dialog = screen.getByRole("dialog", { name: "Vàng" });
     expect(within(dialog).getByText("Gold Nugget")).toBeDefined();
-    expect(within(dialog).getByText("Prefab ID")).toBeDefined();
+    expect(within(dialog).queryByText("Prefab ID")).toBeNull();
 
     fireEvent.click(within(dialog).getByRole("button", { name: "Đóng chi tiết" }));
     expect(screen.queryByRole("dialog")).toBeNull();
     expect(document.activeElement).toBe(ingredient);
+  });
+
+  it("switches the shared modal from a mapped Wiki Usage result", async () => {
+    const nightLight: ItemListEntry = {
+      ...goldItem,
+      id: "base_game:nightlight",
+      prefabId: "nightlight",
+      category: "structure",
+      name: "Đèn bóng đêm",
+      englishName: "Night Light",
+    };
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: async () => ({
+          schema_version: 1,
+          pageId: 100736,
+          title: "Halberd",
+          canonicalUrl: "https://dontstarve.wiki.gg/wiki/Halberd",
+          html: "<p>Remaining article.</p>",
+          categories: ["Items"],
+          images: [],
+          revision: {
+            id: 569319,
+            sha1: "5bf67f6c77b1a0d0c5bb66b0ef02ccf5c04dba64",
+            timestamp: "2026-07-12T08:43:43Z",
+          },
+          normalized: {
+            schema_version: 1,
+            dropTable: {
+              rows: [
+                {
+                  sources: [
+                    {
+                      title: "Beardling",
+                      url: "https://dontstarve.wiki.gg/wiki/Beardling",
+                      entityId: null,
+                    },
+                  ],
+                  quantity: "1",
+                  chance: "40%",
+                  context: null,
+                },
+              ],
+            },
+            usage: {
+              recipes: [
+                {
+                  result: {
+                    title: "Night Light",
+                    url: "https://dontstarve.wiki.gg/wiki/Night_Light",
+                    entityId: nightLight.id,
+                  },
+                  resultAmount: 1,
+                  nightmareFuelAmount: 2,
+                  ingredients: [],
+                  station: "Prestihatitator",
+                  dlc: null,
+                  character: null,
+                  note: null,
+                },
+              ],
+            },
+          },
+        }),
+      }),
+    );
+    render(<WikiSearch items={[wikiItem, nightLight]} />);
+
+    fireEvent.click(screen.getByRole("button", { name: "Xem chi tiết Halberd" }));
+    fireEvent.click(await screen.findByRole("button", { name: "Đèn bóng đêm" }));
+
+    expect(screen.getByRole("dialog", { name: "Đèn bóng đêm" })).toBeDefined();
   });
 });

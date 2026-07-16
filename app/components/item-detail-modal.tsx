@@ -2,7 +2,6 @@ import { X } from "@phosphor-icons/react";
 import { useEffect, useId, useRef } from "react";
 
 import type { ItemListEntry } from "@/app/lib/item-catalog";
-import { hasRealPrefab } from "@/app/lib/wiki-search";
 import { GameSprite } from "./game-sprite";
 import { RecipeIngredients } from "./recipe-ingredients";
 import { WikiArticle } from "./wiki-article";
@@ -28,9 +27,13 @@ const categoryLabel = {
 
 export function ItemDetailModal({
   item,
+  itemsById,
+  onSelectItem,
   onClose,
 }: {
   item: ItemListEntry;
+  itemsById: ReadonlyMap<string, ItemListEntry>;
+  onSelectItem: (item: ItemListEntry) => void;
   onClose: () => void;
 }) {
   const titleId = useId();
@@ -41,7 +44,6 @@ export function ItemDetailModal({
     : item.namespace === "tu_tien"
       ? "Tu Tiên"
       : "DST";
-  const realPrefab = hasRealPrefab(item);
   const category = categoryLabel[item.category];
 
   useEffect(() => {
@@ -199,68 +201,13 @@ export function ItemDetailModal({
             </section>
           ) : null}
 
-          <section
-            aria-labelledby={`${titleId}-technical`}
-            className="overflow-hidden rounded-2xl border border-[#c8d3df] bg-[#f8fafc]"
-          >
-            <h3
-              id={`${titleId}-technical`}
-              className="border-b border-[#d5dde6] px-4 py-3 text-sm font-semibold text-[#172943]"
-            >
-              Thông tin kỹ thuật
-            </h3>
-            <dl className="divide-y divide-[#dce3eb]">
-              <div className="flex items-center justify-between gap-4 px-4 py-3 text-sm">
-                <dt className="text-[#607188]">
-                  {realPrefab ? "Prefab ID" : "Wiki page"}
-                </dt>
-                <dd className="max-w-[60%] truncate font-mono text-xs font-semibold text-[#263b58]">
-                  {realPrefab ? item.prefabId : item.wiki?.pageId}
-                </dd>
-              </div>
-              {item.wiki ? (
-                <div className="flex items-center justify-between gap-4 px-4 py-3 text-sm">
-                  <dt className="text-[#607188]">Trạng thái mapping</dt>
-                  <dd className="font-semibold text-[#263b58]">
-                    {item.wiki.mappingState === "mapped" ? "Đã map Prefab" : "Wiki độc lập"}
-                  </dd>
-                </div>
-              ) : null}
-            </dl>
-          </section>
-
-          {item.wiki?.relatedPages.length ? (
-            <section
-              aria-labelledby={`${titleId}-related`}
-              className="overflow-hidden rounded-2xl border border-[#c8d3df] bg-[#f8fafc]"
-            >
-              <h3
-                id={`${titleId}-related`}
-                className="border-b border-[#d5dde6] px-4 py-3 text-sm font-semibold text-[#172943]"
-              >
-                Trang liên quan
-              </h3>
-              <div className="flex flex-wrap gap-2 p-4">
-                {item.wiki.relatedPages.map((page) => (
-                  <a
-                    key={page.pageId}
-                    href={page.canonicalUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex min-h-11 items-center rounded-xl border border-[#b9cce8] px-3 py-2 text-sm font-semibold text-[#2e5fb3] hover:bg-[#e9f1fb]"
-                  >
-                    {page.title}
-                  </a>
-                ))}
-              </div>
-            </section>
-          ) : null}
-
           {item.wiki ? (
             <WikiArticle
               key={item.wiki.detailUrl}
               detailUrl={item.wiki.detailUrl}
               canonicalUrl={item.wiki.canonicalUrl}
+              itemsById={itemsById}
+              onSelectItem={onSelectItem}
             />
           ) : null}
         </div>

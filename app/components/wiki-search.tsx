@@ -341,7 +341,12 @@ export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
         </div>
       )}
       {selectedItem ? (
-        <ItemDetailModal item={selectedItem} onClose={closeItemDetails} />
+        <ItemDetailModal
+          item={selectedItem}
+          itemsById={itemsById}
+          onSelectItem={setSelectedItem}
+          onClose={closeItemDetails}
+        />
       ) : null}
     </section>
   );

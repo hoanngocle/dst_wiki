@@ -57,17 +57,40 @@ const wikiItem: ItemListEntry = {
   },
 };
 
+const nightLight: ItemListEntry = {
+  id: "base_game:nightlight",
+  prefabId: "nightlight",
+  namespace: "base_game",
+  category: "structure",
+  name: "Đèn bóng đêm",
+  englishName: "Night Light",
+  description: null,
+  craftingNote: null,
+  sprite: null,
+  recipe: null,
+  wiki: null,
+};
+
+function modalProps(selectedItem: ItemListEntry) {
+  return {
+    item: selectedItem,
+    itemsById: new Map([[nightLight.id, nightLight]]),
+    onSelectItem: vi.fn(),
+    onClose: vi.fn(),
+  };
+}
+
 afterEach(() => {
   vi.unstubAllGlobals();
 });
 
 describe("ItemDetailModal", () => {
   it("renders full item details and focuses the close button", () => {
-    render(<ItemDetailModal item={item} onClose={vi.fn()} />);
+    render(<ItemDetailModal {...modalProps(item)} />);
 
     expect(screen.getByRole("dialog", { name: "Vàng" })).toBeDefined();
     expect(screen.getByText("Gold Nugget")).toBeDefined();
-    expect(screen.getByText("goldnugget")).toBeDefined();
+    expect(screen.queryByText("goldnugget")).toBeNull();
     expect(screen.getByLabelText("Đá, số lượng 1")).toBeDefined();
     expect(screen.getByText("Item")).toBeDefined();
     expect(screen.getByText("DST")).toBeDefined();
@@ -79,8 +102,8 @@ describe("ItemDetailModal", () => {
     expect(screen.getByText("Một cục vàng.")).toBeDefined();
     expect(screen.queryByRole("heading", { name: "Source" })).toBeNull();
     expect(screen.queryByText("Dropped by")).toBeNull();
-    expect(screen.getByRole("heading", { name: "Thông tin kỹ thuật" })).toBeDefined();
-    expect(screen.getByText("Prefab ID")).toBeDefined();
+    expect(screen.queryByRole("heading", { name: "Thông tin kỹ thuật" })).toBeNull();
+    expect(screen.queryByText("Prefab ID")).toBeNull();
     expect(screen.queryByRole("heading", { name: "Object Info" })).toBeNull();
     const close = screen.getByRole("button", { name: "Đóng chi tiết" });
     expect(close.className).toContain("cursor-pointer");
@@ -89,7 +112,7 @@ describe("ItemDetailModal", () => {
 
   it("closes from the close button and Escape", () => {
     const onClose = vi.fn();
-    render(<ItemDetailModal item={item} onClose={onClose} />);
+    render(<ItemDetailModal {...modalProps(item)} onClose={onClose} />);
 
     fireEvent.click(screen.getByRole("button", { name: "Đóng chi tiết" }));
     fireEvent.keyDown(document, { key: "Escape" });
@@ -99,7 +122,7 @@ describe("ItemDetailModal", () => {
 
   it("closes only when the backdrop itself is clicked", () => {
     const onClose = vi.fn();
-    render(<ItemDetailModal item={item} onClose={onClose} />);
+    render(<ItemDetailModal {...modalProps(item)} onClose={onClose} />);
 
     const dialog = screen.getByRole("dialog", { name: "Vàng" });
     const backdrop = dialog.parentElement as HTMLElement;
@@ -111,7 +134,7 @@ describe("ItemDetailModal", () => {
   });
 
   it("keeps keyboard focus inside the modal", () => {
-    render(<ItemDetailModal item={item} onClose={vi.fn()} />);
+    render(<ItemDetailModal {...modalProps(item)} />);
 
     const close = screen.getByRole("button", { name: "Đóng chi tiết" });
     fireEvent.keyDown(document, { key: "Tab" });
@@ -127,7 +150,7 @@ describe("ItemDetailModal", () => {
     opener.focus();
     const previousOverflow = document.body.style.overflow;
 
-    const { unmount } = render(<ItemDetailModal item={item} onClose={vi.fn()} />);
+    const { unmount } = render(<ItemDetailModal {...modalProps(item)} />);
     expect(document.body.style.overflow).toBe("hidden");
 
     unmount();
@@ -139,20 +162,20 @@ describe("ItemDetailModal", () => {
   it("omits the recipe panel when no recipe exists", () => {
     render(
       <ItemDetailModal
+        {...modalProps(item)}
         item={{ ...item, description: null, recipe: null }}
-        onClose={vi.fn()}
       />,
     );
 
     expect(screen.queryByRole("heading", { name: "Công thức" })).toBeNull();
-    expect(screen.getByRole("heading", { name: "Thông tin kỹ thuật" })).toBeDefined();
+    expect(screen.queryByRole("heading", { name: "Thông tin kỹ thuật" })).toBeNull();
   });
 
   it("shows a crafting note inside the runtime recipe panel", () => {
     render(
       <ItemDetailModal
+        {...modalProps(item)}
         item={{ ...item, craftingNote: "Rèn bằng linh lực tinh khiết." }}
-        onClose={vi.fn()}
       />,
     );
 
@@ -163,12 +186,12 @@ describe("ItemDetailModal", () => {
   it("shows a note-only crafting panel without inventing ingredients", () => {
     render(
       <ItemDetailModal
+        {...modalProps(item)}
         item={{
           ...item,
           recipe: null,
           craftingNote: "Tiêu hao 10 điểm máu để tạo ra một cánh hoa.",
         }}
-        onClose={vi.fn()}
       />,
     );
 
@@ -179,7 +202,7 @@ describe("ItemDetailModal", () => {
     expect(screen.queryByText("=")).toBeNull();
   });
 
-  it("loads a standalone wiki article and uses page metadata instead of a fake prefab", async () => {
+  it("loads a standalone wiki article without obsolete metadata panels", async () => {
     vi.stubGlobal(
       "fetch",
       vi.fn().mockResolvedValue({
@@ -202,12 +225,84 @@ describe("ItemDetailModal", () => {
       }),
     );
 
-    render(<ItemDetailModal item={wikiItem} onClose={vi.fn()} />);
+    render(<ItemDetailModal {...modalProps(wikiItem)} />);
 
-    expect(screen.getByText("Wiki page")).toBeDefined();
-    expect(screen.getByText("100736")).toBeDefined();
+    expect(screen.queryByText("Wiki page")).toBeNull();
+    expect(screen.queryByText("100736")).toBeNull();
     expect(screen.queryByText("wiki-100736")).toBeNull();
-    expect(screen.getByRole("link", { name: "Halberd/DST" })).toBeDefined();
+    expect(screen.queryByRole("heading", { name: "Trang liên quan" })).toBeNull();
+    expect(screen.queryByRole("link", { name: "Halberd/DST" })).toBeNull();
     expect(await screen.findByText("Full Halberd article.")).toBeDefined();
+  });
+
+  it("forwards mapped Wiki item selections to the shared detail flow", async () => {
+    const onSelectItem = vi.fn();
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: async () => ({
+          schema_version: 1,
+          pageId: 100736,
+          title: "Halberd",
+          canonicalUrl: "https://dontstarve.wiki.gg/wiki/Halberd",
+          html: "<p>Remaining article.</p>",
+          categories: ["Items"],
+          images: [],
+          revision: {
+            id: 569319,
+            sha1: "5bf67f6c77b1a0d0c5bb66b0ef02ccf5c04dba64",
+            timestamp: "2026-07-12T08:43:43Z",
+          },
+          normalized: {
+            schema_version: 1,
+            dropTable: {
+              rows: [
+                {
+                  sources: [
+                    {
+                      title: "Beardling",
+                      url: "https://dontstarve.wiki.gg/wiki/Beardling",
+                      entityId: null,
+                    },
+                  ],
+                  quantity: "1",
+                  chance: "40%",
+                  context: null,
+                },
+              ],
+            },
+            usage: {
+              recipes: [
+                {
+                  result: {
+                    title: "Night Light",
+                    url: "https://dontstarve.wiki.gg/wiki/Night_Light",
+                    entityId: nightLight.id,
+                  },
+                  resultAmount: 1,
+                  nightmareFuelAmount: 2,
+                  ingredients: [],
+                  station: "Prestihatitator",
+                  dlc: null,
+                  character: null,
+                  note: null,
+                },
+              ],
+            },
+          },
+        }),
+      }),
+    );
+
+    render(
+      <ItemDetailModal
+        {...modalProps(wikiItem)}
+        onSelectItem={onSelectItem}
+      />,
+    );
+
+    fireEvent.click(await screen.findByRole("button", { name: "Đèn bóng đêm" }));
+    expect(onSelectItem).toHaveBeenCalledWith(nightLight);
   });
 });
