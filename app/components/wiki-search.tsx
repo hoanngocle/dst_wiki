@@ -2,23 +2,34 @@
 
 import { MagnifyingGlass, X } from "@phosphor-icons/react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import type { ReactNode } from "react";
 
 import { ItemDetailModal } from "@/app/components/item-detail-modal";
 import { ItemResult } from "@/app/components/item-result";
 import type {
-  ItemFilter,
+  ItemAvailabilityFilter,
   ItemListEntry,
+  ItemSourceFilter,
   PrefabCategoryFilter,
 } from "@/app/lib/item-catalog";
 import { filterItems, normalizeSearchText } from "@/app/lib/wiki-search";
 
 const RESULT_BATCH_SIZE = 40;
 
-const filters: readonly { value: ItemFilter; label: string }[] = [
+const sourceFilters: readonly { value: ItemSourceFilter; label: string }[] = [
   { value: "all", label: "Tất cả" },
-  { value: "tu_tien", label: "Tu Tiên" },
+  { value: "wiki", label: "Wiki" },
   { value: "base_game", label: "DST" },
-  { value: "craftable", label: "Có công thức" },
+  { value: "tu_tien", label: "Tu Tiên" },
+];
+
+const availabilityFilters: readonly {
+  value: ItemAvailabilityFilter;
+  label: string;
+}[] = [
+  { value: "all", label: "Tất cả dữ liệu" },
+  { value: "recipe", label: "Có công thức" },
+  { value: "image", label: "Có ảnh" },
 ];
 
 const categoryFilters: readonly {
@@ -35,10 +46,52 @@ const categoryFilters: readonly {
   { value: "other", label: "Khác" },
 ];
 
+function FilterGroup({ label, children }: { label: string; children: ReactNode }) {
+  const visibleLabel = label.replace("Lọc theo ", "");
+
+  return (
+    <div role="group" aria-label={label} className="min-w-0">
+      <p aria-hidden="true" className="mb-2 text-xs font-semibold text-[#43556d]">
+        {visibleLabel.charAt(0).toUpperCase() + visibleLabel.slice(1)}
+      </p>
+      <div className="flex gap-2 overflow-x-auto pb-1">{children}</div>
+    </div>
+  );
+}
+
+function FilterButton({
+  pressed,
+  onClick,
+  children,
+  tone = "accent",
+}: {
+  pressed: boolean;
+  onClick: () => void;
+  children: ReactNode;
+  tone?: "accent" | "dark";
+}) {
+  const pressedClasses =
+    tone === "dark"
+      ? "aria-pressed:border-[#172943] aria-pressed:bg-[#172943]"
+      : "aria-pressed:border-[#2e5fb3] aria-pressed:bg-[#2e5fb3]";
+
+  return (
+    <button
+      type="button"
+      aria-pressed={pressed}
+      onClick={onClick}
+      className={`min-h-11 shrink-0 cursor-pointer rounded-full border border-[#cbd5e1] px-3 py-1.5 text-sm font-medium text-[#5c6b80] transition hover:border-[#2e5fb3] hover:text-[#2e5fb3] active:scale-[0.98] aria-pressed:text-[#f8fafc] ${pressedClasses}`}
+    >
+      {children}
+    </button>
+  );
+}
+
 export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
   const [query, setQuery] = useState("");
-  const [filter, setFilter] = useState<ItemFilter>("all");
+  const [source, setSource] = useState<ItemSourceFilter>("all");
   const [category, setCategory] = useState<PrefabCategoryFilter>("all");
+  const [availability, setAvailability] = useState<ItemAvailabilityFilter>("all");
   const [visibleLimit, setVisibleLimit] = useState(RESULT_BATCH_SIZE);
   const [selectedItem, setSelectedItem] = useState<ItemListEntry | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -47,8 +100,8 @@ export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
     [items],
   );
   const results = useMemo(
-    () => filterItems(items, query, filter, category),
-    [category, filter, items, query],
+    () => filterItems(items, query, source, category, availability),
+    [availability, category, items, query, source],
   );
   const visibleResults = results.slice(0, visibleLimit);
 
@@ -79,13 +132,18 @@ export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
     setVisibleLimit(RESULT_BATCH_SIZE);
   }
 
-  function updateFilter(nextFilter: ItemFilter) {
-    setFilter(nextFilter);
+  function updateSource(nextSource: ItemSourceFilter) {
+    setSource(nextSource);
     setVisibleLimit(RESULT_BATCH_SIZE);
   }
 
   function updateCategory(nextCategory: PrefabCategoryFilter) {
     setCategory(nextCategory);
+    setVisibleLimit(RESULT_BATCH_SIZE);
+  }
+
+  function updateAvailability(nextAvailability: ItemAvailabilityFilter) {
+    setAvailability(nextAvailability);
     setVisibleLimit(RESULT_BATCH_SIZE);
   }
 
@@ -96,27 +154,32 @@ export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
 
   function resetFilters() {
     setQuery("");
-    setFilter("all");
+    setSource("all");
     setCategory("all");
+    setAvailability("all");
     setVisibleLimit(RESULT_BATCH_SIZE);
     inputRef.current?.focus();
   }
 
   const closeItemDetails = useCallback(() => setSelectedItem(null), []);
 
-  const countLabel = `${results.length} ${results.length === 1 ? "Prefab" : "Prefabs"}`;
-  const activeFilterLabel =
-    filters.find((candidate) => candidate.value === filter)?.label ?? "Tất cả";
+  const countLabel = `${results.length} vật phẩm`;
+  const activeSourceLabel =
+    sourceFilters.find((candidate) => candidate.value === source)?.label ?? "Tất cả";
   const activeCategoryLabel =
     categoryFilters.find((candidate) => candidate.value === category)?.label ??
     "Tất cả loại";
+  const activeAvailabilityLabel =
+    availabilityFilters.find((candidate) => candidate.value === availability)?.label ??
+    "Tất cả dữ liệu";
   const trimmedQuery = query.trim();
   const statusLabel = trimmedQuery
-    ? `${countLabel} khớp với "${trimmedQuery}" trong ${activeFilterLabel}, ${activeCategoryLabel}.`
-    : `${countLabel} trong ${activeFilterLabel}, ${activeCategoryLabel}.`;
+    ? `${countLabel} khớp với "${trimmedQuery}" trong ${activeSourceLabel}, ${activeCategoryLabel}, ${activeAvailabilityLabel}.`
+    : `${countLabel} trong ${activeSourceLabel}, ${activeCategoryLabel}, ${activeAvailabilityLabel}.`;
   const resultsKey = JSON.stringify([
-    filter,
+    source,
     category,
+    availability,
     normalizeSearchText(query),
     results.map((item) => item.id),
   ]);
@@ -128,7 +191,7 @@ export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
           htmlFor="item-search"
           className="mb-2 block text-sm font-medium text-[#263b58]"
         >
-          Tìm kiếm Prefabs.
+          Tìm kiếm vật phẩm.
         </label>
         <div className="relative">
           <MagnifyingGlass
@@ -146,7 +209,7 @@ export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
             onKeyDown={(event) => {
               if (event.key === "Escape") updateQuery("");
             }}
-            placeholder="Tìm theo tên, prefab hoặc nguyên liệu..."
+            placeholder="Tìm theo tên, Wiki, prefab hoặc nguyên liệu..."
             aria-describedby="item-search-help"
             className="h-14 w-full rounded-xl border border-[#a8b8cc] bg-[#f8fafc] pl-12 pr-28 text-base text-[#14233b] placeholder:text-[#53647a] shadow-[0_10px_28px_rgba(34,61,96,0.08)] outline-none transition focus:border-[#2e5fb3] focus:ring-4 focus:ring-[#2e5fb3]/15"
           />
@@ -166,44 +229,47 @@ export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
           )}
         </div>
         <p id="item-search-help" className="sr-only">
-          Tìm theo tên tiếng Việt, tên tiếng Anh, prefab, mô tả hoặc nguyên liệu.
+          Tìm theo tên tiếng Việt, tên tiếng Anh, Wiki, prefab, mô tả hoặc nguyên liệu.
         </p>
       </div>
 
-      <div
-        role="group"
-        className="mt-1 flex gap-2 overflow-x-auto pb-2"
-        aria-label="Lọc theo category"
-      >
-        {categoryFilters.map((candidate) => (
-          <button
-            key={candidate.value}
-            type="button"
-            aria-pressed={category === candidate.value}
-            onClick={() => updateCategory(candidate.value)}
-            className="min-h-11 shrink-0 cursor-pointer rounded-full border border-[#cbd5e1] px-3 py-1.5 text-sm font-medium text-[#5c6b80] transition hover:border-[#2e5fb3] hover:text-[#2e5fb3] active:scale-[0.98] aria-pressed:border-[#172943] aria-pressed:bg-[#172943] aria-pressed:text-[#f8fafc]"
-          >
-            {candidate.label}
-          </button>
-        ))}
-      </div>
-
-      <div
-        role="group"
-        className="mt-3 flex gap-2 overflow-x-auto pb-2"
-        aria-label="Lọc Prefabs"
-      >
-        {filters.map((candidate) => (
-          <button
-            key={candidate.value}
-            type="button"
-            aria-pressed={filter === candidate.value}
-            onClick={() => updateFilter(candidate.value)}
-            className="min-h-11 shrink-0 cursor-pointer rounded-full border border-[#cbd5e1] px-3 py-1.5 text-sm font-medium text-[#5c6b80] transition hover:border-[#2e5fb3] hover:text-[#2e5fb3] active:scale-[0.98] aria-pressed:border-[#2e5fb3] aria-pressed:bg-[#2e5fb3] aria-pressed:text-[#f8fafc]"
-          >
-            {candidate.label}
-          </button>
-        ))}
+      <div className="mt-5 grid gap-4 rounded-2xl border border-[#c7d2df] bg-[#f8fafc] p-4 shadow-[0_10px_26px_rgba(34,61,96,0.05)]">
+        <div className="grid gap-4 sm:grid-cols-2">
+          <FilterGroup label="Lọc theo nguồn">
+            {sourceFilters.map((candidate) => (
+              <FilterButton
+                key={candidate.value}
+                pressed={source === candidate.value}
+                onClick={() => updateSource(candidate.value)}
+              >
+                {candidate.label}
+              </FilterButton>
+            ))}
+          </FilterGroup>
+          <FilterGroup label="Lọc theo dữ liệu">
+            {availabilityFilters.map((candidate) => (
+              <FilterButton
+                key={candidate.value}
+                pressed={availability === candidate.value}
+                onClick={() => updateAvailability(candidate.value)}
+              >
+                {candidate.label}
+              </FilterButton>
+            ))}
+          </FilterGroup>
+        </div>
+        <FilterGroup label="Lọc theo danh mục">
+          {categoryFilters.map((candidate) => (
+            <FilterButton
+              key={candidate.value}
+              pressed={category === candidate.value}
+              onClick={() => updateCategory(candidate.value)}
+              tone="dark"
+            >
+              {candidate.label}
+            </FilterButton>
+          ))}
+        </FilterGroup>
       </div>
 
       <div className="mt-7 flex items-end justify-between gap-4">
@@ -211,7 +277,7 @@ export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
           id="item-results"
           className="text-lg font-semibold tracking-tight text-[#14233b]"
         >
-          Danh sách Prefabs
+          Danh sách vật phẩm
         </h2>
         <p aria-hidden="true" className="text-sm text-[#53647a]">
           {countLabel}
@@ -260,7 +326,7 @@ export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
           className="mt-4 rounded-2xl border border-[#cbd5e1] bg-[#f8fafc] px-6 py-14 text-center motion-safe:animate-[atlas-result-in_180ms_ease-out]"
         >
           <h3 className="text-lg font-semibold text-[#14233b]">
-            Không tìm thấy Prefab
+            Không tìm thấy vật phẩm
           </h3>
           <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-[#53647a]">
             Thử từ khóa khác hoặc xóa bộ lọc hiện tại.

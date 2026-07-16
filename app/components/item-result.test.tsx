@@ -42,6 +42,28 @@ const ingredientItem: ItemListEntry = {
   wiki: null,
 };
 
+const standaloneWikiItem: ItemListEntry = {
+  id: "wiki:100736",
+  prefabId: "wiki-100736",
+  namespace: "base_game",
+  category: "item",
+  name: "Halberd",
+  englishName: "Halberd",
+  description: "Pointy and hurty.",
+  craftingNote: null,
+  sprite: null,
+  recipe: null,
+  wiki: {
+    pageId: 100736,
+    title: "Halberd",
+    canonicalUrl: "https://dontstarve.wiki.gg/wiki/Halberd",
+    categories: ["Items"],
+    mappingState: "unmatched",
+    detailUrl: "/data/wiki/pages/100736.json",
+    relatedPages: [],
+  },
+};
+
 describe("ItemResult", () => {
   it("renders the item identity, source, image, and recipe", () => {
     render(<ItemResult item={item} query="" />);
@@ -114,5 +136,35 @@ describe("ItemResult", () => {
 
     fireEvent.click(screen.getByRole("button", { name: "Vàng, số lượng 2" }));
     expect(onSelectItem).toHaveBeenCalledWith(ingredientItem);
+  });
+
+  it("presents standalone wiki pages without leaking a synthetic prefab id", () => {
+    render(<ItemResult item={standaloneWikiItem} query="" onSelectItem={vi.fn()} />);
+
+    expect(screen.getByText("Wiki")).toBeDefined();
+    expect(screen.getByText("Wiki item")).toBeDefined();
+    expect(screen.queryByText("wiki-100736")).toBeNull();
+  });
+
+  it("keeps a real prefab id for mapped wiki entries", () => {
+    render(
+      <ItemResult
+        item={{
+          ...item,
+          id: "base_game:goldnugget",
+          prefabId: "goldnugget",
+          namespace: "base_game",
+          wiki: {
+            ...standaloneWikiItem.wiki!,
+            mappingState: "mapped",
+          },
+        }}
+        query=""
+        onSelectItem={vi.fn()}
+      />,
+    );
+
+    expect(screen.getByText("Wiki")).toBeDefined();
+    expect(screen.getByText("goldnugget")).toBeDefined();
   });
 });

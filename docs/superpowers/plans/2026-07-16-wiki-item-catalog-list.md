@@ -34,7 +34,7 @@
 - Consumes: `data/generated/wiki.sqlite`, `public/data/catalog.json`, `public/data/assets.json`, and `data/crawled/dontstarve-items`.
 - Produces: schema-versioned compact items, local wiki article JSON, wiki images, and texture metadata consumed by later tasks.
 
-- [ ] **Step 1: Run the deterministic export**
+- [x] **Step 1: Run the deterministic export**
 
 ```bash
 python3 -m tools.extract.cli export
@@ -42,7 +42,7 @@ python3 -m tools.extract.cli export
 
 Expected: exit 0 and output naming `public/data/catalog.json`, `public/data/assets.json`, `public/data/items.json`, and `data/generated/item-textures.json`.
 
-- [ ] **Step 2: Verify the published contract is internally populated**
+- [x] **Step 2: Verify the published contract is internally populated**
 
 ```bash
 node - <<'NODE'
@@ -64,7 +64,7 @@ NODE
 
 Expected: schema validation succeeds and every count is greater than zero.
 
-- [ ] **Step 3: Run extraction regression tests**
+- [x] **Step 3: Run extraction regression tests**
 
 ```bash
 python3 -m unittest discover -s tests -v
@@ -85,7 +85,7 @@ Expected: all extraction and crawler tests pass.
 - Consumes: validated `ItemListEntry` records.
 - Produces: `ItemSourceFilter`, `ItemAvailabilityFilter`, `CatalogSummary`, `summarizeItems(items)`, `hasRealPrefab(item)`, and the expanded `filterItems(items, query, source, category, availability)` contract.
 
-- [ ] **Step 1: Write failing source, availability, summary, and identifier tests**
+- [x] **Step 1: Write failing source, availability, summary, and identifier tests**
 
 Add fixtures for a Tu Tien item, a plain DST entity, a mapped wiki entity, and an unmatched standalone wiki item. Add assertions equivalent to:
 
@@ -106,7 +106,7 @@ expect(hasRealPrefab(mappedWiki)).toBe(true);
 expect(hasRealPrefab(standaloneWiki)).toBe(false);
 ```
 
-- [ ] **Step 2: Run the focused library test and confirm RED**
+- [x] **Step 2: Run the focused library test and confirm RED**
 
 ```bash
 npm test -- app/lib/wiki-search.test.ts
@@ -114,7 +114,7 @@ npm test -- app/lib/wiki-search.test.ts
 
 Expected: fail because the new types, helpers, and five-argument filter contract do not exist.
 
-- [ ] **Step 3: Implement the minimal semantics**
+- [x] **Step 3: Implement the minimal semantics**
 
 Add these public types to `app/lib/item-catalog.ts`:
 
@@ -158,7 +158,7 @@ export function summarizeItems(items: readonly ItemListEntry[]): CatalogSummary 
 
 Extend `filterItems` with source, category, and availability AND semantics while preserving the current normalized search text.
 
-- [ ] **Step 4: Run the focused test and confirm GREEN**
+- [x] **Step 4: Run the focused test and confirm GREEN**
 
 ```bash
 npm test -- app/lib/wiki-search.test.ts
@@ -184,7 +184,7 @@ Expected: all `wiki-search` library tests pass.
 - Consumes: Task 2 filter types, summary helper, real-Prefab predicate, and item list.
 - Produces: item-focused page heading, derived summary metrics, three filter groups, source-aware cards, and item-focused result statuses.
 
-- [ ] **Step 1: Write failing page and search tests for the new information architecture**
+- [x] **Step 1: Write failing page and search tests for the new information architecture**
 
 Update page assertions and add component assertions equivalent to:
 
@@ -202,7 +202,7 @@ expect(screen.queryByText("Halberd")).toBeNull();
 
 Update batching and shortcut tests to query the new accessible search label.
 
-- [ ] **Step 2: Write failing card tests for mapped and standalone wiki entries**
+- [x] **Step 2: Write failing card tests for mapped and standalone wiki entries**
 
 ```typescript
 render(<ItemResult item={standaloneWiki} query="" onSelectItem={vi.fn()} />);
@@ -214,7 +214,7 @@ expect(screen.getByText("Wiki")).toBeDefined();
 expect(screen.getByText("goldnugget")).toBeDefined();
 ```
 
-- [ ] **Step 3: Run focused component tests and confirm RED**
+- [x] **Step 3: Run focused component tests and confirm RED**
 
 ```bash
 npm test -- app/page.test.tsx app/components/wiki-search.test.tsx app/components/item-result.test.tsx
@@ -222,11 +222,11 @@ npm test -- app/page.test.tsx app/components/wiki-search.test.tsx app/components
 
 Expected: fail on the old Prefab copy, missing controls, missing summary, and synthetic identifier leakage.
 
-- [ ] **Step 4: Implement the item page heading and summary**
+- [x] **Step 4: Implement the item page heading and summary**
 
 Keep `app/page.tsx` as a Server Component. Use `summarizeItems(items)` and render `Danh mục vật phẩm`, concise explanatory copy, and three real summary values: total items, Wiki entries, and recipes.
 
-- [ ] **Step 5: Implement consolidated search controls**
+- [x] **Step 5: Implement consolidated search controls**
 
 In `WikiSearch`, replace `filter` with `source` and add `availability` state. Define these exact options:
 
@@ -247,11 +247,11 @@ const availabilityFilters = [
 
 Keep each control at least 44 px tall, reset batching on every change, update empty-state reset, and change result/status copy from Prefab to `vật phẩm`.
 
-- [ ] **Step 6: Implement source-aware dense cards**
+- [x] **Step 6: Implement source-aware dense cards**
 
 Use `item.wiki ? "Wiki" : item.namespace === "tu_tien" ? "Tu Tiên" : "DST"` for the source badge. Render the real Prefab ID only when `hasRealPrefab(item)` is true; otherwise render `Wiki item`. Preserve the image, two-line description, recipe ingredient navigation, highlight behavior, and click target. Add `content-visibility: auto` through a reusable `.catalog-card` class in `app/globals.css` with a stable intrinsic fallback size.
 
-- [ ] **Step 7: Update the loading shell and confirm GREEN**
+- [x] **Step 7: Update the loading shell and confirm GREEN**
 
 Use `Đang tải danh mục vật phẩm` in the live loading status and keep four shape-matched card skeletons.
 
@@ -278,7 +278,7 @@ Expected: all focused page, search, and result tests pass.
 - Consumes: `item.wiki.detailUrl`, exported wiki page schema version 1, compact recipe metadata, and canonical URL.
 - Produces: `WikiPageDetail`, `parseWikiPageDetail(value)`, a lazy `WikiArticle` state machine, styled sanitized article HTML, related links, and canonical fallback.
 
-- [ ] **Step 1: Write the failing wiki detail parser test**
+- [x] **Step 1: Write the failing wiki detail parser test**
 
 ```typescript
 expect(
@@ -297,7 +297,7 @@ expect(
 expect(() => parseWikiPageDetail({ schema_version: 2 })).toThrow();
 ```
 
-- [ ] **Step 2: Run the parser test and confirm RED**
+- [x] **Step 2: Run the parser test and confirm RED**
 
 ```bash
 npm test -- app/lib/wiki-detail.test.ts
@@ -305,11 +305,11 @@ npm test -- app/lib/wiki-detail.test.ts
 
 Expected: fail because the module does not exist.
 
-- [ ] **Step 3: Implement the strict compact article parser**
+- [x] **Step 3: Implement the strict compact article parser**
 
 Define a `WikiPageDetail` containing `pageId`, `title`, `canonicalUrl`, `html`, `categories`, `images`, and `revision`. Validate schema version 1, positive numeric page ID, non-empty strings, arrays, and revision object. Preserve only fields rendered by the UI.
 
-- [ ] **Step 4: Run the parser test and confirm GREEN**
+- [x] **Step 4: Run the parser test and confirm GREEN**
 
 ```bash
 npm test -- app/lib/wiki-detail.test.ts
@@ -317,7 +317,7 @@ npm test -- app/lib/wiki-detail.test.ts
 
 Expected: parser tests pass.
 
-- [ ] **Step 5: Write failing article loading tests**
+- [x] **Step 5: Write failing article loading tests**
 
 Mock `fetch` and assert all three states:
 
@@ -332,13 +332,13 @@ expect(screen.getByRole("link", { name: "Mở trên Don't Starve Wiki" })).toHav
 
 For a rejected fetch, assert `Không tải được bài viết Wiki`, a `Thử lại` button, and the canonical link. Clicking retry must call `fetch` again.
 
-- [ ] **Step 6: Implement `WikiArticle` and integrate the modal**
+- [x] **Step 6: Implement `WikiArticle` and integrate the modal**
 
 `WikiArticle` uses an `AbortController`, fetches `detailUrl`, validates JSON with `parseWikiPageDetail`, and exposes loading, success, and error states. Success renders the already sanitized export HTML with `dangerouslySetInnerHTML` inside `.wiki-article`, plus the canonical link. The modal renders it only for `item.wiki` and keeps the compact overview and recipe visible before the request resolves.
 
 Remove the fabricated `Source / Dropped by` panel. Add a real description panel when `item.description` exists. Show a real Prefab definition row only when `hasRealPrefab(item)` is true. For standalone wiki items, show `Wiki page` and the page ID instead. Render compact related-page links when provided.
 
-- [ ] **Step 7: Style exported wiki HTML and confirm GREEN**
+- [x] **Step 7: Style exported wiki HTML and confirm GREEN**
 
 Add scoped `.wiki-article` rules for headings, paragraphs, links, lists, figures, responsive images, code, blockquotes, and horizontally scrollable tables. Do not style global HTML tags.
 
@@ -360,7 +360,7 @@ Expected: parser, article state, and modal tests all pass.
 - Consumes: completed data and UI implementation.
 - Produces: verified master commit containing generated artifacts, UI code, tests, and plan state.
 
-- [ ] **Step 1: Run the complete frontend test suite**
+- [x] **Step 1: Run the complete frontend test suite**
 
 ```bash
 npm test
@@ -368,7 +368,7 @@ npm test
 
 Expected: every Vitest suite passes with zero failures.
 
-- [ ] **Step 2: Run ESLint**
+- [x] **Step 2: Run ESLint**
 
 ```bash
 npm run lint
@@ -376,7 +376,7 @@ npm run lint
 
 Expected: exit 0 with no lint errors.
 
-- [ ] **Step 3: Run extraction validation**
+- [x] **Step 3: Run extraction validation**
 
 ```bash
 python3 -m tools.extract.cli validate
@@ -384,7 +384,7 @@ python3 -m tools.extract.cli validate
 
 Expected: exit 0 and `hard_failures=0` in the validation summary.
 
-- [ ] **Step 4: Run the production build**
+- [x] **Step 4: Run the production build**
 
 ```bash
 npm run build
@@ -392,7 +392,7 @@ npm run build
 
 Expected: Next.js production compilation and static page generation complete successfully.
 
-- [ ] **Step 5: Audit generated data and visible copy**
+- [x] **Step 5: Audit generated data and visible copy**
 
 ```bash
 rg -n 'Tìm kiếm Prefabs|Danh sách Prefabs|Tra cứu Prefab|wiki-[0-9]+' app
@@ -400,7 +400,7 @@ rg -n 'Tìm kiếm Prefabs|Danh sách Prefabs|Tra cứu Prefab|wiki-[0-9]+' app
 
 Expected: no obsolete visible Prefab copy and no hard-coded synthetic wiki identifier in UI code.
 
-- [ ] **Step 6: Review the exact staged scope and commit**
+- [x] **Step 6: Review the exact staged scope and commit**
 
 ```bash
 git diff --check

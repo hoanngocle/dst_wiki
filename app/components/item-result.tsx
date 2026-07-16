@@ -13,7 +13,7 @@ import type {
   ItemListEntry,
   PrefabCategory,
 } from "@/app/lib/item-catalog";
-import { findNormalizedTextMatch } from "@/app/lib/wiki-search";
+import { findNormalizedTextMatch, hasRealPrefab } from "@/app/lib/wiki-search";
 import { GameSprite } from "./game-sprite";
 import { RecipeIngredients } from "./recipe-ingredients";
 
@@ -61,12 +61,17 @@ export function ItemResult({
   itemsById,
   onSelectItem,
 }: ItemResultProps) {
-  const sourceLabel = item.namespace === "tu_tien" ? "Tu Tiên" : "DST";
+  const sourceLabel = item.wiki
+    ? "Wiki"
+    : item.namespace === "tu_tien"
+      ? "Tu Tiên"
+      : "DST";
+  const realPrefab = hasRealPrefab(item);
   const category = categoryMetadata[item.category];
   const CategoryIcon = category.icon;
 
   return (
-    <article className="h-full rounded-2xl border border-[#c8d3df] bg-[#f8fafc] p-4 shadow-[0_12px_32px_rgba(40,66,98,0.07)] transition duration-200 hover:-translate-y-0.5 hover:border-[#9fb3cb] hover:shadow-[0_16px_36px_rgba(40,66,98,0.11)] motion-reduce:transform-none motion-reduce:transition-none sm:p-5">
+    <article className="catalog-card h-full rounded-2xl border border-[#c8d3df] bg-[#f8fafc] p-4 shadow-[0_10px_28px_rgba(40,66,98,0.06)] transition duration-200 hover:-translate-y-0.5 hover:border-[#9fb3cb] hover:shadow-[0_14px_32px_rgba(40,66,98,0.1)] motion-reduce:transform-none motion-reduce:transition-none">
       <button
         type="button"
         disabled={!onSelectItem}
@@ -74,10 +79,22 @@ export function ItemResult({
         onClick={() => onSelectItem?.(item)}
         className="block w-full cursor-pointer rounded-xl text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2e5fb3]/30 disabled:cursor-default"
       >
-        <div className="grid grid-cols-[64px_minmax(0,1fr)] items-center gap-3">
-          <GameSprite sprite={item.sprite} size={64} className="ring-1 ring-[#c8d3df]" />
+        <div className="grid grid-cols-[72px_minmax(0,1fr)] items-center gap-3.5">
+          <GameSprite sprite={item.sprite} size={72} className="ring-1 ring-[#c8d3df]" />
           <div className="min-w-0">
-            <h3 className="truncate text-base font-semibold text-[#172943]">
+            <div className="mb-1.5 flex flex-wrap items-center gap-1.5 text-[11px] font-semibold">
+              <span className="rounded-full border border-[#b9cce8] bg-[#e9f1fb] px-2 py-0.5 text-[#2e5fb3]">
+                {sourceLabel}
+              </span>
+              <span
+                aria-label={`Loại: ${category.label}`}
+                className="inline-flex items-center gap-1 rounded-full border border-[#c8d3df] bg-[#eef3f8] px-2 py-0.5 text-[#43556d]"
+              >
+                <CategoryIcon aria-hidden="true" size={13} weight="duotone" />
+                {category.label}
+              </span>
+            </div>
+            <h3 className="truncate text-[17px] font-semibold text-[#172943]">
               <HighlightedText text={item.name} query={query} />
             </h3>
             {item.englishName ? (
@@ -85,18 +102,14 @@ export function ItemResult({
                 {item.englishName}
               </p>
             ) : null}
-            <div className="mt-1 flex min-w-0 flex-wrap items-center gap-x-2 gap-y-1 text-xs text-[#607188]">
-              <span className="font-medium text-[#2e5fb3]">{sourceLabel}</span>
-              <code className="truncate font-mono text-[11px] text-[#68798e]">{item.prefabId}</code>
-            </div>
+            {realPrefab ? (
+              <code className="mt-1 block truncate font-mono text-[11px] text-[#68798e]">
+                {item.prefabId}
+              </code>
+            ) : (
+              <span className="mt-1 block text-xs font-medium text-[#607188]">Wiki item</span>
+            )}
           </div>
-          <span
-            aria-label={`Loại: ${category.label}`}
-            className="col-span-2 inline-flex w-fit items-center gap-1.5 rounded-full border border-[#c8d3df] bg-[#eef3f8] px-2.5 py-1 text-xs font-medium text-[#43556d]"
-          >
-            <CategoryIcon aria-hidden="true" size={15} weight="duotone" />
-            {category.label}
-          </span>
         </div>
 
         {item.description ? (
@@ -106,14 +119,16 @@ export function ItemResult({
         ) : null}
       </button>
 
-      <div className="mt-4 border-t border-[#d5dde6] pt-3">
-        <p className="mb-2 text-xs font-semibold text-[#43556d]">Công thức</p>
-        <RecipeIngredients
-          recipe={item.recipe}
-          itemsById={itemsById}
-          onSelectItem={onSelectItem}
-        />
-      </div>
+      {item.recipe ? (
+        <div className="mt-4 border-t border-[#d5dde6] pt-3">
+          <p className="mb-2 text-xs font-semibold text-[#43556d]">Công thức</p>
+          <RecipeIngredients
+            recipe={item.recipe}
+            itemsById={itemsById}
+            onSelectItem={onSelectItem}
+          />
+        </div>
+      ) : null}
     </article>
   );
 }

@@ -1,5 +1,6 @@
 export type ItemNamespace = "tu_tien" | "base_game";
-export type ItemFilter = "all" | ItemNamespace | "craftable";
+export type ItemSourceFilter = "all" | "wiki" | ItemNamespace;
+export type ItemAvailabilityFilter = "all" | "recipe" | "image";
 export type PrefabCategory =
   | "item"
   | "mob"
@@ -9,6 +10,13 @@ export type PrefabCategory =
   | "effect"
   | "other";
 export type PrefabCategoryFilter = "all" | PrefabCategory;
+
+export type CatalogSummary = {
+  total: number;
+  wiki: number;
+  recipes: number;
+  pictured: number;
+};
 
 export type SpriteDescriptor = {
   src: string;

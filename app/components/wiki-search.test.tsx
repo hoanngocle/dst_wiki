@@ -57,6 +57,28 @@ const goldItem: ItemListEntry = {
   wiki: null,
 };
 
+const wikiItem: ItemListEntry = {
+  id: "wiki:100736",
+  prefabId: "wiki-100736",
+  namespace: "base_game",
+  category: "item",
+  name: "Halberd",
+  englishName: "Halberd",
+  description: "Pointy and hurty.",
+  craftingNote: null,
+  sprite: null,
+  recipe: null,
+  wiki: {
+    pageId: 100736,
+    title: "Halberd",
+    canonicalUrl: "https://dontstarve.wiki.gg/wiki/Halberd",
+    categories: ["Items"],
+    mappingState: "unmatched",
+    detailUrl: "/data/wiki/pages/100736.json",
+    relatedPages: [],
+  },
+};
+
 function makeItems(count: number): ItemListEntry[] {
   return Array.from({ length: count }, (_, index) => ({
     id: `tu_tien:item_${index + 1}`,
@@ -78,36 +100,36 @@ describe("WikiSearch", () => {
     render(<WikiSearch items={items} />);
     expect(screen.getByText("Kiếm Thử")).toBeDefined();
     expect(screen.getByText("Gỗ")).toBeDefined();
-    expect(screen.getByText("2 Prefabs")).toBeDefined();
+    expect(screen.getByText("2 vật phẩm")).toBeDefined();
   });
 
   it("filters immediately as the user types without requiring diacritics", () => {
     render(<WikiSearch items={items} />);
-    fireEvent.change(screen.getByRole("searchbox", { name: "Tìm kiếm Prefabs." }), {
+    fireEvent.change(screen.getByRole("searchbox", { name: "Tìm kiếm vật phẩm." }), {
       target: { value: "kiem" },
     });
     expect(screen.getByText("Kiếm Thử")).toBeDefined();
     expect(screen.queryByText("Gỗ")).toBeNull();
-    expect(screen.getByText("1 Prefab")).toBeDefined();
+    expect(screen.getByText("1 vật phẩm")).toBeDefined();
   });
 
   it("announces result context when equal-count result sets change", () => {
     render(<WikiSearch items={items} />);
-    const search = screen.getByRole("searchbox", { name: "Tìm kiếm Prefabs." });
+    const search = screen.getByRole("searchbox", { name: "Tìm kiếm vật phẩm." });
 
     fireEvent.change(search, { target: { value: "kiem" } });
     const status = screen.getByRole("status");
     expect(status.textContent).toBe(
-      '1 Prefab khớp với "kiem" trong Tất cả, Tất cả loại.',
+      '1 vật phẩm khớp với "kiem" trong Tất cả, Tất cả loại, Tất cả dữ liệu.',
     );
 
     fireEvent.change(search, { target: { value: "go" } });
     expect(status.textContent).toBe(
-      '1 Prefab khớp với "go" trong Tất cả, Tất cả loại.',
+      '1 vật phẩm khớp với "go" trong Tất cả, Tất cả loại, Tất cả dữ liệu.',
     );
   });
 
-  it("filters by namespace and craftability", () => {
+  it("filters by source and data availability", () => {
     render(<WikiSearch items={items} />);
     const namespaceFilter = screen.getByRole("button", { name: "Tu Tiên" });
     expect(namespaceFilter.className).toContain("cursor-pointer");
@@ -120,10 +142,22 @@ describe("WikiSearch", () => {
     expect(screen.queryByText("Gỗ")).toBeNull();
   });
 
+  it("filters standalone wiki items without treating them as DST prefabs", () => {
+    render(<WikiSearch items={[...items, wikiItem]} />);
+
+    fireEvent.click(screen.getByRole("button", { name: "Wiki" }));
+    expect(screen.getByRole("heading", { name: "Halberd" })).toBeDefined();
+    expect(screen.queryByText("Kiếm Thử")).toBeNull();
+    expect(screen.queryByText("Gỗ")).toBeNull();
+
+    fireEvent.click(screen.getByRole("button", { name: "Có công thức" }));
+    expect(screen.queryByRole("heading", { name: "Halberd" })).toBeNull();
+  });
+
   it("combines category and namespace filters", () => {
     render(<WikiSearch items={items} />);
 
-    expect(screen.getByRole("group", { name: "Lọc theo category" })).toBeDefined();
+    expect(screen.getByRole("group", { name: "Lọc theo danh mục" })).toBeDefined();
     fireEvent.click(screen.getByRole("button", { name: "Công trình" }));
     expect(screen.getByText("Gỗ")).toBeDefined();
     expect(screen.queryByText("Kiếm Thử")).toBeNull();
@@ -142,19 +176,20 @@ describe("WikiSearch", () => {
     expect(swordCard?.textContent).toContain("xd_sword");
   });
 
-  it("exposes item filters as a named group", () => {
+  it("exposes source and availability filters as named groups", () => {
     render(<WikiSearch items={items} />);
-    expect(screen.getByRole("group", { name: "Lọc Prefabs" })).toBeDefined();
+    expect(screen.getByRole("group", { name: "Lọc theo nguồn" })).toBeDefined();
+    expect(screen.getByRole("group", { name: "Lọc theo dữ liệu" })).toBeDefined();
   });
 
   it("clears query and filter from the empty state", () => {
     render(<WikiSearch items={items} />);
     fireEvent.click(screen.getByRole("button", { name: "DST" }));
-    fireEvent.change(screen.getByRole("searchbox", { name: "Tìm kiếm Prefabs." }), {
+    fireEvent.change(screen.getByRole("searchbox", { name: "Tìm kiếm vật phẩm." }), {
       target: { value: "kiem" },
     });
     fireEvent.click(screen.getByRole("button", { name: "Xóa bộ lọc" }));
-    expect(screen.getByRole("searchbox", { name: "Tìm kiếm Prefabs." })).toHaveProperty(
+    expect(screen.getByRole("searchbox", { name: "Tìm kiếm vật phẩm." })).toHaveProperty(
       "value",
       "",
     );
@@ -165,7 +200,7 @@ describe("WikiSearch", () => {
 
   it("highlights matching text", () => {
     render(<WikiSearch items={items} />);
-    fireEvent.change(screen.getByRole("searchbox", { name: "Tìm kiếm Prefabs." }), {
+    fireEvent.change(screen.getByRole("searchbox", { name: "Tìm kiếm vật phẩm." }), {
       target: { value: "kiem" },
     });
     expect(screen.getByText("Kiếm").tagName).toBe("MARK");
@@ -183,7 +218,7 @@ describe("WikiSearch", () => {
     ];
 
     render(<WikiSearch items={decomposedItems} />);
-    fireEvent.change(screen.getByRole("searchbox", { name: "Tìm kiếm Prefabs." }), {
+    fireEvent.change(screen.getByRole("searchbox", { name: "Tìm kiếm vật phẩm." }), {
       target: { value: "cafe" },
     });
 
@@ -194,7 +229,7 @@ describe("WikiSearch", () => {
     render(<WikiSearch items={items} />);
     const firstBoundary = screen.getByRole("list");
 
-    fireEvent.change(screen.getByRole("searchbox", { name: "Tìm kiếm Prefabs." }), {
+    fireEvent.change(screen.getByRole("searchbox", { name: "Tìm kiếm vật phẩm." }), {
       target: { value: "kiem" },
     });
 
@@ -207,7 +242,7 @@ describe("WikiSearch", () => {
 
   it("returns focus to search after clearing the query", () => {
     render(<WikiSearch items={items} />);
-    const search = screen.getByRole("searchbox", { name: "Tìm kiếm Prefabs." });
+    const search = screen.getByRole("searchbox", { name: "Tìm kiếm vật phẩm." });
     fireEvent.change(search, { target: { value: "kiem" } });
     const clear = screen.getByRole("button", { name: "Xóa tìm kiếm" });
     clear.focus();
@@ -218,7 +253,7 @@ describe("WikiSearch", () => {
 
   it("keeps the clear search touch target at least 44px tall", () => {
     render(<WikiSearch items={items} />);
-    fireEvent.change(screen.getByRole("searchbox", { name: "Tìm kiếm Prefabs." }), {
+    fireEvent.change(screen.getByRole("searchbox", { name: "Tìm kiếm vật phẩm." }), {
       target: { value: "kiem" },
     });
 
@@ -229,7 +264,7 @@ describe("WikiSearch", () => {
 
   it("focuses search with slash and Control K", () => {
     render(<WikiSearch items={items} />);
-    const search = screen.getByRole("searchbox", { name: "Tìm kiếm Prefabs." });
+    const search = screen.getByRole("searchbox", { name: "Tìm kiếm vật phẩm." });
     fireEvent.keyDown(window, { key: "/" });
     expect(document.activeElement).toBe(search);
 
@@ -240,7 +275,7 @@ describe("WikiSearch", () => {
 
   it("clears the query with Escape", () => {
     render(<WikiSearch items={items} />);
-    const search = screen.getByRole("searchbox", { name: "Tìm kiếm Prefabs." });
+    const search = screen.getByRole("searchbox", { name: "Tìm kiếm vật phẩm." });
     fireEvent.change(search, { target: { value: "kiem" } });
     fireEvent.keyDown(search, { key: "Escape" });
     expect(search).toHaveProperty("value", "");
@@ -259,7 +294,7 @@ describe("WikiSearch", () => {
     fireEvent.click(screen.getByRole("button", { name: "Xem thêm" }));
     expect(screen.getAllByRole("listitem")).toHaveLength(80);
 
-    fireEvent.change(screen.getByRole("searchbox", { name: "Tìm kiếm Prefabs." }), {
+    fireEvent.change(screen.getByRole("searchbox", { name: "Tìm kiếm vật phẩm." }), {
       target: { value: "Mục" },
     });
 

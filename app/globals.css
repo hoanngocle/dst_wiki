@@ -44,6 +44,149 @@ input {
   background: var(--accent);
 }
 
+.catalog-card {
+  content-visibility: auto;
+  contain-intrinsic-size: 240px;
+}
+
+.wiki-article {
+  color: #33465f;
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+
+.wiki-article > :first-child {
+  margin-top: 0;
+}
+
+.wiki-article > :last-child {
+  margin-bottom: 0;
+}
+
+.wiki-article h1,
+.wiki-article h2,
+.wiki-article h3,
+.wiki-article h4 {
+  clear: both;
+  margin: 1.75rem 0 0.75rem;
+  color: #172943;
+  font-weight: 650;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.wiki-article h1 {
+  font-size: 1.75rem;
+}
+
+.wiki-article h2 {
+  border-bottom: 1px solid #d5dde6;
+  padding-bottom: 0.5rem;
+  font-size: 1.35rem;
+}
+
+.wiki-article h3 {
+  font-size: 1.1rem;
+}
+
+.wiki-article p,
+.wiki-article ul,
+.wiki-article ol,
+.wiki-article dl,
+.wiki-article figure,
+.wiki-article blockquote,
+.wiki-article pre,
+.wiki-article table {
+  margin: 0.85rem 0;
+}
+
+.wiki-article ul,
+.wiki-article ol {
+  padding-left: 1.4rem;
+}
+
+.wiki-article ul {
+  list-style: disc;
+}
+
+.wiki-article ol {
+  list-style: decimal;
+}
+
+.wiki-article a {
+  color: #2e5fb3;
+  font-weight: 550;
+  text-decoration: underline;
+  text-decoration-color: rgb(46 95 179 / 35%);
+  text-underline-offset: 0.18em;
+}
+
+.wiki-article a:hover {
+  text-decoration-color: currentColor;
+}
+
+.wiki-article img {
+  max-width: 100%;
+  height: auto;
+}
+
+.wiki-article figure,
+.wiki-article .thumb,
+.wiki-article .infobox {
+  max-width: 100%;
+  border: 1px solid #c8d3df;
+  border-radius: 0.75rem;
+  background: #eef3f8;
+  padding: 0.65rem;
+}
+
+.wiki-article table {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+
+.wiki-article th,
+.wiki-article td {
+  min-width: 7rem;
+  border: 1px solid #c8d3df;
+  padding: 0.5rem 0.65rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.wiki-article th {
+  background: #e9eff6;
+  color: #263b58;
+  font-weight: 650;
+}
+
+.wiki-article blockquote {
+  border-left: 3px solid #9fb9dc;
+  padding-left: 1rem;
+  color: #53647a;
+}
+
+.wiki-article code,
+.wiki-article pre {
+  border-radius: 0.5rem;
+  background: #e9eff6;
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+}
+
+.wiki-article code {
+  padding: 0.1rem 0.3rem;
+}
+
+.wiki-article pre {
+  overflow-x: auto;
+  padding: 0.85rem;
+}
+
 @keyframes atlas-result-in {
   from {
     opacity: 0.65;

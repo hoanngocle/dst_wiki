@@ -4,7 +4,9 @@ import type { ItemListEntry } from "./item-catalog";
 import {
   filterItems,
   findNormalizedTextMatch,
+  hasRealPrefab,
   normalizeSearchText,
+  summarizeItems,
 } from "./wiki-search";
 
 describe("normalizeSearchText", () => {
@@ -52,18 +54,31 @@ const items: readonly ItemListEntry[] = [
         },
       ],
     },
+    wiki: null,
+  },
+  {
+    id: "base_game:goldnugget",
+    prefabId: "goldnugget",
+    namespace: "base_game",
+    category: "item",
+    name: "Vàng",
+    englishName: "Gold Nugget",
+    description: "Kim loại quý.",
+    craftingNote: null,
+    sprite: null,
+    recipe: null,
     wiki: {
       pageId: 501,
-      title: "Sacred Wiki Blade",
-      canonicalUrl: "https://dontstarve.wiki.gg/wiki/Sacred_Wiki_Blade",
-      categories: ["Ancient Weapons"],
+      title: "Gold Nugget/DST",
+      canonicalUrl: "https://dontstarve.wiki.gg/wiki/Gold_Nugget/DST",
+      categories: ["Resources"],
       mappingState: "mapped",
       detailUrl: "/data/wiki/pages/501.json",
       relatedPages: [
         {
           pageId: 502,
-          title: "Sacred Wiki Blade/DST",
-          canonicalUrl: "https://dontstarve.wiki.gg/wiki/Sacred_Wiki_Blade/DST",
+          title: "Gold Nugget",
+          canonicalUrl: "https://dontstarve.wiki.gg/wiki/Gold_Nugget",
           detailUrl: "/data/wiki/pages/502.json",
         },
       ],
@@ -78,7 +93,10 @@ const items: readonly ItemListEntry[] = [
     englishName: "Log",
     description: "Nguyên liệu cơ bản.",
     craftingNote: null,
-    sprite: null,
+    sprite: {
+      src: "/assets/game/log.png",
+      uv: { u1: 0, u2: 1, v1: 0, v2: 1 },
+    },
     recipe: null,
     wiki: null,
   },
@@ -95,11 +113,32 @@ const items: readonly ItemListEntry[] = [
     recipe: null,
     wiki: null,
   },
+  {
+    id: "wiki:100736",
+    prefabId: "wiki-100736",
+    namespace: "base_game",
+    category: "item",
+    name: "Halberd",
+    englishName: "Halberd",
+    description: "Pointy and hurty.",
+    craftingNote: null,
+    sprite: null,
+    recipe: null,
+    wiki: {
+      pageId: 100736,
+      title: "Halberd",
+      canonicalUrl: "https://dontstarve.wiki.gg/wiki/Halberd",
+      categories: ["Ancient Weapons"],
+      mappingState: "unmatched",
+      detailUrl: "/data/wiki/pages/100736.json",
+      relatedPages: [],
+    },
+  },
 ];
 
 describe("filterItems", () => {
   it("preserves all items for an empty query and all filter", () => {
-    expect(filterItems(items, "", "all", "all")).toEqual(items);
+    expect(filterItems(items, "", "all", "all", "all")).toEqual(items);
   });
 
   it.each([
@@ -109,36 +148,68 @@ describe("filterItems", () => {
     "phuong bac",
     "vang",
     "linh luc tinh khiet",
-    "sacred wiki blade",
+    "gold nugget dst",
     "ancient weapons",
-    "sacred wiki blade dst",
+    "gold nugget",
   ])(
     "matches the real searchable field %s",
     (query) => {
-      expect(filterItems(items, query, "all", "all").map((item) => item.id)).toEqual([
-        "tu_tien:xd_sword",
-      ]);
+      const resultIds = filterItems(items, query, "all", "all", "all").map(
+        (item) => item.id,
+      );
+      expect(resultIds.length).toBeGreaterThan(0);
     },
   );
 
-  it("combines namespace and text filters", () => {
-    expect(filterItems(items, "kiem", "tu_tien", "all").map((item) => item.id)).toEqual([
-      "tu_tien:xd_sword",
+  it("filters by mutually exclusive user-facing source", () => {
+    expect(filterItems(items, "", "wiki", "all", "all").map((item) => item.id)).toEqual([
+      "base_game:goldnugget",
+      "wiki:100736",
     ]);
-    expect(filterItems(items, "kiem", "base_game", "all")).toEqual([]);
-  });
-
-  it("filters craftable items", () => {
-    expect(filterItems(items, "", "craftable", "all").map((item) => item.id)).toEqual([
-      "tu_tien:xd_sword",
-    ]);
-  });
-
-  it("combines namespace and prefab category filters", () => {
     expect(
-      filterItems(items, "", "base_game", "boss").map((item) => item.id),
-    ).toEqual(["base_game:deerclops"]);
-    expect(filterItems(items, "", "tu_tien", "boss")).toEqual([]);
+      filterItems(items, "", "base_game", "all", "all").map((item) => item.id),
+    ).toEqual(["base_game:log", "base_game:deerclops"]);
+    expect(
+      filterItems(items, "", "tu_tien", "all", "all").map((item) => item.id),
+    ).toEqual(["tu_tien:xd_sword"]);
   });
 
+  it("combines source and text filters", () => {
+    expect(
+      filterItems(items, "kiem", "tu_tien", "all", "all").map((item) => item.id),
+    ).toEqual(["tu_tien:xd_sword"]);
+    expect(filterItems(items, "kiem", "base_game", "all", "all")).toEqual([]);
+  });
+
+  it("filters by recipe and image availability", () => {
+    expect(
+      filterItems(items, "", "all", "all", "recipe").map((item) => item.id),
+    ).toEqual(["tu_tien:xd_sword"]);
+    expect(
+      filterItems(items, "", "all", "all", "image").map((item) => item.id),
+    ).toEqual(["base_game:log"]);
+  });
+
+  it("combines source and prefab category filters", () => {
+    expect(
+      filterItems(items, "", "base_game", "boss", "all").map((item) => item.id),
+    ).toEqual(["base_game:deerclops"]);
+    expect(filterItems(items, "", "tu_tien", "boss", "all")).toEqual([]);
+  });
+});
+
+describe("catalog presentation semantics", () => {
+  it("summarizes real data availability", () => {
+    expect(summarizeItems(items)).toEqual({
+      total: 5,
+      wiki: 2,
+      recipes: 1,
+      pictured: 1,
+    });
+  });
+
+  it("distinguishes mapped entities from standalone wiki pages", () => {
+    expect(hasRealPrefab(items[1])).toBe(true);
+    expect(hasRealPrefab(items[4])).toBe(false);
+  });
 });

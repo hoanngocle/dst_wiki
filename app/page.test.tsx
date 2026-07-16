@@ -1,25 +1,31 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import { parseItemPayload } from "@/app/lib/item-catalog";
+import { summarizeItems } from "@/app/lib/wiki-search";
 import itemPayload from "@/public/data/items.json";
 import Loading from "./loading";
 import Home from "./page";
 
-const itemCount = parseItemPayload(itemPayload).length;
+const items = parseItemPayload(itemPayload);
+const summary = summarizeItems(items);
 
-describe("Prefabs page", () => {
-  it("renders the complete prefab catalog and primary navigation", () => {
+describe("item catalog page", () => {
+  it("renders the complete item catalog, data summary, and primary navigation", () => {
     render(<Home />);
 
     expect(screen.getByText("Don't Starve Together")).toBeDefined();
     expect(
-      screen.getByRole("heading", { level: 1, name: "Tra cứu Prefab" }),
+      screen.getByRole("heading", { level: 1, name: "Danh mục vật phẩm" }),
     ).toBeDefined();
     expect(
-      screen.getByRole("searchbox", { name: "Tìm kiếm Prefabs." }),
+      screen.getByRole("searchbox", { name: "Tìm kiếm vật phẩm." }),
     ).toBeDefined();
-    expect(screen.getByText(`${itemCount} Prefabs`)).toBeDefined();
+    expect(screen.getByText(`${summary.total} vật phẩm`)).toBeDefined();
+    const overview = screen.getByLabelText("Tổng quan dữ liệu");
+    expect(within(overview).getByText(String(summary.total))).toBeDefined();
+    expect(within(overview).getByText(String(summary.wiki))).toBeDefined();
+    expect(within(overview).getByText(String(summary.recipes))).toBeDefined();
     expect(
       screen.queryByRole("heading", { level: 3, name: "abigail_attack_fx" }),
     ).toBeNull();
@@ -30,12 +36,12 @@ describe("Prefabs page", () => {
   });
 });
 
-describe("Prefabs page loading shell", () => {
+describe("item catalog loading shell", () => {
   it("announces loading and reserves four card positions", () => {
     render(<Loading />);
 
     expect(screen.getByRole("status").textContent).toContain(
-      "Đang tải danh sách Prefabs",
+      "Đang tải danh mục vật phẩm",
     );
     expect(screen.getAllByTestId("item-card-skeleton")).toHaveLength(4);
   });

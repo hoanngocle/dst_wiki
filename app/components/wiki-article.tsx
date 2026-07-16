@@ -1,0 +1,153 @@
+"use client";
+
+import { ArrowSquareOut, WarningCircle } from "@phosphor-icons/react";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+
+import {
+  parseWikiPageDetail,
+  type WikiPageDetail,
+} from "@/app/lib/wiki-detail";
+
+type ArticleState =
+  | { status: "loading" }
+  | { status: "ready"; detail: WikiPageDetail }
+  | { status: "error" };
+
+function CanonicalLink({ href }: { href: string }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-[#b9cce8] px-3 py-2 text-sm font-semibold text-[#2e5fb3] transition hover:bg-[#e9f1fb] active:scale-[0.98]"
+    >
+      Mở trên Don&apos;t Starve Wiki
+      <ArrowSquareOut aria-hidden="true" size={17} />
+    </a>
+  );
+}
+
+export function WikiArticle({
+  detailUrl,
+  canonicalUrl,
+}: {
+  detailUrl: string;
+  canonicalUrl: string;
+}) {
+  const [attempt, setAttempt] = useState(0);
+  const [state, setState] = useState<ArticleState>({ status: "loading" });
+
+  useEffect(() => {
+    const controller = new AbortController();
+    let active = true;
+
+    async function loadArticle() {
+      try {
+        const response = await fetch(detailUrl, { signal: controller.signal });
+        if (!response.ok) throw new Error(`wiki detail request failed: ${response.status}`);
+        const detail = parseWikiPageDetail(await response.json());
+        if (active) setState({ status: "ready", detail });
+      } catch (error) {
+        if (active && !(error instanceof DOMException && error.name === "AbortError")) {
+          setState({ status: "error" });
+        }
+      }
+    }
+
+    void loadArticle();
+    return () => {
+      active = false;
+      controller.abort();
+    };
+  }, [attempt, detailUrl]);
+
+  if (state.status === "loading") {
+    return (
+      <section
+        role="status"
+        aria-label="Đang tải bài viết Wiki"
+        className="rounded-2xl border border-[#c8d3df] bg-[#f8fafc] p-5"
+      >
+        <p className="text-sm font-semibold text-[#263b58]">Đang tải bài viết Wiki...</p>
+        <div aria-hidden="true" className="mt-4 animate-pulse space-y-3 motion-reduce:animate-none">
+          <div className="h-5 w-2/5 rounded bg-[#d5dde6]" />
+          <div className="h-3 w-full rounded bg-[#e1e7ee]" />
+          <div className="h-3 w-5/6 rounded bg-[#e1e7ee]" />
+        </div>
+      </section>
+    );
+  }
+
+  if (state.status === "error") {
+    return (
+      <section className="rounded-2xl border border-[#c8d3df] bg-[#f8fafc] p-5">
+        <div className="flex items-start gap-3">
+          <WarningCircle
+            aria-hidden="true"
+            size={22}
+            weight="duotone"
+            className="mt-0.5 shrink-0 text-[#9a5a2a]"
+          />
+          <div>
+            <h3 className="font-semibold text-[#172943]">Không tải được bài viết Wiki</h3>
+            <p className="mt-1 text-sm leading-6 text-[#607188]">
+              Chi tiết cơ bản vẫn dùng được. Bạn có thể thử lại hoặc mở nguồn gốc.
+            </p>
+          </div>
+        </div>
+        <div className="mt-4 flex flex-wrap gap-2">
+          <button
+            type="button"
+            onClick={() => {
+              setState({ status: "loading" });
+              setAttempt((current) => current + 1);
+            }}
+            className="min-h-11 cursor-pointer rounded-xl bg-[#2e5fb3] px-4 py-2 text-sm font-semibold text-[#f8fafc] transition hover:bg-[#264f96] active:scale-[0.98]"
+          >
+            Thử lại
+          </button>
+          <CanonicalLink href={canonicalUrl} />
+        </div>
+      </section>
+    );
+  }
+
+  return (
+    <section className="overflow-hidden rounded-2xl border border-[#c8d3df] bg-[#f8fafc]">
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#d5dde6] px-4 py-3">
+        <h3 className="font-semibold text-[#172943]">Bài viết Wiki</h3>
+        <CanonicalLink href={state.detail.canonicalUrl} />
+      </div>
+      {state.detail.images.length ? (
+        <div className="border-b border-[#d5dde6] bg-[#eef3f8] px-4 py-4 sm:px-5">
+          <p className="text-xs font-semibold text-[#43556d]">Ảnh gốc đã lưu</p>
+          <div className="mt-3 flex gap-3 overflow-x-auto pb-1">
+            {state.detail.images.slice(0, 12).map((image) => (
+              <figure
+                key={`${image.title}:${image.src}`}
+                className="w-32 shrink-0 rounded-xl border border-[#c8d3df] bg-[#f8fafc] p-2"
+              >
+                <Image
+                  src={image.src}
+                  alt={image.title}
+                  width={image.width ?? 256}
+                  height={image.height ?? 256}
+                  unoptimized
+                  className="h-24 w-full object-contain"
+                />
+                <figcaption className="mt-2 line-clamp-2 text-[11px] leading-4 text-[#607188]">
+                  {image.title.replace(/^File:/i, "")}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      ) : null}
+      <div
+        className="wiki-article p-4 sm:p-5"
+        dangerouslySetInnerHTML={{ __html: state.detail.html }}
+      />
+    </section>
+  );
+}

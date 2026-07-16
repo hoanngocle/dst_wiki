@@ -1,6 +1,8 @@
 import type {
-  ItemFilter,
+  CatalogSummary,
+  ItemAvailabilityFilter,
   ItemListEntry,
+  ItemSourceFilter,
   PrefabCategoryFilter,
 } from "./item-catalog";
 
@@ -60,17 +62,23 @@ export function findNormalizedTextMatch(
 export function filterItems(
   items: readonly ItemListEntry[],
   query: string,
-  filter: ItemFilter,
+  source: ItemSourceFilter,
   category: PrefabCategoryFilter,
+  availability: ItemAvailabilityFilter,
 ): ItemListEntry[] {
   const normalizedQuery = normalizeSearchText(query);
 
   return items.filter((item) => {
-    const matchesFilter =
-      filter === "all" ||
-      (filter === "craftable" ? item.recipe !== null : item.namespace === filter);
+    const matchesSource =
+      source === "all" ||
+      (source === "wiki"
+        ? item.wiki !== null
+        : item.namespace === source && item.wiki === null);
     const matchesCategory = category === "all" || item.category === category;
-    if (!matchesFilter || !matchesCategory) return false;
+    const matchesAvailability =
+      availability === "all" ||
+      (availability === "recipe" ? item.recipe !== null : item.sprite !== null);
+    if (!matchesSource || !matchesCategory || !matchesAvailability) return false;
     if (!normalizedQuery) return true;
 
     const searchableText = normalizeSearchText(
@@ -81,6 +89,7 @@ export function filterItems(
         item.description ?? "",
         item.craftingNote ?? "",
         item.wiki?.title ?? "",
+        item.wiki?.title.replaceAll("/", " ") ?? "",
         ...(item.wiki?.categories ?? []),
         ...(item.wiki?.relatedPages.map((page) => page.title) ?? []),
         ...(item.wiki?.relatedPages.map((page) => page.title.replaceAll("/", " ")) ?? []),
@@ -90,4 +99,20 @@ export function filterItems(
 
     return searchableText.includes(normalizedQuery);
   });
+}
+
+export function hasRealPrefab(item: ItemListEntry): boolean {
+  return item.wiki?.mappingState !== "unmatched";
+}
+
+export function summarizeItems(items: readonly ItemListEntry[]): CatalogSummary {
+  return items.reduce<CatalogSummary>(
+    (summary, item) => ({
+      total: summary.total + 1,
+      wiki: summary.wiki + Number(item.wiki !== null),
+      recipes: summary.recipes + Number(item.recipe !== null),
+      pictured: summary.pictured + Number(item.sprite !== null),
+    }),
+    { total: 0, wiki: 0, recipes: 0, pictured: 0 },
+  );
 }

@@ -27,7 +27,7 @@ export default function Loading() {
     <main className="min-h-[100dvh] bg-[#edf1f5] px-4 py-12 text-[#14233b] sm:px-6">
       <div className="mx-auto max-w-6xl">
         <p role="status" className="text-sm font-medium text-[#53647a]">
-          Đang tải danh sách Prefabs...
+          Đang tải danh mục vật phẩm...
         </p>
         <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2">
           {Array.from({ length: 4 }, (_, index) => (

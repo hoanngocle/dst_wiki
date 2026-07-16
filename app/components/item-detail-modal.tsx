@@ -2,8 +2,10 @@ import { X } from "@phosphor-icons/react";
 import { useEffect, useId, useRef } from "react";
 
 import type { ItemListEntry } from "@/app/lib/item-catalog";
+import { hasRealPrefab } from "@/app/lib/wiki-search";
 import { GameSprite } from "./game-sprite";
 import { RecipeIngredients } from "./recipe-ingredients";
+import { WikiArticle } from "./wiki-article";
 
 const FOCUSABLE_SELECTOR = [
   "a[href]",
@@ -34,7 +36,12 @@ export function ItemDetailModal({
   const titleId = useId();
   const dialogRef = useRef<HTMLElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
-  const sourceLabel = item.namespace === "tu_tien" ? "Tu Tiên" : "DST";
+  const sourceLabel = item.wiki
+    ? "Wiki"
+    : item.namespace === "tu_tien"
+      ? "Tu Tiên"
+      : "DST";
+  const realPrefab = hasRealPrefab(item);
   const category = categoryLabel[item.category];
 
   useEffect(() => {
@@ -88,9 +95,9 @@ export function ItemDetailModal({
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
-        className="max-h-[90vh] w-full cursor-default overflow-y-auto rounded-t-3xl border border-[#c8d3df] bg-[#f8fafc] shadow-[0_28px_80px_rgba(15,29,48,0.32)] sm:max-w-2xl sm:rounded-3xl"
+        className="max-h-[92vh] w-full cursor-default overflow-y-auto rounded-t-3xl border border-[#c8d3df] bg-[#edf1f5] shadow-[0_28px_80px_rgba(15,29,48,0.32)] sm:max-w-4xl sm:rounded-3xl"
       >
-        <div className="flex items-start gap-4 border-b border-[#d5dde6] p-5 sm:p-6">
+        <div className="sticky top-0 z-10 flex items-start gap-4 border-b border-[#d5dde6] bg-[#f8fafc]/95 p-5 backdrop-blur sm:p-6">
           <GameSprite
             sprite={item.sprite}
             size={88}
@@ -125,27 +132,31 @@ export function ItemDetailModal({
         </div>
 
         <div className="space-y-4 p-5 sm:p-6">
-          <section
-            aria-labelledby={`${titleId}-source`}
-            className="overflow-hidden rounded-2xl border border-[#c8d3df]"
-          >
-            <h3
-              id={`${titleId}-source`}
-              className="bg-[#263b58] px-4 py-2 text-sm font-semibold text-[#f8fafc]"
+          {item.description ? (
+            <section
+              aria-labelledby={`${titleId}-description`}
+              className="overflow-hidden rounded-2xl border border-[#c8d3df] bg-[#f8fafc]"
             >
-              Source
-            </h3>
-            <p className="px-4 py-3 text-sm font-medium text-[#607188]">Dropped by</p>
-          </section>
+              <h3
+                id={`${titleId}-description`}
+                className="border-b border-[#d5dde6] px-4 py-3 text-sm font-semibold text-[#172943]"
+              >
+                Mô tả
+              </h3>
+              <p className="px-4 py-3 text-sm leading-6 text-[#53647a]">
+                {item.description}
+              </p>
+            </section>
+          ) : null}
 
           {item.recipe ? (
             <section
               aria-labelledby={`${titleId}-crafting`}
-              className="overflow-hidden rounded-2xl border border-[#c8d3df]"
+              className="overflow-hidden rounded-2xl border border-[#c8d3df] bg-[#f8fafc]"
             >
               <h3
                 id={`${titleId}-crafting`}
-                className="bg-[#263b58] px-4 py-2 text-sm font-semibold text-[#f8fafc]"
+                className="border-b border-[#d5dde6] px-4 py-3 text-sm font-semibold text-[#172943]"
               >
                 Công thức
               </h3>
@@ -174,11 +185,11 @@ export function ItemDetailModal({
           {!item.recipe && item.craftingNote ? (
             <section
               aria-labelledby={`${titleId}-crafting-note`}
-              className="overflow-hidden rounded-2xl border border-[#c8d3df]"
+              className="overflow-hidden rounded-2xl border border-[#c8d3df] bg-[#f8fafc]"
             >
               <h3
                 id={`${titleId}-crafting-note`}
-                className="bg-[#263b58] px-4 py-2 text-sm font-semibold text-[#f8fafc]"
+                className="border-b border-[#d5dde6] px-4 py-3 text-sm font-semibold text-[#172943]"
               >
                 Cách tạo / ghi chú chế tạo
               </h3>
@@ -189,24 +200,69 @@ export function ItemDetailModal({
           ) : null}
 
           <section
-            aria-labelledby={`${titleId}-miscellaneous`}
-            className="overflow-hidden rounded-2xl border border-[#c8d3df]"
+            aria-labelledby={`${titleId}-technical`}
+            className="overflow-hidden rounded-2xl border border-[#c8d3df] bg-[#f8fafc]"
           >
             <h3
-              id={`${titleId}-miscellaneous`}
-              className="bg-[#263b58] px-4 py-2 text-sm font-semibold text-[#f8fafc]"
+              id={`${titleId}-technical`}
+              className="border-b border-[#d5dde6] px-4 py-3 text-sm font-semibold text-[#172943]"
             >
-              Miscellaneous
+              Thông tin kỹ thuật
             </h3>
             <dl className="divide-y divide-[#dce3eb]">
               <div className="flex items-center justify-between gap-4 px-4 py-3 text-sm">
-                <dt className="text-[#607188]">Prefab ID</dt>
+                <dt className="text-[#607188]">
+                  {realPrefab ? "Prefab ID" : "Wiki page"}
+                </dt>
                 <dd className="max-w-[60%] truncate font-mono text-xs font-semibold text-[#263b58]">
-                  {item.prefabId}
+                  {realPrefab ? item.prefabId : item.wiki?.pageId}
                 </dd>
               </div>
+              {item.wiki ? (
+                <div className="flex items-center justify-between gap-4 px-4 py-3 text-sm">
+                  <dt className="text-[#607188]">Trạng thái mapping</dt>
+                  <dd className="font-semibold text-[#263b58]">
+                    {item.wiki.mappingState === "mapped" ? "Đã map Prefab" : "Wiki độc lập"}
+                  </dd>
+                </div>
+              ) : null}
             </dl>
           </section>
+
+          {item.wiki?.relatedPages.length ? (
+            <section
+              aria-labelledby={`${titleId}-related`}
+              className="overflow-hidden rounded-2xl border border-[#c8d3df] bg-[#f8fafc]"
+            >
+              <h3
+                id={`${titleId}-related`}
+                className="border-b border-[#d5dde6] px-4 py-3 text-sm font-semibold text-[#172943]"
+              >
+                Trang liên quan
+              </h3>
+              <div className="flex flex-wrap gap-2 p-4">
+                {item.wiki.relatedPages.map((page) => (
+                  <a
+                    key={page.pageId}
+                    href={page.canonicalUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex min-h-11 items-center rounded-xl border border-[#b9cce8] px-3 py-2 text-sm font-semibold text-[#2e5fb3] hover:bg-[#e9f1fb]"
+                  >
+                    {page.title}
+                  </a>
+                ))}
+              </div>
+            </section>
+          ) : null}
+
+          {item.wiki ? (
+            <WikiArticle
+              key={item.wiki.detailUrl}
+              detailUrl={item.wiki.detailUrl}
+              canonicalUrl={item.wiki.canonicalUrl}
+            />
+          ) : null}
         </div>
       </section>
     </div>
