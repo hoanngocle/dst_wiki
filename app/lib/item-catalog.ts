@@ -40,6 +40,55 @@ export type ItemRecipe = {
   ingredients: readonly RecipeIngredient[];
 };
 
+export type ItemDetailStatus = "known" | "none" | "unknown";
+
+export type ItemEvidence = {
+  source: string;
+  locator: string | null;
+};
+
+export type ItemReference = {
+  id: string;
+  name: string;
+  sprite: SpriteDescriptor | null;
+};
+
+export type ItemUsageRecipe = {
+  result: ItemReference;
+  resultAmount: number;
+  subjectAmount: number;
+  ingredients: readonly RecipeIngredient[];
+  craftingNote: string | null;
+};
+
+export type ItemUsageEffect = {
+  trigger: string;
+  text: string;
+  evidence: readonly ItemEvidence[];
+};
+
+export type ItemDropSource = {
+  type: "drop" | "harvest" | "start" | "trade" | "other";
+  source: ItemReference | null;
+  quantity: string | null;
+  chance: string | null;
+  conditions: string | null;
+  evidence: readonly ItemEvidence[];
+};
+
+export type ItemDetails = {
+  recipeStatus: ItemDetailStatus;
+  usage: {
+    status: ItemDetailStatus;
+    recipes: readonly ItemUsageRecipe[];
+    effects: readonly ItemUsageEffect[];
+  };
+  dropBy: {
+    status: ItemDetailStatus;
+    sources: readonly ItemDropSource[];
+  };
+};
+
 export type WikiRelatedPage = {
   pageId: number;
   title: string;
@@ -68,6 +117,7 @@ export type ItemListEntry = {
   craftingNote: string | null;
   sprite: SpriteDescriptor | null;
   recipe: ItemRecipe | null;
+  details: ItemDetails | null;
   wiki: WikiItemMetadata | null;
 };
 
@@ -208,6 +258,152 @@ function parseRecipe(value: unknown, itemIndex: number): ItemRecipe | null {
   };
 }
 
+function parseDetailStatus(value: unknown, field: string): ItemDetailStatus {
+  if (value !== "known" && value !== "none" && value !== "unknown") {
+    throw new Error(`${field} status is invalid`);
+  }
+  return value;
+}
+
+function parseEvidence(value: unknown, field: string): readonly ItemEvidence[] {
+  if (!Array.isArray(value) || !value.length) {
+    throw new Error(`${field} evidence must be a non-empty array`);
+  }
+  return value.map((entry, index) => {
+    if (!isRecord(entry)) {
+      throw new Error(`${field} evidence ${index} must be an object`);
+    }
+    return {
+      source: requiredString(entry.source, `${field} evidence ${index} source`),
+      locator: nullableString(entry.locator, `${field} evidence ${index} locator`),
+    };
+  });
+}
+
+function parseReference(value: unknown, field: string): ItemReference {
+  if (!isRecord(value)) {
+    throw new Error(`${field} reference must be an object`);
+  }
+  return {
+    id: requiredString(value.id, `${field} id`),
+    name: requiredString(value.name, `${field} name`),
+    sprite: parseSprite(value.sprite, field),
+  };
+}
+
+function parseUsageRecipe(value: unknown, index: number): ItemUsageRecipe {
+  if (!isRecord(value) || !Array.isArray(value.ingredients)) {
+    throw new Error(`usage recipe ${index} must contain ingredients`);
+  }
+  return {
+    result: parseReference(value.result, `usage recipe ${index} result`),
+    resultAmount: positiveNumber(
+      value.resultAmount,
+      `usage recipe ${index} result amount`,
+    ),
+    subjectAmount: positiveNumber(
+      value.subjectAmount,
+      `usage recipe ${index} subject amount`,
+    ),
+    ingredients: value.ingredients.map(parseIngredient),
+    craftingNote: nullableString(
+      value.craftingNote,
+      `usage recipe ${index} craftingNote`,
+    ),
+  };
+}
+
+function parseUsageEffect(value: unknown, index: number): ItemUsageEffect {
+  if (!isRecord(value)) {
+    throw new Error(`usage effect ${index} must be an object`);
+  }
+  return {
+    trigger: requiredString(value.trigger, `usage effect ${index} trigger`),
+    text: requiredString(value.text, `usage effect ${index} text`),
+    evidence: parseEvidence(value.evidence, `usage effect ${index}`),
+  };
+}
+
+function parseDropSource(value: unknown, index: number): ItemDropSource {
+  if (!isRecord(value)) {
+    throw new Error(`drop source ${index} must be an object`);
+  }
+  if (
+    value.type !== "drop" &&
+    value.type !== "harvest" &&
+    value.type !== "start" &&
+    value.type !== "trade" &&
+    value.type !== "other"
+  ) {
+    throw new Error(`drop source type at index ${index} is invalid`);
+  }
+  return {
+    type: value.type,
+    source:
+      value.source === null
+        ? null
+        : parseReference(value.source, `drop source ${index}`),
+    quantity: nullableString(value.quantity, `drop source ${index} quantity`),
+    chance: nullableString(value.chance, `drop source ${index} chance`),
+    conditions: nullableString(
+      value.conditions,
+      `drop source ${index} conditions`,
+    ),
+    evidence: parseEvidence(value.evidence, `drop source ${index}`),
+  };
+}
+
+function parseDetails(
+  value: unknown,
+  namespace: ItemNamespace,
+  itemIndex: number,
+): ItemDetails | null {
+  if (namespace === "base_game") {
+    if (value !== null) {
+      throw new Error(`base-game item ${itemIndex} details must be null`);
+    }
+    return null;
+  }
+  if (!isRecord(value) || !isRecord(value.usage) || !isRecord(value.dropBy)) {
+    throw new Error(`Tu Tiên item ${itemIndex} details must be an object`);
+  }
+  if (!Array.isArray(value.usage.recipes) || !Array.isArray(value.usage.effects)) {
+    throw new Error(`item ${itemIndex} usage details must contain arrays`);
+  }
+  if (!Array.isArray(value.dropBy.sources)) {
+    throw new Error(`item ${itemIndex} dropBy details must contain sources`);
+  }
+  const usageStatus = parseDetailStatus(
+    value.usage.status,
+    `item ${itemIndex} usage`,
+  );
+  const usageRecipes = value.usage.recipes.map(parseUsageRecipe);
+  const usageEffects = value.usage.effects.map(parseUsageEffect);
+  if (usageStatus === "known" && !usageRecipes.length && !usageEffects.length) {
+    throw new Error(`item ${itemIndex} known usage section must contain data`);
+  }
+  const dropStatus = parseDetailStatus(
+    value.dropBy.status,
+    `item ${itemIndex} dropBy`,
+  );
+  const dropSources = value.dropBy.sources.map(parseDropSource);
+  if (dropStatus === "known" && !dropSources.length) {
+    throw new Error(`item ${itemIndex} known dropBy section must contain data`);
+  }
+  return {
+    recipeStatus: parseDetailStatus(
+      value.recipeStatus,
+      `item ${itemIndex} recipe`,
+    ),
+    usage: {
+      status: usageStatus,
+      recipes: usageRecipes,
+      effects: usageEffects,
+    },
+    dropBy: { status: dropStatus, sources: dropSources },
+  };
+}
+
 function parseItem(value: unknown, index: number): ItemListEntry {
   if (!isRecord(value)) {
     throw new Error(`item ${index} must be an object`);
@@ -215,10 +411,11 @@ function parseItem(value: unknown, index: number): ItemListEntry {
   if (value.namespace !== "tu_tien" && value.namespace !== "base_game") {
     throw new Error(`item ${index} namespace is invalid`);
   }
+  const namespace = value.namespace;
   return {
     id: requiredString(value.id, `item ${index} id`),
     prefabId: requiredString(value.prefabId, `item ${index} prefabId`),
-    namespace: value.namespace,
+    namespace,
     category: parseCategory(value.category, index),
     name: requiredString(value.name, `item ${index} name`),
     englishName: nullableString(value.englishName, `item ${index} englishName`),
@@ -226,6 +423,7 @@ function parseItem(value: unknown, index: number): ItemListEntry {
     craftingNote: nullableString(value.craftingNote, `item ${index} craftingNote`),
     sprite: parseSprite(value.sprite, `item ${index}`),
     recipe: parseRecipe(value.recipe, index),
+    details: parseDetails(value.details, namespace, index),
     wiki: parseWiki(value.wiki, index),
   };
 }
@@ -257,10 +455,10 @@ function curateItems(items: readonly ItemListEntry[]): ItemListEntry[] {
 export function parseItemPayload(value: unknown): readonly ItemListEntry[] {
   if (
     !isRecord(value) ||
-    value.schema_version !== 4 ||
+    value.schema_version !== 5 ||
     !Array.isArray(value.items)
   ) {
-    throw new Error("item payload must use schema version 4 and contain items");
+    throw new Error("item payload must use schema version 5 and contain items");
   }
   return curateItems(value.items.map(parseItem));
 }

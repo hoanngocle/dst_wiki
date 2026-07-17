@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 import { parseItemPayload } from "./item-catalog";
 
 const validPayload = {
-  schema_version: 4,
+  schema_version: 5,
   items: [
     {
       id: "tu_tien:xd_sword",
@@ -29,6 +29,59 @@ const validPayload = {
           },
         ],
       },
+      details: {
+        recipeStatus: "known",
+        usage: {
+          status: "known",
+          recipes: [
+            {
+              result: {
+                id: "tu_tien:xd_pill",
+                name: "Linh Đan",
+                sprite: null,
+              },
+              resultAmount: 1,
+              subjectAmount: 2,
+              ingredients: [],
+              craftingNote: "Yêu cầu người chế tạo xd_alchemist.",
+            },
+          ],
+          effects: [
+            {
+              trigger: "equip",
+              text: "Khi trang bị: tăng sát thương.",
+              evidence: [
+                {
+                  source: "public/data/catalog.json",
+                  locator: "tu_tien:xd_sword:stats",
+                },
+              ],
+            },
+          ],
+        },
+        dropBy: {
+          status: "known",
+          sources: [
+            {
+              type: "drop",
+              source: {
+                id: "tu_tien:xd_boss",
+                name: "Yêu Vương",
+                sprite: null,
+              },
+              quantity: "1",
+              chance: "25%",
+              conditions: null,
+              evidence: [
+                {
+                  source: "public/data/catalog.json",
+                  locator: "tu_tien:xd_sword:acquisition",
+                },
+              ],
+            },
+          ],
+        },
+      },
       wiki: null,
     },
   ],
@@ -50,6 +103,10 @@ function makeValidItem(
     prefabId,
     namespace,
     sprite,
+    details:
+      namespace === "tu_tien"
+        ? structuredClone(validPayload.items[0].details)
+        : null,
   };
 }
 
@@ -65,6 +122,8 @@ describe("parseItemPayload", () => {
       sprite: null,
     });
     expect(items[0].craftingNote).toBe("Rèn một thanh kiếm thử");
+    expect(items[0].details?.usage.effects[0].trigger).toBe("equip");
+    expect(items[0].details?.dropBy.sources[0].chance).toBe("25%");
   });
 
   it("accepts special recipes with no normal ingredients", () => {
@@ -76,8 +135,8 @@ describe("parseItemPayload", () => {
 
   it("rejects legacy payloads and invalid prefab categories", () => {
     expect(() =>
-      parseItemPayload({ ...validPayload, schema_version: 3 }),
-    ).toThrow(/schema version 4/i);
+      parseItemPayload({ ...validPayload, schema_version: 4 }),
+    ).toThrow(/schema version 5/i);
 
     const payload = structuredClone(validPayload) as unknown as {
       items: Array<{ category: string }>;
@@ -118,6 +177,37 @@ describe("parseItemPayload", () => {
     expect(() => parseItemPayload(payload)).toThrow(/craftingNote/i);
   });
 
+  it("requires details for Tu Tiên items and null details for base-game items", () => {
+    const missing = structuredClone(validPayload) as unknown as {
+      items: Array<{ details: unknown }>;
+    };
+    missing.items[0].details = null;
+    expect(() => parseItemPayload(missing)).toThrow(/Tu Tiên.*details/i);
+
+    const baseGame = {
+      schema_version: 5,
+      items: [makeValidItem("goldnugget", { namespace: "base_game" })],
+    } as unknown as { schema_version: number; items: Array<{ details: unknown }> };
+    baseGame.items[0].details = structuredClone(validPayload.items[0].details);
+    expect(() => parseItemPayload(baseGame)).toThrow(/base-game.*details/i);
+  });
+
+  it("rejects known empty sections and invalid drop source types", () => {
+    const emptyUsage = structuredClone(validPayload);
+    emptyUsage.items[0].details.usage = {
+      status: "known",
+      recipes: [],
+      effects: [],
+    };
+    expect(() => parseItemPayload(emptyUsage)).toThrow(/known usage.*data/i);
+
+    const invalidDrop = structuredClone(validPayload) as unknown as {
+      items: Array<{ details: { dropBy: { sources: Array<{ type: string }> } } }>;
+    };
+    invalidDrop.items[0].details.dropBy.sources[0].type = "spawn";
+    expect(() => parseItemPayload(invalidDrop)).toThrow(/drop source type/i);
+  });
+
   it("accepts complete wiki metadata and related pages", () => {
     const payload = structuredClone(validPayload) as unknown as {
       schema_version: number;
@@ -148,7 +238,7 @@ describe("parseItemPayload", () => {
 
   it("removes effect-only prefabs while preserving retained order", () => {
     const payload = {
-      schema_version: 4,
+      schema_version: 5,
       items: [
         makeValidItem("first"),
         makeValidItem("spark_fx"),
@@ -164,7 +254,7 @@ describe("parseItemPayload", () => {
 
   it("prefers a pictured _item counterpart without crossing namespaces", () => {
     const payload = {
-      schema_version: 4,
+      schema_version: 5,
       items: [
         makeValidItem("gate"),
         makeValidItem("gate", { namespace: "base_game" }),
@@ -184,7 +274,7 @@ describe("parseItemPayload", () => {
 
   it("keeps the base prefab when its _item counterpart has no image", () => {
     const payload = {
-      schema_version: 4,
+      schema_version: 5,
       items: [makeValidItem("gate"), makeValidItem("gate_item", { sprite: null })],
     };
 
