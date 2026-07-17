@@ -9,12 +9,132 @@ from zipfile import ZipFile
 
 from tools.extract.database import create_schema
 from tools.extract.export_json import export_catalog
-from tools.extract.validate import _structure_export_errors, validate_catalog
+from tools.extract.validate import (
+    _effect_other_audit_errors,
+    _structure_export_errors,
+    validate_catalog,
+)
 from tools.extract.runtime_import import COVERAGE_CATEGORIES
 from tools.extract import cli
 
 
 class ExportValidateTests(unittest.TestCase):
+    def test_effect_other_audit_rejects_public_exclusion_with_positive_signal(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            items_path = root / "items.json"
+            audit_path = root / "effect-other-audit.json"
+            items_path.write_text(
+                json.dumps(
+                    {
+                        "schema_version": 6,
+                        "items": [
+                            {
+                                "id": "base_game:helper",
+                                "prefabId": "helper",
+                                "namespace": "base_game",
+                                "category": "effect",
+                            }
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            audit_path.write_text(
+                json.dumps(
+                    {
+                        "schema_version": 1,
+                        "summary": {
+                            "total": 1,
+                            "keep": 0,
+                            "exclude": 1,
+                            "categories": {"effect": 1, "other": 0},
+                        },
+                        "rows": [
+                            {
+                                "id": "base_game:helper",
+                                "category": "effect",
+                                "action": "exclude",
+                                "reasonCode": "empty_unreferenced",
+                                "reason": "Fixture",
+                                "signals": {"sprite": True},
+                                "references": [],
+                            }
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            errors = _effect_other_audit_errors(items_path, audit_path)
+
+        self.assertEqual(
+            errors,
+            [
+                {
+                    "code": "excluded_effect_other_is_public",
+                    "id": "base_game:helper",
+                },
+                {
+                    "code": "excluded_effect_other_has_positive_signal",
+                    "id": "base_game:helper",
+                },
+            ],
+        )
+
+    def test_prefab_coverage_accepts_effect_other_audit_exclusions(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            db_path = root / "wiki.sqlite"
+            with sqlite3.connect(db_path) as db:
+                create_schema(db)
+            scripts_path = root / "scripts.zip"
+            with ZipFile(scripts_path, "w") as archive:
+                archive.writestr("scripts/prefabs/helper.lua", "return {}")
+            items_path = root / "items.json"
+            items_path.write_text(
+                json.dumps({"schema_version": 6, "items": []}), encoding="utf-8"
+            )
+            audit_path = root / "effect-other-audit.json"
+            audit_path.write_text(
+                json.dumps(
+                    {
+                        "schema_version": 1,
+                        "summary": {
+                            "total": 1,
+                            "keep": 0,
+                            "exclude": 1,
+                            "categories": {"effect": 1, "other": 0},
+                        },
+                        "rows": [
+                            {
+                                "id": "base_game:helper",
+                                "prefabId": "helper",
+                                "namespace": "base_game",
+                                "category": "effect",
+                                "action": "exclude",
+                                "reasonCode": "empty_unreferenced",
+                                "reason": "Fixture",
+                                "signals": {"sprite": False},
+                                "references": [],
+                            }
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            report = validate_catalog(
+                db_path,
+                prefab_scripts_path=scripts_path,
+                items_path=items_path,
+                effect_other_audit_path=audit_path,
+            )
+
+        self.assertEqual(report["prefab_export_coverage_errors"], [])
+        self.assertEqual(report["effect_other_audit_errors"], [])
+        self.assertNotIn("effect_other_audit_errors", report["hard_failures"])
+
     def test_structure_validation_requires_craftable_construction_and_visual(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -1059,6 +1179,7 @@ class ExportValidateTests(unittest.TestCase):
             detail_overrides = root / "item-details.json"
             detail_report = root / "item-details-report.json"
             structure_audit = root / "structure-icon-audit.json"
+            effect_other_audit = root / "effect-other-audit.json"
 
             with mock.patch.object(cli, "export_catalog") as export_catalog, \
                  mock.patch.object(cli, "export_items") as export_items:
@@ -1071,6 +1192,7 @@ class ExportValidateTests(unittest.TestCase):
                     detail_overrides,
                     detail_report,
                     structure_audit,
+                    effect_other_audit,
                 )
 
             export_catalog.assert_called_once_with(database, catalog, assets)
@@ -1083,6 +1205,7 @@ class ExportValidateTests(unittest.TestCase):
                 detail_overrides_path=detail_overrides,
                 detail_report_path=detail_report,
                 structure_audit_path=structure_audit,
+                effect_other_audit_path=effect_other_audit,
             )
 
     def test_export_cli_exposes_item_detail_paths(self):
@@ -1099,6 +1222,16 @@ class ExportValidateTests(unittest.TestCase):
         self.assertEqual(
             args.structure_audit,
             Path("data/generated/structure-icon-audit.json"),
+        )
+        self.assertEqual(
+            args.effect_other_audit,
+            Path("data/generated/effect-other-audit.json"),
+        )
+
+        validate_args = cli.build_parser().parse_args(["validate"])
+        self.assertEqual(
+            validate_args.effect_other_audit,
+            Path("data/generated/effect-other-audit.json"),
         )
 
     def test_publish_assets_cli_has_explicit_inputs(self):

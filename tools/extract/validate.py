@@ -251,6 +251,7 @@ def _prefab_export_coverage(
     scripts_path: Optional[Path],
     items_path: Optional[Path],
     structure_audit_path: Optional[Path] = None,
+    effect_other_audit_path: Optional[Path] = None,
 ) -> List[Dict[str, Any]]:
     if scripts_path is None or items_path is None:
         return []
@@ -268,6 +269,25 @@ def _prefab_export_coverage(
             or not isinstance(rows, list)
         ):
             return [{"code": "invalid_structure_audit_payload"}]
+        expected -= {
+            row.get("prefabId")
+            for row in rows
+            if isinstance(row, dict)
+            and row.get("namespace") == "base_game"
+            and row.get("action") == "exclude"
+            and isinstance(row.get("prefabId"), str)
+        }
+    if effect_other_audit_path is not None:
+        audit = json.loads(
+            Path(effect_other_audit_path).read_text(encoding="utf-8")
+        )
+        rows = audit.get("rows") if isinstance(audit, dict) else None
+        if (
+            not isinstance(audit, dict)
+            or audit.get("schema_version") != 1
+            or not isinstance(rows, list)
+        ):
+            return [{"code": "invalid_effect_other_audit_payload"}]
         expected -= {
             row.get("prefabId")
             for row in rows
@@ -518,12 +538,140 @@ def _structure_export_errors(
     return errors
 
 
+def _effect_other_audit_errors(
+    items_path: Optional[Path], audit_path: Optional[Path]
+) -> List[Dict[str, Any]]:
+    if items_path is None or audit_path is None:
+        return []
+    payload = json.loads(Path(items_path).read_text(encoding="utf-8"))
+    audit = json.loads(Path(audit_path).read_text(encoding="utf-8"))
+    items = payload.get("items") if isinstance(payload, dict) else None
+    rows = audit.get("rows") if isinstance(audit, dict) else None
+    if (
+        not isinstance(payload, dict)
+        or payload.get("schema_version") != 6
+        or not isinstance(items, list)
+    ):
+        return [{"code": "invalid_effect_other_items_payload"}]
+    if (
+        not isinstance(audit, dict)
+        or audit.get("schema_version") != 1
+        or not isinstance(rows, list)
+    ):
+        return [{"code": "invalid_effect_other_audit_payload"}]
+
+    public_items = {
+        item.get("id"): item
+        for item in items
+        if isinstance(item, dict) and isinstance(item.get("id"), str)
+    }
+    public_in_scope = {
+        item_id
+        for item_id, item in public_items.items()
+        if item.get("category") in {"effect", "other"}
+    }
+    errors: List[Dict[str, Any]] = []
+    audit_by_id: Dict[str, Dict[str, Any]] = {}
+    for row in rows:
+        if not isinstance(row, dict) or not isinstance(row.get("id"), str):
+            errors.append({"code": "invalid_effect_other_audit_row"})
+            continue
+        row_id = row["id"]
+        if row_id in audit_by_id:
+            errors.append(
+                {"code": "duplicate_effect_other_audit_row", "id": row_id}
+            )
+        audit_by_id[row_id] = row
+        if row.get("category") not in {"effect", "other"}:
+            errors.append(
+                {"code": "invalid_effect_other_audit_category", "id": row_id}
+            )
+        action = row.get("action")
+        if action not in {"keep", "exclude"}:
+            errors.append(
+                {"code": "invalid_effect_other_audit_action", "id": row_id}
+            )
+        elif action == "keep" and row_id not in public_items:
+            errors.append(
+                {"code": "audited_effect_other_not_public", "id": row_id}
+            )
+        elif action == "exclude" and row_id in public_items:
+            errors.append(
+                {"code": "excluded_effect_other_is_public", "id": row_id}
+            )
+        if row.get("reasonCode") not in {
+            "positive_signal",
+            "reverse_reference",
+            "empty_unreferenced",
+        }:
+            errors.append(
+                {"code": "invalid_effect_other_audit_reason_code", "id": row_id}
+            )
+        if not isinstance(row.get("reason"), str) or not row["reason"].strip():
+            errors.append(
+                {"code": "invalid_effect_other_audit_reason", "id": row_id}
+            )
+        signals = row.get("signals")
+        if not isinstance(signals, dict) or not all(
+            isinstance(value, bool) for value in signals.values()
+        ):
+            errors.append(
+                {"code": "invalid_effect_other_audit_signals", "id": row_id}
+            )
+        elif action == "exclude" and any(signals.values()):
+            errors.append(
+                {
+                    "code": "excluded_effect_other_has_positive_signal",
+                    "id": row_id,
+                }
+            )
+        references = row.get("references")
+        if not isinstance(references, list) or not all(
+            isinstance(reference, dict)
+            and isinstance(reference.get("source"), str)
+            and isinstance(reference.get("kind"), str)
+            for reference in references
+        ):
+            errors.append(
+                {"code": "invalid_effect_other_audit_references", "id": row_id}
+            )
+        elif action == "exclude" and references:
+            errors.append(
+                {"code": "excluded_effect_other_is_referenced", "id": row_id}
+            )
+
+    for item_id in sorted(public_in_scope - set(audit_by_id)):
+        errors.append({"code": "unaudited_effect_other_item", "id": item_id})
+
+    expected_summary = {
+        "total": len(rows),
+        "keep": sum(
+            isinstance(row, dict) and row.get("action") == "keep" for row in rows
+        ),
+        "exclude": sum(
+            isinstance(row, dict) and row.get("action") == "exclude"
+            for row in rows
+        ),
+        "categories": {
+            category: sum(
+                isinstance(row, dict) and row.get("category") == category
+                for row in rows
+            )
+            for category in ("effect", "other")
+        },
+    }
+    if audit.get("summary") != expected_summary:
+        errors.append({"code": "effect_other_audit_summary_mismatch"})
+    return errors
+
+
 def validate_catalog(
     db_path: Path,
     manifest_path: Optional[Path] = None,
     prefab_scripts_path: Optional[Path] = None,
     items_path: Optional[Path] = None,
     structure_audit_path: Optional[Path] = None,
+    effect_other_audit_path: Optional[Path] = None,
 ) -> Dict[str, Any]:
     """Return deterministic hard failures, extraction diagnostics and coverage."""
 
@@ -670,10 +818,16 @@ def validate_catalog(
             )
         )
         prefab_export_coverage_errors = _prefab_export_coverage(
-            prefab_scripts_path, items_path, structure_audit_path
+            prefab_scripts_path,
+            items_path,
+            structure_audit_path,
+            effect_other_audit_path,
         )
         structure_detail_errors = _structure_export_errors(
             items_path, structure_audit_path
+        )
+        effect_other_audit_errors = _effect_other_audit_errors(
+            items_path, effect_other_audit_path
         )
     finally:
         db.close()
@@ -722,6 +876,8 @@ def validate_catalog(
         hard_failures.append("prefab_export_coverage_errors")
     if structure_detail_errors:
         hard_failures.append("structure_detail_errors")
+    if effect_other_audit_errors:
+        hard_failures.append("effect_other_audit_errors")
     return {
         "schema_version": 1,
         "entity_counts": counts,
@@ -741,6 +897,7 @@ def validate_catalog(
         "archive_checksum_errors": archive["errors"],
         "prefab_export_coverage_errors": prefab_export_coverage_errors,
         "structure_detail_errors": structure_detail_errors,
+        "effect_other_audit_errors": effect_other_audit_errors,
         "warnings": warnings,
         "hard_failures": hard_failures,
     }
