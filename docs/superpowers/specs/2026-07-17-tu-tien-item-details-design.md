@@ -17,7 +17,7 @@ Use a hybrid evidence pipeline:
 
 1. Derive reliable data from normalized catalog fields already extracted from Lua/runtime evidence.
 2. Reverse-index recipes so an ingredient can list every recipe that uses it.
-3. Convert normalized effects into Vietnamese gameplay usage statements only when the effect shape is explicitly supported.
+3. Convert normalized stats, relations, and effects into Vietnamese gameplay usage statements only when their shapes are explicitly supported.
 4. Convert acquisition facts into `dropBy` rows for drops, harvests, starting grants, and other evidenced non-crafting sources.
 5. Apply a checked-in manual override file for dynamic Lua behavior that cannot be represented reliably by the generic extractor.
 6. Mark unresolved sections as `unknown` and export a review report instead of guessing.
@@ -99,7 +99,7 @@ The existing top-level `recipe` remains the canonical recipe payload so current 
 ### Cách sử dụng
 
 - Reverse-index all normalized recipes. For each ingredient, add the result recipe, ingredient amount, other ingredients, output count, and restrictions.
-- Add gameplay effects from normalized `effects` records only through an explicit mapping of supported `trigger` and `effect_key` shapes to Vietnamese text.
+- Add gameplay effects from normalized `stats`, `relations`, and `effects` records only through explicit mappings to Vietnamese text. Initial supported stat groups are edible health/hunger/sanity, weapon damage/range/uses, armor durability/absorption, container slots, and rechargeable capacity/time. The `transforms_to` relation is also supported.
 - Manual overrides may add or replace effect statements for dynamic callbacks, equipment components, edible behavior, spell actions, and giver interactions found directly in mod Lua.
 - `known` when at least one recipe use or effect statement exists.
 - `none` only when code evidence explicitly establishes no supported use.
@@ -153,12 +153,12 @@ Output ordering is stable so regenerated artifacts produce reviewable diffs.
 
 - Invalid public JSON fails fast in the TypeScript catalog parser with the item index and field name.
 - Invalid manual overrides fail the export command before replacing generated files.
-- Unsupported effects do not become prose. They are recorded in the audit report and leave the relevant section `unknown` unless other reliable usage exists.
+- Unsupported stats, relations, and effects do not become prose. They are recorded in the audit report and leave the relevant section `unknown` unless other reliable usage exists.
 - Missing references retain their prefab ID as text and are reported; they do not crash export or rendering.
 
 ## Testing
 
-- Python unit tests cover reverse recipe derivation, acquisition conversion, effect mapping, status classification, override merging, deterministic report output, and rejection cases.
+- Python unit tests cover reverse recipe derivation, acquisition conversion, stat/relation/effect mapping, status classification, override merging, deterministic report output, and rejection cases.
 - TypeScript parser tests cover the full details schema and invalid states.
 - React tests cover all three modal states, structured recipe usage, gameplay effects, drop sources, and click-through references.
 - Existing extractor and frontend tests must remain green.
