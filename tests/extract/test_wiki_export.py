@@ -5,7 +5,11 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from tests.extract.test_wiki_import import create_base_database, write_crawl
+from tests.extract.test_wiki_import import (
+    append_structure_page,
+    create_base_database,
+    write_crawl,
+)
 from tools.extract.wiki_export import (
     export_wiki_artifacts,
     load_wiki_export,
@@ -64,6 +68,17 @@ class WikiExportTests(unittest.TestCase):
         self.assertEqual(by_id["wiki:11"]["namespace"], "base_game")
         self.assertEqual(by_id["wiki:11"]["prefabId"], "wiki-11")
         self.assertEqual(by_id["wiki:11"]["wiki"]["mappingState"], "unmatched")
+
+    def test_export_exposes_structure_details_by_item_id(self):
+        append_structure_page(self.crawl)
+        import_wiki(self.database, self.crawl)
+
+        wiki = load_wiki_export(self.database, self.crawl)
+
+        self.assertIn("base_game:atrium_statue", wiki.structure_details)
+        details = wiki.structure_details["base_game:atrium_statue"]
+        self.assertIs(details["origin"]["naturallySpawned"], True)
+        self.assertIs(details["destruction"]["destroyable"], False)
 
     def test_vietnamese_wiki_summary_overrides_database_description(self):
         source = "A nugget of gold."
@@ -229,6 +244,7 @@ class WikiExportTests(unittest.TestCase):
         self.assertEqual(wiki.standalone_items, ())
         self.assertEqual(wiki.details, ())
         self.assertEqual(wiki.assets, ())
+        self.assertEqual(wiki.structure_details, {})
 
     def test_multiple_pages_for_one_entity_are_related_without_duplicate_items(self):
         with sqlite3.connect(self.database) as connection:

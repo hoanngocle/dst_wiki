@@ -44,10 +44,42 @@ class WikiExport:
     standalone_items: Tuple[JsonObject, ...]
     details: Tuple[JsonObject, ...]
     assets: Tuple[WikiAsset, ...]
+    structure_details: Dict[str, JsonObject]
 
 
 def _empty_export() -> WikiExport:
-    return WikiExport({}, (), (), ())
+    return WikiExport({}, (), (), (), {})
+
+
+def _resolved_structure_detail(
+    raw: str,
+    images_by_identity: Mapping[str, WikiAsset],
+) -> JsonObject:
+    value = json.loads(raw)
+    if not isinstance(value, dict):
+        raise ValueError("wiki structure details must contain an object")
+    result = dict(value)
+    candidates = value.get("visual_candidates")
+    if not isinstance(candidates, list):
+        raise ValueError("wiki structure visual_candidates must contain an array")
+    resolved = []
+    for position, candidate in enumerate(candidates):
+        if not isinstance(candidate, dict) or not isinstance(candidate.get("title"), str):
+            raise ValueError(
+                f"wiki structure visual candidate {position} must contain a title"
+            )
+        asset = images_by_identity.get(_file_identity(candidate["title"]))
+        resolved.append(
+            {
+                **candidate,
+                "src": asset.public_path if asset else None,
+                "mime": asset.mime if asset else None,
+                "width": asset.width if asset else None,
+                "height": asset.height if asset else None,
+            }
+        )
+    result["visual_candidates"] = resolved
+    return result
 
 
 def _table_exists(connection: sqlite3.Connection, table: str) -> bool:
@@ -405,6 +437,14 @@ def load_wiki_export(database_path: Path, crawl_root: Path) -> WikiExport:
         ingredient_rows = connection.execute(
             "select * from wiki_recipe_ingredients order by recipe_id,position"
         ).fetchall()
+        structure_rows = (
+            connection.execute(
+                "select page_id,details_json from wiki_structure_details "
+                "order by page_id"
+            ).fetchall()
+            if _table_exists(connection, "wiki_structure_details")
+            else []
+        )
 
     seed_image_identities = _seed_image_identities(crawl_root)
     summary_translations = _load_summary_translations(crawl_root)
@@ -509,6 +549,38 @@ def load_wiki_export(database_path: Path, crawl_root: Path) -> WikiExport:
         else:
             unmatched.append(page)
 
+    raw_structure_details = {
+        int(row["page_id"]): _resolved_structure_detail(
+            str(row["details_json"]), images_by_identity
+        )
+        for row in structure_rows
+    }
+    structure_details: Dict[str, JsonObject] = {}
+    for key, candidates in sorted(groups.items()):
+        ordered = sorted(
+            candidates,
+            key=lambda page: (
+                -float(page["confidence"]),
+                int(page["title"].casefold().endswith("/dst")),
+                page["page_id"],
+            ),
+        )
+        selected = next(
+            (
+                raw_structure_details[page["page_id"]]
+                for page in ordered
+                if page["page_id"] in raw_structure_details
+            ),
+            None,
+        )
+        if selected is not None:
+            structure_details[key] = selected
+    for page in unmatched:
+        if page["page_id"] in raw_structure_details:
+            structure_details[f"wiki:{page['page_id']}"] = raw_structure_details[
+                page["page_id"]
+            ]
+
     overlays = {}
     fallbacks = []
     for key, candidates in sorted(groups.items()):
@@ -586,6 +658,7 @@ def load_wiki_export(database_path: Path, crawl_root: Path) -> WikiExport:
         standalone_items=tuple(sorted(fallbacks, key=lambda item: item["id"])),
         details=tuple(sorted(details, key=lambda detail: detail["pageId"])),
         assets=tuple(referenced_assets[key] for key in sorted(referenced_assets)),
+        structure_details=dict(sorted(structure_details.items())),
     )
 
 

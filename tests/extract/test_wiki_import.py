@@ -29,6 +29,7 @@ def create_base_database(path):
         connection.executemany(
             "insert into entities(namespace,prefab_id,name_en) values(?,?,?)",
             [
+                ("base_game", "atrium_statue", "Ancient Statue"),
                 ("base_game", "goldnugget", "Gold Nugget"),
                 ("tu_tien", "goldnugget", "Mod Gold"),
             ],
@@ -156,6 +157,52 @@ def write_crawl(root, recipe_page_id=10):
     )
 
 
+def append_structure_page(root):
+    pages_path = root / "pages.jsonl"
+    pages = [
+        json.loads(line)
+        for line in pages_path.read_text(encoding="utf-8").splitlines()
+        if line.strip()
+    ]
+    pages.append(
+        {
+            "schema_version": 1,
+            "page_id": 12,
+            "title": "Ancient Statue/DST",
+            "display_title": "Ancient Statue",
+            "canonical_url": (
+                "https://dontstarve.wiki.gg/wiki/Ancient_Statue/DST"
+            ),
+            "revision": {
+                "id": 103,
+                "timestamp": "2026-01-03T00:00:00Z",
+                "sha1": "page-sha3",
+            },
+            "content_model": "wikitext",
+            "html": "<p>Found naturally in the Atrium.</p>",
+            "wikitext": (
+                "{{Object Infobox|image=Ancient Statue DST.png|"
+                "renewable=Yes|tool=Can't Be Destroyed|"
+                "spawnCode=atrium_statue}}\n"
+                "Found naturally in the [[Atrium]] Biome."
+            ),
+            "plain_text": "Found naturally in the Atrium Biome.",
+            "categories": [
+                "Category:Structures",
+                "Category:Don't Starve Together",
+            ],
+            "redirect_target": None,
+            "fetched_at": "2026-07-15T00:03:00Z",
+        }
+    )
+    write_jsonl(pages_path, pages)
+    manifest_path = root / "manifest.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    manifest["counts"]["pages"] = len(pages)
+    manifest["checksums"]["pages.jsonl"] = sha256(pages_path)
+    manifest_path.write_text(json.dumps(manifest, sort_keys=True), encoding="utf-8")
+
+
 def wiki_snapshot(database):
     tables = (
         "wiki_import_runs",
@@ -164,6 +211,7 @@ def wiki_snapshot(database):
         "wiki_recipe_ingredients",
         "wiki_images",
         "wiki_entity_mappings",
+        "wiki_structure_details",
     )
     with sqlite3.connect(database) as connection:
         return {
@@ -175,6 +223,29 @@ def wiki_snapshot(database):
 
 
 class WikiImportTests(unittest.TestCase):
+    def test_import_persists_normalized_structure_details(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            database = root / "wiki.sqlite"
+            crawl = root / "crawl"
+            crawl.mkdir()
+            create_base_database(database)
+            write_crawl(crawl)
+            append_structure_page(crawl)
+
+            import_wiki(database, crawl)
+
+            with sqlite3.connect(database) as connection:
+                row = connection.execute(
+                    "select details_json from wiki_structure_details "
+                    "where page_id=12"
+                ).fetchone()
+            self.assertIsNotNone(row)
+            assert row is not None
+            details = json.loads(row[0])
+            self.assertIs(details["origin"]["naturallySpawned"], True)
+            self.assertIs(details["destruction"]["destroyable"], False)
+
     def test_imports_pages_recipes_ingredients_images_and_mapping(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

@@ -10,12 +10,14 @@ from pathlib import Path
 from typing import Any, Dict, Iterable, List, Mapping, Optional, Sequence, Tuple
 
 from tools.extract.wiki_mapping import build_entity_index, map_page
+from tools.extract.wiki_structures import normalize_structure_page
 
 
 DATASET_FILES = ("pages.jsonl", "recipes.jsonl", "images.jsonl")
 WIKI_TABLES = (
     "wiki_recipe_ingredients",
     "wiki_recipes",
+    "wiki_structure_details",
     "wiki_entity_mappings",
     "wiki_images",
     "wiki_pages",
@@ -105,6 +107,12 @@ WIKI_SCHEMA = (
       amount_text TEXT,
       PRIMARY KEY(recipe_id, position),
       FOREIGN KEY(recipe_id) REFERENCES wiki_recipes(recipe_id)
+    )""",
+    """CREATE TABLE wiki_structure_details (
+      page_id INTEGER PRIMARY KEY,
+      details_json TEXT NOT NULL,
+      source_schema_version INTEGER NOT NULL,
+      FOREIGN KEY(page_id) REFERENCES wiki_pages(page_id)
     )""",
     "CREATE INDEX wiki_mapping_entity_idx ON wiki_entity_mappings(entity_namespace, entity_prefab_id)",
     "CREATE INDEX wiki_recipe_page_idx ON wiki_recipes(page_id)",
@@ -459,6 +467,16 @@ def import_wiki(database_path: Path, crawl_root: Path) -> ImportSummary:
                 f"manifest {name} count mismatch: expected {counts.get(name)}, got {len(rows)}"
             )
     pages = _validate_pages(raw_pages)
+    structure_details = [
+        {
+            "page_id": page["page_id"],
+            "details_json": _canonical_json(details),
+            "source_schema_version": 1,
+        }
+        for page in pages
+        for details in [normalize_structure_page(page["mapping_input"])]
+        if details is not None
+    ]
     recipes, ingredients = _validate_recipes(
         raw_recipes, (page["page_id"] for page in pages)
     )
@@ -539,6 +557,12 @@ def import_wiki(database_path: Path, crawl_root: Path) -> ImportSummary:
                 "confidence", "evidence_json", "selected",
             ),
             mappings,
+        )
+        _insert_rows(
+            connection,
+            "wiki_structure_details",
+            ("page_id", "details_json", "source_schema_version"),
+            structure_details,
         )
         _insert_rows(
             connection,
