@@ -9,6 +9,7 @@ from tools.extract.export_items import (
     build_item_export,
     export_items,
     load_crafting_notes,
+    load_runtime_coverage,
 )
 
 
@@ -187,7 +188,7 @@ class ExportItemsTests(unittest.TestCase):
     def test_builds_named_tu_tien_prefabs_with_crafting_notes_and_base_game(self):
         catalog, assets = self.fixtures()
 
-        items, textures = build_item_export(
+        items, textures, detail_report = build_item_export(
             catalog,
             assets,
             {"xd_sword": "Rèn một thanh kiếm thử"},
@@ -202,7 +203,7 @@ class ExportItemsTests(unittest.TestCase):
                 "tu_tien:xd_sword",
             ],
         )
-        self.assertEqual(items["schema_version"], 4)
+        self.assertEqual(items["schema_version"], 5)
         by_id = {item["id"]: item for item in items["items"]}
         self.assertEqual(by_id["base_game:deerclops"]["category"], "boss")
         self.assertEqual(by_id["base_game:goldnugget"]["category"], "item")
@@ -216,6 +217,10 @@ class ExportItemsTests(unittest.TestCase):
         self.assertEqual(sword["craftingNote"], "Rèn một thanh kiếm thử")
         self.assertIsNone(by_id["base_game:deerclops"]["craftingNote"])
         self.assertIsNone(by_id["base_game:deerclops"]["wiki"])
+        self.assertIsNone(by_id["base_game:deerclops"]["details"])
+        self.assertEqual(sword["details"]["recipeStatus"], "known")
+        self.assertEqual(sword["details"]["dropBy"]["status"], "unknown")
+        self.assertEqual(detail_report["totalTuTienItems"], 2)
         self.assertEqual(
             sword["sprite"]["src"], "/assets/game/" + "a" * 64 + ".png"
         )
@@ -265,7 +270,7 @@ class ExportItemsTests(unittest.TestCase):
             }
         )
 
-        items, _textures = build_item_export(catalog, assets)
+        items, _textures, _detail_report = build_item_export(catalog, assets)
         by_id = {item["id"]: item for item in items["items"]}
 
         self.assertEqual(by_id["base_game:goldnugget"]["description"], "A gold nugget.")
@@ -288,8 +293,14 @@ class ExportItemsTests(unittest.TestCase):
             database_path = root / "wiki.sqlite"
             items_path = root / "items.json"
             textures_path = root / "textures.json"
+            overrides_path = root / "item-details.json"
+            report_path = root / "item-details-report.json"
             catalog_path.write_text(json.dumps(catalog), encoding="utf-8")
             assets_path.write_text(json.dumps(assets), encoding="utf-8")
+            overrides_path.write_text(
+                json.dumps({"schema_version": 1, "items": {}}),
+                encoding="utf-8",
+            )
             with sqlite3.connect(database_path) as connection:
                 connection.execute(
                     "create table game_text (text_key text not null, value_vi text not null)"
@@ -301,21 +312,28 @@ class ExportItemsTests(unittest.TestCase):
                 assets_path,
                 items_path,
                 textures_path,
+                detail_overrides_path=overrides_path,
+                detail_report_path=report_path,
             )
             first_items = items_path.read_bytes()
             first_textures = textures_path.read_bytes()
+            first_report = report_path.read_bytes()
             export_items(
                 database_path,
                 catalog_path,
                 assets_path,
                 items_path,
                 textures_path,
+                detail_overrides_path=overrides_path,
+                detail_report_path=report_path,
             )
 
             self.assertEqual(items_path.read_bytes(), first_items)
             self.assertEqual(textures_path.read_bytes(), first_textures)
+            self.assertEqual(report_path.read_bytes(), first_report)
             self.assertFalse((root / ".items.json.tmp").exists())
             self.assertFalse((root / ".textures.json.tmp").exists())
+            self.assertFalse((root / ".item-details-report.json.tmp").exists())
 
     def test_loads_deduplicated_crafting_notes_and_rejects_conflicts(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -351,6 +369,40 @@ class ExportItemsTests(unittest.TestCase):
             ):
                 load_crafting_notes(database)
 
+    def test_loads_runtime_coverage_with_decoded_details(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            database = Path(tmp) / "wiki.sqlite"
+            with sqlite3.connect(database) as connection:
+                connection.execute(
+                    "create table runtime_coverage ("
+                    "namespace text, prefab_id text, category text, status text, "
+                    "reason text, details_json text)"
+                )
+                connection.execute(
+                    "insert into runtime_coverage values(?,?,?,?,?,?)",
+                    (
+                        "tu_tien",
+                        "xd_unknown",
+                        "craft",
+                        "unobserved",
+                        "no AllRecipes entry for target",
+                        '{"count":0}',
+                    ),
+                )
+
+            self.assertEqual(
+                load_runtime_coverage(database),
+                [
+                    {
+                        "namespace": "tu_tien",
+                        "prefab_id": "xd_unknown",
+                        "category": "craft",
+                        "status": "unobserved",
+                        "reason": "no AllRecipes entry for target",
+                        "details": {"count": 0},
+                    }
+                ],
+            )
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,0 +1,4613 @@
+{
+  "manualOverrideItems": [],
+  "schema_version": 1,
+  "statusCounts": {
+    "dropBy": {
+      "known": 48,
+      "none": 278,
+      "unknown": 55
+    },
+    "recipe": {
+      "known": 104,
+      "none": 277,
+      "unknown": 0
+    },
+    "usage": {
+      "known": 140,
+      "none": 0,
+      "unknown": 241
+    }
+  },
+  "totalTuTienItems": 381,
+  "unknownItems": [
+    {
+      "id": "tu_tien:fence_gate_luoshen",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:fence_gate_luoshen_item",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:fence_luoshen",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:fence_luoshen_item",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:sudaji_killed",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:turf_jingweitile",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:turf_xdtile1",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:turf_xdtile2",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:turf_xdtile3",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:wall_luoshen",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:wall_luoshen_item",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_ayhx",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_aymg",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_baihu",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_bearger",
+      "sections": [
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_beefalo",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_bjms",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_bjms_builder",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_bjms_kl",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_bysp",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_choujiangji",
+      "sections": [
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_danyao_bg",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_danyao_dt",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_danyao_hj",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_danyao_hl",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_danyao_hs",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_danyao_hy",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_danyao_jq",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_danyao_jy",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_danyao_kx",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_danyao_ns",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_danyao_rl",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_danyao_sm",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_danyao_xs",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_danyao_yx",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_danyao_yz",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_danyao_zj",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_deerclops_ziyun",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_door_exit",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_door_exit1",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dragonfly",
+      "sections": [
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_cyfxd_1",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_cyfxd_2",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_cyfxd_3",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_cyfxd_4",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_cyfxd_5",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_dmhsd_1",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_dmhsd_2",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_dmhsd_3",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_dmhsd_4",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_dmhsd_5",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_hsphd_1",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_hsphd_2",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_hsphd_3",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_hsphd_4",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_hsphd_5",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_lmsqd_1",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_lmsqd_2",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_lmsqd_3",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_lmsqd_4",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_lmsqd_5",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_pshsd_1",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_pshsd_2",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_pshsd_3",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_pshsd_4",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_pshsd_5",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_qjqsd_1",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_qjqsd_2",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_qjqsd_3",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_qjqsd_4",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_qjqsd_5",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_qxdhd_1",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_qxdhd_2",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_qxdhd_3",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_qxdhd_4",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_qxdhd_5",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_tsfhd",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_xttyd_1",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_xttyd_2",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_xttyd_3",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_xttyd_4",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_xttyd_5",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_xynyd_1",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_xynyd_2",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_xynyd_3",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_xynyd_4",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_xynyd_5",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_yfsxd_1",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_yfsxd_2",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_yfsxd_3",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_yfsxd_4",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_dy_yfsxd_5",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_fabao",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_fanhunshuvine",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_fb_hound",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_fb_mutateddeerclops",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_fb_mutatedhound",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_fb_mutatedwarg",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_fhs_desk",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_fhs_light",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_flower_bh",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_flower_bmg",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_flower_ll",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_flower_md",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_flower_mlh",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_flower_pgy",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_flower_sfr",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_flower_yl",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_flower_zyh",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_ftys",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_futu",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_futu_small",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_gcsz",
+      "sections": [
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_gj",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_hantianzun",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_hmsw",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_ht",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_htz_noweapon",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_htz_sjc",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_htz_txm",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_htz_xtd",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_htz_xyzz",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_hxyp",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_icedragon",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_infobook",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_jcbird",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_jcbird_spitter",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_jfsn",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_jingwei",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_jingwei_blowdart_shadow",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_jingwei_fenice_builder",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_jingwei_hat",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_jitan",
+      "sections": [
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_jushuwu",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_klxw",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_koalefant",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_lbjlt",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_lightninggoat",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_lingshi4",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_llbx",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_longtaizi",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_luoshen",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_luoshen_deathflower_builder",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_luoshen_dinghunxianglu",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_luoshen_hua",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_luoshen_huazhong",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_luoshen_jihuaze",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_luoshen_lifeflower_builder",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_luoshen_liuguanghuafen",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_luoshen_petals",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_luoshen_petals_evil",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_luoshen_plantmeat",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_luoshen_yin",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_luoshenzhu",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_luoshenzhu_vine",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_luoshenzhu_vine_tail",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_lycx",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_mo_builder",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_pflnw",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_plant_cyh",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_plant_dms",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_plant_hsc",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_plant_lmg",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_plant_qfx",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_plant_yhh",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_pog",
+      "sections": [
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_pog_house",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_poison_damage",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_qlch",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_qlch_fs",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_qwsk",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_qxdx",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_qxdx_npc",
+      "sections": [
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_rock1",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_rock2",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_rock3",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_rock_basalt",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_sandblock",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_shadowspider_dropper",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_shadowspider_moon",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_shadowspiderqueen",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_shatangshu",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_shatangshu_normal",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_shatangshunut",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_shatangshuvine",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_shiji",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_sj_by_builder",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_sj_cy_builder",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_sj_kls",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_sj_pysk",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_sj_rocky",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_sj_tlsq",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_skeleton",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_soul_wolf",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_spider",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_spiderden",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_spiderqueen",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_stalke_fuben",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_stool",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_sudaji",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_sudaji_redlantern",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_sudaji_sjpn",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_sudaji_soul",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_sudaji_tsmd",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_sudaji_ywfh",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_swhs_levelup",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_swhs_levelupwmz",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_tianji_juanzhou",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_tianji_lingpai",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_tianjiwu",
+      "sections": [
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_timeleft",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_tree_df",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_tree_ls",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_tree_xhs",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_tree_yhs",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_tree_yls",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_tree_yxs",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_wangmazi",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_wickerbottom",
+      "sections": [
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_wmz_db",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_wmz_tnz_chgz",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_wmz_tnz_ftl",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_wmz_zhf",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_wmz_zhf_ground",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_wmz_zhf_soul",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_wukong",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_wukong_dsmo",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_wukong_phantom",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_wukong_shadow",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_xianhe",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_xianjian_builder",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_xinmo",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_xtzlj_str",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_ylxq",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_yunxiao",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_yunxiao_hyjd",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_yunxiao_hyjdyqd",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_yunxiao_hytx",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_zhouwang",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_zhouwang_shadow",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_ziyun_house",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_ziyunboss",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_ziyunboss_channeler",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_ziyunge",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_zuichunyan",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_zuichunyan_sapling",
+      "sections": [
+        "usage",
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_zyg_desk",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_zyg_light",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_zyg_light1",
+      "sections": [
+        "usage"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_zyg_npc",
+      "sections": [
+        "dropBy"
+      ]
+    },
+    {
+      "id": "tu_tien:xd_zzxhcx",
+      "sections": [
+        "usage"
+      ]
+    }
+  ],
+  "unsupportedCoverage": [
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:fence_gate_luoshen",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:fence_gate_luoshen_item",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:fence_luoshen",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:fence_luoshen_item",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:sudaji_killed",
+      "reason": "prefab inspection failed before buff/debuff fields could be read"
+    },
+    {
+      "category": "cooldown_recharge",
+      "id": "tu_tien:sudaji_killed",
+      "reason": "prefab inspection failed before cooldown fields could be read"
+    },
+    {
+      "category": "drop",
+      "id": "tu_tien:sudaji_killed",
+      "reason": "prefab inspection failed before lootdropper fields could be read"
+    },
+    {
+      "category": "harvest",
+      "id": "tu_tien:sudaji_killed",
+      "reason": "prefab inspection failed before pickable fields could be read"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:sudaji_killed",
+      "reason": "prefab inspection failed before trader fields could be read"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:sudaji_killed",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:turf_jingweitile",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:turf_xdtile1",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:turf_xdtile2",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:turf_xdtile3",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:wall_luoshen",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:wall_luoshen_item",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_ayhx",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_aymg",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_back_xh",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_baihu",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_baihu",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_baihu_skin",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_bearger",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_bearger",
+      "reason": "trader acceptance and rewards are opaque callbacks; probe does not execute them"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_bearger",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_beefalo",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_beefalo",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_bjms",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_bjms",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_bjms_builder",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_bjms_kl",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_bjsj",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_bjsj",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_bysp",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_choujiangji",
+      "reason": "trader acceptance and rewards are opaque callbacks; probe does not execute them"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_choujiangji",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_cl",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_cl",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_crc",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_cwkj_container",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_danyao_bg",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_danyao_dt",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_danyao_hj",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_danyao_hl",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_danyao_hs",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_danyao_hy",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_danyao_jq",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_danyao_jy",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_danyao_kx",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_danyao_ns",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_danyao_rl",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_danyao_sm",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_danyao_xs",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_danyao_yx",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_danyao_yz",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_danyao_zj",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_dbg",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dbg",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_dc",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dc",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_deerclops_ziyun",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_deerclops_ziyun",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_door_exit",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_door_exit1",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_dragonfly",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_dragonfly",
+      "reason": "trader acceptance and rewards are opaque callbacks; probe does not execute them"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dragonfly",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_cyfxd_1",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_cyfxd_2",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_cyfxd_3",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_cyfxd_4",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_cyfxd_5",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_dmhsd_1",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_dmhsd_2",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_dmhsd_3",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_dmhsd_4",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_dmhsd_5",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_fd",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_hsphd_1",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_hsphd_2",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_hsphd_3",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_hsphd_4",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_hsphd_5",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_lmsqd_1",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_lmsqd_2",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_lmsqd_3",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_lmsqd_4",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_lmsqd_5",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_pshsd_1",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_pshsd_2",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_pshsd_3",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_pshsd_4",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_pshsd_5",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_qjqsd_1",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_qjqsd_2",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_qjqsd_3",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_qjqsd_4",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_qjqsd_5",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_qxdhd_1",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_qxdhd_2",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_qxdhd_3",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_qxdhd_4",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_qxdhd_5",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_tsfhd",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_xttyd_1",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_xttyd_2",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_xttyd_3",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_xttyd_4",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_xttyd_5",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_xynyd_1",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_xynyd_2",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_xynyd_3",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_xynyd_4",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_xynyd_5",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_yfsxd_1",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_yfsxd_2",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_yfsxd_3",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_yfsxd_4",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_dy_yfsxd_5",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_fabao",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_fanhunguopu",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_fanhunshu",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_fanhunshu",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_fanhunshuvine",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_fanshengxiang",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_fb_hound",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_fb_mutateddeerclops",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_fb_mutateddeerclops",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_fb_mutatedhound",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_fb_mutatedwarg",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_fb_mutatedwarg",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_fhg",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_fhs_desk",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_fhs_light",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_fj",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_fj",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_flower_bh",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_flower_bmg",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_flower_ll",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_flower_md",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_flower_mlh",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_flower_pgy",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_flower_sfr",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_flower_yl",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_flower_zyh",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_fs",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_fsct",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_fsct",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_ftj",
+      "reason": "trader acceptance and rewards are opaque callbacks; probe does not execute them"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_ftj",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_ftys",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_futu",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_futu",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_futu_small",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_futu_small",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_gcsz",
+      "reason": "trader acceptance and rewards are opaque callbacks; probe does not execute them"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_gcsz",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_gj",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_gj",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_gjx",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_hantianzun",
+      "reason": "prefab inspection failed before buff/debuff fields could be read"
+    },
+    {
+      "category": "cooldown_recharge",
+      "id": "tu_tien:xd_hantianzun",
+      "reason": "prefab inspection failed before cooldown fields could be read"
+    },
+    {
+      "category": "drop",
+      "id": "tu_tien:xd_hantianzun",
+      "reason": "prefab inspection failed before lootdropper fields could be read"
+    },
+    {
+      "category": "harvest",
+      "id": "tu_tien:xd_hantianzun",
+      "reason": "prefab inspection failed before pickable fields could be read"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_hantianzun",
+      "reason": "prefab inspection failed before trader fields could be read"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_hantianzun",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_he_container",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_hhlmz",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_hjjm",
+      "reason": "trader acceptance and rewards are opaque callbacks; probe does not execute them"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_hjjm",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_hmsw",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_ht",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_ht",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_htz_fjfb",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_htz_noweapon",
+      "reason": "prefab inspection failed before buff/debuff fields could be read"
+    },
+    {
+      "category": "cooldown_recharge",
+      "id": "tu_tien:xd_htz_noweapon",
+      "reason": "prefab inspection failed before cooldown fields could be read"
+    },
+    {
+      "category": "drop",
+      "id": "tu_tien:xd_htz_noweapon",
+      "reason": "prefab inspection failed before lootdropper fields could be read"
+    },
+    {
+      "category": "harvest",
+      "id": "tu_tien:xd_htz_noweapon",
+      "reason": "prefab inspection failed before pickable fields could be read"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_htz_noweapon",
+      "reason": "prefab inspection failed before trader fields could be read"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_htz_noweapon",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_htz_qzj",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_htz_qzj",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_htz_qzxy",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_htz_sjc",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_htz_sjc",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_htz_sjcx",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_htz_tlz",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_htz_txm",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_htz_txm",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_htz_xtd",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_htz_xyzz",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_htz_xyzz",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_htz_xyzzl",
+      "reason": "trader acceptance and rewards are opaque callbacks; probe does not execute them"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_htz_xyzzl",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_htz_ztp",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_huapen",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_hxyp",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_hyc",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_hyc",
+      "reason": "trader acceptance and rewards are opaque callbacks; probe does not execute them"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_hyc",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_hyf",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_hyf",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_icedragon",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_icedragon",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_infobook",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_jcbird",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_jcbird",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_jcbird_spitter",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_jcbird_spitter",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_jfsn",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_jfsn",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_jgb",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_jgb",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_jingwei",
+      "reason": "prefab inspection failed before buff/debuff fields could be read"
+    },
+    {
+      "category": "cooldown_recharge",
+      "id": "tu_tien:xd_jingwei",
+      "reason": "prefab inspection failed before cooldown fields could be read"
+    },
+    {
+      "category": "drop",
+      "id": "tu_tien:xd_jingwei",
+      "reason": "prefab inspection failed before lootdropper fields could be read"
+    },
+    {
+      "category": "harvest",
+      "id": "tu_tien:xd_jingwei",
+      "reason": "prefab inspection failed before pickable fields could be read"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_jingwei",
+      "reason": "prefab inspection failed before trader fields could be read"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_jingwei",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_jingwei_blowdart",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_jingwei_blowdart_shadow",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_jingwei_blowdart_shadow",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_jingwei_fan",
+      "reason": "trader acceptance and rewards are opaque callbacks; probe does not execute them"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_jingwei_fan",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_jingwei_fenice1",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_jingwei_fenice1",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_jingwei_fenice2",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_jingwei_fenice2",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_jingwei_fenice3",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_jingwei_fenice3",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_jingwei_fenice4",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_jingwei_fenice4",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_jingwei_fenice_builder",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_jingwei_hat",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_jingwei_zzql",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_jingwei_zzql",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_jitan",
+      "reason": "trader acceptance and rewards are opaque callbacks; probe does not execute them"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_jitan",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_jl",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_jl",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_jushuwu",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_jwtcd",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_jwtcd",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_klxw",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_koalefant",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_lbjlt",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_lbx",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_lbx",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_lc_cyh",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_lc_cyh_seed",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_lc_dms",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_lc_dms_seed",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_lc_hsc",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_lc_hsc_seed",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_lc_lmg",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_lc_lmg_seed",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_lc_qfx",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_lc_qfx_seed",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_lc_yhh",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_lc_yhh_seed",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_lgzbh",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_lhwdc",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_lhwdc",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_liandanlu",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_lightninggoat",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_lightninggoat",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_lingshi1",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_lingshi2",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_lingshi3",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_lingshi4",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_llbx",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_llbx_container",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_longtaizi",
+      "reason": "prefab inspection failed before buff/debuff fields could be read"
+    },
+    {
+      "category": "cooldown_recharge",
+      "id": "tu_tien:xd_longtaizi",
+      "reason": "prefab inspection failed before cooldown fields could be read"
+    },
+    {
+      "category": "drop",
+      "id": "tu_tien:xd_longtaizi",
+      "reason": "prefab inspection failed before lootdropper fields could be read"
+    },
+    {
+      "category": "harvest",
+      "id": "tu_tien:xd_longtaizi",
+      "reason": "prefab inspection failed before pickable fields could be read"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_longtaizi",
+      "reason": "prefab inspection failed before trader fields could be read"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_longtaizi",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_longzhu",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_longzhu",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_luoshen",
+      "reason": "prefab inspection failed before buff/debuff fields could be read"
+    },
+    {
+      "category": "cooldown_recharge",
+      "id": "tu_tien:xd_luoshen",
+      "reason": "prefab inspection failed before cooldown fields could be read"
+    },
+    {
+      "category": "drop",
+      "id": "tu_tien:xd_luoshen",
+      "reason": "prefab inspection failed before lootdropper fields could be read"
+    },
+    {
+      "category": "harvest",
+      "id": "tu_tien:xd_luoshen",
+      "reason": "prefab inspection failed before pickable fields could be read"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_luoshen",
+      "reason": "prefab inspection failed before trader fields could be read"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_luoshen",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_luoshen_deathflower_builder",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_luoshen_dinghunxianglu",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_luoshen_hua",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_luoshen_huaxia",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_luoshen_huayin",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_luoshen_huazhong",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_luoshen_jiangren",
+      "reason": "trader acceptance and rewards are opaque callbacks; probe does not execute them"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_luoshen_jiangren",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_luoshen_jihuaze",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_luoshen_krss",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_luoshen_krss",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_luoshen_lifeflower_builder",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_luoshen_liuguanghuafen",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_luoshen_petals",
+      "reason": "prefab inspection failed before buff/debuff fields could be read"
+    },
+    {
+      "category": "cooldown_recharge",
+      "id": "tu_tien:xd_luoshen_petals",
+      "reason": "prefab inspection failed before cooldown fields could be read"
+    },
+    {
+      "category": "drop",
+      "id": "tu_tien:xd_luoshen_petals",
+      "reason": "prefab inspection failed before lootdropper fields could be read"
+    },
+    {
+      "category": "harvest",
+      "id": "tu_tien:xd_luoshen_petals",
+      "reason": "prefab inspection failed before pickable fields could be read"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_luoshen_petals",
+      "reason": "prefab inspection failed before trader fields could be read"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_luoshen_petals",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_luoshen_petals_evil",
+      "reason": "prefab inspection failed before buff/debuff fields could be read"
+    },
+    {
+      "category": "cooldown_recharge",
+      "id": "tu_tien:xd_luoshen_petals_evil",
+      "reason": "prefab inspection failed before cooldown fields could be read"
+    },
+    {
+      "category": "drop",
+      "id": "tu_tien:xd_luoshen_petals_evil",
+      "reason": "prefab inspection failed before lootdropper fields could be read"
+    },
+    {
+      "category": "harvest",
+      "id": "tu_tien:xd_luoshen_petals_evil",
+      "reason": "prefab inspection failed before pickable fields could be read"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_luoshen_petals_evil",
+      "reason": "prefab inspection failed before trader fields could be read"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_luoshen_petals_evil",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_luoshen_plantmeat",
+      "reason": "prefab inspection failed before buff/debuff fields could be read"
+    },
+    {
+      "category": "cooldown_recharge",
+      "id": "tu_tien:xd_luoshen_plantmeat",
+      "reason": "prefab inspection failed before cooldown fields could be read"
+    },
+    {
+      "category": "drop",
+      "id": "tu_tien:xd_luoshen_plantmeat",
+      "reason": "prefab inspection failed before lootdropper fields could be read"
+    },
+    {
+      "category": "harvest",
+      "id": "tu_tien:xd_luoshen_plantmeat",
+      "reason": "prefab inspection failed before pickable fields could be read"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_luoshen_plantmeat",
+      "reason": "prefab inspection failed before trader fields could be read"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_luoshen_plantmeat",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_luoshen_qingshu",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_luoshen_yin",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_luoshenzhu",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_luoshenzhu_vine",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_luoshenzhu_vine_tail",
+      "reason": "prefab inspection failed before buff/debuff fields could be read"
+    },
+    {
+      "category": "cooldown_recharge",
+      "id": "tu_tien:xd_luoshenzhu_vine_tail",
+      "reason": "prefab inspection failed before cooldown fields could be read"
+    },
+    {
+      "category": "drop",
+      "id": "tu_tien:xd_luoshenzhu_vine_tail",
+      "reason": "prefab inspection failed before lootdropper fields could be read"
+    },
+    {
+      "category": "harvest",
+      "id": "tu_tien:xd_luoshenzhu_vine_tail",
+      "reason": "prefab inspection failed before pickable fields could be read"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_luoshenzhu_vine_tail",
+      "reason": "prefab inspection failed before trader fields could be read"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_luoshenzhu_vine_tail",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_luoxiang_pengrou",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_lycx",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_lyd",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_lyd",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_mg",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_mglz",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_mgqg",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_mo_builder",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_mr",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_mr",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_nl",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_nl",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_npxsz",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_pflnw",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_plant_cyh",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_plant_dms",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_plant_hsc",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_plant_lmg",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_plant_qfx",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_plant_yhh",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_pog",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_pog",
+      "reason": "trader acceptance and rewards are opaque callbacks; probe does not execute them"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_pog",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_pog_house",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_pog_tail",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_poison_damage",
+      "reason": "prefab inspection failed before buff/debuff fields could be read"
+    },
+    {
+      "category": "cooldown_recharge",
+      "id": "tu_tien:xd_poison_damage",
+      "reason": "prefab inspection failed before cooldown fields could be read"
+    },
+    {
+      "category": "drop",
+      "id": "tu_tien:xd_poison_damage",
+      "reason": "prefab inspection failed before lootdropper fields could be read"
+    },
+    {
+      "category": "harvest",
+      "id": "tu_tien:xd_poison_damage",
+      "reason": "prefab inspection failed before pickable fields could be read"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_poison_damage",
+      "reason": "prefab inspection failed before trader fields could be read"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_poison_damage",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_qfwjd",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_qfwjd",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_qianyu",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_qlch",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_qlch",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_qlch_fs",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_qlch_fs",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_qljq",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_qljq",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_qlr",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_qwsk",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_qxdx",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_qxdx",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_qxdx_npc",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_qxdx_npc",
+      "reason": "trader acceptance and rewards are opaque callbacks; probe does not execute them"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_qxdx_npc",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_qy",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_qy",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_rock1",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_rock2",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_rock3",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_rock_basalt",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_sandblock",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_sgc",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_shadowspider_dropper",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_shadowspider_dropper",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_shadowspider_moon",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_shadowspider_moon",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_shadowspiderqueen",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_shadowspiderqueen",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_shatangshu",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_shatangshu_normal",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_shatangshunut",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_shatangshunut",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_shatangshuvine",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_shiji",
+      "reason": "prefab inspection failed before buff/debuff fields could be read"
+    },
+    {
+      "category": "cooldown_recharge",
+      "id": "tu_tien:xd_shiji",
+      "reason": "prefab inspection failed before cooldown fields could be read"
+    },
+    {
+      "category": "drop",
+      "id": "tu_tien:xd_shiji",
+      "reason": "prefab inspection failed before lootdropper fields could be read"
+    },
+    {
+      "category": "harvest",
+      "id": "tu_tien:xd_shiji",
+      "reason": "prefab inspection failed before pickable fields could be read"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_shiji",
+      "reason": "prefab inspection failed before trader fields could be read"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_shiji",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_sj_bglxp",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_sj_bgygp",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_sj_by",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_sj_by",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_sj_by_builder",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_sj_cy",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_sj_cy_builder",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_sj_kls",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_sj_pysk",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_sj_pysk",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_sj_rocky",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_sj_rocky",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_sj_sxz",
+      "reason": "trader acceptance and rewards are opaque callbacks; probe does not execute them"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_sj_sxz",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_sj_tej",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_sj_tej",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_sj_tlsq",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_sj_xsydz",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_skeleton",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_sly",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_sly",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_soul_wolf",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_soul_wolf",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_spider",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_spider",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_spider_leg",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_spiderden",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_spiderqueen",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_spiderqueen",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_sskl",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_stalke_fuben",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_stalke_fuben",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_stg",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_stool",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_sudaji",
+      "reason": "prefab inspection failed before buff/debuff fields could be read"
+    },
+    {
+      "category": "cooldown_recharge",
+      "id": "tu_tien:xd_sudaji",
+      "reason": "prefab inspection failed before cooldown fields could be read"
+    },
+    {
+      "category": "drop",
+      "id": "tu_tien:xd_sudaji",
+      "reason": "prefab inspection failed before lootdropper fields could be read"
+    },
+    {
+      "category": "harvest",
+      "id": "tu_tien:xd_sudaji",
+      "reason": "prefab inspection failed before pickable fields could be read"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_sudaji",
+      "reason": "prefab inspection failed before trader fields could be read"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_sudaji",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_sudaji_mxrg",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_sudaji_mxrg",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_sudaji_redlantern",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_sudaji_sjpn",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_sudaji_sjpn_container",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_sudaji_soul",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_sudaji_tsmd",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_sudaji_yhly",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_sudaji_ywfh",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_swhs",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_swhs",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_swhs_levelup",
+      "reason": "prefab inspection failed before buff/debuff fields could be read"
+    },
+    {
+      "category": "cooldown_recharge",
+      "id": "tu_tien:xd_swhs_levelup",
+      "reason": "prefab inspection failed before cooldown fields could be read"
+    },
+    {
+      "category": "drop",
+      "id": "tu_tien:xd_swhs_levelup",
+      "reason": "prefab inspection failed before lootdropper fields could be read"
+    },
+    {
+      "category": "harvest",
+      "id": "tu_tien:xd_swhs_levelup",
+      "reason": "prefab inspection failed before pickable fields could be read"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_swhs_levelup",
+      "reason": "prefab inspection failed before trader fields could be read"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_swhs_levelup",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_swhs_levelupwmz",
+      "reason": "prefab inspection failed before buff/debuff fields could be read"
+    },
+    {
+      "category": "cooldown_recharge",
+      "id": "tu_tien:xd_swhs_levelupwmz",
+      "reason": "prefab inspection failed before cooldown fields could be read"
+    },
+    {
+      "category": "drop",
+      "id": "tu_tien:xd_swhs_levelupwmz",
+      "reason": "prefab inspection failed before lootdropper fields could be read"
+    },
+    {
+      "category": "harvest",
+      "id": "tu_tien:xd_swhs_levelupwmz",
+      "reason": "prefab inspection failed before pickable fields could be read"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_swhs_levelupwmz",
+      "reason": "prefab inspection failed before trader fields could be read"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_swhs_levelupwmz",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_tianji_juanzhou",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_tianji_lingpai",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_tianjiwu",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_tianjiwu",
+      "reason": "trader acceptance and rewards are opaque callbacks; probe does not execute them"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_tianjiwu",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_timeleft",
+      "reason": "prefab inspection failed before buff/debuff fields could be read"
+    },
+    {
+      "category": "cooldown_recharge",
+      "id": "tu_tien:xd_timeleft",
+      "reason": "prefab inspection failed before cooldown fields could be read"
+    },
+    {
+      "category": "drop",
+      "id": "tu_tien:xd_timeleft",
+      "reason": "prefab inspection failed before lootdropper fields could be read"
+    },
+    {
+      "category": "harvest",
+      "id": "tu_tien:xd_timeleft",
+      "reason": "prefab inspection failed before pickable fields could be read"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_timeleft",
+      "reason": "prefab inspection failed before trader fields could be read"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_timeleft",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_tree_df",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_tree_ls",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_tree_xhs",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_tree_yhs",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_tree_yls",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_tree_yxs",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_tssyq",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_tssyq",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_wangmazi",
+      "reason": "prefab inspection failed before buff/debuff fields could be read"
+    },
+    {
+      "category": "cooldown_recharge",
+      "id": "tu_tien:xd_wangmazi",
+      "reason": "prefab inspection failed before cooldown fields could be read"
+    },
+    {
+      "category": "drop",
+      "id": "tu_tien:xd_wangmazi",
+      "reason": "prefab inspection failed before lootdropper fields could be read"
+    },
+    {
+      "category": "harvest",
+      "id": "tu_tien:xd_wangmazi",
+      "reason": "prefab inspection failed before pickable fields could be read"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_wangmazi",
+      "reason": "prefab inspection failed before trader fields could be read"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_wangmazi",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_wickerbottom",
+      "reason": "trader acceptance and rewards are opaque callbacks; probe does not execute them"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_wickerbottom",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_wmz_db",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_wmz_db",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_wmz_kjb",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_wmz_slxj",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_wmz_tnz",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_wmz_tnz_chgz",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_wmz_tnz_ftl",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_wmz_xsj",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_wmz_xsj",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_wmz_zhf",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_wmz_zhf",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_wmz_zhf_ground",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_wmz_zhf_ground",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_wmz_zhf_soul",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_ws",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_ws",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_wsjx",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_wukong",
+      "reason": "prefab inspection failed before buff/debuff fields could be read"
+    },
+    {
+      "category": "cooldown_recharge",
+      "id": "tu_tien:xd_wukong",
+      "reason": "prefab inspection failed before cooldown fields could be read"
+    },
+    {
+      "category": "drop",
+      "id": "tu_tien:xd_wukong",
+      "reason": "prefab inspection failed before lootdropper fields could be read"
+    },
+    {
+      "category": "harvest",
+      "id": "tu_tien:xd_wukong",
+      "reason": "prefab inspection failed before pickable fields could be read"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_wukong",
+      "reason": "prefab inspection failed before trader fields could be read"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_wukong",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_wukong_dsmo",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_wukong_jgb",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_wukong_jgb",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_wukong_phantom",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_wukong_phantom",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_wukong_shadow",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_wukong_shadow",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_wxj",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_wxj",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_wyj",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_wyj",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_xcdf",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_xhwyj",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_xhwyj",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_xianhe",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_xianjian_builder",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_xinmo",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_xinmo",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_xjcgd",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_xjcgd",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_xjs",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_xjs",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_xlj",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_xlj",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_xshj",
+      "reason": "trader acceptance and rewards are opaque callbacks; probe does not execute them"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_xshj",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_xtbh",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_xtzlj_str",
+      "reason": "prefab inspection failed before buff/debuff fields could be read"
+    },
+    {
+      "category": "cooldown_recharge",
+      "id": "tu_tien:xd_xtzlj_str",
+      "reason": "prefab inspection failed before cooldown fields could be read"
+    },
+    {
+      "category": "drop",
+      "id": "tu_tien:xd_xtzlj_str",
+      "reason": "prefab inspection failed before lootdropper fields could be read"
+    },
+    {
+      "category": "harvest",
+      "id": "tu_tien:xd_xtzlj_str",
+      "reason": "prefab inspection failed before pickable fields could be read"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_xtzlj_str",
+      "reason": "prefab inspection failed before trader fields could be read"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_xtzlj_str",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_xuanyu",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_yhbs",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_yhsyz",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_ylxc",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_ylxq",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_yunxiao",
+      "reason": "prefab inspection failed before buff/debuff fields could be read"
+    },
+    {
+      "category": "cooldown_recharge",
+      "id": "tu_tien:xd_yunxiao",
+      "reason": "prefab inspection failed before cooldown fields could be read"
+    },
+    {
+      "category": "drop",
+      "id": "tu_tien:xd_yunxiao",
+      "reason": "prefab inspection failed before lootdropper fields could be read"
+    },
+    {
+      "category": "harvest",
+      "id": "tu_tien:xd_yunxiao",
+      "reason": "prefab inspection failed before pickable fields could be read"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_yunxiao",
+      "reason": "prefab inspection failed before trader fields could be read"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_yunxiao",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_yunxiao_fgfq",
+      "reason": "trader acceptance and rewards are opaque callbacks; probe does not execute them"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_yunxiao_fgfq",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_yunxiao_fls",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_yunxiao_fysz",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_yunxiao_fysz",
+      "reason": "trader acceptance and rewards are opaque callbacks; probe does not execute them"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_yunxiao_fysz",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_yunxiao_hyjd",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_yunxiao_hyjd",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_yunxiao_hyjditem",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_yunxiao_hyjdyqd",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_yunxiao_hytx",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_yunxiao_jjj",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_yunxiao_jjj",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_yunxiao_portable_spicer",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_yunxiao_ymsz",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_yunxiao_ymsz",
+      "reason": "trader acceptance and rewards are opaque callbacks; probe does not execute them"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_yunxiao_ymsz",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_zcmj",
+      "reason": "trader acceptance and rewards are opaque callbacks; probe does not execute them"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_zcmj",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_zcmy",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_zcyseed",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_zhf",
+      "reason": "trader acceptance and rewards are opaque callbacks; probe does not execute them"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_zhf",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_zhouwang",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_zhouwang",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_zhouwang_shadow",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_zhouwang_shadow",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_ziyun_house",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_ziyunboss",
+      "reason": "buff/debuff callbacks are opaque and runtime timer state is instance-specific; no declarative duration was observable"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_ziyunboss",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_ziyunboss_channeler",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_ziyunge",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_ztp",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_zuichunyan",
+      "reason": "prefab inspection failed before buff/debuff fields could be read"
+    },
+    {
+      "category": "cooldown_recharge",
+      "id": "tu_tien:xd_zuichunyan",
+      "reason": "prefab inspection failed before cooldown fields could be read"
+    },
+    {
+      "category": "drop",
+      "id": "tu_tien:xd_zuichunyan",
+      "reason": "prefab inspection failed before lootdropper fields could be read"
+    },
+    {
+      "category": "harvest",
+      "id": "tu_tien:xd_zuichunyan",
+      "reason": "prefab inspection failed before pickable fields could be read"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_zuichunyan",
+      "reason": "prefab inspection failed before trader fields could be read"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_zuichunyan",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "buff_debuff",
+      "id": "tu_tien:xd_zuichunyan_sapling",
+      "reason": "prefab inspection failed before buff/debuff fields could be read"
+    },
+    {
+      "category": "cooldown_recharge",
+      "id": "tu_tien:xd_zuichunyan_sapling",
+      "reason": "prefab inspection failed before cooldown fields could be read"
+    },
+    {
+      "category": "drop",
+      "id": "tu_tien:xd_zuichunyan_sapling",
+      "reason": "prefab inspection failed before lootdropper fields could be read"
+    },
+    {
+      "category": "harvest",
+      "id": "tu_tien:xd_zuichunyan_sapling",
+      "reason": "prefab inspection failed before pickable fields could be read"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_zuichunyan_sapling",
+      "reason": "prefab inspection failed before trader fields could be read"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_zuichunyan_sapling",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_zyg_desk",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_zyg_light",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_zyg_light1",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "trade_shop",
+      "id": "tu_tien:xd_zyg_npc",
+      "reason": "trader acceptance and rewards are opaque callbacks; probe does not execute them"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_zyg_npc",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    },
+    {
+      "category": "world_spawn",
+      "id": "tu_tien:xd_zzxhcx",
+      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
+    }
+  ],
+  "unsupportedRecords": []
+}

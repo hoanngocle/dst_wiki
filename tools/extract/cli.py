@@ -40,6 +40,8 @@ CATALOG_JSON = Path("public/data/catalog.json")
 ASSETS_JSON = Path("public/data/assets.json")
 ITEMS_JSON = Path("public/data/items.json")
 ITEM_TEXTURES = Path("data/generated/item-textures.json")
+ITEM_DETAILS_OVERRIDES = Path("data/manual/tu_tien_item_details.json")
+ITEM_DETAILS_REPORT = Path("data/generated/tu-tien-item-details-report.json")
 WEB_ASSETS = Path("public/assets/game")
 MOD_TEXT = Path("docs/mod-text")
 WIKI_CRAWL = Path("data/crawled/dontstarve-items")
@@ -127,6 +129,10 @@ def build_parser() -> argparse.ArgumentParser:
     export.add_argument("--assets", type=Path, default=ASSETS_JSON)
     export.add_argument("--items", type=Path, default=ITEMS_JSON)
     export.add_argument("--textures", type=Path, default=ITEM_TEXTURES)
+    export.add_argument(
+        "--detail-overrides", type=Path, default=ITEM_DETAILS_OVERRIDES
+    )
+    export.add_argument("--detail-report", type=Path, default=ITEM_DETAILS_REPORT)
     translate_wiki = sub.add_parser("translate-wiki")
     translate_wiki.add_argument(
         "--pages", type=Path, default=Path("public/data/wiki/pages")
@@ -253,10 +259,20 @@ def _export_stage(
     assets: Path = ASSETS_JSON,
     items: Path = ITEMS_JSON,
     textures: Path = ITEM_TEXTURES,
+    detail_overrides: Path = ITEM_DETAILS_OVERRIDES,
+    detail_report: Path = ITEM_DETAILS_REPORT,
 ) -> None:
     export_catalog(database, catalog, assets)
-    export_items(database, catalog, assets, items, textures)
-    print(f"{catalog} {assets} {items} {textures}")
+    export_items(
+        database,
+        catalog,
+        assets,
+        items,
+        textures,
+        detail_overrides_path=detail_overrides,
+        detail_report_path=detail_report,
+    )
+    print(f"{catalog} {assets} {items} {textures} {detail_report}")
 
 
 def _import_wiki_stage(
@@ -358,7 +374,15 @@ def main() -> int:
         _import_wiki_stage(args.input, args.database)
         return 0
     if args.command == "export":
-        _export_stage(args.database, args.catalog, args.assets, args.items, args.textures)
+        _export_stage(
+            args.database,
+            args.catalog,
+            args.assets,
+            args.items,
+            args.textures,
+            args.detail_overrides,
+            args.detail_report,
+        )
         return 0
     if args.command == "translate-wiki":
         summary = build_summary_translation_cache(

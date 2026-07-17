@@ -581,10 +581,20 @@ class ExportValidateTests(unittest.TestCase):
             assets = root / "assets.json"
             items = root / "items.json"
             textures = root / "item-textures.json"
+            detail_overrides = root / "item-details.json"
+            detail_report = root / "item-details-report.json"
 
             with mock.patch.object(cli, "export_catalog") as export_catalog, \
                  mock.patch.object(cli, "export_items") as export_items:
-                cli._export_stage(database, catalog, assets, items, textures)
+                cli._export_stage(
+                    database,
+                    catalog,
+                    assets,
+                    items,
+                    textures,
+                    detail_overrides,
+                    detail_report,
+                )
 
             export_catalog.assert_called_once_with(database, catalog, assets)
             export_items.assert_called_once_with(
@@ -593,7 +603,21 @@ class ExportValidateTests(unittest.TestCase):
                 assets,
                 items,
                 textures,
+                detail_overrides_path=detail_overrides,
+                detail_report_path=detail_report,
             )
+
+    def test_export_cli_exposes_item_detail_paths(self):
+        args = cli.build_parser().parse_args(["export"])
+
+        self.assertEqual(
+            args.detail_overrides,
+            Path("data/manual/tu_tien_item_details.json"),
+        )
+        self.assertEqual(
+            args.detail_report,
+            Path("data/generated/tu-tien-item-details-report.json"),
+        )
 
     def test_publish_assets_cli_has_explicit_inputs(self):
         args = cli.build_parser().parse_args(["publish-assets"])

@@ -11,6 +11,7 @@ from tools.extract.wiki_export import (
     load_wiki_export,
     merge_wiki_items,
 )
+from tools.extract.item_details import build_tu_tien_item_details
 
 
 JsonObject = Dict[str, Any]
@@ -30,6 +31,8 @@ LEGACY_CATEGORY_MAP = {
 }
 RECIPE_DESC_PREFIX = "STRINGS.RECIPE_DESC."
 DESCRIPTION_TRANSLATIONS = Path("data/manual/item_description_vi.json")
+ITEM_DETAIL_OVERRIDES = Path("data/manual/tu_tien_item_details.json")
+ITEM_DETAIL_REPORT = Path("data/generated/tu-tien-item-details-report.json")
 
 
 def _atomic_json(path: Path, value: JsonObject) -> None:
@@ -286,11 +289,46 @@ def load_crafting_notes(database_path: Path) -> Dict[str, str]:
     }
 
 
+def load_runtime_coverage(database_path: Path) -> List[JsonObject]:
+    """Load normalized runtime coverage used to confirm absent detail sections."""
+
+    with sqlite3.connect(database_path) as connection:
+        exists = connection.execute(
+            "select 1 from sqlite_master where type='table' and name='runtime_coverage'"
+        ).fetchone()
+        if not exists:
+            return []
+        rows = connection.execute(
+            "select namespace,prefab_id,category,status,reason,details_json "
+            "from runtime_coverage order by namespace,prefab_id,category"
+        )
+        result = []
+        for namespace, prefab_id, category, status, reason, details_json in rows:
+            details = json.loads(str(details_json))
+            if not isinstance(details, dict):
+                raise ValueError(
+                    f"runtime coverage {namespace}:{prefab_id}:{category} details must be an object"
+                )
+            result.append(
+                {
+                    "namespace": str(namespace),
+                    "prefab_id": str(prefab_id),
+                    "category": str(category),
+                    "status": str(status),
+                    "reason": str(reason),
+                    "details": details,
+                }
+            )
+    return result
+
+
 def build_item_export(
     catalog: JsonObject,
     assets: JsonObject,
     crafting_notes: Optional[Dict[str, str]] = None,
-) -> Tuple[JsonObject, JsonObject]:
+    detail_overrides: Optional[JsonObject] = None,
+    runtime_coverage: Optional[List[JsonObject]] = None,
+) -> Tuple[JsonObject, JsonObject, JsonObject]:
     """Build compact item and texture payloads from the public audit exports."""
 
     source_entities = catalog.get("entities")
@@ -319,12 +357,21 @@ def build_item_export(
         for entity in exportable_entities
     ]
     items.sort(key=lambda item: item["id"])
+    details, detail_report = build_tu_tien_item_details(
+        [entity for entity in source_entities if isinstance(entity, dict)],
+        items,
+        detail_overrides,
+        runtime_coverage,
+    )
+    for item in items:
+        item["details"] = details.get(item["id"])
     return (
-        {"schema_version": 4, "items": items},
+        {"schema_version": 5, "items": items},
         {
             "schema_version": 1,
             "textures": [textures[key] for key in sorted(textures)],
         },
+        detail_report,
     )
 
 
@@ -368,19 +415,34 @@ def export_items(
     wiki_details_path: Path = Path("public/data/wiki/pages"),
     wiki_assets_path: Path = Path("public/assets/wiki"),
     description_translations_path: Path = DESCRIPTION_TRANSLATIONS,
+    detail_overrides_path: Path = ITEM_DETAIL_OVERRIDES,
+    detail_report_path: Path = ITEM_DETAIL_REPORT,
 ) -> None:
     """Read audit JSON and atomically publish the compact frontend contracts."""
 
     catalog = json.loads(Path(catalog_path).read_text(encoding="utf-8"))
     assets = json.loads(Path(assets_path).read_text(encoding="utf-8"))
+    detail_overrides = json.loads(
+        Path(detail_overrides_path).read_text(encoding="utf-8")
+    )
+    runtime_coverage = load_runtime_coverage(database_path)
     crafting_notes = load_crafting_notes(database_path)
-    items, textures = build_item_export(catalog, assets, crafting_notes)
+    items, textures, detail_report = build_item_export(
+        catalog,
+        assets,
+        crafting_notes,
+        detail_overrides,
+        runtime_coverage,
+    )
     items["items"] = apply_description_translations(
         items["items"], description_translations_path
     )
     wiki = load_wiki_export(database_path, wiki_crawl_path)
     items["items"] = merge_wiki_items(items["items"], wiki)
+    for item in items["items"]:
+        item.setdefault("details", None)
     _atomic_json(Path(items_path), items)
     _atomic_json(Path(textures_path), textures)
+    _atomic_json(Path(detail_report_path), detail_report)
     if wiki.details or wiki.assets:
         export_wiki_artifacts(wiki, wiki_details_path, wiki_assets_path)

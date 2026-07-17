@@ -25,6 +25,7 @@ const item: ItemListEntry = {
       },
     ],
   },
+  details: null,
   wiki: null,
 };
 
@@ -39,6 +40,7 @@ const wikiItem: ItemListEntry = {
   craftingNote: null,
   sprite: null,
   recipe: null,
+  details: null,
   wiki: {
     pageId: 100736,
     title: "Halberd",
@@ -68,7 +70,22 @@ const nightLight: ItemListEntry = {
   craftingNote: null,
   sprite: null,
   recipe: null,
+  details: null,
   wiki: null,
+};
+
+const tuTienItem: ItemListEntry = {
+  ...nightLight,
+  id: "tu_tien:unknown_relic",
+  prefabId: "unknown_relic",
+  namespace: "tu_tien",
+  category: "item",
+  name: "Bí Bảo",
+  details: {
+    recipeStatus: "unknown",
+    usage: { status: "unknown", recipes: [], effects: [] },
+    dropBy: { status: "unknown", sources: [] },
+  },
 };
 
 function modalProps(selectedItem: ItemListEntry) {
@@ -182,6 +199,15 @@ describe("ItemDetailModal", () => {
 
     expect(screen.queryByRole("heading", { name: "Công thức" })).toBeNull();
     expect(screen.queryByRole("heading", { name: "Thông tin kỹ thuật" })).toBeNull();
+  });
+
+  it("always shows all three structured sections for Tu Tiên items", () => {
+    render(<ItemDetailModal {...modalProps(tuTienItem)} />);
+
+    expect(screen.getByRole("heading", { name: "Công thức" })).toBeDefined();
+    expect(screen.getByRole("heading", { name: "Cách sử dụng" })).toBeDefined();
+    expect(screen.getByRole("heading", { name: "Nguồn nhận" })).toBeDefined();
+    expect(screen.getAllByText("Chưa xác định từ dữ liệu mod.")).toHaveLength(3);
   });
 
   it("shows a crafting note inside the runtime recipe panel", () => {

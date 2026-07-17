@@ -107,6 +107,11 @@ class ItemDetailTests(unittest.TestCase):
             entity(
                 "tu_tien:fruit",
                 name="Linh Quả",
+                stats=[
+                    {"key": "perish_time", "value": 7200.0, "unit": "seconds"},
+                    {"key": "stack_size", "value": 20.0, "unit": "items"},
+                    {"key": "food_type", "value": "GOODIES", "unit": "category"},
+                ],
                 relations=[
                     {
                         "type": "transforms_to",
@@ -115,7 +120,30 @@ class ItemDetailTests(unittest.TestCase):
                     }
                 ],
             ),
-            entity("tu_tien:unknown", name="Vật Bí Ẩn"),
+            entity(
+                "tu_tien:trader",
+                name="Tế Đàn",
+                stats=[
+                    {"key": "trader_enabled", "value": "true", "unit": "boolean"},
+                    {
+                        "key": "trader_deletes_item",
+                        "value": "true",
+                        "unit": "boolean",
+                    },
+                    {"key": "trade_gold_value", "value": 0.0, "unit": "value"},
+                ],
+            ),
+            entity(
+                "tu_tien:unknown",
+                name="Vật Bí Ẩn",
+                effects=[
+                    {
+                        "trigger": "character_profile",
+                        "key": "character_quote",
+                        "value": "Không phải tác dụng item.",
+                    }
+                ],
+            ),
             entity("base_game:goldnugget", name="Vàng"),
             entity("base_game:spoiled_food", name="Thức Ăn Hỏng"),
         ]
@@ -137,6 +165,7 @@ class ItemDetailTests(unittest.TestCase):
             item("tu_tien:bag", name="Túi Càn Khôn"),
             item("tu_tien:wand", name="Pháp Trượng"),
             item("tu_tien:fruit", name="Linh Quả"),
+            item("tu_tien:trader", name="Tế Đàn"),
             item("tu_tien:unknown", name="Vật Bí Ẩn"),
             item("base_game:goldnugget", name="Vàng"),
         ]
@@ -165,7 +194,7 @@ class ItemDetailTests(unittest.TestCase):
         self.assertEqual(herb["dropBy"]["sources"][0]["quantity"], "1–2")
         self.assertEqual(herb["dropBy"]["sources"][0]["chance"], "100%")
         self.assertEqual(herb["dropBy"]["sources"][0]["conditions"], "Hồi lại sau 480 giây")
-        self.assertEqual(report["totalTuTienItems"], 8)
+        self.assertEqual(report["totalTuTienItems"], 9)
 
     def test_maps_supported_equipment_container_charge_and_relation_stats(self):
         entities, items = self.fixtures()
@@ -190,8 +219,13 @@ class ItemDetailTests(unittest.TestCase):
         )
         self.assertEqual(
             details["tu_tien:fruit"]["usage"]["effects"][0]["text"],
-            "Theo thời gian biến thành Thức Ăn Hỏng.",
+            "Sau 7200 giây biến thành Thức Ăn Hỏng.",
         )
+        self.assertEqual(
+            details["tu_tien:trader"]["usage"]["effects"][0]["text"],
+            "Có thể nhận vật phẩm được trao; vật phẩm được trao sẽ bị tiêu hao.",
+        )
+        self.assertEqual(report["unsupportedRecords"], [])
         self.assertIn(
             {"id": "tu_tien:unknown", "sections": ["recipe", "usage", "dropBy"]},
             report["unknownItems"],
@@ -215,6 +249,83 @@ class ItemDetailTests(unittest.TestCase):
 
         self.assertEqual(details["tu_tien:pill"]["recipeStatus"], "known")
         self.assertEqual(details["tu_tien:pill"]["dropBy"], {"status": "none", "sources": []})
+
+    def test_uses_runtime_coverage_to_confirm_absent_recipe_and_drop_sources(self):
+        entities, items = self.fixtures()
+        coverage = [
+            {
+                "namespace": "tu_tien",
+                "prefab_id": "unknown",
+                "category": "craft",
+                "status": "unobserved",
+                "reason": "no AllRecipes entry for target",
+                "details": {},
+            },
+            {
+                "namespace": "tu_tien",
+                "prefab_id": "unknown",
+                "category": "drop",
+                "status": "unobserved",
+                "reason": "no lootdropper component at spawn",
+                "details": {},
+            },
+            {
+                "namespace": "tu_tien",
+                "prefab_id": "unknown",
+                "category": "harvest",
+                "status": "unobserved",
+                "reason": "no pickable component at spawn",
+                "details": {},
+            },
+            {
+                "namespace": "tu_tien",
+                "prefab_id": "unknown",
+                "category": "start_gift",
+                "status": "unobserved",
+                "reason": "standard starting-item registries inspected with no target entry",
+                "details": {},
+            },
+            {
+                "namespace": "tu_tien",
+                "prefab_id": "unknown",
+                "category": "trade_shop",
+                "status": "observed",
+                "reason": "tradable component inspected; no tradefor entries registered",
+                "details": {"count": 0},
+            },
+            {
+                "namespace": "tu_tien",
+                "prefab_id": "unknown",
+                "category": "world_spawn",
+                "status": "unsupported",
+                "reason": "no safe reverse world-spawn registry exists",
+                "details": {},
+            },
+        ]
+
+        details, report = build_tu_tien_item_details(
+            entities,
+            items,
+            coverage=coverage,
+        )
+
+        self.assertEqual(details["tu_tien:unknown"]["recipeStatus"], "none")
+        self.assertEqual(
+            details["tu_tien:unknown"]["dropBy"],
+            {"status": "none", "sources": []},
+        )
+        unknown = next(row for row in report["unknownItems"] if row["id"] == "tu_tien:unknown")
+        self.assertEqual(unknown["sections"], ["usage"])
+        self.assertEqual(
+            report["unsupportedCoverage"],
+            [
+                {
+                    "id": "tu_tien:unknown",
+                    "category": "world_spawn",
+                    "reason": "no safe reverse world-spawn registry exists",
+                }
+            ],
+        )
 
     def test_applies_evidence_backed_usage_override(self):
         entities, items = self.fixtures()

@@ -148,7 +148,9 @@ def _usage_effects(
         if isinstance(value, dict) and isinstance(value.get("key"), str)
     }
     effects: List[JsonObject] = []
-    supported = set()
+    supported = {"stack_size", "food_type"}
+    if float(stats.get("trade_gold_value", 0) or 0) == 0:
+        supported.add("trade_gold_value")
 
     edible_keys = [key for key in ("health", "hunger", "sanity") if key in stats]
     if edible_keys:
@@ -233,6 +235,23 @@ def _usage_effects(
         )
         supported.update(charge_keys)
 
+    trader_enabled = str(stats.get("trader_enabled", "false")).lower() == "true"
+    if trader_enabled:
+        text = "Có thể nhận vật phẩm được trao"
+        if str(stats.get("trader_deletes_item", "false")).lower() == "true":
+            text += "; vật phẩm được trao sẽ bị tiêu hao"
+        effects.append(
+            {
+                "trigger": "give",
+                "text": text + ".",
+                "evidence": _evidence(entity_id, "stats"),
+            }
+        )
+        supported.add("trader_enabled")
+        if "trader_deletes_item" in stats:
+            supported.add("trader_deletes_item")
+
+    has_transform = False
     for relation in entity.get("relations", []):
         if not isinstance(relation, dict) or relation.get("type") != "transforms_to":
             continue
@@ -240,13 +259,29 @@ def _usage_effects(
         if not isinstance(target_id, str) or not target_id:
             continue
         target = _reference(target_id, entities, items)
+        has_transform = True
+        duration = stats.get("perish_time")
         effects.append(
             {
                 "trigger": "lifecycle",
-                "text": f"Theo thời gian biến thành {target['name']}.",
+                "text": (
+                    f"Sau {_number(duration)} giây biến thành {target['name']}."
+                    if duration is not None
+                    else f"Theo thời gian biến thành {target['name']}."
+                ),
                 "evidence": _evidence(entity_id, "relations"),
             }
         )
+    if "perish_time" in stats:
+        supported.add("perish_time")
+        if not has_transform:
+            effects.append(
+                {
+                    "trigger": "lifecycle",
+                    "text": f"Hỏng sau {_number(stats['perish_time'])} giây.",
+                    "evidence": _evidence(entity_id, "stats"),
+                }
+            )
 
     unsupported = [
         {"id": entity_id, "kind": "stat", "key": key, "value": stats[key]}
@@ -261,7 +296,7 @@ def _usage_effects(
             "key": value.get("key"),
         }
         for value in entity.get("effects", [])
-        if isinstance(value, dict)
+        if isinstance(value, dict) and value.get("trigger") != "character_profile"
     )
     effects.sort(key=lambda value: (value["trigger"], value["text"]))
     return effects, unsupported
@@ -438,6 +473,7 @@ def build_tu_tien_item_details(
     entities: List[JsonObject],
     items: List[JsonObject],
     overrides: Optional[JsonObject] = None,
+    coverage: Optional[List[JsonObject]] = None,
 ) -> Tuple[Dict[str, JsonObject], JsonObject]:
     """Return deterministic detail records and an unresolved-data report."""
 
@@ -457,13 +493,49 @@ def build_tu_tien_item_details(
         if value.get("namespace") == "tu_tien"
     )
     reverse_recipes = _reverse_recipes(entities_by_id, items_by_id)
+    coverage_by_id: Dict[str, Dict[str, JsonObject]] = {}
+    unsupported_coverage = []
+    for row in coverage or []:
+        if not isinstance(row, dict):
+            continue
+        namespace = row.get("namespace")
+        prefab_id = row.get("prefab_id")
+        category = row.get("category")
+        if (
+            namespace != "tu_tien"
+            or not isinstance(prefab_id, str)
+            or not isinstance(category, str)
+        ):
+            continue
+        entity_id = f"tu_tien:{prefab_id}"
+        if entity_id not in tu_tien_ids:
+            continue
+        coverage_by_id.setdefault(entity_id, {})[category] = row
+        if row.get("status") == "unsupported":
+            unsupported_coverage.append(
+                {
+                    "id": entity_id,
+                    "category": category,
+                    "reason": str(row.get("reason") or "Không có lý do."),
+                }
+            )
     details: Dict[str, JsonObject] = {}
     unsupported: List[JsonObject] = []
 
     for entity_id in tu_tien_ids:
         entity = entities_by_id.get(entity_id, {})
         item = items_by_id[entity_id]
-        recipe_status = "known" if item.get("recipe") is not None else "unknown"
+        entity_coverage = coverage_by_id.get(entity_id, {})
+        craft_coverage = entity_coverage.get("craft", {})
+        recipe_absent = (
+            craft_coverage.get("status") == "unobserved"
+            and craft_coverage.get("reason") == "no AllRecipes entry for target"
+        )
+        recipe_status = (
+            "known"
+            if item.get("recipe") is not None
+            else ("none" if recipe_absent else "unknown")
+        )
         usage_recipes = reverse_recipes.get(entity_id, [])
         usage_effects, unsupported_rows = _usage_effects(
             entity_id, entity, entities_by_id, items_by_id
@@ -477,7 +549,24 @@ def build_tu_tien_item_details(
         craft_only = bool(acquisitions) and all(
             value.get("type") == "craft" for value in acquisitions
         )
-        drop_status = "known" if drop_sources else ("none" if craft_only else "unknown")
+        absence_categories = ("drop", "harvest", "start_gift", "trade_shop")
+        coverage_confirms_no_source = all(
+            category in entity_coverage
+            and (
+                entity_coverage[category].get("status") == "unobserved"
+                or (
+                    category == "trade_shop"
+                    and entity_coverage[category].get("status") == "observed"
+                    and entity_coverage[category].get("details", {}).get("count") == 0
+                )
+            )
+            for category in absence_categories
+        )
+        drop_status = (
+            "known"
+            if drop_sources
+            else ("none" if craft_only or coverage_confirms_no_source else "unknown")
+        )
         details[entity_id] = {
             "recipeStatus": recipe_status,
             "usage": {
@@ -523,6 +612,10 @@ def build_tu_tien_item_details(
                 value.get("kind", ""),
                 value.get("key", ""),
             ),
+        ),
+        "unsupportedCoverage": sorted(
+            unsupported_coverage,
+            key=lambda value: (value["id"], value["category"], value["reason"]),
         ),
         "manualOverrideItems": manual_items,
     }
