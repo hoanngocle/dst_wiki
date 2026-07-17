@@ -20,6 +20,34 @@
       "width": 64
     },
     {
+      "height": 155,
+      "mime": "image/png",
+      "src": "/assets/wiki/d077a1efa5a62efa85e19b3cd03d7da03116f75dee58d9e57bb085a1ecc6514d.png",
+      "title": "File:Marble Dropped.png",
+      "width": 160
+    },
+    {
+      "height": 185,
+      "mime": "image/png",
+      "src": "/assets/wiki/4a3508d8ae0628b8a60b67ca08673f2e40bf289182009ba8bc457c9363f34048.png",
+      "title": "File:Marble Pillar.png",
+      "width": 108
+    },
+    {
+      "height": 552,
+      "mime": "image/png",
+      "src": "/assets/wiki/9f009198f0dc1ea3fdca1ef59e55086c54fd2f5c4d4352cacc308ac4e3f724cc.png",
+      "title": "File:Harp Statue.png",
+      "width": 351
+    },
+    {
+      "height": 269,
+      "mime": "image/png",
+      "src": "/assets/wiki/8709d7a99c05a0f3b02f8b118194f5349822d59bd50ef0ada116711a7c4f3e4e.png",
+      "title": "File:Maxwell Statue.png",
+      "width": 200
+    },
+    {
       "height": 64,
       "mime": "image/png",
       "src": "/assets/wiki/f2e2401e381835267d289228e3994c93538f8de41e5b67554682c77a53bd0023.png",
@@ -32,6 +60,13 @@
       "src": "/assets/wiki/b3ce5ecca755a3f827e9bbb86478fee213bead104f9e56272629c020d53b85f2.png",
       "title": "File:PickSlashAxe.png",
       "width": 64
+    },
+    {
+      "height": 341,
+      "mime": "image/png",
+      "src": "/assets/wiki/495e900348c79e976419d1d049b07eedc386624e0d659646f38e1eede5f8ccd8.png",
+      "title": "File:Touch Stone.png",
+      "width": 460
     }
   ],
   "normalized": {
@@ -92,7 +127,7 @@
           ],
           "note": null,
           "result": {
-            "entityId": null,
+            "entityId": "base_game:armor_marble",
             "iconUrl": null,
             "title": "Marble Suit",
             "url": "https://dontstarve.wiki.gg/wiki/Marble_Suit"

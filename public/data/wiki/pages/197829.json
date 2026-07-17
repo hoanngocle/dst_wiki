@@ -23,6 +23,13 @@
       "width": 64
     },
     {
+      "height": 150,
+      "mime": "image/png",
+      "src": "/assets/wiki/c57dc292e0f71a19c107800a63636b79d0d407cd9955548cfe0b0e179160b942.png",
+      "title": "File:Grass Suit Dropped.png",
+      "width": 169
+    },
+    {
       "height": 64,
       "mime": "image/png",
       "src": "/assets/wiki/717731694dda9837254cead26d55624cb4117ae423d06317336dbc25f9e1a89e.png",
@@ -50,7 +57,7 @@
     },
     "schema_version": 2,
     "subject": {
-      "entityId": null,
+      "entityId": "base_game:armor_grass",
       "iconUrl": null,
       "title": "Grass Suit",
       "url": "https://dontstarve.wiki.gg/wiki/Grass_Suit"

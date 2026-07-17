@@ -17,6 +17,13 @@
       "src": "/assets/wiki/8baeaafceccc447d8d818ff0f0516c9b212933a7e24e037f8c2bd161548a8d1f.png",
       "title": "File:Cut Stone.png",
       "width": 64
+    },
+    {
+      "height": 185,
+      "mime": "image/png",
+      "src": "/assets/wiki/fb9e8c37140a77fc65e05aab44acd0334c3264db57a5fe7fde529b43dcce71be.png",
+      "title": "File:Cut Stone Dropped.png",
+      "width": 272
     }
   ],
   "normalized": {
@@ -116,7 +123,7 @@
           ],
           "note": null,
           "result": {
-            "entityId": null,
+            "entityId": "base_game:lightningrod",
             "iconUrl": null,
             "title": "Lightning Rod",
             "url": "https://dontstarve.wiki.gg/wiki/Lightning_Rod"
@@ -401,7 +408,7 @@
           ],
           "note": null,
           "result": {
-            "entityId": null,
+            "entityId": "base_game:lightningrod",
             "iconUrl": null,
             "title": "Lightning Rod",
             "url": "https://dontstarve.wiki.gg/wiki/Lightning_Rod"

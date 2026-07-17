@@ -25,6 +25,20 @@
       "width": 64
     },
     {
+      "height": 138,
+      "mime": "image/png",
+      "src": "/assets/wiki/aa70ce89ca50dbefffca271f3a7519d13b515920ae97bcf9048295ece6137546.png",
+      "title": "File:Nightmare Fuel Dropped.png",
+      "width": 228
+    },
+    {
+      "height": 175,
+      "mime": "image/png",
+      "src": "/assets/wiki/c601d746bdd9fd03b652ae3103ad0b581bfc44414504e0fb18c8235aec91d3c7.png",
+      "title": "File:Ornate Chest.png",
+      "width": 201
+    },
+    {
       "height": 64,
       "mime": "image/png",
       "src": "/assets/wiki/717731694dda9837254cead26d55624cb4117ae423d06317336dbc25f9e1a89e.png",
@@ -633,7 +647,7 @@
             {
               "amount": 6,
               "item": {
-                "entityId": null,
+                "entityId": "base_game:slurperpelt",
                 "iconUrl": null,
                 "title": "Slurper Pelt",
                 "url": "https://dontstarve.wiki.gg/wiki/Slurper_Pelt"
@@ -642,7 +656,7 @@
           ],
           "note": null,
           "result": {
-            "entityId": null,
+            "entityId": "base_game:armor_slurper",
             "iconUrl": null,
             "title": "Belt of Hunger",
             "url": "https://dontstarve.wiki.gg/wiki/Belt_of_Hunger"
@@ -921,7 +935,7 @@
           ],
           "note": null,
           "result": {
-            "entityId": null,
+            "entityId": "base_game:armor_ruins",
             "iconUrl": null,
             "title": "Thulecite Suit",
             "url": "https://dontstarve.wiki.gg/wiki/Thulecite_Suit"

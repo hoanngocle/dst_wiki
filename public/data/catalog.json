@@ -4164,8 +4164,8 @@
         {
           "chance": 1.0,
           "conditions": {},
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 2.0,
+          "min_count": 2.0,
           "source": "tu_tien:fence_gate_luoshen",
           "type": "drop"
         }
@@ -14313,8 +14313,8 @@
           "conditions": {
             "loot_table": "xd_baihu"
           },
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 15.0,
+          "min_count": 15.0,
           "source": "tu_tien:xd_baihu",
           "type": "drop"
         },
@@ -14323,8 +14323,8 @@
           "conditions": {
             "loot_table": "xd_jfsn"
           },
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 9.0,
+          "min_count": 9.0,
           "source": "tu_tien:xd_jfsn",
           "type": "drop"
         },
@@ -14333,8 +14333,8 @@
           "conditions": {
             "loot_table": "xd_qlch"
           },
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 5.0,
+          "min_count": 5.0,
           "source": "tu_tien:xd_qlch",
           "type": "drop"
         }
@@ -14669,16 +14669,16 @@
           "conditions": {
             "loot_table": "xd_baihu"
           },
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 3.0,
+          "min_count": 3.0,
           "source": "tu_tien:xd_baihu",
           "type": "drop"
         },
         {
           "chance": 1.0,
           "conditions": {},
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 5.0,
+          "min_count": 5.0,
           "source": "tu_tien:xd_futu",
           "type": "drop"
         },
@@ -14687,8 +14687,8 @@
           "conditions": {
             "loot_table": "xd_jfsn"
           },
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 2.0,
+          "min_count": 2.0,
           "source": "tu_tien:xd_jfsn",
           "type": "drop"
         },
@@ -14697,8 +14697,8 @@
           "conditions": {
             "loot_table": "xd_qlch"
           },
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 2.0,
+          "min_count": 2.0,
           "source": "tu_tien:xd_qlch",
           "type": "drop"
         },
@@ -14707,16 +14707,16 @@
           "conditions": {
             "loot_table": "xd_qxdx"
           },
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 2.0,
+          "min_count": 2.0,
           "source": "tu_tien:xd_qxdx",
           "type": "drop"
         },
         {
           "chance": 1.0,
           "conditions": {},
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 3.0,
+          "min_count": 3.0,
           "source": "tu_tien:xd_spiderqueen",
           "type": "drop"
         },
@@ -14725,8 +14725,8 @@
           "conditions": {
             "loot_table": "xd_ziyunboss"
           },
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 3.0,
+          "min_count": 3.0,
           "source": "tu_tien:xd_ziyunboss",
           "type": "drop"
         }
@@ -19386,8 +19386,8 @@
           "conditions": {
             "loot_table": "xd_tianjiwu"
           },
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 5.0,
+          "min_count": 5.0,
           "source": "tu_tien:xd_tianjiwu",
           "type": "drop"
         }
@@ -19564,8 +19564,8 @@
           "conditions": {
             "loot_table": "xd_shatangshu"
           },
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 9.0,
+          "min_count": 9.0,
           "source": "tu_tien:xd_shatangshu",
           "type": "drop"
         },
@@ -19574,8 +19574,8 @@
           "conditions": {
             "loot_table": "xd_shatangshu_normal"
           },
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 6.0,
+          "min_count": 6.0,
           "source": "tu_tien:xd_shatangshu_normal",
           "type": "drop"
         }
@@ -20482,8 +20482,8 @@
           "conditions": {
             "loot_table": "xd_tianjiwu"
           },
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 7.0,
+          "min_count": 7.0,
           "source": "tu_tien:xd_tianjiwu",
           "type": "drop"
         }
@@ -20874,8 +20874,8 @@
           "conditions": {
             "loot_table": "xd_dragonfly"
           },
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 6.0,
+          "min_count": 6.0,
           "source": "tu_tien:xd_dragonfly",
           "type": "drop"
         },
@@ -22477,8 +22477,8 @@
         {
           "chance": 1.0,
           "conditions": {},
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 8.0,
+          "min_count": 8.0,
           "source": "tu_tien:xd_spiderqueen",
           "type": "drop"
         }
@@ -24341,8 +24341,8 @@
           "conditions": {
             "loot_table": "xd_xinmo"
           },
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 5.0,
+          "min_count": 5.0,
           "source": "tu_tien:xd_xinmo",
           "type": "drop"
         }
@@ -25521,16 +25521,16 @@
           "conditions": {
             "loot_table": "xd_baihu"
           },
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 4.0,
+          "min_count": 4.0,
           "source": "tu_tien:xd_baihu",
           "type": "drop"
         },
         {
           "chance": 1.0,
           "conditions": {},
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 2.0,
+          "min_count": 2.0,
           "source": "tu_tien:xd_futu",
           "type": "drop"
         },
@@ -25539,8 +25539,8 @@
           "conditions": {
             "loot_table": "xd_jfsn"
           },
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 2.0,
+          "min_count": 2.0,
           "source": "tu_tien:xd_jfsn",
           "type": "drop"
         },
@@ -25549,8 +25549,8 @@
           "conditions": {
             "loot_table": "xd_qlch"
           },
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 2.0,
+          "min_count": 2.0,
           "source": "tu_tien:xd_qlch",
           "type": "drop"
         },
@@ -25559,8 +25559,8 @@
           "conditions": {
             "loot_table": "xd_qxdx"
           },
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 2.0,
+          "min_count": 2.0,
           "source": "tu_tien:xd_qxdx",
           "type": "drop"
         },
@@ -25577,8 +25577,8 @@
         {
           "chance": 1.0,
           "conditions": {},
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 3.0,
+          "min_count": 3.0,
           "source": "tu_tien:xd_spiderqueen",
           "type": "drop"
         },
@@ -25587,8 +25587,8 @@
           "conditions": {
             "loot_table": "xd_ziyunboss"
           },
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 4.0,
+          "min_count": 4.0,
           "source": "tu_tien:xd_ziyunboss",
           "type": "drop"
         }
@@ -25786,8 +25786,8 @@
           "conditions": {
             "loot_table": "xd_tianjiwu"
           },
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 3.0,
+          "min_count": 3.0,
           "source": "tu_tien:xd_tianjiwu",
           "type": "drop"
         }
@@ -28232,8 +28232,8 @@
         {
           "chance": 1.0,
           "conditions": {},
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 3.0,
+          "min_count": 3.0,
           "source": "tu_tien:xd_futu",
           "type": "drop"
         },
@@ -28242,16 +28242,16 @@
           "conditions": {
             "loot_table": "xd_jfsn"
           },
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 2.0,
+          "min_count": 2.0,
           "source": "tu_tien:xd_jfsn",
           "type": "drop"
         },
         {
           "chance": 1.0,
           "conditions": {},
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 5.0,
+          "min_count": 5.0,
           "source": "tu_tien:xd_spiderqueen",
           "type": "drop"
         },
@@ -28260,8 +28260,8 @@
           "conditions": {
             "loot_table": "xd_ziyunboss"
           },
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 3.0,
+          "min_count": 3.0,
           "source": "tu_tien:xd_ziyunboss",
           "type": "drop"
         }
@@ -30059,8 +30059,8 @@
           "conditions": {
             "loot_table": "xd_baihu"
           },
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 3.0,
+          "min_count": 3.0,
           "source": "tu_tien:xd_baihu",
           "type": "drop"
         },
@@ -30069,8 +30069,8 @@
           "conditions": {
             "loot_table": "xd_qxdx"
           },
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 5.0,
+          "min_count": 5.0,
           "source": "tu_tien:xd_qxdx",
           "type": "drop"
         }
@@ -31010,8 +31010,8 @@
         {
           "chance": 1.0,
           "conditions": {},
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 25.0,
+          "min_count": 25.0,
           "source": "tu_tien:xd_futu",
           "type": "drop"
         },
@@ -31030,8 +31030,8 @@
           "conditions": {
             "loot_table": "rock_flintless_med"
           },
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 3.0,
+          "min_count": 3.0,
           "source": "tu_tien:xd_icedragon",
           "type": "drop"
         },
@@ -31040,8 +31040,8 @@
           "conditions": {
             "loot_table": "xd_rock1"
           },
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 3.0,
+          "min_count": 3.0,
           "source": "tu_tien:xd_rock1",
           "type": "drop"
         },
@@ -31050,8 +31050,8 @@
           "conditions": {
             "loot_table": "xd_rock2"
           },
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 3.0,
+          "min_count": 3.0,
           "source": "tu_tien:xd_rock2",
           "type": "drop"
         },
@@ -31060,16 +31060,16 @@
           "conditions": {
             "loot_table": "xd_rock3"
           },
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 3.0,
+          "min_count": 3.0,
           "source": "tu_tien:xd_rock3",
           "type": "drop"
         },
         {
           "chance": 1.0,
           "conditions": {},
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 3.0,
+          "min_count": 3.0,
           "source": "tu_tien:xd_spiderden",
           "type": "drop"
         }
@@ -33791,16 +33791,16 @@
         {
           "chance": 1.0,
           "conditions": {},
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 6.0,
+          "min_count": 6.0,
           "source": "tu_tien:xd_spiderden",
           "type": "drop"
         },
         {
           "chance": 1.0,
           "conditions": {},
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 6.0,
+          "min_count": 6.0,
           "source": "tu_tien:xd_spiderqueen",
           "type": "drop"
         }
@@ -46141,16 +46141,16 @@
           "conditions": {
             "loot_table": "xd_baihu"
           },
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 4.0,
+          "min_count": 4.0,
           "source": "tu_tien:xd_baihu",
           "type": "drop"
         },
         {
           "chance": 1.0,
           "conditions": {},
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 2.0,
+          "min_count": 2.0,
           "source": "tu_tien:xd_futu",
           "type": "drop"
         },
@@ -46159,8 +46159,8 @@
           "conditions": {
             "loot_table": "xd_jfsn"
           },
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 2.0,
+          "min_count": 2.0,
           "source": "tu_tien:xd_jfsn",
           "type": "drop"
         },
@@ -46169,8 +46169,8 @@
           "conditions": {
             "loot_table": "xd_qlch"
           },
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 2.0,
+          "min_count": 2.0,
           "source": "tu_tien:xd_qlch",
           "type": "drop"
         },
@@ -46179,8 +46179,8 @@
           "conditions": {
             "loot_table": "xd_qxdx"
           },
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 2.0,
+          "min_count": 2.0,
           "source": "tu_tien:xd_qxdx",
           "type": "drop"
         },
@@ -46197,8 +46197,8 @@
         {
           "chance": 1.0,
           "conditions": {},
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 3.0,
+          "min_count": 3.0,
           "source": "tu_tien:xd_spiderqueen",
           "type": "drop"
         },
@@ -46207,8 +46207,8 @@
           "conditions": {
             "loot_table": "xd_ziyunboss"
           },
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 4.0,
+          "min_count": 4.0,
           "source": "tu_tien:xd_ziyunboss",
           "type": "drop"
         }
@@ -47129,8 +47129,39 @@
       "prefab_id": "fence_gate_luoshen",
       "recipes": [],
       "relations": [],
-      "stats": [],
-      "type": "creature"
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 0.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 1.0
+        }
+      ],
+      "type": "structure"
     },
     {
       "acquisition": [
@@ -47214,8 +47245,39 @@
       "prefab_id": "fence_luoshen",
       "recipes": [],
       "relations": [],
-      "stats": [],
-      "type": "creature"
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 0.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 1.0
+        }
+      ],
+      "type": "structure"
     },
     {
       "acquisition": [
@@ -47301,28 +47363,6 @@
       "relations": [],
       "stats": [],
       "type": "inventory_item"
-    },
-    {
-      "acquisition": [],
-      "confidence": 1.0,
-      "description": {
-        "en": null,
-        "vi": null
-      },
-      "effects": [],
-      "icon_key": null,
-      "is_inventory_item": false,
-      "key": "tu_tien:sudaji_killed",
-      "name": {
-        "en": null,
-        "vi": "Nhục Thân Tiêu Vong"
-      },
-      "namespace": "tu_tien",
-      "prefab_id": "sudaji_killed",
-      "recipes": [],
-      "relations": [],
-      "stats": [],
-      "type": "unknown"
     },
     {
       "acquisition": [
@@ -47493,8 +47533,39 @@
       "prefab_id": "wall_luoshen",
       "recipes": [],
       "relations": [],
-      "stats": [],
-      "type": "creature"
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 0.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 1600.0
+        }
+      ],
+      "type": "structure"
     },
     {
       "acquisition": [
@@ -48018,7 +48089,62 @@
       "prefab_id": "xd_baihu",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 87.5
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 5.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 5.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 70200.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 9.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "sanity_aura",
+          "unit": "sanity_per_minute",
+          "value": -6.666666666666667
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "attack_pounce, attack_pounce_pre, attack_pounce_pst, chongci, chuiji, gohome, lunge, run_start, run_stop, skill_3, skill_taunt, tele, walk_start, walk_stop"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 2.7
+        }
+      ],
       "type": "creature"
     },
     {
@@ -48041,7 +48167,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -48072,8 +48198,8 @@
           "conditions": {
             "loot_table": "xd_baihu"
           },
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 2.0,
+          "min_count": 2.0,
           "source": "tu_tien:xd_baihu",
           "type": "drop"
         }
@@ -48131,7 +48257,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -48165,6 +48291,66 @@
       "stats": [
         {
           "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 125.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 2.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "freeze_resistance",
+          "unit": "hits",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 6500.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "planar_damage",
+          "unit": "hp",
+          "value": 30.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 10.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "sleep_resistance",
+          "unit": "hits",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "attack_action, bi, butt_face_hit, corpse, corpse_idle, gohome, init, pound, quad, run_start, run_stop, sink, sleeping, stagger_hit, stagger_idle, stagger_pre, stagger_pre_timeline_from_frame3, stagger_pst, standing_hit, walk_start, walk_stop, washed_ashore"
+        },
+        {
+          "confidence": 1.0,
           "key": "trader_deletes_item",
           "unit": "boolean",
           "value": "true"
@@ -48174,6 +48360,12 @@
           "key": "trader_enabled",
           "unit": "boolean",
           "value": "true"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 3.0
         }
       ],
       "type": "creature"
@@ -48207,7 +48399,68 @@
           "type": "string_alias"
         }
       ],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 34.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "freeze_resistance",
+          "unit": "hits",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 1800.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 7.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "sleep_resistance",
+          "unit": "hits",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "badfood, beg, bellow, flatulate, gohome, graze, graze_empty, idle_carrat, matingcall, meh, pleased, refuse, run_start, run_stop, shake, shaved, sleeping, tailswish, walk_start, walk_stop"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 1.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -48229,7 +48482,56 @@
       "prefab_id": "xd_bjms",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 186.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 3.5
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 3.5
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 5.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 100.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 8.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "action, attack2, attack3, attack_special1, attack_special2, banner_loop, banner_pre, banner_pst, dash, run_start, run_stop, stun, stun_pst, taunt"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 8.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -48302,7 +48604,56 @@
       "prefab_id": "xd_bjms_kl",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 309.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 0.4
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 100.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "castspell, castspell_sg, do_pet_remove, emote, gravestone_rebirth, init, play_flute, pocketwatch_portal_land, quickcastspell, run_start, run_stop, sg_idle, superjump_start"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 4.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -48352,6 +48703,12 @@
         },
         {
           "confidence": 1.0,
+          "key": "planar_damage",
+          "unit": "hp",
+          "value": 1.0
+        },
+        {
+          "confidence": 1.0,
           "key": "uses",
           "unit": "uses",
           "value": 1000.0
@@ -48379,7 +48736,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -48430,7 +48787,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -48452,7 +48809,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -48474,6 +48831,12 @@
       "recipes": [],
       "relations": [],
       "stats": [
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "prize_bad, prize_bad2, prize_good, prize_ok, prize_ok2, spinning"
+        },
         {
           "confidence": 1.0,
           "key": "trader_deletes_item",
@@ -48680,7 +49043,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -48912,7 +49275,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -49039,7 +49402,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -49513,7 +49876,32 @@
       "prefab_id": "xd_deciduous_root",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 30.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 3.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -49535,7 +49923,56 @@
       "prefab_id": "xd_deerclops_ziyun",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 85.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 14.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 14.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 39000.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "corpse, corpse_idle, corpse_mutate, corpse_mutate_pre, icegrow, icegrow_pst, icelance, init, mutate_pst, walk_start, walk_stop"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 3.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -49658,6 +50095,60 @@
       "stats": [
         {
           "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 150.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "freeze_resistance",
+          "unit": "hits",
+          "value": 8.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 23500.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "sleep_resistance",
+          "unit": "hits",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "flyaway, pound, pound_post, pound_pre, sleeping, transform_fire, transform_normal, walk_start, walk_stop"
+        },
+        {
+          "confidence": 1.0,
           "key": "trader_deletes_item",
           "unit": "boolean",
           "value": "true"
@@ -49667,6 +50158,12 @@
           "key": "trader_enabled",
           "unit": "boolean",
           "value": "true"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 5.0
         }
       ],
       "type": "creature"
@@ -49735,7 +50232,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -51711,7 +52208,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -51947,7 +52444,56 @@
       "prefab_id": "xd_fb_hound",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 298.6
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 2.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 2.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 2.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 1875.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 10.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "run_start, run_stop"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 4.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -51970,7 +52516,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -51991,7 +52537,50 @@
       "prefab_id": "xd_fb_jfsn",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 1542.7
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "gohome, swoop_loop, swoop_pre, swoop_pst"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 4.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -52013,7 +52602,56 @@
       "prefab_id": "xd_fb_lavae",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 84.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 100.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "walk_start, walk_stop"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 5.5
+        }
+      ],
       "type": "creature"
     },
     {
@@ -52035,7 +52673,56 @@
       "prefab_id": "xd_fb_mutateddeerclops",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 1344.4
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 13.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 13.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 2650.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "corpse, corpse_idle, corpse_mutate, corpse_mutate_pre, icegrow, icegrow_pst, icelance, init, mutate_pst, walk_start, walk_stop"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 3.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -52057,7 +52744,56 @@
       "prefab_id": "xd_fb_mutatedhound",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 307.2
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 2.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 1725.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 10.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "run_start, run_stop"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 4.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -52079,7 +52815,56 @@
       "prefab_id": "xd_fb_mutatedwarg",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 240.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 2050.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 5.5
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "attack_icing, corpse, corpse_idle, corpse_mutate, corpse_mutate_pre, flamethrower_loop, flamethrower_pre, flamethrower_pst, gingerbread_intro, init, mutate_pst, run_start, run_stop, start"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 4.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -52102,7 +52887,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -52124,7 +52909,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -52216,7 +53001,14 @@
       "prefab_id": "xd_fhs_desk",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "sanity_aura",
+          "unit": "sanity_per_minute",
+          "value": 0.0
+        }
+      ],
       "type": "prefab"
     },
     {
@@ -52344,7 +53136,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [
@@ -52402,7 +53194,14 @@
         }
       ],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "sanity_aura",
+          "unit": "sanity_per_minute",
+          "value": 0.20833333333333334
+        }
+      ],
       "type": "structure"
     },
     {
@@ -52461,7 +53260,14 @@
         }
       ],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "sanity_aura",
+          "unit": "sanity_per_minute",
+          "value": 0.20833333333333334
+        }
+      ],
       "type": "structure"
     },
     {
@@ -52542,7 +53348,14 @@
         }
       ],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "sanity_aura",
+          "unit": "sanity_per_minute",
+          "value": 0.20833333333333334
+        }
+      ],
       "type": "structure"
     },
     {
@@ -52601,7 +53414,14 @@
         }
       ],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "sanity_aura",
+          "unit": "sanity_per_minute",
+          "value": 0.20833333333333334
+        }
+      ],
       "type": "structure"
     },
     {
@@ -52682,7 +53502,14 @@
         }
       ],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "sanity_aura",
+          "unit": "sanity_per_minute",
+          "value": 0.20833333333333334
+        }
+      ],
       "type": "structure"
     },
     {
@@ -52741,7 +53568,14 @@
         }
       ],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "sanity_aura",
+          "unit": "sanity_per_minute",
+          "value": 0.20833333333333334
+        }
+      ],
       "type": "structure"
     },
     {
@@ -52800,7 +53634,14 @@
         }
       ],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "sanity_aura",
+          "unit": "sanity_per_minute",
+          "value": 0.20833333333333334
+        }
+      ],
       "type": "structure"
     },
     {
@@ -52903,7 +53744,14 @@
         }
       ],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "sanity_aura",
+          "unit": "sanity_per_minute",
+          "value": 0.20833333333333334
+        }
+      ],
       "type": "structure"
     },
     {
@@ -52962,7 +53810,14 @@
         }
       ],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "sanity_aura",
+          "unit": "sanity_per_minute",
+          "value": 0.20833333333333334
+        }
+      ],
       "type": "structure"
     },
     {
@@ -52985,7 +53840,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -53007,7 +53862,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [
@@ -53016,8 +53871,8 @@
           "conditions": {
             "loot_table": "xd_jfsn"
           },
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 2.0,
+          "min_count": 2.0,
           "source": "tu_tien:xd_jfsn",
           "type": "drop"
         }
@@ -53291,7 +54146,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -53312,7 +54167,62 @@
       "prefab_id": "xd_futu",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 58.5
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 127500.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 1.9736842105263157
+        },
+        {
+          "confidence": 1.0,
+          "key": "sanity_aura",
+          "unit": "sanity_per_minute",
+          "value": -0.2
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "gohome, idle_tendril, parasite_revive, rocklick, shield, shield_end, shield_start, skill1, skill2, skill2_pst, skill3, skill4, skill5, taunt1, walk_start, walk_stop"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 1.9736842105263157
+        }
+      ],
       "type": "creature"
     },
     {
@@ -53334,7 +54244,62 @@
       "prefab_id": "xd_futu_small",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 65.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 500.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 1.5
+        },
+        {
+          "confidence": 1.0,
+          "key": "sanity_aura",
+          "unit": "sanity_per_minute",
+          "value": -0.2
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "gohome, idle_tendril, parasite_revive, rocklick, shield, shield_end, shield_start, skill1, skill2, skill2_pst, skill3, skill4, skill5, taunt1, walk_start, walk_stop"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 1.5
+        }
+      ],
       "type": "creature"
     },
     {
@@ -53357,7 +54322,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -53413,7 +54378,50 @@
       "prefab_id": "xd_gestalt",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 0.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 2.5
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 2.5
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 1.5
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "emerge, mutate_pre, walk_start, walk_stop"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 1.5
+        }
+      ],
       "type": "creature"
     },
     {
@@ -53609,7 +54617,26 @@
       "prefab_id": "xd_gongdeshadow",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "superjump_land, superjump_start, xd_gongde_lunge, xd_gongde_lunge_start"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 4.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -53739,7 +54766,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "character"
     },
     {
       "acquisition": [],
@@ -53761,7 +54788,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -54090,7 +55117,56 @@
       "prefab_id": "xd_ht",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 360.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 100.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 8.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "appear, catch_equip, dance, eat, goaway, heavylifting_item_hat, heavylifting_start, heavylifting_stop, ht_attack, item_hat, item_in, item_out, land, lunge_loop, lunge_pre, quickeat, run_start, run_stop, skill1, skill2, skill3, spawn, superjump, superjump_pst, superjump_start, threeattack, tiaopi, tool_slip, toolbroke, txm_lunge_loop, txm_lunge_pre, txm_lunge_pst, txm_spell, xd_wukong_skill"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 8.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -54318,7 +55394,56 @@
       "prefab_id": "xd_htz_sjc",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 37.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 100.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "walk_start, walk_stop"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 4.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -54520,9 +55645,21 @@
         },
         {
           "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
           "key": "stack_size",
           "unit": "items",
           "value": 60.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 4.0
         }
       ],
       "type": "inventory_item"
@@ -54546,7 +55683,56 @@
       "prefab_id": "xd_htz_txm",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 7.6
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 0.4
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 100.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "appear, catch_equip, dance, eat, goaway, heavylifting_item_hat, heavylifting_start, heavylifting_stop, ht_attack, item_hat, item_in, item_out, land, lunge_loop, lunge_pre, quickeat, run_start, run_stop, skill1, skill2, skill3, spawn, superjump, superjump_pst, superjump_start, threeattack, tiaopi, tool_slip, toolbroke, txm_lunge_loop, txm_lunge_pre, txm_lunge_pst, txm_spell, xd_wukong_skill"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 4.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -54591,7 +55777,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -54612,7 +55798,56 @@
       "prefab_id": "xd_htz_xyzz",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 62.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 5.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 5.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 100.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "birth, gogogo, poop_loop, poop_pre, poop_pst, skill1, taunt, walk_start, walk_stop"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 4.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -55026,7 +56261,26 @@
       "prefab_id": "xd_icebutterfly",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "moving"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 4.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -55125,7 +56379,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -55147,7 +56401,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -55169,7 +56423,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -55190,7 +56444,62 @@
       "prefab_id": "xd_jcbird",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 40.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 6600.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "sanity_aura",
+          "unit": "sanity_per_minute",
+          "value": -0.4166666666666667
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "emerge, glide, idle_taunt, land, respawn, shoot, stunned, trapped, walk_stop, walk_wait, walk_wait_caw, xiumian"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 4.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -55212,7 +56521,62 @@
       "prefab_id": "xd_jcbird_spitter",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 40.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 12.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 12.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 2000.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "sanity_aura",
+          "unit": "sanity_per_minute",
+          "value": -0.4166666666666667
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "emerge, glide, idle_taunt, land, respawn, shoot, stunned, trapped, walk_stop, walk_wait, walk_wait_caw, xiumian"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 4.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -55234,7 +56598,62 @@
       "prefab_id": "xd_jfsn",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 75.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 5.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 5.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 60000.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "sleep_resistance",
+          "unit": "hits",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "death_ocean, gohome, shengtian, sleeping, swoop_loop, swoop_pre, swoop_pst, taunt, walk_start, walk_stop, yushi, zhaohuan"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 4.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -55256,7 +56675,32 @@
       "prefab_id": "xd_jfsn_fire",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 40.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 3.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -55278,7 +56722,32 @@
       "prefab_id": "xd_jfsnmeteor",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 150.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 3.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -55340,9 +56809,15 @@
       "confidence": 1.0,
       "description": {
         "en": null,
-        "vi": "*Luôn có Huyền Điểu bên cạnh\n*Có thể bay vượt một khoảng cách nhất định\n*Có thể dùng địa hình riêng để lấp biển"
+        "vi": "*Thiếu nữ út của Viêm Đế\n*Có huyền điểu đồng hành\n*Có thể bay vượt một khoảng cách nhất định\n*Có thể dùng địa bì chuyên dụng để lấp biển"
       },
       "effects": [
+        {
+          "duration": null,
+          "key": "character_quote",
+          "trigger": "character_profile",
+          "value": "\"Dẫu biển rộng vô bờ, ta cũng sẽ lấp cho đầy.\""
+        },
         {
           "duration": null,
           "key": "character_quote",
@@ -55357,9 +56832,21 @@
         },
         {
           "duration": null,
+          "key": "character_survivability",
+          "trigger": "character_profile",
+          "value": "Trong tầm tay"
+        },
+        {
+          "duration": null,
           "key": "character_title",
           "trigger": "character_profile",
           "value": "Con Gái Út Viêm Đế"
+        },
+        {
+          "duration": null,
+          "key": "character_title",
+          "trigger": "character_profile",
+          "value": "Tinh Vệ"
         }
       ],
       "icon_key": null,
@@ -55374,7 +56861,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "character"
     },
     {
       "acquisition": [],
@@ -55695,7 +57182,56 @@
       "prefab_id": "xd_jingwei_blowdart_shadow",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 107.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 2.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 3.2
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 3.2
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 400.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "fall, hop, walk_start, walk_stop"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -55798,7 +57334,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -55822,9 +57358,57 @@
       "stats": [
         {
           "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 107.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 2.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 3.2
+        },
+        {
+          "confidence": 1.0,
           "key": "container_slots",
           "unit": "slots",
           "value": 9.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 3.2
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 100.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "fall, hop, walk_start, walk_stop"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
         }
       ],
       "type": "creature"
@@ -55851,9 +57435,63 @@
       "stats": [
         {
           "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 107.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 2.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 3.2
+        },
+        {
+          "confidence": 1.0,
           "key": "container_slots",
           "unit": "slots",
           "value": 9.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 3.2
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 100.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "sanity_aura",
+          "unit": "sanity_per_minute",
+          "value": 0.10416666666666667
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "fall, hop, walk_start, walk_stop"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
         }
       ],
       "type": "creature"
@@ -55880,9 +57518,63 @@
       "stats": [
         {
           "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 45.2
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 0.4
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
           "key": "container_slots",
           "unit": "slots",
           "value": 9.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 100.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "sanity_aura",
+          "unit": "sanity_per_minute",
+          "value": 0.10416666666666667
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "chop, chop_start, cooking, dance, item_out, item_out_chop, item_out_mine, mine, mine_recoil, mine_start, run_start, run_stop"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 4.0
         }
       ],
       "type": "creature"
@@ -55909,9 +57601,63 @@
       "stats": [
         {
           "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 365.4
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 5.0
+        },
+        {
+          "confidence": 1.0,
           "key": "container_slots",
           "unit": "slots",
           "value": 9.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 5.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 100.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "sanity_aura",
+          "unit": "sanity_per_minute",
+          "value": 0.10416666666666667
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "death_ocean, doskill, walk_start, walk_stop"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
         }
       ],
       "type": "creature"
@@ -56055,7 +57801,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [
@@ -56452,7 +58198,68 @@
           "type": "string_alias"
         }
       ],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 50.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "freeze_resistance",
+          "unit": "hits",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 1800.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 7.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "sleep_resistance",
+          "unit": "hits",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "alert, bellow, gohome, graze, run_start, run_stop, shake, sleeping, walk_start, walk_stop"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 1.5
+        }
+      ],
       "type": "creature"
     },
     {
@@ -57797,7 +59604,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -57828,7 +59635,68 @@
           "type": "string_alias"
         }
       ],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 25.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 2.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "freeze_resistance",
+          "unit": "hits",
+          "value": 2.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 1400.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "sleep_resistance",
+          "unit": "hits",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "bleet, discharge, gohome, shocked, sleeping, taunt, walk_start, walk_stop"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 4.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -57851,7 +59719,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -57873,7 +59741,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [
@@ -57892,8 +59760,8 @@
           "conditions": {
             "loot_table": "xd_rock1"
           },
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 3.0,
+          "min_count": 3.0,
           "source": "tu_tien:xd_rock1",
           "type": "drop"
         }
@@ -57956,8 +59824,8 @@
           "conditions": {
             "loot_table": "xd_rock3"
           },
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 2.0,
+          "min_count": 2.0,
           "source": "tu_tien:xd_rock3",
           "type": "drop"
         }
@@ -58166,9 +60034,28 @@
       "confidence": 1.0,
       "description": {
         "en": null,
-        "vi": null
+        "vi": "*Thích mùa đông hơn\n*Có thể thao túng hàn băng linh khí\n*Sở hữu Long Châu mang huyết mạch truyền thừa của Long tộc"
       },
-      "effects": [],
+      "effects": [
+        {
+          "duration": null,
+          "key": "character_quote",
+          "trigger": "character_profile",
+          "value": "\"Bổn thái tử chung ái nhất chính là cái lạnh lẽo thấu xương của hầm tuyết động băng.\""
+        },
+        {
+          "duration": null,
+          "key": "character_survivability",
+          "trigger": "character_profile",
+          "value": "Như cá gặp nước"
+        },
+        {
+          "duration": null,
+          "key": "character_title",
+          "trigger": "character_profile",
+          "value": "Long Tộc Thánh Tử"
+        }
+      ],
       "icon_key": null,
       "is_inventory_item": false,
       "key": "tu_tien:xd_longtaizi",
@@ -58181,7 +60068,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "character"
     },
     {
       "acquisition": [],
@@ -58203,7 +60090,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [
@@ -58286,7 +60173,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "character"
     },
     {
       "acquisition": [
@@ -58432,7 +60319,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -58453,7 +60340,14 @@
       "prefab_id": "xd_luoshen_hua",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "sanity_aura",
+          "unit": "sanity_per_minute",
+          "value": 0.0
+        }
+      ],
       "type": "structure"
     },
     {
@@ -58690,7 +60584,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [
@@ -58762,6 +60656,12 @@
           "key": "damage",
           "unit": "hp",
           "value": 1.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "planar_damage",
+          "unit": "hp",
+          "value": 200.0
         },
         {
           "confidence": 1.0,
@@ -59085,7 +60985,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -59301,7 +61201,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [
@@ -59391,7 +61291,38 @@
       "prefab_id": "xd_luoshenzhu",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 0.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 1.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -59413,7 +61344,20 @@
       "prefab_id": "xd_luoshenzhu_vine",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 1.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "emerge, nub_forward, nub_idle, nub_retract, nub_reverse, nub_spawn, retract"
+        }
+      ],
       "type": "prefab"
     },
     {
@@ -59686,7 +61630,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [
@@ -59879,8 +61823,8 @@
         {
           "chance": 1.0,
           "conditions": {},
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 2.0,
+          "min_count": 2.0,
           "source": "tu_tien:xd_futu",
           "type": "drop"
         }
@@ -59938,7 +61882,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [
@@ -60109,7 +62053,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [
@@ -60172,8 +62116,8 @@
           "conditions": {
             "loot_table": "xd_qxdx"
           },
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 2.0,
+          "min_count": 2.0,
           "source": "tu_tien:xd_qxdx",
           "type": "drop"
         }
@@ -60317,7 +62261,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -60471,7 +62415,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -60495,6 +62439,60 @@
       "stats": [
         {
           "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 40.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 2.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "freeze_resistance",
+          "unit": "hits",
+          "value": 1.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 800.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "sanity_aura",
+          "unit": "sanity_per_minute",
+          "value": 0.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "belly, cute, eat, eat_loop, gohome, pick, skill1, skill2, tailchase, tailchase_loop, tailchase_pst, walk_start, walk_stop"
+        },
+        {
+          "confidence": 1.0,
           "key": "trader_deletes_item",
           "unit": "boolean",
           "value": "false"
@@ -60504,6 +62502,12 @@
           "key": "trader_enabled",
           "unit": "boolean",
           "value": "true"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 3.0
         }
       ],
       "type": "creature"
@@ -60853,7 +62857,56 @@
       "prefab_id": "xd_qlch",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 60.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 56000.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 2.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "magic_loop, magic_pre, magic_pst, sleeping, spell1_pre, spell1_pst, spell2_pre, spell2_pst, walk_start, walk_stop"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 2.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -60897,7 +62950,56 @@
       "prefab_id": "xd_qlch_fs",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 100.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 5.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 27000.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 2.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "magic_loop, magic_pre, magic_pst, sleeping, spell1_pre, spell1_pst, spell2_pre, spell2_pst, walk_start, walk_stop"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 2.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -60920,7 +63022,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [
@@ -61022,8 +63124,8 @@
           "conditions": {
             "loot_table": "xd_qlch"
           },
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 2.0,
+          "min_count": 2.0,
           "source": "tu_tien:xd_qlch",
           "type": "drop"
         }
@@ -61168,7 +63270,62 @@
       "prefab_id": "xd_qxdx",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 100.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 0.4
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 3.5
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 3.5
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 205000.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 8.5
+        },
+        {
+          "confidence": 1.0,
+          "key": "sanity_aura",
+          "unit": "sanity_per_minute",
+          "value": -1.3333333333333333
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "eat, fly_down, fly_down_false, goaway, idle_fly, idle_fly_spell1, idle_fly_spell2, resurrect, run_start, run_stop, skill1, spike, superjump, superjump_pst, superjump_start, talk, transform"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 4.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -61193,6 +63350,12 @@
       "stats": [
         {
           "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
           "key": "trader_deletes_item",
           "unit": "boolean",
           "value": "true"
@@ -61202,6 +63365,12 @@
           "key": "trader_enabled",
           "unit": "boolean",
           "value": "true"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 4.0
         }
       ],
       "type": "creature"
@@ -61301,7 +63470,26 @@
       "prefab_id": "xd_roc",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 10.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "flap, fly, flyin, land, takeoff"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 4.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -61323,7 +63511,38 @@
       "prefab_id": "xd_roc_leg",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 448.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "enter, exit, peek, step, stepfinish"
+        }
+      ],
       "type": "creature"
     },
     {
@@ -61434,7 +63653,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -61456,7 +63675,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -61477,7 +63696,38 @@
       "prefab_id": "xd_sandblock",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 20.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 3200.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -61587,7 +63837,56 @@
       "prefab_id": "xd_shadow_bishop",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 140.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 13.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 12.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 12.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 1600.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "appear, attack_loop, attack_loop_pst, attack_pst, despawn, evolved_death, sink, walk_start, walk_stop, washed_ashore"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 3.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -61632,7 +63931,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -61653,7 +63952,56 @@
       "prefab_id": "xd_shadowspider_dropper",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 70.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 100.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 5.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "dropper_enter, gogogo, hit_stunlock, investigate, moving, mutate, mutate_pst, premoving, shield, shield_end, spike_attack, spike_attack_pst, spitter_attack, taunt, warrior_attack"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 4.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -61697,7 +64045,56 @@
       "prefab_id": "xd_shadowspider_moon",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 56.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 100.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 5.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "dropper_enter, gogogo, hit_stunlock, investigate, moving, mutate, mutate_pst, premoving, shield, shield_end, spike_attack, spike_attack_pst, spitter_attack, taunt, warrior_attack"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 3.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -61719,7 +64116,56 @@
       "prefab_id": "xd_shadowspiderqueen",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 168.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 5.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 5.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 100.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "birth, gogogo, poop_loop, poop_pre, poop_pst, skill1, taunt, walk_start, walk_stop"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 4.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -61893,7 +64339,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "character"
     },
     {
       "acquisition": [],
@@ -61915,7 +64361,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -62128,6 +64574,24 @@
           "key": "container_slots",
           "unit": "slots",
           "value": 36.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "book2, chop, chop_start, dance, dig, dig_start, doshortaction, give, mine, mine_start, run_start, run_stop, skill, store"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 4.0
         }
       ],
       "type": "creature"
@@ -62227,9 +64691,57 @@
       "stats": [
         {
           "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 0.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
           "key": "container_slots",
           "unit": "slots",
           "value": 16.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 100.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "chop, chop_start, dance, dig, dig_start, doshortaction, mine, mine_start, run_start, run_stop"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 4.0
         }
       ],
       "type": "creature"
@@ -62392,7 +64904,56 @@
       "prefab_id": "xd_sj_pysk",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 225.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 4.5
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 4.5
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 100.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "eat, idle_tendril, parasite_revive, rocklick, shield, shield_end, shield_start, walk_start, walk_stop"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 4.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -62414,7 +64975,56 @@
       "prefab_id": "xd_sj_rocky",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 147.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 100.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 5.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "eat, idle_tendril, parasite_revive, rocklick, shield, shield_end, shield_start, walk_start, walk_stop"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 4.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -63811,7 +66421,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -63832,7 +66442,62 @@
       "prefab_id": "xd_soul_wolf",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 100.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "freeze_resistance",
+          "unit": "hits",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 550.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 13.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "despawn, ipecacpoop, run_start, run_stop, sink, walk_start, walk_stop, washed_ashore"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 13.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -63854,7 +66519,74 @@
       "prefab_id": "xd_spider",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 35.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "freeze_resistance",
+          "unit": "hits",
+          "value": 2.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 800.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 6.5
+        },
+        {
+          "confidence": 1.0,
+          "key": "sanity_aura",
+          "unit": "sanity_per_minute",
+          "value": -1.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "sleep_resistance",
+          "unit": "hits",
+          "value": 2.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "abyss_drop, abyss_fall, born, dropper_enter, eat, eat_loop, hit_stunlock, hop_cancelhop, hop_loop, hop_pre, hop_pst, hop_pst_complete, investigate, moving, premoving, shield, shield_end, sink, skill1, skill2, sleeping, taunt, washed_ashore"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 5.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -63862,8 +66594,8 @@
         {
           "chance": 1.0,
           "conditions": {},
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 2.0,
+          "min_count": 2.0,
           "source": "tu_tien:xd_spiderqueen",
           "type": "drop"
         }
@@ -63957,8 +66689,39 @@
         }
       ],
       "relations": [],
-      "stats": [],
-      "type": "creature"
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 0.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 2000.0
+        }
+      ],
+      "type": "structure"
     },
     {
       "acquisition": [],
@@ -63979,7 +66742,62 @@
       "prefab_id": "xd_spiderqueen",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 75.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 5.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 5.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 88500.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "sanity_aura",
+          "unit": "sanity_per_minute",
+          "value": 0.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "birth, gohome, makenest, poop_loop, poop_pre, poop_pst, skill1, skill2, skill3, skill3attack, taunt, walk_start, walk_stop"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 1.75
+        }
+      ],
       "type": "creature"
     },
     {
@@ -64071,7 +66889,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -64102,7 +66920,56 @@
           "type": "string_alias"
         }
       ],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 150.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 4.8
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 5.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 64000.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "death2, resurrect, snare, spikes, walk_start, walk_stop"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 3.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -64125,7 +66992,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -64323,7 +67190,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "character"
     },
     {
       "acquisition": [],
@@ -64345,7 +67212,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [
@@ -64421,7 +67288,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [
@@ -65012,9 +67879,69 @@
       "stats": [
         {
           "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 100.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 0.4
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
           "key": "container_slots",
           "unit": "slots",
           "value": 12.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "freeze_resistance",
+          "unit": "hits",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 450.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "planar_damage",
+          "unit": "hp",
+          "value": 1.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "appear, catch_equip, dance, eat, goaway, heavylifting_item_hat, heavylifting_start, heavylifting_stop, ht_attack, item_hat, item_in, item_out, land, lunge_loop, lunge_pre, quickeat, run_start, run_stop, skill1, skill2, skill3, spawn, superjump, superjump_pst, superjump_start, threeattack, tiaopi, tool_slip, toolbroke, txm_lunge_loop, txm_lunge_pre, txm_lunge_pst, txm_spell, xd_wukong_skill"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 4.0
         }
       ],
       "type": "creature"
@@ -65083,7 +68010,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -65105,7 +68032,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -65127,7 +68054,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -65728,7 +68655,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [
@@ -65804,7 +68731,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -65848,7 +68775,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -65889,7 +68816,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "character"
     },
     {
       "acquisition": [],
@@ -65911,7 +68838,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -65933,7 +68860,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -66000,7 +68927,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -66021,7 +68948,56 @@
       "prefab_id": "xd_wmz_db",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 20.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 0.4
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 500.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "appear, catch_equip, dance, eat, goaway, heavylifting_item_hat, heavylifting_start, heavylifting_stop, ht_attack, item_hat, item_in, item_out, land, lunge_loop, lunge_pre, quickeat, run_start, run_stop, skill1, skill2, skill3, spawn, superjump, superjump_pst, superjump_start, threeattack, tiaopi, tool_slip, toolbroke, txm_lunge_loop, txm_lunge_pre, txm_lunge_pst, txm_spell, xd_wukong_skill"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 4.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -66124,7 +69100,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [
@@ -67007,7 +69983,56 @@
       "prefab_id": "xd_wmz_zhf_soul",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 20.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 2.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 22.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 22.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 100.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "run_start, run_stop, spawn, walk_start, walk_stop"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -67054,6 +70079,12 @@
           "key": "damage",
           "unit": "hp",
           "value": 100.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "planar_damage",
+          "unit": "hp",
+          "value": 1.0
         },
         {
           "confidence": 1.0,
@@ -67218,7 +70249,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "character"
     },
     {
       "acquisition": [],
@@ -67401,7 +70432,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -67422,7 +70453,56 @@
       "prefab_id": "xd_wukong_phantom",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 100.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 0.4
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 250.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "appear, catch_equip, dance, eat, goaway, heavylifting_item_hat, heavylifting_start, heavylifting_stop, ht_attack, item_hat, item_in, item_out, land, lunge_loop, lunge_pre, quickeat, run_start, run_stop, skill1, skill2, skill3, spawn, superjump, superjump_pst, superjump_start, threeattack, tiaopi, tool_slip, toolbroke, txm_lunge_loop, txm_lunge_pre, txm_lunge_pst, txm_spell, xd_wukong_skill"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 4.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -67444,7 +70524,56 @@
       "prefab_id": "xd_wukong_shadow",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 39.2
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 0.4
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 500.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "appear, catch_equip, dance, eat, goaway, heavylifting_item_hat, heavylifting_start, heavylifting_stop, ht_attack, item_hat, item_in, item_out, land, lunge_loop, lunge_pre, quickeat, run_start, run_stop, skill1, skill2, skill3, spawn, superjump, superjump_pst, superjump_start, threeattack, tiaopi, tool_slip, toolbroke, txm_lunge_loop, txm_lunge_pre, txm_lunge_pst, txm_spell, xd_wukong_skill"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 4.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -67721,7 +70850,68 @@
       "prefab_id": "xd_xianhe",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 0.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "freeze_resistance",
+          "unit": "hits",
+          "value": 2.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 200.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 8.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "sleep_resistance",
+          "unit": "hits",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "caw, distress, distress_pre, eat, fall, flyaway, glide, hop, kill, sleeping, stunned, taunt"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 4.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -67838,7 +71028,56 @@
       "prefab_id": "xd_xinmo",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 60.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 2.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 9750.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "appear, lunge_loop, lunge_pre, lunge_pst, run_start, run_stop, superjump, superjump_pst, superjump_start"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 4.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -68879,7 +72118,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "character"
     },
     {
       "acquisition": [],
@@ -69447,7 +72686,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [
@@ -69558,7 +72797,26 @@
       "prefab_id": "xd_yunxiao_tooler",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "chop, chop_start, mine, mine_recoil, mine_start, ready, ready_pre, ready_pst, run_start, run_stop"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 4.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -69799,8 +73057,8 @@
           "conditions": {
             "loot_table": "xd_ziyunboss"
           },
-          "max_count": 1.0,
-          "min_count": 1.0,
+          "max_count": 2.0,
+          "min_count": 2.0,
           "source": "tu_tien:xd_ziyunboss",
           "type": "drop"
         }
@@ -70029,7 +73287,56 @@
       "prefab_id": "xd_zhouwang",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 56.3
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 0.4
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 500.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "appear, catch_equip, dance, eat, goaway, heavylifting_item_hat, heavylifting_start, heavylifting_stop, ht_attack, item_hat, item_in, item_out, land, lunge_loop, lunge_pre, quickeat, run_start, run_stop, skill1, skill2, skill3, spawn, superjump, superjump_pst, superjump_start, threeattack, tiaopi, tool_slip, toolbroke, txm_lunge_loop, txm_lunge_pre, txm_lunge_pst, txm_spell, xd_wukong_skill"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 4.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -70051,7 +73358,56 @@
       "prefab_id": "xd_zhouwang_shadow",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 52.5
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 0.4
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 500.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "appear, catch_equip, dance, eat, goaway, heavylifting_item_hat, heavylifting_start, heavylifting_stop, ht_attack, item_hat, item_in, item_out, land, lunge_loop, lunge_pre, quickeat, run_start, run_stop, skill1, skill2, skill3, spawn, superjump, superjump_pst, superjump_start, threeattack, tiaopi, tool_slip, toolbroke, txm_lunge_loop, txm_lunge_pre, txm_lunge_pst, txm_spell, xd_wukong_skill"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 4.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -70073,7 +73429,14 @@
       "prefab_id": "xd_ziyun_house",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "sanity_aura",
+          "unit": "sanity_per_minute",
+          "value": -2.0
+        }
+      ],
       "type": "structure"
     },
     {
@@ -70095,7 +73458,62 @@
       "prefab_id": "xd_ziyunboss",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 30.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 0.4
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 3.5
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 3.5
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 29250.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "sanity_aura",
+          "unit": "sanity_per_minute",
+          "value": -2.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "fly_down, fly_down_false, idle_fly, idle_fly_spell1, idle_fly_spell2, resurrect, run_start, run_stop, skill1"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 4.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -70117,7 +73535,38 @@
       "prefab_id": "xd_ziyunboss_channeler",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 0.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "max_health",
+          "unit": "hp",
+          "value": 29250.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -70183,7 +73632,50 @@
       "prefab_id": "xd_ziyunjfsn",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "attack_damage",
+          "unit": "hp",
+          "value": 100.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_period",
+          "unit": "seconds",
+          "value": 4.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "attack_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "hit_range",
+          "unit": "tiles",
+          "value": 3.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "run_speed",
+          "unit": "tiles_per_second",
+          "value": 6.0
+        },
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "gohome, swoop_loop, swoop_pre, swoop_pst"
+        },
+        {
+          "confidence": 1.0,
+          "key": "walk_speed",
+          "unit": "tiles_per_second",
+          "value": 4.0
+        }
+      ],
       "type": "creature"
     },
     {
@@ -70206,7 +73698,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -70250,7 +73742,7 @@
       "recipes": [],
       "relations": [],
       "stats": [],
-      "type": "unknown"
+      "type": "prefab"
     },
     {
       "acquisition": [],
@@ -70271,7 +73763,14 @@
       "prefab_id": "xd_ziyunwarg",
       "recipes": [],
       "relations": [],
-      "stats": [],
+      "stats": [
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "flamethrower_loop, flamethrower_pre, flamethrower_pst, mutate"
+        }
+      ],
       "type": "prefab"
     },
     {
@@ -70345,6 +73844,72 @@
       "recipes": [],
       "relations": [],
       "stats": [],
+      "type": "character"
+    },
+    {
+      "acquisition": [],
+      "confidence": 1.0,
+      "description": {
+        "en": null,
+        "vi": null
+      },
+      "effects": [],
+      "icon_key": null,
+      "is_inventory_item": false,
+      "key": "tu_tien:xd_zuichunyan_burnt",
+      "name": {
+        "en": null,
+        "vi": null
+      },
+      "namespace": "tu_tien",
+      "prefab_id": "xd_zuichunyan_burnt",
+      "recipes": [],
+      "relations": [],
+      "stats": [],
+      "type": "unknown"
+    },
+    {
+      "acquisition": [],
+      "confidence": 1.0,
+      "description": {
+        "en": null,
+        "vi": null
+      },
+      "effects": [],
+      "icon_key": null,
+      "is_inventory_item": false,
+      "key": "tu_tien:xd_zuichunyan_green",
+      "name": {
+        "en": null,
+        "vi": null
+      },
+      "namespace": "tu_tien",
+      "prefab_id": "xd_zuichunyan_green",
+      "recipes": [],
+      "relations": [],
+      "stats": [],
+      "type": "unknown"
+    },
+    {
+      "acquisition": [],
+      "confidence": 1.0,
+      "description": {
+        "en": null,
+        "vi": null
+      },
+      "effects": [],
+      "icon_key": null,
+      "is_inventory_item": false,
+      "key": "tu_tien:xd_zuichunyan_purple",
+      "name": {
+        "en": null,
+        "vi": null
+      },
+      "namespace": "tu_tien",
+      "prefab_id": "xd_zuichunyan_purple",
+      "recipes": [],
+      "relations": [],
+      "stats": [],
       "type": "unknown"
     },
     {
@@ -70364,6 +73929,28 @@
       },
       "namespace": "tu_tien",
       "prefab_id": "xd_zuichunyan_sapling",
+      "recipes": [],
+      "relations": [],
+      "stats": [],
+      "type": "unknown"
+    },
+    {
+      "acquisition": [],
+      "confidence": 1.0,
+      "description": {
+        "en": null,
+        "vi": null
+      },
+      "effects": [],
+      "icon_key": null,
+      "is_inventory_item": false,
+      "key": "tu_tien:xd_zuichunyan_stump",
+      "name": {
+        "en": null,
+        "vi": null
+      },
+      "namespace": "tu_tien",
+      "prefab_id": "xd_zuichunyan_stump",
       "recipes": [],
       "relations": [],
       "stats": [],
@@ -70455,6 +74042,12 @@
       "recipes": [],
       "relations": [],
       "stats": [
+        {
+          "confidence": 1.0,
+          "key": "special_states",
+          "unit": "state_names",
+          "value": "refuse, talk"
+        },
         {
           "confidence": 1.0,
           "key": "trader_deletes_item",

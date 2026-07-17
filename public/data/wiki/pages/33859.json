@@ -40,7 +40,7 @@
             {
               "amount": 1,
               "item": {
-                "entityId": null,
+                "entityId": "base_game:armor_wood",
                 "iconUrl": null,
                 "title": "Log Suit",
                 "url": "https://dontstarve.wiki.gg/wiki/Log_Suit"
@@ -58,7 +58,7 @@
           ],
           "note": null,
           "result": {
-            "entityId": null,
+            "entityId": "base_game:armor_dragonfly",
             "iconUrl": null,
             "title": "Scalemail",
             "url": "https://dontstarve.wiki.gg/wiki/Scalemail"
@@ -92,7 +92,7 @@
           ],
           "note": null,
           "result": {
-            "entityId": null,
+            "entityId": "base_game:dragonfly_chest",
             "iconUrl": null,
             "title": "Scaled Chest",
             "url": "https://dontstarve.wiki.gg/wiki/Scaled_Chest"

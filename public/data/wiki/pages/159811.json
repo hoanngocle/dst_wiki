@@ -21,6 +21,13 @@
       "width": 64
     },
     {
+      "height": 215,
+      "mime": "image/png",
+      "src": "/assets/wiki/e017786ff2bb5300200b917a6b681901c58ad18ab086bb7d51fe73cdf25a3faa.png",
+      "title": "File:Dragoon Den Build.png",
+      "width": 199
+    },
+    {
       "height": 64,
       "mime": "image/png",
       "src": "/assets/wiki/8f49764eba2b5bcd1edcdc3e6feb41ef68caf857bce7c73a0c61fe1e6fecc855.png",
@@ -207,7 +214,7 @@
             {
               "amount": 1,
               "item": {
-                "entityId": null,
+                "entityId": "base_game:armor_wood",
                 "iconUrl": null,
                 "title": "Log Suit",
                 "url": "https://dontstarve.wiki.gg/wiki/Log_Suit"

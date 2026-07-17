@@ -22,11 +22,46 @@
       "width": 64
     },
     {
+      "height": 148,
+      "mime": "image/png",
+      "src": "/assets/wiki/193236e35dbb576a1d39b920dff3f75285abb959f0e30f4e2f655786e9006dfd.png",
+      "title": "File:Thulecite Dropped.png",
+      "width": 207
+    },
+    {
+      "height": 64,
+      "mime": "image/png",
+      "src": "/assets/wiki/c7f0781ebbaff67ef8dcfcd2e8bdc745221bd0adba994626426efee5be8c1702.png",
+      "title": "File:Thulecite (DST).png",
+      "width": 64
+    },
+    {
+      "height": 650,
+      "mime": "image/png",
+      "src": "/assets/wiki/3189fbed48fcd8708fd92a28701f3743408ff1bcaa885439e6802a874000f320.png",
+      "title": "File:Ancient.png",
+      "width": 428
+    },
+    {
       "height": 128,
       "mime": "image/png",
       "src": "/assets/wiki/dc2f4942036cd6973d6ebead9655753ce072cf7e39e9e58b8d4362d8add09cec.png",
       "title": "File:Icon Ancient.png",
       "width": 105
+    },
+    {
+      "height": 175,
+      "mime": "image/png",
+      "src": "/assets/wiki/c601d746bdd9fd03b652ae3103ad0b581bfc44414504e0fb18c8235aec91d3c7.png",
+      "title": "File:Ornate Chest.png",
+      "width": 201
+    },
+    {
+      "height": 350,
+      "mime": "image/png",
+      "src": "/assets/wiki/26705abe34973c4a4e0f3fdada542caf2f3abdfb99c9041132cefa70dfa46fbb.png",
+      "title": "File:Relic Vase.png",
+      "width": 270
     }
   ],
   "pageId": 220105,

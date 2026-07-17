@@ -326,7 +326,7 @@
           ],
           "note": null,
           "result": {
-            "entityId": null,
+            "entityId": "base_game:armor_wood",
             "iconUrl": null,
             "title": "Log Suit",
             "url": "https://dontstarve.wiki.gg/wiki/Log_Suit"

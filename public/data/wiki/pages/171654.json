@@ -24,6 +24,20 @@
       "width": 64
     },
     {
+      "height": 131,
+      "mime": "image/png",
+      "src": "/assets/wiki/e077c1bc9f918a99b36957cf66037175cdc494f14a2304e9fa5adfe514477ee6.png",
+      "title": "File:Yellow Gem Dropped.png",
+      "width": 160
+    },
+    {
+      "height": 650,
+      "mime": "image/png",
+      "src": "/assets/wiki/3189fbed48fcd8708fd92a28701f3743408ff1bcaa885439e6802a874000f320.png",
+      "title": "File:Ancient.png",
+      "width": 428
+    },
+    {
       "height": 64,
       "mime": "image/png",
       "src": "/assets/wiki/f2e2401e381835267d289228e3994c93538f8de41e5b67554682c77a53bd0023.png",
@@ -38,11 +52,32 @@
       "width": 64
     },
     {
+      "height": 208,
+      "mime": "image/png",
+      "src": "/assets/wiki/9b61a61b56be2c6ed198fc8c283e7f6a45a7fb7526db04ebe3d50156453cbdaa.png",
+      "title": "File:Broken Clockworks1.png",
+      "width": 295
+    },
+    {
+      "height": 317,
+      "mime": "image/png",
+      "src": "/assets/wiki/95962fc11e6e709de5b7b912bfb24bf6ff73bbc82d87bd08cc2cdefbef5ddbc7.png",
+      "title": "File:Relic Chair.png",
+      "width": 288
+    },
+    {
       "height": 64,
       "mime": "image/png",
       "src": "/assets/wiki/eb5b5c2d3e00471bf0ac37173282b1e5bde57daa933a9705b003487957625f1d.png",
       "title": "File:Hammer.png",
       "width": 64
+    },
+    {
+      "height": 175,
+      "mime": "image/png",
+      "src": "/assets/wiki/c601d746bdd9fd03b652ae3103ad0b581bfc44414504e0fb18c8235aec91d3c7.png",
+      "title": "File:Ornate Chest.png",
+      "width": 201
     }
   ],
   "normalized": {

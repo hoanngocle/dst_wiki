@@ -18,6 +18,13 @@
       "src": "/assets/wiki/7c634f54cd5727d512edc461fbcb438ba6672f161ce94fa65082801bc2fb4994.png",
       "title": "File:Rope.png",
       "width": 64
+    },
+    {
+      "height": 131,
+      "mime": "image/png",
+      "src": "/assets/wiki/2e728de2e9b9496494e5a1b33147bc91446b8f98e5f9eb27415c1284049f7105.png",
+      "title": "File:Rope Dropped.png",
+      "width": 202
     }
   ],
   "normalized": {
@@ -652,7 +659,7 @@
           ],
           "note": null,
           "result": {
-            "entityId": null,
+            "entityId": "base_game:armor_wood",
             "iconUrl": null,
             "title": "Log Suit",
             "url": "https://dontstarve.wiki.gg/wiki/Log_Suit"
@@ -677,7 +684,7 @@
           ],
           "note": null,
           "result": {
-            "entityId": null,
+            "entityId": "base_game:armor_marble",
             "iconUrl": null,
             "title": "Marble Suit",
             "url": "https://dontstarve.wiki.gg/wiki/Marble_Suit"
@@ -1013,7 +1020,7 @@
             {
               "amount": 6,
               "item": {
-                "entityId": null,
+                "entityId": "base_game:slurperpelt",
                 "iconUrl": null,
                 "title": "Slurper Pelt",
                 "url": "https://dontstarve.wiki.gg/wiki/Slurper_Pelt"
@@ -1031,7 +1038,7 @@
           ],
           "note": null,
           "result": {
-            "entityId": null,
+            "entityId": "base_game:armor_slurper",
             "iconUrl": null,
             "title": "Belt of Hunger",
             "url": "https://dontstarve.wiki.gg/wiki/Belt_of_Hunger"

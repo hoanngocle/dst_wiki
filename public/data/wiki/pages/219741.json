@@ -24,11 +24,32 @@
       "width": 64
     },
     {
+      "height": 139,
+      "mime": "image/png",
+      "src": "/assets/wiki/71d9a210641002231d32ae04b925771af4adf7fd2928b89a9ad03ee2e8357278.png",
+      "title": "File:Orange Gem Dropped.png",
+      "width": 164
+    },
+    {
       "height": 64,
       "mime": "image/png",
       "src": "/assets/wiki/f2e2401e381835267d289228e3994c93538f8de41e5b67554682c77a53bd0023.png",
       "title": "File:Pickaxe.png",
       "width": 64
+    },
+    {
+      "height": 317,
+      "mime": "image/png",
+      "src": "/assets/wiki/95962fc11e6e709de5b7b912bfb24bf6ff73bbc82d87bd08cc2cdefbef5ddbc7.png",
+      "title": "File:Relic Chair.png",
+      "width": 288
+    },
+    {
+      "height": 141,
+      "mime": "image/png",
+      "src": "/assets/wiki/f5d7d66a02ebc5c6899ba579941ff102bacd084c4b3d52cefbe3fce594c14048.png",
+      "title": "File:Cookbook Dropped.png",
+      "width": 209
     }
   ],
   "normalized": {

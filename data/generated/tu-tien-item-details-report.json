@@ -1,29 +1,104 @@
 {
-  "manualOverrideItems": [],
+  "manualOverrideItems": [
+    "tu_tien:xd_ayhx",
+    "tu_tien:xd_baihu",
+    "tu_tien:xd_baihu_skin",
+    "tu_tien:xd_beefalo",
+    "tu_tien:xd_bjsj",
+    "tu_tien:xd_choujiangji",
+    "tu_tien:xd_cl",
+    "tu_tien:xd_danyao_bg",
+    "tu_tien:xd_danyao_dt",
+    "tu_tien:xd_danyao_hj",
+    "tu_tien:xd_danyao_hl",
+    "tu_tien:xd_danyao_hs",
+    "tu_tien:xd_danyao_hy",
+    "tu_tien:xd_danyao_jq",
+    "tu_tien:xd_danyao_jy",
+    "tu_tien:xd_danyao_kx",
+    "tu_tien:xd_danyao_ns",
+    "tu_tien:xd_danyao_rl",
+    "tu_tien:xd_danyao_sm",
+    "tu_tien:xd_danyao_xs",
+    "tu_tien:xd_danyao_yx",
+    "tu_tien:xd_danyao_yz",
+    "tu_tien:xd_danyao_zj",
+    "tu_tien:xd_dy_cyfxd_1",
+    "tu_tien:xd_dy_cyfxd_2",
+    "tu_tien:xd_dy_cyfxd_3",
+    "tu_tien:xd_dy_cyfxd_4",
+    "tu_tien:xd_dy_cyfxd_5",
+    "tu_tien:xd_dy_dmhsd_1",
+    "tu_tien:xd_dy_dmhsd_2",
+    "tu_tien:xd_dy_dmhsd_3",
+    "tu_tien:xd_dy_dmhsd_4",
+    "tu_tien:xd_dy_dmhsd_5",
+    "tu_tien:xd_dy_fd",
+    "tu_tien:xd_dy_hsphd_1",
+    "tu_tien:xd_dy_hsphd_2",
+    "tu_tien:xd_dy_hsphd_3",
+    "tu_tien:xd_dy_hsphd_4",
+    "tu_tien:xd_dy_hsphd_5",
+    "tu_tien:xd_dy_lmsqd_1",
+    "tu_tien:xd_dy_lmsqd_2",
+    "tu_tien:xd_dy_lmsqd_3",
+    "tu_tien:xd_dy_lmsqd_4",
+    "tu_tien:xd_dy_lmsqd_5",
+    "tu_tien:xd_dy_pshsd_1",
+    "tu_tien:xd_dy_pshsd_2",
+    "tu_tien:xd_dy_pshsd_3",
+    "tu_tien:xd_dy_pshsd_4",
+    "tu_tien:xd_dy_pshsd_5",
+    "tu_tien:xd_dy_qjqsd_1",
+    "tu_tien:xd_dy_qjqsd_2",
+    "tu_tien:xd_dy_qjqsd_3",
+    "tu_tien:xd_dy_qjqsd_4",
+    "tu_tien:xd_dy_qjqsd_5",
+    "tu_tien:xd_dy_qxdhd_1",
+    "tu_tien:xd_dy_qxdhd_2",
+    "tu_tien:xd_dy_qxdhd_3",
+    "tu_tien:xd_dy_qxdhd_4",
+    "tu_tien:xd_dy_qxdhd_5",
+    "tu_tien:xd_dy_tsfhd",
+    "tu_tien:xd_dy_xttyd_1",
+    "tu_tien:xd_dy_xttyd_2",
+    "tu_tien:xd_dy_xttyd_3",
+    "tu_tien:xd_dy_xttyd_4",
+    "tu_tien:xd_dy_xttyd_5",
+    "tu_tien:xd_dy_xynyd_1",
+    "tu_tien:xd_dy_xynyd_2",
+    "tu_tien:xd_dy_xynyd_3",
+    "tu_tien:xd_dy_xynyd_4",
+    "tu_tien:xd_dy_xynyd_5",
+    "tu_tien:xd_dy_yfsxd_1",
+    "tu_tien:xd_dy_yfsxd_2",
+    "tu_tien:xd_dy_yfsxd_3",
+    "tu_tien:xd_dy_yfsxd_4",
+    "tu_tien:xd_dy_yfsxd_5"
+  ],
   "schema_version": 1,
   "statusCounts": {
     "dropBy": {
-      "known": 48,
-      "none": 278,
-      "unknown": 55
+      "known": 51,
+      "none": 276,
+      "unknown": 52
     },
     "recipe": {
-      "known": 104,
-      "none": 277,
+      "known": 171,
+      "none": 208,
       "unknown": 0
     },
     "usage": {
-      "known": 140,
+      "known": 257,
       "none": 0,
-      "unknown": 241
+      "unknown": 122
     }
   },
-  "totalTuTienItems": 381,
+  "totalTuTienItems": 379,
   "unknownItems": [
     {
       "id": "tu_tien:fence_gate_luoshen",
       "sections": [
-        "usage",
         "dropBy"
       ]
     },
@@ -36,7 +111,6 @@
     {
       "id": "tu_tien:fence_luoshen",
       "sections": [
-        "usage",
         "dropBy"
       ]
     },
@@ -44,13 +118,6 @@
       "id": "tu_tien:fence_luoshen_item",
       "sections": [
         "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:sudaji_killed",
-      "sections": [
-        "usage",
-        "dropBy"
       ]
     },
     {
@@ -78,34 +145,9 @@
       ]
     },
     {
-      "id": "tu_tien:wall_luoshen",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
       "id": "tu_tien:wall_luoshen_item",
       "sections": [
         "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_ayhx",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_aymg",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_baihu",
-      "sections": [
-        "usage",
-        "dropBy"
       ]
     },
     {
@@ -115,26 +157,7 @@
       ]
     },
     {
-      "id": "tu_tien:xd_beefalo",
-      "sections": [
-        "usage",
-        "dropBy"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_bjms",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
       "id": "tu_tien:xd_bjms_builder",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_bjms_kl",
       "sections": [
         "usage"
       ]
@@ -149,108 +172,6 @@
       "id": "tu_tien:xd_choujiangji",
       "sections": [
         "dropBy"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_danyao_bg",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_danyao_dt",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_danyao_hj",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_danyao_hl",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_danyao_hs",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_danyao_hy",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_danyao_jq",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_danyao_jy",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_danyao_kx",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_danyao_ns",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_danyao_rl",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_danyao_sm",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_danyao_xs",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_danyao_yx",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_danyao_yz",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_danyao_zj",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_deerclops_ziyun",
-      "sections": [
-        "usage"
       ]
     },
     {
@@ -272,312 +193,6 @@
       ]
     },
     {
-      "id": "tu_tien:xd_dy_cyfxd_1",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_cyfxd_2",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_cyfxd_3",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_cyfxd_4",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_cyfxd_5",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_dmhsd_1",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_dmhsd_2",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_dmhsd_3",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_dmhsd_4",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_dmhsd_5",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_hsphd_1",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_hsphd_2",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_hsphd_3",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_hsphd_4",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_hsphd_5",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_lmsqd_1",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_lmsqd_2",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_lmsqd_3",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_lmsqd_4",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_lmsqd_5",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_pshsd_1",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_pshsd_2",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_pshsd_3",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_pshsd_4",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_pshsd_5",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_qjqsd_1",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_qjqsd_2",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_qjqsd_3",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_qjqsd_4",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_qjqsd_5",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_qxdhd_1",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_qxdhd_2",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_qxdhd_3",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_qxdhd_4",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_qxdhd_5",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_tsfhd",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_xttyd_1",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_xttyd_2",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_xttyd_3",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_xttyd_4",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_xttyd_5",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_xynyd_1",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_xynyd_2",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_xynyd_3",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_xynyd_4",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_xynyd_5",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_yfsxd_1",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_yfsxd_2",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_yfsxd_3",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_yfsxd_4",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_dy_yfsxd_5",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
       "id": "tu_tien:xd_fabao",
       "sections": [
         "usage"
@@ -585,30 +200,6 @@
     },
     {
       "id": "tu_tien:xd_fanhunshuvine",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_fb_hound",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_fb_mutateddeerclops",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_fb_mutatedhound",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_fb_mutatedwarg",
       "sections": [
         "usage"
       ]
@@ -688,14 +279,7 @@
     {
       "id": "tu_tien:xd_futu",
       "sections": [
-        "usage",
         "dropBy"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_futu_small",
-      "sections": [
-        "usage"
       ]
     },
     {
@@ -724,12 +308,6 @@
       ]
     },
     {
-      "id": "tu_tien:xd_ht",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
       "id": "tu_tien:xd_htz_noweapon",
       "sections": [
         "usage",
@@ -737,25 +315,7 @@
       ]
     },
     {
-      "id": "tu_tien:xd_htz_sjc",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_htz_txm",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
       "id": "tu_tien:xd_htz_xtd",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_htz_xyzz",
       "sections": [
         "usage"
       ]
@@ -780,21 +340,8 @@
       ]
     },
     {
-      "id": "tu_tien:xd_jcbird",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_jcbird_spitter",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
       "id": "tu_tien:xd_jfsn",
       "sections": [
-        "usage",
         "dropBy"
       ]
     },
@@ -803,12 +350,6 @@
       "sections": [
         "usage",
         "dropBy"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_jingwei_blowdart_shadow",
-      "sections": [
-        "usage"
       ]
     },
     {
@@ -844,7 +385,6 @@
     {
       "id": "tu_tien:xd_koalefant",
       "sections": [
-        "usage",
         "dropBy"
       ]
     },
@@ -857,7 +397,6 @@
     {
       "id": "tu_tien:xd_lightninggoat",
       "sections": [
-        "usage",
         "dropBy"
       ]
     },
@@ -958,12 +497,6 @@
       ]
     },
     {
-      "id": "tu_tien:xd_luoshenzhu",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
       "id": "tu_tien:xd_luoshenzhu_vine",
       "sections": [
         "usage"
@@ -1052,14 +585,7 @@
     {
       "id": "tu_tien:xd_qlch",
       "sections": [
-        "usage",
         "dropBy"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_qlch_fs",
-      "sections": [
-        "usage"
       ]
     },
     {
@@ -1071,7 +597,6 @@
     {
       "id": "tu_tien:xd_qxdx",
       "sections": [
-        "usage",
         "dropBy"
       ]
     },
@@ -1104,30 +629,6 @@
     },
     {
       "id": "tu_tien:xd_rock_basalt",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_sandblock",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_shadowspider_dropper",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_shadowspider_moon",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_shadowspiderqueen",
       "sections": [
         "usage"
       ]
@@ -1185,18 +686,6 @@
       ]
     },
     {
-      "id": "tu_tien:xd_sj_pysk",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_sj_rocky",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
       "id": "tu_tien:xd_sj_tlsq",
       "sections": [
         "usage"
@@ -1209,35 +698,15 @@
       ]
     },
     {
-      "id": "tu_tien:xd_soul_wolf",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
       "id": "tu_tien:xd_spider",
       "sections": [
-        "usage",
         "dropBy"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_spiderden",
-      "sections": [
-        "usage"
       ]
     },
     {
       "id": "tu_tien:xd_spiderqueen",
       "sections": [
-        "usage",
         "dropBy"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_stalke_fuben",
-      "sections": [
-        "usage"
       ]
     },
     {
@@ -1372,12 +841,6 @@
       ]
     },
     {
-      "id": "tu_tien:xd_wmz_db",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
       "id": "tu_tien:xd_wmz_tnz_chgz",
       "sections": [
         "usage"
@@ -1402,12 +865,6 @@
       ]
     },
     {
-      "id": "tu_tien:xd_wmz_zhf_soul",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
       "id": "tu_tien:xd_wukong",
       "sections": [
         "usage",
@@ -1421,21 +878,8 @@
       ]
     },
     {
-      "id": "tu_tien:xd_wukong_phantom",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_wukong_shadow",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
       "id": "tu_tien:xd_xianhe",
       "sections": [
-        "usage",
         "dropBy"
       ]
     },
@@ -1448,7 +892,6 @@
     {
       "id": "tu_tien:xd_xinmo",
       "sections": [
-        "usage",
         "dropBy"
       ]
     },
@@ -1491,18 +934,6 @@
       ]
     },
     {
-      "id": "tu_tien:xd_zhouwang",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_zhouwang_shadow",
-      "sections": [
-        "usage"
-      ]
-    },
-    {
       "id": "tu_tien:xd_ziyun_house",
       "sections": [
         "usage"
@@ -1511,14 +942,7 @@
     {
       "id": "tu_tien:xd_ziyunboss",
       "sections": [
-        "usage",
         "dropBy"
-      ]
-    },
-    {
-      "id": "tu_tien:xd_ziyunboss_channeler",
-      "sections": [
-        "usage"
       ]
     },
     {
@@ -1591,36 +1015,6 @@
     {
       "category": "world_spawn",
       "id": "tu_tien:fence_luoshen_item",
-      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
-    },
-    {
-      "category": "buff_debuff",
-      "id": "tu_tien:sudaji_killed",
-      "reason": "prefab inspection failed before buff/debuff fields could be read"
-    },
-    {
-      "category": "cooldown_recharge",
-      "id": "tu_tien:sudaji_killed",
-      "reason": "prefab inspection failed before cooldown fields could be read"
-    },
-    {
-      "category": "drop",
-      "id": "tu_tien:sudaji_killed",
-      "reason": "prefab inspection failed before lootdropper fields could be read"
-    },
-    {
-      "category": "harvest",
-      "id": "tu_tien:sudaji_killed",
-      "reason": "prefab inspection failed before pickable fields could be read"
-    },
-    {
-      "category": "trade_shop",
-      "id": "tu_tien:sudaji_killed",
-      "reason": "prefab inspection failed before trader fields could be read"
-    },
-    {
-      "category": "world_spawn",
-      "id": "tu_tien:sudaji_killed",
       "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
     },
     {
@@ -1766,11 +1160,6 @@
     {
       "category": "world_spawn",
       "id": "tu_tien:xd_crc",
-      "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
-    },
-    {
-      "category": "world_spawn",
-      "id": "tu_tien:xd_cwkj_container",
       "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
     },
     {
@@ -4609,5 +3998,2670 @@
       "reason": "no safe reverse world-spawn registry exists after prefab registration; probe does not generate or mutate a world"
     }
   ],
-  "unsupportedRecords": []
+  "unsupportedRecords": [
+    {
+      "id": "tu_tien:fence_gate_luoshen",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 0.0
+    },
+    {
+      "id": "tu_tien:fence_gate_luoshen",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:fence_gate_luoshen",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:fence_gate_luoshen",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 1.0
+    },
+    {
+      "id": "tu_tien:fence_luoshen",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 0.0
+    },
+    {
+      "id": "tu_tien:fence_luoshen",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:fence_luoshen",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:fence_luoshen",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 1.0
+    },
+    {
+      "id": "tu_tien:wall_luoshen",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 0.0
+    },
+    {
+      "id": "tu_tien:wall_luoshen",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:wall_luoshen",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:wall_luoshen",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 1600.0
+    },
+    {
+      "id": "tu_tien:xd_baihu",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 87.5
+    },
+    {
+      "id": "tu_tien:xd_baihu",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_baihu",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 5.0
+    },
+    {
+      "id": "tu_tien:xd_baihu",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 70200.0
+    },
+    {
+      "id": "tu_tien:xd_baihu",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 9.0
+    },
+    {
+      "id": "tu_tien:xd_baihu",
+      "key": "sanity_aura",
+      "kind": "stat",
+      "value": -6.666666666666667
+    },
+    {
+      "id": "tu_tien:xd_baihu",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "attack_pounce, attack_pounce_pre, attack_pounce_pst, chongci, chuiji, gohome, lunge, run_start, run_stop, skill_3, skill_taunt, tele, walk_start, walk_stop"
+    },
+    {
+      "id": "tu_tien:xd_baihu",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 2.7
+    },
+    {
+      "id": "tu_tien:xd_bearger",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 125.0
+    },
+    {
+      "id": "tu_tien:xd_bearger",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 2.0
+    },
+    {
+      "id": "tu_tien:xd_bearger",
+      "key": "freeze_resistance",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_bearger",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 6.0
+    },
+    {
+      "id": "tu_tien:xd_bearger",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 6500.0
+    },
+    {
+      "id": "tu_tien:xd_bearger",
+      "key": "planar_damage",
+      "kind": "stat",
+      "value": 30.0
+    },
+    {
+      "id": "tu_tien:xd_bearger",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 10.0
+    },
+    {
+      "id": "tu_tien:xd_bearger",
+      "key": "sleep_resistance",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_bearger",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "attack_action, bi, butt_face_hit, corpse, corpse_idle, gohome, init, pound, quad, run_start, run_stop, sink, sleeping, stagger_hit, stagger_idle, stagger_pre, stagger_pre_timeline_from_frame3, stagger_pst, standing_hit, walk_start, walk_stop, washed_ashore"
+    },
+    {
+      "id": "tu_tien:xd_bearger",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_beefalo",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 34.0
+    },
+    {
+      "id": "tu_tien:xd_beefalo",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_beefalo",
+      "key": "freeze_resistance",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_beefalo",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_beefalo",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 1800.0
+    },
+    {
+      "id": "tu_tien:xd_beefalo",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 7.0
+    },
+    {
+      "id": "tu_tien:xd_beefalo",
+      "key": "sleep_resistance",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_beefalo",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "badfood, beg, bellow, flatulate, gohome, graze, graze_empty, idle_carrat, matingcall, meh, pleased, refuse, run_start, run_stop, shake, shaved, sleeping, tailswish, walk_start, walk_stop"
+    },
+    {
+      "id": "tu_tien:xd_beefalo",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 1.0
+    },
+    {
+      "id": "tu_tien:xd_bjms",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 186.0
+    },
+    {
+      "id": "tu_tien:xd_bjms",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 3.5
+    },
+    {
+      "id": "tu_tien:xd_bjms",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 5.0
+    },
+    {
+      "id": "tu_tien:xd_bjms",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 100.0
+    },
+    {
+      "id": "tu_tien:xd_bjms",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 8.0
+    },
+    {
+      "id": "tu_tien:xd_bjms",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "action, attack2, attack3, attack_special1, attack_special2, banner_loop, banner_pre, banner_pst, dash, run_start, run_stop, stun, stun_pst, taunt"
+    },
+    {
+      "id": "tu_tien:xd_bjms",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 8.0
+    },
+    {
+      "id": "tu_tien:xd_bjms_kl",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 309.0
+    },
+    {
+      "id": "tu_tien:xd_bjms_kl",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 0.4
+    },
+    {
+      "id": "tu_tien:xd_bjms_kl",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_bjms_kl",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 100.0
+    },
+    {
+      "id": "tu_tien:xd_bjms_kl",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 6.0
+    },
+    {
+      "id": "tu_tien:xd_bjms_kl",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "castspell, castspell_sg, do_pet_remove, emote, gravestone_rebirth, init, play_flute, pocketwatch_portal_land, quickcastspell, run_start, run_stop, sg_idle, superjump_start"
+    },
+    {
+      "id": "tu_tien:xd_bjms_kl",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_bjsj",
+      "key": "planar_damage",
+      "kind": "stat",
+      "value": 1.0
+    },
+    {
+      "id": "tu_tien:xd_choujiangji",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "prize_bad, prize_bad2, prize_good, prize_ok, prize_ok2, spinning"
+    },
+    {
+      "id": "tu_tien:xd_deerclops_ziyun",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 85.0
+    },
+    {
+      "id": "tu_tien:xd_deerclops_ziyun",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_deerclops_ziyun",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 14.0
+    },
+    {
+      "id": "tu_tien:xd_deerclops_ziyun",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 39000.0
+    },
+    {
+      "id": "tu_tien:xd_deerclops_ziyun",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 6.0
+    },
+    {
+      "id": "tu_tien:xd_deerclops_ziyun",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "corpse, corpse_idle, corpse_mutate, corpse_mutate_pre, icegrow, icegrow_pst, icelance, init, mutate_pst, walk_start, walk_stop"
+    },
+    {
+      "id": "tu_tien:xd_deerclops_ziyun",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_dragonfly",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 150.0
+    },
+    {
+      "id": "tu_tien:xd_dragonfly",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_dragonfly",
+      "key": "freeze_resistance",
+      "kind": "stat",
+      "value": 8.0
+    },
+    {
+      "id": "tu_tien:xd_dragonfly",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 6.0
+    },
+    {
+      "id": "tu_tien:xd_dragonfly",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 23500.0
+    },
+    {
+      "id": "tu_tien:xd_dragonfly",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 6.0
+    },
+    {
+      "id": "tu_tien:xd_dragonfly",
+      "key": "sleep_resistance",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_dragonfly",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "flyaway, pound, pound_post, pound_pre, sleeping, transform_fire, transform_normal, walk_start, walk_stop"
+    },
+    {
+      "id": "tu_tien:xd_dragonfly",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 5.0
+    },
+    {
+      "id": "tu_tien:xd_fb_hound",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 298.6
+    },
+    {
+      "id": "tu_tien:xd_fb_hound",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 2.0
+    },
+    {
+      "id": "tu_tien:xd_fb_hound",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 2.0
+    },
+    {
+      "id": "tu_tien:xd_fb_hound",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 1875.0
+    },
+    {
+      "id": "tu_tien:xd_fb_hound",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 10.0
+    },
+    {
+      "id": "tu_tien:xd_fb_hound",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "run_start, run_stop"
+    },
+    {
+      "id": "tu_tien:xd_fb_hound",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_fb_mutateddeerclops",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 1344.4
+    },
+    {
+      "id": "tu_tien:xd_fb_mutateddeerclops",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_fb_mutateddeerclops",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 13.0
+    },
+    {
+      "id": "tu_tien:xd_fb_mutateddeerclops",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 2650.0
+    },
+    {
+      "id": "tu_tien:xd_fb_mutateddeerclops",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 6.0
+    },
+    {
+      "id": "tu_tien:xd_fb_mutateddeerclops",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "corpse, corpse_idle, corpse_mutate, corpse_mutate_pre, icegrow, icegrow_pst, icelance, init, mutate_pst, walk_start, walk_stop"
+    },
+    {
+      "id": "tu_tien:xd_fb_mutateddeerclops",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_fb_mutatedhound",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 307.2
+    },
+    {
+      "id": "tu_tien:xd_fb_mutatedhound",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 2.0
+    },
+    {
+      "id": "tu_tien:xd_fb_mutatedhound",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_fb_mutatedhound",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 1725.0
+    },
+    {
+      "id": "tu_tien:xd_fb_mutatedhound",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 10.0
+    },
+    {
+      "id": "tu_tien:xd_fb_mutatedhound",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "run_start, run_stop"
+    },
+    {
+      "id": "tu_tien:xd_fb_mutatedhound",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_fb_mutatedwarg",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 240.0
+    },
+    {
+      "id": "tu_tien:xd_fb_mutatedwarg",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_fb_mutatedwarg",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_fb_mutatedwarg",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 2050.0
+    },
+    {
+      "id": "tu_tien:xd_fb_mutatedwarg",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 5.5
+    },
+    {
+      "id": "tu_tien:xd_fb_mutatedwarg",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "attack_icing, corpse, corpse_idle, corpse_mutate, corpse_mutate_pre, flamethrower_loop, flamethrower_pre, flamethrower_pst, gingerbread_intro, init, mutate_pst, run_start, run_stop, start"
+    },
+    {
+      "id": "tu_tien:xd_fb_mutatedwarg",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_fhs_desk",
+      "key": "sanity_aura",
+      "kind": "stat",
+      "value": 0.0
+    },
+    {
+      "id": "tu_tien:xd_flower_bh",
+      "key": "sanity_aura",
+      "kind": "stat",
+      "value": 0.20833333333333334
+    },
+    {
+      "id": "tu_tien:xd_flower_bmg",
+      "key": "sanity_aura",
+      "kind": "stat",
+      "value": 0.20833333333333334
+    },
+    {
+      "id": "tu_tien:xd_flower_ll",
+      "key": "sanity_aura",
+      "kind": "stat",
+      "value": 0.20833333333333334
+    },
+    {
+      "id": "tu_tien:xd_flower_md",
+      "key": "sanity_aura",
+      "kind": "stat",
+      "value": 0.20833333333333334
+    },
+    {
+      "id": "tu_tien:xd_flower_mlh",
+      "key": "sanity_aura",
+      "kind": "stat",
+      "value": 0.20833333333333334
+    },
+    {
+      "id": "tu_tien:xd_flower_pgy",
+      "key": "sanity_aura",
+      "kind": "stat",
+      "value": 0.20833333333333334
+    },
+    {
+      "id": "tu_tien:xd_flower_sfr",
+      "key": "sanity_aura",
+      "kind": "stat",
+      "value": 0.20833333333333334
+    },
+    {
+      "id": "tu_tien:xd_flower_yl",
+      "key": "sanity_aura",
+      "kind": "stat",
+      "value": 0.20833333333333334
+    },
+    {
+      "id": "tu_tien:xd_flower_zyh",
+      "key": "sanity_aura",
+      "kind": "stat",
+      "value": 0.20833333333333334
+    },
+    {
+      "id": "tu_tien:xd_futu",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 58.5
+    },
+    {
+      "id": "tu_tien:xd_futu",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_futu",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_futu",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 127500.0
+    },
+    {
+      "id": "tu_tien:xd_futu",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 1.9736842105263157
+    },
+    {
+      "id": "tu_tien:xd_futu",
+      "key": "sanity_aura",
+      "kind": "stat",
+      "value": -0.2
+    },
+    {
+      "id": "tu_tien:xd_futu",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "gohome, idle_tendril, parasite_revive, rocklick, shield, shield_end, shield_start, skill1, skill2, skill2_pst, skill3, skill4, skill5, taunt1, walk_start, walk_stop"
+    },
+    {
+      "id": "tu_tien:xd_futu",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 1.9736842105263157
+    },
+    {
+      "id": "tu_tien:xd_futu_small",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 65.0
+    },
+    {
+      "id": "tu_tien:xd_futu_small",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_futu_small",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_futu_small",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 500.0
+    },
+    {
+      "id": "tu_tien:xd_futu_small",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 1.5
+    },
+    {
+      "id": "tu_tien:xd_futu_small",
+      "key": "sanity_aura",
+      "kind": "stat",
+      "value": -0.2
+    },
+    {
+      "id": "tu_tien:xd_futu_small",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "gohome, idle_tendril, parasite_revive, rocklick, shield, shield_end, shield_start, skill1, skill2, skill2_pst, skill3, skill4, skill5, taunt1, walk_start, walk_stop"
+    },
+    {
+      "id": "tu_tien:xd_futu_small",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 1.5
+    },
+    {
+      "id": "tu_tien:xd_ht",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 360.0
+    },
+    {
+      "id": "tu_tien:xd_ht",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_ht",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_ht",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 100.0
+    },
+    {
+      "id": "tu_tien:xd_ht",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 8.0
+    },
+    {
+      "id": "tu_tien:xd_ht",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "appear, catch_equip, dance, eat, goaway, heavylifting_item_hat, heavylifting_start, heavylifting_stop, ht_attack, item_hat, item_in, item_out, land, lunge_loop, lunge_pre, quickeat, run_start, run_stop, skill1, skill2, skill3, spawn, superjump, superjump_pst, superjump_start, threeattack, tiaopi, tool_slip, toolbroke, txm_lunge_loop, txm_lunge_pre, txm_lunge_pst, txm_spell, xd_wukong_skill"
+    },
+    {
+      "id": "tu_tien:xd_ht",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 8.0
+    },
+    {
+      "id": "tu_tien:xd_htz_sjc",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 37.0
+    },
+    {
+      "id": "tu_tien:xd_htz_sjc",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_htz_sjc",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_htz_sjc",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 100.0
+    },
+    {
+      "id": "tu_tien:xd_htz_sjc",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 6.0
+    },
+    {
+      "id": "tu_tien:xd_htz_sjc",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "walk_start, walk_stop"
+    },
+    {
+      "id": "tu_tien:xd_htz_sjc",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_htz_tlz",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 6.0
+    },
+    {
+      "id": "tu_tien:xd_htz_tlz",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_htz_txm",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 7.6
+    },
+    {
+      "id": "tu_tien:xd_htz_txm",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 0.4
+    },
+    {
+      "id": "tu_tien:xd_htz_txm",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_htz_txm",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 100.0
+    },
+    {
+      "id": "tu_tien:xd_htz_txm",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 6.0
+    },
+    {
+      "id": "tu_tien:xd_htz_txm",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "appear, catch_equip, dance, eat, goaway, heavylifting_item_hat, heavylifting_start, heavylifting_stop, ht_attack, item_hat, item_in, item_out, land, lunge_loop, lunge_pre, quickeat, run_start, run_stop, skill1, skill2, skill3, spawn, superjump, superjump_pst, superjump_start, threeattack, tiaopi, tool_slip, toolbroke, txm_lunge_loop, txm_lunge_pre, txm_lunge_pst, txm_spell, xd_wukong_skill"
+    },
+    {
+      "id": "tu_tien:xd_htz_txm",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_htz_xyzz",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 62.0
+    },
+    {
+      "id": "tu_tien:xd_htz_xyzz",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_htz_xyzz",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 5.0
+    },
+    {
+      "id": "tu_tien:xd_htz_xyzz",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 100.0
+    },
+    {
+      "id": "tu_tien:xd_htz_xyzz",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 6.0
+    },
+    {
+      "id": "tu_tien:xd_htz_xyzz",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "birth, gogogo, poop_loop, poop_pre, poop_pst, skill1, taunt, walk_start, walk_stop"
+    },
+    {
+      "id": "tu_tien:xd_htz_xyzz",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_jcbird",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 40.0
+    },
+    {
+      "id": "tu_tien:xd_jcbird",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_jcbird",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_jcbird",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 6600.0
+    },
+    {
+      "id": "tu_tien:xd_jcbird",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_jcbird",
+      "key": "sanity_aura",
+      "kind": "stat",
+      "value": -0.4166666666666667
+    },
+    {
+      "id": "tu_tien:xd_jcbird",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "emerge, glide, idle_taunt, land, respawn, shoot, stunned, trapped, walk_stop, walk_wait, walk_wait_caw, xiumian"
+    },
+    {
+      "id": "tu_tien:xd_jcbird",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_jcbird_spitter",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 40.0
+    },
+    {
+      "id": "tu_tien:xd_jcbird_spitter",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 6.0
+    },
+    {
+      "id": "tu_tien:xd_jcbird_spitter",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 12.0
+    },
+    {
+      "id": "tu_tien:xd_jcbird_spitter",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 2000.0
+    },
+    {
+      "id": "tu_tien:xd_jcbird_spitter",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_jcbird_spitter",
+      "key": "sanity_aura",
+      "kind": "stat",
+      "value": -0.4166666666666667
+    },
+    {
+      "id": "tu_tien:xd_jcbird_spitter",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "emerge, glide, idle_taunt, land, respawn, shoot, stunned, trapped, walk_stop, walk_wait, walk_wait_caw, xiumian"
+    },
+    {
+      "id": "tu_tien:xd_jcbird_spitter",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_jfsn",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 75.0
+    },
+    {
+      "id": "tu_tien:xd_jfsn",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_jfsn",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 5.0
+    },
+    {
+      "id": "tu_tien:xd_jfsn",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 60000.0
+    },
+    {
+      "id": "tu_tien:xd_jfsn",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 6.0
+    },
+    {
+      "id": "tu_tien:xd_jfsn",
+      "key": "sleep_resistance",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_jfsn",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "death_ocean, gohome, shengtian, sleeping, swoop_loop, swoop_pre, swoop_pst, taunt, walk_start, walk_stop, yushi, zhaohuan"
+    },
+    {
+      "id": "tu_tien:xd_jfsn",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_jingwei_blowdart_shadow",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 107.0
+    },
+    {
+      "id": "tu_tien:xd_jingwei_blowdart_shadow",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 2.0
+    },
+    {
+      "id": "tu_tien:xd_jingwei_blowdart_shadow",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 3.2
+    },
+    {
+      "id": "tu_tien:xd_jingwei_blowdart_shadow",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 400.0
+    },
+    {
+      "id": "tu_tien:xd_jingwei_blowdart_shadow",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 6.0
+    },
+    {
+      "id": "tu_tien:xd_jingwei_blowdart_shadow",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "fall, hop, walk_start, walk_stop"
+    },
+    {
+      "id": "tu_tien:xd_jingwei_blowdart_shadow",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 6.0
+    },
+    {
+      "id": "tu_tien:xd_jingwei_fenice1",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 107.0
+    },
+    {
+      "id": "tu_tien:xd_jingwei_fenice1",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 2.0
+    },
+    {
+      "id": "tu_tien:xd_jingwei_fenice1",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 3.2
+    },
+    {
+      "id": "tu_tien:xd_jingwei_fenice1",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 100.0
+    },
+    {
+      "id": "tu_tien:xd_jingwei_fenice1",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 6.0
+    },
+    {
+      "id": "tu_tien:xd_jingwei_fenice1",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "fall, hop, walk_start, walk_stop"
+    },
+    {
+      "id": "tu_tien:xd_jingwei_fenice1",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 6.0
+    },
+    {
+      "id": "tu_tien:xd_jingwei_fenice2",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 107.0
+    },
+    {
+      "id": "tu_tien:xd_jingwei_fenice2",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 2.0
+    },
+    {
+      "id": "tu_tien:xd_jingwei_fenice2",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 3.2
+    },
+    {
+      "id": "tu_tien:xd_jingwei_fenice2",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 100.0
+    },
+    {
+      "id": "tu_tien:xd_jingwei_fenice2",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 6.0
+    },
+    {
+      "id": "tu_tien:xd_jingwei_fenice2",
+      "key": "sanity_aura",
+      "kind": "stat",
+      "value": 0.10416666666666667
+    },
+    {
+      "id": "tu_tien:xd_jingwei_fenice2",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "fall, hop, walk_start, walk_stop"
+    },
+    {
+      "id": "tu_tien:xd_jingwei_fenice2",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 6.0
+    },
+    {
+      "id": "tu_tien:xd_jingwei_fenice3",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 45.2
+    },
+    {
+      "id": "tu_tien:xd_jingwei_fenice3",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 0.4
+    },
+    {
+      "id": "tu_tien:xd_jingwei_fenice3",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_jingwei_fenice3",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 100.0
+    },
+    {
+      "id": "tu_tien:xd_jingwei_fenice3",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 6.0
+    },
+    {
+      "id": "tu_tien:xd_jingwei_fenice3",
+      "key": "sanity_aura",
+      "kind": "stat",
+      "value": 0.10416666666666667
+    },
+    {
+      "id": "tu_tien:xd_jingwei_fenice3",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "chop, chop_start, cooking, dance, item_out, item_out_chop, item_out_mine, mine, mine_recoil, mine_start, run_start, run_stop"
+    },
+    {
+      "id": "tu_tien:xd_jingwei_fenice3",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_jingwei_fenice4",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 365.4
+    },
+    {
+      "id": "tu_tien:xd_jingwei_fenice4",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_jingwei_fenice4",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 5.0
+    },
+    {
+      "id": "tu_tien:xd_jingwei_fenice4",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 100.0
+    },
+    {
+      "id": "tu_tien:xd_jingwei_fenice4",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 6.0
+    },
+    {
+      "id": "tu_tien:xd_jingwei_fenice4",
+      "key": "sanity_aura",
+      "kind": "stat",
+      "value": 0.10416666666666667
+    },
+    {
+      "id": "tu_tien:xd_jingwei_fenice4",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "death_ocean, doskill, walk_start, walk_stop"
+    },
+    {
+      "id": "tu_tien:xd_jingwei_fenice4",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 6.0
+    },
+    {
+      "id": "tu_tien:xd_koalefant",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 50.0
+    },
+    {
+      "id": "tu_tien:xd_koalefant",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_koalefant",
+      "key": "freeze_resistance",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_koalefant",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_koalefant",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 1800.0
+    },
+    {
+      "id": "tu_tien:xd_koalefant",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 7.0
+    },
+    {
+      "id": "tu_tien:xd_koalefant",
+      "key": "sleep_resistance",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_koalefant",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "alert, bellow, gohome, graze, run_start, run_stop, shake, sleeping, walk_start, walk_stop"
+    },
+    {
+      "id": "tu_tien:xd_koalefant",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 1.5
+    },
+    {
+      "id": "tu_tien:xd_lightninggoat",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 25.0
+    },
+    {
+      "id": "tu_tien:xd_lightninggoat",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 2.0
+    },
+    {
+      "id": "tu_tien:xd_lightninggoat",
+      "key": "freeze_resistance",
+      "kind": "stat",
+      "value": 2.0
+    },
+    {
+      "id": "tu_tien:xd_lightninggoat",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_lightninggoat",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 1400.0
+    },
+    {
+      "id": "tu_tien:xd_lightninggoat",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 6.0
+    },
+    {
+      "id": "tu_tien:xd_lightninggoat",
+      "key": "sleep_resistance",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_lightninggoat",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "bleet, discharge, gohome, shocked, sleeping, taunt, walk_start, walk_stop"
+    },
+    {
+      "id": "tu_tien:xd_lightninggoat",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_luoshen_hua",
+      "key": "sanity_aura",
+      "kind": "stat",
+      "value": 0.0
+    },
+    {
+      "id": "tu_tien:xd_luoshen_jiangren",
+      "key": "planar_damage",
+      "kind": "stat",
+      "value": 200.0
+    },
+    {
+      "id": "tu_tien:xd_luoshenzhu",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 0.0
+    },
+    {
+      "id": "tu_tien:xd_luoshenzhu",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_luoshenzhu",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_luoshenzhu",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 1.0
+    },
+    {
+      "id": "tu_tien:xd_luoshenzhu_vine",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 1.0
+    },
+    {
+      "id": "tu_tien:xd_luoshenzhu_vine",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "emerge, nub_forward, nub_idle, nub_retract, nub_reverse, nub_spawn, retract"
+    },
+    {
+      "id": "tu_tien:xd_pog",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 40.0
+    },
+    {
+      "id": "tu_tien:xd_pog",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 2.0
+    },
+    {
+      "id": "tu_tien:xd_pog",
+      "key": "freeze_resistance",
+      "kind": "stat",
+      "value": 1.0
+    },
+    {
+      "id": "tu_tien:xd_pog",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_pog",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 800.0
+    },
+    {
+      "id": "tu_tien:xd_pog",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_pog",
+      "key": "sanity_aura",
+      "kind": "stat",
+      "value": 0.0
+    },
+    {
+      "id": "tu_tien:xd_pog",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "belly, cute, eat, eat_loop, gohome, pick, skill1, skill2, tailchase, tailchase_loop, tailchase_pst, walk_start, walk_stop"
+    },
+    {
+      "id": "tu_tien:xd_pog",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_qlch",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 60.0
+    },
+    {
+      "id": "tu_tien:xd_qlch",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_qlch",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_qlch",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 56000.0
+    },
+    {
+      "id": "tu_tien:xd_qlch",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 2.0
+    },
+    {
+      "id": "tu_tien:xd_qlch",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "magic_loop, magic_pre, magic_pst, sleeping, spell1_pre, spell1_pst, spell2_pre, spell2_pst, walk_start, walk_stop"
+    },
+    {
+      "id": "tu_tien:xd_qlch",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 2.0
+    },
+    {
+      "id": "tu_tien:xd_qlch_fs",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 100.0
+    },
+    {
+      "id": "tu_tien:xd_qlch_fs",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 5.0
+    },
+    {
+      "id": "tu_tien:xd_qlch_fs",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_qlch_fs",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 27000.0
+    },
+    {
+      "id": "tu_tien:xd_qlch_fs",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 2.0
+    },
+    {
+      "id": "tu_tien:xd_qlch_fs",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "magic_loop, magic_pre, magic_pst, sleeping, spell1_pre, spell1_pst, spell2_pre, spell2_pst, walk_start, walk_stop"
+    },
+    {
+      "id": "tu_tien:xd_qlch_fs",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 2.0
+    },
+    {
+      "id": "tu_tien:xd_qxdx",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 100.0
+    },
+    {
+      "id": "tu_tien:xd_qxdx",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 0.4
+    },
+    {
+      "id": "tu_tien:xd_qxdx",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 3.5
+    },
+    {
+      "id": "tu_tien:xd_qxdx",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 205000.0
+    },
+    {
+      "id": "tu_tien:xd_qxdx",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 8.5
+    },
+    {
+      "id": "tu_tien:xd_qxdx",
+      "key": "sanity_aura",
+      "kind": "stat",
+      "value": -1.3333333333333333
+    },
+    {
+      "id": "tu_tien:xd_qxdx",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "eat, fly_down, fly_down_false, goaway, idle_fly, idle_fly_spell1, idle_fly_spell2, resurrect, run_start, run_stop, skill1, spike, superjump, superjump_pst, superjump_start, talk, transform"
+    },
+    {
+      "id": "tu_tien:xd_qxdx",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_qxdx_npc",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 6.0
+    },
+    {
+      "id": "tu_tien:xd_qxdx_npc",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_sandblock",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 20.0
+    },
+    {
+      "id": "tu_tien:xd_sandblock",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_sandblock",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_sandblock",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 3200.0
+    },
+    {
+      "id": "tu_tien:xd_shadowspider_dropper",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 70.0
+    },
+    {
+      "id": "tu_tien:xd_shadowspider_dropper",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_shadowspider_dropper",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_shadowspider_dropper",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 100.0
+    },
+    {
+      "id": "tu_tien:xd_shadowspider_dropper",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 5.0
+    },
+    {
+      "id": "tu_tien:xd_shadowspider_dropper",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "dropper_enter, gogogo, hit_stunlock, investigate, moving, mutate, mutate_pst, premoving, shield, shield_end, spike_attack, spike_attack_pst, spitter_attack, taunt, warrior_attack"
+    },
+    {
+      "id": "tu_tien:xd_shadowspider_dropper",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_shadowspider_moon",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 56.0
+    },
+    {
+      "id": "tu_tien:xd_shadowspider_moon",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_shadowspider_moon",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_shadowspider_moon",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 100.0
+    },
+    {
+      "id": "tu_tien:xd_shadowspider_moon",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 5.0
+    },
+    {
+      "id": "tu_tien:xd_shadowspider_moon",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "dropper_enter, gogogo, hit_stunlock, investigate, moving, mutate, mutate_pst, premoving, shield, shield_end, spike_attack, spike_attack_pst, spitter_attack, taunt, warrior_attack"
+    },
+    {
+      "id": "tu_tien:xd_shadowspider_moon",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_shadowspiderqueen",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 168.0
+    },
+    {
+      "id": "tu_tien:xd_shadowspiderqueen",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_shadowspiderqueen",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 5.0
+    },
+    {
+      "id": "tu_tien:xd_shadowspiderqueen",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 100.0
+    },
+    {
+      "id": "tu_tien:xd_shadowspiderqueen",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 6.0
+    },
+    {
+      "id": "tu_tien:xd_shadowspiderqueen",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "birth, gogogo, poop_loop, poop_pre, poop_pst, skill1, taunt, walk_start, walk_stop"
+    },
+    {
+      "id": "tu_tien:xd_shadowspiderqueen",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_sj_by",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 6.0
+    },
+    {
+      "id": "tu_tien:xd_sj_by",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "book2, chop, chop_start, dance, dig, dig_start, doshortaction, give, mine, mine_start, run_start, run_stop, skill, store"
+    },
+    {
+      "id": "tu_tien:xd_sj_by",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_sj_cy",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 0.0
+    },
+    {
+      "id": "tu_tien:xd_sj_cy",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_sj_cy",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_sj_cy",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 100.0
+    },
+    {
+      "id": "tu_tien:xd_sj_cy",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 6.0
+    },
+    {
+      "id": "tu_tien:xd_sj_cy",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "chop, chop_start, dance, dig, dig_start, doshortaction, mine, mine_start, run_start, run_stop"
+    },
+    {
+      "id": "tu_tien:xd_sj_cy",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_sj_pysk",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 225.0
+    },
+    {
+      "id": "tu_tien:xd_sj_pysk",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_sj_pysk",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 4.5
+    },
+    {
+      "id": "tu_tien:xd_sj_pysk",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 100.0
+    },
+    {
+      "id": "tu_tien:xd_sj_pysk",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 6.0
+    },
+    {
+      "id": "tu_tien:xd_sj_pysk",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "eat, idle_tendril, parasite_revive, rocklick, shield, shield_end, shield_start, walk_start, walk_stop"
+    },
+    {
+      "id": "tu_tien:xd_sj_pysk",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_sj_rocky",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 147.0
+    },
+    {
+      "id": "tu_tien:xd_sj_rocky",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_sj_rocky",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_sj_rocky",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 100.0
+    },
+    {
+      "id": "tu_tien:xd_sj_rocky",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 5.0
+    },
+    {
+      "id": "tu_tien:xd_sj_rocky",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "eat, idle_tendril, parasite_revive, rocklick, shield, shield_end, shield_start, walk_start, walk_stop"
+    },
+    {
+      "id": "tu_tien:xd_sj_rocky",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_soul_wolf",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 100.0
+    },
+    {
+      "id": "tu_tien:xd_soul_wolf",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_soul_wolf",
+      "key": "freeze_resistance",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_soul_wolf",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_soul_wolf",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 550.0
+    },
+    {
+      "id": "tu_tien:xd_soul_wolf",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 13.0
+    },
+    {
+      "id": "tu_tien:xd_soul_wolf",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "despawn, ipecacpoop, run_start, run_stop, sink, walk_start, walk_stop, washed_ashore"
+    },
+    {
+      "id": "tu_tien:xd_soul_wolf",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 13.0
+    },
+    {
+      "id": "tu_tien:xd_spider",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 35.0
+    },
+    {
+      "id": "tu_tien:xd_spider",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_spider",
+      "key": "freeze_resistance",
+      "kind": "stat",
+      "value": 2.0
+    },
+    {
+      "id": "tu_tien:xd_spider",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_spider",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 800.0
+    },
+    {
+      "id": "tu_tien:xd_spider",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 6.5
+    },
+    {
+      "id": "tu_tien:xd_spider",
+      "key": "sanity_aura",
+      "kind": "stat",
+      "value": -1.0
+    },
+    {
+      "id": "tu_tien:xd_spider",
+      "key": "sleep_resistance",
+      "kind": "stat",
+      "value": 2.0
+    },
+    {
+      "id": "tu_tien:xd_spider",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "abyss_drop, abyss_fall, born, dropper_enter, eat, eat_loop, hit_stunlock, hop_cancelhop, hop_loop, hop_pre, hop_pst, hop_pst_complete, investigate, moving, premoving, shield, shield_end, sink, skill1, skill2, sleeping, taunt, washed_ashore"
+    },
+    {
+      "id": "tu_tien:xd_spider",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 5.0
+    },
+    {
+      "id": "tu_tien:xd_spiderden",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 0.0
+    },
+    {
+      "id": "tu_tien:xd_spiderden",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_spiderden",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_spiderden",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 2000.0
+    },
+    {
+      "id": "tu_tien:xd_spiderqueen",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 75.0
+    },
+    {
+      "id": "tu_tien:xd_spiderqueen",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_spiderqueen",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 5.0
+    },
+    {
+      "id": "tu_tien:xd_spiderqueen",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 88500.0
+    },
+    {
+      "id": "tu_tien:xd_spiderqueen",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 6.0
+    },
+    {
+      "id": "tu_tien:xd_spiderqueen",
+      "key": "sanity_aura",
+      "kind": "stat",
+      "value": 0.0
+    },
+    {
+      "id": "tu_tien:xd_spiderqueen",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "birth, gohome, makenest, poop_loop, poop_pre, poop_pst, skill1, skill2, skill3, skill3attack, taunt, walk_start, walk_stop"
+    },
+    {
+      "id": "tu_tien:xd_spiderqueen",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 1.75
+    },
+    {
+      "id": "tu_tien:xd_stalke_fuben",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 150.0
+    },
+    {
+      "id": "tu_tien:xd_stalke_fuben",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_stalke_fuben",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 5.0
+    },
+    {
+      "id": "tu_tien:xd_stalke_fuben",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 64000.0
+    },
+    {
+      "id": "tu_tien:xd_stalke_fuben",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_stalke_fuben",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "death2, resurrect, snare, spikes, walk_start, walk_stop"
+    },
+    {
+      "id": "tu_tien:xd_stalke_fuben",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_swhs",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 100.0
+    },
+    {
+      "id": "tu_tien:xd_swhs",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 0.4
+    },
+    {
+      "id": "tu_tien:xd_swhs",
+      "key": "freeze_resistance",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_swhs",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_swhs",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 450.0
+    },
+    {
+      "id": "tu_tien:xd_swhs",
+      "key": "planar_damage",
+      "kind": "stat",
+      "value": 1.0
+    },
+    {
+      "id": "tu_tien:xd_swhs",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 6.0
+    },
+    {
+      "id": "tu_tien:xd_swhs",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "appear, catch_equip, dance, eat, goaway, heavylifting_item_hat, heavylifting_start, heavylifting_stop, ht_attack, item_hat, item_in, item_out, land, lunge_loop, lunge_pre, quickeat, run_start, run_stop, skill1, skill2, skill3, spawn, superjump, superjump_pst, superjump_start, threeattack, tiaopi, tool_slip, toolbroke, txm_lunge_loop, txm_lunge_pre, txm_lunge_pst, txm_spell, xd_wukong_skill"
+    },
+    {
+      "id": "tu_tien:xd_swhs",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_wmz_db",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 20.0
+    },
+    {
+      "id": "tu_tien:xd_wmz_db",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 0.4
+    },
+    {
+      "id": "tu_tien:xd_wmz_db",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_wmz_db",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 500.0
+    },
+    {
+      "id": "tu_tien:xd_wmz_db",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 6.0
+    },
+    {
+      "id": "tu_tien:xd_wmz_db",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "appear, catch_equip, dance, eat, goaway, heavylifting_item_hat, heavylifting_start, heavylifting_stop, ht_attack, item_hat, item_in, item_out, land, lunge_loop, lunge_pre, quickeat, run_start, run_stop, skill1, skill2, skill3, spawn, superjump, superjump_pst, superjump_start, threeattack, tiaopi, tool_slip, toolbroke, txm_lunge_loop, txm_lunge_pre, txm_lunge_pst, txm_spell, xd_wukong_skill"
+    },
+    {
+      "id": "tu_tien:xd_wmz_db",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_wmz_zhf_soul",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 20.0
+    },
+    {
+      "id": "tu_tien:xd_wmz_zhf_soul",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 2.0
+    },
+    {
+      "id": "tu_tien:xd_wmz_zhf_soul",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 22.0
+    },
+    {
+      "id": "tu_tien:xd_wmz_zhf_soul",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 100.0
+    },
+    {
+      "id": "tu_tien:xd_wmz_zhf_soul",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 6.0
+    },
+    {
+      "id": "tu_tien:xd_wmz_zhf_soul",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "run_start, run_stop, spawn, walk_start, walk_stop"
+    },
+    {
+      "id": "tu_tien:xd_wmz_zhf_soul",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 6.0
+    },
+    {
+      "id": "tu_tien:xd_ws",
+      "key": "planar_damage",
+      "kind": "stat",
+      "value": 1.0
+    },
+    {
+      "id": "tu_tien:xd_wukong_phantom",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 100.0
+    },
+    {
+      "id": "tu_tien:xd_wukong_phantom",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 0.4
+    },
+    {
+      "id": "tu_tien:xd_wukong_phantom",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_wukong_phantom",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 250.0
+    },
+    {
+      "id": "tu_tien:xd_wukong_phantom",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 6.0
+    },
+    {
+      "id": "tu_tien:xd_wukong_phantom",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "appear, catch_equip, dance, eat, goaway, heavylifting_item_hat, heavylifting_start, heavylifting_stop, ht_attack, item_hat, item_in, item_out, land, lunge_loop, lunge_pre, quickeat, run_start, run_stop, skill1, skill2, skill3, spawn, superjump, superjump_pst, superjump_start, threeattack, tiaopi, tool_slip, toolbroke, txm_lunge_loop, txm_lunge_pre, txm_lunge_pst, txm_spell, xd_wukong_skill"
+    },
+    {
+      "id": "tu_tien:xd_wukong_phantom",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_wukong_shadow",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 39.2
+    },
+    {
+      "id": "tu_tien:xd_wukong_shadow",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 0.4
+    },
+    {
+      "id": "tu_tien:xd_wukong_shadow",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_wukong_shadow",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 500.0
+    },
+    {
+      "id": "tu_tien:xd_wukong_shadow",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 6.0
+    },
+    {
+      "id": "tu_tien:xd_wukong_shadow",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "appear, catch_equip, dance, eat, goaway, heavylifting_item_hat, heavylifting_start, heavylifting_stop, ht_attack, item_hat, item_in, item_out, land, lunge_loop, lunge_pre, quickeat, run_start, run_stop, skill1, skill2, skill3, spawn, superjump, superjump_pst, superjump_start, threeattack, tiaopi, tool_slip, toolbroke, txm_lunge_loop, txm_lunge_pre, txm_lunge_pst, txm_spell, xd_wukong_skill"
+    },
+    {
+      "id": "tu_tien:xd_wukong_shadow",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_xianhe",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 0.0
+    },
+    {
+      "id": "tu_tien:xd_xianhe",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_xianhe",
+      "key": "freeze_resistance",
+      "kind": "stat",
+      "value": 2.0
+    },
+    {
+      "id": "tu_tien:xd_xianhe",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_xianhe",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 200.0
+    },
+    {
+      "id": "tu_tien:xd_xianhe",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 8.0
+    },
+    {
+      "id": "tu_tien:xd_xianhe",
+      "key": "sleep_resistance",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_xianhe",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "caw, distress, distress_pre, eat, fall, flyaway, glide, hop, kill, sleeping, stunned, taunt"
+    },
+    {
+      "id": "tu_tien:xd_xianhe",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_xinmo",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 60.0
+    },
+    {
+      "id": "tu_tien:xd_xinmo",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 2.0
+    },
+    {
+      "id": "tu_tien:xd_xinmo",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_xinmo",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 9750.0
+    },
+    {
+      "id": "tu_tien:xd_xinmo",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 6.0
+    },
+    {
+      "id": "tu_tien:xd_xinmo",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "appear, lunge_loop, lunge_pre, lunge_pst, run_start, run_stop, superjump, superjump_pst, superjump_start"
+    },
+    {
+      "id": "tu_tien:xd_xinmo",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_zhouwang",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 56.3
+    },
+    {
+      "id": "tu_tien:xd_zhouwang",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 0.4
+    },
+    {
+      "id": "tu_tien:xd_zhouwang",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_zhouwang",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 500.0
+    },
+    {
+      "id": "tu_tien:xd_zhouwang",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 6.0
+    },
+    {
+      "id": "tu_tien:xd_zhouwang",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "appear, catch_equip, dance, eat, goaway, heavylifting_item_hat, heavylifting_start, heavylifting_stop, ht_attack, item_hat, item_in, item_out, land, lunge_loop, lunge_pre, quickeat, run_start, run_stop, skill1, skill2, skill3, spawn, superjump, superjump_pst, superjump_start, threeattack, tiaopi, tool_slip, toolbroke, txm_lunge_loop, txm_lunge_pre, txm_lunge_pst, txm_spell, xd_wukong_skill"
+    },
+    {
+      "id": "tu_tien:xd_zhouwang",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_zhouwang_shadow",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 52.5
+    },
+    {
+      "id": "tu_tien:xd_zhouwang_shadow",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 0.4
+    },
+    {
+      "id": "tu_tien:xd_zhouwang_shadow",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_zhouwang_shadow",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 500.0
+    },
+    {
+      "id": "tu_tien:xd_zhouwang_shadow",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 6.0
+    },
+    {
+      "id": "tu_tien:xd_zhouwang_shadow",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "appear, catch_equip, dance, eat, goaway, heavylifting_item_hat, heavylifting_start, heavylifting_stop, ht_attack, item_hat, item_in, item_out, land, lunge_loop, lunge_pre, quickeat, run_start, run_stop, skill1, skill2, skill3, spawn, superjump, superjump_pst, superjump_start, threeattack, tiaopi, tool_slip, toolbroke, txm_lunge_loop, txm_lunge_pre, txm_lunge_pst, txm_spell, xd_wukong_skill"
+    },
+    {
+      "id": "tu_tien:xd_zhouwang_shadow",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_ziyun_house",
+      "key": "sanity_aura",
+      "kind": "stat",
+      "value": -2.0
+    },
+    {
+      "id": "tu_tien:xd_ziyunboss",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 30.0
+    },
+    {
+      "id": "tu_tien:xd_ziyunboss",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 0.4
+    },
+    {
+      "id": "tu_tien:xd_ziyunboss",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 3.5
+    },
+    {
+      "id": "tu_tien:xd_ziyunboss",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 29250.0
+    },
+    {
+      "id": "tu_tien:xd_ziyunboss",
+      "key": "run_speed",
+      "kind": "stat",
+      "value": 6.0
+    },
+    {
+      "id": "tu_tien:xd_ziyunboss",
+      "key": "sanity_aura",
+      "kind": "stat",
+      "value": -2.0
+    },
+    {
+      "id": "tu_tien:xd_ziyunboss",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "fly_down, fly_down_false, idle_fly, idle_fly_spell1, idle_fly_spell2, resurrect, run_start, run_stop, skill1"
+    },
+    {
+      "id": "tu_tien:xd_ziyunboss",
+      "key": "walk_speed",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_ziyunboss_channeler",
+      "key": "attack_damage",
+      "kind": "stat",
+      "value": 0.0
+    },
+    {
+      "id": "tu_tien:xd_ziyunboss_channeler",
+      "key": "attack_period",
+      "kind": "stat",
+      "value": 4.0
+    },
+    {
+      "id": "tu_tien:xd_ziyunboss_channeler",
+      "key": "hit_range",
+      "kind": "stat",
+      "value": 3.0
+    },
+    {
+      "id": "tu_tien:xd_ziyunboss_channeler",
+      "key": "max_health",
+      "kind": "stat",
+      "value": 29250.0
+    },
+    {
+      "id": "tu_tien:xd_zyg_npc",
+      "key": "special_states",
+      "kind": "stat",
+      "value": "refuse, talk"
+    }
+  ]
 }

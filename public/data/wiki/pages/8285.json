@@ -26,6 +26,13 @@
       "src": "/assets/wiki/484a96db576b61bd9cef2478de970f9654dba43c231cd1f3d7f02bf1bc90c040.png",
       "title": "File:Gunpowder.png",
       "width": 64
+    },
+    {
+      "height": 156,
+      "mime": "image/png",
+      "src": "/assets/wiki/7bf9b7ed52f438e53862347aae0255ac6b2ce1c9f5c7e15e00a3a54819927793.png",
+      "title": "File:Gunpowder Dropped.png",
+      "width": 287
     }
   ],
   "normalized": {
@@ -120,7 +127,7 @@
           ],
           "note": null,
           "result": {
-            "entityId": null,
+            "entityId": "base_game:boat_cannon",
             "iconUrl": null,
             "title": "Boat Cannon",
             "url": "https://dontstarve.wiki.gg/wiki/Boat_Cannon"

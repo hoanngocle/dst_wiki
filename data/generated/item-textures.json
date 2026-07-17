@@ -12,9 +12,19 @@
       "texture": "images/inventoryimages/xd_lc_lmg.tex"
     },
     {
+      "sha256": "00883211662b48f78ba6610ea51dfbc281adf9ce566d189f7466ec416153ef86",
+      "source": "mod",
+      "texture": "images/map_icons/xd_rock3.tex"
+    },
+    {
       "sha256": "00f210e340c6af17e63e1bddfa1b8dc4e8802377c7cf0cb3853b3d0e6815ab35",
       "source": "mod",
       "texture": "images/inventoryimages/xd_tianji_juanzhou.tex"
+    },
+    {
+      "sha256": "04cc1f9b368ed53314ce8426e745465eb932aa94298c8cde8c46d4edd7e1c746",
+      "source": "mod",
+      "texture": "images/avatars/avatar_xd_sudaji.tex"
     },
     {
       "sha256": "05a7cae784ac1b4fe493c4771f4041494a1081f767f5c82318a6aba41c55c3b6",
@@ -49,7 +59,7 @@
     {
       "sha256": "0c8b92b5bdc843b24674d62f7bb24f3aae07d178e2e7bc957b8afc33d916977d",
       "source": "mod",
-      "texture": "images/inventoryimages/xd_dy_xttyd_1.tex"
+      "texture": "images/inventoryimages/xd_dy_xttyd_2.tex"
     },
     {
       "sha256": "0cf113f47a343b11f83c9b7e2fe508b9d282dd516b92c49bb7fb12a794992f4d",
@@ -132,9 +142,19 @@
       "texture": "images/inventoryimages/xd_qianyu.tex"
     },
     {
+      "sha256": "1974a09eb2e44fb94a01f0fff589ed3d3bac024c9f795b32cf7f9f2e0667fa3b",
+      "source": "mod",
+      "texture": "images/avatars/avatar_xd_jingwei.tex"
+    },
+    {
       "sha256": "1a3a80f92d9ca89b16158588aabb388b64a30516052821d963a6b79957a726ea",
       "source": "mod",
       "texture": "images/inventoryimages/xd_danyao_hj.tex"
+    },
+    {
+      "sha256": "1ad0159d57c80fe1d23ea883a4d3d9718e43da38ca6015512b2b259481f7381b",
+      "source": "mod",
+      "texture": "images/avatars/avatar_xd_hantianzun.tex"
     },
     {
       "sha256": "1dcd649ff811d61b1f94220cb0f536b77fe5948a9c59449e841983356423b3cc",
@@ -152,9 +172,19 @@
       "texture": "images/inventoryimages/xd_yunxiao_fgfq.tex"
     },
     {
+      "sha256": "216d667e993512e057653e0d9583952e48757ae3809328e7e101bc7b7ec975cc",
+      "source": "mod",
+      "texture": "images/map_icons/xd_jitan.tex"
+    },
+    {
       "sha256": "224b2ca3a782ddb4f2e38bed2610c4579885f2f91b08d4ce278c5730741a01a2",
       "source": "mod",
       "texture": "images/inventoryimages/xd_cl.tex"
+    },
+    {
+      "sha256": "24210b49d6a5bcbdf1f50444b43dc691ef5ce21d573a03a8db98ed8eb678479b",
+      "source": "mod",
+      "texture": "images/map_icons/xd_shatangshu.tex"
     },
     {
       "sha256": "24fed7d73ea7db0f224dde9e2610b260d5e5164d402c20f6524c6b3ac98b43c3",
@@ -262,6 +292,16 @@
       "texture": "images/inventoryimages/xd_yhbs.tex"
     },
     {
+      "sha256": "365b314a9258fdb0b9f6f02b669207ae2d57bdbff9ea952c4bfd78fe5b25821c",
+      "source": "mod",
+      "texture": "images/map_icons/xd_llbx.tex"
+    },
+    {
+      "sha256": "3799d9432f34100b1ad4dd3782c1355c8f6611e2e447fe72938ef3fdbe846d8f",
+      "source": "mod",
+      "texture": "images/avatars/avatar_xd_luoshen.tex"
+    },
+    {
       "sha256": "37cf5b5109374b926bd544fcc0672a21bdfce7ee4d8423180a4f4fd1c33f6d1c",
       "source": "mod",
       "texture": "images/inventoryimages/xd_ftj.tex"
@@ -307,6 +347,11 @@
       "texture": "images/inventoryimages/xd_spider_leg.tex"
     },
     {
+      "sha256": "3cc015d46736734e2692a2bdecba28df3c6c23f50e3b0fbbdb9026bf5cf4ff33",
+      "source": "mod",
+      "texture": "images/map_icons/xd_fsct.tex"
+    },
+    {
       "sha256": "4162fecda46fc0567b9143df8551d8777e404cbea022f8cb451d0fdcc0a3be73",
       "source": "mod",
       "texture": "images/inventoryimages/xd_sskl.tex"
@@ -337,6 +382,11 @@
       "texture": "images/inventoryimages/xd_pog_tail.tex"
     },
     {
+      "sha256": "475fe442f39922ce9476a9ab43c693ebccfc7e4867dd6b3ec4eb08a6492bd1b4",
+      "source": "mod",
+      "texture": "images/map_icons/xd_rock1.tex"
+    },
+    {
       "sha256": "47cc3ce885b1b03c9ee0c4b5c508b42fadeed6574f2be833a5076d3911255cb3",
       "source": "mod",
       "texture": "images/inventoryimages/xd_luoshen_huazhong.tex"
@@ -360,6 +410,11 @@
       "sha256": "48fc2746bd328741797604f03441536e2cd5aa5d9ed842d8f843cde6177f10b1",
       "source": "mod",
       "texture": "images/inventoryimages/xd_luoshen_deathflower_builder.tex"
+    },
+    {
+      "sha256": "490fe9d4e75b86aede5a670b409f78f5ec08209d77b40da000c02b7409f617b3",
+      "source": "mod",
+      "texture": "images/avatars/avatar_xd_wangmazi.tex"
     },
     {
       "sha256": "499229bc3ab97f29053fbb135201e5f584f29bbb7ae4565f25657186075e2080",
@@ -434,7 +489,7 @@
     {
       "sha256": "5640c83dd92b3e30f6143d74151894ab45ac70f339bbbb4cab234d94941363ce",
       "source": "mod",
-      "texture": "images/inventoryimages/xd_dy_pshsd_1.tex"
+      "texture": "images/inventoryimages/xd_dy_pshsd_2.tex"
     },
     {
       "sha256": "56e245f5d878a606100ea2ab47eaf1a4bf7f0c4a9f1dad564d417d27296f15ef",
@@ -497,9 +552,19 @@
       "texture": "images/inventoryimages/xd_lc_lmg_seed.tex"
     },
     {
+      "sha256": "65ce65d5bdb30ff8d067fe48867f647f4ccd9190ed032b0d9a7660ce76970034",
+      "source": "mod",
+      "texture": "images/map_icons/xd_shatangshu_normal.tex"
+    },
+    {
       "sha256": "66f6cc994ebf25786d8e8eddc0f91c3b4e0bd6aea4db50d988fd448dd76af48c",
       "source": "mod",
       "texture": "images/inventoryimages/xd_hyc.tex"
+    },
+    {
+      "sha256": "6788e96e27a589b26e3517122d75b2e9a2c6129e3fad27b2a4bfa6dec5ff228f",
+      "source": "mod",
+      "texture": "images/map_icons/xd_fanhunshu.tex"
     },
     {
       "sha256": "67ef5f850c6e54b4efd567ffec21720ccedc95c8278021a9ced90cb8f242d5a5",
@@ -510,6 +575,11 @@
       "sha256": "692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce",
       "source": "base_game",
       "texture": "images/inventoryimages3.tex"
+    },
+    {
+      "sha256": "696d1b40475667eab82ddafb3f8f56bbb8299a91ab3a8cd6cfbb2d3f3819dd79",
+      "source": "mod",
+      "texture": "images/map_icons/xd_choujiangji.tex"
     },
     {
       "sha256": "6a14dc1806ed2cf87fed34e8f044adbc31258b335e0e608feeff1af1439ea178",
@@ -532,6 +602,11 @@
       "texture": "images/inventoryimages/xd_htz_xyzzl.tex"
     },
     {
+      "sha256": "6f1bdba8ef09116c12e490da924b74a54e9f5589d6d6155f54208a8432c7d5ce",
+      "source": "mod",
+      "texture": "images/map_icons/xd_tianjiwu.tex"
+    },
+    {
       "sha256": "6f3b02d63d653f48ef23292707ffe20c4c2cc8273c013ce03609e0cf18ead5f6",
       "source": "mod",
       "texture": "images/inventoryimages/xd_htz_qzxy.tex"
@@ -540,6 +615,11 @@
       "sha256": "6f9ed7a8759053edbdee395106af329475d084db9575797c1a8e81c1d2901de4",
       "source": "mod",
       "texture": "images/inventoryimages/xd_sly.tex"
+    },
+    {
+      "sha256": "704ef52b550195b7915c2a78491ba8033102f8427edd23e3094b3ba9fa11eaf8",
+      "source": "mod",
+      "texture": "images/map_icons/xd_spiderden.tex"
     },
     {
       "sha256": "705e3005d9cf5429e9204bf568353da06271e0d6bf3320347a7d48421f9f5536",
@@ -587,6 +667,11 @@
       "texture": "images/inventoryimages/xd_fanhunguopu.tex"
     },
     {
+      "sha256": "7d35078535d79d436212a0aa99c8c2b0532df4ed38ea6339054f7d2cec8973aa",
+      "source": "mod",
+      "texture": "images/avatars/avatar_xd_wukong.tex"
+    },
+    {
       "sha256": "7e2b87bea3f5a01fc9c300d240bb969b948f99ec5f5e40ca1b0d1488c959eacb",
       "source": "mod",
       "texture": "images/inventoryimages/xd_danyao_sm.tex"
@@ -617,9 +702,19 @@
       "texture": "images/inventoryimages/xd_mgqg.tex"
     },
     {
+      "sha256": "846d4b7dbe86cf20af295e0af63196c149a25d2b9fbada4f391626011afa9b1e",
+      "source": "mod",
+      "texture": "images/avatars/avatar_xd_shiji.tex"
+    },
+    {
       "sha256": "854413bec32b2c8e46a3dd838f834d3615d6a1e220d44b861af22c8bf293b928",
       "source": "mod",
       "texture": "images/inventoryimages/xd_wmz_tnz.tex"
+    },
+    {
+      "sha256": "85a5507ef9cecff70a442ad030dbefb20b9feee9ddc5f88b6130475633dbc79f",
+      "source": "mod",
+      "texture": "images/avatars/avatar_xd_longtaizi.tex"
     },
     {
       "sha256": "85bd1fc4e18ef0fdf0603eeaa0e26c092a1fe1c0556ca6d964709f8e25a200a2",
@@ -737,6 +832,11 @@
       "texture": "images/inventoryimages/xd_danyao_jy.tex"
     },
     {
+      "sha256": "9c991ae91e90603a1b4bf31fb9794b9f54247a874f6b2fdc19a114534165d130",
+      "source": "mod",
+      "texture": "images/map_icons/xd_rock2.tex"
+    },
+    {
       "sha256": "9e8b0d024337f35fbd3ed11b9da386af4caefa857a181e145bd13d34dcfcaafd",
       "source": "mod",
       "texture": "images/inventoryimages/xd_danyao_jq.tex"
@@ -765,6 +865,11 @@
       "sha256": "a26ae01384fd04aa727c0c94e5f95fb571fd23f3e32b0bf036231913f5c6055a",
       "source": "mod",
       "texture": "images/inventoryimages/xd_hyf.tex"
+    },
+    {
+      "sha256": "a32abc61f2a640dccf41aad648f650c1d20136658a17ac127bf9fc008ca4b349",
+      "source": "mod",
+      "texture": "images/map_icons/xd_yunxiao_hyjd.tex"
     },
     {
       "sha256": "a90702999ae421363f4811e19537b4564ed3b397c0a69cfd57f2141eda5e5b53",
@@ -825,6 +930,11 @@
       "sha256": "b58d32c7f47db3cf74daf953412dd3f90d0b76d8597c6ea69473a7dcca4a304c",
       "source": "mod",
       "texture": "images/inventoryimages/xd_aymg.tex"
+    },
+    {
+      "sha256": "b5915d7bf48bd43305e0642a94c2e61dc7d34b6b3229388f4b501a135d47255e",
+      "source": "mod",
+      "texture": "images/map_icons/xd_gcsz.tex"
     },
     {
       "sha256": "b6652456c130f0b86e4bd9e562418828b7b40f129ebb82ae01e4f4e3feff26fd",
@@ -967,6 +1077,11 @@
       "texture": "images/inventoryimages/xd_mglz.tex"
     },
     {
+      "sha256": "e19e30dceda0bff9d1f29cd9f9d6b33fe8d7631597ef5ce8a5f606860116f547",
+      "source": "mod",
+      "texture": "images/map_icons/xd_ziyunge.tex"
+    },
+    {
       "sha256": "e293fa7062730df311148c2bea420c65c62731c06f0f7107e25a651df4e7b63c",
       "source": "mod",
       "texture": "images/inventoryimages/xd_luoshen_jihuaze.tex"
@@ -1017,6 +1132,11 @@
       "texture": "images/inventoryimages/xd_gj.tex"
     },
     {
+      "sha256": "ecd4647abc963d8f8ff0983be6eb9ed47a93ffbd50fade58acb4ec38f2a009d8",
+      "source": "mod",
+      "texture": "images/map_icons/xd_ziyun_house.tex"
+    },
+    {
       "sha256": "ed7e9d22661a1b309243310249fa479b5607579664acac26525833a686ccd1b9",
       "source": "mod",
       "texture": "images/inventoryimages/xd_danyao_hl.tex"
@@ -1037,6 +1157,11 @@
       "texture": "images/inventoryimages/xd_danyao_yz.tex"
     },
     {
+      "sha256": "f3dbcb8e7fbd5bcaa899d2ae93890e261fdde228f4b20133d281368f3ebd6341",
+      "source": "mod",
+      "texture": "images/map_icons/xd_luoshen_hua.tex"
+    },
+    {
       "sha256": "f4ae785781c3e6bc469dfe199d416d277e9be346e64350aa7fe358e32767b678",
       "source": "mod",
       "texture": "images/inventoryimages/xd_jgb.tex"
@@ -1045,6 +1170,11 @@
       "sha256": "f6705fdbb411270c9984b3589771825a9b22cb236ee3d7c5cb2a95b1716fbc36",
       "source": "mod",
       "texture": "images/inventoryimages/xd_dy_qxdhd_1.tex"
+    },
+    {
+      "sha256": "f70069fe29af065f9efcb38bc009f0e2579c7376ed6a0b9bb5ba56831e7628ac",
+      "source": "mod",
+      "texture": "images/avatars/avatar_xd_yunxiao.tex"
     },
     {
       "sha256": "f82a8fb505958e5f4f2cc4c8b8ab25d2b183080ff2bff9a5152c197709f71202",

@@ -22,6 +22,13 @@
       "src": "/assets/wiki/73cc40d1ee01632735f791abc7bdb51583b2973b45cde2ba4751642f45d52947.png",
       "title": "File:Gold Nugget.png",
       "width": 64
+    },
+    {
+      "height": 101,
+      "mime": "image/png",
+      "src": "/assets/wiki/c429a3af40e1750d3ba1d429eaed6e7cf703b6c006e1564e173d2edee96bfab3.png",
+      "title": "File:Gold Nugget Dropped.png",
+      "width": 140
     }
   ],
   "normalized": {
@@ -490,7 +497,7 @@
           ],
           "note": null,
           "result": {
-            "entityId": null,
+            "entityId": "base_game:lightningrod",
             "iconUrl": null,
             "title": "Lightning Rod",
             "url": "https://dontstarve.wiki.gg/wiki/Lightning_Rod"
@@ -955,7 +962,7 @@
           ],
           "note": null,
           "result": {
-            "entityId": null,
+            "entityId": "base_game:lightningrod",
             "iconUrl": null,
             "title": "Lightning Rod",
             "url": "https://dontstarve.wiki.gg/wiki/Lightning_Rod"
@@ -1048,7 +1055,7 @@
           ],
           "note": null,
           "result": {
-            "entityId": null,
+            "entityId": "base_game:dragonfly_chest",
             "iconUrl": null,
             "title": "Scaled Chest",
             "url": "https://dontstarve.wiki.gg/wiki/Scaled_Chest"

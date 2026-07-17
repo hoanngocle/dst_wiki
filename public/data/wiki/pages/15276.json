@@ -474,7 +474,7 @@
           ],
           "note": null,
           "result": {
-            "entityId": null,
+            "entityId": "base_game:sewingkit",
             "iconUrl": null,
             "title": "Sewing Kit",
             "url": "https://dontstarve.wiki.gg/wiki/Sewing_Kit"

@@ -22,6 +22,13 @@
       "src": "/assets/wiki/b730a242012bf7e02c3acffc6cc4454f6ee7ef786ba4f0b98c78184423ad3686.png",
       "title": "File:Log Suit.png",
       "width": 64
+    },
+    {
+      "height": 151,
+      "mime": "image/png",
+      "src": "/assets/wiki/81d343d5aacc6324b223cecc43901447eadc236a94e9e6d3390e9d213617aec0.png",
+      "title": "File:Log Suit Dropped.png",
+      "width": 169
     }
   ],
   "normalized": {
@@ -44,7 +51,7 @@
     },
     "schema_version": 2,
     "subject": {
-      "entityId": null,
+      "entityId": "base_game:armor_wood",
       "iconUrl": null,
       "title": "Log Suit/DST",
       "url": "https://dontstarve.wiki.gg/wiki/Log_Suit/DST"

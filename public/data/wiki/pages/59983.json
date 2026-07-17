@@ -23,11 +23,32 @@
       "width": 64
     },
     {
+      "height": 133,
+      "mime": "image/png",
+      "src": "/assets/wiki/8532da2e0c532ceea8aefb474ec02752307dcdc418ec5284addf2092e3418897.png",
+      "title": "File:Red Gem Dropped.png",
+      "width": 167
+    },
+    {
+      "height": 650,
+      "mime": "image/png",
+      "src": "/assets/wiki/3189fbed48fcd8708fd92a28701f3743408ff1bcaa885439e6802a874000f320.png",
+      "title": "File:Ancient.png",
+      "width": 428
+    },
+    {
       "height": 64,
       "mime": "image/png",
       "src": "/assets/wiki/b3ce5ecca755a3f827e9bbb86478fee213bead104f9e56272629c020d53b85f2.png",
       "title": "File:PickSlashAxe.png",
       "width": 64
+    },
+    {
+      "height": 208,
+      "mime": "image/png",
+      "src": "/assets/wiki/9b61a61b56be2c6ed198fc8c283e7f6a45a7fb7526db04ebe3d50156453cbdaa.png",
+      "title": "File:Broken Clockworks1.png",
+      "width": 295
     }
   ],
   "normalized": {

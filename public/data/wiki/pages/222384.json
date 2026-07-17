@@ -19,6 +19,13 @@
       "width": 64
     },
     {
+      "height": 800,
+      "mime": "image/png",
+      "src": "/assets/wiki/1821b321f2d984f8a10d3a8bbd5de6b2e8705e9684eed1a2952b70fccb19b9ed.png",
+      "title": "File:PigHouse.png",
+      "width": 583
+    },
+    {
       "height": 64,
       "mime": "image/png",
       "src": "/assets/wiki/eb5b5c2d3e00471bf0ac37173282b1e5bde57daa933a9705b003487957625f1d.png",
@@ -31,6 +38,13 @@
       "src": "/assets/wiki/8f49764eba2b5bcd1edcdc3e6feb41ef68caf857bce7c73a0c61fe1e6fecc855.png",
       "title": "File:Deconstruction Staff.png",
       "width": 64
+    },
+    {
+      "height": 410,
+      "mime": "image/png",
+      "src": "/assets/wiki/32019453d4c8ffbbbfeb70e2912a0be4611a5cefcb202f64672983b1c1e3a338.png",
+      "title": "File:Pig Head.png",
+      "width": 260
     }
   ],
   "normalized": {

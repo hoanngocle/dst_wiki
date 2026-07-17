@@ -163,7 +163,7 @@
           ],
           "note": null,
           "result": {
-            "entityId": null,
+            "entityId": "base_game:boat_cannon",
             "iconUrl": null,
             "title": "Boat Cannon",
             "url": "https://dontstarve.wiki.gg/wiki/Boat_Cannon"

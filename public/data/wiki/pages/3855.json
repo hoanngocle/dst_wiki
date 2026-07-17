@@ -26,7 +26,7 @@
     },
     "schema_version": 2,
     "subject": {
-      "entityId": null,
+      "entityId": "base_game:slurperpelt",
       "iconUrl": null,
       "title": "Slurper Pelt",
       "url": "https://dontstarve.wiki.gg/wiki/Slurper_Pelt"
@@ -73,7 +73,7 @@
           ],
           "note": null,
           "result": {
-            "entityId": null,
+            "entityId": "base_game:armor_slurper",
             "iconUrl": null,
             "title": "Belt of Hunger",
             "url": "https://dontstarve.wiki.gg/wiki/Belt_of_Hunger"

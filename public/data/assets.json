@@ -27457,6 +27457,38 @@
       }
     },
     {
+      "asset_id": "0f8104b9ac7bbaa9e9268b8f23e393cfed1eb83e7e3e439c034f4a2e10aee050",
+      "atlas": "images/map_icons/xd_choujiangji.xml",
+      "available": true,
+      "element": "xd_choujiangji.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_choujiangji.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_choujiangji.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_choujiangji.xml",
+            "sha256": "b4cc0ad9a29b42ff9482d806b704e9738a27f3f59c6453dc8b2073b95f4b5da3",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_choujiangji",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_choujiangji",
+      "texture": "images/map_icons/xd_choujiangji.tex",
+      "texture_sha256": "696d1b40475667eab82ddafb3f8f56bbb8299a91ab3a8cd6cfbb2d3f3819dd79",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
       "asset_id": "5ab748fc0e0881bdf41d28628e8e386df892ecae6147b99da3cf45a42adb4b65",
       "atlas": "images/inventoryimages/xd_cl.xml",
       "available": true,
@@ -27513,6 +27545,38 @@
       "texture": "images/inventoryimages/xd_crc.tex",
       "texture_sha256": "d15677b5f9bb082cbb32d2068c268f4fba312dec5c955020784aeb96cf6c7220",
       "type": "inventory",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "59c407455edf7c79ff13aa72848441cd479a6b09b2e2528b6ee6960ed8a4fcbb",
+      "atlas": "images/map_icons/xd_crc.xml",
+      "available": true,
+      "element": "xd_crc.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_crc.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_crc.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_crc.xml",
+            "sha256": "7131b0160cab9e0bb692ed61121075e87d1e5403d3c2327bdb25e30ba2e21d43",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_crc",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_crc",
+      "texture": "images/map_icons/xd_crc.tex",
+      "texture_sha256": "d15677b5f9bb082cbb32d2068c268f4fba312dec5c955020784aeb96cf6c7220",
+      "type": "map_icon",
       "uv": {
         "u1": 0.0078125,
         "u2": 0.9921875,
@@ -28097,6 +28161,38 @@
       }
     },
     {
+      "asset_id": "776b90329dc666d04ae11dcac40f78a50b63a228912bd07428f196a8bbeb0d59",
+      "atlas": "images/map_icons/xd_dbg.xml",
+      "available": true,
+      "element": "xd_dbg.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_dbg.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_dbg.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_dbg.xml",
+            "sha256": "cdc902baec82200c5fb955d90fe60cd15e640e172274bfdb44d9776233100bf2",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_dbg",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_dbg",
+      "texture": "images/map_icons/xd_dbg.tex",
+      "texture_sha256": "05a7cae784ac1b4fe493c4771f4041494a1081f767f5c82318a6aba41c55c3b6",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
       "asset_id": "f1d3986b18d394aea8934e0ac78c2dab2e2fe85436c4039d6803d68ef847cbc1",
       "atlas": "images/inventoryimages/xd_dbg_skins_llt.xml",
       "available": true,
@@ -28185,6 +28281,38 @@
       "texture": "images/inventoryimages/xd_dc.tex",
       "texture_sha256": "b370364e5b53dcfe4703dfa7400e095f369fd4add78af4b84869569a5c3bc315",
       "type": "inventory",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "8dbb352f6dd16397b36f272f19849ea1cd0cd28715e10f851c9397128e7485a2",
+      "atlas": "images/map_icons/xd_dc.xml",
+      "available": true,
+      "element": "xd_dc.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_dc.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_dc.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_dc.xml",
+            "sha256": "fe7be5fe737c7689099aa79df8f5d6c1002ef4c302b17b814281f20f4d0965d7",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_dc",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_dc",
+      "texture": "images/map_icons/xd_dc.tex",
+      "texture_sha256": "b370364e5b53dcfe4703dfa7400e095f369fd4add78af4b84869569a5c3bc315",
+      "type": "map_icon",
       "uv": {
         "u1": 0.0078125,
         "u2": 0.9921875,
@@ -30081,6 +30209,38 @@
       }
     },
     {
+      "asset_id": "54c02271d95e05086a7bbe33c175d9e6634aac8ea39f6d265b0479ff5eed9455",
+      "atlas": "images/map_icons/xd_fanhunshu.xml",
+      "available": true,
+      "element": "xd_fanhunshu.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_fanhunshu.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_fanhunshu.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_fanhunshu.xml",
+            "sha256": "c3b229cdec2f9daa4cdb11ebd023a0164d191558744386cf97bab5962a11c766",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_fanhunshu",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_fanhunshu",
+      "texture": "images/map_icons/xd_fanhunshu.tex",
+      "texture_sha256": "6788e96e27a589b26e3517122d75b2e9a2c6129e3fad27b2a4bfa6dec5ff228f",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.00390625,
+        "u2": 0.99609375,
+        "v1": 0.00390625,
+        "v2": 0.99609375
+      }
+    },
+    {
       "asset_id": "9ff564e4990eddecfd9d5b3b88ba0af3da668eacc3702b06d55dd67abf150c1d",
       "atlas": "images/inventoryimages/xd_fanshengxiang.xml",
       "available": true,
@@ -30209,6 +30369,38 @@
       }
     },
     {
+      "asset_id": "e121516f6c3315ec1018189794f46aa68865e81aa8135aa01c4d9c38c1c7cea6",
+      "atlas": "images/map_icons/xd_flower_bh.xml",
+      "available": true,
+      "element": "xd_flower_bh.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_flower_bh.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_flower_bh.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_flower_bh.xml",
+            "sha256": "69b352c43dce97a242004834a3a4a111295b4208b4930119fd212b7e4abeca99",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_flower_bh",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_flower_bh",
+      "texture": "images/map_icons/xd_flower_bh.tex",
+      "texture_sha256": "4183db668f9bd7327929563088d553de13f38f9ef6185b4b7170f9bf2b2b786f",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
       "asset_id": "43c70f6b22f7839e2846d401bfb614259c0a645359c2f3bc38f26279b47a96fe",
       "atlas": "images/inventoryimages/xd_flower_bmg.xml",
       "available": true,
@@ -30233,6 +30425,38 @@
       "texture": "images/inventoryimages/xd_flower_bmg.tex",
       "texture_sha256": "dd21ce92181c338ae0ffce3da3412b43b9a2ec8823ddf7332a59cc76e3d1e9fc",
       "type": "inventory",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "e83f50be2434b88cfa72fb7ae2af4cb0166bb0c5066233926b65fb81f6fcad59",
+      "atlas": "images/map_icons/xd_flower_bmg.xml",
+      "available": true,
+      "element": "xd_flower_bmg.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_flower_bmg.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_flower_bmg.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_flower_bmg.xml",
+            "sha256": "5a771083033b8cfe8aaf79ba0c0daa3fe5a663167a1c0e72909b0b443897c1d4",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_flower_bmg",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_flower_bmg",
+      "texture": "images/map_icons/xd_flower_bmg.tex",
+      "texture_sha256": "dd21ce92181c338ae0ffce3da3412b43b9a2ec8823ddf7332a59cc76e3d1e9fc",
+      "type": "map_icon",
       "uv": {
         "u1": 0.0078125,
         "u2": 0.9921875,
@@ -30305,6 +30529,38 @@
       }
     },
     {
+      "asset_id": "888ae8cb918e30ad4470faa90a056cc18d766e75e91e5d66a00be69d12dc0a84",
+      "atlas": "images/map_icons/xd_flower_ll.xml",
+      "available": true,
+      "element": "xd_flower_ll.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_flower_ll.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_flower_ll.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_flower_ll.xml",
+            "sha256": "f4e99084dd66388f574754f4b28a020b6969206833c37a42b85182cdba8689c1",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_flower_ll",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_flower_ll",
+      "texture": "images/map_icons/xd_flower_ll.tex",
+      "texture_sha256": "13d194c0f22eb66a77030ed1fd015ce8fe164d8cb63a0fee279316802cd4bb53",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
       "asset_id": "7568cea99f9d1ca70313e86f6135d395c8e0a56da6a5fa0f318a2ab22d091349",
       "atlas": "images/inventoryimages/xd_flower_md.xml",
       "available": true,
@@ -30329,6 +30585,38 @@
       "texture": "images/inventoryimages/xd_flower_md.tex",
       "texture_sha256": "4ea1d2486e784a34c7bba4186cb872425891f265547207ee07bfbca482d4f14b",
       "type": "inventory",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "abb79edff77779c191fca3cfc5c6c0f20c409ef94cded02b32861ddc9c99ac53",
+      "atlas": "images/map_icons/xd_flower_md.xml",
+      "available": true,
+      "element": "xd_flower_md.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_flower_md.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_flower_md.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_flower_md.xml",
+            "sha256": "721305d3156bba062d96f35e5fda1ca7d38e0636e2a5506ac1c81c333b6b7f66",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_flower_md",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_flower_md",
+      "texture": "images/map_icons/xd_flower_md.tex",
+      "texture_sha256": "4ea1d2486e784a34c7bba4186cb872425891f265547207ee07bfbca482d4f14b",
+      "type": "map_icon",
       "uv": {
         "u1": 0.0078125,
         "u2": 0.9921875,
@@ -30401,6 +30689,38 @@
       }
     },
     {
+      "asset_id": "fdc2c566b3152c420732b907be52bc167177f7953bd349ac0b0746ac190f353d",
+      "atlas": "images/map_icons/xd_flower_mlh.xml",
+      "available": true,
+      "element": "xd_flower_mlh.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_flower_mlh.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_flower_mlh.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_flower_mlh.xml",
+            "sha256": "200e119f5a5368659a0115a895e7d87fdd472bd9f81956374435271c7d5ce08b",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_flower_mlh",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_flower_mlh",
+      "texture": "images/map_icons/xd_flower_mlh.tex",
+      "texture_sha256": "b09d89e815767f307a599b6bab13ce664113e33333e3326dfe1af15ba51193f0",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
       "asset_id": "deaf0e6762d75fdaacf71482ddb6b6654e1fee44bd31d85445e8e4c33db220ef",
       "atlas": "images/inventoryimages/xd_flower_pgy.xml",
       "available": true,
@@ -30433,6 +30753,38 @@
       }
     },
     {
+      "asset_id": "cacecd41f440d90e2acb1eeb8cb533c7c3c453f370ad792ab73a0d52565787b2",
+      "atlas": "images/map_icons/xd_flower_pgy.xml",
+      "available": true,
+      "element": "xd_flower_pgy.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_flower_pgy.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_flower_pgy.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_flower_pgy.xml",
+            "sha256": "9c7e537aad28aeccbf0478f531c348bf539367dc0e6cb918d4d91ece190ed519",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_flower_pgy",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_flower_pgy",
+      "texture": "images/map_icons/xd_flower_pgy.tex",
+      "texture_sha256": "705e3005d9cf5429e9204bf568353da06271e0d6bf3320347a7d48421f9f5536",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
       "asset_id": "c67e697ac9edd9d47531d11d2be636640322e1c6fe546b8ed23d2bdabee3f430",
       "atlas": "images/inventoryimages/xd_flower_sfr.xml",
       "available": true,
@@ -30457,6 +30809,38 @@
       "texture": "images/inventoryimages/xd_flower_sfr.tex",
       "texture_sha256": "ea8766f51739f4bcc43374d4249704bc907b1da5d2d4df378906000ee1123c59",
       "type": "inventory",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "b9d61bf4e569f6225d9c89769c420912e6bc4d9939ba47ce13f0fab12c29e86d",
+      "atlas": "images/map_icons/xd_flower_sfr.xml",
+      "available": true,
+      "element": "xd_flower_sfr.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_flower_sfr.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_flower_sfr.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_flower_sfr.xml",
+            "sha256": "f2e1a25e93b74569fbf573c0a1f1c16edfeed361000677da5af9e0b894742a1c",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_flower_sfr",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_flower_sfr",
+      "texture": "images/map_icons/xd_flower_sfr.tex",
+      "texture_sha256": "ea8766f51739f4bcc43374d4249704bc907b1da5d2d4df378906000ee1123c59",
+      "type": "map_icon",
       "uv": {
         "u1": 0.0078125,
         "u2": 0.9921875,
@@ -30561,6 +30945,38 @@
       }
     },
     {
+      "asset_id": "8b7cf79c0d614eb5c8d43ac8336fa578839f10052159e80f1b253d5b17659ed1",
+      "atlas": "images/map_icons/xd_flower_yl.xml",
+      "available": true,
+      "element": "xd_flower_yl.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_flower_yl.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_flower_yl.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_flower_yl.xml",
+            "sha256": "9b5ca6202fcee1c0b7d8ea1c5f65a05375486a75ccfc5b9b1534e4961ae34c1a",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_flower_yl",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_flower_yl",
+      "texture": "images/map_icons/xd_flower_yl.tex",
+      "texture_sha256": "8e8c75618e1d33626c52b53f0a437890aef530d23d37d62acdc2ede5a932e944",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
       "asset_id": "8ad9b507af9efc5a06b9060630a3ef878c0b999a6b090548d320a70320b3cba8",
       "atlas": "images/inventoryimages/xd_flower_zyh.xml",
       "available": true,
@@ -30593,6 +31009,38 @@
       }
     },
     {
+      "asset_id": "816c7cfb3b6a13d7110b487bfecec933f830e2e0833d41c6f82ab892c6a0124a",
+      "atlas": "images/map_icons/xd_flower_zyh.xml",
+      "available": true,
+      "element": "xd_flower_zyh.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_flower_zyh.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_flower_zyh.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_flower_zyh.xml",
+            "sha256": "5b664f5542fc28420461f245fdeab5c2539727b925916dc27096b700ea41278c",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_flower_zyh",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_flower_zyh",
+      "texture": "images/map_icons/xd_flower_zyh.tex",
+      "texture_sha256": "9b9514f2a7ee68dacc17c4d8b6abc9a3c08a519e415db121e4c48363b35c5ec8",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
       "asset_id": "042e4763793f8a48bb7b0ae9a8051289989fcf35569594949e7a1bdc093ded5b",
       "atlas": "images/inventoryimages/xd_fs.xml",
       "available": true,
@@ -30617,6 +31065,38 @@
       "texture": "images/inventoryimages/xd_fs.tex",
       "texture_sha256": "625a725310f4fcfe97e56fce49e13f725dc512d7567c0bf68cb4f2e4321d6ae7",
       "type": "inventory",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "eb217a369e569f0484866cff8de237b67b671c20b6aba5bd1b3a160661a7aeb6",
+      "atlas": "images/map_icons/xd_fsct.xml",
+      "available": true,
+      "element": "xd_fsct.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_fsct.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_fsct.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_fsct.xml",
+            "sha256": "9f2608d3bf837b9c7a6f15790b84713c305abcdd09b840f717c40baf4b77715c",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_fsct",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_fsct",
+      "texture": "images/map_icons/xd_fsct.tex",
+      "texture_sha256": "3cc015d46736734e2692a2bdecba28df3c6c23f50e3b0fbbdb9026bf5cf4ff33",
+      "type": "map_icon",
       "uv": {
         "u1": 0.0078125,
         "u2": 0.9921875,
@@ -30689,6 +31169,38 @@
       }
     },
     {
+      "asset_id": "4ece5ac88ac8cd7004615dd3063b8386f1c8388986a5f3fe5a8946f177129f77",
+      "atlas": "images/map_icons/xd_ftys.xml",
+      "available": true,
+      "element": "xd_ftys.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_ftys.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_ftys.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_ftys.xml",
+            "sha256": "d44601ff624d10532bf5c33a0cf9984f737084553ad011329f6ef2add0e71c91",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_ftys",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_ftys",
+      "texture": "images/map_icons/xd_ftys.tex",
+      "texture_sha256": "a9919fc0305dff3454ed90eb4afb186c6d04680c4b2badeeed225c9de465e9b3",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
       "asset_id": "7b31d783ec3fb5e38e3c3d0188067cce253c6b77c8ad15ab985589f3226a99a1",
       "atlas": "images/inventoryimages/xd_ftys_skins_zjzy.xml",
       "available": true,
@@ -30721,6 +31233,38 @@
       }
     },
     {
+      "asset_id": "526fe1daa116eb1f4fb8df73d6466e7a6f5c4c50484e5703321af296954391c6",
+      "atlas": "images/map_icons/xd_gcsz.xml",
+      "available": true,
+      "element": "xd_gcsz.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_gcsz.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_gcsz.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_gcsz.xml",
+            "sha256": "d33a49ca96988e60ff3692173a2c5f6cf5f9279b5382249fff05cc0b59b4ca9a",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_gcsz",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_gcsz",
+      "texture": "images/map_icons/xd_gcsz.tex",
+      "texture_sha256": "b5915d7bf48bd43305e0642a94c2e61dc7d34b6b3229388f4b501a135d47255e",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
       "asset_id": "aff2a99c312602007ff25dffd00a0a0b1551a970e69a91d13b1a0acbc652616b",
       "atlas": "images/inventoryimages/xd_gj.xml",
       "available": true,
@@ -30745,6 +31289,38 @@
       "texture": "images/inventoryimages/xd_gj.tex",
       "texture_sha256": "eb16c344d70b065942af24e871e62ff3ef4d54f1cffc50b669354a98574ab407",
       "type": "inventory",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "01952cc38bad94087b7712c024ed7c24f717f57b48d83bf4b93ff80d6cf5c46e",
+      "atlas": "images/map_icons/xd_gj.xml",
+      "available": true,
+      "element": "xd_gj.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_gj.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_gj.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_gj.xml",
+            "sha256": "b64944538880ed49f591fdbc44f2b32b62d59f8b00fdb9b437903f3f2a384047",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_gj",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_gj",
+      "texture": "images/map_icons/xd_gj.tex",
+      "texture_sha256": "eb16c344d70b065942af24e871e62ff3ef4d54f1cffc50b669354a98574ab407",
+      "type": "map_icon",
       "uv": {
         "u1": 0.0078125,
         "u2": 0.9921875,
@@ -30817,6 +31393,38 @@
       }
     },
     {
+      "asset_id": "fee1d29aa6428e5a57812b59545eb9b746603e6b23d48aaebddae4ef2ef6fa0c",
+      "atlas": "images/map_icons/xd_gjx.xml",
+      "available": true,
+      "element": "xd_gjx.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_gjx.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_gjx.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_gjx.xml",
+            "sha256": "8ada5e3bb2e30dda160ca5fb829de5667174cb830e1ea85b52c96ea4b98b460e",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_gjx",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_gjx",
+      "texture": "images/map_icons/xd_gjx.tex",
+      "texture_sha256": "793173fbe1efbb0f85726e26df2c9c221b800e60c7882ab9fd3e8e54ad5c9f15",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
       "asset_id": "d72a9265885b2ce5cc50e485d7bfa6f623d1f82283fb9132221faa857e25148b",
       "atlas": "images/inventoryimages/xd_gjx_skins_jsth.xml",
       "available": true,
@@ -30849,6 +31457,70 @@
       }
     },
     {
+      "asset_id": "b07895d95fc2ace5a26b4e5ea12f63ddf0ab85257d36ed88d946bd9898ada572",
+      "atlas": "images/map_icons/xd_hantianzun.xml",
+      "available": true,
+      "element": "xd_hantianzun.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_hantianzun.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_hantianzun.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_hantianzun.xml",
+            "sha256": "2b67700c4387d198fb61639008f5ff8c325ad0acc5ff6d4da0df815f0118e2de",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_hantianzun",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_hantianzun",
+      "texture": "images/map_icons/xd_hantianzun.tex",
+      "texture_sha256": "1fcd473b7ec3754169f01bf2446a2836f87027ca1d5e990a0c45b3e8db8e7ece",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "ff0bd62ad3ce4c14448c1f712d33109abd1d5abe272c0c8cf9ccef3ac5a78dd1",
+      "atlas": "images/avatars/avatar_xd_hantianzun.xml",
+      "available": true,
+      "element": "avatar_xd_hantianzun.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:avatar_xd_hantianzun.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/avatars/avatar_xd_hantianzun.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/avatars/avatar_xd_hantianzun.xml",
+            "sha256": "edcfbc3079e1993d19bdd585be424e930a143903660c1a57f5da5c0f8903324c",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_hantianzun",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_hantianzun",
+      "texture": "images/avatars/avatar_xd_hantianzun.tex",
+      "texture_sha256": "1ad0159d57c80fe1d23ea883a4d3d9718e43da38ca6015512b2b259481f7381b",
+      "type": "portrait",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
       "asset_id": "4e6284db48f0835d54fbc2484f31387c9ca98720d9dc33e6abdecfa3eef6274a",
       "atlas": "images/inventoryimages/xd_hhlmz.xml",
       "available": true,
@@ -30873,6 +31545,38 @@
       "texture": "images/inventoryimages/xd_hhlmz.tex",
       "texture_sha256": "06b5dd709b69f2063ac566a2d08e027e3b4bad706e2920fcc028e5531d221f53",
       "type": "inventory",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "3cb24a046ecd6f4bdb90b2eceec8747741909cc668891703674d1a87cb6e377e",
+      "atlas": "images/map_icons/xd_hhlmz.xml",
+      "available": true,
+      "element": "xd_hhlmz.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_hhlmz.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_hhlmz.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_hhlmz.xml",
+            "sha256": "bb208274f031fd53ca32c3fffa7819d12570d96b05c5c34b0c803216b7bc92f8",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_hhlmz",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_hhlmz",
+      "texture": "images/map_icons/xd_hhlmz.tex",
+      "texture_sha256": "06b5dd709b69f2063ac566a2d08e027e3b4bad706e2920fcc028e5531d221f53",
+      "type": "map_icon",
       "uv": {
         "u1": 0.0078125,
         "u2": 0.9921875,
@@ -30977,6 +31681,38 @@
       }
     },
     {
+      "asset_id": "7584a162df93040b5be2efda6a104094fb144e49080a8f9a39cafe2362ecee83",
+      "atlas": "images/map_icons/xd_hjjm.xml",
+      "available": true,
+      "element": "xd_hjjm.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_hjjm.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_hjjm.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_hjjm.xml",
+            "sha256": "41d0b3d20fdbc9d729d6830d22b1b86aa4de80cfa18b457c1c2047d799889f5d",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_hjjm",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_hjjm",
+      "texture": "images/map_icons/xd_hjjm.tex",
+      "texture_sha256": "804ac73198c20ab1cf888559a85d74cd12c0d2faf3dd8214613d89300121e789",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
       "asset_id": "e5d22fb62c64d0a6538584422be4dd27eac276faf5b9bf9cc49db6d1860b50de",
       "atlas": "images/inventoryimages/xd_hmsw.xml",
       "available": true,
@@ -31001,6 +31737,38 @@
       "texture": "images/inventoryimages/xd_hmsw.tex",
       "texture_sha256": "b26d3be242a1847875944db8d113677ce83892fa23ec8fd9cd9d5bd15d8ee9d9",
       "type": "inventory",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "99a83b446d87b8262f5a0e9c09bedf5f6e528b2826a0a75cd3a252f0f52c446b",
+      "atlas": "images/map_icons/xd_hmsw.xml",
+      "available": true,
+      "element": "xd_hmsw.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_hmsw.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_hmsw.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_hmsw.xml",
+            "sha256": "c59cc3a53df93b95c82b74d269cf3bd3e3134869d64c821c853b63085282ca24",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_hmsw",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_hmsw",
+      "texture": "images/map_icons/xd_hmsw.tex",
+      "texture_sha256": "b26d3be242a1847875944db8d113677ce83892fa23ec8fd9cd9d5bd15d8ee9d9",
+      "type": "map_icon",
       "uv": {
         "u1": 0.0078125,
         "u2": 0.9921875,
@@ -31393,6 +32161,38 @@
       }
     },
     {
+      "asset_id": "3a06331a4030047c1cabfc52b95cb2de040439dd74fb352f4ac996d016cfbc0c",
+      "atlas": "images/map_icons/xd_hyc.xml",
+      "available": true,
+      "element": "xd_hyc.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_hyc.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_hyc.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_hyc.xml",
+            "sha256": "c02a995518c2cbc7deacbfe6392317161e3f631608c2fbdb2e3588a3531387e7",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_hyc",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_hyc",
+      "texture": "images/map_icons/xd_hyc.tex",
+      "texture_sha256": "66f6cc994ebf25786d8e8eddc0f91c3b4e0bd6aea4db50d988fd448dd76af48c",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
       "asset_id": "9cca841ce43d5d6707038290755f06c42620dea070b97be3fd2ad691ee4f5f86",
       "atlas": "images/inventoryimages/xd_hyf.xml",
       "available": true,
@@ -31481,6 +32281,70 @@
       "texture": "images/inventoryimages/xd_jgb.tex",
       "texture_sha256": "f4ae785781c3e6bc469dfe199d416d277e9be346e64350aa7fe358e32767b678",
       "type": "inventory",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "60ffc197e70b2054b95cbac96f7ae6817dcf5828cbe6a0bb813bc38de60e3ce7",
+      "atlas": "images/map_icons/xd_jingwei.xml",
+      "available": true,
+      "element": "xd_jingwei.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_jingwei.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_jingwei.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_jingwei.xml",
+            "sha256": "c6f47cfc3949dc4e71d3eedd72ab86dbe340e5398e0a247817a70334a472611a",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_jingwei",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_jingwei",
+      "texture": "images/map_icons/xd_jingwei.tex",
+      "texture_sha256": "56ec3c24a037b393acc49dbed5e43eb3e47cd4537226764330dadfceb07e79de",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "c62de89f8b3bb9897c6a895084c650034e700bef99ebff2c8e888113029c6d47",
+      "atlas": "images/avatars/avatar_xd_jingwei.xml",
+      "available": true,
+      "element": "avatar_xd_jingwei.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:avatar_xd_jingwei.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/avatars/avatar_xd_jingwei.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/avatars/avatar_xd_jingwei.xml",
+            "sha256": "823618625dfbd79c497b2b474cab5c6e44c24ef2aaa7195bcd27f98f22bfa575",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_jingwei",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_jingwei",
+      "texture": "images/avatars/avatar_xd_jingwei.tex",
+      "texture_sha256": "1974a09eb2e44fb94a01f0fff589ed3d3bac024c9f795b32cf7f9f2e0667fa3b",
+      "type": "portrait",
       "uv": {
         "u1": 0.0078125,
         "u2": 0.9921875,
@@ -31649,6 +32513,38 @@
       }
     },
     {
+      "asset_id": "da3d06eadb82612568e7edac5060df6f3a1ef579fe5b58a4d7d8c3a1abab654e",
+      "atlas": "images/map_icons/xd_jitan.xml",
+      "available": true,
+      "element": "xd_jitan.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_jitan.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_jitan.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_jitan.xml",
+            "sha256": "3946fc4c7912fc5f0dcd9ace8c1d4903fdbda27cad7891cc2ed9521a8b360733",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_jitan",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_jitan",
+      "texture": "images/map_icons/xd_jitan.tex",
+      "texture_sha256": "216d667e993512e057653e0d9583952e48757ae3809328e7e101bc7b7ec975cc",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
       "asset_id": "03db15c3cd2c5f6701537c5d491223f8bbbb6ffc5aa9b8e52a0a6ec32ab72466",
       "atlas": "images/inventoryimages/xd_jl.xml",
       "available": true,
@@ -31705,6 +32601,38 @@
       "texture": "images/inventoryimages/xd_jwtcd.tex",
       "texture_sha256": "7478f350986f729a320b522cde493e3cc7a51f899b84a6d6a90016f2c87d17a5",
       "type": "inventory",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "46ac42a6ab408c7c3d5090bdd27a4e20ffdb6c8231c4658bac6fcfe553244245",
+      "atlas": "images/map_icons/xd_jwtcd.xml",
+      "available": true,
+      "element": "xd_jwtcd.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_jwtcd.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_jwtcd.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_jwtcd.xml",
+            "sha256": "1b6c74f25838825e056fe194cfe4d8c64ada63db6acfd9cb492b954f8bbf8b80",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_jwtcd",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_jwtcd",
+      "texture": "images/map_icons/xd_jwtcd.tex",
+      "texture_sha256": "7478f350986f729a320b522cde493e3cc7a51f899b84a6d6a90016f2c87d17a5",
+      "type": "map_icon",
       "uv": {
         "u1": 0.0078125,
         "u2": 0.9921875,
@@ -31809,6 +32737,38 @@
       }
     },
     {
+      "asset_id": "effafc794e81bf08781ba80a6e8fa8436c356e6383d59a88bcb4afdf9daa97e0",
+      "atlas": "images/map_icons/xd_klxw.xml",
+      "available": true,
+      "element": "xd_klxw.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_klxw.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_klxw.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_klxw.xml",
+            "sha256": "48ae505af639cd6e449fbd67a51c13b3bdc01330a1a034dac6aa9608034b0e73",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_klxw",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_klxw",
+      "texture": "images/map_icons/xd_klxw.tex",
+      "texture_sha256": "28469a8847069d1652c2df31d34a26d901f24b596c0df11792ec80a8564e2a44",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
       "asset_id": "0c305ea057be4caf805986be88bb8a7cba8ec44a76b235cbf42532da5230fad2",
       "atlas": "images/inventoryimages/xd_lbjlt.xml",
       "available": true,
@@ -31833,6 +32793,38 @@
       "texture": "images/inventoryimages/xd_lbjlt.tex",
       "texture_sha256": "35158a91b585a10202eb2b4f3181ecc2d245bbe908bda4fd7422a792e66db502",
       "type": "inventory",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "bad744ec225e0a91b92d0632cea7a90923ae7c61a38c685301011a83f6ba6dd7",
+      "atlas": "images/map_icons/xd_lbjlt.xml",
+      "available": true,
+      "element": "xd_lbjlt.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_lbjlt.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_lbjlt.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_lbjlt.xml",
+            "sha256": "207cc2e84c65b482c17dc942c66bc34944c235d8eafaa8b02fda63355567a33d",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_lbjlt",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_lbjlt",
+      "texture": "images/map_icons/xd_lbjlt.tex",
+      "texture_sha256": "35158a91b585a10202eb2b4f3181ecc2d245bbe908bda4fd7422a792e66db502",
+      "type": "map_icon",
       "uv": {
         "u1": 0.0078125,
         "u2": 0.9921875,
@@ -31897,6 +32889,38 @@
       "texture": "images/inventoryimages/xd_lbx.tex",
       "texture_sha256": "e35347c31c3431c4053c4f06f2798838ef3dd6e88db616341e6b46f00e6f2e35",
       "type": "inventory",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "d821d2b5993ee214be90570b475b4cbeaeb1104d0dd5d9bdaf97a42f2066cd07",
+      "atlas": "images/map_icons/xd_lbx.xml",
+      "available": true,
+      "element": "xd_lbx.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_lbx.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_lbx.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_lbx.xml",
+            "sha256": "ad4e6e39244044989c203fe6f3eb4bfc3da96d0903bcad68887991e7914f69a4",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_lbx",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_lbx",
+      "texture": "images/map_icons/xd_lbx.tex",
+      "texture_sha256": "e35347c31c3431c4053c4f06f2798838ef3dd6e88db616341e6b46f00e6f2e35",
+      "type": "map_icon",
       "uv": {
         "u1": 0.0078125,
         "u2": 0.9921875,
@@ -32321,6 +33345,38 @@
       }
     },
     {
+      "asset_id": "42331cc02ff715f095ac444f4c0f7532ac39bfb54d006858841fc9f4a6eda819",
+      "atlas": "images/map_icons/xd_lgzbh.xml",
+      "available": true,
+      "element": "xd_lgzbh.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_lgzbh.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_lgzbh.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_lgzbh.xml",
+            "sha256": "a2cf7a3bdb4c69014ae4a4dae4aaf3353a848320f4028454495fb3641dcf1341",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_lgzbh",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_lgzbh",
+      "texture": "images/map_icons/xd_lgzbh.tex",
+      "texture_sha256": "94d802ef5c5f25f7e600daa7648f9231f214696e790b365378218ed454dae92d",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
       "asset_id": "3e0dbc80a1bf8ef7ea82def97d17a598610fe48775031df49d14742d35a83ad9",
       "atlas": "images/inventoryimages/xd_lgzbh_skins_jlyc.xml",
       "available": true,
@@ -32414,6 +33470,38 @@
         "u2": 0.54296875,
         "v1": 0.45703125,
         "v2": 0.99609375
+      }
+    },
+    {
+      "asset_id": "28964596c5947b3c464b82ef921537293eb8ca9cd7b0d8a4e0765b05a001e290",
+      "atlas": "images/map_icons/xd_liandanlu.xml",
+      "available": true,
+      "element": "xd_liandanlu.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_liandanlu.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_liandanlu.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_liandanlu.xml",
+            "sha256": "34c5e2384f774a1010190ba5d2fe57b870ab71f7a6c88d67579169662d9d97a2",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_liandanlu",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_liandanlu",
+      "texture": "images/map_icons/xd_liandanlu.tex",
+      "texture_sha256": "b4185c7198ac08efe23525d23fa658d4296097fb828915ebbdebe656fa94c114",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
       }
     },
     {
@@ -32577,6 +33665,102 @@
       }
     },
     {
+      "asset_id": "81a19bf72207c20c485c37c998b5d89c09d30b9a76c7d140a9af88ea2f7ffecb",
+      "atlas": "images/map_icons/xd_llbx.xml",
+      "available": true,
+      "element": "xd_llbx.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_llbx.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_llbx.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_llbx.xml",
+            "sha256": "fb3a54941561976953d50a2f0b50c50e463e80564f34d1eda5c883ee6681a0dc",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_llbx",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_llbx",
+      "texture": "images/map_icons/xd_llbx.tex",
+      "texture_sha256": "365b314a9258fdb0b9f6f02b669207ae2d57bdbff9ea952c4bfd78fe5b25821c",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "6bf799da64130503b03f9087b39b691c5904343339d82534647f0a93741432b2",
+      "atlas": "images/map_icons/xd_longtaizi.xml",
+      "available": true,
+      "element": "xd_longtaizi.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_longtaizi.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_longtaizi.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_longtaizi.xml",
+            "sha256": "be697b83c3ea56a698e8009cbb2e78cfb0cd780563504bc107eff760cdfa62be",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_longtaizi",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_longtaizi",
+      "texture": "images/map_icons/xd_longtaizi.tex",
+      "texture_sha256": "92d3fa6ca02836c4e2060e8d9616ea8e28a00bf8b9d2007e10676e59f8f2d4b8",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "925220a7276963bd010046fb060ada3d951be7efc6e2dfa8750311c80e4ce525",
+      "atlas": "images/avatars/avatar_xd_longtaizi.xml",
+      "available": true,
+      "element": "avatar_xd_longtaizi.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:avatar_xd_longtaizi.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/avatars/avatar_xd_longtaizi.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/avatars/avatar_xd_longtaizi.xml",
+            "sha256": "d9a4a96ed6b416a71455d35094615249148ce213a3c33c3329855f0107f62836",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_longtaizi",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_longtaizi",
+      "texture": "images/avatars/avatar_xd_longtaizi.tex",
+      "texture_sha256": "85a5507ef9cecff70a442ad030dbefb20b9feee9ddc5f88b6130475633dbc79f",
+      "type": "portrait",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
       "asset_id": "abfeef6551657bf1128ef5da96210b44ea5b43221507f012cfb6ec071d12a6b8",
       "atlas": "images/inventoryimages/xd_longzhu.xml",
       "available": true,
@@ -32601,6 +33785,70 @@
       "texture": "images/inventoryimages/xd_longzhu.tex",
       "texture_sha256": "3ab4abcf8168e709eeb35eb175114ce7c1a80d98ffce3a097278ff9de39aa15e",
       "type": "inventory",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "ce4e2bd4e694ae63b4ae87e5109497e2f20c0ec7b75691f4d5fc578f7bf75c02",
+      "atlas": "images/map_icons/xd_luoshen.xml",
+      "available": true,
+      "element": "xd_luoshen.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_luoshen.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_luoshen.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_luoshen.xml",
+            "sha256": "0cd1f693b2281d473c34390ad482b4474cb88b75f8612d114eb25c494f2134c1",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_luoshen",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_luoshen",
+      "texture": "images/map_icons/xd_luoshen.tex",
+      "texture_sha256": "7d7ff8be1eb5b9b00b5eed33a58f96438c9575eadec3b413ca45d700251ad7c0",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "b23b0e70983c71adb8477d9c3a8d66797c13595b222bb2c69c3d7b859e27cc2f",
+      "atlas": "images/avatars/avatar_xd_luoshen.xml",
+      "available": true,
+      "element": "avatar_xd_luoshen.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:avatar_xd_luoshen.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/avatars/avatar_xd_luoshen.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/avatars/avatar_xd_luoshen.xml",
+            "sha256": "8d3339e75562d5718664dd78cc9dc8f5d6c1d32b9ab7091091b5f013f85afb8b",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_luoshen",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_luoshen",
+      "texture": "images/avatars/avatar_xd_luoshen.tex",
+      "texture_sha256": "3799d9432f34100b1ad4dd3782c1355c8f6611e2e447fe72938ef3fdbe846d8f",
+      "type": "portrait",
       "uv": {
         "u1": 0.0078125,
         "u2": 0.9921875,
@@ -32665,6 +33913,38 @@
       "texture": "images/inventoryimages/xd_luoshen_dinghunxianglu.tex",
       "texture_sha256": "562b5489b318ab7d2b51664fe5a903ab7cd6e103f0b6d63a9c71abba5e3cc966",
       "type": "inventory",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "15276d1999c7dc6bf9b71c69ec2b5d0cbd61fcedabbf415821b27b0e11b39398",
+      "atlas": "images/map_icons/xd_luoshen_hua.xml",
+      "available": true,
+      "element": "xd_luoshen_hua.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_luoshen_hua.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_luoshen_hua.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_luoshen_hua.xml",
+            "sha256": "f2127224c0036897e47bdfd05724e84fb8060ba4b538dcdcf3450c183a5cc02f",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_luoshen_hua",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_luoshen_hua",
+      "texture": "images/map_icons/xd_luoshen_hua.tex",
+      "texture_sha256": "f3dbcb8e7fbd5bcaa899d2ae93890e261fdde228f4b20133d281368f3ebd6341",
+      "type": "map_icon",
       "uv": {
         "u1": 0.0078125,
         "u2": 0.9921875,
@@ -33057,6 +34337,38 @@
       }
     },
     {
+      "asset_id": "be5f6d0e51bc996074b03f0760a9fdf01af224706469c4721212d480fdefe1ce",
+      "atlas": "images/map_icons/xd_lycx.xml",
+      "available": true,
+      "element": "xd_lycx.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_lycx.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_lycx.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_lycx.xml",
+            "sha256": "f94a72e01056445547e52c3ab130de45d5750b1ee45f712fcc8d77f443fe06f6",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_lycx",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_lycx",
+      "texture": "images/map_icons/xd_lycx.tex",
+      "texture_sha256": "e7fb8a207dd1268105349460d988c806f65cdd6d0a71b82fa7ffc88b5a2ebe85",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
       "asset_id": "eaae43db54839403377557758ba83d23be71043af4a9bc14fd348deec9dea1ea",
       "atlas": "images/inventoryimages/xd_lyd.xml",
       "available": true,
@@ -33081,6 +34393,38 @@
       "texture": "images/inventoryimages/xd_lyd.tex",
       "texture_sha256": "93f271a28a13c7d1401458b33dd57b8f4db5c3105e07159eacdd8015d7ed526a",
       "type": "inventory",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "d0050a60daf5422bd45ceb76c3def53d0a3e716e6dab9117486187df541a42ee",
+      "atlas": "images/map_icons/xd_lyd.xml",
+      "available": true,
+      "element": "xd_lyd.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_lyd.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_lyd.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_lyd.xml",
+            "sha256": "7b556afbb12dbbe4e2f98e2e2b94fb3b4c1d02822c62a5aef2867ff25232ac97",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_lyd",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_lyd",
+      "texture": "images/map_icons/xd_lyd.tex",
+      "texture_sha256": "93f271a28a13c7d1401458b33dd57b8f4db5c3105e07159eacdd8015d7ed526a",
+      "type": "map_icon",
       "uv": {
         "u1": 0.0078125,
         "u2": 0.9921875,
@@ -33153,6 +34497,38 @@
       }
     },
     {
+      "asset_id": "64fc9c245a43c077a410814f59c1a96962ce403eb50fd31ab738ea6bda6f46ec",
+      "atlas": "images/map_icons/xd_mg.xml",
+      "available": true,
+      "element": "xd_mg.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_mg.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_mg.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_mg.xml",
+            "sha256": "aae3ac6d8739e6196a5751cdeaba841445cbc55bdf8f1d2dc35a9819db8b394d",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_mg",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_mg",
+      "texture": "images/map_icons/xd_mg.tex",
+      "texture_sha256": "39560d64cc4489628a693adc6cd1e8b9161325f859d5de2a580f25699ef614d0",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
       "asset_id": "1e228d9b34681e90a33f2aeb08e0ab6b3aad7d7c49ed21e79991ef51a9476ce2",
       "atlas": "images/inventoryimages/xd_mg_skins_qwg.xml",
       "available": true,
@@ -33209,6 +34585,38 @@
       "texture": "images/inventoryimages/xd_mglz.tex",
       "texture_sha256": "de16b5c3dda5ce794c96816cf6bf31c45a7fe79267d281d35956a3f76a540649",
       "type": "inventory",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "471cdd1e7d1a4828a4bd12afdbcd66c80d5b5a415113add6d673904238691b62",
+      "atlas": "images/map_icons/xd_mglz.xml",
+      "available": true,
+      "element": "xd_mglz.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_mglz.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_mglz.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_mglz.xml",
+            "sha256": "d145a027c0e5ae6f40b7548796c64595b8aefd1d837cfede44652a9d8d2b91e1",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_mglz",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_mglz",
+      "texture": "images/map_icons/xd_mglz.tex",
+      "texture_sha256": "de16b5c3dda5ce794c96816cf6bf31c45a7fe79267d281d35956a3f76a540649",
+      "type": "map_icon",
       "uv": {
         "u1": 0.0078125,
         "u2": 0.9921875,
@@ -33505,6 +34913,38 @@
       }
     },
     {
+      "asset_id": "e06a65a2c1cd1a801405d1affed1508305c736f26fdb5df99a39d7e486905653",
+      "atlas": "images/map_icons/xd_pflnw.xml",
+      "available": true,
+      "element": "xd_pflnw.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_pflnw.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_pflnw.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_pflnw.xml",
+            "sha256": "ceb29a9d066a2b6e6d1ec177448c2172159d493c5e4a6fb032ede11fc09667e6",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_pflnw",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_pflnw",
+      "texture": "images/map_icons/xd_pflnw.tex",
+      "texture_sha256": "2f73803f192337a1aafe47302ba65912932f4510fe41f4cb9f999a7495412507",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
       "asset_id": "e442de4394b37456bf2de9e576fc1b7752132d5ca8a663a10687c4061d238408",
       "atlas": "images/inventoryimages/xd_pflnw_skins_qns.xml",
       "available": true,
@@ -33561,6 +35001,38 @@
       "texture": "images/inventoryimages/xd_pog_house.tex",
       "texture_sha256": "4e2068aaddc7e66778a7bf76fe185db91ad9750d6001f789ceca39c3a09f7265",
       "type": "inventory",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "00af5c777e632167f38692e512226cfa506bbbde94deafbc374d2040069425fb",
+      "atlas": "images/map_icons/xd_pog_house.xml",
+      "available": true,
+      "element": "xd_pog_house.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_pog_house.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_pog_house.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_pog_house.xml",
+            "sha256": "69f7e2e237f2cf20859659e4f760a52926e96377ef9f1bc8563f7f3f1210fc97",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_pog_house",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_pog_house",
+      "texture": "images/map_icons/xd_pog_house.tex",
+      "texture_sha256": "4e2068aaddc7e66778a7bf76fe185db91ad9750d6001f789ceca39c3a09f7265",
+      "type": "map_icon",
       "uv": {
         "u1": 0.0078125,
         "u2": 0.9921875,
@@ -33761,6 +35233,38 @@
       }
     },
     {
+      "asset_id": "fef463c9c102afa13dd055566b79c7ebb47fb145d86c61db3364da71f64ad7ed",
+      "atlas": "images/map_icons/xd_qljq.xml",
+      "available": true,
+      "element": "xd_qljq.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_qljq.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_qljq.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_qljq.xml",
+            "sha256": "52ff06592f0b2fca7ae85f49dec5cabdb0819563cfc1f6258e406aaa29feb29f",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_qljq",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_qljq",
+      "texture": "images/map_icons/xd_qljq.tex",
+      "texture_sha256": "499229bc3ab97f29053fbb135201e5f584f29bbb7ae4565f25657186075e2080",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
       "asset_id": "7c0563b9aa03612d0d16227be91ff488f15bc745f9dc6fdfd49447111695c11c",
       "atlas": "images/inventoryimages/xd_qljq_skins_hlq.xml",
       "available": true,
@@ -33857,6 +35361,38 @@
       }
     },
     {
+      "asset_id": "4d30002d97a1d65a2ed16d942dbbc5c5f5eb11f6b3506119998fabdccd770648",
+      "atlas": "images/map_icons/xd_qwsk.xml",
+      "available": true,
+      "element": "xd_qwsk.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_qwsk.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_qwsk.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_qwsk.xml",
+            "sha256": "851ce2111eaf10e4c286941e0f358f2ea59e0894b582d73a7b5f85746e7e96ee",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_qwsk",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_qwsk",
+      "texture": "images/map_icons/xd_qwsk.tex",
+      "texture_sha256": "e9522dd59c60ee80e17e218746d71454e977543216c1206c12b2b8fb744f2b7b",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
       "asset_id": "f64650b3c2a66fe02c58413e9826078c91a15c4634a8335581198af268926c3c",
       "atlas": "images/inventoryimages/xd_qwsk_xznw.xml",
       "available": true,
@@ -33921,6 +35457,102 @@
       }
     },
     {
+      "asset_id": "8856b74de9675b3e98ea0df875d9e672fde791c34b722306bea21ba9448d0869",
+      "atlas": "images/map_icons/xd_rock1.xml",
+      "available": true,
+      "element": "xd_rock1.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_rock1.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_rock1.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_rock1.xml",
+            "sha256": "5830eb4ce47a3fab512ee6f7c102675cc3095a284767354ce310656ac4a2d4ec",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_rock1",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_rock1",
+      "texture": "images/map_icons/xd_rock1.tex",
+      "texture_sha256": "475fe442f39922ce9476a9ab43c693ebccfc7e4867dd6b3ec4eb08a6492bd1b4",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "e36889e577215760d88897d5a94ce9e1449b0f8543dbcb7768488613da7e3a85",
+      "atlas": "images/map_icons/xd_rock2.xml",
+      "available": true,
+      "element": "xd_rock2.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_rock2.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_rock2.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_rock2.xml",
+            "sha256": "fd0bc6c0b9c5d15013420de7dd036dfcc6e2d04c6f7b24ec81a064d884b164f5",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_rock2",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_rock2",
+      "texture": "images/map_icons/xd_rock2.tex",
+      "texture_sha256": "9c991ae91e90603a1b4bf31fb9794b9f54247a874f6b2fdc19a114534165d130",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "ef3f33799a5d810b2daf38700a4ee761e974ee689b7959b5ad5785cdbad0b704",
+      "atlas": "images/map_icons/xd_rock3.xml",
+      "available": true,
+      "element": "xd_rock3.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_rock3.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_rock3.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_rock3.xml",
+            "sha256": "c7af8565014f4b87db2fdcfbbf53ef618a2c5bc3f95c916ad44ed3f3777dfdbb",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_rock3",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_rock3",
+      "texture": "images/map_icons/xd_rock3.tex",
+      "texture_sha256": "00883211662b48f78ba6610ea51dfbc281adf9ce566d189f7466ec416153ef86",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
       "asset_id": "2f8b4f0bf57e6399953b91e90ce350a3b19b6371eea44304fd2530a7a2ba6ead",
       "atlas": "images/inventoryimages/xd_sgc.xml",
       "available": true,
@@ -33945,6 +35577,38 @@
       "texture": "images/inventoryimages/xd_sgc.tex",
       "texture_sha256": "31fed9677e282187817830c05ca12728f61c8b08f8def065082c9863217e7e39",
       "type": "inventory",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "ad46b47a007205bae6adda87f6327d714823565423516a616c553d3de2cf60ed",
+      "atlas": "images/map_icons/xd_sgc.xml",
+      "available": true,
+      "element": "xd_sgc.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_sgc.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_sgc.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_sgc.xml",
+            "sha256": "1ff31b17d1b6a29fbba834bd16e2eb1d6def8f2a4fb5084b6341e1777780ffaa",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_sgc",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_sgc",
+      "texture": "images/map_icons/xd_sgc.tex",
+      "texture_sha256": "31fed9677e282187817830c05ca12728f61c8b08f8def065082c9863217e7e39",
+      "type": "map_icon",
       "uv": {
         "u1": 0.0078125,
         "u2": 0.9921875,
@@ -33985,6 +35649,70 @@
       }
     },
     {
+      "asset_id": "ab3fd53f078942bb0bf4dda38c44a143766e935ccf1cddaee96c425810a5bd88",
+      "atlas": "images/map_icons/xd_shatangshu.xml",
+      "available": true,
+      "element": "xd_shatangshu.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_shatangshu.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_shatangshu.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_shatangshu.xml",
+            "sha256": "014d0964fd6ea66aeb8e10697ab17e5b64a841b71cf60531a0a0e7f5e2569fe5",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_shatangshu",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_shatangshu",
+      "texture": "images/map_icons/xd_shatangshu.tex",
+      "texture_sha256": "24210b49d6a5bcbdf1f50444b43dc691ef5ce21d573a03a8db98ed8eb678479b",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.00390625,
+        "u2": 0.99609375,
+        "v1": 0.00390625,
+        "v2": 0.99609375
+      }
+    },
+    {
+      "asset_id": "911efbeddb13859856c50ded7d3f8ef29d5243dec25791e4189655627f84601b",
+      "atlas": "images/map_icons/xd_shatangshu_normal.xml",
+      "available": true,
+      "element": "xd_shatangshu_normal.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_shatangshu_normal.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_shatangshu_normal.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_shatangshu_normal.xml",
+            "sha256": "93ebbfdf6320a4683c70a2e8ec09330de7754de9c973eab8277e1efc842c0b4e",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_shatangshu_normal",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_shatangshu_normal",
+      "texture": "images/map_icons/xd_shatangshu_normal.tex",
+      "texture_sha256": "65ce65d5bdb30ff8d067fe48867f647f4ccd9190ed032b0d9a7660ce76970034",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
       "asset_id": "55afbe80e40cc25940371fa850be318025f5d24efca4dcf35a1360a64cf45126",
       "atlas": "images/inventoryimages/xd_shatangshunut.xml",
       "available": true,
@@ -34009,6 +35737,70 @@
       "texture": "images/inventoryimages/xd_shatangshunut.tex",
       "texture_sha256": "9be1428a421d1656ff22e88137ffd4a3bcebbab7fe1eada763b7c90baa477f79",
       "type": "inventory",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "f9b4591370cb8fc05a9e0c7991927fc163e2d7defe9524ee0ba8fe5a592f8fd3",
+      "atlas": "images/map_icons/xd_shiji.xml",
+      "available": true,
+      "element": "xd_shiji.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_shiji.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_shiji.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_shiji.xml",
+            "sha256": "7986ef9d005e13bfb9eb109b89bfd1b6c27985cb2102a3778a363f9610dff389",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_shiji",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_shiji",
+      "texture": "images/map_icons/xd_shiji.tex",
+      "texture_sha256": "b042d9493e35a793eac6736c3e29c7e9d5fed560da1a9dbb00701e46d67eec96",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "bd5f4638909a9224c676e0a5af0e1a8e2f00c0840d8781ac6b99cc0672a10358",
+      "atlas": "images/avatars/avatar_xd_shiji.xml",
+      "available": true,
+      "element": "avatar_xd_shiji.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:avatar_xd_shiji.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/avatars/avatar_xd_shiji.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/avatars/avatar_xd_shiji.xml",
+            "sha256": "ce0d464698d9603cbd2814285666122c8cf7780a84066d0b6fc316c9866daeec",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_shiji",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_shiji",
+      "texture": "images/avatars/avatar_xd_shiji.tex",
+      "texture_sha256": "846d4b7dbe86cf20af295e0af63196c149a25d2b9fbada4f391626011afa9b1e",
+      "type": "portrait",
       "uv": {
         "u1": 0.0078125,
         "u2": 0.9921875,
@@ -34297,6 +36089,38 @@
       "texture": "images/inventoryimages/xd_sj_kls.tex",
       "texture_sha256": "ff296a7e0ff6d60a537d61b4e7af54229156c994705e67706b2fde3a94d44cf2",
       "type": "inventory",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "652bd427e1f125bb2b943bacd0f9c82557f276dcfc6d33af0c90bf5665cc66ef",
+      "atlas": "images/map_icons/xd_sj_kls.xml",
+      "available": true,
+      "element": "xd_sj_kls.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_sj_kls.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_sj_kls.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_sj_kls.xml",
+            "sha256": "afe81c4c22c6311443b3e469ffdb8f76ed422c9b3bc68d96da8c59977185ba9a",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_sj_kls",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_sj_kls",
+      "texture": "images/map_icons/xd_sj_kls.tex",
+      "texture_sha256": "ff296a7e0ff6d60a537d61b4e7af54229156c994705e67706b2fde3a94d44cf2",
+      "type": "map_icon",
       "uv": {
         "u1": 0.0078125,
         "u2": 0.9921875,
@@ -35905,6 +37729,38 @@
       }
     },
     {
+      "asset_id": "520315108f97f570ea1ba1a08393c6e2263c5b5bb5b1bb1db44d10e438874046",
+      "atlas": "images/map_icons/xd_spiderden.xml",
+      "available": true,
+      "element": "xd_spiderden.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_spiderden.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_spiderden.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_spiderden.xml",
+            "sha256": "8df61619cb4abf1b03ccf55f3283d2548f9902d370794816bb44b034264a1fd9",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_spiderden",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_spiderden",
+      "texture": "images/map_icons/xd_spiderden.tex",
+      "texture_sha256": "704ef52b550195b7915c2a78491ba8033102f8427edd23e3094b3ba9fa11eaf8",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
       "asset_id": "b499b213ad1e5bcfb8305841ccec5c07ff20e125b0344ecc092c57d6ed6a974b",
       "atlas": "images/inventoryimages/xd_sskl.xml",
       "available": true,
@@ -35993,6 +37849,70 @@
       "texture": "images/inventoryimages/xd_stool.tex",
       "texture_sha256": "2b69598865c9a16a5db05e5e5bd0fd32fccaa2cb3f524f7442ce5b1043ef8924",
       "type": "inventory",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "7f44f588a6d4ba577528bf441dfe0a4edbb22903bed628a72ffbb3ba1f60a65e",
+      "atlas": "images/map_icons/xd_sudaji.xml",
+      "available": true,
+      "element": "xd_sudaji.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_sudaji.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_sudaji.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_sudaji.xml",
+            "sha256": "fa9a4973ab21749825a6f021d51fdd3bb91b99cd1d87b7dfed57496e56e9e5ac",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_sudaji",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_sudaji",
+      "texture": "images/map_icons/xd_sudaji.tex",
+      "texture_sha256": "8f287075ad036cc2794e75f48ca8282fa4dbca7cdfffc345b61cd5452c8353d4",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "cd3061872758353ef6211776b4dd0592b7a1c38bce5a74b9bbaaecdc86bd2d3b",
+      "atlas": "images/avatars/avatar_xd_sudaji.xml",
+      "available": true,
+      "element": "avatar_xd_sudaji.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:avatar_xd_sudaji.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/avatars/avatar_xd_sudaji.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/avatars/avatar_xd_sudaji.xml",
+            "sha256": "7da4960d685eab19a1039b4138114f05d58ee973a368a5d29ed9ca65a55a8f1e",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_sudaji",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_sudaji",
+      "texture": "images/avatars/avatar_xd_sudaji.tex",
+      "texture_sha256": "04cc1f9b368ed53314ce8426e745465eb932aa94298c8cde8c46d4edd7e1c746",
+      "type": "portrait",
       "uv": {
         "u1": 0.0078125,
         "u2": 0.9921875,
@@ -36545,6 +38465,38 @@
       }
     },
     {
+      "asset_id": "d4191a0fab578359fa1e7b77a6db434460a1c93759f32673811f1e59844ff403",
+      "atlas": "images/map_icons/xd_tianjiwu.xml",
+      "available": true,
+      "element": "xd_tianjiwu.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_tianjiwu.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_tianjiwu.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_tianjiwu.xml",
+            "sha256": "b5346440bb690ffb2337743f2c2bea81109aa8e9f58f0f1c0d25cb577e6c8335",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_tianjiwu",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_tianjiwu",
+      "texture": "images/map_icons/xd_tianjiwu.tex",
+      "texture_sha256": "6f1bdba8ef09116c12e490da924b74a54e9f5589d6d6155f54208a8432c7d5ce",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
       "asset_id": "581feffbb6403456bda3c967a2ffe952be50ba76d93bcece4c168767835c0ce6",
       "atlas": "images/inventoryimages/xd_tianjiwu_skins_byj.xml",
       "available": true,
@@ -36601,6 +38553,38 @@
       "texture": "images/inventoryimages/xd_tree_df.tex",
       "texture_sha256": "93da3fc66c6dc107c908bf7a48def78a3af425b31d2d24c00b36c3264c5d6886",
       "type": "inventory",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "67870f7e6a20cc17eece9e4b01b2c47dad2fe4f10e3e342444e5d104923d2490",
+      "atlas": "images/map_icons/xd_tree_df.xml",
+      "available": true,
+      "element": "xd_tree_df.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_tree_df.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_tree_df.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_tree_df.xml",
+            "sha256": "8a52d5629b7759bfc330601f0794f1e7c1074f6c9e2f28ffe43689dc3f164ea1",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_tree_df",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_tree_df",
+      "texture": "images/map_icons/xd_tree_df.tex",
+      "texture_sha256": "93da3fc66c6dc107c908bf7a48def78a3af425b31d2d24c00b36c3264c5d6886",
+      "type": "map_icon",
       "uv": {
         "u1": 0.0078125,
         "u2": 0.9921875,
@@ -36673,6 +38657,38 @@
       }
     },
     {
+      "asset_id": "22537085b59effb48721f29363b16a63c21237bf923d0cff6f636a5bef47eb8c",
+      "atlas": "images/map_icons/xd_tree_ls.xml",
+      "available": true,
+      "element": "xd_tree_ls.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_tree_ls.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_tree_ls.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_tree_ls.xml",
+            "sha256": "cdd90e31383d6514b14b618d3a68f2fedc7159be71fece108395fd2ec83ce3e3",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_tree_ls",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_tree_ls",
+      "texture": "images/map_icons/xd_tree_ls.tex",
+      "texture_sha256": "77eaf2177e167e594734b168a0d9559e2ddb626d55e7288c7da90aee68b0b5a7",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
       "asset_id": "5cad13b5518440462225a8d330ba5728a918941f6710a8dd1bc716fb69cb099f",
       "atlas": "images/inventoryimages/xd_tree_xhs.xml",
       "available": true,
@@ -36697,6 +38713,38 @@
       "texture": "images/inventoryimages/xd_tree_xhs.tex",
       "texture_sha256": "0c3508a4422e020451f500c2983e3b6e30227964a5fc1f5f288074b4950bbb73",
       "type": "inventory",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "6df328d2755f8938f5d0647603a4adf85fcbc7fe2d0d26018c71db7d9166b2bf",
+      "atlas": "images/map_icons/xd_tree_xhs.xml",
+      "available": true,
+      "element": "xd_tree_xhs.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_tree_xhs.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_tree_xhs.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_tree_xhs.xml",
+            "sha256": "de9ef35b6a06cb16b0ab37a0d288b502d8aea421d43d2b7a60b9cf94cb9e2dd7",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_tree_xhs",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_tree_xhs",
+      "texture": "images/map_icons/xd_tree_xhs.tex",
+      "texture_sha256": "0c3508a4422e020451f500c2983e3b6e30227964a5fc1f5f288074b4950bbb73",
+      "type": "map_icon",
       "uv": {
         "u1": 0.0078125,
         "u2": 0.9921875,
@@ -36769,6 +38817,38 @@
       }
     },
     {
+      "asset_id": "18efbc139070488ed1adb3997c5b75d3479cc508f02c11fc61dc6369ec599b9a",
+      "atlas": "images/map_icons/xd_tree_yhs.xml",
+      "available": true,
+      "element": "xd_tree_yhs.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_tree_yhs.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_tree_yhs.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_tree_yhs.xml",
+            "sha256": "162408a04eadf8d33369daa4954e63a4a903d7b6a4048a5460a0df18b9329c5b",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_tree_yhs",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_tree_yhs",
+      "texture": "images/map_icons/xd_tree_yhs.tex",
+      "texture_sha256": "e3b92ff64ef6e8e22bfa6b6ec04db88cb841e4f98c692a11d38e6e1695faa4db",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
       "asset_id": "04a6b3984c0de0ff3f98f27e03e95667d4e95f8b555d13e6c248ab31196476a1",
       "atlas": "images/inventoryimages/xd_tree_yhs_skins_fd.xml",
       "available": true,
@@ -36833,6 +38913,38 @@
       }
     },
     {
+      "asset_id": "dcd676f921d5c3840c10ff8aa1d7f3e7f3dc67605406016a7b8f7893586fe4ca",
+      "atlas": "images/map_icons/xd_tree_yls.xml",
+      "available": true,
+      "element": "xd_tree_yls.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_tree_yls.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_tree_yls.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_tree_yls.xml",
+            "sha256": "2f9edb68368a7b5f78b4cc8f693fd8916a98983eb49ada216b75583216edc34e",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_tree_yls",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_tree_yls",
+      "texture": "images/map_icons/xd_tree_yls.tex",
+      "texture_sha256": "4d9cb766bd5b8bc4ed6ecb68cb8c59c1958cbf2cad5881fe34f275bffdd5b506",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
       "asset_id": "3284e8a611eea555f81a0f4545296f4371ec489a0c82b5c883ead95e1de37540",
       "atlas": "images/inventoryimages/xd_tree_yxs.xml",
       "available": true,
@@ -36857,6 +38969,38 @@
       "texture": "images/inventoryimages/xd_tree_yxs.tex",
       "texture_sha256": "082ac082a19f8af8b1017096616651ad49ee1205f73cce548a5d46aeff98a534",
       "type": "inventory",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "548ff63ea13f6c238c9f3d074237cbad830655b59448134ac1929950a2d378d7",
+      "atlas": "images/map_icons/xd_tree_yxs.xml",
+      "available": true,
+      "element": "xd_tree_yxs.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_tree_yxs.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_tree_yxs.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_tree_yxs.xml",
+            "sha256": "89fbd3459ec84889371a7d850217f6cb01a34284cbc89ab038fe21474c0bdbf4",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_tree_yxs",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_tree_yxs",
+      "texture": "images/map_icons/xd_tree_yxs.tex",
+      "texture_sha256": "082ac082a19f8af8b1017096616651ad49ee1205f73cce548a5d46aeff98a534",
+      "type": "map_icon",
       "uv": {
         "u1": 0.0078125,
         "u2": 0.9921875,
@@ -36921,6 +39065,70 @@
       "texture": "images/inventoryimages/xd_tssyq.tex",
       "texture_sha256": "0f2b1037ed8d023c3587a688d8dc5f0568cc07557ac4311b08b6f99c7f0fa519",
       "type": "inventory",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "97cba3bffc3ea4f09c15735494f273c1888b3a77db8565ee915436d59b273594",
+      "atlas": "images/map_icons/xd_wangmazi.xml",
+      "available": true,
+      "element": "xd_wangmazi.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_wangmazi.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_wangmazi.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_wangmazi.xml",
+            "sha256": "3c06cbe1304ecf51484ad2433efadc64730d7282e912b9f27759096d1761840e",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_wangmazi",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_wangmazi",
+      "texture": "images/map_icons/xd_wangmazi.tex",
+      "texture_sha256": "3fdeeb70aa9313acf86107e2499926e6822c8d0883aabad167c844ffbac08137",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "46619ecec1a4fe67dcfdb5acc8ea23abbff42433cd79146674a649825a9e03a1",
+      "atlas": "images/avatars/avatar_xd_wangmazi.xml",
+      "available": true,
+      "element": "avatar_xd_wangmazi.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:avatar_xd_wangmazi.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/avatars/avatar_xd_wangmazi.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/avatars/avatar_xd_wangmazi.xml",
+            "sha256": "ca34c63f92d62b79fa72c4dc5e1f9ee0aba2e05a07af4fe1219309a33c949246",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_wangmazi",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_wangmazi",
+      "texture": "images/avatars/avatar_xd_wangmazi.tex",
+      "texture_sha256": "490fe9d4e75b86aede5a670b409f78f5ec08209d77b40da000c02b7409f617b3",
+      "type": "portrait",
       "uv": {
         "u1": 0.0078125,
         "u2": 0.9921875,
@@ -37409,6 +39617,38 @@
       }
     },
     {
+      "asset_id": "d5ae1838712a0eed53a7b18b8d8441cb978f7fdb2d284681300bc9cf5aa5bd52",
+      "atlas": "images/map_icons/xd_wsjx.xml",
+      "available": true,
+      "element": "xd_wsjx.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_wsjx.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_wsjx.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_wsjx.xml",
+            "sha256": "b2b50da9f9a4fb2af2e617e9a7b1fe9094f319cf14c020f54a23fedbce9fd8a0",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_wsjx",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_wsjx",
+      "texture": "images/map_icons/xd_wsjx.tex",
+      "texture_sha256": "08ecbb373f05ed3d77efe33b60e728f79c2d1f269a896a16452db05d34fe7053",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
       "asset_id": "dd31c15fbd8071c8533b5883315dd91cfeed5b2e3db2c2b873f6fa3e6ca4bfc0",
       "atlas": "images/inventoryimages/xd_wsjx_skins_yzjx.xml",
       "available": true,
@@ -37433,6 +39673,70 @@
       "texture": "images/inventoryimages/xd_wsjx_skins_yzjx.tex",
       "texture_sha256": "1da18ac94105cba27b5891b526396c5c35625ecb04bf41fb87f5563952fafcc2",
       "type": "inventory",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "820b9bb95a3ea80d96f21759f378d3347dd03ed637aa442979e3ab73b070b36a",
+      "atlas": "images/map_icons/xd_wukong.xml",
+      "available": true,
+      "element": "xd_wukong.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_wukong.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_wukong.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_wukong.xml",
+            "sha256": "2f3b6affeaa728dcc1fb38bd72ca2560158a58be96cede6f33191988a671e95f",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_wukong",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_wukong",
+      "texture": "images/map_icons/xd_wukong.tex",
+      "texture_sha256": "84d9a9428cd350cb1b3e0907e1e47b50c41d1cfeda9f72f616c417ee8e962d9d",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "809f5691946042b7a34cd3681a493517d290f1d68bb64fa29580a7829d74a562",
+      "atlas": "images/avatars/avatar_xd_wukong.xml",
+      "available": true,
+      "element": "avatar_xd_wukong.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:avatar_xd_wukong.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/avatars/avatar_xd_wukong.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/avatars/avatar_xd_wukong.xml",
+            "sha256": "baae551de44a0dfd504f43db7b38af2358429b669b7ba42e56095ec05275b9ad",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_wukong",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_wukong",
+      "texture": "images/avatars/avatar_xd_wukong.tex",
+      "texture_sha256": "7d35078535d79d436212a0aa99c8c2b0532df4ed38ea6339054f7d2cec8973aa",
+      "type": "portrait",
       "uv": {
         "u1": 0.0078125,
         "u2": 0.9921875,
@@ -37593,6 +39897,38 @@
       "texture": "images/inventoryimages/xd_xcdf.tex",
       "texture_sha256": "8c33d540d15bae96c17546a86f8659906c93b08b136e1f75a89de174179997e0",
       "type": "inventory",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "977bb994043d665577a3fb3a51192f741f40eb3c95e443da540fa0f88ad6b475",
+      "atlas": "images/map_icons/xd_xcdf.xml",
+      "available": true,
+      "element": "xd_xcdf.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_xcdf.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_xcdf.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_xcdf.xml",
+            "sha256": "08f360d6d98c2e8ca38bde28f8695bb51c17c0bc14b75160eeee0c48288921a1",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_xcdf",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_xcdf",
+      "texture": "images/map_icons/xd_xcdf.tex",
+      "texture_sha256": "8c33d540d15bae96c17546a86f8659906c93b08b136e1f75a89de174179997e0",
+      "type": "map_icon",
       "uv": {
         "u1": 0.0078125,
         "u2": 0.9921875,
@@ -38273,6 +40609,38 @@
       }
     },
     {
+      "asset_id": "edb40dc17444a027d3de6879f63a63aef57071181065c4ae9cd105bfb8e4107e",
+      "atlas": "images/map_icons/xd_ylxc.xml",
+      "available": true,
+      "element": "xd_ylxc.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_ylxc.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_ylxc.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_ylxc.xml",
+            "sha256": "f90badbbae4d8a0b33028f4262ab6630500ba3d876d79f5b145ef0b8f40f7dfc",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_ylxc",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_ylxc",
+      "texture": "images/map_icons/xd_ylxc.tex",
+      "texture_sha256": "24fed7d73ea7db0f224dde9e2610b260d5e5164d402c20f6524c6b3ac98b43c3",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
       "asset_id": "6f3eb5e08d33ee03b3884a4a1843599b91e8fb5c6bafafb68c3b39c0db45dcb8",
       "atlas": "images/inventoryimages/xd_ylxc_skins_qhnlc.xml",
       "available": true,
@@ -38337,6 +40705,38 @@
       }
     },
     {
+      "asset_id": "d0d6ae519a0957738c1c7d6ec9b6c7a1f661dbb333d97c41553fb0c036b550e7",
+      "atlas": "images/map_icons/xd_ylxq.xml",
+      "available": true,
+      "element": "xd_ylxq.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_ylxq.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_ylxq.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_ylxq.xml",
+            "sha256": "5960d4341ef423aeaf004a8e5ae76a8fdce6bacaad9b289027d26736c917a726",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_ylxq",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_ylxq",
+      "texture": "images/map_icons/xd_ylxq.tex",
+      "texture_sha256": "1dcd649ff811d61b1f94220cb0f536b77fe5948a9c59449e841983356423b3cc",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
       "asset_id": "c3af3127b6080ca9783e106345d62f440de0db014cc9dc7007fbea1086ed3b27",
       "atlas": "images/inventoryimages/xd_ylxq_skins_fynl.xml",
       "available": true,
@@ -38361,6 +40761,70 @@
       "texture": "images/inventoryimages/xd_ylxq_skins_fynl.tex",
       "texture_sha256": "98e13c511471f3164daee21b3060a04fccb20da1d2a22a89e03b2c2647847f09",
       "type": "inventory",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "492032b22e4e15ccb43375bf7eaad1c2e95ce1f891827d66fdae14c6d9f6ab1e",
+      "atlas": "images/map_icons/xd_yunxiao.xml",
+      "available": true,
+      "element": "xd_yunxiao.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_yunxiao.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_yunxiao.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_yunxiao.xml",
+            "sha256": "57311fa5a5d559724445074371be2b4cff816d5b48712fb941ccad21fa1db4da",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_yunxiao",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_yunxiao",
+      "texture": "images/map_icons/xd_yunxiao.tex",
+      "texture_sha256": "6cc2f059ac5ea9c4187c38502889af3ccb936d6ba1f965a6e6b32daa5cabb31c",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "d7fb7f69cec08612dc938f77834eb86b987a00756204dba738327d95ae14aa14",
+      "atlas": "images/avatars/avatar_xd_yunxiao.xml",
+      "available": true,
+      "element": "avatar_xd_yunxiao.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:avatar_xd_yunxiao.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/avatars/avatar_xd_yunxiao.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/avatars/avatar_xd_yunxiao.xml",
+            "sha256": "c03cf9c4d3581cc114c1bb71e076ba2d14c8bb6fe31745f22cb119df7a7d5f41",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_yunxiao",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_yunxiao",
+      "texture": "images/avatars/avatar_xd_yunxiao.tex",
+      "texture_sha256": "f70069fe29af065f9efcb38bc009f0e2579c7376ed6a0b9bb5ba56831e7628ac",
+      "type": "portrait",
       "uv": {
         "u1": 0.0078125,
         "u2": 0.9921875,
@@ -38465,6 +40929,38 @@
       }
     },
     {
+      "asset_id": "e288388553f49db44a0d5d7d9d9dfab9a160eb7fa9ee8fbf695ad293205451a7",
+      "atlas": "images/map_icons/xd_yunxiao_hyjd.xml",
+      "available": true,
+      "element": "xd_yunxiao_hyjd.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_yunxiao_hyjd.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_yunxiao_hyjd.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_yunxiao_hyjd.xml",
+            "sha256": "6a34ec1a52dba876c7eed8d7ec5c73c694fe0a06fb26b93af33331e2468366df",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_yunxiao_hyjd",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_yunxiao_hyjd",
+      "texture": "images/map_icons/xd_yunxiao_hyjd.tex",
+      "texture_sha256": "a32abc61f2a640dccf41aad648f650c1d20136658a17ac127bf9fc008ca4b349",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
       "asset_id": "18aa96d116178b45e914c94791b809875ba4cd3cdc8a82778db288ce4b34bc59",
       "atlas": "images/inventoryimages/xd_yunxiao_hyjditem.xml",
       "available": true,
@@ -38529,6 +41025,38 @@
       }
     },
     {
+      "asset_id": "874b535deb8e9df9e84b60faee74905047774c05bf1ca2c3c9afdf7ebc80775d",
+      "atlas": "images/map_icons/xd_yunxiao_hyjdyqd.xml",
+      "available": true,
+      "element": "xd_yunxiao_hyjdyqd.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_yunxiao_hyjdyqd.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_yunxiao_hyjdyqd.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_yunxiao_hyjdyqd.xml",
+            "sha256": "8ed7939838b38dd7f6334fcbfb6dfb9cba29a0fdfd515b91563b870312db56b5",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_yunxiao_hyjdyqd",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_yunxiao_hyjdyqd",
+      "texture": "images/map_icons/xd_yunxiao_hyjdyqd.tex",
+      "texture_sha256": "966734b34a045e6ee6786d7c6ccff8f4430a44a6fcfe3be6ea976a9cd0bf4c80",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
       "asset_id": "b581c0f55dc4635ca15e6a8745ceff8281ff70d20e00b400d1efb6ec89af397f",
       "atlas": "images/inventoryimages/xd_yunxiao_jjj.xml",
       "available": true,
@@ -38585,6 +41113,38 @@
       "texture": "images/inventoryimages/xd_yunxiao_portable_spicer.tex",
       "texture_sha256": "5a137d7386fbcd7d02ad58bf1bc73e26d48f616e894d871fad26f989819f33c7",
       "type": "inventory",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "d33f3a4daaf08aca35fc906ffa5a791711de6f76a5d09ef85c5f068bd2989a4d",
+      "atlas": "images/map_icons/xd_yunxiao_portable_spicer.xml",
+      "available": true,
+      "element": "xd_yunxiao_portable_spicer.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_yunxiao_portable_spicer.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_yunxiao_portable_spicer.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_yunxiao_portable_spicer.xml",
+            "sha256": "e85661eadaca3afa9e89eb472bcf4eb0f8076a1734b114cc5851e82a79132141",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_yunxiao_portable_spicer",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_yunxiao_portable_spicer",
+      "texture": "images/map_icons/xd_yunxiao_portable_spicer.tex",
+      "texture_sha256": "5a137d7386fbcd7d02ad58bf1bc73e26d48f616e894d871fad26f989819f33c7",
+      "type": "map_icon",
       "uv": {
         "u1": 0.0078125,
         "u2": 0.9921875,
@@ -38849,6 +41409,70 @@
       }
     },
     {
+      "asset_id": "a4a0d5ca450310e89cb7f38eafed8141d1067a0953b98e080bd7b9b0d659e5f7",
+      "atlas": "images/map_icons/xd_ziyun_house.xml",
+      "available": true,
+      "element": "xd_ziyun_house.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_ziyun_house.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_ziyun_house.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_ziyun_house.xml",
+            "sha256": "0c78274fd34ee9ea51e3a32beaedce14451f7ead9c9cf0f2d9cf94216d3debb2",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_ziyun_house",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_ziyun_house",
+      "texture": "images/map_icons/xd_ziyun_house.tex",
+      "texture_sha256": "ecd4647abc963d8f8ff0983be6eb9ed47a93ffbd50fade58acb4ec38f2a009d8",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "20e644774aa628d85ed1dea66fe5cf953d4e59e077672df9dbce2b03a8cbb0f8",
+      "atlas": "images/map_icons/xd_ziyunge.xml",
+      "available": true,
+      "element": "xd_ziyunge.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_ziyunge.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_ziyunge.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_ziyunge.xml",
+            "sha256": "c576821e1a56b4410cce1e05a23addc5c2b1bda44876bd7b7c43f8d9cb2888be",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_ziyunge",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_ziyunge",
+      "texture": "images/map_icons/xd_ziyunge.tex",
+      "texture_sha256": "e19e30dceda0bff9d1f29cd9f9d6b33fe8d7631597ef5ce8a5f606860116f547",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
       "asset_id": "dbd7dc317f4d63aadc674c9c4f65201913616ea12351b50508b48932a92b45e6",
       "atlas": "images/inventoryimages/xd_ztp.xml",
       "available": true,
@@ -38913,6 +41537,134 @@
       }
     },
     {
+      "asset_id": "afa2cec9afd6ee7bf5a4f68abda5d18dbbb26e8d20bfdb5fa1fa54fb6005a8a9",
+      "atlas": "images/map_icons/xd_zuichunyan_burnt.xml",
+      "available": true,
+      "element": "xd_zuichunyan_burnt.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_zuichunyan_burnt.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_zuichunyan_burnt.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_zuichunyan_burnt.xml",
+            "sha256": "b41f60c47a4f98a0e5e7320b2d0add75041f04c12f426efefec840ad12e029df",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_zuichunyan_burnt",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_zuichunyan_burnt",
+      "texture": "images/map_icons/xd_zuichunyan_burnt.tex",
+      "texture_sha256": "12b19ba35662fdd2759d659baadc02cf5c46692035d801a2b679799971153115",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "cc083f96e002c6c4993b0e1bef685231a5ea4eab925e074ee820733ef55aa9a0",
+      "atlas": "images/map_icons/xd_zuichunyan_green.xml",
+      "available": true,
+      "element": "xd_zuichunyan_green.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_zuichunyan_green.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_zuichunyan_green.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_zuichunyan_green.xml",
+            "sha256": "2b0e83b5419893b3287a72910914f8740a1c926bec4b157f6f863636fd9b58f0",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_zuichunyan_green",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_zuichunyan_green",
+      "texture": "images/map_icons/xd_zuichunyan_green.tex",
+      "texture_sha256": "713bf7b72de411b2667f07070dd004910b8471fd9f04d75aee1dff3cc187f6bc",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "4c41c5ad6534e8aae38dd8346f6762a8ae63601ac245d1da922178d122bbb194",
+      "atlas": "images/map_icons/xd_zuichunyan_purple.xml",
+      "available": true,
+      "element": "xd_zuichunyan_purple.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_zuichunyan_purple.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_zuichunyan_purple.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_zuichunyan_purple.xml",
+            "sha256": "7cff0144a8b1a97d2f1bf6844c81e06a413fce3cb72a781cb4af601a66ff32e8",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_zuichunyan_purple",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_zuichunyan_purple",
+      "texture": "images/map_icons/xd_zuichunyan_purple.tex",
+      "texture_sha256": "a25349e0c0eae81c41950164e2b04316f5baf1f015922c5be46f7a8f5cca9421",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "b90da2ab89c7d334ad7d670e1aae396cd547d2cf1bd3edeec9bb486c4e57b220",
+      "atlas": "images/map_icons/xd_zuichunyan_stump.xml",
+      "available": true,
+      "element": "xd_zuichunyan_stump.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_zuichunyan_stump.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_zuichunyan_stump.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_zuichunyan_stump.xml",
+            "sha256": "fc5106dddc93a96cd54ec8e2640650a00814df7190ed3586fc2b6ee50da16808",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_zuichunyan_stump",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_zuichunyan_stump",
+      "texture": "images/map_icons/xd_zuichunyan_stump.tex",
+      "texture_sha256": "eed11644f01ef966b2d1ef67cf293a712b21b89f21b252841bedbfab6be209db",
+      "type": "map_icon",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
       "asset_id": "99634914bd6d2fe93ee7033412245b1c9c21f456a14f81be5e49f724c2d9b57b",
       "atlas": "images/inventoryimages/xd_zzxhcx.xml",
       "available": true,
@@ -38937,6 +41689,38 @@
       "texture": "images/inventoryimages/xd_zzxhcx.tex",
       "texture_sha256": "e62a2e2f9242aeb817aad34ab3b7f2515f4cbc8dad0cc62e9da874bb54e4890f",
       "type": "inventory",
+      "uv": {
+        "u1": 0.0078125,
+        "u2": 0.9921875,
+        "v1": 0.0078125,
+        "v2": 0.9921875
+      }
+    },
+    {
+      "asset_id": "bb0ad103b6c6748bf472660e3b796ba405d71cd13baaf53e2842a9f2bed24e24",
+      "atlas": "images/map_icons/xd_zzxhcx.xml",
+      "available": true,
+      "element": "xd_zzxhcx.tex",
+      "evidence": [
+        {
+          "confidence": 1.0,
+          "locator": "element:1:xd_zzxhcx.tex",
+          "selected": true,
+          "source": {
+            "id": "mod-asset:images/map_icons/xd_zzxhcx.xml",
+            "kind": "mod_static",
+            "path": "mod/3721846643/images/map_icons/xd_zzxhcx.xml",
+            "sha256": "31c567bee613509e93dc38a79077666485c2baf9850db5c6eb02309769904eaf",
+            "version": "18.0.10"
+          }
+        }
+      ],
+      "key": "tu_tien:xd_zzxhcx",
+      "namespace": "tu_tien",
+      "prefab_id": "xd_zzxhcx",
+      "texture": "images/map_icons/xd_zzxhcx.tex",
+      "texture_sha256": "e62a2e2f9242aeb817aad34ab3b7f2515f4cbc8dad0cc62e9da874bb54e4890f",
+      "type": "map_icon",
       "uv": {
         "u1": 0.0078125,
         "u2": 0.9921875,

@@ -22,6 +22,13 @@
       "src": "/assets/wiki/682a02d88f731a45d9038d16c88190261786adb1f534934e81c0962336761379.png",
       "title": "File:Marble Suit.png",
       "width": 64
+    },
+    {
+      "height": 151,
+      "mime": "image/png",
+      "src": "/assets/wiki/ef3e2cf1542715f23faad95290ee0ab07bd908de81bf71ba2999bf1234fedd24.png",
+      "title": "File:Marble Suit Dropped.png",
+      "width": 155
     }
   ],
   "normalized": {
@@ -44,7 +51,7 @@
     },
     "schema_version": 2,
     "subject": {
-      "entityId": null,
+      "entityId": "base_game:armor_marble",
       "iconUrl": null,
       "title": "Marble Suit",
       "url": "https://dontstarve.wiki.gg/wiki/Marble_Suit"

@@ -89,7 +89,7 @@
           ],
           "note": null,
           "result": {
-            "entityId": null,
+            "entityId": "base_game:armor_wagpunk",
             "iconUrl": null,
             "title": "W.A.R.B.I.S. Armor",
             "url": "https://dontstarve.wiki.gg/wiki/W.A.R.B.I.S._Armor"

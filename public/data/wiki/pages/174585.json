@@ -18,6 +18,13 @@
       "width": 64
     },
     {
+      "height": 201,
+      "mime": "image/png",
+      "src": "/assets/wiki/3c838c1ca4fbcfa49916b36acd0fcb4852a72dcd6f3656198b61f5a4eb8b2d20.png",
+      "title": "File:Pure Horror Dropped.png",
+      "width": 354
+    },
+    {
       "height": 64,
       "mime": "image/png",
       "src": "/assets/wiki/dd9945b016b2c8d5260687c0fc73122d9d59cea6dc97591ad4b429a51758233a.png",
@@ -141,7 +148,7 @@
           ],
           "note": null,
           "result": {
-            "entityId": null,
+            "entityId": "base_game:armor_dreadstone",
             "iconUrl": null,
             "title": "Dreadstone Armor",
             "url": "https://dontstarve.wiki.gg/wiki/Dreadstone_Armor"
