@@ -204,8 +204,9 @@ class EffectOtherAuditTests(unittest.TestCase):
             },
             "destruction": {"drops": [{"id": "base_game:helper"}]},
         }
-        wiki_details = {
-            "1": {
+        wiki_details = (
+            {
+                "pageId": 1,
                 "normalized": {
                     "subject": {"entityId": "base_game:source"},
                     "usage": {
@@ -214,8 +215,8 @@ class EffectOtherAuditTests(unittest.TestCase):
                         ]
                     },
                 }
-            }
-        }
+            },
+        )
 
         rows, excluded = audit_effect_other_items(
             [blank_item("base_game:helper", "effect"), source, structure],

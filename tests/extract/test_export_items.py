@@ -681,6 +681,23 @@ class ExportItemsTests(unittest.TestCase):
                 "recipes": [],
             }
         )
+        catalog["entities"].append(
+            {
+                "key": "base_game:spark_helper",
+                "namespace": "base_game",
+                "prefab_id": "spark_helper",
+                "type": "effect",
+                "is_inventory_item": False,
+                "name": {"vi": None, "en": None},
+                "description": {"vi": None, "en": None},
+                "icon_key": None,
+                "recipes": [],
+                "acquisition": [],
+                "stats": [],
+                "effects": [],
+                "relations": [],
+            }
+        )
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             catalog_path = root / "catalog.json"
@@ -691,6 +708,7 @@ class ExportItemsTests(unittest.TestCase):
             overrides_path = root / "item-details.json"
             report_path = root / "item-details-report.json"
             structure_audit_path = root / "structure-icon-audit.json"
+            effect_other_audit_path = root / "effect-other-audit.json"
             catalog_path.write_text(json.dumps(catalog), encoding="utf-8")
             assets_path.write_text(json.dumps(assets), encoding="utf-8")
             overrides_path.write_text(
@@ -711,11 +729,13 @@ class ExportItemsTests(unittest.TestCase):
                 detail_overrides_path=overrides_path,
                 detail_report_path=report_path,
                 structure_audit_path=structure_audit_path,
+                effect_other_audit_path=effect_other_audit_path,
             )
             first_items = items_path.read_bytes()
             first_textures = textures_path.read_bytes()
             first_report = report_path.read_bytes()
             first_structure_audit = structure_audit_path.read_bytes()
+            first_effect_other_audit = effect_other_audit_path.read_bytes()
             export_items(
                 database_path,
                 catalog_path,
@@ -725,6 +745,7 @@ class ExportItemsTests(unittest.TestCase):
                 detail_overrides_path=overrides_path,
                 detail_report_path=report_path,
                 structure_audit_path=structure_audit_path,
+                effect_other_audit_path=effect_other_audit_path,
             )
 
             self.assertEqual(items_path.read_bytes(), first_items)
@@ -733,9 +754,13 @@ class ExportItemsTests(unittest.TestCase):
             self.assertEqual(
                 structure_audit_path.read_bytes(), first_structure_audit
             )
+            self.assertEqual(
+                effect_other_audit_path.read_bytes(), first_effect_other_audit
+            )
             payload = json.loads(first_items)
             by_id = {item["id"]: item for item in payload["items"]}
             self.assertEqual(payload["schema_version"], 6)
+            self.assertNotIn("base_game:spark_helper", by_id)
             self.assertIsNone(by_id["base_game:goldnugget"]["structureDetails"])
             self.assertEqual(
                 by_id["tu_tien:xd_world_altar"]["structureDetails"]["origin"]["craftable"],
@@ -748,10 +773,26 @@ class ExportItemsTests(unittest.TestCase):
                 audit["rows"][0]["classification"], "natural_structure"
             )
             self.assertEqual(audit["rows"][0]["action"], "keep")
+            effect_other_audit = json.loads(first_effect_other_audit)
+            self.assertEqual(effect_other_audit["schema_version"], 1)
+            self.assertEqual(
+                effect_other_audit["summary"],
+                {
+                    "categories": {"effect": 1, "other": 0},
+                    "exclude": 1,
+                    "keep": 0,
+                    "total": 1,
+                },
+            )
+            self.assertEqual(
+                effect_other_audit["rows"][0]["id"], "base_game:spark_helper"
+            )
+            self.assertEqual(effect_other_audit["rows"][0]["action"], "exclude")
             self.assertFalse((root / ".items.json.tmp").exists())
             self.assertFalse((root / ".textures.json.tmp").exists())
             self.assertFalse((root / ".item-details-report.json.tmp").exists())
             self.assertFalse((root / ".structure-icon-audit.json.tmp").exists())
+            self.assertFalse((root / ".effect-other-audit.json.tmp").exists())
 
     def test_loads_deduplicated_crafting_notes_and_rejects_conflicts(self):
         with tempfile.TemporaryDirectory() as tmp:

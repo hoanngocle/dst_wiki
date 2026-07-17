@@ -12,6 +12,7 @@ from tools.extract.wiki_export import (
     load_wiki_export,
     merge_wiki_items,
 )
+from tools.extract.effect_other_audit import audit_effect_other_items
 from tools.extract.exclusions import NON_ITEM_PREFAB_IDS
 from tools.extract.item_details import build_tu_tien_item_details
 from tools.extract.structure_details import (
@@ -41,6 +42,7 @@ DESCRIPTION_TRANSLATIONS = Path("data/manual/item_description_vi.json")
 ITEM_DETAIL_OVERRIDES = Path("data/manual/tu_tien_item_details.json")
 ITEM_DETAIL_REPORT = Path("data/generated/tu-tien-item-details-report.json")
 STRUCTURE_ICON_AUDIT = Path("data/generated/structure-icon-audit.json")
+EFFECT_OTHER_AUDIT = Path("data/generated/effect-other-audit.json")
 ICON_KEY_ALIASES = {
     "tu_tien:xd_beefalo": "base_game:beefalo",
 }
@@ -793,6 +795,7 @@ def export_items(
     detail_overrides_path: Path = ITEM_DETAIL_OVERRIDES,
     detail_report_path: Path = ITEM_DETAIL_REPORT,
     structure_audit_path: Path = STRUCTURE_ICON_AUDIT,
+    effect_other_audit_path: Path = EFFECT_OTHER_AUDIT,
 ) -> None:
     """Read audit JSON and atomically publish the compact frontend contracts."""
 
@@ -828,6 +831,33 @@ def export_items(
     for item in items["items"]:
         item.setdefault("details", None)
         item["structureDetails"] = structure_details.get(item.get("id"))
+    effect_other_rows, effect_other_excluded_ids = audit_effect_other_items(
+        items["items"], catalog["entities"], wiki.details
+    )
+    items["items"] = [
+        item
+        for item in items["items"]
+        if item.get("id") not in effect_other_excluded_ids
+    ]
+    effect_other_audit = {
+        "schema_version": 1,
+        "summary": {
+            "total": len(effect_other_rows),
+            "keep": sum(
+                row.get("action") == "keep" for row in effect_other_rows
+            ),
+            "exclude": sum(
+                row.get("action") == "exclude" for row in effect_other_rows
+            ),
+            "categories": {
+                category: sum(
+                    row.get("category") == category for row in effect_other_rows
+                )
+                for category in ("effect", "other")
+            },
+        },
+        "rows": effect_other_rows,
+    }
     action_counts = {
         action: sum(row.get("action") == action for row in audit_rows)
         for action in ("keep", "repair", "exclude")
@@ -858,5 +888,6 @@ def export_items(
     _atomic_json(Path(textures_path), textures)
     _atomic_json(Path(detail_report_path), detail_report)
     _atomic_json(Path(structure_audit_path), structure_audit)
+    _atomic_json(Path(effect_other_audit_path), effect_other_audit)
     if wiki.details or wiki.assets:
         export_wiki_artifacts(wiki, wiki_details_path, wiki_assets_path)

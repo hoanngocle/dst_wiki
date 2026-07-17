@@ -70,7 +70,7 @@ def _reference_id(value: Any) -> Optional[str]:
 def _build_reverse_references(
     items: Sequence[JsonObject],
     entities: Sequence[JsonObject],
-    wiki_details: JsonObject,
+    wiki_details: Any,
 ) -> Dict[str, List[JsonObject]]:
     collected: Dict[str, Set[Tuple[str, str]]] = {}
 
@@ -184,8 +184,24 @@ def _build_reverse_references(
                 collect_wiki_entity_ids(nested, source)
 
     if isinstance(wiki_details, dict):
-        for page_id in sorted(wiki_details, key=str):
-            collect_wiki_entity_ids(wiki_details[page_id], f"wiki:{page_id}")
+        wiki_entries = sorted(wiki_details.items(), key=lambda entry: str(entry[0]))
+    elif isinstance(wiki_details, (list, tuple)):
+        wiki_entries = sorted(
+            (
+                (
+                    detail.get("pageId", index)
+                    if isinstance(detail, dict)
+                    else index,
+                    detail,
+                )
+                for index, detail in enumerate(wiki_details)
+            ),
+            key=lambda entry: str(entry[0]),
+        )
+    else:
+        wiki_entries = []
+    for page_id, detail in wiki_entries:
+        collect_wiki_entity_ids(detail, f"wiki:{page_id}")
 
     return {
         target: [
@@ -225,7 +241,7 @@ def _row(
 def audit_effect_other_items(
     items: Sequence[JsonObject],
     entities: Sequence[JsonObject],
-    wiki_details: Optional[JsonObject] = None,
+    wiki_details: Optional[Any] = None,
 ) -> Tuple[List[JsonObject], Set[str]]:
     """Return stable audit rows and IDs proven empty and unreferenced."""
 
