@@ -20,6 +20,87 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Pepper_Plant.png",
+              "title": "Pepper Plant",
+              "url": "https://dontstarve.wiki.gg/wiki/Pepper_Plant"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Giant_Pepper.png",
+              "title": "Giant Pepper",
+              "url": "https://dontstarve.wiki.gg/wiki/Giant_Pepper"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Pepper",
+      "url": "https://dontstarve.wiki.gg/wiki/Pepper"
+    },
+    "usage": {
+      "recipes": [
+        {
+          "character": null,
+          "dlc": null,
+          "ingredients": [],
+          "note": null,
+          "result": {
+            "entityId": null,
+            "iconUrl": null,
+            "title": "Roasted Pepper",
+            "url": "https://dontstarve.wiki.gg/wiki/Roasted_Pepper"
+          },
+          "resultAmount": 1,
+          "station": "Cooking",
+          "subjectAmount": 1
+        },
+        {
+          "character": null,
+          "dlc": null,
+          "ingredients": [],
+          "note": null,
+          "result": {
+            "entityId": null,
+            "iconUrl": null,
+            "title": "Lumpy Seeds",
+            "url": "https://dontstarve.wiki.gg/wiki/Lumpy_Seeds"
+          },
+          "resultAmount": 1,
+          "station": "Birdcage",
+          "subjectAmount": 1
+        },
+        {
+          "character": null,
+          "dlc": null,
+          "ingredients": [],
+          "note": null,
+          "result": {
+            "entityId": null,
+            "iconUrl": null,
+            "title": "Chili Flakes",
+            "url": "https://dontstarve.wiki.gg/wiki/Chili_Flakes"
+          },
+          "resultAmount": 2,
+          "station": "Portable Grinding Mill",
+          "subjectAmount": 3
+        }
+      ]
+    }
+  },
   "pageId": 160201,
   "plainText": "Exclusive to:\nPepper\nFood Info\n9.375\n-20\n-15\nVeggie\n× 1\nObject Info\n15 Days\nCan be Burned\n40\nSource\nDropped by\nMiscellaneous\n\"pepper\"\n“Nice and spicy.”\n–Wilson, when examining Pepper.\n“Good. These are the hot ones.”\n–Willow, when examining Pepper.\n“Hehe! Is little tiny vegetable.”\n–Wolfgang, when examining Pepper.\n“It looks so tiny and insignificant.”\n–Wendy, when examining Pepper.\n“ENERGY PACKETS WITH ODIOUS INTERIORS”\n–WX-78, when examining Pepper.\n“Of the genus Capsicum, if i'm not mistaken.”\n–Wickerbottom, when examining Pepper.\n“Funny looking vegetable.”\n–Woodie, when examining Pepper.\n“Looks like the spicy kind.”\n–Maxwell, when examining Pepper.\n“Its mere presence öffends me.”\n–Wigfrid, when examining Pepper.\n“It's so small and cute!”\n–Webber, when examining Pepper.\n“Finally, I can make my famous hot sauce!”\n–Warly, when examining Pepper.\n“Aww... cute!”\n–Wormwood, when examining Pepper.\n“Ye-hooo! They gotta a kick to 'em.”\n–Winona, when examining Pepper.\n“An impy little vegetable.”\n–Wortox, when examining Pepper.\n“Glaaagh! Mouth on fire!”\n–Wurt, when examining Pepper.\n“Nice and red and ripe!”\n–Walter, when examining Pepper.\n“A little spice might put a spring in my step.”\n–Wanda, when examining Pepper.\nThe Pepper is a Vegetable Food item in Don't Starve Together.  Pepper can also be Farmed by planting Seeds for a chance of growing them or by using Pepper Seeds (Lumpy Seeds). When eaten raw, Pepper restores 9.5 Hunger. In addition, it reduces Health by 20 and Sanity by 15. They take 15 days to spoil and can also be used by Warly to produce Chili Flakes in the Portable Grinding Mill.\nPeppers are particularly useful in Winter due to the Stuffed Pepper Poppers crockpot recipe which increases a character's warmth.\nRoasted Pepper[edit | edit source]\nRoasted Pepper\nFood Info\n9.375\n-3\n-10\nVeggie\n× 1\nObject Info\n15 Days\nCan be Burned\n40\nMiscellaneous\n\"pepper_cooked\"\n“It was already hot to begin with.”\n–Wilson, when examining Roasted Pepper.\n“First rule of vegetables: fire makes it better.”\n–Willow, when examining Roasted Pepper.\n“Teeny vegetables smashes Wolfgang's tastebuds.”\n–Wolfgang, when examining Roasted Pepper.\n“What can this tiny plant possibly do to fill my empty life?”\n–Wendy, when examining Roasted Pepper.\n“WE HAVE DEFEATED THE ENERGY PACKETS”\n–WX-78, when examining Roasted Pepper.\n“I must be careful not to rub my eyes.”\n–Wickerbottom, when examining Roasted Pepper.\n“Pretty tiny but it packs a punch, eh?”\n–Woodie, when examining Roasted Pepper.\n“Slightly more exciting than the usual vegetable.”\n–Maxwell, when examining Roasted Pepper.\n“It is nöt wörthy öf my cönsumptiön.”\n–Wigfrid, when examining Roasted Pepper.\n“I bet it's spicy.”\n–Webber, when examining Roasted Pepper.\n“The roasting really brings out the flavors.”\n–Warly, when examining Roasted Pepper.\n“Oh. Smells like fire”\n–Wormwood, when examining Roasted Pepper.\n“Just the smell is making my eyes water.”\n–Winona, when examining Roasted Pepper.\n“Tiny toasted twisty things.”\n–Wortox, when examining Roasted Pepper.\n“Why make pepper even hotter?”\n–Wurt, when examining Roasted Pepper.\n“It's hot!”\n–Walter, when examining Roasted Pepper.\n“An especially hot pepper.”\n–Wanda, when examining Roasted Pepper.\nRoasted Pepper is obtained by cooking a Pepper over a fire. It deducts 17 less Health and 5 less Sanity than the raw version and still takes 15 days to spoil.\nUsage[edit | edit source]\n×3\n×2\nRecipes[edit | edit source]\n×2\nFiller cannot be Twigs\n×2\nUsing Twigs as a filler will result in Dragon Pie\nTrivia[edit | edit source]\nPeppers were introduced in the Warly Character Update.\nGallery[edit | edit source]\nIcon used as emoji for Official Klei Discord.\nBy TypeBy Crock Pot Value\nView or edit this template\nFood and Edible Items (by Food Type)\nVeggie\nSeeds\nMeat\nGoodies\nGeneric\nHorrible\nRoughage\nElementals\nBurnt\nRaw\nGears\nGold Dust\nBerry\nWood\nNitre\nLunar Shards\nView or edit this template\nFood and Edible Items (by Food Value)\nMeats\nFishes\nVegetables\nFruits\nMonster Food\nEggs\nDairy\nSweetener\nFrozen\nInedibles\nMagic\nFat\nSeed\nJellyfish\nBone\nFilter\nAntihistamine\nDecoration\nBug\nNo Value Food",
   "recipes": [],
@@ -30,6 +111,7 @@
     "timestamp": "2026-07-01T07:01:58Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Hạt Tiêu là một loại Thực Phẩm Thực Vật trong Don&#x27;t Starve Together. Tiêu cũng có thể được trồng bằng cách gieo Hạt giống để có cơ hội trồng chúng hoặc bằng cách sử dụng Hạt tiêu (Hạt sần). Khi ăn sống, Pepper hồi 9,5 Sức Đói. Ngoài ra, nó làm giảm 20 Máu và 15 Tinh Thần. Chúng mất 15 ngày để hư hỏng và cũng có thể được Warly sử dụng để sản xuất Chili Flakes trong Máy Nghiền Di Động.</p>",
   "title": "Pepper",
   "wikitext": "{{Exclusivity|Don't Starve Together}}\n{{Object Infobox\n|canBeBurned = 1\n|image = Pepper Dropped.png\n|icon = Pepper.png\n|name = Pepper\n|hpRestored = -20\n|hungerRestored = 9.375\n|sanityRestored = -15\n|stack = 40\n|spoil = 15 Days\n|spawnCode = \"pepper\"\n|droppedBy = {{Pic|32|Pepper Plant}}{{Pic|32|Giant Pepper}}\n|foodType = [[Veggie]] [[File:Veggie.png|32px|]]\n|foodValue = [[File:Vegetables.png|32px|link=Vegetables]] &times; 1\n}}\n{{Quotes\n|wilson =Nice and spicy.\n|willow =Good. These are the hot ones.\n|wolfgang =Hehe! Is little tiny vegetable.\n|wendy =It looks so tiny and insignificant.\n|wx78 =ENERGY PACKETS WITH ODIOUS INTERIORS\n|wickerbottom =Of the genus Capsicum, if i'm not mistaken.\n|woodie =Funny looking vegetable.\n|maxwell =Looks like the spicy kind.\n|wigfrid =Its mere presence öffends me.\n|webber =It's so small and cute!\n|winona =Ye-hooo! They gotta a kick to 'em.\n|warly = Finally, I can make my famous hot sauce!\n|wortox = An impy little vegetable.\n|wormwood = Aww... cute!\n|wurt = Glaaagh! Mouth on fire!\n|walter = Nice and red and ripe!\n|wanda = A little spice might put a spring in my step.\n|choose = wurt\n|source = when examining Pepper.}}\nThe '''Pepper''' is a Vegetable Food item in [[Don't Starve Together]].  Pepper can also be Farmed by planting [[Seeds/DST|Seeds]] for a chance of growing them or by using [[Crop Seeds/DST#Lumpy Seeds|Pepper Seeds (Lumpy Seeds)]]. When eaten raw, Pepper restores 9.5 Hunger. In addition, it reduces [[Health]] by 20 and [[Sanity]] by 15. They take 15 days to spoil and can also be used by [[Warly]] to produce [[Chili Flakes]] in the [[Portable Grinding Mill]].\n\n\nPeppers are particularly useful in Winter due to the [[Stuffed Pepper Poppers]] crockpot recipe which increases a character's warmth.\n{{clear}}\n== Roasted Pepper ==\n\n{{Object Infobox\n|canBeBurned = 1\n|image = Roasted Pepper Dropped.png\n|icon = Roasted Pepper.png\n|name = Roasted Pepper\n|hpRestored = -3\n|hungerRestored = 9.375\n|sanityRestored = -10\n|stack = 40\n|spoil = 15 Days\n|spawnCode = \"pepper_cooked\"\n|foodType = [[Veggie]] [[File:Veggie.png|32px|]]\n|foodValue = [[File:Vegetables.png|32px|link=Vegetables]] &times; 1\n}}{{Quotes\n|wilson =It was already hot to begin with.\n|willow =First rule of vegetables: fire makes it better.\n|wolfgang =Teeny vegetables smashes Wolfgang's tastebuds.\n|wendy =What can this tiny plant possibly do to fill my empty life?\n|wx78 =WE HAVE DEFEATED THE ENERGY PACKETS\n|wickerbottom =I must be careful not to rub my eyes.\n|woodie =Pretty tiny but it packs a punch, eh?\n|maxwell =Slightly more exciting than the usual vegetable.\n|wigfrid =It is nöt wörthy öf my cönsumptiön.\n|webber =I bet it's spicy.\n|winona =Just the smell is making my eyes water.\n|warly = The roasting really brings out the flavors.\n|wortox = Tiny toasted twisty things.\n|wormwood = Oh. Smells like fire\n|wurt = Why make pepper even hotter?\n|walter = It's hot!\n|wanda = An especially hot pepper.\n|choose = warly\n|source = when examining Roasted Pepper.}}\n'''Roasted Pepper''' is obtained by cooking a Pepper over a fire. It deducts 17 less Health and 5 less Sanity than the raw version and still takes 15 days to spoil.\n{{clear}}\n== {{pic|32|Icon Tools}} Usage ==\n{{Recipe|item1 = Pepper|tool = Cooking|result = Roasted Pepper}}\n{{Recipe|item1 = Pepper|tool = Birdcage|result = Lumpy Seeds}}\n{{Recipe|item1 = Peppers|tool = Pig Icon|result = Manure}}\n{{Recipe|item1 = Pepper|count1 = 3|tool = Portable Grinding Mill|result = Chili Flakes|resultcount = 2}}\n\n=={{Pic|32|Cookbook}} Recipes ==\n{{Recipe|item1 = Peppers|item2 = Meats|item3 = Filler|count3 = 2|tool = Crock Pot|result = Stuffed Pepper Poppers|note = Filler cannot be [[Twigs]]}}\n{{Recipe|item1 = Dragon Fruit|item2 = Peppers|item3 = Filler|count3 = 2|tool = Portable Crock Pot|result = Hot Dragon Chili Salad|note = Using [[Twigs]] as a filler will result in [[Dragon Pie]]|character=Warly}}\n\n== {{pic|32|Placeholder}} Trivia ==\n* Peppers were introduced in the [[Warly]] [[Don't Starve Together/Version History|Character Update]].\n== {{Pic|32|Blueprint}} Gallery ==\n<gallery captionalign=\"center\" hideaddbutton=\"true\">\nPepper 128x128.png|Icon used as emoji for Official Klei Discord.\n</gallery>\n__NOTOC__\n{{Food and Edible Items}}\n[[Category:Health Loss]]\n[[Category:Sanity Loss]]\n[[Category:Perishables]]\n[[Category:Vegetables]]\n[[vi:Pepper]]\n[[zh:辣椒]]"
 }

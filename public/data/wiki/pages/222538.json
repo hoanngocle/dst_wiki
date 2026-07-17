@@ -7,6 +7,74 @@
   "displayTitle": "<span class=\"mw-page-title-main\">Lost Scrapbook Page</span>",
   "html": "<div class=\"mw-content-ltr mw-parser-output\"><p><i>Exclusive to:</i>  <a href=\"https://dontstarve.wiki.gg/wiki/Don%27t_Starve_Together\" title=\"Don&#x27;t Starve Together\"><img alt=\"Don&#x27;t Starve Together icon.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Don%27t_Starve_Together_icon.png/32px-Don%27t_Starve_Together_icon.png?3bc208\" width=\"32\" height=\"35\"></a><br>\n</p>\n\n<p class=\"mw-empty-elt\"></p>\n\n<div><b>“</b><span>Adds missing information to your Scrapbook</span><b>”</b>\n<p>-<a href=\"https://dontstarve.wiki.gg/wiki/Scrapbook\" title=\"Scrapbook Description\"><img alt=\"Scrapbook Description\" src=\"https://dontstarve.wiki.gg/images/thumb/Lost_Scrapbook_Page.png/50px-Lost_Scrapbook_Page.png?f37463\" width=\"50\" height=\"50\"></a></p>\n</div>\n<p>The <b>Scrapbook Page</b> is an item rarely found in <i><a href=\"https://dontstarve.wiki.gg/wiki/Don%27t_Starve_Together\" title=\"Don&#x27;t Starve Together\">Don&#x27;t Starve Together</a></i>. With it, 3-4 random items, food, creature or giant will be added to the player&#x27;s <a href=\"https://dontstarve.wiki.gg/wiki/Scrapbook\" class=\"mw-redirect\" title=\"Scrapbook\">Scrapbook</a>. A thing that has been studied will display connections with other things, but not its characteristics.\n</p>\n\n\n\n\n\n</div>",
   "images": [],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": "base_game:mound",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Grave.png",
+              "title": "Grave",
+              "url": "https://dontstarve.wiki.gg/wiki/Grave"
+            }
+          ]
+        },
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Sunken_Chest.png",
+              "title": "Sunken Chest",
+              "url": "https://dontstarve.wiki.gg/wiki/Sunken_Chest"
+            }
+          ]
+        },
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": "base_game:tumbleweed",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Tumbleweed.png",
+              "title": "Tumbleweed",
+              "url": "https://dontstarve.wiki.gg/wiki/Tumbleweed"
+            }
+          ]
+        },
+        {
+          "chance": "10%",
+          "context": "( , only non-player)",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": "base_game:skeleton",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Skeleton.png",
+              "title": "Skeleton",
+              "url": "https://dontstarve.wiki.gg/wiki/Skeleton"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": "base_game:scrapbook_page",
+      "iconUrl": null,
+      "title": "Lost Scrapbook Page",
+      "url": "https://dontstarve.wiki.gg/wiki/Lost_Scrapbook_Page"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 222538,
   "plainText": "Exclusive to:\nLost Scrapbook Page\nObject Info\n15 sec.\nCan be Burned\n40\nSource\nDropped by\n(10%, only non-player)\nMiscellaneous\n\"scrapbook_page\"\n“Someone else out there likes to scrapbook.”\n–Wilson\n“Another page for the emergency kindling supply- I mean scrapbook.”\n–Willow\n“Is page of funny scribbles.”\n–Wolfgang\n“A lost and lonely page.”\n–Wendy\n“I WILL ADD THIS INFORMATION TO MY PAPER DATA RECEPTACLE”\n–WX-78\n“What a hideous sight! A page torn from its book!”\n–Wickerbottom\n“Huh. Wonder where it came from?”\n–Woodie\n“Curious. It may yield some useful information.”\n–Maxwell\n“Fröm whence hath yöu cöme, mysteriöus page?”\n–Wigfrid\n“Oooh, we found a page!”\n–Webber\n“Ah! Someone has left a page here.”\n–Warly\n“Book leaf?”\n–Wormwood\n“Let's see if there's anything interesting written on it.”\n–Winona\n“Where is it from? Not knowing is half the fun!”\n–Wortox\n“Found page for scrappy book!”\n–Wurt\n“I should add it to my scrapbook!”\n–Walter\n“Did I leave this here?”\n–Wanda\n“Adds missing information to your Scrapbook”\n-\nThe Scrapbook Page is an item rarely found in Don't Starve Together. With it, 3-4 random items, food, creature or giant will be added to the player's Scrapbook. A thing that has been studied will display connections with other things, but not its characteristics.\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -17,6 +85,7 @@
     "timestamp": "2025-11-01T06:00:52Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Trang Scrapbook là một vật phẩm hiếm thấy trong Don&#x27;t Starve Together. Với nó, 3-4 vật phẩm ngẫu nhiên, thức ăn, sinh vật hoặc người khổng lồ sẽ được thêm vào Scrapbook của người chơi. Một vật đã được nghiên cứu sẽ hiển thị các mối liên hệ với những vật khác, nhưng không hiển thị các đặc điểm của nó.</p>",
   "title": "Lost Scrapbook Page",
   "wikitext": "{{Exclusivity|1=|2=Don't Starve Together}}\n{{Object Infobox\n|image = Lost Scrapbook Page Dropped.png\n|icon = Lost Scrapbook Page.png\n|burnTime = [[File:Light_Sources_Filter.png|32px|link=Fuel#Fire Fuel]] 15 sec.\n|stack = 40\n|canBeBurned=1\n|droppedBy = {{pic|32|Grave}}<br>{{pic|32|Sunken Chest}}<br>{{pic|32|Tumbleweed}}<br>{{pic|32|Skeleton}}(10%, only non-player)\n|spawnCode = \"scrapbook_page\" \n}}\n\n{{Quotes\n|wilson = Someone else out there likes to scrapbook.\n|willow = Another page for the emergency kindling supply- I mean scrapbook.\n|wolfgang = Is page of funny scribbles.\n|wendy = A lost and lonely page.\n|wx78 = I WILL ADD THIS INFORMATION TO MY PAPER DATA RECEPTACLE\n|wickerbottom = What a hideous sight! A page torn from its book!\n|woodie = Huh. Wonder where it came from?\n|maxwell = Curious. It may yield some useful information.\n|wigfrid = Fröm whence hath yöu cöme, mysteriöus page?\n|webber = Oooh, we found a page!\n|winona = Let's see if there's anything interesting written on it.\n|warly = Ah! Someone has left a page here.\n|wortox = Where is it from? Not knowing is half the fun!\n|wormwood = Book leaf?\n|wurt = Found page for scrappy book!\n|walter = I should add it to my scrapbook!\n|wanda = Did I leave this here?\n|choose = wanda\n}}\n\n{{Scrapbook Info|Adds missing information to your Scrapbook}}\nThe '''Scrapbook Page''' is an item rarely found in ''[[Don't Starve Together]]''. With it, 3-4 random items, food, creature or giant will be added to the player's [[Scrapbook]]. A thing that has been studied will display connections with other things, but not its characteristics.\n\n{{Resources}}"
 }

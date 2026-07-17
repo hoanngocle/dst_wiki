@@ -19,6 +19,61 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "0.33%",
+          "context": "Shipwrecked : ( )",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Snake.png",
+              "title": "Snake",
+              "url": "https://dontstarve.wiki.gg/wiki/Snake"
+            }
+          ]
+        },
+        {
+          "chance": "0.2%",
+          "context": "( )",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Poison_Snake.png",
+              "title": "Poison Snake",
+              "url": "https://dontstarve.wiki.gg/wiki/Poison_Snake"
+            }
+          ]
+        },
+        {
+          "chance": "0.33%",
+          "context": "Hamlet : ( )",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Viper.png",
+              "title": "Viper",
+              "url": "https://dontstarve.wiki.gg/wiki/Viper"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Snake Oil",
+      "url": "https://dontstarve.wiki.gg/wiki/Snake_Oil"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 81766,
   "plainText": "Exclusive to:\nSnake Oil\n0\nDoes not stack.\nPerk\nForces a jump animation\nDropped by\n: (0.33%),\n(0.2%)\n: (0.33%)\n\"snakeoil\"\n“The label says \"Jay's Wondrous Snake Oil!\"”\n–Wilson\n“I'm not convinced.”\n–Willow\n“Good for shining Wolfgang's muscles!”\n–Wolfgang\n“This fills me with a sense of mistrust.”\n–Wendy\n“THIS HAS NO BENEFICIAL PROPERTIES WHATSOEVER”\n–WX-78\n“The usefulness of this substance remains uncertain.”\n–Wickerbottom\n“I'm not falling for this.”\n–Woodie\n“Perhaps I could turn a profit with this.”\n–Maxwell\n“Ah, I made a fortune selling such concoctions in my youth.”\n–Wagstaff\n“What pöwerful pröperties döes this bestöw?”\n–Wigfrid\n“It really works!”\n–Webber\n“I wasn't born yesterday.”\n–Walani\n“Why can't you be olive oil?”\n–Warly\n“Me knows a good deal when me sees it.”\n–Woodlegs\n“NOTHING COMES OF IT”\n–Wilba\n“Hmm...”\n–Wormwood\n“I know it's a fake, but I still just have to try it!”\n–Wheeler\nSnake Oil is an item exclusive to the Shipwrecked DLC. It is a very rare joke drop from Snakes and Poison Snakes.\nIt can be quaffed like Anti Venom, but this doesn't remove Poison or consume the Snake Oil. It can be removed by throwing it in a Fire Pit or Chiminea, but it has no value as Fuel either.\nHamlet[edit | edit source]\nSnake Oil is also included in the Hamlet DLC. It can be obtained rarely by killing Vipers.\nTrivia[edit | edit source]\n\"Snake oil\" is an expression that refers to health products with no verifiable benefits.\nThere are 2 game files that prove that the intended use for Snake Oil is for it to have no use:\npoisonhealer.lua: part of the 3rd line reads: \"--Used for snakeoil. We don't want it to actually do anything.\". \"We\" is referred to the developers.\nsnakeoil.lua: lines 23 to 27 read, which mean it is a fuel with a value of 0 and is a poison cure that does not cure at all:\ninst:AddComponent(\"fuel\")\ninst.components.fuel.fuelvalue = 0\ninst:AddComponent(\"poisonhealer\")\ninst.components.poisonhealer.enabled = false\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -29,6 +84,7 @@
     "timestamp": "2025-05-12T22:09:24Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Dầu Rắn là một vật phẩm độc quyền trong DLC ​​Shipwrecked. Đó là một trò đùa rất hiếm gặp từ Rắn và Rắn độc.</p>",
   "title": "Snake Oil",
   "wikitext": "{{Exclusivity|Shipwrecked|Hamlet}}\n{{Item Infobox\n|image = File:Snake Oil.png\n|burnTime = 0\n|stack = Does not stack.\n|droppedBy = {{Pic|24|SW icon|Shipwrecked}}: {{pic|30|Snake}}(0.33%),<br>{{pic|30|Poison Snake|link=Snake}}(0.2%)<hr>\n{{Pic|24|Hamlet icon|Hamlet}}: {{pic|40|Viper}} (0.33%)\n|perk = Forces a jump animation\n|spawnCode = \"snakeoil\"}}\n{{Quotes\n|wilson=The label says \"Jay's Wondrous Snake Oil!\"\n|willow=I'm not convinced.\n|wolfgang=Good for shining Wolfgang's muscles!\n|wendy=This fills me with a sense of mistrust.\n|wx78=THIS HAS NO BENEFICIAL PROPERTIES WHATSOEVER\n|wickerbottom=The usefulness of this substance remains uncertain.\n|woodie=I'm not falling for this.\n|maxwell=Perhaps I could turn a profit with this.\n|wagstaff=Ah, I made a fortune selling such concoctions in my youth.\n|wigfrid=What pöwerful pröperties döes this bestöw?\n|webber=It really works!\n|walani=I wasn't born yesterday.\n|warly=Why can't you be olive oil?\n|woodlegs=Me knows a good deal when me sees it.\n|wilba=NOTHING COMES OF IT\n|wormwood=Hmm...\n|wheeler=I know it's a fake, but I still just have to try it!\n|choose=wilson\n}}\n\n'''Snake Oil''' is an item exclusive to the ''[[Don't Starve: Shipwrecked|Shipwrecked]]'' DLC. It is a very rare joke drop from [[Snake]]s and [[Poison Snake]]s.\n\nIt can be quaffed like [[Anti Venom]], but this doesn't remove [[Poison]] or consume the Snake Oil. It can be removed by throwing it in a [[Fire Pit]] or [[Chiminea]], but it has no value as [[Fuel]] either.\n\n=={{Pic|32|Hamlet icon}} Hamlet==\nSnake Oil is also included in the ''[[Hamlet]]'' DLC. It can be obtained rarely by killing [[Viper]]s.\n\n== {{pic|32|Placeholder}} Trivia ==\n*\"[[wikipedia:Snake oil|Snake oil]]\" is an expression that refers to health products with no verifiable benefits.\n*There are 2 game files that prove that the intended use for Snake Oil is for it to have no use:\n**<code>poisonhealer.lua</code>: part of the 3rd line reads: \"<code>--Used for snakeoil. We don't want it to actually do anything.</code>\". \"We\" is referred to the developers.\n**<code>snakeoil.lua</code>: lines 23 to 27 read, which mean it is a fuel with a value of 0 and is a poison cure that does not cure at all:\n <code>   inst:AddComponent(\"fuel\")\n    inst.components.fuel.fuelvalue = 0\n \n    inst:AddComponent(\"poisonhealer\")\n    inst.components.poisonhealer.enabled = false\n </code>\n\n{{Mob Dropped Items}}\n[[es:Aceite de serpiente]]\n[[Category:Mob Dropped Items]]\n[[Category:Non-Flammable]]\n[[Category:Hamlet]]"
 }

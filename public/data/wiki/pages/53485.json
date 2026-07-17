@@ -23,6 +23,54 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "DS : , (Axe)",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Blue_Mushroom.png",
+              "title": "Blue Mushroom",
+              "url": "https://dontstarve.wiki.gg/wiki/Blue_Mushroom"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Mushtree.png",
+              "title": "Mushtree",
+              "url": "https://dontstarve.wiki.gg/wiki/Mushtree"
+            }
+          ]
+        },
+        {
+          "chance": "—",
+          "context": "SW",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Slotmachine.png",
+              "title": "Slotmachine",
+              "url": "https://dontstarve.wiki.gg/wiki/Slotmachine"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Blue Cap",
+      "url": "https://dontstarve.wiki.gg/wiki/Blue_Cap"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 53485,
   "plainText": "Don't Starve\nTogether\nBlue Cap\nFood Info\n12.5\n20\n-15\nVeggie\n× 0.5\nObject Info\n10 Days\nCan be Burned\n40\nSource\n: ( ×3)\nDropped by\n: , ()\n:\nMiscellaneous\n\"blue_cap\"\nCooked Blue Cap\nFood Info\n0\n-3\n10\nVeggie\n× 0.5\nObject Info\n7.5 sec.\n10 Days\nCan be Burned\n40\nMiscellaneous\n\"blue_cap_cooked\"\n“It's weird and gooey.”\n–Wilson\n“It smells like a gym sock!”\n–Willow\n“Is good for me, I think.”\n–Wolfgang\n“A fungus to preserve the monotony.”\n–Wendy\n“MEDICINAL FUNGUS”\n–WX-78\n“This seems to have medicinal properties.”\n–Wickerbottom\n“That's not meat.”\n–Woodie\n“What could go wrong?”\n–Maxwell\n“This most certainly will not agree with me.”\n–Wagstaff\n“Hmm, a blue öne.”\n–Wigfrid\n“You'd have to be crazy...”\n–Webber\n“I didn't know mushrooms came in blue.”\n–Walani\n“What deliciousness shall you yield?”\n–Warly\n“I know enuff not to pop this'n me mouth no questions asked.”\n–Woodlegs\n“TO EATS OR NOT TO EATS?”\n–Wilba\n“Hurts head. Ow!”\n–Wormwood\n“Well if it's not edible, I can always launch it through the air.”\n–Wheeler\n“Yep. Blue mushroom.”\n–Winona\n“Funny tricks it tries to play.”\n–Wortox\n“Good for belly, bad for head.”\n–Wurt\n“I'm preeetty sure this isn't the poisonous kind...”\n–Walter\n“It's... probably edible. If I'm desperate.”\n–Wanda\nBlue Caps are Vegetable Food Items that can be harvested on Blue Mushrooms or Blue Mushtrees. Raw Blue Caps have the most positive effects of all the Mushrooms. When eaten raw, they restore 20 and 12.5 at the cost of 15 . They can also be used as Crock Pot filler with a 0.5 vegetable value.\nCooked Blue Cap[edit | edit source]\n“It's different now...”\n–Wilson\n“I changed it with fire!”\n–Willow\n“Is not same.”\n–Wolfgang\n“All is malleable.”\n–Wendy\n“MODIFIED FUNGUS”\n–WX-78\n“Chemistry has happened.”\n–Wickerbottom\n“That's not meat.”\n–Woodie\n“Umami!”\n–Maxwell\n“Good for the clarity of mind.”\n–Wagstaff\n“I still dön't want tö eat it.”\n–Wigfrid\n“Good thing we're feeling healthy.”\n–Webber\n“Did I make it better or worse?”\n–Walani\n“Could use smoked salt and balsamic vinegar...”\n–Warly\n“Smells eat-able...”\n–Woodlegs\n“DOTH FWOOSHING MAKE'ST IT BETTER?”\n–Wilba\n“Helps head. Ahhh...”\n–Wormwood\n“Only one way to tell if it's safe or not.”\n–Wheeler\n“Well, I don't THINK it's poison.”\n–Winona\n“That changed it somehow.”\n–Wortox\n“It smell different...”\n–Wurt\n“Nothing ventured, nothing gained!”\n–Walter\n“I think I made it worse.”\n–Wanda\nA Cooked Blue Cap is a Vegetable Food Item made by Cooking a Blue Cap on a fire (Campfire, Fire Pit, or a Dwarf Star). Unlike its raw counterpart, the Cooked Blue Cap will take away 3 and instead restore 10 when eaten, not affecting hunger at all.\nDownloadable Content[edit | edit source]\nIn the Shipwrecked DLC, Blue Caps can be obtained by using the Slot Machine.\nIn the Hamlet DLC, Blue Caps can be bought for 3 Oincs at the Curly Tails Mud Spa in the Pig City.\nUsage[edit | edit source]\nTips[edit | edit source]\nRaw and Cooked Blue Caps can be eaten together to increase all three stats. Eating one raw Blue Cap and two cooked Blue Caps results in +14 , +12.5 , and +5 .\nUsing Blue Caps alongside Taffy is a great combo, as Taffy restores the exact amount of sanity lost from eating the Blue Cap.\nA raw Blue Cap and a cooked Green Cap can be eaten together to provide +19 , +12.5 , and +0 .\nRaw Blue Caps can be found in plentiful amounts around the Blue Mushtree biome in the caves, which can be used for emergency healing and hunger restoration.\nGallery[edit | edit source]\nIcon used as emoji for Official Klei Discord.\nBy TypeBy Crock Pot Value\nView or edit this template\nFood and Edible Items (by Food Type)\nVeggie\nSeeds\nMeat\nGoodies\nGeneric\nHorrible\nRoughage\nElementals\nBurnt\nRaw\nGears\nGold Dust\nBerry\nWood\nNitre\nLunar Shards\nView or edit this template\nFood and Edible Items (by Food Value)\nMeats\nFishes\nVegetables\nFruits\nMonster Food\nEggs\nDairy\nSweetener\nFrozen\nInedibles\nMagic\nFat\nSeed\nJellyfish\nBone\nFilter\nAntihistamine\nDecoration\nBug\nNo Value Food",
   "recipes": [],
@@ -33,6 +81,7 @@
     "timestamp": "2026-06-02T20:22:03Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Mũ Xanh là Mặt Hàng Thực Phẩm Thực Vật có thể thu hoạch được trên Nấm Xanh hoặc Cây Nấm Xanh. Mũ xanh thô có tác dụng tích cực nhất trong tất cả các loại Nấm. Khi ăn sống, chúng hồi lại 20 và 12,5 với giá 15. Chúng cũng có thể được sử dụng làm chất độn trong Nồi Hầm với giá trị thực vật là 0,5.</p>",
   "title": "Blue Cap",
   "wikitext": "{{Navbutton/Separation}}\n{{Object Infobox\n|canBeBurned = 1\n|image = Blue Cap Dropped.png\n|icon = Blue Cap.png\n|name = Blue Cap\n|foodType = [[Veggie]] [[File:Veggie.png|32px|]]\n|hpRestored = 20\n|hungerRestored = 12.5\n|sanityRestored = -15\n|spoil = 10 Days\n|stack = 40\n|spawnCode = \"blue_cap\"\n|soldBy ={{Ham}}: {{Pic|32|Curly Tails Mud Spa}} ({{Pic|24|Oinc}} &times;3)\n|foodValue = {{Pic|32|Vegetables}} &times; 0.5\n|droppedBy ={{DS}}: {{Pic|32|Blue Mushroom}}''',''' {{Pic|24|Mushtree}} ({{Pic|32|Axe}})<hr>{{SW}}: {{Pic|20|Slotmachine}}\n}}\n{{Object Infobox\n|canBeBurned = 1\n|image = Cooked Blue Cap Dropped.png\n|icon = Cooked Blue Cap.png\n|name = Cooked Blue Cap\n|hpRestored = -3\n|hungerRestored = 0\n|foodType = [[Veggie]] [[File:Veggie.png|32px|]]\n|sanityRestored = 10\n|spoil = 10 Days\n|stack = 40\n|spawnCode = \"blue_cap_cooked\"\n|foodValue = {{Pic|32|Vegetables}} &times; 0.5\n|burnTime = [[File:Light_Sources_Filter.png|32px|link=Fuel#Fire Fuel]] 7.5 sec.\n}}\n{{Quotes\n|wilson = It's weird and gooey.\n|willow = It smells like a gym sock!\n|wolfgang = Is good for me, I think.\n|wendy = A fungus to preserve the monotony.\n|wx78 = MEDICINAL FUNGUS\n|wickerbottom = This seems to have medicinal properties.\n|woodie = That's not meat.\n|maxwell = What could go wrong?\n|wagstaff = This most certainly will not agree with me.\n|wigfrid = Hmm, a blue öne.\n|webber = You'd have to be crazy...\n|walani = I didn't know mushrooms came in blue.\n|warly = What deliciousness shall you yield?\n|woodlegs = I know enuff not to pop this'n me mouth no questions asked.\n|wilba = TO EATS OR NOT TO EATS?\n|wormwood = Hurts head. Ow!\n|wheeler = Well if it's not edible, I can always launch it through the air.\n|winona = Yep. Blue mushroom.\n|wortox = Funny tricks it tries to play.\n|wurt = Good for belly, bad for head.\n|walter = I'm preeetty sure this isn't the poisonous kind...\n|wanda = It's... probably edible. If I'm desperate.\n|choose = wurt\n}}\n'''Blue Caps''' are [[Vegetable]] [[Food]] [[Item]]s that can be harvested on [[Blue Mushroom]]s or [[Mushtree|Blue Mushtree]]s. Raw Blue Caps have the most positive effects of all the Mushrooms. When eaten raw, they restore 20 {{hp}} and 12.5 {{Hunger}} at the cost of 15 {{Sanity}}. They can also be used as [[Crock Pot]] filler with a 0.5 vegetable value.\n\n== Cooked Blue Cap ==\n{{Quotes\n|wilson = It's different now...\n|willow = I changed it with fire!\n|wolfgang = Is not same.\n|wendy = All is malleable.\n|wx78 = MODIFIED FUNGUS\n|wickerbottom = Chemistry has happened.\n|woodie = That's not meat.\n|maxwell = Umami!\n|wagstaff = Good for the clarity of mind.\n|wigfrid = I still dön't want tö eat it.\n|webber = Good thing we're feeling healthy.\n|walani = Did I make it better or worse?\n|warly = Could use smoked salt and balsamic vinegar...\n|woodlegs = Smells eat-able...\n|wilba = DOTH FWOOSHING MAKE'ST IT BETTER?\n|wormwood = Helps head. Ahhh...\n|wheeler = Only one way to tell if it's safe or not.\n|winona = Well, I don't THINK it's poison.\n|wortox = That changed it somehow.\n|wurt = It smell different...\n|walter = Nothing ventured, nothing gained!\n|wanda = I think I made it worse.\n|choose = walani\n}}\nA '''Cooked Blue Cap''' is a Vegetable Food Item made by [[Cooking]] a Blue Cap on a fire ([[Campfire]], [[Fire Pit]], or a [[Star Caller's Staff|Dwarf Star]]). Unlike its raw counterpart, the Cooked Blue Cap will take away 3 {{hp}} and instead restore 10 {{Sanity}} when eaten, not affecting hunger at all.\n\n== [[File:Gift Icon.png|32px]] Downloadable Content ==\nIn the ''[[Don't Starve: Shipwrecked|Shipwrecked]]'' DLC, Blue Caps can be obtained by using the [[Slot Machine]].\n\nIn the ''[[Don't Starve: Hamlet|Hamlet]]'' DLC, Blue Caps can be bought for 3 [[Oinc]]s at the [[Curly Tails Mud Spa]] in the [[Pig City]].\n== {{pic|32|Icon Tools}} Usage ==\n{{Recipe\n|item = Blue Cap\n|result = Cooked Blue Cap\n|tool = Cooking\n}}\n{{Recipe\n|item = Blue Cap\n|tool = Pig Icon\n|result = Manure\n}}\n== {{Pic|32|Prototype}} Tips ==\n* Raw and Cooked Blue Caps can be eaten together to increase all three stats. Eating '''one''' raw Blue Cap and '''two''' cooked Blue Caps results in +14 {{hp}}, +12.5 {{Hunger}}, and +5 {{sanity}}.\n* Using Blue Caps alongside [[Taffy]] is a great combo, as Taffy restores the exact amount of sanity lost from eating the Blue Cap.\n* A raw Blue Cap and a cooked Green Cap can be eaten together to provide +19 {{Hp}}, +12.5 {{Hunger}}, and +0 {{Sanity}}.\n* Raw Blue Caps can be found in plentiful amounts around the Blue Mushtree biome in the caves, which can be used for emergency healing and hunger restoration.\n== {{Pic|32|Blueprint}} Gallery ==\n<gallery captionalign=\"center\" hideaddbutton=\"true\">\nBlue Cap 128x128.png|Icon used as emoji for Official Klei Discord.\n</gallery>\n{{clear}}\n{{Food and Edible Items}}\n__NOTOC__\n[[vi:Nấm Rơm]]\n[[Category:Vegetables]]\n[[Category:Perishables]]\n[[Category:Healing]]\n[[Category:Sanity Loss]]\n[[Category:Health Loss]]\n[[Category:Sanity Boost]]\n[[Category:Mob Dropped Items]]\n[[Category:Boss Dropped Items]]"
 }

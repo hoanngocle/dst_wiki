@@ -19,6 +19,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "(Pickaxe)",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": "base_game:rock_avocado_fruit",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Stone_Fruit.png",
+              "title": "Stone Fruit",
+              "url": "https://dontstarve.wiki.gg/wiki/Stone_Fruit"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Sprouting Stone Fruit",
+      "url": "https://dontstarve.wiki.gg/wiki/Sprouting_Stone_Fruit"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 164494,
   "plainText": "Exclusive to:\nSprouting Stone Fruit\nObject Info\nCan be Burned\n40\nSource\nDropped by\n()\nMiscellaneous\n\"rock_avocado_fruit_sprout\"\n“It's growing.”\n–Wilson\n“Ewww it's got a little arm.”\n–Willow\n“Little bush is tiny and weak.”\n–Wolfgang\n“Why do you persevere?”\n–Wendy\n“GROW FASTER AND FEED ME”\n–WX-78\n“It would be better to allow it to grow at this point.”\n–Wickerbottom\n“Guess we didn't eat that one in time.”\n–Woodie\n“How off-putting. It's grown a sprout.”\n–Maxwell\n“The röck veggie is spröuting.”\n–Wigfrid\n“Oh wow, it's growing!”\n–Webber\n“Let's find somewhere to plant this.”\n–Warly\n“Baby friend needs dirt”\n–Wormwood\n“We could use more fruit bushes I suppose.”\n–Winona\n“How it grows, nobody knows.”\n–Wortox\n“Too little to make fruit yet.”\n–Wurt\n“Is that tree growing... rocks?”\n–Walter\n“There's a new little life forming.”\n–Wanda\n“Can be planted in the ground.”\n-\nSprouting Stone Fruit is an item exclusive to Don't Starve Together. It can be obtained by mining a Stone Fruit, but the chance of receiving a Sprouting Stone Fruit is fairly low, 1%. Sprouting Stone Fruits can be planted to grow a Stone Fruit Bush, and this Stone Fruit Bush doesn't need to be fertilized.\nTrivia[edit | edit source]\nSprouting Stone Fruit was introduced in the Turn of Tides update.\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -29,6 +58,7 @@
     "timestamp": "2025-08-01T21:47:43Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Mầm Đá Quả là một vật phẩm độc quyền của Don&#x27;t Starve Together. Nó có thể thu được bằng cách khai thác Trái đá, nhưng cơ hội nhận được Trái đá nảy mầm là khá thấp, 1%. Quả Đá Nảy Mầm có thể được trồng để trồng một Bụi Quả Đá và Bụi Quả Đá này không cần phải bón phân.</p>",
   "title": "Sprouting Stone Fruit",
   "wikitext": "{{Exclusivity|Don't Starve Together}}\n{{Object Infobox\n|icon = Sprouting Stone Fruit.png\n|image = Sprouting Stone Fruit Dropped.png\n|stack = 40\n|canBeBurned=1\n|spawnCode = \"rock_avocado_fruit_sprout\"\n|droppedBy = {{pic|28|Stone Fruit}} ({{pic|24|Pickaxe}})\n}}\n{{Quotes\n|wilson = It's growing.\n|willow = Ewww it's got a little arm.\n|wolfgang = Little bush is tiny and weak.\n|wendy = Why do you persevere?\n|wx78 = GROW FASTER AND FEED ME\n|wickerbottom = It would be better to allow it to grow at this point.\n|woodie = Guess we didn't eat that one in time.\n|maxwell = How off-putting. It's grown a sprout.\n|wigfrid = The röck veggie is spröuting.\n|webber = Oh wow, it's growing!\n|winona = We could use more fruit bushes I suppose.\n|warly = Let's find somewhere to plant this.\n|wortox = How it grows, nobody knows.\n|wurt = Too little to make fruit yet.\n|wormwood = Baby friend needs dirt\n|walter = Is that tree growing... rocks?\n|wanda = There's a new little life forming.\n|choose = willow}}{{Scrapbook Info|Can be planted in the ground.}}\n'''Sprouting Stone Fruit''' is an item exclusive to ''[[Don't Starve Together]]''. It can be obtained by mining a [[Stone Fruit]], but the chance of receiving a Sprouting Stone Fruit is fairly low, 1%. Sprouting Stone Fruits can be planted to grow a [[Stone Fruit Bush]], and this Stone Fruit Bush doesn't need to be fertilized.\n\n=={{pic|32|Placeholder}} Trivia==\n* Sprouting Stone Fruit was introduced in the ''[[Return of Them#Turn of Tides|Turn of Tides]]'' update.\n{{clear}}\n{{Resources}}\n[[Category:Don't Starve Together]]\n[[Category:Items]]\n[[Category:Return of Them]]\n[[Category:Plants]]"
 }

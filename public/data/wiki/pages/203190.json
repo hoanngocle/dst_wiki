@@ -20,6 +20,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "}}",
+          "quantity": "1-2",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ewecus.png",
+              "title": "Ewecus",
+              "url": "https://dontstarve.wiki.gg/wiki/Ewecus"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": "base_game:phlegm",
+      "iconUrl": null,
+      "title": "Phlegm",
+      "url": "https://dontstarve.wiki.gg/wiki/Phlegm"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 203190,
   "plainText": "Don't Starve\nTogether\nPhlegm\nFood Info\n12.5\n0\n-15\nGeneric\nObject Info\nDoes not spoil\n40\nSource\nDropped by\n×1-2\nMiscellaneous\n\"phlegm\"\n“It's thick and pliable. And salty.”\n–Wilson\n“Gross! Let's burn it.”\n–Willow\n“Aha ha ha! Boogers! Oh ho ho!”\n–Wolfgang\n“The wretched beast must have been sick.”\n–Wendy\n“FILTHY OOZE FROM A FILTHY ANIMAL”\n–WX-78\n“The congealed mucus retains its sticky texture.”\n–Wickerbottom\n“I wouldn't want that in my moustache.”\n–Woodie\n“I need to put on gloves for this.”\n–Maxwell\n“Based on past experience, I hope I do not have to consume this.”\n–Wagstaff\n“The secretiöns öf a terrible beast!”\n–Wigfrid\n“It's a boogie!”\n–Webber\n“Blech.”\n–Walani\n“Ugh. Not food safe!”\n–Warly\n“Blubber from tha woolly beastie.”\n–Woodlegs\n“GOOP O' TH' SNOUT”\n–Wilba\n“Hork”\n–Wormwood\n“Just what I need. A hunk of goop.”\n–Wheeler\n“Please. I hock bigger loogies in my sleep.”\n–Winona\n“How very unpleasant!”\n–Wortox\n“Eaten worse, florp.”\n–Wurt\n“Looks like a big booger.”\n–Walter\n“Ugh, even time doesn't want to touch it.”\n–Wanda\nPhlegm is an edible Item obtained by killing a Ewecus. When eaten, it will restore Hunger and reduce Sanity. Phlegm cannot be used as Fuel or Fertilizer, added to the Crock Pot, fed to Pigs, Birds, animals in the inventory, or used as bait in Traps or Bird Traps. However, Pigs will still eat Phlegm left on the floor, so it could be used in a Pig farm as a substitute for Powdercake since it does not spoil.\nTrivia[edit | edit source]\nPhlegm was introduced to Don't Starve Together in the Stuck in the Middle with Ewe update. It was later added to Don't Starve in the Quality of Life update.\nPhlegm is considered to be part of A New Reign, even though it was introduced before the official start of the beta branch.\nGallery[edit | edit source]\nIcon used as emoji for Official Klei Discord\nResourcesFood\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items\nBy TypeBy Crock Pot Value\nView or edit this template\nFood and Edible Items (by Food Type)\nVeggie\nSeeds\nMeat\nGoodies\nGeneric\nHorrible\nRoughage\nElementals\nBurnt\nRaw\nGears\nGold Dust\nBerry\nWood\nNitre\nLunar Shards\nView or edit this template\nFood and Edible Items (by Food Value)\nMeats\nFishes\nVegetables\nFruits\nMonster Food\nEggs\nDairy\nSweetener\nFrozen\nInedibles\nMagic\nFat\nSeed\nJellyfish\nBone\nFilter\nAntihistamine\nDecoration\nBug\nNo Value Food",
   "recipes": [],
@@ -30,6 +59,7 @@
     "timestamp": "2026-05-24T18:59:46Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Đờm là một Vật phẩm ăn được thu được bằng cách giết một con Ewecus. Khi ăn sẽ hồi phục Sức Đói và giảm Tinh Thần. Đờm không thể được sử dụng làm Nhiên liệu hoặc Phân bón, thêm vào Nồi Hầm, cho Lợn, Chim, động vật trong hành trang ăn hoặc dùng làm mồi trong Bẫy hoặc Bẫy Chim. Tuy nhiên, Lợn vẫn sẽ ăn Đờm còn sót lại trên sàn, vì vậy nó có thể được sử dụng trong Trang trại Lợn để thay thế cho Bánh Bột vì nó không bị hỏng.</p>",
   "title": "Phlegm",
   "wikitext": "{{Navbutton/Separation}}\n{{Object Infobox\n|foodType = [[Generic]] {{pic|32|Generic}}\n|icon = Phlegm.png\n|image = Phlegm Dropped.png\n|hpRestored = 0\n|hungerRestored = 12.5\n|sanityRestored = -15\n|spoil = Does not spoil\n|stack = 40\n|spawnCode = \"phlegm\"\n|droppedBy = {{pic32|Ewecus}} '''&times;1-2'''}}\t\n{{Quotes\n|wilson = It's thick and pliable. And salty.\n|willow = Gross! Let's burn it.\n|wolfgang = Aha ha ha! Boogers! Oh ho ho!\n|wendy = The wretched beast must have been sick.\n|wx78 = FILTHY OOZE FROM A FILTHY ANIMAL\n|wickerbottom = The congealed mucus retains its sticky texture.\n|woodie = I wouldn't want that in my moustache.\n|maxwell = I need to put on gloves for this.\n|wagstaff = Based on past experience, I hope I do not have to consume this.\n|wigfrid = The secretiöns öf a terrible beast!\n|webber = It's a boogie! \n|walani = Blech.\n|warly = Ugh. Not food safe!\n|woodlegs = Blubber from tha woolly beastie.\n|wilba = GOOP O' TH' SNOUT\n|wormwood = Hork\n|wheeler = Just what I need. A hunk of goop.\n|winona = Please. I hock bigger loogies in my sleep.\n|wortox = How very unpleasant!\n|wurt = Eaten worse, florp.\n|walter = Looks like a big booger.\n|wanda = Ugh, even time doesn't want to touch it.\n|choose = winona}}\n'''Phlegm''' is an edible [[Item]] obtained by killing a [[Ewecus]]. When eaten, it will restore [[Hunger]] and reduce [[Sanity]]. Phlegm cannot be used as [[Fuel]] or [[Fertilizer]], added to the [[Crock Pot]], fed to [[Pig]]s, [[Birds]], animals in the inventory, or used as bait in [[Trap]]s or [[Bird Trap]]s. However, Pigs will still eat Phlegm left on the floor, so it could be used in a Pig farm as a substitute for [[Powdercake]] since it does not spoil.\n=={{pic32|Placeholder}} Trivia==\n* Phlegm was introduced to ''[[Don't Starve Together]]'' in the ''[[Don't Starve Together/Version History#December 2, 2014 - Stuck in the Middle with Ewe|Stuck in the Middle with Ewe]]'' update. It was later added to ''[[Don't Starve]]'' in the ''[[Don't Starve/Version History|Quality of Life]]'' update.\n* Phlegm is considered to be part of ''[[A New Reign]]'', even though it was introduced before the official start of the beta branch.\n== {{Pic|32|Blueprint}} Gallery ==\n<gallery>\nPhlegm 128x128.png|Icon used as emoji for Official Klei Discord\n</gallery>\n{{clear}}\n<tabber>\nResources=\n{{Resources}}\n|-|\nFood=\n{{Food and Edible Items}}\n</tabber>\n[[pl:Flegma (DST)]]\n[[Category:Mob Dropped Items]]\n[[Category:Food]]\n[[Category:Sanity Loss]]\n[[Category:Don't Starve Together]]\n[[Category:A New Reign]]"
 }

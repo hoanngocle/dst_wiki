@@ -25,6 +25,128 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "(Pickaxe)",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": "base_game:atrium_statue",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ancient_Statue.png",
+              "title": "Ancient Statue",
+              "url": "https://dontstarve.wiki.gg/wiki/Ancient_Statue"
+            }
+          ]
+        },
+        {
+          "chance": "—",
+          "context": "(Hammer)",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ancient_Pseudoscience_Station.png",
+              "title": "Ancient Pseudoscience Station",
+              "url": "https://dontstarve.wiki.gg/wiki/Ancient_Pseudoscience_Station"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Broken_Clockworks.png",
+              "title": "Broken Clockworks",
+              "url": "https://dontstarve.wiki.gg/wiki/Broken_Clockworks"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Sunken_Chest.png",
+              "title": "Sunken_Chest",
+              "url": "https://dontstarve.wiki.gg/wiki/Sunken_Chest"
+            }
+          ]
+        },
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": "base_game:tumbleweed",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Tumbleweed.png",
+              "title": "Tumbleweed",
+              "url": "https://dontstarve.wiki.gg/wiki/Tumbleweed"
+            },
+            {
+              "entityId": "base_game:cave_hole",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Cave_Hole.png",
+              "title": "Cave Hole",
+              "url": "https://dontstarve.wiki.gg/wiki/Cave_Hole"
+            },
+            {
+              "entityId": "base_game:chest_mimic",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ornate_Chest.png",
+              "title": "Ornate Chest",
+              "url": "https://dontstarve.wiki.gg/wiki/Ornate_Chest"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Geode_Fruit.png",
+              "title": "Geode Fruit",
+              "url": "https://dontstarve.wiki.gg/wiki/Geode_Fruit"
+            }
+          ]
+        },
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Dragonfly.png",
+              "title": "Dragonfly",
+              "url": "https://dontstarve.wiki.gg/wiki/Dragonfly"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Spazmatism.png",
+              "title": "Spazmatism",
+              "url": "https://dontstarve.wiki.gg/wiki/Spazmatism"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Great_Depths_Worm.png",
+              "title": "Great Depths Worm",
+              "url": "https://dontstarve.wiki.gg/wiki/Great_Depths_Worm"
+            },
+            {
+              "entityId": "base_game:winter_tree",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Winter%27s_Feast_Tree.png",
+              "title": "Winter's Feast Tree",
+              "url": "https://dontstarve.wiki.gg/wiki/Winter%27s_Feast_Tree"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Boulderbough.png",
+              "title": "Boulderbough",
+              "url": "https://dontstarve.wiki.gg/wiki/Boulderbough"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": "base_game:greengem",
+      "iconUrl": null,
+      "title": "Green Gem/DST",
+      "url": "https://dontstarve.wiki.gg/wiki/Green_Gem/DST"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 219706,
   "plainText": "Don't Starve\nTogether\nGreen Gem\nFood Info\n5\n10\n0\nElemental\n(non-survivor food)\nObject Info\n40\nSource\nDropped by\n()\n()\nCrafting\nDescription\nTransmute Yellow Gems into Green Gems.\n×3 ( only)\nFilters\n(for ).\nMiscellaneous\n\"greengem\"\n“It's green and gemmy.”\n–Wilson\n“This one feels really light.”\n–Willow\n“Is pretty and not be crushed. Like me!”\n–Wolfgang\n“The flaws are its most beautiful features.”\n–Wendy\n“PRESSURE AND IMPURITIES HAVE PRODUCED PLEASING PERFECTION”\n–WX-78\n“Chromium impurities have colored this gem green.”\n–Wickerbottom\n“How flashy.”\n–Woodie\n“The nightmare fuel will unlock its true potential.”\n–Maxwell\n“Geometric optics at work.”\n–Wagstaff\n“An emerald stöne.”\n–Wigfrid\n“I'm absolutely green with envy.”\n–Webber\n“The color of nature!”\n–Walani\n“Ahh, a rare attraction!”\n–Warly\n“Emerald treasures.”\n–Woodlegs\n“ALL THAT GLITTERS IS'T GOLD!”\n–Wilba\n“Looks familiar...”\n–Wormwood\n“Sparkly thing. Typically a good sign you're on an adventure.”\n–Wheeler\n“Now that's a proper gem.”\n–Winona\n“Gentlest green from lush vales gleaned.”\n–Wortox\n“Like this stone, florp.”\n–Wurt\n“It's a great green gem!”\n–Walter\n“If only I could've gotten my hands on one of these before... well never mind.”\n–Wanda\nThe Green Gem is an item used to craft two Ancient items. It can be used to craft the Construction Amulet, which raises Sanity as well as halves the resource cost of crafting items, and the Deconstruction Staff, which can be used to destroy structures/items and receive all of the resources used in their construction (barring Gems).\nGreen Gems can be inserted into Cratered Moonrocks to acquire a Green Moonlens. They can also be used to power Winona's G.E.M.erator.\nGathering[edit | edit source]\nGreen Gems can be obtained by mining Ancient Statues, destroying Broken Clockworks, opening Ornate Chests, and hammering Ancient Pseudoscience Stations in the Ruins. They can also be gathered from Cave Holes by using The Lazy Forager. The Ruins can be regenerated by killing the Ancient Fuelweaver, allowing the player to obtain new gems each time the boss is defeated.\nAdditional ways to acquire Green Gems are:\nThe Dragonfly drops 1–2 Green Gems upon death.\nSpazmatism can be killed every 15 days for a guaranteed Green Gem.\nBoulderboughs planted in the Ruins or the Fumarole Biome have a chance to grow Green Gems.\nGeode Fruits have roughly a 2.4% chance to yield a Green Gem when heated.\nThe Large Ornate Chest has a chance to contain Green Gems each time the Ancient Guardian is killed.\nSunken Chests have a chance to drop Green Gems when hammered.\nThe Table and Chair Relics have roughly a 0.2% chance to drop Green Gems when destroyed.\nTumbleweeds have a 0.02% chance to drop Green Gems when harvested.\nEach segment of a defeated Great Depths Worm has a chance to drop a Green Gem.\nWilson can transmute Green Gems by using 3 Yellow Gems with the Transmute Gems III skill.\nGreen Gems can be obtained from presents under a Winter's Feast Tree (only during Winter's Feast).\nUsage[edit | edit source]\n×3\n×2\n×2\n×2\n×4\nObtained by inserting the Gem into the Cratered Moonrock.\nTips[edit | edit source]\nBecause Green Gems are renewable, the items it can be crafted into can be utilized to make nearly any other item in the game renewable, by crafting something with the amulet at half-price and then deconstructing it with the Deconstruction Staff for a full return.\nTrivia[edit | edit source]\nThe Green Gem uses the Red Gem's texture, only flipped and colored green.\nGallery[edit | edit source]\nGems emoji from official Klei Discord server.\nIcon used as emoji for Official Klei Discord\nResourcesCraftable ItemsFood\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items\nView or edit this template\nDon't Starve Together Craftable Items\nRegular Filters\nSurvivor Items\nWilson\nWillow\nWolfgang\nWendy\nWX-78\nWickerbottom\nWoodie\nWes\nMaxwell\nWigfrid\nWebber\nWarly\nWortox\nWormwood\nWinona\nWurt\nWalter\nWanda\nTools\nLight Sources\nPrototypers & Stations\nRefined Materials\nWeapons\nArmor\nClothing\nHealing\nMagic\nDecorations\nStructures\nStorage Solutions\nCooking\nFood & Gardening\nFishing\nSeafaring\nBeefalo Riding\nWinter Items\nSummer Items\nRain Gear\nCrafting Station Filters\nSpecial Event\nAncient Pseudoscience\nCarpentry\nCartography\nCritters\nCelestial\nBrightsmithy\nShadowcraft\nFabrication\nBottle Exchange\nCombrining Filter\nTea Brewing Filter\nSculptures\nSeasonings\nTrading\nTrading Hutch\nOfferings\nCawnival Creation\nTrinket Trove\nMad Science\nWinter's Feast Cooking\nSanctum Smithy Filter\nCustom Course Shack Filter\nBy TypeBy Crock Pot Value\nView or edit this template\nFood and Edible Items (by Food Type)\nVeggie\nSeeds\nMeat\nGoodies\nGeneric\nHorrible\nRoughage\nElementals\nBurnt\nRaw\nGears\nGold Dust\nBerry\nWood\nNitre\nLunar Shards\nView or edit this template\nFood and Edible Items (by Food Value)\nMeats\nFishes\nVegetables\nFruits\nMonster Food\nEggs\nDairy\nSweetener\nFrozen\nInedibles\nMagic\nFat\nSeed\nJellyfish\nBone\nFilter\nAntihistamine\nDecoration\nBug\nNo Value Food",
   "recipes": [
@@ -56,6 +178,7 @@
     "timestamp": "2026-06-09T15:16:34Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Ngọc Xanh là vật phẩm dùng để chế tạo hai Vật phẩm Cổ xưa. Nó có thể được sử dụng để chế tạo Bùa xây dựng, giúp tăng Tinh thần cũng như giảm một nửa chi phí tài nguyên khi chế tạo các vật phẩm và Gậy Giải cấu trúc, có thể được sử dụng để phá hủy các công trình/vật phẩm và nhận tất cả tài nguyên được sử dụng trong quá trình xây dựng của chúng (trừ Đá quý).</p>",
   "title": "Green Gem/DST",
   "wikitext": "{{Navbutton/Separation}}\n{{Object Infobox\n|craft_desctiption = ''Transmute Yellow Gems into Green Gems.''\n|image = Green Gem Dropped.png\n|icon = Green Gem.png\n|foodType =[[Elemental]] [[File:Elemental.png|32px|link=Elemental]]<br>(non-survivor food)\n|hpRestored = 10\n|hungerRestored = 5\n|sanityRestored = 0\n|name = Green Gem\n|droppedBy = {{pic24|Ancient Statue}} ({{pic24|Pickaxe}})<br>{{pic|24|Ancient Pseudoscience Station}}  [[File:Relic Chair.png|24px|link=Relic]] {{pic|30|Broken Clockworks}} {{pic|30|Sunken_Chest}} ({{pic|24|Hammer}})<br>{{pic|24|Tumbleweed}} {{pic|30|Cave Hole}} {{pic|30|Ornate Chest}} {{pic32|Geode Fruit}} <br> {{pic|30|Dragonfly}} {{pic|30|Spazmatism}} {{pic|30|Great Depths Worm}} {{pic24|Winter's Feast Tree}} {{pic32|Boulderbough}}\n|stack = 40\n|spawnCode = \"greengem\"\n|filter = {{Pic32|Wilson Filter}}\n|ingredient1 = Yellow Gem\n|multiplier1 = 3 ({{Pic|28|Wilson Portrait|Wilson}} only)\n|skill = Transmute Gems III\n|skillOwner = Wilson\n}}\n{{Quotes\n|wolfgang=Is pretty and not be crushed. Like me!\n|wilson=It's green and gemmy.\n|willow=This one feels really light.\n|woodie=How flashy.\n|maxwell=The nightmare fuel will unlock its true potential.\n|wagstaff=Geometric optics at work.\n|wendy=The flaws are its most beautiful features.\n|woodlegs=Emerald treasures.\n|wickerbottom=Chromium impurities have colored this gem green.\n|webber=I'm absolutely green with envy.\n|warly=Ahh, a rare attraction!\n|wx78=PRESSURE AND IMPURITIES HAVE PRODUCED PLEASING PERFECTION\n|walani=The color of nature!\n|wigfrid=An emerald stöne.\n|wilba = ALL THAT GLITTERS IS'T GOLD!\n|wormwood = Looks familiar...\n|wheeler=Sparkly thing. Typically a good sign you're on an adventure.\n|winona=Now that's a proper gem.\n|wortox=Gentlest green from lush vales gleaned.\n|wurt = Like this stone, florp.\n|walter = It's a great green gem!\n|wanda = If only I could've gotten my hands on one of these before... well never mind.\n|choose=wormwood}}\nThe '''Green Gem''' is an [[item]] used to craft two [[Ancient Pseudoscience Filter|Ancient]] items. It can be used to craft the [[Construction Amulet]], which raises [[Sanity]] as well as halves the resource cost of crafting items, and the [[Deconstruction Staff]], which can be used to destroy structures/items and receive all of the resources used in their construction (barring [[Gems]]).\n\nGreen Gems can be inserted into [[Cratered Moonrock]]s to acquire a [[Moonlens|Green Moonlens]]. They can also be used to power [[Winona's G.E.M.erator]].\n\n==Gathering==\nGreen Gems can be obtained by mining [[Ancient Statue]]s, destroying [[Broken Clockworks]], opening [[Ornate Chest]]s, and hammering [[Ancient Pseudoscience Station]]s in the [[Ruins]]. They can also be gathered from [[Cave Hole]]s by using [[The Lazy Forager]]. The [[Ruins]] can be regenerated by killing the [[Ancient Fuelweaver]], allowing the player to obtain new gems each time the boss is defeated.\n\nAdditional ways to acquire Green Gems are:\n* The [[Dragonfly]] drops 1–2 Green Gems upon death.\n* [[Spazmatism]] can be killed every 15 days for a guaranteed Green Gem.\n* [[Boulderbough]]s planted in the [[Ruins]] or the [[Fumarole Biome]] have a chance to grow Green Gems.\n* [[Geode Fruit]]s have roughly a 2.4% chance to yield a Green Gem when heated.\n* The [[Large Ornate Chest]] has a chance to contain Green Gems each time the [[Ancient Guardian]] is killed.\n* [[Sunken Chest]]s have a chance to drop Green Gems when [[Hammer|hammered]].\n* The Table and Chair [[Relics]] have roughly a 0.2% chance to drop Green Gems when destroyed.\n* [[Tumbleweed]]s have a 0.02% chance to drop Green Gems when harvested.\n* Each segment of a defeated [[Great Depths Worm]] has a chance to drop a Green Gem.\n* [[Wilson/Don't Starve Together|Wilson]] can transmute Green Gems by using 3 [[Yellow Gem]]s with the [[Transmute Gems III]] skill.\n* Green Gems can be obtained from presents under a [[Winter's Feast Tree]] (only during [[Winter's Feast]]).\n\n=={{Pic32|Icon Tools}} Usage==\n{{Recipe\n|item1 = Green Gem\n|item2 = Nightmare Fuel\n|count2 = 3\n|item3 = Thulecite\n|count3 = 2\n|tool = Broken Pseudoscience Station\n|result = Construction Amulet}}\n{{Recipe\n|item1 = Green Gem\n|count1 = 2\n|item2 = Living Log\n|count2 = 2\n|item3 = Nightmare Fuel\n|count3 = 4\n|tool = Broken Pseudoscience Station\n|result = Deconstruction Staff}}\n{{Recipe\n|item1 = Green Gem\n|item2 = Cratered Moonrock\n|result = Green Moonlens\n|tool = Hand\n|note = Obtained by inserting the Gem into the Cratered Moonrock.}}\n{{Recipe\n|item3 = Yellow Gem\n|item2 = Orange Gem\n|item1 = Green Gem\n|item4 = Purple Gem\n|item5 = Red Gem\n|item6 = Blue Gem\n|result = Iridescent Gem\n|character = Wilson\n|skill = Transmute Gems III\n}}\n\n== {{Pic|32|Prototype}} Tips ==\nBecause Green Gems are renewable, the items it can be crafted into can be utilized to make nearly any other item in the game renewable, by crafting something with the amulet at half-price and then deconstructing it with the [[Deconstruction Staff]] for a full return.\n\n=={{pic|32|Placeholder}} Trivia==\n* The Green Gem uses the [[Red Gem]]'s texture, only flipped and colored green.\n\n== {{Pic|32|Blueprint}} Gallery ==\n<gallery>\nGems emoji from official Klei Discord server.png|Gems emoji from official Klei Discord server.\nGreen Gem 128x128.png|Icon used as emoji for Official Klei Discord\n</gallery>\n\n__NOTOC__\n<tabber>\nResources=\n{{Resources}}\n|-|\nCraftable Items=\n{{Craftable Items and Structures on DST}}\n|-|\nFood=\n{{Food}}\n</tabber>\n[[fr:Gemme verte]]\n[[vi:Ngọc Lục]]\n[[ru:Зелёный самоцвет]]\n[[zh:綠寶石]]\n[[Category:Gems]]\n[[Category:Items]]\n[[Category:Minerals]]\n[[Category:Resources]]\n[[Category:Boss Dropped Items]]\n[[Category:Non-Flammable]]\n[[Category:Mob Dropped Items]]\n[[Category:Naturally Spawning Objects]]"
 }

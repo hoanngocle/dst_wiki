@@ -14,6 +14,47 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "DS",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ancient_Pseudoscience_Station_Build.png",
+              "title": "Ancient Pseudoscience Station Build",
+              "url": "https://dontstarve.wiki.gg/wiki/Ancient_Pseudoscience_Station_Build"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Broken_Pseudoscience_Station_Build.png",
+              "title": "Broken Pseudoscience Station Build",
+              "url": "https://dontstarve.wiki.gg/wiki/Broken_Pseudoscience_Station_Build"
+            },
+            {
+              "entityId": "base_game:mound",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Grave.png",
+              "title": "Grave",
+              "url": "https://dontstarve.wiki.gg/wiki/Grave"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Lying Robot",
+      "url": "https://dontstarve.wiki.gg/wiki/Lying_Robot"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 190999,
   "plainText": "Don't Starve\nTogether\nLying Robot\nObject Info\n40\nSource\nDropped by\n:\nMiscellaneous\n\"trinket_11\"\n“He whispers beautiful lies to me.”\n–Wilson\n“Ooh, I wonder if he has a flamethrower!”\n–Willow\n“Is very strange!”\n–Wolfgang\n“Lucky robot, it never had a soul.”\n–Wendy\n“HIS NAME IS HAL. HE IS MY FRIEND.”\n–WX-78\n“Ah, it's a scale replica of that mischievous robot.”\n–Wickerbottom\n“Quiet, you!”\n–Woodie\n“I’m not listening.”\n–Maxwell\n“A rudimentary design, lifeless and uninspiring.”\n–Wagstaff\n“A warriör encased in a fine armör.”\n–Wigfrid\n“Beep boop!”\n–Webber\n“Hey there, lil dude. Wanna come with me?”\n–Walani\n“He doesn't seem trustworthy to me.”\n–Warly\n“Ye quick-tongued box o'bolts!”\n–Woodlegs\n“'TIS TEENY DOLL O' METALS”\n–Wilba\n“Hello!”\n–Wormwood\n“Swell. My new co-pilot.”\n–Wheeler\n“Maybe this bot'll let me poke around its insides.”\n–Winona\n“Do you have a riddle for me?”\n–Wortox\n“It say everything gonna be okay!”\n–Wurt\n“He said he loves when I talk about my bug collection!”\n–Walter\n“Oh you would look just darling on a shelf next to some porcelain figurines!”\n–Wanda\nThe Lying Robot has a 4.17% chance of being found when digging up a grave.\nIt can be traded to the Pig King for 5 Gold Nuggets.\n×5\n×10\n×3\nTrivia[edit | edit source]\nThe \"Lying\" part of its name may refer to the short story \"Liar!\" by Isaac Asimov.\nUnder the old research method, Trinkets were one of the best ways of gaining research points (80 points).\nIn Klei's official Discord server, their bot, named Kleibot, is represented by an avatar featuring the Lying Robot. On halloween, his avatar changed.\nLying Robot has its own emoji and Halloween emoji on Klei's official Discord\nGallery[edit | edit source]\nThe Lying Robot avatar used by the Klei Discord's bot.\nThe Lying Robot avatar used by the Klei Discord's bot.\nThe Lying Robot Halloween avatar used by the Klei Discord's bot.\nThe Pixel Lying Robot avatar used by the Klei Discord's bot.\nThe Year of The Rabbit Robot avatar used by the Klei Discord's bot.\nThe Year of The Clockwork Knight avatar used by the Klei Discord's bot.\nKleibot emoji from official Klei Discord server.\nKleibot Halloween emoji from official Klei Discord server.\nKlei Discord Kleibot Pixel emoji from official Klei Discord server\nKlei Discord Kleibot New Year emoji from official Klei Discord server\nKlei Discord Kleibot Year of the Tiger emoji from official Klei Discord server\nKlei Discord Kleibot Year of the rabbit emoji from official Klei Discord server\nKlei Discord Kleibot Year of the rabbit emoji from official Klei Discord server\nKlei Discord Kleibot Cult of the Lamb emoji from official Klei Discord server\nOriginal HD Lying Robot icon from Bonus Materials from CD Don't Starve.\nLying Robot on Klei Discord welcome message\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -24,6 +65,7 @@
     "timestamp": "2026-03-02T23:14:08Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Robot Nói Dối có 4,17% cơ hội được tìm thấy khi đào mộ.</p>",
   "title": "Lying Robot",
   "wikitext": "{{Navbutton/Separation}}\n{{Object Infobox\n|icon = Lying Robot.png\n|image = Lying Robot Dropped.png\n|name = Lying Robot\n|spawnCode = \"trinket_11\"\n|droppedBy ={{DS}}: {{Pic|32|Ancient Pseudoscience Station Build}}{{Pic|32|Broken Pseudoscience Station Build}}{{Pic|32|Grave}}\n|stack=40}}\n\n{{Quotes\n|wilson = He whispers beautiful lies to me.\n|willow = Ooh, I wonder if he has a flamethrower!\n|wolfgang = Is very strange!\n|wendy = Lucky robot, it never had a soul.\n|wx78 = HIS NAME IS HAL. HE IS MY FRIEND.\n|wickerbottom = Ah, it's a scale replica of that mischievous robot.\n|woodie = Quiet, you!\n|maxwell = I’m not listening.\n|wagstaff = A rudimentary design, lifeless and uninspiring.\n|wigfrid = A warriör encased in a fine armör.\n|webber = Beep boop!\n|walani = Hey there, lil dude. Wanna come with me?\n|warly = He doesn't seem trustworthy to me.\n|woodlegs = Ye quick-tongued box o'bolts!\n|wilba = 'TIS TEENY DOLL O' METALS\n|wormwood = Hello!\n|wheeler = Swell. My new co-pilot.\n|winona = Maybe this bot'll let me poke around its insides.\n|wortox = Do you have a riddle for me?\n|wurt = It say everything gonna be okay!\n|walter = He said he loves when I talk about my bug collection!\n|wanda = Oh you would look just darling on a shelf next to some porcelain figurines!\n|choose = wx78\n}}\nThe '''Lying Robot''' has a 4.17% chance of being found when digging up a grave.\n\nIt can be traded to the Pig King for 5 Gold Nuggets.\n\n{{Recipe\n|item        = Lying Robot\n|gold        = yes\n|result      = Gold Nugget\n|resultcount = 5\n}}\n{{Recipe\n|item = Lying Robot\n|dubloon = yes\n|result = Dubloons\n|resultcount = 10\n|dlc = Shipwrecked\n}}\n{{Recipe\n|item = Lying Robot\n|tool = Pig Collector\n|result = Oinc\n|resultcount = 3\n|dlc = Hamlet\n}}\n== {{Pic|32|Placeholder}} {{Anchor|Trivia|Trivia}} ==\n* The \"Lying\" part of its name may refer to the short story \"[[Wikipedia:Liar! (short story)|Liar!]]\" by Isaac Asimov.\n* Under the [[Research points list|old research method]], Trinkets were one of the best ways of gaining research points (80 points).\n* In Klei's official Discord server, their bot, named Kleibot, is represented by an avatar featuring the Lying Robot. On halloween, his avatar changed.\n* Lying Robot has its own emoji and Halloween emoji on Klei's official Discord\n\n== {{Pic|32|Blueprint}} Gallery ==\n<gallery>\nKlei Discord Kleibot original.png|The Lying Robot avatar used by the Klei Discord's bot.\nKlei Discord Kleibot.png|The Lying Robot avatar used by the Klei Discord's bot.\nKlei Discord Kleibot Halloween.png|The Lying Robot Halloween avatar used by the Klei Discord's bot.\nKlei Discord Kleibot Pixel.png|The Pixel Lying Robot avatar used by the Klei Discord's bot.\nKlei Discord Kleibot Year of The Rabbit.png|The Year of The Rabbit Robot avatar used by the Klei Discord's bot.\nKlei Discord Kleibot Year of The Clockwork Knight.png|The Year of The Clockwork Knight avatar used by the Klei Discord's bot.\nKleibot emoji from official Klei Discord server.png|Kleibot emoji from official Klei Discord server.\nKleibot Halloween emoji from official Klei Discord server.png|Kleibot Halloween emoji from official Klei Discord server.\nLable Klei Discord Kleibot Pixel emoji from official Klei Discord server.png|Klei Discord Kleibot Pixel emoji from official Klei Discord server\nKleibot New Year emoji from official Klei Discord server.png|Klei Discord Kleibot New Year emoji from official Klei Discord server\nKleibot Year of the catcoon emoji from official Klei Discord server.png|Klei Discord Kleibot Year of the Tiger emoji from official Klei Discord server\nKleibot Year of the bunnyman emoji from official Klei Discord server.png|Klei Discord Kleibot Year of the rabbit emoji from official Klei Discord server\nKleibot Year of the bunnyman emoji from official Klei Discord server2.png|Klei Discord Kleibot Year of the rabbit emoji from official Klei Discord server\nKleibot Lamb emoji from official Klei Discord server.png|Klei Discord Kleibot Cult of the Lamb emoji from official Klei Discord server\nCD trinket_11.png|Original HD Lying Robot icon from Bonus Materials from [[CD Don't Starve]].\nKlei Discord Welcome Message.png|Lying Robot on Klei Discord welcome message\n</gallery>\n\n{{clear}}\n{{Resources}}"
 }

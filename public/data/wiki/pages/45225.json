@@ -17,6 +17,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": "base_game:compostingbin",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Composting_Bin.png",
+              "title": "Composting Bin",
+              "url": "https://dontstarve.wiki.gg/wiki/Composting_Bin"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": "base_game:compost",
+      "iconUrl": null,
+      "title": "Compost",
+      "url": "https://dontstarve.wiki.gg/wiki/Compost"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 45225,
   "plainText": "Compost\nObject Info\nPerk\nFertilize Farm\n8 over 8 sec ()\n45 sec.\nCan be Burned\n20\nSource\nDropped by\nMiscellaneous\n\"compost\"\nExclusive to:\n“Food for plants, and not much else.”\n–Wilson\n“Nah, I'm good.”\n–Willow\n“Is food for plants.”\n–Wolfgang\n“Rot and decay.”\n–Wendy\n“DISGUSTING. THE PLANTS WILL LOVE IT”\n–WX-78\n“The secret to any garden's success is nutrient-rich soil.”\n–Wickerbottom\n“Can't say much for the food, but I like the presentation!”\n–Woodie\n“I'd rather not get my hands dirty.”\n–Maxwell\n“'Tis naught but fööd för wörms.”\n–Wigfrid\n“Yucky muck!”\n–Webber\n“The garden needs to be fed too, and proper plating is important!”\n–Warly\n“Mmmm...”\n–Wormwood\n“Why do I feel like I'm a waiter for those plants?”\n–Winona\n“Oh, I could pull some fun pranks with this.”\n–Wortox\n“Plant snacks.”\n–Wurt\n“Nothing goes to waste!”\n–Walter\n“At least I won't have to touch it.”\n–Wanda\n“Will add 24 Nutrients when used on Farm Soil.”\n-\nCompost is an item exclusive to Don't Starve Together and introduced in Return of Them. It is produced by a Composting Bin.\nCompost can be used on Farm Soil Tile to restore 24 of Compost Nutrients.\nGallery[edit | edit source]\nOld Compost\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -27,6 +56,7 @@
     "timestamp": "2025-08-01T19:29:46Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Phân trộn là một vật phẩm độc quyền trong Don&#x27;t Starve Together và được giới thiệu trong Return of Them. Nó được sản xuất bởi Thùng ủ phân.</p>",
   "title": "Compost",
   "wikitext": "{{Object Infobox\n|image=Compost Dropped.png\n|icon=Compost.png\n|perk = Fertilize Farm\n|stack = 20\n|fertilize = [[File:Growth Formula Nutrient.png|32px|link=Nutrient|Growth Formula]][[File:Not Out Not To.png|32px|link=|No change]]<br>[[File:Compost Nutrient.png|32px|link=Nutrient|Compost]][[File:3 To.png|32px|link=|Restore 24]]<br>[[File:Manure Nutrient.png|32px|link=Nutrient|Manure]][[File:Not Out Not To.png|32px|link=|No change]]\n|burnTime = [[File:Light_Sources_Filter.png|32px|link=Fuel#Fire Fuel]] 45 sec.\n|droppedBy= {{pic32|Composting Bin}}\n|heal = 8 over 8 sec ({{pic24|Wormwood Portrait}})\n|spawnCode = \"compost\"\n|canBeBurned=1\n}}{{Exclusivity|Don't Starve Together}}\n{{Quotes\n|wilson = Food for plants, and not much else.\n|willow = Nah, I'm good.\n|wolfgang = Is food for plants.\n|wendy = Rot and decay.\n|wx78 = DISGUSTING. THE PLANTS WILL LOVE IT\n|wickerbottom = The secret to any garden's success is nutrient-rich soil.\n|woodie = Can't say much for the food, but I like the presentation!\n|maxwell = I'd rather not get my hands dirty.\n|wigfrid = 'Tis naught but fööd för wörms.\n|webber = Yucky muck!\n|winona = Why do I feel like I'm a waiter for those plants?\n|warly = The garden needs to be fed too, and proper plating is important!\n|wortox = Oh, I could pull some fun pranks with this.\n|wormwood = Mmmm...\n|wurt = Plant snacks.\n|walter = Nothing goes to waste!\n|wanda = At least I won't have to touch it.\n|choose = wolfgang}}{{Scrapbook_Info|Will add 24 Nutrients when used on Farm Soil.}}\n'''Compost''' is an item exclusive to ''[[Don't Starve Together]]'' and introduced in ''[[Return of Them]]''. It is produced by a [[Composting Bin]].\n\nCompost can be used on [[Farm Soil Tile]] to restore 24 of Compost [[Nutrient]]s.\n=={{Pic32|Blueprint}} Gallery==\n<gallery orientation=\"none\" widths=\"198\" captionalign=\"center\" hideaddbutton=\"true\">\nOld Compost.png|Old Compost\n</gallery>\n{{Resources}}\n[[vi:Compost]]\n[[ru:Компост]]\n[[Category:Return of Them]]\n[[Category:Fertilizer]]"
 }

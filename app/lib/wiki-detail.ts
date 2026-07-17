@@ -28,7 +28,7 @@ export type NormalizedWikiIngredient = {
 export type NormalizedWikiUsageRecipe = {
   result: NormalizedWikiReference;
   resultAmount: number;
-  nightmareFuelAmount: number;
+  subjectAmount: number;
   ingredients: readonly NormalizedWikiIngredient[];
   station: string | null;
   dlc: string | null;
@@ -37,6 +37,7 @@ export type NormalizedWikiUsageRecipe = {
 };
 
 export type NormalizedWikiSections = {
+  subject: NormalizedWikiReference;
   dropTable: { rows: readonly NormalizedWikiDropRow[] };
   usage: { recipes: readonly NormalizedWikiUsageRecipe[] };
 };
@@ -145,9 +146,9 @@ function parseUsageRecipe(
       value.resultAmount,
       `normalized Usage recipe ${index} resultAmount`,
     ),
-    nightmareFuelAmount: positiveNumber(
-      value.nightmareFuelAmount,
-      `normalized Usage recipe ${index} nightmareFuelAmount`,
+    subjectAmount: positiveNumber(
+      value.subjectAmount,
+      `normalized Usage recipe ${index} subjectAmount`,
     ),
     ingredients: value.ingredients.map((ingredient, ingredientIndex) => {
       if (!isRecord(ingredient)) {
@@ -180,17 +181,18 @@ function parseNormalizedSections(value: unknown): NormalizedWikiSections | null 
   if (value === undefined) return null;
   if (
     !isRecord(value) ||
-    value.schema_version !== 1 ||
+    value.schema_version !== 2 ||
+    !isRecord(value.subject) ||
     !isRecord(value.dropTable) ||
     !Array.isArray(value.dropTable.rows) ||
-    !value.dropTable.rows.length ||
     !isRecord(value.usage) ||
     !Array.isArray(value.usage.recipes) ||
-    !value.usage.recipes.length
+    (!value.dropTable.rows.length && !value.usage.recipes.length)
   ) {
-    throw new Error("normalized Wiki sections must use schema version 1 and contain rows");
+    throw new Error("normalized Wiki sections must use schema version 2 and contain data");
   }
   return {
+    subject: parseReference(value.subject, "normalized Wiki subject"),
     dropTable: { rows: value.dropTable.rows.map(parseDropRow) },
     usage: { recipes: value.usage.recipes.map(parseUsageRecipe) },
   };

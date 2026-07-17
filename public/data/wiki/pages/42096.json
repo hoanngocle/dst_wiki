@@ -17,6 +17,47 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": "base_game:gingerbreadpig",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Gingerbread_Pig.png",
+              "title": "Gingerbread Pig",
+              "url": "https://dontstarve.wiki.gg/wiki/Gingerbread_Pig"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Gingerbread_Pig_House.png",
+              "title": "Gingerbread Pig House",
+              "url": "https://dontstarve.wiki.gg/wiki/Gingerbread_Pig_House"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Gingerbread_Varg.png",
+              "title": "Gingerbread Varg",
+              "url": "https://dontstarve.wiki.gg/wiki/Gingerbread_Varg"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": "base_game:wintersfeastfuel",
+      "iconUrl": null,
+      "title": "Holiday Cheer",
+      "url": "https://dontstarve.wiki.gg/wiki/Holiday_Cheer"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 42096,
   "plainText": "Holiday Cheer\nFood Info\n0\n0\n0\nGeneric\nObject Info\nPerk\nRequire to craft with Masonry Oven\n40\nSource\nDropped by\nMiscellaneous\n\"wintersfeastfuel\"\nExclusive to:\nOnly during the Event: Winter's Feast\n“The spirit of the season!”\n–Wilson\n“Reminds me of sitting by the fire on cold winter nights.”\n–Willow\n“Is making Wolfgang think of friends.”\n–Wolfgang\n“Makes me think of holidays with Abigail.”\n–Wendy\n“IT REEKS OF FESTIVITY”\n–WX-78\n“It reminds me of reading holiday stories by the fire.”\n–Wickerbottom\n“Making me think of that blue spruce we cut down years ago...”\n–Woodie\n“I prefer my fuel more nightmarish.”\n–Maxwell\n“The essence öf Jöl!”\n–Wigfrid\n“It fills us with peace and joy!”\n–Webber\n“To imbue my food with festive spirit.”\n–Warly\n“Friends...”\n–Wormwood\n“This season always makes me think of Charlie.”\n–Winona\n“Ah, are you the source of this magic?”\n–Wortox\n“It look tasty.”\n–Wurt\n“It looks like magic!”\n–Walter\n“I'm not sure I trust that stuff.”\n–Wanda\nThe Holiday Cheer was introduced in 2019. It is dropped by Gingerbread Pigs, Gingerbread Pig Houses and Gingerbread Vargs. They can also be dropped by players if they died while still having 25 seconds of stat buffs left after eating from the Winter's Feast Table. They do not spoil, and they can be eaten for no restored value. Holiday Cheer is a required ingredient for all dishes made at the Masonry Oven.\nAssets[edit | edit source]\nIdle\nWinter's Feast ContentResources\nView or edit this template\nWinter's Feast Content\nMobs\nStructures\nItems\nCraftable Things\nWinter Foods\nOrnaments\nWinter's Feast Cooking Food\nGameplay\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -27,6 +68,7 @@
     "timestamp": "2026-07-02T07:43:39Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Cổ vũ ngày lễ được giới thiệu vào năm 2019. Nó rơi ra từ Lợn bánh gừng, Nhà lợn bánh gừng và Bánh gừng. Chúng cũng có thể bị người chơi đánh rơi nếu họ chết trong khi vẫn còn 25 giây tăng chỉ số sau khi ăn từ Bàn Tiệc Mùa Đông. Chúng không hư hỏng và có thể bị ăn mà không có giá trị phục hồi. Holiday Cheer là nguyên liệu bắt buộc cho tất cả các món ăn được chế biến tại Masonry Oven.</p>",
   "title": "Holiday Cheer",
   "wikitext": "{{Object Infobox\n|foodType = {{foodType|Generic}}\n|name= Holiday Cheer\n|icon= Holiday Cheer.png\n|image= Holiday Cheer Dropped.png\n|spawnCode=\"wintersfeastfuel\"\n|hpRestored = 0\n|hungerRestored = 0\n|sanityRestored = 0\n|stack = 40\n|perk = Require to craft with [[Masonry Oven]]\n|droppedBy = {{Pic24|Gingerbread Pig}} {{Pic32|Gingerbread Pig House}} {{Pic32|Gingerbread Varg}}\n}}\n{{Exclusivity|Don't Starve Together}}{{Event|Winter's Feast}}\n{{Quotes\n|wilson = The spirit of the season!\n|willow = Reminds me of sitting by the fire on cold winter nights.\n|wolfgang = Is making Wolfgang think of friends.\n|wendy = Makes me think of holidays with Abigail.\n|wx78 = IT REEKS OF FESTIVITY\n|wickerbottom = It reminds me of reading holiday stories by the fire.\n|woodie = Making me think of that blue spruce we cut down years ago...\n|maxwell = I prefer my fuel more nightmarish.\n|wigfrid = The essence öf Jöl!\n|webber = It fills us with peace and joy!\n|winona = This season always makes me think of Charlie.\n|warly = To imbue my food with festive spirit.\n|wortox = Ah, are you the source of this magic?\n|wormwood = Friends...\n|wurt = It look tasty.\n|walter = It looks like magic!\n|wanda = I'm not sure I trust that stuff.\n|choose = wendy}}\nThe '''Holiday Cheer''' was introduced in 2019. It is dropped by [[Gingerbread Pig]]s, [[Gingerbread Pig House]]s and [[Gingerbread Varg]]s. They can also be dropped by players if they died while still having 25 seconds of stat buffs left after eating from the [[Winter's Feast Table]]. They do not spoil, and they can be eaten for no restored value. Holiday Cheer is a required ingredient for all dishes made at the [[Masonry Oven]].\n{{clear}}\n== {{Pic32|Research Notes}} Assets ==\n<gallery>\nHoliday Cheer Idle.gif|Idle\n</gallery>\n<tabber>\nWinter's Feast Content=\n{{Winter's Feast Navbox}}\n|-|\nResources=\n{{Resources}}\n</tabber>\n\n[[Category:Winter's Feast]]"
 }

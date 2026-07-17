@@ -15,6 +15,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "SW",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Steamer_Trunk.png",
+              "title": "Steamer Trunk",
+              "url": "https://dontstarve.wiki.gg/wiki/Steamer_Trunk"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Orange Soda",
+      "url": "https://dontstarve.wiki.gg/wiki/Orange_Soda"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 42486,
   "plainText": "Orange Soda\nObject Info\n40\nSource\nDropped by\n:\nMiscellaneous\n\"trinket_13\"\nExclusive to:\n“What is this substance?”\n–Wilson\n“Is this fire water? It's orange.”\n–Willow\n“Wolfgang would not like to drink.”\n–Wolfgang\n“Maybe if I drank this stuff I'd return to my sister.”\n–Wendy\n“IS THIS A CONSUMABLE?”\n–WX-78\n“A soda beverage can.”\n–Wickerbottom\n“Is this safe for consumption?”\n–Woodie\n“A welcome change from seawater.”\n–Maxwell\n“I've never seen such an ingenious opening device on a tin can!”\n–Wagstaff\n“What föul mead is this?”\n–Wigfrid\n“Is it our birthday!”\n–Webber\n“Slammable soda!”\n–Walani\n“I'd prefer switcha... With a piece of duff.”\n–Warly\n“Sodey pop!”\n–Woodlegs\n“WILBA SHALL SHAKETH IT”\n–Wilba\n“Psht”\n–Wormwood\n“I don't know what this is, but it looks refreshing.”\n–Wheeler\nThe Orange Soda can spawn in the Steamer Trunk.\nIt can be spawned into the game with the code \"trinket_13\".\n×6\n×7\n×3\nTrivia[edit | edit source]\nAppeasing the Volcano with the Orange Soda may be a reference to the movie Joe Versus the Volcano, where the natives of a tropical island drink large amounts of orange soda while asking Tom Hanks' character to voluntarily jump into an active volcano.\nThe Brain Cloud Pill is also most likely a reference to the film, as Tom Hanks' character is claimed to have a fictitious terminal illness called a brain cloud by a corrupt doctor.\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -25,6 +54,7 @@
     "timestamp": "2026-04-23T17:36:44Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Orange Soda có thể sinh ra trong Steamer Trunk.</p>",
   "title": "Orange Soda",
   "wikitext": "{{Object Infobox\n|icon = Orange Soda.png\n|image =  .png\n|name =Orange Soda\n|spawnCode = \"trinket_13\"\n|droppedBy ={{SW}}: {{Pic|32|Steamer Trunk}}\n|stack=40}}\n{{Exclusivity|Shipwrecked|Hamlet}}{{Quotes\n|wilson = What is this substance?\n|willow = Is this fire water? It's orange.\n|wolfgang = Wolfgang would not like to drink.\n|wendy = Maybe if I drank this stuff I'd return to my sister.\n|wx78 = IS THIS A CONSUMABLE?\n|wickerbottom = A soda beverage can.\n|woodie = Is this safe for consumption?\n|maxwell = A welcome change from seawater.\n|wagstaff = I've never seen such an ingenious opening device on a tin can!\n|wigfrid = What föul mead is this?\n|webber = Is it our birthday!\n|walani = Slammable soda!\n|warly = I'd prefer switcha... With a piece of duff.\n|woodlegs = Sodey pop!\n|wilba = WILBA SHALL SHAKETH IT\n|wormwood = Psht\n|wheeler = I don't know what this is, but it looks refreshing.\n|choose = wolfgang\n}}\nThe '''Orange Soda''' can spawn in the [[Steamer Trunk]].\n\nIt can be spawned into the game with the code <code>\"trinket_13\"</code>.\n\n{{Recipe\n|item = Orange Soda\n|gold = yes\n|result = Gold Nugget\n|resultcount = 6\n}}\n{{Recipe\n|item = Orange Soda\n|dubloon = yes\n|result = Dubloons\n|resultcount = 7\n}}\n{{Recipe\n|item = Orange Soda\n|tool = Pig Collector\n|result = Oinc\n|resultcount = 3\n|dlc = Hamlet\n}}\n== {{Pic|32|Placeholder}} {{Anchor|Trivia|Trivia}} ==\n* Appeasing the [[Volcano]] with the Orange Soda may be a reference to the movie ''[[Wikipedia:Joe Versus the Volcano|Joe Versus the Volcano]]'', where the natives of a tropical island drink large amounts of orange soda while asking Tom Hanks' character to voluntarily jump into an active volcano.\n** The [[Brain Cloud Pill]] is also most likely a reference to the film, as Tom Hanks' character is claimed to have a fictitious terminal illness called a brain cloud by a corrupt doctor.\n{{Resources}}"
 }

@@ -16,6 +16,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": "base_game:inspectaclesbox",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Cachebox.png",
+              "title": "Cachebox",
+              "url": "https://dontstarve.wiki.gg/wiki/Cachebox"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Calibrated Perceiver",
+      "url": "https://dontstarve.wiki.gg/wiki/Calibrated_Perceiver"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 47067,
   "plainText": "Exclusive to:\nFor the Calibrated Perceiver found in the Moonstorm Quest, please refer to Grainy Transmission.\nCalibrated Perceiver\nObject Info\nDoes not stack\nSource\nDropped by\nMiscellaneous\n\"winona_recipescanner\"\n“One scan with this Calibrated Perceiver, and I'll know how somethin's built!”\n–Winona\nThe Calibrated Perceiver is an item that can only be obtained by Winona with the Founder's Keepers I skill. It drops from Cacheboxes after fixing or opening them. Cacheboxes can be found by wearing the Inspectacles. It can't be given to other players.\nThe Calibrated Perceiver can be used to scan items and structures that can be prototyped to obtain their respective recipes. The item disappears after one use or when left on the ground for too long. It can't be used to scan other characters' exclusive items or items that are not prototypable. For example, you can't scan the Pick/Axe but you can use it to scan an Opulent Pickaxe.\nWith the Founder's Keepers II skill, Winona can use the Calibrated Perceiver to scan Unstable Transmissions, which drop from Advanced Cacheboxes. If the Unstable Transmission looks like a dismantled Teleport pad, the player will learn the Teletransport Station recipe. If the Unstable Transmission looks like an umbrella, the player will learn the Portasol recipe.\nTips[edit | edit source]\nOne can use it to scan the Bundling Wrap from the Loot Stash after killing Klaus.\nEven though it has the same name and in the canon is the same thing, you can't use the Calibrated Perceiver from Moonstorms to scan items.\nWinona can use it to scan some items to save recourses. For example, one Fish Food costs 1 Empty Bottle but one Fish Food Blueprint costs 5 Empty Bottles. Using Calibrated Perceiver can save 4 Bottles.\nWinona can also scan Lures that drop from Pearl's Bundle of Thanks or scan Relics found in ruins.\nTools and WeaponsResources\nView or edit this template\nDon't Starve Tools and Weapons\nEquipped Tools\nUnequipped Tools\nLight\nBooks\nCircuits\nBattle Calls\nWatches\nWeapons\nSlingshot Parts\nThrowables\nStaffs\nAmulets\nBackpacks\nClothing\nStage Costumes\nArmor\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -26,6 +55,7 @@
     "timestamp": "2025-08-01T19:31:08Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Đối với Bộ thu nhận đã được hiệu chỉnh được tìm thấy trong Nhiệm vụ Bão mặt trăng, vui lòng tham khảo Truyền tải hạt.</p>",
   "title": "Calibrated Perceiver",
   "wikitext": "{{Exclusivity|Don't Starve Together}}''For the [[Grainy_Transmission#Tools|Calibrated Perceiver]] found in the Moonstorm Quest, please refer to [[Grainy Transmission]].''{{Object Infobox\n|image =Calibrated Perceiver Dropped.png\n|icon = Calibrated Perceiver.png\n|stack = Does not stack\n|droppedBy = {{Pic|32|Cachebox}}\n|spawnCode = \"winona_recipescanner\"\n}}\n{{Quote|One scan with this Calibrated Perceiver, and I'll know how somethin's built!|Winona}}\nThe '''Calibrated Perceiver''' is an item that can only be obtained by [[Winona]] with the [[Founder's Keepers I]] skill. It drops from [[Cachebox]]es after fixing or opening them. Cacheboxes can be found by wearing the [[Inspectacles]]. It can't be given to other players.\n\nThe Calibrated Perceiver can be used to scan items and structures that can be prototyped to obtain their respective recipes. The item disappears after one use or when left on the ground for too long. It can't be used to scan other characters' exclusive items or items that are not prototypable. For example, you can't scan the [[Pick/Axe]] but you can use it to scan an [[Opulent Pickaxe/DST|Opulent Pickaxe]].\n\nWith the [[Founder's Keepers II]] skill, Winona can use the Calibrated Perceiver to scan [[Unstable Transmission]]s, which drop from [[Advanced Cachebox]]es. If the Unstable Transmission looks like a dismantled Teleport pad, the player will learn the [[Teletransport Station]] recipe. If the Unstable Transmission looks like an umbrella, the player will learn the [[Portasol]] recipe.\n\n== {{Pic32|prototype}}Tips ==\n* One can use it to scan the [[Bundling Wrap/DST|Bundling Wrap]] from the [[Loot Stash|Loot Stash]] after killing [[Klaus]].\n* Even though it has the same name and in the canon is the same thing, you can't use the Calibrated Perceiver from Moonstorms to scan items.\n* Winona can use it to scan some items to save recourses. For example, one [[Fish Food]] costs 1 [[Empty Bottle/DST|Empty Bottle]] but one Fish Food [[Blueprint]] costs 5 Empty Bottles. Using Calibrated Perceiver can save 4 Bottles.\n* Winona can also scan [[Lures]] that drop from Pearl's [[Bundle of Thanks]] or scan [[Relic/DST|Relics]] found in ruins.\n\n{{clear}}\n\n<tabber>\nTools and Weapons=\n{{Tools and Weapons}}\n|-|\nResources=\n{{Resources}}\n</tabber>\n\n[[zh:校准观察机]]"
 }

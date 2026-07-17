@@ -25,6 +25,41 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Bearger.png",
+              "title": "Bearger",
+              "url": "https://dontstarve.wiki.gg/wiki/Bearger"
+            },
+            {
+              "entityId": "base_game:klaus_sack",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Loot_Stash.png",
+              "title": "Loot Stash",
+              "url": "https://dontstarve.wiki.gg/wiki/Loot_Stash"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": "base_game:bearger_fur",
+      "iconUrl": null,
+      "title": "Thick Fur/DST",
+      "url": "https://dontstarve.wiki.gg/wiki/Thick_Fur/DST"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 221590,
   "plainText": "Don't Starve\nTogether\nExclusive to:\nThick Fur\n\"Reconstituted furs.\"\nObject Info\n10\nSource\nDropped by\nCrafting\n×90\nAmount produced\n3\nFilters\nTier\nMiscellaneous\n\"bearger_fur\"\n“A mat of thick fur.”\n–Wilson\n“It's fur all the way down.”\n–Willow\n“Is like hair on Wolfgang chest.”\n–Wolfgang\n“It smells like death.”\n–Wendy\n“MAXIMALLY THICK FUR”\n–WX-78\n“My, my! That is thick.”\n–Wickerbottom\n“It's as thick as my head!”\n–Woodie\n“This would make a nice rug.”\n–Maxwell\n“An effective thermal wave insulator.”\n–Wagstaff\n“It föught bravely, but I have claimed its hide.”\n–Wigfrid\n“It's so thick!”\n–Webber\n“Now I can hibernate in comfort.”\n–Walani\n“Feels warm.”\n–Warly\n“Smells badgerin' me nose.”\n–Woodlegs\n“BUT SOFT, 'TIS SOFT BUTT!”\n–Wilba\n“Poor guy”\n–Wormwood\n“Nice thick fur.”\n–Wheeler\n“Real soothing to run your fingers through.”\n–Winona\n“You won't be eating me today!”\n–Wortox\n“Stripy fluff.”\n–Wurt\n“It's so soft!”\n–Walter\n“It was either him or me.”\n–Wanda\nThick Fur is an Item dropped by the Bearger. It can be used as a crafting material.\n3 Thick Fur can be crafted from 90 Fur Tufts under the Refined Materials Filter.\nUsage[edit | edit source]\n×2\n×3\n×5\nTips[edit | edit source]\nUsing a Construction Amulet allows 3 Thick Furs to be crafted with 45 Fur Tufts. With a Deconstruction Staff, these 3 Thick Furs can then be deconstructed for 30 Fur Tufts each. This allows Thick Furs to easily be duplicated at the cost of Green Gems.\nDSTDSRoGSWHam\nView or edit this template\nDon't Starve Together Craftable Items\nRegular Filters\nSurvivor Items\nWilson\nWillow\nWolfgang\nWendy\nWX-78\nWickerbottom\nWoodie\nWes\nMaxwell\nWigfrid\nWebber\nWarly\nWortox\nWormwood\nWinona\nWurt\nWalter\nWanda\nTools\nLight Sources\nPrototypers & Stations\nRefined Materials\nWeapons\nArmor\nClothing\nHealing\nMagic\nDecorations\nStructures\nStorage Solutions\nCooking\nFood & Gardening\nFishing\nSeafaring\nBeefalo Riding\nWinter Items\nSummer Items\nRain Gear\nCrafting Station Filters\nSpecial Event\nAncient Pseudoscience\nCarpentry\nCartography\nCritters\nCelestial\nBrightsmithy\nShadowcraft\nFabrication\nBottle Exchange\nCombrining Filter\nTea Brewing Filter\nSculptures\nSeasonings\nTrading\nTrading Hutch\nOfferings\nCawnival Creation\nTrinket Trove\nMad Science\nWinter's Feast Cooking\nSanctum Smithy Filter\nCustom Course Shack Filter\nView or edit this template\nDon't Starve Craftable Items\nTools\nLight\nSurvival\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nAncient\nBooks\nTinkering\nView or edit this template\nDon't Starve: Reign of Giants Craftable Items\nTools\nLight\nSurvival\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nAncient\nBooks\nTinkering\nView or edit this template\nDon't Starve Shipwrecked and Volcano Craftable Items\nTools\nLight\nNautical\nSurvival\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nVolcanic\nBooks\nTinkering\nView or edit this template\nDon't Starve Hamlet Craftable Items\nTools\nLight\nTreasure Hunting\nSurvival\nNautical\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nGreen Thumb\nBooks\nTinkering\nCity Planning\nRenovate\nFloors\nShelves\nPlantholders\nColumns\nWall Papers\nHanging Lamps\nOrnaments\nChairs\nHome Kits\nDoors\nWindows\nRugs\nLamps\nTables",
   "recipes": [
@@ -56,6 +91,7 @@
     "timestamp": "2026-04-24T07:39:29Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Lông Dày là Vật phẩm rơi ra từ Bearger. Nó có thể được sử dụng làm vật liệu chế tạo.</p>",
   "title": "Thick Fur/DST",
   "wikitext": "{{Navbutton/Separation}}\n{{Exclusivity|Reign of Giants|Hamlet|Don't Starve Together}}\n{{Object Infobox\n|image=Thick Fur Dropped.png\n|icon=Thick Fur.png\n|description=Reconstituted furs.\n|droppedBy = {{Pic|32|Bearger}} {{Pic|32|Loot Stash}}\n|stack = 10\n|filter = {{Pic32|Refined Materials Filter}}\n|tier = 2\n|ingredient1 = Fur Tuft\n|multiplier1 = 90\n|numtogive = 3\n|spawnCode = \"bearger_fur\"}}\n{{Quotes\n|wilson = A mat of thick fur.\n|willow = It's fur all the way down.\n|wolfgang = Is like hair on Wolfgang chest.\n|wendy = It smells like death.\n|wx78 = MAXIMALLY THICK FUR\n|wickerbottom = My, my! That is thick.\n|woodie = It's as thick as my head!\n|maxwell = This would make a nice rug.\n|wagstaff = An effective thermal wave insulator.\n|wigfrid = It föught bravely, but I have claimed its hide.\n|webber = It's so thick!\n|walani = Now I can hibernate in comfort.\n|warly = Feels warm.\n|woodlegs = Smells badgerin' me nose.\n|wilba = BUT SOFT, 'TIS SOFT BUTT!\n|wormwood = Poor guy\n|wheeler = Nice thick fur.\n|winona = Real soothing to run your fingers through.\n|wortox = You won't be eating me today!\n|wurt = Stripy fluff.\n|walter = It's so soft!\n|wanda = It was either him or me.\n|choose = wolfgang}}\n'''Thick Fur''' is an [[Item]] dropped by the [[Bearger]]. It can be used as a crafting material.\n\n3 Thick Fur can be crafted from 90 [[Fur Tuft]]s under the [[Refined Materials Filter]].\n\n=={{pic|32|Icon Tools}} Usage==\n{{Recipe\n|item1 = Thick Fur\n|item2 = Dapper Vest\n|item3 = Rope\n|count3 = 2\n|tool = Alchemy Engine\n|result = Hibearnation Vest}}\n{{Recipe\n|item1 = Thick Fur\n|item2 = Gears\n|count2 = 1\n|item3 = Electrical Doodad\n|count3 = 1\n|tool = Alchemy Engine\n|result = Insulated Pack}}\n{{Recipe\n|tool = Brightsmithy\n|item1 = Thick Fur\n|item2 = Spark Ark\n|item3 = Pure Brilliance\n|count3 = 3\n|item4 = Moon Rock\n|count4 = 5\n|result = Polar Bearger Bin\n}}\n\n=={{Pic32|Prototype}} Tips==\n*Using a Construction Amulet allows 3 Thick Furs to be crafted with 45 Fur Tufts. With a Deconstruction Staff, these 3 Thick Furs can then be deconstructed for 30 Fur Tufts each. This allows Thick Furs to easily be duplicated at the cost of Green Gems.\n{{Craftable Items}}\n[[es:Pelaje_espeso]]\n[[vi:Lông Dày]]\n[[Category:Items]]\n[[Category:Mob Dropped Items]]\n[[Category:Reign of Giants]]\n[[Category:Boss Dropped Items]]\n[[Category:Resources]]\n[[Category:Refined Materials Filter]]\n[[Category:Flammable Objects]]"
 }

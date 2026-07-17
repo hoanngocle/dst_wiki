@@ -22,6 +22,41 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "(Hammer)",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Debris_Build.png",
+              "title": "Debris",
+              "url": "https://dontstarve.wiki.gg/wiki/Debris_Build"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/X_Marks_The_Spot.png",
+              "title": "X Marks The Spot",
+              "url": "https://dontstarve.wiki.gg/wiki/X_Marks_The_Spot"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Boat Repair Kit",
+      "url": "https://dontstarve.wiki.gg/wiki/Boat_Repair_Kit"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 133291,
   "plainText": "Exclusive to:\nFor the Don't Starve Together item with a similar function, see Boat Patch.\nBoat Repair Kit\n\"Stay afloat in that boat!\"\n×2 ×2 ×2\nTab\nTier\n3 Uses\nDoes not stack\nPerk\nRepairs damaged boats\nDropped by\n()\n\"boatrepairkit\"\n“This will add some float to my boat.”\n–Wilson\n“This should patch up any little leaks.”\n–Willow\n“Restore my mighty vessel!”\n–Wolfgang\n“This could save a boat from destruction, and me with it.”\n–Wendy\n“SEA VESSEL REPAIRS. AT SEA.”\n–WX-78\n“Extends the life of aquatic vessels.”\n–Wickerbottom\n“Patch'er up, eh?”\n–Woodie\n“It will hold off my vessel's inevitable decay.”\n–Maxwell\n“Strange. Where did the glue come from?”\n–Wagstaff\n“Möst sensible cargö.”\n–Wigfrid\n“Never leave home without one.”\n–Webber\n“Surfboard maintenance is essential!”\n–Walani\n“A most sensible traveling companion.”\n–Warly\n“Never set sail wit'out'er.”\n–Woodlegs\n“'TIS FOR BOAT FIXINGS”\n–Wilba\n“Fix it stuff”\n–Wormwood\n“Swell. Because cork is known for its durability.”\n–Wheeler\nThe Boat Repair Kit is a craftable Item can be used to repair Boats in the Shipwrecked DLC. It is crafted using 2 Boards, 2 Stingers, and 2 Ropes. It requires the Science Machine to prototype and can be found in the Nautical Tab.\nA Boat Repair Kit can be obtained early in the game by destroying the large piece of Debris at the player's spawn with a Hammer.\nUpon use, it recovers 100 regardless of what boat it is used on. It can be used 3 times before being completely consumed. The Boat Repair Kit can be used while on the boat by right clicking on the Kit. It can also be used without getting on to the boat by dragging it on to the boat from dry land.\nDownloadable Content[edit | edit source]\nThe Boat Repair kit is also present in the Hamlet DLC.\nTrivia[edit | edit source]\nThe ability to craft Boat Repair Kit in the Hamlet DLC was introduced in the June 7, 2019 update.\nDSTDSRoGSWHam\nView or edit this template\nDon't Starve Together Craftable Items\nRegular Filters\nSurvivor Items\nWilson\nWillow\nWolfgang\nWendy\nWX-78\nWickerbottom\nWoodie\nWes\nMaxwell\nWigfrid\nWebber\nWarly\nWortox\nWormwood\nWinona\nWurt\nWalter\nWanda\nTools\nLight Sources\nPrototypers & Stations\nRefined Materials\nWeapons\nArmor\nClothing\nHealing\nMagic\nDecorations\nStructures\nStorage Solutions\nCooking\nFood & Gardening\nFishing\nSeafaring\nBeefalo Riding\nWinter Items\nSummer Items\nRain Gear\nCrafting Station Filters\nSpecial Event\nAncient Pseudoscience\nCarpentry\nCartography\nCritters\nCelestial\nBrightsmithy\nShadowcraft\nFabrication\nBottle Exchange\nCombrining Filter\nTea Brewing Filter\nSculptures\nSeasonings\nTrading\nTrading Hutch\nOfferings\nCawnival Creation\nTrinket Trove\nMad Science\nWinter's Feast Cooking\nSanctum Smithy Filter\nCustom Course Shack Filter\nView or edit this template\nDon't Starve Craftable Items\nTools\nLight\nSurvival\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nAncient\nBooks\nTinkering\nView or edit this template\nDon't Starve: Reign of Giants Craftable Items\nTools\nLight\nSurvival\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nAncient\nBooks\nTinkering\nView or edit this template\nDon't Starve Shipwrecked and Volcano Craftable Items\nTools\nLight\nNautical\nSurvival\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nVolcanic\nBooks\nTinkering\nView or edit this template\nDon't Starve Hamlet Craftable Items\nTools\nLight\nTreasure Hunting\nSurvival\nNautical\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nGreen Thumb\nBooks\nTinkering\nCity Planning\nRenovate\nFloors\nShelves\nPlantholders\nColumns\nWall Papers\nHanging Lamps\nOrnaments\nChairs\nHome Kits\nDoors\nWindows\nRugs\nLamps\nTables",
   "recipes": [],
@@ -32,6 +67,7 @@
     "timestamp": "2026-07-01T19:25:44Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Bộ Sửa Thuyền là một Vật Dụng chế tạo được, dùng để sửa Thuyền trong DLC ​​Shipwrecked. Nó được chế tạo bằng cách sử dụng 2 Ván Gỗ, 2 Stingers và 2 Dây Thừng. Nó yêu cầu Máy Khoa học để tạo nguyên mẫu và có thể tìm thấy trong Thẻ Hàng hải.</p>",
   "title": "Boat Repair Kit",
   "wikitext": "{{Exclusivity|Shipwrecked|Hamlet}}\n{{For|the ''[[Don't Starve Together]]'' item with a similar function|Boat Patch}}\n{{Item Infobox\n|ingredient1 = Boards\n|multiplier1 = 2\n|ingredient2 = Stinger\n|multiplier2 = 2\n|ingredient3 = Rope\n|multiplier3 = 2\n|tab = Nautical\n|tier = 1\n|droppedBy = {{Pic32|Debris Build|Debris}} ({{Pic|24|Hammer}}) {{Pic32|X Marks The Spot}}\n|stack = Does not stack\n|spawnCode = \"boatrepairkit\"\n|perk = Repairs damaged boats\n|description = Stay afloat in that boat!\n|durability=3 Uses\n}}\n{{Quotes\n|wilson = This will add some float to my boat.\n|willow = This should patch up any little leaks.\n|wolfgang = Restore my mighty vessel!\n|wendy = This could save a boat from destruction, and me with it.\n|wx78 = SEA VESSEL REPAIRS. AT SEA.\n|wickerbottom = Extends the life of aquatic vessels.\n|woodie = Patch'er up, eh?\n|maxwell = It will hold off my vessel's inevitable decay.\n|wagstaff = Strange. Where did the glue come from?\n|wigfrid = Möst sensible cargö.\n|webber = Never leave home without one.\n|walani = Surfboard maintenance is essential!\n|warly = A most sensible traveling companion.\n|woodlegs = Never set sail wit'out'er.\n|wilba = 'TIS FOR BOAT FIXINGS\n|wormwood = Fix it stuff\n|wheeler = Swell. Because cork is known for its durability.\n|choose = wagstaff}}\nThe '''Boat Repair Kit''' is a craftable [[Item]] can be used to repair [[Boats]] in the ''[[Don't Starve: Shipwrecked|Shipwrecked]]'' DLC. It is crafted using 2 [[Boards]], 2 [[Stinger]]s, and 2 [[Rope]]s. It requires the [[Science Machine]] to prototype and can be found in the [[Nautical Tab]].\n\nA Boat Repair Kit can be obtained early in the game by destroying the large piece of [[Debris]] at the player's spawn with a [[Hammer]].\n\nUpon use, it recovers 100 {{Pic24|Boat Meter (SW)|Boats}} regardless of what boat it is used on. It can be used 3 times before being completely consumed. The Boat Repair Kit can be used while on the boat by right clicking on the Kit. It can also be used without getting on to the boat by dragging it on to the boat from dry land.\n\n== {{Pic32|Gift Icon}} Downloadable Content ==\nThe Boat Repair kit is also present in the ''[[Don't Starve: Hamlet|Hamlet]]'' DLC.\n\n== {{pic|32|Placeholder}} Trivia == \n* The ability to craft Boat Repair Kit in the ''[[Don't Starve: Hamlet|Hamlet]]'' DLC was introduced in the June 7, 2019 update.\n\n{{Craftable Items}}\n[[es:Kit de reparación para botes]]\n[[Category:Non-Flammable]]\n[[Category:Limited use]]\n[[Category:Healing]]"
 }

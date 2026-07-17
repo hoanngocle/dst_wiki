@@ -17,6 +17,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "20%",
+          "context": "( ), Pirate Stash (50%)",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Prime_Mate.png",
+              "title": "Prime Mate",
+              "url": "https://dontstarve.wiki.gg/wiki/Prime_Mate"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Banana Shake",
+      "url": "https://dontstarve.wiki.gg/wiki/Banana_Shake"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 146984,
   "plainText": "Exclusive to:\nBanana Shake\nFood Info\n25\n8\n33\nVeggie\nObject Info\n15 days\nCan be Burned\n40\nSource\nDropped by\n(20%), (50%)\nCooking Info\nx2 x2\n10 seconds\n1\nMiscellaneous\n\"bananajuice\"\n“Makes me feel a bit rogueish.”\n–Wilson\n“Blech, it's cold!”\n–Willow\n“Wolfgang would like more monkey drink.”\n–Wolfgang\n“I... like it.”\n–Wendy\n“THE BANANAS HAVE BEEN SUFFICIENTLY PULVERIZED FOR CONSUMPTION”\n–WX-78\n“Ah, I was in need of some refreshment.”\n–Wickerbottom\n“Feels almost like being on vacation, eh?”\n–Woodie\n“It doesn't do much for my refined palate.”\n–Maxwell\n“Monkey slop.”\n–Wigfrid\n“Mmmm, cold and banana-y.”\n–Webber\n“I would have added a pinch of cinnamon.”\n–Warly\n“Sweet friend water”\n–Wormwood\n“Would ya look at that, you can juice 'em too!”\n–Winona\n“Mortals will eat bananas in just about any form.”\n–Wortox\n“It sweet and slurpy, florp!”\n–Wurt\n“Mmm, it's even better than the ones they made at the malted shop!”\n–Walter\n“I suppose I can spare a moment to enjoy a sip or two.”\n–Wanda\nBanana Shake is a Crock Pot recipe exclusive to Don't Starve Together introduced in the The Curse of Moon Quay update. It is made from 2 Banana, and 2 filler which can include Twigs.\nUsing Ice as filler may result in Frozen Banana Daiquiri. Using 1 Twig and 1 Ice will result in Banana Pop.\nBanana Shakes provide the same amount of food as the two Bananas required as ingredients, so it is primarily valuable as a sanity dish with a decent perish time. This is particularly the case when visiting the Ruins, an environment where Bananas are fairly abundant and sanity is drained quickly.\nRecipe[edit | edit source]\nFiller cannot be Meats, Fishes and Monster Foods.\nExamples[edit | edit source]\nBy TypeBy Crock Pot Value\nView or edit this template\nFood and Edible Items (by Food Type)\nVeggie\nSeeds\nMeat\nGoodies\nGeneric\nHorrible\nRoughage\nElementals\nBurnt\nRaw\nGears\nGold Dust\nBerry\nWood\nNitre\nLunar Shards\nView or edit this template\nFood and Edible Items (by Food Value)\nMeats\nFishes\nVegetables\nFruits\nMonster Food\nEggs\nDairy\nSweetener\nFrozen\nInedibles\nMagic\nFat\nSeed\nJellyfish\nBone\nFilter\nAntihistamine\nDecoration\nBug\nNo Value Food",
   "recipes": [
@@ -104,6 +133,7 @@
     "timestamp": "2026-01-05T05:42:05Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Banana Shake là công thức Nồi Hầm độc quyền của Don&#x27;t Starve Together được giới thiệu trong bản cập nhật The Curse of Moon Quay. Nó được làm từ 2 Quả Chuối và 2 chất độn có thể bao gồm Cành Cây.</p>",
   "title": "Banana Shake",
   "wikitext": "{{Exclusivity|Don't Starve Together}}\n{{Object Infobox\n|canBeBurned=1\n|foodType = [[Veggie]] [[File:Veggie.png|32px|]]\n|foodRecipe ={{Pic|32px|Cave Bananas}}x2 {{Pic|32px|Filler}}x2\n|image = Banana Shake Dropped.png\n|icon = Banana Shake.png\n|hpRestored = 8\n|hungerRestored = 25\n|sanityRestored = 33\n|cooktime = 10 seconds\n|spoil = 15 days\n|priority = 1\n|stack = 40\n|spawnCode = \"bananajuice\"\n|droppedBy = {{Pic|32|Prime Mate}} (20%), {{Pic32|Pirate Stash}} (50%)\n}}\n{{Quotes\n|wilson = Makes me feel a bit rogueish.\n|willow = Blech, it's cold!\n|wolfgang = Wolfgang would like more monkey drink.\n|wendy = I... like it.\n|wx78 = THE BANANAS HAVE BEEN SUFFICIENTLY PULVERIZED FOR CONSUMPTION\n|wickerbottom = Ah, I was in need of some refreshment.\n|woodie = Feels almost like being on vacation, eh?\n|maxwell = It doesn't do much for my refined palate.\n|wigfrid = Monkey slop.\n|webber = Mmmm, cold and banana-y.\n|winona = Would ya look at that, you can juice 'em too!\n|warly = I would have added a pinch of cinnamon.\n|wormwood = Sweet friend water\n|wortox = Mortals will eat bananas in just about any form.\n|wurt = It sweet and slurpy, florp!\n|walter = Mmm, it's even better than the ones they made at the malted shop!\n|wanda = I suppose I can spare a moment to enjoy a sip or two.}}\n'''Banana Shake''' is a [[Crock Pot]] recipe exclusive to ''[[Don't Starve Together]]'' introduced in the ''[[The Curse of Moon Quay]]'' update. It is made from 2 [[Banana]], and 2 filler which can include [[Twigs]].\n\nUsing [[Ice]] as filler may result in [[Frozen Banana Daiquiri]]. Using 1 Twig and 1 Ice will result in [[Banana Pop]].\n\nBanana Shakes provide the same amount of [[food]] as the two Bananas required as ingredients, so it is primarily valuable as a [[sanity]] dish with a decent perish time. This is particularly the case when visiting the [[Ruins]], an environment where Bananas are fairly abundant and sanity is drained quickly.\n\n== {{Pic|32|Cookbook}}Recipe ==\n{{Recipe\n|item1=Cave Bananas\n|item2=Cave Bananas\n|item3=Filler\n|item4=Filler\n|result=Banana Shake\n|tool=Crock Pot\n|note = Filler cannot be [[Meats]], [[Fishes]] and [[Monster Foods]].\n}}\n\n== {{Pic|32|Crock Pot}}Examples ==\n{{Recipe\n|item1=Cave Bananas\n|item2=Cave Bananas\n|item3=Twigs\n|item4=Twigs\n|tool=Crock Pot\n|result=Banana Shake}}\n{{clear}}\n{{Crock Pot Food}}\n__NOTOC__\n[[vi:Banana Shake]]"
 }

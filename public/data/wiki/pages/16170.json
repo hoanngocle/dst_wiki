@@ -27,6 +27,47 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "10%",
+          "context": "( ), Tentapillar ( )",
+          "quantity": "3",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Slurtle.png",
+              "title": "Slurtle",
+              "url": "https://dontstarve.wiki.gg/wiki/Slurtle"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Snurtle.png",
+              "title": "Snurtle",
+              "url": "https://dontstarve.wiki.gg/wiki/Snurtle"
+            },
+            {
+              "entityId": "base_game:slurtlehole",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Slurtle_Mound.png",
+              "title": "Slurtle Mound",
+              "url": "https://dontstarve.wiki.gg/wiki/Slurtle_Mound"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": "base_game:slurtleslime",
+      "iconUrl": null,
+      "title": "Slurtle Slime",
+      "url": "https://dontstarve.wiki.gg/wiki/Slurtle_Slime"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 16170,
   "plainText": "Don't Starve\nTogether\nSlurtle Slime\nCombat\n50\nObject Info\nPerk\nExplosive.\n45 sec.\nCan be Burned\n40\nSource\nDropped by\n, , (x3), (10%)\nMiscellaneous\n\"slurtleslime\"\n“If it wasn't useful, I wouldn't touch it.”\n–Wilson\n“I love this stuff!”\n–Willow\n“Boom snot!”\n–Wolfgang\n“It shimmers with slimy anticipation.”\n–Wendy\n“NOT LOGICAL.”\n–WX-78\n“Their mucus is explosive for some reason.”\n–Wickerbottom\n“Someone needs a tissue.”\n–Woodie\n“There must be a better way.”\n–Maxwell\n“An astounding explosive fuel produced from snail mucus!”\n–Wagstaff\n“Yes. Slime.”\n–Wigfrid\n“Slime-time!”\n–Webber\n“It's hard to hold on to.”\n–Walani\n“Nature giveth, and nature grosseth.”\n–Warly\n“Looks 'ike somethin' I coughed up.”\n–Woodlegs\n“'TIS LIKE THE SLIME O' WILBA NOSE”\n–Wilba\n“For hungry machines”\n–Wormwood\n“Looks a lot like a slimy projectile.”\n–Wheeler\n“I hock those up after a long day at the factory.”\n–Winona\n“A useful slime, I think, I say.”\n–Wortox\n“Splodey loogies!”\n–Wurt\n“Slurtle snot!”\n–Walter\n“Oh botheration, I think I got some on the bottom of my shoe...”\n–Wanda\n“Will explode for 50 damage when lit. Also fuels Lanterns and Miner Hats.”\n-\nSlurtle Slime is a Mob-dropped item. It is produced by Slurtles and Snurtles after eating certain Minerals, and also dropped when they are killed. It is very explosive and can trigger Earthquakes when ignited. It deals 50 damage per charge (It can be exploded in stacks) and is a very good alternative to Gunpowder as it can be easily farmed by feeding Slurtles minerals, though it deals less damage on exploding. Additionally, it can be used to refuel a Lantern or a Miner Hat by 9.5%.\nDownloadable Content[edit | edit source]\nIn the Shipwrecked DLC, Slurtle Slime can be used to destroy Obsidian Boulders, as well as refuel a Bottle Lantern or a Boat Lantern; in a linked Don't Starve or Reign of Giants world.\nIn the Hamlet DLC, Slurtle Slime can be used to destroy Suspicious Cracks in the Ancient Pig Ruins; in a linked Don't Starve or Reign of Giants world.\nTrivia[edit | edit source]\nThis item may be explosive because Slurtles and Snurtles consume Nitre, an ingredient for explosives like Gunpowder.\nWhen the player becomes insane, Slurtle Slime will appear to be grayish blue.\nGallery[edit | edit source]\nSlurtle slime appears to be a light gray while the player is on very low sanity\nAn efficient Slurtle Slime farm. The important part is having a chest full of rocks, flint, nitre or gold.\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -37,6 +78,7 @@
     "timestamp": "2025-08-01T18:47:59Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Slurtle Slime là một vật phẩm rơi ra từ Mob. Nó được tạo ra bởi Sên Rùa và Sên Rùa sau khi ăn một số Khoáng Sản nhất định và cũng rơi ra khi chúng bị giết. Nó rất dễ nổ và có thể gây ra Động đất khi bị đốt cháy. Nó gây 50 sát thương mỗi lần sạc (Nó có thể phát nổ thành từng đống) và là một lựa chọn thay thế rất tốt cho Thuốc súng vì nó có thể dễ dàng nuôi bằng cách cho Slurtles ăn khoáng chất, mặc dù nó gây ít sát thương hơn khi phát nổ. Ngoài ra, nó có thể được sử dụng để tiếp nhiên liệu cho Đèn lồng hoặc Mũ thợ mỏ thêm 9,5%.</p>",
   "title": "Slurtle Slime",
   "wikitext": "{{Navbutton/Separation}}\n{{Object Infobox\n|icon = Slurtle Slime.png\n|image = Slurtle Slime Dropped.png\n|canBeBurned=1\n|perk = Explosive.\n|droppedBy = {{pic|30|Slurtle}}, {{pic|30|Snurtle}}, {{pic|30|Slurtle Mound}}(x3), {{pic|30|Tentapillar}}(10%)\n|stack = 40\n|burnTime = [[File:Light Bulb.png|32px|link=Fuel#Light Bulb Fuel]] 45 sec.\n|spawnCode = \"slurtleslime\"\n|damage = 50\n|damageAsWigfrid = 50\n|damageAsWes=50|damageAsWolfgang=50}}\n{{Quotes\n|wilson = If it wasn't useful, I wouldn't touch it.\n|willow = I love this stuff!\n|wolfgang = Boom snot!\n|wendy = It shimmers with slimy anticipation.\n|wx78 = NOT LOGICAL.\n|wickerbottom = Their mucus is explosive for some reason.\n|woodie = Someone needs a tissue.\n|maxwell = There must be a better way.\n|wagstaff = An astounding explosive fuel produced from snail mucus!\n|wigfrid = Yes. Slime.\n|webber = Slime-time!\n|walani = It's hard to hold on to.\n|warly = Nature giveth, and nature grosseth.\n|woodlegs = Looks 'ike somethin' I coughed up.\n|wilba = 'TIS LIKE THE SLIME O' WILBA NOSE\n|wormwood = For hungry machines\n|wheeler = Looks a lot like a slimy projectile.\n|winona = I hock those up after a long day at the factory.\n|wortox = A useful slime, I think, I say.\n|wurt = Splodey loogies!\n|walter = Slurtle snot!\n|wanda = Oh botheration, I think I got some on the bottom of my shoe...\n|choose = wickerbottom\n}}{{Scrapbook Info|Will explode for 50 damage when lit. Also fuels Lanterns and Miner Hats.}}\n'''Slurtle Slime''' is a Mob-dropped item. It is produced by [[Slurtles]] and [[Snurtle]]s after eating certain [[:Category:Minerals|Minerals]], and also dropped when they are killed. It is very explosive and can trigger [[Earthquake]]s when ignited. It deals 50 damage per charge (It can be exploded in stacks) and is a very good alternative to [[Gunpowder]] as it can be easily farmed by feeding Slurtles minerals, though it deals less damage on exploding. Additionally, it can be used to refuel a [[Lantern]] or a [[Miner Hat]] by 9.5%.\n\n=={{pic|32|Gift Icon}} Downloadable Content==\n\nIn the ''[[Shipwrecked]]'' DLC, Slurtle Slime can be used to destroy [[Obsidian Boulder]]s, as well as refuel a [[Bottle Lantern]] or a [[Boat Lantern]]; in a linked ''[[Don't Starve]]'' or ''[[Reign of Giants]]'' world.\n\nIn the ''[[Hamlet]]'' DLC, Slurtle Slime can be used to destroy [[Ancient Pig Ruins|Suspicious Cracks]] in the [[Ancient Pig Ruins]]; in a linked ''[[Don't Starve]]'' or ''[[Reign of Giants]]'' world.\n\n=={{pic|32|Placeholder}} Trivia==\n* This item may be explosive because Slurtles and Snurtles consume [[Nitre]], an ingredient for explosives like Gunpowder.\n* When the player becomes insane, Slurtle Slime will appear to be grayish blue.\n== {{Pic32|Blueprint}} Gallery ==\n<gallery>\nBlue slime.png|Slurtle slime appears to be a light gray while the player is on very low sanity\nEfficient Slurtle Farm.png|An efficient Slurtle Slime farm. The important part is having a chest full of rocks, flint, nitre or gold.\n</gallery>\n{{Mob Dropped Items}}\n[[Category:Resources]]\n[[Category:Fuel]]\n[[Category:Flammable Objects]]\n[[Category:Limited use]]\n[[Category:Earthshakers]]\n[[Category:Area of Effect]]"
 }

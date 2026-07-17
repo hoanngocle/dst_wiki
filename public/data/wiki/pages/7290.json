@@ -16,6 +16,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "|burnTime = 3 min.",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Sea_Weed.png",
+              "title": "Sea Weed",
+              "url": "https://dontstarve.wiki.gg/wiki/Sea_Weed"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": "base_game:waterplant_planter",
+      "iconUrl": null,
+      "title": "Sea Sprout Starter",
+      "url": "https://dontstarve.wiki.gg/wiki/Sea_Sprout_Starter"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 7290,
   "plainText": "Exclusive to:\nSea Sprout Starter\nObject Info\nPerk\nCan be planted on Sea Stack to grow Sea Sprout.\n3 min.\nCan be Burned\n10\nSource\nDropped by\n×1\nMiscellaneous\n\"waterplant_planter\"\n“They seem to grow best on oceanic rocks.”\n–Wilson\n“Do I really want to grow more of these things?”\n–Willow\n“It needs rock for the growing.”\n–Wolfgang\n“Even if I plant it, the fickle thing may turn against me.”\n–Wendy\n“PERHAPS YOU COULD BE USEFUL TO ME”\n–WX-78\n“Perhaps I'll get back into gardening.”\n–Wickerbottom\n“Where will you cause the least amount of damage...”\n–Woodie\n“Why would I want these to spread?”\n–Maxwell\n“Fear nöt, I shall return yöu tö the sea in time.”\n–Wigfrid\n“Where should we put you?”\n–Webber\n“Where shall I start planting my sea garden?”\n–Warly\n“Find nice spot for friend”\n–Wormwood\n“Let's find a good rock to plant you on.”\n–Winona\n“A bouncing baby bulb.”\n–Wortox\n“Maybe we just throw it into the big pond, florp.”\n–Wurt\n“Don't worry, we'll find a nice rock to plant you on.”\n–Walter\n“If I come across a nice rock, I'll leave it there.”\n–Wanda\n“Can be planted on Sea Stacks.”\n-\nThe Sea Sprout Starter is an Item exclusive to Don't Starve Together introduced in Return of Them.\nWhen a Sea Weed is killed, a single Sea Sprout Starter is dropped. It can then be placed on a Sea Stack to grow back into a Sea Sprout.\nTrivia[edit | edit source]\nThe Sea Sprout Starter was introduced in the Troubled Waters update.\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -26,6 +55,7 @@
     "timestamp": "2026-05-12T23:48:22Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Sea Sprout Starter là một Vật phẩm độc quyền của Don&#x27;t Starve Together được giới thiệu trong Return of Them.</p>",
   "title": "Sea Sprout Starter",
   "wikitext": "{{Exclusivity|Don't Starve Together}}\n{{Object Infobox\n|icon = Sea Sprout Starter.png\n|image = Sea Sprout Starter Dropped.png\n|canBeBurned=1\n|perk = Can be planted on Sea Stack to grow Sea Sprout.\n|droppedBy = {{pic32|Sea Weed}} &times;1|burnTime = [[File:Light_Sources_Filter.png|32px|link=Fuel#Fire Fuel]] 3 min.\n|stack = 10\n|spawnCode = \"waterplant_planter\"\n}}\n{{Quotes\n|wilson = They seem to grow best on oceanic rocks.\n|willow = Do I really want to grow more of these things?\n|wolfgang = It needs rock for the growing.\n|wendy = Even if I plant it, the fickle thing may turn against me.\n|wx78 = PERHAPS YOU COULD BE USEFUL TO ME\n|wickerbottom = Perhaps I'll get back into gardening.\n|woodie = Where will you cause the least amount of damage...\n|maxwell = Why would I want these to spread?\n|wigfrid = Fear nöt, I shall return yöu tö the sea in time.\n|webber = Where should we put you?\n|winona = Let's find a good rock to plant you on.\n|warly = Where shall I start planting my sea garden?\n|wortox = A bouncing baby bulb.\n|wormwood = Find nice spot for friend\n|wurt = Maybe we just throw it into the big pond, florp.\n|walter = Don't worry, we'll find a nice rock to plant you on.\n|wanda = If I come across a nice rock, I'll leave it there.\n|choose = wortox\n}}\n{{Scrapbook Info|Can be planted on Sea Stacks.}}\nThe '''Sea Sprout Starter''' is an [[Item]] exclusive to ''[[Don't Starve Together]]'' introduced in ''[[Return of Them]]''.\n\nWhen a [[Sea Weed]] is killed, a single Sea Sprout Starter is dropped. It can then be placed on a [[Sea Stack]] to grow back into a [[Sea Sprout]].\n\n== {{Pic|32|Placeholder}}Trivia ==\n* The Sea Sprout Starter was introduced in the ''[[Return of Them#Troubled Waters|Troubled Waters]]'' update.\n\n{{Mob Dropped Items}}\n[[vi:Mầm Ươm Biển]]\n[[Category:Return of Them]]"
 }

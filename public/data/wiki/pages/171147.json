@@ -17,6 +17,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": "base_game:lavae_egg",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Lavae_Egg.png",
+              "title": "Lavae Egg",
+              "url": "https://dontstarve.wiki.gg/wiki/Lavae_Egg"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": "base_game:lavae_tooth",
+      "iconUrl": null,
+      "title": "Lavae Tooth",
+      "url": "https://dontstarve.wiki.gg/wiki/Lavae_Tooth"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 171147,
   "plainText": "Exclusive to:\nLavae Tooth\nObject Info\nPerk\nTurns into a follower.\nDoes not stack\nSource\nDropped by\nMiscellaneous\n\"lavae_tooth\"\n“It's an egg tooth!”\n–Wilson\n“I hope she's not a biter.”\n–Willow\n“What a mighty tooth!”\n–Wolfgang\n“Forsooth, it's a tooth.”\n–Wendy\n“I GUESS IT DOESN'T NEED THAT PART”\n–WX-78\n“An egg tooth used by a baby reptile to break out of its egg.”\n–Wickerbottom\n“Not as sharp as Lucy!”\n–Woodie\n“The lavae's baby tooth.”\n–Maxwell\n“A fearsöme eggy fang!”\n–Wigfrid\n“What a weird tooth.”\n–Webber\n“It came off my petite fiery friend.”\n–Warly\n“Patuey Fly is teething?”\n–Wormwood\n“Aw. That's a baby tooth.”\n–Winona\n“My mom still has mine somewhere.”\n–Wortox\n“Baby lost its first tooth, florp.”\n–Wurt\n“Aw, they lost their first tooth!”\n–Walter\n“Well this feels vaguely threatening.”\n–Wanda\nThe Lavae Tooth is an item exclusive to Don't Starve Together. Once a Lavae Egg hatches, it will yield a Lavae Tooth and an Extra-Adorable Lavae. The Extra-Adorable Lavae will follow the Lavae Tooth that spawned from the same egg, similar to Chester and his Eye Bone.\nDropping the Tooth on the ground or leaving it in a stationary container will cause the Extra-Adorable Lavae to stay by that location. If the Extra-Adorable Lavae dies, the Lavae Tooth will turn to Ashes.\nTips[edit | edit source]\nLavae Eggs can be obtained by killing the Dragonfly. They will hatch after leaving them near a constant heat source for 2 days.\nIf Krampus steals this item, the Extra-Adorable Lavae will start to follow Krampus.\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -27,6 +56,7 @@
     "timestamp": "2025-08-01T21:55:29Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Răng Dung Nham là một vật phẩm độc quyền của Don&#x27;t Starve Together. Khi Trứng Dung nham nở, nó sẽ tạo ra Răng Dung nham và Dung nham cực kỳ đáng yêu. Dung nham cực kỳ đáng yêu sẽ đi theo Răng nham thạch sinh ra từ cùng một quả trứng, tương tự như Chester và Mắt xương của anh ấy.</p>",
   "title": "Lavae Tooth",
   "wikitext": "{{Exclusivity|Don't Starve Together}}\n{{Object Infobox\n|name = Lavae Tooth\n|perk = Turns {{Pic32|Lavae|Lavae/Extra-Adorable Lavae}} into a follower.\n|stack = Does not stack\n|image = File:Lavae_Tooth Dropped.png\n|icon = Lavae Tooth.png\n|imagewidth = 64\n|droppedBy = {{Pic32|Lavae Egg}}\n|spawnCode = \"lavae_tooth\"}}\n{{Quotes\n|wilson = It's an egg tooth!\n|willow = I hope she's not a biter.\n|wolfgang = What a mighty tooth!\n|wendy = Forsooth, it's a tooth.\n|wx78 = I GUESS IT DOESN'T NEED THAT PART\n|wickerbottom = An egg tooth used by a baby reptile to break out of its egg.\n|woodie = Not as sharp as Lucy!\n|maxwell = The lavae's baby tooth.\n|wigfrid = A fearsöme eggy fang!\n|webber = What a weird tooth.\n|winona = Aw. That's a baby tooth.\n|warly = It came off my petite fiery friend.\n|wortox = My mom still has mine somewhere.\n|wormwood = Patuey Fly is teething?\n|wurt = Baby lost its first tooth, florp.\n|walter = Aw, they lost their first tooth!\n|wanda = Well this feels vaguely threatening.\n|choose = woodie}}\nThe '''Lavae Tooth''' is an [[item]] exclusive to ''[[Don't Starve Together]]''. Once a [[Lavae Egg]] hatches, it will yield a Lavae Tooth and an [[Extra-Adorable Lavae]]. The Extra-Adorable Lavae will follow the Lavae Tooth that spawned from the same egg, similar to [[Chester]] and his [[Eye Bone]].\n\nDropping the Tooth on the ground or leaving it in a stationary container will cause the Extra-Adorable Lavae to stay by that location. If the Extra-Adorable Lavae dies, the Lavae Tooth will turn to [[Ashes]].\n\n=={{pic32|Prototype}} Tips ==\n* Lavae Eggs can be obtained by killing the [[Dragonfly]]. They will hatch after leaving them near a constant heat source for 2 [[day]]s.\n* If [[Krampus]] steals this item, the Extra-Adorable Lavae will start to follow Krampus.\n{{Resources}}\n[[vi:Lavae Tooth]]\n[[Category:Non-Flammable]]\n[[Category:Indestructible Object]]"
 }

@@ -25,6 +25,53 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Treeguard.png",
+              "title": "Treeguard",
+              "url": "https://dontstarve.wiki.gg/wiki/Treeguard"
+            },
+            {
+              "entityId": "base_game:livingtree",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Totally_Normal_Tree.png",
+              "title": "Totally Normal Tree",
+              "url": "https://dontstarve.wiki.gg/wiki/Totally_Normal_Tree"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Poison_Birchnut_Tree.png",
+              "title": "Poison Birchnut Tree",
+              "url": "https://dontstarve.wiki.gg/wiki/Poison_Birchnut_Tree"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Mush_Gnome.png",
+              "title": "Mush Gnome",
+              "url": "https://dontstarve.wiki.gg/wiki/Mush_Gnome"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": "base_game:livinglog",
+      "iconUrl": null,
+      "title": "Living Log/DST",
+      "url": "https://dontstarve.wiki.gg/wiki/Living_Log/DST"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 219708,
   "plainText": "Don't Starve\nTogether\nLiving Log\nFood Info\n0\n0\n0\nWood\n(non-survivor food)\nObject Info\n45 sec.\nCan be Burned\n20\nSource\nDropped by\nCrafting\nWormwoodWandering Trader\nDescription\nPut yourself into your work.\n×20 ( only)\nFilters\nTier\nAlways available\nDescription\nLife wood be a scream...\nx3\nFilters\nTier\nMiscellaneous\n\"livinglog\"\n“It looks worried.”\n–Wilson\n“It looks upset.”\n–Willow\n“Creepy face log!”\n–Wolfgang\n“It is forever screaming silently.”\n–Wendy\n“EVEN WORSE THAN A NORMAL LOG”\n–WX-78\n“This log is special.”\n–Wickerbottom\n“I want to keep you, and call you \"Frank\".”\n–Woodie\n“I like the noise they make when you burn them.”\n–Maxwell\n“Burning such magic wöuld seem a waste.”\n–Wigfrid\n“This log has a face.”\n–Webber\n“Magic building blocks!”\n–Warly\n“Friend. Nice friend”\n–Wormwood\n“Stop looking at me like that.”\n–Winona\n“Don't look at me with those sad eyes!”\n–Wortox\n“Feel kinda bad, florp...”\n–Wurt\n“Yep, this log's definitely haunted.”\n–Walter\n“This log is a lot livelier than it should be.”\n–Wanda\nLiving Logs are Items dropped by Treeguards, Poison Birchnut Trees and Mush Gnomes. They can also be obtained by chopping down Totally Normal Trees, the stump of Totally Normal Tree can be dug for another Living Log. Wormwood can always \"craft\" Living Logs at the cost of 20 Health.\nThey are used to craft several magic items, including a Shadow Manipulator, and can also be used as fuel for a Fire. Living Logs will scream when burned on a fire or when eaten by a Cookie Cutter.\nA Living Log may be used to repair a Wood Wall. This works in a similar fashion to using a standard log, except that the Living Log repairs three times the wall health of a standard log.\nUsage[edit | edit source]\n×2\n×4\n×68\n×3\n×7\n×5\n×2\n×4\n×2\n×4\n×4\n×8\n×2\n×4\n×2\n×2\n×4\n×2\n×3\n×4\n×4\n×2\n×4\n×3\n×2\n×2\n×4\n×2\n×4\n×2\n×3\n×5\n×20\nOnly during the Event: Hallowed Nights\nTrivia[edit | edit source]\nThe Living Log's scream was added in the The End of the Beginning update.\nResourcesCraftable Items\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items\nView or edit this template\nDon't Starve Together Craftable Items\nRegular Filters\nSurvivor Items\nWilson\nWillow\nWolfgang\nWendy\nWX-78\nWickerbottom\nWoodie\nWes\nMaxwell\nWigfrid\nWebber\nWarly\nWortox\nWormwood\nWinona\nWurt\nWalter\nWanda\nTools\nLight Sources\nPrototypers & Stations\nRefined Materials\nWeapons\nArmor\nClothing\nHealing\nMagic\nDecorations\nStructures\nStorage Solutions\nCooking\nFood & Gardening\nFishing\nSeafaring\nBeefalo Riding\nWinter Items\nSummer Items\nRain Gear\nCrafting Station Filters\nSpecial Event\nAncient Pseudoscience\nCarpentry\nCartography\nCritters\nCelestial\nBrightsmithy\nShadowcraft\nFabrication\nBottle Exchange\nCombrining Filter\nTea Brewing Filter\nSculptures\nSeasonings\nTrading\nTrading Hutch\nOfferings\nCawnival Creation\nTrinket Trove\nMad Science\nWinter's Feast Cooking\nSanctum Smithy Filter\nCustom Course Shack Filter",
   "recipes": [],
@@ -35,6 +82,7 @@
     "timestamp": "2026-07-04T09:37:31Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Gỗ Sống là Vật phẩm rơi ra từ Thần rừng, Cây Birchnut Độc và Thần lùn Mush. Chúng cũng có thể thu được bằng cách chặt Cây Hoàn toàn Bình thường, gốc của Cây Hoàn toàn Bình thường có thể được đào để lấy một Gỗ Sống khác. Wormwood luôn có thể &quot;chế tạo&quot; Gỗ Sống với giá 20 Máu.</p>",
   "title": "Living Log/DST",
   "wikitext": "{{Navbutton/Separation}}\n{{Object Infobox\n|hpRestored = 0\n|hungerRestored = 0\n|sanityRestored = 0\n|foodType =[[Food_Type/DST#Wood|Wood]] [[File:Wood_Type_Icon.png|25px|link=Food_Type/DST#Wood]]<br>(non-survivor food)\n|image = Living Log Dropped.png\n|icon = Living Log.png\n|stack = 20\n|burnTime = [[File:Light_Sources_Filter.png|32px|link=Fuel#Fire Fuel]] 45 sec.\n|canBeBurned=1\n|droppedBy = {{pic|24|Treeguard}} {{pic|32|Totally Normal Tree}} {{pic|24|Poison Birchnut Tree}} {{pic24|Mush Gnome}}\n\n|crafting_infobox =\n<tabber>\nWormwood=\n{{Craft Infobox\n|craft_desctiption = ''Put yourself into your work.''\n|tier = 0\n|filter = {{Pic32|Refined Materials Filter}} {{Pic32|Wormwood Filter}}\n|ingredient1 = Health Decrease\n|multiplier1 = 20 ({{Pic|28|Wormwood Portrait|Wormwood}} only)\n}}\n|-|\nWandering Trader=\n{{Craft Infobox\n|craft_desctiption =''Life wood be a scream...''\n|crafting_text = {{Pic32|Beefalo Wool}}x3 \n|tier_text = {{Pic32|Wandering Trader}}\n|filter      = {{Pic32|Trading Filter}}\n}}\n</tabber>\n|spawnCode = \"livinglog\"}}\n\n{{Quotes\n|wilson = It looks worried.\n|willow = It looks upset.\n|wolfgang = Creepy face log!\n|wendy = It is forever screaming silently.\n|wx78 = EVEN WORSE THAN A NORMAL LOG\n|wickerbottom = This log is special.\n|woodie = I want to keep you, and call you \"Frank\".\n|maxwell = I like the noise they make when you burn them.\n|wigfrid = Burning such magic wöuld seem a waste.\n|webber = This log has a face.\n|winona = Stop looking at me like that.\n|warly = Magic building blocks!\n|wortox = Don't look at me with those sad eyes!\n|wormwood = Friend. Nice friend\n|wurt = Feel kinda bad, florp...\n|walter = Yep, this log's definitely haunted.\n|wanda = This log is a lot livelier than it should be.\n|choose = woodie\n}}\n\n'''Living Logs''' are [[Item]]s dropped by [[Treeguard]]s, [[Poison Birchnut Tree]]s and [[Mush Gnome]]s. They can also be obtained by [[Axe|chopping]] down [[Totally Normal Tree]]s, the stump of Totally Normal Tree can be dug for another Living Log. [[Wormwood]] can always \"craft\" Living Logs at the cost of 20 Health. \n\nThey are used to craft several magic items, including a [[Shadow Manipulator]], and can also be used as fuel for a [[Fire]]. Living Logs will scream when burned on a fire or when eaten by a [[Cookie Cutter]].\n\nA Living Log may be used to repair a [[Wood Wall]]. This works in a similar fashion to using a standard log, except that the Living Log repairs three times the wall health of a standard log.\n\n=={{pic|32|Icon Tools}} Usage==\n\n{{Recipe\n|item1 = Living Log\n|count1 = 2\n|item2 = Silk\n|count2 = 4\n|item3 = Butterfly Wings\n|count3 = 68\n|tool = Alchemy Engine\n|result = Glossamer Saddle}}\n{{Recipe\n|item1 = Living Log\n|count1 = 3\n|item2 = Purple Gem\n|item3 = Nightmare Fuel\n|count3 = 7\n|tool = Prestihatitator\n|result = Shadow Manipulator}}\n{{Recipe\n|item1 = Living Log\n|item2 = Nightmare Fuel\n|count2 = 5\n|tool = Shadow Manipulator\n|result = Dark Sword}}\n{{Recipe\n|item2 = Batilisk Wing\n|coun21 = 3\n|item1 = Living Log\n|coun12 = 2\n|item3 = Purple Gem\n|tool = Shadow Manipulator\n|result = Bat Bat}}\n{{Recipe\n|item1 = Living Log\n|count1 = 2\n|item2 = Nightmare Fuel\n|count2 = 4\n|item3 = Purple Gem\n|count3 = 2\n|tool = Shadow Manipulator\n|result = Telelocator Staff}}\n{{Recipe\n|item1 = Living Log\n|count1 = 4\n|item2 = Nightmare Fuel\n|count2 = 4\n|item3 = Gold Nugget\n|count3 = 8\n|tool = Shadow Manipulator\n|result = Telelocator Focus}}\n{{Recipe\n|item1 = Living Log\n|count1 = 2\n|item2 = Nightmare Fuel\n|count2 = 4\n|item3 = Yellow Gem\n|count3 = 2\n|tool = Broken Pseudoscience Station\n|result = Star Caller's Staff}}\n{{Recipe\n|item1 = Living Log\n|count1 = 2\n|item2 = Nightmare Fuel\n|count2 = 4\n|item3 = Green Gem\n|count3 = 2\n|tool = Broken Pseudoscience Station\n|result = Deconstruction Staff}}\n{{Recipe\n|item1 = Living Log\n|count1 = 3\n|item2 = Thulecite\n|count2 = 4\n|item3 = Nightmare Fuel\n|count3 = 4\n|tool = Ancient Pseudoscience Station\n|result = Thulecite Club}}\n{{Recipe\n|item2 = Stinger\n|count2 = 4\n|item1 = Living Log\n|count1 = 2\n|result = Bramble Husk\n|character = Wormwood\n}}\n{{Recipe\n|item2 = Stinger\n|count2 = 1\n|item1 = Living Log\n|count1 = 1\n|result = Bramble Trap\n|character = Wormwood\n}}\n{{Recipe\n|item1 = Living Log\n|item2 = Mourning Glory\n|count2 = 3\n|result = Distilled Vengeance\n|character=Wendy}}\n\n{{Recipe\n|item2 = Papyrus\n|count2 = 2\n|item1 = Living Log\n|count1 = 1\n|tool = Alchemy Engine\n|result = Applied Silviculture\n|character = Wickerbottom}}\n{{Recipe\n|item1 = Living Log\n|count1 = 2\n|item2 = Papyrus\n|count2 = 4\n|item3 = Feather Pencil\n|count3 = 1\n|tool = Science Machine\n|result = Bookcase\n|character = Wickerbottom}}\n{{Recipe\n|item1 = Living Log\n|count1 = 2\n|item2 = Time Pieces\n|item3 = Bone Shards\n|count3 = 4\n|result = Second Chance Watch\n|character = Wanda\n}}\n{{Recipe\n|item2 = Cut Grass\n|count2 = 3\n|item1 = Living Log\n|count1 = 2\n|item3 = Nightmare Fuel\n|count3 = 5\n|result = Treeguard Idol\n|character = Woodie\n|skill = Treeguard Feller III\n}}\n{{Recipe\n|item1 = Living Log\n|item2 = Batilisk Wing\n|item3 = Sanity Decrease\n|count3 = 20\n|tool = Mad Scientist Lab\n|result = Arboretum Experiment\n|note ={{Event|Hallowed Nights}} \n}}\n\n=={{pic|32|Placeholder}} Trivia==\n* The Living Log's scream was added in the ''[[Version History#April 20, 2013 - The End of the Beginning.5B3.5D|The End of the Beginning]]'' update.\n<tabber>\nResources=\n{{Resources}}\n|-|\nCraftable Items=\n{{Craftable Items and Structures on DST}}\n</tabber>\n[[de:Lebender Baumstamm]]\n[[es:Tronco viviente]]\n[[fr:bûche vivante]]\n[[vi:Gỗ Sống]]\n[[Category:Mob Dropped Items]]\n[[Category:Boss Dropped Items]]\n[[Category:Resources]]\n[[Category:Fuel]]\n[[Category:Flammable Objects]]\n[[Category:Refined Materials Filter]]\n[[Category:Survivor Items Filter]]\n__NOTOC__"
 }

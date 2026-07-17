@@ -25,6 +25,48 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "25%",
+          "context": "( )",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Tentapillar.png",
+              "title": "Tentapillar",
+              "url": "https://dontstarve.wiki.gg/wiki/Tentapillar"
+            }
+          ]
+        },
+        {
+          "chance": "—",
+          "context": "tiles (Pitchfork)",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": null,
+              "title": "Marsh",
+              "url": "https://dontstarve.wiki.gg/wiki/Marsh"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Marsh Turf/DST",
+      "url": "https://dontstarve.wiki.gg/wiki/Marsh_Turf/DST"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 221761,
   "plainText": "Don't Starve\nTogether\nMarsh Turf\n\"Home is where the marsh is.\"\nObject Info\n7.5 sec.\nCan be Burned\n20\nSource\nDropped by\n(25%),\nMarsh tiles ()\nCrafting\nTerra Firma TamperWurt\n×1 ×2\nAmount produced\n4\nFilters\nTier\n×1 ×2\nAmount produced\n4\nFilters\nTier\nAlways available\nMiscellaneous\n\"turf_marsh\"\nMarsh Turf\nCan be Dug\nСan be planted\nPerk\nCan be used to place Wurt structures.\n“A chunk of ground.”\n–Wilson\n“The ground is boring.”\n–Willow\n“Step stones.”\n–Wolfgang\n“Some ground.”\n–Wendy\n“THE GROUND”\n–WX-78\n“The ground. You step on it.”\n–Wickerbottom\n“Just some ground, eh?”\n–Woodie\n“It's dripping all over.”\n–Maxwell\n“A spongy consistency.”\n–Wagstaff\n“A piece öf the battlefield.”\n–Wigfrid\n“Some pretty average earth.”\n–Webber\n“Goopy...”\n–Walani\n“It's like an ingredient for the ground.”\n–Warly\n“Me ain't no ground lubber.”\n–Woodlegs\n“'TIS ALL FWOOSHED”\n–Wilba\n“Squishy”\n–Wormwood\n“Do I really need to drag this dirt around with me?”\n–Wheeler\n“That's a chunk of squishy ground.”\n–Winona\n“Floor or ceiling, depending on your perspective.”\n–Wortox\n“Ground bit.”\n–Wurt\n“A patch of ground.”\n–Walter\n“Why am I wasting time staring at the ground?”\n–Wanda\n“Can be placed on dirt ground to change the type of ground.”\n-\nMarsh Turf is one of the Turf items, acquired by digging Marsh tiles with a Pitchfork. These turfs can commonly be found at the Marsh biome and rarely at the Mosaic biome. Like other Turfs, it can be placed on any bare ground tile, or it can be used as a good burning fuel for a Campfire or Fire Pit.\nPlants like Berry Bushes, Grass Tufts, Saplings, Spiky Bushes, Lureplants, Pine Cones, and Birchnuts can be planted on these Turfs. It will not stop Lureplants' Eyeplants from spawning.\nWhen placed on the Surface World covering a large enough area, Crows are the only Birds that will spawn and land on these turfs.\nMarsh Turf can be crafted by Wurt with one Cut Reeds and two Rot in the Decorations Filter or Survivor Items Filter. Other Characters can craft it via the Terra Firma Tamper.\nAll of Wurt's character-specific craftable Structures, such as Craftsmerm Houses and Merm Flort-ifications, can only be placed on Marsh Turf. Wurt is also able to walk 30% faster on this terrain, the same speed as when walking on Cobblestones.\nUsage[edit | edit source]\nTrivia[edit | edit source]\nAs of the It's Not A Rock update, this is the only natural Turf that is renewable in Don't Starve.\nGallery[edit | edit source]\nMarsh Turf texture.\nSome fights going on on placed Marsh Turf.\nMarsh Turf as seen on the Map.\nOriginal HD icon from Bonus Materials from CD Don't Starve.\nTurfsCraftable Items\nView or edit this template\nTurfs\nView or edit this template\nDon't Starve Together Craftable Items\nRegular Filters\nSurvivor Items\nWilson\nWillow\nWolfgang\nWendy\nWX-78\nWickerbottom\nWoodie\nWes\nMaxwell\nWigfrid\nWebber\nWarly\nWortox\nWormwood\nWinona\nWurt\nWalter\nWanda\nTools\nLight Sources\nPrototypers & Stations\nRefined Materials\nWeapons\nArmor\nClothing\nHealing\nMagic\nDecorations\nStructures\nStorage Solutions\nCooking\nFood & Gardening\nFishing\nSeafaring\nBeefalo Riding\nWinter Items\nSummer Items\nRain Gear\nCrafting Station Filters\nSpecial Event\nAncient Pseudoscience\nCarpentry\nCartography\nCritters\nCelestial\nBrightsmithy\nShadowcraft\nFabrication\nBottle Exchange\nCombrining Filter\nTea Brewing Filter\nSculptures\nSeasonings\nTrading\nTrading Hutch\nOfferings\nCawnival Creation\nTrinket Trove\nMad Science\nWinter's Feast Cooking\nSanctum Smithy Filter\nCustom Course Shack Filter",
   "recipes": [],
@@ -35,6 +77,7 @@
     "timestamp": "2026-06-09T14:33:40Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Marsh Turf là ​​một trong những vật phẩm Turf, có được bằng cách đào các ô Marsh bằng Chĩa. Những thảm cỏ này thường có thể được tìm thấy ở quần xã Đầm lầy và hiếm khi ở quần xã Khảm. Giống như các Đất khác, nó có thể được đặt trên bất kỳ nền đất trống nào hoặc có thể được sử dụng làm nhiên liệu đốt tốt cho Lửa trại hoặc Hố lửa.</p>",
   "title": "Marsh Turf/DST",
   "wikitext": "{{Navbutton/Separation}}{{Object Infobox\n|icon = Marsh Turf.png\n|canBeBurned = 1\n|image = Marsh Turf Dropped.png\n|droppedBy = {{pic|30|Tentapillar}} (25%), <br>[[Marsh]] tiles ({{pic24|Pitchfork}})\n|stack = 20\n|burnTime = [[File:Light_Sources_Filter.png|32px|link=Fuel#Fire Fuel]] 7.5 sec.\n|crafting_infobox =\n<tabber>\nTerra Firma Tamper=\n{{Craft Infobox\n|ingredient1 = Cut Reeds\n|multiplier1 = 1\n|ingredient2 = Rot\n|multiplier2 = 2\n|numtogive = 4\n|filter ={{pic32|Decorations Filter}}\n|tier_text = {{pic24|Terra Firma Tamper}}\n}}\n|-|\nWurt=\n{{Craft Infobox\n|ingredient1 = Cut Reeds\n|multiplier1 = 1\n|ingredient2 = Rot\n|multiplier2 = 2\n|numtogive = 4\n|tier =0\n|filter ={{pic32|Decorations Filter}} {{Pic32|Wurt Filter}}\n}}\n</tabber>\n|description = Home is where the marsh is.\n|spawnCode = \"turf_marsh\"}}\n{{Turf Infobox\n|image =Marsh Turf Texture.png\n|pitchfork = 1\n|planted = 1\n|perk=Can be used to place [[Wurt]] structures.\n}}\n{{Quotes\n|wilson = A chunk of ground.\n|willow = The ground is boring.\n|wolfgang = Step stones.\n|wendy = Some ground.\n|wx78 = THE GROUND\n|wickerbottom = The ground. You step on it.\n|woodie = Just some ground, eh?\n|maxwell = It's dripping all over.\n|wagstaff = A spongy consistency.\n|wigfrid = A piece öf the battlefield.\n|webber = Some pretty average earth.\n|walani = Goopy...\n|warly = It's like an ingredient for the ground.\n|woodlegs = Me ain't no ground lubber.\n|wilba = 'TIS ALL FWOOSHED\n|wormwood = Squishy\n|wheeler = Do I really need to drag this dirt around with me?\n|winona = That's a chunk of squishy ground.\n|wortox = Floor or ceiling, depending on your perspective.\n|wurt = Ground bit.\n|walter = A patch of ground.\n|wanda = Why am I wasting time staring at the ground?\n|choose=maxwell}}\n{{Scrapbook Info|Can be placed on dirt ground to change the type of ground.}}\n'''Marsh Turf''' is one of the [[Turf]] [[items]], acquired by digging [[Marsh]] tiles with a [[Pitchfork]]. These turfs can commonly be found at the [[Marsh]] biome and rarely at the [[Mosaic]] biome. Like other Turfs, it can be placed on any bare ground tile, or it can be used as a good burning fuel for a [[Campfire]] or [[Fire Pit]].\n\nPlants like [[Berry Bush]]es, [[Grass Tuft]]s, [[Saplings]], [[Spiky Bush]]es, [[Lureplant]]s, [[Pine Cone]]s, and [[Birchnut]]s can be planted on these Turfs. It will not stop Lureplants' [[Eyeplant]]s from spawning.\n\nWhen placed on the [[Surface World]] covering a large enough area, Crows are the only [[Birds]] that will spawn and land on these turfs.\n\nMarsh Turf can be crafted by [[Wurt]] with one [[Cut Reeds]] and two [[Rot]] in the [[Decorations Filter]] or [[Survivor Items Filter]]. Other Characters can craft it via the [[Terra Firma Tamper]].\n\nAll of Wurt's character-specific craftable [[Structures]], such as [[Craftsmerm House]]s and [[Merm Flort-ifications]], can only be placed on Marsh Turf. Wurt is also able to walk [[Player Speed|30% faster]] on this terrain, the same speed as when walking on [[Cobblestones]]. \n\n== {{Pic32|Icon Tools}} Usage==\n{{Recipe\n|item1 = Marsh Turf\n|item2 = Driftwood Piece\n|item3 = Pure Horror\n|result = Dreaded Mudslinger\n|character = Wurt\n|skill = Terra Corruption\n}}\n\n{{Recipe\n|item1 = Marsh Turf\n|item2 = Driftwood Piece\n|item3 = Pure Brilliance\n|result = Brilliant Mudslinger\n|character = Wurt\n|skill = Terra Mutation\n}}\n\n=={{pic|32|Placeholder}} Trivia==\n* As of the ''[[Don't Starve/Version History|It's Not A Rock]]'' update, this is the only natural Turf that is renewable in ''Don't Starve''.\n\n=={{Pic|32|Blueprint}} Gallery==\n<gallery captionalign=\"center\" hideaddbutton=\"true\">\nMarsh Turf Texture.png|Marsh Turf texture.\nMarsh Camp Guide3.png|Some fights going on on placed Marsh Turf.\nMarsh Map.jpg|Marsh Turf as seen on the [[Map]].\nCD turf_marsh.png|Original HD icon from Bonus Materials from [[CD Don't Starve]].\n</gallery>{{clear}}\n<tabber>\nTurfs=\n{{Turfs}}\n|-|\nCraftable Items=\n{{Craftable Items and Structures on DST}}\n</tabber>\n[[zh:沼澤地皮]]\n[[es:Suelo de pantano]]\n[[pl:Darń Bagienna]]\n[[Category:Turf Items]]\n[[Category:Naturally Spawning Objects]]\n[[Category:Fuel]]\n[[Category:Flammable Objects]]\n[[Category:Decorations Filter]]\n[[Category:Survivor Items Filter]]"
 }

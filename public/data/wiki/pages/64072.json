@@ -15,6 +15,47 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ancient_Pseudoscience_Station_Build.png",
+              "title": "Ancient Pseudoscience Station Build",
+              "url": "https://dontstarve.wiki.gg/wiki/Ancient_Pseudoscience_Station_Build"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Broken_Pseudoscience_Station_Build.png",
+              "title": "Broken Pseudoscience Station Build",
+              "url": "https://dontstarve.wiki.gg/wiki/Broken_Pseudoscience_Station_Build"
+            },
+            {
+              "entityId": "base_game:mound",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Grave.png",
+              "title": "Grave",
+              "url": "https://dontstarve.wiki.gg/wiki/Grave"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Leaky Teacup",
+      "url": "https://dontstarve.wiki.gg/wiki/Leaky_Teacup"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 64072,
   "plainText": "Leaky Teacup\nObject Info\n40\nSource\nDropped by\nMiscellaneous\n\"trinket_14\"\nExclusive to:\n“Now if I only had some tea...”\n–Wilson\n“You can make tea over a fire.”\n–Willow\n“Beard will not like such pictures.”\n–Wolfgang\n“I wish my life force would drain away like the tea.”\n–Wendy\n“THIS DUMB CERAMIC THING SPILLS LEAFWATER EVERYWHERE”\n–WX-78\n“This is a leaky vessel.”\n–Wickerbottom\n“Gaudy as all get-out.”\n–Woodie\n“Perhaps I'll invite Ms. Wickerbottom for a nice mandrake tea.”\n–Maxwell\n“Tea is a luxury that warriörs cannöt afförd.”\n–Wigfrid\n“We want some hot cocoa.”\n–Webber\n“I could still use this for measuring.”\n–Warly\n“Can't drink from it”\n–Wormwood\n“Tea's not really my taste.”\n–Winona\n“Tea's always spilling through the cracks!”\n–Wortox\n“For drinking or bath, flort.”\n–Wurt\n“My mom would kill me if I cracked her fine china.”\n–Walter\n“It's just for display.”\n–Wanda\nWhen given to the Antlion as tribute, this trinket delays its rage by 0.33 days.\nThe Leaky Teacup can be spawned into the game with the code \"trinket_14\".\n×3\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -25,6 +66,7 @@
     "timestamp": "2025-08-01T19:49:02Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Khi được trao cho Kiến Sư Tử để cống nạp, vật trang sức này sẽ làm chậm cơn thịnh nộ của nó trong 0,33 ngày.</p>",
   "title": "Leaky Teacup",
   "wikitext": "{{Object Infobox\n|icon = Leaky Teacup.png\n|image = Leaky Teacup Dropped.png\n|name = Leaky Teacup\n|spawnCode = \"trinket_14\"\n|droppedBy = {{Pic|32|Ancient Pseudoscience Station Build}}{{Pic|32|Broken Pseudoscience Station Build}}{{Pic|32|Grave}}\n|stack=40}}{{Exclusivity|Don't Starve Together}}\n{{Quotes\n|wilson = Now if I only had some tea...\n|willow = You can make tea over a fire.\n|wolfgang = Beard will not like such pictures.\n|wendy = I wish my life force would drain away like the tea.\n|wx78 = THIS DUMB CERAMIC THING SPILLS LEAFWATER EVERYWHERE\n|wickerbottom = This is a leaky vessel.\n|woodie = Gaudy as all get-out.\n|maxwell = Perhaps I'll invite Ms. Wickerbottom for a nice mandrake tea.\n|wigfrid = Tea is a luxury that warriörs cannöt afförd.\n|webber = We want some hot cocoa.\n|winona = Tea's not really my taste.\n|warly = I could still use this for measuring.\n|wortox = Tea's always spilling through the cracks!\n|wormwood = Can't drink from it\n|wurt = For drinking or bath, flort.\n|walter = My mom would kill me if I cracked her fine china.\n|wanda = It's just for display.\n|choose = wx78\n}}\nWhen given to the Antlion as tribute, this trinket delays its rage by 0.33 days.\n\nThe '''Leaky Teacup''' can be spawned into the game with the code <code>\"trinket_14\"</code>.\n\n{{Recipe\n|item = Leaky Teacup\n|gold = yes\n|result = Gold Nugget\n|resultcount = 3\n}}\n{{Recipe\n|item = Leaky Teacup\n|tool = Antlion\n|result = Desert Stone\n}}\n{{clear}}{{Resources}}"
 }

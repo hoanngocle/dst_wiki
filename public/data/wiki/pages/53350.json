@@ -15,6 +15,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "SW",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Steamer_Trunk.png",
+              "title": "Steamer Trunk",
+              "url": "https://dontstarve.wiki.gg/wiki/Steamer_Trunk"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Voodoo Doll",
+      "url": "https://dontstarve.wiki.gg/wiki/Voodoo_Doll"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 53350,
   "plainText": "Voodoo Doll\nObject Info\n40\nSource\nDropped by\n:\nMiscellaneous\n\"trinket_14\"\nExclusive to:\n“This thing gives me the creeps...”\n–Wilson\n“I don't have any pins...”\n–Willow\n“Wolfgang does not like that.”\n–Wolfgang\n“If I pushed a pin into this doll, who would feel it?”\n–Wendy\n“WHAT AN UGLY PLAYTHING”\n–WX-78\n“A tribal artifact.”\n–Wickerbottom\n“Is that my face?”\n–Woodie\n“This seems like bad voodoo.”\n–Maxwell\n“A stuffed figure.”\n–Wagstaff\n“The töy öf a babe. Ör is it?”\n–Wigfrid\n“Reminds me of Teddy.”\n–Webber\n“If I only had a pin...”\n–Walani\n“Do they work with paring knives?”\n–Warly\n“Me don't tangle wit' witchcraft.”\n–Woodlegs\n“'TIS A DOLL O' POINTY HEAD”\n–Wilba\n“Hello!... Hello?”\n–Wormwood\n“A little short.”\n–Wheeler\nThe Voodoo Doll can spawn in the Steamer Trunk.\nIt can be spawned into the game with the code \"trinket_14\".\n×8\n×7\n×3\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -25,6 +54,7 @@
     "timestamp": "2025-08-01T19:38:40Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Búp bê Voodoo có thể sinh sản trong Hòm hấp.</p>",
   "title": "Voodoo Doll",
   "wikitext": "{{Object Infobox\n|icon = Voodoo Doll.png\n|image =  .png\n|name =Voodoo Doll\n|spawnCode = \"trinket_14\"\n|droppedBy ={{SW}}: {{Pic|32|Steamer Trunk}}\n|stack=40}}\n{{Exclusivity|Shipwrecked|Hamlet}}{{Quotes\n|wilson = This thing gives me the creeps...\n|willow = I don't have any pins...\n|wolfgang = Wolfgang does not like that.\n|wendy = If I pushed a pin into this doll, who would feel it?\n|wx78 = WHAT AN UGLY PLAYTHING\n|wickerbottom = A tribal artifact.\n|woodie = Is that my face?\n|maxwell = This seems like bad voodoo.\n|wagstaff = A stuffed figure.\n|wigfrid = The töy öf a babe. Ör is it?\n|webber = Reminds me of Teddy.\n|walani = If I only had a pin...\n|warly = Do they work with paring knives?\n|woodlegs = Me don't tangle wit' witchcraft.\n|wilba = 'TIS A DOLL O' POINTY HEAD\n|wormwood = Hello!... Hello?\n|wheeler = A little short.\n|choose = walani\n}}\nThe '''Voodoo Doll''' can spawn in the [[Steamer Trunk]].\n\nIt can be spawned into the game with the code <code>\"trinket_14\"</code>.\n\n{{Recipe\n|item = Voodoo Doll\n|gold = yes\n|result = Gold Nugget\n|resultcount = 8\n}}\n{{Recipe\n|item = Voodoo Doll\n|dubloon = yes\n|result = Dubloons\n|resultcount = 7\n}}\n{{Recipe\n|item = Voodoo Doll\n|tool = Pig Collector\n|result = Oinc\n|resultcount = 3\n|dlc = Hamlet\n}}\n{{Resources}}"
 }

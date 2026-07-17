@@ -14,6 +14,47 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "DS",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ancient_Pseudoscience_Station_Build.png",
+              "title": "Ancient Pseudoscience Station Build",
+              "url": "https://dontstarve.wiki.gg/wiki/Ancient_Pseudoscience_Station_Build"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Broken_Pseudoscience_Station_Build.png",
+              "title": "Broken Pseudoscience Station Build",
+              "url": "https://dontstarve.wiki.gg/wiki/Broken_Pseudoscience_Station_Build"
+            },
+            {
+              "entityId": "base_game:mound",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Grave.png",
+              "title": "Grave",
+              "url": "https://dontstarve.wiki.gg/wiki/Grave"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Tiny Rocketship",
+      "url": "https://dontstarve.wiki.gg/wiki/Tiny_Rocketship"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 156791,
   "plainText": "Don't Starve\nTogether\nTiny Rocketship\nObject Info\n40\nSource\nDropped by\n:\nMiscellaneous\n\"trinket_5\"\n“Sadly, it's too small for me to escape on.”\n–Wilson\n“Check out those tiny thrusters. Such explosive power!”\n–Willow\n“What is do?”\n–Wolfgang\n“I'd fly this straight into the sun, if only it was bigger.”\n–Wendy\n“AN IMPRACTICAL HUMAN CHILD’S TOY”\n–WX-78\n“This spacecraft looks to have inadequate thermal controls.”\n–Wickerbottom\n“It needs a robot arm, eh?”\n–Woodie\n“A toy for a child’s mind.”\n–Maxwell\n“Marvelous! I would very much like one on a bigger scale.”\n–Wagstaff\n“Will it take me tö Asgard?”\n–Wigfrid\n“Yay, a new toy!”\n–Webber\n“Zzzzzzzoooooom!”\n–Walani\n“A rocketship for ants?”\n–Warly\n“This is no kind o'ship me knows.”\n–Woodlegs\n“WILBA GO'ST TO MOON”\n–Wilba\n“Pakow!”\n–Wormwood\n“I'd fly it to the moon if I could.”\n–Wheeler\n“Handcrafted. Yuck.”\n–Winona\n“Nyooooom!”\n–Wortox\n“Nyoooom!”\n–Wurt\n“I wonder if we'll ever explore outer space.”\n–Walter\n“How futuristic!”\n–Wanda\nThe Tiny Rocketship has a 4.17% chance of being found when digging up a grave. It can be traded to the Pig King for 4 Gold Nuggets.\n×4\n×9\n×3\nTrivia[edit | edit source]\nUnder the old research method, Trinkets were one of the best ways of gaining research points (80 points).\nThe rocketship looks exactly like the rocket in the Tintin comic Destination Moon, only smaller.\nWoodie's quote, \"It needs a robot arm, eh?\" is an allusion to the the \"Canadarm\", Canada's contribution of a robotic arm found on the International Space Station.\nGallery[edit | edit source]\nOriginal HD Tiny Rocketship icon from Bonus Materials from CD Don't Starve.\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -24,6 +65,7 @@
     "timestamp": "2026-07-07T21:15:45Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Tàu tên lửa nhỏ có 4,17% cơ hội được tìm thấy khi đào mộ. Nó có thể được trao đổi với Vua Lợn để lấy 4 Vàng Thỏi.</p>",
   "title": "Tiny Rocketship",
   "wikitext": "{{Navbutton/Separation}}\n{{Object Infobox\n|icon = Tiny Rocketship.png\n|image = Tiny Rocketship Dropped.png\n|name = Tiny Rocketship\n|spawnCode = \"trinket_5\"\n|droppedBy ={{DS}}: {{Pic|32|Ancient Pseudoscience Station Build}}{{Pic|32|Broken Pseudoscience Station Build}}{{Pic|32|Grave}}\n|stack=40}}\n\n{{Quotes\n|wilson = Sadly, it's too small for me to escape on.\n|willow = Check out those tiny thrusters. Such explosive power!\n|wolfgang = What is do?\n|wendy = I'd fly this straight into the sun, if only it was bigger.\n|wx78 = AN IMPRACTICAL HUMAN CHILD’S TOY\n|wickerbottom = This spacecraft looks to have inadequate thermal controls.\n|woodie = It needs a robot arm, eh?\n|maxwell = A toy for a child’s mind.\n|wagstaff = Marvelous! I would very much like one on a bigger scale.\n|wigfrid = Will it take me tö Asgard?\n|webber = Yay, a new toy!\n|walani = Zzzzzzzoooooom!\n|warly = A rocketship for ants?\n|woodlegs = This is no kind o'ship me knows.\n|wilba = WILBA GO'ST TO MOON\n|wormwood = Pakow!\n|wheeler = I'd fly it to the moon if I could.\n|winona = Handcrafted. Yuck.\n|wortox = Nyooooom!\n|wurt = Nyoooom!\n|walter = I wonder if we'll ever explore outer space.\n|wanda = How futuristic!\n|choose = wilson\n}}\nThe '''Tiny Rocketship''' has a 4.17% chance of being found when digging up a grave. It can be traded to the Pig King for 4 Gold Nuggets.\n\n{{Recipe\n|item        = Tiny Rocketship\n|gold        = yes\n|result      = Gold Nugget\n|resultcount = 4\n}}\n{{Recipe\n|item = Tiny Rocketship\n|dubloon = yes\n|result = Dubloons\n|resultcount = 9\n|dlc = Shipwrecked\n}}\n{{Recipe\n|item = Tiny Rocketship\n|tool = Pig Collector\n|result = Oinc\n|resultcount = 3\n|dlc = Hamlet\n}}\n== {{Pic|32|Placeholder}} {{Anchor|Trivia|Trivia}} ==\n* Under the [[Research points list|old research method]], Trinkets were one of the best ways of gaining research points (80 points).\n* The rocketship looks exactly like the rocket in the ''Tintin'' comic ''[[wikipedia:Destination_Moon_(comics)|Destination Moon]]'', only smaller.\n* [[Woodie]]'s quote, \"It needs a robot arm, eh?\" is an allusion to the the \"[[wikipedia:Canadarm|Canadarm]]\", Canada's contribution of a robotic arm found on the International Space Station.\n== {{Pic|32|Blueprint}} Gallery ==\n<gallery>\nCD trinket_5.png|Original HD Tiny Rocketship icon from Bonus Materials from [[CD Don't Starve]].\n</gallery>\n{{resources}}"
 }

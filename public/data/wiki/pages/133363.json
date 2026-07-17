@@ -15,6 +15,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Crumpled_Package.png",
+              "title": "Crumpled Package",
+              "url": "https://dontstarve.wiki.gg/wiki/Crumpled_Package"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": "base_game:antliontrinket",
+      "iconUrl": null,
+      "title": "Beach Toy",
+      "url": "https://dontstarve.wiki.gg/wiki/Beach_Toy"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 133363,
   "plainText": "Beach Toy\nObject Info\n40\nSource\nDropped by\nMiscellaneous\n\"antliontrinket\"\nExclusive to:\n“Someone might be interested in this.”\n–Wilson\n“Buncha junk.”\n–Willow\n“Is not for head.”\n–Wolfgang\n“If only I could kick it.”\n–Wendy\n“IT PAILS IN COMPARISON”\n–WX-78\n“It appears to be a child's plaything.”\n–Wickerbottom\n“Could give it to some sandy hoser.”\n–Woodie\n“I'll cross it off my bucket list.”\n–Maxwell\n“A fitting tribute!”\n–Wigfrid\n“Sand castles!”\n–Webber\n“I think I know someone who would want this.”\n–Warly\n“Gift!”\n–Wormwood\n“It's a colorful bucket.”\n–Winona\n“Better get a bucket!”\n–Wortox\n“Know someone who'd like this, florp!”\n–Wurt\n“Hm, I guess I could give it away as a gift?”\n–Walter\n“This might make a good gift for someone.”\n–Wanda\nThe Beach Toy can be obtained from a Crumpled Package which is found by fishing in the Lake at the Oasis, or by killing the Antlion. Giving a Beach Toy to the Antlion will make it drop the rare Blueprint for The Lazy Deserter, and the Turf-Raiser Helm. It also delays its rage by 3 days, making it the trinket that delays its rage for the longest duration.\nThe Beach Toy can be spawned into the game with the code \"antliontrinket\".\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -25,6 +54,7 @@
     "timestamp": "2025-08-01T21:10:59Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Đồ chơi Bãi biển có thể thu được từ Gói Nhàu Nát tìm được khi câu cá ở Hồ ở Ốc đảo hoặc bằng cách giết Kiến Sư Tử. Đưa Đồ chơi Bãi biển cho Kiến Sư tử sẽ khiến nó đánh rơi Bản thiết kế quý hiếm dành cho Kẻ đào ngũ lười biếng và Mũ bảo hiểm nâng đất . Nó cũng trì hoãn cơn thịnh nộ của mình trong 3 ngày, khiến nó trở thành vật trang sức trì hoãn cơn thịnh nộ của nó trong thời gian dài nhất.</p>",
   "title": "Beach Toy",
   "wikitext": "{{Object Infobox\n|icon = Beach Toy.png\n|image = Beach Toy Dropped.png\n|name = Beach Toy\n|spawnCode = \"antliontrinket\"\n|droppedBy = {{Pic|32|Crumpled Package}}\n|stack=40}}{{Exclusivity|Don't Starve Together}}\n{{Quotes\n|wilson = Someone might be interested in this.\n|willow = Buncha junk.\n|wolfgang = Is not for head.\n|wendy = If only I could kick it.\n|wx78 = IT PAILS IN COMPARISON\n|wickerbottom = It appears to be a child's plaything.\n|woodie = Could give it to some sandy hoser.\n|maxwell = I'll cross it off my bucket list.\n|wigfrid = A fitting tribute!\n|webber = Sand castles!\n|winona = It's a colorful bucket.\n|warly = I think I know someone who would want this.\n|wortox = Better get a bucket!\n|wormwood = Gift!\n|wurt = Know someone who'd like this, florp!\n|walter = Hm, I guess I could give it away as a gift?\n|wanda = This might make a good gift for someone.\n|choose = webber\n}}\nThe '''Beach Toy''' can be obtained from a [[Crumpled Package]] which is found by fishing in the [[Lake]] at the Oasis, or by killing the [[Antlion]]. Giving a Beach Toy to the Antlion will make it drop the rare [[Blueprint]] for [[The Lazy Deserter]], and the [[Turf-Raiser Helm]]. It also delays its rage by 3 days, making it the trinket that delays its rage for the longest duration.\n\nThe Beach Toy can be spawned into the game with the code <code>\"antliontrinket\"</code>.\n\n{{Recipe\n|item = Beach Toy\n|gold = yes\n|result = Gold Nugget\n|resultcount = 1\n}}\n{{Recipe\n|item = Beach Toy\n|tool = Antlion\n|result = Blueprint (rare)\n}}\n{{clear}}\n{{Resources}}"
 }

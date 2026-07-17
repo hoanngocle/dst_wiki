@@ -15,6 +15,47 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "(Shovel) (Hammer)",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": "base_game:mound",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Grave.png",
+              "title": "Grave",
+              "url": "https://dontstarve.wiki.gg/wiki/Grave"
+            },
+            {
+              "entityId": "base_game:tumbleweed",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Tumbleweed.png",
+              "title": "Tumbleweed",
+              "url": "https://dontstarve.wiki.gg/wiki/Tumbleweed"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Sunken_Chest.png",
+              "title": "Sunken Chest",
+              "url": "https://dontstarve.wiki.gg/wiki/Sunken_Chest"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Recipe Card",
+      "url": "https://dontstarve.wiki.gg/wiki/Recipe_Card"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 100962,
   "plainText": "Exclusive to:\nRecipe Card\nObject Info\nPerk\nWhen studied, reveals 4 ingredients for a dish\n15 sec\nCan be Burned\nDoes not stack\nSource\nDropped by\n() ()\nMiscellaneous\n\"cookingrecipecard_(prefab)\"\n“Science help me, I can't decipher this handwriting.”\n–Wilson\n“Can't read it, into the fire it goes!”\n–Willow\n“Wolfgang can't read puny writing!”\n–Wolfgang\n“The writing has been smudged away, the words forgotten.”\n–Wendy\n“ERROR: RECIPE UNREADABLE”\n–WX-78\n“Oh dear, I can't seem to make any sense of it.”\n–Wickerbottom\n“Looks like somethin' was written here, but it faded away.”\n–Woodie\n“The writing is too faint to read.”\n–Maxwell\n“'Tis but a jumbled mess öf wörds.”\n–Wigfrid\n“We can't read what it says!”\n–Webber\n“Ah, non! I cannot make out the recipe!”\n–Warly\n“Hmmm. No good”\n–Wormwood\n“I can't make heads or tails of it.”\n–Winona\n“How mysterious, the card is blank!”\n–Wortox\n“Glurgh... can't read it!”\n–Wurt\n“Woby, I can't read the recipe if you chew on the cards!”\n–Walter\n“Whatever was written here has been lost to time.”\n–Wanda\nFor complete list of Crock Pot recipes, see Dishes.\nFor Warly's unique cooking recipes, see Portable Crock Pot.\nThe Recipe Card is an item that allows you to learn recipes in Don't Starve Together. Can be found by naturally spawning in the world near the Skeleton, as well as by digging up Graves or opening Tumbleweeds and Sunken Chest. The recipe card merely lists its recipe when examined, it does not automatically add it to your Cookbook.\nContents\n1 All Recipes\n2 Tips\n3 Gallery\n4 Trivia\nAll Recipes[edit | edit source]\nIcon\nNams\nCard Recipe\nButter Muffin\nFroggle Bunwich\nTaffy\nPumpkin Cookies\nStuffed Eggplant\nFishsticks\nHoney Nuggets\nHoney Ham\nDragonpie\nKabobs\nBunny Stew\nTurkey Dinner\nFish Tacos\nPowdercake\nTrail Mix\nSpicy Chili\nGuacamole\nAsparagus Soup\nBanana Pop\nStuffed Pepper Poppers\nCalifornia Roll\nBarnacle Nigiri\nStuffed Fish Heads\nBeefy Greens\nSoothing Tea\nTips[edit | edit source]\nMost of the recipes on the cards are not optimal, they just show a case and encourage the player to find a better solution for themselves.\nGallery[edit | edit source]\nSkeleton with Crock Pot and Cookbook\nTrivia[edit | edit source]\nThe Recipe Card was introduced in the A Little Drama and QOL update.\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -25,6 +66,7 @@
     "timestamp": "2026-06-09T06:06:16Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Thẻ Công thức là một vật phẩm cho phép bạn học các công thức nấu ăn trong Don&#x27;t Starve Together. Có thể được tìm thấy bằng cách sinh sản tự nhiên ở thế giới gần Bộ Xương, cũng như bằng cách đào Mộ hoặc mở Cỏ Lăn và Rương Chìm. Thẻ công thức chỉ liệt kê công thức của nó khi được kiểm tra, nó không tự động thêm nó vào Sách dạy nấu ăn của bạn.</p>",
   "title": "Recipe Card",
   "wikitext": "{{Exclusivity|Don't Starve Together}}\n{{Object Infobox\n|icon = Recipe Card.png\n|image = Recipe Card Dropped.png\n|canBeBurned=1\n|burnTime = 15 sec\n|perk = When studied, reveals 4 ingredients for a dish\n|stack = Does not stack\n|droppedBy = {{pic24|Grave}} ({{pic24|Shovel}}) {{pic24|Tumbleweed}} {{pic24|Sunken Chest}} ({{pic24|Hammer}})\n|spawnCode = \"cookingrecipecard_(prefab)\"}}\n{{Quotes\n|wilson = Science help me, I can't decipher this handwriting.\n|willow = Can't read it, into the fire it goes!\n|wolfgang = Wolfgang can't read puny writing!\n|wendy = The writing has been smudged away, the words forgotten.\n|wx78 = ERROR: RECIPE UNREADABLE\n|wickerbottom = Oh dear, I can't seem to make any sense of it.\n|woodie = Looks like somethin' was written here, but it faded away.\n|maxwell = The writing is too faint to read.\n|wigfrid = 'Tis but a jumbled mess öf wörds.\n|webber = We can't read what it says!\n|warly = Ah, non! I cannot make out the recipe!\n|wormwood = Hmmm. No good\n|winona = I can't make heads or tails of it.\n|wortox = How mysterious, the card is blank!\n|wurt = Glurgh... can't read it!\n|walter = Woby, I can't read the recipe if you chew on the cards!\n|wanda = Whatever was written here has been lost to time.\n|choose = wilson\n}}\n: {{For|complete list of Crock Pot recipes|Dishes}}\n: {{For|[[Warly]]'s unique cooking recipes|Portable Crock Pot}}\n\nThe '''Recipe Card''' is an [[item]] that allows you to learn recipes in ''[[Don't Starve Together]]''. Can be found by naturally spawning in the world near the [[Skeleton]], as well as by digging up [[Grave]]s or opening [[Tumbleweed]]s and [[Sunken Chest]]. The recipe card merely lists its recipe when examined, it does not automatically add it to your [[Cookbook]].\n\n==All Recipes==\n\n{|class=\"wikitable mw-collapsible\" style=\"text-align:center;\"\n! Icon\n! Nams\n! Card Recipe\n|-\n|{{pic|32|Butter Muffin}}\n|[[Butter Muffin]]\n|{{pic|32|Butterfly Wings}}{{pic|32|Carrot}}{{pic|32|Carrot}}{{pic|32|Berries}}\n|-\n|{{pic|32|Froggle Bunwich}}\n|[[Froggle Bunwich]]\n|{{pic|32|Frog Legs}}{{pic|32|Red Cap}}{{pic|32|Red Cap}}{{pic|32|Carrot}}\n|-\n|{{pic|32|Taffy}}\n|[[Taffy]]\n|{{pic|32|Honey}}{{pic|32|Honey}}{{pic|32|Honey}}{{pic|32|Berries}}\n|-\n|{{pic|32|Pumpkin Cookies}}\n|[[Pumpkin Cookies]]\n|{{pic|32|Pumpkin}}{{pic|32|Honey}}{{pic|32|Honey}}{{pic|32|Berries}}\n|-\n|{{pic|32|Stuffed Eggplant}}\n|[[Stuffed Eggplant]]\n|{{pic|32|Eggplant}}{{pic|32|Potato}}{{pic|32|Onion}}{{pic|32|Garlic}}\n|-\n|{{pic|32|Fishsticks}}\n|[[Fishsticks]]\n|{{pic|32|Fish Morsel}}{{pic|32|Fish Morsel}}{{pic|32|Fish Morsel}}{{pic|32|Twigs}}\n|-\n|{{pic|32|Honey Nuggets}}\n|[[Honey Nuggets]]\n|{{pic|32|Honey}}{{pic|32|Honey}}{{pic|32|Morsel}}{{pic|32|Morsel}}\n|-\n|{{pic|32|Honey Ham}}\n|[[Honey Ham]]\n|{{pic|32|Honey}}{{pic|32|Honey}}{{pic|32|Meat}}{{pic|32|Meat}}\n|-\n|{{pic|32|Dragonpie}}\n|[[Dragonpie]]\n|{{pic|32|Dragon Fruit}}{{pic|32|Dragon Fruit}}{{pic|32|Potato}}{{pic|32|Pepper}}\n|-\n|{{pic|32|Kabobs}}\n|[[Kabobs]]\n|{{pic|32|Meat}}{{pic|32|Onion}}{{pic|32|Eggplant}}{{pic|32|Twigs}}\n|-\n|{{pic|32|Bunny Stew}}\n|[[Bunny Stew]]\n|{{pic|32|Meat}}{{pic|32|Ice}}{{pic|32|Ice}}{{pic|32|Toma Root}}\n|-\n|{{pic|32|Turkey Dinner}}\n|[[Turkey Dinner]]\n|{{pic|32|Drumstick}}{{pic|32|Drumstick}}{{pic|32|Meat}}{{pic|32|Berries}}\n|-\n|{{pic|32|Fish Tacos}}\n|[[Fish Tacos]]\n|{{pic|32|Fish Morsel}}{{pic|32|Fish Morsel}}{{pic|32|Corn}}{{pic|32|Onion}}\n|-\n|{{pic|32|Powdercake}}\n|[[Powdercake]]\n|{{pic|32|Honey}}{{pic|32|Honey}}{{pic|32|Corn}}{{pic|32|Twigs}}\n|-\n|{{pic|32|Trail Mix}}\n|[[Trail Mix]]\n|{{pic|32|Roasted Birchnut}}{{pic|32|Roasted Birchnut}}{{pic|32|Berries}}{{pic|32|Berries}}\n|-\n|{{pic|32|Spicy Chili}}\n|[[Spicy Chili]]\n|{{pic|32|Meat}}{{pic|32|Meat}}{{pic|32|Toma Root}}{{pic|32|Pepper}}\n|-\n|{{pic|32|Guacamole}}\n|[[Guacamole]]\n|{{pic|32|Moleworm}}{{pic|32|Ripe Stone Fruit}}{{pic|32|Ripe Stone Fruit}}{{pic|32|Corn}}\n|-\n|{{pic|32|Asparagus Soup}}\n|[[Asparagus Soup]]\n|{{pic|32|Asparagus}}{{pic|32|Asparagus}}{{pic|32|Potato}}{{pic|32|Onion}}\n|-\n|{{pic|32|Banana Pop}}\n|[[Banana Pop]]\n|{{pic|32|Cave Banana}}{{pic|32|Ice}}{{pic|32|Ice}}{{pic|32|Twigs}}\n|-\n|{{pic|32|Stuffed Pepper Poppers}}\n|[[Stuffed Pepper Poppers]]\n|{{pic|32|Pepper}}{{pic|32|Morsel}}{{pic|32|Morsel}}{{pic|32|Potato}}\n|-\n|{{pic|32|California Roll}}\n|[[California Roll]]\n|{{pic|32|Kelp Fronds}}{{pic|32|Kelp Fronds}}{{pic|32|Fish Morsel}}{{pic|32|Fish Morsel}}\n|-\n|{{pic|32|Barnacle Nigiri}}\n|[[Barnacle Nigiri]]\n|{{pic|32|Barnacles}}{{pic|32|Kelp Fronds}}{{pic|32|Kelp Fronds}}{{pic|32|Egg}}\n|-\n|{{pic|32|Stuffed Fish Heads}}\n|[[Stuffed Fish Heads]]\n|{{pic|32|Barnacles}}{{pic|32|Fish Morsel}}{{pic|32|Fish Morsel}}{{pic|32|Potato}}\n|-\n|{{pic|32|Beefy Greens}}\n|[[Beefy Greens]]\n|{{pic|32|Leafy Meat}}{{pic|32|Toma Root}}{{pic|32|Toma Root}}{{pic|32|Carrot}}\n|-\n|{{pic|32|Soothing Tea}}\n|[[Soothing Tea]]\n|{{pic|32|Forget-Me-Lots}}{{pic|32|Ice}}{{pic|32|Ice}}{{pic|32|Honey}}\n|}\n\n=={{Pic32|Prototype}} Tips==\n* Most of the recipes on the cards are not optimal, they just show a case and encourage the player to find a better solution for themselves.\n\n== {{Pic|32|Blueprint}} Gallery ==\n<gallery>\nCookingBoon.jpg|Skeleton with Crock Pot and Cookbook\n</gallery>\n\n=={{Pic32|Placeholder}} Trivia==\n* The Recipe Card was introduced in the ''[[A Little Drama and QOL]]'' update.\n\n\n{{Resources}}\n[[vi:Recipe Card]]\n[[zh:食谱卡]]"
 }

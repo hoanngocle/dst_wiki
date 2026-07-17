@@ -24,6 +24,7 @@ from tools.extract.publish_web_assets import publish_web_assets
 from tools.extract.source_manifest import ARCHIVES, snapshot_game_sources
 from tools.extract.validate import validate_catalog, write_validation_report
 from tools.extract.wiki_import import import_wiki
+from tools.extract.wiki_translate import build_summary_translation_cache
 
 
 MOD_ROOT = Path("mod/3721846643")
@@ -126,6 +127,17 @@ def build_parser() -> argparse.ArgumentParser:
     export.add_argument("--assets", type=Path, default=ASSETS_JSON)
     export.add_argument("--items", type=Path, default=ITEMS_JSON)
     export.add_argument("--textures", type=Path, default=ITEM_TEXTURES)
+    translate_wiki = sub.add_parser("translate-wiki")
+    translate_wiki.add_argument(
+        "--pages", type=Path, default=Path("public/data/wiki/pages")
+    )
+    translate_wiki.add_argument(
+        "--output", type=Path, default=WIKI_CRAWL / "summary_vi.json"
+    )
+    translate_wiki.add_argument(
+        "--manual", type=Path, default=Path("data/manual/wiki_summary_vi.json")
+    )
+    translate_wiki.add_argument("--workers", type=int, default=4)
     export_markdown = sub.add_parser("export-markdown")
     export_markdown.add_argument("--catalog", type=Path, default=CATALOG_JSON)
     export_markdown.add_argument("--runtime", type=Path, default=RUNTIME_FACTS)
@@ -347,6 +359,18 @@ def main() -> int:
         return 0
     if args.command == "export":
         _export_stage(args.database, args.catalog, args.assets, args.items, args.textures)
+        return 0
+    if args.command == "translate-wiki":
+        summary = build_summary_translation_cache(
+            args.pages,
+            args.output,
+            workers=args.workers,
+            manual_path=args.manual,
+        )
+        print(
+            f"{args.output} pages={summary['pages']} cached={summary['cached']} "
+            f"translated={summary['translated']}"
+        )
         return 0
     if args.command == "export-markdown":
         _export_markdown_stage(args.catalog, args.runtime, args.output)

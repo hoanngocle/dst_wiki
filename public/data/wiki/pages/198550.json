@@ -15,6 +15,53 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ancient_Pseudoscience_Station_Build.png",
+              "title": "Ancient Pseudoscience Station Build",
+              "url": "https://dontstarve.wiki.gg/wiki/Ancient_Pseudoscience_Station_Build"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Broken_Pseudoscience_Station_Build.png",
+              "title": "Broken Pseudoscience Station Build",
+              "url": "https://dontstarve.wiki.gg/wiki/Broken_Pseudoscience_Station_Build"
+            },
+            {
+              "entityId": "base_game:mound",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Grave.png",
+              "title": "Grave",
+              "url": "https://dontstarve.wiki.gg/wiki/Grave"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Sunken_Chest.png",
+              "title": "Sunken Chest",
+              "url": "https://dontstarve.wiki.gg/wiki/Sunken_Chest"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Frayed Yarn",
+      "url": "https://dontstarve.wiki.gg/wiki/Frayed_Yarn"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 198550,
   "plainText": "Frayed Yarn\nObject Info\n40\nSource\nDropped by\nMiscellaneous\n\"trinket_22\"\nExclusive to:\n“Maybe I'll brush up on some string theory.”\n–Wilson\n“If I set this on fire it would just vaporize.”\n–Willow\n“Will take to fragile man Maxwell. He always talk about 'pulling strings'.”\n–Wolfgang\n“I'm not a-frayed.”\n–Wendy\n“WHO KEEPS TYING TOGETHER ALL THOSE BIRDS?”\n–WX-78\n“My grandmother used to knit.”\n–Wickerbottom\n“I'd rather have some proper rope.”\n–Woodie\n“The monster child gets tangled in this frequently.”\n–Maxwell\n“It wön't stand up tö the rigörs öf battle.”\n–Wigfrid\n“Maybe we'll find another use for this.”\n–Webber\n“This would be handy if I had a roast to make.”\n–Warly\n“Ball!”\n–Wormwood\n“I got no use for that.”\n–Winona\n“Fried and frayed, just like my brain!”\n–Wortox\n“Tiny rope?”\n–Wurt\n“I like a good yarn. Heh...”\n–Walter\n“I'm neither a cat nor a knitter. Maybe someone else will want it.”\n–Wanda\nWhen given to the Antlion as tribute, this trinket delays its rage by 0.66 days.\nThe Frayed Yarn can be spawned into the game with the code \"trinket_22\".\n×4\nTrivia[edit | edit source]\nBoth the appearance and the source code (`prefabs/catcoonden.lua`) of the Hollow Stump suggest that it should drop a Frayed Yarn upon destruction. However, the line of code adding it to the loot table has been commented out.\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -25,6 +72,7 @@
     "timestamp": "2026-05-27T22:55:47Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Khi được trao cho Kiến Sư Tử để cống nạp, vật trang sức này sẽ làm chậm cơn thịnh nộ của nó trong 0,66 ngày.</p>",
   "title": "Frayed Yarn",
   "wikitext": "{{Object Infobox\n|icon = Frayed Yarn.png\n|image = Frayed Yarn Dropped.png\n|name = Frayed Yarn\n|spawnCode = \"trinket_22\"\n|droppedBy = {{Pic|32|Ancient Pseudoscience Station Build}}{{Pic|32|Broken Pseudoscience Station Build}}{{Pic|32|Grave}}{{Pic|32|Sunken Chest}}\n|stack=40}}{{Exclusivity|Don't Starve Together}}\n{{Quotes\n|wilson = Maybe I'll brush up on some string theory.\n|willow = If I set this on fire it would just vaporize.\n|wolfgang = Will take to fragile man Maxwell. He always talk about 'pulling strings'.\n|wendy = I'm not a-frayed.\n|wx78 = WHO KEEPS TYING TOGETHER ALL THOSE BIRDS?\n|wickerbottom = My grandmother used to knit.\n|woodie = I'd rather have some proper rope.\n|maxwell = The monster child gets tangled in this frequently.\n|wigfrid = It wön't stand up tö the rigörs öf battle.\n|webber = Maybe we'll find another use for this.\n|winona = I got no use for that.\n|warly = This would be handy if I had a roast to make.\n|wortox = Fried and frayed, just like my brain!\n|wormwood = Ball!\n|wurt = Tiny rope?\n|walter = I like a good yarn. Heh...\n|wanda = I'm neither a cat nor a knitter. Maybe someone else will want it.\n|choose = wendy\n}}\nWhen given to the Antlion as tribute, this trinket delays its rage by 0.66 days.\n\nThe '''Frayed Yarn''' can be spawned into the game with the code <code>\"trinket_22\"</code>.\n\n{{Recipe\n|item = Frayed Yarn\n|gold = yes\n|result = Gold Nugget\n|resultcount = 4\n}}\n{{Recipe\n|item = Frayed Yarn\n|tool = Antlion\n|result = Desert Stone\n}}\n\n=={{pic|32|Placeholder}} Trivia ==\n* Both the appearance and the source code (`prefabs/catcoonden.lua`) of the [[Hollow Stump]] suggest that it should drop a Frayed Yarn upon destruction. However, the line of code adding it to the loot table has been commented out.\n\n{{clear}}{{Resources}}"
 }

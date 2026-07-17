@@ -15,6 +15,47 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ancient_Pseudoscience_Station_Build.png",
+              "title": "Ancient Pseudoscience Station Build",
+              "url": "https://dontstarve.wiki.gg/wiki/Ancient_Pseudoscience_Station_Build"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Broken_Pseudoscience_Station_Build.png",
+              "title": "Broken Pseudoscience Station Build",
+              "url": "https://dontstarve.wiki.gg/wiki/Broken_Pseudoscience_Station_Build"
+            },
+            {
+              "entityId": "base_game:mound",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Grave.png",
+              "title": "Grave",
+              "url": "https://dontstarve.wiki.gg/wiki/Grave"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Lucky Cat Jar",
+      "url": "https://dontstarve.wiki.gg/wiki/Lucky_Cat_Jar"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 8199,
   "plainText": "Lucky Cat Jar\nObject Info\n40\nSource\nDropped by\nMiscellaneous\n\"trinket_24\"\nExclusive to:\n“I think Wickerbottom had a cat.”\n–Wilson\n“I don't want Ms. Wickerbottom to be sad. Let's burn it!”\n–Willow\n“Kitty has nice round tum.”\n–Wolfgang\n“I've never been lucky.”\n–Wendy\n“WHAT'S A CAT?”\n–WX-78\n“What a positively adorable kitty cat. Sigh.”\n–Wickerbottom\n“We should whip up some pumpkin cookies to put in there, eh?”\n–Woodie\n“It's been beheaded.”\n–Maxwell\n“Grant me luck ön the battlefield!”\n–Wigfrid\n“No cookies.”\n–Webber\n“I think Mme. Wickerbottom had a cat.”\n–Warly\n“Me-Raow? Oh. Not alive”\n–Wormwood\n“The reliable quality of a mass manufactured product!”\n–Winona\n“Perhaps a cat genie awaits inside?”\n–Wortox\n“Look happy.”\n–Wurt\n“Woby doesn't seem to like it very much.”\n–Walter\n“I'm not much of a cat person.”\n–Wanda\nWhen given to the Antlion as tribute, this trinket delays its rage by 0.99 days.\nThe Lucky Cat Jar can be spawned into the game with the code \"trinket_24\".\n×8\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -25,6 +66,7 @@
     "timestamp": "2025-08-01T18:38:25Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Khi được trao cho Kiến Sư Tử để cống nạp, vật trang sức này sẽ làm chậm cơn thịnh nộ của nó trong 0,99 ngày.</p>",
   "title": "Lucky Cat Jar",
   "wikitext": "{{Object Infobox\n|icon = Lucky Cat Jar.png\n|image = Lucky Cat Jar Dropped.png\n|name = Lucky Cat Jar\n|spawnCode = \"trinket_24\"\n|droppedBy = {{Pic|32|Ancient Pseudoscience Station Build}}{{Pic|32|Broken Pseudoscience Station Build}}{{Pic|32|Grave}}\n|stack=40}}{{Exclusivity|Don't Starve Together}}\n{{Quotes\n|wilson = I think Wickerbottom had a cat.\n|willow = I don't want Ms. Wickerbottom to be sad. Let's burn it!\n|wolfgang = Kitty has nice round tum.\n|wendy = I've never been lucky.\n|wx78 = WHAT'S A CAT?\n|wickerbottom = What a positively adorable kitty cat. Sigh.\n|woodie = We should whip up some pumpkin cookies to put in there, eh?\n|maxwell = It's been beheaded.\n|wigfrid = Grant me luck ön the battlefield!\n|webber = No cookies.\n|winona = The reliable quality of a mass manufactured product!\n|warly = I think Mme. Wickerbottom had a cat.\n|wortox = Perhaps a cat genie awaits inside?\n|wormwood = Me-Raow? Oh. Not alive\n|wurt = Look happy.\n|walter = Woby doesn't seem to like it very much.\n|wanda = I'm not much of a cat person.\n|choose = wickerbottom\n}}\nWhen given to the Antlion as tribute, this trinket delays its rage by 0.99 days.\n\nThe '''Lucky Cat Jar''' can be spawned into the game with the code <code>\"trinket_24\"</code>.\n\n{{Recipe\n|item = Lucky Cat Jar\n|gold = yes\n|result = Gold Nugget\n|resultcount = 8\n}}\n{{Recipe\n|item = Lucky Cat Jar\n|tool = Antlion\n|result = Desert Stone\n}}\n{{clear}}{{Resources}}"
 }

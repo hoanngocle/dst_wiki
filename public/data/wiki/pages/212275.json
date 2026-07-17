@@ -16,6 +16,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Smooth_Meteor_Boulder.png",
+              "title": "Smooth Meteor Boulder",
+              "url": "https://dontstarve.wiki.gg/wiki/Smooth_Meteor_Boulder"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": "base_game:moonrockseed",
+      "iconUrl": null,
+      "title": "Celestial Orb",
+      "url": "https://dontstarve.wiki.gg/wiki/Celestial_Orb"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 212275,
   "plainText": "Celestial Orb\nObject Info\nPerk\nGrants access to the Celestial Filter.\nDoes not stack\nSource\nDropped by\nMiscellaneous\n\"moonrockseed\"\nExclusive to:\n“There's science inside!”\n–Wilson\n“Well I can't burn it.”\n–Willow\n“Is ball not for throwing.”\n–Wolfgang\n“Its pallor reminds me of Abigail.”\n–Wendy\n“CURRENTLY IDOL”\n–WX-78\n“A floating orb of knowledge.”\n–Wickerbottom\n“I should probably put this down somewhere, eh?”\n–Woodie\n“Oooh, some new knowledge.”\n–Maxwell\n“It hath knöwledge within!”\n–Wigfrid\n“Neat, it's a ball that floats by itself!”\n–Webber\n“It's beautiful, isn't it?”\n–Warly\n“Makes Night Ball things”\n–Wormwood\n“I could learn a thing or two from this.”\n–Winona\n“I bet you know some fun secrets.”\n–Wortox\n“Floaty!”\n–Wurt\n“Is the moon... haunted?”\n–Walter\n“It's like a pocket-sized moon.”\n–Wanda\nThe Celestial Orb is a portable Crafting station exclusive to Don't Starve Together. It is obtained by mining a Suspicious Boulder. If dropped on the ground, the Celestial Orb can be used to access the Level 1 Celestial Filter, which unlocks the crafting recipe for the Moon Rock Idol and Portal Paraphernalia. Similar to Chester's Eye Bone, it will automatically drop from the Inventory of players when leaving the game or entering the Caves. Celestial Orb will sink in the water, however, it will return to the coast afterwards.\nAfter defeating the Celestial Champion, the Celestial Orb's crafting tab will gain access to all crafts of the Celestial Altar, Tribute, and Sanctum.\nTips[edit | edit source]\nThe Celestial Orb has a global Map icon, similar to Moonlenses. However, it is also visible if put in a container or held in a player's Inventory.\nThe Celestial Orb can be put inside a Chester to mark its location on map.\nThe Celestial Orb is required to spawn the Celestial Champion.\nTrivia[edit | edit source]\nIt gives off a small amount of light at night, but is not an appropriate light source to ward off Charlie.\nThe light radius becomes large enough to ward off Charlie after collecting it from defeating the Celestial Champion.\nGallery[edit | edit source]\nThe Celestial Orb glowing in the dark (lower right corner).\nCelestial Orb floats when player is near.\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -26,6 +55,7 @@
     "timestamp": "2025-08-03T12:16:58Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Celestial Orb là một trạm Chế tạo di động dành riêng cho Don&#x27;t Starve Together. Nó có được bằng cách khai thác Tảng đá đáng ngờ. Nếu rơi xuống đất, Celestial Orb có thể được sử dụng để truy cập Bộ lọc thiên thể cấp 1, mở khóa công thức chế tạo cho Thần tượng đá mặt trăng và Vật dụng cổng thông tin. Tương tự như Xương Mắt của Chester, nó sẽ tự động rơi ra khỏi Kho đồ của người chơi khi rời khỏi trò chơi hoặc vào Hang Động. Celestial Orb sẽ chìm xuống nước, tuy nhiên sau đó nó sẽ quay trở lại bờ biển.</p>",
   "title": "Celestial Orb",
   "wikitext": "{{Object Infobox\n|image = Celestial Orb Dropped.png\n|icon = Celestial Orb.png\n|droppedBy = {{pic32|Smooth Meteor Boulder}}\n|perk = Grants access to the [[Celestial Filter]].\n|stack = Does not stack\n|spawnCode = \"moonrockseed\"\n}}\n{{Exclusivity|Don't Starve Together}}\n{{Quotes\n|wilson = There's science inside!\n|willow = Well I can't burn it.\n|wolfgang = Is ball not for throwing.\n|wendy = Its pallor reminds me of Abigail.\n|wx78 = CURRENTLY IDOL\n|wickerbottom = A floating orb of knowledge.\n|woodie = I should probably put this down somewhere, eh?\n|maxwell = Oooh, some new knowledge.\n|wigfrid = It hath knöwledge within!\n|webber = Neat, it's a ball that floats by itself!\n|winona = I could learn a thing or two from this.\n|warly = It's beautiful, isn't it?\n|wortox = I bet you know some fun secrets.\n|wormwood = Makes Night Ball things\n|wurt = Floaty!\n|walter = Is the moon... haunted?\n|wanda = It's like a pocket-sized moon.\n|choose = wickerbottom}}\nThe '''Celestial Orb''' is a portable [[Crafting]] station exclusive to ''[[Don't Starve Together]]''. It is obtained by [[Pickaxe|mining]] a [[Suspicious Boulder]]. If dropped on the ground, the Celestial Orb can be used to access the Level 1 [[Celestial Filter]], which unlocks the crafting recipe for the [[Moon Rock Idol]] and [[Portal Paraphernalia]]. Similar to [[Chester]]'s [[Eye Bone]], it will automatically drop from the [[Inventory]] of players when leaving the game or entering the [[Caves]]. Celestial Orb will sink in the water, however, it will return to the coast afterwards.\n\nAfter defeating the [[Celestial Champion]], the Celestial Orb's [[Celestial Filter|crafting tab]] will gain access to all crafts of the [[Celestial Altar]], [[Celestial Tribute|Tribute]], and [[Celestial Sanctum|Sanctum]].\n\n__NOTOC__\n== {{Pic|32|Prototype}} Tips==\n* The Celestial Orb has a global [[Map]] icon, similar to [[Moonlens]]es. However, it is also visible if put in a container or held in a player's Inventory.\n** The Celestial Orb can be put inside a [[Chester]] to mark its location on map.\n* The Celestial Orb is required to spawn the [[Celestial Champion]].\n\n== {{pic|32|Placeholder}} Trivia ==\n* It gives off a small amount of light at night, but is not an appropriate light source to ward off [[Charlie]].\n**The light radius becomes large enough to ward off Charlie after collecting it from defeating the Celestial Champion.\n\n== {{Pic|32|Blueprint}} Gallery ==\n<gallery hideaddbutton=\"true\" captionalign=\"center\">\nCelestial Glowing Demonstration.png|The Celestial Orb glowing in the dark (lower right corner).\nCelestial Orb Dropped Near.png|Celestial Orb floats when player is near.\n</gallery>\n\n{{Resources}}\n[[vi:Cầu Thiên Thể]]\n[[Category:Crafting Stations]]"
 }

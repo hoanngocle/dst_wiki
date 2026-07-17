@@ -22,6 +22,41 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Slotmachine.png",
+              "title": "Slotmachine",
+              "url": "https://dontstarve.wiki.gg/wiki/Slotmachine"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/X_Marks_The_Spot.png",
+              "title": "X Marks The Spot",
+              "url": "https://dontstarve.wiki.gg/wiki/X_Marks_The_Spot"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Seashell Suit",
+      "url": "https://dontstarve.wiki.gg/wiki/Seashell_Suit"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 154280,
   "plainText": "Exclusive to:\nSeashell Suit\n\"Pretty poison prevention.\"\n×10 ×2 ×1\nTab\nTier\n75%\n750 hp\nDoes not stack\nPerk\nProtects the player from getting poisoned by physical contact.\nDropped by\n\"armorseashell\"\n“Arts and crafts!”\n–Wilson\n“Try me, baddies.”\n–Willow\n“Try your dirty tricks now, poison creatures.”\n–Wolfgang\n“Armor made of the homes of dead goo.”\n–Wendy\n“PROTECTIVE MEASURES FOR METAL HOUSING”\n–WX-78\n“Prevents infirmity from venomous bites.”\n–Wickerbottom\n“This doesn't seem very hardy.”\n–Woodie\n“Perhaps not the sturdiest, but it will conceal my vulnerabilities.”\n–Maxwell\n“A rudimentary design but moderately effective.”\n–Wagstaff\n“I shall nöt wash up ön the shöres öf Valhalla wearing this!”\n–Wigfrid\n“We feel like a knight in not-so-shiny armor.”\n–Webber\n“The ocean will protect me!”\n–Walani\n“Seashell mail.”\n–Warly\n“Me mateys would laugh at me...”\n–Woodlegs\n“WILBA READY FOR SEA OF TROUBLES”\n–Wilba\n“Sea clothes”\n–Wormwood\n“She wears seashells by the seashore.”\n–Wheeler\nThe Seashell Suit is an Armor Item in the Shipwrecked DLC, made with 10 Seashells, two Seaweed and one Rope. It requires a Science Machine to prototype, will absorb 75% of damage taken, and prevent the player from getting Poisoned by physical attacks.\nThe Seashell Suit protects against Poison from Poison Snakes, Poison Mosquitoes, Spider Warriors and Yellow Crocodogs.\nNote that this item does not protect against clouds of poison gas, such as those from Stink Rays and Poison Holes.\nTips[edit | edit source]\nIt can be especially helpful to wear the Seashell Suit when chopping Jungle Trees as Poison Snakes may appear.\nKeeping a Seashell Suit in the inventory during Monsoon Season can be really handy, since it is a cheap way to protect the character from Poison Mosquitoes. It is also more efficient than carrying an Anti Venom and armor at the same time, saving one inventory slot.\nIt is recommended to carry a Seashell Suit or Horned Helmet when gambling at the Slot Machine, since there is a chance to get Poison Snakes or Poison Mosquitoes after a spin.\nGallery[edit | edit source]\nWilson wearing a Seashell Suit.\nWillow wearing a Seashell Suit.\nWolfgang wearing a Seashell Suit.\nWendy wearing a Seashell Suit.\nWX-78 wearing a Seashell Suit.\nWickerbottom wearing a Seashell Suit.\nWoodie wearing a Seashell Suit.\nWes wearing a Seashell Suit.\nMaxwell wearing a Seashell Suit.\nWigfrid wearing a Seashell Suit.\nWebber wearing a Seashell Suit.\nWalani wearing a Seashell Suit.\nWarly wearing a Seashell Suit.\nWilbur wearing a Seashell Suit.\nWoodlegs wearing a Seashell Suit.\nWilba wearing a Seashell Suit.\nWormwood wearing a Seashell Suit.\nWheeler wearing a Seashell Suit.\nView or edit this template\nDon't Starve Tools and Weapons\nEquipped Tools\nUnequipped Tools\nLight\nBooks\nCircuits\nBattle Calls\nWatches\nWeapons\nSlingshot Parts\nThrowables\nStaffs\nAmulets\nBackpacks\nClothing\nStage Costumes\nArmor",
   "recipes": [],
@@ -32,6 +67,7 @@
     "timestamp": "2026-06-24T18:14:17Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Bộ Đồ Vỏ Sò là một Vật Phẩm Giáp trong Shipwrecked DLC, được làm từ 10 Vỏ Sò, hai Rong Biển và một Dây Thừng. Nó yêu cầu Máy Khoa học để tạo nguyên mẫu, sẽ hấp thụ 75% sát thương nhận vào và ngăn người chơi bị Ngộ độc bởi các đòn tấn công vật lý.</p>",
   "title": "Seashell Suit",
   "wikitext": "{{Exclusivity|Shipwrecked}}\n{{Item Infobox\n|name = Seashell Suit\n|ingredient1 = Seashell\n|multiplier1 = 10\n|ingredient2 = Seaweed\n|multiplier2 = 2\n|ingredient3 = Rope\n|multiplier3 = 1\n|tab = Fight\n|tier = 1\n|stack = Does not stack\n|perk=Protects the player from getting poisoned by physical contact.\n|durability=750 hp\n|droppedBy = {{Pic|20|Slotmachine}} {{Pic32|X Marks The Spot}}\n|spawnCode=\"armorseashell\"\n|description=Pretty poison prevention.\n|protection=75%}}\n{{Quotes\n|wilson=Arts and crafts!\n|willow=Try me, baddies.\n|wolfgang=Try your dirty tricks now, poison creatures.\n|wendy=Armor made of the homes of dead goo.\n|wx78=PROTECTIVE MEASURES FOR METAL HOUSING\n|wickerbottom=Prevents infirmity from venomous bites.\n|woodie=This doesn't seem very hardy.\n|maxwell=Perhaps not the sturdiest, but it will conceal my vulnerabilities.\n|wagstaff = A rudimentary design but moderately effective.\n|wigfrid=I shall nöt wash up ön the shöres öf Valhalla wearing this!\n|webber=We feel like a knight in not-so-shiny armor.\n|walani=The ocean will protect me!\n|warly=Seashell mail.\n|woodlegs=Me mateys would laugh at me...\n|wilba=WILBA READY FOR SEA OF TROUBLES\n|wormwood=Sea clothes\n|wheeler=She wears seashells by the seashore.\n|choose=wolfgang}}\nThe '''Seashell Suit''' is an [[Armor]] [[Item]] in the ''[[Don't Starve: Shipwrecked|Shipwrecked]]'' DLC, made with 10 [[Seashell]]s, two [[Seaweed]] and one [[Rope]]. It requires a [[Science Machine]] to prototype, will absorb 75% of damage taken, and prevent the player from getting [[Poison]]ed by physical attacks.\n\nThe Seashell Suit protects against Poison from [[Poison Snake]]s, [[Poison Mosquito]]es, [[Spider Warrior]]s and [[Crocodog#Yellow Crocodog|Yellow Crocodogs]].\n\nNote that this item does ''not'' protect against clouds of poison gas, such as those from [[Stink Ray|Stink Rays]] and [[Poisonous Hole|Poison Holes]].\n\n=={{Pic|32|Prototype}} Tips==\n* It can be especially helpful to wear the Seashell Suit when chopping [[Jungle Tree]]s as Poison Snakes may appear.\n* Keeping a Seashell Suit in the inventory during [[Monsoon Season]] can be really handy, since it is a cheap way to protect the character from Poison Mosquitoes. It is also more efficient than carrying an [[Anti Venom]] and armor at the same time, saving one inventory slot.\n* It is recommended to carry a Seashell Suit or [[Horned Helmet]] when gambling at the [[Slot Machine]], since there is a chance to get Poison Snakes or Poison Mosquitoes after a spin.\n\n=={{Pic|32|Blueprint}} Gallery==\n<gallery>\nSeashell Suit Wilson.png|[[Wilson]] wearing a Seashell Suit.\nSeashell Suit Willow.png|[[Willow]] wearing a Seashell Suit.\nSeashell Suit Wolfgang.png|[[Wolfgang]] wearing a Seashell Suit.\nSeashell Suit Wendy.png|[[Wendy]] wearing a Seashell Suit.\nSeashell Suit WX-78.png|[[WX-78]] wearing a Seashell Suit.\nSeashell Suit Wickerbottom.png|[[Wickerbottom]] wearing a Seashell Suit.\nSeashell Suit Woodie.png|[[Woodie]] wearing a Seashell Suit.\nSeashell Suit Wes.png|[[Wes]] wearing a Seashell Suit.\nSeashell Suit Maxwell.png|[[Maxwell (character)|Maxwell]] wearing a Seashell Suit.\nSeashell Suit Wigfrid.png|[[Wigfrid]] wearing a Seashell Suit.\nSeashell Suit Webber.png|[[Webber]] wearing a Seashell Suit.\nSeashell Suit Walani.png|[[Walani]] wearing a Seashell Suit.\nSeashell Suit Warly.png|[[Warly]] wearing a Seashell Suit.\nSeashell Suit Wilbur.png|[[Wilbur]] wearing a Seashell Suit.\nSeashell Suit Woodlegs.png|[[Woodlegs]] wearing a Seashell Suit.\nSeashell Suit Wilba.png|[[Wilba]] wearing a Seashell Suit.\nSeashell Suit Wormwood.png|[[Wormwood]] wearing a Seashell Suit.\nSeashell Suit Wheeler.png|[[Wheeler]] wearing a Seashell Suit.\n</gallery>\n\n{{Tools and Weapons}}\n__NOTOC__\n[[Category:Fight Tab]]\n[[Category:Items]]\n[[Category:Equipable Items]]\n[[Category:Armor]]\n[[Category:Non-Flammable]]\n[[Category:Limited use]]"
 }

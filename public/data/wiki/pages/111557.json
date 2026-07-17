@@ -18,6 +18,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Crow_Kid_1.png",
+              "title": "Crow Kid",
+              "url": "https://dontstarve.wiki.gg/wiki/Crow_Kid_1"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": "base_game:carnival_gametoken",
+      "iconUrl": null,
+      "title": "Cawnival Token",
+      "url": "https://dontstarve.wiki.gg/wiki/Cawnival_Token"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 111557,
   "plainText": "Exclusive to:\nOnly during the Event: Midsummer Cawnival\nCawnival Token\nSingleTriple\n\"Buy tokens, play games, win prizes!\"\n\"Why buy one when you could buy three?\"\nSingle\nTriple\nObject Info\n40\nSource\nDropped by\nCrafting\nSingle :×1\nTriple:×1\nFilters\nMiscellaneous\n\"carnival_gametoken\"\n“One shiny token.”\n–Wilson, when examining a Cawnival Token\n“What is this, bird money?”\n–Willow, when examining a Cawnival Token\n“Is token for bird games.”\n–Wolfgang, when examining a Cawnival Token\n“It gleams in the light.”\n–Wendy, when examining a Cawnival Token\n“IT LOOKS A BIT LIKE A COIN”\n–WX-78, when examining a Cawnival Token\n“A form of avian currency, perhaps?”\n–Wickerbottom, when examining a Cawnival Token\n“I don't trust anything from a bird.”\n–Woodie, when examining a Cawnival Token\n“Fine. I'll play your silly little games.”\n–Maxwell, when examining a Cawnival Token\n“A gleaming töken öf friendship.”\n–Wigfrid, when examining a Cawnival Token\n“Wow, it's so shiny!”\n–Webber, when examining a Cawnival Token\n“A token for le carnaval!”\n–Warly, when examining a Cawnival Token\n“Shiny”\n–Wormwood, when examining a Cawnival Token\n“I haven't been to a fair since I was a kid!”\n–Winona, when examining a Cawnival Token\n“Who could resist such a shiny trinket?”\n–Wortox, when examining a Cawnival Token\n“Shiny!”\n–Wurt, when examining a Cawnival Token\n“What game should I play first? It's so hard to decide!”\n–Walter, when examining a Cawnival Token\n“It's been meticulously polished.”\n–Wanda, when examining a Cawnival Token\nThe Cawnival Tokens are used to play Cawnival Games. The player can get the Tokens by either crafting or by giving a Popcorn or Corny Slush to a Crow Kid, yielding 1 Prize Ticket and 1 Cawnival Token per snack. Only one snack can be given to a Crow Kid at a time, with the player having to wait (1 hour for Popcorn, 12 minutes for Corny Slush) before being able to give the same Crow Kid another one.\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -28,6 +57,7 @@
     "timestamp": "2026-06-29T15:40:21Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Mã thông báo Cawnival được sử dụng để chơi Trò chơi Cawnival. Người chơi có thể nhận được Token bằng cách chế tạo hoặc bằng cách đưa Popcorn hoặc Corny Slush cho Crow Kid, nhận được 1 Vé thưởng và 1 Token Cawnival cho mỗi bữa ăn nhẹ. Mỗi lần chỉ có thể đưa một món ăn nhẹ cho Crow Kid, và người chơi phải đợi (1 giờ cho Popcorn, 12 phút cho Corny Slush) trước khi có thể đưa cho Crow Kid đó một món khác.</p>",
   "title": "Cawnival Token",
   "wikitext": "{{Exclusivity|Don't Starve Together}}{{Event|Midsummer Cawnival}}\n{{Object Infobox\n|name = Cawnival Token\n|image = Cawnival Token Dropped.png\n|icon = <gallery>\nCawnival Token.png|Single\nCawnival Tokens.png|Triple\n</gallery>\n|description_tabber = \n<tabber>\nSingle=\n\"Buy tokens, play games, win prizes!\"\n|-|\nTriple=\n\"Why buy one when you could buy three?\"\n</tabber>\n|crafting_text =Single :{{pic24|Seeds}}×1<hr>Triple:{{pic24|Gold Nugget}}×1 \n|stack = 40\n|droppedBy = {{Pic32|Crow Kid 1|Crow Kid}}\n|spawnCode = \"carnival_gametoken\"\n|filter = {{Pic|32|Cawnival Creation Filter}}\n}}\n{{Quotes\n|wilson = One shiny token.\n|willow = What is this, bird money?\n|wolfgang = Is token for bird games.\n|wendy = It gleams in the light.\n|wx78 = IT LOOKS A BIT LIKE A COIN\n|wickerbottom = A form of avian currency, perhaps?\n|woodie = I don't trust anything from a bird.\n|maxwell = Fine. I'll play your silly little games.\n|wigfrid = A gleaming töken öf friendship.\n|webber = Wow, it's so shiny!\n|warly = A token for le carnaval!\n|wormwood = Shiny\n|winona = I haven't been to a fair since I was a kid!\n|wortox = Who could resist such a shiny trinket?\n|wurt = Shiny!\n|walter = What game should I play first? It's so hard to decide!\n|wanda = It's been meticulously polished.\n|choose = walter\n|source = when examining a Cawnival Token\n}}\nThe '''Cawnival Tokens''' are used to play [[Midsummer Cawnival/Games|Cawnival Games]]. The player can get the Tokens by either crafting or by giving a [[Popcorn]] or [[Corny Slush]] to a [[Crow Kid]], yielding 1 [[Prize Tickets|Prize Ticket]] and 1 Cawnival Token per snack. Only one snack can be given to a Crow Kid at a time, with the player having to wait (1 hour for Popcorn, 12 minutes for Corny Slush) before being able to give the same Crow Kid another one.\n\n{{Resources}}\n[[Category:Midsummer Cawnival]]\n[[Category:Cawnival Creation Filter]]"
 }

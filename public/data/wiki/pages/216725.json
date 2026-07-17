@@ -21,6 +21,72 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Onion_Plant.png",
+              "title": "Onion Plant",
+              "url": "https://dontstarve.wiki.gg/wiki/Onion_Plant"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Giant_Onion.png",
+              "title": "Giant Onion",
+              "url": "https://dontstarve.wiki.gg/wiki/Giant_Onion"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Onion",
+      "url": "https://dontstarve.wiki.gg/wiki/Onion"
+    },
+    "usage": {
+      "recipes": [
+        {
+          "character": null,
+          "dlc": null,
+          "ingredients": [],
+          "note": null,
+          "result": {
+            "entityId": null,
+            "iconUrl": null,
+            "title": "Roast Onion",
+            "url": "https://dontstarve.wiki.gg/wiki/Roast_Onion"
+          },
+          "resultAmount": 1,
+          "station": "cooking",
+          "subjectAmount": 1
+        },
+        {
+          "character": null,
+          "dlc": null,
+          "ingredients": [],
+          "note": null,
+          "result": {
+            "entityId": null,
+            "iconUrl": null,
+            "title": "Pointy Seeds",
+            "url": "https://dontstarve.wiki.gg/wiki/Pointy_Seeds"
+          },
+          "resultAmount": 1,
+          "station": "Birdcage",
+          "subjectAmount": 1
+        }
+      ]
+    }
+  },
   "pageId": 216725,
   "plainText": "Exclusive to:\nOnion\nFood Info\n9.375\n0\n-10\nVeggie\n× 1\nObject Info\n15 Days\nCan be Burned\n40\nSource\nDropped by\nMiscellaneous\n\"onion\"\n“Looks crunchy.”\n–Wilson, when examining an Onion.\n“It's so bulbous.”\n–Willow, when examining an Onion.\n“Wolfgang eats like apple when not cooking.”\n–Wolfgang, when examining an Onion.\n“I never cry.”\n–Wendy, when examining an Onion.\n“IT HAS LAYERS”\n–WX-78, when examining an Onion.\n“Edible bulb of Allium cepa.”\n–Wickerbottom, when examining an Onion.\n“I only cry tears of joy.”\n–Woodie, when examining an Onion.\n“It's a pungent onion.”\n–Maxwell, when examining an Onion.\n“I dare thee, prövöke tears fröm mine eyes!”\n–Wigfrid, when examining an Onion.\n“It makes all our eyes water!”\n–Webber, when examining an Onion.\n“Boasts as many uses as it has layers.”\n–Warly, when examining an Onion.\n“Makes eyes wet”\n–Wormwood, when examining an Onion.\n“I hate chopping vegetables.”\n–Winona, when examining an Onion.\n“You'll see no tears from my eye. I cannot cry!”\n–Wortox, when examining an Onion.\n“Mmm-mmmm, crunchy!”\n–Wurt, when examining an Onion.\n“I hate chopping them.”\n–Walter, when examining an Onion.\n“I can smell the flavor!”\n–Wanda, when examining an Onion.\nThe Onion is a vegetable food item in Don't Starve Together. Onions can be farmed with a small chance to appear from normal Seeds or directly planted using Onion Seeds. Feeding an Onion to a bird in a Birdcage will produce 1 Pointy Seeds, as of the \"Reap What You Sow\" update.\nWhen eaten raw, Onion restores 9.375 Hunger at the cost of 10 Sanity. They take 15 days to spoil.\nIt can be used as an ingredient in several Crock Pot recipes and is required for Salsa Fresca, Bone Bouillon, Grim Galette and Moqueca.\nRoasted Onion[edit | edit source]\nRoasted Onion\nFood Info\n9.375\n1\n-5\nVeggie\n× 1\nObject Info\n10 Days\nCan be Burned\n40\nMiscellaneous\n\"onion_cooked\"\n“A successful chemical reaction.”\n–Wilson, when examining a Roasted Onion.\n“Roasting. My favorite cooking method.”\n–Willow, when examining a Roasted Onion.\n“Crispy, brown, sweet.”\n–Wolfgang, when examining a Roasted Onion.\n“It will never make anyone cry again.”\n–Wendy, when examining a Roasted Onion.\n“ALL THE LAYERS HAVE BEEN COOKED”\n–WX-78, when examining a Roasted Onion.\n“Roast Allium cepa.”\n–Wickerbottom, when examining a Roasted Onion.\n“Perfectly roasted.”\n–Woodie, when examining a Roasted Onion.\n“Take that, onion.”\n–Maxwell, when examining a Roasted Onion.\n“It has been vanquished with fire.”\n–Wigfrid, when examining a Roasted Onion.\n“Our eyes don't water any more.”\n–Webber, when examining a Roasted Onion.\n“I would prefer to put this to better use.”\n–Warly, when examining a Roasted Onion.\n“Smells nice”\n–Wormwood, when examining a Roasted Onion.\n“Done and done.”\n–Winona, when examining a Roasted Onion.\n“Like tiny circles decending. [sic]”\n–Wortox, when examining a Roasted Onion.\n“Smell so good, florp!”\n–Wurt, when examining a Roasted Onion.\n“A juicy cooked onion.”\n–Walter, when examining a Roasted Onion.\n“I love the smell of cooked onion.”\n–Wanda, when examining a Roasted Onion.\nA Roasted Onion is obtained by cooking an Onion over a fire. It restores 1 more Health and deducts 5 less Sanity than the raw version and takes 10 days to spoil. Besides this, it shares the same uses as raw Onions.\nUsage[edit | edit source]\nRecipes[edit | edit source]\n×2\nFillers can not be Inedible, Meats or Eggs\n×(1)\nFiller can not be Inedible\n×2\nFiller can not be Twigs\nThe Gorge[edit | edit source]\nOnly during the Event: The Gorge\nOnions are featured in The Gorge event in Don't Starve Together. They grow from Pointy Seeds, which can be bought from Sammy for one Old Coin. An Onion can be made into a Roast Onion by being cooked at the Campfire next to the Swamp Pig Elder. Onions can be used in a variety of Cooking Recipes exclusive to The Gorge.\nRecipes[edit | edit source]\n×2\nTrivia[edit | edit source]\nThe Onion was originally exclusive to The Gorge event, but it was later introduced into the main game along with the Warly Character Update.\nGallery[edit | edit source]\nIcon used as emoji for Official Klei Discord\nBy TypeBy Crock Pot Value\nView or edit this template\nFood and Edible Items (by Food Type)\nVeggie\nSeeds\nMeat\nGoodies\nGeneric\nHorrible\nRoughage\nElementals\nBurnt\nRaw\nGears\nGold Dust\nBerry\nWood\nNitre\nLunar Shards\nView or edit this template\nFood and Edible Items (by Food Value)\nMeats\nFishes\nVegetables\nFruits\nMonster Food\nEggs\nDairy\nSweetener\nFrozen\nInedibles\nMagic\nFat\nSeed\nJellyfish\nBone\nFilter\nAntihistamine\nDecoration\nBug\nNo Value Food",
   "recipes": [],
@@ -31,6 +97,7 @@
     "timestamp": "2026-07-01T06:58:04Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Hành tây là một loại thực phẩm thực vật trong Don&#x27;t Starve Together. Hành có thể được trồng với tỉ lệ nhỏ xuất hiện từ Hạt giống thông thường hoặc trồng trực tiếp bằng Hạt hành. Cho chim trong Lồng Chim ăn Hành tây sẽ tạo ra 1 Hạt giống nhọn, kể từ bản cập nhật &quot;Gặt những gì bạn gieo&quot;.</p>",
   "title": "Onion",
   "wikitext": "{{Exclusivity|Don't Starve Together}}\n__notoc__\n{{Object Infobox\n|canBeBurned = 1\n|image = Onion Dropped.png\n|icon = Onion.png\n|name = Onion\n|hpRestored = 0\n|hungerRestored = 9.375\n|sanityRestored = -10\n|stack = 40\n|spoil = 15 Days\n|spawnCode = \"onion\"\n|droppedBy = {{Pic|32|Onion Plant}}{{Pic|32|Giant Onion}}\n|foodType = [[Veggie]] [[File:Veggie.png|32px|]]\n|foodValue = [[File:Vegetables.png|32px|link=Vegetables]] &times; 1\n}}\n{{Quotes\n|wilson = Looks crunchy.\n|willow = It's so bulbous.\n|wolfgang = Wolfgang eats like apple when not cooking.\n|wendy = I never cry.\n|wx78 = IT HAS LAYERS\n|wickerbottom = Edible bulb of Allium cepa.\n|woodie = I only cry tears of joy.\n|maxwell = It's a pungent onion.\n|wigfrid = I dare thee, prövöke tears fröm mine eyes!\n|webber = It makes all our eyes water!\n|winona = I hate chopping vegetables.\n|wortox = You'll see no tears from my eye. I cannot cry!\n|wormwood = Makes eyes wet\n|warly = Boasts as many uses as it has layers.\n|wurt = Mmm-mmmm, crunchy!\n|walter = I hate chopping them.\n|wanda = I can smell the flavor!\n|choose = webber\n|source = when examining an Onion.\n}}\nThe '''Onion''' is a [[Vegetables|vegetable]] [[food]] item in ''[[Don't Starve Together]]''. Onions can be [[Farming/DST|farmed]] with a small chance to appear from normal [[Seeds/DST|Seeds]] or directly planted using Onion Seeds. Feeding an Onion to a bird in a [[Birdcage]] will produce 1 [[Crop Seeds/DST#Pointy Seeds|Pointy Seeds]], as of the \"Reap What You Sow\" update.\n\nWhen eaten raw, Onion restores 9.375 [[Hunger]] at the cost of 10 [[Sanity]]. They take 15 days to spoil. \n\nIt can be used as an ingredient in several [[Crock Pot]] recipes and is required for [[Salsa Fresca]], [[Bone Bouillon]], [[Grim Galette]] and [[Moqueca]]. \n{{clear}}\n== Roasted Onion ==\n{{Object Infobox\n|canBeBurned = 1\n|image = Roasted Onion Dropped.png\n|icon = Roasted Onion.png\n|name = Roasted Onion\n|hpRestored = 1\n|hungerRestored = 9.375\n|sanityRestored = -5\n|stack = 40\n|spoil = 10 Days\n|spawnCode = \"onion_cooked\"\n|foodType = [[Veggie]] [[File:Veggie.png|32px|]]\n|foodValue = [[File:Vegetables.png|32px|link=Vegetables]] &times; 1\n}}\n{{Quotes\n|wilson = A successful chemical reaction.\n|willow = Roasting. My favorite cooking method.\n|wolfgang = Crispy, brown, sweet.\n|wendy = It will never make anyone cry again.\n|wx78 = ALL THE LAYERS HAVE BEEN COOKED\n|wickerbottom = Roast Allium cepa.\n|woodie = Perfectly roasted.\n|maxwell = Take that, onion.\n|wigfrid = It has been vanquished with fire.\n|webber = Our eyes don't water any more.\n|winona = Done and done.\n|wortox = Like tiny circles decending. [sic]\n|wormwood = Smells nice\n|warly = I would prefer to put this to better use.\n|wurt = Smell so good, florp!\n|walter = A juicy cooked onion.\n|wanda = I love the smell of cooked onion.\n|choose = wendy\n|source = when examining a Roasted Onion.\n}}A '''Roasted Onion''' is obtained by cooking an Onion over a fire. It restores 1 more Health and deducts 5 less Sanity than the raw version and takes 10 days to spoil. Besides this, it shares the same uses as raw Onions.\n{{clear}}\n== {{pic|32|Icon Tools}} Usage ==\n{{Recipe|item1 = Onion|tool = cooking|result = Roast Onion}}\n{{Recipe|item1 = Onion|tool = Birdcage|result = Pointy Seeds}}\n{{Recipe|item1 = Onions|tool = Pig Icon|result = Manure}}\n\n=={{Pic|32|Cookbook}} Recipes ==\n{{Recipe|item1 = Toma Roots|item2 = Onions|item3=Filler|count3 = 2|tool = Crock Pot|result = Salsa Fresca| note = Fillers can not be [[Inedible]], [[Meats]] or [[Eggs]]}}\n{{Recipe\n|item1 = Leafy Meats\n|item2 = Onions\n|item3 = Vegetables\n|count3 = (1)\n|item4 = Filler\n|tool = Crock Pot\n|result = Veggie Burger\n}}\n{{Recipe|item1 = Bone Shards|item2 = Bone Shards|item3 = Onions|item4 = Filler|tool = Portable Crock Pot|result = Bone Bouillon|character = Warly|note=Filler can not be [[Inedible]]}}\n{{Recipe|item1 = Nightmare Fuel|count1=2|item2 = Potatoes|item3 = Onions|tool = Portable Crock Pot|result = Grim Galette|character = Warly}}\n{{Recipe|item1 = Fishes|item2 = Onions|item3 = Toma Roots|item4 = Filler|tool = Portable Crock Pot|result = Moqueca|character = Warly|note=Filler can not be [[Twigs]]}}\n\n== {{Pic|32|Silver Bowl}} The Gorge ==\n{{Event|The Gorge}}\nOnions are featured in ''[[The Gorge]]'' [[:Category:Events|event]] in ''Don't Starve Together''. They grow from Pointy Seeds, which can be bought from [[Sammy]] for one Old Coin. An Onion can be made into a Roast Onion by being cooked at the [[Campfire]] next to the [[Swamp Pig Elder]]. Onions can be used in a variety of [[The Gorge Recipes|Cooking Recipes]] exclusive to The Gorge.\n==={{Pic|32|Cookbook}} Recipes ===\n{{Recipe\n|item1 = Garlic\n|item2 = Mushroom\n|item3 = Onions\n|tool = Small Casserole Dish\n|result = Stuffed Mushroom\n}}\n{{Recipe\n|item1 = Flour\n|item2 = Goat Milk\n|item3 = Onions\n|count3 = 2\n|tool = Large Cookpot\n|result =Onion Soup\n}}\n{{Recipe\n|item1 = Flour\n|item2 = Foliage\n|item3 = Onions\n|item4 = Crab Meat\n|tool = Large Grill\n|result =Crab Roll\n}}\n== {{pic|32|Placeholder}} Trivia ==\n* The Onion was originally exclusive to ''The Gorge'' event, but it was later introduced into the main game along with the [[Warly]] [[Don't Starve Together/Version History|Character Update]].\n=={{Pic|32|Blueprint}} Gallery==\n<gallery captionalign=\"center\" hideaddbutton=\"true\">\nOnion 128x128.png|Icon used as emoji for Official Klei Discord\n</gallery>\n{{Food and Edible Items}}\n[[vi:Onion]]\n[[ru:Лук]]\n[[Category:Perishables]]\n[[Category:Healing]]\n[[Category:Sanity Loss]]\n[[Category:Vegetables]]\n[[Category:The Gorge]]"
 }

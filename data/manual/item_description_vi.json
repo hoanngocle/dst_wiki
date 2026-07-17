@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "items": {
+    "base_game:carnivalgame_golf_hole": {
+      "source": "I'll putt the ball right in there.",
+      "vi": "Tôi sẽ đánh bóng vào đúng lỗ đó."
+    },
+    "base_game:carnivalgame_golfball": {
+      "source": "I've seen you round here!",
+      "vi": "Tôi đã thấy cậu lăn lóc quanh đây rồi!"
+    },
+    "base_game:chester": {
+      "source": "Otto von Chesterfield, Esq.",
+      "vi": "Quý ngài Otto von Chesterfield."
+    },
+    "base_game:fused_shadeling_bomb": {
+      "source": "Bombastic!",
+      "vi": "Nổ tưng bừng!"
+    },
+    "base_game:hutch": {
+      "source": "Hutch Danglefish, P.I.",
+      "vi": "Hutch Danglefish, thám tử tư."
+    },
+    "base_game:scorched_skeleton": {
+      "source": "Spooky.",
+      "vi": "Rùng rợn."
+    },
+    "base_game:vault_decon_door": {
+      "source": "Is it meant to keep something in, or keep something out?",
+      "vi": "Nó dùng để nhốt thứ gì đó bên trong, hay ngăn thứ gì đó xâm nhập?"
+    },
+    "base_game:vault_decon_mister": {
+      "source": "How mysterious...",
+      "vi": "Thật bí ẩn..."
+    },
+    "base_game:vault_pillar_guard": {
+      "source": "We might've gotten off to a rocky start...",
+      "vi": "Có lẽ khởi đầu của chúng ta hơi trắc trở..."
+    }
+  }
+}

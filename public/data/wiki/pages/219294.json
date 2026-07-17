@@ -16,6 +16,84 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "(DST) (Spoiled)",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Fish_Meat.png",
+              "title": "Fish Meat",
+              "url": "https://dontstarve.wiki.gg/wiki/Fish_Meat"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Fish_Steak.png",
+              "title": "Fish Steak",
+              "url": "https://dontstarve.wiki.gg/wiki/Fish_Steak"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Fishy_Jerky.png",
+              "title": "Fishy Jerky",
+              "url": "https://dontstarve.wiki.gg/wiki/Fishy_Jerky"
+            },
+            {
+              "entityId": "base_game:eel",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Eel.png",
+              "title": "Eel",
+              "url": "https://dontstarve.wiki.gg/wiki/Eel"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Cooked_Eel.png",
+              "title": "Cooked Eel",
+              "url": "https://dontstarve.wiki.gg/wiki/Cooked_Eel"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Dead_Wobster.png",
+              "title": "Dead Wobster",
+              "url": "https://dontstarve.wiki.gg/wiki/Dead_Wobster"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Delicious_Wobster.png",
+              "title": "Delicious Wobster",
+              "url": "https://dontstarve.wiki.gg/wiki/Delicious_Wobster"
+            }
+          ]
+        },
+        {
+          "chance": "10%",
+          "context": "( )",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Sunken_Chest.png",
+              "title": "Sunken Chest",
+              "url": "https://dontstarve.wiki.gg/wiki/Sunken_Chest"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": "base_game:spoiled_fish_small",
+      "iconUrl": null,
+      "title": "Spoiled Fish/DST",
+      "url": "https://dontstarve.wiki.gg/wiki/Spoiled_Fish/DST"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 219294,
   "plainText": "Don't Starve\nTogether\nSpoiled Fish\nFood Info\n-10\n-1\n0\nGeneric\nObject Info\nPerk\nFertilizer and Fuel.\n15 sec.\nCan be Burned\n40\nSource\nCan be Hammered\nDropped by\n(Spoiled)\n(10%)\nResources\n×1 ×1 ()\nMiscellaneous\n\"spoiled_fish\"\nExclusive to:\n“I'm not terribly curious about the smell.”\n–Wilson\n“Gross.”\n–Willow\n“Is good no more.”\n–Wolfgang\n“Farewell, chum.”\n–Wendy\n“ALL LIFE DIES AND THEN SMELLS”\n–WX-78\n“That fish matter is becoming a biohazard.”\n–Wickerbottom\n“I think it's time to throw this out.”\n–Woodie\n“How vile.”\n–Maxwell\n“You smell of your failure.”\n–Wigfrid\n“It's no good to anyone now.”\n–Webber\n“Such a shame...”\n–Warly\n“Smells good. Mmmmm...”\n–Wormwood\n“Such a shame to let good food go to waste.”\n–Winona\n“It's spoiled rotten!”\n–Wortox\n“Someone not take care of fish pet!”\n–Wurt\n“Ugh, rotten fish!”\n–Walter\n“Oooh that's rotten!”\n–Wanda\nSpoiled Fish is an Item in Don't Starve Together, introduced in Return of Them. A Spoiled Fish is obtained when a Raw Fish, an Eel or a Wobster spoils.\nSpoiled Fish has some identical properties to Rot, such as Food and Fuel values. Its Nutrient value and type, however, is different from that of Rot: instead of 8 Compost, Spoiled Fish provides 16 Growth Formula nutrients.\nIn addition, a Spoiled Fish can be hammered to obtain 1 Rot and 1 Bone Shards.\nSpoiled Fish Morsel[edit | edit source]\nSpoiled Fish Morsel\nFood Info\n-10\n-1\n0\nGeneric\nObject Info\nPerk\nFertilizer and Fuel.\n15 sec.\nCan be Burned\n40\nSource\nCan be Hammered\nDropped by\n(Spoiled)\nResources\n50%, 50% ()\nMiscellaneous\n\"spoiled_fish_small\"\nA Spoiled Fish Morsel is obtained when a Fish Morsel spoils.\nSpoiled Fish Morsels have some identical properties to Rot, such as Food and Fuel values. Its Nutrient type, however, is different from that of Rot: instead of 8 Compost, a Spoiled Fish Morsel provides 8 Growth Formula nutrients.\nTips[edit | edit source]\nWurt loses sanity when holding a Spoiled Fish or Spoiled Fish Morsel in her inventory.\nAs they contain the Growth Formula Nutrient, Wormwood can initiate blooming by fertilizing himself with a Spoiled Fish or Spoiled Fish Morsel.\nIf used in his third stage of bloom, a Spoiled Fish adds 2 minutes while a Spoiled Fish Morsel adds 1 minute. This is not worth it; it's better to wait until the third stage ends then use the Spoiled fish to regain it.\nUnlike Rot, Spoiled Fish and Spoiled Fish Morsels do not heal Wormwood.\nTrivia[edit | edit source]\nThe Spoiled Fish and Spoiled Fish Morsel were added in the Hook, Line and Inker update.\nBefore Reap What You Sow, Spoiled Fish dropped either 1 Rot with a 50% chance or 1 Bone Shards with a 50% chance, and Spoiled Fish Morsel dropped either 1 Rot with a 75% chance or 1 Bone shards with a 25% chance.\nResourcesFood\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items\nBy TypeBy Crock Pot Value\nView or edit this template\nFood and Edible Items (by Food Type)\nVeggie\nSeeds\nMeat\nGoodies\nGeneric\nHorrible\nRoughage\nElementals\nBurnt\nRaw\nGears\nGold Dust\nBerry\nWood\nNitre\nLunar Shards\nView or edit this template\nFood and Edible Items (by Food Value)\nMeats\nFishes\nVegetables\nFruits\nMonster Food\nEggs\nDairy\nSweetener\nFrozen\nInedibles\nMagic\nFat\nSeed\nJellyfish\nBone\nFilter\nAntihistamine\nDecoration\nBug\nNo Value Food",
   "recipes": [],
@@ -26,6 +104,7 @@
     "timestamp": "2026-07-12T08:42:47Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Cá Thối là một Vật Phẩm trong Don&#x27;t Starve Together, được giới thiệu trong Return of Them. Cá Hư có được khi Cá Sống, Lươn hoặc Wobster hư hỏng.</p>",
   "title": "Spoiled Fish/DST",
   "wikitext": "{{Navbutton/Separation}}\n\n{{Object Infobox\n|fertilize = [[File:Growth Formula Nutrient.png|32px|link=Nutrient|Growth Formula]][[File:2 To.png|32px|link=|Restore 16]]<br>[[File:Compost Nutrient.png|32px|link=Nutrient|Compost]][[File:Not Out Not To.png|32px|link=|No change]]<br>[[File:Manure Nutrient.png|32px|link=Nutrient|Manure]][[File:Not Out Not To.png|32px|link=|No change]]\n|canBeBurned = 1\n|tool = Can be [[Tools#Hammering Tools|Hammered]] {{pic|24|Hammer}}\n|foodType = [[Generic]] {{pic|32|Generic}}\n|image = Spoiled Fish (DST) Dropped.png\n|icon = Spoiled Fish (DST).png\n|droppedBy = {{pic24|Fish Meat}} {{pic24|Fish Steak}} {{pic24|Fishy Jerky}} {{pic24|Eel}} {{pic24|Cooked Eel}} {{pic24|Dead Wobster (DST)}} {{pic24|Delicious Wobster}} (Spoiled)<br>{{pic24|Sunken Chest}} (10%)\n|hungerRestored = -10\n|hpRestored = -1\n|stack = 40\n|perk = Fertilizer and Fuel.\n|burnTime = [[File:Light_Sources_Filter.png|32px|link=Fuel#Fire Fuel]] 15 sec.\n|sanityRestored = 0\n|resources= {{pic24|Rot}}&times;1 {{pic24|Bone Shards}}&times;1 ({{pic24|Hammer}})\n|spawnCode=\"spoiled_fish\"}}\n{{Exclusivity|Don't Starve Together}}\n{{Quotes\n|wilson = I'm not terribly curious about the smell.\n|willow = Gross.\n|wolfgang = Is good no more.\n|wendy = Farewell, chum.\n|wx78 = ALL LIFE DIES AND THEN SMELLS\n|wickerbottom = That fish matter is becoming a biohazard.\n|woodie = I think it's time to throw this out.\n|maxwell = How vile.\n|wigfrid = You smell of your failure.\n|webber = It's no good to anyone now.\n|winona = Such a shame to let good food go to waste.\n|warly = Such a shame...\n|wortox = It's spoiled rotten!\n|wormwood = Smells good. Mmmmm...\n|wurt = Someone not take care of fish pet!\n|walter = Ugh, rotten fish!\n|wanda = Oooh that's rotten!\n|choose = wolfgang}}\n'''Spoiled Fish''' is an [[Item]] in ''[[Don't Starve Together]]'', introduced in ''[[Return of Them]]''. A Spoiled Fish is obtained when a [[Raw Fish/DST|Raw Fish]], an [[Eel/DST|Eel]] or a [[Wobster/DST|Wobster]] spoils.\n\nSpoiled Fish has some identical properties to [[Rot]], such as [[Food]] and [[Fuel]] values. Its [[Nutrient]] value and type, however, is different from that of Rot: instead of 8 Compost, Spoiled Fish provides 16 Growth Formula nutrients.\n\nIn addition, a Spoiled Fish can be hammered to obtain 1 [[Rot]] and 1 [[Bone Shards]].\n\n{{Clear}}\n\n==Spoiled Fish Morsel==\n{{Object Infobox\n|fertilize = [[File:Growth Formula Nutrient.png|32px|link=Nutrient|Growth Formula]][[File:1 To.png|32px|link=|Restore 8]]<br>[[File:Compost Nutrient.png|32px|link=Nutrient|Compost]][[File:Not Out Not To.png|32px|link=|No change]]<br>[[File:Manure Nutrient.png|32px|link=Nutrient|Manure]][[File:Not Out Not To.png|32px|link=|No change]]\n|icon = Spoiled Fish Morsel.png\n|canBeBurned = 1\n|tool = Can be [[Tools#Hammering Tools|Hammered]] {{pic|24|Hammer}}\n|foodType = [[Generic]] {{pic|32|Generic}}\n|name = Spoiled Fish Morsel\n|image = Spoiled Fish Morsel Dropped.png\n|droppedBy = {{pic24|Fish Morsel}} {{pic24|Cooked Fish Morsel}} {{pic24|Small Fishy Jerky}} (Spoiled)\n|resources= {{pic24|Rot}} 50%, {{pic24|Bone Shards}} 50% ({{pic24|Hammer}})\n|hungerRestored = -10\n|hpRestored = -1\n|stack = 40\n|perk = Fertilizer and Fuel.\n|burnTime = [[File:Light_Sources_Filter.png|32px|link=Fuel#Fire Fuel]] 15 sec.\n|sanityRestored = 0\n|spawnCode=\"spoiled_fish_small\"}}\nA '''Spoiled Fish Morsel''' is obtained when a [[Fish Morsel]] spoils. \n\nSpoiled Fish Morsels have some identical properties to [[Rot]], such as [[Food]] and [[Fuel]] values. Its [[Nutrient]] type, however, is different from that of Rot: instead of 8 Compost, a Spoiled Fish Morsel provides 8 Growth Formula nutrients.\n\n{{Clear}}\n\n=={{pic|32|Prototype}} Tips==\n* [[Wurt]] loses sanity when holding a Spoiled Fish or Spoiled Fish Morsel in her inventory.\n* As they contain the Growth Formula Nutrient, [[Wormwood]] can initiate blooming by fertilizing himself with a Spoiled Fish or Spoiled Fish Morsel.\n** If used in his third stage of bloom, a Spoiled Fish adds 2 minutes while a Spoiled Fish Morsel adds 1 minute. This is not worth it; it's better to wait until the third stage ends then use the Spoiled fish to regain it.\n** Unlike Rot, Spoiled Fish and Spoiled Fish Morsels do not heal Wormwood.\n\n=={{pic|32|Placeholder}} Trivia==\n* The Spoiled Fish and Spoiled Fish Morsel were added in the ''[[Return of Them#Hook, Line and Inker|Hook, Line and Inker]]'' update.\n* Before ''[[Reap What You Sow]]'', Spoiled Fish dropped either 1 Rot with a 50% chance or 1 Bone Shards with a 50% chance, and Spoiled Fish Morsel dropped either 1 Rot with a 75% chance or 1 Bone shards with a 25% chance.\n\n{{clear}}\n<tabber>\nResources=\n{{Resources}}\n|-|\nFood=\n{{Food}}\n</tabber>"
 }

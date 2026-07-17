@@ -25,6 +25,187 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "20%",
+          "context": "( ) Ornate Chest Geode Fruit",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Red_Hound.png",
+              "title": "Red Hound",
+              "url": "https://dontstarve.wiki.gg/wiki/Red_Hound"
+            }
+          ]
+        },
+        {
+          "chance": "—",
+          "context": "(Shovel)",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": "base_game:mound",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Grave.png",
+              "title": "Grave",
+              "url": "https://dontstarve.wiki.gg/wiki/Grave"
+            }
+          ]
+        },
+        {
+          "chance": "—",
+          "context": "(Pickaxe)",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Stalagmite.png",
+              "title": "Stalagmite",
+              "url": "https://dontstarve.wiki.gg/wiki/Stalagmite"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/StalagmiteTall.png",
+              "title": "StalagmiteTall",
+              "url": "https://dontstarve.wiki.gg/wiki/StalagmiteTall"
+            },
+            {
+              "entityId": "base_game:atrium_statue",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ancient_Statue.png",
+              "title": "Ancient Statue",
+              "url": "https://dontstarve.wiki.gg/wiki/Ancient_Statue"
+            }
+          ]
+        },
+        {
+          "chance": "—",
+          "context": "(Hammer)",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Broken_Clockworks.png",
+              "title": "Broken Clockworks",
+              "url": "https://dontstarve.wiki.gg/wiki/Broken_Clockworks"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ancient_Pseudoscience_Station.png",
+              "title": "Ancient Pseudoscience Station",
+              "url": "https://dontstarve.wiki.gg/wiki/Ancient_Pseudoscience_Station"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Sunken_Chest.png",
+              "title": "Sunken Chest",
+              "url": "https://dontstarve.wiki.gg/wiki/Sunken_Chest"
+            }
+          ]
+        },
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Dragonfly.png",
+              "title": "Dragonfly",
+              "url": "https://dontstarve.wiki.gg/wiki/Dragonfly"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Red_Gem_Deer.png",
+              "title": "Red Gem Deer",
+              "url": "https://dontstarve.wiki.gg/wiki/Red_Gem_Deer"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Great_Depths_Worm.png",
+              "title": "Great Depths Worm",
+              "url": "https://dontstarve.wiki.gg/wiki/Great_Depths_Worm"
+            }
+          ]
+        },
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": "base_game:balatro_machine",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/JIMBO.png",
+              "title": "JIMBO",
+              "url": "https://dontstarve.wiki.gg/wiki/JIMBO"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Hound_Mound%2FDST.png",
+              "title": "Hound Mound/DST",
+              "url": "https://dontstarve.wiki.gg/wiki/Hound_Mound/DST"
+            },
+            {
+              "entityId": "base_game:winter_tree",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Winter%27s_Feast_Tree.png",
+              "title": "Winter's Feast Tree",
+              "url": "https://dontstarve.wiki.gg/wiki/Winter%27s_Feast_Tree"
+            }
+          ]
+        },
+        {
+          "chance": "0.02%",
+          "context": "( )",
+          "quantity": "3",
+          "sources": [
+            {
+              "entityId": "base_game:tumbleweed",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Tumbleweed.png",
+              "title": "Tumbleweed",
+              "url": "https://dontstarve.wiki.gg/wiki/Tumbleweed"
+            }
+          ]
+        },
+        {
+          "chance": "10%",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": "base_game:hotspring",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Hot_Spring_Glass.png",
+              "title": "Hot Spring",
+              "url": "https://dontstarve.wiki.gg/wiki/Hot_Spring_Glass"
+            }
+          ]
+        },
+        {
+          "chance": "5%",
+          "context": "( )",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": null,
+              "title": "Earthquake",
+              "url": "https://dontstarve.wiki.gg/wiki/Earthquake"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": "base_game:redgem",
+      "iconUrl": null,
+      "title": "Red Gem/DST",
+      "url": "https://dontstarve.wiki.gg/wiki/Red_Gem/DST"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 220039,
   "plainText": "Don't Starve\nTogether\nRed Gem\nFood Info\n5\n10\n0\nElemental\n(non-survivor food)\nObject Info\n40\nSource\nDropped by\n(20%)\n()\n()\n()\n(0.02% x3)\n10%\nEarthquake (5%)\nCrafting\nWandering TraderWilson\nDescription\nRetains the color of red.\nx3\nFilters\nTier\nDescription\nTransmute Blue Gems into Red Gems.\n×2 ( only)\nFilters\n(for ).\nMiscellaneous\n\"redgem\"\n“It sparkles with inner warmth.”\n–Wilson\n“So pretty!”\n–Willow\n“Pretty rock.”\n–Wolfgang\n“Red like my heart's blood.”\n–Wendy\n“IT IS SLIGHTLY WARM”\n–WX-78\n“It is warm.”\n–Wickerbottom\n“I see within it the fiery death of a thousand trees.”\n–Woodie\n“Red brings fire.”\n–Maxwell\n“It is höt tö the töuch.”\n–Wigfrid\n“It feels warm, even on the coldest nights.”\n–Webber\n“A deep fire burns within.”\n–Warly\n“Red Shiny”\n–Wormwood\n“Glitter doesn't really appeal to me.”\n–Winona\n“Deepest red, from golems bled.”\n–Wortox\n“It pretty and warm.”\n–Wurt\n“I think this gem might be magic.”\n–Walter\n“It's amazing how many gems you can find just lying around here.”\n–Wanda\nThe Red Gem is an Item used to craft several Magical items. It can be used to craft the Fire Staff, Night Light, Life Giving Amulet, and Purple Gem.\nRed Gems can be obtained from Graves, from Tumbleweeds, as a drop from Red Hounds, from Earthquakes and Stalagmites in Caves, and from Ancient Statues, Broken Clockworks, and Ornate Chests in Ruins.\nRed Gems have a 0.02% chance to be dropped by Tumbleweeds and a 5% chance to drop from certain Stalagmites.\nThe Dragonfly drops 2 Red Gems upon death. Red Gem Deer also drops one of them if killed or if Klaus is killed.\nRed Gems can be crafted by Wilson if he has the \"Transmute Gems I\" skill.\nUsage[edit | edit source]\nRed Gems can be inserted into Winona's G.E.M.erator to power it.\n×2\n×2\n×8\n×2\n×3\n×2\n×2\n×10\n×2\n×4\n×2\n×2\n×2\n×2\n×2\nGallery[edit | edit source]\nOld Red Gem texture\nMedal red emoji from official Klei Discord server.\nOriginal HD icon from Bonus Materials from CD Don't Starve.\nIcon used as emoji for Official Klei Discord.\nResourcesCraftable ItemsFood\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items\nView or edit this template\nDon't Starve Together Craftable Items\nRegular Filters\nSurvivor Items\nWilson\nWillow\nWolfgang\nWendy\nWX-78\nWickerbottom\nWoodie\nWes\nMaxwell\nWigfrid\nWebber\nWarly\nWortox\nWormwood\nWinona\nWurt\nWalter\nWanda\nTools\nLight Sources\nPrototypers & Stations\nRefined Materials\nWeapons\nArmor\nClothing\nHealing\nMagic\nDecorations\nStructures\nStorage Solutions\nCooking\nFood & Gardening\nFishing\nSeafaring\nBeefalo Riding\nWinter Items\nSummer Items\nRain Gear\nCrafting Station Filters\nSpecial Event\nAncient Pseudoscience\nCarpentry\nCartography\nCritters\nCelestial\nBrightsmithy\nShadowcraft\nFabrication\nBottle Exchange\nCombrining Filter\nTea Brewing Filter\nSculptures\nSeasonings\nTrading\nTrading Hutch\nOfferings\nCawnival Creation\nTrinket Trove\nMad Science\nWinter's Feast Cooking\nSanctum Smithy Filter\nCustom Course Shack Filter\nBy TypeBy Crock Pot Value\nView or edit this template\nFood and Edible Items (by Food Type)\nVeggie\nSeeds\nMeat\nGoodies\nGeneric\nHorrible\nRoughage\nElementals\nBurnt\nRaw\nGears\nGold Dust\nBerry\nWood\nNitre\nLunar Shards\nView or edit this template\nFood and Edible Items (by Food Value)\nMeats\nFishes\nVegetables\nFruits\nMonster Food\nEggs\nDairy\nSweetener\nFrozen\nInedibles\nMagic\nFat\nSeed\nJellyfish\nBone\nFilter\nAntihistamine\nDecoration\nBug\nNo Value Food",
   "recipes": [],
@@ -35,6 +216,7 @@
     "timestamp": "2026-06-09T15:15:58Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Ngọc Đỏ là Vật phẩm dùng để chế tạo một số vật phẩm Phép thuật. Nó có thể được sử dụng để chế tạo Gậy Lửa, Đèn ngủ, Bùa ban sự sống và Ngọc tím.</p>",
   "title": "Red Gem/DST",
   "wikitext": "{{Navbutton/Separation}}\n{{Object Infobox\n|hpRestored = 10\n|hungerRestored = 5\n|sanityRestored = 0\n|foodType =[[Elemental]] [[File:Elemental.png|32px|link=Elemental]]<br>(non-survivor food)\n|image = Red Gem Dropped.png\n|icon = File:Red Gem.png\n|droppedBy = {{pic32|Red Hound}} (20%) {{pic32|Ornate Chest}} {{pic32|Geode Fruit}}<br>{{pic24|Grave}} ({{pic24|Shovel}})<br>{{Pic24|Stalagmite}} {{Pic24|StalagmiteTall}} {{Pic24|Ancient Statue}} ({{pic24|Pickaxe}})<br>{{pic32|Broken Clockworks}} {{pic24|Ancient Pseudoscience Station}} {{Pic32|Sunken Chest}} ({{pic24|Hammer}})<br>{{pic32|Dragonfly}} {{pic24|Red Gem Deer}} {{Pic32|Great Depths Worm}}<br> {{pic32|JIMBO}} {{pic32|Hound Mound/DST}} {{pic24|Winter's Feast Tree}}<br>{{pic24|Tumbleweed}} (0.02% x3)<br>{{pic32|Hot Spring Glass|Hot Spring}} 10% <br>[[Earthquake]] (5%)\n|stack = 40\n|spawnCode = \"redgem\"\n\n\n|crafting_infobox =\n<tabber>\nWandering Trader=\n{{Craft Infobox\n|craft_desctiption =''Retains the color of red.''\n|crafting_text = {{Pic32|Pig Skin}}x3 \n|tier_text = {{Pic32|Wandering Trader}}\n|filter      = {{Pic32|Trading Filter}}\n}}\n|-|\nWilson=\n{{Craft Infobox\n|filter = {{Pic32|Wilson Filter}}\n|ingredient1 = Blue Gem\n|multiplier1 = 2 ({{Pic|28|Wilson Portrait|Wilson}} only)\n|craft_desctiption =''Transmute Blue Gems into Red Gems.''\n|skill = Transmute Gems I\n|skillOwner = Wilson}}\n</tabber>\n\n\n}}\n{{Quotes\n|wilson = It sparkles with inner warmth.\n|willow = So pretty!\n|wolfgang = Pretty rock.\n|wendy = Red like my heart's blood.\n|wx78 = IT IS SLIGHTLY WARM\n|wickerbottom = It is warm.\n|woodie = I see within it the fiery death of a thousand trees.\n|maxwell = Red brings fire.\n|wigfrid = It is höt tö the töuch.\n|webber = It feels warm, even on the coldest nights.\n|winona = Glitter doesn't really appeal to me.\n|warly = A deep fire burns within.\n|wortox = Deepest red, from golems bled.\n|wormwood = Red Shiny\n|wurt = It pretty and warm.\n|walter = I think this gem might be magic.\n|wanda = It's amazing how many gems you can find just lying around here.\n|choose = woodie\n}}\n\n\nThe '''Red Gem''' is an [[Item]] used to craft several [[Magic]]al items. It can be used to craft the [[Fire Staff]], [[Night Light]], [[Life Giving Amulet]], and [[Purple Gem]].\n\nRed Gems can be obtained from [[Grave]]s, from [[Tumbleweed]]s, as a drop from [[Red Hound]]s, from [[Earthquake]]s and [[Stalagmite]]s in [[Caves]], and from [[Ancient Statue]]s, [[Broken Clockworks]], and [[Ornate Chest]]s in [[Ruins]]. \n\nRed Gems have a 0.02% chance to be dropped by [[Tumbleweed]]s and a 5% chance to drop from certain [[Stalagmite]]s.\n\nThe [[Dragonfly]] drops 2 Red Gems upon death. Red [[Gem Deer]] also drops one of them if killed or if [[Klaus]] is killed. \n\nRed Gems can be crafted by Wilson if he has the \"[[Transmute Gems I]]\" skill.\n\n== {{Pic|32|Icon Tools}} Usage ==\nRed Gems can be inserted into [[Winona's G.E.M.erator]] to power it.\n\n{{Recipe\n|item1 = Red Gem\n|item2 = Blue Gem\n|tool = Prestihatitator\n|result = Purple Gem\n}}\n{{Recipe\n|item1 = Red Gem\n|item2 = Nightmare Fuel\n|count2 = 2\n|item3 = Spear\n|tool = Shadow Manipulator\n|result = Fire Staff\n}}\n{{Recipe\n|item1 = Red Gem\n|item2 = Nightmare Fuel\n|count2 = 2\n|item3 = Gold Nugget\n|count3 = 8\n|tool = Prestihatitator\n|result = Night Light\n}}\n{{Recipe\n|item1 = Red Gem\n|item2 = Nightmare Fuel\n|count2 = 2\n|item3 = Gold Nugget\n|count3 = 3\n|tool = Prestihatitator\n|result = Life Giving Amulet\n}}\n{{Recipe\n|item1 = Red Gem\n|item2 = Papyrus\n|count2 = 2\n|tool = Shadow Manipulator\n|result = The End is Nigh\n|character = Wickerbottom\n}}\n{{Recipe\n|item1 = Red Gem\n|count1 = 2\n|item2 = Charcoal\n|count2 = 10\n|item3 = Scales\n|tool = Blueprint (rare)\n|result = Scaled Furnace\n}}\n{{Recipe\n|item2 = Cratered Moonrock\n|item1 = Red Gem\n|tool = Hand\n|result = Red Moonlens\n}}\n{{Recipe\n|item1 = Red Gem\n|count1 = 1\n|item2 = Thulecite\n|count2 = 2\n|item3 = Twigs\n|count3 = 1\n|result = Firebell\n|character = Wolfgang\n|skill = Dumbbell Developer\n}}\n{{Recipe\n|item1 = Red Gem\n|count1 = 1\n|item2 = Bio Data\n|count2 = 4\n|tool = Bio Scanalyzer\n|result = Thermal Circuit\n|character = WX-78}}\n{{Recipe\n|item1 = Red Gem\n|item2 = Time Pieces\n|item3 = Marble\n|count3 = 2\n|result = Ageless Watch\n|character = Wanda}}\n{{Recipe\n|item1 = Red Gem\n|count1 = 2\n|result = Blue Gem\n|resultcount = 1\n|character = Wilson\n|skill = Transmute Gems I}}\n{{Recipe\n|item5 = Yellow Gem\n|item2 = Orange Gem\n|item3 = Green Gem\n|item4 = Purple Gem\n|item1 = Red Gem\n|item6 = Blue Gem\n|result = Iridescent Gem\n|character = Wilson\n|skill = Transmute Gems III}}\n{{Recipe\n|item1 = Red Gem\n|item3 = Empty Bottle (DST)\n|item2 = Marble\n|count2 = 2\n|result =Soul Jar\n|character = Wortox\n|skill = Soul Jar (Skill)\n}}\n{{Recipe\n|item1 = Red Gem\n|item2 = Thulecite\n|count2 = 2\n|item3 = Nightmare Fuel\n|count3 = 2\n|item4 = Blue Gem\n|result = Thulecite Slingshot Frame\n|character = Walter\n|skill = Advanced Frames\n}}\n{{Recipe\n|item1 = Red Gem\n|count1 = 1\n|item2 = Gears\n|count2 = 1\n|result = Backup Chassis\n|skill = Cold Standby I\n|character = WX-78\n}}\n\n== {{Pic|32|Blueprint}} Gallery ==\n<gallery captionalign=\"center\" hideaddbutton=\"true\">\nCzerwone kryształy.png|Old Red Gem texture\nRed Gem emoji from official Klei Discord server.png|Medal red emoji from official Klei Discord server.\nCD redgem.png|Original HD icon from Bonus Materials from [[CD Don't Starve]].\nRed Gem 128x128.png|Icon used as emoji for Official Klei Discord.\n</gallery>\n\n<tabber>\nResources=\n{{Resources}}\n|-|\nCraftable Items=\n{{Craftable Items and Structures on DST}}\n|-|\nFood=\n{{Food}}\n</tabber>\n[[vi:Ngọc Đỏ]]\n[[Category:Naturally Spawning Objects]]\n[[Category:Items]]\n[[Category:Gems]]\n[[Category:Mob Dropped Items]]\n[[Category:Minerals]]\n[[Category:Resources]]\n[[Category:Boss Dropped Items]]\n[[Category:Non-Flammable]]"
 }

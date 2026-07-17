@@ -15,6 +15,47 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ancient_Pseudoscience_Station.png",
+              "title": "Ancient Pseudoscience Station",
+              "url": "https://dontstarve.wiki.gg/wiki/Ancient_Pseudoscience_Station"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Broken_Pseudoscience_Station.png",
+              "title": "Broken Pseudoscience Station",
+              "url": "https://dontstarve.wiki.gg/wiki/Broken_Pseudoscience_Station"
+            },
+            {
+              "entityId": "base_game:mound",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Grave.png",
+              "title": "Grave",
+              "url": "https://dontstarve.wiki.gg/wiki/Grave"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Air Unfreshener",
+      "url": "https://dontstarve.wiki.gg/wiki/Air_Unfreshener"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 188266,
   "plainText": "Air Unfreshener\nObject Info\n40\nSource\nDropped by\nMiscellaneous\n\"trinket_25\"\nExclusive to:\n“It smells kind of stale.”\n–Wilson\n“I stuck one down Wolfgang's unitard when he wasn't looking. Haha.”\n–Willow\n“Smell like laundry.”\n–Wolfgang\n“It smells of decay and death.”\n–Wendy\n“I HAVE NO NOSE BUT I'M SURE I SMELL GREAT ALREADY”\n–WX-78\n“What an unpleasant scent.”\n–Wickerbottom\n“I already smell like pine and woodchips, according to Lucy.”\n–Woodie\n“The strongman's wardrobe is filled to the brim with these, judging from the odor.”\n–Maxwell\n“Perhaps the stench will drive the enemy away.”\n–Wigfrid\n“It's stinky.”\n–Webber\n“It's not a very pleasant smell.”\n–Warly\n“Little friend?”\n–Wormwood\n“Ha! Nasty!”\n–Winona\n“A lovely scent upon the breeze!”\n–Wortox\n“How get tree so small and flat?”\n–Wurt\n“It doesn't even smell like a real pine tree!”\n–Walter\n“It smells like pine needles. Dead, rotten pine needles.”\n–Wanda\nThe Air Unfreshener can be obtained by trading with the King of the Merms in exchange for Fishes.\nWhen given to the Antlion as tribute, this trinket delays its rage by 0.33 days.\nThe Air Unfreshener can be spawned into the game with the code \"trinket_25\".\n×2\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -25,6 +66,7 @@
     "timestamp": "2026-07-11T01:12:18Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Chất khử mùi không khí có thể thu được bằng cách giao dịch với Vua Người Cá để đổi lấy Cá.</p>",
   "title": "Air Unfreshener",
   "wikitext": "{{Object Infobox\n|icon = Air Unfreshener.png\n|image = Air Unfreshener Dropped.png\n|name = Air Unfreshener\n|spawnCode = \"trinket_25\"\n|droppedBy = {{Pic|32|Ancient Pseudoscience Station}}{{Pic|32|Broken Pseudoscience Station}}{{Pic|32|Grave}}\n|stack=40}}{{Exclusivity|Don't Starve Together}}\n{{Quotes\n|wilson = It smells kind of stale.\n|willow = I stuck one down Wolfgang's unitard when he wasn't looking. Haha. <!-- Old Quote?: I bet it smells even worse if you burn it. -->\n|wolfgang = Smell like laundry.\n|wendy = It smells of decay and death.\n|wx78 = I HAVE NO NOSE BUT I'M SURE I SMELL GREAT ALREADY\n|wickerbottom = What an unpleasant scent.\n|woodie = I already smell like pine and woodchips, according to Lucy.\n|maxwell = The strongman's wardrobe is filled to the brim with these, judging from the odor.\n|wigfrid = Perhaps the stench will drive the enemy away.\n|webber = It's stinky.\n|winona = Ha! Nasty!\n|warly = It's not a very pleasant smell.\n|wortox = A lovely scent upon the breeze!\n|wormwood = Little friend?\n|wurt = How get tree so small and flat?\n|walter = It doesn't even smell like a real pine tree!\n|wanda = It smells like pine needles. Dead, rotten pine needles.\n|choose = wilson\n}}\nThe '''Air Unfreshener''' can be obtained by trading with the [[King of the Merms]] in exchange for [[Fishes]].\n\nWhen given to the Antlion as tribute, this trinket delays its rage by 0.33 days.\n\nThe Air Unfreshener can be spawned into the game with the code <code>\"trinket_25\"</code>.\n\n{{Recipe\n|item = Air Unfreshener\n|gold = yes\n|result = Gold Nugget\n|resultcount = 2\n}}\n{{Recipe\n|item = Air Unfreshener\n|tool = Antlion\n|result = Desert Stone\n}}\n{{Resources}}"
 }

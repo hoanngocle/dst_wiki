@@ -26,6 +26,41 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Slotmachine.png",
+              "title": "Slotmachine",
+              "url": "https://dontstarve.wiki.gg/wiki/Slotmachine"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Steamer_Trunk.png",
+              "title": "Steamer Trunk",
+              "url": "https://dontstarve.wiki.gg/wiki/Steamer_Trunk"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Tropical Parasol",
+      "url": "https://dontstarve.wiki.gg/wiki/Tropical_Parasol"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 164388,
   "plainText": "Exclusive to:\nTropical Parasol\n\"Posh & portable tropical protection.\"\n2 days\n×4 ×3 ×6\nTab\nTier\nAlways available\nEquipable\n50% resistance\n120\n+2/min\nDoes not stack\nPerk\nProtects against wetness and overheating.\nDropped by\n\"palmleaf_umbrella\"\n“My hair looks good wet... it's when it dries that's the problem.”\n–Wilson\n“It's so nice!”\n–Willow\n“I do not like tiny umbrella.”\n–Wolfgang\n“The sun beats down.”\n–Wendy\n“PALMY MODERATE STRENGTH PROTECTIVE SCREEN”\n–WX-78\n“A leafy parasol that will provide moderate protection.”\n–Wickerbottom\n“I think I did a pretty good job on this 'breller.”\n–Woodie\n“It serves its purpose.”\n–Maxwell\n“It provides a modicum of protection from the elements.”\n–Wagstaff\n“I dislike plants, but I dislike wet armör möre.”\n–Wigfrid\n“It won't keep us from playing in puddles!”\n–Webber\n“My own pint-sized palm tree.”\n–Walani\n“Singing, not in the rain!”\n–Warly\n“I's a pirate wit' an umbrella.”\n–Woodlegs\n“WILBA STAY'TH DRY 'NEATH”\n–Wilba\n“Rain Taker made of friend hair”\n–Wormwood\n“A portable tree to stand under.”\n–Wheeler\nThe Tropical Parasol is the Shipwrecked version of the Pretty Parasol. It is also found in the Survival Tab, is always available to craft, but instead of using Cut Grass, it requires 3 Palm Leaves to craft. Similar to the Pretty Parasol, it is an easier to craft replacement for the Umbrella.\nWhile equipped, it provides protection against Wetness and Overheating, and slowly restores Sanity. After it is crafted, it will slowly perish over time whether or not it is equipped. Unlike the Pretty Parasol, it cannot be used as Fuel.\nThere is a chance to acquire this item while spending Dubloons at the Slot Machine.\nGallery[edit | edit source]\nWilson holding a Tropical Parasol.\nA Tropical Parasol dropped on the ground.\nTools and WeaponsCraftable Items\nView or edit this template\nDon't Starve Tools and Weapons\nEquipped Tools\nUnequipped Tools\nLight\nBooks\nCircuits\nBattle Calls\nWatches\nWeapons\nSlingshot Parts\nThrowables\nStaffs\nAmulets\nBackpacks\nClothing\nStage Costumes\nArmor\nDSTDSRoGSWHam\nView or edit this template\nDon't Starve Together Craftable Items\nRegular Filters\nSurvivor Items\nWilson\nWillow\nWolfgang\nWendy\nWX-78\nWickerbottom\nWoodie\nWes\nMaxwell\nWigfrid\nWebber\nWarly\nWortox\nWormwood\nWinona\nWurt\nWalter\nWanda\nTools\nLight Sources\nPrototypers & Stations\nRefined Materials\nWeapons\nArmor\nClothing\nHealing\nMagic\nDecorations\nStructures\nStorage Solutions\nCooking\nFood & Gardening\nFishing\nSeafaring\nBeefalo Riding\nWinter Items\nSummer Items\nRain Gear\nCrafting Station Filters\nSpecial Event\nAncient Pseudoscience\nCarpentry\nCartography\nCritters\nCelestial\nBrightsmithy\nShadowcraft\nFabrication\nBottle Exchange\nCombrining Filter\nTea Brewing Filter\nSculptures\nSeasonings\nTrading\nTrading Hutch\nOfferings\nCawnival Creation\nTrinket Trove\nMad Science\nWinter's Feast Cooking\nSanctum Smithy Filter\nCustom Course Shack Filter\nView or edit this template\nDon't Starve Craftable Items\nTools\nLight\nSurvival\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nAncient\nBooks\nTinkering\nView or edit this template\nDon't Starve: Reign of Giants Craftable Items\nTools\nLight\nSurvival\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nAncient\nBooks\nTinkering\nView or edit this template\nDon't Starve Shipwrecked and Volcano Craftable Items\nTools\nLight\nNautical\nSurvival\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nVolcanic\nBooks\nTinkering\nView or edit this template\nDon't Starve Hamlet Craftable Items\nTools\nLight\nTreasure Hunting\nSurvival\nNautical\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nGreen Thumb\nBooks\nTinkering\nCity Planning\nRenovate\nFloors\nShelves\nPlantholders\nColumns\nWall Papers\nHanging Lamps\nOrnaments\nChairs\nHome Kits\nDoors\nWindows\nRugs\nLamps\nTables",
   "recipes": [],
@@ -36,6 +71,7 @@
     "timestamp": "2024-05-19T16:19:16Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Dù Che Nhiệt Đới là phiên bản Shipwrecked của Dù Đẹp. Nó cũng được tìm thấy trong Thẻ Sinh Tồn, luôn có sẵn để chế tạo, nhưng thay vì sử dụng Cỏ Cắt, nó cần 3 Lá Cọ để chế tạo. Tương tự như Pretty Parasol, nó dễ dàng chế tạo hơn để thay thế cho Umbrella.</p>",
   "title": "Tropical Parasol",
   "wikitext": "{{Exclusivity|Shipwrecked}}\n{{Item Infobox\n|equipslot=hands\n|waterResistance = 50% resistance\n|overheatingResistance = 120\n|sanitydrain= +2/min\n|ingredient1 = Twigs\n|multiplier1 = 4\n|ingredient2 = Palm Leaf\n|multiplier2 = 3\n|ingredient3 = Petals\n|multiplier3 = 6\n|tab = Survival\n|tier = 0\n|spawnCode = \"palmleaf_umbrella\"\n|spoil = 2 days\n|perk = Protects against wetness and overheating.\n|droppedBy = {{Pic|20|Slotmachine}} {{Pic32|Steamer Trunk}}\n|stack = Does not stack\n|description = Posh & portable tropical protection.}}\n{{Quotes\n|wilson=My hair looks good wet... it's when it dries that's the problem.\n|willow=It's so nice!\n|wolfgang=I do not like tiny umbrella.\n|wendy=The sun beats down.\n|wx78=PALMY MODERATE STRENGTH PROTECTIVE SCREEN\n|wickerbottom=A leafy parasol that will provide moderate protection.\n|woodie=I think I did a pretty good job on this 'breller.\n|maxwell=It serves its purpose.\n|wagstaff=It provides a modicum of protection from the elements.\n|wigfrid=I dislike plants, but I dislike wet armör möre.\n|webber=It won't keep us from playing in puddles!\n|walani=My own pint-sized palm tree.\n|warly=Singing, not in the rain!\n|woodlegs=I's a pirate wit' an umbrella.\n|wilba=WILBA STAY'TH DRY 'NEATH\n|wormwood=Rain Taker made of friend hair\n|wheeler=A portable tree to stand under.\n|choose=woodie}}\nThe '''Tropical Parasol''' is the ''[[Don't Starve: Shipwrecked|Shipwrecked]]'' version of the [[Pretty Parasol]]. It is also found in the [[Survival Tab]], is always available to craft, but instead of using [[Cut Grass]], it requires 3 [[Palm Leaf|Palm Leaves]] to craft. Similar to the Pretty Parasol, it is an easier to craft replacement for the [[Umbrella]].\n\nWhile equipped, it provides protection against [[Wetness]] and [[Overheating]], and slowly restores [[Sanity]]. After it is crafted, it will slowly perish over time whether or not it is equipped. Unlike the [[Pretty Parasol]], it cannot be used as [[Fuel]].\n\nThere is a chance to acquire this item while spending [[Dubloons]] at the [[Slot Machine]].\n\n{{Clear}}\n=={{Pic|32|Blueprint}} Gallery==\n<gallery captionalign=\"center\" hideaddbutton=\"true\">\nTropical Parasol wielded by Wilson screenshot.jpg|[[Wilson]] holding a Tropical Parasol.\nDroppedTropicalParasol.png|A Tropical Parasol dropped on the ground.\n</gallery>\n<tabber>\nTools and Weapons=\n{{Tools and Weapons}}\n|-|\nCraftable Items=\n{{Craftable Items|tool}}\n</tabber>\n[[Category:Equipable Items]]\n[[Category:Sanity Boost]]\n[[Category:Water Resistant]]\n[[Category:Perishables]]\n[[Category:Science]]\n[[Category:Survival Tab]]\n[[Category:Flammable Objects]]"
 }

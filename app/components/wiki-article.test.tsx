@@ -155,7 +155,12 @@ describe("WikiArticle", () => {
         json: async () => ({
           ...detail,
           normalized: {
-            schema_version: 1,
+            schema_version: 2,
+            subject: {
+              title: "Nightmare Fuel",
+              url: "https://dontstarve.wiki.gg/wiki/Nightmare_Fuel",
+              entityId: null,
+            },
             dropTable: {
               rows: [
                 {
@@ -181,7 +186,7 @@ describe("WikiArticle", () => {
                     entityId: "base_game:nightlight",
                   },
                   resultAmount: 1,
-                  nightmareFuelAmount: 2,
+                  subjectAmount: 2,
                   ingredients: [],
                   station: "Prestihatitator",
                   dlc: null,

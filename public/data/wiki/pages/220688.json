@@ -18,6 +18,100 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "12.5%",
+          "context": "( )",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Hound.png",
+              "title": "Hound",
+              "url": "https://dontstarve.wiki.gg/wiki/Hound"
+            }
+          ]
+        },
+        {
+          "chance": "—",
+          "context": "( )",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Red_Hound.png",
+              "title": "Red Hound",
+              "url": "https://dontstarve.wiki.gg/wiki/Red_Hound"
+            }
+          ]
+        },
+        {
+          "chance": "—",
+          "context": "( )",
+          "quantity": "2",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Blue_Hound.png",
+              "title": "Blue Hound",
+              "url": "https://dontstarve.wiki.gg/wiki/Blue_Hound"
+            }
+          ]
+        },
+        {
+          "chance": "—",
+          "context": "( )",
+          "quantity": "3",
+          "sources": [
+            {
+              "entityId": "base_game:houndmound",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Hound_Mound.png",
+              "title": "Hound Mound",
+              "url": "https://dontstarve.wiki.gg/wiki/Hound_Mound"
+            }
+          ]
+        },
+        {
+          "chance": "1%",
+          "context": "( )",
+          "quantity": "3",
+          "sources": [
+            {
+              "entityId": "base_game:tumbleweed",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Tumbleweed.png",
+              "title": "Tumbleweed",
+              "url": "https://dontstarve.wiki.gg/wiki/Tumbleweed"
+            }
+          ]
+        },
+        {
+          "chance": "—",
+          "context": "( )",
+          "quantity": "1-3",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Warg.png",
+              "title": "Warg",
+              "url": "https://dontstarve.wiki.gg/wiki/Warg"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": "base_game:houndstooth",
+      "iconUrl": null,
+      "title": "Hound's Tooth/DST",
+      "url": "https://dontstarve.wiki.gg/wiki/Hound%27s_Tooth/DST"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 220688,
   "plainText": "Don't Starve\nTogether\nHound's Tooth\nObject Info\n40\nSource\nDropped by\n(12.5%)\n(×1) (×2) (×3)\n(1% ×3) (×1-3)\nCrafting\nDescription\nTransmute Bone Shards into a Hounds Tooth.\n×2 ( only)\nFilters\n(for ).\nMiscellaneous\n\"houndstooth\"\n“It's sharp!”\n–Wilson\n“It's sharp. I like it!”\n–Willow\n“Puppy tooth!”\n–Wolfgang\n“Pulled out by the root.”\n–Wendy\n“MASTICATING EDGE”\n–WX-78\n“Made of calcium and brimstone.”\n–Wickerbottom\n“It's a beaut.”\n–Woodie\n“It could be used for fashion.”\n–Maxwell\n“A töken öf a successful cönquest.”\n–Wigfrid\n“It's the perfect tooth to gnash.”\n–Webber\n“Better to lose a tooth than your tongue!”\n–Warly\n“Sharp. Ouch!”\n–Wormwood\n“Sure hope no one comes back for it.”\n–Winona\n“You cannot compete with my fangs, no, no.”\n–Wortox\n“Big chomper.”\n–Wurt\n“They left a souvenir!”\n–Walter\n“I could have been eaten!”\n–Wanda\nA Hound's Tooth is a resource that is obtained by killing Hounds, Red Hounds, and Blue Hounds. Hound Mounds, once destroyed, will also drop three Hounds' Teeth.\nAside from waiting for periodic Hound attacks, ways to acquire Hounds' Teeth includes visiting a Walrus Camp (in Winter), locating a Hound Mound and fighting the Hounds that spawn, destroying Tumbleweeds and hammering Bones in the Desert, or tracking and killing a Varg.\nHound's Tooth can be crafted by Wilson if he has unlocked Transmute Icky III in his Skill Tree. It requires 2 Bone Shards to be crafted in this way. Wilson with said Skill can also use 2 Hound's Teeth to craft 1 Bone Shards.\nThis item can be used to craft a Dapper Vest, Blow Dart, Sewing Kit, and Tooth Trap. It can be used as ammo for Howlitzer.\nContents\n1 Usage\n2 Tips\n3 Trivia\n4 Gallery\nUsage[edit | edit source]\n×8\n×6\n×2\n×2\n×8\n×4\n×2\n×2\nTips[edit | edit source]\nA player can farm Hound's Teeth by trapping a Varg in a walled enclosure (ideally Stone Walls, since Red Hounds cannot set them on fire). It will attract endless Hounds, which can be dispatched with a nearby array of Tooth Traps. The Hounds will be attracted by Monster Meat. Lure one into the traps using yourself as bait and it will drop Monster Meat, baiting the rest of the Hounds into the traps as well. The dropped Hound's Teeth can be used to replenish the Tooth Traps, making the farm largely self-sufficient. It's recommended to only farm for Hound's Teeth in Winter and Spring, as Blue Hounds are guaranteed to drop two Hound's Teeth, whereas a Red Hound will only drop one.\nTrivia[edit | edit source]\nAccording to Wickerbottom, Hound's Teeth contain brimstone, also known as sulfur. In folklore, sulfur is often associated with demons, implying that the in-game Hounds are Hellhounds.\nGallery[edit | edit source]\nOriginal HD icon from Bonus Materials from CD Don't Starve.\nResourcesCraftable Items\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items\nView or edit this template\nDon't Starve Together Craftable Items\nRegular Filters\nSurvivor Items\nWilson\nWillow\nWolfgang\nWendy\nWX-78\nWickerbottom\nWoodie\nWes\nMaxwell\nWigfrid\nWebber\nWarly\nWortox\nWormwood\nWinona\nWurt\nWalter\nWanda\nTools\nLight Sources\nPrototypers & Stations\nRefined Materials\nWeapons\nArmor\nClothing\nHealing\nMagic\nDecorations\nStructures\nStorage Solutions\nCooking\nFood & Gardening\nFishing\nSeafaring\nBeefalo Riding\nWinter Items\nSummer Items\nRain Gear\nCrafting Station Filters\nSpecial Event\nAncient Pseudoscience\nCarpentry\nCartography\nCritters\nCelestial\nBrightsmithy\nShadowcraft\nFabrication\nBottle Exchange\nCombrining Filter\nTea Brewing Filter\nSculptures\nSeasonings\nTrading\nTrading Hutch\nOfferings\nCawnival Creation\nTrinket Trove\nMad Science\nWinter's Feast Cooking\nSanctum Smithy Filter\nCustom Course Shack Filter",
   "recipes": [
@@ -49,6 +143,7 @@
     "timestamp": "2026-06-09T15:20:16Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Răng Chó Săn là tài nguyên có được bằng cách giết Chó Săn, Chó Săn Đỏ và Chó Săn Xanh. Gò Chó Săn, một khi bị phá hủy, cũng sẽ rơi ra ba Răng Chó Săn.</p>",
   "title": "Hound's Tooth/DST",
   "wikitext": "{{Navbutton/Separation}}\n{{Object Infobox\n|craft_desctiption = ''Transmute Bone Shards into a Hounds Tooth.''\n|image = File:Hound's Tooth Dropped.png\n|icon = Hound's Tooth.png\n|droppedBy = {{pic|26|Hound}} (12.5%)\n{{pic|26|Red Hound}} (&times;1) \n{{pic|26|Blue Hound}} (&times;2) \n{{pic|26|Hound Mound}} (&times;3)<br>\n{{pic|24|Tumbleweed}} (1% &times;3) \n{{pic|26|Warg}} (&times;1-3)\n|stack = 40\n|spawnCode = \"houndstooth\"\n|filter = {{Pic32|Wilson Filter}}\n|ingredient1 = Bone Shards\n|multiplier1 = 2 ({{Pic|28|Wilson Portrait|Wilson}} only)\n|skill = Transmute Icky III\n|skillOwner = Wilson\n}}\n\n{{Quotes\n|wilson = It's sharp!\n|willow = It's sharp. I like it!\n|wolfgang = Puppy tooth!\n|wendy = Pulled out by the root.\n|wx78 = MASTICATING EDGE\n|wickerbottom = Made of calcium and brimstone.\n|woodie = It's a beaut.\n|maxwell = It could be used for fashion.\n|wigfrid = A töken öf a successful cönquest.\n|webber = It's the perfect tooth to gnash.\n|winona = Sure hope no one comes back for it.\n|warly = Better to lose a tooth than your tongue!\n|wortox = You cannot compete with my fangs, no, no.\n|wormwood = Sharp. Ouch!\n|wurt = Big chomper.\n|walter = They left a souvenir!\n|wanda = I could have been eaten!\n|choose = wickerbottom\n}}\n\nA '''Hound's Tooth''' is a resource that is obtained by killing [[Hound]]s, [[Red Hound]]s, and [[Blue Hound]]s. [[Hound Mound]]s, once destroyed, will also drop three Hounds' Teeth. \n\nAside from waiting for periodic Hound attacks, ways to acquire Hounds' Teeth includes visiting a [[Walrus Camp]] (in [[Winter]]), locating a [[Hound Mound]] and fighting the Hounds that spawn, destroying [[Tumbleweed]]s and hammering [[Bones]] in the [[Desert]], or tracking and killing a [[Varg]].\n\nHound's Tooth can be crafted by [[Wilson]] if he has unlocked [[Transmute Icky III]] in his [[Insight|Skill Tree]]. It requires 2 [[Bone Shards]] to be crafted in this way. Wilson with said Skill can also use 2 Hound's Teeth to craft 1 Bone Shards.\n\nThis item can be used to craft a [[Dapper Vest]], [[Blow Dart]], [[Sewing Kit]], and [[Tooth Trap]]. It can be used as ammo for [[Howlitzer]].\n\n=={{pic|32|Icon Tools}} Usage==\n{{Recipe\n|item1 = Hound's Tooth\n|count1 = 8\n|item2 = Silk\n|count2 = 6\n|tool = Alchemy Engine\n|result = Dapper Vest}}\n\n{{Recipe\n|item1 = Hound's Tooth\n|item2 = Rope\n|item3 = Log\n|tool = Alchemy Engine\n|result = Tooth Trap}}\n\n{{Recipe\n|item1 = Hound's Tooth\n|item2 = Azure Feather\n|item3 = Cut Reeds\n|count3 = 2\n|tool = Science Machine\n|result = Blow Dart}}\n\n{{Recipe\n|item1 = Hound's Tooth\n|count1 = 2\n|item2 = Silk\n|count2 = 8\n|item3 = Log\n|tool = Alchemy Engine\n|result = Sewing Kit}}\n\n{{Recipe\n|item1 = Hound's Tooth\n|count1 = 4\n|item2 = Monster Lasagna\n|tool = Rock Den\n|result = Vargling}}\n\n{{Recipe\n|item1 = Hound's Tooth\n|count1 = 1\n|item2 = Bio Data\n|count2 = 2\n|tool = Bio Scanalyzer\n|result = Gastrogain Circuit\n|character = WX-78}}\n\n{{Recipe\n|item1= Hound's Tooth\n|count1= 2\n|skill = Transmute Icky III\n|result = Bone Shards\n|character= Wilson\n}}\n\n=={{Pic32|Prototype}} Tips==\n*A player can farm Hound's Teeth by trapping a [[Varg]] in a walled enclosure (ideally [[Wall|Stone Walls]], since Red Hounds cannot set them on fire). It will attract endless Hounds, which can be dispatched with a nearby array of [[Tooth Trap]]s. The Hounds will be attracted by [[Monster Meat]]. Lure one into the traps using yourself as bait and it will drop Monster Meat, baiting the rest of the Hounds into the traps as well. The dropped Hound's Teeth can be used to replenish the Tooth Traps, making the farm largely self-sufficient. It's recommended to only farm for Hound's Teeth in [[Seasons/Winter|Winter]] and [[Seasons/Spring|Spring]], as Blue Hounds are guaranteed to drop two Hound's Teeth, whereas a Red Hound will only drop one.\n\n=={{pic|32|Placeholder}} Trivia==\n* According to [[Wickerbottom]], Hound's Teeth contain brimstone, also known as sulfur. In folklore, sulfur is often associated with demons, implying that the in-game Hounds are [[Wikipedia:Hellhound|Hellhounds]].\n\n=={{Pic|32|Blueprint}} Gallery==\n<gallery>\nCD houndstooth.png|Original HD icon from Bonus Materials from [[CD Don't Starve]].\n</gallery>\n<tabber>\nResources=\n{{Mob Dropped Items}}\n|-|\nCraftable Items=\n{{Craftable Items and Structures on DST}}\n</tabber>\n[[vi:Nanh Chó Săn]]\n[[Category:Non-Flammable]]"
 }

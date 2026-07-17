@@ -16,6 +16,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Celestial_Scion.png",
+              "title": "Celestial Scion",
+              "url": "https://dontstarve.wiki.gg/wiki/Celestial_Scion"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Wagstaff Items",
+      "url": "https://dontstarve.wiki.gg/wiki/Wagstaff_Items"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 227933,
   "plainText": "This content is available only after activating Lunar Rift and defeating Celestial Scion\nWagstaff Items are items that dropped by Grainy Transmission when the Celestial Scion is killed for the first time.\nGlove[edit | edit source]\nGlove\nObject Info\nDoes not stack\nSource\nDropped by\nMiscellaneous\n\"wagstaff_item_1\"\n“Strange, this glove is not a projection.”\n–Wilson\n“Why does a glove give me the creeps? Burn it!”\n–Willow\n“Glove is real? Wolfgang confused.”\n–Wolfgang\n“A single glove left behind... Sigh.”\n–Wendy\n“SOLID MATTER DETECTED”\n–WX-78\n“This glove should not be real and yet it is.”\n–Wickerbottom\n“Yeah, Luce. The glove is as real as you or me.”\n–Woodie\n“So the glove is no longer an illusion.”\n–Maxwell\n“He hath left his gauntlet in öur realm.”\n–Wigfrid\n“We can touch the glove!”\n–Webber\n“The glove is... solid?”\n–Warly\n“Can touch hand shirt!”\n–Wormwood\n“Hm, bossman's glove... it's real.”\n–Winona\n“The glove is on the physical plane? I must have truly gone insane!”\n–Wortox\n“So what? Me real too! Glurgh.”\n–Wurt\n“This glove is real, Woby! Can you believe it?”\n–Walter\n“How did this glove come to be?”\n–Wanda\nThe Glove is a Wagstaff Item that dropped by Grainy Transmission when the Celestial Scion is killed for the first time. It can be hung on the Hermit Home and Winter's Feast Tree.\nClipboard[edit | edit source]\nClipboard\nObject Info\nDoes not stack\nSource\nDropped by\nMiscellaneous\n\"wagstaff_item_2\"\n“This clipboard is... real.”\n–Wilson\n“It doesn't make sense! Burn it!”\n–Willow\n“Clipboard is not strange projection? Strange.”\n–Wolfgang\n“How can it be real?”\n–Wendy\n“SOLID MATTER DETECTED”\n–WX-78\n“It is no longer a projection.”\n–Wickerbottom\n“That is an actual real live clipboard.”\n–Woodie\n“His clipboard is here. Odd.”\n–Maxwell\n“These runes hath taken physical förm.”\n–Wigfrid\n“Why isn't it a projection anymore? We don't undertand.”\n–Webber\n“Why can I touch this?”\n–Warly\n“Board friend real”\n–Wormwood\n“I can't believe those are his actual notes.”\n–Winona\n“The clipboard is real, I said with a squeal! Hyuyu!”\n–Wortox\n“Board real? Me real bored! Flort.”\n–Wurt\n“Just because it's not a projection doesn't mean you have permission to chew on it, Wobes!”\n–Walter\n“It's no longer a projection.”\n–Wanda\nThe Clipboard is a Wagstaff Item that dropped by Grainy Transmission when the Celestial Scion is killed for the first time. Currently, it has no functional use.\nGallery[edit | edit source]\nUnused version of Glove\nHung Glove\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -26,6 +55,7 @@
     "timestamp": "2026-04-28T16:26:56Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Nội dung này chỉ có sau khi kích hoạt Lunar Rift và đánh bại Celestial Scion</p>",
   "title": "Wagstaff Items",
   "wikitext": "{{Post-Boss Content|Celestial Scion}}\n\n'''Wagstaff Items''' are items that dropped by [[Grainy Transmission]] when the [[Celestial Scion]] is killed for the first time.\n\n{{clear}}\n== {{Pic|32|Glove}} Glove ==\n{{Object Infobox\n|name = Glove\n|image = Glove Dropped.png\n|icon = Glove.png\n|droppedBy = {{Pic32|Celestial Scion}}\n|stack = Does not stack\n|spawnCode = \"wagstaff_item_1\"\n}}\n\n{{Quotes\n|wilson = Strange, this glove is not a projection.\n|willow = Why does a glove give me the creeps? Burn it!\n|wolfgang = Glove is real? Wolfgang confused.\n|wendy = A single glove left behind... Sigh.\n|wx78 = SOLID MATTER DETECTED\n|wickerbottom = This glove should not be real and yet it is.\n|woodie = Yeah, Luce. The glove is as real as you or me.\n|maxwell = So the glove is no longer an illusion.\n|wigfrid = He hath left his gauntlet in öur realm.\n|webber = We can touch the glove!\n|winona = Hm, bossman's glove... it's real.\n|warly = The glove is... solid?\n|wortox = The glove is on the physical plane? I must have truly gone insane!\n|wormwood = Can touch hand shirt!\n|wurt = So what? Me real too! Glurgh.\n|walter = This glove is real, Woby! Can you believe it?\n|wanda = How did this glove come to be?\n|choose = wormwood\n}}\n\nThe '''Glove''' is a Wagstaff Item that dropped by [[Grainy Transmission]] when the [[Celestial Scion]] is killed for the first time. It can be hung on the [[Hermit Home]] and [[Winter's Feast Tree]].\n\n{{clear}}\n== {{Pic|32|Clipboard}} Clipboard ==\n{{Object Infobox\n|name = Clipboard\n|image =Clipboard Dropped.png\n|icon = Clipboard.png\n|droppedBy = {{Pic32|Celestial Scion}}\n|stack = Does not stack\n|spawnCode = \"wagstaff_item_2\"\n}}\n\n{{Quotes\n|wilson = This clipboard is... real.\n|willow = It doesn't make sense! Burn it!\n|wolfgang = Clipboard is not strange projection? Strange.\n|wendy = How can it be real?\n|wx78 = SOLID MATTER DETECTED\n|wickerbottom = It is no longer a projection.\n|woodie = That is an actual real live clipboard.\n|maxwell = His clipboard is here. Odd.\n|wigfrid = These runes hath taken physical förm.\n|webber = Why isn't it a projection anymore? We don't undertand.\n|winona = I can't believe those are his actual notes.\n|warly = Why can I touch this?\n|wortox = The clipboard is real, I said with a squeal! Hyuyu!\n|wormwood = Board friend real\n|wurt = Board real? Me real bored! Flort.\n|walter = Just because it's not a projection doesn't mean you have permission to chew on it, Wobes!\n|wanda = It's no longer a projection.\n|choose = woodie\n}}\n\nThe '''Clipboard''' is a Wagstaff Item that dropped by [[Grainy Transmission]] when the [[Celestial Scion]] is killed for the first time. Currently, it has no functional use.\n\n{{clear}}\n== [[File:Blueprint.png|32px]] Gallery ==\n<gallery>\nGlove Dropped 2.png|Unused version of Glove\nGlove Hung.png|Hung Glove\n</gallery>\n{{Resources}}"
 }

@@ -28,6 +28,61 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Packim_Baggims.png",
+              "title": "Packim Baggims",
+              "url": "https://dontstarve.wiki.gg/wiki/Packim_Baggims"
+            }
+          ]
+        },
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Pugalisk.png",
+              "title": "Pugalisk",
+              "url": "https://dontstarve.wiki.gg/wiki/Pugalisk"
+            }
+          ]
+        },
+        {
+          "chance": "—",
+          "context": "(Trawl Net)",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": null,
+              "title": "Ocean",
+              "url": "https://dontstarve.wiki.gg/wiki/Ocean"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Spoiled Fish",
+      "url": "https://dontstarve.wiki.gg/wiki/Spoiled_Fish"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 95716,
   "plainText": "Don't Starve\nTogether\nSpoiled Fish\nMob Info\nDrops\n×2 ()\nFood Info\nGeneric\nObject Info\n40\nSource\nDropped by\nOcean ()\nMiscellaneous\n\"spoiled_fish\"\nExclusive to:\n“I'm not terribly curious about the smell.”\n–Wilson\n“Gross.”\n–Willow\n“Is good no more.”\n–Wolfgang\n“Farewell, chum.”\n–Wendy\n“ALL LIFE DIES AND THEN SMELLS”\n–WX-78\n“That fish matter is becoming a biohazard.”\n–Wickerbottom\n“I think it's time to throw this out.”\n–Woodie\n“I believe I should dispose of this.”\n–Maxwell\n“Not an experiment I'm willing to undergo.”\n–Wagstaff\n“Yöu smell öf yöur failure.”\n–Wigfrid\n“It's no good to anyone now.”\n–Webber\n“Gag material!”\n–Walani\n“Such a shame...”\n–Warly\n“Smells like th'devil hisself made wind.”\n–Woodlegs\n“MMM... SOMETHING ROTTEN FOR WILBA'S BELLY”\n–Wilba\n“Smells good. Mmmmm...”\n–Wormwood\n“Mmm... smells like my home cooking.”\n–Wheeler\nSpoiled Fish is an item introduced in the Shipwrecked DLC. Dead Dogfish and Dead Swordfish will turn into Spoiled Fish instead of Rot if left to spoil. It is also possible to pick one up in a Trawl Net. Giving Packim Baggims a Dead Dogfish or a Dead Swordfish will result in it spitting out a Spoiled Fish. Spoiled Fish can be Hammered to get 2 Bone Shards.\nIn the Hamlet DLC, Spoiled Fish is dropped upon killing the Pugalisk.\nTips[edit | edit source]\nIn Shipwrecked, Bone Shards stack up to 20, but Spoiled Fish stack up to 40 and each can be hammered for two Bone Shards. This makes it more space efficient to store Spoiled Fish.\nGallery[edit | edit source]\nSpoiled Fish unused texture\nBy TypeBy Crock Pot Value\nView or edit this template\nFood and Edible Items (by Food Type)\nVeggie\nSeeds\nMeat\nGoodies\nGeneric\nHorrible\nRoughage\nElementals\nBurnt\nRaw\nGears\nGold Dust\nBerry\nWood\nNitre\nLunar Shards\nView or edit this template\nFood and Edible Items (by Food Value)\nMeats\nFishes\nVegetables\nFruits\nMonster Food\nEggs\nDairy\nSweetener\nFrozen\nInedibles\nMagic\nFat\nSeed\nJellyfish\nBone\nFilter\nAntihistamine\nDecoration\nBug\nNo Value Food",
   "recipes": [],
@@ -38,6 +93,7 @@
     "timestamp": "2025-08-01T20:25:50Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Cá Thối là một vật phẩm được giới thiệu trong DLC ​​Shipwrecked. Cá Nhám Chó Chết và Cá Kiếm Chết sẽ biến thành Cá Thối thay vì Thối nếu để hư. Cũng có thể nhặt một con trong Lưới Rà . Đưa cho Packim Bagims một Cá Nhám Chết hoặc Cá Kiếm Chết sẽ khiến nó phun ra Cá Thối. Cá Thối có thể dùng Búa để lấy 2 Mảnh Xương.</p>",
   "title": "Spoiled Fish",
   "wikitext": "{{Navbutton/Separation}}\n\n{{Object Infobox\n|icon = Spoiled Fish.png\n|image = Spoiled Fish Dropped (SW).png\n|foodType = [[Generic]] {{pic|32|Generic}}\n|droppedBy = {{pic24|Packim Baggims}}<br>{{pic32|Pugalisk}}<br>[[Ocean]] ({{pic24|Trawl Net}})\n|stack=40\n|drops= {{pic24|Bone Shards}}×2 ({{pic24|Hammer}})\n|spawnCode=\"spoiled_fish\"}}\n{{Exclusivity|Shipwrecked}}\n{{Quotes\n|wolfgang=Is good no more.\n|wilson=I'm not terribly curious about the smell.\n|willow=Gross.\n|woodie=I think it's time to throw this out.\n|maxwell=I believe I should dispose of this.\n|wagstaff = Not an experiment I'm willing to undergo.\n|wendy=Farewell, chum.\n|woodlegs=Smells like th'devil hisself made wind.\n|wickerbottom=That fish matter is becoming a biohazard.\n|webber=It's no good to anyone now.\n|warly=Such a shame...\n|wx78=ALL LIFE DIES AND THEN SMELLS\n|walani=Gag material!\n|wigfrid=Yöu smell öf yöur failure.\n|wilba = MMM... SOMETHING ROTTEN FOR WILBA'S BELLY\n|wormwood = Smells good. Mmmmm...\n|wheeler = Mmm... smells like my home cooking.\n|choose=woodie}}\n'''Spoiled Fish''' is an item introduced in the ''[[Don't Starve: Shipwrecked|Shipwrecked]]'' DLC. Dead [[Dogfish]] and Dead [[Swordfish]] will turn into Spoiled Fish instead of [[Rot]] if left to spoil. It is also possible to pick one up in a [[Trawl Net]]. Giving [[Packim Baggims]] a Dead Dogfish or a Dead Swordfish will result in it spitting out a Spoiled Fish. Spoiled Fish can be [[Hammer]]ed to get 2 [[Bone Shards]].\n\nIn the ''[[Hamlet]]'' DLC, Spoiled Fish is dropped upon killing the [[Pugalisk]].\n\n== {{Pic|32|Prototype}} Tips ==\n* In ''Shipwrecked'', Bone Shards stack up to 20, but Spoiled Fish stack up to 40 and each can be hammered for two Bone Shards. This makes it more space efficient to store Spoiled Fish.\n\n== [[File:Blueprint.png|32px]] Gallery ==\n<gallery>\nSpoiled Fish unused texture.png|Spoiled Fish unused texture\n</gallery>\n\n{{clear}}\n{{Food and Edible Items}}\n__notoc__\n[[vi:Cá Thối]]\n[[Category:Shipwrecked]]\n[[Category:Items]]\n[[Category:Mob Dropped Items]]\n[[Category:Don't Starve Together]]\n[[Category:Return of Them]]"
 }

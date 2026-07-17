@@ -15,6 +15,47 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "DS",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ancient_Pseudoscience_Station_Build.png",
+              "title": "Ancient Pseudoscience Station Build",
+              "url": "https://dontstarve.wiki.gg/wiki/Ancient_Pseudoscience_Station_Build"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Broken_Pseudoscience_Station_Build.png",
+              "title": "Broken Pseudoscience Station Build",
+              "url": "https://dontstarve.wiki.gg/wiki/Broken_Pseudoscience_Station_Build"
+            },
+            {
+              "entityId": "base_game:mound",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Grave.png",
+              "title": "Grave",
+              "url": "https://dontstarve.wiki.gg/wiki/Grave"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Second-hand Dentures",
+      "url": "https://dontstarve.wiki.gg/wiki/Second-hand_Dentures"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 199918,
   "plainText": "Don't Starve\nTogether\nSecond-hand Dentures\nObject Info\n40\nSource\nDropped by\n:\nMiscellaneous\n\"trinket_10\"\nExclusive to:\n“I hope I get out of here before I need these.”\n–Wilson\n“I don't think dentures don't burn well.”\n–Willow\n“Is pearly chompers!”\n–Wolfgang\n“Another mouth to feed.”\n–Wendy\n“STOP SMILING. IT’S GROSS”\n–WX-78\n“Don't need these yet: I've still got a few teeth left.”\n–Wickerbottom\n“Choppers for old folks.”\n–Woodie\n“These are gross, and that's the tooth.”\n–Maxwell\n“Has someone lost their dental work?”\n–Wagstaff\n“A töken öf victöry.”\n–Wigfrid\n“Just like what grandpa wears!”\n–Webber\n“I might need these if I ever take a gnarly wipeout.”\n–Walani\n“Manmade masticators.”\n–Warly\n“My prayers arrr answered!”\n–Woodlegs\n“'TIS CLACKITY-CLACK”\n–Wilba\n“Chatters”\n–Wormwood\n“Treasures like this make the adventuring life worthwhile.”\n–Wheeler\n“All bite and no bark. Ha!”\n–Winona\n“Humans are so funny.”\n–Wortox\n“Hee-hee, such short stubby chompers.”\n–Wurt\n“I'm sure these will bring a smile to someone's face. Get it?”\n–Walter\n“Thankfully my teeth seem to have stayed pretty sturdy in my older years.”\n–Wanda\nThe Second-Hand Dentures has a 4.17% chance of being found when digging up a grave and can be traded to the Pig King for 2 Gold Nuggets.\nThe Second-Hand Dentures can be spawned into the game with the code \"trinket_10\".\n×2\n×7\n×3\nTrivia[edit | edit source]\nUnder the old research method, Trinkets were one of the best ways of gaining research points (80 points).\nGallery[edit | edit source]\nOriginal HD icon from Bonus Materials from CD Don't Starve.\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -25,6 +66,7 @@
     "timestamp": "2025-08-01T22:33:19Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Răng giả đã qua sử dụng có 4,17% cơ hội được tìm thấy khi đào mộ và có thể đổi cho Vua Lợn lấy 2 Vàng Thỏi.</p>",
   "title": "Second-hand Dentures",
   "wikitext": "{{Navbutton/Separation}}{{Object Infobox\n|icon = Second-hand Dentures.png\n|image = Second-hand Dentures Dropped.png\n|name = Second-hand Dentures\n|spawnCode = \"trinket_10\"\n|droppedBy ={{DS}}: {{Pic|32|Ancient Pseudoscience Station Build}}{{Pic|32|Broken Pseudoscience Station Build}}{{Pic|32|Grave}}\n|stack=40}}\n{{Exclusivity|Don't Starve|Reign of Giants|Shipwrecked|Hamlet|Don't Starve Together}}{{Quotes\n|wilson = I hope I get out of here before I need these.\n|willow = I don't think dentures don't burn well.\n|wolfgang = Is pearly chompers!\n|wendy = Another mouth to feed.\n|wx78 = STOP SMILING. IT’S GROSS\n|wickerbottom = Don't need these yet: I've still got a few teeth left.\n|woodie = Choppers for old folks.\n|maxwell = These are gross, and that's the tooth.\n|wagstaff = Has someone lost their dental work?\n|wigfrid = A töken öf victöry.\n|webber = Just like what grandpa wears!\n|walani = I might need these if I ever take a gnarly wipeout.\n|warly = Manmade masticators.\n|woodlegs = My prayers arrr answered!\n|wilba = 'TIS CLACKITY-CLACK\n|wormwood = Chatters\n|wheeler = Treasures like this make the adventuring life worthwhile.\n|winona = All bite and no bark. Ha!\n|wortox = Humans are so funny.\n|wurt = Hee-hee, such short stubby chompers.\n|walter = I'm sure these will bring a smile to someone's face. Get it?\n|wanda = Thankfully my teeth seem to have stayed pretty sturdy in my older years.\n|choose = woodie\n}}\nThe '''Second-Hand Dentures''' has a 4.17% chance of being found when digging up a grave and can be traded to the Pig King for 2 Gold Nuggets.\n\nThe Second-Hand Dentures can be spawned into the game with the code <code>\"trinket_10\"</code>.\n\n{{Recipe\n|item        = Second-hand Dentures\n|gold        = yes\n|result      = Gold Nugget\n|resultcount = 2\n}}\n{{Recipe\n|item = Second-hand Dentures\n|dubloon = yes\n|result = Dubloons\n|resultcount = 7\n|dlc = Shipwrecked\n}}\n{{Recipe\n|item = Second-hand Dentures\n|tool = Pig Collector\n|result = Oinc\n|resultcount = 3\n|dlc = Hamlet\n}}\n{{clear}}\n== {{Pic|32|Placeholder}} {{Anchor|Trivia|Trivia}} ==\n* Under the [[Research points list|old research method]], Trinkets were one of the best ways of gaining research points (80 points).\n== {{Pic|32|Blueprint}} Gallery ==\n<gallery>\nCD trinket_10.png|Original HD icon from Bonus Materials from [[CD Don't Starve]].\n</gallery>\n{{Resources}}"
 }

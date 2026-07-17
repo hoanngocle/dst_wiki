@@ -15,6 +15,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Crumpled_Package.png",
+              "title": "Crumpled Package",
+              "url": "https://dontstarve.wiki.gg/wiki/Crumpled_Package"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": "base_game:cotl_trinket",
+      "iconUrl": null,
+      "title": "Red Crown",
+      "url": "https://dontstarve.wiki.gg/wiki/Red_Crown"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 217321,
   "plainText": "Red Crown\nObject Info\n40\nSource\nDropped by\nMiscellaneous\n\"cotl_trinket\"\nExclusive to:\n“What a crowning achievement.”\n–Wilson\n“Finder's keepers.”\n–Willow\n“Is spooky crown for tiny head.”\n–Wolfgang\n“I wonder whose head it toppled from.”\n–Wendy\n“ERROR: UNABLE TO IDENTIFY POINT OF ORIGIN”\n–WX-78\n“Oh dear, did it just blink at me?”\n–Wickerbottom\n“They don't make headwear like that in Canada.”\n–Woodie\n“Not my size, sadly.”\n–Maxwell\n“A cröwn öf ill ömen.”\n–Wigfrid\n“Is it looking at us?”\n–Webber\n“What an odd little chapeau.”\n–Warly\n“Watching”\n–Wormwood\n“Awfully high-and-mighty, huh?”\n–Winona\n“Hyuyu, how tempting!”\n–Wortox\n“Crown belong to Mermfolk now!”\n–Wurt\n“I hope whoever lost it isn't missing it too much.”\n–Walter\n“A little lost, are you?”\n–Wanda\nThe Red Crown trinket was added as part of the Cult of the Lamb Crossover. It can be obtained from a Crumpled Package which can be found by fishing in the Lake at the Oasis.\nGiving a Red Crown to the Antlion will reward the player with the rare Blueprints for the Humble Lamb Idol, Gold Flooring, and Brick Flooring.\n×8\nGallery[edit | edit source]\nUnused Red Crown animation\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -25,6 +54,7 @@
     "timestamp": "2025-08-01T22:52:30Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Đồ trang sức Vương miện đỏ đã được thêm vào như một phần của Giáo phái Lamb Crossover. Nó có thể thu được từ Gói Nhàu Nát có thể tìm thấy bằng cách câu cá trong Hồ ở Ốc đảo.</p>",
   "title": "Red Crown",
   "wikitext": "{{Object Infobox\n|icon = Red Crown.png\n|image = Red Crown Dropped.png\n|name = Red Crown\n|spawnCode = \"cotl_trinket\"\n|droppedBy = {{Pic|32|Crumpled Package}}\n|stack=40}}{{Exclusivity|Don't Starve Together}}\n\n{{Quotes\n|wilson = What a crowning achievement.\n|willow = Finder's keepers.\n|wolfgang = Is spooky crown for tiny head.\n|wendy = I wonder whose head it toppled from.\n|wx78 = ERROR: UNABLE TO IDENTIFY POINT OF ORIGIN\n|wickerbottom = Oh dear, did it just blink at me?\n|woodie = They don't make headwear like that in Canada.\n|maxwell = Not my size, sadly.\n|wigfrid = A cröwn öf ill ömen.\n|webber = Is it looking at us?\n|winona = Awfully high-and-mighty, huh?\n|warly = What an odd little chapeau.\n|wortox = Hyuyu, how tempting!\n|wormwood = Watching\n|wurt = Crown belong to Mermfolk now!\n|walter = I hope whoever lost it isn't missing it too much.\n|wanda = A little lost, are you?\n|choose = maxwell\n}}\n\nThe '''Red Crown''' trinket was added as part of the [[Cult of the Lamb Crossover]]. It can be obtained from a [[Crumpled Package]] which can be found by fishing in the [[Lake]] at the Oasis.\n\nGiving a Red Crown to the [[Antlion]] will reward the player with the rare [[Blueprint]]s for the [[Humble Lamb Idol]], [[Gold Flooring]], and [[Brick Flooring]].\n{{Recipe\n|item = Red Crown\n|gold = yes\n|result = Gold Nugget\n|resultcount = 8\n}}\n{{Recipe\n|item = Red Crown\n|tool = Antlion\n|result = Blueprint (rare)\n}}\n=={{Pic32|Blueprint}} Gallery==\n<gallery type=\"slideshow\" widths=\"200\" position=\"right\" hideaddbutton=\"true\">\nRed Crown.gif|Unused Red Crown animation\n</gallery>\n{{clear}}{{Resources}}"
 }

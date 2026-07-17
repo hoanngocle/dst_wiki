@@ -23,6 +23,90 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": []
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": "base_game:cactus_flower",
+      "iconUrl": null,
+      "title": "Cactus Flower",
+      "url": "https://dontstarve.wiki.gg/wiki/Cactus_Flower"
+    },
+    "usage": {
+      "recipes": [
+        {
+          "character": null,
+          "dlc": null,
+          "ingredients": [
+            {
+              "amount": 1.5,
+              "item": {
+                "entityId": null,
+                "iconUrl": null,
+                "title": "Vegetables",
+                "url": "https://dontstarve.wiki.gg/wiki/Vegetables"
+              }
+            },
+            {
+              "amount": 1,
+              "item": {
+                "entityId": null,
+                "iconUrl": null,
+                "title": "Filler",
+                "url": "https://dontstarve.wiki.gg/wiki/Filler"
+              }
+            }
+          ],
+          "note": null,
+          "result": {
+            "entityId": null,
+            "iconUrl": null,
+            "title": "Flower Salad",
+            "url": "https://dontstarve.wiki.gg/wiki/Flower_Salad"
+          },
+          "resultAmount": 1,
+          "station": "Crock Pot",
+          "subjectAmount": 1
+        },
+        {
+          "character": null,
+          "dlc": null,
+          "ingredients": [
+            {
+              "amount": 3,
+              "item": {
+                "entityId": "base_game:silk",
+                "iconUrl": null,
+                "title": "Silk",
+                "url": "https://dontstarve.wiki.gg/wiki/Silk"
+              }
+            },
+            {
+              "amount": 3,
+              "item": {
+                "entityId": "base_game:papyrus",
+                "iconUrl": null,
+                "title": "Papyrus",
+                "url": "https://dontstarve.wiki.gg/wiki/Papyrus"
+              }
+            }
+          ],
+          "note": null,
+          "result": {
+            "entityId": "base_game:hawaiianshirt",
+            "iconUrl": null,
+            "title": "Floral Shirt",
+            "url": "https://dontstarve.wiki.gg/wiki/Floral_Shirt"
+          },
+          "resultAmount": 1,
+          "station": "Science Machine",
+          "subjectAmount": 5
+        }
+      ]
+    }
+  },
   "pageId": 111535,
   "plainText": "Don't Starve\nTogether\nExclusive to:\nCactus Flower\nFood Info\n12.5\n8\n5\nVeggie\n× 0.5\nObject Info\n3 days\nCan be Burned\n40\nMiscellaneous\n\"cactus_flower\"\n“A pretty flower from a prickly plant.”\n–Wilson\n“Yet another flower.”\n–Willow\n“Is not worth it.”\n–Wolfgang\n“Even the knife-plant has a flower. Ugh.”\n–Wendy\n“REASON FOR BARRIER”\n–WX-78\n“Reminds me of Burroughs. A favorite at the library.”\n–Wickerbottom\n“It's a wonder anything grows in this climate at all.”\n–Woodie\n“This part of the cactus is always nice.”\n–Maxwell\n“This flower would be quite edible provided I can cook it.”\n–Wagstaff\n“Beauty fröm brawn.”\n–Wigfrid\n“This part is nice.”\n–Webber\n“You ever seen anything as pretty?”\n–Walani\n“Such a pretty flower from such a prickly customer!”\n–Warly\n“Might put me eye out sniffin' ye.”\n–Woodlegs\n“'TIS PRETTY NUM NUMS.”\n–Wilba\n“Yum”\n–Wormwood\n“A nice flowery projectile.”\n–Wheeler\n“Much less prickly.”\n–Winona\n“How pretty! I fear to touch it.”\n–Wortox\n“Glurph, ugly but tasty.”\n–Wurt\n“It looks nice, but getting it was a pain.”\n–Walter\n“I'm not stopping to smell it.”\n–Wanda\nThe Cactus Flower is a Vegetable Food Item from the Reign of Giants DLC. It is obtained along with Cactus Flesh when harvesting a Cactus only during Summer. It can be consumed raw or used to make Flower Salad in a Crock Pot. It is also used to craft a Floral Shirt.\nUsage[edit | edit source]\nCannot be given directly.\n×1.5\n×5\n×3\n×3\nGallery[edit | edit source]\nIcon used as emoji for Official Klei Discord.\nBy TypeBy Crock Pot Value\nView or edit this template\nFood and Edible Items (by Food Type)\nVeggie\nSeeds\nMeat\nGoodies\nGeneric\nHorrible\nRoughage\nElementals\nBurnt\nRaw\nGears\nGold Dust\nBerry\nWood\nNitre\nLunar Shards\nView or edit this template\nFood and Edible Items (by Food Value)\nMeats\nFishes\nVegetables\nFruits\nMonster Food\nEggs\nDairy\nSweetener\nFrozen\nInedibles\nMagic\nFat\nSeed\nJellyfish\nBone\nFilter\nAntihistamine\nDecoration\nBug\nNo Value Food",
   "recipes": [],
@@ -33,6 +117,7 @@
     "timestamp": "2026-06-02T20:19:21Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Hoa Xương Rồng là một Thực Phẩm Thực Vật từ DLC Reign of Giants. Nó thu được cùng với Thịt xương rồng khi thu hoạch Xương rồng chỉ trong Mùa hè. Nó có thể được ăn sống hoặc dùng để làm Salad Hoa trong Nồi Hầm. Nó cũng được sử dụng để chế tạo Áo Sơ Mi Hoa.</p>",
   "title": "Cactus Flower",
   "wikitext": "{{Navbutton/Separation}}\n{{Exclusivity|Reign of Giants|Don't Starve Together}}\n{{Object Infobox\n|foodType = [[Veggie]] [[File:Veggie.png|32px|]]\n|icon = Cactus Flower.png\n|image= Cactus Flower Dropped.png\n|hpRestored = 8\n|foodValue = [[File:Vegetables.png|32px|link=Vegetables]] &times; 0.5\n|hungerRestored = 12.5\n|sanityRestored = 5\n|spoil = 3 days\n|stack = 40\n|canBeBurned = 1\n|spawnCode = \"cactus_flower\"}}\n{{Quotes\n|wilson = A pretty flower from a prickly plant.\n|willow = Yet another flower.\n|wolfgang = Is not worth it.\n|wendy = Even the knife-plant has a flower. Ugh.\n|wx78 = REASON FOR BARRIER\n|wickerbottom = Reminds me of Burroughs. A favorite at the library.\n|woodie = It's a wonder anything grows in this climate at all.\n|maxwell = This part of the cactus is always nice.\n|wagstaff = This flower would be quite edible provided I can cook it.\n|wigfrid = Beauty fröm brawn.\n|webber = This part is nice.\n|walani = You ever seen anything as pretty?\n|warly = Such a pretty flower from such a prickly customer!\n|woodlegs = Might put me eye out sniffin' ye.\n|wilba = 'TIS PRETTY NUM NUMS.\n|wormwood = Yum\n|wheeler = A nice flowery projectile.\n|winona = Much less prickly.\n|wortox = How pretty! I fear to touch it.\n|wurt = Glurph, ugly but tasty.\n|walter = It looks nice, but getting it was a pain.\n|wanda = I'm not stopping to smell it.\n|choose = maxwell}}\nThe '''Cactus Flower''' is a [[Vegetable]] [[Food]] [[Item]] from the ''[[Reign of Giants]]'' DLC. It is obtained along with [[Cactus Flesh]] when harvesting a [[Cactus]] only during [[Summer]]. It can be consumed raw or used to make [[Flower Salad]] in a [[Crock Pot]]. It is also used to craft a [[Floral Shirt]].\n\n=={{pic|32|Icon Tools}} Usage==\n{{Recipe\n|item=Cactus Flower\n|result=Manure\n|tool = Pig Icon\n|note = Cannot be given directly.}}\n{{Recipe\n|item1 = Cactus Flower\n|item2 = Vegetables\n|count2 = 1.5\n|item3 = Filler\n|count3 = 1\n|tool = Crock Pot\n|result = Flower Salad\n}}\n{{Recipe\n|item3=Papyrus\n|item2=Silk\n|item1=Cactus Flower\n|count1=5\n|result=Floral Shirt\n|count3 = 3\n|count2 = 3\n|tool = Science Machine}}\n== {{Pic|32|Blueprint}} Gallery ==\n<gallery captionalign=\"center\" hideaddbutton=\"true\">\nCactus Flower 128x128.png|Icon used as emoji for Official Klei Discord.\n</gallery>\n{{clear}}\n{{Food and Edible Items}}\n[[fr:Fleur de cactus]]\n[[Category:Reign of Giants]]\n[[Category:Items]]\n[[Category:Food]]\n[[Category:Healing]]\n[[Category:Sanity Boost]]\n[[Category:Resources]]\n[[Category:Summer]]"
 }

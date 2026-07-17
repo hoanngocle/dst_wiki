@@ -17,6 +17,41 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Prime_Ape.png",
+              "title": "Prime Ape",
+              "url": "https://dontstarve.wiki.gg/wiki/Prime_Ape"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Prime_Ape_Hut_Build.png",
+              "title": "Prime Ape Hut",
+              "url": "https://dontstarve.wiki.gg/wiki/Prime_Ape_Hut_Build"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Tarnished Crown",
+      "url": "https://dontstarve.wiki.gg/wiki/Tarnished_Crown"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 91671,
   "plainText": "Exclusive to:\nTarnished Crown\nDoes not stack\nPerk\nUnlocks Wilbur as a playable character.\nDropped by\n\"wilbur_crown\"\n“It's oddly monkey-sized.”\n–Wilson\n“You'd have to have a tiny little head to fit this.”\n–Willow\n“Crown is falling apart!”\n–Wolfgang\n“Monarchs must have tiny heads.”\n–Wendy\n“HEADGEAR NOT SUITED TO A DEVELOPED CRANIUM”\n–WX-78\n“Who might this have belonged to?”\n–Wickerbottom\n“Luxurious.”\n–Woodie\n“The inside is filthy.”\n–Maxwell\n“Did those simians steal this or does it belong to one of them?”\n–Wagstaff\n“I plunder what this is?”\n–Wigfrid\n“We want to wear it.”\n–Webber\n“I dig the style.”\n–Walani\n“Finally, the recognition I deserve. Does it get any bigger?”\n–Warly\n“Kinda head fits this crown?”\n–Woodlegs\n“WHEREFORE IS'T UNEASY HEAD?”\n–Wilba\n“Won't fit”\n–Wormwood\n“My head's too big. And this crown is too tarnished.”\n–Wheeler\nThe Tarnished Crown is an Item used to unlock the Shipwrecked character, Wilbur. It has a 10% chance to drop when any Prime Ape dies or any Prime Ape Hut is destroyed. The drop will not be available if Wilbur is already unlocked or a Tarnished Crown already exists in the world.\nIf Wilbur is not unlocked yet, the Soggy Monkey can be found on a Raft in the Shallow Ocean. Giving the Soggy Monkey the Tarnished Crown will unlock Wilbur. The spawn code for the Soggy Monkey is \"wilbur_unlock\".\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -27,6 +62,7 @@
     "timestamp": "2021-08-08T03:13:15Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Vương miện bị xỉn màu là một Vật phẩm dùng để mở khóa nhân vật Shipwrecked, Wilbur. Nó có 10% cơ hội rơi ra khi bất kỳ Khỉ Tiền Sử nào chết hoặc bất kỳ Lều Khỉ Tiền Sử nào bị phá hủy. Vật phẩm này sẽ không có sẵn nếu Wilbur đã được mở khóa hoặc Vương miện Xốp đã tồn tại trên thế giới.</p>",
   "title": "Tarnished Crown",
   "wikitext": "{{Exclusivity|Shipwrecked}}\n{{Item Infobox\n|stack     = Does not stack\n|perk      = Unlocks [[Wilbur]] as a playable character.\n|spawnCode = \"wilbur_crown\"\n|droppedBy = {{pic|30|Prime Ape}} {{Pic|30|Prime Ape Hut Build|Prime Ape Hut}}\n}}\n{{Quotes\n|wolfgang=Crown is falling apart!\n|wilson=It's oddly monkey-sized.\n|willow=You'd have to have a tiny little head to fit this.\n|woodie=Luxurious.\n|maxwell=The inside is filthy.\n|wagstaff=Did those simians steal this or does it belong to one of them?\n|wendy=Monarchs must have tiny heads.\n|woodlegs=Kinda head fits this crown?\n|wickerbottom=Who might this have belonged to?\n|webber=We want to wear it.\n|warly=Finally, the recognition I deserve. Does it get any bigger?\n|wx78=HEADGEAR NOT SUITED TO A DEVELOPED CRANIUM\n|walani=I dig the style.\n|wigfrid=I plunder what this is?\n|wilba=WHEREFORE IS'T UNEASY HEAD?\n|wormwood=Won't fit\n|wheeler=My head's too big. And this crown is too tarnished.\n|choose=wilson}}\nThe '''Tarnished Crown''' is an [[Item]] used to unlock the ''[[Don't Starve: Shipwrecked|Shipwrecked]]'' character, [[Wilbur]]. It has a 10% chance to drop when any [[Prime Ape]] dies or any [[Prime Ape Hut]] is destroyed. The drop will not be available if Wilbur is already unlocked or a Tarnished Crown already exists in the world. \n\nIf Wilbur is not unlocked yet, the [[Soggy Monkey]] can be found on a [[Raft]] in the [[Ocean#Shipwrecked|Shallow Ocean]]. Giving the Soggy Monkey the Tarnished Crown will unlock Wilbur. The spawn code for the Soggy Monkey is <code>\"wilbur_unlock\"</code>.\n\n{{Mob Dropped Items}}\n[[Category:Non-Flammable]]"
 }

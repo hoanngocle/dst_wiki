@@ -369,7 +369,12 @@ describe("WikiSearch", () => {
             timestamp: "2026-07-12T08:43:43Z",
           },
           normalized: {
-            schema_version: 1,
+            schema_version: 2,
+            subject: {
+              title: "Nightmare Fuel",
+              url: "https://dontstarve.wiki.gg/wiki/Nightmare_Fuel",
+              entityId: null,
+            },
             dropTable: {
               rows: [
                 {
@@ -395,7 +400,7 @@ describe("WikiSearch", () => {
                     entityId: nightLight.id,
                   },
                   resultAmount: 1,
-                  nightmareFuelAmount: 2,
+                  subjectAmount: 2,
                   ingredients: [],
                   station: "Prestihatitator",
                   dlc: null,

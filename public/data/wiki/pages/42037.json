@@ -26,6 +26,7 @@
     "timestamp": "2026-05-29T09:34:56Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Hố lửa Quagmire là một công trình được tìm thấy trong trò chơi trong sự kiện Gorge. Không giống như Hố Lửa thông thường, nó không thể dùng trực tiếp để nấu thức ăn. Thay vào đó, các Trạm nấu ăn cần được cài đặt trên đó để nấu các món ăn dành riêng cho sự kiện. Nó cần nhiên liệu như nhật ký để hoạt động.</p>",
   "title": "Quagmire Firepit",
   "wikitext": "{{Object Infobox\n|name = Fire Pit\n|image = Quagmire Firepit Build.png\n|renew = Cannot be destroyed\n}}\n{{Exclusivity|Don't Starve Together}}{{Event|The Gorge}}\n\nThe '''Quagmire Firepit''' is a structure found in the game during the Gorge event. Unlike normal [[Fire Pit/DST|Fire Pit]], it cannot be used to cook food directly. Instead, [[Cooking stations]] need to be installed on it in order to cook [[The Gorge Recipes|dishes]] exclusive to the event. It needs fuel such as logs to function.\n{{clear}}\n== {{Trivia}} Trivia ==\n* Quagmire Firepit later gets added in game as one of the [[Belongings|skin]] of [[Fire Pit/DST|Fire Pit]].\n\n\n{{The Gorge Content}}"
 }

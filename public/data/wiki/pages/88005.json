@@ -23,6 +23,41 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Slotmachine.png",
+              "title": "Slotmachine",
+              "url": "https://dontstarve.wiki.gg/wiki/Slotmachine"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/X_Marks_The_Spot.png",
+              "title": "X Marks The Spot",
+              "url": "https://dontstarve.wiki.gg/wiki/X_Marks_The_Spot"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Snakeskin Jacket",
+      "url": "https://dontstarve.wiki.gg/wiki/Snakeskin_Jacket"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 88005,
   "plainText": "Exclusive to:\nSnakeskin Jacket\nOriginal\nHamlet\n\"Stay dry and leathery.\"\n×2 ×2 ×2\n×2 ×2 ×2\nTab\nTier\n90% resistance\n60\n8 Days\nDoes not stack\nPerk\nProtects from Rain and Lightning.\nDelays freezing in Winter.\nProtects from Jellyfish electrocution.\nDropped by\n\"armor_snakeskin\"\n“How fashionable!”\n–Wilson\n“This coat makes me feel dangerous.”\n–Willow\n“Is made to show my mighty muscles.”\n–Wolfgang\n“A jacket of dead flesh. Fashionable.”\n–Wendy\n“PREVENTS HARDWARE MALFUNCTIONS FROM PRECIPITATION EVENTS”\n–WX-78\n“Fauna-inspired rainwear.”\n–Wickerbottom\n“I feel suave in it.”\n–Woodie\n“Quite dapper!”\n–Maxwell\n“The snake scale is quite water resistant.”\n–Wagstaff\n“Rain is bested!”\n–Wigfrid\n“Rain will bead off this reptilian coat.”\n–Webber\n“I guess snakes aren't so bad.”\n–Walani\n“Function, fashion, and four less living snakes.”\n–Warly\n“Leathers ta slick th'rain away.”\n–Woodlegs\n“'TIS MADE O' SLIMY UNPIG”\n–Wilba\n“Poor Squirmy”\n–Wormwood\n“I'll leave this one for a rainy day.”\n–Wheeler\nThe Snakeskin Jacket is a craftable Dress Item introduced in the Shipwrecked. It is the DLC's version of the Rain Coat. It requires 2 Snakeskins, 2 Vines, and 2 Bone Shards to craft and a Science Machine to prototype. The Sewing Kit repairs 62.5% of its durability.\nWhen worn during Rain, it protects against Wetness gain by 90%. Additionally, it insulates the player against Lightning strikes and the electric shocks of Jellyfish. It is also a tier 1 warm clothing, increasing the time a character can be without a fire during the Winter before Freezing. It has an insulation factor of 60, the same as the Rabbit Earmuffs.\nHamlet[edit | edit source]\nThe Snakeskin Jacket is also included in the Hamlet DLC, however, it has a very different appearance as Snakeskin is obtained from Vipers. It is especially useful by offering protection against Lightning strikes produced by Thunderbirds.\nTrivia[edit | edit source]\nBased on character examination quotes, the Snakeskin Jacket seems to have the same consistency of a leather jacket, explaining its mild insulation and high wetness protection.\nThe jacket appears to be sleeveless, as the characters appear to have their arms in the back, and the item itself has no sleeves.\nGallery[edit | edit source]\nWilson wearing a Snakeskin Jacket.\nWillow wearing a Snakeskin Jacket.\nWolfgang wearing a Snakeskin Jacket.\nWendy wearing a Snakeskin Jacket.\nWX-78 wearing a Snakeskin Jacket.\nWickerbottom wearing a Snakeskin Jacket.\nWoodie wearing a Snakeskin Jacket.\nWes wearing a Snakeskin Jacket.\nMaxwell wearing a Snakeskin Jacket.\nWigfrid wearing a Snakeskin Jacket.\nWebber wearing a Snakeskin Jacket.\nWalani wearing a Snakeskin Jacket.\nWarly wearing a Snakeskin Jacket.\nWilbur wearing a Snakeskin Jacket.\nWoodlegs wearing a Snakeskin Jacket.\nWilba wearing a Snakeskin Jacket.\nWormwood wearing a Snakeskin Jacket.\nWheeler wearing a Snakeskin Jacket.\nWilba wearing the Hamlet version of the Snakeskin Jacket.\nWheeler wearing the Hamlet version of the Snakeskin Jacket.\nView or edit this template\nDon't Starve Hamlet Craftable Items\nTools\nLight\nTreasure Hunting\nSurvival\nNautical\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nGreen Thumb\nBooks\nTinkering\nCity Planning\nRenovate\nFloors\nShelves\nPlantholders\nColumns\nWall Papers\nHanging Lamps\nOrnaments\nChairs\nHome Kits\nDoors\nWindows\nRugs\nLamps\nTables",
   "recipes": [],
@@ -33,6 +68,7 @@
     "timestamp": "2026-06-24T18:08:02Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Áo khoác da rắn là một Trang phục chế tạo được giới thiệu trong Shipwrecked. Đây là phiên bản DLC của Áo Mưa. Nó cần 2 Da Rắn, 2 Dây Leo và 2 Mảnh Xương để chế tạo và Máy Khoa Học để tạo nguyên mẫu. Bộ May vá sửa chữa 62,5% độ bền của nó.</p>",
   "title": "Snakeskin Jacket",
   "wikitext": "{{Exclusivity|Shipwrecked|Hamlet}}\n{{Item Infobox\n|image = <gallery>\nSnakeskin Jacket.png|Original\nSnakeskin Jacket (Hamlet).png|Hamlet\n</gallery>\n|name = Snakeskin Jacket\n|ingredient1 = Snakeskin\n|multiplier1 = 2\n|ingredient2 = Vine\n|multiplier2 = 2\n|ingredient3 = Bone Shards\n|multiplier3 = 2 {{SW|24}}<br>{{pic24|Snakeskin (Hamlet)}}×2 {{pic24|Vine}}×2 {{pic24|Bone Shards}}×2 {{Ham|24}}\n|stack = Does not stack\n|tab = Dress\n|tier = 1\n|durability = 8 Days\n|waterResistance = 90% resistance\n|freezingResistance = 60\n|perk=Protects from [[Rain]] and [[Lightning]].<br>Delays freezing in [[Winter]].<br>Protects from [[Jellyfish]] electrocution.\n|droppedBy = {{Pic|20|Slotmachine}} {{Pic32|X Marks The Spot}}\n|spawnCode=\"armor_snakeskin\"\n|description = Stay dry and leathery.}}\n{{Quotes\n|wilson = How fashionable!\n|willow = This coat makes me feel dangerous.\n|wolfgang = Is made to show my mighty muscles.\n|wendy = A jacket of dead flesh. Fashionable.\n|wx78 = PREVENTS HARDWARE MALFUNCTIONS FROM PRECIPITATION EVENTS\n|wickerbottom = Fauna-inspired rainwear.\n|woodie = I feel suave in it.\n|maxwell = Quite dapper!\n|wagstaff = The snake scale is quite water resistant.\n|wigfrid = Rain is bested!\n|webber = Rain will bead off this reptilian coat.\n|walani = I guess snakes aren't so bad.\n|warly = Function, fashion, and four less living snakes.\n|woodlegs = Leathers ta slick th'rain away.\n|warbucks = A solid mackintosh for the elements.\n|wilba = 'TIS MADE O' SLIMY UNPIG\n|wormwood = Poor Squirmy\n|wheeler = I'll leave this one for a rainy day.\n|choose=warly}}\nThe '''Snakeskin Jacket''' is a craftable [[Dress]] [[Item]] introduced in the ''[[Don't Starve: Shipwrecked|Shipwrecked]]''. It is the DLC's version of the [[Rain Coat]]. It requires 2 [[Snakeskin]]s, 2 [[Vine]]s, and 2 [[Bone Shards]] to craft and a [[Science Machine]] to prototype. The [[Sewing Kit]] repairs 62.5% of its durability.\n\nWhen worn during [[Rain]], it protects against [[Wetness]] gain by 90%. Additionally, it insulates the player against [[Lightning]] strikes and the electric shocks of [[Jellyfish]]. It is also a ''tier 1'' warm clothing, increasing the time a character can be without a fire during the [[Winter]] before [[Freezing]]. It has an [[Freezing#Mechanics|insulation factor]] of 60, the same as the [[Rabbit Earmuffs]].\n\n=={{Pic|32|Hamlet icon}} Hamlet==\nThe Snakeskin Jacket is also included in the ''[[Don't Starve: Hamlet|Hamlet]]'' DLC, however, it has a very different appearance as Snakeskin is obtained from [[Viper]]s. It is especially useful by offering protection against Lightning strikes produced by [[Thunderbird]]s. \n\n=={{pic32|Placeholder}} Trivia==\n* Based on character examination quotes, the Snakeskin Jacket seems to have the same consistency of a leather jacket, explaining its mild insulation and high wetness protection.\n* The jacket appears to be sleeveless, as the characters appear to have their arms in the back, and the item itself has no sleeves.\n\n=={{Pic32|Blueprint}} Gallery==\n<gallery >\nSnakeskin Jacket Wilson.png|[[Wilson]] wearing a Snakeskin Jacket.\nSnakeskin Jacket Willow.png|[[Willow]] wearing a Snakeskin Jacket.\nSnakeskin Jacket Wolfgang.png|[[Wolfgang]] wearing a Snakeskin Jacket.\nSnakeskin Jacket Wendy.png|[[Wendy]] wearing a Snakeskin Jacket.\nSnakeskin Jacket WX-78.png|[[WX-78]] wearing a Snakeskin Jacket.\nSnakeskin Jacket Wickerbottom.png|[[Wickerbottom]] wearing a Snakeskin Jacket.\nSnakeskin Jacket Woodie.png|[[Woodie]] wearing a Snakeskin Jacket.\nSnakeskin Jacket Wes.png|[[Wes]] wearing a Snakeskin Jacket.\nSnakeskin Jacket Maxwell.png|[[Maxwell (character)|Maxwell]] wearing a Snakeskin Jacket.\nSnakeskin Jacket Wigfrid.png|[[Wigfrid]] wearing a Snakeskin Jacket.\nSnakeskin Jacket Webber.png|[[Webber]] wearing a Snakeskin Jacket.\nSnakeskin Jacket Walani.png|[[Walani]] wearing a Snakeskin Jacket.\nSnakeskin Jacket Warly.png|[[Warly]] wearing a Snakeskin Jacket.\nSnakeskin Jacket Wilbur.png|[[Wilbur]] wearing a Snakeskin Jacket.\nSnakeskin Jacket Woodlegs.png|[[Woodlegs]] wearing a Snakeskin Jacket.\nSnakeskin Jacket Wilba.png|[[Wilba]] wearing a Snakeskin Jacket.\nSnakeskin Jacket Wormwood.png|[[Wormwood]] wearing a Snakeskin Jacket.\nSnakeskin Jacket Wheeler.png|[[Wheeler]] wearing a Snakeskin Jacket.\nSnakeskin Jacket Hamlet Wilba.png|[[Wilba]] wearing the Hamlet version of the Snakeskin Jacket.\nSnakeskin Jacket Hamlet Wheeler.png|[[Wheeler]] wearing the Hamlet version of the Snakeskin Jacket.\n</gallery>\n\n{{Craftable Items and Structures on Ham}}\n\n[[vi:Áo Khoác Da Rắn]]\n[[zh:蛇皮夹克]]\n[[Category:Shipwrecked]]\n[[Category:Equipable Items]]\n[[Category:Limited use]]\n[[Category:Dress Tab]]\n[[Category:Water Resistant]]\n[[Category:Shock Resistant]]"
 }

@@ -17,6 +17,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/No-Eyed_Deer_Horned.png",
+              "title": "No-Eyed Deer Horned",
+              "url": "https://dontstarve.wiki.gg/wiki/No-Eyed_Deer_Horned"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": "base_game:deer_antler",
+      "iconUrl": null,
+      "title": "Deer Antler",
+      "url": "https://dontstarve.wiki.gg/wiki/Deer_Antler"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 16965,
   "plainText": "Deer Antler\n1\n2\n3\n1\n2\n3\nMob Info\nDrops\n(when used)\nObject Info\nPerk\nSummon when used on .\nDoes not stack.\nSource\nDropped by\nMiscellaneous\n\"deer_antler\"\nExclusive to:\n“Was that supposed to come off?”\n–Wilson\n“It's a big, weird antler.”\n–Willow\n“Is only mighty part of fragile beast.”\n–Wolfgang\n“We have grabbed life by its horn... though I wish we hadn't.”\n–Wendy\n“I DIDN'T HAVE TO DO ANYTHING. IT FELL RIGHT OFF”\n–WX-78\n“It looks like a key, but it's quite brittle.”\n–Wickerbottom\n“Wish I still had a cabin I could mount these things in.”\n–Woodie\n“Filthy.”\n–Maxwell\n“The unicörn's hörn, in the flesh!”\n–Wigfrid\n“Haha, weird.”\n–Webber\n“It looks like a key, does it not?”\n–Warly\n“Like your branches!”\n–Wormwood\n“What am I supposed to do with this?”\n–Winona\n“I like mine better.”\n–Wortox\n“Deer horn!”\n–Wurt\n“Hey, you dropped this!”\n–Walter\n“This looks like a key piece to a puzzle...”\n–Wanda\nA Deer Antler is an Item exclusive to Don't Starve Together, introduced in A New Reign. It is dropped by the antler-type No-Eyed Deer after charging at objects such as Trees. Trying to use a Deer Antler to unlock the Loot Stash will destroy the antler, drop a Bone Shard and cause Klaus to spawn. There are three visual variants of the Deer Antler, that all function in the same way. The antler serves no other purpose than being used on the stash.\nTips[edit | edit source]\nWith a way to ward off Klaus that spawns after the shard is used on the Stash (Telelocator Staff, Using Mobs as bait, etc.) the player can insert all of their easy-to-find antlers to turn into Bone Shards, as another Klaus will not spawn if the Antler has already been used on the sack.\nTrivia[edit | edit source]\nDeer Antlers were introduced in the Winter's Feast update, alongside the Event of the same name.\nGallery[edit | edit source]\nUnused Planted Deer Antler.\nUnused Planted Deer Antler.\nUnused Planted Deer Antler.\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -27,6 +56,7 @@
     "timestamp": "2025-07-27T16:30:58Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Nhung Hươu là một Vật phẩm độc quyền của Don&#x27;t Starve Together, được giới thiệu trong A New Reign. Nó rơi ra từ Hươu Không Mắt loại gạc sau khi lao vào các vật thể như Cây cối. Cố gắng sử dụng Nhung Hươu để mở Kho Chiến Lợi Phẩm sẽ phá hủy gạc, làm rơi Mảnh Xương và khiến Klaus xuất hiện. Có ba biến thể trực quan của Nhung Hươu, tất cả đều hoạt động theo cùng một cách. Chiếc gạc không phục vụ mục đích nào khác ngoài việc được sử dụng để cất giữ.</p>",
   "title": "Deer Antler",
   "wikitext": "{{Object Infobox\n|icon = <gallery>\nDeer Antler A.png|1\nDeer Antler B.png|2\nDeer Antler C.png|3\n</gallery>\n|image = <gallery>\nDeer Antler Dropped 1.png|1\nDeer Antler Dropped 2.png|2\nDeer Antler Dropped 3.png|3\n</gallery>\n|droppedBy = {{pic|24px|No-Eyed Deer Horned}}\n|stack = Does not stack.\n|perk = Summon {{pic|32|Klaus}} when used on {{pic24|Loot Stash}}.\n|drops = {{pic|24|Bone Shards}} (when used)\n|spawnCode = \"deer_antler\"}}\n{{Exclusivity|Don't Starve Together}}\n{{Quotes\n|wilson = Was that supposed to come off?\n|willow = It's a big, weird antler.\n|wolfgang = Is only mighty part of fragile beast.\n|wendy = We have grabbed life by its horn... though I wish we hadn't.\n|wx78 = I DIDN'T HAVE TO DO ANYTHING. IT FELL RIGHT OFF\n|wickerbottom = It looks like a key, but it's quite brittle.\n|woodie = Wish I still had a cabin I could mount these things in.\n|maxwell = Filthy.\n|wigfrid = The unicörn's hörn, in the flesh!\n|webber = Haha, weird.\n|winona = What am I supposed to do with this?\n|warly = It looks like a key, does it not?\n|wortox = I like mine better.\n|wormwood = Like your branches!\n|wurt = Deer horn!\n|walter = Hey, you dropped this!\n|wanda = This looks like a key piece to a puzzle...\n|choose = wilson}}\nA '''Deer Antler''' is an [[Item]] exclusive to ''[[Don't Starve Together]]'', introduced in ''[[A New Reign]]''. It is dropped by the antler-type [[No-Eyed Deer]] after charging at objects such as [[Tree]]s. Trying to use a Deer Antler to unlock the [[Loot Stash]] will destroy the antler, drop a [[Bone Shards|Bone Shard]] and cause [[Klaus]] to spawn. There are three visual variants of the Deer Antler, that all function in the same way. The antler serves no other purpose than being used on the stash.\n\n== {{pic32|Prototype}} Tips==\n* With a way to ward off Klaus that spawns after the shard is used on the Stash ([[Telelocator Staff]], Using [[Mobs]] as bait, etc.) the player can insert all of their easy-to-find antlers to turn into [[Bone Shards]], as another Klaus will not spawn if the Antler has already been used on the sack.\n\n== {{Pic32|Placeholder}} Trivia==\n* Deer Antlers were introduced in the ''[[A New Reign#December 8th, 2016 - Winter's Feast Sneak Preview|Winter's Feast]]'' update, alongside the [[Winter's Feast|Event]] of the same name.\n\n== {{pic32|Blueprint}} Gallery==\n<gallery captionalign=\"center\" hideaddbutton=\"true\">\nDeer Antler B Planted.png|Unused Planted Deer Antler.\nDeer Antler C Planted.png|Unused Planted Deer Antler.\nDeer Antler A Planted.png|Unused Planted Deer Antler.\n</gallery>\n\n{{Mob Dropped Items}}\n[[fr:Bois de cerf]]\n[[vi:Nhung Hươu]]\n[[Category:A New Reign]]"
 }

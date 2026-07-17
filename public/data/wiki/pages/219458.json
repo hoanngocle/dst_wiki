@@ -20,6 +20,65 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "(When scared with a tail or killed)",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Grass_Tuft.png",
+              "title": "Grass Tuft",
+              "url": "https://dontstarve.wiki.gg/wiki/Grass_Tuft"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Withered_Fern.png",
+              "title": "Withered Fern",
+              "url": "https://dontstarve.wiki.gg/wiki/Withered_Fern"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ocean_Debris_Land.png",
+              "title": "Ocean Debris",
+              "url": "https://dontstarve.wiki.gg/wiki/Ocean_Debris_Land"
+            },
+            {
+              "entityId": "base_game:tumbleweed",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Tumbleweed.png",
+              "title": "Tumbleweed",
+              "url": "https://dontstarve.wiki.gg/wiki/Tumbleweed"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Grass_Gator.png",
+              "title": "Grass Gator",
+              "url": "https://dontstarve.wiki.gg/wiki/Grass_Gator"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Grass_Gekko.png",
+              "title": "Grass Gekko",
+              "url": "https://dontstarve.wiki.gg/wiki/Grass_Gekko"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": "base_game:cutgrass",
+      "iconUrl": null,
+      "title": "Cut Grass/DST",
+      "url": "https://dontstarve.wiki.gg/wiki/Cut_Grass/DST"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 219458,
   "plainText": "Don't Starve\nTogether\nCut Grass\nFood Info\n4.6875\n1\n0\nRoughage\n(non-survivor food)\nObject Info\n15 sec.\nCan be Burned\n40\nSource\nDropped by\n, , , , , (When scared with a tail or killed)\nCrafting\nDescription\nThe fiberous strands bind together.\nx2\nFilters\nTier\nMiscellaneous\n\"cutgrass\"\n“Cut grass, ready for arts and crafts.”\n–Wilson\n“Cut grass, ready for burning. Or maybe crafting.”\n–Willow\n“I made a pile of grass.”\n–Wolfgang\n“I like to kill small things.”\n–Wendy\n“PLANT MATTER”\n–WX-78\n“Some grass cuttings.”\n–Wickerbottom\n“I think I might be allergic to this.”\n–Woodie\n“The mundane stuff of the earth.”\n–Maxwell\n“I've never seen such tensile strength in a grass before!”\n–Wagstaff\n“A craftwöman's möst elemental resöurce.”\n–Wigfrid\n“We should be able to weave this, too.”\n–Webber\n“It makes a swishing sound when I walk.”\n–Walani\n“What shall I craft?”\n–Warly\n“Ye'll be helpin' Woodlegs later.”\n–Woodlegs\n“'TIS GRASS”\n–Wilba\n“Hair from friends!”\n–Wormwood\n“These are more useful when there's more of them.”\n–Wheeler\n“A fire waiting to happen.”\n–Winona\n“Oh, what I could weave!”\n–Wortox\n“It grass.”\n–Wurt\n“Look, I can make a whistle with it! PHHWEEEE!”\n–Walter\n“It's about as interesting as you'd imagine cut grass to be.”\n–Wanda\nCut Grass is a renewable resource Item harvested from Grass Tufts found naturally in the world. It can be used on numerous starter recipes and in even more advanced items when refined into Rope.\nBecause Cut Grass is needed to craft Campfires and Torches, it is a valuable early-game resource to collect. A player who does not collect cut grass on their first day may have no means for making a fire at night.\nGrass Tufts wither during Summer unless protected by an Ice Flingomatic. Cut Grass drops from all Tumbleweeds, making it renewable even if the player burns all the spawned Grass Tufts. In addition, it is also dropped by Grass Gators and Grass Gekkos (either startled or killed) and can be found in Ocean Debris.\nCut Grass is used to craft Telltale Hearts, Flares, Wardrobes and Friendly Scarecrows. Winona uses Cut Grass to craft Trusty Tapes. It is less useful as Beefalo food, restoring only 4 Health and 4.6875 Hunger.\nUsage[edit | edit source]\n×3\n×2\n×2\n×2\n×6\n×2\n×4\n×4\n×6\n×10\n×2\n×3\n×2\nWalter will craft this twice as fast.\n×4\n×2\n×4\n×12\n×6\n×3\n×3\n×3\n×2\n×3\n×4\n×6\n×3\n×40\n×3\n×16\n×4\n×4\n×2\n×3\n×4\n×3\n×3\n×3\n×2\n×3\n×3\n×2\n×5\n×2\n×2\n×4\n×4\n×4\n×3\n×4\n×4\n×8\n×2\n×3\n×3\n×6\nOnly during the Event: Hallowed Nights\n×3\n×2\n×2\n×3\n×3\n×3\n×6\n×20\nGallery[edit | edit source]\nOriginal HD icon from Bonus Materials from CD Don't Starve.\nResourcesFood\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items\nBy TypeBy Crock Pot Value\nView or edit this template\nFood and Edible Items (by Food Type)\nVeggie\nSeeds\nMeat\nGoodies\nGeneric\nHorrible\nRoughage\nElementals\nBurnt\nRaw\nGears\nGold Dust\nBerry\nWood\nNitre\nLunar Shards\nView or edit this template\nFood and Edible Items (by Food Value)\nMeats\nFishes\nVegetables\nFruits\nMonster Food\nEggs\nDairy\nSweetener\nFrozen\nInedibles\nMagic\nFat\nSeed\nJellyfish\nBone\nFilter\nAntihistamine\nDecoration\nBug\nNo Value Food",
   "recipes": [],
@@ -30,6 +89,7 @@
     "timestamp": "2026-07-14T01:34:09Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Cỏ Cắt là một loại tài nguyên có thể tái tạo được, được thu hoạch từ các Búi Cỏ được tìm thấy tự nhiên trên thế giới. Nó có thể được sử dụng trong nhiều công thức nấu ăn ban đầu và thậm chí trong các vật phẩm cao cấp hơn khi được tinh chế thành Dây.</p>",
   "title": "Cut Grass/DST",
   "wikitext": "{{Navbutton/Separation}}\n{{Object Infobox\n|image = Cut Grass Dropped.png\n|icon = Cut Grass.png\n|foodType = [[Roughage]] [[File:Roughage.png|32px|link=Roughage]]<br>(non-survivor food)\n|hpRestored     = 1\n|hungerRestored = 4.6875\n|sanityRestored = 0\n|burnTime = [[File:Light_Sources_Filter.png|32px|link=Fuel#Fire Fuel]] 15 sec.\n|stack = 40\n|droppedBy = {{Pic|24|Grass Tuft}}, {{Pic|24|Withered Fern}}, {{pic|24|Ocean Debris Land|Ocean Debris}}, {{pic|24|Tumbleweed}}, {{Pic32|Grass Gator}}, {{Pic|32|Grass Gekko}} (When scared with a tail or killed) \n|craft_desctiption =''The fiberous strands bind together.''\n|crafting_text = {{Pic32|Ash}}x2\n|tier_text = {{Pic32|Wandering Trader}}\n|filter      = {{Pic32|Trading Filter}}\n|spawnCode = \"cutgrass\"\n|canBeBurned=1}}\n{{Quotes\n|wilson = Cut grass, ready for arts and crafts.\n|willow = Cut grass, ready for burning. Or maybe crafting.\n|wolfgang = I made a pile of grass.\n|wendy = I like to kill small things.\n|wx78 = PLANT MATTER\n|wickerbottom = Some grass cuttings.\n|woodie = I think I might be allergic to this.\n|maxwell = The mundane stuff of the earth.\n|wagstaff = I've never seen such tensile strength in a grass before!\n|wigfrid = A craftwöman's möst elemental resöurce.\n|webber = We should be able to weave this, too.\n|walani = It makes a swishing sound when I walk.\n|warly = What shall I craft?\n|woodlegs = Ye'll be helpin' Woodlegs later.\n|wilba = 'TIS GRASS\n|wormwood = Hair from friends!\n|wheeler = These are more useful when there's more of them.\n|winona = A fire waiting to happen.\n|wortox = Oh, what I could weave!\n|wurt = It grass.\n|walter = Look, I can make a whistle with it! PHHWEEEE!\n|wanda = It's about as interesting as you'd imagine cut grass to be.\n|choose = wilson}}\n'''Cut Grass''' is a [[Renewable resources|renewable]] resource [[Item]] harvested from [[Grass Tuft]]s found naturally in the world. It can be used on numerous starter recipes and in even more advanced items when refined into [[Rope]].\n\nBecause Cut Grass is needed to craft [[Campfire]]s and [[Torch]]es, it is a valuable early-game resource to collect. A player who does not collect cut grass on their first day may have no means for making a fire at night.\n\nGrass Tufts wither during [[Summer]] unless protected by an [[Ice Flingomatic]]. Cut Grass drops from all [[Tumbleweed]]s, making it renewable even if the player burns all the spawned Grass Tufts. In addition, it is also dropped by [[Grass Gator]]s and [[Grass Gekko]]s (either startled or killed) and can be found in [[Ocean Debris]]. \n\nCut Grass is used to craft [[Telltale Heart]]s, [[Flare]]s, [[Wardrobe]]s and [[Friendly Scarecrow]]s. [[Winona]] uses Cut Grass to craft [[Trusty Tape]]s. It is less useful as Beefalo food, restoring only 4 Health and 4.6875 Hunger.\n\n== {{pic|32|Icon Tools}} Usage ==\n{{Recipe\n|item1 = Cut Grass\n|count1 = 3\n|item2 = Log\n|count2 = 2\n|result = Campfire}}\n\n{{Recipe\n|item1 = Cut Grass\n|count1 = 2\n|item2 = Twigs\n|count2 = 2\n|result = Torch}}\n\n{{Recipe\n|item1 = Cut Grass\n|count1 = 6\n|item2 = Twigs\n|count2 = 2\n|result = Trap}}\n\n{{Recipe\n|item1 = Cut Grass\n|count1 = 4\n|item2 = Twigs\n|count2 = 4\n|result = Backpack\n|tool = Science Machine}}\n\n{{Recipe\n|item1 = Cut Grass\n|count1 = 6\n|item2 = Rope\n|result = Straw Roll\n|tool = Science Machine}}\n\n{{Recipe\n|item1 = Cut Grass\n|count1 = 10\n|item2 = Twigs\n|count2 = 2\n|result = Grass Suit}}\n\n{{Recipe\n|item1 = Cut Grass\n|count1 = 3\n|result = Rope\n|tool = Science Machine}}\n\n{{Recipe\n|item1 = Cut Grass\n|count1 = 2\n|result = Rope\n|tool = Science Machine\n|character = walter\n|skill = Twine Twirler\n|note={{Pic24|Prototype}}[[Walter]] will craft this twice as fast.}}\n\n{{Recipe\n|item1=Cut Grass\n|count1=4\n|item2=Twigs\n|count2=2\n|result=Hay Wall\n|resultcount=4\n|tool = Science Machine}}\n\n{{Recipe\n|item1 = Cut Grass\n|count1 = 12\n|result = Straw Hat\n|tool = Science Machine}}\n\n{{Recipe\n|item3 = Rocks\n|count3 = 3\n|item2 = Twigs\n|count2 = 3\n|item1 = Cut Grass\n|count1 = 6\n|result = Hammer}}\n\n{{Recipe\n|item2 = Nitre\n|count2 = 2\n|item1 = Cut Grass\n|count1 = 3\n|result = Endothermic Fire\n|tool = Science Machine}}\n\n{{Recipe\n|item2 = Twigs\n|count2 = 4\n|item1 = Cut Grass\n|count1 = 3\n|item3 = Petals\n|count3 = 6\n|result = Pretty Parasol\n}}\n\n{{Recipe\n|item1 = Cut Grass\n|count1 = 3\n|item2 = Spider Gland\n|count2 = 1\n|item3 = Health Decrease\n|count3 = 40\n|result = Telltale Heart}}\n\n{{Recipe\n|item1 = Cut Grass\n|count1 = 3\n|item2 = Spider Gland\n|item3 = Age Decrease\n|count3 = 16\n|result = Telltale Heart\n|character = Wanda}}\n\n{{Recipe\n|item1 = Cut Grass\n|count1 = 1\n|item2 = Twigs\n|count2 = 1\n|item3 = Nitre\n|count3 = 1\n|result = Flare}}\n\n{{Recipe\n|item1= Cut Grass\n|count1 = 4\n|item2 = Twigs\n|count2 = 4\n|item3 = Nitre\n|count3 = 2\n|result = Chef Pouch\n|character = Warly}}\n\n{{Recipe\n|item1= Cut Grass\n|count1 = 3\n|item2 = Boards\n|count2 = 4\n|tool = Alchemy Engine\n|result = Wardrobe}}\n\n{{Recipe\n|item1= Cut Grass\n|count1 = 3\n|item2 = Boards\n|count2 = 3\n|item3 = Pumpkin\n|count3 = 1\n|result = Friendly Scarecrow\n|tool = Science Machine}}\n\n{{Recipe\n|item1= Cut Grass\n|count1 = 3\n|item2 = Silk\n|count2 = 1\n|result = Trusty Tape\n|character = Winona}}\n\n{{Recipe\n|item1= Cut Grass\n|count1 = 2\n|item2 = Monster Meat\n|count2 = 3\n|result = Kitschy Moose Idol\n|character = Woodie}}\n\n{{Recipe\n|item1= Cut Grass\n|count1 = 3\n|item2 = Living Log\n|count2 = 2\n|item3 = Nightmare Fuel\n|count3 = 5\n|result = Treeguard Idol\n|character = Woodie\n|skill = Treeguard Feller III}}\n\n{{Recipe\n|item2 = Beard Hair\n|count2 = 2\n|item1 = Cut Grass\n|count1 = 2\n|tool = Alchemy Engine\n|result = Beard Hair Rug}}\n\n{{Recipe\n|item1= Cut Grass\n|item2 = Petals\n|tool = Terra Firma Tamper\n|result = Grass Turf\n|resultcount = 4}}\n\n{{Recipe\n|item1= Cut Grass\n|item2 = Manure\n|tool = Terra Firma Tamper\n|result = Savanna Turf\n|resultcount = 4}}\n\n{{Recipe\n|item1= Cut Grass\n|item2 = Foliage\n|tool = Terra Firma Tamper\n|result = Slimy Turf\n|resultcount = 4}}\n\n{{Recipe\n|item3 = Boards\n|count3 = 3\n|item2 = Rot\n|count2 = 1\n|item1 = Cut Grass\n|count1 = 1\n|result = Composting Bin\n|tool = Science Machine\n}}\n\n{{Recipe\n|item2 = Boards\n|count2 = 4\n|item1 = Cut Grass\n|count1 = 4\n|result = Produce Scale\n|tool = Alchemy Engine}}\n\n{{Recipe\n|item1 = Cut Grass\n|count1 = 8\n|item2 = Twigs\n|count2 = 2\n|result = Grass Raft Kit}}\n\n{{Recipe\n|item1 = Cut Grass\n|count1 = 3\n|item2 = Kelp Fronds\n|count2 = 3\n|result = Kelp Bumper Kit}}\n\n{{Recipe\n|item1 = Cut Grass\n|count1 = 6\n|result = Candy Bag\n|note = {{Event|Hallowed Nights}}}}\n\n{{Recipe\n|item3 = Boards\n|count3 = 2\n|item2 = silk\n|count2 = 2\n|item1 = Cut Grass\n|count1 = 3\n|result = Mannequin\n|tool = Science Machine}}\n\n{{Recipe\n|item1 = Cut Grass\n|count1 = 3\n|item2 = Boards\n|result = Punching Bag\n|tool = Science Machine}}\n\n{{Recipe\n|item1 = Cut Grass\n|count1 = 3\n|item2 = Boards\n|item3 = Pure Brilliance\n|result = Bright Boxer\n|tool = Prestihatitator}}\n\n{{Recipe\n|item1 = Cut Grass\n|count1 = 3\n|item2 = Boards\n|item3 = Pure Horror\n|result = Shadow Boxer\n|tool = Prestihatitator}}\n\n{{Recipe\n|item1 = Cut Grass\n|count1 = 6\n|item2 = Rabbit\n|result = Warren Wreath\n|tool = Benevolent Rabbit King}}\n\n{{Recipe\n|item1 = Cut Grass\n|item2 = gunpowder\n|item3 = flint\n|character = walter\n|skill = Lucky Rounds \n|result = Kablooies\n|resultcount = 20}}\n\n== {{Pic|32|Blueprint}} Gallery ==\n<gallery>\nCD cutgrass.png|Original HD icon from Bonus Materials from [[CD Don't Starve]].\n</gallery>\n<tabber>\nResources=\n{{Resources}}\n|-|\nFood=\n{{Food}}\n</tabber>\n[[vi:Cỏ]]\n[[Category:Resources]]\n[[Category:Fuel]]\n[[Category:Flammable Objects]]\n[[Category:Mob Dropped Items]]\n[[Category:Mob Spawning Entities]]"
 }

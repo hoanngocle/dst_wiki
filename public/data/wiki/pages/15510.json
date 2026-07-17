@@ -15,6 +15,47 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ancient_Pseudoscience_Station_Build.png",
+              "title": "Ancient Pseudoscience Station Build",
+              "url": "https://dontstarve.wiki.gg/wiki/Ancient_Pseudoscience_Station_Build"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Broken_Pseudoscience_Station_Build.png",
+              "title": "Broken Pseudoscience Station Build",
+              "url": "https://dontstarve.wiki.gg/wiki/Broken_Pseudoscience_Station_Build"
+            },
+            {
+              "entityId": "base_game:mound",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Grave.png",
+              "title": "Grave",
+              "url": "https://dontstarve.wiki.gg/wiki/Grave"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Shoe Horn",
+      "url": "https://dontstarve.wiki.gg/wiki/Shoe_Horn"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 15510,
   "plainText": "Shoe Horn\nObject Info\n40\nSource\nDropped by\nMiscellaneous\n\"trinket_23\"\nExclusive to:\n“I can put my shoes on without help, thanks.”\n–Wilson\n“It looks like it might melt in a fire.”\n–Willow\n“Wolfgang does not know which end to blow.”\n–Wolfgang\n“I don't have a use for it.”\n–Wendy\n“THE HORN OF WHAT?”\n–WX-78\n“It reminds me of home.”\n–Wickerbottom\n“I don't need help putting my shoes on, eh?”\n–Woodie\n“I was looking for that.”\n–Maxwell\n“Nöt as useful as a battle hörn.”\n–Wigfrid\n“Are we supposed to blow on it?”\n–Webber\n“This seems shoehorned in.”\n–Warly\n“What's this?”\n–Wormwood\n“I prefer to break workboots in myself.”\n–Winona\n“Not to toot my own shoehorn, but I'm great at collecting soles!”\n–Wortox\n“Not look like a horn, florp.”\n–Wurt\n“Protect your heels!”\n–Walter\n“I'll be able to shave a few seconds off my shoe-changing time.”\n–Wanda\nWhen given to the Antlion as tribute, this trinket delays its rage by 0.33 days.\nThe Shoe Horn can be spawned into the game with the code \"trinket_23\".\n×3\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -25,6 +66,7 @@
     "timestamp": "2025-08-01T18:47:45Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Khi được trao cho Kiến Sư Tử để cống nạp, vật trang sức này sẽ làm chậm cơn thịnh nộ của nó trong 0,33 ngày.</p>",
   "title": "Shoe Horn",
   "wikitext": "{{Object Infobox\n|icon = Shoe Horn.png\n|image = Shoe Horn Dropped.png\n|name = Shoe Horn\n|spawnCode = \"trinket_23\"\n|droppedBy = {{Pic|32|Ancient Pseudoscience Station Build}}{{Pic|32|Broken Pseudoscience Station Build}}{{Pic|32|Grave}}\n|stack=40}}{{Exclusivity|Don't Starve Together}}\n{{Quotes\n|wilson = I can put my shoes on without help, thanks.\n|willow = It looks like it might melt in a fire.\n|wolfgang = Wolfgang does not know which end to blow.\n|wendy = I don't have a use for it.\n|wx78 = THE HORN OF WHAT?\n|wickerbottom = It reminds me of home.\n|woodie = I don't need help putting my shoes on, eh?\n|maxwell = I was looking for that.\n|wigfrid = Nöt as useful as a battle hörn.\n|webber = Are we supposed to blow on it?\n|winona = I prefer to break workboots in myself.\n|warly = This seems shoehorned in.\n|wortox = Not to toot my own shoehorn, but I'm great at collecting soles!\n|wormwood = What's this?\n|wurt = Not look like a horn, florp.\n|walter = Protect your heels!\n|wanda = I'll be able to shave a few seconds off my shoe-changing time.\n|choose = wortox\n}}\nWhen given to the Antlion as tribute, this trinket delays its rage by 0.33 days.\n\nThe '''Shoe Horn''' can be spawned into the game with the code <code>\"trinket_23\"</code>.\n\n{{Recipe\n|item = Shoe Horn\n|gold = yes\n|result = Gold Nugget\n|resultcount = 3\n}}\n{{Recipe\n|item = Shoe Horn\n|tool = Antlion\n|result = Desert Stone\n}}\n{{Resources}}"
 }

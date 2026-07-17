@@ -20,6 +20,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "turf (Pitchfork)",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": null,
+              "title": "Hermit Island",
+              "url": "https://dontstarve.wiki.gg/wiki/Hermit_Island"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Shell Beach Turf",
+      "url": "https://dontstarve.wiki.gg/wiki/Shell_Beach_Turf"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 88094,
   "plainText": "Exclusive to:\nShell Beach Turf\n\"A soft patch of sand scattered with shells.\"\nObject Info\n7.5 sec.\nCan be Burned\n20\nSource\nDropped by\nHermit Island turf ()\nCrafting\n×1 ×1\nAmount produced\n4\nFilters\nTier\nMiscellaneous\n\"turf_shellbeach\"\nShell Beach Turf\nCan be Dug\nСan be planted\n“A chunk of beach.”\n–Wilson\n“The ground is boring.”\n–Willow\n“Step stones.”\n–Wolfgang\n“Some ground.”\n–Wendy\n“GROUND PARTS”\n–WX-78\n“The ground. You step on it.”\n–Wickerbottom\n“Just some ground, eh?”\n–Woodie\n“Turf.”\n–Maxwell\n“A piece öf the battlefield.”\n–Wigfrid\n“Some ground that we dug up.”\n–Webber\n“It's like an ingredient for the ground.”\n–Warly\n“Sand”\n–Wormwood\n“That's a chunk of sandy ground.”\n–Winona\n“Floor or ceiling, depending on your perspective.”\n–Wortox\n“Ground bit.”\n–Wurt\n“A patch of beach.”\n–Walter\n“Why am I wasting time staring at the ground?”\n–Wanda\n“Can be placed on dirt ground to change the type of ground.”\n-\nShell Beach Turf is one of the Turf items exclusive to Don't Starve Together, introduced in Return of Them.\nIt can be acquired by digging Shell Beach tiles on Hermit Island with a Pitchfork. The Shell Beach Turf Blueprint can be bought in the Bottle Exchange Filter for 3 Empty Bottles. It requires 1 Broken Shell and 1 Rocks to craft.\nTrivia[edit | edit source]\nThe Shell Beach Turf was introduced in the She Sells Sea Shells update.\nGallery[edit | edit source]\nShell Beach Turf texture.\nView or edit this template\nTurfs",
   "recipes": [
@@ -57,6 +86,7 @@
     "timestamp": "2025-08-01T20:15:23Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Shell Beach Turf là ​​một trong những vật phẩm Turf độc quyền của Don&#x27;t Starve Together, được giới thiệu trong Return of Them.</p>",
   "title": "Shell Beach Turf",
   "wikitext": "{{Exclusivity|Don't Starve Together}}\n{{Object Infobox\n|image = Shell Beach Turf Dropped.png\n|icon = Shell Beach Turf.png\n|canBeBurned = 1\n|description = A soft patch of sand scattered with shells.\n|stack = 20\n|numtogive = 4\n|burnTime = [[File:Light_Sources_Filter.png|32px|link=Fuel#Fire Fuel]] 7.5 sec.\n|ingredient1 = Broken Shell (DST)\n|multiplier1 = 1\n|ingredient2 = Rocks\n|multiplier2 = 1\n|tier = 11\n|filter = {{pic32|Decorations Filter}}\n|droppedBy = [[Hermit Island]] turf ({{pic24|Pitchfork}})\n|spawnCode = \"turf_shellbeach\"}}{{Turf Infobox\n|image =shell beach texture.png\n|planted = 1\n|pitchfork = 1\n}}\n{{Quotes\n|wilson = A chunk of beach.\n|willow = The ground is boring.\n|wolfgang = Step stones.\n|wendy = Some ground.\n|wx78 = GROUND PARTS\n|wickerbottom = The ground. You step on it.\n|woodie = Just some ground, eh?\n|maxwell = Turf.\n|wigfrid = A piece öf the battlefield.\n|webber = Some ground that we dug up.\n|winona = That's a chunk of sandy ground.\n|warly = It's like an ingredient for the ground.\n|wortox = Floor or ceiling, depending on your perspective.\n|wormwood = Sand\n|wurt = Ground bit.\n|walter = A patch of beach.\n|wanda = Why am I wasting time staring at the ground?\n|choose = wilson}}\n{{Scrapbook Info|Can be placed on dirt ground to change the type of ground.}}\n'''Shell Beach Turf''' is one of the [[Turfs|Turf]] items exclusive to ''[[Don't Starve Together]]'', introduced in ''[[Return of Them]]''.\n\nIt can be acquired by digging Shell Beach tiles on [[Hermit Island]] with a [[Pitchfork]]. The Shell Beach Turf [[Blueprint]] can be bought in the [[Bottle Exchange Filter]] for 3 [[Empty Bottle#Don't Starve Together|Empty Bottles]]. It requires 1 [[Broken Shell]] and 1 [[Rocks]] to craft.\n\n=={{pic|32|Placeholder}} Trivia==\n* The Shell Beach Turf was introduced in the ''[[Return of Them#She Sells Sea Shells|She Sells Sea Shells]]'' update.\n\n=={{Pic32|Blueprint}} Gallery==\n<gallery captionalign=\"center\" hideaddbutton=\"true\">\nshell beach texture.png|Shell Beach Turf texture.\n</gallery>\n\n{{Turfs}}\n\n[[vi:Shell Beach Turf]]\n[[Category:Return of Them]]\n[[Category:Decorations Filter]]"
 }

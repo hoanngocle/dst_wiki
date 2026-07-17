@@ -15,6 +15,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "DS RoG",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Flotsam.png",
+              "title": "Flotsam",
+              "url": "https://dontstarve.wiki.gg/wiki/Flotsam"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Soaked Candle",
+      "url": "https://dontstarve.wiki.gg/wiki/Soaked_Candle"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 28570,
   "plainText": "Soaked Candle\nObject Info\n40\nSource\nDropped by\n:\nMiscellaneous\n\"sunken_boat_trinket_3\"\nExclusive to:\n“Looks kinda soggy.”\n–Wilson\n“It wants to meet my lighter.”\n–Willow\n“It is the perfect amount of dampness.”\n–Wolfgang\n“It's completely drenched.”\n–Wendy\n“THIS VESSEL IS ODDLY SUITED TO FACILITATING ILLUMINATION”\n–WX-78\n“Appears well used.”\n–Wickerbottom\n“I can't imagine this having a use.”\n–Woodie\n“It has no apparent function.”\n–Maxwell\n“Was this candle burnt here, or somewhere else?”\n–Wagstaff\n“Söggy candle.”\n–Wigfrid\n“We probably can't light that.”\n–Webber\n“A wet candle in a bottle. Mega-genius!”\n–Walani\n“Not much of a candle then, is it?”\n–Warly\n“Candles and water don't mix.”\n–Woodlegs\n“'TIS ENCAS'D IN HARD SNOUT GOOP”\n–Wilba\n“Hmm...”\n–Wormwood\n“I guess it's treasure?”\n–Wheeler\nThe Soaked Candle can be snagged from Flotsam by using a Fishing Rod. It can be given to the Pig King for seven Gold Nuggets. When given a Soaked Candle, Wolly will drop seven Gold Nuggets and a Crimson Feather, tell a part of Wolly's Riddle, then fly away.\n×7\nWine Bottle Candle[edit | edit source]\nWine Bottle Candle\nObject Info\n40\nSource\nDropped by\n:\n:\nMiscellaneous\n\"trinket_22\"\nExclusive to:\n“I'm sure someone would like this.”\n–Wilson\n“It wants to meet my lighter.”\n–Willow\n“Looks much too dry.”\n–Wolfgang\n“Very DIY.”\n–Wendy\n“THIS VESSEL IS ODDLY SUITED TO FACILITATING ILLUMINATION”\n–WX-78\n“Appears well used.”\n–Wickerbottom\n“Not very useful looking.”\n–Woodie\n“Looks like something one would find at a backwater flea market.”\n–Maxwell\n“Was this candle burnt here, or somewhere else?”\n–Wagstaff\n“Söggy candle.”\n–Wigfrid\n“What was in the bottle?”\n–Webber\n“A candle in a bottle. Genius.”\n–Walani\n“Perfect for a candlelit dinner!”\n–Warly\n“Where be th'wine?”\n–Woodlegs\n“'TIS ENCAS'D IN HARD SNOUT GOOP”\n–Wilba\n“Hmm...”\n–Wormwood\n“I guess it's treasure?”\n–Wheeler\nThe Wine Bottle Candle can be obtained by fishing from Watery Graves. It looks completely identical to the Soaked Candle trinket.\n×4\n×5\n×3\nGallery[edit | edit source]\nSoaked Candle card from Wolly's Riddle.\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -25,6 +54,7 @@
     "timestamp": "2025-08-01T19:06:18Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Cây nến ngâm có thể được lấy từ Flotsam bằng cách sử dụng Cần câu. Nó có thể được trao cho Vua Lợn với giá bảy Thỏi Vàng. Khi được tặng một Cây Nến Ngâm, Wolly sẽ đánh rơi bảy Thỏi Vàng và một Lông Vũ Đỏ thẫm, kể một phần Câu đố của Wolly, rồi bay đi.</p>",
   "title": "Soaked Candle",
   "wikitext": "{{Object Infobox\n|icon = Soaked Candle.png\n|image =  Soaked Candle Dropped.png\n|name = Soaked Candle\n|spawnCode = \"sunken_boat_trinket_3\"\n|droppedBy ={{DS}}{{RoG}}: {{Pic|32|Flotsam}}\n|stack=40}}\n{{Exclusivity|Don't Starve|Reign of Giants}}\n{{Quotes\n|wilson = Looks kinda soggy.\n|willow = It wants to meet my lighter.\n|wolfgang = It is the perfect amount of dampness.\n|wendy = It's completely drenched.\n|wx78 = THIS VESSEL IS ODDLY SUITED TO FACILITATING ILLUMINATION\n|wickerbottom = Appears well used.\n|woodie = I can't imagine this having a use.\n|maxwell = It has no apparent function.\n|wagstaff = Was this candle burnt here, or somewhere else?\n|wigfrid = Söggy candle.\n|webber = We probably can't light that.\n|walani = A wet candle in a bottle. Mega-genius!\n|warly = Not much of a candle then, is it?\n|woodlegs = Candles and water don't mix.\n|wilba = 'TIS ENCAS'D IN HARD SNOUT GOOP\n|wormwood = Hmm...\n|wheeler = I guess it's treasure?\n|choose = walani\n}}<!--Careful, this is \"Soaked Candle\", not \"Wine Bottle Candle\"!-->\nThe '''Soaked Candle''' can be snagged from [[Flotsam]] by using a [[Fishing Rod]]. It can be given to the [[Pig King]] for seven [[Gold Nugget]]s. When given a Soaked Candle, [[Sunken Boat|Wolly]] will drop seven Gold Nuggets and a [[Feather|Crimson Feather]], tell a part of [[Wolly's Riddle]], then fly away.\n\n{{Recipe\n|item = Soaked Candle\n|gold = yes\n|result = Gold Nugget\n|resultcount = 7\n}}\n{{clear}}\n==Wine Bottle Candle==\n{{Object Infobox\n|icon = Soaked Candle.png\n|image =  Soaked Candle Dropped.png\n|name = Wine Bottle Candle\n|spawnCode = \"trinket_22\"\n|droppedBy ={{SW}}:{{Pic|32|Trawl Net}}<hr>{{Ham}}:{{Pic|32|Secret_Bandit_Camp}}\n|stack=40}}\n{{Exclusivity|Shipwrecked|Hamlet}}{{Quotes\n|wilson = I'm sure someone would like this.\n|willow = It wants to meet my lighter.\n|wolfgang = Looks much too dry.\n|wendy = Very DIY.\n|wx78 = THIS VESSEL IS ODDLY SUITED TO FACILITATING ILLUMINATION\n|wickerbottom = Appears well used.\n|woodie = Not very useful looking.\n|maxwell = Looks like something one would find at a backwater flea market.\n|wagstaff = Was this candle burnt here, or somewhere else?\n|wigfrid = Söggy candle.\n|webber = What was in the bottle?\n|walani = A candle in a bottle. Genius.\n|warly = Perfect for a candlelit dinner!\n|woodlegs = Where be th'wine?\n|wilba = 'TIS ENCAS'D IN HARD SNOUT GOOP\n|wormwood = Hmm...\n|wheeler = I guess it's treasure?\n|choose = woodlegs\n}}<!--Careful, this is \"Wine Bottle Candle\", not \"Soaked Candle\"!-->\nThe '''Wine Bottle Candle''' can be obtained by fishing from [[Watery Grave]]s. It looks completely identical to the [[Trinkets#Soaked Candle|Soaked Candle]] trinket.\n\n{{Recipe\n|item = Wine Bottle Candle\n|gold = yes\n|result = Gold Nugget\n|resultcount = 4\n}}\n{{Recipe\n|item = Wine Bottle Candle\n|dubloon = yes\n|result = Dubloons\n|resultcount = 5\n}}\n{{Recipe\n|item = Wine Bottle Candle\n|tool = Pig Collector\n|result = Oinc\n|resultcount = 3\n|dlc = Hamlet\n}}\n\n== {{pic32|Blueprint}} Gallery ==\n<gallery>\nWolly Departed.png|Soaked Candle card from Wolly's Riddle.\n</gallery>\n\n{{clear}}\n{{Resources}}"
 }

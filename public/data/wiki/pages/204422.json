@@ -15,6 +15,47 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ancient_Pseudoscience_Station_Build.png",
+              "title": "Ancient Pseudoscience Station Build",
+              "url": "https://dontstarve.wiki.gg/wiki/Ancient_Pseudoscience_Station_Build"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Broken_Pseudoscience_Station_Build.png",
+              "title": "Broken Pseudoscience Station Build",
+              "url": "https://dontstarve.wiki.gg/wiki/Broken_Pseudoscience_Station_Build"
+            },
+            {
+              "entityId": "base_game:mound",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Grave.png",
+              "title": "Grave",
+              "url": "https://dontstarve.wiki.gg/wiki/Grave"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Beaten Beater",
+      "url": "https://dontstarve.wiki.gg/wiki/Beaten_Beater"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 204422,
   "plainText": "Beaten Beater\nObject Info\n40\nSource\nDropped by\nMiscellaneous\n\"trinket_21\"\nExclusive to:\n“This egg beater is all bent out of shape.”\n–Wilson\n“Every time I use it the mime pretends to ride unicycle circles around me.”\n–Willow\n“Is fun to crank.”\n–Wolfgang\n“This tool has come to the end of its life.”\n–Wendy\n“A DISTANT COUSIN, PERHAPS?”\n–WX-78\n“I have an excellent meringue recipe.”\n–Wickerbottom\n“It belongs in a kitchen, not in the woods.”\n–Woodie\n“I know when I've been beaten.”\n–Maxwell\n“Cööking utensils dö nöt interest me.”\n–Wigfrid\n“Mom had one of these.”\n–Webber\n“No kitchen is complete without one.”\n–Warly\n“Hmm... Can't use it”\n–Wormwood\n“Nice and mechanical.”\n–Winona\n“I have no idea what it does.”\n–Wortox\n“Scale-less have weird inventions, florp.”\n–Wurt\n“Whoops, it got kind of bent.”\n–Walter\n“It's seen better days.”\n–Wanda\nWhen given to the Antlion as tribute, this trinket delays its rage by 0.66 days.\nThe Beaten Beater can be spawned into the game with the code \"trinket_21\".\n×5\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -25,6 +66,7 @@
     "timestamp": "2025-08-01T22:38:25Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Khi được trao cho Kiến Sư Tử để cống nạp, vật trang sức này sẽ làm chậm cơn thịnh nộ của nó trong 0,66 ngày.</p>",
   "title": "Beaten Beater",
   "wikitext": "{{Object Infobox\n|icon = Beaten Beater.png\n|image = Beaten Beater Dropped.png\n|name = Beaten Beater\n|spawnCode = \"trinket_21\"\n|droppedBy = {{Pic|32|Ancient Pseudoscience Station Build}}{{Pic|32|Broken Pseudoscience Station Build}}{{Pic|32|Grave}}\n|stack=40}}{{Exclusivity|Don't Starve Together}}\n{{Quotes\n|wilson = This egg beater is all bent out of shape.\n|willow = Every time I use it the mime pretends to ride unicycle circles around me.\n|wolfgang = Is fun to crank.\n|wendy = This tool has come to the end of its life.\n|wx78 = A DISTANT COUSIN, PERHAPS?\n|wickerbottom = I have an excellent meringue recipe.\n|woodie = It belongs in a kitchen, not in the woods.\n|maxwell = I know when I've been beaten.\n|wigfrid = Cööking utensils dö nöt interest me.\n|webber = Mom had one of these.\n|winona = Nice and mechanical.\n|warly = No kitchen is complete without one.\n|wortox = I have no idea what it does.\n|wormwood = Hmm... Can't use it\n|wurt = Scale-less have weird inventions, florp.\n|walter = Whoops, it got kind of bent.\n|wanda = It's seen better days.\n|choose = wx78\n}}\nWhen given to the Antlion as tribute, this trinket delays its rage by 0.66 days.\n\nThe '''Beaten Beater''' can be spawned into the game with the code <code>\"trinket_21\"</code>.\n\n{{Recipe\n|item = Beaten Beater\n|gold = yes\n|result = Gold Nugget\n|resultcount = 5\n}}\n{{Recipe\n|item = Beaten Beater\n|tool = Antlion\n|result = Desert Stone\n}}\n{{clear}}\n{{Resources}}"
 }

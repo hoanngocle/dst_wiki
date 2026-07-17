@@ -15,6 +15,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "SW",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Trawl_Net.png",
+              "title": "Trawl Net",
+              "url": "https://dontstarve.wiki.gg/wiki/Trawl_Net"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Ancient Vase",
+      "url": "https://dontstarve.wiki.gg/wiki/Ancient_Vase"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 3371,
   "plainText": "Ancient Vase\nObject Info\n40\nSource\nDropped by\n:\nMiscellaneous\n\"trinket_18\"\nExclusive to:\n“A relic of a bygone era!”\n–Wilson\n“I wonder if this is worth anything?”\n–Willow\n“Is broken.”\n–Wolfgang\n“A remnant of a civilization lost at sea.”\n–Wendy\n“MINUS FLOWERS”\n–WX-78\n“It is adorned with markings.”\n–Wickerbottom\n“It's broken.”\n–Woodie\n“A little superglue and it would make a lovely centerpiece.”\n–Maxwell\n“The hole prevents it from retaining any liquid.”\n–Wagstaff\n“I dön't recögnize this craftsmanship.”\n–Wigfrid\n“This is a lot older than we are.”\n–Webber\n“Old timey craftsmanship.”\n–Walani\n“I should be careful with this.”\n–Warly\n“Me don't have a taste fer delicate antiquities.”\n–Woodlegs\n“IT DOST HATH A HOLE IN'T”\n–Wilba\n“Oh. Broken”\n–Wormwood\n“Swell. Just what I always wanted.”\n–Wheeler\nThe Ancient Vase can be captured in a Trawl Net.\nIt can be spawned into the game with the code \"trinket_18\".\n×7\n×11\n×3\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -25,6 +54,7 @@
     "timestamp": "2025-08-01T18:29:40Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Bình Cổ có thể bị bắt trong Lưới Rà.</p>",
   "title": "Ancient Vase",
   "wikitext": "{{Object Infobox\n|icon = Ancient Vase.png\n|image =  .png\n|name =Ancient Vase\n|spawnCode = \"trinket_18\"\n|droppedBy ={{SW}}: {{Pic|32|Trawl Net}}\n|stack=40}}\n{{Exclusivity|Shipwrecked|Hamlet}}{{Quotes\n|wilson = A relic of a bygone era!\n|willow = I wonder if this is worth anything?\n|wolfgang = Is broken.\n|wendy = A remnant of a civilization lost at sea.\n|wx78 = MINUS FLOWERS\n|wickerbottom = It is adorned with markings.\n|woodie = It's broken.\n|maxwell = A little superglue and it would make a lovely centerpiece.\n|wagstaff = The hole prevents it from retaining any liquid.\n|wigfrid = I dön't recögnize this craftsmanship.\n|webber = This is a lot older than we are.\n|walani = Old timey craftsmanship.\n|warly = I should be careful with this.\n|woodlegs = Me don't have a taste fer delicate antiquities.\n|wilba = IT DOST HATH A HOLE IN'T\n|wormwood = Oh. Broken\n|wheeler = Swell. Just what I always wanted.\n|choose = wendy\n}}\n\nThe '''Ancient Vase''' can be captured in a [[Trawl Net]].\n\nIt can be spawned into the game with the code <code>\"trinket_18\"</code>.\n\n{{Recipe\n|item = Ancient Vase\n|gold = yes\n|result = Gold Nugget\n|resultcount = 7\n}}\n{{Recipe\n|item = Ancient Vase\n|dubloon = yes\n|result = Dubloons\n|resultcount = 11\n}}\n{{Recipe\n|item = Ancient Vase\n|tool = Pig Collector\n|result = Oinc\n|resultcount = 3\n|dlc = Hamlet\n}}\n\n{{Resources}}"
 }

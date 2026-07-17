@@ -6,7 +6,7 @@
     "Pages_with_navboxes"
   ],
   "displayTitle": "<span class=\"mw-page-title-main\">Hippopotamoose Antler</span>",
-  "html": "<div class=\"mw-content-ltr mw-parser-output\"><p><i>Exclusive to:</i> <a href=\"https://dontstarve.wiki.gg/wiki/Hamlet\" title=\"Hamlet\"><img alt=\"Hamlet icon.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Hamlet_icon.png/32px-Hamlet_icon.png?e04a83\" width=\"32\" height=\"35\"></a><br>\n</p>\n\n<p class=\"mw-empty-elt\"></p>\n\n<p>The <b>Hippopotamoose Antler</b> is a <i><a href=\"https://dontstarve.wiki.gg/wiki/Don%27t_Starve:_Hamlet\" title=\"Don&#x27;t Starve: Hamlet\">Hamlet</a></i> exclusive <a href=\"https://dontstarve.wiki.gg/wiki/Item\" class=\"mw-redirect\" title=\"Item\">Item</a> dropped by the <a href=\"https://dontstarve.wiki.gg/wiki/Hippopotamoose\" title=\"Hippopotamoose\">Hippopotamoose</a>. It can be used to craft the <a href=\"https://dontstarve.wiki.gg/wiki/Bird_Whistle\" title=\"Bird Whistle\">Bird Whistle</a>.\n</p><p>Hippopotamoose Antlers can also be traded to a <a href=\"https://dontstarve.wiki.gg/wiki/Pig_Traders/Hunter\" title=\"Pig Traders/Hunter\">Pig Hunter</a> for five <a href=\"https://dontstarve.wiki.gg/wiki/Oinc\" title=\"Oinc\">Oincs</a>.\n</p>\n<h2><span class=\"mw-headline\" id=\"Usage\"><a href=\"https://dontstarve.wiki.gg/wiki/Icon_Tools\" title=\"Icon Tools\"><img alt=\"Icon Tools.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Icon_Tools.png/32px-Icon_Tools.png?f672d4\" width=\"32\" height=\"39\"></a> Usage</span></h2>\n<table><tbody><tr><td><div class=\"icon-frame\"><div><a href=\"https://dontstarve.wiki.gg/wiki/Hippopotamoose_Antler\" title=\"Hippopotamoose Antler\"><img alt=\"Hippopotamoose Antler.png\" src=\"https://dontstarve.wiki.gg/images/Hippopotamoose_Antler.png?f1b8b1\" width=\"64\" height=\"64\"></a></div></div></td><td><div class=\"icon-frame\"><div><a href=\"https://dontstarve.wiki.gg/wiki/Platapine_Quill\" title=\"Platapine Quill\"><img alt=\"Platapine Quill.png\" src=\"https://dontstarve.wiki.gg/images/Platapine_Quill.png?af3684\" width=\"64\" height=\"64\"></a></div></div></td><td><p>×<b>3</b></p></td><td><div class=\"icon-frame\"><div><a href=\"https://dontstarve.wiki.gg/wiki/Flint\" title=\"Flint\"><img alt=\"Flint.png\" src=\"https://dontstarve.wiki.gg/images/Flint.png?aadd11\" width=\"64\" height=\"64\"></a></div></div></td><td><a href=\"https://dontstarve.wiki.gg/wiki/Science_Machine\" title=\"Science Machine\"><img alt=\"Science Machine.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Science_Machine.png/42px-Science_Machine.png?341685\" width=\"42\" height=\"42\"></a></td><td><div class=\"icon-frame\"><div><a href=\"https://dontstarve.wiki.gg/wiki/Bird_Whistle\" title=\"Bird Whistle\"><img alt=\"Bird Whistle.png\" src=\"https://dontstarve.wiki.gg/images/Bird_Whistle.png?81dc8a\" width=\"64\" height=\"64\"></a></div></div></td></tr></tbody></table>\n<table><tbody><tr><td><div class=\"icon-frame\"><div><a href=\"https://dontstarve.wiki.gg/wiki/Hippopotamoose_Antler\" title=\"Hippopotamoose Antler\"><img alt=\"Hippopotamoose Antler.png\" src=\"https://dontstarve.wiki.gg/images/Hippopotamoose_Antler.png?f1b8b1\" width=\"64\" height=\"64\"></a></div></div></td><td><a href=\"https://dontstarve.wiki.gg/wiki/Pig_Hunter\" title=\"Pig Hunter\"><img alt=\"Pig Hunter.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Pig_Hunter.png/42px-Pig_Hunter.png?e2d29f\" width=\"42\" height=\"70\"></a></td><td><div class=\"icon-frame\"><div><a href=\"https://dontstarve.wiki.gg/wiki/Oinc\" title=\"Oinc\"><img alt=\"Oinc.png\" src=\"https://dontstarve.wiki.gg/images/Oinc.png?bf1bac\" width=\"64\" height=\"64\"></a></div></div></td><td><p>×<b>5</b></p></td></tr></tbody></table>\n\n\n\n\n\n</div>",
+  "html": "<div class=\"mw-content-ltr mw-parser-output\"><p><i>Exclusive to:</i> <a href=\"https://dontstarve.wiki.gg/wiki/Hamlet\" title=\"Hamlet\"><img alt=\"Hamlet icon.png\" src=\"https://dontstarve.wiki.gg/images/thumb/Hamlet_icon.png/32px-Hamlet_icon.png?e04a83\" width=\"32\" height=\"35\"></a><br>\n</p>\n\n<p class=\"mw-empty-elt\"></p>\n\n<p>The <b>Hippopotamoose Antler</b> is a <i><a href=\"https://dontstarve.wiki.gg/wiki/Don%27t_Starve:_Hamlet\" title=\"Don&#x27;t Starve: Hamlet\">Hamlet</a></i> exclusive <a href=\"https://dontstarve.wiki.gg/wiki/Item\" class=\"mw-redirect\" title=\"Item\">Item</a> dropped by the <a href=\"https://dontstarve.wiki.gg/wiki/Hippopotamoose\" title=\"Hippopotamoose\">Hippopotamoose</a>. It can be used to craft the <a href=\"https://dontstarve.wiki.gg/wiki/Bird_Whistle\" title=\"Bird Whistle\">Bird Whistle</a>.\n</p><p>Hippopotamoose Antlers can also be traded to a <a href=\"https://dontstarve.wiki.gg/wiki/Pig_Traders/Hunter\" title=\"Pig Traders/Hunter\">Pig Hunter</a> for five <a href=\"https://dontstarve.wiki.gg/wiki/Oinc\" title=\"Oinc\">Oincs</a>.\n</p>\n",
   "images": [
     {
       "height": 64,
@@ -16,6 +16,85 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Hippopotamoose.png",
+              "title": "Hippopotamoose",
+              "url": "https://dontstarve.wiki.gg/wiki/Hippopotamoose"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Hippopotamoose Antler",
+      "url": "https://dontstarve.wiki.gg/wiki/Hippopotamoose_Antler"
+    },
+    "usage": {
+      "recipes": [
+        {
+          "character": null,
+          "dlc": null,
+          "ingredients": [
+            {
+              "amount": 3,
+              "item": {
+                "entityId": null,
+                "iconUrl": null,
+                "title": "Platapine Quill",
+                "url": "https://dontstarve.wiki.gg/wiki/Platapine_Quill"
+              }
+            },
+            {
+              "amount": 1,
+              "item": {
+                "entityId": "base_game:flint",
+                "iconUrl": null,
+                "title": "Flint",
+                "url": "https://dontstarve.wiki.gg/wiki/Flint"
+              }
+            }
+          ],
+          "note": null,
+          "result": {
+            "entityId": null,
+            "iconUrl": null,
+            "title": "Bird Whistle",
+            "url": "https://dontstarve.wiki.gg/wiki/Bird_Whistle"
+          },
+          "resultAmount": 1,
+          "station": "Science Machine",
+          "subjectAmount": 1
+        },
+        {
+          "character": null,
+          "dlc": null,
+          "ingredients": [],
+          "note": null,
+          "result": {
+            "entityId": null,
+            "iconUrl": null,
+            "title": "Oinc",
+            "url": "https://dontstarve.wiki.gg/wiki/Oinc"
+          },
+          "resultAmount": 5,
+          "station": "Pig Hunter",
+          "subjectAmount": 1
+        }
+      ]
+    }
+  },
   "pageId": 95421,
   "plainText": "Exclusive to:\nHippopotamoose Antler\n10\nDropped by\n\"hippo_antler\"\n“This ought to be of some use.”\n–Wilson\n“Yeesh. It's pretty big.”\n–Willow\n“Wolfgang get mighty antler!”\n–Wolfgang\n“It's been severed from an animal head.”\n–Wendy\n“FLESHLING ACCESSORY”\n–WX-78\n“Belongs to a Hippoptamidae Capreolinae.”\n–Wickerbottom\n“Yep. That's a big one.”\n–Woodie\n“Well, it'd make a good hat rack.”\n–Maxwell\n“The skull extension of a semiaquatic antlered animal.”\n–Wagstaff\n“A symböl öf cönquest!”\n–Wigfrid\n“Whoa! Look at how big this is!!”\n–Webber\n“Woah. It's a big one!”\n–Walani\n“It's too bad I couldn't use this to roast wieners on.”\n–Warly\n“'tis tha riggin' o' tha'beastie.”\n–Woodlegs\n“'TIS EARS O' THE BIG BEASTIE”\n–Wilba\n“Big Head Branch”\n–Wormwood\n“Maybe I could use it as a hatrack. Or a hat.”\n–Wheeler\nThe Hippopotamoose Antler is a Hamlet exclusive Item dropped by the Hippopotamoose. It can be used to craft the Bird Whistle.\nHippopotamoose Antlers can also be traded to a Pig Hunter for five Oincs.\nUsage[edit | edit source]\n×3\n×5\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -26,6 +105,7 @@
     "timestamp": "2023-05-07T13:10:23Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Nhung Hà Mã là một Vật phẩm độc quyền của Hamlet do Hà Mã đánh rơi. Nó có thể được sử dụng để chế tạo Còi Chim.</p>",
   "title": "Hippopotamoose Antler",
   "wikitext": "{{Exclusivity|Hamlet}}\n{{Item Infobox\n|droppedBy = {{pic24|Hippopotamoose}}\n|stack = 10\n|spawnCode = \"hippo_antler\"}}\n{{Quotes\n|wilson = This ought to be of some use.\n|willow = Yeesh. It's pretty big.\n|wolfgang = Wolfgang get mighty antler!\n|wendy = It's been severed from an animal head.\n|wx78 = FLESHLING ACCESSORY\n|wickerbottom = Belongs to a Hippoptamidae Capreolinae.\n|woodie = Yep. That's a big one.\n|maxwell = Well, it'd make a good hat rack.\n|wagstaff = The skull extension of a semiaquatic antlered animal.\n|wigfrid = A symböl öf cönquest!\n|webber = Whoa! Look at how big this is!!\n|walani = Woah. It's a big one!\n|warly = It's too bad I couldn't use this to roast wieners on.\n|woodlegs = 'tis tha riggin' o' tha'beastie.\n|wilba = 'TIS EARS O' THE BIG BEASTIE\n|wormwood = Big Head Branch\n|wheeler = Maybe I could use it as a hatrack. Or a hat.\n|choose=maxwell}}\nThe '''Hippopotamoose Antler''' is a ''[[Don't Starve: Hamlet|Hamlet]]'' exclusive [[Item]] dropped by the [[Hippopotamoose]]. It can be used to craft the [[Bird Whistle]].\n\nHippopotamoose Antlers can also be traded to a [[Pig Traders/Hunter|Pig Hunter]] for five [[Oinc|Oincs]].\n\n== {{Pic|32|Icon Tools}} Usage==\n{{Recipe\n|item1 = Hippopotamoose Antler\n|item2 = Platapine Quill\n|count2 = 3\n|item3 = Flint\n|tool = Science Machine\n|result = Bird Whistle}}\n{{Recipe\n|item1 = Hippopotamoose Antler\n|tool = Pig Hunter\n|result = Oinc\n|resultcount = 5\n|dlc = }}\n{{Mob Dropped Items}}\n[[vi:Hippopotamoose Antler]]"
 }

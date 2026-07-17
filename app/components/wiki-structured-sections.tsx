@@ -16,13 +16,6 @@ const WIKI_PAGE_BASE = "https://dontstarve.wiki.gg/wiki/";
 const WIKI_FILE_BASE = `${WIKI_PAGE_BASE}Special:Redirect/file/`;
 const STRUCTURED_ICON_SIZE = 48;
 
-const NIGHTMARE_FUEL_REFERENCE: NormalizedWikiReference = {
-  title: "Nightmare Fuel",
-  url: `${WIKI_PAGE_BASE}Nightmare_Fuel`,
-  entityId: null,
-  iconUrl: `${WIKI_FILE_BASE}Nightmare_Fuel.png`,
-};
-
 const STATION_ICON_FILES: Readonly<Record<string, string>> = {
   "Ancient Pseudoscience Station": "AncientAltar.png",
 };
@@ -433,8 +426,8 @@ export function WikiStructuredSections({
                         <td className="px-4 py-2 sm:px-5">
                           <div className="flex min-w-0 flex-wrap items-center gap-1">
                             <WikiUsageIcon
-                              reference={NIGHTMARE_FUEL_REFERENCE}
-                              amount={recipe.nightmareFuelAmount}
+                              reference={sections.subject}
+                              amount={recipe.subjectAmount}
                               itemsById={itemsById}
                               itemsByTitle={itemsByTitle}
                               onSelectItem={onSelectItem}

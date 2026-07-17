@@ -15,6 +15,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "DS RoG",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Flotsam.png",
+              "title": "Flotsam",
+              "url": "https://dontstarve.wiki.gg/wiki/Flotsam"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Sextant",
+      "url": "https://dontstarve.wiki.gg/wiki/Sextant"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 150909,
   "plainText": "Sextant\nObject Info\n40\nSource\nDropped by\n:\nMiscellaneous\n\"sunken_boat_trinket_1\"\nExclusive to:\n“An instrument of some sort.”\n–Wilson\n“I can't say that word!”\n–Willow\n“Wolfgang loves these!”\n–Wolfgang\n“I just use it as a paperweight.”\n–Wendy\n“I HAVE NO TROUBLE TAKING PRECISE MEASUREMENTS”\n–WX-78\n“A device for taking measurements.”\n–Wickerbottom\n“That's a little too fancy for my liking.”\n–Woodie\n“Exactly what it looks like. Err... What does it look like?”\n–Maxwell\n“Ah! A reflecting navigation instrument!”\n–Wagstaff\n“Some kind of crude weapon?”\n–Wigfrid\n“It's very shiny.”\n–Webber\n“I have no idea how to use that.”\n–Walani\n“Excuse me?”\n–Warly\n“A captain worth his salt don't need this.”\n–Woodlegs\n“WILBA UNDERSTAND IT NAUGHT”\n–Wilba\n“Pretty machine”\n–Wormwood\nThe Sextant can be snagged from Flotsam by using a Fishing Rod. It can be given to the Pig King for two Gold Nuggets. When given a Sextant, Wolly will drop two Red Gems and a Crimson Feather, tell a part of Wolly's Riddle, then fly away.\n×2\nTrinket 20[edit | edit source]\nSextant\nObject Info\n40\nSource\nDropped by\n:\n:\nMiscellaneous\n\"trinket_20\"\nExclusive to:\n“I'm not sure what it is, but it makes me feel smarter!”\n–Wilson\n“I can't say that word!”\n–Willow\n“Wolfgang loves these!”\n–Wolfgang\n“I just use it as a paperweight.”\n–Wendy\n“I HAVE NO TROUBLE TAKING PRECISE MEASUREMENTS”\n–WX-78\n“A device for taking measurements.”\n–Wickerbottom\n“That's a little too fancy for my likin'.”\n–Woodie\n“Exactly what it looks like. Err... What does it look like?”\n–Maxwell\n“Ah! A reflecting navigation instrument!”\n–Wagstaff\n“Söme kind öf crude weapön?”\n–Wigfrid\n“It's very shiny.”\n–Webber\n“I have no idea how to use that.”\n–Walani\n“It looks expectant.”\n–Warly\n“Wit' this me'll traverse th'seas!”\n–Woodlegs\n“WILBA UNDERSTAND IT NAUGHT”\n–Wilba\n“Pretty machine”\n–Wormwood\n“Looks like... something I don't know how to use.”\n–Wheeler\nIn the Shipwrecked DLC, an item with the same appearance can be captured in Trawl Net. Despite having the same appearance, they are actually two different items, they cannot be stacked, and they function and acquire differently.\nIn the Hamlet DLC, the Old Boot can spawn in a Bandit Stash.\n×9\n×11\n×3\nGallery[edit | edit source]\nSextant card from Wolly's Riddle.\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -25,6 +54,7 @@
     "timestamp": "2025-08-01T21:30:22Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Sextant có thể được lấy từ Flotsam bằng cách sử dụng Cần câu. Nó có thể đưa cho Vua Lợn để lấy hai Vàng Thỏi. Khi được trao Sextant, Wolly sẽ đánh rơi hai Viên Ngọc Đỏ và một Lông Vũ Đỏ thẫm, kể một phần Câu đố của Wolly, rồi bay đi.</p>",
   "title": "Sextant",
   "wikitext": "{{Object Infobox\n|icon = Sextant.png\n|image =  Sextant Dropped.png\n|name = Sextant\n|spawnCode = \"sunken_boat_trinket_1\"\n|droppedBy ={{DS}}{{RoG}}: {{Pic|32|Flotsam}}\n|stack=40}}\n{{Exclusivity|Don't Starve|Reign of Giants}}\n{{Quotes\n|wilson = An instrument of some sort.\n|willow = I can't say that word!\n|wolfgang = Wolfgang loves these!\n|wendy = I just use it as a paperweight.\n|wx78 = I HAVE NO TROUBLE TAKING PRECISE MEASUREMENTS\n|wickerbottom = A device for taking measurements.\n|woodie = That's a little too fancy for my liking.\n|maxwell = Exactly what it looks like. Err... What does it look like?\n|wagstaff = Ah! A reflecting navigation instrument!\n|wigfrid = Some kind of crude weapon?\n|webber = It's very shiny.\n|walani =I have no idea how to use that.\n|warly = Excuse me?\n|woodlegs = A captain worth his salt don't need this.\n|wilba = WILBA UNDERSTAND IT NAUGHT\n|wormwood = Pretty machine\n|wheeler Looks like... something I don't know how to use.\n|choose = woodie\n}}\nThe '''Sextant''' can be snagged from [[Flotsam]] by using a [[Fishing Rod]]. It can be given to the [[Pig King]] for two [[Gold Nugget|Gold Nuggets.]] When given a Sextant, [[Sunken Boat|Wolly]] will drop two [[Gems|Red Gems]] and a [[Feather|Crimson Feather]], tell a part of [[Wolly's Riddle]], then fly away. \n\n{{Recipe\n|item1 = Sextant\n|gold = yes\n|result = Gold Nugget\n|resultcount = 2\n}}\n{{clear}}\n==Trinket 20==\n{{Object Infobox\n|icon = Sextant.png\n|image =  Sextant Dropped.png\n|name = Sextant\n|spawnCode = \"trinket_20\"\n|droppedBy ={{SW}}:{{Pic|32|Trawl Net}}<hr>{{Ham}}:{{Pic|32|Secret_Bandit_Camp}}\n|stack=40}}\n{{Exclusivity|Shipwrecked|Hamlet}}\n{{Quotes\n|wilson = I'm not sure what it is, but it makes me feel smarter!\n|willow = I can't say that word!\n|wolfgang = Wolfgang loves these!\n|wendy = I just use it as a paperweight.\n|wx78 = I HAVE NO TROUBLE TAKING PRECISE MEASUREMENTS\n|wickerbottom = A device for taking measurements.\n|woodie = That's a little too fancy for my likin'.\n|maxwell = Exactly what it looks like. Err... What does it look like?\n|wagstaff = Ah! A reflecting navigation instrument!\n|wigfrid = Söme kind öf crude weapön?\n|webber = It's very shiny.\n|walani = I have no idea how to use that.\n|warly = It looks expectant.\n|woodlegs = Wit' this me'll traverse th'seas!\n|wilba = WILBA UNDERSTAND IT NAUGHT\n|wormwood = Pretty machine\n|wheeler = Looks like... something I don't know how to use.\n|choose = woodie\n}}\nIn the ''[[Don't Starve: Shipwrecked|Shipwrecked]]'' DLC, an item with the same appearance can be captured in [[Trawl Net]]. Despite having the same appearance, they are actually two different items, they cannot be stacked, and they function and acquire differently.\n\nIn the ''[[Hamlet]]'' DLC,  the Old Boot can spawn in a [[Secret Bandit Camp|Bandit Stash]]. \n\n{{Recipe\n|item1 = Sextant\n|gold = yes\n|result = Gold Nugget\n|resultcount = 9\n}}\n{{Recipe\n|item = Sextant\n|dubloon = yes\n|result = Dubloons\n|resultcount = 11\n|dlc = Shipwrecked\n}}\n{{Recipe\n|item = Sextant\n|tool = Pig Collector\n|result = Oinc\n|resultcount = 3\n|dlc = Hamlet\n}}\n\n\n== {{pic32|Blueprint}} Gallery ==\n<gallery>\nWolly Signature.png|Sextant card from Wolly's Riddle.\n</gallery>\n\n{{clear}}\n{{Resources}}"
 }

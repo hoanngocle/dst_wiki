@@ -21,6 +21,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "turf (Pitchfork)",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": null,
+              "title": "Moon Quay",
+              "url": "https://dontstarve.wiki.gg/wiki/Moon_Quay"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Moon Quay Beach Turf",
+      "url": "https://dontstarve.wiki.gg/wiki/Moon_Quay_Beach_Turf"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 2058,
   "plainText": "Exclusive to:\nMoon Quay Beach Turf\n\"A patch of sand, with a faint scent of bananas.\"\nObject Info\n7.5 sec.\nCan be Burned\n20\nSource\nDropped by\nMoon Quay turf ()\nCrafting\n×1 ×1\nAmount produced\n4\nFilters\nTier\nMiscellaneous\n\"turf_monkey_ground\"\nMoon Quay Beach Turf\nCan be Dug\nСan be planted\n“A chunk of sand.”\n–Wilson\n“The ground is boring.”\n–Willow\n“Step stones.”\n–Wolfgang\n“Some ground.”\n–Wendy\n“GROUND PARTS”\n–WX-78\n“The ground. You step on it.”\n–Wickerbottom\n“Just some ground, eh?”\n–Woodie\n“It doesn't belong here.”\n–Maxwell\n“A piece of the battlefield.”\n–Wigfrid\n“It kinda smells like bananas!”\n–Webber\n“It's like an ingredient for the ground.”\n–Warly\n“Sand... with friend hair?”\n–Wormwood\n“That's a chunk of sandy ground.”\n–Winona\n“Floor or ceiling, depending on your perspective.”\n–Wortox\n“Ground bit.”\n–Wurt\n“A patch of beach.”\n–Walter\n“Why am I wasting time staring at the ground?”\n–Wanda\n“Can be placed on dirt ground to change the type of ground.”\n-\nMoon Quay Beach Turf is a naturally generated and crafted Turf item exclusive to Don't Starve Together introduced in The Curse of Moon Quay update. It can be found on Moon Quay or crafted in the Decorations Filter.\nA Blueprint for learning the recipe can be obtained from the Queen of Moon Quay.\nTurfsCraftable Items\nView or edit this template\nTurfs\nDSTDSRoGSWHam\nView or edit this template\nDon't Starve Together Craftable Items\nRegular Filters\nSurvivor Items\nWilson\nWillow\nWolfgang\nWendy\nWX-78\nWickerbottom\nWoodie\nWes\nMaxwell\nWigfrid\nWebber\nWarly\nWortox\nWormwood\nWinona\nWurt\nWalter\nWanda\nTools\nLight Sources\nPrototypers & Stations\nRefined Materials\nWeapons\nArmor\nClothing\nHealing\nMagic\nDecorations\nStructures\nStorage Solutions\nCooking\nFood & Gardening\nFishing\nSeafaring\nBeefalo Riding\nWinter Items\nSummer Items\nRain Gear\nCrafting Station Filters\nSpecial Event\nAncient Pseudoscience\nCarpentry\nCartography\nCritters\nCelestial\nBrightsmithy\nShadowcraft\nFabrication\nBottle Exchange\nCombrining Filter\nTea Brewing Filter\nSculptures\nSeasonings\nTrading\nTrading Hutch\nOfferings\nCawnival Creation\nTrinket Trove\nMad Science\nWinter's Feast Cooking\nSanctum Smithy Filter\nCustom Course Shack Filter\nView or edit this template\nDon't Starve Craftable Items\nTools\nLight\nSurvival\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nAncient\nBooks\nTinkering\nView or edit this template\nDon't Starve: Reign of Giants Craftable Items\nTools\nLight\nSurvival\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nAncient\nBooks\nTinkering\nView or edit this template\nDon't Starve Shipwrecked and Volcano Craftable Items\nTools\nLight\nNautical\nSurvival\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nVolcanic\nBooks\nTinkering\nView or edit this template\nDon't Starve Hamlet Craftable Items\nTools\nLight\nTreasure Hunting\nSurvival\nNautical\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nGreen Thumb\nBooks\nTinkering\nCity Planning\nRenovate\nFloors\nShelves\nPlantholders\nColumns\nWall Papers\nHanging Lamps\nOrnaments\nChairs\nHome Kits\nDoors\nWindows\nRugs\nLamps\nTables",
   "recipes": [
@@ -58,6 +87,7 @@
     "timestamp": "2025-08-02T03:21:37Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Moon Quay Beach Turf là ​​một vật phẩm Turf được tạo và chế tạo tự nhiên dành riêng cho Don&#x27;t Starve Together được giới thiệu trong bản cập nhật The Curse of Moon Quay. Nó có thể được tìm thấy ở Moon Quay hoặc được chế tạo trong Bộ lọc Trang trí.</p>",
   "title": "Moon Quay Beach Turf",
   "wikitext": "{{Exclusivity|Don't Starve Together}}\n{{Object Infobox\n|canBeBurned = 1\n|icon = Moon Quay Beach Turf.png\n|image = Moon Quay Beach Turf Dropped.png\n|description = A patch of sand, with a faint scent of bananas.\n|ingredient1 = Rocks\n|multiplier1 = 1\n|ingredient2 = Marble\n|multiplier2 = 1\n|filter = {{Pic32|Decorations Filter}}\n|tier = 11\n|burnTime = [[File:Light_Sources_Filter.png|32px|link=Fuel#Fire Fuel]] 7.5 sec.\n|droppedBy = [[Moon Quay]] turf ({{pic24|Pitchfork}})\n|numtogive = 4\n|stack = 20\n|spawnCode = \"turf_monkey_ground\"}}{{Turf Infobox\n|image =Moon Quay Beach Texture.png\n|planted = 1\n|pitchfork = 1\n}}\n{{Quotes\n|wilson = A chunk of sand.\n|willow = The ground is boring.\n|wolfgang = Step stones.\n|wendy = Some ground.\n|wx78 = GROUND PARTS\n|wickerbottom = The ground. You step on it.\n|woodie = Just some ground, eh?\n|maxwell = It doesn't belong here.\n|wigfrid = A piece of the battlefield.\n|webber = It kinda smells like bananas!\n|warly = It's like an ingredient for the ground.\n|wormwood = Sand... with friend hair?\n|winona = That's a chunk of sandy ground.\n|wortox = Floor or ceiling, depending on your perspective.\n|wurt = Ground bit.\n|walter = A patch of beach.\n|wanda = Why am I wasting time staring at the ground?\n|choose = wilson}}{{Scrapbook Info|Can be placed on dirt ground to change the type of ground.}}\n'''Moon Quay Beach Turf''' is a naturally generated and crafted [[Turf]] item exclusive to ''[[Don't Starve Together]]'' introduced in ''[[The Curse of Moon Quay]]'' update. It can be found on [[Moon Quay]] or crafted in the [[Decorations Filter]].\n\nA [[Blueprint]] for learning the recipe can be obtained from the [[Queen of Moon Quay]].\n{{clear}}\n<tabber>\nTurfs=\n{{Turfs}}\n|-|\nCraftable Items=\n{{Craftable Items}}\n</tabber>\n\n[[Category:Decorations Filter]]\n[[vi:Moon Quay Beach Turf]]"
 }

@@ -26,6 +26,53 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Slotmachine.png",
+              "title": "Slotmachine",
+              "url": "https://dontstarve.wiki.gg/wiki/Slotmachine"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Blue_Whale_Carcass.png",
+              "title": "Blue Whale Carcass",
+              "url": "https://dontstarve.wiki.gg/wiki/Blue_Whale_Carcass"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/White_Whale_Carcass.png",
+              "title": "White Whale Carcass",
+              "url": "https://dontstarve.wiki.gg/wiki/White_Whale_Carcass"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/X_Marks_The_Spot.png",
+              "title": "X Marks The Spot",
+              "url": "https://dontstarve.wiki.gg/wiki/X_Marks_The_Spot"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Spear Gun",
+      "url": "https://dontstarve.wiki.gg/wiki/Spear_Gun"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 112381,
   "plainText": "Exclusive to:\nSpear Gun\n\"Laterally eject your spears.\"\n×3 ×1\nTab\nTier\nEquipable\n3 × Loaded spear damage\n8 uses\nDoes not stack\nDropped by\n\"spear_launcher\"\n“Science takes care of me.”\n–Wilson\n“Only thing better than a spear is the gun that shoots them.”\n–Willow\n“Punch from a great distance!”\n–Wolfgang\n“Why throw a spear when you can shoot it?”\n–Wendy\n“SPEAR EFFICIENCY INCREASED”\n–WX-78\n“I appreciate the advantage of a ranged gadget.”\n–Wickerbottom\n“This is one skookum weapon!”\n–Woodie\n“This projectile flinger may come in handy.”\n–Maxwell\n“A fine example of applied elasticity.”\n–Wagstaff\n“A gift fröm Ödin!”\n–Wigfrid\n“Why would anyone launch a spear? Someone might get hurt.”\n–Webber\n“Seems a little aggressive.”\n–Walani\n“Now we're cooking!”\n–Warly\n“Load a spear an'let'er fly!”\n–Woodlegs\n“IT LAUNCHETH FORTH THE POKEY STICKS”\n–Wilba\n“Pokey Stick launcher”\n–Wormwood\n“It's like a Pew-matic. But obviously not as good.”\n–Wheeler\nThe Spear Gun is a craftable ranged weapon introduced in the Shipwrecked DLC. It requires 3 Bamboo and 1 Jellyfish to craft and a Science Machine to prototype. To be fired, it needs to be loaded with a Spear, Poison Spear, Obsidian Spear, or Battle Spear by right-clicking when holding a spear over the Spear Gun in the player's inventory. Spears cannot be unloaded from a Spear Gun while in the player's inventory, however dropping the Spear Gun will drop the loaded spear separately, allowing both the Spear Gun and the spear to be retrieved without durability loss.\nWhen fired, it throws the loaded spear at the target, which deals 3 times the normal damage of the spear. The spear lands on the ground next to the attacked Mob and must be picked up and loaded again. The spears lose 10 uses when fired though the Spear Gun. The Spear Gun itself has 8 uses. Poison and fire effects of Poison Spear and Obsidian Spear apply when they are launched with a Spear Gun.\nWeapon\nSpear\nUses\nDamage\nPerk\n8\n102\n(76.5 )\n(127.5 )\n(51-204 )\n8\n102 (26 )\n(76.5 (26 ) )\n(127.5 (26 ) )\n(51-204 (26 ) )\nPoisons target\n8\n153 - 204\n(114.75 - 153 )\n(191.25 - 255 )\n(76.5 - 408 )\nIgnites target outside the Hurricane Season\nIncreased damage when charged\nEmits light when charged\n8\n127.5 (159.375 as )\nTrivia[edit | edit source]\nOld Speargun version.\nThe recent version of the Spear Gun was added in the Release the Quacken! update replacing the Spearguns which used to work like Blow Darts.\nThere is a Set Piece featuring a Raft and a Spear Gun floating in the Shallow Ocean.\nSpear Gun is one of five Weapons that can be loaded by items, others being Pew-matic Horn, Blunderbuss, the Trusty Slingshot and the Howlitzer.\nTools and WeaponsCraftable Items\nView or edit this template\nDon't Starve Tools and Weapons\nEquipped Tools\nUnequipped Tools\nLight\nBooks\nCircuits\nBattle Calls\nWatches\nWeapons\nSlingshot Parts\nThrowables\nStaffs\nAmulets\nBackpacks\nClothing\nStage Costumes\nArmor\nDSTDSRoGSWHam\nView or edit this template\nDon't Starve Together Craftable Items\nRegular Filters\nSurvivor Items\nWilson\nWillow\nWolfgang\nWendy\nWX-78\nWickerbottom\nWoodie\nWes\nMaxwell\nWigfrid\nWebber\nWarly\nWortox\nWormwood\nWinona\nWurt\nWalter\nWanda\nTools\nLight Sources\nPrototypers & Stations\nRefined Materials\nWeapons\nArmor\nClothing\nHealing\nMagic\nDecorations\nStructures\nStorage Solutions\nCooking\nFood & Gardening\nFishing\nSeafaring\nBeefalo Riding\nWinter Items\nSummer Items\nRain Gear\nCrafting Station Filters\nSpecial Event\nAncient Pseudoscience\nCarpentry\nCartography\nCritters\nCelestial\nBrightsmithy\nShadowcraft\nFabrication\nBottle Exchange\nCombrining Filter\nTea Brewing Filter\nSculptures\nSeasonings\nTrading\nTrading Hutch\nOfferings\nCawnival Creation\nTrinket Trove\nMad Science\nWinter's Feast Cooking\nSanctum Smithy Filter\nCustom Course Shack Filter\nView or edit this template\nDon't Starve Craftable Items\nTools\nLight\nSurvival\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nAncient\nBooks\nTinkering\nView or edit this template\nDon't Starve: Reign of Giants Craftable Items\nTools\nLight\nSurvival\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nAncient\nBooks\nTinkering\nView or edit this template\nDon't Starve Shipwrecked and Volcano Craftable Items\nTools\nLight\nNautical\nSurvival\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nVolcanic\nBooks\nTinkering\nView or edit this template\nDon't Starve Hamlet Craftable Items\nTools\nLight\nTreasure Hunting\nSurvival\nNautical\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nGreen Thumb\nBooks\nTinkering\nCity Planning\nRenovate\nFloors\nShelves\nPlantholders\nColumns\nWall Papers\nHanging Lamps\nOrnaments\nChairs\nHome Kits\nDoors\nWindows\nRugs\nLamps\nTables",
   "recipes": [],
@@ -36,6 +83,7 @@
     "timestamp": "2026-05-08T18:02:22Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Súng Giáo là một vũ khí tầm xa có thể chế tạo được giới thiệu trong DLC ​​Shipwrecked. Nó cần 3 Tre và 1 Sứa để chế tạo và Máy Khoa Học để tạo nguyên mẫu. Để bắn, nó cần được nạp Giáo, Giáo Độc, Giáo Obsidian hoặc Giáo Chiến bằng cách nhấp chuột phải khi cầm giáo trên Súng Giáo trong hành trang của người chơi. Không thể lấy giáo ra khỏi Súng Giáo khi đang ở trong kho của người chơi, tuy nhiên, việc thả Súng Giáo sẽ làm rơi giáo đã nạp đạn riêng biệt, cho phép lấy lại cả Súng Giáo và giáo mà không bị giảm độ bền.</p>",
   "title": "Spear Gun",
   "wikitext": "{{Exclusivity|Shipwrecked}}\n{{Item Infobox\n|equipslot=hands\n|damage = 3 &times; Loaded spear damage\n|durability = 8 uses\n|spawnCode=\"spear_launcher\"\n|ingredient1 = Bamboo\n|multiplier1 = 3\n|ingredient2 = Jellyfish\n|multiplier2 = 1\n|tab = Fight\n|tier=1\n|droppedBy = {{Pic24|Slotmachine}} {{Pic32|Blue Whale Carcass}} {{Pic32|White Whale Carcass}} {{Pic32|X Marks The Spot}}\n|stack = Does not stack\n|description = Laterally eject your spears.\n}}\n{{Quotes\n|wilson = Science takes care of me.\n|willow = Only thing better than a spear is the gun that shoots them.\n|wolfgang = Punch from a great distance!\n|wendy = Why throw a spear when you can shoot it?\n|wx78 = SPEAR EFFICIENCY INCREASED\n|wickerbottom = I appreciate the advantage of a ranged gadget.\n|woodie = This is one skookum weapon!\n|maxwell = This projectile flinger may come in handy.\n|wagstaff = A fine example of applied elasticity.\n|wigfrid = A gift fröm Ödin!\n|webber = Why would anyone launch a spear? Someone might get hurt.\n|walani = Seems a little aggressive.\n|warly = Now we're cooking!\n|woodlegs = Load a spear an'let'er fly!\n|warbucks = A bit of protection on the water.\n|wilba = IT LAUNCHETH FORTH THE POKEY STICKS\n|wormwood = Pokey Stick launcher\n|wheeler = It's like a Pew-matic. But obviously not as good.\n|choose = wheeler\n}}\nThe '''Spear Gun''' is a craftable [[Weapon#Ranged Weapons|ranged weapon]] introduced in the ''[[Don't Starve: Shipwrecked|Shipwrecked]]'' DLC. It requires 3 [[Bamboo]] and 1 [[Jellyfish]] to craft and a [[Science Machine]] to prototype. To be fired, it needs to be loaded with a [[Spear]], [[Poison Spear]], [[Obsidian Spear]], or [[Battle Spear]] by right-clicking when holding a spear over the Spear Gun in the player's inventory. Spears cannot be unloaded from a Spear Gun while in the player's inventory, however dropping the Spear Gun will drop the loaded spear separately, allowing both the Spear Gun and the spear to be retrieved without durability loss.\n\nWhen fired, it throws the loaded spear at the target, which deals 3 times the normal damage of the spear. The spear lands on the ground next to the attacked [[Mob]] and must be picked up and loaded again. The spears lose 10 uses when fired though the Spear Gun. The Spear Gun itself has 8 uses. [[Poison]] and fire effects of Poison Spear and Obsidian Spear apply when they are launched with a Spear Gun.\n\n{| class=\"wikitable\"\n|-\n! scope=\"col\" |Weapon\n! scope=\"col\" |Spear\n! scope=\"col\" |Uses\n! scope=\"col\" |Damage\n! scope=\"col\" |Perk\n|-\n|{{pic32|Spear Gun Spear}}\n|{{pic32|Spear}}\n|8\n|{{DamageMult|102}}\n|\n|-\n|{{pic32|Spear Gun Poison}}\n|{{pic32|Poison Spear}}\n|8\n|{{DamageMult| 102 (26 {{pic|19|Venom Gland|poison}})\n|damageAsWes = 76.5 (26 {{pic|19|Venom Gland|poison}})\n|damageAsWigfrid = 127.5 (26 {{pic|19|Venom Gland|poison}})\n|damageAsWolfgang = 51-204 (26 {{pic|19|Venom Gland|poison}})}}\n| Poisons target\n|-\n|{{pic32|Spear Gun Obsidian}}\n|{{pic32|Obsidian Spear}}\n|8\n|{{DamageMult|153 - 204 {{pic|19|charged|volcanic}}\n|damageAsWes = 114.75 - 153 {{pic|19|charged|volcanic}}\n|damageAsWigfrid = 191.25 - 255{{pic|19|charged|volcanic}}\n|damageAsWolfgang = 76.5 - 408 {{pic|19|charged|volcanic}}}}\n|Ignites target outside the [[Hurricane Season]]<br>Increased damage when charged<br>Emits light when charged\n|-\n|{{pic32|Spear Gun Battle}}\n|{{pic32|Battle Spear}}\n|8\n|127.5 (159.375 as [[File:Wigfrid Portrait.png|24px|link=Wigfrid]])\n|\n|}\n\n=={{pic|32|Placeholder}} Trivia==\n[[File:Speargun.png|thumb|Old Speargun version.]]\n*The recent version of the Spear Gun was added in the ''[[Don't Starve: Shipwrecked|Release the Quacken!]]'' update replacing the [[Speargun]]s which used to work like [[Blow Dart]]s.\n*There is a [[Set Piece]] featuring a [[Raft]] and a Spear Gun floating in the Shallow [[Ocean]].\n*Spear Gun is one of five [[Weapon]]s that can be loaded by items, others being [[Pew-matic Horn]], [[Blunderbuss]], the [[Trusty Slingshot]] and the [[Howlitzer]].\n<tabber>\nTools and Weapons=\n{{Tools and Weapons}}\n|-|\nCraftable Items=\n{{Craftable Items|tool}}\n</tabber>\n[[Category:Fight Tab]]\n[[Category:Weapons]]\n[[Category:Ranged Weapons]]\n[[Category:Craftable Items]]\n[[Category:Limited use]]\n[[Category:Non-Flammable]]\n[[Category:Equipable Items]]"
 }

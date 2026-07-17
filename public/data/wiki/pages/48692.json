@@ -15,6 +15,47 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ancient_Pseudoscience_Station_Build.png",
+              "title": "Ancient Pseudoscience Station Build",
+              "url": "https://dontstarve.wiki.gg/wiki/Ancient_Pseudoscience_Station_Build"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Broken_Pseudoscience_Station_Build.png",
+              "title": "Broken Pseudoscience Station Build",
+              "url": "https://dontstarve.wiki.gg/wiki/Broken_Pseudoscience_Station_Build"
+            },
+            {
+              "entityId": "base_game:mound",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Grave.png",
+              "title": "Grave",
+              "url": "https://dontstarve.wiki.gg/wiki/Grave"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Toy Trojan Horse",
+      "url": "https://dontstarve.wiki.gg/wiki/Toy_Trojan_Horse"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 48692,
   "plainText": "Toy Trojan Horse\nObject Info\n40\nSource\nDropped by\nMiscellaneous\n\"trinket_18\"\nExclusive to:\n“I wonder what it's hiding?”\n–Wilson\n“I bet the Viking would be into this.”\n–Willow\n“Wheeled horsey!”\n–Wolfgang\n“It conceals tragedy.”\n–Wendy\n“SOMETHING'S JINGLING AROUND INSIDE”\n–WX-78\n“Beware of Greeks bearing gifts.”\n–Wickerbottom\n“I would have liked this when I was a boy.”\n–Woodie\n“A metaphor, perhaps.”\n–Maxwell\n“I must mentör the yöung öne in battle strategy.”\n–Wigfrid\n“We like toys.”\n–Webber\n“What could be inside?”\n–Warly\n“Wheee!”\n–Wormwood\n“Handcrafted. Blech.”\n–Winona\n“Tiny little pranksters surely wait inside. Surprise!”\n–Wortox\n“Something rattling inside.”\n–Wurt\n“Seems like a normal wooden horse.”\n–Walter\n“Has history taught us nothing?”\n–Wanda\nThe Toy Trojan Horse references the Trojan horse that was used in the Trojan War as a sneaky way to pass the walls of Troy and end the war.\nWhen given to the Antlion as tribute, this trinket delays its rage by 0.66 days.\nThe Toy Trojan Horse can be spawned into the game with the code \"trinket_18\".\n×6\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -25,6 +66,7 @@
     "timestamp": "2025-08-01T19:33:42Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Con ngựa thành Troy đồ chơi đề cập đến con ngựa thành Troy được sử dụng trong Chiến tranh thành Troy như một cách lén lút để vượt qua bức tường thành Troy và kết thúc chiến tranh.</p>",
   "title": "Toy Trojan Horse",
   "wikitext": "{{Object Infobox\n|icon = Toy Trojan Horse.png\n|image = Toy Trojan Horse Dropped.png\n|name = Toy Trojan Horse\n|spawnCode = \"trinket_18\"\n|droppedBy = {{Pic|32|Ancient Pseudoscience Station Build}}{{Pic|32|Broken Pseudoscience Station Build}}{{Pic|32|Grave}}\n|stack=40}}{{Exclusivity|Don't Starve Together}}\n{{Quotes\n|wilson = I wonder what it's hiding?\n|willow = I bet the Viking would be into this.\n|wolfgang = Wheeled horsey!\n|wendy = It conceals tragedy.\n|wx78 = SOMETHING'S JINGLING AROUND INSIDE\n|wickerbottom = Beware of Greeks bearing gifts.\n|woodie = I would have liked this when I was a boy.\n|maxwell = A metaphor, perhaps.\n|wigfrid = I must mentör the yöung öne in battle strategy.\n|webber = We like toys.\n|winona = Handcrafted. Blech.\n|warly = What could be inside?\n|wortox = Tiny little pranksters surely wait inside. Surprise!\n|wormwood = Wheee!\n|wurt = Something rattling inside.\n|walter = Seems like a normal wooden horse.\n|wanda = Has history taught us nothing?\n|choose = wickerbottom\n}}\nThe '''Toy Trojan Horse''' references the Trojan horse that was used in the Trojan War as a sneaky way to pass the walls of Troy and end the war.\n\nWhen given to the Antlion as tribute, this trinket delays its rage by 0.66 days.\n\nThe Toy Trojan Horse can be spawned into the game with the code <code>\"trinket_18\"</code>.\n\n{{Recipe\n|item = Toy Trojan Horse\n|gold = yes\n|result = Gold Nugget\n|resultcount = 6\n}}\n{{Recipe\n|item = Toy Trojan Horse\n|tool = Antlion\n|result = Desert Stone\n}}\n\n{{clear}}{{Resources}}"
 }

@@ -5,6 +5,7 @@ import unittest
 from pathlib import Path
 
 from tools.extract.export_items import (
+    apply_description_translations,
     build_item_export,
     export_items,
     load_crafting_notes,
@@ -12,6 +13,34 @@ from tools.extract.export_items import (
 
 
 class ExportItemsTests(unittest.TestCase):
+    def test_applies_exact_database_description_translations(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            translations = Path(tmp) / "descriptions.json"
+            translations.write_text(
+                json.dumps(
+                    {
+                        "schema_version": 1,
+                        "items": {
+                            "base_game:goldnugget": {
+                                "source": "A gold nugget.",
+                                "vi": "Một cục vàng.",
+                            }
+                        },
+                    },
+                    ensure_ascii=False,
+                ),
+                encoding="utf-8",
+            )
+            items = [
+                {"id": "base_game:goldnugget", "description": "A gold nugget."},
+                {"id": "base_game:rocks", "description": "Rocks."},
+            ]
+
+            translated = apply_description_translations(items, translations)
+
+            self.assertEqual(translated[0]["description"], "Một cục vàng.")
+            self.assertEqual(translated[1]["description"], "Rocks.")
+
     def fixtures(self):
         catalog = {
             "schema_version": 1,

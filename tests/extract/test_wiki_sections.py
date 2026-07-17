@@ -89,15 +89,17 @@ class WikiSectionsTests(unittest.TestCase):
         self.assertIn("Broken by Resurrection", rows[5]["context"])
 
     def test_normalizes_all_nightmare_fuel_usage_recipes(self):
-        recipes = self.normalize()["usage"]["recipes"]
+        normalized = self.normalize()
+        recipes = normalized["usage"]["recipes"]
 
+        self.assertEqual(normalized["subject"]["title"], "Nightmare Fuel")
         self.assertEqual(len(recipes), 30)
         self.assertEqual(recipes[0]["result"]["title"], "Divining Rod")
         self.assertEqual(recipes[-1]["result"]["title"], "The Flying Pig Arcane Shop")
         night_light = next(
             recipe for recipe in recipes if recipe["result"]["title"] == "Night Light"
         )
-        self.assertEqual(night_light["nightmareFuelAmount"], 2)
+        self.assertEqual(night_light["subjectAmount"], 2)
         self.assertEqual(
             [
                 (ingredient["item"]["title"], ingredient["amount"])

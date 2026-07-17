@@ -23,6 +23,54 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "RoG",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": "base_game:tumbleweed",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Tumbleweed.png",
+              "title": "Tumbleweed",
+              "url": "https://dontstarve.wiki.gg/wiki/Tumbleweed"
+            }
+          ]
+        },
+        {
+          "chance": "—",
+          "context": "SW",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/X_Marks_The_Spot.png",
+              "title": "X Marks The Spot",
+              "url": "https://dontstarve.wiki.gg/wiki/X_Marks_The_Spot"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Chest_of_the_Depths.png",
+              "title": "Chest of the Depths",
+              "url": "https://dontstarve.wiki.gg/wiki/Chest_of_the_Depths"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": "base_game:blueprint",
+      "iconUrl": null,
+      "title": "Blueprint",
+      "url": "https://dontstarve.wiki.gg/wiki/Blueprint"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 110779,
   "plainText": "Don't Starve\nTogether\nBlueprint\nObject Info\nPerk\nUnlocks Crafting recipes upon using.\n15\n15 sec.\nDoes not stack\nSource\nDropped by\n:\n:\nMiscellaneous\n\"(prefab)_blueprint\"\n“It's scientific!”\n–Wilson\n“This will save some experimentation.”\n–Willow\n“Pretty pictures!”\n–Wolfgang\n“Whoever drew this is probably dead.”\n–Wendy\n“KNOWLEDGE WAITING TO BE ABSORBED”\n–WX-78\n“A detailed technical drawing.”\n–Wickerbottom\n“I'm not one for book learning.”\n–Woodie\n“I know all about that. I just forgot.”\n–Maxwell\n“What an ingenious design!”\n–Wagstaff\n“Öh, a map! Nö, wait. That's wröng.”\n–Wigfrid\n“\"Follow the instructions\", mum always said.”\n–Webber\n“It's making my brain hurt just looking at it.”\n–Walani\n“A recipe for technology!”\n–Warly\n“I ain't a learned man.”\n–Woodlegs\n“'TIS PARCHMENT O' PLAN'D THINGS”\n–Wilba\n“Paper for stuff making”\n–Wormwood\n“Wish it was plans for a new flying machine.”\n–Wheeler\n“Blueprint paper just smells right.”\n–Winona\n“What knowledge will I find within?”\n–Wortox\n“Has pictures on it!”\n–Wurt\n“I'm great at following directions!”\n–Walter\n“This looks interesting.”\n–Wanda\nA Blueprint is an Item that lets the player learn a craftable recipe without having to prototype it first. When used, it restores 15 . Blueprints themselves do not actually create an item; they only allow the player to craft the item away from the station normally used to prototype it.\nBlueprints can be found in some Set Pieces and at the beginning of each world in Adventure Mode. The player can find more than one Blueprint that unlocks the same recipe, and all Blueprints will restore Sanity when used, even if the player has already researched the item.\nThe Bundling Wrap recipe can only be obtained from a Blueprint dropped by a Bee or Killer Bee.\nDownloadable Content[edit | edit source]\nIn the Reign of Giants DLC, Blueprints can also be obtained by destroying Tumbleweeds in Sandbox Mode. It is possible to find Blueprints for items in the Ancient Tab, but an Ancient Pseudoscience Station will still be needed to actually craft the item. Ancient Tab Blueprints do not restore any Sanity. The Old Bell recipe can only be obtained from a Blueprint dropped by a mined Glommer's Statue.\nIn the Shipwrecked DLC, Blueprints can be obtained from X Marks the Spot treasure chests.\nIn the Hamlet DLC, both the Vortex Cloak and Living Artifact recipes can only be obtained from Blueprints which drop from the Ancient Herald and the Large Iron Hulk, respectively.\nTrivia[edit | edit source]\nIf the player uses the console to make all recipes available, all random Blueprints spawned will be called \"MISSING NAME\".\nThere are currently 21 items that can only be researched through Blueprints, which are the Bundling Wrap, the Old Bell in Reign of Giants, the Vortex Cloak and Living Artifact in Hamlet, and the End Table, Red Funcap, Green Funcap, Blue Funcap, Glowcap, Mushlight, Napsack, Desert Goggles, Scaled Furnace, 6 Replica Relics, The Lazy Deserter, and the Strident Trident in Don't Starve Together.\nThere are different console commands for each prototypical item in the game. e.g., to spawn a Blueprint for a Spear, the following command should be used: c_spawn(\"spear_blueprint\").\nGallery[edit | edit source]\nBlueprint as seen in the poster for the The End is Nigh update.\nBlueprint as seen on the 2018 Valentine Cards.\nBlueprint found near a Set Piece in Adventure Mode.\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -33,6 +81,7 @@
     "timestamp": "2026-06-14T11:28:04Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Bản thiết kế là một Vật phẩm cho phép người chơi học một công thức có thể chế tạo được mà không cần phải tạo nguyên mẫu trước. Khi sử dụng, nó sẽ phục hồi 15. Bản thân các bản thiết kế không thực sự tạo ra một vật phẩm; chúng chỉ cho phép người chơi chế tạo vật phẩm cách xa trạm thường được sử dụng để tạo nguyên mẫu cho nó.</p>",
   "title": "Blueprint",
   "wikitext": "{{Navbutton/Separation}}\n{{Object Infobox\n|burnTime = [[File:Light_Sources_Filter.png|32px|link=Fuel#Fire Fuel]] 15 sec.\n|image= Blueprint Dropped.png\n|name = Blueprint\n|icon= Blueprint.png\n|perk = Unlocks [[Crafting]] recipes upon using.\n|stack = Does not stack\n|spawnCode = \"(prefab)_blueprint\"\n|objectSanity= 15\n|droppedBy ={{RoG}}:{{Pic24|Tumbleweed}}<hr>{{SW}}:{{pic24|X Marks The Spot}} {{Pic24|Chest of the Depths}}\n}}\n\n{{Quotes\n|wilson = It's scientific!\n|willow = This will save some experimentation.\n|wolfgang = Pretty pictures!\n|wendy = Whoever drew this is probably dead.\n|wx78 = KNOWLEDGE WAITING TO BE ABSORBED\n|wickerbottom = A detailed technical drawing.\n|woodie = I'm not one for book learning.\n|maxwell = I know all about that. I just forgot.\n|wagstaff = What an ingenious design!\n|wigfrid = Öh, a map! Nö, wait. That's wröng.\n|webber = \"Follow the instructions\", mum always said.\n|walani = It's making my brain hurt just looking at it.\n|warly = A recipe for technology!\n|woodlegs = I ain't a learned man.\n|wilba = 'TIS PARCHMENT O' PLAN'D THINGS\n|wormwood = Paper for stuff making\n|wheeler = Wish it was plans for a new flying machine.\n|winona = Blueprint paper just smells right.\n|wortox = What knowledge will I find within?\n|wurt = Has pictures on it!\n|walter = I'm great at following directions!\n|wanda = This looks interesting.\n|choose = wx78\n}}\nA '''Blueprint''' is an [[Item]] that lets the player learn a craftable recipe without having to prototype it first. When used, it restores 15 {{sanity}}. Blueprints themselves do not actually create an item; they only allow the player to craft the item away from the station normally used to prototype it.\n\nBlueprints can be found in some [[Set Pieces]] and at the beginning of each world in [[Adventure Mode]]. The player can find more than one Blueprint that unlocks the same recipe, and all Blueprints will restore Sanity when used, even if the player has already researched the item.\n\nThe [[Bundling Wrap]] recipe can only be obtained from a Blueprint dropped by a [[Bee]] or [[Bee#Killer Bee|Killer Bee]].\n__NOTOC__\n== {{Pic32|Gift Icon}} Downloadable Content ==\nIn the ''[[Reign of Giants]]'' DLC, Blueprints can also be obtained by destroying [[Tumbleweed]]s in [[Sandbox Mode]]. It is possible to find Blueprints for items in the [[Ancient Tab]], but an [[Ancient Pseudoscience Station]] will still be needed to actually craft the item. Ancient Tab Blueprints do not restore any Sanity. The [[Old Bell]] recipe can only be obtained from a Blueprint dropped by a mined [[Glommer's Statue]].\n\nIn the ''[[Shipwrecked]]'' DLC, Blueprints can be obtained from [[X Marks the Spot]] treasure chests.\n\nIn the ''[[Hamlet]]'' DLC, both the [[Vortex Cloak]] and [[Living Artifact]] recipes can only be obtained from Blueprints which drop from the [[Ancient Herald]] and the [[Large Iron Hulk]], respectively.\n\n=={{pic|32|Placeholder}} Trivia==\n*If the player uses the console to make all recipes available, all random Blueprints spawned will be called \"MISSING NAME\".\n*There are currently 21 items that can only be researched through Blueprints, which are the [[Bundling Wrap]], the [[Old Bell]] in ''Reign of Giants'', the [[Vortex Cloak]] and [[Living Artifact]] in ''Hamlet'', and the [[End Table]], [[Red Funcap]], [[Green Funcap]], [[Blue Funcap]], [[Glowcap]], [[Mushlight]], [[Napsack]], [[Desert Goggles]], [[Scaled Furnace]], 6 Replica Relics, [[The Lazy Deserter]], and the [[Strident Trident]] in ''Don't Starve Together''.\n*There are different console commands for each prototypical item in the game. e.g., to spawn a Blueprint for a [[Spear]], the following command should be used: <code>c_spawn(\"spear_blueprint\")</code>.\n\n=={{Pic32|Blueprint}} Gallery==\n<gallery captionalign=\"center\" hideaddbutton=\"true\">\nThe End is Nigh.jpg|Blueprint as seen in the poster for the ''[[Don't Starve/Version History#April 9, 2013 - The End is Nigh|The End is Nigh]]'' update.\nValentines 2018 1.png|Blueprint as seen on the 2018 Valentine Cards.\nBlueprint ingame.png|Blueprint found near a [[Set Piece]] in Adventure Mode.\n</gallery>\n\n{{Mob Dropped Items}}\n[[vi:Bản Thảo]]\n[[Category:Adventure Mode]]\n[[Category:Naturally Spawning Objects]]\n[[Category:Flammable Objects]]\n[[Category:Non-Renewable]]\n[[Category:Sanity Boost]]\n[[Category:Boss Dropped Items]]\n[[Category:Fuel]]\n[[Category:A New Reign]]\n[[Category:Return of Them]]"
 }

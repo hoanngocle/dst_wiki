@@ -18,6 +18,35 @@
       "width": 128
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": "base_game:quagmire_mushrooms",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Mushroom_Stump.png",
+              "title": "Mushroom",
+              "url": "https://dontstarve.wiki.gg/wiki/Mushroom_Stump"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": "base_game:quagmire_mushrooms",
+      "iconUrl": null,
+      "title": "Mushroom",
+      "url": "https://dontstarve.wiki.gg/wiki/Mushroom"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 105785,
   "plainText": "Mushroom\nObject Info\n40\nSource\nDropped by\nMiscellaneous\n\"quagmire_mushrooms\"\nExclusive to:\nOnly during the Event: The Gorge\nFor for the Red, Green and Blue ones, see Mushrooms.\nCooked Mushroom\nObject Info\n40\nMiscellaneous\n\"quagmire_mushrooms_cooked\"\nMushroomMushroom Stump UnpickedMushroom Stump Picked\n“These are edible mushrooms.”\n–Wilson\n“It's totally raw. Fire could fix that!”\n–Willow\n“Mushrooms need cooking!”\n–Wolfgang\n“Maybe we'll get lucky and they'll be poisonous.”\n–Wendy\n“UGLY FUNGUS”\n–WX-78\n“I'm not familiar with the species, though it is edible.”\n–Wickerbottom\n“We're gonna eat you.”\n–Woodie\n“Fungus has its uses.”\n–Maxwell\n“Nön-meat, I shall nöt cönsume thee!”\n–Wigfrid\n“I don't like mushrooms.”\n–Webber\n“Hello, friends!”\n–Wormwood\n“Wouldn't mind popping these suckers into the pot.”\n–Winona\n“There's morel where that came from, hyuyu!”\n–Wortox\n“Mushrooms very chewy and good.”\n–Wurt\n“These are edible mushrooms.”\n–Walter\n“These are edible mushrooms.”\n–Wanda\n“Are those mushrooms? I'm stumped.”\n–Wilson\n“They're so hideous they're almost cute.”\n–Willow\n“Wolfgang could use in soups.”\n–Wolfgang\n“They thrive on a stump made by death.”\n–Wendy\n“EDIBILITY CONFIRMED”\n–WX-78\n“A wild cluster of edible mushrooms.”\n–Wickerbottom\n“Those mushrooms look mighty tasty.”\n–Woodie\n“I could, perhaps, produce a makeshift garnish.”\n–Maxwell\n“Gröwing nön-meat fungus.”\n–Wigfrid\n“Those mushrooms are tiny.”\n–Webber\n“Friends! Party!”\n–Wormwood\n“Well, they don't LOOK poisonous.”\n–Winona\n“A mushroom metropolis!”\n–Wortox\n“Ooooh, this where mushrooms grow!”\n–Wurt\n“Are those mushrooms? I'm stumped.”\n–Walter\n“Are those mushrooms? I'm stumped.”\n–Wanda\n“I don't think it's growing back.”\n–Wilson\n“Hey! Give me more mushrooms!”\n–Willow\n“No more for Wolfgang.”\n–Wolfgang\n“All things die. Even fungus.”\n–Wendy\n“LIFEFORM GROWTH RATE SUBOPTIMAL FOR MY NEEDS”\n–WX-78\n“I don't think they'll grow back.”\n–Wickerbottom\n“Thank you for your sacrifice, tree.”\n–Woodie\n“It's as hollow as this withered world.”\n–Maxwell\n“'Tis vanquished.”\n–Wigfrid\n“No more little mushrooms.”\n–Webber\n“Oh. Friends gone”\n–Wormwood\n“It's just a stump.”\n–Winona\n“It's been picked clean.”\n–Wortox\n“No more mushroom...?”\n–Wurt\n“I don't think it's growing back.”\n–Walter\n“I don't think it's growing back.”\n–Wanda\nMushroom Stump\nGeneric\nPicked\nMob Info\nDrops\nMiscellaneous\n\"quagmire_mushroomsstump\"\nMushroom is an ingredient added in The Gorge event. In total, 4 Mushroom Stumps grow on the map. It is used for cooking both as a filler and as a main component. It can be cooked at the stake near the Swamp Pig Elder.\nTips[edit | edit source]\nThe mushrooms are a non-renewable resource since they do not regrow after being picked; as such, it is not recommended to collect them unless necessary.\nGallery[edit | edit source]\nIcon used as emoji for Official Klei Discord\nView or edit this template\nThe Gorge Content\nMobs\nStructures\nPlants\nItems\nDishes",
   "recipes": [],
@@ -28,6 +57,7 @@
     "timestamp": "2026-07-02T06:07:05Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Nấm là nguyên liệu được thêm vào trong sự kiện The Gorge. Tổng cộng có 4 Gốc Nấm mọc trên bản đồ. Nó được sử dụng để nấu ăn vừa là chất độn vừa là thành phần chính. Nó có thể được nấu trên cọc gần Swamp Pig Elder.</p>",
   "title": "Mushroom",
   "wikitext": "{{Object Infobox\n|name = Mushroom\n|image = \n|icon = Mushroom.png\n|spoil = \n|droppedBy = {{Pic32|Mushroom Stump|Mushroom}}\n|stack = 40\n|spawnCode = \"quagmire_mushrooms\"\n}}\n{{Exclusivity|Don't Starve Together}}{{Event|The Gorge}}{{For|for the Red, Green and Blue ones|Mushrooms}}\n{{Object Infobox\n|name = Cooked Mushroom\n|image = \n|icon = Cooked Mushroom.png\n|spoil = \n|stack = 40\n|spawnCode = \"quagmire_mushrooms_cooked\"\n}}\n<tabber>\n|-| Mushroom=\n{{Quotes\n|wilson = These are edible mushrooms.\n|willow = It's totally raw. Fire could fix that!\n|wolfgang = Mushrooms need cooking!\n|wendy = Maybe we'll get lucky and they'll be poisonous.\n|wx78 = UGLY FUNGUS\n|wickerbottom = I'm not familiar with the species, though it is edible.\n|woodie = We're gonna eat you.\n|maxwell = Fungus has its uses.\n|wigfrid = Nön-meat, I shall nöt cönsume thee!\n|webber = I don't like mushrooms.\n|winona = Wouldn't mind popping these suckers into the pot.\n|wortox = There's morel where that came from, hyuyu!\n|wormwood = Hello, friends!\n|wurt = Mushrooms very chewy and good.\n|walter = These are edible mushrooms.\n|wanda = These are edible mushrooms.\n|choose = wilson\n}}\n|-|Mushroom Stump Unpicked=\n{{Quotes\n|wilson = Are those mushrooms? I'm stumped.\n|willow = They're so hideous they're almost cute.\n|wolfgang = Wolfgang could use in soups.\n|wendy = They thrive on a stump made by death.\n|wx78 = EDIBILITY CONFIRMED\n|wickerbottom = A wild cluster of edible mushrooms.\n|woodie = Those mushrooms look mighty tasty.\n|maxwell = I could, perhaps, produce a makeshift garnish.\n|wigfrid = Gröwing nön-meat fungus.\n|webber = Those mushrooms are tiny.\n|winona = Well, they don't LOOK poisonous.\n|wortox = A mushroom metropolis!\n|wormwood = Friends! Party!\n|wurt = Ooooh, this where mushrooms grow!\n|walter = Are those mushrooms? I'm stumped.\n|wanda = Are those mushrooms? I'm stumped.\n|choose = wilson\n}}\n|-|Mushroom Stump Picked=\n{{Quotes\n|wilson = I don't think it's growing back.\n|willow = Hey! Give me more mushrooms!\n|wolfgang = No more for Wolfgang.\n|wendy = All things die. Even fungus.\n|wx78 = LIFEFORM GROWTH RATE SUBOPTIMAL FOR MY NEEDS\n|wickerbottom = I don't think they'll grow back.\n|woodie = Thank you for your sacrifice, tree.\n|maxwell = It's as hollow as this withered world.\n|wigfrid = 'Tis vanquished.\n|webber = No more little mushrooms.\n|winona = It's just a stump.\n|wortox = It's been picked clean.\n|wormwood = Oh. Friends gone\n|wurt = No more mushroom...?\n|walter = I don't think it's growing back.\n|wanda = I don't think it's growing back.\n|choose = wilson\n}}\n</tabber>\n{{Object Infobox\n|name = Mushroom Stump\n|image = <gallery>\nMushroom_Stump.png|Generic\nMushroom_Stump_Picked.png|Picked\n</gallery>\n|drops = {{Pic32|Mushroom}}\n|spawnCode = \"quagmire_mushroomsstump\"\n}}\n\n'''Mushroom''' is an ingredient added in [[The Gorge]] event. In total, 4 Mushroom Stumps grow on the map. It is used for cooking both as a filler and as a main component. It can be cooked at the stake near the [[Swamp Pig Elder]].\n\n== {{pic|32|Prototype}} Tips ==\n* The mushrooms are a non-renewable resource since they do not regrow after being picked; as such, it is not recommended to collect them unless necessary.\n== {{Pic|32|Blueprint}} Gallery ==\n<gallery>\nMushroom 128x128.png|Icon used as emoji for Official Klei Discord\n</gallery>\n{{clear}}\n{{The Gorge Content}}\n\n[[Category:Non-Renewable]]"
 }

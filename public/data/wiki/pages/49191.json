@@ -25,6 +25,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": "base_game:chest_mimic",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ornate_Chest.png",
+              "title": "Ornate Chest",
+              "url": "https://dontstarve.wiki.gg/wiki/Ornate_Chest"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Seed of Ruin",
+      "url": "https://dontstarve.wiki.gg/wiki/Seed_of_Ruin"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 49191,
   "plainText": "Seed of Ruin\nDoes not stack\nPerk\nRegenerates the Caves as well as the Ruins\nDropped by\n\"cave_regenerator\"\nExclusive to:\n“I feel a strangely magnetic pull towards the cave entrance.”\n–Wilson\n“Why do I feel like I should bring it back to the entrance?”\n–Willow\n“Want Wolfgang to bring you back to cave opening?”\n–Wolfgang\n“It yearns to be brought to the cave’s entrance.”\n–Wendy\n“INSTALL AT CAVE OPENING”\n–WX-78\n“What might transpire if it came in contact with the cave’s entrance, I wonder?”\n–Wickerbottom\n“Why do I feel like I should bring it to the entrance, eh?”\n–Woodie\n“A return to the beginning. I should leave it at the cave entrance.”\n–Maxwell\n“I hypothesize it will have an interesting reaction with the caves’ entrance.”\n–Wagstaff\n“It wishes return tö the entrance.”\n–Wigfrid\n“We should bring it back to the opening! We have a feeling!”\n–Webber\n“I wonder what would happen if I brought this to the entrance?”\n–Walani\n“It wants to be fed to the mouth of the cave.”\n–Warly\n“Got a funny feelin’ about bringin’ it back to the mouth o’this cave.”\n–Woodlegs\n“IT BESEECHETH WILBA BRING IT TO YONDER CAVE OPENING”\n–Wilba\n“Bring to opening? Okay!”\n–Wormwood\n“I think I’ll bring it back to the entrance, see what happens.”\n–Wheeler\nThe Seed of Ruin is an item exclusive to Don't Starve and its DLCs that allows you to completely regenerate the Caves. It is dropped by the Ancient Guardian.\nTo use it, go to the Surface and use it on a Sinkhole. Afterwards, a message will appear to confirm the complete change of the Caves. If agree, the Caves will be regenerated. This item essentially makes everything in the Caves, as well as the Ruins, renewable.\nUnlike the ruins regeneration in Don't Starve Together, the Seed of Ruin completely regenerates the caves to a different seed, as well as the Ruins.\nTrivia[edit | edit source]\nThe Seed of Ruin was added in the April 27th, 2023 Don't Starve Mega Update update.\nFor Worlds created before the update, where the Ancient Guardian is already dead, will have a Seed of Ruin appearing somewhere in the ruins.\nThe seed completely regenerates caves with ruins, which means that items left inside will be deleted (even non-deletable ones such as the Eye Bone).\nGallery[edit | edit source]\nSeed of Ruin Map Icon.\nTools and WeaponsResources\nView or edit this template\nDon't Starve Tools and Weapons\nEquipped Tools\nUnequipped Tools\nLight\nBooks\nCircuits\nBattle Calls\nWatches\nWeapons\nSlingshot Parts\nThrowables\nStaffs\nAmulets\nBackpacks\nClothing\nStage Costumes\nArmor\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -35,6 +64,7 @@
     "timestamp": "2025-12-01T04:01:09Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Seed of Ruin là một vật phẩm độc quyền của Don&#x27;t Starve và các DLC của nó cho phép bạn tái tạo hoàn toàn Hang Động. Nó bị đánh rơi bởi Ancient Guardian.</p>",
   "title": "Seed of Ruin",
   "wikitext": "{{Item_Infobox\n|droppedBy={{pic24|Ornate Chest}}\n|spawnCode=\"cave_regenerator\"\n|perk=Regenerates the Caves as well as the Ruins\n|stack=Does not stack}}\n{{Exclusivity|Don't Starve}}\n{{Quotes\n|wilson=I feel a strangely magnetic pull towards the cave entrance.\n|willow=Why do I feel like I should bring it back to the entrance?\n|wolfgang=Want Wolfgang to bring you back to cave opening?\n|wendy=It yearns to be brought to the cave’s entrance.\n|wx78=INSTALL AT CAVE OPENING\n|wickerbottom=What might transpire if it came in contact with the cave’s entrance, I wonder?\n|woodie=Why do I feel like I should bring it to the entrance, eh?\n|maxwell=A return to the beginning. I should leave it at the cave entrance.\n|wagstaff=I hypothesize it will have an interesting reaction with the caves’ entrance.\n|wigfrid=It wishes return tö the entrance.\n|webber=We should bring it back to the opening! We have a feeling!\n|walani=I wonder what would happen if I brought this to the entrance?\n|warly=It wants to be fed to the mouth of the cave.\n|woodlegs=Got a funny feelin’ about bringin’ it back to the mouth o’this cave.\n|wilba=IT BESEECHETH WILBA BRING IT TO YONDER CAVE OPENING\n|wormwood=Bring to opening? Okay!\n|wheeler=I think I’ll bring it back to the entrance, see what happens.\n|choose=webber}}\nThe Seed of Ruin is an item exclusive to ''[[Don't Starve]]'' and its [[DLC]]s that allows you to completely regenerate the [[Caves]]. It is dropped by the [[Ancient Guardian]]. \n\nTo use it, go to the [[Surface World|Surface]] and use it on a [[Sinkhole]]. Afterwards, a message will appear to confirm the complete change of the Caves. If agree, the Caves will be regenerated. This item essentially makes everything in the Caves, as well as the [[Ruins]], renewable.\n\nUnlike the ruins regeneration in ''Don't Starve Together'', the Seed of Ruin completely regenerates the caves to a different seed, as well as the Ruins.\n\n== {{Pic32|Placeholder}} Trivia ==\n\n* The Seed of Ruin was added in the April 27th, 2023 ''[[Don't Starve Mega Update]]'' update.\n** For Worlds created before the update, where the Ancient Guardian is already dead, will have a Seed of Ruin appearing somewhere in the ruins.\n* The seed completely regenerates caves with ruins, which means that items left inside will be deleted (even non-deletable ones such as the [[Eye Bone]]).\n\n== [[File:Blueprint.png|32px]] Gallery ==\n<gallery>\nSeed_of_Ruin_Map_Icon.png|Seed of Ruin Map Icon.\n</gallery>\n\n\n<tabber>\nTools and Weapons=\n{{Tools and Weapons}}\n|-|\nResources=\n{{Resources}}\n</tabber>\n[[vi:Hạt Giống của Tàn Tích]]\n[[ru:Семя разрушения]]\n[[zh:毁灭的种子]]\n[[Category:Items]]\n[[Category:Boss Dropped Items]]"
 }

@@ -25,6 +25,41 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Blue_Whale_Carcass.png",
+              "title": "Blue Whale Carcass",
+              "url": "https://dontstarve.wiki.gg/wiki/Blue_Whale_Carcass"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/White_Whale_Carcass.png",
+              "title": "White Whale Carcass",
+              "url": "https://dontstarve.wiki.gg/wiki/White_Whale_Carcass"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Bottle Lantern",
+      "url": "https://dontstarve.wiki.gg/wiki/Bottle_Lantern"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 138943,
   "plainText": "Exclusive to:\nBottle Lantern\n\"Glowing ocean goo in a bottle.\"\n×1 ×2\nTab\nTier\n8 min\nDoes not stack\nPerk\nRefuelable portable light.\nDropped by\n\"bottlelantern\"\n“A bottle full of sunshine.”\n–Wilson\n“The light is so cold and alien.”\n–Willow\n“Is good way to keep darkness back.”\n–Wolfgang\n“The light of life. Trapped.”\n–Wendy\n“I HAVE IMPRISONED THE LIGHT-PRODUCERS”\n–WX-78\n“A portable source of illumination.”\n–Wickerbottom\n“You okay in there, glowin' buddies?”\n–Woodie\n“Their lives have found purpose in servitude.”\n–Maxwell\n“Miniscule lighting in a bottle.”\n–Wagstaff\n“A möst curiöus törch.”\n–Wigfrid\n“Hey in there, thanks for the light!”\n–Webber\n“This will keep the dark away.”\n–Walani\n“Shine on!”\n–Warly\n“Thet's one use fer a bottle.”\n–Woodlegs\n“BOTTL'DED SHINIES”\n–Wilba\n“Light home”\n–Wormwood\n“I'm sure they love it in there.”\n–Wheeler\nThe Bottle Lantern is a Light Tab item exclusive to the Shipwrecked DLC. It requires an Alchemy Engine to prototype, and an Empty Bottle and 2 Bioluminescence to craft. It acts as a portable light source which can be wielded or placed on the ground, similar to Lanterns from the base game or Reign of Giants. If it is placed on the ground, it can be turned on and off at will. Bottle Lanterns can be refueled with Fireflies, Bioluminescence, Slurtle Slime, and Light Bulbs.\nBugs[edit | edit source]\nWhen placed on the ground, a Bottle Lantern, at full durability, can provide a small range of infinite light. This can happen by waiting for a Bottle Lantern to run out on the ground; when that happens, quit the current game session, relog the save slot with the same Bottle Lantern, and the Bottle Lantern will emit a low range light source. This can be undone by simply picking up the Bottle Lantern.\nGallery[edit | edit source]\nThe light radius of a Bottle Lantern at night.\nAn equipped Bottle Lantern at dusk.\nThe Bottle Lantern's icon when it is turned off.\nTools and WeaponsCraftable Items\nView or edit this template\nDon't Starve Tools and Weapons\nEquipped Tools\nUnequipped Tools\nLight\nBooks\nCircuits\nBattle Calls\nWatches\nWeapons\nSlingshot Parts\nThrowables\nStaffs\nAmulets\nBackpacks\nClothing\nStage Costumes\nArmor\nDSTDSRoGSWHam\nView or edit this template\nDon't Starve Together Craftable Items\nRegular Filters\nSurvivor Items\nWilson\nWillow\nWolfgang\nWendy\nWX-78\nWickerbottom\nWoodie\nWes\nMaxwell\nWigfrid\nWebber\nWarly\nWortox\nWormwood\nWinona\nWurt\nWalter\nWanda\nTools\nLight Sources\nPrototypers & Stations\nRefined Materials\nWeapons\nArmor\nClothing\nHealing\nMagic\nDecorations\nStructures\nStorage Solutions\nCooking\nFood & Gardening\nFishing\nSeafaring\nBeefalo Riding\nWinter Items\nSummer Items\nRain Gear\nCrafting Station Filters\nSpecial Event\nAncient Pseudoscience\nCarpentry\nCartography\nCritters\nCelestial\nBrightsmithy\nShadowcraft\nFabrication\nBottle Exchange\nCombrining Filter\nTea Brewing Filter\nSculptures\nSeasonings\nTrading\nTrading Hutch\nOfferings\nCawnival Creation\nTrinket Trove\nMad Science\nWinter's Feast Cooking\nSanctum Smithy Filter\nCustom Course Shack Filter\nView or edit this template\nDon't Starve Craftable Items\nTools\nLight\nSurvival\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nAncient\nBooks\nTinkering\nView or edit this template\nDon't Starve: Reign of Giants Craftable Items\nTools\nLight\nSurvival\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nAncient\nBooks\nTinkering\nView or edit this template\nDon't Starve Shipwrecked and Volcano Craftable Items\nTools\nLight\nNautical\nSurvival\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nVolcanic\nBooks\nTinkering\nView or edit this template\nDon't Starve Hamlet Craftable Items\nTools\nLight\nTreasure Hunting\nSurvival\nNautical\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nGreen Thumb\nBooks\nTinkering\nCity Planning\nRenovate\nFloors\nShelves\nPlantholders\nColumns\nWall Papers\nHanging Lamps\nOrnaments\nChairs\nHome Kits\nDoors\nWindows\nRugs\nLamps\nTables",
   "recipes": [],
@@ -35,6 +70,7 @@
     "timestamp": "2023-11-04T10:50:16Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Đèn Lồng Chai là một vật phẩm Thẻ Ánh Sáng độc quyền trong DLC ​​Shipwrecked. Nó yêu cầu Máy luyện kim để tạo nguyên mẫu và Chai rỗng và 2 Phát quang sinh học để chế tạo. Nó hoạt động như một nguồn sáng di động có thể được sử dụng hoặc đặt trên mặt đất, tương tự như Lantern trong trò chơi cơ bản hoặc Reign of Giants. Nếu nó được đặt trên mặt đất, nó có thể được bật và tắt theo ý muốn. Đèn lồng chai có thể được tiếp nhiên liệu bằng Đom đóm, Phát quang sinh học, Chất nhờn của con sên và Bóng đèn.</p>",
   "title": "Bottle Lantern",
   "wikitext": "{{Exclusivity|Shipwrecked}}\n{{Item Infobox\n|ingredient1 = Empty Bottle\n|multiplier1 = 1\n|ingredient2 = Bioluminescence\n|multiplier2 = 2\n|tab = Light\n|perk = Refuelable portable light.\n|tier = 2\n|stack = Does not stack\n|spawnCode = \"bottlelantern\"\n|durability = 8 min\n|droppedBy = {{Pic32|Blue Whale Carcass}} {{Pic32|White Whale Carcass}}\n|description= Glowing ocean goo in a bottle.}}\n{{Quotes\n|wilson = A bottle full of sunshine.\n|willow = The light is so cold and alien.\n|wolfgang = Is good way to keep darkness back.\n|wendy = The light of life. Trapped.\n|wx78 = I HAVE IMPRISONED THE LIGHT-PRODUCERS\n|wickerbottom = A portable source of illumination.\n|woodie = You okay in there, glowin' buddies?\n|maxwell = Their lives have found purpose in servitude.\n|wagstaff = Miniscule lighting in a bottle.\n|wigfrid = A möst curiöus törch.\n|webber = Hey in there, thanks for the light!\n|walani = This will keep the dark away.\n|warly = Shine on!\n|woodlegs = Thet's one use fer a bottle.\n|wilba = BOTTL'DED SHINIES\n|wormwood = Light home\n|wheeler = I'm sure they love it in there.\n|choose = wx78\n}}\nThe '''Bottle Lantern''' is a [[Light Tab]] item exclusive to the ''[[Shipwrecked]]'' DLC. It requires an [[Alchemy Engine]] to prototype, and an [[Empty Bottle]] and 2 [[Bioluminescence]] to craft. It acts as a portable light source which can be wielded or placed on the ground, similar to [[Lantern]]s from the base game or ''[[Reign of Giants]]''. If it is placed on the ground, it can be turned on and off at will. Bottle Lanterns can be refueled with [[Fireflies]], [[Bioluminescence]], [[Slurtle Slime]], and [[Light Bulb]]s.\n\n=={{pic|32|Mosquito}} Bugs==\n* When placed on the ground, a Bottle Lantern, at full durability, can provide a small range of infinite light. This can happen by waiting for a Bottle Lantern to run out on the ground; when that happens, quit the current game session, relog the save slot with the same Bottle Lantern, and the Bottle Lantern will emit a low range light source. This can be undone by simply picking up the Bottle Lantern.\n\n=={{Pic32|Blueprint}} Gallery==\n<gallery captionalign=\"center\" hideaddbutton=\"true\">\nBottlelanternScreenshot1.png|The light radius of a Bottle Lantern at night.\nBottlelanternScreenshot2.png|An equipped Bottle Lantern at dusk.\nBottle_Lantern_Off.png|The Bottle Lantern's icon when it is turned off.\n</gallery>\n<tabber>\nTools and Weapons=\n{{Tools and Weapons}}\n|-|\nCraftable Items=\n{{Craftable Items|tool}}\n</tabber>\n[[vi:Bottle Lantern]]\n[[Category:Equipable Items]]\n[[Category:Light Sources]]\n[[Category:Light Tab]]\n[[Category:Science]]\n[[Category:Limited use]]\n[[Category:Non-Flammable]]"
 }

@@ -22,6 +22,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "tiles (Pitchfork)",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": null,
+              "title": "Forest",
+              "url": "https://dontstarve.wiki.gg/wiki/Forest"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Forest Turf/DST",
+      "url": "https://dontstarve.wiki.gg/wiki/Forest_Turf/DST"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 221751,
   "plainText": "Don't Starve\nTogether\nForest Turf\n\"A chunk of forest floor.\"\nObject Info\n7.5 sec.\nCan be Burned\n20\nSource\nDropped by\nForest tiles ()\nCrafting\n×1 ×1\nAmount produced\n4\nFilters\nTier\nMiscellaneous\n\"turf_forest\"\nForest Turf\nCan be Dug\nСan be planted\n“A chunk of ground.”\n–Wilson\n“The ground is boring.”\n–Willow\n“Step stones.”\n–Wolfgang\n“Some ground.”\n–Wendy\n“GROUND PARTS”\n–WX-78\n“The ground. You step on it.”\n–Wickerbottom\n“Some ground.”\n–Woodie\n“Smells like mud.”\n–Maxwell\n“Contains many nutrients.”\n–Wagstaff\n“A piece öf the battlefield.”\n–Wigfrid\n“Some pretty average earth.”\n–Webber\n“Keeps me grounded.”\n–Walani\n“It's like an ingredient for the ground.”\n–Warly\n“Me ain't no ground lubber.”\n–Woodlegs\n“'TIS GROUND”\n–Wilba\n“Dirt!”\n–Wormwood\n“Do I really need to drag this dirt around with me?”\n–Wheeler\n“That's a chunk of ground.”\n–Winona\n“Floor or ceiling, depending on your perspective.”\n–Wortox\n“Ground bit.”\n–Wurt\n“A patch of ground.”\n–Walter\n“Why am I wasting time staring at the ground?”\n–Wanda\n“Can be placed on dirt ground to change the type of ground.”\n-\nForest Turf is one of the Turf items, acquired by digging Forest tiles with a Pitchfork. Like other Turfs, it can be placed on any bare ground tile or used as fuel.\nPlants like Berry Bushes, Grass Tufts, Saplings, Spiky Bushes, Lureplants, Pine Cones, and Birchnuts can be planted on these Turfs. It will also not stop the Lureplants' Eyeplants from spawning.\nWhen placed on the Surface World in a large enough area, Birds like Crows and Redbirds will start to spawn and land on these turfs. During Winter, Redbirds are replaced by Snowbirds.\nIn Don't Starve Together, Forest Turf can be crafted and prototyped with 1 Twigs and 1 Pine Cone at Terra Firma Tamper in the Decorations Filter.\nTips[edit | edit source]\nPlayers with very low Sanity may not be able to see Shadow Creatures on Forest Turf at dusk or night. This is especially true if one has been digging up many Graves, as they are typically found in Forests.\nGallery[edit | edit source]\nForest Turf texture.\nWolfgang standing on placed Forest Turf.\nForest Turf as seen on the Map.\nShadow Creatures seen in the day with 0 Sanity.\nForest turf at dusk with 0 Sanity. There are nine Crawling Horrors, but they are impossible to see.\nOriginal HD icon from Bonus Materials from CD Don't Starve.\nTurfsCraftable Items\nView or edit this template\nTurfs\nDSTDSRoGSWHam\nView or edit this template\nDon't Starve Together Craftable Items\nRegular Filters\nSurvivor Items\nWilson\nWillow\nWolfgang\nWendy\nWX-78\nWickerbottom\nWoodie\nWes\nMaxwell\nWigfrid\nWebber\nWarly\nWortox\nWormwood\nWinona\nWurt\nWalter\nWanda\nTools\nLight Sources\nPrototypers & Stations\nRefined Materials\nWeapons\nArmor\nClothing\nHealing\nMagic\nDecorations\nStructures\nStorage Solutions\nCooking\nFood & Gardening\nFishing\nSeafaring\nBeefalo Riding\nWinter Items\nSummer Items\nRain Gear\nCrafting Station Filters\nSpecial Event\nAncient Pseudoscience\nCarpentry\nCartography\nCritters\nCelestial\nBrightsmithy\nShadowcraft\nFabrication\nBottle Exchange\nCombrining Filter\nTea Brewing Filter\nSculptures\nSeasonings\nTrading\nTrading Hutch\nOfferings\nCawnival Creation\nTrinket Trove\nMad Science\nWinter's Feast Cooking\nSanctum Smithy Filter\nCustom Course Shack Filter\nView or edit this template\nDon't Starve Craftable Items\nTools\nLight\nSurvival\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nAncient\nBooks\nTinkering\nView or edit this template\nDon't Starve: Reign of Giants Craftable Items\nTools\nLight\nSurvival\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nAncient\nBooks\nTinkering\nView or edit this template\nDon't Starve Shipwrecked and Volcano Craftable Items\nTools\nLight\nNautical\nSurvival\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nVolcanic\nBooks\nTinkering\nView or edit this template\nDon't Starve Hamlet Craftable Items\nTools\nLight\nTreasure Hunting\nSurvival\nNautical\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nGreen Thumb\nBooks\nTinkering\nCity Planning\nRenovate\nFloors\nShelves\nPlantholders\nColumns\nWall Papers\nHanging Lamps\nOrnaments\nChairs\nHome Kits\nDoors\nWindows\nRugs\nLamps\nTables",
   "recipes": [
@@ -59,6 +88,7 @@
     "timestamp": "2025-08-02T00:01:33Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Đất Rừng là một trong những vật phẩm Đất, có được bằng cách đào các ô Rừng bằng Chĩa. Giống như các loại Đất khác, nó có thể được đặt trên bất kỳ nền đất trống nào hoặc dùng làm nhiên liệu.</p>",
   "title": "Forest Turf/DST",
   "wikitext": "{{Navbutton/Separation}}\n{{Object Infobox\n|canBeBurned = 1\n|icon = Forest Turf.png\n|image = Forest Turf Dropped.png\n|droppedBy = [[Forest]] tiles ({{pic24|Pitchfork}})\n|description= A chunk of forest floor.\n|ingredient1= Twigs\n|multiplier1= 1\n|ingredient2= Pine Cone\n|multiplier2= 1\n|numtogive = 4\n|filter = {{pic32|Decorations Filter}}\n|tier= 26\n|stack = 20\n|burnTime = [[File:Light_Sources_Filter.png|32px|link=Fuel#Fire Fuel]] 7.5 sec.\n|spawnCode = \"turf_forest\"}}\n{{Turf Infobox\n|image =Forest Turf Texture.png\n|pitchfork = 1\n|planted = 1\n}}\n{{Quotes\n|wilson = A chunk of ground.\n|willow = The ground is boring.\n|wolfgang = Step stones.\n|wendy = Some ground.\n|wx78 = GROUND PARTS\n|wickerbottom = The ground. You step on it.\n|woodie = Some ground.\n|maxwell = Smells like mud.\n|wagstaff = Contains many nutrients.\n|wigfrid = A piece öf the battlefield.\n|webber = Some pretty average earth.\n|walani = Keeps me grounded.\n|warly = It's like an ingredient for the ground.\n|woodlegs = Me ain't no ground lubber.\n|wilba = 'TIS GROUND\n|wormwood = Dirt!\n|wheeler = Do I really need to drag this dirt around with me?\n|winona = That's a chunk of ground.\n|wortox = Floor or ceiling, depending on your perspective.\n|wurt = Ground bit.\n|walter = A patch of ground.\n|wanda = Why am I wasting time staring at the ground?\n|choose=maxwell}}{{Scrapbook Info|Can be placed on dirt ground to change the type of ground.}}\n'''Forest Turf''' is one of the [[Turf]] [[items]], acquired by digging [[Forest]] tiles with a [[Pitchfork]]. Like other Turfs, it can be placed on any bare ground tile or used as [[Fire#Fuel|fuel]].\n\nPlants like [[Berry Bush]]es, [[Grass Tuft]]s, [[Saplings]], [[Spiky Bush]]es, [[Lureplant]]s, [[Pine Cone]]s, and [[Birchnut]]s can be planted on these Turfs. It will also not stop the Lureplants' [[Eyeplant]]s from spawning.\n\nWhen placed on the [[Surface World]] in a large enough area, [[Birds]] like Crows and Redbirds will start to spawn and land on these turfs. During [[Winter]], Redbirds are replaced by Snowbirds.\n\nIn ''[[Don't Starve Together]]'', Forest Turf can be crafted and prototyped with 1 [[Twigs]] and 1 [[Pine Cone]] at [[Terra Firma Tamper]] in the [[Decorations Filter]].\n\n=={{Pic32|Prototype}} Tips ==\n* Players with very low [[Sanity]] may not be able to see [[Shadow Creature]]s on Forest Turf at dusk or night. This is especially true if one has been digging up many [[Grave]]s, as they are typically found in Forests.\n\n=={{Pic|32|Blueprint}} Gallery==\n<gallery captionalign=\"center\" hideaddbutton=\"true\">\nForest Turf Texture.png|Forest Turf texture.\nForest Stand.jpg|[[Wolfgang]] standing on placed Forest Turf.\nForest Map.jpg|Forest Turf as seen on the [[Map]].\nForest turf while insane day.png|Shadow Creatures seen in the day with 0 Sanity.\nForest turf shadow creatures.png|Forest turf at dusk with 0 Sanity. There are nine Crawling Horrors, but they are impossible to see.\nCD turf_forest.png|Original HD icon from Bonus Materials from [[CD Don't Starve]].\n</gallery>\n{{clear}}\n<tabber>\nTurfs=\n{{Turfs}}\n|-|\nCraftable Items=\n{{Craftable Items}}\n</tabber>\n[[es:Suelo de bosque]]\n[[ru:Лесной дёрн]]\n[[Category:Turf Items]]\n[[Category:Decorations Filter]]\n[[Category:Naturally Spawning Objects]]\n[[Category:Fuel]]\n[[Category:Flammable Objects]]"
 }

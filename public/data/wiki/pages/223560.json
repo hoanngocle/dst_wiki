@@ -17,6 +17,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Advanced_Cachebox.png",
+              "title": "Advanced Cachebox",
+              "url": "https://dontstarve.wiki.gg/wiki/Advanced_Cachebox"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Unstable Transmission",
+      "url": "https://dontstarve.wiki.gg/wiki/Unstable_Transmission"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 223560,
   "plainText": "Exclusive to:\nUnstable Transmission\nTelipad\nTelebrella\nTelipad\nTelebrella\nObject Info\nDo not stack\nSource\nDropped by\nMiscellaneous\n\"winona_holotelepad\"\n\"winona_holotelebrella\"\nTelipadTelebrella\n“Looks like one of the boss's old designs. I should give it a scan.”\n–Winona\n“I should give it a scan with the ol' Calibrated Perceiver.”\n–Winona\nThe Unstable Transmission is an item that can be only be acquired by Winona with the Founder's Keepers II skill. When equipping Inspectacles, Winona can find Unstable Transmissions from Advanced Cacheboxes. The Unstable Transmissions can only be stored in Winona's inventory and cannot be put inside any storage container. When left on the ground, it will disappear after a few seconds.\nThe only purpose of Unstable Transmissions is to be scanned by Calibrated Perceiver to unlock 2 Winona exclusive items. If the Unstable Transmission looks like a station, the player will get the Teletransport Station crafting recipe. If the Unstable Transmission looks like an umbrella, the player will get the Portasol crafting recipe.\nAfter unlocking both items, Winona will not acquire more Unstable Transmissions from Advanced Cacheboxes.\nGallery[edit | edit source]\nOld Unstable Transmission icon\nOld Unstable Transmission icon\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -27,6 +56,7 @@
     "timestamp": "2025-08-02T01:11:57Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Đường truyền không ổn định là một vật phẩm chỉ có thể có được bởi Winona bằng kỹ năng Founder&#x27;s Keepers II. Khi trang bị Thanh tra, Winona có thể tìm thấy Đường truyền không ổn định từ Hộp đệm nâng cao. Đường truyền không ổn định chỉ có thể được lưu trữ trong kho của Winona và không thể đặt bên trong bất kỳ thùng lưu trữ nào. Khi để trên mặt đất, nó sẽ biến mất sau vài giây.</p>",
   "title": "Unstable Transmission",
   "wikitext": "{{Exclusivity|Don't Starve Together}}\n{{Object Infobox\n|image =<gallery> \nUnstable Transmission Dropped.png|Telipad\nUnstable Transmission Dropped2.png|Telebrella\n</gallery> \n|icon = <gallery> \nUnstable Transmission.png|Telipad\nUnstable Transmission 2.png|Telebrella\n</gallery> \n|stack = Do not stack\n|droppedBy ={{pic24|Advanced Cachebox}}\n|spawnCode = \"winona_holotelepad\" <br>\"winona_holotelebrella\"\n}}\n<tabber>\nTelipad=\n{{Quote|Looks like one of the boss's old designs. I should give it a scan.|Winona}}\n|-|\nTelebrella=\n{{Quote|I should give it a scan with the ol' Calibrated Perceiver.|Winona}}\n</tabber>\nThe '''Unstable Transmission''' is an item that can be only be acquired by [[Winona]] with the [[Founder's Keepers II]] skill. When equipping [[Inspectacles]], Winona can find Unstable Transmissions from [[Advanced Cachebox]]es. The Unstable Transmissions can only be stored in Winona's inventory and cannot be put inside any storage container. When left on the ground, it will disappear after a few seconds.\n\nThe only purpose of Unstable Transmissions is to be scanned by [[Calibrated Perceiver]] to unlock 2 Winona exclusive items. If the Unstable Transmission looks like a station, the player will get the [[Teletransport Station]] crafting recipe. If the Unstable Transmission looks like an umbrella, the player will get the [[Portasol]] crafting recipe.\n\nAfter unlocking both items, Winona will not acquire more Unstable Transmissions from Advanced Cacheboxes.\n\n== {{Pic|32|Blueprint}} Gallery ==\n<gallery captionalign=\"center\" hideaddbutton=\"true\">\nOld Unstable Transmission.png|Old Unstable Transmission icon\nOld Unstable Transmission 2.png|Old Unstable Transmission icon\n</gallery>\n{{clear}}\n{{Resources}}\n\n[[Category:From Beyond]]\n[[zh:不稳定传输]]\n[[vi:Unstable Transmission]]"
 }

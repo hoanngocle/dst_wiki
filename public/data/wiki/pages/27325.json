@@ -14,6 +14,47 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "DS",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ancient_Pseudoscience_Station_Build.png",
+              "title": "Ancient Pseudoscience Station Build",
+              "url": "https://dontstarve.wiki.gg/wiki/Ancient_Pseudoscience_Station_Build"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Broken_Pseudoscience_Station_Build.png",
+              "title": "Broken Pseudoscience Station Build",
+              "url": "https://dontstarve.wiki.gg/wiki/Broken_Pseudoscience_Station_Build"
+            },
+            {
+              "entityId": "base_game:mound",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Grave.png",
+              "title": "Grave",
+              "url": "https://dontstarve.wiki.gg/wiki/Grave"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Fake Kazoo",
+      "url": "https://dontstarve.wiki.gg/wiki/Fake_Kazoo"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 27325,
   "plainText": "Don't Starve\nTogether\nFake Kazoo\nObject Info\n40\nSource\nDropped by\n:\nMiscellaneous\n\"trinket_2\"\n“What's kazoo with you?”\n–Wilson\n“A cheap fake. It probably doesn't even burn properly.”\n–Willow\n“Fake bless you.”\n–Wolfgang\n“It's a fake. Just a temptation, like death.”\n–Wendy\n“AN OBVIOUS COUNTERFEIT”\n–WX-78\n“A fake membranophone.”\n–Wickerbottom\n“Not the real thing, eh?”\n–Woodie\n“This was important to someone once.”\n–Maxwell\n“A shame it's broken. I enjoy the sound of a thin membrane vibrating in a hollow tube.”\n–Wagstaff\n“Accömpaniment för the söng öf my triumphs.”\n–Wigfrid\n“A voiceless instrument.”\n–Webber\n“Aww, but I like real kazooing...”\n–Walani\n“I'll hum my own tune.”\n–Warly\n“If only it were real.”\n–Woodlegs\n“WILBA NAUGHT KNOW HOW TO PLAY”\n–Wilba\n“Hummm...”\n–Wormwood\n“What kind of monster would create a kazoo you can't use!”\n–Wheeler\n“It's got no film to make a sound.”\n–Winona\n“What might I do with a fake kazoo?”\n–Wortox\n“Why it not toot?!”\n–Wurt\n“I'd rather have a bugle.”\n–Walter\n“I can't get a single note out of it.”\n–Wanda\nThe Fake Kazoo has a 4.17% chance of being found when digging up a grave. Unlike the Pan Flute, the Fake Kazoo cannot be played. It can be traded to the Pig King for 6 Gold Nuggets.\nIn the Hamlet DLC, the Fake Kazoo can be bought for 1 Oinc at The Flying Pig Arcane Shop in the Pig City.\nThe Fake Kazoo can be spawned into the game with the code \"trinket_2\".\n×6\n×11\n×3\nTrivia[edit | edit source]\nUnder the old research method, Trinkets were one of the best ways of gaining research points (80 points).\nGallery[edit | edit source]\nOriginal HD icon from Bonus Materials from CD Don't Starve.\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -24,6 +65,7 @@
     "timestamp": "2025-10-31T15:00:04Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Kazoo giả có 4,17% cơ hội được tìm thấy khi đào mộ. Không giống như Sáo Pan, Kèn Kazoo giả không thể chơi được. Nó có thể được trao đổi với Vua Lợn để lấy 6 Vàng Thỏi.</p>",
   "title": "Fake Kazoo",
   "wikitext": "{{Navbutton/Separation}}{{Object Infobox\n|icon = Fake Kazoo.png\n|image = Fake Kazoo Dropped.png\n|name = Fake Kazoo\n|spawnCode = \"trinket_2\"\n|droppedBy ={{DS}}: {{Pic|32|Ancient Pseudoscience Station Build}}{{Pic|32|Broken Pseudoscience Station Build}}{{Pic|32|Grave}}\n|stack=40}}\n\n{{Quotes\n|wilson = What's kazoo with you?\n|willow = A cheap fake. It probably doesn't even burn properly.\n|wolfgang = Fake bless you.\n|wendy = It's a fake. Just a temptation, like death.\n|wx78 = AN OBVIOUS COUNTERFEIT\n|wickerbottom = A fake membranophone.\n|woodie = Not the real thing, eh?\n|maxwell = This was important to someone once.\n|wagstaff = A shame it's broken. I enjoy the sound of a thin membrane vibrating in a hollow tube.\n|wigfrid = Accömpaniment för the söng öf my triumphs.\n|webber = A voiceless instrument.\n|walani = Aww, but I like real kazooing...\n|warly = I'll hum my own tune.\n|woodlegs = If only it were real.\n|wilba = WILBA NAUGHT KNOW HOW TO PLAY\n|wormwood = Hummm...\n|wheeler = What kind of monster would create a kazoo you can't use!\n|winona = It's got no film to make a sound.\n|wortox = What might I do with a fake kazoo?\n|wurt = Why it not toot?!\n|walter = I'd rather have a bugle.\n|wanda = I can't get a single note out of it.\n|choose = wickerbottom\n}}\nThe '''Fake Kazoo''' has a 4.17% chance of being found when digging up a grave. Unlike the [[Pan Flute]], the Fake Kazoo cannot be played. It can be traded to the Pig King for 6 Gold Nuggets.\n\nIn the ''[[Hamlet]]'' DLC,  the Fake Kazoo can be bought for 1 [[Oinc]] at [[The Flying Pig Arcane Shop]] in the [[Pig City]].\n\nThe Fake Kazoo can be spawned into the game with the code <code>\"trinket_2\"</code>.\n\n{{Recipe\n|item        = Fake Kazoo\n|gold        = yes\n|result      = Gold Nugget\n|resultcount = 6\n}}\n{{Recipe\n|item = Fake Kazoo\n|dubloon = yes\n|result = Dubloons\n|resultcount = 11\n|dlc = Shipwrecked\n}}\n{{Recipe\n|item = Fake Kazoo\n|tool = Pig Collector\n|result = Oinc\n|resultcount = 3\n|dlc = Hamlet\n}}\n== {{Pic|32|Placeholder}} {{Anchor|Trivia|Trivia}} ==\n* Under the [[Research points list|old research method]], Trinkets were one of the best ways of gaining research points (80 points).\n== {{Pic|32|Blueprint}} Gallery ==\n<gallery>\nCD trinket_2.png|Original HD icon from Bonus Materials from [[CD Don't Starve]].\n</gallery>\n{{clear}}{{Resources}}"
 }

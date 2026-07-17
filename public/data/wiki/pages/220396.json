@@ -16,6 +16,35 @@
       "width": 128
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ice_Surface_Texture.png",
+              "title": "Ice Floe",
+              "url": "https://dontstarve.wiki.gg/wiki/Ice_Surface_Texture"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Ice Boat",
+      "url": "https://dontstarve.wiki.gg/wiki/Ice_Boat"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 220396,
   "plainText": "This article is a stub. You can help Don't Starve Wiki by expanding it.\nSee also: Floating Platform\nIce Boat\nStructure Info\n30\nSource\nDropped by\nResources\nx3\nMiscellaneous\n\"boat_ice\"\nThe Ice Boat (or Ocean Ice) is a Floating Platform that spawns after an Ice Floe collapses. It will slowly lose health at a rate of -2 /s and drops 3 Ice once its health reaches 0 and leaves behind some visual small pieces of ice on water.\nGallery[edit | edit source]\nIce Boat small pieces\nIce Boat appears after Ice Floe collapses\nDSTDSRoGSWHam\nView or edit this template\nDon't Starve Together Structures\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/DLC/function/tags of these Things. Some of them are not even Structures.\nPlants\nNon-living objects\nCarcasses\nCraftable\nInanimate\nScrap\nAncient\nPillar\nCharacter Exclusive\nWeather Objects\nView or edit this template\nDon't Starve Structures\nPlants\nInanimate\nCraftable\nNaturally generating\nAncient\nPillars\nCharacter exclusive\nWeather Objects\nView or edit this template\nReign of Giants Structures\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/DLC/function/tags of these Things. Some of them are not even Structures.\nPlants\nNon-living objects\nCraftable\nInanimate\nAncient\nPillar\nCharacter Exclusive\nWeather Objects\nView or edit this template\nShipwrecked Structures\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/DLC/function/tags of these Things. Some of them are not even Structures.\nPlants\nNon-living objects\nCarcasses\nCraftable\nInanimate\nCharacter Exclusive\nWeather Objects\nView or edit this template\nHamlet Structures\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/DLC/function/tags of these Things. Some of them are not even Structures.\nPlants\nNon-living objects\nCraftable\nInanimate\nPig City\nAncient\nPillars\nCharacter Exclusive\nWeather Objects",
   "recipes": [],
@@ -26,6 +55,7 @@
     "timestamp": "2025-08-01T23:37:33Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Thuyền Băng (hay Băng Đại Dương) là một Bệ Nổi sinh ra sau khi Tảng Băng sụp đổ. Nó sẽ mất máu từ từ với tốc độ -2 /s và rơi ra 3 Băng khi máu của nó về 0 và để lại một số mảnh băng nhỏ có thể nhìn thấy trên mặt nước.</p>",
   "title": "Ice Boat",
   "wikitext": "{{Stub}}{{See also|Floating Platform}}\n{{Object Infobox\n|name = Ice Boat\n|droppedBy ={{Pic|32|Ice Surface Texture|Ice Floe}}\n|image=Ice Boat.png\n|healthBoat= 30\n|resources ={{Pic|24|Ice}}x3\n|spawnCode= \"boat_ice\"\n}}\n\nThe '''Ice Boat''' (or Ocean Ice) is a [[Floating Platform]] that spawns after an [[Ice Floe]] collapses. It will slowly lose health at a rate of -2 {{Hull}}/s and drops 3 [[Ice/DST|Ice]] once its health reaches 0 and leaves behind some visual small pieces of ice on water.\n\n== {{Pic|32|Blueprint}} Gallery ==\n<gallery captionalign=\"center\" hideaddbutton=\"true\">\nIce Boat small pieces.png|Ice Boat small pieces\nScreenshot Ice Boat.png|Ice Boat appears after [[Ice Floe]] collapses\n</gallery>\n{{clear}}\n{{Structures}}\n[[vi:Ice_Boat]]"
 }

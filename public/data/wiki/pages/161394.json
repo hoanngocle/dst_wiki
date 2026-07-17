@@ -15,6 +15,77 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "DS",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ancient_Pseudoscience_Station_Build.png",
+              "title": "Ancient Pseudoscience Station Build",
+              "url": "https://dontstarve.wiki.gg/wiki/Ancient_Pseudoscience_Station_Build"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Broken_Pseudoscience_Station_Build.png",
+              "title": "Broken Pseudoscience Station Build",
+              "url": "https://dontstarve.wiki.gg/wiki/Broken_Pseudoscience_Station_Build"
+            },
+            {
+              "entityId": "base_game:mound",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Grave.png",
+              "title": "Grave",
+              "url": "https://dontstarve.wiki.gg/wiki/Grave"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Relic_Chair.png",
+              "title": "Relic Chair",
+              "url": "https://dontstarve.wiki.gg/wiki/Relic_Chair"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Relic_Table.png",
+              "title": "Relic Table",
+              "url": "https://dontstarve.wiki.gg/wiki/Relic_Table"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Relic_Vase.png",
+              "title": "Relic Vase",
+              "url": "https://dontstarve.wiki.gg/wiki/Relic_Vase"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Relic_Plate.png",
+              "title": "Relic Plate",
+              "url": "https://dontstarve.wiki.gg/wiki/Relic_Plate"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Relic_Bowl.png",
+              "title": "Relic Bowl",
+              "url": "https://dontstarve.wiki.gg/wiki/Relic_Bowl"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Dessicated Tentacle",
+      "url": "https://dontstarve.wiki.gg/wiki/Dessicated_Tentacle"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 161394,
   "plainText": "Don't Starve\nTogether\nDessicated Tentacle\nObject Info\n40\nSource\nDropped by\n:\nMiscellaneous\n\"trinket_12\"\nExclusive to:\n“I'm not sure what I should do with a dessicated tentacle.”\n–Wilson\n“All dried up, like it got too close to the fire.”\n–Willow\n“Yuck.”\n–Wolfgang\n“Not so slimy anymore, are we?”\n–Wendy\n“ORGANICS FINDING NEW AND INTERESTING WAYS TO BE REPULSIVE”\n–WX-78\n“A muscular hydrostat that's been sat near something hygroscopic.”\n–Wickerbottom\n“It's all withered.”\n–Woodie\n“I’m not touching that without several pairs of gloves.”\n–Maxwell\n“Marvelous! A severed limb!”\n–Wagstaff\n“Shörn fröm a hideöus mönster.”\n–Wigfrid\n“Feels leathery.”\n–Webber\n“Desse-what?”\n–Walani\n“I know of no recipe that calls for this.”\n–Warly\n“Whut'n'th'whut?”\n–Woodlegs\n“'TIS WEIRD”\n–Wilba\n“Sticky”\n–Wormwood\n“I wonder if they want it back.”\n–Wheeler\n“Hey Willow! Dare ya ta eat it!”\n–Winona\n“I kind of like it, yes I do.”\n–Wortox\n“Hee-hee, it dead.”\n–Wurt\n“Still wriggling.”\n–Walter\n“It's stuck in a perpetual state of decay.”\n–Wanda\nThe Desiccated Tentacle has a 4.17% chance of being found when digging up a grave. It can be traded to the Pig King for 8 Gold Nuggets. Only the Hardened Rubber Bung can equal the amount of Nuggets given by the Pig King.\nThe Dessicated Tentacle can be spawned into the game with the code \"trinket_12\".\n×8\n×12\n×3\nTrivia[edit | edit source]\nUnder the old research method, Trinkets were one of the best ways of gaining research points (80 points).\nGallery[edit | edit source]\nOriginal HD icon from Bonus Materials from CD Don't Starve.\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -25,6 +96,7 @@
     "timestamp": "2025-08-01T21:42:17Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Xúc tu khô có 4,17% cơ hội được tìm thấy khi đào mộ. Nó có thể được trao đổi với Vua Lợn để lấy 8 Thỏi Vàng. Chỉ có Bung Cao Su Cứng mới có thể bằng số lượng Cốm mà Vua Lợn đưa cho.</p>",
   "title": "Dessicated Tentacle",
   "wikitext": "{{Navbutton/Separation}}\n{{Object Infobox\n|icon = Dessicated Tentacle.png\n|image = Dessicated Tentacle Dropped.png\n|name = Dessicated Tentacle\n|spawnCode = \"trinket_12\"\n|droppedBy ={{DS}}: {{Pic|32|Ancient Pseudoscience Station Build}}{{Pic|32|Broken Pseudoscience Station Build}}{{Pic|32|Grave}}{{Pic|32|Relic Chair}}{{Pic|32|Relic Table}}{{Pic|32|Relic Vase}}{{Pic|32|Relic Plate}}{{Pic|32|Relic Bowl}}\n|stack=40}}{{Exclusivity|Don't Starve|Reign of Giants|Shipwrecked|Hamlet|Don't Starve Together}}\n{{Quotes\n|wilson = I'm not sure what I should do with a dessicated tentacle.\n|willow = All dried up, like it got too close to the fire.\n|wolfgang = Yuck.\n|wendy = Not so slimy anymore, are we?\n|wx78 = ORGANICS FINDING NEW AND INTERESTING WAYS TO BE REPULSIVE\n|wickerbottom = A muscular hydrostat that's been sat near something hygroscopic.\n|woodie = It's all withered.\n|maxwell = I’m not touching that without several pairs of gloves.\n|wagstaff = Marvelous! A severed limb!\n|wigfrid = Shörn fröm a hideöus mönster.\n|webber = Feels leathery.\n|walani = Desse-what?\n|warly = I know of no recipe that calls for this.\n|woodlegs = Whut'n'th'whut?\n|wilba = 'TIS WEIRD\n|wormwood = Sticky\n|wheeler = I wonder if they want it back.\n|winona = Hey Willow! Dare ya ta eat it!\n|wortox = I kind of like it, yes I do.\n|wurt = Hee-hee, it dead.\n|walter = Still wriggling.\n|wanda = It's stuck in a perpetual state of decay.\n|choose = wurt\n}}\nThe '''Desiccated Tentacle''' has a 4.17% chance of being found when digging up a grave. It can be traded to the Pig King for 8 Gold Nuggets. Only the Hardened Rubber Bung can equal the amount of Nuggets given by the Pig King.\n\nThe Dessicated Tentacle can be spawned into the game with the code <code>\"trinket_12\"</code>.\n\n{{Recipe\n|item        = Dessicated Tentacle\n|gold        = yes\n|result      = Gold Nugget\n|resultcount = 8\n}}\n{{Recipe\n|item = Dessicated Tentacle\n|dubloon = yes\n|result = Dubloons\n|resultcount = 12\n|dlc = Shipwrecked\n}}\n{{Recipe\n|item = Dessicated Tentacle\n|tool = Pig Collector\n|result = Oinc\n|resultcount = 3\n|dlc = Hamlet\n}}\n== {{Pic|32|Placeholder}} {{Anchor|Trivia|Trivia}} ==\n* Under the [[Research points list|old research method]], Trinkets were one of the best ways of gaining research points (80 points).\n== {{Pic|32|Blueprint}} Gallery ==\n<gallery>\nCD trinket_12.png|Original HD icon from Bonus Materials from [[CD Don't Starve]].\n</gallery>\n{{clear}}\n{{Resources}}"
 }

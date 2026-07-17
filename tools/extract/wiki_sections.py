@@ -136,12 +136,19 @@ def _heading_sections(wikitext: str) -> Iterable[Tuple[int, int, int, str]]:
 
 
 def _required_section(wikitext: str, requested_title: str) -> str:
+    section = _optional_section(wikitext, requested_title)
+    if section is not None:
+        return section
+    raise ValueError(f"{requested_title} section is required")
+
+
+def _optional_section(wikitext: str, requested_title: str) -> Optional[str]:
     requested = normalize_identity(requested_title)
     for start, end, _level, title in _heading_sections(wikitext):
         normalized = normalize_identity(title)
         if normalized == requested or normalized.endswith(" " + requested):
             return wikitext[start:end]
-    raise ValueError(f"{requested_title} section is required")
+    return None
 
 
 def _wiki_url(target: str) -> str:
@@ -297,6 +304,7 @@ def _parse_usage_recipes(
     section: str,
     subject_title: str,
     entity_ids_by_title: Mapping[str, str],
+    strict: bool = True,
 ) -> List[JsonObject]:
     recipes: List[JsonObject] = []
     subject_identity = normalize_identity(subject_title)
@@ -307,14 +315,23 @@ def _parse_usage_recipes(
         parameters = _recipe_parameters(content)
         result_title = _plain_text(parameters.get("result", ""))
         if not result_title:
-            raise ValueError("Usage Recipe is missing a result")
+            if strict:
+                raise ValueError("Usage Recipe is missing a result")
+            continue
         nightmare_amount: Optional[Any] = None
         ingredients: List[JsonObject] = []
         for index in range(1, 4):
             item_title = _plain_text(parameters.get(f"item{index}", ""))
             if not item_title:
                 continue
-            amount = _positive_number(parameters.get(f"count{index}"))
+            try:
+                amount = _positive_number(parameters.get(f"count{index}"))
+            except ValueError:
+                if strict:
+                    raise
+                ingredients = []
+                nightmare_amount = None
+                break
             if normalize_identity(item_title) == subject_identity:
                 nightmare_amount = amount
             else:
@@ -325,12 +342,20 @@ def _parse_usage_recipes(
                     }
                 )
         if nightmare_amount is None:
-            raise ValueError(f"Usage Recipe for {result_title} omits {subject_title}")
+            if strict:
+                raise ValueError(f"Usage Recipe for {result_title} omits {subject_title}")
+            continue
+        try:
+            result_amount = _positive_number(parameters.get("resultcount"))
+        except ValueError:
+            if strict:
+                raise
+            continue
         recipes.append(
             {
                 "result": _reference(result_title, result_title, entity_ids_by_title),
-                "resultAmount": _positive_number(parameters.get("resultcount")),
-                "nightmareFuelAmount": nightmare_amount,
+                "resultAmount": result_amount,
+                "subjectAmount": nightmare_amount,
                 "ingredients": ingredients,
                 "station": _optional_text(parameters, "tool"),
                 "dlc": _optional_text(parameters, "dlc"),
@@ -339,6 +364,128 @@ def _parse_usage_recipes(
             }
         )
     return recipes
+
+
+def _infobox_parameter(wikitext: str, key: str) -> Optional[str]:
+    match = re.search(
+        rf"(?ims)^\|\s*{re.escape(key)}\s*=\s*(.*?)"
+        r"(?=^\|\s*[A-Za-z][A-Za-z0-9_ ]*\s*=|^}})",
+        wikitext,
+    )
+    if match is None:
+        return None
+    value = match.group(1).strip()
+    return value or None
+
+
+def _is_drop_context_reference(reference: Mapping[str, Any]) -> bool:
+    identity = normalize_identity(str(reference.get("title", "")))
+    return (
+        identity.endswith(" icon")
+        or identity in {"dst", "sw", "ham", "rog", "shipwrecked", "hamlet"}
+    )
+
+
+def _parse_dropped_by(
+    value: str,
+    entity_ids_by_title: Mapping[str, str],
+) -> List[JsonObject]:
+    rows: List[JsonObject] = []
+    value = re.sub(r"<hr\b[^>]*>", "\n", value, flags=re.IGNORECASE)
+    value = re.sub(r"<br\s*/?>", "\n", value, flags=re.IGNORECASE)
+    for raw_line in value.splitlines():
+        raw_line = raw_line.strip(" ,")
+        if not raw_line:
+            continue
+        decoded = html.unescape(raw_line)
+        source_segment = re.split(
+            r"(?:×\s*\d|(?<!\w)[xX]\s*\d|\d+(?:\.\d+)?\s*%)",
+            decoded,
+            maxsplit=1,
+        )[0]
+        source_segment = re.sub(r"\([^)]*\)", " ", source_segment)
+        sources, _unused_context = _source_references(
+            source_segment, entity_ids_by_title
+        )
+        sources = [
+            source for source in sources if not _is_drop_context_reference(source)
+        ]
+        if not sources:
+            continue
+
+        plain = _plain_text(decoded)
+        quantity_match = re.search(
+            r"(?:×|(?<!\w)[xX])\s*(\d+(?:\.\d+)?(?:\s*-\s*\d+(?:\.\d+)?)?)",
+            plain,
+        )
+        chance_match = re.search(r"\b\d+(?:\.\d+)?\s*%", plain)
+        quantity = (
+            re.sub(r"\s+", "", quantity_match.group(1))
+            if quantity_match is not None
+            else "1"
+        )
+        chance = (
+            re.sub(r"\s+", "", chance_match.group(0))
+            if chance_match is not None
+            else "—"
+        )
+        context = plain
+        for source in sorted(sources, key=lambda item: len(item["title"]), reverse=True):
+            context = re.sub(
+                re.escape(source["title"]), " ", context, flags=re.IGNORECASE
+            )
+        if quantity_match is not None:
+            context = context.replace(quantity_match.group(0), " ")
+        if chance_match is not None:
+            context = context.replace(chance_match.group(0), " ")
+        context = re.sub(r"\s+", " ", context).strip(" ,:+-")
+        rows.append(
+            {
+                "sources": sources,
+                "quantity": quantity,
+                "chance": chance,
+                "context": context or None,
+            }
+        )
+    return rows
+
+
+def normalize_available_sections(
+    wikitext: str,
+    subject_title: str,
+    entity_ids_by_title: Mapping[str, str],
+) -> Optional[JsonObject]:
+    """Normalize every supported Drop/Usage section without requiring both."""
+
+    drop_rows: List[JsonObject] = []
+    drop_section = _optional_section(wikitext, "Drop table")
+    if drop_section is not None:
+        try:
+            drop_rows = _parse_drop_rows(drop_section, entity_ids_by_title)
+        except ValueError:
+            drop_rows = []
+    if not drop_rows:
+        dropped_by = _infobox_parameter(wikitext, "droppedBy")
+        if dropped_by is not None:
+            drop_rows = _parse_dropped_by(dropped_by, entity_ids_by_title)
+
+    usage_recipes: List[JsonObject] = []
+    usage_section = _optional_section(wikitext, "Usage")
+    if usage_section is not None:
+        usage_recipes = _parse_usage_recipes(
+            usage_section,
+            subject_title,
+            entity_ids_by_title,
+            strict=False,
+        )
+
+    if not drop_rows and not usage_recipes:
+        return None
+    return {
+        "subject": _reference(subject_title, subject_title, entity_ids_by_title),
+        "dropTable": {"rows": drop_rows},
+        "usage": {"recipes": usage_recipes},
+    }
 
 
 def normalize_drop_and_usage_sections(
@@ -359,9 +506,42 @@ def normalize_drop_and_usage_sections(
     if not usage_recipes:
         raise ValueError("Usage section contains no Recipe templates")
     return {
+        "subject": _reference(subject_title, subject_title, entity_ids_by_title),
         "dropTable": {"rows": drop_rows},
         "usage": {"recipes": usage_recipes},
     }
+
+
+def strip_available_sections_html(
+    value: str,
+    *,
+    drop_table: bool,
+    usage: bool,
+) -> str:
+    """Remove normalized Wiki sections while preserving all other article HTML."""
+
+    section_ids = []
+    if drop_table:
+        section_ids.append("Drop_table")
+    if usage:
+        section_ids.append("Usage")
+    for section_id in section_ids:
+        heading = re.search(
+            rf'<h([2-6])\b[^>]*>(?:(?!</h\1>).)*id="{section_id}"'
+            rf"(?:(?!</h\1>).)*</h\1>",
+            value,
+            re.IGNORECASE | re.DOTALL,
+        )
+        if heading is None:
+            continue
+        level = int(heading.group(1))
+        following = value[heading.end() :]
+        next_heading = re.search(
+            rf"<h[2-{level}](?:\s|>)", following, re.IGNORECASE
+        )
+        end = len(value) if next_heading is None else heading.end() + next_heading.start()
+        value = value[: heading.start()] + value[end:]
+    return value
 
 
 def strip_drop_and_usage_html(value: str) -> str:

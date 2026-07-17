@@ -23,6 +23,96 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Spittlefish.png",
+              "title": "Spittlefish",
+              "url": "https://dontstarve.wiki.gg/wiki/Spittlefish"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Mudfish.png",
+              "title": "Mudfish",
+              "url": "https://dontstarve.wiki.gg/wiki/Mudfish"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Deep_Bass.png",
+              "title": "Deep Bass",
+              "url": "https://dontstarve.wiki.gg/wiki/Deep_Bass"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Dandy_Lionfish.png",
+              "title": "Dandy Lionfish",
+              "url": "https://dontstarve.wiki.gg/wiki/Dandy_Lionfish"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Black_Catfish.png",
+              "title": "Black Catfish",
+              "url": "https://dontstarve.wiki.gg/wiki/Black_Catfish"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Dappled_Koi.png",
+              "title": "Dappled Koi",
+              "url": "https://dontstarve.wiki.gg/wiki/Dappled_Koi"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Golden_Koi.png",
+              "title": "Golden Koi",
+              "url": "https://dontstarve.wiki.gg/wiki/Golden_Koi"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ice_Bream.png",
+              "title": "Ice Bream",
+              "url": "https://dontstarve.wiki.gg/wiki/Ice_Bream"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Sweetish_Fish.png",
+              "title": "Sweetish Fish",
+              "url": "https://dontstarve.wiki.gg/wiki/Sweetish_Fish"
+            }
+          ]
+        },
+        {
+          "chance": "—",
+          "context": "( ) Rockjaw ( )",
+          "quantity": "4",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Gnarwail.png",
+              "title": "Gnarwail",
+              "url": "https://dontstarve.wiki.gg/wiki/Gnarwail"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Raw Fish/DST",
+      "url": "https://dontstarve.wiki.gg/wiki/Raw_Fish/DST"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 222089,
   "plainText": "Don't Starve\nTogether\nRaw Fish\nFood Info\n25\n8\n0\nMeat\n×1 ×1\nObject Info\n3 days\n40\nSource\nDropped by\n(×4) (×4)\nMiscellaneous\n\"fishmeat\"\n“A chunk of fish meat.”\n–Wilson\n“Needs fire!”\n–Willow\n“Lump of stinky protein.”\n–Wolfgang\n“It's been decapitated.”\n–Wendy\n“SWIMMING MEAT SWIMS NO MORE”\n–WX-78\n“An odorous slab of fish meat.”\n–Wickerbottom\n“I'd prefer salmon.”\n–Woodie\n“Could use a touch of fire.”\n–Maxwell\n“My experiments eating raw seafood always end in disaster.”\n–Wagstaff\n“This sea meat will serve me well.”\n–Wigfrid\n“It would probably be better cooked.”\n–Webber\n“Needs more fire.”\n–Walani\n“Doesn't even smell fishy it's so fresh!”\n–Warly\n“Could use a bit'o'heat.”\n–Woodlegs\n“'TIS A FLOPPY FISHY”\n–Wilba\n“Glub Glub”\n–Wormwood\n“Swell. A fish bottom for my very own.”\n–Wheeler\n“Is it safe to eat like that?”\n–Winona\n“Looks like the soul's already left this one.”\n–Wortox\n“No!!”\n–Wurt\n“Is it okay to eat it raw?”\n–Walter\n“Once a fish, now food.”\n–Wanda\nRaw Fish and Fish Steak were added to Don't Starve Together in the Return of Them beta branch. Any large Ocean Fish variant will drop Raw Fish. Additionally, Gnarwails and Rockjaws drop 4 Raw Fish when killed.\nIt can be used in multiple Crock Pot recipes, giving both a Fish Value and a half Meat Value. It is especially useful for the Surf 'n' Turf recipe since it complements both of its requirements, thus the remaining ingredients can be filled flexibly with whatever is more abundant. Raw Fish can also be dried on a Drying Rack to acquire Fishy Jerky.\nAfter spoiled, a Raw Fish or Fish Steak turns into a Spoiled Fish.\nFish Steak[edit | edit source]\nFish Steak\nFood Info\n25\n8\n0\nMeat\n×1 ×1\nObject Info\n6 days\n40\nMiscellaneous\n\"fishmeat_cooked\"\n“Grilled to perfection.”\n–Wilson\n“It actually looks kinda edible.”\n–Willow\n“Meat from water still make Wolfgang strong.”\n–Wolfgang\n“A proper grilling puts a stop to the flopping.”\n–Wendy\n“MISSING ADDON... CHIPS”\n–WX-78\n“Beautifully grilled.”\n–Wickerbottom\n“I wish I had some chips.”\n–Woodie\n“It still stinks.”\n–Maxwell\n“The grilling makes it easily digestible.”\n–Wagstaff\n“Jöy!”\n–Wigfrid\n“Flaky and moist. Delicious.”\n–Webber\n“Is it snacktime?”\n–Walani\n“Could use fresh herbs and butter...”\n–Warly\n“'Tis a bit better.”\n–Woodlegs\n“'TIS FWOOSHED FISHY”\n–Wilba\n“For belly”\n–Wormwood\n“Fish steak. I'll keep the bones for dessert.”\n–Wheeler\n“Nothing fancy, just how I like it.”\n–Winona\n“I do not wish to eat this fish.”\n–Wortox\n“Won't eat it!”\n–Wurt\n“Catching your own fish and eating it, real survivor stuff!”\n–Walter\n“It's been thoroughly cooked.”\n–Wanda\nFish Steak is Raw Fish that has been cooked on a Campfire, Fire Pit, or Star. It can also be used in multiple Crock Pot recipes.\nFishy Jerky[edit | edit source]\nFishy Jerky\nFood Info\n25\n30\n15\nMeats\n×1 ×1\nObject Info\n15 Days\n20\nMiscellaneous\n\"fishmeat_dried\"\n“That fish is a real jerk.”\n–Wilson\n“It's fishy, real fishy.”\n–Willow\n“Is good source of fishy protein.”\n–Wolfgang\n“The dessicated remains of a fish.”\n–Wendy\n“DESICCATED FISH FLESH”\n–WX-78\n“Salty, yet satisfying.”\n–Wickerbottom\n“Beats bird jerky.”\n–Woodie\n“My teeth are getting too old for this.”\n–Maxwell\n“Prövisiöns fit för a löng jöurney at sea.”\n–Wigfrid\n“All the juice has been sucked out of it.”\n–Webber\n“A well-cured fish filet.”\n–Warly\n“Dry Glub Glub”\n–Wormwood\n“Smells like the sea.”\n–Winona\n“So delish, this dried fish!”\n–Wortox\n“Glurgh. Stinky.”\n–Wurt\n“That's some good fish jerky!”\n–Walter\n“A dry, tough piece of fish meat.”\n–Wanda\nFishy Jerky is acquired by drying Raw Fish on the Drying Rack. After 15 days, a Fishy Jerky spoils and turns into a Spoiled Fish.\nUsage[edit | edit source]\n×2\n×2\nTips[edit | edit source]\nBecause of the fast spoilage time of Raw Fish and the fact it takes only a 1 Day to become Jerky, it is highly recommended to dry it on a Drying Rack if the player does not intend to consume it early.\nTrivia[edit | edit source]\nRaw Fish was introduced to Don't Starve Together in the Hook, Line, and Inker update.\nDespite the name and appearance of Raw Fish in-game, a high majority of the mobs that drop the item are mammalian creatures; Whales and Gnarwails are actually marine mammals and the Tiger Shark is mainly mammalian despite also having shark traits. The only purely fish creatures that drop Raw Fish are the Ocean Fish.\nGallery[edit | edit source]\nFishy Jerky concept art from Rhymes with Play stream.\nBy TypeBy Crock Pot Value\nView or edit this template\nFood and Edible Items (by Food Type)\nVeggie\nSeeds\nMeat\nGoodies\nGeneric\nHorrible\nRoughage\nElementals\nBurnt\nRaw\nGears\nGold Dust\nBerry\nWood\nNitre\nLunar Shards\nView or edit this template\nFood and Edible Items (by Food Value)\nMeats\nFishes\nVegetables\nFruits\nMonster Food\nEggs\nDairy\nSweetener\nFrozen\nInedibles\nMagic\nFat\nSeed\nJellyfish\nBone\nFilter\nAntihistamine\nDecoration\nBug\nNo Value Food",
   "recipes": [],
@@ -33,6 +123,7 @@
     "timestamp": "2026-04-27T04:33:39Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Cá sống và Bít tết cá đã được thêm vào Don&#x27;t Starve Together trong nhánh beta Return of Them. Bất kỳ biến thể Cá Đại Dương lớn nào cũng sẽ rơi ra Cá Sống. Ngoài ra, Gnarwails và Rockjaws rơi ra 4 Cá Sống khi bị giết.</p>",
   "title": "Raw Fish/DST",
   "wikitext": "{{Navbutton/Separation}}\n{{Object Infobox\n|name = Raw Fish\n|icon = Raw Fish.png\n|image = Raw Fish Dropped.png\n|foodValue = {{pic32|Fishes}}&times;1 {{pic32|Meats}}&times;1\n|foodType = [[Meats|Meat]] [[File:Meats.png|32px|]]\n|hpRestored = 8\n|hungerRestored = 25\n|sanityRestored = 0\n|spoil = 3 days\n|stack = 40\n|spawnCode = \"fishmeat\"\n|droppedBy = {{Pic32|Spittlefish}}{{Pic32|Mudfish}}{{Pic32|Deep Bass}}{{Pic32|Dandy Lionfish}}{{Pic32|Black Catfish}}{{Pic32|Dappled Koi}}{{Pic32|Golden Koi}}{{Pic32|Ice Bream}}{{Pic32|Sweetish Fish}}<br>{{Pic32|Gnarwail}}(&times;4) {{Pic32|Rockjaw}}(&times;4)\n}}\n{{Quotes\n|wilson = A chunk of fish meat.\n|willow = Needs fire!\n|wolfgang = Lump of stinky protein.\n|wendy = It's been decapitated.\n|wx78 = SWIMMING MEAT SWIMS NO MORE\n|wickerbottom = An odorous slab of fish meat.\n|woodie = I'd prefer salmon.\n|maxwell = Could use a touch of fire.\n|wagstaff = My experiments eating raw seafood always end in disaster.\n|wigfrid = This sea meat will serve me well.\n|webber = It would probably be better cooked.\n|walani = Needs more fire.\n|warly = Doesn't even smell fishy it's so fresh!\n|woodlegs = Could use a bit'o'heat.\n|wilba = 'TIS A FLOPPY FISHY\n|wormwood = Glub Glub\n|wheeler = Swell. A fish bottom for my very own.\n|wortox = Looks like the soul's already left this one.\n|winona = Is it safe to eat like that?\n|wurt = No!!\n|walter = Is it okay to eat it raw?\n|wanda = Once a fish, now food.\n|choose = warly\n}}\nRaw Fish and Fish Steak were added to ''[[Don't Starve Together]]'' in the ''[[Return of Them]]'' beta branch. Any large [[Ocean Fish]] variant will drop Raw Fish. Additionally, [[Gnarwail]]s and [[Rockjaw]]s drop 4 Raw Fish when killed.\n\nIt can be used in multiple [[Crock Pot]] recipes, giving both a [[Crock Pot#Fish/Seafood values|Fish Value]] and a half [[Crock Pot#Meat value|Meat Value]]. It is especially useful for the [[Surf 'n' Turf]] recipe since it complements both of its requirements, thus the remaining ingredients can be filled flexibly with whatever is more abundant. Raw Fish can also be dried on a [[Drying Rack]] to acquire [[Fishy Jerky]].\n\nAfter spoiled, a Raw Fish or Fish Steak turns into a [[Spoiled Fish/DST|Spoiled Fish]].\n{{clear}}\n== Fish Steak ==\n{{Object Infobox\n|name = Fish Steak\n|icon = Fish Steak.png\n|image = Fish Steak Dropped.png\n|foodValue = {{pic32|Fishes}}&times;1 {{pic32|Meats}}&times;1\n|foodType = [[Meats|Meat]] [[File:Meats.png|32px|]]\n|hpRestored = 8\n|hungerRestored = 25\n|sanityRestored = 0\n|spoil = 6 days\n|stack = 40\n|spawnCode = \"fishmeat_cooked\"\n}}\n{{Quotes\n|wilson = Grilled to perfection.\n|willow = It actually looks kinda edible.\n|wolfgang = Meat from water still make Wolfgang strong.\n|wendy = A proper grilling puts a stop to the flopping.\n|wx78 = MISSING ADDON... CHIPS\n|wickerbottom = Beautifully grilled.\n|woodie = I wish I had some chips.\n|maxwell = It still stinks.\n|wagstaff = The grilling makes it easily digestible.\n|wigfrid = Jöy!\n|webber = Flaky and moist. Delicious.\n|walani = Is it snacktime?\n|warly = Could use fresh herbs and butter...\n|woodlegs = 'Tis a bit better.\n|wilba = 'TIS FWOOSHED FISHY\n|wormwood = For belly\n|wheeler = Fish steak. I'll keep the bones for dessert.\n|winona = Nothing fancy, just how I like it.\n|wortox = I do not wish to eat this fish.\n|wurt = Won't eat it!\n|walter = Catching your own fish and eating it, real survivor stuff!\n|wanda = It's been thoroughly cooked.\n|choose = wx78\n}}\n'''Fish Steak''' is Raw Fish that has been [[cooking|cooked]] on a [[Campfire]], [[Fire Pit]], or [[Star Caller's Staff|Star]]. It can also be used in multiple Crock Pot recipes.\n{{clear}}\n\n== Fishy Jerky ==\n{{Object Infobox\n|name = Fishy Jerky\n|image = Fishy Jerky Dropped.png\n|icon = Fishy Jerky.png\n|hpRestored = 30\n|hungerRestored = 25\n|sanityRestored = 15\n|foodType = [[Meats/DST|Meats]] [[File:Meats.png|32px|]]\n|foodValue = {{pic32|Fishes}}&times;1 {{pic32|Meats}}&times;1\n|spoil = 15 Days\n|stack = 20\n|spawnCode = \"fishmeat_dried\"\n}}\n{{Quotes\n|wilson = That fish is a real jerk.\n|willow = It's fishy, real fishy.\n|wolfgang = Is good source of fishy protein.\n|wendy = The dessicated remains of a fish.\n|wx78 = DESICCATED FISH FLESH\n|wickerbottom = Salty, yet satisfying.\n|woodie = Beats bird jerky.\n|maxwell = My teeth are getting too old for this.\n|wigfrid = Prövisiöns fit för a löng jöurney at sea.\n|webber = All the juice has been sucked out of it.\n|winona = Smells like the sea.\n|warly = A well-cured fish filet.\n|wortox = So delish, this dried fish!\n|wormwood = Dry Glub Glub\n|wurt = Glurgh. Stinky.\n|walter = That's some good fish jerky!\n|wanda = A dry, tough piece of fish meat.\n|choose = wigfrid\n}}\n'''Fishy Jerky''' is acquired by drying Raw Fish on the [[Drying Rack/DST|Drying Rack]]. After 15 days, a Fishy Jerky spoils and turns into a [[Spoiled Fish/DST|Spoiled Fish]].\n{{clear}}\n\n== {{pic|32|Icon Tools}} Usage ==\n{{Recipe\n|item = Raw Fish\n|result = Fish Steak\n|tool = Cooking\n}}\n{{Recipe\n|item = Raw Fish\n|result = Fishy Jerky\n|tool = Drying Rack\n}}\n{{Recipe\n|item = Raw Fishes\n|tool = Birdcage\n|result = Egg\n}}\n{{Recipe\n|item1 = Monster Meats\n|count1 = 2\n|item2 = Raw Fish\n|count2 = 2\n|tool = Crock Pot\n|result = Surf 'n' Turf\n}}\n\n== {{Pic|32|Prototype}} Tips ==\n* Because of the fast spoilage time of Raw Fish and the fact it takes only a 1 [[Day]] to become Jerky, it is highly recommended to dry it on a Drying Rack if the player does not intend to consume it early.\n\n== {{Pic32|Placeholder}} Trivia ==\n* Raw Fish was introduced to ''Don't Starve Together'' in the ''[[Return of Them#Version History|Hook, Line, and Inker]]'' update.\n* Despite the name and appearance of Raw Fish in-game, a high majority of the mobs that drop the item are mammalian creatures; [[Whale]]s and [[Gnarwail]]s are actually marine mammals and the Tiger Shark is mainly mammalian despite also having shark traits. The only purely fish creatures that drop Raw Fish are the [[Ocean Fish]].\n=={{Pic|32|Blueprint}} Gallery==\n<gallery captionalign=\"center\" hideaddbutton=\"true\">\nRWP WF25 Fishy Jerky Concept Art.png|Fishy Jerky concept art from ''Rhymes with Play'' stream.\n</gallery>\n\n{{clear}}\n{{Food and Edible Items}}\n[[fr:Viande de poisson]]\n[[vi:Cá Sống]]\n__NOTOC__\n[[Category:Food]]\n[[Category:Mob Dropped Items]]\n[[Category:Meats]]\n[[Category:Perishables]]\n[[Category:Healing]]\n[[Category:Fishes]]\n[[Category:Boss Dropped Items]]\n[[Category:Return of Them]]\n\n__NOTOC__"
 }

@@ -23,6 +23,156 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "(4 for Toddler)",
+          "quantity": "3",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Baby_Beefalo.png",
+              "title": "Baby Beefalo",
+              "url": "https://dontstarve.wiki.gg/wiki/Baby_Beefalo"
+            }
+          ]
+        },
+        {
+          "chance": "10%",
+          "context": "( )",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Penguin.png",
+              "title": "Penguin",
+              "url": "https://dontstarve.wiki.gg/wiki/Penguin"
+            }
+          ]
+        },
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Crow.png",
+              "title": "Crow",
+              "url": "https://dontstarve.wiki.gg/wiki/Crow"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Redbird.png",
+              "title": "Redbird",
+              "url": "https://dontstarve.wiki.gg/wiki/Redbird"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Snowbird.png",
+              "title": "Snowbird",
+              "url": "https://dontstarve.wiki.gg/wiki/Snowbird"
+            }
+          ]
+        },
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Splumonkey.png",
+              "title": "Splumonkey",
+              "url": "https://dontstarve.wiki.gg/wiki/Splumonkey"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Powder_Monkey.png",
+              "title": "Powder Monkey",
+              "url": "https://dontstarve.wiki.gg/wiki/Powder_Monkey"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Rabbit.png",
+              "title": "Rabbit",
+              "url": "https://dontstarve.wiki.gg/wiki/Rabbit"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Smallbird.png",
+              "title": "Smallbird",
+              "url": "https://dontstarve.wiki.gg/wiki/Smallbird"
+            }
+          ]
+        },
+        {
+          "chance": "33%",
+          "context": "( )",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Buzzard.png",
+              "title": "Buzzard",
+              "url": "https://dontstarve.wiki.gg/wiki/Buzzard"
+            }
+          ]
+        },
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Puffin.png",
+              "title": "Puffin",
+              "url": "https://dontstarve.wiki.gg/wiki/Puffin"
+            }
+          ]
+        },
+        {
+          "chance": "91%",
+          "context": "( )",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Canary.png",
+              "title": "Canary",
+              "url": "https://dontstarve.wiki.gg/wiki/Canary"
+            }
+          ]
+        },
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Dust_Moth.png",
+              "title": "Dust Moth",
+              "url": "https://dontstarve.wiki.gg/wiki/Dust_Moth"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": "base_game:smallmeat",
+      "iconUrl": null,
+      "title": "Morsel/DST",
+      "url": "https://dontstarve.wiki.gg/wiki/Morsel/DST"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 222066,
   "plainText": "Don't Starve\nTogether\nMorsel\nFood Info\n12.5\n0\n-10\nMeat\n× 0.5\nObject Info\n6 Days\n40\nSource\nDropped by\n×3 (4 for Toddler)\n(10%)\n(33%)\n(91%)\nCrafting\nDescription\nTransmute Meat into Morsels.\n×1 ( only)\nFilters\n(for ).\nMiscellaneous\n\"smallmeat\"\n“A tiny chunk of a dead animal.”\n–Wilson, when examining a Morsel.\n“I could make this better with FIRE!”\n–Willow, when examining a Morsel.\n“Too small! Need bigger meat!”\n–Wolfgang, when examining a Morsel.\n“It smells like tiny fear.”\n–Wendy, when examining a Morsel.\n“IT TASTES LIKE REVENGE.”\n–WX-78, when examining a Morsel.\n“It's a small, raw piece of meat.”\n–Wickerbottom, when examining a Morsel.\n“I wish this were bigger.”\n–Woodie, when examining a Morsel.\n“This is barely a mouthful.”\n–Maxwell, when examining a Morsel.\n“A nice meaty snack.”\n–Wigfrid, when examining a Morsel.\n“A couple more and we will have a meal!”\n–Webber, when examining a Morsel.\n“Fresh protein!”\n–Warly, when examining a Morsel.\n“Little belly thing”\n–Wormwood, when examining a Morsel.\n“Looks like grub to me.”\n–Winona, when examining a Morsel.\n“Poor little creature.”\n–Wortox, when examining a Morsel.\n“Glurgh...”\n–Wurt, when examining a Morsel.\n“Just a little meat.”\n–Walter, when examining a Morsel.\n“A little meat is better than none.”\n–Wanda, when examining a Morsel.\nA Morsel is a meat food item that is dropped by Rabbits, Redbirds, Crows, Snowbirds, Smallbirds, Baby Beefalo (as Baby and Toddler), Splumonkeys, Moleworms, Buzzards, Prime Apes, and Pengulls when they are killed. A Morsel can be used in several Crock Pot recipes as a meat filler, and can be dried on a Drying Rack for 1 day to produce a Small Jerky. Like other meats, a morsel can be eaten by a Pig to have them follow the player, or can be given to the Pig King in exchange for a Gold nugget. It has a meat value of 0.5.\nMorsel can be crafted by Wilson if he has the \"Transmute Icky I\" skill.\nCooked Morsel[edit | edit source]\nCooked Morsel\nFood Info\n12.5\n1\n0\nMeat\n× 0.5\nObject Info\n10 Days\n40\nMiscellaneous\n\"cookedsmallmeat\"\n“Now I don't have to worry about getting worms!”\n–Wilson, when examining a Cooked Morsel.\n“I'll need more than appetizers if I'm going to survive.”\n–Willow, when examining a Cooked Morsel.\n“It is even smaller cooked!”\n–Wolfgang, when examining a Cooked Morsel.\n“Fire has purified it.”\n–Wendy, when examining a Cooked Morsel.\n“IT TASTES LIKE BURNT REVENGE.”\n–WX-78, when examining a Cooked Morsel.\n“It is slightly more appetizing when cooked.”\n–Wickerbottom, when examining a Cooked Morsel.\n“That'll just make me hungrier!”\n–Woodie, when examining a Cooked Morsel.\n“Well, at least it's not moving anymore.”\n–Maxwell, when examining a Cooked Morsel.\n“Yum, yum, meat snacks.”\n–Wigfrid, when examining a Cooked Morsel.\n“Meat treat.”\n–Webber, when examining a Cooked Morsel.\n“Could use sea salt...”\n–Warly, when examining a Cooked Morsel.\n“Little belly stuff”\n–Wormwood, when examining a Cooked Morsel.\n“Well, a morsel's a morsel.”\n–Winona, when examining a Cooked Morsel.\n“At least it smells better now.”\n–Wortox, when examining a Cooked Morsel.\n“Won't eat it, flurp.”\n–Wurt, when examining a Cooked Morsel.\n“A little meat is better than none.”\n–Walter, when examining a Cooked Morsel.\n“It's at least enough to hold me over for the time being.”\n–Wanda, when examining a Cooked Morsel.\nA Cooked Morsel is a Morsel, Rabbit, or captured Bird that has been cooked over a Campfire, Fire Pit or Star. It can also be used in various Crock Pot recipes. Mobs that ordinarily drop Morsels that die from being set on fire will drop a Cooked Morsel instead. Like other Meats, a Cooked Morsel can be given to a Pig to have them follow the player, or to the Pig King in exchange for a Gold Nugget.\nSmall Jerky[edit | edit source]\nMorsel\nFood Info\n12.5\n8\n10\nMeat\n× 0.5\nObject Info\n20 Days\n40\nMiscellaneous\n\"smallmeat_dried\"\n“A little jerky.”\n–Wilson\n“Chewy, but satisfying.”\n–Willow\n“Look like leather, taste like meat.”\n–Wolfgang\n“Meat, turned dry and delicious.”\n–Wendy\n“DEHYDRATED PROTEINS”\n–WX-78\n“High sodium content.”\n–Wickerbottom\n“Just a bite.”\n–Woodie\n“My teeth are getting too old for this.”\n–Maxwell\n“A small prövisiön för a löng campaign.”\n–Wigfrid\n“It'll keep longer this way.”\n–Webber\n“Could use a teriyaki glaze...”\n–Warly\n“Chewy”\n–Wormwood\n“Meat to go.”\n–Winona\n“Not to my taste.”\n–Wortox\n“Glargh, it even worse now.”\n–Wurt\n“Barely a bite of jerky.”\n–Walter\n“A bite of tough, dry meat.”\n–Wanda\nSmall Jerky is created by using a Drying Rack to dry an uncooked Morsel, Fish, Eel, Drumstick or Frog Legs for 1 day, or a Batilisk Wing for 2 days. The Small Jerky has an extremely low rate of spoilage (taking 20 days) and restores 12.5 Hunger, 8 Health and 10 Sanity when eaten. This makes it an excellent item for keeping sanity high, particularly in winter, if one has a stock of rabbits or other constant supply of meat.\nJerky can also be used in the Crock Pot in place of meat or morsels with no negative side effects. Thus, 2 Meat and 2 Morsels turned into 2 pieces of Jerky and 2 pieces of Small Jerky can be used to make Meaty Stew.\nThis food can be useful for recovering from the effects of Woodie's Werebeaver transformation, though it is significantly weaker than Jerky, thus requiring a lot more Small Jerky for such a recovery.\nUsage[edit | edit source]\n×3\nTips[edit | edit source]\nAs Small Jerky is not technically cooked, Wagstaff will still suffer a 3 penalty from consuming it, bringing the total healing down to 5 . This makes Small Jerky inefficient for healing Wagstaff, at least compared to other meals such as Fishsticks or Honey Ham.\nGallery[edit | edit source]\nOriginal HD Morsel icon from Bonus Materials from CD Don't Starve.\nOriginal HD Cooked Morsel icon from Bonus Materials from CD Don't Starve.\nIcon used as emoji for Official Klei Discord.\nFoodCraftable Items\nBy TypeBy Crock Pot Value\nView or edit this template\nFood and Edible Items (by Food Type)\nVeggie\nSeeds\nMeat\nGoodies\nGeneric\nHorrible\nRoughage\nElementals\nBurnt\nRaw\nGears\nGold Dust\nBerry\nWood\nNitre\nLunar Shards\nView or edit this template\nFood and Edible Items (by Food Value)\nMeats\nFishes\nVegetables\nFruits\nMonster Food\nEggs\nDairy\nSweetener\nFrozen\nInedibles\nMagic\nFat\nSeed\nJellyfish\nBone\nFilter\nAntihistamine\nDecoration\nBug\nNo Value Food\nView or edit this template\nDon't Starve Together Craftable Items\nRegular Filters\nSurvivor Items\nWilson\nWillow\nWolfgang\nWendy\nWX-78\nWickerbottom\nWoodie\nWes\nMaxwell\nWigfrid\nWebber\nWarly\nWortox\nWormwood\nWinona\nWurt\nWalter\nWanda\nTools\nLight Sources\nPrototypers & Stations\nRefined Materials\nWeapons\nArmor\nClothing\nHealing\nMagic\nDecorations\nStructures\nStorage Solutions\nCooking\nFood & Gardening\nFishing\nSeafaring\nBeefalo Riding\nWinter Items\nSummer Items\nRain Gear\nCrafting Station Filters\nSpecial Event\nAncient Pseudoscience\nCarpentry\nCartography\nCritters\nCelestial\nBrightsmithy\nShadowcraft\nFabrication\nBottle Exchange\nCombrining Filter\nTea Brewing Filter\nSculptures\nSeasonings\nTrading\nTrading Hutch\nOfferings\nCawnival Creation\nTrinket Trove\nMad Science\nWinter's Feast Cooking\nSanctum Smithy Filter\nCustom Course Shack Filter",
   "recipes": [
@@ -54,6 +204,7 @@
     "timestamp": "2026-07-14T16:36:17Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Thịt Nhỏ là một loại thức ăn có thịt rơi ra bởi Thỏ, Chim Hồng, Quạ, Chim Tuyết, Chim Nhỏ, Bò Lai Con (khi còn là Trẻ Sơ Sinh và Trẻ Mới Biết Đi), Khỉ Khỉ, Giun Chũi, Diều, Khỉ Prime và Cánh Cụt Biển khi chúng bị giết. Thịt Nhỏ có thể được sử dụng trong một số công thức nấu Nồi Hầm làm chất độn thịt, và có thể phơi khô trên Giá Phơi trong 1 ngày để tạo ra Thịt Khô Nhỏ. Giống như các loại thịt khác, một miếng thịt có thể được Lợn ăn để chúng đi theo người chơi hoặc có thể đưa cho Vua Lợn để đổi lấy Vàng cốm. Nó có giá trị thịt là 0,5.</p>",
   "title": "Morsel/DST",
   "wikitext": "{{Navbutton/Separation}}\n{{Object Infobox\n|name = Morsel\n|icon = Morsel.png\n|image = Morsel Dropped.png\n|foodValue  = {{Pic|32|Meats}} &times; 0.5\n|foodType = [[Food_Type#Meat|Meat]] [[File:Meats.png|32px|link=Food_Type#Meat]]\n|hpRestored = 0\n|hungerRestored = 12.5\n|sanityRestored = -10\n|spoil = 6 Days\n|stack = 40\n|spawnCode = \"smallmeat\"\n|filter = {{Pic32|Wilson Filter}}\n|ingredient1 = Meat\n|multiplier1 = 1 ({{Pic|28|Wilson Portrait|Wilson}} only)\n|skill = Transmute Icky I\n|skillOwner = Wilson\n|craft_desctiption = ''Transmute Meat into Morsels.''\n|droppedBy ={{pic|28|Baby Beefalo}} &times;3 (4 for Toddler)<br>{{pic|32|Penguin}} (10%)<br>{{pic|32|Crow}}{{pic|32|Redbird}}{{pic|32|Snowbird}}<br>{{pic|32|Splumonkey}}{{pic|32|Powder Monkey}}{{pic|32|Rabbit}}{{pic|32|Smallbird}}<br>{{pic|32|Buzzard}} (33%)<br>{{pic|32|Puffin}}<br>{{pic|32|Canary}}(91%)<br>{{pic|32|Dust Moth}}\n}}\n{{Quotes\n|wilson = A tiny chunk of a dead animal.\n|willow = I could make this better with FIRE!\n|wolfgang = Too small! Need bigger meat!\n|wendy = It smells like tiny fear.\n|wx78 = IT TASTES LIKE REVENGE.\n|wickerbottom = It's a small, raw piece of meat.\n|wigfrid = A nice meaty snack.\n|woodie = I wish this were bigger.\n|maxwell = This is barely a mouthful.\n|webber = A couple more and we will have a meal!\n|warly = Fresh protein!\n|wormwood = Little belly thing\n|winona = Looks like grub to me.\n|wortox = Poor little creature.\n|wurt = Glurgh...\n|walter = Just a little meat.\n|wanda = A little meat is better than none.\n|choose = maxwell\n|source = when examining a Morsel.}}\nA '''Morsel''' is a [[meats|meat]] food item that is dropped by [[Rabbit]]s, [[Redbird]]s, [[Crow]]s, [[Snowbird]]s, [[Smallbird]]s, [[Baby Beefalo]] (as Baby and Toddler), [[Splumonkeys]], [[Moleworm]]s, [[Buzzard]]s, [[Prime Ape]]s, and [[Pengull]]s when they are killed. A Morsel can be used in several [[Crock Pot]] recipes as a meat filler, and can be dried on a [[Drying Rack]] for 1 day to produce a [[Small Jerky]]. Like other  meats, a morsel can be eaten by a Pig to have them follow the player, or can be given to the [[Pig King]] in exchange for a [[Gold Nugget|Gold nugget]]. It has a meat value of 0.5.\n\nMorsel can be crafted by Wilson if he has the \"[[Transmute Icky I]]\" skill.\n{{clear}}\n==Cooked Morsel==\n{{Object Infobox\n|name = Cooked Morsel\n|icon = Cooked Morsel.png\n|image = Cooked Morsel Dropped.png\n|foodValue  = {{Pic|32|Meats}} &times; 0.5\n|foodType = [[Food Type#Meat|Meat]] [[File:Meats.png|32px|link=Food_Type#Meat]]\n|hpRestored = 1\n|hungerRestored = 12.5\n|sanityRestored = 0\n|spoil = 10 Days\n|stack = 40\n|spawnCode = \"cookedsmallmeat\"\n}}\n{{Quotes\n|wilson = Now I don't have to worry about getting worms!\n|willow = I'll need more than appetizers if I'm going to survive.\n|wolfgang = It is even smaller cooked!\n|wendy = Fire has purified it.\n|wx78 = IT TASTES LIKE BURNT REVENGE.\n|wickerbottom = It is slightly more appetizing when cooked.\n|woodie = That'll just make me hungrier!\n|maxwell = Well, at least it's not moving anymore.\n|wigfrid = Yum, yum, meat snacks.\n|webber = Meat treat.\n|warly = Could use sea salt...\n|wormwood = Little belly stuff\n|winona = Well, a morsel's a morsel.\n|wortox = At least it smells better now.\n|wurt = Won't eat it, flurp.\n|walter = A little meat is better than none.\n|wanda = It's at least enough to hold me over for the time being.\n|choose = wendy\n|source = when examining a Cooked Morsel.}}\nA '''Cooked Morsel''' is a Morsel, Rabbit, or captured Bird that has been cooked over a [[Campfire]], [[Fire Pit]] or [[Star Caller's Staff|Star]]. It can also be used in various [[Crock Pot]] recipes. [[Mobs]] that ordinarily drop Morsels that die from being set on fire will drop a Cooked Morsel instead. Like other [[Meats]], a Cooked Morsel can be given to a [[Pig]] to have them follow the player, or to the [[Pig King]] in exchange for a [[Gold Nugget]].\n{{clear}}\n==Small Jerky==\n{{Object Infobox\n|icon = Small Jerky.png\n|image = Small Jerky Dropped.png\n|hpRestored = 8\n|hungerRestored = 12.5\n|sanityRestored = 10\n|spoil = 20 Days\n|stack = 40\n|spawnCode = \"smallmeat_dried\"\n|foodValue = [[File:Meats.png|32px|link=Meats]] &times; 0.5\n|foodType = [[Food Type#Meat|Meat]] [[File:Meats.png|32px|link=Food_Type#Meat]]\n}}\n{{Quotes\n|wolfgang=Look like leather, taste like meat.\n|wilson=A little jerky.\n|willow=Chewy, but satisfying.\n|woodie=Just a bite.\n|maxwell=My teeth are getting too old for this.\n|wendy=Meat, turned dry and delicious.\n|wickerbottom=High sodium content.\n|webber=It'll keep longer this way.\n|warly=Could use a teriyaki glaze...\n|wx78=DEHYDRATED PROTEINS\n|wigfrid=A small prövisiön för a löng campaign.\n|wormwood = Chewy\n|winona = Meat to go.\n|wortox = Not to my taste.\n|wurt = Glargh, it even worse now.\n|walter = Barely a bite of jerky.\n|wanda = A bite of tough, dry meat.\n|choose = wolfgang}}\n'''Small Jerky''' is created by using a [[Drying Rack]] to dry an uncooked [[Morsel]], [[Fish]], [[Eel]], [[Drumstick]] or [[Frog Legs]] for 1 [[day]], or a [[Batilisk Wing]] for 2 days. The Small Jerky has an extremely low rate of spoilage (taking 20 days) and restores 12.5 [[Hunger]], 8 [[Health]] and 10 [[Sanity]] when eaten. This makes it an excellent item for keeping sanity high, particularly in [[winter]], if one has a stock of [[rabbit]]s or other constant supply of meat.\n\nJerky can also be used in the [[Crock Pot]] in place of meat or morsels with no negative side effects. Thus, 2 [[Meat]] and 2 Morsels turned into 2 pieces of [[Jerky]] and 2 pieces of Small Jerky can be used to make [[Meaty Stew]].\n\nThis food can be useful for recovering from the effects of Woodie's Werebeaver transformation, though it is significantly weaker than Jerky, thus requiring a lot more Small Jerky for such a recovery.\n{{Recipe|item=Morsel|result=Small Jerky|tool = Drying Rack}}\n{{Recipe|item=Drumstick|result=Small Jerky|tool = Drying Rack}}\n{{Recipe|item=Frog Legs|result=Small Jerky|tool = Drying Rack}}\n{{Recipe|item=Batilisk Wing|result=Small Jerky|tool = Drying Rack}}\n{{Recipe|item=Naked Nostrils|result=Small Jerky|tool = Drying Rack}}\n{{clear}}\n\n=={{pic|32|Icon Tools}} Usage==\n{{Recipe\n|item1 = Morsel\n|tool = Cooking\n|result = Cooked Morsel}}\n\n{{Recipe\n|item1 = Morsel\n|tool = Drying Rack\n|result = Small Jerky}}\n\n{{Recipe\n|item1 = Morsels\n|tool = Birdcage\n|result = Egg}}\n\n{{Recipe\n|item1 = Morsels\n|tool = Pig King Icon\n|result = Gold Nugget}}\n\n{{Recipe\n|item1 = Morsel\n|count1 = 3\n|result = Meat/DST\n|resultcount = 1\n|character = Wilson\n|skill = Transmute Icky I\n}}\n\n=={{Pic32|Prototype}} Tips==\n*As Small Jerky is not technically cooked, [[Wagstaff]] will still suffer a 3 {{hp}} penalty from consuming it, bringing the total healing down to 5 {{hp}}. This makes Small Jerky inefficient for healing Wagstaff, at least compared to other meals such as [[Fishsticks]] or [[Honey Ham]].\n\n== {{Pic|32|Blueprint}} Gallery ==\n<gallery>\nCD smallmeat.png|Original HD Morsel icon from Bonus Materials from [[CD Don't Starve]].\nCD cookedsmallmeat.png|Original HD Cooked Morsel icon from Bonus Materials from [[CD Don't Starve]].\nMorsel 128x128.png|Icon used as emoji for Official Klei Discord.\n</gallery>\n<tabber>\nFood=\n{{Food and Edible Items}}\n|-|\nCraftable Items=\n{{Craftable Items and Structures on DST}}\n</tabber>\n[[fr:Morceau]]\n[[vi:Thịt Nhỏ]]\n[[Category:Mob Dropped Items]]\n[[Category:Sanity Loss]]\n[[Category:Meats]]\n[[Category:Food]]\n[[Category:Healing]]\n[[Category:Perishables]]\n\n__NOTOC__"
 }

@@ -15,6 +15,60 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "DS",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ancient_Pseudoscience_Station_Build.png",
+              "title": "Ancient Pseudoscience Station Build",
+              "url": "https://dontstarve.wiki.gg/wiki/Ancient_Pseudoscience_Station_Build"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Broken_Pseudoscience_Station_Build.png",
+              "title": "Broken Pseudoscience Station Build",
+              "url": "https://dontstarve.wiki.gg/wiki/Broken_Pseudoscience_Station_Build"
+            },
+            {
+              "entityId": "base_game:mound",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Grave.png",
+              "title": "Grave",
+              "url": "https://dontstarve.wiki.gg/wiki/Grave"
+            }
+          ]
+        },
+        {
+          "chance": "—",
+          "context": "RoG",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": "base_game:tumbleweed",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Tumbleweed.png",
+              "title": "Tumbleweed",
+              "url": "https://dontstarve.wiki.gg/wiki/Tumbleweed"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Hardened Rubber Bung",
+      "url": "https://dontstarve.wiki.gg/wiki/Hardened_Rubber_Bung"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 67437,
   "plainText": "Don't Starve\nTogether\nHardened Rubber Bung\nObject Info\n40\nSource\nDropped by\n:\nMiscellaneous\n\"trinket_8\"\nExclusive to:\n“Great. All of my tub stopping needs are met.”\n–Wilson\n“I've never liked bathing with water.”\n–Willow\n“Hardened, like Wolfgang.”\n–Wolfgang\n“I wish I could take a bath.”\n–Wendy\n“I DON’T WANT TO KNOW WHERE THAT GOES”\n–WX-78\n“It reminds me of my bath tub. I could use a long soak.”\n–Wickerbottom\n“If I find a tub, I'm all set.”\n–Woodie\n“I’d prefer a pocketwatch on a chain.”\n–Maxwell\n“I would love to know this got here.”\n–Wagstaff\n“It wöuld make an ökay weapön in a pinch.”\n–Wigfrid\n“We could take a bath if only we had a tub.”\n–Webber\n“Hardened what?”\n–Walani\n“Ah, memories of bathing.”\n–Warly\n“Bung be hard.”\n–Woodlegs\n“WILBA NAUGHT SEE THIS AFORE”\n–Wilba\n“Pretty”\n–Wormwood\n“I'm more a showerer myself.”\n–Wheeler\n“No bathtub in sight.”\n–Winona\n“I have no idea what it is, but it sure is funny!”\n–Wortox\n“Crunchy, florp.”\n–Wurt\n“I'm sure I'll find a use for it.”\n–Walter\n“You never know what might come in handy later.”\n–Wanda\nThe Hardened Rubber Bung (AKA \"drain plug\") has a 4.17% chance of being found when digging up a grave.\nIt can be traded to the Pig King for 8 Gold Nuggets.\nThe Hardened Rubber Bung can be spawned into the game with the code \"trinket_8\".\n×8\n×12\n×3\nTrivia[edit | edit source]\nUnder the old research method, Trinkets were one of the best ways of gaining research points (80 points).\nGallery[edit | edit source]\nOriginal HD icon from Bonus Materials from CD Don't Starve.\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -25,6 +79,7 @@
     "timestamp": "2025-08-01T19:54:40Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Bung Cao Su Cứng (AKA &quot;nút thoát nước&quot;) có 4,17% cơ hội được tìm thấy khi đào mộ.</p>",
   "title": "Hardened Rubber Bung",
   "wikitext": "{{Navbutton/Separation}}{{Object Infobox\n|icon = Hardened Rubber Bung.png\n|image = Hardened Rubber Bung Dropped.png\n|name = Hardened Rubber Bung\n|spawnCode = \"trinket_8\"\n|droppedBy ={{DS}}: {{Pic|32|Ancient Pseudoscience Station Build}}{{Pic|32|Broken Pseudoscience Station Build}}{{Pic|32|Grave}}<hr>{{RoG}}{{Pic|32|Tumbleweed}}\n|stack=40}}\n{{Exclusivity|Don't Starve|Reign of Giants|Shipwrecked|Hamlet|Don't Starve Together}}\n{{Quotes\n|wilson = Great. All of my tub stopping needs are met.\n|willow = I've never liked bathing with water.\n|wolfgang = Hardened, like Wolfgang.\n|wendy = I wish I could take a bath.\n|wx78 = I DON’T WANT TO KNOW WHERE THAT GOES\n|wickerbottom = It reminds me of my bath tub. I could use a long soak.\n|woodie = If I find a tub, I'm all set.\n|maxwell = I’d prefer a pocketwatch on a chain.\n|wagstaff = I would love to know this got here.\n|wigfrid = It wöuld make an ökay weapön in a pinch.\n|webber = We could take a bath if only we had a tub.\n|walani = Hardened what?\n|warly = Ah, memories of bathing.\n|woodlegs = Bung be hard.\n|wilba = WILBA NAUGHT SEE THIS AFORE\n|wormwood = Pretty\n|wheeler = I'm more a showerer myself.\n|winona = No bathtub in sight.\n|wortox = I have no idea what it is, but it sure is funny!\n|wurt = Crunchy, florp.\n|walter = I'm sure I'll find a use for it.\n|wanda = You never know what might come in handy later.\n|choose = walani\n}}\nThe '''Hardened Rubber Bung''' (AKA \"drain plug\") has a 4.17% chance of being found when digging up a grave.\n\nIt can be traded to the Pig King for 8 Gold Nuggets.\n\nThe Hardened Rubber Bung can be spawned into the game with the code <code>\"trinket_8\"</code>.\n\n{{Recipe\n|item        = Hardened Rubber Bung\n|gold        = yes\n|result      = Gold Nugget\n|resultcount = 8\n}}\n{{Recipe\n|item = Hardened Rubber Bung\n|dubloon = yes\n|result = Dubloons\n|resultcount = 12\n|dlc = Shipwrecked\n}}\n{{Recipe\n|item = Hardened Rubber Bung\n|tool = Pig Collector\n|result = Oinc\n|resultcount = 3\n|dlc = Hamlet\n}}\n{{clear}}\n\n== {{Pic|32|Placeholder}} {{Anchor|Trivia|Trivia}} ==\n* Under the [[Research points list|old research method]], Trinkets were one of the best ways of gaining research points (80 points).\n== {{Pic|32|Blueprint}} Gallery ==\n<gallery>\nCD trinket_8.png|Original HD icon from Bonus Materials from [[CD Don't Starve]].\n</gallery>\n{{clear}}\n{{Resources}}"
 }

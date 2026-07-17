@@ -15,6 +15,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "SW",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Trawl_Net.png",
+              "title": "Trawl Net",
+              "url": "https://dontstarve.wiki.gg/wiki/Trawl_Net"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "License Plate",
+      "url": "https://dontstarve.wiki.gg/wiki/License_Plate"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 74067,
   "plainText": "License Plate\nObject Info\n40\nSource\nDropped by\n:\nMiscellaneous\n\"trinket_16\"\nExclusive to:\n“How did this get all the way out here?”\n–Wilson\n“Litter is a terrible thing.”\n–Willow\n“I do not know what this is.”\n–Wolfgang\n“Whatever this belonged to met a bad end.”\n–Wendy\n“HOW DID THIS GET HERE?”\n–WX-78\n“What does this inscription mean?”\n–Wickerbottom\n“It just a little sheet of metal, eh?”\n–Woodie\n“Letters and numbers... some sort of secret code?”\n–Maxwell\n“I hypothesize this came in through a rift.”\n–Wagstaff\n“A piece öf armör?”\n–Wigfrid\n“Where's the automobile?”\n–Webber\n“An odd shaped plate...”\n–Walani\n“This has no business calling itself a plate.”\n–Warly\n“A strange plate b'this.”\n–Woodlegs\n“HATH THE SCRATCHING O' THE UNPIGS”\n–Wilba\n“Name?”\n–Wormwood\n“It's either an important clue to an adventure, or it's completely useless to me.”\n–Wheeler\nThe License Plate can be captured in a Trawl Net.\nIt can be spawned into the game with the code \"trinket_16\".\n×7\n×5\n×3\nTrivia[edit | edit source]\nOnly Wilson, Wendy, WX-78, Webber, and potentially Willow or Wagstaff seem to know what a license plate is.\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -25,6 +54,7 @@
     "timestamp": "2025-08-01T20:01:14Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Biển số có thể được giữ trong Lưới Rà.</p>",
   "title": "License Plate",
   "wikitext": "{{Object Infobox\n|icon = License Plate.png\n|image =  .png\n|name =License Plate\n|spawnCode = \"trinket_16\"\n|droppedBy ={{SW}}: {{Pic|32|Trawl Net}}\n|stack=40}}\n{{Exclusivity|Shipwrecked|Hamlet}}{{Quotes\n|wilson = How did this get all the way out here?\n|willow = Litter is a terrible thing.\n|wolfgang = I do not know what this is.\n|wendy = Whatever this belonged to met a bad end.\n|wx78 = HOW DID THIS GET HERE?\n|wickerbottom = What does this inscription mean?\n|woodie = It just a little sheet of metal, eh?\n|maxwell = Letters and numbers... some sort of secret code?\n|wagstaff = I hypothesize this came in through a rift.\n|wigfrid = A piece öf armör?\n|webber = Where's the automobile?\n|walani = An odd shaped plate...\n|warly = This has no business calling itself a plate.\n|woodlegs = A strange plate b'this.\n|wilba = HATH THE SCRATCHING O' THE UNPIGS\n|wormwood = Name?\n|wheeler = It's either an important clue to an adventure, or it's completely useless to me.\n|choose = wilson\n}}\nThe '''License Plate''' can be captured in a [[Trawl Net]].\n\nIt can be spawned into the game with the code <code>\"trinket_16\"</code>.\n\n{{Recipe\n|item = License Plate\n|gold = yes\n|result = Gold Nugget\n|resultcount = 7\n}}\n{{Recipe\n|item = License Plate\n|dubloon = yes\n|result = Dubloons\n|resultcount = 5\n}}\n{{Recipe\n|item = License Plate\n|tool = Pig Collector\n|result = Oinc\n|resultcount = 3\n|dlc = Hamlet\n}}\n== {{Pic|32|Placeholder}} {{Anchor|Trivia|Trivia}} ==\n* Only Wilson, Wendy, WX-78, Webber, and potentially Willow or Wagstaff seem to know what a license plate is.\n{{Resources}}"
 }

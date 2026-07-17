@@ -20,6 +20,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "(Axe)",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Twiggy_Tree.png",
+              "title": "Twiggy Tree",
+              "url": "https://dontstarve.wiki.gg/wiki/Twiggy_Tree"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Twiggy Tree Cone",
+      "url": "https://dontstarve.wiki.gg/wiki/Twiggy_Tree_Cone"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 14048,
   "plainText": "Twiggy Tree Cone\nObject Info\nPerk\nCan be planted.\n15 sec\nCan be Burned\n40\nSource\nDropped by\n()\nMiscellaneous\n\"twiggy_nut\"\nExclusive to:\n“There's a stick-y tree inside it that wants to get out.”\n–Wilson\n“Looks like campfire fuel to me!”\n–Willow\n“Little cone make big tree!”\n–Wolfgang\n“It's sad it's not in the earth.”\n–Wendy\n“TWIGGY TREE SOURCE CODE”\n–WX-78\n“Seeds encased in a mature strobilus.”\n–Wickerbottom\n“With a little care, this could make fer some good choppin'.”\n–Woodie\n“I could plant it... but why?”\n–Maxwell\n“It will one day rival Yggdrasil!”\n–Wigfrid\n“The tree wants to come out and play!”\n–Webber\n“It will grow into a fine tree.”\n–Warly\n“Needs dirt”\n–Wormwood\n“Belongs in the ground.”\n–Winona\n“It wants to be a lovely tree.”\n–Wortox\n“Is baby tree.”\n–Wurt\n“Hey Woby, you dig a hole and I'll plant it.”\n–Walter\n“The beginnings of a tree.”\n–Wanda\n“Can be planted in the ground.”\n-\nTwiggy Tree Cones are Don't Starve Together exclusive items dropped by Twiggy Trees that can be planted in order to grow a new tree, just like Pine Cones and Birchnuts. They can also be used as a low-level Fuel item.\nDuring the Winter's Feast event, Twiggy Tree Cones can be planted in the Festive Tree Planter to create a Winter's Feast Tree. Like regular Twiggy Trees, they take four stages to grow, however, once they are fully grown, they will stop their life cycle.\nTrivia[edit | edit source]\nTwiggy Tree Cones and Twiggy Trees are considered to be part of A New Reign, even though they were introduced before the official start of the beta branch.\nThere are unused sprites for a cooked and a Diseased version of the Twiggy Tree Cone in the game files.\nGallery[edit | edit source]\nTwiggy Tree Cone Cooked (Unused)\nRemoved Twiggy Tree Cone Diseased\nThe Normal, Cooked and Diseased states of the Twiggy Tree Cone.\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -30,6 +59,7 @@
     "timestamp": "2025-08-01T18:45:40Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Nón Cây Cành Cây là vật phẩm độc quyền của Don&#x27;t Starve Together rơi ra từ Cây Twiggy, có thể trồng để trồng cây mới, giống như Quả Thông và Hạt Dẻ Bulô. Chúng cũng có thể được sử dụng như một vật phẩm Nhiên liệu cấp thấp.</p>",
   "title": "Twiggy Tree Cone",
   "wikitext": "{{Object Infobox\n|icon = Twiggy Tree Cone.png\n|image = Twiggy Tree Cone Dropped.png\n|canBeBurned=1\n|stack = 40\n|droppedBy = {{pic|20px|Twiggy Tree}} ({{pic|20px|Axe}})\n|perk = Can be planted.\n|spawnCode = \"twiggy_nut\"\n|burnTime = [[File:Light_Sources_Filter.png|32px|link=Fuel/DST#Fire_Fuel]] 15 sec\n}}\n{{Exclusivity|Don't Starve Together}}\n{{Quotes\n|wendy = It's sad it's not in the earth.\n|willow = Looks like campfire fuel to me!\n|wurt = Is baby tree.\n|warly = It will grow into a fine tree.\n|wilson = There's a stick-y tree inside it that wants to get out.\n|webber = The tree wants to come out and play!\n|wigfrid = It will one day rival Yggdrasil!\n|wortox = It wants to be a lovely tree.\n|wormwood = Needs dirt\n|winona = Belongs in the ground.\n|maxwell = I could plant it... but why?\n|wickerbottom = Seeds encased in a mature strobilus.\n|woodie = With a little care, this could make fer some good choppin'.\n|wx78 = TWIGGY TREE SOURCE CODE\n|wolfgang = Little cone make big tree!\n|walter = Hey Woby, you dig a hole and I'll plant it.\n|wanda = The beginnings of a tree.\n|choose= woodie\n}}{{Scrapbook Info|Can be planted in the ground.}}\n'''Twiggy Tree Cones''' are ''[[Don't Starve Together]]'' exclusive [[item]]s dropped by [[Twiggy Trees]] that can be planted in order to grow a new tree, just like [[Pine Cone]]s and [[Birchnut]]s. They can also be used as a low-level [[Fuel/DST#Fire_Fuel|Fuel]] item. \n\nDuring the [[Winter's Feast]] event, Twiggy Tree Cones can be planted in the [[Festive Tree Planter]] to create a Winter's Feast Tree. Like regular Twiggy Trees, they take four stages to grow, however, once they are fully grown, they will stop their life cycle.\n\n=={{pic32|Placeholder}} Trivia ==\n* Twiggy Tree Cones and Twiggy Trees are considered to be part of ''[[A New Reign]]'', even though they were introduced before the official start of the beta branch.\n* There are unused sprites for a cooked and a [[Disease]]d version of the Twiggy Tree Cone in the game files.\n\n=={{Pic|32|Blueprint}} Gallery==\n<gallery captionalign=\"center\">\nTwiggy_Tree_Cone_Cooked.png|Twiggy Tree Cone Cooked (Unused)\nTwiggy_Tree_Cone_Diseased.png|Removed Twiggy Tree Cone Diseased\nTwiggy Tree Cone Stages.png|The Normal, Cooked and Diseased states of the Twiggy Tree Cone.\n</gallery>\n{{clear}}\n{{Resources}}\n[[Category:Fuel]]\n[[Category:Flammable Objects]]\n[[Category:A New Reign]]\n[[Category:Sanity Boost]]"
 }

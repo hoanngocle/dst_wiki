@@ -25,6 +25,41 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "(tier 3)",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Spider_Queen.png",
+              "title": "Spider Queen",
+              "url": "https://dontstarve.wiki.gg/wiki/Spider_Queen"
+            },
+            {
+              "entityId": "base_game:spiderden",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Spider_Den.png",
+              "title": "Spider Den",
+              "url": "https://dontstarve.wiki.gg/wiki/Spider_Den"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": "base_game:spidereggsack",
+      "iconUrl": null,
+      "title": "Spider Eggs/DST",
+      "url": "https://dontstarve.wiki.gg/wiki/Spider_Eggs/DST"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 220886,
   "plainText": "Don't Starve\nTogether\nSpider Eggs\n\"Get a little help from your friends.\"\nObject Info\nPerk\nCan grow into a Spider Den.\nCan be Decorated.\nA place to sleep (Webber only).\n3 min.\nCan be Burned\n10\nSource\nDropped by\n, (tier 3)\nCrafting\n×12 ×4 ×3 ( only)\nFilters\nTier\nAlways available\nMiscellaneous\n\"spidereggsack\"\n“I hope these don't hatch. Period.”\n–Wilson\n“Tons of tiny disgusting spiders.”\n–Willow\n“Nasty spider eggs.”\n–Wolfgang\n“A tiny package full of death and destruction.”\n–Wendy\n“SPIDER POTENTIAL = 6”\n–WX-78\n“A highly portable spider egg sack.”\n–Wickerbottom\n“Why would I want to carry that around?”\n–Woodie\n“Squishy.”\n–Maxwell\n“Squashing these wöuld be a waste öf future battles.”\n–Wigfrid\n“A portable friendship pod!”\n–Webber\n“This is probably a delicacy somewhere.”\n–Warly\n“Leggy Bug Babies inside”\n–Wormwood\n“I think it'd be unwise to plant this.”\n–Winona\n“They wiggle, wriggle, 'round inside.”\n–Wortox\n“Blegh, this where baby Spiderfolk come from?”\n–Wurt\n“Aww, it's full of baby spiders!”\n–Walter\n“I should squish them now, it'll save me the hassle later on...”\n–Wanda\n“Can be planted on the ground.”\n-\nSpider Eggs are acquired by destroying a Tier 3 Spider Den or killing a Spider Queen. They can be planted on the ground by picking them up from the inventory and clicking the ground with the right mouse button. This will create a tier 1 Spider Den, which then grows normally.\nSpider Eggs can be used to create Spider Dens at any specific place, often an area where one can safely contain the Spiders for Silk farming. Spider Eggs are also a great fuel for Campfires, adding a lot of burn time.\nWebber begins the game with Spider Eggs, and he can craft more in his Survivor Items Filter, using 12 Silk, 4 Spider Glands, and 3 Papyrus.\nTrivia[edit | edit source]\nWhen removing/inserting Spider Eggs from/into one's inventory, the item makes a squelching noise. In addition, when selected from the inventory, the eggs will make a \"Babum\" sound.\nDespite what Wilson says after inspecting Spider Eggs, they will never hatch unless the player manually plants them.\nThe description for this recipe may be a reference to the Beatles' song \"With a Little Help from My Friends\".\nWx-78's quote \"SPIDER POTENTIAL = 6\" is the number of spiders that can live in a tier 2 den and the number of legs all spiders have in-game.\nIf paired with a few Rabbit Hutches, Spider Eggs can be turned into a reliable spider farm.\nGallery[edit | edit source]\nSpider Eggs dropped on the ground.\nThe prompt that appears when holding Spider Eggs over the field.\nOriginal HD icon from Bonus Materials from CD Don't Starve.\nResourcesCraftable Items\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items\nView or edit this template\nDon't Starve Together Craftable Items\nRegular Filters\nSurvivor Items\nWilson\nWillow\nWolfgang\nWendy\nWX-78\nWickerbottom\nWoodie\nWes\nMaxwell\nWigfrid\nWebber\nWarly\nWortox\nWormwood\nWinona\nWurt\nWalter\nWanda\nTools\nLight Sources\nPrototypers & Stations\nRefined Materials\nWeapons\nArmor\nClothing\nHealing\nMagic\nDecorations\nStructures\nStorage Solutions\nCooking\nFood & Gardening\nFishing\nSeafaring\nBeefalo Riding\nWinter Items\nSummer Items\nRain Gear\nCrafting Station Filters\nSpecial Event\nAncient Pseudoscience\nCarpentry\nCartography\nCritters\nCelestial\nBrightsmithy\nShadowcraft\nFabrication\nBottle Exchange\nCombrining Filter\nTea Brewing Filter\nSculptures\nSeasonings\nTrading\nTrading Hutch\nOfferings\nCawnival Creation\nTrinket Trove\nMad Science\nWinter's Feast Cooking\nSanctum Smithy Filter\nCustom Course Shack Filter",
   "recipes": [
@@ -68,6 +103,7 @@
     "timestamp": "2026-06-09T14:49:58Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Trứng Nhện có được bằng cách phá hủy Hang Nhện Cấp 3 hoặc giết chết Nhện Chúa. Chúng có thể được trồng trên mặt đất bằng cách nhặt chúng từ kho và nhấp vào mặt đất bằng nút chuột phải. Điều này sẽ tạo ra Hang Nhện cấp 1, sau đó sẽ phát triển bình thường.</p>",
   "title": "Spider Eggs/DST",
   "wikitext": "{{Navbutton/Separation}}\n{{Object Infobox\n|canBeBurned=1\n|name = Spider Eggs\n|icon = Spider Eggs.png\n|image = Spider Eggs Dropped.png\n|tier = 0\n|place = {{pic|64|Spider Den Level 1|Spider Den}}\n|filter = {{Pic32|Structures Filter}} {{Pic32|Webber Filter}}\n|ingredient1 = Silk\n|multiplier1 = 12\n|ingredient2 = Spider Gland\n|multiplier2 = 4\n|ingredient3 = Papyrus \n|multiplier3 = 3 ([[File:Webber Portrait.png|28px|link=Webber]] only)\n|stack = 10\n|burnTime = [[File:Light_Sources_Filter.png|32px|link=Fuel#Fire Fuel]] 3 min.\n|droppedBy = {{pic|40|Spider Queen}}, {{pic|35|Spider Den}}(tier 3)\n|perk = Can grow into a [[Spider Den]].<br>Can be [[Den Decorating Set|Decorated]].<br>A place to sleep (Webber only).\n|spawnCode = \"spidereggsack\"\n|description = Get a little help from your friends.}}\n\n{{Quotes\n|wilson = I hope these don't hatch. Period.\n|willow = Tons of tiny disgusting spiders.\n|wolfgang = Nasty spider eggs.\n|wendy = A tiny package full of death and destruction.\n|wx78 = SPIDER POTENTIAL = 6\n|wickerbottom = A highly portable spider egg sack.\n|woodie = Why would I want to carry that around?\n|maxwell = Squishy.\n|wigfrid = Squashing these wöuld be a waste öf future battles.\n|webber = A portable friendship pod!\n|winona = I think it'd be unwise to plant this.\n|warly = This is probably a delicacy somewhere.\n|wortox = They wiggle, wriggle, 'round inside.\n|wormwood = Leggy Bug Babies inside\n|wurt = Blegh, this where baby Spiderfolk come from?\n|walter = Aww, it's full of baby spiders!\n|wanda = I should squish them now, it'll save me the hassle later on...\n|choose = webber\n}}\n\n{{Scrapbook Info|Can be planted on the ground.}}\n'''Spider Eggs''' are acquired by destroying a Tier 3 [[Spider Den]] or killing a [[Spider Queen]]. They can be planted on the ground by picking them up from the inventory and clicking the ground with the right mouse button. This will create a tier 1 Spider Den, which then grows normally.\n\nSpider Eggs can be used to create Spider Dens at any specific place, often an area where one can safely contain the [[Spiders]] for [[Silk]] farming. Spider Eggs are also a great fuel for [[Campfire]]s, adding a lot of burn time.\n\n[[Webber]] begins the game with Spider Eggs, and he can craft more in his [[Survivor Items Filter]], using 12 [[Silk]], 4 [[Spider Gland]]s, and 3 [[Papyrus]].\n\n=={{pic|32|Placeholder}} Trivia==\n* When removing/inserting Spider Eggs from/into one's inventory, the item makes a squelching noise. In addition, when selected from the inventory, the eggs will make a \"Babum\" sound.\n* Despite what [[Wilson]] says after inspecting Spider Eggs, they will never hatch unless the player manually plants them.\n* The description for this recipe may be a reference to the Beatles' song \"[[Wikipedia:With_a_Little_Help_from_My_Friends|With a Little Help from My Friends]]\".\n* Wx-78's quote \"SPIDER POTENTIAL = 6\" is the number of spiders that can live in a tier 2 den and the number of legs all spiders have in-game.\n*If paired with a few [[Rabbit Hutch]]es, Spider Eggs can be turned into a reliable spider farm.\n\n=={{Pic|32|Blueprint}} Gallery==\n<gallery captionalign=\"center\" hideaddbutton=\"true\">\nSpider Eggs on ground.png|Spider Eggs dropped on the ground.\nSpider Eggs prompt.png|The prompt that appears when holding Spider Eggs over the field.\nCD spidereggsack.png|Original HD icon from Bonus Materials from [[CD Don't Starve]].\n</gallery>\n<tabber>\nResources=\n{{Mob Dropped Items}}\n|-|\nCraftable Items=\n{{Craftable Items and Structures on DST}}\n</tabber>\n[[Category:Boss Dropped Items]]\n[[Category:Mob Dropped Items]]\n[[Category:Eggs]]\n[[Category:Flammable Objects]]\n[[Category:Fuel]]\n[[Category:Craftable Items]]\n[[Category:Structures Filter]]\n[[Category:Survivor Items Filter]]"
 }

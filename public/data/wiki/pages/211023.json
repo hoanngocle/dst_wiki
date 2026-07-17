@@ -15,6 +15,77 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "DS",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ancient_Pseudoscience_Station_Build.png",
+              "title": "Ancient Pseudoscience Station Build",
+              "url": "https://dontstarve.wiki.gg/wiki/Ancient_Pseudoscience_Station_Build"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Broken_Pseudoscience_Station_Build.png",
+              "title": "Broken Pseudoscience Station Build",
+              "url": "https://dontstarve.wiki.gg/wiki/Broken_Pseudoscience_Station_Build"
+            },
+            {
+              "entityId": "base_game:mound",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Grave.png",
+              "title": "Grave",
+              "url": "https://dontstarve.wiki.gg/wiki/Grave"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Relic_Chair.png",
+              "title": "Relic Chair",
+              "url": "https://dontstarve.wiki.gg/wiki/Relic_Chair"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Relic_Table.png",
+              "title": "Relic Table",
+              "url": "https://dontstarve.wiki.gg/wiki/Relic_Table"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Relic_Vase.png",
+              "title": "Relic Vase",
+              "url": "https://dontstarve.wiki.gg/wiki/Relic_Vase"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Relic_Plate.png",
+              "title": "Relic Plate",
+              "url": "https://dontstarve.wiki.gg/wiki/Relic_Plate"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Relic_Bowl.png",
+              "title": "Relic Bowl",
+              "url": "https://dontstarve.wiki.gg/wiki/Relic_Bowl"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Mismatched Buttons",
+      "url": "https://dontstarve.wiki.gg/wiki/Mismatched_Buttons"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 211023,
   "plainText": "Don't Starve\nTogether\nMismatched Buttons\nObject Info\n40\nSource\nDropped by\n:\nMiscellaneous\n\"trinket_9\"\nExclusive to:\n“I'm more of a zipper person myself.”\n–Wilson\n“You can strike a match on a zipper, but not on buttons.”\n–Willow\n“Tiny little buttons.”\n–Wolfgang\n“Mismatched buttons for a mismatched life.”\n–Wendy\n“THOSE DIDN’T COME FROM ME”\n–WX-78\n“Hmm, don't think I'm missing any buttons at the moment.”\n–Wickerbottom\n“I just sew my clothing shut around me when I put it on.”\n–Woodie\n“My suits don’t deserve to be defaced with these tacky atrocities.”\n–Maxwell\n“Buttons. But none fit my clothing.”\n–Wagstaff\n“Nö decent armör can be made with these.”\n–Wigfrid\n“None of them match!”\n–Webber\n“I don't care if things are matchy.”\n–Walani\n“Buttons that are not so cute.”\n–Warly\n“Me ain't picky 'bout matcheys.”\n–Woodlegs\n“WILBA ALWAYS NEED'ST BUTTONS”\n–Wilba\n“Rocks?”\n–Wormwood\n“I think I figured out where all the lost buttons go.”\n–Wheeler\n“Where's all this junk coming from?”\n–Winona\n“No \"if\"s, \"and\"s or \"but\"-tons.”\n–Wortox\n“These rocks have holes in middle?”\n–Wurt\n“Never know when you'll need a spare button.”\n–Walter\n“Each one is charmingly unique.”\n–Wanda\nThe Mismatched Buttons have a 4.17% chance of being found when digging up a grave. They can be traded to the Pig King for 7 Gold Nuggets.\nThe Mismatched Buttons can be spawned into the game with the code \"trinket_9\".\n×7\n×12\n×3\nTrivia[edit | edit source]\nUnder the old research method, Trinkets were one of the best ways of gaining research points (80 points).\nGallery[edit | edit source]\nOriginal HD Mismatched Buttons icon from Bonus Materials from CD Don't Starve.\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -25,6 +96,7 @@
     "timestamp": "2025-08-01T22:46:01Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Các Nút Không Phù Hợp có 4,17% cơ hội được tìm thấy khi đào mộ. Chúng có thể được trao đổi với Vua Lợn để lấy 7 Vàng Thỏi.</p>",
   "title": "Mismatched Buttons",
   "wikitext": "{{Navbutton/Separation}}\n{{Object Infobox\n|icon = Mismatched Buttons.png\n|image = Mismatched Buttons Dropped.png\n|name = Mismatched Buttons\n|spawnCode = \"trinket_9\"\n|droppedBy ={{DS}}: {{Pic|32|Ancient Pseudoscience Station Build}}{{Pic|32|Broken Pseudoscience Station Build}}{{Pic|32|Grave}}{{Pic|32|Relic Chair}}{{Pic|32|Relic Table}}{{Pic|32|Relic Vase}}{{Pic|32|Relic Plate}}{{Pic|32|Relic Bowl}}\n|stack=40}}\n{{Exclusivity|Don't Starve|Reign of Giants|Shipwrecked|Hamlet|Don't Starve Together}}\n{{Quotes\n|wilson = I'm more of a zipper person myself.\n|willow = You can strike a match on a zipper, but not on buttons.\n|wolfgang = Tiny little buttons.\n|wendy = Mismatched buttons for a mismatched life.\n|wx78 = THOSE DIDN’T COME FROM ME\n|wickerbottom = Hmm, don't think I'm missing any buttons at the moment.\n|woodie = I just sew my clothing shut around me when I put it on.\n|maxwell = My suits don’t deserve to be defaced with these tacky atrocities.\n|wagstaff = Buttons. But none fit my clothing.\n|wigfrid = Nö decent armör can be made with these.\n|webber = None of them match!\n|walani = I don't care if things are matchy.\n|warly = Buttons that are not so cute.\n|woodlegs = Me ain't picky 'bout matcheys.\n|wilba = WILBA ALWAYS NEED'ST BUTTONS\n|wormwood = Rocks?\n|wheeler = I think I figured out where all the lost buttons go.\n|winona = Where's all this junk coming from?\n|wortox = No \"if\"s, \"and\"s or \"but\"-tons.\n|wurt = These rocks have holes in middle?\n|walter = Never know when you'll need a spare button.\n|wanda = Each one is charmingly unique.\n|choose = webber\n}}\nThe '''Mismatched Buttons''' have a 4.17% chance of being found when digging up a grave. They can be traded to the Pig King for 7 Gold Nuggets.\n\nThe Mismatched Buttons can be spawned into the game with the code <code>\"trinket_9\"</code>.\n\n{{Recipe\n|item        = Mismatched Buttons\n|gold        = yes\n|result      = Gold Nugget\n|resultcount = 7\n}}\n{{Recipe\n|item = Mismatched Buttons\n|dubloon = yes\n|result = Dubloons\n|resultcount = 12\n|dlc = Shipwrecked\n}}\n{{Recipe\n|item = Mismatched Buttons\n|tool = Pig Collector\n|result = Oinc\n|resultcount = 3\n|dlc = Hamlet\n}}\n== {{Pic|32|Placeholder}} {{Anchor|Trivia|Trivia}} ==\n* Under the [[Research points list|old research method]], Trinkets were one of the best ways of gaining research points (80 points).\n== {{Pic|32|Blueprint}} Gallery ==\n<gallery>\nCD trinket_9.png|Original HD Mismatched Buttons icon from Bonus Materials from [[CD Don't Starve]].\n</gallery>\n{{clear}}\n{{resources}}"
 }

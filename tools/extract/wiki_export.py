@@ -1,6 +1,7 @@
 """Build compact wiki overlays and publish per-page detail artifacts."""
 
 import html
+import hashlib
 import json
 import os
 import re
@@ -14,15 +15,15 @@ from urllib.parse import urljoin, urlparse
 
 from tools.extract.wiki_mapping import normalize_identity
 from tools.extract.wiki_sections import (
-    normalize_drop_and_usage_sections,
-    strip_drop_and_usage_html,
+    normalize_available_sections,
+    strip_available_sections_html,
 )
 
 
 JsonObject = Dict[str, Any]
 FULL_UV = {"u1": 0.0, "u2": 1.0, "v1": 0.0, "v2": 1.0}
 IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".gif", ".webp"}
-NORMALIZED_SECTION_PAGE_IDS = frozenset({210449})
+SUMMARY_TRANSLATIONS_FILE = "summary_vi.json"
 
 
 @dataclass(frozen=True)
@@ -213,6 +214,71 @@ def _summary(value: str, limit: int = 360) -> Optional[str]:
     return shortened + "…"
 
 
+def _lead_text(value: str, limit: int = 600) -> Optional[str]:
+    fallback = None
+    for match in re.finditer(r"<p\b[^>]*>(.*?)</p>", value, re.IGNORECASE | re.DOTALL):
+        segments = re.split(r"<br\b[^>]*>", match.group(1), flags=re.IGNORECASE)
+        for segment in segments:
+            text = re.sub(r"<[^>]+>", " ", segment)
+            text = re.sub(r"\s+", " ", html.unescape(text)).strip()
+            normalized = text.casefold().lstrip()
+            if (
+                len(text) < 8
+                or normalized.startswith("exclusive to:")
+                or normalized.startswith("see also:")
+                or normalized.startswith("only during the event")
+                or re.match(
+                    r"^[–—-]\s*(?:for\b|[a-z][\w -]*(?:,|$))",
+                    text,
+                    re.IGNORECASE,
+                )
+            ):
+                continue
+            candidate = _summary(text, limit)
+            if len(text) >= 40:
+                return candidate
+            if fallback is None:
+                fallback = candidate
+    return fallback
+
+
+def _summary_source(sanitized_html: str, plain_text: str) -> Optional[str]:
+    return _lead_text(sanitized_html) or _summary(plain_text, 600)
+
+
+def _load_summary_translations(crawl_root: Path) -> Mapping[str, Any]:
+    path = Path(crawl_root) / SUMMARY_TRANSLATIONS_FILE
+    if not path.is_file():
+        return {}
+    value = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(value, dict) or value.get("schema_version") != 1:
+        raise ValueError(f"invalid Wiki summary translation cache: {path}")
+    pages = value.get("pages")
+    if not isinstance(pages, dict):
+        raise ValueError(f"Wiki summary translation cache pages must be an object: {path}")
+    return pages
+
+
+def _translated_summary(
+    page_id: int,
+    sanitized_html: str,
+    plain_text: str,
+    translations: Mapping[str, Any],
+) -> Tuple[Optional[str], Optional[str]]:
+    source = _summary_source(sanitized_html, plain_text)
+    entry = translations.get(str(page_id))
+    if source is None or not isinstance(entry, dict):
+        return None, None
+    translated = entry.get("vi")
+    expected_sha = hashlib.sha256(source.encode("utf-8")).hexdigest()
+    if not isinstance(translated, str) or not translated.strip():
+        return None, None
+    if entry.get("source_sha256") != expected_sha:
+        return None, None
+    translated = re.sub(r"\s+", " ", translated).strip()
+    return translated, f"<h2>Tóm tắt</h2><p>{html.escape(translated)}</p>"
+
+
 def _category(categories: Sequence[str]) -> str:
     normalized = {normalize_identity(category) for category in categories}
     if normalized & {
@@ -271,7 +337,7 @@ def _item(
         "category": _category(page["categories"]),
         "name": page["title"],
         "englishName": page["title"],
-        "description": _summary(page["plain_text"]),
+        "description": page.get("summary_vi_text") or _summary(page["plain_text"]),
         "craftingNote": None,
         "sprite": _sprite(page["primary_asset"]),
         "recipe": recipe,
@@ -341,6 +407,7 @@ def load_wiki_export(database_path: Path, crawl_root: Path) -> WikiExport:
         ).fetchall()
 
     seed_image_identities = _seed_image_identities(crawl_root)
+    summary_translations = _load_summary_translations(crawl_root)
     images_by_identity: Dict[str, WikiAsset] = {}
     for row in image_rows:
         suffix = Path(row["local_path"]).suffix.casefold()
@@ -364,6 +431,17 @@ def load_wiki_export(database_path: Path, crawl_root: Path) -> WikiExport:
     referenced_assets: Dict[str, WikiAsset] = {}
     for row in page_rows:
         value = dict(row)
+        value["sanitized_html"] = sanitize_html(
+            row["html"], row["canonical_url"]
+        )
+        summary_vi_text, summary_vi_html = _translated_summary(
+            row["page_id"],
+            value["sanitized_html"],
+            row["plain_text"],
+            summary_translations,
+        )
+        value["summary_vi_text"] = summary_vi_text
+        value["summary_vi_html"] = summary_vi_html
         value["categories"] = _categories(row["categories_json"])
         seed_identity = seed_image_identities.get(normalize_identity(row["title"]))
         identities = tuple(
@@ -473,7 +551,7 @@ def load_wiki_export(database_path: Path, crawl_root: Path) -> WikiExport:
                 "timestamp": page["revision_timestamp"],
                 "sha1": page["revision_sha1"],
             },
-            "html": sanitize_html(page["html"], page["canonical_url"]),
+            "html": page["sanitized_html"],
             "wikitext": page["wikitext"],
             "plainText": page["plain_text"],
             "categories": list(page["categories"]),
@@ -490,17 +568,18 @@ def load_wiki_export(database_path: Path, crawl_root: Path) -> WikiExport:
             ],
             "recipes": recipes_by_page.get(page["page_id"], []),
         }
-        if page["page_id"] in NORMALIZED_SECTION_PAGE_IDS:
-            try:
-                sections = normalize_drop_and_usage_sections(
-                    page["wikitext"], page["title"], entity_ids_by_title
-                )
-                detail["normalized"] = {"schema_version": 1, **sections}
-                detail["html"] = strip_drop_and_usage_html(detail["html"])
-            except ValueError as error:
-                raise ValueError(
-                    f"wiki page {page['page_id']} structured export failed: {error}"
-                ) from error
+        if page["summary_vi_html"] is not None:
+            detail["summaryViHtml"] = page["summary_vi_html"]
+        sections = normalize_available_sections(
+            page["wikitext"], page["title"], entity_ids_by_title
+        )
+        if sections is not None:
+            detail["normalized"] = {"schema_version": 2, **sections}
+            detail["html"] = strip_available_sections_html(
+                detail["html"],
+                drop_table=bool(sections["dropTable"]["rows"]),
+                usage=bool(sections["usage"]["recipes"]),
+            )
         details.append(detail)
     return WikiExport(
         overlays=dict(sorted(overlays.items())),
@@ -513,7 +592,9 @@ def load_wiki_export(database_path: Path, crawl_root: Path) -> WikiExport:
 def _overlay_item(existing: JsonObject, overlay: JsonObject) -> JsonObject:
     result = dict(existing)
     result["wiki"] = overlay["wiki"]
-    for field in ("englishName", "description", "sprite", "recipe"):
+    if overlay.get("description") is not None:
+        result["description"] = overlay["description"]
+    for field in ("englishName", "sprite", "recipe"):
         if result.get(field) is None and overlay.get(field) is not None:
             result[field] = overlay[field]
     return result
@@ -581,15 +662,21 @@ def export_wiki_artifacts(
     details_path: Path,
     assets_path: Path,
 ) -> None:
+    details_path = Path(details_path)
+    assets_path = Path(assets_path)
+
     def write_details(root: Path) -> None:
         for detail in wiki.details:
             _write_json(root / f"{detail['pageId']}.json", detail)
 
     def write_assets(root: Path) -> None:
+        curated_usage = assets_path / "usage"
+        if curated_usage.is_dir():
+            shutil.copytree(curated_usage, root / "usage")
         for asset in wiki.assets:
             if not asset.source_path.is_file():
                 raise ValueError(f"wiki source image is missing: {asset.source_path}")
             shutil.copyfile(asset.source_path, root / asset.published_name)
 
-    _replace_tree(Path(details_path), write_details)
-    _replace_tree(Path(assets_path), write_assets)
+    _replace_tree(details_path, write_details)
+    _replace_tree(assets_path, write_assets)

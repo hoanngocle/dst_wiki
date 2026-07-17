@@ -15,6 +15,53 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ancient_Pseudoscience_Station_Build.png",
+              "title": "Ancient Pseudoscience Station Build",
+              "url": "https://dontstarve.wiki.gg/wiki/Ancient_Pseudoscience_Station_Build"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Broken_Pseudoscience_Station_Build.png",
+              "title": "Broken Pseudoscience Station Build",
+              "url": "https://dontstarve.wiki.gg/wiki/Broken_Pseudoscience_Station_Build"
+            },
+            {
+              "entityId": "base_game:mound",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Grave.png",
+              "title": "Grave",
+              "url": "https://dontstarve.wiki.gg/wiki/Grave"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Crumpled_Package.png",
+              "title": "Crumpled Package",
+              "url": "https://dontstarve.wiki.gg/wiki/Crumpled_Package"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Potato Cup",
+      "url": "https://dontstarve.wiki.gg/wiki/Potato_Cup"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 128987,
   "plainText": "Potato Cup\nObject Info\n40\nSource\nDropped by\nMiscellaneous\n\"trinket_26\"\nExclusive to:\n“Food and a cup! The ultimate survival container.”\n–Wilson\n“I would have roasted it.”\n–Willow\n“Is cup made of potato, I think.”\n–Wolfgang\n“That potato is as hollow as I am.”\n–Wendy\n“NO”\n–WX-78\n“It appears to be a primitive cup fashioned from a tuber.”\n–Wickerbottom\n“Genius! A cup for a proper woodsman.”\n–Woodie\n“This was important to one very specific person once.”\n–Maxwell\n“My allies will appreciate the survival training I've bestöwed.”\n–Wigfrid\n“You're our cuppy cup!”\n–Webber\n“Who hurt you, sweet tuber.”\n–Warly\n“Hmm... What's this for?”\n–Wormwood\n“That thing's an affront to manufacturing.”\n–Winona\n“I don't think I get this joke.”\n–Wortox\n“Where all the insides?!”\n–Wurt\n“One less dish to wash!”\n–Walter\n“Something to sip and snack on all at once!”\n–Wanda\nWhen given to the Antlion as tribute, this trinket delays its rage by 0.99 days.\nThe Potato Cup can be spawned into the game with the code \"trinket_26\".\n×9\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -25,6 +72,7 @@
     "timestamp": "2025-08-01T21:04:52Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Khi được trao cho Kiến Sư Tử để cống nạp, vật trang sức này sẽ làm chậm cơn thịnh nộ của nó trong 0,99 ngày.</p>",
   "title": "Potato Cup",
   "wikitext": "{{Object Infobox\n|icon = Potato Cup.png\n|image = Potato Cup Dropped.png\n|name = Potato Cup\n|spawnCode = \"trinket_26\"\n|droppedBy = {{Pic|32|Ancient Pseudoscience Station Build}}{{Pic|32|Broken Pseudoscience Station Build}}{{Pic|32|Grave}}{{Pic|32|Crumpled Package}}\n|stack=40}}{{Exclusivity|Don't Starve Together}}\n{{Quotes\n|wilson = Food and a cup! The ultimate survival container.\n|willow = I would have roasted it.\n|wolfgang = Is cup made of potato, I think.\n|wendy = That potato is as hollow as I am.\n|wx78 = NO\n|wickerbottom = It appears to be a primitive cup fashioned from a tuber.\n|woodie = Genius! A cup for a proper woodsman.\n|maxwell = This was important to one very specific person once.\n|wigfrid = My allies will appreciate the survival training I've bestöwed.\n|webber = You're our cuppy cup!\n|winona = That thing's an affront to manufacturing.\n|warly = Who hurt you, sweet tuber.\n|wortox = I don't think I get this joke.\n|wormwood = Hmm... What's this for?\n|wurt = Where all the insides?!\n|walter = One less dish to wash!\n|wanda = Something to sip and snack on all at once!\n|choose = wx78\n}}\nWhen given to the Antlion as tribute, this trinket delays its rage by 0.99 days.\n\nThe '''Potato Cup''' can be spawned into the game with the code <code>\"trinket_26\"</code>.\n\n{{Recipe\n|item = Potato Cup\n|gold = yes\n|result = Gold Nugget\n|resultcount = 9\n}}\n{{Recipe\n|item = Potato Cup\n|tool = Antlion\n|result = Desert Stone\n}}\n{{clear}}\n{{Resources}}"
 }

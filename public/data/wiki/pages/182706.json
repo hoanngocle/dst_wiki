@@ -16,6 +16,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Forget-Me-Lots_Plant.png",
+              "title": "Forget-Me-Lots Plant",
+              "url": "https://dontstarve.wiki.gg/wiki/Forget-Me-Lots_Plant"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": "base_game:forgetmelots",
+      "iconUrl": null,
+      "title": "Forget-Me-Lots",
+      "url": "https://dontstarve.wiki.gg/wiki/Forget-Me-Lots"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 182706,
   "plainText": "Forget-Me-Lots\nFood Info\n0\n0\n1\nVeggie\n× 1\nObject Info\n15/7.5 sec\n3 days\nCan be Burned\n40\nSource\nDropped by\nMiscellaneous\n\"forgetmelots\"\nExclusive to:\n“Hm. I can't remember what I was going to say about those.”\n–Wilson\n“Some more dumb flowers.”\n–Willow\n“Pretty little flowers.”\n–Wolfgang\n“They are rather pretty for a weed.”\n–Wendy\n“PATHETIC FLOWERS”\n–WX-78\n“This strain can be used to brew a rather pleasant herbal tea.”\n–Wickerbottom\n“Funny what some folks will call a \"weed\". I think it looks nice!”\n–Woodie\n“Nothing but a common weed.”\n–Maxwell\n“I dö nöt trust them.”\n–Wigfrid\n“This one has pretty flowers.”\n–Webber\n“Hm, I don't recall ever seeing a flower like that before.”\n–Warly\n“Pretty friends”\n–Wormwood\n“I'm not one for flowers, especially when they crowd out my hard working crops!”\n–Winona\n“They seems to have a tinge of magic about them.”\n–Wortox\n“Glurgh. Is another flower.”\n–Wurt\n“I keep forgetting to look them up in my handbook.”\n–Walter\n“Have I seen those before?”\n–Wanda\nForget-Me-Lots are a Vegetable Food exclusive to Don't Starve Together and introduced in Return of Them.\nThey can be harvested from a Forget-Me-Lots Plant. They are used to prepare Soothing Tea and Beefalo Treats in a Crock Pot. As Wendy, they can also be used to make Ghastly Experience.\nDried Forget-Me-Lots[edit | edit source]\nDried Forget-Me-Lots\nFood Info\n0\n1\n5\nVeggie\n× 1\nObject Info\n15 sec\nCan be Burned\n40\nMiscellaneous\n\"forgetmelots_dried\"\n“Nice dry.”\n–Wilson\n“Mmm... So dry. So flammable.”\n–Willow\n“Wolfgang appreciate delicate fragrance.”\n–Wolfgang\n“I like how they smell.”\n–Wendy\n“DEHYDRATED PLANT MATTER”\n–WX-78\n“The drying process enhances the aroma.”\n–Wickerbottom\n“Smells nice.”\n–Woodie\n“They're all shrivelled up.”\n–Maxwell\n“T'wöuld make a möst wörthy öffering tö the göds!”\n–Wigfrid\n“Did we pick these?”\n–Webber\n“A fine ingredient!”\n–Warly\n“Dry stuff”\n–Wormwood\n“These are nice and dry.”\n–Winona\n“I'd eyed it'd dried.”\n–Wortox\n“Dried bits not yummy.”\n–Wurt\n“Dried perfectly!”\n–Walter\n“Smells lovely.”\n–Wanda\nDried Forget-Me-Lots are made from drying Forget-Me-Lots on the Drying Rack. They can be used to make Forget-Me-Lots Tea at Pearl's Tea Shop.\nRecipe[edit | edit source]\nFiller cannot be Monster Food, Meats, Fish, Egg, Dairy, Inedible or Vegetable.\n×3\n×6 / 4 / 2\nTrivia[edit | edit source]\nThe Forget-Me-Lots was introduced in the Reap What You Sow update.\nGallery[edit | edit source]\nTea concept art from Rhymes with Play stream.\nBy TypeBy Crock Pot Value\nView or edit this template\nFood and Edible Items (by Food Type)\nVeggie\nSeeds\nMeat\nGoodies\nGeneric\nHorrible\nRoughage\nElementals\nBurnt\nRaw\nGears\nGold Dust\nBerry\nWood\nNitre\nLunar Shards\nView or edit this template\nFood and Edible Items (by Food Value)\nMeats\nFishes\nVegetables\nFruits\nMonster Food\nEggs\nDairy\nSweetener\nFrozen\nInedibles\nMagic\nFat\nSeed\nJellyfish\nBone\nFilter\nAntihistamine\nDecoration\nBug\nNo Value Food",
   "recipes": [],
@@ -26,6 +55,7 @@
     "timestamp": "2026-07-12T00:50:28Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Quên-Me-Lots là một loại Thực Phẩm Thực Vật độc quyền trong Don&#x27;t Starve Together và được giới thiệu trong Return of Them.</p>",
   "title": "Forget-Me-Lots",
   "wikitext": "{{Object Infobox\n|icon = Forget-Me-Lots.png\n|image = Forget-Me-Lots Dropped.png\n|foodType = Veggie [[File:Vegetables.png|32px|link=Vegetables]]\n|foodValue = {{Pic32|Decoration|Decoration Value}} &times; 1\n|spoil = 3 days\n|placeCrockPot = 1\n|hpRestored = 0\n|hungerRestored = 0\n|sanityRestored = 1\n|burnTime = 15/7.5 sec\n|droppedBy = {{pic24|Forget-Me-Lots Plant}}\n|stack = 40\n|spawnCode = \"forgetmelots\"\n|canBeBurned=1\n}}\n{{Exclusivity|Don't Starve Together}}\n{{Quotes\n|wilson = Hm. I can't remember what I was going to say about those.\n|willow = Some more dumb flowers.\n|wolfgang = Pretty little flowers.\n|wendy = They are rather pretty for a weed.\n|wx78 = PATHETIC FLOWERS\n|wickerbottom = This strain can be used to brew a rather pleasant herbal tea.\n|woodie = Funny what some folks will call a \"weed\". I think it looks nice!\n|maxwell = Nothing but a common weed.\n|wigfrid = I dö nöt trust them.\n|webber = This one has pretty flowers.\n|winona = I'm not one for flowers, especially when they crowd out my hard working crops!\n|warly = Hm, I don't recall ever seeing a flower like that before.\n|wortox = They seems to have a tinge of magic about them.\n|wormwood = Pretty friends\n|wurt = Glurgh. Is another flower.\n|walter = I keep forgetting to look them up in my handbook.\n|wanda = Have I seen those before?\n|choose = winona}}\n'''Forget-Me-Lots''' are a [[Vegetables|Vegetable]] [[Food]] exclusive to ''[[Don't Starve Together]]'' and introduced in ''[[Return of Them]]''.\n\nThey can be harvested from a [[Weeds#Forget-Me-Lots|Forget-Me-Lots Plant]]. They are used to prepare [[Soothing Tea]] and [[Beefalo Treats]] in a [[Crock Pot]]. As Wendy, they can also be used to make [[Ghastly Experience]].\n\n{{clear}}\n== Dried Forget-Me-Lots ==\n{{Object Infobox\n|name = Dried Forget-Me-Lots\n|image = Dried Forget-Me-Lots Dropped.png\n|icon = Dried Forget-Me-Lots.png\n|hpRestored = 1\n|hungerRestored = 0\n|sanityRestored = 5\n|foodType = [[Veggie/DST|Veggie]] [[File:Veggie.png|32px|]]\n|foodValue = {{Pic32|Decoration|Decoration Value}} &times; 1\n|stack = 40\n|canBeBurned = 1\n|burnTime = [[File:Light_Sources_Filter.png|32px|link=Fuel/DST#Fire Fuel]] 15 sec\n|spawnCode = \"forgetmelots_dried\"\n}}\n{{Quotes\n|wilson = Nice dry.\n|willow = Mmm... So dry. So flammable.\n|wolfgang = Wolfgang appreciate delicate fragrance.\n|wendy = I like how they smell.\n|wx78 = DEHYDRATED PLANT MATTER\n|wickerbottom = The drying process enhances the aroma.\n|woodie = Smells nice.\n|maxwell = They're all shrivelled up.\n|wigfrid = T'wöuld make a möst wörthy öffering tö the göds!\n|webber = Did we pick these?\n|winona = These are nice and dry.\n|warly = A fine ingredient!\n|wortox = I'd eyed it'd dried.\n|wormwood = Dry stuff\n|wurt = Dried bits not yummy.\n|walter = Dried perfectly!\n|wanda = Smells lovely.\n|choose = wanda\n}}\n'''Dried Forget-Me-Lots''' are made from drying Forget-Me-Lots on the [[Drying Rack/DST|Drying Rack]]. They can be used to make [[Forget-Me-Lots Tea]] at [[Pearl's Tea Shop]].\n\t\n{{clear}}\n\n== {{pic|32|Cookbook}} Recipe ==\n{{Recipe\n|item1 = Forget-Me-Lots\n|result = Dried Forget-Me-Lots\n|tool = Drying Rack\n}}\n{{Recipe\n|item1 = Forget-Me-Lots All\n|item2 = Sweetener\n|item3 = Ice\n|item4 = Filler\n|tool = Crock Pot\n|result = Soothing Tea\n|note = Filler cannot be [[Monster Food]], [[Meats]], [[Fish]], [[Egg]], [[Dairy]], [[Inedible]] or [[Vegetable]].\n}}\n{{Recipe\n|item1 = Forget-Me-Lots All\n|item2 = Birchnut\n|item3 = Twigs\n|item4 = Filler\n|tool = Crock Pot\n|result = Beefalo Treats\n}}\n{{Recipe\n|item1 = Forget-Me-Lots\n|count1 = 1\n|item2 = Mourning Glory\n|count2 = 3\n|result = Ghastly Experience\n|character = Wendy\n|skill = Ghastly Experience (Skill)\n}}\n{{Recipe\n|item1 = Dried Forget-Me-Lots\n|count1 = 6 / 4 / 2\n|item2 = Empty Bottle (DST)\n|tool = Pearl's Tea Shop\n|result = Forget-Me-Lots Tea\n}}\n\n== {{Pic|32|Placeholder}}Trivia ==\n* The Forget-Me-Lots was introduced in the ''[[Return of Them#Reap What You Sow|Reap What You Sow]]'' update.\n=={{Pic|32|Blueprint}} Gallery==\n<gallery captionalign=\"center\" hideaddbutton=\"true\">\nRWP WF25 Tea Concept Art.png|Tea concept art from ''Rhymes with Play'' stream.\n</gallery>\n{{clear}}\n{{Food and Edible Items}}\n__NOTOC__"
 }

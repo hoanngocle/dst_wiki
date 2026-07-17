@@ -17,6 +17,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Sproutrock.png",
+              "title": "Sproutrock",
+              "url": "https://dontstarve.wiki.gg/wiki/Sproutrock"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Geode Fruit",
+      "url": "https://dontstarve.wiki.gg/wiki/Geode_Fruit"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 223569,
   "plainText": "Exclusive to:\nGeode Fruit\nNormal\nStage 2\nStage 3\nStage 4\nMob Info\nDrops\n28.4%\n21.3%\n7.1%\nFood Info\n3\n10\n0\nElemental\n(non-survivor food)\nObject Info\n20\nSource\nDropped by\nMiscellaneous\n\"ancientfruit_gem\"\n“Hot and fresh off the tree.”\n–Wilson\n“It's so pretty, let's toss it in the fire!”\n–Willow\n“Even Wolfgang's mighty jaw can't bite into funny rock-fruit.”\n–Wolfgang\n“A fruit that offers no sweetness.”\n–Wendy\n“IT IS HARD TO CLASSIFY AS ORGANIC OR INORGANIC... HOW DISTURBING”\n–WX-78\n“I suspect burning away the tough outer skin might reveal something at its core.”\n–Wickerbottom\n“Maybe roasting it will soften it up, eh?”\n–Woodie\n“I sense magic at its core. Now, how to get it out...”\n–Maxwell\n“I care nöt för any fruit, much less öne as hard as stöne!”\n–Wigfrid\n“It's too hard to take a bite out of.”\n–Webber\n“I wonder if it's possible to cook such a stony fruit?”\n–Warly\n“Hmm. Something inside”\n–Wormwood\n“For a fruit, it's one tough nut to crack.”\n–Winona\n“Don't try to eat it, better to heat it!”\n–Wortox\n“Grrrr, too hard to eat!”\n–Wurt\n“Is this really a fruit? It's as hard as a rock!”\n–Walter\n“I'd rather not break my teeth on that, thank you.”\n–Wanda\n“Even the heart of stone can be cracked by a little warmth... or perhaps a lot.”\n-\nThe Geode Fruits can be harvested from Sproutrock trees. After picking from a tree they will regrow after 12 to 25 days. The Geode Fruits can be placed near a heat sources to heat up. After heating to 60 degrees for 30 seconds, they will break and drop one random Gem (except Iridescent Gem) for each fruit.\nResourcesFood\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items\nView or edit this template\nFood and Edible Items (by Food Type)\nVeggie\nSeeds\nMeat\nGoodies\nGeneric\nHorrible\nRoughage\nElementals\nBurnt\nRaw\nGears\nGold Dust\nBerry\nWood\nNitre\nLunar Shards",
   "recipes": [],
@@ -27,6 +56,7 @@
     "timestamp": "2025-08-02T01:14:09Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Quả Geode có thể được thu hoạch từ cây Sproutrock. Sau khi hái từ cây, chúng sẽ mọc lại sau 12 đến 25 ngày. Quả Geode có thể được đặt gần nguồn nhiệt để làm nóng. Sau khi làm nóng đến 60 độ trong 30 giây, chúng sẽ vỡ và rơi ra một viên Ngọc ngẫu nhiên (trừ Ngọc Ánh Kim) cho mỗi quả.</p>",
   "title": "Geode Fruit",
   "wikitext": "{{Exclusivity|Don't Starve Together}}\n{{Object Infobox\n|hpRestored = 10\n|hungerRestored =3\n|sanityRestored = 0\n|foodType = {{foodType|Elemental}}\n|image =\n<gallery>\nGeode Fruit Dropped.png|Normal\nGeode Fruit Dropped 2.png|Stage 2\nGeode Fruit Dropped 3.png|Stage 3\nGeode Fruit Dropped 4.png|Stage 4\n</gallery>\n|stack = 20\n|drops = {{pic|32|Red Gem}}{{pic|32|Blue Gem}}28.4% <br> {{pic|32|Purple Gem}}21.3% <br> {{pic|32|Green Gem}}{{pic|32|Orange Gem}}{{pic|32|Yellow Gem}}7.1%\n|droppedBy ={{pic|32|Sproutrock}}\n|icon = Geode Fruit.png\n|spawnCode = \"ancientfruit_gem\"\n}}{{Quotes\n|walter=Is this really a fruit? It's as hard as a rock!\n|wanda=I'd rather not break my teeth on that, thank you.\n|warly=I wonder if it's possible to cook such a stony fruit?\n|wigfrid=I care nöt för any fruit, much less öne as hard as stöne!\n|maxwell=I sense magic at its core. Now, how to get it out...\n|webber=It's too hard to take a bite out of.\n|wendy=A fruit that offers no sweetness.\n|wickerbottom=I suspect burning away the tough outer skin might reveal something at its core.\n|willow=It's so pretty, let's toss it in the fire!\n|wilson=Hot and fresh off the tree.\n|winona=For a fruit, it's one tough nut to crack.\n|wolfgang=Even Wolfgang's mighty jaw can't bite into funny rock-fruit.\n|woodie=Maybe roasting it will soften it up, eh?\n|wormwood=Hmm. Something inside\n|wortox=Don't try to eat it, better to heat it!\n|wurt=Grrrr, too hard to eat!\n|wx78=IT IS HARD TO CLASSIFY AS ORGANIC OR INORGANIC... HOW DISTURBING\n|choose=wortox\n}}{{Scrapbook Info|Even the heart of stone can be cracked by a little warmth... or perhaps a lot.}}\nThe '''Geode Fruits''' can be harvested from [[Sproutrock]] trees. After picking from a tree they will regrow after 12 to 25 days. The Geode Fruits can be placed near a heat sources to heat up. After heating to 60 degrees for 30 seconds, they will break and drop one random [[Gem]] (except [[Iridescent Gem]]) for each fruit.\n{{clear}}\n<tabber>\nResources=\n{{Resources}}\n|-|\nFood=\n{{Food Type Navbox}}\n</tabber>\n[[Category:From Beyond]]\n[[zh:晶洞果]]\n[[vi:Geode_Fruit]]"
 }

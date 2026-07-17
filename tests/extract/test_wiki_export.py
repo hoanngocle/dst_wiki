@@ -65,6 +65,46 @@ class WikiExportTests(unittest.TestCase):
         self.assertEqual(by_id["wiki:11"]["prefabId"], "wiki-11")
         self.assertEqual(by_id["wiki:11"]["wiki"]["mappingState"], "unmatched")
 
+    def test_vietnamese_wiki_summary_overrides_database_description(self):
+        source = "A nugget of gold."
+        (self.crawl / "summary_vi.json").write_text(
+            json.dumps(
+                {
+                    "schema_version": 1,
+                    "pages": {
+                        "10": {
+                            "source_sha256": hashlib.sha256(
+                                source.encode("utf-8")
+                            ).hexdigest(),
+                            "source": source,
+                            "vi": "Tóm tắt Wiki tiếng Việt.",
+                        }
+                    },
+                },
+                ensure_ascii=False,
+            ),
+            encoding="utf-8",
+        )
+        existing = [
+            {
+                "id": "base_game:goldnugget",
+                "prefabId": "goldnugget",
+                "namespace": "base_game",
+                "category": "item",
+                "name": "Vàng",
+                "englishName": "Gold Nugget",
+                "description": "Mô tả database.",
+                "craftingNote": None,
+                "sprite": None,
+                "recipe": None,
+                "wiki": None,
+            }
+        ]
+
+        merged = merge_wiki_items(existing, load_wiki_export(self.database, self.crawl))
+
+        self.assertEqual(merged[0]["description"], "Tóm tắt Wiki tiếng Việt.")
+
     def test_uses_crawled_seed_icon_when_wikitext_omits_image_field(self):
         (self.crawl / "seeds.jsonl").write_text(
             json.dumps(
@@ -131,6 +171,54 @@ class WikiExportTests(unittest.TestCase):
         export_wiki_artifacts(wiki, details, assets)
         self.assertEqual((details / "10.json").read_bytes(), first_detail)
 
+    def test_preserves_curated_wiki_assets_during_export(self):
+        wiki = load_wiki_export(self.database, self.crawl)
+        details = self.root / "public/data/wiki/pages"
+        assets = self.root / "public/assets/wiki"
+        curated = assets / "usage" / "station.png"
+        curated.parent.mkdir(parents=True)
+        curated.write_bytes(b"curated-station")
+
+        export_wiki_artifacts(wiki, details, assets)
+
+        self.assertEqual(curated.read_bytes(), b"curated-station")
+
+    def test_exports_cached_vietnamese_wiki_summary_into_detail_and_item_data(self):
+        source = "A nugget of gold."
+        (self.crawl / "summary_vi.json").write_text(
+            json.dumps(
+                {
+                    "schema_version": 1,
+                    "pages": {
+                        "10": {
+                            "source_sha256": hashlib.sha256(
+                                source.encode("utf-8")
+                            ).hexdigest(),
+                            "source": source,
+                            "vi": "Một cục vàng dùng làm nguyên liệu chế tạo.",
+                        }
+                    },
+                },
+                ensure_ascii=False,
+                sort_keys=True,
+            ),
+            encoding="utf-8",
+        )
+
+        wiki = load_wiki_export(self.database, self.crawl)
+        detail = next(value for value in wiki.details if value["pageId"] == 10)
+        item = next(
+            value for value in wiki.standalone_items if value["wiki"]["pageId"] == 10
+        )
+
+        self.assertEqual(
+            detail.get("summaryViHtml"),
+            "<h2>Tóm tắt</h2><p>Một cục vàng dùng làm nguyên liệu chế tạo.</p>",
+        )
+        self.assertEqual(
+            item["description"], "Một cục vàng dùng làm nguyên liệu chế tạo."
+        )
+
     def test_missing_wiki_tables_returns_an_empty_export(self):
         empty_database = self.root / "empty.sqlite"
         create_base_database(empty_database)
@@ -173,7 +261,7 @@ class WikiExportTests(unittest.TestCase):
             [12],
         )
 
-    def test_normalizes_only_the_nightmare_fuel_pilot(self):
+    def test_normalizes_supported_sections_for_every_wiki_page(self):
         fixture = json.loads(
             (
                 Path(__file__).resolve().parents[2]
@@ -190,6 +278,23 @@ class WikiExportTests(unittest.TestCase):
             '<p>Trivia body</p>'
         )
         with sqlite3.connect(self.database) as connection:
+            connection.execute(
+                "update wiki_pages set html=?,wikitext=? where page_id=10",
+                (
+                    '<p>A nugget of gold.</p>'
+                    '<h2><span id="Usage">Usage</span></h2>'
+                    '<div>gold recipes</div>'
+                    '<h2><span id="Trivia">Trivia</span></h2>',
+                    "{{Object Infobox\n"
+                    "|droppedBy = {{pic24|Boulder}} ×1 ({{pic24|Pickaxe}})<br>"
+                    "{{pic24|Pig King}} 50% ×2\n"
+                    "}}\n"
+                    "== Usage ==\n"
+                    "{{Recipe|item1=Gold Nugget|count1=2|item2=Twigs|count2=4|"
+                    "tool=Alchemy Engine|result=Luxury Axe}}\n"
+                    "== Trivia ==\n",
+                ),
+            )
             connection.execute(
                 "insert into entities(namespace,prefab_id,name_en) values(?,?,?)",
                 ("base_game", "nightmarefuel", "Nightmare Fuel"),
@@ -219,13 +324,30 @@ class WikiExportTests(unittest.TestCase):
         detail = next(value for value in wiki.details if value["pageId"] == 210449)
         ordinary = next(value for value in wiki.details if value["pageId"] == 10)
 
-        self.assertEqual(detail["normalized"]["schema_version"], 1)
+        self.assertEqual(detail["normalized"]["schema_version"], 2)
         self.assertEqual(len(detail["normalized"]["dropTable"]["rows"]), 10)
         self.assertEqual(len(detail["normalized"]["usage"]["recipes"]), 30)
         self.assertNotIn('id="Drop_table"', detail["html"])
         self.assertNotIn('id="Usage"', detail["html"])
         self.assertIn('id="Trivia"', detail["html"])
-        self.assertNotIn("normalized", ordinary)
+        self.assertIsNotNone(ordinary.get("normalized"))
+        self.assertEqual(ordinary["normalized"]["subject"]["title"], "Gold Nugget")
+        self.assertEqual(
+            ordinary["normalized"]["usage"]["recipes"][0]["subjectAmount"], 2
+        )
+        self.assertEqual(
+            [
+                source["title"]
+                for row in ordinary["normalized"]["dropTable"]["rows"]
+                for source in row["sources"]
+            ],
+            ["Boulder", "Pig King"],
+        )
+        self.assertEqual(
+            ordinary["normalized"]["dropTable"]["rows"][0]["context"],
+            "(Pickaxe)",
+        )
+        self.assertNotIn('id="Usage"', ordinary["html"])
 
 
 if __name__ == "__main__":

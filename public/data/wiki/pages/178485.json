@@ -23,6 +23,60 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Blue_Whale_Carcass.png",
+              "title": "Blue Whale Carcass",
+              "url": "https://dontstarve.wiki.gg/wiki/Blue_Whale_Carcass"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/White_Whale_Carcass.png",
+              "title": "White Whale Carcass",
+              "url": "https://dontstarve.wiki.gg/wiki/White_Whale_Carcass"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/X_Marks_The_Spot.png",
+              "title": "X Marks The Spot",
+              "url": "https://dontstarve.wiki.gg/wiki/X_Marks_The_Spot"
+            }
+          ]
+        },
+        {
+          "chance": "—",
+          "context": "(exchanged for Jelly-O Pop)",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Yaarctopus.png",
+              "title": "Yaarctopus",
+              "url": "https://dontstarve.wiki.gg/wiki/Yaarctopus"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Sea Trap",
+      "url": "https://dontstarve.wiki.gg/wiki/Sea_Trap"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 178485,
   "plainText": "Exclusive to:\nSea Trap\n\"It's a trap for sea creatures.\"\n×4 ×2 ×1\nTab\nTier\n8 uses\nDoes not stack\nPerk\nCatches Wobsters.\nCan be baited.\nDropped by\n(exchanged for )\n\"seatrap\"\n“For the deadliest catch.”\n–Wilson\n“C'mon, swim inside! It's cozy in there!”\n–Willow\n“Little pincher does not stand a chance.”\n–Wolfgang\n“Come, creatures of the sea! Enjoy a lovely snack!”\n–Wendy\n“GO INSIDE, STUPID SEA THINGS.”\n–WX-78\n“Place it near the creature's den.”\n–Wickerbottom\n“I'm looking forward to a wobster dinner.”\n–Woodie\n“The curiosity will get the best of you eventually.”\n–Maxwell\n“I do hope this yields a lobster dinner.”\n–Wagstaff\n“Bring me spöils öf the sea!”\n–Wigfrid\n“Things swim in. Dinner comes out.”\n–Webber\n“Wobster goes in. Dinner comes out.”\n–Walani\n“I can trick some delicious crustaceans into this!”\n–Warly\n“Tis' a pirate's lunch fer me!”\n–Woodlegs\n“FOR TRAPPING YON PINCHY MEATS”\n–Wilba\n“Wet trap”\n–Wormwood\n“It looks that way so the crustaceans won't recognize that I'm desperate.”\n–Wheeler\nThe Sea Trap is a Nautical Tab Item in the Shipwrecked DLC. It can only be used to catch Wobsters, requires a Science Machine to prototype, and 4 Palm Leaves, 2 Empty Bottles, and 1 Jellyfish to craft. It is also a reward from the Yaarctopus in exchange for Jelly-O Pop. Sea Traps act similar to regular Traps.\nUsage[edit | edit source]\nSea Traps are set by placing them in the Ocean, and can be picked up again at any time. They will move a bit of distance before settling completely when deployed.\nOnce set, Sea Traps can be baited with Food, which is attractive to Wobsters. Bait will be consumed upon a successful catch, but will be given back if the player picks up the Sea Trap with the bait still in it. Once a Sea Trap has caught a Wobster, it will drop its hook with a cage, with the Wobster in the cage.\nSea Traps do not need bait in order to catch Wobsters; if a Wobster touches the Sea Trap for any reason, it will possibly catch it. This means if a Sea Trap is placed directly on top of a Wobster Den, it will catch the Wobster when it leaves home or comes back.\nWhen a Sea Trap is picked up from the ocean and is still yet to catch a Wobster, no durability is lost, allowing it to be moved around freely. When a Sea Trap is picked up after catching a Wobster (or failing), it will lose durability.\nOnce a Sea Trap is placed, an icon will become visible on the map where it was placed.\nTips[edit | edit source]\nIt is easy to catch Wobsters quickly without using bait by sailing towards them and deploying the trap such that it hits them as the trap glides forward. Wobsters can also be chased into a trap. Positioning your boat between the Wobster and its den helps prevent it from escaping.\nBesides Limpets, the Sea Trap can be baited with Eggs, any meats including Monster Meat, Roe, Mussels, and any fish but Jellyfish.\nGallery[edit | edit source]\nA baited Sea Trap.\nDSTDSRoGSWHam\nView or edit this template\nDon't Starve Together Craftable Items\nRegular Filters\nSurvivor Items\nWilson\nWillow\nWolfgang\nWendy\nWX-78\nWickerbottom\nWoodie\nWes\nMaxwell\nWigfrid\nWebber\nWarly\nWortox\nWormwood\nWinona\nWurt\nWalter\nWanda\nTools\nLight Sources\nPrototypers & Stations\nRefined Materials\nWeapons\nArmor\nClothing\nHealing\nMagic\nDecorations\nStructures\nStorage Solutions\nCooking\nFood & Gardening\nFishing\nSeafaring\nBeefalo Riding\nWinter Items\nSummer Items\nRain Gear\nCrafting Station Filters\nSpecial Event\nAncient Pseudoscience\nCarpentry\nCartography\nCritters\nCelestial\nBrightsmithy\nShadowcraft\nFabrication\nBottle Exchange\nCombrining Filter\nTea Brewing Filter\nSculptures\nSeasonings\nTrading\nTrading Hutch\nOfferings\nCawnival Creation\nTrinket Trove\nMad Science\nWinter's Feast Cooking\nSanctum Smithy Filter\nCustom Course Shack Filter\nView or edit this template\nDon't Starve Craftable Items\nTools\nLight\nSurvival\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nAncient\nBooks\nTinkering\nView or edit this template\nDon't Starve: Reign of Giants Craftable Items\nTools\nLight\nSurvival\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nAncient\nBooks\nTinkering\nView or edit this template\nDon't Starve Shipwrecked and Volcano Craftable Items\nTools\nLight\nNautical\nSurvival\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nVolcanic\nBooks\nTinkering\nView or edit this template\nDon't Starve Hamlet Craftable Items\nTools\nLight\nTreasure Hunting\nSurvival\nNautical\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nGreen Thumb\nBooks\nTinkering\nCity Planning\nRenovate\nFloors\nShelves\nPlantholders\nColumns\nWall Papers\nHanging Lamps\nOrnaments\nChairs\nHome Kits\nDoors\nWindows\nRugs\nLamps\nTables",
   "recipes": [],
@@ -33,6 +87,7 @@
     "timestamp": "2021-10-23T04:00:30Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Bẫy Biển là một Vật phẩm Thẻ Hàng hải trong Shipwrecked DLC. Nó chỉ có thể được sử dụng để bắt Wobsters, yêu cầu Máy Khoa học để tạo nguyên mẫu và 4 Lá Cọ, 2 Chai Rỗng và 1 Sứa để chế tạo. Đó cũng là phần thưởng từ Yaarctopus để đổi lấy Jelly-O Pop. Bẫy biển hoạt động tương tự như Bẫy thông thường.</p>",
   "title": "Sea Trap",
   "wikitext": "{{Exclusivity|Shipwrecked}}\n{{Item Infobox\n|name = Sea Trap\n|ingredient1 = Palm Leaf\n|multiplier1 = 4\n|ingredient2 = Empty Bottle\n|multiplier2 = 2\n|ingredient3 = Jellyfish\n|multiplier3 = 1\n|tab = Nautical\n|tier = 1\n|stack = Does not stack\n|durability = 8 uses\n|spawnCode = \"seatrap\"\n|description = It's a trap for sea creatures.\n|droppedBy = {{Pic32|Blue Whale Carcass}} {{Pic32|White Whale Carcass}} {{Pic32|X Marks The Spot}}<br>{{Pic32|Yaarctopus}} (exchanged for {{Pic32|Jelly-O Pop}})\n|perk = Catches [[Wobsters]].<br>Can be baited.}}\n{{Quotes\n|wolfgang=Little pincher does not stand a chance.\n|wilson=For the deadliest catch.\n|willow=C'mon, swim inside! It's cozy in there!\n|woodie=I'm looking forward to a wobster dinner.\n|maxwell=The curiosity will get the best of you eventually.\n|wagstaff = I do hope this yields a lobster dinner.\n|wendy=Come, creatures of the sea! Enjoy a lovely snack!\n|woodlegs=Tis' a pirate's lunch fer me!\n|wickerbottom=Place it near the creature's den.\n|webber=Things swim in. Dinner comes out.\n|warly=I can trick some delicious crustaceans into this!\n|wx78=GO INSIDE, STUPID SEA THINGS.\n|walani=Wobster goes in. Dinner comes out.\n|wigfrid=Bring me spöils öf the sea!\n|wilba = FOR TRAPPING YON PINCHY MEATS\n|wormwood = Wet trap\n|wheeler = It looks that way so the crustaceans won't recognize that I'm desperate.\n|choose=willow}}\nThe '''Sea Trap''' is a [[Nautical Tab]] [[Item]] in the ''[[Don't Starve: Shipwrecked|Shipwrecked]]'' DLC. It can only be used to catch [[Wobster]]s, requires a [[Science Machine]] to prototype, and 4 [[Palm Leaf|Palm Leaves]], 2 [[Empty Bottle]]s, and 1 Jellyfish to craft. It is also a reward from the [[Yaarctopus]] in exchange for [[Jelly-O Pop]]. Sea Traps act similar to regular [[Trap]]s.\n\n=={{pic|32|Icon Tools}} Usage==\nSea Traps are set by placing them in the [[Ocean#Shipwrecked|Ocean]], and can be picked up again at any time. They will move a bit of distance before settling completely when deployed.\n\nOnce set, Sea Traps can be baited with [[Food]], which is attractive to Wobsters. Bait will be consumed upon a successful catch, but will be given back if the player picks up the Sea Trap with the bait still in it. Once a Sea Trap has caught a Wobster, it will drop its hook with a cage, with the Wobster in the cage.\n\nSea Traps do not need bait in order to catch Wobsters; if a Wobster touches the Sea Trap for any reason, it will possibly catch it. This means if a Sea Trap is placed directly on top of a [[Wobster Den]], it will catch the Wobster when it leaves home or comes back.\n\nWhen a Sea Trap is picked up from the ocean and is still yet to catch a Wobster, no durability is lost, allowing it to be moved around freely. When a Sea Trap is picked up after catching a Wobster (or failing), it will lose durability.\n\nOnce a Sea Trap is placed, an icon will become visible on the map where it was placed.\n\n=={{Pic32|Prototype}}Tips ==\n* It is easy to catch Wobsters quickly without using bait by sailing towards them and deploying the trap such that it hits them as the trap glides forward. Wobsters can also be chased into a trap. Positioning your boat between the Wobster and its den helps prevent it from escaping.\n*Besides Limpets, the Sea Trap can be baited with [[Eggs]], any meats including [[Monster Meat]], [[Roe]], [[Mussel|Mussels]], and any fish but [[Jellyfish]].\n\n=={{Pic|32|Blueprint}} Gallery==\n<gallery captionalign=\"center\" hideaddbutton=\"true\">\nSea Trap at sea.png|A baited Sea Trap.\n</gallery>\n\n{{Craftable Items}}\n[[Category:Items]]\n[[Category:Shipwrecked]]\n[[Category:Non-Flammable]]\n[[Category:Nautical Tab]]\n[[Category:Limited use]]"
 }

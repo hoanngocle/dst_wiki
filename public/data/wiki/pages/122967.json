@@ -15,6 +15,47 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ancient_Pseudoscience_Station.png",
+              "title": "Ancient Pseudoscience Station",
+              "url": "https://dontstarve.wiki.gg/wiki/Ancient_Pseudoscience_Station"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Broken_Pseudoscience_Station.png",
+              "title": "Broken Pseudoscience Station",
+              "url": "https://dontstarve.wiki.gg/wiki/Broken_Pseudoscience_Station"
+            },
+            {
+              "entityId": "base_game:mound",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Grave.png",
+              "title": "Grave",
+              "url": "https://dontstarve.wiki.gg/wiki/Grave"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Back Scratcher",
+      "url": "https://dontstarve.wiki.gg/wiki/Back_Scratcher"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 122967,
   "plainText": "Back Scratcher\nObject Info\n40\nSource\nDropped by\nMiscellaneous\n\"trinket_20\"\nExclusive to:\n“Now I can scratch my back; all my problems are solved!”\n–Wilson\n“This looks a little like a fire iron.”\n–Willow\n“Wolfgang's arms too thick to reach back.”\n–Wolfgang\n“My back doesn't need scratching.”\n–Wendy\n“SOMEONE RIPPED THE ARM OFF A HELPLESS ROBOT”\n–WX-78\n“An instrument of self-sufficiency.”\n–Wickerbottom\n“If you scratch my back, I'll scratch yours, eh?”\n–Woodie\n“Eliminates the need for the phrase 'You scratch my back and I'll scratch yours.'”\n–Maxwell\n“Finally, a safe weapön with which tö spar with my new allies.”\n–Wigfrid\n“Can we dig in the dirt with this?”\n–Webber\n“You scratch my back, I scratch yours, non?”\n–Warly\n“(scritch, scritch)”\n–Wormwood\n“I can reach my own back! Watch!”\n–Winona\n“Much less satisfying than big sharp claws!”\n–Wortox\n“Extra claws for scratching!”\n–Wurt\n“Woby likes it.”\n–Walter\n“So this is when it ended up!”\n–Wanda\nWhen given to the Antlion as tribute, this trinket delays its rage by 0.99 days.\nThe Back Scratcher can be spawned into the game with the code \"trinket_20\".\n×7\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -25,6 +66,7 @@
     "timestamp": "2025-08-01T21:00:27Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Khi được trao cho Kiến Sư Tử để cống nạp, vật trang sức này sẽ làm chậm cơn thịnh nộ của nó trong 0,99 ngày.</p>",
   "title": "Back Scratcher",
   "wikitext": "{{Object Infobox\n|icon = Back Scratcher.png\n|image = Back Scratcher Dropped.png\n|name = Back Scratcher\n|spawnCode = \"trinket_20\"\n|droppedBy = {{Pic|32|Ancient Pseudoscience Station}}{{Pic|32|Broken Pseudoscience Station}}{{Pic|32|Grave}}\n|stack=40}}{{Exclusivity|Don't Starve Together}}\n{{Quotes\n|wilson = Now I can scratch my back; all my problems are solved!\n|willow = This looks a little like a fire iron.\n|wolfgang = Wolfgang's arms too thick to reach back.\n|wendy = My back doesn't need scratching.\n|wx78 = SOMEONE RIPPED THE ARM OFF A HELPLESS ROBOT\n|wickerbottom = An instrument of self-sufficiency.\n|woodie = If you scratch my back, I'll scratch yours, eh?\n|maxwell = Eliminates the need for the phrase 'You scratch my back and I'll scratch yours.'\n|wigfrid = Finally, a safe weapön with which tö spar with my new allies.\n|webber = Can we dig in the dirt with this?\n|winona = I can reach my own back! Watch!\n|warly = You scratch my back, I scratch yours, non?\n|wortox = Much less satisfying than big sharp claws!\n|wormwood = (scritch, scritch)\n|wurt = Extra claws for scratching!\n|walter = Woby likes it.\n|wanda = So this is when it ended up!\n|choose = wolfgang\n}}\nWhen given to the Antlion as tribute, this trinket delays its rage by 0.99 days.\n\nThe '''Back Scratcher''' can be spawned into the game with the code <code>\"trinket_20\"</code>.\n\n{{Recipe\n|item = Back Scratcher\n|gold = yes\n|result = Gold Nugget\n|resultcount = 7\n}}\n{{Recipe\n|item = Back Scratcher\n|tool = Antlion\n|result = Desert Stone\n}}\n{{clear}}\n{{Resources}}"
 }

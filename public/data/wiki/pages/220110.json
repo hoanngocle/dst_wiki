@@ -25,6 +25,123 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "(Pickaxe), (Hammer)",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": "base_game:atrium_statue",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ancient_Statue.png",
+              "title": "Ancient Statue",
+              "url": "https://dontstarve.wiki.gg/wiki/Ancient_Statue"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Broken_Clockworks.png",
+              "title": "Broken_Clockworks",
+              "url": "https://dontstarve.wiki.gg/wiki/Broken_Clockworks"
+            }
+          ]
+        },
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": "base_game:chest_mimic",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ornate_Chest.png",
+              "title": "Ornate Chest",
+              "url": "https://dontstarve.wiki.gg/wiki/Ornate_Chest"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Geode_Fruit.png",
+              "title": "Geode Fruit",
+              "url": "https://dontstarve.wiki.gg/wiki/Geode_Fruit"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Dragonfly.png",
+              "title": "Dragonfly",
+              "url": "https://dontstarve.wiki.gg/wiki/Dragonfly"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Retinazor.png",
+              "title": "Retinazor",
+              "url": "https://dontstarve.wiki.gg/wiki/Retinazor"
+            },
+            {
+              "entityId": "base_game:winter_tree",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Winter%27s_Feast_Tree.png",
+              "title": "Winter's Feast Tree",
+              "url": "https://dontstarve.wiki.gg/wiki/Winter%27s_Feast_Tree"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Great_Depths_Worm.png",
+              "title": "Great Depths Worm",
+              "url": "https://dontstarve.wiki.gg/wiki/Great_Depths_Worm"
+            }
+          ]
+        },
+        {
+          "chance": "12%",
+          "context": "( )",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": "base_game:cave_hole",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Cave_Hole.png",
+              "title": "Cave Hole",
+              "url": "https://dontstarve.wiki.gg/wiki/Cave_Hole"
+            }
+          ]
+        },
+        {
+          "chance": "5%",
+          "context": "( )",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Malbatross.png",
+              "title": "Malbatross",
+              "url": "https://dontstarve.wiki.gg/wiki/Malbatross"
+            }
+          ]
+        },
+        {
+          "chance": "0.01%",
+          "context": "( )",
+          "quantity": "3",
+          "sources": [
+            {
+              "entityId": "base_game:tumbleweed",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Tumbleweed.png",
+              "title": "Tumbleweed",
+              "url": "https://dontstarve.wiki.gg/wiki/Tumbleweed"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": "base_game:yellowgem",
+      "iconUrl": null,
+      "title": "Yellow Gem/DST",
+      "url": "https://dontstarve.wiki.gg/wiki/Yellow_Gem/DST"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 220110,
   "plainText": "Don't Starve\nTogether\nYellow Gem\nFood Info\n5\n10\n0\nElemental\n(non-survivor food)\nObject Info\n40\nSource\nDropped by\n(), ()\n(12%)\n(5%)\n(20%)\n(0.01% x3)\nCrafting\nDescription\nTransmute Orange Gems into Yellow Gems.\n×3 ( only)\nFilters\n(for ).\nMiscellaneous\n\"yellowgem\"\n“This gem is yellow.”\n–Wilson\n“It sparkles.”\n–Willow\n“Pretty rock.”\n–Wolfgang\n“It reminds me of my mother.”\n–Wendy\n“IT IS RATHER HEAVY.”\n–WX-78\n“Perhaps it is similar to Citrine.”\n–Wickerbottom\n“I can see the stars in it.”\n–Woodie\n“I can feel the magic in this.”\n–Maxwell\n“A study in proper proportion of sines of angles of incidence and refraction.”\n–Wagstaff\n“A yellöw beaut.”\n–Wigfrid\n“Yellow-bellied gem.”\n–Webber\n“It's got a nice energy.”\n–Walani\n“I miss lemons...”\n–Warly\n“A gem th'color o'me teeth!”\n–Woodlegs\n“WHAT LIGHT THROUGH YONDER GEM BREAKETH?”\n–Wilba\n“Bright light shiny”\n–Wormwood\n“Nice and light.”\n–Wheeler\n“I like gems best before they're cut.”\n–Winona\n“From lava floes bellow this glimmering yellow.”\n–Wortox\n“There sunshine inside it.”\n–Wurt\n“Is it supposed to feel warm?”\n–Walter\n“It won't do much good by itself.”\n–Wanda\nThe Yellow Gem is an item used to craft Ancient items. It is required in two main crafting recipes; the Magiluminescence and Star Caller's Staff. The Magiluminescence is an amulet that emits light, increases movement speed, and provides a Sanity boost when worn. The Star Caller's Staff summons a Dwarf Star that emits light and heat. It can also be used for Cooking Food.\nYellow Gems can be inserted into Cratered Moonrocks to acquire a Yellow Moonlens. They can also be used to power Winona's G.E.M.erator.\nGathering[edit | edit source]\nYellow Gems can be obtained by mining Ancient Statues, destroying Broken Clockworks, opening Ornate Chests in the Ruins. They can also be gathered from Cave Holes by using The Lazy Forager. The Ruins can be regenerated by killing the Ancient Fuelweaver, allowing the player to obtain new gems each time the boss is defeated.\nThere are additional ways to acquire Yellow Gems:\nThe Dragonfly drops 1–2 Yellow Gems upon death.\nRetinazor can be killed every 15 days for a guaranteed Yellow Gem.\nBoulderboughs planted in the Ruins or the Fumarole Biome have a chance to grow Yellow Gems.\nGeode Fruits have roughly a 2.4% chance to yield a Yellow Gem when heated.\nThe Large Ornate Chest has a chance to contain Yellow Gems each time the Ancient Guardian is killed.\nSunken Chests have a chance to drop Yellow Gems when hammered.\nThe Malbatross has a 5% chance to drop a single Yellow Gem upon death.\nThe Table and Chair Relics have roughly a 0.2% chance to drop Yellow Gems when destroyed.\nTumbleweeds have roughly a 0.01% chance to drop Yellow Gems when harvested.\nEach segment of a defeated Great Depths Worm has a chance to drop a Yellow Gem.\nA Yellow Gem can be crafted by Wilson using the Transmute Gems II skill.\nYellow Gems can be obtained from presents under a Winter's Feast Tree (only during Winter's Feast).\nUsage[edit | edit source]\n×2\n×2\n×4\n×2\n×3\n×3\nGallery[edit | edit source]\nMedal yellow emoji from official Klei Discord server.\nIcon used as emoji for Official Klei Discord.\nHistory[edit | edit source]\nGame\nUpdate\nVersion\nDescription\nDon't Starve\nHungry For Your Hunger\nNone\nEwecus has been added to the game.\nHamlet\nThe Aporkalypse!\n298452\nFixed a bug due to which the yellow gem became invisible when placed on a shelf.\nResourcesCraftable ItemsFood\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items\nView or edit this template\nDon't Starve Together Craftable Items\nRegular Filters\nSurvivor Items\nWilson\nWillow\nWolfgang\nWendy\nWX-78\nWickerbottom\nWoodie\nWes\nMaxwell\nWigfrid\nWebber\nWarly\nWortox\nWormwood\nWinona\nWurt\nWalter\nWanda\nTools\nLight Sources\nPrototypers & Stations\nRefined Materials\nWeapons\nArmor\nClothing\nHealing\nMagic\nDecorations\nStructures\nStorage Solutions\nCooking\nFood & Gardening\nFishing\nSeafaring\nBeefalo Riding\nWinter Items\nSummer Items\nRain Gear\nCrafting Station Filters\nSpecial Event\nAncient Pseudoscience\nCarpentry\nCartography\nCritters\nCelestial\nBrightsmithy\nShadowcraft\nFabrication\nBottle Exchange\nCombrining Filter\nTea Brewing Filter\nSculptures\nSeasonings\nTrading\nTrading Hutch\nOfferings\nCawnival Creation\nTrinket Trove\nMad Science\nWinter's Feast Cooking\nSanctum Smithy Filter\nCustom Course Shack Filter\nBy TypeBy Crock Pot Value\nView or edit this template\nFood and Edible Items (by Food Type)\nVeggie\nSeeds\nMeat\nGoodies\nGeneric\nHorrible\nRoughage\nElementals\nBurnt\nRaw\nGears\nGold Dust\nBerry\nWood\nNitre\nLunar Shards\nView or edit this template\nFood and Edible Items (by Food Value)\nMeats\nFishes\nVegetables\nFruits\nMonster Food\nEggs\nDairy\nSweetener\nFrozen\nInedibles\nMagic\nFat\nSeed\nJellyfish\nBone\nFilter\nAntihistamine\nDecoration\nBug\nNo Value Food",
   "recipes": [
@@ -56,6 +173,7 @@
     "timestamp": "2026-06-09T15:16:26Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Ngọc Vàng là một vật phẩm dùng để chế tạo các Vật phẩm Cổ xưa. Nó được yêu cầu trong hai công thức chế tạo chính; Magiluminescent và Gậy Gọi Sao. Magiluminescent là một tấm bùa phát ra ánh sáng, tăng tốc độ di chuyển và tăng Tinh Thần khi đeo. Gậy Gọi Sao triệu hồi một Ngôi sao lùn phát ra ánh sáng và nhiệt. Nó cũng có thể được sử dụng để nấu ăn.</p>",
   "title": "Yellow Gem/DST",
   "wikitext": "{{Navbutton/Separation}}\n{{Object Infobox\n|craft_desctiption =''Transmute Orange Gems into Yellow Gems.''\n|image = Yellow Gem Dropped.png\n|icon = Yellow Gem.png\n|foodType = {{foodType|Elemental}}\n|hpRestored = 10\n|hungerRestored = 5\n|sanityRestored = 0\n|name = Yellow Gem\n|droppedBy = {{pic24|Ancient Statue}} ({{pic24|Pickaxe}}), {{pic32|Broken_Clockworks}}({{pic24|Hammer}})<br>[[File:Relic Chair.png|32px|link=Relic]] {{pic32|Ornate Chest}} {{pic32|Geode Fruit}} {{pic|32|Dragonfly}} {{pic|32|Retinazor}} {{pic24|Winter's Feast Tree}} {{pic|30|Great Depths Worm}}<br>{{pic|32|Cave Hole}} (12%)<br> {{pic|32|Malbatross}} (5%) <br> [[File:Sunken_Chest.png|32px|link=Sunken_Chest]] (20%)<br>{{pic|32|Tumbleweed}} (0.01% x3)\n|stack      = 40\n|spawnCode  = \"yellowgem\"\n|filter = {{Pic32|Wilson Filter}}\n|ingredient1 = Orange Gem\n|multiplier1 = 3 ({{Pic|28|Wilson Portrait|Wilson}} only)\n|skill = Transmute Gems II\n|skillOwner = Wilson\n}}\n{{Quotes\n|wilson = This gem is yellow.\n|willow = It sparkles.\n|wolfgang = Pretty rock.\n|wendy = It reminds me of my mother.\n|wx78 = IT IS RATHER HEAVY.\n|wickerbottom = Perhaps it is similar to Citrine.\n|woodie = I can see the stars in it.\n|maxwell = I can feel the magic in this.\n|wagstaff = A study in proper proportion of sines of angles of incidence and refraction.\n|wigfrid = A yellöw beaut.\n|webber = Yellow-bellied gem.\n|walani = It's got a nice energy.\n|woodlegs = A gem th'color o'me teeth!\n|wilba = WHAT LIGHT THROUGH YONDER GEM BREAKETH?\n|wheeler =Nice and light. \n|winona = I like gems best before they're cut.\n|warly = I miss lemons...\n|wortox = From lava floes bellow this glimmering yellow.\n|wormwood = Bright light shiny\n|wurt = There sunshine inside it.\n|walter = Is it supposed to feel warm?\n|wanda = It won't do much good by itself.\n|choose = wurt\n}}\nThe '''Yellow Gem''' is an [[Items|item]] used to craft [[Ancient Pseudoscience Filter|Ancient]] items. It is required in two main crafting recipes; the [[Magiluminescence]] and [[Star Caller's Staff]]. The Magiluminescence is an amulet that emits light, increases movement speed, and provides a Sanity boost when worn. The Star Caller's Staff summons a Dwarf Star that emits light and heat. It can also be used for [[Cooking]] [[Food]].\n\nYellow Gems can be inserted into [[Cratered Moonrock]]s to acquire a Yellow [[Moonlens]]. They can also be used to power [[Winona's G.E.M.erator]].\n\n==Gathering==\nYellow Gems can be obtained by mining [[Ancient Statue]]s, destroying [[Broken Clockworks]], opening [[Ornate Chest]]s in the [[Ruins]]. They can also be gathered from [[Cave Hole]]s by using [[The Lazy Forager]]. The [[Ruins]] can be regenerated by killing the [[Ancient Fuelweaver]], allowing the player to obtain new gems each time the boss is defeated.\n\nThere are additional ways to acquire Yellow Gems:\n* The [[Dragonfly]] drops 1–2 Yellow Gems upon death.\n* [[Retinazor]] can be killed every 15 days for a guaranteed Yellow Gem.\n* [[Boulderbough]]s planted in the [[Ruins]] or the [[Fumarole Biome]] have a chance to grow Yellow Gems.\n* [[Geode Fruit]]s have roughly a 2.4% chance to yield a Yellow Gem when heated.\n* The [[Large Ornate Chest]] has a chance to contain Yellow Gems each time the [[Ancient Guardian]] is killed.\n* [[Sunken Chest]]s have a chance to drop Yellow Gems when [[hammer]]ed.\n* The [[Malbatross]] has a 5% chance to drop a single Yellow Gem upon death.\n* The Table and Chair [[Relics]] have roughly a 0.2% chance to drop Yellow Gems when destroyed.\n* [[Tumbleweed]]s have roughly a 0.01% chance to drop Yellow Gems when harvested.\n* Each segment of a defeated [[Great Depths Worm]] has a chance to drop a Yellow Gem.\n* A Yellow Gem can be crafted by [[Wilson/Don't Starve Together|Wilson]] using the [[Transmute Gems II]] skill.\n* Yellow Gems can be obtained from presents under a [[Winter's Feast Tree]] (only during [[Winter's Feast]]).\n\n== {{pic|32|Icon Tools}} Usage ==\n{{Recipe\n|item1 = Yellow Gem\n|count1 = 2\n|item2 = Living Log\n|count2 = 2\n|item3 = Nightmare Fuel\n|count3 = 4\n|tool = Broken Pseudoscience Station\n|result = Star Caller's Staff}}\n{{Recipe\n|item1 = Yellow Gem\n|item2 = Thulecite\n|count2 = 2\n|item3 = Nightmare Fuel\n|count3 = 3\n|tool = Broken Pseudoscience Station\n|result = Magiluminescence}}\n{{Recipe\n|item1 = Yellow Gem\n|item2 = Cratered Moonrock\n|tool = Hand\n|result = Yellow Moonlens\n}}\n{{Recipe\n|item1 = Yellow Gem\n|count1 = 3\n|result = Green Gem\n|resultcount = 1\n|character = Wilson\n|skill = Transmute Gems III\n}}\n{{Recipe\n|item1 = Yellow Gem\n|item2 = Orange Gem\n|item3 = Green Gem\n|item4 = Purple Gem\n|item5 = Red Gem\n|item6 = Blue Gem\n|result = Iridescent Gem\n|character = Wilson\n|skill = Transmute Gems III\n}}\n\n== {{Pic|32|Blueprint}} Gallery ==\n<gallery>\nYellow Gem emoji from official Klei Discord server.png|Medal yellow emoji from official Klei Discord server.\nYellow Gem 128x128.png|Icon used as emoji for Official Klei Discord.\n</gallery>\n\n== {{Pic32|Ageless Watch}} History ==\n{| class=\"wikitable\"\n!'''Game'''\n!'''Update'''\n!'''Version'''\n!'''Description'''\n|-\n|[[Don't Starve]]\n|[[Hungry For Your Hunger]]\n|None\n|Ewecus has been added to the game.\n|-\n|[[Hamlet]]\n|The Aporkalypse!\n|298452\n|Fixed a bug due to which the yellow gem became invisible when placed on a shelf.\n|}\n<tabber>\nResources=\n{{Resources}}\n|-|\nCraftable Items=\n{{Craftable Items and Structures on DST}}\n|-|\nFood=\n{{Food}}\n</tabber>\n[[es:Gema amarilla]]\n[[pl:Żółty kryształ]]\n[[vi:Ngọc Vàng]]\n[[ru:Жёлтый самоцвет]]\n__NOTOC__\n[[Category:Naturally Spawning Objects]]\n[[Category:Gems]]\n[[Category:Non-Renewable]]\n[[Category:Minerals]]\n[[Category:Resources]]\n[[Category:Boss Dropped Items]]\n[[Category:Non-Flammable]]\n[[Category:Mob Dropped Items]]"
 }

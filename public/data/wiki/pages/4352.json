@@ -15,6 +15,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "SW",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": "base_game:mound",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Grave.png",
+              "title": "Grave",
+              "url": "https://dontstarve.wiki.gg/wiki/Grave"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Broken AAC Device",
+      "url": "https://dontstarve.wiki.gg/wiki/Broken_AAC_Device"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 4352,
   "plainText": "Broken AAC Device\nObject Info\n40\nSource\nDropped by\n:\nMiscellaneous\n\"trinket_23\"\nExclusive to:\n“Someone lost their words.”\n–Wilson\n“Broken what?”\n–Willow\n“Is very broken.”\n–Wolfgang\n“How unfortunate.”\n–Wendy\n“OF COURSE IT'S BROKEN, IT'S MISSING A DR356X001”\n–WX-78\n“Don't step on it!”\n–Wickerbottom\n“I got no idea what that is.”\n–Woodie\n“It's not communicating with anyone now.”\n–Maxwell\n“Ah. It needs a DR356X001.”\n–Wagstaff\n“A bröken sömething.”\n–Wigfrid\n“Where did the words go?”\n–Webber\n“Too much work to figure out what this does...”\n–Walani\n“What an interesting contraption.”\n–Warly\n“Even if it weren't broken, me wouldn't be knowing whut to do wit' it.”\n–Woodlegs\n“'TIS CRACK'D”\n–Wilba\n“Green stick glass”\n–Wormwood\n“Interesting... I don't know what it is.”\n–Wheeler\nIn Shipwrecked compatible worlds, the Broken AAC Device has a rare chance of being found when digging up a grave. AAC stands for \"Augmentative and Alternative Communication\".\nThe Broken AAC Device can be spawned into the game with the code \"trinket_23\".\n×10\n×11\n×3\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -25,6 +54,7 @@
     "timestamp": "2025-08-01T18:31:17Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Trong các thế giới tương thích với Shipwrecked, Thiết bị AAC bị hỏng có cơ hội hiếm có được tìm thấy khi đào mộ. AAC là viết tắt của Truyền thông tăng cường và thay thế.</p>",
   "title": "Broken AAC Device",
   "wikitext": "{{Object Infobox\n|icon = Broken AAC Device.png\n|image =  .png\n|name =Broken AAC Device\n|spawnCode = \"trinket_23\"\n|droppedBy ={{SW}}: {{Pic|32|Grave}}\n|stack=40}}\n{{Exclusivity|Shipwrecked|Hamlet}}{{Quotes\n|wilson = Someone lost their words.\n|willow = Broken what?\n|wolfgang = Is very broken.\n|wendy = How unfortunate.\n|wx78 = OF COURSE IT'S BROKEN, IT'S MISSING A DR356X001\n|wickerbottom = Don't step on it!\n|woodie = I got no idea what that is.\n|maxwell = It's not communicating with anyone now.\n|wagstaff = Ah. It needs a DR356X001.\n|wigfrid = A bröken sömething.\n|webber = Where did the words go?\n|walani = Too much work to figure out what this does...\n|warly = What an interesting contraption.\n|woodlegs = Even if it weren't broken, me wouldn't be knowing whut to do wit' it.\n|wilba = 'TIS CRACK'D\n|wormwood = Green stick glass\n|wheeler = Interesting... I don't know what it is.\n|choose = wx78\n}}\nIn ''Shipwrecked'' compatible worlds, the '''Broken AAC Device''' has a rare chance of being found when digging up a grave. AAC stands for \"Augmentative and Alternative Communication\".\n\nThe Broken AAC Device can be spawned into the game with the code <code>\"trinket_23\"</code>.\n\n{{Recipe\n|item = Broken AAC Device\n|gold = yes\n|result = Gold Nugget\n|resultcount = 10\n}}\n{{Recipe\n|item = Broken AAC Device\n|dubloon = yes\n|result = Dubloons\n|resultcount = 11\n}}\n{{Recipe\n|item = Broken AAC Device\n|tool = Pig Collector\n|result = Oinc\n|resultcount = 3\n|dlc = Hamlet\n}}\n{{Resources}}"
 }

@@ -29,6 +29,7 @@ LEGACY_CATEGORY_MAP = {
     "player": "character",
 }
 RECIPE_DESC_PREFIX = "STRINGS.RECIPE_DESC."
+DESCRIPTION_TRANSLATIONS = Path("data/manual/item_description_vi.json")
 
 
 def _atomic_json(path: Path, value: JsonObject) -> None:
@@ -327,6 +328,36 @@ def build_item_export(
     )
 
 
+def apply_description_translations(
+    items: List[JsonObject], translations_path: Path
+) -> List[JsonObject]:
+    """Replace an English database description only when its source still matches."""
+
+    path = Path(translations_path)
+    if not path.is_file():
+        return items
+    value = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(value, dict) or value.get("schema_version") != 1:
+        raise ValueError(f"invalid item description translations: {path}")
+    translations = value.get("items")
+    if not isinstance(translations, dict):
+        raise ValueError(f"item description translations must contain an items object: {path}")
+
+    result = []
+    for item in items:
+        translated = dict(item)
+        entry = translations.get(item.get("id"))
+        if (
+            isinstance(entry, dict)
+            and item.get("description") == entry.get("source")
+            and isinstance(entry.get("vi"), str)
+            and entry["vi"].strip()
+        ):
+            translated["description"] = entry["vi"].strip()
+        result.append(translated)
+    return result
+
+
 def export_items(
     database_path: Path,
     catalog_path: Path,
@@ -336,6 +367,7 @@ def export_items(
     wiki_crawl_path: Path = Path("data/crawled/dontstarve-items"),
     wiki_details_path: Path = Path("public/data/wiki/pages"),
     wiki_assets_path: Path = Path("public/assets/wiki"),
+    description_translations_path: Path = DESCRIPTION_TRANSLATIONS,
 ) -> None:
     """Read audit JSON and atomically publish the compact frontend contracts."""
 
@@ -343,6 +375,9 @@ def export_items(
     assets = json.loads(Path(assets_path).read_text(encoding="utf-8"))
     crafting_notes = load_crafting_notes(database_path)
     items, textures = build_item_export(catalog, assets, crafting_notes)
+    items["items"] = apply_description_translations(
+        items["items"], description_translations_path
+    )
     wiki = load_wiki_export(database_path, wiki_crawl_path)
     items["items"] = merge_wiki_items(items["items"], wiki)
     _atomic_json(Path(items_path), items)

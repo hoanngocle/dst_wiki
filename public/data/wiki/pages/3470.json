@@ -15,6 +15,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "DS RoG",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Flotsam.png",
+              "title": "Flotsam",
+              "url": "https://dontstarve.wiki.gg/wiki/Flotsam"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Toy Boat",
+      "url": "https://dontstarve.wiki.gg/wiki/Toy_Boat"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 3470,
   "plainText": "Toy Boat\nObject Info\n40\nSource\nDropped by\n:\nMiscellaneous\n\"sunken_boat_trinket_2\"\nExclusive to:\n“I ought to measure it to make sure it's to scale.”\n–Wilson\n“I've put away childish things.”\n–Willow\n“So Tiny!”\n–Wolfgang\n“What sort of simple mind would be amused by this?”\n–Wendy\n“THIS BOAT CONSTRUCTION IS PREPOSTEROUS”\n–WX-78\n“A lovely, tiny boat.”\n–Wickerbottom\n“That boat seems a little on the small side.”\n–Woodie\n“Might be nice in a hot bath...”\n–Maxwell\n“Appears to be seaworthy, but much too diminutive to be useful.”\n–Wagstaff\n“A child's löngship.”\n–Wigfrid\n“Yaaaay!”\n–Webber\n“Is there a toy surf board?”\n–Walani\n“I'm afraid I won't fit.”\n–Warly\n“'Tis a mockery o'th'mighty vessels o'th'sea!”\n–Woodlegs\n“'TIS A TEENY BOAT”\n–Wilba\n“Baby floater”\n–Wormwood\n“I'd like it better if it was a balloon.”\n–Wheeler\nThe Toy Boat can be snagged from Flotsam by using a Fishing Rod. It can be given to the Pig King for two Gold Nuggets. When given a Toy Boat, Wolly will drop two Blue Gems and a Crimson Feather, tell a part of Wolly's Riddle, then fly away.\n×2\nTrinket 21[edit | edit source]\nToy Boat\nObject Info\n40\nSource\nDropped by\n:\n:\nMiscellaneous\n\"trinket_21\"\nExclusive to:\n“I ought to measure it to make sure it's to scale.”\n–Wilson\n“I've put away childish things.”\n–Willow\n“So Tiny!”\n–Wolfgang\n“What sort of simple mind would be amused by this?”\n–Wendy\n“THIS BOAT CONSTRUCTION IS PREPOSTEROUS”\n–WX-78\n“A lovely, tiny boat.”\n–Wickerbottom\n“That boat seems a little on the small side.”\n–Woodie\n“Might be nice in a hot bath...”\n–Maxwell\n“Appears to be seaworthy, but much too diminutive to be useful.”\n–Wagstaff\n“A child's löngship.”\n–Wigfrid\n“Yaaaay!”\n–Webber\n“Is there a toy surf board?”\n–Walani\n“I'm afraid I won't fit.”\n–Warly\n“'Tis a mockery o'th'mighty vessels o'th'sea!”\n–Woodlegs\n“'TIS A TEENY BOAT”\n–Wilba\n“Baby floater”\n–Wormwood\n“I'd like it better if it was a balloon.”\n–Wheeler\nIn the Shipwrecked DLC, an item with the same appearance can be captured in Trawl Net. Despite having the same appearance and character quotes, they are actually two different items and they cannot be stacked.\nIn the Hamlet DLC, the Toy Boat can spawn in a Bandit Stash.\n×9\n×3\n×8\nGallery[edit | edit source]\nToy Boat card from Wolly's Riddle.\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -25,6 +54,7 @@
     "timestamp": "2026-06-05T19:44:01Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Thuyền đồ chơi có thể bị bắt khỏi Flotsam bằng cách sử dụng Cần câu. Nó có thể được trao cho Vua Lợn với giá hai Vàng Thỏi. Khi được tặng Thuyền đồ chơi, Wolly sẽ đánh rơi hai viên Ngọc xanh và một chiếc Lông vũ đỏ thẫm, kể một phần Câu đố của Wolly, sau đó bay đi.</p>",
   "title": "Toy Boat",
   "wikitext": "{{Object Infobox\n|icon = Toy Boat.png\n|image = Toy Boat Dropped.png\n|name = Toy Boat\n|spawnCode =\"sunken_boat_trinket_2\"\n|droppedBy ={{DS}}{{RoG}}: {{Pic|32|Flotsam}}\n|stack=40}}\n{{Exclusivity|Don't Starve|Reign of Giants}}\n{{Quotes\n|wilson = I ought to measure it to make sure it's to scale.\n|willow = I've put away childish things.\n|wolfgang = So Tiny!\n|wendy = What sort of simple mind would be amused by this?\n|wx78 = THIS BOAT CONSTRUCTION IS PREPOSTEROUS\n|wickerbottom = A lovely, tiny boat.\n|woodie = That boat seems a little on the small side.\n|maxwell = Might be nice in a hot bath...\n|wagstaff = Appears to be seaworthy, but much too diminutive to be useful.\n|wigfrid = A child's löngship.\n|webber = Yaaaay!\n|walani = Is there a toy surf board?\n|warly = I'm afraid I won't fit.\n|woodlegs = 'Tis a mockery o'th'mighty vessels o'th'sea!\n|wilba = 'TIS A TEENY BOAT\n|wormwood = Baby floater\n|wheeler = I'd like it better if it was a balloon.\n|choose = woodlegs\n}}\nThe '''Toy Boat''' can be snagged from [[Flotsam]] by using a [[Fishing Rod]]. It can be given to the [[Pig King]] for two [[Gold Nugget]]s. When given a Toy Boat, [[Sunken Boat|Wolly]] will drop two [[Gems|Blue Gems]] and a [[Feather|Crimson Feather]], tell a part of [[Wolly's Riddle]], then fly away.\n\n{{Recipe\n|item1 = Toy Boat\n|gold = yes\n|result = Gold Nugget\n|resultcount = 2\n}}\n\n{{clear}}\n==Trinket 21==\n{{Object Infobox\n|icon = Toy Boat.png\n|image =  Toy Boat Dropped.png\n|name = Toy Boat\n|spawnCode =\"trinket_21\"\n|droppedBy ={{SW}}:{{Pic|32|Trawl Net}}<hr>{{Ham}}:{{Pic|32|Secret_Bandit_Camp}}\n|stack=40}}\n{{Exclusivity|Shipwrecked|Hamlet}}\n{{Quotes\n|wilson = I ought to measure it to make sure it's to scale.\n|willow = I've put away childish things.\n|wolfgang = So Tiny!\n|wendy = What sort of simple mind would be amused by this?\n|wx78 = THIS BOAT CONSTRUCTION IS PREPOSTEROUS\n|wickerbottom = A lovely, tiny boat.\n|woodie = That boat seems a little on the small side.\n|maxwell = Might be nice in a hot bath...\n|wagstaff = Appears to be seaworthy, but much too diminutive to be useful.\n|wigfrid = A child's löngship.\n|webber = Yaaaay!\n|walani = Is there a toy surf board?\n|warly = I'm afraid I won't fit.\n|woodlegs = 'Tis a mockery o'th'mighty vessels o'th'sea!\n|wilba = 'TIS A TEENY BOAT\n|wormwood = Baby floater\n|wheeler = I'd like it better if it was a balloon.\n|choose = woodlegs\n}}\nIn the ''[[Don't Starve: Shipwrecked|Shipwrecked]]'' DLC, an item with the same appearance can be captured in [[Trawl Net]]. Despite having the same appearance and character quotes, they are actually two different items and they cannot be stacked.\n\nIn the ''[[Hamlet]]'' DLC, the Toy Boat can spawn in a [[Secret Bandit Camp|Bandit Stash]]. \n\n{{Recipe\n|item1 = Toy Boat\n|gold = yes\n|result = Gold Nugget\n|resultcount = 9\n}}\n{{Recipe\n|item = Toy Boat\n|tool = Pig Collector\n|result = Oinc\n|resultcount = 3\n|dlc = Hamlet\n}}\n{{Recipe\n|item = Toy Boat\n|dubloon = yes\n|result = Dubloons\n|resultcount = 8\n|dlc = Shipwrecked\n}}\n\n== {{pic32|Blueprint}} Gallery ==\n<gallery>\nWolly Carapace.png|Toy Boat card from Wolly's Riddle.\n</gallery>\n\n{{Resources}}"
 }

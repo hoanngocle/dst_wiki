@@ -19,6 +19,60 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Batilisk.png",
+              "title": "Batilisk",
+              "url": "https://dontstarve.wiki.gg/wiki/Batilisk"
+            }
+          ]
+        },
+        {
+          "chance": "—",
+          "context": "(",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Crow.png",
+              "title": "Crow",
+              "url": "https://dontstarve.wiki.gg/wiki/Crow"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Redbird.png",
+              "title": "Redbird",
+              "url": "https://dontstarve.wiki.gg/wiki/Redbird"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Snowbird.png",
+              "title": "Snowbird",
+              "url": "https://dontstarve.wiki.gg/wiki/Snowbird"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": "base_game:guano",
+      "iconUrl": null,
+      "title": "Guano",
+      "url": "https://dontstarve.wiki.gg/wiki/Guano"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 214559,
   "plainText": "Don't Starve\nTogether\nGuano\nObject Info\n+2 (\n45 sec.\nCan be Burned\n20\nSource\nDropped by\n(\nMiscellaneous\n\"guano\"\n“Another flavor of poop.”\n–Wilson\n“It burns like normal poop.”\n–Willow\n“More poop.”\n–Wolfgang\n“The inevitable byproduct of life.”\n–Wendy\n“MORE POOP. SIGH.”\n–WX-78\n“More metabolic byproduct.”\n–Wickerbottom\n“It stinks less than the other kind.”\n–Woodie\n“Disgusting!”\n–Maxwell\n“Those bats produce a curiously large mound of dung for such small creatures.”\n–Wagstaff\n“Hmm, dark wing turds.”\n–Wigfrid\n“Bat doodoo.”\n–Webber\n“It's batilisk poop.”\n–Walani\n“Poop of the bat.”\n–Warly\n“'Tis from th'backside o'a beast!”\n–Woodlegs\n“PLOP BY ANY OTHER NAME”\n–Wilba\n“Good poop”\n–Wormwood\n“It's exactly what it looks like.”\n–Wheeler\n“What? We all do it.”\n–Winona\n“It came from a bat, and that is that.”\n–Wortox\n“Bats poop too, florp.”\n–Wurt\n“My Pinetree Pioneer training is telling me there's bats nearby!”\n–Walter\n“Bat droppings. Lovely.”\n–Wanda\nGuano is an item dropped by Batilisks similar to Manure, colored grayish-white. It can occasionally be found where Batilisks are commonly found, such as near unplugged Sinkholes and on Stalagmite Terrain.\nGuano is 1.5× more effective than Manure when used as a fertilizer, although it cannot be used to craft Farm plots. It creates an aesthetic gas cloud when used as a fuel source.\nTrivia[edit | edit source]\nIn real life, guano is a great fertilizer as well, although the bat variant is the weakest version of guano available.\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -29,6 +83,7 @@
     "timestamp": "2025-08-01T22:49:34Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Guano là một vật phẩm rơi ra từ Batilisks tương tự như Phân, có màu trắng xám. Đôi khi nó có thể được tìm thấy ở những nơi thường thấy Dơi Tử Xà, chẳng hạn như gần các Hố sụt chưa được cắm điện và trên Địa hình Thạch Nhũ.</p>",
   "title": "Guano",
   "wikitext": "{{Navbutton/Separation}}\n{{Object Infobox\n|canBeBurned=1\n|icon = Guano.png\n|image = Guano Dropped.png\n|droppedBy = {{pic|40|Batilisk}}<br>({{pic|30|Crow}} {{pic|30|Redbird}} {{pic|30|Snowbird}}\n|heal = +2 ([[File:Wormwood Portrait.png|24px|link=Wormwood]]\n|stack = 20\n|burnTime = [[File:Light_Sources_Filter.png|32px|link=Fuel#Fire Fuel]] 45 sec.\n|spawnCode = \"guano\"}}\n{{Quotes\n|wilson = Another flavor of poop.\n|willow = It burns like normal poop.\n|wolfgang = More poop.\n|wendy = The inevitable byproduct of life.\n|wx78 = MORE POOP. SIGH.\n|wickerbottom = More metabolic byproduct.\n|woodie = It stinks less than the other kind.\n|maxwell = Disgusting!\n|wagstaff = Those bats produce a curiously large mound of dung for such small creatures.\n|wigfrid = Hmm, dark wing turds.\n|webber = Bat doodoo.\n|walani = It's batilisk poop.\n|warly = Poop of the bat.\n|woodlegs = 'Tis from th'backside o'a beast!\n|wilba = PLOP BY ANY OTHER NAME\n|wormwood = Good poop\n|wheeler = It's exactly what it looks like.\n|winona = What? We all do it.\n|wortox = It came from a bat, and that is that.\n|wurt = Bats poop too, florp.\n|walter = My Pinetree Pioneer training is telling me there's bats nearby!\n|wanda = Bat droppings. Lovely.\n|choose = winona}}\n'''Guano''' is an item dropped by [[Batilisk]]s similar to [[Manure]], colored grayish-white. It can occasionally be found where Batilisks are commonly found, such as near unplugged [[Sinkhole]]s and on [[Stalagmite Terrain]].\n\nGuano is 1.5&times; more effective than Manure when used as a [[Farming|fertilizer]], although it cannot be used to craft [[Farm]] plots. It creates an aesthetic gas cloud when used as a [[Fire#Fuel|fuel source]].\n\n\n== {{pic|32|Placeholder}} Trivia ==\n* In real life, [[Wikipedia:guano|guano]] is a great fertilizer as well, although the bat variant is the weakest version of guano available.\n\n{{Mob Dropped Items}}\n[[vi:Phân Dơi]]\n[[Category:Fertilizer]]\n[[Category:Fuel]]\n[[Category:Resources]]\n[[Category:Mob Dropped Items]]\n[[Category:Flammable Objects]]"
 }

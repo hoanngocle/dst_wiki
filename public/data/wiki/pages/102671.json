@@ -16,6 +16,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "DS RoG",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Flotsam.png",
+              "title": "Flotsam",
+              "url": "https://dontstarve.wiki.gg/wiki/Flotsam"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Old Boot",
+      "url": "https://dontstarve.wiki.gg/wiki/Old_Boot"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 102671,
   "plainText": "Old Boot\nObject Info\n40\nSource\nDropped by\n:\nMiscellaneous\n\"sunken_boat_trinket_5\"\nExclusive to:\n“If only I had another!”\n–Wilson\n“Not my size.”\n–Willow\n“Tough leather is hard to chew.”\n–Wolfgang\n“What a cliche.”\n–Wendy\n“IT IS MISSING A CRITICAL COMPONENT”\n–WX-78\n“It is an old boot. I wonder where the other is?”\n–Wickerbottom\n“Not my size, that.”\n–Woodie\n“It was probably hideous before soaking in bilgewater.”\n–Maxwell\n“I'm afraid it is not my size.”\n–Wagstaff\n“Not my size.”\n–Wigfrid\n“We'll boil this if we get desperate.”\n–Webber\n“I've already got a pair of boots.”\n–Walani\n“Not my size.”\n–Warly\n“I already got one good boot.”\n–Woodlegs\n“IT FIT WILBA NAUGHT”\n–Wilba\n“(sniff, sniff) Whoo-wee!”\n–Wormwood\n“It's treasures like this that make all the hardship worthwhile.”\n–Wheeler\nThe Old Boot can be snagged from Flotsam by using a Fishing Rod. It can be given to the Pig King for four Gold Nuggets. When given an Old Boot, Wolly will drop five Crimson Feathers, tell a part of Wolly's Riddle, then fly away.\nThe Old Boot can be spawned into the game with the code \"sunken_boat_trinket_5\".\n×4\nTrinket 17[edit | edit source]\nOld Boot\nObject Info\n40\nSource\nDropped by\n:\n:\nMiscellaneous\n\"trinket_17\"\nExclusive to:\n“Where's the other one?”\n–Wilson\n“Not my style.”\n–Willow\n“Tough leather is hard to chew.”\n–Wolfgang\n“Whoever wore this is surely dead.”\n–Wendy\n“MINUS FOOT”\n–WX-78\n“It is an old boot. I wonder where the other is?”\n–Wickerbottom\n“Not my size.”\n–Woodie\n“It was probably hideous before soaking in bilgewater.”\n–Maxwell\n“A boot. But who did it belong to?”\n–Wagstaff\n“A warriör walks intö Valhalla barefööt...”\n–Wigfrid\n“Too big for us...”\n–Webber\n“Too big...”\n–Walani\n“I wouldn't wear this, even if it were my size.”\n–Warly\n“Boot-y!”\n–Woodlegs\n“IT FIT NAUGHT WILBA”\n–Wilba\n“(sniff, sniff) Whew-wee!”\n–Wormwood\n“It's got a hole in it.”\n–Wheeler\nIn the Shipwrecked DLC, an item with the same appearance can be captured in Trawl Net. Despite having the same appearance, they are actually two different items, they cannot be stacked, and they function and acquire differently.\nIn the Hamlet DLC, the Old Boot can spawn in a Bandit Stash.\n×6\n×5\n×3\nTrivia[edit | edit source]\nIn DST Old Boot can be found on Abigail's \"Haunt At\" icon.\nGallery[edit | edit source]\nOld Boot card from Wolly's Riddle.\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -26,6 +55,7 @@
     "timestamp": "2025-08-01T20:33:01Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Chiếc Giày Cũ có thể được lấy từ Flotsam bằng cách sử dụng Cần Câu. Nó có thể được trao cho Vua Lợn với giá 4 Vàng Thỏi. Khi được tặng một Chiếc Giày Cũ, Wolly sẽ đánh rơi năm chiếc Lông Vũ Đỏ Thẫm, kể một phần Câu đố của Wolly, sau đó bay đi.</p>",
   "title": "Old Boot",
   "wikitext": "{{Object Infobox\n|icon = Old Boot.png\n|image =  Old Boot Dropped.png\n|name = Old Boot\n|spawnCode = \"sunken_boat_trinket_5\"\n|droppedBy ={{DS}}{{RoG}}: {{Pic|32|Flotsam}}\n|stack=40}}\n{{Exclusivity|Don't Starve|Reign of Giants}}{{Quotes\n|wilson = If only I had another!\n|willow = Not my size.\n|wolfgang = Tough leather is hard to chew.\n|wendy = What a cliche.\n|wx78 = IT IS MISSING A CRITICAL COMPONENT\n|wickerbottom = It is an old boot. I wonder where the other is?\n|woodie = Not my size, that.\n|maxwell = It was probably hideous before soaking in bilgewater.\n|wagstaff = I'm afraid it is not my size.\n|wigfrid = Not my size.\n|webber = We'll boil this if we get desperate.\n|walani = I've already got a pair of boots.\n|warly = Not my size.\n|woodlegs = I already got one good boot.\n|wilba = IT FIT WILBA NAUGHT\n|wormwood = (sniff, sniff) Whoo-wee!\n|wheeler = It's treasures like this that make all the hardship worthwhile.\n|choose = maxwell\n}}\nThe '''Old Boot''' can be snagged from [[Flotsam]] by using a [[Fishing Rod]]. It can be given to the [[Pig King]] for four [[Gold Nugget]]s. When given an Old Boot, [[Sunken Boat|Wolly]] will drop five [[Feather|Crimson Feathers]], tell a part of [[Wolly's Riddle]], then fly away. \n\nThe Old Boot can be spawned into the game with the code <code>\"sunken_boat_trinket_5\"</code>.\n\n{{Recipe\n|item = Old Boot\n|gold = yes\n|result = Gold Nugget\n|resultcount = 4\n}}\n{{clear}}\n==Trinket 17==\n{{Object Infobox\n|icon = Old Boot.png\n|image =  Old Boot Dropped.png\n|name = Old Boot\n|spawnCode = \"trinket_17\"\n|droppedBy ={{SW}}:{{Pic|32|Trawl Net}}<hr>{{Ham}}:{{Pic|32|Secret_Bandit_Camp}}\n|stack=40}}{{Exclusivity|Shipwrecked|Hamlet}}{{Quotes\n|wilson = Where's the other one?\n|willow = Not my style.\n|wolfgang = Tough leather is hard to chew.\n|wendy = Whoever wore this is surely dead.\n|wx78 = MINUS FOOT\n|wickerbottom = It is an old boot. I wonder where the other is?\n|woodie = Not my size.\n|maxwell = It was probably hideous before soaking in bilgewater.\n|wagstaff = A boot. But who did it belong to?\n|wigfrid = A warriör walks intö Valhalla barefööt...\n|webber = Too big for us...\n|walani = Too big...\n|warly = I wouldn't wear this, even if it were my size.\n|woodlegs = Boot-y!\n|wilba = IT FIT NAUGHT WILBA\n|wormwood = (sniff, sniff) Whew-wee!\n|wheeler = It's got a hole in it.\n|choose = woodlegs\n}}\nIn the ''[[Don't Starve: Shipwrecked|Shipwrecked]]'' DLC, an item with the same appearance can be captured in [[Trawl Net]]. Despite having the same appearance, they are actually two different items, they cannot be stacked, and they function and acquire differently.\n\nIn the ''[[Hamlet]]'' DLC,  the Old Boot can spawn in a [[Secret Bandit Camp|Bandit Stash]]. \n\n{{Recipe\n|item = Old Boot\n|gold = yes\n|result = Gold Nugget\n|resultcount = 6\n}}\n{{Recipe\n|item = Old Boot\n|dubloon = yes\n|result = Dubloons\n|resultcount = 5\n|dlc = Shipwrecked\n}}\n{{Recipe\n|item = Old Boot\n|tool = Pig Collector\n|result = Oinc\n|resultcount = 3\n|dlc = Hamlet\n}}\n\n{{clear}}\n=={{pic|32|Placeholder}} Trivia== \n* In DST Old Boot can be found on [[Abigail/DST|Abigail]]'s \"Haunt At\" icon.\n== {{pic32|Blueprint}} Gallery ==\n<gallery>\nWolly Shale.png|Old Boot card from Wolly's Riddle.\n</gallery>\n\n{{Resources}}\n[[Category:Shipwrecked]]"
 }

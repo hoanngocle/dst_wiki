@@ -56,6 +56,7 @@
     "timestamp": "2026-04-28T16:26:09Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Nội dung này chỉ có sau khi kích hoạt Lunar Rift và đánh bại Celestial Scion</p>",
   "title": "W.A.R.B.O.T. Parts",
   "wikitext": "{{Object Infobox\n|name = W.A.R.B.O.T. Parts\n|image = W.A.R.B.O.T. Parts Dropped.png\n|icon = W.A.R.B.O.T. Parts.png\n|description = Piece by piece, assemble your very own war machine.\n|ingredient1 = Cut Stone\n|multiplier1 = 1\n|ingredient2 = Scrap\n|multiplier2 = 2\n|filter = {{Pic32|Fabrication Filter}} \n|tier = {{Pic32|Notional Fabricator}}\n|stack = 10\n|spawnCode = \"wagboss_robot_creation_parts\"\n}}\n{{Exclusivity|Don't Starve Together}}{{Post-Boss Content|Celestial Scion}}\n{{Scrapbook Info|Parts cut according to the correct specifications for W.A.R.B.O.T. construction.}}\nThe [[W.A.R.B.O.T. Parts]] are the ingredients that are used to upgrade the [[W.A.R.B.O.T. Base]]. The recipe is unlocked once players defeat [[Celestial Scion]] for the first time. They can only be crafted near the [[Notional Fabricator]] and cannot be prototyped.\n\n\n{{Clear}}\n<tabber>\nResources=\n{{Resources}}\n|-|\nCraftable Items=\n{{Craftable Items}}\n</tabber>\n[[vi:W.A.R.B.O.T. Parts]]"
 }

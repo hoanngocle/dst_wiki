@@ -25,6 +25,47 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Slotmachine.png",
+              "title": "Slotmachine",
+              "url": "https://dontstarve.wiki.gg/wiki/Slotmachine"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Steamer_Trunk.png",
+              "title": "Steamer Trunk",
+              "url": "https://dontstarve.wiki.gg/wiki/Steamer_Trunk"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/X_Marks_The_Spot.png",
+              "title": "X Marks The Spot",
+              "url": "https://dontstarve.wiki.gg/wiki/X_Marks_The_Spot"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Snakeskin Hat",
+      "url": "https://dontstarve.wiki.gg/wiki/Snakeskin_Hat"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 49647,
   "plainText": "Exclusive to:\nSnakeskin Hat\nOriginal\nHamlet\n\"Keep the rain out, and look cool doing it.\"\n×1 ×1 ×1\n×1 ×1 ×1\nTab\nTier\nEquipable\n70% resistance\n8 Days\nDoes not stack\nPerk\nProtects from Rain and Lightning.\nProtects from Jellyfish electrocution.\nDropped by\n\"snakeskinhat\"\n“It should repel the rain from my hair.”\n–Wilson\n“Water just runs right off it.”\n–Willow\n“Very good.”\n–Wolfgang\n“A hat of trophies, wrenched from the dead!”\n–Wendy\n“LEATHERY HEADWEAR”\n–WX-78\n“Rain repellent headwear!”\n–Wickerbottom\n“Now would this be a \"touque\" or a \"tuque\"?”\n–Woodie\n“Quite dashing, actually.”\n–Maxwell\n“Smells not unlike wet snake.”\n–Wagstaff\n“Shall I wear the serpent?”\n–Wigfrid\n“Does snakeskin make us look tough?”\n–Webber\n“Raindrops keep falling on my hat.”\n–Walani\n“Tres cool.”\n–Warly\n“On me head? Wear thet?”\n–Woodlegs\n“HATH A FASHION AND A FUNCTION”\n–Wilba\n“Snazzy Squirmy head thing”\n–Wormwood\n“A good hat if you don't like being struck by lightning.”\n–Wheeler\nA Snakeskin Hat is a craftable Dress Item introduced in the Shipwrecked DLC. It is the DLC's version of the Rain Hat. It requires 1 Snakeskin, 1 Straw Hat, and 1 Bone Shard to craft and an Alchemy Engine or Sea Lab to prototype. The Sewing Kit repairs 62.5% of its durability.\nWhen worn during Rain, it protects against Wetness gain by 70%. Additionally, it insulates the player against Lightning strikes and the electric shocks of Jellyfish.\nHamlet[edit | edit source]\nThe Snakeskin Hat is also included in the Hamlet DLC, however, it has a very different appearance as Snakeskin is obtained from Vipers. It is especially useful by offering protection against Lightning strikes produced by Thunderbirds.\nGallery[edit | edit source]\nWilson wearing a Snakeskin Hat.\nWillow wearing a Snakeskin Hat.\nWolfgang wearing a Snakeskin Hat.\nWendy wearing a Snakeskin Hat.\nWX-78 wearing a Snakeskin Hat.\nWickerbottom wearing a Snakeskin Hat.\nWoodie wearing a Snakeskin Hat.\nWes wearing a Snakeskin Hat.\nMaxwell wearing a Snakeskin Hat.\nWigfrid wearing a Snakeskin Hat.\nWebber wearing a Snakeskin Hat.\nWalani wearing a Snakeskin Hat.\nWarly wearing a Snakeskin Hat.\nWilbur wearing a Snakeskin Hat.\nWoodlegs wearing a Snakeskin Hat.\nWilba wearing a Snakeskin Hat.\nWormwood wearing a Snakeskin Hat.\nWheeler wearing a Snakeskin Hat.\nWilba wearing the Hamlet version of the Snakeskin Hat.\nWheeler wearing the Hamlet version of the Snakeskin Hat.\nView or edit this template\nDon't Starve Hamlet Craftable Items\nTools\nLight\nTreasure Hunting\nSurvival\nNautical\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nGreen Thumb\nBooks\nTinkering\nCity Planning\nRenovate\nFloors\nShelves\nPlantholders\nColumns\nWall Papers\nHanging Lamps\nOrnaments\nChairs\nHome Kits\nDoors\nWindows\nRugs\nLamps\nTables",
   "recipes": [],
@@ -35,6 +76,7 @@
     "timestamp": "2026-06-24T18:09:15Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Mũ Da Rắn là một Trang phục chế tạo được giới thiệu trong DLC ​​Shipwrecked. Đây là phiên bản DLC của Mũ Mưa. Nó cần 1 Da Rắn, 1 Mũ Rơm và 1 Mảnh Xương để chế tạo và Máy Luyện Kim hoặc Phòng Thí Nghiệm Biển để tạo nguyên mẫu. Bộ May vá sửa chữa 62,5% độ bền của nó.</p>",
   "title": "Snakeskin Hat",
   "wikitext": "{{Exclusivity|Shipwrecked|Hamlet}}\n{{Item Infobox\n|equipslot=head\n|image = <gallery>\nSnakeskin Hat.png|Original\nSnakeskin Hat (Hamlet).png|Hamlet\n</gallery>\n|ingredient1 = Snakeskin\n|multiplier1 = 1\n|ingredient2 = Straw Hat\n|multiplier2 = 1\n|ingredient3 = Bone Shards\n|multiplier3 = 1 {{SW|24}}<br>{{pic24|Snakeskin (Hamlet)}}×1 {{pic24|Straw Hat}}×1 {{pic24|Bone Shards}}×1 {{Ham|24}}\n|tab = Dress\n|tier = 2\n|perk=Protects from [[Rain]] and [[Lightning]].<br>\nProtects from [[Jellyfish]] electrocution.\n|droppedBy = {{Pic|20|Slotmachine}} {{Pic32|Steamer Trunk}} {{Pic32|X Marks The Spot}}\n|stack = Does not stack\n|durability = 8 Days\n|waterResistance = 70% resistance\n|spawnCode=\"snakeskinhat\"\n|description = Keep the rain out, and look cool doing it.\n}}\n{{Quotes\n|wilson = It should repel the rain from my hair.\n|willow = Water just runs right off it.\n|wolfgang = Very good.\n|wendy = A hat of trophies, wrenched from the dead!\n|wx78 = LEATHERY HEADWEAR\n|wickerbottom = Rain repellent headwear!\n|woodie = Now would this be a \"touque\" or a \"tuque\"?\n|maxwell = Quite dashing, actually.\n|wagstaff = Smells not unlike wet snake.\n|webber = Does snakeskin make us look tough?\n|wigfrid = Shall I wear the serpent?\n|walani = Raindrops keep falling on my hat.\n|warly = Tres cool.\n|woodlegs = On me head? Wear thet?\n|warbucks = A rather clever way to keep oneself dry.\n|wilba = HATH A FASHION AND A FUNCTION\n|wormwood = Snazzy Squirmy head thing\n|wheeler = A good hat if you don't like being struck by lightning.\n|choose = maxwell}}\nA '''Snakeskin Hat''' is a craftable [[Dress]] [[Item]] introduced in the ''[[Don't Starve: Shipwrecked|Shipwrecked]]'' DLC. It is the DLC's version of the [[Rain Hat]]. It requires 1 [[Snakeskin]], 1 [[Straw Hat]], and 1 [[Bone Shards|Bone Shard]] to craft and an [[Alchemy Engine]] or [[Sea Lab]] to prototype. The [[Sewing Kit]] repairs 62.5% of its durability.\n\nWhen worn during [[Rain]], it protects against [[Wetness]] gain by 70%. Additionally, it insulates the player against [[Lightning]] strikes and the electric shocks of [[Jellyfish]].\n\n=={{Pic|32|Hamlet icon}} Hamlet==\nThe Snakeskin Hat is also included in the ''[[Don't Starve: Hamlet|Hamlet]]'' DLC, however, it has a very different appearance as Snakeskin is obtained from [[Viper]]s. It is especially useful by offering protection against Lightning strikes produced by [[Thunderbird]]s.\n\n=={{Pic|32|Blueprint}} Gallery==\n<gallery>\nSnakeskin Hat Wilson.png|[[Wilson]] wearing a Snakeskin Hat.\nSnakeskin Hat Willow.png|[[Willow]] wearing a Snakeskin Hat.\nSnakeskin Hat Wolfgang.png|[[Wolfgang]] wearing a Snakeskin Hat.\nSnakeskin Hat Wendy.png|[[Wendy]] wearing a Snakeskin Hat.\nSnakeskin Hat WX-78.png|[[WX-78]] wearing a Snakeskin Hat.\nSnakeskin Hat Wickerbottom.png|[[Wickerbottom]] wearing a Snakeskin Hat.\nSnakeskin Hat Woodie.png|[[Woodie]] wearing a Snakeskin Hat.\nSnakeskin Hat Wes.png|[[Wes]] wearing a Snakeskin Hat.\nSnakeskin Hat Maxwell.png|[[Maxwell (character)|Maxwell]] wearing a Snakeskin Hat.\nSnakeskin Hat Wigfrid.png|[[Wigfrid]] wearing a Snakeskin Hat.\nSnakeskin Hat Webber.png|[[Webber]] wearing a Snakeskin Hat.\nSnakeskin Hat Walani.png|[[Walani]] wearing a Snakeskin Hat.\nSnakeskin Hat Warly.png|[[Warly]] wearing a Snakeskin Hat.\nSnakeskin Hat Wilbur.png|[[Wilbur]] wearing a Snakeskin Hat.\nSnakeskin Hat Woodlegs.png|[[Woodlegs]] wearing a Snakeskin Hat.\nSnakeskin Hat Wilba.png|[[Wilba]] wearing a Snakeskin Hat.\nSnakeskin Hat Wormwood.png|[[Wormwood]] wearing a Snakeskin Hat.\nSnakeskin Hat Wheeler.png|[[Wheeler]] wearing a Snakeskin Hat.\nSnakeskin Hat Hamlet Wilba.png|[[Wilba]] wearing the Hamlet version of the Snakeskin Hat.\nSnakeskin Hat Hamlet Wheeler.png|[[Wheeler]] wearing the Hamlet version of the Snakeskin Hat.\n</gallery>\n{{Craftable Items and Structures on Ham}}\n[[es:Sombrero de piel de serpiente]]\n[[vi:Snakeskin Hat]]\n[[zh:蛇皮帽]]\n[[Category:Equipable Items]]\n[[Category:Limited use]]\n[[Category:Dress Tab]]\n[[Category:Water Resistant]]\n[[Category:Non-Flammable]]\n[[Category:Hats]]\n[[Category:Hamlet]]\n[[Category:Shock Resistant]]"
 }

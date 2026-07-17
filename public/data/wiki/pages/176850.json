@@ -15,6 +15,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "DS RoG",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Flotsam.png",
+              "title": "Flotsam",
+              "url": "https://dontstarve.wiki.gg/wiki/Flotsam"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Sea Worther",
+      "url": "https://dontstarve.wiki.gg/wiki/Sea_Worther"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 176850,
   "plainText": "Sea Worther\nObject Info\n40\nSource\nDropped by\n:\nMiscellaneous\n\"sunken_boat_trinket_4\"\nExclusive to:\n“Scientific!”\n–Wilson\n“No idea...”\n–Willow\n“Metal doodad is fun for playtimes.”\n–Wolfgang\n“I have no idea what that is.”\n–Wendy\n“I MUST ADAPT THIS DEVICE'S MEASUREMENT PROTOCOLS”\n–WX-78\n“Looks like a useful mechanical piece.”\n–Wickerbottom\n“A toy for a keener.”\n–Woodie\n“An advanced little gadget.”\n–Maxwell\n“Amazing! It appears to work similar to my radio.”\n–Wagstaff\n“Sea sörcery.”\n–Wigfrid\n“Is this a toy?”\n–Webber\n“So how much is the sea worth?”\n–Walani\n“Sea-what?”\n–Warly\n“Bah! Hokum!”\n–Woodlegs\n“WHATFORE IS'T?”\n–Wilba\n“Beep bwoop”\n–Wormwood\n“Looks useful. Somehow...”\n–Wheeler\nThe Sea Worther can be snagged from Flotsam by using a Fishing Rod or gotten from hammering the Sunken Boat. It can be given to the Pig King for one Gold Nugget. When given a Sea Worther, Wolly will drop a Purple Gem and a Crimson Feather, tell a part of Wolly's Riddle, then fly away.\n×4\n×4\nOnly available in the world linked with a Shipwrecked world.\n×3\nGallery[edit | edit source]\nSea Worther card from Wolly's Riddle.\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -25,6 +54,7 @@
     "timestamp": "2026-03-04T04:15:16Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Sea Worther có thể bị bắt khỏi Flotsam bằng cách sử dụng Cần câu hoặc lấy được từ việc đập Thuyền chìm. Nó có thể được trao cho Vua Lợn để lấy một Thỏi Vàng. Khi được tặng Sea Worther, Wolly sẽ đánh rơi một Viên ngọc màu tím và một chiếc Lông vũ màu đỏ thẫm, kể một phần Câu đố của Wolly, sau đó bay đi.</p>",
   "title": "Sea Worther",
   "wikitext": "{{Object Infobox\n|icon = Sea Worther.png\n|image =  Sea Worther Dropped.png\n|name = Sea Worther\n|spawnCode = \"sunken_boat_trinket_4\"\n|droppedBy ={{DS}}{{RoG}}: {{Pic|32|Flotsam}}[[File:Wolly-2.png|32px|link=Sunken_Boat]]\n|stack=40}}{{Exclusivity|Don't Starve|Reign of Giants|Shipwrecked|Hamlet}}\n{{Quotes\n|wilson = Scientific!\n|willow = No idea...\n|wolfgang = Metal doodad is fun for playtimes.\n|wendy = I have no idea what that is.\n|wx78 = I MUST ADAPT THIS DEVICE'S MEASUREMENT PROTOCOLS\n|wickerbottom = Looks like a useful mechanical piece.\n|woodie = A toy for a keener.\n|maxwell = An advanced little gadget.\n|wagstaff = Amazing! It appears to work similar to my radio.\n|wigfrid = Sea sörcery.\n|webber = Is this a toy?\n|walani = So how much is the sea worth?\n|warly = Sea-what?\n|woodlegs = Bah! Hokum!\n|wilba = WHATFORE IS'T?\n|wormwood = Beep bwoop\n|wheeler = Looks useful. Somehow...\n|choose = walani\n}}\nThe '''Sea Worther''' can be snagged from [[Flotsam]] by using a [[Fishing Rod]] or gotten from hammering the [[Sunken Boat]]. It can be given to the [[Pig King]] for one [[Gold Nugget]]. When given a Sea Worther, [[Sunken Boat|Wolly]] will drop a [[Purple Gem]] and a [[Feather|Crimson Feather]], tell a part of [[Wolly's Riddle]], then fly away.\n\n{{Recipe\n|item = Sea Worther\n|gold = yes\n|result = Gold Nugget\n|resultcount = 1\n}}\n{{Recipe\n|item1 = Sea Worther\n|count1 = 1\n|item2 = Nightmare Fuel\n|count2 = 4\n|item3 = Living Log\n|count3 = 4\n|Magic 2 = yes\n|result = Seaworthy\n|note = Only available in the world linked with a ''[[Shipwrecked]]'' world.\n}}\n{{Recipe\n|item = Sea Worther\n|tool = Pig Collector\n|result = Oinc\n|resultcount = 3\n|dlc = Hamlet\n}}\n{{clear}}\n== {{pic32|Blueprint}} Gallery ==\n<gallery>\nWolly Bassinet.png|Sea Worther card from Wolly's Riddle.\n</gallery>\n{{Resources}}"
 }

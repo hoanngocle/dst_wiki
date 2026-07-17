@@ -23,6 +23,73 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "50%",
+          "context": "DS : ( ) Cave Banana Tree ( when unpicked) Monkey Totem (x2)",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Splumonkey.png",
+              "title": "Splumonkey",
+              "url": "https://dontstarve.wiki.gg/wiki/Splumonkey"
+            }
+          ]
+        },
+        {
+          "chance": "—",
+          "context": "SW : (Hammer)",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Prime_Ape.png",
+              "title": "Prime Ape",
+              "url": "https://dontstarve.wiki.gg/wiki/Prime_Ape"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Prime_Ape_Hut_Build.png",
+              "title": "Prime Ape Hut",
+              "url": "https://dontstarve.wiki.gg/wiki/Prime_Ape_Hut_Build"
+            }
+          ]
+        },
+        {
+          "chance": "—",
+          "context": "(Axe)",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Jungle_Tree.png",
+              "title": "Jungle Tree",
+              "url": "https://dontstarve.wiki.gg/wiki/Jungle_Tree"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Slotmachine.png",
+              "title": "Slot Machine",
+              "url": "https://dontstarve.wiki.gg/wiki/Slotmachine"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Banana",
+      "url": "https://dontstarve.wiki.gg/wiki/Banana"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 97044,
   "plainText": "Don't Starve\nTogether\nBanana\nNormal\nSW\nFood Info\n12.5\n1\n0\n10 ()\nVeggie\n× 1\nObject Info\n10 Days\nCan be Burned\n40\nSource\n: ( ×1)\nDropped by\n: (50%) (x1 when unpicked) (x2)\n: ()\n()\nMiscellaneous\n\"cave_banana\"\n“It's mushy.”\n–Wilson, when examining a (Cave) Banana.\n“Bananas!”\n–Willow, when examining a (Cave) Banana.\n“Is tasty!”\n–Wolfgang, when examining a (Cave) Banana.\n“The peel looks dangerous.”\n–Wendy, when examining a (Cave) Banana.\n“MORE CARBON”\n–WX-78, when examining a (Cave) Banana.\n“All of them are genetically identical.”\n–Wickerbottom, when examining a (Cave) Banana.\n“It tastes tropical.”\n–Woodie, when examining a (Cave) Banana.\n“Like ashes in my mouth.”\n–Maxwell, when examining a (Cave) Banana.\n“A fruit that grows in a cave environment. Fascinating!”\n–Wagstaff, when examining a (Cave) Banana.\n“Mönkey fööd.”\n–Wigfrid, when examining a (Cave) Banana.\n“A bundle of bananas.”\n–Webber, when examining a (Cave) Banana.\n“Potassium!”\n–Walani, when examining a (Cave) Banana.\n“Just the flavor I needed!”\n–Warly, when examining a (Cave) Banana.\n“'Nanas!”\n–Wilbur, when examining a (Cave) Banana.\n“I must be goin' banana's down here.”\n–Woodlegs, when examining a (Cave) Banana.\n“'TIS NUMMY BANANA”\n–Wilba, when examining a (Cave) Banana.\n“Sweet Hair from friend!”\n–Wormwood, when examining a (Cave) Banana.\n“Ever see a fruit fly?”\n–Wheeler, when examining a (Cave) Banana.\n“Everything since I got here has been bananas.”\n–Winona, when examining a (Cave) Banana.\n“One of the least offensive mortal food flavors.”\n–Wortox, when examining a (Cave) Banana.\n“Mmm... good fruit, florp.”\n–Wurt, when examining a (Cave) Banana.\n“I wouldn't mind stopping for a snack.”\n–Walter, when examining a (Cave) Banana.\n“I like a quick snack with no fuss.”\n–Wanda, when examining a (Cave) Banana.\nBananas (or Cave Bananas in the base game) are Food Items found on Cave Banana Trees. These trees grow underground and will regrow after 4 days once picked. Splumonkeys will pick Bananas from Cave Banana Trees on sight, which has no effect on the 4-day regrowth period of Bananas. Splumonkeys also are more likely to follow and steal from a player if the player is carrying any number of Bananas.\nCooked Banana[edit | edit source]\nCooked Banana\nNormal\nSW\nFood Info\n12.5\n27.5\n3\n0\n10 ()\nVeggie\n× 1\nObject Info\n6 Days\nCan be Burned\n40\nMiscellaneous\n\"cave_banana_cooked\"\n“Yum!”\n–Wilson, when examining a Cooked (Cave) Banana.\n“Yum!”\n–Willow, when examining a Cooked (Cave) Banana.\n“Is warm and tasty!”\n–Wolfgang, when examining a Cooked (Cave) Banana.\n“Warmed banana mush is so much better.”\n–Wendy, when examining a Cooked (Cave) Banana.\n“THESE FOOD THINGS ARE SO TEDIOUS”\n–WX-78, when examining a Cooked (Cave) Banana.\n“Somewhat better.”\n–Wickerbottom, when examining a Cooked (Cave) Banana.\n“I cooked it for some reason.”\n–Woodie, when examining a Cooked (Cave) Banana.\n“Even worse than raw.”\n–Maxwell, when examining a Cooked (Cave) Banana.\n“I do hope I can digest this without consequences.”\n–Wagstaff, when examining a Cooked (Cave) Banana.\n“Warmed mönkey fööd.”\n–Wigfrid, when examining a Cooked (Cave) Banana.\n“Hot mush.”\n–Webber, when examining a Cooked (Cave) Banana.\n“Cooked potassium!”\n–Walani, when examining a Cooked (Cave) Banana.\n“Could use some oats and a few chocolate chips...”\n–Warly, when examining a Cooked (Cave) Banana.\n“'Nanas!”\n–Wilbur, when examining a Cooked (Cave) Banana.\n“Not bad.”\n–Woodlegs, when examining a Cooked (Cave) Banana.\n“NUMMY BANANA 'TIS WARM'D”\n–Wilba, when examining a Cooked (Cave) Banana.\n“Mmmmm...”\n–Wormwood, when examining a Cooked (Cave) Banana.\n“Swell. I made baby food.”\n–Wheeler, when examining a Cooked (Cave) Banana.\n“Caramelized banana's the tops.”\n–Winona, when examining a Cooked (Cave) Banana.\n“It's cooked now.”\n–Wortox, when examining a Cooked (Cave) Banana.\n“Yummy!”\n–Wurt, when examining a Cooked (Cave) Banana.\n“Well... it's a hot banana.”\n–Walter, when examining a Cooked (Cave) Banana.\n“Why did I spend time cooking it?”\n–Wanda, when examining a Cooked (Cave) Banana.\nCooked Bananas are the product of cooking a Banana over a Campfire, Fire Pit, or Star. Like most fruits and vegetables, cooking increases the Health bonus slightly while decreasing the spoil time.\nDownloadable Content[edit | edit source]\nIn the Shipwrecked DLC, Bananas take on a more yellow appearance. They are dropped by Jungle Trees when the trees are cut down therefore are easier and safer to obtain than their underground counterparts. They also have a chance to be dropped by the Slot Machine when three carrots are rolled. Bananas can be used to cook Banana Pop; can be added to the Crock Pot as Fruit fillers and are worth 1 fruit value. They are required to craft Silly Monkey Balls and Prime Ape Huts.\nAdditionally, Bananas are eaten by Prime Apes and can be fed to them to befriend them. Wilbur gains 10 when eating Bananas.\nUsage[edit | edit source]\n×2\n×2\n×10\n×4\n×3\nTrivia[edit | edit source]\nThe Cave Banana is one of the few items in the game with examination quotes for Wilbur.\nThe raw image for the Banana shows multiple bananas in one bunch, but the Cooked image shows only three, which seem to be poorly prepared. This could hint to poor cooking/preparation due to abnormal food.\nWickerbottom's quote mentions that all of the bananas are genetically identical. This is probably a reference to the concern from botanists over the increase in cloned banana trees which could theoretically make them infertile. This could also be the reason Cave Banana Trees cannot be grown by the player.\nThe Cave Banana name is possibly a play on one of the most common banana cultivars, Cavendish Bananas.\nSince this is one of the few items that can be examined by Wilbur and they are available in Don't Starve Together, this makes Bananas, Banana Pop and the Cave Banana Trees the items with the highest amount of player examinations\nGallery[edit | edit source]\nIcon used as emoji for Official Klei Discord\nBy TypeBy Crock Pot Value\nView or edit this template\nFood and Edible Items (by Food Type)\nVeggie\nSeeds\nMeat\nGoodies\nGeneric\nHorrible\nRoughage\nElementals\nBurnt\nRaw\nGears\nGold Dust\nBerry\nWood\nNitre\nLunar Shards\nView or edit this template\nFood and Edible Items (by Food Value)\nMeats\nFishes\nVegetables\nFruits\nMonster Food\nEggs\nDairy\nSweetener\nFrozen\nInedibles\nMagic\nFat\nSeed\nJellyfish\nBone\nFilter\nAntihistamine\nDecoration\nBug\nNo Value Food",
   "recipes": [],
@@ -33,6 +100,7 @@
     "timestamp": "2026-06-23T11:19:21Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Chuối (hoặc Chuối Hang trong trò chơi cơ bản) là Vật phẩm được tìm thấy trên Cây Chuối Hang. Những cây này mọc dưới lòng đất và sẽ mọc lại sau 4 ngày kể từ khi được hái. Khỉ Hang sẽ hái Chuối từ Cây Chuối Hang trong tầm nhìn, điều này không ảnh hưởng đến thời gian tái sinh 4 ngày của Chuối. Khỉ hang cũng có nhiều khả năng theo dõi và cướp của người chơi hơn nếu người chơi mang theo bất kỳ số lượng Chuối nào.</p>",
   "title": "Banana",
   "wikitext": "{{Navbutton/Separation}}\n{{Object Infobox\n|canBeBurned = 1\n|foodType = [[Veggie]] [[File:Veggie.png|32px|]]\n|image = Banana Dropped.png\n|icon = <gallery>\nBanana.png|Normal\nBanana SW.png|SW\n</gallery>\n|hpRestored = 1\n|hungerRestored = 12.5\n|sanityRestored = 0<br>10 ({{Pic|24|Wilbur Portrait|Wilbur}})\n|spoil = 10 Days\n|foodValue = [[File:Fruit.png|32px|link=Fruit]] × 1\n|soldBy ={{Pic|24|Hamlet icon}}: {{pic|32|Swinesbury Fine Grocer's}} ({{Pic|24|Oinc}} &times;1)\n|spawnCode = \"cave_banana\"\n|stack = 40\n|droppedBy = {{DS}}:{{Pic32|Splumonkey}} (50%) {{Pic32|Cave Banana Tree}} (x1 when unpicked) {{Pic32|Monkey Totem}} (x2)<hr>{{SW}}: {{Pic32|Prime Ape}} {{Pic32|Prime Ape Hut Build|Prime Ape Hut}} ({{Pic24|Hammer}})<br>{{Pic24|Jungle Tree}} ({{Pic24|Axe}}) {{Pic|20|Slotmachine|Slot Machine}}\n}}\n{{BananaQuotes\n|wilson = It's mushy.\n|willow = Bananas!\n|wolfgang = Is tasty!\n|wendy = The peel looks dangerous.\n|wx78 = MORE CARBON\n|wickerbottom = All of them are genetically identical.\n|woodie = It tastes tropical.\n|maxwell = Like ashes in my mouth.\n|wagstaff = A fruit that grows in a cave environment. Fascinating!\n|wigfrid = Mönkey fööd.\n|webber = A bundle of bananas.\n|walani = Potassium! <!--Kris get the banana!-->\n|warly = Just the flavor I needed!\n|wilbur = 'Nanas!\n|woodlegs = I must be goin' banana's down here.\n|warbucks = I'll not eat it straight from the tree like that.\n|wilba = 'TIS NUMMY BANANA\n|wormwood = Sweet Hair from friend!\n|wheeler = Ever see a fruit fly?\n|winona = Everything since I got here has been bananas.\n|wortox = One of the least offensive mortal food flavors.\n|wurt = Mmm... good fruit, florp.\n|walter = I wouldn't mind stopping for a snack.\n|wanda = I like a quick snack with no fuss.\n|source = when examining a (Cave) Banana.\n|choose = wilbur}}\n'''Bananas''' (or '''Cave Bananas''' in the base game) are [[Food]] [[Items]] found on [[Cave Banana Tree]]s. These trees grow [[underground]] and will regrow after 4 days once picked. [[Splumonkey]]s will pick Bananas from [[Cave Banana Tree]]s on sight, which has no effect on the 4-day regrowth period of Bananas. [[Splumonkeys]] also are more likely to follow and steal from a player if the player is carrying any number of Bananas.\n__NOTOC__{{clear}}\n==Cooked Banana==\n{{Object Infobox\n|canBeBurned = 1\n|foodType = [[Veggie]] [[File:Veggie.png|32px|]]\n|name = Cooked Banana\n|image = Cooked Banana Dropped.png\n|icon = <gallery>\nCooked Banana.png|Normal\nCooked Banana SW.png|SW\n</gallery>\n|hpRestored = 3\n|hungerRestored = 12.5<br>27.5\n|sanityRestored = 0<br>10 ({{Pic|24|Wilbur Portrait|Wilbur}})\n|spoil = 6 Days\n|foodValue = [[File:Fruit.png|32px|link=Fruit]] × 1\n|stack = 40\n|spawnCode = \"cave_banana_cooked\"\n}}\n{{BananaQuotes\n|wolfgang=Is warm and tasty!\n|wilson=Yum!\n|willow=Yum!\n|woodie=I cooked it for some reason.\n|maxwell=Even worse than raw.\n|wagstaff = I do hope I can digest this without consequences.\n|wendy=Warmed banana mush is so much better.\n|woodlegs=Not bad.\n|wickerbottom=Somewhat better.\n|webber=Hot mush.\n|warly=Could use some oats and a few chocolate chips...\n|wilbur='Nanas!\n|wx78=THESE FOOD THINGS ARE SO TEDIOUS\n|walani=Cooked potassium!\n|wigfrid=Warmed mönkey fööd.\n|warbucks = I do enjoy a nice cooked banana.\n|wilba = NUMMY BANANA 'TIS WARM'D\n|wormwood = Mmmmm...\n|wheeler = Swell. I made baby food.\n|winona = Caramelized banana's the tops.\n|wortox = It's cooked now.\n|wurt = Yummy!\n|walter = Well... it's a hot banana.\n|wanda = Why did I spend time cooking it?\n|choose = wormwood\n|source = when examining a Cooked (Cave) Banana.}}\n'''Cooked Bananas''' are the product of [[cooking]] a Banana over a [[Campfire]], [[Fire Pit]], or [[Star Caller's Staff|Star]]. Like most fruits and vegetables, cooking increases the [[Health]] bonus slightly while decreasing the spoil time.\n== {{Pic|32|Gift Icon}} Downloadable Content ==\nIn the ''[[Shipwrecked]]'' DLC, Bananas take on a more yellow appearance. They are dropped by [[Tree/Jungle|Jungle Trees]] when the trees are cut down therefore are easier and safer to obtain than their underground counterparts. They also have a chance to be dropped by the [[Slot Machine]] when three carrots are rolled. Bananas can be used to cook [[Banana Pop]]; can be added to the [[Crock Pot]] as [[Fruit]] fillers and are worth 1 fruit value. They are required to craft [[Silly Monkey Ball]]s and [[Prime Ape Hut]]s.\n\nAdditionally, Bananas are eaten by [[Prime Ape]]s and can be fed to them to befriend them. [[Wilbur]] gains 10 {{Sanity}} when eating Bananas.\n\n=={{pic|32|Icon Tools}} Usage==\n{{Recipe\n|item = Banana\n|tool = Fire Pit\n|result = Cooked Banana\n}}\n{{Recipe\n|item = Bananas\n|result = Manure\n|manure = yes\n}}\n{{Recipe\n|item1 = Banana SW\n|item2 = Ice\n|item3 = Twigs\n|item4 = Filler\n|pot = yes\n|result = Banana Pop\n|dlc = Shipwrecked\n}}\n{{Recipe\n|item1=Banana SW\n|count1=1\n|item2=Snakeskin\n|count2=2\n|item3=Rope\n|count3=2\n|result=Silly Monkey Ball\n|tool = Science Machine\n|dlc=Shipwrecked\n}}\n{{Recipe\n|item3=Banana SW\n|count3=3\n|item2=Manure\n|count2=4\n|item1=Twigs\n|count1=10\n|result=Prime Ape Hut\n|tool = Alchemy Engine\n|dlc=Shipwrecked\n}}\n\n=={{Pic32|Placeholder}} Trivia==\n* The Cave Banana is one of the few items in the game with examination quotes for [[Wilbur]].\n* The raw image for the Banana shows multiple bananas in one bunch, but the Cooked image shows only three, which seem to be poorly prepared. This could hint to poor cooking/preparation due to abnormal food.\n* [[Wickerbottom]]'s quote mentions that all of the bananas are genetically identical. This is probably a reference to the concern from botanists over the increase in cloned banana trees which could theoretically make them infertile. This could also be the reason [[Cave Banana Trees]] cannot be grown by the player.\n* The Cave Banana name is possibly a play on one of the most common banana cultivars, [[wikipedia:Cavendish_bananas|Cavendish Bananas]].\n*Since this is one of the few items that can be examined by [[Wilbur]] and they are available in [[Don't Starve Together]], this makes Bananas, [[Banana Pop]] and the [[Cave Banana Tree]]s the items with the highest amount of player examinations\n== {{Pic|32|Blueprint}} Gallery ==\n<gallery>\nBanana 128x128.png|Icon used as emoji for Official Klei Discord\n</gallery>\n{{clear}}\n{{Food and Edible Items}}\n[[vi:Chuối Hang]]\n[[ru:Пещерный банан]]\n[[Category:Perishables]]\n[[Category:Healing]]\n[[Category:Fruits]]\n[[Category:Mob Dropped Items]]\n[[Category:Don't Starve Together]]\n[[Category:Shipwrecked]]\n[[Category:Sanity Boost]]\n[[Category:Caves]]"
 }

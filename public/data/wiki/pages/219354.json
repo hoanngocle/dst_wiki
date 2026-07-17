@@ -24,6 +24,165 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": "base_game:mound",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Grave.png",
+              "title": "Grave",
+              "url": "https://dontstarve.wiki.gg/wiki/Grave"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Hound_Mound%2FDST.png",
+              "title": "Hound Mound/DST",
+              "url": "https://dontstarve.wiki.gg/wiki/Hound_Mound/DST"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Stalagmite.png",
+              "title": "Stalagmite",
+              "url": "https://dontstarve.wiki.gg/wiki/Stalagmite"
+            },
+            {
+              "entityId": "base_game:chest_mimic",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ornate_Chest.png",
+              "title": "Ornate Chest",
+              "url": "https://dontstarve.wiki.gg/wiki/Ornate_Chest"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ancient_Pseudoscience_Station.png",
+              "title": "Ancient Pseudoscience Station",
+              "url": "https://dontstarve.wiki.gg/wiki/Ancient_Pseudoscience_Station"
+            },
+            {
+              "entityId": "base_game:atrium_statue",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ancient_Statue.png",
+              "title": "Ancient Statue",
+              "url": "https://dontstarve.wiki.gg/wiki/Ancient_Statue"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Sunken_Chest.png",
+              "title": "Sunken Chest",
+              "url": "https://dontstarve.wiki.gg/wiki/Sunken_Chest"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Geode_Fruit.png",
+              "title": "Geode Fruit",
+              "url": "https://dontstarve.wiki.gg/wiki/Geode_Fruit"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Blue_Gem_Deer.png",
+              "title": "Blue Gem Deer",
+              "url": "https://dontstarve.wiki.gg/wiki/Blue_Gem_Deer"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Dragonfly.png",
+              "title": "Dragonfly",
+              "url": "https://dontstarve.wiki.gg/wiki/Dragonfly"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Malbatross.png",
+              "title": "Malbatross",
+              "url": "https://dontstarve.wiki.gg/wiki/Malbatross"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Great_Depths_Worm.png",
+              "title": "Great Depths Worm",
+              "url": "https://dontstarve.wiki.gg/wiki/Great_Depths_Worm"
+            },
+            {
+              "entityId": "base_game:balatro_machine",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/JIMBO.png",
+              "title": "JIMBO",
+              "url": "https://dontstarve.wiki.gg/wiki/JIMBO"
+            },
+            {
+              "entityId": "base_game:winter_tree",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Winter%27s_Feast_Tree.png",
+              "title": "Winter's Feast Tree",
+              "url": "https://dontstarve.wiki.gg/wiki/Winter%27s_Feast_Tree"
+            }
+          ]
+        },
+        {
+          "chance": "20%",
+          "context": "( )",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Blue_Hound.png",
+              "title": "Blue Hound",
+              "url": "https://dontstarve.wiki.gg/wiki/Blue_Hound"
+            }
+          ]
+        },
+        {
+          "chance": "0.04%",
+          "context": "( )",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": "base_game:tumbleweed",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Tumbleweed.png",
+              "title": "Tumbleweed",
+              "url": "https://dontstarve.wiki.gg/wiki/Tumbleweed"
+            }
+          ]
+        },
+        {
+          "chance": "10%",
+          "context": "( )",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": "base_game:hotspring",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Hot_Spring_Glass.png",
+              "title": "Hot Spring",
+              "url": "https://dontstarve.wiki.gg/wiki/Hot_Spring_Glass"
+            }
+          ]
+        },
+        {
+          "chance": "5%",
+          "context": "( )",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": null,
+              "title": "Earthquake",
+              "url": "https://dontstarve.wiki.gg/wiki/Earthquake"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": "base_game:bluegem",
+      "iconUrl": null,
+      "title": "Blue Gem/DST",
+      "url": "https://dontstarve.wiki.gg/wiki/Blue_Gem/DST"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 219354,
   "plainText": "Don't Starve\nTogether\nBlue Gem\nFood Info\n5\n10\n0\nElemental\n(non-survivor food)\nObject Info\n40\nSource\nDropped by\n(20%)\n(0.04%)\n(10%)\nEarthquake (5%)\nCrafting\nWandering TraderWilson\nDescription\nBears the color of blue.\nx3\nFilters\nTier\nDescription\nTransmute Red Gems into Blue Gems.\n×2 ( only)\nFilters\n(for ).\nMiscellaneous\n\"bluegem\"\n“It sparkles with cold energy.”\n–Wilson\n“Ugh. This one is ugly.”\n–Willow\n“Pretty rock.”\n–Wolfgang\n“Blue like... er... a sad bird?”\n–Wendy\n“IT IS SLIGHTLY COLD”\n–WX-78\n“It is cold.”\n–Wickerbottom\n“It's very cold.”\n–Woodie\n“Blue brings ice.”\n–Maxwell\n“Its geometrical shape concentrates endothermic energy.”\n–Wagstaff\n“An icy blue sapphire.”\n–Wigfrid\n“Glittering and cool.”\n–Webber\n“The color of the ocean!”\n–Walani\n“Such a cool blue.”\n–Warly\n“It gleams true blue!”\n–Woodlegs\n“ALL THAT GLITTERS 'TIS COLD”\n–Wilba\n“Cold shiny”\n–Wormwood\n“Ohh. Sparkly. I like sparkly.”\n–Wheeler\n“It's a gem. A gem that's blue.”\n–Winona\n“Somber blue from seabeds grew.”\n–Wortox\n“Pretty rock.”\n–Wurt\n“A magic blue gem!”\n–Walter\n“Why do people say things are as blue as the sea? The sea isn't very blue at all!”\n–Wanda\nThe Blue Gem is an item used to craft several Magical Items. It can be used to craft the Ice Staff, Chilled Amulet and Purple Gem.\nBlue Gems can be used to turn Chester into Snow Chester by placing at least one in each of his inventory slots on a Full Moon, granting him slower food spoilage like a mobile Ice Box.\nBlue Gems can be used to craft a Salt Box and inserted into Cratered Moonrocks to acquire a Blue Moonlens. They can also be used to power Winona's G.E.M.erator.\nContents\n1 Gathering\n2 Usage\n3 Trivia\n4 Gallery\nGathering[edit | edit source]\nDragonfly and the Malbatross drop Blue Gems upon death.\nBlue Gem Deer will also drop a Blue Gem if killed or if Klaus is dead.\nBlue Gems have a 0.04% chance to be dropped by Tumbleweeds.\nSunken Chests can contain a Blue Gem, with equal chance of a Red Gem in its place.\nBlue Gems can be crafted by Wilson if he has obtained \"Transmute Gems I\".\n15% chance to be found in Ornate Chest\nUsage[edit | edit source]\n×10\nObtained by inserting the Gem into the Cratered Moonrock.\n×2\n×4\n×20\n×2\n×2\nTrivia[edit | edit source]\nBlue Gems were introduced in the A Winter's Tale update.\nBlue Gems used to have the same shape as Red Gems.\nThe old Blue Gem appearance can be seen on the Ultimate Survival Inventory poster sold on Klei's official merch store.\nGallery[edit | edit source]\nMedal blue emoji from official Klei Discord server.\nThe new high-resolution texture.\nOriginal HD icon from Bonus Materials from CD Don't Starve.\nIcon used as emoji for Official Klei Discord.\nResourcesCraftable ItemsFood\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items\nView or edit this template\nDon't Starve Together Craftable Items\nRegular Filters\nSurvivor Items\nWilson\nWillow\nWolfgang\nWendy\nWX-78\nWickerbottom\nWoodie\nWes\nMaxwell\nWigfrid\nWebber\nWarly\nWortox\nWormwood\nWinona\nWurt\nWalter\nWanda\nTools\nLight Sources\nPrototypers & Stations\nRefined Materials\nWeapons\nArmor\nClothing\nHealing\nMagic\nDecorations\nStructures\nStorage Solutions\nCooking\nFood & Gardening\nFishing\nSeafaring\nBeefalo Riding\nWinter Items\nSummer Items\nRain Gear\nCrafting Station Filters\nSpecial Event\nAncient Pseudoscience\nCarpentry\nCartography\nCritters\nCelestial\nBrightsmithy\nShadowcraft\nFabrication\nBottle Exchange\nCombrining Filter\nTea Brewing Filter\nSculptures\nSeasonings\nTrading\nTrading Hutch\nOfferings\nCawnival Creation\nTrinket Trove\nMad Science\nWinter's Feast Cooking\nSanctum Smithy Filter\nCustom Course Shack Filter\nBy TypeBy Crock Pot Value\nView or edit this template\nFood and Edible Items (by Food Type)\nVeggie\nSeeds\nMeat\nGoodies\nGeneric\nHorrible\nRoughage\nElementals\nBurnt\nRaw\nGears\nGold Dust\nBerry\nWood\nNitre\nLunar Shards\nView or edit this template\nFood and Edible Items (by Food Value)\nMeats\nFishes\nVegetables\nFruits\nMonster Food\nEggs\nDairy\nSweetener\nFrozen\nInedibles\nMagic\nFat\nSeed\nJellyfish\nBone\nFilter\nAntihistamine\nDecoration\nBug\nNo Value Food",
   "recipes": [],
@@ -34,6 +193,7 @@
     "timestamp": "2026-06-09T15:15:47Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Ngọc Xanh là một vật phẩm dùng để chế tạo một số Vật phẩm Ma thuật. Nó có thể được sử dụng để chế tạo Gậy Băng, Bùa Lạnh và Ngọc Tím.</p>",
   "title": "Blue Gem/DST",
   "wikitext": "{{Navbutton/Separation}}\n{{Object Infobox\n|icon = Blue Gem.png\n|image = Blue Gem Dropped.png\n|foodType =[[Elemental]] [[File:Elemental.png|32px|link=Elemental]]<br>(non-survivor food)\n|hpRestored = 10\n|hungerRestored = 5\n|sanityRestored = 0\n|name = Blue Gem\n|droppedBy = {{Pic32|Grave}} {{pic32|Hound Mound/DST}} {{Pic32|Stalagmite}} {{Pic32|Ornate Chest}} {{Pic32|Ancient Pseudoscience Station}} {{Pic24|Ancient Statue}} {{Pic32|Sunken Chest}} {{Pic32|Geode Fruit}} {{pic24|Blue Gem Deer}} {{Pic32|Dragonfly}} {{Pic32|Malbatross}} {{Pic32|Great Depths Worm}} {{pic32|JIMBO}} {{pic24|Winter's Feast Tree}}<br>{{Pic32|Blue Hound}} (20%)<br>{{Pic32|Tumbleweed}} (0.04%)<br>{{pic24|Hot Spring Glass|Hot Spring}} (10%)<br>[[Earthquake]] (5%)\n|stack = 40\n|spawnCode = \"bluegem\"\n|crafting_infobox=\n<tabber>\nWandering Trader=\n{{Craft Infobox\n|craft_desctiption =''Bears the color of blue.''\n|crafting_text = {{Pic32|Pig Skin}}x3 \n|tier_text = {{Pic32|Wandering Trader}}\n|filter      = {{Pic32|Trading Filter}}\n}}\n|-|\nWilson=\n{{Craft Infobox\n|ingredient1 = Red Gem\n|multiplier1 = 2 ({{Pic|28|Wilson Portrait|Wilson}} only)\n|filter = {{Pic32|Wilson Filter}}\n|skill = Transmute Gems I\n|craft_desctiption = ''Transmute Red Gems into Blue Gems.''\n|skillOwner = Wilson}}\n</tabber>\n\n\n}}\n{{Quotes\n|wilson = It sparkles with cold energy.\n|willow = Ugh. This one is ugly.\n|wolfgang = Pretty rock.\n|wendy = Blue like... er... a sad bird?\n|wx78 = IT IS SLIGHTLY COLD\n|wickerbottom = It is cold.\n|woodie = It's very cold.\n|maxwell = Blue brings ice.\n|wagstaff = Its geometrical shape concentrates endothermic energy.\n|wigfrid = An icy blue sapphire.\n|webber = Glittering and cool.\n|walani = The color of the ocean!\n|warly = Such a cool blue.\n|woodlegs = It gleams true blue!\n|wilba = ALL THAT GLITTERS 'TIS COLD\n|wormwood = Cold shiny\n|wheeler = Ohh. Sparkly. I like sparkly.\n|winona = It's a gem. A gem that's blue.\n|wortox = Somber blue from seabeds grew.\n|wurt = Pretty rock.\n|walter = A magic blue gem!\n|wanda = Why do people say things are as blue as the sea? The sea isn't very blue at all!\n|choose = wilson}}\nThe '''Blue Gem''' is an item used to craft several [[Magic]]al Items. It can be used to craft the [[Ice Staff]], [[Chilled Amulet]] and [[Purple Gem]].\n\nBlue Gems can be used to turn [[Chester]] into [[Snow Chester]] by placing at least one in each of his inventory slots on a [[Full Moon]], granting him slower food spoilage like a mobile [[Ice Box]]. \n\nBlue Gems can be used to craft a [[Salt Box]] and inserted into [[Cratered Moonrock]]s to acquire a Blue [[Moonlens]]. They can also be used to power [[Winona's G.E.M.erator]].\n\n== Gathering ==\n* [[Dragonfly]] and the [[Malbatross]] drop Blue Gems upon death. \n* Blue [[Gem Deer]] will also drop a Blue Gem if killed or if Klaus is dead.\n* Blue Gems have a 0.04% chance to be dropped by [[Tumbleweed]]s.\n* [[Sunken Chest]]s can contain a Blue Gem, with equal chance of a [[Red Gem]] in its place.\n* Blue Gems can be crafted by Wilson if he has obtained \"[[Transmute Gems I]]\".\n* 15% chance to be found in [[Ornate Chest]]\n\n=={{pic|32|Icon Tools}} Usage==\n{{Recipe\n|item1 = Blue Gem\n|item2 = Red Gem\n|tool = Prestihatitator\n|result = Purple Gem}}\n{{Recipe\n|item1 = Blue Gem\n|item2 = Spear\n|tool = Prestihatitator\n|result = Ice Staff}}\n{{Recipe\n|item1 = Blue Gem\n|item2 = Gold Nugget\n|tool = Prestihatitator\n|result = Chilled Amulet|item3=Gold Nugget|item4=Gold Nugget}}\n{{Recipe\n|item1 = Blue Gem\n|count1 = 1\n|item3 = Salt Crystals\n|count3 = 10\n|item2 = Cut Stone\n|count2 = 1\n|result = Salt Box\n|tool = Alchemy Engine}}\n{{Recipe\n|item1 = Blue Gem\n|item2 = Cratered Moonrock\n|result = Blue Moonlens\n|note = Obtained by inserting the Gem into the Cratered Moonrock.}}\n{{Recipe\n|item1 = Blue Gem\n|count1 = 1\n|item2 = Thulecite\n|count2 = 2\n|item3 = Twigs\n|count3 = 1\n|result = Icebell\n|character = Wolfgang\n|skill = Dumbbell Developer}}\n{{Recipe\n|item1 = Blue Gem\n|count1 = 1\n|item2 = Bio Data\n|count2 = 4\n|tool = Bio Scanalyzer\n|result = Refrigerant Circuit\n|character = WX-78}}\n{{Recipe\n|item1 = Blue Gem\n|item2 = Moon Rock\n|result = Freeze Rounds\n|resultcount = 20\n|tool = Prestihatitator\n|character = Walter\n}}{{Recipe|item1=Blue Gem|item2=Thulecite|count2=2|item3=Nightmare Fuel|count3=2|item4=Red Gem|result=Thulecite Slingshot Frame|character=Walter|skill=Advanced Frames}}{{Recipe\n|item1 = Blue Gem\n|item2 = Blue Gem\n|result = Red Gem\n|character = Wilson\n|skill = Transmute Gems I}}\n{{Recipe\n|item6 = Yellow Gem\n|item2 = Orange Gem\n|item3 = Green Gem\n|item4 = Purple Gem\n|item5 = Red Gem\n|item1 = Blue Gem\n|result = Iridescent Gem\n|character = Wilson\n|skill = Transmute Gems III}}\n\n== {{pic|32|Placeholder}} Trivia==\n* Blue Gems were introduced in the ''A Winter's Tale'' update.\n* Blue Gems used to have the same shape as Red Gems.\n* The old Blue Gem appearance can be seen on the Ultimate Survival Inventory poster sold on Klei's official merch store.\n\n== {{Pic|32|Blueprint}} Gallery ==\n<gallery>\nBlue Gem emoji from official Klei Discord server.png|Medal blue emoji from official Klei Discord server.\nFile:Bluegem HD.png|The new high-resolution texture.\nCD bluegem.png|Original HD icon from Bonus Materials from [[CD Don't Starve]].\nBlue Gem 128x128.png|Icon used as emoji for Official Klei Discord.\n</gallery>\n<br /><tabber>\nResources=\n{{Resources}}\n|-|\nCraftable Items=\n{{Craftable Items and Structures on DST}}\n|-|\nFood=\n{{Food}}\n</tabber>\n[[vi: Ngọc Lam]]\n[[Category:Naturally Spawning Objects]]\n[[Category:Gems]]\n[[Category:Resources]]\n[[Category:Items]]\n[[Category:Minerals]]\n[[Category:Boss Dropped Items]]\n[[Category:Non-Flammable]]"
 }

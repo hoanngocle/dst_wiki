@@ -23,6 +23,41 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Steamer_Trunk.png",
+              "title": "Steamer Trunk",
+              "url": "https://dontstarve.wiki.gg/wiki/Steamer_Trunk"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/X_Marks_The_Spot.png",
+              "title": "X Marks The Spot",
+              "url": "https://dontstarve.wiki.gg/wiki/X_Marks_The_Spot"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Life Jacket",
+      "url": "https://dontstarve.wiki.gg/wiki/Life_Jacket"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 129754,
   "plainText": "Exclusive to:\nLife Jacket\n\"Safety first!\"\n×2 ×2 ×3\nTab\nTier\n1 use\nDoes not stack\nPerk\nPrevents player from drowning.\nDropped by\n\"armor_lifejacket\"\n“Keeps me afloat, without my boat!”\n–Wilson\n“But will it keep my lighter dry?”\n–Willow\n“Big seawater will not take Wolfgang now!”\n–Wolfgang\n“I'd prefer a dry grave, thank you.”\n–Wendy\n“ELIMINATES DEATH OUTCOME FROM SHIPWRECKING EVENTS”\n–WX-78\n“Safety first!”\n–Wickerbottom\n“A lil reassurance.”\n–Woodie\n“Sadly my cultured countenance must take a backseat to sensibility.”\n–Maxwell\n“Ingenious! The empty glass bottles will keep me buoyant!”\n–Wagstaff\n“Adventure öffers nö true safety!”\n–Wigfrid\n“It pays to be safe.”\n–Webber\n“In case the waves get all gnar'.”\n–Walani\n“Better safe than sorry.”\n–Warly\n“Bah! For swabs only!”\n–Woodlegs\n“'TIS FOR NAUGHT DROWN'DING”\n–Wilba\n“Water saver”\n–Wormwood\n“It's like a parachute for a boat.”\n–Wheeler\nThe Life Jacket is a craftable item introduced in Shipwrecked DLC, found in the Nautical Tab. It requires a Science Machine to prototype, and can be crafted using 2 Cloth, 2 Vine, and 3 Empty Bottles. When worn it will save the player from Drowning in the Ocean if their Boats reach 0 durability while sailing. When the Life Jacket saves the player, the screen will fade to black, and the player Character will appear on the nearest Beach with enough Cut Grass and Logs to make a Log Raft.\nTips[edit | edit source]\nIf the Boat that the player is using is at a low durability, or they intend to be on a long journey, a Life Jacket is a possible inventory item to stay safe. If the boat is at a critically low durability (e.g., 3%), one can quickly equip the Life Jacket.\nTrivia[edit | edit source]\nWoodlegs used to have a perk identical to that of the Life Jacket. The perk was removed in the Seas the Day update.\nGallery[edit | edit source]\nWilson wearing a Life Jacket.\nWillow wearing a Life Jacket.\nWolfgang wearing a Life Jacket.\nWendy wearing a Life Jacket.\nWX-78 wearing a Life Jacket.\nWickerbottom wearing a Life Jacket.\nWoodie wearing a Life Jacket.\nWes wearing a Life Jacket.\nMaxwell wearing a Life Jacket.\nWigfrid wearing a Life Jacket.\nWebber wearing a Life Jacket.\nWalani wearing a Life Jacket.\nWarly wearing a Life Jacket.\nWilbur wearing a Life Jacket.\nWoodlegs wearing a Life Jacket.\nWilba wearing a Life Jacket.\nWormwood wearing a Life Jacket.\nWheeler wearing a Life Jacket.\nDSTDSRoGSWHam\nView or edit this template\nDon't Starve Together Craftable Items\nRegular Filters\nSurvivor Items\nWilson\nWillow\nWolfgang\nWendy\nWX-78\nWickerbottom\nWoodie\nWes\nMaxwell\nWigfrid\nWebber\nWarly\nWortox\nWormwood\nWinona\nWurt\nWalter\nWanda\nTools\nLight Sources\nPrototypers & Stations\nRefined Materials\nWeapons\nArmor\nClothing\nHealing\nMagic\nDecorations\nStructures\nStorage Solutions\nCooking\nFood & Gardening\nFishing\nSeafaring\nBeefalo Riding\nWinter Items\nSummer Items\nRain Gear\nCrafting Station Filters\nSpecial Event\nAncient Pseudoscience\nCarpentry\nCartography\nCritters\nCelestial\nBrightsmithy\nShadowcraft\nFabrication\nBottle Exchange\nCombrining Filter\nTea Brewing Filter\nSculptures\nSeasonings\nTrading\nTrading Hutch\nOfferings\nCawnival Creation\nTrinket Trove\nMad Science\nWinter's Feast Cooking\nSanctum Smithy Filter\nCustom Course Shack Filter\nView or edit this template\nDon't Starve Craftable Items\nTools\nLight\nSurvival\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nAncient\nBooks\nTinkering\nView or edit this template\nDon't Starve: Reign of Giants Craftable Items\nTools\nLight\nSurvival\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nAncient\nBooks\nTinkering\nView or edit this template\nDon't Starve Shipwrecked and Volcano Craftable Items\nTools\nLight\nNautical\nSurvival\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nVolcanic\nBooks\nTinkering\nView or edit this template\nDon't Starve Hamlet Craftable Items\nTools\nLight\nTreasure Hunting\nSurvival\nNautical\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nGreen Thumb\nBooks\nTinkering\nCity Planning\nRenovate\nFloors\nShelves\nPlantholders\nColumns\nWall Papers\nHanging Lamps\nOrnaments\nChairs\nHome Kits\nDoors\nWindows\nRugs\nLamps\nTables",
   "recipes": [],
@@ -33,6 +68,7 @@
     "timestamp": "2026-06-24T17:41:29Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Áo Phao là một vật phẩm chế tạo được giới thiệu trong Shipwrecked DLC, được tìm thấy trong Thẻ Hàng Hải. Nó yêu cầu Máy Khoa học để tạo nguyên mẫu và có thể chế tạo bằng cách sử dụng 2 Vải, 2 Dây Nho và 3 Chai Rỗng. Khi đeo nó sẽ cứu người chơi khỏi Chết đuối trong Đại dương nếu Thuyền của họ đạt độ bền bằng 0 khi chèo thuyền. Khi Áo Phao cứu người chơi, màn hình sẽ chuyển sang màu đen và Nhân vật của người chơi sẽ xuất hiện trên Bãi biển gần nhất với đủ Cỏ Cắt và Gỗ để làm Bè Gỗ.</p>",
   "title": "Life Jacket",
   "wikitext": "{{Exclusivity|Shipwrecked}}\n{{Item Infobox\n|name = Life Jacket\n|ingredient1 = Cloth\n|multiplier1 = 2\n|ingredient2 = Vine\n|multiplier2 = 2\n|ingredient3 = Empty Bottle\n|multiplier3 = 3\n|durability = 1 use\n|tab = Nautical\n|tier = 1\n|perk = Prevents player from drowning.\n|droppedBy = {{Pic32|Steamer Trunk}} {{Pic32|X Marks The Spot}}\n|stack = Does not stack\n|spawnCode = \"armor_lifejacket\"\n|description = Safety first!\n}}\n{{Quotes\n|wolfgang=Big seawater will not take Wolfgang now!\n|wilson=Keeps me afloat, without my boat!\n|willow=But will it keep my lighter dry?\n|woodie=A lil reassurance.\n|maxwell=Sadly my cultured countenance must take a backseat to sensibility.\n|wagstaff=Ingenious! The empty glass bottles will keep me buoyant!\n|wendy=I'd prefer a dry grave, thank you.\n|woodlegs=Bah! For swabs only!\n|wickerbottom=Safety first!\n|webber=It pays to be safe.\n|warly=Better safe than sorry.\n|wx78=ELIMINATES DEATH OUTCOME FROM SHIPWRECKING EVENTS\n|walani=In case the waves get all gnar'.\n|wigfrid=Adventure öffers nö true safety!\n|wilba='TIS FOR NAUGHT DROWN'DING\n|wormwood=Water saver\n|wheeler=It's like a parachute for a boat.\n|choose=wilson}}\nThe '''Life Jacket''' is a craftable [[item]] introduced in ''[[Don't Starve: Shipwrecked|Shipwrecked]]'' DLC, found in the [[Nautical Tab]]. It requires a [[Science Machine]] to prototype, and can be crafted using 2 [[Cloth]], 2 [[Vine]], and 3 [[Empty Bottle]]s. When worn it will save the player from [[Death|Drowning]] in the [[Ocean]] if their [[Boats]] reach 0 durability while sailing. When the Life Jacket saves the player, the screen will fade to black, and the player [[Character]] will appear on the nearest [[Beach]] with enough [[Cut Grass]] and [[Logs]] to make a [[Log Raft]].\n\n== {{pic32|Prototype}} Tips ==\n* If the Boat that the player is using is at a low durability, or they intend to be on a long journey, a Life Jacket is a possible inventory item to stay safe. If the boat is at a critically low durability (e.g., 3%), one can quickly equip the Life Jacket.\n\n== {{pic32|Placeholder}} Trivia ==\n* [[Woodlegs]] used to have a perk identical to that of the Life Jacket. The perk was removed in the ''[[Don't Starve: Shipwrecked#Version History|Seas the Day]]'' update.\n\n=={{Pic|32|Blueprint}} Gallery==\n<gallery type=\"slideshow\" position=\"left\" hideaddbutton=\"true\" widths=\"350\">\nLife Jacket Wilson.png|[[Wilson]] wearing a Life Jacket.\nLife Jacket Willow.png|[[Willow]] wearing a Life Jacket.\nLife Jacket Wolfgang.png|[[Wolfgang]] wearing a Life Jacket.\nLife Jacket Wendy.png|[[Wendy]] wearing a Life Jacket.\nLife Jacket WX-78.png|[[WX-78]] wearing a Life Jacket.\nLife Jacket Wickerbottom.png|[[Wickerbottom]] wearing a Life Jacket.\nLife Jacket Woodie.png|[[Woodie]] wearing a Life Jacket.\nLife Jacket Wes.png|[[Wes]] wearing a Life Jacket.\nLife Jacket Maxwell.png|[[Maxwell (character)|Maxwell]] wearing a Life Jacket.\nLife Jacket Wigfrid.png|[[Wigfrid]] wearing a Life Jacket.\nLife Jacket Webber.png|[[Webber]] wearing a Life Jacket.\nLife Jacket Walani.png|[[Walani]] wearing a Life Jacket.\nLife Jacket Warly.png|[[Warly]] wearing a Life Jacket.\nLife Jacket Wilbur.png|[[Wilbur]] wearing a Life Jacket.\nLife Jacket Woodlegs.png|[[Woodlegs]] wearing a Life Jacket.\nLife Jacket Wilba.png|[[Wilba]] wearing a Life Jacket.\nLife Jacket Wormwood.png|[[Wormwood]] wearing a Life Jacket.\nLife Jacket Wheeler.png|[[Wheeler]] wearing a Life Jacket.\n</gallery>\n\n{{Craftable Items}}\n[[fr:Gilet de sauvetage]]\n[[Category:Nautical Tab]]\n[[Category:Items]]\n[[Category:Limited use]]\n[[Category:Equipable Items]]\n[[Category:Resurrection]]"
 }

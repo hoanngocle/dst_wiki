@@ -20,6 +20,150 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "2",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Clockwork_Knight.png",
+              "title": "Clockwork Knight",
+              "url": "https://dontstarve.wiki.gg/wiki/Clockwork_Knight"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Clockwork_Bishop.png",
+              "title": "Clockwork Bishop",
+              "url": "https://dontstarve.wiki.gg/wiki/Clockwork_Bishop"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Clockwork_Rook.png",
+              "title": "Clockwork Rook",
+              "url": "https://dontstarve.wiki.gg/wiki/Clockwork_Rook"
+            }
+          ]
+        },
+        {
+          "chance": "60%",
+          "context": "( )",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Damaged_Knight.png",
+              "title": "Damaged Knight",
+              "url": "https://dontstarve.wiki.gg/wiki/Damaged_Knight"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Damaged_Rook.png",
+              "title": "Damaged Rook",
+              "url": "https://dontstarve.wiki.gg/wiki/Damaged_Rook"
+            }
+          ]
+        },
+        {
+          "chance": "3.07%",
+          "context": "(Shovel , )",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": "base_game:mound",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Grave.png",
+              "title": "Grave",
+              "url": "https://dontstarve.wiki.gg/wiki/Grave"
+            }
+          ]
+        },
+        {
+          "chance": "25%",
+          "context": "(Hammer , )",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Broken_Clockworks1.png",
+              "title": "Broken Clockworks",
+              "url": "https://dontstarve.wiki.gg/wiki/Broken_Clockworks1"
+            }
+          ]
+        },
+        {
+          "chance": "11.17%",
+          "context": "(Hammer , )",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Icon_Ancient.png",
+              "title": "Ancient Pseudoscience Station",
+              "url": "https://dontstarve.wiki.gg/wiki/Icon_Ancient"
+            }
+          ]
+        },
+        {
+          "chance": "1%",
+          "context": "( ×3)",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": "base_game:tumbleweed",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Tumbleweed.png",
+              "title": "Tumbleweed",
+              "url": "https://dontstarve.wiki.gg/wiki/Tumbleweed"
+            }
+          ]
+        },
+        {
+          "chance": "3.125%",
+          "context": "( )",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": "base_game:junk_pile",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Junk_Pile.png",
+              "title": "Junk Pile",
+              "url": "https://dontstarve.wiki.gg/wiki/Junk_Pile"
+            }
+          ]
+        },
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Enlightened_W.A.R.B.O.T..png",
+              "title": "Enlightened W.A.R.B.O.T.",
+              "url": "https://dontstarve.wiki.gg/wiki/Enlightened_W.A.R.B.O.T."
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Celestial_Scion.png",
+              "title": "Celestial Scion",
+              "url": "https://dontstarve.wiki.gg/wiki/Celestial_Scion"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": "base_game:gears",
+      "iconUrl": null,
+      "title": "Gears/DST",
+      "url": "https://dontstarve.wiki.gg/wiki/Gears/DST"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 219357,
   "plainText": "Don't Starve\nTogether\nGears\nFood Info\n75\n60\n50\nGears\n(non-survivor food)\nObject Info\n40\nSource\nDropped by\n×2\n×1 (60%)\n×3-6 (77%)\n×1 (, 3.07%)\n×1 (, 25%)\n×1 (, 11.17%)\n×1 (1% ×3)\n(3.125%)\nCrafting\nDescription\nCogs for your contraptions.\nx3\nFilters\nTier\nMiscellaneous\n\"gears\"\n“A pile of mechanical parts.”\n–Wilson\n“These must make them move.”\n–Willow\n“Ah ha! Who is bigger muscles now?”\n–Wolfgang\n“The insides of a mechanical demon.”\n–Wendy\n“GUTS”\n–WX-78\n“Various cogs and wheels.”\n–Wickerbottom\n“I never could figure these things out.”\n–Woodie\n“My pets! What has become of you?”\n–Maxwell\n“These might löök nice glued tö my helm.”\n–Wigfrid\n“I wish I'd been a robot.”\n–Webber\n“The insides of those naughty machines.”\n–Warly\n“Machine food.”\n–Wormwood\n“I'm a bit homesick.”\n–Winona\n“Grind them and grind them well.”\n–Wortox\n“Ironfolk guts.”\n–Wurt\n“These don't usually occur in nature.”\n–Walter\n“They're too big for pocket watches, unfortunately.”\n–Wanda\nGears are Items dropped by Clockwork Knights, Clockwork Bishops, and Clockwork Rooks. They can also be rarely found by digging up Graves and harvesting Tumbleweeds.\nWX-78 can consume Gears to restore 75 Hunger, 60 Health and 50 Sanity. Prior to the WX-78 Character Rework Update, WX-78 could increase their maximum stats by consuming Gears, but this is no longer the case. Maximum stat increases are accomplished with Circuits instead.\nUsage[edit | edit source]\n×2\n×2\n×15\n×2\n×10\n×2\n×2\n×3\n×6\n×3\nTips[edit | edit source]\nA player can destroy the many Broken Clockworks in the Ruins to obtain them, which can yield a lot of gears. A player can also get them by defeating Damaged Knights, Damaged Bishops, and Damaged Rooks. They can also repair Broken Clockworks with 3 Gears to spawn an allied version of one of the aforementioned damaged chess monsters.\nWhen the Ancient Guardian is defeated, the Large Ornate Chest has a 77% chance to contain between 3-6 Gears.\nGears in the Ruins are renewable, as killing the Ancient Fuelweaver regenerates the Ruins. All Broken and Damaged Clockworks and the Ancient Guardian respawn as a result.\nIf a repaired Marble Sculpture of a Rook, Knight or Bishop is mined during a full moon, the respective clockwork spawns which the player can kill for gears. If these sculptures are mined during a new moon, the gears drop immediately from mining the sculpture as the shadow piece is spawned.\nThe Twins of Terror each drop 3-5 gears (6-10 in total) and can be summoned every 15 days using the Terrarium.\nGallery[edit | edit source]\nGears as seen on the 2018 Valentine Cards.\nResourcesFood\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items\nBy TypeBy Crock Pot Value\nView or edit this template\nFood and Edible Items (by Food Type)\nVeggie\nSeeds\nMeat\nGoodies\nGeneric\nHorrible\nRoughage\nElementals\nBurnt\nRaw\nGears\nGold Dust\nBerry\nWood\nNitre\nLunar Shards\nView or edit this template\nFood and Edible Items (by Food Value)\nMeats\nFishes\nVegetables\nFruits\nMonster Food\nEggs\nDairy\nSweetener\nFrozen\nInedibles\nMagic\nFat\nSeed\nJellyfish\nBone\nFilter\nAntihistamine\nDecoration\nBug\nNo Value Food",
   "recipes": [],
@@ -30,6 +174,7 @@
     "timestamp": "2026-05-02T06:33:43Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Bánh răng là Vật phẩm rơi ra từ Hiệp sĩ Đồng hồ, Tượng Đồng hồ và Xe Đồng hồ. Chúng cũng hiếm khi được tìm thấy bằng cách đào Mộ và thu hoạch Cỏ Lăn.</p>",
   "title": "Gears/DST",
   "wikitext": "{{Navbutton/Separation}}\n{{Object Infobox\n|image = Gears Dropped.png\n|icon = Gears.png\n|stack = 40\n|foodType =[[Food Type#Gears|Gears]] [[File:Gears.png|32px|link=Food Type#Gears]]<br>(non-survivor food)\n|hpRestored = 60\n|hungerRestored = 75\n|sanityRestored = 50\n|craft_desctiption =''Cogs for your contraptions.''\n|crafting_text = {{Pic32|Pig Skin}}x3 \n|tier_text = {{Pic32|Wandering Trader}}\n|filter      = {{Pic32|Trading Filter}}\n|droppedBy = {{pic|24|Clockwork Knight}}{{pic|32|Clockwork Bishop}}{{pic|24|Clockwork Rook}} &times;2\n{{pic|24|Damaged Knight}}{{pic|24|Damaged Rook}} &times;1 (60%)\n<br>[[File:Ornate Chest.png|24px|link=Ornate Chest#Large Ornate Chest]] &times;3-6 (77%)\n<br>{{pic|24|Grave}} &times;1 ({{pic|24|Shovel}}, 3.07%)<br>\n{{pic|24|Broken Clockworks1|Broken Clockworks}} &times;1 ({{pic|24|Hammer}}, 25%)<br>\n{{pic|24|Icon Ancient|Ancient Pseudoscience Station}} &times;1 ({{pic|24|Hammer}}, 11.17%)\n<br>{{pic|24|Tumbleweed}} &times;1 (1% &times;3)<br>{{pic|30|Junk Pile}}(3.125%)<br>{{pic|32|Enlightened W.A.R.B.O.T.}} {{pic|32|Celestial Scion}}\n|spawnCode = \"gears\"}}\n{{Quotes\n|wilson = A pile of mechanical parts.\n|willow = These must make them move.\n|wolfgang = Ah ha! Who is bigger muscles now?\n|wendy = The insides of a mechanical demon.\n|wx78 = GUTS\n|wickerbottom = Various cogs and wheels.\n|woodie = I never could figure these things out.\n|maxwell = My pets! What has become of you?\n|wigfrid = These might löök nice glued tö my helm.\n|webber = I wish I'd been a robot.\n|warly = The insides of those naughty machines.\n|wormwood = Machine food.\n|winona = I'm a bit homesick.\n|wortox = Grind them and grind them well.\n|wurt = Ironfolk guts.\n|walter = These don't usually occur in nature.\n|wanda = They're too big for pocket watches, unfortunately.\n|choose = wanda}}\n'''Gears''' are [[Items]] dropped by [[Clockwork Knight]]s, [[Clockwork Bishop]]s, and [[Clockwork Rook]]s. They can also be rarely found by digging up [[Grave]]s and harvesting [[Tumbleweed]]s. \n\n[[WX-78]] can consume Gears to restore 75 [[Hunger]], 60 [[Health]] and 50 [[Sanity]]. Prior to the [[Don't Starve Together/Version History#April 28, 2022 - WX-78 Character Update|WX-78 Character Rework Update]], [[WX-78]] could increase their maximum stats by consuming Gears, but this is no longer the case. Maximum stat increases are accomplished with [[Circuits]] instead. \n\n=={{pic|32|Icon Tools}} Usage==\n{{Recipe\n|item1 = Gears\n|item2 = Gold Nugget\n|count2 = 2\n|item3 = Cut Stone\n|tool = Alchemy Engine\n|result = Ice Box}}\n\n{{Recipe\n|item1 = Gears\n|count1 = 2\n|item2 = Ice\n|count2 = 15\n|item3 = Electrical Doodad\n|count3 = 2\n|tool = Alchemy Engine\n|result = Ice Flingomatic}}\n\n{{Recipe\n|item1 = Gears\n|count1 = 1\n|item2 = Thick Fur\n|item3 = Electrical Doodad\n|count3 = 1\n|tool = Alchemy Engine\n|result = Insulated Pack}}\n\n{{Recipe\n|item1 = Gears\n|item2 = Volt Goat Horn\n|item3 = Down Feather\n|count3 = 10\n|tool = Alchemy Engine\n|result = Weather Pain}}\n\n{{Recipe\n|item1 = Gears\n|count1 = 1\n|item2 = Boards\n|count2 = 2\n|item3 = Rope\n|count3 = 1\n|result = Rudder Kit\n|tool = Think Tank}}\n\n{{Recipe\n|item3 = Gold Nugget\n|count3 = 3\n|item2 = Electrical Doodad\n|count2 = 2\n|item1 = Gears\n|count1 = 1\n|tool = Alchemy Engine\n|result = Gramophone}}\n\n{{Recipe\n|item1 = Gears\n|count1 = 1\n|item2 = Bio Data\n|count2 = 6\n|item3 = Acceleration Circuit\n|count3 = 1\n|tool = Bio Scanalyzer\n|result = Super-Acceleration Circuit\n|character = WX-78}}\n\n{{Recipe\n|item1 = Gears\n|count1 = 1\n|item2 = Bio Data\n|count2 = 3\n|result = Chessmaster Circuit\n|tool = Bio Scanalyzer\n|character = WX-78\n}}\n\n{{Recipe\n|item1 = Gears\n|count1 = 1\n|item2 = Red Gem\n|count2 = 1\n|result = Backup Chassis\n|skill = Cold Standby I\n|character = WX-78\n}}\n\n=={{pic|32|Prototype}} Tips==\n\n* A player can destroy the many [[Broken Clockworks]] in the [[Ruins]] to obtain them, which can yield a lot of gears. A player can also get them by defeating [[Damaged Knight]]s, [[Damaged Bishop]]s, and [[Damaged Rook]]s. They can also repair [[Broken Clockworks]] with 3 Gears to spawn an allied version of one of the aforementioned damaged chess monsters.\n* When the [[Ancient Guardian]] is defeated, the [[Ornate_Chest#Large_Ornate_Chest|Large Ornate Chest]] has a 77% chance to contain between 3-6 Gears.\n* Gears in the Ruins are renewable, as killing the [[Reanimated Skeleton#Ancient Fuelweaver|Ancient Fuelweaver]] regenerates the Ruins. All Broken and Damaged Clockworks and the Ancient Guardian respawn as a result.\n* If a repaired [[Marble Sculptures|Marble Sculpture]] of a Rook, Knight or Bishop is mined during a [[Moon Cycle|full moon]], the respective clockwork spawns which the player can kill for gears. If these sculptures are mined during a [[Moon Cycle|new moon]], the gears drop immediately from mining the sculpture as the [[Shadow Pieces|shadow piece]] is spawned.\n* The [[Twins of Terror]] each drop 3-5 gears (6-10 in total) and can be summoned every 15 days using the [[Terrarium]].\n\n== {{pic32|Blueprint}} Gallery ==\n<gallery captionalign=\"center\" hideaddbutton=\"true\">\nValentines 2018 2.png|Gears as seen on the 2018 Valentine Cards.\n</gallery>\n<tabber>\nResources=\n{{Resources}}\n|-|\nFood=\n{{Food}}\n</tabber>\n[[vi:Bánh Răng]]\n[[Category:Food]]\n[[Category:Non-Flammable]]\n[[Category:Sanity Boost]]\n[[Category:Healing]]\n[[Category:Naturally Spawning Objects]]"
 }

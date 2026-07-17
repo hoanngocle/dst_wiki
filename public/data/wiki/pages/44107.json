@@ -17,6 +17,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Klaus.png",
+              "title": "Klaus",
+              "url": "https://dontstarve.wiki.gg/wiki/Klaus"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Stag Antler",
+      "url": "https://dontstarve.wiki.gg/wiki/Stag_Antler"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 44107,
   "plainText": "Stag Antler\nObject Info\nDoes not stack\nSource\nDropped by\nMiscellaneous\n\"klaussackkey\"\nExclusive to:\n“It's really fancy for a deer antler.”\n–Wilson\n“Ha! I wouldn't wanna get smacked with that thing!”\n–Willow\n“Is very special antler!”\n–Wolfgang\n“The key to our prosperity...”\n–Wendy\n“THE ANTLER IS KEY”\n–WX-78\n“Hmm. Quite a sturdy antler.”\n–Wickerbottom\n“Gotta be some use for that.”\n–Woodie\n“Magic has done things to this beast's horn.”\n–Maxwell\n“What wönders will yöu reveal?”\n–Wigfrid\n“I think maybe this goes somewhere.”\n–Webber\n“Well, it's the key to something.”\n–Warly\n“Branch? No”\n–Wormwood\n“This must be the actual key.”\n–Winona\n“Now where oh where did he leave that stash.”\n–Wortox\n“Funny-looking antler, florp...”\n–Wurt\n“There's something weird about this antler.”\n–Walter\n“This looks like just the piece I need.”\n–Wanda\nThe Stag Antler is an Item exclusive to Don't Starve Together, introduced in A New Reign. It is dropped by Klaus when he's killed, and is used to open the Loot Stash. As long as the Stag Antler exists in a world, Klaus can not be spawned by using a Deer Antler on the Loot Stash.\nThe Stag Antler cannot be put inside Bundling Wrap or Gift Wrap.\nTrivia[edit | edit source]\nThe Stag Antler was introduced in the Winter's Feast update, alongside the Event of the same name.\nThough the antler comes from Klaus, it bears no resemblance to the ones on Klaus' head. The one on his head are curved inward in one large tusk either red and white or dark brown, while the Stag Antler is stretched into several nooks and crannies (resembling a caribou antler) and is colored bone-white.\nGallery[edit | edit source]\nA Stag Antler dropped on the ground.\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -27,6 +56,7 @@
     "timestamp": "2025-09-03T16:59:43Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Nhung Hươu là một Vật phẩm độc quyền của Don&#x27;t Starve Together, được giới thiệu trong A New Reign. Nó được Klaus đánh rơi khi anh ta bị giết và được dùng để mở Loot Stash. Chừng nào Nhung Hươu còn tồn tại trong một thế giới, Klaus không thể được sinh ra bằng cách sử dụng Nhung Hươu trong Kho Chiến Lợi Phẩm.</p>",
   "title": "Stag Antler",
   "wikitext": "{{Object Infobox\n|image = Stag Antler Dropped.png\n|icon = Stag Antler.png\n|droppedBy = {{pic|24|Klaus}}\n|stack = Does not stack\n|spawnCode = \"klaussackkey\"\n}}\n{{Exclusivity|Don't Starve Together}}\n{{Quotes\n|wilson = It's really fancy for a deer antler.\n|willow = Ha! I wouldn't wanna get smacked with that thing!\n|wolfgang = Is very special antler!\n|wendy = The key to our prosperity...\n|wx78 = THE ANTLER IS KEY\n|wickerbottom = Hmm. Quite a sturdy antler.\n|woodie = Gotta be some use for that.\n|maxwell = Magic has done things to this beast's horn.\n|wigfrid = What wönders will yöu reveal?\n|webber = I think maybe this goes somewhere.\n|winona = This must be the actual key.\n|warly = Well, it's the key to something.\n|wortox = Now where oh where did he leave that stash.\n|wormwood = Branch? No\n|wurt = Funny-looking antler, florp...\n|walter = There's something weird about this antler.\n|wanda = This looks like just the piece I need.\n|choose = wigfrid}}\nThe '''Stag Antler''' is an [[Items|Item]] exclusive to ''[[Don't Starve Together]]'', introduced in ''[[A New Reign]]''. It is dropped by [[Klaus]] when he's killed, and is used to open the [[Loot Stash]]. As long as the Stag Antler exists in a world, Klaus can not be spawned by using a [[Deer Antler]] on the Loot Stash.\n\nThe Stag Antler cannot be put inside [[Bundling Wrap]] or [[Winter's Feast|Gift Wrap.]]\n\n=={{pic32|Placeholder}} Trivia==\n* The Stag Antler was introduced in the ''[[A New Reign#December 8th, 2016 - Winter's Feast Sneak Preview|Winter's Feast]]'' update, alongside the [[Winter's Feast|Event]] of the same name.\n* Though the antler comes from Klaus, it bears no resemblance to the ones on Klaus' head. The one on his head are curved inward in one large tusk either red and white or dark brown, while the Stag Antler is stretched into several nooks and crannies (resembling a caribou antler) and is colored bone-white.\n\n=={{pic32|Blueprint}} Gallery==\n<gallery captionalign=\"center\">\nDropped Stag Antler.png|A Stag Antler dropped on the ground.\n</gallery>\n\n{{Mob Dropped Items}}\n[[fr:Ramure de cerf]]\n[[ru:Рог зрелого оленя]]\n[[zh:麋鹿茸]]\n[[Category:A New Reign]]\n[[Category:Boss Dropped Items]]"
 }

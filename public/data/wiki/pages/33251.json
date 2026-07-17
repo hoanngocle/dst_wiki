@@ -22,6 +22,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "tiles (Pitchfork)",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": null,
+              "title": "Lunar Forest",
+              "url": "https://dontstarve.wiki.gg/wiki/Lunar_Forest"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Moon Crater Turf",
+      "url": "https://dontstarve.wiki.gg/wiki/Moon_Crater_Turf"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 33251,
   "plainText": "Exclusive to:\nMoon Crater Turf\n\"The cratered surface of the moon.\"\nObject Info\n7.5 sec.\nCan be Burned\n20\nSource\nDropped by\nLunar Forest tiles ()\nCrafting\n×1 ×2\nAmount produced\n4\nFilters\nTier\nMiscellaneous\n\"turf_meteor\"\nMoon Crater Turf\nCan be Dug\nСan be planted\n“A chunk of moon ground.”\n–Wilson\n“The ground is boring.”\n–Willow\n“Step stones.”\n–Wolfgang\n“Some ground.”\n–Wendy\n“GROUND PARTS”\n–WX-78\n“I'm not sure you grasp the gravity of the situation. Ho ho!”\n–Wickerbottom\n“Just some ground, eh?”\n–Woodie\n“Turf.”\n–Maxwell\n“A piece öf the battlefield.”\n–Wigfrid\n“Some ground that we dug up.”\n–Webber\n“Very down-to-earth.”\n–Warly\n“Rocky”\n–Wormwood\n“That's a chunk of fancy ground.”\n–Winona\n“Floor or ceiling, depending on your perspective.”\n–Wortox\n“Ground bit.”\n–Wurt\n“A patch of ground.”\n–Walter\n“Slightly more interesting to look at, but still just ground.”\n–Wanda\n“Can be placed on dirt ground to change the type of ground.”\n-\nMoon Crater Turf is a craftable Turf Item exclusive to Don't Starve Together, introduced in Return of Them. It is found in the Celestial Tab, requires 1 Moon Rock and 2 Moon Shards to craft, and can only be crafted when near the Celestial Altar.\nPlants like Berry Bushes, Grass Tufts, Saplings, Spiky Bushes, Lureplants, Pine Cones, and Birchnuts can be planted on these Turfs.\nTrivia[edit | edit source]\nMoon Crater Turf was introduced in the Turn of Tides update.\nGallery[edit | edit source]\nMoon Crater Turf texture.\nTurfsCraftable Items\nView or edit this template\nTurfs\nDSTDSRoGSWHam\nView or edit this template\nDon't Starve Together Craftable Items\nRegular Filters\nSurvivor Items\nWilson\nWillow\nWolfgang\nWendy\nWX-78\nWickerbottom\nWoodie\nWes\nMaxwell\nWigfrid\nWebber\nWarly\nWortox\nWormwood\nWinona\nWurt\nWalter\nWanda\nTools\nLight Sources\nPrototypers & Stations\nRefined Materials\nWeapons\nArmor\nClothing\nHealing\nMagic\nDecorations\nStructures\nStorage Solutions\nCooking\nFood & Gardening\nFishing\nSeafaring\nBeefalo Riding\nWinter Items\nSummer Items\nRain Gear\nCrafting Station Filters\nSpecial Event\nAncient Pseudoscience\nCarpentry\nCartography\nCritters\nCelestial\nBrightsmithy\nShadowcraft\nFabrication\nBottle Exchange\nCombrining Filter\nTea Brewing Filter\nSculptures\nSeasonings\nTrading\nTrading Hutch\nOfferings\nCawnival Creation\nTrinket Trove\nMad Science\nWinter's Feast Cooking\nSanctum Smithy Filter\nCustom Course Shack Filter\nView or edit this template\nDon't Starve Craftable Items\nTools\nLight\nSurvival\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nAncient\nBooks\nTinkering\nView or edit this template\nDon't Starve: Reign of Giants Craftable Items\nTools\nLight\nSurvival\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nAncient\nBooks\nTinkering\nView or edit this template\nDon't Starve Shipwrecked and Volcano Craftable Items\nTools\nLight\nNautical\nSurvival\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nVolcanic\nBooks\nTinkering\nView or edit this template\nDon't Starve Hamlet Craftable Items\nTools\nLight\nTreasure Hunting\nSurvival\nNautical\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nGreen Thumb\nBooks\nTinkering\nCity Planning\nRenovate\nFloors\nShelves\nPlantholders\nColumns\nWall Papers\nHanging Lamps\nOrnaments\nChairs\nHome Kits\nDoors\nWindows\nRugs\nLamps\nTables",
   "recipes": [
@@ -59,6 +88,7 @@
     "timestamp": "2025-08-01T19:11:56Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Moon Crater Turf là ​​một Vật phẩm Turf chế tạo được dành riêng cho Don&#x27;t Starve Together, được giới thiệu trong Return of Them. Nó được tìm thấy trong Thẻ Thiên Thể, cần 1 Đá Mặt Trăng và 2 Mảnh Trăng để chế tạo và chỉ có thể chế tạo khi ở gần Bàn thờ Thiên thể.</p>",
   "title": "Moon Crater Turf",
   "wikitext": "{{Exclusivity|Don't Starve Together}}\n{{Object Infobox\n|image = Moon Crater Turf Dropped.png\n|icon = Moon Crater Turf.png\n|canBeBurned = 1\n|description = The cratered surface of the moon.\n|droppedBy = [[Lunar Forest]] tiles ({{pic24|Pitchfork}})\n|ingredient1 = Moon Rock\n|multiplier1 = 1\n|ingredient2 = Moon Shard\n|multiplier2 = 2\n|numtogive = 4\n|tier = 19\n|stack = 20\n|burnTime = [[File:Light_Sources_Filter.png|32px|link=Fuel#Fire Fuel]] 7.5 sec.\n|spawnCode = \"turf_meteor\"|filter={{Pic|32|Celestial Filter}}}}{{Turf Infobox\n|image =Moon Crater Turf Texture.png\n|planted = 1\n|pitchfork = 1\n}}\n{{Quotes\n|wilson = A chunk of moon ground.\n|willow = The ground is boring.\n|wolfgang = Step stones.\n|wendy = Some ground.\n|wx78 = GROUND PARTS\n|wickerbottom = I'm not sure you grasp the gravity of the situation. Ho ho!\n|woodie = Just some ground, eh?\n|maxwell = Turf.\n|wigfrid = A piece öf the battlefield.\n|webber = Some ground that we dug up.\n|winona = That's a chunk of fancy ground.\n|warly = Very down-to-earth.\n|wortox = Floor or ceiling, depending on your perspective.\n|wormwood = Rocky\n|wurt = Ground bit.\n|walter = A patch of ground.\n|wanda = Slightly more interesting to look at, but still just ground.\n|choose = wickerbottom}}{{Scrapbook Info|Can be placed on dirt ground to change the type of ground.}}\n'''Moon Crater Turf''' is a craftable [[Turf]] [[Item]] exclusive to ''[[Don't Starve Together]]'', introduced in ''[[Return of Them]]''. It is found in the [[Celestial Tab]], requires 1 [[Moon Rock]] and 2 [[Moon Shard]]s to craft, and can only be crafted when near the [[Celestial Altar]].\n\nPlants like [[Berry Bush]]es, [[Grass Tuft]]s, [[Saplings]], [[Spiky Bush]]es, [[Lureplant]]s, [[Pine Cone]]s, and [[Birchnut]]s can be planted on these Turfs.\n\n=={{pic|32|Placeholder}} Trivia==\n* Moon Crater Turf was introduced in the ''[[Return of Them#Turn of Tides|Turn of Tides]]'' update.\n\n=={{Pic32|Blueprint}} Gallery==\n<gallery captionalign=\"center\" hideaddbutton=\"true\">\nMoon Crater Turf Texture.png|Moon Crater Turf texture.\n</gallery>\n{{clear}}\n<tabber>\nTurfs=\n{{Turfs}}\n|-|\nCraftable Items=\n{{Craftable Items}}\n</tabber>\n[[vi:Moon Crater Turf]]\n[[Category:Return of Them]]\n[[Category:Celestial Filter]]\n[[Category:Fuel]]"
 }

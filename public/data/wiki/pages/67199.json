@@ -15,6 +15,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "SW",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Steamer_Trunk.png",
+              "title": "Steamer Trunk",
+              "url": "https://dontstarve.wiki.gg/wiki/Steamer_Trunk"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Ukulele",
+      "url": "https://dontstarve.wiki.gg/wiki/Ukulele"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 67199,
   "plainText": "Ukulele\nObject Info\n40\nSource\nDropped by\n:\nMiscellaneous\n\"trinket_15\"\nExclusive to:\n“Incredible! This guitar has undergone shrinkification!”\n–Wilson\n“Oh, this would burn.”\n–Willow\n“It does not fit in Wolfgang's big hands.”\n–Wolfgang\n“Whoever this belonged to isn't walking anymore.”\n–Wendy\n“UNCONTROLLABLE URGE TO BREAK”\n–WX-78\n“How melodic.”\n–Wickerbottom\n“This guitar is tiny!”\n–Woodie\n“It only has four strings.”\n–Maxwell\n“It produces highly pleasurable longitudinal sound waves.”\n–Wagstaff\n“A weapön öf annöyance.”\n–Wigfrid\n“I wonder if it's in tune.”\n–Webber\n“Choka! A Ukulele!”\n–Walani\n“I prefer the lute, myself.”\n–Warly\n“Can't play a note.”\n–Woodlegs\n“WILBA STRUM 'PON IT AT THE CAMPFIRE”\n–Wilba\n“Plink Plink”\n–Wormwood\n“Don't know how to play. And I don't really want to learn.”\n–Wheeler\nThe Ukulele can spawn in the Steamer Trunk.\nIt can be spawned into the game with the code \"trinket_15\".\n×6\n×8\n×3\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -25,6 +54,7 @@
     "timestamp": "2025-08-01T19:54:06Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Đàn Ukulele có thể xuất hiện trong Thùng máy hấp.</p>",
   "title": "Ukulele",
   "wikitext": "{{Object Infobox\n|icon = Ukulele.png\n|image =  .png\n|name =Ukulele\n|spawnCode = \"trinket_15\"\n|droppedBy ={{SW}}: {{Pic|32|Steamer Trunk}}\n|stack=40}}\n{{Exclusivity|Shipwrecked|Hamlet}}{{Quotes\n|wilson = Incredible! This guitar has undergone shrinkification!\n|willow = Oh, this would burn.\n|wolfgang = It does not fit in Wolfgang's big hands.\n|wendy = Whoever this belonged to isn't walking anymore.\n|wx78 = UNCONTROLLABLE URGE TO BREAK\n|wickerbottom = How melodic.\n|woodie = This guitar is tiny!\n|maxwell = It only has four strings.\n|wagstaff = It produces highly pleasurable longitudinal sound waves.\n|wigfrid = A weapön öf annöyance.\n|webber = I wonder if it's in tune.\n|walani = Choka! A Ukulele!\n|warly = I prefer the lute, myself.\n|woodlegs = Can't play a note.\n|wilba = WILBA STRUM 'PON IT AT THE CAMPFIRE\n|wormwood = Plink Plink\n|wheeler = Don't know how to play. And I don't really want to learn.\n|choose = wx78\n}}\nThe '''Ukulele''' can spawn in the [[Steamer Trunk]].\n\nIt can be spawned into the game with the code <code>\"trinket_15\"</code>.\n\n{{Recipe\n|item = Ukulele\n|gold = yes\n|result = Gold Nugget\n|resultcount = 6\n}}\n{{Recipe\n|item = Ukulele\n|dubloon = yes\n|result = Dubloons\n|resultcount = 8\n}}\n{{Recipe\n|item = Ukulele\n|tool = Pig Collector\n|result = Oinc\n|resultcount = 3\n|dlc = Hamlet\n}}\n{{Resources}}"
 }

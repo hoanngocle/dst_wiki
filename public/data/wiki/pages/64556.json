@@ -25,6 +25,60 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Blue_Whale_Carcass.png",
+              "title": "Blue Whale Carcass",
+              "url": "https://dontstarve.wiki.gg/wiki/Blue_Whale_Carcass"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/White_Whale_Carcass.png",
+              "title": "White Whale Carcass",
+              "url": "https://dontstarve.wiki.gg/wiki/White_Whale_Carcass"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/X_Marks_The_Spot.png",
+              "title": "X Marks The Spot",
+              "url": "https://dontstarve.wiki.gg/wiki/X_Marks_The_Spot"
+            }
+          ]
+        },
+        {
+          "chance": "—",
+          "context": "(exchanged for Surf 'n' Turf)",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Yaarctopus.png",
+              "title": "Yaarctopus",
+              "url": "https://dontstarve.wiki.gg/wiki/Yaarctopus"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Boat Lantern",
+      "url": "https://dontstarve.wiki.gg/wiki/Boat_Lantern"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 64556,
   "plainText": "Exclusive to:\nBoat Lantern\n\"Shed some light on the situation.\"\n×1 ×2 ×1\nTab\nTier\n7 min 48 sec\nDoes not stack\nPerk\nBoat attachment; provides light source\nDropped by\n(exchanged for )\n\"boat_lantern\"\n“This will do wonders for my nightvision!”\n–Wilson\n“Light without a flame. I don't like it one bit.”\n–Willow\n“Is safer light.”\n–Wolfgang\n“To see the vast nothingness in the black of night.”\n–Wendy\n“SEE THE SEA AT NIGHT”\n–WX-78\n“My oceanic night light.”\n–Wickerbottom\n“It's a boat light.”\n–Woodie\n“It lends an eerie glow to all around it.”\n–Maxwell\n“An exemplary application for bioluminescence.”\n–Wagstaff\n“See me, föul beasts öf the shadöw seas!”\n–Wigfrid\n“Seeing where we're going is sure handy!”\n–Webber\n“Night-surfing. I love it!”\n–Walani\n“To \"sea\" what's coming!”\n–Warly\n“Fer night sails.”\n–Woodlegs\n“LIGHT O' THE BOATS”\n–Wilba\n“Floaty light”\n–Wormwood\n“I could've used one of these for my balloon.”\n–Wheeler\nA Boat Lantern is a craftable Boat attachment in the Shipwrecked DLC. It requires a Science Machine to prototype and 1 Empty Bottle, 2 Twigs, and 1 Firefly to craft, and can be found in the Light Tab. It is also a reward from the Yaarctopus in exchange for Surf 'n' Turf.\nThe Boat Lantern needs to be attached to a boat to function. When it is attached to a Boat, it can be turned on or off at will, and provides light when turned on, protecting the player from Charlie. It has a limited durability and will eventually run out if kept on, but it can be refilled with Bioluminescence or Fireflies to extend its lifespan.\nTips[edit | edit source]\nThe Slot Machine may occasionally drop Fireflies, turning it into a unreliable way to obtain Fireflies, if one has enough Dubloons and luck.\nIf playing in a Shipwrecked world that has been connected with a base game world, Light Bulbs can be used to recharge the Boat Lantern.\nGallery[edit | edit source]\nBoat Lantern as seen in the Shipwrecked trailer.\nTools and WeaponsCraftable Items\nView or edit this template\nDon't Starve Tools and Weapons\nEquipped Tools\nUnequipped Tools\nLight\nBooks\nCircuits\nBattle Calls\nWatches\nWeapons\nSlingshot Parts\nThrowables\nStaffs\nAmulets\nBackpacks\nClothing\nStage Costumes\nArmor\nDSTDSRoGSWHam\nView or edit this template\nDon't Starve Together Craftable Items\nRegular Filters\nSurvivor Items\nWilson\nWillow\nWolfgang\nWendy\nWX-78\nWickerbottom\nWoodie\nWes\nMaxwell\nWigfrid\nWebber\nWarly\nWortox\nWormwood\nWinona\nWurt\nWalter\nWanda\nTools\nLight Sources\nPrototypers & Stations\nRefined Materials\nWeapons\nArmor\nClothing\nHealing\nMagic\nDecorations\nStructures\nStorage Solutions\nCooking\nFood & Gardening\nFishing\nSeafaring\nBeefalo Riding\nWinter Items\nSummer Items\nRain Gear\nCrafting Station Filters\nSpecial Event\nAncient Pseudoscience\nCarpentry\nCartography\nCritters\nCelestial\nBrightsmithy\nShadowcraft\nFabrication\nBottle Exchange\nCombrining Filter\nTea Brewing Filter\nSculptures\nSeasonings\nTrading\nTrading Hutch\nOfferings\nCawnival Creation\nTrinket Trove\nMad Science\nWinter's Feast Cooking\nSanctum Smithy Filter\nCustom Course Shack Filter\nView or edit this template\nDon't Starve Craftable Items\nTools\nLight\nSurvival\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nAncient\nBooks\nTinkering\nView or edit this template\nDon't Starve: Reign of Giants Craftable Items\nTools\nLight\nSurvival\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nAncient\nBooks\nTinkering\nView or edit this template\nDon't Starve Shipwrecked and Volcano Craftable Items\nTools\nLight\nNautical\nSurvival\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nVolcanic\nBooks\nTinkering\nView or edit this template\nDon't Starve Hamlet Craftable Items\nTools\nLight\nTreasure Hunting\nSurvival\nNautical\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nGreen Thumb\nBooks\nTinkering\nCity Planning\nRenovate\nFloors\nShelves\nPlantholders\nColumns\nWall Papers\nHanging Lamps\nOrnaments\nChairs\nHome Kits\nDoors\nWindows\nRugs\nLamps\nTables",
   "recipes": [],
@@ -35,6 +89,7 @@
     "timestamp": "2023-11-04T10:50:15Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Đèn Lồng Thuyền là một phụ kiện Thuyền có thể chế tạo được trong DLC ​​Shipwrecked. Nó yêu cầu Máy Khoa học để tạo nguyên mẫu và 1 Chai rỗng, 2 Cành cây và 1 Đom đóm để chế tạo và có thể tìm thấy trong Thẻ Ánh Sáng. Đó cũng là phần thưởng từ Yaarctopus để đổi lấy Surf &#x27;n&#x27; Turf.</p>",
   "title": "Boat Lantern",
   "wikitext": "{{Exclusivity|Shipwrecked}}\n{{Item Infobox\n|tab = Light\n|tier = 1\n|stack = Does not stack\n|durability = 7 min 48 sec\n|ingredient1 = Empty Bottle\n|multiplier1 = 1\n|ingredient2 = Twigs\n|multiplier2 = 2\n|ingredient3 = Fireflies\n|multiplier3 = 1\n|perk = Boat attachment; provides light source\n|droppedBy = {{Pic32|Blue Whale Carcass}} {{Pic32|White Whale Carcass}} {{Pic32|X Marks The Spot}}<br>{{Pic32|Yaarctopus}} (exchanged for {{Pic32|Surf 'n' Turf}})\n|spawnCode = \"boat_lantern\"\n|description = Shed some light on the situation.}}\n{{Quotes\n|wilson = This will do wonders for my nightvision!\n|willow = Light without a flame. I don't like it one bit.\n|wolfgang = Is safer light.\n|wendy = To see the vast nothingness in the black of night.\n|wx78 = SEE THE SEA AT NIGHT\n|wickerbottom = My oceanic night light.\n|woodie = It's a boat light.\n|maxwell = It lends an eerie glow to all around it.\n|wagstaff = An exemplary application for bioluminescence.\n|wigfrid = See me, föul beasts öf the shadöw seas!\n|webber = Seeing where we're going is sure handy!\n|walani = Night-surfing. I love it!\n|warly = To \"sea\" what's coming!\n|woodlegs = Fer night sails.\n|wilba = LIGHT O' THE BOATS\n|wormwood = Floaty light\n|wheeler = I could've used one of these for my balloon.\n|choose = wilson}}\nA '''Boat Lantern''' is a craftable [[Boats|Boat]] attachment in the ''[[Don't Starve: Shipwrecked|Shipwrecked]]'' DLC. It requires a [[Science Machine]] to prototype and 1 [[Empty Bottle]], 2 [[Twigs]], and 1 [[Fireflies|Firefly]] to craft, and can be found in the [[Light Tab]]. It is also a reward from the [[Yaarctopus]] in exchange for [[Surf 'n' Turf]].\n\nThe Boat Lantern needs to be attached to a boat to function. When it is attached to a Boat, it can be turned on or off at will, and provides light when turned on, protecting the player from [[Charlie]]. It has a limited durability and will eventually run out if kept on, but it can be refilled with [[Bioluminescence]] or Fireflies to extend its lifespan.\n\n== {{Pic|32|Prototype}}Tips ==\n* The [[Slot Machine]] may occasionally drop Fireflies, turning it into a unreliable way to obtain Fireflies, if one has enough [[Dubloons]] and luck.\n* If playing in a ''Shipwrecked'' world that has been connected with a base game world, [[Light Bulb]]s can be used to recharge the Boat Lantern.\n\n== {{Pic|32|Blueprint}} Gallery ==\n<gallery captionalign=\"center\" hideaddbutton=\"true\">\nWoodlegs_and_Tiger_Shark_at_Night_Trailer.jpg|Boat Lantern as seen in the ''Shipwrecked'' trailer.\n</gallery>\n<tabber>\nTools and Weapons=\n{{Tools and Weapons}}\n|-|\nCraftable Items=\n{{Craftable Items|tool}}\n</tabber>\n[[Category:Shipwrecked]]\n[[Category:Limited use]]\n[[Category:Light Sources]]\n[[Category:Non-Flammable]]\n[[Category:Light Tab]]\n[[Category:Mob Dropped Items]]"
 }

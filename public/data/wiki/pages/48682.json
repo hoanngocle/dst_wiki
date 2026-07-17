@@ -14,6 +14,90 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "DS",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ancient_Pseudoscience_Station_Build.png",
+              "title": "Ancient Pseudoscience Station Build",
+              "url": "https://dontstarve.wiki.gg/wiki/Ancient_Pseudoscience_Station_Build"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Broken_Pseudoscience_Station_Build.png",
+              "title": "Broken Pseudoscience Station Build",
+              "url": "https://dontstarve.wiki.gg/wiki/Broken_Pseudoscience_Station_Build"
+            },
+            {
+              "entityId": "base_game:mound",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Grave.png",
+              "title": "Grave",
+              "url": "https://dontstarve.wiki.gg/wiki/Grave"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Relic_Chair.png",
+              "title": "Relic Chair",
+              "url": "https://dontstarve.wiki.gg/wiki/Relic_Chair"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Relic_Table.png",
+              "title": "Relic Table",
+              "url": "https://dontstarve.wiki.gg/wiki/Relic_Table"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Relic_Vase.png",
+              "title": "Relic Vase",
+              "url": "https://dontstarve.wiki.gg/wiki/Relic_Vase"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Relic_Plate.png",
+              "title": "Relic Plate",
+              "url": "https://dontstarve.wiki.gg/wiki/Relic_Plate"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Relic_Bowl.png",
+              "title": "Relic Bowl",
+              "url": "https://dontstarve.wiki.gg/wiki/Relic_Bowl"
+            }
+          ]
+        },
+        {
+          "chance": "—",
+          "context": "RoG",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": "base_game:tumbleweed",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Tumbleweed.png",
+              "title": "Tumbleweed",
+              "url": "https://dontstarve.wiki.gg/wiki/Tumbleweed"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Gord's Knot",
+      "url": "https://dontstarve.wiki.gg/wiki/Gord%27s_Knot"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 48682,
   "plainText": "Don't Starve\nTogether\nGord's Knot\nObject Info\n40\nSource\nDropped by\n:\n:\nMiscellaneous\n\"trinket_3\"\n“The knot is stuck. Forever.”\n–Wilson\n“The knot is stuck. Who needs a knife when you've got fire?”\n–Willow\n“Is knot what Wolfgang expected.”\n–Wolfgang\n“If only knives solved more of my problems...”\n–Wendy\n“WHOSE KNOT IS THIS? THAT’S A WELL-GORDED SECRET.”\n–WX-78\n“Oh, I just love the bard.”\n–Wickerbottom\n“Reminds me of a story I heard once.”\n–Woodie\n“A tangled mess. Like life.”\n–Maxwell\n“Curious. Some force prevents me from untying it.”\n–Wagstaff\n“Even my spear cannöt undö this knöt.”\n–Wigfrid\n“It won't come undone!”\n–Webber\n“Gord only knows what this is good for.”\n–Walani\n“Some things can't be undone.”\n–Warly\n“Gord knows his way around a knot.”\n–Woodlegs\n“'TIS TIED REAL GOOD”\n–Wilba\n“Twisty string”\n–Wormwood\n“I've found knots like this in my balloon rigging.”\n–Wheeler\n“Everyone's been real good at showin' me the ropes. Ha!”\n–Winona\n“Tied like my tongue!”\n–Wortox\n“Grrr, can't... un-knot...!”\n–Wurt\n“That's easy, I know how to tie lots of knots!”\n–Walter\n“I'm not going to bother trying to untangle it.”\n–Wanda\nThe Gord's Knot has a 4.17% chance of being found when digging up a grave.\nIt can be traded to the Pig King for 4 Gold Nuggets.\nIn the Hamlet DLC, the Gord's Knot can be bought for 1 Oinc at The Flying Pig Arcane Shop in the Pig City.\n×4\n×9\n×3\nTrivia[edit | edit source]\nUnder the old research method, Trinkets were one of the best ways of gaining research points (80 points).\nGord's Knot is a reference to the story in which Alexander the Great was told that whoever could complete the impossible challenge of disentangling Gordian's Knot and release the tethered cart would rule all of Asia. He released the cart by cutting the Knot with a knife, and went on to conquer much of Asia Minor, before his army rebelled. It has since become a metaphor for solving a complex problem with a simple solution, by thinking outside of the box.\nGallery[edit | edit source]\nOriginal HD icon from Bonus Materials from CD Don't Starve.\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -24,6 +108,7 @@
     "timestamp": "2025-08-01T19:33:29Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Nút thắt Gord có 4,17% cơ hội được tìm thấy khi đào mộ.</p>",
   "title": "Gord's Knot",
   "wikitext": "{{Navbutton/Separation}}{{Object Infobox\n|icon = Gord's Knot.png\n|image = Gord's Knot Dropped.png\n|name = Gord's Knot\n|spawnCode = \"trinket_3\"\n|droppedBy ={{DS}}: {{Pic|32|Ancient Pseudoscience Station Build}}{{Pic|32|Broken Pseudoscience Station Build}}{{Pic|32|Grave}}{{Pic|32|Relic Chair}}{{Pic|32|Relic Table}}{{Pic|32|Relic Vase}}{{Pic|32|Relic Plate}}{{Pic|32|Relic Bowl}}<hr>{{RoG}}:{{Pic|32|Tumbleweed}}\n|stack=40}}\n\n{{Quotes\n|wilson = The knot is stuck. Forever.\n|willow = The knot is stuck. Who needs a knife when you've got fire?\n|wolfgang = Is knot what Wolfgang expected.\n|wendy = If only knives solved more of my problems...\n|wx78 = WHOSE KNOT IS THIS? THAT’S A WELL-GORDED SECRET.\n|wickerbottom = Oh, I just love the bard.\n|woodie = Reminds me of a story I heard once.\n|maxwell = A tangled mess. Like life.\n|wagstaff = Curious. Some force prevents me from untying it.\n|wigfrid = Even my spear cannöt undö this knöt.\n|webber = It won't come undone!\n|walani = Gord only knows what this is good for.\n|warly = Some things can't be undone.\n|woodlegs = Gord knows his way around a knot.\n|wilba = 'TIS TIED REAL GOOD\n|wormwood = Twisty string\n|wheeler = I've found knots like this in my balloon rigging.\n|winona = Everyone's been real good at showin' me the ropes. Ha!\n|wortox = Tied like my tongue!\n|wurt = Grrr, can't... un-knot...!\n|walter = That's easy, I know how to tie lots of knots!\n|wanda = I'm not going to bother trying to untangle it.\n|choose = wilson\n}}\nThe '''Gord's Knot''' has a 4.17% chance of being found when digging up a grave. \n\nIt can be traded to the Pig King for 4 Gold Nuggets.\n\nIn the ''[[Hamlet]]'' DLC,  the Gord's Knot can be bought for 1 [[Oinc]] at [[The Flying Pig Arcane Shop]] in the [[Pig City]].\n\n{{Recipe\n|item        = Gord's Knot\n|gold        = yes\n|result      = Gold Nugget\n|resultcount = 4\n}}\n{{Recipe\n|item = Gord's Knot\n|dubloon = yes\n|result = Dubloons\n|resultcount = 9\n|dlc = Shipwrecked\n}}\n{{Recipe\n|item = Gord's Knot\n|tool = Pig Collector\n|result = Oinc\n|resultcount = 3\n|dlc = Hamlet\n}}\n== {{Pic|32|Placeholder}} {{Anchor|Trivia|Trivia}} ==\n* Under the [[Research points list|old research method]], Trinkets were one of the best ways of gaining research points (80 points).\n* Gord's Knot is a reference to the story in which [[Wikipedia:Alexander the Great|Alexander the Great]] was told that whoever could complete the impossible challenge of disentangling Gordian's Knot and release the tethered cart would rule all of Asia. He released the cart by cutting the Knot with a knife, and went on to conquer much of Asia Minor, before his army rebelled. It has since become a metaphor for solving a complex problem with a simple solution, by thinking outside of the box.\n== {{Pic|32|Blueprint}} Gallery ==\n<gallery>\nCD trinket_3.png|Original HD icon from Bonus Materials from [[CD Don't Starve]].\n</gallery>\n{{clear}}\n{{Resources}}"
 }

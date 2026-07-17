@@ -15,6 +15,53 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ancient_Pseudoscience_Station_Build.png",
+              "title": "Ancient Pseudoscience Station Build",
+              "url": "https://dontstarve.wiki.gg/wiki/Ancient_Pseudoscience_Station_Build"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Broken_Pseudoscience_Station_Build.png",
+              "title": "Broken Pseudoscience Station Build",
+              "url": "https://dontstarve.wiki.gg/wiki/Broken_Pseudoscience_Station_Build"
+            },
+            {
+              "entityId": "base_game:mound",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Grave.png",
+              "title": "Grave",
+              "url": "https://dontstarve.wiki.gg/wiki/Grave"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Sunken_Chest.png",
+              "title": "Sunken Chest",
+              "url": "https://dontstarve.wiki.gg/wiki/Sunken_Chest"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Bent Spork",
+      "url": "https://dontstarve.wiki.gg/wiki/Bent_Spork"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 70998,
   "plainText": "Bent Spork\nObject Info\n40\nSource\nDropped by\nFishing Info\nCast Range 13\nAccuracy 0.1\nLure Radius 4\nLure Charm 0.2\nBonus Range +1\nMiscellaneous\n\"trinket_17\"\nExclusive to:\n“A horrifyingly failed utensil fusion. I guess science *can* go too far.”\n–Wilson\n“Metal bends when it gets nice and hot.”\n–Willow\n“Is still good!”\n–Wolfgang\n“Two utensils that are one. It reminds me of myself and Abigail.”\n–Wendy\n“SUCH SENSELESS VIOLENCE”\n–WX-78\n“This would be a practical eating utensil if it weren't bent.”\n–Wickerbottom\n“It needs to be straightened, eh?”\n–Woodie\n“The product of a very immature magician, perhaps.”\n–Maxwell\n“A pöör weapön.”\n–Wigfrid\n“Spork. Spork. Spork. Hahaha!”\n–Webber\n“A pity.”\n–Warly\n“Pokey shiny thing”\n–Wormwood\n“A waste of good metal.”\n–Winona\n“I haven't got the tine for that!”\n–Wortox\n“Food scooper.”\n–Wurt\n“One less utensil to pack with your camping gear!”\n–Walter\n“Think about how much time I'll save if I only need to use one utensil!”\n–Wanda\nThe Bent Spork can be obtained by trading Fishes with the King of the Merms.\nIt can be used as a reusable Lure for the Sea Fishing Rod.\nWhen given to the Antlion as tribute, this trinket delays its rage by 0.33 days.\nThe Bent Spork can be spawned into the game with the code \"trinket_17\".\n×2\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -25,6 +72,7 @@
     "timestamp": "2025-08-01T19:58:36Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Con quay cong có thể thu được bằng cách trao đổi Cá với Vua Người cá.</p>",
   "title": "Bent Spork",
   "wikitext": "{{Object Infobox\n|icon = Bent Spork.png\n|image = Bent Spork Dropped.png\n|name = Bent Spork\n|cast_range =Cast Range 13<br>Accuracy 0.1\n|spawnCode = \"trinket_17\"\n|lure_radius = Lure Radius 4<br>Lure Charm 0.2<br>Bonus Range +1\n|droppedBy = {{Pic|32|Ancient Pseudoscience Station Build}}{{Pic|32|Broken Pseudoscience Station Build}}{{Pic|32|Grave}}{{Pic|32|Sunken Chest}}\n|stack=40}}{{Exclusivity|Don't Starve Together}}\n{{Quotes\n|wilson = A horrifyingly failed utensil fusion. I guess science *can* go too far.\n|willow = Metal bends when it gets nice and hot.\n|wolfgang = Is still good!\n|wendy = Two utensils that are one. It reminds me of myself and Abigail.\n|wx78 = SUCH SENSELESS VIOLENCE\n|wickerbottom = This would be a practical eating utensil if it weren't bent.\n|woodie = It needs to be straightened, eh?\n|maxwell = The product of a very immature magician, perhaps.\n|wigfrid = A pöör weapön.\n|webber = Spork. Spork. Spork. Hahaha!\n|winona = A waste of good metal.\n|warly = A pity.\n|wortox = I haven't got the tine for that!\n|wormwood = Pokey shiny thing\n|wurt = Food scooper.\n|walter = One less utensil to pack with your camping gear!\n|wanda = Think about how much time I'll save if I only need to use one utensil!\n|choose = wendy\n}}\nThe '''Bent Spork''' can be obtained by trading [[Fishes]] with the [[King of the Merms]].\n\nIt can be used as a reusable [[Lures|Lure]] for the [[Sea Fishing Rod]].\n\nWhen given to the Antlion as tribute, this trinket delays its rage by 0.33 days.\n\nThe Bent Spork can be spawned into the game with the code <code>\"trinket_17\"</code>.\n\n{{Recipe\n|item = Bent Spork\n|gold = yes\n|result = Gold Nugget\n|resultcount = 2\n}}\n{{Recipe\n|item = Bent Spork\n|tool = Antlion\n|result = Desert Stone\n}}\n{{clear}}{{Resources}}\n\n__NOTOC__"
 }

@@ -15,6 +15,35 @@
       "width": 65
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "(Axe)",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": "base_game:palmconetree",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Palmcone_Tree.png",
+              "title": "Palmcone Tree",
+              "url": "https://dontstarve.wiki.gg/wiki/Palmcone_Tree"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Palmcone Sprout",
+      "url": "https://dontstarve.wiki.gg/wiki/Palmcone_Sprout"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 83273,
   "plainText": "Exclusive to:\nPalmcone Sprout\nObject Info\n15 sec.\nCan be Burned\n40\nSource\nDropped by\n()\n9,4%\nMiscellaneous\n\"palmcone_seed\"\n“The very beginnings of a tree.”\n–Wilson\n“Not quite a tree yet.”\n–Willow\n“Tree has only just started with the growing.”\n–Wolfgang\n“A tree that has barely begun to live.”\n–Wendy\n“TREE SOURCE CODE”\n–WX-78\n“It can't begin growing until it's been planted, dear.”\n–Wickerbottom\n“It'll grow into a fine tree.”\n–Woodie\n“One day it might grow into something useful.”\n–Maxwell\n“It must be returned to the earth.”\n–Wigfrid\n“Aww, it's a baby tree!”\n–Webber\n“It has only just begun to grow.”\n–Warly\n“Grows friends from far away”\n–Wormwood\n“This could become a tree with a bit of work.”\n–Winona\n“Now a seed, but soon a tree.”\n–Wortox\n“Aww, it just a baby.”\n–Wurt\n“I should plant it, you can never have enough trees!”\n–Walter\n“A future tree.”\n–Wanda\n“Can be planted in the ground.”\n-\nThe Palmcone Sprout is an Item exclusive to Don't Starve Together, introduced in The Curse of Moon Quay update. It can be obtained by chopping down a fully grown Palmcone Tree. Additionally, it has a small chance to drop from the Unnatural Portal.\nPlanting Palcone Sprouts is the only way to grow new Palmcone Trees. However, they can also be used as fuel for a fire.\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -25,6 +54,7 @@
     "timestamp": "2025-08-02T03:24:01Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Mầm Palmcone là một Vật phẩm độc quyền của Don&#x27;t Starve Together, được giới thiệu trong bản cập nhật The Curse of Moon Quay. Nó có thể thu được bằng cách chặt cây Palmcone đã trưởng thành. Ngoài ra, nó có một cơ hội nhỏ rơi ra từ Cổng phi tự nhiên.</p>",
   "title": "Palmcone Sprout",
   "wikitext": "{{Exclusivity|Don't Starve Together}}\n{{Object Infobox\n|image = Palmcone Sprout Dropped.png\n|icon = Palmcone Sprout.png\n|canBeBurned=1\n|burnTime = [[File:Light_Sources_Filter.png|32px|link=Fuel#Fire Fuel]] 15 sec.\n|stack = 40\n|droppedBy = {{Pic|32|Palmcone Tree}} ({{Pic|32|Axe}})<br>[[File:Moon Quay Unnatural Portal Out.png|32px|link=Unnatural Portal]] 9,4%\n|spawnCode=\"palmcone_seed\"}}\n{{Quotes\n|wilson = The very beginnings of a tree.\n|willow = Not quite a tree yet.\n|wolfgang = Tree has only just started with the growing.\n|wendy = A tree that has barely begun to live.\n|wx78 = TREE SOURCE CODE\n|wickerbottom = It can't begin growing until it's been planted, dear.\n|woodie = It'll grow into a fine tree.\n|maxwell = One day it might grow into something useful.\n|wigfrid = It must be returned to the earth.\n|webber = Aww, it's a baby tree!\n|warly = It has only just begun to grow.\n|wormwood = Grows friends from far away\n|winona = This could become a tree with a bit of work.\n|wortox = Now a seed, but soon a tree.\n|wurt = Aww, it just a baby.\n|walter = I should plant it, you can never have enough trees!\n|wanda = A future tree.\n|choose = wilson}}\n{{Scrapbook Info|Can be planted in the ground.}}\nThe '''Palmcone Sprout''' is an [[Item]]  exclusive to ''[[Don't Starve Together]]'', introduced in ''[[The Curse of Moon Quay]]'' update. It can be obtained by chopping down a fully grown [[Palmcone Tree]]. Additionally, it has a small chance to drop from the [[Unnatural Portal]].\n\nPlanting Palcone Sprouts is the only way to grow new Palmcone Trees. However, they can also be used as fuel for a fire.\n\n{{Resources}}\n[[vi:Palmcone Sprout]]"
 }

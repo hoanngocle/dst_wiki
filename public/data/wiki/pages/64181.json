@@ -20,6 +20,54 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "DS",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": "base_game:lureplant",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Lureplant.png",
+              "title": "Lureplant",
+              "url": "https://dontstarve.wiki.gg/wiki/Lureplant"
+            }
+          ]
+        },
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Snaptooth_Seedling.png",
+              "title": "Snaptooth Seedling",
+              "url": "https://dontstarve.wiki.gg/wiki/Snaptooth_Seedling"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Snaptooth_Flytrap.png",
+              "title": "Snaptooth Flytrap",
+              "url": "https://dontstarve.wiki.gg/wiki/Snaptooth_Flytrap"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": "base_game:plantmeat",
+      "iconUrl": null,
+      "title": "Leafy Meat",
+      "url": "https://dontstarve.wiki.gg/wiki/Leafy_Meat"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 64181,
   "plainText": "Don't Starve\nTogether\nLeafy Meat\nFood Info\n12.5\n0\n-10\nMeat\nObject Info\n6 Days\n20\nSource\n: ( ×1)\nDropped by\n:\n:\nMiscellaneous\n\"plantmeat\"\nCooked Leafy Meat\nFood Info\n18.75\n1\n0\nMeat\nObject Info\n10 Days\n20\nMiscellaneous\n\"plantmeat_cooked\"\n“That doesn't look very appealing.”\n–Wilson, when examining Leafy Meat.\n“Eww, it's all slimy.”\n–Willow, when examining Leafy Meat.\n“What is this? Meat for baby man?”\n–Wolfgang, when examining Leafy Meat.\n“It has a foul smell.”\n–Wendy, when examining Leafy Meat.\n“A SURPRISINGLY HIGH AMOUNT OF PROTEIN.”\n–WX-78, when examining Leafy Meat.\n“The plant produced a meaty substance.”\n–Wickerbottom, when examining Leafy Meat.\n“That's gross!”\n–Woodie, when examining Leafy Meat.\n“A feeble attempt to trick the weak minded.”\n–Maxwell, when examining Leafy Meat.\n“I can say with certainty that consuming this will cause me distress.”\n–Wagstaff, when examining Leafy Meat.\n“I suppöse it's clöse enöugh.”\n–Wigfrid, when examining Leafy Meat.\n“It's all squishy.”\n–Webber, when examining Leafy Meat.\n“It's got all two food groups.”\n–Walani, when examining Leafy Meat.\n“Meaty leaves? I'm so confused...”\n–Warly, when examining Leafy Meat.\n“A suspect meat.”\n–Woodlegs, when examining Leafy Meat.\n“'TIS MEAT O' PLANTS”\n–Wilba, when examining Leafy Meat.\n“Meat from dirt”\n–Wormwood, when examining Leafy Meat.\n“Green. Grown on a plant. Everything you want in a piece of meat.”\n–Wheeler, when examining Leafy Meat.\n“This is beyond confusing.”\n–Winona, when examining Leafy Meat.\n“I don't like it, no siree.”\n–Wortox, when examining Leafy Meat.\n“Feel... confused...”\n–Wurt, when examining Leafy Meat.\n“Does this count as eating my vegetables?”\n–Walter, when examining Leafy Meat.\n“If I wasn't so hungry, I might have second thoughts.”\n–Wanda, when examining Leafy Meat.\nLeafy Meat is a meat food item obtained by harvesting a Lureplant. When a Lureplant has not devoured anything else, it will dangle this item to lure prey into its field of Eyeplants. If another Meat is eaten by the Eyeplants, then the Lureplant will dangle that instead.\nSince it is considered meat, Leafy Meat can be given to a caged bird for an Egg, used to befriend (or bait) a Pig, and traded with the Pig King for Gold. Carrying or picking up a Leafy Meat will anger a Bunnyman. As a meat item, Wigfrid can eat Leafy Meat, while Wurt cannot. It can be added to the Crock Pot with an ingredient value of 1 Meats.\nCooked Leafy Meat[edit | edit source]\n“At least it's warm now.”\n–Wilson, when examining Cooked Leafy Meat.\n“Fire makes everything better.”\n–Willow, when examining Cooked Leafy Meat.\n“Is slightly better now.”\n–Wolfgang, when examining Cooked Leafy Meat.\n“It's only slightly more appealing.”\n–Wendy, when examining Cooked Leafy Meat.\n“I MADE IT BETTER.”\n–WX-78, when examining Cooked Leafy Meat.\n“I feel better about eating this now.”\n–Wickerbottom, when examining Cooked Leafy Meat.\n“Cooking it didn't help much.”\n–Woodie, when examining Cooked Leafy Meat.\n“The heat has made this a suitable meal.”\n–Maxwell, when examining Cooked Leafy Meat.\n“A wholly unusual chimera of meat and vegetation.”\n–Wagstaff, when examining Cooked Leafy Meat.\n“Still green, but it'll dö.”\n–Wigfrid, when examining Cooked Leafy Meat.\n“It smells kind of rotten.”\n–Webber, when examining Cooked Leafy Meat.\n“Hey, you're not a REAL steak!”\n–Walani, when examining Cooked Leafy Meat.\n“Could use less oxymorons...”\n–Warly, when examining Cooked Leafy Meat.\n“Cooked it up, I did.”\n–Woodlegs, when examining Cooked Leafy Meat.\n“FWOOSHED MEAT O' PLANTS”\n–Wilba, when examining Cooked Leafy Meat.\n“Good for belly”\n–Wormwood, when examining Cooked Leafy Meat.\n“I'll try to eat around the green parts.”\n–Wheeler, when examining Cooked Leafy Meat.\n“It cooked up pretty good.”\n–Winona, when examining Cooked Leafy Meat.\n“I'll leave it to the mortals.”\n–Wortox, when examining Cooked Leafy Meat.\n“Still not gonna eat it, florp.”\n–Wurt, when examining Cooked Leafy Meat.\n“It has the weirdest flavour...”\n–Walter, when examining Cooked Leafy Meat.\n“If you close your eyes it tastes much better.”\n–Wanda, when examining Cooked Leafy Meat.\nCooked Leafy Meat is the product of cooking a piece of Leafy Meat over a Campfire, Fire Pit or star. Compared to the raw version, it fills hunger a little more, fills 1 additional point of health, and removes the sanity penalty.\nDownloadable Content[edit | edit source]\nIn Hamlet DLC, Leafy Meat can also be obtained by killing any levels of Snaptooth Seedlings, Snaptooth Flytraps and mob Hanging Vines.\nUsage[edit | edit source]\nTrivia[edit | edit source]\nLeafy Meat (along with the Lureplant) was added in the It's Not a Rock! update.\nBy TypeBy Crock Pot Value\nView or edit this template\nFood and Edible Items (by Food Type)\nVeggie\nSeeds\nMeat\nGoodies\nGeneric\nHorrible\nRoughage\nElementals\nBurnt\nRaw\nGears\nGold Dust\nBerry\nWood\nNitre\nLunar Shards\nView or edit this template\nFood and Edible Items (by Food Value)\nMeats\nFishes\nVegetables\nFruits\nMonster Food\nEggs\nDairy\nSweetener\nFrozen\nInedibles\nMagic\nFat\nSeed\nJellyfish\nBone\nFilter\nAntihistamine\nDecoration\nBug\nNo Value Food",
   "recipes": [],
@@ -30,6 +78,7 @@
     "timestamp": "2025-08-01T19:49:31Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Thịt Lá là một loại thực phẩm có thịt thu được bằng cách thu hoạch Củ Thịt. Khi Củ Thịt chưa nuốt bất cứ thứ gì khác, nó sẽ treo vật phẩm này để dụ con mồi vào ruộng Cây Mắt của nó. Nếu một Thịt khác bị Cây Mắt ăn thì Củ Thịt sẽ treo lủng lẳng miếng thịt đó.</p>",
   "title": "Leafy Meat",
   "wikitext": "{{Navbutton/Separation}}\n{{Object Infobox\n|foodType = [[Food_Type#Meat|Meat]] [[File:Meats.png|32px|link=Food_Type#Meat]]\n|name = Leafy Meat\n|icon = Leafy Meat.png\n|image = Leafy Meat Dropped.png\n|droppedBy ={{DS}}: {{Pic|32|Lureplant}}<hr>{{Ham}}:\n{{Pic|32|Snaptooth Seedling}}{{Pic|32|Snaptooth Flytrap}}\n[[File:Hanging Vine (mob).png|24px|link=Hanging Vine]]\n|hpRestored = 0\n|hungerRestored = 12.5\n|sanityRestored = -10\n|spoil = 6 Days\n|stack = 20\n|spawnCode = \"plantmeat\"\n|soldBy ={{Ham}}: {{pic|32|The Sterling Trough Deli}} ({{Pic|24|Oinc}} &times;1)\n}}\n{{Object Infobox\n|foodType = [[Food_Type#Meat|Meat]] [[File:Meats.png|32px|link=Food_Type#Meat]]\n|name = Cooked Leafy Meat\n|icon = Cooked Leafy Meat.png\n|image = Cooked Leafy Meat Dropped.png\n|hpRestored = 1\n|hungerRestored = 18.75\n|sanityRestored = 0\n|spoil = 10 Days\n|stack = 20\n|spawnCode = \"plantmeat_cooked\"\n}}\n{{Quotes\n|wilson = That doesn't look very appealing.\n|willow = Eww, it's all slimy.\n|wolfgang = What is this? Meat for baby man?\n|wendy = It has a foul smell.\n|wx78 = A SURPRISINGLY HIGH AMOUNT OF PROTEIN.\n|wickerbottom = The plant produced a meaty substance.\n|woodie = That's gross!\n|maxwell = A feeble attempt to trick the weak minded.\n|wagstaff = I can say with certainty that consuming this will cause me distress.\n|wigfrid = I suppöse it's clöse enöugh.\n|webber = It's all squishy.\n|walani = It's got all two food groups.\n|warly = Meaty leaves? I'm so confused...\n|woodlegs = A suspect meat.\n|wilba = 'TIS MEAT O' PLANTS\n|wormwood = Meat from dirt\n|wheeler = Green. Grown on a plant. Everything you want in a piece of meat.\n|winona = This is beyond confusing.\n|wortox = I don't like it, no siree.\n|wurt = Feel... confused...\n|walter = Does this count as eating my vegetables?\n|wanda = If I wasn't so hungry, I might have second thoughts.\n|choose = wigfrid\n|source = when examining Leafy Meat.}}\n'''Leafy Meat''' is a [[Meats|meat]] [[food]] item obtained by harvesting a [[Lureplant]]. When a Lureplant has not devoured anything else, it will dangle this item to lure prey into its field of [[Eyeplant]]s. If another Meat is eaten by the Eyeplants, then the Lureplant will dangle that instead.\n\nSince it is considered meat, Leafy Meat can be given to a [[Birdcage|caged bird]] for an [[Egg]], used to befriend (or bait) a [[Pig]], and traded with the [[Pig King]] for [[Gold Nugget|Gold]]. Carrying or picking up a Leafy Meat will anger a [[Bunnyman]]. As a [[Meats|meat]] item, [[Wigfrid]] can eat Leafy Meat, while [[Wurt]] cannot. It can be added to the [[Crock Pot]] with an ingredient value of 1 [[Meats]].\n__NOTOC__\n==Cooked Leafy Meat==\n{{Quotes\n|wilson = At least it's warm now.\n|willow = Fire makes everything better.\n|wolfgang = Is slightly better now.\n|wendy = It's only slightly more appealing.\n|wx78 = I MADE IT BETTER.\n|wickerbottom = I feel better about eating this now.\n|woodie = Cooking it didn't help much.\n|maxwell = The heat has made this a suitable meal.\n|wagstaff = A wholly unusual chimera of meat and vegetation.\n|wigfrid = Still green, but it'll dö.\n|webber = It smells kind of rotten.\n|walani = Hey, you're not a REAL steak!\n|warly = Could use less oxymorons...\n|woodlegs = Cooked it up, I did.\n|wilba = FWOOSHED MEAT O' PLANTS\n|wormwood = Good for belly\n|wheeler = I'll try to eat around the green parts.\n|winona = It cooked up pretty good.\n|wortox = I'll leave it to the mortals.\n|wurt = Still not gonna eat it, florp.\n|walter = It has the weirdest flavour...\n|wanda = If you close your eyes it tastes much better.\n|choose = webber\n|source = when examining Cooked Leafy Meat.}}'''Cooked Leafy Meat''' is the product of [[cooking]] a piece of Leafy Meat over a [[Campfire]], [[Fire Pit]] or [[Star Caller's Staff|star]]. Compared to the raw version, it fills hunger a little more, fills 1 additional point of health, and removes the sanity penalty.\n\n=={{Pic32|Gift Icon}} Downloadable Content==\n\nIn ''[[Hamlet]]'' DLC, Leafy Meat can also be obtained by killing any levels of [[Snaptooth Seedling]]s, [[Snaptooth Flytrap]]s and mob [[Hanging Vine]]s.\n\n=={{pic|32|Icon Tools}} Usage==\n{{Recipe\n|item = Leafy Meat\n|result = Cooked Leafy Meat\n|fire = yes\n}}\n{{Recipe\n|item = Leafy Meats\n|bird = yes\n|result = Egg\n}}\n{{Recipe\n|item = Leafy Meats\n|result = Gold Nugget\n|gold = yes\n}}\n\n=={{pic|32|Placeholder}} Trivia ==\n* Leafy Meat (along with the [[Lureplant]]) was added in the ''[[Version History#June 11, 2013 - It's not a rock!|It's Not a Rock!]]'' update.\n{{Clear}}{{Food and Edible Items}}\n[[vi:Thịt Lá]]\n[[Category:Mob Dropped Items]]\n[[Category:Sanity Loss]]\n[[Category:Meats]]\n[[Category:Healing]]\n[[Category:Perishables]]"
 }

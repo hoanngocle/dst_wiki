@@ -18,6 +18,41 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Reeds.png",
+              "title": "Reeds",
+              "url": "https://dontstarve.wiki.gg/wiki/Reeds"
+            },
+            {
+              "entityId": "base_game:monkeytail",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Monkeytails.png",
+              "title": "Monkeytails",
+              "url": "https://dontstarve.wiki.gg/wiki/Monkeytails"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": "base_game:cutreeds",
+      "iconUrl": null,
+      "title": "Cut Reeds/DST",
+      "url": "https://dontstarve.wiki.gg/wiki/Cut_Reeds/DST"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 219461,
   "plainText": "Don't Starve\nTogether\nCut Reeds\nFood Info\n4.7\n1\n0\nRoughage\n(non-survivor food)\nObject Info\n15 sec.\nCan be Burned\n40\nSource\nDropped by\n,\nCrafting\nDescription\nTubular.\nx4\nFilters\nTier\nMiscellaneous\n\"cutreeds\"\n“Cut reeds, ready for crafting and hobbying.”\n–Wilson\n“Cut reeds, ready for burning. Or maybe crafting.”\n–Willow\n“I made a clump of reeds.”\n–Wolfgang\n“I like to cut things up.”\n–Wendy\n“HOLLOW PLANT MATTER”\n–WX-78\n“Some rush cuttings.”\n–Wickerbottom\n“Want to hear my loon call?”\n–Woodie\n“I think I could build something useful from this.”\n–Maxwell\n“Pliable yet tough. Very useful. Very useful indeed.”\n–Wagstaff\n“I cleaned all the bugs öut! Then I ate them.”\n–Wigfrid\n“Reeds, web, what's the difference.”\n–Webber\n“It was hard work cutting those. Nap time!”\n–Walani\n“Smells like greenery.”\n–Warly\n“But Woodlegs can't reed.”\n–Woodlegs\n“'TIS REEDS”\n–Wilba\n“Hair cut”\n–Wormwood\n“Only useful in twos or threes. Or fours or fives.”\n–Wheeler\n“Doesn't hold a candle to steel pipe.”\n–Winona\n“One swift yank was all it took.”\n–Wortox\n“Swamp full of useful things, florp.”\n–Wurt\n“Ms. Wickerbottom might need some more... reed-ing material.”\n–Walter\n“I'll put it in my pocket and use it for something later.”\n–Wanda\nCut Reeds are an item obtained by harvesting Reeds that grow in Swamps. Reeds can be refined into Papyrus and are a crafting ingredient for a Blow Dart, Sleep Dart, Fire Dart and Pan Flute. Reeds grow back after 3 days from being picked, but they will not grow in Winter.\nThere is an alternative method of obtaining Cut Reeds: by destroying Tumbleweeds. There is a 1% chance of it dropping from the 3 possible drops. Also, a friendly Catcoon can gift the player Cut Reeds.\nReeds can also be harvested from the Rocky Beach biome on the Lunar Island.\nMonkeytails are another source of Cut Reeds that can be transplanted near one's base for easy harvesting.\nUsage[edit | edit source]\n×4\n×5\n×2\n×2\n×2\n×2\n×2\n×5\n×2\n×4\n×4\n×15\n×3\n×2\n×4\n×2\n×4\n×2\n×4\n×2\n×2\n×2\n×3\n×3\nGallery[edit | edit source]\nOriginal HD icon from Bonus Materials from CD Don't Starve.\nResourcesFood\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items\nBy TypeBy Crock Pot Value\nView or edit this template\nFood and Edible Items (by Food Type)\nVeggie\nSeeds\nMeat\nGoodies\nGeneric\nHorrible\nRoughage\nElementals\nBurnt\nRaw\nGears\nGold Dust\nBerry\nWood\nNitre\nLunar Shards\nView or edit this template\nFood and Edible Items (by Food Value)\nMeats\nFishes\nVegetables\nFruits\nMonster Food\nEggs\nDairy\nSweetener\nFrozen\nInedibles\nMagic\nFat\nSeed\nJellyfish\nBone\nFilter\nAntihistamine\nDecoration\nBug\nNo Value Food",
   "recipes": [],
@@ -28,6 +63,7 @@
     "timestamp": "2025-08-23T12:11:23Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Sậy Cắt là vật phẩm thu được bằng cách thu hoạch Sậy mọc ở Đầm Lầy. Sậy có thể được tinh chế thành Giấy cói và là nguyên liệu chế tạo cho Tiêu thổi, Tiêu ngủ, Tiêu lửa và Sáo thần Pan. Sậy mọc lại sau 3 ngày kể từ khi được hái, nhưng chúng sẽ không mọc lại vào Mùa Đông.</p>",
   "title": "Cut Reeds/DST",
   "wikitext": "{{Navbutton/Separation}}\n{{Object Infobox\n|image = Cut Reeds Dropped.png\n|icon = Cut Reeds.png\n|foodType = Roughage [[File:Roughage.png|32px|link=Roughage]]<br>(non-survivor food)\n|hpRestored     = 1\n|hungerRestored = 4.7\n|sanityRestored = 0\n|burnTime = [[File:Light_Sources_Filter.png|32px|link=Fuel#Fire Fuel]] 15 sec.\n|stack = 40\n|droppedBy = {{Pic24|Reeds}}, {{Pic24|Monkeytails}}\n|craft_desctiption =''Tubular.''\n|crafting_text = {{Pic32|Ash}}x4 \n|tier_text = {{Pic32|Wandering Trader}}\n|filter      = {{Pic32|Trading Filter}}\n|spawnCode = \"cutreeds\"\n|canBeBurned=1}}\n{{Quotes\n|wilson = Cut reeds, ready for crafting and hobbying.\n|willow = Cut reeds, ready for burning. Or maybe crafting.\n|wolfgang = I made a clump of reeds.\n|wendy = I like to cut things up.\n|wx78 = HOLLOW PLANT MATTER\n|wickerbottom = Some rush cuttings.\n|woodie = Want to hear my loon call?\n|maxwell = I think I could build something useful from this.\n|wagstaff = Pliable yet tough. Very useful. Very useful indeed.\n|wigfrid = I cleaned all the bugs öut! Then I ate them.\n|webber = Reeds, web, what's the difference.\n|walani = It was hard work cutting those. Nap time!\n|warly = Smells like greenery.\n|woodlegs = But Woodlegs can't reed.\n|wilba = 'TIS REEDS\n|wormwood = Hair cut\n|wheeler = Only useful in twos or threes. Or fours or fives.\n|winona = Doesn't hold a candle to steel pipe.\n|wortox = One swift yank was all it took.\n|wurt = Swamp full of useful things, florp.\n|walter = Ms. Wickerbottom might need some more... reed-ing material.\n|wanda = I'll put it in my pocket and use it for something later.\n|choose = wurt}}\n'''Cut Reeds''' are an item obtained by harvesting [[Reeds]] that grow in [[Swamp]]s. Reeds can be refined into [[Papyrus]] and are a crafting ingredient for a [[Blow Dart]], [[Sleep Dart]], [[Fire Dart]] and [[Pan Flute]]. Reeds grow back after 3 days from being picked, but they will not grow in [[Winter]].\n\nThere is an alternative method of obtaining Cut Reeds: by destroying [[Tumbleweed]]s. There is a 1% chance of it dropping from the 3 possible drops. Also, a friendly [[Catcoon]] can gift the player Cut Reeds.\n\nReeds can also be harvested from the [[Rocky Beach]] biome on the [[Lunar Island]].\n\n[[Monkeytails]] are another source of Cut Reeds that can be transplanted near one's base for easy harvesting.\n\n=={{Pic|32|Icon Tools}} Usage==\n{{Recipe\n|item1 = Cut Reeds\n|count1 = 4\n|tool = Science Machine\n|result = Papyrus}}\n\n{{Recipe\n|item1 = Cut Reeds\n|count1 = 5\n|item2 = Rope\n|item3 = Mandrake\n|tool = Prestihatitator\n|result = Pan Flute}}\n\n{{Recipe\n|item1 = Cut Reeds\n|count1 = 2\n|item2 = Hound's Tooth\n|item3 = Azure Feather\n|tool = Science Machine\n|result = Blow Dart}}\n\n{{Recipe\n|item1 = Cut Reeds\n|count1 = 2\n|item2 = Stinger\n|item3 = Crow Feather\n|tool = Science Machine\n|result = Sleep Dart}}\n\n{{Recipe\n|item1 = Cut Reeds\n|count1 = 2\n|item2 = Charcoal\n|item3 = Crimson Feather\n|tool = Science Machine\n|result = Fire Dart}}\n\n{{Recipe\n|item1 = Cut Reeds\n|count1 = 2\n|item2 = Gold Nugget\n|item3 = Saffron Feather\n|tool = Science Machine\n|result = Electric Dart}}\n\n{{Recipe\n|item1 = Cut Reeds\n|count1 = 2\n|item2 = Down Feather\n|count2 = 5\n|item3 = Rope\n|count3 = 2\n|tool = Alchemy Engine\n|result = Luxury Fan}}\n\n{{Recipe\n|item1 = Cut Reeds\n|count1 = 1\n|item2 = Carrot\n|count2 = 4\n|tool = Benevolent Rabbit King\n|result = Burrowing Horn}}\n\n{{Recipe\n|item1 = Cut Reeds\n|count1 = 4\n|item2 = Cave Banana\n|item3 = Health Decrease\n|count3 = 15\n|result = Monkeytails Tuft Dug\n|character = Wormwood\n|skill = Monkeytail Crafting}}\n\n{{Recipe\n|item1 = Cut Reeds\n|count1 = 3\n|item2 = Freshwater Fish\n|count2 = 2\n|item3 = Boards\n|count3 = 4\n|tool = Science Machine\n|result = Craftsmerm House\n|character = Wurt}}\n\n{{Recipe\n|item1 = Cut Reeds\n|item2 = Rot\n|count2 = 2\n|result = Marsh Turf\n|resultcount = 4\n|character = Wurt}}\n\n{{Recipe\n|item1 = Cut Reeds\n|item2 = Rot\n|count2 = 2\n|tool = Terra Firma Tamper\n|result = Marsh Turf\n|resultcount = 4}}\n\n{{Recipe\n|item1 = Cut Reeds\n|item2 = Freshwater Fish\n|item3 = Twigs\n|count3 = 2\n|result = Clever Disguise\n|character = Wurt}}\n\n{{Recipe\n|item1 = Cut Reeds\n|count1 = 2\n|item2 = Boards\n|count2 = 2\n|result = Communal Kelp Dish\n|character = Wurt\n|skill = Community Feeder I}}\n\n{{Recipe\n|item1 = Cut Reeds\n|count1 = 3\n|item2 = Boards\n|count2 = 3\n|item3 = Tentacle Spots\n|count3 = 1\n|result = Superior Communal Kelp Dish\n|skill = Community Feeder II}}\n\n== {{Pic|32|Blueprint}} Gallery ==\n<gallery>\nCD cutreeds.png|Original HD icon from Bonus Materials from [[CD Don't Starve]].\n</gallery>\n\n<tabber>\nResources=\n{{Resources}}\n|-|\nFood=\n{{Food}}\n</tabber>\n[[fr:Roseaux coupés]]\n[[Category:Resources]]\n[[Category:Fuel]]\n[[Category:Flammable Objects]]"
 }

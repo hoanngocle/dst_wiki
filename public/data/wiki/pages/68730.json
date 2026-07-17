@@ -17,6 +17,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "(Shovel)",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": "base_game:bananabush",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Banana_Bush.png",
+              "title": "Banana Bush",
+              "url": "https://dontstarve.wiki.gg/wiki/Banana_Bush"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": "base_game:bananabush",
+      "iconUrl": null,
+      "title": "Banana Bush",
+      "url": "https://dontstarve.wiki.gg/wiki/Banana_Bush"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 68730,
   "plainText": "Exclusive to:\nBanana Bush\nMedium\nSmall\nEmpty\nDead\nObject Info\nRenewable?\nYes\nCan be Burned\nSource\nCan be Dug ()\nCan be picked ()\nMoon Quay\nResources\n()\nMiscellaneous\n\"bananabush\"\nBanana Bush\nObject Info\nPerk\nCan be replanted\n3 min.\nCan be Burned\n10\nSource\nDropped by\n()\nMiscellaneous\n\"dug_bananabush\"\n“That bush is bananas!”\n–Wilson\n“Bananas growing outside the caves? Weird.”\n–Willow\n“It makes delicious fruit for Wolfgang.”\n–Wolfgang\n“Bananas that grow in the sun... how unnatural.”\n–Wendy\n“THIS WORLD ALREADY HAS BANANAS INSTALLED. YOU ARE REDUNDANT”\n–WX-78\n“The fruit is remarkably similar to the subterranean strain.”\n–Wickerbottom\n“It's missing the tree part!”\n–Woodie\n“Bananas that don't grow in caves? Preposterous.”\n–Maxwell\n“I hath no use for a plant burgeoning with foul non-meats.”\n–Wigfrid\n“We didn't know bananas could grow outside!”\n–Webber\n“Ah, I've stumbled on some fresh bananas!”\n–Warly\n“New friend!”\n–Wormwood\n“Sure beats goin' down to the caves.”\n–Winona\n“Hyuyu, little shrub, are you waving at me?”\n–Wortox\n“Monkeys mean, but know good fruit.”\n–Wurt\n“Wait, I thought bananas grew on trees around here?”\n–Walter\n“They're much easier to pick this way.”\n–Wanda\n“This needs some fertilizing after planting.”\n-Banana Bushes (Item)\nBanana Bushes are Plants exclusive to Don't Starve Together, introduced in The Curse of Moon Quay update. They can be found growing on Moon Quay and are dropped in their item form from the Unnatural Portal.\nA Banana Bush will grow 1 Banana after 3 growing stages at a rate of 1 stage per day regardless of daylight. Similar to Berry Bushes, it can be replanted when dug up with a Shovel but will need to be fertilized before it will start growing new fruit. The bush will need to be re-fertilized after 5-7 harvests.\nBugs[edit | edit source]\nDespite having the MakeNoGrowInWinter() component, Banana Bushes will continue to grow during Winter.\nAssets[edit | edit source]\nMedium\nSmall\nEmpty\nDead\nGallery[edit | edit source]\nUnused Banana Bush Burnt\nConcept art of the Banana Bush shown in Rhymes With Play stream.\nDSTDSRoGSWHam\nView or edit this template\nDon't Starve Together Structures\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/DLC/function/tags of these Things. Some of them are not even Structures.\nPlants\nNon-living objects\nCarcasses\nCraftable\nInanimate\nScrap\nAncient\nPillar\nCharacter Exclusive\nWeather Objects\nView or edit this template\nDon't Starve Structures\nPlants\nInanimate\nCraftable\nNaturally generating\nAncient\nPillars\nCharacter exclusive\nWeather Objects\nView or edit this template\nReign of Giants Structures\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/DLC/function/tags of these Things. Some of them are not even Structures.\nPlants\nNon-living objects\nCraftable\nInanimate\nAncient\nPillar\nCharacter Exclusive\nWeather Objects\nView or edit this template\nShipwrecked Structures\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/DLC/function/tags of these Things. Some of them are not even Structures.\nPlants\nNon-living objects\nCarcasses\nCraftable\nInanimate\nCharacter Exclusive\nWeather Objects\nView or edit this template\nHamlet Structures\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/DLC/function/tags of these Things. Some of them are not even Structures.\nPlants\nNon-living objects\nCraftable\nInanimate\nPig City\nAncient\nPillars\nCharacter Exclusive\nWeather Objects",
   "recipes": [],
@@ -27,6 +56,7 @@
     "timestamp": "2025-08-01T19:55:53Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Bụi Chuối là Thực vật độc quyền trong Don&#x27;t Starve Together, được giới thiệu trong bản cập nhật The Curse of Moon Quay. Chúng có thể được tìm thấy mọc ở Moon Quay và rơi ra ở dạng vật phẩm từ Cổng phi tự nhiên.</p>",
   "title": "Banana Bush",
   "wikitext": "{{Exclusivity|Don't Starve Together}}\n{{Object Infobox\n|scrapbook_description =This needs some fertilizing after planting.\n|image = <gallery>\nBanana Bush Medium Build.png|Medium\nBanana Bush Small Build.png|Small\nBanana Bush Empty Build.png|Empty\nBanana Bush Dead Build.png|Dead\n</gallery>\n|tool = Can be Dug ({{pic|32|Shovel}})\n|picked = Can be picked ({{pic|32|Cave Banana}})\n|canBeBurned = 1\n|resources = [[File:Banana Bush Item.png|32px]] ({{pic|32|Shovel}})\n|renew = Yes\n|biome = [[Moon Quay]]\n|spawnCode = \"bananabush\"\n}}\n{{Object Infobox\n|stack = 10\n|place = {{pic|32px|Banana Bush Empty Build|Banana Bush}}\n|image = Banana_Bush_Dropped.png\n|icon = Banana Bush Item.png\n|perk = Can be replanted\n|droppedBy = [[File:Moon Quay Unnatural Portal Out.png|32px|link=Unnatural Portal]]<br>{{Pic32|Banana Bush}} ({{Pic32|Shovel}})\n|spawnCode = \"dug_bananabush\"\n|name=Banana Bush\n|burnTime = [[File:Light_Sources_Filter.png|32px|link=Fuel#Fire Fuel]] 3 min.\n|canBeBurned=1}}\n{{Quotes\n|wilson = That bush is bananas!\n|willow = Bananas growing outside the caves? Weird.\n|wolfgang = It makes delicious fruit for Wolfgang.\n|wendy = Bananas that grow in the sun... how unnatural.\n|wx78 = THIS WORLD ALREADY HAS BANANAS INSTALLED. YOU ARE REDUNDANT\n|wickerbottom = The fruit is remarkably similar to the subterranean strain.\n|woodie = It's missing the tree part!\n|maxwell = Bananas that don't grow in caves? Preposterous.\n|wigfrid = I hath no use for a plant burgeoning with foul non-meats.\n|webber = We didn't know bananas could grow outside!\n|warly = Ah, I've stumbled on some fresh bananas!\n|wormwood = New friend!\n|winona = Sure beats goin' down to the caves.\n|wortox = Hyuyu, little shrub, are you waving at me?\n|wurt = Monkeys mean, but know good fruit.\n|walter = Wait, I thought bananas grew on trees around here?\n|wanda = They're much easier to pick this way.\n|choose = maxwell}}{{Scrapbook_Info|This needs some fertilizing after planting.|Banana Bushes (Item)}}\n'''Banana Bushes''' are [[Plants]] exclusive to ''[[Don't Starve Together]]'', introduced in ''[[The Curse of Moon Quay]]'' update. They can be found growing on [[Moon Quay]] and are dropped in their item form from the [[Unnatural Portal]]. \n\nA Banana Bush will grow 1 [[Banana]] after 3 growing stages at a rate of 1 stage per day regardless of daylight. Similar to [[Berry Bush]]es, it can be replanted when dug up with a [[Shovel]] but will need to be [[Fertilizer|fertilized]] before it will start growing new fruit. The bush will need to be re-fertilized after 5-7 harvests. \n\n== {{Pic32|Mosquito}} Bugs ==\n\n* Despite having the MakeNoGrowInWinter() component, Banana Bushes will continue to grow during [[Winter]].\n== {{Pic32|Research Notes}} Assets ==\n<gallery>\nBanana Bush Medium Build.png|Medium\nBanana Bush Small Build.png|Small\nBanana Bush Empty Build.png|Empty\nBanana Bush Dead Build.png|Dead\n</gallery>\n=={{Pic|32|Blueprint}} Gallery==\n<gallery>\nBanana_Bush_Burnt_Build.png|Unused Banana Bush Burnt\nRWP_Banana_Bush_Concept_Art.png|Concept art of the Banana Bush shown in Rhymes With Play stream.\n</gallery>\n{{clear}}\n{{Naturally Spawning Objects|plant}}\n[[vi:Banana_Bush]]"
 }

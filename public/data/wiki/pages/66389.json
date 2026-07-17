@@ -25,6 +25,41 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "tiles (Pitchfork)",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": null,
+              "title": "Cultivated",
+              "url": "https://dontstarve.wiki.gg/wiki/Cultivated"
+            },
+            {
+              "entityId": null,
+              "iconUrl": null,
+              "title": "Biome",
+              "url": "https://dontstarve.wiki.gg/wiki/Biomes"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Cultivated Turf",
+      "url": "https://dontstarve.wiki.gg/wiki/Cultivated_Turf"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 66389,
   "plainText": "Exclusive to:\nCultivated Turf\n\"A civilized patch of dirt.\"\n×1 ×1\nTab\nTier\n90/45 sec\n10\nDropped by\nCultivated Biome tiles ()\n\"turf_fields\"\nCultivated Turf\nCan be Dug\nСan be planted\n“It's a chunk of ground.”\n–Wilson\n“The ground is boring.”\n–Willow\n“Step stones.”\n–Wolfgang\n“Some ground.”\n–Wendy\n“GROUND PARTS”\n–WX-78\n“The ground. You step on it.”\n–Wickerbottom\n“Just some ground, eh?”\n–Woodie\n“Turf.”\n–Maxwell\n“Cultivated land.”\n–Wagstaff\n“A piece öf the battlefield.”\n–Wigfrid\n“Some ground that we dug up.”\n–Webber\n“Turfy dirt.”\n–Walani\n“It's like an ingredient for the ground.”\n–Warly\n“Me ain't no ground lubber.”\n–Woodlegs\n“'TIS GROUND”\n–Wilba\n“Dirt”\n–Wormwood\n“Do I really need to drag this dirt around with me?”\n–Wheeler\nCultivated Turf is a craftable Turf Item exclusive to the Hamlet DLC. It requires 1 Rainforest Turf and 1 Ashes to craft and an Alchemy Engine to prototype. Like other Turfs, it can be placed on any bare ground tile or used as fuel.\nIt also spawns naturally in the Cultivated Biome.\nWhen placed on the Surface World covering a large enough area, Redbirds and Crows are the only Birds that will spawn and land on these turfs.\nIn the Shipwrecked DLC, this Turf will not spawn Puddles. Expanding Puddles can still flood this turf, however.\nGallery[edit | edit source]\nCultivated Turf texture.\nWilson standing on placed Cultivated Turf.\nCultivated Turf as seen on the Map.\nView or edit this template\nTurfs\nDSTDSRoGSWHam\nView or edit this template\nDon't Starve Together Craftable Items\nRegular Filters\nSurvivor Items\nWilson\nWillow\nWolfgang\nWendy\nWX-78\nWickerbottom\nWoodie\nWes\nMaxwell\nWigfrid\nWebber\nWarly\nWortox\nWormwood\nWinona\nWurt\nWalter\nWanda\nTools\nLight Sources\nPrototypers & Stations\nRefined Materials\nWeapons\nArmor\nClothing\nHealing\nMagic\nDecorations\nStructures\nStorage Solutions\nCooking\nFood & Gardening\nFishing\nSeafaring\nBeefalo Riding\nWinter Items\nSummer Items\nRain Gear\nCrafting Station Filters\nSpecial Event\nAncient Pseudoscience\nCarpentry\nCartography\nCritters\nCelestial\nBrightsmithy\nShadowcraft\nFabrication\nBottle Exchange\nCombrining Filter\nTea Brewing Filter\nSculptures\nSeasonings\nTrading\nTrading Hutch\nOfferings\nCawnival Creation\nTrinket Trove\nMad Science\nWinter's Feast Cooking\nSanctum Smithy Filter\nCustom Course Shack Filter\nView or edit this template\nDon't Starve Craftable Items\nTools\nLight\nSurvival\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nAncient\nBooks\nTinkering\nView or edit this template\nDon't Starve: Reign of Giants Craftable Items\nTools\nLight\nSurvival\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nAncient\nBooks\nTinkering\nView or edit this template\nDon't Starve Shipwrecked and Volcano Craftable Items\nTools\nLight\nNautical\nSurvival\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nVolcanic\nBooks\nTinkering\nView or edit this template\nDon't Starve Hamlet Craftable Items\nTools\nLight\nTreasure Hunting\nSurvival\nNautical\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nGreen Thumb\nBooks\nTinkering\nCity Planning\nRenovate\nFloors\nShelves\nPlantholders\nColumns\nWall Papers\nHanging Lamps\nOrnaments\nChairs\nHome Kits\nDoors\nWindows\nRugs\nLamps\nTables",
   "recipes": [],
@@ -35,6 +70,7 @@
     "timestamp": "2024-06-24T18:07:17Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Đất trồng trọt là một Vật phẩm Đất trồng trọt được dành riêng cho Hamlet DLC. Nó cần 1 Đất Rừng Nhiệt Đới và 1 Tro để chế tạo và Máy Luyện Kim để nguyên mẫu. Giống như các loại Đất khác, nó có thể được đặt trên bất kỳ nền đất trống nào hoặc dùng làm nhiên liệu.</p>",
   "title": "Cultivated Turf",
   "wikitext": "{{Exclusivity|Hamlet}}\n{{Item_Infobox\n|name = Cultivated Turf\n|ingredient1 = Rainforest Turf\n|multiplier1 = 1\n|ingredient2 = Ashes\n|multiplier2 = 1\n|tab = Structures\n|tier = 2\n|droppedBy = [[Cultivated]] [[Biomes|Biome]] tiles ({{pic24|Pitchfork}})\n|burnTime = 90/45 sec\n|stack = 10\n|spawnCode = \"turf_fields\"\n|description = A civilized patch of dirt.}}{{Turf Infobox\n|image =Cultivated Turf Texture.png\n|pitchfork = 1\n|planted = 1\n}}\n{{Quotes\n|wilson = It's a chunk of ground.\n|willow = The ground is boring.\n|wolfgang = Step stones.\n|wendy = Some ground.\n|wx78 = GROUND PARTS\n|wickerbottom = The ground. You step on it.\n|woodie = Just some ground, eh?\n|maxwell = Turf.\n|wagstaff = Cultivated land.\n|wigfrid = A piece öf the battlefield.\n|webber = Some ground that we dug up.\n|walani = Turfy dirt.\n|warly = It's like an ingredient for the ground.\n|woodlegs = Me ain't no ground lubber.\n|wilba = 'TIS GROUND\n|wormwood = Dirt\n|wheeler = Do I really need to drag this dirt around with me?\n|choose = wormwood}}\n'''Cultivated Turf''' is a craftable [[Turf]] [[Item]] exclusive to the ''[[Don't Starve: Hamlet|Hamlet]]'' DLC. It requires 1 [[Rainforest Turf]] and 1 [[Ashes]] to craft and an [[Alchemy Engine]] to prototype. Like other Turfs, it can be placed on any bare ground tile or used as [[Fire#Fuel|fuel]].\n\nIt also spawns naturally in the [[Cultivated]] [[Biomes|Biome]].\n\nWhen placed on the [[Surface World]] covering a large enough area, [[Redbird]]s and [[Crow]]s are the only Birds that will spawn and land on these turfs.\n\nIn the ''[[Don't Starve: Shipwrecked|Shipwrecked]]'' DLC, this Turf will not spawn [[Flooding|Puddles]]. Expanding Puddles can still flood this turf, however.\n=={{Pic|32|Blueprint}} Gallery==\n<gallery captionalign=\"center\" hideaddbutton=\"true\">\nCultivated Turf Texture.png|Cultivated Turf texture.\nCultivatedturfTerrain.jpg|[[Wilson]] standing on placed Cultivated Turf.\nCultivatedTurfMap.jpg|Cultivated Turf as seen on the [[Map]].\n</gallery>\n\n{{Turfs}}\n{{Craftable Items}}\n[[vi:Cultivated Turf]]\n[[Category:Fuel]]\n[[Category:Non-Renewable]]\n[[Category:Flammable Objects]]\n[[Category:Naturally Spawning Objects]]\n[[Category:Structures Tab]]"
 }

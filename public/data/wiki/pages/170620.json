@@ -15,6 +15,47 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "DS",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ancient_Pseudoscience_Station_Build.png",
+              "title": "Ancient Pseudoscience Station Build",
+              "url": "https://dontstarve.wiki.gg/wiki/Ancient_Pseudoscience_Station_Build"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Broken_Pseudoscience_Station_Build.png",
+              "title": "Broken Pseudoscience Station Build",
+              "url": "https://dontstarve.wiki.gg/wiki/Broken_Pseudoscience_Station_Build"
+            },
+            {
+              "entityId": "base_game:mound",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Grave.png",
+              "title": "Grave",
+              "url": "https://dontstarve.wiki.gg/wiki/Grave"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Ball and Cup",
+      "url": "https://dontstarve.wiki.gg/wiki/Ball_and_Cup"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 170620,
   "plainText": "Don't Starve\nTogether\nBall and Cup\nObject Info\n40\nSource\nDropped by\n:\nMiscellaneous\n\"trinket_7\"\nExclusive to:\n“I have no time for fun and games!”\n–Wilson\n“Fire is more fun.”\n–Willow\n“Ball goes in wood hole.”\n–Wolfgang\n“Just a simple game.”\n–Wendy\n“A DEVICE FOR WASTING TIME”\n–WX-78\n“I'd rather use my hands to read a book.”\n–Wickerbottom\n“I could play this for hours!”\n–Woodie\n“Not something a grown man should be caught playing with.”\n–Maxwell\n“There's a trick to it. I know it!”\n–Wagstaff\n“Nö time för games! There is battle at hand!”\n–Wigfrid\n“Another toy!”\n–Webber\n“Ooh, I'm good at this!”\n–Walani\n“A distraction of little substance.”\n–Warly\n“Aye, th'newest gaming craze!”\n–Woodlegs\n“WILBA PLAY AT YONDER TIME”\n–Wilba\n“Wood?”\n–Wormwood\n“I'll play this in my down-time. Which is never.”\n–Wheeler\n“Was this whittled... by hand? Blech!”\n–Winona\n“Oh, humans play such funny games!”\n–Wortox\n“This game too hard!”\n–Wurt\n“That's kid stuff.”\n–Walter\n“I have no time for distractions.”\n–Wanda\nThe Ball and Cup has a 4.17% chance of being found when digging up a grave. A Cup-and-ball refers to a traditional children's toy where the player tried to catch the ball, which has a small cup, or hole, via the toy's handle. It can be traded to the Pig King for 4 Gold Nuggets.\nThe Ball and Cup can be spawned into the game with the code \"trinket_7\".\n×4\n×9\n×3\nTrivia[edit | edit source]\nUnder the old research method, Trinkets were one of the best ways of gaining research points (80 points).\nGallery[edit | edit source]\nOriginal HD icon from Bonus Materials from CD Don't Starve.\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -25,6 +66,7 @@
     "timestamp": "2025-08-01T21:55:15Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Quả bóng và chiếc cốc có 4,17% cơ hội được tìm thấy khi đào mộ. Cốc và bóng đề cập đến một đồ chơi trẻ em truyền thống trong đó người chơi cố gắng bắt quả bóng có một chiếc cốc hoặc lỗ nhỏ thông qua tay cầm của đồ chơi. Nó có thể được trao đổi với Vua Lợn để lấy 4 Vàng Thỏi.</p>",
   "title": "Ball and Cup",
   "wikitext": "{{Navbutton/Separation}}\n{{Object Infobox\n|icon = Ball and Cup.png\n|image = Ball and Cup Dropped.png\n|name = Ball and Cup\n|spawnCode = \"trinket_7\"\n|droppedBy ={{DS}}: {{Pic|32|Ancient Pseudoscience Station Build}}{{Pic|32|Broken Pseudoscience Station Build}}{{Pic|32|Grave}}\n|stack=40}}\n{{Exclusivity|Don't Starve|Reign of Giants|Shipwrecked|Hamlet|Don't Starve Together}}\n{{Quotes\n|wilson = I have no time for fun and games!\n|willow = Fire is more fun.\n|wolfgang = Ball goes in wood hole.\n|wendy = Just a simple game.\n|wx78 = A DEVICE FOR WASTING TIME\n|wickerbottom = I'd rather use my hands to read a book.\n|woodie = I could play this for hours!\n|maxwell = Not something a grown man should be caught playing with.\n|wagstaff = There's a trick to it. I know it!\n|wigfrid = Nö time för games! There is battle at hand!\n|webber = Another toy!\n|walani = Ooh, I'm good at this!\n|warly = A distraction of little substance.\n|woodlegs = Aye, th'newest gaming craze!\n|wilba = WILBA PLAY AT YONDER TIME\n|wormwood = Wood?\n|wheeler = I'll play this in my down-time. Which is never.\n|winona = Was this whittled... by hand? Blech!\n|wortox = Oh, humans play such funny games!\n|wurt = This game too hard!\n|walter = That's kid stuff.\n|wanda = I have no time for distractions.\n|choose = wendy\n}}\nThe '''Ball and Cup''' has a 4.17% chance of being found when digging up a grave. A Cup-and-ball refers to a traditional children's toy where the player tried to catch the ball, which has a small cup, or hole, via the toy's handle. It can be traded to the Pig King for 4 Gold Nuggets.\n\nThe Ball and Cup can be spawned into the game with the code <code>\"trinket_7\"</code>.\n\n{{Recipe\n|item        = Ball and Cup\n|gold        = yes\n|result      = Gold Nugget\n|resultcount = 4\n}}\n{{Recipe\n|item = Ball and Cup\n|dubloon = yes\n|result = Dubloons\n|resultcount = 9\n|dlc = Shipwrecked\n}}\n{{Recipe\n|item = Ball and Cup\n|tool = Pig Collector\n|result = Oinc\n|resultcount = 3\n|dlc = Hamlet\n}}\n== {{Pic|32|Placeholder}} {{Anchor|Trivia|Trivia}} ==\n* Under the [[Research points list|old research method]], Trinkets were one of the best ways of gaining research points (80 points).\n== {{Pic|32|Blueprint}} Gallery ==\n<gallery>\nCD trinket_7.png|Original HD icon from Bonus Materials from [[CD Don't Starve]].\n</gallery>\n{{clear}}\n{{Resources}}"
 }

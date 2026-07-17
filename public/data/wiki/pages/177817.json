@@ -22,6 +22,54 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "DS : , (Axe)",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Green_Mushroom.png",
+              "title": "Green Mushroom",
+              "url": "https://dontstarve.wiki.gg/wiki/Green_Mushroom"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/MushtreeGreen.png",
+              "title": "Mushtree",
+              "url": "https://dontstarve.wiki.gg/wiki/MushtreeGreen"
+            }
+          ]
+        },
+        {
+          "chance": "—",
+          "context": "SW",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Slotmachine.png",
+              "title": "Slotmachine",
+              "url": "https://dontstarve.wiki.gg/wiki/Slotmachine"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": "base_game:green_cap",
+      "iconUrl": null,
+      "title": "Green Cap",
+      "url": "https://dontstarve.wiki.gg/wiki/Green_Cap"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 177817,
   "plainText": "Don't Starve\nTogether\nGreen Cap\nFood Info\n12.5\n0\n-50\nVeggie\n× 0.5\nObject Info\n10 Days\nCan be Burned\n40\nSource\n: ( ×2)\nDropped by\n: , ()\n:\nMiscellaneous\n\"green_cap\"\n“It seems pretty normal.”\n–Wilson\n“Boring!”\n–Willow\n“Is for salads. Blech.”\n–Wolfgang\n“This mushroom is disappointingly normal.”\n–Wendy\n“CULINARY FUNGUS”\n–WX-78\n“Seems edible, though it may not be totally sane to consume it.”\n–Wickerbottom\n“I've eaten stranger things in the woods.”\n–Woodie\n“I should eat it.”\n–Maxwell\n“Raw fungus is not something my stomach can process.”\n–Wagstaff\n“Terrible!”\n–Wigfrid\n“Smells really earthy.”\n–Webber\n“Looks sort of tasty.”\n–Walani\n“Don't crowd the mushrooms.”\n–Warly\n“Not me top choice o' grub.”\n–Woodlegs\n“WILBA FIND'TH MUSHYROOM!”\n–Wilba\n“Green mushy”\n–Wormwood\n“How adventurous am I feeling?”\n–Wheeler\n“Yep. Green mushroom.”\n–Winona\n“These mushrooms play all sort of tricks.”\n–Wortox\n“Has nice color, probably tasty.”\n–Wurt\n“It's not usually smart to eat unfamiliar mushrooms.”\n–Walter\n“Ugh, mushrooms...”\n–Wanda\nGreen Caps are Vegetable Food Items that can be harvested on Green Mushrooms or Green Mushtrees. A raw Green Cap will take away a hefty 50 when eaten, while also restoring 12.5 . It has no effect on health. Green Caps can also be used as Crock Pot filler with a 0.5 vegetable value.\nCooked Green Cap[edit | edit source]\nCooked Green Cap\nFood Info\n0\n-1\n15\nVeggie\n× 0.5\nObject Info\n7.5 sec.\n10 Days\nCan be Burned\n40\nMiscellaneous\n\"green_cap_cooked\"\n“It's different now...”\n–Wilson\n“I changed it with fire!”\n–Willow\n“Is not same.”\n–Wolfgang\n“All is malleable.”\n–Wendy\n“MODIFIED FUNGUS”\n–WX-78\n“Chemistry has happened.”\n–Wickerbottom\n“I don't trust it.”\n–Woodie\n“Salty!”\n–Maxwell\n“I deduce the cooking has made it more digestible.”\n–Wagstaff\n“Charred by flame ör nöt, it will nöt töuch my lips!”\n–Wigfrid\n“Heat really brings out the juices.”\n–Webber\n“Fried fungus.”\n–Walani\n“Could use butter and chives...”\n–Warly\n“Th' witch doctor told Woodlegs it'd cure me crazies.”\n–Woodlegs\n“FWOOSH'D MUSHYROOM”\n–Wilba\n“Helps head”\n–Wormwood\n“Well, only one way to tell if it's poisonous or not.”\n–Wheeler\n“Doesn't look TOO deadly.”\n–Winona\n“That changed it somehow.”\n–Wortox\n“It smell different now.”\n–Wurt\n“It's probably safe now that it's cooked, right?”\n–Walter\n“For some reason the thought of eating it isn't so repulsive now.”\n–Wanda\nA Cooked Green Cap is a Vegetable Food Item made by Cooking a Green Cap on a fire (Campfire, Fire Pit, Dwarf Star, etc.). Unlike its raw counterpart, the Cooked Green Cap will instead restore 15 and take away 1 when eaten, not affecting hunger at all.\nDownloadable Content[edit | edit source]\nIn the Shipwrecked DLC, Green Caps can be obtained by using the Slot Machine.\nIn Hamlet Green Caps can be bought for 2 Oincs at the Curly Tails Mud Spa in the Pig City.\nUsage[edit | edit source]\nTips[edit | edit source]\nRaw Green Caps can be eaten to decrease Sanity (to hunt Shadow Creatures or Beardlings, for example).\nHaving an equal positive effect to the Raw Blue Cap's negative, the Cooked Green Cap may be eaten in conjunction with a Raw Blue Cap for a resulting +19 , +12.5 , and 0 .\nTrivia[edit | edit source]\nSome real-life mushrooms, such as psilocybin mushrooms, have psycoactive properties and can cause visual and auditory hallucinations similar to those seen with low Sanity.\nGallery[edit | edit source]\nGreen Cap used as emoji for Official Klei Discord\nBy TypeBy Crock Pot Value\nView or edit this template\nFood and Edible Items (by Food Type)\nVeggie\nSeeds\nMeat\nGoodies\nGeneric\nHorrible\nRoughage\nElementals\nBurnt\nRaw\nGears\nGold Dust\nBerry\nWood\nNitre\nLunar Shards\nView or edit this template\nFood and Edible Items (by Food Value)\nMeats\nFishes\nVegetables\nFruits\nMonster Food\nEggs\nDairy\nSweetener\nFrozen\nInedibles\nMagic\nFat\nSeed\nJellyfish\nBone\nFilter\nAntihistamine\nDecoration\nBug\nNo Value Food",
   "recipes": [],
@@ -32,6 +80,7 @@
     "timestamp": "2026-05-22T05:34:50Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Mũ Xanh là Thực Phẩm Thực Vật có thể thu hoạch trên Nấm Xanh hoặc Cây Nấm Xanh. Mũ xanh thô sẽ lấy đi 50 điểm khổng lồ khi ăn, đồng thời phục hồi 12,5. Nó không có tác dụng gì đối với sức khỏe. Mũ Xanh cũng có thể được sử dụng làm chất độn trong Nồi Hầm với giá trị thực vật là 0,5.</p>",
   "title": "Green Cap",
   "wikitext": "{{Navbutton/Separation}}\n{{Object Infobox\n|foodType = [[Veggie]] [[File:Veggie.png|32px|]]\n|canBeBurned = 1\n|image = Green Cap Dropped.png\n|icon = Green Cap.png\n|name = Green Cap\n|hpRestored = 0\n|hungerRestored = 12.5\n|sanityRestored = -50\n|spoil = 10 Days\n|stack = 40\n|foodValue = {{Pic|32|Vegetables}} &times; 0.5\n|droppedBy ={{DS}}: {{Pic|32|Green Mushroom}}''',''' {{Pic|24|MushtreeGreen|Mushtree}} ({{Pic|32|Axe}})<hr>{{SW}}: {{Pic|20|Slotmachine}}\n|soldBy ={{Ham}}: {{Pic|32|Curly Tails Mud Spa}} ({{Pic|24|Oinc}} &times;2)\n|spawnCode = \"green_cap\"\n}}\n{{Quotes\n|wilson = It seems pretty normal.\n|willow = Boring!\n|wolfgang = Is for salads. Blech.\n|wendy = This mushroom is disappointingly normal.\n|wx78 = CULINARY FUNGUS\n|wickerbottom = Seems edible, though it may not be totally sane to consume it.\n|woodie = I've eaten stranger things in the woods.\n|maxwell = I should eat it.\n|wagstaff = Raw fungus is not something my stomach can process.\n|wigfrid = Terrible!\n|webber = Smells really earthy.\n|walani = Looks sort of tasty.\n|warly = Don't crowd the mushrooms.\n|woodlegs = Not me top choice o' grub.\n|wilba = WILBA FIND'TH MUSHYROOM!\n|wormwood = Green mushy\n|wheeler = How adventurous am I feeling?\n|winona = Yep. Green mushroom.\n|wortox = These mushrooms play all sort of tricks.\n|wurt = Has nice color, probably tasty.\n|walter = It's not usually smart to eat unfamiliar mushrooms.\n|wanda = Ugh, mushrooms...\n|choose = wickerbottom\n}}\n'''Green Caps''' are [[Vegetable]] [[Food]] [[Items]] that can be harvested on [[Green Mushroom]]s or Green [[Mushtree]]s. A raw Green Cap will take away a hefty 50 {{Sanity}} when eaten, while also restoring 12.5 {{Hunger}}. It has no effect on health. Green Caps can also be used as [[Crock Pot]] filler with a 0.5 vegetable value.\n{{clear}}\n== Cooked Green Cap ==\n{{Object Infobox\n|foodType = [[Veggie]] [[File:Veggie.png|32px|]]\n|canBeBurned = 1\n|image = Cooked Green Cap Dropped.png\n|icon = Cooked Green Cap.png\n|name = Cooked Green Cap\n|hpRestored = -1\n|hungerRestored = 0\n|sanityRestored = 15\n|spoil = 10 Days\n|stack = 40\n|spawnCode = \"green_cap_cooked\"\n|burnTime = [[File:Light_Sources_Filter.png|32px|link=Fuel#Fire Fuel]] 7.5 sec.\n|foodValue = {{Pic|32|Vegetables}} &times; 0.5\n}}\n{{Quotes\n|wilson = It's different now...\n|willow = I changed it with fire!\n|wolfgang = Is not same.\n|wendy = All is malleable.\n|wx78 = MODIFIED FUNGUS\n|wickerbottom = Chemistry has happened.\n|woodie = I don't trust it.\n|maxwell = Salty!\n|wagstaff = I deduce the cooking has made it more digestible.\n|wigfrid = Charred by flame ör nöt, it will nöt töuch my lips!\n|webber = Heat really brings out the juices.\n|walani = Fried fungus.\n|warly = Could use butter and chives...\n|woodlegs = Th' witch doctor told Woodlegs it'd cure me crazies.\n|wilba = FWOOSH'D MUSHYROOM\n|wormwood = Helps head\n|wheeler = Well, only one way to tell if it's poisonous or not.\n|winona = Doesn't look TOO deadly.\n|wortox = That changed it somehow.\n|wurt = It smell different now.\n|walter = It's probably safe now that it's cooked, right?\n|wanda = For some reason the thought of eating it isn't so repulsive now.\n|choose = woodlegs\n}}\nA '''Cooked Green Cap''' is a Vegetable Food Item made by [[Cooking]] a Green Cap on a fire ([[Campfire]], [[Fire Pit]], [[Dwarf Star]], etc.). Unlike its raw counterpart, the Cooked Green Cap will instead restore 15 {{Sanity}} and take away 1 {{hp}} when eaten, not affecting hunger at all.\n{{clear}}\n\n== [[File:Gift Icon.png|32px]] Downloadable Content ==\nIn the ''[[Shipwrecked]]'' DLC, Green Caps can be obtained by using the [[Slot Machine]].\n\nIn ''[[Hamlet]]'' Green Caps can be bought for 2 [[Oinc]]s at the [[Curly Tails Mud Spa]] in the [[Pig City]].\n\n== {{pic|32|Icon Tools}} Usage ==\n{{Recipe\n|item = Green Cap\n|result = Cooked Green Cap\n|tool = Cooking\n}}\n{{Recipe\n|item = Green Cap\n|tool = Pig Icon\n|result = Manure\n}}\n\n== {{Pic|32|Prototype}} Tips ==\n* Raw Green Caps can be eaten to decrease Sanity (to hunt [[Shadow Creature]]s or [[Beardling]]s, for example).\n* Having an equal positive effect to the Raw Blue Cap's negative, the Cooked Green Cap may be eaten in conjunction with a Raw Blue Cap for a resulting +19 {{Hp}}, +12.5 {{hunger}}, and 0 {{sanity}}.\n\n== {{pic|32|Placeholder}} Trivia ==\n* Some real-life mushrooms, such as [[Wikipedia:Psilocybin mushroom|psilocybin mushrooms]], have psycoactive properties and can cause visual and auditory hallucinations similar to those seen with low Sanity.\n=={{Pic|32|Blueprint}} Gallery==\n<gallery captionalign=\"center\" hideaddbutton=\"true\">\nGreen Cap 128x128.png|Green Cap used as emoji for Official Klei Discord\n</gallery>\n{{Food and Edible Items}}\n__NOTOC__\n[[Category:Vegetables]]\n[[Category:Perishables]]\n[[Category:Sanity Loss]]\n[[Category:Health Loss]]\n[[Category:Sanity Boost]]\n[[Category:Mob Dropped Items]]\n[[Category:Boss Dropped Items]]"
 }

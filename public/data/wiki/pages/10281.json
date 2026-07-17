@@ -15,6 +15,53 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ancient_Pseudoscience_Station_Build.png",
+              "title": "Ancient Pseudoscience Station Build",
+              "url": "https://dontstarve.wiki.gg/wiki/Ancient_Pseudoscience_Station_Build"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Broken_Pseudoscience_Station_Build.png",
+              "title": "Broken Pseudoscience Station Build",
+              "url": "https://dontstarve.wiki.gg/wiki/Broken_Pseudoscience_Station_Build"
+            },
+            {
+              "entityId": "base_game:mound",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Grave.png",
+              "title": "Grave",
+              "url": "https://dontstarve.wiki.gg/wiki/Grave"
+            },
+            {
+              "entityId": "base_game:monkeybarrel",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Splumonkey_Pod.png",
+              "title": "Splumonkey Pod",
+              "url": "https://dontstarve.wiki.gg/wiki/Splumonkey_Pod"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Gnomette",
+      "url": "https://dontstarve.wiki.gg/wiki/Gnomette"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 10281,
   "plainText": "Gnomette\nObject Info\n40\nSource\nDropped by\nMiscellaneous\n\"trinket_13\"\nExclusive to:\n“It must be some kind of religious artifact.”\n–Wilson\n“He looks like he was forged in flame.”\n–Willow\n“Is junk, I think.”\n–Wolfgang\n“I'd carry this to the end of the world.”\n–Wendy\n“HEY SCIENTIST THIS HORRIBLE JUNK LOOKS JUST LIKE YOU”\n–WX-78\n“What a positively, delightfully odd little fellow.”\n–Wickerbottom\n“Don't ask me.”\n–Woodie\n“Don't look at me like that.”\n–Maxwell\n“How strange. Who would need such things here?”\n–Wagstaff\n“A peculiar small man.”\n–Wigfrid\n“It's watching us.”\n–Webber\n“Gnome thanks, that thing's creepy.”\n–Walani\n“Somewhere there's a lawn that misses you.”\n–Warly\n“Red hatted devil!”\n–Woodlegs\n“HAHA! 'TIS TEENY LITTLE GUY!”\n–Wilba\n“Pointy hat”\n–Wormwood\n“Pity I don't have a lawn to put it on.”\n–Wheeler\n“Looks like my old landlord. Ha!”\n–Winona\n“I see no soul within, no no.”\n–Wortox\n“Weird tiny man.”\n–Wurt\n“Is it just me, or do his eyes follow me around?”\n–Walter\n“Oooh, I do love a good knickknack.”\n–Wanda\nThere is a female variant of the gnome. It has a different appearance and the Prefab Code \"trinket_13\", but is otherwise entirely identical to the regular gnome. It has a 1% chance to drop from Splumonkey Pods.\n×5\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -25,6 +72,7 @@
     "timestamp": "2025-08-01T18:41:57Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Có một biến thể nữ của gnome. Nó có hình dáng khác và Mã Prefab &quot;trinket_13&quot; , nhưng về mặt khác thì hoàn toàn giống với gnome thông thường. Nó có 1% cơ hội rơi ra từ Vỏ Khỉ Slum.</p>",
   "title": "Gnomette",
   "wikitext": "{{Object Infobox\n|icon = Gnomette.png\n|image = Gnomette Dropped.png\n|name = Gnomette\n|spawnCode = \"trinket_13\"\n|droppedBy = {{Pic|32|Ancient Pseudoscience Station Build}}{{Pic|32|Broken Pseudoscience Station Build}}{{Pic|32|Grave}}{{Pic|32|Splumonkey Pod}}\n|stack=40}}\n{{Exclusivity||Don't Starve Together}}\n{{Quotes\n|wilson = It must be some kind of religious artifact.\n|willow = He looks like he was forged in flame.\n|wolfgang = Is junk, I think.\n|wendy = I'd carry this to the end of the world.\n|wx78 = HEY SCIENTIST THIS HORRIBLE JUNK LOOKS JUST LIKE YOU\n|wickerbottom = What a positively, delightfully odd little fellow.\n|woodie = Don't ask me.\n|maxwell = Don't look at me like that.\n|wagstaff = How strange. Who would need such things here?\n|wigfrid = A peculiar small man.\n|webber = It's watching us.\n|walani = Gnome thanks, that thing's creepy.\n|warly = Somewhere there's a lawn that misses you.\n|woodlegs = Red hatted devil!\n|wilba = HAHA! 'TIS TEENY LITTLE GUY!\n|wormwood = Pointy hat\n|wheeler = Pity I don't have a lawn to put it on.\n|winona = Looks like my old landlord. Ha!\n|wortox = I see no soul within, no no.\n|wurt = Weird tiny man.\n|walter = Is it just me, or do his eyes follow me around?\n|wanda = Oooh, I do love a good knickknack.\n|choose = wanda\n}}\nThere is a female variant of the gnome. It has a different appearance and the Prefab Code <code>\"trinket_13\"</code>, but is otherwise entirely identical to the regular gnome. It has a 1% chance to drop from Splumonkey Pods.\n{{Recipe\n|item        = Gnomette\n|gold        = yes\n|result      = Gold Nugget\n|resultcount = 5\n}}\n{{Recipe\n|item = Gnomette\n|tool = Antlion\n|result = Desert Stone\n}}\n{{clear}}{{Resources}}"
 }

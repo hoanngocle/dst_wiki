@@ -25,6 +25,41 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": "base_game:wormlight_plant",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Mysterious_Plant.png",
+              "title": "Mysterious Plant",
+              "url": "https://dontstarve.wiki.gg/wiki/Mysterious_Plant"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Reanimated_Skeleton_Forest.png",
+              "title": "Reanimated Skeleton Forest",
+              "url": "https://dontstarve.wiki.gg/wiki/Reanimated_Skeleton_Forest"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Lesser Glow Berry",
+      "url": "https://dontstarve.wiki.gg/wiki/Lesser_Glow_Berry"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 53394,
   "plainText": "Exclusive to:\nLesser Glow Berry\nFood Info\n12.5\n3\n-10\nVeggie\n× 0.5\nObject Info\nPerk\nPlayer emits light upon consumption.\n45 sec.\nEmits Light\n10 Days\n10\nSource\nDropped by\nMiscellaneous\n\"wormlight_lesser\"\n“Kinda wrinkled.”\n–Wilson\n“It feels like grandma's hands.”\n–Willow\n“Nice little light.”\n–Wolfgang\n“Better the worm's light than its tongue.”\n–Wendy\n“THIS ONE CAME FROM A PLANT”\n–WX-78\n“This one is purely vegetable.”\n–Wickerbottom\n“Wrinklier than the underside of a beaver.”\n–Woodie\n“This one isn't very good.”\n–Maxwell\n“Glöw! Glöw with all yöur might!”\n–Wigfrid\n“I dare you to eat it!”\n–Webber\n“Not as fresh, but I imagine the flavor is still good.”\n–Warly\n“Still good”\n–Wormwood\n“This one's a bit shrivelly.”\n–Winona\n“This glowy fruit is going bad.”\n–Wortox\n“Little glowy...”\n–Wurt\n“More like a glow raisin...”\n–Walter\n“There's nothing wrong with a few wrinkles!”\n–Wanda\nA Lesser Glow Berry is a Fruit Food Item found in Don't Starve Together. It is obtained by picking a Mysterious Plant in the Caves. It takes 4 days for a Lesser Glow Berry to regrow. It restores 3 and 12.5 at the cost of 10 .\nThe Lesser Glow Berry performs much the same as the Glow Berry, but with less potency. A Lesser Glow Berry only refuels Moggles by 45 seconds and the afterglow side effects of eating a Lesser Glow Berry last for just 60 seconds. When dropped, they will still emit enough light to protect any Survivor from Charlie attacks.\nWarly can use two Lesser Glow Berries to make Glow Berry Mousse in his Portable Crock Pot.\nRecipes[edit | edit source]\n×2\nFillers cannot be Meat or Twigs.\nTips[edit | edit source]\nFeeding Lesser Glow Berries to held Rabbits, the Eye Mask, or the Shield of Terror causes them to glow even while inside a player's inventory, making them a viable source of light. This also allows Wigfrid to utilize Lesser Glow Berries even without being able to consume them.\nTrivia[edit | edit source]\nSurvivor quotes for the Lesser Glow Berry are found in the game files of Don't Starve, implying that it may have been a planned feature for the original game.\nGallery[edit | edit source]\nA Lesser Glow Berry in the character's inventory.\nThe Mysterious Plant from which the player can pick the Lesser Glow Berry.\nWolfgang emitting light after eating a Lesser Glow Berry.\nOne Rabbit and the Eye of Terror drops, converted into spelunking equipment with the power of Lesser Glow Berries.\nBy TypeBy Crock Pot Value\nView or edit this template\nFood and Edible Items (by Food Type)\nVeggie\nSeeds\nMeat\nGoodies\nGeneric\nHorrible\nRoughage\nElementals\nBurnt\nRaw\nGears\nGold Dust\nBerry\nWood\nNitre\nLunar Shards\nView or edit this template\nFood and Edible Items (by Food Value)\nMeats\nFishes\nVegetables\nFruits\nMonster Food\nEggs\nDairy\nSweetener\nFrozen\nInedibles\nMagic\nFat\nSeed\nJellyfish\nBone\nFilter\nAntihistamine\nDecoration\nBug\nNo Value Food",
   "recipes": [],
@@ -35,6 +70,7 @@
     "timestamp": "2025-08-01T19:38:54Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Lesser Glow Berry là một loại thực phẩm trái cây được tìm thấy trong Don&#x27;t Starve Together. Nó có được bằng cách chọn một Cây Bí Ẩn trong Hang Động. Phải mất 4 ngày để Lesser Glow Berry mọc lại. Nó khôi phục 3 và 12,5 với chi phí là 10.</p>",
   "title": "Lesser Glow Berry",
   "wikitext": "{{Exclusivity|Don't Starve Together}}\n{{Object Infobox\n|icon = Lesser Glow Berry.png\n|image = Lesser Glow Berry Dropped.png\n|hpRestored = 3\n|hungerRestored = 12.5\n|sanityRestored = -10\n|spoil = 10 Days\n|perk = Player emits light upon consumption.\n|stack = 10\n|droppedBy= {{pic24|Mysterious Plant}} {{pic24|Reanimated Skeleton Forest}}\n|foodType = [[Veggie]] [[File:Veggie.png|32px|]]\n|burnTime = {{Pic|20|Glow Berry}} 45 sec.\n|emitsLight = 1\n|foodValue = [[File:Fruit.png|32px|link=Fruit]] × 0.5\n|spawnCode = \"wormlight_lesser\"}}\n{{Quotes\n|wilson = Kinda wrinkled.\n|willow = It feels like grandma's hands.\n|wolfgang = Nice little light.\n|wendy = Better the worm's light than its tongue.\n|wx78 = THIS ONE CAME FROM A PLANT\n|wickerbottom = This one is purely vegetable.\n|woodie = Wrinklier than the underside of a beaver.\n|maxwell = This one isn't very good.\n|wigfrid = Glöw! Glöw with all yöur might!\n|webber = I dare you to eat it!\n|winona = This one's a bit shrivelly.\n|warly = Not as fresh, but I imagine the flavor is still good.\n|wortox = This glowy fruit is going bad.\n|wormwood = Still good\n|wurt = Little glowy...\n|walter = More like a glow raisin...\n|wanda = There's nothing wrong with a few wrinkles!\n|choose = winona}}\nA '''Lesser Glow Berry''' is a [[Fruit]] [[Food]] [[Item]] found in ''[[Don't Starve Together]]''. It is obtained by picking a [[Mysterious Plant]] in the [[Caves]]. It takes 4 days for a Lesser Glow Berry to regrow. It restores 3 {{Hp}} and 12.5 {{Hunger}} at the cost of 10 {{sanity}}. \n\nThe Lesser Glow Berry performs much the same as the [[Glow Berry]], but with less potency. A Lesser Glow Berry only refuels [[Moggles]] by 45 seconds and the afterglow side effects of eating a Lesser Glow Berry last for just 60 seconds. When dropped, they will still emit enough light to protect any Survivor from [[Charlie]] attacks.\n\n[[Warly]] can use two Lesser Glow Berries to make [[Glow Berry Mousse]] in his [[Portable Crock Pot]].\n__NOTOC__\n== {{pic|32|Cookbook}} Recipes ==\n{{Recipe\n|item1 = Lesser Glow Berry\n|count1 = 2\n|item2 = Fruit\n|item3 = Filler\n|tool = Portable Crock Pot\n|result = Glow Berry Mousse\n|note = Fillers cannot be [[Meat]] or [[Twigs]].}}\n\n== {{Pic32|Prototype}} Tips ==\n* Feeding Lesser Glow Berries to held [[Rabbit]]s, the [[Eye Mask]], or the [[Shield of Terror]] causes them to glow even while inside a player's inventory, making them a viable source of light. This also allows [[Wigfrid]] to utilize Lesser Glow Berries even without being able to consume them.\n\n== {{Pic|32|Placeholder}}Trivia ==\n* Survivor quotes for the Lesser Glow Berry are found in the game files of ''Don't Starve'', implying that it may have been a planned feature for the original game.\n\n== {{Pic|32|Blueprint}} Gallery ==\n<gallery captionalign=\"center\" hideaddbutton=\"true\">\nLesser Glow BerryItem.png|A Lesser Glow Berry in the character's inventory.\nPlantGlowBerry.png|The Mysterious Plant from which the player can pick the Lesser Glow Berry.\nFile:Glow Berry eaten.png|Wolfgang emitting light after eating a Lesser Glow Berry.\nGlow Berry personal flashlight.jpg|One Rabbit and the [[Eye of Terror]] drops, converted into spelunking equipment with the power of Lesser Glow Berries.\n</gallery>\n\n{{Food and Edible Items}}\n[[pl:Mniejsza świetlista jagoda (DST)]]\n[[vi:Quả Phát Sáng Nhỏ]]\n[[Category:Sanity Loss]]\n[[Category:Food]]\n[[Category:Perishables]]\n[[Category:Items]]\n[[Category:Healing]]\n[[Category:Light Sources]]\n[[Category:Naturally Spawning Objects]]\n[[Category:Flammable Objects]]\n[[Category:Fruits]]"
 }

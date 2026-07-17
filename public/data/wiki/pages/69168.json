@@ -22,6 +22,54 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "DS : , (Axe)",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Red_Mushroom.png",
+              "title": "Red Mushroom",
+              "url": "https://dontstarve.wiki.gg/wiki/Red_Mushroom"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/MushtreeRed.png",
+              "title": "Mushtree",
+              "url": "https://dontstarve.wiki.gg/wiki/MushtreeRed"
+            }
+          ]
+        },
+        {
+          "chance": "—",
+          "context": "SW",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Slotmachine.png",
+              "title": "Slotmachine",
+              "url": "https://dontstarve.wiki.gg/wiki/Slotmachine"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": "base_game:red_cap",
+      "iconUrl": null,
+      "title": "Red Cap",
+      "url": "https://dontstarve.wiki.gg/wiki/Red_Cap"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 69168,
   "plainText": "Don't Starve\nTogether\nRed Cap\nFood Info\n12.5\n-20\n0\nVeggie\n× 0.5\nObject Info\n10 Days\nCan be Burned\n40\nSource\nDropped by\n: , ()\n:\nMiscellaneous\n\"red_cap\"\nCooked Red Cap\nFood Info\n0\n1\n-10\nVeggie\n× 0.5\nObject Info\n7.5 sec.\n10 Days\nCan be Burned\n40\nMiscellaneous\n\"red_cap_cooked\"\n“It smells funny.”\n–Wilson\n“I like the color.”\n–Willow\n“Oh! Is pretty and shiny!”\n–Wolfgang\n“A mushroom after my own heart.”\n–Wendy\n“POISONOUS FUNGUS”\n–WX-78\n“Red usually indicates poison.”\n–Wickerbottom\n“I don't know...”\n–Woodie\n“I forget what this one does.”\n–Maxwell\n“Liable to cause me intestinal distress in its current form.”\n–Wagstaff\n“Umami ör nöt, I dön't want it.”\n–Wigfrid\n“It smells funny.”\n–Webber\n“It might be a bad idea to just eat stuff I find on the ground.”\n–Walani\n“Perhaps I could make a good soup.”\n–Warly\n“Hope th' color ain't a warnin'...”\n–Woodlegs\n“WILBA EAT-ETH!”\n–Wilba\n“Yummy friend hat”\n–Wormwood\n“Nothing safer than eating a strange mushroom off the ground.”\n–Wheeler\n“Let Max try it first.”\n–Winona\n“Oh, no thank you.”\n–Wortox\n“These ones bad for you, florp.”\n–Wurt\n“That definitely looks poisonous.”\n–Walter\n“I'm pretty sure red is the bad color.”\n–Wanda\nThe Red Cap is a Vegetable food item that can be harvested from Red Mushrooms or Red Mushtrees. Eating it raw will restore 12.5 at the cost of 20 , making it unviable as a major food source for every character except for Wormwood, whose Health is unaffected by food. Still, Red Caps are a viable last resort against starvation since 12.5 will delay starvation by long enough to make up for the 20 penalty. Red Caps can be used as a Crock Pot filler without any health penalty. Red Caps can be dropped on the ground to indirectly damage Mobs if they eat it.\nCooked Red Cap[edit | edit source]\n“It's different now...”\n–Wilson\n“I changed it with fire!”\n–Willow\n“Is not same.”\n–Wolfgang\n“All is malleable.”\n–Wendy\n“MODIFIED FUNGUS”\n–WX-78\n“Chemistry has happened.”\n–Wickerbottom\n“Only if I get really hungry.”\n–Woodie\n“Kind of bitter.”\n–Maxwell\n“I can reasonably deduce this will cause me psychic harm.”\n–Wagstaff\n“I wön't eat it, but it was fun tö put in the fire.”\n–Wigfrid\n“It smells better now.”\n–Webber\n“I'm not THAT hungry.”\n–Walani\n“Could use cream and salt...”\n–Warly\n“Me favorite color o' 'shroom.”\n–Woodlegs\n“WILBA EAT-ETH!!”\n–Wilba\n“Hurts head”\n–Wormwood\n“Cooking toxic mushrooms make them...safer?”\n–Wheeler\n“Not too interested in trying that.”\n–Winona\n“My head aches just looking at it!”\n–Wortox\n“Bit better...”\n–Wurt\n“Did cooking it make it less poisonous?”\n–Walter\n“This seems like a bad idea.”\n–Wanda\nCooked Red Cap is a Vegetable Food item made by Cooking a Red Cap on a fire (Campfire, Fire Pit, or a Dwarf Star). Unlike its raw counterpart, the Cooked Red Cap will not deduct any health points, instead restoring 1 . However, it will now take away 10 instead, while restoring no hunger. The Cooked Red Cap can also be used as fuel.\nDownloadable Content[edit | edit source]\nIn the Shipwrecked DLC, Red Caps can be obtained by using the Slot Machine.\nUsage[edit | edit source]\nTips[edit | edit source]\nRed Caps damaging Mobs that eat it is especially useful when dealing with Gobblers as 3 Red Caps in a stack can kill one Gobbler, providing Drumsticks. 13 Red Caps fed to Beefalo in a row will kill it without attracting attention of the herd.\nWormwood can eat Red Caps to gain easy Hunger, as he doesn't lose Health when eating them.\nTrivia[edit | edit source]\nThe Red Cap's appearance and toxicity is likely based on the Amanita muscaria which contain a toxin that causes hallucinations and intoxication.\nGallery[edit | edit source]\nIcon used as emoji for Official Klei Discord.\nWilson in a poster announcing the release of Don't Starve: Giant Edition on the Wii U.\nBy TypeBy Crock Pot Value\nView or edit this template\nFood and Edible Items (by Food Type)\nVeggie\nSeeds\nMeat\nGoodies\nGeneric\nHorrible\nRoughage\nElementals\nBurnt\nRaw\nGears\nGold Dust\nBerry\nWood\nNitre\nLunar Shards\nView or edit this template\nFood and Edible Items (by Food Value)\nMeats\nFishes\nVegetables\nFruits\nMonster Food\nEggs\nDairy\nSweetener\nFrozen\nInedibles\nMagic\nFat\nSeed\nJellyfish\nBone\nFilter\nAntihistamine\nDecoration\nBug\nNo Value Food",
   "recipes": [],
@@ -32,6 +80,7 @@
     "timestamp": "2026-06-02T20:20:13Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Mũ Đỏ là một loại thực phẩm Rau củ có thể được thu hoạch từ Nấm Đỏ hoặc Cây Nấm Đỏ. Ăn sống nó sẽ phục hồi 12,5 với cái giá là 20, khiến nó không thể trở thành nguồn thực phẩm chính cho mọi nhân vật ngoại trừ Wormwood, người có Sức khỏe không bị ảnh hưởng bởi thức ăn. Tuy nhiên, Red Caps là giải pháp cuối cùng khả thi để chống lại nạn đói vì ngày 12,5 sẽ trì hoãn nạn đói đủ lâu để bù đắp cho hình phạt ngày 20. Mũ Đỏ có thể được sử dụng làm vật bổ sung cho Nồi Hầm mà không bị ảnh hưởng đến sức khỏe. Mũ Đỏ có thể được thả xuống đất để gián tiếp gây sát thương cho Mob nếu chúng ăn nó.</p>",
   "title": "Red Cap",
   "wikitext": "{{Navbutton/Separation}}\n{{Object Infobox\n|canBeBurned = 1\n|image = Red Cap Dropped.png\n|icon = Red Cap.png\n|name = Red Cap\n|hpRestored = -20\n|hungerRestored = 12.5\n|sanityRestored = 0\n|spoil = 10 Days\n|stack = 40\n|foodType = [[Veggie]] [[File:Veggie.png|32px|]]\n|spawnCode = \"red_cap\"\n|foodValue = {{Pic|32|Vegetables}} &times; 0.5\n|droppedBy ={{DS}}: {{Pic32|Red Mushroom}}''',''' {{Pic32|MushtreeRed|Mushtree}} ({{Pic32|Axe}})<hr>{{SW}}:{{Pic24|Slotmachine}}\n}}\n{{Object Infobox\n|canBeBurned = 1\n|image = Cooked Red Cap Dropped.png\n|icon = Cooked Red Cap.png\n|name = Cooked Red Cap\n|hpRestored = 1\n|hungerRestored = 0\n|sanityRestored = -10\n|spoil = 10 Days\n|stack = 40\n|foodType = [[Veggie]] [[File:Veggie.png|32px|]]\n|spawnCode = \"red_cap_cooked\"\n|foodValue = {{Pic|32|Vegetables}} &times; 0.5\n|burnTime = [[File:Light_Sources_Filter.png|32px|link=Fuel#Fire Fuel]] 7.5 sec.\n}}\n{{Quotes\n|wilson = It smells funny.\n|willow = I like the color.\n|wolfgang = Oh! Is pretty and shiny!\n|wendy = A mushroom after my own heart.\n|wx78 = POISONOUS FUNGUS\n|wickerbottom = Red usually indicates poison.\n|woodie = I don't know...\n|maxwell = I forget what this one does.\n|wagstaff = Liable to cause me intestinal distress in its current form.\n|wigfrid = Umami ör nöt, I dön't want it.\n|webber = It smells funny.\n|walani = It might be a bad idea to just eat stuff I find on the ground.\n|warly = Perhaps I could make a good soup.\n|woodlegs = Hope th' color ain't a warnin'...\n|wilba = WILBA EAT-ETH!\n|wormwood = Yummy friend hat\n|wheeler = Nothing safer than eating a strange mushroom off the ground.\n|winona = Let Max try it first.\n|wortox = Oh, no thank you.\n|wurt = These ones bad for you, florp.\n|walter = That definitely looks poisonous.\n|wanda = I'm pretty sure red is the bad color.\n|choose = winona\n}}\nThe '''Red Cap''' is a [[Vegetable]] food item that can be harvested from [[Red Mushroom]]s or [[Mushtree|Red Mushtrees]]. Eating it raw will restore 12.5 {{Hunger}} at the cost of 20 {{hp}}, making it unviable as a major food source for every character except for [[Wormwood]], whose Health is unaffected by food. Still, Red Caps are a viable last resort against starvation since 12.5 {{Hunger}} will delay starvation by long enough to make up for the 20 {{hp}} penalty. Red Caps can be used as a [[Crock Pot]] filler without any health penalty. Red Caps can be dropped on the ground to indirectly damage [[Mobs]] if they eat it.\n\n== Cooked Red Cap ==\n{{Quotes\n|wilson = It's different now...\n|willow = I changed it with fire!\n|wolfgang = Is not same.\n|wendy = All is malleable.\n|wx78 = MODIFIED FUNGUS\n|wickerbottom = Chemistry has happened.\n|woodie = Only if I get really hungry.\n|maxwell = Kind of bitter.\n|wagstaff = I can reasonably deduce this will cause me psychic harm.\n|wigfrid = I wön't eat it, but it was fun tö put in the fire.\n|webber = It smells better now.\n|walani = I'm not THAT hungry.\n|warly = Could use cream and salt...\n|woodlegs = Me favorite color o' 'shroom.\n|wilba = WILBA EAT-ETH!!\n|wormwood = Hurts head\n|wheeler = Cooking toxic mushrooms make them...safer?\n|winona = Not too interested in trying that.\n|wortox = My head aches just looking at it!\n|wurt = Bit better...\n|walter = Did cooking it make it less poisonous?\n|wanda = This seems like a bad idea.\n|choose = webber\n}}\n'''Cooked Red Cap''' is a [[:Category:Vegetables|Vegetable]] [[Food]] item made by [[Cooking]] a Red Cap on a fire ([[Campfire]], [[Fire Pit]], or a [[Star Caller's Staff|Dwarf Star]]). Unlike its raw counterpart, the Cooked Red Cap will not deduct any health points, instead restoring 1 {{hp}}. However, it will now take away 10 {{Sanity}} instead, while restoring no hunger. The Cooked Red Cap can also be used as fuel.\n\n== [[File:Gift Icon.png|32px]] Downloadable Content ==\nIn the ''[[Don't Starve: Shipwrecked|Shipwrecked]]'' DLC, Red Caps can be obtained by using the [[Slot Machine]].\n\n== {{pic|32|Icon Tools}} Usage ==\n{{Recipe\n|item = Red Cap\n|result = Cooked Red Cap\n|tool = Fire Pit\n}}\n{{Recipe\n|item = Red Cap\n|tool = Pig Icon\n|result = Manure\n}}\n== {{Pic|32|Prototype}} Tips ==\n* Red Caps damaging Mobs that eat it is especially useful when dealing with [[Gobbler]]s as 3 Red Caps in a stack can kill one Gobbler, providing [[Drumstick]]s. 13 Red Caps fed to [[Beefalo]] in a row will kill it without attracting attention of the herd.\n* [[Wormwood]] can eat Red Caps to gain easy [[hunger|Hunger]], as he doesn't lose [[health|Health]] when eating them.\n\n== {{pic|32|Placeholder}} Trivia ==\n* The Red Cap's appearance and toxicity is likely based on the [[wikipedia:Amanita|Amanita muscaria]] which contain a toxin that causes hallucinations and intoxication.\n\n== {{Pic|32|Blueprint}} Gallery ==\n<gallery captionalign=\"center\" hideaddbutton=\"true\">\nRed Cap 128x128.png|Icon used as emoji for Official Klei Discord.\nGiant Edition Wii U.png|Wilson in a poster announcing the release of ''Don't Starve: Giant Edition'' on the Wii U.\n</gallery>\n{{clear}}\n{{Food and Edible Items}}\n__NOTOC__\n[[vi:Nấm Rơm]]\n[[Category:Perishables]]\n[[Category:Vegetables]]\n[[Category:Health Loss]]\n[[Category:Healing]]\n[[Category:Sanity Loss]]\n[[Category:Mob Dropped Items]]\n[[Category:Boss Dropped Items]]"
 }

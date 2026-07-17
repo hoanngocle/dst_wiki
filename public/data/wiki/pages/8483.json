@@ -15,6 +15,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "SW",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Steamer_Trunk.png",
+              "title": "Steamer Trunk",
+              "url": "https://dontstarve.wiki.gg/wiki/Steamer_Trunk"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Brain Cloud Pill",
+      "url": "https://dontstarve.wiki.gg/wiki/Brain_Cloud_Pill"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 8483,
   "plainText": "Brain Cloud Pill\nObject Info\n40\nSource\nDropped by\n:\nMiscellaneous\n\"trinket_19\"\nExclusive to:\n“Clouding of the brain... never heard of it...”\n–Wilson\n“Brain cloud? Sounds tragic.”\n–Willow\n“Wolfgang is not eat loose pills.”\n–Wolfgang\n“The owner's brain has surely clouded for good by now.”\n–Wendy\n“PROCESSOR STATUS REPORT... CLEAR SKIES”\n–WX-78\n“Curious...”\n–Wickerbottom\n“Who knows what this does?”\n–Woodie\n“Neither red nor blue.”\n–Maxwell\n“A medical experiment I'm reluctant to try.”\n–Wagstaff\n“It is always clear skies för a righteöus warriör.”\n–Wigfrid\n“What's a brain cloud?”\n–Webber\n“I only take herbals...”\n–Walani\n“An odd prescription.”\n–Warly\n“Fer brain storms.”\n–Woodlegs\n“WHATFORE IS'T WITHIN?”\n–Wilba\n“Hmm...”\n–Wormwood\n“Not my kind of adventure.”\n–Wheeler\nThe Brain Cloud Pill spawns in the Steamer Trunk.\nIt can be spawned into the game with the code \"trinket_19\".\n×6\n×8\n×3\nTrivia[edit | edit source]\nAppeasing the Volcano with The Brain Cloud Pill may be a reference to the movie Joe Versus the Volcano, as Tom Hanks' character is claimed to have a fictitious terminal illness called a brain cloud by a corrupt doctor.\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -25,6 +54,7 @@
     "timestamp": "2026-03-21T21:57:34Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Brain Cloud Pill xuất hiện trong Steamer Trunk.</p>",
   "title": "Brain Cloud Pill",
   "wikitext": "{{Object Infobox\n|icon = Brain Cloud Pill.png\n|image =  .png\n|name =Brain Cloud Pill\n|spawnCode = \"trinket_19\"\n|droppedBy ={{SW}}: {{Pic|32|Steamer Trunk}}\n|stack=40}}\n{{Exclusivity|Shipwrecked|Hamlet}}{{Quotes\n|wilson = Clouding of the brain... never heard of it...\n|willow = Brain cloud? Sounds tragic.\n|wolfgang = Wolfgang is not eat loose pills.\n|wendy = The owner's brain has surely clouded for good by now.\n|wx78 = PROCESSOR STATUS REPORT... CLEAR SKIES\n|wickerbottom = Curious...\n|woodie = Who knows what this does?\n|maxwell = Neither red nor blue.\n|wagstaff = A medical experiment I'm reluctant to try.\n|wigfrid = It is always clear skies för a righteöus warriör.\n|webber = What's a brain cloud?\n|walani = I only take herbals...\n|warly = An odd prescription.\n|woodlegs = Fer brain storms.\n|wilba = WHATFORE IS'T WITHIN?\n|wormwood = Hmm...\n|wheeler = Not my kind of adventure.\n|choose = warly\n}}\nThe '''Brain Cloud Pill''' spawns in the [[Steamer Trunk]].\n\nIt can be spawned into the game with the code <code>\"trinket_19\"</code>.\n\n{{Recipe\n|item = Brain Cloud Pill\n|gold = yes\n|result = Gold Nugget\n|resultcount = 6\n}}\n{{Recipe\n|item = Brain Cloud Pill\n|dubloon = yes\n|result = Dubloons\n|resultcount = 8\n}}\n{{Recipe\n|item = Brain Cloud Pill\n|tool = Pig Collector\n|result = Oinc\n|resultcount = 3\n|dlc = Hamlet\n}}\n== {{Pic|32|Placeholder}} {{Anchor|Trivia|Trivia}} ==\n* Appeasing the [[Volcano]] with The Brain Cloud Pill may be a reference to the movie ''[[Wikipedia:Joe Versus the Volcano|Joe Versus the Volcano]]'', as Tom Hanks' character is claimed to have a fictitious terminal illness called a brain cloud by a corrupt doctor.\n{{Resources}}"
 }

@@ -21,6 +21,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Gilded_Depths_Worm.png",
+              "title": "Gilded Depths Worm",
+              "url": "https://dontstarve.wiki.gg/wiki/Gilded_Depths_Worm"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": "base_game:redlantern",
+      "iconUrl": null,
+      "title": "Red Lantern",
+      "url": "https://dontstarve.wiki.gg/wiki/Red_Lantern"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 39822,
   "plainText": "Red Lantern\n\"A fortuitous lantern to light your way.\"\nObject Info\nEquipable\n12 days\n15 sec.\nCan be Burned\nDoes not stack\nCrafting\n×3\nFilters\nTier\nMiscellaneous\n\"redlantern\"\nExclusive to:\nOnly during the Event: Lunar New Year Events\n“This lantern feels more special than the others.”\n–Wilson\n“Anything with a fire in it is okay by me.”\n–Willow\n“Wolfgang does not like the dark.”\n–Wolfgang\n“A light to guide me.”\n–Wendy\n“A LUCKY GLOWBOX”\n–WX-78\n“What a colorful little lantern.”\n–Wickerbottom\n“This little light of mine.”\n–Woodie\n“Not having a light would certainly be unlucky.”\n–Maxwell\n“Intriguing. There appears to be a red motif to the lanterns here.”\n–Wagstaff\n“A lucky ward tö guard against the night.”\n–Wigfrid\n“Our own personal night light!”\n–Webber\n“Looks like some kinda festival decoration.”\n–Walani\n“I do like festivals like this.”\n–Warly\n“Ol' Woodlegs loves a party.”\n–Woodlegs\n“'TIS PARTY TIMES!!”\n–Wilba\n“Pretty light”\n–Wormwood\n“Must be some kind of celebration going on here.”\n–Wheeler\n“Nothing luckier around here than a light.”\n–Winona\n“What a pretty sight to see!”\n–Wortox\n“Hm, it look kinda nice.”\n–Wurt\n“I like this dramatic lighting!”\n–Walter\n“Luckily for me, the flame can't seem to reach the paper surrounding it.”\n–Wanda\nRed Lanterns are items exclusive to Lunar New Year events in Don't Starve Together.\nThey can be acquired in exchange for 3 Lucky Gold Nuggets at a Shrine and can be equipped in the hand slot.\nThey do not produce as much light as regular Lanterns, but last much longer at 12 Days.\nYear of the Depths Worm[edit | edit source]\nRed Lantern\nObject Info\nEquipable\n12 days\n15 sec.\nCan be Burned\nDoes not stack\nSource\nDropped by\nMiscellaneous\n\"yots_redlantern\"\nExclusive to:\nOnly during the Event: Year of the Depths Worm\nA variant of normal Red Lantern is introduced in Year of the Depths Worm event. It is dropped by Gilded Depths Worm. This kind of Red Lantern has different appearance but works exactly the same as normal Red Lantern.\nTrivia[edit | edit source]\nThe Red Lantern was introduced during the Year of the Gobbler event in 2017.\nGallery[edit | edit source]\nWilson holding a Red Lantern.\nRed Lantern Animation\nTools and WeaponsLunar New Year Events\nView or edit this template\nDon't Starve Tools and Weapons\nEquipped Tools\nUnequipped Tools\nLight\nBooks\nCircuits\nBattle Calls\nWatches\nWeapons\nSlingshot Parts\nThrowables\nStaffs\nAmulets\nBackpacks\nClothing\nStage Costumes\nArmor\nView or edit this template\nOfferings Filter\nLunar New Year Events\nYear of the Gobbler\nYear of the Varg\nYear of the Pig King\nYear of the Carrat\nYear of the Beefalo\nYear of the Catcoon\nYear of the Bunnyman\nYear of the Dragonfly\nYear of the Depths Worm\nYear of the Clockwork Knight",
   "recipes": [
@@ -52,6 +81,7 @@
     "timestamp": "2025-08-01T19:20:40Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Đèn Lồng Đỏ là vật phẩm dành riêng cho các sự kiện Tết Nguyên Đán trong Don&#x27;t Starve Together. Chúng có thể được mua bằng cách đổi lấy 3 Thỏi Vàng May Mắn tại Đền thờ và có thể được trang bị trong ô trên tay.</p>",
   "title": "Red Lantern",
   "wikitext": "{{Object Infobox\n|name = Red Lantern\n|equipslot=hands\n|image = Red Lantern Dropped.png\n|icon = Red Lantern.png\n|description = A fortuitous lantern to light your way.\n|ingredient1 = Lucky Gold Nugget\n|multiplier1 = 3\n|filter = {{Pic|32|Offerings Filter}}\n|tier = 14\n|durability = 12 days\n|stack = Does not stack\n|spawnCode = \"redlantern\"\n|canBeBurned = 1\n|burnTime = [[File:Light_Sources_Filter.png|32px|link=Fuel#Fire Fuel]] 15 sec.}}\n{{Exclusivity|Don't Starve Together}}\n{{Event|Lunar New Year Events}}\n{{Quotes\n|wilson = This lantern feels more special than the others.\n|willow = Anything with a fire in it is okay by me.\n|wolfgang = Wolfgang does not like the dark.\n|wendy = A light to guide me.\n|wx78 = A LUCKY GLOWBOX\n|wickerbottom = What a colorful little lantern.\n|woodie = This little light of mine.\n|maxwell = Not having a light would certainly be unlucky.\n|wagstaff = Intriguing. There appears to be a red motif to the lanterns here.\n|wigfrid = A lucky ward tö guard against the night.\n|webber = Our own personal night light!\n|walani = Looks like some kinda festival decoration.\n|warly = I do like festivals like this.\n|woodlegs = Ol' Woodlegs loves a party.\n|wilba = 'TIS PARTY TIMES!!\n|wormwood = Pretty light\n|wheeler = Must be some kind of celebration going on here.\n|winona = Nothing luckier around here than a light.\n|wortox = What a pretty sight to see!\n|wurt = Hm, it look kinda nice.\n|walter = I like this dramatic lighting!\n|wanda = Luckily for me, the flame can't seem to reach the paper surrounding it.\n|choose = willow}}\n'''Red Lanterns''' are [[items]] exclusive to Lunar New Year [[events]] in ''[[Don't Starve Together]]''.\nThey can be acquired in exchange for 3 [[Lucky Gold Nugget]]s at a Shrine and can be equipped in the hand slot.\n\nThey do not produce as much light as regular [[Lantern]]s, but last much longer at 12 [[Day-Night Cycle|Days]].\n\n{{clr}}\n\n== Year of the Depths Worm ==\n{{Object Infobox\n|name = Red Lantern\n|equipslot=hands\n|image = Red Lantern YOTS Dropped.png\n|icon = Red Lantern YOTS.png\n|durability = 12 days\n|stack = Does not stack\n|droppedBy = {{Pic32|Gilded Depths Worm}}\n|spawnCode = \"yots_redlantern\"\n|canBeBurned = 1\n|burnTime = [[File:Light_Sources_Filter.png|32px|link=Fuel#Fire Fuel]] 15 sec.}}\n{{Exclusivity|Don't Starve Together}}\n{{Event|Year of the Depths Worm}}\nA variant of normal Red Lantern is introduced in ''[[Year of the Depths Worm]]'' event. It is dropped by [[Gilded Depths Worm]]. This kind of Red Lantern has different appearance but works exactly the same as normal Red Lantern.\n\n{{clr}}\n\n== {{pic|32|Placeholder}} Trivia ==\n* The Red Lantern was introduced during the [[Year of the Gobbler]] event in 2017.\n\n== {{Pic|32|Blueprint}} Gallery ==\n<gallery captionalign=\"center\" hideaddbutton=\"true\">\nRedLanternScreenshot.png|[[Wilson]] holding a Red Lantern.\nRed_Lantern Animation.gif|Red Lantern Animation\n</gallery>\n<tabber>\nTools and Weapons=\n{{Tools and Weapons}}\n|-|\nLunar New Year Events=\n{{Lunar New Year Events}}\n</tabber>\n[[vi:Red Lantern]]\n[[Category:Lunar New Year]]\n[[Category:Items]]\n[[Category:Offerings Filter]]\n[[Category:Equipable Items]]\n[[Category:Light Sources]]"
 }

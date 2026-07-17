@@ -17,6 +17,41 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Terramite_Build.png",
+              "title": "Terramite",
+              "url": "https://dontstarve.wiki.gg/wiki/Terramite_Build"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Warbler_Build.png",
+              "title": "Warbler",
+              "url": "https://dontstarve.wiki.gg/wiki/Warbler_Build"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": "base_game:wagdrone_parts",
+      "iconUrl": null,
+      "title": "Gyroscopic Transduction Core",
+      "url": "https://dontstarve.wiki.gg/wiki/Gyroscopic_Transduction_Core"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 227936,
   "plainText": "Gyroscopic Transduction Core\nObject Info\n20\nSource\nDropped by\nMiscellaneous\n\"wagdrone_parts\"\nExclusive to:\nThis content is available only after activating Lunar Rift and defeating Celestial Scion\n“Now I can put a positive spin on things.”\n–Wilson\n“Spare junk.”\n–Willow\n“We can use to fix little spinny guy.”\n–Wolfgang\n“A shame we don't come with spare parts.”\n–Wendy\n“SUCH CARNAGE”\n–WX-78\n“Harvested parts useful for repairs.”\n–Wickerbottom\n“Those will come in handy.”\n–Woodie\n“A trophy for besting a machine.”\n–Maxwell\n“Clöckwörk fröm a cursed cöntrivance.”\n–Wigfrid\n“Can we use that to fix a broken one?”\n–Webber\n“It looks like part of a cake mixer.”\n–Warly\n“Friend parts?”\n–Wormwood\n“Love me some spare parts!”\n–Winona\n“Spares for repairs.”\n–Wortox\n“Extra bits. Florp.”\n–Wurt\n“Looks useful.”\n–Walter\n“These can be recycled.”\n–Wanda\nThe Gyroscopic Transduction Core is an item that drops from hammering Terramites or Warblers. After defeating the Celestial Scion, it can be used to fix defeated Terramites to make them friendly items that can be picked up. It can also repair broken Terramites to restore its durability back to 100%.\nTrivia[edit | edit source]\nThe Gyroscopic Transduction Core was introduced in the Hostile Takeover update.\nGallery[edit | edit source]\nCelestial Scion Concept Art from Hostile Takeover update stream from Rhymes with Play.\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -27,6 +62,7 @@
     "timestamp": "2026-04-28T15:34:37Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Nội dung này chỉ có sau khi kích hoạt Lunar Rift và đánh bại Celestial Scion</p>",
   "title": "Gyroscopic Transduction Core",
   "wikitext": "{{Object Infobox\n|name = Gyroscopic Transduction Core\n|image = Gyroscopic Transduction Core Dropped.png\n|icon = Gyroscopic Transduction Core.png\n|droppedBy = {{pic|24|Terramite Build|Terramite}} {{pic|24|Warbler Build|Warbler}}\n|stack = 20\n|spawnCode=\"wagdrone_parts\"\n}}\n{{Exclusivity|Don't Starve Together}}\n{{Post-Boss Content|Celestial Scion}}\n{{Quotes\n|wilson = Now I can put a positive spin on things.\n|willow = Spare junk.\n|wolfgang = We can use to fix little spinny guy.\n|wendy = A shame we don't come with spare parts.\n|wx78 = SUCH CARNAGE\n|wickerbottom = Harvested parts useful for repairs.\n|woodie = Those will come in handy.\n|maxwell = A trophy for besting a machine.\n|wigfrid = Clöckwörk fröm a cursed cöntrivance.\n|webber = Can we use that to fix a broken one?\n|winona = Love me some spare parts!\n|warly = It looks like part of a cake mixer.\n|wortox = Spares for repairs.\n|wormwood = Friend parts?\n|wurt = Extra bits. Florp.\n|walter = Looks useful.\n|wanda = These can be recycled.\n|choose = wilson\n}}\n\nThe '''Gyroscopic Transduction Core''' is an item that drops from hammering [[Terramite]]s or [[Warbler]]s. After defeating the [[Celestial Scion]], it can be used to fix defeated Terramites to make them friendly items that can be picked up. It can also repair broken Terramites to restore its durability back to 100%.\n\n== [[File:Placeholder.png|32px|link=]] Trivia ==\n* The Gyroscopic Transduction Core was introduced in the [[Hostile Takeover]] update.\n\n=={{Pic32|Blueprint}}Gallery==\n<gallery>\nRWP HT Gyroscopic Transduction Core Concept Art.png|Celestial Scion Concept Art from Hostile Takeover update stream from ''Rhymes with Play''.\n</gallery>\n\n{{Resources}}\n[[vi:Gyroscopic Transduction Core]]"
 }

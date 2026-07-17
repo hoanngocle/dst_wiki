@@ -27,7 +27,12 @@ const validDetail = {
 };
 
 const normalized = {
-  schema_version: 1,
+  schema_version: 2,
+  subject: {
+    title: "Nightmare Fuel",
+    url: "https://dontstarve.wiki.gg/wiki/Nightmare_Fuel",
+    entityId: "base_game:nightmarefuel",
+  },
   dropTable: {
     rows: [
       {
@@ -55,7 +60,7 @@ const normalized = {
           entityId: "base_game:nightlight",
         },
         resultAmount: 1,
-        nightmareFuelAmount: 2,
+        subjectAmount: 2,
         ingredients: [
           {
             item: {
@@ -118,15 +123,13 @@ describe("parseWikiPageDetail", () => {
       "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Beardling.png",
     );
     expect(parsed.normalized?.usage.recipes[0]).toMatchObject({
-      nightmareFuelAmount: 2,
+      subjectAmount: 2,
       station: "Prestihatitator",
     });
   });
 
   it.each([
-    { ...normalized, schema_version: 2 },
-    { ...normalized, dropTable: { rows: [] } },
-    { ...normalized, usage: { recipes: [] } },
+    { ...normalized, schema_version: 1 },
     {
       ...normalized,
       dropTable: {
@@ -137,7 +140,7 @@ describe("parseWikiPageDetail", () => {
       ...normalized,
       usage: {
         recipes: [
-          { ...normalized.usage.recipes[0], nightmareFuelAmount: 0 },
+          { ...normalized.usage.recipes[0], subjectAmount: 0 },
         ],
       },
     },

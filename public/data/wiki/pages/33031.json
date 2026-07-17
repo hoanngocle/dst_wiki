@@ -16,6 +16,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Masked_Pig.png",
+              "title": "Masked Pig",
+              "url": "https://dontstarve.wiki.gg/wiki/Masked_Pig"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Bandit Stash Map",
+      "url": "https://dontstarve.wiki.gg/wiki/Bandit_Stash_Map"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 33031,
   "plainText": "Exclusive to:\nBandit Stash Map\nDoes not stack\nDropped by\n\"banditmap\"\n“A map to where that thief hid all his treasure!”\n–Wilson\n“Good. Now I can get my stuff back.”\n–Willow\n“Is where bad guy hide Wolfgang money.”\n–Wolfgang\n“Abigail is the most valuable buried treasure.”\n–Wendy\n“A SEARCH ENGINE FOR CURRENCY”\n–WX-78\n“I do enjoy a good mystery.”\n–Wickerbottom\n“So that's where he hid everything.”\n–Woodie\n“Now I can steal from that little criminal.”\n–Maxwell\n“A map to the accumulated plunder of that pig bandit.”\n–Wagstaff\n“A map tö ill götten treasures.”\n–Wigfrid\n“I can find all that bad guy's treasures.”\n–Webber\n“It's where that dude put all the stuff he stole.”\n–Walani\n“Like a map to the cherries in a fruit salad.”\n–Warly\n“Arrgh! 'Tis treasure!”\n–Woodlegs\n“LEAD-ETH TO YON TREASURE!”\n–Wilba\n“Where's stuff?”\n–Wormwood\n“Time to burgle from the burglar.”\n–Wheeler\nThe Bandit Stash Map is an Item exclusive to Hamlet DLC that is dropped by the Masked Pig upon death. If the player reads it, a red X appears on their Map indicating the location of a Secret Bandit Camp.\nUpon reaching the Bandit Camp, it must be dug up using a Shovel. This will produce a Peagawk Plume and a Chest which will contain rare/valuable items, such as Food, Gold, Armor, or Oincs.\nTrivia[edit | edit source]\nThe Bandit Stash Map acts similarly to a Message in a Bottle from the Shipwrecked DLC.\nIt is impossible to read a Bandit Stash Map inside a house. If the player tries to do it, the Map will open, but no X mark will be displayed. However, when the player leaves the house, the X will be on the map.\nIf the player uses Console Commands to spawn a Bandit Stash Map, it will not be readable by the Character, and will vanish from the Inventory upon trying.\nGallery[edit | edit source]\nThe X symbol appearing on the Map to indicate a Secret Bandit Camp's location.\nWolfgang next to a Secret Bandit Camp.\nThe Secret Bandit Camp can only appear at a certain distance from the player. Here, the purple zone.\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -26,6 +55,7 @@
     "timestamp": "2021-08-07T01:19:54Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Bản đồ giấu tên cướp là một Vật phẩm dành riêng cho Hamlet DLC được Lợn đeo mặt nạ đánh rơi khi chết. Nếu người chơi đọc nó, một dấu X màu đỏ sẽ xuất hiện trên Bản đồ của họ cho biết vị trí của Trại cướp bí mật.</p>",
   "title": "Bandit Stash Map",
   "wikitext": "{{Exclusivity|Hamlet}}\n{{Item Infobox\n|droppedBy = {{Pic32|Masked Pig}}\n|stack = Does not stack\n|spawnCode = \"banditmap\"}}\n{{Quotes\n|wilson = A map to where that thief hid all his treasure!\n|willow = Good. Now I can get my stuff back.\n|wolfgang = Is where bad guy hide Wolfgang money.\n|wendy = Abigail is the most valuable buried treasure.\n|wx78 = A SEARCH ENGINE FOR CURRENCY\n|wickerbottom = I do enjoy a good mystery.\n|woodie = So that's where he hid everything.\n|maxwell = Now I can steal from that little criminal.\n|wagstaff = A map to the accumulated plunder of that pig bandit.\n|wigfrid = A map tö ill götten treasures.\n|webber = I can find all that bad guy's treasures.\n|walani = It's where that dude put all the stuff he stole.\n|warly = Like a map to the cherries in a fruit salad.\n|woodlegs = Arrgh! 'Tis treasure!\n|wilba = LEAD-ETH TO YON TREASURE!\n|wormwood = Where's stuff?\n|wheeler = Time to burgle from the burglar.\n|choose = wormwood}}\nThe '''Bandit Stash Map''' is an [[Item]] exclusive to ''[[Don't Starve: Hamlet|Hamlet]]'' DLC that is dropped by the [[Masked Pig]] upon death. If the player reads it, a red '''X''' appears on their [[Map]] indicating the location of a [[Secret Bandit Camp]].\n\nUpon reaching the Bandit Camp, it must be dug up using a [[Shovel]]. This will produce a [[Peagawk Plume]] and a [[Chest]] which will contain rare/valuable items, such as [[Food]], [[Gold Nugget|Gold]], [[Armor]], or [[Oinc]]s.\n\n== {{pic|32|Placeholder}} Trivia==\n* The Bandit Stash Map acts similarly to a [[Message in a Bottle]] from the ''[[Don't Starve: Shipwrecked|Shipwrecked]]'' DLC.\n* It is impossible to read a Bandit Stash Map inside a house. If the player tries to do it, the Map will open, but no X mark will be displayed. However, when the player leaves the house, the X will be on the map.\n* If the player uses [[Console]] [[Console/Commands|Commands]] to spawn a Bandit Stash Map, it will not be readable by the Character, and will vanish from the [[Inventory]] upon trying.\n\n== {{Pic|32|Blueprint}} Gallery ==\n<gallery hideaddbutton=\"true\" captionalign=\"center\">\nMinimap X Marks the Spot.png|The X symbol appearing on the Map to indicate a Secret Bandit Camp's location.\nSecret Bandit Camp Wolfgang.png|[[Wolfgang]] next to a Secret Bandit Camp.\nBandit Stash Map Range.jpg|The Secret Bandit Camp can only appear at a certain distance from the player. Here, the purple zone.\n</gallery>\n\n{{Mob Dropped Items}}\n[[vi:Bandit Stash Map]]"
 }

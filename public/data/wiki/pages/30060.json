@@ -15,6 +15,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "SW",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/X_Marks_The_Spot.png",
+              "title": "X_Marks_The_Spot",
+              "url": "https://dontstarve.wiki.gg/wiki/X_Marks_The_Spot"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "One True Earring",
+      "url": "https://dontstarve.wiki.gg/wiki/One_True_Earring"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 30060,
   "plainText": "One True Earring\nObject Info\n40\nSource\nDropped by\n:\nMiscellaneous\n\"earring\"\nExclusive to:\n“The fewer holes in my body, the better.”\n–Wilson\n“Sooo shiny.”\n–Willow\n“Someone drop this, maybe?”\n–Wolfgang\n“But no ear...”\n–Wendy\n“IT IS MISSING THE EAR”\n–WX-78\n“Not my style.”\n–Wickerbottom\n“Shouldn't there be two?”\n–Woodie\n“I would look quite dashing in it, were my ear pierced.”\n–Maxwell\n“A diameter of two centimeters.”\n–Wagstaff\n“This is nöt öf my ear.”\n–Wigfrid\n“This belonged to a pirate!”\n–Webber\n“I hope someone didn't lose this...”\n–Walani\n“Fancy.”\n–Warly\n“Ay! 'Tis me ol' earring!”\n–Woodlegs\n“WILBA LEND IT MINE EAR”\n–Wilba\n“Doesn't fit”\n–Wormwood\n“Swell. About as useful as one sock.”\n–Wheeler\nThe One True Earring Can be found in X Marks the Spot treasure chests.\nIt can be spawned into the game with the code \"earring\".\n×3\n×12\nTrivia[edit | edit source]\nOne True Earring, based on the name and offering the highest appeasement to the Volcano Altar of Snackrifice, may be a reference to The Lord of the Rings, where the evil could only be vanquished by casting the One Ring into Mount Doom.\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -25,6 +54,7 @@
     "timestamp": "2025-08-01T19:08:48Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Một chiếc Bông tai thật có thể được tìm thấy trong các rương kho báu X Marks the Spot.</p>",
   "title": "One True Earring",
   "wikitext": "{{Object Infobox\n|icon = One True Earring.png\n|image =  .png\n|name =One True Earring\n|spawnCode = \"earring\"\n|droppedBy ={{SW}}: {{Pic|32|X_Marks_The_Spot}}\n|stack=40}}\n{{Exclusivity|Shipwrecked}}{{Quotes\n|wilson = The fewer holes in my body, the better.\n|willow = Sooo shiny.\n|wolfgang = Someone drop this, maybe?\n|wendy = But no ear...\n|wx78 = IT IS MISSING THE EAR\n|wickerbottom = Not my style.\n|woodie = Shouldn't there be two?\n|maxwell = I would look quite dashing in it, were my ear pierced.\n|wagstaff = A diameter of two centimeters.\n|wigfrid = This is nöt öf my ear.\n|webber = This belonged to a pirate!\n|walani = I hope someone didn't lose this...\n|warly = Fancy.\n|woodlegs = Ay! 'Tis me ol' earring!\n|wilba = WILBA LEND IT MINE EAR\n|wormwood = Doesn't fit\n|wheeler = Swell. About as useful as one sock.\n|choose = woodlegs\n}}\nThe '''One True Earring''' Can be found in [[X Marks the Spot]] treasure chests.\n\nIt can be spawned into the game with the code <code>\"earring\"</code>.\n\n{{Recipe\n|item = One True Earring\n|gold = yes\n|result = Gold Nugget\n|resultcount = 3\n}}\n{{Recipe\n|item = One True Earring\n|dubloon = yes\n|result = Dubloons\n|resultcount = 12\n}}\n== {{Pic|32|Placeholder}} {{Anchor|Trivia|Trivia}} ==\n* One True Earring, based on the name and offering the highest appeasement to the [[Volcano Altar of Snackrifice]], may be a reference to ''[[Wikipedia:The Lord of the Rings|The Lord of the Rings]]'', where the evil could only be vanquished by casting the One Ring into Mount Doom.\n{{resources}}"
 }

@@ -28,6 +28,121 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "(Pickaxe/DST)",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": "base_game:atrium_statue",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ancient_Statue%2FDST.png",
+              "title": "Ancient Statue/DST",
+              "url": "https://dontstarve.wiki.gg/wiki/Ancient_Statue/DST"
+            }
+          ]
+        },
+        {
+          "chance": "—",
+          "context": "(Hammer/DST)",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ancient_Pseudoscience_Station%2FDST.png",
+              "title": "Ancient Pseudoscience Station/DST",
+              "url": "https://dontstarve.wiki.gg/wiki/Ancient_Pseudoscience_Station/DST"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Broken_Clockworks%2FDST.png",
+              "title": "Broken Clockworks/DST",
+              "url": "https://dontstarve.wiki.gg/wiki/Broken_Clockworks/DST"
+            }
+          ]
+        },
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Clockwork_Bishop%2FDST.png",
+              "title": "Clockwork Bishop/DST",
+              "url": "https://dontstarve.wiki.gg/wiki/Clockwork_Bishop/DST"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Damaged_Bishop%2FDST.png",
+              "title": "Damaged Bishop/DST",
+              "url": "https://dontstarve.wiki.gg/wiki/Damaged_Bishop/DST"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Dragonfly%2FDST.png",
+              "title": "Dragonfly/DST",
+              "url": "https://dontstarve.wiki.gg/wiki/Dragonfly/DST"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Great_Depths_Worm.png",
+              "title": "Great Depths Worm",
+              "url": "https://dontstarve.wiki.gg/wiki/Great_Depths_Worm"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Tumbleweed%2FDST.png",
+              "title": "Tumbleweed/DST",
+              "url": "https://dontstarve.wiki.gg/wiki/Tumbleweed/DST"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ornate_Chest%2FDST.png",
+              "title": "Ornate Chest/DST",
+              "url": "https://dontstarve.wiki.gg/wiki/Ornate_Chest/DST"
+            },
+            {
+              "entityId": "base_game:cave_hole",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Cave_Hole.png",
+              "title": "Cave Hole",
+              "url": "https://dontstarve.wiki.gg/wiki/Cave_Hole"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Sunken_Chest.png",
+              "title": "Sunken Chest",
+              "url": "https://dontstarve.wiki.gg/wiki/Sunken_Chest"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Geode_Fruit.png",
+              "title": "Geode Fruit",
+              "url": "https://dontstarve.wiki.gg/wiki/Geode_Fruit"
+            },
+            {
+              "entityId": "base_game:balatro_machine",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/JIMBO.png",
+              "title": "JIMBO",
+              "url": "https://dontstarve.wiki.gg/wiki/JIMBO"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": "base_game:purplegem",
+      "iconUrl": null,
+      "title": "Purple Gem/DST",
+      "url": "https://dontstarve.wiki.gg/wiki/Purple_Gem/DST"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 219742,
   "plainText": "Don't Starve\nTogether\nPurple Gem\n\"\"By your colors combined!\"\"\nFood Info\n5\n10\n0\nElemental\n(non-survivor food)\nObject Info\n40\nSource\nDropped by\n()\n()\nCrafting\nNormalWilson\nDescription\nBy your colors combined!\nx1 x1\nFilters\nTier\nDescription\nTransmute Blue and Red Gems into Purple Gems.\nx1 x1 (only )\nFilters\n(for ).\nMiscellaneous\n\"purplegem\"\n“It contains the mysteries of the universe.”\n–Wilson\n“Weird!”\n–Willow\n“Prettier rock.”\n–Wolfgang\n“Purple like a... purple thing.”\n–Wendy\n“IT IS STRANGE”\n–WX-78\n“It gives off a strange aura.”\n–Wickerbottom\n“It's nothing a good chopping wouldn't fix.”\n–Woodie\n“Purple brings great power.”\n–Maxwell\n“Amazingly adept at focusing the dark fuel.”\n–Wagstaff\n“It is clöudy with a mysteriöus energy.”\n–Wigfrid\n“I can see knowledge swimming inside.”\n–Webber\n“Shiny!”\n–Walani\n“It holds deep secrets.”\n–Warly\n“Shiny and valuable!”\n–Woodlegs\n“ALL THAT GLITTERS 'TIS GOLD”\n–Wilba\n“Shiny”\n–Wormwood\n“Shiny. Purple. Ready for evil.”\n–Wheeler\n“A little snooty gem.”\n–Winona\n“Dark amethyst wrenched from shadows' midst.”\n–Wortox\n“It pretty...”\n–Wurt\n“Purple's usually a friendly colour.”\n–Walter\n“This could be useful.”\n–Wanda\nA Purple Gem is a Refined item used to craft several Magic items. It costs 1 Red Gem and 1 Blue Gem, and requires a Prestihatitator to prototype.\nOutside of crafting, Purple Gems can also be obtained by:\nmining Ancient Statues\ndestroying Broken Clockworks\nopening Ornate Chests\nkilling Clockwork Bishop and Damaged Bishop\nkilling Dragonfly which drops 1 - 2 Purple Gems\ngathering them from Cave Holes in the Ruins by using The Lazy Forager\nfinding Sunken Chests which have a chance of dropping Purple Gems when hammered\nsearching Tumbleweeds that have a roughly 0.01% chance to drop Purple Gems\ncrafting one as Wilson without the use of a Prestihatitator if he has the \"Transmute Gems I\" skill\nPurple Gems are required to craft the Shadow Manipulator, Bat Bat, Telelocator Staff, Nightmare Amulet, and Moon Rock Idol. Three Purple Gems must be installed in a Telelocator Focus before it will function, and they will be consumed when the Telelocator Focus is used.\nPurple Gems can be used to power Winona's G.E.M.erator (though it is more efficient to use Blue or Red Gems for this purpose since they can be easily acquired on the surface). They're also used for several other character-specific recipes and useful gear. See below for a full list.\nContents\n1 Usage\n2 Tips\n3 Trivia\n4 Gallery\nUsage[edit | edit source]\n×3\n×7\n×3\n×2\n×2\n×2\n×4\n×4\n×6\nObtained by inserting the Gem into the Cratered Moonrock.\n×20\n×4\n×2\n×3\nTips[edit | edit source]\nThanks to periodic Hound waves, purple gems are renewable, even in the base game, as both Red Hounds and Blue Hounds drop Red and Blue Gems, respectively.\nTrivia[edit | edit source]\nThe Purple Gem was added in A Little Rain Must Fall update.\nThe Purple Gem's crafting description is a reference to Captain Planet.\nGallery[edit | edit source]\nGems emoji from official Klei Discord server.\nIcon used as emoji for Official Klei Discord\nResourcesCraftable ItemsFood\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items\nView or edit this template\nDon't Starve Together Craftable Items\nRegular Filters\nSurvivor Items\nWilson\nWillow\nWolfgang\nWendy\nWX-78\nWickerbottom\nWoodie\nWes\nMaxwell\nWigfrid\nWebber\nWarly\nWortox\nWormwood\nWinona\nWurt\nWalter\nWanda\nTools\nLight Sources\nPrototypers & Stations\nRefined Materials\nWeapons\nArmor\nClothing\nHealing\nMagic\nDecorations\nStructures\nStorage Solutions\nCooking\nFood & Gardening\nFishing\nSeafaring\nBeefalo Riding\nWinter Items\nSummer Items\nRain Gear\nCrafting Station Filters\nSpecial Event\nAncient Pseudoscience\nCarpentry\nCartography\nCritters\nCelestial\nBrightsmithy\nShadowcraft\nFabrication\nBottle Exchange\nCombrining Filter\nTea Brewing Filter\nSculptures\nSeasonings\nTrading\nTrading Hutch\nOfferings\nCawnival Creation\nTrinket Trove\nMad Science\nWinter's Feast Cooking\nSanctum Smithy Filter\nCustom Course Shack Filter\nBy TypeBy Crock Pot Value\nView or edit this template\nFood and Edible Items (by Food Type)\nVeggie\nSeeds\nMeat\nGoodies\nGeneric\nHorrible\nRoughage\nElementals\nBurnt\nRaw\nGears\nGold Dust\nBerry\nWood\nNitre\nLunar Shards\nView or edit this template\nFood and Edible Items (by Food Value)\nMeats\nFishes\nVegetables\nFruits\nMonster Food\nEggs\nDairy\nSweetener\nFrozen\nInedibles\nMagic\nFat\nSeed\nJellyfish\nBone\nFilter\nAntihistamine\nDecoration\nBug\nNo Value Food",
   "recipes": [],
@@ -38,6 +153,7 @@
     "timestamp": "2026-06-12T00:31:16Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Đá quý Tím là một vật phẩm Tinh chế dùng để chế tạo một số vật phẩm Phép thuật. Nó có giá 1 Ngọc Đỏ và 1 Ngọc Xanh, đồng thời cần có Người Mũ Cao để tạo nguyên mẫu.</p>",
   "title": "Purple Gem/DST",
   "wikitext": "{{Navbutton/Separation}}\n{{Object Infobox\n|image = Purple Gem Dropped.png\n|icon = Purple Gem.png\n|foodType =[[Elemental]] [[File:Elemental.png|32px|link=Elemental]]<br>(non-survivor food)\n|hpRestored = 10\n|hungerRestored = 5\n|sanityRestored = 0\n|name = Purple Gem\n|crafting_infobox = \n<tabber>\nNormal=\n{{Craft Infobox\n|craft_desctiption =''By your colors combined!''\n|crafting_text = {{Pic32|Red Gem}}x1 {{Pic32|Blue Gem}}x1 \n|tier_text = {{Pic32|Prestihatitator}}\n|filter      = {{Pic32|Refined Materials Filter}} {{Pic32|Magic Filter}}\n}}\n|-|\nWilson=\n{{Craft Infobox\n|craft_desctiption =''Transmute Blue and Red Gems into Purple Gems.''\n|crafting_text = {{Pic32|Red Gem}}x1 {{Pic32|Blue Gem}}x1 (only {{Pic|28|Wilson Portrait|Wilson}})\n|tier_text =\n|filter      = {{Pic32|Wilson Filter}}\n|skill = Transmute Gems I\n|skillOwner = Wilson\n}}\n</tabber>\n|droppedBy   = {{pic|24|Ancient Statue/DST}}({{pic|24|Pickaxe/DST}})<br/>{{pic|32|Ancient Pseudoscience Station/DST}} {{pic|32|Broken Clockworks/DST}} ({{pic|24|Hammer/DST}})<br>{{Pic32|Clockwork Bishop/DST}} {{Pic32|Damaged Bishop/DST}} {{pic|32|Dragonfly/DST}} {{pic|30|Great Depths Worm}} {{pic|32|Tumbleweed/DST}} {{Pic32|Ornate Chest/DST}} {{pic|32|Cave Hole}} {{pic|32|Sunken Chest}} {{pic32|Geode Fruit}} {{pic32|JIMBO}} \n|description = \"By your colors combined!\"\n|stack       = 40\n|spawnCode   = \"purplegem\"\n}}\n{{Quotes\n|wilson = It contains the mysteries of the universe.\n|willow = Weird!\n|wolfgang = Prettier rock.\n|wendy = Purple like a... purple thing.\n|wx78 = IT IS STRANGE\n|wickerbottom = It gives off a strange aura.\n|woodie = It's nothing a good chopping wouldn't fix.\n|maxwell = Purple brings great power.\n|wagstaff = Amazingly adept at focusing the dark fuel.\n|wigfrid = It is clöudy with a mysteriöus energy.\n|webber = I can see knowledge swimming inside.\n|walani = Shiny!\n|warly = It holds deep secrets.\n|woodlegs = Shiny and valuable!\n|warbucks = A gruesome beauty!\n|wilba = ALL THAT GLITTERS 'TIS GOLD\n|wormwood = Shiny\n|wheeler = Shiny. Purple. Ready for evil.\n|winona = A little snooty gem.\n|wortox = Dark amethyst wrenched from shadows' midst.\n|wurt = It pretty...\n|walter = Purple's usually a friendly colour.\n|wanda = This could be useful.\n|choose = maxwell}}\nA '''Purple Gem''' is a [[Refined Materials Filter|Refined]] item used to craft several [[Magic Filter|Magic]] items. It costs 1 [[Red Gem]] and 1 [[Blue Gem]], and requires a [[Prestihatitator]] to prototype.\n\nOutside of crafting, Purple Gems can also be obtained by:\n* mining [[Ancient Statue]]s\n* destroying [[Broken Clockworks]]\n* opening [[Ornate Chests]]\n* killing [[Clockwork Bishop]] and [[Damaged Bishop]]\n* killing [[Dragonfly]] which drops 1 - 2 Purple Gems\n* gathering them from [[Cave Hole]]s in the [[Ruins]] by using [[The Lazy Forager]]\n* finding [[Sunken Chest]]s which have a chance of dropping Purple Gems when [[hammer|hammered]]\n* searching [[Tumbleweed]]s that have a roughly 0.01% chance to drop Purple Gems\n* crafting one as Wilson without the use of a [[Prestihatitator]] if he has the \"[[Wilson#Don't Starve Together|Transmute Gems I]]\" skill\n\nPurple Gems are required to craft the [[Shadow Manipulator]], [[Bat Bat]], [[Telelocator Staff]], [[Nightmare Amulet]], and [[Moon Rock Idol]]. Three Purple Gems must be installed in a [[Telelocator Focus]] before it will function, and they will be consumed when the Telelocator Focus is used.\n\nPurple Gems can be used to power [[Winona's G.E.M.erator]] (though it is more efficient to use Blue or Red Gems for this purpose since they can be easily acquired on the surface). They're also used for several other character-specific recipes and useful gear. See below for a full list.\n\n== {{Pic32|Icon Tools}} Usage ==\n{{Recipe\n|item1 = Purple Gem\n|item2 = Living Log\n|count2 = 3\n|item3 = Nightmare Fuel\n|count3 = 7\n|tool = Prestihatitator\n|result = Shadow Manipulator}}\n{{Recipe\n|item1 = Batilisk Wing\n|count1 = 3\n|item2 = Living Log\n|count2 = 2\n|item3 = Purple Gem\n|tool = Shadow Manipulator\n|result = Bat Bat}}\n{{Recipe\n|item1 = Purple Gem\n|count1 = 2\n|item2 = Living Log\n|count2 = 2\n|item3 = Nightmare Fuel\n|count3 = 4\n|tool = Shadow Manipulator\n|result = Telelocator Staff}}\n{{Recipe\n|item1 = Purple Gem\n|count1 = 1\n|item2 = Nightmare Fuel\n|count2 = 4\n|item3 = Gold Nugget\n|count3 = 6\n|tool = Shadow Manipulator\n|result = Nightmare Amulet}}\n{{Recipe\n|item1 = Purple Gem\n|item2 = Cratered Moonrock\n|result = Purple Moonlens\n|note = Obtained by inserting the Gem into the Cratered Moonrock.}}\n{{Recipe\n|item1 = Purple Gem\n|item2 = Moon Rock\n|tool = Celestial Orb\n|result = Moon Rock Idol}}\n{{Recipe\n|item1 = Purple Gem\n|item2 = Moon Rock\n|result = Slow-Down Rounds\n|resultcount = 20\n|tool = Shadow Manipulator\n|character = Walter\n}}\n{{Recipe\n|item1 = Purple Gem\n|item2 = Papyrus\n|item3 = Feather Pencil\n|result = Startling Soliloquy\n|character = Wigfrid\n}}\n{{Recipe\n|item2 = Gardeneer Hat\n|count2 = 1\n|item3 = Thulecite Fragments\n|count3 = 4\n|item1 = Purple Gem\n|count1 = 1\n|tool = Broken Pseudoscience Station\n|result = Premier Gardeneer Hat\n}}\n{{Recipe\n|item1 = Purple Gem\n|count1 = 1\n|item2 = Thulecite\n|count2 = 2\n|item3 = Twigs\n|count3 = 1\n|result = Gembell\n|character = Wolfgang}}\n{{Recipe\n|item1 = Purple Gem\n|item2 = Backtrek Watch\n|tool = Prestihatitator\n|result = Rift Watch\n|character = Wanda\n}}\n{{Recipe\n|item1 = Purple Gem\n|count1 = 3\n|result = Orange Gem\n|resultcount = 1\n|character = Wilson\n|skill = Transmute Gems II\n}}\n{{Recipe\n|item4 = Yellow Gem\n|item2 = Orange Gem\n|item3 = Green Gem\n|item1 = Purple Gem\n|item5 = Red Gem\n|item6 = Blue Gem\n|result = Iridescent Gem\n|character = Wilson\n|skill = Transmute Gems III\n}}\n\n== {{Pic32|Prototype}} Tips ==\n* Thanks to periodic [[Hound]] waves, purple gems are renewable, even in the base game, as both Red Hounds and Blue Hounds drop [[Red Gem|Red]] and [[Blue Gem]]s, respectively.\n\n== {{Pic32|Placeholder}} Trivia ==\n* The Purple Gem was added in ''[[Version History#A Little Rain Must Fall|A Little Rain Must Fall]]'' update.\n* The Purple Gem's crafting description is a reference to ''[[Wikipedia:Captain Planet|Captain Planet]]''.\n\n== {{Pic32|Blueprint}} Gallery ==\n<gallery>\nGems emoji from official Klei Discord server.png|Gems emoji from official Klei Discord server.\nPurple Gem 128x128.png|Icon used as emoji for Official Klei Discord\n</gallery><tabber>\nResources=\n{{Resources}}\n|-|\nCraftable Items=\n{{Craftable Items and Structures on DST}}\n|-|\nFood=\n{{Food}}\n</tabber>\n[[vi:Ngọc Tím]]\n[[Category:Gems]]\n[[Category:Refined Materials Filter]]\n[[Category:Magic Filter]]\n[[Category:Survivor Items Filter]]\n[[Category:Craftable Items]]\n[[Category:Items]]\n[[Category:Mob Dropped Items]]\n[[Category:Minerals]]\n[[Category:Resources]]\n[[Category:Boss Dropped Items]]\n[[Category:Non-Flammable]]\n[[Category:Naturally Spawning Objects]]"
 }

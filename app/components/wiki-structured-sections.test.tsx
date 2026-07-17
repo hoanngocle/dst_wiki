@@ -64,6 +64,11 @@ const catalogItems = new Map([
 ]);
 
 const sections: NormalizedWikiSections = {
+  subject: {
+    title: "Nightmare Fuel",
+    url: "https://dontstarve.wiki.gg/wiki/Nightmare_Fuel",
+    entityId: "base_game:nightmarefuel",
+  },
   dropTable: {
     rows: Array.from({ length: 10 }, (_, index) => ({
       sources: [
@@ -94,7 +99,7 @@ const sections: NormalizedWikiSections = {
           entityId: "base_game:nightlight",
         },
         resultAmount: 1,
-        nightmareFuelAmount: 2,
+        subjectAmount: 2,
         ingredients: [
           {
             item: {
@@ -117,7 +122,7 @@ const sections: NormalizedWikiSections = {
           entityId: null,
         },
         resultAmount: 1,
-        nightmareFuelAmount: 2,
+        subjectAmount: 2,
         ingredients: [],
         station: "Prestihatitator",
         dlc: "Shipwrecked",
@@ -131,7 +136,7 @@ const sections: NormalizedWikiSections = {
           entityId: null,
         },
         resultAmount: 1,
-        nightmareFuelAmount: 5,
+        subjectAmount: 5,
         ingredients: [],
         station: "Shadow Manipulator",
         dlc: "Hamlet",
@@ -145,7 +150,7 @@ const sections: NormalizedWikiSections = {
           entityId: null,
         },
         resultAmount: 1,
-        nightmareFuelAmount: 4,
+        subjectAmount: 4,
         ingredients: [],
         station: "Shadow Manipulator",
         dlc: null,
@@ -159,7 +164,7 @@ const sections: NormalizedWikiSections = {
           entityId: null,
         },
         resultAmount: 1,
-        nightmareFuelAmount: 4,
+        subjectAmount: 4,
         ingredients: [],
         station: "Shadow Manipulator",
         dlc: null,
@@ -365,8 +370,44 @@ describe("WikiStructuredSections", () => {
     expect(onSelectItem).toHaveBeenCalledWith(nightLight);
   });
 
+  it("renders the Usage subject supplied by normalized page data", () => {
+    const goldSections: NormalizedWikiSections = {
+      subject: {
+        title: "Gold Nugget",
+        url: "https://dontstarve.wiki.gg/wiki/Gold_Nugget",
+        entityId: null,
+      },
+      dropTable: { rows: [] },
+      usage: {
+        recipes: [
+          {
+            ...sections.usage.recipes[0],
+            subjectAmount: 2,
+            ingredients: [],
+          },
+        ],
+      },
+    };
+
+    render(
+      <WikiStructuredSections
+        sections={goldSections}
+        itemsById={catalogItems}
+        onSelectItem={vi.fn()}
+      />,
+    );
+
+    expect(
+      screen.getByRole("link", { name: "Gold Nugget, số lượng 2" }),
+    ).toBeDefined();
+    expect(
+      screen.queryByRole("button", { name: "Nhiên liệu Ác Mộng, số lượng 2" }),
+    ).toBeNull();
+  });
+
   it("uses local Usage assets and resolves the Wiki armour spelling", () => {
     const iconSections: NormalizedWikiSections = {
+      subject: sections.subject,
       dropTable: { rows: [] },
       usage: {
         recipes: [
@@ -377,7 +418,7 @@ describe("WikiStructuredSections", () => {
               entityId: null,
             },
             resultAmount: 1,
-            nightmareFuelAmount: 2,
+            subjectAmount: 2,
             ingredients: [],
             station: "Broken Pseudoscience Station",
             dlc: null,
@@ -391,7 +432,7 @@ describe("WikiStructuredSections", () => {
               entityId: null,
             },
             resultAmount: 1,
-            nightmareFuelAmount: 5,
+            subjectAmount: 5,
             ingredients: [],
             station: "Ancient Pseudoscience Station",
             dlc: null,

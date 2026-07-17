@@ -31,6 +31,116 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": "()",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": "base_game:atrium_statue",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ancient_Statue.png",
+              "title": "Ancient Statue",
+              "url": "https://dontstarve.wiki.gg/wiki/Ancient_Statue"
+            }
+          ]
+        },
+        {
+          "chance": "—",
+          "context": "(Hammer)",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Broken_Clockworks.png",
+              "title": "Broken Clockworks",
+              "url": "https://dontstarve.wiki.gg/wiki/Broken_Clockworks"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ancient_Pseudoscience_Station.png",
+              "title": "Ancient Pseudoscience Station",
+              "url": "https://dontstarve.wiki.gg/wiki/Ancient_Pseudoscience_Station"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Sunken_Chest.png",
+              "title": "Sunken Chest",
+              "url": "https://dontstarve.wiki.gg/wiki/Sunken_Chest"
+            }
+          ]
+        },
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": "base_game:chest_mimic",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Ornate_Chest.png",
+              "title": "Ornate Chest",
+              "url": "https://dontstarve.wiki.gg/wiki/Ornate_Chest"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Geode_Fruit.png",
+              "title": "Geode Fruit",
+              "url": "https://dontstarve.wiki.gg/wiki/Geode_Fruit"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Dragonfly.png",
+              "title": "Dragonfly",
+              "url": "https://dontstarve.wiki.gg/wiki/Dragonfly"
+            },
+            {
+              "entityId": "base_game:cave_hole",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Cave_Hole.png",
+              "title": "Cave Hole",
+              "url": "https://dontstarve.wiki.gg/wiki/Cave_Hole"
+            },
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Great_Depths_Worm.png",
+              "title": "Great Depths Worm",
+              "url": "https://dontstarve.wiki.gg/wiki/Great_Depths_Worm"
+            },
+            {
+              "entityId": "base_game:winter_tree",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Winter%27s_Feast_Tree.png",
+              "title": "Winter's Feast Tree",
+              "url": "https://dontstarve.wiki.gg/wiki/Winter%27s_Feast_Tree"
+            }
+          ]
+        },
+        {
+          "chance": "0.02%",
+          "context": "( )",
+          "quantity": "3",
+          "sources": [
+            {
+              "entityId": "base_game:tumbleweed",
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Tumbleweed.png",
+              "title": "Tumbleweed",
+              "url": "https://dontstarve.wiki.gg/wiki/Tumbleweed"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": "base_game:orangegem",
+      "iconUrl": null,
+      "title": "Orange Gem/DST",
+      "url": "https://dontstarve.wiki.gg/wiki/Orange_Gem/DST"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 219741,
   "plainText": "Don't Starve\nTogether\nOrange Gem\nFood Info\n5\n10\n0\nElemental\n(Non-Survivor food)\nObject Info\n40\nSource\nDropped by\n()\n()\n(0.02% ×3)\nCrafting\nDescription\nTransmute Purple Gems into Orange Gems.\n×3 ( only)\nFilters\n(for ).\nMiscellaneous\n\"orangegem\"\n“It's an orange gem.”\n–Wilson\n“This one makes my fingers tingle.”\n–Willow\n“Pretty rock.”\n–Wolfgang\n“Such things used to bring me happiness.”\n–Wendy\n“IT SHIMMERS IN MY HANDS.”\n–WX-78\n“It looks like a Spessartite garnet.”\n–Wickerbottom\n“It's shimmering.”\n–Woodie\n“This will be quite powerful with some fuel.”\n–Maxwell\n“Curious, prismatic shapes such as this never occur naturally.”\n–Wagstaff\n“A stöne öf örange.”\n–Wigfrid\n“Orange you glad we found you, gem?”\n–Webber\n“I miss oranges...”\n–Warly\n“Helper Shiny”\n–Wormwood\n“I don't like it.”\n–Winona\n“Bright and orange like a... a...”\n–Wortox\n“Weird orangey rock.”\n–Wurt\n“Orange you glad I found this orange gem? Ha ha, nice one Walter.”\n–Walter\n“It's beautiful, but more or less useless as it is.”\n–Wanda\nThe Orange Gem is an item used to craft two Ancient items in Don't Starve Together. It can be used to craft The Lazy Forager, which automatically collects items, and The Lazy Explorer, which teleports the player a short distance across the screen.\nOrange Gems can be inserted into Cratered Moonrocks to acquire an Orange Moonlens. They can also be used to power Winona's G.E.M.erator.\nNutrition Facts[edit | edit source]\nCritter\nProduces\nNotes\nOrange Gems have a mineral value of 5.\nLoyalty (When hand-fed)\nAdds 3 minutes (6 day segments) of Follower time, with questionable efficiency.\nNothing!\nThough it does delay their starvation.\nGathering[edit | edit source]\nOrange Gems are obtained by:\nmining Ancient Statues\ndestroying Broken Clockworks\nopening Ornate Chests\nhammering Ancient Pseudoscience Stations\nkilling Dragonfly which drops 1-2 Orange Gems\ngathering them from Cave Holes in the Ruins by using a The Lazy Forager\nlooting the Large Ornate Chest, which has a chance to contain Orange Gems each time the Ancient Guardian is killed\nhammering Sunken Chests, which has a 5% chance of dropping Orange Gems\ngetting presents under a Winter's Feast Tree (only during Winter's Feast)\ndestroying the Table and Chair Relics, which have a roughly 0.2% chance to drop Orange Gems\nharvesting Tumbleweeds, which have a roughly 0.02% chance to drop Orange Gems\ncrafting them with as Wilson with the \"Transmute Gems II\" skill\nUsage[edit | edit source]\n×3\n×2\n×2\n×2\n×3\nObtained by inserting the Gem into the Cratered Moonrock.\nTrivia[edit | edit source]\nThe Orange Gem's element appears to be sloth; its opposite being the Green Gem.\nGallery[edit | edit source]\nIcon used as emoji for Official Klei Discord.\nResourcesCraftable ItemsFood\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items\nView or edit this template\nDon't Starve Together Craftable Items\nRegular Filters\nSurvivor Items\nWilson\nWillow\nWolfgang\nWendy\nWX-78\nWickerbottom\nWoodie\nWes\nMaxwell\nWigfrid\nWebber\nWarly\nWortox\nWormwood\nWinona\nWurt\nWalter\nWanda\nTools\nLight Sources\nPrototypers & Stations\nRefined Materials\nWeapons\nArmor\nClothing\nHealing\nMagic\nDecorations\nStructures\nStorage Solutions\nCooking\nFood & Gardening\nFishing\nSeafaring\nBeefalo Riding\nWinter Items\nSummer Items\nRain Gear\nCrafting Station Filters\nSpecial Event\nAncient Pseudoscience\nCarpentry\nCartography\nCritters\nCelestial\nBrightsmithy\nShadowcraft\nFabrication\nBottle Exchange\nCombrining Filter\nTea Brewing Filter\nSculptures\nSeasonings\nTrading\nTrading Hutch\nOfferings\nCawnival Creation\nTrinket Trove\nMad Science\nWinter's Feast Cooking\nSanctum Smithy Filter\nCustom Course Shack Filter\nBy TypeBy Crock Pot Value\nView or edit this template\nFood and Edible Items (by Food Type)\nVeggie\nSeeds\nMeat\nGoodies\nGeneric\nHorrible\nRoughage\nElementals\nBurnt\nRaw\nGears\nGold Dust\nBerry\nWood\nNitre\nLunar Shards\nView or edit this template\nFood and Edible Items (by Food Value)\nMeats\nFishes\nVegetables\nFruits\nMonster Food\nEggs\nDairy\nSweetener\nFrozen\nInedibles\nMagic\nFat\nSeed\nJellyfish\nBone\nFilter\nAntihistamine\nDecoration\nBug\nNo Value Food",
   "recipes": [
@@ -62,6 +172,7 @@
     "timestamp": "2026-06-09T15:16:17Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Ngọc Cam là vật phẩm dùng để chế tạo hai vật phẩm Cổ đại trong Don&#x27;t Starve Together. Nó có thể được sử dụng để chế tạo The Lazy Forager, tự động thu thập vật phẩm và The Lazy Explorer, dịch chuyển người chơi một khoảng cách ngắn trên màn hình.</p>",
   "title": "Orange Gem/DST",
   "wikitext": "{{Navbutton/Separation}}\n{{Object Infobox\n|craft_desctiption =''Transmute Purple Gems into Orange Gems.''\n|image = Orange Gem Dropped.png\n|icon = Orange Gem.png\n|foodType =[[Elemental]] [[File:Elemental.png|32px|link=Elemental]]<br>([[#Nutrition Facts|Non-Survivor food]])\n|hpRestored = 10\n|hungerRestored = 5\n|sanityRestored = 0\n|name = Orange Gem\n|droppedBy = {{pic|24|Ancient Statue}} ([[File:Pickaxe.png|24px|link=Pickaxe]])<br/>{{pic32|Broken Clockworks}} {{pic|24|Ancient Pseudoscience Station}} {{pic|24|Sunken Chest}} [[File:Relic Chair.png|24px|link=Relic]] ({{pic|24|Hammer}})<br/> {{pic32|Ornate Chest}} {{pic32|Geode Fruit}} {{pic|24|Dragonfly}} {{pic|30|Cave Hole}} {{pic|30|Great Depths Worm}} {{pic24|Winter's Feast Tree}}<br>{{pic|24|Tumbleweed}} (0.02% &times;3)\n|stack = 40\n|spawnCode = \"orangegem\"\n|filter = {{Pic32|Wilson Filter}}\n|ingredient1 = Purple Gem\n|multiplier1 = 3 ({{Pic|28|Wilson Portrait|Wilson}} only)\n|skill = Transmute Gems II\n|skillOwner = Wilson\n}}\n{{Quotes\n|wolfgang=Pretty rock.\n|wilson=It's an orange gem.\n|willow=This one makes my fingers tingle.\n|woodie=It's shimmering.\n|maxwell=This will be quite powerful with some fuel.\n|wagstaff = Curious, prismatic shapes such as this never occur naturally.\n|wendy=Such things used to bring me happiness.\n|wickerbottom=It looks like a Spessartite garnet.\n|webber=Orange you glad we found you, gem?\n|warly=I miss oranges...\n|wx78=IT SHIMMERS IN MY HANDS.\n|wigfrid=A stöne öf örange.\n|wormwood = Helper Shiny\n|winona = I don't like it.\n|wortox = Bright and orange like a... a...\n|wurt = Weird orangey rock.\n|walter = Orange you glad I found this orange gem? Ha ha, nice one Walter.\n|wanda = It's beautiful, but more or less useless as it is.\n|choose=walter\n}}\nThe '''Orange Gem''' is an item used to craft two [[Ancient Pseudoscience Filter|Ancient]] items in ''[[Don't Starve Together]]''. It can be used to craft [[The Lazy Forager]], which automatically collects items, and [[The Lazy Explorer]], which teleports the player a short distance across the screen.\n\nOrange Gems can be inserted into [[Cratered Moonrock]]s to acquire an [[Moonlens#Orange|Orange Moonlens]]. They can also be used to power [[Winona's G.E.M.erator]].\n\n===[[File:Cookbook_Dropped.png|32px|link=]] Nutrition Facts===\n{| class=\"wikitable mw-collapsible\"\n|-\n! Critter !! Produces !! Notes\n|-\n| [[File:Slurtle.png|32px|link=Slurtle]][[File:Snurtle.png|32px|link=Snurtle]] || [[File:Slurtle Slime Dropped.png|32px|link=Slurtle Slime]] || Orange Gems have a [[Guides/Slurtle_Slime_Guide#Mineral_values|mineral value]] of 5.\n|-\n| [[File:Rock Lobster.png|32px|link=Rock Lobster]] || Loyalty (When hand-fed) || Adds 3 minutes (6 day segments) of Follower time, with questionable efficiency.\n|-\n|[[File:Moleworm.png|32px|link=Moleworm]]|| Nothing! || Though it does delay their starvation.\n|}\n\n== Gathering ==\nOrange Gems are obtained by:\n\n* mining [[Ancient Statue]]s\n* destroying [[Broken Clockworks]]\n* opening [[Ornate Chest]]s\n* hammering [[Ancient Pseudoscience Station]]s\n* killing [[Dragonfly]] which drops 1-2 Orange Gems\n* gathering them from [[Cave Hole]]s in the [[Ruins]] by using a [[The Lazy Forager]]\n* looting the [[Large Ornate Chest]], which has a chance to contain Orange Gems each time the [[Ancient Guardian]] is killed\n* [[Hammer|hammering]] [[Sunken Chest]]s, which has a 5% chance of dropping Orange Gems\n* getting presents under a [[Winter's Feast#Winter's Feast Tree|Winter's Feast Tree]] (only during [[Winter's Feast]])\n* destroying the Table and Chair [[Relics]], which have a roughly 0.2% chance to drop Orange Gems\n* harvesting [[Tumbleweed]]s, which have a roughly 0.02% chance to drop Orange Gems\n* crafting them with as Wilson with the \"[[Transmute Gems II]]\" skill\n\n=={{Pic32|Icon Tools}} Usage ==\n{{Recipe\n|item1 = Orange Gem\n|item2 = Nightmare Fuel\n|count2 = 3\n|item3 = Thulecite\n|count3 = 2\n|tool = Ancient Pseudoscience Station\n|result = The Lazy Forager}}\n{{Recipe\n|item1 = Orange Gem\n|count1 = 2\n|item2 = Walking Cane\n|item3 = Nightmare Fuel\n|count3 = 2\n|tool = Ancient Pseudoscience Station\n|result = The Lazy Explorer}}\n{{Recipe\n|item1 = Orange Gem\n|count1 = 3\n|result = Yellow Gem\n|character = Wilson\n|skill = Transmute Gems II\n}}\n{{Recipe\n|item2 = Yellow Gem\n|item1 = Orange Gem\n|item3 = Green Gem\n|item4 = Purple Gem\n|item5 = Red Gem\n|item6 = Blue Gem\n|result = Iridescent Gem\n|character = Wilson\n|skill = Transmute Gems III\n}}\n{{Recipe\n|item1 = Orange Gem\n|item2 = Cratered Moonrock\n|result = Orange Moonlens\n|note = Obtained by inserting the Gem into the Cratered Moonrock.}}\n\n== {{pic|32|Placeholder}} Trivia ==\n* The Orange Gem's element appears to be sloth; its opposite being the [[Green Gem]].\n== {{Pic|32|Blueprint}} Gallery ==\n<gallery>\nOrange Gem 128x128.png|Icon used as emoji for Official Klei Discord.\n</gallery>\n<tabber>\nResources=\n{{Resources}}\n|-|\nCraftable Items=\n{{Craftable Items and Structures on DST}}\n|-|\nFood=\n{{Food}}\n</tabber>\n__NOTOC__\n[[Category:Gems]]\n[[Category:Minerals]]\n[[Category:Resources]]\n[[Category:Boss Dropped Items]]\n[[Category:Non-Flammable]]\n[[Category:Mob Dropped Items]]\n[[Category:Naturally Spawning Objects]]"
 }

@@ -15,6 +15,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "—",
+          "context": null,
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Reliquary.png",
+              "title": "Reliquary",
+              "url": "https://dontstarve.wiki.gg/wiki/Reliquary"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": "base_game:vault_key",
+      "iconUrl": null,
+      "title": "Keystone",
+      "url": "https://dontstarve.wiki.gg/wiki/Keystone"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 233118,
   "plainText": "Keystone\nObject Info\nDoes not stack\nSource\nDropped by\nMiscellaneous\n\"vault_key\"\nExclusive to:\n“Did I finally find the key to going home?”\n–Wilson\n“Anywhere's gotta be better than this place. Right...?”\n–Willow\n“Will weird rock help bring Wolfgang home?”\n–Wolfgang\n“They went to such lengths to hide it... I wonder why?”\n–Wendy\n“PASSKEY ACQUIRED”\n–WX-78\n“I'm wary of just what it might unlock...”\n–Wickerbottom\n“Hard to believe this could actually get us home...”\n–Woodie\n“The Keystone...”\n–Maxwell\n“'Tis the key tö öur salvatiön!”\n–Wigfrid\n“Do you think it can help us get home?”\n–Webber\n“What secrets might it unlock?”\n–Warly\n“Scary...”\n–Wormwood\n“Maybe I'll finally get some answers.”\n–Winona\n“The key to our salvation, or destruction? Hyuyuyu, I can't wait to find out!”\n–Wortox\n“Oooooh! What it unlock, florp?”\n–Wurt\n“I can't wait to see what this unlocks!”\n–Walter\n“So. It's all come down to this.”\n–Wanda\nThe Keystone is an item retrieved from the Reliquary in the Key Room. Its sole purpose is to be offered to the Beckoning Hand at the Ancient Gateway, triggering a confirmation prompt. If confirmed, the Sanctum is reset.\nThe Beckoning Hand only appears after the Ancient Fuelweaver has been defeated. The first Beckoning Hand requests 5 Dreadstones to repair the Ancient Gateway, after which a second Beckoning Hand appears to accept the Keystone.\nThe Keystone cannot be transferred between the Caves and the Surface. Attempting to do so causes it to be left behind at the Stairs.\nPop-up message after giving Keystone to Beckoning Hand.\nTrivia[edit | edit source]\nThe Ancient Guard Tower Pieces were introduced in the Cursed Confrontation Part 1 update.\nGallery[edit | edit source]\nKeystone Map Icon\nView or edit this template\nResources\nAttention: The following categories are only for the players look up the page based on their first impression, they have nothing to do with the actual categories/behavior/function/tags of these items\nPlants\nNatural non-living materials\nMobs Parts\nSkins\nFeathers\nBones and horns\nGems\nShadow Resources\nLunar Resources\nCraftable Resources\nNon-natural materials\nTrinkets\nLost Relics\nTransmission Items",
   "recipes": [],
@@ -25,6 +54,7 @@
     "timestamp": "2026-07-06T17:25:26Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Keystone là một vật phẩm được lấy từ Reliquary trong Key Room. Mục đích duy nhất của nó là được trao cho Bàn tay vẫy tay ở Cổng cổ, kích hoạt lời nhắc xác nhận. Nếu được xác nhận, Sanctum sẽ được đặt lại.</p>",
   "title": "Keystone",
   "wikitext": "{{Object Infobox\n|icon = Keystone.png\n|image = Keystone Dropped.png\n|droppedBy = {{Pic32|Reliquary}}\n|stack = Does not stack\n|spawnCode = \"vault_key\"\n}}\n{{Exclusivity|Don't Starve Together}}\n{{Quotes\n|wilson = Did I finally find the key to going home?\n|willow = Anywhere's gotta be better than this place. Right...?\n|wolfgang = Will weird rock help bring Wolfgang home?\n|wendy = They went to such lengths to hide it... I wonder why?\n|wx78 = PASSKEY ACQUIRED\n|wickerbottom = I'm wary of just what it might unlock...\n|woodie = Hard to believe this could actually get us home...\n|maxwell = The Keystone...\n|wigfrid = 'Tis the key tö öur salvatiön!\n|webber = Do you think it can help us get home?\n|winona = Maybe I'll finally get some answers.\n|warly = What secrets might it unlock?\n|wortox = The key to our salvation, or destruction? Hyuyuyu, I can't wait to find out!\n|wormwood = Scary...\n|wurt = Oooooh! What it unlock, florp?\n|walter = I can't wait to see what this unlocks!\n|wanda = So. It's all come down to this.\n|choose = wilson\n}}\nThe '''Keystone''' is an item retrieved from the [[Reliquary]] in the [[Key Room]]. Its sole purpose is to be offered to the [[Beckoning Hand]] at the [[Ancient Gateway]], triggering a confirmation prompt. If confirmed, the [[Sanctum]] is reset.\n\nThe Beckoning Hand only appears after the [[Ancient Fuelweaver]] has been defeated. The first Beckoning Hand requests 5 [[Dreadstone]]s to repair the Ancient Gateway, after which a second Beckoning Hand appears to accept the Keystone.\n\nThe Keystone cannot be transferred between the Caves and the Surface. Attempting to do so causes it to be left behind at the Stairs.\n\n[[File:Keystone Announcement.png|500px|thumb|left|Pop-up message after giving Keystone to Beckoning Hand.]]\n{{clear}}\n== {{Pic|32|Placeholder}}Trivia ==\n* The Ancient Guard Tower Pieces were introduced in the [[Cursed Confrontation Part 1]] update.\n\n== {{Pic32|Blueprint}} Gallery ==\n<gallery>\nKeystone Map Icon.png|Keystone Map Icon\n</gallery>\n\n{{Resources}}\n[[zh:钥石]]\n[[vi:Keystone]]"
 }

@@ -25,6 +25,35 @@
       "width": 64
     }
   ],
+  "normalized": {
+    "dropTable": {
+      "rows": [
+        {
+          "chance": "16.67%",
+          "context": "( )|protection=85%}}",
+          "quantity": "1",
+          "sources": [
+            {
+              "entityId": null,
+              "iconUrl": "https://dontstarve.wiki.gg/wiki/Special:Redirect/file/Secret_Bandit_Camp.png",
+              "title": "Secret Bandit Camp",
+              "url": "https://dontstarve.wiki.gg/wiki/Secret_Bandit_Camp"
+            }
+          ]
+        }
+      ]
+    },
+    "schema_version": 2,
+    "subject": {
+      "entityId": null,
+      "iconUrl": null,
+      "title": "Tin Suit",
+      "url": "https://dontstarve.wiki.gg/wiki/Tin_Suit"
+    },
+    "usage": {
+      "recipes": []
+    }
+  },
   "pageId": 116946,
   "plainText": "Exclusive to:\nThis article is incomplete because of the evil sabotage by Maxwell....\nPlease help to improve the article, or discuss the issue with the community on the talk page according to the talk page etiquette or on our Discord.\nTin Suit\n\"Strong and sturdy.\"\n×3 ×1\nTab\nTier\n85%\n1200 HP\nDoes not stack\nPerk\nReduces speed by 10%.\nDropped by\n(16.67%)\n\"armor_metalplate\"\n“Science says I'm safe in here.”\n–Wilson\n“I feel like a tin can.”\n–Willow\n“No one beat Wolfgang now!”\n–Wolfgang\n“Like a metal coffin that keeps me alive.”\n–Wendy\n“ROBOT SKIN ARMOR”\n–WX-78\n“What era is this design from?”\n–Wickerbottom\n“Feel a little funny in this.”\n–Woodie\n“Not very pliant but it does the job.”\n–Maxwell\n“The riveting in this suit is quite sophisticated.”\n–Wagstaff\n“Armör wörthy öf my deeds.”\n–Wigfrid\n“Now we're Sir Webber!”\n–Webber\n“I feel like a soda can.”\n–Walani\n“Like an armor made of tin cans.”\n–Warly\n“Not good fer swimmin' in.”\n–Woodlegs\n“TO TAKE ARMS”\n–Wilba\n“Clink Rock clothes”\n–Wormwood\n“Oof. It's heavier than ballast.”\n–Wheeler\nThe Tin Suit is a craftable Armor Item introduced in the Hamlet DLC. It is found in the Fight Tab, requires 3 Alloy and a Hammer to craft, and a Science Machine to prototype. Tin Suits offer 5% more protection than a Log Suit, but with much more durability. However, it will reduce the player's walking speed by 10% when worn.\nThis item has also a 16.67% chance to spawn in a Secret Bandit Camp.\nGallery[edit | edit source]\nWilba wearing a Tin Suit.\nWheeler wearing a Tin Suit.\nTools and WeaponsCraftable Items\nView or edit this template\nDon't Starve Tools and Weapons\nEquipped Tools\nUnequipped Tools\nLight\nBooks\nCircuits\nBattle Calls\nWatches\nWeapons\nSlingshot Parts\nThrowables\nStaffs\nAmulets\nBackpacks\nClothing\nStage Costumes\nArmor\nDSTDSRoGSWHam\nView or edit this template\nDon't Starve Together Craftable Items\nRegular Filters\nSurvivor Items\nWilson\nWillow\nWolfgang\nWendy\nWX-78\nWickerbottom\nWoodie\nWes\nMaxwell\nWigfrid\nWebber\nWarly\nWortox\nWormwood\nWinona\nWurt\nWalter\nWanda\nTools\nLight Sources\nPrototypers & Stations\nRefined Materials\nWeapons\nArmor\nClothing\nHealing\nMagic\nDecorations\nStructures\nStorage Solutions\nCooking\nFood & Gardening\nFishing\nSeafaring\nBeefalo Riding\nWinter Items\nSummer Items\nRain Gear\nCrafting Station Filters\nSpecial Event\nAncient Pseudoscience\nCarpentry\nCartography\nCritters\nCelestial\nBrightsmithy\nShadowcraft\nFabrication\nBottle Exchange\nCombrining Filter\nTea Brewing Filter\nSculptures\nSeasonings\nTrading\nTrading Hutch\nOfferings\nCawnival Creation\nTrinket Trove\nMad Science\nWinter's Feast Cooking\nSanctum Smithy Filter\nCustom Course Shack Filter\nView or edit this template\nDon't Starve Craftable Items\nTools\nLight\nSurvival\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nAncient\nBooks\nTinkering\nView or edit this template\nDon't Starve: Reign of Giants Craftable Items\nTools\nLight\nSurvival\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nAncient\nBooks\nTinkering\nView or edit this template\nDon't Starve Shipwrecked and Volcano Craftable Items\nTools\nLight\nNautical\nSurvival\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nVolcanic\nBooks\nTinkering\nView or edit this template\nDon't Starve Hamlet Craftable Items\nTools\nLight\nTreasure Hunting\nSurvival\nNautical\nFood\nScience\nFight\nStructures\nRefine\nMagic\nDress\nGreen Thumb\nBooks\nTinkering\nCity Planning\nRenovate\nFloors\nShelves\nPlantholders\nColumns\nWall Papers\nHanging Lamps\nOrnaments\nChairs\nHome Kits\nDoors\nWindows\nRugs\nLamps\nTables",
   "recipes": [],
@@ -35,6 +64,7 @@
     "timestamp": "2023-11-04T11:35:17Z"
   },
   "schema_version": 1,
+  "summaryViHtml": "<h2>Tóm tắt</h2><p>Bộ Đồ Thiếc là một Vật Dụng Giáp chế tạo được giới thiệu trong Hamlet DLC. Nó được tìm thấy trong Thẻ Chiến đấu, cần 3 Hợp kim và Búa để chế tạo và Máy Khoa học để tạo nguyên mẫu. Bộ đồ Thiếc có khả năng bảo vệ cao hơn 5% so với Bộ đồ gỗ nhưng có độ bền cao hơn nhiều. Tuy nhiên, nó sẽ làm giảm 10% tốc độ đi lại của người chơi khi đeo.</p>",
   "title": "Tin Suit",
   "wikitext": "{{Exclusivity|Hamlet}}\n{{Incomplete}}\n{{Item Infobox\n|description = Strong and sturdy.\n|ingredient1 = Alloy\n|multiplier1 = 3\n|ingredient2 = Hammer\n|multiplier2 = 1\n|tab = Fight\n|tier = 1\n|stack = Does not stack\n|perk = Reduces [[speed]] by 10%.\n|spawnCode = \"armor_metalplate\"\n|durability = 1200 HP\n|droppedBy = {{Pic|32|Secret Bandit Camp}} (16.67%)|protection=85%}}\n{{Quotes\n|wilson = Science says I'm safe in here.\n|willow = I feel like a tin can.\n|wolfgang = No one beat Wolfgang now!\n|wendy = Like a metal coffin that keeps me alive.\n|wx78 = ROBOT SKIN ARMOR\n|wickerbottom = What era is this design from?\n|woodie = Feel a little funny in this.\n|maxwell = Not very pliant but it does the job.\n|wagstaff = The riveting in this suit is quite sophisticated.\n|wigfrid = Armör wörthy öf my deeds.\n|webber = Now we're Sir Webber!\n|walani = I feel like a soda can.\n|warly = Like an armor made of tin cans.\n|woodlegs = Not good fer swimmin' in.\n|wilba = TO TAKE ARMS\n|wormwood = Clink Rock clothes\n|wheeler = Oof. It's heavier than ballast.\n|choose = maxwell}}\nThe '''Tin Suit''' is a craftable [[Armor]] [[Item]] introduced in the ''[[Don't Starve: Hamlet|Hamlet]]'' DLC. It is found in the [[Fight Tab]], requires 3 [[Alloy]] and a [[Hammer]] to craft, and a [[Science Machine]] to prototype. Tin Suits offer 5% more protection than a [[Log Suit]], but with much more durability. However, it will reduce the player's walking [[speed]] by 10% when worn.\n\nThis item has also a 16.67% chance to spawn in a [[Secret Bandit Camp]].\n\n=={{Pic|32|Blueprint}} Gallery==\n<gallery mode=slideshow position=\"left\" hideaddbutton=\"true\" widths=\"350\">\nTin Suit Wilba.png|[[Wilba]] wearing a Tin Suit.\nTin Suit Wheeler.png|[[Wheeler]] wearing a Tin Suit.\n</gallery>\n<tabber>\nTools and Weapons=\n{{Tools and Weapons}}\n|-|\nCraftable Items=\n{{Craftable Items|tool}}\n</tabber>\n[[Category:Fight Tab]]\n[[Category:Armor]]\n[[Category:Equipable Items]]\n[[Category:Speed Loss]]"
 }
