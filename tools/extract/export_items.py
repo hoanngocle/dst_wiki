@@ -2,6 +2,7 @@
 
 import json
 import os
+import re
 import sqlite3
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
@@ -11,12 +12,18 @@ from tools.extract.wiki_export import (
     load_wiki_export,
     merge_wiki_items,
 )
+from tools.extract.exclusions import NON_ITEM_PREFAB_IDS
 from tools.extract.item_details import build_tu_tien_item_details
+from tools.extract.structure_details import (
+    audit_structure_visuals,
+    build_structure_details,
+)
 
 
 JsonObject = Dict[str, Any]
 PREFAB_CATEGORIES = {
     "item",
+    "pill",
     "mob",
     "boss",
     "character",
@@ -33,6 +40,75 @@ RECIPE_DESC_PREFIX = "STRINGS.RECIPE_DESC."
 DESCRIPTION_TRANSLATIONS = Path("data/manual/item_description_vi.json")
 ITEM_DETAIL_OVERRIDES = Path("data/manual/tu_tien_item_details.json")
 ITEM_DETAIL_REPORT = Path("data/generated/tu-tien-item-details-report.json")
+STRUCTURE_ICON_AUDIT = Path("data/generated/structure-icon-audit.json")
+ICON_KEY_ALIASES = {
+    "tu_tien:xd_beefalo": "base_game:beefalo",
+}
+DISPLAY_NAME_OVERRIDES = {
+    "base_game:asparagus": "Măng Tây",
+    "base_game:berries": "Dâu Rừng",
+    "base_game:bird_egg": "Trứng Chim",
+    "base_game:blue_cap": "Nấm Lam",
+    "base_game:corn": "Ngô",
+    "base_game:pepper": "Ớt",
+    "base_game:potato": "Khoai Tây",
+    "base_game:shroomcake": "Bánh Nấm",
+    "base_game:tomato": "Cà Chua",
+    "base_game:watermelon": "Dưa Hấu",
+}
+MOB_STAT_LABELS = {
+    "max_health": "Máu tối đa",
+    "attack_damage": "Sát thương",
+    "planar_damage": "Sát thương vị diện",
+    "attack_period": "Chu kỳ tấn công",
+    "attack_range": "Tầm đánh",
+    "hit_range": "Tầm trúng đòn",
+    "walk_speed": "Tốc độ đi",
+    "run_speed": "Tốc độ chạy",
+    "sanity_aura": "Hào quang tinh thần",
+    "freeze_resistance": "Kháng đóng băng",
+    "sleep_resistance": "Kháng ru ngủ",
+}
+MOB_STAT_ORDER = {key: position for position, key in enumerate(MOB_STAT_LABELS)}
+RECIPE_INGREDIENT_ITEM_ALIASES = {
+    "base_game:asparagus": "wiki:11814",
+    "base_game:batwing": "wiki:129751",
+    "base_game:berries": "wiki:194765",
+    "base_game:bird_egg": "wiki:121150",
+    "base_game:blue_cap": "wiki:53485",
+    "base_game:bluegem": "wiki:196261",
+    "base_game:corn": "wiki:195689",
+    "base_game:dragonfruit": "wiki:171910",
+    "base_game:feather_canary": "wiki:111783",
+    "base_game:feather_crow": "wiki:111783",
+    "base_game:fig": "wiki:133345",
+    "base_game:green_cap": "wiki:177817",
+    "base_game:ice": "wiki:210812",
+    "base_game:mandrake": "wiki:162524",
+    "base_game:marble": "wiki:127143",
+    "base_game:meat": "wiki:164959",
+    "base_game:monstermeat": "wiki:200397",
+    "base_game:pepper": "wiki:160201",
+    "base_game:plantmeat": "wiki:64181",
+    "base_game:potato": "wiki:192129",
+    "base_game:purplegem": "wiki:106511",
+    "base_game:redgem": "wiki:59983",
+    "base_game:shroomcake": "wiki:31197",
+    "base_game:smallmeat": "wiki:96458",
+    "base_game:tomato": "wiki:134571",
+    "base_game:watermelon": "wiki:34175",
+}
+PILL_PREFAB_PATTERN = re.compile(
+    r"^xd_dy_(?:cyfxd|dmhsd|hsphd|lmsqd|pshsd|qjqsd|qxdhd|xttyd|xynyd|yfsxd)_[1-5]$"
+)
+
+
+def _is_pill_prefab(prefab_id: Any) -> bool:
+    return isinstance(prefab_id, str) and (
+        prefab_id.startswith("xd_danyao_")
+        or prefab_id in {"xd_dy_fd", "xd_dy_tsfhd"}
+        or PILL_PREFAB_PATTERN.fullmatch(prefab_id) is not None
+    )
 
 
 def _atomic_json(path: Path, value: JsonObject) -> None:
@@ -86,11 +162,19 @@ def _select_inventory_assets(assets: List[JsonObject]) -> Dict[str, JsonObject]:
     grouped: Dict[str, List[JsonObject]] = {}
     for asset in assets:
         key = asset.get("key")
-        if asset.get("type") != "inventory" or not isinstance(key, str):
+        if asset.get("type") not in {"inventory", "portrait", "map_icon"} or not isinstance(key, str):
             continue
         grouped.setdefault(key, []).append(asset)
     return {
-        key: sorted(candidates, key=_asset_sort_key)[0]
+        key: sorted(
+            candidates,
+            key=lambda asset: (
+                {"inventory": 0, "portrait": 1, "map_icon": 2}.get(
+                    str(asset.get("type")), 3
+                ),
+                *_asset_sort_key(asset),
+            ),
+        )[0]
         for key, candidates in grouped.items()
     }
 
@@ -139,13 +223,78 @@ def _category(entity: JsonObject) -> Optional[str]:
     namespace = entity.get("namespace")
     if namespace not in ("tu_tien", "base_game"):
         raise ValueError("entity namespace is invalid")
+    if namespace == "tu_tien" and _is_pill_prefab(entity.get("prefab_id")):
+        return "pill"
     entity_type = entity.get("type")
     if not isinstance(entity_type, str):
         raise ValueError("entity type must be a string")
+    if (
+        namespace == "base_game"
+        and entity_type == "dependency"
+        and entity.get("is_inventory_item") is True
+    ):
+        return "item"
     category = LEGACY_CATEGORY_MAP.get(entity_type, entity_type)
     if category in PREFAB_CATEGORIES:
         return category
     return "other" if namespace == "tu_tien" else None
+
+
+def _apply_manual_recipe_overrides(
+    source_entities: List[Any], overrides: Optional[JsonObject]
+) -> Tuple[List[Any], Dict[str, str]]:
+    if overrides is None:
+        return source_entities, {}
+    if not isinstance(overrides, dict) or overrides.get("schema_version") != 1:
+        raise ValueError("item detail overrides must use schema version 1")
+    override_items = overrides.get("items")
+    if not isinstance(override_items, dict):
+        raise ValueError("item detail overrides must contain an items object")
+
+    entities = [dict(entity) if isinstance(entity, dict) else entity for entity in source_entities]
+    by_id = {
+        entity.get("key"): entity
+        for entity in entities
+        if isinstance(entity, dict) and isinstance(entity.get("key"), str)
+    }
+    crafting_notes: Dict[str, str] = {}
+    for entity_id, override in sorted(override_items.items()):
+        if not isinstance(override, dict) or "recipe" not in override:
+            continue
+        entity = by_id.get(entity_id)
+        if entity is None:
+            raise ValueError(f"unknown manual recipe entity {entity_id}")
+        recipe = override["recipe"]
+        if not isinstance(recipe, dict) or not isinstance(recipe.get("ingredients"), list):
+            raise ValueError(f"manual recipe for {entity_id} must contain ingredients")
+        normalized_ingredients = []
+        for position, ingredient in enumerate(recipe["ingredients"]):
+            if not isinstance(ingredient, dict) or not isinstance(ingredient.get("id"), str):
+                raise ValueError(f"manual recipe ingredient {position} for {entity_id} is invalid")
+            ingredient_id = ingredient["id"]
+            normalized_ingredients.append(
+                {
+                    "key": ingredient_id,
+                    "amount": _positive_integer(
+                        ingredient.get("amount"), "manual recipe ingredient amount"
+                    ),
+                    "position": position,
+                }
+            )
+        entity["recipes"] = [
+            {
+                "output_count": _positive_integer(
+                    recipe.get("outputCount", 1), "manual recipe output count"
+                ),
+                "ingredients": normalized_ingredients,
+            }
+        ]
+        note = recipe.get("craftingNote")
+        if note is not None:
+            if not isinstance(note, str) or not note.strip():
+                raise ValueError(f"manual recipe craftingNote for {entity_id} is invalid")
+            crafting_notes[str(entity["prefab_id"]).lower()] = note.strip()
+    return entities, crafting_notes
 
 
 def _positive_integer(value: Any, field: str) -> int:
@@ -240,7 +389,12 @@ def _build_item_entry(
             ingredients.append(
                 {
                     "id": ingredient_id,
-                    "name": _display_name(ingredient_entity, ingredient_id.split(":")[-1]),
+                    "name": _display_name(
+                        ingredient_entity,
+                        DISPLAY_NAME_OVERRIDES.get(
+                            ingredient_id, ingredient_id.split(":")[-1]
+                        ),
+                    ),
                     "amount": _positive_integer(raw_amount, "ingredient amount"),
                     "sprite": _sprite(ingredient_icon, selected_assets, textures),
                 }
@@ -260,9 +414,163 @@ def _build_item_entry(
         "englishName": _english_name(entity),
         "description": _description(entity),
         "craftingNote": crafting_notes.get(prefab_id.lower()),
-        "sprite": _sprite(entity.get("icon_key"), selected_assets, textures),
+        "sprite": _sprite(
+            entity.get("icon_key")
+            or (entity_id if entity_id in selected_assets else None)
+            or (
+                entities.get(ICON_KEY_ALIASES.get(entity_id, ""), {}).get("icon_key")
+            ),
+            selected_assets,
+            textures,
+        ),
         "recipe": recipe_payload,
+        "mob": None,
+        "character": None,
+        "structureDetails": None,
         "wiki": None,
+    }
+
+
+def _format_number(value: Any) -> str:
+    number = float(value)
+    return str(int(number)) if number.is_integer() else format(number, "g")
+
+
+def _format_chance(value: Any) -> Optional[str]:
+    if not isinstance(value, (int, float)) or isinstance(value, bool):
+        return None
+    return f"{_format_number(float(value) * 100)}%"
+
+
+def _reference_for_item(
+    entity_id: str,
+    entities: Dict[str, JsonObject],
+    items_by_id: Dict[str, JsonObject],
+) -> JsonObject:
+    item = items_by_id.get(entity_id)
+    if item is not None:
+        return {"id": entity_id, "name": item["name"], "sprite": item.get("sprite")}
+    return {
+        "id": entity_id,
+        "name": _display_name(entities.get(entity_id), entity_id.split(":")[-1]),
+        "sprite": None,
+    }
+
+
+def _mob_details(
+    entity: JsonObject,
+    entities: Dict[str, JsonObject],
+    items_by_id: Dict[str, JsonObject],
+    runtime_coverage: List[JsonObject],
+) -> JsonObject:
+    entity_id = str(entity["key"])
+    raw_stats = {
+        str(stat.get("key")): stat
+        for stat in entity.get("stats", [])
+        if isinstance(stat, dict) and isinstance(stat.get("key"), str)
+    }
+    stats = []
+    for key in sorted(
+        (key for key in raw_stats if key in MOB_STAT_LABELS),
+        key=lambda key: (MOB_STAT_ORDER[key], key),
+    ):
+        stat = raw_stats[key]
+        value = stat.get("value")
+        if not isinstance(value, (str, int, float)) or isinstance(value, bool):
+            continue
+        stats.append(
+            {
+                "key": key,
+                "label": MOB_STAT_LABELS[key],
+                "value": value,
+                "unit": stat.get("unit") if isinstance(stat.get("unit"), str) else None,
+            }
+        )
+
+    mechanics = []
+    special_states = raw_stats.get("special_states", {}).get("value")
+    if isinstance(special_states, str) and special_states.strip():
+        mechanics.append("Trạng thái đặc biệt: " + special_states.strip())
+
+    grouped: Dict[Tuple[str, Any, str], JsonObject] = {}
+    for target_id, target in entities.items():
+        for acquisition in target.get("acquisition", []):
+            if (
+                not isinstance(acquisition, dict)
+                or acquisition.get("type") != "drop"
+                or acquisition.get("source") != entity_id
+            ):
+                continue
+            conditions = acquisition.get("conditions")
+            conditions_text = ""
+            if isinstance(conditions, dict) and conditions:
+                loot_table = conditions.get("loot_table")
+                if isinstance(loot_table, str) and loot_table:
+                    conditions_text = f"Bảng rơi: {loot_table}"
+            chance = acquisition.get("chance")
+            group_key = (
+                target_id,
+                chance if isinstance(chance, (int, float)) else None,
+                conditions_text,
+            )
+            minimum = acquisition.get("min_count", 1)
+            maximum = acquisition.get("max_count", minimum)
+            row = grouped.setdefault(
+                group_key,
+                {
+                    "item": _reference_for_item(target_id, entities, items_by_id),
+                    "minimum": 0.0,
+                    "maximum": 0.0,
+                    "chance": _format_chance(chance),
+                    "conditions": conditions_text or None,
+                },
+            )
+            row["minimum"] += float(minimum) if isinstance(minimum, (int, float)) else 1.0
+            row["maximum"] += float(maximum) if isinstance(maximum, (int, float)) else 1.0
+
+    loot = []
+    for row in sorted(grouped.values(), key=lambda value: value["item"]["id"]):
+        minimum = row.pop("minimum")
+        maximum = row.pop("maximum")
+        row["quantity"] = (
+            _format_number(minimum)
+            if minimum == maximum
+            else f"{_format_number(minimum)}–{_format_number(maximum)}"
+        )
+        loot.append(row)
+    drop_coverage = next(
+        (
+            value
+            for value in runtime_coverage
+            if value.get("namespace") == entity.get("namespace")
+            and value.get("prefab_id") == entity.get("prefab_id")
+            and value.get("category") == "drop"
+        ),
+        None,
+    )
+    loot_status = "known" if loot else (
+        "none" if drop_coverage and drop_coverage.get("status") == "observed" else "unknown"
+    )
+    return {"stats": stats, "mechanics": mechanics, "lootStatus": loot_status, "loot": loot}
+
+
+def _character_profile(entity: JsonObject) -> JsonObject:
+    profile = {
+        str(effect.get("key")): effect.get("value")
+        for effect in entity.get("effects", [])
+        if isinstance(effect, dict) and effect.get("trigger") == "character_profile"
+    }
+    description = _description(entity) or ""
+    abilities = [
+        line.lstrip("*• ").strip()
+        for line in description.splitlines()
+        if line.lstrip("*• ").strip()
+    ]
+    return {
+        "title": profile.get("character_title") if isinstance(profile.get("character_title"), str) else None,
+        "survivability": profile.get("character_survivability") if isinstance(profile.get("character_survivability"), str) else None,
+        "quote": profile.get("character_quote") if isinstance(profile.get("character_quote"), str) else None,
+        "abilities": abilities,
     }
 
 
@@ -335,6 +643,9 @@ def build_item_export(
     source_assets = assets.get("assets")
     if not isinstance(source_entities, list) or not isinstance(source_assets, list):
         raise ValueError("catalog and asset payloads must contain arrays")
+    source_entities, manual_crafting_notes = _apply_manual_recipe_overrides(
+        source_entities, detail_overrides
+    )
     entities = {
         entity["key"]: entity
         for entity in source_entities
@@ -343,15 +654,37 @@ def build_item_export(
     selected_assets = _select_inventory_assets(
         [asset for asset in source_assets if isinstance(asset, dict)]
     )
+    referenced_dependency_ids = {
+        ingredient.get("key")
+        for entity in source_entities
+        if isinstance(entity, dict) and entity.get("type") != "dependency"
+        for recipe in (
+            entity.get("recipes") if isinstance(entity.get("recipes"), list) else []
+        )
+        if isinstance(recipe, dict)
+        for ingredient in (
+            recipe.get("ingredients")
+            if isinstance(recipe.get("ingredients"), list)
+            else []
+        )
+        if isinstance(ingredient, dict) and isinstance(ingredient.get("key"), str)
+    }
     textures: Dict[str, JsonObject] = {}
     exportable_entities = []
     for entity in source_entities:
         if not isinstance(entity, dict) or _category(entity) is None:
             continue
+        if (
+            entity.get("type") == "dependency"
+            and entity.get("key") not in referenced_dependency_ids
+        ):
+            continue
+        if entity.get("prefab_id") in NON_ITEM_PREFAB_IDS:
+            continue
         if entity.get("namespace") == "tu_tien" and _vietnamese_name(entity) is None:
             continue
         exportable_entities.append(entity)
-    note_lookup = crafting_notes or {}
+    note_lookup = {**(crafting_notes or {}), **manual_crafting_notes}
     items = [
         _build_item_entry(entity, entities, selected_assets, textures, note_lookup)
         for entity in exportable_entities
@@ -365,8 +698,17 @@ def build_item_export(
     )
     for item in items:
         item["details"] = details.get(item["id"])
+    items_by_id = {item["id"]: item for item in items}
+    for item in items:
+        entity = entities[item["id"]]
+        if item["category"] == "mob":
+            item["mob"] = _mob_details(
+                entity, entities, items_by_id, runtime_coverage or []
+            )
+        elif item["category"] == "character":
+            item["character"] = _character_profile(entity)
     return (
-        {"schema_version": 5, "items": items},
+        {"schema_version": 6, "items": items},
         {
             "schema_version": 1,
             "textures": [textures[key] for key in sorted(textures)],
@@ -405,6 +747,39 @@ def apply_description_translations(
     return result
 
 
+def link_recipe_ingredients(items: List[JsonObject]) -> List[JsonObject]:
+    """Attach every resolvable recipe ingredient to its published item and icon."""
+
+    items_by_id = {
+        item.get("id"): item
+        for item in items
+        if isinstance(item, dict) and isinstance(item.get("id"), str)
+    }
+    linked_items = []
+    for item in items:
+        linked_item = dict(item)
+        recipe = item.get("recipe")
+        if not isinstance(recipe, dict) or not isinstance(recipe.get("ingredients"), list):
+            linked_items.append(linked_item)
+            continue
+        linked_ingredients = []
+        for ingredient in recipe["ingredients"]:
+            linked_ingredient = dict(ingredient)
+            ingredient_id = ingredient.get("id")
+            target_id = RECIPE_INGREDIENT_ITEM_ALIASES.get(
+                ingredient_id, ingredient_id
+            )
+            target = items_by_id.get(target_id)
+            if target is not None:
+                linked_ingredient["id"] = target_id
+                if linked_ingredient.get("sprite") is None:
+                    linked_ingredient["sprite"] = target.get("sprite")
+            linked_ingredients.append(linked_ingredient)
+        linked_item["recipe"] = {**recipe, "ingredients": linked_ingredients}
+        linked_items.append(linked_item)
+    return linked_items
+
+
 def export_items(
     database_path: Path,
     catalog_path: Path,
@@ -417,6 +792,7 @@ def export_items(
     description_translations_path: Path = DESCRIPTION_TRANSLATIONS,
     detail_overrides_path: Path = ITEM_DETAIL_OVERRIDES,
     detail_report_path: Path = ITEM_DETAIL_REPORT,
+    structure_audit_path: Path = STRUCTURE_ICON_AUDIT,
 ) -> None:
     """Read audit JSON and atomically publish the compact frontend contracts."""
 
@@ -439,10 +815,48 @@ def export_items(
     )
     wiki = load_wiki_export(database_path, wiki_crawl_path)
     items["items"] = merge_wiki_items(items["items"], wiki)
+    items["items"] = link_recipe_ingredients(items["items"])
+    audit_rows, excluded_ids = audit_structure_visuals(
+        items["items"], catalog["entities"], wiki.structure_details
+    )
+    items["items"] = [
+        item for item in items["items"] if item.get("id") not in excluded_ids
+    ]
+    structure_details = build_structure_details(
+        items["items"], catalog["entities"], wiki.structure_details
+    )
     for item in items["items"]:
         item.setdefault("details", None)
+        item["structureDetails"] = structure_details.get(item.get("id"))
+    action_counts = {
+        action: sum(row.get("action") == action for row in audit_rows)
+        for action in ("keep", "repair", "exclude")
+    }
+    classifications = sorted(
+        {
+            str(row["classification"])
+            for row in audit_rows
+            if isinstance(row.get("classification"), str)
+        }
+    )
+    structure_audit = {
+        "schema_version": 1,
+        "summary": {
+            "total": len(audit_rows),
+            **action_counts,
+            "classifications": {
+                classification: sum(
+                    row.get("classification") == classification
+                    for row in audit_rows
+                )
+                for classification in classifications
+            },
+        },
+        "rows": audit_rows,
+    }
     _atomic_json(Path(items_path), items)
     _atomic_json(Path(textures_path), textures)
     _atomic_json(Path(detail_report_path), detail_report)
+    _atomic_json(Path(structure_audit_path), structure_audit)
     if wiki.details or wiki.assets:
         export_wiki_artifacts(wiki, wiki_details_path, wiki_assets_path)

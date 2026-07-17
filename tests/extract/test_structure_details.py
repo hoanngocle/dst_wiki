@@ -391,14 +391,14 @@ class StructureDetailTests(unittest.TestCase):
         self.assertEqual(by_id["base_game:evergreens"]["action"], "exclude")
         self.assertIn("base_game:evergreens", excluded)
 
-    def test_audit_marks_craftable_wiki_visual_for_repair(self):
+    def test_audit_keeps_craftable_structure_with_resolved_wiki_visual(self):
         rows, excluded = audit_structure_visuals(
             self.items, self.entities, self.wiki
         )
         row = next(value for value in rows if value["id"] == "base_game:kitcoonden")
 
-        self.assertEqual(row["classification"], "craftable_missing_asset")
-        self.assertEqual(row["action"], "repair")
+        self.assertEqual(row["classification"], "craftable_wiki_visual")
+        self.assertEqual(row["action"], "keep")
         self.assertEqual(row["assets"]["wiki"][0], "/assets/wiki/kitcoon.png")
         self.assertNotIn("base_game:kitcoonden", excluded)
 

@@ -218,6 +218,27 @@ class StorageTests(unittest.TestCase):
                 originals[0].name, expected_hash + ".png"
             )
 
+    def test_skips_removed_optional_images_without_failing_the_dataset(self):
+        with tempfile.TemporaryDirectory() as tempdir:
+            output = Path(tempdir)
+            with self.make_storage(output) as storage:
+                storage.enqueue_images(["File:Removed.png"])
+                storage.claim_image()
+                storage.skip_image(
+                    "File:Removed.png",
+                    "image has no original file metadata",
+                )
+                summary = storage.finalize({"profile": "items"})
+                status = storage.connection.execute(
+                    "select status from image_queue where title=?",
+                    ("File:Removed.png",),
+                ).fetchone()[0]
+
+            self.assertEqual(status, "skipped")
+            self.assertEqual(summary.failures, 0)
+            self.assertEqual(summary.pending_images, 0)
+            self.assertEqual((output / "errors.jsonl").read_text(), "")
+
     def test_compaction_streams_page_payloads_instead_of_retaining_them(self):
         class TrackedDict(dict):
             pass

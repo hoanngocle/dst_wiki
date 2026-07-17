@@ -7,7 +7,6 @@ import type { ReactNode } from "react";
 import { ItemDetailModal } from "@/app/components/item-detail-modal";
 import { ItemResult } from "@/app/components/item-result";
 import type {
-  ItemAvailabilityFilter,
   ItemListEntry,
   ItemSourceFilter,
   PrefabCategoryFilter,
@@ -18,18 +17,8 @@ const RESULT_BATCH_SIZE = 40;
 
 const sourceFilters: readonly { value: ItemSourceFilter; label: string }[] = [
   { value: "all", label: "Tất cả" },
-  { value: "wiki", label: "Wiki" },
   { value: "base_game", label: "DST" },
   { value: "tu_tien", label: "Tu Tiên" },
-];
-
-const availabilityFilters: readonly {
-  value: ItemAvailabilityFilter;
-  label: string;
-}[] = [
-  { value: "all", label: "Tất cả dữ liệu" },
-  { value: "recipe", label: "Có công thức" },
-  { value: "image", label: "Có ảnh" },
 ];
 
 const categoryFilters: readonly {
@@ -38,6 +27,7 @@ const categoryFilters: readonly {
 }[] = [
   { value: "all", label: "Tất cả loại" },
   { value: "item", label: "Item" },
+  { value: "pill", label: "Đan Dược" },
   { value: "mob", label: "Mob" },
   { value: "boss", label: "Boss" },
   { value: "character", label: "Nhân vật" },
@@ -91,7 +81,6 @@ export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
   const [query, setQuery] = useState("");
   const [source, setSource] = useState<ItemSourceFilter>("all");
   const [category, setCategory] = useState<PrefabCategoryFilter>("all");
-  const [availability, setAvailability] = useState<ItemAvailabilityFilter>("all");
   const [visibleLimit, setVisibleLimit] = useState(RESULT_BATCH_SIZE);
   const [selectedItem, setSelectedItem] = useState<ItemListEntry | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -100,8 +89,8 @@ export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
     [items],
   );
   const results = useMemo(
-    () => filterItems(items, query, source, category, availability),
-    [availability, category, items, query, source],
+    () => filterItems(items, query, source, category, "all"),
+    [category, items, query, source],
   );
   const visibleResults = results.slice(0, visibleLimit);
 
@@ -142,11 +131,6 @@ export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
     setVisibleLimit(RESULT_BATCH_SIZE);
   }
 
-  function updateAvailability(nextAvailability: ItemAvailabilityFilter) {
-    setAvailability(nextAvailability);
-    setVisibleLimit(RESULT_BATCH_SIZE);
-  }
-
   function clearQueryAndFocus() {
     updateQuery("");
     inputRef.current?.focus();
@@ -156,7 +140,6 @@ export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
     setQuery("");
     setSource("all");
     setCategory("all");
-    setAvailability("all");
     setVisibleLimit(RESULT_BATCH_SIZE);
     inputRef.current?.focus();
   }
@@ -169,17 +152,13 @@ export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
   const activeCategoryLabel =
     categoryFilters.find((candidate) => candidate.value === category)?.label ??
     "Tất cả loại";
-  const activeAvailabilityLabel =
-    availabilityFilters.find((candidate) => candidate.value === availability)?.label ??
-    "Tất cả dữ liệu";
   const trimmedQuery = query.trim();
   const statusLabel = trimmedQuery
-    ? `${countLabel} khớp với "${trimmedQuery}" trong ${activeSourceLabel}, ${activeCategoryLabel}, ${activeAvailabilityLabel}.`
-    : `${countLabel} trong ${activeSourceLabel}, ${activeCategoryLabel}, ${activeAvailabilityLabel}.`;
+    ? `${countLabel} khớp với "${trimmedQuery}" trong ${activeSourceLabel}, ${activeCategoryLabel}.`
+    : `${countLabel} trong ${activeSourceLabel}, ${activeCategoryLabel}.`;
   const resultsKey = JSON.stringify([
     source,
     category,
-    availability,
     normalizeSearchText(query),
     results.map((item) => item.id),
   ]);
@@ -209,7 +188,7 @@ export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
             onKeyDown={(event) => {
               if (event.key === "Escape") updateQuery("");
             }}
-            placeholder="Tìm theo tên, Wiki, prefab hoặc nguyên liệu..."
+            placeholder="Tìm theo tên, prefab, nội dung Wiki hoặc nguyên liệu..."
             aria-describedby="item-search-help"
             className="h-14 w-full rounded-xl border border-[#a8b8cc] bg-[#f8fafc] pl-12 pr-28 text-base text-[#14233b] placeholder:text-[#53647a] shadow-[0_10px_28px_rgba(34,61,96,0.08)] outline-none transition focus:border-[#2e5fb3] focus:ring-4 focus:ring-[#2e5fb3]/15"
           />
@@ -234,30 +213,17 @@ export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
       </div>
 
       <div className="mt-5 grid gap-4 rounded-2xl border border-[#c7d2df] bg-[#f8fafc] p-4 shadow-[0_10px_26px_rgba(34,61,96,0.05)]">
-        <div className="grid gap-4 sm:grid-cols-2">
-          <FilterGroup label="Lọc theo nguồn">
-            {sourceFilters.map((candidate) => (
-              <FilterButton
-                key={candidate.value}
-                pressed={source === candidate.value}
-                onClick={() => updateSource(candidate.value)}
-              >
-                {candidate.label}
-              </FilterButton>
-            ))}
-          </FilterGroup>
-          <FilterGroup label="Lọc theo dữ liệu">
-            {availabilityFilters.map((candidate) => (
-              <FilterButton
-                key={candidate.value}
-                pressed={availability === candidate.value}
-                onClick={() => updateAvailability(candidate.value)}
-              >
-                {candidate.label}
-              </FilterButton>
-            ))}
-          </FilterGroup>
-        </div>
+        <FilterGroup label="Lọc theo nguồn">
+          {sourceFilters.map((candidate) => (
+            <FilterButton
+              key={candidate.value}
+              pressed={source === candidate.value}
+              onClick={() => updateSource(candidate.value)}
+            >
+              {candidate.label}
+            </FilterButton>
+          ))}
+        </FilterGroup>
         <FilterGroup label="Lọc theo danh mục">
           {categoryFilters.map((candidate) => (
             <FilterButton

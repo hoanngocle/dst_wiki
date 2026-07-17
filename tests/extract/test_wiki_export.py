@@ -80,6 +80,60 @@ class WikiExportTests(unittest.TestCase):
         self.assertIs(details["origin"]["naturallySpawned"], True)
         self.assertIs(details["destruction"]["destroyable"], False)
 
+    def test_structure_visual_candidate_is_in_published_asset_set(self):
+        append_structure_page(self.crawl)
+        import_wiki(self.database, self.crawl)
+        image_bytes = b"legacy-structure-primary"
+        image_sha = hashlib.sha256(image_bytes).hexdigest()
+        relative = Path("images/original/legacy-structure-primary.png")
+        (self.crawl / relative).write_bytes(image_bytes)
+        with sqlite3.connect(self.database) as connection:
+            raw = connection.execute(
+                "select details_json from wiki_structure_details where page_id=12"
+            ).fetchone()[0]
+            details = json.loads(raw)
+            details["visual_candidates"] = [
+                {
+                    "title": "File:Legacy Structure Primary.png",
+                    "evidence": [
+                        {
+                            "source": "https://dontstarve.wiki.gg/wiki/Ancient_Statue/DST",
+                            "locator": "revision:103",
+                        }
+                    ],
+                }
+            ]
+            connection.execute(
+                "update wiki_structure_details set details_json=? where page_id=12",
+                (json.dumps(details, sort_keys=True),),
+            )
+            connection.execute(
+                "insert into wiki_images values(?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                (
+                    "File:Legacy Structure Primary.png",
+                    300,
+                    "https://dontstarve.wiki.gg/images/Legacy_Structure_Primary.png",
+                    relative.as_posix(),
+                    "image/png",
+                    len(image_bytes),
+                    image_sha,
+                    "mediawiki-legacy-sha1",
+                    128,
+                    128,
+                    "2026-07-17T00:00:00Z",
+                    None,
+                    1,
+                ),
+            )
+
+        wiki = load_wiki_export(self.database, self.crawl)
+
+        candidate = wiki.structure_details["base_game:atrium_statue"][
+            "visual_candidates"
+        ][0]
+        self.assertEqual(candidate["src"], f"/assets/wiki/{image_sha}.png")
+        self.assertIn(image_sha + ".png", {asset.published_name for asset in wiki.assets})
+
     def test_vietnamese_wiki_summary_overrides_database_description(self):
         source = "A nugget of gold."
         (self.crawl / "summary_vi.json").write_text(

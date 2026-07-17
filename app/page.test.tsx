@@ -7,11 +7,13 @@ import itemPayload from "@/public/data/items.json";
 import Loading from "./loading";
 import Home from "./page";
 
-const items = parseItemPayload(itemPayload);
+const items = parseItemPayload(itemPayload).filter(
+  (item) => item.category !== "character",
+);
 const summary = summarizeItems(items);
 
 describe("item catalog page", () => {
-  it("renders the complete item catalog, data summary, and primary navigation", () => {
+  it("renders the non-character catalog, data summary, and primary navigation", () => {
     render(<Home />);
 
     expect(screen.getByText("Don't Starve Together")).toBeDefined();

@@ -71,6 +71,61 @@ const nightLight: ItemListEntry = {
   sprite: null,
   recipe: null,
   details: null,
+  structureDetails: {
+    origin: {
+      status: "known",
+      naturallySpawned: true,
+      renewable: null,
+      spawnCode: "nightlight",
+      sources: [],
+      respawn: null,
+      craftable: false,
+      note: "Xuất hiện tự nhiên.",
+      evidence: [{ source: "public/data/catalog.json", locator: "origin" }],
+    },
+    construction: {
+      status: "none",
+      outputCount: null,
+      ingredients: [],
+      tech: null,
+      station: null,
+      restrictions: {},
+      note: "Không thể chế tạo.",
+      evidence: [{ source: "public/data/catalog.json", locator: "construction" }],
+    },
+    functions: {
+      status: "unknown",
+      facts: [],
+      reason: "Chưa xác minh.",
+      evidence: [{ source: "public/data/catalog.json", locator: "functions" }],
+    },
+    craftables: {
+      status: "none",
+      recipes: [],
+      reason: null,
+      evidence: [{ source: "public/data/catalog.json", locator: "craftables" }],
+    },
+    destruction: {
+      status: "unknown",
+      destroyable: null,
+      tool: null,
+      work: null,
+      health: null,
+      burnable: null,
+      drops: [],
+      regeneration: null,
+      evidence: [{ source: "public/data/catalog.json", locator: "destruction" }],
+    },
+    visual: {
+      status: "unknown",
+      kind: null,
+      sprite: null,
+      image: null,
+      alternatives: [],
+      reason: "Chưa tìm thấy ảnh.",
+      evidence: [{ source: "public/data/catalog.json", locator: "visual" }],
+    },
+  },
   wiki: null,
 };
 
@@ -102,6 +157,19 @@ afterEach(() => {
 });
 
 describe("ItemDetailModal", () => {
+  it("renders the Đan Dược category label", () => {
+    render(
+      <ItemDetailModal
+        item={{ ...item, category: "pill", name: "Tụ Khí Hoàn" }}
+        itemsById={new Map()}
+        onClose={() => undefined}
+        onSelectItem={() => undefined}
+      />,
+    );
+
+    expect(screen.getByText("Đan Dược")).toBeDefined();
+  });
+
   it("renders full item details and focuses the close button", () => {
     render(<ItemDetailModal {...modalProps(item)} />);
 
@@ -113,8 +181,10 @@ describe("ItemDetailModal", () => {
     expect(dialog.className).toContain("[scrollbar-width:none]");
     expect(dialog.className).toContain("[&::-webkit-scrollbar]:hidden");
     expect(dialog.parentElement?.className).not.toContain("overflow-y-auto");
-    expect(screen.getByText("Gold Nugget")).toBeDefined();
-    expect(screen.queryByText("goldnugget")).toBeNull();
+    const englishName = screen.getByText("Gold Nugget");
+    const prefabCode = screen.getByText("goldnugget");
+    expect(prefabCode.tagName).toBe("CODE");
+    expect(englishName.nextElementSibling).toBe(prefabCode);
     expect(screen.getByLabelText("Đá, số lượng 1")).toBeDefined();
     expect(screen.getByText("Item")).toBeDefined();
     expect(screen.getByText("DST")).toBeDefined();
@@ -205,9 +275,19 @@ describe("ItemDetailModal", () => {
     render(<ItemDetailModal {...modalProps(tuTienItem)} />);
 
     expect(screen.getByRole("heading", { name: "Công thức" })).toBeDefined();
-    expect(screen.getByRole("heading", { name: "Cách sử dụng" })).toBeDefined();
+    expect(screen.getByRole("heading", { name: "Usage" })).toBeDefined();
     expect(screen.getByRole("heading", { name: "Nguồn nhận" })).toBeDefined();
     expect(screen.getAllByText("Chưa xác định từ dữ liệu mod.")).toHaveLength(3);
+  });
+
+  it("uses the complete structure renderer for structure records", () => {
+    render(<ItemDetailModal {...modalProps(nightLight)} />);
+
+    expect(screen.getByRole("heading", { name: "Xuất hiện" })).toBeDefined();
+    expect(
+      screen.getByRole("heading", { name: "Vật phẩm chế tạo tại công trình" }),
+    ).toBeDefined();
+    expect(screen.getByRole("heading", { name: "Hình ảnh" })).toBeDefined();
   });
 
   it("shows a crafting note inside the runtime recipe panel", () => {

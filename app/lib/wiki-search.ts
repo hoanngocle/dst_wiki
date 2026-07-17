@@ -69,11 +69,7 @@ export function filterItems(
   const normalizedQuery = normalizeSearchText(query);
 
   return items.filter((item) => {
-    const matchesSource =
-      source === "all" ||
-      (source === "wiki"
-        ? item.wiki !== null
-        : item.namespace === source && item.wiki === null);
+    const matchesSource = source === "all" || item.namespace === source;
     const matchesCategory = category === "all" || item.category === category;
     const matchesAvailability =
       availability === "all" ||

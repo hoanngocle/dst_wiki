@@ -15,6 +15,7 @@ def wiki_page(title: str, wikitext: str) -> dict:
             "Category:Don't Starve Together",
         ],
         "wikitext": wikitext,
+        "images": [],
         "revision": {
             "id": 20,
             "sha1": "abc",
@@ -24,6 +25,48 @@ def wiki_page(title: str, wikitext: str) -> dict:
 
 
 class WikiStructureTests(unittest.TestCase):
+    def test_uses_title_image_when_legacy_infobox_omits_visual(self):
+        page = wiki_page(
+            "Royal Tapestry",
+            "{{Object Infobox|spawnCode=mermthrone}}",
+        )
+        page["images"] = [
+            "File:Wilson Portrait.png",
+            "File:Royal_Tapestry.png",
+        ]
+
+        result = normalize_structure_page(page)
+
+        self.assertIsNotNone(result)
+        assert result is not None
+        self.assertEqual(
+            result["visual_candidates"],
+            [
+                {
+                    "title": "File:Royal_Tapestry.png",
+                    "evidence": [
+                        {
+                            "source": "https://dontstarve.wiki.gg/wiki/Royal_Tapestry",
+                            "locator": "revision:20",
+                        }
+                    ],
+                }
+            ],
+        )
+
+    def test_filters_malformed_image_candidates(self):
+        page = wiki_page(
+            "Broken Structure",
+            "{{Object Infobox|image=File:Image:Broken Structure.png|icon=128px}}",
+        )
+        page["images"] = ["File:128px", "File:Image:Broken Structure.png"]
+
+        result = normalize_structure_page(page)
+
+        self.assertIsNotNone(result)
+        assert result is not None
+        self.assertEqual(result["visual_candidates"], [])
+
     def test_normalizes_natural_indestructible_structure(self):
         result = normalize_structure_page(
             wiki_page(

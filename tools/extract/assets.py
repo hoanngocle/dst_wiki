@@ -88,7 +88,7 @@ def _fact_sort_key(fact: Fact) -> Tuple[str, str, str, str, str]:
 
 
 def index_mod_assets(mod_root: Path, version: str) -> FactBundle:
-    """Index direct Tu Tien inventory and handbook atlas pairs."""
+    """Index direct Tu Tien inventory, map, handbook, and portrait atlas pairs."""
 
     mod_root = Path(mod_root)
     inventory_root = mod_root / "images/inventoryimages"
@@ -97,8 +97,16 @@ def index_mod_assets(mod_root: Path, version: str) -> FactBundle:
         for path in sorted(inventory_root.glob("*.xml"))
     ]
     inputs.extend(
+        (path, "map_icon")
+        for path in sorted((mod_root / "images/map_icons").glob("*.xml"))
+    )
+    inputs.extend(
         (path, "handbook_image")
         for path in sorted((mod_root / "images").glob("xd_info_*.xml"))
+    )
+    inputs.extend(
+        (path, "portrait")
+        for path in sorted((mod_root / "images/avatars").glob("avatar_xd_*.xml"))
     )
     sources: List[SourceRef] = []
     facts: List[Fact] = []
@@ -151,10 +159,13 @@ def index_mod_assets(mod_root: Path, version: str) -> FactBundle:
             }
             if available:
                 payload["texture_sha256"] = _sha256(texture_path)
+            prefab_id = PurePosixPath(element).stem.lower()
+            if asset_type == "portrait" and prefab_id.startswith("avatar_"):
+                prefab_id = prefab_id[len("avatar_") :]
             facts.append(
                 Fact(
                     "asset",
-                    EntityKey("tu_tien", PurePosixPath(element).stem.lower()),
+                    EntityKey("tu_tien", prefab_id),
                     payload,
                     source,
                     1.0 if available else 0.7,

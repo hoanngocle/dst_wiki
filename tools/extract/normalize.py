@@ -80,6 +80,18 @@ def _choose(candidates: Sequence[_Candidate]) -> _Candidate:
     return max(candidates, key=lambda candidate: fact_rank(candidate.fact))
 
 
+def _choose_entity_type(candidates: Sequence[_Candidate]) -> _Candidate:
+    """Prefer an observed classification over a registry-only unknown marker."""
+
+    return max(
+        candidates,
+        key=lambda candidate: (
+            _entity_type(candidate.fact.payload.get("entity_type")) != "unknown",
+            fact_rank(candidate.fact),
+        ),
+    )
+
+
 def _choose_description(candidates: Sequence[_Candidate]) -> _Candidate:
     type_priority = {"recipe": 1, "generic": 2, "character_profile": 3}
     return max(
@@ -348,7 +360,7 @@ def normalize(bundles: Sequence[FactBundle]) -> NormalizedCatalog:
             evidence_record[candidate.index] = ("description", record_id)
 
     for key, group in entity_type_groups.items():
-        winner = _choose(group)
+        winner = _choose_entity_type(group)
         selected[winner.index] = True
         chosen_types[key] = _entity_type(winner.fact.payload.get("entity_type"))
         _add_conflict(
@@ -650,6 +662,21 @@ def normalize(bundles: Sequence[FactBundle]) -> NormalizedCatalog:
     for semantic_key, group in sorted(semantic_groups.items()):
         kind, semantic = semantic_key
         row = dict(semantic_rows[semantic_key])
+        if (
+            kind == "acquisition"
+            and len(group) > 1
+            and row.get("source_type") == "drop"
+            and row.get("chance") == 1
+            and all(
+                candidate.fact.source.kind == "runtime_probe"
+                and ":loot:" in candidate.fact.locator
+                for candidate in group
+            )
+        ):
+            for count_field in ("min_count", "max_count"):
+                count = row.get(count_field)
+                if isinstance(count, (int, float)) and not isinstance(count, bool):
+                    row[count_field] = count * len(group)
         record_id = _identifier({"kind": kind, "row": row})
         if kind == "acquisition":
             row["acquisition_id"] = record_id

@@ -22,6 +22,11 @@ class WikiMappingTests(unittest.TestCase):
                     "prefab_id": "fish_raw_small_cooked",
                     "name_en": "Cooked Fish Morsel",
                 },
+                {
+                    "namespace": "base_game",
+                    "prefab_id": "lightningrod",
+                    "name_en": None,
+                },
             ]
         )
 
@@ -46,6 +51,20 @@ class WikiMappingTests(unittest.TestCase):
 
         self.assertEqual(decision.entity_key, "base_game:fish_raw_small")
         self.assertEqual(decision.method, "english_name")
+
+    def test_unique_normalized_spawn_code_maps_missing_separator_prefab(self):
+        decision = map_page(
+            {
+                "page_id": 7,
+                "title": "Lightning Rod/DST",
+                "wikitext": '|spawnCode = "lightning_rod"',
+            },
+            self.index,
+        )
+
+        self.assertEqual(decision.entity_key, "base_game:lightningrod")
+        self.assertEqual(decision.method, "spawn_code_identity")
+        self.assertEqual(decision.confidence, 0.98)
 
     def test_dst_suffix_is_a_canonical_alias(self):
         decision = map_page(

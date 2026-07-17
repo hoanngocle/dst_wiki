@@ -141,7 +141,7 @@ describe("ItemResult", () => {
   it("presents standalone wiki pages without leaking a synthetic prefab id", () => {
     render(<ItemResult item={standaloneWikiItem} query="" onSelectItem={vi.fn()} />);
 
-    expect(screen.getByText("Wiki")).toBeDefined();
+    expect(screen.getByText("DST")).toBeDefined();
     expect(screen.getByText("Wiki item")).toBeDefined();
     expect(screen.queryByText("wiki-100736")).toBeNull();
   });
@@ -164,7 +164,7 @@ describe("ItemResult", () => {
       />,
     );
 
-    expect(screen.getByText("Wiki")).toBeDefined();
+    expect(screen.getByText("DST")).toBeDefined();
     expect(screen.getByText("goldnugget")).toBeDefined();
   });
 });

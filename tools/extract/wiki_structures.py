@@ -170,17 +170,42 @@ def _function_facts(
     return [facts[key] for key in sorted(facts)]
 
 
+def _valid_image_title(title: str) -> bool:
+    folded = title.casefold()
+    if folded.startswith("file:image:"):
+        return False
+    basename = title.split(":", 1)[-1].strip()
+    if re.fullmatch(r"\d+px(?:\.[a-z0-9]+)?", basename, re.I):
+        return False
+    return bool(re.search(r"\.(?:png|jpe?g|gif|webp)$", basename, re.I))
+
+
 def _visual_candidates(
-    fields: Mapping[str, str], evidence: List[JsonObject]
+    page: Mapping[str, Any], fields: Mapping[str, str], evidence: List[JsonObject]
 ) -> List[JsonObject]:
-    values = []
+    values: List[JsonObject] = []
     for key in ("image", "icon"):
         title = _clean(fields.get(key))
         if not title:
             continue
         if not title.casefold().startswith("file:"):
             title = "File:" + title
-        values.append({"title": title, "evidence": evidence})
+        if _valid_image_title(title):
+            values.append({"title": title, "evidence": evidence})
+
+    if not values:
+        page_title = str(page.get("title") or "").replace("_", " ").strip()
+        expected = f"File:{page_title}.png".replace("_", " ").casefold()
+        images = page.get("images")
+        if isinstance(images, list):
+            for raw_title in images:
+                if not isinstance(raw_title, str):
+                    continue
+                title = raw_title if raw_title.casefold().startswith("file:") else "File:" + raw_title
+                comparable = title.replace("_", " ").casefold()
+                if comparable == expected and _valid_image_title(title):
+                    values.append({"title": title, "evidence": evidence})
+                    break
     unique = {value["title"]: value for value in values}
     return [unique[key] for key in sorted(unique)]
 
@@ -242,5 +267,5 @@ def normalize_structure_page(
             "regeneration": "Có" if "respawn" in plain_text else None,
             "evidence": evidence,
         },
-        "visual_candidates": _visual_candidates(fields, evidence),
+        "visual_candidates": _visual_candidates(page, fields, evidence),
     }

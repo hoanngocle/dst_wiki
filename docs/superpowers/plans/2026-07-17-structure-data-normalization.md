@@ -723,14 +723,14 @@ Run:
 ```bash
 jq '[.items[] | select(.category=="structure" and .structureDetails==null)] | length' public/data/items.json
 jq '[.items[] | select(.namespace=="base_game" and .wiki!=null)] | length' public/data/items.json
-jq '[.items[] | select(.category=="structure" and .sprite==null and .structureDetails.visual.status=="known")] | length' public/data/items.json
+jq '[.items[] | select(.category=="structure" and .structureDetails.visual.status=="known" and .structureDetails.visual.sprite==null and .structureDetails.visual.image==null)] | length' public/data/items.json
 jq '.summary' data/generated/structure-icon-audit.json
 sqlite3 data/generated/wiki.sqlite 'pragma foreign_key_check;'
 ```
 
 Expected: zero structures without details; Wiki-backed records are non-zero and
-all have the DST namespace; no visual claims `known` while the published sprite
-is null; audit counts balance; foreign-key output is empty.
+all have the DST namespace; no visual claims `known` without either a sprite or
+resolved image; audit counts balance; foreign-key output is empty.
 
 - [ ] **Step 4: Run complete verification**
 

@@ -217,6 +217,24 @@ class AssetTests(unittest.TestCase):
             mod_root = Path(tmp) / "mod"
             inventory = mod_root / "images/inventoryimages"
             inventory.mkdir(parents=True)
+            avatars = mod_root / "images/avatars"
+            avatars.mkdir(parents=True)
+            map_icons = mod_root / "images/map_icons"
+            map_icons.mkdir(parents=True)
+            (map_icons / "xd_spiderden.xml").write_text(
+                '<Atlas><Texture filename="xd_spiderden.tex"/><Elements>'
+                '<Element name="xd_spiderden.tex" u1="0" u2="1" v1="0" v2="1"/>'
+                "</Elements></Atlas>",
+                encoding="utf-8",
+            )
+            (map_icons / "xd_spiderden.tex").write_bytes(b"map-icon")
+            (avatars / "avatar_xd_hero.xml").write_text(
+                '<Atlas><Texture filename="avatar_xd_hero.tex"/><Elements>'
+                '<Element name="avatar_xd_hero.tex" u1="0" u2="1" v1="0" v2="1"/>'
+                "</Elements></Atlas>",
+                encoding="utf-8",
+            )
+            (avatars / "avatar_xd_hero.tex").write_bytes(b"portrait")
             (mod_root / "images/xd_info_2.xml").write_text(
                 '<Atlas><Texture filename="xd_info_2.tex"/><Elements>'
                 '<Element name="xd_info_2.tex" u1="0" u2="1" v1="0" v2="1"/>'
@@ -252,6 +270,21 @@ class AssetTests(unittest.TestCase):
                 [fact.subject.prefab_id for fact in handbook],
                 ["xd_info_1", "xd_info_2"],
             )
+            portrait = next(
+                fact
+                for fact in first.facts
+                if fact.payload.get("asset_type") == "portrait"
+            )
+            self.assertEqual(portrait.subject.prefab_id, "xd_hero")
+            self.assertEqual(portrait.payload["element"], "avatar_xd_hero.tex")
+            map_icon = next(
+                fact
+                for fact in first.facts
+                if fact.payload.get("asset_type") == "map_icon"
+            )
+            self.assertEqual(map_icon.subject.prefab_id, "xd_spiderden")
+            self.assertEqual(map_icon.payload["element"], "xd_spiderden.tex")
+            self.assertTrue(map_icon.payload["available"])
             self.assertTrue(all(fact.payload["available"] for fact in handbook))
             inventory_fact = next(
                 fact

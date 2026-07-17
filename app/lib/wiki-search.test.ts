@@ -161,14 +161,15 @@ describe("filterItems", () => {
     },
   );
 
-  it("filters by mutually exclusive user-facing source", () => {
-    expect(filterItems(items, "", "wiki", "all", "all").map((item) => item.id)).toEqual([
-      "base_game:goldnugget",
-      "wiki:100736",
-    ]);
+  it("groups every Wiki-backed DST record under DST", () => {
     expect(
       filterItems(items, "", "base_game", "all", "all").map((item) => item.id),
-    ).toEqual(["base_game:log", "base_game:deerclops"]);
+    ).toEqual([
+      "base_game:goldnugget",
+      "base_game:log",
+      "base_game:deerclops",
+      "wiki:100736",
+    ]);
     expect(
       filterItems(items, "", "tu_tien", "all", "all").map((item) => item.id),
     ).toEqual(["tu_tien:xd_sword"]);

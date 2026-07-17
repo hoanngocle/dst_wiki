@@ -9,7 +9,7 @@ Tài liệu này là runbook cho pipeline offline `static extractor -> runtime e
 - `mod/3731181944` là bản dịch DST gốc, hiện tại version `2026.1.3`.
 - Không sửa ba thư mục mod trên. Nếu cần cập nhật, thay cả bản tải riêng rồi chạy lại toàn bộ pipeline.
 - Nhập đúng một prefab `base_game` cho mỗi file `.lua` trực tiếp dưới `scripts/prefabs/`; ID là tên file bỏ đuôi và chuyển lowercase. Không mở rộng các lời gọi `Prefab(...)` phụ trong cùng file.
-- Entity base-game chỉ dùng để giữ liên kết phụ thuộc vẫn nằm trong audit database với type `dependency`, nhưng không xuất vào payload tìm kiếm.
+- Entity base-game phụ thuộc vẫn nằm trong audit database với type `dependency`. Dependency inventory chỉ được xuất như item DST khi một công thức đã publish tham chiếu tới nó, để mọi nguyên liệu trong modal có ID resolve được; dependency không được tham chiếu vẫn không xuất hiện trong payload tìm kiếm.
 - Fact game canonical chỉ lấy từ ba mod cục bộ, archive game đã snapshot và runtime probe cục bộ. Crawl chọn lọc `dontstarve.wiki.gg` được lưu trong các bảng `wiki_*` riêng để bổ sung bài viết, ảnh và công thức; dữ liệu Wiki không được ghi đè fact game có confidence cao hơn.
 
 Kiểm tra version trước mỗi lần refresh:
@@ -96,6 +96,30 @@ python3 -m tools.extract.cli export
 
 `import-wiki` mặc định đọc `data/crawled/dontstarve-items` và cập nhật transactionally các bảng Wiki trong `data/generated/wiki.sqlite`. Chạy lại cùng manifest không nhân đôi record. Import báo số page, recipe, ingredient, image, mapping và page chưa map; lỗi checksum/foreign key không làm mất batch thành công trước đó.
 
+### Làm mới và duyệt dữ liệu Công trình
+
+Khi crawl Wiki và database game/mod đã sẵn sàng, chạy đúng vòng đời sau để tái tạo phần Công trình cho cả DST và Tu Tiên:
+
+```bash
+python3 -m tools.extract.cli import-wiki
+python3 -m tools.extract.cli export
+python3 -m tools.extract.cli validate
+jq '.summary, .rows[] | select(.action != "keep")' \
+  data/generated/structure-icon-audit.json
+```
+
+Mỗi công trình publish phải có `structureDetails` gồm nguồn xuất hiện, công thức xây dựng, công dụng, toàn bộ vật phẩm chế tạo tại công trình, phá huỷ/thu hồi và visual. Wiki là provenance/bài viết, không còn là group hiển thị: record Wiki hợp lệ được publish trong nhóm DST; Tu Tiên giữ namespace riêng.
+
+`data/generated/structure-icon-audit.json` ghi đúng một row cho mỗi công trình vốn không có inventory icon trước khi resolve:
+
+- `natural_structure`: công trình thật tự sinh trong thế giới, không thể chế tạo; giữ lại và hiển thị ghi chú rõ ràng.
+- `craftable_wiki_visual`: công trình chế tạo được, không có inventory icon local nhưng đã resolve đúng ảnh Wiki; giữ lại.
+- `world_asset_only`: công trình thật chỉ có world/map asset phù hợp; giữ lại với lý do và evidence.
+- `technical_prefab`: wrapper, spawner, helper, FX hoặc prefab kỹ thuật; loại khỏi payload công khai nhưng giữ nguyên raw row, SQLite provenance và audit evidence.
+- `unverified`: lookup một lượt không xác lập được identity chính xác; loại khỏi payload công khai, không đoán dữ liệu.
+
+Action `repair` phải về 0 trước khi bàn giao. Visual ưu tiên inventory/build icon, sau đó ảnh Wiki chính xác, cuối cùng world/map asset xác minh được; pipeline không tạo ảnh giả hoặc dùng texture không liên quan. Công trình tự sinh hợp lệ có thể không có inventory icon, vì vậy trường hợp này không phải lỗi nếu audit, origin note và visual status thống nhất.
+
 `all` không gọi decoder ảnh ngoài. Sau khi refresh JSON, publish các texture web bằng một bản `ktech` đã được review và cài rõ ràng:
 
 ```bash
@@ -113,7 +137,7 @@ Lệnh này chỉ đọc texture được `item-textures.json` tham chiếu, ver
 - `archive_checksum_errors`: ZIP thực tế, manifest và SHA lưu trong database không khớp. Đây là hard failure; snapshot lại nguyên archive.
 - `wiki_urls`: URL phát hiện trong source/evidence/manifest của fact game canonical. Đây vẫn là hard failure để ngăn fact game vô tình lấy từ web; các bảng `wiki_*` có provenance riêng và không nằm trong phép kiểm tra này.
 - `runtime_coverage_errors`: mỗi entity `tu_tien` phải có đúng một row cho từng category runtime bắt buộc. Category thiếu, ngoài allowlist hoặc bị lặp đều là hard failure.
-- `prefab_export_coverage_errors`: tập ID game canonical `base_game` trong `public/data/items.json` phải bằng chính xác tập stem của file trực tiếp trong `scripts/prefabs/`. Entry độc lập có ID `wiki:<page_id>` được bỏ qua; ID game thiếu hoặc thừa vẫn là hard failure.
+- `prefab_export_coverage_errors`: tập prefab game canonical phải phủ tập stem của file trực tiếp trong `scripts/prefabs/`, trừ technical prefab đã audit/exclude. Entry `wiki:<page_id>` được bỏ qua; dependency inventory chỉ được phép xuất thêm khi một công thức publish thực sự tham chiếu tới nó. ID game thiếu hoặc ID thừa không có lý do vẫn là hard failure.
 - `conflicts`: nhiều fact khác nhau cho cùng field. Normalizer vẫn chọn giá trị theo ưu tiên source/confidence, giữ mọi candidate và đánh dấu evidence thắng; conflict là warning cần review, không bị ghi đè im lặng.
 - `runtime_errors`: lỗi probe theo prefab/locator. Chúng vẫn hiện cả khi pipeline có thể hoàn tất; review trước khi coi field liên quan là đầy đủ.
 - `low_confidence_fields`: evidence có confidence `< 0.7`, gồm record/source/locator và trạng thái `selected`. Đây là danh sách cần manual review, đồng thời sinh warning `low_confidence_fields_present`.
@@ -127,12 +151,13 @@ Lệnh này chỉ đọc texture được `item-textures.json` tham chiếu, ver
 - `data/generated/wiki.sqlite`: database chuẩn hóa có entities, recipes, ingredients, acquisition, stats/effects/relations/assets, evidence, conflicts, extraction errors và các bảng `wiki_import_runs`, `wiki_pages`, `wiki_recipes`, `wiki_recipe_ingredients`, `wiki_images`, `wiki_entity_mappings`. Đây là nguồn audit/provenance đầy đủ.
 - `public/data/catalog.json`: JSON entity đã nest, sắp xếp ổn định; là input chính cho tìm kiếm và trang chi tiết của wiki tương lai.
 - `public/data/assets.json`: asset map và provenance cho icon/atlas; là input asset của wiki tương lai.
-- `public/data/items.json`: payload schema version 4 cho màn tìm kiếm Prefabs, gồm category, tên, công thức runtime/Wiki, `craftingNote`, sprite descriptor và metadata Wiki gọn. Entity map chắc chắn được enrich tại ID game cũ; page chưa map dùng ID `wiki:<page_id>`. Namespace Tu Tiên chỉ công bố entity có tên tiếng Việt. `craftingNote` chỉ là ghi chú trong menu chế tạo, không được dùng để suy đoán nguyên liệu hoặc số lượng.
+- `public/data/items.json`: payload schema version 6 cho màn tìm kiếm Prefabs, gồm category, tên, công thức runtime/Wiki, `craftingNote`, sprite descriptor, metadata Wiki và `structureDetails`. Entity map chắc chắn được enrich tại ID game cũ; page chưa map dùng ID `wiki:<page_id>` nhưng luôn có namespace `base_game` để xuất hiện trong nhóm DST. Namespace Tu Tiên chỉ công bố entity có tên tiếng Việt. `craftingNote` chỉ là ghi chú trong menu chế tạo, không được dùng để suy đoán nguyên liệu hoặc số lượng.
 - `public/data/wiki/pages/<page_id>.json`: detail article đã sanitize và loại navigation/template lặp; HTML/wikitext/plain text gốc đầy đủ vẫn nằm trong SQLite.
 - `public/assets/wiki/*`: ảnh gốc được detail/list tham chiếu, đặt tên content-addressed theo SHA-256.
 - `data/generated/item-textures.json`: manifest texture tối thiểu cần decode cho `items.json`.
 - `public/assets/game/*.png`: texture trình duyệt dùng được, tên file theo SHA-256 và được tạo bởi `publish-assets`.
 - `data/generated/coverage.json`: quality gate và danh sách việc cần review; không phải payload hiển thị chính.
+- `data/generated/structure-icon-audit.json`: audit deterministic cho toàn bộ công trình vốn thiếu icon, gồm classification, reason, evidence và action `keep`/`repair`/`exclude`.
 - `data/raw/mod_static.json`, `data/raw/runtime.json`, `data/raw/base_game.json`: raw facts để tái hiện normalize. Runtime JSON, source ZIP và `data/runtime/` là local-only.
 
 ## 6. Kiểm tra trước khi bàn giao

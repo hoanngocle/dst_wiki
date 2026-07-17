@@ -4,7 +4,7 @@ import { parseItemPayload } from "@/app/lib/item-catalog";
 import { summarizeItems } from "@/app/lib/wiki-search";
 import itemPayload from "@/public/data/items.json";
 
-const items = parseItemPayload(itemPayload);
+const items = parseItemPayload(itemPayload).filter((item) => item.category !== "character");
 const summary = summarizeItems(items);
 
 export default function Home() {
@@ -16,7 +16,7 @@ export default function Home() {
           <div className="grid items-end gap-7 lg:grid-cols-[minmax(0,1fr)_minmax(420px,0.72fr)] lg:gap-12">
             <div>
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-[#2e5fb3]">
-                DST, Tu Tiên và Wiki
+                DST và Tu Tiên
               </p>
               <h1 className="max-w-2xl text-4xl font-semibold leading-[1.04] tracking-[-0.04em] text-[#14233b] sm:text-5xl">
                 Danh mục vật phẩm

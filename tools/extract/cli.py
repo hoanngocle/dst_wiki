@@ -42,6 +42,7 @@ ITEMS_JSON = Path("public/data/items.json")
 ITEM_TEXTURES = Path("data/generated/item-textures.json")
 ITEM_DETAILS_OVERRIDES = Path("data/manual/tu_tien_item_details.json")
 ITEM_DETAILS_REPORT = Path("data/generated/tu-tien-item-details-report.json")
+STRUCTURE_ICON_AUDIT = Path("data/generated/structure-icon-audit.json")
 WEB_ASSETS = Path("public/assets/game")
 MOD_TEXT = Path("docs/mod-text")
 WIKI_CRAWL = Path("data/crawled/dontstarve-items")
@@ -133,6 +134,9 @@ def build_parser() -> argparse.ArgumentParser:
         "--detail-overrides", type=Path, default=ITEM_DETAILS_OVERRIDES
     )
     export.add_argument("--detail-report", type=Path, default=ITEM_DETAILS_REPORT)
+    export.add_argument(
+        "--structure-audit", type=Path, default=STRUCTURE_ICON_AUDIT
+    )
     translate_wiki = sub.add_parser("translate-wiki")
     translate_wiki.add_argument(
         "--pages", type=Path, default=Path("public/data/wiki/pages")
@@ -165,6 +169,9 @@ def build_parser() -> argparse.ArgumentParser:
     validate.add_argument("--manifest", type=Path, default=GAME_SOURCES / "manifest.json")
     validate.add_argument("--scripts", type=Path, default=GAME_SOURCES / "scripts.zip")
     validate.add_argument("--items", type=Path, default=ITEMS_JSON)
+    validate.add_argument(
+        "--structure-audit", type=Path, default=STRUCTURE_ICON_AUDIT
+    )
     all_stages = sub.add_parser("all")
     all_stages.add_argument("--static", type=Path, default=STATIC_FACTS)
     return parser
@@ -261,6 +268,7 @@ def _export_stage(
     textures: Path = ITEM_TEXTURES,
     detail_overrides: Path = ITEM_DETAILS_OVERRIDES,
     detail_report: Path = ITEM_DETAILS_REPORT,
+    structure_audit: Path = STRUCTURE_ICON_AUDIT,
 ) -> None:
     export_catalog(database, catalog, assets)
     export_items(
@@ -271,8 +279,12 @@ def _export_stage(
         textures,
         detail_overrides_path=detail_overrides,
         detail_report_path=detail_report,
+        structure_audit_path=structure_audit,
     )
-    print(f"{catalog} {assets} {items} {textures} {detail_report}")
+    print(
+        f"{catalog} {assets} {items} {textures} {detail_report} "
+        f"{structure_audit}"
+    )
 
 
 def _import_wiki_stage(
@@ -308,8 +320,9 @@ def _validate_stage(
     manifest: Path = GAME_SOURCES / "manifest.json",
     scripts: Path = GAME_SOURCES / "scripts.zip",
     items: Path = ITEMS_JSON,
+    structure_audit: Path = STRUCTURE_ICON_AUDIT,
 ):
-    report = validate_catalog(database, manifest, scripts, items)
+    report = validate_catalog(database, manifest, scripts, items, structure_audit)
     write_validation_report(coverage, report)
     print(
         f"{coverage} tu_tien={report['entity_counts'].get('tu_tien', 0)} "
@@ -382,6 +395,7 @@ def main() -> int:
             args.textures,
             args.detail_overrides,
             args.detail_report,
+            args.structure_audit,
         )
         return 0
     if args.command == "translate-wiki":
@@ -412,7 +426,12 @@ def main() -> int:
         return 0
     if args.command == "validate":
         report = _validate_stage(
-            args.database, args.coverage, args.manifest, args.scripts, args.items
+            args.database,
+            args.coverage,
+            args.manifest,
+            args.scripts,
+            args.items,
+            args.structure_audit,
         )
         return 1 if report["hard_failures"] else 0
     if args.command == "all":

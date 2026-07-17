@@ -5,6 +5,7 @@ import re
 from typing import Any, Dict, List, Optional, Set
 
 from tools.extract.contracts import EntityKey, Fact, FactBundle, SourceRef
+from tools.extract.exclusions import NON_ENTITY_PREFAB_IDS
 
 
 RUNTIME_SCHEMA_VERSION = 2
@@ -209,19 +210,24 @@ def load_runtime_bundle(
     )
     facts: List[Fact] = []
 
-    targets = [
+    raw_targets = [
         _require_string(value, f"targets[{index}]").lower()
         for index, value in enumerate(payload["targets"])
     ]
-    if targets != sorted(set(targets)):
+    if raw_targets != sorted(set(raw_targets)):
         raise ValueError("targets must be sorted and unique")
     if expected_targets is not None:
-        missing_targets = sorted(set(expected_targets) - set(targets))
+        missing_targets = sorted(set(expected_targets) - set(raw_targets))
         if missing_targets:
             raise ValueError(
                 "runtime targets are missing static allowlist entries: "
                 f"{missing_targets}"
             )
+    targets = [
+        prefab_id
+        for prefab_id in raw_targets
+        if prefab_id not in NON_ENTITY_PREFAB_IDS
+    ]
     mod_prefabs = set(targets)
     for index, prefab_id in enumerate(targets):
         facts.append(
@@ -239,6 +245,8 @@ def load_runtime_bundle(
     for index, raw_recipe in enumerate(payload["recipes"]):
         recipe = _require_object(raw_recipe, f"recipes[{index}]")
         product = _require_string(recipe.get("product"), f"recipes[{index}].product").lower()
+        if product in NON_ENTITY_PREFAB_IDS:
+            continue
         if product not in mod_prefabs:
             raise ValueError(f"recipes[{index}].product is not in targets")
         ingredients = _validate_cost_rows(
@@ -357,6 +365,8 @@ def load_runtime_bundle(
         prefab_id = _require_string(
             prefab.get("prefab"), f"prefabs[{index}].prefab"
         ).lower()
+        if prefab_id in NON_ENTITY_PREFAB_IDS:
+            continue
         if prefab_id not in mod_prefabs:
             raise ValueError(f"prefabs[{index}].prefab is not in targets")
         entity_type = prefab.get("entity_type", "unknown")
@@ -524,6 +534,8 @@ def load_runtime_bundle(
         prefab_id = _require_string(
             row.get("prefab"), f"coverage[{index}].prefab"
         ).lower()
+        if prefab_id in NON_ENTITY_PREFAB_IDS:
+            continue
         if prefab_id not in mod_prefabs:
             raise ValueError(f"coverage[{index}].prefab is not in targets")
         category = _require_string(
@@ -608,6 +620,8 @@ def load_runtime_bundle(
         record = _require_object(error, f"errors[{index}]")
         for field in ("code", "prefab", "detail"):
             _require_string(record.get(field), f"errors[{index}].{field}")
+        if str(record["prefab"]).lower() in NON_ENTITY_PREFAB_IDS:
+            continue
         errors.append(dict(record))
     errors.sort(key=lambda value: json.dumps(value, ensure_ascii=False, sort_keys=True))
     return FactBundle(FACT_SCHEMA_VERSION, [source], facts, errors)

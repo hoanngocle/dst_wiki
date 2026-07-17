@@ -1,3 +1,4 @@
+import json
 import logging
 from pathlib import Path
 from typing import Any, Callable, Dict, Mapping, Optional, Sequence
@@ -12,6 +13,7 @@ from tools.crawl_wiki.models import CrawlSummary, SCHEMA_VERSION
 from tools.crawl_wiki.parser import normalize_page
 from tools.crawl_wiki.recipes import extract_recipes
 from tools.crawl_wiki.storage import CrawlStorage, _utc_now
+from tools.extract.wiki_structures import normalize_structure_page
 
 
 LOGGER = logging.getLogger(__name__)
@@ -156,10 +158,16 @@ class WikiCrawler:
             except (ClientError, ValueError) as error:
                 if part_path is not None:
                     part_path.unlink(missing_ok=True)
-                self.storage.fail_image(
-                    title, self._error_record("image", title, error)
-                )
-                LOGGER.error("failed image title=%s: %s", title, error)
+                if isinstance(error, ClientError) and not error.retryable:
+                    self.storage.skip_image(title, str(error))
+                    LOGGER.warning(
+                        "skipped unavailable image title=%s: %s", title, error
+                    )
+                else:
+                    self.storage.fail_image(
+                        title, self._error_record("image", title, error)
+                    )
+                    LOGGER.error("failed image title=%s: %s", title, error)
 
     def _error_record(
         self, stage: str, subject: str, error: Exception
@@ -209,8 +217,48 @@ class SelectiveItemsCrawler(WikiCrawler):
         self._discover_items()
         self._process_selected_pages()
         if not self.skip_images:
+            self._enqueue_saved_structure_images()
             self._process_images()
         return self.storage.finalize(options)
+
+    def _enqueue_saved_structure_images(self) -> int:
+        """Reconcile normalized structure visuals for fresh and resumed crawls."""
+
+        path = self.storage.output / "pages.jsonl"
+        if not path.is_file():
+            return 0
+        titles = set()
+        with path.open(encoding="utf-8") as source:
+            for line_number, raw in enumerate(source, start=1):
+                if not raw.strip():
+                    continue
+                try:
+                    page = json.loads(raw)
+                except json.JSONDecodeError as error:
+                    raise ValueError(
+                        "invalid saved page at {}:{}".format(path, line_number)
+                    ) from error
+                if not isinstance(page, dict):
+                    raise ValueError(
+                        "saved page at {}:{} must be an object".format(
+                            path, line_number
+                        )
+                    )
+                details = normalize_structure_page(page)
+                candidates = (
+                    details.get("visual_candidates")
+                    if isinstance(details, dict)
+                    else None
+                )
+                if not isinstance(candidates, list):
+                    continue
+                titles.update(
+                    candidate["title"]
+                    for candidate in candidates
+                    if isinstance(candidate, dict)
+                    and isinstance(candidate.get("title"), str)
+                )
+        return self.storage.enqueue_images(titles)
 
     def _discover_items(self) -> None:
         if self.storage.is_item_discovery_complete():

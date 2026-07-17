@@ -248,15 +248,34 @@ def _urls(values: Iterable[Dict[str, str]]) -> List[Dict[str, str]]:
 
 
 def _prefab_export_coverage(
-    scripts_path: Optional[Path], items_path: Optional[Path]
+    scripts_path: Optional[Path],
+    items_path: Optional[Path],
+    structure_audit_path: Optional[Path] = None,
 ) -> List[Dict[str, Any]]:
     if scripts_path is None or items_path is None:
         return []
     with ZipFile(Path(scripts_path)) as archive:
         expected = set(discover_prefab_modules(archive.namelist()))
     payload = json.loads(Path(items_path).read_text(encoding="utf-8"))
-    if payload.get("schema_version") != 4 or not isinstance(payload.get("items"), list):
+    if payload.get("schema_version") != 6 or not isinstance(payload.get("items"), list):
         return [{"code": "invalid_prefab_export_payload"}]
+    if structure_audit_path is not None:
+        audit = json.loads(Path(structure_audit_path).read_text(encoding="utf-8"))
+        rows = audit.get("rows") if isinstance(audit, dict) else None
+        if (
+            not isinstance(audit, dict)
+            or audit.get("schema_version") != 1
+            or not isinstance(rows, list)
+        ):
+            return [{"code": "invalid_structure_audit_payload"}]
+        expected -= {
+            row.get("prefabId")
+            for row in rows
+            if isinstance(row, dict)
+            and row.get("namespace") == "base_game"
+            and row.get("action") == "exclude"
+            and isinstance(row.get("prefabId"), str)
+        }
     actual = {
         item.get("prefabId")
         for item in payload["items"]
@@ -265,9 +284,238 @@ def _prefab_export_coverage(
         and not str(item.get("id", "")).startswith("wiki:")
         and isinstance(item.get("prefabId"), str)
     }
+    referenced_dependencies = set()
+
+    def collect_recipe_dependencies(value: Any) -> None:
+        if isinstance(value, list):
+            for entry in value:
+                collect_recipe_dependencies(entry)
+            return
+        if not isinstance(value, dict):
+            return
+        ingredients = value.get("ingredients")
+        if isinstance(ingredients, list):
+            for ingredient in ingredients:
+                ingredient_id = (
+                    ingredient.get("id")
+                    if isinstance(ingredient, dict)
+                    else None
+                )
+                if isinstance(ingredient_id, str) and ingredient_id.startswith(
+                    "base_game:"
+                ):
+                    referenced_dependencies.add(ingredient_id.split(":", 1)[1])
+        for nested in value.values():
+            collect_recipe_dependencies(nested)
+
+    collect_recipe_dependencies(payload["items"])
     missing = sorted(expected - actual)
-    unexpected = sorted(actual - expected)
+    unexpected = sorted(actual - expected - referenced_dependencies)
     return [{"missing": missing, "unexpected": unexpected}] if missing or unexpected else []
+
+
+def _structure_export_errors(
+    items_path: Optional[Path], structure_audit_path: Optional[Path]
+) -> List[Dict[str, Any]]:
+    if items_path is None or structure_audit_path is None:
+        return []
+    payload = json.loads(Path(items_path).read_text(encoding="utf-8"))
+    audit = json.loads(Path(structure_audit_path).read_text(encoding="utf-8"))
+    items = payload.get("items") if isinstance(payload, dict) else None
+    rows = audit.get("rows") if isinstance(audit, dict) else None
+    if (
+        not isinstance(payload, dict)
+        or payload.get("schema_version") != 6
+        or not isinstance(items, list)
+    ):
+        return [{"code": "invalid_structure_items_payload"}]
+    if (
+        not isinstance(audit, dict)
+        or audit.get("schema_version") != 1
+        or not isinstance(rows, list)
+    ):
+        return [{"code": "invalid_structure_audit_payload"}]
+
+    errors: List[Dict[str, Any]] = []
+    items_by_id = {
+        item.get("id"): item
+        for item in items
+        if isinstance(item, dict) and isinstance(item.get("id"), str)
+    }
+    audit_by_id: Dict[str, Dict[str, Any]] = {}
+    for row in rows:
+        if not isinstance(row, dict) or not isinstance(row.get("id"), str):
+            errors.append({"code": "invalid_structure_audit_row"})
+            continue
+        row_id = row["id"]
+        if row_id in audit_by_id:
+            errors.append({"code": "duplicate_structure_audit_row", "id": row_id})
+        audit_by_id[row_id] = row
+        if row.get("action") not in {"keep", "repair", "exclude"}:
+            errors.append({"code": "invalid_structure_audit_action", "id": row_id})
+        if row.get("classification") not in {
+            "natural_structure",
+            "craftable_missing_asset",
+            "craftable_wiki_visual",
+            "world_asset_only",
+            "technical_prefab",
+            "unverified",
+        }:
+            errors.append(
+                {"code": "invalid_structure_audit_classification", "id": row_id}
+            )
+        reason = row.get("reason")
+        if not isinstance(reason, str) or not reason.strip():
+            errors.append({"code": "invalid_structure_audit_reason", "id": row_id})
+        evidence = row.get("evidence")
+        if not isinstance(evidence, list) or not evidence:
+            errors.append(
+                {"code": "invalid_structure_audit_evidence", "id": row_id}
+            )
+
+    valid_statuses = {"known", "none", "unknown"}
+    required_sections = (
+        "origin",
+        "construction",
+        "functions",
+        "craftables",
+        "destruction",
+        "visual",
+    )
+    for item_id in sorted(items_by_id):
+        item = items_by_id[item_id]
+        details = item.get("structureDetails")
+        if item.get("namespace") == "wiki":
+            errors.append({"code": "wiki_source_group_not_removed", "id": item_id})
+        if item.get("category") != "structure":
+            if details is not None:
+                errors.append(
+                    {"code": "non_structure_has_structure_details", "id": item_id}
+                )
+            continue
+        if not isinstance(details, dict):
+            errors.append({"code": "missing_structure_details", "id": item_id})
+            continue
+        for section_name in required_sections:
+            section = details.get(section_name)
+            if not isinstance(section, dict):
+                errors.append(
+                    {
+                        "code": "missing_structure_detail_section",
+                        "id": item_id,
+                        "section": section_name,
+                    }
+                )
+            elif section.get("status") not in valid_statuses:
+                errors.append(
+                    {
+                        "code": "invalid_structure_detail_status",
+                        "id": item_id,
+                        "section": section_name,
+                    }
+                )
+        origin = details.get("origin")
+        construction = details.get("construction")
+        visual = details.get("visual")
+        craftable = isinstance(item.get("recipe"), dict) or (
+            isinstance(origin, dict) and origin.get("craftable") is True
+        )
+        if (
+            craftable
+            and isinstance(construction, dict)
+            and construction.get("status") != "known"
+        ):
+            errors.append(
+                {
+                    "code": "craftable_structure_missing_construction",
+                    "id": item_id,
+                }
+            )
+        visual_resolved = item.get("sprite") is not None or (
+            isinstance(visual, dict)
+            and visual.get("status") == "known"
+            and (
+                isinstance(visual.get("sprite"), dict)
+                or (
+                    isinstance(visual.get("image"), dict)
+                    and isinstance(visual["image"].get("src"), str)
+                )
+            )
+        )
+        if craftable and not visual_resolved:
+            errors.append(
+                {"code": "craftable_structure_missing_visual", "id": item_id}
+            )
+        if (
+            item.get("sprite") is None
+            and isinstance(origin, dict)
+            and origin.get("naturallySpawned") is True
+            and origin.get("craftable") is False
+            and (
+                not isinstance(origin.get("note"), str)
+                or not origin["note"].strip()
+            )
+        ):
+            errors.append({"code": "natural_structure_missing_note", "id": item_id})
+        craftables = details.get("craftables")
+        recipes = craftables.get("recipes") if isinstance(craftables, dict) else None
+        if isinstance(recipes, list):
+            for recipe in recipes:
+                if not isinstance(recipe, dict):
+                    continue
+                result = recipe.get("result")
+                result_id = result.get("id") if isinstance(result, dict) else None
+                if isinstance(result_id, str) and result_id not in items_by_id:
+                    errors.append(
+                        {
+                            "code": "unresolved_structure_craftable_result",
+                            "id": item_id,
+                            "result": result_id,
+                        }
+                    )
+                ingredients = recipe.get("ingredients")
+                if not isinstance(ingredients, list):
+                    continue
+                for ingredient in ingredients:
+                    ingredient_id = (
+                        ingredient.get("id")
+                        if isinstance(ingredient, dict)
+                        else None
+                    )
+                    if (
+                        isinstance(ingredient_id, str)
+                        and ingredient_id not in items_by_id
+                    ):
+                        errors.append(
+                            {
+                                "code": "unresolved_structure_craftable_ingredient",
+                                "id": item_id,
+                                "ingredient": ingredient_id,
+                                "result": result_id,
+                            }
+                        )
+        if item.get("sprite") is None and item_id not in audit_by_id:
+            errors.append({"code": "unaudited_iconless_structure", "id": item_id})
+
+    for item_id in sorted(audit_by_id):
+        row = audit_by_id[item_id]
+        action = row.get("action")
+        item = items_by_id.get(item_id)
+        if action == "exclude":
+            if item is not None:
+                errors.append({"code": "excluded_structure_is_public", "id": item_id})
+            continue
+        if item is None:
+            errors.append({"code": "audited_structure_not_public", "id": item_id})
+            continue
+        if action == "repair":
+            details = item.get("structureDetails")
+            visual = details.get("visual") if isinstance(details, dict) else None
+            if not isinstance(visual, dict) or visual.get("status") != "known":
+                errors.append(
+                    {"code": "unresolved_structure_visual_repair", "id": item_id}
+                )
+    return errors
 
 
 def validate_catalog(
@@ -275,6 +523,7 @@ def validate_catalog(
     manifest_path: Optional[Path] = None,
     prefab_scripts_path: Optional[Path] = None,
     items_path: Optional[Path] = None,
+    structure_audit_path: Optional[Path] = None,
 ) -> Dict[str, Any]:
     """Return deterministic hard failures, extraction diagnostics and coverage."""
 
@@ -383,8 +632,8 @@ def validate_catalog(
         runtime_coverage_errors = []
         expected_categories = set(COVERAGE_CATEGORIES)
         for entity in db.execute(
-            "select prefab_id from entities where namespace='tu_tien' "
-            "order by prefab_id"
+            "select distinct prefab_id from runtime_coverage "
+            "where namespace='tu_tien' order by prefab_id"
         ):
             prefab_id = entity["prefab_id"]
             category_counts = {
@@ -421,7 +670,10 @@ def validate_catalog(
             )
         )
         prefab_export_coverage_errors = _prefab_export_coverage(
-            prefab_scripts_path, items_path
+            prefab_scripts_path, items_path, structure_audit_path
+        )
+        structure_detail_errors = _structure_export_errors(
+            items_path, structure_audit_path
         )
     finally:
         db.close()
@@ -468,6 +720,8 @@ def validate_catalog(
         hard_failures.append("runtime_coverage_errors")
     if prefab_export_coverage_errors:
         hard_failures.append("prefab_export_coverage_errors")
+    if structure_detail_errors:
+        hard_failures.append("structure_detail_errors")
     return {
         "schema_version": 1,
         "entity_counts": counts,
@@ -486,6 +740,7 @@ def validate_catalog(
         "archive_checksums": archive["checks"],
         "archive_checksum_errors": archive["errors"],
         "prefab_export_coverage_errors": prefab_export_coverage_errors,
+        "structure_detail_errors": structure_detail_errors,
         "warnings": warnings,
         "hard_failures": hard_failures,
     }

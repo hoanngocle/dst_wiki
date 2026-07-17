@@ -17,6 +17,7 @@ class MappingDecision:
 @dataclass(frozen=True)
 class EntityIndex:
     by_prefab: Dict[str, Tuple[str, ...]]
+    by_prefab_identity: Dict[str, Tuple[str, ...]]
     by_name: Dict[str, Tuple[str, ...]]
     names_by_key: Dict[str, str]
 
@@ -31,6 +32,10 @@ def normalize_identity(value: str) -> str:
 
 def canonical_title(title: str) -> str:
     return re.sub(r"/DST$", "", title, flags=re.IGNORECASE).strip()
+
+
+def _prefab_identity(value: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "", value.casefold())
 
 
 def extract_spawn_codes(wikitext: str) -> Tuple[str, ...]:
@@ -50,6 +55,7 @@ def extract_spawn_codes(wikitext: str) -> Tuple[str, ...]:
 
 def build_entity_index(rows: Iterable[Mapping[str, Any]]) -> EntityIndex:
     by_prefab: Dict[str, list] = {}
+    by_prefab_identity: Dict[str, list] = {}
     by_name: Dict[str, list] = {}
     names_by_key: Dict[str, str] = {}
     for row in rows:
@@ -61,6 +67,7 @@ def build_entity_index(rows: Iterable[Mapping[str, Any]]) -> EntityIndex:
         prefab_id = prefab_id.strip().casefold()
         key = f"base_game:{prefab_id}"
         by_prefab.setdefault(prefab_id, []).append(key)
+        by_prefab_identity.setdefault(_prefab_identity(prefab_id), []).append(key)
         name = row.get("name_en")
         if isinstance(name, str) and normalize_identity(name):
             normalized_name = normalize_identity(name)
@@ -70,6 +77,10 @@ def build_entity_index(rows: Iterable[Mapping[str, Any]]) -> EntityIndex:
         by_prefab={
             value: tuple(sorted(set(keys)))
             for value, keys in sorted(by_prefab.items())
+        },
+        by_prefab_identity={
+            value: tuple(sorted(set(keys)))
+            for value, keys in sorted(by_prefab_identity.items())
         },
         by_name={
             value: tuple(sorted(set(keys)))
@@ -137,6 +148,40 @@ def map_page(page: Mapping[str, Any], index: EntityIndex) -> MappingDecision:
             {
                 "spawn_codes": list(spawn_codes),
                 "candidates": list(spawn_candidates),
+            },
+        )
+
+    identity_candidates = tuple(
+        sorted(
+            {
+                candidate
+                for code in spawn_codes
+                for candidate in index.by_prefab_identity.get(
+                    _prefab_identity(code), ()
+                )
+            }
+        )
+    )
+    if len(identity_candidates) == 1:
+        return _selected(
+            identity_candidates[0],
+            "spawn_code_identity",
+            0.98,
+            {
+                "spawn_codes": list(spawn_codes),
+                "normalized_spawn_codes": [
+                    _prefab_identity(code) for code in spawn_codes
+                ],
+            },
+        )
+    if len(identity_candidates) > 1:
+        return MappingDecision(
+            None,
+            "ambiguous_spawn_code_identity",
+            0.0,
+            {
+                "spawn_codes": list(spawn_codes),
+                "candidates": list(identity_candidates),
             },
         )
 

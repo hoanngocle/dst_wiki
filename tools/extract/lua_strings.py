@@ -24,7 +24,8 @@ TABLE_ENTRY = re.compile(r'^\s*\["([A-Za-z0-9_]+)"\]\s*=\s*(.+?)\s*,?\s*$')
 CHARACTER_METADATA = re.compile(
     r'^STRINGS\.(CHARACTER_TITLES|CHARACTER_SURVIVABILITY|'
     r'CHARACTER_DESCRIPTIONS|CHARACTER_QUOTES)\s*'
-    r'\[\s*["\']([A-Za-z0-9_]+)["\']\s*\]\s*=\s*(.+?)\s*$'
+    r'(?:\[\s*["\']([A-Za-z0-9_]+)["\']\s*\]|\.\s*([A-Za-z0-9_]+))'
+    r'\s*=\s*(.+?)\s*$'
 )
 
 
@@ -221,7 +222,8 @@ def parse_character_metadata_assignments(path: Path) -> List[Dict[str, object]]:
         match = CHARACTER_METADATA.match(line.strip())
         if match is None:
             continue
-        table_name, prefab_id, expression = match.groups()
+        table_name, bracket_prefab_id, dot_prefab_id, expression = match.groups()
+        prefab_id = bracket_prefab_id or dot_prefab_id
         value = _literal(expression)
         row: Dict[str, object] = {
             "field": field_names[table_name],

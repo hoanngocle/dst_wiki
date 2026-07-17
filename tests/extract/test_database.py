@@ -16,6 +16,63 @@ def source(source_id, kind, marker):
 
 
 class DatabaseTests(unittest.TestCase):
+    def test_known_static_entity_type_is_not_erased_by_runtime_registry_unknown(self):
+        static = source("static-character", "mod_static", "a")
+        runtime = source("runtime-target", "runtime_probe", "b")
+        key = EntityKey("tu_tien", "xd_hero")
+
+        catalog = normalize(
+            [
+                FactBundle(
+                    1,
+                    [static],
+                    [Fact("entity", key, {"entity_type": "character"}, static, 1.0)],
+                    [],
+                ),
+                FactBundle(
+                    1,
+                    [runtime],
+                    [Fact("entity", key, {"entity_type": "unknown"}, runtime, 1.0)],
+                    [],
+                ),
+            ]
+        )
+
+        self.assertEqual(catalog.entities[0]["entity_type"], "character")
+
+    def test_runtime_static_loot_duplicates_preserve_total_quantity(self):
+        runtime = source("runtime-loot", "runtime_probe", "b")
+        mob = EntityKey("tu_tien", "xd_boss")
+        loot = EntityKey("base_game", "goldnugget")
+        facts = [
+            Fact("entity", mob, {"entity_type": "creature"}, runtime, 1.0),
+            Fact("entity", loot, {"entity_type": "inventory_item"}, runtime, 1.0),
+        ]
+        for index in range(3):
+            facts.append(
+                Fact(
+                    "acquisition",
+                    mob,
+                    {
+                        "type": "drop",
+                        "source": {"namespace": "tu_tien", "prefab_id": "xd_boss"},
+                        "target": {"namespace": "base_game", "prefab_id": "goldnugget"},
+                        "chance": 1,
+                        "count": 1,
+                        "conditions": {"loot_table": "xd_boss"},
+                    },
+                    runtime,
+                    1.0,
+                    f"prefabs:0:loot:{index}",
+                )
+            )
+
+        catalog = normalize([FactBundle(1, [runtime], facts, [])])
+
+        self.assertEqual(len(catalog.acquisition_sources), 1)
+        self.assertEqual(catalog.acquisition_sources[0]["min_count"], 3)
+        self.assertEqual(catalog.acquisition_sources[0]["max_count"], 3)
+
     def test_parser_exposes_import_wiki_defaults(self):
         args = cli.build_parser().parse_args(["import-wiki"])
 

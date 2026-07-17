@@ -8,12 +8,184 @@ from tools.extract.export_items import (
     apply_description_translations,
     build_item_export,
     export_items,
+    link_recipe_ingredients,
     load_crafting_notes,
     load_runtime_coverage,
 )
 
 
 class ExportItemsTests(unittest.TestCase):
+    def test_exports_base_game_inventory_dependencies_as_items(self):
+        catalog = {
+            "schema_version": 1,
+            "entities": [
+                {
+                    "key": "base_game:pumpkin_lantern",
+                    "namespace": "base_game",
+                    "prefab_id": "pumpkin_lantern",
+                    "type": "item",
+                    "is_inventory_item": True,
+                    "name": {"vi": "Đèn bí ngô", "en": "Pumpkin Lantern"},
+                    "description": {"vi": None, "en": None},
+                    "icon_key": None,
+                    "recipes": [
+                        {
+                            "output_count": 1,
+                            "ingredients": [
+                                {
+                                    "position": 0,
+                                    "key": "base_game:pumpkin",
+                                    "amount": 1,
+                                }
+                            ],
+                        }
+                    ],
+                },
+                {
+                    "key": "base_game:pumpkin",
+                    "namespace": "base_game",
+                    "prefab_id": "pumpkin",
+                    "type": "dependency",
+                    "is_inventory_item": True,
+                    "name": {"vi": "Bí ngô", "en": "Pumpkin"},
+                    "description": {"vi": None, "en": None},
+                    "icon_key": None,
+                    "recipes": [],
+                }
+            ],
+        }
+
+        items, _textures, _report = build_item_export(
+            catalog, {"schema_version": 1, "assets": []}
+        )
+
+        self.assertEqual(
+            [(item["id"], item["category"]) for item in items["items"]],
+            [
+                ("base_game:pumpkin", "item"),
+                ("base_game:pumpkin_lantern", "item"),
+            ],
+        )
+
+    def test_does_not_export_unreferenced_base_game_inventory_dependencies(self):
+        catalog = {
+            "schema_version": 1,
+            "entities": [
+                {
+                    "key": "base_game:unused_dependency",
+                    "namespace": "base_game",
+                    "prefab_id": "unused_dependency",
+                    "type": "dependency",
+                    "is_inventory_item": True,
+                    "name": {"vi": None, "en": "Unused"},
+                    "description": {"vi": None, "en": None},
+                    "icon_key": None,
+                    "recipes": [],
+                }
+            ],
+        }
+
+        items, _textures, _report = build_item_export(
+            catalog, {"schema_version": 1, "assets": []}
+        )
+
+        self.assertEqual(items["items"], [])
+
+    def test_uses_map_icon_as_structure_visual_fallback(self):
+        catalog = {
+            "schema_version": 1,
+            "entities": [
+                {
+                    "key": "tu_tien:xd_spiderden",
+                    "namespace": "tu_tien",
+                    "prefab_id": "xd_spiderden",
+                    "type": "structure",
+                    "is_inventory_item": False,
+                    "name": {"vi": "Sào Huyệt Ma Thù", "en": None},
+                    "description": {"vi": None, "en": None},
+                    "icon_key": None,
+                    "recipes": [{"output_count": 1, "ingredients": []}],
+                }
+            ],
+        }
+        assets = {
+            "schema_version": 1,
+            "assets": [
+                {
+                    "asset_id": "spiderden-map",
+                    "key": "tu_tien:xd_spiderden",
+                    "namespace": "tu_tien",
+                    "prefab_id": "xd_spiderden",
+                    "type": "map_icon",
+                    "atlas": "images/map_icons/xd_spiderden.xml",
+                    "texture": "images/map_icons/xd_spiderden.tex",
+                    "element": "xd_spiderden.tex",
+                    "uv": {"u1": 0, "u2": 1, "v1": 0, "v2": 1},
+                    "available": True,
+                    "texture_sha256": "d" * 64,
+                    "evidence": [{"confidence": 1.0, "selected": True}],
+                }
+            ],
+        }
+
+        items, textures, _report = build_item_export(catalog, assets)
+
+        self.assertEqual(
+            items["items"][0]["sprite"],
+            {
+                "src": "/assets/game/" + "d" * 64 + ".png",
+                "uv": {"u1": 0.0, "u2": 1.0, "v1": 0.0, "v2": 1.0},
+            },
+        )
+        self.assertEqual(textures["textures"][0]["source"], "mod")
+
+    def test_links_manual_recipe_ingredients_to_wiki_items_and_reuses_sprites(self):
+        wiki_sprite = {
+            "src": "/assets/wiki/pepper.png",
+            "uv": {"u1": 0.0, "u2": 1.0, "v1": 0.0, "v2": 1.0},
+        }
+        existing_sprite = {
+            "src": "/assets/game/token.png",
+            "uv": {"u1": 0.0, "u2": 1.0, "v1": 0.0, "v2": 1.0},
+        }
+        items = [
+            {
+                "id": "tu_tien:pill",
+                "recipe": {
+                    "ingredients": [
+                        {
+                            "id": "base_game:pepper",
+                            "name": "Ớt",
+                            "amount": 2,
+                            "sprite": None,
+                        },
+                        {
+                            "id": "base_game:cursed_monkey_token",
+                            "name": "Lắc Nguyền Rủa",
+                            "amount": 1,
+                            "sprite": None,
+                        },
+                    ]
+                },
+            },
+            {"id": "wiki:160201", "recipe": None, "sprite": wiki_sprite},
+            {
+                "id": "base_game:cursed_monkey_token",
+                "recipe": None,
+                "sprite": existing_sprite,
+            },
+        ]
+
+        linked = link_recipe_ingredients(items)
+        ingredients = linked[0]["recipe"]["ingredients"]
+
+        self.assertEqual(ingredients[0]["id"], "wiki:160201")
+        self.assertEqual(ingredients[0]["sprite"], wiki_sprite)
+        self.assertEqual(
+            ingredients[1]["id"], "base_game:cursed_monkey_token"
+        )
+        self.assertEqual(ingredients[1]["sprite"], existing_sprite)
+
     def test_applies_exact_database_description_translations(self):
         with tempfile.TemporaryDirectory() as tmp:
             translations = Path(tmp) / "descriptions.json"
@@ -203,7 +375,7 @@ class ExportItemsTests(unittest.TestCase):
                 "tu_tien:xd_sword",
             ],
         )
-        self.assertEqual(items["schema_version"], 5)
+        self.assertEqual(items["schema_version"], 6)
         by_id = {item["id"]: item for item in items["items"]}
         self.assertEqual(by_id["base_game:deerclops"]["category"], "boss")
         self.assertEqual(by_id["base_game:goldnugget"]["category"], "item")
@@ -255,6 +427,137 @@ class ExportItemsTests(unittest.TestCase):
             },
         )
 
+    def test_builds_mob_combat_loot_and_character_profile(self):
+        catalog, assets = self.fixtures()
+        creature = next(
+            entity for entity in catalog["entities"] if entity["key"] == "tu_tien:xd_creature"
+        )
+        creature["stats"] = [
+            {"key": "max_health", "value": 2500, "unit": "hp"},
+            {"key": "attack_damage", "value": 80, "unit": "hp"},
+            {"key": "attack_period", "value": 2, "unit": "seconds"},
+            {"key": "run_speed", "value": 6, "unit": "tiles_per_second"},
+            {"key": "special_states", "value": "charge, summon", "unit": "state_names"},
+        ]
+        gold = next(
+            entity for entity in catalog["entities"] if entity["key"] == "base_game:goldnugget"
+        )
+        gold["acquisition"] = [
+            {
+                "type": "drop",
+                "source": "tu_tien:xd_creature",
+                "chance": 0.5,
+                "min_count": 2,
+                "max_count": 2,
+                "conditions": {},
+            },
+            {
+                "type": "drop",
+                "source": "tu_tien:xd_creature",
+                "chance": 0.5,
+                "min_count": 2,
+                "max_count": 2,
+                "conditions": {},
+            },
+        ]
+        catalog["entities"].append(
+            {
+                "key": "tu_tien:xd_hero",
+                "namespace": "tu_tien",
+                "prefab_id": "xd_hero",
+                "type": "character",
+                "is_inventory_item": False,
+                "name": {"vi": "Anh Hùng", "en": None},
+                "description": {"vi": "*Đi trên mây\n*Dùng kiếm", "en": None},
+                "icon_key": None,
+                "recipes": [],
+                "effects": [
+                    {"trigger": "character_profile", "key": "character_title", "value": "Kiếm Tu"},
+                    {"trigger": "character_profile", "key": "character_quote", "value": "Một kiếm phá trời."},
+                    {"trigger": "character_profile", "key": "character_survivability", "value": "Gai Góc"},
+                ],
+            }
+        )
+
+        items, _textures, _detail_report = build_item_export(catalog, assets)
+        by_id = {item["id"]: item for item in items["items"]}
+
+        mob = by_id["tu_tien:xd_creature"]["mob"]
+        self.assertEqual(mob["lootStatus"], "known")
+        self.assertEqual(mob["loot"][0]["item"]["id"], "base_game:goldnugget")
+        self.assertEqual(mob["loot"][0]["quantity"], "4")
+        self.assertEqual(mob["loot"][0]["chance"], "50%")
+        self.assertEqual(
+            [stat["label"] for stat in mob["stats"][:2]], ["Máu tối đa", "Sát thương"]
+        )
+        self.assertEqual(mob["mechanics"], ["Trạng thái đặc biệt: charge, summon"])
+        profile = by_id["tu_tien:xd_hero"]["character"]
+        self.assertEqual(profile["title"], "Kiếm Tu")
+        self.assertEqual(profile["abilities"], ["Đi trên mây", "Dùng kiếm"])
+        self.assertEqual(profile["quote"], "Một kiếm phá trời.")
+
+    def test_classifies_pills_and_applies_manual_alchemy_recipe(self):
+        catalog, assets = self.fixtures()
+        catalog["entities"].append(
+            {
+                "key": "tu_tien:xd_danyao_jq",
+                "namespace": "tu_tien",
+                "prefab_id": "xd_danyao_jq",
+                "type": "inventory_item",
+                "is_inventory_item": True,
+                "name": {"vi": "Tụ Khí Hoàn", "en": None},
+                "description": {"vi": "Hội tụ linh khí.", "en": None},
+                "icon_key": None,
+                "recipes": [],
+            }
+        )
+        overrides = {
+            "schema_version": 1,
+            "items": {
+                "tu_tien:xd_danyao_jq": {
+                    "recipe": {
+                        "outputCount": 1,
+                        "ingredients": [
+                            {"id": "base_game:goldnugget", "amount": 2},
+                            {"id": "base_game:pepper", "amount": 3},
+                        ],
+                        "craftingNote": "Luyện tại Đan Lô.",
+                    }
+                }
+            },
+        }
+
+        items, _textures, _detail_report = build_item_export(
+            catalog, assets, detail_overrides=overrides
+        )
+        pill = next(item for item in items["items"] if item["id"] == "tu_tien:xd_danyao_jq")
+
+        self.assertEqual(pill["category"], "pill")
+        self.assertEqual(pill["recipe"]["outputCount"], 1)
+        self.assertEqual(
+            pill["recipe"]["ingredients"][0],
+            {
+                "id": "base_game:goldnugget",
+                "name": "Vàng",
+                "amount": 2,
+                "sprite": {
+                    "src": "/assets/game/" + "b" * 64 + ".png",
+                    "uv": {"u1": 0.25, "u2": 0.5, "v1": 0.5, "v2": 0.75},
+                },
+            },
+        )
+        self.assertEqual(
+            pill["recipe"]["ingredients"][1],
+            {
+                "id": "base_game:pepper",
+                "name": "Ớt",
+                "amount": 3,
+                "sprite": None,
+            },
+        )
+        self.assertEqual(pill["craftingNote"], "Luyện tại Đan Lô.")
+        self.assertEqual(pill["details"]["recipeStatus"], "known")
+
     def test_applies_name_description_recipe_and_sprite_fallbacks(self):
         catalog, assets = self.fixtures()
         sword = next(
@@ -284,8 +587,100 @@ class ExportItemsTests(unittest.TestCase):
             ["base_game:goldnugget"],
         )
 
+    def test_excludes_internal_container_prefabs_from_items(self):
+        catalog, assets = self.fixtures()
+        catalog["entities"].append(
+            {
+                "key": "tu_tien:xd_cwkj_container",
+                "namespace": "tu_tien",
+                "prefab_id": "xd_cwkj_container",
+                "type": "other",
+                "is_inventory_item": False,
+                "name": {"vi": "Không Gian Trữ Vật", "en": None},
+                "description": {"vi": None, "en": None},
+                "icon_key": None,
+                "recipes": [],
+            }
+        )
+
+        items, _textures, _detail_report = build_item_export(catalog, assets)
+
+        self.assertNotIn(
+            "tu_tien:xd_cwkj_container",
+            {item["id"] for item in items["items"]},
+        )
+
+    def test_uses_verified_base_game_icon_for_xd_beefalo(self):
+        catalog, assets = self.fixtures()
+        catalog["entities"].extend(
+            [
+                {
+                    "key": "base_game:beefalo",
+                    "namespace": "base_game",
+                    "prefab_id": "beefalo",
+                    "type": "creature",
+                    "is_inventory_item": False,
+                    "name": {"vi": "Bò Lai", "en": "Beefalo"},
+                    "description": {"vi": None, "en": None},
+                    "icon_key": "base_game:beefalo",
+                    "recipes": [],
+                },
+                {
+                    "key": "tu_tien:xd_beefalo",
+                    "namespace": "tu_tien",
+                    "prefab_id": "xd_beefalo",
+                    "type": "creature",
+                    "is_inventory_item": False,
+                    "name": {"vi": "Bò Lai", "en": None},
+                    "description": {"vi": None, "en": None},
+                    "icon_key": None,
+                    "recipes": [],
+                },
+            ]
+        )
+        assets["assets"].append(
+            {
+                "asset_id": "beefalo",
+                "key": "base_game:beefalo",
+                "namespace": "base_game",
+                "prefab_id": "beefalo",
+                "type": "inventory",
+                "atlas": "images/inventoryimages3.xml",
+                "texture": "images/inventoryimages3.tex",
+                "element": "beefalo.tex",
+                "uv": {"u1": 0.25, "u2": 0.5, "v1": 0.5, "v2": 0.75},
+                "available": True,
+                "texture_sha256": "d" * 64,
+                "evidence": [{"confidence": 1.0, "selected": True}],
+            }
+        )
+
+        items, _textures, _detail_report = build_item_export(catalog, assets)
+        by_id = {item["id"]: item for item in items["items"]}
+
+        self.assertEqual(
+            by_id["tu_tien:xd_beefalo"]["sprite"],
+            {
+                "src": "/assets/game/" + "d" * 64 + ".png",
+                "uv": {"u1": 0.25, "u2": 0.5, "v1": 0.5, "v2": 0.75},
+            },
+        )
+
     def test_export_is_deterministic_and_atomic(self):
         catalog, assets = self.fixtures()
+        catalog["entities"].append(
+            {
+                "key": "tu_tien:xd_world_altar",
+                "namespace": "tu_tien",
+                "prefab_id": "xd_world_altar",
+                "type": "structure",
+                "is_inventory_item": False,
+                "name": {"vi": "Tế Đàn Thiên Nhiên", "en": None},
+                "description": {"vi": "Xuất hiện trong thế giới.", "en": None},
+                "icon_key": None,
+                "recipes": [],
+            }
+        )
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             catalog_path = root / "catalog.json"
@@ -295,6 +690,7 @@ class ExportItemsTests(unittest.TestCase):
             textures_path = root / "textures.json"
             overrides_path = root / "item-details.json"
             report_path = root / "item-details-report.json"
+            structure_audit_path = root / "structure-icon-audit.json"
             catalog_path.write_text(json.dumps(catalog), encoding="utf-8")
             assets_path.write_text(json.dumps(assets), encoding="utf-8")
             overrides_path.write_text(
@@ -314,10 +710,12 @@ class ExportItemsTests(unittest.TestCase):
                 textures_path,
                 detail_overrides_path=overrides_path,
                 detail_report_path=report_path,
+                structure_audit_path=structure_audit_path,
             )
             first_items = items_path.read_bytes()
             first_textures = textures_path.read_bytes()
             first_report = report_path.read_bytes()
+            first_structure_audit = structure_audit_path.read_bytes()
             export_items(
                 database_path,
                 catalog_path,
@@ -326,14 +724,34 @@ class ExportItemsTests(unittest.TestCase):
                 textures_path,
                 detail_overrides_path=overrides_path,
                 detail_report_path=report_path,
+                structure_audit_path=structure_audit_path,
             )
 
             self.assertEqual(items_path.read_bytes(), first_items)
             self.assertEqual(textures_path.read_bytes(), first_textures)
             self.assertEqual(report_path.read_bytes(), first_report)
+            self.assertEqual(
+                structure_audit_path.read_bytes(), first_structure_audit
+            )
+            payload = json.loads(first_items)
+            by_id = {item["id"]: item for item in payload["items"]}
+            self.assertEqual(payload["schema_version"], 6)
+            self.assertIsNone(by_id["base_game:goldnugget"]["structureDetails"])
+            self.assertEqual(
+                by_id["tu_tien:xd_world_altar"]["structureDetails"]["origin"]["craftable"],
+                False,
+            )
+            audit = json.loads(first_structure_audit)
+            self.assertEqual(audit["schema_version"], 1)
+            self.assertEqual(audit["summary"]["total"], 1)
+            self.assertEqual(
+                audit["rows"][0]["classification"], "natural_structure"
+            )
+            self.assertEqual(audit["rows"][0]["action"], "keep")
             self.assertFalse((root / ".items.json.tmp").exists())
             self.assertFalse((root / ".textures.json.tmp").exists())
             self.assertFalse((root / ".item-details-report.json.tmp").exists())
+            self.assertFalse((root / ".structure-icon-audit.json.tmp").exists())
 
     def test_loads_deduplicated_crafting_notes_and_rejects_conflicts(self):
         with tempfile.TemporaryDirectory() as tmp:

@@ -31,6 +31,15 @@ const sourceItem: ItemListEntry = {
   name: "Cây Linh Thảo",
 };
 
+const petals: ItemListEntry = {
+  ...resultItem,
+  id: "base_game:petals",
+  prefabId: "petals",
+  namespace: "base_game",
+  name: "Cánh hoa",
+  details: null,
+};
+
 const herb: ItemListEntry = {
   ...resultItem,
   id: "tu_tien:herb",
@@ -103,12 +112,83 @@ const herb: ItemListEntry = {
 };
 
 describe("TuTienItemSections", () => {
+  it("renders Mob stats, special mechanics, and kill loot", () => {
+    const mob: ItemListEntry = {
+      ...resultItem,
+      id: "tu_tien:xd_boss",
+      prefabId: "xd_boss",
+      category: "mob",
+      name: "Yêu Vương",
+      mob: {
+        stats: [
+          { key: "max_health", label: "Máu tối đa", value: 2500, unit: "hp" },
+          { key: "attack_damage", label: "Sát thương", value: 80, unit: "hp" },
+        ],
+        mechanics: ["Trạng thái đặc biệt: charge, summon"],
+        lootStatus: "known",
+        loot: [
+          {
+            item: { id: petals.id, name: petals.name, sprite: null },
+            quantity: "2",
+            chance: "50%",
+            conditions: null,
+          },
+        ],
+      },
+    };
+    render(
+      <TuTienItemSections
+        item={mob}
+        itemsById={new Map([[petals.id, petals]])}
+        onSelectItem={vi.fn()}
+        titleId="mob-title"
+      />,
+    );
+
+    expect(screen.getByRole("heading", { name: "Chỉ số" })).toBeDefined();
+    expect(screen.getByText("2.500")).toBeDefined();
+    expect(screen.getByText("Trạng thái đặc biệt: charge, summon")).toBeDefined();
+    expect(screen.getByRole("heading", { name: "Vật phẩm rơi khi tiêu diệt" })).toBeDefined();
+    expect(screen.getByText("50%")).toBeDefined();
+  });
+
+  it("renders the complete character profile instead of item recipe sections", () => {
+    const character: ItemListEntry = {
+      ...resultItem,
+      id: "tu_tien:xd_hero",
+      prefabId: "xd_hero",
+      category: "character",
+      name: "Anh Hùng",
+      character: {
+        title: "Kiếm Tu",
+        survivability: "Gai Góc",
+        quote: "Một kiếm phá trời.",
+        abilities: ["Đi trên mây", "Dùng kiếm"],
+      },
+    };
+    render(
+      <TuTienItemSections
+        item={character}
+        itemsById={new Map()}
+        onSelectItem={vi.fn()}
+        titleId="character-title"
+      />,
+    );
+
+    expect(screen.getByText("Kiếm Tu")).toBeDefined();
+    expect(screen.getByText("Gai Góc")).toBeDefined();
+    expect(screen.getByText("Một kiếm phá trời.")).toBeDefined();
+    expect(screen.getByText("Đi trên mây")).toBeDefined();
+    expect(screen.queryByRole("heading", { name: "Công thức" })).toBeNull();
+  });
+
   it("renders recipe, reverse usage, gameplay effects, and acquisition sources", () => {
     const onSelectItem = vi.fn();
     render(
       <TuTienItemSections
         item={herb}
         itemsById={new Map([
+          [petals.id, petals],
           [resultItem.id, resultItem],
           [sourceItem.id, sourceItem],
         ])}
@@ -118,7 +198,7 @@ describe("TuTienItemSections", () => {
     );
 
     const headings = screen.getAllByRole("heading").map((heading) => heading.textContent);
-    expect(headings).toEqual(["Công thức", "Cách sử dụng", "Nguồn nhận"]);
+    expect(headings).toEqual(["Công thức", "Usage", "Nguồn nhận"]);
     expect(screen.getByLabelText("Cánh hoa, số lượng 3")).toBeDefined();
     expect(screen.getByLabelText("Kết quả: Linh Thảo, số lượng 2")).toBeDefined();
     expect(screen.getByText("Khi ăn: hồi 20 Máu và hồi 10 Tinh thần.")).toBeDefined();
@@ -128,10 +208,12 @@ describe("TuTienItemSections", () => {
     expect(screen.getByText("100%")).toBeDefined();
     expect(screen.getByText("Hồi lại sau 480 giây")).toBeDefined();
 
+    fireEvent.click(screen.getByRole("button", { name: "Cánh hoa, số lượng 3" }));
     fireEvent.click(screen.getByRole("button", { name: "Linh Đan" }));
     fireEvent.click(screen.getByRole("button", { name: "Cây Linh Thảo" }));
-    expect(onSelectItem).toHaveBeenNthCalledWith(1, resultItem);
-    expect(onSelectItem).toHaveBeenNthCalledWith(2, sourceItem);
+    expect(onSelectItem).toHaveBeenNthCalledWith(1, petals);
+    expect(onSelectItem).toHaveBeenNthCalledWith(2, resultItem);
+    expect(onSelectItem).toHaveBeenNthCalledWith(3, sourceItem);
   });
 
   it("keeps all sections visible for none and unknown states", () => {
@@ -154,7 +236,7 @@ describe("TuTienItemSections", () => {
     );
 
     expect(screen.getByRole("heading", { name: "Công thức" })).toBeDefined();
-    expect(screen.getByRole("heading", { name: "Cách sử dụng" })).toBeDefined();
+    expect(screen.getByRole("heading", { name: "Usage" })).toBeDefined();
     expect(screen.getByRole("heading", { name: "Nguồn nhận" })).toBeDefined();
     expect(screen.getByText("Không có công thức chế tạo.")).toBeDefined();
     expect(screen.getByText("Chưa xác định từ dữ liệu mod.")).toBeDefined();

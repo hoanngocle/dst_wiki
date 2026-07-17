@@ -2,8 +2,10 @@ import { X } from "@phosphor-icons/react";
 import { useEffect, useId, useRef } from "react";
 
 import type { ItemListEntry } from "@/app/lib/item-catalog";
+import { hasRealPrefab } from "@/app/lib/wiki-search";
 import { GameSprite } from "./game-sprite";
 import { RecipeIngredients } from "./recipe-ingredients";
+import { StructureSections } from "./structure-sections";
 import { TuTienItemSections } from "./tu-tien-item-sections";
 import { WikiArticle } from "./wiki-article";
 
@@ -18,6 +20,7 @@ const FOCUSABLE_SELECTOR = [
 
 const categoryLabel = {
   item: "Item",
+  pill: "Đan Dược",
   mob: "Mob",
   boss: "Boss",
   character: "Nhân vật",
@@ -127,14 +130,18 @@ export function ItemDetailModal({
   const titleId = useId();
   const dialogRef = useRef<HTMLElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
-  const sourceLabel = item.wiki
-    ? "Wiki"
-    : item.namespace === "tu_tien"
-      ? "Tu Tiên"
-      : "DST";
+  const sourceLabel = item.namespace === "tu_tien" ? "Tu Tiên" : "DST";
+  const realPrefab = hasRealPrefab(item);
   const category = categoryLabel[item.category];
   const craftingContent =
-    item.namespace === "tu_tien" ? (
+    item.category === "structure" ? (
+      <StructureSections
+        item={item}
+        itemsById={itemsById}
+        onSelectItem={onSelectItem}
+        titleId={titleId}
+      />
+    ) : item.namespace === "tu_tien" ? (
       <TuTienItemSections
         item={item}
         itemsById={itemsById}
@@ -214,6 +221,11 @@ export function ItemDetailModal({
             </h2>
             {item.englishName ? (
               <p className="mt-1 text-sm text-[#607188]">{item.englishName}</p>
+            ) : null}
+            {realPrefab ? (
+              <code className="mt-1 block truncate font-mono text-[11px] text-[#68798e]">
+                {item.prefabId}
+              </code>
             ) : null}
             <div className="mt-3 flex flex-wrap gap-2 text-xs font-semibold">
               <span className="rounded-full border border-[#c8d3df] bg-[#eef3f8] px-2.5 py-1 text-[#43556d]">

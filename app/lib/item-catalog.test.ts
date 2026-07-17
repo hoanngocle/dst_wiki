@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 import { parseItemPayload } from "./item-catalog";
 
 const validPayload = {
-  schema_version: 5,
+  schema_version: 6,
   items: [
     {
       id: "tu_tien:xd_sword",
@@ -82,6 +82,7 @@ const validPayload = {
           ],
         },
       },
+      structureDetails: null,
       wiki: null,
     },
   ],
@@ -133,10 +134,102 @@ describe("parseItemPayload", () => {
     expect(parseItemPayload(payload)[0].recipe?.ingredients).toEqual([]);
   });
 
+  it("accepts the pill category", () => {
+    const payload = structuredClone(validPayload);
+    payload.items[0].category = "pill";
+
+    expect(parseItemPayload(payload)[0].category).toBe("pill");
+  });
+
+  it("accepts complete structure details and rejects them on non-structures", () => {
+    const payload = structuredClone(validPayload);
+    const structure = makeValidItem("researchlab", {
+      namespace: "base_game",
+    }) as unknown as Record<string, unknown>;
+    structure.category = "structure";
+    structure.structureDetails = {
+      origin: {
+        status: "known",
+        naturallySpawned: false,
+        renewable: true,
+        spawnCode: "researchlab",
+        sources: [],
+        respawn: null,
+        craftable: true,
+        note: null,
+        evidence: [{ source: "public/data/catalog.json", locator: "origin" }],
+      },
+      construction: {
+        status: "known",
+        outputCount: 1,
+        ingredients: [],
+        tech: "TECH.SCIENCE_ONE",
+        station: null,
+        restrictions: {},
+        note: null,
+        evidence: [{ source: "public/data/catalog.json", locator: "construction" }],
+      },
+      functions: {
+        status: "known",
+        facts: [
+          {
+            key: "prototyper",
+            label: "Mở khóa chế tạo",
+            value: "Science 1",
+            unit: null,
+            context: null,
+            related: [],
+            evidence: [{ source: "https://dontstarve.wiki.gg", locator: "revision:1" }],
+          },
+        ],
+        reason: null,
+        evidence: [{ source: "https://dontstarve.wiki.gg", locator: "revision:1" }],
+      },
+      craftables: {
+        status: "none",
+        recipes: [],
+        reason: null,
+        evidence: [{ source: "public/data/catalog.json", locator: "craftables" }],
+      },
+      destruction: {
+        status: "known",
+        destroyable: true,
+        tool: "Hammer",
+        work: "4",
+        health: null,
+        burnable: true,
+        drops: [],
+        regeneration: null,
+        evidence: [{ source: "https://dontstarve.wiki.gg", locator: "revision:1" }],
+      },
+      visual: {
+        status: "known",
+        kind: "inventory_icon",
+        sprite: structuredClone(validPayload.items[0].sprite),
+        image: null,
+        alternatives: [],
+        reason: null,
+        evidence: [{ source: "public/data/catalog.json", locator: "visual" }],
+      },
+    };
+    payload.items = [structure] as unknown as typeof payload.items;
+
+    const parsed = parseItemPayload(payload)[0];
+    expect(parsed.structureDetails?.construction.tech).toBe("TECH.SCIENCE_ONE");
+    expect(parsed.structureDetails?.functions.facts[0].label).toBe(
+      "Mở khóa chế tạo",
+    );
+
+    const nonStructure = structuredClone(validPayload);
+    (nonStructure.items[0] as unknown as Record<string, unknown>).structureDetails =
+      structure.structureDetails;
+    expect(() => parseItemPayload(nonStructure)).toThrow(/non-structure.*structureDetails/i);
+  });
+
   it("rejects legacy payloads and invalid prefab categories", () => {
     expect(() =>
       parseItemPayload({ ...validPayload, schema_version: 4 }),
-    ).toThrow(/schema version 5/i);
+    ).toThrow(/schema version 6/i);
 
     const payload = structuredClone(validPayload) as unknown as {
       items: Array<{ category: string }>;
@@ -185,7 +278,7 @@ describe("parseItemPayload", () => {
     expect(() => parseItemPayload(missing)).toThrow(/Tu Tiên.*details/i);
 
     const baseGame = {
-      schema_version: 5,
+      schema_version: 6,
       items: [makeValidItem("goldnugget", { namespace: "base_game" })],
     } as unknown as { schema_version: number; items: Array<{ details: unknown }> };
     baseGame.items[0].details = structuredClone(validPayload.items[0].details);
@@ -238,7 +331,7 @@ describe("parseItemPayload", () => {
 
   it("removes effect-only prefabs while preserving retained order", () => {
     const payload = {
-      schema_version: 5,
+      schema_version: 6,
       items: [
         makeValidItem("first"),
         makeValidItem("spark_fx"),
@@ -254,7 +347,7 @@ describe("parseItemPayload", () => {
 
   it("prefers a pictured _item counterpart without crossing namespaces", () => {
     const payload = {
-      schema_version: 5,
+      schema_version: 6,
       items: [
         makeValidItem("gate"),
         makeValidItem("gate", { namespace: "base_game" }),
@@ -274,7 +367,7 @@ describe("parseItemPayload", () => {
 
   it("keeps the base prefab when its _item counterpart has no image", () => {
     const payload = {
-      schema_version: 5,
+      schema_version: 6,
       items: [makeValidItem("gate"), makeValidItem("gate_item", { sprite: null })],
     };
 

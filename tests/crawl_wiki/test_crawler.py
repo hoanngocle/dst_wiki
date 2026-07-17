@@ -111,7 +111,10 @@ class _CrawlerHandler(BaseHTTPRequestHandler):
                 1: "'''Wilson''' is a character.",
                 2: "A category for characters.",
                 3: "The original Wilson portrait.",
-                10: "{{Object Infobox|ingredient1=Grass|multiplier1=1}}",
+                10: (
+                    "{{Object Infobox|image=Science Machine.png|"
+                    "ingredient1=Grass|multiplier1=1}}"
+                ),
                 11: "'''Twigs''' are a resource.",
             }[page_id]
             page["revisions"] = [
@@ -164,6 +167,8 @@ class _CrawlerHandler(BaseHTTPRequestHandler):
                     "Unrelated Navbox.png",
                     "{}.png".format(PAGES[page_id]["title"]),
                 ]
+                if page_id == 10:
+                    parsed["categories"] = [{"category": "Structures"}]
             self._json({"parse": parsed})
             return
 
@@ -248,7 +253,7 @@ class CrawlerTests(unittest.TestCase):
             clock=lambda: "2026-07-15T00:00:00Z",
         )
 
-    def test_selective_items_resume_by_budget_and_download_only_seed_icons(self):
+    def test_selective_items_resume_and_download_seed_and_structure_images(self):
         with CrawlerServer() as server, tempfile.TemporaryDirectory() as tempdir:
             output = Path(tempdir)
             with self.make_item_storage(output, server) as storage:
@@ -260,7 +265,7 @@ class CrawlerTests(unittest.TestCase):
                 ).run({"profile": "items"})
 
             self.assertEqual(first.pages, 1)
-            self.assertEqual(first.images, 1)
+            self.assertEqual(first.images, 2)
             self.assertEqual(first.pending_pages, 1)
             self.assertEqual(
                 [record["title"] for record in _records(output / "pages.jsonl")],
@@ -268,7 +273,7 @@ class CrawlerTests(unittest.TestCase):
             )
             self.assertEqual(
                 [record["title"] for record in _records(output / "images.jsonl")],
-                ["File:Cut Grass.png"],
+                ["File:Cut Grass.png", "File:Science Machine.png"],
             )
 
             with self.make_item_storage(output, server) as storage:
@@ -280,11 +285,15 @@ class CrawlerTests(unittest.TestCase):
                 ).run({"profile": "items"})
 
             self.assertEqual(second.pages, 2)
-            self.assertEqual(second.images, 2)
+            self.assertEqual(second.images, 3)
             self.assertEqual(second.pending_pages, 0)
             self.assertEqual(
                 {record["title"] for record in _records(output / "images.jsonl")},
-                {"File:Cut Grass.png", "File:Twigs.png"},
+                {
+                    "File:Cut Grass.png",
+                    "File:Science Machine.png",
+                    "File:Twigs.png",
+                },
             )
             self.assertEqual(len(_records(output / "seeds.jsonl")), 2)
             recipes = _records(output / "recipes.jsonl")

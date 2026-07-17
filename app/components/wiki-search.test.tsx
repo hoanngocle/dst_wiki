@@ -124,38 +124,49 @@ describe("WikiSearch", () => {
     fireEvent.change(search, { target: { value: "kiem" } });
     const status = screen.getByRole("status");
     expect(status.textContent).toBe(
-      '1 vật phẩm khớp với "kiem" trong Tất cả, Tất cả loại, Tất cả dữ liệu.',
+      '1 vật phẩm khớp với "kiem" trong Tất cả, Tất cả loại.',
     );
 
     fireEvent.change(search, { target: { value: "go" } });
     expect(status.textContent).toBe(
-      '1 vật phẩm khớp với "go" trong Tất cả, Tất cả loại, Tất cả dữ liệu.',
+      '1 vật phẩm khớp với "go" trong Tất cả, Tất cả loại.',
     );
   });
 
-  it("filters by source and data availability", () => {
+  it("filters by source", () => {
     render(<WikiSearch items={items} />);
     const namespaceFilter = screen.getByRole("button", { name: "Tu Tiên" });
     expect(namespaceFilter.className).toContain("cursor-pointer");
     fireEvent.click(namespaceFilter);
     expect(screen.getByText("Kiếm Thử")).toBeDefined();
     expect(screen.queryByText("Gỗ")).toBeNull();
+  });
 
-    fireEvent.click(screen.getByRole("button", { name: "Có công thức" }));
-    expect(screen.getByText("Kiếm Thử")).toBeDefined();
+  it("shows Đan Dược as a separate classification filter", () => {
+    const pill: ItemListEntry = {
+      ...items[0],
+      id: "tu_tien:xd_danyao_jq",
+      prefabId: "xd_danyao_jq",
+      category: "pill",
+      name: "Tụ Khí Hoàn",
+    };
+    render(<WikiSearch items={[...items, pill]} />);
+
+    fireEvent.click(screen.getByRole("button", { name: "Đan Dược" }));
+
+    expect(screen.getByText("Tụ Khí Hoàn")).toBeDefined();
+    expect(screen.queryByText("Kiếm Thử")).toBeNull();
     expect(screen.queryByText("Gỗ")).toBeNull();
   });
 
-  it("filters standalone wiki items without treating them as DST prefabs", () => {
+  it("groups standalone wiki records under DST and removes the Wiki filter", () => {
     render(<WikiSearch items={[...items, wikiItem]} />);
 
-    fireEvent.click(screen.getByRole("button", { name: "Wiki" }));
+    expect(screen.queryByRole("button", { name: "Wiki" })).toBeNull();
+    fireEvent.click(screen.getByRole("button", { name: "DST" }));
     expect(screen.getByRole("heading", { name: "Halberd" })).toBeDefined();
     expect(screen.queryByText("Kiếm Thử")).toBeNull();
-    expect(screen.queryByText("Gỗ")).toBeNull();
-
-    fireEvent.click(screen.getByRole("button", { name: "Có công thức" }));
-    expect(screen.queryByRole("heading", { name: "Halberd" })).toBeNull();
+    expect(screen.getByText("Gỗ")).toBeDefined();
   });
 
   it("combines category and namespace filters", () => {
@@ -180,10 +191,13 @@ describe("WikiSearch", () => {
     expect(swordCard?.textContent).toContain("xd_sword");
   });
 
-  it("exposes source and availability filters as named groups", () => {
+  it("does not render the data availability filter", () => {
     render(<WikiSearch items={items} />);
     expect(screen.getByRole("group", { name: "Lọc theo nguồn" })).toBeDefined();
-    expect(screen.getByRole("group", { name: "Lọc theo dữ liệu" })).toBeDefined();
+    expect(screen.queryByRole("group", { name: "Lọc theo dữ liệu" })).toBeNull();
+    expect(screen.queryByRole("button", { name: "Tất cả dữ liệu" })).toBeNull();
+    expect(screen.queryByRole("button", { name: "Có công thức" })).toBeNull();
+    expect(screen.queryByRole("button", { name: "Có ảnh" })).toBeNull();
   });
 
   it("clears query and filter from the empty state", () => {

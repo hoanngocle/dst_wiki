@@ -5,6 +5,7 @@ from typing import Dict, List, Optional, Tuple
 
 from tools.extract.assets import index_mod_assets
 from tools.extract.contracts import EntityKey, Fact, FactBundle, SourceRef
+from tools.extract.exclusions import NON_ENTITY_PREFAB_IDS
 from tools.extract.lua_strings import (
     parse_character_metadata_assignments,
     parse_simple_names_table,
@@ -18,6 +19,18 @@ CONTEXT_PREFIX = {
     "name": "STRINGS.NAMES.",
     "recipe_description": "STRINGS.RECIPE_DESC.",
     "description": "STRINGS.CHARACTERS.GENERIC.DESCRIBE.",
+}
+PLAYABLE_CHARACTER_PREFAB_IDS = {
+    "xd_hantianzun",
+    "xd_jingwei",
+    "xd_longtaizi",
+    "xd_luoshen",
+    "xd_shiji",
+    "xd_sudaji",
+    "xd_wangmazi",
+    "xd_wukong",
+    "xd_yunxiao",
+    "xd_zuichunyan",
 }
 
 
@@ -177,63 +190,65 @@ def extract_mod_static(
         rows = parse_string_assignments(path)
         if include_names_table:
             rows.extend(parse_simple_names_table(path))
-            for metadata in parse_character_metadata_assignments(path):
-                prefab_id = str(metadata["prefab_id"])
-                locator = f"line:{metadata['line']}"
-                value = metadata.get("value")
-                if value is None:
-                    errors.append(
-                        {
-                            "code": "unparsed_character_metadata_expression",
-                            "path": source.path,
-                            "line": metadata["line"],
-                            "field": metadata["field"],
-                            "expression": metadata.get("unparsed_expression"),
-                        }
-                    )
-                    continue
+        for metadata in parse_character_metadata_assignments(path):
+            prefab_id = str(metadata["prefab_id"])
+            locator = f"line:{metadata['line']}"
+            value = metadata.get("value")
+            if value is None:
+                errors.append(
+                    {
+                        "code": "unparsed_character_metadata_expression",
+                        "path": source.path,
+                        "line": metadata["line"],
+                        "field": metadata["field"],
+                        "expression": metadata.get("unparsed_expression"),
+                    }
+                )
+                continue
+            facts.append(
+                _entity_fact(
+                    prefab_id,
+                    source,
+                    locator,
+                    "character_metadata",
+                    "character",
+                    1.0,
+                )
+            )
+            if metadata["field"] == "character_description":
                 facts.append(
-                    _entity_fact(
-                        prefab_id,
+                    Fact(
+                        "description",
+                        EntityKey("tu_tien", prefab_id),
+                        {
+                            "lang": "vi",
+                            "value": value,
+                            "description_type": "character_profile",
+                        },
                         source,
-                        locator,
-                        "character_metadata",
-                        "character",
                         1.0,
+                        locator,
                     )
                 )
-                if metadata["field"] == "character_description":
-                    facts.append(
-                        Fact(
-                            "description",
-                            EntityKey("tu_tien", prefab_id),
-                            {
-                                "lang": "vi",
-                                "value": value,
-                                "description_type": "character_profile",
-                            },
-                            source,
-                            1.0,
-                            locator,
-                        )
+            else:
+                facts.append(
+                    Fact(
+                        "effect",
+                        EntityKey("tu_tien", prefab_id),
+                        {
+                            "trigger": "character_profile",
+                            "effect_key": metadata["field"],
+                            "value": value,
+                        },
+                        source,
+                        1.0,
+                        locator,
                     )
-                else:
-                    facts.append(
-                        Fact(
-                            "effect",
-                            EntityKey("tu_tien", prefab_id),
-                            {
-                                "trigger": "character_profile",
-                                "effect_key": metadata["field"],
-                                "value": value,
-                            },
-                            source,
-                            1.0,
-                            locator,
-                        )
-                    )
+                )
         for row in rows:
             prefab_id = str(row["prefab_id"])
+            if prefab_id in NON_ENTITY_PREFAB_IDS:
+                continue
             locator = f"line:{row['line']}"
             facts.append(_entity_fact(prefab_id, source, locator, "strings", confidence=0.9))
             fact = _fact_for_row(row, source)
@@ -275,7 +290,17 @@ def extract_mod_static(
             relative = _relative_to_mod(path, mod_root)
             source = _source(path, f"mod-prefab:{relative}", "mod_static", version)
             sources[source.source_id] = source
-            facts.append(_entity_fact(path.stem.lower(), source, "filename", "prefab_filename", "prefab", 0.9))
+            prefab_id = path.stem.lower()
+            facts.append(
+                _entity_fact(
+                    prefab_id,
+                    source,
+                    "filename",
+                    "prefab_filename",
+                    "character" if prefab_id in PLAYABLE_CHARACTER_PREFAB_IDS else "prefab",
+                    1.0 if prefab_id in PLAYABLE_CHARACTER_PREFAB_IDS else 0.9,
+                )
+            )
     else:
         errors.append({"code": "missing_source", "path": _display_path(prefab_root), "role": "prefab_directory"})
 

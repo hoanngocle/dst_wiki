@@ -1,8 +1,9 @@
 export type ItemNamespace = "tu_tien" | "base_game";
-export type ItemSourceFilter = "all" | "wiki" | ItemNamespace;
+export type ItemSourceFilter = "all" | ItemNamespace;
 export type ItemAvailabilityFilter = "all" | "recipe" | "image";
 export type PrefabCategory =
   | "item"
+  | "pill"
   | "mob"
   | "boss"
   | "character"
@@ -89,6 +90,120 @@ export type ItemDetails = {
   };
 };
 
+export type MobStat = {
+  key: string;
+  label: string;
+  value: string | number;
+  unit: string | null;
+};
+
+export type MobLoot = {
+  item: ItemReference;
+  quantity: string;
+  chance: string | null;
+  conditions: string | null;
+};
+
+export type MobDetails = {
+  stats: readonly MobStat[];
+  mechanics: readonly string[];
+  lootStatus: ItemDetailStatus;
+  loot: readonly MobLoot[];
+};
+
+export type CharacterProfile = {
+  title: string | null;
+  survivability: string | null;
+  quote: string | null;
+  abilities: readonly string[];
+};
+
+export type StructureFunctionFact = {
+  key: string;
+  label: string;
+  value: string;
+  unit: string | null;
+  context: string | null;
+  related: readonly string[];
+  evidence: readonly ItemEvidence[];
+};
+
+export type StructureStationRecipe = {
+  result: ItemReference;
+  resultAmount: number;
+  ingredients: readonly RecipeIngredient[];
+  station: string;
+  tech: string | null;
+  restrictions: Readonly<Record<string, unknown>>;
+  note: string | null;
+  evidence: readonly ItemEvidence[];
+};
+
+export type StructureVisualImage = {
+  title: string | null;
+  src: string;
+  mime: string | null;
+  width: number | null;
+  height: number | null;
+  evidence: readonly ItemEvidence[];
+};
+
+export type StructureDetails = {
+  origin: {
+    status: ItemDetailStatus;
+    naturallySpawned: boolean;
+    renewable: boolean | null;
+    spawnCode: string | null;
+    sources: readonly string[];
+    respawn: string | null;
+    craftable: boolean;
+    note: string | null;
+    evidence: readonly ItemEvidence[];
+  };
+  construction: {
+    status: ItemDetailStatus;
+    outputCount: number | null;
+    ingredients: readonly RecipeIngredient[];
+    tech: string | null;
+    station: string | null;
+    restrictions: Readonly<Record<string, unknown>>;
+    note: string | null;
+    evidence: readonly ItemEvidence[];
+  };
+  functions: {
+    status: ItemDetailStatus;
+    facts: readonly StructureFunctionFact[];
+    reason: string | null;
+    evidence: readonly ItemEvidence[];
+  };
+  craftables: {
+    status: ItemDetailStatus;
+    recipes: readonly StructureStationRecipe[];
+    reason: string | null;
+    evidence: readonly ItemEvidence[];
+  };
+  destruction: {
+    status: ItemDetailStatus;
+    destroyable: boolean | null;
+    tool: string | null;
+    work: string | null;
+    health: string | null;
+    burnable: boolean | null;
+    drops: readonly unknown[];
+    regeneration: string | null;
+    evidence: readonly ItemEvidence[];
+  };
+  visual: {
+    status: ItemDetailStatus;
+    kind: "inventory_icon" | "wiki_image" | null;
+    sprite: SpriteDescriptor | null;
+    image: StructureVisualImage | null;
+    alternatives: readonly Readonly<Record<string, unknown>>[];
+    reason: string | null;
+    evidence: readonly ItemEvidence[];
+  };
+};
+
 export type WikiRelatedPage = {
   pageId: number;
   title: string;
@@ -117,7 +232,10 @@ export type ItemListEntry = {
   craftingNote: string | null;
   sprite: SpriteDescriptor | null;
   recipe: ItemRecipe | null;
-  details: ItemDetails | null;
+  details?: ItemDetails | null;
+  mob?: MobDetails | null;
+  character?: CharacterProfile | null;
+  structureDetails?: StructureDetails | null;
   wiki: WikiItemMetadata | null;
 };
 
@@ -140,6 +258,7 @@ function nullableString(value: unknown, field: string): string | null {
 function parseCategory(value: unknown, itemIndex: number): PrefabCategory {
   if (
     value !== "item" &&
+    value !== "pill" &&
     value !== "mob" &&
     value !== "boss" &&
     value !== "character" &&
@@ -404,6 +523,262 @@ function parseDetails(
   };
 }
 
+function parseMob(value: unknown, itemIndex: number): MobDetails | null {
+  if (value === null || value === undefined) return null;
+  if (
+    !isRecord(value) ||
+    !Array.isArray(value.stats) ||
+    !Array.isArray(value.mechanics) ||
+    !Array.isArray(value.loot)
+  ) {
+    throw new Error(`item ${itemIndex} mob details must contain arrays`);
+  }
+  const stats = value.stats.map((raw, statIndex) => {
+    if (!isRecord(raw) || (typeof raw.value !== "number" && typeof raw.value !== "string")) {
+      throw new Error(`item ${itemIndex} mob stat ${statIndex} is invalid`);
+    }
+    return {
+      key: requiredString(raw.key, `item ${itemIndex} mob stat key`),
+      label: requiredString(raw.label, `item ${itemIndex} mob stat label`),
+      value: raw.value,
+      unit: nullableString(raw.unit, `item ${itemIndex} mob stat unit`),
+    };
+  });
+  const mechanics = value.mechanics.map((raw, index) =>
+    requiredString(raw, `item ${itemIndex} mob mechanic ${index}`),
+  );
+  const loot = value.loot.map((raw, lootIndex) => {
+    if (!isRecord(raw)) throw new Error(`item ${itemIndex} mob loot ${lootIndex} is invalid`);
+    return {
+      item: parseReference(raw.item, `item ${itemIndex} mob loot ${lootIndex}`),
+      quantity: requiredString(raw.quantity, `item ${itemIndex} mob loot quantity`),
+      chance: nullableString(raw.chance, `item ${itemIndex} mob loot chance`),
+      conditions: nullableString(raw.conditions, `item ${itemIndex} mob loot conditions`),
+    };
+  });
+  return {
+    stats,
+    mechanics,
+    lootStatus: parseDetailStatus(value.lootStatus, `item ${itemIndex} mob loot`),
+    loot,
+  };
+}
+
+function parseCharacter(value: unknown, itemIndex: number): CharacterProfile | null {
+  if (value === null || value === undefined) return null;
+  if (!isRecord(value) || !Array.isArray(value.abilities)) {
+    throw new Error(`item ${itemIndex} character profile is invalid`);
+  }
+  return {
+    title: nullableString(value.title, `item ${itemIndex} character title`),
+    survivability: nullableString(
+      value.survivability,
+      `item ${itemIndex} character survivability`,
+    ),
+    quote: nullableString(value.quote, `item ${itemIndex} character quote`),
+    abilities: value.abilities.map((raw, abilityIndex) =>
+      requiredString(raw, `item ${itemIndex} character ability ${abilityIndex}`),
+    ),
+  };
+}
+
+function nullableBoolean(value: unknown, field: string): boolean | null {
+  if (value === null) return null;
+  if (typeof value !== "boolean") throw new Error(`${field} must be boolean or null`);
+  return value;
+}
+
+function nullableDisplayValue(value: unknown, field: string): string | null {
+  if (value === null) return null;
+  if (typeof value !== "string" && typeof value !== "number") {
+    throw new Error(`${field} must be text, number, or null`);
+  }
+  return String(value);
+}
+
+function parseStructureImage(
+  value: unknown,
+  field: string,
+): StructureVisualImage | null {
+  if (value === null) return null;
+  if (!isRecord(value)) throw new Error(`${field} must be an object or null`);
+  const nullableDimension = (dimension: unknown, name: string) => {
+    if (dimension === null || dimension === undefined) return null;
+    if (typeof dimension !== "number" || !Number.isFinite(dimension) || dimension <= 0) {
+      throw new Error(`${field} ${name} is invalid`);
+    }
+    return dimension;
+  };
+  return {
+    title: nullableString(value.title ?? null, `${field} title`),
+    src: requiredString(value.src, `${field} src`),
+    mime: nullableString(value.mime ?? null, `${field} mime`),
+    width: nullableDimension(value.width, "width"),
+    height: nullableDimension(value.height, "height"),
+    evidence: parseEvidence(value.evidence, field),
+  };
+}
+
+function parseStructureDetails(
+  value: unknown,
+  category: PrefabCategory,
+  itemIndex: number,
+): StructureDetails | null {
+  if (category !== "structure") {
+    if (value !== null) {
+      throw new Error(`non-structure item ${itemIndex} structureDetails must be null`);
+    }
+    return null;
+  }
+  if (!isRecord(value)) {
+    throw new Error(`structure item ${itemIndex} structureDetails must be an object`);
+  }
+  const { origin, construction, functions, craftables, destruction, visual } = value;
+  if (
+    !isRecord(origin) ||
+    !isRecord(construction) ||
+    !isRecord(functions) ||
+    !isRecord(craftables) ||
+    !isRecord(destruction) ||
+    !isRecord(visual)
+  ) {
+    throw new Error(`structure item ${itemIndex} must contain every detail section`);
+  }
+  if (
+    !Array.isArray(origin.sources) ||
+    !Array.isArray(construction.ingredients) ||
+    !Array.isArray(functions.facts) ||
+    !Array.isArray(craftables.recipes) ||
+    !Array.isArray(destruction.drops) ||
+    !Array.isArray(visual.alternatives)
+  ) {
+    throw new Error(`structure item ${itemIndex} detail sections must contain arrays`);
+  }
+  const parseSectionEvidence = (section: Record<string, unknown>, name: string) =>
+    parseEvidence(section.evidence, `structure item ${itemIndex} ${name}`);
+  const functionFacts = functions.facts.map((raw, factIndex) => {
+    if (!isRecord(raw) || !Array.isArray(raw.related)) {
+      throw new Error(`structure item ${itemIndex} function ${factIndex} is invalid`);
+    }
+    return {
+      key: requiredString(raw.key, `structure function ${factIndex} key`),
+      label: requiredString(raw.label, `structure function ${factIndex} label`),
+      value: requiredString(raw.value, `structure function ${factIndex} value`),
+      unit: nullableString(raw.unit, `structure function ${factIndex} unit`),
+      context: nullableString(raw.context, `structure function ${factIndex} context`),
+      related: raw.related.map((entry, index) =>
+        requiredString(entry, `structure function ${factIndex} related ${index}`),
+      ),
+      evidence: parseEvidence(raw.evidence, `structure function ${factIndex}`),
+    };
+  });
+  const stationRecipes = craftables.recipes.map((raw, recipeIndex) => {
+    if (!isRecord(raw) || !Array.isArray(raw.ingredients) || !isRecord(raw.restrictions)) {
+      throw new Error(`structure station recipe ${recipeIndex} is invalid`);
+    }
+    return {
+      result: parseReference(raw.result, `structure station recipe ${recipeIndex} result`),
+      resultAmount: positiveNumber(
+        raw.resultAmount,
+        `structure station recipe ${recipeIndex} result amount`,
+      ),
+      ingredients: raw.ingredients.map(parseIngredient),
+      station: requiredString(raw.station, `structure station recipe ${recipeIndex} station`),
+      tech: nullableString(raw.tech, `structure station recipe ${recipeIndex} tech`),
+      restrictions: raw.restrictions,
+      note: nullableString(raw.note, `structure station recipe ${recipeIndex} note`),
+      evidence: parseEvidence(raw.evidence, `structure station recipe ${recipeIndex}`),
+    };
+  });
+  if (visual.kind !== null && visual.kind !== "inventory_icon" && visual.kind !== "wiki_image") {
+    throw new Error(`structure item ${itemIndex} visual kind is invalid`);
+  }
+  const alternatives = visual.alternatives.map((candidate, candidateIndex) => {
+    if (!isRecord(candidate)) {
+      throw new Error(`structure visual alternative ${candidateIndex} is invalid`);
+    }
+    return candidate;
+  });
+  const outputCount =
+    construction.outputCount === null
+      ? null
+      : positiveNumber(construction.outputCount, `structure item ${itemIndex} outputCount`);
+  return {
+    origin: {
+      status: parseDetailStatus(origin.status, `structure item ${itemIndex} origin`),
+      naturallySpawned:
+        typeof origin.naturallySpawned === "boolean"
+          ? origin.naturallySpawned
+          : (() => { throw new Error(`structure item ${itemIndex} naturallySpawned is invalid`); })(),
+      renewable: nullableBoolean(origin.renewable, `structure item ${itemIndex} renewable`),
+      spawnCode: nullableString(origin.spawnCode, `structure item ${itemIndex} spawnCode`),
+      sources: origin.sources.map((entry, index) =>
+        requiredString(entry, `structure item ${itemIndex} source ${index}`),
+      ),
+      respawn: nullableDisplayValue(origin.respawn, `structure item ${itemIndex} respawn`),
+      craftable:
+        typeof origin.craftable === "boolean"
+          ? origin.craftable
+          : (() => { throw new Error(`structure item ${itemIndex} craftable is invalid`); })(),
+      note: nullableString(origin.note, `structure item ${itemIndex} origin note`),
+      evidence: parseSectionEvidence(origin, "origin"),
+    },
+    construction: {
+      status: parseDetailStatus(
+        construction.status,
+        `structure item ${itemIndex} construction`,
+      ),
+      outputCount,
+      ingredients: construction.ingredients.map(parseIngredient),
+      tech: nullableString(construction.tech, `structure item ${itemIndex} tech`),
+      station: nullableString(construction.station, `structure item ${itemIndex} station`),
+      restrictions: isRecord(construction.restrictions)
+        ? construction.restrictions
+        : {},
+      note: nullableString(construction.note, `structure item ${itemIndex} construction note`),
+      evidence: parseSectionEvidence(construction, "construction"),
+    },
+    functions: {
+      status: parseDetailStatus(functions.status, `structure item ${itemIndex} functions`),
+      facts: functionFacts,
+      reason: nullableString(functions.reason, `structure item ${itemIndex} functions reason`),
+      evidence: parseSectionEvidence(functions, "functions"),
+    },
+    craftables: {
+      status: parseDetailStatus(craftables.status, `structure item ${itemIndex} craftables`),
+      recipes: stationRecipes,
+      reason: nullableString(craftables.reason, `structure item ${itemIndex} craftables reason`),
+      evidence: parseSectionEvidence(craftables, "craftables"),
+    },
+    destruction: {
+      status: parseDetailStatus(destruction.status, `structure item ${itemIndex} destruction`),
+      destroyable: nullableBoolean(
+        destruction.destroyable,
+        `structure item ${itemIndex} destroyable`,
+      ),
+      tool: nullableString(destruction.tool, `structure item ${itemIndex} tool`),
+      work: nullableDisplayValue(destruction.work, `structure item ${itemIndex} work`),
+      health: nullableDisplayValue(destruction.health, `structure item ${itemIndex} health`),
+      burnable: nullableBoolean(destruction.burnable, `structure item ${itemIndex} burnable`),
+      drops: destruction.drops,
+      regeneration: nullableDisplayValue(
+        destruction.regeneration,
+        `structure item ${itemIndex} regeneration`,
+      ),
+      evidence: parseSectionEvidence(destruction, "destruction"),
+    },
+    visual: {
+      status: parseDetailStatus(visual.status, `structure item ${itemIndex} visual`),
+      kind: visual.kind,
+      sprite: parseSprite(visual.sprite, `structure item ${itemIndex} visual`),
+      image: parseStructureImage(visual.image, `structure item ${itemIndex} visual image`),
+      alternatives,
+      reason: nullableString(visual.reason, `structure item ${itemIndex} visual reason`),
+      evidence: parseSectionEvidence(visual, "visual"),
+    },
+  };
+}
+
 function parseItem(value: unknown, index: number): ItemListEntry {
   if (!isRecord(value)) {
     throw new Error(`item ${index} must be an object`);
@@ -412,11 +787,12 @@ function parseItem(value: unknown, index: number): ItemListEntry {
     throw new Error(`item ${index} namespace is invalid`);
   }
   const namespace = value.namespace;
+  const category = parseCategory(value.category, index);
   return {
     id: requiredString(value.id, `item ${index} id`),
     prefabId: requiredString(value.prefabId, `item ${index} prefabId`),
     namespace,
-    category: parseCategory(value.category, index),
+    category,
     name: requiredString(value.name, `item ${index} name`),
     englishName: nullableString(value.englishName, `item ${index} englishName`),
     description: nullableString(value.description, `item ${index} description`),
@@ -424,6 +800,9 @@ function parseItem(value: unknown, index: number): ItemListEntry {
     sprite: parseSprite(value.sprite, `item ${index}`),
     recipe: parseRecipe(value.recipe, index),
     details: parseDetails(value.details, namespace, index),
+    mob: parseMob(value.mob, index),
+    character: parseCharacter(value.character, index),
+    structureDetails: parseStructureDetails(value.structureDetails, category, index),
     wiki: parseWiki(value.wiki, index),
   };
 }
@@ -455,10 +834,10 @@ function curateItems(items: readonly ItemListEntry[]): ItemListEntry[] {
 export function parseItemPayload(value: unknown): readonly ItemListEntry[] {
   if (
     !isRecord(value) ||
-    value.schema_version !== 5 ||
+    value.schema_version !== 6 ||
     !Array.isArray(value.items)
   ) {
-    throw new Error("item payload must use schema version 5 and contain items");
+    throw new Error("item payload must use schema version 6 and contain items");
   }
   return curateItems(value.items.map(parseItem));
 }

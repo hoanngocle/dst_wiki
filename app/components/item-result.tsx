@@ -3,6 +3,7 @@ import {
   Buildings,
   Crown,
   Package,
+  Pill,
   Question,
   Sparkle,
   User,
@@ -22,6 +23,7 @@ const categoryMetadata: Record<
   { label: string; icon: Icon }
 > = {
   item: { label: "Item", icon: Package },
+  pill: { label: "Đan Dược", icon: Pill },
   mob: { label: "Mob", icon: Bug },
   boss: { label: "Boss", icon: Crown },
   character: { label: "Nhân vật", icon: User },
@@ -61,11 +63,7 @@ export function ItemResult({
   itemsById,
   onSelectItem,
 }: ItemResultProps) {
-  const sourceLabel = item.wiki
-    ? "Wiki"
-    : item.namespace === "tu_tien"
-      ? "Tu Tiên"
-      : "DST";
+  const sourceLabel = item.namespace === "tu_tien" ? "Tu Tiên" : "DST";
   const realPrefab = hasRealPrefab(item);
   const category = categoryMetadata[item.category];
   const CategoryIcon = category.icon;

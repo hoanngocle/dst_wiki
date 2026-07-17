@@ -24,7 +24,13 @@ class ModStaticTests(unittest.TestCase):
                 'version = "18.0.10"\n', encoding="utf-8"
             )
             (mod_root / "scripts/main/strings.lua").write_text(
-                "", encoding="utf-8"
+                '''
+STRINGS.CHARACTER_TITLES.xd_corehero = "Long Tộc Thánh Tử"
+STRINGS.CHARACTER_SURVIVABILITY.xd_corehero = "Như cá gặp nước"
+STRINGS.CHARACTER_DESCRIPTIONS.xd_corehero = "*Thao túng hàn băng linh khí"
+STRINGS.CHARACTER_QUOTES.xd_corehero = "\"Băng giá là quê hương.\""
+''',
+                encoding="utf-8",
             )
             translation_root = root / "translation"
             translation_root.mkdir()
@@ -79,6 +85,18 @@ STRINGS.CHARACTER_QUOTES["xd_dynamic"] = make_quote()
                 for fact in bundle.facts
             )
         )
+        core_description = next(
+            fact
+            for fact in bundle.facts
+            if fact.kind == "description" and fact.subject.prefab_id == "xd_corehero"
+        )
+        self.assertEqual(core_description.payload["value"], "*Thao túng hàn băng linh khí")
+        core_entity = next(
+            fact
+            for fact in bundle.facts
+            if fact.kind == "entity" and fact.subject.prefab_id == "xd_corehero"
+        )
+        self.assertEqual(core_entity.payload["entity_type"], "character")
 
     def test_decodes_lua_short_string_escapes_without_python_semantics(self):
         self.assertEqual(decode_lua_string_literal(r'"\065"'), "A")
@@ -140,6 +158,7 @@ STRINGS.CHARACTER_QUOTES["xd_dynamic"] = make_quote()
             (mod_root / "modinfo.lua").write_text('version = "1.2.3"\n', encoding="utf-8")
             (mod_root / "scripts/main/strings.lua").write_text(
                 'STRINGS.NAMES.XD_TEST_SWORD = "Kiếm Thử"\n'
+                'STRINGS.NAMES.SUDAJI_KILLED = "Nhục Thân Tiêu Vong"\n'
                 "STRINGS.NAMES.XD_ALIAS = STRINGS.NAMES.GOLDNUGGET\n",
                 encoding="utf-8",
             )
@@ -179,6 +198,7 @@ STRINGS.CHARACTER_QUOTES["xd_dynamic"] = make_quote()
                 {"xd_test_sword", "xd_prefab", "xd_icon", "xd_missing", "xd_translated"}
                 <= entity_ids
             )
+            self.assertNotIn("sudaji_killed", entity_ids)
             asset_payloads = [fact.payload for fact in bundle.facts if fact.kind == "asset"]
             self.assertTrue(any(value.get("asset_type") == "inventory" for value in asset_payloads))
             self.assertTrue(any(value.get("asset_type") == "handbook_image" for value in asset_payloads))

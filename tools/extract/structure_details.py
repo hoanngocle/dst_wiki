@@ -542,7 +542,14 @@ def audit_structure_visuals(
         )
         has_wiki = bool(wiki)
 
-        if craftable:
+        if craftable and (wiki_assets or world_assets):
+            classification = "craftable_wiki_visual"
+            action = "keep"
+            reason = (
+                "Công trình có công thức, không có inventory icon riêng nhưng "
+                "đã có ảnh Wiki/world asset được xác minh."
+            )
+        elif craftable:
             classification = "craftable_missing_asset"
             action = "repair"
             reason = (

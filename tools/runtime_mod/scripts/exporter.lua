@@ -338,6 +338,56 @@ local function InspectInstance(instance, prefab)
     local coverage = {}
     local components = instance.components or {}
 
+    local health = components.health
+    if health ~= nil then
+        AddStat(stats, "max_health", health.maxhealth, "hp")
+    end
+    local combat = components.combat
+    if combat ~= nil then
+        AddStat(stats, "attack_damage", combat.defaultdamage, "hp")
+        AddStat(stats, "attack_period", combat.min_attack_period or combat.attackperiod, "seconds")
+        AddStat(stats, "attack_range", combat.attackrange, "tiles")
+        AddStat(stats, "hit_range", combat.hitrange, "tiles")
+    end
+    local locomotor = components.locomotor
+    if locomotor ~= nil then
+        AddStat(stats, "walk_speed", locomotor.walkspeed, "tiles_per_second")
+        AddStat(stats, "run_speed", locomotor.runspeed, "tiles_per_second")
+    end
+    local sanityaura = components.sanityaura
+    if sanityaura ~= nil then
+        AddStat(stats, "sanity_aura", sanityaura.aura, "sanity_per_minute")
+    end
+    local freezable = components.freezable
+    if freezable ~= nil then
+        AddStat(stats, "freeze_resistance", freezable.resistance, "hits")
+    end
+    local sleeper = components.sleeper
+    if sleeper ~= nil then
+        AddStat(stats, "sleep_resistance", sleeper.resistance, "hits")
+    end
+    local planardamage = components.planardamage
+    if planardamage ~= nil then
+        AddStat(stats, "planar_damage", planardamage.basedamage, "hp")
+    end
+
+    local common_states = {
+        idle = true, walk = true, run = true, attack = true, hit = true,
+        death = true, sleep = true, wake = true, frozen = true, thaw = true,
+    }
+    local special_states = {}
+    local stategraph = instance.sg ~= nil and instance.sg.sg or nil
+    for state_name in pairs((stategraph and stategraph.states) or {}) do
+        local normalized = string.lower(tostring(state_name))
+        if not common_states[normalized] then
+            table.insert(special_states, normalized)
+        end
+    end
+    table.sort(special_states)
+    if #special_states > 0 then
+        AddStat(stats, "special_states", table.concat(special_states, ", "), "state_names")
+    end
+
     local weapon = components.weapon
     if weapon ~= nil then
         AddStat(stats, "damage", weapon.damage, "hp")
@@ -548,10 +598,10 @@ local function InspectInstance(instance, prefab)
     local entity_type = "prefab"
     if components.inventoryitem ~= nil then
         entity_type = "inventory_item"
-    elseif components.locomotor ~= nil or components.combat ~= nil then
-        entity_type = "creature"
     elseif components.workable ~= nil or instance:HasTag("structure") then
         entity_type = "structure"
+    elseif components.locomotor ~= nil or components.combat ~= nil then
+        entity_type = "creature"
     end
     return {
         prefab = prefab,

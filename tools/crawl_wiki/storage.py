@@ -454,6 +454,18 @@ class CrawlStorage:
     def fail_image(self, title: str, error: Mapping[str, Any]) -> None:
         self._fail("image_queue", "title", title, error)
 
+    def skip_image(self, title: str, reason: str) -> None:
+        """Mark a removed optional Wiki image as resolved but unavailable."""
+
+        with self.connection:
+            self.connection.execute(
+                "update image_queue set status='skipped',last_error=? where title=?",
+                (reason, title),
+            )
+            self.connection.execute(
+                "delete from errors where stage='image' and subject=?", (title,)
+            )
+
     def retry_errors(self) -> None:
         with self.connection:
             self.connection.execute(

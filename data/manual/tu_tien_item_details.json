@@ -1,4 +1,3617 @@
 {
   "schema_version": 1,
-  "items": {}
+  "items": {
+    "tu_tien:xd_ayhx": {
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [
+          {
+            "result": {
+              "id": "tu_tien:xd_danyao_hj",
+              "name": "Hóa Tinh Đan",
+              "sprite": {
+                "src": "/assets/game/1a3a80f92d9ca89b16158588aabb388b64a30516052821d963a6b79957a726ea.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            },
+            "resultAmount": 1,
+            "subjectAmount": 3,
+            "ingredients": [
+              {
+                "id": "base_game:purplegem",
+                "name": "Ngọc Tím",
+                "amount": 3,
+                "sprite": null
+              },
+              {
+                "id": "base_game:thulecite",
+                "name": "Thulecite",
+                "amount": 3,
+                "sprite": {
+                  "src": "/assets/game/692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce.png",
+                  "uv": {
+                    "u1": 0.625244140625,
+                    "u2": 0.656005859375,
+                    "v1": 0.375244140625,
+                    "v2": 0.406005859375
+                  }
+                }
+              },
+              {
+                "id": "tu_tien:xd_lingshi1",
+                "name": "Hạ Phẩm Linh Thạch",
+                "amount": 50,
+                "sprite": {
+                  "src": "/assets/game/67ef5f850c6e54b4efd567ffec21720ccedc95c8278021a9ced90cb8f242d5a5.png",
+                  "uv": {
+                    "u1": 0.0078125,
+                    "u2": 0.9921875,
+                    "v1": 0.0078125,
+                    "v2": 0.9921875
+                  }
+                }
+              }
+            ],
+            "craftingNote": "Công thức được ghi trong Tu Tiên Bí Quyển.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/images/xd_info_dy_3.tex",
+                "locator": "trang 5"
+              }
+            ]
+          }
+        ],
+        "effects": []
+      },
+      "dropBy": {
+        "replace": true,
+        "status": "known",
+        "sources": [
+          {
+            "type": "drop",
+            "source": {
+              "id": "base_game:monkey",
+              "name": "Khỉ Hang",
+              "sprite": null
+            },
+            "quantity": null,
+            "chance": null,
+            "conditions": "Tiêu diệt Khỉ Hang.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/images/xd_info_dy_3.tex",
+                "locator": "trang 6"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_baihu": {
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "defeat",
+            "text": "Khi bị đánh bại: rơi 15 Vàng, 3 Ngọc Lục, 4 Ngọc Cam, 3 Ngọc Đỏ, 4 Ngọc Vàng và 2 Cẩm Mao Hổ Bì.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_baihu.lua",
+                "locator": "loot table xd_baihu"
+              }
+            ]
+          }
+        ]
+      },
+      "dropBy": {
+        "replace": true,
+        "status": "known",
+        "sources": [
+          {
+            "type": "other",
+            "source": null,
+            "quantity": null,
+            "chance": null,
+            "conditions": "Xuất hiện ở Thảo Nguyên; chỉ có thể tấn công khi ít nhất một người chơi đạt Nguyên Anh tiền kỳ.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/images/xd_info_ys_6.tex",
+                "locator": "trang 11"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_baihu_skin": {
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [
+          {
+            "result": {
+              "id": "tu_tien:xd_danyao_hs",
+              "name": "Hóa Thần Đan",
+              "sprite": {
+                "src": "/assets/game/42d405484f73a95ebb7656ec4bc4a70365da0b694e287dffc7bb42929967f758.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            },
+            "resultAmount": 1,
+            "subjectAmount": 1,
+            "ingredients": [
+              {
+                "id": "base_game:horrorfuel",
+                "name": "Kinh Dị Thuần Túy",
+                "amount": 8,
+                "sprite": {
+                  "src": "/assets/game/8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666.png",
+                  "uv": {
+                    "u1": 0.281494140625,
+                    "u2": 0.312255859375,
+                    "v1": 0.531494140625,
+                    "v2": 0.562255859375
+                  }
+                }
+              },
+              {
+                "id": "base_game:purebrilliance",
+                "name": "Quang Thạch Tinh Khiết",
+                "amount": 8,
+                "sprite": {
+                  "src": "/assets/game/692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce.png",
+                  "uv": {
+                    "u1": 0.843994140625,
+                    "u2": 0.874755859375,
+                    "v1": 0.968994140625,
+                    "v2": 0.999755859375
+                  }
+                }
+              },
+              {
+                "id": "tu_tien:xd_lingshi3",
+                "name": "Thượng Phẩm Linh Thạch",
+                "amount": 1,
+                "sprite": {
+                  "src": "/assets/game/5ec7b115a325e6192423a0076923b6abda91759fc5866851827c74d09b4335f9.png",
+                  "uv": {
+                    "u1": 0.0078125,
+                    "u2": 0.9921875,
+                    "v1": 0.0078125,
+                    "v2": 0.9921875
+                  }
+                }
+              }
+            ],
+            "craftingNote": "Công thức được ghi trong Tu Tiên Bí Quyển.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/images/xd_info_dy_5.tex",
+                "locator": "trang 9"
+              }
+            ]
+          },
+          {
+            "result": {
+              "id": "tu_tien:xd_zcmj",
+              "name": "Tử Xá Diện Giáp",
+              "sprite": {
+                "src": "/assets/game/3c4090c484e5ff0723d2546fa6f2bc2770a28ce67a6ab6268eff98f0c438c459.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            },
+            "resultAmount": 1,
+            "subjectAmount": 1,
+            "ingredients": [
+              {
+                "id": "tu_tien:xd_zcmy",
+                "name": "Tử Xá Ma Vũ",
+                "amount": 1,
+                "sprite": {
+                  "src": "/assets/game/ae3a584c978e6009a9ee35f6ae2f501013425e4f1a4378329b7153fabe990ecf.png",
+                  "uv": {
+                    "u1": 0.0078125,
+                    "u2": 0.9921875,
+                    "v1": 0.0078125,
+                    "v2": 0.9921875
+                  }
+                }
+              },
+              {
+                "id": "tu_tien:xd_qianyu",
+                "name": "Tiêm Vũ",
+                "amount": 3,
+                "sprite": {
+                  "src": "/assets/game/186482d0e326ea83bf0b79b4a2cd6b560a8bf120d9430c6a03c297ecf6563d65.png",
+                  "uv": {
+                    "u1": 0.0078125,
+                    "u2": 0.9921875,
+                    "v1": 0.0078125,
+                    "v2": 0.9921875
+                  }
+                }
+              },
+              {
+                "id": "tu_tien:xd_lingshi3",
+                "name": "Thượng Phẩm Linh Thạch",
+                "amount": 1,
+                "sprite": {
+                  "src": "/assets/game/5ec7b115a325e6192423a0076923b6abda91759fc5866851827c74d09b4335f9.png",
+                  "uv": {
+                    "u1": 0.0078125,
+                    "u2": 0.9921875,
+                    "v1": 0.0078125,
+                    "v2": 0.9921875
+                  }
+                }
+              }
+            ],
+            "craftingNote": null,
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/main/recipes.lua",
+                "locator": "xd_zcmj"
+              }
+            ]
+          }
+        ],
+        "effects": [
+          {
+            "trigger": "feed",
+            "text": "Cho Thần Ngoại Hóa Thân ăn để tăng tu vi cho nó.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/images/xd_info_ys_6.tex",
+                "locator": "trang 11"
+              }
+            ]
+          }
+        ]
+      },
+      "dropBy": {
+        "replace": true,
+        "status": "known",
+        "sources": [
+          {
+            "type": "drop",
+            "source": {
+              "id": "tu_tien:xd_baihu",
+              "name": "Tàn Khu Bạch Hổ",
+              "sprite": null
+            },
+            "quantity": "2",
+            "chance": "100%",
+            "conditions": "Tiêu diệt Tàn Khu Bạch Hổ.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_baihu.lua",
+                "locator": "loot table xd_baihu"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_beefalo": {
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "defeat",
+            "text": "Khi bị giết: rơi 1 Thịt.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_beefalo.lua",
+                "locator": "loot table xd_beefalo"
+              }
+            ]
+          }
+        ]
+      },
+      "dropBy": {
+        "replace": true,
+        "status": "known",
+        "sources": [
+          {
+            "type": "other",
+            "source": {
+              "id": "tu_tien:xd_pflnw",
+              "name": "Chuồng Bò Lai",
+              "sprite": {
+                "src": "/assets/game/2f73803f192337a1aafe47302ba65912932f4510fe41f4cb9f999a7495412507.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            },
+            "quantity": null,
+            "chance": null,
+            "conditions": "Được chăn nuôi tại Chuồng Bò Lai.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/images/xd_info_xy_3.tex",
+                "locator": "trang 6"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_choujiangji": {
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "give",
+            "text": "Đưa 1 Trung Phẩm, Thượng Phẩm hoặc Cực Phẩm Linh Thạch vào máy để quay thưởng. Máy không nhận Hạ Phẩm Linh Thạch; viên Linh Thạch đã đưa vào sẽ bị tiêu hao. Kết quả ngẫu nhiên có thể là cơ duyên hoặc kiếp nạn.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_choujiangji.lua",
+                "locator": "trader.test và trader.onaccept"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_qxdhd_5": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:blue_cap",
+            "amount": 2
+          },
+          {
+            "id": "base_game:green_cap",
+            "amount": 2
+          },
+          {
+            "id": "base_game:nightmarefuel",
+            "amount": 5
+          },
+          {
+            "id": "tu_tien:xd_lc_yhh",
+            "amount": 1
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 20 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_qxdhd_5"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Hồi ngay 40 Tinh thần và hồi khoảng 1 Tinh thần/giây trong 480 giây (số đo runtime thực tế).",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_qxdhd_5_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_qxdhd_3": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:green_cap",
+            "amount": 6
+          },
+          {
+            "id": "base_game:nightmarefuel",
+            "amount": 20
+          },
+          {
+            "id": "base_game:purebrilliance",
+            "amount": 1
+          },
+          {
+            "id": "tu_tien:xd_lc_yhh",
+            "amount": 4
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 60 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_qxdhd_3"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Hồi ngay 120 Tinh thần và hồi khoảng 2.5 Tinh thần/giây trong 960 giây (số đo runtime thực tế).",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_qxdhd_3_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_xynyd_3": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:dragonfruit",
+            "amount": 6
+          },
+          {
+            "id": "base_game:monstermeat",
+            "amount": 6
+          },
+          {
+            "id": "tu_tien:xd_fs",
+            "amount": 1
+          },
+          {
+            "id": "tu_tien:xd_lc_cyh",
+            "amount": 4
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 60 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_xynyd_3"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Tạo buff chống lạnh trong 1440 giây. Runtime xác nhận thời lượng nhưng phần mã đã mã hóa không để lộ hệ số chống lạnh.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_xynyd_3_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_dmhsd_4": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:plantmeat",
+            "amount": 7
+          },
+          {
+            "id": "base_game:spidergland",
+            "amount": 4
+          },
+          {
+            "id": "base_game:tillweed",
+            "amount": 4
+          },
+          {
+            "id": "tu_tien:xd_lc_dms",
+            "amount": 2
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 30 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_dmhsd_4"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Hồi ngay 22.5 Máu; sau đó hồi thêm 6 Máu mỗi 6 giây trong 720 giây.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_dmhsd_4_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_qjqsd_4": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:corn",
+            "amount": 4
+          },
+          {
+            "id": "base_game:gears",
+            "amount": 2
+          },
+          {
+            "id": "base_game:moonglass",
+            "amount": 2
+          },
+          {
+            "id": "tu_tien:xd_lc_qfx",
+            "amount": 2
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 30 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_qjqsd_4"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Tăng 25% hiệu suất Chặt, Đập và Đào mỏ trong 720 giây; không tăng tốc Đào đất, Hái hoặc Thu hoạch.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_qjqsd_4_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_hsphd_1": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:deerclops_eyeball",
+            "amount": 3
+          },
+          {
+            "id": "base_game:watermelon",
+            "amount": 12
+          },
+          {
+            "id": "tu_tien:xd_lc_hsc",
+            "amount": 16
+          },
+          {
+            "id": "tu_tien:xd_npxsz",
+            "amount": 2
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 180 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_hsphd_1"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Tạo buff chống nóng trong 2400 giây. Runtime xác nhận thời lượng nhưng phần mã đã mã hóa không để lộ hệ số chống nóng.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_hsphd_1_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_dmhsd_2": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:mandrake",
+            "amount": 1
+          },
+          {
+            "id": "base_game:royal_jelly",
+            "amount": 6
+          },
+          {
+            "id": "base_game:spidergland",
+            "amount": 8
+          },
+          {
+            "id": "tu_tien:xd_lc_dms",
+            "amount": 8
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 120 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_dmhsd_2"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Hồi ngay 60 Máu; sau đó hồi thêm 15 Máu mỗi 6 giây trong 1200 giây.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_dmhsd_2_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_cyfxd_1": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:dragon_scales",
+            "amount": 4
+          },
+          {
+            "id": "base_game:pepper",
+            "amount": 12
+          },
+          {
+            "id": "tu_tien:xd_lc_cyh",
+            "amount": 16
+          },
+          {
+            "id": "tu_tien:xd_npxsz",
+            "amount": 2
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 180 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_cyfxd_1"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Tăng 40% sát thương gây ra trong 2400 giây.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_cyfxd_1_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_lmsqd_2": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:asparagus",
+            "amount": 8
+          },
+          {
+            "id": "base_game:lightninggoathorn",
+            "amount": 2
+          },
+          {
+            "id": "tu_tien:xd_lc_lmg",
+            "amount": 8
+          },
+          {
+            "id": "tu_tien:xd_qlr",
+            "amount": 2
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 120 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_lmsqd_2"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Mỗi đòn đánh gây thêm 95 sát thương lôi trong 1200 giây; kích hoạt ở 100% số đòn trong phép thử runtime.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_lmsqd_2_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_danyao_zj": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:dragon_scales",
+            "amount": 1
+          },
+          {
+            "id": "base_game:houndstooth",
+            "amount": 10
+          },
+          {
+            "id": "base_game:livinglog",
+            "amount": 3
+          },
+          {
+            "id": "tu_tien:xd_lingshi2",
+            "amount": 1
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_danyao_zj"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Dùng ở cảnh giới cấp 2 để thực hiện đột phá lên cấp 3 (Trúc Cơ). Runtime xác nhận đây là đan đột phá có điều kiện; không đọc được xác suất thành công từ phần mã đã mã hóa.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_danyao.lua",
+                "locator": "xd_danyao_zj onusefn"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_dmhsd_5": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:bird_egg",
+            "amount": 2
+          },
+          {
+            "id": "base_game:spidergland",
+            "amount": 2
+          },
+          {
+            "id": "base_game:tillweed",
+            "amount": 2
+          },
+          {
+            "id": "tu_tien:xd_lc_dms",
+            "amount": 1
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 20 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_dmhsd_5"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Hồi ngay 15 Máu; sau đó hồi thêm 6 Máu mỗi 6 giây trong 480 giây.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_dmhsd_5_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_dmhsd_3": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:royal_jelly",
+            "amount": 3
+          },
+          {
+            "id": "base_game:spidergland",
+            "amount": 6
+          },
+          {
+            "id": "base_game:tillweed",
+            "amount": 6
+          },
+          {
+            "id": "tu_tien:xd_lc_dms",
+            "amount": 4
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 60 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_dmhsd_3"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Hồi ngay 37.5 Máu; sau đó hồi thêm 10 Máu mỗi 6 giây trong 960 giây.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_dmhsd_3_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_yfsxd_3": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:carrot",
+            "amount": 6
+          },
+          {
+            "id": "base_game:malbatross_feather",
+            "amount": 8
+          },
+          {
+            "id": "base_game:manrabbit_tail",
+            "amount": 6
+          },
+          {
+            "id": "tu_tien:xd_lc_qfx",
+            "amount": 4
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 60 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_yfsxd_3"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Tăng 15% tốc độ đi bộ và chạy trong 1200 giây.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_yfsxd_3_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_danyao_jq": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:spidergland",
+            "amount": 5
+          },
+          {
+            "id": "base_game:stinger",
+            "amount": 10
+          },
+          {
+            "id": "base_game:tallbirdegg",
+            "amount": 1
+          },
+          {
+            "id": "tu_tien:xd_lingshi1",
+            "amount": 10
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_danyao_jq"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Sau khi dùng, đặt cảnh giới mục tiêu thành cấp 1 (Tụ Khí); quá trình chuyển cấp hoàn tất sau khoảng 3 giây.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_danyao.lua",
+                "locator": "xd_danyao_jq onusefn"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_lmsqd_3": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:asparagus",
+            "amount": 6
+          },
+          {
+            "id": "base_game:lightninggoathorn",
+            "amount": 2
+          },
+          {
+            "id": "tu_tien:xd_lc_lmg",
+            "amount": 4
+          },
+          {
+            "id": "tu_tien:xd_qlr",
+            "amount": 1
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 60 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_lmsqd_3"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Mỗi đòn đánh gây thêm 65 sát thương lôi trong 960 giây; kích hoạt ở 100% số đòn trong phép thử runtime.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_lmsqd_3_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_xttyd_3": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:batwing",
+            "amount": 3
+          },
+          {
+            "id": "base_game:tomato",
+            "amount": 6
+          },
+          {
+            "id": "tu_tien:xd_lc_yhh",
+            "amount": 4
+          },
+          {
+            "id": "tu_tien:xd_zcmy",
+            "amount": 1
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 60 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_xttyd_3"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Hồi Máu bằng 30% sát thương gây ra trong 960 giây; kích hoạt ở 100% số đòn trong phép thử runtime.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_xttyd_3_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_tsfhd": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:dragon_scales",
+            "amount": 5
+          },
+          {
+            "id": "tu_tien:xd_fs",
+            "amount": 3
+          },
+          {
+            "id": "tu_tien:xd_lingshi3",
+            "amount": 3
+          },
+          {
+            "id": "tu_tien:xd_qlr",
+            "amount": 3
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 120 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_tsfhd"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Cho phép chọn lại nhân vật và giữ nguyên cảnh giới tu luyện hiện tại. Vật phẩm bị tiêu hao khi dùng.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_danyao_new.lua",
+                "locator": "xd_dy_tsfhd onusefn"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_yfsxd_5": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:carrot",
+            "amount": 2
+          },
+          {
+            "id": "base_game:feather_crow",
+            "amount": 1
+          },
+          {
+            "id": "base_game:manrabbit_tail",
+            "amount": 2
+          },
+          {
+            "id": "tu_tien:xd_lc_qfx",
+            "amount": 1
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 20 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_yfsxd_5"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Tăng 6% tốc độ đi bộ và chạy trong 960 giây.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_yfsxd_5_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_qjqsd_1": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:corn",
+            "amount": 12
+          },
+          {
+            "id": "base_game:shroom_skin",
+            "amount": 4
+          },
+          {
+            "id": "tu_tien:xd_lc_qfx",
+            "amount": 16
+          },
+          {
+            "id": "tu_tien:xd_npxsz",
+            "amount": 2
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 180 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_qjqsd_1"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Tăng 90% hiệu suất Chặt, Đập và Đào mỏ trong 2400 giây; không tăng tốc Đào đất, Hái hoặc Thu hoạch.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_qjqsd_1_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_qxdhd_4": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:green_cap",
+            "amount": 4
+          },
+          {
+            "id": "base_game:nightmarefuel",
+            "amount": 10
+          },
+          {
+            "id": "base_game:shroomcake",
+            "amount": 2
+          },
+          {
+            "id": "tu_tien:xd_lc_yhh",
+            "amount": 2
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 30 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_qxdhd_4"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "hồi khoảng 1.67 Tinh thần/giây trong 720 giây (số đo runtime thực tế).",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_qxdhd_4_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_xynyd_4": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:dragonfruit",
+            "amount": 4
+          },
+          {
+            "id": "base_game:monstermeat",
+            "amount": 4
+          },
+          {
+            "id": "base_game:redgem",
+            "amount": 1
+          },
+          {
+            "id": "tu_tien:xd_lc_cyh",
+            "amount": 2
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 30 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_xynyd_4"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Tạo buff chống lạnh trong 960 giây. Runtime xác nhận thời lượng nhưng phần mã đã mã hóa không để lộ hệ số chống lạnh.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_xynyd_4_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_yfsxd_1": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:carrot",
+            "amount": 12
+          },
+          {
+            "id": "base_game:malbatross_feather",
+            "amount": 32
+          },
+          {
+            "id": "tu_tien:xd_lc_qfx",
+            "amount": 16
+          },
+          {
+            "id": "tu_tien:xd_npxsz",
+            "amount": 2
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 180 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_yfsxd_1"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Tăng 25% tốc độ đi bộ và chạy trong 2400 giây.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_yfsxd_1_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_danyao_bg": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:cutgrass",
+            "amount": 3
+          },
+          {
+            "id": "base_game:honey",
+            "amount": 3
+          },
+          {
+            "id": "tu_tien:xd_lingshi1",
+            "amount": 5
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_danyao_bg"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Giảm tốc độ hao Đói còn 20% bình thường (giảm 80%). Runtime không ghi nhận bộ đếm thời gian, nên hiệu ứng được xem là duy trì cho đến khi trạng thái nhân vật bị thay đổi.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_danyao.lua",
+                "locator": "xd_danyao_bg onusefn"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_pshsd_1": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:potato",
+            "amount": 12
+          },
+          {
+            "id": "tu_tien:xd_lc_dms",
+            "amount": 16
+          },
+          {
+            "id": "tu_tien:xd_mgqg",
+            "amount": 4
+          },
+          {
+            "id": "tu_tien:xd_npxsz",
+            "amount": 2
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 180 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_pshsd_1"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Giảm 35% sát thương nhận vào trong 2400 giây.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_pshsd_1_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_cyfxd_3": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:dragon_scales",
+            "amount": 1
+          },
+          {
+            "id": "base_game:pepper",
+            "amount": 6
+          },
+          {
+            "id": "base_game:wormlight",
+            "amount": 3
+          },
+          {
+            "id": "tu_tien:xd_lc_cyh",
+            "amount": 4
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 60 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_cyfxd_3"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Tăng 20% sát thương gây ra trong 960 giây.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_cyfxd_3_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_danyao_hj": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:purplegem",
+            "amount": 3
+          },
+          {
+            "id": "base_game:thulecite",
+            "amount": 3
+          },
+          {
+            "id": "tu_tien:xd_ayhx",
+            "amount": 3
+          },
+          {
+            "id": "tu_tien:xd_lingshi1",
+            "amount": 50
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_danyao_hj"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Sau khi dùng, đặt cảnh giới mục tiêu thành cấp 5 (Hóa Tinh); quá trình chuyển cấp hoàn tất sau khoảng 3 giây.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_danyao.lua",
+                "locator": "xd_danyao_hj onusefn"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_danyao_sm": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:fig",
+            "amount": 10
+          },
+          {
+            "id": "base_game:royal_jelly",
+            "amount": 1
+          },
+          {
+            "id": "base_game:saltrock",
+            "amount": 15
+          },
+          {
+            "id": "tu_tien:xd_lingshi1",
+            "amount": 30
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_danyao_sm"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Sau khi dùng, đặt cảnh giới mục tiêu thành cấp 7 (Sơ Mạch); quá trình chuyển cấp hoàn tất sau khoảng 3 giây.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_danyao.lua",
+                "locator": "xd_danyao_sm onusefn"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_danyao_dt": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:pigskin",
+            "amount": 3
+          },
+          {
+            "id": "base_game:redgem",
+            "amount": 3
+          },
+          {
+            "id": "tu_tien:xd_lingshi1",
+            "amount": 30
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_danyao_dt"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Sau khi dùng, đặt cảnh giới mục tiêu thành cấp 2 (Đoán Thể); quá trình chuyển cấp hoàn tất sau khoảng 3 giây.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_danyao.lua",
+                "locator": "xd_danyao_dt onusefn"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_pshsd_3": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:potato",
+            "amount": 6
+          },
+          {
+            "id": "base_game:thulecite",
+            "amount": 3
+          },
+          {
+            "id": "tu_tien:xd_lc_dms",
+            "amount": 4
+          },
+          {
+            "id": "tu_tien:xd_mgqg",
+            "amount": 1
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 60 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_pshsd_3"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Giảm 25% sát thương nhận vào trong 960 giây.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_pshsd_3_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_xynyd_2": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:dragonfruit",
+            "amount": 8
+          },
+          {
+            "id": "base_game:monstermeat",
+            "amount": 8
+          },
+          {
+            "id": "tu_tien:xd_fs",
+            "amount": 2
+          },
+          {
+            "id": "tu_tien:xd_lc_cyh",
+            "amount": 8
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 120 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_xynyd_2"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Tạo buff chống lạnh trong 2400 giây. Runtime xác nhận thời lượng nhưng phần mã đã mã hóa không để lộ hệ số chống lạnh.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_xynyd_2_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_yfsxd_2": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:carrot",
+            "amount": 8
+          },
+          {
+            "id": "base_game:malbatross_feather",
+            "amount": 16
+          },
+          {
+            "id": "base_game:manrabbit_tail",
+            "amount": 8
+          },
+          {
+            "id": "tu_tien:xd_lc_qfx",
+            "amount": 8
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 120 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_yfsxd_2"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Tăng 20% tốc độ đi bộ và chạy trong 1200 giây.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_yfsxd_2_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_danyao_hl": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:shadowheart",
+            "amount": 1
+          },
+          {
+            "id": "tu_tien:xd_lingshi3",
+            "amount": 1
+          },
+          {
+            "id": "tu_tien:xd_mgqg",
+            "amount": 1
+          },
+          {
+            "id": "tu_tien:xd_zcmy",
+            "amount": 1
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_danyao_hl"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Sau khi dùng, đặt cảnh giới mục tiêu thành cấp 14 (Hợp Linh); quá trình chuyển cấp hoàn tất sau khoảng 3 giây.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_danyao.lua",
+                "locator": "xd_danyao_hl onusefn"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_danyao_jy": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:butter",
+            "amount": 1
+          },
+          {
+            "id": "base_game:shroom_skin",
+            "amount": 1
+          },
+          {
+            "id": "tu_tien:xd_fs",
+            "amount": 1
+          },
+          {
+            "id": "tu_tien:xd_lingshi2",
+            "amount": 3
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_danyao_jy"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Dùng ở cảnh giới cấp 8 để thực hiện đột phá lên cấp 9 (Nguyên Anh). Runtime xác nhận đây là đan đột phá có điều kiện; không đọc được xác suất thành công từ phần mã đã mã hóa.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_danyao.lua",
+                "locator": "xd_danyao_jy onusefn"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_danyao_hs": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:horrorfuel",
+            "amount": 8
+          },
+          {
+            "id": "base_game:purebrilliance",
+            "amount": 8
+          },
+          {
+            "id": "tu_tien:xd_baihu_skin",
+            "amount": 1
+          },
+          {
+            "id": "tu_tien:xd_lingshi3",
+            "amount": 1
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_danyao_hs"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Dùng ở cảnh giới cấp 11 để thực hiện đột phá lên cấp 12 (Hóa Thần). Runtime xác nhận đây là đan đột phá có điều kiện; không đọc được xác suất thành công từ phần mã đã mã hóa.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_danyao.lua",
+                "locator": "xd_danyao_hs onusefn"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_cyfxd_5": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:pepper",
+            "amount": 2
+          },
+          {
+            "id": "base_game:smallmeat",
+            "amount": 2
+          },
+          {
+            "id": "base_game:wormlight",
+            "amount": 1
+          },
+          {
+            "id": "tu_tien:xd_lc_cyh",
+            "amount": 1
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 20 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_cyfxd_5"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Tăng 10% sát thương gây ra trong 480 giây.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_cyfxd_5_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_danyao_rl": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:cookiecuttershell",
+            "amount": 7
+          },
+          {
+            "id": "base_game:gnarwail_horn",
+            "amount": 1
+          },
+          {
+            "id": "tu_tien:xd_aymg",
+            "amount": 1
+          },
+          {
+            "id": "tu_tien:xd_lingshi2",
+            "amount": 1
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_danyao_rl"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Sau khi dùng, đặt cảnh giới mục tiêu thành cấp 8 (Dung Linh); quá trình chuyển cấp hoàn tất sau khoảng 3 giây.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_danyao.lua",
+                "locator": "xd_danyao_rl onusefn"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_danyao_hy": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "tu_tien:xd_lingshi3",
+            "amount": 1
+          },
+          {
+            "id": "tu_tien:xd_pog_tail",
+            "amount": 3
+          },
+          {
+            "id": "tu_tien:xd_qianyu",
+            "amount": 2
+          },
+          {
+            "id": "tu_tien:xd_spider_leg",
+            "amount": 1
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_danyao_hy"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Sau khi dùng, đặt cảnh giới mục tiêu thành cấp 13 (Hồi Nguyên); quá trình chuyển cấp hoàn tất sau khoảng 3 giây.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_danyao.lua",
+                "locator": "xd_danyao_hy onusefn"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_danyao_yx": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:cursed_monkey_token",
+            "amount": 5
+          },
+          {
+            "id": "base_game:rabbitkingspear",
+            "amount": 1
+          },
+          {
+            "id": "base_game:voidcloth",
+            "amount": 8
+          },
+          {
+            "id": "tu_tien:xd_lingshi3",
+            "amount": 1
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_danyao_yx"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Sau khi dùng, đặt cảnh giới mục tiêu thành cấp 10 (Uẩn Huyết); quá trình chuyển cấp hoàn tất sau khoảng 3 giây.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_danyao.lua",
+                "locator": "xd_danyao_yx onusefn"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_xttyd_5": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:batwing",
+            "amount": 1
+          },
+          {
+            "id": "base_game:mosquitosack",
+            "amount": 1
+          },
+          {
+            "id": "base_game:tomato",
+            "amount": 2
+          },
+          {
+            "id": "tu_tien:xd_lc_yhh",
+            "amount": 1
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 20 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_xttyd_5"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Hồi Máu bằng 10% sát thương gây ra trong 480 giây; kích hoạt ở 100% số đòn trong phép thử runtime.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_xttyd_5_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_danyao_ns": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:alterguardianhatshard",
+            "amount": 1
+          },
+          {
+            "id": "base_game:lunarplant_husk",
+            "amount": 4
+          },
+          {
+            "id": "base_game:milkywhites",
+            "amount": 3
+          },
+          {
+            "id": "tu_tien:xd_lingshi3",
+            "amount": 1
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_danyao_ns"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Sau khi dùng, đặt cảnh giới mục tiêu thành cấp 11 (Ngưng Thần); quá trình chuyển cấp hoàn tất sau khoảng 3 giây.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_danyao.lua",
+                "locator": "xd_danyao_ns onusefn"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_pshsd_4": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:marble",
+            "amount": 4
+          },
+          {
+            "id": "base_game:potato",
+            "amount": 4
+          },
+          {
+            "id": "base_game:thulecite",
+            "amount": 2
+          },
+          {
+            "id": "tu_tien:xd_lc_dms",
+            "amount": 2
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 30 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_pshsd_4"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Giảm 20% sát thương nhận vào trong 720 giây.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_pshsd_4_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_xttyd_4": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:batwing",
+            "amount": 2
+          },
+          {
+            "id": "base_game:purplegem",
+            "amount": 1
+          },
+          {
+            "id": "base_game:tomato",
+            "amount": 4
+          },
+          {
+            "id": "tu_tien:xd_lc_yhh",
+            "amount": 2
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 30 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_xttyd_4"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Hồi Máu bằng 20% sát thương gây ra trong 480 giây; kích hoạt ở 100% số đòn trong phép thử runtime.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_xttyd_4_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_danyao_xs": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:lightbulb",
+            "amount": 10
+          },
+          {
+            "id": "base_game:slurtle_shellpieces",
+            "amount": 3
+          },
+          {
+            "id": "base_game:wormlight",
+            "amount": 3
+          },
+          {
+            "id": "tu_tien:xd_lingshi1",
+            "amount": 20
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_danyao_xs"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Sau khi dùng, đặt cảnh giới mục tiêu thành cấp 4 (Tẩy Tủy); quá trình chuyển cấp hoàn tất sau khoảng 3 giây.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_danyao.lua",
+                "locator": "xd_danyao_xs onusefn"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_xttyd_2": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:batwing",
+            "amount": 4
+          },
+          {
+            "id": "base_game:tomato",
+            "amount": 8
+          },
+          {
+            "id": "tu_tien:xd_lc_yhh",
+            "amount": 8
+          },
+          {
+            "id": "tu_tien:xd_zcmy",
+            "amount": 2
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 120 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_xttyd_2"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Hồi Máu bằng 40% sát thương gây ra trong 960 giây; kích hoạt ở 100% số đòn trong phép thử runtime.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_xttyd_2_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_xttyd_1": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:tomato",
+            "amount": 12
+          },
+          {
+            "id": "tu_tien:xd_lc_yhh",
+            "amount": 16
+          },
+          {
+            "id": "tu_tien:xd_npxsz",
+            "amount": 2
+          },
+          {
+            "id": "tu_tien:xd_zcmy",
+            "amount": 4
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 180 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_xttyd_1"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Hồi Máu bằng 50% sát thương gây ra trong 2400 giây; kích hoạt ở 100% số đòn trong phép thử runtime.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_xttyd_1_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_danyao_kx": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "tu_tien:xd_dy_pshsd_2",
+            "amount": 1
+          },
+          {
+            "id": "tu_tien:xd_dy_xttyd_2",
+            "amount": 1
+          },
+          {
+            "id": "tu_tien:xd_lingshi3",
+            "amount": 1
+          },
+          {
+            "id": "tu_tien:xd_npxsz",
+            "amount": 1
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_danyao_kx"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Dùng ở cảnh giới cấp 14 để thực hiện đột phá lên cấp 15 (Phản Hư). Runtime xác nhận đây là đan đột phá có điều kiện; không đọc được xác suất thành công từ phần mã đã mã hóa.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_danyao.lua",
+                "locator": "xd_danyao_kx onusefn"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_hsphd_4": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:bluegem",
+            "amount": 1
+          },
+          {
+            "id": "base_game:ice",
+            "amount": 4
+          },
+          {
+            "id": "base_game:watermelon",
+            "amount": 4
+          },
+          {
+            "id": "tu_tien:xd_lc_hsc",
+            "amount": 2
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 30 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_hsphd_4"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Tạo buff chống nóng trong 960 giây. Runtime xác nhận thời lượng nhưng phần mã đã mã hóa không để lộ hệ số chống nóng.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_hsphd_4_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_yfsxd_4": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:carrot",
+            "amount": 4
+          },
+          {
+            "id": "base_game:feather_canary",
+            "amount": 2
+          },
+          {
+            "id": "base_game:manrabbit_tail",
+            "amount": 4
+          },
+          {
+            "id": "tu_tien:xd_lc_qfx",
+            "amount": 2
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 30 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_yfsxd_4"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Tăng 10% tốc độ đi bộ và chạy trong 960 giây.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_yfsxd_4_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_hsphd_5": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:bluegem",
+            "amount": 1
+          },
+          {
+            "id": "base_game:ice",
+            "amount": 2
+          },
+          {
+            "id": "base_game:watermelon",
+            "amount": 2
+          },
+          {
+            "id": "tu_tien:xd_lc_hsc",
+            "amount": 1
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 20 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_hsphd_5"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Tạo buff chống nóng trong 480 giây. Runtime xác nhận thời lượng nhưng phần mã đã mã hóa không để lộ hệ số chống nóng.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_hsphd_5_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_hsphd_3": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:deerclops_eyeball",
+            "amount": 1
+          },
+          {
+            "id": "base_game:ice",
+            "amount": 6
+          },
+          {
+            "id": "base_game:watermelon",
+            "amount": 6
+          },
+          {
+            "id": "tu_tien:xd_lc_hsc",
+            "amount": 4
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 60 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_hsphd_3"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Tạo buff chống nóng trong 1440 giây. Runtime xác nhận thời lượng nhưng phần mã đã mã hóa không để lộ hệ số chống nóng.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_hsphd_3_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_hsphd_2": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:deerclops_eyeball",
+            "amount": 2
+          },
+          {
+            "id": "base_game:ice",
+            "amount": 8
+          },
+          {
+            "id": "base_game:watermelon",
+            "amount": 8
+          },
+          {
+            "id": "tu_tien:xd_lc_hsc",
+            "amount": 8
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 120 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_hsphd_2"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Tạo buff chống nóng trong 2400 giây. Runtime xác nhận thời lượng nhưng phần mã đã mã hóa không để lộ hệ số chống nóng.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_hsphd_2_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_xynyd_5": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:berries",
+            "amount": 3
+          },
+          {
+            "id": "base_game:dragonfruit",
+            "amount": 2
+          },
+          {
+            "id": "base_game:monstermeat",
+            "amount": 2
+          },
+          {
+            "id": "tu_tien:xd_lc_cyh",
+            "amount": 1
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 20 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_xynyd_5"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Tạo buff chống lạnh trong 480 giây. Runtime xác nhận thời lượng nhưng phần mã đã mã hóa không để lộ hệ số chống lạnh.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_xynyd_5_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_pshsd_2": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:potato",
+            "amount": 8
+          },
+          {
+            "id": "base_game:thulecite",
+            "amount": 4
+          },
+          {
+            "id": "tu_tien:xd_lc_dms",
+            "amount": 8
+          },
+          {
+            "id": "tu_tien:xd_mgqg",
+            "amount": 2
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 120 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_pshsd_2"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Giảm 30% sát thương nhận vào trong 1200 giây.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_pshsd_2_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_qjqsd_5": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:corn",
+            "amount": 2
+          },
+          {
+            "id": "base_game:flint",
+            "amount": 1
+          },
+          {
+            "id": "base_game:gears",
+            "amount": 1
+          },
+          {
+            "id": "tu_tien:xd_lc_qfx",
+            "amount": 1
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 20 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_qjqsd_5"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Tăng 15% hiệu suất Chặt, Đập và Đào mỏ trong 480 giây; không tăng tốc Đào đất, Hái hoặc Thu hoạch.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_qjqsd_5_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_qjqsd_2": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:corn",
+            "amount": 8
+          },
+          {
+            "id": "base_game:gears",
+            "amount": 4
+          },
+          {
+            "id": "base_game:shroom_skin",
+            "amount": 2
+          },
+          {
+            "id": "tu_tien:xd_lc_qfx",
+            "amount": 8
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 120 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_qjqsd_2"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Tăng 60% hiệu suất Chặt, Đập và Đào mỏ trong 1200 giây; không tăng tốc Đào đất, Hái hoặc Thu hoạch.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_qjqsd_2_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_qjqsd_3": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:corn",
+            "amount": 6
+          },
+          {
+            "id": "base_game:gears",
+            "amount": 3
+          },
+          {
+            "id": "base_game:shroom_skin",
+            "amount": 1
+          },
+          {
+            "id": "tu_tien:xd_lc_qfx",
+            "amount": 4
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 60 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_qjqsd_3"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Tăng 40% hiệu suất Chặt, Đập và Đào mỏ trong 960 giây; không tăng tốc Đào đất, Hái hoặc Thu hoạch.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_qjqsd_3_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_dmhsd_1": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:mandrake",
+            "amount": 1
+          },
+          {
+            "id": "base_game:royal_jelly",
+            "amount": 12
+          },
+          {
+            "id": "tu_tien:xd_lc_dms",
+            "amount": 16
+          },
+          {
+            "id": "tu_tien:xd_npxsz",
+            "amount": 2
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 180 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_dmhsd_1"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Hồi ngay 120 Máu; sau đó hồi thêm 15 Máu mỗi 6 giây trong 2400 giây.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_dmhsd_1_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_danyao_yz": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:manrabbit_tail",
+            "amount": 5
+          },
+          {
+            "id": "tu_tien:xd_lingshi2",
+            "amount": 2
+          },
+          {
+            "id": "tu_tien:xd_qlr",
+            "amount": 1
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_danyao_yz"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Dùng ở cảnh giới cấp 5 để thực hiện đột phá lên cấp 6 (Kim Đan). Runtime xác nhận đây là đan đột phá có điều kiện; không đọc được xác suất thành công từ phần mã đã mã hóa.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_danyao.lua",
+                "locator": "xd_danyao_yz onusefn"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_qxdhd_2": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:green_cap",
+            "amount": 8
+          },
+          {
+            "id": "base_game:nightmarefuel",
+            "amount": 40
+          },
+          {
+            "id": "base_game:purebrilliance",
+            "amount": 3
+          },
+          {
+            "id": "tu_tien:xd_lc_yhh",
+            "amount": 8
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 120 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_qxdhd_2"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Hồi ngay 150 Tinh thần và hồi khoảng 4.17 Tinh thần/giây trong 1200 giây (số đo runtime thực tế).",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_qxdhd_2_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_qxdhd_1": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:green_cap",
+            "amount": 12
+          },
+          {
+            "id": "base_game:purebrilliance",
+            "amount": 6
+          },
+          {
+            "id": "tu_tien:xd_lc_yhh",
+            "amount": 16
+          },
+          {
+            "id": "tu_tien:xd_npxsz",
+            "amount": 2
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 180 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_qxdhd_1"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "hồi khoảng 6.67 Tinh thần/giây trong 2400 giây (số đo runtime thực tế).",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_qxdhd_1_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_pshsd_5": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:potato",
+            "amount": 2
+          },
+          {
+            "id": "base_game:rocks",
+            "amount": 2
+          },
+          {
+            "id": "base_game:thulecite",
+            "amount": 1
+          },
+          {
+            "id": "tu_tien:xd_lc_dms",
+            "amount": 1
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 20 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_pshsd_5"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Giảm 15% sát thương nhận vào trong 480 giây.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_pshsd_5_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_lmsqd_5": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:asparagus",
+            "amount": 2
+          },
+          {
+            "id": "base_game:goldnugget",
+            "amount": 2
+          },
+          {
+            "id": "base_game:lightninggoathorn",
+            "amount": 1
+          },
+          {
+            "id": "tu_tien:xd_lc_lmg",
+            "amount": 1
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 20 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_lmsqd_5"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Mỗi đòn đánh gây thêm 20 sát thương lôi trong 480 giây; kích hoạt ở 100% số đòn trong phép thử runtime.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_lmsqd_5_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_cyfxd_2": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:dragon_scales",
+            "amount": 2
+          },
+          {
+            "id": "base_game:pepper",
+            "amount": 8
+          },
+          {
+            "id": "base_game:wormlight",
+            "amount": 4
+          },
+          {
+            "id": "tu_tien:xd_lc_cyh",
+            "amount": 8
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 120 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_cyfxd_2"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Tăng 30% sát thương gây ra trong 1200 giây.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_cyfxd_2_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_xynyd_1": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:dragonfruit",
+            "amount": 12
+          },
+          {
+            "id": "tu_tien:xd_fs",
+            "amount": 4
+          },
+          {
+            "id": "tu_tien:xd_lc_cyh",
+            "amount": 16
+          },
+          {
+            "id": "tu_tien:xd_npxsz",
+            "amount": 2
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 180 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_xynyd_1"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Tạo buff chống lạnh trong 2400 giây. Runtime xác nhận thời lượng nhưng phần mã đã mã hóa không để lộ hệ số chống lạnh.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_xynyd_1_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_cyfxd_4": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:meat",
+            "amount": 4
+          },
+          {
+            "id": "base_game:pepper",
+            "amount": 4
+          },
+          {
+            "id": "base_game:wormlight",
+            "amount": 2
+          },
+          {
+            "id": "tu_tien:xd_lc_cyh",
+            "amount": 2
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 30 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_cyfxd_4"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Tăng 15% sát thương gây ra trong 720 giây.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_cyfxd_4_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_lmsqd_4": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:asparagus",
+            "amount": 4
+          },
+          {
+            "id": "base_game:lightninggoathorn",
+            "amount": 1
+          },
+          {
+            "id": "base_game:steelwool",
+            "amount": 1
+          },
+          {
+            "id": "tu_tien:xd_lc_lmg",
+            "amount": 2
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 30 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_lmsqd_4"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Mỗi đòn đánh gây thêm 35 sát thương lôi trong 720 giây; kích hoạt ở 100% số đòn trong phép thử runtime.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_lmsqd_4_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_lmsqd_1": {
+      "recipe": {
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "id": "base_game:asparagus",
+            "amount": 12
+          },
+          {
+            "id": "tu_tien:xd_lc_lmg",
+            "amount": 16
+          },
+          {
+            "id": "tu_tien:xd_npxsz",
+            "amount": 2
+          },
+          {
+            "id": "tu_tien:xd_qlr",
+            "amount": 4
+          }
+        ],
+        "craftingNote": "Luyện tại Đan Lô trong 180 giây.",
+        "evidence": [
+          {
+            "source": "mod/3721846643/scripts/main/recipes.lua",
+            "locator": "TUNING.XD_PILL_RECIPES.xd_liandanlu.xd_dy_lmsqd_1"
+          }
+        ]
+      },
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "consume",
+            "text": "Mỗi đòn đánh gây thêm 180 sát thương lôi trong 2400 giây; kích hoạt ở 100% số đòn trong phép thử runtime.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_dy_buffs.lua",
+                "locator": "xd_dy_lmsqd_1_buff"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_dy_fd": {
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "none",
+            "text": "Không có thao tác sử dụng. Đây là kết quả khi luyện đan thất bại, không có công thức cố định và không tạo hiệu ứng gameplay.",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_danyao_new.lua",
+                "locator": "xd_dy_fd prefab"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_cl": {
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "equip",
+            "text": "Sát thương: 100",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_cl.lua",
+                "locator": "weapon damage"
+              }
+            ]
+          },
+          {
+            "trigger": "equip",
+            "text": "Tầm đánh: 2 ô",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_cl.lua",
+                "locator": "weapon attack range"
+              }
+            ]
+          },
+          {
+            "trigger": "equip",
+            "text": "Độ bền: 1.000 lần dùng",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_cl.lua",
+                "locator": "finiteuses"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tu_tien:xd_bjsj": {
+      "usage": {
+        "replace": true,
+        "status": "known",
+        "recipes": [],
+        "effects": [
+          {
+            "trigger": "equip",
+            "text": "Sát thương: 99",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_bjsj.lua",
+                "locator": "weapon damage"
+              }
+            ]
+          },
+          {
+            "trigger": "equip",
+            "text": "Tầm đánh: 2 ô",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_bjsj.lua",
+                "locator": "weapon attack range"
+              }
+            ]
+          },
+          {
+            "trigger": "equip",
+            "text": "Độ bền: 1.000 lần dùng",
+            "evidence": [
+              {
+                "source": "mod/3721846643/scripts/prefabs/xd_bjsj.lua",
+                "locator": "finiteuses"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
 }

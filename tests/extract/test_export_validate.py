@@ -9,12 +9,160 @@ from zipfile import ZipFile
 
 from tools.extract.database import create_schema
 from tools.extract.export_json import export_catalog
-from tools.extract.validate import validate_catalog
+from tools.extract.validate import _structure_export_errors, validate_catalog
 from tools.extract.runtime_import import COVERAGE_CATEGORIES
 from tools.extract import cli
 
 
 class ExportValidateTests(unittest.TestCase):
+    def test_structure_validation_requires_craftable_construction_and_visual(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            items_path = root / "items.json"
+            audit_path = root / "structure-icon-audit.json"
+            items_path.write_text(
+                json.dumps(
+                    {
+                        "schema_version": 6,
+                        "items": [
+                            {
+                                "id": "base_game:broken_station",
+                                "prefabId": "broken_station",
+                                "namespace": "base_game",
+                                "category": "structure",
+                                "sprite": None,
+                                "recipe": {"outputCount": 1, "ingredients": []},
+                                "structureDetails": {
+                                    "origin": {
+                                        "status": "known",
+                                        "naturallySpawned": False,
+                                        "craftable": True,
+                                        "note": None,
+                                    },
+                                    "construction": {"status": "unknown"},
+                                    "functions": {"status": "unknown"},
+                                    "craftables": {"status": "none", "recipes": []},
+                                    "destruction": {"status": "unknown"},
+                                    "visual": {
+                                        "status": "unknown",
+                                        "sprite": None,
+                                        "image": None,
+                                    },
+                                },
+                            }
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            audit_path.write_text(
+                json.dumps(
+                    {
+                        "schema_version": 1,
+                        "summary": {"total": 1},
+                        "rows": [
+                            {
+                                "id": "base_game:broken_station",
+                                "classification": "craftable_missing_asset",
+                                "action": "keep",
+                                "reason": "Fixture",
+                                "evidence": [{"source": "fixture"}],
+                            }
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            errors = _structure_export_errors(items_path, audit_path)
+
+        self.assertEqual(
+            errors,
+            [
+                {
+                    "code": "craftable_structure_missing_construction",
+                    "id": "base_game:broken_station",
+                },
+                {
+                    "code": "craftable_structure_missing_visual",
+                    "id": "base_game:broken_station",
+                },
+            ],
+        )
+
+    def test_structure_validation_requires_natural_note_and_audit_evidence(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            items_path = root / "items.json"
+            audit_path = root / "structure-icon-audit.json"
+            items_path.write_text(
+                json.dumps(
+                    {
+                        "schema_version": 6,
+                        "items": [
+                            {
+                                "id": "base_game:natural_station",
+                                "prefabId": "natural_station",
+                                "namespace": "base_game",
+                                "category": "structure",
+                                "sprite": None,
+                                "recipe": None,
+                                "structureDetails": {
+                                    "origin": {
+                                        "status": "known",
+                                        "naturallySpawned": True,
+                                        "craftable": False,
+                                        "note": None,
+                                    },
+                                    "construction": {"status": "none"},
+                                    "functions": {"status": "known"},
+                                    "craftables": {"status": "none", "recipes": []},
+                                    "destruction": {"status": "unknown"},
+                                    "visual": {"status": "unknown"},
+                                },
+                            }
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            audit_path.write_text(
+                json.dumps(
+                    {
+                        "schema_version": 1,
+                        "summary": {"total": 1},
+                        "rows": [
+                            {
+                                "id": "base_game:natural_station",
+                                "classification": "natural_structure",
+                                "action": "keep",
+                            }
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            errors = _structure_export_errors(items_path, audit_path)
+
+        self.assertEqual(
+            errors,
+            [
+                {
+                    "code": "invalid_structure_audit_reason",
+                    "id": "base_game:natural_station",
+                },
+                {
+                    "code": "invalid_structure_audit_evidence",
+                    "id": "base_game:natural_station",
+                },
+                {
+                    "code": "natural_structure_missing_note",
+                    "id": "base_game:natural_station",
+                },
+            ],
+        )
+
     def test_validation_hard_fails_prefab_module_export_mismatches(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -31,7 +179,7 @@ class ExportValidateTests(unittest.TestCase):
             items_path.write_text(
                 json.dumps(
                     {
-                        "schema_version": 4,
+                        "schema_version": 6,
                         "items": [
                             {
                                 "id": "base_game:alpha",
@@ -78,7 +226,7 @@ class ExportValidateTests(unittest.TestCase):
             items_path.write_text(
                 json.dumps(
                     {
-                        "schema_version": 4,
+                        "schema_version": 6,
                         "items": [
                             {
                                 "id": "base_game:alpha",
@@ -106,6 +254,303 @@ class ExportValidateTests(unittest.TestCase):
 
         self.assertEqual(report["prefab_export_coverage_errors"], [])
         self.assertNotIn("prefab_export_coverage_errors", report["hard_failures"])
+
+    def test_prefab_coverage_accepts_published_recipe_dependencies(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            db_path = root / "wiki.sqlite"
+            db = sqlite3.connect(db_path)
+            create_schema(db)
+            db.commit()
+            db.close()
+            scripts_path = root / "scripts.zip"
+            with ZipFile(scripts_path, "w") as archive:
+                archive.writestr("scripts/prefabs/alpha.lua", "return {}")
+            items_path = root / "items.json"
+            items_path.write_text(
+                json.dumps(
+                    {
+                        "schema_version": 6,
+                        "items": [
+                            {
+                                "id": "base_game:alpha",
+                                "prefabId": "alpha",
+                                "namespace": "base_game",
+                                "recipe": {
+                                    "ingredients": [
+                                        {"id": "base_game:pumpkin"}
+                                    ]
+                                },
+                            },
+                            {
+                                "id": "base_game:pumpkin",
+                                "prefabId": "pumpkin",
+                                "namespace": "base_game",
+                                "category": "item",
+                            },
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            report = validate_catalog(
+                db_path,
+                prefab_scripts_path=scripts_path,
+                items_path=items_path,
+            )
+
+        self.assertEqual(report["prefab_export_coverage_errors"], [])
+        self.assertNotIn("prefab_export_coverage_errors", report["hard_failures"])
+
+    def test_prefab_coverage_accepts_audited_technical_prefab_exclusion(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            db_path = root / "wiki.sqlite"
+            db = sqlite3.connect(db_path)
+            create_schema(db)
+            db.commit()
+            db.close()
+            scripts_path = root / "scripts.zip"
+            with ZipFile(scripts_path, "w") as archive:
+                archive.writestr("scripts/prefabs/alpha.lua", "return {}")
+                archive.writestr("scripts/prefabs/beta.lua", "return {}")
+            items_path = root / "items.json"
+            items_path.write_text(
+                json.dumps(
+                    {
+                        "schema_version": 6,
+                        "items": [
+                            {
+                                "id": "base_game:alpha",
+                                "prefabId": "alpha",
+                                "namespace": "base_game",
+                                "category": "other",
+                                "structureDetails": None,
+                            }
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            audit_path = root / "structure-icon-audit.json"
+            audit_path.write_text(
+                json.dumps(
+                    {
+                        "schema_version": 1,
+                        "summary": {"total": 1},
+                        "rows": [
+                            {
+                                "id": "base_game:beta",
+                                "namespace": "base_game",
+                                "prefabId": "beta",
+                                "classification": "technical_prefab",
+                                "action": "exclude",
+                            }
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            report = validate_catalog(
+                db_path,
+                prefab_scripts_path=scripts_path,
+                items_path=items_path,
+                structure_audit_path=audit_path,
+            )
+
+        self.assertEqual(report["prefab_export_coverage_errors"], [])
+
+    def test_validation_requires_complete_structure_details_and_resolved_repairs(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            db_path = root / "wiki.sqlite"
+            db = sqlite3.connect(db_path)
+            create_schema(db)
+            db.commit()
+            db.close()
+            items_path = root / "items.json"
+            items_path.write_text(
+                json.dumps(
+                    {
+                        "schema_version": 6,
+                        "items": [
+                            {
+                                "id": "base_game:researchlab",
+                                "prefabId": "researchlab",
+                                "namespace": "base_game",
+                                "category": "structure",
+                                "sprite": None,
+                                "structureDetails": {
+                                    "origin": {"status": "known"},
+                                    "construction": {"status": "known"},
+                                    "functions": {"status": "known"},
+                                    "craftables": {"status": "known", "recipes": []},
+                                    "destruction": {"status": "known"},
+                                    "visual": {
+                                        "status": "known",
+                                        "kind": "wiki_image",
+                                        "image": {"src": "/assets/wiki/researchlab.png"},
+                                    },
+                                },
+                            },
+                            {
+                                "id": "base_game:goldnugget",
+                                "prefabId": "goldnugget",
+                                "namespace": "base_game",
+                                "category": "item",
+                                "structureDetails": None,
+                            },
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            audit_path = root / "structure-icon-audit.json"
+            audit_path.write_text(
+                json.dumps(
+                    {
+                        "schema_version": 1,
+                        "summary": {"total": 1},
+                        "rows": [
+                            {
+                                "id": "base_game:researchlab",
+                                "namespace": "base_game",
+                                "prefabId": "researchlab",
+                                "classification": "craftable_missing_asset",
+                                "action": "repair",
+                                "reason": "Fixture repair",
+                                "evidence": [{"source": "fixture"}],
+                            }
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            report = validate_catalog(
+                db_path,
+                items_path=items_path,
+                structure_audit_path=audit_path,
+            )
+            self.assertEqual(report["structure_detail_errors"], [])
+
+            payload = json.loads(items_path.read_text(encoding="utf-8"))
+            payload["items"][0]["structureDetails"]["visual"]["status"] = "unknown"
+            items_path.write_text(json.dumps(payload), encoding="utf-8")
+            invalid = validate_catalog(
+                db_path,
+                items_path=items_path,
+                structure_audit_path=audit_path,
+            )
+
+        self.assertEqual(
+            invalid["structure_detail_errors"],
+            [
+                {
+                    "code": "unresolved_structure_visual_repair",
+                    "id": "base_game:researchlab",
+                }
+            ],
+        )
+        self.assertIn("structure_detail_errors", invalid["hard_failures"])
+
+    def test_validation_rejects_unresolved_structure_recipe_ingredients(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            db_path = root / "wiki.sqlite"
+            db = sqlite3.connect(db_path)
+            create_schema(db)
+            db.commit()
+            db.close()
+            items_path = root / "items.json"
+            items_path.write_text(
+                json.dumps(
+                    {
+                        "schema_version": 6,
+                        "items": [
+                            {
+                                "id": "base_game:researchlab",
+                                "prefabId": "researchlab",
+                                "namespace": "base_game",
+                                "category": "structure",
+                                "sprite": {"src": "/assets/game/researchlab.png"},
+                                "structureDetails": {
+                                    "origin": {"status": "known"},
+                                    "construction": {"status": "known"},
+                                    "functions": {"status": "known"},
+                                    "craftables": {
+                                        "status": "known",
+                                        "recipes": [
+                                            {
+                                                "result": {
+                                                    "id": "base_game:missing_result"
+                                                },
+                                                "ingredients": [
+                                                    {"id": "base_game:missing"}
+                                                ],
+                                                "station": "base_game:researchlab",
+                                            }
+                                        ],
+                                    },
+                                    "destruction": {"status": "unknown"},
+                                    "visual": {"status": "known"},
+                                },
+                            },
+                            {
+                                "id": "base_game:rope",
+                                "prefabId": "rope",
+                                "namespace": "base_game",
+                                "category": "item",
+                                "structureDetails": None,
+                            },
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            audit_path = root / "structure-icon-audit.json"
+            audit_path.write_text(
+                json.dumps(
+                    {
+                        "schema_version": 1,
+                        "summary": {
+                            "total": 0,
+                            "keep": 0,
+                            "repair": 0,
+                            "exclude": 0,
+                            "classifications": {},
+                        },
+                        "rows": [],
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            report = validate_catalog(
+                db_path,
+                items_path=items_path,
+                structure_audit_path=audit_path,
+            )
+
+        self.assertEqual(
+            report["structure_detail_errors"],
+            [
+                {
+                    "code": "unresolved_structure_craftable_result",
+                    "id": "base_game:researchlab",
+                    "result": "base_game:missing_result",
+                },
+                {
+                    "code": "unresolved_structure_craftable_ingredient",
+                    "id": "base_game:researchlab",
+                    "ingredient": "base_game:missing",
+                    "result": "base_game:missing_result",
+                }
+            ],
+        )
+        self.assertIn("structure_detail_errors", report["hard_failures"])
 
     def write_archive_fixture(self, root: Path):
         sources = root / "data" / "sources" / "game"
@@ -381,6 +826,36 @@ class ExportValidateTests(unittest.TestCase):
             )
             self.assertIn("runtime_coverage_errors", report["hard_failures"])
 
+    def test_validation_does_not_require_runtime_rows_for_non_target_dependencies(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            path = self.build_catalog(root)
+            db = sqlite3.connect(path)
+            db.execute(
+                "insert into entities(namespace,prefab_id,entity_type,is_inventory_item,"
+                "name_vi,name_en,description_vi,description_en,icon_key,confidence) "
+                "values(?,?,?,?,?,?,?,?,?,?)",
+                (
+                    "tu_tien",
+                    "xd_child_variant",
+                    "unknown",
+                    0,
+                    None,
+                    None,
+                    None,
+                    None,
+                    None,
+                    1.0,
+                ),
+            )
+            db.commit()
+            db.close()
+
+            report = validate_catalog(path)
+
+            self.assertEqual(report["runtime_coverage_errors"], [])
+            self.assertNotIn("runtime_coverage_errors", report["hard_failures"])
+
     def test_validation_lists_every_tu_tien_inventory_item_missing_a_name(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -583,6 +1058,7 @@ class ExportValidateTests(unittest.TestCase):
             textures = root / "item-textures.json"
             detail_overrides = root / "item-details.json"
             detail_report = root / "item-details-report.json"
+            structure_audit = root / "structure-icon-audit.json"
 
             with mock.patch.object(cli, "export_catalog") as export_catalog, \
                  mock.patch.object(cli, "export_items") as export_items:
@@ -594,6 +1070,7 @@ class ExportValidateTests(unittest.TestCase):
                     textures,
                     detail_overrides,
                     detail_report,
+                    structure_audit,
                 )
 
             export_catalog.assert_called_once_with(database, catalog, assets)
@@ -605,6 +1082,7 @@ class ExportValidateTests(unittest.TestCase):
                 textures,
                 detail_overrides_path=detail_overrides,
                 detail_report_path=detail_report,
+                structure_audit_path=structure_audit,
             )
 
     def test_export_cli_exposes_item_detail_paths(self):
@@ -617,6 +1095,10 @@ class ExportValidateTests(unittest.TestCase):
         self.assertEqual(
             args.detail_report,
             Path("data/generated/tu-tien-item-details-report.json"),
+        )
+        self.assertEqual(
+            args.structure_audit,
+            Path("data/generated/structure-icon-audit.json"),
         )
 
     def test_publish_assets_cli_has_explicit_inputs(self):

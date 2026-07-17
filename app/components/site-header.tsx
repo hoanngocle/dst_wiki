@@ -2,6 +2,7 @@ import Link from "next/link";
 
 const links = [
   { id: "items", href: "/", label: "Prefabs" },
+  { id: "characters", href: "/characters", label: "Nhân vật" },
   { id: "base", href: "/base", label: "Base" },
 ] as const;
 

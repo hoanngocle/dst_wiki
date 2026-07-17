@@ -555,6 +555,11 @@ def load_wiki_export(database_path: Path, crawl_root: Path) -> WikiExport:
         )
         for row in structure_rows
     }
+    for details in raw_structure_details.values():
+        for candidate in details["visual_candidates"]:
+            asset = images_by_identity.get(_file_identity(candidate["title"]))
+            if asset is not None:
+                referenced_assets[asset.published_name] = asset
     structure_details: Dict[str, JsonObject] = {}
     for key, candidates in sorted(groups.items()):
         ordered = sorted(

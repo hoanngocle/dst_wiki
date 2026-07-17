@@ -80,6 +80,28 @@ def write_static_fixture(workspace: Path, prefab_ids=("xd_test",), version="18.0
 
 
 class RuntimeImportTests(unittest.TestCase):
+    def test_ignores_explicit_non_prefab_runtime_targets(self):
+        payload = runtime_payload(
+            targets=["sudaji_killed", "xd_test"],
+            errors=[
+                {
+                    "code": "prefab_inspection_failed",
+                    "prefab": "sudaji_killed",
+                    "detail": "SpawnPrefab returned nil",
+                }
+            ],
+        )
+
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "runtime.json"
+            path.write_text(json.dumps(payload), encoding="utf-8")
+            bundle = load_runtime_bundle(path)
+
+        self.assertFalse(
+            any(fact.subject.prefab_id == "sudaji_killed" for fact in bundle.facts)
+        )
+        self.assertEqual(bundle.errors, [])
+
     def test_recipe_ingredients_become_dependency_facts(self):
         payload = runtime_payload(
             recipes=[
@@ -693,6 +715,12 @@ class RuntimeLuaContractTests(unittest.TestCase):
         self.assertIn("pcall(SpawnAndInspect", exporter)
         self.assertIn("SpawnPrefab", exporter)
         for component in (
+            "health",
+            "combat",
+            "locomotor",
+            "sanityaura",
+            "freezable",
+            "sleeper",
             "weapon",
             "armor",
             "finiteuses",
@@ -711,6 +739,19 @@ class RuntimeLuaContractTests(unittest.TestCase):
             "timer",
         ):
             self.assertIn(f"components.{component}", exporter)
+        for stat in (
+            "max_health",
+            "attack_damage",
+            "attack_period",
+            "attack_range",
+            "walk_speed",
+            "run_speed",
+            "sanity_aura",
+            "freeze_resistance",
+            "sleep_resistance",
+            "special_states",
+        ):
+            self.assertIn(f'"{stat}"', exporter)
         self.assertIn('require("target_ids")', exporter)
         self.assertIn("TUNING.GAMEMODE_STARTING_ITEMS", exporter)
         self.assertIn('category = "world_spawn"', exporter)
