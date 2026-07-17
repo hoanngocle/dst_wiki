@@ -32907,6 +32907,7 @@
     "recipe": 0.160295,
     "stats": 0.200695
   },
+  "effect_other_audit_errors": [],
   "entity_counts": {
     "base_game": 1652,
     "tu_tien": 650
