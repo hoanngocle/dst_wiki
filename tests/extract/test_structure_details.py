@@ -1,6 +1,7 @@
 import unittest
 
 from tools.extract.structure_details import (
+    audit_structure_visuals,
     build_station_outputs,
     build_structure_details,
 )
@@ -62,6 +63,13 @@ class StructureDetailTests(unittest.TestCase):
                 description="A naturally occurring statue.",
             ),
             item("base_game:lunar_forge", "structure", "Brightsmithy"),
+            item("base_game:evergreens", "structure", "evergreens"),
+            item(
+                "base_game:kitcoonden",
+                "structure",
+                "Kitcoon Nursery",
+                recipe={"outputCount": 1, "ingredients": []},
+            ),
             item("wiki:158535", "structure", "Science Machine"),
             item(
                 "base_game:axe",
@@ -120,6 +128,12 @@ class StructureDetailTests(unittest.TestCase):
                 sprite=self.sprite,
             ),
             item(
+                "tu_tien:xd_rock1",
+                "structure",
+                "Mỏ Linh Thạch",
+                description="Một mỏ linh thạch tự nhiên.",
+            ),
+            item(
                 "tu_tien:xd_test_pill",
                 "pill",
                 "Đan thử",
@@ -141,6 +155,19 @@ class StructureDetailTests(unittest.TestCase):
         self.entities = [
             entity("base_game:atrium_statue", "structure"),
             entity("base_game:lunar_forge", "structure"),
+            entity("base_game:evergreens", "structure"),
+            entity(
+                "base_game:kitcoonden",
+                "structure",
+                recipes=[
+                    {
+                        "output_count": 1,
+                        "ingredients": [],
+                        "tech": "TECH.SCIENCE_TWO",
+                        "restrictions": {},
+                    }
+                ],
+            ),
             entity(
                 "base_game:axe",
                 "item",
@@ -194,6 +221,11 @@ class StructureDetailTests(unittest.TestCase):
                     }
                 ],
             ),
+            entity(
+                "tu_tien:xd_rock1",
+                "structure",
+                description="Một mỏ linh thạch tự nhiên.",
+            ),
             entity("tu_tien:xd_test_pill", "item"),
             entity("base_game:goldnugget", "item"),
         ]
@@ -232,7 +264,55 @@ class StructureDetailTests(unittest.TestCase):
                     "evidence": wiki_evidence,
                 },
                 "visual_candidates": [],
-            }
+            },
+            "base_game:kitcoonden": {
+                "origin": {
+                    "status": "known",
+                    "naturallySpawned": False,
+                    "renewable": None,
+                    "spawnCode": "kitcoonden",
+                    "sources": [],
+                    "respawn": None,
+                    "evidence": wiki_evidence,
+                },
+                "functions": {
+                    "status": "known",
+                    "facts": [
+                        {
+                            "key": "spawns",
+                            "label": "Sinh ra",
+                            "value": "Kitcoon",
+                            "unit": None,
+                            "context": None,
+                            "related": [],
+                            "evidence": wiki_evidence,
+                        }
+                    ],
+                    "reason": None,
+                    "evidence": wiki_evidence,
+                },
+                "destruction": {
+                    "status": "unknown",
+                    "destroyable": None,
+                    "tool": None,
+                    "work": None,
+                    "health": None,
+                    "burnable": None,
+                    "drops": [],
+                    "regeneration": None,
+                    "evidence": wiki_evidence,
+                },
+                "visual_candidates": [
+                    {
+                        "title": "File:Kitcoon Nursery.png",
+                        "src": "/assets/wiki/kitcoon.png",
+                        "mime": "image/png",
+                        "width": 128,
+                        "height": 128,
+                        "evidence": wiki_evidence,
+                    }
+                ],
+            },
         }
 
     def test_builds_construction_and_natural_origin_statuses(self):
@@ -292,6 +372,60 @@ class StructureDetailTests(unittest.TestCase):
         self.assertIs(statue["destruction"]["destroyable"], False)
         self.assertEqual(statue["visual"]["status"], "unknown")
         self.assertEqual(statue["visual"]["kind"], None)
+
+    def test_audit_keeps_natural_structure_and_excludes_wrapper(self):
+        rows, excluded = audit_structure_visuals(
+            self.items, self.entities, self.wiki
+        )
+        by_id = {row["id"]: row for row in rows}
+
+        self.assertEqual(
+            by_id["base_game:atrium_statue"]["classification"],
+            "natural_structure",
+        )
+        self.assertEqual(by_id["base_game:atrium_statue"]["action"], "keep")
+        self.assertEqual(
+            by_id["base_game:evergreens"]["classification"],
+            "technical_prefab",
+        )
+        self.assertEqual(by_id["base_game:evergreens"]["action"], "exclude")
+        self.assertIn("base_game:evergreens", excluded)
+
+    def test_audit_marks_craftable_wiki_visual_for_repair(self):
+        rows, excluded = audit_structure_visuals(
+            self.items, self.entities, self.wiki
+        )
+        row = next(value for value in rows if value["id"] == "base_game:kitcoonden")
+
+        self.assertEqual(row["classification"], "craftable_missing_asset")
+        self.assertEqual(row["action"], "repair")
+        self.assertEqual(row["assets"]["wiki"][0], "/assets/wiki/kitcoon.png")
+        self.assertNotIn("base_game:kitcoonden", excluded)
+
+    def test_audit_keeps_named_tu_tien_natural_structure(self):
+        rows, excluded = audit_structure_visuals(
+            self.items, self.entities, self.wiki
+        )
+        row = next(value for value in rows if value["id"] == "tu_tien:xd_rock1")
+
+        self.assertEqual(row["classification"], "natural_structure")
+        self.assertEqual(row["action"], "keep")
+        self.assertNotIn("tu_tien:xd_rock1", excluded)
+
+    def test_audit_covers_each_originally_iconless_structure_once(self):
+        rows, _ = audit_structure_visuals(self.items, self.entities, self.wiki)
+        expected = {
+            value["id"]
+            for value in self.items
+            if value["category"] == "structure" and value["sprite"] is None
+        }
+
+        self.assertEqual({row["id"] for row in rows}, expected)
+        self.assertEqual(len(rows), len(expected))
+        self.assertEqual(
+            [row["id"] for row in rows],
+            sorted(row["id"] for row in rows),
+        )
 
 
 if __name__ == "__main__":

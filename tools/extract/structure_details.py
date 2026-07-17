@@ -456,3 +456,171 @@ def build_structure_details(
             "visual": _visual(item, wiki),
         }
     return dict(sorted(result.items()))
+
+
+def _wiki_evidence(wiki: Mapping[str, Any]) -> List[JsonObject]:
+    values = []
+    for section_name in ("origin", "functions", "destruction"):
+        section = wiki.get(section_name)
+        evidence = section.get("evidence") if isinstance(section, dict) else None
+        if not isinstance(evidence, list):
+            continue
+        for entry in evidence:
+            if isinstance(entry, dict):
+                values.append(dict(entry))
+    unique = {
+        (str(value.get("source") or ""), str(value.get("locator") or "")): value
+        for value in values
+    }
+    return [unique[key] for key in sorted(unique)]
+
+
+def _entity_has_gameplay_facts(entity: Optional[JsonObject]) -> bool:
+    if not isinstance(entity, dict):
+        return False
+    return any(
+        isinstance(entity.get(field), list) and bool(entity[field])
+        for field in ("stats", "effects", "relations", "acquisition")
+    )
+
+
+def audit_structure_visuals(
+    items: Sequence[JsonObject],
+    catalog_entities: Sequence[JsonObject],
+    wiki_details: Mapping[str, JsonObject],
+) -> tuple[List[JsonObject], set[str]]:
+    """Classify every pre-resolution iconless structure exactly once."""
+
+    entities_by_id = {
+        str(entity["key"]): entity
+        for entity in catalog_entities
+        if isinstance(entity, dict) and isinstance(entity.get("key"), str)
+    }
+    rows = []
+    excluded = set()
+    for item in sorted(
+        (
+            value
+            for value in items
+            if isinstance(value, dict)
+            and value.get("category") == "structure"
+            and value.get("sprite") is None
+        ),
+        key=lambda value: str(value["id"]),
+    ):
+        item_id = str(item["id"])
+        entity = entities_by_id.get(item_id)
+        wiki = wiki_details.get(item_id, {})
+        candidates = wiki.get("visual_candidates")
+        candidates = candidates if isinstance(candidates, list) else []
+        wiki_assets = sorted(
+            {
+                str(candidate["src"])
+                for candidate in candidates
+                if isinstance(candidate, dict) and isinstance(candidate.get("src"), str)
+            }
+        )
+        icon_key = entity.get("icon_key") if isinstance(entity, dict) else None
+        world_assets = [icon_key] if isinstance(icon_key, str) and icon_key else []
+        craftable = isinstance(item.get("recipe"), dict)
+        origin = wiki.get("origin")
+        naturally_spawned = (
+            isinstance(origin, dict) and origin.get("naturallySpawned") is True
+        )
+        prefab_id = str(item.get("prefabId") or "")
+        name = str(item.get("name") or "")
+        english_name = item.get("englishName")
+        description = item.get("description")
+        player_visible = (
+            bool(name and _identity(name) != _identity(prefab_id))
+            or isinstance(english_name, str)
+            and bool(english_name.strip())
+            and _identity(english_name) != _identity(prefab_id)
+            or isinstance(description, str)
+            and bool(description.strip())
+            or _entity_has_gameplay_facts(entity)
+        )
+        has_wiki = bool(wiki)
+
+        if craftable:
+            classification = "craftable_missing_asset"
+            action = "repair"
+            reason = (
+                "Công trình có công thức nhưng inventory icon chưa resolve; "
+                "phải dùng asset Wiki/world đã xác minh hoặc sửa asset mapping."
+            )
+        elif wiki_assets or world_assets:
+            classification = "world_asset_only"
+            action = "keep"
+            reason = (
+                "Công trình không có inventory icon nhưng có ảnh Wiki/world "
+                "asset đã xác minh."
+            )
+        elif naturally_spawned or player_visible or has_wiki:
+            classification = "natural_structure"
+            action = "keep"
+            reason = (
+                "Công trình thật, không có công thức và được xác minh là đối "
+                "tượng xuất hiện trong thế giới."
+            )
+        elif entity is not None:
+            classification = "technical_prefab"
+            action = "exclude"
+            reason = (
+                "Prefab/module không có tên hiển thị, công thức, gameplay fact, "
+                "Wiki mapping hoặc asset độc lập."
+            )
+        else:
+            classification = "unverified"
+            action = "exclude"
+            reason = "Không xác minh được một prefab công trình độc lập."
+
+        evidence = _wiki_evidence(wiki)
+        evidence.extend(_catalog_evidence(item_id, "visual-audit"))
+        evidence = [
+            value
+            for _, value in sorted(
+                {
+                    (
+                        str(value.get("source") or ""),
+                        str(value.get("locator") or ""),
+                    ): value
+                    for value in evidence
+                }.items()
+            )
+        ]
+        wiki_metadata = item.get("wiki")
+        wiki_url = (
+            wiki_metadata.get("canonicalUrl")
+            if isinstance(wiki_metadata, dict)
+            else next(
+                (
+                    value.get("source")
+                    for value in evidence
+                    if str(value.get("source") or "").startswith("https://")
+                ),
+                None,
+            )
+        )
+        row = {
+            "namespace": item.get("namespace"),
+            "id": item_id,
+            "prefabId": prefab_id,
+            "name": name,
+            "englishName": english_name,
+            "wikiUrl": wiki_url,
+            "craftable": craftable,
+            "assets": {
+                "inventory": [],
+                "wiki": wiki_assets,
+                "world": world_assets,
+            },
+            "classification": classification,
+            "reason": reason,
+            "evidence": evidence,
+            "action": action,
+        }
+        rows.append(row)
+        if action == "exclude":
+            excluded.add(item_id)
+    return rows, excluded
