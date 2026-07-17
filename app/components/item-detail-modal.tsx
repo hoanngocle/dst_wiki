@@ -4,6 +4,7 @@ import { useEffect, useId, useRef } from "react";
 import type { ItemListEntry } from "@/app/lib/item-catalog";
 import { GameSprite } from "./game-sprite";
 import { RecipeIngredients } from "./recipe-ingredients";
+import { TuTienItemSections } from "./tu-tien-item-sections";
 import { WikiArticle } from "./wiki-article";
 
 const FOCUSABLE_SELECTOR = [
@@ -132,7 +133,17 @@ export function ItemDetailModal({
       ? "Tu Tiên"
       : "DST";
   const category = categoryLabel[item.category];
-  const craftingContent = <CraftingSections item={item} titleId={titleId} />;
+  const craftingContent =
+    item.namespace === "tu_tien" ? (
+      <TuTienItemSections
+        item={item}
+        itemsById={itemsById}
+        onSelectItem={onSelectItem}
+        titleId={titleId}
+      />
+    ) : (
+      <CraftingSections item={item} titleId={titleId} />
+    );
   const fallbackSummary = item.description ? (
     <ItemSummary description={item.description} titleId={titleId} />
   ) : null;
