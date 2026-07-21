@@ -709,12 +709,20 @@ class ExportItemsTests(unittest.TestCase):
             report_path = root / "item-details-report.json"
             structure_audit_path = root / "structure-icon-audit.json"
             effect_other_audit_path = root / "effect-other-audit.json"
+            mob_audit_path = root / "mob-boss-audit.json"
+            mob_groups_path = root / "mob-groups.json"
+            mob_wiki_path = root / "mob-wiki-pages.jsonl"
             catalog_path.write_text(json.dumps(catalog), encoding="utf-8")
             assets_path.write_text(json.dumps(assets), encoding="utf-8")
             overrides_path.write_text(
                 json.dumps({"schema_version": 1, "items": {}}),
                 encoding="utf-8",
             )
+            mob_groups_path.write_text(
+                json.dumps({"schema_version": 1, "groups": []}),
+                encoding="utf-8",
+            )
+            mob_wiki_path.write_text("", encoding="utf-8")
             with sqlite3.connect(database_path) as connection:
                 connection.execute(
                     "create table game_text (text_key text not null, value_vi text not null)"
@@ -730,12 +738,16 @@ class ExportItemsTests(unittest.TestCase):
                 detail_report_path=report_path,
                 structure_audit_path=structure_audit_path,
                 effect_other_audit_path=effect_other_audit_path,
+                mob_audit_path=mob_audit_path,
+                mob_groups_path=mob_groups_path,
+                mob_wiki_path=mob_wiki_path,
             )
             first_items = items_path.read_bytes()
             first_textures = textures_path.read_bytes()
             first_report = report_path.read_bytes()
             first_structure_audit = structure_audit_path.read_bytes()
             first_effect_other_audit = effect_other_audit_path.read_bytes()
+            first_mob_audit = mob_audit_path.read_bytes()
             export_items(
                 database_path,
                 catalog_path,
@@ -746,6 +758,9 @@ class ExportItemsTests(unittest.TestCase):
                 detail_report_path=report_path,
                 structure_audit_path=structure_audit_path,
                 effect_other_audit_path=effect_other_audit_path,
+                mob_audit_path=mob_audit_path,
+                mob_groups_path=mob_groups_path,
+                mob_wiki_path=mob_wiki_path,
             )
 
             self.assertEqual(items_path.read_bytes(), first_items)
@@ -757,6 +772,7 @@ class ExportItemsTests(unittest.TestCase):
             self.assertEqual(
                 effect_other_audit_path.read_bytes(), first_effect_other_audit
             )
+            self.assertEqual(mob_audit_path.read_bytes(), first_mob_audit)
             payload = json.loads(first_items)
             by_id = {item["id"]: item for item in payload["items"]}
             self.assertEqual(payload["schema_version"], 6)
@@ -788,11 +804,143 @@ class ExportItemsTests(unittest.TestCase):
                 effect_other_audit["rows"][0]["id"], "base_game:spark_helper"
             )
             self.assertEqual(effect_other_audit["rows"][0]["action"], "exclude")
+            mob_audit = json.loads(first_mob_audit)
+            self.assertEqual(mob_audit["schema_version"], 1)
+            self.assertEqual(mob_audit["summary"]["exclude"], 0)
             self.assertFalse((root / ".items.json.tmp").exists())
             self.assertFalse((root / ".textures.json.tmp").exists())
             self.assertFalse((root / ".item-details-report.json.tmp").exists())
             self.assertFalse((root / ".structure-icon-audit.json.tmp").exists())
             self.assertFalse((root / ".effect-other-audit.json.tmp").exists())
+            self.assertFalse((root / ".mob-boss-audit.json.tmp").exists())
+
+    def test_export_merges_defeated_celestial_champion_before_structure_audit(self):
+        catalog, assets = self.fixtures()
+        for prefab_id, entity_type, name in (
+            ("alterguardian_phase1", "effect", "Celestial Champion Phase 1"),
+            ("alterguardian_phase2", "boss", "Celestial Champion Phase 2"),
+            ("alterguardian_phase3", "boss", "Celestial Champion"),
+            (
+                "alterguardian_phase3dead",
+                "structure",
+                "Defeated Celestial Champion",
+            ),
+        ):
+            catalog["entities"].append(
+                {
+                    "key": f"base_game:{prefab_id}",
+                    "namespace": "base_game",
+                    "prefab_id": prefab_id,
+                    "type": entity_type,
+                    "is_inventory_item": False,
+                    "name": {"vi": name, "en": name},
+                    "description": {"vi": None, "en": None},
+                    "icon_key": None,
+                    "recipes": [],
+                    "acquisition": [],
+                    "stats": [],
+                    "effects": [],
+                    "relations": [],
+                }
+            )
+        gold = next(
+            entity
+            for entity in catalog["entities"]
+            if entity["key"] == "base_game:goldnugget"
+        )
+        gold["acquisition"] = [
+            {
+                "type": "drop",
+                "source": "base_game:alterguardian_phase3dead",
+                "chance": 1,
+                "min_count": 1,
+                "max_count": 1,
+                "method": "mine_post_defeat",
+                "conditions": {"loot_table": "alterguardian_phase3dead"},
+            }
+        ]
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            paths = {
+                name: root / name
+                for name in (
+                    "catalog.json",
+                    "assets.json",
+                    "wiki.sqlite",
+                    "items.json",
+                    "textures.json",
+                    "overrides.json",
+                    "detail-report.json",
+                    "structure-audit.json",
+                    "effect-audit.json",
+                    "mob-audit.json",
+                    "groups.json",
+                    "mob-pages.jsonl",
+                )
+            }
+            paths["catalog.json"].write_text(json.dumps(catalog), encoding="utf-8")
+            paths["assets.json"].write_text(json.dumps(assets), encoding="utf-8")
+            paths["overrides.json"].write_text(
+                json.dumps({"schema_version": 1, "items": {}}), encoding="utf-8"
+            )
+            paths["groups.json"].write_text(
+                json.dumps(
+                    {
+                        "schema_version": 1,
+                        "groups": [
+                            {
+                                "canonicalId": "base_game:alterguardian_phase3",
+                                "category": "boss",
+                                "members": [
+                                    {"id": "base_game:alterguardian_phase1", "role": "phase", "order": 1},
+                                    {"id": "base_game:alterguardian_phase2", "role": "phase", "order": 2},
+                                    {"id": "base_game:alterguardian_phase3", "role": "phase", "order": 3},
+                                    {"id": "base_game:alterguardian_phase3dead", "role": "post_defeat", "order": 4},
+                                ],
+                            }
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            paths["mob-pages.jsonl"].write_text("", encoding="utf-8")
+            with sqlite3.connect(paths["wiki.sqlite"]) as connection:
+                connection.execute(
+                    "create table game_text (text_key text not null, value_vi text not null)"
+                )
+
+            export_items(
+                paths["wiki.sqlite"],
+                paths["catalog.json"],
+                paths["assets.json"],
+                paths["items.json"],
+                paths["textures.json"],
+                detail_overrides_path=paths["overrides.json"],
+                detail_report_path=paths["detail-report.json"],
+                structure_audit_path=paths["structure-audit.json"],
+                effect_other_audit_path=paths["effect-audit.json"],
+                mob_audit_path=paths["mob-audit.json"],
+                mob_groups_path=paths["groups.json"],
+                mob_wiki_path=paths["mob-pages.jsonl"],
+            )
+
+            payload = json.loads(paths["items.json"].read_text(encoding="utf-8"))
+            structure_audit = json.loads(
+                paths["structure-audit.json"].read_text(encoding="utf-8")
+            )
+            mob_audit = json.loads(paths["mob-audit.json"].read_text(encoding="utf-8"))
+
+        by_id = {item["id"]: item for item in payload["items"]}
+        self.assertNotIn("base_game:alterguardian_phase3dead", by_id)
+        champion = by_id["base_game:alterguardian_phase3"]
+        self.assertEqual(champion["category"], "boss")
+        self.assertEqual(len(champion["mob"]["variants"]), 4)
+        self.assertEqual(champion["mob"]["loot"][0]["method"], "mine_post_defeat")
+        self.assertNotIn(
+            "base_game:alterguardian_phase3dead",
+            {row["id"] for row in structure_audit["rows"]},
+        )
+        self.assertEqual(mob_audit["summary"]["merge"], 3)
 
     def test_loads_deduplicated_crafting_notes_and_rejects_conflicts(self):
         with tempfile.TemporaryDirectory() as tmp:
