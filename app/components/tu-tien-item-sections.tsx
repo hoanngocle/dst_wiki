@@ -321,102 +321,6 @@ function DropBySection({
   );
 }
 
-function formatMobStat(value: string | number, unit: string | null) {
-  const rendered =
-    typeof value === "number" ? new Intl.NumberFormat("vi-VN").format(value) : value;
-  const suffix = {
-    seconds: " giây",
-    tiles: " ô",
-    tiles_per_second: " ô/giây",
-    sanity_per_minute: " tinh thần/phút",
-    hits: " lần tác động",
-  }[unit ?? ""];
-  return rendered + (suffix ?? "");
-}
-
-function MobSections({
-  item,
-  itemsById,
-  onSelectItem,
-  titleId,
-}: {
-  item: ItemListEntry;
-  itemsById: ReadonlyMap<string, ItemListEntry>;
-  onSelectItem: (item: ItemListEntry) => void;
-  titleId: string;
-}) {
-  const mob = item.mob;
-  if (!mob) {
-    return (
-      <DetailSection id={`${titleId}-mob-data`} title="Dữ liệu gameplay">
-        <p className="px-4 py-4 text-sm leading-6 text-[#607188]">
-          Prefab này chưa thể quan sát được dữ liệu runtime.
-        </p>
-      </DetailSection>
-    );
-  }
-  return (
-    <>
-      <DetailSection id={`${titleId}-stats`} title="Chỉ số">
-        {mob.stats.length ? (
-          <dl className="grid grid-cols-2 gap-px bg-[#d5dde6] sm:grid-cols-3">
-            {mob.stats.map((stat) => (
-              <div key={stat.key} className="bg-white px-4 py-3">
-                <dt className="text-xs font-semibold text-[#607188]">{stat.label}</dt>
-                <dd className="mt-1 text-lg font-semibold text-[#172943]">
-                  {formatMobStat(stat.value, stat.unit)}
-                </dd>
-              </div>
-            ))}
-          </dl>
-        ) : (
-          <p className="px-4 py-4 text-sm leading-6 text-[#607188]">
-            Không đọc được chỉ số chuẩn từ prefab khi sinh ra.
-          </p>
-        )}
-      </DetailSection>
-      <DetailSection id={`${titleId}-mechanics`} title="Kỹ năng / cơ chế đặc biệt">
-        {mob.mechanics.length ? (
-          <ul className="space-y-2 p-4">
-            {mob.mechanics.map((mechanic) => (
-              <li key={mechanic} className="rounded-xl border border-[#d5dde6] bg-white px-3 py-2.5 text-sm leading-6 text-[#43556d]">
-                {mechanic}
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p className="px-4 py-4 text-sm leading-6 text-[#607188]">
-            Không ghi nhận trạng thái kỹ năng riêng trong stategraph lúc sinh ra.
-          </p>
-        )}
-      </DetailSection>
-      <DetailSection id={`${titleId}-kill-loot`} title="Vật phẩm rơi khi tiêu diệt">
-        {mob.lootStatus === "known" ? (
-          <ul className="space-y-2 p-4">
-            {mob.loot.map((drop) => (
-              <li key={`${drop.item.id}:${drop.chance}:${drop.quantity}`} className="grid gap-2 rounded-xl border border-[#d5dde6] bg-white p-3 text-sm sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center">
-                <div>
-                  <ReferenceButton reference={drop.item} itemsById={itemsById} onSelectItem={onSelectItem} />
-                  {drop.conditions ? <p className="ml-1 text-xs text-[#607188]">{drop.conditions}</p> : null}
-                </div>
-                <div className="flex gap-2 text-xs font-semibold">
-                  <span className="rounded-lg bg-[#eef3f8] px-2 py-1">×{drop.quantity}</span>
-                  {drop.chance ? <span className="rounded-lg bg-[#e9f1fb] px-2 py-1 text-[#2e5fb3]">{drop.chance}</span> : null}
-                </div>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <StatusMessage
-            status={mob.lootStatus}
-            noneText="Không có mục loot tĩnh trong lootdropper khi sinh ra."
-          />
-        )}
-      </DetailSection>
-    </>
-  );
-}
-
 function CharacterSections({ item, titleId }: { item: ItemListEntry; titleId: string }) {
   const profile = item.character;
   if (!profile) return null;
@@ -463,16 +367,6 @@ export function TuTienItemSections({
 }) {
   if (item.namespace !== "tu_tien" || !item.details) return null;
 
-  if (item.category === "mob") {
-    return (
-      <MobSections
-        item={item}
-        itemsById={itemsById}
-        onSelectItem={onSelectItem}
-        titleId={titleId}
-      />
-    );
-  }
   if (item.category === "character") {
     return <CharacterSections item={item} titleId={titleId} />;
   }

@@ -95,18 +95,58 @@ export type MobStat = {
   label: string;
   value: string | number;
   unit: string | null;
+  sourceVariant: string;
+  evidence: readonly ItemEvidence[];
+};
+
+export type MobRewardMethod =
+  | "kill"
+  | "mine_post_defeat"
+  | "harvest"
+  | "conditional";
+
+export type MobAppearance = {
+  status: ItemDetailStatus;
+  sources: readonly string[];
+  spawnCodes: readonly string[];
+  renewable: boolean | null;
+  respawn: string | number | null;
+  wikiUrl: string | null;
+  evidence: readonly ItemEvidence[];
+};
+
+export type MobVariant = {
+  id: string;
+  prefabId: string;
+  name: string;
+  role: "phase" | "variant" | "summon" | "post_defeat";
+  order: number;
+  sprite: SpriteDescriptor | null;
+};
+
+export type MobMechanic = {
+  text: string;
+  sourceVariant: string;
+  evidence: readonly ItemEvidence[];
 };
 
 export type MobLoot = {
   item: ItemReference;
-  quantity: string;
+  minimum: number;
+  maximum: number;
   chance: string | null;
+  method: MobRewardMethod;
+  sourceVariant: string;
+  lootTable: string | null;
   conditions: string | null;
+  evidence: readonly ItemEvidence[];
 };
 
 export type MobDetails = {
+  appearance: MobAppearance;
+  variants: readonly MobVariant[];
   stats: readonly MobStat[];
-  mechanics: readonly string[];
+  mechanics: readonly MobMechanic[];
   lootStatus: ItemDetailStatus;
   loot: readonly MobLoot[];
 };
@@ -523,16 +563,64 @@ function parseDetails(
   };
 }
 
-function parseMob(value: unknown, itemIndex: number): MobDetails | null {
-  if (value === null || value === undefined) return null;
+function parseMobEvidence(value: unknown, field: string): readonly ItemEvidence[] {
+  if (Array.isArray(value) && value.length === 0) return [];
+  return parseEvidence(value, field);
+}
+
+function parseMob(
+  value: unknown,
+  itemIndex: number,
+  category: PrefabCategory,
+): MobDetails | null {
+  const isMob = category === "mob" || category === "boss";
+  if (!isMob) {
+    if (value !== null && value !== undefined) {
+      throw new Error(`non-Mob item ${itemIndex} mob details must be null`);
+    }
+    return null;
+  }
   if (
     !isRecord(value) ||
+    !isRecord(value.appearance) ||
+    !Array.isArray(value.appearance.sources) ||
+    !Array.isArray(value.appearance.spawnCodes) ||
+    !Array.isArray(value.appearance.evidence) ||
+    !Array.isArray(value.variants) ||
     !Array.isArray(value.stats) ||
     !Array.isArray(value.mechanics) ||
     !Array.isArray(value.loot)
   ) {
-    throw new Error(`item ${itemIndex} mob details must contain arrays`);
+    throw new Error(`Mob item ${itemIndex} details must contain normalized sections`);
   }
+  const appearance = value.appearance;
+  const appearanceSources = appearance.sources as unknown[];
+  const appearanceSpawnCodes = appearance.spawnCodes as unknown[];
+  const variants = value.variants.map((raw, variantIndex) => {
+    if (!isRecord(raw)) {
+      throw new Error(`item ${itemIndex} Mob variant ${variantIndex} is invalid`);
+    }
+    if (
+      raw.role !== "phase" &&
+      raw.role !== "variant" &&
+      raw.role !== "summon" &&
+      raw.role !== "post_defeat"
+    ) {
+      throw new Error(`item ${itemIndex} Mob variant ${variantIndex} role is invalid`);
+    }
+    if (typeof raw.order !== "number" || !Number.isInteger(raw.order) || raw.order < 0) {
+      throw new Error(`item ${itemIndex} Mob variant ${variantIndex} order is invalid`);
+    }
+    const role = raw.role as MobVariant["role"];
+    return {
+      id: requiredString(raw.id, `item ${itemIndex} Mob variant id`),
+      prefabId: requiredString(raw.prefabId, `item ${itemIndex} Mob variant prefabId`),
+      name: requiredString(raw.name, `item ${itemIndex} Mob variant name`),
+      role,
+      order: raw.order,
+      sprite: parseSprite(raw.sprite, `item ${itemIndex} Mob variant ${variantIndex}`),
+    };
+  });
   const stats = value.stats.map((raw, statIndex) => {
     if (!isRecord(raw) || (typeof raw.value !== "number" && typeof raw.value !== "string")) {
       throw new Error(`item ${itemIndex} mob stat ${statIndex} is invalid`);
@@ -542,24 +630,90 @@ function parseMob(value: unknown, itemIndex: number): MobDetails | null {
       label: requiredString(raw.label, `item ${itemIndex} mob stat label`),
       value: raw.value,
       unit: nullableString(raw.unit, `item ${itemIndex} mob stat unit`),
+      sourceVariant: requiredString(
+        raw.sourceVariant,
+        `item ${itemIndex} mob stat sourceVariant`,
+      ),
+      evidence: parseMobEvidence(raw.evidence, `item ${itemIndex} mob stat ${statIndex}`),
     };
   });
-  const mechanics = value.mechanics.map((raw, index) =>
-    requiredString(raw, `item ${itemIndex} mob mechanic ${index}`),
-  );
+  const mechanics = value.mechanics.map((raw, mechanicIndex) => {
+    if (!isRecord(raw)) {
+      throw new Error(`item ${itemIndex} mob mechanic ${mechanicIndex} is invalid`);
+    }
+    return {
+      text: requiredString(raw.text, `item ${itemIndex} mob mechanic text`),
+      sourceVariant: requiredString(
+        raw.sourceVariant,
+        `item ${itemIndex} mob mechanic sourceVariant`,
+      ),
+      evidence: parseMobEvidence(
+        raw.evidence,
+        `item ${itemIndex} mob mechanic ${mechanicIndex}`,
+      ),
+    };
+  });
   const loot = value.loot.map((raw, lootIndex) => {
     if (!isRecord(raw)) throw new Error(`item ${itemIndex} mob loot ${lootIndex} is invalid`);
+    if (
+      typeof raw.minimum !== "number" ||
+      !Number.isFinite(raw.minimum) ||
+      raw.minimum < 0 ||
+      typeof raw.maximum !== "number" ||
+      !Number.isFinite(raw.maximum) ||
+      raw.maximum < raw.minimum
+    ) {
+      throw new Error(`item ${itemIndex} mob loot ${lootIndex} quantity is invalid`);
+    }
+    if (
+      raw.method !== "kill" &&
+      raw.method !== "mine_post_defeat" &&
+      raw.method !== "harvest" &&
+      raw.method !== "conditional"
+    ) {
+      throw new Error(`item ${itemIndex} mob loot ${lootIndex} method is invalid`);
+    }
+    const method = raw.method as MobRewardMethod;
     return {
       item: parseReference(raw.item, `item ${itemIndex} mob loot ${lootIndex}`),
-      quantity: requiredString(raw.quantity, `item ${itemIndex} mob loot quantity`),
+      minimum: raw.minimum,
+      maximum: raw.maximum,
       chance: nullableString(raw.chance, `item ${itemIndex} mob loot chance`),
+      method,
+      sourceVariant: requiredString(
+        raw.sourceVariant,
+        `item ${itemIndex} mob loot sourceVariant`,
+      ),
+      lootTable: nullableString(raw.lootTable, `item ${itemIndex} mob loot lootTable`),
       conditions: nullableString(raw.conditions, `item ${itemIndex} mob loot conditions`),
+      evidence: parseMobEvidence(raw.evidence, `item ${itemIndex} mob loot ${lootIndex}`),
     };
   });
+  const lootStatus = parseDetailStatus(value.lootStatus, `item ${itemIndex} mob loot`);
+  if (lootStatus === "known" && !loot.length) {
+    throw new Error(`item ${itemIndex} known mob loot must contain data`);
+  }
   return {
+    appearance: {
+      status: parseDetailStatus(appearance.status, `item ${itemIndex} mob appearance`),
+      sources: appearanceSources.map((source, sourceIndex) =>
+        requiredString(source, `item ${itemIndex} mob appearance source ${sourceIndex}`),
+      ),
+      spawnCodes: appearanceSpawnCodes.map((code, codeIndex) =>
+        requiredString(code, `item ${itemIndex} mob spawn code ${codeIndex}`),
+      ),
+      renewable: nullableBoolean(
+        appearance.renewable,
+        `item ${itemIndex} mob renewable`,
+      ),
+      respawn: nullableDisplayValue(appearance.respawn, `item ${itemIndex} mob respawn`),
+      wikiUrl: nullableString(appearance.wikiUrl, `item ${itemIndex} mob wikiUrl`),
+      evidence: parseMobEvidence(appearance.evidence, `item ${itemIndex} mob appearance`),
+    },
+    variants,
     stats,
     mechanics,
-    lootStatus: parseDetailStatus(value.lootStatus, `item ${itemIndex} mob loot`),
+    lootStatus,
     loot,
   };
 }
@@ -800,7 +954,7 @@ function parseItem(value: unknown, index: number): ItemListEntry {
     sprite: parseSprite(value.sprite, `item ${index}`),
     recipe: parseRecipe(value.recipe, index),
     details: parseDetails(value.details, namespace, index),
-    mob: parseMob(value.mob, index),
+    mob: parseMob(value.mob, index, category),
     character: parseCharacter(value.character, index),
     structureDetails: parseStructureDetails(value.structureDetails, category, index),
     wiki: parseWiki(value.wiki, index),
