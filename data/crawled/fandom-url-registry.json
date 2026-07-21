@@ -1,467 +1,2741 @@
 {
   "items": [
     {
-      "artifactPath": "fandom-shared-pages/3e1ecf65bc82bd8e74fca81ae7a240f7b28743996f6d117eac456b409a66a79e.json",
-      "artifactSha256": "6373ac88667d1e9a5aeb6c0f35a691a6dcb6848ddb7a76ac55b83b6ddb9725bd",
+      "artifactPath": "shared-pages/91784b0720cefbccabe028bb85d12643fd2dc182a832c781a264a6d26e15c15d.json",
+      "artifactSha256": "481a18ae0c2dea258214ea27a7b17dfb26e6578bf81a9c068ab447704d864305",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:48Z",
+      "completedAt": "2026-07-21T07:36:49Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:49Z",
+      "url": "https://dontstarve.fandom.com/wiki/Ancient_Key",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/94545ce1b79a202f966107cc58e36583ae9896baeca4b1946f3a0d5955d6a82f.json",
+      "artifactSha256": "cc75ee42e8cb012004992643376101272fc5f6390e33cf05a731b9befff945bc",
+      "attempts": 1,
+      "categories": [
+        "celestial_tab"
+      ],
+      "claimedAt": "2026-07-21T07:33:05Z",
+      "completedAt": "2026-07-21T07:33:10Z",
+      "createdAt": "2026-07-21T07:33:05Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:33:10Z",
+      "url": "https://dontstarve.fandom.com/wiki/Axe",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/96585fbe01bf0b6bd3357688a23525b22b22b530088a7f95b82f1b5d95135b60.json",
+      "artifactSha256": "583074ccee0d5844e00f94a644fd84f8d263b8837e410cb922faba0738780bfd",
+      "attempts": 1,
+      "categories": [
+        "backpacks",
+        "containers"
+      ],
+      "claimedAt": "2026-07-21T07:33:40Z",
+      "completedAt": "2026-07-21T07:33:41Z",
+      "createdAt": "2026-07-21T07:33:40Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:33:41Z",
+      "url": "https://dontstarve.fandom.com/wiki/Backpack",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/43eb0a31523fb3cc1958472c8c1e57cd5d9828edd60495707d4055b9c1547350.json",
+      "artifactSha256": "fb28f9dde41daa617eafd28c3af53235d9e29f5ced48b8c2125613f698c05203",
+      "attempts": 1,
+      "categories": [
+        "celestial_filter"
+      ],
+      "claimedAt": "2026-07-21T07:31:45Z",
+      "completedAt": "2026-07-21T07:31:46Z",
+      "createdAt": "2026-07-21T07:31:39Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:31:46Z",
+      "url": "https://dontstarve.fandom.com/wiki/Bath_Bomb",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/1accdd5840cd7b58a04f571c1f9fa72a0cd454aef9563e80b1e7082e20e75d86.json",
+      "artifactSha256": "e761943ec868324942caf80eb134925a2e8ec184539da0fbcc1d2829862a42e4",
+      "attempts": 1,
+      "categories": [
+        "cave_creatures"
+      ],
+      "claimedAt": "2026-07-21T07:39:08Z",
+      "completedAt": "2026-07-21T07:39:10Z",
+      "createdAt": "2026-07-21T07:38:57Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:39:10Z",
+      "url": "https://dontstarve.fandom.com/wiki/Batilisk",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/5d65aeca9a23eac3180eadaa9495d347fd17738a7edcfd9444fb933e24b43dcd.json",
+      "artifactSha256": "9b57cab05b89b260811ebb56607cf30cc267ec644e4a5188f3e9135a582a26c7",
+      "attempts": 1,
+      "categories": [
+        "armour_filter"
+      ],
+      "claimedAt": "2026-07-21T07:28:29Z",
+      "completedAt": "2026-07-21T07:28:31Z",
+      "createdAt": "2026-07-21T07:28:13Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:28:31Z",
+      "url": "https://dontstarve.fandom.com/wiki/Battle_Helm",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/5ee0971d25f940b11b727ec181766cb1976362ea01af6c4f9bbd6142b11153eb.json",
+      "artifactSha256": "7147dfafff5eadd9bfd1d6fa0295814f52eab94c6f02e2a66c3f6328eac1f234",
+      "attempts": 1,
+      "categories": [
+        "armour_filter"
+      ],
+      "claimedAt": "2026-07-21T07:29:10Z",
+      "completedAt": "2026-07-21T07:29:11Z",
+      "createdAt": "2026-07-21T07:28:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:29:11Z",
+      "url": "https://dontstarve.fandom.com/wiki/Battle_R%C3%B6nd",
+      "workerId": null
+    },
+    {
+      "artifactPath": null,
+      "artifactSha256": null,
       "attempts": 1,
       "categories": [
         "animals"
       ],
-      "claimedAt": "2026-07-21T03:11:55Z",
-      "completedAt": "2026-07-21T03:11:56Z",
+      "claimedAt": null,
+      "completedAt": null,
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": null,
-      "status": "Done",
-      "updatedAt": "2026-07-21T03:11:56Z",
+      "lastError": "imported from snapshot without raw artifact",
+      "status": "New",
+      "updatedAt": "2026-07-21T07:27:52Z",
       "url": "https://dontstarve.fandom.com/wiki/Bee",
       "workerId": null
     },
     {
-      "artifactPath": "fandom-shared-pages/dc56a93950502ebae673ccbcf07c54a615645d499640a38080fb7cd458ba30f4.json",
-      "artifactSha256": "a985c7c6286d80b0db44fde9fae628066e52bf7332aff4bb9389778961171fb3",
+      "artifactPath": "shared-pages/833bc05368bfa8430068e4341fcc0e69ab35b968963a27014f28cf7212151f9e.json",
+      "artifactSha256": "22b694dc68649a8da0e4b72373ecc704dfabf627d81fe4b2443c4f9b5066df7c",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:45Z",
+      "completedAt": "2026-07-21T07:36:46Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:46Z",
+      "url": "https://dontstarve.fandom.com/wiki/Bee_Queen_Crown",
+      "workerId": null
+    },
+    {
+      "artifactPath": null,
+      "artifactSha256": null,
       "attempts": 1,
       "categories": [
         "animals"
       ],
-      "claimedAt": "2026-07-21T03:11:56Z",
-      "completedAt": "2026-07-21T03:11:58Z",
+      "claimedAt": null,
+      "completedAt": null,
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": null,
-      "status": "Done",
-      "updatedAt": "2026-07-21T03:11:58Z",
+      "lastError": "imported from snapshot without raw artifact",
+      "status": "New",
+      "updatedAt": "2026-07-21T07:27:52Z",
       "url": "https://dontstarve.fandom.com/wiki/Beefalo",
       "workerId": null
     },
     {
-      "artifactPath": "fandom-shared-pages/60f166fa603e3171fa47542515bcdd3ae6cffc21ca35e7bee2de7db18cebc1c4.json",
-      "artifactSha256": "9efef1e6a3e56a53fc6ad8db6dd2baf546c90f69769c16c9f11c0dfb743c1bae",
+      "artifactPath": "shared-pages/7bec09f78a877f29b896fc1c40202d6ada460bc344189691a60ada794d6e5933.json",
+      "artifactSha256": "542b7b077b3399beea2e65a1b8e6643af2ccbeaf6018c7fe48434e4957f786d5",
+      "attempts": 1,
+      "categories": [
+        "clothing_filter"
+      ],
+      "claimedAt": "2026-07-21T07:30:42Z",
+      "completedAt": "2026-07-21T07:30:43Z",
+      "createdAt": "2026-07-21T07:30:42Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:30:43Z",
+      "url": "https://dontstarve.fandom.com/wiki/Beefalo_Hat",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/96357e999fe57959b2b8d91bc54139c1bccecf3af528b7f217865e7cd270e7fc.json",
+      "artifactSha256": "c01687cc525ad425ffc3638433e58cd103ab47f015f04c44746be77c9e3d8d92",
+      "attempts": 1,
+      "categories": [
+        "beefalo_foods"
+      ],
+      "claimedAt": "2026-07-21T07:30:24Z",
+      "completedAt": "2026-07-21T07:30:25Z",
+      "createdAt": "2026-07-21T07:30:20Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:30:25Z",
+      "url": "https://dontstarve.fandom.com/wiki/Beefalo_Treats",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/586c4df5e40ca8e58f0df267d8f8118ba2dca10d517c1923b388da615be821c7.json",
+      "artifactSha256": "7f92ffd91beb509b33bab90cbe017607c5166cb5264d43807e886ab87ce87a32",
+      "attempts": 1,
+      "categories": [
+        "armour_filter"
+      ],
+      "claimedAt": "2026-07-21T07:28:17Z",
+      "completedAt": "2026-07-21T07:28:19Z",
+      "createdAt": "2026-07-21T07:28:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:28:19Z",
+      "url": "https://dontstarve.fandom.com/wiki/Beekeeper_Hat",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/a1365d711fd8b71e5cbe7f06774465b83fedb7f5c670e2f90666f9241f687bd6.json",
+      "artifactSha256": "3ba4f717f97c261aef762bb8964399c0474e52de7ac2be9e4915c525faae737e",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:19Z",
+      "completedAt": "2026-07-21T07:36:20Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:20Z",
+      "url": "https://dontstarve.fandom.com/wiki/Blue_Cap",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/fe8c321a9796f6371091c4d96aa1ca1400e732ebb2b6141786dd683edb9c9eef.json",
+      "artifactSha256": "08d6b771278105d5ebd596f570b88048695a1568e7812522732604f704e2624f",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:10Z",
+      "completedAt": "2026-07-21T07:36:12Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:12Z",
+      "url": "https://dontstarve.fandom.com/wiki/Blue_Gem",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/701e249e6c282005270f8227e2de1e466c5c620d444b2f1d85ae7c2e7ada8d99.json",
+      "artifactSha256": "eead8af20faac425f917618d604faa3bd3954498bd98c672df67a596be203347",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:12Z",
+      "completedAt": "2026-07-21T07:36:13Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:13Z",
+      "url": "https://dontstarve.fandom.com/wiki/Blueprint",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/402273443bf24feee88c17bb4732c29bd0a5e7d7f706bb9d2b149ff19a0a7390.json",
+      "artifactSha256": "99df08bcc2cfc82e109ca40b23e612fb6accab0e5b70eff42e161426a23799f8",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:50Z",
+      "completedAt": "2026-07-21T07:36:51Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:51Z",
+      "url": "https://dontstarve.fandom.com/wiki/Bone_Armor",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/1638d7a81f8dd862c1731a5a2e972f2cf4d2f6a592b98d792c4ea1dc497d255f.json",
+      "artifactSha256": "bdc9f7de0623ce28372ba2566ca13c1f10686e526a5fd8a56ae196c853fb13d8",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:51Z",
+      "completedAt": "2026-07-21T07:36:52Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:52Z",
+      "url": "https://dontstarve.fandom.com/wiki/Bone_Helm",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/2e8c3a2a1c49ec9331d888b6c1fc37d144aff3900f6fc20aabacb3a88823e052.json",
+      "artifactSha256": "adb2c694ff1fdcea8c6fba246d2577f58b477ad0aa41bdf68f87804a49906652",
+      "attempts": 1,
+      "categories": [
+        "armour_filter"
+      ],
+      "claimedAt": "2026-07-21T07:28:35Z",
+      "completedAt": "2026-07-21T07:28:39Z",
+      "createdAt": "2026-07-21T07:28:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:28:39Z",
+      "url": "https://dontstarve.fandom.com/wiki/Bramble_Husk",
+      "workerId": null
+    },
+    {
+      "artifactPath": null,
+      "artifactSha256": null,
       "attempts": 1,
       "categories": [
         "animals"
       ],
-      "claimedAt": "2026-07-21T03:13:19Z",
-      "completedAt": "2026-07-21T03:13:21Z",
+      "claimedAt": null,
+      "completedAt": null,
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": null,
-      "status": "Done",
-      "updatedAt": "2026-07-21T03:13:21Z",
+      "lastError": "imported from snapshot without raw artifact",
+      "status": "New",
+      "updatedAt": "2026-07-21T07:27:52Z",
       "url": "https://dontstarve.fandom.com/wiki/Bright-Eyed_Frog",
       "workerId": null
     },
     {
-      "artifactPath": "fandom-shared-pages/f34f5db64aa30b014affaa258f1ab75c484f4d626142a00ad7a32ad95c9aa1b2.json",
-      "artifactSha256": "d5e4da97ebc0c22841bc78a54ad04534a0cb0edbec6b62bef945a99786aa75a8",
+      "artifactPath": "shared-pages/7f1a8726bbf117dae4d4375b73c1914c91577db1dc8044e8a5fcfaf40b010d77.json",
+      "artifactSha256": "8ccc5f7efd3f3a28ace9c332e928d9c63309165471544fd598ff0c3491bfc346",
       "attempts": 1,
       "categories": [
-        "animals"
+        "armour_filter"
       ],
-      "claimedAt": "2026-07-21T03:13:05Z",
-      "completedAt": "2026-07-21T03:13:10Z",
+      "claimedAt": "2026-07-21T07:28:54Z",
+      "completedAt": "2026-07-21T07:28:58Z",
+      "createdAt": "2026-07-21T07:28:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:28:58Z",
+      "url": "https://dontstarve.fandom.com/wiki/Brightshade_Armor",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/87be6771a9c9b2a8bc33cc9ab3c3b3ec6e7da826165b17403af165b993f63542.json",
+      "artifactSha256": "a2a55173f540bb2ef7cc83cd28ece4a01e21b3d401865a2847e87a3040d05b46",
+      "attempts": 1,
+      "categories": [
+        "armour_filter"
+      ],
+      "claimedAt": "2026-07-21T07:28:50Z",
+      "completedAt": "2026-07-21T07:28:54Z",
+      "createdAt": "2026-07-21T07:28:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:28:54Z",
+      "url": "https://dontstarve.fandom.com/wiki/Brightshade_Helm",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/4cddf194e772e0a70d01f5d97922618f1aa2dd3e24285e740df898f2a96f55db.json",
+      "artifactSha256": "68f4368c06ca5238b9566059a78081d97c770b102c2503c2ddabc77946f115f9",
+      "attempts": 1,
+      "categories": [
+        "celestial_filter"
+      ],
+      "claimedAt": "2026-07-21T07:31:46Z",
+      "completedAt": "2026-07-21T07:31:50Z",
+      "createdAt": "2026-07-21T07:31:39Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:31:50Z",
+      "url": "https://dontstarve.fandom.com/wiki/Brightsmithy",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/f34f5db64aa30b014affaa258f1ab75c484f4d626142a00ad7a32ad95c9aa1b2.json",
+      "artifactSha256": "e4a15b1669fde5727f59ea3d15a884771d764a384a62252da2be6ee0f6b105d6",
+      "attempts": 2,
+      "categories": [
+        "animals",
+        "cave_creatures"
+      ],
+      "claimedAt": "2026-07-21T07:39:31Z",
+      "completedAt": "2026-07-21T07:39:37Z",
       "createdAt": "2026-07-21T03:11:53Z",
       "lastError": null,
       "status": "Done",
-      "updatedAt": "2026-07-21T03:13:10Z",
+      "updatedAt": "2026-07-21T07:39:37Z",
       "url": "https://dontstarve.fandom.com/wiki/Bulbous_Lightbug",
       "workerId": null
     },
     {
-      "artifactPath": "fandom-shared-pages/ec7b304ec8510cfa28a2e5ebf68bafdac3c06ed128accfd79adcecce60f66932.json",
-      "artifactSha256": "8f3d6ecfe6f6a3cbf29433087e6a9a8e37ab6eae5a5058e066bf287310214641",
+      "artifactPath": "shared-pages/eafcd320439263d21ed0f2d83e861df75ba1f82c14be28ebee47df1cc7219ccf.json",
+      "artifactSha256": "54c8ed6e32d5bdd644ffc210b9f344d7cd943aa362ec6accefd2771e4523251c",
       "attempts": 1,
       "categories": [
-        "animals"
+        "containers"
       ],
-      "claimedAt": "2026-07-21T03:12:10Z",
-      "completedAt": "2026-07-21T03:12:11Z",
+      "claimedAt": "2026-07-21T07:34:38Z",
+      "completedAt": "2026-07-21T07:34:39Z",
+      "createdAt": "2026-07-21T07:34:16Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:34:39Z",
+      "url": "https://dontstarve.fandom.com/wiki/Bundling_Wrap",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/ec7b304ec8510cfa28a2e5ebf68bafdac3c06ed128accfd79adcecce60f66932.json",
+      "artifactSha256": "b22acf5e7d1f8dcfdc104c13448b871cad0e5492cdcaa1d200aa921f86b4befc",
+      "attempts": 2,
+      "categories": [
+        "animals",
+        "cave_creatures"
+      ],
+      "claimedAt": "2026-07-21T07:39:11Z",
+      "completedAt": "2026-07-21T07:39:13Z",
       "createdAt": "2026-07-21T03:11:53Z",
       "lastError": null,
       "status": "Done",
-      "updatedAt": "2026-07-21T03:12:11Z",
+      "updatedAt": "2026-07-21T07:39:13Z",
       "url": "https://dontstarve.fandom.com/wiki/Bunnyman",
       "workerId": null
     },
     {
-      "artifactPath": "fandom-shared-pages/05ed193b50c7e3067b337b80ef46e75c0ed59884833bb04c2e851472a738717f.json",
-      "artifactSha256": "572142e1c8d487d85bc4e4773029c446558c72b6f30e98868ae5ee9946b57a0f",
+      "artifactPath": null,
+      "artifactSha256": null,
       "attempts": 1,
       "categories": [
         "animals"
       ],
-      "claimedAt": "2026-07-21T03:12:00Z",
-      "completedAt": "2026-07-21T03:12:02Z",
+      "claimedAt": null,
+      "completedAt": null,
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": null,
-      "status": "Done",
-      "updatedAt": "2026-07-21T03:12:02Z",
+      "lastError": "imported from snapshot without raw artifact",
+      "status": "New",
+      "updatedAt": "2026-07-21T07:27:52Z",
       "url": "https://dontstarve.fandom.com/wiki/Butterfly",
       "workerId": null
     },
     {
-      "artifactPath": "fandom-shared-pages/c6ab3541f1ebbd9c24e9a3178f1fa751d1be86c26963f77eb8ad11ce5b8b1529.json",
-      "artifactSha256": "f4a72dc805394a582af4ecc412f5b917644e3c7f520a0162a19a360fdaa7719f",
+      "artifactPath": null,
+      "artifactSha256": null,
       "attempts": 1,
       "categories": [
         "animals"
       ],
-      "claimedAt": "2026-07-21T03:12:17Z",
-      "completedAt": "2026-07-21T03:12:20Z",
+      "claimedAt": null,
+      "completedAt": null,
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": null,
-      "status": "Done",
-      "updatedAt": "2026-07-21T03:12:20Z",
+      "lastError": "imported from snapshot without raw artifact",
+      "status": "New",
+      "updatedAt": "2026-07-21T07:27:52Z",
       "url": "https://dontstarve.fandom.com/wiki/Buzzard",
       "workerId": null
     },
     {
-      "artifactPath": "fandom-shared-pages/d5d7d79b6fa0859a50630feb489b989afa9a46b8e3ed772d27d9d02a6ec65433.json",
-      "artifactSha256": "d468800970847e2fb9e0a4b491feb8a1bcaa27c02cdd4d9691a0d9fe65c05801",
+      "artifactPath": null,
+      "artifactSha256": null,
       "attempts": 1,
       "categories": [
         "animals"
       ],
-      "claimedAt": "2026-07-21T03:12:22Z",
-      "completedAt": "2026-07-21T03:12:23Z",
+      "claimedAt": null,
+      "completedAt": null,
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": null,
-      "status": "Done",
-      "updatedAt": "2026-07-21T03:12:23Z",
+      "lastError": "imported from snapshot without raw artifact",
+      "status": "New",
+      "updatedAt": "2026-07-21T07:27:52Z",
       "url": "https://dontstarve.fandom.com/wiki/Catcoon",
       "workerId": null
     },
     {
-      "artifactPath": "fandom-shared-pages/77ce983e9a9cd341995d0cc946d6870eaf510b0eb75f73744632743fd33c02a3.json",
-      "artifactSha256": "b585d2eda40cce15bd3e76de7356b4130a601cbfa9cc5cbb03018e28e0fe7e66",
+      "artifactPath": "shared-pages/21ed3b3f18cbf5c5771123385222bec9281a361fda6d639e67d5fc1c46f7e0f2.json",
+      "artifactSha256": "08a0a5a0824396e1e65b964b8c549cd8bb8ac7edabc812cc86fe1d3066f1593a",
       "attempts": 1,
       "categories": [
-        "animals"
+        "cave_creatures"
       ],
-      "claimedAt": "2026-07-21T03:13:10Z",
-      "completedAt": "2026-07-21T03:13:13Z",
+      "claimedAt": "2026-07-21T07:39:07Z",
+      "completedAt": "2026-07-21T07:39:08Z",
+      "createdAt": "2026-07-21T07:38:57Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:39:08Z",
+      "url": "https://dontstarve.fandom.com/wiki/Cave_Spider",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/bbdccd0326387dd4d2b7cfbf9dc4e4b2a8baf84d3d1519c5b68d52b2da1cda63.json",
+      "artifactSha256": "4216a88fd68450e3905b34426cb013bd62c4a43ccd3763091e2270b57c2c10a9",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:35:15Z",
+      "completedAt": "2026-07-21T07:35:16Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:35:16Z",
+      "url": "https://dontstarve.fandom.com/wiki/Charcoal",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/5f615623f012f94058e00ed7905c80740041bd8f09902448148c541e6b84420d.json",
+      "artifactSha256": "fd0518403a4afebab9254dd14712fbbe34edf77c79c1f91c59bd93f5bc7d52e3",
+      "attempts": 1,
+      "categories": [
+        "backpacks",
+        "containers"
+      ],
+      "claimedAt": "2026-07-21T07:33:43Z",
+      "completedAt": "2026-07-21T07:33:47Z",
+      "createdAt": "2026-07-21T07:33:40Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:33:47Z",
+      "url": "https://dontstarve.fandom.com/wiki/Chef_Pouch",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/2bdaabc66bb11fa5ca528d5d8a05a5508859d5fad8aa1a8bfed805495173f26e.json",
+      "artifactSha256": "76e64e429b1942563f4420194e43f22c37a764b2a9cc624343f7b4ce9cadd6c4",
+      "attempts": 1,
+      "categories": [
+        "containers"
+      ],
+      "claimedAt": "2026-07-21T07:34:16Z",
+      "completedAt": "2026-07-21T07:34:19Z",
+      "createdAt": "2026-07-21T07:34:16Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:34:19Z",
+      "url": "https://dontstarve.fandom.com/wiki/Chest",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/d5ad23612729304e8db41724c68a181dfdc0a86bc87c02f159c2be3585e90c34.json",
+      "artifactSha256": "7d40008612e9427afe8b303f0dffb9cefbf0884a0f0ec6e88914456fc235c5d8",
+      "attempts": 1,
+      "categories": [
+        "containers"
+      ],
+      "claimedAt": "2026-07-21T07:34:25Z",
+      "completedAt": "2026-07-21T07:34:27Z",
+      "createdAt": "2026-07-21T07:34:16Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:34:27Z",
+      "url": "https://dontstarve.fandom.com/wiki/Chester",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/8e68a9e4bb5aa62394caa75ea59f5d62f6ef3c55e829ec0cad1c60ae6d4a8290.json",
+      "artifactSha256": "d6d62e4b37bb2657d74bda285aabbdac08a4f2d12091b424ad0544b87bba7a01",
+      "attempts": 1,
+      "categories": [
+        "cave_creatures"
+      ],
+      "claimedAt": "2026-07-21T07:39:06Z",
+      "completedAt": "2026-07-21T07:39:07Z",
+      "createdAt": "2026-07-21T07:38:57Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:39:07Z",
+      "url": "https://dontstarve.fandom.com/wiki/Clockwork_Bishop",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/fbab138fe653abd452cde911347b30302f1d6d556a1d9ce274dd9f68fe32f285.json",
+      "artifactSha256": "3e3a47240f1eb9aaf2e1b7f6561f134ebb934610ac718419ffdae77f820432ed",
+      "attempts": 1,
+      "categories": [
+        "armour_filter"
+      ],
+      "claimedAt": "2026-07-21T07:29:11Z",
+      "completedAt": "2026-07-21T07:29:14Z",
+      "createdAt": "2026-07-21T07:28:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:29:14Z",
+      "url": "https://dontstarve.fandom.com/wiki/Commander's_Helm",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/c043454583c945a74bfd8da5de138b22bd99f234efc91bafaacee3cbe4c82380.json",
+      "artifactSha256": "e497b9115345b70cb4de9a25bb0a1ed508f83459413c70f52e06e9080d0823bc",
+      "attempts": 1,
+      "categories": [
+        "armour_filter"
+      ],
+      "claimedAt": "2026-07-21T07:28:40Z",
+      "completedAt": "2026-07-21T07:28:42Z",
+      "createdAt": "2026-07-21T07:28:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:28:42Z",
+      "url": "https://dontstarve.fandom.com/wiki/Cookie_Cutter_Cap",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/42dd521015cd8d269878de0e658f3dd5299324ea385aacbd594d8ad9a341563c.json",
+      "artifactSha256": "8c0771f0bfe52dcf430627f2df5433971a74b1644fe420470d7f73bfc568eba7",
+      "attempts": 1,
+      "categories": [
+        "containers"
+      ],
+      "claimedAt": "2026-07-21T07:34:19Z",
+      "completedAt": "2026-07-21T07:34:24Z",
+      "createdAt": "2026-07-21T07:34:16Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:34:24Z",
+      "url": "https://dontstarve.fandom.com/wiki/Crock_Pot",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/ce98bff183dd174df68bc58c3c02e5144faac20dc2c190d58a17bae5cd400f72.json",
+      "artifactSha256": "0c5cf164ab77a2d348ca2dc33279aba2c864c60213c1a5026c059da0d3d313ef",
+      "attempts": 1,
+      "categories": [
+        "beefalo_foods"
+      ],
+      "claimedAt": "2026-07-21T07:30:21Z",
+      "completedAt": "2026-07-21T07:30:23Z",
+      "createdAt": "2026-07-21T07:30:20Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:30:23Z",
+      "url": "https://dontstarve.fandom.com/wiki/Cut_Grass",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/d1de7dc1089b434bd28a492034f48f10214154692f28c4817f90b78cb2fe7ad0.json",
+      "artifactSha256": "cd7271ccd9a804dbc5c0f38077683240ee8cc034e767ae3065394e8228bf4e19",
+      "attempts": 1,
+      "categories": [
+        "beefalo_foods"
+      ],
+      "claimedAt": "2026-07-21T07:30:23Z",
+      "completedAt": "2026-07-21T07:30:24Z",
+      "createdAt": "2026-07-21T07:30:20Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:30:24Z",
+      "url": "https://dontstarve.fandom.com/wiki/Cut_Reeds",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/c341ec77e95cc8d7d0b17919688a0e8b4bb64033074856f825d768fbaa343cbc.json",
+      "artifactSha256": "459cd79debe61a9040e3bba4e3d6a5a98fd22f665498edad7926c6c22b3b55f8",
+      "attempts": 1,
+      "categories": [
+        "cave_creatures"
+      ],
+      "claimedAt": "2026-07-21T07:39:14Z",
+      "completedAt": "2026-07-21T07:39:17Z",
+      "createdAt": "2026-07-21T07:38:57Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:39:17Z",
+      "url": "https://dontstarve.fandom.com/wiki/Dangling_Depth_Dweller",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/fc4fce90764899e8cdb389657393323562dacdd909770c30fc282930049d7ba9.json",
+      "artifactSha256": "1e0559b38ae63f327bd82097cd607e6819832582ad599b2a3abeeed4db846896",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:03Z",
+      "completedAt": "2026-07-21T07:36:07Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:07Z",
+      "url": "https://dontstarve.fandom.com/wiki/Dark_Sword",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/5f78b3695279daaf324a9683b6e6ed832e7003148415f8243fa7f625c1263f97.json",
+      "artifactSha256": "b90ecbd91720f54f5b803105a9a97694235838fc986767705fcb2f30f111dba7",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:52Z",
+      "completedAt": "2026-07-21T07:36:53Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:53Z",
+      "url": "https://dontstarve.fandom.com/wiki/Dark_Tatters",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/0ae5c84537636f8ece2b0c26e7ce0c0ca64ea6f3de645c6e0698059485b4ea34.json",
+      "artifactSha256": "c9af2321d1fec1d958a1793ad9d2e061b436704d1e0e01a5ba681a1330821e78",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:09Z",
+      "completedAt": "2026-07-21T07:36:10Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:10Z",
+      "url": "https://dontstarve.fandom.com/wiki/Deerclops_Eyeball",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/5ae012a3d7e8474be70d34e27a214ce1146398d7b1843a00c5efdccef639edf3.json",
+      "artifactSha256": "88d6e9dcc5add73e0674bb3c9cdd65905eeff9fbdb6924ac2b8037770660a54a",
+      "attempts": 1,
+      "categories": [
+        "cave_creatures"
+      ],
+      "claimedAt": "2026-07-21T07:39:17Z",
+      "completedAt": "2026-07-21T07:39:18Z",
+      "createdAt": "2026-07-21T07:38:57Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:39:18Z",
+      "url": "https://dontstarve.fandom.com/wiki/Depths_Worm",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/381649a5a28f9e8b40f0f17f011004e24801a19a133935195804c691d51f6c95.json",
+      "artifactSha256": "da57ead50abd83f497fced053a920162bb3abab542b31a81854ad08b52932126",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:47Z",
+      "completedAt": "2026-07-21T07:36:48Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:48Z",
+      "url": "https://dontstarve.fandom.com/wiki/Desert_Stone",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/fad328b6b29255e4adca27a9f5f9fb8243324dcf8cb1d5f431c9e6050da2a9a7.json",
+      "artifactSha256": "e1a55f65c0592bb06b9833099fba1cd8b071119ba1076ff7968388cf38637593",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:26Z",
+      "completedAt": "2026-07-21T07:36:27Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:27Z",
+      "url": "https://dontstarve.fandom.com/wiki/Down_Feather",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/a0d873d907cf4a9abd1cfc040ec79f3c4c25b6dcbfb4acb7b3f77a3e92e44d8f.json",
+      "artifactSha256": "e5812434aad3180dc1ba161f01d0555544e13df948ff4c5933bdf10a2c9082f6",
+      "attempts": 1,
+      "categories": [
+        "armour_filter"
+      ],
+      "claimedAt": "2026-07-21T07:28:46Z",
+      "completedAt": "2026-07-21T07:28:50Z",
+      "createdAt": "2026-07-21T07:28:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:28:50Z",
+      "url": "https://dontstarve.fandom.com/wiki/Dreadstone_Armor",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/1b7d2aa5d6f8c1af4c222cd3219091cd6ee9b9d1fbb1fb0d173fe51a0464b297.json",
+      "artifactSha256": "e62dc4c374b7d4b461a1be4741d7386a87f9c70144c239f8b0a5b41beba71cf0",
+      "attempts": 1,
+      "categories": [
+        "armour_filter"
+      ],
+      "claimedAt": "2026-07-21T07:28:42Z",
+      "completedAt": "2026-07-21T07:28:46Z",
+      "createdAt": "2026-07-21T07:28:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:28:46Z",
+      "url": "https://dontstarve.fandom.com/wiki/Dreadstone_Helm",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/30040fd245a3996067af9af006a4fce9123478a7e3a722def4b7177cc7f55b8a.json",
+      "artifactSha256": "a52c72a564c74ebaf78ff89e4267d2394221bc82f297c8c81069d5c7ae95e9fc",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:35:21Z",
+      "completedAt": "2026-07-21T07:35:22Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:35:22Z",
+      "url": "https://dontstarve.fandom.com/wiki/Drumstick",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/77ce983e9a9cd341995d0cc946d6870eaf510b0eb75f73744632743fd33c02a3.json",
+      "artifactSha256": "3abad52ec0e204f06edd806320cbe3a48adfcca06bdd7d9f2eb2bbb11502f2f1",
+      "attempts": 2,
+      "categories": [
+        "animals",
+        "cave_creatures"
+      ],
+      "claimedAt": "2026-07-21T07:39:37Z",
+      "completedAt": "2026-07-21T07:39:40Z",
       "createdAt": "2026-07-21T03:11:53Z",
       "lastError": null,
       "status": "Done",
-      "updatedAt": "2026-07-21T03:13:13Z",
+      "updatedAt": "2026-07-21T07:39:40Z",
       "url": "https://dontstarve.fandom.com/wiki/Dust_Moth",
       "workerId": null
     },
     {
-      "artifactPath": "fandom-shared-pages/f24559532a6c0b9d454513c0fe4e6dddf8bfe59079fa3a727124574c2525fedf.json",
-      "artifactSha256": "4649475fa48ae2aa8dc2bb170c87ec7901e3c417d3f2ee3f7731c278bf3d1db2",
+      "artifactPath": "shared-pages/1316916befc7e637a6168e01ce9467be590686744b2d714bbb248e44028310a4.json",
+      "artifactSha256": "5c5de23fc307d9a6554a84ce0f6d91ec7a17dcf76baa4f37e9aae4ca3ba0c9d2",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:37:05Z",
+      "completedAt": "2026-07-21T07:37:06Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:37:06Z",
+      "url": "https://dontstarve.fandom.com/wiki/Enlightened_Crown",
+      "workerId": null
+    },
+    {
+      "artifactPath": null,
+      "artifactSha256": null,
       "attempts": 1,
       "categories": [
         "animals"
       ],
-      "claimedAt": "2026-07-21T03:12:58Z",
-      "completedAt": "2026-07-21T03:13:00Z",
+      "claimedAt": null,
+      "completedAt": null,
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": null,
-      "status": "Done",
-      "updatedAt": "2026-07-21T03:13:00Z",
+      "lastError": "imported from snapshot without raw artifact",
+      "status": "New",
+      "updatedAt": "2026-07-21T07:27:52Z",
       "url": "https://dontstarve.fandom.com/wiki/Ewecus",
       "workerId": null
     },
     {
-      "artifactPath": "fandom-shared-pages/811e27d79aaf618e8e2f19101e7eb6ce8996bd425d23d0e62d8c3fc1b6f87b99.json",
-      "artifactSha256": "54628de7c9be5424a7c508723338a18ed82d1f0e2603489a59af6467234c31ca",
+      "artifactPath": "shared-pages/eac0f57bcd2a2afa6fdd3e08fb8a6bf7688a02885717ac437a6cfff8ead280f1.json",
+      "artifactSha256": "20466c295ac066937c6c28c38d13d58725e082724511d95834a80902a7632fb5",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:37:07Z",
+      "completedAt": "2026-07-21T07:37:08Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:37:08Z",
+      "url": "https://dontstarve.fandom.com/wiki/Eye_Mask",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/3a305041f1bede8c326c576583d4c2c42a943f09a6f8e20888ba0fe30b339069.json",
+      "artifactSha256": "af1fe286066de8435fa104133754c708d6fa7ed64d8baa3eff2dc3f158220d98",
+      "attempts": 1,
+      "categories": [
+        "cave_creatures"
+      ],
+      "claimedAt": "2026-07-21T07:38:57Z",
+      "completedAt": "2026-07-21T07:39:00Z",
+      "createdAt": "2026-07-21T07:38:57Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:39:00Z",
+      "url": "https://dontstarve.fandom.com/wiki/Fireflies",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/9a199431a244dbcde50f86c71e570143604564bfcbac7ae249a60d852f4ffc60.json",
+      "artifactSha256": "432c56941db436452868592d49020a1052e9205cdf3d679817dcd924668bd051",
+      "attempts": 1,
+      "categories": [
+        "armour_filter"
+      ],
+      "claimedAt": "2026-07-21T07:28:14Z",
+      "completedAt": "2026-07-21T07:28:15Z",
+      "createdAt": "2026-07-21T07:28:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:28:15Z",
+      "url": "https://dontstarve.fandom.com/wiki/Football_Helmet",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/2618009276bf96c262c01b2bbbe71af8d8b0de788f620658dbece164acbe2114.json",
+      "artifactSha256": "30ebafc6d5fdae04b50e8772d369e7cd682bf01604146232457146ee17ffa81c",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:41Z",
+      "completedAt": "2026-07-21T07:36:42Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:42Z",
+      "url": "https://dontstarve.fandom.com/wiki/Fossils",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/25c24ca3bc0ca8c77b099b3d30b7d0762e2dc61a16cdfeede8fc844c9fc2ccd0.json",
+      "artifactSha256": "1aa4e1c250508cf18c5d10b61a81204823e8f1d44f615a183503a952183bdc53",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:59Z",
+      "completedAt": "2026-07-21T07:37:00Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:37:00Z",
+      "url": "https://dontstarve.fandom.com/wiki/Friendly_Fruit_Fly_Fruit",
+      "workerId": null
+    },
+    {
+      "artifactPath": null,
+      "artifactSha256": null,
       "attempts": 1,
       "categories": [
         "animals"
       ],
-      "claimedAt": "2026-07-21T03:11:59Z",
-      "completedAt": "2026-07-21T03:12:00Z",
+      "claimedAt": null,
+      "completedAt": null,
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": null,
-      "status": "Done",
-      "updatedAt": "2026-07-21T03:12:00Z",
+      "lastError": "imported from snapshot without raw artifact",
+      "status": "New",
+      "updatedAt": "2026-07-21T07:27:52Z",
       "url": "https://dontstarve.fandom.com/wiki/Frog",
       "workerId": null
     },
     {
-      "artifactPath": "fandom-shared-pages/2009260194bdc62ae1807850294a180fbda9d5a66d6a5a58b86dd338981328b4.json",
-      "artifactSha256": "7cf6830c446654057ae96a707952525535ca5855eb13fdd8edb1acb5036d871d",
+      "artifactPath": "shared-pages/d7f1bf0714a32e7f778ce2f7ca12180d079a800f4ab25ad3936085dc560b2c6d.json",
+      "artifactSha256": "e7e7b991c2790e4187a26a7578a46ebe3a9a9e9a4a5cc0a82b72ee60a32277b3",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:35:55Z",
+      "completedAt": "2026-07-21T07:35:56Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:35:56Z",
+      "url": "https://dontstarve.fandom.com/wiki/Frog_Legs",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/abb21ead1b27276aa8f9b24e1281278846f25d592a7fca8620385d274bd7cb5a.json",
+      "artifactSha256": "78b402b8fc3a5e4fdf9878a74d7ba47ba2a460c33d3ba5dd9447a81fb9686412",
+      "attempts": 1,
+      "categories": [
+        "clothing_filter"
+      ],
+      "claimedAt": "2026-07-21T07:30:51Z",
+      "completedAt": "2026-07-21T07:30:52Z",
+      "createdAt": "2026-07-21T07:30:42Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:30:52Z",
+      "url": "https://dontstarve.fandom.com/wiki/Funcap",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/c103227afdfdc0bcd41f68a77ea510da24de0dffb27e4be056ec247e20f7655d.json",
+      "artifactSha256": "e2427cccabd85a2fca5878bd3a42ae4b45fdf1c39b23b2811ac33d0fa6f9dacf",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:38Z",
+      "completedAt": "2026-07-21T07:36:39Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:39Z",
+      "url": "https://dontstarve.fandom.com/wiki/Fur_Tuft",
+      "workerId": null
+    },
+    {
+      "artifactPath": null,
+      "artifactSha256": null,
       "attempts": 1,
       "categories": [
         "animals"
       ],
-      "claimedAt": "2026-07-21T03:13:04Z",
-      "completedAt": "2026-07-21T03:13:05Z",
+      "claimedAt": null,
+      "completedAt": null,
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": null,
-      "status": "Done",
-      "updatedAt": "2026-07-21T03:13:05Z",
+      "lastError": "imported from snapshot without raw artifact",
+      "status": "New",
+      "updatedAt": "2026-07-21T07:27:52Z",
       "url": "https://dontstarve.fandom.com/wiki/Gem_Deer",
       "workerId": null
     },
     {
-      "artifactPath": "fandom-shared-pages/b53748861b369b6d063f08f010ca53f005a5990b0cabd50cdd01bfb4c093f468.json",
-      "artifactSha256": "ddfca87ce79146f0a01dd53a831b6a63426470528b49afe603dce6c7207bfae5",
+      "artifactPath": "shared-pages/f491f3b7e7a83b5c89706f3ccc018d8d34051f5b577832330bd041a54da25154.json",
+      "artifactSha256": "0d8f5955ec1cb074d0c733bc85a72f6c7ea2eaf16bce8c13e01845e48962dc04",
+      "attempts": 1,
+      "categories": [
+        "celestial_filter",
+        "celestial_tab"
+      ],
+      "claimedAt": "2026-07-21T07:31:41Z",
+      "completedAt": "2026-07-21T07:31:45Z",
+      "createdAt": "2026-07-21T07:31:39Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:31:45Z",
+      "url": "https://dontstarve.fandom.com/wiki/Glass_Cutter",
+      "workerId": null
+    },
+    {
+      "artifactPath": null,
+      "artifactSha256": null,
       "attempts": 1,
       "categories": [
         "animals"
       ],
-      "claimedAt": "2026-07-21T03:12:23Z",
-      "completedAt": "2026-07-21T03:12:55Z",
+      "claimedAt": null,
+      "completedAt": null,
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": null,
-      "status": "Done",
-      "updatedAt": "2026-07-21T03:12:55Z",
+      "lastError": "imported from snapshot without raw artifact",
+      "status": "New",
+      "updatedAt": "2026-07-21T07:27:52Z",
       "url": "https://dontstarve.fandom.com/wiki/Glommer",
       "workerId": null
     },
     {
-      "artifactPath": "fandom-shared-pages/3f29e36b882878c4141f0a58c06556b8e0f3858debcc7c5b59cdc82dad924d1a.json",
-      "artifactSha256": "6fe75d4937035d6029ba59d2f06491d2bc3b67c029ed2573bf7cf4239887f815",
+      "artifactPath": null,
+      "artifactSha256": null,
       "attempts": 1,
       "categories": [
         "animals"
       ],
-      "claimedAt": "2026-07-21T03:11:58Z",
-      "completedAt": "2026-07-21T03:11:59Z",
+      "claimedAt": null,
+      "completedAt": null,
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": null,
-      "status": "Done",
-      "updatedAt": "2026-07-21T03:11:59Z",
+      "lastError": "imported from snapshot without raw artifact",
+      "status": "New",
+      "updatedAt": "2026-07-21T07:27:52Z",
       "url": "https://dontstarve.fandom.com/wiki/Gobbler",
       "workerId": null
     },
     {
-      "artifactPath": "fandom-shared-pages/698e3372bfe6f8df1c0463e634cfcb45c3edc732e3eaf93beb4d657e2bc3da1f.json",
-      "artifactSha256": "6dc3ad885c3f93ecaebd625d219cbc3571a93ae88ce5a57daa6328c248627990",
+      "artifactPath": "shared-pages/82402b97aa9ac95c35186a7258f6d928db2e692bb1a78fea406993fe2acb7919.json",
+      "artifactSha256": "f59bfd7460bedd53fcfdfc934cffc075edd85fda843ac4c6884fbac206c15572",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:35:54Z",
+      "completedAt": "2026-07-21T07:35:55Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:35:55Z",
+      "url": "https://dontstarve.fandom.com/wiki/Gold_Nugget",
+      "workerId": null
+    },
+    {
+      "artifactPath": null,
+      "artifactSha256": null,
       "attempts": 1,
       "categories": [
         "animals"
       ],
-      "claimedAt": "2026-07-21T03:13:13Z",
-      "completedAt": "2026-07-21T03:13:16Z",
+      "claimedAt": null,
+      "completedAt": null,
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": null,
-      "status": "Done",
-      "updatedAt": "2026-07-21T03:13:16Z",
+      "lastError": "imported from snapshot without raw artifact",
+      "status": "New",
+      "updatedAt": "2026-07-21T07:27:52Z",
       "url": "https://dontstarve.fandom.com/wiki/Grass_Gator",
       "workerId": null
     },
     {
-      "artifactPath": "fandom-shared-pages/9b309753c8d8252c27a304612572cfc7bbebdffc99199a16b409af89085e3133.json",
-      "artifactSha256": "120f6b10acaa178aba3fa0a2dfd7022e1107d197ce2fca3d578cb313f2d3071d",
+      "artifactPath": "shared-pages/1ca8e05ac870e77c26bd33c3f131134afa9ad5b888e5b0d4ab19ea2c9069f59e.json",
+      "artifactSha256": "def3a59938749820f1c810d4c7147c72da7e45d37b5302ffee9f55488d1f995a",
+      "attempts": 1,
+      "categories": [
+        "armour_filter"
+      ],
+      "claimedAt": "2026-07-21T07:28:24Z",
+      "completedAt": "2026-07-21T07:28:29Z",
+      "createdAt": "2026-07-21T07:28:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:28:29Z",
+      "url": "https://dontstarve.fandom.com/wiki/Grass_Suit",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/108bb108b58144da32e1cdab534dc3d6a7782ea2cb2c5a10fc0b5a01e16a9138.json",
+      "artifactSha256": "7ab5e4cede7ab7df5a559d156af0cbe50f66fcab3cee95b87be9217eb5c79df6",
+      "attempts": 1,
+      "categories": [
+        "cave_creatures"
+      ],
+      "claimedAt": "2026-07-21T07:39:47Z",
+      "completedAt": "2026-07-21T07:39:48Z",
+      "createdAt": "2026-07-21T07:38:57Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:39:48Z",
+      "url": "https://dontstarve.fandom.com/wiki/Great_Depths_Worm",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/81ea6d0094cd231c15e7a18d0926b5ffc07cac0952e4170166ea09fc23f5cee9.json",
+      "artifactSha256": "46b076c017ba8aa731c23d24aa37e13366cb61c96d3d880d02a8c4d5ecef9c58",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:18Z",
+      "completedAt": "2026-07-21T07:36:19Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:19Z",
+      "url": "https://dontstarve.fandom.com/wiki/Green_Cap",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/b109c0e8da6a0b0bebe3c08f46ef7190766517656806c3bb5c386d35a7c6ac66.json",
+      "artifactSha256": "ebe56d0753236bc4d2a0604337b63ee3939967d93fb260d0fb82508074322fcb",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:22Z",
+      "completedAt": "2026-07-21T07:36:23Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:23Z",
+      "url": "https://dontstarve.fandom.com/wiki/Green_Gem",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/8ca4577dd9c851124449bc4addc5519c0e54365725ac870d536b1da48e626beb.json",
+      "artifactSha256": "598aba2bb98a370bf774cb8e66ae687b9f2bde4aea8f8d38016efa17654a80df",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:24Z",
+      "completedAt": "2026-07-21T07:36:26Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:26Z",
+      "url": "https://dontstarve.fandom.com/wiki/Guardian's_Horn",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/06c5f3b6f41e7fd4d391f7544f38b087fb6a47a28839628b14888d40fcc17178.json",
+      "artifactSha256": "78b932c4db6ea2ce3e1504f7f03e9096afa2adf93e19971ff2e61b34bd1078b1",
+      "attempts": 1,
+      "categories": [
+        "armour_filter"
+      ],
+      "claimedAt": "2026-07-21T07:28:58Z",
+      "completedAt": "2026-07-21T07:29:02Z",
+      "createdAt": "2026-07-21T07:28:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:29:02Z",
+      "url": "https://dontstarve.fandom.com/wiki/Hardwood_Hat",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/260a5505c8ed3bf1f7cd3b7624517edf9443a18c9d852cc17f33c081f386477c.json",
+      "artifactSha256": "2eea771731d8a6e2441aa94bfcce0630f40b240f060d534236d2399c5c8df276",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:35:56Z",
+      "completedAt": "2026-07-21T07:35:57Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:35:57Z",
+      "url": "https://dontstarve.fandom.com/wiki/Honey",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/471950a949aa37ccbf742b8a31e7a72624e700bd5f28a938487401ddeff89c0e.json",
+      "artifactSha256": "0963c6714811c57915b77c23ad5d4c55a785f8bdd01daaf800c1b922a703ad7b",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:35:57Z",
+      "completedAt": "2026-07-21T07:35:59Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:35:59Z",
+      "url": "https://dontstarve.fandom.com/wiki/Honeycomb",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/cf57ea34d822cb5af81f109b2610bce1cc448979f5ce0693a7b97c2b0c0c80cc.json",
+      "artifactSha256": "944a9c6ff67b5bd39e99d706055bf657c9e0104a534a0cb850509bf83633b8b5",
+      "attempts": 1,
+      "categories": [
+        "cave_creatures",
+        "containers"
+      ],
+      "claimedAt": "2026-07-21T07:34:36Z",
+      "completedAt": "2026-07-21T07:34:38Z",
+      "createdAt": "2026-07-21T07:34:16Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:34:38Z",
+      "url": "https://dontstarve.fandom.com/wiki/Hutch",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/09119fa20cc0afd5ff634714040bd69e641d64438271ae8ebe82f8074d5b5547.json",
+      "artifactSha256": "1b9cfb699a6862216e7ddea4e3e7ec0b8437ae17f4c8ea9491070db65a02eb28",
+      "attempts": 1,
+      "categories": [
+        "containers"
+      ],
+      "claimedAt": "2026-07-21T07:34:24Z",
+      "completedAt": "2026-07-21T07:34:25Z",
+      "createdAt": "2026-07-21T07:34:16Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:34:25Z",
+      "url": "https://dontstarve.fandom.com/wiki/Ice_Box",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/a7f3ffe2a8fe02dd62b9cfacbd539eee559f1b2d7861fa2b446cb64ee20b210d.json",
+      "artifactSha256": "752a5724f58990ee666dd10bd828517d22d2cc87db840bb0e2687efe0aeb9d85",
+      "attempts": 1,
+      "categories": [
+        "cave_creatures"
+      ],
+      "claimedAt": "2026-07-21T07:39:44Z",
+      "completedAt": "2026-07-21T07:39:47Z",
+      "createdAt": "2026-07-21T07:38:57Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:39:47Z",
+      "url": "https://dontstarve.fandom.com/wiki/Icker",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/51314ca65c03b8105feeace08c57844fde138d336d4443b149218e2f515330f7.json",
+      "artifactSha256": "a42a5c1f1f335ca1588e2716ba3d68fb970eca8e8fcad784b5de3e7c8f603bf6",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:37:00Z",
+      "completedAt": "2026-07-21T07:37:05Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:37:05Z",
+      "url": "https://dontstarve.fandom.com/wiki/Infused_Moon_Shard",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/a74f80b1c96d393b5185600b1d75b1cd5ed9dd9be898866ed8230a50843cff96.json",
+      "artifactSha256": "e9ca4f1954b27090a10c12d797d3b8e5d2726479fd9ee81be5a3fa24f2a6889e",
+      "attempts": 1,
+      "categories": [
+        "cave_creatures"
+      ],
+      "claimedAt": "2026-07-21T07:39:42Z",
+      "completedAt": "2026-07-21T07:39:44Z",
+      "createdAt": "2026-07-21T07:38:57Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:39:44Z",
+      "url": "https://dontstarve.fandom.com/wiki/Ink_Blight",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/088eaecdd15f3cd121548c3462f6143f20f242cc82146863c19d49120c127716.json",
+      "artifactSha256": "2a9368ff3b1ffedfc1100b2c95339cea29d3c9828acef0099a20c71d566b2008",
+      "attempts": 1,
+      "categories": [
+        "clothing_filter"
+      ],
+      "claimedAt": "2026-07-21T07:31:04Z",
+      "completedAt": "2026-07-21T07:31:06Z",
+      "createdAt": "2026-07-21T07:30:42Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:31:06Z",
+      "url": "https://dontstarve.fandom.com/wiki/Inspectacles",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/e73978991b25e79c6d2f9e339b39cc0217d78821641e3b7ca526e37ad95492f4.json",
+      "artifactSha256": "3533e34611a876925da496d44ef3836b14f781cc63e8996afccc0312b9f53d85",
+      "attempts": 1,
+      "categories": [
+        "backpacks",
+        "containers"
+      ],
+      "claimedAt": "2026-07-21T07:33:42Z",
+      "completedAt": "2026-07-21T07:33:43Z",
+      "createdAt": "2026-07-21T07:33:40Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:33:43Z",
+      "url": "https://dontstarve.fandom.com/wiki/Insulated_Pack",
+      "workerId": null
+    },
+    {
+      "artifactPath": null,
+      "artifactSha256": null,
       "attempts": 1,
       "categories": [
         "animals"
       ],
-      "claimedAt": "2026-07-21T03:12:02Z",
-      "completedAt": "2026-07-21T03:12:03Z",
+      "claimedAt": null,
+      "completedAt": null,
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": null,
-      "status": "Done",
-      "updatedAt": "2026-07-21T03:12:03Z",
+      "lastError": "imported from snapshot without raw artifact",
+      "status": "New",
+      "updatedAt": "2026-07-21T07:27:52Z",
       "url": "https://dontstarve.fandom.com/wiki/Koalefant",
       "workerId": null
     },
     {
-      "artifactPath": "fandom-shared-pages/1b3e4b78c0f6ee2a0889d6be5675eca3aee3ea1810d67921a0cec1aa606d2396.json",
-      "artifactSha256": "c8bb4aefd85c0db70e561419022603f1974a4f8effe471c3a77bf8bcd81e7f06",
+      "artifactPath": "shared-pages/a97cf89a89edee75598c26524bac4e117bd2c9aec6ef6f8977a4eda14ee4bd83.json",
+      "artifactSha256": "085f5813994547cee70479ba71b0f5cd85e60543af2d77abccfd619e67d4b4d4",
       "attempts": 1,
       "categories": [
-        "animals"
+        "backpacks",
+        "boss_dropped_items",
+        "containers"
       ],
-      "claimedAt": "2026-07-21T03:12:14Z",
-      "completedAt": "2026-07-21T03:12:17Z",
+      "claimedAt": "2026-07-21T07:33:47Z",
+      "completedAt": "2026-07-21T07:33:48Z",
+      "createdAt": "2026-07-21T07:33:40Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:33:48Z",
+      "url": "https://dontstarve.fandom.com/wiki/Krampus_Sack",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/53ea9ec29dfef58b05ace157b634811c19b45dd01230004d084f06762d77fe99.json",
+      "artifactSha256": "7f80e5ae87e5a2b7a8b353d95de2fc5e0fa341847371f255594a079519f9e80d",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:37Z",
+      "completedAt": "2026-07-21T07:36:38Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:38Z",
+      "url": "https://dontstarve.fandom.com/wiki/Lavae_Egg",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/330cd41592b441c6b47ca7a0561ed6d132a8ae27d21753a3e20ff2b4f95e405b.json",
+      "artifactSha256": "2dd11288568088a7cc5e51d1a6a09d13464432335dc96ea34f365f4570be3d09",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:14Z",
+      "completedAt": "2026-07-21T07:36:15Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:15Z",
+      "url": "https://dontstarve.fandom.com/wiki/Living_Log",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/953512205f9055fb5abf3d629f003222ffb8f65ae5723baf67b86e93bfffe445.json",
+      "artifactSha256": "3be1e7454ec16d437abe06640985dc2f95846ceb04bb5326a3e07ea8df657ff5",
+      "attempts": 1,
+      "categories": [
+        "armour_filter"
+      ],
+      "claimedAt": "2026-07-21T07:28:15Z",
+      "completedAt": "2026-07-21T07:28:17Z",
+      "createdAt": "2026-07-21T07:28:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:28:17Z",
+      "url": "https://dontstarve.fandom.com/wiki/Log_Suit",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/5411aadee5066bd79945035d4b38dd3731ba316550fbea48f0923ae90a65ca3f.json",
+      "artifactSha256": "24015fff06d6bc6a8726dd1298c9906104881ea53024f5ca67861e48782f2ace",
+      "attempts": 1,
+      "categories": [
+        "celestial_filter"
+      ],
+      "claimedAt": "2026-07-21T07:31:50Z",
+      "completedAt": "2026-07-21T07:31:54Z",
+      "createdAt": "2026-07-21T07:31:39Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:31:54Z",
+      "url": "https://dontstarve.fandom.com/wiki/Lunar_Funcap",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/7d766e90c689c4694f123728cfc81017f97b3cf3b954b2c8ebbd846fee1e952c.json",
+      "artifactSha256": "64b4296286f38a3003068a24ff0adcbc7ee85ae5427cfa5e9e5abed7e3257c3e",
+      "attempts": 1,
+      "categories": [
+        "cave_creatures"
+      ],
+      "claimedAt": "2026-07-21T07:39:48Z",
+      "completedAt": "2026-07-21T07:39:51Z",
+      "createdAt": "2026-07-21T07:38:57Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:39:51Z",
+      "url": "https://dontstarve.fandom.com/wiki/Lurking_Nightmare",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/8bd401527f5834be677d668743b88738a5f7eb8ff7c767b6b7fc7c5c176f6a9f.json",
+      "artifactSha256": "e8d7efa36b537a67d7fe1c780404eccd88394f011d41b430560234b7458c0330",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:56Z",
+      "completedAt": "2026-07-21T07:36:57Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:57Z",
+      "url": "https://dontstarve.fandom.com/wiki/Malbatross_Bill",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/6f859366f1cea1fd18714018103664646b7c61385734488f490573557836ff39.json",
+      "artifactSha256": "5265279c0b42afa78d9c1e60defa4a28ff75981c778c01a5ad8eb6a8e763e06e",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:54Z",
+      "completedAt": "2026-07-21T07:36:56Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:56Z",
+      "url": "https://dontstarve.fandom.com/wiki/Malbatross_Feather",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/d555c28111605875d49cfea10027b5dd9ea2df71d4d9048198712d640197b642.json",
+      "artifactSha256": "ae52f29c4d2688f3d88685ce9102f63adfe56e122ab5e0f6c6c0a170529fb1ad",
+      "attempts": 1,
+      "categories": [
+        "armour_filter"
+      ],
+      "claimedAt": "2026-07-21T07:28:20Z",
+      "completedAt": "2026-07-21T07:28:24Z",
+      "createdAt": "2026-07-21T07:28:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:28:24Z",
+      "url": "https://dontstarve.fandom.com/wiki/Marble_Suit",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/917b82d799c8696c3c924d1d706972c3a66be4edc61c5b0b2c645213c75e4d18.json",
+      "artifactSha256": "ae0a3128b0e9868121d740106b842ef70e7f82aea06279deb976dc144752c79f",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:35:16Z",
+      "completedAt": "2026-07-21T07:35:21Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:35:21Z",
+      "url": "https://dontstarve.fandom.com/wiki/Meat",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/0be393414fff0d349c12ea947dac46dcf31a302cca361074890f9ac0e8d330f7.json",
+      "artifactSha256": "98d541e805e635f0a0ca32eb0a83eae221c380bd8404e4ebea478cebbeb2876b",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:37:06Z",
+      "completedAt": "2026-07-21T07:37:07Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:37:07Z",
+      "url": "https://dontstarve.fandom.com/wiki/Milky_Whites",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/63f34abedff97da7d9f16de4dd8b4161e381178d2b4f0e2302a52af528494eef.json",
+      "artifactSha256": "5ffa64f5076bb6557cdbb43fced0fc8659bb881c33127f85d523005c9c12af92",
+      "attempts": 1,
+      "categories": [
+        "cave_creatures"
+      ],
+      "claimedAt": "2026-07-21T07:39:51Z",
+      "completedAt": "2026-07-21T07:39:53Z",
+      "createdAt": "2026-07-21T07:38:57Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:39:53Z",
+      "url": "https://dontstarve.fandom.com/wiki/Mimicreep",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/1b3e4b78c0f6ee2a0889d6be5675eca3aee3ea1810d67921a0cec1aa606d2396.json",
+      "artifactSha256": "119ae3fb8ef62c22ab1a231989d1b8224f122c50649ba26a3c17710038cd7887",
+      "attempts": 2,
+      "categories": [
+        "animals",
+        "cave_creatures"
+      ],
+      "claimedAt": "2026-07-21T07:39:18Z",
+      "completedAt": "2026-07-21T07:39:20Z",
       "createdAt": "2026-07-21T03:11:53Z",
       "lastError": null,
       "status": "Done",
-      "updatedAt": "2026-07-21T03:12:17Z",
+      "updatedAt": "2026-07-21T07:39:20Z",
       "url": "https://dontstarve.fandom.com/wiki/Moleworm",
       "workerId": null
     },
     {
-      "artifactPath": "fandom-shared-pages/0b8ac90ea77d8ce6c57d911e15426a3dfbafe50ec7a4856fff0c117fed656467.json",
-      "artifactSha256": "9465b3c2df7bba147be7151002d611e8984922e25ecb6009d9c046b177c0a2da",
+      "artifactPath": "shared-pages/64c116751e85b35ca98fed6601ba22283f50cd7a73b73116604b36a87e459219.json",
+      "artifactSha256": "340b7b4d4fb6ef29369245172a6ca6a750af45fc4ebdc69bc4ac8ce1c39e9de3",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:58Z",
+      "completedAt": "2026-07-21T07:36:59Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:59Z",
+      "url": "https://dontstarve.fandom.com/wiki/Monster_Meat",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/6df241f9fd199296f260d86bbe8127049ce991548d116007de51ace407f5d741.json",
+      "artifactSha256": "7cefe998ded050ca408615c3c7be70f808bbdaee42ef4b8e6410ae7cab40de69",
+      "attempts": 1,
+      "categories": [
+        "celestial_tab"
+      ],
+      "claimedAt": "2026-07-21T07:33:13Z",
+      "completedAt": "2026-07-21T07:33:15Z",
+      "createdAt": "2026-07-21T07:33:05Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:33:15Z",
+      "url": "https://dontstarve.fandom.com/wiki/Moon_Crater_Turf",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/c911dff33cf01eb67c4ed6b40dc732850bc2c15b5c655be362a5675507270096.json",
+      "artifactSha256": "ffbe21a20b027d072e72f3fba976850e1d5f656fa23545cdcce0cf636032dfa2",
+      "attempts": 1,
+      "categories": [
+        "celestial_filter"
+      ],
+      "claimedAt": "2026-07-21T07:31:54Z",
+      "completedAt": "2026-07-21T07:31:57Z",
+      "createdAt": "2026-07-21T07:31:39Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:31:57Z",
+      "url": "https://dontstarve.fandom.com/wiki/Moon_Glass_Saw_Blade",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/fdb32fe4cbf4b9d01c6f4b2347c48b083c425ce6b19b1bd2f4d6d652378e9017.json",
+      "artifactSha256": "25d4513f5604e7c60964dd06e76f78497661f7e9d00971e8bd003085f9ac50af",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:32Z",
+      "completedAt": "2026-07-21T07:36:37Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:37Z",
+      "url": "https://dontstarve.fandom.com/wiki/Moon_Rock",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/2623bd132210f2acc21f3fb24cd19ef1423c8586c2e10b4f9a69e1b2bd503008.json",
+      "artifactSha256": "d17504b26181d1212196a4e27e3d80b39ad23f7279fe1dcbafdb46221ef56ec9",
+      "attempts": 1,
+      "categories": [
+        "celestial_tab"
+      ],
+      "claimedAt": "2026-07-21T07:33:12Z",
+      "completedAt": "2026-07-21T07:33:13Z",
+      "createdAt": "2026-07-21T07:33:05Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:33:13Z",
+      "url": "https://dontstarve.fandom.com/wiki/Moon_Rock_Idol",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/eb9ebade7f305631ca5edc5c847b18d6500e1763571bd1a71e4d7489842a380e.json",
+      "artifactSha256": "af64cc436c7c40b88be91e82a10623f61317dba1538feea5864e1f4fd3633d90",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:53Z",
+      "completedAt": "2026-07-21T07:36:54Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:54Z",
+      "url": "https://dontstarve.fandom.com/wiki/Moon_Shard",
+      "workerId": null
+    },
+    {
+      "artifactPath": null,
+      "artifactSha256": null,
       "attempts": 1,
       "categories": [
         "animals"
       ],
-      "claimedAt": "2026-07-21T03:12:55Z",
-      "completedAt": "2026-07-21T03:12:56Z",
+      "claimedAt": null,
+      "completedAt": null,
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": null,
-      "status": "Done",
-      "updatedAt": "2026-07-21T03:12:56Z",
+      "lastError": "imported from snapshot without raw artifact",
+      "status": "New",
+      "updatedAt": "2026-07-21T07:27:52Z",
       "url": "https://dontstarve.fandom.com/wiki/Mosling",
       "workerId": null
     },
     {
-      "artifactPath": "fandom-shared-pages/1a6db12c004c21a9df29489da753c2f0a60086b07d88f8a6e071adc0893c4d75.json",
-      "artifactSha256": "de7b7fff4f9edd6c995cb7bb901c0d365b773ca9bf41c12bb597ba4cf6e0c1e2",
+      "artifactPath": null,
+      "artifactSha256": null,
       "attempts": 1,
       "categories": [
         "animals"
       ],
-      "claimedAt": "2026-07-21T03:12:03Z",
-      "completedAt": "2026-07-21T03:12:05Z",
+      "claimedAt": null,
+      "completedAt": null,
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": null,
-      "status": "Done",
-      "updatedAt": "2026-07-21T03:12:05Z",
+      "lastError": "imported from snapshot without raw artifact",
+      "status": "New",
+      "updatedAt": "2026-07-21T07:27:52Z",
       "url": "https://dontstarve.fandom.com/wiki/Mosquito",
       "workerId": null
     },
     {
-      "artifactPath": "fandom-shared-pages/f9cadbb46d4cca15a5fb4d0eb4b7d6e55b997a1be8d5a074ce774b821a805edb.json",
-      "artifactSha256": "d8ec02b604287e9a09fff86c7f97e8d1f845dfdff4a82e256127021539b718d4",
+      "artifactPath": "shared-pages/557178679ceffcdcaa060f4ff9aa98010575065d56fb6313063bf93e0d7370d4.json",
+      "artifactSha256": "8ba096e97fef4612343e222b34f8ad4d10b373f1544d8a9d336a7a5ce85807ae",
+      "attempts": 1,
+      "categories": [
+        "cave_creatures"
+      ],
+      "claimedAt": "2026-07-21T07:39:28Z",
+      "completedAt": "2026-07-21T07:39:31Z",
+      "createdAt": "2026-07-21T07:38:57Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:39:31Z",
+      "url": "https://dontstarve.fandom.com/wiki/Mush_Gnome",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/30ab5d0c3cb36ec537f2d50bb7623a2f98e9a9b97782c739d4d740af73a969da.json",
+      "artifactSha256": "77f4da3ec45ea588d9b58286a23d1289cae1a3f411c27696517c6bf839be4306",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:15Z",
+      "completedAt": "2026-07-21T07:36:16Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:16Z",
+      "url": "https://dontstarve.fandom.com/wiki/Mushrooms",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/cdb3315119b03586fe79525e1927ac0e902f638fc5daf774de24342fd3b86c59.json",
+      "artifactSha256": "3b88f67f19f8db780439a63b01422ee8b75ef0ead375d229bd984d95d988f591",
+      "attempts": 1,
+      "categories": [
+        "celestial_tab"
+      ],
+      "claimedAt": "2026-07-21T07:33:15Z",
+      "completedAt": "2026-07-21T07:33:16Z",
+      "createdAt": "2026-07-21T07:33:05Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:33:16Z",
+      "url": "https://dontstarve.fandom.com/wiki/Mutated_Fungal_Turf",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/8cf74ed24c34c78b9adefabd58461e32ca147d4e2c6b06b63d81098cd3a7ed26.json",
+      "artifactSha256": "f2181296c0728d672d9d597a7c4aad6fa74c6fd3f1be3a079558359401196b16",
+      "attempts": 1,
+      "categories": [
+        "cave_creatures"
+      ],
+      "claimedAt": "2026-07-21T07:39:26Z",
+      "completedAt": "2026-07-21T07:39:28Z",
+      "createdAt": "2026-07-21T07:38:57Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:39:28Z",
+      "url": "https://dontstarve.fandom.com/wiki/Naked_Mole_Bat",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/0951ef14a40e354c6522e7d2a172ff454a556d345bb54b87d361e0a261dec96e.json",
+      "artifactSha256": "e6c9826669d8364dc133c997c34bcd4c699334a1f8ba3973f0086a84456fadf4",
+      "attempts": 1,
+      "categories": [
+        "armour_filter",
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:28:19Z",
+      "completedAt": "2026-07-21T07:28:20Z",
+      "createdAt": "2026-07-21T07:28:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:28:20Z",
+      "url": "https://dontstarve.fandom.com/wiki/Night_Armor",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/b1c05fbf82e1cb1730115f9430f343b38c24108a0be2ae1f21c507520297a8e0.json",
+      "artifactSha256": "470d02905193cefd39e41150a6bbfd02ab02c0a0c04f45ff22b68b053e681a99",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:07Z",
+      "completedAt": "2026-07-21T07:36:09Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:09Z",
+      "url": "https://dontstarve.fandom.com/wiki/Nightmare_Fuel",
+      "workerId": null
+    },
+    {
+      "artifactPath": null,
+      "artifactSha256": null,
       "attempts": 1,
       "categories": [
         "animals"
       ],
-      "claimedAt": "2026-07-21T03:13:01Z",
-      "completedAt": "2026-07-21T03:13:04Z",
+      "claimedAt": null,
+      "completedAt": null,
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": null,
-      "status": "Done",
-      "updatedAt": "2026-07-21T03:13:04Z",
+      "lastError": "imported from snapshot without raw artifact",
+      "status": "New",
+      "updatedAt": "2026-07-21T07:27:52Z",
       "url": "https://dontstarve.fandom.com/wiki/No-Eyed_Deer",
       "workerId": null
     },
     {
-      "artifactPath": "fandom-shared-pages/d8d40d567678f6dacc7952fbeae920881e3e1d17cfe36b2b6f467f01bef355ba.json",
-      "artifactSha256": "79e4bdbc7ad5f988f75946eaba8db6a175131dc0c0e848ffaa9bbc5ac2e02e30",
+      "artifactPath": "shared-pages/7d64163b2054e2d4c99b0970c96b5e14a9d0a3714bf7b604290d914d3e7053d4.json",
+      "artifactSha256": "a67ffc3279ef459c17abf197da2c9e8e54de213e29c0a0bde470fb5777b7aca3",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:20Z",
+      "completedAt": "2026-07-21T07:36:22Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:22Z",
+      "url": "https://dontstarve.fandom.com/wiki/Orange_Gem",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/7c8144861f20e7b1b46784e2e4daf47f9845a0daee8c2d927fa2eba3e19aef88.json",
+      "artifactSha256": "6ee2dfb30efde76833c64588a538102813cb6cfbfb378024b038eabe240f4663",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items",
+        "containers"
+      ],
+      "claimedAt": "2026-07-21T07:34:27Z",
+      "completedAt": "2026-07-21T07:34:28Z",
+      "createdAt": "2026-07-21T07:34:16Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:34:28Z",
+      "url": "https://dontstarve.fandom.com/wiki/Ornate_Chest",
+      "workerId": null
+    },
+    {
+      "artifactPath": null,
+      "artifactSha256": null,
       "attempts": 1,
       "categories": [
         "animals"
       ],
-      "claimedAt": "2026-07-21T03:13:00Z",
-      "completedAt": "2026-07-21T03:13:01Z",
+      "claimedAt": null,
+      "completedAt": null,
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": null,
-      "status": "Done",
-      "updatedAt": "2026-07-21T03:13:01Z",
+      "lastError": "imported from snapshot without raw artifact",
+      "status": "New",
+      "updatedAt": "2026-07-21T07:27:52Z",
       "url": "https://dontstarve.fandom.com/wiki/Parrot_Pirate",
       "workerId": null
     },
     {
-      "artifactPath": "fandom-shared-pages/663009aeba558919d8b7479be854d951d5ee2cbce57db7ff1c944fc2fc3a0a0d.json",
-      "artifactSha256": "1d46bcc407e918f741ea4c707381ec00f085c91230d913f70d47d13f0ae0888f",
+      "artifactPath": "shared-pages/70f32221a4ebb4674b5eecd1045dd3142770fd26e8c0d9a3e79a96fda7849b0f.json",
+      "artifactSha256": "9784821cfe376130ec3510e2be1fb224a15dbe7dc09868fdef548e27fdf107ce",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:57Z",
+      "completedAt": "2026-07-21T07:36:58Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:58Z",
+      "url": "https://dontstarve.fandom.com/wiki/Pearl's_Pearl",
+      "workerId": null
+    },
+    {
+      "artifactPath": null,
+      "artifactSha256": null,
       "attempts": 1,
       "categories": [
         "animals"
       ],
-      "claimedAt": "2026-07-21T03:12:08Z",
-      "completedAt": "2026-07-21T03:12:10Z",
+      "claimedAt": null,
+      "completedAt": null,
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": null,
-      "status": "Done",
-      "updatedAt": "2026-07-21T03:12:10Z",
+      "lastError": "imported from snapshot without raw artifact",
+      "status": "New",
+      "updatedAt": "2026-07-21T07:27:52Z",
       "url": "https://dontstarve.fandom.com/wiki/Pengull",
       "workerId": null
     },
     {
-      "artifactPath": "fandom-shared-pages/14a6352a88d7c379f874a17042ba8bee3b6d0a00c5e033ec0c7c94abb8172020.json",
-      "artifactSha256": "1d680a365974ba5b1e4cd12c3b486f33018d83a0c7f88334258f0582074c8b7f",
+      "artifactPath": null,
+      "artifactSha256": null,
       "attempts": 1,
       "categories": [
         "animals"
       ],
-      "claimedAt": "2026-07-21T03:12:56Z",
-      "completedAt": "2026-07-21T03:12:58Z",
+      "claimedAt": null,
+      "completedAt": null,
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": null,
-      "status": "Done",
-      "updatedAt": "2026-07-21T03:12:58Z",
+      "lastError": "imported from snapshot without raw artifact",
+      "status": "New",
+      "updatedAt": "2026-07-21T07:27:52Z",
       "url": "https://dontstarve.fandom.com/wiki/Pig",
       "workerId": null
     },
     {
-      "artifactPath": "fandom-shared-pages/00afcee8e740fc10ee1b1d12aca566418c11134ed685e3ac6e3668d33f05e4bd.json",
-      "artifactSha256": "4e21f732cee7fd10428920a71ded34c3ca3f13def41d6742d99d5c9ba2e05f28",
+      "artifactPath": "shared-pages/3a953ce68e8e5e098499c171200f424d778d7630264d75f9c3a96ef0f2e4a3b4.json",
+      "artifactSha256": "d0fe7c35d40a1bbba147ff2e5af29ac264e961ea25ab192e4ec41ec0a7f5d16f",
+      "attempts": 1,
+      "categories": [
+        "backpacks",
+        "clothing_filter",
+        "containers"
+      ],
+      "claimedAt": "2026-07-21T07:30:45Z",
+      "completedAt": "2026-07-21T07:30:47Z",
+      "createdAt": "2026-07-21T07:30:42Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:30:47Z",
+      "url": "https://dontstarve.fandom.com/wiki/Piggyback",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/6605940dff214ad3cdde6f79f1817533525f1d60b56d030fbc695855986583f4.json",
+      "artifactSha256": "0a86aae41fcbba5c71e2001f946b9f381b6a23300096019c0e830b25a3a810dc",
+      "attempts": 1,
+      "categories": [
+        "containers"
+      ],
+      "claimedAt": "2026-07-21T07:34:39Z",
+      "completedAt": "2026-07-21T07:34:40Z",
+      "createdAt": "2026-07-21T07:34:16Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:34:40Z",
+      "url": "https://dontstarve.fandom.com/wiki/Polar_Bearger_Bin",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/f0c641c3b6c1520d61a79be174a8b29f0306092615059a0e2e4a5a989474ca66.json",
+      "artifactSha256": "bcb376d9f0129eca93be95d551bbdbebd861704a42729ee0be09935d8226eaa4",
+      "attempts": 1,
+      "categories": [
+        "containers"
+      ],
+      "claimedAt": "2026-07-21T07:34:32Z",
+      "completedAt": "2026-07-21T07:34:36Z",
+      "createdAt": "2026-07-21T07:34:16Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:34:36Z",
+      "url": "https://dontstarve.fandom.com/wiki/Portable_Crock_Pot",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/c4e678c96decf5ad44809b4baf1f31770b004a246505e1a756d6c1d40f45ecd6.json",
+      "artifactSha256": "775a5c28036c1b6b66fe623413bc15c49ccb74b35dbace3223143e6b384ec8ca",
+      "attempts": 1,
+      "categories": [
+        "celestial_filter"
+      ],
+      "claimedAt": "2026-07-21T07:31:39Z",
+      "completedAt": "2026-07-21T07:31:41Z",
+      "createdAt": "2026-07-21T07:31:39Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:31:41Z",
+      "url": "https://dontstarve.fandom.com/wiki/Portal_Paraphernalia",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/21a2d1f51bc0dddb3dd6760a957a3ed9d9855217867d9f6e53c00a39ceaccb32.json",
+      "artifactSha256": "53344f74c215311aa2481f823cd4508e6c151108f7bdb7ae3f1919032135cae4",
+      "attempts": 1,
+      "categories": [
+        "clothing_filter"
+      ],
+      "claimedAt": "2026-07-21T07:31:06Z",
+      "completedAt": "2026-07-21T07:31:10Z",
+      "createdAt": "2026-07-21T07:30:42Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:31:10Z",
+      "url": "https://dontstarve.fandom.com/wiki/Portasol",
+      "workerId": null
+    },
+    {
+      "artifactPath": null,
+      "artifactSha256": null,
       "attempts": 1,
       "categories": [
         "animals"
       ],
-      "claimedAt": "2026-07-21T03:13:16Z",
-      "completedAt": "2026-07-21T03:13:19Z",
+      "claimedAt": null,
+      "completedAt": null,
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": null,
-      "status": "Done",
-      "updatedAt": "2026-07-21T03:13:19Z",
+      "lastError": "imported from snapshot without raw artifact",
+      "status": "New",
+      "updatedAt": "2026-07-21T07:27:52Z",
       "url": "https://dontstarve.fandom.com/wiki/Powder_Monkey",
       "workerId": null
     },
     {
-      "artifactPath": "fandom-shared-pages/9b515e190e2db172e88a30836544125ae00aaf2d956420a4303b12a3365338ad.json",
-      "artifactSha256": "92aadad2d7fe376b5152f0384b8e38d07f620d863b1ebed26cd1e96e1fc30fb9",
+      "artifactPath": "shared-pages/58ed49508df0ddd3b72f0f6935c469676cc9b3b7f628fa5b92180f0746f45290.json",
+      "artifactSha256": "d5665808126db4e74f5b06f6aa536f8298f172076dc6cc6f1c0ec4e47135c4cd",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:37:10Z",
+      "completedAt": "2026-07-21T07:37:11Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:37:11Z",
+      "url": "https://dontstarve.fandom.com/wiki/Pure_Horror",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/6a3e2104fec9af883334bcaf1502048b4ae0847560d8c1d33b98790985ce0aab.json",
+      "artifactSha256": "b306b4dc66bc9adb3c1c3ba7cb2245a1fe699fbece0df4bbc9f94b1b356ae4e6",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:13Z",
+      "completedAt": "2026-07-21T07:36:14Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:14Z",
+      "url": "https://dontstarve.fandom.com/wiki/Purple_Gem",
+      "workerId": null
+    },
+    {
+      "artifactPath": null,
+      "artifactSha256": null,
       "attempts": 1,
       "categories": [
         "animals"
       ],
-      "claimedAt": "2026-07-21T03:11:53Z",
-      "completedAt": "2026-07-21T03:11:55Z",
+      "claimedAt": null,
+      "completedAt": null,
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": null,
-      "status": "Done",
-      "updatedAt": "2026-07-21T03:11:55Z",
+      "lastError": "imported from snapshot without raw artifact",
+      "status": "New",
+      "updatedAt": "2026-07-21T07:27:52Z",
       "url": "https://dontstarve.fandom.com/wiki/Rabbit",
       "workerId": null
     },
     {
-      "artifactPath": "fandom-shared-pages/3ea3a66588c087920f521fe6bb3dc249130934d7c9d9c4e393e296df8f53c2f9.json",
-      "artifactSha256": "2bb135347d01e549887a9eb6e525d854d8449021ccc892304f5d715b137fa729",
+      "artifactPath": "shared-pages/bb6ca8de8cd42e055ccd9fc3f7fdfd4b13540730451a89fcbad3996eb469c3d3.json",
+      "artifactSha256": "4099bff3fe46ccbfaaeba7ddbeaa56aab3bc53ecd8cac01ba72733fc28eeb61d",
       "attempts": 1,
       "categories": [
-        "animals"
+        "boss_dropped_items"
       ],
-      "claimedAt": "2026-07-21T03:12:11Z",
-      "completedAt": "2026-07-21T03:12:13Z",
+      "claimedAt": "2026-07-21T07:36:39Z",
+      "completedAt": "2026-07-21T07:36:40Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:40Z",
+      "url": "https://dontstarve.fandom.com/wiki/Raw_Fish",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/a46dcc94c8639bbb2b4300f87753f21ac3258da9c972d11d9d6c0ebdec0f34ea.json",
+      "artifactSha256": "c375fb47ec484f37628bde867e70f210cc2fb612134a1127594e66b6b82b7913",
+      "attempts": 1,
+      "categories": [
+        "cave_creatures"
+      ],
+      "claimedAt": "2026-07-21T07:39:24Z",
+      "completedAt": "2026-07-21T07:39:26Z",
+      "createdAt": "2026-07-21T07:38:57Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:39:26Z",
+      "url": "https://dontstarve.fandom.com/wiki/Reanimated_Skeleton",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/4e63a6c5274cc93eb8bb94e3c802b3836647f4ce6192a28e7b9aaca0d3a58165.json",
+      "artifactSha256": "c33415613bdefc39b8b9059c56232c8f09fa5d9e7bde36b2562204e782edf51d",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:17Z",
+      "completedAt": "2026-07-21T07:36:18Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:18Z",
+      "url": "https://dontstarve.fandom.com/wiki/Red_Cap",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/b082b6d763f7d186feb61e2675eda3f8dea7468b0d7aa287c76a261bfbc43ae9.json",
+      "artifactSha256": "8d95d6dff590d4b7f71679c13d7c440baeaf416b6e56e49336e1fbd5bd3ae709",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:35:22Z",
+      "completedAt": "2026-07-21T07:35:54Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:35:54Z",
+      "url": "https://dontstarve.fandom.com/wiki/Red_Gem",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/faf114a5c1ba6da75a721236cfccd4fd19efd8a48c3acb19288d70534efc6186.json",
+      "artifactSha256": "3def7c534329001273e002d4095abdc9ae7366803ed716b85e46777147ad445b",
+      "attempts": 1,
+      "categories": [
+        "cave_creatures"
+      ],
+      "claimedAt": "2026-07-21T07:39:40Z",
+      "completedAt": "2026-07-21T07:39:42Z",
+      "createdAt": "2026-07-21T07:38:57Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:39:42Z",
+      "url": "https://dontstarve.fandom.com/wiki/Resting_Horror",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/3ea3a66588c087920f521fe6bb3dc249130934d7c9d9c4e393e296df8f53c2f9.json",
+      "artifactSha256": "f2f792105e5312d7e03fc3fa70ca6d79d3630cfca0d3e8b082a72c14c4788a90",
+      "attempts": 2,
+      "categories": [
+        "animals",
+        "cave_creatures"
+      ],
+      "claimedAt": "2026-07-21T07:39:13Z",
+      "completedAt": "2026-07-21T07:39:14Z",
       "createdAt": "2026-07-21T03:11:53Z",
       "lastError": null,
       "status": "Done",
-      "updatedAt": "2026-07-21T03:12:13Z",
+      "updatedAt": "2026-07-21T07:39:14Z",
       "url": "https://dontstarve.fandom.com/wiki/Rock_Lobster",
       "workerId": null
     },
     {
-      "artifactPath": "fandom-shared-pages/7be6248be84a9772a4c24d15300279dff66c261d7125955fb7e9b8c14373630a.json",
-      "artifactSha256": "0d360dc052e8057a39c8fb65851e4b717ea51d00447eebdfe07401f83ee14667",
+      "artifactPath": "shared-pages/3fe44cd66f81d2987407699e8a997a50e37ef24e20388c3bd173cf677a94bb13.json",
+      "artifactSha256": "e94a261c09c99c30f442185c87fb9b9f8bc5d70212c60b90eeaca4778eae1126",
       "attempts": 1,
       "categories": [
-        "animals"
+        "clothing_filter"
       ],
-      "claimedAt": "2026-07-21T03:12:05Z",
-      "completedAt": "2026-07-21T03:12:08Z",
+      "claimedAt": "2026-07-21T07:31:01Z",
+      "completedAt": "2026-07-21T07:31:04Z",
+      "createdAt": "2026-07-21T07:30:42Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:31:04Z",
+      "url": "https://dontstarve.fandom.com/wiki/Rose-Colored_Glasses",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/61a82eef174e6064d71817bc8dc4c3d69947999ebed7e074b951b2dd07ae56a4.json",
+      "artifactSha256": "81931332a06074bbd7f1696df3c624cac68787eb9a207107493dc8d2e601ec2d",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:43Z",
+      "completedAt": "2026-07-21T07:36:45Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:45Z",
+      "url": "https://dontstarve.fandom.com/wiki/Royal_Jelly",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/323c48a4ba339ab7a770a2af20dd6acd5e968d92e846ff5a16d11e86c5b57399.json",
+      "artifactSha256": "d3146089d885fade58b81ad06fa44cf3c3fb1ebe23e0fffea2ed800ad58ac4e7",
+      "attempts": 1,
+      "categories": [
+        "containers"
+      ],
+      "claimedAt": "2026-07-21T07:34:28Z",
+      "completedAt": "2026-07-21T07:34:32Z",
+      "createdAt": "2026-07-21T07:34:16Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:34:32Z",
+      "url": "https://dontstarve.fandom.com/wiki/Scaled_Chest",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/a9927b334a52f7cc66e6a0424c0c40bdca10366fdba61e61cfcdbfda18d71c82.json",
+      "artifactSha256": "9278008a9c4627abb6abc416f778408eb8123a5f68746976c73a008feb740233",
+      "attempts": 1,
+      "categories": [
+        "armour_filter"
+      ],
+      "claimedAt": "2026-07-21T07:28:31Z",
+      "completedAt": "2026-07-21T07:28:35Z",
+      "createdAt": "2026-07-21T07:28:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:28:35Z",
+      "url": "https://dontstarve.fandom.com/wiki/Scalemail",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/34f29d8cb050b79f152032893a828df9649a6ff8d765120b93ea21ba54a215fc.json",
+      "artifactSha256": "ba2b61cb8c5824fcca5e15251e0422b2e48fd4d2e7957dd0a7adc1a3863eee0e",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:27Z",
+      "completedAt": "2026-07-21T07:36:28Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:28Z",
+      "url": "https://dontstarve.fandom.com/wiki/Scales",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/2dfad84963c742b83640817305bc7c5402b98304b2ec113706cbcd1b36ba1414.json",
+      "artifactSha256": "05ab2122568532ed0966b08b4f0c03bc2718e26246514f094267758596066d0d",
+      "attempts": 1,
+      "categories": [
+        "backpacks"
+      ],
+      "claimedAt": "2026-07-21T07:33:48Z",
+      "completedAt": "2026-07-21T07:33:55Z",
+      "createdAt": "2026-07-21T07:33:40Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:33:55Z",
+      "url": "https://dontstarve.fandom.com/wiki/Seed_Pack-It",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/a030b1608514ad46b6b671d6bcd3966bbba7c6aeec6bd82474e24af46df8c68a.json",
+      "artifactSha256": "ff6482b6b56bd0853d551f2e1ca5bfd7fdb509f89e86762587bb1b66ef625e0d",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:42Z",
+      "completedAt": "2026-07-21T07:36:43Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:43Z",
+      "url": "https://dontstarve.fandom.com/wiki/Shadow_Atrium",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/5f33086ad0bc7b9d7c03ee3d30689b235d3fadb099a8613fb3decbed6e0cc2a4.json",
+      "artifactSha256": "0416cb94960b56d63da4ea46f2be4f4ee3682941925b3a84c5ad7d529fc3aced",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:49Z",
+      "completedAt": "2026-07-21T07:36:50Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:50Z",
+      "url": "https://dontstarve.fandom.com/wiki/Shadow_Thurible",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/0bc41c3c32024838784e1e9d039a735df232268d101e9ac8ac54473e4d9052fc.json",
+      "artifactSha256": "9758708e32f0775823044101d6f81204a92fd2bc783a6a62d1985b02d0f6eeab",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:37:08Z",
+      "completedAt": "2026-07-21T07:37:09Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:37:09Z",
+      "url": "https://dontstarve.fandom.com/wiki/Shield_of_Terror",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/835eefae079acf6e86dcc9b89ba3dab7ded12834b495305c35a7cb2b151bbfff.json",
+      "artifactSha256": "661ba6f5732a8f24b42ccced85473a0e9a9b08bc28c6a4c7f45b6e04547b866b",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:40Z",
+      "completedAt": "2026-07-21T07:36:41Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:41Z",
+      "url": "https://dontstarve.fandom.com/wiki/Shroom_Skin",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/388a8fe60dc585be44728964abd09a549ef91c7bf7e0d031aff43f8d8d27f044.json",
+      "artifactSha256": "6cb948316a52d861360513ac7b8c7a87138b53019f5a35359f6b8b32ed7f6177",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:35:14Z",
+      "completedAt": "2026-07-21T07:35:15Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:35:15Z",
+      "url": "https://dontstarve.fandom.com/wiki/Silk",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/d07024a1cda956cd3e144982f2dbb64c9765397e42180fd21047358e565307d4.json",
+      "artifactSha256": "02fbe512868d64362ce15b1c6bcef6c2ee0a3154c0ed72b2738c8a4b3ec4d565",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items",
+        "celestial_tab"
+      ],
+      "claimedAt": "2026-07-21T07:33:10Z",
+      "completedAt": "2026-07-21T07:33:12Z",
+      "createdAt": "2026-07-21T07:33:05Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:33:12Z",
+      "url": "https://dontstarve.fandom.com/wiki/Sketch",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/7be6248be84a9772a4c24d15300279dff66c261d7125955fb7e9b8c14373630a.json",
+      "artifactSha256": "4ec71da3ef15904821566bf811459c6cb8c5439fc8e066ed2bf42596b70b36b2",
+      "attempts": 2,
+      "categories": [
+        "animals",
+        "cave_creatures"
+      ],
+      "claimedAt": "2026-07-21T07:39:04Z",
+      "completedAt": "2026-07-21T07:39:06Z",
       "createdAt": "2026-07-21T03:11:53Z",
       "lastError": null,
       "status": "Done",
-      "updatedAt": "2026-07-21T03:12:08Z",
+      "updatedAt": "2026-07-21T07:39:06Z",
       "url": "https://dontstarve.fandom.com/wiki/Slurtle",
       "workerId": null
     },
     {
-      "artifactPath": "fandom-shared-pages/93205bd01269d67f81ff71380bde205c778af2cba92bef25aaeae332f2a43518.json",
-      "artifactSha256": "9e657451c45120ff690f558a6c68e681b10ca3a0c892cd71004af6903c908ee8",
+      "artifactPath": "shared-pages/f44cc626e5a97da86eb68ee05c74bde908f3a6330a06a0a0d9b10c6f6c8e05cc.json",
+      "artifactSha256": "5208de0411ef5d6a9e32c704dc237122fa35a8c52be590057a19192a16b4a4f3",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:37:11Z",
+      "completedAt": "2026-07-21T07:37:13Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:37:13Z",
+      "url": "https://dontstarve.fandom.com/wiki/Spark_Ark",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/98c3d2fd51cd59e127caa18bd9517dcece89deec94d30b0b66fd57d389db00ac.json",
+      "artifactSha256": "260a3d50e11a64006f214e84f7ea49426522d0c668c6a941bcc444e8198f9f03",
+      "attempts": 1,
+      "categories": [
+        "cave_creatures"
+      ],
+      "claimedAt": "2026-07-21T07:39:20Z",
+      "completedAt": "2026-07-21T07:39:21Z",
+      "createdAt": "2026-07-21T07:38:57Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:39:21Z",
+      "url": "https://dontstarve.fandom.com/wiki/Spider",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/178e9519ba1c56d8e12bdbd1f37b3465cd751df89fe01097945eaff3e0502b28.json",
+      "artifactSha256": "f452bed52da25bbaa89bfad88334854663e7dca36f7ad5ce421dc1b2367e8f4f",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:35:59Z",
+      "completedAt": "2026-07-21T07:36:01Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:01Z",
+      "url": "https://dontstarve.fandom.com/wiki/Spider_Eggs",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/5ee35862b09b78f0ec0304ffeb50afae6ae00674088db13e038f4f49fa6fd47a.json",
+      "artifactSha256": "e03cecfb769472335e95d8590729aa137f627f44181b75863fca61410d2b9c03",
+      "attempts": 1,
+      "categories": [
+        "cave_creatures"
+      ],
+      "claimedAt": "2026-07-21T07:39:03Z",
+      "completedAt": "2026-07-21T07:39:04Z",
+      "createdAt": "2026-07-21T07:38:57Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:39:04Z",
+      "url": "https://dontstarve.fandom.com/wiki/Spider_Queen",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/502380a2e2d9854af8394a246f937fec09f66e3f75213513faa866cbe8bc41f4.json",
+      "artifactSha256": "0a40d6102baee808c3a37c8154efc5eea897cda38e50b77bdd401c29136fdd3c",
+      "attempts": 1,
+      "categories": [
+        "cave_creatures"
+      ],
+      "claimedAt": "2026-07-21T07:39:21Z",
+      "completedAt": "2026-07-21T07:39:22Z",
+      "createdAt": "2026-07-21T07:38:57Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:39:22Z",
+      "url": "https://dontstarve.fandom.com/wiki/Spider_Warrior",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/6a55a2394f434e6c12fffd249c9d0beb10d13bd1b327360656e9409624c97fa9.json",
+      "artifactSha256": "6b5d44611a22d05a8dfe6e1c2ec066f0da7914ddbca8b7bdab6a956c7b77539d",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:02Z",
+      "completedAt": "2026-07-21T07:36:03Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:03Z",
+      "url": "https://dontstarve.fandom.com/wiki/Spiderhat",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/b871fad2e1384f39478038405122c2a619e814085e26ca2e13737fe9d7c51ad1.json",
+      "artifactSha256": "abd247d1b244725c7e9c635f9842cc69711a52b73c3113bdadd9a2bf77e4a1aa",
+      "attempts": 1,
+      "categories": [
+        "cave_creatures"
+      ],
+      "claimedAt": "2026-07-21T07:39:10Z",
+      "completedAt": "2026-07-21T07:39:11Z",
+      "createdAt": "2026-07-21T07:38:57Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:39:11Z",
+      "url": "https://dontstarve.fandom.com/wiki/Spitter",
+      "workerId": null
+    },
+    {
+      "artifactPath": null,
+      "artifactSha256": null,
       "attempts": 1,
       "categories": [
         "animals"
       ],
-      "claimedAt": "2026-07-21T03:12:13Z",
-      "completedAt": "2026-07-21T03:12:14Z",
+      "claimedAt": null,
+      "completedAt": null,
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": null,
-      "status": "Done",
-      "updatedAt": "2026-07-21T03:12:14Z",
+      "lastError": "imported from snapshot without raw artifact",
+      "status": "New",
+      "updatedAt": "2026-07-21T07:27:52Z",
       "url": "https://dontstarve.fandom.com/wiki/Splumonkey",
       "workerId": null
     },
     {
-      "artifactPath": "fandom-shared-pages/0f393903dbc5b94b1593ed4ec74d32931e977479c9bd465b7fcf6fee8dd9dd2d.json",
-      "artifactSha256": "dbf8a67c8d92d07984317f6679d2d3416fee39519b9ebcee1475f5a5bda9400c",
+      "artifactPath": "shared-pages/f916f5587154f5223157ee073b54a70eab73593c913327b9bc823fbeae2f2d7b.json",
+      "artifactSha256": "e2b5d01bb5a581cbb3bfaf6e2848b2044f7476443995886134db961421faca2d",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:46Z",
+      "completedAt": "2026-07-21T07:36:47Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:47Z",
+      "url": "https://dontstarve.fandom.com/wiki/Stag_Antler",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/a080411609403c90185eaef39946dbe339fce5bf8601b949e9f6b55bf4d11c26.json",
+      "artifactSha256": "cf1fcbe6845a548275cad93a37a200816f5cf0e1c8d595d956ddfb1eeea23d4d",
+      "attempts": 1,
+      "categories": [
+        "beefalo_foods"
+      ],
+      "claimedAt": "2026-07-21T07:30:25Z",
+      "completedAt": "2026-07-21T07:30:26Z",
+      "createdAt": "2026-07-21T07:30:20Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:30:26Z",
+      "url": "https://dontstarve.fandom.com/wiki/Steamed_Twigs",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/15a5ca7063e18fe817ecaa6c2dc7052be6d723d4509b1b2eec36e02567744fcc.json",
+      "artifactSha256": "67d9d8ec49de2a021a49cc5683d87fb7035f6b32d3fd496b456f04c2fe6abbd7",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:01Z",
+      "completedAt": "2026-07-21T07:36:02Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:02Z",
+      "url": "https://dontstarve.fandom.com/wiki/Stinger",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/347844205f1cfe224d524c59b085f0a558590fa5ee335aa53e3c0f19e2b18700.json",
+      "artifactSha256": "e5ed1ae021c6a26b9526d871cfb5ff8c22cb48aa7887955688035f262497fe4a",
+      "attempts": 1,
+      "categories": [
+        "cave_creatures"
+      ],
+      "claimedAt": "2026-07-21T07:39:00Z",
+      "completedAt": "2026-07-21T07:39:01Z",
+      "createdAt": "2026-07-21T07:38:57Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:39:01Z",
+      "url": "https://dontstarve.fandom.com/wiki/Tentacle",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/2a05149fca96ef058bcdc3607b31c76d484496a1a0a87b5463f37ae5d1bcbe4a.json",
+      "artifactSha256": "ad76431ab45c4ccbf2c8fa63176f3aba470cd9da3dfc7e3253bb7898de366ada",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:28Z",
+      "completedAt": "2026-07-21T07:36:32Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:32Z",
+      "url": "https://dontstarve.fandom.com/wiki/Thick_Fur",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/1da841747d8ca9fd170dfb3af088ec3ea2b5316eb27103b44d4ecaf4b3cad5c5.json",
+      "artifactSha256": "0aed93ea7e34efbacb8531086888374f0cb25dc0ba29d2252b10b739b582fb6e",
+      "attempts": 1,
+      "categories": [
+        "cave_creatures"
+      ],
+      "claimedAt": "2026-07-21T07:39:22Z",
+      "completedAt": "2026-07-21T07:39:24Z",
+      "createdAt": "2026-07-21T07:38:57Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:39:24Z",
+      "url": "https://dontstarve.fandom.com/wiki/Toadstool",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/2c0762d58f33a4d77c17df6ff7452ce4173e2f91f6935c83b4f54fcdf0dcd968.json",
+      "artifactSha256": "1229bf308a8271e332955fd0b1ef8c773af59d7f3622b231360a316b8417c242",
+      "attempts": 1,
+      "categories": [
+        "cave_creatures"
+      ],
+      "claimedAt": "2026-07-21T07:39:01Z",
+      "completedAt": "2026-07-21T07:39:03Z",
+      "createdAt": "2026-07-21T07:38:57Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:39:03Z",
+      "url": "https://dontstarve.fandom.com/wiki/Treeguard",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/f7c029c393604617522017d71dc73b839e30fdadbb0dc19e0333f8c529acb298.json",
+      "artifactSha256": "b5d8120ec8c1749535c4af48fdf4790e11b58a1c35bc95a5e853a1a1a90dd8f2",
+      "attempts": 1,
+      "categories": [
+        "clothing_filter"
+      ],
+      "claimedAt": "2026-07-21T07:30:53Z",
+      "completedAt": "2026-07-21T07:30:56Z",
+      "createdAt": "2026-07-21T07:30:42Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:30:56Z",
+      "url": "https://dontstarve.fandom.com/wiki/Turf-Raiser_Helm",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/c5d3a001551f601445482266ea907b79ffb9edb62013b8555c1fbcb7e638b24c.json",
+      "artifactSha256": "050e0a92fa1f77d13bbf9a9ee85c504b7fb41ab5941fe8fce931457d7cd6d7af",
+      "attempts": 1,
+      "categories": [
+        "beefalo_foods"
+      ],
+      "claimedAt": "2026-07-21T07:30:20Z",
+      "completedAt": "2026-07-21T07:30:21Z",
+      "createdAt": "2026-07-21T07:30:20Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:30:21Z",
+      "url": "https://dontstarve.fandom.com/wiki/Twigs",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/113e2e65340d116cd1f0784fbc81c7ef55ee57740063d3180400824e92148322.json",
+      "artifactSha256": "7f070551fc055373b87ea5a0503bbc26b98c8337de459ca78c5598e4342e0141",
+      "attempts": 1,
+      "categories": [
+        "clothing_filter"
+      ],
+      "claimedAt": "2026-07-21T07:30:43Z",
+      "completedAt": "2026-07-21T07:30:45Z",
+      "createdAt": "2026-07-21T07:30:42Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:30:45Z",
+      "url": "https://dontstarve.fandom.com/wiki/Umbrella",
+      "workerId": null
+    },
+    {
+      "artifactPath": null,
+      "artifactSha256": null,
       "attempts": 1,
       "categories": [
         "animals"
       ],
-      "claimedAt": "2026-07-21T03:12:20Z",
-      "completedAt": "2026-07-21T03:12:22Z",
+      "claimedAt": null,
+      "completedAt": null,
       "createdAt": "2026-07-21T03:11:53Z",
+      "lastError": "imported from snapshot without raw artifact",
+      "status": "New",
+      "updatedAt": "2026-07-21T07:27:52Z",
+      "url": "https://dontstarve.fandom.com/wiki/Volt_Goat",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/99c60b645e251bca0f3d59cd19fa69a64a1ef22b5087353164706abe106d2fc6.json",
+      "artifactSha256": "79d7181ca567ed818b3a65e488f64d0dadf541c70bc4d84ad27975e634bb3e62",
+      "attempts": 1,
+      "categories": [
+        "armour_filter"
+      ],
+      "claimedAt": "2026-07-21T07:29:06Z",
+      "completedAt": "2026-07-21T07:29:10Z",
+      "createdAt": "2026-07-21T07:28:14Z",
       "lastError": null,
       "status": "Done",
-      "updatedAt": "2026-07-21T03:12:22Z",
-      "url": "https://dontstarve.fandom.com/wiki/Volt_Goat",
+      "updatedAt": "2026-07-21T07:29:10Z",
+      "url": "https://dontstarve.fandom.com/wiki/W.A.R.B.I.S._Armor",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/96e0f0b5b14cd6334985e1f6a3eac0156641e81fa1ff7c1017b462b0cfc91ef4.json",
+      "artifactSha256": "675aa50ac04d390403c9deaf932fd31857fbdf2c158bf8e8fb6c57068cf0ddb4",
+      "attempts": 1,
+      "categories": [
+        "armour_filter"
+      ],
+      "claimedAt": "2026-07-21T07:29:02Z",
+      "completedAt": "2026-07-21T07:29:06Z",
+      "createdAt": "2026-07-21T07:28:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:29:06Z",
+      "url": "https://dontstarve.fandom.com/wiki/W.A.R.B.I.S._Head_Gear",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/c693060464d2c07745578e4a60d5bd1d30539f027164f427892557f8c78140ee.json",
+      "artifactSha256": "dba9025b814d439bd2741987dd905f4b05073b255f79efd019beb6c1cc14e6e3",
+      "attempts": 1,
+      "categories": [
+        "clothing_filter"
+      ],
+      "claimedAt": "2026-07-21T07:30:47Z",
+      "completedAt": "2026-07-21T07:30:51Z",
+      "createdAt": "2026-07-21T07:30:42Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:30:51Z",
+      "url": "https://dontstarve.fandom.com/wiki/Whirly_Fan",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/4d41273ce088137262589709ea6188054f4fdb11216b77c6cedf11a561b4e398.json",
+      "artifactSha256": "e53e0598838e2ae8533d1bf1b99b86e1befaa6144f66dcf6e3a221b03adc82fc",
+      "attempts": 1,
+      "categories": [
+        "clothing_filter"
+      ],
+      "claimedAt": "2026-07-21T07:30:56Z",
+      "completedAt": "2026-07-21T07:31:01Z",
+      "createdAt": "2026-07-21T07:30:42Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:31:01Z",
+      "url": "https://dontstarve.fandom.com/wiki/Wooden_Walking_Stick",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/7a2544d0df6bfd96d4362107f799004ecf137028c6dcbf1b654d98fe599484a5.json",
+      "artifactSha256": "3f1cfad493574690daf06f7de1d624f93219aaac1ee5e1763ab7a09cfa9807fc",
+      "attempts": 1,
+      "categories": [
+        "boss_dropped_items"
+      ],
+      "claimedAt": "2026-07-21T07:36:23Z",
+      "completedAt": "2026-07-21T07:36:24Z",
+      "createdAt": "2026-07-21T07:35:14Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T07:36:24Z",
+      "url": "https://dontstarve.fandom.com/wiki/Yellow_Gem",
       "workerId": null
     }
   ],

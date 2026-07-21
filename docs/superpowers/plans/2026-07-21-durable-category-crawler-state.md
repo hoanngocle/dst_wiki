@@ -337,7 +337,7 @@ Run: `python3 -m unittest tests.crawl_wiki.test_category_config tests.crawl_wiki
 
 Expected: all tests pass.
 
-- [ ] **Step 5: Commit Task 4**
+- [x] **Step 5: Commit Task 4**
 
 ```bash
 git add tools/crawl_wiki/category_config.py tests/crawl_wiki/test_category_config.py data/config/wiki-categories docs/category-crawler-control.md docs/superpowers/plans/2026-07-21-durable-category-crawler-state.md
@@ -355,7 +355,7 @@ git commit -m "data: configure reviewed DST category batch"
 - Consumes: Tasks 1-4, MediaWiki API, exact category configs.
 - Produces: durable live registry/cache, nine isolated crawl checkpoints and a tracked registry/control snapshot.
 
-- [ ] **Step 1: Initialize and audit live state**
+- [x] **Step 1: Initialize and audit live state**
 
 Run:
 
@@ -366,7 +366,7 @@ python3 -m tools.crawl_wiki.state_cli audit
 
 Expected: 29 imported rows are `New`; audit reports zero invalid rows.
 
-- [ ] **Step 2: Crawl categories sequentially**
+- [x] **Step 2: Crawl categories sequentially**
 
 Run once per key in this order:
 
@@ -384,7 +384,7 @@ python3 -m tools.crawl_wiki.cli --profile category --category cave_creatures
 
 Expected: each category reaches zero pending detail pages; duplicate URLs use valid `Done` payloads rather than network fetches. Category children and excluded titles never enter the registry.
 
-- [ ] **Step 3: Audit and export the live snapshot**
+- [x] **Step 3: Audit and export the live snapshot**
 
 Run:
 
@@ -395,7 +395,7 @@ python3 -m tools.crawl_wiki.state_cli snapshot --snapshot data/crawled/fandom-ur
 
 Expected: zero invalid rows; 170 total URLs (`29 Animals + 141 new`), all crawled batch candidates `Done`.
 
-- [ ] **Step 4: Reconcile control MD from the exported snapshot**
+- [x] **Step 4: Reconcile control MD from the exported snapshot**
 
 Update queue/status summaries and shared URL rows so `New/Doing/Done` exactly match the exported JSON. Remove the temporary cache blocker only after audit proves every `Done` artifact valid.
 
