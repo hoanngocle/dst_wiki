@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 import { parseItemPayload } from "./item-catalog";
 
 const validPayload = {
-  schema_version: 6,
+  schema_version: 7,
   items: [
     {
       id: "tu_tien:xd_sword",
@@ -111,6 +111,95 @@ function makeValidItem(
   };
 }
 
+const animalEvidence = [
+  { source: "fandom", locator: "revision:67890" },
+];
+
+function makeAnimalMob() {
+  return {
+    identity: {
+      primaryCode: "koalefant_summer",
+      prefabCodes: ["koalefant_summer", "koalefant_winter"],
+      sourcePageId: 12345,
+      sourceUrl: "https://dontstarve.fandom.com/wiki/Koalefant",
+      revisionId: 67890,
+    },
+    classification: { type: "mob", tags: ["Animals"], game: "DST" },
+    variants: [
+      { code: "koalefant_summer", label: "Summer Koalefant", order: 0, sprite: null },
+      { code: "koalefant_winter", label: "Winter Koalefant", order: 1, sprite: null },
+    ],
+    stats: {
+      status: "known",
+      values: [
+        {
+          key: "max_health",
+          label: "Health",
+          value: 1000,
+          unit: "hp",
+          sourceVariant: "koalefant_summer",
+          evidence: animalEvidence,
+        },
+      ],
+      reason: null,
+      evidence: animalEvidence,
+    },
+    effects: { status: "none", values: [], reason: "source_has_no_values", evidence: animalEvidence },
+    combat: {
+      status: "known",
+      values: [
+        {
+          key: "attack_damage",
+          label: "Damage",
+          value: 50,
+          unit: null,
+          sourceVariant: "koalefant_summer",
+          evidence: animalEvidence,
+        },
+      ],
+      reason: null,
+      evidence: animalEvidence,
+    },
+    movement: { status: "unknown", values: [], reason: "not_verified", evidence: animalEvidence },
+    traits: {
+      status: "known",
+      values: [{ text: "Leaves a suspicious dirt pile.", sourceVariant: null }],
+      reason: null,
+      evidence: animalEvidence,
+    },
+    loot: {
+      status: "known",
+      values: [
+        {
+          item: { id: "base_game:meat", name: "Meat", sprite: null },
+          quantity: "×8",
+          chance: null,
+          conditions: null,
+          method: "kill",
+          sourceVariant: "koalefant_summer",
+          game: "DST",
+        },
+      ],
+      reason: null,
+      evidence: animalEvidence,
+    },
+    spawnsFrom: { status: "none", values: [], reason: "source_has_no_values", evidence: animalEvidence },
+    notes: {
+      status: "known",
+      values: [
+        {
+          source: "Koalefants leave suspicious dirt piles.",
+          summaryVi: "Koalefant để lại đống đất khả nghi.",
+          sourceSha256: "a".repeat(64),
+          status: "reviewed",
+        },
+      ],
+      reason: null,
+      evidence: animalEvidence,
+    },
+  };
+}
+
 describe("parseItemPayload", () => {
   it("accepts the generated compact item contract", () => {
     const items = parseItemPayload(validPayload);
@@ -211,19 +300,81 @@ describe("parseItemPayload", () => {
       ],
     };
 
-    const parsed = parseItemPayload({ schema_version: 6, items: [boss] })[0];
+    const parsed = parseItemPayload({ schema_version: 7, items: [boss] })[0];
 
-    expect(parsed.mob?.appearance.sources[0]).toContain("Mysterious Energy");
-    expect(parsed.mob?.variants[1].role).toBe("post_defeat");
-    expect(parsed.mob?.stats[0].sourceVariant).toBe(
+    expect(parsed.mob?.contract).toBe("catalog");
+    if (parsed.mob?.contract !== "catalog") {
+      throw new Error("expected catalog Mob contract");
+    }
+
+    expect(parsed.mob.appearance.sources[0]).toContain("Mysterious Energy");
+    expect(parsed.mob.variants[1].role).toBe("post_defeat");
+    expect(parsed.mob.stats[0].sourceVariant).toBe(
       "base_game:alterguardian_phase3",
     );
-    expect(parsed.mob?.loot[0]).toMatchObject({
+    expect(parsed.mob.loot[0]).toMatchObject({
       minimum: 1,
       maximum: 1,
       method: "mine_post_defeat",
       sourceVariant: "base_game:alterguardian_phase3dead",
     });
+  });
+
+  it("accepts the expanded DST Animals Mob contract", () => {
+    const animal = makeValidItem("koalefant_summer", {
+      namespace: "base_game",
+    }) as unknown as Record<string, unknown>;
+    animal.category = "mob";
+    animal.mob = makeAnimalMob();
+
+    const mob = parseItemPayload({ schema_version: 7, items: [animal] })[0].mob as
+      | ReturnType<typeof makeAnimalMob>
+      | null;
+
+    expect(mob?.identity.prefabCodes).toEqual([
+      "koalefant_summer",
+      "koalefant_winter",
+    ]);
+    expect(mob?.combat.values[0]).toMatchObject({
+      key: "attack_damage",
+      value: 50,
+    });
+    expect(mob?.notes.values[0]).toMatchObject({ status: "reviewed" });
+  });
+
+  it("rejects known empty Animals sections, duplicate codes, and non-DST classification", () => {
+    const payloadFor = (mob: ReturnType<typeof makeAnimalMob>) => {
+      const animal = makeValidItem("koalefant_summer", {
+        namespace: "base_game",
+      }) as unknown as Record<string, unknown>;
+      animal.category = "mob";
+      animal.mob = mob;
+      return { schema_version: 7, items: [animal] };
+    };
+
+    const knownEmpty = makeAnimalMob();
+    knownEmpty.combat = {
+      status: "known",
+      values: [],
+      reason: null,
+      evidence: animalEvidence,
+    };
+    expect(() => parseItemPayload(payloadFor(knownEmpty))).toThrow(/known combat/i);
+
+    const duplicateCodes = makeAnimalMob();
+    duplicateCodes.identity.prefabCodes = [
+      "koalefant_summer",
+      "koalefant_summer",
+    ];
+    expect(() => parseItemPayload(payloadFor(duplicateCodes))).toThrow(/prefabCodes/i);
+
+    const nonDst = makeAnimalMob();
+    nonDst.classification = {
+      type: "mob",
+      tags: ["Animals"],
+      game: "Shipwrecked",
+    } as unknown as typeof nonDst.classification;
+    expect(() => parseItemPayload(payloadFor(nonDst))).toThrow(/DST/i);
   });
 
   it("accepts complete structure details and rejects them on non-structures", () => {
@@ -314,7 +465,7 @@ describe("parseItemPayload", () => {
   it("rejects legacy payloads and invalid prefab categories", () => {
     expect(() =>
       parseItemPayload({ ...validPayload, schema_version: 4 }),
-    ).toThrow(/schema version 6/i);
+    ).toThrow(/schema version 7/i);
 
     const payload = structuredClone(validPayload) as unknown as {
       items: Array<{ category: string }>;
@@ -363,7 +514,7 @@ describe("parseItemPayload", () => {
     expect(() => parseItemPayload(missing)).toThrow(/Tu Tiên.*details/i);
 
     const baseGame = {
-      schema_version: 6,
+      schema_version: 7,
       items: [makeValidItem("goldnugget", { namespace: "base_game" })],
     } as unknown as { schema_version: number; items: Array<{ details: unknown }> };
     baseGame.items[0].details = structuredClone(validPayload.items[0].details);
@@ -416,7 +567,7 @@ describe("parseItemPayload", () => {
 
   it("removes effect-only prefabs while preserving retained order", () => {
     const payload = {
-      schema_version: 6,
+      schema_version: 7,
       items: [
         makeValidItem("first"),
         makeValidItem("spark_fx"),
@@ -432,7 +583,7 @@ describe("parseItemPayload", () => {
 
   it("prefers a pictured _item counterpart without crossing namespaces", () => {
     const payload = {
-      schema_version: 6,
+      schema_version: 7,
       items: [
         makeValidItem("gate"),
         makeValidItem("gate", { namespace: "base_game" }),
@@ -452,7 +603,7 @@ describe("parseItemPayload", () => {
 
   it("keeps the base prefab when its _item counterpart has no image", () => {
     const payload = {
-      schema_version: 6,
+      schema_version: 7,
       items: [makeValidItem("gate"), makeValidItem("gate_item", { sprite: null })],
     };
 

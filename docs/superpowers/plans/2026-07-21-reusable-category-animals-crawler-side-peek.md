@@ -878,7 +878,7 @@ git commit -m "feat: merge audited category mob data"
 - Produces: strict `MobDetails` section/status types.
 - Produces: `MobSections({ item, itemsById, onSelectItem, titleId })` for both namespaces and Mob/Boss categories.
 
-- [ ] **Step 1: Write failing expanded parser tests**
+- [x] **Step 1: Write failing expanded parser tests**
 
 ```typescript
 it("accepts the expanded DST Animals Mob contract", () => {
@@ -896,7 +896,7 @@ it("rejects known empty sections, duplicate codes, and non-DST classification", 
 });
 ```
 
-- [ ] **Step 2: Write failing Mob renderer tests**
+- [x] **Step 2: Write failing Mob renderer tests**
 
 ```tsx
 it("renders ordered Animals sections and navigable loot", () => {
@@ -917,7 +917,7 @@ it("renders one variant selector and concise unknown state", () => {
 });
 ```
 
-- [ ] **Step 3: Run Vitest and verify RED**
+- [x] **Step 3: Run Vitest and verify RED**
 
 Run:
 
@@ -927,7 +927,7 @@ npm test -- app/lib/item-catalog.test.ts app/components/mob-sections.test.tsx ap
 
 Expected: schema version 7 and `MobSections` are missing.
 
-- [ ] **Step 4: Define and strictly parse the expanded types**
+- [x] **Step 4: Define and strictly parse the expanded types**
 
 Use these core types:
 
@@ -996,7 +996,7 @@ and revision IDs, HTTPS source URL, exact DST classification, sorted unique
 variant order, non-empty `known` values, empty `none` values, valid item
 references, and reviewed notes.
 
-- [ ] **Step 5: Implement the shared Mob renderer and remove the private renderer**
+- [x] **Step 5: Implement the shared Mob renderer and remove the private renderer**
 
 Move Mob rendering out of `tu-tien-item-sections.tsx`. Render sections in this
 order: Summary remains owned by the detail shell, then Stats, Effects, Combat,
@@ -1008,7 +1008,7 @@ In `item-detail-modal.tsx`, route both `mob` and `boss` categories through
 `MobSections` before namespace-specific routing. This is an intermediate step;
 Task 6 moves the shell to the new side-peek file.
 
-- [ ] **Step 6: Run frontend checks and commit Task 5**
+- [x] **Step 6: Run frontend checks and commit Task 5**
 
 Run:
 

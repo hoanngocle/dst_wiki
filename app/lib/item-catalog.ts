@@ -95,7 +95,7 @@ export type MobStat = {
   label: string;
   value: string | number;
   unit: string | null;
-  sourceVariant: string;
+  sourceVariant: string | null;
   evidence: readonly ItemEvidence[];
 };
 
@@ -130,7 +130,7 @@ export type MobMechanic = {
   evidence: readonly ItemEvidence[];
 };
 
-export type MobLoot = {
+export type CatalogMobLoot = {
   item: ItemReference;
   minimum: number;
   maximum: number;
@@ -142,14 +142,84 @@ export type MobLoot = {
   evidence: readonly ItemEvidence[];
 };
 
-export type MobDetails = {
+export type CatalogMobDetails = {
+  contract: "catalog";
   appearance: MobAppearance;
   variants: readonly MobVariant[];
   stats: readonly MobStat[];
   mechanics: readonly MobMechanic[];
   lootStatus: ItemDetailStatus;
-  loot: readonly MobLoot[];
+  loot: readonly CatalogMobLoot[];
 };
+
+export type MobSection<T> = {
+  status: ItemDetailStatus;
+  values: readonly T[];
+  reason: string | null;
+  evidence: readonly ItemEvidence[];
+};
+
+export type CategoryMobVariant = {
+  code: string;
+  label: string;
+  order: number;
+  sprite: SpriteDescriptor | null;
+};
+
+export type CategoryMobLoot = {
+  item: ItemReference;
+  quantity: string;
+  chance: string | null;
+  conditions: string | null;
+  method: MobRewardMethod;
+  sourceVariant: string | null;
+  game: "DST";
+};
+
+export type MobSpawnSource = {
+  source: ItemReference;
+  conditions: string | null;
+  sourceVariant: string | null;
+};
+
+export type MobTrait = {
+  text: string;
+  sourceVariant: string | null;
+};
+
+export type MobNote = {
+  source: string;
+  summaryVi: string;
+  sourceSha256: string;
+  status: "reviewed";
+};
+
+export type CategoryMobDetails = {
+  contract: "category";
+  identity: {
+    primaryCode: string;
+    prefabCodes: readonly string[];
+    sourcePageId: number;
+    sourceUrl: string;
+    revisionId: number;
+  };
+  classification: {
+    type: "mob" | "boss";
+    tags: readonly string[];
+    game: "DST";
+  };
+  variants: readonly CategoryMobVariant[];
+  stats: MobSection<MobStat>;
+  effects: MobSection<MobStat>;
+  combat: MobSection<MobStat>;
+  movement: MobSection<MobStat>;
+  traits: MobSection<MobTrait>;
+  loot: MobSection<CategoryMobLoot>;
+  spawnsFrom: MobSection<MobSpawnSource>;
+  notes: MobSection<MobNote>;
+};
+
+export type MobDetails = CatalogMobDetails | CategoryMobDetails;
 
 export type CharacterProfile = {
   title: string | null;
@@ -568,11 +638,11 @@ function parseMobEvidence(value: unknown, field: string): readonly ItemEvidence[
   return parseEvidence(value, field);
 }
 
-function parseMob(
+function parseCatalogMob(
   value: unknown,
   itemIndex: number,
   category: PrefabCategory,
-): MobDetails | null {
+): CatalogMobDetails | null {
   const isMob = category === "mob" || category === "boss";
   if (!isMob) {
     if (value !== null && value !== undefined) {
@@ -694,6 +764,7 @@ function parseMob(
     throw new Error(`item ${itemIndex} known mob loot must contain data`);
   }
   return {
+    contract: "catalog",
     appearance: {
       status: parseDetailStatus(appearance.status, `item ${itemIndex} mob appearance`),
       sources: appearanceSources.map((source, sourceIndex) =>
@@ -716,6 +787,285 @@ function parseMob(
     lootStatus,
     loot,
   };
+}
+
+function parseNullableVariant(value: unknown, field: string): string | null {
+  return value === null ? null : requiredString(value, field);
+}
+
+function parseMobMethod(value: unknown, field: string): MobRewardMethod {
+  if (
+    value !== "kill" &&
+    value !== "mine_post_defeat" &&
+    value !== "harvest" &&
+    value !== "conditional"
+  ) {
+    throw new Error(`${field} method is invalid`);
+  }
+  return value;
+}
+
+function parseCategorySection<T>(
+  value: unknown,
+  field: string,
+  parseValue: (entry: unknown, index: number) => T,
+): MobSection<T> {
+  if (!isRecord(value) || !Array.isArray(value.values) || !Array.isArray(value.evidence)) {
+    throw new Error(`${field} must contain values and evidence arrays`);
+  }
+  const status = parseDetailStatus(value.status, field);
+  const values = value.values.map(parseValue);
+  if (status === "known" && !values.length) {
+    const sectionName = field.slice(field.lastIndexOf(" ") + 1);
+    throw new Error(`known ${sectionName} section must contain data (${field})`);
+  }
+  if (status !== "known" && values.length) {
+    throw new Error(`${field} ${status} section must not contain data`);
+  }
+  return {
+    status,
+    values,
+    reason: nullableString(value.reason, `${field} reason`),
+    evidence: parseMobEvidence(value.evidence, `${field} evidence`),
+  };
+}
+
+function parseCategoryMobStat(value: unknown, index: number, field: string): MobStat {
+  if (!isRecord(value) || (typeof value.value !== "number" && typeof value.value !== "string")) {
+    throw new Error(`${field} value ${index} is invalid`);
+  }
+  return {
+    key: requiredString(value.key, `${field} value ${index} key`),
+    label: requiredString(value.label, `${field} value ${index} label`),
+    value: value.value,
+    unit: nullableString(value.unit, `${field} value ${index} unit`),
+    sourceVariant: parseNullableVariant(
+      value.sourceVariant,
+      `${field} value ${index} sourceVariant`,
+    ),
+    evidence: parseMobEvidence(value.evidence, `${field} value ${index} evidence`),
+  };
+}
+
+function parseCategoryMob(
+  value: unknown,
+  itemIndex: number,
+  category: "mob" | "boss",
+): CategoryMobDetails {
+  if (
+    !isRecord(value) ||
+    !isRecord(value.identity) ||
+    !isRecord(value.classification) ||
+    !Array.isArray(value.variants)
+  ) {
+    throw new Error(`Mob item ${itemIndex} category details are invalid`);
+  }
+
+  const identity = value.identity;
+  const primaryCode = requiredString(
+    identity.primaryCode,
+    `item ${itemIndex} Mob primaryCode`,
+  );
+  if (!Array.isArray(identity.prefabCodes) || !identity.prefabCodes.length) {
+    throw new Error(`item ${itemIndex} Mob prefabCodes must be a non-empty array`);
+  }
+  const prefabCodes = identity.prefabCodes.map((code, codeIndex) =>
+    requiredString(code, `item ${itemIndex} Mob prefabCodes ${codeIndex}`),
+  );
+  if (new Set(prefabCodes).size !== prefabCodes.length) {
+    throw new Error(`item ${itemIndex} Mob prefabCodes must be unique`);
+  }
+  if (!prefabCodes.includes(primaryCode)) {
+    throw new Error(`item ${itemIndex} Mob primaryCode must belong to prefabCodes`);
+  }
+  const sourceUrl = requiredString(identity.sourceUrl, `item ${itemIndex} Mob sourceUrl`);
+  let parsedSource: URL;
+  try {
+    parsedSource = new URL(sourceUrl);
+  } catch {
+    throw new Error(`item ${itemIndex} Mob sourceUrl must be HTTPS`);
+  }
+  if (parsedSource.protocol !== "https:") {
+    throw new Error(`item ${itemIndex} Mob sourceUrl must be HTTPS`);
+  }
+
+  const classification = value.classification;
+  if (classification.type !== category) {
+    throw new Error(`item ${itemIndex} Mob classification type must match ${category}`);
+  }
+  if (classification.game !== "DST") {
+    throw new Error(`item ${itemIndex} Mob classification game must be DST`);
+  }
+  if (!Array.isArray(classification.tags)) {
+    throw new Error(`item ${itemIndex} Mob classification tags must be an array`);
+  }
+  const tags = classification.tags.map((tag, tagIndex) =>
+    requiredString(tag, `item ${itemIndex} Mob tag ${tagIndex}`),
+  );
+  if (new Set(tags).size !== tags.length) {
+    throw new Error(`item ${itemIndex} Mob classification tags must be unique`);
+  }
+
+  const variants = value.variants.map((raw, variantIndex) => {
+    if (!isRecord(raw)) {
+      throw new Error(`item ${itemIndex} Mob variant ${variantIndex} is invalid`);
+    }
+    if (typeof raw.order !== "number" || !Number.isInteger(raw.order) || raw.order < 0) {
+      throw new Error(`item ${itemIndex} Mob variant ${variantIndex} order is invalid`);
+    }
+    return {
+      code: requiredString(raw.code, `item ${itemIndex} Mob variant ${variantIndex} code`),
+      label: requiredString(raw.label, `item ${itemIndex} Mob variant ${variantIndex} label`),
+      order: raw.order,
+      sprite: parseSprite(raw.sprite, `item ${itemIndex} Mob variant ${variantIndex}`),
+    };
+  });
+  const variantCodes = variants.map((variant) => variant.code);
+  const variantOrders = variants.map((variant) => variant.order);
+  if (
+    new Set(variantCodes).size !== variantCodes.length ||
+    new Set(variantOrders).size !== variantOrders.length ||
+    variants.some((variant, index) => index > 0 && variants[index - 1].order > variant.order)
+  ) {
+    throw new Error(`item ${itemIndex} Mob variants must have unique sorted order`);
+  }
+  if (variantCodes.some((code) => !prefabCodes.includes(code))) {
+    throw new Error(`item ${itemIndex} Mob variant code must belong to prefabCodes`);
+  }
+
+  const statSection = (name: "stats" | "effects" | "combat" | "movement") =>
+    parseCategorySection(value[name], `item ${itemIndex} ${name}`, (entry, index) =>
+      parseCategoryMobStat(entry, index, `item ${itemIndex} ${name}`),
+    );
+  const traits = parseCategorySection(
+    value.traits,
+    `item ${itemIndex} traits`,
+    (entry, index): MobTrait => {
+      if (!isRecord(entry)) throw new Error(`item ${itemIndex} trait ${index} is invalid`);
+      return {
+        text: requiredString(entry.text, `item ${itemIndex} trait ${index} text`),
+        sourceVariant: parseNullableVariant(
+          entry.sourceVariant,
+          `item ${itemIndex} trait ${index} sourceVariant`,
+        ),
+      };
+    },
+  );
+  const loot = parseCategorySection(
+    value.loot,
+    `item ${itemIndex} loot`,
+    (entry, index): CategoryMobLoot => {
+      if (!isRecord(entry)) throw new Error(`item ${itemIndex} loot ${index} is invalid`);
+      if (entry.game !== "DST") throw new Error(`item ${itemIndex} loot ${index} game must be DST`);
+      return {
+        item: parseReference(entry.item, `item ${itemIndex} loot ${index} item`),
+        quantity: requiredString(entry.quantity, `item ${itemIndex} loot ${index} quantity`),
+        chance: nullableString(entry.chance, `item ${itemIndex} loot ${index} chance`),
+        conditions: nullableString(
+          entry.conditions,
+          `item ${itemIndex} loot ${index} conditions`,
+        ),
+        method: parseMobMethod(entry.method, `item ${itemIndex} loot ${index}`),
+        sourceVariant: parseNullableVariant(
+          entry.sourceVariant,
+          `item ${itemIndex} loot ${index} sourceVariant`,
+        ),
+        game: "DST",
+      };
+    },
+  );
+  const spawnsFrom = parseCategorySection(
+    value.spawnsFrom,
+    `item ${itemIndex} spawnsFrom`,
+    (entry, index): MobSpawnSource => {
+      if (!isRecord(entry)) {
+        throw new Error(`item ${itemIndex} spawn source ${index} is invalid`);
+      }
+      return {
+        source: parseReference(
+          entry.source,
+          `item ${itemIndex} spawn source ${index} reference`,
+        ),
+        conditions: nullableString(
+          entry.conditions,
+          `item ${itemIndex} spawn source ${index} conditions`,
+        ),
+        sourceVariant: parseNullableVariant(
+          entry.sourceVariant,
+          `item ${itemIndex} spawn source ${index} sourceVariant`,
+        ),
+      };
+    },
+  );
+  const notes = parseCategorySection(
+    value.notes,
+    `item ${itemIndex} notes`,
+    (entry, index): MobNote => {
+      if (!isRecord(entry) || entry.status !== "reviewed") {
+        throw new Error(`item ${itemIndex} note ${index} must be reviewed`);
+      }
+      const sourceSha256 = requiredString(
+        entry.sourceSha256,
+        `item ${itemIndex} note ${index} sourceSha256`,
+      );
+      if (!/^[a-f0-9]{64}$/i.test(sourceSha256)) {
+        throw new Error(`item ${itemIndex} note ${index} sourceSha256 is invalid`);
+      }
+      return {
+        source: requiredString(entry.source, `item ${itemIndex} note ${index} source`),
+        summaryVi: requiredString(
+          entry.summaryVi,
+          `item ${itemIndex} note ${index} summaryVi`,
+        ),
+        sourceSha256,
+        status: "reviewed",
+      };
+    },
+  );
+
+  return {
+    contract: "category",
+    identity: {
+      primaryCode,
+      prefabCodes,
+      sourcePageId: positiveInteger(
+        identity.sourcePageId,
+        `item ${itemIndex} Mob sourcePageId`,
+      ),
+      sourceUrl,
+      revisionId: positiveInteger(
+        identity.revisionId,
+        `item ${itemIndex} Mob revisionId`,
+      ),
+    },
+    classification: { type: category, tags, game: "DST" },
+    variants,
+    stats: statSection("stats"),
+    effects: statSection("effects"),
+    combat: statSection("combat"),
+    movement: statSection("movement"),
+    traits,
+    loot,
+    spawnsFrom,
+    notes,
+  };
+}
+
+function parseMob(
+  value: unknown,
+  itemIndex: number,
+  category: PrefabCategory,
+): MobDetails | null {
+  if (category !== "mob" && category !== "boss") {
+    if (value !== null && value !== undefined) {
+      throw new Error(`non-Mob item ${itemIndex} mob details must be null`);
+    }
+    return null;
+  }
+  if (isRecord(value) && isRecord(value.identity) && isRecord(value.classification)) {
+    return parseCategoryMob(value, itemIndex, category);
+  }
+  return parseCatalogMob(value, itemIndex, category);
 }
 
 function parseCharacter(value: unknown, itemIndex: number): CharacterProfile | null {
@@ -988,10 +1338,10 @@ function curateItems(items: readonly ItemListEntry[]): ItemListEntry[] {
 export function parseItemPayload(value: unknown): readonly ItemListEntry[] {
   if (
     !isRecord(value) ||
-    value.schema_version !== 6 ||
+    value.schema_version !== 7 ||
     !Array.isArray(value.items)
   ) {
-    throw new Error("item payload must use schema version 6 and contain items");
+    throw new Error("item payload must use schema version 7 and contain items");
   }
   return curateItems(value.items.map(parseItem));
 }
