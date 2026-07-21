@@ -569,7 +569,7 @@ git commit -m "feat: crawl configured wiki categories"
 - Produces: `load_reviewed_note_summaries(path) -> Mapping[int, ReviewedNote]`.
 - Produces CLI commands `category-notes` and `normalize-category`.
 
-- [ ] **Step 1: Write failing DST-only Beefalo and Bunnyman parser tests**
+- [x] **Step 1: Write failing DST-only Beefalo and Bunnyman parser tests**
 
 ```python
 def test_normalizes_only_dst_values_from_multi_game_infobox(self):
@@ -590,7 +590,7 @@ def test_keeps_dst_loot_row_and_bunnyman_transformation_trait(self):
     assert all(drop["game"] == "DST" for drop in mob["loot"]["values"])
 ```
 
-- [ ] **Step 2: Write failing variant and unknown-state tests**
+- [x] **Step 2: Write failing variant and unknown-state tests**
 
 ```python
 def test_groups_verified_prefab_variants_on_one_page():
@@ -607,7 +607,7 @@ def test_marks_ambiguous_unlabelled_multi_game_value_unknown():
     assert mob["combat"]["reason"] == "ambiguous_game_version"
 ```
 
-- [ ] **Step 3: Write failing note cleaning, hash, and review-gate tests**
+- [x] **Step 3: Write failing note cleaning, hash, and review-gate tests**
 
 ```python
 def test_note_review_keeps_dst_gameplay_and_drops_patch_trivia():
@@ -623,7 +623,7 @@ def test_normalizer_rejects_unreviewed_source_note():
         normalize_category_mobs(crawl_root, animals_config(), mappings={}, summaries={})
 ```
 
-- [ ] **Step 4: Run tests and verify RED**
+- [x] **Step 4: Run tests and verify RED**
 
 Run:
 
@@ -633,7 +633,7 @@ python3 -m unittest tests.extract.test_category_mobs tests.extract.test_category
 
 Expected: category Mob and Notes modules are missing.
 
-- [ ] **Step 5: Implement strict section and variant builders**
+- [x] **Step 5: Implement strict section and variant builders**
 
 Use one shared section shape everywhere:
 
@@ -665,7 +665,7 @@ The mapping format starts valid and empty:
 Missing or ambiguous page codes remain errors for the real-data gate rather
 than triggering title matching.
 
-- [ ] **Step 6: Implement note candidates and reviewed-summary loading**
+- [x] **Step 6: Implement note candidates and reviewed-summary loading**
 
 Extract `Notes`, gameplay callouts, and note-like infobox rows. Strip citations,
 navigation, update history, duplicates, and non-DST-exclusive sentences. Store
@@ -681,7 +681,7 @@ Each populated page entry must contain `source_sha256`, non-empty `vi`, and
 `reviewed: true`. A hash mismatch is treated as unreviewed. Proven note absence
 produces section status `none`; an extraction gap produces `unknown`.
 
-- [ ] **Step 7: Add offline CLI commands**
+- [x] **Step 7: Add offline CLI commands**
 
 Add:
 
@@ -698,7 +698,7 @@ a `discovery` object with all 34 direct namespace-0 members, the exact six
 non-DST exclusions, all accepted canonical pages, and every excluded
 subcategory seed, so merge/audit can emit explicit `excluded` rows.
 
-- [ ] **Step 8: Run tests and commit Task 3**
+- [x] **Step 8: Run tests and commit Task 3**
 
 Run:
 

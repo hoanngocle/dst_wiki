@@ -1,11 +1,17 @@
 import argparse
 from pathlib import Path
 
+from tools.crawl_wiki.category_config import load_category_config
 from tools.extract.assets import add_base_game_asset_facts
 from tools.extract.base_game import (
     derive_dependency_requests,
     enrich_prefab_modules,
     verify_snapshot_archive,
+)
+from tools.extract.category_mobs import load_prefab_mappings, write_category_mobs
+from tools.extract.category_notes import (
+    build_category_note_review,
+    load_reviewed_note_summaries,
 )
 from tools.extract.contracts import dump_bundle, load_bundle
 from tools.extract.database import write_database
@@ -158,6 +164,16 @@ def build_parser() -> argparse.ArgumentParser:
         "--manual", type=Path, default=Path("data/manual/wiki_summary_vi.json")
     )
     translate_wiki.add_argument("--workers", type=int, default=4)
+    category_notes = sub.add_parser("category-notes")
+    category_notes.add_argument("--category", required=True)
+    category_notes.add_argument("--crawl", type=Path)
+    category_notes.add_argument("--output", type=Path)
+    normalize_category = sub.add_parser("normalize-category")
+    normalize_category.add_argument("--category", required=True)
+    normalize_category.add_argument("--crawl", type=Path)
+    normalize_category.add_argument("--mappings", type=Path)
+    normalize_category.add_argument("--summaries", type=Path)
+    normalize_category.add_argument("--output", type=Path)
     export_markdown = sub.add_parser("export-markdown")
     export_markdown.add_argument("--catalog", type=Path, default=CATALOG_JSON)
     export_markdown.add_argument("--runtime", type=Path, default=RUNTIME_FACTS)
@@ -448,6 +464,36 @@ def main() -> int:
             f"{args.output} pages={summary['pages']} cached={summary['cached']} "
             f"translated={summary['translated']}"
         )
+        return 0
+    if args.command == "category-notes":
+        config = load_category_config(args.category)
+        crawl = args.crawl or config.output_path
+        output = args.output or Path(
+            "data/generated/category-note-review/{}.json".format(config.key)
+        )
+        review = build_category_note_review(crawl, config, output)
+        print("{} pages={}".format(output, len(review["pages"])))
+        return 0
+    if args.command == "normalize-category":
+        config = load_category_config(args.category)
+        crawl = args.crawl or config.output_path
+        mapping_path = args.mappings or Path(
+            "data/manual/category-prefab-mappings/{}.json".format(config.key)
+        )
+        summary_path = args.summaries or Path(
+            "data/manual/category-note-summaries/{}.json".format(config.key)
+        )
+        output = args.output or Path(
+            "data/generated/categories/{}.json".format(config.key)
+        )
+        artifact = write_category_mobs(
+            crawl,
+            config,
+            load_prefab_mappings(mapping_path),
+            load_reviewed_note_summaries(summary_path),
+            output,
+        )
+        print("{} pages={}".format(output, len(artifact["pages"])))
         return 0
     if args.command == "export-markdown":
         _export_markdown_stage(args.catalog, args.runtime, args.output)
