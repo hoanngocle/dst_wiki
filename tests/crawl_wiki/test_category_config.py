@@ -183,6 +183,32 @@ class CategoryConfigTests(unittest.TestCase):
             "non_item:category_mismatch",
         )
 
+    def test_loads_reviewed_dont_starve_together_aggregate(self):
+        config = load_category_config("dont_starve_together")
+
+        self.assertEqual(config.category_title, "Category:Don't Starve Together")
+        self.assertEqual(config.expected_direct_pages, 878)
+        self.assertEqual(config.expected_published_pages, 872)
+        self.assertEqual(config.allowed_namespaces, (0,))
+        self.assertEqual(config.game, "DST")
+        self.assertEqual(config.item_type, "content")
+        self.assertEqual(config.tags, ("Don't Starve Together",))
+        self.assertEqual(
+            dict(config.excluded_titles),
+            {
+                "Blue Moonlens": "duplicate:canonical_redirect",
+                "Green Moonlens": "duplicate:canonical_redirect",
+                "Orange Moonlens": "duplicate:canonical_redirect",
+                "Purple Moonlens": "duplicate:canonical_redirect",
+                "Red Moonlens": "duplicate:canonical_redirect",
+                "Yellow Moonlens": "duplicate:canonical_redirect",
+            },
+        )
+        self.assertEqual(
+            config.output_path,
+            Path("data/crawled/fandom-categories/dont_starve_together"),
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

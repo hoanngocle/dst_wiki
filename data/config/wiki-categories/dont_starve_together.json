@@ -1,0 +1,24 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Don't Starve Together",
+  "excludedTitles": {
+    "Blue Moonlens": "duplicate:canonical_redirect",
+    "Green Moonlens": "duplicate:canonical_redirect",
+    "Orange Moonlens": "duplicate:canonical_redirect",
+    "Purple Moonlens": "duplicate:canonical_redirect",
+    "Red Moonlens": "duplicate:canonical_redirect",
+    "Yellow Moonlens": "duplicate:canonical_redirect"
+  },
+  "expectedDirectPages": 878,
+  "expectedPublishedPages": 872,
+  "game": "DST",
+  "itemType": "content",
+  "key": "dont_starve_together",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Don%27t_Starve_Together",
+  "tags": [
+    "Don't Starve Together"
+  ]
+}
