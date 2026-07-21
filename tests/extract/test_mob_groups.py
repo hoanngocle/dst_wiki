@@ -66,6 +66,14 @@ class MobGroupTests(unittest.TestCase):
             item("base_game:alterguardian_phase3", "boss"),
             item("base_game:alterguardian_phase3dead", "structure"),
         ]
+        items[2]["mob"] = {
+            "variants": [
+                {
+                    "id": "base_game:alterguardian_phase1",
+                    "sprite": {"src": "https://example.test/phase-1.png"},
+                }
+            ]
+        }
 
         public, audit = apply_mob_groups(items, [celestial_group()])
 
@@ -87,6 +95,10 @@ class MobGroupTests(unittest.TestCase):
         self.assertEqual(
             [value["role"] for value in canonical["mob"]["variants"]],
             ["phase", "phase", "phase", "post_defeat"],
+        )
+        self.assertEqual(
+            canonical["mob"]["variants"][0]["sprite"],
+            {"src": "https://example.test/phase-1.png"},
         )
         self.assertEqual(
             [(row["id"], row["action"]) for row in audit],

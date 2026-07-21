@@ -6,9 +6,8 @@ from pathlib import Path
 import re
 import sqlite3
 from typing import Any, Dict, Iterable, Iterator, List, Optional
-from zipfile import ZipFile
 
-from tools.extract.base_game import discover_prefab_modules
+from tools.extract.base_game import ScriptIndex, classify_public_prefabs
 from tools.extract.source_manifest import ARCHIVES
 from tools.extract.runtime_import import COVERAGE_CATEGORIES
 
@@ -256,8 +255,7 @@ def _prefab_export_coverage(
 ) -> List[Dict[str, Any]]:
     if scripts_path is None or items_path is None:
         return []
-    with ZipFile(Path(scripts_path)) as archive:
-        expected = set(discover_prefab_modules(archive.namelist()))
+    expected = set(classify_public_prefabs(ScriptIndex(Path(scripts_path))))
     payload = json.loads(Path(items_path).read_text(encoding="utf-8"))
     if payload.get("schema_version") != 6 or not isinstance(payload.get("items"), list):
         return [{"code": "invalid_prefab_export_payload"}]
@@ -324,10 +322,10 @@ def _prefab_export_coverage(
     }
     referenced_dependencies = set()
 
-    def collect_recipe_dependencies(value: Any) -> None:
+    def collect_published_dependencies(value: Any) -> None:
         if isinstance(value, list):
             for entry in value:
-                collect_recipe_dependencies(entry)
+                collect_published_dependencies(entry)
             return
         if not isinstance(value, dict):
             return
@@ -343,10 +341,17 @@ def _prefab_export_coverage(
                     "base_game:"
                 ):
                     referenced_dependencies.add(ingredient_id.split(":", 1)[1])
+        loot = value.get("loot")
+        if isinstance(loot, list):
+            for drop in loot:
+                drop_item = drop.get("item") if isinstance(drop, dict) else None
+                drop_id = drop_item.get("id") if isinstance(drop_item, dict) else None
+                if isinstance(drop_id, str) and drop_id.startswith("base_game:"):
+                    referenced_dependencies.add(drop_id.split(":", 1)[1])
         for nested in value.values():
-            collect_recipe_dependencies(nested)
+            collect_published_dependencies(nested)
 
-    collect_recipe_dependencies(payload["items"])
+    collect_published_dependencies(payload["items"])
     missing = sorted(expected - actual)
     unexpected = sorted(actual - expected - referenced_dependencies)
     return [{"missing": missing, "unexpected": unexpected}] if missing or unexpected else []

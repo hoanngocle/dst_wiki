@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+from urllib.parse import quote
 from typing import Any, Dict, Mapping, Optional, Sequence
 
 
@@ -60,14 +61,29 @@ def _group_index(groups: Sequence[JsonObject]) -> tuple[Dict[str, str], Dict[str
     return membership, by_canonical
 
 
-def _variant(item: JsonObject, role: str, order: int) -> JsonObject:
+def _wiki_sprite(image_title: Any) -> Optional[JsonObject]:
+    if not isinstance(image_title, str) or not image_title.strip():
+        return None
+    encoded = quote(image_title.strip().replace(" ", "_"), safe="()_'-.")
+    return {
+        "src": f"https://dontstarve.wiki.gg/wiki/Special:Redirect/file/{encoded}",
+        "uv": {"u1": 0.0, "u2": 1.0, "v1": 0.0, "v2": 1.0},
+    }
+
+
+def _variant(
+    item: JsonObject,
+    role: str,
+    order: int,
+    image_title: Any = None,
+) -> JsonObject:
     return {
         "id": str(item["id"]),
         "prefabId": str(item.get("prefabId") or ""),
         "name": str(item.get("name") or item.get("prefabId") or item["id"]),
         "role": role,
         "order": order,
-        "sprite": item.get("sprite"),
+        "sprite": item.get("sprite") or _wiki_sprite(image_title),
     }
 
 
@@ -98,6 +114,13 @@ def build_mob_details(
     }
     output: Dict[str, JsonObject] = {}
     for canonical_id in sorted(canonical_ids):
+        wiki = wiki_details.get(canonical_id, {})
+        variant_image_titles = (
+            wiki.get("variantImageTitles") if isinstance(wiki, Mapping) else {}
+        )
+        variant_image_titles = (
+            variant_image_titles if isinstance(variant_image_titles, Mapping) else {}
+        )
         group = groups_by_canonical.get(canonical_id)
         if group is None:
             members = [{"id": canonical_id, "role": "variant", "order": 0}]
@@ -108,7 +131,17 @@ def build_mob_details(
             )
         member_ids = [str(member["id"]) for member in members]
         variants = [
-            _variant(item_by_id[member_id], str(member["role"]), int(member["order"]))
+            _variant(
+                item_by_id[member_id],
+                str(member["role"]),
+                int(member["order"]),
+                variant_image_titles.get(item_by_id[member_id].get("prefabId"))
+                or (
+                    wiki.get("primaryImageTitle")
+                    if isinstance(wiki, Mapping) and member_id == canonical_id
+                    else None
+                ),
+            )
             for member, member_id in zip(members, member_ids)
             if member_id in item_by_id
         ]
@@ -139,14 +172,32 @@ def build_mob_details(
                         "value": value,
                         "unit": stat.get("unit") if isinstance(stat.get("unit"), str) else None,
                         "sourceVariant": member_id,
-                        "evidence": _evidence(stat),
+                        "evidence": _evidence(stat) or [
+                            {
+                                "source": "public/data/catalog.json",
+                                "locator": f"{member_id}:stats:{key}",
+                            }
+                        ],
                     }
                 )
         stats.sort(key=lambda value: (STAT_ORDER[value["key"]], value["sourceVariant"]))
         mechanics.sort(key=lambda value: (value["sourceVariant"], value["text"]))
+        if isinstance(wiki, Mapping) and isinstance(wiki.get("mechanics"), list):
+            for text in wiki["mechanics"]:
+                if not isinstance(text, str) or not text.strip():
+                    continue
+                mechanics.append(
+                    {
+                        "text": text.strip(),
+                        "sourceVariant": canonical_id,
+                        "evidence": _evidence(wiki),
+                    }
+                )
 
         grouped_rewards: Dict[tuple[str, str, str, Any, str], JsonObject] = {}
         for target_id, target in entity_by_id.items():
+            if target.get("type") == "effect" or target.get("is_inventory_item") is not True:
+                continue
             for acquisition in target.get("acquisition", []):
                 if not isinstance(acquisition, Mapping) or acquisition.get("type") != "drop":
                     continue
@@ -156,7 +207,7 @@ def build_mob_details(
                 conditions = acquisition.get("conditions")
                 conditions = dict(conditions) if isinstance(conditions, Mapping) else {}
                 member = next(value for value in members if str(value["id"]) == source_variant)
-                method = acquisition.get("method")
+                method = acquisition.get("method") or conditions.get("method")
                 if method not in {"kill", "mine_post_defeat", "harvest", "conditional"}:
                     method = "mine_post_defeat" if member.get("role") == "post_defeat" else "kill"
                 minimum = acquisition.get("min_count", acquisition.get("count", 1))
@@ -165,7 +216,16 @@ def build_mob_details(
                 maximum = maximum if isinstance(maximum, (int, float)) else minimum
                 chance = acquisition.get("chance")
                 loot_table = conditions.get("loot_table")
-                conditions_text = f"Bảng rơi: {loot_table}" if isinstance(loot_table, str) else None
+                condition_parts = []
+                if isinstance(loot_table, str):
+                    condition_parts.append(f"Bảng rơi: {loot_table}")
+                event = conditions.get("event")
+                if isinstance(event, str):
+                    condition_parts.append(f"Sự kiện: {event}")
+                callback = conditions.get("callback")
+                if isinstance(callback, str) and not condition_parts:
+                    condition_parts.append("Tạo trực tiếp khi hoàn tất tương tác.")
+                conditions_text = "; ".join(condition_parts) or None
                 key = (
                     target_id,
                     str(method),
@@ -188,13 +248,29 @@ def build_mob_details(
                         "sourceVariant": source_variant,
                         "lootTable": loot_table if isinstance(loot_table, str) else None,
                         "conditions": conditions_text,
-                        "evidence": _evidence(acquisition),
+                        "evidence": _evidence(acquisition) or [
+                            {
+                                "source": "public/data/catalog.json",
+                                "locator": f"{target_id}:acquisition:{source_variant}",
+                            }
+                        ],
                     },
                 )
                 row["minimum"] += minimum
                 row["maximum"] += maximum
-        loot = [grouped_rewards[key] for key in sorted(grouped_rewards)]
-        wiki = wiki_details.get(canonical_id, {})
+        loot = [
+            grouped_rewards[key]
+            for key in sorted(
+                grouped_rewards,
+                key=lambda value: (
+                    value[0],
+                    value[1],
+                    value[2],
+                    -1.0 if value[3] is None else float(value[3]),
+                    value[4],
+                ),
+            )
+        ]
         sources = wiki.get("sources") if isinstance(wiki, Mapping) else None
         sources = [str(value) for value in sources if isinstance(value, str)] if isinstance(sources, list) else []
         output[canonical_id] = {
@@ -222,6 +298,16 @@ def build_mob_boss_audit(
     groups: Sequence[JsonObject],
 ) -> JsonObject:
     membership, _ = _group_index(groups)
+    member_metadata = {
+        str(member["id"]): {
+            "role": member.get("role"),
+            "order": member.get("order"),
+            "groupingEvidence": "data/manual/mob-variant-groups.json",
+        }
+        for group in groups
+        for member in group.get("members", [])
+        if isinstance(member, Mapping) and isinstance(member.get("id"), str)
+    }
     relevant = {
         str(item["id"]): item
         for item in candidates
@@ -232,6 +318,31 @@ def build_mob_boss_audit(
         canonical_id = membership.get(item_id, item_id)
         action = "keep" if canonical_id == item_id else "merge"
         detail = details.get(canonical_id, {})
+        appearance = detail.get("appearance", {})
+        variants = detail.get("variants", [])
+        has_image = bool(item.get("sprite")) or any(
+            isinstance(variant, Mapping) and variant.get("sprite")
+            for variant in variants
+        )
+        unresolved = []
+        if not has_image:
+            unresolved.append("missing_image")
+        if not isinstance(appearance, Mapping) or appearance.get("status") != "known":
+            unresolved.append("appearance_unknown")
+        if not detail.get("stats"):
+            unresolved.append("stats_unknown")
+        if not detail.get("mechanics"):
+            unresolved.append("mechanics_unknown")
+        if detail.get("lootStatus") != "known":
+            unresolved.append("loot_unknown")
+        metadata = member_metadata.get(
+            item_id,
+            {
+                "role": "canonical",
+                "order": 0,
+                "groupingEvidence": None,
+            },
+        )
         rows.append(
             {
                 "id": item_id,
@@ -242,6 +353,31 @@ def build_mob_boss_audit(
                 "hasStats": bool(detail.get("stats")),
                 "hasMechanics": bool(detail.get("mechanics")),
                 "lootStatus": detail.get("lootStatus", "unknown"),
+                "role": metadata["role"],
+                "order": metadata["order"],
+                "groupingEvidence": metadata["groupingEvidence"],
+                "name": item.get("name"),
+                "description": item.get("description"),
+                "hasImage": has_image,
+                "wikiUrl": (
+                    appearance.get("wikiUrl")
+                    if isinstance(appearance, Mapping)
+                    else None
+                ),
+                "appearanceStatus": (
+                    appearance.get("status")
+                    if isinstance(appearance, Mapping)
+                    else "unknown"
+                ),
+                "statCount": len(detail.get("stats", [])),
+                "mechanicCount": len(detail.get("mechanics", [])),
+                "rewardCount": len(detail.get("loot", [])),
+                "evidence": (
+                    appearance.get("evidence", [])
+                    if isinstance(appearance, Mapping)
+                    else []
+                ),
+                "unresolvedReasons": unresolved,
                 "reason": "Giữ làm record Mob/Boss chính." if action == "keep" else "Gộp vào record Mob/Boss chính theo manifest biến thể.",
             }
         )

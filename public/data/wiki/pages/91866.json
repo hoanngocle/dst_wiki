@@ -190,7 +190,7 @@
             {
               "amount": 2,
               "item": {
-                "entityId": null,
+                "entityId": "base_game:moon_cap",
                 "iconUrl": null,
                 "title": "Moon Shroom",
                 "url": "https://dontstarve.wiki.gg/wiki/Moon_Shroom"

@@ -32,17 +32,40 @@
       },
       "classification": "natural_structure",
       "craftable": false,
-      "englishName": "Defeated Celestial Champion",
+      "englishName": "Moonglass Spike",
       "evidence": [
         {
-          "locator": "base_game:alterguardian_phase3dead:visual-audit",
+          "locator": "base_game:alterguardian_phase2spike:visual-audit",
           "source": "public/data/catalog.json"
         }
       ],
-      "id": "base_game:alterguardian_phase3dead",
-      "name": "Chiến Binh Bại Trận",
+      "id": "base_game:alterguardian_phase2spike",
+      "name": "Moonglass Spike",
       "namespace": "base_game",
-      "prefabId": "alterguardian_phase3dead",
+      "prefabId": "alterguardian_phase2spike",
+      "reason": "Công trình thật, không có công thức và được xác minh là đối tượng xuất hiện trong thế giới.",
+      "wikiUrl": null
+    },
+    {
+      "action": "keep",
+      "assets": {
+        "inventory": [],
+        "wiki": [],
+        "world": []
+      },
+      "classification": "natural_structure",
+      "craftable": false,
+      "englishName": "Enlightening Snare",
+      "evidence": [
+        {
+          "locator": "base_game:alterguardian_phase3trap:visual-audit",
+          "source": "public/data/catalog.json"
+        }
+      ],
+      "id": "base_game:alterguardian_phase3trap",
+      "name": "Enlightening Snare",
+      "namespace": "base_game",
+      "prefabId": "alterguardian_phase3trap",
       "reason": "Công trình thật, không có công thức và được xác minh là đối tượng xuất hiện trong thế giới.",
       "wikiUrl": null
     },
@@ -66,6 +89,29 @@
       "name": "ancient_husks",
       "namespace": "base_game",
       "prefabId": "ancient_husks",
+      "reason": "Prefab/module không có tên hiển thị, công thức, gameplay fact, Wiki mapping hoặc asset độc lập.",
+      "wikiUrl": null
+    },
+    {
+      "action": "exclude",
+      "assets": {
+        "inventory": [],
+        "wiki": [],
+        "world": []
+      },
+      "classification": "technical_prefab",
+      "craftable": false,
+      "englishName": null,
+      "evidence": [
+        {
+          "locator": "base_game:archive_props:visual-audit",
+          "source": "public/data/catalog.json"
+        }
+      ],
+      "id": "base_game:archive_props",
+      "name": "archive_props",
+      "namespace": "base_game",
+      "prefabId": "archive_props",
       "reason": "Prefab/module không có tên hiển thị, công thức, gameplay fact, Wiki mapping hoặc asset độc lập.",
       "wikiUrl": null
     },
@@ -115,11 +161,34 @@
         }
       ],
       "id": "base_game:atrium_statue",
-      "name": "Tượng cổ",
+      "name": "Ancient Statue",
       "namespace": "base_game",
       "prefabId": "atrium_statue",
       "reason": "Công trình không có inventory icon nhưng có ảnh Wiki/world asset đã xác minh.",
       "wikiUrl": "https://dontstarve.wiki.gg/wiki/Ancient_Statue/DST"
+    },
+    {
+      "action": "exclude",
+      "assets": {
+        "inventory": [],
+        "wiki": [],
+        "world": []
+      },
+      "classification": "technical_prefab",
+      "craftable": false,
+      "englishName": "Berry Bush",
+      "evidence": [
+        {
+          "locator": "base_game:berrybush:visual-audit",
+          "source": "public/data/catalog.json"
+        }
+      ],
+      "id": "base_game:berrybush",
+      "name": "Berry Bush",
+      "namespace": "base_game",
+      "prefabId": "berrybush",
+      "reason": "Prefab/module không có tên hiển thị, công thức, gameplay fact, Wiki mapping hoặc asset độc lập.",
+      "wikiUrl": null
     },
     {
       "action": "exclude",
@@ -165,6 +234,52 @@
       "namespace": "base_game",
       "prefabId": "boatfragments",
       "reason": "Prefab/module không có tên hiển thị, công thức, gameplay fact, Wiki mapping hoặc asset độc lập.",
+      "wikiUrl": null
+    },
+    {
+      "action": "keep",
+      "assets": {
+        "inventory": [],
+        "wiki": [],
+        "world": []
+      },
+      "classification": "natural_structure",
+      "craftable": false,
+      "englishName": "Race Checkpoint",
+      "evidence": [
+        {
+          "locator": "base_game:boatrace_checkpoint:visual-audit",
+          "source": "public/data/catalog.json"
+        }
+      ],
+      "id": "base_game:boatrace_checkpoint",
+      "name": "Race Checkpoint",
+      "namespace": "base_game",
+      "prefabId": "boatrace_checkpoint",
+      "reason": "Công trình thật, không có công thức và được xác minh là đối tượng xuất hiện trong thế giới.",
+      "wikiUrl": null
+    },
+    {
+      "action": "keep",
+      "assets": {
+        "inventory": [],
+        "wiki": [],
+        "world": []
+      },
+      "classification": "natural_structure",
+      "craftable": false,
+      "englishName": "Start Tower",
+      "evidence": [
+        {
+          "locator": "base_game:boatrace_start:visual-audit",
+          "source": "public/data/catalog.json"
+        }
+      ],
+      "id": "base_game:boatrace_start",
+      "name": "Start Tower",
+      "namespace": "base_game",
+      "prefabId": "boatrace_start",
+      "reason": "Công trình thật, không có công thức và được xác minh là đối tượng xuất hiện trong thế giới.",
       "wikiUrl": null
     },
     {
@@ -306,6 +421,98 @@
       "wikiUrl": null
     },
     {
+      "action": "keep",
+      "assets": {
+        "inventory": [],
+        "wiki": [],
+        "world": []
+      },
+      "classification": "natural_structure",
+      "craftable": false,
+      "englishName": "Mini-Golf Flaghole",
+      "evidence": [
+        {
+          "locator": "base_game:carnivalgame_golf_hole:visual-audit",
+          "source": "public/data/catalog.json"
+        }
+      ],
+      "id": "base_game:carnivalgame_golf_hole",
+      "name": "Mini-Golf Flaghole",
+      "namespace": "base_game",
+      "prefabId": "carnivalgame_golf_hole",
+      "reason": "Công trình thật, không có công thức và được xác minh là đối tượng xuất hiện trong thế giới.",
+      "wikiUrl": null
+    },
+    {
+      "action": "keep",
+      "assets": {
+        "inventory": [],
+        "wiki": [],
+        "world": []
+      },
+      "classification": "natural_structure",
+      "craftable": false,
+      "englishName": "Mini-Golf Ball Dropper",
+      "evidence": [
+        {
+          "locator": "base_game:carnivalgame_golf_tee:visual-audit",
+          "source": "public/data/catalog.json"
+        }
+      ],
+      "id": "base_game:carnivalgame_golf_tee",
+      "name": "Mini-Golf Ball Dropper",
+      "namespace": "base_game",
+      "prefabId": "carnivalgame_golf_tee",
+      "reason": "Công trình thật, không có công thức và được xác minh là đối tượng xuất hiện trong thế giới.",
+      "wikiUrl": null
+    },
+    {
+      "action": "exclude",
+      "assets": {
+        "inventory": [],
+        "wiki": [],
+        "world": []
+      },
+      "classification": "technical_prefab",
+      "craftable": false,
+      "englishName": null,
+      "evidence": [
+        {
+          "locator": "base_game:carnivalgame_golfprops:visual-audit",
+          "source": "public/data/catalog.json"
+        }
+      ],
+      "id": "base_game:carnivalgame_golfprops",
+      "name": "carnivalgame_golfprops",
+      "namespace": "base_game",
+      "prefabId": "carnivalgame_golfprops",
+      "reason": "Prefab/module không có tên hiển thị, công thức, gameplay fact, Wiki mapping hoặc asset độc lập.",
+      "wikiUrl": null
+    },
+    {
+      "action": "exclude",
+      "assets": {
+        "inventory": [],
+        "wiki": [],
+        "world": []
+      },
+      "classification": "technical_prefab",
+      "craftable": false,
+      "englishName": null,
+      "evidence": [
+        {
+          "locator": "base_game:carnivalgame_puckdrop:visual-audit",
+          "source": "public/data/catalog.json"
+        }
+      ],
+      "id": "base_game:carnivalgame_puckdrop",
+      "name": "carnivalgame_puckdrop",
+      "namespace": "base_game",
+      "prefabId": "carnivalgame_puckdrop",
+      "reason": "Prefab/module không có tên hiển thị, công thức, gameplay fact, Wiki mapping hoặc asset độc lập.",
+      "wikiUrl": null
+    },
+    {
       "action": "exclude",
       "assets": {
         "inventory": [],
@@ -414,7 +621,7 @@
         }
       ],
       "id": "base_game:collapsedchest",
-      "name": "Rương hỏng",
+      "name": "Broken-down Chest",
       "namespace": "base_game",
       "prefabId": "collapsedchest",
       "reason": "Công trình thật, không có công thức và được xác minh là đối tượng xuất hiện trong thế giới.",
@@ -575,7 +782,7 @@
         }
       ],
       "id": "base_game:farm_soil_debris",
-      "name": "Ụ Sỏi Vườn",
+      "name": "Garden Detritus",
       "namespace": "base_game",
       "prefabId": "farm_soil_debris",
       "reason": "Công trình thật, không có công thức và được xác minh là đối tượng xuất hiện trong thế giới.",
@@ -639,6 +846,29 @@
       "englishName": null,
       "evidence": [
         {
+          "locator": "base_game:furniture_chairs:visual-audit",
+          "source": "public/data/catalog.json"
+        }
+      ],
+      "id": "base_game:furniture_chairs",
+      "name": "furniture_chairs",
+      "namespace": "base_game",
+      "prefabId": "furniture_chairs",
+      "reason": "Prefab/module không có tên hiển thị, công thức, gameplay fact, Wiki mapping hoặc asset độc lập.",
+      "wikiUrl": null
+    },
+    {
+      "action": "exclude",
+      "assets": {
+        "inventory": [],
+        "wiki": [],
+        "world": []
+      },
+      "classification": "technical_prefab",
+      "craftable": false,
+      "englishName": null,
+      "evidence": [
+        {
           "locator": "base_game:furniture_tables:visual-audit",
           "source": "public/data/catalog.json"
         }
@@ -647,6 +877,29 @@
       "name": "furniture_tables",
       "namespace": "base_game",
       "prefabId": "furniture_tables",
+      "reason": "Prefab/module không có tên hiển thị, công thức, gameplay fact, Wiki mapping hoặc asset độc lập.",
+      "wikiUrl": null
+    },
+    {
+      "action": "exclude",
+      "assets": {
+        "inventory": [],
+        "wiki": [],
+        "world": []
+      },
+      "classification": "technical_prefab",
+      "craftable": false,
+      "englishName": null,
+      "evidence": [
+        {
+          "locator": "base_game:gargoyles:visual-audit",
+          "source": "public/data/catalog.json"
+        }
+      ],
+      "id": "base_game:gargoyles",
+      "name": "gargoyles",
+      "namespace": "base_game",
+      "prefabId": "gargoyles",
       "reason": "Prefab/module không có tên hiển thị, công thức, gameplay fact, Wiki mapping hoặc asset độc lập.",
       "wikiUrl": null
     },
@@ -667,7 +920,7 @@
         }
       ],
       "id": "base_game:gingerbreadhouse",
-      "name": "Nhà Lợn Bánh Gừng",
+      "name": "Gingerbread Pig House",
       "namespace": "base_game",
       "prefabId": "gingerbreadhouse",
       "reason": "Công trình thật, không có công thức và được xác minh là đối tượng xuất hiện trong thế giới.",
@@ -754,6 +1007,29 @@
       "englishName": null,
       "evidence": [
         {
+          "locator": "base_game:lantern_posts:visual-audit",
+          "source": "public/data/catalog.json"
+        }
+      ],
+      "id": "base_game:lantern_posts",
+      "name": "lantern_posts",
+      "namespace": "base_game",
+      "prefabId": "lantern_posts",
+      "reason": "Prefab/module không có tên hiển thị, công thức, gameplay fact, Wiki mapping hoặc asset độc lập.",
+      "wikiUrl": null
+    },
+    {
+      "action": "keep",
+      "assets": {
+        "inventory": [],
+        "wiki": [],
+        "world": []
+      },
+      "classification": "natural_structure",
+      "craftable": false,
+      "englishName": null,
+      "evidence": [
+        {
           "locator": "base_game:livingtree_halloween:visual-audit",
           "source": "public/data/catalog.json"
         }
@@ -762,7 +1038,7 @@
       "name": "livingtree_halloween",
       "namespace": "base_game",
       "prefabId": "livingtree_halloween",
-      "reason": "Prefab/module không có tên hiển thị, công thức, gameplay fact, Wiki mapping hoặc asset độc lập.",
+      "reason": "Công trình thật, không có công thức và được xác minh là đối tượng xuất hiện trong thế giới.",
       "wikiUrl": null
     },
     {
@@ -858,6 +1134,58 @@
       "wikiUrl": null
     },
     {
+      "action": "exclude",
+      "assets": {
+        "inventory": [],
+        "wiki": [],
+        "world": []
+      },
+      "classification": "technical_prefab",
+      "craftable": false,
+      "englishName": null,
+      "evidence": [
+        {
+          "locator": "base_game:merm_supply_structures:visual-audit",
+          "source": "public/data/catalog.json"
+        }
+      ],
+      "id": "base_game:merm_supply_structures",
+      "name": "merm_supply_structures",
+      "namespace": "base_game",
+      "prefabId": "merm_supply_structures",
+      "reason": "Prefab/module không có tên hiển thị, công thức, gameplay fact, Wiki mapping hoặc asset độc lập.",
+      "wikiUrl": null
+    },
+    {
+      "action": "keep",
+      "assets": {
+        "inventory": [],
+        "wiki": [
+          "/assets/wiki/36a34c2036cdce406e70dde0168535946d19a94d71fe95d6c81e110696c96dc0.png"
+        ],
+        "world": []
+      },
+      "classification": "world_asset_only",
+      "craftable": false,
+      "englishName": "Leaky Shack",
+      "evidence": [
+        {
+          "locator": "revision:569249",
+          "source": "https://dontstarve.wiki.gg/wiki/Mermhouse"
+        },
+        {
+          "locator": "base_game:mermhouse:visual-audit",
+          "source": "public/data/catalog.json"
+        }
+      ],
+      "id": "base_game:mermhouse",
+      "name": "Leaky Shack",
+      "namespace": "base_game",
+      "prefabId": "mermhouse",
+      "reason": "Công trình không có inventory icon nhưng có ảnh Wiki/world asset đã xác minh.",
+      "wikiUrl": "https://dontstarve.wiki.gg/wiki/Mermhouse"
+    },
+    {
       "action": "keep",
       "assets": {
         "inventory": [],
@@ -880,11 +1208,34 @@
         }
       ],
       "id": "base_game:mermthrone",
-      "name": "Thảm Hoàng Gia",
+      "name": "Royal Tapestry",
       "namespace": "base_game",
       "prefabId": "mermthrone",
       "reason": "Công trình có công thức, không có inventory icon riêng nhưng đã có ảnh Wiki/world asset được xác minh.",
       "wikiUrl": "https://dontstarve.wiki.gg/wiki/Royal_Tapestry"
+    },
+    {
+      "action": "keep",
+      "assets": {
+        "inventory": [],
+        "wiki": [],
+        "world": []
+      },
+      "classification": "natural_structure",
+      "craftable": false,
+      "englishName": "Celestial Altar",
+      "evidence": [
+        {
+          "locator": "base_game:moon_altar:visual-audit",
+          "source": "public/data/catalog.json"
+        }
+      ],
+      "id": "base_game:moon_altar",
+      "name": "Celestial Altar",
+      "namespace": "base_game",
+      "prefabId": "moon_altar",
+      "reason": "Công trình thật, không có công thức và được xác minh là đối tượng xuất hiện trong thế giới.",
+      "wikiUrl": null
     },
     {
       "action": "keep",
@@ -903,7 +1254,7 @@
         }
       ],
       "id": "base_game:moonrock_pieces",
-      "name": "Đá Cuội Mặt Trăng",
+      "name": "Moon Rubble",
       "namespace": "base_game",
       "prefabId": "moonrock_pieces",
       "reason": "Công trình thật, không có công thức và được xác minh là đối tượng xuất hiện trong thế giới.",
@@ -930,6 +1281,144 @@
       "namespace": "base_game",
       "prefabId": "moontree",
       "reason": "Prefab/module không có tên hiển thị, công thức, gameplay fact, Wiki mapping hoặc asset độc lập.",
+      "wikiUrl": null
+    },
+    {
+      "action": "keep",
+      "assets": {
+        "inventory": [],
+        "wiki": [],
+        "world": []
+      },
+      "classification": "natural_structure",
+      "craftable": false,
+      "englishName": "Sporecap",
+      "evidence": [
+        {
+          "locator": "base_game:mushroomsprout:visual-audit",
+          "source": "public/data/catalog.json"
+        }
+      ],
+      "id": "base_game:mushroomsprout",
+      "name": "Sporecap",
+      "namespace": "base_game",
+      "prefabId": "mushroomsprout",
+      "reason": "Công trình thật, không có công thức và được xác minh là đối tượng xuất hiện trong thế giới.",
+      "wikiUrl": null
+    },
+    {
+      "action": "exclude",
+      "assets": {
+        "inventory": [],
+        "wiki": [],
+        "world": []
+      },
+      "classification": "technical_prefab",
+      "craftable": false,
+      "englishName": null,
+      "evidence": [
+        {
+          "locator": "base_game:mushtree:visual-audit",
+          "source": "public/data/catalog.json"
+        }
+      ],
+      "id": "base_game:mushtree",
+      "name": "mushtree",
+      "namespace": "base_game",
+      "prefabId": "mushtree",
+      "reason": "Prefab/module không có tên hiển thị, công thức, gameplay fact, Wiki mapping hoặc asset độc lập.",
+      "wikiUrl": null
+    },
+    {
+      "action": "exclude",
+      "assets": {
+        "inventory": [],
+        "wiki": [],
+        "world": []
+      },
+      "classification": "technical_prefab",
+      "craftable": false,
+      "englishName": null,
+      "evidence": [
+        {
+          "locator": "base_game:mushtree_moonspore:visual-audit",
+          "source": "public/data/catalog.json"
+        }
+      ],
+      "id": "base_game:mushtree_moonspore",
+      "name": "mushtree_moonspore",
+      "namespace": "base_game",
+      "prefabId": "mushtree_moonspore",
+      "reason": "Prefab/module không có tên hiển thị, công thức, gameplay fact, Wiki mapping hoặc asset độc lập.",
+      "wikiUrl": null
+    },
+    {
+      "action": "exclude",
+      "assets": {
+        "inventory": [],
+        "wiki": [],
+        "world": []
+      },
+      "classification": "technical_prefab",
+      "craftable": false,
+      "englishName": null,
+      "evidence": [
+        {
+          "locator": "base_game:mushtree_webbed:visual-audit",
+          "source": "public/data/catalog.json"
+        }
+      ],
+      "id": "base_game:mushtree_webbed",
+      "name": "mushtree_webbed",
+      "namespace": "base_game",
+      "prefabId": "mushtree_webbed",
+      "reason": "Prefab/module không có tên hiển thị, công thức, gameplay fact, Wiki mapping hoặc asset độc lập.",
+      "wikiUrl": null
+    },
+    {
+      "action": "keep",
+      "assets": {
+        "inventory": [],
+        "wiki": [],
+        "world": []
+      },
+      "classification": "natural_structure",
+      "craftable": false,
+      "englishName": "Above-Average Tree Trunk",
+      "evidence": [
+        {
+          "locator": "base_game:oceantree_pillar:visual-audit",
+          "source": "public/data/catalog.json"
+        }
+      ],
+      "id": "base_game:oceantree_pillar",
+      "name": "Above-Average Tree Trunk",
+      "namespace": "base_game",
+      "prefabId": "oceantree_pillar",
+      "reason": "Công trình thật, không có công thức và được xác minh là đối tượng xuất hiện trong thế giới.",
+      "wikiUrl": null
+    },
+    {
+      "action": "keep",
+      "assets": {
+        "inventory": [],
+        "wiki": [],
+        "world": []
+      },
+      "classification": "natural_structure",
+      "craftable": false,
+      "englishName": "X",
+      "evidence": [
+        {
+          "locator": "base_game:pirate_stash:visual-audit",
+          "source": "public/data/catalog.json"
+        }
+      ],
+      "id": "base_game:pirate_stash",
+      "name": "X",
+      "namespace": "base_game",
+      "prefabId": "pirate_stash",
+      "reason": "Công trình thật, không có công thức và được xác minh là đối tượng xuất hiện trong thế giới.",
       "wikiUrl": null
     },
     {
@@ -979,6 +1468,29 @@
       "wikiUrl": null
     },
     {
+      "action": "exclude",
+      "assets": {
+        "inventory": [],
+        "wiki": [],
+        "world": []
+      },
+      "classification": "technical_prefab",
+      "craftable": false,
+      "englishName": null,
+      "evidence": [
+        {
+          "locator": "base_game:rock_ice_temperature:visual-audit",
+          "source": "public/data/catalog.json"
+        }
+      ],
+      "id": "base_game:rock_ice_temperature",
+      "name": "rock_ice_temperature",
+      "namespace": "base_game",
+      "prefabId": "rock_ice_temperature",
+      "reason": "Prefab/module không có tên hiển thị, công thức, gameplay fact, Wiki mapping hoặc asset độc lập.",
+      "wikiUrl": null
+    },
+    {
       "action": "keep",
       "assets": {
         "inventory": [],
@@ -995,7 +1507,7 @@
         }
       ],
       "id": "base_game:rock_light",
-      "name": "Hố nham thạch",
+      "name": "Lava Pit",
       "namespace": "base_game",
       "prefabId": "rock_light",
       "reason": "Công trình thật, không có công thức và được xác minh là đối tượng xuất hiện trong thế giới.",
@@ -1048,6 +1560,29 @@
       "wikiUrl": null
     },
     {
+      "action": "exclude",
+      "assets": {
+        "inventory": [],
+        "wiki": [],
+        "world": []
+      },
+      "classification": "technical_prefab",
+      "craftable": false,
+      "englishName": null,
+      "evidence": [
+        {
+          "locator": "base_game:scienceprototyper:visual-audit",
+          "source": "public/data/catalog.json"
+        }
+      ],
+      "id": "base_game:scienceprototyper",
+      "name": "scienceprototyper",
+      "namespace": "base_game",
+      "prefabId": "scienceprototyper",
+      "reason": "Prefab/module không có tên hiển thị, công thức, gameplay fact, Wiki mapping hoặc asset độc lập.",
+      "wikiUrl": null
+    },
+    {
       "action": "keep",
       "assets": {
         "inventory": [],
@@ -1064,10 +1599,33 @@
         }
       ],
       "id": "base_game:scorched_skeleton",
-      "name": "Xương cháy khô",
+      "name": "Crispy Skeleton",
       "namespace": "base_game",
       "prefabId": "scorched_skeleton",
       "reason": "Công trình thật, không có công thức và được xác minh là đối tượng xuất hiện trong thế giới.",
+      "wikiUrl": null
+    },
+    {
+      "action": "exclude",
+      "assets": {
+        "inventory": [],
+        "wiki": [],
+        "world": []
+      },
+      "classification": "technical_prefab",
+      "craftable": false,
+      "englishName": null,
+      "evidence": [
+        {
+          "locator": "base_game:sculptures:visual-audit",
+          "source": "public/data/catalog.json"
+        }
+      ],
+      "id": "base_game:sculptures",
+      "name": "sculptures",
+      "namespace": "base_game",
+      "prefabId": "sculptures",
+      "reason": "Prefab/module không có tên hiển thị, công thức, gameplay fact, Wiki mapping hoặc asset độc lập.",
       "wikiUrl": null
     },
     {
@@ -1087,7 +1645,7 @@
         }
       ],
       "id": "base_game:shallow_grave",
-      "name": "Mộ Nông",
+      "name": "Shallow Grave",
       "namespace": "base_game",
       "prefabId": "shallow_grave",
       "reason": "Công trình thật, không có công thức và được xác minh là đối tượng xuất hiện trong thế giới.",
@@ -1105,14 +1663,14 @@
       "englishName": null,
       "evidence": [
         {
-          "locator": "base_game:smashables:visual-audit",
+          "locator": "base_game:sharkboi_ice_hazard:visual-audit",
           "source": "public/data/catalog.json"
         }
       ],
-      "id": "base_game:smashables",
-      "name": "smashables",
+      "id": "base_game:sharkboi_ice_hazard",
+      "name": "sharkboi_ice_hazard",
       "namespace": "base_game",
-      "prefabId": "smashables",
+      "prefabId": "sharkboi_ice_hazard",
       "reason": "Prefab/module không có tên hiển thị, công thức, gameplay fact, Wiki mapping hoặc asset độc lập.",
       "wikiUrl": null
     },
@@ -1133,7 +1691,7 @@
         }
       ],
       "id": "base_game:stalagmite",
-      "name": "Thạch nhũ",
+      "name": "Stalagmite",
       "namespace": "base_game",
       "prefabId": "stalagmite",
       "reason": "Công trình thật, không có công thức và được xác minh là đối tượng xuất hiện trong thế giới.",
@@ -1156,7 +1714,7 @@
         }
       ],
       "id": "base_game:stalagmite_tall",
-      "name": "Thạch nhũ",
+      "name": "Stalagmite",
       "namespace": "base_game",
       "prefabId": "stalagmite_tall",
       "reason": "Công trình thật, không có công thức và được xác minh là đối tượng xuất hiện trong thế giới.",
@@ -1179,7 +1737,7 @@
         }
       ],
       "id": "base_game:statueharp_hedgespawner",
-      "name": "Tượng Đàn Hạc Phủ Dây Leo",
+      "name": "Overgrown Statue",
       "namespace": "base_game",
       "prefabId": "statueharp_hedgespawner",
       "reason": "Công trình thật, không có công thức và được xác minh là đối tượng xuất hiện trong thế giới.",
@@ -1228,6 +1786,52 @@
       "name": "stickheads",
       "namespace": "base_game",
       "prefabId": "stickheads",
+      "reason": "Prefab/module không có tên hiển thị, công thức, gameplay fact, Wiki mapping hoặc asset độc lập.",
+      "wikiUrl": null
+    },
+    {
+      "action": "keep",
+      "assets": {
+        "inventory": [],
+        "wiki": [],
+        "world": []
+      },
+      "classification": "natural_structure",
+      "craftable": false,
+      "englishName": "Anenemy",
+      "evidence": [
+        {
+          "locator": "base_game:trap_starfish:visual-audit",
+          "source": "public/data/catalog.json"
+        }
+      ],
+      "id": "base_game:trap_starfish",
+      "name": "Anenemy",
+      "namespace": "base_game",
+      "prefabId": "trap_starfish",
+      "reason": "Công trình thật, không có công thức và được xác minh là đối tượng xuất hiện trong thế giới.",
+      "wikiUrl": null
+    },
+    {
+      "action": "exclude",
+      "assets": {
+        "inventory": [],
+        "wiki": [],
+        "world": []
+      },
+      "classification": "technical_prefab",
+      "craftable": false,
+      "englishName": null,
+      "evidence": [
+        {
+          "locator": "base_game:tree_rocks:visual-audit",
+          "source": "public/data/catalog.json"
+        }
+      ],
+      "id": "base_game:tree_rocks",
+      "name": "tree_rocks",
+      "namespace": "base_game",
+      "prefabId": "tree_rocks",
       "reason": "Prefab/module không có tên hiển thị, công thức, gameplay fact, Wiki mapping hoặc asset độc lập.",
       "wikiUrl": null
     },
@@ -1301,29 +1905,6 @@
       "wikiUrl": null
     },
     {
-      "action": "keep",
-      "assets": {
-        "inventory": [],
-        "wiki": [],
-        "world": []
-      },
-      "classification": "natural_structure",
-      "craftable": false,
-      "englishName": "Killer Bee Hive",
-      "evidence": [
-        {
-          "locator": "base_game:wasphive:visual-audit",
-          "source": "public/data/catalog.json"
-        }
-      ],
-      "id": "base_game:wasphive",
-      "name": "Tổ ong sát thủ",
-      "namespace": "base_game",
-      "prefabId": "wasphive",
-      "reason": "Công trình thật, không có công thức và được xác minh là đối tượng xuất hiện trong thế giới.",
-      "wikiUrl": null
-    },
-    {
       "action": "exclude",
       "assets": {
         "inventory": [],
@@ -1363,7 +1944,7 @@
         }
       ],
       "id": "base_game:watertree_root",
-      "name": "Rễ Cây Đại Thụ",
+      "name": "Great Tree Root",
       "namespace": "base_game",
       "prefabId": "watertree_root",
       "reason": "Công trình thật, không có công thức và được xác minh là đối tượng xuất hiện trong thế giới.",
@@ -1401,6 +1982,29 @@
       },
       "classification": "natural_structure",
       "craftable": false,
+      "englishName": "Beefalo Stage",
+      "evidence": [
+        {
+          "locator": "base_game:yotb_post:visual-audit",
+          "source": "public/data/catalog.json"
+        }
+      ],
+      "id": "base_game:yotb_post",
+      "name": "Beefalo Stage",
+      "namespace": "base_game",
+      "prefabId": "yotb_post",
+      "reason": "Công trình thật, không có công thức và được xác minh là đối tượng xuất hiện trong thế giới.",
+      "wikiUrl": null
+    },
+    {
+      "action": "keep",
+      "assets": {
+        "inventory": [],
+        "wiki": [],
+        "world": []
+      },
+      "classification": "natural_structure",
+      "craftable": false,
       "englishName": "Checkpoint",
       "evidence": [
         {
@@ -1409,9 +2013,32 @@
         }
       ],
       "id": "base_game:yotc_carrat_race_checkpoint",
-      "name": "Điểm Kiếm Soát",
+      "name": "Checkpoint",
       "namespace": "base_game",
       "prefabId": "yotc_carrat_race_checkpoint",
+      "reason": "Công trình thật, không có công thức và được xác minh là đối tượng xuất hiện trong thế giới.",
+      "wikiUrl": null
+    },
+    {
+      "action": "keep",
+      "assets": {
+        "inventory": [],
+        "wiki": [],
+        "world": []
+      },
+      "classification": "natural_structure",
+      "craftable": false,
+      "englishName": "Finish Line",
+      "evidence": [
+        {
+          "locator": "base_game:yotc_carrat_race_finish:visual-audit",
+          "source": "public/data/catalog.json"
+        }
+      ],
+      "id": "base_game:yotc_carrat_race_finish",
+      "name": "Finish Line",
+      "namespace": "base_game",
+      "prefabId": "yotc_carrat_race_finish",
       "reason": "Công trình thật, không có công thức và được xác minh là đối tượng xuất hiện trong thế giới.",
       "wikiUrl": null
     },
@@ -1432,7 +2059,7 @@
         }
       ],
       "id": "base_game:yotc_carrat_race_start",
-      "name": "Điểm Xuất Phát",
+      "name": "Starting Point",
       "namespace": "base_game",
       "prefabId": "yotc_carrat_race_start",
       "reason": "Công trình thật, không có công thức và được xác minh là đối tượng xuất hiện trong thế giới.",
@@ -1728,6 +2355,35 @@
       "assets": {
         "inventory": [],
         "wiki": [
+          "/assets/wiki/6d5ec70fef776ce84ca781cc3c087b220be911d88b35e0155893e3c010648580.png"
+        ],
+        "world": []
+      },
+      "classification": "world_asset_only",
+      "craftable": false,
+      "englishName": "Lunar Altars",
+      "evidence": [
+        {
+          "locator": "revision:551700",
+          "source": "https://dontstarve.wiki.gg/wiki/Lunar_Altars"
+        },
+        {
+          "locator": "wiki:82729:visual-audit",
+          "source": "public/data/catalog.json"
+        }
+      ],
+      "id": "wiki:82729",
+      "name": "Lunar Altars",
+      "namespace": "base_game",
+      "prefabId": "wiki-82729",
+      "reason": "Công trình không có inventory icon nhưng có ảnh Wiki/world asset đã xác minh.",
+      "wikiUrl": "https://dontstarve.wiki.gg/wiki/Lunar_Altars"
+    },
+    {
+      "action": "keep",
+      "assets": {
+        "inventory": [],
+        "wiki": [
           "/assets/wiki/47349df58588fa854cce70384ab85792435c22ce2e71b7ef3d9c761d623e9608.png",
           "/assets/wiki/780cd0d920a305e37890ec6b852efea73d0cd6b188303e9c526c471109cccfb0.png"
         ],
@@ -1758,13 +2414,13 @@
   "summary": {
     "classifications": {
       "craftable_wiki_visual": 5,
-      "natural_structure": 23,
-      "technical_prefab": 43,
-      "world_asset_only": 3
+      "natural_structure": 35,
+      "technical_prefab": 57,
+      "world_asset_only": 5
     },
-    "exclude": 43,
-    "keep": 31,
+    "exclude": 57,
+    "keep": 45,
     "repair": 0,
-    "total": 74
+    "total": 102
   }
 }

@@ -5,7 +5,7 @@ import os
 import re
 import sqlite3
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Sequence, Tuple
 
 from tools.extract.wiki_export import (
     export_wiki_artifacts,
@@ -677,6 +677,14 @@ def build_item_export(
         )
         if isinstance(ingredient, dict) and isinstance(ingredient.get("key"), str)
     }
+    referenced_dependency_ids.update(
+        str(entity["key"])
+        for entity in source_entities
+        if isinstance(entity, dict)
+        and isinstance(entity.get("key"), str)
+        and isinstance(entity.get("acquisition"), list)
+        and bool(entity["acquisition"])
+    )
     textures: Dict[str, JsonObject] = {}
     exportable_entities = []
     for entity in source_entities:
@@ -788,6 +796,52 @@ def link_recipe_ingredients(items: List[JsonObject]) -> List[JsonObject]:
     return linked_items
 
 
+def filter_unreferenced_base_dependencies(
+    items: List[JsonObject], entities: Sequence[JsonObject]
+) -> List[JsonObject]:
+    """Keep materialized dependencies only when a public detail links to them."""
+
+    dependency_ids = {
+        str(entity["key"])
+        for entity in entities
+        if isinstance(entity, dict)
+        and entity.get("type") == "dependency"
+        and isinstance(entity.get("key"), str)
+    }
+    referenced_ids = set()
+
+    def collect(value: Any) -> None:
+        if isinstance(value, list):
+            for entry in value:
+                collect(entry)
+            return
+        if not isinstance(value, dict):
+            return
+        ingredients = value.get("ingredients")
+        if isinstance(ingredients, list):
+            for ingredient in ingredients:
+                ingredient_id = ingredient.get("id") if isinstance(ingredient, dict) else None
+                if isinstance(ingredient_id, str):
+                    referenced_ids.add(ingredient_id)
+        loot = value.get("loot")
+        if isinstance(loot, list):
+            for drop in loot:
+                drop_item = drop.get("item") if isinstance(drop, dict) else None
+                drop_id = drop_item.get("id") if isinstance(drop_item, dict) else None
+                if isinstance(drop_id, str):
+                    referenced_ids.add(drop_id)
+        for nested in value.values():
+            collect(nested)
+
+    collect(items)
+    return [
+        item
+        for item in items
+        if str(item.get("id")) not in dependency_ids
+        or str(item.get("id")) in referenced_ids
+    ]
+
+
 def export_items(
     database_path: Path,
     catalog_path: Path,
@@ -830,7 +884,7 @@ def export_items(
     items["items"] = link_recipe_ingredients(items["items"])
     mob_groups = load_mob_groups(mob_groups_path)
     mob_wiki_details = (
-        load_mob_wiki_details(mob_wiki_path, items["items"])
+        load_mob_wiki_details(mob_wiki_path, items["items"], mob_groups)
         if Path(mob_wiki_path).is_file()
         else {}
     )
@@ -844,9 +898,25 @@ def export_items(
     items_by_id = {str(item["id"]): item for item in items["items"]}
     for item_id, detail in mob_details.items():
         if item_id in items_by_id:
-            items_by_id[item_id]["mob"] = detail
+            item = items_by_id[item_id]
+            item["mob"] = detail
+            if item.get("sprite") is None:
+                variants = detail.get("variants", [])
+                canonical_variant = next(
+                    (
+                        variant
+                        for variant in variants
+                        if isinstance(variant, dict) and variant.get("id") == item_id
+                    ),
+                    None,
+                )
+                if isinstance(canonical_variant, dict):
+                    item["sprite"] = canonical_variant.get("sprite")
     mob_audit = build_mob_boss_audit(items["items"], mob_details, mob_groups)
     items["items"], _group_rows = apply_mob_groups(items["items"], mob_groups)
+    items["items"] = filter_unreferenced_base_dependencies(
+        items["items"], catalog["entities"]
+    )
     audit_rows, excluded_ids = audit_structure_visuals(
         items["items"], catalog["entities"], wiki.structure_details
     )

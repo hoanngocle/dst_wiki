@@ -44,7 +44,7 @@
     },
     "schema_version": 2,
     "subject": {
-      "entityId": "base_game:berrybush",
+      "entityId": null,
       "iconUrl": null,
       "title": "Berry Bush",
       "url": "https://dontstarve.wiki.gg/wiki/Berry_Bush"

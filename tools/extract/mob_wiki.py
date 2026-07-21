@@ -9,6 +9,7 @@ from typing import Any, Dict, Mapping, Optional, Sequence
 
 from tools.extract.wiki_mapping import (
     build_entity_index,
+    extract_spawn_codes,
     map_page,
     normalize_identity,
 )
@@ -20,6 +21,38 @@ SOURCE_WORDS = re.compile(
     r"\b(?:spawn|spawns|spawned|summon|summoned|appears|encountered|found)\b",
     re.IGNORECASE,
 )
+MECHANIC_WORDS = re.compile(
+    r"\b(?:attack|attacks|summons?|transforms?|becomes?|immune|enraged?|"
+    r"targets?|teleports?|will not|cannot|phase|absorbing|active|inert)\b",
+    re.IGNORECASE,
+)
+INFOBOX_START = re.compile(r"(?=\{\{(?:Object|Mob)\s+Infobox\b)", re.IGNORECASE)
+IMAGE_FIELD = re.compile(r"\|\s*image\s*=\s*([^|}\n]+)", re.IGNORECASE)
+
+
+def _image_title(value: str) -> Optional[str]:
+    value = value.strip()
+    file_match = re.search(r"(?:File:)?([^\]|]+\.(?:png|jpe?g|gif|webp))", value, re.IGNORECASE)
+    if file_match is None:
+        return None
+    return file_match.group(1).strip().removeprefix("File:")
+
+
+def _variant_image_titles(page: Mapping[str, Any]) -> Dict[str, str]:
+    wikitext = page.get("wikitext")
+    if not isinstance(wikitext, str):
+        return {}
+    result: Dict[str, str] = {}
+    for chunk in INFOBOX_START.split(wikitext):
+        image_match = IMAGE_FIELD.search(chunk)
+        if image_match is None:
+            continue
+        title = _image_title(image_match.group(1))
+        if title is None:
+            continue
+        for spawn_code in extract_spawn_codes(chunk):
+            result.setdefault(spawn_code, title)
+    return dict(sorted(result.items()))
 
 
 def _summary(page: Mapping[str, Any]) -> Optional[str]:
@@ -38,14 +71,40 @@ def _summary(page: Mapping[str, Any]) -> Optional[str]:
     return None
 
 
-def _sources(page: Mapping[str, Any]) -> list[str]:
+def _intro_text(page: Mapping[str, Any]) -> str:
     plain_text = page.get("plain_text")
     if not isinstance(plain_text, str):
+        return ""
+    lines = []
+    for line in plain_text.splitlines():
+        if line.strip().casefold() == "contents":
+            break
+        lines.append(line)
+    return " ".join(" ".join(lines).split())
+
+
+def _sources(page: Mapping[str, Any]) -> list[str]:
+    intro = _intro_text(page)
+    if not intro:
         return []
     values = []
-    for sentence in SENTENCE.split(" ".join(plain_text.split())):
+    for sentence in SENTENCE.split(intro):
         sentence = sentence.strip()
         if SOURCE_WORDS.search(sentence) and 20 <= len(sentence) <= 280:
+            values.append(sentence)
+        if len(values) == 3:
+            break
+    return list(dict.fromkeys(values))
+
+
+def _mechanics(page: Mapping[str, Any]) -> list[str]:
+    intro = _intro_text(page)
+    if not intro:
+        return []
+    values = []
+    for sentence in SENTENCE.split(intro):
+        sentence = sentence.strip()
+        if MECHANIC_WORDS.search(sentence) and 20 <= len(sentence) <= 280:
             values.append(sentence)
         if len(values) == 3:
             break
@@ -62,6 +121,18 @@ def _normalize_page(page: Mapping[str, Any], method: str) -> JsonObject:
     ) if isinstance(images, list) else []
     categories = page.get("categories")
     page_id = page.get("page_id")
+    variant_images = _variant_image_titles(page)
+    primary_image = next(iter(variant_images.values()), None)
+    if primary_image is None and image_titles:
+        page_identity = normalize_identity(str(page.get("title") or ""))
+        primary_image = next(
+            (
+                title
+                for title in image_titles
+                if page_identity and page_identity in normalize_identity(title)
+            ),
+            None,
+        )
     return {
         "pageId": page_id if isinstance(page_id, int) else None,
         "title": str(page.get("title") or ""),
@@ -72,7 +143,10 @@ def _normalize_page(page: Mapping[str, Any], method: str) -> JsonObject:
             for value in categories if isinstance(value, str)
         ) if isinstance(categories, list) else [],
         "sources": _sources(page),
+        "mechanics": _mechanics(page),
         "imageTitles": image_titles,
+        "primaryImageTitle": primary_image,
+        "variantImageTitles": variant_images,
         "mappingMethod": method,
         "evidence": [
             {
@@ -84,8 +158,17 @@ def _normalize_page(page: Mapping[str, Any], method: str) -> JsonObject:
 
 
 def load_mob_wiki_details(
-    pages_path: Path, items: Sequence[JsonObject]
+    pages_path: Path,
+    items: Sequence[JsonObject],
+    groups: Sequence[JsonObject] = (),
 ) -> Dict[str, JsonObject]:
+    grouped_members = {
+        str(member["id"]): str(group["canonicalId"])
+        for group in groups
+        if isinstance(group, Mapping) and isinstance(group.get("canonicalId"), str)
+        for member in group.get("members", [])
+        if isinstance(member, Mapping) and isinstance(member.get("id"), str)
+    }
     rows = [
         {
             "namespace": str(item["id"]).split(":", 1)[0],
@@ -94,6 +177,7 @@ def load_mob_wiki_details(
         }
         for item in items
         if str(item.get("id") or "").startswith("base_game:")
+        and grouped_members.get(str(item["id"]), str(item["id"])) == str(item["id"])
     ]
     index = build_entity_index(rows)
     candidates: Dict[str, list[tuple[float, JsonObject]]] = {}

@@ -78,7 +78,7 @@
           ],
           "note": null,
           "result": {
-            "entityId": null,
+            "entityId": "base_game:cannonball_rock_item",
             "iconUrl": null,
             "title": "Cannonball",
             "url": "https://dontstarve.wiki.gg/wiki/Cannonball"

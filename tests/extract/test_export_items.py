@@ -8,6 +8,7 @@ from tools.extract.export_items import (
     apply_description_translations,
     build_item_export,
     export_items,
+    filter_unreferenced_base_dependencies,
     link_recipe_ingredients,
     load_crafting_notes,
     load_runtime_coverage,
@@ -15,6 +16,42 @@ from tools.extract.export_items import (
 
 
 class ExportItemsTests(unittest.TestCase):
+    def test_filters_acquisition_dependencies_not_referenced_by_public_details(self):
+        items = [
+            {
+                "id": "base_game:spider",
+                "namespace": "base_game",
+                "mob": {
+                    "loot": [
+                        {"item": {"id": "base_game:silk"}},
+                    ]
+                },
+                "recipe": None,
+            },
+            {
+                "id": "base_game:silk",
+                "namespace": "base_game",
+                "recipe": None,
+            },
+            {
+                "id": "base_game:orphan_drop",
+                "namespace": "base_game",
+                "recipe": None,
+            },
+        ]
+        entities = [
+            {"key": "base_game:spider", "type": "mob"},
+            {"key": "base_game:silk", "type": "dependency"},
+            {"key": "base_game:orphan_drop", "type": "dependency"},
+        ]
+
+        filtered = filter_unreferenced_base_dependencies(items, entities)
+
+        self.assertEqual(
+            [item["id"] for item in filtered],
+            ["base_game:spider", "base_game:silk"],
+        )
+
     def test_exports_base_game_inventory_dependencies_as_items(self):
         catalog = {
             "schema_version": 1,
@@ -90,6 +127,55 @@ class ExportItemsTests(unittest.TestCase):
         )
 
         self.assertEqual(items["items"], [])
+
+    def test_exports_base_game_dependencies_that_are_obtainable_rewards(self):
+        catalog = {
+            "schema_version": 1,
+            "entities": [
+                {
+                    "key": "base_game:guardian",
+                    "namespace": "base_game",
+                    "prefab_id": "guardian",
+                    "type": "boss",
+                    "is_inventory_item": False,
+                    "name": {"vi": None, "en": "Guardian"},
+                    "description": {"vi": None, "en": None},
+                    "icon_key": None,
+                    "recipes": [],
+                    "acquisition": [],
+                },
+                {
+                    "key": "base_game:guardianhat",
+                    "namespace": "base_game",
+                    "prefab_id": "guardianhat",
+                    "type": "dependency",
+                    "is_inventory_item": True,
+                    "name": {"vi": None, "en": "Guardian Hat"},
+                    "description": {"vi": None, "en": None},
+                    "icon_key": None,
+                    "recipes": [],
+                    "acquisition": [
+                        {
+                            "type": "drop",
+                            "source": "base_game:guardian",
+                            "chance": 1,
+                            "min_count": 1,
+                            "max_count": 1,
+                            "conditions": {},
+                        }
+                    ],
+                },
+            ],
+        }
+
+        items, _textures, _report = build_item_export(
+            catalog, {"schema_version": 1, "assets": []}
+        )
+
+        self.assertIn(
+            "base_game:guardianhat",
+            [item["id"] for item in items["items"]],
+        )
 
     def test_uses_map_icon_as_structure_visual_fallback(self):
         catalog = {

@@ -587,6 +587,112 @@ class ExportValidateTests(unittest.TestCase):
         self.assertEqual(report["prefab_export_coverage_errors"], [])
         self.assertNotIn("prefab_export_coverage_errors", report["hard_failures"])
 
+    def test_prefab_coverage_accepts_published_mob_loot_dependencies(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            db_path = root / "wiki.sqlite"
+            db = sqlite3.connect(db_path)
+            create_schema(db)
+            db.commit()
+            db.close()
+            scripts_path = root / "scripts.zip"
+            with ZipFile(scripts_path, "w") as archive:
+                archive.writestr("scripts/prefabs/alpha.lua", "return {}")
+            items_path = root / "items.json"
+            items_path.write_text(
+                json.dumps(
+                    {
+                        "schema_version": 6,
+                        "items": [
+                            {
+                                "id": "base_game:alpha",
+                                "prefabId": "alpha",
+                                "namespace": "base_game",
+                                "category": "mob",
+                                "mob": {
+                                    "loot": [
+                                        {
+                                            "item": {
+                                                "id": "base_game:rare_drop"
+                                            }
+                                        }
+                                    ]
+                                },
+                            },
+                            {
+                                "id": "base_game:rare_drop",
+                                "prefabId": "rare_drop",
+                                "namespace": "base_game",
+                                "category": "item",
+                            },
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            report = validate_catalog(
+                db_path,
+                prefab_scripts_path=scripts_path,
+                items_path=items_path,
+            )
+
+        self.assertEqual(report["prefab_export_coverage_errors"], [])
+        self.assertNotIn("prefab_export_coverage_errors", report["hard_failures"])
+
+    def test_prefab_coverage_requires_named_mobs_declared_in_shared_modules(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            db_path = root / "wiki.sqlite"
+            db = sqlite3.connect(db_path)
+            create_schema(db)
+            db.commit()
+            db.close()
+            scripts_path = root / "scripts.zip"
+            with ZipFile(scripts_path, "w") as archive:
+                archive.writestr(
+                    "scripts/strings.lua",
+                    'STRINGS.NAMES.SNURTLE = "Snurtle"',
+                )
+                archive.writestr(
+                    "scripts/prefabs/slurtle.lua",
+                    '''
+local function mobfn()
+  inst:AddTag("monster")
+  return inst
+end
+return Prefab("slurtle", mobfn), Prefab("snurtle", mobfn)
+''',
+                )
+            items_path = root / "items.json"
+            items_path.write_text(
+                json.dumps(
+                    {
+                        "schema_version": 6,
+                        "items": [
+                            {
+                                "id": "base_game:slurtle",
+                                "prefabId": "slurtle",
+                                "namespace": "base_game",
+                                "category": "mob",
+                            }
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            report = validate_catalog(
+                db_path,
+                prefab_scripts_path=scripts_path,
+                items_path=items_path,
+            )
+
+        self.assertEqual(
+            report["prefab_export_coverage_errors"],
+            [{"missing": ["snurtle"], "unexpected": []}],
+        )
+
     def test_prefab_coverage_accepts_audited_technical_prefab_exclusion(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

@@ -96,6 +96,15 @@ def apply_mob_groups(
         if canonical_id not in by_id:
             raise ValueError(f"missing canonical mob group member: {canonical_id}")
         canonical = by_id[canonical_id]
+        current_mob = canonical.get("mob")
+        existing_variants = (
+            current_mob.get("variants") if isinstance(current_mob, dict) else []
+        )
+        existing_variants_by_id = {
+            str(variant["id"]): variant
+            for variant in existing_variants
+            if isinstance(variant, dict) and isinstance(variant.get("id"), str)
+        }
         variants = []
         for member in group["members"]:
             member_id = member["id"]
@@ -105,7 +114,11 @@ def apply_mob_groups(
                 raise ValueError(f"missing mob group member: {member_id}")
             membership[member_id] = canonical_id
             source = by_id[member_id]
-            variants.append(_variant_reference(source, member))
+            variant = _variant_reference(source, member)
+            existing_variant = existing_variants_by_id.get(member_id)
+            if isinstance(existing_variant, dict):
+                variant["sprite"] = deepcopy(existing_variant.get("sprite"))
+            variants.append(variant)
             action = "keep" if member_id == canonical_id else "merge"
             if action == "merge":
                 hidden.add(member_id)
@@ -126,7 +139,6 @@ def apply_mob_groups(
                 }
             )
         canonical["category"] = group["category"]
-        current_mob = canonical.get("mob")
         mob = deepcopy(current_mob) if isinstance(current_mob, dict) else _empty_mob_details()
         mob["variants"] = variants
         canonical["mob"] = mob

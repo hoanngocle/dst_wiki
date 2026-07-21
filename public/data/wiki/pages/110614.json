@@ -120,7 +120,7 @@
             {
               "amount": 1,
               "item": {
-                "entityId": null,
+                "entityId": "base_game:wobster_sheller_land",
                 "iconUrl": null,
                 "title": "Wobster",
                 "url": "https://dontstarve.wiki.gg/wiki/Wobster"

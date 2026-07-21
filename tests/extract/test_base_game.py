@@ -66,11 +66,22 @@ class BaseGameTests(unittest.TestCase):
             "spark_fx": ('inst:AddTag("epic")', "effect"),
             "wilson": ("return MakePlayerCharacter('wilson', prefabs, assets, fn)", "character"),
             "deerclops": ('inst:AddTag("epic")', "boss"),
+            "malbatross": (
+                'weapon.persists = false\ninst:AddTag("epic")',
+                "boss",
+            ),
             "spider": ('inst:AddTag("monster")', "mob"),
             "hound": (
                 'inst:AddComponent("health")\n'
                 'inst:AddComponent("combat")\n'
                 'inst:AddComponent("locomotor")',
+                "mob",
+            ),
+            "waterplant": (
+                'weapon.persists = false\n'
+                'weapon:AddComponent("inventoryitem")\n'
+                'inst:AddComponent("health")\n'
+                'inst:AddComponent("combat")',
                 "mob",
             ),
             "axe": ('inst:AddComponent("inventoryitem")', "item"),
@@ -125,11 +136,16 @@ SetSharedLootTable("guardian_dead",
   {"hat", 1.00},
   {"glass", .66},
   {"glass", .66},
+  "altar_fixed",
 })
+local EXTRA_REWARDS = {"altar_a", "altar_b"}
 local function onwork(inst, worker, workleft)
   if workleft <= 0 then
     inst.components.lootdropper:DropLoot()
     SpawnPrefab("altar_piece")
+    for _, reward_name in ipairs(EXTRA_REWARDS) do
+      SpawnPrefab(reward_name)
+    end
   end
 end
 local function deadfn()
@@ -149,6 +165,36 @@ return Prefab("guardian_dead", deadfn)
         self.assertEqual(
             rewards,
             [
+                {
+                    "target": "altar_a",
+                    "chance": 1,
+                    "count": 1,
+                    "method": "mine_post_defeat",
+                    "source_prefab_id": "guardian_dead",
+                    "conditions": {
+                        "callback": "onwork",
+                        "source_table": "EXTRA_REWARDS",
+                    },
+                },
+                {
+                    "target": "altar_b",
+                    "chance": 1,
+                    "count": 1,
+                    "method": "mine_post_defeat",
+                    "source_prefab_id": "guardian_dead",
+                    "conditions": {
+                        "callback": "onwork",
+                        "source_table": "EXTRA_REWARDS",
+                    },
+                },
+                {
+                    "target": "altar_fixed",
+                    "chance": 1,
+                    "count": 1,
+                    "method": "mine_post_defeat",
+                    "source_prefab_id": "guardian_dead",
+                    "conditions": {"loot_table": "guardian_dead"},
+                },
                 {
                     "target": "altar_piece",
                     "chance": 1,
@@ -172,6 +218,56 @@ return Prefab("guardian_dead", deadfn)
                     "method": "mine_post_defeat",
                     "source_prefab_id": "guardian_dead",
                     "conditions": {"loot_table": "guardian_dead"},
+                },
+            ],
+        )
+
+    def test_extracts_conditional_loot_setup_rewards_from_named_tables(self):
+        source = '''
+local function dropLootFn(lootdropper)
+  if IsSpecialEventActive(SPECIAL_EVENTS.WINTERS_FEAST) then
+    local SELECTION = {"ornament_one", "ornament_two"}
+    local ornament = SELECTION[math.random(1, #SELECTION)]
+    lootdropper:AddChanceLoot(ornament, 1)
+  end
+end
+local function bossfn()
+  inst:AddTag("epic")
+  inst:AddComponent("lootdropper")
+  inst.components.lootdropper:SetLootSetupFn(dropLootFn)
+  return inst
+end
+return Prefab("guardian", bossfn)
+'''
+
+        rewards = extract_prefab_rewards("guardian", source)
+
+        self.assertEqual(
+            rewards,
+            [
+                {
+                    "target": "ornament_one",
+                    "chance": None,
+                    "count": 1,
+                    "method": "conditional",
+                    "source_prefab_id": "guardian",
+                    "conditions": {
+                        "callback": "dropLootFn",
+                        "event": "WINTERS_FEAST",
+                        "source_table": "SELECTION",
+                    },
+                },
+                {
+                    "target": "ornament_two",
+                    "chance": None,
+                    "count": 1,
+                    "method": "conditional",
+                    "source_prefab_id": "guardian",
+                    "conditions": {
+                        "callback": "dropLootFn",
+                        "event": "WINTERS_FEAST",
+                        "source_table": "SELECTION",
+                    },
                 },
             ],
         )
@@ -226,6 +322,49 @@ return Prefab("guardian", bossfn), Prefab("guardian_dead", deadfn)
         self.assertEqual(rewards["hat"]["conditions"]["loot_table"], "guardian_dead")
         self.assertEqual(rewards["altar_piece"]["conditions"]["callback"], "onwork")
 
+    def test_enrichment_materializes_shared_reward_targets_without_prefab_modules(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            archive = self._archive(
+                root,
+                {
+                    "scripts/recipes.lua": "",
+                    "scripts/strings.lua": 'STRINGS.NAMES.GUARDIANHAT = "Guardian Hat"',
+                    "scripts/prefabs/guardian_dead.lua": '''
+SetSharedLootTable("guardian_dead", {{"guardianhat", 1}})
+local function deadfn()
+  inst:AddComponent("workable")
+  inst.components.workable:SetWorkAction(ACTIONS.MINE)
+  inst:AddComponent("lootdropper")
+  inst.components.lootdropper:SetChanceLootTable("guardian_dead")
+  return inst
+end
+return Prefab("guardian_dead", deadfn)
+''',
+                },
+            )
+
+            bundle = enrich_prefab_modules(archive, [], root / "missing.po")
+
+        self.assertTrue(
+            any(
+                fact.kind == "entity" and fact.subject.prefab_id == "guardianhat"
+                for fact in bundle.facts
+            )
+        )
+        reward = next(
+            fact
+            for fact in bundle.facts
+            if fact.kind == "acquisition"
+            and fact.subject.prefab_id == "guardianhat"
+        )
+        self.assertEqual(reward.payload["method"], "mine_post_defeat")
+        self.assertEqual(
+            reward.payload["source"]["prefab_id"],
+            "guardian_dead",
+        )
+        self.assertEqual(reward.payload["source"]["resolution"], "resolved")
+
     def test_enriches_every_prefab_module_without_dependency_gate(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -276,6 +415,37 @@ return Prefab("spider", fn)
             entities["axe"]["requested_by"],
             [{"relation": "ingredient", "subject": "tu_tien:xd_tool"}],
         )
+
+    def test_enriches_named_mobs_declared_beside_the_module_prefab(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            archive = self._archive(
+                root,
+                {
+                    "scripts/recipes.lua": "",
+                    "scripts/strings.lua": '''
+STRINGS.NAMES.SLURTLE = "Slurtle"
+STRINGS.NAMES.SNURTLE = "Snurtle"
+''',
+                    "scripts/prefabs/slurtle.lua": '''
+local function mobfn()
+  inst:AddTag("monster")
+  return inst
+end
+return Prefab("slurtle", mobfn), Prefab("snurtle", mobfn)
+''',
+                },
+            )
+
+            bundle = enrich_prefab_modules(archive, [], root / "missing.po")
+
+        entities = {
+            fact.subject.prefab_id: fact.payload["entity_type"]
+            for fact in bundle.facts
+            if fact.kind == "entity"
+        }
+        self.assertEqual(entities["slurtle"], "mob")
+        self.assertEqual(entities["snurtle"], "mob")
 
     def test_script_index_reads_the_archive_through_one_zip_handle(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -553,6 +723,17 @@ STRINGS = {
                 root,
                 {
                     "scripts/recipes.lua": "",
+                    "scripts/tuning.lua": """
+return {
+  TEST_DAMAGE = 68,
+  TEST_ABSORPTION = .8,
+  TEST_HEALTH = 1000,
+  TEST_ATTACK = 80,
+  TEST_PLANAR_DAMAGE = 20,
+  TEST_RUN_SPEED = 6,
+  TEST_SANITY_AURA = 25,
+}
+""",
                     "scripts/strings.lua": """
 -- NAMES = { WRONG = "Comment must not become a registry" }
 STRINGS.NAMES.TESTITEM = "Test Item"
@@ -562,6 +743,14 @@ local function fn()
   inst.components.weapon:SetDamage(TUNING.TEST_DAMAGE)
   inst.components.armor:InitCondition(100, TUNING.TEST_ABSORPTION)
   inst.components.finiteuses:SetMaxUses(25)
+  inst.components.health:SetMaxHealth(TUNING.TEST_HEALTH)
+  inst.components.combat:SetDefaultDamage(TUNING.TEST_ATTACK)
+  inst.components.combat:SetAttackPeriod(2)
+  inst.components.combat:SetRange(4, 6)
+  inst.components.planardamage:SetBaseDamage(TUNING.TEST_PLANAR_DAMAGE)
+  inst.components.locomotor.walkspeed = 3
+  inst.components.locomotor.runspeed = TUNING.TEST_RUN_SPEED
+  inst.components.sanityaura.aura = -TUNING.TEST_SANITY_AURA
   inst.components.edible.healthvalue = -3
   inst.components.edible.hungervalue = TUNING.TEST_HUNGER
   inst.components.edible.sanityvalue = 2.5
@@ -586,9 +775,18 @@ return Prefab("testitem", fn)
             if fact.kind == "stat"
         }
         self.assertEqual(stats["damage"]["source_expression"], "TUNING.TEST_DAMAGE")
-        self.assertNotIn("value", stats["damage"])
+        self.assertEqual(stats["damage"]["value"], 68)
         self.assertEqual(stats["armor_condition"]["value"], 100)
         self.assertEqual(stats["max_uses"]["value"], 25)
+        self.assertEqual(stats["max_health"]["value"], 1000)
+        self.assertEqual(stats["attack_damage"]["value"], 80)
+        self.assertEqual(stats["attack_period"]["value"], 2)
+        self.assertEqual(stats["attack_range"]["value"], 4)
+        self.assertEqual(stats["hit_range"]["value"], 6)
+        self.assertEqual(stats["planar_damage"]["value"], 20)
+        self.assertEqual(stats["walk_speed"]["value"], 3)
+        self.assertEqual(stats["run_speed"]["value"], 6)
+        self.assertEqual(stats["sanity_aura"]["value"], -25)
         self.assertEqual(stats["health"]["value"], -3)
         self.assertEqual(stats["sanity"]["value"], 2.5)
         self.assertTrue(
@@ -768,6 +966,36 @@ return Prefab("unrelated", unrelatedfn)
                 if fact.kind in {"entity", "acquisition"}
             },
         )
+
+    def test_full_enrichment_resolves_call_based_reward_sources(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            archive = self._archive(
+                root,
+                {
+                    "scripts/recipes.lua": "",
+                    "scripts/strings.lua": 'STRINGS.NAMES.SPIDER = "Spider"',
+                    "scripts/prefabs/silk.lua": 'return Prefab("silk", silkfn)',
+                    "scripts/prefabs/spider.lua": '''
+local function spiderfn()
+  inst:AddTag("monster")
+  inst.components.lootdropper:AddChanceLoot("silk", .25)
+  return inst
+end
+return Prefab("spider", spiderfn)
+''',
+                },
+            )
+
+            bundle = enrich_prefab_modules(archive, [], root / "missing.po")
+
+        reward = next(
+            fact
+            for fact in bundle.facts
+            if fact.kind == "acquisition" and fact.subject.prefab_id == "silk"
+        )
+        self.assertEqual(reward.payload["source"]["prefab_id"], "spider")
+        self.assertEqual(reward.payload["source"]["resolution"], "resolved")
 
     def test_string_and_edible_assignments_ignore_comments_and_strings(self):
         with tempfile.TemporaryDirectory() as tmp:
