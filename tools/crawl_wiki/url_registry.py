@@ -79,6 +79,13 @@ class UrlClaim:
         return replace(self, record=replace(self.record, worker_id=worker_id))
 
 
+@dataclass(frozen=True)
+class RegistryAudit:
+    url: str
+    status: str
+    issue: Optional[str]
+
+
 class UrlRegistry:
     def __init__(
         self,
@@ -241,6 +248,88 @@ class UrlRegistry:
             raise UrlRegistryError("shared artifact must contain an object")
         return payload
 
+    def audit(self) -> Tuple[RegistryAudit, ...]:
+        with self._locked():
+            payload = self._read()
+            return tuple(self._audit_row(row) for row in payload["items"])
+
+    def initialize_from_snapshot(self, snapshot: Path) -> int:
+        snapshot_path = Path(snapshot)
+        with self._locked():
+            if self.path.exists():
+                raise UrlRegistryError("live URL registry already exists")
+            source = self._read_path(snapshot_path, allow_missing=False)
+            now = self.clock()
+            imported = []
+            for row in source["items"]:
+                record = self._to_record(row)
+                canonical_url = normalize_crawler_url(
+                    record.url,
+                    self.allowed_origin,
+                )
+                if canonical_url != record.url:
+                    raise UrlRegistryError("snapshot URL is not canonical")
+                categories = [self._category_key(value) for value in record.categories]
+                if len(set(categories)) != len(categories):
+                    raise UrlRegistryError("snapshot categories contain duplicates")
+                imported.append(
+                    {
+                        "url": canonical_url,
+                        "status": "New",
+                        "categories": sorted(
+                            categories,
+                            key=lambda value: (value.casefold(), value),
+                        ),
+                        "workerId": None,
+                        "attempts": record.attempts,
+                        "createdAt": record.created_at,
+                        "updatedAt": now,
+                        "claimedAt": None,
+                        "completedAt": None,
+                        "artifactPath": None,
+                        "artifactSha256": None,
+                        "lastError": "imported from snapshot without raw artifact",
+                    }
+                )
+            self._write({"schemaVersion": SCHEMA_VERSION, "items": imported})
+            return len(imported)
+
+    def repair_invalid_done(self) -> Tuple[UrlRecord, ...]:
+        with self._locked():
+            payload = self._read()
+            repaired = []
+            for row in payload["items"]:
+                audit = self._audit_row(row)
+                if row["status"] != "Done" or audit.issue is None:
+                    continue
+                row.update(
+                    {
+                        "status": "New",
+                        "workerId": None,
+                        "updatedAt": self.clock(),
+                        "claimedAt": None,
+                        "completedAt": None,
+                        "artifactPath": None,
+                        "artifactSha256": None,
+                        "lastError": "requeued invalid Done: {}".format(
+                            audit.issue
+                        ),
+                    }
+                )
+                repaired.append(self._to_record(row))
+            if repaired:
+                self._write(payload)
+            return tuple(repaired)
+
+    def export_snapshot(self, target: Path) -> int:
+        with self._locked():
+            payload = self._read()
+            payload["items"].sort(
+                key=lambda row: (row["url"].casefold(), row["url"])
+            )
+            self._atomic_json(Path(target), payload)
+            return len(payload["items"])
+
     @contextmanager
     def _locked(self) -> Iterator[None]:
         self.lock_path.parent.mkdir(parents=True, exist_ok=True)
@@ -252,10 +341,15 @@ class UrlRegistry:
                 fcntl.flock(lock.fileno(), fcntl.LOCK_UN)
 
     def _read(self) -> Dict[str, Any]:
-        if not self.path.exists():
+        return self._read_path(self.path, allow_missing=True)
+
+    def _read_path(self, path: Path, allow_missing: bool) -> Dict[str, Any]:
+        if not path.exists():
+            if not allow_missing:
+                raise UrlRegistryError("URL registry snapshot does not exist")
             return {"schemaVersion": SCHEMA_VERSION, "items": []}
         try:
-            payload = json.loads(self.path.read_text(encoding="utf-8"))
+            payload = json.loads(path.read_text(encoding="utf-8"))
         except (OSError, json.JSONDecodeError) as error:
             raise UrlRegistryError("URL registry is not valid JSON") from error
         if not isinstance(payload, dict) or payload.get("schemaVersion") != SCHEMA_VERSION:
@@ -270,6 +364,67 @@ class UrlRegistry:
                 raise UrlRegistryError("URL registry contains a duplicate URL")
             seen.add(record.url)
         return payload
+
+    def _audit_row(self, row: Mapping[str, Any]) -> RegistryAudit:
+        record = self._to_record(row)
+        if record.status == "New":
+            invalid = (
+                record.worker_id is not None
+                or record.completed_at is not None
+                or record.artifact_path is not None
+                or record.artifact_sha256 is not None
+            )
+            return RegistryAudit(
+                record.url,
+                record.status,
+                "invalid_state" if invalid else None,
+            )
+        if record.status == "Doing":
+            invalid = (
+                not record.worker_id
+                or not record.claimed_at
+                or record.completed_at is not None
+                or record.artifact_path is not None
+                or record.artifact_sha256 is not None
+            )
+            return RegistryAudit(
+                record.url,
+                record.status,
+                "invalid_state" if invalid else None,
+            )
+
+        if (
+            record.worker_id is not None
+            or not record.completed_at
+            or not record.artifact_path
+            or not record.artifact_sha256
+        ):
+            return RegistryAudit(record.url, record.status, "invalid_state")
+
+        relative = Path(record.artifact_path)
+        if relative.is_absolute():
+            return RegistryAudit(record.url, record.status, "invalid_state")
+        root = self.path.parent.resolve()
+        artifact = (self.path.parent / relative).resolve()
+        try:
+            artifact.relative_to(root)
+        except ValueError:
+            return RegistryAudit(record.url, record.status, "invalid_state")
+        if not artifact.is_file():
+            return RegistryAudit(record.url, record.status, "missing")
+        try:
+            raw = artifact.read_bytes()
+        except OSError:
+            return RegistryAudit(record.url, record.status, "missing")
+        if hashlib.sha256(raw).hexdigest() != record.artifact_sha256:
+            return RegistryAudit(record.url, record.status, "checksum_error")
+        try:
+            artifact_payload = json.loads(raw.decode("utf-8"))
+        except (UnicodeDecodeError, json.JSONDecodeError):
+            return RegistryAudit(record.url, record.status, "invalid_json")
+        if not isinstance(artifact_payload, dict):
+            return RegistryAudit(record.url, record.status, "invalid_json")
+        return RegistryAudit(record.url, record.status, None)
 
     def _write(self, payload: Dict[str, Any]) -> None:
         payload["items"].sort(key=lambda row: (row["url"].casefold(), row["url"]))

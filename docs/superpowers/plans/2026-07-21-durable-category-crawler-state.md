@@ -32,7 +32,7 @@
 - Produces: `resolve_category_state_paths(cwd: Path, registry: Optional[Path] = None, cache: Optional[Path] = None, runner: Callable = subprocess.run) -> CategoryStatePaths`.
 - Consumed by: crawler CLI and state CLI in later tasks.
 
-- [ ] **Step 1: Write failing resolver tests**
+- [x] **Step 1: Write failing resolver tests**
 
 ```python
 class StatePathTests(unittest.TestCase):
@@ -60,13 +60,13 @@ class StatePathTests(unittest.TestCase):
             resolve_category_state_paths(Path.cwd(), registry=Path("one.json"))
 ```
 
-- [ ] **Step 2: Run resolver tests and verify RED**
+- [x] **Step 2: Run resolver tests and verify RED**
 
 Run: `python3 -m unittest tests.crawl_wiki.test_state_paths -v`
 
 Expected: FAIL because `tools.crawl_wiki.state_paths` does not exist.
 
-- [ ] **Step 3: Implement resolver**
+- [x] **Step 3: Implement resolver**
 
 ```python
 @dataclass(frozen=True)
@@ -95,13 +95,13 @@ def resolve_category_state_paths(cwd, registry=None, cache=None, runner=subproce
     return CategoryStatePaths(root / "fandom-url-registry.json", root / "shared-pages")
 ```
 
-- [ ] **Step 4: Run resolver tests and verify GREEN**
+- [x] **Step 4: Run resolver tests and verify GREEN**
 
 Run: `python3 -m unittest tests.crawl_wiki.test_state_paths -v`
 
 Expected: all resolver tests pass.
 
-- [ ] **Step 5: Commit Task 1**
+- [x] **Step 5: Commit Task 1**
 
 ```bash
 git add tools/crawl_wiki/state_paths.py tests/crawl_wiki/test_state_paths.py docs/superpowers/plans/2026-07-21-durable-category-crawler-state.md
@@ -122,7 +122,7 @@ git commit -m "feat: resolve shared category crawler state"
 - Produces: `repair_invalid_done() -> Tuple[UrlRecord, ...]`.
 - Produces: `export_snapshot(target: Path) -> int`.
 
-- [ ] **Step 1: Add failing registry lifecycle tests**
+- [x] **Step 1: Add failing registry lifecycle tests**
 
 ```python
 def test_audit_and_repair_missing_done_artifact(self):
@@ -149,13 +149,13 @@ def test_initialize_snapshot_imports_rows_as_new(self):
 
 Also cover checksum mismatch, invalid JSON/object, refusal to initialize over an existing live registry, `Doing` preservation during repair, and stable snapshot export.
 
-- [ ] **Step 2: Run registry tests and verify RED**
+- [x] **Step 2: Run registry tests and verify RED**
 
 Run: `python3 -m unittest tests.crawl_wiki.test_url_registry -v`
 
 Expected: FAIL because lifecycle methods do not exist.
 
-- [ ] **Step 3: Implement audit and lifecycle operations**
+- [x] **Step 3: Implement audit and lifecycle operations**
 
 ```python
 @dataclass(frozen=True)
@@ -192,7 +192,7 @@ def repair_invalid_done(self):
 
 Initialization must validate the snapshot schema/rows, preserve URL/categories/attempts/createdAt, set every imported row to `New`, clear owner/timestamps/artifact metadata and never overwrite an existing live registry. Snapshot export must copy the live payload atomically without rewriting statuses.
 
-- [ ] **Step 4: Run registry tests and verify GREEN**
+- [x] **Step 4: Run registry tests and verify GREEN**
 
 Run: `python3 -m unittest tests.crawl_wiki.test_url_registry -v`
 
