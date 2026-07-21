@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "groups": [
+    {
+      "canonicalId": "base_game:alterguardian_phase3",
+      "category": "boss",
+      "members": [
+        {
+          "id": "base_game:alterguardian_phase1",
+          "role": "phase",
+          "order": 1
+        },
+        {
+          "id": "base_game:alterguardian_phase2",
+          "role": "phase",
+          "order": 2
+        },
+        {
+          "id": "base_game:alterguardian_phase3",
+          "role": "phase",
+          "order": 3
+        },
+        {
+          "id": "base_game:alterguardian_phase3dead",
+          "role": "post_defeat",
+          "order": 4
+        }
+      ]
+    }
+  ]
+}
