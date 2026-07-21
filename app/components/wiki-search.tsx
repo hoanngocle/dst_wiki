@@ -4,7 +4,7 @@ import { MagnifyingGlass, X } from "@phosphor-icons/react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { ReactNode } from "react";
 
-import { ItemDetailModal } from "@/app/components/item-detail-modal";
+import { ItemDetailPeek } from "@/app/components/item-detail-peek";
 import { ItemResult } from "@/app/components/item-result";
 import type {
   ItemListEntry,
@@ -307,7 +307,7 @@ export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
         </div>
       )}
       {selectedItem ? (
-        <ItemDetailModal
+        <ItemDetailPeek
           item={selectedItem}
           itemsById={itemsById}
           onSelectItem={setSelectedItem}

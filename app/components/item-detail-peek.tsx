@@ -117,7 +117,7 @@ function ItemSummary({
   );
 }
 
-export function ItemDetailModal({
+export function ItemDetailPeek({
   item,
   itemsById,
   onSelectItem,
@@ -130,7 +130,9 @@ export function ItemDetailModal({
 }) {
   const titleId = useId();
   const dialogRef = useRef<HTMLElement>(null);
+  const bodyRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const onCloseRef = useRef(onClose);
   const sourceLabel = item.namespace === "tu_tien" ? "Tu Tiên" : "DST";
   const realPrefab = hasRealPrefab(item);
   const category = categoryLabel[item.category];
@@ -164,6 +166,10 @@ export function ItemDetailModal({
   ) : null;
 
   useEffect(() => {
+    onCloseRef.current = onClose;
+  }, [onClose]);
+
+  useEffect(() => {
     const previouslyFocused = document.activeElement as HTMLElement | null;
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -172,7 +178,7 @@ export function ItemDetailModal({
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
         event.preventDefault();
-        onClose();
+        onCloseRef.current();
         return;
       }
 
@@ -200,11 +206,21 @@ export function ItemDetailModal({
       document.body.style.overflow = previousOverflow;
       if (previouslyFocused?.isConnected) previouslyFocused.focus();
     };
-  }, [onClose]);
+  }, []);
+
+  useEffect(() => {
+    const body = bodyRef.current;
+    if (!body) return;
+    if (typeof body.scrollTo === "function") {
+      body.scrollTo({ top: 0, behavior: "auto" });
+    } else {
+      body.scrollTop = 0;
+    }
+  }, [item.id]);
 
   return (
     <div
-      className="fixed inset-0 z-50 flex cursor-pointer items-end justify-center bg-[#0f1d30]/55 p-0 backdrop-blur-[2px] sm:items-center sm:p-6"
+      className="fixed inset-0 z-50 bg-[#0f1d30]/55 backdrop-blur-[2px]"
       onClick={(event) => {
         if (event.target === event.currentTarget) onClose();
       }}
@@ -214,9 +230,11 @@ export function ItemDetailModal({
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
-        className="max-h-[92vh] w-full cursor-default overflow-y-auto overscroll-contain rounded-t-3xl border border-[#c8d3df] bg-[#edf1f5] shadow-[0_28px_80px_rgba(15,29,48,0.32)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:max-w-4xl sm:rounded-3xl"
+        data-placement="right"
+        className="ml-auto h-dvh w-full overflow-hidden border-l border-[#c8d3df] bg-[#edf1f5] shadow-[-28px_0_80px_rgba(15,29,48,0.28)] motion-safe:animate-[atlas-peek-in_180ms_ease-out] sm:max-w-[560px] sm:rounded-l-3xl"
       >
-        <div className="sticky top-0 z-10 flex items-start gap-4 border-b border-[#d5dde6] bg-[#f8fafc]/95 p-5 backdrop-blur sm:p-6">
+        <div className="flex h-full flex-col">
+        <header className="shrink-0 flex items-start gap-4 border-b border-[#d5dde6] bg-[#f8fafc] p-5 sm:p-6">
           <GameSprite
             sprite={item.sprite}
             size={88}
@@ -242,6 +260,16 @@ export function ItemDetailModal({
               <span className="rounded-full border border-[#b9cce8] bg-[#e9f1fb] px-2.5 py-1 text-[#2e5fb3]">
                 {sourceLabel}
               </span>
+              {item.mob?.contract === "category"
+                ? item.mob.classification.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full border border-[#d7c5a5] bg-[#f6eee0] px-2.5 py-1 text-[#765c31]"
+                    >
+                      {tag}
+                    </span>
+                  ))
+                : null}
             </div>
           </div>
           <button
@@ -253,8 +281,13 @@ export function ItemDetailModal({
           >
             <X aria-hidden="true" size={20} />
           </button>
-        </div>
+        </header>
 
+        <div
+          ref={bodyRef}
+          data-testid="item-detail-peek-body"
+          className="min-h-0 flex-1 overflow-y-auto overscroll-contain [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        >
         <div className="space-y-4 p-5 sm:p-6">
           {item.wiki ? (
             <WikiArticle
@@ -272,6 +305,8 @@ export function ItemDetailModal({
               {craftingContent}
             </>
           )}
+        </div>
+        </div>
         </div>
       </section>
     </div>

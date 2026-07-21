@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 import type { ItemListEntry } from "@/app/lib/item-catalog";
-import { ItemDetailModal } from "./item-detail-modal";
+import { ItemDetailPeek } from "./item-detail-peek";
 
 const item: ItemListEntry = {
   id: "base_game:goldnugget",
@@ -143,7 +143,7 @@ const tuTienItem: ItemListEntry = {
   },
 };
 
-function modalProps(selectedItem: ItemListEntry) {
+function peekProps(selectedItem: ItemListEntry) {
   return {
     item: selectedItem,
     itemsById: new Map([[nightLight.id, nightLight]]),
@@ -156,10 +156,10 @@ afterEach(() => {
   vi.unstubAllGlobals();
 });
 
-describe("ItemDetailModal", () => {
+describe("ItemDetailPeek", () => {
   it("renders the Đan Dược category label", () => {
     render(
-      <ItemDetailModal
+      <ItemDetailPeek
         item={{ ...item, category: "pill", name: "Tụ Khí Hoàn" }}
         itemsById={new Map()}
         onClose={() => undefined}
@@ -171,16 +171,15 @@ describe("ItemDetailModal", () => {
   });
 
   it("renders full item details and focuses the close button", () => {
-    render(<ItemDetailModal {...modalProps(item)} />);
+    render(<ItemDetailPeek {...peekProps(item)} />);
 
     const dialog = screen.getByRole("dialog", { name: "Vàng" });
     expect(dialog).toBeDefined();
-    expect(dialog.className).toContain("overflow-y-auto");
-    expect(dialog.className).toContain("max-h-[92vh]");
-    expect(dialog.className).toContain("overscroll-contain");
-    expect(dialog.className).toContain("[scrollbar-width:none]");
-    expect(dialog.className).toContain("[&::-webkit-scrollbar]:hidden");
-    expect(dialog.parentElement?.className).not.toContain("overflow-y-auto");
+    expect(dialog.getAttribute("data-placement")).toBe("right");
+    expect(dialog.className).toContain("h-dvh");
+    const body = screen.getByTestId("item-detail-peek-body");
+    expect(body.className).toContain("overflow-y-auto");
+    expect(body.className).toContain("overscroll-contain");
     const englishName = screen.getByText("Gold Nugget");
     const prefabCode = screen.getByText("goldnugget");
     expect(prefabCode.tagName).toBe("CODE");
@@ -212,7 +211,7 @@ describe("ItemDetailModal", () => {
 
   it("closes from the close button and Escape", () => {
     const onClose = vi.fn();
-    render(<ItemDetailModal {...modalProps(item)} onClose={onClose} />);
+    render(<ItemDetailPeek {...peekProps(item)} onClose={onClose} />);
 
     fireEvent.click(screen.getByRole("button", { name: "Đóng chi tiết" }));
     fireEvent.keyDown(document, { key: "Escape" });
@@ -222,7 +221,7 @@ describe("ItemDetailModal", () => {
 
   it("closes only when the backdrop itself is clicked", () => {
     const onClose = vi.fn();
-    render(<ItemDetailModal {...modalProps(item)} onClose={onClose} />);
+    render(<ItemDetailPeek {...peekProps(item)} onClose={onClose} />);
 
     const dialog = screen.getByRole("dialog", { name: "Vàng" });
     const backdrop = dialog.parentElement as HTMLElement;
@@ -233,8 +232,8 @@ describe("ItemDetailModal", () => {
     expect(onClose).toHaveBeenCalledOnce();
   });
 
-  it("keeps keyboard focus inside the modal", () => {
-    render(<ItemDetailModal {...modalProps(item)} />);
+  it("keeps keyboard focus inside the peek", () => {
+    render(<ItemDetailPeek {...peekProps(item)} />);
 
     const close = screen.getByRole("button", { name: "Đóng chi tiết" });
     fireEvent.keyDown(document, { key: "Tab" });
@@ -250,7 +249,7 @@ describe("ItemDetailModal", () => {
     opener.focus();
     const previousOverflow = document.body.style.overflow;
 
-    const { unmount } = render(<ItemDetailModal {...modalProps(item)} />);
+    const { unmount } = render(<ItemDetailPeek {...peekProps(item)} />);
     expect(document.body.style.overflow).toBe("hidden");
 
     unmount();
@@ -259,10 +258,29 @@ describe("ItemDetailModal", () => {
     opener.remove();
   });
 
+  it("keeps the peek open and scrolls its body to top when item changes", () => {
+    const { rerender } = render(<ItemDetailPeek {...peekProps(item)} />);
+    const body = screen.getByTestId("item-detail-peek-body");
+    const scrollTo = vi.fn();
+    Object.defineProperty(body, "scrollTo", {
+      configurable: true,
+      value: scrollTo,
+    });
+
+    rerender(
+      <ItemDetailPeek
+        {...peekProps({ ...item, id: "base_game:bunnyman", name: "Bunnyman" })}
+      />,
+    );
+
+    expect(screen.getByRole("dialog", { name: "Bunnyman" })).toBeDefined();
+    expect(scrollTo).toHaveBeenCalledWith({ top: 0, behavior: "auto" });
+  });
+
   it("omits the recipe panel when no recipe exists", () => {
     render(
-      <ItemDetailModal
-        {...modalProps(item)}
+      <ItemDetailPeek
+        {...peekProps(item)}
         item={{ ...item, description: null, recipe: null }}
       />,
     );
@@ -272,7 +290,7 @@ describe("ItemDetailModal", () => {
   });
 
   it("always shows all three structured sections for Tu Tiên items", () => {
-    render(<ItemDetailModal {...modalProps(tuTienItem)} />);
+    render(<ItemDetailPeek {...peekProps(tuTienItem)} />);
 
     expect(screen.getByRole("heading", { name: "Công thức" })).toBeDefined();
     expect(screen.getByRole("heading", { name: "Usage" })).toBeDefined();
@@ -281,7 +299,7 @@ describe("ItemDetailModal", () => {
   });
 
   it("uses the complete structure renderer for structure records", () => {
-    render(<ItemDetailModal {...modalProps(nightLight)} />);
+    render(<ItemDetailPeek {...peekProps(nightLight)} />);
 
     expect(screen.getByRole("heading", { name: "Xuất hiện" })).toBeDefined();
     expect(
@@ -292,8 +310,8 @@ describe("ItemDetailModal", () => {
 
   it("shows a crafting note inside the runtime recipe panel", () => {
     render(
-      <ItemDetailModal
-        {...modalProps(item)}
+      <ItemDetailPeek
+        {...peekProps(item)}
         item={{ ...item, craftingNote: "Rèn bằng linh lực tinh khiết." }}
       />,
     );
@@ -304,8 +322,8 @@ describe("ItemDetailModal", () => {
 
   it("shows a note-only crafting panel without inventing ingredients", () => {
     render(
-      <ItemDetailModal
-        {...modalProps(item)}
+      <ItemDetailPeek
+        {...peekProps(item)}
         item={{
           ...item,
           recipe: null,
@@ -344,7 +362,7 @@ describe("ItemDetailModal", () => {
       }),
     );
 
-    render(<ItemDetailModal {...modalProps(wikiItem)} />);
+    render(<ItemDetailPeek {...peekProps(wikiItem)} />);
 
     expect(screen.queryByText("Wiki page")).toBeNull();
     expect(screen.queryByText("100736")).toBeNull();
@@ -386,8 +404,8 @@ describe("ItemDetailModal", () => {
     );
 
     render(
-      <ItemDetailModal
-        {...modalProps({ ...wikiItem, recipe: item.recipe })}
+      <ItemDetailPeek
+        {...peekProps({ ...wikiItem, recipe: item.recipe })}
       />,
     );
 
@@ -471,8 +489,8 @@ describe("ItemDetailModal", () => {
     );
 
     render(
-      <ItemDetailModal
-        {...modalProps(wikiItem)}
+      <ItemDetailPeek
+        {...peekProps(wikiItem)}
         onSelectItem={onSelectItem}
       />,
     );

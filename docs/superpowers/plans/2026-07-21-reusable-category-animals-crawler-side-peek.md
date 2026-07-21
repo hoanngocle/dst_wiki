@@ -1041,7 +1041,7 @@ git commit -m "feat: render shared structured mob details"
 - Produces: `ItemDetailPeek({ item, itemsById, onSelectItem, onClose })`.
 - Preserves: `WikiSearch` owns `selectedItem`; related-item selection replaces content without closing.
 
-- [ ] **Step 1: Write failing side-peek semantics and focus tests**
+- [x] **Step 1: Write failing side-peek semantics and focus tests**
 
 ```tsx
 it("renders a right-edge full-height dialog and restores focus", () => {
@@ -1066,7 +1066,7 @@ it("closes through Escape and overlay but not panel clicks", () => {
 });
 ```
 
-- [ ] **Step 2: Write failing content replacement and scroll-reset tests**
+- [x] **Step 2: Write failing content replacement and scroll-reset tests**
 
 ```tsx
 it("keeps the peek open and scrolls its body to top when item changes", () => {
@@ -1079,7 +1079,7 @@ it("keeps the peek open and scrolls its body to top when item changes", () => {
 });
 ```
 
-- [ ] **Step 3: Run frontend tests and verify RED**
+- [x] **Step 3: Run frontend tests and verify RED**
 
 Run:
 
@@ -1089,7 +1089,7 @@ npm test -- app/components/item-detail-peek.test.tsx app/components/wiki-search.
 
 Expected: `ItemDetailPeek` does not exist and WikiSearch still renders the modal.
 
-- [ ] **Step 4: Move the detail shell and implement drawer layout**
+- [x] **Step 4: Move the detail shell and implement drawer layout**
 
 Move existing summary/crafting/wiki routing into `item-detail-peek.tsx`. Keep
 the focus trap, body scroll lock, Escape handling, overlay click, and focus
@@ -1117,7 +1117,7 @@ Use `useEffect(..., [item.id])` to scroll the body to top. The header displays
 Mob and Animals chips from the typed Mob contract. The panel is full width on
 mobile and max 560px on `sm` and above.
 
-- [ ] **Step 5: Add the shared keyframe and route WikiSearch**
+- [x] **Step 5: Add the shared keyframe and route WikiSearch**
 
 Add:
 
@@ -1132,7 +1132,7 @@ Replace the `ItemDetailModal` import/render with `ItemDetailPeek`. Delete the
 old component and test after all imports move. Do not add another client
 boundary; `wiki-search.tsx` already begins with `"use client"`.
 
-- [ ] **Step 6: Run checks and commit Task 6**
+- [x] **Step 6: Run checks and commit Task 6**
 
 Run:
 

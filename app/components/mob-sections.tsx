@@ -9,7 +9,7 @@ import type {
   MobRewardMethod,
   MobVariant,
 } from "@/app/lib/item-catalog";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { GameSprite } from "./game-sprite";
 
 const METHOD_LABEL: Record<MobRewardMethod, string> = {
@@ -323,9 +323,6 @@ function CategoryMobSections({
   titleId: string;
 }) {
   const [selectedCode, setSelectedCode] = useState(details.identity.primaryCode);
-  useEffect(() => {
-    setSelectedCode(details.identity.primaryCode);
-  }, [details.identity.primaryCode]);
 
   const traits = visibleForVariant(details.traits.values, selectedCode);
   const loot = visibleForVariant(details.loot.values, selectedCode);
@@ -469,6 +466,7 @@ export function MobSections({
   if (item.mob.contract === "category") {
     return (
       <CategoryMobSections
+        key={item.id}
         details={item.mob}
         itemsById={itemsById}
         onSelectItem={onSelectItem}
