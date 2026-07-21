@@ -3,10 +3,11 @@
 ## Objective
 
 Build the first reusable Fandom category-ingestion flow for the DST wiki. The
-first configured category is `Category:Animals`: discover and publish exactly
-the 34 direct Mob pages, ignore all subcategories, normalize only Don't Starve
-Together data, merge records by verified prefab code, summarize meaningful page
-notes in Vietnamese, and replace the centered item modal with a right-side peek.
+first configured category is `Category:Animals`: discover exactly 34 direct
+namespace-0 pages, exclude six reviewed non-DST exclusives before detail crawl,
+publish the remaining 28 DST Mob pages, ignore all subcategories, merge records
+by verified prefab code, summarize meaningful page notes in Vietnamese, and
+replace the centered item modal with a right-side peek.
 
 The category framework must be reusable. Future category work should add a
 configuration and, when necessary, an item-type normalizer instead of copying
@@ -28,11 +29,17 @@ value.
 ## Confirmed Scope
 
 - Source: `https://dontstarve.fandom.com/wiki/Category:Animals`.
-- Publish 34 direct namespace-0 Mob pages.
+- Discover exactly 34 direct namespace-0 pages as the reviewed category
+  membership baseline.
+- Exclude `Blue Whale`, `White Whale`, and `Wildbore` as Shipwrecked-only, and
+  `Peagawk`, `Pog`, and `Glowfly` as Hamlet-only, before requesting page detail
+  or images.
+- Crawl, normalize, and publish exactly the remaining 28 DST Mob pages.
 - Exclude namespace-14 category entries and never recurse into category children.
-- Retain discovery evidence for excluded category entries in the audit.
+- Retain discovery evidence for both non-DST pages and excluded category entries
+  in the audit.
 - Normalize and display DST data only.
-- Represent the 34 canonical records at Wiki-page level while supporting one or
+- Represent the 28 canonical records at Wiki-page level while supporting one or
   more verified prefab codes and variants per page.
 - Reuse the existing Python crawler, generated catalog, local asset, and React
   application architecture.
@@ -110,8 +117,17 @@ Animals is represented by a reviewed configuration equivalent to:
   "key": "animals",
   "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Animals",
   "categoryTitle": "Category:Animals",
-  "expectedPages": 34,
+  "expectedDirectPages": 34,
+  "expectedPublishedPages": 28,
   "allowedNamespaces": [0],
+  "excludedTitles": {
+    "Blue Whale": "non_dst:shipwrecked",
+    "White Whale": "non_dst:shipwrecked",
+    "Wildbore": "non_dst:shipwrecked",
+    "Peagawk": "non_dst:hamlet",
+    "Pog": "non_dst:hamlet",
+    "Glowfly": "non_dst:hamlet"
+  },
   "game": "DST",
   "itemType": "mob",
   "tags": ["Animals"]
@@ -119,9 +135,11 @@ Animals is represented by a reviewed configuration equivalent to:
 ```
 
 `key` determines isolated crawl/output state. `categoryTitle` is passed to the
-MediaWiki API. `allowedNamespaces` prevents category recursion. `expectedPages`
-is a reviewed drift guard, not a pagination limit. `game` selects version
-filtering, and `itemType` routes raw pages to a normalizer.
+MediaWiki API. `allowedNamespaces` prevents category recursion.
+`expectedDirectPages` guards the 34-page namespace-0 membership and is not a
+pagination limit. `excludedTitles` is the reviewed non-DST exclusion set, and
+`expectedPublishedPages` guards the 28-page queue/output after those exclusions.
+`game` selects version filtering, and `itemType` routes raw pages to a normalizer.
 
 Every future category uses separate checkpoint and output state. Two category
 runs must not share pending queues or silently overwrite one another's raw
@@ -156,16 +174,20 @@ files, but one category run never rewrites another category's audit.
 Discovery requests all direct category members and follows MediaWiki
 continuation tokens until exhausted. It records every returned member, then:
 
-1. accepts only allowed namespaces;
-2. normalizes canonical titles and URLs;
-3. resolves redirects;
-4. deduplicates by resolved page ID and canonical URL;
-5. records excluded category members without visiting them;
-6. compares the accepted direct-page set with the reviewed expected count.
+1. records and excludes disallowed namespaces without visiting them;
+2. normalizes namespace-0 titles and URLs;
+3. compares the direct namespace-0 membership with the reviewed 34-page set;
+4. records the six configured non-DST titles and excludes them before any detail
+   or image request;
+5. resolves redirects for the remaining DST candidates;
+6. deduplicates by resolved page ID and canonical URL;
+7. compares the crawl queue with the reviewed 28-page publication count.
 
-Animals export is blocked unless the accepted set contains exactly 34 unique
-namespace-0 pages. A count or membership change produces an added/removed diff
-for review; it never silently expands the catalog.
+Animals export is blocked unless discovery contains exactly 34 unique
+namespace-0 pages, the exact six reviewed non-DST exclusions are present, and
+the resulting detail queue contains exactly 28 pages. A membership change
+produces an added/removed diff for review; it never silently expands the crawl
+or catalog.
 
 Page processing stores the latest revision, page ID, title, canonical URL,
 wikitext, rendered HTML, normalized plain text, categories, internal links, and
@@ -249,7 +271,7 @@ peek.
 
 ## Prefab Variants and Page-Level Canonical Records
 
-The public result remains 34 page-level Mob records. A page may own multiple
+The public result contains 28 page-level DST Mob records. A page may own multiple
 verified DST prefab codes for seasonal, color, phase, or transformation
 variants.
 
@@ -357,7 +379,11 @@ reviewed summary rather than republishing the full raw article text.
 
 Export or validation hard-fails when:
 
-- the accepted direct page set is not exactly the reviewed 34 pages;
+- the direct namespace-0 discovery set is not exactly the reviewed 34 pages;
+- the configured non-DST exclusion set is not the exact six reviewed titles, or
+  one of those titles is absent from discovery;
+- the post-exclusion crawl queue or published result is not exactly 28 pages;
+- detail or image crawling is attempted for a configured non-DST title;
 - a category child is queued for detail crawling;
 - a published page has no verified prefab code or approved manual mapping;
 - a prefab code belongs to multiple canonical pages;
@@ -379,7 +405,9 @@ retryable.
 
 Tests are written before implementation and cover:
 
-- category continuation and an accepted set of exactly 34 namespace-0 pages;
+- category continuation and discovery of exactly 34 namespace-0 pages;
+- exclusion of the exact six Shipwrecked/Hamlet-only pages before detail and
+  image requests, leaving exactly 28 queued and published DST pages;
 - exclusion of every category child without recursive requests;
 - redirect normalization, page-ID/URL deduplication, and drift diffs;
 - interrupted crawl resume, transient retry, and unchanged-revision reuse;
@@ -405,8 +433,10 @@ completion.
 
 ## Acceptance Criteria
 
-- Discovery records the source category membership and publishes exactly 34
-  direct Mob pages.
+- Discovery records exactly 34 direct namespace-0 pages, audits the six reviewed
+  non-DST exclusions, and publishes exactly 28 DST Mob pages.
+- `Blue Whale`, `White Whale`, `Wildbore`, `Peagawk`, `Pog`, and `Glowfly` are
+  never crawled for detail, normalized, or published.
 - No `Category:*` page is crawled recursively or published as a Mob.
 - Every published Mob contains at least one verified DST prefab code.
 - No prefab code belongs to two canonical Mob records.
