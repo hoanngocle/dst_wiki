@@ -2,7 +2,7 @@ import io
 import unittest
 from contextlib import redirect_stderr, redirect_stdout
 from pathlib import Path
-from unittest.mock import patch
+from unittest.mock import ANY, patch
 
 from tools.crawl_wiki.cli import (
     build_parser,
@@ -12,6 +12,8 @@ from tools.crawl_wiki.cli import (
     run_crawl,
 )
 from tools.crawl_wiki.models import CrawlSummary
+from tools.crawl_wiki.state_paths import CategoryStatePaths
+from tools.crawl_wiki.url_registry import RegistryAudit
 
 
 class CliTests(unittest.TestCase):
@@ -50,6 +52,91 @@ class CliTests(unittest.TestCase):
             Path("data/crawled/fandom-categories/animals"),
         )
         self.assertEqual(args.page_budget, 100)
+        self.assertIsNone(args.url_registry)
+        self.assertIsNone(args.shared_page_cache)
+
+    def test_category_crawl_uses_git_common_state_and_audits_it(self):
+        args = build_parser().parse_args(
+            ["--profile", "category", "--category", "animals"]
+        )
+        summary = CrawlSummary(34, 0, 34, 0)
+        paths = CategoryStatePaths(Path("live.json"), Path("shared-pages"))
+        with patch(
+            "tools.crawl_wiki.cli.resolve_category_state_paths",
+            return_value=paths,
+        ) as resolve, patch("tools.crawl_wiki.cli.UrlRegistry") as registry, patch(
+            "tools.crawl_wiki.cli.CrawlStorage"
+        ) as storage, patch("tools.crawl_wiki.cli.MediaWikiClient"), patch(
+            "tools.crawl_wiki.cli.CategoryCrawler"
+        ) as crawler:
+            registry.return_value.audit.return_value = ()
+            crawler.return_value.run.return_value = summary
+
+            result = run_crawl(args)
+
+        self.assertEqual(result, summary)
+        resolve.assert_called_once_with(ANY, registry=None, cache=None)
+        registry.assert_called_once_with(
+            Path("live.json"),
+            Path("shared-pages"),
+            "https://dontstarve.fandom.com",
+        )
+        registry.return_value.audit.assert_called_once_with()
+        crawler.assert_called_once()
+        storage.assert_called_once()
+
+    def test_category_crawl_rejects_invalid_done_before_opening_storage(self):
+        args = build_parser().parse_args(
+            ["--profile", "category", "--category", "animals"]
+        )
+        invalid = RegistryAudit(
+            "https://dontstarve.fandom.com/wiki/Beefalo",
+            "Done",
+            "missing",
+        )
+        with patch(
+            "tools.crawl_wiki.cli.resolve_category_state_paths",
+            return_value=CategoryStatePaths(Path("live.json"), Path("cache")),
+        ), patch("tools.crawl_wiki.cli.UrlRegistry") as registry, patch(
+            "tools.crawl_wiki.cli.CrawlStorage"
+        ) as storage:
+            registry.return_value.audit.return_value = (invalid,)
+
+            with self.assertRaisesRegex(
+                RuntimeError,
+                "invalid Done",
+            ):
+                run_crawl(args)
+
+        storage.assert_not_called()
+
+    def test_registry_overrides_are_paired_and_category_only(self):
+        category_args = build_parser().parse_args(
+            [
+                "--profile",
+                "category",
+                "--category",
+                "animals",
+                "--url-registry",
+                "registry.json",
+            ]
+        )
+        with self.assertRaisesRegex(RuntimeError, "together"):
+            run_crawl(category_args)
+
+        full_args = build_parser().parse_args(
+            [
+                "--url-registry",
+                "registry.json",
+                "--shared-page-cache",
+                "cache",
+            ]
+        )
+        with patch(
+            "tools.crawl_wiki.cli.CrawlStorage",
+            side_effect=AssertionError("storage must not open"),
+        ), self.assertRaisesRegex(ValueError, "category profile"):
+            run_crawl(full_args)
 
     def test_category_name_is_required_only_for_category_profile(self):
         args = build_parser().parse_args(["--profile", "category"])

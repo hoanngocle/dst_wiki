@@ -18,6 +18,10 @@ from tools.crawl_wiki.crawler import (
 )
 from tools.crawl_wiki.models import CrawlSummary, SUPPORTED_NAMESPACES
 from tools.crawl_wiki.parser import normalize_base_url
+from tools.crawl_wiki.state_paths import (
+    StatePathError,
+    resolve_category_state_paths,
+)
 from tools.crawl_wiki.storage import CrawlStorage, StorageError
 from tools.crawl_wiki.url_registry import UrlRegistry, UrlRegistryError
 
@@ -25,8 +29,6 @@ from tools.crawl_wiki.url_registry import UrlRegistry, UrlRegistryError
 DEFAULT_BASE_URL = "https://dontstarve.wiki.gg/"
 DEFAULT_FULL_OUTPUT = Path("data/crawled/dontstarve-wiki")
 DEFAULT_ITEMS_OUTPUT = Path("data/crawled/dontstarve-items")
-DEFAULT_URL_REGISTRY = Path("data/crawled/fandom-url-registry.json")
-DEFAULT_SHARED_PAGE_CACHE = Path("data/crawled/fandom-shared-pages")
 DEFAULT_NAMESPACES = (0, 14, 6)
 
 
@@ -168,10 +170,8 @@ def build_parser() -> argparse.ArgumentParser:
         action=_PageBudgetAction,
         help="maximum category detail pages processed this invocation",
     )
-    parser.add_argument("--url-registry", type=Path, default=DEFAULT_URL_REGISTRY)
-    parser.add_argument(
-        "--shared-page-cache", type=Path, default=DEFAULT_SHARED_PAGE_CACHE
-    )
+    parser.add_argument("--url-registry", type=Path)
+    parser.add_argument("--shared-page-cache", type=Path)
     parser.add_argument("--worker-id")
     parser.add_argument("--skip-images", action="store_true")
     parser.add_argument("--fresh", action="store_true")
@@ -195,6 +195,14 @@ def run_crawl(args: argparse.Namespace) -> CrawlSummary:
         raise ValueError("--category is required for the category profile")
     if args.profile != "category" and args.category is not None:
         raise ValueError("--category is only valid for the category profile")
+    has_state_override = (
+        args.url_registry is not None or args.shared_page_cache is not None
+    )
+    if args.profile != "category" and has_state_override:
+        raise ValueError(
+            "--url-registry and --shared-page-cache are only valid for the "
+            "category profile"
+        )
     config = (
         load_category_config(args.category)
         if args.profile == "category"
@@ -206,6 +214,28 @@ def run_crawl(args: argparse.Namespace) -> CrawlSummary:
         namespaces = config.allowed_namespaces
     else:
         namespaces = (0,) if args.profile == "items" else args.namespaces
+    registry = None
+    if config is not None:
+        state_paths = resolve_category_state_paths(
+            Path.cwd(),
+            registry=args.url_registry,
+            cache=args.shared_page_cache,
+        )
+        registry = UrlRegistry(
+            state_paths.registry,
+            state_paths.cache,
+            base_url.rstrip("/"),
+        )
+        invalid_done = tuple(
+            audit
+            for audit in registry.audit()
+            if audit.status == "Done" and audit.issue is not None
+        )
+        if invalid_done:
+            raise UrlRegistryError(
+                "live URL registry has {} invalid Done row(s); run the state "
+                "audit and repair commands".format(len(invalid_done))
+            )
     options = {
         "profile": args.profile,
         "base_url": base_url,
@@ -241,11 +271,6 @@ def run_crawl(args: argparse.Namespace) -> CrawlSummary:
             user_agent=args.user_agent,
         )
         if args.profile == "category":
-            registry = UrlRegistry(
-                args.url_registry,
-                args.shared_page_cache,
-                base_url.rstrip("/"),
-            )
             crawler = CategoryCrawler(
                 client,
                 storage,
@@ -291,6 +316,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     except (
         ClientError,
         StorageError,
+        StatePathError,
         UrlRegistryError,
         OSError,
         ValueError,

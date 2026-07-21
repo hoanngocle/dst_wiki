@@ -198,7 +198,7 @@ Run: `python3 -m unittest tests.crawl_wiki.test_url_registry -v`
 
 Expected: all registry tests pass.
 
-- [ ] **Step 5: Commit Task 2**
+- [x] **Step 5: Commit Task 2**
 
 ```bash
 git add tools/crawl_wiki/url_registry.py tests/crawl_wiki/test_url_registry.py docs/superpowers/plans/2026-07-21-durable-category-crawler-state.md
@@ -218,7 +218,7 @@ git commit -m "feat: audit category crawler registry state"
 - Produces commands: `init`, `audit`, `repair`, `snapshot`.
 - Existing category crawler defaults to common live paths; explicit `--url-registry` and `--shared-page-cache` remain paired overrides.
 
-- [ ] **Step 1: Write failing CLI tests**
+- [x] **Step 1: Write failing CLI tests**
 
 ```python
 def test_category_crawl_uses_git_common_state_by_default(self):
@@ -238,13 +238,13 @@ def test_state_cli_repairs_and_snapshots(self):
 
 Also assert one-path-only overrides fail, audit returns nonzero for invalid rows, and fatal errors map to exit code 2.
 
-- [ ] **Step 2: Run CLI tests and verify RED**
+- [x] **Step 2: Run CLI tests and verify RED**
 
 Run: `python3 -m unittest tests.crawl_wiki.test_state_cli tests.crawl_wiki.test_cli -v`
 
 Expected: FAIL because state CLI and resolver integration do not exist.
 
-- [ ] **Step 3: Implement state CLI and crawler integration**
+- [x] **Step 3: Implement state CLI and crawler integration**
 
 `state_cli.py` must parse exactly one command, resolve live paths, construct
 `UrlRegistry`, print deterministic counts and export the tracked snapshot after
@@ -256,7 +256,7 @@ Reject registry/cache flags for non-category profiles. Before discovery or any
 network detail fetch, category crawling must call `audit()` and hard-fail when
 any `Done` row is invalid; it must never auto-repair live state.
 
-- [ ] **Step 4: Run CLI tests and verify GREEN**
+- [x] **Step 4: Run CLI tests and verify GREEN**
 
 Run: `python3 -m unittest tests.crawl_wiki.test_state_cli tests.crawl_wiki.test_cli -v`
 
