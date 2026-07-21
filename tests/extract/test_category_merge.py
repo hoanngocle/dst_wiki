@@ -1,6 +1,9 @@
 import unittest
 
-from tools.extract.category_merge import merge_category_mobs
+from tools.extract.category_merge import (
+    finalize_category_references,
+    merge_category_mobs,
+)
 
 
 def _fact(section, key):
@@ -89,6 +92,137 @@ class CategoryMergeTests(unittest.TestCase):
 
         self.assertEqual(fact["value"], 34)
         self.assertEqual(fact["evidence"][0]["source"], "runtime:normalized_catalog")
+
+    def test_catalog_loot_wins_and_category_references_are_resolved(self):
+        beefalo = {
+            "id": "base_game:beefalo",
+            "prefabId": "beefalo",
+            "namespace": "base_game",
+            "category": "mob",
+            "name": "Beefalo",
+            "englishName": "Beefalo",
+            "sprite": None,
+            "mob": {
+                "contract": "catalog",
+                "lootStatus": "known",
+                "loot": [
+                    {
+                        "item": {"id": "base_game:meat", "name": "Meat", "sprite": None},
+                        "minimum": 4,
+                        "maximum": 4,
+                        "chance": "100%",
+                        "method": "kill",
+                        "sourceVariant": "base_game:beefalo",
+                        "lootTable": "beefalo",
+                        "conditions": None,
+                        "evidence": [],
+                    }
+                ],
+            },
+        }
+        meat = {
+            "id": "base_game:meat",
+            "prefabId": "meat",
+            "namespace": "base_game",
+            "category": "item",
+            "name": "Thịt",
+            "englishName": "Meat",
+            "sprite": None,
+            "mob": None,
+        }
+        page = _mob()
+        page["loot"] = {
+            "status": "known",
+            "values": [{"itemTitle": "broken wiki markup", "quantity": "1"}],
+            "reason": None,
+            "evidence": [],
+        }
+        page["spawnsFrom"] = {
+            "status": "known",
+            "values": [
+                {"sourceTitle": "Meat", "conditions": None, "sourceVariant": None}
+            ],
+            "reason": None,
+            "evidence": [],
+        }
+
+        result = merge_category_mobs([beefalo, meat], _artifact(page), [])
+        merged = next(item for item in result.items if item["id"] == "base_game:beefalo")
+
+        self.assertEqual(
+            merged["mob"]["loot"]["values"][0]["item"]["id"],
+            "base_game:meat",
+        )
+        self.assertEqual(merged["mob"]["loot"]["values"][0]["quantity"], "4")
+        self.assertEqual(
+            merged["mob"]["spawnsFrom"]["values"][0]["source"]["id"],
+            "base_game:meat",
+        )
+
+    def test_catalog_loot_with_nonpublic_reference_becomes_unknown(self):
+        beefalo = {
+            "id": "base_game:beefalo",
+            "prefabId": "beefalo",
+            "namespace": "base_game",
+            "category": "mob",
+            "name": "Beefalo",
+            "sprite": None,
+            "mob": {
+                "lootStatus": "known",
+                "loot": [
+                    {
+                        "item": {"id": "base_game:hidden_reward", "name": "Hidden"},
+                        "minimum": 1,
+                        "maximum": 1,
+                        "method": "kill",
+                        "sourceVariant": "base_game:beefalo",
+                    }
+                ],
+            },
+        }
+
+        result = merge_category_mobs([beefalo], _artifact(_mob()), [])
+        merged = result.items[0]["mob"]["loot"]
+
+        self.assertEqual(merged["status"], "unknown")
+        self.assertEqual(merged["values"], [])
+        self.assertEqual(merged["reason"], "unresolved_reference")
+
+    def test_finalizer_invalidates_reference_removed_by_later_catalog_filter(self):
+        beefalo = {
+            "id": "base_game:beefalo",
+            "prefabId": "beefalo",
+            "namespace": "base_game",
+            "category": "mob",
+            "name": "Beefalo",
+            "sprite": None,
+            "mob": {
+                "lootStatus": "known",
+                "loot": [
+                    {
+                        "item": {"id": "base_game:meat", "name": "Meat"},
+                        "minimum": 1,
+                        "maximum": 1,
+                        "method": "kill",
+                        "sourceVariant": "base_game:beefalo",
+                    }
+                ],
+            },
+        }
+        meat = {
+            "id": "base_game:meat",
+            "prefabId": "meat",
+            "namespace": "base_game",
+            "category": "item",
+            "name": "Meat",
+            "mob": None,
+        }
+        result = merge_category_mobs([beefalo, meat], _artifact(_mob()), [])
+        final_items = [item for item in result.items if item["id"] != "base_game:meat"]
+
+        finalize_category_references(final_items)
+
+        self.assertEqual(final_items[0]["mob"]["loot"]["status"], "unknown")
 
     def test_hides_duplicate_code_and_flags_empty_orphan(self):
         items = [

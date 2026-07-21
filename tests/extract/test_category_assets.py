@@ -20,7 +20,7 @@ class CategoryAssetTests(unittest.TestCase):
             source.write_bytes(content)
             (crawl / "images.jsonl").write_text(
                 json.dumps({
-                    "title": "File:Beefalo.png",
+                    "title": "File:Beefalo Build.png",
                     "mime": "image/png",
                     "sha256": digest,
                     "local_path": str(source.relative_to(crawl)),
@@ -34,7 +34,7 @@ class CategoryAssetTests(unittest.TestCase):
                 "category": "animals",
                 "pages": [{
                     "identity": {"sourcePageId": 10},
-                    "visual": {"sourceTitle": "File:Beefalo.png", "asset": None},
+                    "visual": {"sourceTitle": "File:Beefalo_Build.png", "asset": None},
                 }],
             }
 

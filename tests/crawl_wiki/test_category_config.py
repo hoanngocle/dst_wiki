@@ -14,8 +14,8 @@ class CategoryConfigTests(unittest.TestCase):
         config = load_category_config("animals")
 
         self.assertEqual(config.category_title, "Category:Animals")
-        self.assertEqual(config.expected_direct_pages, 34)
-        self.assertEqual(config.expected_published_pages, 28)
+        self.assertEqual(config.expected_direct_pages, 35)
+        self.assertEqual(config.expected_published_pages, 29)
         self.assertEqual(config.allowed_namespaces, (0,))
         self.assertEqual(
             dict(config.excluded_titles),

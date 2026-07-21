@@ -266,13 +266,24 @@ class CategoryClient:
     def get_page(self, page_id):
         page = dict(self.pages[page_id])
         self.page_calls.append(page_id)
+        content = "'''{}'''".format(page["title"])
+        if self.infobox_image:
+            content = (
+                "{{Mob Infobox\n"
+                "|image=<gallery>\n"
+                "{} Primary.png|Normal\n"
+                "{}.png|Other\n"
+                "</gallery>\n"
+                "|health=500\n"
+                "}}"
+            ).format(page["title"], page["title"])
         page["revisions"] = [
             {
                 "revid": 100 + page_id,
                 "timestamp": "2026-07-01T00:00:00Z",
                 "sha1": "sha1-{}".format(page_id),
                 "contentmodel": "wikitext",
-                "slots": {"main": {"content": "'''{}'''".format(page["title"])}},
+                "slots": {"main": {"content": content}},
             }
         ]
         return page
@@ -283,11 +294,17 @@ class CategoryClient:
         if self.infobox_image:
             text = (
                 "<img alt='Navigation.png'>"
-                "<aside class='portable-infobox'><img alt='{}.png'></aside>".format(
-                    title
+                "<aside class='portable-infobox'>"
+                "<img alt='{}.png'><img alt='{} Primary.png'>"
+                "</aside>".format(
+                    title, title
                 )
             )
-            images = ["Navigation.png", "{}.png".format(title)]
+            images = [
+                "Navigation.png",
+                "{}.png".format(title),
+                "{} Primary.png".format(title),
+            ]
         else:
             text = "<aside class='portable-infobox'><p>{}</p></aside>".format(title)
             images = []
@@ -421,7 +438,7 @@ class CrawlerTests(unittest.TestCase):
 
             row = json.loads(registry.path.read_text())["items"][0]
             shared = registry.load_payload(registry.claim(row["url"], "animals", "reader").record)
-            self.assertEqual(shared["imageTitles"], ["File:Beefalo.png"])
+            self.assertEqual(shared["imageTitles"], ["File:Beefalo Primary.png"])
 
     def test_category_crawler_discovers_all_members_but_queues_only_dst_pages(self):
         with tempfile.TemporaryDirectory() as tempdir:

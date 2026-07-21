@@ -6691,29 +6691,6 @@
       }
     },
     {
-      "action": "exclude",
-      "category": "other",
-      "id": "base_game:lightflier_flower",
-      "name": "lightflier_flower",
-      "namespace": "base_game",
-      "prefabId": "lightflier_flower",
-      "reason": "Loại vì record không có ảnh, text, công dụng hoặc liên kết.",
-      "reasonCode": "empty_unreferenced",
-      "references": [],
-      "signals": {
-        "acquisition": false,
-        "details": false,
-        "effects": false,
-        "inventoryItem": false,
-        "meaningfulText": false,
-        "recipe": false,
-        "relations": false,
-        "sprite": false,
-        "stats": false,
-        "wiki": false
-      }
-    },
-    {
       "action": "keep",
       "category": "effect",
       "id": "base_game:lightning",
@@ -27352,10 +27329,10 @@
   "summary": {
     "categories": {
       "effect": 329,
-      "other": 814
+      "other": 813
     },
-    "exclude": 456,
+    "exclude": 455,
     "keep": 687,
-    "total": 1143
+    "total": 1142
   }
 }

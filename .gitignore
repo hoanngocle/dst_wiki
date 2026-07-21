@@ -50,3 +50,8 @@ next-env.d.ts
 /data/crawled/
 /data/generated/wiki.sqlite
 /mod
+
+# Local resumable Fandom category checkpoints and shared payload cache
+/data/crawled/fandom-categories/
+/data/crawled/fandom-shared-pages/
+/data/crawled/fandom-url-registry.lock

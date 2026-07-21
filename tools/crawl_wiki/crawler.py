@@ -1,5 +1,6 @@
 import json
 import logging
+import re
 from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any, Callable, Dict, List, Mapping, Optional, Sequence
@@ -56,7 +57,9 @@ class _InfoboxImageParser(HTMLParser):
             self.infobox_depth -= 1
 
 
-def select_primary_infobox_image(parsed: Mapping[str, Any]) -> Optional[str]:
+def select_primary_infobox_image(
+    parsed: Mapping[str, Any], wikitext: Optional[str] = None
+) -> Optional[str]:
     images = parsed.get("images")
     if not isinstance(images, list):
         return None
@@ -68,6 +71,19 @@ def select_primary_infobox_image(parsed: Mapping[str, Any]) -> Optional[str]:
         if not title.startswith("File:"):
             title = "File:" + title
         by_name[title.removeprefix("File:").casefold()] = title
+
+    if isinstance(wikitext, str):
+        match = re.search(
+            r"(?ims)^\s*\|\s*image\s*=\s*(.*?)(?=^\s*\|\s*[A-Za-z][^=\n]*=|\}\})",
+            wikitext,
+        )
+        if match is not None:
+            cleaned = re.sub(r"</?gallery[^>]*>", "", match.group(1), flags=re.I)
+            for line in cleaned.splitlines():
+                candidate = line.strip().split("|", 1)[0].strip().removeprefix("File:")
+                selected = by_name.get(candidate.casefold())
+                if selected is not None:
+                    return selected
 
     rendered = parsed.get("text", "")
     if isinstance(rendered, Mapping):
@@ -576,7 +592,9 @@ class CategoryCrawler(WikiCrawler):
                         self.clock(),
                         set(self.config.allowed_namespaces),
                     )
-                    primary_image = select_primary_infobox_image(parsed)
+                    primary_image = select_primary_infobox_image(
+                        parsed, page.get("wikitext")
+                    )
                     shared = {
                         "schemaVersion": 1,
                         "page": page,

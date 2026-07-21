@@ -1,4 +1,80 @@
 {
-  "pages": {},
+  "pages": {
+    "102089": {
+      "reviewed": true,
+      "source_sha256": "36c5f58beaea5f17fe422ce80e51c8fe164c0a3a4049717b91f3ebef505bb455",
+      "vi": "Nhiều Pig thân thiện cộng dồn hào quang hồi Sanity. Có thể dùng thức ăn và việc kết bạn để gom đàn, ngắt thù địch hoặc tổ chức farm Pig."
+    },
+    "136122": {
+      "reviewed": true,
+      "source_sha256": "995687ac49ea3d05f1682978bd9dd0d7abbcb48e0d0a0404e478e3aa8f9c0d9e",
+      "vi": "Parrot Pirate ngủ trong bóng tối và có thể hỗ trợ hồi Sanity dưới hang. Chỉ nên thả khi cần rồi bắt lại để tránh động đất hoặc sinh vật khác giết chúng."
+    },
+    "233244": {
+      "reviewed": true,
+      "source_sha256": "8ab093f95567258fceff748ae8bba9ff982b2dd1d9e32620a0c9a37b2f667a77",
+      "vi": "Có thể mang Bulbous Lightbug lên mặt đất trong hành trang. Khi thả ra, chúng bay quanh khu vực và cung cấp nguồn sáng lâu dài mà không cần cho ăn."
+    },
+    "2372": {
+      "reviewed": true,
+      "source_sha256": "64f88108a962019726f2610496fd731d88439c12f4a184cacd793936de704983",
+      "vi": "Bee và Killer Bee không tự động tấn công Wormwood; kỹ năng Bee Kind còn giúp tránh bị tấn công khi thu hoạch Bee Box. Killer Bee đánh chậm hơn Bee thường."
+    },
+    "2380": {
+      "reviewed": true,
+      "source_sha256": "754c5e45069d2364bfd10522c29ef891b3a9d497b7eb052fed9744cecc1a6790",
+      "vi": "Có thể dùng Beefalo Bell và tải lại thế giới để tạo đàn mới gần căn cứ hoặc khu farm. Một Beefalo đã liên kết cũng có thể theo người chơi xuống Ruins để hỗ trợ hành trình."
+    },
+    "239698": {
+      "reviewed": true,
+      "source_sha256": "bbbb0b62d3dcae6903164e9f3571921f3884c00d6b10fe64c3834ff131d0651a",
+      "vi": "Đặt các vật phẩm rẻ như Cut Grass hoặc Twigs ở những ô hành trang bên trái để giảm nguy cơ mất đồ quý. Powder Monkey không có nhà có thể được tận dụng để nhặt một số vật phẩm."
+    },
+    "2554": {
+      "reviewed": true,
+      "source_sha256": "5361f382b4ea635c62819a8e8910b886f9b42fe5b3ab9836ff4f17dc73fc2ab4",
+      "vi": "Đàn Frog xuất hiện trong Frog Rain có thể tự hạ Moose/Goose, dù nhiều Frog cũng sẽ chết trong trận chiến."
+    },
+    "35016": {
+      "reviewed": true,
+      "source_sha256": "9ac018fbcd64b0966b6b52ac1496fd5f80df34b55d77d9500ab5c28ec2afbb4c",
+      "vi": "Rock Lobster rất bền, hồi phục tốt và hữu ích khi chống Giant hoặc Hound. Nên giữ chúng trong khu phù hợp, tránh Dragonfly và tránh ra lệnh nhầm khiến cả đàn đánh lẫn nhau."
+    },
+    "41115": {
+      "reviewed": true,
+      "source_sha256": "3094e254b3de504536352bd09c34afb16f77b50f2035b40018972646d5abd9d7",
+      "vi": "Có thể lợi dụng lúc Splumonkey mải nhặt đồ để đánh, hoặc rào Monkey Pod để kiềm chế chúng. Khi gặp đàn Shadow Splumonkey lớn, sát thương diện rộng, Damaged Rook hoặc tốc độ cao là các cách đối phó hiệu quả."
+    },
+    "82829": {
+      "reviewed": true,
+      "source_sha256": "5fda66bc58d4bb373c0862950b8a44100aa997040233e220dff086762887241d",
+      "vi": "Farm Moleworm và Molehill cung cấp Morsel cùng nguồn đá, khoáng sản tái tạo. Chữa lành Moleworm giúp farm ổn định hơn và chúng còn có thể gom khoáng sản hoặc turf."
+    },
+    "82850": {
+      "reviewed": true,
+      "source_sha256": "97e453a6d636202e121e37fdb52343799e6c71507afc2b4cfb27cbf31b1801eb",
+      "vi": "Rain Hat, Rain Coat hoặc Eyebrella giúp chống điện từ Volt Goat đã tích điện. Muốn di chuyển và nuôi đàn an toàn cần dắt chậm, làm chuồng và đặt Lightning Rod gần đó."
+    },
+    "84355": {
+      "reviewed": true,
+      "source_sha256": "4dda32b399d12caaa07689ddae9085608e14afb4bf3ae6fd6bf933a508c69606",
+      "vi": "Catcoon có thể lấy Trinket, Pocket Watch và cả quà vừa nhả ra, vì vậy nên cất đồ quý và nhặt quà ngay. Các chiến lợi phẩm chúng để lại đôi khi có thể được tận dụng."
+    },
+    "84597": {
+      "reviewed": true,
+      "source_sha256": "4435e504c0b9e4f5f81a03be7ff9709eff7e617d0970c126a5fe8af00190a60c",
+      "vi": "Trong DST, nên giữ Glommer gần căn cứ để hồi Sanity và nhận Glommer's Goop làm nhiên liệu hoặc phân bón. Nếu bật Mysterious Energy, Glommer có thể hồi sinh tại tượng mỗi đêm."
+    },
+    "87476": {
+      "reviewed": true,
+      "source_sha256": "baa617c98b8f40a434f526df31b84cd9b723a67bd843cb3ed7b3912535dc602c",
+      "vi": "Có thể xử lý Mosling bằng Tooth Trap hoặc nhốt chúng xa tổ trước khi giao chiến. Khi nổi giận chúng rất nguy hiểm; trang bị cách điện giúp giảm rủi ro từ sét."
+    },
+    "9368": {
+      "reviewed": true,
+      "source_sha256": "86353e32bcd4cad4e6dd10ca1ae415dfdfc4dacca2728778e079321a60d63bb5",
+      "vi": "Có thể tận dụng khoảnh khắc Koalefant thức dậy để đánh, hoặc dồn nó vào mép địa hình và sinh vật thù địch. Giữ Koalefant sống gần căn cứ là cách dự trữ Meat không bị hỏng."
+    }
+  },
   "schema_version": 1
 }

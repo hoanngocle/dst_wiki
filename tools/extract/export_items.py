@@ -14,7 +14,10 @@ from tools.extract.wiki_export import (
 )
 from tools.extract.effect_other_audit import audit_effect_other_items
 from tools.extract.category_assets import publish_category_assets
-from tools.extract.category_merge import merge_category_mobs
+from tools.extract.category_merge import (
+    finalize_category_references,
+    merge_category_mobs,
+)
 from tools.extract.exclusions import NON_ITEM_PREFAB_IDS
 from tools.extract.item_details import build_tu_tien_item_details
 from tools.extract.mob_details import build_mob_boss_audit, build_mob_details
@@ -963,6 +966,7 @@ def export_items(
         for item in items["items"]
         if item.get("id") not in effect_other_excluded_ids
     ]
+    finalize_category_references(items["items"])
     effect_other_audit = {
         "schema_version": 1,
         "summary": {

@@ -13,6 +13,7 @@ from tools.extract.validate import (
     category_export_errors,
     _effect_other_audit_errors,
     _mob_boss_audit_errors,
+    _prefab_export_coverage,
     _structure_export_errors,
     validate_catalog,
 )
@@ -21,6 +22,49 @@ from tools.extract import cli
 
 
 class ExportValidateTests(unittest.TestCase):
+    def test_prefab_coverage_counts_category_variants_and_reviewed_created_codes(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            items = Path(tmp) / "items.json"
+            items.write_text(
+                json.dumps(
+                    {
+                        "schema_version": 7,
+                        "items": [
+                            {
+                                "id": "base_game:bee",
+                                "namespace": "base_game",
+                                "prefabId": "bee",
+                                "mob": {
+                                    "classification": {"game": "DST"},
+                                    "identity": {
+                                        "prefabCodes": ["bee", "killerbee"]
+                                    },
+                                },
+                            },
+                            {
+                                "id": "base_game:parrot_pirate",
+                                "namespace": "base_game",
+                                "prefabId": "parrot_pirate",
+                                "mob": {
+                                    "classification": {"game": "DST"},
+                                    "identity": {
+                                        "prefabCodes": ["parrot_pirate"]
+                                    },
+                                },
+                            },
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            with mock.patch(
+                "tools.extract.validate.classify_public_prefabs",
+                return_value={"bee", "killerbee"},
+            ), mock.patch("tools.extract.validate.ScriptIndex"):
+                errors = _prefab_export_coverage(Path("scripts.zip"), items)
+
+        self.assertEqual(errors, [])
+
     def test_category_validation_rejects_duplicate_code_and_unreviewed_note(self):
         items = {
             "schema_version": 7,
@@ -32,7 +76,7 @@ class ExportValidateTests(unittest.TestCase):
         audit = {
             "schemaVersion": 1,
             "category": "animals",
-            "summary": {"directPages": 34, "publishedPages": 28},
+            "summary": {"directPages": 35, "publishedPages": 29},
             "excludedNonDst": [
                 {"title": title, "reason": reason}
                 for title, reason in {
@@ -58,6 +102,8 @@ class ExportValidateTests(unittest.TestCase):
 
         self.assertIn("duplicate_prefab_code", codes)
         self.assertIn("unreviewed_category_note", codes)
+        self.assertNotIn("direct_category_count_mismatch", codes)
+        self.assertNotIn("published_category_count_mismatch", codes)
 
     def test_category_validation_rejects_non_dst_fetch_and_count_drift(self):
         reviewed = [
@@ -74,7 +120,7 @@ class ExportValidateTests(unittest.TestCase):
         audit = {
             "schemaVersion": 1,
             "category": "animals",
-            "summary": {"directPages": 34, "publishedPages": 28},
+            "summary": {"directPages": 35, "publishedPages": 29},
             "excludedNonDst": reviewed,
             "fetchedTitles": ["Beefalo", "Blue Whale"],
             "rows": [],
@@ -86,7 +132,7 @@ class ExportValidateTests(unittest.TestCase):
         self.assertIn("excluded_title_fetched", codes)
 
         drift = dict(audit)
-        drift["summary"] = {"directPages": 34, "publishedPages": 34}
+        drift["summary"] = {"directPages": 35, "publishedPages": 35}
         drift["excludedNonDst"] = []
         drift["fetchedTitles"] = []
         drift_codes = {
@@ -257,6 +303,82 @@ class ExportValidateTests(unittest.TestCase):
             },
             errors,
         )
+
+    def test_mob_boss_validation_defers_to_reviewed_category_merge_audit(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            items = root / "items.json"
+            audit = root / "mob-audit.json"
+            groups = root / "groups.json"
+            category_audit = root / "category-audit.json"
+            category_mob = {
+                "classification": {"type": "mob", "tags": ["Animals"], "game": "DST"},
+                "identity": {
+                    "primaryCode": "bee",
+                    "prefabCodes": ["bee", "killerbee"],
+                },
+                "loot": {
+                    "status": "known",
+                    "values": [
+                        {
+                            "item": {"id": "base_game:honey"},
+                            "quantity": "1",
+                            "method": "kill",
+                            "game": "DST",
+                        }
+                    ],
+                },
+            }
+            items.write_text(
+                json.dumps(
+                    {
+                        "schema_version": 7,
+                        "items": [
+                            {"id": "base_game:bee", "category": "mob", "mob": category_mob},
+                            {"id": "base_game:parrot_pirate", "category": "mob", "mob": category_mob},
+                            {"id": "base_game:honey", "category": "item", "mob": None},
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            audit.write_text(
+                json.dumps(
+                    {
+                        "schema_version": 1,
+                        "summary": {"total": 2, "keep": 2, "merge": 0, "exclude": 0},
+                        "rows": [
+                            {"id": "base_game:bee", "canonicalId": "base_game:bee", "action": "keep"},
+                            {"id": "base_game:killerbee", "canonicalId": "base_game:killerbee", "action": "keep"},
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            groups.write_text(
+                json.dumps({"schema_version": 1, "groups": []}), encoding="utf-8"
+            )
+            category_audit.write_text(
+                json.dumps(
+                    {
+                        "schemaVersion": 1,
+                        "rows": [
+                            {"recordId": "base_game:bee", "action": "merged"},
+                            {
+                                "recordId": "base_game:killerbee",
+                                "canonicalId": "base_game:bee",
+                                "action": "duplicate_hidden",
+                            },
+                            {"recordId": "base_game:parrot_pirate", "action": "created"},
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            errors = _mob_boss_audit_errors(items, audit, groups, category_audit)
+
+        self.assertEqual(errors, [])
     def test_effect_other_audit_rejects_public_exclusion_with_positive_signal(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

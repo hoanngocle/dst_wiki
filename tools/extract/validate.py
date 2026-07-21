@@ -320,6 +320,22 @@ def _prefab_export_coverage(
         and not str(item.get("id", "")).startswith("wiki:")
         and isinstance(item.get("prefabId"), str)
     }
+    category_codes = {
+        code
+        for item in payload["items"]
+        if isinstance(item, dict)
+        for mob in [item.get("mob")]
+        if isinstance(mob, dict)
+        and isinstance(mob.get("classification"), dict)
+        and mob["classification"].get("game") == "DST"
+        for identity in [mob.get("identity")]
+        if isinstance(identity, dict)
+        and isinstance(identity.get("prefabCodes"), list)
+        for code in identity["prefabCodes"]
+        if isinstance(code, str) and code
+    }
+    expected.update(category_codes)
+    actual.update(category_codes)
     referenced_dependencies = set()
 
     def collect_published_dependencies(value: Any) -> None:
@@ -738,9 +754,9 @@ def category_export_errors(
         if isinstance(item.get("id"), str)
     }
     summary = category_audit.get("summary")
-    if not isinstance(summary, dict) or summary.get("directPages") != 34:
+    if not isinstance(summary, dict) or summary.get("directPages") != 35:
         errors.append({"code": "direct_category_count_mismatch"})
-    if not isinstance(summary, dict) or summary.get("publishedPages") != 28:
+    if not isinstance(summary, dict) or summary.get("publishedPages") != 29:
         errors.append({"code": "published_category_count_mismatch"})
 
     raw_exclusions = category_audit.get("excludedNonDst")
@@ -912,6 +928,7 @@ def _mob_boss_audit_errors(
     items_path: Optional[Path],
     audit_path: Optional[Path],
     groups_path: Optional[Path],
+    category_audit_path: Optional[Path] = None,
 ) -> List[Dict[str, Any]]:
     if items_path is None or audit_path is None or groups_path is None:
         return []
@@ -927,6 +944,25 @@ def _mob_boss_audit_errors(
         return [{"code": "invalid_mob_boss_audit_payload"}]
     if groups_payload.get("schema_version") != 1 or not isinstance(groups, list):
         return [{"code": "invalid_mob_groups_payload"}]
+
+    category_overrides = set()
+    if category_audit_path is not None:
+        category_audit = json.loads(
+            Path(category_audit_path).read_text(encoding="utf-8")
+        )
+        category_rows = (
+            category_audit.get("rows") if isinstance(category_audit, dict) else None
+        )
+        if category_audit.get("schemaVersion") != 1 or not isinstance(category_rows, list):
+            return [{"code": "invalid_category_mob_override_audit"}]
+        category_overrides = {
+            row.get("recordId")
+            for row in category_rows
+            if isinstance(row, dict)
+            and row.get("action")
+            in {"created", "merged", "kept", "duplicate_hidden"}
+            and isinstance(row.get("recordId"), str)
+        }
 
     errors: List[Dict[str, Any]] = []
     public = {
@@ -970,21 +1006,22 @@ def _mob_boss_audit_errors(
         if not isinstance(canonical_id, str):
             errors.append({"code": "invalid_mob_boss_canonical_id", "id": row_id})
             continue
-        if action == "merge" and row_id in public:
-            errors.append({"code": "merged_mob_member_is_public", "id": row_id})
-        if action == "exclude" and row_id in public:
-            errors.append({"code": "excluded_mob_member_is_public", "id": row_id})
-        if action == "keep" and row_id not in public:
-            errors.append({"code": "audited_mob_boss_not_public", "id": row_id})
-        if canonical_id not in public:
-            errors.append({"code": "missing_canonical_mob_boss", "id": row_id, "canonicalId": canonical_id})
+        if row_id not in category_overrides:
+            if action == "merge" and row_id in public:
+                errors.append({"code": "merged_mob_member_is_public", "id": row_id})
+            if action == "exclude" and row_id in public:
+                errors.append({"code": "excluded_mob_member_is_public", "id": row_id})
+            if action == "keep" and row_id not in public:
+                errors.append({"code": "audited_mob_boss_not_public", "id": row_id})
+            if canonical_id not in public:
+                errors.append({"code": "missing_canonical_mob_boss", "id": row_id, "canonicalId": canonical_id})
 
     expected_audited = {
         item_id
         for item_id, item in public.items()
         if item.get("category") in {"mob", "boss"}
     } | set(membership)
-    for item_id in sorted(expected_audited - set(audit_by_id)):
+    for item_id in sorted(expected_audited - set(audit_by_id) - category_overrides):
         errors.append({"code": "unaudited_mob_boss_item", "id": item_id})
 
     allowed_methods = {"kill", "mine_post_defeat", "harvest", "conditional"}
@@ -994,6 +1031,10 @@ def _mob_boss_audit_errors(
         mob = item.get("mob")
         if not isinstance(mob, dict):
             errors.append({"code": "missing_mob_boss_details", "id": item_id})
+            continue
+        if isinstance(mob.get("classification"), dict) and isinstance(
+            mob.get("loot"), dict
+        ):
             continue
         loot = mob.get("loot")
         if not isinstance(loot, list):
@@ -1223,7 +1264,10 @@ def validate_catalog(
                     {"code": "invalid_category_export_file", "detail": str(error)}
                 ]
         mob_boss_audit_errors = _mob_boss_audit_errors(
-            items_path, mob_boss_audit_path, mob_groups_path
+            items_path,
+            mob_boss_audit_path,
+            mob_groups_path,
+            category_audit_path,
         )
     finally:
         db.close()

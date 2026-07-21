@@ -1,4 +1,5 @@
 import json
+import html
 import os
 import re
 from pathlib import Path
@@ -6,9 +7,6 @@ from typing import Any, Dict, Iterable, List, Mapping, Optional, Sequence, Tuple
 
 from tools.crawl_wiki.category_config import CategoryConfig
 from tools.extract.category_notes import ReviewedNote, build_note_review
-from tools.extract.wiki_mapping import extract_spawn_codes
-
-
 _FIELD_SPECS = {
     "stats": (("max_health", "Health", ("health", "hp")),),
     "effects": (("sanity_aura", "Sanity Aura", ("sanityaura", "sanity")),),
@@ -28,6 +26,7 @@ _NON_DST_MARKERS = re.compile(
 )
 _DST_TEMPLATE = re.compile(r"\{\{\s*DST\s*\|([^{}]+)\}\}", re.I)
 _NUMBER = re.compile(r"^-?\d+(?:\.\d+)?$")
+_PREFAB_CODE = re.compile(r"^[a-z][a-z0-9_]*$")
 
 
 def extract_mob_page(
@@ -112,10 +111,12 @@ def extract_mob_page(
             for value in _split_list(selected or "")
         ]
 
-    images = page.get("images")
-    visual = None
-    if isinstance(images, list) and images and isinstance(images[0], str):
-        visual = {"sourceTitle": images[0], "asset": None}
+    image_title = _infobox_image(fields)
+    visual = (
+        {"sourceTitle": image_title, "asset": None}
+        if image_title is not None
+        else None
+    )
 
     return {
         "schemaVersion": 1,
@@ -346,10 +347,18 @@ def _dst_value(raw: str) -> Tuple[Optional[str], Optional[str]]:
 
 
 def _clean_markup(value: str) -> str:
-    value = re.sub(r"\{\{[^{}]*\}\}", "", value)
+    value = re.sub(r"<\s*(?:br|hr)\b[^>]*>", ";", value, flags=re.I)
+    value = re.sub(
+        r"\[\[File:[^\]|]+(?:\|[^\]]*?\blink=([^\]|]+))?[^\]]*\]\]",
+        _file_link_title,
+        value,
+        flags=re.I,
+    )
+    value = re.sub(r"\{\{([^{}]+)\}\}", _template_text, value)
     value = re.sub(r"\[\[[^\]|]+\|([^\]]+)\]\]", r"\1", value)
     value = re.sub(r"\[\[([^\]]+)\]\]", r"\1", value)
     value = re.sub(r"<[^>]+>", "", value)
+    value = html.unescape(value).replace("×", "x")
     return " ".join(value.replace("'''", "").replace("''", "").split()).strip()
 
 
@@ -362,29 +371,77 @@ def _scalar(value: str):
 
 
 def _split_list(value: str) -> List[str]:
-    return [part.strip() for part in re.split(r"[;\n]+", value) if part.strip()]
+    return [part.strip() for part in re.split(r"[;,\n]+", value) if part.strip()]
 
 
 def _loot(value: str) -> Dict[str, Any]:
     chance = None
-    chance_match = re.search(r"\b(\d+(?:\.\d+)?%)\b", value)
+    chance_match = re.search(r"(?<![\d.])(\d+(?:\.\d+)?%)(?!\d)", value)
     if chance_match:
         chance = chance_match.group(1)
         value = (value[: chance_match.start()] + value[chance_match.end() :]).strip()
     quantity = "1"
-    quantity_match = re.search(r"\bx\s*(\d+(?:\.\d+)?)\b", value, re.I)
+    quantity_match = re.search(
+        r"\bx\s*(\d+(?:\.\d+)?(?:\s*-\s*\d+(?:\.\d+)?)?)\b",
+        value,
+        re.I,
+    )
     if quantity_match:
-        quantity = quantity_match.group(1)
+        quantity = re.sub(r"\s+", "", quantity_match.group(1))
         value = (value[: quantity_match.start()] + value[quantity_match.end() :]).strip()
+    conditions = None
+    condition_match = re.search(r"\(([^()]*)\)\s*$", value)
+    if condition_match:
+        conditions = condition_match.group(1).strip() or None
+        value = value[: condition_match.start()].strip()
     return {
-        "itemTitle": value.strip(" ,()") or "Unknown",
+        "itemTitle": re.sub(r"^(?:or|and)\s+", "", value, flags=re.I).strip(" ,().") or "Unknown",
         "quantity": quantity,
         "chance": chance,
-        "conditions": None,
-        "method": "kill",
+        "conditions": conditions,
+        "method": "conditional" if conditions else "kill",
         "sourceVariant": None,
         "game": "DST",
     }
+
+
+def _infobox_image(fields: Mapping[str, str]) -> Optional[str]:
+    raw = fields.get("image")
+    if not isinstance(raw, str) or not raw.strip():
+        return None
+    cleaned = re.sub(r"</?gallery[^>]*>", "", raw, flags=re.I)
+    for line in cleaned.splitlines():
+        candidate = line.strip()
+        if not candidate:
+            continue
+        candidate = candidate.split("|", 1)[0].strip().strip('"\'')
+        if candidate:
+            return candidate if candidate.startswith("File:") else "File:" + candidate
+    return None
+
+
+def _file_link_title(match: re.Match) -> str:
+    linked = match.group(1)
+    if isinstance(linked, str) and linked.strip():
+        return linked.strip()
+    filename = re.match(r"\[\[File:([^\]|]+)", match.group(0), re.I)
+    if filename is None:
+        return ""
+    return re.sub(r"\.[A-Za-z0-9]+$", "", filename.group(1)).strip()
+
+
+def _template_text(match: re.Match) -> str:
+    parts = _split_top_level(match.group(1), "|")
+    if not parts:
+        return ""
+    name = parts[0].strip().casefold()
+    if not re.fullmatch(r"pic(?:24|32)?", name):
+        return ""
+    values = [part.strip() for part in parts[1:] if part.strip()]
+    if name == "pic" and values and re.fullmatch(r"x?\d+", values[0], re.I):
+        values = values[1:]
+    positional = [value for value in values if "=" not in value]
+    return positional[-1] if positional else ""
 
 
 def _prefab_identity(page_id, title, wikitext, mappings):
@@ -417,7 +474,7 @@ def _prefab_identity(page_id, title, wikitext, mappings):
             and isinstance(value.get("label"), str)
         }
     else:
-        ordered_codes = extract_spawn_codes(wikitext)
+        ordered_codes = _extract_category_spawn_codes(wikitext)
         labels = {}
     if not ordered_codes:
         raise ValueError("Mob page has no verified prefab code: {}".format(title))
@@ -433,10 +490,32 @@ def _prefab_identity(page_id, title, wikitext, mappings):
     return ordered_codes, variants
 
 
+def _extract_category_spawn_codes(wikitext: str) -> Tuple[str, ...]:
+    values = []
+    for raw_line in re.findall(
+        r"\|\s*spawnCode\s*=\s*([^\n]+)", wikitext, re.IGNORECASE
+    ):
+        raw = re.split(r"\|\s*[A-Za-z][^=|]*=", raw_line, maxsplit=1)[0].strip()
+        if raw.startswith("{{"):
+            continue
+        quoted = re.findall(r"['\"]([A-Za-z][A-Za-z0-9_]*)['\"]", raw)
+        candidates = quoted or re.findall(r"^([A-Za-z][A-Za-z0-9_]*)", raw)
+        for candidate in candidates:
+            code = candidate.casefold()
+            if _PREFAB_CODE.fullmatch(code):
+                values.append(code)
+    return tuple(dict.fromkeys(values))
+
+
 def _summary(value: Any, fallback: str) -> str:
     if not isinstance(value, str) or not value.strip():
         return fallback
-    return " ".join(value.split())[:600]
+    normalized = " ".join(value.split())
+    sentences = re.split(r"(?<=[.!?])\s+", normalized)
+    dst_only = " ".join(
+        sentence for sentence in sentences if not _NON_DST_MARKERS.search(sentence)
+    ).strip()
+    return (dst_only or fallback)[:600]
 
 
 def _reviewed_summary(value: Any) -> Optional[ReviewedNote]:

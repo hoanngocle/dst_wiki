@@ -2,6 +2,7 @@
 
 from copy import deepcopy
 from dataclasses import dataclass
+import re
 from typing import Any, Dict, Iterable, List, Mapping, MutableMapping, Sequence, Set
 
 
@@ -30,6 +31,28 @@ _VALID_ACTIONS = {
 class CategoryMergeResult:
     items: List[JsonObject]
     audit: JsonObject
+
+
+def finalize_category_references(items: Sequence[JsonObject]) -> None:
+    """Invalidate category references removed by later catalog filters."""
+
+    public_ids = {
+        item.get("id")
+        for item in items
+        if isinstance(item, Mapping) and isinstance(item.get("id"), str)
+    }
+    for item in items:
+        mob = item.get("mob") if isinstance(item, Mapping) else None
+        if not isinstance(mob, MutableMapping) or not isinstance(
+            mob.get("classification"), Mapping
+        ):
+            continue
+        _resolve_section(
+            mob, "loot", "itemTitle", "item", {}, public_ids
+        )
+        _resolve_section(
+            mob, "spawnsFrom", "sourceTitle", "source", {}, public_ids
+        )
 
 
 def merge_category_mobs(
@@ -110,7 +133,9 @@ def merge_category_mobs(
             action = "created"
 
         canonical_id = str(canonical["id"])
+        existing_mob = canonical.get("mob")
         page = _overlay_runtime_facts(page, entity_by_id.get(canonical_id))
+        page = _overlay_catalog_loot(page, existing_mob)
         canonical["mob"] = page
         canonical["category"] = "mob"
         canonical["namespace"] = canonical.get("namespace") or "base_game"
@@ -206,6 +231,7 @@ def merge_category_mobs(
         ):
             excluded_non_dst.append({"title": title, "reason": reason})
 
+    _resolve_category_references(result, matched_ids, hidden_ids)
     public_items = [item for item in result if item.get("id") not in hidden_ids]
     public_items.sort(key=lambda item: str(item.get("id", "")))
     rows.sort(key=lambda row: (str(row.get("recordId", "")), str(row.get("action", ""))))
@@ -291,6 +317,133 @@ def _overlay_runtime_facts(page: JsonObject, entity: Any) -> JsonObject:
                 }]
                 values[index] = replacement
     return page
+
+
+def _overlay_catalog_loot(page: JsonObject, existing_mob: Any) -> JsonObject:
+    if not isinstance(existing_mob, Mapping):
+        return page
+    status = existing_mob.get("lootStatus")
+    raw_values = existing_mob.get("loot")
+    if status == "none":
+        page["loot"] = {
+            "status": "none",
+            "values": [],
+            "reason": "runtime_has_no_loot",
+            "evidence": [],
+        }
+        return page
+    if status != "known" or not isinstance(raw_values, list) or not raw_values:
+        return page
+    values = []
+    for raw in raw_values:
+        if not isinstance(raw, Mapping) or not isinstance(raw.get("item"), Mapping):
+            continue
+        minimum = raw.get("minimum")
+        maximum = raw.get("maximum")
+        if not isinstance(minimum, (int, float)) or not isinstance(maximum, (int, float)):
+            continue
+        quantity = _number_text(minimum)
+        if maximum != minimum:
+            quantity += "-" + _number_text(maximum)
+        values.append(
+            {
+                "item": deepcopy(dict(raw["item"])),
+                "quantity": quantity,
+                "chance": raw.get("chance") if isinstance(raw.get("chance"), str) else None,
+                "conditions": raw.get("conditions") if isinstance(raw.get("conditions"), str) else None,
+                "method": raw.get("method") if isinstance(raw.get("method"), str) else "kill",
+                "sourceVariant": None,
+                "game": "DST",
+            }
+        )
+    if values:
+        page["loot"] = {
+            "status": "known",
+            "values": values,
+            "reason": None,
+            "evidence": [],
+        }
+    return page
+
+
+def _resolve_category_references(
+    items: Sequence[JsonObject], matched_ids: Set[str], hidden_ids: Set[str]
+) -> None:
+    public = [item for item in items if item.get("id") not in hidden_ids]
+    public_ids = {
+        item.get("id") for item in public if isinstance(item.get("id"), str)
+    }
+    by_name: Dict[str, List[JsonObject]] = {}
+    for item in public:
+        for value in (item.get("name"), item.get("englishName"), item.get("prefabId")):
+            if isinstance(value, str) and _reference_key(value):
+                by_name.setdefault(_reference_key(value), []).append(item)
+
+    for item in items:
+        if item.get("id") not in matched_ids or item.get("id") in hidden_ids:
+            continue
+        mob = item.get("mob")
+        if not isinstance(mob, MutableMapping):
+            continue
+        _resolve_section(mob, "loot", "itemTitle", "item", by_name, public_ids)
+        _resolve_section(
+            mob, "spawnsFrom", "sourceTitle", "source", by_name, public_ids
+        )
+
+
+def _resolve_section(
+    mob: MutableMapping[str, Any],
+    section_name: str,
+    title_key: str,
+    reference_key: str,
+    by_name: Mapping[str, Sequence[JsonObject]],
+    public_ids: Set[str],
+) -> None:
+    section = mob.get(section_name)
+    if not isinstance(section, MutableMapping) or section.get("status") != "known":
+        return
+    values = section.get("values")
+    if not isinstance(values, list) or not values:
+        return
+    resolved = []
+    for raw in values:
+        if not isinstance(raw, Mapping):
+            break
+        value = deepcopy(dict(raw))
+        reference = value.get(reference_key)
+        if isinstance(reference, Mapping) and isinstance(reference.get("id"), str):
+            if reference["id"] in public_ids:
+                resolved.append(value)
+                continue
+            break
+        title = value.get(title_key)
+        candidates = by_name.get(_reference_key(title), ()) if isinstance(title, str) else ()
+        unique = {candidate.get("id"): candidate for candidate in candidates if isinstance(candidate.get("id"), str)}
+        if len(unique) != 1:
+            break
+        target = next(iter(unique.values()))
+        value.pop(title_key, None)
+        value[reference_key] = {
+            "id": target["id"],
+            "name": target.get("name") or target.get("englishName") or target["id"],
+            "sprite": target.get("sprite"),
+        }
+        resolved.append(value)
+    else:
+        section["values"] = resolved
+        return
+    section["status"] = "unknown"
+    section["values"] = []
+    section["reason"] = "unresolved_reference"
+
+
+def _reference_key(value: str) -> str:
+    return re.sub(r"[^a-z0-9]+", " ", value.casefold()).strip()
+
+
+def _number_text(value: Any) -> str:
+    number = float(value)
+    return str(int(number)) if number.is_integer() else str(number)
 
 
 def _audit_row(

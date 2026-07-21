@@ -41,10 +41,14 @@ def publish_category_assets(
             visual = page.get("visual")
             if not isinstance(visual, dict):
                 continue
-            title = visual.get("sourceTitle")
-            if not isinstance(title, str) or title not in records:
+            requested_title = visual.get("sourceTitle")
+            if not isinstance(requested_title, str):
                 continue
-            record = records[title]
+            record = records.get(_title_key(requested_title))
+            if record is None:
+                continue
+            title = record["title"]
+            visual["sourceTitle"] = title
             source = _safe_source(crawl_root, record.get("local_path"))
             digest = _sha256(source)
             expected = record.get("sha256")
@@ -98,8 +102,12 @@ def _image_records(path: Path) -> Dict[str, Mapping[str, Any]]:
             title = value.get("title") if isinstance(value, dict) else None
             if not isinstance(title, str) or not title:
                 raise ValueError("category image record has no title")
-            records[title] = value
+            records[_title_key(title)] = value
     return records
+
+
+def _title_key(value: str) -> str:
+    return " ".join(value.replace("_", " ").casefold().split())
 
 
 def _safe_source(root: Path, value: Any) -> Path:

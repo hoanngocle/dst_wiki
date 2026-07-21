@@ -43,13 +43,14 @@ def build_note_review(
         wikitext = page.get("wikitext")
         if not isinstance(page_id, int) or not isinstance(wikitext, str):
             raise ValueError("category note page identity is invalid")
-        source = _notes_source(wikitext)
-        if source is None:
+        note = _notes_source(wikitext)
+        if note is None:
             continue
+        source, locator = note
         entries[str(page_id)] = {
             "source": source,
             "source_sha256": sha256_text(source),
-            "locator": "heading:Notes",
+            "locator": locator,
             "reviewed": False,
         }
     return {
@@ -108,18 +109,21 @@ def load_reviewed_note_summaries(path: Path) -> Mapping[int, ReviewedNote]:
     return result
 
 
-def _notes_source(wikitext: str) -> Optional[str]:
+def _notes_source(wikitext: str) -> Optional[tuple[str, str]]:
     matches = list(_HEADING.finditer(wikitext))
+    retained = []
+    selected_headings = []
     for index, match in enumerate(matches):
-        if match.group(2).strip().casefold() != "notes":
+        heading = _clean_note_line(match.group(2))
+        if heading.casefold() not in {"notes", "tips"}:
             continue
+        selected_headings.append(heading)
         level = len(match.group(1))
         end = len(wikitext)
         for following in matches[index + 1 :]:
             if len(following.group(1)) <= level:
                 end = following.start()
                 break
-        retained = []
         for raw_line in wikitext[match.end() : end].splitlines():
             cleaned = _clean_note_line(raw_line)
             if (
@@ -128,9 +132,11 @@ def _notes_source(wikitext: str) -> Optional[str]:
                 and not _NON_DST.search(cleaned)
             ):
                 retained.append(cleaned)
-        source = " ".join(dict.fromkeys(retained)).strip()
-        return source or None
-    return None
+    source = " ".join(dict.fromkeys(retained)).strip()
+    if not source:
+        return None
+    headings = ",".join(dict.fromkeys(selected_headings))
+    return source, "headings:{}".format(headings)
 
 
 def _clean_note_line(value: str) -> str:

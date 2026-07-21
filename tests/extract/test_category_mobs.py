@@ -153,6 +153,121 @@ class CategoryMobTests(unittest.TestCase):
         self.assertEqual(mob["combat"]["status"], "unknown")
         self.assertEqual(mob["combat"]["reason"], "ambiguous_game_version")
 
+    def test_rejects_template_fragment_as_prefab_code_until_explicitly_mapped(self):
+        pengull = page(
+            19330,
+            "Pengull",
+            """
+{{Mob Infobox
+|spawnCode = {{HoverOver|text="penguin"|hover=Can only be spawned during Winter}}
+|health = {{DST|150}}
+}}
+""",
+        )
+
+        with self.assertRaisesRegex(ValueError, "no verified prefab code"):
+            extract_mob_page(pengull, animals_config(), mappings={})
+
+        mob = extract_mob_page(
+            pengull,
+            animals_config(),
+            mappings={
+                19330: {
+                    "primaryCode": "penguin",
+                    "prefabCodes": ["penguin"],
+                    "variants": [],
+                }
+            },
+        )
+        self.assertEqual(mob["identity"]["primaryCode"], "penguin")
+
+    def test_summary_drops_non_dst_sentences(self):
+        frog = page(
+            2554,
+            "Frog",
+            "{{Mob Infobox|spawnCode=frog|health={{DST|100}}}}",
+        )
+        frog["plain_text"] = (
+            "Frogs knock an item from the player's inventory when attacking. "
+            "In Shipwrecked, Poison Frogs use a different attack. "
+            "Frog Rain can overwhelm nearby enemies."
+        )
+
+        mob = extract_mob_page(frog, animals_config(), mappings={})
+
+        self.assertIn("knock an item", mob["summary"])
+        self.assertIn("Frog Rain", mob["summary"])
+        self.assertNotIn("Shipwrecked", mob["summary"])
+
+    def test_extracts_multiple_quoted_prefabs_from_one_spawn_code_field(self):
+        koalefant = page(
+            9368,
+            "Koalefant",
+            """
+{{Mob Infobox
+|spawnCode = "koalefant_summer"<br>"koalefant_winter"
+|health = {{DST|1000}}
+}}
+""",
+        )
+
+        mob = extract_mob_page(koalefant, animals_config(), mappings={})
+
+        self.assertEqual(
+            mob["identity"]["prefabCodes"],
+            ["koalefant_summer", "koalefant_winter"],
+        )
+
+    def test_parses_live_infobox_picture_loot_and_primary_image(self):
+        gem_deer = page(
+            166761,
+            "Gem Deer",
+            """
+{{Mob Infobox
+|image = <gallery>
+Red Gem Deer.png|Red
+Blue Gem Deer.png|Blue
+</gallery>
+|spawnCode = "deer_red"<br>"deer_blue"
+|health = {{DST|700}}
+|drops = {{pic|32|Meat}} '''x2'''<br>{{pic|32|Red Gem}} '''x1''' (Red Gem Deer)<br>{{pic|32|Blue Gem}} '''x1''' (Blue Gem Deer)
+}}
+""",
+        )
+
+        mob = extract_mob_page(gem_deer, animals_config(), mappings={})
+
+        self.assertEqual(mob["visual"]["sourceTitle"], "File:Red Gem Deer.png")
+        self.assertEqual(
+            [value["itemTitle"] for value in mob["loot"]["values"]],
+            ["Meat", "Red Gem", "Blue Gem"],
+        )
+        self.assertEqual(
+            [value["quantity"] for value in mob["loot"]["values"]],
+            ["2", "1", "1"],
+        )
+
+    def test_parses_file_link_loot_chance_and_capture_condition(self):
+        parrot = page(
+            136122,
+            "Parrot Pirate",
+            """
+{{Mob Infobox
+|image = Parrot Pirate.png
+|spawnCode = "parrot_pirate"
+|drops = [[File:Morsel.png|24px|link=Morsel]] 50%<br>[[File:Crimson Feather.png|24px|link=Crimson Feather]] 50%<br>[[File:Parrot Pirate.png|24px|link=Parrot Pirate]] ([[File:Bird Trap.png|24px|link=Bird Trap]])
+}}
+""",
+        )
+
+        mob = extract_mob_page(parrot, animals_config(), mappings={})
+
+        self.assertEqual(mob["loot"]["values"][0]["itemTitle"], "Morsel")
+        self.assertEqual(mob["loot"]["values"][0]["chance"], "50%")
+        self.assertEqual(mob["loot"]["values"][2]["itemTitle"], "Parrot Pirate")
+        self.assertEqual(mob["loot"]["values"][2]["conditions"], "Bird Trap")
+        self.assertEqual(mob["loot"]["values"][2]["method"], "conditional")
+
 
 if __name__ == "__main__":
     unittest.main()

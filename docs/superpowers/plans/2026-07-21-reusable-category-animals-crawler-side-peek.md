@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Discover the 34 direct namespace-0 Animals pages, exclude six reviewed Shipwrecked/Hamlet-only pages before detail crawling, crawl and publish the remaining 28 DST Mob pages through a reusable category pipeline, merge them by verified prefab code with a non-destructive cleanup audit, and replace the centered detail modal with an accessible right-side peek.
+**Goal:** Discover the 35 direct namespace-0 Animals pages, exclude six reviewed Shipwrecked/Hamlet-only pages before detail crawling, crawl and publish the remaining 29 DST Mob pages through a reusable category pipeline, merge them by verified prefab code with a non-destructive cleanup audit, and replace the centered detail modal with an accessible right-side peek.
 
 **Architecture:** Add a configuration-driven `category` profile beside the existing full and items crawlers. Category discovery snapshots remain isolated by key, while a locked human-readable URL registry and shared page cache deduplicate item fetches across parallel categories. An offline Mob normalizer produces DST-only typed data and reviewed note candidates; export merges by exact prefab code while preserving canonical source/runtime facts. The frontend consumes schema-versioned local JSON and renders shared Mob sections inside a right-edge drawer.
 
@@ -11,8 +11,8 @@
 ## Global Constraints
 
 - The source is exactly `https://dontstarve.fandom.com/wiki/Category:Animals`.
-- Require exactly 34 direct namespace-0 discovery members, then exclude the six
-  reviewed non-DST titles before detail/image crawling and publish exactly 28
+- Require exactly 35 direct namespace-0 discovery members, then exclude the six
+  reviewed non-DST titles before detail/image crawling and publish exactly 29
   DST pages; record but never crawl namespace-14 children.
 - The non-DST exclusions are exact and configuration-owned: Shipwrecked-only
   `Blue Whale`, `White Whale`, `Wildbore`; Hamlet-only `Peagawk`, `Pog`,
@@ -73,7 +73,7 @@
 - Create `data/manual/category-note-summaries/animals.json`: reviewed note summaries keyed by page ID and source hash; populated from the real crawl in Task 7.
 - Modify `tools/extract/export_items.py`: consume category artifact, merge Mob records, publish assets, and write category audit.
 - Modify `tests/extract/test_export_items.py`: category integration and schema-version coverage.
-- Modify `tools/extract/validate.py`: 34-discovered/6-excluded/28-published, code ownership, DST-only, note-review, and audit consistency gates.
+- Modify `tools/extract/validate.py`: 35-discovered/6-excluded/29-published, code ownership, DST-only, note-review, and audit consistency gates.
 - Modify `tests/extract/test_export_validate.py`: new hard-failure cases.
 - Modify `tools/extract/cli.py`: category note-review and normalization commands plus export/validate paths.
 
@@ -95,7 +95,7 @@
 
 ### Generated artifacts and documentation
 
-- Create `data/generated/categories/animals.json`: normalized 28-Mob DST category artifact plus the complete discovery/exclusion audit.
+- Create `data/generated/categories/animals.json`: normalized 29-Mob DST category artifact plus the complete discovery/exclusion audit.
 - Create `data/generated/category-crawl-audits/animals.json`: merge/cleanup/exclusion audit.
 - Create `data/generated/category-note-review/animals.json`: source-hash review queue.
 - Create `public/assets/wiki-categories/animals/`: selected content-addressed images.
@@ -200,8 +200,8 @@ git commit -m "feat: coordinate category crawler URLs"
 def test_loads_animals_category_with_reviewed_scope():
     config = load_category_config("animals")
     assert config.category_title == "Category:Animals"
-    assert config.expected_direct_pages == 34
-    assert config.expected_published_pages == 28
+    assert config.expected_direct_pages == 35
+    assert config.expected_published_pages == 29
     assert config.allowed_namespaces == (0,)
     assert dict(config.excluded_titles) == {
         "Blue Whale": "non_dst:shipwrecked",
@@ -293,8 +293,8 @@ Expected: configuration/seed modules are missing and `MediaWikiClient` has no `l
   "key": "animals",
   "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Animals",
   "categoryTitle": "Category:Animals",
-  "expectedDirectPages": 34,
-  "expectedPublishedPages": 28,
+  "expectedDirectPages": 35,
+  "expectedPublishedPages": 29,
   "allowedNamespaces": [0],
   "excludedTitles": {
     "Blue Whale": "non_dst:shipwrecked",
@@ -508,11 +508,11 @@ class CategoryCrawler(WikiCrawler):
 ```
 
 Discovery follows tokens until exhausted, records disallowed namespaces, and
-first enforces the 34-page direct namespace-0 membership guard. It then marks
+first enforces the 35-page direct namespace-0 membership guard. It then marks
 the exact configured non-DST titles excluded before any detail/image request,
 resolves only the remaining requested titles through
 `resolve_titles_detailed`, rewrites queued seeds with canonical page
-ID/title/URL, deduplicates by resolved page ID, and enforces the 28-page queue
+ID/title/URL, deduplicates by resolved page ID, and enforces the 29-page queue
 guard. It saves all queued/excluded seeds and marks discovery complete only
 after membership, exclusion, and queue-count validation.
 
@@ -693,8 +693,8 @@ python3 -m tools.extract.cli normalize-category --category animals
 `category-notes` reads the completed crawl and atomically writes the review
 queue. `normalize-category` reads config, raw crawl, mappings, reviewed note
 summaries, and atomically writes `data/generated/categories/animals.json` only
-when it contains 28 valid canonical DST Mob records. The artifact also contains
-a `discovery` object with all 34 direct namespace-0 members, the exact six
+when it contains 29 valid canonical DST Mob records. The artifact also contains
+a `discovery` object with all 35 direct namespace-0 members, the exact six
 non-DST exclusions, all accepted canonical pages, and every excluded
 subcategory seed, so merge/audit can emit explicit `excluded` rows.
 
@@ -780,17 +780,17 @@ def test_category_validation_rejects_non_dst_detail_fetch_and_count_drift(self):
     errors = category_export_errors(
         items_payload(),
         category_audit(
-            direct_pages=34,
+            direct_pages=35,
             excluded_non_dst=reviewed_six_non_dst_titles(),
             fetched_titles=["Beefalo", "Blue Whale"],
-            published_pages=28,
+            published_pages=29,
         ),
     )
     assert "excluded_title_fetched" in error_codes(errors)
 
     drift = category_export_errors(
         items_payload(),
-        category_audit(direct_pages=34, excluded_non_dst=[], published_pages=34),
+        category_audit(direct_pages=35, excluded_non_dst=[], published_pages=35),
     )
     assert "non_dst_exclusion_mismatch" in error_codes(drift)
     assert "published_category_count_mismatch" in error_codes(drift)
@@ -832,9 +832,9 @@ records.
 
 - [x] **Step 6: Add hard validation gates**
 
-Validation must reject direct namespace-0 discovery total not equal to 34, a
+Validation must reject direct namespace-0 discovery total not equal to 35, a
 non-DST exclusion set other than the exact reviewed six titles/reasons, queued
-or published category total not equal to 28, any excluded title with fetched
+or published category total not equal to 29, any excluded title with fetched
 detail/image data, any published category page with no code, code ownership
 conflicts, category-child publication, non-DST evidence/value labels, invalid
 known-empty sections, unresolved known loot references, source note without
@@ -1151,7 +1151,7 @@ git commit -m "feat: open item details in a right side peek"
 
 ---
 
-### Task 7: Discover 34 pages, crawl the 28 DST pages, review Notes, regenerate, and verify
+### Task 7: Discover 35 pages, crawl the 29 DST pages, review Notes, regenerate, and verify
 
 **Files:**
 - Modify: `data/manual/category-prefab-mappings/animals.json`
@@ -1168,7 +1168,7 @@ git commit -m "feat: open item details in a right side peek"
 - Consumes: completed category infrastructure and normalizer.
 - Produces: reviewed real Animals artifacts and documented repeatable commands.
 
-- [ ] **Step 1: Run all focused tests before network work**
+- [x] **Step 1: Run all focused tests before network work**
 
 Run:
 
@@ -1180,7 +1180,7 @@ npm test -- app/lib/item-catalog.test.ts app/components/mob-sections.test.tsx ap
 
 Expected: PASS.
 
-- [ ] **Step 2: Crawl Animals to completion**
+- [x] **Step 2: Crawl Animals to completion**
 
 Run repeatedly until no pending pages/images remain:
 
@@ -1188,16 +1188,16 @@ Run repeatedly until no pending pages/images remain:
 python3 -m tools.crawl_wiki.cli --profile category --category animals --page-budget 100
 ```
 
-Expected final summary: `pages=28`, `failures=0`, `pending_pages=0`, and
+Expected final summary: `pages=29`, `failures=0`, `pending_pages=0`, and
 `pending_images=0`. Verify the manifest status is `complete`, the direct
-namespace-0 discovery count is 34, exactly six direct seeds are excluded with
-their reviewed `non_dst:*` reasons, exactly 28 seeds are queued, and all five
+namespace-0 discovery count is 35, exactly six direct seeds are excluded with
+their reviewed `non_dst:*` reasons, exactly 29 seeds are queued, and all four
 category children are excluded by namespace. Confirm no page detail or image
 request exists for `Blue Whale`, `White Whale`, `Wildbore`, `Peagawk`, `Pog`,
 or `Glowfly`. If membership or exclusion drift occurs, stop and update neither
 the config nor generated output without a separate review.
 
-- [ ] **Step 3: Generate and complete the note review queue**
+- [x] **Step 3: Generate and complete the note review queue**
 
 Run:
 
@@ -1212,7 +1212,7 @@ under the matching page ID in
 `source_sha256`, and set `reviewed` to `true`. Re-run the command; expected
 review summary is `unreviewed=0`.
 
-- [ ] **Step 4: Resolve only explicit prefab mapping gaps**
+- [x] **Step 4: Resolve only explicit prefab mapping gaps**
 
 Run normalization once:
 
@@ -1223,10 +1223,10 @@ python3 -m tools.extract.cli normalize-category --category animals
 If the command reports pages without verified spawn codes, inspect each raw
 page and the canonical game catalog, then add only exact page-ID mappings to
 `data/manual/category-prefab-mappings/animals.json`. Never use display-name
-similarity. Re-run until the command reports `pages=28`, `codes_unresolved=0`,
+similarity. Re-run until the command reports `pages=29`, `codes_unresolved=0`,
 and `code_conflicts=0`.
 
-- [ ] **Step 5: Export, validate, and inspect cleanup recommendations**
+- [x] **Step 5: Export, validate, and inspect cleanup recommendations**
 
 Run:
 
@@ -1239,16 +1239,16 @@ Expected: validation exits 0 and `category_export_errors` is empty. Inspect all
 audit rows whose action is `flagged` or `duplicate_hidden`; confirm they remain
 non-public but present in the audit and no files/records were deleted.
 
-- [ ] **Step 6: Document the reusable runbook**
+- [x] **Step 6: Document the reusable runbook**
 
 Add the exact category commands, separate output/checkpoint paths, continuation
-behavior, 34-page discovery guard, explicit non-DST exclusion review, 28-page
+behavior, 35-page discovery guard, explicit non-DST exclusion review, 29-page
 queue/publication guard, note review, mapping review, export, retry, and
 validation lifecycle to `docs/wiki-crawler.md` and `docs/data-extraction.md`.
 Include a future-category example that adds a config key without copying the
 crawler.
 
-- [ ] **Step 7: Run the complete verification suite**
+- [x] **Step 7: Run the complete verification suite**
 
 Run:
 
@@ -1266,15 +1266,15 @@ Expected: all Python/Vitest tests pass, TypeScript exits 0, ESLint exits 0,
 Next.js production build succeeds, catalog validation exits 0, and diff check
 prints no errors.
 
-- [ ] **Step 8: Commit Task 7**
+- [x] **Step 8: Commit Task 7**
 
 ```bash
 git add data/manual/category-prefab-mappings/animals.json data/manual/category-note-summaries/animals.json data/generated/categories/animals.json data/generated/category-crawl-audits/animals.json data/generated/category-note-review/animals.json public/assets/wiki-categories/animals public/data/items.json docs/wiki-crawler.md docs/data-extraction.md
 git commit -m "data: publish reviewed DST animals category"
 ```
 
-Record the final audit summary in the handoff: 34 direct namespace-0 pages
-discovered, six reviewed non-DST pages excluded before detail crawl, five
-subcategory children excluded, 28 DST canonical pages published, prefab-code
+Record the final audit summary in the handoff: 35 direct namespace-0 pages
+discovered, six reviewed non-DST pages excluded before detail crawl, four
+subcategory children excluded, 29 DST canonical pages published, prefab-code
 count, multi-variant page count, created/merged/kept/flagged/hidden counts,
 reviewed note count, and test/build/validation results.

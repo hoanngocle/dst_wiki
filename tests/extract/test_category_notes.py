@@ -47,6 +47,29 @@ class CategoryNoteTests(unittest.TestCase):
             sha256_text(source),
         )
 
+    def test_note_review_accepts_live_template_tips_heading_and_ignores_trivia(self):
+        beefalo = page(
+            209,
+            "Beefalo",
+            """
+{{Mob Infobox|spawnCode=beefalo|health={{DST|500}}}}
+== {{Tips}} Tips ==
+* Feed it before mounting to restore obedience.
+== {{Trivia}} Trivia ==
+* An ornery Beefalo deals increased combat damage.
+* Added in the March 2020 update.
+* In Hamlet, it used a different animation.
+== {{Gallery}} Gallery ==
+* Beefalo portrait.
+""",
+        )
+
+        review = build_note_review([beefalo], animals_config())
+
+        source = "Feed it before mounting to restore obedience."
+        self.assertEqual(review["pages"]["209"]["source"], source)
+        self.assertEqual(review["pages"]["209"]["locator"], "headings:Tips")
+
     def test_normalizer_rejects_unreviewed_source_note(self):
         bunnyman = page(
             208,

@@ -96,6 +96,28 @@ python3 -m tools.extract.cli export
 
 `import-wiki` mặc định đọc `data/crawled/dontstarve-items` và cập nhật transactionally các bảng Wiki trong `data/generated/wiki.sqlite`. Chạy lại cùng manifest không nhân đôi record. Import báo số page, recipe, ingredient, image, mapping và page chưa map; lỗi checksum/foreign key không làm mất batch thành công trước đó.
 
+### Publish một Category Mob DST
+
+Sau khi crawler Category hoàn tất, chạy tuần tự:
+
+```bash
+python3 -m tools.extract.cli category-notes --category animals
+# Duyệt review queue và cập nhật category-note-summaries/animals.json.
+python3 -m tools.extract.cli normalize-category --category animals
+# Chỉ thêm prefab mapping khi code được xác minh chính xác.
+python3 -m tools.extract.cli export
+python3 -m tools.extract.cli validate
+```
+
+Animals phải tạo 29 page, 35 prefab code duy nhất, không có code unresolved hay
+conflict; 15 source Tips hiện tại phải khớp summary tiếng Việt đã review theo
+SHA-256. Fact runtime/Lua thắng Wiki. Record trùng bị ẩn, record rỗng/lỗi được
+gắn cờ trong `data/generated/category-crawl-audits/animals.json`, không tự xóa.
+Khi source note đổi hash hoặc registry quay về `New`, chạy lại vòng đời trên.
+
+Category mới dùng cùng command với key mới; output review, mapping và audit đều
+mang key riêng, không dùng chung checkpoint hoặc quyết định loại trừ.
+
 ### Làm mới và duyệt dữ liệu Công trình
 
 Khi crawl Wiki và database game/mod đã sẵn sàng, chạy đúng vòng đời sau để tái tạo phần Công trình cho cả DST và Tu Tiên:
@@ -151,7 +173,10 @@ Lệnh này chỉ đọc texture được `item-textures.json` tham chiếu, ver
 - `data/generated/wiki.sqlite`: database chuẩn hóa có entities, recipes, ingredients, acquisition, stats/effects/relations/assets, evidence, conflicts, extraction errors và các bảng `wiki_import_runs`, `wiki_pages`, `wiki_recipes`, `wiki_recipe_ingredients`, `wiki_images`, `wiki_entity_mappings`. Đây là nguồn audit/provenance đầy đủ.
 - `public/data/catalog.json`: JSON entity đã nest, sắp xếp ổn định; là input chính cho tìm kiếm và trang chi tiết của wiki tương lai.
 - `public/data/assets.json`: asset map và provenance cho icon/atlas; là input asset của wiki tương lai.
-- `public/data/items.json`: payload schema version 6 cho màn tìm kiếm Prefabs, gồm category, tên, công thức runtime/Wiki, `craftingNote`, sprite descriptor, metadata Wiki và `structureDetails`. Entity map chắc chắn được enrich tại ID game cũ; page chưa map dùng ID `wiki:<page_id>` nhưng luôn có namespace `base_game` để xuất hiện trong nhóm DST. Namespace Tu Tiên chỉ công bố entity có tên tiếng Việt. `craftingNote` chỉ là ghi chú trong menu chế tạo, không được dùng để suy đoán nguyên liệu hoặc số lượng.
+- `public/data/items.json`: payload schema version 7 cho màn tìm kiếm Prefabs, gồm category, tên, công thức runtime/Wiki, `craftingNote`, sprite descriptor, metadata Wiki, `structureDetails` và contract Mob/Boss. Entity map chắc chắn được enrich tại ID game cũ; page chưa map dùng ID `wiki:<page_id>` nhưng luôn có namespace `base_game` để xuất hiện trong nhóm DST. Namespace Tu Tiên chỉ công bố entity có tên tiếng Việt. `craftingNote` chỉ là ghi chú trong menu chế tạo, không được dùng để suy đoán nguyên liệu hoặc số lượng.
+- `data/generated/categories/<key>.json`: Mob Category đã normalize, chỉ chứa fact DST, code/variant, notes đã review và provenance Fandom revision.
+- `data/generated/category-crawl-audits/<key>.json`: kết quả merge `created`/`merged`/`flagged`/`duplicate_hidden`/`excluded` cùng khuyến nghị dọn dữ liệu.
+- `public/assets/wiki-categories/<key>/*`: ảnh infobox được tham chiếu thực tế, publish theo SHA-256.
 - `public/data/wiki/pages/<page_id>.json`: detail article đã sanitize và loại navigation/template lặp; HTML/wikitext/plain text gốc đầy đủ vẫn nằm trong SQLite.
 - `public/assets/wiki/*`: ảnh gốc được detail/list tham chiếu, đặt tên content-addressed theo SHA-256.
 - `data/generated/item-textures.json`: manifest texture tối thiểu cần decode cho `items.json`.

@@ -1,4 +1,12 @@
 {
-  "pages": {},
+  "pages": {
+    "19330": {
+      "prefabCodes": [
+        "penguin"
+      ],
+      "primaryCode": "penguin",
+      "variants": []
+    }
+  },
   "schema_version": 1
 }

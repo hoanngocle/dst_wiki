@@ -9,8 +9,8 @@
     "White Whale": "non_dst:shipwrecked",
     "Wildbore": "non_dst:shipwrecked"
   },
-  "expectedDirectPages": 34,
-  "expectedPublishedPages": 28,
+  "expectedDirectPages": 35,
+  "expectedPublishedPages": 29,
   "game": "DST",
   "itemType": "mob",
   "key": "animals",
