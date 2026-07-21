@@ -4,7 +4,7 @@
 
 **Goal:** Discover the 34 direct namespace-0 Animals pages, exclude six reviewed Shipwrecked/Hamlet-only pages before detail crawling, crawl and publish the remaining 28 DST Mob pages through a reusable category pipeline, merge them by verified prefab code with a non-destructive cleanup audit, and replace the centered detail modal with an accessible right-side peek.
 
-**Architecture:** Add a configuration-driven `category` profile beside the existing full and items crawlers. Raw Fandom snapshots remain isolated by category key; an offline Mob normalizer produces DST-only typed data and reviewed note candidates; export merges by exact prefab code while preserving canonical source/runtime facts. The frontend consumes schema-versioned local JSON and renders shared Mob sections inside a right-edge drawer.
+**Architecture:** Add a configuration-driven `category` profile beside the existing full and items crawlers. Category discovery snapshots remain isolated by key, while a locked human-readable URL registry and shared page cache deduplicate item fetches across parallel categories. An offline Mob normalizer produces DST-only typed data and reviewed note candidates; export merges by exact prefab code while preserving canonical source/runtime facts. The frontend consumes schema-versioned local JSON and renders shared Mob sections inside a right-edge drawer.
 
 **Tech Stack:** Python 3.9 standard library, MediaWiki Action API, SQLite, JSONL, deterministic JSON, React 19.2, Next.js 16.2 App Router, TypeScript 5, Tailwind CSS 4, Vitest 4, Testing Library.
 
@@ -28,10 +28,20 @@
 - Keep the existing `WikiSearch` client boundary. Per the bundled Next.js 16 guide, imported interactive components do not need a redundant `use client` directive.
 - Continue using Tailwind utilities for component styling and `app/globals.css` only for shared keyframes, following the bundled Next.js 16 CSS guide.
 - Generated JSON, audits, seed order, variant order, and asset paths are deterministic.
+- Missing URLs enter the shared registry as `New`; one worker atomically claims
+  them as `Doing`; `Doing` and `Done` skip network fetch. Completed payloads are
+  reused from the shared cache and every referencing category remains recorded.
 
 ---
 
 ## File Map
+
+### Shared URL work registry
+
+- Create `docs/category-crawler-knowledge.md`: reusable category and queue contract.
+- Create `data/crawled/fandom-url-registry.json`: human-readable shared URL list.
+- Create `tools/crawl_wiki/url_registry.py`: URL normalization, locked state transitions, atomic JSON and shared payload cache.
+- Create `tests/crawl_wiki/test_url_registry.py`: New/Doing/Done, overlap, concurrency, failure release and cache tests.
 
 ### Category crawl infrastructure
 
@@ -92,6 +102,76 @@
 - Modify `public/data/items.json`: schema version 7 with merged Animals Mob data.
 - Modify `docs/wiki-crawler.md`: reusable category commands and resume behavior.
 - Modify `docs/data-extraction.md`: category normalization, review, export, and validation runbook.
+
+---
+
+### Task 0: Shared category URL registry and page cache
+
+**Files:**
+- Create: `docs/category-crawler-knowledge.md`
+- Create: `data/crawled/fandom-url-registry.json`
+- Create: `tools/crawl_wiki/url_registry.py`
+- Create: `tests/crawl_wiki/test_url_registry.py`
+
+**Interfaces:**
+- Produces: `normalize_crawler_url(url, allowed_origin) -> str`.
+- Produces: `UrlRegistry(path, cache_root, clock)`.
+- Produces: `register(url, category) -> UrlRecord`.
+- Produces: `claim(url, category, worker_id) -> UrlClaim` where decisions are `crawl`, `busy`, or `reuse`.
+- Produces: `complete(claim, payload) -> UrlRecord` and atomically stored shared payload.
+- Produces: `release(claim, error) -> UrlRecord` for handled failures.
+- Produces: `requeue(url, expected_worker_id=None) -> UrlRecord` for reviewed recovery.
+
+- [x] **Step 1: Write failing URL normalization and transition tests**
+
+Cover fragment removal, canonical title encoding, external-origin rejection,
+missing-to-New registration, `New -> Doing -> Done`, repeated category keys,
+and strict worker ownership for complete/release.
+
+- [x] **Step 2: Run registry tests and verify RED**
+
+Run:
+
+```bash
+python3 -m unittest tests.crawl_wiki.test_url_registry -v
+```
+
+Expected: `tools.crawl_wiki.url_registry` does not exist.
+
+- [x] **Step 3: Implement locked atomic registry and content-addressed cache**
+
+Use `fcntl.flock` on a sidecar lock for every read-modify-write. Sort registry
+rows by URL and category keys case-insensitively. Write JSON through a sibling
+temporary file, `flush`, `os.fsync`, and `os.replace`. Cache payloads under the
+SHA-256 of canonical URL and store their relative artifact path in the row.
+
+`claim` performs register and state decision under one lock: missing or `New`
+returns `crawl` after setting `Doing`; `Doing` returns `busy`; `Done` returns
+`reuse`. A handled error changes the owner's `Doing` row back to `New`; a crash
+does not auto-expire. `requeue` is explicit and auditable.
+
+- [x] **Step 4: Add concurrency and shared-cache reuse tests**
+
+Start two registry instances against one temporary file. Prove only one claim
+returns `crawl`, the other returns `busy`, both category keys are retained, and
+a third claim after completion returns `reuse` with the exact cached payload.
+
+- [x] **Step 5: Run registry and existing crawler suites**
+
+Run:
+
+```bash
+python3 -m unittest tests.crawl_wiki.test_url_registry tests.crawl_wiki.test_storage tests.crawl_wiki.test_crawler tests.crawl_wiki.test_cli -v
+```
+
+Expected: PASS.
+
+- [x] **Step 6: Commit Task 0**
+
+```bash
+git add docs/category-crawler-knowledge.md data/crawled/fandom-url-registry.json tools/crawl_wiki/url_registry.py tests/crawl_wiki/test_url_registry.py docs/superpowers/specs/2026-07-21-reusable-category-animals-crawler-side-peek-design.md docs/superpowers/plans/2026-07-21-reusable-category-animals-crawler-side-peek.md
+git commit -m "feat: coordinate category crawler URLs"
+```
 
 ---
 

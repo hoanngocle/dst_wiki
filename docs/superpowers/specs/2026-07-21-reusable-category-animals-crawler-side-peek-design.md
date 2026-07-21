@@ -101,9 +101,12 @@ Right-side item peek
 ```
 
 The crawler owns discovery, continuation, redirects, retries, checkpoints, raw
-page storage, and image storage. It does not contain Animals-specific parsing.
-The selected normalizer owns DST filtering and the Mob contract. Merge and
-validation run only after the crawl snapshot is internally complete.
+page storage, and image storage. Direct item fetches are coordinated through a
+shared canonical-URL registry and content-addressed page cache so overlapping
+categories do not request the same page twice. It does not contain
+Animals-specific parsing. The selected normalizer owns DST filtering and the
+Mob contract. Merge and validation run only after the crawl snapshot is
+internally complete.
 
 The web application reads generated local artifacts. Opening or navigating
 inside the side peek never contacts Fandom.
@@ -141,9 +144,36 @@ pagination limit. `excludedTitles` is the reviewed non-DST exclusion set, and
 `expectedPublishedPages` guards the 28-page queue/output after those exclusions.
 `game` selects version filtering, and `itemType` routes raw pages to a normalizer.
 
-Every future category uses separate checkpoint and output state. Two category
-runs must not share pending queues or silently overwrite one another's raw
-snapshot.
+Every future category uses separate discovery checkpoint and output state. Two
+category runs must not share category membership queues or silently overwrite
+one another's snapshot. They intentionally share only the canonical-URL claim
+registry and completed raw page cache.
+
+## Shared URL Registry and Page Cache
+
+All category crawlers coordinate direct page work through:
+
+```text
+data/crawled/fandom-url-registry.json
+data/crawled/fandom-url-registry.lock
+data/crawled/fandom-shared-pages/<sha256-canonical-url>.json
+```
+
+The human-readable registry contains one row per normalized canonical URL and
+uses exactly `New`, `Doing`, or `Done`. A missing URL is inserted as `New`; a
+worker atomically claims `New` as `Doing`; `Doing` and `Done` are skipped for
+network fetch. Every discovery still appends its category key to the row so
+overlap remains auditable.
+
+Registry mutations hold an exclusive sidecar file lock and replace the JSON
+atomically. A completed row points at a shared page artifact. A later category
+that sees `Done` reuses that artifact in its isolated snapshot. A handled fetch
+failure releases the row to `New` with error evidence. An unexpected process
+death may leave `Doing`; it remains skipped until an operator explicitly
+requeues it after review.
+
+The complete operational contract is maintained in
+`docs/category-crawler-knowledge.md` and applies to every future Category.
 
 ## Generated Artifact Layout
 
