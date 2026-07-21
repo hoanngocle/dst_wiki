@@ -257,7 +257,7 @@ def _prefab_export_coverage(
         return []
     expected = set(classify_public_prefabs(ScriptIndex(Path(scripts_path))))
     payload = json.loads(Path(items_path).read_text(encoding="utf-8"))
-    if payload.get("schema_version") != 6 or not isinstance(payload.get("items"), list):
+    if payload.get("schema_version") != 7 or not isinstance(payload.get("items"), list):
         return [{"code": "invalid_prefab_export_payload"}]
     if structure_audit_path is not None:
         audit = json.loads(Path(structure_audit_path).read_text(encoding="utf-8"))
@@ -368,7 +368,7 @@ def _structure_export_errors(
     rows = audit.get("rows") if isinstance(audit, dict) else None
     if (
         not isinstance(payload, dict)
-        or payload.get("schema_version") != 6
+        or payload.get("schema_version") != 7
         or not isinstance(items, list)
     ):
         return [{"code": "invalid_structure_items_payload"}]
@@ -572,7 +572,7 @@ def _effect_other_audit_errors(
     rows = audit.get("rows") if isinstance(audit, dict) else None
     if (
         not isinstance(payload, dict)
-        or payload.get("schema_version") != 6
+        or payload.get("schema_version") != 7
         or not isinstance(items, list)
     ):
         return [{"code": "invalid_effect_other_items_payload"}]
@@ -688,6 +688,226 @@ def _effect_other_audit_errors(
     return errors
 
 
+_ANIMALS_NON_DST_EXCLUSIONS = {
+    ("Blue Whale", "non_dst:shipwrecked"),
+    ("White Whale", "non_dst:shipwrecked"),
+    ("Wildbore", "non_dst:shipwrecked"),
+    ("Peagawk", "non_dst:hamlet"),
+    ("Pog", "non_dst:hamlet"),
+    ("Glowfly", "non_dst:hamlet"),
+}
+_NON_DST_TEXT = re.compile(
+    r"Shipwrecked|Hamlet|Reign of Giants|\bRoG\b|\bDS-only\b", re.I
+)
+_CATEGORY_SECTIONS = (
+    "stats",
+    "effects",
+    "combat",
+    "movement",
+    "traits",
+    "loot",
+    "spawnsFrom",
+    "notes",
+)
+
+
+def category_export_errors(
+    items_payload: Dict[str, Any], category_audit: Dict[str, Any]
+) -> List[Dict[str, Any]]:
+    """Return deterministic hard failures for the audited Animals publication."""
+
+    if (
+        not isinstance(items_payload, dict)
+        or items_payload.get("schema_version") != 7
+        or not isinstance(items_payload.get("items"), list)
+    ):
+        return [{"code": "invalid_category_items_payload"}]
+    if (
+        not isinstance(category_audit, dict)
+        or category_audit.get("schemaVersion") != 1
+        or category_audit.get("category") != "animals"
+        or not isinstance(category_audit.get("rows"), list)
+    ):
+        return [{"code": "invalid_category_audit_payload"}]
+
+    errors: List[Dict[str, Any]] = []
+    items = [item for item in items_payload["items"] if isinstance(item, dict)]
+    items_by_id = {
+        item.get("id"): item
+        for item in items
+        if isinstance(item.get("id"), str)
+    }
+    summary = category_audit.get("summary")
+    if not isinstance(summary, dict) or summary.get("directPages") != 34:
+        errors.append({"code": "direct_category_count_mismatch"})
+    if not isinstance(summary, dict) or summary.get("publishedPages") != 28:
+        errors.append({"code": "published_category_count_mismatch"})
+
+    raw_exclusions = category_audit.get("excludedNonDst")
+    exclusions = (
+        {
+            (value.get("title"), value.get("reason"))
+            for value in raw_exclusions
+            if isinstance(value, dict)
+        }
+        if isinstance(raw_exclusions, list)
+        else set()
+    )
+    if exclusions != _ANIMALS_NON_DST_EXCLUSIONS:
+        errors.append({"code": "non_dst_exclusion_mismatch"})
+    excluded_titles = {title for title, _reason in _ANIMALS_NON_DST_EXCLUSIONS}
+    fetched_titles = category_audit.get("fetchedTitles")
+    fetched = set(fetched_titles) if isinstance(fetched_titles, list) else set()
+    for title in sorted(excluded_titles & fetched):
+        errors.append({"code": "excluded_title_fetched", "title": title})
+
+    code_owners: Dict[str, List[str]] = {}
+    public_ids = set(items_by_id)
+    for item in items:
+        item_id = item.get("id")
+        prefab = item.get("prefabId")
+        if isinstance(item_id, str) and isinstance(prefab, str) and prefab.strip():
+            code_owners.setdefault(prefab.strip().casefold(), []).append(item_id)
+        mob = item.get("mob")
+        identity = mob.get("identity") if isinstance(mob, dict) else None
+        codes = identity.get("prefabCodes") if isinstance(identity, dict) else None
+        if isinstance(codes, list):
+            for raw_code in codes:
+                if isinstance(raw_code, str) and raw_code.strip():
+                    owners = code_owners.setdefault(raw_code.strip().casefold(), [])
+                    if isinstance(item_id, str) and item_id not in owners:
+                        owners.append(item_id)
+    for code in sorted(code_owners):
+        owners = sorted(set(code_owners[code]))
+        if len(owners) > 1:
+            errors.append(
+                {
+                    "code": "duplicate_prefab_code",
+                    "prefabCode": code,
+                    "recordIds": owners,
+                }
+            )
+
+    rows = category_audit["rows"]
+    for row in rows:
+        if not isinstance(row, dict):
+            errors.append({"code": "invalid_category_audit_row"})
+            continue
+        record_id = row.get("recordId")
+        action = row.get("action")
+        if action in {"created", "merged", "kept", "flagged"} and isinstance(
+            record_id, str
+        ):
+            if record_id not in public_ids:
+                errors.append(
+                    {"code": "audited_category_record_not_public", "id": record_id}
+                )
+        if action in {"duplicate_hidden", "excluded"} and isinstance(record_id, str):
+            if record_id in public_ids:
+                errors.append(
+                    {"code": "excluded_category_record_is_public", "id": record_id}
+                )
+        if row.get("noteStatus") == "unreviewed":
+            errors.append({"code": "unreviewed_category_note", "id": record_id})
+        codes = row.get("prefabCodes")
+        if action in {"created", "merged", "kept"} and (
+            not isinstance(codes, list) or not codes
+        ):
+            errors.append({"code": "missing_category_prefab_code", "id": record_id})
+
+    category_page_ids = {
+        row.get("recordId")
+        for row in rows
+        if isinstance(row, dict)
+        and row.get("action") in {"created", "merged", "kept"}
+        and isinstance(row.get("recordId"), str)
+    }
+    for item_id in sorted(category_page_ids & public_ids):
+        item = items_by_id[item_id]
+        mob = item.get("mob")
+        if not isinstance(mob, dict):
+            errors.append({"code": "missing_category_mob_details", "id": item_id})
+            continue
+        classification = mob.get("classification")
+        if not isinstance(classification, dict) or classification.get("game") != "DST":
+            errors.append({"code": "non_dst_category_classification", "id": item_id})
+        for section_name in _CATEGORY_SECTIONS:
+            section = mob.get(section_name)
+            if not isinstance(section, dict):
+                errors.append(
+                    {
+                        "code": "missing_category_section",
+                        "id": item_id,
+                        "section": section_name,
+                    }
+                )
+                continue
+            status = section.get("status")
+            values = section.get("values")
+            if status not in {"known", "none", "unknown"} or not isinstance(
+                values, list
+            ):
+                errors.append(
+                    {
+                        "code": "invalid_category_section",
+                        "id": item_id,
+                        "section": section_name,
+                    }
+                )
+            elif status == "known" and not values:
+                errors.append(
+                    {
+                        "code": "known_empty_category_section",
+                        "id": item_id,
+                        "section": section_name,
+                    }
+                )
+        for located in _recursive_strings(mob, "mob:" + item_id):
+            if _NON_DST_TEXT.search(located["value"]):
+                errors.append(
+                    {
+                        "code": "non_dst_category_value",
+                        "id": item_id,
+                        "location": located["location"],
+                    }
+                )
+                break
+        evidence = mob.get("evidence")
+        if not isinstance(evidence, list) or not evidence:
+            errors.append({"code": "missing_category_source_attribution", "id": item_id})
+        else:
+            for value in evidence:
+                if not isinstance(value, dict) or not isinstance(value.get("source"), str):
+                    errors.append(
+                        {"code": "missing_category_source_attribution", "id": item_id}
+                    )
+                    break
+                if value["source"] == "fandom" and (
+                    not isinstance(value.get("pageId"), int)
+                    or not isinstance(value.get("revisionId"), int)
+                ):
+                    errors.append(
+                        {"code": "missing_category_revision_attribution", "id": item_id}
+                    )
+                    break
+        loot = mob.get("loot")
+        loot_values = loot.get("values") if isinstance(loot, dict) else None
+        if (
+            isinstance(loot, dict)
+            and loot.get("status") == "known"
+            and isinstance(loot_values, list)
+        ):
+            for value in loot_values:
+                reference = value.get("item") if isinstance(value, dict) else None
+                reference_id = reference.get("id") if isinstance(reference, dict) else None
+                if not isinstance(reference_id, str) or reference_id not in public_ids:
+                    errors.append(
+                        {"code": "unresolved_known_loot_reference", "id": item_id}
+                    )
+                    break
+    return errors
+
+
 def _mob_boss_audit_errors(
     items_path: Optional[Path],
     audit_path: Optional[Path],
@@ -701,7 +921,7 @@ def _mob_boss_audit_errors(
     items = payload.get("items") if isinstance(payload, dict) else None
     rows = audit.get("rows") if isinstance(audit, dict) else None
     groups = groups_payload.get("groups") if isinstance(groups_payload, dict) else None
-    if payload.get("schema_version") != 6 or not isinstance(items, list):
+    if payload.get("schema_version") != 7 or not isinstance(items, list):
         return [{"code": "invalid_mob_boss_items_payload"}]
     if audit.get("schema_version") != 1 or not isinstance(rows, list):
         return [{"code": "invalid_mob_boss_audit_payload"}]
@@ -828,6 +1048,7 @@ def validate_catalog(
     items_path: Optional[Path] = None,
     structure_audit_path: Optional[Path] = None,
     effect_other_audit_path: Optional[Path] = None,
+    category_audit_path: Optional[Path] = None,
     mob_boss_audit_path: Optional[Path] = None,
     mob_groups_path: Optional[Path] = None,
 ) -> Dict[str, Any]:
@@ -988,6 +1209,19 @@ def validate_catalog(
         effect_other_audit_errors = _effect_other_audit_errors(
             items_path, effect_other_audit_path
         )
+        category_errors = []
+        if items_path is not None and category_audit_path is not None:
+            try:
+                category_errors = category_export_errors(
+                    json.loads(Path(items_path).read_text(encoding="utf-8")),
+                    json.loads(
+                        Path(category_audit_path).read_text(encoding="utf-8")
+                    ),
+                )
+            except (OSError, json.JSONDecodeError) as error:
+                category_errors = [
+                    {"code": "invalid_category_export_file", "detail": str(error)}
+                ]
         mob_boss_audit_errors = _mob_boss_audit_errors(
             items_path, mob_boss_audit_path, mob_groups_path
         )
@@ -1040,6 +1274,8 @@ def validate_catalog(
         hard_failures.append("structure_detail_errors")
     if effect_other_audit_errors:
         hard_failures.append("effect_other_audit_errors")
+    if category_errors:
+        hard_failures.append("category_export_errors")
     if mob_boss_audit_errors:
         hard_failures.append("mob_boss_audit_errors")
     return {
@@ -1062,6 +1298,7 @@ def validate_catalog(
         "prefab_export_coverage_errors": prefab_export_coverage_errors,
         "structure_detail_errors": structure_detail_errors,
         "effect_other_audit_errors": effect_other_audit_errors,
+        "category_export_errors": category_errors,
         "mob_boss_audit_errors": mob_boss_audit_errors,
         "warnings": warnings,
         "hard_failures": hard_failures,

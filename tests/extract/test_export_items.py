@@ -16,6 +16,14 @@ from tools.extract.export_items import (
 
 
 class ExportItemsTests(unittest.TestCase):
+    def test_public_item_contract_uses_schema_version_seven(self):
+        items, _textures, _report = build_item_export(
+            {"schema_version": 1, "entities": []},
+            {"schema_version": 1, "assets": []},
+        )
+
+        self.assertEqual(items["schema_version"], 7)
+
     def test_filters_acquisition_dependencies_not_referenced_by_public_details(self):
         items = [
             {
@@ -461,7 +469,7 @@ class ExportItemsTests(unittest.TestCase):
                 "tu_tien:xd_sword",
             ],
         )
-        self.assertEqual(items["schema_version"], 6)
+        self.assertEqual(items["schema_version"], 7)
         by_id = {item["id"]: item for item in items["items"]}
         self.assertEqual(by_id["base_game:deerclops"]["category"], "boss")
         self.assertEqual(by_id["base_game:goldnugget"]["category"], "item")
@@ -861,7 +869,7 @@ class ExportItemsTests(unittest.TestCase):
             self.assertEqual(mob_audit_path.read_bytes(), first_mob_audit)
             payload = json.loads(first_items)
             by_id = {item["id"]: item for item in payload["items"]}
-            self.assertEqual(payload["schema_version"], 6)
+            self.assertEqual(payload["schema_version"], 7)
             self.assertNotIn("base_game:spark_helper", by_id)
             self.assertIsNone(by_id["base_game:goldnugget"]["structureDetails"])
             self.assertEqual(

@@ -735,7 +735,7 @@ git commit -m "feat: normalize DST category mobs"
 - Extends `export_items(...)` with category artifact/audit/asset paths.
 - Extends `validate_catalog(...)` with category audit consistency checks.
 
-- [ ] **Step 1: Write failing merge precedence and duplicate tests**
+- [x] **Step 1: Write failing merge precedence and duplicate tests**
 
 ```python
 def test_merges_by_code_without_changing_canonical_id():
@@ -759,7 +759,7 @@ def test_hides_duplicate_code_and_flags_empty_orphan():
     assert "empty_details" in audit_flags(result, "base_game:unknown_mob")
 ```
 
-- [ ] **Step 2: Write failing asset and validation tests**
+- [x] **Step 2: Write failing asset and validation tests**
 
 ```python
 def test_publishes_only_referenced_images_atomically(self):
@@ -796,7 +796,7 @@ def test_category_validation_rejects_non_dst_detail_fetch_and_count_drift(self):
     assert "published_category_count_mismatch" in error_codes(drift)
 ```
 
-- [ ] **Step 3: Run tests and verify RED**
+- [x] **Step 3: Run tests and verify RED**
 
 Run:
 
@@ -806,7 +806,7 @@ python3 -m unittest tests.extract.test_category_merge tests.extract.test_categor
 
 Expected: merge/asset modules and category validation are absent.
 
-- [ ] **Step 4: Implement merge actions and audit rows**
+- [x] **Step 4: Implement merge actions and audit rows**
 
 Index all existing base-game Mob records by normalized prefab code. For each
 canonical category page, match every `prefabCodes` value. Preserve the chosen
@@ -818,7 +818,7 @@ Use actions exactly `created`, `merged`, `kept`, `flagged`,
 `empty_details`, `invalid_schema`, `missing_visual`, `orphan_record`, and
 `duplicate_code`. Sort rows by `(recordId, action)`.
 
-- [ ] **Step 5: Integrate category artifacts into export and bump schema**
+- [x] **Step 5: Integrate category artifacts into export and bump schema**
 
 After base items and old Mob details are built, load
 `data/generated/categories/animals.json`, merge it before structure/effect
@@ -830,7 +830,7 @@ Change the public payload header from schema version 6 to 7. Always serialize
 `mob: null` for non-Mob/Boss records and the expanded Mob contract for Mob/Boss
 records.
 
-- [ ] **Step 6: Add hard validation gates**
+- [x] **Step 6: Add hard validation gates**
 
 Validation must reject direct namespace-0 discovery total not equal to 34, a
 non-DST exclusion set other than the exact reviewed six titles/reasons, queued
@@ -845,7 +845,7 @@ Append `category_export_errors` to coverage JSON and add
 `category_export_errors` to `hard_failures` when non-empty. Keep cleanup-only
 flags as warnings so they can be deleted in a later reviewed task.
 
-- [ ] **Step 7: Run tests and commit Task 4**
+- [x] **Step 7: Run tests and commit Task 4**
 
 Run:
 

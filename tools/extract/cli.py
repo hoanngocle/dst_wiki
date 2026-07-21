@@ -50,6 +50,10 @@ ITEM_DETAILS_OVERRIDES = Path("data/manual/tu_tien_item_details.json")
 ITEM_DETAILS_REPORT = Path("data/generated/tu-tien-item-details-report.json")
 STRUCTURE_ICON_AUDIT = Path("data/generated/structure-icon-audit.json")
 EFFECT_OTHER_AUDIT = Path("data/generated/effect-other-audit.json")
+CATEGORY_ARTIFACT = Path("data/generated/categories/animals.json")
+CATEGORY_CRAWL = Path("data/crawled/fandom-categories/animals")
+CATEGORY_ASSETS = Path("public/assets/wiki-categories/animals")
+CATEGORY_AUDIT = Path("data/generated/category-crawl-audits/animals.json")
 MOB_BOSS_AUDIT = Path("data/generated/mob-boss-audit.json")
 MOB_GROUPS = Path("data/manual/mob-variant-groups.json")
 MOB_WIKI = Path("data/crawled/dontstarve-wiki/pages.jsonl")
@@ -150,6 +154,10 @@ def build_parser() -> argparse.ArgumentParser:
     export.add_argument(
         "--effect-other-audit", type=Path, default=EFFECT_OTHER_AUDIT
     )
+    export.add_argument("--category-artifact", type=Path, default=CATEGORY_ARTIFACT)
+    export.add_argument("--category-crawl", type=Path, default=CATEGORY_CRAWL)
+    export.add_argument("--category-assets", type=Path, default=CATEGORY_ASSETS)
+    export.add_argument("--category-audit", type=Path, default=CATEGORY_AUDIT)
     export.add_argument("--mob-audit", type=Path, default=MOB_BOSS_AUDIT)
     export.add_argument("--mob-groups", type=Path, default=MOB_GROUPS)
     export.add_argument("--mob-wiki", type=Path, default=MOB_WIKI)
@@ -201,6 +209,7 @@ def build_parser() -> argparse.ArgumentParser:
     validate.add_argument(
         "--effect-other-audit", type=Path, default=EFFECT_OTHER_AUDIT
     )
+    validate.add_argument("--category-audit", type=Path, default=CATEGORY_AUDIT)
     validate.add_argument("--mob-audit", type=Path, default=MOB_BOSS_AUDIT)
     validate.add_argument("--mob-groups", type=Path, default=MOB_GROUPS)
     all_stages = sub.add_parser("all")
@@ -301,6 +310,10 @@ def _export_stage(
     detail_report: Path = ITEM_DETAILS_REPORT,
     structure_audit: Path = STRUCTURE_ICON_AUDIT,
     effect_other_audit: Path = EFFECT_OTHER_AUDIT,
+    category_artifact: Path = CATEGORY_ARTIFACT,
+    category_crawl: Path = CATEGORY_CRAWL,
+    category_assets: Path = CATEGORY_ASSETS,
+    category_audit: Path = CATEGORY_AUDIT,
     mob_audit: Path = MOB_BOSS_AUDIT,
     mob_groups: Path = MOB_GROUPS,
     mob_wiki: Path = MOB_WIKI,
@@ -316,6 +329,10 @@ def _export_stage(
         detail_report_path=detail_report,
         structure_audit_path=structure_audit,
         effect_other_audit_path=effect_other_audit,
+        category_artifact_path=category_artifact,
+        category_crawl_path=category_crawl,
+        category_assets_path=category_assets,
+        category_audit_path=category_audit,
         mob_audit_path=mob_audit,
         mob_groups_path=mob_groups,
         mob_wiki_path=mob_wiki,
@@ -361,6 +378,7 @@ def _validate_stage(
     items: Path = ITEMS_JSON,
     structure_audit: Path = STRUCTURE_ICON_AUDIT,
     effect_other_audit: Path = EFFECT_OTHER_AUDIT,
+    category_audit: Path = CATEGORY_AUDIT,
     mob_audit: Path = MOB_BOSS_AUDIT,
     mob_groups: Path = MOB_GROUPS,
 ):
@@ -371,6 +389,7 @@ def _validate_stage(
         items,
         structure_audit,
         effect_other_audit,
+        category_audit if category_audit.is_file() else None,
         mob_audit,
         mob_groups,
     )
@@ -448,6 +467,10 @@ def main() -> int:
             args.detail_report,
             args.structure_audit,
             args.effect_other_audit,
+            args.category_artifact,
+            args.category_crawl,
+            args.category_assets,
+            args.category_audit,
             args.mob_audit,
             args.mob_groups,
             args.mob_wiki,
@@ -518,6 +541,7 @@ def main() -> int:
             args.items,
             args.structure_audit,
             args.effect_other_audit,
+            args.category_audit,
             args.mob_audit,
             args.mob_groups,
         )

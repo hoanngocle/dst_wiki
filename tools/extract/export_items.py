@@ -13,6 +13,8 @@ from tools.extract.wiki_export import (
     merge_wiki_items,
 )
 from tools.extract.effect_other_audit import audit_effect_other_items
+from tools.extract.category_assets import publish_category_assets
+from tools.extract.category_merge import merge_category_mobs
 from tools.extract.exclusions import NON_ITEM_PREFAB_IDS
 from tools.extract.item_details import build_tu_tien_item_details
 from tools.extract.mob_details import build_mob_boss_audit, build_mob_details
@@ -46,6 +48,10 @@ ITEM_DETAIL_OVERRIDES = Path("data/manual/tu_tien_item_details.json")
 ITEM_DETAIL_REPORT = Path("data/generated/tu-tien-item-details-report.json")
 STRUCTURE_ICON_AUDIT = Path("data/generated/structure-icon-audit.json")
 EFFECT_OTHER_AUDIT = Path("data/generated/effect-other-audit.json")
+CATEGORY_ARTIFACT = Path("data/generated/categories/animals.json")
+CATEGORY_CRAWL = Path("data/crawled/fandom-categories/animals")
+CATEGORY_ASSETS = Path("public/assets/wiki-categories/animals")
+CATEGORY_AUDIT = Path("data/generated/category-crawl-audits/animals.json")
 MOB_BOSS_AUDIT = Path("data/generated/mob-boss-audit.json")
 MOB_GROUPS = Path("data/manual/mob-variant-groups.json")
 MOB_WIKI_PAGES = Path("data/crawled/dontstarve-wiki/pages.jsonl")
@@ -724,7 +730,7 @@ def build_item_export(
         elif item["category"] == "character":
             item["character"] = _character_profile(entity)
     return (
-        {"schema_version": 6, "items": items},
+        {"schema_version": 7, "items": items},
         {
             "schema_version": 1,
             "textures": [textures[key] for key in sorted(textures)],
@@ -856,6 +862,10 @@ def export_items(
     detail_report_path: Path = ITEM_DETAIL_REPORT,
     structure_audit_path: Path = STRUCTURE_ICON_AUDIT,
     effect_other_audit_path: Path = EFFECT_OTHER_AUDIT,
+    category_artifact_path: Path = CATEGORY_ARTIFACT,
+    category_crawl_path: Path = CATEGORY_CRAWL,
+    category_assets_path: Path = CATEGORY_ASSETS,
+    category_audit_path: Path = CATEGORY_AUDIT,
     mob_audit_path: Path = MOB_BOSS_AUDIT,
     mob_groups_path: Path = MOB_GROUPS,
     mob_wiki_path: Path = MOB_WIKI_PAGES,
@@ -914,6 +924,22 @@ def export_items(
                     item["sprite"] = canonical_variant.get("sprite")
     mob_audit = build_mob_boss_audit(items["items"], mob_details, mob_groups)
     items["items"], _group_rows = apply_mob_groups(items["items"], mob_groups)
+    category_audit = None
+    category_artifact_path = Path(category_artifact_path)
+    if category_artifact_path.is_file():
+        category_artifact = json.loads(
+            category_artifact_path.read_text(encoding="utf-8")
+        )
+        published_assets = publish_category_assets(
+            category_artifact,
+            Path(category_crawl_path),
+            Path(category_assets_path),
+        )
+        category_result = merge_category_mobs(
+            items["items"], category_artifact, catalog["entities"]
+        )
+        items["items"] = category_result.items
+        category_audit = {**category_result.audit, "assets": published_assets}
     items["items"] = filter_unreferenced_base_dependencies(
         items["items"], catalog["entities"]
     )
@@ -987,6 +1013,8 @@ def export_items(
     _atomic_json(Path(detail_report_path), detail_report)
     _atomic_json(Path(structure_audit_path), structure_audit)
     _atomic_json(Path(effect_other_audit_path), effect_other_audit)
+    if category_audit is not None:
+        _atomic_json(Path(category_audit_path), category_audit)
     _atomic_json(Path(mob_audit_path), mob_audit)
     if wiki.details or wiki.assets:
         export_wiki_artifacts(wiki, wiki_details_path, wiki_assets_path)

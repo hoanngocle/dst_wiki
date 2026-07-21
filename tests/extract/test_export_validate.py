@@ -10,6 +10,7 @@ from zipfile import ZipFile
 from tools.extract.database import create_schema
 from tools.extract.export_json import export_catalog
 from tools.extract.validate import (
+    category_export_errors,
     _effect_other_audit_errors,
     _mob_boss_audit_errors,
     _structure_export_errors,
@@ -20,6 +21,80 @@ from tools.extract import cli
 
 
 class ExportValidateTests(unittest.TestCase):
+    def test_category_validation_rejects_duplicate_code_and_unreviewed_note(self):
+        items = {
+            "schema_version": 7,
+            "items": [
+                {"id": "base_game:a", "prefabId": "beefalo", "category": "mob", "mob": {}},
+                {"id": "base_game:b", "prefabId": "beefalo", "category": "mob", "mob": {}},
+            ],
+        }
+        audit = {
+            "schemaVersion": 1,
+            "category": "animals",
+            "summary": {"directPages": 34, "publishedPages": 28},
+            "excludedNonDst": [
+                {"title": title, "reason": reason}
+                for title, reason in {
+                    "Blue Whale": "non_dst:shipwrecked",
+                    "White Whale": "non_dst:shipwrecked",
+                    "Wildbore": "non_dst:shipwrecked",
+                    "Peagawk": "non_dst:hamlet",
+                    "Pog": "non_dst:hamlet",
+                    "Glowfly": "non_dst:hamlet",
+                }.items()
+            ],
+            "fetchedTitles": [],
+            "rows": [{
+                "recordId": "base_game:a",
+                "action": "merged",
+                "pageId": 10,
+                "prefabCodes": ["beefalo"],
+                "noteStatus": "unreviewed",
+            }],
+        }
+
+        codes = {error["code"] for error in category_export_errors(items, audit)}
+
+        self.assertIn("duplicate_prefab_code", codes)
+        self.assertIn("unreviewed_category_note", codes)
+
+    def test_category_validation_rejects_non_dst_fetch_and_count_drift(self):
+        reviewed = [
+            {"title": title, "reason": reason}
+            for title, reason in {
+                "Blue Whale": "non_dst:shipwrecked",
+                "White Whale": "non_dst:shipwrecked",
+                "Wildbore": "non_dst:shipwrecked",
+                "Peagawk": "non_dst:hamlet",
+                "Pog": "non_dst:hamlet",
+                "Glowfly": "non_dst:hamlet",
+            }.items()
+        ]
+        audit = {
+            "schemaVersion": 1,
+            "category": "animals",
+            "summary": {"directPages": 34, "publishedPages": 28},
+            "excludedNonDst": reviewed,
+            "fetchedTitles": ["Beefalo", "Blue Whale"],
+            "rows": [],
+        }
+
+        errors = category_export_errors({"schema_version": 7, "items": []}, audit)
+        codes = {error["code"] for error in errors}
+
+        self.assertIn("excluded_title_fetched", codes)
+
+        drift = dict(audit)
+        drift["summary"] = {"directPages": 34, "publishedPages": 34}
+        drift["excludedNonDst"] = []
+        drift["fetchedTitles"] = []
+        drift_codes = {
+            error["code"]
+            for error in category_export_errors({"schema_version": 7, "items": []}, drift)
+        }
+        self.assertIn("non_dst_exclusion_mismatch", drift_codes)
+        self.assertIn("published_category_count_mismatch", drift_codes)
     def test_mob_boss_validation_rejects_merged_member_still_published(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -54,7 +129,7 @@ class ExportValidateTests(unittest.TestCase):
             items.write_text(
                 json.dumps(
                     {
-                        "schema_version": 6,
+                        "schema_version": 7,
                         "items": [
                             {"id": "base_game:champion", "category": "boss", "mob": mob},
                             {"id": "base_game:champion_dead", "category": "structure", "mob": None},
@@ -111,7 +186,7 @@ class ExportValidateTests(unittest.TestCase):
             items.write_text(
                 json.dumps(
                     {
-                        "schema_version": 6,
+                        "schema_version": 7,
                         "items": [
                             {
                                 "id": "base_game:spider",
@@ -182,7 +257,6 @@ class ExportValidateTests(unittest.TestCase):
             },
             errors,
         )
-
     def test_effect_other_audit_rejects_public_exclusion_with_positive_signal(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -191,7 +265,7 @@ class ExportValidateTests(unittest.TestCase):
             items_path.write_text(
                 json.dumps(
                     {
-                        "schema_version": 6,
+                        "schema_version": 7,
                         "items": [
                             {
                                 "id": "base_game:helper",
@@ -257,7 +331,7 @@ class ExportValidateTests(unittest.TestCase):
                 archive.writestr("scripts/prefabs/helper.lua", "return {}")
             items_path = root / "items.json"
             items_path.write_text(
-                json.dumps({"schema_version": 6, "items": []}), encoding="utf-8"
+                json.dumps({"schema_version": 7, "items": []}), encoding="utf-8"
             )
             audit_path = root / "effect-other-audit.json"
             audit_path.write_text(
@@ -307,7 +381,7 @@ class ExportValidateTests(unittest.TestCase):
             items_path.write_text(
                 json.dumps(
                     {
-                        "schema_version": 6,
+                        "schema_version": 7,
                         "items": [
                             {
                                 "id": "base_game:broken_station",
@@ -382,7 +456,7 @@ class ExportValidateTests(unittest.TestCase):
             items_path.write_text(
                 json.dumps(
                     {
-                        "schema_version": 6,
+                        "schema_version": 7,
                         "items": [
                             {
                                 "id": "base_game:natural_station",
@@ -463,7 +537,7 @@ class ExportValidateTests(unittest.TestCase):
             items_path.write_text(
                 json.dumps(
                     {
-                        "schema_version": 6,
+                        "schema_version": 7,
                         "items": [
                             {
                                 "id": "base_game:alpha",
@@ -510,7 +584,7 @@ class ExportValidateTests(unittest.TestCase):
             items_path.write_text(
                 json.dumps(
                     {
-                        "schema_version": 6,
+                        "schema_version": 7,
                         "items": [
                             {
                                 "id": "base_game:alpha",
@@ -554,7 +628,7 @@ class ExportValidateTests(unittest.TestCase):
             items_path.write_text(
                 json.dumps(
                     {
-                        "schema_version": 6,
+                        "schema_version": 7,
                         "items": [
                             {
                                 "id": "base_game:alpha",
@@ -602,7 +676,7 @@ class ExportValidateTests(unittest.TestCase):
             items_path.write_text(
                 json.dumps(
                     {
-                        "schema_version": 6,
+                        "schema_version": 7,
                         "items": [
                             {
                                 "id": "base_game:alpha",
@@ -668,7 +742,7 @@ return Prefab("slurtle", mobfn), Prefab("snurtle", mobfn)
             items_path.write_text(
                 json.dumps(
                     {
-                        "schema_version": 6,
+                        "schema_version": 7,
                         "items": [
                             {
                                 "id": "base_game:slurtle",
@@ -709,7 +783,7 @@ return Prefab("slurtle", mobfn), Prefab("snurtle", mobfn)
             items_path.write_text(
                 json.dumps(
                     {
-                        "schema_version": 6,
+                        "schema_version": 7,
                         "items": [
                             {
                                 "id": "base_game:alpha",
@@ -764,7 +838,7 @@ return Prefab("slurtle", mobfn), Prefab("snurtle", mobfn)
             items_path.write_text(
                 json.dumps(
                     {
-                        "schema_version": 6,
+                        "schema_version": 7,
                         "items": [
                             {
                                 "id": "base_game:researchlab",
@@ -858,7 +932,7 @@ return Prefab("slurtle", mobfn), Prefab("snurtle", mobfn)
             items_path.write_text(
                 json.dumps(
                     {
-                        "schema_version": 6,
+                        "schema_version": 7,
                         "items": [
                             {
                                 "id": "base_game:researchlab",
@@ -1457,18 +1531,18 @@ return Prefab("slurtle", mobfn), Prefab("snurtle", mobfn)
             with mock.patch.object(cli, "export_catalog") as export_catalog, \
                  mock.patch.object(cli, "export_items") as export_items:
                 cli._export_stage(
-                    database,
-                    catalog,
-                    assets,
-                    items,
-                    textures,
-                    detail_overrides,
-                    detail_report,
-                    structure_audit,
-                    effect_other_audit,
-                    mob_audit,
-                    mob_groups,
-                    mob_wiki,
+                    database=database,
+                    catalog=catalog,
+                    assets=assets,
+                    items=items,
+                    textures=textures,
+                    detail_overrides=detail_overrides,
+                    detail_report=detail_report,
+                    structure_audit=structure_audit,
+                    effect_other_audit=effect_other_audit,
+                    mob_audit=mob_audit,
+                    mob_groups=mob_groups,
+                    mob_wiki=mob_wiki,
                 )
 
             export_catalog.assert_called_once_with(database, catalog, assets)
@@ -1482,6 +1556,10 @@ return Prefab("slurtle", mobfn), Prefab("snurtle", mobfn)
                 detail_report_path=detail_report,
                 structure_audit_path=structure_audit,
                 effect_other_audit_path=effect_other_audit,
+                category_artifact_path=cli.CATEGORY_ARTIFACT,
+                category_crawl_path=cli.CATEGORY_CRAWL,
+                category_assets_path=cli.CATEGORY_ASSETS,
+                category_audit_path=cli.CATEGORY_AUDIT,
                 mob_audit_path=mob_audit,
                 mob_groups_path=mob_groups,
                 mob_wiki_path=mob_wiki,
@@ -1505,6 +1583,14 @@ return Prefab("slurtle", mobfn), Prefab("snurtle", mobfn)
         self.assertEqual(
             args.effect_other_audit,
             Path("data/generated/effect-other-audit.json"),
+        )
+        self.assertEqual(
+            args.category_artifact,
+            Path("data/generated/categories/animals.json"),
+        )
+        self.assertEqual(
+            args.category_audit,
+            Path("data/generated/category-crawl-audits/animals.json"),
         )
         self.assertEqual(
             args.mob_audit,
