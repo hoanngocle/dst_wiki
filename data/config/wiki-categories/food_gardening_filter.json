@@ -1,0 +1,13 @@
+{
+  "allowedNamespaces": [0],
+  "categoryTitle": "Category:Food & Gardening Filter",
+  "excludedTitles": {},
+  "expectedDirectPages": 19,
+  "expectedPublishedPages": 19,
+  "game": "DST",
+  "itemType": "item",
+  "key": "food_gardening_filter",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Food_%26_Gardening_Filter",
+  "tags": ["Food & Gardening Filter"]
+}

@@ -1,0 +1,17 @@
+{
+  "allowedNamespaces": [0],
+  "categoryTitle": "Category:Fruits",
+  "excludedTitles": {
+    "Coconut": "non_dst:shipwrecked",
+    "Coffee Beans": "non_dst:shipwrecked",
+    "Fruit": "non_item:overview"
+  },
+  "expectedDirectPages": 12,
+  "expectedPublishedPages": 9,
+  "game": "DST",
+  "itemType": "food",
+  "key": "fruits",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Fruits",
+  "tags": ["Fruits"]
+}

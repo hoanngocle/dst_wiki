@@ -1,0 +1,21 @@
+{
+  "allowedNamespaces": [0],
+  "categoryTitle": "Category:Followers",
+  "excludedTitles": {
+    "Bottlenose Ballphin": "non_dst:shipwrecked",
+    "Packim Baggims": "non_dst:shipwrecked",
+    "Pog": "non_dst:hamlet",
+    "Prime Ape": "non_dst:shipwrecked",
+    "Ro Bin": "non_dst:hamlet",
+    "Spiders": "non_item:overview",
+    "Wildbore": "non_dst:shipwrecked"
+  },
+  "expectedDirectPages": 42,
+  "expectedPublishedPages": 35,
+  "game": "DST",
+  "itemType": "mob",
+  "key": "followers",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Followers",
+  "tags": ["Followers"]
+}

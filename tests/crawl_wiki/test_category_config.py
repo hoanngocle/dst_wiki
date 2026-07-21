@@ -209,6 +209,71 @@ class CategoryConfigTests(unittest.TestCase):
             Path("data/crawled/fandom-categories/dont_starve_together"),
         )
 
+    def test_loads_reviewed_batch_four_configs(self):
+        expected = {
+            "flying_creatures": (16, 12, "mob", "Flying Creatures"),
+            "followers": (42, 35, "mob", "Followers"),
+            "food_gardening_filter": (
+                19,
+                19,
+                "item",
+                "Food & Gardening Filter",
+            ),
+            "food_tab": (15, 10, "item", "Food Tab"),
+            "from_beyond": (105, 104, "content", "From Beyond"),
+            "fruits": (12, 9, "food", "Fruits"),
+            "fuel": (119, 89, "item", "Fuel"),
+        }
+
+        for key, values in expected.items():
+            with self.subTest(key=key):
+                direct, published, item_type, tag = values
+                config = load_category_config(key)
+                self.assertEqual(
+                    (
+                        config.expected_direct_pages,
+                        config.expected_published_pages,
+                    ),
+                    (direct, published),
+                )
+                self.assertEqual(config.item_type, item_type)
+                self.assertEqual(config.tags, (tag,))
+                self.assertEqual(config.game, "DST")
+
+        flying = dict(load_category_config("flying_creatures").excluded_titles)
+        self.assertEqual(flying["Mobs"], "non_item:overview")
+        self.assertEqual(flying["Packim Baggims"], "non_dst:shipwrecked")
+
+        followers = dict(load_category_config("followers").excluded_titles)
+        self.assertNotIn("Abigail", followers)
+        self.assertNotIn("Merm", followers)
+        self.assertEqual(followers["Spiders"], "non_item:overview")
+        self.assertEqual(followers["Wildbore"], "non_dst:shipwrecked")
+
+        food_tab = dict(load_category_config("food_tab").excluded_titles)
+        self.assertEqual(food_tab["Farm"], "non_dst:dont_starve")
+
+        beyond = dict(load_category_config("from_beyond").excluded_titles)
+        self.assertEqual(beyond["Combat"], "non_item:overview")
+
+        fruits = dict(load_category_config("fruits").excluded_titles)
+        self.assertEqual(fruits["Fruit"], "non_item:overview")
+        self.assertEqual(fruits["Coconut"], "non_dst:shipwrecked")
+
+        fuel = dict(load_category_config("fuel").excluded_titles)
+        self.assertEqual(fuel["Ashy Turf"], "non_dst:shipwrecked")
+        self.assertEqual(fuel["Clippings"], "non_dst:hamlet")
+        self.assertEqual(fuel["Turfs"], "non_item:overview")
+        for title in (
+            "Berry Bush",
+            "Grass Tuft",
+            "Pine Cone",
+            "Slurtle Slime",
+            "Spiky Bush",
+            "Tentacle Spots",
+        ):
+            self.assertNotIn(title, fuel)
+
 
 if __name__ == "__main__":
     unittest.main()

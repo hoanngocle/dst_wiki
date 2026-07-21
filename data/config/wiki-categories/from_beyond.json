@@ -1,0 +1,15 @@
+{
+  "allowedNamespaces": [0],
+  "categoryTitle": "Category:From Beyond",
+  "excludedTitles": {
+    "Combat": "non_item:overview"
+  },
+  "expectedDirectPages": 105,
+  "expectedPublishedPages": 104,
+  "game": "DST",
+  "itemType": "content",
+  "key": "from_beyond",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:From_Beyond",
+  "tags": ["From Beyond"]
+}

@@ -1,0 +1,18 @@
+{
+  "allowedNamespaces": [0],
+  "categoryTitle": "Category:Flying Creatures",
+  "excludedTitles": {
+    "Mobs": "non_item:overview",
+    "Packim Baggims": "non_dst:shipwrecked",
+    "Poison Mosquito": "non_dst:shipwrecked",
+    "Stink Ray": "non_dst:shipwrecked"
+  },
+  "expectedDirectPages": 16,
+  "expectedPublishedPages": 12,
+  "game": "DST",
+  "itemType": "mob",
+  "key": "flying_creatures",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Flying_Creatures",
+  "tags": ["Flying Creatures"]
+}

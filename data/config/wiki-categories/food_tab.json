@@ -1,0 +1,19 @@
+{
+  "allowedNamespaces": [0],
+  "categoryTitle": "Category:Food Tab",
+  "excludedTitles": {
+    "Farm": "non_dst:dont_starve",
+    "Fish Farm": "non_dst:shipwrecked",
+    "Mussel Bed": "non_dst:shipwrecked",
+    "Mussel Stick": "non_dst:shipwrecked",
+    "Sprinkler": "non_dst:hamlet"
+  },
+  "expectedDirectPages": 15,
+  "expectedPublishedPages": 10,
+  "game": "DST",
+  "itemType": "item",
+  "key": "food_tab",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Food_Tab",
+  "tags": ["Food Tab"]
+}

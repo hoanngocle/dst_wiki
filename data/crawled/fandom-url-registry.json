@@ -37,7 +37,8 @@
       "artifactSha256": "8f264a9c7fd9cdb4feb69aef9d9d3085e95718f71d43ca26e8ae9dd570586db4",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T10:10:16Z",
       "completedAt": "2026-07-21T10:10:17Z",
@@ -46,6 +47,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T10:10:17Z",
       "url": "https://dontstarve.fandom.com/wiki/Abandoned_Junk",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/c46476b3e7e24ed4397b712a43ad8a4523ca5f4b76ff88593394a0ef3be2d878.json",
+      "artifactSha256": "5e77297098aa161654008e4e23b929a3b3793780e0cae9eff9a83252aa1a9865",
+      "attempts": 1,
+      "categories": [
+        "followers"
+      ],
+      "claimedAt": "2026-07-21T10:43:03Z",
+      "completedAt": "2026-07-21T10:43:05Z",
+      "createdAt": "2026-07-21T10:43:02Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T10:43:05Z",
+      "url": "https://dontstarve.fandom.com/wiki/Abigail",
       "workerId": null
     },
     {
@@ -101,7 +118,8 @@
       "artifactSha256": "49289fd380d6f4142272c87fecd8a28b7d3a760a8358caddf95d1aa04779d0be",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T10:09:52Z",
       "completedAt": "2026-07-21T10:09:53Z",
@@ -621,7 +639,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "events"
+        "events",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:30:39Z",
       "completedAt": "2026-07-21T08:30:43Z",
@@ -637,7 +656,8 @@
       "artifactSha256": "ace8160b7bcbefb2de14127da881b800f44e7c9b41f24687df6afb629367fb71",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T10:10:36Z",
       "completedAt": "2026-07-21T10:10:37Z",
@@ -719,7 +739,8 @@
       "attempts": 1,
       "categories": [
         "boss_monsters",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T09:46:34Z",
       "completedAt": "2026-07-21T09:46:36Z",
@@ -753,7 +774,8 @@
       "categories": [
         "craftable_items",
         "decorations_filter",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:24:46Z",
       "completedAt": "2026-07-21T08:24:50Z",
@@ -994,7 +1016,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "food"
+        "food",
+        "fruits"
       ],
       "claimedAt": "2026-07-21T08:33:32Z",
       "completedAt": "2026-07-21T08:33:33Z",
@@ -1183,7 +1206,8 @@
       "artifactSha256": "e761943ec868324942caf80eb134925a2e8ec184539da0fbcc1d2829862a42e4",
       "attempts": 1,
       "categories": [
-        "cave_creatures"
+        "cave_creatures",
+        "flying_creatures"
       ],
       "claimedAt": "2026-07-21T07:39:08Z",
       "completedAt": "2026-07-21T07:39:10Z",
@@ -1339,7 +1363,8 @@
       "artifactSha256": "2fe9352c7cc1621dda817aa891ae15452cfad0cf6645a9b224461ce7060872f7",
       "attempts": 1,
       "categories": [
-        "craftable_items"
+        "craftable_items",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:52:30Z",
       "completedAt": "2026-07-21T08:52:31Z",
@@ -1356,7 +1381,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:54:50Z",
       "completedAt": "2026-07-21T08:54:54Z",
@@ -1405,7 +1431,8 @@
       "artifactSha256": "d4c900345964ee1a5cd5ed9c25baa9ac2f19bcc398d081ca90c2f927663fd498",
       "attempts": 1,
       "categories": [
-        "craftable_items"
+        "craftable_items",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:53:08Z",
       "completedAt": "2026-07-21T08:53:10Z",
@@ -1421,7 +1448,8 @@
       "artifactSha256": "37f483a5d3ed0a6b459a6a14169f04542e738e39541292935da47db682450da4",
       "attempts": 2,
       "categories": [
-        "animals"
+        "animals",
+        "flying_creatures"
       ],
       "claimedAt": "2026-07-21T09:43:31Z",
       "completedAt": "2026-07-21T09:43:32Z",
@@ -1437,7 +1465,9 @@
       "artifactSha256": "c6c2f4ab8b0b108515a302c9099797f10a70c0482e1bc06e71e56eab76dacbd0",
       "attempts": 1,
       "categories": [
-        "craftable_structures"
+        "craftable_structures",
+        "food_gardening_filter",
+        "food_tab"
       ],
       "claimedAt": "2026-07-21T08:46:24Z",
       "completedAt": "2026-07-21T08:46:28Z",
@@ -1472,7 +1502,8 @@
       "categories": [
         "a_new_reign",
         "boss_monsters",
-        "dont_starve_together"
+        "dont_starve_together",
+        "flying_creatures"
       ],
       "claimedAt": "2026-07-21T09:46:22Z",
       "completedAt": "2026-07-21T09:46:24Z",
@@ -1507,7 +1538,8 @@
       "artifactSha256": "87aba69cfe8909814a30acce8659f94edfa99821446da79de3f22c210361a470",
       "attempts": 2,
       "categories": [
-        "animals"
+        "animals",
+        "followers"
       ],
       "claimedAt": "2026-07-21T09:43:32Z",
       "completedAt": "2026-07-21T09:43:34Z",
@@ -1541,7 +1573,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:59:19Z",
       "completedAt": "2026-07-21T08:59:22Z",
@@ -1627,7 +1660,8 @@
       "artifactSha256": "2034003e3aef3520f8d1a6adda68a0850ee70f21da5d8293ac5f96a25c8615e2",
       "attempts": 1,
       "categories": [
-        "craftable_items"
+        "craftable_items",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:52:31Z",
       "completedAt": "2026-07-21T08:52:32Z",
@@ -1729,7 +1763,8 @@
       "attempts": 1,
       "categories": [
         "crafting_stations",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:19:06Z",
       "completedAt": "2026-07-21T08:19:07Z",
@@ -1771,6 +1806,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T08:33:25Z",
       "url": "https://dontstarve.fandom.com/wiki/Berries",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/e651f14256b1fd0063123cd3b67352ae10ab11efaf044dbda6ea7df2c1f63f44.json",
+      "artifactSha256": "03601554bb4668bbd0a5cdacf71d0dc4b557691b714b3cb3b447c8029c4df146",
+      "attempts": 1,
+      "categories": [
+        "fuel"
+      ],
+      "claimedAt": "2026-07-21T10:48:49Z",
+      "completedAt": "2026-07-21T10:48:51Z",
+      "createdAt": "2026-07-21T10:48:47Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T10:48:51Z",
+      "url": "https://dontstarve.fandom.com/wiki/Berry_Bush",
       "workerId": null
     },
     {
@@ -1877,7 +1928,8 @@
       "artifactSha256": "a7426c1849bdd6f2241c9324b1517c31adce64c211876a6615f284562ec48a04",
       "attempts": 1,
       "categories": [
-        "craftable_items"
+        "craftable_items",
+        "food_gardening_filter"
       ],
       "claimedAt": "2026-07-21T08:52:28Z",
       "completedAt": "2026-07-21T08:52:30Z",
@@ -1893,7 +1945,8 @@
       "artifactSha256": "30dad40e1367caf0a8893a7b22bf743da7d7ed50c5baec67ad1264f2925b2014",
       "attempts": 1,
       "categories": [
-        "craftable_structures"
+        "craftable_structures",
+        "food_gardening_filter"
       ],
       "claimedAt": "2026-07-21T08:46:35Z",
       "completedAt": "2026-07-21T08:46:37Z",
@@ -1910,7 +1963,8 @@
       "attempts": 1,
       "categories": [
         "a_new_reign",
-        "birds"
+        "birds",
+        "flying_creatures"
       ],
       "claimedAt": "2026-07-21T09:44:53Z",
       "completedAt": "2026-07-21T09:44:54Z",
@@ -1997,7 +2051,8 @@
         "ancient_tier_1",
         "boss_dropped_items",
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T07:36:12Z",
       "completedAt": "2026-07-21T07:36:13Z",
@@ -2013,7 +2068,8 @@
       "artifactSha256": "375cb1c2de1973d87735a093a708175df54d9f739d70cce114752ac1907a76f7",
       "attempts": 1,
       "categories": [
-        "craftable_items"
+        "craftable_items",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:52:14Z",
       "completedAt": "2026-07-21T08:52:19Z",
@@ -2270,7 +2326,8 @@
         "armour_filter",
         "craftable_items",
         "dont_starve_together",
-        "equipable_items"
+        "equipable_items",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T07:28:35Z",
       "completedAt": "2026-07-21T07:28:39Z",
@@ -2304,7 +2361,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:58:57Z",
       "completedAt": "2026-07-21T08:59:00Z",
@@ -2372,7 +2430,8 @@
       "attempts": 2,
       "categories": [
         "animals",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T09:44:07Z",
       "completedAt": "2026-07-21T09:44:09Z",
@@ -2390,7 +2449,8 @@
       "categories": [
         "armour_filter",
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T07:28:54Z",
       "completedAt": "2026-07-21T07:28:58Z",
@@ -2407,7 +2467,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:57:55Z",
       "completedAt": "2026-07-21T08:57:58Z",
@@ -2423,7 +2484,8 @@
       "artifactSha256": "24346ae1efd8f835994fd14ab931cd089518ea20775a9eb647a0977e005af784",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T10:09:38Z",
       "completedAt": "2026-07-21T10:09:41Z",
@@ -2441,7 +2503,8 @@
       "categories": [
         "armour_filter",
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T07:28:50Z",
       "completedAt": "2026-07-21T07:28:54Z",
@@ -2453,12 +2516,29 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/3a6165045f8a2cb917fb60e35d2a1e328f38a3d689ff58407a9ad0505ed0da6e.json",
+      "artifactSha256": "13d5ac22657492f3fb23a33be546f063d846b7897bd5c106106584db080b0faa",
+      "attempts": 1,
+      "categories": [
+        "from_beyond"
+      ],
+      "claimedAt": "2026-07-21T10:45:13Z",
+      "completedAt": "2026-07-21T10:45:14Z",
+      "createdAt": "2026-07-21T10:45:10Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T10:45:14Z",
+      "url": "https://dontstarve.fandom.com/wiki/Brightshade_Husk",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/f94594c3ef450651f83f45b41f47500161a14e5b5ad6e4627f8e63c588499615.json",
       "artifactSha256": "c489b59ca0393deddc99ab0c55f1b59f76478cbfbdf10b9fd8507b045d76c032",
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:57:45Z",
       "completedAt": "2026-07-21T08:57:49Z",
@@ -2475,7 +2555,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:57:59Z",
       "completedAt": "2026-07-21T08:58:03Z",
@@ -2492,7 +2573,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:57:51Z",
       "completedAt": "2026-07-21T08:57:55Z",
@@ -2509,7 +2591,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:57:49Z",
       "completedAt": "2026-07-21T08:57:51Z",
@@ -2529,7 +2612,8 @@
         "craftable_items",
         "craftable_structures",
         "crafting_stations",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T07:31:46Z",
       "completedAt": "2026-07-21T07:31:50Z",
@@ -2614,7 +2698,9 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "fertilizer"
+        "fertilizer",
+        "food_gardening_filter",
+        "food_tab"
       ],
       "claimedAt": "2026-07-21T08:19:43Z",
       "completedAt": "2026-07-21T08:19:45Z",
@@ -2649,7 +2735,8 @@
       "categories": [
         "animals",
         "cave_creatures",
-        "dont_starve_together"
+        "dont_starve_together",
+        "followers"
       ],
       "claimedAt": "2026-07-21T07:39:31Z",
       "completedAt": "2026-07-21T07:39:37Z",
@@ -2666,7 +2753,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "equipable_items"
+        "equipable_items",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:40:04Z",
       "completedAt": "2026-07-21T08:40:05Z",
@@ -2702,7 +2790,8 @@
       "categories": [
         "containers",
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T07:34:38Z",
       "completedAt": "2026-07-21T07:34:39Z",
@@ -2737,7 +2826,8 @@
       "attempts": 2,
       "categories": [
         "animals",
-        "cave_creatures"
+        "cave_creatures",
+        "followers"
       ],
       "claimedAt": "2026-07-21T07:39:11Z",
       "completedAt": "2026-07-21T07:39:13Z",
@@ -2771,7 +2861,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "equipable_items"
+        "equipable_items",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:42:25Z",
       "completedAt": "2026-07-21T08:42:28Z",
@@ -2821,7 +2912,8 @@
       "artifactSha256": "c5fa1a26a09b13fd39e0b4f5403bbdad875b87f8875f58247cd4737a10b653ee",
       "attempts": 2,
       "categories": [
-        "animals"
+        "animals",
+        "flying_creatures"
       ],
       "claimedAt": "2026-07-21T09:43:38Z",
       "completedAt": "2026-07-21T09:43:39Z",
@@ -2839,7 +2931,8 @@
       "categories": [
         "animals",
         "birds",
-        "dont_starve_together"
+        "dont_starve_together",
+        "flying_creatures"
       ],
       "claimedAt": "2026-07-21T09:43:44Z",
       "completedAt": "2026-07-21T09:43:46Z",
@@ -3025,7 +3118,8 @@
       "artifactSha256": "aa1e2e6c999e93f47510dff6b495864769dbde343bc803cd9e405ff8b2b63c6f",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T10:11:36Z",
       "completedAt": "2026-07-21T10:11:37Z",
@@ -3042,7 +3136,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "decorations_filter"
+        "decorations_filter",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:22:55Z",
       "completedAt": "2026-07-21T08:22:56Z",
@@ -3161,7 +3256,8 @@
       "attempts": 2,
       "categories": [
         "animals",
-        "dont_starve_together"
+        "dont_starve_together",
+        "followers"
       ],
       "claimedAt": "2026-07-21T09:43:47Z",
       "completedAt": "2026-07-21T09:43:49Z",
@@ -3195,7 +3291,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "decorations_filter"
+        "decorations_filter",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:23:32Z",
       "completedAt": "2026-07-21T08:23:33Z",
@@ -3211,7 +3308,8 @@
       "artifactSha256": "08a0a5a0824396e1e65b964b8c549cd8bb8ac7edabc812cc86fe1d3066f1593a",
       "attempts": 1,
       "categories": [
-        "cave_creatures"
+        "cave_creatures",
+        "followers"
       ],
       "claimedAt": "2026-07-21T07:39:07Z",
       "completedAt": "2026-07-21T07:39:08Z",
@@ -3345,7 +3443,8 @@
       "artifactSha256": "d6c2dfad33c027f667f17306f402e5262e41fae6fa0d42d8abc777b5afa33bf3",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T10:10:09Z",
       "completedAt": "2026-07-21T10:10:13Z",
@@ -3361,7 +3460,8 @@
       "artifactSha256": "4216a88fd68450e3905b34426cb013bd62c4a43ccd3763091e2270b57c2c10a9",
       "attempts": 1,
       "categories": [
-        "boss_dropped_items"
+        "boss_dropped_items",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T07:35:15Z",
       "completedAt": "2026-07-21T07:35:16Z",
@@ -3394,7 +3494,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "decorations_filter"
+        "decorations_filter",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:22:49Z",
       "completedAt": "2026-07-21T08:22:53Z",
@@ -3465,7 +3566,8 @@
       "artifactSha256": "7d40008612e9427afe8b303f0dffb9cefbf0884a0f0ec6e88914456fc235c5d8",
       "attempts": 1,
       "categories": [
-        "containers"
+        "containers",
+        "followers"
       ],
       "claimedAt": "2026-07-21T07:34:25Z",
       "completedAt": "2026-07-21T07:34:27Z",
@@ -3550,7 +3652,8 @@
       "artifactSha256": "e939befc103f2a5858d7a492b1475cfc80552e4edd5957aa23dc337cc7e41a3c",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "food_gardening_filter"
       ],
       "claimedAt": "2026-07-21T10:09:01Z",
       "completedAt": "2026-07-21T10:09:03Z",
@@ -3637,7 +3740,8 @@
       "attempts": 1,
       "categories": [
         "cave_creatures",
-        "clockwork_monsters"
+        "clockwork_monsters",
+        "followers"
       ],
       "claimedAt": "2026-07-21T07:39:06Z",
       "completedAt": "2026-07-21T07:39:07Z",
@@ -3653,7 +3757,8 @@
       "artifactSha256": "0293cba22ff6691aa9e1faf6cf0f1e770b16672294b08bafde312ae6ac568c3e",
       "attempts": 1,
       "categories": [
-        "clockwork_monsters"
+        "clockwork_monsters",
+        "followers"
       ],
       "claimedAt": "2026-07-21T09:45:19Z",
       "completedAt": "2026-07-21T09:45:21Z",
@@ -3669,7 +3774,8 @@
       "artifactSha256": "0a824ef25c865437cc6238bfffdcbe36e8bdae67f2d6104d7c2ef431c8c98243",
       "attempts": 1,
       "categories": [
-        "clockwork_monsters"
+        "clockwork_monsters",
+        "followers"
       ],
       "claimedAt": "2026-07-21T09:45:21Z",
       "completedAt": "2026-07-21T09:45:22Z",
@@ -3737,7 +3843,8 @@
         "craftable_items",
         "craftable_structures",
         "dont_starve_together",
-        "equipable_items"
+        "equipable_items",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:42:28Z",
       "completedAt": "2026-07-21T08:42:31Z",
@@ -3755,7 +3862,8 @@
       "categories": [
         "craftable_items",
         "decorations_filter",
-        "dont_starve_together"
+        "dont_starve_together",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:22:47Z",
       "completedAt": "2026-07-21T08:22:49Z",
@@ -3772,7 +3880,9 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "crafting_stations"
+        "crafting_stations",
+        "followers",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:18:56Z",
       "completedAt": "2026-07-21T08:18:58Z",
@@ -3924,7 +4034,9 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "fertilizer"
+        "fertilizer",
+        "food_gardening_filter",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:19:48Z",
       "completedAt": "2026-07-21T08:19:49Z",
@@ -3941,7 +4053,8 @@
       "attempts": 1,
       "categories": [
         "craftable_structures",
-        "dont_starve_together"
+        "dont_starve_together",
+        "food_gardening_filter"
       ],
       "claimedAt": "2026-07-21T08:48:10Z",
       "completedAt": "2026-07-21T08:48:14Z",
@@ -4263,7 +4376,8 @@
       "attempts": 1,
       "categories": [
         "a_new_reign",
-        "dont_starve_together"
+        "dont_starve_together",
+        "followers"
       ],
       "claimedAt": "2026-07-21T09:48:37Z",
       "completedAt": "2026-07-21T09:48:39Z",
@@ -4297,7 +4411,8 @@
       "categories": [
         "containers",
         "cooking_filter",
-        "craftable_structures"
+        "craftable_structures",
+        "food_tab"
       ],
       "claimedAt": "2026-07-21T07:34:19Z",
       "completedAt": "2026-07-21T07:34:24Z",
@@ -4364,7 +4479,8 @@
       "attempts": 1,
       "categories": [
         "boss_monsters",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T09:46:32Z",
       "completedAt": "2026-07-21T09:46:33Z",
@@ -4412,7 +4528,8 @@
       "artifactSha256": "0c5cf164ab77a2d348ca2dc33279aba2c864c60213c1a5026c059da0d3d313ef",
       "attempts": 1,
       "categories": [
-        "beefalo_foods"
+        "beefalo_foods",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T07:30:21Z",
       "completedAt": "2026-07-21T07:30:23Z",
@@ -4428,7 +4545,8 @@
       "artifactSha256": "cd7271ccd9a804dbc5c0f38077683240ee8cc034e767ae3065394e8228bf4e19",
       "attempts": 1,
       "categories": [
-        "beefalo_foods"
+        "beefalo_foods",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T07:30:23Z",
       "completedAt": "2026-07-21T07:30:24Z",
@@ -4461,7 +4579,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "equipable_items"
+        "equipable_items",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:42:18Z",
       "completedAt": "2026-07-21T08:42:19Z",
@@ -4493,7 +4612,8 @@
       "artifactSha256": "54d2990edea7e66544931ed343257d9a6a90f6262ea9c55578de009f081f8231",
       "attempts": 1,
       "categories": [
-        "clockwork_monsters"
+        "clockwork_monsters",
+        "followers"
       ],
       "claimedAt": "2026-07-21T09:45:25Z",
       "completedAt": "2026-07-21T09:45:27Z",
@@ -4509,7 +4629,8 @@
       "artifactSha256": "838d09e33da0bf208ba6be71674be77a2a4ef143a3c1c4d6b8aa4cb96e357e31",
       "attempts": 1,
       "categories": [
-        "clockwork_monsters"
+        "clockwork_monsters",
+        "followers"
       ],
       "claimedAt": "2026-07-21T09:45:27Z",
       "completedAt": "2026-07-21T09:45:29Z",
@@ -4525,7 +4646,8 @@
       "artifactSha256": "93c07f08d88a09d4bc2741c8c26f883ea47cbe4de1fd08b2f482d9c4e1bddeb6",
       "attempts": 1,
       "categories": [
-        "clockwork_monsters"
+        "clockwork_monsters",
+        "followers"
       ],
       "claimedAt": "2026-07-21T09:45:22Z",
       "completedAt": "2026-07-21T09:45:25Z",
@@ -4541,7 +4663,8 @@
       "artifactSha256": "459cd79debe61a9040e3bba4e3d6a5a98fd22f665498edad7926c6c22b3b55f8",
       "attempts": 1,
       "categories": [
-        "cave_creatures"
+        "cave_creatures",
+        "followers"
       ],
       "claimedAt": "2026-07-21T07:39:14Z",
       "completedAt": "2026-07-21T07:39:17Z",
@@ -4593,7 +4716,8 @@
       "attempts": 1,
       "categories": [
         "boss_dropped_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T07:36:52Z",
       "completedAt": "2026-07-21T07:36:53Z",
@@ -4625,7 +4749,8 @@
       "artifactSha256": "5060fddb99a5780b466b3631b08febb35253fa3f991463e0b5c42465d1bb6187",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T10:09:35Z",
       "completedAt": "2026-07-21T10:09:38Z",
@@ -4659,7 +4784,8 @@
       "categories": [
         "craftable_items",
         "decorations_filter",
-        "dont_starve_together"
+        "dont_starve_together",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:23:36Z",
       "completedAt": "2026-07-21T08:23:37Z",
@@ -4980,7 +5106,8 @@
       "attempts": 1,
       "categories": [
         "boss_monsters",
-        "dont_starve_together"
+        "dont_starve_together",
+        "flying_creatures"
       ],
       "claimedAt": "2026-07-21T09:46:18Z",
       "completedAt": "2026-07-21T09:46:19Z",
@@ -4997,7 +5124,8 @@
       "attempts": 1,
       "categories": [
         "crock_pot_recipes",
-        "food"
+        "food",
+        "fruits"
       ],
       "claimedAt": "2026-07-21T08:26:19Z",
       "completedAt": "2026-07-21T08:26:20Z",
@@ -5031,7 +5159,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:57:44Z",
       "completedAt": "2026-07-21T08:57:45Z",
@@ -5083,7 +5212,8 @@
       "artifactSha256": "ac0ca693899b566d7b881f60bb73a59f762c34c1c42d9efb322ef8e0b7787d85",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T10:09:50Z",
       "completedAt": "2026-07-21T10:09:52Z",
@@ -5148,7 +5278,8 @@
       "artifactSha256": "3d78d10de7e5a04e59c42df84022e5b17219c3996654750e9df7c6b1cff6d6f0",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T10:05:09Z",
       "completedAt": "2026-07-21T10:05:10Z",
@@ -5182,7 +5313,8 @@
       "attempts": 1,
       "categories": [
         "cooking_filter",
-        "craftable_structures"
+        "craftable_structures",
+        "food_tab"
       ],
       "claimedAt": "2026-07-21T08:16:59Z",
       "completedAt": "2026-07-21T08:17:03Z",
@@ -5315,7 +5447,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:58:45Z",
       "completedAt": "2026-07-21T08:58:49Z",
@@ -5382,7 +5515,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:58:49Z",
       "completedAt": "2026-07-21T08:58:53Z",
@@ -5449,7 +5583,8 @@
       "categories": [
         "craftable_items",
         "decorations_filter",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:24:58Z",
       "completedAt": "2026-07-21T08:25:02Z",
@@ -5581,7 +5716,8 @@
       "artifactSha256": "6478f9210211b8c6a87a7ed53a21a421f5be4c61fa4f183a4fbf7979989a655b",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "followers"
       ],
       "claimedAt": "2026-07-21T10:03:22Z",
       "completedAt": "2026-07-21T10:03:24Z",
@@ -5721,7 +5857,8 @@
       "attempts": 1,
       "categories": [
         "a_new_reign",
-        "dont_starve_together"
+        "dont_starve_together",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T09:48:14Z",
       "completedAt": "2026-07-21T09:48:15Z",
@@ -5808,7 +5945,9 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "fertilizer"
+        "fertilizer",
+        "from_beyond",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:19:59Z",
       "completedAt": "2026-07-21T08:20:02Z",
@@ -5842,7 +5981,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "food"
+        "food",
+        "fruits"
       ],
       "claimedAt": "2026-07-21T08:34:34Z",
       "completedAt": "2026-07-21T08:34:35Z",
@@ -5982,7 +6122,8 @@
       "artifactSha256": "af1fe286066de8435fa104133754c708d6fa7ed64d8baa3eff2dc3f158220d98",
       "attempts": 1,
       "categories": [
-        "cave_creatures"
+        "cave_creatures",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T07:38:57Z",
       "completedAt": "2026-07-21T07:39:00Z",
@@ -6202,7 +6343,8 @@
       "artifactSha256": "623780658f11eaf5c68d616a60dc192376b101a55f94e454378cd9b242d1b794",
       "attempts": 1,
       "categories": [
-        "craftable_items"
+        "craftable_items",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:53:04Z",
       "completedAt": "2026-07-21T08:53:08Z",
@@ -6373,7 +6515,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "decorations_filter"
+        "decorations_filter",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:22:31Z",
       "completedAt": "2026-07-21T08:22:32Z",
@@ -6489,7 +6632,8 @@
       "attempts": 1,
       "categories": [
         "boss_dropped_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "followers"
       ],
       "claimedAt": "2026-07-21T07:36:59Z",
       "completedAt": "2026-07-21T07:37:00Z",
@@ -6588,7 +6732,8 @@
       "artifactSha256": "4dc6a7b18e953d384d7d794f91077db6f2491fd0e88ed43ead3b2f7629c437a8",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T10:09:30Z",
       "completedAt": "2026-07-21T10:09:31Z",
@@ -6677,7 +6822,8 @@
       "artifactSha256": "515f7962f6758d1d20765ed3b0e230ade3804f774f533a75fcdca64958987803",
       "attempts": 1,
       "categories": [
-        "craftable_items"
+        "craftable_items",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:53:03Z",
       "completedAt": "2026-07-21T08:53:04Z",
@@ -6694,7 +6840,8 @@
       "attempts": 1,
       "categories": [
         "boss_dropped_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T07:36:38Z",
       "completedAt": "2026-07-21T07:36:39Z",
@@ -6710,7 +6857,8 @@
       "artifactSha256": "5481dfd1fd74d9e4a60a4402a75edac59a4217791d8b53e4892cec33ca76dd36",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T10:09:47Z",
       "completedAt": "2026-07-21T10:09:50Z",
@@ -6743,7 +6891,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "food_gardening_filter"
       ],
       "claimedAt": "2026-07-21T08:55:43Z",
       "completedAt": "2026-07-21T08:55:44Z",
@@ -6761,7 +6910,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "equipable_items"
+        "equipable_items",
+        "food_gardening_filter"
       ],
       "claimedAt": "2026-07-21T08:41:28Z",
       "completedAt": "2026-07-21T08:41:33Z",
@@ -6780,7 +6930,8 @@
         "ancient_tier_1",
         "craftable_items",
         "dont_starve_together",
-        "equipable_items"
+        "equipable_items",
+        "food_gardening_filter"
       ],
       "claimedAt": "2026-07-21T08:41:34Z",
       "completedAt": "2026-07-21T08:42:08Z",
@@ -6882,7 +7033,8 @@
       "artifactSha256": "61b6fa5c0994a65f72044060e1e05fc2f8c1e15343a6545e0b0231e7434e9073",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T10:10:37Z",
       "completedAt": "2026-07-21T10:10:38Z",
@@ -7033,7 +7185,9 @@
       "attempts": 2,
       "categories": [
         "animals",
-        "dont_starve_together"
+        "dont_starve_together",
+        "flying_creatures",
+        "followers"
       ],
       "claimedAt": "2026-07-21T09:43:49Z",
       "completedAt": "2026-07-21T09:43:50Z",
@@ -7049,7 +7203,8 @@
       "artifactSha256": "e8e883d56820b5126acf064568bcaf33427dd343a5c04e3d7868e7f2d4244138",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T10:03:05Z",
       "completedAt": "2026-07-21T10:03:06Z",
@@ -7067,7 +7222,8 @@
       "categories": [
         "dont_starve_together",
         "fertilizer",
-        "food"
+        "food",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:19:45Z",
       "completedAt": "2026-07-21T08:19:46Z",
@@ -7099,7 +7255,8 @@
       "artifactSha256": "7c26ef90a70cf1c1ac22593384c03b3977500659bee657624fca6dd25e1258e4",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T10:03:04Z",
       "completedAt": "2026-07-21T10:03:05Z",
@@ -7117,7 +7274,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "equipable_items"
+        "equipable_items",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:42:31Z",
       "completedAt": "2026-07-21T08:42:34Z",
@@ -7133,7 +7291,8 @@
       "artifactSha256": "cd2d9ae1fb7080cb14e020d34a2311e0771af4dfc275cf0f3b9ca8a59e03ab4b",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T10:10:38Z",
       "completedAt": "2026-07-21T10:10:39Z",
@@ -7149,7 +7308,8 @@
       "artifactSha256": "77b02ec92dcfd60b7324b9404bb119ed8c288dc15b8d32d466e42c697797d77c",
       "attempts": 1,
       "categories": [
-        "food"
+        "food",
+        "fruits"
       ],
       "claimedAt": "2026-07-21T08:33:35Z",
       "completedAt": "2026-07-21T08:33:36Z",
@@ -7267,7 +7427,8 @@
       "categories": [
         "craftable_items",
         "decorations_filter",
-        "dont_starve_together"
+        "dont_starve_together",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:25:06Z",
       "completedAt": "2026-07-21T08:25:10Z",
@@ -7301,7 +7462,8 @@
       "attempts": 1,
       "categories": [
         "craftable_structures",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:48:52Z",
       "completedAt": "2026-07-21T08:48:55Z",
@@ -7319,7 +7481,8 @@
       "categories": [
         "craftable_items",
         "decorations_filter",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:22:57Z",
       "completedAt": "2026-07-21T08:22:59Z",
@@ -7408,7 +7571,8 @@
         "armour_filter",
         "craftable_items",
         "equipable_items",
-        "fight_tab"
+        "fight_tab",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T07:28:24Z",
       "completedAt": "2026-07-21T07:28:29Z",
@@ -7420,12 +7584,29 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/2768c27515c4c3a78958fbd07787163526201256137327bbf9f267f841cb6ec6.json",
+      "artifactSha256": "ecc3487be17921c810ec4ec0acd3759dbb37d4b03aec1a2cf372dd6abc7d3729",
+      "attempts": 1,
+      "categories": [
+        "fuel"
+      ],
+      "claimedAt": "2026-07-21T10:48:52Z",
+      "completedAt": "2026-07-21T10:48:53Z",
+      "createdAt": "2026-07-21T10:48:48Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T10:48:53Z",
+      "url": "https://dontstarve.fandom.com/wiki/Grass_Tuft",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/177e63bfc05c02a89d719551e4f52f093b87e51afa7bddadc2f30bac8ab7d824.json",
       "artifactSha256": "d585a55b05991ba5ff8378d735b981b1528703bd8423e8a2823921caed0b4115",
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "decorations_filter"
+        "decorations_filter",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:22:32Z",
       "completedAt": "2026-07-21T08:22:33Z",
@@ -7441,7 +7622,8 @@
       "artifactSha256": "2a0941b6b4895b1519dedbe627dcaec12c0bcbab1d3d85ec2d707c0ed0671a49",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T10:09:32Z",
       "completedAt": "2026-07-21T10:09:35Z",
@@ -7459,7 +7641,8 @@
       "categories": [
         "boss_monsters",
         "cave_creatures",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T07:39:47Z",
       "completedAt": "2026-07-21T07:39:48Z",
@@ -7544,7 +7727,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "fertilizer"
+        "fertilizer",
+        "food_gardening_filter"
       ],
       "claimedAt": "2026-07-21T08:19:49Z",
       "completedAt": "2026-07-21T08:19:53Z",
@@ -7561,7 +7745,8 @@
       "attempts": 1,
       "categories": [
         "a_new_reign",
-        "dont_starve_together"
+        "dont_starve_together",
+        "flying_creatures"
       ],
       "claimedAt": "2026-07-21T09:48:39Z",
       "completedAt": "2026-07-21T09:48:40Z",
@@ -7595,7 +7780,8 @@
       "artifactSha256": "edfe508ce31f3bfeaf0a7dcaf459564d8d90131502d04146d9e2a1828a0ddd69",
       "attempts": 1,
       "categories": [
-        "fertilizer"
+        "fertilizer",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:19:42Z",
       "completedAt": "2026-07-21T08:19:43Z",
@@ -7612,7 +7798,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "decorations_filter"
+        "decorations_filter",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:23:00Z",
       "completedAt": "2026-07-21T08:23:01Z",
@@ -7997,7 +8184,8 @@
       "artifactSha256": "6966223c9ee4219dac87bdb12a2ab86d78bf534a44bc42439a2f7aaa95badbc5",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T10:10:30Z",
       "completedAt": "2026-07-21T10:10:31Z",
@@ -8150,7 +8338,8 @@
       "categories": [
         "cave_creatures",
         "containers",
-        "dont_starve_together"
+        "dont_starve_together",
+        "followers"
       ],
       "claimedAt": "2026-07-21T07:34:36Z",
       "completedAt": "2026-07-21T07:34:38Z",
@@ -8185,7 +8374,8 @@
       "categories": [
         "containers",
         "cooking_filter",
-        "craftable_structures"
+        "craftable_structures",
+        "food_tab"
       ],
       "claimedAt": "2026-07-21T07:34:24Z",
       "completedAt": "2026-07-21T07:34:25Z",
@@ -8223,7 +8413,8 @@
         "cooling",
         "craftable_items",
         "craftable_structures",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:18:20Z",
       "completedAt": "2026-07-21T08:18:24Z",
@@ -8291,7 +8482,8 @@
       "artifactSha256": "e1746dc6bda7c5975006dd71a364b057d6d5dba8c20f145732c9d61a616ae39d",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T10:11:25Z",
       "completedAt": "2026-07-21T10:11:26Z",
@@ -8341,7 +8533,8 @@
       "attempts": 1,
       "categories": [
         "cave_creatures",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T07:39:44Z",
       "completedAt": "2026-07-21T07:39:47Z",
@@ -8357,7 +8550,8 @@
       "artifactSha256": "ad8e0012850c71748487998e6700968ab18e90298c217703f2828588b1f4e9b7",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T10:11:33Z",
       "completedAt": "2026-07-21T10:11:34Z",
@@ -8375,7 +8569,8 @@
       "categories": [
         "craftable_items",
         "craftable_structures",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:49:07Z",
       "completedAt": "2026-07-21T08:49:09Z",
@@ -8428,7 +8623,8 @@
       "attempts": 1,
       "categories": [
         "cave_creatures",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T07:39:42Z",
       "completedAt": "2026-07-21T07:39:44Z",
@@ -8603,7 +8799,8 @@
       "categories": [
         "a_new_reign",
         "dont_starve_together",
-        "food"
+        "food",
+        "fruits"
       ],
       "claimedAt": "2026-07-21T08:33:46Z",
       "completedAt": "2026-07-21T08:33:48Z",
@@ -8621,7 +8818,8 @@
       "categories": [
         "a_new_reign",
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:53:51Z",
       "completedAt": "2026-07-21T08:53:53Z",
@@ -8637,7 +8835,8 @@
       "artifactSha256": "6645e745026448d1568f8ea07e9cdb02cbc9ab5b879e362b54ee0568a6753c38",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T10:10:33Z",
       "completedAt": "2026-07-21T10:10:34Z",
@@ -8653,7 +8852,8 @@
       "artifactSha256": "997642b102daf9b41f0eb82e1f07bede2bdeef5875585d568a0816c2fef9069d",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T10:10:34Z",
       "completedAt": "2026-07-21T10:10:35Z",
@@ -8669,7 +8869,8 @@
       "artifactSha256": "6f1f67790931666785596ec7f944672e1790ed9701ecf746d9fa0105fb841873",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T10:10:31Z",
       "completedAt": "2026-07-21T10:10:32Z",
@@ -8720,7 +8921,9 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:59:01Z",
       "completedAt": "2026-07-21T08:59:05Z",
@@ -9053,7 +9256,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "food"
+        "food",
+        "fruits"
       ],
       "claimedAt": "2026-07-21T08:33:43Z",
       "completedAt": "2026-07-21T08:33:44Z",
@@ -9119,7 +9323,8 @@
       "artifactSha256": "8e3a71e1243a1b2d12236eb4722a794c43a75f43c9406f879f7d3ed5039c3828",
       "attempts": 1,
       "categories": [
-        "food"
+        "food",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:33:29Z",
       "completedAt": "2026-07-21T08:33:30Z",
@@ -9202,7 +9407,8 @@
       "attempts": 1,
       "categories": [
         "boss_dropped_items",
-        "craftable_items"
+        "craftable_items",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T07:36:14Z",
       "completedAt": "2026-07-21T07:36:15Z",
@@ -9218,7 +9424,8 @@
       "artifactSha256": "1844ad9ee3e75af516859b19243ab9b3a147a9eb7bb18be08ab9f70a78550c45",
       "attempts": 1,
       "categories": [
-        "craftable_items"
+        "craftable_items",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:51:53Z",
       "completedAt": "2026-07-21T08:51:54Z",
@@ -9237,7 +9444,8 @@
         "armour_filter",
         "craftable_items",
         "equipable_items",
-        "fight_tab"
+        "fight_tab",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T07:28:15Z",
       "completedAt": "2026-07-21T07:28:17Z",
@@ -9288,7 +9496,9 @@
       "artifactSha256": "5582c8372f6a7dff58e0d3f92911e48547368865d354cdd662f292d4e72e5ea5",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T10:09:57Z",
       "completedAt": "2026-07-21T10:09:58Z",
@@ -9304,7 +9514,8 @@
       "artifactSha256": "b7710eac71a5fd2f4179123adc37af0abb749b51a482081c2fa59abd430202d9",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "followers"
       ],
       "claimedAt": "2026-07-21T10:05:40Z",
       "completedAt": "2026-07-21T10:05:43Z",
@@ -9437,7 +9648,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "events"
+        "events",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:30:49Z",
       "completedAt": "2026-07-21T08:30:51Z",
@@ -9472,7 +9684,8 @@
         "celestial_filter",
         "craftable_items",
         "dont_starve_together",
-        "equipable_items"
+        "equipable_items",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T07:31:50Z",
       "completedAt": "2026-07-21T07:31:54Z",
@@ -9504,7 +9717,8 @@
       "artifactSha256": "b924498127e902a479a0c9c697084156186c6f45daecce882cd46631db3e68b7",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T10:10:18Z",
       "completedAt": "2026-07-21T10:10:19Z",
@@ -9667,7 +9881,8 @@
       "attempts": 1,
       "categories": [
         "cave_creatures",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T07:39:48Z",
       "completedAt": "2026-07-21T07:39:51Z",
@@ -9788,7 +10003,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "events"
+        "events",
+        "followers"
       ],
       "claimedAt": "2026-07-21T08:29:52Z",
       "completedAt": "2026-07-21T08:29:53Z",
@@ -9806,7 +10022,8 @@
       "categories": [
         "birds",
         "boss_monsters",
-        "dont_starve_together"
+        "dont_starve_together",
+        "flying_creatures"
       ],
       "claimedAt": "2026-07-21T09:44:57Z",
       "completedAt": "2026-07-21T09:44:58Z",
@@ -9841,7 +10058,8 @@
       "attempts": 1,
       "categories": [
         "boss_dropped_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T07:36:54Z",
       "completedAt": "2026-07-21T07:36:56Z",
@@ -9857,6 +10075,7 @@
       "artifactSha256": "375f5d22b589a68e3633afcb3aa513be861ecaa4d258b393acfab1cac513c8b9",
       "attempts": 1,
       "categories": [
+        "followers",
         "food"
       ],
       "claimedAt": "2026-07-21T08:33:11Z",
@@ -9909,7 +10128,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "fertilizer"
+        "fertilizer",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:19:40Z",
       "completedAt": "2026-07-21T08:19:41Z",
@@ -10047,7 +10267,8 @@
       "artifactSha256": "3f2fbd414a59f7fbb514031e6ff118c9093af1ba9d09c6ae37e41084b832f985",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T10:10:35Z",
       "completedAt": "2026-07-21T10:10:36Z",
@@ -10063,7 +10284,8 @@
       "artifactSha256": "fb10a597a4bb0c400b5fde47248aa381019d1f622e20a57aa3166cb448854973",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T10:10:42Z",
       "completedAt": "2026-07-21T10:10:43Z",
@@ -10079,7 +10301,8 @@
       "artifactSha256": "5781a3ac7b832a97d18a26384792fa4b9954c751e3a3ddb1bb865fa19e118b75",
       "attempts": 1,
       "categories": [
-        "craftable_items"
+        "craftable_items",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:52:33Z",
       "completedAt": "2026-07-21T08:52:37Z",
@@ -10215,7 +10438,8 @@
         "cooling",
         "crock_pot_recipes",
         "dont_starve_together",
-        "food"
+        "food",
+        "fruits"
       ],
       "claimedAt": "2026-07-21T08:18:14Z",
       "completedAt": "2026-07-21T08:18:15Z",
@@ -10224,6 +10448,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T08:18:15Z",
       "url": "https://dontstarve.fandom.com/wiki/Melonsicle",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/38ce6d53265b266f3f2ed91a9a933805da975d1f2f9fd167bbc66e96415e9b4b.json",
+      "artifactSha256": "08cb0bc36f8ae9ca079ce50caa690ea6ac8bde02506cb29da9f710d693fc40ce",
+      "attempts": 1,
+      "categories": [
+        "followers"
+      ],
+      "claimedAt": "2026-07-21T10:43:05Z",
+      "completedAt": "2026-07-21T10:43:09Z",
+      "createdAt": "2026-07-21T10:43:03Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T10:43:09Z",
+      "url": "https://dontstarve.fandom.com/wiki/Merm",
       "workerId": null
     },
     {
@@ -10280,7 +10520,8 @@
       "artifactSha256": "241a8e88caf46a5475af4729fe313834682d22e330b30cfa12424ccc289fbb17",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T10:09:43Z",
       "completedAt": "2026-07-21T10:09:44Z",
@@ -10383,7 +10624,8 @@
       "attempts": 1,
       "categories": [
         "cave_creatures",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T07:39:51Z",
       "completedAt": "2026-07-21T07:39:53Z",
@@ -10435,7 +10677,8 @@
         "a_new_reign",
         "craftable_items",
         "craftable_structures",
-        "decorations_filter"
+        "decorations_filter",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:23:59Z",
       "completedAt": "2026-07-21T08:24:01Z",
@@ -10624,7 +10867,8 @@
       "categories": [
         "celestial_tab",
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T07:33:13Z",
       "completedAt": "2026-07-21T07:33:15Z",
@@ -10692,7 +10936,8 @@
       "categories": [
         "celestial_filter",
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T07:31:54Z",
       "completedAt": "2026-07-21T07:31:57Z",
@@ -11100,7 +11345,8 @@
       "artifactSha256": "67626d1b253789181aa2c3683cac5c52efbf4b8dc8802789fe41371b61ec5d39",
       "attempts": 2,
       "categories": [
-        "animals"
+        "animals",
+        "flying_creatures"
       ],
       "claimedAt": "2026-07-21T09:43:40Z",
       "completedAt": "2026-07-21T09:43:42Z",
@@ -11165,7 +11411,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "decorations_filter"
+        "decorations_filter",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:22:59Z",
       "completedAt": "2026-07-21T08:23:00Z",
@@ -11233,7 +11480,9 @@
       "categories": [
         "a_new_reign",
         "craftable_structures",
-        "dont_starve_together"
+        "dont_starve_together",
+        "food_gardening_filter",
+        "food_tab"
       ],
       "claimedAt": "2026-07-21T08:47:15Z",
       "completedAt": "2026-07-21T08:47:19Z",
@@ -11334,7 +11583,8 @@
       "artifactSha256": "4661bc164f727f3ea70d5a7b62e370831b235472a0f33ee8077dd03ec04b5640",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "followers"
       ],
       "claimedAt": "2026-07-21T10:11:18Z",
       "completedAt": "2026-07-21T10:11:20Z",
@@ -11505,7 +11755,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "food"
+        "food",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:34:37Z",
       "completedAt": "2026-07-21T08:34:38Z",
@@ -11539,7 +11790,8 @@
       "attempts": 1,
       "categories": [
         "boss_dropped_items",
-        "craftable_items"
+        "craftable_items",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T07:36:07Z",
       "completedAt": "2026-07-21T07:36:09Z",
@@ -11572,7 +11824,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:59:25Z",
       "completedAt": "2026-07-21T08:59:28Z",
@@ -11605,7 +11858,8 @@
       "artifactSha256": "df48601443e2850aa30986711e0ff9c7c756f104c4c739babef815899d891e08",
       "attempts": 1,
       "categories": [
-        "craftable_items"
+        "craftable_items",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:52:49Z",
       "completedAt": "2026-07-21T08:52:51Z",
@@ -11621,7 +11875,8 @@
       "artifactSha256": "4c76f65c39a368a93225f58e334d71eed143e590bfb6eb8fe36c03d7f97ec85b",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T10:09:58Z",
       "completedAt": "2026-07-21T10:09:59Z",
@@ -11655,7 +11910,8 @@
       "artifactSha256": "20ccc4444d415644df277c980ac2339e663503fe219d89765b3b00edd5971adb",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "followers"
       ],
       "claimedAt": "2026-07-21T10:07:45Z",
       "completedAt": "2026-07-21T10:07:47Z",
@@ -11689,7 +11945,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "equipable_items"
+        "equipable_items",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:39:58Z",
       "completedAt": "2026-07-21T08:40:00Z",
@@ -11738,7 +11995,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "food_gardening_filter"
       ],
       "claimedAt": "2026-07-21T08:57:04Z",
       "completedAt": "2026-07-21T08:57:08Z",
@@ -11806,7 +12064,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "equipable_items"
+        "equipable_items",
+        "food_gardening_filter"
       ],
       "claimedAt": "2026-07-21T08:38:20Z",
       "completedAt": "2026-07-21T08:38:24Z",
@@ -11987,7 +12246,8 @@
       "artifactSha256": "2bae712e2f22c5a82dbebae867d97de50b6afb8114e8a0190fa5963ee1467b42",
       "attempts": 1,
       "categories": [
-        "craftable_items"
+        "craftable_items",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:52:03Z",
       "completedAt": "2026-07-21T08:52:07Z",
@@ -12020,7 +12280,8 @@
       "attempts": 2,
       "categories": [
         "animals",
-        "birds"
+        "birds",
+        "flying_creatures"
       ],
       "claimedAt": "2026-07-21T09:43:56Z",
       "completedAt": "2026-07-21T09:43:59Z",
@@ -12105,7 +12366,8 @@
       "attempts": 1,
       "categories": [
         "a_new_reign",
-        "dont_starve_together"
+        "dont_starve_together",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T09:48:11Z",
       "completedAt": "2026-07-21T09:48:12Z",
@@ -12174,7 +12436,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "events"
+        "events",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:30:26Z",
       "completedAt": "2026-07-21T08:30:30Z",
@@ -12243,7 +12506,8 @@
       "artifactSha256": "d68866f7fecac8269d364ab99023f40b0998242bbc388dd3bc88c371a0a284cf",
       "attempts": 2,
       "categories": [
-        "animals"
+        "animals",
+        "followers"
       ],
       "claimedAt": "2026-07-21T09:43:53Z",
       "completedAt": "2026-07-21T09:43:54Z",
@@ -12341,6 +12605,22 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/bb6c66911bea4d3f89e8e0f34a4affe50310d209441fc917666fb59f20844506.json",
+      "artifactSha256": "8276d3fc382feae55221faf2666c2e497e7f97c3ec3c75256cb3a4e622447e83",
+      "attempts": 1,
+      "categories": [
+        "fuel"
+      ],
+      "claimedAt": "2026-07-21T10:48:51Z",
+      "completedAt": "2026-07-21T10:48:52Z",
+      "createdAt": "2026-07-21T10:48:48Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T10:48:52Z",
+      "url": "https://dontstarve.fandom.com/wiki/Pine_Cone",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/3cadf074768eed812cc640d79d8ac0db2ee8061efab3b10601a52f84e49a3958.json",
       "artifactSha256": "3bfa5763b7d4f6bfe23d0de1208bddaed05dffe1a101e0fee44e8d586d77d9a8",
       "attempts": 1,
@@ -12363,7 +12643,8 @@
       "artifactSha256": "f889853dba9161e917f4ad6e4d86cb705774b3b19510c601cd98e5e36bd2675c",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "followers"
       ],
       "claimedAt": "2026-07-21T10:06:13Z",
       "completedAt": "2026-07-21T10:06:14Z",
@@ -12514,7 +12795,8 @@
       "artifactSha256": "215872db47cf50eedc075b4675e92d78db8fd70f9580d6cf2d9ada273249a2f8",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T10:09:41Z",
       "completedAt": "2026-07-21T10:09:42Z",
@@ -12532,7 +12814,8 @@
       "categories": [
         "craftable_items",
         "decorations_filter",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:25:02Z",
       "completedAt": "2026-07-21T08:25:06Z",
@@ -12584,7 +12867,8 @@
       "categories": [
         "containers",
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T07:34:39Z",
       "completedAt": "2026-07-21T07:34:40Z",
@@ -12636,7 +12920,8 @@
         "containers",
         "cooking_filter",
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "food_tab"
       ],
       "claimedAt": "2026-07-21T07:34:32Z",
       "completedAt": "2026-07-21T07:34:36Z",
@@ -12655,7 +12940,8 @@
         "cooking_filter",
         "craftable_items",
         "crafting_stations",
-        "dont_starve_together"
+        "dont_starve_together",
+        "food_tab"
       ],
       "claimedAt": "2026-07-21T08:17:07Z",
       "completedAt": "2026-07-21T08:17:08Z",
@@ -12742,7 +13028,8 @@
       "attempts": 1,
       "categories": [
         "boss_monsters",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T09:46:36Z",
       "completedAt": "2026-07-21T09:46:39Z",
@@ -12898,7 +13185,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "equipable_items"
+        "equipable_items",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:39:26Z",
       "completedAt": "2026-07-21T08:39:28Z",
@@ -12932,7 +13220,8 @@
       "categories": [
         "craftable_structures",
         "decorations_filter",
-        "dont_starve_together"
+        "dont_starve_together",
+        "food_gardening_filter"
       ],
       "claimedAt": "2026-07-21T08:24:17Z",
       "completedAt": "2026-07-21T08:24:22Z",
@@ -12982,7 +13271,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "events"
+        "events",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:30:34Z",
       "completedAt": "2026-07-21T08:30:38Z",
@@ -13080,7 +13370,8 @@
       "artifactSha256": "3c064512b40bdb166d52dabd29d99fb6263c1512902eb70f97d8a513f5711306",
       "attempts": 1,
       "categories": [
-        "craftable_structures"
+        "craftable_structures",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:48:45Z",
       "completedAt": "2026-07-21T08:48:46Z",
@@ -13097,7 +13388,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:58:03Z",
       "completedAt": "2026-07-21T08:58:05Z",
@@ -13115,7 +13407,8 @@
       "categories": [
         "boss_dropped_items",
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T07:37:10Z",
       "completedAt": "2026-07-21T07:37:11Z",
@@ -13213,7 +13506,8 @@
       "artifactSha256": "564e2543ed18ce09253937d165df9591c73f0200b937d26eb0c803c7899fe91c",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T10:11:35Z",
       "completedAt": "2026-07-21T10:11:36Z",
@@ -13385,7 +13679,8 @@
       "categories": [
         "craftable_items",
         "decorations_filter",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:24:42Z",
       "completedAt": "2026-07-21T08:24:46Z",
@@ -13503,7 +13798,8 @@
       "attempts": 1,
       "categories": [
         "craftable_structures",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:48:46Z",
       "completedAt": "2026-07-21T08:48:48Z",
@@ -13537,7 +13833,8 @@
       "artifactSha256": "37700480f3b5cb44a01d75d3b5e72add79fc9ee4e910a07917eb042082e39341",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T10:10:01Z",
       "completedAt": "2026-07-21T10:10:03Z",
@@ -13553,7 +13850,9 @@
       "artifactSha256": "e79c71a38db80c77472a18947bac61facc50d43a7287123b95ca7a351e6e9965",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T10:10:14Z",
       "completedAt": "2026-07-21T10:10:16Z",
@@ -13570,7 +13869,8 @@
       "attempts": 1,
       "categories": [
         "cave_creatures",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T07:39:40Z",
       "completedAt": "2026-07-21T07:39:42Z",
@@ -13672,7 +13972,8 @@
       "categories": [
         "animals",
         "cave_creatures",
-        "dont_starve_together"
+        "dont_starve_together",
+        "followers"
       ],
       "claimedAt": "2026-07-21T07:39:13Z",
       "completedAt": "2026-07-21T07:39:14Z",
@@ -13738,7 +14039,8 @@
       "categories": [
         "craftable_items",
         "decorations_filter",
-        "dont_starve_together"
+        "dont_starve_together",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:24:05Z",
       "completedAt": "2026-07-21T08:24:06Z",
@@ -13755,7 +14057,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "decorations_filter"
+        "decorations_filter",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:22:33Z",
       "completedAt": "2026-07-21T08:22:34Z",
@@ -13771,7 +14074,8 @@
       "artifactSha256": "fe1fbbba5306fe5a5797277a807facd7cd7e81763a01485f157019117526ae8a",
       "attempts": 1,
       "categories": [
-        "craftable_items"
+        "craftable_items",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:51:55Z",
       "completedAt": "2026-07-21T08:51:56Z",
@@ -13806,7 +14110,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "fertilizer"
+        "fertilizer",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:19:41Z",
       "completedAt": "2026-07-21T08:19:42Z",
@@ -13823,7 +14128,8 @@
       "attempts": 1,
       "categories": [
         "eggs",
-        "fertilizer"
+        "fertilizer",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:19:24Z",
       "completedAt": "2026-07-21T08:19:26Z",
@@ -13857,7 +14163,8 @@
       "artifactSha256": "c52002b1d8d7fead1b83030a59f66cac65974c7be028cd28113d7258cbbc8386",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T10:11:27Z",
       "completedAt": "2026-07-21T10:11:30Z",
@@ -13907,7 +14214,8 @@
       "artifactSha256": "f6206fe3a8d45f6131497be007054711203cdf403c85dcfc2c1426983129bb75",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T10:09:28Z",
       "completedAt": "2026-07-21T10:09:29Z",
@@ -14029,7 +14337,8 @@
       "categories": [
         "cooking_filter",
         "craftable_structures",
-        "dont_starve_together"
+        "dont_starve_together",
+        "food_tab"
       ],
       "claimedAt": "2026-07-21T08:17:11Z",
       "completedAt": "2026-07-21T08:17:13Z",
@@ -14166,7 +14475,8 @@
       "categories": [
         "craftable_items",
         "decorations_filter",
-        "dont_starve_together"
+        "dont_starve_together",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:23:37Z",
       "completedAt": "2026-07-21T08:23:39Z",
@@ -14184,7 +14494,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "events"
+        "events",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:30:30Z",
       "completedAt": "2026-07-21T08:30:34Z",
@@ -14217,7 +14528,8 @@
       "artifactSha256": "9c7e61e1ff70714bacf0c7e661694d4f64c7c469197fe30356f5c04f7820d891",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T10:02:33Z",
       "completedAt": "2026-07-21T10:02:35Z",
@@ -14234,7 +14546,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "decorations_filter"
+        "decorations_filter",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:22:34Z",
       "completedAt": "2026-07-21T08:22:35Z",
@@ -14252,7 +14565,8 @@
       "categories": [
         "craftable_items",
         "craftable_structures",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:48:48Z",
       "completedAt": "2026-07-21T08:48:52Z",
@@ -14288,7 +14602,8 @@
       "categories": [
         "craftable_items",
         "decorations_filter",
-        "dont_starve_together"
+        "dont_starve_together",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:23:39Z",
       "completedAt": "2026-07-21T08:23:43Z",
@@ -14394,7 +14709,8 @@
       "artifactSha256": "85f6bdfeb20427d08cfb6da9d5d5c19b0dc75d1b061610db29d886ca04ecb04a",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T10:10:13Z",
       "completedAt": "2026-07-21T10:10:14Z",
@@ -14444,7 +14760,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "equipable_items"
+        "equipable_items",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:42:24Z",
       "completedAt": "2026-07-21T08:42:25Z",
@@ -14461,7 +14778,8 @@
       "attempts": 1,
       "categories": [
         "boss_monsters",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T09:46:42Z",
       "completedAt": "2026-07-21T09:46:43Z",
@@ -14559,7 +14877,8 @@
       "artifactSha256": "04eda62a95a441a5407f7199cc450dbb270d041dbf121a068e17e54e430817a4",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "followers"
       ],
       "claimedAt": "2026-07-21T10:07:48Z",
       "completedAt": "2026-07-21T10:07:51Z",
@@ -14792,7 +15111,9 @@
         "backpacks",
         "craftable_items",
         "dont_starve_together",
-        "equipable_items"
+        "equipable_items",
+        "food_gardening_filter",
+        "food_tab"
       ],
       "claimedAt": "2026-07-21T07:33:48Z",
       "completedAt": "2026-07-21T07:33:55Z",
@@ -14908,7 +15229,8 @@
       "categories": [
         "a_new_reign",
         "boss_dropped_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T07:36:42Z",
       "completedAt": "2026-07-21T07:36:43Z",
@@ -14957,7 +15279,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:59:28Z",
       "completedAt": "2026-07-21T08:59:31Z",
@@ -14973,7 +15296,8 @@
       "artifactSha256": "d96bd4ea5d302a650dc2566b8f8ad4f0400ee2c13b075a9d28e14ac5dab486b8",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "followers"
       ],
       "claimedAt": "2026-07-21T10:11:21Z",
       "completedAt": "2026-07-21T10:11:22Z",
@@ -15008,7 +15332,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:58:14Z",
       "completedAt": "2026-07-21T08:58:18Z",
@@ -15076,7 +15401,8 @@
       "categories": [
         "ancient_tier_2",
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:58:18Z",
       "completedAt": "2026-07-21T08:58:22Z",
@@ -15378,7 +15704,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:59:17Z",
       "completedAt": "2026-07-21T08:59:19Z",
@@ -15413,7 +15740,8 @@
         "a_new_reign",
         "boss_dropped_items",
         "celestial_tab",
-        "dont_starve_together"
+        "dont_starve_together",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T07:33:10Z",
       "completedAt": "2026-07-21T07:33:12Z",
@@ -15494,7 +15822,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:58:53Z",
       "completedAt": "2026-07-21T08:58:57Z",
@@ -15511,7 +15840,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "decorations_filter"
+        "decorations_filter",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:23:01Z",
       "completedAt": "2026-07-21T08:23:32Z",
@@ -15588,6 +15918,22 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/e53ae68e25aa0a839de94f7ec34f14c3d06939b89b4d3cde7abbca1e520c74a1.json",
+      "artifactSha256": "a222a1250d39f4b59750906f1fde242b35238ac142b54db5b3593416bebd95f4",
+      "attempts": 1,
+      "categories": [
+        "fuel"
+      ],
+      "claimedAt": "2026-07-21T10:48:57Z",
+      "completedAt": "2026-07-21T10:48:58Z",
+      "createdAt": "2026-07-21T10:48:49Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T10:48:58Z",
+      "url": "https://dontstarve.fandom.com/wiki/Slurtle_Slime",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/329cbebcd09e41378bab7c4a3e5ed5589c074f1778a6840e86d12d4913d8b888.json",
       "artifactSha256": "3f78b11f2d8113adc1bbf4242ead13a8032416edb74e157439d01301c88cea79",
       "attempts": 1,
@@ -15660,7 +16006,8 @@
       "attempts": 1,
       "categories": [
         "boss_dropped_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T07:37:11Z",
       "completedAt": "2026-07-21T07:37:13Z",
@@ -15762,7 +16109,8 @@
       "artifactSha256": "260a3d50e11a64006f214e84f7ea49426522d0c668c6a941bcc444e8198f9f03",
       "attempts": 1,
       "categories": [
-        "cave_creatures"
+        "cave_creatures",
+        "followers"
       ],
       "claimedAt": "2026-07-21T07:39:20Z",
       "completedAt": "2026-07-21T07:39:21Z",
@@ -15796,7 +16144,8 @@
       "categories": [
         "boss_dropped_items",
         "craftable_items",
-        "eggs"
+        "eggs",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T07:35:59Z",
       "completedAt": "2026-07-21T07:36:01Z",
@@ -15829,7 +16178,8 @@
       "artifactSha256": "0a40d6102baee808c3a37c8154efc5eea897cda38e50b77bdd401c29136fdd3c",
       "attempts": 1,
       "categories": [
-        "cave_creatures"
+        "cave_creatures",
+        "followers"
       ],
       "claimedAt": "2026-07-21T07:39:21Z",
       "completedAt": "2026-07-21T07:39:22Z",
@@ -15858,11 +16208,28 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/98ac591714386d5920383029bc3b7a7f94a90933076c1505e396a35af83e7583.json",
+      "artifactSha256": "0e80ef8e66b321b612bbf31e0e486900feaefcf8c2ea97fec4b647e39917f10b",
+      "attempts": 1,
+      "categories": [
+        "fuel"
+      ],
+      "claimedAt": "2026-07-21T10:48:53Z",
+      "completedAt": "2026-07-21T10:48:55Z",
+      "createdAt": "2026-07-21T10:48:49Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T10:48:55Z",
+      "url": "https://dontstarve.fandom.com/wiki/Spiky_Bush",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/b871fad2e1384f39478038405122c2a619e814085e26ca2e13737fe9d7c51ad1.json",
       "artifactSha256": "abd247d1b244725c7e9c635f9842cc69711a52b73c3113bdadd9a2bf77e4a1aa",
       "attempts": 1,
       "categories": [
-        "cave_creatures"
+        "cave_creatures",
+        "followers"
       ],
       "claimedAt": "2026-07-21T07:39:10Z",
       "completedAt": "2026-07-21T07:39:11Z",
@@ -15895,7 +16262,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "fertilizer"
+        "fertilizer",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:19:46Z",
       "completedAt": "2026-07-21T08:19:48Z",
@@ -15977,7 +16345,8 @@
       "artifactSha256": "bfa28b249954988ce5eee47ac009b9ece566dce632dddbe4b57020caf2f3fbd9",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T10:10:39Z",
       "completedAt": "2026-07-21T10:10:40Z",
@@ -16116,7 +16485,8 @@
       "attempts": 1,
       "categories": [
         "a_new_reign",
-        "dont_starve_together"
+        "dont_starve_together",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T09:48:19Z",
       "completedAt": "2026-07-21T09:48:20Z",
@@ -16333,7 +16703,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "food"
+        "food",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:34:36Z",
       "completedAt": "2026-07-21T08:34:37Z",
@@ -16386,7 +16757,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "events"
+        "events",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:30:38Z",
       "completedAt": "2026-07-21T08:30:39Z",
@@ -16471,7 +16843,8 @@
       "artifactSha256": "5e965fbda446550a6010291463d1ddff6b5026f1842dddfef57a23b82659e986",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T10:10:40Z",
       "completedAt": "2026-07-21T10:10:42Z",
@@ -16641,7 +17014,8 @@
       "categories": [
         "craftable_items",
         "decorations_filter",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:24:50Z",
       "completedAt": "2026-07-21T08:24:54Z",
@@ -16659,7 +17033,8 @@
       "categories": [
         "craftable_items",
         "decorations_filter",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:24:54Z",
       "completedAt": "2026-07-21T08:24:58Z",
@@ -16675,7 +17050,8 @@
       "artifactSha256": "72dc438387767b6801401199a441990603bc591c518e8f8f9684b9e8c431f9b1",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T10:10:03Z",
       "completedAt": "2026-07-21T10:10:09Z",
@@ -16956,6 +17332,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T08:37:57Z",
       "url": "https://dontstarve.fandom.com/wiki/Tentacle_Spike",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/e56a0269316b37d3b91822d413399df8b4d095def5aa7447364f88763e327493.json",
+      "artifactSha256": "163327cbc62509244444a7e1195f027ed4cebf8f0c8ea71e822da0a4b1cedd4e",
+      "attempts": 1,
+      "categories": [
+        "fuel"
+      ],
+      "claimedAt": "2026-07-21T10:48:55Z",
+      "completedAt": "2026-07-21T10:48:56Z",
+      "createdAt": "2026-07-21T10:48:49Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T10:48:56Z",
+      "url": "https://dontstarve.fandom.com/wiki/Tentacle_Spots",
       "workerId": null
     },
     {
@@ -17581,7 +17973,8 @@
       "artifactSha256": "3d57ca4930b770b5b01ee82a224b6cbc6f8cc3d27bdbd692a7684bf2a8c0d23e",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T10:11:26Z",
       "completedAt": "2026-07-21T10:11:27Z",
@@ -17615,7 +18008,8 @@
       "artifactSha256": "740f5c8b218fec73fe5a7aa20c0752a0e91779b1fbdd765cd3e5e911aa420db2",
       "attempts": 1,
       "categories": [
-        "craftable_items"
+        "craftable_items",
+        "food_gardening_filter"
       ],
       "claimedAt": "2026-07-21T08:51:47Z",
       "completedAt": "2026-07-21T08:51:51Z",
@@ -17649,7 +18043,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "fertilizer"
+        "fertilizer",
+        "food_gardening_filter"
       ],
       "claimedAt": "2026-07-21T08:19:55Z",
       "completedAt": "2026-07-21T08:19:59Z",
@@ -17838,7 +18233,8 @@
       "attempts": 1,
       "categories": [
         "a_new_reign",
-        "dont_starve_together"
+        "dont_starve_together",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T09:48:22Z",
       "completedAt": "2026-07-21T09:48:23Z",
@@ -17855,7 +18251,8 @@
       "attempts": 1,
       "categories": [
         "beefalo_foods",
-        "craftable_items"
+        "craftable_items",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T07:30:20Z",
       "completedAt": "2026-07-21T07:30:21Z",
@@ -17872,7 +18269,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:58:13Z",
       "completedAt": "2026-07-21T08:58:14Z",
@@ -17890,7 +18288,8 @@
       "categories": [
         "clothing_filter",
         "craftable_items",
-        "equipable_items"
+        "equipable_items",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T07:30:43Z",
       "completedAt": "2026-07-21T07:30:45Z",
@@ -18055,7 +18454,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:58:09Z",
       "completedAt": "2026-07-21T08:58:13Z",
@@ -18072,7 +18472,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:58:05Z",
       "completedAt": "2026-07-21T08:58:09Z",
@@ -18139,7 +18540,8 @@
       "categories": [
         "armour_filter",
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T07:29:06Z",
       "completedAt": "2026-07-21T07:29:10Z",
@@ -18157,7 +18559,8 @@
       "categories": [
         "armour_filter",
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T07:29:02Z",
       "completedAt": "2026-07-21T07:29:06Z",
@@ -18206,7 +18609,8 @@
       "artifactSha256": "993c14763fd71768841c40be90789b06ebd944fd3203362da7f20abc6658b708",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T10:10:32Z",
       "completedAt": "2026-07-21T10:10:33Z",
@@ -18223,7 +18627,8 @@
       "attempts": 1,
       "categories": [
         "crock_pot_recipes",
-        "food"
+        "food",
+        "fruits"
       ],
       "claimedAt": "2026-07-21T08:26:31Z",
       "completedAt": "2026-07-21T08:26:32Z",
@@ -18272,7 +18677,8 @@
       "artifactSha256": "5a6c363b797fafac2d6b909f785c44e146c3693c73702b21fb321d62e5be3d99",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T10:02:36Z",
       "completedAt": "2026-07-21T10:02:38Z",
@@ -18371,7 +18777,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "equipable_items"
+        "equipable_items",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T08:42:34Z",
       "completedAt": "2026-07-21T08:42:37Z",
@@ -18407,7 +18814,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "equipable_items"
+        "equipable_items",
+        "food_gardening_filter"
       ],
       "claimedAt": "2026-07-21T08:41:33Z",
       "completedAt": "2026-07-21T08:41:34Z",
@@ -18441,7 +18849,8 @@
       "categories": [
         "cooling",
         "dont_starve_together",
-        "food"
+        "food",
+        "fruits"
       ],
       "claimedAt": "2026-07-21T08:17:59Z",
       "completedAt": "2026-07-21T08:18:00Z",
@@ -18473,7 +18882,8 @@
       "artifactSha256": "0b2042108f6ef49f131627a6fc05f4f643a0dd449505a8d70bafb9505f1a1182",
       "attempts": 1,
       "categories": [
-        "craftable_items"
+        "craftable_items",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:54:39Z",
       "completedAt": "2026-07-21T08:54:44Z",
@@ -18706,7 +19116,8 @@
       "artifactSha256": "edac0bc1e95e5b19f1f1869d536d3ce0e45f244c4f097f8d1d6d0500abb95f5a",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "from_beyond"
       ],
       "claimedAt": "2026-07-21T10:09:31Z",
       "completedAt": "2026-07-21T10:09:32Z",
@@ -18774,7 +19185,8 @@
       "categories": [
         "craftable_items",
         "craftable_structures",
-        "dont_starve_together"
+        "dont_starve_together",
+        "followers"
       ],
       "claimedAt": "2026-07-21T08:47:25Z",
       "completedAt": "2026-07-21T08:47:26Z",
@@ -19069,7 +19481,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "decorations_filter"
+        "decorations_filter",
+        "fuel"
       ],
       "claimedAt": "2026-07-21T08:22:43Z",
       "completedAt": "2026-07-21T08:22:47Z",
