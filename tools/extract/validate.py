@@ -6,9 +6,8 @@ from pathlib import Path
 import re
 import sqlite3
 from typing import Any, Dict, Iterable, Iterator, List, Optional
-from zipfile import ZipFile
 
-from tools.extract.base_game import discover_prefab_modules
+from tools.extract.base_game import ScriptIndex, classify_public_prefabs
 from tools.extract.source_manifest import ARCHIVES
 from tools.extract.runtime_import import COVERAGE_CATEGORIES
 
@@ -252,11 +251,11 @@ def _prefab_export_coverage(
     items_path: Optional[Path],
     structure_audit_path: Optional[Path] = None,
     effect_other_audit_path: Optional[Path] = None,
+    mob_boss_audit_path: Optional[Path] = None,
 ) -> List[Dict[str, Any]]:
     if scripts_path is None or items_path is None:
         return []
-    with ZipFile(Path(scripts_path)) as archive:
-        expected = set(discover_prefab_modules(archive.namelist()))
+    expected = set(classify_public_prefabs(ScriptIndex(Path(scripts_path))))
     payload = json.loads(Path(items_path).read_text(encoding="utf-8"))
     if payload.get("schema_version") != 6 or not isinstance(payload.get("items"), list):
         return [{"code": "invalid_prefab_export_payload"}]
@@ -296,6 +295,23 @@ def _prefab_export_coverage(
             and row.get("action") == "exclude"
             and isinstance(row.get("prefabId"), str)
         }
+    if mob_boss_audit_path is not None:
+        audit = json.loads(Path(mob_boss_audit_path).read_text(encoding="utf-8"))
+        rows = audit.get("rows") if isinstance(audit, dict) else None
+        if (
+            not isinstance(audit, dict)
+            or audit.get("schema_version") != 1
+            or not isinstance(rows, list)
+        ):
+            return [{"code": "invalid_mob_boss_audit_payload"}]
+        expected -= {
+            str(row["id"]).split(":", 1)[1]
+            for row in rows
+            if isinstance(row, dict)
+            and isinstance(row.get("id"), str)
+            and str(row["id"]).startswith("base_game:")
+            and row.get("action") in {"merge", "exclude"}
+        }
     actual = {
         item.get("prefabId")
         for item in payload["items"]
@@ -306,10 +322,10 @@ def _prefab_export_coverage(
     }
     referenced_dependencies = set()
 
-    def collect_recipe_dependencies(value: Any) -> None:
+    def collect_published_dependencies(value: Any) -> None:
         if isinstance(value, list):
             for entry in value:
-                collect_recipe_dependencies(entry)
+                collect_published_dependencies(entry)
             return
         if not isinstance(value, dict):
             return
@@ -325,10 +341,17 @@ def _prefab_export_coverage(
                     "base_game:"
                 ):
                     referenced_dependencies.add(ingredient_id.split(":", 1)[1])
+        loot = value.get("loot")
+        if isinstance(loot, list):
+            for drop in loot:
+                drop_item = drop.get("item") if isinstance(drop, dict) else None
+                drop_id = drop_item.get("id") if isinstance(drop_item, dict) else None
+                if isinstance(drop_id, str) and drop_id.startswith("base_game:"):
+                    referenced_dependencies.add(drop_id.split(":", 1)[1])
         for nested in value.values():
-            collect_recipe_dependencies(nested)
+            collect_published_dependencies(nested)
 
-    collect_recipe_dependencies(payload["items"])
+    collect_published_dependencies(payload["items"])
     missing = sorted(expected - actual)
     unexpected = sorted(actual - expected - referenced_dependencies)
     return [{"missing": missing, "unexpected": unexpected}] if missing or unexpected else []
@@ -665,6 +688,139 @@ def _effect_other_audit_errors(
     return errors
 
 
+def _mob_boss_audit_errors(
+    items_path: Optional[Path],
+    audit_path: Optional[Path],
+    groups_path: Optional[Path],
+) -> List[Dict[str, Any]]:
+    if items_path is None or audit_path is None or groups_path is None:
+        return []
+    payload = json.loads(Path(items_path).read_text(encoding="utf-8"))
+    audit = json.loads(Path(audit_path).read_text(encoding="utf-8"))
+    groups_payload = json.loads(Path(groups_path).read_text(encoding="utf-8"))
+    items = payload.get("items") if isinstance(payload, dict) else None
+    rows = audit.get("rows") if isinstance(audit, dict) else None
+    groups = groups_payload.get("groups") if isinstance(groups_payload, dict) else None
+    if payload.get("schema_version") != 6 or not isinstance(items, list):
+        return [{"code": "invalid_mob_boss_items_payload"}]
+    if audit.get("schema_version") != 1 or not isinstance(rows, list):
+        return [{"code": "invalid_mob_boss_audit_payload"}]
+    if groups_payload.get("schema_version") != 1 or not isinstance(groups, list):
+        return [{"code": "invalid_mob_groups_payload"}]
+
+    errors: List[Dict[str, Any]] = []
+    public = {
+        item.get("id"): item
+        for item in items
+        if isinstance(item, dict) and isinstance(item.get("id"), str)
+    }
+    membership: Dict[str, str] = {}
+    for group in groups:
+        if not isinstance(group, dict) or not isinstance(group.get("canonicalId"), str):
+            errors.append({"code": "invalid_mob_group"})
+            continue
+        canonical_id = group["canonicalId"]
+        members = group.get("members")
+        if not isinstance(members, list):
+            errors.append({"code": "invalid_mob_group_members", "id": canonical_id})
+            continue
+        for member in members:
+            member_id = member.get("id") if isinstance(member, dict) else None
+            if not isinstance(member_id, str):
+                errors.append({"code": "invalid_mob_group_member", "id": canonical_id})
+                continue
+            if member_id in membership:
+                errors.append({"code": "duplicate_mob_group_member", "id": member_id})
+            membership[member_id] = canonical_id
+
+    audit_by_id: Dict[str, Dict[str, Any]] = {}
+    for row in rows:
+        if not isinstance(row, dict) or not isinstance(row.get("id"), str):
+            errors.append({"code": "invalid_mob_boss_audit_row"})
+            continue
+        row_id = row["id"]
+        if row_id in audit_by_id:
+            errors.append({"code": "duplicate_mob_boss_audit_row", "id": row_id})
+        audit_by_id[row_id] = row
+        action = row.get("action")
+        canonical_id = row.get("canonicalId")
+        if action not in {"keep", "merge", "exclude"}:
+            errors.append({"code": "invalid_mob_boss_audit_action", "id": row_id})
+            continue
+        if not isinstance(canonical_id, str):
+            errors.append({"code": "invalid_mob_boss_canonical_id", "id": row_id})
+            continue
+        if action == "merge" and row_id in public:
+            errors.append({"code": "merged_mob_member_is_public", "id": row_id})
+        if action == "exclude" and row_id in public:
+            errors.append({"code": "excluded_mob_member_is_public", "id": row_id})
+        if action == "keep" and row_id not in public:
+            errors.append({"code": "audited_mob_boss_not_public", "id": row_id})
+        if canonical_id not in public:
+            errors.append({"code": "missing_canonical_mob_boss", "id": row_id, "canonicalId": canonical_id})
+
+    expected_audited = {
+        item_id
+        for item_id, item in public.items()
+        if item.get("category") in {"mob", "boss"}
+    } | set(membership)
+    for item_id in sorted(expected_audited - set(audit_by_id)):
+        errors.append({"code": "unaudited_mob_boss_item", "id": item_id})
+
+    allowed_methods = {"kill", "mine_post_defeat", "harvest", "conditional"}
+    for item_id, item in sorted(public.items()):
+        if item.get("category") not in {"mob", "boss"}:
+            continue
+        mob = item.get("mob")
+        if not isinstance(mob, dict):
+            errors.append({"code": "missing_mob_boss_details", "id": item_id})
+            continue
+        loot = mob.get("loot")
+        if not isinstance(loot, list):
+            errors.append({"code": "invalid_mob_loot", "id": item_id})
+            continue
+        if mob.get("lootStatus") == "known" and not loot:
+            errors.append({"code": "known_mob_loot_is_empty", "id": item_id})
+        variant_ids = {
+            variant.get("id")
+            for variant in mob.get("variants", [])
+            if isinstance(variant, dict) and isinstance(variant.get("id"), str)
+        } if isinstance(mob.get("variants"), list) else set()
+        for reward in loot:
+            if not isinstance(reward, dict):
+                errors.append({"code": "invalid_mob_reward", "id": item_id})
+                continue
+            reference = reward.get("item")
+            reward_id = reference.get("id") if isinstance(reference, dict) else None
+            if not isinstance(reward_id, str) or reward_id not in public:
+                errors.append({"code": "missing_mob_reward_reference", "id": item_id, "reward": reward_id})
+            if reward.get("method") not in allowed_methods:
+                errors.append({"code": "invalid_mob_reward_method", "id": item_id, "reward": reward_id})
+            minimum = reward.get("minimum")
+            maximum = reward.get("maximum")
+            if (
+                not isinstance(minimum, (int, float))
+                or isinstance(minimum, bool)
+                or not isinstance(maximum, (int, float))
+                or isinstance(maximum, bool)
+                or minimum < 0
+                or maximum < minimum
+            ):
+                errors.append({"code": "invalid_mob_reward_quantity", "id": item_id, "reward": reward_id})
+            if reward.get("sourceVariant") not in variant_ids:
+                errors.append({"code": "invalid_mob_reward_source_variant", "id": item_id, "reward": reward_id})
+
+    expected_summary = {
+        "total": len(rows),
+        "keep": sum(isinstance(row, dict) and row.get("action") == "keep" for row in rows),
+        "merge": sum(isinstance(row, dict) and row.get("action") == "merge" for row in rows),
+        "exclude": sum(isinstance(row, dict) and row.get("action") == "exclude" for row in rows),
+    }
+    if audit.get("summary") != expected_summary:
+        errors.append({"code": "mob_boss_audit_summary_mismatch"})
+    return errors
+
+
 def validate_catalog(
     db_path: Path,
     manifest_path: Optional[Path] = None,
@@ -672,6 +828,8 @@ def validate_catalog(
     items_path: Optional[Path] = None,
     structure_audit_path: Optional[Path] = None,
     effect_other_audit_path: Optional[Path] = None,
+    mob_boss_audit_path: Optional[Path] = None,
+    mob_groups_path: Optional[Path] = None,
 ) -> Dict[str, Any]:
     """Return deterministic hard failures, extraction diagnostics and coverage."""
 
@@ -822,12 +980,16 @@ def validate_catalog(
             items_path,
             structure_audit_path,
             effect_other_audit_path,
+            mob_boss_audit_path,
         )
         structure_detail_errors = _structure_export_errors(
             items_path, structure_audit_path
         )
         effect_other_audit_errors = _effect_other_audit_errors(
             items_path, effect_other_audit_path
+        )
+        mob_boss_audit_errors = _mob_boss_audit_errors(
+            items_path, mob_boss_audit_path, mob_groups_path
         )
     finally:
         db.close()
@@ -878,6 +1040,8 @@ def validate_catalog(
         hard_failures.append("structure_detail_errors")
     if effect_other_audit_errors:
         hard_failures.append("effect_other_audit_errors")
+    if mob_boss_audit_errors:
+        hard_failures.append("mob_boss_audit_errors")
     return {
         "schema_version": 1,
         "entity_counts": counts,
@@ -898,6 +1062,7 @@ def validate_catalog(
         "prefab_export_coverage_errors": prefab_export_coverage_errors,
         "structure_detail_errors": structure_detail_errors,
         "effect_other_audit_errors": effect_other_audit_errors,
+        "mob_boss_audit_errors": mob_boss_audit_errors,
         "warnings": warnings,
         "hard_failures": hard_failures,
     }

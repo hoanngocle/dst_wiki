@@ -28,7 +28,7 @@
     },
     "schema_version": 2,
     "subject": {
-      "entityId": null,
+      "entityId": "base_game:moon_cap",
       "iconUrl": null,
       "title": "Moon Shroom",
       "url": "https://dontstarve.wiki.gg/wiki/Moon_Shroom"
@@ -101,7 +101,7 @@
             {
               "amount": 1,
               "item": {
-                "entityId": null,
+                "entityId": "base_game:blue_cap",
                 "iconUrl": null,
                 "title": "Blue Cap",
                 "url": "https://dontstarve.wiki.gg/wiki/Blue_Cap"

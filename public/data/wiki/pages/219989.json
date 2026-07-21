@@ -39,7 +39,7 @@
             {
               "amount": 1,
               "item": {
-                "entityId": null,
+                "entityId": "base_game:moonstorm_static_nowag",
                 "iconUrl": null,
                 "title": "Restrained Static",
                 "url": "https://dontstarve.wiki.gg/wiki/Restrained_Static"

@@ -35,7 +35,7 @@
     },
     "schema_version": 2,
     "subject": {
-      "entityId": null,
+      "entityId": "base_game:trinket_13",
       "iconUrl": null,
       "title": "Orange Soda",
       "url": "https://dontstarve.wiki.gg/wiki/Orange_Soda"

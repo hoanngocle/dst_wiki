@@ -542,7 +542,7 @@
             {
               "amount": 1,
               "item": {
-                "entityId": null,
+                "entityId": "base_game:turf_marsh",
                 "iconUrl": null,
                 "title": "Marsh Turf",
                 "url": "https://dontstarve.wiki.gg/wiki/Marsh_Turf"

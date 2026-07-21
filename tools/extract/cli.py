@@ -44,6 +44,9 @@ ITEM_DETAILS_OVERRIDES = Path("data/manual/tu_tien_item_details.json")
 ITEM_DETAILS_REPORT = Path("data/generated/tu-tien-item-details-report.json")
 STRUCTURE_ICON_AUDIT = Path("data/generated/structure-icon-audit.json")
 EFFECT_OTHER_AUDIT = Path("data/generated/effect-other-audit.json")
+MOB_BOSS_AUDIT = Path("data/generated/mob-boss-audit.json")
+MOB_GROUPS = Path("data/manual/mob-variant-groups.json")
+MOB_WIKI = Path("data/crawled/dontstarve-wiki/pages.jsonl")
 WEB_ASSETS = Path("public/assets/game")
 MOD_TEXT = Path("docs/mod-text")
 WIKI_CRAWL = Path("data/crawled/dontstarve-items")
@@ -141,6 +144,9 @@ def build_parser() -> argparse.ArgumentParser:
     export.add_argument(
         "--effect-other-audit", type=Path, default=EFFECT_OTHER_AUDIT
     )
+    export.add_argument("--mob-audit", type=Path, default=MOB_BOSS_AUDIT)
+    export.add_argument("--mob-groups", type=Path, default=MOB_GROUPS)
+    export.add_argument("--mob-wiki", type=Path, default=MOB_WIKI)
     translate_wiki = sub.add_parser("translate-wiki")
     translate_wiki.add_argument(
         "--pages", type=Path, default=Path("public/data/wiki/pages")
@@ -179,6 +185,8 @@ def build_parser() -> argparse.ArgumentParser:
     validate.add_argument(
         "--effect-other-audit", type=Path, default=EFFECT_OTHER_AUDIT
     )
+    validate.add_argument("--mob-audit", type=Path, default=MOB_BOSS_AUDIT)
+    validate.add_argument("--mob-groups", type=Path, default=MOB_GROUPS)
     all_stages = sub.add_parser("all")
     all_stages.add_argument("--static", type=Path, default=STATIC_FACTS)
     return parser
@@ -277,6 +285,9 @@ def _export_stage(
     detail_report: Path = ITEM_DETAILS_REPORT,
     structure_audit: Path = STRUCTURE_ICON_AUDIT,
     effect_other_audit: Path = EFFECT_OTHER_AUDIT,
+    mob_audit: Path = MOB_BOSS_AUDIT,
+    mob_groups: Path = MOB_GROUPS,
+    mob_wiki: Path = MOB_WIKI,
 ) -> None:
     export_catalog(database, catalog, assets)
     export_items(
@@ -289,10 +300,13 @@ def _export_stage(
         detail_report_path=detail_report,
         structure_audit_path=structure_audit,
         effect_other_audit_path=effect_other_audit,
+        mob_audit_path=mob_audit,
+        mob_groups_path=mob_groups,
+        mob_wiki_path=mob_wiki,
     )
     print(
         f"{catalog} {assets} {items} {textures} {detail_report} "
-        f"{structure_audit} {effect_other_audit}"
+        f"{structure_audit} {effect_other_audit} {mob_audit}"
     )
 
 
@@ -331,9 +345,18 @@ def _validate_stage(
     items: Path = ITEMS_JSON,
     structure_audit: Path = STRUCTURE_ICON_AUDIT,
     effect_other_audit: Path = EFFECT_OTHER_AUDIT,
+    mob_audit: Path = MOB_BOSS_AUDIT,
+    mob_groups: Path = MOB_GROUPS,
 ):
     report = validate_catalog(
-        database, manifest, scripts, items, structure_audit, effect_other_audit
+        database,
+        manifest,
+        scripts,
+        items,
+        structure_audit,
+        effect_other_audit,
+        mob_audit,
+        mob_groups,
     )
     write_validation_report(coverage, report)
     print(
@@ -409,6 +432,9 @@ def main() -> int:
             args.detail_report,
             args.structure_audit,
             args.effect_other_audit,
+            args.mob_audit,
+            args.mob_groups,
+            args.mob_wiki,
         )
         return 0
     if args.command == "translate-wiki":
@@ -446,6 +472,8 @@ def main() -> int:
             args.items,
             args.structure_audit,
             args.effect_other_audit,
+            args.mob_audit,
+            args.mob_groups,
         )
         return 1 if report["hard_failures"] else 0
     if args.command == "all":

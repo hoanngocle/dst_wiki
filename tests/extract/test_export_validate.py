@@ -11,6 +11,7 @@ from tools.extract.database import create_schema
 from tools.extract.export_json import export_catalog
 from tools.extract.validate import (
     _effect_other_audit_errors,
+    _mob_boss_audit_errors,
     _structure_export_errors,
     validate_catalog,
 )
@@ -19,6 +20,169 @@ from tools.extract import cli
 
 
 class ExportValidateTests(unittest.TestCase):
+    def test_mob_boss_validation_rejects_merged_member_still_published(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            items = root / "items.json"
+            audit = root / "mob-audit.json"
+            groups = root / "groups.json"
+            mob = {
+                "appearance": {"status": "unknown", "sources": []},
+                "variants": [
+                    {
+                        "id": "base_game:champion",
+                        "prefabId": "champion",
+                        "name": "Champion",
+                        "role": "phase",
+                        "order": 1,
+                        "sprite": None,
+                    },
+                    {
+                        "id": "base_game:champion_dead",
+                        "prefabId": "champion_dead",
+                        "name": "Defeated Champion",
+                        "role": "post_defeat",
+                        "order": 2,
+                        "sprite": None,
+                    },
+                ],
+                "stats": [],
+                "mechanics": [],
+                "lootStatus": "unknown",
+                "loot": [],
+            }
+            items.write_text(
+                json.dumps(
+                    {
+                        "schema_version": 6,
+                        "items": [
+                            {"id": "base_game:champion", "category": "boss", "mob": mob},
+                            {"id": "base_game:champion_dead", "category": "structure", "mob": None},
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            audit.write_text(
+                json.dumps(
+                    {
+                        "schema_version": 1,
+                        "summary": {"total": 2, "keep": 1, "merge": 1, "exclude": 0},
+                        "rows": [
+                            {"id": "base_game:champion", "canonicalId": "base_game:champion", "action": "keep"},
+                            {"id": "base_game:champion_dead", "canonicalId": "base_game:champion", "action": "merge"},
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            groups.write_text(
+                json.dumps(
+                    {
+                        "schema_version": 1,
+                        "groups": [
+                            {
+                                "canonicalId": "base_game:champion",
+                                "category": "boss",
+                                "members": [
+                                    {"id": "base_game:champion", "role": "phase", "order": 1},
+                                    {"id": "base_game:champion_dead", "role": "post_defeat", "order": 2},
+                                ],
+                            }
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            errors = _mob_boss_audit_errors(items, audit, groups)
+
+        self.assertIn(
+            {"code": "merged_mob_member_is_public", "id": "base_game:champion_dead"},
+            errors,
+        )
+
+    def test_mob_boss_validation_rejects_known_empty_and_missing_reward(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            items = root / "items.json"
+            audit = root / "mob-audit.json"
+            groups = root / "groups.json"
+            items.write_text(
+                json.dumps(
+                    {
+                        "schema_version": 6,
+                        "items": [
+                            {
+                                "id": "base_game:spider",
+                                "category": "mob",
+                                "mob": {
+                                    "appearance": {"status": "unknown", "sources": []},
+                                    "variants": [],
+                                    "stats": [],
+                                    "mechanics": [],
+                                    "lootStatus": "known",
+                                    "loot": [],
+                                },
+                            },
+                            {
+                                "id": "base_game:hound",
+                                "category": "mob",
+                                "mob": {
+                                    "appearance": {"status": "unknown", "sources": []},
+                                    "variants": [{"id": "base_game:hound"}],
+                                    "stats": [],
+                                    "mechanics": [],
+                                    "lootStatus": "known",
+                                    "loot": [
+                                        {
+                                            "item": {"id": "base_game:missing"},
+                                            "minimum": 1,
+                                            "maximum": 1,
+                                            "method": "kill",
+                                            "sourceVariant": "base_game:hound",
+                                        }
+                                    ],
+                                },
+                            },
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            rows = [
+                {"id": item_id, "canonicalId": item_id, "action": "keep"}
+                for item_id in ("base_game:hound", "base_game:spider")
+            ]
+            audit.write_text(
+                json.dumps(
+                    {
+                        "schema_version": 1,
+                        "summary": {"total": 2, "keep": 2, "merge": 0, "exclude": 0},
+                        "rows": rows,
+                    }
+                ),
+                encoding="utf-8",
+            )
+            groups.write_text(
+                json.dumps({"schema_version": 1, "groups": []}), encoding="utf-8"
+            )
+
+            errors = _mob_boss_audit_errors(items, audit, groups)
+
+        self.assertIn(
+            {"code": "known_mob_loot_is_empty", "id": "base_game:spider"},
+            errors,
+        )
+        self.assertIn(
+            {
+                "code": "missing_mob_reward_reference",
+                "id": "base_game:hound",
+                "reward": "base_game:missing",
+            },
+            errors,
+        )
+
     def test_effect_other_audit_rejects_public_exclusion_with_positive_signal(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -422,6 +586,112 @@ class ExportValidateTests(unittest.TestCase):
 
         self.assertEqual(report["prefab_export_coverage_errors"], [])
         self.assertNotIn("prefab_export_coverage_errors", report["hard_failures"])
+
+    def test_prefab_coverage_accepts_published_mob_loot_dependencies(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            db_path = root / "wiki.sqlite"
+            db = sqlite3.connect(db_path)
+            create_schema(db)
+            db.commit()
+            db.close()
+            scripts_path = root / "scripts.zip"
+            with ZipFile(scripts_path, "w") as archive:
+                archive.writestr("scripts/prefabs/alpha.lua", "return {}")
+            items_path = root / "items.json"
+            items_path.write_text(
+                json.dumps(
+                    {
+                        "schema_version": 6,
+                        "items": [
+                            {
+                                "id": "base_game:alpha",
+                                "prefabId": "alpha",
+                                "namespace": "base_game",
+                                "category": "mob",
+                                "mob": {
+                                    "loot": [
+                                        {
+                                            "item": {
+                                                "id": "base_game:rare_drop"
+                                            }
+                                        }
+                                    ]
+                                },
+                            },
+                            {
+                                "id": "base_game:rare_drop",
+                                "prefabId": "rare_drop",
+                                "namespace": "base_game",
+                                "category": "item",
+                            },
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            report = validate_catalog(
+                db_path,
+                prefab_scripts_path=scripts_path,
+                items_path=items_path,
+            )
+
+        self.assertEqual(report["prefab_export_coverage_errors"], [])
+        self.assertNotIn("prefab_export_coverage_errors", report["hard_failures"])
+
+    def test_prefab_coverage_requires_named_mobs_declared_in_shared_modules(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            db_path = root / "wiki.sqlite"
+            db = sqlite3.connect(db_path)
+            create_schema(db)
+            db.commit()
+            db.close()
+            scripts_path = root / "scripts.zip"
+            with ZipFile(scripts_path, "w") as archive:
+                archive.writestr(
+                    "scripts/strings.lua",
+                    'STRINGS.NAMES.SNURTLE = "Snurtle"',
+                )
+                archive.writestr(
+                    "scripts/prefabs/slurtle.lua",
+                    '''
+local function mobfn()
+  inst:AddTag("monster")
+  return inst
+end
+return Prefab("slurtle", mobfn), Prefab("snurtle", mobfn)
+''',
+                )
+            items_path = root / "items.json"
+            items_path.write_text(
+                json.dumps(
+                    {
+                        "schema_version": 6,
+                        "items": [
+                            {
+                                "id": "base_game:slurtle",
+                                "prefabId": "slurtle",
+                                "namespace": "base_game",
+                                "category": "mob",
+                            }
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            report = validate_catalog(
+                db_path,
+                prefab_scripts_path=scripts_path,
+                items_path=items_path,
+            )
+
+        self.assertEqual(
+            report["prefab_export_coverage_errors"],
+            [{"missing": ["snurtle"], "unexpected": []}],
+        )
 
     def test_prefab_coverage_accepts_audited_technical_prefab_exclusion(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -1180,6 +1450,9 @@ class ExportValidateTests(unittest.TestCase):
             detail_report = root / "item-details-report.json"
             structure_audit = root / "structure-icon-audit.json"
             effect_other_audit = root / "effect-other-audit.json"
+            mob_audit = root / "mob-boss-audit.json"
+            mob_groups = root / "mob-groups.json"
+            mob_wiki = root / "mob-wiki-pages.jsonl"
 
             with mock.patch.object(cli, "export_catalog") as export_catalog, \
                  mock.patch.object(cli, "export_items") as export_items:
@@ -1193,6 +1466,9 @@ class ExportValidateTests(unittest.TestCase):
                     detail_report,
                     structure_audit,
                     effect_other_audit,
+                    mob_audit,
+                    mob_groups,
+                    mob_wiki,
                 )
 
             export_catalog.assert_called_once_with(database, catalog, assets)
@@ -1206,6 +1482,9 @@ class ExportValidateTests(unittest.TestCase):
                 detail_report_path=detail_report,
                 structure_audit_path=structure_audit,
                 effect_other_audit_path=effect_other_audit,
+                mob_audit_path=mob_audit,
+                mob_groups_path=mob_groups,
+                mob_wiki_path=mob_wiki,
             )
 
     def test_export_cli_exposes_item_detail_paths(self):
@@ -1227,11 +1506,31 @@ class ExportValidateTests(unittest.TestCase):
             args.effect_other_audit,
             Path("data/generated/effect-other-audit.json"),
         )
+        self.assertEqual(
+            args.mob_audit,
+            Path("data/generated/mob-boss-audit.json"),
+        )
+        self.assertEqual(
+            args.mob_groups,
+            Path("data/manual/mob-variant-groups.json"),
+        )
+        self.assertEqual(
+            args.mob_wiki,
+            Path("data/crawled/dontstarve-wiki/pages.jsonl"),
+        )
 
         validate_args = cli.build_parser().parse_args(["validate"])
         self.assertEqual(
             validate_args.effect_other_audit,
             Path("data/generated/effect-other-audit.json"),
+        )
+        self.assertEqual(
+            validate_args.mob_audit,
+            Path("data/generated/mob-boss-audit.json"),
+        )
+        self.assertEqual(
+            validate_args.mob_groups,
+            Path("data/manual/mob-variant-groups.json"),
         )
 
     def test_publish_assets_cli_has_explicit_inputs(self):

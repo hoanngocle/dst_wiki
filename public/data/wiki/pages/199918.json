@@ -47,7 +47,7 @@
     },
     "schema_version": 2,
     "subject": {
-      "entityId": null,
+      "entityId": "base_game:trinket_10",
       "iconUrl": null,
       "title": "Second-hand Dentures",
       "url": "https://dontstarve.wiki.gg/wiki/Second-hand_Dentures"

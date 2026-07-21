@@ -55,7 +55,7 @@
     },
     "schema_version": 2,
     "subject": {
-      "entityId": null,
+      "entityId": "base_game:blowdart_pipe",
       "iconUrl": null,
       "title": "Dart/DST",
       "url": "https://dontstarve.wiki.gg/wiki/Dart/DST"

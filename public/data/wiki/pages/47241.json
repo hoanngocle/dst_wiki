@@ -229,7 +229,7 @@
           "ingredients": [],
           "note": null,
           "result": {
-            "entityId": null,
+            "entityId": "base_game:boatpatch_kelp",
             "iconUrl": null,
             "title": "Kelp Patch",
             "url": "https://dontstarve.wiki.gg/wiki/Kelp_Patch"

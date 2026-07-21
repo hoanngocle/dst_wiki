@@ -5,7 +5,7 @@ import os
 import re
 import sqlite3
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Sequence, Tuple
 
 from tools.extract.wiki_export import (
     export_wiki_artifacts,
@@ -15,6 +15,9 @@ from tools.extract.wiki_export import (
 from tools.extract.effect_other_audit import audit_effect_other_items
 from tools.extract.exclusions import NON_ITEM_PREFAB_IDS
 from tools.extract.item_details import build_tu_tien_item_details
+from tools.extract.mob_details import build_mob_boss_audit, build_mob_details
+from tools.extract.mob_groups import apply_mob_groups, load_mob_groups
+from tools.extract.mob_wiki import load_mob_wiki_details
 from tools.extract.structure_details import (
     audit_structure_visuals,
     build_structure_details,
@@ -43,6 +46,9 @@ ITEM_DETAIL_OVERRIDES = Path("data/manual/tu_tien_item_details.json")
 ITEM_DETAIL_REPORT = Path("data/generated/tu-tien-item-details-report.json")
 STRUCTURE_ICON_AUDIT = Path("data/generated/structure-icon-audit.json")
 EFFECT_OTHER_AUDIT = Path("data/generated/effect-other-audit.json")
+MOB_BOSS_AUDIT = Path("data/generated/mob-boss-audit.json")
+MOB_GROUPS = Path("data/manual/mob-variant-groups.json")
+MOB_WIKI_PAGES = Path("data/crawled/dontstarve-wiki/pages.jsonl")
 ICON_KEY_ALIASES = {
     "tu_tien:xd_beefalo": "base_game:beefalo",
 }
@@ -671,6 +677,14 @@ def build_item_export(
         )
         if isinstance(ingredient, dict) and isinstance(ingredient.get("key"), str)
     }
+    referenced_dependency_ids.update(
+        str(entity["key"])
+        for entity in source_entities
+        if isinstance(entity, dict)
+        and isinstance(entity.get("key"), str)
+        and isinstance(entity.get("acquisition"), list)
+        and bool(entity["acquisition"])
+    )
     textures: Dict[str, JsonObject] = {}
     exportable_entities = []
     for entity in source_entities:
@@ -782,6 +796,52 @@ def link_recipe_ingredients(items: List[JsonObject]) -> List[JsonObject]:
     return linked_items
 
 
+def filter_unreferenced_base_dependencies(
+    items: List[JsonObject], entities: Sequence[JsonObject]
+) -> List[JsonObject]:
+    """Keep materialized dependencies only when a public detail links to them."""
+
+    dependency_ids = {
+        str(entity["key"])
+        for entity in entities
+        if isinstance(entity, dict)
+        and entity.get("type") == "dependency"
+        and isinstance(entity.get("key"), str)
+    }
+    referenced_ids = set()
+
+    def collect(value: Any) -> None:
+        if isinstance(value, list):
+            for entry in value:
+                collect(entry)
+            return
+        if not isinstance(value, dict):
+            return
+        ingredients = value.get("ingredients")
+        if isinstance(ingredients, list):
+            for ingredient in ingredients:
+                ingredient_id = ingredient.get("id") if isinstance(ingredient, dict) else None
+                if isinstance(ingredient_id, str):
+                    referenced_ids.add(ingredient_id)
+        loot = value.get("loot")
+        if isinstance(loot, list):
+            for drop in loot:
+                drop_item = drop.get("item") if isinstance(drop, dict) else None
+                drop_id = drop_item.get("id") if isinstance(drop_item, dict) else None
+                if isinstance(drop_id, str):
+                    referenced_ids.add(drop_id)
+        for nested in value.values():
+            collect(nested)
+
+    collect(items)
+    return [
+        item
+        for item in items
+        if str(item.get("id")) not in dependency_ids
+        or str(item.get("id")) in referenced_ids
+    ]
+
+
 def export_items(
     database_path: Path,
     catalog_path: Path,
@@ -796,6 +856,9 @@ def export_items(
     detail_report_path: Path = ITEM_DETAIL_REPORT,
     structure_audit_path: Path = STRUCTURE_ICON_AUDIT,
     effect_other_audit_path: Path = EFFECT_OTHER_AUDIT,
+    mob_audit_path: Path = MOB_BOSS_AUDIT,
+    mob_groups_path: Path = MOB_GROUPS,
+    mob_wiki_path: Path = MOB_WIKI_PAGES,
 ) -> None:
     """Read audit JSON and atomically publish the compact frontend contracts."""
 
@@ -819,6 +882,41 @@ def export_items(
     wiki = load_wiki_export(database_path, wiki_crawl_path)
     items["items"] = merge_wiki_items(items["items"], wiki)
     items["items"] = link_recipe_ingredients(items["items"])
+    mob_groups = load_mob_groups(mob_groups_path)
+    mob_wiki_details = (
+        load_mob_wiki_details(mob_wiki_path, items["items"], mob_groups)
+        if Path(mob_wiki_path).is_file()
+        else {}
+    )
+    mob_details = build_mob_details(
+        items["items"],
+        catalog["entities"],
+        mob_wiki_details,
+        runtime_coverage,
+        mob_groups,
+    )
+    items_by_id = {str(item["id"]): item for item in items["items"]}
+    for item_id, detail in mob_details.items():
+        if item_id in items_by_id:
+            item = items_by_id[item_id]
+            item["mob"] = detail
+            if item.get("sprite") is None:
+                variants = detail.get("variants", [])
+                canonical_variant = next(
+                    (
+                        variant
+                        for variant in variants
+                        if isinstance(variant, dict) and variant.get("id") == item_id
+                    ),
+                    None,
+                )
+                if isinstance(canonical_variant, dict):
+                    item["sprite"] = canonical_variant.get("sprite")
+    mob_audit = build_mob_boss_audit(items["items"], mob_details, mob_groups)
+    items["items"], _group_rows = apply_mob_groups(items["items"], mob_groups)
+    items["items"] = filter_unreferenced_base_dependencies(
+        items["items"], catalog["entities"]
+    )
     audit_rows, excluded_ids = audit_structure_visuals(
         items["items"], catalog["entities"], wiki.structure_details
     )
@@ -889,5 +987,6 @@ def export_items(
     _atomic_json(Path(detail_report_path), detail_report)
     _atomic_json(Path(structure_audit_path), structure_audit)
     _atomic_json(Path(effect_other_audit_path), effect_other_audit)
+    _atomic_json(Path(mob_audit_path), mob_audit)
     if wiki.details or wiki.assets:
         export_wiki_artifacts(wiki, wiki_details_path, wiki_assets_path)

@@ -93,7 +93,7 @@
     },
     "schema_version": 2,
     "subject": {
-      "entityId": null,
+      "entityId": "base_game:drumstick",
       "iconUrl": null,
       "title": "Drumstick",
       "url": "https://dontstarve.wiki.gg/wiki/Drumstick"

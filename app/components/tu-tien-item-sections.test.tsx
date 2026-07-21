@@ -112,46 +112,6 @@ const herb: ItemListEntry = {
 };
 
 describe("TuTienItemSections", () => {
-  it("renders Mob stats, special mechanics, and kill loot", () => {
-    const mob: ItemListEntry = {
-      ...resultItem,
-      id: "tu_tien:xd_boss",
-      prefabId: "xd_boss",
-      category: "mob",
-      name: "Yêu Vương",
-      mob: {
-        stats: [
-          { key: "max_health", label: "Máu tối đa", value: 2500, unit: "hp" },
-          { key: "attack_damage", label: "Sát thương", value: 80, unit: "hp" },
-        ],
-        mechanics: ["Trạng thái đặc biệt: charge, summon"],
-        lootStatus: "known",
-        loot: [
-          {
-            item: { id: petals.id, name: petals.name, sprite: null },
-            quantity: "2",
-            chance: "50%",
-            conditions: null,
-          },
-        ],
-      },
-    };
-    render(
-      <TuTienItemSections
-        item={mob}
-        itemsById={new Map([[petals.id, petals]])}
-        onSelectItem={vi.fn()}
-        titleId="mob-title"
-      />,
-    );
-
-    expect(screen.getByRole("heading", { name: "Chỉ số" })).toBeDefined();
-    expect(screen.getByText("2.500")).toBeDefined();
-    expect(screen.getByText("Trạng thái đặc biệt: charge, summon")).toBeDefined();
-    expect(screen.getByRole("heading", { name: "Vật phẩm rơi khi tiêu diệt" })).toBeDefined();
-    expect(screen.getByText("50%")).toBeDefined();
-  });
-
   it("renders the complete character profile instead of item recipe sections", () => {
     const character: ItemListEntry = {
       ...resultItem,

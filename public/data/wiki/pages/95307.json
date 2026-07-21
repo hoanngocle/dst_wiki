@@ -48,7 +48,7 @@
           ],
           "note": null,
           "result": {
-            "entityId": null,
+            "entityId": "base_game:salty_dog",
             "iconUrl": null,
             "title": "Salty Dog's Hat",
             "url": "https://dontstarve.wiki.gg/wiki/Salty_Dog%27s_Hat"

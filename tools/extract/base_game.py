@@ -375,7 +375,6 @@ def classify_prefab_module(prefab_id: str, source: str) -> str:
                 "_marker",
             )
         )
-        or re.search(r"\bpersists\s*=\s*false\b", _code_mask(source))
     ):
         return "effect"
 
@@ -408,14 +407,305 @@ def classify_prefab_module(prefab_id: str, source: str) -> str:
     if tags.intersection({"animal", "character", "hostile", "monster", "smallcreature"}) or {
         "health",
         "combat",
-        "locomotor",
     }.issubset(components):
         return "mob"
     if "inventoryitem" in components:
         return "item"
     if "structure" in tags or "workable" in components:
         return "structure"
+    if re.search(r"\bpersists\s*=\s*false\b", masked):
+        return "effect"
     return "other"
+
+
+def _reachable_function_scopes(
+    initial: FunctionScope, functions: Dict[str, FunctionScope]
+) -> List[FunctionScope]:
+    ordered: List[FunctionScope] = []
+    visited = set()
+
+    def visit(scope: FunctionScope) -> None:
+        if scope.name in visited:
+            return
+        visited.add(scope.name)
+        ordered.append(scope)
+        for call in _iter_calls(scope.source, tuple(functions)):
+            target = functions.get(call.name)
+            if target is not None:
+                visit(target)
+
+    visit(initial)
+    return ordered
+
+
+def _prefab_constructor_bindings(source: str) -> Dict[str, str]:
+    bindings: Dict[str, str] = {}
+    for call in _iter_calls(source, ("Prefab",)):
+        if len(call.arguments) < 2:
+            continue
+        prefab_id = _literal_string(call.arguments[0])
+        constructor = call.arguments[1].strip()
+        if prefab_id is None or not re.fullmatch(
+            r"[A-Za-z_][A-Za-z0-9_]*", constructor
+        ):
+            continue
+        bindings[prefab_id.lower()] = constructor
+    return bindings
+
+
+def classify_prefabs_in_module(source: str) -> Dict[str, str]:
+    """Classify named Prefab returns from their reachable constructor scopes."""
+
+    functions = _function_scopes(source)
+    result: Dict[str, str] = {}
+    for prefab_id, constructor in sorted(_prefab_constructor_bindings(source).items()):
+        initial = functions.get(constructor)
+        if initial is None:
+            continue
+        scoped_source = "\n".join(
+            scope.source for scope in _reachable_function_scopes(initial, functions)
+        )
+        result[prefab_id] = classify_prefab_module(prefab_id, scoped_source)
+    return result
+
+
+def _shared_loot_tables(source: str) -> Dict[str, List[Tuple[str, Any]]]:
+    tables: Dict[str, List[Tuple[str, Any]]] = {}
+    for call in _iter_calls(source, ("SetSharedLootTable",)):
+        if len(call.arguments) < 2:
+            continue
+        table_name = _literal_string(call.arguments[0])
+        raw_table = call.arguments[1].strip()
+        if table_name is None or not (
+            raw_table.startswith("{") and raw_table.endswith("}")
+        ):
+            continue
+        entries: List[Tuple[str, Any]] = []
+        for raw_entry in _split_top_level(raw_table[1:-1]):
+            guaranteed_target = _literal_string(raw_entry)
+            if guaranteed_target is not None:
+                entries.append((guaranteed_target.lower(), 1))
+                continue
+            if not (raw_entry.startswith("{") and raw_entry.endswith("}")):
+                continue
+            values = _split_top_level(raw_entry[1:-1])
+            if len(values) < 2:
+                continue
+            target = _literal_string(values[0])
+            chance = _literal_number(values[1])
+            if target is not None and chance is not None:
+                entries.append((target.lower(), chance))
+        tables[table_name.lower()] = entries
+    return tables
+
+
+def _named_string_tables(source: str) -> Dict[str, List[str]]:
+    masked = _code_mask(source)
+    pattern = re.compile(
+        r"\b(?:local\s+)?([A-Za-z_][A-Za-z0-9_]*)\s*=\s*\{"
+    )
+    result: Dict[str, List[str]] = {}
+    for match in pattern.finditer(masked):
+        opening = masked.find("{", match.start(), match.end())
+        if opening < 0:
+            continue
+        try:
+            closing = _matching_delimiter(source, opening)
+        except ValueError:
+            continue
+        values = [
+            value.lower()
+            for entry in _split_top_level(source[opening + 1 : closing])
+            for value in [_literal_string(entry)]
+            if value is not None
+        ]
+        if values:
+            result[match.group(1)] = values
+    return result
+
+
+def _reward_method(constructor_source: str) -> str:
+    masked = _code_mask(constructor_source)
+    return (
+        "mine_post_defeat"
+        if re.search(r"SetWorkAction\s*\(\s*ACTIONS\.MINE\s*\)", masked)
+        else "kill"
+    )
+
+
+def extract_prefab_rewards(prefab_id: str, source: str) -> List[Dict[str, Any]]:
+    """Extract deterministic static rewards for one named prefab constructor."""
+
+    normalized_id = prefab_id.lower()
+    functions = _function_scopes(source)
+    constructor_name = _prefab_constructor_bindings(source).get(normalized_id)
+    constructor = functions.get(constructor_name or "")
+    if constructor is None:
+        return []
+    constructor_scopes = _reachable_function_scopes(constructor, functions)
+    constructor_source = "\n".join(scope.source for scope in constructor_scopes)
+    method = _reward_method(constructor_source)
+    shared_tables = _shared_loot_tables(source)
+    raw_rewards: List[Dict[str, Any]] = []
+
+    def add_reward(
+        target: str,
+        chance: Any,
+        count: int,
+        conditions: Dict[str, Any],
+        reward_method: Optional[str] = None,
+    ) -> None:
+        raw_rewards.append(
+            {
+                "target": target.lower(),
+                "chance": chance,
+                "count": count,
+                "method": reward_method or method,
+                "source_prefab_id": normalized_id,
+                "conditions": conditions,
+            }
+        )
+
+    for scope in constructor_scopes:
+        for call in _iter_calls(
+            scope.source,
+            ("SetLoot", "AddChanceLoot", "SetChanceLootTable"),
+        ):
+            if call.name == "SetLoot" and call.arguments:
+                raw_table = call.arguments[0].strip()
+                if raw_table.startswith("{") and raw_table.endswith("}"):
+                    values = [
+                        value.lower()
+                        for entry in _split_top_level(raw_table[1:-1])
+                        for value in [_literal_string(entry)]
+                        if value is not None
+                    ]
+                    for target, count in Counter(values).items():
+                        add_reward(target, 1, count, {})
+            elif call.name == "AddChanceLoot" and len(call.arguments) >= 2:
+                target = _literal_string(call.arguments[0])
+                chance = _literal_number(call.arguments[1])
+                if target is not None and chance is not None:
+                    add_reward(target, chance, 1, {})
+            elif call.name == "SetChanceLootTable" and call.arguments:
+                table_name = _literal_string(call.arguments[0])
+                if table_name is None:
+                    continue
+                for target, chance in shared_tables.get(table_name.lower(), []):
+                    add_reward(
+                        target,
+                        chance,
+                        1,
+                        {"loot_table": table_name.lower()},
+                    )
+
+    callback_names = set()
+    for scope in constructor_scopes:
+        for call in _iter_calls(scope.source, ("SetOnWorkCallback",)):
+            if call.arguments:
+                callback = call.arguments[0].strip()
+                if callback in functions:
+                    callback_names.add(callback)
+    named_tables = _named_string_tables(source)
+    for callback_name in sorted(callback_names):
+        callback = functions[callback_name]
+        callback_mask = _code_mask(callback.source)
+        loop_tables = {
+            match.group(1): match.group(2)
+            for match in re.finditer(
+                r"\bfor\s+(?:[A-Za-z_][A-Za-z0-9_]*\s*,\s*)?"
+                r"([A-Za-z_][A-Za-z0-9_]*)\s+in\s+ipairs\s*\(\s*"
+                r"([A-Za-z_][A-Za-z0-9_]*)\s*\)",
+                callback_mask,
+            )
+        }
+        for call in _iter_calls(callback.source, ("SpawnPrefab",)):
+            if not call.arguments:
+                continue
+            target = _literal_string(call.arguments[0])
+            if target is not None:
+                add_reward(target, 1, 1, {"callback": callback_name})
+                continue
+            argument = call.arguments[0].strip()
+            table_name = loop_tables.get(argument)
+            if table_name is None:
+                continue
+            for table_target in named_tables.get(table_name, []):
+                add_reward(
+                    table_target,
+                    1,
+                    1,
+                    {"callback": callback_name, "source_table": table_name},
+                )
+
+    loot_setup_callbacks = set()
+    for scope in constructor_scopes:
+        for call in _iter_calls(scope.source, ("SetLootSetupFn",)):
+            if call.arguments:
+                callback_name = call.arguments[0].strip()
+                if callback_name in functions:
+                    loot_setup_callbacks.add(callback_name)
+    for callback_name in sorted(loot_setup_callbacks):
+        callback = functions[callback_name]
+        callback_mask = _code_mask(callback.source)
+        variable_tables = {
+            match.group(1): match.group(2)
+            for match in re.finditer(
+                r"\blocal\s+([A-Za-z_][A-Za-z0-9_]*)\s*=\s*"
+                r"([A-Za-z_][A-Za-z0-9_]*)\s*\[",
+                callback_mask,
+            )
+        }
+        event_match = re.search(
+            r"SPECIAL_EVENTS\.([A-Z][A-Z0-9_]*)",
+            callback_mask,
+        )
+        event = event_match.group(1) if event_match is not None else None
+        reward_method = "conditional" if event is not None else method
+        for call in _iter_calls(callback.source, ("AddChanceLoot",)):
+            if len(call.arguments) < 2:
+                continue
+            target = _literal_string(call.arguments[0])
+            chance = _literal_number(call.arguments[1])
+            base_conditions: Dict[str, Any] = {"callback": callback_name}
+            if event is not None:
+                base_conditions["event"] = event
+            if target is not None:
+                add_reward(
+                    target,
+                    chance,
+                    1,
+                    base_conditions,
+                    reward_method,
+                )
+                continue
+            table_name = variable_tables.get(call.arguments[0].strip())
+            if table_name is None:
+                continue
+            conditions = {**base_conditions, "source_table": table_name}
+            for table_target in named_tables.get(table_name, []):
+                add_reward(
+                    table_target,
+                    None,
+                    1,
+                    conditions,
+                    reward_method,
+                )
+
+    grouped: Dict[Tuple[str, Any, str, str], Dict[str, Any]] = {}
+    for reward in raw_rewards:
+        conditions_key = json.dumps(
+            reward["conditions"], ensure_ascii=False, sort_keys=True
+        )
+        key = (
+            reward["target"],
+            reward["chance"],
+            reward["method"],
+            conditions_key,
+        )
+        current = grouped.setdefault(key, {**reward, "count": 0})
+        current["count"] += reward["count"]
+    return [grouped[key] for key in sorted(grouped, key=lambda value: (value[0], value[1], value[2], value[3]))]
 
 
 def _literal_number(expression: str) -> Optional[Any]:
@@ -643,6 +933,21 @@ def _assigned_strings(source: str, prefix: str) -> Dict[str, Tuple[str, int]]:
     return result
 
 
+def _numeric_table_entries(source: str) -> Dict[str, Any]:
+    masked = _code_mask(source)
+    pattern = re.compile(
+        r"^[\t ]*([A-Z][A-Z0-9_]*)[\t ]*=[\t ]*"
+        r"([-+]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][-+]?\d+)?)\s*,?",
+        re.MULTILINE,
+    )
+    return {
+        match.group(1): value
+        for match in pattern.finditer(masked)
+        for value in [_literal_number(match.group(2))]
+        if value is not None
+    }
+
+
 def _table_fields(expression: str) -> Dict[str, str]:
     expression = expression.strip()
     if not (expression.startswith("{") and expression.endswith("}")):
@@ -705,6 +1010,7 @@ class ScriptIndex:
             cached_members.update(
                 {
                     "scripts/strings.lua",
+                    "scripts/tuning.lua",
                     "scripts/recipes.lua",
                     "scripts/speech_wilson.lua",
                 }
@@ -719,6 +1025,9 @@ class ScriptIndex:
             name: source_cache[name] for name in prefab_members
         }
         self.strings_source = source_cache.get("scripts/strings.lua", "")
+        self.tuning_values = _numeric_table_entries(
+            source_cache.get("scripts/tuning.lua", "")
+        )
         self.recipes_source = source_cache.get("scripts/recipes.lua", "")
         self.names = _assigned_strings(self.strings_source, "STRINGS.NAMES")
         self.names.update(_table_string_entries(self.strings_source, "NAMES"))
@@ -930,10 +1239,29 @@ def _source_facts(
     if member is None or not scopes:
         return facts, errors
 
+    def stat_expression_payload(expression: str) -> Dict[str, Any]:
+        payload = _expression_payload(expression)
+        if "value" in payload:
+            return payload
+        match = re.fullmatch(
+            r"(-?)TUNING\.([A-Z][A-Z0-9_]*)",
+            expression.strip(),
+        )
+        if match is None or match.group(2) not in index.tuning_values:
+            return payload
+        value = index.tuning_values[match.group(2)]
+        payload["value"] = -value if match.group(1) else value
+        return payload
+
     stat_calls = {
         "SetDamage": (("damage", 0),),
         "InitCondition": (("armor_condition", 0), ("armor_absorption", 1)),
         "SetMaxUses": (("max_uses", 0),),
+        "SetMaxHealth": (("max_health", 0),),
+        "SetDefaultDamage": (("attack_damage", 0),),
+        "SetAttackPeriod": (("attack_period", 0),),
+        "SetRange": (("attack_range", 0), ("hit_range", 1)),
+        "SetBaseDamage": (("planar_damage", 0),),
     }
     for scope in scopes:
         source = scope.source
@@ -943,6 +1271,11 @@ def _source_facts(
                 "SetDamage": "inst.components.weapon:",
                 "InitCondition": "inst.components.armor:",
                 "SetMaxUses": "inst.components.finiteuses:",
+                "SetMaxHealth": "inst.components.health:",
+                "SetDefaultDamage": "inst.components.combat:",
+                "SetAttackPeriod": "inst.components.combat:",
+                "SetRange": "inst.components.combat:",
+                "SetBaseDamage": "inst.components.planardamage:",
             }[call.name]
             if not _has_receiver(source, call, expected_receiver):
                 continue
@@ -962,7 +1295,7 @@ def _source_facts(
                     Fact(
                         "stat",
                         subject,
-                        {"key": key, **_expression_payload(call.arguments[position])},
+                        {"key": key, **stat_expression_payload(call.arguments[position])},
                         source_ref,
                         0.9,
                         f"{member}:line:{line_offset + call.line}",
@@ -988,7 +1321,40 @@ def _source_facts(
                 Fact(
                     "stat",
                     subject,
-                    {"key": edible_keys[match.group(1)], **_expression_payload(expression)},
+                    {"key": edible_keys[match.group(1)], **stat_expression_payload(expression)},
+                    source_ref,
+                    0.9,
+                    f"{member}:line:{line}",
+                )
+            )
+
+        component_assignments = {
+            ("locomotor", "walkspeed"): "walk_speed",
+            ("locomotor", "runspeed"): "run_speed",
+            ("sanityaura", "aura"): "sanity_aura",
+        }
+        assignment_pattern = re.compile(
+            r"^[\t ]*inst\.components\.([a-z_][a-z0-9_]*)\."
+            r"([a-z_][a-z0-9_]*)[\t ]*=[\t ]*",
+            re.MULTILINE,
+        )
+        for match in assignment_pattern.finditer(masked_scope):
+            key = component_assignments.get((match.group(1), match.group(2)))
+            if key is None:
+                continue
+            line = line_offset + source.count("\n", 0, match.start()) + 1
+            line_end = source.find("\n", match.end())
+            if line_end < 0:
+                line_end = len(source)
+            expression_end = _code_end_before_comment(
+                source, match.end(), line_end
+            )
+            expression = source[match.end() : expression_end].strip()
+            facts.append(
+                Fact(
+                    "stat",
+                    subject,
+                    {"key": key, **stat_expression_payload(expression)},
                     source_ref,
                     0.9,
                     f"{member}:line:{line}",
@@ -1019,6 +1385,55 @@ def _reverse_acquisition_facts(
             ):
                 errors.append({**warning, "stage": "reverse_acquisition"})
             continue
+        member_source = index.read(member)
+        for reward in extract_prefab_rewards(source_prefab, member_source):
+            conditions = reward.get("conditions")
+            if not isinstance(conditions, dict) or not conditions:
+                continue
+            target = reward["target"]
+            if target not in selected:
+                continue
+            key = (
+                source_prefab,
+                target,
+                reward["method"],
+                json.dumps(conditions, sort_keys=True),
+            )
+            if key in seen:
+                continue
+            seen.add(key)
+            facts.append(
+                Fact(
+                    "acquisition",
+                    EntityKey("base_game", target),
+                    {
+                        "type": "drop",
+                        "source": {
+                            "namespace": "base_game",
+                            "prefab_id": source_prefab,
+                            "resolution": (
+                                "resolved"
+                                if source_prefab in selected
+                                else "evidence_only"
+                            ),
+                        },
+                        "target": {
+                            "namespace": "base_game",
+                            "prefab_id": target,
+                            "resolution": "resolved",
+                        },
+                        "chance": reward["chance"],
+                        "count": reward["count"],
+                        "method": reward["method"],
+                        "conditions": conditions,
+                        "source_member": member,
+                        "source_expression": "static reward extraction",
+                    },
+                    source_ref,
+                    0.9,
+                    f"{member}:reward:{source_prefab}:{target}",
+                )
+            )
         for scope in scopes:
             line_offset = scope.line - 1
             for call in _iter_calls(
@@ -1115,7 +1530,11 @@ def _reverse_acquisition_facts(
                                 "source": {
                                     "namespace": "base_game",
                                     "prefab_id": source_prefab,
-                                    "resolution": "evidence_only",
+                                    "resolution": (
+                                        "resolved"
+                                        if source_prefab in selected
+                                        else "evidence_only"
+                                    ),
                                 },
                                 "target": {
                                     "namespace": "base_game",
@@ -1133,6 +1552,30 @@ def _reverse_acquisition_facts(
                         )
                     )
     return facts, errors
+
+
+def classify_public_prefabs(index: ScriptIndex) -> Dict[str, str]:
+    """Classify direct modules plus named Mob/Boss declarations they contain."""
+
+    scoped_categories = {
+        member: classify_prefabs_in_module(index.prefab_sources[member])
+        for member in sorted(set(index.prefab_members.values()))
+    }
+    categories = {
+        prefab_id: scoped_categories[member].get(
+            prefab_id,
+            classify_prefab_module(prefab_id, index.prefab_sources[member]),
+        )
+        for prefab_id, member in index.prefab_members.items()
+    }
+    for prefab_id, binding in sorted(index.prefab_declarations.items()):
+        declared_categories = scoped_categories.get(binding.member)
+        if declared_categories is None:
+            continue
+        declared_category = declared_categories.get(prefab_id)
+        if prefab_id in index.names and declared_category in {"mob", "boss"}:
+            categories.setdefault(prefab_id, declared_category)
+    return categories
 
 
 def enrich_dependencies(
@@ -1191,15 +1634,24 @@ def enrich_dependencies(
     }
     module_categories: Dict[str, str] = {}
     if include_all_modules:
-        module_categories = {
-            prefab_id: classify_prefab_module(
-                prefab_id,
-                index.prefab_sources[member],
-            )
-            for prefab_id, member in index.prefab_members.items()
-        }
+        module_categories = classify_public_prefabs(index)
         for prefab_id in module_categories:
             selected.setdefault(prefab_id, [])
+
+        for source_prefab in sorted(index.prefab_declarations):
+            binding = index.prefab_declarations[source_prefab]
+            member_source = index.read(binding.member)
+            for reward in extract_prefab_rewards(source_prefab, member_source):
+                target = reward["target"]
+                if index.resolution(target) is None:
+                    continue
+                evidence = selected.setdefault(target, [])
+                marker = {
+                    "relation": "drop_reward",
+                    "subject": f"base_game:{source_prefab}",
+                }
+                if marker not in evidence:
+                    evidence.append(marker)
 
     direct_resolved = {
         prefab_id for prefab_id in direct if index.resolution(prefab_id) is not None

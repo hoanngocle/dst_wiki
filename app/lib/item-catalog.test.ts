@@ -141,6 +141,91 @@ describe("parseItemPayload", () => {
     expect(parseItemPayload(payload)[0].category).toBe("pill");
   });
 
+  it("accepts phase-aware Mob and Boss details", () => {
+    const boss = makeValidItem("alterguardian_phase3", {
+      namespace: "base_game",
+    }) as unknown as Record<string, unknown>;
+    boss.category = "boss";
+    boss.mob = {
+      appearance: {
+        status: "known",
+        sources: ["Được triệu hồi tại Mysterious Energy"],
+        spawnCodes: ["alterguardian_phase3", "alterguardian_phase3dead"],
+        renewable: null,
+        respawn: null,
+        wikiUrl: "https://dontstarve.wiki.gg/wiki/Celestial_Champion",
+        evidence: [{ source: "wiki", locator: "Celestial Champion" }],
+      },
+      variants: [
+        {
+          id: "base_game:alterguardian_phase3",
+          prefabId: "alterguardian_phase3",
+          name: "Celestial Champion",
+          role: "phase",
+          order: 3,
+          sprite: null,
+        },
+        {
+          id: "base_game:alterguardian_phase3dead",
+          prefabId: "alterguardian_phase3dead",
+          name: "Defeated Celestial Champion",
+          role: "post_defeat",
+          order: 4,
+          sprite: null,
+        },
+      ],
+      stats: [
+        {
+          key: "max_health",
+          label: "Máu tối đa",
+          value: 14000,
+          unit: "hp",
+          sourceVariant: "base_game:alterguardian_phase3",
+          evidence: [{ source: "catalog", locator: "max_health" }],
+        },
+      ],
+      mechanics: [
+        {
+          text: "Trạng thái đặc biệt: summon, spin",
+          sourceVariant: "base_game:alterguardian_phase3",
+          evidence: [{ source: "catalog", locator: "special_states" }],
+        },
+      ],
+      lootStatus: "known",
+      loot: [
+        {
+          item: {
+            id: "base_game:alterguardianhat",
+            name: "Enlightened Crown",
+            sprite: null,
+          },
+          minimum: 1,
+          maximum: 1,
+          chance: "100%",
+          method: "mine_post_defeat",
+          sourceVariant: "base_game:alterguardian_phase3dead",
+          lootTable: "alterguardian_phase3dead",
+          conditions: "Bảng rơi: alterguardian_phase3dead",
+          evidence: [{ source: "scripts.zip", locator: "alterguardian_phase3dead" }],
+        },
+      ],
+    };
+
+    const parsed = parseItemPayload({ schema_version: 6, items: [boss] })[0];
+
+    expect(parsed.mob?.appearance.sources[0]).toContain("Mysterious Energy");
+    expect(parsed.mob?.variants[1].role).toBe("post_defeat");
+    expect(parsed.mob?.stats[0].sourceVariant).toBe(
+      "base_game:alterguardian_phase3",
+    );
+    expect(parsed.mob?.loot[0]).toMatchObject({
+      minimum: 1,
+      maximum: 1,
+      method: "mine_post_defeat",
+      sourceVariant: "base_game:alterguardian_phase3dead",
+    });
+  });
+
   it("accepts complete structure details and rejects them on non-structures", () => {
     const payload = structuredClone(validPayload);
     const structure = makeValidItem("researchlab", {
