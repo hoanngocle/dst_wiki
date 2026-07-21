@@ -4,7 +4,13 @@ from contextlib import redirect_stderr, redirect_stdout
 from pathlib import Path
 from unittest.mock import patch
 
-from tools.crawl_wiki.cli import build_parser, main, resolve_output, run_crawl
+from tools.crawl_wiki.cli import (
+    build_parser,
+    main,
+    resolve_base_url,
+    resolve_output,
+    run_crawl,
+)
 from tools.crawl_wiki.models import CrawlSummary
 
 
@@ -29,6 +35,27 @@ class CliTests(unittest.TestCase):
         self.assertEqual(
             resolve_output(args), Path("data/crawled/dontstarve-items")
         )
+
+    def test_category_profile_uses_configured_source_and_output(self):
+        args = build_parser().parse_args(
+            ["--profile", "category", "--category", "animals"]
+        )
+
+        self.assertEqual(
+            resolve_base_url(args),
+            "https://dontstarve.fandom.com/",
+        )
+        self.assertEqual(
+            resolve_output(args),
+            Path("data/crawled/fandom-categories/animals"),
+        )
+        self.assertEqual(args.page_budget, 100)
+
+    def test_category_name_is_required_only_for_category_profile(self):
+        args = build_parser().parse_args(["--profile", "category"])
+
+        with self.assertRaisesRegex(ValueError, "--category is required"):
+            run_crawl(args)
 
     def test_rejects_explicit_item_budget_for_full_profile(self):
         args = build_parser().parse_args(

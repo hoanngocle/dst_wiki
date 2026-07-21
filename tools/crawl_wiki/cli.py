@@ -1,5 +1,6 @@
 import argparse
 import logging
+import os
 import sys
 from pathlib import Path
 from typing import Optional, Sequence, Tuple
@@ -9,15 +10,23 @@ from tools.crawl_wiki.client import (
     ClientError,
     MediaWikiClient,
 )
-from tools.crawl_wiki.crawler import SelectiveItemsCrawler, WikiCrawler
+from tools.crawl_wiki.category_config import load_category_config
+from tools.crawl_wiki.crawler import (
+    CategoryCrawler,
+    SelectiveItemsCrawler,
+    WikiCrawler,
+)
 from tools.crawl_wiki.models import CrawlSummary, SUPPORTED_NAMESPACES
 from tools.crawl_wiki.parser import normalize_base_url
 from tools.crawl_wiki.storage import CrawlStorage, StorageError
+from tools.crawl_wiki.url_registry import UrlRegistry, UrlRegistryError
 
 
 DEFAULT_BASE_URL = "https://dontstarve.wiki.gg/"
 DEFAULT_FULL_OUTPUT = Path("data/crawled/dontstarve-wiki")
 DEFAULT_ITEMS_OUTPUT = Path("data/crawled/dontstarve-items")
+DEFAULT_URL_REGISTRY = Path("data/crawled/fandom-url-registry.json")
+DEFAULT_SHARED_PAGE_CACHE = Path("data/crawled/fandom-shared-pages")
 DEFAULT_NAMESPACES = (0, 14, 6)
 
 
@@ -79,11 +88,37 @@ class _ItemBudgetAction(argparse.Action):
         setattr(namespace, "item_budget_explicit", True)
 
 
+class _PageBudgetAction(argparse.Action):
+    def __call__(self, parser, namespace, values, option_string=None):
+        del parser, option_string
+        setattr(namespace, self.dest, values)
+        setattr(namespace, "page_budget_explicit", True)
+
+
+class _BaseUrlAction(argparse.Action):
+    def __call__(self, parser, namespace, values, option_string=None):
+        del parser, option_string
+        setattr(namespace, self.dest, values)
+        setattr(namespace, "base_url_explicit", True)
+
+
+def resolve_base_url(args: argparse.Namespace) -> str:
+    if args.profile == "category" and not args.base_url_explicit:
+        if not args.category:
+            raise ValueError("--category is required for the category profile")
+        return load_category_config(args.category).base_url
+    return args.base_url
+
+
 def resolve_output(args: argparse.Namespace) -> Path:
     if args.output is not None:
         return args.output
     if args.profile == "items":
         return DEFAULT_ITEMS_OUTPUT
+    if args.profile == "category":
+        if not args.category:
+            raise ValueError("--category is required for the category profile")
+        return load_category_config(args.category).output_path
     return DEFAULT_FULL_OUTPUT
 
 
@@ -95,12 +130,22 @@ def build_parser() -> argparse.ArgumentParser:
             "resumable JSONL plus selected original images."
         ),
     )
-    parser.set_defaults(item_budget_explicit=False)
-    parser.add_argument(
-        "--profile", choices=("full", "items"), default="full"
+    parser.set_defaults(
+        item_budget_explicit=False,
+        page_budget_explicit=False,
+        base_url_explicit=False,
     )
-    parser.add_argument("--base-url", type=_base_url, default=DEFAULT_BASE_URL)
+    parser.add_argument(
+        "--profile", choices=("full", "items", "category"), default="full"
+    )
+    parser.add_argument(
+        "--base-url",
+        type=_base_url,
+        default=DEFAULT_BASE_URL,
+        action=_BaseUrlAction,
+    )
     parser.add_argument("--output", type=Path)
+    parser.add_argument("--category")
     parser.add_argument(
         "--namespaces", type=_namespaces, default=DEFAULT_NAMESPACES
     )
@@ -116,6 +161,18 @@ def build_parser() -> argparse.ArgumentParser:
         action=_ItemBudgetAction,
         help="maximum selected item detail pages processed this invocation",
     )
+    parser.add_argument(
+        "--page-budget",
+        type=_positive_int,
+        default=100,
+        action=_PageBudgetAction,
+        help="maximum category detail pages processed this invocation",
+    )
+    parser.add_argument("--url-registry", type=Path, default=DEFAULT_URL_REGISTRY)
+    parser.add_argument(
+        "--shared-page-cache", type=Path, default=DEFAULT_SHARED_PAGE_CACHE
+    )
+    parser.add_argument("--worker-id")
     parser.add_argument("--skip-images", action="store_true")
     parser.add_argument("--fresh", action="store_true")
     parser.add_argument("--retry-errors", action="store_true")
@@ -132,11 +189,26 @@ def run_crawl(args: argparse.Namespace) -> CrawlSummary:
         raise ValueError("--item-budget is only valid for the items profile")
     if args.profile == "items" and args.max_pages is not None:
         raise ValueError("--max-pages is only valid for the full profile")
+    if args.profile != "category" and args.page_budget_explicit:
+        raise ValueError("--page-budget is only valid for the category profile")
+    if args.profile == "category" and not args.category:
+        raise ValueError("--category is required for the category profile")
+    if args.profile != "category" and args.category is not None:
+        raise ValueError("--category is only valid for the category profile")
+    config = (
+        load_category_config(args.category)
+        if args.profile == "category"
+        else None
+    )
+    base_url = resolve_base_url(args)
     output = resolve_output(args)
-    namespaces = (0,) if args.profile == "items" else args.namespaces
+    if config is not None:
+        namespaces = config.allowed_namespaces
+    else:
+        namespaces = (0,) if args.profile == "items" else args.namespaces
     options = {
         "profile": args.profile,
-        "base_url": args.base_url,
+        "base_url": base_url,
         "namespaces": list(namespaces),
         "delay": args.delay,
         "timeout": args.timeout,
@@ -144,25 +216,49 @@ def run_crawl(args: argparse.Namespace) -> CrawlSummary:
         "user_agent": args.user_agent,
         "max_pages": args.max_pages,
         "item_budget": args.item_budget if args.profile == "items" else None,
+        "page_budget": args.page_budget if args.profile == "category" else None,
+        "category": args.category,
         "skip_images": args.skip_images,
     }
     with CrawlStorage(
         output,
-        args.base_url,
+        base_url,
         namespaces,
         fresh=args.fresh,
-        profile=args.profile,
+        profile=(
+            "category:{}".format(config.key)
+            if config is not None
+            else args.profile
+        ),
     ) as storage:
         if args.retry_errors:
             storage.retry_errors()
         client = MediaWikiClient(
-            args.base_url,
+            base_url,
             delay=args.delay,
             timeout=args.timeout,
             max_attempts=args.max_attempts,
             user_agent=args.user_agent,
         )
-        if args.profile == "items":
+        if args.profile == "category":
+            registry = UrlRegistry(
+                args.url_registry,
+                args.shared_page_cache,
+                base_url.rstrip("/"),
+            )
+            crawler = CategoryCrawler(
+                client,
+                storage,
+                config,
+                registry,
+                page_budget=args.page_budget,
+                skip_images=args.skip_images,
+                worker_id=(
+                    args.worker_id
+                    or "category:{}:{}".format(config.key, os.getpid())
+                ),
+            )
+        elif args.profile == "items":
             crawler = SelectiveItemsCrawler(
                 client,
                 storage,
@@ -192,7 +288,13 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     except KeyboardInterrupt:
         print("crawl interrupted; checkpoint preserved", file=sys.stderr)
         return 130
-    except (ClientError, StorageError, OSError, ValueError) as error:
+    except (
+        ClientError,
+        StorageError,
+        UrlRegistryError,
+        OSError,
+        ValueError,
+    ) as error:
         print("crawler setup/fatal error: {}".format(error), file=sys.stderr)
         return 2
     print(

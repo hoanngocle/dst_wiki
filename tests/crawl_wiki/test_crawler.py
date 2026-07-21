@@ -6,9 +6,11 @@ import urllib.parse
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
-from tools.crawl_wiki.client import MediaWikiClient
-from tools.crawl_wiki.crawler import SelectiveItemsCrawler, WikiCrawler
+from tools.crawl_wiki.category_config import CategoryConfig
+from tools.crawl_wiki.client import MediaWikiClient, ResolvedTitle
+from tools.crawl_wiki.crawler import CategoryCrawler, SelectiveItemsCrawler, WikiCrawler
 from tools.crawl_wiki.storage import CrawlStorage
+from tools.crawl_wiki.url_registry import UrlRegistry
 
 
 PAGES = {
@@ -226,7 +228,317 @@ def _records(path):
     return [json.loads(line) for line in path.read_text().splitlines()]
 
 
+class CategoryClient:
+    base_url = "https://dontstarve.fandom.com/"
+    api_url = "https://dontstarve.fandom.com/api.php"
+
+    def __init__(self, batches, infobox_image=False):
+        self.batches = list(batches)
+        self.infobox_image = infobox_image
+        self.category_calls = []
+        self.page_calls = []
+        self.parsed_titles = []
+        self.pages = {
+            1: {"pageid": 1, "ns": 0, "title": "Beefalo"},
+            4: {"pageid": 4, "ns": 0, "title": "Bunnyman"},
+        }
+
+    def list_category_members(self, title, continuation=None):
+        self.category_calls.append((title, continuation))
+        return self.batches.pop(0)
+
+    def resolve_titles_detailed(self, titles):
+        by_title = {value["title"]: value for value in self.pages.values()}
+        return [
+            ResolvedTitle(
+                requested_title=title,
+                page_id=by_title[title]["pageid"],
+                namespace=0,
+                canonical_title=title,
+                canonical_url="https://dontstarve.fandom.com/wiki/{}".format(
+                    title.replace(" ", "_")
+                ),
+                page=by_title[title],
+            )
+            for title in titles
+        ]
+
+    def get_page(self, page_id):
+        page = dict(self.pages[page_id])
+        self.page_calls.append(page_id)
+        page["revisions"] = [
+            {
+                "revid": 100 + page_id,
+                "timestamp": "2026-07-01T00:00:00Z",
+                "sha1": "sha1-{}".format(page_id),
+                "contentmodel": "wikitext",
+                "slots": {"main": {"content": "'''{}'''".format(page["title"])}},
+            }
+        ]
+        return page
+
+    def parse_page(self, page_id):
+        title = self.pages[page_id]["title"]
+        self.parsed_titles.append(title)
+        if self.infobox_image:
+            text = (
+                "<img alt='Navigation.png'>"
+                "<aside class='portable-infobox'><img alt='{}.png'></aside>".format(
+                    title
+                )
+            )
+            images = ["Navigation.png", "{}.png".format(title)]
+        else:
+            text = "<aside class='portable-infobox'><p>{}</p></aside>".format(title)
+            images = []
+        return {
+            "title": title,
+            "displaytitle": title,
+            "text": text,
+            "links": [],
+            "categories": [],
+            "images": images,
+        }
+
+
+def category_config(
+    expected_direct_pages=3,
+    expected_published_pages=2,
+    excluded_titles=(("Blue Whale", "non_dst:shipwrecked"),),
+):
+    return CategoryConfig(
+        key="animals",
+        source_url="https://dontstarve.fandom.com/wiki/Category:Animals",
+        category_title="Category:Animals",
+        expected_direct_pages=expected_direct_pages,
+        expected_published_pages=expected_published_pages,
+        allowed_namespaces=(0,),
+        excluded_titles=excluded_titles,
+        game="DST",
+        item_type="mob",
+        tags=("Animals",),
+    )
+
+
 class CrawlerTests(unittest.TestCase):
+    def test_category_crawler_skips_doing_then_reuses_when_owner_completes(self):
+        with tempfile.TemporaryDirectory() as tempdir:
+            root = Path(tempdir)
+            url = "https://dontstarve.fandom.com/wiki/Beefalo"
+            registry = UrlRegistry(
+                root / "fandom-url-registry.json",
+                root / "shared-pages",
+                "https://dontstarve.fandom.com",
+            )
+            owner = registry.claim(url, "other-category", "worker-other")
+            client = CategoryClient(
+                [([{"pageid": 1, "ns": 0, "title": "Beefalo"}], None)]
+            )
+            one_page = category_config(1, 1, ())
+            output = root / "animals"
+
+            with CrawlStorage(
+                output,
+                client.base_url,
+                (0,),
+                profile="category:animals",
+            ) as storage:
+                first = CategoryCrawler(
+                    client,
+                    storage,
+                    one_page,
+                    registry,
+                    page_budget=1,
+                    skip_images=True,
+                    worker_id="worker-animals",
+                ).run({"profile": "category"})
+
+            self.assertEqual(first.pages, 0)
+            self.assertEqual(first.pending_pages, 1)
+            self.assertEqual(client.page_calls, [])
+            registry.complete(
+                owner,
+                {
+                    "page": {
+                        "schema_version": 1,
+                        "page_id": 1,
+                        "namespace": 0,
+                        "title": "Beefalo",
+                        "canonical_url": url,
+                    },
+                    "links": [],
+                    "imageTitles": [],
+                },
+            )
+
+            with CrawlStorage(
+                output,
+                client.base_url,
+                (0,),
+                profile="category:animals",
+            ) as storage:
+                second = CategoryCrawler(
+                    client,
+                    storage,
+                    one_page,
+                    registry,
+                    page_budget=1,
+                    skip_images=True,
+                    worker_id="worker-animals",
+                ).run({"profile": "category"})
+
+            self.assertEqual(second.pages, 1)
+            self.assertEqual(second.pending_pages, 0)
+            self.assertEqual(client.page_calls, [])
+
+    def test_category_crawler_selects_infobox_image_not_navigation_image(self):
+        with tempfile.TemporaryDirectory() as tempdir:
+            root = Path(tempdir)
+            client = CategoryClient(
+                [([{"pageid": 1, "ns": 0, "title": "Beefalo"}], None)],
+                infobox_image=True,
+            )
+            registry = UrlRegistry(
+                root / "fandom-url-registry.json",
+                root / "shared-pages",
+                "https://dontstarve.fandom.com",
+            )
+            with CrawlStorage(
+                root / "animals",
+                client.base_url,
+                (0,),
+                profile="category:animals",
+            ) as storage:
+                CategoryCrawler(
+                    client,
+                    storage,
+                    category_config(1, 1, ()),
+                    registry,
+                    page_budget=1,
+                    skip_images=True,
+                    worker_id="worker-animals",
+                ).run({"profile": "category"})
+
+            row = json.loads(registry.path.read_text())["items"][0]
+            shared = registry.load_payload(registry.claim(row["url"], "animals", "reader").record)
+            self.assertEqual(shared["imageTitles"], ["File:Beefalo.png"])
+
+    def test_category_crawler_discovers_all_members_but_queues_only_dst_pages(self):
+        with tempfile.TemporaryDirectory() as tempdir:
+            root = Path(tempdir)
+            output = root / "animals"
+            client = CategoryClient(
+                [
+                    ([{"pageid": 1, "ns": 0, "title": "Beefalo"}], "next"),
+                    (
+                        [
+                            {"pageid": 2, "ns": 14, "title": "Category:Birds"},
+                            {"pageid": 3, "ns": 0, "title": "Blue Whale"},
+                            {"pageid": 4, "ns": 0, "title": "Bunnyman"},
+                        ],
+                        None,
+                    ),
+                ]
+            )
+            registry = UrlRegistry(
+                root / "fandom-url-registry.json",
+                root / "shared-pages",
+                "https://dontstarve.fandom.com",
+                clock=lambda: "2026-07-21T00:00:00Z",
+            )
+            with CrawlStorage(
+                output,
+                client.base_url,
+                (0,),
+                profile="category:animals",
+                clock=lambda: "2026-07-21T00:00:00Z",
+            ) as storage:
+                summary = CategoryCrawler(
+                    client,
+                    storage,
+                    category_config(),
+                    registry,
+                    page_budget=1,
+                    skip_images=True,
+                    worker_id="worker-animals",
+                    clock=lambda: "2026-07-21T00:00:00Z",
+                ).run({"profile": "category"})
+
+            self.assertEqual(
+                client.category_calls,
+                [("Category:Animals", None), ("Category:Animals", "next")],
+            )
+            self.assertEqual(summary.pages, 1)
+            self.assertEqual(summary.pending_pages, 1)
+            self.assertEqual(client.parsed_titles, ["Beefalo"])
+            self.assertNotIn("Blue Whale", client.parsed_titles)
+            seeds = _records(output / "seeds.jsonl")
+            self.assertEqual(sum(seed["accepted"] for seed in seeds), 2)
+            registry_rows = json.loads(registry.path.read_text())["items"]
+            self.assertEqual(len(registry_rows), 2)
+            self.assertEqual(
+                {row["status"] for row in registry_rows},
+                {"New", "Done"},
+            )
+
+    def test_category_crawler_reuses_done_shared_payload_without_fetching(self):
+        with tempfile.TemporaryDirectory() as tempdir:
+            root = Path(tempdir)
+            registry = UrlRegistry(
+                root / "fandom-url-registry.json",
+                root / "shared-pages",
+                "https://dontstarve.fandom.com",
+                clock=lambda: "2026-07-21T00:00:00Z",
+            )
+            claim = registry.claim(
+                "https://dontstarve.fandom.com/wiki/Beefalo",
+                "other-category",
+                "worker-other",
+            )
+            registry.complete(
+                claim,
+                {
+                    "page": {
+                        "schema_version": 1,
+                        "page_id": 1,
+                        "namespace": 0,
+                        "title": "Beefalo",
+                        "canonical_url": "https://dontstarve.fandom.com/wiki/Beefalo",
+                    },
+                    "links": [],
+                    "imageTitles": [],
+                },
+            )
+            client = CategoryClient(
+                [
+                    (
+                        [
+                            {"pageid": 1, "ns": 0, "title": "Beefalo"},
+                            {"pageid": 3, "ns": 0, "title": "Blue Whale"},
+                            {"pageid": 4, "ns": 0, "title": "Bunnyman"},
+                        ],
+                        None,
+                    )
+                ]
+            )
+            with CrawlStorage(
+                root / "animals",
+                client.base_url,
+                (0,),
+                profile="category:animals",
+            ) as storage:
+                CategoryCrawler(
+                    client,
+                    storage,
+                    category_config(),
+                    registry,
+                    page_budget=1,
+                    skip_images=True,
+                    worker_id="worker-animals",
+                ).run({"profile": "category"})
+
+            self.assertEqual(client.page_calls, [])
+            self.assertEqual(_records(root / "animals" / "pages.jsonl")[0]["title"], "Beefalo")
     def make_client(self, server):
         return MediaWikiClient(
             server.base_url,

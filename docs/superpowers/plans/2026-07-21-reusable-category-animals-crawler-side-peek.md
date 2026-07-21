@@ -394,7 +394,7 @@ git commit -m "feat: configure reusable wiki category discovery"
 - Produces: `CategoryCrawler(client, storage, config, page_budget=100, skip_images=False)`.
 - Produces CLI: `python3 -m tools.crawl_wiki.cli --profile category --category animals`.
 
-- [ ] **Step 1: Write failing storage tests for accepted/excluded seeds and resume**
+- [x] **Step 1: Write failing storage tests for accepted/excluded seeds and resume**
 
 ```python
 def test_persists_category_seeds_and_resume_token(self):
@@ -409,7 +409,7 @@ def test_persists_category_seeds_and_resume_token(self):
     assert sum(line["accepted"] for line in lines) == 1
 ```
 
-- [ ] **Step 2: Write failing crawler tests for continuation, non-recursion, and budget resume**
+- [x] **Step 2: Write failing crawler tests for continuation, non-recursion, and budget resume**
 
 ```python
 def test_category_crawler_discovers_all_members_but_queues_only_pages(self):
@@ -432,7 +432,7 @@ def test_category_crawler_discovers_all_members_but_queues_only_pages(self):
     assert "Blue Whale" not in client.parsed_titles
 ```
 
-- [ ] **Step 3: Write failing CLI profile tests**
+- [x] **Step 3: Write failing CLI profile tests**
 
 ```python
 def test_category_profile_uses_configured_source_and_output():
@@ -446,7 +446,7 @@ def test_category_name_is_required_only_for_category_profile():
         run_crawl(build_parser().parse_args(["--profile", "category"]))
 ```
 
-- [ ] **Step 4: Run focused tests and verify RED**
+- [x] **Step 4: Run focused tests and verify RED**
 
 Run:
 
@@ -456,7 +456,7 @@ python3 -m unittest tests.crawl_wiki.test_storage tests.crawl_wiki.test_crawler 
 
 Expected: category storage methods, crawler class, and CLI choice are missing.
 
-- [ ] **Step 5: Add category checkpoint and seed persistence**
+- [x] **Step 5: Add category checkpoint and seed persistence**
 
 Add a `category_seed_metadata` table with page ID, namespace, title, canonical
 URL, accepted flag, and reason. Add these exact metadata keys:
@@ -482,7 +482,7 @@ def mark_category_discovery_complete(self, key):
 table and regenerates `seeds.jsonl`. Only accepted rows are passed to
 `enqueue_pages`.
 
-- [ ] **Step 6: Implement `CategoryCrawler` and primary image selection**
+- [x] **Step 6: Implement `CategoryCrawler` and primary image selection**
 
 Use `WikiCrawler._process_images` for binary handling. `CategoryCrawler.run`
 must call discovery, process at most `page_budget` queued pages, then images and
@@ -516,7 +516,7 @@ ID/title/URL, deduplicates by resolved page ID, and enforces the 28-page queue
 guard. It saves all queued/excluded seeds and marks discovery complete only
 after membership, exclusion, and queue-count validation.
 
-- [ ] **Step 7: Route the category profile in the CLI**
+- [x] **Step 7: Route the category profile in the CLI**
 
 Extend profile choices to `full|items|category`. Add `--category` and a generic
 `--page-budget` defaulting to 100. Make `--base-url` default to `None`, then use:
@@ -534,7 +534,7 @@ Reject `--category` outside the category profile, require it inside that
 profile, reject `--max-pages`/`--item-budget` there, and instantiate
 `CategoryCrawler` with output `config.output_path` unless `--output` is given.
 
-- [ ] **Step 8: Run tests and commit Task 2**
+- [x] **Step 8: Run tests and commit Task 2**
 
 Run:
 

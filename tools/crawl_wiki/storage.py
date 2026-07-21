@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Any, Callable, Dict, Iterable, List, Mapping, Optional, Sequence, Set, Tuple
 
 from tools.crawl_wiki.item_seeds import ItemSeed
+from tools.crawl_wiki.category_seeds import CategorySeed
 from tools.crawl_wiki.models import CrawlSummary, SCHEMA_VERSION
 from tools.crawl_wiki.parser import normalize_base_url, safe_image_extension
 
@@ -123,6 +124,19 @@ class CrawlStorage:
                 icon_title text,
                 icon_thumbnail_url text,
                 source_sections text not null
+            );
+            create table if not exists category_member_metadata (
+                page_id integer primary key,
+                namespace integer not null,
+                title text not null
+            );
+            create table if not exists category_seed_metadata (
+                page_id integer primary key,
+                namespace integer not null,
+                title text not null,
+                canonical_url text not null,
+                accepted integer not null,
+                reason text
             );
             create table if not exists errors (
                 stage text not null,
@@ -241,7 +255,7 @@ class CrawlStorage:
     def pending_page_count(self) -> int:
         return int(
             self.connection.execute(
-                "select count(*) from page_queue where status='pending'"
+                "select count(*) from page_queue where status in ('pending','waiting')"
             ).fetchone()[0]
         )
 
@@ -274,6 +288,97 @@ class CrawlStorage:
                     ),
                 )
         self._write_seeds()
+
+    def save_category_members(
+        self, members: Iterable[Mapping[str, Any]]
+    ) -> None:
+        with self.connection:
+            for member in members:
+                page_id = member.get("pageid")
+                namespace = member.get("ns")
+                title = member.get("title")
+                if (
+                    not isinstance(page_id, int)
+                    or isinstance(page_id, bool)
+                    or page_id <= 0
+                    or not isinstance(namespace, int)
+                    or isinstance(namespace, bool)
+                    or not isinstance(title, str)
+                    or not title.strip()
+                ):
+                    raise StorageError("category member identity is invalid")
+                existing = self.connection.execute(
+                    "select namespace,title from category_member_metadata where page_id=?",
+                    (page_id,),
+                ).fetchone()
+                if existing is not None and (
+                    int(existing["namespace"]) != namespace
+                    or str(existing["title"]) != title.strip()
+                ):
+                    raise StorageError(
+                        "category member page ID has conflicting identities"
+                    )
+                self.connection.execute(
+                    "insert or ignore into category_member_metadata(page_id,namespace,title) values(?,?,?)",
+                    (page_id, namespace, title.strip()),
+                )
+
+    def category_members(self) -> List[Dict[str, Any]]:
+        rows = self.connection.execute(
+            "select page_id as pageid,namespace as ns,title "
+            "from category_member_metadata "
+            "order by title collate nocase,title,page_id"
+        )
+        return [dict(row) for row in rows]
+
+    def save_category_seeds(self, seeds: Iterable[CategorySeed]) -> None:
+        values = list(seeds)
+        with self.connection:
+            self.connection.execute("delete from category_seed_metadata")
+            for seed in values:
+                self.connection.execute(
+                    "insert into category_seed_metadata(page_id,namespace,title,canonical_url,accepted,reason) "
+                    "values(?,?,?,?,?,?)",
+                    (
+                        seed.page_id,
+                        seed.namespace,
+                        seed.title,
+                        seed.canonical_url,
+                        int(seed.accepted),
+                        seed.reason,
+                    ),
+                )
+        self._write_category_seeds()
+
+    def category_seed_for_page(self, page_id: int) -> Optional[Dict[str, Any]]:
+        row = self.connection.execute(
+            "select page_id,namespace,title,canonical_url,accepted,reason "
+            "from category_seed_metadata where page_id=?",
+            (page_id,),
+        ).fetchone()
+        if row is None:
+            return None
+        result = dict(row)
+        result["accepted"] = bool(result["accepted"])
+        return result
+
+    def _write_category_seeds(self) -> None:
+        path = self.output / "seeds.jsonl"
+        temporary = path.with_name(path.name + ".tmp")
+        rows = self.connection.execute(
+            "select page_id,namespace,title,canonical_url,accepted,reason "
+            "from category_seed_metadata "
+            "order by title collate nocase,title,page_id"
+        )
+        with temporary.open("wb") as handle:
+            for row in rows:
+                record = dict(row)
+                record["schema_version"] = SCHEMA_VERSION
+                record["accepted"] = bool(record["accepted"])
+                handle.write(encode_json_line(record))
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(str(temporary), str(path))
 
     def seed_for_title(self, title: str) -> Optional[Dict[str, Any]]:
         row = self.connection.execute(
@@ -336,6 +441,20 @@ class CrawlStorage:
 
     def claim_page(self) -> Optional[Dict[str, Any]]:
         return self._claim("page_queue", "page_id")
+
+    def defer_page(self, page_id: int, reason: str) -> None:
+        with self.connection:
+            self.connection.execute(
+                "update page_queue set status='waiting',last_error=? "
+                "where page_id=? and status='processing'",
+                (reason, page_id),
+            )
+
+    def resume_waiting_pages(self) -> None:
+        with self.connection:
+            self.connection.execute(
+                "update page_queue set status='pending' where status='waiting'"
+            )
 
     def enqueue_images(
         self, titles: Iterable[str], page_id: Optional[int] = None
@@ -500,6 +619,42 @@ class CrawlStorage:
     def mark_item_discovery_complete(self) -> None:
         with self.connection:
             self._set_metadata("items:discovery:complete", "1")
+
+    def get_category_discovery_token(self, key: str) -> Optional[str]:
+        return self._metadata("category:{}:discovery:token".format(key))
+
+    def set_category_discovery_token(self, key: str, token: str) -> None:
+        with self.connection:
+            self._set_metadata(
+                "category:{}:discovery:token".format(key), token
+            )
+
+    def is_category_member_discovery_complete(self, key: str) -> bool:
+        return (
+            self._metadata("category:{}:members:complete".format(key)) == "1"
+        )
+
+    def mark_category_member_discovery_complete(self, key: str) -> None:
+        with self.connection:
+            self.connection.execute(
+                "delete from metadata where key=?",
+                ("category:{}:discovery:token".format(key),),
+            )
+            self._set_metadata(
+                "category:{}:members:complete".format(key), "1"
+            )
+
+    def is_category_discovery_complete(self, key: str) -> bool:
+        return (
+            self._metadata("category:{}:discovery:complete".format(key))
+            == "1"
+        )
+
+    def mark_category_discovery_complete(self, key: str) -> None:
+        with self.connection:
+            self._set_metadata(
+                "category:{}:discovery:complete".format(key), "1"
+            )
 
     def new_image_part(self) -> Path:
         file_descriptor, name = tempfile.mkstemp(
@@ -703,7 +858,10 @@ class CrawlStorage:
         os.replace(str(temporary), str(path))
 
     def finalize(self, options: Mapping[str, Any]) -> CrawlSummary:
-        self._write_seeds()
+        if self.profile.startswith("category"):
+            self._write_category_seeds()
+        else:
+            self._write_seeds()
         self._write_errors()
         seed_count, _ = self._compact("seeds.jsonl")
         page_count, page_index = self._compact("pages.jsonl")

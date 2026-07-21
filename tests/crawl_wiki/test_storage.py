@@ -8,6 +8,7 @@ from unittest.mock import patch
 
 import tools.crawl_wiki.storage as storage_module
 from tools.crawl_wiki.item_seeds import ItemSeed
+from tools.crawl_wiki.category_seeds import CategorySeed
 from tools.crawl_wiki.storage import CrawlStorage, StorageError
 
 
@@ -86,6 +87,55 @@ class StorageTests(unittest.TestCase):
                 self.assertEqual(
                     storage.claim_image()["title"], "File:Wilson.png"
                 )
+
+    def test_persists_category_members_seeds_and_resume_token(self):
+        with tempfile.TemporaryDirectory() as tempdir:
+            output = Path(tempdir)
+            with self.make_storage(output, profile="category") as storage:
+                storage.save_category_members(
+                    [
+                        {"pageid": 1, "ns": 0, "title": "Beefalo"},
+                        {"pageid": 2, "ns": 14, "title": "Category:Birds"},
+                    ]
+                )
+                storage.set_category_discovery_token("animals", "page|next")
+
+            with self.make_storage(output, profile="category") as storage:
+                self.assertEqual(
+                    storage.get_category_discovery_token("animals"),
+                    "page|next",
+                )
+                self.assertEqual(
+                    [row["title"] for row in storage.category_members()],
+                    ["Beefalo", "Category:Birds"],
+                )
+                storage.save_category_seeds(
+                    [
+                        CategorySeed(
+                            1,
+                            0,
+                            "Beefalo",
+                            "https://dontstarve.fandom.com/wiki/Beefalo",
+                            True,
+                            None,
+                        ),
+                        CategorySeed(
+                            2,
+                            14,
+                            "Category:Birds",
+                            "https://dontstarve.fandom.com/wiki/Category:Birds",
+                            False,
+                            "excluded_namespace:14",
+                        ),
+                    ]
+                )
+
+            rows = [
+                json.loads(line)
+                for line in (output / "seeds.jsonl").read_text().splitlines()
+            ]
+            self.assertEqual([row["title"] for row in rows], ["Beefalo", "Category:Birds"])
+            self.assertEqual(sum(row["accepted"] for row in rows), 1)
 
     def test_persists_seeds_recipes_and_partial_queue_progress(self):
         with tempfile.TemporaryDirectory() as tempdir:
