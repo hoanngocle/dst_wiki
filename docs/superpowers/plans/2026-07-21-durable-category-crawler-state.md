@@ -399,7 +399,7 @@ Expected: zero invalid rows; 170 total URLs (`29 Animals + 141 new`), all crawle
 
 Update queue/status summaries and shared URL rows so `New/Doing/Done` exactly match the exported JSON. Remove the temporary cache blocker only after audit proves every `Done` artifact valid.
 
-- [ ] **Step 5: Commit Task 5**
+- [x] **Step 5: Commit Task 5**
 
 ```bash
 git add data/crawled/fandom-url-registry.json docs/category-crawler-control.md docs/superpowers/plans/2026-07-21-durable-category-crawler-state.md
@@ -417,11 +417,11 @@ git commit -m "data: crawl reviewed DST category batch"
 - Consumes: completed implementation and live batch outputs.
 - Produces: verified operational documentation and clean branch.
 
-- [ ] **Step 1: Document common-state lifecycle commands**
+- [x] **Step 1: Document common-state lifecycle commands**
 
 Document `init`, `audit`, `repair`, `snapshot`, paired override behavior and the rule that raw common-state payloads are never committed.
 
-- [ ] **Step 2: Run all Python and frontend tests**
+- [x] **Step 2: Run all Python and frontend tests**
 
 Run:
 
@@ -432,7 +432,7 @@ npm test
 
 Expected: 0 failures.
 
-- [ ] **Step 3: Run static and production checks**
+- [x] **Step 3: Run static and production checks**
 
 Run:
 
@@ -445,11 +445,11 @@ git diff --check
 
 Expected: every command exits 0.
 
-- [ ] **Step 4: Verify live/snapshot invariants**
+- [x] **Step 4: Verify live/snapshot invariants**
 
 Run state audit and compare URL/status/category tuples between live registry and tracked snapshot. Expected: exact equality, zero invalid `Done` rows, no `Doing` rows, no excluded title in registry.
 
-- [ ] **Step 5: Commit documentation and verification markers**
+- [x] **Step 5: Commit documentation and verification markers**
 
 ```bash
 git add docs/category-crawler-knowledge.md docs/wiki-crawler.md docs/superpowers/plans/2026-07-21-durable-category-crawler-state.md

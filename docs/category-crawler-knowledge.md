@@ -6,13 +6,19 @@ checkpoint, retry, note review, merge và validation; không tạo crawler riên
 
 ## Shared URL registry
 
-File vận hành dùng chung:
+State vận hành dùng chung nằm ngoài mọi worktree, dưới Git common directory:
 
 ```text
-data/crawled/fandom-url-registry.json
-data/crawled/fandom-url-registry.lock
-data/crawled/fandom-shared-pages/<sha256-canonical-url>.json
+<git-common-dir>/category-crawler/fandom-url-registry.json
+<git-common-dir>/category-crawler/fandom-url-registry.lock
+<git-common-dir>/category-crawler/shared-pages/<sha256-canonical-url>.json
 ```
+
+Crawler resolve root bằng `git rev-parse --git-common-dir`, nên nhiều linked
+worktree của cùng repository claim chung một registry/cache. Raw payload trong
+Git common directory không được commit hoặc deploy. File
+`data/crawled/fandom-url-registry.json` chỉ là snapshot reviewable; nó không
+được dùng để lock/claim trực tiếp.
 
 Registry là danh sách URL item chuẩn hóa trên cùng origin MediaWiki. Mỗi row có:
 
@@ -24,9 +30,47 @@ Registry là danh sách URL item chuẩn hóa trên cùng origin MediaWiki. Mỗ
 - `artifactPath`: shared payload khi `Done`;
 - `lastError`: lỗi gần nhất nếu một lần crawl được trả về `New`.
 
-File JSON dành cho người vận hành đọc và review. Sidecar `.lock` dùng advisory
-file lock; mọi read-modify-write đều giữ exclusive lock và thay file bằng
-`os.replace`, nên hai Category chạy song song không thể cùng claim một URL.
+Sidecar `.lock` dùng advisory file lock; mọi read-modify-write đều giữ exclusive
+lock và thay file bằng `os.replace`, nên hai Category chạy song song không thể
+cùng claim một URL.
+
+## Operational lifecycle
+
+Khởi tạo live state đúng một lần từ tracked snapshot. Mọi row import đều thành
+`New` vì snapshot không mang raw artifact; lệnh từ chối overwrite live registry
+đã tồn tại:
+
+```bash
+python3 -m tools.crawl_wiki.state_cli init \
+  --snapshot data/crawled/fandom-url-registry.json
+```
+
+Audit là read-only. `Done` chỉ hợp lệ khi artifact là regular file nằm dưới
+live root, checksum khớp và JSON decode thành object:
+
+```bash
+python3 -m tools.crawl_wiki.state_cli audit
+```
+
+Nếu audit báo `Done` hỏng/mất, repair explicit chỉ đưa các row đó về `New`, giữ
+categories/attempts và export snapshot. Nó không tự đụng row `Doing`:
+
+```bash
+python3 -m tools.crawl_wiki.state_cli repair \
+  --snapshot data/crawled/fandom-url-registry.json
+```
+
+Sau batch thành công, export snapshot canonical để review/commit:
+
+```bash
+python3 -m tools.crawl_wiki.state_cli snapshot \
+  --snapshot data/crawled/fandom-url-registry.json
+```
+
+Tests/operator có thể override storage, nhưng bắt buộc truyền cả hai path cùng
+nhau: `--url-registry <path> --shared-page-cache <path>`. Crawler profile
+`category` audit trước discovery và hard-fail nếu có `Done` invalid; crawler
+không tự repair.
 
 ## State machine
 
@@ -80,11 +124,13 @@ request trùng trong lúc owner khác đang xử lý.
 1. Tạo một config reviewable trong `data/config/wiki-categories/<key>.json`.
 2. Khai báo URL nguồn, expected direct members, expected published members,
    namespace, game, item type, tags và mọi excluded title có lý do.
-3. Chạy category discovery. Mọi direct item URL sẽ được register vào shared URL
+3. Chạy `state_cli audit`, xử lý explicit mọi invalid state trước khi crawl.
+4. Chạy category discovery. Mọi direct item URL sẽ được register vào shared URL
    registry với category key.
-4. Chạy lại cho đến khi không còn URL `New` thuộc Category và mọi URL `Doing`
+5. Chạy lại cho đến khi không còn URL `New` thuộc Category và mọi URL `Doing`
    đã được owner hoàn tất hoặc operator review/requeue.
-5. Chạy normalizer, note review, prefab mapping, merge, export và validation.
+6. Export snapshot, rồi chạy normalizer, note review, prefab mapping, merge,
+   export và validation.
 
 Không sửa count guard hoặc exclusion list chỉ để làm crawl xanh. Mọi membership
 drift phải dừng pipeline và được review như một thay đổi dữ liệu.
