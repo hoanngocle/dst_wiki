@@ -10,10 +10,12 @@ from tools.extract.base_game import (
     DependencyRequest,
     ScriptIndex,
     classify_prefab_module,
+    classify_prefabs_in_module,
     derive_dependency_requests,
     discover_prefab_modules,
     enrich_dependencies,
     enrich_prefab_modules,
+    extract_prefab_rewards,
     verify_snapshot_archive,
 )
 from tools.extract.cli import build_parser, main
@@ -92,6 +94,137 @@ return Prefab("mystery", fn)
 '''
 
         self.assertEqual(classify_prefab_module("mystery", source), "other")
+
+    def test_classifies_each_prefab_constructor_without_module_cross_contamination(self):
+        source = '''
+local function bossfn()
+  local inst = CreateEntity()
+  inst:AddTag("epic")
+  inst:AddComponent("health")
+  inst:AddComponent("combat")
+  inst:AddComponent("locomotor")
+  return inst
+end
+local function deadfn()
+  local inst = CreateEntity()
+  inst:AddComponent("workable")
+  return inst
+end
+return Prefab("guardian", bossfn), Prefab("guardian_dead", deadfn)
+'''
+
+        self.assertEqual(
+            classify_prefabs_in_module(source),
+            {"guardian": "boss", "guardian_dead": "structure"},
+        )
+
+    def test_extracts_shared_loot_and_post_defeat_work_rewards(self):
+        source = '''
+SetSharedLootTable("guardian_dead",
+{
+  {"hat", 1.00},
+  {"glass", .66},
+  {"glass", .66},
+})
+local function onwork(inst, worker, workleft)
+  if workleft <= 0 then
+    inst.components.lootdropper:DropLoot()
+    SpawnPrefab("altar_piece")
+  end
+end
+local function deadfn()
+  local inst = CreateEntity()
+  inst:AddComponent("workable")
+  inst.components.workable:SetWorkAction(ACTIONS.MINE)
+  inst.components.workable:SetOnWorkCallback(onwork)
+  inst:AddComponent("lootdropper")
+  inst.components.lootdropper:SetChanceLootTable("guardian_dead")
+  return inst
+end
+return Prefab("guardian_dead", deadfn)
+'''
+
+        rewards = extract_prefab_rewards("guardian_dead", source)
+
+        self.assertEqual(
+            rewards,
+            [
+                {
+                    "target": "altar_piece",
+                    "chance": 1,
+                    "count": 1,
+                    "method": "mine_post_defeat",
+                    "source_prefab_id": "guardian_dead",
+                    "conditions": {"callback": "onwork"},
+                },
+                {
+                    "target": "glass",
+                    "chance": 0.66,
+                    "count": 2,
+                    "method": "mine_post_defeat",
+                    "source_prefab_id": "guardian_dead",
+                    "conditions": {"loot_table": "guardian_dead"},
+                },
+                {
+                    "target": "hat",
+                    "chance": 1,
+                    "count": 1,
+                    "method": "mine_post_defeat",
+                    "source_prefab_id": "guardian_dead",
+                    "conditions": {"loot_table": "guardian_dead"},
+                },
+            ],
+        )
+
+    def test_enrichment_uses_scoped_categories_and_materializes_shared_rewards(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            archive = self._archive(
+                root,
+                {
+                    "scripts/recipes.lua": "",
+                    "scripts/strings.lua": "",
+                    "scripts/prefabs/guardian_dead.lua": '''
+SetSharedLootTable("guardian_dead", {{"hat", 1}})
+local function onwork(inst, worker, workleft)
+  if workleft <= 0 then SpawnPrefab("altar_piece") end
+end
+local function bossfn()
+  inst:AddTag("epic")
+  return inst
+end
+local function deadfn()
+  inst:AddComponent("workable")
+  inst.components.workable:SetWorkAction(ACTIONS.MINE)
+  inst.components.workable:SetOnWorkCallback(onwork)
+  inst:AddComponent("lootdropper")
+  inst.components.lootdropper:SetChanceLootTable("guardian_dead")
+  return inst
+end
+return Prefab("guardian", bossfn), Prefab("guardian_dead", deadfn)
+''',
+                    "scripts/prefabs/hat.lua": 'return Prefab("hat", fn)',
+                    "scripts/prefabs/altar_piece.lua": 'return Prefab("altar_piece", fn)',
+                },
+            )
+
+            bundle = enrich_prefab_modules(archive, [], root / "missing.po")
+
+        entities = {
+            fact.subject.prefab_id: fact.payload["entity_type"]
+            for fact in bundle.facts
+            if fact.kind == "entity"
+        }
+        self.assertEqual(entities["guardian_dead"], "structure")
+        rewards = {
+            fact.subject.prefab_id: fact.payload
+            for fact in bundle.facts
+            if fact.kind == "acquisition"
+            and fact.payload.get("source", {}).get("prefab_id") == "guardian_dead"
+        }
+        self.assertEqual(rewards["hat"]["method"], "mine_post_defeat")
+        self.assertEqual(rewards["hat"]["conditions"]["loot_table"], "guardian_dead")
+        self.assertEqual(rewards["altar_piece"]["conditions"]["callback"], "onwork")
 
     def test_enriches_every_prefab_module_without_dependency_gate(self):
         with tempfile.TemporaryDirectory() as tmp:

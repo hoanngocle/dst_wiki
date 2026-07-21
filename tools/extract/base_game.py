@@ -418,6 +418,189 @@ def classify_prefab_module(prefab_id: str, source: str) -> str:
     return "other"
 
 
+def _reachable_function_scopes(
+    initial: FunctionScope, functions: Dict[str, FunctionScope]
+) -> List[FunctionScope]:
+    ordered: List[FunctionScope] = []
+    visited = set()
+
+    def visit(scope: FunctionScope) -> None:
+        if scope.name in visited:
+            return
+        visited.add(scope.name)
+        ordered.append(scope)
+        for call in _iter_calls(scope.source, tuple(functions)):
+            target = functions.get(call.name)
+            if target is not None:
+                visit(target)
+
+    visit(initial)
+    return ordered
+
+
+def _prefab_constructor_bindings(source: str) -> Dict[str, str]:
+    bindings: Dict[str, str] = {}
+    for call in _iter_calls(source, ("Prefab",)):
+        if len(call.arguments) < 2:
+            continue
+        prefab_id = _literal_string(call.arguments[0])
+        constructor = call.arguments[1].strip()
+        if prefab_id is None or not re.fullmatch(
+            r"[A-Za-z_][A-Za-z0-9_]*", constructor
+        ):
+            continue
+        bindings[prefab_id.lower()] = constructor
+    return bindings
+
+
+def classify_prefabs_in_module(source: str) -> Dict[str, str]:
+    """Classify named Prefab returns from their reachable constructor scopes."""
+
+    functions = _function_scopes(source)
+    result: Dict[str, str] = {}
+    for prefab_id, constructor in sorted(_prefab_constructor_bindings(source).items()):
+        initial = functions.get(constructor)
+        if initial is None:
+            continue
+        scoped_source = "\n".join(
+            scope.source for scope in _reachable_function_scopes(initial, functions)
+        )
+        result[prefab_id] = classify_prefab_module(prefab_id, scoped_source)
+    return result
+
+
+def _shared_loot_tables(source: str) -> Dict[str, List[Tuple[str, Any]]]:
+    tables: Dict[str, List[Tuple[str, Any]]] = {}
+    for call in _iter_calls(source, ("SetSharedLootTable",)):
+        if len(call.arguments) < 2:
+            continue
+        table_name = _literal_string(call.arguments[0])
+        raw_table = call.arguments[1].strip()
+        if table_name is None or not (
+            raw_table.startswith("{") and raw_table.endswith("}")
+        ):
+            continue
+        entries: List[Tuple[str, Any]] = []
+        for raw_entry in _split_top_level(raw_table[1:-1]):
+            if not (raw_entry.startswith("{") and raw_entry.endswith("}")):
+                continue
+            values = _split_top_level(raw_entry[1:-1])
+            if len(values) < 2:
+                continue
+            target = _literal_string(values[0])
+            chance = _literal_number(values[1])
+            if target is not None and chance is not None:
+                entries.append((target.lower(), chance))
+        tables[table_name.lower()] = entries
+    return tables
+
+
+def _reward_method(constructor_source: str) -> str:
+    masked = _code_mask(constructor_source)
+    return (
+        "mine_post_defeat"
+        if re.search(r"SetWorkAction\s*\(\s*ACTIONS\.MINE\s*\)", masked)
+        else "kill"
+    )
+
+
+def extract_prefab_rewards(prefab_id: str, source: str) -> List[Dict[str, Any]]:
+    """Extract deterministic static rewards for one named prefab constructor."""
+
+    normalized_id = prefab_id.lower()
+    functions = _function_scopes(source)
+    constructor_name = _prefab_constructor_bindings(source).get(normalized_id)
+    constructor = functions.get(constructor_name or "")
+    if constructor is None:
+        return []
+    constructor_scopes = _reachable_function_scopes(constructor, functions)
+    constructor_source = "\n".join(scope.source for scope in constructor_scopes)
+    method = _reward_method(constructor_source)
+    shared_tables = _shared_loot_tables(source)
+    raw_rewards: List[Dict[str, Any]] = []
+
+    def add_reward(
+        target: str,
+        chance: Any,
+        count: int,
+        conditions: Dict[str, Any],
+    ) -> None:
+        raw_rewards.append(
+            {
+                "target": target.lower(),
+                "chance": chance,
+                "count": count,
+                "method": method,
+                "source_prefab_id": normalized_id,
+                "conditions": conditions,
+            }
+        )
+
+    for scope in constructor_scopes:
+        for call in _iter_calls(
+            scope.source,
+            ("SetLoot", "AddChanceLoot", "SetChanceLootTable"),
+        ):
+            if call.name == "SetLoot" and call.arguments:
+                raw_table = call.arguments[0].strip()
+                if raw_table.startswith("{") and raw_table.endswith("}"):
+                    values = [
+                        value.lower()
+                        for entry in _split_top_level(raw_table[1:-1])
+                        for value in [_literal_string(entry)]
+                        if value is not None
+                    ]
+                    for target, count in Counter(values).items():
+                        add_reward(target, 1, count, {})
+            elif call.name == "AddChanceLoot" and len(call.arguments) >= 2:
+                target = _literal_string(call.arguments[0])
+                chance = _literal_number(call.arguments[1])
+                if target is not None and chance is not None:
+                    add_reward(target, chance, 1, {})
+            elif call.name == "SetChanceLootTable" and call.arguments:
+                table_name = _literal_string(call.arguments[0])
+                if table_name is None:
+                    continue
+                for target, chance in shared_tables.get(table_name.lower(), []):
+                    add_reward(
+                        target,
+                        chance,
+                        1,
+                        {"loot_table": table_name.lower()},
+                    )
+
+    callback_names = set()
+    for scope in constructor_scopes:
+        for call in _iter_calls(scope.source, ("SetOnWorkCallback",)):
+            if call.arguments:
+                callback = call.arguments[0].strip()
+                if callback in functions:
+                    callback_names.add(callback)
+    for callback_name in sorted(callback_names):
+        callback = functions[callback_name]
+        for call in _iter_calls(callback.source, ("SpawnPrefab",)):
+            if not call.arguments:
+                continue
+            target = _literal_string(call.arguments[0])
+            if target is not None:
+                add_reward(target, 1, 1, {"callback": callback_name})
+
+    grouped: Dict[Tuple[str, Any, str, str], Dict[str, Any]] = {}
+    for reward in raw_rewards:
+        conditions_key = json.dumps(
+            reward["conditions"], ensure_ascii=False, sort_keys=True
+        )
+        key = (
+            reward["target"],
+            reward["chance"],
+            reward["method"],
+            conditions_key,
+        )
+        current = grouped.setdefault(key, {**reward, "count": 0})
+        current["count"] += reward["count"]
+    return [grouped[key] for key in sorted(grouped, key=lambda value: (value[0], value[1], value[2], value[3]))]
+
+
 def _literal_number(expression: str) -> Optional[Any]:
     expression = expression.strip()
     if not re.fullmatch(r"[-+]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][-+]?\d+)?", expression):
@@ -1019,6 +1202,51 @@ def _reverse_acquisition_facts(
             ):
                 errors.append({**warning, "stage": "reverse_acquisition"})
             continue
+        member_source = index.read(member)
+        for reward in extract_prefab_rewards(source_prefab, member_source):
+            conditions = reward.get("conditions")
+            if not isinstance(conditions, dict) or not conditions:
+                continue
+            target = reward["target"]
+            if target not in selected:
+                continue
+            key = (
+                source_prefab,
+                target,
+                reward["method"],
+                json.dumps(conditions, sort_keys=True),
+            )
+            if key in seen:
+                continue
+            seen.add(key)
+            facts.append(
+                Fact(
+                    "acquisition",
+                    EntityKey("base_game", target),
+                    {
+                        "type": "drop",
+                        "source": {
+                            "namespace": "base_game",
+                            "prefab_id": source_prefab,
+                            "resolution": "evidence_only",
+                        },
+                        "target": {
+                            "namespace": "base_game",
+                            "prefab_id": target,
+                            "resolution": "resolved",
+                        },
+                        "chance": reward["chance"],
+                        "count": reward["count"],
+                        "method": reward["method"],
+                        "conditions": conditions,
+                        "source_member": member,
+                        "source_expression": "static reward extraction",
+                    },
+                    source_ref,
+                    0.9,
+                    f"{member}:reward:{source_prefab}:{target}",
+                )
+            )
         for scope in scopes:
             line_offset = scope.line - 1
             for call in _iter_calls(
@@ -1191,10 +1419,17 @@ def enrich_dependencies(
     }
     module_categories: Dict[str, str] = {}
     if include_all_modules:
+        scoped_categories = {
+            member: classify_prefabs_in_module(index.prefab_sources[member])
+            for member in sorted(set(index.prefab_members.values()))
+        }
         module_categories = {
-            prefab_id: classify_prefab_module(
+            prefab_id: scoped_categories[member].get(
                 prefab_id,
-                index.prefab_sources[member],
+                classify_prefab_module(
+                    prefab_id,
+                    index.prefab_sources[member],
+                ),
             )
             for prefab_id, member in index.prefab_members.items()
         }
