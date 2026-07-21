@@ -28,7 +28,7 @@
 - Consumes: all current Git refs and the untracked crawler-control document
 - Produces: a verified rollback bundle and an independent copy of the untracked document
 
-- [ ] **Step 1: Copy the untracked document**
+- [x] **Step 1: Copy the untracked document**
 
 Run:
 
@@ -38,7 +38,7 @@ cp docs/category-crawler-control.md /tmp/dst_wiki-category-crawler-control-pre-h
 
 Expected: both files have identical SHA-256 checksums.
 
-- [ ] **Step 2: Create and verify the Git bundle**
+- [x] **Step 2: Create and verify the Git bundle**
 
 Run:
 
@@ -59,7 +59,7 @@ Expected: bundle verification reports every recorded ref as complete.
 - Consumes: pre-rewrite `master` and verified backup bundle
 - Produces: rewritten `master` with no `data/crawled/**` or `data/generated/wiki.sqlite` path in its reachable history
 
-- [ ] **Step 1: Rewrite master with an index filter**
+- [x] **Step 1: Rewrite master with an index filter**
 
 Run:
 
@@ -69,7 +69,7 @@ FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch --force --index-filter 'git rm
 
 Expected: Git rewrites `master` and creates `refs/original/refs/heads/master` as an additional local fallback.
 
-- [ ] **Step 2: Verify rewritten history and preserved local data**
+- [x] **Step 2: Verify rewritten history and preserved local data**
 
 Run:
 
@@ -92,7 +92,7 @@ Expected: both history queries produce no artifact paths, `git fsck` reports no 
 - Consumes: verified rewritten `master`
 - Produces: GitHub `master` whose reachable history contains no crawler or SQLite artifacts
 
-- [ ] **Step 1: Force-push with an explicit lease**
+- [x] **Step 1: Force-push with an explicit lease**
 
 Run:
 
@@ -102,7 +102,7 @@ git push --force-with-lease=master:231fc01a8f258b45a4fd2b1ac751d771d900a03d orig
 
 Expected: GitHub accepts the rewritten `master`; the command refuses automatically if remote `master` changed after the preflight fetch.
 
-- [ ] **Step 2: Fetch and verify the remote ref**
+- [x] **Step 2: Fetch and verify the remote ref**
 
 Run:
 
@@ -114,7 +114,7 @@ git lfs ls-files origin/master
 
 Expected: remote history queries produce no artifact paths and `origin/master` equals local `master`.
 
-- [ ] **Step 3: Remove the temporary original-master ref**
+- [x] **Step 3: Remove the temporary original-master ref**
 
 Run:
 
