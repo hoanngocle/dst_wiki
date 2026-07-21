@@ -1,0 +1,20 @@
+{
+  "allowedNamespaces": [0],
+  "categoryTitle": "Category:Backpacks",
+  "excludedTitles": {
+    "Booty Bag": "non_dst:shipwrecked",
+    "Sea Sack": "non_dst:shipwrecked",
+    "Thatch Pack": "non_dst:shipwrecked",
+    "Vortex Cloak": "non_dst:hamlet"
+  },
+  "expectedDirectPages": 10,
+  "expectedPublishedPages": 6,
+  "game": "DST",
+  "itemType": "container",
+  "key": "backpacks",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Backpacks",
+  "tags": [
+    "Backpacks"
+  ]
+}

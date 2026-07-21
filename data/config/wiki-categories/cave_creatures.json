@@ -1,0 +1,19 @@
+{
+  "allowedNamespaces": [0],
+  "categoryTitle": "Category:Cave Creatures",
+  "excludedTitles": {
+    "Mobs": "non_item:overview",
+    "Shadow Creature": "non_item:overview",
+    "Spiders": "non_item:overview"
+  },
+  "expectedDirectPages": 32,
+  "expectedPublishedPages": 29,
+  "game": "DST",
+  "itemType": "mob",
+  "key": "cave_creatures",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Cave_Creatures",
+  "tags": [
+    "Cave Creatures"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "allowedNamespaces": [0],
+  "categoryTitle": "Category:Celestial Tab",
+  "excludedTitles": {},
+  "expectedDirectPages": 6,
+  "expectedPublishedPages": 6,
+  "game": "DST",
+  "itemType": "item",
+  "key": "celestial_tab",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Celestial_Tab",
+  "tags": [
+    "Celestial Tab"
+  ]
+}

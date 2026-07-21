@@ -10,6 +10,7 @@ CATEGORY_CONFIG_ROOT = Path("data/config/wiki-categories")
 SCHEMA_VERSION = 1
 _KEY_PATTERN = re.compile(r"^[a-z0-9]+(?:[-_][a-z0-9]+)*$")
 _EXCLUSION_REASONS = {
+    "non_item:overview",
     "non_dst:dont_starve",
     "non_dst:hamlet",
     "non_dst:reign_of_giants",

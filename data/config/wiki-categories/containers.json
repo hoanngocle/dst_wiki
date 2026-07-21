@@ -1,0 +1,29 @@
+{
+  "allowedNamespaces": [0],
+  "categoryTitle": "Category:Containers",
+  "excludedTitles": {
+    "Booty Bag": "non_dst:shipwrecked",
+    "Cargo Boat": "non_dst:shipwrecked",
+    "Cork Barrel": "non_dst:hamlet",
+    "Octopus Chest": "non_dst:shipwrecked",
+    "Packim Baggims": "non_dst:shipwrecked",
+    "Ro Bin": "non_dst:hamlet",
+    "Sea Chest": "non_dst:shipwrecked",
+    "Sea Sack": "non_dst:shipwrecked",
+    "Steamer Trunk": "non_dst:shipwrecked",
+    "Thatch Pack": "non_dst:shipwrecked",
+    "Trawl Net": "non_dst:shipwrecked",
+    "Vortex Cloak": "non_dst:hamlet",
+    "Wooden Thing": "non_dst:dont_starve"
+  },
+  "expectedDirectPages": 28,
+  "expectedPublishedPages": 15,
+  "game": "DST",
+  "itemType": "container",
+  "key": "containers",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Containers",
+  "tags": [
+    "Containers"
+  ]
+}

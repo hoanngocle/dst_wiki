@@ -36,6 +36,41 @@ class CategoryConfigTests(unittest.TestCase):
             Path("data/crawled/fandom-categories/animals"),
         )
 
+    def test_loads_reviewed_batch_configs(self):
+        expected = {
+            "armour_filter": (19, 19, "armor", "Armour Filter"),
+            "beefalo_foods": (5, 5, "food", "Beefalo Foods"),
+            "boss_dropped_items": (75, 63, "item", "Boss Dropped Items"),
+            "backpacks": (10, 6, "container", "Backpacks"),
+            "clothing_filter": (10, 10, "clothing", "Clothing Filter"),
+            "cave_creatures": (32, 29, "mob", "Cave Creatures"),
+            "celestial_filter": (6, 6, "item", "Celestial Filter"),
+            "celestial_tab": (6, 6, "item", "Celestial Tab"),
+            "containers": (28, 15, "container", "Containers"),
+        }
+
+        for key, values in expected.items():
+            with self.subTest(key=key):
+                direct, published, item_type, tag = values
+                config = load_category_config(key)
+                self.assertEqual(
+                    (
+                        config.expected_direct_pages,
+                        config.expected_published_pages,
+                    ),
+                    (direct, published),
+                )
+                self.assertEqual(config.item_type, item_type)
+                self.assertEqual(config.tags, (tag,))
+                self.assertEqual(config.game, "DST")
+
+        cave_exclusions = dict(
+            load_category_config("cave_creatures").excluded_titles
+        )
+        self.assertEqual(cave_exclusions["Mobs"], "non_item:overview")
+        self.assertEqual(cave_exclusions["Shadow Creature"], "non_item:overview")
+        self.assertEqual(cave_exclusions["Spiders"], "non_item:overview")
+
     def test_rejects_exclusion_count_that_does_not_match_publication_count(self):
         with tempfile.TemporaryDirectory() as tempdir:
             root = Path(tempdir)

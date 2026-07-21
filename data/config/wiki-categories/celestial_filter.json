@@ -1,0 +1,15 @@
+{
+  "allowedNamespaces": [0],
+  "categoryTitle": "Category:Celestial Filter",
+  "excludedTitles": {},
+  "expectedDirectPages": 6,
+  "expectedPublishedPages": 6,
+  "game": "DST",
+  "itemType": "item",
+  "key": "celestial_filter",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Celestial_Filter",
+  "tags": [
+    "Celestial Filter"
+  ]
+}

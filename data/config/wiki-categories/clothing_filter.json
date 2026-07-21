@@ -1,0 +1,15 @@
+{
+  "allowedNamespaces": [0],
+  "categoryTitle": "Category:Clothing Filter",
+  "excludedTitles": {},
+  "expectedDirectPages": 10,
+  "expectedPublishedPages": 10,
+  "game": "DST",
+  "itemType": "clothing",
+  "key": "clothing_filter",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Clothing_Filter",
+  "tags": [
+    "Clothing Filter"
+  ]
+}

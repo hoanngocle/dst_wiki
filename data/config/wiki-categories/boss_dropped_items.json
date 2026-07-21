@@ -1,0 +1,28 @@
+{
+  "allowedNamespaces": [0],
+  "categoryTitle": "Category:Boss Dropped Items",
+  "excludedTitles": {
+    "Booty Bag": "non_dst:shipwrecked",
+    "Chest of the Depths": "non_dst:shipwrecked",
+    "Coconut": "non_dst:shipwrecked",
+    "Eye of the Tiger Shark": "non_dst:shipwrecked",
+    "Magic Seal": "non_dst:shipwrecked",
+    "Petrifying Bones": "non_dst:hamlet",
+    "Pugalisk Skull": "non_dst:hamlet",
+    "Quacken Beak": "non_dst:shipwrecked",
+    "Seed of Ruin": "non_dst:dont_starve",
+    "Shark Gills": "non_dst:shipwrecked",
+    "Snake Bone": "non_dst:hamlet",
+    "Turbine Blades": "non_dst:shipwrecked"
+  },
+  "expectedDirectPages": 75,
+  "expectedPublishedPages": 63,
+  "game": "DST",
+  "itemType": "item",
+  "key": "boss_dropped_items",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Boss_Dropped_Items",
+  "tags": [
+    "Boss Dropped Items"
+  ]
+}

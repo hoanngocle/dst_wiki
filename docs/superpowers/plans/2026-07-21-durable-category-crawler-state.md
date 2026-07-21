@@ -262,7 +262,7 @@ Run: `python3 -m unittest tests.crawl_wiki.test_state_cli tests.crawl_wiki.test_
 
 Expected: all state/crawler CLI tests pass.
 
-- [ ] **Step 5: Commit Task 3**
+- [x] **Step 5: Commit Task 3**
 
 ```bash
 git add tools/crawl_wiki/state_cli.py tools/crawl_wiki/cli.py tests/crawl_wiki/test_state_cli.py tests/crawl_wiki/test_cli.py docs/superpowers/plans/2026-07-21-durable-category-crawler-state.md
@@ -289,7 +289,7 @@ git commit -m "feat: operate durable category crawler state"
 - Consumes: schema-version-1 Category config loader and exact live discovery counts.
 - Produces: nine configs with exact `expectedDirectPages`, `expectedPublishedPages`, tags and reviewed exclusions.
 
-- [ ] **Step 1: Write failing config tests**
+- [x] **Step 1: Write failing config tests**
 
 ```python
 def test_loads_reviewed_batch_configs(self):
@@ -312,13 +312,13 @@ def test_loads_reviewed_batch_configs(self):
     )
 ```
 
-- [ ] **Step 2: Run config tests and verify RED**
+- [x] **Step 2: Run config tests and verify RED**
 
 Run: `python3 -m unittest tests.crawl_wiki.test_category_config -v`
 
 Expected: FAIL because configs and `non_item:overview` support do not exist.
 
-- [ ] **Step 3: Implement the minimal enum/config data change**
+- [x] **Step 3: Implement the minimal enum/config data change**
 
 Add only `"non_item:overview"` to `_EXCLUSION_REASONS`. Create configs from the
 reviewed table in `docs/category-crawler-control.md`; counts must be:
@@ -331,7 +331,7 @@ celestial_filter 6/6, celestial_tab 6/6, containers 28/15.
 
 Use the exact exclusion titles/reasons already recorded in the control MD.
 
-- [ ] **Step 4: Run config and seed tests and verify GREEN**
+- [x] **Step 4: Run config and seed tests and verify GREEN**
 
 Run: `python3 -m unittest tests.crawl_wiki.test_category_config tests.crawl_wiki.test_category_seeds -v`
 

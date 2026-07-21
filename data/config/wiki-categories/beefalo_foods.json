@@ -1,0 +1,15 @@
+{
+  "allowedNamespaces": [0],
+  "categoryTitle": "Category:Beefalo Foods",
+  "excludedTitles": {},
+  "expectedDirectPages": 5,
+  "expectedPublishedPages": 5,
+  "game": "DST",
+  "itemType": "food",
+  "key": "beefalo_foods",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Beefalo_Foods",
+  "tags": [
+    "Beefalo Foods"
+  ]
+}
