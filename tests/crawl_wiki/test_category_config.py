@@ -274,6 +274,83 @@ class CategoryConfigTests(unittest.TestCase):
         ):
             self.assertNotIn(title, fuel)
 
+    def test_loads_reviewed_batch_five_configs(self):
+        expected = {
+            "gameplay": (112, 80, "content", "Gameplay"),
+            "hats": (63, 40, "item", "Hats"),
+            "healing": (192, 139, "item", "Healing"),
+            "health_loss": (51, 37, "content", "Health Loss"),
+            "hostile_creatures": (112, 72, "mob", "Hostile Creatures"),
+            "indestructible_object": (
+                87,
+                39,
+                "object",
+                "Indestructible Object",
+            ),
+            "infobox_missing_crafting_description": (
+                52,
+                52,
+                "item",
+                "Infobox missing crafting description",
+            ),
+        }
+
+        for key, values in expected.items():
+            with self.subTest(key=key):
+                direct, published, item_type, tag = values
+                config = load_category_config(key)
+                self.assertEqual(
+                    (
+                        config.expected_direct_pages,
+                        config.expected_published_pages,
+                    ),
+                    (direct, published),
+                )
+                self.assertEqual(config.item_type, item_type)
+                self.assertEqual(config.tags, (tag,))
+                self.assertEqual(config.game, "DST")
+
+        gameplay = dict(load_category_config("gameplay").excluded_titles)
+        self.assertEqual(gameplay["Adventure Mode"], "non_dst:dont_starve")
+        self.assertEqual(gameplay["Armor/DS"], "non_dst:dont_starve")
+        self.assertEqual(gameplay["Beard"], "non_item:overview")
+        self.assertNotIn("Abyss", gameplay)
+        self.assertNotIn("Armor", gameplay)
+
+        hats = dict(load_category_config("hats").excluded_titles)
+        self.assertEqual(hats["Captain Hat"], "non_dst:shipwrecked")
+        self.assertEqual(hats["Royal Crown"], "non_dst:hamlet")
+
+        healing = dict(load_category_config("healing").excluded_titles)
+        self.assertEqual(healing["Crop Seeds"], "non_item:overview")
+        self.assertEqual(healing["Dried Seaweed"], "non_dst:shipwrecked")
+        self.assertNotIn("Butter", healing)
+        self.assertNotIn("Spider Gland", healing)
+
+        health_loss = dict(load_category_config("health_loss").excluded_titles)
+        self.assertEqual(health_loss["Monster Food"], "non_item:overview")
+        self.assertEqual(health_loss["Poison"], "non_dst:shipwrecked")
+        self.assertNotIn("Charlie", health_loss)
+
+        hostile = dict(load_category_config("hostile_creatures").excluded_titles)
+        self.assertEqual(hostile["Blue Hound"], "duplicate:canonical_redirect")
+        self.assertEqual(hostile["Mobs"], "non_item:overview")
+        self.assertEqual(hostile["Ancient Herald"], "non_dst:hamlet")
+        self.assertNotIn("Hound", hostile)
+        self.assertNotIn("Suspicious Peeper", hostile)
+
+        objects = dict(load_category_config("indestructible_object").excluded_titles)
+        self.assertEqual(objects["Compromising Statue"], "non_dst:dont_starve")
+        self.assertEqual(objects["Fishbone"], "non_dst:shipwrecked")
+        self.assertEqual(objects["Wooden Thing"], "non_dst:dont_starve")
+        self.assertNotIn("Bones", objects)
+        self.assertNotIn("Eye Bone", objects)
+
+        maintenance = load_category_config(
+            "infobox_missing_crafting_description"
+        )
+        self.assertEqual(maintenance.excluded_titles, ())
+
 
 if __name__ == "__main__":
     unittest.main()

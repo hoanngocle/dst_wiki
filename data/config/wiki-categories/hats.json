@@ -1,0 +1,41 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Hats",
+  "excludedTitles": {
+    "Brain of Thought": "non_dst:shipwrecked",
+    "Captain Hat": "non_dst:shipwrecked",
+    "Cork Candle Hat": "non_dst:hamlet",
+    "Cowl": "non_dst:hamlet",
+    "Dumbrella": "non_dst:shipwrecked",
+    "Fancy Helmet": "non_dst:hamlet",
+    "Fryfocals": "non_dst:dont_starve",
+    "Gas Mask": "non_dst:hamlet",
+    "Horned Helmet": "non_dst:shipwrecked",
+    "Lucky Hat": "non_dst:shipwrecked",
+    "Mant Mask": "non_dst:hamlet",
+    "Particulate Purifier": "non_dst:shipwrecked",
+    "Pirate Hat": "non_dst:shipwrecked",
+    "Pith Hat": "non_dst:hamlet",
+    "Royal Crown": "non_dst:hamlet",
+    "Shamlet Mask": "non_dst:hamlet",
+    "Shark Tooth Crown": "non_dst:shipwrecked",
+    "Sleek Hat": "non_dst:shipwrecked",
+    "Snakeskin Hat": "non_dst:shipwrecked",
+    "Spectoggles": "non_dst:dont_starve",
+    "Swashy Hat": "non_dst:hamlet",
+    "Thunderhat": "non_dst:hamlet",
+    "Visor": "non_dst:dont_starve"
+  },
+  "expectedDirectPages": 63,
+  "expectedPublishedPages": 40,
+  "game": "DST",
+  "itemType": "item",
+  "key": "hats",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Hats",
+  "tags": [
+    "Hats"
+  ]
+}

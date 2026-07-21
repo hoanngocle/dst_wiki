@@ -1,0 +1,17 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Infobox missing crafting description",
+  "excludedTitles": {},
+  "expectedDirectPages": 52,
+  "expectedPublishedPages": 52,
+  "game": "DST",
+  "itemType": "item",
+  "key": "infobox_missing_crafting_description",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Infobox_missing_crafting_description",
+  "tags": [
+    "Infobox missing crafting description"
+  ]
+}

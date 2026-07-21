@@ -1,0 +1,32 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Health Loss",
+  "excludedTitles": {
+    "Bile-Covered Slop": "non_dst:shipwrecked",
+    "Brainy Matter": "non_dst:shipwrecked",
+    "Gummy Cake": "non_dst:hamlet",
+    "Gunpowder Barrel": "non_dst:shipwrecked",
+    "Krissure": "non_dst:shipwrecked",
+    "Maxwell's Tooth Trap": "non_dst:dont_starve",
+    "Monster Food": "non_item:overview",
+    "Nasty Spear Trap": "non_dst:hamlet",
+    "Poison": "non_dst:shipwrecked",
+    "Poison Dartfrog Legs": "non_dst:hamlet",
+    "Striking Carving": "non_dst:hamlet",
+    "Striking Statue": "non_dst:hamlet",
+    "Venom Gland": "non_dst:shipwrecked",
+    "Volcano Altar of Snackrifice": "non_dst:shipwrecked"
+  },
+  "expectedDirectPages": 51,
+  "expectedPublishedPages": 37,
+  "game": "DST",
+  "itemType": "content",
+  "key": "health_loss",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Health_Loss",
+  "tags": [
+    "Health Loss"
+  ]
+}

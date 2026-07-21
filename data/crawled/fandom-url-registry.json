@@ -70,7 +70,8 @@
       "artifactSha256": "ba4d14bebd0b9013d12c9b70d43a94604b0f582ef05643a03a3b99fd920b5e5c",
       "attempts": 1,
       "categories": [
-        "craftable_items"
+        "craftable_items",
+        "indestructible_object"
       ],
       "claimedAt": "2026-07-21T08:53:10Z",
       "completedAt": "2026-07-21T08:53:11Z",
@@ -79,6 +80,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T08:53:11Z",
       "url": "https://dontstarve.fandom.com/wiki/Abigail's_Flower",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/a64cd3f26bc709fa7f10274d6dac7fb4d033de120f598b457b6dc2cf963d1ba2.json",
+      "artifactSha256": "137ac919ba41ce8eaf638c731cdab4adfa2d1e6be48a03dc53571a7243c9e46c",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:46Z",
+      "completedAt": "2026-07-21T11:53:46Z",
+      "createdAt": "2026-07-21T11:52:25Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:46Z",
+      "url": "https://dontstarve.fandom.com/wiki/Abyss",
       "workerId": null
     },
     {
@@ -119,7 +136,9 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "from_beyond"
+        "from_beyond",
+        "gameplay",
+        "health_loss"
       ],
       "claimedAt": "2026-07-21T10:09:52Z",
       "completedAt": "2026-07-21T10:09:53Z",
@@ -238,7 +257,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "events"
+        "events",
+        "indestructible_object"
       ],
       "claimedAt": "2026-07-21T08:29:51Z",
       "completedAt": "2026-07-21T08:29:52Z",
@@ -271,7 +291,8 @@
       "attempts": 1,
       "categories": [
         "a_new_reign",
-        "dont_starve_together"
+        "dont_starve_together",
+        "indestructible_object"
       ],
       "claimedAt": "2026-07-21T09:48:56Z",
       "completedAt": "2026-07-21T09:48:57Z",
@@ -304,7 +325,8 @@
       "artifactSha256": "f2ff4414e7b5fa4fb385b5dbb421983472c693856a15842bb8e66dae4fbdec5c",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "indestructible_object"
       ],
       "claimedAt": "2026-07-21T10:04:02Z",
       "completedAt": "2026-07-21T10:04:03Z",
@@ -321,7 +343,8 @@
       "attempts": 1,
       "categories": [
         "a_new_reign",
-        "dont_starve_together"
+        "dont_starve_together",
+        "indestructible_object"
       ],
       "claimedAt": "2026-07-21T09:48:57Z",
       "completedAt": "2026-07-21T09:48:58Z",
@@ -355,7 +378,8 @@
       "attempts": 1,
       "categories": [
         "a_new_reign",
-        "dont_starve_together"
+        "dont_starve_together",
+        "indestructible_object"
       ],
       "claimedAt": "2026-07-21T09:48:48Z",
       "completedAt": "2026-07-21T09:48:49Z",
@@ -371,7 +395,8 @@
       "artifactSha256": "f2b431f48864c35abab136a0896b30e4b8902fbf6bee40cb41c4bf5c22a3b7e8",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "indestructible_object"
       ],
       "claimedAt": "2026-07-21T10:07:05Z",
       "completedAt": "2026-07-21T10:07:06Z",
@@ -387,7 +412,8 @@
       "artifactSha256": "adb7e61302f1703f5e419b50b94d03bd9930ccd901150029e996e000a8c98ac8",
       "attempts": 1,
       "categories": [
-        "boss_monsters"
+        "boss_monsters",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T09:46:17Z",
       "completedAt": "2026-07-21T09:46:18Z",
@@ -470,7 +496,8 @@
       "attempts": 1,
       "categories": [
         "a_new_reign",
-        "dont_starve_together"
+        "dont_starve_together",
+        "indestructible_object"
       ],
       "claimedAt": "2026-07-21T09:48:50Z",
       "completedAt": "2026-07-21T09:48:51Z",
@@ -487,7 +514,8 @@
       "attempts": 1,
       "categories": [
         "a_new_reign",
-        "dont_starve_together"
+        "dont_starve_together",
+        "indestructible_object"
       ],
       "claimedAt": "2026-07-21T09:48:54Z",
       "completedAt": "2026-07-21T09:48:55Z",
@@ -536,7 +564,8 @@
       "artifactSha256": "d98402f9ec95e1ddf1ed438a8169e5b319f93c8aa400d12ef90a590326e13e18",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T10:07:08Z",
       "completedAt": "2026-07-21T10:07:11Z",
@@ -553,7 +582,8 @@
       "attempts": 1,
       "categories": [
         "a_new_reign",
-        "dont_starve_together"
+        "dont_starve_together",
+        "indestructible_object"
       ],
       "claimedAt": "2026-07-21T09:48:15Z",
       "completedAt": "2026-07-21T09:48:16Z",
@@ -621,7 +651,9 @@
       "categories": [
         "a_new_reign",
         "boss_monsters",
-        "dont_starve_together"
+        "dont_starve_together",
+        "health_loss",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T09:46:24Z",
       "completedAt": "2026-07-21T09:46:25Z",
@@ -705,7 +737,8 @@
       "artifactSha256": "6441e862abfc20d00875e0f0bf5f52f9bc88cca7d61f90eed9dd663755775add",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "indestructible_object"
       ],
       "claimedAt": "2026-07-21T10:07:06Z",
       "completedAt": "2026-07-21T10:07:07Z",
@@ -734,13 +767,30 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/e4db462210226a91fc02e992c6ca9ec9411260d40a9a6730e73aea4f17aa645e.json",
+      "artifactSha256": "7190116fc4e4327273cb85cf160ce54c83d345bd451b833da4e6b86ee59b8a84",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:59Z",
+      "completedAt": "2026-07-21T11:54:00Z",
+      "createdAt": "2026-07-21T11:52:25Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:54:00Z",
+      "url": "https://dontstarve.fandom.com/wiki/Armor",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/ed3061711f3fefad6b4e2de713a15b4e65e3ff4dc874070c78526446193e9732.json",
       "artifactSha256": "d41964c603619620eaee573c7c91b2420202392db08d69ffe4b44dfc6e80a405",
       "attempts": 1,
       "categories": [
         "boss_monsters",
         "dont_starve_together",
-        "from_beyond"
+        "from_beyond",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T09:46:34Z",
       "completedAt": "2026-07-21T09:46:36Z",
@@ -808,7 +858,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:33:49Z",
       "completedAt": "2026-07-21T08:33:50Z",
@@ -825,7 +876,8 @@
       "attempts": 1,
       "categories": [
         "crock_pot_recipes",
-        "dont_starve_together"
+        "dont_starve_together",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:26:50Z",
       "completedAt": "2026-07-21T08:26:51Z",
@@ -860,7 +912,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "equipable_items"
+        "equipable_items",
+        "hats"
       ],
       "claimedAt": "2026-07-21T08:42:09Z",
       "completedAt": "2026-07-21T08:42:12Z",
@@ -983,7 +1036,8 @@
       "categories": [
         "craftable_items",
         "crock_pot_recipes",
-        "eggs"
+        "eggs",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:19:23Z",
       "completedAt": "2026-07-21T08:19:24Z",
@@ -1017,7 +1071,8 @@
       "categories": [
         "dont_starve_together",
         "food",
-        "fruits"
+        "fruits",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:33:32Z",
       "completedAt": "2026-07-21T08:33:33Z",
@@ -1052,7 +1107,8 @@
         "cooling",
         "crock_pot_recipes",
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:18:16Z",
       "completedAt": "2026-07-21T08:18:17Z",
@@ -1070,7 +1126,8 @@
       "categories": [
         "crock_pot_recipes",
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:27:13Z",
       "completedAt": "2026-07-21T08:27:45Z",
@@ -1088,7 +1145,8 @@
       "categories": [
         "crock_pot_recipes",
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:26:58Z",
       "completedAt": "2026-07-21T08:26:59Z",
@@ -1122,7 +1180,8 @@
       "categories": [
         "crock_pot_recipes",
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:26:57Z",
       "completedAt": "2026-07-21T08:26:58Z",
@@ -1156,7 +1215,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "equipable_items"
+        "equipable_items",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:38:37Z",
       "completedAt": "2026-07-21T08:38:38Z",
@@ -1172,7 +1232,8 @@
       "artifactSha256": "f5b26bd3a3b34d5ac6841c9f073579b44188a461b3cbddcfc8058772d547ddf0",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "indestructible_object"
       ],
       "claimedAt": "2026-07-21T10:03:48Z",
       "completedAt": "2026-07-21T10:03:50Z",
@@ -1207,7 +1268,8 @@
       "attempts": 1,
       "categories": [
         "cave_creatures",
-        "flying_creatures"
+        "flying_creatures",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T07:39:08Z",
       "completedAt": "2026-07-21T07:39:10Z",
@@ -1223,7 +1285,8 @@
       "artifactSha256": "d06ec24a3b4cd8da5b9378279bdd1c80c5f12443dc7bc5ebe3be6a0df33a2e5e",
       "attempts": 1,
       "categories": [
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:33:30Z",
       "completedAt": "2026-07-21T08:33:32Z",
@@ -1260,7 +1323,8 @@
         "craftable_items",
         "dont_starve_together",
         "equipable_items",
-        "fight_tab"
+        "fight_tab",
+        "hats"
       ],
       "claimedAt": "2026-07-21T07:28:29Z",
       "completedAt": "2026-07-21T07:28:31Z",
@@ -1364,7 +1428,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "fuel"
+        "fuel",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T08:52:30Z",
       "completedAt": "2026-07-21T08:52:31Z",
@@ -1415,7 +1480,8 @@
       "attempts": 1,
       "categories": [
         "boss_monsters",
-        "dont_starve_together"
+        "dont_starve_together",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T09:46:20Z",
       "completedAt": "2026-07-21T09:46:21Z",
@@ -1432,7 +1498,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "fuel"
+        "fuel",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:53:08Z",
       "completedAt": "2026-07-21T08:53:10Z",
@@ -1449,7 +1516,8 @@
       "attempts": 2,
       "categories": [
         "animals",
-        "flying_creatures"
+        "flying_creatures",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T09:43:31Z",
       "completedAt": "2026-07-21T09:43:32Z",
@@ -1503,7 +1571,8 @@
         "a_new_reign",
         "boss_monsters",
         "dont_starve_together",
-        "flying_creatures"
+        "flying_creatures",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T09:46:22Z",
       "completedAt": "2026-07-21T09:46:24Z",
@@ -1522,7 +1591,8 @@
         "a_new_reign",
         "boss_dropped_items",
         "dont_starve_together",
-        "equipable_items"
+        "equipable_items",
+        "hats"
       ],
       "claimedAt": "2026-07-21T07:36:45Z",
       "completedAt": "2026-07-21T07:36:46Z",
@@ -1539,7 +1609,8 @@
       "attempts": 2,
       "categories": [
         "animals",
-        "followers"
+        "followers",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T09:43:32Z",
       "completedAt": "2026-07-21T09:43:34Z",
@@ -1610,7 +1681,8 @@
       "categories": [
         "clothing_filter",
         "craftable_items",
-        "equipable_items"
+        "equipable_items",
+        "hats"
       ],
       "claimedAt": "2026-07-21T07:30:42Z",
       "completedAt": "2026-07-21T07:30:43Z",
@@ -1661,7 +1733,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "fuel"
+        "fuel",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T08:52:31Z",
       "completedAt": "2026-07-21T08:52:32Z",
@@ -1679,7 +1752,8 @@
       "categories": [
         "crock_pot_recipes",
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:27:03Z",
       "completedAt": "2026-07-21T08:27:04Z",
@@ -1697,7 +1771,8 @@
       "categories": [
         "armour_filter",
         "craftable_items",
-        "equipable_items"
+        "equipable_items",
+        "hats"
       ],
       "claimedAt": "2026-07-21T07:28:17Z",
       "completedAt": "2026-07-21T07:28:19Z",
@@ -1764,7 +1839,8 @@
       "categories": [
         "crafting_stations",
         "dont_starve_together",
-        "from_beyond"
+        "from_beyond",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T08:19:06Z",
       "completedAt": "2026-07-21T08:19:07Z",
@@ -1797,7 +1873,8 @@
       "artifactSha256": "114e737b3a3ec1bbc1ad5e601859842cc9ee5b230091439acd6d0ee232389f74",
       "attempts": 1,
       "categories": [
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:33:24Z",
       "completedAt": "2026-07-21T08:33:25Z",
@@ -1875,12 +1952,29 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/cfdee48ba2764b9ff02188629c053e06e9b86f39357cdc77407f600dd88c91f1.json",
+      "artifactSha256": "0a4ee1ca55badb1453715a41d61bdd99e50a50296f6fe2f3591f488d26292904",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:02Z",
+      "completedAt": "2026-07-21T11:53:03Z",
+      "createdAt": "2026-07-21T11:52:25Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:03Z",
+      "url": "https://dontstarve.fandom.com/wiki/Biomes",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/1f1884d5e4a97ebe059e9864702b121cf192accb3f34fbc4792747c3de19866f.json",
       "artifactSha256": "6199a828ac777a81472111385e48c3ec26c8ee2ed457a0eba4a0586ca323d96c",
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:33:36Z",
       "completedAt": "2026-07-21T08:33:37Z",
@@ -1912,7 +2006,8 @@
       "artifactSha256": "dd05ac8fcd6e597640bfabbe2aac3201cb65778552f5e0f009e475bb109dc457",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T10:03:07Z",
       "completedAt": "2026-07-21T10:03:10Z",
@@ -1997,7 +2092,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:59:08Z",
       "completedAt": "2026-07-21T08:59:11Z",
@@ -2014,7 +2110,9 @@
       "attempts": 1,
       "categories": [
         "boss_dropped_items",
-        "food"
+        "food",
+        "healing",
+        "health_loss"
       ],
       "claimedAt": "2026-07-21T07:36:19Z",
       "completedAt": "2026-07-21T07:36:20Z",
@@ -2031,7 +2129,8 @@
       "attempts": 1,
       "categories": [
         "boss_dropped_items",
-        "craftable_items"
+        "craftable_items",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T07:36:10Z",
       "completedAt": "2026-07-21T07:36:12Z",
@@ -2052,7 +2151,8 @@
         "boss_dropped_items",
         "craftable_items",
         "dont_starve_together",
-        "fuel"
+        "fuel",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T07:36:12Z",
       "completedAt": "2026-07-21T07:36:13Z",
@@ -2086,7 +2186,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "events"
+        "events",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T08:29:49Z",
       "completedAt": "2026-07-21T08:29:50Z",
@@ -2191,7 +2292,8 @@
         "a_new_reign",
         "boss_dropped_items",
         "dont_starve_together",
-        "equipable_items"
+        "equipable_items",
+        "hats"
       ],
       "claimedAt": "2026-07-21T07:36:51Z",
       "completedAt": "2026-07-21T07:36:52Z",
@@ -2207,7 +2309,8 @@
       "artifactSha256": "0b11113c5d96f5dfb248fb6c3f78278a54d37b71eca2145dd120f8b654876b95",
       "attempts": 1,
       "categories": [
-        "craftable_items"
+        "craftable_items",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T08:53:28Z",
       "completedAt": "2026-07-21T08:53:30Z",
@@ -2216,6 +2319,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T08:53:30Z",
       "url": "https://dontstarve.fandom.com/wiki/Bone_Shards",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/cb4afc4cd39af65f632517eba64e97976c99c0bb3c867c82708e32abc60eb5fd.json",
+      "artifactSha256": "d773184ebccdbef6d2402f12737b1050d1a2717a07fef31e9fe7033f5c0caa94",
+      "attempts": 1,
+      "categories": [
+        "indestructible_object"
+      ],
+      "claimedAt": "2026-07-21T12:01:00Z",
+      "completedAt": "2026-07-21T12:01:01Z",
+      "createdAt": "2026-07-21T12:00:51Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T12:01:01Z",
+      "url": "https://dontstarve.fandom.com/wiki/Bones",
       "workerId": null
     },
     {
@@ -2259,7 +2378,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:53:32Z",
       "completedAt": "2026-07-21T08:53:37Z",
@@ -2344,7 +2464,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "health_loss"
       ],
       "claimedAt": "2026-07-21T08:54:54Z",
       "completedAt": "2026-07-21T08:54:58Z",
@@ -2380,7 +2501,8 @@
       "categories": [
         "crock_pot_recipes",
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:27:46Z",
       "completedAt": "2026-07-21T08:27:47Z",
@@ -2425,13 +2547,31 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/022ccddf96542a40571d1e402937afbacade6fa63ea38be1582d42dcac55fd89.json",
+      "artifactSha256": "f637e86e3106878d6bd61115ca87fe7f66738e7444da6d2bb7ab285f4b4fdb83",
+      "attempts": 1,
+      "categories": [
+        "gameplay",
+        "indestructible_object"
+      ],
+      "claimedAt": "2026-07-21T11:53:12Z",
+      "completedAt": "2026-07-21T11:53:14Z",
+      "createdAt": "2026-07-21T11:52:25Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:14Z",
+      "url": "https://dontstarve.fandom.com/wiki/Bridge",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/60f166fa603e3171fa47542515bcdd3ae6cffc21ca35e7bee2de7db18cebc1c4.json",
       "artifactSha256": "a886716498ff6639b23ec8a225860202a5892ba3b82a99e325871d74cf2b1c7d",
       "attempts": 2,
       "categories": [
         "animals",
         "dont_starve_together",
-        "from_beyond"
+        "from_beyond",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T09:44:07Z",
       "completedAt": "2026-07-21T09:44:09Z",
@@ -2450,7 +2590,8 @@
         "armour_filter",
         "craftable_items",
         "dont_starve_together",
-        "from_beyond"
+        "from_beyond",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T07:28:54Z",
       "completedAt": "2026-07-21T07:28:58Z",
@@ -2468,7 +2609,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "from_beyond"
+        "from_beyond",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T08:57:55Z",
       "completedAt": "2026-07-21T08:57:58Z",
@@ -2504,7 +2646,8 @@
         "armour_filter",
         "craftable_items",
         "dont_starve_together",
-        "from_beyond"
+        "from_beyond",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T07:28:50Z",
       "completedAt": "2026-07-21T07:28:54Z",
@@ -2538,7 +2681,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "from_beyond"
+        "from_beyond",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T08:57:45Z",
       "completedAt": "2026-07-21T08:57:49Z",
@@ -2556,7 +2700,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "from_beyond"
+        "from_beyond",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T08:57:59Z",
       "completedAt": "2026-07-21T08:58:03Z",
@@ -2574,7 +2719,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "from_beyond"
+        "from_beyond",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T08:57:51Z",
       "completedAt": "2026-07-21T08:57:55Z",
@@ -2592,7 +2738,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "from_beyond"
+        "from_beyond",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T08:57:49Z",
       "completedAt": "2026-07-21T08:57:51Z",
@@ -2613,7 +2760,8 @@
         "craftable_structures",
         "crafting_stations",
         "dont_starve_together",
-        "from_beyond"
+        "from_beyond",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T07:31:46Z",
       "completedAt": "2026-07-21T07:31:50Z",
@@ -2791,7 +2939,8 @@
         "containers",
         "craftable_items",
         "dont_starve_together",
-        "fuel"
+        "fuel",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T07:34:38Z",
       "completedAt": "2026-07-21T07:34:39Z",
@@ -2809,7 +2958,8 @@
       "categories": [
         "crock_pot_recipes",
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:27:12Z",
       "completedAt": "2026-07-21T08:27:13Z",
@@ -2879,7 +3029,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "equipable_items"
+        "equipable_items",
+        "hats"
       ],
       "claimedAt": "2026-07-21T08:38:09Z",
       "completedAt": "2026-07-21T08:38:13Z",
@@ -2891,12 +3042,29 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/cadda6425a52d5b3dfa27ff69e645ad5242b08bb37e06f21eb3ff2178fdae6c2.json",
+      "artifactSha256": "da2805952c91786166b123f73b5186e20330ed3142a7d3f3c0bb85b363895abb",
+      "attempts": 1,
+      "categories": [
+        "healing"
+      ],
+      "claimedAt": "2026-07-21T11:55:25Z",
+      "completedAt": "2026-07-21T11:55:27Z",
+      "createdAt": "2026-07-21T11:55:21Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:55:27Z",
+      "url": "https://dontstarve.fandom.com/wiki/Butter",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/6221e55688056fac4aa1fdaa05f5bbdab81023590a31f46a67cb244d063037ff.json",
       "artifactSha256": "ed72200a12bb26a21a3eee9af3e0a214b1a9c75e3e91c4502aaffdafef1d7510",
       "attempts": 1,
       "categories": [
         "crock_pot_recipes",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:26:24Z",
       "completedAt": "2026-07-21T08:26:25Z",
@@ -2922,6 +3090,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T09:43:39Z",
       "url": "https://dontstarve.fandom.com/wiki/Butterfly",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/3675ebd64bde4cb1dbb5eee441f834487123d738ec802752e9819601f09def73.json",
+      "artifactSha256": "7652c51770fcbdcf037a0e8cc257f7c8ab54a17406194fef5ae73875bb461d67",
+      "attempts": 1,
+      "categories": [
+        "healing"
+      ],
+      "claimedAt": "2026-07-21T11:55:27Z",
+      "completedAt": "2026-07-21T11:55:29Z",
+      "createdAt": "2026-07-21T11:55:21Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:55:29Z",
+      "url": "https://dontstarve.fandom.com/wiki/Butterfly_Wings",
       "workerId": null
     },
     {
@@ -2982,7 +3166,9 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "food"
+        "food",
+        "healing",
+        "health_loss"
       ],
       "claimedAt": "2026-07-21T08:33:38Z",
       "completedAt": "2026-07-21T08:33:39Z",
@@ -2999,7 +3185,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:33:40Z",
       "completedAt": "2026-07-21T08:33:41Z",
@@ -3033,7 +3220,8 @@
       "categories": [
         "crock_pot_recipes",
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:26:47Z",
       "completedAt": "2026-07-21T08:26:48Z",
@@ -3102,7 +3290,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "equipable_items"
+        "equipable_items",
+        "hats"
       ],
       "claimedAt": "2026-07-21T08:42:17Z",
       "completedAt": "2026-07-21T08:42:18Z",
@@ -3170,7 +3359,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:33:21Z",
       "completedAt": "2026-07-21T08:33:23Z",
@@ -3223,7 +3413,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "equipable_items"
+        "equipable_items",
+        "hats"
       ],
       "claimedAt": "2026-07-21T08:39:28Z",
       "completedAt": "2026-07-21T08:39:32Z",
@@ -3274,7 +3465,8 @@
       "attempts": 1,
       "categories": [
         "a_new_reign",
-        "dont_starve_together"
+        "dont_starve_together",
+        "indestructible_object"
       ],
       "claimedAt": "2026-07-21T09:48:53Z",
       "completedAt": "2026-07-21T09:48:54Z",
@@ -3283,6 +3475,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T09:48:54Z",
       "url": "https://dontstarve.fandom.com/wiki/Cave_Hole",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/48a57c7a9211e12341caf39e15e36a85fc6fe5b7d000cd4fbf99ef6c257aa433.json",
+      "artifactSha256": "bf42c13f002465a4e3db194fe01c86e999793628bb26b942196f5647ae96ee92",
+      "attempts": 1,
+      "categories": [
+        "indestructible_object"
+      ],
+      "claimedAt": "2026-07-21T12:01:03Z",
+      "completedAt": "2026-07-21T12:01:04Z",
+      "createdAt": "2026-07-21T12:00:51Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T12:01:04Z",
+      "url": "https://dontstarve.fandom.com/wiki/Cave_Light",
       "workerId": null
     },
     {
@@ -3309,7 +3517,8 @@
       "attempts": 1,
       "categories": [
         "cave_creatures",
-        "followers"
+        "followers",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T07:39:07Z",
       "completedAt": "2026-07-21T07:39:08Z",
@@ -3318,6 +3527,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T07:39:08Z",
       "url": "https://dontstarve.fandom.com/wiki/Cave_Spider",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/de3aa4dea5e754911a346b4e4b1aced9d23bbac1abd21cdeb09ab0be5a5e13a3.json",
+      "artifactSha256": "a1f029a0095b4b226f542aba55a9a67bf62eeb2aae5040b10067585df938bc38",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:35Z",
+      "completedAt": "2026-07-21T11:53:36Z",
+      "createdAt": "2026-07-21T11:52:25Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:36Z",
+      "url": "https://dontstarve.fandom.com/wiki/Caves",
       "workerId": null
     },
     {
@@ -3342,7 +3567,8 @@
       "attempts": 1,
       "categories": [
         "boss_monsters",
-        "dont_starve_together"
+        "dont_starve_together",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T09:46:28Z",
       "completedAt": "2026-07-21T09:46:29Z",
@@ -3408,7 +3634,8 @@
       "attempts": 1,
       "categories": [
         "craftable_structures",
-        "dont_starve_together"
+        "dont_starve_together",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T08:47:24Z",
       "completedAt": "2026-07-21T08:47:25Z",
@@ -3427,7 +3654,8 @@
         "cooling",
         "crock_pot_recipes",
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:18:15Z",
       "completedAt": "2026-07-21T08:18:16Z",
@@ -3453,6 +3681,38 @@
       "status": "Done",
       "updatedAt": "2026-07-21T10:10:13Z",
       "url": "https://dontstarve.fandom.com/wiki/Chairs",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/94fbf4ebe6696c5391222eb0fec1d1cd3e9c66cd37bd975e1657d5401be990dc.json",
+      "artifactSha256": "0fe66bb3264a7676b9b31b0c48d30c29c454732115497befe71d50e76db34c27",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:23Z",
+      "completedAt": "2026-07-21T11:53:24Z",
+      "createdAt": "2026-07-21T11:52:25Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:24Z",
+      "url": "https://dontstarve.fandom.com/wiki/Character_quotes",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/c17699e682b590411bb4376549e31a760077ab7897d8b63af8c0e655a2081049.json",
+      "artifactSha256": "ebe1cb447836d259da8fd9c7da77f7760e165904dde6a260e850f1619ac7e61d",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:52:28Z",
+      "completedAt": "2026-07-21T11:52:29Z",
+      "createdAt": "2026-07-21T11:52:25Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:52:29Z",
+      "url": "https://dontstarve.fandom.com/wiki/Characters",
       "workerId": null
     },
     {
@@ -3486,6 +3746,23 @@
       "status": "Done",
       "updatedAt": "2026-07-21T10:07:42Z",
       "url": "https://dontstarve.fandom.com/wiki/Charged_Glassy_Rock",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/5909b29945689a119592e2339d36e5d4b9ffcc695b9c9ec4c5baec6f7ddea980.json",
+      "artifactSha256": "3ccb15719e24df1c3bc09c4a6368804942e8f56cb3fa0e9dc76eaa4a1b132f9a",
+      "attempts": 1,
+      "categories": [
+        "gameplay",
+        "health_loss"
+      ],
+      "claimedAt": "2026-07-21T11:52:29Z",
+      "completedAt": "2026-07-21T11:52:31Z",
+      "createdAt": "2026-07-21T11:52:25Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:52:31Z",
+      "url": "https://dontstarve.fandom.com/wiki/Charlie",
       "workerId": null
     },
     {
@@ -3550,7 +3827,8 @@
       "categories": [
         "containers",
         "craftable_structures",
-        "dont_starve_together"
+        "dont_starve_together",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T07:34:16Z",
       "completedAt": "2026-07-21T07:34:19Z",
@@ -3653,7 +3931,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "food_gardening_filter"
+        "food_gardening_filter",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T10:09:01Z",
       "completedAt": "2026-07-21T10:09:03Z",
@@ -3690,7 +3969,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "equipable_items"
+        "equipable_items",
+        "hats"
       ],
       "claimedAt": "2026-07-21T08:40:05Z",
       "completedAt": "2026-07-21T08:40:09Z",
@@ -3741,7 +4021,8 @@
       "categories": [
         "cave_creatures",
         "clockwork_monsters",
-        "followers"
+        "followers",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T07:39:06Z",
       "completedAt": "2026-07-21T07:39:07Z",
@@ -3758,7 +4039,8 @@
       "attempts": 1,
       "categories": [
         "clockwork_monsters",
-        "followers"
+        "followers",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T09:45:19Z",
       "completedAt": "2026-07-21T09:45:21Z",
@@ -3775,7 +4057,8 @@
       "attempts": 1,
       "categories": [
         "clockwork_monsters",
-        "followers"
+        "followers",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T09:45:21Z",
       "completedAt": "2026-07-21T09:45:22Z",
@@ -3784,6 +4067,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T09:45:22Z",
       "url": "https://dontstarve.fandom.com/wiki/Clockwork_Rook",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/15811a97920b180ecd520b8a47669aa70a8ac10d8b882c7ff18a265e42177156.json",
+      "artifactSha256": "9534371fffc79fe4fdd44214b92bff4fc44d78f4570b811533d47f0346264a40",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:50Z",
+      "completedAt": "2026-07-21T11:53:51Z",
+      "createdAt": "2026-07-21T11:52:25Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:51Z",
+      "url": "https://dontstarve.fandom.com/wiki/Clothes",
       "workerId": null
     },
     {
@@ -3882,7 +4181,8 @@
         "craftable_items",
         "crafting_stations",
         "followers",
-        "fuel"
+        "fuel",
+        "health_loss"
       ],
       "claimedAt": "2026-07-21T08:18:56Z",
       "completedAt": "2026-07-21T08:18:58Z",
@@ -3940,6 +4240,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T08:55:38Z",
       "url": "https://dontstarve.fandom.com/wiki/Collected_Dust",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/d172397a7dd0bc78082efa027115217dc7babb1a91ce692e72804f274fe7b0f4.json",
+      "artifactSha256": "ee59b5dcf68ca8b278675a44fa47c76c0101336cb8c3bdd868a0bd2b798d5c33",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:57Z",
+      "completedAt": "2026-07-21T11:53:59Z",
+      "createdAt": "2026-07-21T11:52:25Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:59Z",
+      "url": "https://dontstarve.fandom.com/wiki/Combat",
       "workerId": null
     },
     {
@@ -4036,7 +4352,8 @@
         "dont_starve_together",
         "fertilizer",
         "food_gardening_filter",
-        "fuel"
+        "fuel",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:19:48Z",
       "completedAt": "2026-07-21T08:19:49Z",
@@ -4066,11 +4383,28 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/58ffb15f32f27565f879acb72c60a1910177b8ee1ae59bd81138c2d21db4b88b.json",
+      "artifactSha256": "63273717b932079af80d2ea9b7c4aa8d002bff397bcb858b42009890620e6100",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:42Z",
+      "completedAt": "2026-07-21T11:53:43Z",
+      "createdAt": "2026-07-21T11:52:25Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:43Z",
+      "url": "https://dontstarve.fandom.com/wiki/Console/Commands",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/7e69e79d420b4cc5735feead1756199545076dc996f59eca198858e95077690c.json",
       "artifactSha256": "7fbd8b973c2efe004e38c2c94d381cf0925d1d41d0b1586965e77a0e157e1356",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "gameplay"
       ],
       "claimedAt": "2026-07-21T10:03:18Z",
       "completedAt": "2026-07-21T10:03:19Z",
@@ -4158,7 +4492,8 @@
         "armour_filter",
         "craftable_items",
         "dont_starve_together",
-        "equipable_items"
+        "equipable_items",
+        "hats"
       ],
       "claimedAt": "2026-07-21T07:28:40Z",
       "completedAt": "2026-07-21T07:28:42Z",
@@ -4186,6 +4521,22 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/4cdc86f8e8ec9eb5c79514df3a13b3ac88740f98315ebc65dd0dec823781a273.json",
+      "artifactSha256": "2d8f09953eaf254c1163af396b316b308d6d737c5b0d01701c915978516cdbcb",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:03Z",
+      "completedAt": "2026-07-21T11:53:04Z",
+      "createdAt": "2026-07-21T11:52:25Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:04Z",
+      "url": "https://dontstarve.fandom.com/wiki/Cooking",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/78fd15a3ac72dfb6cb87a506df910ee0671871ca3dbf373c321c88fb77a70bd0.json",
       "artifactSha256": "3bd7238c66b7a2b36162eda80d5cf738d40c8da0f447e4c143e95582c1d5bb6b",
       "attempts": 1,
@@ -4206,7 +4557,8 @@
       "artifactSha256": "a629c420160c2978d93790198635dcdcafdaaa9c891c1854e62bcf1505a12e71",
       "attempts": 1,
       "categories": [
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:33:19Z",
       "completedAt": "2026-07-21T08:33:20Z",
@@ -4238,7 +4590,8 @@
       "artifactSha256": "4fe71d613be3f25d3d8547118dfffbf3bc6a8d274b5bc746e15e62a3872c45c0",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T10:11:22Z",
       "completedAt": "2026-07-21T10:11:25Z",
@@ -4318,6 +4671,22 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/36a40345cfbf81ec44ba024e27bd3fa0031d04e5a59fd4c80b5bd35b6a350aca.json",
+      "artifactSha256": "a79b59e49a36f4dd3bd7095ad604c2a824ef5987091e12fb8bc3fbd64f2259e8",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:15Z",
+      "completedAt": "2026-07-21T11:53:17Z",
+      "createdAt": "2026-07-21T11:52:25Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:17Z",
+      "url": "https://dontstarve.fandom.com/wiki/Crafting",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/37b88e5332ce8e6a78ee14fc5176055164bf3af9408916a13e5a1a0b7f3a3f89.json",
       "artifactSha256": "f688aa732acc4a521f9863cf79c199c7730f89fbe250980226b5e01af9884335",
       "attempts": 1,
@@ -4359,7 +4728,8 @@
       "categories": [
         "crock_pot_recipes",
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:26:52Z",
       "completedAt": "2026-07-21T08:26:53Z",
@@ -4429,7 +4799,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "events"
+        "events",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T08:29:48Z",
       "completedAt": "2026-07-21T08:29:49Z",
@@ -4480,7 +4851,8 @@
       "categories": [
         "boss_monsters",
         "dont_starve_together",
-        "from_beyond"
+        "from_beyond",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T09:46:32Z",
       "completedAt": "2026-07-21T09:46:33Z",
@@ -4613,7 +4985,8 @@
       "attempts": 1,
       "categories": [
         "clockwork_monsters",
-        "followers"
+        "followers",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T09:45:25Z",
       "completedAt": "2026-07-21T09:45:27Z",
@@ -4630,7 +5003,8 @@
       "attempts": 1,
       "categories": [
         "clockwork_monsters",
-        "followers"
+        "followers",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T09:45:27Z",
       "completedAt": "2026-07-21T09:45:29Z",
@@ -4647,7 +5021,8 @@
       "attempts": 1,
       "categories": [
         "clockwork_monsters",
-        "followers"
+        "followers",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T09:45:22Z",
       "completedAt": "2026-07-21T09:45:25Z",
@@ -4664,7 +5039,8 @@
       "attempts": 1,
       "categories": [
         "cave_creatures",
-        "followers"
+        "followers",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T07:39:14Z",
       "completedAt": "2026-07-21T07:39:17Z",
@@ -4745,6 +5121,22 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/1e2182d04a75a33dbacea255eed8296fe3b26346a5370486149b41c7a2a23e51.json",
+      "artifactSha256": "b3bf23656da37ab7f1afe25d7a6e83f0489b055b9e93ac3db86cea417c0d5ca8",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:08Z",
+      "completedAt": "2026-07-21T11:53:09Z",
+      "createdAt": "2026-07-21T11:52:25Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:09Z",
+      "url": "https://dontstarve.fandom.com/wiki/Day-Night_Cycle",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/c225c33292b7dd7fc8f29ddea7dc64f44c6db3a6fb817672faaebaad332a6960.json",
       "artifactSha256": "5060fddb99a5780b466b3631b08febb35253fa3f991463e0b5c42465d1bb6187",
       "attempts": 1,
@@ -4759,6 +5151,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T10:09:38Z",
       "url": "https://dontstarve.fandom.com/wiki/Deadly_Brightshade",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/607904f606d73835f8dff67536cf80968279efa60c715baaa4419fd64c699cb7.json",
+      "artifactSha256": "e322766c9309940f34800500af214cf3ca47c1ae88d867c4a30f4a828ebfa1f4",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:11Z",
+      "completedAt": "2026-07-21T11:53:12Z",
+      "createdAt": "2026-07-21T11:52:25Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:12Z",
+      "url": "https://dontstarve.fandom.com/wiki/Death",
       "workerId": null
     },
     {
@@ -4870,7 +5278,8 @@
       "artifactSha256": "a3d3ea38868a2e66a556d430d0c057b645fa4a7de97e21acc9a7c548fb9164f7",
       "attempts": 1,
       "categories": [
-        "boss_monsters"
+        "boss_monsters",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T09:46:15Z",
       "completedAt": "2026-07-21T09:46:17Z",
@@ -4887,7 +5296,8 @@
       "attempts": 1,
       "categories": [
         "boss_dropped_items",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T07:36:09Z",
       "completedAt": "2026-07-21T07:36:10Z",
@@ -4920,7 +5330,8 @@
       "artifactSha256": "88d6e9dcc5add73e0674bb3c9cdd65905eeff9fbdb6924ac2b8037770660a54a",
       "attempts": 1,
       "categories": [
-        "cave_creatures"
+        "cave_creatures",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T07:39:17Z",
       "completedAt": "2026-07-21T07:39:18Z",
@@ -4988,7 +5399,8 @@
       "artifactSha256": "54491b173d5a6ef30c8f5b4efad009b781f9f0c409242d71b57ed939697b28c1",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "gameplay"
       ],
       "claimedAt": "2026-07-21T10:03:32Z",
       "completedAt": "2026-07-21T10:03:33Z",
@@ -5089,7 +5501,8 @@
       "artifactSha256": "0182656472cff49f0c9325ceea4accb63e10f7d4bd1eb06cbb0e57639add3f79",
       "attempts": 1,
       "categories": [
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:33:15Z",
       "completedAt": "2026-07-21T08:33:17Z",
@@ -5107,7 +5520,8 @@
       "categories": [
         "boss_monsters",
         "dont_starve_together",
-        "flying_creatures"
+        "flying_creatures",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T09:46:18Z",
       "completedAt": "2026-07-21T09:46:19Z",
@@ -5125,7 +5539,8 @@
       "categories": [
         "crock_pot_recipes",
         "food",
-        "fruits"
+        "fruits",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:26:19Z",
       "completedAt": "2026-07-21T08:26:20Z",
@@ -5178,7 +5593,8 @@
       "categories": [
         "armour_filter",
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T07:28:46Z",
       "completedAt": "2026-07-21T07:28:50Z",
@@ -5196,7 +5612,8 @@
       "categories": [
         "armour_filter",
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T07:28:42Z",
       "completedAt": "2026-07-21T07:28:46Z",
@@ -5246,7 +5663,8 @@
       "artifactSha256": "fb8a9897ce501aedfba6e982f546842e502d938a3370c48eabd63474bc3c864f",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "healing"
       ],
       "claimedAt": "2026-07-21T10:05:15Z",
       "completedAt": "2026-07-21T10:05:16Z",
@@ -5296,7 +5714,8 @@
       "attempts": 1,
       "categories": [
         "boss_dropped_items",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T07:35:21Z",
       "completedAt": "2026-07-21T07:35:22Z",
@@ -5330,7 +5749,8 @@
       "artifactSha256": "4b50da96537898eaa0a48ecf8144302423e7f70b5589efcb8adc4084e3d022f5",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T10:08:07Z",
       "completedAt": "2026-07-21T10:08:09Z",
@@ -5342,11 +5762,28 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/6b0e461c455b35e8917b811163d7b6afa6dadcc576d96f348518fff5e1167403.json",
+      "artifactSha256": "c82f8b102b14ef7cf7f34907a3f0b423183ae36f4d7c38dcfa4d7a347d03c577",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:33Z",
+      "completedAt": "2026-07-21T11:53:35Z",
+      "createdAt": "2026-07-21T11:52:25Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:35Z",
+      "url": "https://dontstarve.fandom.com/wiki/Durability",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/823284f292d71bec43e1c95916ea92e6f5c2c4f1a620011363cacf51f830d460.json",
       "artifactSha256": "6f2c39252d03e6d5c30b903bf7b203de70650c283c060d02aea89b0cf881e7f1",
       "attempts": 1,
       "categories": [
-        "food"
+        "food",
+        "health_loss"
       ],
       "claimedAt": "2026-07-21T08:33:23Z",
       "completedAt": "2026-07-21T08:33:24Z",
@@ -5376,6 +5813,22 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/b0d59f8fd30ba820c5e9f37727419a4925f80c38c8ae44bf2b40ec52c9d808c1.json",
+      "artifactSha256": "398440c08a664a058c6c79fc94e58efd345357a617bfa914403c117462644bb7",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:36Z",
+      "completedAt": "2026-07-21T11:53:38Z",
+      "createdAt": "2026-07-21T11:52:25Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:38Z",
+      "url": "https://dontstarve.fandom.com/wiki/Earthquake",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/d93adec7a9887b3341d551183a541e12b241d2598bdaa1cb20dc5121864fced0.json",
       "artifactSha256": "44bb0fa6a9eaa8c50f63fe9ab06303e09b8db576a8be84cc83c59868dccc4fce",
       "attempts": 1,
@@ -5397,7 +5850,8 @@
       "attempts": 1,
       "categories": [
         "fishes",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:21:43Z",
       "completedAt": "2026-07-21T08:21:44Z",
@@ -5430,7 +5884,8 @@
       "artifactSha256": "ea3bdbda760be5d8693eb3e49a066a8128595e20287a441a5d10ec8d231c655a",
       "attempts": 1,
       "categories": [
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:33:17Z",
       "completedAt": "2026-07-21T08:33:18Z",
@@ -5482,7 +5937,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:33:39Z",
       "completedAt": "2026-07-21T08:33:40Z",
@@ -5636,7 +6092,8 @@
       "categories": [
         "boss_dropped_items",
         "dont_starve_together",
-        "equipable_items"
+        "equipable_items",
+        "hats"
       ],
       "claimedAt": "2026-07-21T07:37:05Z",
       "completedAt": "2026-07-21T07:37:06Z",
@@ -5668,7 +6125,8 @@
       "artifactSha256": "ffcf08dc0c874e3d4e1340513b56297ac55c777374f9786c4e0bd2dfa8a3e22e",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "gameplay"
       ],
       "claimedAt": "2026-07-21T10:04:36Z",
       "completedAt": "2026-07-21T10:04:37Z",
@@ -5700,7 +6158,8 @@
       "artifactSha256": "ed6702eeef7395c46f0e5e2ff9a14c798b0daecef6f6b801cc3f091e67f22bd6",
       "attempts": 2,
       "categories": [
-        "animals"
+        "animals",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T09:43:54Z",
       "completedAt": "2026-07-21T09:43:56Z",
@@ -5729,13 +6188,30 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/9b9b8cd91633f2348b0467f6ddcc78a3398d3382ffa25533a6e0be5ae9a5bc15.json",
+      "artifactSha256": "0ac4b55ad093ece135d7c1d38dda7bc189f03c53049946efadd9ab39216054e6",
+      "attempts": 1,
+      "categories": [
+        "indestructible_object"
+      ],
+      "claimedAt": "2026-07-21T12:00:55Z",
+      "completedAt": "2026-07-21T12:00:56Z",
+      "createdAt": "2026-07-21T12:00:51Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T12:00:56Z",
+      "url": "https://dontstarve.fandom.com/wiki/Eye_Bone",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/eac0f57bcd2a2afa6fdd3e08fb8a6bf7688a02885717ac437a6cfff8ead280f1.json",
       "artifactSha256": "20466c295ac066937c6c28c38d13d58725e082724511d95834a80902a7632fb5",
       "attempts": 1,
       "categories": [
         "boss_dropped_items",
         "dont_starve_together",
-        "equipable_items"
+        "equipable_items",
+        "hats"
       ],
       "claimedAt": "2026-07-21T07:37:07Z",
       "completedAt": "2026-07-21T07:37:08Z",
@@ -5771,7 +6247,8 @@
         "cooling",
         "craftable_items",
         "dont_starve_together",
-        "equipable_items"
+        "equipable_items",
+        "hats"
       ],
       "claimedAt": "2026-07-21T08:18:00Z",
       "completedAt": "2026-07-21T08:18:02Z",
@@ -5789,7 +6266,8 @@
       "categories": [
         "crock_pot_recipes",
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:26:56Z",
       "completedAt": "2026-07-21T08:26:57Z",
@@ -5805,7 +6283,8 @@
       "artifactSha256": "5b00e49760087bda71b20ac95de1d4b6b3ad213196aa8e9d71c2d0e1071840d2",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "gameplay"
       ],
       "claimedAt": "2026-07-21T10:07:19Z",
       "completedAt": "2026-07-21T10:07:20Z",
@@ -5833,6 +6312,22 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/36d49863b1cdead9bc3de087e809e2e518004191e2155712cffd504592b9538e.json",
+      "artifactSha256": "cae865eafbf19b77a6b4e562d050caaa576639a727834d87d8958ba14f0b559c",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:09Z",
+      "completedAt": "2026-07-21T11:53:11Z",
+      "createdAt": "2026-07-21T11:52:25Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:11Z",
+      "url": "https://dontstarve.fandom.com/wiki/Farming",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/1983f5cd3d0f20bfb98901ced7998daa123342d4c24ac7dffe8edc63499043b7.json",
       "artifactSha256": "b1d5cb75a27e9e6d50f94af78a6f605a09ee02f72763bd362b0f1288d6bcebe1",
       "attempts": 1,
@@ -5840,7 +6335,8 @@
         "cooling",
         "craftable_items",
         "dont_starve_together",
-        "equipable_items"
+        "equipable_items",
+        "hats"
       ],
       "claimedAt": "2026-07-21T08:17:57Z",
       "completedAt": "2026-07-21T08:17:59Z",
@@ -5875,7 +6371,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "equipable_items"
+        "equipable_items",
+        "hats"
       ],
       "claimedAt": "2026-07-21T08:37:53Z",
       "completedAt": "2026-07-21T08:37:54Z",
@@ -5982,7 +6479,8 @@
       "categories": [
         "dont_starve_together",
         "food",
-        "fruits"
+        "fruits",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:34:34Z",
       "completedAt": "2026-07-21T08:34:35Z",
@@ -6000,7 +6498,8 @@
       "categories": [
         "crock_pot_recipes",
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:27:10Z",
       "completedAt": "2026-07-21T08:27:11Z",
@@ -6019,7 +6518,8 @@
         "craftable_items",
         "crock_pot_recipes",
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:27:08Z",
       "completedAt": "2026-07-21T08:27:09Z",
@@ -6037,7 +6537,8 @@
       "categories": [
         "crock_pot_recipes",
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:27:11Z",
       "completedAt": "2026-07-21T08:27:12Z",
@@ -6055,7 +6556,8 @@
       "categories": [
         "crock_pot_recipes",
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:27:09Z",
       "completedAt": "2026-07-21T08:27:10Z",
@@ -6064,6 +6566,23 @@
       "status": "Done",
       "updatedAt": "2026-07-21T08:27:10Z",
       "url": "https://dontstarve.fandom.com/wiki/Figkabab",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/7bedcc0e4188cc4593b57dfec5bc10755681477a5d898b7649feb3680f985d31.json",
+      "artifactSha256": "f87e558e1bda043208e0676a5713d64e99ac7b13db985a9b6103dca3bf986dae",
+      "attempts": 1,
+      "categories": [
+        "gameplay",
+        "health_loss"
+      ],
+      "claimedAt": "2026-07-21T11:52:31Z",
+      "completedAt": "2026-07-21T11:53:02Z",
+      "createdAt": "2026-07-21T11:52:25Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:02Z",
+      "url": "https://dontstarve.fandom.com/wiki/Fire",
       "workerId": null
     },
     {
@@ -6140,7 +6659,8 @@
       "attempts": 1,
       "categories": [
         "fishes",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:21:42Z",
       "completedAt": "2026-07-21T08:21:43Z",
@@ -6156,7 +6676,8 @@
       "artifactSha256": "bd2854b7da1bafbbe55dc5589ea6bc968301a1cfda00024902df1107f453b77c",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "healing"
       ],
       "claimedAt": "2026-07-21T10:05:18Z",
       "completedAt": "2026-07-21T10:05:19Z",
@@ -6191,7 +6712,8 @@
       "categories": [
         "dont_starve_together",
         "fishes",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:21:48Z",
       "completedAt": "2026-07-21T08:21:49Z",
@@ -6226,7 +6748,8 @@
       "attempts": 1,
       "categories": [
         "crock_pot_recipes",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:26:22Z",
       "completedAt": "2026-07-21T08:26:24Z",
@@ -6292,7 +6815,8 @@
       "attempts": 1,
       "categories": [
         "crock_pot_recipes",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:26:18Z",
       "completedAt": "2026-07-21T08:26:19Z",
@@ -6310,7 +6834,8 @@
       "categories": [
         "craftable_items",
         "crock_pot_recipes",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:26:32Z",
       "completedAt": "2026-07-21T08:26:33Z",
@@ -6344,7 +6869,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "fuel"
+        "fuel",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T08:53:04Z",
       "completedAt": "2026-07-21T08:53:08Z",
@@ -6360,7 +6886,8 @@
       "artifactSha256": "597622acc7f3f8e699d1b95bc6dafbd1a29b7609da718808e4c02f01d94656ec",
       "attempts": 1,
       "categories": [
-        "craftable_items"
+        "craftable_items",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T08:51:51Z",
       "completedAt": "2026-07-21T08:51:53Z",
@@ -6428,7 +6955,8 @@
       "artifactSha256": "5d223a10ffa0311fc84e4e8766af62e55e1c527a85042161f326b565670c8f98",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "indestructible_object"
       ],
       "claimedAt": "2026-07-21T10:03:33Z",
       "completedAt": "2026-07-21T10:03:35Z",
@@ -6445,7 +6973,8 @@
       "attempts": 1,
       "categories": [
         "a_new_reign",
-        "dont_starve_together"
+        "dont_starve_together",
+        "health_loss"
       ],
       "claimedAt": "2026-07-21T09:48:13Z",
       "completedAt": "2026-07-21T09:48:14Z",
@@ -6463,7 +6992,8 @@
       "categories": [
         "crock_pot_recipes",
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:26:43Z",
       "completedAt": "2026-07-21T08:26:45Z",
@@ -6498,7 +7028,8 @@
         "armour_filter",
         "craftable_items",
         "equipable_items",
-        "fight_tab"
+        "fight_tab",
+        "hats"
       ],
       "claimedAt": "2026-07-21T07:28:14Z",
       "completedAt": "2026-07-21T07:28:15Z",
@@ -6533,7 +7064,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "events"
+        "events",
+        "indestructible_object"
       ],
       "claimedAt": "2026-07-21T08:29:44Z",
       "completedAt": "2026-07-21T08:29:45Z",
@@ -6610,12 +7142,30 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/c4098089ec191af6e4ac2de9f120695cc019dd4c3de040717c3a0f0cd8f9b142.json",
+      "artifactSha256": "90a687c4aea846f37a5eddde42374caff2dea9291d2aefe098d4bd9a5c4b8966",
+      "attempts": 1,
+      "categories": [
+        "gameplay",
+        "health_loss"
+      ],
+      "claimedAt": "2026-07-21T11:53:26Z",
+      "completedAt": "2026-07-21T11:53:27Z",
+      "createdAt": "2026-07-21T11:52:25Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:27Z",
+      "url": "https://dontstarve.fandom.com/wiki/Freezing",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/438f822b22843f49febe6c128e971f0e5eb2ac726ba74ac8d5e61cdd9c021591.json",
       "artifactSha256": "0842a941ee0bd2bbcc38df9a8d9bf7484c39dea4f2958d4accc628bd0029cac8",
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:33:45Z",
       "completedAt": "2026-07-21T08:33:46Z",
@@ -6667,7 +7217,8 @@
       "artifactSha256": "46eeddb9f5f756feb9e75dd269bf60c959d702d5dedd7f699db645c036617b64",
       "attempts": 2,
       "categories": [
-        "animals"
+        "animals",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T09:43:36Z",
       "completedAt": "2026-07-21T09:43:38Z",
@@ -6684,7 +7235,8 @@
       "attempts": 1,
       "categories": [
         "boss_dropped_items",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T07:35:55Z",
       "completedAt": "2026-07-21T07:35:56Z",
@@ -6700,7 +7252,8 @@
       "artifactSha256": "81473dcca9e1a55b22ca8358d48040c5a1c19e63d1702bba3cb68b1cd7e57af7",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "gameplay"
       ],
       "claimedAt": "2026-07-21T10:03:00Z",
       "completedAt": "2026-07-21T10:03:01Z",
@@ -6716,7 +7269,8 @@
       "artifactSha256": "977dd44967018257616e3aeaae17a05052c60285e99ea5fa0f6d23d444009f30",
       "attempts": 1,
       "categories": [
-        "crock_pot_recipes"
+        "crock_pot_recipes",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:26:27Z",
       "completedAt": "2026-07-21T08:26:28Z",
@@ -6769,7 +7323,8 @@
         "cooling",
         "crock_pot_recipes",
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:18:19Z",
       "completedAt": "2026-07-21T08:18:20Z",
@@ -6786,7 +7341,8 @@
       "attempts": 1,
       "categories": [
         "cooling",
-        "crock_pot_recipes"
+        "crock_pot_recipes",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:17:38Z",
       "completedAt": "2026-07-21T08:17:40Z",
@@ -6806,7 +7362,8 @@
         "clothing_filter",
         "craftable_items",
         "dont_starve_together",
-        "equipable_items"
+        "equipable_items",
+        "hats"
       ],
       "claimedAt": "2026-07-21T07:30:51Z",
       "completedAt": "2026-07-21T07:30:52Z",
@@ -6931,7 +7488,8 @@
         "craftable_items",
         "dont_starve_together",
         "equipable_items",
-        "food_gardening_filter"
+        "food_gardening_filter",
+        "hats"
       ],
       "claimedAt": "2026-07-21T08:41:34Z",
       "completedAt": "2026-07-21T08:42:08Z",
@@ -6948,7 +7506,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "equipable_items"
+        "equipable_items",
+        "hats"
       ],
       "claimedAt": "2026-07-21T08:38:07Z",
       "completedAt": "2026-07-21T08:38:09Z",
@@ -6966,7 +7525,8 @@
       "categories": [
         "dont_starve_together",
         "events",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:30:24Z",
       "completedAt": "2026-07-21T08:30:25Z",
@@ -6999,7 +7559,8 @@
       "artifactSha256": "669603ec89dd45cf3ba5cb129a102010572d77d500572eda7c1e2dab8ec8a3e6",
       "attempts": 1,
       "categories": [
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:33:28Z",
       "completedAt": "2026-07-21T08:33:29Z",
@@ -7017,7 +7578,8 @@
       "categories": [
         "a_new_reign",
         "animals",
-        "dont_starve_together"
+        "dont_starve_together",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T09:44:01Z",
       "completedAt": "2026-07-21T09:44:02Z",
@@ -7050,7 +7612,8 @@
       "artifactSha256": "0fdbfe75f240c49da61e2c972a4974f17a9361b74006a73cc726edb3e2fd9350",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T10:04:37Z",
       "completedAt": "2026-07-21T10:04:40Z",
@@ -7059,6 +7622,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T10:04:40Z",
       "url": "https://dontstarve.fandom.com/wiki/Gestalt",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/9273ac498d084527da2f8e445147b0281fbb0b3afef20a1141a8e73ba833b858.json",
+      "artifactSha256": "e24884bf7217208d835179d108f02a0cf1740649415eea1a9b701fe9458ce896",
+      "attempts": 1,
+      "categories": [
+        "hostile_creatures"
+      ],
+      "claimedAt": "2026-07-21T11:58:39Z",
+      "completedAt": "2026-07-21T11:58:40Z",
+      "createdAt": "2026-07-21T11:58:38Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:58:40Z",
+      "url": "https://dontstarve.fandom.com/wiki/Ghost",
       "workerId": null
     },
     {
@@ -7082,7 +7661,8 @@
       "artifactSha256": "f26546e7701c235a32ed3e5c65bf9799bf45893950602a1c6ef1098548cf3cc5",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "healing"
       ],
       "claimedAt": "2026-07-21T10:06:08Z",
       "completedAt": "2026-07-21T10:06:13Z",
@@ -7223,7 +7803,8 @@
         "dont_starve_together",
         "fertilizer",
         "food",
-        "fuel"
+        "fuel",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:19:45Z",
       "completedAt": "2026-07-21T08:19:46Z",
@@ -7239,7 +7820,8 @@
       "artifactSha256": "573b3beac92a9613894b233af36dc434e826f26fbb0dd10753df4133292f8527",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "indestructible_object"
       ],
       "claimedAt": "2026-07-21T10:03:06Z",
       "completedAt": "2026-07-21T10:03:07Z",
@@ -7304,12 +7886,29 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/b0ea3a227c1f8ddb538dcf50c6a834a7d33596b0137038b45bdfebbb7bd4f681.json",
+      "artifactSha256": "d47831a8a07073fd0bc770695a80146e8c5b1ed770b9195d554529f021ebaaed",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:29Z",
+      "completedAt": "2026-07-21T11:53:30Z",
+      "createdAt": "2026-07-21T11:52:25Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:30Z",
+      "url": "https://dontstarve.fandom.com/wiki/Glossary",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/715ea870f7f0839583de76c1ac7805c1f0352fa015b16da5862ea5dd1597e68f.json",
       "artifactSha256": "77b02ec92dcfd60b7324b9404bb119ed8c288dc15b8d32d466e42c697797d77c",
       "attempts": 1,
       "categories": [
         "food",
-        "fruits"
+        "fruits",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:33:35Z",
       "completedAt": "2026-07-21T08:33:36Z",
@@ -7409,7 +8008,8 @@
       "artifactSha256": "37583a6af3f941b8f5492788438a0f5d9fd64019affbbe21f2b23f2b6844e393",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "hats"
       ],
       "claimedAt": "2026-07-21T10:03:57Z",
       "completedAt": "2026-07-21T10:04:01Z",
@@ -7445,7 +8045,8 @@
       "attempts": 1,
       "categories": [
         "boss_dropped_items",
-        "craftable_items"
+        "craftable_items",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T07:35:54Z",
       "completedAt": "2026-07-21T07:35:55Z",
@@ -7500,7 +8101,8 @@
       "categories": [
         "boss_monsters",
         "dont_starve_together",
-        "events"
+        "events",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T08:29:40Z",
       "completedAt": "2026-07-21T08:29:41Z",
@@ -7618,6 +8220,38 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/7f2689f04c84a48c2da50751c80885b8ebffb71f059268850b9cf8ec7013fb09.json",
+      "artifactSha256": "d37d6d90fc09640c469745ddc75990102d5ce731e2879108bde5e1760d13d251",
+      "attempts": 1,
+      "categories": [
+        "indestructible_object"
+      ],
+      "claimedAt": "2026-07-21T12:00:51Z",
+      "completedAt": "2026-07-21T12:00:53Z",
+      "createdAt": "2026-07-21T12:00:51Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T12:00:53Z",
+      "url": "https://dontstarve.fandom.com/wiki/Grave",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/3a9bc1af1d54b2c03523b6536f48fca6719feade8f275348e82a17571ed481a5.json",
+      "artifactSha256": "2b216dc3a654f76aacfa462420a6621b83262edccc7d0945e3cb12bee2f030c3",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:07Z",
+      "completedAt": "2026-07-21T11:53:08Z",
+      "createdAt": "2026-07-21T11:52:25Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:08Z",
+      "url": "https://dontstarve.fandom.com/wiki/Graveyard",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/46932937e2c274f4a7ab793e413a0a4285c53fb406b0aa7b7127727598809fc7.json",
       "artifactSha256": "2a0941b6b4895b1519dedbe627dcaec12c0bcbab1d3d85ec2d707c0ed0671a49",
       "attempts": 1,
@@ -7642,7 +8276,8 @@
         "boss_monsters",
         "cave_creatures",
         "dont_starve_together",
-        "from_beyond"
+        "from_beyond",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T07:39:47Z",
       "completedAt": "2026-07-21T07:39:48Z",
@@ -7658,7 +8293,8 @@
       "artifactSha256": "aede0260eb2754dd9c9688f82fc45151d270cb02cf63a89f2c9073b696485f9a",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "indestructible_object"
       ],
       "claimedAt": "2026-07-21T10:07:51Z",
       "completedAt": "2026-07-21T10:07:52Z",
@@ -7675,7 +8311,8 @@
       "attempts": 1,
       "categories": [
         "boss_dropped_items",
-        "food"
+        "food",
+        "health_loss"
       ],
       "claimedAt": "2026-07-21T07:36:18Z",
       "completedAt": "2026-07-21T07:36:19Z",
@@ -7692,7 +8329,8 @@
       "attempts": 1,
       "categories": [
         "boss_dropped_items",
-        "craftable_items"
+        "craftable_items",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T07:36:22Z",
       "completedAt": "2026-07-21T07:36:23Z",
@@ -7709,7 +8347,9 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "food"
+        "food",
+        "healing",
+        "health_loss"
       ],
       "claimedAt": "2026-07-21T08:33:55Z",
       "completedAt": "2026-07-21T08:33:56Z",
@@ -7746,7 +8386,8 @@
       "categories": [
         "a_new_reign",
         "dont_starve_together",
-        "flying_creatures"
+        "flying_creatures",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T09:48:39Z",
       "completedAt": "2026-07-21T09:48:40Z",
@@ -7764,7 +8405,8 @@
       "categories": [
         "crock_pot_recipes",
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:26:41Z",
       "completedAt": "2026-07-21T08:26:42Z",
@@ -7816,7 +8458,8 @@
       "attempts": 1,
       "categories": [
         "boss_dropped_items",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T07:36:24Z",
       "completedAt": "2026-07-21T07:36:26Z",
@@ -7848,7 +8491,8 @@
       "artifactSha256": "6fd3770c84a89f231f31bdd18870cbc633ebc2ef2b3a41b22607d003f897670b",
       "attempts": 1,
       "categories": [
-        "craftable_items"
+        "craftable_items",
+        "health_loss"
       ],
       "claimedAt": "2026-07-21T08:52:46Z",
       "completedAt": "2026-07-21T08:52:48Z",
@@ -7865,7 +8509,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "events"
+        "events",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:29:34Z",
       "completedAt": "2026-07-21T08:29:35Z",
@@ -8002,7 +8647,8 @@
       "artifactSha256": "5d2ff7593c5b02383d4a525282c559259f4bb5c0b7f2f3e109958d522d81150a",
       "attempts": 1,
       "categories": [
-        "craftable_items"
+        "craftable_items",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:52:53Z",
       "completedAt": "2026-07-21T08:52:58Z",
@@ -8014,12 +8660,29 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/c883b756da3a8e47a39dda83e97342044e41c08b42ebef12388040b44854c091.json",
+      "artifactSha256": "478a1cf09cd47a0ee82754e9e63d9d8495d71cb8509990c38ed0c81de3b7eda2",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:17Z",
+      "completedAt": "2026-07-21T11:53:18Z",
+      "createdAt": "2026-07-21T11:52:25Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:18Z",
+      "url": "https://dontstarve.fandom.com/wiki/Health",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/ac0fcee73f16c1f822f679d267926f656a215c6a8713d5ccac7f953efaf3fa3e.json",
       "artifactSha256": "959ac54ac240e3af14168a97e84623e54ee06204aaef30ef3ef74b3aadbe2323",
       "attempts": 1,
       "categories": [
         "craftable_structures",
-        "dont_starve_together"
+        "dont_starve_together",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T08:48:03Z",
       "completedAt": "2026-07-21T08:48:05Z",
@@ -8086,7 +8749,8 @@
       "attempts": 1,
       "categories": [
         "boss_dropped_items",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T07:35:56Z",
       "completedAt": "2026-07-21T07:35:57Z",
@@ -8120,7 +8784,8 @@
       "attempts": 1,
       "categories": [
         "crock_pot_recipes",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:26:21Z",
       "completedAt": "2026-07-21T08:26:22Z",
@@ -8136,7 +8801,8 @@
       "artifactSha256": "7f14f957f2fcf006792886be5680a62da0d81772b93e0df7c295e228965fdaba",
       "attempts": 1,
       "categories": [
-        "crock_pot_recipes"
+        "crock_pot_recipes",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:26:35Z",
       "completedAt": "2026-07-21T08:26:36Z",
@@ -8152,7 +8818,8 @@
       "artifactSha256": "2087139d78f04079ca513f01694048bd796a777d535045fc2f6cc08bef5a429a",
       "attempts": 1,
       "categories": [
-        "craftable_items"
+        "craftable_items",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:52:42Z",
       "completedAt": "2026-07-21T08:52:46Z",
@@ -8201,7 +8868,8 @@
       "artifactSha256": "d64b27df0da4b4510f2e09865ff09740ffa9e4f166e3397ba67fdfe2332e2d7b",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T10:04:40Z",
       "completedAt": "2026-07-21T10:04:42Z",
@@ -8234,7 +8902,8 @@
       "artifactSha256": "8e7093f1ec703d8ef2b51b06705bba6f09bfcadf11f438758c6d951552ae758c",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "health_loss"
       ],
       "claimedAt": "2026-07-21T10:05:19Z",
       "completedAt": "2026-07-21T10:05:20Z",
@@ -8262,11 +8931,28 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/6d8cfe3cb411f46d63e12e3c04a586e926cfcaf36751a1b7a9e34d60ae604c65.json",
+      "artifactSha256": "b2a863858d1515506c6c7020a942a95273589a7e4a9e797f7b0c2991bc65c7d9",
+      "attempts": 1,
+      "categories": [
+        "hostile_creatures"
+      ],
+      "claimedAt": "2026-07-21T11:58:41Z",
+      "completedAt": "2026-07-21T11:58:42Z",
+      "createdAt": "2026-07-21T11:58:38Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:58:42Z",
+      "url": "https://dontstarve.fandom.com/wiki/Hound",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/ba3cbfe5f838e8e253bfbfd86328bdb8289b8f98c057edb6411dd1b6e950eaf0.json",
       "artifactSha256": "7ebfe12e7eba1e0e6528a84662eb2e68580832eaab432bf7db1ae1421274274d",
       "attempts": 1,
       "categories": [
-        "craftable_items"
+        "craftable_items",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T08:52:07Z",
       "completedAt": "2026-07-21T08:52:09Z",
@@ -8332,6 +9018,22 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/c0c9729da89db52cc2abedca09b6fdbb19f10f3d58ad3fc0b7446401b905a456.json",
+      "artifactSha256": "f18c9b8e29db908ae320e7de8281908210f1f022ab250131c94f0bb02df585f4",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:18Z",
+      "completedAt": "2026-07-21T11:53:19Z",
+      "createdAt": "2026-07-21T11:52:25Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:19Z",
+      "url": "https://dontstarve.fandom.com/wiki/Hunger",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/cf57ea34d822cb5af81f109b2610bce1cc448979f5ce0693a7b97c2b0c0c80cc.json",
       "artifactSha256": "944a9c6ff67b5bd39e99d706055bf657c9e0104a534a0cb850509bf83633b8b5",
       "attempts": 1,
@@ -8356,7 +9058,8 @@
       "attempts": 1,
       "categories": [
         "cooling",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:17:51Z",
       "completedAt": "2026-07-21T08:17:53Z",
@@ -8433,7 +9136,8 @@
         "cooling",
         "craftable_items",
         "dont_starve_together",
-        "equipable_items"
+        "equipable_items",
+        "hats"
       ],
       "claimedAt": "2026-07-21T08:17:47Z",
       "completedAt": "2026-07-21T08:17:51Z",
@@ -8534,7 +9238,8 @@
       "categories": [
         "cave_creatures",
         "dont_starve_together",
-        "from_beyond"
+        "from_beyond",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T07:39:44Z",
       "completedAt": "2026-07-21T07:39:47Z",
@@ -8606,7 +9311,8 @@
       "categories": [
         "boss_dropped_items",
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T07:37:00Z",
       "completedAt": "2026-07-21T07:37:05Z",
@@ -8624,7 +9330,8 @@
       "categories": [
         "cave_creatures",
         "dont_starve_together",
-        "from_beyond"
+        "from_beyond",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T07:39:42Z",
       "completedAt": "2026-07-21T07:39:44Z",
@@ -8640,7 +9347,8 @@
       "artifactSha256": "189bd1b820af95fa0515343f93acd893220774ee8cc9cc8ede3700ca78f05995",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "gameplay"
       ],
       "claimedAt": "2026-07-21T10:09:45Z",
       "completedAt": "2026-07-21T10:09:46Z",
@@ -8691,6 +9399,22 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/64d1c2be68421b14b45f96efe861c8f4028de927441d84fa1a1fea94ecc88047.json",
+      "artifactSha256": "22cd74c3cd9217a2f425c4180cd0a5086c45fb2c31b5c0ccca5dc7620bd7349a",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:51Z",
+      "completedAt": "2026-07-21T11:53:52Z",
+      "createdAt": "2026-07-21T11:52:25Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:52Z",
+      "url": "https://dontstarve.fandom.com/wiki/Inventory",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/1dbfbe1b0b564dcfdb23e45d8010717a9c9bdd3032d83b6e5f6b7c4e1942f3b2.json",
       "artifactSha256": "909fc24c66e6c0a21b76da670c065a31c7863f82b88aa63b47d70c36ff597105",
       "attempts": 1,
@@ -8713,7 +9437,8 @@
       "categories": [
         "a_new_reign",
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T08:54:00Z",
       "completedAt": "2026-07-21T08:54:01Z",
@@ -8722,6 +9447,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T08:54:01Z",
       "url": "https://dontstarve.fandom.com/wiki/Iridescent_Gem",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/2add59887ae4389c7cff062391b77e4decb0e9cf726a4cd422e5b14b799d8547.json",
+      "artifactSha256": "fea396d2ff07d51052f985ebaba1eed353ae646b54880797e9ae5955ac2bc4cb",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:04Z",
+      "completedAt": "2026-07-21T11:53:05Z",
+      "createdAt": "2026-07-21T11:52:25Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:05Z",
+      "url": "https://dontstarve.fandom.com/wiki/Items",
       "workerId": null
     },
     {
@@ -8765,7 +9506,8 @@
         "a_new_reign",
         "crock_pot_recipes",
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:26:49Z",
       "completedAt": "2026-07-21T08:26:50Z",
@@ -8781,7 +9523,8 @@
       "artifactSha256": "6e9537245c5a9e38b183a2eaf3440c6858a130ce0c1544f1ab6a47bdbbd48a2d",
       "attempts": 1,
       "categories": [
-        "craftable_items"
+        "craftable_items",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:52:48Z",
       "completedAt": "2026-07-21T08:52:49Z",
@@ -8800,7 +9543,8 @@
         "a_new_reign",
         "dont_starve_together",
         "food",
-        "fruits"
+        "fruits",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:33:46Z",
       "completedAt": "2026-07-21T08:33:48Z",
@@ -8887,7 +9631,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "crock_pot_recipes"
+        "crock_pot_recipes",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:26:25Z",
       "completedAt": "2026-07-21T08:26:26Z",
@@ -8904,7 +9649,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "food"
+        "food",
+        "health_loss"
       ],
       "claimedAt": "2026-07-21T08:33:53Z",
       "completedAt": "2026-07-21T08:33:54Z",
@@ -8973,7 +9719,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "health_loss"
       ],
       "claimedAt": "2026-07-21T08:55:15Z",
       "completedAt": "2026-07-21T08:55:17Z",
@@ -8992,7 +9739,8 @@
         "a_new_reign",
         "boss_monsters",
         "dont_starve_together",
-        "events"
+        "events",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T08:29:35Z",
       "completedAt": "2026-07-21T08:29:36Z",
@@ -9024,7 +9772,8 @@
       "artifactSha256": "fc046192103234e22253bde05351b7fc69b5667732dfe34098b15e6ebdf99653",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "gameplay"
       ],
       "claimedAt": "2026-07-21T10:09:55Z",
       "completedAt": "2026-07-21T10:09:56Z",
@@ -9072,7 +9821,8 @@
       "artifactSha256": "ca7b88572c0ea93acadb3fd72053f9b8d914bc5edde590d348f13340ce5fbb4c",
       "attempts": 1,
       "categories": [
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:33:25Z",
       "completedAt": "2026-07-21T08:33:26Z",
@@ -9205,7 +9955,8 @@
       "artifactSha256": "9b612a11cc08f62ebeea2429ab229931d8fdf3d5edbfafc48df2131a0d5da264",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "indestructible_object"
       ],
       "claimedAt": "2026-07-21T10:03:20Z",
       "completedAt": "2026-07-21T10:03:21Z",
@@ -9221,7 +9972,8 @@
       "artifactSha256": "2f4f5565e05101bdd55a58765db3dc9ae561a23303c5a893c577ac1f443c1d83",
       "attempts": 1,
       "categories": [
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:33:33Z",
       "completedAt": "2026-07-21T08:33:34Z",
@@ -9239,7 +9991,8 @@
       "categories": [
         "crock_pot_recipes",
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:27:00Z",
       "completedAt": "2026-07-21T08:27:01Z",
@@ -9257,7 +10010,8 @@
       "categories": [
         "dont_starve_together",
         "food",
-        "fruits"
+        "fruits",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:33:43Z",
       "completedAt": "2026-07-21T08:33:44Z",
@@ -9273,7 +10027,8 @@
       "artifactSha256": "66dce2f99573b81c0e5c0530b9b18dc92fcc5d82f3e30e765cfc420b2bc33a79",
       "attempts": 1,
       "categories": [
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:33:34Z",
       "completedAt": "2026-07-21T08:33:35Z",
@@ -9307,7 +10062,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "equipable_items"
+        "equipable_items",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:37:41Z",
       "completedAt": "2026-07-21T08:37:43Z",
@@ -9324,7 +10080,8 @@
       "attempts": 1,
       "categories": [
         "food",
-        "fuel"
+        "fuel",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:33:29Z",
       "completedAt": "2026-07-21T08:33:30Z",
@@ -9349,6 +10106,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T10:08:48Z",
       "url": "https://dontstarve.fandom.com/wiki/Light_Sources_Filter",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/2c24d0082f9796b200946d9b4609a8025c521075c2b31b967b0dea8d50b856e2.json",
+      "artifactSha256": "eb53bf78eadd7934bbded215729dc464e7e30b7bb595a60441afc86755677c95",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:38Z",
+      "completedAt": "2026-07-21T11:53:39Z",
+      "createdAt": "2026-07-21T11:52:25Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:39Z",
+      "url": "https://dontstarve.fandom.com/wiki/Lightning",
       "workerId": null
     },
     {
@@ -9425,7 +10198,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "fuel"
+        "fuel",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T08:51:53Z",
       "completedAt": "2026-07-21T08:51:54Z",
@@ -9515,7 +10289,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "followers"
+        "followers",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T10:05:40Z",
       "completedAt": "2026-07-21T10:05:43Z",
@@ -9533,7 +10308,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "equipable_items"
+        "equipable_items",
+        "hats"
       ],
       "claimedAt": "2026-07-21T08:40:26Z",
       "completedAt": "2026-07-21T08:41:28Z",
@@ -9581,7 +10357,8 @@
       "artifactSha256": "5d632537d8bc2f468ca124d98bc03c6bbec354556bc89c0725eca53cf31ab2de",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "gameplay"
       ],
       "claimedAt": "2026-07-21T10:09:54Z",
       "completedAt": "2026-07-21T10:09:55Z",
@@ -9685,7 +10462,8 @@
         "craftable_items",
         "dont_starve_together",
         "equipable_items",
-        "from_beyond"
+        "from_beyond",
+        "hats"
       ],
       "claimedAt": "2026-07-21T07:31:50Z",
       "completedAt": "2026-07-21T07:31:54Z",
@@ -9718,7 +10496,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "from_beyond"
+        "from_beyond",
+        "gameplay"
       ],
       "claimedAt": "2026-07-21T10:10:18Z",
       "completedAt": "2026-07-21T10:10:19Z",
@@ -9848,7 +10627,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:33:51Z",
       "completedAt": "2026-07-21T08:33:53Z",
@@ -9882,7 +10662,8 @@
       "categories": [
         "cave_creatures",
         "dont_starve_together",
-        "from_beyond"
+        "from_beyond",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T07:39:48Z",
       "completedAt": "2026-07-21T07:39:51Z",
@@ -9934,7 +10715,8 @@
       "attempts": 1,
       "categories": [
         "craftable_structures",
-        "dont_starve_together"
+        "dont_starve_together",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T08:48:44Z",
       "completedAt": "2026-07-21T08:48:45Z",
@@ -9951,7 +10733,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T08:57:42Z",
       "completedAt": "2026-07-21T08:57:44Z",
@@ -9986,7 +10769,9 @@
       "artifactSha256": "2fa2cefb999346b02ef7b860559e2d61bd0a448890077209f5435067e5f29200",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "health_loss",
+        "indestructible_object"
       ],
       "claimedAt": "2026-07-21T10:03:19Z",
       "completedAt": "2026-07-21T10:03:20Z",
@@ -10076,7 +10861,8 @@
       "attempts": 1,
       "categories": [
         "followers",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:33:11Z",
       "completedAt": "2026-07-21T08:33:12Z",
@@ -10094,7 +10880,8 @@
       "categories": [
         "craftable_items",
         "crock_pot_recipes",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:26:28Z",
       "completedAt": "2026-07-21T08:26:29Z",
@@ -10129,7 +10916,8 @@
       "categories": [
         "craftable_items",
         "fertilizer",
-        "fuel"
+        "fuel",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T08:19:40Z",
       "completedAt": "2026-07-21T08:19:41Z",
@@ -10138,6 +10926,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T08:19:41Z",
       "url": "https://dontstarve.fandom.com/wiki/Manure",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/1fdd4f911bf49d185b0e055e1551452727eb090a672171b8daa1d9140a53dbbb.json",
+      "artifactSha256": "48ce86dc56c44b4c706fae6c749cb3b1ddf88b87b3cabc413d578fd8aa1bd0ab",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:19Z",
+      "completedAt": "2026-07-21T11:53:21Z",
+      "createdAt": "2026-07-21T11:52:25Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:21Z",
+      "url": "https://dontstarve.fandom.com/wiki/Map",
       "workerId": null
     },
     {
@@ -10163,7 +10967,8 @@
       "artifactSha256": "722f5494d098f23c78a8777f877aac8878e34f34a73d22a009a3bc00b9972955",
       "attempts": 1,
       "categories": [
-        "craftable_items"
+        "craftable_items",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T08:52:51Z",
       "completedAt": "2026-07-21T08:52:52Z",
@@ -10352,7 +11157,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "events"
+        "events",
+        "indestructible_object"
       ],
       "claimedAt": "2026-07-21T08:30:18Z",
       "completedAt": "2026-07-21T08:30:19Z",
@@ -10369,7 +11175,8 @@
       "attempts": 1,
       "categories": [
         "boss_dropped_items",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T07:35:16Z",
       "completedAt": "2026-07-21T07:35:21Z",
@@ -10385,7 +11192,8 @@
       "artifactSha256": "916070b09da70eb7bbb46ebf2f3e4510ed0d5c3833df6dddbef7f7c5a0317394",
       "attempts": 1,
       "categories": [
-        "craftable_structures"
+        "craftable_structures",
+        "health_loss"
       ],
       "claimedAt": "2026-07-21T08:46:28Z",
       "completedAt": "2026-07-21T08:46:31Z",
@@ -10402,7 +11210,8 @@
       "attempts": 1,
       "categories": [
         "crock_pot_recipes",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:26:33Z",
       "completedAt": "2026-07-21T08:26:35Z",
@@ -10419,7 +11228,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "crock_pot_recipes"
+        "crock_pot_recipes",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:26:17Z",
       "completedAt": "2026-07-21T08:26:18Z",
@@ -10439,7 +11249,8 @@
         "crock_pot_recipes",
         "dont_starve_together",
         "food",
-        "fruits"
+        "fruits",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:18:14Z",
       "completedAt": "2026-07-21T08:18:15Z",
@@ -10455,7 +11266,8 @@
       "artifactSha256": "08cb0bc36f8ae9ca079ce50caa690ea6ac8bde02506cb29da9f710d693fc40ce",
       "attempts": 1,
       "categories": [
-        "followers"
+        "followers",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T10:43:05Z",
       "completedAt": "2026-07-21T10:43:09Z",
@@ -10504,7 +11316,8 @@
       "artifactSha256": "4abbd70f534dfce9fe60a9223767457c0c57cf8c5127991424026fe8d128c781",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "health_loss"
       ],
       "claimedAt": "2026-07-21T10:03:17Z",
       "completedAt": "2026-07-21T10:03:18Z",
@@ -10642,7 +11455,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "equipable_items"
+        "equipable_items",
+        "hats"
       ],
       "claimedAt": "2026-07-21T08:37:37Z",
       "completedAt": "2026-07-21T08:37:41Z",
@@ -10695,7 +11509,8 @@
       "attempts": 1,
       "categories": [
         "birds",
-        "dont_starve_together"
+        "dont_starve_together",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T09:44:59Z",
       "completedAt": "2026-07-21T09:45:01Z",
@@ -10707,13 +11522,30 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/9f4febf4b503187a8ee7a2d476ef276e0eb22d36d6016e27fd430eb8cd136e6e.json",
+      "artifactSha256": "2229104848e3f1279416ce50ab48ecd21c4c80a930619c385bd553046682cd54",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:32Z",
+      "completedAt": "2026-07-21T11:53:33Z",
+      "createdAt": "2026-07-21T11:52:25Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:33Z",
+      "url": "https://dontstarve.fandom.com/wiki/Mods",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/eac73597782a87cf8a23fe1c309976975a7d5b2b2601bdf0fccb5f6735ba42e5.json",
       "artifactSha256": "f7a98d872da1308df96ba9d78b23a458f83513914e40d8c8d1864ae3ac886aba",
       "attempts": 1,
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "equipable_items"
+        "equipable_items",
+        "hats"
       ],
       "claimedAt": "2026-07-21T08:39:36Z",
       "completedAt": "2026-07-21T08:39:41Z",
@@ -10780,7 +11612,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "food"
+        "food",
+        "health_loss"
       ],
       "claimedAt": "2026-07-21T08:33:26Z",
       "completedAt": "2026-07-21T08:33:28Z",
@@ -10796,7 +11629,8 @@
       "artifactSha256": "df7d5b04dd9ffd1cc1bdd992e3fd8ba53875986950a6032074a39e99c141b12f",
       "attempts": 1,
       "categories": [
-        "crock_pot_recipes"
+        "crock_pot_recipes",
+        "health_loss"
       ],
       "claimedAt": "2026-07-21T08:26:36Z",
       "completedAt": "2026-07-21T08:26:37Z",
@@ -10813,7 +11647,8 @@
       "attempts": 1,
       "categories": [
         "boss_dropped_items",
-        "food"
+        "food",
+        "health_loss"
       ],
       "claimedAt": "2026-07-21T07:36:58Z",
       "completedAt": "2026-07-21T07:36:59Z",
@@ -10830,7 +11665,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:33:44Z",
       "completedAt": "2026-07-21T08:33:45Z",
@@ -10877,6 +11713,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T07:33:15Z",
       "url": "https://dontstarve.fandom.com/wiki/Moon_Crater_Turf",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/aa80fd2fed1362e63f6b800988f2a0398b30027c6282de70d6f1474997304da9.json",
+      "artifactSha256": "9a63f83547011f2e4be580e420c6fc150018c5e9dbfa34d6d6a213868282db52",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:05Z",
+      "completedAt": "2026-07-21T11:53:07Z",
+      "createdAt": "2026-07-21T11:52:25Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:07Z",
+      "url": "https://dontstarve.fandom.com/wiki/Moon_Cycle",
       "workerId": null
     },
     {
@@ -10969,7 +11821,8 @@
       "artifactSha256": "54fe0a4d822cb154ab11e60737468c62d9dd056f4298a3760cd70bf3f6928295",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "healing"
       ],
       "claimedAt": "2026-07-21T10:05:03Z",
       "completedAt": "2026-07-21T10:05:04Z",
@@ -11040,7 +11893,8 @@
         "a_new_reign",
         "boss_dropped_items",
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T07:36:32Z",
       "completedAt": "2026-07-21T07:36:37Z",
@@ -11126,7 +11980,8 @@
       "attempts": 1,
       "categories": [
         "a_new_reign",
-        "dont_starve_together"
+        "dont_starve_together",
+        "indestructible_object"
       ],
       "claimedAt": "2026-07-21T09:48:33Z",
       "completedAt": "2026-07-21T09:48:34Z",
@@ -11176,7 +12031,8 @@
       "categories": [
         "a_new_reign",
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T08:53:55Z",
       "completedAt": "2026-07-21T08:53:56Z",
@@ -11192,7 +12048,8 @@
       "artifactSha256": "7154dda96398de761d39a7a20486d013a232ac06bf33a692f8959d37de7e6b9d",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T10:04:45Z",
       "completedAt": "2026-07-21T10:04:47Z",
@@ -11208,7 +12065,8 @@
       "artifactSha256": "8fc6d42e315ec7beec2395c54dabe86c7bbfd0a15232c4a7a426f5d70643d2ff",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "gameplay"
       ],
       "claimedAt": "2026-07-21T10:07:32Z",
       "completedAt": "2026-07-21T10:07:33Z",
@@ -11226,7 +12084,8 @@
       "categories": [
         "birds",
         "boss_monsters",
-        "dont_starve_together"
+        "dont_starve_together",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T09:44:55Z",
       "completedAt": "2026-07-21T09:44:56Z",
@@ -11259,7 +12118,8 @@
       "artifactSha256": "c89e71bcdafa58525bd48c66205a57ee8e633f5faccce817e58fba534ce40ba7",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "healing"
       ],
       "claimedAt": "2026-07-21T10:05:24Z",
       "completedAt": "2026-07-21T10:05:25Z",
@@ -11294,7 +12154,8 @@
       "artifactSha256": "fa6f8fdd8915ace6390a1a8d6563a3c74bcb1e57501fc185362ae2e068727d68",
       "attempts": 1,
       "categories": [
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:33:12Z",
       "completedAt": "2026-07-21T08:33:14Z",
@@ -11346,7 +12207,8 @@
       "attempts": 2,
       "categories": [
         "animals",
-        "flying_creatures"
+        "flying_creatures",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T09:43:40Z",
       "completedAt": "2026-07-21T09:43:42Z",
@@ -11355,6 +12217,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T09:43:42Z",
       "url": "https://dontstarve.fandom.com/wiki/Mosquito",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/8e798e8b7977556c1de244a498dfd5237287eb5e35faf1024d1bec71bb70ce0e.json",
+      "artifactSha256": "b770a68c32323b87aa451d6778aa0e608d127132f6ad9d889fc74348e103acf1",
+      "attempts": 1,
+      "categories": [
+        "healing"
+      ],
+      "claimedAt": "2026-07-21T11:55:34Z",
+      "completedAt": "2026-07-21T11:55:35Z",
+      "createdAt": "2026-07-21T11:55:24Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:55:35Z",
+      "url": "https://dontstarve.fandom.com/wiki/Mosquito_Sack",
       "workerId": null
     },
     {
@@ -11515,7 +12393,9 @@
       "artifactSha256": "77f4da3ec45ea588d9b58286a23d1289cae1a3f411c27696517c6bf839be4306",
       "attempts": 1,
       "categories": [
-        "boss_dropped_items"
+        "boss_dropped_items",
+        "healing",
+        "health_loss"
       ],
       "claimedAt": "2026-07-21T07:36:15Z",
       "completedAt": "2026-07-21T07:36:16Z",
@@ -11584,7 +12464,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "followers"
+        "followers",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T10:11:18Z",
       "completedAt": "2026-07-21T10:11:20Z",
@@ -11633,7 +12514,8 @@
       "attempts": 1,
       "categories": [
         "cave_creatures",
-        "dont_starve_together"
+        "dont_starve_together",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T07:39:26Z",
       "completedAt": "2026-07-21T07:39:28Z",
@@ -11756,7 +12638,8 @@
       "categories": [
         "dont_starve_together",
         "food",
-        "from_beyond"
+        "from_beyond",
+        "health_loss"
       ],
       "claimedAt": "2026-07-21T08:34:37Z",
       "completedAt": "2026-07-21T08:34:38Z",
@@ -11785,6 +12668,22 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/ac1749402c1d93ea7c387d3ae3ae15d9d20eb09b6a6af255e68d35f1088066a9.json",
+      "artifactSha256": "7f34d9be067c935b26c292503018ee6b4b3fd7d720a828f2b3ae282674a39950",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:44Z",
+      "completedAt": "2026-07-21T11:53:45Z",
+      "createdAt": "2026-07-21T11:52:25Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:45Z",
+      "url": "https://dontstarve.fandom.com/wiki/Nightmare_Cycle",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/b1c05fbf82e1cb1730115f9430f343b38c24108a0be2ae1f21c507520297a8e0.json",
       "artifactSha256": "470d02905193cefd39e41150a6bbfd02ab02c0a0c04f45ff22b68b053e681a99",
       "attempts": 1,
@@ -11807,7 +12706,8 @@
       "artifactSha256": "15058e1a4adc04b1e6298a49d8e1b669a67caf81ef8be5070364ac1d3bae72fe",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "indestructible_object"
       ],
       "claimedAt": "2026-07-21T10:02:46Z",
       "completedAt": "2026-07-21T10:02:47Z",
@@ -11859,7 +12759,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "fuel"
+        "fuel",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T08:52:49Z",
       "completedAt": "2026-07-21T08:52:51Z",
@@ -11906,6 +12807,22 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/f3058c46ddc44d4c636bb8696e1b8a44fc839c8e3c981476c70409982830cb24.json",
+      "artifactSha256": "00bf13f27da8712f357c4ed115f79e2ff7cbec9e0344a9cb4af7e9f1d58d1aae",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:24Z",
+      "completedAt": "2026-07-21T11:53:25Z",
+      "createdAt": "2026-07-21T11:52:25Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:25Z",
+      "url": "https://dontstarve.fandom.com/wiki/Non-renewable_resources",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/98828eabcefcd93fb4f2071bea68e65f56a25cd008cce2022a5da94462a7851b.json",
       "artifactSha256": "20ccc4444d415644df277c980ac2339e663503fe219d89765b3b00edd5971adb",
       "attempts": 1,
@@ -11927,7 +12844,8 @@
       "artifactSha256": "9389fc1a5a90a69e237619766a64ce02d74254073c91c5128720edb52d72a9b0",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "gameplay"
       ],
       "claimedAt": "2026-07-21T10:07:26Z",
       "completedAt": "2026-07-21T10:07:27Z",
@@ -11955,6 +12873,38 @@
       "status": "Done",
       "updatedAt": "2026-07-21T08:40:00Z",
       "url": "https://dontstarve.fandom.com/wiki/Oar",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/04eea3ad7d5cc5e41bead96544ef736aaba25438bf596bcaa2b1c839282629aa.json",
+      "artifactSha256": "b6768b7553c3c65b233cd02b6ee2edb1015c05670bee17fd898e18427af24010",
+      "attempts": 1,
+      "categories": [
+        "indestructible_object"
+      ],
+      "claimedAt": "2026-07-21T12:00:59Z",
+      "completedAt": "2026-07-21T12:01:00Z",
+      "createdAt": "2026-07-21T12:00:51Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T12:01:00Z",
+      "url": "https://dontstarve.fandom.com/wiki/Obelisk",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/c4b55aa99d797c418168f98ed96d5373d5e4dfdcc0d032a39532a393039fc8c4.json",
+      "artifactSha256": "ca5f244ebb06c7def3cae8713a409448ea291928706017a83b2ac1fa24ff39b4",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:30Z",
+      "completedAt": "2026-07-21T11:53:31Z",
+      "createdAt": "2026-07-21T11:52:26Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:31Z",
+      "url": "https://dontstarve.fandom.com/wiki/Ocean",
       "workerId": null
     },
     {
@@ -12083,7 +13033,8 @@
       "categories": [
         "dont_starve_together",
         "events",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:30:25Z",
       "completedAt": "2026-07-21T08:30:26Z",
@@ -12100,7 +13051,8 @@
       "attempts": 1,
       "categories": [
         "boss_dropped_items",
-        "craftable_items"
+        "craftable_items",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T07:36:20Z",
       "completedAt": "2026-07-21T07:36:22Z",
@@ -12149,7 +13101,9 @@
       "artifactSha256": "1df2da22c6040dcb78863b0ea987a4116f2942ff13efd2032c35e778d94fc6ce",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "gameplay",
+        "health_loss"
       ],
       "claimedAt": "2026-07-21T10:02:56Z",
       "completedAt": "2026-07-21T10:02:57Z",
@@ -12349,7 +13303,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "food"
+        "food",
+        "health_loss"
       ],
       "claimedAt": "2026-07-21T08:33:54Z",
       "completedAt": "2026-07-21T08:33:55Z",
@@ -12367,7 +13322,8 @@
       "categories": [
         "a_new_reign",
         "dont_starve_together",
-        "fuel"
+        "fuel",
+        "healing"
       ],
       "claimedAt": "2026-07-21T09:48:11Z",
       "completedAt": "2026-07-21T09:48:12Z",
@@ -12490,7 +13446,8 @@
       "attempts": 1,
       "categories": [
         "crock_pot_recipes",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:26:29Z",
       "completedAt": "2026-07-21T08:26:30Z",
@@ -12535,6 +13492,38 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/03f8efb5420f1a7966885d546bc5b862ee66a6686c9c6a6728fb4b7ec8ad4684.json",
+      "artifactSha256": "904be953dd0e6f2d36939c61981a37affdf46b0f0713247afdd3b5b26597f242",
+      "attempts": 1,
+      "categories": [
+        "indestructible_object"
+      ],
+      "claimedAt": "2026-07-21T12:00:53Z",
+      "completedAt": "2026-07-21T12:00:54Z",
+      "createdAt": "2026-07-21T12:00:51Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T12:00:54Z",
+      "url": "https://dontstarve.fandom.com/wiki/Pig_King",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/2d2ffa2fb00f2f0b520e4ba452663fe4e1fed086788a51162abbf82694058cfb.json",
+      "artifactSha256": "fbb690f89b015d44c37e61e6b638e5d86356d2c2acc8f8991b6bfb95070845f4",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:31Z",
+      "completedAt": "2026-07-21T11:53:32Z",
+      "createdAt": "2026-07-21T11:52:26Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:32Z",
+      "url": "https://dontstarve.fandom.com/wiki/Pig_Village",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/3a953ce68e8e5e098499c171200f424d778d7630264d75f9c3a96ef0f2e4a3b4.json",
       "artifactSha256": "d0fe7c35d40a1bbba147ff2e5af29ac264e961ea25ab192e4ec41ec0a7f5d16f",
       "attempts": 1,
@@ -12559,7 +13548,8 @@
       "artifactSha256": "fa1ac4066a48dc4779b9e7642e16a710d6b416e58f4957a5a2d722a0e03e7e2d",
       "attempts": 1,
       "categories": [
-        "craftable_items"
+        "craftable_items",
+        "hats"
       ],
       "claimedAt": "2026-07-21T08:53:11Z",
       "completedAt": "2026-07-21T08:53:17Z",
@@ -12576,7 +13566,8 @@
       "attempts": 1,
       "categories": [
         "a_new_reign",
-        "dont_starve_together"
+        "dont_starve_together",
+        "indestructible_object"
       ],
       "claimedAt": "2026-07-21T09:48:16Z",
       "completedAt": "2026-07-21T09:48:17Z",
@@ -12627,7 +13618,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "equipable_items"
+        "equipable_items",
+        "hats"
       ],
       "claimedAt": "2026-07-21T08:40:23Z",
       "completedAt": "2026-07-21T08:40:25Z",
@@ -12709,7 +13701,8 @@
       "artifactSha256": "83b7d0685f2300e788395e3f6719fe9accd8f05ab7413ca3d5c35baf6c3c3876",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "gameplay"
       ],
       "claimedAt": "2026-07-21T10:08:41Z",
       "completedAt": "2026-07-21T10:08:42Z",
@@ -12742,7 +13735,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "events"
+        "events",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T08:29:45Z",
       "completedAt": "2026-07-21T08:29:46Z",
@@ -12779,7 +13773,8 @@
         "crock_pot_recipes",
         "dont_starve_together",
         "eggs",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:19:28Z",
       "completedAt": "2026-07-21T08:19:29Z",
@@ -12796,7 +13791,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "from_beyond"
+        "from_beyond",
+        "gameplay"
       ],
       "claimedAt": "2026-07-21T10:09:41Z",
       "completedAt": "2026-07-21T10:09:42Z",
@@ -12901,7 +13897,8 @@
       "artifactSha256": "b9c13c4453f765429797353666d95e819f787faaa8e4f8067e370995e1fd8506",
       "attempts": 1,
       "categories": [
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:33:20Z",
       "completedAt": "2026-07-21T08:33:21Z",
@@ -12910,6 +13907,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T08:33:21Z",
       "url": "https://dontstarve.fandom.com/wiki/Pomegranate",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/e0ca969bef0d0cfdaacb9954d76042e735700c478e0214d0ea46ef81e2625b86.json",
+      "artifactSha256": "8162195fd8490f9686de5817948565614d32a8a56559145fd251bdeb0cfcf7e3",
+      "attempts": 1,
+      "categories": [
+        "indestructible_object"
+      ],
+      "claimedAt": "2026-07-21T12:00:54Z",
+      "completedAt": "2026-07-21T12:00:55Z",
+      "createdAt": "2026-07-21T12:00:51Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T12:00:55Z",
+      "url": "https://dontstarve.fandom.com/wiki/Pond",
       "workerId": null
     },
     {
@@ -13029,7 +14042,8 @@
       "categories": [
         "boss_monsters",
         "dont_starve_together",
-        "from_beyond"
+        "from_beyond",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T09:46:36Z",
       "completedAt": "2026-07-21T09:46:39Z",
@@ -13047,7 +14061,9 @@
       "categories": [
         "dont_starve_together",
         "events",
-        "food"
+        "food",
+        "healing",
+        "health_loss"
       ],
       "claimedAt": "2026-07-21T08:30:21Z",
       "completedAt": "2026-07-21T08:30:22Z",
@@ -13136,7 +14152,8 @@
       "attempts": 2,
       "categories": [
         "animals",
-        "dont_starve_together"
+        "dont_starve_together",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T09:44:04Z",
       "completedAt": "2026-07-21T09:44:06Z",
@@ -13152,7 +14169,8 @@
       "artifactSha256": "47e802862a250c9d5dd693fc22d8f1bd7d6ffaa8af05b70c3eeced1f5c27d395",
       "attempts": 1,
       "categories": [
-        "crock_pot_recipes"
+        "crock_pot_recipes",
+        "health_loss"
       ],
       "claimedAt": "2026-07-21T08:26:39Z",
       "completedAt": "2026-07-21T08:26:40Z",
@@ -13288,7 +14306,8 @@
       "artifactSha256": "d1077c53bd29034c94bc41f36bc67162efd181f60aa07ff54542f41a57861fd0",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "healing"
       ],
       "claimedAt": "2026-07-21T10:05:22Z",
       "completedAt": "2026-07-21T10:05:23Z",
@@ -13321,7 +14340,8 @@
       "artifactSha256": "24e5b32fe5dd6fabac1358c403913d3f305745c207d27de7ac0680bc02a13a50",
       "attempts": 1,
       "categories": [
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:33:18Z",
       "completedAt": "2026-07-21T08:33:19Z",
@@ -13389,7 +14409,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "from_beyond"
+        "from_beyond",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T08:58:03Z",
       "completedAt": "2026-07-21T08:58:05Z",
@@ -13408,7 +14429,8 @@
         "boss_dropped_items",
         "craftable_items",
         "dont_starve_together",
-        "fuel"
+        "fuel",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T07:37:10Z",
       "completedAt": "2026-07-21T07:37:11Z",
@@ -13474,7 +14496,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "equipable_items"
+        "equipable_items",
+        "hats"
       ],
       "claimedAt": "2026-07-21T08:38:26Z",
       "completedAt": "2026-07-21T08:38:27Z",
@@ -13519,6 +14542,22 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/41ff4ba9af0c92bff40ac9f819142a1823139da9d6477c996f4ecc5fa53ba16c.json",
+      "artifactSha256": "0a4e69ac6710ba077a23e3b71ce30de7f423d97b6cd3538a195f91b6cd6f4185",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:27Z",
+      "completedAt": "2026-07-21T11:53:29Z",
+      "createdAt": "2026-07-21T11:52:26Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:29Z",
+      "url": "https://dontstarve.fandom.com/wiki/Rain",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/4726a370d16fe885755dbb57b4088eea4f1f7c21a3c3945acf20b28f4256388e.json",
       "artifactSha256": "1b21433435826b029069547634362495c0f2da45afc33f03160dd4796a78a4ae",
       "attempts": 1,
@@ -13559,7 +14598,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "equipable_items"
+        "equipable_items",
+        "hats"
       ],
       "claimedAt": "2026-07-21T08:39:18Z",
       "completedAt": "2026-07-21T08:39:22Z",
@@ -13591,7 +14631,8 @@
       "artifactSha256": "433dfa79e447196c05f26fdfef504770c5fa6957ca551201b699138b32eafd6a",
       "attempts": 1,
       "categories": [
-        "crock_pot_recipes"
+        "crock_pot_recipes",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:26:20Z",
       "completedAt": "2026-07-21T08:26:21Z",
@@ -13610,7 +14651,8 @@
         "boss_dropped_items",
         "dont_starve_together",
         "fishes",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T07:36:39Z",
       "completedAt": "2026-07-21T07:36:40Z",
@@ -13645,7 +14687,8 @@
         "a_new_reign",
         "boss_monsters",
         "cave_creatures",
-        "dont_starve_together"
+        "dont_starve_together",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T07:39:24Z",
       "completedAt": "2026-07-21T07:39:26Z",
@@ -13697,7 +14740,9 @@
       "attempts": 1,
       "categories": [
         "boss_dropped_items",
-        "food"
+        "food",
+        "healing",
+        "health_loss"
       ],
       "claimedAt": "2026-07-21T07:36:17Z",
       "completedAt": "2026-07-21T07:36:18Z",
@@ -13731,7 +14776,8 @@
       "attempts": 1,
       "categories": [
         "boss_dropped_items",
-        "craftable_items"
+        "craftable_items",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T07:35:22Z",
       "completedAt": "2026-07-21T07:35:54Z",
@@ -13781,7 +14827,8 @@
       "artifactSha256": "25d8f1e2b2a17b55375d3cceaaa74b2f6094dff17d6646e08ca506a17241ae09",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "gameplay"
       ],
       "claimedAt": "2026-07-21T10:03:36Z",
       "completedAt": "2026-07-21T10:03:37Z",
@@ -13817,7 +14864,8 @@
       "categories": [
         "a_new_reign",
         "craftable_structures",
-        "decorations_filter"
+        "decorations_filter",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T08:23:33Z",
       "completedAt": "2026-07-21T08:23:34Z",
@@ -13948,13 +14996,30 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/80568da560ac11f136ca71f8b41c691a6df4e1d25b7546acfdebc54458424f86.json",
+      "artifactSha256": "6a9d5ff972f267f88cc67ac8ec1576b4c0aff6273075dfe7a88acb9b2d339f5c",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:21Z",
+      "completedAt": "2026-07-21T11:53:22Z",
+      "createdAt": "2026-07-21T11:52:26Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:22Z",
+      "url": "https://dontstarve.fandom.com/wiki/Road",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/2957fe54ff6999224e38c496d7a0521262bec8db81e27e0f0a7784fa579041ff.json",
       "artifactSha256": "f8e7288aff3150592bf6611509ac8610965141468905f38b811cadb9dce460b7",
       "attempts": 1,
       "categories": [
         "a_new_reign",
         "crafting_stations",
-        "dont_starve_together"
+        "dont_starve_together",
+        "indestructible_object"
       ],
       "claimedAt": "2026-07-21T08:19:01Z",
       "completedAt": "2026-07-21T08:19:02Z",
@@ -14005,7 +15070,8 @@
       "artifactSha256": "378b82474983624235634970443068b83ff5dd6f7fe88342ef931768cde4d0bb",
       "attempts": 1,
       "categories": [
-        "craftable_items"
+        "craftable_items",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T08:52:01Z",
       "completedAt": "2026-07-21T08:52:03Z",
@@ -14111,7 +15177,8 @@
       "categories": [
         "craftable_items",
         "fertilizer",
-        "fuel"
+        "fuel",
+        "health_loss"
       ],
       "claimedAt": "2026-07-21T08:19:41Z",
       "completedAt": "2026-07-21T08:19:42Z",
@@ -14129,7 +15196,9 @@
       "categories": [
         "eggs",
         "fertilizer",
-        "fuel"
+        "fuel",
+        "healing",
+        "health_loss"
       ],
       "claimedAt": "2026-07-21T08:19:24Z",
       "completedAt": "2026-07-21T08:19:26Z",
@@ -14147,7 +15216,8 @@
       "categories": [
         "a_new_reign",
         "boss_dropped_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "healing"
       ],
       "claimedAt": "2026-07-21T07:36:43Z",
       "completedAt": "2026-07-21T07:36:45Z",
@@ -14164,7 +15234,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "from_beyond"
+        "from_beyond",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T10:11:27Z",
       "completedAt": "2026-07-21T10:11:30Z",
@@ -14181,7 +15252,8 @@
       "attempts": 1,
       "categories": [
         "craftable_structures",
-        "dont_starve_together"
+        "dont_starve_together",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T08:47:43Z",
       "completedAt": "2026-07-21T08:47:45Z",
@@ -14207,6 +15279,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T08:57:13Z",
       "url": "https://dontstarve.fandom.com/wiki/Rudder_Kit",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/a82a83433d8a9ada1a93112d5fbf81052a5cacab17cd81073303afff73c08cbb.json",
+      "artifactSha256": "c649aa2e7e35afb114b8a00a5f1e918e835858b5d689fb83f0dc5412c18053d8",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:43Z",
+      "completedAt": "2026-07-21T11:53:44Z",
+      "createdAt": "2026-07-21T11:52:26Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:44Z",
+      "url": "https://dontstarve.fandom.com/wiki/Ruins",
       "workerId": null
     },
     {
@@ -14319,7 +15407,8 @@
       "categories": [
         "crock_pot_recipes",
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:26:53Z",
       "completedAt": "2026-07-21T08:26:54Z",
@@ -14457,7 +15546,8 @@
       "attempts": 1,
       "categories": [
         "a_new_reign",
-        "dont_starve_together"
+        "dont_starve_together",
+        "gameplay"
       ],
       "claimedAt": "2026-07-21T09:48:45Z",
       "completedAt": "2026-07-21T09:48:46Z",
@@ -14504,6 +15594,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T08:30:34Z",
       "url": "https://dontstarve.fandom.com/wiki/Sanguine_Experiment",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/b9d00cc0693f783581db48d6c6d09f06d7d66525cd8839642051bb824f748f1d.json",
+      "artifactSha256": "f73afb4784c8002fd0f99fd3861910be04e2c9a10105c76009a0bc8b673d755c",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:14Z",
+      "completedAt": "2026-07-21T11:53:15Z",
+      "createdAt": "2026-07-21T11:52:26Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:15Z",
+      "url": "https://dontstarve.fandom.com/wiki/Sanity",
       "workerId": null
     },
     {
@@ -14559,6 +15665,22 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/283f4f8e1e64d874cef2a56ddd3cb5a52e8364b13672dbb2f48ce02a85e20233.json",
+      "artifactSha256": "45fe4976a9c93bcf6d42131373d81313aaa4768bb201ce8be34dce28c5acf47b",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:25Z",
+      "completedAt": "2026-07-21T11:53:26Z",
+      "createdAt": "2026-07-21T11:52:26Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:26Z",
+      "url": "https://dontstarve.fandom.com/wiki/Saving",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/8c589c1ccf517c7f34cfc4c36c888376ca2f09ca3d873ccb7bde961e201c59b4.json",
       "artifactSha256": "4b852d43f7cc75e33f53c95d2b8106ab6b5cee38295f4253a33e9d49c6bfc8e7",
       "attempts": 1,
@@ -14584,7 +15706,8 @@
       "categories": [
         "containers",
         "craftable_structures",
-        "dont_starve_together"
+        "dont_starve_together",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T07:34:28Z",
       "completedAt": "2026-07-21T07:34:32Z",
@@ -14693,7 +15816,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "events"
+        "events",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T08:29:47Z",
       "completedAt": "2026-07-21T08:29:48Z",
@@ -14743,7 +15867,8 @@
       "artifactSha256": "a51bfd6e7a081b23831131763b7f926cf8a410280ee22f9fc6d71c0ade4b4ac4",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "gameplay"
       ],
       "claimedAt": "2026-07-21T10:09:56Z",
       "completedAt": "2026-07-21T10:09:57Z",
@@ -14761,7 +15886,8 @@
       "categories": [
         "dont_starve_together",
         "equipable_items",
-        "from_beyond"
+        "from_beyond",
+        "hats"
       ],
       "claimedAt": "2026-07-21T08:42:24Z",
       "completedAt": "2026-07-21T08:42:25Z",
@@ -14944,7 +16070,8 @@
       "categories": [
         "crock_pot_recipes",
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:26:48Z",
       "completedAt": "2026-07-21T08:26:49Z",
@@ -15009,7 +16136,8 @@
       "artifactSha256": "a730e171541672a16ccf7b030849c434babc197a9ea5f432e997620bc8ba4821",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "gameplay"
       ],
       "claimedAt": "2026-07-21T10:03:38Z",
       "completedAt": "2026-07-21T10:03:39Z",
@@ -15025,7 +16153,8 @@
       "artifactSha256": "4540c23e63450df2235d0fa6dab4cc3c59bb8bfdecbdf2cf4a8a43f5e3671952",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "gameplay"
       ],
       "claimedAt": "2026-07-21T10:03:39Z",
       "completedAt": "2026-07-21T10:03:41Z",
@@ -15041,7 +16170,8 @@
       "artifactSha256": "4f8d51ba0c6156ae8f5cd17ae3ca8a70cc5d413e530b439283f0246f07c923a4",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "gameplay"
       ],
       "claimedAt": "2026-07-21T10:03:41Z",
       "completedAt": "2026-07-21T10:03:42Z",
@@ -15057,7 +16187,8 @@
       "artifactSha256": "d132ec4a791bc5b40575855f253aad1ee9cf8fe11ad09a44ee1716a0cb208b10",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "gameplay"
       ],
       "claimedAt": "2026-07-21T10:03:42Z",
       "completedAt": "2026-07-21T10:03:43Z",
@@ -15069,13 +16200,46 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/63ddf6c86b63c07d77f6d1efccc8eb66e237040e9061f9c4666f82735f1b1398.json",
+      "artifactSha256": "355eca1504c8e9595151124f8f649d46c5a1469e294c8c40c149628ac02d2d0c",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:54Z",
+      "completedAt": "2026-07-21T11:53:55Z",
+      "createdAt": "2026-07-21T11:52:26Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:55Z",
+      "url": "https://dontstarve.fandom.com/wiki/Seasons/Winter",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/5e35e7a40aacd6e6b3a449d7334d0d4d397313e8f5f4b917482f656f2de38ba6.json",
+      "artifactSha256": "f8532aade3a4ddaed925f3e59692004e52e0a37bda256075228ff9960a5eef5c",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:39Z",
+      "completedAt": "2026-07-21T11:53:40Z",
+      "createdAt": "2026-07-21T11:52:26Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:40Z",
+      "url": "https://dontstarve.fandom.com/wiki/Seasons/World",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/d67891fcf86ed7323918e041d1972094c94ade01bc2603c063e8b313015ad651.json",
       "artifactSha256": "f80806292cb9758e334b6f3b519fab7e2e2c97ce605832e35b90b43a069fcf57",
       "attempts": 1,
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "equipable_items"
+        "equipable_items",
+        "hats"
       ],
       "claimedAt": "2026-07-21T08:40:00Z",
       "completedAt": "2026-07-21T08:40:04Z",
@@ -15129,7 +16293,8 @@
       "artifactSha256": "051b9a2c9b78c9914ac9e2abe63cb0dccf29e71a8bd1f4595ad0a519429ac8ed",
       "attempts": 1,
       "categories": [
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:33:14Z",
       "completedAt": "2026-07-21T08:33:15Z",
@@ -15179,7 +16344,8 @@
       "artifactSha256": "ab8bb77f1fc592d440559aea0a238471a732740528b043a497c2345029e88aa7",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "gameplay"
       ],
       "claimedAt": "2026-07-21T10:02:44Z",
       "completedAt": "2026-07-21T10:02:45Z",
@@ -15211,7 +16377,8 @@
       "artifactSha256": "30ef1456815c0ed5fa0367c1abb61f11a5ff84df063a46614f46ead2f25d6ff3",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "gameplay"
       ],
       "claimedAt": "2026-07-21T10:09:53Z",
       "completedAt": "2026-07-21T10:09:54Z",
@@ -15280,7 +16447,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "from_beyond"
+        "from_beyond",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:59:28Z",
       "completedAt": "2026-07-21T08:59:31Z",
@@ -15297,7 +16465,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "followers"
+        "followers",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T10:11:21Z",
       "completedAt": "2026-07-21T10:11:22Z",
@@ -15315,7 +16484,8 @@
       "categories": [
         "a_new_reign",
         "boss_monsters",
-        "dont_starve_together"
+        "dont_starve_together",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T09:46:21Z",
       "completedAt": "2026-07-21T09:46:22Z",
@@ -15367,7 +16537,8 @@
       "artifactSha256": "121f2073a237262927a8f5989ac5472cf9c409f2d3a49a8a7660ca9863ae9e03",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T10:09:20Z",
       "completedAt": "2026-07-21T10:09:21Z",
@@ -15418,7 +16589,8 @@
       "artifactSha256": "bbd8601e8a12d4039463241115ed700a5604f3449c2abb50cde8238b154dc333",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T10:04:55Z",
       "completedAt": "2026-07-21T10:04:56Z",
@@ -15500,7 +16672,8 @@
       "artifactSha256": "e90d54d06839fa98c3f6a1c12231df0c9958fe6720ea42bc83a1e3bc3e64cb5b",
       "attempts": 1,
       "categories": [
-        "equipable_items"
+        "equipable_items",
+        "hats"
       ],
       "claimedAt": "2026-07-21T08:38:33Z",
       "completedAt": "2026-07-21T08:38:34Z",
@@ -15621,7 +16794,8 @@
       "categories": [
         "cooling",
         "craftable_structures",
-        "dont_starve_together"
+        "dont_starve_together",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:17:53Z",
       "completedAt": "2026-07-21T08:17:57Z",
@@ -15679,6 +16853,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T10:09:23Z",
       "url": "https://dontstarve.fandom.com/wiki/Silken_Grand_Armor",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/d1c37f8944d679975b635c89633403c353be38d9af3242ec99a2bf21ffc48a7d.json",
+      "artifactSha256": "43bb790e8af6a768e5bdbca8f6ab35e4bcdb5aeaf30bd384c06ad0a7fe90f587",
+      "attempts": 1,
+      "categories": [
+        "indestructible_object"
+      ],
+      "claimedAt": "2026-07-21T12:01:01Z",
+      "completedAt": "2026-07-21T12:01:02Z",
+      "createdAt": "2026-07-21T12:00:51Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T12:01:02Z",
+      "url": "https://dontstarve.fandom.com/wiki/Sinkhole",
       "workerId": null
     },
     {
@@ -15801,6 +16991,22 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/1c201a82b49251a5b0b8cbb8f024984276e020a918b3a10295c132970a7cade8.json",
+      "artifactSha256": "78a5cc3a5c255981190031e956855155d32c0a7938930553f9b1fd8abc58c7bc",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:22Z",
+      "completedAt": "2026-07-21T11:53:23Z",
+      "createdAt": "2026-07-21T11:52:26Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:23Z",
+      "url": "https://dontstarve.fandom.com/wiki/Sleeping",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/730b6a899273275de63f23b9ebf09f4a1c8ce9ba2292f2781a8691c87e741722.json",
       "artifactSha256": "5880ed1a3fa24a3f91df57737ac1b5a080ca884746eb9f0dbbb5dd265118411e",
       "attempts": 1,
@@ -15889,7 +17095,9 @@
       "artifactSha256": "492f2107ee843abbfabe196ecb0154edaab83f7d2621a5f8b2af82553e42ff71",
       "attempts": 1,
       "categories": [
-        "equipable_items"
+        "equipable_items",
+        "hats",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T08:38:45Z",
       "completedAt": "2026-07-21T08:38:46Z",
@@ -15934,12 +17142,29 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/814c25cce9b878f72ed18b5470059f1ed2f2bba4a12266d7f29cc058f106756b.json",
+      "artifactSha256": "557ac87415a711824b999a6f4370f3d455801479daa11138b77864fc6dd8dbd0",
+      "attempts": 1,
+      "categories": [
+        "healing"
+      ],
+      "claimedAt": "2026-07-21T11:55:30Z",
+      "completedAt": "2026-07-21T11:55:31Z",
+      "createdAt": "2026-07-21T11:55:24Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:55:31Z",
+      "url": "https://dontstarve.fandom.com/wiki/Small_Jerky",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/329cbebcd09e41378bab7c4a3e5ed5589c074f1778a6840e86d12d4913d8b888.json",
       "artifactSha256": "3f78b11f2d8113adc1bbf4242ead13a8032416edb74e157439d01301c88cea79",
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "events"
+        "events",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T08:29:46Z",
       "completedAt": "2026-07-21T08:29:47Z",
@@ -15973,7 +17198,8 @@
       "categories": [
         "crock_pot_recipes",
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:27:07Z",
       "completedAt": "2026-07-21T08:27:08Z",
@@ -15998,6 +17224,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T10:04:32Z",
       "url": "https://dontstarve.fandom.com/wiki/Soul",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/e24f6cd296ef0fe48fcf767669cb461882a28299ab1f002c51db3a6da5fc6ac7.json",
+      "artifactSha256": "f5ce1b188c629cd2d46a37545a59fd8a3cd94779d290bb5e1d03e89692aba71c",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:41Z",
+      "completedAt": "2026-07-21T11:53:42Z",
+      "createdAt": "2026-07-21T11:52:26Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:42Z",
+      "url": "https://dontstarve.fandom.com/wiki/Soundtrack",
       "workerId": null
     },
     {
@@ -16075,7 +17317,8 @@
       "categories": [
         "crock_pot_recipes",
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:26:42Z",
       "completedAt": "2026-07-21T08:26:43Z",
@@ -16093,7 +17336,8 @@
       "categories": [
         "crock_pot_recipes",
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:26:51Z",
       "completedAt": "2026-07-21T08:26:52Z",
@@ -16110,7 +17354,8 @@
       "attempts": 1,
       "categories": [
         "cave_creatures",
-        "followers"
+        "followers",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T07:39:20Z",
       "completedAt": "2026-07-21T07:39:21Z",
@@ -16157,12 +17402,29 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/7469d03bcf4610ddba28688b7b22fa0bd78c15f48c52cda96c964a7d55e97756.json",
+      "artifactSha256": "1ee8f62a00d2672eaaf476a47bb52c4ea141aa43f0ea15ab6e8d0dff66a8923b",
+      "attempts": 1,
+      "categories": [
+        "healing"
+      ],
+      "claimedAt": "2026-07-21T11:55:31Z",
+      "completedAt": "2026-07-21T11:55:33Z",
+      "createdAt": "2026-07-21T11:55:24Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:55:33Z",
+      "url": "https://dontstarve.fandom.com/wiki/Spider_Gland",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/5ee35862b09b78f0ec0304ffeb50afae6ae00674088db13e038f4f49fa6fd47a.json",
       "artifactSha256": "e03cecfb769472335e95d8590729aa137f627f44181b75863fca61410d2b9c03",
       "attempts": 1,
       "categories": [
         "boss_monsters",
-        "cave_creatures"
+        "cave_creatures",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T07:39:03Z",
       "completedAt": "2026-07-21T07:39:04Z",
@@ -16179,7 +17441,8 @@
       "attempts": 1,
       "categories": [
         "cave_creatures",
-        "followers"
+        "followers",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T07:39:21Z",
       "completedAt": "2026-07-21T07:39:22Z",
@@ -16196,7 +17459,8 @@
       "attempts": 1,
       "categories": [
         "boss_dropped_items",
-        "equipable_items"
+        "equipable_items",
+        "hats"
       ],
       "claimedAt": "2026-07-21T07:36:02Z",
       "completedAt": "2026-07-21T07:36:03Z",
@@ -16212,7 +17476,8 @@
       "artifactSha256": "0e80ef8e66b321b612bbf31e0e486900feaefcf8c2ea97fec4b647e39917f10b",
       "attempts": 1,
       "categories": [
-        "fuel"
+        "fuel",
+        "health_loss"
       ],
       "claimedAt": "2026-07-21T10:48:53Z",
       "completedAt": "2026-07-21T10:48:55Z",
@@ -16229,7 +17494,8 @@
       "attempts": 1,
       "categories": [
         "cave_creatures",
-        "followers"
+        "followers",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T07:39:10Z",
       "completedAt": "2026-07-21T07:39:11Z",
@@ -16245,7 +17511,8 @@
       "artifactSha256": "dee09df3029f3438a646380eb63ee8eb6e893f4f81f22c2f2d8f3765e59f595e",
       "attempts": 2,
       "categories": [
-        "animals"
+        "animals",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T09:43:43Z",
       "completedAt": "2026-07-21T09:43:44Z",
@@ -16263,7 +17530,8 @@
       "categories": [
         "dont_starve_together",
         "fertilizer",
-        "fuel"
+        "fuel",
+        "health_loss"
       ],
       "claimedAt": "2026-07-21T08:19:46Z",
       "completedAt": "2026-07-21T08:19:48Z",
@@ -16415,7 +17683,8 @@
         "a_new_reign",
         "craftable_structures",
         "decorations_filter",
-        "dont_starve_together"
+        "dont_starve_together",
+        "indestructible_object"
       ],
       "claimedAt": "2026-07-21T08:23:52Z",
       "completedAt": "2026-07-21T08:23:53Z",
@@ -16431,7 +17700,8 @@
       "artifactSha256": "e1d90c8667d409880ccb7170b5d4a3596e922864119576e1401e03140aa5cb1b",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "indestructible_object"
       ],
       "claimedAt": "2026-07-21T10:03:31Z",
       "completedAt": "2026-07-21T10:03:32Z",
@@ -16536,7 +17806,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:33:50Z",
       "completedAt": "2026-07-21T08:33:51Z",
@@ -16601,7 +17872,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "equipable_items"
+        "equipable_items",
+        "hats"
       ],
       "claimedAt": "2026-07-21T08:37:51Z",
       "completedAt": "2026-07-21T08:37:53Z",
@@ -16647,6 +17919,22 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/94a783afe5746b2f385ae27611760695e14d075ebb37c9a66fb81b54b88a7c9c.json",
+      "artifactSha256": "05eb4813e0e84bf4302fe7a95c9c314f414b1025830de6453f691b38fa3ae253",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:52:27Z",
+      "completedAt": "2026-07-21T11:52:28Z",
+      "createdAt": "2026-07-21T11:52:26Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:52:28Z",
+      "url": "https://dontstarve.fandom.com/wiki/Structures",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/c3e88403587464e6991ebd6de1cb6a73a7e850fcd6c1982e28958913ed09a262.json",
       "artifactSha256": "3f83e390a594260e89d424d59d161eef028c813a389257975be27460a8a4c1f4",
       "attempts": 1,
@@ -16668,7 +17956,8 @@
       "attempts": 1,
       "categories": [
         "crock_pot_recipes",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:26:26Z",
       "completedAt": "2026-07-21T08:26:27Z",
@@ -16686,7 +17975,8 @@
       "categories": [
         "crock_pot_recipes",
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:26:59Z",
       "completedAt": "2026-07-21T08:27:00Z",
@@ -16722,7 +18012,8 @@
       "categories": [
         "crock_pot_recipes",
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:26:54Z",
       "completedAt": "2026-07-21T08:26:56Z",
@@ -16821,13 +18112,30 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/ef372c2b80c68cf3645014801224a8c16ed614dd1598b3f0033e388649f5a556.json",
+      "artifactSha256": "baa32d5a3a9c655863c50b5334206e16d440c1843a619758025a386e4a1c7a65",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:47Z",
+      "completedAt": "2026-07-21T11:53:48Z",
+      "createdAt": "2026-07-21T11:52:26Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:48Z",
+      "url": "https://dontstarve.fandom.com/wiki/Sunken_Forest",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/15fd5061da9fc459e4325cd6f67a6474184ea3563c4d4dc7beb08ae56a5236cc.json",
       "artifactSha256": "1890561af30a7d9f9ff2cf625f1c426e78d7b0590b7b232d0fc53c0061a5f2eb",
       "attempts": 1,
       "categories": [
         "crock_pot_recipes",
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:26:46Z",
       "completedAt": "2026-07-21T08:26:47Z",
@@ -16836,6 +18144,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T08:26:47Z",
       "url": "https://dontstarve.fandom.com/wiki/Surf_'n'_Turf",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/6b3186bc1a0e531afa8e4cc0cc0cbdef688d76c028900ca8a59871c2d4765007.json",
+      "artifactSha256": "5cf0a3a5187080dd9bbae1adc1d1614225e2a7cb03ddde1b6156a683ee51b03d",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:48Z",
+      "completedAt": "2026-07-21T11:53:49Z",
+      "createdAt": "2026-07-21T11:52:26Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:49Z",
+      "url": "https://dontstarve.fandom.com/wiki/Surface_World",
       "workerId": null
     },
     {
@@ -16872,12 +18196,29 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/1c738b02f9ab7c8814562a92908a65c1b06982abf332c8aba3e8dd836530f8e3.json",
+      "artifactSha256": "611666b9210df4db9b9952b68cc6666ad816099fb94ee0ae5595714d2f6c1010",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:55Z",
+      "completedAt": "2026-07-21T11:53:56Z",
+      "createdAt": "2026-07-21T11:52:26Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:56Z",
+      "url": "https://dontstarve.fandom.com/wiki/Survivor_Speed",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/946c9af0c009c7ac79f4d8ef599672bb7ab84c97c88316c895929cfffa1873c2.json",
       "artifactSha256": "b0aaaf72ce68c278d999f8b91993659aa2e6bd9267072cf8d053f05fe9eadaf4",
       "attempts": 1,
       "categories": [
         "a_new_reign",
-        "dont_starve_together"
+        "dont_starve_together",
+        "indestructible_object"
       ],
       "claimedAt": "2026-07-21T09:48:26Z",
       "completedAt": "2026-07-21T09:48:27Z",
@@ -16903,6 +18244,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T09:48:26Z",
       "url": "https://dontstarve.fandom.com/wiki/Suspicious_Moonrock",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/609f770ef998bee4190aecbe4039a12d50d113cfec18f9a6819482d018a6b560.json",
+      "artifactSha256": "7ffa77bdd98b8ab74bfd854905ad36083bbd0a06b2bbd108cbd64bbf6333baa1",
+      "attempts": 1,
+      "categories": [
+        "hostile_creatures"
+      ],
+      "claimedAt": "2026-07-21T11:58:50Z",
+      "completedAt": "2026-07-21T11:58:51Z",
+      "createdAt": "2026-07-21T11:58:39Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:58:51Z",
+      "url": "https://dontstarve.fandom.com/wiki/Suspicious_Peeper",
       "workerId": null
     },
     {
@@ -16962,7 +18319,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "food"
+        "food",
+        "health_loss"
       ],
       "claimedAt": "2026-07-21T08:34:33Z",
       "completedAt": "2026-07-21T08:34:34Z",
@@ -17102,7 +18460,8 @@
       "attempts": 1,
       "categories": [
         "crock_pot_recipes",
-        "food"
+        "food",
+        "health_loss"
       ],
       "claimedAt": "2026-07-21T08:26:37Z",
       "completedAt": "2026-07-21T08:26:38Z",
@@ -17140,7 +18499,8 @@
       "categories": [
         "crock_pot_recipes",
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:27:45Z",
       "completedAt": "2026-07-21T08:27:46Z",
@@ -17156,7 +18516,8 @@
       "artifactSha256": "e76d90ab2791bc4458decdcdecec6aed955e830956bda3cccf8f1e3d181e8ff9",
       "attempts": 1,
       "categories": [
-        "birds"
+        "birds",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T09:44:56Z",
       "completedAt": "2026-07-21T09:44:57Z",
@@ -17173,7 +18534,8 @@
       "attempts": 1,
       "categories": [
         "eggs",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:19:22Z",
       "completedAt": "2026-07-21T08:19:23Z",
@@ -17189,7 +18551,8 @@
       "artifactSha256": "d9579aa33b0e471ccdd959e574e77a66d66cdbea2570625165648ee25a90d99c",
       "attempts": 1,
       "categories": [
-        "equipable_items"
+        "equipable_items",
+        "hats"
       ],
       "claimedAt": "2026-07-21T08:38:13Z",
       "completedAt": "2026-07-21T08:38:14Z",
@@ -17257,7 +18620,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "health_loss"
       ],
       "claimedAt": "2026-07-21T08:53:31Z",
       "completedAt": "2026-07-21T08:53:32Z",
@@ -17273,7 +18637,8 @@
       "artifactSha256": "515851dee3a7324f8e68301413e7ce28f941d3f1bbebc4d668a1f141c4683fa6",
       "attempts": 1,
       "categories": [
-        "craftable_structures"
+        "craftable_structures",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:46:17Z",
       "completedAt": "2026-07-21T08:46:19Z",
@@ -17291,7 +18656,8 @@
       "categories": [
         "craftable_items",
         "craftable_structures",
-        "dont_starve_together"
+        "dont_starve_together",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:48:05Z",
       "completedAt": "2026-07-21T08:48:08Z",
@@ -17307,7 +18673,8 @@
       "artifactSha256": "e5ed1ae021c6a26b9526d871cfb5ff8c22cb48aa7887955688035f262497fe4a",
       "attempts": 1,
       "categories": [
-        "cave_creatures"
+        "cave_creatures",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T07:39:00Z",
       "completedAt": "2026-07-21T07:39:01Z",
@@ -17390,7 +18757,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "events"
+        "events",
+        "indestructible_object"
       ],
       "claimedAt": "2026-07-21T08:30:10Z",
       "completedAt": "2026-07-21T08:30:11Z",
@@ -17598,7 +18966,8 @@
       "categories": [
         "boss_dropped_items",
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T07:36:28Z",
       "completedAt": "2026-07-21T07:36:32Z",
@@ -17687,7 +19056,8 @@
         "ancient_tab",
         "ancient_tier_2",
         "craftable_items",
-        "equipable_items"
+        "equipable_items",
+        "hats"
       ],
       "claimedAt": "2026-07-21T08:39:16Z",
       "completedAt": "2026-07-21T08:39:18Z",
@@ -17773,7 +19143,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:55:45Z",
       "completedAt": "2026-07-21T08:55:49Z",
@@ -17789,7 +19160,8 @@
       "artifactSha256": "45df926a09bb4fd61d95fb28fa72552bcdf32a7f5d45fcb3df89403584f7d482",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "healing"
       ],
       "claimedAt": "2026-07-21T10:07:25Z",
       "completedAt": "2026-07-21T10:07:26Z",
@@ -17858,7 +19230,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:33:48Z",
       "completedAt": "2026-07-21T08:33:49Z",
@@ -17908,7 +19281,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "equipable_items"
+        "equipable_items",
+        "hats"
       ],
       "claimedAt": "2026-07-21T08:37:47Z",
       "completedAt": "2026-07-21T08:37:51Z",
@@ -17992,7 +19366,8 @@
       "categories": [
         "crock_pot_recipes",
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:26:45Z",
       "completedAt": "2026-07-21T08:26:46Z",
@@ -18164,7 +19539,8 @@
       "categories": [
         "clothing_filter",
         "craftable_items",
-        "dont_starve_together"
+        "dont_starve_together",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T07:30:53Z",
       "completedAt": "2026-07-21T07:30:56Z",
@@ -18181,7 +19557,8 @@
       "attempts": 1,
       "categories": [
         "crock_pot_recipes",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:26:30Z",
       "completedAt": "2026-07-21T08:26:31Z",
@@ -18252,7 +19629,8 @@
       "categories": [
         "beefalo_foods",
         "craftable_items",
-        "fuel"
+        "fuel",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T07:30:20Z",
       "completedAt": "2026-07-21T07:30:21Z",
@@ -18307,7 +19685,8 @@
       "categories": [
         "craftable_items",
         "crock_pot_recipes",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:26:40Z",
       "completedAt": "2026-07-21T08:26:41Z",
@@ -18371,7 +19750,8 @@
       "artifactSha256": "9ef63b93b7eb5f0183d75017a9298827397b25dd3aef84e223deabe4cf0ad0a3",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T10:02:59Z",
       "completedAt": "2026-07-21T10:03:00Z",
@@ -18405,7 +19785,8 @@
       "categories": [
         "crock_pot_recipes",
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:27:01Z",
       "completedAt": "2026-07-21T08:27:02Z",
@@ -18455,7 +19836,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "from_beyond"
+        "from_beyond",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T08:58:09Z",
       "completedAt": "2026-07-21T08:58:13Z",
@@ -18473,7 +19855,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "from_beyond"
+        "from_beyond",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T08:58:05Z",
       "completedAt": "2026-07-21T08:58:09Z",
@@ -18490,7 +19873,8 @@
       "attempts": 2,
       "categories": [
         "animals",
-        "dont_starve_together"
+        "dont_starve_together",
+        "hostile_creatures"
       ],
       "claimedAt": "2026-07-21T09:43:46Z",
       "completedAt": "2026-07-21T09:43:47Z",
@@ -18628,7 +20012,8 @@
       "categories": [
         "crock_pot_recipes",
         "food",
-        "fruits"
+        "fruits",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:26:31Z",
       "completedAt": "2026-07-21T08:26:32Z",
@@ -18687,6 +20072,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T10:02:38Z",
       "url": "https://dontstarve.fandom.com/wiki/Wall",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/3396a9735b5154e73a4c2de16c82d88b0638a7dbdb0cd3afc5573986f4ceeb56.json",
+      "artifactSha256": "b90b5b15e2f8c8df0ae6f933669b1fff37852972720c056edb248f112feae78c",
+      "attempts": 1,
+      "categories": [
+        "indestructible_object"
+      ],
+      "claimedAt": "2026-07-21T12:00:58Z",
+      "completedAt": "2026-07-21T12:00:59Z",
+      "createdAt": "2026-07-21T12:00:51Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T12:00:59Z",
+      "url": "https://dontstarve.fandom.com/wiki/Walrus_Camp",
       "workerId": null
     },
     {
@@ -18850,7 +20251,8 @@
         "cooling",
         "dont_starve_together",
         "food",
-        "fruits"
+        "fruits",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:17:59Z",
       "completedAt": "2026-07-21T08:18:00Z",
@@ -18866,7 +20268,8 @@
       "artifactSha256": "a3cf098fcbe1500179f25d0dba67c1da3a71386478ecc081ba720f77f00d9df6",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "gameplay"
       ],
       "claimedAt": "2026-07-21T10:03:27Z",
       "completedAt": "2026-07-21T10:03:28Z",
@@ -18983,7 +20386,8 @@
       "artifactSha256": "ce365100a9152d5e4e2217cecb8d525e13bc47ddc27c47466a68a4d17f28fb35",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "gameplay"
       ],
       "claimedAt": "2026-07-21T10:06:28Z",
       "completedAt": "2026-07-21T10:06:29Z",
@@ -18992,6 +20396,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T10:06:29Z",
       "url": "https://dontstarve.fandom.com/wiki/Weight",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/4c91d67343a8ceb9a87fa8fedc0c742e54a0c4e828dc6c1c769920cd7eac7e69.json",
+      "artifactSha256": "4449ab992f86ef34da7186515814238b020d0de0ee9ccd2e5dc520d13cdec268",
+      "attempts": 1,
+      "categories": [
+        "hostile_creatures"
+      ],
+      "claimedAt": "2026-07-21T11:58:45Z",
+      "completedAt": "2026-07-21T11:58:48Z",
+      "createdAt": "2026-07-21T11:58:39Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:58:48Z",
+      "url": "https://dontstarve.fandom.com/wiki/Werepig",
       "workerId": null
     },
     {
@@ -19015,7 +20435,8 @@
       "artifactSha256": "2f2f9e60c0e0b57fe861de1e357239dd5eebb0cb4e2ff11c94e122fc08bccbc0",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "gameplay"
       ],
       "claimedAt": "2026-07-21T10:02:55Z",
       "completedAt": "2026-07-21T10:02:56Z",
@@ -19117,7 +20538,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "from_beyond"
+        "from_beyond",
+        "gameplay"
       ],
       "claimedAt": "2026-07-21T10:09:31Z",
       "completedAt": "2026-07-21T10:09:32Z",
@@ -19289,7 +20711,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "equipable_items"
+        "equipable_items",
+        "hats"
       ],
       "claimedAt": "2026-07-21T08:37:57Z",
       "completedAt": "2026-07-21T08:38:01Z",
@@ -19323,7 +20746,8 @@
       "categories": [
         "dont_starve_together",
         "fishes",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:21:44Z",
       "completedAt": "2026-07-21T08:21:48Z",
@@ -19342,7 +20766,8 @@
         "cooling",
         "crock_pot_recipes",
         "dont_starve_together",
-        "food"
+        "food",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:18:17Z",
       "completedAt": "2026-07-21T08:18:18Z",
@@ -19361,7 +20786,8 @@
         "craftable_items",
         "crock_pot_recipes",
         "dont_starve_together",
-        "fishes"
+        "fishes",
+        "healing"
       ],
       "claimedAt": "2026-07-21T08:21:49Z",
       "completedAt": "2026-07-21T08:21:50Z",
@@ -19512,11 +20938,28 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/6ddefb394c0d65a4867bac8935717db9e8eabe2b1a392aa0abeabcd7a9b7d41f.json",
+      "artifactSha256": "8cf2bb6e63e438b787259f584c726990b3a0b306574da49f8b18991784d35e94",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:52Z",
+      "completedAt": "2026-07-21T11:53:53Z",
+      "createdAt": "2026-07-21T11:52:27Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:53Z",
+      "url": "https://dontstarve.fandom.com/wiki/World_Customization",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/e796b6d941de3dea4f5e39c2af1dd61e3ca993d02cdec62926989758609c5706.json",
       "artifactSha256": "59ef526d51a3e315ac4cef27953dae49e7661e66c714020719f3f425cf031447",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "gameplay"
       ],
       "claimedAt": "2026-07-21T10:03:37Z",
       "completedAt": "2026-07-21T10:03:38Z",
@@ -19525,6 +20968,70 @@
       "status": "Done",
       "updatedAt": "2026-07-21T10:03:38Z",
       "url": "https://dontstarve.fandom.com/wiki/World_Customization/Don't_Starve_Together",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/832f368707994680ed41b58a96be30ab2e2d9d6b3c2cb5497556ccb35b2e4943.json",
+      "artifactSha256": "fc2b5493c8e7f653e8e53a3ff651e8fa941fa4055ccfa48a4478b62951990426",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:49Z",
+      "completedAt": "2026-07-21T11:53:50Z",
+      "createdAt": "2026-07-21T11:52:27Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:50Z",
+      "url": "https://dontstarve.fandom.com/wiki/World_Generation",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/b75a364e9b013f4fdc0fbfcec22ca1f6c175dc6d5a0e4acf67522496d5c5862d.json",
+      "artifactSha256": "542482d14e2f44b0dad3479276ee9ea9164d193868a495bcabe21f166390dd72",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:40Z",
+      "completedAt": "2026-07-21T11:53:41Z",
+      "createdAt": "2026-07-21T11:52:27Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:41Z",
+      "url": "https://dontstarve.fandom.com/wiki/World_Generation_Screen",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/9746d643a70fc4b2d8024f620e1e7d8090f6d078ed4ec579c9cc34d24e8738a6.json",
+      "artifactSha256": "518214451355615b1ef386aa383537edbdf71a7cd51bd4fda49e77f224ca1b4c",
+      "attempts": 1,
+      "categories": [
+        "gameplay"
+      ],
+      "claimedAt": "2026-07-21T11:53:56Z",
+      "completedAt": "2026-07-21T11:53:57Z",
+      "createdAt": "2026-07-21T11:52:27Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T11:53:57Z",
+      "url": "https://dontstarve.fandom.com/wiki/World_Retrofit",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/776913738b3b391f03445a8140ee1eb88932ccf69343cdbbdfa35c8eb16f1386.json",
+      "artifactSha256": "817a5badaff205f3828079f1875d18c5f50623840c48dc4bc1fd7a1d2f2fb119",
+      "attempts": 1,
+      "categories": [
+        "indestructible_object"
+      ],
+      "claimedAt": "2026-07-21T12:00:56Z",
+      "completedAt": "2026-07-21T12:00:58Z",
+      "createdAt": "2026-07-21T12:00:51Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T12:00:58Z",
+      "url": "https://dontstarve.fandom.com/wiki/Worm_Hole",
       "workerId": null
     },
     {
@@ -19647,7 +21154,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "events"
+        "events",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T08:31:07Z",
       "completedAt": "2026-07-21T08:31:09Z",
@@ -19766,7 +21274,8 @@
       "attempts": 1,
       "categories": [
         "boss_dropped_items",
-        "craftable_items"
+        "craftable_items",
+        "infobox_missing_crafting_description"
       ],
       "claimedAt": "2026-07-21T07:36:23Z",
       "completedAt": "2026-07-21T07:36:24Z",

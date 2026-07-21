@@ -1,0 +1,50 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Gameplay",
+  "excludedTitles": {
+    "Adventure Mode": "non_dst:dont_starve",
+    "Aporkalypse": "non_dst:hamlet",
+    "Armor/DS": "non_dst:dont_starve",
+    "Beard": "non_item:overview",
+    "Controls": "non_dst:dont_starve",
+    "Experience": "non_dst:dont_starve",
+    "Flooding": "non_dst:shipwrecked",
+    "Fog": "non_item:overview",
+    "Hay Fever": "non_dst:hamlet",
+    "Heavy Fog": "non_dst:hamlet",
+    "Maxwell NPC": "non_dst:dont_starve",
+    "Morgue": "non_dst:dont_starve",
+    "Ocean Fog": "non_dst:shipwrecked",
+    "Peculiar Objects": "non_dst:hamlet",
+    "Pig Fiesta": "non_dst:hamlet",
+    "Pig Shops": "non_dst:hamlet",
+    "Poison": "non_dst:shipwrecked",
+    "Seasons/Dry": "non_dst:shipwrecked",
+    "Seasons/Humid": "non_dst:hamlet",
+    "Seasons/Hurricane": "non_dst:shipwrecked",
+    "Seasons/Lush": "non_dst:hamlet",
+    "Seasons/Mild": "non_dst:shipwrecked",
+    "Seasons/Monsoon": "non_dst:shipwrecked",
+    "Seasons/Temperate": "non_dst:hamlet",
+    "Strong Winds": "non_dst:shipwrecked",
+    "Survival Mode": "non_dst:dont_starve",
+    "Things": "non_dst:dont_starve",
+    "Volcano Biome": "non_dst:shipwrecked",
+    "World Customization Hamlet": "non_dst:hamlet",
+    "World Customization Reign of Giants": "non_dst:reign_of_giants",
+    "World Customization Shipwrecked": "non_dst:shipwrecked",
+    "World Customization/Don't Starve": "non_dst:dont_starve"
+  },
+  "expectedDirectPages": 112,
+  "expectedPublishedPages": 80,
+  "game": "DST",
+  "itemType": "content",
+  "key": "gameplay",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Gameplay",
+  "tags": [
+    "Gameplay"
+  ]
+}
