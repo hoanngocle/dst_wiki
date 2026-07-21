@@ -1,0 +1,19 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Ancient Tier 1",
+  "excludedTitles": {
+    "Slingshot Ammo": "non_item:overview"
+  },
+  "expectedDirectPages": 10,
+  "expectedPublishedPages": 9,
+  "game": "DST",
+  "itemType": "item",
+  "key": "ancient_tier_1",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Ancient_Tier_1",
+  "tags": [
+    "Ancient Tier 1"
+  ]
+}

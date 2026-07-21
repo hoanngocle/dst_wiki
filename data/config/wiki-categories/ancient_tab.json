@@ -1,0 +1,19 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Ancient Tab",
+  "excludedTitles": {
+    "Wall": "non_item:overview"
+  },
+  "expectedDirectPages": 15,
+  "expectedPublishedPages": 14,
+  "game": "DST",
+  "itemType": "item",
+  "key": "ancient_tab",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Ancient_Tab",
+  "tags": [
+    "Ancient Tab"
+  ]
+}

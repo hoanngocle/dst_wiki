@@ -131,6 +131,22 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/6bcba33ebf0bb1babc1173d503295574dcf77a45bd84b3501749b37e36f1383b.json",
+      "artifactSha256": "d2e7c11d1e3c45ed2313fe456eb5b5b9763ea20145c31bbe364174c6ca7d4150",
+      "attempts": 1,
+      "categories": [
+        "a_new_reign"
+      ],
+      "claimedAt": "2026-07-21T09:48:56Z",
+      "completedAt": "2026-07-21T09:48:57Z",
+      "createdAt": "2026-07-21T09:48:07Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:48:57Z",
+      "url": "https://dontstarve.fandom.com/wiki/Ancient_Beacon",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/49314825b6f21bb3ecf7be913cc6a6778e2296e96b1c4087dec10423a24fab9b.json",
       "artifactSha256": "f0fcf91b554229d43e979feb2bc9a251f7f4771e9d4d043094d717fd0eb0e24a",
       "attempts": 1,
@@ -144,6 +160,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T08:57:27Z",
       "url": "https://dontstarve.fandom.com/wiki/Ancient_Brickwork",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/7c31b09a1755df328c4a571c66063bc2135a4deae1875f79cfe9a6e969a4581b.json",
+      "artifactSha256": "31d4262b280415ff39ade5a3b7ffebcb9365352a695730337dfb7763e0ff1177",
+      "attempts": 1,
+      "categories": [
+        "a_new_reign"
+      ],
+      "claimedAt": "2026-07-21T09:48:57Z",
+      "completedAt": "2026-07-21T09:48:58Z",
+      "createdAt": "2026-07-21T09:48:07Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:48:58Z",
+      "url": "https://dontstarve.fandom.com/wiki/Ancient_Fence",
       "workerId": null
     },
     {
@@ -163,10 +195,43 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/a723a06236c8c47780df38b4c8d7fa56a0627bc9afa8b54ad1ec2e96b3fae337.json",
+      "artifactSha256": "df2e5f7e4d8fbc8e4359cb6ab22d4c3a6610fbe6c66ffc169875edea19dcdc4f",
+      "attempts": 1,
+      "categories": [
+        "a_new_reign"
+      ],
+      "claimedAt": "2026-07-21T09:48:48Z",
+      "completedAt": "2026-07-21T09:48:49Z",
+      "createdAt": "2026-07-21T09:48:07Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:48:49Z",
+      "url": "https://dontstarve.fandom.com/wiki/Ancient_Gateway",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/1db05b4e28a1e89c28443b745fffa136a528cf5d1b0a8ed174283df54c6eb16f.json",
+      "artifactSha256": "adb7e61302f1703f5e419b50b94d03bd9930ccd901150029e996e000a8c98ac8",
+      "attempts": 1,
+      "categories": [
+        "boss_monsters"
+      ],
+      "claimedAt": "2026-07-21T09:46:17Z",
+      "completedAt": "2026-07-21T09:46:18Z",
+      "createdAt": "2026-07-21T09:46:15Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:46:18Z",
+      "url": "https://dontstarve.fandom.com/wiki/Ancient_Guardian",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/91784b0720cefbccabe028bb85d12643fd2dc182a832c781a264a6d26e15c15d.json",
       "artifactSha256": "481a18ae0c2dea258214ea27a7b17dfb26e6578bf81a9c068ab447704d864305",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "boss_dropped_items"
       ],
       "claimedAt": "2026-07-21T07:36:48Z",
@@ -179,10 +244,43 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/fe088d90af910110fb27bcf4ed6b879f40b21a9a64924573441189e36352041d.json",
+      "artifactSha256": "f023ca8edf798cd4420ffc52eec47981a33a17aa99fae2308646f83ce2e09adc",
+      "attempts": 1,
+      "categories": [
+        "a_new_reign"
+      ],
+      "claimedAt": "2026-07-21T09:48:50Z",
+      "completedAt": "2026-07-21T09:48:51Z",
+      "createdAt": "2026-07-21T09:48:08Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:48:51Z",
+      "url": "https://dontstarve.fandom.com/wiki/Ancient_Mural",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/7b79752524460cde980ebe4215d480460b2cfff4fe87e7fe945c447e9824f939.json",
+      "artifactSha256": "a89fea1a20666e308eb8b4c9fb07803e197579f278ad1822afdab2ff01315267",
+      "attempts": 1,
+      "categories": [
+        "a_new_reign"
+      ],
+      "claimedAt": "2026-07-21T09:48:54Z",
+      "completedAt": "2026-07-21T09:48:55Z",
+      "createdAt": "2026-07-21T09:48:08Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:48:55Z",
+      "url": "https://dontstarve.fandom.com/wiki/Ancient_Obelisk",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/a9ce7715138cf73d999b3f8aee941add3ec96e7f579318376b9f4cb3770a20ec.json",
       "artifactSha256": "e8777bad0f27b78d7e3dfce1c36a7f9401cb149c066df8d96db5df84cf177a6c",
       "attempts": 1,
       "categories": [
+        "ancient_tab",
         "crafting_stations"
       ],
       "claimedAt": "2026-07-21T08:18:55Z",
@@ -192,6 +290,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T08:18:56Z",
       "url": "https://dontstarve.fandom.com/wiki/Ancient_Pseudoscience_Station",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/12fa79e6b86ed66d3943c778ed62def13892bf79979c8935ea0d88d6c4cdd201.json",
+      "artifactSha256": "14e0ee41e9a31c90ac58d4f179956836fb655dd42eed8f6f01924c5089c90e24",
+      "attempts": 1,
+      "categories": [
+        "a_new_reign"
+      ],
+      "claimedAt": "2026-07-21T09:48:15Z",
+      "completedAt": "2026-07-21T09:48:16Z",
+      "createdAt": "2026-07-21T09:48:08Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:48:16Z",
+      "url": "https://dontstarve.fandom.com/wiki/Ancient_Statue",
       "workerId": null
     },
     {
@@ -227,6 +341,23 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/8548d98c001877f047bc83c142a951ccaac0f0cc3f75b665e1904b896dc0edf9.json",
+      "artifactSha256": "76a750fd15c3315ac42893d847e77f7bccbb17bb01d197d1efcaeeb56ef58850",
+      "attempts": 1,
+      "categories": [
+        "a_new_reign",
+        "boss_monsters"
+      ],
+      "claimedAt": "2026-07-21T09:46:24Z",
+      "completedAt": "2026-07-21T09:46:25Z",
+      "createdAt": "2026-07-21T09:46:15Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:46:25Z",
+      "url": "https://dontstarve.fandom.com/wiki/Antlion",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/89fbcac00985e116dce664818a233a95b5636675cdcb8f1bf39e058f4e9694ba.json",
       "artifactSha256": "4873c93329cc9da1e9c7b9e08abbaf0d7dccc8a75b02e27397b99662a840f85c",
       "attempts": 1,
@@ -257,6 +388,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T08:49:01Z",
       "url": "https://dontstarve.fandom.com/wiki/Armermry",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/ed3061711f3fefad6b4e2de713a15b4e65e3ff4dc874070c78526446193e9732.json",
+      "artifactSha256": "d41964c603619620eaee573c7c91b2420202392db08d69ffe4b44dfc6e80a405",
+      "attempts": 1,
+      "categories": [
+        "boss_monsters"
+      ],
+      "claimedAt": "2026-07-21T09:46:34Z",
+      "completedAt": "2026-07-21T09:46:36Z",
+      "createdAt": "2026-07-21T09:46:15Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:46:36Z",
+      "url": "https://dontstarve.fandom.com/wiki/Armored_Bearger",
       "workerId": null
     },
     {
@@ -339,6 +486,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T08:42:12Z",
       "url": "https://dontstarve.fandom.com/wiki/Astroggles",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/31d7740907b35e025a00ba352cfd1b3ad336b102c228bf90fc119e7858ff7ccc.json",
+      "artifactSha256": "5d879670f8ace7e64e8c185c3e0032655ff61f5b0f659575a367b46ed7476380",
+      "attempts": 1,
+      "categories": [
+        "a_new_reign"
+      ],
+      "claimedAt": "2026-07-21T09:48:49Z",
+      "completedAt": "2026-07-21T09:48:50Z",
+      "createdAt": "2026-07-21T09:48:08Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:48:50Z",
+      "url": "https://dontstarve.fandom.com/wiki/Atrium",
       "workerId": null
     },
     {
@@ -730,6 +893,22 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/9110ce10f6d8ce956c86ce86226e5e8f411ed4f266d8304ab5ca96982e5a2bc1.json",
+      "artifactSha256": "24bbb1bb495d8c1d05cba5cba70879c5ad78e85c23761f2b711154a9a37bc1eb",
+      "attempts": 1,
+      "categories": [
+        "boss_monsters"
+      ],
+      "claimedAt": "2026-07-21T09:46:20Z",
+      "completedAt": "2026-07-21T09:46:21Z",
+      "createdAt": "2026-07-21T09:46:15Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:46:21Z",
+      "url": "https://dontstarve.fandom.com/wiki/Bearger",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/4e81fff1453ea76c2653409b0d22ab040517fb99be0df67cad2791bcbedc8442.json",
       "artifactSha256": "d4c900345964ee1a5cd5ed9c25baa9ac2f19bcc398d081ca90c2f927663fd498",
       "attempts": 1,
@@ -746,18 +925,18 @@
       "workerId": null
     },
     {
-      "artifactPath": null,
-      "artifactSha256": null,
-      "attempts": 1,
+      "artifactPath": "shared-pages/3e1ecf65bc82bd8e74fca81ae7a240f7b28743996f6d117eac456b409a66a79e.json",
+      "artifactSha256": "37f483a5d3ed0a6b459a6a14169f04542e738e39541292935da47db682450da4",
+      "attempts": 2,
       "categories": [
         "animals"
       ],
-      "claimedAt": null,
-      "completedAt": null,
+      "claimedAt": "2026-07-21T09:43:31Z",
+      "completedAt": "2026-07-21T09:43:32Z",
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": "imported from snapshot without raw artifact",
-      "status": "New",
-      "updatedAt": "2026-07-21T07:27:52Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:43:32Z",
       "url": "https://dontstarve.fandom.com/wiki/Bee",
       "workerId": null
     },
@@ -795,10 +974,28 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/079bdccbe7ed449b2f121a1ac2be68a78a07ea1c1c37a3d2c385cd100bf67d65.json",
+      "artifactSha256": "73e977beb0c13ded788d0069261ac6ec528e28314c823574af97887fe776889d",
+      "attempts": 1,
+      "categories": [
+        "a_new_reign",
+        "boss_monsters"
+      ],
+      "claimedAt": "2026-07-21T09:46:22Z",
+      "completedAt": "2026-07-21T09:46:24Z",
+      "createdAt": "2026-07-21T09:46:15Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:46:24Z",
+      "url": "https://dontstarve.fandom.com/wiki/Bee_Queen",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/833bc05368bfa8430068e4341fcc0e69ab35b968963a27014f28cf7212151f9e.json",
       "artifactSha256": "22b694dc68649a8da0e4b72373ecc704dfabf627d81fe4b2443c4f9b5066df7c",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "boss_dropped_items",
         "equipable_items"
       ],
@@ -812,18 +1009,18 @@
       "workerId": null
     },
     {
-      "artifactPath": null,
-      "artifactSha256": null,
-      "attempts": 1,
+      "artifactPath": "shared-pages/dc56a93950502ebae673ccbcf07c54a615645d499640a38080fb7cd458ba30f4.json",
+      "artifactSha256": "87aba69cfe8909814a30acce8659f94edfa99821446da79de3f22c210361a470",
+      "attempts": 2,
       "categories": [
         "animals"
       ],
-      "claimedAt": null,
-      "completedAt": null,
+      "claimedAt": "2026-07-21T09:43:32Z",
+      "completedAt": "2026-07-21T09:43:34Z",
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": "imported from snapshot without raw artifact",
-      "status": "New",
-      "updatedAt": "2026-07-21T07:27:52Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:43:34Z",
       "url": "https://dontstarve.fandom.com/wiki/Beefalo",
       "workerId": null
     },
@@ -1124,6 +1321,23 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/98a3019f5f3f0cb46c51062aa7f8972fb00cfce3e171b239d4f5ba4fc7258a79.json",
+      "artifactSha256": "0745a5136a770f58ceaeb8cc2619a402d3434f0dcf8bc7bc644ec97b512cede6",
+      "attempts": 1,
+      "categories": [
+        "a_new_reign",
+        "birds"
+      ],
+      "claimedAt": "2026-07-21T09:44:53Z",
+      "completedAt": "2026-07-21T09:44:54Z",
+      "createdAt": "2026-07-21T09:44:53Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:44:54Z",
+      "url": "https://dontstarve.fandom.com/wiki/Birds",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/dc5e9ec176e2a78e70ce2b1340a4bb7998aea15d4dd5746405e4882e2150ebda.json",
       "artifactSha256": "190f103a94274052b8ee81efd50e88a41ad41f24d042c557f19095e3fabb0acb",
       "attempts": 1,
@@ -1178,6 +1392,8 @@
       "artifactSha256": "eead8af20faac425f917618d604faa3bd3954498bd98c672df67a596be203347",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
+        "ancient_tier_1",
         "boss_dropped_items",
         "craftable_items"
       ],
@@ -1260,6 +1476,7 @@
       "artifactSha256": "99df08bcc2cfc82e109ca40b23e612fb6accab0e5b70eff42e161426a23799f8",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "boss_dropped_items",
         "equipable_items"
       ],
@@ -1277,6 +1494,7 @@
       "artifactSha256": "bdc9f7de0623ce28372ba2566ca13c1f10686e526a5fd8a56ae196c853fb13d8",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "boss_dropped_items",
         "equipable_items"
       ],
@@ -1353,6 +1571,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T08:53:37Z",
       "url": "https://dontstarve.fandom.com/wiki/Booster_Shot",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/b46eb142ee10b76ee4839306610a353cd69d9f68eceea74cf2dc49ad461acb29.json",
+      "artifactSha256": "a2b389a68ca912ca751b4dd676e9d591b7f62980be554706285e0777e536f19d",
+      "attempts": 1,
+      "categories": [
+        "a_new_reign"
+      ],
+      "claimedAt": "2026-07-21T09:48:09Z",
+      "completedAt": "2026-07-21T09:48:10Z",
+      "createdAt": "2026-07-21T09:48:08Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:48:10Z",
+      "url": "https://dontstarve.fandom.com/wiki/Boulder",
       "workerId": null
     },
     {
@@ -1440,18 +1674,18 @@
       "workerId": null
     },
     {
-      "artifactPath": null,
-      "artifactSha256": null,
-      "attempts": 1,
+      "artifactPath": "shared-pages/60f166fa603e3171fa47542515bcdd3ae6cffc21ca35e7bee2de7db18cebc1c4.json",
+      "artifactSha256": "a886716498ff6639b23ec8a225860202a5892ba3b82a99e325871d74cf2b1c7d",
+      "attempts": 2,
       "categories": [
         "animals"
       ],
-      "claimedAt": null,
-      "completedAt": null,
+      "claimedAt": "2026-07-21T09:44:07Z",
+      "completedAt": "2026-07-21T09:44:09Z",
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": "imported from snapshot without raw artifact",
-      "status": "New",
-      "updatedAt": "2026-07-21T07:27:52Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:44:09Z",
       "url": "https://dontstarve.fandom.com/wiki/Bright-Eyed_Frog",
       "workerId": null
     },
@@ -1609,6 +1843,7 @@
       "artifactSha256": "ff9434b75b6d1354a6d352e8b3360a4ec81d12b7aa18216840b9f0a36cdca853",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "craftable_items",
         "equipable_items"
       ],
@@ -1808,35 +2043,52 @@
       "workerId": null
     },
     {
-      "artifactPath": null,
-      "artifactSha256": null,
-      "attempts": 1,
+      "artifactPath": "shared-pages/05ed193b50c7e3067b337b80ef46e75c0ed59884833bb04c2e851472a738717f.json",
+      "artifactSha256": "c5fa1a26a09b13fd39e0b4f5403bbdad875b87f8875f58247cd4737a10b653ee",
+      "attempts": 2,
       "categories": [
         "animals"
       ],
-      "claimedAt": null,
-      "completedAt": null,
+      "claimedAt": "2026-07-21T09:43:38Z",
+      "completedAt": "2026-07-21T09:43:39Z",
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": "imported from snapshot without raw artifact",
-      "status": "New",
-      "updatedAt": "2026-07-21T07:27:52Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:43:39Z",
       "url": "https://dontstarve.fandom.com/wiki/Butterfly",
       "workerId": null
     },
     {
-      "artifactPath": null,
-      "artifactSha256": null,
+      "artifactPath": "shared-pages/c6ab3541f1ebbd9c24e9a3178f1fa751d1be86c26963f77eb8ad11ce5b8b1529.json",
+      "artifactSha256": "07996171e6c9720fd5552ff3517bf9ecc550cb68854d88cd4196f20853bf0cbc",
+      "attempts": 2,
+      "categories": [
+        "animals",
+        "birds"
+      ],
+      "claimedAt": "2026-07-21T09:43:44Z",
+      "completedAt": "2026-07-21T09:43:46Z",
+      "createdAt": "2026-07-21T03:11:53Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:43:46Z",
+      "url": "https://dontstarve.fandom.com/wiki/Buzzard",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/dd11260b538072fc6aab33bd1fc8a211d57308c68178da7376e753a4762fb5fb.json",
+      "artifactSha256": "bf75689f39c9ef1c3a0f7248fa1d7f3b2ea4cd1a88695feb53b37c9236b60fb2",
       "attempts": 1,
       "categories": [
-        "animals"
+        "a_new_reign"
       ],
-      "claimedAt": null,
-      "completedAt": null,
-      "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": "imported from snapshot without raw artifact",
-      "status": "New",
-      "updatedAt": "2026-07-21T07:27:52Z",
-      "url": "https://dontstarve.fandom.com/wiki/Buzzard",
+      "claimedAt": "2026-07-21T09:48:17Z",
+      "completedAt": "2026-07-21T09:48:19Z",
+      "createdAt": "2026-07-21T09:48:08Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:48:19Z",
+      "url": "https://dontstarve.fandom.com/wiki/Cactus",
       "workerId": null
     },
     {
@@ -1992,6 +2244,7 @@
       "artifactSha256": "a117cd0796eddc4d49d527e71c60dd2f73e4b4a2993c987603bc6d8a24c074f5",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "craftable_structures",
         "crafting_stations"
       ],
@@ -2022,19 +2275,35 @@
       "workerId": null
     },
     {
-      "artifactPath": null,
-      "artifactSha256": null,
-      "attempts": 1,
+      "artifactPath": "shared-pages/d5d7d79b6fa0859a50630feb489b989afa9a46b8e3ed772d27d9d02a6ec65433.json",
+      "artifactSha256": "a52341ba813b7813ee718d0a880e94a6589b4787f98f64c53da7279c8e351dfc",
+      "attempts": 2,
       "categories": [
         "animals"
       ],
-      "claimedAt": null,
-      "completedAt": null,
+      "claimedAt": "2026-07-21T09:43:47Z",
+      "completedAt": "2026-07-21T09:43:49Z",
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": "imported from snapshot without raw artifact",
-      "status": "New",
-      "updatedAt": "2026-07-21T07:27:52Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:43:49Z",
       "url": "https://dontstarve.fandom.com/wiki/Catcoon",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/51418f0c59c7c6f1f1f0b88fe4d6bf2624848a4d2911a133ba1e8844592d13d7.json",
+      "artifactSha256": "ffe5afa109dce123ee6cbaf9e4bc7ef90d7cb1ca13813296ee185235780599b4",
+      "attempts": 1,
+      "categories": [
+        "a_new_reign"
+      ],
+      "claimedAt": "2026-07-21T09:48:53Z",
+      "completedAt": "2026-07-21T09:48:54Z",
+      "createdAt": "2026-07-21T09:48:08Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:48:54Z",
+      "url": "https://dontstarve.fandom.com/wiki/Cave_Hole",
       "workerId": null
     },
     {
@@ -2068,6 +2337,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T07:39:08Z",
       "url": "https://dontstarve.fandom.com/wiki/Cave_Spider",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/d2de2770209dc83bb3e940e860701bbf597839550ada95cd781416c4e98268ee.json",
+      "artifactSha256": "72dc20ab7fea1f47ead015881ac70ebd173a764d0296a1e131f7babc6636b93f",
+      "attempts": 1,
+      "categories": [
+        "boss_monsters"
+      ],
+      "claimedAt": "2026-07-21T09:46:28Z",
+      "completedAt": "2026-07-21T09:46:29Z",
+      "createdAt": "2026-07-21T09:46:15Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:46:29Z",
+      "url": "https://dontstarve.fandom.com/wiki/Celestial_Champion",
       "workerId": null
     },
     {
@@ -2241,6 +2526,22 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/594c4bf61b6f58f38842da201d3186f1b814228d91b0de927c28756f467ab0bf.json",
+      "artifactSha256": "d79d7904430b3896f7648602a02d3bc9debd06214d70dcb63c1c207e014c21e8",
+      "attempts": 1,
+      "categories": [
+        "a_new_reign"
+      ],
+      "claimedAt": "2026-07-21T09:48:42Z",
+      "completedAt": "2026-07-21T09:48:43Z",
+      "createdAt": "2026-07-21T09:48:08Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:48:43Z",
+      "url": "https://dontstarve.fandom.com/wiki/Chilled_Lavae",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/385dd6b48c2c461917501e078925bf3d896ba0ca71f51c17572084d763a4ae58.json",
       "artifactSha256": "c56189996788fe52f329ecd9f96685bceb59110d23ec5f6edede79b4b470869e",
       "attempts": 1,
@@ -2312,7 +2613,8 @@
       "artifactSha256": "d6d62e4b37bb2657d74bda285aabbdac08a4f2d12091b424ad0544b87bba7a01",
       "attempts": 1,
       "categories": [
-        "cave_creatures"
+        "cave_creatures",
+        "clockwork_monsters"
       ],
       "claimedAt": "2026-07-21T07:39:06Z",
       "completedAt": "2026-07-21T07:39:07Z",
@@ -2321,6 +2623,38 @@
       "status": "Done",
       "updatedAt": "2026-07-21T07:39:07Z",
       "url": "https://dontstarve.fandom.com/wiki/Clockwork_Bishop",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/c82ef1a128cad7238e85e115580a256bcfdfece7e7075b796f2072275aeca3d5.json",
+      "artifactSha256": "0293cba22ff6691aa9e1faf6cf0f1e770b16672294b08bafde312ae6ac568c3e",
+      "attempts": 1,
+      "categories": [
+        "clockwork_monsters"
+      ],
+      "claimedAt": "2026-07-21T09:45:19Z",
+      "completedAt": "2026-07-21T09:45:21Z",
+      "createdAt": "2026-07-21T09:45:18Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:45:21Z",
+      "url": "https://dontstarve.fandom.com/wiki/Clockwork_Knight",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/9ff98afc2d7e593519bf0597cbeb2061575631819937063e4f6226d0fe68d6f5.json",
+      "artifactSha256": "0a824ef25c865437cc6238bfffdcbe36e8bdae67f2d6104d7c2ef431c8c98243",
+      "attempts": 1,
+      "categories": [
+        "clockwork_monsters"
+      ],
+      "claimedAt": "2026-07-21T09:45:21Z",
+      "completedAt": "2026-07-21T09:45:22Z",
+      "createdAt": "2026-07-21T09:45:18Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:45:22Z",
+      "url": "https://dontstarve.fandom.com/wiki/Clockwork_Rook",
       "workerId": null
     },
     {
@@ -2511,6 +2845,8 @@
       "artifactSha256": "4590ce2af34a42e615758424084969baa31a2717152ecddb45b3552a9ee87517",
       "attempts": 1,
       "categories": [
+        "ancient_tab",
+        "ancient_tier_1",
         "craftable_items",
         "equipable_items"
       ],
@@ -2575,6 +2911,22 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/5382f749891881332ad4b5bef6d5f0227a5551c273d0cdec6e2fda7849bab670.json",
+      "artifactSha256": "e8edbad2fffff6b1198aad880f008219bc4ad2e05a9eedf6b528efedb85c283b",
+      "attempts": 1,
+      "categories": [
+        "boss_monsters"
+      ],
+      "claimedAt": "2026-07-21T09:46:25Z",
+      "completedAt": "2026-07-21T09:46:27Z",
+      "createdAt": "2026-07-21T09:46:15Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:46:27Z",
+      "url": "https://dontstarve.fandom.com/wiki/Crab_King",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/6ff61440093f512cfae4f0d8b527358ea51d097b7544c911bef2fd4d9a17fd3d.json",
       "artifactSha256": "b20f459f3f34569e2712ea9a791ee69d1301b2b4d47e11705d9bc7f071624517",
       "attempts": 1,
@@ -2628,6 +2980,7 @@
       "artifactSha256": "3c3b1581517c36a90d81e266205f8b5b3d221d394ba32d9bac646c60b51b4942",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "craftable_items"
       ],
       "claimedAt": "2026-07-21T08:53:53Z",
@@ -2654,6 +3007,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T08:26:53Z",
       "url": "https://dontstarve.fandom.com/wiki/Creamy_Potato_Pur%C3%A9e",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/33c5be9df8c4144fa20d0ea49e8ead1fd1a117c7ad10cce1af145e611a91c52e.json",
+      "artifactSha256": "a79e0f389461ae03120d0b16b5cf33a91f6fc0301e914c5cdbb988df1691e0f2",
+      "attempts": 1,
+      "categories": [
+        "a_new_reign"
+      ],
+      "claimedAt": "2026-07-21T09:48:37Z",
+      "completedAt": "2026-07-21T09:48:39Z",
+      "createdAt": "2026-07-21T09:48:08Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:48:39Z",
+      "url": "https://dontstarve.fandom.com/wiki/Critters",
       "workerId": null
     },
     {
@@ -2688,6 +3057,38 @@
       "status": "Done",
       "updatedAt": "2026-07-21T08:29:49Z",
       "url": "https://dontstarve.fandom.com/wiki/Crocommander",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/0851a611f58b5f424e37fe0cf8f30be72349b07401acac4b26dd492d71fa8e3a.json",
+      "artifactSha256": "cd2c65a3b3e7261e66209281aab375f4d9f869e392905e3aa0a15b303e94c88e",
+      "attempts": 1,
+      "categories": [
+        "a_new_reign"
+      ],
+      "claimedAt": "2026-07-21T09:48:46Z",
+      "completedAt": "2026-07-21T09:48:47Z",
+      "createdAt": "2026-07-21T09:48:08Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:48:47Z",
+      "url": "https://dontstarve.fandom.com/wiki/Crumpled_Package",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/03d8140344c76414496814fe2264874f0d2732d260cd0bff60415ce116085a86.json",
+      "artifactSha256": "c82a27c6d35694e3b4c9c05bc930af6a9be831a65d7be4a711cc255c8a330bb1",
+      "attempts": 1,
+      "categories": [
+        "boss_monsters"
+      ],
+      "claimedAt": "2026-07-21T09:46:32Z",
+      "completedAt": "2026-07-21T09:46:33Z",
+      "createdAt": "2026-07-21T09:46:15Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:46:33Z",
+      "url": "https://dontstarve.fandom.com/wiki/Crystal_Deerclops",
       "workerId": null
     },
     {
@@ -2752,6 +3153,54 @@
       "status": "Done",
       "updatedAt": "2026-07-21T08:42:19Z",
       "url": "https://dontstarve.fandom.com/wiki/Cutless",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/63f3c0b22391b7614bc20f894cab315b75bab14287fb683db91d5ec74c4a03c4.json",
+      "artifactSha256": "54d2990edea7e66544931ed343257d9a6a90f6262ea9c55578de009f081f8231",
+      "attempts": 1,
+      "categories": [
+        "clockwork_monsters"
+      ],
+      "claimedAt": "2026-07-21T09:45:25Z",
+      "completedAt": "2026-07-21T09:45:27Z",
+      "createdAt": "2026-07-21T09:45:18Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:45:27Z",
+      "url": "https://dontstarve.fandom.com/wiki/Damaged_Bishop",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/bc99742c648fcf3f1ee3c2ffc93d8a620749565e8d53e72e7a5911a15957423c.json",
+      "artifactSha256": "838d09e33da0bf208ba6be71674be77a2a4ef143a3c1c4d6b8aa4cb96e357e31",
+      "attempts": 1,
+      "categories": [
+        "clockwork_monsters"
+      ],
+      "claimedAt": "2026-07-21T09:45:27Z",
+      "completedAt": "2026-07-21T09:45:29Z",
+      "createdAt": "2026-07-21T09:45:18Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:45:29Z",
+      "url": "https://dontstarve.fandom.com/wiki/Damaged_Knight",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/2efe4a80e68abcc4c0f12b62fcb9a7d56bbc2b4750a3000dfa4a4655c6ae1bc6.json",
+      "artifactSha256": "93c07f08d88a09d4bc2741c8c26f883ea47cbe4de1fd08b2f482d9c4e1bddeb6",
+      "attempts": 1,
+      "categories": [
+        "clockwork_monsters"
+      ],
+      "claimedAt": "2026-07-21T09:45:22Z",
+      "completedAt": "2026-07-21T09:45:25Z",
+      "createdAt": "2026-07-21T09:45:18Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:45:25Z",
+      "url": "https://dontstarve.fandom.com/wiki/Damaged_Rook",
       "workerId": null
     },
     {
@@ -2859,6 +3308,8 @@
       "artifactSha256": "2fea7b39551fdc03b35daa1afad2fbb7c6b4d02cd12f2cf091aa91ecc1fb5415",
       "attempts": 1,
       "categories": [
+        "ancient_tab",
+        "ancient_tier_1",
         "craftable_items",
         "equipable_items"
       ],
@@ -2869,6 +3320,38 @@
       "status": "Done",
       "updatedAt": "2026-07-21T08:38:57Z",
       "url": "https://dontstarve.fandom.com/wiki/Deconstruction_Staff",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/8943c1364fd87a7c68a91b438e1e2a287de2313461d1917c2306651177053474.json",
+      "artifactSha256": "780e8e4b24448a298244ec9b8cb615ea514c7764a8d5a0f11c61aa6a990a33a2",
+      "attempts": 1,
+      "categories": [
+        "a_new_reign"
+      ],
+      "claimedAt": "2026-07-21T09:48:44Z",
+      "completedAt": "2026-07-21T09:48:45Z",
+      "createdAt": "2026-07-21T09:48:08Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:48:45Z",
+      "url": "https://dontstarve.fandom.com/wiki/Deer_Antler",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/918b2f4a595e2c6ff4e8263afaaa8303e16a87c3044237677de6d5425bc5900a.json",
+      "artifactSha256": "a3d3ea38868a2e66a556d430d0c057b645fa4a7de97e21acc9a7c548fb9164f7",
+      "attempts": 1,
+      "categories": [
+        "boss_monsters"
+      ],
+      "claimedAt": "2026-07-21T09:46:15Z",
+      "completedAt": "2026-07-21T09:46:17Z",
+      "createdAt": "2026-07-21T09:46:15Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:46:17Z",
+      "url": "https://dontstarve.fandom.com/wiki/Deerclops",
       "workerId": null
     },
     {
@@ -2925,6 +3408,7 @@
       "artifactSha256": "da57ead50abd83f497fced053a920162bb3abab542b31a81854ad08b52932126",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "boss_dropped_items"
       ],
       "claimedAt": "2026-07-21T07:36:47Z",
@@ -3017,6 +3501,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T08:33:17Z",
       "url": "https://dontstarve.fandom.com/wiki/Dragon_Fruit",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/092ca52cb9655da119d756d3582ec9a84d4df8fe13e046650b98b84975f6ee55.json",
+      "artifactSha256": "76123291cfce2c1c680b79586c6f1ab4dcd120abffa0dea6365e28dac92b6861",
+      "attempts": 1,
+      "categories": [
+        "boss_monsters"
+      ],
+      "claimedAt": "2026-07-21T09:46:18Z",
+      "completedAt": "2026-07-21T09:46:19Z",
+      "createdAt": "2026-07-21T09:46:15Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:46:19Z",
+      "url": "https://dontstarve.fandom.com/wiki/Dragonfly",
       "workerId": null
     },
     {
@@ -3383,18 +3883,18 @@
       "workerId": null
     },
     {
-      "artifactPath": null,
-      "artifactSha256": null,
-      "attempts": 1,
+      "artifactPath": "shared-pages/f24559532a6c0b9d454513c0fe4e6dddf8bfe59079fa3a727124574c2525fedf.json",
+      "artifactSha256": "ed6702eeef7395c46f0e5e2ff9a14c798b0daecef6f6b801cc3f091e67f22bd6",
+      "attempts": 2,
       "categories": [
         "animals"
       ],
-      "claimedAt": null,
-      "completedAt": null,
+      "claimedAt": "2026-07-21T09:43:54Z",
+      "completedAt": "2026-07-21T09:43:56Z",
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": "imported from snapshot without raw artifact",
-      "status": "New",
-      "updatedAt": "2026-07-21T07:27:52Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:43:56Z",
       "url": "https://dontstarve.fandom.com/wiki/Ewecus",
       "workerId": null
     },
@@ -3413,6 +3913,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T07:37:08Z",
       "url": "https://dontstarve.fandom.com/wiki/Eye_Mask",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/67cc243376df3f719acb7a56cf76480f8f9d2fd4fdac9d0e771374c9febcfcc8.json",
+      "artifactSha256": "fe53419a5fda8d8819b9ff05d4c2d0800d031633db4f222b7cc1a50d6842132c",
+      "attempts": 1,
+      "categories": [
+        "boss_monsters"
+      ],
+      "claimedAt": "2026-07-21T09:46:29Z",
+      "completedAt": "2026-07-21T09:46:31Z",
+      "createdAt": "2026-07-21T09:46:15Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:46:31Z",
+      "url": "https://dontstarve.fandom.com/wiki/Eye_of_Terror",
       "workerId": null
     },
     {
@@ -3469,6 +3985,22 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/607b5ab1ab4061673a035c4860b8cb065b5307676d4882e1f0cd3808bb6a50c0.json",
+      "artifactSha256": "60f8fe5aae4d9a09ec642487f1e49d7014c700470e6ba4b3b38cfc33f79bebb4",
+      "attempts": 1,
+      "categories": [
+        "a_new_reign"
+      ],
+      "claimedAt": "2026-07-21T09:48:14Z",
+      "completedAt": "2026-07-21T09:48:15Z",
+      "createdAt": "2026-07-21T09:48:08Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:48:15Z",
+      "url": "https://dontstarve.fandom.com/wiki/Feather",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/1e6bfe5a30b661d318c9b1348168e50a6a807e59e2b939cefdb323c30d3ad7d2.json",
       "artifactSha256": "2ebef5e94be7d2338cd44c4cf94737bb0c66dbfe05f8a28f06fbe8d9988b2f6c",
       "attempts": 1,
@@ -3490,6 +4022,7 @@
       "artifactSha256": "3f73675c377631046d49103bd459121485b9a438f3ef8850b029ded04ac27fe1",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "craftable_items",
         "decorations_filter"
       ],
@@ -3921,6 +4454,22 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/f29787ca9de102bfbe6b6c992d67eecf070c85e0ce3a036d061a9de4b3b09127.json",
+      "artifactSha256": "b873433bf9dfde38b152e64cdd94ca78efc605863504a781947d812c85e914e9",
+      "attempts": 1,
+      "categories": [
+        "a_new_reign"
+      ],
+      "claimedAt": "2026-07-21T09:48:13Z",
+      "completedAt": "2026-07-21T09:48:14Z",
+      "createdAt": "2026-07-21T09:48:08Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:48:14Z",
+      "url": "https://dontstarve.fandom.com/wiki/Flower",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/5acd9b3317792df4270a372ff4ffb9d4e53dd90a289d444bb08c57710aec5bab.json",
       "artifactSha256": "64d35921aecb26c4f58d9d69b8a9a0e7a4e5603e9c0d96112a1dd7df9e02fdc9",
       "attempts": 1,
@@ -4042,6 +4591,7 @@
       "artifactSha256": "d8a0c9b791861f5a6dcc09ee4948251ad43dc4246819bf5df9c2a673c015f5a9",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "craftable_structures"
       ],
       "claimedAt": "2026-07-21T08:47:10Z",
@@ -4054,18 +4604,18 @@
       "workerId": null
     },
     {
-      "artifactPath": null,
-      "artifactSha256": null,
-      "attempts": 1,
+      "artifactPath": "shared-pages/811e27d79aaf618e8e2f19101e7eb6ce8996bd425d23d0e62d8c3fc1b6f87b99.json",
+      "artifactSha256": "46eeddb9f5f756feb9e75dd269bf60c959d702d5dedd7f699db645c036617b64",
+      "attempts": 2,
       "categories": [
         "animals"
       ],
-      "claimedAt": null,
-      "completedAt": null,
+      "claimedAt": "2026-07-21T09:43:36Z",
+      "completedAt": "2026-07-21T09:43:38Z",
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": "imported from snapshot without raw artifact",
-      "status": "New",
-      "updatedAt": "2026-07-21T07:27:52Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:43:38Z",
       "url": "https://dontstarve.fandom.com/wiki/Frog",
       "workerId": null
     },
@@ -4100,6 +4650,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T08:26:28Z",
       "url": "https://dontstarve.fandom.com/wiki/Froggle_Bunwich",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/934afcf83c7484215d640db44073dffebacc8af94dcbdd167159d35affd78f68.json",
+      "artifactSha256": "1d6e6dfdbf8df897e6f21cb046974e5d26b4733401615b91b2593cfce1f0b4ad",
+      "attempts": 1,
+      "categories": [
+        "boss_monsters"
+      ],
+      "claimedAt": "2026-07-21T09:46:39Z",
+      "completedAt": "2026-07-21T09:46:42Z",
+      "createdAt": "2026-07-21T09:46:15Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:46:42Z",
+      "url": "https://dontstarve.fandom.com/wiki/Frostjaw",
       "workerId": null
     },
     {
@@ -4142,6 +4708,7 @@
       "artifactSha256": "78b402b8fc3a5e4fdf9878a74d7ba47ba2a460c33d3ba5dd9447a81fb9686412",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "clothing_filter",
         "craftable_items",
         "equipable_items"
@@ -4225,6 +4792,7 @@
       "artifactSha256": "ce94fb71b18d0d8d0daa9075b5c3a3860136d0f04c15c0fa5b86b2ae79e6b70b",
       "attempts": 1,
       "categories": [
+        "ancient_tier_1",
         "craftable_items",
         "equipable_items"
       ],
@@ -4304,19 +4872,36 @@
       "workerId": null
     },
     {
-      "artifactPath": null,
-      "artifactSha256": null,
-      "attempts": 1,
+      "artifactPath": "shared-pages/2009260194bdc62ae1807850294a180fbda9d5a66d6a5a58b86dd338981328b4.json",
+      "artifactSha256": "8d3b5fb979617de6ee0afe22d92b0704abf5cb10d2cd9ada6dc113853875b642",
+      "attempts": 2,
       "categories": [
+        "a_new_reign",
         "animals"
       ],
-      "claimedAt": null,
-      "completedAt": null,
+      "claimedAt": "2026-07-21T09:44:01Z",
+      "completedAt": "2026-07-21T09:44:02Z",
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": "imported from snapshot without raw artifact",
-      "status": "New",
-      "updatedAt": "2026-07-21T07:27:52Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:44:02Z",
       "url": "https://dontstarve.fandom.com/wiki/Gem_Deer",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/6a0d235bd8dd19a8b1bb6fdf8453d830f1f4888e26fbdcb31d655fbfcf0ec7f0.json",
+      "artifactSha256": "0c74a7143486515f2b6d50082f4b78a07c1941b1052d4a7e603bdfeca153604f",
+      "attempts": 1,
+      "categories": [
+        "a_new_reign"
+      ],
+      "claimedAt": "2026-07-21T09:48:40Z",
+      "completedAt": "2026-07-21T09:48:41Z",
+      "createdAt": "2026-07-21T09:48:08Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:48:41Z",
+      "url": "https://dontstarve.fandom.com/wiki/Gigantic_Beehive",
       "workerId": null
     },
     {
@@ -4339,18 +4924,34 @@
       "workerId": null
     },
     {
-      "artifactPath": null,
-      "artifactSha256": null,
+      "artifactPath": "shared-pages/744d5bba7066f8a0a6a1d0bcb54c723e5e85e457f50a6f8733c89380c25ab2a2.json",
+      "artifactSha256": "acffff716e771f5ed2e63ac135877a41493d36abe7bee9253373de85100b1237",
       "attempts": 1,
+      "categories": [
+        "a_new_reign"
+      ],
+      "claimedAt": "2026-07-21T09:48:51Z",
+      "completedAt": "2026-07-21T09:48:53Z",
+      "createdAt": "2026-07-21T09:48:08Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:48:53Z",
+      "url": "https://dontstarve.fandom.com/wiki/Glass_Sculptures",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/b53748861b369b6d063f08f010ca53f005a5990b0cabd50cdd01bfb4c093f468.json",
+      "artifactSha256": "f4e3128e6fc795f20aefa23790e56fb0033045ca9643a5c49d3fa339f3778764",
+      "attempts": 2,
       "categories": [
         "animals"
       ],
-      "claimedAt": null,
-      "completedAt": null,
+      "claimedAt": "2026-07-21T09:43:49Z",
+      "completedAt": "2026-07-21T09:43:50Z",
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": "imported from snapshot without raw artifact",
-      "status": "New",
-      "updatedAt": "2026-07-21T07:27:52Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:43:50Z",
       "url": "https://dontstarve.fandom.com/wiki/Glommer",
       "workerId": null
     },
@@ -4438,18 +5039,19 @@
       "workerId": null
     },
     {
-      "artifactPath": null,
-      "artifactSha256": null,
-      "attempts": 1,
+      "artifactPath": "shared-pages/3f29e36b882878c4141f0a58c06556b8e0f3858debcc7c5b59cdc82dad924d1a.json",
+      "artifactSha256": "3b2c5a2ed72277dbd71e718733cae31e02012ab914d48ebcc937eb67c51d8eae",
+      "attempts": 2,
       "categories": [
-        "animals"
+        "animals",
+        "birds"
       ],
-      "claimedAt": null,
-      "completedAt": null,
+      "claimedAt": "2026-07-21T09:43:34Z",
+      "completedAt": "2026-07-21T09:43:36Z",
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": "imported from snapshot without raw artifact",
-      "status": "New",
-      "updatedAt": "2026-07-21T07:27:52Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:43:36Z",
       "url": "https://dontstarve.fandom.com/wiki/Gobbler",
       "workerId": null
     },
@@ -4525,6 +5127,7 @@
       "artifactSha256": "dda6b28481a2a7086bcffcfe0e1914647666fc185ccaa9c8415f9d93c0c4373b",
       "attempts": 1,
       "categories": [
+        "boss_monsters",
         "events"
       ],
       "claimedAt": "2026-07-21T08:29:40Z",
@@ -4537,19 +5140,35 @@
       "workerId": null
     },
     {
-      "artifactPath": null,
-      "artifactSha256": null,
-      "attempts": 1,
+      "artifactPath": "shared-pages/698e3372bfe6f8df1c0463e634cfcb45c3edc732e3eaf93beb4d657e2bc3da1f.json",
+      "artifactSha256": "f2754506a1a24d4f0666ddf86620eeb6a7c96c629b733568935dd1ecb92eef11",
+      "attempts": 2,
       "categories": [
         "animals"
       ],
-      "claimedAt": null,
-      "completedAt": null,
+      "claimedAt": "2026-07-21T09:44:03Z",
+      "completedAt": "2026-07-21T09:44:04Z",
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": "imported from snapshot without raw artifact",
-      "status": "New",
-      "updatedAt": "2026-07-21T07:27:52Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:44:04Z",
       "url": "https://dontstarve.fandom.com/wiki/Grass_Gator",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/78bebee95a1763fb049d5bbca33baca3cbb05eb45861ca1a40fd08abc085144a.json",
+      "artifactSha256": "ea285b8bd1464979a0a0f5ccd9ddd55fe86b29c44885714b1cbf7c266e418986",
+      "attempts": 1,
+      "categories": [
+        "a_new_reign"
+      ],
+      "claimedAt": "2026-07-21T09:48:20Z",
+      "completedAt": "2026-07-21T09:48:21Z",
+      "createdAt": "2026-07-21T09:48:08Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:48:21Z",
+      "url": "https://dontstarve.fandom.com/wiki/Grass_Gekko",
       "workerId": null
     },
     {
@@ -4610,6 +5229,7 @@
       "artifactSha256": "7ab5e4cede7ab7df5a559d156af0cbe50f66fcab3cee95b87be9217eb5c79df6",
       "attempts": 1,
       "categories": [
+        "boss_monsters",
         "cave_creatures"
       ],
       "claimedAt": "2026-07-21T07:39:47Z",
@@ -4686,6 +5306,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T08:19:53Z",
       "url": "https://dontstarve.fandom.com/wiki/Growth_Formula_Starter",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/f72489b8243ea26feb005c114ffe5ef75b5d203313f2e8711d343fd82d743453.json",
+      "artifactSha256": "ed954819b4468d738246df401534fdbe042221e8cc01dfa9e2da89248d8ea0de",
+      "attempts": 1,
+      "categories": [
+        "a_new_reign"
+      ],
+      "claimedAt": "2026-07-21T09:48:39Z",
+      "completedAt": "2026-07-21T09:48:40Z",
+      "createdAt": "2026-07-21T09:48:08Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:48:40Z",
+      "url": "https://dontstarve.fandom.com/wiki/Grumble_Bee",
       "workerId": null
     },
     {
@@ -5073,6 +5709,7 @@
       "artifactSha256": "ab64c6bd1b1da5aeaaff74ca5ab406be36f91e7847e1b8573e8a25567910d255",
       "attempts": 1,
       "categories": [
+        "ancient_tab",
         "craftable_items",
         "craftable_structures"
       ],
@@ -5296,6 +5933,7 @@
       "artifactSha256": "23b7b8c2807fc415146a10738d75691e69781a41ac59b0c0f9b613ba34c84a5e",
       "attempts": 1,
       "categories": [
+        "boss_monsters",
         "events"
       ],
       "claimedAt": "2026-07-21T08:30:44Z",
@@ -5382,6 +6020,7 @@
       "artifactSha256": "c160073629a6ff594a405b3ec6bcfc7970dd84bfa880db2060ceaebe30b2a03d",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "craftable_items"
       ],
       "claimedAt": "2026-07-21T08:54:00Z",
@@ -5414,6 +6053,7 @@
       "artifactSha256": "c5b5b8804f1959bdc81a49a5c8a273bf781150c1a13cf1b0012f3183b8cbb98a",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "crock_pot_recipes",
         "food"
       ],
@@ -5447,6 +6087,7 @@
       "artifactSha256": "059df12d3668cf6811b6e17438e1c72ded8142cf61f4549b2d7313ee4ea08c60",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "food"
       ],
       "claimedAt": "2026-07-21T08:33:46Z",
@@ -5463,6 +6104,7 @@
       "artifactSha256": "f7d15805fbfdf0097801a46a41c9ca00925c22f355185878d651a1763d95a80c",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "craftable_items"
       ],
       "claimedAt": "2026-07-21T08:53:51Z",
@@ -5560,6 +6202,8 @@
       "artifactSha256": "abdaaad832e00445660a805487b147a9ededd8046a91154b14e34451bcca2318",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
+        "boss_monsters",
         "events"
       ],
       "claimedAt": "2026-07-21T08:29:35Z",
@@ -5572,18 +6216,18 @@
       "workerId": null
     },
     {
-      "artifactPath": null,
-      "artifactSha256": null,
-      "attempts": 1,
+      "artifactPath": "shared-pages/9b309753c8d8252c27a304612572cfc7bbebdffc99199a16b409af89085e3133.json",
+      "artifactSha256": "b7f31912ee1cd16de1ac24df579991480393bb52599afd9d8a9d7223586b320e",
+      "attempts": 2,
       "categories": [
         "animals"
       ],
-      "claimedAt": null,
-      "completedAt": null,
+      "claimedAt": "2026-07-21T09:43:39Z",
+      "completedAt": "2026-07-21T09:43:40Z",
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": "imported from snapshot without raw artifact",
-      "status": "New",
-      "updatedAt": "2026-07-21T07:27:52Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:43:40Z",
       "url": "https://dontstarve.fandom.com/wiki/Koalefant",
       "workerId": null
     },
@@ -5619,6 +6263,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T07:33:48Z",
       "url": "https://dontstarve.fandom.com/wiki/Krampus_Sack",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/200657ee4248231fe4cbe319c7ed7863192940f212f750de8a884c3564cfcd2f.json",
+      "artifactSha256": "a9612b5e59d94e20267836b153e36e539b95f292c1bafa938b665a5e60fc0ed1",
+      "attempts": 1,
+      "categories": [
+        "a_new_reign"
+      ],
+      "claimedAt": "2026-07-21T09:48:47Z",
+      "completedAt": "2026-07-21T09:48:48Z",
+      "createdAt": "2026-07-21T09:48:08Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:48:48Z",
+      "url": "https://dontstarve.fandom.com/wiki/Lake",
       "workerId": null
     },
     {
@@ -5857,6 +6517,7 @@
       "artifactSha256": "aec261676359a1cfd8409adad08f748a1a7a899c295b8c9c86ad76e4be2fd8fe",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "events"
       ],
       "claimedAt": "2026-07-21T08:29:36Z",
@@ -5866,6 +6527,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T08:29:37Z",
       "url": "https://dontstarve.fandom.com/wiki/Loot_Stash",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/7949003bc8a9e1c5f89b283e24009121f0ec31b2f64358945bfd7b8195252878.json",
+      "artifactSha256": "780d99aacd21a0a4c23800496243a6486cec915e3c416372df4703b9131b6b5c",
+      "attempts": 1,
+      "categories": [
+        "boss_monsters"
+      ],
+      "claimedAt": "2026-07-21T09:46:27Z",
+      "completedAt": "2026-07-21T09:46:28Z",
+      "createdAt": "2026-07-21T09:46:15Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:46:28Z",
+      "url": "https://dontstarve.fandom.com/wiki/Lord_of_the_Fruit_Flies",
       "workerId": null
     },
     {
@@ -6070,6 +6747,8 @@
       "artifactSha256": "a4d27c6acac8f192b7c0a158bfd28ef9720a7648d802bebb37be84b3a5c82983",
       "attempts": 1,
       "categories": [
+        "ancient_tab",
+        "ancient_tier_1",
         "craftable_items",
         "equipable_items"
       ],
@@ -6096,6 +6775,23 @@
       "status": "Done",
       "updatedAt": "2026-07-21T08:29:53Z",
       "url": "https://dontstarve.fandom.com/wiki/Magma_Golem",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/19c46b1fa59ab3cf4e391ad3d752665292a72b554c82ac559dd75c770283f41f.json",
+      "artifactSha256": "7da99090ed8854e2eecd052b93e99a819a68053e4f082e1ed1f2bf88206c49ed",
+      "attempts": 1,
+      "categories": [
+        "birds",
+        "boss_monsters"
+      ],
+      "claimedAt": "2026-07-21T09:44:57Z",
+      "completedAt": "2026-07-21T09:44:58Z",
+      "createdAt": "2026-07-21T09:44:53Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:44:58Z",
+      "url": "https://dontstarve.fandom.com/wiki/Malbatross",
       "workerId": null
     },
     {
@@ -6203,6 +6899,7 @@
       "artifactSha256": "db2f4100c7354e9c4b2705b5a781c926373604837807bc86195e9cb193ff1806",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "craftable_items"
       ],
       "claimedAt": "2026-07-21T08:53:56Z",
@@ -6235,6 +6932,7 @@
       "artifactSha256": "f3b74c4007ad5e4d76e53c785c63b92f2dfb6c838dfcc8b2bbe7ac37abb9d740",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "craftable_items"
       ],
       "claimedAt": "2026-07-21T08:54:01Z",
@@ -6244,6 +6942,54 @@
       "status": "Done",
       "updatedAt": "2026-07-21T08:54:35Z",
       "url": "https://dontstarve.fandom.com/wiki/Marble_Bean",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/e20751f7309e5f9de116b7ad61b19c5819da568b45cc89773fbc3bd6b216ea26.json",
+      "artifactSha256": "c61922debdc7bc6f462a4245ee6f95078978889a6e531002bfef304e662fc416",
+      "attempts": 1,
+      "categories": [
+        "a_new_reign"
+      ],
+      "claimedAt": "2026-07-21T09:48:27Z",
+      "completedAt": "2026-07-21T09:48:33Z",
+      "createdAt": "2026-07-21T09:48:08Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:48:33Z",
+      "url": "https://dontstarve.fandom.com/wiki/Marble_Sculptures",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/d58dbf7a949e6de8d86a3d742d22d081cd98de9fe64d34d8df9d07fa0eb84ee0.json",
+      "artifactSha256": "f20b387dfc891635f1a264c695a169b01468ad6b57c2717bae143ec6a5497d1f",
+      "attempts": 1,
+      "categories": [
+        "a_new_reign"
+      ],
+      "claimedAt": "2026-07-21T09:48:41Z",
+      "completedAt": "2026-07-21T09:48:42Z",
+      "createdAt": "2026-07-21T09:48:08Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:48:42Z",
+      "url": "https://dontstarve.fandom.com/wiki/Marble_Shrub",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/ba3c8de2f59af9130287638229e1714f3364d7960574e75cad1bb86478a64d3d.json",
+      "artifactSha256": "af36aff6f1f3530e083d65d0803188f669e4e50e7eda8ae7aaaf6abfb117b4c3",
+      "attempts": 1,
+      "categories": [
+        "a_new_reign"
+      ],
+      "claimedAt": "2026-07-21T09:48:34Z",
+      "completedAt": "2026-07-21T09:48:35Z",
+      "createdAt": "2026-07-21T09:48:08Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:48:35Z",
+      "url": "https://dontstarve.fandom.com/wiki/Marble_Statues",
       "workerId": null
     },
     {
@@ -6534,6 +7280,7 @@
       "artifactSha256": "279998e37cae64ae3388c8839aaade257a01b0cfbc2fe30a6b29dd477f09f9e7",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "craftable_items",
         "craftable_structures",
         "decorations_filter"
@@ -6545,6 +7292,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T08:24:01Z",
       "url": "https://dontstarve.fandom.com/wiki/Mini_Sign",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/399615edbdae303c560519fd2be4873f4194c821f7960471fd6b9dca6959c2dc.json",
+      "artifactSha256": "b6542764d8cc16b9c966c479e685067a7ffa58ec739fd35725219a3e4a70dff6",
+      "attempts": 1,
+      "categories": [
+        "birds"
+      ],
+      "claimedAt": "2026-07-21T09:44:59Z",
+      "completedAt": "2026-07-21T09:45:01Z",
+      "createdAt": "2026-07-21T09:44:53Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:45:01Z",
+      "url": "https://dontstarve.fandom.com/wiki/Misshapen_Bird",
       "workerId": null
     },
     {
@@ -6652,6 +7415,7 @@
       "artifactSha256": "f291deaedb75b813bfcc096399ce6d01b2782fdb4e48ad6aa2cdfdc71b3cb659",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "cooling",
         "equipable_items"
       ],
@@ -6686,6 +7450,7 @@
       "artifactSha256": "d869accf910ad96669b77d638553a78cd83750d9e3a1aefab723ad2d072f0f96",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "craftable_structures"
       ],
       "claimedAt": "2026-07-21T08:47:13Z",
@@ -6753,6 +7518,7 @@
       "artifactSha256": "25d4513f5604e7c60964dd06e76f78497661f7e9d00971e8bd003085f9ac50af",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "boss_dropped_items",
         "craftable_items"
       ],
@@ -6831,10 +7597,27 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/350b763bdfc4f439a29ffd69c96aaf94f547cacd3353604d6b0faf23fd442519.json",
+      "artifactSha256": "3bbcc30fedb26625814a3b1ff2d455d55eecbb1b8fe88a84700f3494fac1513c",
+      "attempts": 1,
+      "categories": [
+        "a_new_reign"
+      ],
+      "claimedAt": "2026-07-21T09:48:33Z",
+      "completedAt": "2026-07-21T09:48:34Z",
+      "createdAt": "2026-07-21T09:48:08Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:48:34Z",
+      "url": "https://dontstarve.fandom.com/wiki/Moon_Stone",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/84b9ce1eacff189597dd81964dd7c16f314785d3c9f85d3828b768252e022487.json",
       "artifactSha256": "c1d53da2ebf5c2986abc591f0a98271873fd96899080ce04559005493e233cc1",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "craftable_items"
       ],
       "claimedAt": "2026-07-21T08:53:55Z",
@@ -6844,6 +7627,23 @@
       "status": "Done",
       "updatedAt": "2026-07-21T08:53:56Z",
       "url": "https://dontstarve.fandom.com/wiki/Moonlens",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/1080b819f860eb9387ff9cc1f165cbd1a4a682ac01779f77b7d8a17eed14c19b.json",
+      "artifactSha256": "66f85523b914ede019d4841cf6b25259240639df8f628aa7d228fe8107e1f3f8",
+      "attempts": 1,
+      "categories": [
+        "birds",
+        "boss_monsters"
+      ],
+      "claimedAt": "2026-07-21T09:44:55Z",
+      "completedAt": "2026-07-21T09:44:56Z",
+      "createdAt": "2026-07-21T09:44:53Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:44:56Z",
+      "url": "https://dontstarve.fandom.com/wiki/Moose/Goose",
       "workerId": null
     },
     {
@@ -6913,34 +7713,35 @@
       "workerId": null
     },
     {
-      "artifactPath": null,
-      "artifactSha256": null,
-      "attempts": 1,
+      "artifactPath": "shared-pages/0b8ac90ea77d8ce6c57d911e15426a3dfbafe50ec7a4856fff0c117fed656467.json",
+      "artifactSha256": "bb6bb12db6d59a160f51eca7f98b9ce0bdb70d14463c5c8bb6cd789e575fadf5",
+      "attempts": 2,
       "categories": [
-        "animals"
+        "animals",
+        "birds"
       ],
-      "claimedAt": null,
-      "completedAt": null,
+      "claimedAt": "2026-07-21T09:43:50Z",
+      "completedAt": "2026-07-21T09:43:53Z",
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": "imported from snapshot without raw artifact",
-      "status": "New",
-      "updatedAt": "2026-07-21T07:27:52Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:43:53Z",
       "url": "https://dontstarve.fandom.com/wiki/Mosling",
       "workerId": null
     },
     {
-      "artifactPath": null,
-      "artifactSha256": null,
-      "attempts": 1,
+      "artifactPath": "shared-pages/1a6db12c004c21a9df29489da753c2f0a60086b07d88f8a6e071adc0893c4d75.json",
+      "artifactSha256": "67626d1b253789181aa2c3683cac5c52efbf4b8dc8802789fe41371b61ec5d39",
+      "attempts": 2,
       "categories": [
         "animals"
       ],
-      "claimedAt": null,
-      "completedAt": null,
+      "claimedAt": "2026-07-21T09:43:40Z",
+      "completedAt": "2026-07-21T09:43:42Z",
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": "imported from snapshot without raw artifact",
-      "status": "New",
-      "updatedAt": "2026-07-21T07:27:52Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:43:42Z",
       "url": "https://dontstarve.fandom.com/wiki/Mosquito",
       "workerId": null
     },
@@ -6998,6 +7799,7 @@
       "artifactSha256": "c7b2ecd0efb983c97671c947b31c41f0e465dce73cac0e25b33034dc5bc4c2bb",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "craftable_structures"
       ],
       "claimedAt": "2026-07-21T08:47:15Z",
@@ -7007,6 +7809,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T08:47:19Z",
       "url": "https://dontstarve.fandom.com/wiki/Mushroom_Planter",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/435571e2b1482b02e5c8ee7811a1bb69d78b56a15eedcdb899e2fe0b65be6978.json",
+      "artifactSha256": "218217b2a18cd95044aff7e6c46c4cadfee1145f6fc2d1091acc112149d29714",
+      "attempts": 1,
+      "categories": [
+        "a_new_reign"
+      ],
+      "claimedAt": "2026-07-21T09:48:36Z",
+      "completedAt": "2026-07-21T09:48:37Z",
+      "createdAt": "2026-07-21T09:48:08Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:48:37Z",
+      "url": "https://dontstarve.fandom.com/wiki/Mushroom_Spore",
       "workerId": null
     },
     {
@@ -7096,6 +7914,7 @@
       "artifactSha256": "6bdef4f765f03128c237735fdc9bf300393f431630eeccb5d6bb7fe024f507bc",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "craftable_items",
         "equipable_items"
       ],
@@ -7227,6 +8046,22 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/3ddc7cf18c178c3130edb21622b0afa63d6b6d5e24f87289942168708a5baeac.json",
+      "artifactSha256": "5013bac1e3276e6d59baf1f971e4d8e9a3557986734fa7f193885514910cad1e",
+      "attempts": 1,
+      "categories": [
+        "boss_monsters"
+      ],
+      "claimedAt": "2026-07-21T09:46:31Z",
+      "completedAt": "2026-07-21T09:46:32Z",
+      "createdAt": "2026-07-21T09:46:15Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:46:32Z",
+      "url": "https://dontstarve.fandom.com/wiki/Nightmare_Werepig",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/b36cc8e56d791e04802ae8d650b4ac5985f32150535429e781f858f8f022c88a.json",
       "artifactSha256": "df48601443e2850aa30986711e0ff9c7c756f104c4c739babef815899d891e08",
       "attempts": 1,
@@ -7243,18 +8078,19 @@
       "workerId": null
     },
     {
-      "artifactPath": null,
-      "artifactSha256": null,
-      "attempts": 1,
+      "artifactPath": "shared-pages/f9cadbb46d4cca15a5fb4d0eb4b7d6e55b997a1be8d5a074ce774b821a805edb.json",
+      "artifactSha256": "d21fb2653a869d95df9d8b8b5c9e5cf0563748b30ee0a132d2b38d050296b136",
+      "attempts": 2,
       "categories": [
+        "a_new_reign",
         "animals"
       ],
-      "claimedAt": null,
-      "completedAt": null,
+      "claimedAt": "2026-07-21T09:43:59Z",
+      "completedAt": "2026-07-21T09:44:01Z",
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": "imported from snapshot without raw artifact",
-      "status": "New",
-      "updatedAt": "2026-07-21T07:27:52Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:44:01Z",
       "url": "https://dontstarve.fandom.com/wiki/No-Eyed_Deer",
       "workerId": null
     },
@@ -7296,6 +8132,7 @@
       "artifactSha256": "b7571cf56f3aeab690cdf310bb05c60a70989503389145878de1ae7741b27d11",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "craftable_structures"
       ],
       "claimedAt": "2026-07-21T08:47:05Z",
@@ -7440,18 +8277,19 @@
       "workerId": null
     },
     {
-      "artifactPath": null,
-      "artifactSha256": null,
-      "attempts": 1,
+      "artifactPath": "shared-pages/d8d40d567678f6dacc7952fbeae920881e3e1d17cfe36b2b6f467f01bef355ba.json",
+      "artifactSha256": "2b7115f82113880a98185174973d74c33e270649aafb6312ff02d50ec1abbe97",
+      "attempts": 2,
       "categories": [
-        "animals"
+        "animals",
+        "birds"
       ],
-      "claimedAt": null,
-      "completedAt": null,
+      "claimedAt": "2026-07-21T09:43:56Z",
+      "completedAt": "2026-07-21T09:43:59Z",
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": "imported from snapshot without raw artifact",
-      "status": "New",
-      "updatedAt": "2026-07-21T07:27:52Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:43:59Z",
       "url": "https://dontstarve.fandom.com/wiki/Parrot_Pirate",
       "workerId": null
     },
@@ -7488,18 +8326,19 @@
       "workerId": null
     },
     {
-      "artifactPath": null,
-      "artifactSha256": null,
-      "attempts": 1,
+      "artifactPath": "shared-pages/663009aeba558919d8b7479be854d951d5ee2cbce57db7ff1c944fc2fc3a0a0d.json",
+      "artifactSha256": "6d2417b23ca943502ff7b93ffe750b2cae6791d089fecbfcd99123b0021774dd",
+      "attempts": 2,
       "categories": [
-        "animals"
+        "animals",
+        "birds"
       ],
-      "claimedAt": null,
-      "completedAt": null,
+      "claimedAt": "2026-07-21T09:43:42Z",
+      "completedAt": "2026-07-21T09:43:43Z",
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": "imported from snapshot without raw artifact",
-      "status": "New",
-      "updatedAt": "2026-07-21T07:27:52Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:43:43Z",
       "url": "https://dontstarve.fandom.com/wiki/Pengull",
       "workerId": null
     },
@@ -7517,6 +8356,38 @@
       "status": "Done",
       "updatedAt": "2026-07-21T08:33:55Z",
       "url": "https://dontstarve.fandom.com/wiki/Pepper",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/ddbe0caa0193bc75890bda7f5f5982297aeac8bddfb80b385c6156d1cc5fcb93.json",
+      "artifactSha256": "a827035fb680db3082db081444d5bd9eb1a0415baa3f447e38e47153a2285f40",
+      "attempts": 1,
+      "categories": [
+        "a_new_reign"
+      ],
+      "claimedAt": "2026-07-21T09:48:11Z",
+      "completedAt": "2026-07-21T09:48:12Z",
+      "createdAt": "2026-07-21T09:48:08Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:48:12Z",
+      "url": "https://dontstarve.fandom.com/wiki/Petals",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/dfa29b49314165faac90fee95d17b7f673eb119c49195e64ff607e5d90f8dcbe.json",
+      "artifactSha256": "af2d2d6f4d88c2dd5b9a1d6b33cc70fa76eacbe4938c80105abadca4fd4d25a0",
+      "attempts": 1,
+      "categories": [
+        "a_new_reign"
+      ],
+      "claimedAt": "2026-07-21T09:48:23Z",
+      "completedAt": "2026-07-21T09:48:24Z",
+      "createdAt": "2026-07-21T09:48:08Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:48:24Z",
+      "url": "https://dontstarve.fandom.com/wiki/Petrified_Tree",
       "workerId": null
     },
     {
@@ -7540,6 +8411,7 @@
       "artifactSha256": "651ea1eef31fcb4948017151398a1442336af4fa4014871f03bc62cd30829140",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "food"
       ],
       "claimedAt": "2026-07-21T08:33:41Z",
@@ -7573,6 +8445,8 @@
       "artifactSha256": "9b6465962eeb82ab00a88e911842d68cc4c2ae44bdbeb5df6284b99cd2ec80f5",
       "attempts": 1,
       "categories": [
+        "ancient_tab",
+        "ancient_tier_2",
         "craftable_items",
         "equipable_items"
       ],
@@ -7620,18 +8494,18 @@
       "workerId": null
     },
     {
-      "artifactPath": null,
-      "artifactSha256": null,
-      "attempts": 1,
+      "artifactPath": "shared-pages/14a6352a88d7c379f874a17042ba8bee3b6d0a00c5e033ec0c7c94abb8172020.json",
+      "artifactSha256": "d68866f7fecac8269d364ab99023f40b0998242bbc388dd3bc88c371a0a284cf",
+      "attempts": 2,
       "categories": [
         "animals"
       ],
-      "claimedAt": null,
-      "completedAt": null,
+      "claimedAt": "2026-07-21T09:43:53Z",
+      "completedAt": "2026-07-21T09:43:54Z",
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": "imported from snapshot without raw artifact",
-      "status": "New",
-      "updatedAt": "2026-07-21T07:27:52Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:43:54Z",
       "url": "https://dontstarve.fandom.com/wiki/Pig",
       "workerId": null
     },
@@ -7685,6 +8559,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T08:53:17Z",
       "url": "https://dontstarve.fandom.com/wiki/Pile_o'_Balloons",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/d728fd46054b8f1b5306a72ce3ffc0476625bab95e76f27f03c6ea9fa45fb2f6.json",
+      "artifactSha256": "31f2e74a10b31ef038f046891f9216f7db1b39553914a83357279b3b2c85828b",
+      "attempts": 1,
+      "categories": [
+        "a_new_reign"
+      ],
+      "claimedAt": "2026-07-21T09:48:16Z",
+      "completedAt": "2026-07-21T09:48:17Z",
+      "createdAt": "2026-07-21T09:48:08Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:48:17Z",
+      "url": "https://dontstarve.fandom.com/wiki/Pillars",
       "workerId": null
     },
     {
@@ -7958,6 +8848,22 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/e479335f0e991bdb3d30891367be579dda37bfdfd4b2be6d868d634a2e425a54.json",
+      "artifactSha256": "faa14455b474d8606231c3900ad77ecee5d54a8227f1fed3efa514d7e544918c",
+      "attempts": 1,
+      "categories": [
+        "boss_monsters"
+      ],
+      "claimedAt": "2026-07-21T09:46:36Z",
+      "completedAt": "2026-07-21T09:46:39Z",
+      "createdAt": "2026-07-21T09:46:15Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:46:39Z",
+      "url": "https://dontstarve.fandom.com/wiki/Possessed_Varg",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/dc42f412705a493824bfeb496d7e3e6b50888d0b9307fbb9a95a308b6b0bdbdc.json",
       "artifactSha256": "743521e137f7d351ee49e92c0c11500c65bcb7fe713533448341b3750c728bf4",
       "attempts": 1,
@@ -7996,6 +8902,7 @@
       "artifactSha256": "e9c31884d736ebe653bbfe31c07c3dcba9e33054cea48cdadba494d4af7f0948",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "craftable_structures",
         "decorations_filter"
       ],
@@ -8013,6 +8920,7 @@
       "artifactSha256": "c209b5e867489d448b10d732f0c55906227f9123bbec01f67f1836cabf5f6045",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "craftable_structures",
         "crafting_stations",
         "decorations_filter"
@@ -8027,18 +8935,18 @@
       "workerId": null
     },
     {
-      "artifactPath": null,
-      "artifactSha256": null,
-      "attempts": 1,
+      "artifactPath": "shared-pages/00afcee8e740fc10ee1b1d12aca566418c11134ed685e3ac6e3668d33f05e4bd.json",
+      "artifactSha256": "3f8e4051107752492a6a3f0e42c5e17b2d93aae6abb061173ead508f4c177a6d",
+      "attempts": 2,
       "categories": [
         "animals"
       ],
-      "claimedAt": null,
-      "completedAt": null,
+      "claimedAt": "2026-07-21T09:44:04Z",
+      "completedAt": "2026-07-21T09:44:06Z",
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": "imported from snapshot without raw artifact",
-      "status": "New",
-      "updatedAt": "2026-07-21T07:27:52Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:44:06Z",
       "url": "https://dontstarve.fandom.com/wiki/Powder_Monkey",
       "workerId": null
     },
@@ -8258,18 +9166,18 @@
       "workerId": null
     },
     {
-      "artifactPath": null,
-      "artifactSha256": null,
-      "attempts": 1,
+      "artifactPath": "shared-pages/9b515e190e2db172e88a30836544125ae00aaf2d956420a4303b12a3365338ad.json",
+      "artifactSha256": "86f13b4d842541e5d5f5f6eecbe031725afdca8d6cd7fe8b486b807aae1f8462",
+      "attempts": 2,
       "categories": [
         "animals"
       ],
-      "claimedAt": null,
-      "completedAt": null,
+      "claimedAt": "2026-07-21T09:43:29Z",
+      "completedAt": "2026-07-21T09:43:31Z",
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": "imported from snapshot without raw artifact",
-      "status": "New",
-      "updatedAt": "2026-07-21T07:27:52Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:43:31Z",
       "url": "https://dontstarve.fandom.com/wiki/Rabbit",
       "workerId": null
     },
@@ -8411,6 +9319,8 @@
       "artifactSha256": "c375fb47ec484f37628bde867e70f210cc2fb612134a1127594e66b6b82b7913",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
+        "boss_monsters",
         "cave_creatures"
       ],
       "claimedAt": "2026-07-21T07:39:24Z",
@@ -8527,6 +9437,7 @@
       "artifactSha256": "efed8b740956061c7b4bb824f18845318822e251edeb9780833422df51dceecf",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "craftable_structures",
         "decorations_filter"
       ],
@@ -8592,6 +9503,7 @@
       "artifactSha256": "f8e7288aff3150592bf6611509ac8610965141468905f38b811cadb9dce460b7",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "crafting_stations"
       ],
       "claimedAt": "2026-07-21T08:19:01Z",
@@ -8742,6 +9654,7 @@
       "artifactSha256": "81931332a06074bbd7f1696df3c624cac68787eb9a207107493dc8d2e601ec2d",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "boss_dropped_items"
       ],
       "claimedAt": "2026-07-21T07:36:43Z",
@@ -8790,6 +9703,7 @@
       "artifactSha256": "007f5d0d1ffa64ade30bba55df0890c922f6295f06897ad63a9a3769ba3e0d46",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "craftable_items"
       ],
       "claimedAt": "2026-07-21T08:53:46Z",
@@ -8907,6 +9821,7 @@
       "artifactSha256": "dbc0b5bbf05d8989970ba0d7ea0c4bcfb935a0643a173231d1e44da74034a3fc",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "craftable_structures"
       ],
       "claimedAt": "2026-07-21T08:47:04Z",
@@ -8964,6 +9879,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T08:29:58Z",
       "url": "https://dontstarve.fandom.com/wiki/Sammy",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/e86e6e92c8c8d49e45e346b72cad491b621652f18481e09462b823852e63f545.json",
+      "artifactSha256": "ec84922616aa5ad6e80386cc50670b638f04cf9f7183d29479259cfb758b3778",
+      "attempts": 1,
+      "categories": [
+        "a_new_reign"
+      ],
+      "claimedAt": "2026-07-21T09:48:45Z",
+      "completedAt": "2026-07-21T09:48:46Z",
+      "createdAt": "2026-07-21T09:48:08Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:48:46Z",
+      "url": "https://dontstarve.fandom.com/wiki/Sandstorm",
       "workerId": null
     },
     {
@@ -9089,6 +10020,7 @@
       "artifactSha256": "ea2b0cfca9e839c75ffa3e3563b66e803cb06565f72d2fd9b1b21593533c065d",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "cooking_filter",
         "craftable_structures"
       ],
@@ -9199,6 +10131,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T08:42:25Z",
       "url": "https://dontstarve.fandom.com/wiki/Scrappy_Chapauldron",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/a05ba9aa05d569769abfdcfc9d0f640a856170d73c6a29cf239e633923918830.json",
+      "artifactSha256": "8ce5a4f4a4f76f947d8a97af4f2cc2636dbe878fb68faa0bd83c5214e8f1e7f4",
+      "attempts": 1,
+      "categories": [
+        "boss_monsters"
+      ],
+      "claimedAt": "2026-07-21T09:46:42Z",
+      "completedAt": "2026-07-21T09:46:43Z",
+      "createdAt": "2026-07-21T09:46:15Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:46:43Z",
+      "url": "https://dontstarve.fandom.com/wiki/Scrappy_Werepig",
       "workerId": null
     },
     {
@@ -9371,6 +10319,7 @@
       "artifactSha256": "ff6482b6b56bd0853d551f2e1ca5bfd7fdb509f89e86762587bb1b66ef625e0d",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "boss_dropped_items"
       ],
       "claimedAt": "2026-07-21T07:36:42Z",
@@ -9415,6 +10364,23 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/bd801a57cb0dbd9e725c59fb2c3885f4d9d74cc3f5b0a0ed03ff5171feb666c3.json",
+      "artifactSha256": "eb38f09e7af3635a3b5d9ad4190906ee65cf3c95c8bec5db0c19edd10401ffc0",
+      "attempts": 1,
+      "categories": [
+        "a_new_reign",
+        "boss_monsters"
+      ],
+      "claimedAt": "2026-07-21T09:46:21Z",
+      "completedAt": "2026-07-21T09:46:22Z",
+      "createdAt": "2026-07-21T09:46:15Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:46:22Z",
+      "url": "https://dontstarve.fandom.com/wiki/Shadow_Pieces",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/3a27f2abf842798e5a43a945191819619346dacb6e6dd3e5aaf3d33020b14df4.json",
       "artifactSha256": "4acd4023308d801b9b40bcd96e7c183f1a915e4d997527d0055d0bf31eea17a4",
       "attempts": 1,
@@ -9435,6 +10401,7 @@
       "artifactSha256": "0416cb94960b56d63da4ea46f2be4f4ee3682941925b3a84c5ad7d529fc3aced",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "boss_dropped_items"
       ],
       "claimedAt": "2026-07-21T07:36:49Z",
@@ -9451,6 +10418,7 @@
       "artifactSha256": "f22cddb22b5eaa78bfee7cc8de30b95c69e61faddffa0b81659d4c7a43e6b200",
       "attempts": 1,
       "categories": [
+        "ancient_tier_2",
         "craftable_items"
       ],
       "claimedAt": "2026-07-21T08:58:18Z",
@@ -9566,6 +10534,7 @@
       "artifactSha256": "661ba6f5732a8f24b42ccced85473a0e9a9b08bc28c6a4c7f45b6e04547b866b",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "boss_dropped_items"
       ],
       "claimedAt": "2026-07-21T07:36:40Z",
@@ -9664,6 +10633,7 @@
       "artifactSha256": "02fbe512868d64362ce15b1c6bcef6c2ee0a3154c0ed72b2738c8a4b3ec4d565",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "boss_dropped_items",
         "celestial_tab"
       ],
@@ -9914,6 +10884,7 @@
       "artifactSha256": "e03cecfb769472335e95d8590729aa137f627f44181b75863fca61410d2b9c03",
       "attempts": 1,
       "categories": [
+        "boss_monsters",
         "cave_creatures"
       ],
       "claimedAt": "2026-07-21T07:39:03Z",
@@ -9975,18 +10946,18 @@
       "workerId": null
     },
     {
-      "artifactPath": null,
-      "artifactSha256": null,
-      "attempts": 1,
+      "artifactPath": "shared-pages/93205bd01269d67f81ff71380bde205c778af2cba92bef25aaeae332f2a43518.json",
+      "artifactSha256": "dee09df3029f3438a646380eb63ee8eb6e893f4f81f22c2f2d8f3765e59f595e",
+      "attempts": 2,
       "categories": [
         "animals"
       ],
-      "claimedAt": null,
-      "completedAt": null,
+      "claimedAt": "2026-07-21T09:43:43Z",
+      "completedAt": "2026-07-21T09:43:44Z",
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": "imported from snapshot without raw artifact",
-      "status": "New",
-      "updatedAt": "2026-07-21T07:27:52Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:43:44Z",
       "url": "https://dontstarve.fandom.com/wiki/Splumonkey",
       "workerId": null
     },
@@ -10043,6 +11014,7 @@
       "artifactSha256": "e2b5d01bb5a581cbb3bfaf6e2848b2044f7476443995886134db961421faca2d",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "boss_dropped_items"
       ],
       "claimedAt": "2026-07-21T07:36:46Z",
@@ -10059,6 +11031,7 @@
       "artifactSha256": "ecc4ba0954e60bf51d37160a8ca5edfffe78d5c124bb73e410f6c61ff70f412c",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "craftable_structures",
         "decorations_filter"
       ],
@@ -10076,6 +11049,8 @@
       "artifactSha256": "6a9a7af506bdb90b66c0d3be4a237a7464a9546ad60e473c5b7f3e4415861b8f",
       "attempts": 1,
       "categories": [
+        "ancient_tab",
+        "ancient_tier_1",
         "craftable_items",
         "equipable_items"
       ],
@@ -10103,6 +11078,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T07:30:26Z",
       "url": "https://dontstarve.fandom.com/wiki/Steamed_Twigs",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/527616a1b31387910824ea56802b4c724179cb885abb7ed58d0bb07bd68c636a.json",
+      "artifactSha256": "64cdff5e248c6b64ab2bbf338b513cebd6779fe066c2515153b418a50ec47494",
+      "attempts": 1,
+      "categories": [
+        "a_new_reign"
+      ],
+      "claimedAt": "2026-07-21T09:48:19Z",
+      "completedAt": "2026-07-21T09:48:20Z",
+      "createdAt": "2026-07-21T09:48:08Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:48:20Z",
+      "url": "https://dontstarve.fandom.com/wiki/Steel_Wool",
       "workerId": null
     },
     {
@@ -10339,6 +11330,38 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/946c9af0c009c7ac79f4d8ef599672bb7ab84c97c88316c895929cfffa1873c2.json",
+      "artifactSha256": "b0aaaf72ce68c278d999f8b91993659aa2e6bd9267072cf8d053f05fe9eadaf4",
+      "attempts": 1,
+      "categories": [
+        "a_new_reign"
+      ],
+      "claimedAt": "2026-07-21T09:48:26Z",
+      "completedAt": "2026-07-21T09:48:27Z",
+      "createdAt": "2026-07-21T09:48:08Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:48:27Z",
+      "url": "https://dontstarve.fandom.com/wiki/Suspicious_Marble",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/6a45afac5e7924afd38644a13c3a2c7367712820a571e8b200516bb1aecbeca8.json",
+      "artifactSha256": "47c1ca454ecc26c3a28b78815eb4a0d71cb53246316bd318a12c440b73d291e8",
+      "attempts": 1,
+      "categories": [
+        "a_new_reign"
+      ],
+      "claimedAt": "2026-07-21T09:48:25Z",
+      "completedAt": "2026-07-21T09:48:26Z",
+      "createdAt": "2026-07-21T09:48:08Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:48:26Z",
+      "url": "https://dontstarve.fandom.com/wiki/Suspicious_Moonrock",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/e01718d1a639f83419ce772fae4c9a4a37180dbee6de7745017d73e79f45068d.json",
       "artifactSha256": "bdd080e3bdfaa20a40a6c525b742cbf61494380e209f640e69939db11ff30394",
       "attempts": 1,
@@ -10507,6 +11530,7 @@
       "artifactSha256": "2a02ed3ce0a3d0f84f3aca1acbff32c61b7c758ec45273a5624c45a2ff1b3a43",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "craftable_items",
         "equipable_items",
         "fight_tab"
@@ -10535,6 +11559,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T08:27:46Z",
       "url": "https://dontstarve.fandom.com/wiki/Tall_Scotch_Eggs",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/b4725fbb45444f2bde4fbfc3ee796328a90f9cd6cd64a3a0629a1a5fc2f0a619.json",
+      "artifactSha256": "e76d90ab2791bc4458decdcdecec6aed955e830956bda3cccf8f1e3d181e8ff9",
+      "attempts": 1,
+      "categories": [
+        "birds"
+      ],
+      "claimedAt": "2026-07-21T09:44:56Z",
+      "completedAt": "2026-07-21T09:44:57Z",
+      "createdAt": "2026-07-21T09:44:53Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:44:57Z",
+      "url": "https://dontstarve.fandom.com/wiki/Tallbird",
       "workerId": null
     },
     {
@@ -10819,6 +11859,7 @@
       "artifactSha256": "2505b8b7ab82a5e4fe3627bc554bb56c8533250a21e4d0798640abf265d103c7",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "craftable_structures"
       ],
       "claimedAt": "2026-07-21T08:47:20Z",
@@ -10835,6 +11876,8 @@
       "artifactSha256": "a7017018f86b33b69ed49318ad7fcb3f62f407f27babf2285adf4266151d8bf2",
       "attempts": 1,
       "categories": [
+        "ancient_tab",
+        "ancient_tier_2",
         "craftable_items",
         "equipable_items"
       ],
@@ -10852,6 +11895,8 @@
       "artifactSha256": "8c3017b5d9768558f8ab8c9ab3bec5e3051bbe1f8276dab82f5a84d5fcec4295",
       "attempts": 1,
       "categories": [
+        "ancient_tab",
+        "ancient_tier_2",
         "craftable_items",
         "equipable_items"
       ],
@@ -10935,6 +11980,8 @@
       "artifactSha256": "d3d289e259fa552b138a611ff7b04f66534ce01ee86fde9aeb02e57c7537f15d",
       "attempts": 1,
       "categories": [
+        "ancient_tab",
+        "ancient_tier_1",
         "craftable_items"
       ],
       "claimedAt": "2026-07-21T08:53:18Z",
@@ -10967,6 +12014,8 @@
       "artifactSha256": "530785fb1d02b5f077b484d385589b10ed420e676a964590306cfdeeaf9504eb",
       "attempts": 1,
       "categories": [
+        "ancient_tab",
+        "ancient_tier_2",
         "craftable_items",
         "equipable_items"
       ],
@@ -10984,6 +12033,8 @@
       "artifactSha256": "97b29ea22249f49ad97b529976228680df899d5712cd9a28c743ce2cde4be6a1",
       "attempts": 1,
       "categories": [
+        "ancient_tab",
+        "ancient_tier_2",
         "craftable_items",
         "equipable_items"
       ],
@@ -11001,6 +12052,8 @@
       "artifactSha256": "5b67f37af6f212798a9fdb9dc988800654ae0e071e96ac350ff15bea5e033f8d",
       "attempts": 1,
       "categories": [
+        "ancient_tab",
+        "ancient_tier_1",
         "craftable_items"
       ],
       "claimedAt": "2026-07-21T08:53:22Z",
@@ -11017,6 +12070,8 @@
       "artifactSha256": "02a8551686157aa982d829c928186d00507e4afb599169b822c0d866201cd424",
       "attempts": 1,
       "categories": [
+        "ancient_tab",
+        "ancient_tier_2",
         "craftable_items",
         "equipable_items"
       ],
@@ -11027,6 +12082,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T08:39:06Z",
       "url": "https://dontstarve.fandom.com/wiki/Thulecite_Suit",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/40dec2143da76fb5d821786958c752e34a79ae5168f86ccdf15370b9e5eb6a30.json",
+      "artifactSha256": "b0fee93e5072ff12616d90bf8ec4cb82548c4f285da7e4164e49123b83e01c76",
+      "attempts": 1,
+      "categories": [
+        "ancient_tier_1"
+      ],
+      "claimedAt": "2026-07-21T09:42:57Z",
+      "completedAt": "2026-07-21T09:43:00Z",
+      "createdAt": "2026-07-21T09:42:56Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:43:00Z",
+      "url": "https://dontstarve.fandom.com/wiki/Thulecite_Wall",
       "workerId": null
     },
     {
@@ -11066,6 +12137,8 @@
       "artifactSha256": "0aed93ea7e34efbacb8531086888374f0cb25dc0ba29d2252b10b739b582fb6e",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
+        "boss_monsters",
         "cave_creatures"
       ],
       "claimedAt": "2026-07-21T07:39:22Z",
@@ -11199,6 +12272,7 @@
       "artifactSha256": "1229bf308a8271e332955fd0b1ef8c773af59d7f3622b231360a316b8417c242",
       "attempts": 1,
       "categories": [
+        "boss_monsters",
         "cave_creatures"
       ],
       "claimedAt": "2026-07-21T07:39:01Z",
@@ -11224,6 +12298,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T08:58:33Z",
       "url": "https://dontstarve.fandom.com/wiki/Treeguard_Idol",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/35f72cec759f1fe76dcfab1a6b065255dd75df989881839b5ad7604ccb05ce3e.json",
+      "artifactSha256": "907f5a6bf3cb7c190daa889e1d05d3f2e327fb9ac6df21aca601857fcb072435",
+      "attempts": 1,
+      "categories": [
+        "a_new_reign"
+      ],
+      "claimedAt": "2026-07-21T09:48:10Z",
+      "completedAt": "2026-07-21T09:48:11Z",
+      "createdAt": "2026-07-21T09:48:08Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:48:11Z",
+      "url": "https://dontstarve.fandom.com/wiki/Trinkets",
       "workerId": null
     },
     {
@@ -11308,6 +12398,38 @@
       "status": "Done",
       "updatedAt": "2026-07-21T08:30:24Z",
       "url": "https://dontstarve.fandom.com/wiki/Turnip",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/a9caab4b8694d324c34fd80f20c658164d287dbece8d305da71f2ff2211e675c.json",
+      "artifactSha256": "c9433d2ed5b2f9adb7fe21057755241aec1657471b26e5273ab4c12cddb48400",
+      "attempts": 1,
+      "categories": [
+        "a_new_reign"
+      ],
+      "claimedAt": "2026-07-21T09:48:21Z",
+      "completedAt": "2026-07-21T09:48:22Z",
+      "createdAt": "2026-07-21T09:48:08Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:48:22Z",
+      "url": "https://dontstarve.fandom.com/wiki/Twiggy_Tree",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/6d3114aff7675243d2ec0792413b924d65982459f03e30b6aeeddd0371bcb953.json",
+      "artifactSha256": "ca95c058ca77640a72741dfa425b2d2d925433afd3c0ac8731c6f0c91bca68a0",
+      "attempts": 1,
+      "categories": [
+        "a_new_reign"
+      ],
+      "claimedAt": "2026-07-21T09:48:22Z",
+      "completedAt": "2026-07-21T09:48:23Z",
+      "createdAt": "2026-07-21T09:48:08Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:48:23Z",
+      "url": "https://dontstarve.fandom.com/wiki/Twiggy_Tree_Cone",
       "workerId": null
     },
     {
@@ -11429,18 +12551,18 @@
       "workerId": null
     },
     {
-      "artifactPath": null,
-      "artifactSha256": null,
-      "attempts": 1,
+      "artifactPath": "shared-pages/0f393903dbc5b94b1593ed4ec74d32931e977479c9bd465b7fcf6fee8dd9dd2d.json",
+      "artifactSha256": "a0886d30740ceae1e6535e507292b15bab631cd08dda6294f7609d5112342624",
+      "attempts": 2,
       "categories": [
         "animals"
       ],
-      "claimedAt": null,
-      "completedAt": null,
+      "claimedAt": "2026-07-21T09:43:46Z",
+      "completedAt": "2026-07-21T09:43:47Z",
       "createdAt": "2026-07-21T03:11:53Z",
-      "lastError": "imported from snapshot without raw artifact",
-      "status": "New",
-      "updatedAt": "2026-07-21T07:27:52Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:43:47Z",
       "url": "https://dontstarve.fandom.com/wiki/Volt_Goat",
       "workerId": null
     },
@@ -11476,6 +12598,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T07:29:06Z",
       "url": "https://dontstarve.fandom.com/wiki/W.A.R.B.I.S._Head_Gear",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/dfacc0b95416617efb3fb1d68044f78dea118e8bdd5784a9bf002c566a8d4f90.json",
+      "artifactSha256": "65fa4002f3447333fbce33cf99f9e4584b249f73b0ab306ff51fcf81673c2e79",
+      "attempts": 1,
+      "categories": [
+        "boss_monsters"
+      ],
+      "claimedAt": "2026-07-21T09:46:43Z",
+      "completedAt": "2026-07-21T09:46:46Z",
+      "createdAt": "2026-07-21T09:46:15Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:46:46Z",
+      "url": "https://dontstarve.fandom.com/wiki/W.A.R.B.O.T.",
       "workerId": null
     },
     {
@@ -11874,6 +13012,7 @@
       "artifactSha256": "1439217aeb598079edb9fc21c92fc62f554f510d2d88281464bffbcf36a379c8",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "craftable_items",
         "craftable_structures",
         "decorations_filter"
@@ -11892,6 +13031,7 @@
       "artifactSha256": "3c4954370941f0f282c705045742b6ecec12b3438b711d5f6bd90a6225c5c13a",
       "attempts": 1,
       "categories": [
+        "a_new_reign",
         "craftable_items",
         "decorations_filter"
       ],
@@ -11954,6 +13094,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T07:31:01Z",
       "url": "https://dontstarve.fandom.com/wiki/Wooden_Walking_Stick",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/680b86f6367acfd9533999505902218f57e61828ac20b580954faaab7f4884d5.json",
+      "artifactSha256": "d663c12fcf61e71ca6ea671898f418776760e5c5fc9ed505e00c6d8db8cf22ba",
+      "attempts": 1,
+      "categories": [
+        "a_new_reign"
+      ],
+      "claimedAt": "2026-07-21T09:48:55Z",
+      "completedAt": "2026-07-21T09:48:56Z",
+      "createdAt": "2026-07-21T09:48:09Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-21T09:48:56Z",
+      "url": "https://dontstarve.fandom.com/wiki/Woven_Shadow",
       "workerId": null
     },
     {

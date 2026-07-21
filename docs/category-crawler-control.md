@@ -5,15 +5,21 @@ Registry máy đọc/ghi nằm tại `<git-common-dir>/category-crawler/`; file
 Trạng thái chỉ gồm `New`, `Doing`, `Done`: URL mới/`New` được lấy tiếp, còn
 `Doing` và `Done` phải skip network fetch.
 
-> **Live audit 2026-07-21:** 729 URL hợp lệ, 706 `Done`, 23 `New`, 0 `Doing`,
-> 0 artifact lỗi. 559 URL mới của batch 2 đã hoàn tất; 23 URL `New` còn lại chỉ
-> thuộc Animals và chưa được yêu cầu crawl lại.
+> **Live audit 2026-07-21:** 795 URL hợp lệ, 795 `Done`, 0 `New`, 0 `Doing`,
+> 0 artifact lỗi. Toàn bộ URL được duyệt qua ba batch đã hoàn tất.
 
 ## Category queue
 
 | Category | Source | Direct | Child category | Excluded | Publish candidates | Registry Done | Status |
 |---|---|---:|---:|---:|---:|---:|---|
-| animals | [Category:Animals](https://dontstarve.fandom.com/wiki/Category:Animals) | 35 | 4 | 6 | 29 | 6 | Partial |
+| a_new_reign | [Category:A New Reign](https://dontstarve.fandom.com/wiki/Category:A_New_Reign) | 110 | 2 | 18 | 92 | 92 | Done |
+| ancient_tab | [Category:Ancient Tab](https://dontstarve.fandom.com/wiki/Category:Ancient_Tab) | 15 | 0 | 1 | 14 | 14 | Done |
+| ancient_tier_1 | [Category:Ancient Tier 1](https://dontstarve.fandom.com/wiki/Category:Ancient_Tier_1) | 10 | 0 | 1 | 9 | 9 | Done |
+| ancient_tier_2 | [Category:Ancient Tier 2](https://dontstarve.fandom.com/wiki/Category:Ancient_Tier_2) | 7 | 0 | 0 | 7 | 7 | Done |
+| animals | [Category:Animals](https://dontstarve.fandom.com/wiki/Category:Animals) | 35 | 4 | 6 | 29 | 29 | Done |
+| birds | [Category:Birds](https://dontstarve.fandom.com/wiki/Category:Birds) | 17 | 0 | 7 | 10 | 10 | Done |
+| boss_monsters | [Category:Boss Monsters](https://dontstarve.fandom.com/wiki/Category:Boss_Monsters) | 37 | 0 | 9 | 28 | 28 | Done |
+| clockwork_monsters | [Category:Clockwork Monsters](https://dontstarve.fandom.com/wiki/Category:Clockwork_Monsters) | 8 | 0 | 2 | 6 | 6 | Done |
 | armour_filter | [Category:Armour Filter](https://dontstarve.fandom.com/wiki/Category:Armour_Filter) | 19 | 0 | 0 | 19 | 19 | Done |
 | beefalo_foods | [Category:Beefalo Foods](https://dontstarve.fandom.com/wiki/Category:Beefalo_Foods) | 5 | 0 | 0 | 5 | 5 | Done |
 | boss_dropped_items | [Category:Boss Dropped Items](https://dontstarve.fandom.com/wiki/Category:Boss_Dropped_Items) | 75 | 0 | 12 | 63 | 63 | Done |
@@ -54,6 +60,14 @@ DST-only còn 647 URL hợp lệ: 88 URL tái sử dụng và 559 URL mới. C�
 đều `Done`; registry toàn cục có 729 URL gồm 706 `Done` và 23 Animals-only
 `New`. Có 383 membership trùng giữa các Category trong batch; canonical URL
 registry bảo đảm mỗi detail chỉ fetch một lần.
+
+Batch 3 có 292 direct memberships và 201 canonical page trước review. Sau lọc còn
+195 accepted memberships tương ứng 166 canonical URL: 77 URL được tái sử dụng,
+89 URL được crawl mới (gồm 23 Animals `New` và 66 URL chưa có), 29 lượt trùng
+chéo giữa Category. Cả 195 membership hiện `Done`; registry toàn cục có 795 URL,
+không còn `New`/`Doing`. `Animals` tái sử dụng config đã duyệt; `Parrot Pirate`
+được giữ như ngoại lệ DST trong cả Animals và Birds. Sáu alias màu Moonlens bị
+loại trước resolve để chỉ register canonical `Moonlens` một lần.
 
 Giữ đủ 14 Category vì chúng bổ sung tag phân loại. `Craftable Items`, `Craftable
 Structures`, `Events` và `Food` mang phần lớn URL riêng. `Cooking Filter`,
@@ -510,6 +524,100 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
   Soup (`non_dst:shipwrecked`), Swordfish (`non_dst:shipwrecked`), Tropical Fish
   (`non_dst:shipwrecked`).
 
+### Category:A New Reign
+
+- Keep (92): Ancient Beacon, Ancient Fence, Ancient Gateway, Ancient Key, Ancient Mural, Ancient
+  Obelisk, Ancient Statue, Antlion, Atrium, Bee Queen, Bee Queen Crown, Birds, Blueprint, Bone
+  Armor, Bone Helm, Boulder, Brush, Cactus, Cartographer's Desk, Cave Hole, Chilled Lavae, Cratered
+  Moonrock, Critters, Crumpled Package, Deer Antler, Desert Stone, Feather, Feather Pencil, Flower,
+  Friendly Scarecrow, Funcap, Gem Deer, Gigantic Beehive, Glass Sculptures, Grass Gekko, Grumble
+  Bee, Iridescent Gem, Jellybeans, Juicy Berries, Juicy Berry Bush, Klaus, Lake, Loot Stash, Map
+  Scroll, Marble Bean, Marble Sculptures, Marble Shrub, Marble Statues, Mini Sign, Moon Caller's
+  Staff, Moon Dial, Moon Rock, Moon Stone, Moonlens, Mushroom Planter, Mushroom Spore, Napsack, No-
+  Eyed Deer, Ocuvigil, Petals, Petrified Tree, Phlegm, Pillars, Potted Succulent, Potter's Wheel,
+  Reanimated Skeleton, Relic, Rock Den, Royal Jelly, Saddle, Salt Lick, Sandstorm, Scaled Furnace,
+  Shadow Atrium, Shadow Pieces, Shadow Thurible, Shroom Skin, Sketch, Stag Antler, Stagehand, Steel
+  Wool, Suspicious Marble, Suspicious Moonrock, Tail o' Three Cats, The Lazy Deserter, Toadstool,
+  Trinkets, Twiggy Tree, Twiggy Tree Cone, Wood Fence, Wood Gate, Woven Shadow.
+
+- Exclude trước detail (18): A New Reign (`non_item:overview`), Blue Moonlens
+  (`duplicate:canonical_redirect`), Cartography Filter (`non_item:overview`), Chess Pieces
+  (`non_item:overview`), Critters Filter (`non_item:overview`), Dart (`non_item:overview`), Disease
+  (`non_item:category_mismatch`), Goggles (`non_item:overview`), Green Moonlens
+  (`duplicate:canonical_redirect`), Mushroom Lights (`non_item:overview`), Orange Moonlens
+  (`duplicate:canonical_redirect`), Purple Moonlens (`duplicate:canonical_redirect`), Red Moonlens
+  (`duplicate:canonical_redirect`), Sculptures Filter (`non_item:overview`), Wall
+  (`non_item:overview`), Winter's Feast (`non_item:category_mismatch`), Year of the Gobbler
+  (`non_item:category_mismatch`), Yellow Moonlens (`duplicate:canonical_redirect`).
+
+- Bỏ Category con, không đệ quy: Category:Events, Category:Rare Blueprint Exclusive.
+
+### Category:Ancient Tab
+
+- Keep (14): Ancient Pseudoscience Station, Construction Amulet, Deconstruction Staff, Houndius
+  Shootius, Magiluminescence, Pick/Axe, Star Caller's Staff, The Lazy Explorer, The Lazy Forager,
+  Thulecite, Thulecite Club, Thulecite Crown, Thulecite Medallion, Thulecite Suit.
+
+- Exclude trước detail (1): Wall (`non_item:overview`).
+
+### Category:Ancient Tier 1
+
+- Keep (9): Blueprint, Construction Amulet, Deconstruction Staff, Gardeneer Hat, Magiluminescence,
+  Star Caller's Staff, Thulecite, Thulecite Medallion, Thulecite Wall.
+
+- Exclude trước detail (1): Slingshot Ammo (`non_item:overview`).
+
+- Bỏ namespace khác: ns=2 User:Bluegeist/Sandbox5, ns=2 User:Dark Clefita/Sandbox.
+
+### Category:Ancient Tier 2
+
+- Keep (7): Pick/Axe, Shadowcraft Plinth, The Lazy Explorer, The Lazy Forager, Thulecite Club,
+  Thulecite Crown, Thulecite Suit.
+
+### Category:Animals
+
+- Keep (29): Bee, Beefalo, Bright-Eyed Frog, Bulbous Lightbug, Bunnyman, Butterfly, Buzzard,
+  Catcoon, Dust Moth, Ewecus, Frog, Gem Deer, Glommer, Gobbler, Grass Gator, Koalefant, Moleworm,
+  Mosling, Mosquito, No-Eyed Deer, Parrot Pirate, Pengull, Pig, Powder Monkey, Rabbit, Rock Lobster,
+  Slurtle, Splumonkey, Volt Goat.
+
+- Exclude trước detail (6): Blue Whale (`non_dst:shipwrecked`), Glowfly (`non_dst:hamlet`), Peagawk
+  (`non_dst:hamlet`), Pog (`non_dst:hamlet`), White Whale (`non_dst:shipwrecked`), Wildbore
+  (`non_dst:shipwrecked`).
+
+- Bỏ Category con, không đệ quy: Category:Birds, Category:Followers, Category:Neutral Creatures,
+  Category:Passive Creatures.
+
+### Category:Birds
+
+- Keep (10): Birds, Buzzard, Gobbler, Malbatross, Misshapen Bird, Moose/Goose, Mosling, Parrot
+  Pirate, Pengull, Tallbird.
+
+- Exclude trước detail (7): BFB (`non_dst:hamlet`), Birdcage (`non_item:category_mismatch`), Doydoy
+  (`non_dst:shipwrecked`), Peagawk (`non_dst:hamlet`), Ro Bin (`non_dst:hamlet`), Sunken Boat
+  (`non_dst:dont_starve`), Thunderbird (`non_dst:hamlet`).
+
+### Category:Boss Monsters
+
+- Keep (28): Ancient Guardian, Antlion, Armored Bearger, Bearger, Bee Queen, Celestial Champion,
+  Crab King, Crystal Deerclops, Deerclops, Dragonfly, Eye of Terror, Frostjaw, Grand Forge Boarrior,
+  Great Depths Worm, Infernal Swineclops, Klaus, Lord of the Fruit Flies, Malbatross, Moose/Goose,
+  Nightmare Werepig, Possessed Varg, Reanimated Skeleton, Scrappy Werepig, Shadow Pieces, Spider
+  Queen, Toadstool, Treeguard, W.A.R.B.O.T..
+
+- Exclude trước detail (9): Ancient Herald (`non_dst:hamlet`), Iron Hulk (`non_dst:hamlet`), Mobs
+  (`non_item:overview`), Palm Treeguard (`non_dst:shipwrecked`), Pugalisk (`non_dst:hamlet`),
+  Quacken (`non_dst:shipwrecked`), Queen Womant (`non_dst:hamlet`), Sealnado
+  (`non_dst:shipwrecked`), Tiger Shark (`non_dst:shipwrecked`).
+
+### Category:Clockwork Monsters
+
+- Keep (6): Clockwork Bishop, Clockwork Knight, Clockwork Rook, Damaged Bishop, Damaged Knight,
+  Damaged Rook.
+
+- Exclude trước detail (2): Floaty Boaty Knight (`non_dst:shipwrecked`), Flower
+  (`non_item:category_mismatch`).
+
 ## Shared item URLs
 
 | Item URL | Status | Categories |
@@ -522,21 +630,30 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
 | [Amberosia](https://dontstarve.fandom.com/wiki/Amberosia) | Done | crock_pot_recipes |
 | [Anchor](https://dontstarve.fandom.com/wiki/Anchor) | Done | craftable_items, craftable_structures |
 | [Ancient Anchor](https://dontstarve.fandom.com/wiki/Ancient_Anchor) | Done | events |
+| [Ancient Beacon](https://dontstarve.fandom.com/wiki/Ancient_Beacon) | Done | a_new_reign |
 | [Ancient Brickwork](https://dontstarve.fandom.com/wiki/Ancient_Brickwork) | Done | craftable_items |
+| [Ancient Fence](https://dontstarve.fandom.com/wiki/Ancient_Fence) | Done | a_new_reign |
 | [Ancient Flooring](https://dontstarve.fandom.com/wiki/Ancient_Flooring) | Done | craftable_items |
-| [Ancient Key](https://dontstarve.fandom.com/wiki/Ancient_Key) | Done | boss_dropped_items |
-| [Ancient Pseudoscience Station](https://dontstarve.fandom.com/wiki/Ancient_Pseudoscience_Station) | Done | crafting_stations |
+| [Ancient Gateway](https://dontstarve.fandom.com/wiki/Ancient_Gateway) | Done | a_new_reign |
+| [Ancient Guardian](https://dontstarve.fandom.com/wiki/Ancient_Guardian) | Done | boss_monsters |
+| [Ancient Key](https://dontstarve.fandom.com/wiki/Ancient_Key) | Done | a_new_reign, boss_dropped_items |
+| [Ancient Mural](https://dontstarve.fandom.com/wiki/Ancient_Mural) | Done | a_new_reign |
+| [Ancient Obelisk](https://dontstarve.fandom.com/wiki/Ancient_Obelisk) | Done | a_new_reign |
+| [Ancient Pseudoscience Station](https://dontstarve.fandom.com/wiki/Ancient_Pseudoscience_Station) | Done | ancient_tab, crafting_stations |
+| [Ancient Statue](https://dontstarve.fandom.com/wiki/Ancient_Statue) | Done | a_new_reign |
 | [Ancient Stonework](https://dontstarve.fandom.com/wiki/Ancient_Stonework) | Done | craftable_items |
 | [Ancient Tilework](https://dontstarve.fandom.com/wiki/Ancient_Tilework) | Done | craftable_items |
+| [Antlion](https://dontstarve.fandom.com/wiki/Antlion) | Done | a_new_reign, boss_monsters |
 | [Arboretum Experiment](https://dontstarve.fandom.com/wiki/Arboretum_Experiment) | Done | craftable_items, events |
 | [Armermry](https://dontstarve.fandom.com/wiki/Armermry) | Done | craftable_structures |
+| [Armored Bearger](https://dontstarve.fandom.com/wiki/Armored_Bearger) | Done | boss_monsters |
 | [Art?](https://dontstarve.fandom.com/wiki/Art%3F) | Done | craftable_items, decorations_filter |
 | [Asparagus](https://dontstarve.fandom.com/wiki/Asparagus) | Done | food |
 | [Asparagus Soup](https://dontstarve.fandom.com/wiki/Asparagus_Soup) | Done | crock_pot_recipes |
 | [Astral Detector](https://dontstarve.fandom.com/wiki/Astral_Detector) | Done | craftable_items |
 | [Astroggles](https://dontstarve.fandom.com/wiki/Astroggles) | Done | craftable_items, equipable_items |
+| [Atrium](https://dontstarve.fandom.com/wiki/Atrium) | Done | a_new_reign |
 | [Axe](https://dontstarve.fandom.com/wiki/Axe) | Done | celestial_tab, craftable_items, equipable_items |
-| [Axe](https://dontstarve.fandom.com/wiki/Pick/Axe) | Done | craftable_items, equipable_items |
 | [Backpack](https://dontstarve.fandom.com/wiki/Backpack) | Done | backpacks, containers, craftable_items, equipable_items |
 | [Backstep Watch](https://dontstarve.fandom.com/wiki/Backstep_Watch) | Done | craftable_items |
 | [Backtrek Watch](https://dontstarve.fandom.com/wiki/Backtrek_Watch) | Done | craftable_items |
@@ -559,12 +676,14 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
 | [Battlemaster Pugna](https://dontstarve.fandom.com/wiki/Battlemaster_Pugna) | Done | events |
 | [Beard Hair](https://dontstarve.fandom.com/wiki/Beard_Hair) | Done | craftable_items |
 | [Beard Hair Rug](https://dontstarve.fandom.com/wiki/Beard_Hair_Rug) | Done | craftable_items |
+| [Bearger](https://dontstarve.fandom.com/wiki/Bearger) | Done | boss_monsters |
 | [Bed Roll](https://dontstarve.fandom.com/wiki/Bed_Roll) | Done | craftable_items |
-| [Bee](https://dontstarve.fandom.com/wiki/Bee) | New | animals |
+| [Bee](https://dontstarve.fandom.com/wiki/Bee) | Done | animals |
 | [Bee Box](https://dontstarve.fandom.com/wiki/Bee_Box) | Done | craftable_structures |
 | [Bee Mine](https://dontstarve.fandom.com/wiki/Bee_Mine) | Done | craftable_items, fight_tab |
-| [Bee Queen Crown](https://dontstarve.fandom.com/wiki/Bee_Queen_Crown) | Done | boss_dropped_items, equipable_items |
-| [Beefalo](https://dontstarve.fandom.com/wiki/Beefalo) | New | animals |
+| [Bee Queen](https://dontstarve.fandom.com/wiki/Bee_Queen) | Done | a_new_reign, boss_monsters |
+| [Bee Queen Crown](https://dontstarve.fandom.com/wiki/Bee_Queen_Crown) | Done | a_new_reign, boss_dropped_items, equipable_items |
+| [Beefalo](https://dontstarve.fandom.com/wiki/Beefalo) | Done | animals |
 | [Beefalo Bell](https://dontstarve.fandom.com/wiki/Beefalo_Bell) | Done | craftable_items |
 | [Beefalo Gloom Bell](https://dontstarve.fandom.com/wiki/Beefalo_Gloom_Bell) | Done | craftable_items |
 | [Beefalo Grooming Station](https://dontstarve.fandom.com/wiki/Beefalo_Grooming_Station) | Done | craftable_structures, decorations_filter |
@@ -583,26 +702,28 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
 | [Birchnut](https://dontstarve.fandom.com/wiki/Birchnut) | Done | food |
 | [Bird Trap](https://dontstarve.fandom.com/wiki/Bird_Trap) | Done | craftable_items |
 | [Birdcage](https://dontstarve.fandom.com/wiki/Birdcage) | Done | craftable_structures |
+| [Birds](https://dontstarve.fandom.com/wiki/Birds) | Done | a_new_reign, birds |
 | [Blood Shot](https://dontstarve.fandom.com/wiki/Blood_Shot) | Done | craftable_items |
 | [Blue Cap](https://dontstarve.fandom.com/wiki/Blue_Cap) | Done | boss_dropped_items, food |
 | [Blue Gem](https://dontstarve.fandom.com/wiki/Blue_Gem) | Done | boss_dropped_items, craftable_items |
-| [Blueprint](https://dontstarve.fandom.com/wiki/Blueprint) | Done | boss_dropped_items, craftable_items |
+| [Blueprint](https://dontstarve.fandom.com/wiki/Blueprint) | Done | a_new_reign, ancient_tier_1, boss_dropped_items, craftable_items |
 | [Boards](https://dontstarve.fandom.com/wiki/Boards) | Done | craftable_items |
 | [Boarilla](https://dontstarve.fandom.com/wiki/Boarilla) | Done | events |
 | [Boat](https://dontstarve.fandom.com/wiki/Boat) | Done | craftable_items, craftable_structures |
 | [Boat Patch](https://dontstarve.fandom.com/wiki/Boat_Patch) | Done | craftable_items |
-| [Bone Armor](https://dontstarve.fandom.com/wiki/Bone_Armor) | Done | boss_dropped_items, equipable_items |
-| [Bone Helm](https://dontstarve.fandom.com/wiki/Bone_Helm) | Done | boss_dropped_items, equipable_items |
+| [Bone Armor](https://dontstarve.fandom.com/wiki/Bone_Armor) | Done | a_new_reign, boss_dropped_items, equipable_items |
+| [Bone Helm](https://dontstarve.fandom.com/wiki/Bone_Helm) | Done | a_new_reign, boss_dropped_items, equipable_items |
 | [Bone Shards](https://dontstarve.fandom.com/wiki/Bone_Shards) | Done | craftable_items |
 | [Bookcase](https://dontstarve.fandom.com/wiki/Bookcase) | Done | craftable_structures |
 | [Boomerang](https://dontstarve.fandom.com/wiki/Boomerang) | Done | craftable_items, equipable_items, fight_tab |
 | [Booster Shot](https://dontstarve.fandom.com/wiki/Booster_Shot) | Done | craftable_items |
+| [Boulder](https://dontstarve.fandom.com/wiki/Boulder) | Done | a_new_reign |
 | [Bramble Husk](https://dontstarve.fandom.com/wiki/Bramble_Husk) | Done | armour_filter, craftable_items, equipable_items |
 | [Bramble Trap](https://dontstarve.fandom.com/wiki/Bramble_Trap) | Done | craftable_items |
 | [Brambleshade Armor](https://dontstarve.fandom.com/wiki/Brambleshade_Armor) | Done | craftable_items |
 | [Breakfast Skillet](https://dontstarve.fandom.com/wiki/Breakfast_Skillet) | Done | crock_pot_recipes, food |
 | [Breezy Vest](https://dontstarve.fandom.com/wiki/Breezy_Vest) | Done | craftable_items, equipable_items |
-| [Bright-Eyed Frog](https://dontstarve.fandom.com/wiki/Bright-Eyed_Frog) | New | animals |
+| [Bright-Eyed Frog](https://dontstarve.fandom.com/wiki/Bright-Eyed_Frog) | Done | animals |
 | [Brightshade Armor](https://dontstarve.fandom.com/wiki/Brightshade_Armor) | Done | armour_filter, craftable_items |
 | [Brightshade Bomb](https://dontstarve.fandom.com/wiki/Brightshade_Bomb) | Done | craftable_items |
 | [Brightshade Helm](https://dontstarve.fandom.com/wiki/Brightshade_Helm) | Done | armour_filter, craftable_items |
@@ -612,7 +733,7 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
 | [Brightshade Sword](https://dontstarve.fandom.com/wiki/Brightshade_Sword) | Done | craftable_items |
 | [Brightsmithy](https://dontstarve.fandom.com/wiki/Brightsmithy) | Done | celestial_filter, craftable_items, craftable_structures, crafting_stations |
 | [Brilliant Mudslinger](https://dontstarve.fandom.com/wiki/Brilliant_Mudslinger) | Done | craftable_items |
-| [Brush](https://dontstarve.fandom.com/wiki/Brush) | Done | craftable_items, equipable_items |
+| [Brush](https://dontstarve.fandom.com/wiki/Brush) | Done | a_new_reign, craftable_items, equipable_items |
 | [Bucket-o-poop](https://dontstarve.fandom.com/wiki/Bucket-o-poop) | Done | craftable_items, fertilizer |
 | [Bug Net](https://dontstarve.fandom.com/wiki/Bug_Net) | Done | craftable_items, equipable_items |
 | [Bulbous Lightbug](https://dontstarve.fandom.com/wiki/Bulbous_Lightbug) | Done | animals, cave_creatures |
@@ -624,8 +745,9 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
 | [Burrowing Horn](https://dontstarve.fandom.com/wiki/Burrowing_Horn) | Done | craftable_items, equipable_items |
 | [Bush Hat](https://dontstarve.fandom.com/wiki/Bush_Hat) | Done | craftable_items, equipable_items |
 | [Butter Muffin](https://dontstarve.fandom.com/wiki/Butter_Muffin) | Done | crock_pot_recipes, food |
-| [Butterfly](https://dontstarve.fandom.com/wiki/Butterfly) | New | animals |
-| [Buzzard](https://dontstarve.fandom.com/wiki/Buzzard) | New | animals |
+| [Butterfly](https://dontstarve.fandom.com/wiki/Butterfly) | Done | animals |
+| [Buzzard](https://dontstarve.fandom.com/wiki/Buzzard) | Done | animals, birds |
+| [Cactus](https://dontstarve.fandom.com/wiki/Cactus) | Done | a_new_reign |
 | [Cactus Flesh](https://dontstarve.fandom.com/wiki/Cactus_Flesh) | Done | food |
 | [Cactus Flower](https://dontstarve.fandom.com/wiki/Cactus_Flower) | Done | food |
 | [California Roll](https://dontstarve.fandom.com/wiki/California_Roll) | Done | crock_pot_recipes, food |
@@ -635,11 +757,13 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
 | [Captain's Tricorn](https://dontstarve.fandom.com/wiki/Captain's_Tricorn) | Done | equipable_items |
 | [Carpeted Flooring](https://dontstarve.fandom.com/wiki/Carpeted_Flooring) | Done | craftable_items, decorations_filter |
 | [Carrot](https://dontstarve.fandom.com/wiki/Carrot) | Done | food |
-| [Cartographer's Desk](https://dontstarve.fandom.com/wiki/Cartographer's_Desk) | Done | craftable_structures, crafting_stations |
+| [Cartographer's Desk](https://dontstarve.fandom.com/wiki/Cartographer's_Desk) | Done | a_new_reign, craftable_structures, crafting_stations |
 | [Cat Cap](https://dontstarve.fandom.com/wiki/Cat_Cap) | Done | craftable_items, equipable_items |
-| [Catcoon](https://dontstarve.fandom.com/wiki/Catcoon) | New | animals |
+| [Catcoon](https://dontstarve.fandom.com/wiki/Catcoon) | Done | animals |
+| [Cave Hole](https://dontstarve.fandom.com/wiki/Cave_Hole) | Done | a_new_reign |
 | [Cave Rock Turf](https://dontstarve.fandom.com/wiki/Cave_Rock_Turf) | Done | craftable_items, decorations_filter |
 | [Cave Spider](https://dontstarve.fandom.com/wiki/Cave_Spider) | Done | cave_creatures |
+| [Celestial Champion](https://dontstarve.fandom.com/wiki/Celestial_Champion) | Done | boss_monsters |
 | [Celestial Orb](https://dontstarve.fandom.com/wiki/Celestial_Orb) | Done | crafting_stations |
 | [Celestial Portal](https://dontstarve.fandom.com/wiki/Celestial_Portal) | Done | craftable_structures |
 | [Ceviche](https://dontstarve.fandom.com/wiki/Ceviche) | Done | cooling, crock_pot_recipes, food |
@@ -650,11 +774,14 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
 | [Chester](https://dontstarve.fandom.com/wiki/Chester) | Done | containers |
 | [Chili Flakes](https://dontstarve.fandom.com/wiki/Chili_Flakes) | Done | craftable_items |
 | [Chilled Amulet](https://dontstarve.fandom.com/wiki/Chilled_Amulet) | Done | cooling, craftable_items, equipable_items |
+| [Chilled Lavae](https://dontstarve.fandom.com/wiki/Chilled_Lavae) | Done | a_new_reign |
 | [Circuit Extractor](https://dontstarve.fandom.com/wiki/Circuit_Extractor) | Done | craftable_items |
 | [Clean Sweeper](https://dontstarve.fandom.com/wiki/Clean_Sweeper) | Done | craftable_items, decorations_filter, equipable_items |
 | [Clever Disguise](https://dontstarve.fandom.com/wiki/Clever_Disguise) | Done | craftable_items, equipable_items |
 | [Clockmaker's Tools](https://dontstarve.fandom.com/wiki/Clockmaker's_Tools) | Done | craftable_items |
-| [Clockwork Bishop](https://dontstarve.fandom.com/wiki/Clockwork_Bishop) | Done | cave_creatures |
+| [Clockwork Bishop](https://dontstarve.fandom.com/wiki/Clockwork_Bishop) | Done | cave_creatures, clockwork_monsters |
+| [Clockwork Knight](https://dontstarve.fandom.com/wiki/Clockwork_Knight) | Done | clockwork_monsters |
+| [Clockwork Rook](https://dontstarve.fandom.com/wiki/Clockwork_Rook) | Done | clockwork_monsters |
 | [Coaching Whistle](https://dontstarve.fandom.com/wiki/Coaching_Whistle) | Done | craftable_items |
 | [Coat of Carrots](https://dontstarve.fandom.com/wiki/Coat_of_Carrots) | Done | craftable_items, craftable_structures, equipable_items |
 | [Cobblestones](https://dontstarve.fandom.com/wiki/Cobblestones) | Done | craftable_items, decorations_filter |
@@ -666,37 +793,47 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
 | [Compost](https://dontstarve.fandom.com/wiki/Compost) | Done | fertilizer |
 | [Compost Wrap](https://dontstarve.fandom.com/wiki/Compost_Wrap) | Done | craftable_items, fertilizer |
 | [Composting Bin](https://dontstarve.fandom.com/wiki/Composting_Bin) | Done | craftable_structures |
-| [Construction Amulet](https://dontstarve.fandom.com/wiki/Construction_Amulet) | Done | craftable_items, equipable_items |
+| [Construction Amulet](https://dontstarve.fandom.com/wiki/Construction_Amulet) | Done | ancient_tab, ancient_tier_1, craftable_items, equipable_items |
 | [Cookbook](https://dontstarve.fandom.com/wiki/Cookbook) | Done | cooking_filter, craftable_items |
 | [Cookie Cutter Cap](https://dontstarve.fandom.com/wiki/Cookie_Cutter_Cap) | Done | armour_filter, craftable_items, equipable_items |
 | [Corn](https://dontstarve.fandom.com/wiki/Corn) | Done | food |
+| [Crab King](https://dontstarve.fandom.com/wiki/Crab_King) | Done | boss_monsters |
 | [Crab Meat](https://dontstarve.fandom.com/wiki/Crab_Meat) | Done | events, food |
 | [Crabby Hermit](https://dontstarve.fandom.com/wiki/Crabby_Hermit) | Done | crafting_stations |
 | [Craftsmerm House](https://dontstarve.fandom.com/wiki/Craftsmerm_House) | Done | craftable_structures |
-| [Cratered Moonrock](https://dontstarve.fandom.com/wiki/Cratered_Moonrock) | Done | craftable_items |
+| [Cratered Moonrock](https://dontstarve.fandom.com/wiki/Cratered_Moonrock) | Done | a_new_reign, craftable_items |
 | [Creamy Potato Purée](https://dontstarve.fandom.com/wiki/Creamy_Potato_Pur%C3%A9e) | Done | crock_pot_recipes, food |
+| [Critters](https://dontstarve.fandom.com/wiki/Critters) | Done | a_new_reign |
 | [Crock Pot](https://dontstarve.fandom.com/wiki/Crock_Pot) | Done | containers, cooking_filter, craftable_structures |
 | [Crocommander](https://dontstarve.fandom.com/wiki/Crocommander) | Done | events |
+| [Crumpled Package](https://dontstarve.fandom.com/wiki/Crumpled_Package) | Done | a_new_reign |
+| [Crystal Deerclops](https://dontstarve.fandom.com/wiki/Crystal_Deerclops) | Done | boss_monsters |
 | [Cut Grass](https://dontstarve.fandom.com/wiki/Cut_Grass) | Done | beefalo_foods |
 | [Cut Reeds](https://dontstarve.fandom.com/wiki/Cut_Reeds) | Done | beefalo_foods |
 | [Cut Stone](https://dontstarve.fandom.com/wiki/Cut_Stone) | Done | craftable_items |
 | [Cutless](https://dontstarve.fandom.com/wiki/Cutless) | Done | equipable_items |
+| [Damaged Bishop](https://dontstarve.fandom.com/wiki/Damaged_Bishop) | Done | clockwork_monsters |
+| [Damaged Knight](https://dontstarve.fandom.com/wiki/Damaged_Knight) | Done | clockwork_monsters |
+| [Damaged Rook](https://dontstarve.fandom.com/wiki/Damaged_Rook) | Done | clockwork_monsters |
 | [Dangling Depth Dweller](https://dontstarve.fandom.com/wiki/Dangling_Depth_Dweller) | Done | cave_creatures |
 | [Dapper Vest](https://dontstarve.fandom.com/wiki/Dapper_Vest) | Done | craftable_items, equipable_items |
 | [Dark Sword](https://dontstarve.fandom.com/wiki/Dark_Sword) | Done | boss_dropped_items, craftable_items, equipable_items |
 | [Dark Tatters](https://dontstarve.fandom.com/wiki/Dark_Tatters) | Done | boss_dropped_items |
 | [Deciduous Turf](https://dontstarve.fandom.com/wiki/Deciduous_Turf) | Done | craftable_items, decorations_filter |
 | [Deck Illuminator](https://dontstarve.fandom.com/wiki/Deck_Illuminator) | Done | craftable_items |
-| [Deconstruction Staff](https://dontstarve.fandom.com/wiki/Deconstruction_Staff) | Done | craftable_items, equipable_items |
+| [Deconstruction Staff](https://dontstarve.fandom.com/wiki/Deconstruction_Staff) | Done | ancient_tab, ancient_tier_1, craftable_items, equipable_items |
+| [Deer Antler](https://dontstarve.fandom.com/wiki/Deer_Antler) | Done | a_new_reign |
+| [Deerclops](https://dontstarve.fandom.com/wiki/Deerclops) | Done | boss_monsters |
 | [Deerclops Eyeball](https://dontstarve.fandom.com/wiki/Deerclops_Eyeball) | Done | boss_dropped_items, food |
 | [Den Decorating Set](https://dontstarve.fandom.com/wiki/Den_Decorating_Set) | Done | craftable_items |
 | [Depths Worm](https://dontstarve.fandom.com/wiki/Depths_Worm) | Done | cave_creatures |
-| [Desert Stone](https://dontstarve.fandom.com/wiki/Desert_Stone) | Done | boss_dropped_items |
+| [Desert Stone](https://dontstarve.fandom.com/wiki/Desert_Stone) | Done | a_new_reign, boss_dropped_items |
 | [Directional Sign](https://dontstarve.fandom.com/wiki/Directional_Sign) | Done | craftable_structures, decorations_filter |
 | [Dock Kit](https://dontstarve.fandom.com/wiki/Dock_Kit) | Done | craftable_items, decorations_filter |
 | [Dock Piling Kit](https://dontstarve.fandom.com/wiki/Dock_Piling_Kit) | Done | craftable_items, decorations_filter |
 | [Down Feather](https://dontstarve.fandom.com/wiki/Down_Feather) | Done | boss_dropped_items |
 | [Dragon Fruit](https://dontstarve.fandom.com/wiki/Dragon_Fruit) | Done | food |
+| [Dragonfly](https://dontstarve.fandom.com/wiki/Dragonfly) | Done | boss_monsters |
 | [Dragonpie](https://dontstarve.fandom.com/wiki/Dragonpie) | Done | crock_pot_recipes, food |
 | [Dreaded Mudslinger](https://dontstarve.fandom.com/wiki/Dreaded_Mudslinger) | Done | craftable_items |
 | [Dreadstone](https://dontstarve.fandom.com/wiki/Dreadstone) | Done | craftable_items |
@@ -719,13 +856,15 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
 | [Empty Frame](https://dontstarve.fandom.com/wiki/Empty_Frame) | Done | craftable_items, decorations_filter |
 | [Endothermic Fire](https://dontstarve.fandom.com/wiki/Endothermic_Fire) | Done | cooling, craftable_structures |
 | [Enlightened Crown](https://dontstarve.fandom.com/wiki/Enlightened_Crown) | Done | boss_dropped_items, equipable_items |
-| [Ewecus](https://dontstarve.fandom.com/wiki/Ewecus) | New | animals |
+| [Ewecus](https://dontstarve.fandom.com/wiki/Ewecus) | Done | animals |
 | [Eye Mask](https://dontstarve.fandom.com/wiki/Eye_Mask) | Done | boss_dropped_items, equipable_items |
+| [Eye of Terror](https://dontstarve.fandom.com/wiki/Eye_of_Terror) | Done | boss_monsters |
 | [Eyebrella](https://dontstarve.fandom.com/wiki/Eyebrella) | Done | cooling, craftable_items, equipable_items |
 | [Fancy Spiralled Tubers](https://dontstarve.fandom.com/wiki/Fancy_Spiralled_Tubers) | Done | crock_pot_recipes, food |
 | [Fashion Melon](https://dontstarve.fandom.com/wiki/Fashion_Melon) | Done | cooling, craftable_items, equipable_items |
+| [Feather](https://dontstarve.fandom.com/wiki/Feather) | Done | a_new_reign |
 | [Feather Hat](https://dontstarve.fandom.com/wiki/Feather_Hat) | Done | craftable_items, equipable_items |
-| [Feather Pencil](https://dontstarve.fandom.com/wiki/Feather_Pencil) | Done | craftable_items, decorations_filter |
+| [Feather Pencil](https://dontstarve.fandom.com/wiki/Feather_Pencil) | Done | a_new_reign, craftable_items, decorations_filter |
 | [Feathery Canvas](https://dontstarve.fandom.com/wiki/Feathery_Canvas) | Done | craftable_items |
 | [Fencing Sword](https://dontstarve.fandom.com/wiki/Fencing_Sword) | Done | craftable_items |
 | [Fertilizzzer](https://dontstarve.fandom.com/wiki/Fertilizzzer) | Done | craftable_items, fertilizer |
@@ -751,6 +890,7 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
 | [Flint](https://dontstarve.fandom.com/wiki/Flint) | Done | craftable_items |
 | [Floating Lantern](https://dontstarve.fandom.com/wiki/Floating_Lantern) | Done | craftable_items |
 | [Floral Shirt](https://dontstarve.fandom.com/wiki/Floral_Shirt) | Done | cooling, craftable_items, equipable_items |
+| [Flower](https://dontstarve.fandom.com/wiki/Flower) | Done | a_new_reign |
 | [Flower Salad](https://dontstarve.fandom.com/wiki/Flower_Salad) | Done | crock_pot_recipes, food |
 | [Football Helmet](https://dontstarve.fandom.com/wiki/Football_Helmet) | Done | armour_filter, craftable_items, equipable_items, fight_tab |
 | [Forest Turf](https://dontstarve.fandom.com/wiki/Forest_Turf) | Done | craftable_items, decorations_filter |
@@ -758,46 +898,50 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
 | [Fossils](https://dontstarve.fandom.com/wiki/Fossils) | Done | boss_dropped_items |
 | [Fresh Fruit Crepes](https://dontstarve.fandom.com/wiki/Fresh_Fruit_Crepes) | Done | food |
 | [Friendly Fruit Fly Fruit](https://dontstarve.fandom.com/wiki/Friendly_Fruit_Fly_Fruit) | Done | boss_dropped_items |
-| [Friendly Scarecrow](https://dontstarve.fandom.com/wiki/Friendly_Scarecrow) | Done | craftable_structures |
-| [Frog](https://dontstarve.fandom.com/wiki/Frog) | New | animals |
+| [Friendly Scarecrow](https://dontstarve.fandom.com/wiki/Friendly_Scarecrow) | Done | a_new_reign, craftable_structures |
+| [Frog](https://dontstarve.fandom.com/wiki/Frog) | Done | animals |
 | [Frog Legs](https://dontstarve.fandom.com/wiki/Frog_Legs) | Done | boss_dropped_items, food |
 | [Froggle Bunwich](https://dontstarve.fandom.com/wiki/Froggle_Bunwich) | Done | crock_pot_recipes |
+| [Frostjaw](https://dontstarve.fandom.com/wiki/Frostjaw) | Done | boss_monsters |
 | [Frozen Banana Daiquiri](https://dontstarve.fandom.com/wiki/Frozen_Banana_Daiquiri) | Done | cooling, crock_pot_recipes, food |
 | [Fruit Medley](https://dontstarve.fandom.com/wiki/Fruit_Medley) | Done | cooling, crock_pot_recipes |
-| [Funcap](https://dontstarve.fandom.com/wiki/Funcap) | Done | clothing_filter, craftable_items, equipable_items |
+| [Funcap](https://dontstarve.fandom.com/wiki/Funcap) | Done | a_new_reign, clothing_filter, craftable_items, equipable_items |
 | [Fungal Turf](https://dontstarve.fandom.com/wiki/Fungal_Turf) | Done | craftable_items |
 | [Fur Tuft](https://dontstarve.fandom.com/wiki/Fur_Tuft) | Done | boss_dropped_items |
 | [Garden Digamajig](https://dontstarve.fandom.com/wiki/Garden_Digamajig) | Done | craftable_items |
 | [Garden Hoe](https://dontstarve.fandom.com/wiki/Garden_Hoe) | Done | craftable_items, equipable_items |
-| [Gardeneer Hat](https://dontstarve.fandom.com/wiki/Gardeneer_Hat) | Done | craftable_items, equipable_items |
+| [Gardeneer Hat](https://dontstarve.fandom.com/wiki/Gardeneer_Hat) | Done | ancient_tier_1, craftable_items, equipable_items |
 | [Garland](https://dontstarve.fandom.com/wiki/Garland) | Done | craftable_items, equipable_items |
 | [Garlic](https://dontstarve.fandom.com/wiki/Garlic) | Done | events, food |
 | [Garlic Powder](https://dontstarve.fandom.com/wiki/Garlic_Powder) | Done | craftable_items |
 | [Gears](https://dontstarve.fandom.com/wiki/Gears) | Done | food |
-| [Gem Deer](https://dontstarve.fandom.com/wiki/Gem_Deer) | New | animals |
+| [Gem Deer](https://dontstarve.fandom.com/wiki/Gem_Deer) | Done | a_new_reign, animals |
+| [Gigantic Beehive](https://dontstarve.fandom.com/wiki/Gigantic_Beehive) | Done | a_new_reign |
 | [Glass Cutter](https://dontstarve.fandom.com/wiki/Glass_Cutter) | Done | celestial_filter, celestial_tab, craftable_items, equipable_items |
-| [Glommer](https://dontstarve.fandom.com/wiki/Glommer) | New | animals |
+| [Glass Sculptures](https://dontstarve.fandom.com/wiki/Glass_Sculptures) | Done | a_new_reign |
+| [Glommer](https://dontstarve.fandom.com/wiki/Glommer) | Done | animals |
 | [Glommer's Goop](https://dontstarve.fandom.com/wiki/Glommer's_Goop) | Done | fertilizer, food |
 | [Gloomerang](https://dontstarve.fandom.com/wiki/Gloomerang) | Done | craftable_items, equipable_items |
 | [Glow Berry](https://dontstarve.fandom.com/wiki/Glow_Berry) | Done | food |
 | [Glow Berry Mousse](https://dontstarve.fandom.com/wiki/Glow_Berry_Mousse) | Done | craftable_items, food |
 | [Goat Milk](https://dontstarve.fandom.com/wiki/Goat_Milk) | Done | events |
-| [Gobbler](https://dontstarve.fandom.com/wiki/Gobbler) | New | animals |
+| [Gobbler](https://dontstarve.fandom.com/wiki/Gobbler) | Done | animals, birds |
 | [Gold Flooring](https://dontstarve.fandom.com/wiki/Gold_Flooring) | Done | craftable_items, decorations_filter |
 | [Gold Nugget](https://dontstarve.fandom.com/wiki/Gold_Nugget) | Done | boss_dropped_items, craftable_items |
-| [Goose Egg](https://dontstarve.fandom.com/wiki/Moose/Goose_Egg) | Done | eggs |
 | [Gourmet Salt Lick](https://dontstarve.fandom.com/wiki/Gourmet_Salt_Lick) | Done | craftable_structures |
 | [Gramophone](https://dontstarve.fandom.com/wiki/Gramophone) | Done | craftable_items, decorations_filter |
-| [Grand Forge Boarrior](https://dontstarve.fandom.com/wiki/Grand_Forge_Boarrior) | Done | events |
-| [Grass Gator](https://dontstarve.fandom.com/wiki/Grass_Gator) | New | animals |
+| [Grand Forge Boarrior](https://dontstarve.fandom.com/wiki/Grand_Forge_Boarrior) | Done | boss_monsters, events |
+| [Grass Gator](https://dontstarve.fandom.com/wiki/Grass_Gator) | Done | animals |
+| [Grass Gekko](https://dontstarve.fandom.com/wiki/Grass_Gekko) | Done | a_new_reign |
 | [Grass Raft](https://dontstarve.fandom.com/wiki/Grass_Raft) | Done | craftable_items, craftable_structures |
 | [Grass Suit](https://dontstarve.fandom.com/wiki/Grass_Suit) | Done | armour_filter, craftable_items, equipable_items, fight_tab |
 | [Grass Turf](https://dontstarve.fandom.com/wiki/Grass_Turf) | Done | craftable_items, decorations_filter |
-| [Great Depths Worm](https://dontstarve.fandom.com/wiki/Great_Depths_Worm) | Done | cave_creatures |
+| [Great Depths Worm](https://dontstarve.fandom.com/wiki/Great_Depths_Worm) | Done | boss_monsters, cave_creatures |
 | [Green Cap](https://dontstarve.fandom.com/wiki/Green_Cap) | Done | boss_dropped_items, food |
 | [Green Gem](https://dontstarve.fandom.com/wiki/Green_Gem) | Done | boss_dropped_items, craftable_items |
 | [Grim Galette](https://dontstarve.fandom.com/wiki/Grim_Galette) | Done | food |
 | [Growth Formula Starter](https://dontstarve.fandom.com/wiki/Growth_Formula_Starter) | Done | craftable_items, fertilizer |
+| [Grumble Bee](https://dontstarve.fandom.com/wiki/Grumble_Bee) | Done | a_new_reign |
 | [Guacamole](https://dontstarve.fandom.com/wiki/Guacamole) | Done | crock_pot_recipes, food |
 | [Guano](https://dontstarve.fandom.com/wiki/Guano) | Done | fertilizer |
 | [Guano Turf](https://dontstarve.fandom.com/wiki/Guano_Turf) | Done | craftable_items, decorations_filter |
@@ -821,7 +965,7 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
 | [Honeycomb](https://dontstarve.fandom.com/wiki/Honeycomb) | Done | boss_dropped_items |
 | [Hostile Flare](https://dontstarve.fandom.com/wiki/Hostile_Flare) | Done | craftable_items |
 | [Hound's Tooth](https://dontstarve.fandom.com/wiki/Hound's_Tooth) | Done | craftable_items |
-| [Houndius Shootius](https://dontstarve.fandom.com/wiki/Houndius_Shootius) | Done | craftable_items, craftable_structures |
+| [Houndius Shootius](https://dontstarve.fandom.com/wiki/Houndius_Shootius) | Done | ancient_tab, craftable_items, craftable_structures |
 | [Howlitzer](https://dontstarve.fandom.com/wiki/Howlitzer) | Done | craftable_items, equipable_items |
 | [Humble Lamb Idol](https://dontstarve.fandom.com/wiki/Humble_Lamb_Idol) | Done | cooking_filter, craftable_structures |
 | [Hutch](https://dontstarve.fandom.com/wiki/Hutch) | Done | cave_creatures, containers |
@@ -834,26 +978,27 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
 | [Ice Staff](https://dontstarve.fandom.com/wiki/Ice_Staff) | Done | craftable_items, equipable_items |
 | [Icker](https://dontstarve.fandom.com/wiki/Icker) | Done | cave_creatures |
 | [Icker Preserve](https://dontstarve.fandom.com/wiki/Icker_Preserve) | Done | craftable_items, craftable_structures |
-| [Infernal Swineclops](https://dontstarve.fandom.com/wiki/Infernal_Swineclops) | Done | events |
+| [Infernal Swineclops](https://dontstarve.fandom.com/wiki/Infernal_Swineclops) | Done | boss_monsters, events |
 | [Infused Moon Shard](https://dontstarve.fandom.com/wiki/Infused_Moon_Shard) | Done | boss_dropped_items, craftable_items |
 | [Ink Blight](https://dontstarve.fandom.com/wiki/Ink_Blight) | Done | cave_creatures |
 | [Inspectacles](https://dontstarve.fandom.com/wiki/Inspectacles) | Done | clothing_filter, craftable_items |
 | [Insulated Pack](https://dontstarve.fandom.com/wiki/Insulated_Pack) | Done | backpacks, containers, cooking_filter, craftable_items, equipable_items |
-| [Iridescent Gem](https://dontstarve.fandom.com/wiki/Iridescent_Gem) | Done | craftable_items |
+| [Iridescent Gem](https://dontstarve.fandom.com/wiki/Iridescent_Gem) | Done | a_new_reign, craftable_items |
 | [Jelly Salad](https://dontstarve.fandom.com/wiki/Jelly_Salad) | Done | crock_pot_recipes |
-| [Jellybeans](https://dontstarve.fandom.com/wiki/Jellybeans) | Done | crock_pot_recipes, food |
+| [Jellybeans](https://dontstarve.fandom.com/wiki/Jellybeans) | Done | a_new_reign, crock_pot_recipes, food |
 | [Jerky](https://dontstarve.fandom.com/wiki/Jerky) | Done | craftable_items |
-| [Juicy Berries](https://dontstarve.fandom.com/wiki/Juicy_Berries) | Done | food |
-| [Juicy Berry Bush](https://dontstarve.fandom.com/wiki/Juicy_Berry_Bush) | Done | craftable_items |
+| [Juicy Berries](https://dontstarve.fandom.com/wiki/Juicy_Berries) | Done | a_new_reign, food |
+| [Juicy Berry Bush](https://dontstarve.fandom.com/wiki/Juicy_Berry_Bush) | Done | a_new_reign, craftable_items |
 | [Kabobs](https://dontstarve.fandom.com/wiki/Kabobs) | Done | craftable_items, crock_pot_recipes |
 | [Kelp Fronds](https://dontstarve.fandom.com/wiki/Kelp_Fronds) | Done | food |
 | [Kelp Patch](https://dontstarve.fandom.com/wiki/Kelp_Patch) | Done | craftable_items |
 | [Key](https://dontstarve.fandom.com/wiki/Key) | Done | events |
 | [Kitschy Idols](https://dontstarve.fandom.com/wiki/Kitschy_Idols) | Done | craftable_items |
-| [Klaus](https://dontstarve.fandom.com/wiki/Klaus) | Done | events |
-| [Koalefant](https://dontstarve.fandom.com/wiki/Koalefant) | New | animals |
+| [Klaus](https://dontstarve.fandom.com/wiki/Klaus) | Done | a_new_reign, boss_monsters, events |
+| [Koalefant](https://dontstarve.fandom.com/wiki/Koalefant) | Done | animals |
 | [Koalefant Trunk](https://dontstarve.fandom.com/wiki/Koalefant_Trunk) | Done | food |
 | [Krampus Sack](https://dontstarve.fandom.com/wiki/Krampus_Sack) | Done | backpacks, boss_dropped_items, containers |
+| [Lake](https://dontstarve.fandom.com/wiki/Lake) | Done | a_new_reign |
 | [Lantern](https://dontstarve.fandom.com/wiki/Lantern) | Done | craftable_items, equipable_items |
 | [Lavae Egg](https://dontstarve.fandom.com/wiki/Lavae_Egg) | Done | boss_dropped_items |
 | [Leafy Meat](https://dontstarve.fandom.com/wiki/Leafy_Meat) | Done | food |
@@ -868,7 +1013,8 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
 | [Living Log](https://dontstarve.fandom.com/wiki/Living_Log) | Done | boss_dropped_items, craftable_items |
 | [Log](https://dontstarve.fandom.com/wiki/Log) | Done | craftable_items |
 | [Log Suit](https://dontstarve.fandom.com/wiki/Log_Suit) | Done | armour_filter, craftable_items, equipable_items, fight_tab |
-| [Loot Stash](https://dontstarve.fandom.com/wiki/Loot_Stash) | Done | events |
+| [Loot Stash](https://dontstarve.fandom.com/wiki/Loot_Stash) | Done | a_new_reign, events |
+| [Lord of the Fruit Flies](https://dontstarve.fandom.com/wiki/Lord_of_the_Fruit_Flies) | Done | boss_monsters |
 | [Lucky Beast](https://dontstarve.fandom.com/wiki/Lucky_Beast) | Done | craftable_items, equipable_items |
 | [Lucy the Axe](https://dontstarve.fandom.com/wiki/Lucy_the_Axe) | Done | equipable_items |
 | [Lunar Altars](https://dontstarve.fandom.com/wiki/Lunar_Altars) | Done | crafting_stations |
@@ -881,17 +1027,21 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
 | [Luxury Fan](https://dontstarve.fandom.com/wiki/Luxury_Fan) | Done | cooling, craftable_items |
 | [Magician's Chest](https://dontstarve.fandom.com/wiki/Magician's_Chest) | Done | craftable_structures |
 | [Magician's Top Hat](https://dontstarve.fandom.com/wiki/Magician's_Top_Hat) | Done | craftable_items |
-| [Magiluminescence](https://dontstarve.fandom.com/wiki/Magiluminescence) | Done | craftable_items, equipable_items |
+| [Magiluminescence](https://dontstarve.fandom.com/wiki/Magiluminescence) | Done | ancient_tab, ancient_tier_1, craftable_items, equipable_items |
 | [Magma Golem](https://dontstarve.fandom.com/wiki/Magma_Golem) | Done | events |
+| [Malbatross](https://dontstarve.fandom.com/wiki/Malbatross) | Done | birds, boss_monsters |
 | [Malbatross Bill](https://dontstarve.fandom.com/wiki/Malbatross_Bill) | Done | boss_dropped_items, equipable_items |
 | [Malbatross Feather](https://dontstarve.fandom.com/wiki/Malbatross_Feather) | Done | boss_dropped_items |
 | [Mandrake](https://dontstarve.fandom.com/wiki/Mandrake) | Done | food |
 | [Mandrake Soup](https://dontstarve.fandom.com/wiki/Mandrake_Soup) | Done | craftable_items, crock_pot_recipes, food |
 | [Mannequin](https://dontstarve.fandom.com/wiki/Mannequin) | Done | craftable_structures |
 | [Manure](https://dontstarve.fandom.com/wiki/Manure) | Done | craftable_items, fertilizer |
-| [Map Scroll](https://dontstarve.fandom.com/wiki/Map_Scroll) | Done | craftable_items |
+| [Map Scroll](https://dontstarve.fandom.com/wiki/Map_Scroll) | Done | a_new_reign, craftable_items |
 | [Marble](https://dontstarve.fandom.com/wiki/Marble) | Done | craftable_items |
-| [Marble Bean](https://dontstarve.fandom.com/wiki/Marble_Bean) | Done | craftable_items |
+| [Marble Bean](https://dontstarve.fandom.com/wiki/Marble_Bean) | Done | a_new_reign, craftable_items |
+| [Marble Sculptures](https://dontstarve.fandom.com/wiki/Marble_Sculptures) | Done | a_new_reign |
+| [Marble Shrub](https://dontstarve.fandom.com/wiki/Marble_Shrub) | Done | a_new_reign |
+| [Marble Statues](https://dontstarve.fandom.com/wiki/Marble_Statues) | Done | a_new_reign |
 | [Marble Suit](https://dontstarve.fandom.com/wiki/Marble_Suit) | Done | armour_filter, craftable_items, equipable_items, fight_tab |
 | [Marsh Turf](https://dontstarve.fandom.com/wiki/Marsh_Turf) | Done | craftable_items |
 | [Mast](https://dontstarve.fandom.com/wiki/Mast) | Done | craftable_items |
@@ -903,45 +1053,51 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
 | [Melonsicle](https://dontstarve.fandom.com/wiki/Melonsicle) | Done | cooling, crock_pot_recipes, food |
 | [Merm Flort-ifications](https://dontstarve.fandom.com/wiki/Merm_Flort-ifications) | Done | craftable_structures |
 | [Midsummer Cawnival](https://dontstarve.fandom.com/wiki/Midsummer_Cawnival) | Done | events |
+| [Prize Booth](https://dontstarve.fandom.com/wiki/Midsummer_Cawnival/Prize_Booth) | Done | events |
 | [Mighty Gym](https://dontstarve.fandom.com/wiki/Mighty_Gym) | Done | craftable_structures |
 | [Milkmade Hat](https://dontstarve.fandom.com/wiki/Milkmade_Hat) | Done | crock_pot_recipes, equipable_items, food |
 | [Milky Whites](https://dontstarve.fandom.com/wiki/Milky_Whites) | Done | boss_dropped_items |
 | [Mimicreep](https://dontstarve.fandom.com/wiki/Mimicreep) | Done | cave_creatures |
 | [Miner Hat](https://dontstarve.fandom.com/wiki/Miner_Hat) | Done | craftable_items, equipable_items |
-| [Mini Sign](https://dontstarve.fandom.com/wiki/Mini_Sign) | Done | craftable_items, craftable_structures, decorations_filter |
+| [Mini Sign](https://dontstarve.fandom.com/wiki/Mini_Sign) | Done | a_new_reign, craftable_items, craftable_structures, decorations_filter |
+| [Misshapen Bird](https://dontstarve.fandom.com/wiki/Misshapen_Bird) | Done | birds |
 | [Moggles](https://dontstarve.fandom.com/wiki/Moggles) | Done | craftable_items, equipable_items |
 | [Moleworm](https://dontstarve.fandom.com/wiki/Moleworm) | Done | animals, cave_creatures |
 | [Monster Jerky](https://dontstarve.fandom.com/wiki/Monster_Jerky) | Done | craftable_items, food |
 | [Monster Lasagna](https://dontstarve.fandom.com/wiki/Monster_Lasagna) | Done | crock_pot_recipes |
 | [Monster Meat](https://dontstarve.fandom.com/wiki/Monster_Meat) | Done | boss_dropped_items, food |
 | [Monster Tartare](https://dontstarve.fandom.com/wiki/Monster_Tartare) | Done | food |
-| [Moon Caller's Staff](https://dontstarve.fandom.com/wiki/Moon_Caller's_Staff) | Done | cooling, equipable_items |
+| [Moon Caller's Staff](https://dontstarve.fandom.com/wiki/Moon_Caller's_Staff) | Done | a_new_reign, cooling, equipable_items |
 | [Moon Crater Turf](https://dontstarve.fandom.com/wiki/Moon_Crater_Turf) | Done | celestial_tab, craftable_items |
-| [Moon Dial](https://dontstarve.fandom.com/wiki/Moon_Dial) | Done | craftable_structures |
+| [Moon Dial](https://dontstarve.fandom.com/wiki/Moon_Dial) | Done | a_new_reign, craftable_structures |
 | [Moon Glass Saw Blade](https://dontstarve.fandom.com/wiki/Moon_Glass_Saw_Blade) | Done | celestial_filter, craftable_items |
 | [Moon Quay Beach Turf](https://dontstarve.fandom.com/wiki/Moon_Quay_Beach_Turf) | Done | craftable_items, decorations_filter |
 | [Moon Quay Pirate Banner](https://dontstarve.fandom.com/wiki/Moon_Quay_Pirate_Banner) | Done | craftable_structures, decorations_filter |
-| [Moon Rock](https://dontstarve.fandom.com/wiki/Moon_Rock) | Done | boss_dropped_items, craftable_items |
+| [Moon Rock](https://dontstarve.fandom.com/wiki/Moon_Rock) | Done | a_new_reign, boss_dropped_items, craftable_items |
 | [Moon Rock Idol](https://dontstarve.fandom.com/wiki/Moon_Rock_Idol) | Done | celestial_tab, craftable_items |
 | [Moon Rock Wall](https://dontstarve.fandom.com/wiki/Moon_Rock_Wall) | Done | craftable_items |
 | [Moon Shard](https://dontstarve.fandom.com/wiki/Moon_Shard) | Done | boss_dropped_items |
 | [Moon Shroom](https://dontstarve.fandom.com/wiki/Moon_Shroom) | Done | food |
-| [Moonlens](https://dontstarve.fandom.com/wiki/Moonlens) | Done | craftable_items |
+| [Moon Stone](https://dontstarve.fandom.com/wiki/Moon_Stone) | Done | a_new_reign |
+| [Moonlens](https://dontstarve.fandom.com/wiki/Moonlens) | Done | a_new_reign, craftable_items |
+| [Goose](https://dontstarve.fandom.com/wiki/Moose/Goose) | Done | birds, boss_monsters |
+| [Goose Egg](https://dontstarve.fandom.com/wiki/Moose/Goose_Egg) | Done | eggs |
 | [Morning Star](https://dontstarve.fandom.com/wiki/Morning_Star) | Done | craftable_items, equipable_items, fight_tab |
 | [Morsel](https://dontstarve.fandom.com/wiki/Morsel) | Done | food |
 | [Mosaic Flooring](https://dontstarve.fandom.com/wiki/Mosaic_Flooring) | Done | craftable_items |
-| [Mosling](https://dontstarve.fandom.com/wiki/Mosling) | New | animals |
-| [Mosquito](https://dontstarve.fandom.com/wiki/Mosquito) | New | animals |
+| [Mosling](https://dontstarve.fandom.com/wiki/Mosling) | Done | animals, birds |
+| [Mosquito](https://dontstarve.fandom.com/wiki/Mosquito) | Done | animals |
 | [Mud Turf](https://dontstarve.fandom.com/wiki/Mud_Turf) | Done | craftable_items, decorations_filter |
 | [Mumsy](https://dontstarve.fandom.com/wiki/Mumsy) | Done | events |
 | [Mush Gnome](https://dontstarve.fandom.com/wiki/Mush_Gnome) | Done | cave_creatures |
-| [Mushroom Planter](https://dontstarve.fandom.com/wiki/Mushroom_Planter) | Done | craftable_structures |
+| [Mushroom Planter](https://dontstarve.fandom.com/wiki/Mushroom_Planter) | Done | a_new_reign, craftable_structures |
+| [Mushroom Spore](https://dontstarve.fandom.com/wiki/Mushroom_Spore) | Done | a_new_reign |
 | [Mushrooms](https://dontstarve.fandom.com/wiki/Mushrooms) | Done | boss_dropped_items |
 | [Mushy Cake](https://dontstarve.fandom.com/wiki/Mushy_Cake) | Done | crock_pot_recipes, food |
 | [Mutated Fungal Turf](https://dontstarve.fandom.com/wiki/Mutated_Fungal_Turf) | Done | celestial_tab, craftable_items |
 | [Naked Mole Bat](https://dontstarve.fandom.com/wiki/Naked_Mole_Bat) | Done | cave_creatures |
 | [Naked Nostrils](https://dontstarve.fandom.com/wiki/Naked_Nostrils) | Done | food |
-| [Napsack](https://dontstarve.fandom.com/wiki/Napsack) | Done | craftable_items, equipable_items |
+| [Napsack](https://dontstarve.fandom.com/wiki/Napsack) | Done | a_new_reign, craftable_items, equipable_items |
 | [Nautopilot](https://dontstarve.fandom.com/wiki/Nautopilot) | Done | craftable_items, craftable_structures |
 | [Night Armor](https://dontstarve.fandom.com/wiki/Night_Armor) | Done | armour_filter, boss_dropped_items, craftable_items, equipable_items |
 | [Night Light](https://dontstarve.fandom.com/wiki/Night_Light) | Done | craftable_structures |
@@ -949,11 +1105,12 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
 | [Nightmare Amulet](https://dontstarve.fandom.com/wiki/Nightmare_Amulet) | Done | craftable_items, equipable_items |
 | [Nightmare Fuel](https://dontstarve.fandom.com/wiki/Nightmare_Fuel) | Done | boss_dropped_items, craftable_items |
 | [Nightmare Saddle](https://dontstarve.fandom.com/wiki/Nightmare_Saddle) | Done | craftable_items |
+| [Nightmare Werepig](https://dontstarve.fandom.com/wiki/Nightmare_Werepig) | Done | boss_monsters |
 | [Nitre](https://dontstarve.fandom.com/wiki/Nitre) | Done | craftable_items |
-| [No-Eyed Deer](https://dontstarve.fandom.com/wiki/No-Eyed_Deer) | New | animals |
+| [No-Eyed Deer](https://dontstarve.fandom.com/wiki/No-Eyed_Deer) | Done | a_new_reign, animals |
 | [Oar](https://dontstarve.fandom.com/wiki/Oar) | Done | craftable_items, equipable_items |
 | [Ocean Trawler Kit](https://dontstarve.fandom.com/wiki/Ocean_Trawler_Kit) | Done | craftable_items |
-| [Ocuvigil](https://dontstarve.fandom.com/wiki/Ocuvigil) | Done | craftable_structures |
+| [Ocuvigil](https://dontstarve.fandom.com/wiki/Ocuvigil) | Done | a_new_reign, craftable_structures |
 | [Old Beefalo](https://dontstarve.fandom.com/wiki/Old_Beefalo) | Done | events |
 | [One-man Band](https://dontstarve.fandom.com/wiki/One-man_Band) | Done | craftable_items, equipable_items |
 | [Onion](https://dontstarve.fandom.com/wiki/Onion) | Done | events, food |
@@ -962,20 +1119,24 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
 | [Packet of Seeds](https://dontstarve.fandom.com/wiki/Packet_of_Seeds) | Done | events |
 | [Pan Flute](https://dontstarve.fandom.com/wiki/Pan_Flute) | Done | craftable_items |
 | [Papyrus](https://dontstarve.fandom.com/wiki/Papyrus) | Done | craftable_items |
-| [Parrot Pirate](https://dontstarve.fandom.com/wiki/Parrot_Pirate) | New | animals |
+| [Parrot Pirate](https://dontstarve.fandom.com/wiki/Parrot_Pirate) | Done | animals, birds |
 | [Pearl's Pearl](https://dontstarve.fandom.com/wiki/Pearl's_Pearl) | Done | boss_dropped_items |
 | [Pebble Crab](https://dontstarve.fandom.com/wiki/Pebble_Crab) | Done | events |
-| [Pengull](https://dontstarve.fandom.com/wiki/Pengull) | New | animals |
+| [Pengull](https://dontstarve.fandom.com/wiki/Pengull) | Done | animals, birds |
 | [Pepper](https://dontstarve.fandom.com/wiki/Pepper) | Done | food |
+| [Petals](https://dontstarve.fandom.com/wiki/Petals) | Done | a_new_reign |
+| [Petrified Tree](https://dontstarve.fandom.com/wiki/Petrified_Tree) | Done | a_new_reign |
 | [Phasmo-Encapsulator](https://dontstarve.fandom.com/wiki/Phasmo-Encapsulator) | Done | craftable_items |
-| [Phlegm](https://dontstarve.fandom.com/wiki/Phlegm) | Done | food |
+| [Phlegm](https://dontstarve.fandom.com/wiki/Phlegm) | Done | a_new_reign, food |
 | [Phobic Experiment](https://dontstarve.fandom.com/wiki/Phobic_Experiment) | Done | craftable_items, events |
+| [Axe](https://dontstarve.fandom.com/wiki/Pick/Axe) | Done | ancient_tab, ancient_tier_2, craftable_items, equipable_items |
 | [Pickaxe](https://dontstarve.fandom.com/wiki/Pickaxe) | Done | craftable_items, equipable_items |
 | [Pierogi](https://dontstarve.fandom.com/wiki/Pierogi) | Done | crock_pot_recipes, food |
-| [Pig](https://dontstarve.fandom.com/wiki/Pig) | New | animals |
+| [Pig](https://dontstarve.fandom.com/wiki/Pig) | Done | animals |
 | [Pig House](https://dontstarve.fandom.com/wiki/Pig_House) | Done | craftable_structures |
 | [Piggyback](https://dontstarve.fandom.com/wiki/Piggyback) | Done | backpacks, clothing_filter, containers, craftable_items, equipable_items |
 | [Pile o' Balloons](https://dontstarve.fandom.com/wiki/Pile_o'_Balloons) | Done | craftable_items |
+| [Pillars](https://dontstarve.fandom.com/wiki/Pillars) | Done | a_new_reign |
 | [Pinchin' Winch](https://dontstarve.fandom.com/wiki/Pinchin'_Winch) | Done | craftable_structures |
 | [Pinetree Pioneer Hat](https://dontstarve.fandom.com/wiki/Pinetree_Pioneer_Hat) | Done | craftable_items, equipable_items |
 | [Pipton](https://dontstarve.fandom.com/wiki/Pipton) | Done | events |
@@ -992,15 +1153,15 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
 | [Portable Seasoning Station](https://dontstarve.fandom.com/wiki/Portable_Seasoning_Station) | Done | cooking_filter, craftable_items |
 | [Portal Paraphernalia](https://dontstarve.fandom.com/wiki/Portal_Paraphernalia) | Done | celestial_filter, craftable_items |
 | [Portasol](https://dontstarve.fandom.com/wiki/Portasol) | Done | clothing_filter, craftable_items |
+| [Possessed Varg](https://dontstarve.fandom.com/wiki/Possessed_Varg) | Done | boss_monsters |
 | [Potato](https://dontstarve.fandom.com/wiki/Potato) | Done | events, food |
 | [Potted Fern](https://dontstarve.fandom.com/wiki/Potted_Fern) | Done | craftable_structures, decorations_filter |
-| [Potted Succulent](https://dontstarve.fandom.com/wiki/Potted_Succulent) | Done | craftable_structures, decorations_filter |
-| [Potter's Wheel](https://dontstarve.fandom.com/wiki/Potter's_Wheel) | Done | craftable_structures, crafting_stations, decorations_filter |
-| [Powder Monkey](https://dontstarve.fandom.com/wiki/Powder_Monkey) | New | animals |
+| [Potted Succulent](https://dontstarve.fandom.com/wiki/Potted_Succulent) | Done | a_new_reign, craftable_structures, decorations_filter |
+| [Potter's Wheel](https://dontstarve.fandom.com/wiki/Potter's_Wheel) | Done | a_new_reign, craftable_structures, crafting_stations, decorations_filter |
+| [Powder Monkey](https://dontstarve.fandom.com/wiki/Powder_Monkey) | Done | animals |
 | [Powdercake](https://dontstarve.fandom.com/wiki/Powdercake) | Done | crock_pot_recipes |
 | [Prestihatitator](https://dontstarve.fandom.com/wiki/Prestihatitator) | Done | craftable_structures |
 | [Pretty Parasol](https://dontstarve.fandom.com/wiki/Pretty_Parasol) | Done | craftable_items, equipable_items |
-| [Prize Booth](https://dontstarve.fandom.com/wiki/Midsummer_Cawnival/Prize_Booth) | Done | events |
 | [Produce Scale](https://dontstarve.fandom.com/wiki/Produce_Scale) | Done | craftable_structures, decorations_filter |
 | [Psychosis Experiment](https://dontstarve.fandom.com/wiki/Psychosis_Experiment) | Done | craftable_items, events |
 | [Puffy Vest](https://dontstarve.fandom.com/wiki/Puffy_Vest) | Done | craftable_items, equipable_items |
@@ -1011,7 +1172,7 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
 | [Pure Brilliance](https://dontstarve.fandom.com/wiki/Pure_Brilliance) | Done | craftable_items |
 | [Pure Horror](https://dontstarve.fandom.com/wiki/Pure_Horror) | Done | boss_dropped_items, craftable_items |
 | [Purple Gem](https://dontstarve.fandom.com/wiki/Purple_Gem) | Done | boss_dropped_items, craftable_items |
-| [Rabbit](https://dontstarve.fandom.com/wiki/Rabbit) | New | animals |
+| [Rabbit](https://dontstarve.fandom.com/wiki/Rabbit) | Done | animals |
 | [Rabbit Earmuffs](https://dontstarve.fandom.com/wiki/Rabbit_Earmuffs) | Done | craftable_items, equipable_items |
 | [Rabbit Hutch](https://dontstarve.fandom.com/wiki/Rabbit_Hutch) | Done | craftable_structures |
 | [Rain Coat](https://dontstarve.fandom.com/wiki/Rain_Coat) | Done | craftable_items, equipable_items |
@@ -1020,18 +1181,18 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
 | [Ratatouille](https://dontstarve.fandom.com/wiki/Ratatouille) | Done | crock_pot_recipes |
 | [Raw Fish](https://dontstarve.fandom.com/wiki/Raw_Fish) | Done | boss_dropped_items, fishes, food |
 | [Razor](https://dontstarve.fandom.com/wiki/Razor) | Done | craftable_items |
-| [Reanimated Skeleton](https://dontstarve.fandom.com/wiki/Reanimated_Skeleton) | Done | cave_creatures |
+| [Reanimated Skeleton](https://dontstarve.fandom.com/wiki/Reanimated_Skeleton) | Done | a_new_reign, boss_monsters, cave_creatures |
 | [Record](https://dontstarve.fandom.com/wiki/Record) | Done | craftable_items, decorations_filter |
 | [Red Cap](https://dontstarve.fandom.com/wiki/Red_Cap) | Done | boss_dropped_items, food |
 | [Red Firecrackers](https://dontstarve.fandom.com/wiki/Red_Firecrackers) | Done | craftable_items |
 | [Red Gem](https://dontstarve.fandom.com/wiki/Red_Gem) | Done | boss_dropped_items, craftable_items |
 | [Red Lantern](https://dontstarve.fandom.com/wiki/Red_Lantern) | Done | craftable_items, equipable_items |
 | [Reinforced Support Pillar](https://dontstarve.fandom.com/wiki/Reinforced_Support_Pillar) | Done | craftable_structures |
-| [Relic](https://dontstarve.fandom.com/wiki/Relic) | Done | craftable_structures, decorations_filter |
+| [Relic](https://dontstarve.fandom.com/wiki/Relic) | Done | a_new_reign, craftable_structures, decorations_filter |
 | [Resting Horror](https://dontstarve.fandom.com/wiki/Resting_Horror) | Done | cave_creatures |
 | [Rhinocebro](https://dontstarve.fandom.com/wiki/Rhinocebro) | Done | events |
 | [Riled Lucy](https://dontstarve.fandom.com/wiki/Riled_Lucy) | Done | events |
-| [Rock Den](https://dontstarve.fandom.com/wiki/Rock_Den) | Done | crafting_stations |
+| [Rock Den](https://dontstarve.fandom.com/wiki/Rock_Den) | Done | a_new_reign, crafting_stations |
 | [Rock Lobster](https://dontstarve.fandom.com/wiki/Rock_Lobster) | Done | animals, cave_creatures |
 | [Rocks](https://dontstarve.fandom.com/wiki/Rocks) | Done | craftable_items |
 | [Rocky Beach Turf](https://dontstarve.fandom.com/wiki/Rocky_Beach_Turf) | Done | craftable_items, decorations_filter |
@@ -1040,20 +1201,21 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
 | [Rose-Colored Glasses](https://dontstarve.fandom.com/wiki/Rose-Colored_Glasses) | Done | clothing_filter, craftable_items |
 | [Rot](https://dontstarve.fandom.com/wiki/Rot) | Done | craftable_items, fertilizer |
 | [Rotten Egg](https://dontstarve.fandom.com/wiki/Rotten_Egg) | Done | eggs, fertilizer |
-| [Royal Jelly](https://dontstarve.fandom.com/wiki/Royal_Jelly) | Done | boss_dropped_items |
+| [Royal Jelly](https://dontstarve.fandom.com/wiki/Royal_Jelly) | Done | a_new_reign, boss_dropped_items |
 | [Royal Tapestry](https://dontstarve.fandom.com/wiki/Royal_Tapestry) | Done | craftable_structures |
 | [Rudder Kit](https://dontstarve.fandom.com/wiki/Rudder_Kit) | Done | craftable_items |
-| [Saddle](https://dontstarve.fandom.com/wiki/Saddle) | Done | craftable_items |
+| [Saddle](https://dontstarve.fandom.com/wiki/Saddle) | Done | a_new_reign, craftable_items |
 | [Saddlehorn](https://dontstarve.fandom.com/wiki/Saddlehorn) | Done | craftable_items, equipable_items |
 | [Safe](https://dontstarve.fandom.com/wiki/Safe) | Done | events |
 | [Salmon](https://dontstarve.fandom.com/wiki/Salmon) | Done | events, food |
 | [Salsa Fresca](https://dontstarve.fandom.com/wiki/Salsa_Fresca) | Done | crock_pot_recipes, food |
 | [Salt Box](https://dontstarve.fandom.com/wiki/Salt_Box) | Done | cooking_filter, craftable_structures |
 | [Salt Crystals](https://dontstarve.fandom.com/wiki/Salt_Crystals) | Done | events, food |
-| [Salt Lick](https://dontstarve.fandom.com/wiki/Salt_Lick) | Done | craftable_structures |
+| [Salt Lick](https://dontstarve.fandom.com/wiki/Salt_Lick) | Done | a_new_reign, craftable_structures |
 | [Salt Pond](https://dontstarve.fandom.com/wiki/Salt_Pond) | Done | events |
 | [Salt Rack](https://dontstarve.fandom.com/wiki/Salt_Rack) | Done | events |
 | [Sammy](https://dontstarve.fandom.com/wiki/Sammy) | Done | events |
+| [Sandstorm](https://dontstarve.fandom.com/wiki/Sandstorm) | Done | a_new_reign |
 | [Sandy Turf](https://dontstarve.fandom.com/wiki/Sandy_Turf) | Done | craftable_items, decorations_filter |
 | [Sanguine Experiment](https://dontstarve.fandom.com/wiki/Sanguine_Experiment) | Done | craftable_items, events |
 | [Sap](https://dontstarve.fandom.com/wiki/Sap) | Done | events |
@@ -1061,13 +1223,14 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
 | [Sawhorse](https://dontstarve.fandom.com/wiki/Sawhorse) | Done | craftable_items, craftable_structures |
 | [Scaled Chest](https://dontstarve.fandom.com/wiki/Scaled_Chest) | Done | containers, craftable_structures |
 | [Scaled Flooring](https://dontstarve.fandom.com/wiki/Scaled_Flooring) | Done | craftable_items, decorations_filter |
-| [Scaled Furnace](https://dontstarve.fandom.com/wiki/Scaled_Furnace) | Done | cooking_filter, craftable_structures |
+| [Scaled Furnace](https://dontstarve.fandom.com/wiki/Scaled_Furnace) | Done | a_new_reign, cooking_filter, craftable_structures |
 | [Scalemail](https://dontstarve.fandom.com/wiki/Scalemail) | Done | armour_filter, craftable_items, equipable_items, fight_tab |
 | [Scales](https://dontstarve.fandom.com/wiki/Scales) | Done | boss_dropped_items |
 | [Science Machine](https://dontstarve.fandom.com/wiki/Science_Machine) | Done | craftable_structures, crafting_stations |
 | [Scorpeon](https://dontstarve.fandom.com/wiki/Scorpeon) | Done | events |
 | [Scrap Wall](https://dontstarve.fandom.com/wiki/Scrap_Wall) | Done | decorations_filter |
 | [Scrappy Chapauldron](https://dontstarve.fandom.com/wiki/Scrappy_Chapauldron) | Done | equipable_items |
+| [Scrappy Werepig](https://dontstarve.fandom.com/wiki/Scrappy_Werepig) | Done | boss_monsters |
 | [Sea Fishing Rod](https://dontstarve.fandom.com/wiki/Sea_Fishing_Rod) | Done | craftable_items, equipable_items |
 | [Seafood Gumbo](https://dontstarve.fandom.com/wiki/Seafood_Gumbo) | Done | crock_pot_recipes, food |
 | [Seasoning Salt](https://dontstarve.fandom.com/wiki/Seasoning_Salt) | Done | craftable_items |
@@ -1078,25 +1241,26 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
 | [Seedshell](https://dontstarve.fandom.com/wiki/Seedshell) | Done | equipable_items |
 | [Serving](https://dontstarve.fandom.com/wiki/Serving) | Done | events |
 | [Sewing Kit](https://dontstarve.fandom.com/wiki/Sewing_Kit) | Done | craftable_items |
-| [Shadow Atrium](https://dontstarve.fandom.com/wiki/Shadow_Atrium) | Done | boss_dropped_items |
+| [Shadow Atrium](https://dontstarve.fandom.com/wiki/Shadow_Atrium) | Done | a_new_reign, boss_dropped_items |
 | [Shadow Manipulator](https://dontstarve.fandom.com/wiki/Shadow_Manipulator) | Done | craftable_structures |
 | [Shadow Maul](https://dontstarve.fandom.com/wiki/Shadow_Maul) | Done | craftable_items |
+| [Shadow Pieces](https://dontstarve.fandom.com/wiki/Shadow_Pieces) | Done | a_new_reign, boss_monsters |
 | [Shadow Reaper](https://dontstarve.fandom.com/wiki/Shadow_Reaper) | Done | craftable_items |
-| [Shadow Thurible](https://dontstarve.fandom.com/wiki/Shadow_Thurible) | Done | boss_dropped_items |
-| [Shadowcraft Plinth](https://dontstarve.fandom.com/wiki/Shadowcraft_Plinth) | Done | craftable_items |
+| [Shadow Thurible](https://dontstarve.fandom.com/wiki/Shadow_Thurible) | Done | a_new_reign, boss_dropped_items |
+| [Shadowcraft Plinth](https://dontstarve.fandom.com/wiki/Shadowcraft_Plinth) | Done | ancient_tier_2, craftable_items |
 | [Shell Beach Turf](https://dontstarve.fandom.com/wiki/Shell_Beach_Turf) | Done | craftable_items, decorations_filter |
 | [Shelmet](https://dontstarve.fandom.com/wiki/Shelmet) | Done | equipable_items |
 | [Shield of Terror](https://dontstarve.fandom.com/wiki/Shield_of_Terror) | Done | boss_dropped_items, equipable_items |
 | [Shoddy Tool Shed](https://dontstarve.fandom.com/wiki/Shoddy_Tool_Shed) | Done | craftable_structures |
 | [Shoo Box](https://dontstarve.fandom.com/wiki/Shoo_Box) | Done | craftable_items |
 | [Shovel](https://dontstarve.fandom.com/wiki/Shovel) | Done | craftable_items, equipable_items |
-| [Shroom Skin](https://dontstarve.fandom.com/wiki/Shroom_Skin) | Done | boss_dropped_items |
+| [Shroom Skin](https://dontstarve.fandom.com/wiki/Shroom_Skin) | Done | a_new_reign, boss_dropped_items |
 | [Siesta Lean-to](https://dontstarve.fandom.com/wiki/Siesta_Lean-to) | Done | cooling, craftable_structures |
 | [Sign](https://dontstarve.fandom.com/wiki/Sign) | Done | craftable_structures, decorations_filter |
 | [Silk](https://dontstarve.fandom.com/wiki/Silk) | Done | boss_dropped_items |
 | [Sisturn](https://dontstarve.fandom.com/wiki/Sisturn) | Done | craftable_structures |
 | [Skeeter Bomb](https://dontstarve.fandom.com/wiki/Skeeter_Bomb) | Done | craftable_items |
-| [Sketch](https://dontstarve.fandom.com/wiki/Sketch) | Done | boss_dropped_items, celestial_tab |
+| [Sketch](https://dontstarve.fandom.com/wiki/Sketch) | Done | a_new_reign, boss_dropped_items, celestial_tab |
 | [Slimy Salve](https://dontstarve.fandom.com/wiki/Slimy_Salve) | Done | craftable_items |
 | [Slimy Turf](https://dontstarve.fandom.com/wiki/Slimy_Turf) | Done | craftable_items, decorations_filter |
 | [Slurper](https://dontstarve.fandom.com/wiki/Slurper) | Done | equipable_items |
@@ -1111,18 +1275,19 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
 | [Spicy Vegetable Stinger](https://dontstarve.fandom.com/wiki/Spicy_Vegetable_Stinger) | Done | crock_pot_recipes, food |
 | [Spider](https://dontstarve.fandom.com/wiki/Spider) | Done | cave_creatures |
 | [Spider Eggs](https://dontstarve.fandom.com/wiki/Spider_Eggs) | Done | boss_dropped_items, craftable_items, eggs |
-| [Spider Queen](https://dontstarve.fandom.com/wiki/Spider_Queen) | Done | cave_creatures |
+| [Spider Queen](https://dontstarve.fandom.com/wiki/Spider_Queen) | Done | boss_monsters, cave_creatures |
 | [Spider Warrior](https://dontstarve.fandom.com/wiki/Spider_Warrior) | Done | cave_creatures |
 | [Spiderhat](https://dontstarve.fandom.com/wiki/Spiderhat) | Done | boss_dropped_items, equipable_items |
 | [Spitter](https://dontstarve.fandom.com/wiki/Spitter) | Done | cave_creatures |
-| [Splumonkey](https://dontstarve.fandom.com/wiki/Splumonkey) | New | animals |
+| [Splumonkey](https://dontstarve.fandom.com/wiki/Splumonkey) | Done | animals |
 | [Spoiled Fish](https://dontstarve.fandom.com/wiki/Spoiled_Fish) | Done | fertilizer |
 | [Spotty Shrub](https://dontstarve.fandom.com/wiki/Spotty_Shrub) | Done | events |
 | [Spotty Sprig](https://dontstarve.fandom.com/wiki/Spotty_Sprig) | Done | events |
-| [Stag Antler](https://dontstarve.fandom.com/wiki/Stag_Antler) | Done | boss_dropped_items |
-| [Stagehand](https://dontstarve.fandom.com/wiki/Stagehand) | Done | craftable_structures, decorations_filter |
-| [Star Caller's Staff](https://dontstarve.fandom.com/wiki/Star_Caller's_Staff) | Done | craftable_items, equipable_items |
+| [Stag Antler](https://dontstarve.fandom.com/wiki/Stag_Antler) | Done | a_new_reign, boss_dropped_items |
+| [Stagehand](https://dontstarve.fandom.com/wiki/Stagehand) | Done | a_new_reign, craftable_structures, decorations_filter |
+| [Star Caller's Staff](https://dontstarve.fandom.com/wiki/Star_Caller's_Staff) | Done | ancient_tab, ancient_tier_1, craftable_items, equipable_items |
 | [Steamed Twigs](https://dontstarve.fandom.com/wiki/Steamed_Twigs) | Done | beefalo_foods, crock_pot_recipes |
+| [Steel Wool](https://dontstarve.fandom.com/wiki/Steel_Wool) | Done | a_new_reign |
 | [Steering Wheel](https://dontstarve.fandom.com/wiki/Steering_Wheel) | Done | craftable_items |
 | [Stinger](https://dontstarve.fandom.com/wiki/Stinger) | Done | boss_dropped_items |
 | [Stone Fruit](https://dontstarve.fandom.com/wiki/Stone_Fruit) | Done | food |
@@ -1137,6 +1302,8 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
 | [Sulfuric Experiment](https://dontstarve.fandom.com/wiki/Sulfuric_Experiment) | Done | craftable_items, events |
 | [Summer Frest](https://dontstarve.fandom.com/wiki/Summer_Frest) | Done | cooling, craftable_items, equipable_items |
 | [Surf 'n' Turf](https://dontstarve.fandom.com/wiki/Surf_'n'_Turf) | Done | crock_pot_recipes, food |
+| [Suspicious Marble](https://dontstarve.fandom.com/wiki/Suspicious_Marble) | Done | a_new_reign |
+| [Suspicious Moonrock](https://dontstarve.fandom.com/wiki/Suspicious_Moonrock) | Done | a_new_reign |
 | [Swamp Pig](https://dontstarve.fandom.com/wiki/Swamp_Pig) | Done | events |
 | [Swamp Pig Elder](https://dontstarve.fandom.com/wiki/Swamp_Pig_Elder) | Done | events |
 | [Switcherdoodle](https://dontstarve.fandom.com/wiki/Switcherdoodle) | Done | craftable_items, food |
@@ -1147,8 +1314,9 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
 | [Tackle Box](https://dontstarve.fandom.com/wiki/Tackle_Box) | Done | craftable_items |
 | [Tackle Receptacle](https://dontstarve.fandom.com/wiki/Tackle_Receptacle) | Done | craftable_structures |
 | [Taffy](https://dontstarve.fandom.com/wiki/Taffy) | Done | crock_pot_recipes, food |
-| [Tail o' Three Cats](https://dontstarve.fandom.com/wiki/Tail_o'_Three_Cats) | Done | craftable_items, equipable_items, fight_tab |
+| [Tail o' Three Cats](https://dontstarve.fandom.com/wiki/Tail_o'_Three_Cats) | Done | a_new_reign, craftable_items, equipable_items, fight_tab |
 | [Tall Scotch Eggs](https://dontstarve.fandom.com/wiki/Tall_Scotch_Eggs) | Done | crock_pot_recipes, food |
+| [Tallbird](https://dontstarve.fandom.com/wiki/Tallbird) | Done | birds |
 | [Tallbird Egg](https://dontstarve.fandom.com/wiki/Tallbird_Egg) | Done | eggs, food |
 | [Tam o' Shanter](https://dontstarve.fandom.com/wiki/Tam_o'_Shanter) | Done | equipable_items |
 | [Telelocator Focus](https://dontstarve.fandom.com/wiki/Telelocator_Focus) | Done | craftable_structures |
@@ -1166,22 +1334,23 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
 | [The Gorge](https://dontstarve.fandom.com/wiki/The_Gorge) | Done | events |
 | [The Gorge Recipes](https://dontstarve.fandom.com/wiki/The_Gorge_Recipes) | Done | events |
 | [The Gorge Seeds](https://dontstarve.fandom.com/wiki/The_Gorge_Seeds) | Done | events |
-| [The Lazy Deserter](https://dontstarve.fandom.com/wiki/The_Lazy_Deserter) | Done | craftable_structures |
-| [The Lazy Explorer](https://dontstarve.fandom.com/wiki/The_Lazy_Explorer) | Done | craftable_items, equipable_items |
-| [The Lazy Forager](https://dontstarve.fandom.com/wiki/The_Lazy_Forager) | Done | craftable_items, equipable_items |
+| [The Lazy Deserter](https://dontstarve.fandom.com/wiki/The_Lazy_Deserter) | Done | a_new_reign, craftable_structures |
+| [The Lazy Explorer](https://dontstarve.fandom.com/wiki/The_Lazy_Explorer) | Done | ancient_tab, ancient_tier_2, craftable_items, equipable_items |
+| [The Lazy Forager](https://dontstarve.fandom.com/wiki/The_Lazy_Forager) | Done | ancient_tab, ancient_tier_2, craftable_items, equipable_items |
 | [Thermal Measurer](https://dontstarve.fandom.com/wiki/Thermal_Measurer) | Done | craftable_structures |
 | [Thermal Stone](https://dontstarve.fandom.com/wiki/Thermal_Stone) | Done | cooling, craftable_items |
 | [Thick Fur](https://dontstarve.fandom.com/wiki/Thick_Fur) | Done | boss_dropped_items, craftable_items |
 | [Think Tank](https://dontstarve.fandom.com/wiki/Think_Tank) | Done | craftable_structures |
-| [Thulecite](https://dontstarve.fandom.com/wiki/Thulecite) | Done | craftable_items |
+| [Thulecite](https://dontstarve.fandom.com/wiki/Thulecite) | Done | ancient_tab, ancient_tier_1, craftable_items |
 | [Thulecite Bug Net](https://dontstarve.fandom.com/wiki/Thulecite_Bug_Net) | Done | craftable_items |
-| [Thulecite Club](https://dontstarve.fandom.com/wiki/Thulecite_Club) | Done | craftable_items, equipable_items |
-| [Thulecite Crown](https://dontstarve.fandom.com/wiki/Thulecite_Crown) | Done | craftable_items, equipable_items |
-| [Thulecite Medallion](https://dontstarve.fandom.com/wiki/Thulecite_Medallion) | Done | craftable_items |
-| [Thulecite Suit](https://dontstarve.fandom.com/wiki/Thulecite_Suit) | Done | craftable_items, equipable_items |
+| [Thulecite Club](https://dontstarve.fandom.com/wiki/Thulecite_Club) | Done | ancient_tab, ancient_tier_2, craftable_items, equipable_items |
+| [Thulecite Crown](https://dontstarve.fandom.com/wiki/Thulecite_Crown) | Done | ancient_tab, ancient_tier_2, craftable_items, equipable_items |
+| [Thulecite Medallion](https://dontstarve.fandom.com/wiki/Thulecite_Medallion) | Done | ancient_tab, ancient_tier_1, craftable_items |
+| [Thulecite Suit](https://dontstarve.fandom.com/wiki/Thulecite_Suit) | Done | ancient_tab, ancient_tier_2, craftable_items, equipable_items |
+| [Thulecite Wall](https://dontstarve.fandom.com/wiki/Thulecite_Wall) | Done | ancient_tier_1 |
 | [Tillweed Salve](https://dontstarve.fandom.com/wiki/Tillweed_Salve) | Done | craftable_items |
 | [Tin Fishin' Bin](https://dontstarve.fandom.com/wiki/Tin_Fishin'_Bin) | Done | craftable_structures |
-| [Toadstool](https://dontstarve.fandom.com/wiki/Toadstool) | Done | cave_creatures |
+| [Toadstool](https://dontstarve.fandom.com/wiki/Toadstool) | Done | a_new_reign, boss_monsters, cave_creatures |
 | [Toma Root](https://dontstarve.fandom.com/wiki/Toma_Root) | Done | food |
 | [Tooth Trap](https://dontstarve.fandom.com/wiki/Tooth_Trap) | Done | craftable_items, fight_tab |
 | [Top Hat](https://dontstarve.fandom.com/wiki/Top_Hat) | Done | craftable_items, equipable_items |
@@ -1189,13 +1358,16 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
 | [Trail Mix](https://dontstarve.fandom.com/wiki/Trail_Mix) | Done | crock_pot_recipes, food |
 | [Trap](https://dontstarve.fandom.com/wiki/Trap) | Done | craftable_items |
 | [Tree Jam](https://dontstarve.fandom.com/wiki/Tree_Jam) | Done | craftable_items, fertilizer |
-| [Treeguard](https://dontstarve.fandom.com/wiki/Treeguard) | Done | cave_creatures |
+| [Treeguard](https://dontstarve.fandom.com/wiki/Treeguard) | Done | boss_monsters, cave_creatures |
 | [Treeguard Idol](https://dontstarve.fandom.com/wiki/Treeguard_Idol) | Done | craftable_items |
+| [Trinkets](https://dontstarve.fandom.com/wiki/Trinkets) | Done | a_new_reign |
 | [Trusty Slingshot](https://dontstarve.fandom.com/wiki/Trusty_Slingshot) | Done | craftable_items, equipable_items |
 | [Trusty Tape](https://dontstarve.fandom.com/wiki/Trusty_Tape) | Done | craftable_items |
 | [Turf-Raiser Helm](https://dontstarve.fandom.com/wiki/Turf-Raiser_Helm) | Done | clothing_filter, craftable_items |
 | [Turkey Dinner](https://dontstarve.fandom.com/wiki/Turkey_Dinner) | Done | crock_pot_recipes, food |
 | [Turnip](https://dontstarve.fandom.com/wiki/Turnip) | Done | events, food |
+| [Twiggy Tree](https://dontstarve.fandom.com/wiki/Twiggy_Tree) | Done | a_new_reign |
+| [Twiggy Tree Cone](https://dontstarve.fandom.com/wiki/Twiggy_Tree_Cone) | Done | a_new_reign |
 | [Twigs](https://dontstarve.fandom.com/wiki/Twigs) | Done | beefalo_foods, craftable_items |
 | [Umbralla](https://dontstarve.fandom.com/wiki/Umbralla) | Done | craftable_items |
 | [Umbrella](https://dontstarve.fandom.com/wiki/Umbrella) | Done | clothing_filter, craftable_items, equipable_items |
@@ -1203,9 +1375,10 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
 | [Veggie Burger](https://dontstarve.fandom.com/wiki/Veggie_Burger) | Done | crock_pot_recipes, food |
 | [Void Cowl](https://dontstarve.fandom.com/wiki/Void_Cowl) | Done | craftable_items |
 | [Void Robe](https://dontstarve.fandom.com/wiki/Void_Robe) | Done | craftable_items |
-| [Volt Goat](https://dontstarve.fandom.com/wiki/Volt_Goat) | New | animals |
+| [Volt Goat](https://dontstarve.fandom.com/wiki/Volt_Goat) | Done | animals |
 | [W.A.R.B.I.S. Armor](https://dontstarve.fandom.com/wiki/W.A.R.B.I.S._Armor) | Done | armour_filter, craftable_items |
 | [W.A.R.B.I.S. Head Gear](https://dontstarve.fandom.com/wiki/W.A.R.B.I.S._Head_Gear) | Done | armour_filter, craftable_items |
+| [W.A.R.B.O.T.](https://dontstarve.fandom.com/wiki/W.A.R.B.O.T.) | Done | boss_monsters |
 | [Waffles](https://dontstarve.fandom.com/wiki/Waffles) | Done | crock_pot_recipes, food |
 | [Walking Cane](https://dontstarve.fandom.com/wiki/Walking_Cane) | Done | craftable_items, equipable_items |
 | [Wardrobe](https://dontstarve.fandom.com/wiki/Wardrobe) | Done | craftable_structures, decorations_filter |
@@ -1229,11 +1402,12 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
 | [Wobster](https://dontstarve.fandom.com/wiki/Wobster) | Done | fishes, food |
 | [Wobster Bisque](https://dontstarve.fandom.com/wiki/Wobster_Bisque) | Done | cooling, crock_pot_recipes, food |
 | [Wobster Dinner](https://dontstarve.fandom.com/wiki/Wobster_Dinner) | Done | craftable_items, crock_pot_recipes, fishes |
-| [Wood Fence](https://dontstarve.fandom.com/wiki/Wood_Fence) | Done | craftable_items, craftable_structures, decorations_filter |
-| [Wood Gate](https://dontstarve.fandom.com/wiki/Wood_Gate) | Done | craftable_items, decorations_filter |
+| [Wood Fence](https://dontstarve.fandom.com/wiki/Wood_Fence) | Done | a_new_reign, craftable_items, craftable_structures, decorations_filter |
+| [Wood Gate](https://dontstarve.fandom.com/wiki/Wood_Gate) | Done | a_new_reign, craftable_items, decorations_filter |
 | [Wood Wall](https://dontstarve.fandom.com/wiki/Wood_Wall) | Done | craftable_items, craftable_structures, decorations_filter |
 | [Wooden Flooring](https://dontstarve.fandom.com/wiki/Wooden_Flooring) | Done | craftable_items, decorations_filter |
 | [Wooden Walking Stick](https://dontstarve.fandom.com/wiki/Wooden_Walking_Stick) | Done | clothing_filter, craftable_items |
+| [Woven Shadow](https://dontstarve.fandom.com/wiki/Woven_Shadow) | Done | a_new_reign |
 | [Year of the Beefalo](https://dontstarve.fandom.com/wiki/Year_of_the_Beefalo) | Done | events |
 | [Year of the Bunnyman](https://dontstarve.fandom.com/wiki/Year_of_the_Bunnyman) | Done | events |
 | [Year of the Carrat](https://dontstarve.fandom.com/wiki/Year_of_the_Carrat) | Done | events |

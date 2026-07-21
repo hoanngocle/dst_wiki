@@ -1,0 +1,20 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Clockwork Monsters",
+  "excludedTitles": {
+    "Floaty Boaty Knight": "non_dst:shipwrecked",
+    "Flower": "non_item:category_mismatch"
+  },
+  "expectedDirectPages": 8,
+  "expectedPublishedPages": 6,
+  "game": "DST",
+  "itemType": "mob",
+  "key": "clockwork_monsters",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Clockwork_Monsters",
+  "tags": [
+    "Clockwork Monsters"
+  ]
+}

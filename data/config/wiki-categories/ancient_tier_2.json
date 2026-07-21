@@ -1,0 +1,17 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Ancient Tier 2",
+  "excludedTitles": {},
+  "expectedDirectPages": 7,
+  "expectedPublishedPages": 7,
+  "game": "DST",
+  "itemType": "item",
+  "key": "ancient_tier_2",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Ancient_Tier_2",
+  "tags": [
+    "Ancient Tier 2"
+  ]
+}

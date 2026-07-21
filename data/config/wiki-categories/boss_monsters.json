@@ -1,0 +1,27 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Boss Monsters",
+  "excludedTitles": {
+    "Ancient Herald": "non_dst:hamlet",
+    "Iron Hulk": "non_dst:hamlet",
+    "Mobs": "non_item:overview",
+    "Palm Treeguard": "non_dst:shipwrecked",
+    "Pugalisk": "non_dst:hamlet",
+    "Quacken": "non_dst:shipwrecked",
+    "Queen Womant": "non_dst:hamlet",
+    "Sealnado": "non_dst:shipwrecked",
+    "Tiger Shark": "non_dst:shipwrecked"
+  },
+  "expectedDirectPages": 37,
+  "expectedPublishedPages": 28,
+  "game": "DST",
+  "itemType": "mob",
+  "key": "boss_monsters",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Boss_Monsters",
+  "tags": [
+    "Boss Monsters"
+  ]
+}

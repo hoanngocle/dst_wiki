@@ -1,0 +1,36 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:A New Reign",
+  "excludedTitles": {
+    "A New Reign": "non_item:overview",
+    "Blue Moonlens": "duplicate:canonical_redirect",
+    "Cartography Filter": "non_item:overview",
+    "Chess Pieces": "non_item:overview",
+    "Critters Filter": "non_item:overview",
+    "Dart": "non_item:overview",
+    "Disease": "non_item:category_mismatch",
+    "Goggles": "non_item:overview",
+    "Green Moonlens": "duplicate:canonical_redirect",
+    "Mushroom Lights": "non_item:overview",
+    "Orange Moonlens": "duplicate:canonical_redirect",
+    "Purple Moonlens": "duplicate:canonical_redirect",
+    "Red Moonlens": "duplicate:canonical_redirect",
+    "Sculptures Filter": "non_item:overview",
+    "Wall": "non_item:overview",
+    "Winter's Feast": "non_item:category_mismatch",
+    "Year of the Gobbler": "non_item:category_mismatch",
+    "Yellow Moonlens": "duplicate:canonical_redirect"
+  },
+  "expectedDirectPages": 110,
+  "expectedPublishedPages": 92,
+  "game": "DST",
+  "itemType": "content",
+  "key": "a_new_reign",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:A_New_Reign",
+  "tags": [
+    "A New Reign"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Birds",
+  "excludedTitles": {
+    "BFB": "non_dst:hamlet",
+    "Birdcage": "non_item:category_mismatch",
+    "Doydoy": "non_dst:shipwrecked",
+    "Peagawk": "non_dst:hamlet",
+    "Ro Bin": "non_dst:hamlet",
+    "Sunken Boat": "non_dst:dont_starve",
+    "Thunderbird": "non_dst:hamlet"
+  },
+  "expectedDirectPages": 17,
+  "expectedPublishedPages": 10,
+  "game": "DST",
+  "itemType": "mob",
+  "key": "birds",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Birds",
+  "tags": [
+    "Birds"
+  ]
+}

@@ -145,6 +145,44 @@ class CategoryConfigTests(unittest.TestCase):
         self.assertNotIn("Ice", food_exclusions)
         self.assertEqual(food_exclusions["Cooking"], "non_item:overview")
 
+    def test_loads_reviewed_batch_three_configs(self):
+        expected = {
+            "a_new_reign": (110, 92, "content", "A New Reign"),
+            "ancient_tab": (15, 14, "item", "Ancient Tab"),
+            "ancient_tier_1": (10, 9, "item", "Ancient Tier 1"),
+            "ancient_tier_2": (7, 7, "item", "Ancient Tier 2"),
+            "birds": (17, 10, "mob", "Birds"),
+            "boss_monsters": (37, 28, "mob", "Boss Monsters"),
+            "clockwork_monsters": (8, 6, "mob", "Clockwork Monsters"),
+        }
+
+        for key, values in expected.items():
+            with self.subTest(key=key):
+                direct, published, item_type, tag = values
+                config = load_category_config(key)
+                self.assertEqual(
+                    (
+                        config.expected_direct_pages,
+                        config.expected_published_pages,
+                    ),
+                    (direct, published),
+                )
+                self.assertEqual(config.item_type, item_type)
+                self.assertEqual(config.tags, (tag,))
+                self.assertEqual(config.game, "DST")
+
+        reign_exclusions = dict(
+            load_category_config("a_new_reign").excluded_titles
+        )
+        self.assertEqual(
+            reign_exclusions["Blue Moonlens"],
+            "duplicate:canonical_redirect",
+        )
+        self.assertEqual(
+            reign_exclusions["Disease"],
+            "non_item:category_mismatch",
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
