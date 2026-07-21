@@ -1,0 +1,22 @@
+{
+  "allowedNamespaces": [0],
+  "categoryTitle": "Category:Animals",
+  "excludedTitles": {
+    "Blue Whale": "non_dst:shipwrecked",
+    "Glowfly": "non_dst:hamlet",
+    "Peagawk": "non_dst:hamlet",
+    "Pog": "non_dst:hamlet",
+    "White Whale": "non_dst:shipwrecked",
+    "Wildbore": "non_dst:shipwrecked"
+  },
+  "expectedDirectPages": 34,
+  "expectedPublishedPages": 28,
+  "game": "DST",
+  "itemType": "mob",
+  "key": "animals",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Animals",
+  "tags": [
+    "Animals"
+  ]
+}

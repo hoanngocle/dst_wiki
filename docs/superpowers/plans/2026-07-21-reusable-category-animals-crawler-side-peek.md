@@ -194,7 +194,7 @@ git commit -m "feat: coordinate category crawler URLs"
 - Produces: `MediaWikiClient.list_category_members(title, continuation=None) -> tuple[list[dict], str | None]`.
 - Produces: `MediaWikiClient.resolve_titles_detailed(titles) -> list[ResolvedTitle]`, preserving requested and canonical identity.
 
-- [ ] **Step 1: Write failing configuration and seed-decision tests**
+- [x] **Step 1: Write failing configuration and seed-decision tests**
 
 ```python
 def test_loads_animals_category_with_reviewed_scope():
@@ -250,7 +250,7 @@ def test_excludes_reviewed_non_dst_pages_before_detail_queueing():
     ]
 ```
 
-- [ ] **Step 2: Write a failing category-members continuation test**
+- [x] **Step 2: Write a failing category-members continuation test**
 
 ```python
 def test_lists_direct_category_members_with_continuation():
@@ -273,7 +273,7 @@ def test_resolves_requested_titles_to_canonical_page_identity():
     assert resolved[0].page_id == 56
 ```
 
-- [ ] **Step 3: Run the focused tests and verify RED**
+- [x] **Step 3: Run the focused tests and verify RED**
 
 Run:
 
@@ -283,7 +283,7 @@ python3 -m unittest tests.crawl_wiki.test_category_config tests.crawl_wiki.test_
 
 Expected: configuration/seed modules are missing and `MediaWikiClient` has no `list_category_members` method.
 
-- [ ] **Step 4: Add the reviewed Animals config and strict loader**
+- [x] **Step 4: Add the reviewed Animals config and strict loader**
 
 `data/config/wiki-categories/animals.json`:
 
@@ -323,7 +323,7 @@ def output_path(self) -> Path:
     return Path("data/crawled/fandom-categories") / self.key
 ```
 
-- [ ] **Step 5: Implement category membership pagination and deterministic seeds**
+- [x] **Step 5: Implement category membership pagination and deterministic seeds**
 
 Add this client method using the existing `_api` retry path:
 
@@ -361,7 +361,7 @@ and `redirects` arrays into an alias chain so every requested title maps to one
 canonical page. Keep `resolve_titles` backward-compatible by returning the
 canonical page dictionaries from the detailed method.
 
-- [ ] **Step 6: Run tests and commit Task 1**
+- [x] **Step 6: Run tests and commit Task 1**
 
 Run:
 

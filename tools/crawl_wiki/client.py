@@ -45,6 +45,16 @@ class DownloadResult:
     sha256: str
 
 
+@dataclass(frozen=True)
+class ResolvedTitle:
+    requested_title: str
+    page_id: int
+    namespace: int
+    canonical_title: str
+    canonical_url: str
+    page: Mapping[str, Any]
+
+
 class MediaWikiClient:
     def __init__(
         self,
@@ -237,6 +247,47 @@ class MediaWikiClient:
             )
         return pages, next_token
 
+    def list_category_members(
+        self, title: str, continuation: Optional[str] = None
+    ) -> Tuple[List[Dict[str, Any]], Optional[str]]:
+        if not isinstance(title, str) or not title.strip():
+            raise ValueError("category title must not be empty")
+        params: Dict[str, Any] = {
+            "action": "query",
+            "list": "categorymembers",
+            "cmtitle": title.strip(),
+            "cmtype": "page|subcat",
+            "cmlimit": "max",
+            "cmprop": "ids|title|type",
+        }
+        if continuation:
+            params["cmcontinue"] = continuation
+        response = self._api(params)
+        query = response.get("query")
+        members = (
+            query.get("categorymembers")
+            if isinstance(query, Mapping)
+            else None
+        )
+        if not isinstance(members, list) or not all(
+            isinstance(value, dict) for value in members
+        ):
+            raise ClientError(
+                "categorymembers response is invalid", retryable=False
+            )
+        continued = response.get("continue")
+        token = (
+            continued.get("cmcontinue")
+            if isinstance(continued, Mapping)
+            else None
+        )
+        if token is not None and not isinstance(token, str):
+            raise ClientError(
+                "category continuation token must be a string",
+                retryable=False,
+            )
+        return members, token
+
     def get_page(self, page_id: int) -> Dict[str, Any]:
         response = self._api(
             {
@@ -292,10 +343,15 @@ class MediaWikiClient:
     def resolve_titles(
         self, titles: Sequence[str]
     ) -> List[Dict[str, Any]]:
+        return [dict(value.page) for value in self.resolve_titles_detailed(titles)]
+
+    def resolve_titles_detailed(
+        self, titles: Sequence[str]
+    ) -> List[ResolvedTitle]:
         normalized = [title.strip() for title in titles]
         if any(not title for title in normalized):
             raise ValueError("page titles must not be empty")
-        pages: List[Dict[str, Any]] = []
+        results: List[ResolvedTitle] = []
         for start in range(0, len(normalized), 50):
             chunk = normalized[start : start + 50]
             response = self._api(
@@ -314,6 +370,7 @@ class MediaWikiClient:
                 raise ClientError(
                     "title response is missing query.pages", retryable=False
                 )
+            pages_by_title = {}
             for page in resolved:
                 if page.get("missing") is True:
                     continue
@@ -324,8 +381,57 @@ class MediaWikiClient:
                         "resolved page has invalid ID, namespace, or title",
                         retryable=False,
                     )
-                pages.append(page)
-        return pages
+                pages_by_title[page["title"]] = page
+
+            aliases = {}
+            for key in ("normalized", "redirects"):
+                values = query.get(key) if isinstance(query, Mapping) else None
+                if values is None:
+                    continue
+                if not isinstance(values, list) or not all(
+                    isinstance(value, Mapping)
+                    and isinstance(value.get("from"), str)
+                    and isinstance(value.get("to"), str)
+                    for value in values
+                ):
+                    raise ClientError(
+                        "title {} aliases are invalid".format(key),
+                        retryable=False,
+                    )
+                aliases.update(
+                    (value["from"], value["to"]) for value in values
+                )
+
+            for requested in chunk:
+                canonical = requested
+                visited = set()
+                while canonical in aliases:
+                    if canonical in visited:
+                        raise ClientError(
+                            "title aliases contain a cycle", retryable=False
+                        )
+                    visited.add(canonical)
+                    canonical = aliases[canonical]
+                page = pages_by_title.get(canonical)
+                if page is None:
+                    continue
+                title = page["title"]
+                encoded = urllib.parse.quote(
+                    title.replace(" ", "_"), safe="/:()_-'!,$*+.~"
+                )
+                results.append(
+                    ResolvedTitle(
+                        requested_title=requested,
+                        page_id=page["pageid"],
+                        namespace=page["ns"],
+                        canonical_title=title,
+                        canonical_url=urllib.parse.urljoin(
+                            self.base_url, "wiki/{}".format(encoded)
+                        ),
+                        page=dict(page),
+                    )
+                )
+        return results
 
     def get_image_info(self, title: str) -> Dict[str, Any]:
         response = self._api(

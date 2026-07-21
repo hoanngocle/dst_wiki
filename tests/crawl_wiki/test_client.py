@@ -74,6 +74,19 @@ class _TitleAPIOpener:
         )
 
 
+class _CategoryAPIOpener:
+    def __init__(self, payload):
+        self.payload = payload
+        self.queries = []
+
+    def open(self, request, timeout):
+        del timeout
+        self.queries.append(
+            urllib.parse.parse_qs(urllib.parse.urlsplit(request.full_url).query)
+        )
+        return _ByteResponse(self.payload)
+
+
 class _WikiHandler(BaseHTTPRequestHandler):
     def log_message(self, format, *args):
         del format, args
@@ -209,6 +222,61 @@ class WikiServer:
 
 
 class ClientTests(unittest.TestCase):
+    def test_lists_direct_category_members_with_continuation(self):
+        opener = _CategoryAPIOpener(
+            {
+                "query": {
+                    "categorymembers": [
+                        {"pageid": 1, "ns": 0, "title": "Beefalo"}
+                    ]
+                },
+                "continue": {"cmcontinue": "page|next", "continue": "-||"},
+            }
+        )
+        client = MediaWikiClient(
+            "https://dontstarve.fandom.com/",
+            delay=0,
+            opener=opener,
+        )
+
+        pages, token = client.list_category_members("Category:Animals")
+
+        self.assertEqual(pages[0]["title"], "Beefalo")
+        self.assertEqual(token, "page|next")
+        self.assertEqual(opener.queries[0]["cmtype"], ["page|subcat"])
+
+    def test_resolves_requested_redirect_to_canonical_page_identity(self):
+        opener = _CategoryAPIOpener(
+            {
+                "query": {
+                    "normalized": [
+                        {"from": "Old_Beefalo", "to": "Old Beefalo"}
+                    ],
+                    "redirects": [
+                        {"from": "Old Beefalo", "to": "Beefalo"}
+                    ],
+                    "pages": [
+                        {"pageid": 56, "ns": 0, "title": "Beefalo"}
+                    ],
+                }
+            }
+        )
+        client = MediaWikiClient(
+            "https://dontstarve.fandom.com/",
+            delay=0,
+            opener=opener,
+        )
+
+        resolved = client.resolve_titles_detailed(["Old_Beefalo"])
+
+        self.assertEqual(resolved[0].requested_title, "Old_Beefalo")
+        self.assertEqual(resolved[0].canonical_title, "Beefalo")
+        self.assertEqual(resolved[0].page_id, 56)
+        self.assertEqual(
+            resolved[0].canonical_url,
+            "https://dontstarve.fandom.com/wiki/Beefalo",
+        )
+
     def test_retries_remote_disconnected_api_request(self):
         opener = _DisconnectOnceOpener(
             {
