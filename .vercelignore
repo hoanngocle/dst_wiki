@@ -1,0 +1,3 @@
+# Local crawler state and audit database are not runtime dependencies.
+data/crawled/
+data/generated/wiki.sqlite
