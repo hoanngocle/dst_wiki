@@ -351,6 +351,54 @@ class CategoryConfigTests(unittest.TestCase):
         )
         self.assertEqual(maintenance.excluded_titles, ())
 
+    def test_loads_reviewed_batch_six_configs(self):
+        expected = {
+            "innocents": (30, 16, "mob", "Innocents"),
+            "items": (987, 681, "item", "Items"),
+        }
+
+        for key, values in expected.items():
+            with self.subTest(key=key):
+                direct, published, item_type, tag = values
+                config = load_category_config(key)
+                self.assertEqual(
+                    (
+                        config.expected_direct_pages,
+                        config.expected_published_pages,
+                    ),
+                    (direct, published),
+                )
+                self.assertEqual(config.item_type, item_type)
+                self.assertEqual(config.tags, (tag,))
+                self.assertEqual(config.game, "DST")
+
+        innocents = dict(load_category_config("innocents").excluded_titles)
+        self.assertEqual(
+            innocents["Bottlenose Ballphin"], "non_dst:shipwrecked"
+        )
+        self.assertEqual(innocents["Pog"], "non_dst:hamlet")
+        self.assertNotIn("Beefalo", innocents)
+        self.assertNotIn("Rabbit", innocents)
+
+        items = dict(load_category_config("items").excluded_titles)
+        self.assertEqual(items["Armor"], "non_item:overview")
+        self.assertEqual(items["Items"], "non_item:overview")
+        self.assertEqual(items["Runic Turf"], "non_item:category_mismatch")
+        self.assertEqual(items["Blue Moonlens"], "duplicate:canonical_redirect")
+        self.assertEqual(items["Old Bell"], "non_dst:reign_of_giants")
+        self.assertEqual(items["Wild Plains Turf"], "non_dst:hamlet")
+        self.assertEqual(items["Woodlegs' Keys"], "non_dst:shipwrecked")
+        for title in (
+            "Ashes",
+            "Barbed Helm",
+            "Beefalo Horn",
+            "Cookpot",
+            "Pig Skin",
+            "Thulecite Fragments",
+            "Walrus Tusk",
+        ):
+            self.assertNotIn(title, items)
+
 
 if __name__ == "__main__":
     unittest.main()

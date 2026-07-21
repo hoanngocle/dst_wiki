@@ -5,13 +5,15 @@ Registry máy đọc/ghi nằm tại `<git-common-dir>/category-crawler/`; file
 Trạng thái chỉ gồm `New`, `Doing`, `Done`: URL mới/`New` được lấy tiếp, còn
 `Doing` và `Done` phải skip network fetch.
 
-> **Live audit 2026-07-21:** 1.223 URL hợp lệ, 1.223 `Done`, 0 `New`, 0
+> **Live audit 2026-07-21:** 1.268 URL hợp lệ, 1.268 `Done`, 0 `New`, 0
 > `Doing`, 0 artifact lỗi. Toàn bộ URL đã duyệt và aggregate DST đã hoàn tất.
 
 ## Category queue
 
 | Category | Source | Direct | Child category | Excluded | Publish candidates | Registry Done | Status |
 |---|---|---:|---:|---:|---:|---:|---|
+| innocents | [Category:Innocents](https://dontstarve.fandom.com/wiki/Category:Innocents) | 30 | 0 | 14 | 16 | 16 | Done |
+| items | [Category:Items](https://dontstarve.fandom.com/wiki/Category:Items) | 987 | 32 | 306 | 681 | 681 | Done |
 | gameplay | [Category:Gameplay](https://dontstarve.fandom.com/wiki/Category:Gameplay) | 112 | 24 | 32 | 80 | 80 | Done |
 | gems | [Gems](https://dontstarve.fandom.com/wiki/Gems) | 0 | 0 | 1 | 0 | 0 | Skipped: article/disambiguation |
 | hats | [Category:Hats](https://dontstarve.fandom.com/wiki/Category:Hats) | 63 | 0 | 23 | 40 | 40 | Done |
@@ -108,6 +110,8 @@ dedupe. Bốn URL mới Bridge, Charlie, Fire, Freezing cùng xuất hiện ở 
 ngược về article đó. Bảy output hoàn tất với 0 failure/pending; registry toàn cục
 tăng lên 1.223 URL và tất cả đều `Done`.
 
+Batch 6 có 1.017 direct namespace-0 memberships từ `Innocents` và `Items`. Sau review DST-only còn 697 accepted memberships tương ứng 692 canonical URL: 647 URL đã `Done` được reuse, 45 URL mới đã crawl và năm membership trùng chéo được registry dedupe. `Items` đi hết ba trang API; 32 Category con và một User page chỉ được ghi audit, không crawl đệ quy. Output `Innocents` hoàn tất 16 page/15 image; `Items` hoàn tất 681 page/598 image, đều 0 failure/pending. Registry toàn cục tăng lên 1.268 URL và tất cả đều `Done`.
+
 Giữ đủ 14 Category vì chúng bổ sung tag phân loại. `Craftable Items`, `Craftable
 Structures`, `Events` và `Food` mang phần lớn URL riêng. `Cooking Filter`,
 `Cooling`, `Fight Tab`, `Fishes` không có URL riêng so với các Category khác
@@ -125,6 +129,43 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
   overview/group; bỏ `Category:Spiders` vì không crawl đệ quy.
 
 ## Direct member review
+
+### Category:Innocents
+
+- Keep (16): Bee, Beefalo, Birds, Bunnyman, Butterfly, Catcoon, Dust Moth,
+  Glommer, Moleworm, Moonrock Pengull, Mosling, Pengull, Pig, Rabbit, Tallbird,
+  Volt Goat; toàn bộ đã `Done` trước batch.
+- Exclude (14): sáu mob Shipwrecked-only và tám mob Hamlet-only. Mapping đầy đủ
+  nằm trong `data/config/wiki-categories/innocents.json`.
+- Không có Category con hay namespace ngoài 0.
+
+### Category:Items
+
+- Đi hết ba trang API: 987 direct namespace-0 page, 32 Category con và
+  `User:Bluegeist/Sandbox5`.
+- Keep (681): 636 URL đã `Done`; 45 URL DST mới gồm tám item base/shared, 27
+  item The Forge và mười item The Gorge.
+- Exclude (306): 139 Shipwrecked-only, 95 Hamlet-only, 12 Don't Starve-only,
+  hai Reign of Giants-only, mười redirect alias, 30 overview/group page và 15
+  category mismatch. Mapping đầy đủ nằm trong
+  `data/config/wiki-categories/items.json`.
+- 45 URL mới: Ashes, Barbed Helm, Beefalo Horn, Blacksmith's Edge, Blossomed
+  Wreath, Broken Shell, Bunny Puff, Clairvoyant Crown, Cookpot, Crab Trap,
+  Crystal Tiara, Darts, Feathered Reed Tunic, Feathered Wreath, Flour, Flower
+  Headband, Hearthsfire Crystals, Infernal Staff, Iron Key Gorge, Jagged Grand
+  Armor, Jagged Wood Armor, Large Casserole Dish, Large Cookpot, Living Staff,
+  Molten Darts, Nox Helm, Petrifying Tome, Pig Skin, Pith Pike, Reed Tunic,
+  Resplendent Nox Helm, Slaughter Tools, Slurper Pelt, Small Casserole Dish,
+  Spiral Spear, Steadfast Grand Armor, Steadfast Stone Armor, Stone Splint Mail,
+  Syrup Pot, Thulecite Fragments, Tome of Beckoning, Tree Tapping Kit, Walrus
+  Tusk, Wood Armor, Woven Garland.
+- Bỏ 32 Category con, không đệ quy: Armor, Boss Dropped Items,
+  Character-Specific, Craftable Items, Crock Pot Recipes, Dairy, Eggs,
+  Equipable Items, Fertilizer, Fishes, Food, Fruits, Fuel, Hats, Limited use,
+  Meats, Melee Weapons, Minerals, Mob Dropped Items, Mob Spawning Entities,
+  Monster Foods, Non-Renewable, Perishables, Portable Crock Pot Recipes,
+  Ranged Weapons, Science, Sweeteners, Turf Items, Unstealable Object,
+  Vegetables, Warmth, Weapons.
 
 ### Category:Gameplay
 
@@ -796,28 +837,28 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
 | [A New Reign](https://dontstarve.fandom.com/wiki/A_New_Reign) | Done | dont_starve_together |
 | [Abandoned Junk](https://dontstarve.fandom.com/wiki/Abandoned_Junk) | Done | dont_starve_together, from_beyond |
 | [Abigail](https://dontstarve.fandom.com/wiki/Abigail) | Done | followers |
-| [Abigail's Flower](https://dontstarve.fandom.com/wiki/Abigail's_Flower) | Done | craftable_items, indestructible_object |
+| [Abigail's Flower](https://dontstarve.fandom.com/wiki/Abigail's_Flower) | Done | craftable_items, indestructible_object, items |
 | [Abyss](https://dontstarve.fandom.com/wiki/Abyss) | Done | gameplay |
 | [Accomploshrine](https://dontstarve.fandom.com/wiki/Accomploshrine) | Done | craftable_structures |
-| [Accursed Trinket](https://dontstarve.fandom.com/wiki/Accursed_Trinket) | Done | dont_starve_together |
+| [Accursed Trinket](https://dontstarve.fandom.com/wiki/Accursed_Trinket) | Done | dont_starve_together, items |
 | [Acid Rain](https://dontstarve.fandom.com/wiki/Acid_Rain) | Done | dont_starve_together, from_beyond, gameplay, health_loss |
-| [Ageless Watch](https://dontstarve.fandom.com/wiki/Ageless_Watch) | Done | craftable_items, dont_starve_together |
-| [Alarming Clock](https://dontstarve.fandom.com/wiki/Alarming_Clock) | Done | craftable_items, dont_starve_together, equipable_items |
+| [Ageless Watch](https://dontstarve.fandom.com/wiki/Ageless_Watch) | Done | craftable_items, dont_starve_together, items |
+| [Alarming Clock](https://dontstarve.fandom.com/wiki/Alarming_Clock) | Done | craftable_items, dont_starve_together, equipable_items, items |
 | [Alchemy Engine](https://dontstarve.fandom.com/wiki/Alchemy_Engine) | Done | craftable_structures |
-| [Amberosia](https://dontstarve.fandom.com/wiki/Amberosia) | Done | crock_pot_recipes, dont_starve_together |
+| [Amberosia](https://dontstarve.fandom.com/wiki/Amberosia) | Done | crock_pot_recipes, dont_starve_together, items |
 | [An Eye for An Eye](https://dontstarve.fandom.com/wiki/An_Eye_for_An_Eye) | Done | dont_starve_together |
-| [Anchor](https://dontstarve.fandom.com/wiki/Anchor) | Done | craftable_items, craftable_structures, dont_starve_together |
+| [Anchor](https://dontstarve.fandom.com/wiki/Anchor) | Done | craftable_items, craftable_structures, dont_starve_together, items |
 | [Ancient Anchor](https://dontstarve.fandom.com/wiki/Ancient_Anchor) | Done | dont_starve_together, events, indestructible_object |
 | [Ancient Archive](https://dontstarve.fandom.com/wiki/Ancient_Archive) | Done | dont_starve_together |
 | [Ancient Beacon](https://dontstarve.fandom.com/wiki/Ancient_Beacon) | Done | a_new_reign, dont_starve_together, indestructible_object |
-| [Ancient Brickwork](https://dontstarve.fandom.com/wiki/Ancient_Brickwork) | Done | craftable_items, dont_starve_together |
+| [Ancient Brickwork](https://dontstarve.fandom.com/wiki/Ancient_Brickwork) | Done | craftable_items, dont_starve_together, items |
 | [Ancient Chest](https://dontstarve.fandom.com/wiki/Ancient_Chest) | Done | dont_starve_together, indestructible_object |
 | [Ancient Fence](https://dontstarve.fandom.com/wiki/Ancient_Fence) | Done | a_new_reign, dont_starve_together, indestructible_object |
-| [Ancient Flooring](https://dontstarve.fandom.com/wiki/Ancient_Flooring) | Done | craftable_items, dont_starve_together |
+| [Ancient Flooring](https://dontstarve.fandom.com/wiki/Ancient_Flooring) | Done | craftable_items, dont_starve_together, items |
 | [Ancient Gateway](https://dontstarve.fandom.com/wiki/Ancient_Gateway) | Done | a_new_reign, dont_starve_together, indestructible_object |
 | [Ancient Guard Post](https://dontstarve.fandom.com/wiki/Ancient_Guard_Post) | Done | dont_starve_together, indestructible_object |
 | [Ancient Guardian](https://dontstarve.fandom.com/wiki/Ancient_Guardian) | Done | boss_monsters, hostile_creatures |
-| [Ancient Key](https://dontstarve.fandom.com/wiki/Ancient_Key) | Done | a_new_reign, boss_dropped_items, dont_starve_together |
+| [Ancient Key](https://dontstarve.fandom.com/wiki/Ancient_Key) | Done | a_new_reign, boss_dropped_items, dont_starve_together, items |
 | [Ancient Kiln](https://dontstarve.fandom.com/wiki/Ancient_Kiln) | Done | dont_starve_together |
 | [Ancient Lunarune Stone](https://dontstarve.fandom.com/wiki/Ancient_Lunarune_Stone) | Done | dont_starve_together |
 | [Ancient Moon Statue](https://dontstarve.fandom.com/wiki/Ancient_Moon_Statue) | Done | dont_starve_together |
@@ -827,12 +868,12 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
 | [Ancient Pseudoscience Station](https://dontstarve.fandom.com/wiki/Ancient_Pseudoscience_Station) | Done | ancient_tab, crafting_stations |
 | [Ancient Sentrypede](https://dontstarve.fandom.com/wiki/Ancient_Sentrypede) | Done | dont_starve_together, hostile_creatures |
 | [Ancient Statue](https://dontstarve.fandom.com/wiki/Ancient_Statue) | Done | a_new_reign, dont_starve_together, indestructible_object |
-| [Ancient Stonework](https://dontstarve.fandom.com/wiki/Ancient_Stonework) | Done | craftable_items, dont_starve_together |
-| [Ancient Tilework](https://dontstarve.fandom.com/wiki/Ancient_Tilework) | Done | craftable_items, dont_starve_together |
+| [Ancient Stonework](https://dontstarve.fandom.com/wiki/Ancient_Stonework) | Done | craftable_items, dont_starve_together, items |
+| [Ancient Tilework](https://dontstarve.fandom.com/wiki/Ancient_Tilework) | Done | craftable_items, dont_starve_together, items |
 | [Anenemy](https://dontstarve.fandom.com/wiki/Anenemy) | Done | dont_starve_together |
 | [Antlion](https://dontstarve.fandom.com/wiki/Antlion) | Done | a_new_reign, boss_monsters, dont_starve_together, health_loss, hostile_creatures |
-| [Arboretum Experiment](https://dontstarve.fandom.com/wiki/Arboretum_Experiment) | Done | craftable_items, dont_starve_together, events, fuel |
-| [Archaic Boat](https://dontstarve.fandom.com/wiki/Archaic_Boat) | Done | dont_starve_together, from_beyond |
+| [Arboretum Experiment](https://dontstarve.fandom.com/wiki/Arboretum_Experiment) | Done | craftable_items, dont_starve_together, events, fuel, items |
+| [Archaic Boat](https://dontstarve.fandom.com/wiki/Archaic_Boat) | Done | dont_starve_together, from_beyond, items |
 | [Archive Chandelier](https://dontstarve.fandom.com/wiki/Archive_Chandelier) | Done | dont_starve_together |
 | [Archive Orchestrina](https://dontstarve.fandom.com/wiki/Archive_Orchestrina) | Done | dont_starve_together |
 | [Archive Switch](https://dontstarve.fandom.com/wiki/Archive_Switch) | Done | dont_starve_together, indestructible_object |
@@ -840,557 +881,581 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
 | [Armor](https://dontstarve.fandom.com/wiki/Armor) | Done | gameplay |
 | [Armored Bearger](https://dontstarve.fandom.com/wiki/Armored_Bearger) | Done | boss_monsters, dont_starve_together, from_beyond, hostile_creatures |
 | [Armour Filter](https://dontstarve.fandom.com/wiki/Armour_Filter) | Done | dont_starve_together |
-| [Art?](https://dontstarve.fandom.com/wiki/Art%3F) | Done | craftable_items, decorations_filter, dont_starve_together, from_beyond |
-| [Asparagazpacho](https://dontstarve.fandom.com/wiki/Asparagazpacho) | Done | dont_starve_together |
-| [Asparagus](https://dontstarve.fandom.com/wiki/Asparagus) | Done | dont_starve_together, food, healing |
-| [Asparagus Soup](https://dontstarve.fandom.com/wiki/Asparagus_Soup) | Done | crock_pot_recipes, dont_starve_together, healing |
-| [Astral Detector](https://dontstarve.fandom.com/wiki/Astral_Detector) | Done | craftable_items, dont_starve_together |
-| [Astroggles](https://dontstarve.fandom.com/wiki/Astroggles) | Done | craftable_items, dont_starve_together, equipable_items, hats |
+| [Art?](https://dontstarve.fandom.com/wiki/Art%3F) | Done | craftable_items, decorations_filter, dont_starve_together, from_beyond, items |
+| [Ashes](https://dontstarve.fandom.com/wiki/Ashes) | Done | items |
+| [Asparagazpacho](https://dontstarve.fandom.com/wiki/Asparagazpacho) | Done | dont_starve_together, items |
+| [Asparagus](https://dontstarve.fandom.com/wiki/Asparagus) | Done | dont_starve_together, food, healing, items |
+| [Asparagus Soup](https://dontstarve.fandom.com/wiki/Asparagus_Soup) | Done | crock_pot_recipes, dont_starve_together, healing, items |
+| [Astral Detector](https://dontstarve.fandom.com/wiki/Astral_Detector) | Done | craftable_items, dont_starve_together, items |
+| [Astroggles](https://dontstarve.fandom.com/wiki/Astroggles) | Done | craftable_items, dont_starve_together, equipable_items, hats, items |
 | [Atrium](https://dontstarve.fandom.com/wiki/Atrium) | Done | a_new_reign, dont_starve_together |
-| [Axe](https://dontstarve.fandom.com/wiki/Axe) | Done | celestial_tab, craftable_items, dont_starve_together, equipable_items |
+| [Axe](https://dontstarve.fandom.com/wiki/Axe) | Done | celestial_tab, craftable_items, dont_starve_together, equipable_items, items |
 | [Baby Spider](https://dontstarve.fandom.com/wiki/Baby_Spider) | Done | dont_starve_together |
-| [Backpack](https://dontstarve.fandom.com/wiki/Backpack) | Done | backpacks, containers, craftable_items, equipable_items |
-| [Backstep Watch](https://dontstarve.fandom.com/wiki/Backstep_Watch) | Done | craftable_items, dont_starve_together |
-| [Backtrek Watch](https://dontstarve.fandom.com/wiki/Backtrek_Watch) | Done | craftable_items, dont_starve_together |
-| [Bacon and Eggs](https://dontstarve.fandom.com/wiki/Bacon_and_Eggs) | Done | craftable_items, crock_pot_recipes, eggs, healing |
+| [Backpack](https://dontstarve.fandom.com/wiki/Backpack) | Done | backpacks, containers, craftable_items, equipable_items, items |
+| [Backstep Watch](https://dontstarve.fandom.com/wiki/Backstep_Watch) | Done | craftable_items, dont_starve_together, items |
+| [Backtrek Watch](https://dontstarve.fandom.com/wiki/Backtrek_Watch) | Done | craftable_items, dont_starve_together, items |
+| [Bacon and Eggs](https://dontstarve.fandom.com/wiki/Bacon_and_Eggs) | Done | craftable_items, crock_pot_recipes, eggs, healing, items |
 | [Balloonomancy Tab](https://dontstarve.fandom.com/wiki/Balloonomancy_Tab) | Done | dont_starve_together |
-| [Banana](https://dontstarve.fandom.com/wiki/Banana) | Done | dont_starve_together, food, fruits, healing |
+| [Banana](https://dontstarve.fandom.com/wiki/Banana) | Done | dont_starve_together, food, fruits, healing, items |
 | [Banana Bush](https://dontstarve.fandom.com/wiki/Banana_Bush) | Done | dont_starve_together |
-| [Banana Pop](https://dontstarve.fandom.com/wiki/Banana_Pop) | Done | cooling, crock_pot_recipes, dont_starve_together, food, healing |
-| [Banana Shake](https://dontstarve.fandom.com/wiki/Banana_Shake) | Done | crock_pot_recipes, dont_starve_together, food, healing |
-| [Barnacle Linguine](https://dontstarve.fandom.com/wiki/Barnacle_Linguine) | Done | crock_pot_recipes, dont_starve_together, food, healing |
-| [Barnacle Nigiri](https://dontstarve.fandom.com/wiki/Barnacle_Nigiri) | Done | dont_starve_together |
-| [Barnacle Pita](https://dontstarve.fandom.com/wiki/Barnacle_Pita) | Done | crock_pot_recipes, dont_starve_together, food, healing |
+| [Banana Pop](https://dontstarve.fandom.com/wiki/Banana_Pop) | Done | cooling, crock_pot_recipes, dont_starve_together, food, healing, items |
+| [Banana Shake](https://dontstarve.fandom.com/wiki/Banana_Shake) | Done | crock_pot_recipes, dont_starve_together, food, healing, items |
+| [Barbed Helm](https://dontstarve.fandom.com/wiki/Barbed_Helm) | Done | items |
+| [Barnacle Linguine](https://dontstarve.fandom.com/wiki/Barnacle_Linguine) | Done | crock_pot_recipes, dont_starve_together, food, healing, items |
+| [Barnacle Nigiri](https://dontstarve.fandom.com/wiki/Barnacle_Nigiri) | Done | dont_starve_together, items |
+| [Barnacle Pita](https://dontstarve.fandom.com/wiki/Barnacle_Pita) | Done | crock_pot_recipes, dont_starve_together, food, healing, items |
 | [Barnacles](https://dontstarve.fandom.com/wiki/Barnacles) | Done | dont_starve_together, food |
-| [Bat Bat](https://dontstarve.fandom.com/wiki/Bat_Bat) | Done | craftable_items, equipable_items, healing |
+| [Bat Bat](https://dontstarve.fandom.com/wiki/Bat_Bat) | Done | craftable_items, equipable_items, healing, items |
 | [Bat Cave](https://dontstarve.fandom.com/wiki/Bat_Cave) | Done | dont_starve_together, indestructible_object |
-| [Bath Bomb](https://dontstarve.fandom.com/wiki/Bath_Bomb) | Done | celestial_filter, craftable_items, dont_starve_together |
+| [Bath Bomb](https://dontstarve.fandom.com/wiki/Bath_Bomb) | Done | celestial_filter, craftable_items, dont_starve_together, items |
 | [Batilisk](https://dontstarve.fandom.com/wiki/Batilisk) | Done | cave_creatures, flying_creatures, hostile_creatures |
-| [Batilisk Wing](https://dontstarve.fandom.com/wiki/Batilisk_Wing) | Done | food, healing |
-| [Battle Call Canister](https://dontstarve.fandom.com/wiki/Battle_Call_Canister) | Done | craftable_items, dont_starve_together |
-| [Battle Helm](https://dontstarve.fandom.com/wiki/Battle_Helm) | Done | armour_filter, craftable_items, dont_starve_together, equipable_items, fight_tab, hats |
-| [Battle Paddle](https://dontstarve.fandom.com/wiki/Battle_Paddle) | Done | dont_starve_together, equipable_items |
-| [Battle Rönd](https://dontstarve.fandom.com/wiki/Battle_R%C3%B6nd) | Done | armour_filter, craftable_items, dont_starve_together |
+| [Batilisk Wing](https://dontstarve.fandom.com/wiki/Batilisk_Wing) | Done | food, healing, items |
+| [Battle Call Canister](https://dontstarve.fandom.com/wiki/Battle_Call_Canister) | Done | craftable_items, dont_starve_together, items |
+| [Battle Helm](https://dontstarve.fandom.com/wiki/Battle_Helm) | Done | armour_filter, craftable_items, dont_starve_together, equipable_items, fight_tab, hats, items |
+| [Battle Paddle](https://dontstarve.fandom.com/wiki/Battle_Paddle) | Done | dont_starve_together, equipable_items, items |
+| [Battle Rönd](https://dontstarve.fandom.com/wiki/Battle_R%C3%B6nd) | Done | armour_filter, craftable_items, dont_starve_together, items |
 | [Battle Songs](https://dontstarve.fandom.com/wiki/Battle_Songs) | Done | dont_starve_together |
-| [Battle Spear](https://dontstarve.fandom.com/wiki/Battle_Spear) | Done | craftable_items, dont_starve_together, equipable_items, fight_tab |
+| [Battle Spear](https://dontstarve.fandom.com/wiki/Battle_Spear) | Done | craftable_items, dont_starve_together, equipable_items, fight_tab, items |
 | [Battlemaster Pugna](https://dontstarve.fandom.com/wiki/Battlemaster_Pugna) | Done | dont_starve_together, events |
-| [Beard Hair](https://dontstarve.fandom.com/wiki/Beard_Hair) | Done | craftable_items, fuel, infobox_missing_crafting_description |
-| [Beard Hair Rug](https://dontstarve.fandom.com/wiki/Beard_Hair_Rug) | Done | craftable_items, dont_starve_together, fuel |
+| [Beard Hair](https://dontstarve.fandom.com/wiki/Beard_Hair) | Done | craftable_items, fuel, infobox_missing_crafting_description, items |
+| [Beard Hair Rug](https://dontstarve.fandom.com/wiki/Beard_Hair_Rug) | Done | craftable_items, dont_starve_together, fuel, items |
 | [Beards](https://dontstarve.fandom.com/wiki/Beards) | Done | dont_starve_together |
 | [Bearger](https://dontstarve.fandom.com/wiki/Bearger) | Done | boss_monsters, dont_starve_together, hostile_creatures |
-| [Bed Roll](https://dontstarve.fandom.com/wiki/Bed_Roll) | Done | craftable_items, fuel, healing |
-| [Bee](https://dontstarve.fandom.com/wiki/Bee) | Done | animals, flying_creatures, hostile_creatures |
+| [Bed Roll](https://dontstarve.fandom.com/wiki/Bed_Roll) | Done | craftable_items, fuel, healing, items |
+| [Bee](https://dontstarve.fandom.com/wiki/Bee) | Done | animals, flying_creatures, hostile_creatures, innocents, items |
 | [Bee Box](https://dontstarve.fandom.com/wiki/Bee_Box) | Done | craftable_structures, food_gardening_filter, food_tab |
-| [Bee Mine](https://dontstarve.fandom.com/wiki/Bee_Mine) | Done | craftable_items, fight_tab |
+| [Bee Mine](https://dontstarve.fandom.com/wiki/Bee_Mine) | Done | craftable_items, fight_tab, items |
 | [Bee Queen](https://dontstarve.fandom.com/wiki/Bee_Queen) | Done | a_new_reign, boss_monsters, dont_starve_together, flying_creatures, hostile_creatures |
-| [Bee Queen Crown](https://dontstarve.fandom.com/wiki/Bee_Queen_Crown) | Done | a_new_reign, boss_dropped_items, dont_starve_together, equipable_items, hats |
-| [Beefalo](https://dontstarve.fandom.com/wiki/Beefalo) | Done | animals, followers, hostile_creatures |
-| [Beefalo Bell](https://dontstarve.fandom.com/wiki/Beefalo_Bell) | Done | craftable_items, dont_starve_together |
-| [Beefalo Gloom Bell](https://dontstarve.fandom.com/wiki/Beefalo_Gloom_Bell) | Done | craftable_items, dont_starve_together, from_beyond |
+| [Bee Queen Crown](https://dontstarve.fandom.com/wiki/Bee_Queen_Crown) | Done | a_new_reign, boss_dropped_items, dont_starve_together, equipable_items, hats, items |
+| [Beefalo](https://dontstarve.fandom.com/wiki/Beefalo) | Done | animals, followers, hostile_creatures, innocents |
+| [Beefalo Bell](https://dontstarve.fandom.com/wiki/Beefalo_Bell) | Done | craftable_items, dont_starve_together, items |
+| [Beefalo Gloom Bell](https://dontstarve.fandom.com/wiki/Beefalo_Gloom_Bell) | Done | craftable_items, dont_starve_together, from_beyond, items |
 | [Beefalo Grooming Station](https://dontstarve.fandom.com/wiki/Beefalo_Grooming_Station) | Done | craftable_structures, decorations_filter, dont_starve_together |
-| [Beefalo Hat](https://dontstarve.fandom.com/wiki/Beefalo_Hat) | Done | clothing_filter, craftable_items, equipable_items, hats |
+| [Beefalo Hat](https://dontstarve.fandom.com/wiki/Beefalo_Hat) | Done | clothing_filter, craftable_items, equipable_items, hats, items |
+| [Beefalo Horn](https://dontstarve.fandom.com/wiki/Beefalo_Horn) | Done | items |
 | [Beefalo Riding Filter](https://dontstarve.fandom.com/wiki/Beefalo_Riding_Filter) | Done | dont_starve_together |
-| [Beefalo Treats](https://dontstarve.fandom.com/wiki/Beefalo_Treats) | Done | beefalo_foods, crock_pot_recipes, dont_starve_together |
-| [Beefalo Wool](https://dontstarve.fandom.com/wiki/Beefalo_Wool) | Done | craftable_items, fuel, infobox_missing_crafting_description |
-| [Beefy Greens](https://dontstarve.fandom.com/wiki/Beefy_Greens) | Done | crock_pot_recipes, dont_starve_together, food, healing |
-| [Beekeeper Hat](https://dontstarve.fandom.com/wiki/Beekeeper_Hat) | Done | armour_filter, craftable_items, equipable_items, hats |
-| [Beeswax](https://dontstarve.fandom.com/wiki/Beeswax) | Done | craftable_items |
+| [Beefalo Treats](https://dontstarve.fandom.com/wiki/Beefalo_Treats) | Done | beefalo_foods, crock_pot_recipes, dont_starve_together, items |
+| [Beefalo Wool](https://dontstarve.fandom.com/wiki/Beefalo_Wool) | Done | craftable_items, fuel, infobox_missing_crafting_description, items |
+| [Beefy Greens](https://dontstarve.fandom.com/wiki/Beefy_Greens) | Done | crock_pot_recipes, dont_starve_together, food, healing, items |
+| [Beekeeper Hat](https://dontstarve.fandom.com/wiki/Beekeeper_Hat) | Done | armour_filter, craftable_items, equipable_items, hats, items |
+| [Beeswax](https://dontstarve.fandom.com/wiki/Beeswax) | Done | craftable_items, items |
 | [Belongings](https://dontstarve.fandom.com/wiki/Belongings) | Done | dont_starve_together |
-| [Belt of Hunger](https://dontstarve.fandom.com/wiki/Belt_of_Hunger) | Done | craftable_items, equipable_items |
+| [Belt of Hunger](https://dontstarve.fandom.com/wiki/Belt_of_Hunger) | Done | craftable_items, equipable_items, items |
 | [Benevolent Rabbit King](https://dontstarve.fandom.com/wiki/Benevolent_Rabbit_King) | Done | crafting_stations, dont_starve_together, from_beyond, hostile_creatures |
 | [Bernie](https://dontstarve.fandom.com/wiki/Bernie) | Done | dont_starve_together, equipable_items |
-| [Berries](https://dontstarve.fandom.com/wiki/Berries) | Done | food, healing |
-| [Berry Bush](https://dontstarve.fandom.com/wiki/Berry_Bush) | Done | fuel |
+| [Berries](https://dontstarve.fandom.com/wiki/Berries) | Done | food, healing, items |
+| [Berry Bush](https://dontstarve.fandom.com/wiki/Berry_Bush) | Done | fuel, items |
 | [Billy](https://dontstarve.fandom.com/wiki/Billy) | Done | dont_starve_together, events |
-| [Bio Data](https://dontstarve.fandom.com/wiki/Bio_Data) | Done | dont_starve_together |
-| [Bio Scanalyzer](https://dontstarve.fandom.com/wiki/Bio_Scanalyzer) | Done | craftable_items, dont_starve_together |
+| [Bio Data](https://dontstarve.fandom.com/wiki/Bio_Data) | Done | dont_starve_together, items |
+| [Bio Scanalyzer](https://dontstarve.fandom.com/wiki/Bio_Scanalyzer) | Done | craftable_items, dont_starve_together, items |
 | [Biomes](https://dontstarve.fandom.com/wiki/Biomes) | Done | gameplay |
-| [Birchnut](https://dontstarve.fandom.com/wiki/Birchnut) | Done | dont_starve_together, food, healing |
+| [Birchnut](https://dontstarve.fandom.com/wiki/Birchnut) | Done | dont_starve_together, food, healing, items |
 | [Birchnut Tree](https://dontstarve.fandom.com/wiki/Birchnut_Tree) | Done | dont_starve_together |
 | [Birchnutter](https://dontstarve.fandom.com/wiki/Birchnutter) | Done | dont_starve_together, hostile_creatures |
-| [Bird Trap](https://dontstarve.fandom.com/wiki/Bird_Trap) | Done | craftable_items, food_gardening_filter |
+| [Bird Trap](https://dontstarve.fandom.com/wiki/Bird_Trap) | Done | craftable_items, food_gardening_filter, items |
 | [Birdcage](https://dontstarve.fandom.com/wiki/Birdcage) | Done | craftable_structures, food_gardening_filter |
-| [Birds](https://dontstarve.fandom.com/wiki/Birds) | Done | a_new_reign, birds, flying_creatures |
-| [Black Flag](https://dontstarve.fandom.com/wiki/Black_Flag) | Done | dont_starve_together |
-| [Blood Shot](https://dontstarve.fandom.com/wiki/Blood_Shot) | Done | craftable_items, dont_starve_together, healing |
+| [Birds](https://dontstarve.fandom.com/wiki/Birds) | Done | a_new_reign, birds, flying_creatures, innocents, items |
+| [Black Flag](https://dontstarve.fandom.com/wiki/Black_Flag) | Done | dont_starve_together, items |
+| [Blacksmith's Edge](https://dontstarve.fandom.com/wiki/Blacksmith's_Edge) | Done | items |
+| [Blood Shot](https://dontstarve.fandom.com/wiki/Blood_Shot) | Done | craftable_items, dont_starve_together, healing, items |
+| [Blossomed Wreath](https://dontstarve.fandom.com/wiki/Blossomed_Wreath) | Done | items |
 | [Blue Cap](https://dontstarve.fandom.com/wiki/Blue_Cap) | Done | boss_dropped_items, food, healing, health_loss |
-| [Blue Gem](https://dontstarve.fandom.com/wiki/Blue_Gem) | Done | boss_dropped_items, craftable_items, infobox_missing_crafting_description |
-| [Blueprint](https://dontstarve.fandom.com/wiki/Blueprint) | Done | a_new_reign, ancient_tier_1, boss_dropped_items, craftable_items, dont_starve_together, fuel, infobox_missing_crafting_description |
-| [Boards](https://dontstarve.fandom.com/wiki/Boards) | Done | craftable_items, fuel |
+| [Blue Gem](https://dontstarve.fandom.com/wiki/Blue_Gem) | Done | boss_dropped_items, craftable_items, infobox_missing_crafting_description, items |
+| [Blueprint](https://dontstarve.fandom.com/wiki/Blueprint) | Done | a_new_reign, ancient_tier_1, boss_dropped_items, craftable_items, dont_starve_together, fuel, infobox_missing_crafting_description, items |
+| [Boards](https://dontstarve.fandom.com/wiki/Boards) | Done | craftable_items, fuel, items |
 | [Boarilla](https://dontstarve.fandom.com/wiki/Boarilla) | Done | dont_starve_together, events, hostile_creatures |
-| [Boat](https://dontstarve.fandom.com/wiki/Boat) | Done | craftable_items, craftable_structures, dont_starve_together |
+| [Boat](https://dontstarve.fandom.com/wiki/Boat) | Done | craftable_items, craftable_structures, dont_starve_together, items |
 | [Boat Fragment](https://dontstarve.fandom.com/wiki/Boat_Fragment) | Done | dont_starve_together |
-| [Boat Patch](https://dontstarve.fandom.com/wiki/Boat_Patch) | Done | craftable_items, dont_starve_together |
-| [Bone Armor](https://dontstarve.fandom.com/wiki/Bone_Armor) | Done | a_new_reign, boss_dropped_items, dont_starve_together, equipable_items |
-| [Bone Bouillon](https://dontstarve.fandom.com/wiki/Bone_Bouillon) | Done | dont_starve_together |
-| [Bone Helm](https://dontstarve.fandom.com/wiki/Bone_Helm) | Done | a_new_reign, boss_dropped_items, dont_starve_together, equipable_items, hats |
-| [Bone Shards](https://dontstarve.fandom.com/wiki/Bone_Shards) | Done | craftable_items, infobox_missing_crafting_description |
+| [Boat Patch](https://dontstarve.fandom.com/wiki/Boat_Patch) | Done | craftable_items, dont_starve_together, items |
+| [Bone Armor](https://dontstarve.fandom.com/wiki/Bone_Armor) | Done | a_new_reign, boss_dropped_items, dont_starve_together, equipable_items, items |
+| [Bone Bouillon](https://dontstarve.fandom.com/wiki/Bone_Bouillon) | Done | dont_starve_together, items |
+| [Bone Helm](https://dontstarve.fandom.com/wiki/Bone_Helm) | Done | a_new_reign, boss_dropped_items, dont_starve_together, equipable_items, hats, items |
+| [Bone Shards](https://dontstarve.fandom.com/wiki/Bone_Shards) | Done | craftable_items, infobox_missing_crafting_description, items |
 | [Bones](https://dontstarve.fandom.com/wiki/Bones) | Done | indestructible_object |
 | [Bookcase](https://dontstarve.fandom.com/wiki/Bookcase) | Done | craftable_structures, dont_starve_together |
-| [Boomerang](https://dontstarve.fandom.com/wiki/Boomerang) | Done | craftable_items, equipable_items, fight_tab |
-| [Booster Shot](https://dontstarve.fandom.com/wiki/Booster_Shot) | Done | craftable_items, dont_starve_together, healing |
-| [Bootleg Getaway](https://dontstarve.fandom.com/wiki/Bootleg_Getaway) | Done | dont_starve_together |
+| [Boomerang](https://dontstarve.fandom.com/wiki/Boomerang) | Done | craftable_items, equipable_items, fight_tab, items |
+| [Booster Shot](https://dontstarve.fandom.com/wiki/Booster_Shot) | Done | craftable_items, dont_starve_together, healing, items |
+| [Bootleg Getaway](https://dontstarve.fandom.com/wiki/Bootleg_Getaway) | Done | dont_starve_together, items |
 | [Bottle Exchange Filter](https://dontstarve.fandom.com/wiki/Bottle_Exchange_Filter) | Done | dont_starve_together |
 | [Boulder](https://dontstarve.fandom.com/wiki/Boulder) | Done | a_new_reign |
-| [Bramble Husk](https://dontstarve.fandom.com/wiki/Bramble_Husk) | Done | armour_filter, craftable_items, dont_starve_together, equipable_items, fuel |
-| [Bramble Trap](https://dontstarve.fandom.com/wiki/Bramble_Trap) | Done | craftable_items, dont_starve_together, health_loss |
-| [Brambleshade Armor](https://dontstarve.fandom.com/wiki/Brambleshade_Armor) | Done | craftable_items, dont_starve_together, from_beyond |
-| [Breakfast Skillet](https://dontstarve.fandom.com/wiki/Breakfast_Skillet) | Done | crock_pot_recipes, dont_starve_together, food, healing |
-| [Breezy Vest](https://dontstarve.fandom.com/wiki/Breezy_Vest) | Done | craftable_items, equipable_items |
+| [Bramble Husk](https://dontstarve.fandom.com/wiki/Bramble_Husk) | Done | armour_filter, craftable_items, dont_starve_together, equipable_items, fuel, items |
+| [Bramble Trap](https://dontstarve.fandom.com/wiki/Bramble_Trap) | Done | craftable_items, dont_starve_together, health_loss, items |
+| [Brambleshade Armor](https://dontstarve.fandom.com/wiki/Brambleshade_Armor) | Done | craftable_items, dont_starve_together, from_beyond, items |
+| [Breakfast Skillet](https://dontstarve.fandom.com/wiki/Breakfast_Skillet) | Done | crock_pot_recipes, dont_starve_together, food, healing, items |
+| [Breezy Vest](https://dontstarve.fandom.com/wiki/Breezy_Vest) | Done | craftable_items, equipable_items, items |
 | [Briar Wolf](https://dontstarve.fandom.com/wiki/Briar_Wolf) | Done | dont_starve_together |
 | [Bridge](https://dontstarve.fandom.com/wiki/Bridge) | Done | gameplay, indestructible_object |
 | [Bright-Eyed Frog](https://dontstarve.fandom.com/wiki/Bright-Eyed_Frog) | Done | animals, dont_starve_together, from_beyond, hostile_creatures |
-| [Brightshade Armor](https://dontstarve.fandom.com/wiki/Brightshade_Armor) | Done | armour_filter, craftable_items, dont_starve_together, from_beyond, infobox_missing_crafting_description |
-| [Brightshade Bomb](https://dontstarve.fandom.com/wiki/Brightshade_Bomb) | Done | craftable_items, dont_starve_together, from_beyond, infobox_missing_crafting_description |
+| [Brightshade Armor](https://dontstarve.fandom.com/wiki/Brightshade_Armor) | Done | armour_filter, craftable_items, dont_starve_together, from_beyond, infobox_missing_crafting_description, items |
+| [Brightshade Bomb](https://dontstarve.fandom.com/wiki/Brightshade_Bomb) | Done | craftable_items, dont_starve_together, from_beyond, infobox_missing_crafting_description, items |
 | [Brightshade Gestalt](https://dontstarve.fandom.com/wiki/Brightshade_Gestalt) | Done | dont_starve_together, from_beyond |
-| [Brightshade Helm](https://dontstarve.fandom.com/wiki/Brightshade_Helm) | Done | armour_filter, craftable_items, dont_starve_together, from_beyond, infobox_missing_crafting_description |
-| [Brightshade Husk](https://dontstarve.fandom.com/wiki/Brightshade_Husk) | Done | from_beyond |
-| [Brightshade Shoevel](https://dontstarve.fandom.com/wiki/Brightshade_Shoevel) | Done | craftable_items, dont_starve_together, from_beyond, infobox_missing_crafting_description |
-| [Brightshade Smasher](https://dontstarve.fandom.com/wiki/Brightshade_Smasher) | Done | craftable_items, dont_starve_together, from_beyond, infobox_missing_crafting_description |
-| [Brightshade Staff](https://dontstarve.fandom.com/wiki/Brightshade_Staff) | Done | craftable_items, dont_starve_together, from_beyond, infobox_missing_crafting_description |
-| [Brightshade Sword](https://dontstarve.fandom.com/wiki/Brightshade_Sword) | Done | craftable_items, dont_starve_together, from_beyond, infobox_missing_crafting_description |
-| [Brightsmithy](https://dontstarve.fandom.com/wiki/Brightsmithy) | Done | celestial_filter, craftable_items, craftable_structures, crafting_stations, dont_starve_together, from_beyond, infobox_missing_crafting_description |
+| [Brightshade Helm](https://dontstarve.fandom.com/wiki/Brightshade_Helm) | Done | armour_filter, craftable_items, dont_starve_together, from_beyond, infobox_missing_crafting_description, items |
+| [Brightshade Husk](https://dontstarve.fandom.com/wiki/Brightshade_Husk) | Done | from_beyond, items |
+| [Brightshade Shoevel](https://dontstarve.fandom.com/wiki/Brightshade_Shoevel) | Done | craftable_items, dont_starve_together, from_beyond, infobox_missing_crafting_description, items |
+| [Brightshade Smasher](https://dontstarve.fandom.com/wiki/Brightshade_Smasher) | Done | craftable_items, dont_starve_together, from_beyond, infobox_missing_crafting_description, items |
+| [Brightshade Staff](https://dontstarve.fandom.com/wiki/Brightshade_Staff) | Done | craftable_items, dont_starve_together, from_beyond, infobox_missing_crafting_description, items |
+| [Brightshade Sword](https://dontstarve.fandom.com/wiki/Brightshade_Sword) | Done | craftable_items, dont_starve_together, from_beyond, infobox_missing_crafting_description, items |
+| [Brightsmithy](https://dontstarve.fandom.com/wiki/Brightsmithy) | Done | celestial_filter, craftable_items, craftable_structures, crafting_stations, dont_starve_together, from_beyond, infobox_missing_crafting_description, items |
 | [Brightsmithy Filter](https://dontstarve.fandom.com/wiki/Brightsmithy_Filter) | Done | dont_starve_together |
-| [Brilliant Mudslinger](https://dontstarve.fandom.com/wiki/Brilliant_Mudslinger) | Done | craftable_items, dont_starve_together |
+| [Brilliant Mudslinger](https://dontstarve.fandom.com/wiki/Brilliant_Mudslinger) | Done | craftable_items, dont_starve_together, items |
 | [Broken Machinery](https://dontstarve.fandom.com/wiki/Broken_Machinery) | Done | dont_starve_together |
-| [Brush](https://dontstarve.fandom.com/wiki/Brush) | Done | a_new_reign, craftable_items, equipable_items |
-| [Bucket-o-poop](https://dontstarve.fandom.com/wiki/Bucket-o-poop) | Done | craftable_items, dont_starve_together, fertilizer, food_gardening_filter, food_tab |
-| [Bug Net](https://dontstarve.fandom.com/wiki/Bug_Net) | Done | craftable_items, equipable_items |
-| [Bulbous Lightbug](https://dontstarve.fandom.com/wiki/Bulbous_Lightbug) | Done | animals, cave_creatures, dont_starve_together, followers |
-| [Bull Kelp](https://dontstarve.fandom.com/wiki/Bull_Kelp) | Done | dont_starve_together, equipable_items, fuel |
-| [Bumpers](https://dontstarve.fandom.com/wiki/Bumpers) | Done | craftable_items, craftable_structures, dont_starve_together |
-| [Bundling Wrap](https://dontstarve.fandom.com/wiki/Bundling_Wrap) | Done | containers, craftable_items, dont_starve_together, fuel, infobox_missing_crafting_description |
-| [Bunny Stew](https://dontstarve.fandom.com/wiki/Bunny_Stew) | Done | crock_pot_recipes, dont_starve_together, food, healing |
-| [Bunnyman](https://dontstarve.fandom.com/wiki/Bunnyman) | Done | animals, cave_creatures, followers |
+| [Broken Shell](https://dontstarve.fandom.com/wiki/Broken_Shell) | Done | items |
+| [Brush](https://dontstarve.fandom.com/wiki/Brush) | Done | a_new_reign, craftable_items, equipable_items, items |
+| [Bucket-o-poop](https://dontstarve.fandom.com/wiki/Bucket-o-poop) | Done | craftable_items, dont_starve_together, fertilizer, food_gardening_filter, food_tab, items |
+| [Bug Net](https://dontstarve.fandom.com/wiki/Bug_Net) | Done | craftable_items, equipable_items, items |
+| [Bulbous Lightbug](https://dontstarve.fandom.com/wiki/Bulbous_Lightbug) | Done | animals, cave_creatures, dont_starve_together, followers, items |
+| [Bull Kelp](https://dontstarve.fandom.com/wiki/Bull_Kelp) | Done | dont_starve_together, equipable_items, fuel, items |
+| [Bumpers](https://dontstarve.fandom.com/wiki/Bumpers) | Done | craftable_items, craftable_structures, dont_starve_together, items |
+| [Bundling Wrap](https://dontstarve.fandom.com/wiki/Bundling_Wrap) | Done | containers, craftable_items, dont_starve_together, fuel, infobox_missing_crafting_description, items |
+| [Bunny Puff](https://dontstarve.fandom.com/wiki/Bunny_Puff) | Done | items |
+| [Bunny Stew](https://dontstarve.fandom.com/wiki/Bunny_Stew) | Done | crock_pot_recipes, dont_starve_together, food, healing, items |
+| [Bunnyman](https://dontstarve.fandom.com/wiki/Bunnyman) | Done | animals, cave_creatures, followers, innocents |
 | [Burrow](https://dontstarve.fandom.com/wiki/Burrow) | Done | dont_starve_together |
-| [Burrowing Horn](https://dontstarve.fandom.com/wiki/Burrowing_Horn) | Done | craftable_items, dont_starve_together, equipable_items, from_beyond |
-| [Bush Hat](https://dontstarve.fandom.com/wiki/Bush_Hat) | Done | craftable_items, equipable_items, hats |
-| [Butter](https://dontstarve.fandom.com/wiki/Butter) | Done | healing |
-| [Butter Muffin](https://dontstarve.fandom.com/wiki/Butter_Muffin) | Done | crock_pot_recipes, food, healing |
-| [Butterfly](https://dontstarve.fandom.com/wiki/Butterfly) | Done | animals, flying_creatures |
-| [Butterfly Wings](https://dontstarve.fandom.com/wiki/Butterfly_Wings) | Done | healing |
+| [Burrowing Horn](https://dontstarve.fandom.com/wiki/Burrowing_Horn) | Done | craftable_items, dont_starve_together, equipable_items, from_beyond, items |
+| [Bush Hat](https://dontstarve.fandom.com/wiki/Bush_Hat) | Done | craftable_items, equipable_items, hats, items |
+| [Butter](https://dontstarve.fandom.com/wiki/Butter) | Done | healing, items |
+| [Butter Muffin](https://dontstarve.fandom.com/wiki/Butter_Muffin) | Done | crock_pot_recipes, food, healing, items |
+| [Butterfly](https://dontstarve.fandom.com/wiki/Butterfly) | Done | animals, flying_creatures, innocents, items |
+| [Butterfly Wings](https://dontstarve.fandom.com/wiki/Butterfly_Wings) | Done | healing, items |
 | [Buzzard](https://dontstarve.fandom.com/wiki/Buzzard) | Done | animals, birds, dont_starve_together, flying_creatures |
 | [Cachebox](https://dontstarve.fandom.com/wiki/Cachebox) | Done | dont_starve_together |
 | [Cactus](https://dontstarve.fandom.com/wiki/Cactus) | Done | a_new_reign, dont_starve_together |
-| [Cactus Flesh](https://dontstarve.fandom.com/wiki/Cactus_Flesh) | Done | dont_starve_together, food, healing, health_loss |
-| [Cactus Flower](https://dontstarve.fandom.com/wiki/Cactus_Flower) | Done | dont_starve_together, food, healing |
-| [Calibrated Perceiver](https://dontstarve.fandom.com/wiki/Calibrated_Perceiver) | Done | dont_starve_together |
-| [California Roll](https://dontstarve.fandom.com/wiki/California_Roll) | Done | crock_pot_recipes, dont_starve_together, food, healing |
+| [Cactus Flesh](https://dontstarve.fandom.com/wiki/Cactus_Flesh) | Done | dont_starve_together, food, healing, health_loss, items |
+| [Cactus Flower](https://dontstarve.fandom.com/wiki/Cactus_Flower) | Done | dont_starve_together, food, healing, items |
+| [Calibrated Perceiver](https://dontstarve.fandom.com/wiki/Calibrated_Perceiver) | Done | dont_starve_together, items |
+| [California Roll](https://dontstarve.fandom.com/wiki/California_Roll) | Done | crock_pot_recipes, dont_starve_together, food, healing, items |
 | [Campfire](https://dontstarve.fandom.com/wiki/Campfire) | Done | cooking_filter, craftable_structures |
-| [Cannon](https://dontstarve.fandom.com/wiki/Cannon) | Done | craftable_items, craftable_structures, dont_starve_together |
-| [Cannonball](https://dontstarve.fandom.com/wiki/Cannonball) | Done | craftable_items, dont_starve_together |
-| [Captain's Tricorn](https://dontstarve.fandom.com/wiki/Captain's_Tricorn) | Done | dont_starve_together, equipable_items, hats |
+| [Cannon](https://dontstarve.fandom.com/wiki/Cannon) | Done | craftable_items, craftable_structures, dont_starve_together, items |
+| [Cannonball](https://dontstarve.fandom.com/wiki/Cannonball) | Done | craftable_items, dont_starve_together, items |
+| [Captain's Tricorn](https://dontstarve.fandom.com/wiki/Captain's_Tricorn) | Done | dont_starve_together, equipable_items, hats, items |
 | [Carpentry Filter](https://dontstarve.fandom.com/wiki/Carpentry_Filter) | Done | dont_starve_together, from_beyond |
-| [Carpeted Flooring](https://dontstarve.fandom.com/wiki/Carpeted_Flooring) | Done | craftable_items, decorations_filter, fuel |
+| [Carpeted Flooring](https://dontstarve.fandom.com/wiki/Carpeted_Flooring) | Done | craftable_items, decorations_filter, fuel, items |
 | [Carrat](https://dontstarve.fandom.com/wiki/Carrat) | Done | dont_starve_together |
-| [Carrot](https://dontstarve.fandom.com/wiki/Carrot) | Done | dont_starve_together, food, healing |
+| [Carrot](https://dontstarve.fandom.com/wiki/Carrot) | Done | dont_starve_together, food, healing, items |
 | [Cartographer's Desk](https://dontstarve.fandom.com/wiki/Cartographer's_Desk) | Done | a_new_reign, craftable_structures, crafting_stations, dont_starve_together |
 | [Cartography Filter](https://dontstarve.fandom.com/wiki/Cartography_Filter) | Done | dont_starve_together |
-| [Cat Cap](https://dontstarve.fandom.com/wiki/Cat_Cap) | Done | craftable_items, dont_starve_together, equipable_items, hats |
-| [Cat Tail](https://dontstarve.fandom.com/wiki/Cat_Tail) | Done | dont_starve_together |
-| [Catcoon](https://dontstarve.fandom.com/wiki/Catcoon) | Done | animals, dont_starve_together, followers |
+| [Cat Cap](https://dontstarve.fandom.com/wiki/Cat_Cap) | Done | craftable_items, dont_starve_together, equipable_items, hats, items |
+| [Cat Tail](https://dontstarve.fandom.com/wiki/Cat_Tail) | Done | dont_starve_together, items |
+| [Catcoon](https://dontstarve.fandom.com/wiki/Catcoon) | Done | animals, dont_starve_together, followers, innocents |
 | [Cave Hole](https://dontstarve.fandom.com/wiki/Cave_Hole) | Done | a_new_reign, dont_starve_together, indestructible_object |
 | [Cave Light](https://dontstarve.fandom.com/wiki/Cave_Light) | Done | indestructible_object |
-| [Cave Rock Turf](https://dontstarve.fandom.com/wiki/Cave_Rock_Turf) | Done | craftable_items, decorations_filter, fuel |
+| [Cave Rock Turf](https://dontstarve.fandom.com/wiki/Cave_Rock_Turf) | Done | craftable_items, decorations_filter, fuel, items |
 | [Cave Spider](https://dontstarve.fandom.com/wiki/Cave_Spider) | Done | cave_creatures, followers, hostile_creatures |
 | [Caves](https://dontstarve.fandom.com/wiki/Caves) | Done | gameplay |
 | [Cawnival Creation Filter](https://dontstarve.fandom.com/wiki/Cawnival_Creation_Filter) | Done | dont_starve_together |
 | [Celestial Champion](https://dontstarve.fandom.com/wiki/Celestial_Champion) | Done | boss_monsters, dont_starve_together, hostile_creatures |
 | [Celestial Filter](https://dontstarve.fandom.com/wiki/Celestial_Filter) | Done | dont_starve_together |
 | [Celestial Fissure](https://dontstarve.fandom.com/wiki/Celestial_Fissure) | Done | dont_starve_together |
-| [Celestial Orb](https://dontstarve.fandom.com/wiki/Celestial_Orb) | Done | crafting_stations, dont_starve_together |
+| [Celestial Orb](https://dontstarve.fandom.com/wiki/Celestial_Orb) | Done | crafting_stations, dont_starve_together, items |
 | [Celestial Portal](https://dontstarve.fandom.com/wiki/Celestial_Portal) | Done | craftable_structures, dont_starve_together, infobox_missing_crafting_description |
-| [Ceviche](https://dontstarve.fandom.com/wiki/Ceviche) | Done | cooling, crock_pot_recipes, dont_starve_together, food, healing |
+| [Ceviche](https://dontstarve.fandom.com/wiki/Ceviche) | Done | cooling, crock_pot_recipes, dont_starve_together, food, healing, items |
 | [Chairs](https://dontstarve.fandom.com/wiki/Chairs) | Done | dont_starve_together, from_beyond |
 | [Character quotes](https://dontstarve.fandom.com/wiki/Character_quotes) | Done | gameplay |
 | [Characters](https://dontstarve.fandom.com/wiki/Characters) | Done | gameplay |
-| [Charcoal](https://dontstarve.fandom.com/wiki/Charcoal) | Done | boss_dropped_items, fuel |
+| [Charcoal](https://dontstarve.fandom.com/wiki/Charcoal) | Done | boss_dropped_items, fuel, items |
 | [Charged Glassy Rock](https://dontstarve.fandom.com/wiki/Charged_Glassy_Rock) | Done | dont_starve_together |
 | [Charlie](https://dontstarve.fandom.com/wiki/Charlie) | Done | gameplay, health_loss |
-| [Checkerboard Flooring](https://dontstarve.fandom.com/wiki/Checkerboard_Flooring) | Done | craftable_items, decorations_filter, fuel |
-| [Chef Pouch](https://dontstarve.fandom.com/wiki/Chef_Pouch) | Done | backpacks, containers, cooking_filter, craftable_items, dont_starve_together, equipable_items |
+| [Checkerboard Flooring](https://dontstarve.fandom.com/wiki/Checkerboard_Flooring) | Done | craftable_items, decorations_filter, fuel, items |
+| [Chef Pouch](https://dontstarve.fandom.com/wiki/Chef_Pouch) | Done | backpacks, containers, cooking_filter, craftable_items, dont_starve_together, equipable_items, items |
 | [Chess Pieces](https://dontstarve.fandom.com/wiki/Chess_Pieces) | Done | dont_starve_together |
 | [Chest](https://dontstarve.fandom.com/wiki/Chest) | Done | containers, craftable_structures, dont_starve_together, infobox_missing_crafting_description |
 | [Chester](https://dontstarve.fandom.com/wiki/Chester) | Done | containers, followers |
-| [Chili Flakes](https://dontstarve.fandom.com/wiki/Chili_Flakes) | Done | craftable_items, dont_starve_together |
-| [Chilled Amulet](https://dontstarve.fandom.com/wiki/Chilled_Amulet) | Done | cooling, craftable_items, equipable_items |
-| [Chilled Lavae](https://dontstarve.fandom.com/wiki/Chilled_Lavae) | Done | a_new_reign, dont_starve_together |
-| [Circuit Extractor](https://dontstarve.fandom.com/wiki/Circuit_Extractor) | Done | craftable_items, dont_starve_together |
+| [Chili Flakes](https://dontstarve.fandom.com/wiki/Chili_Flakes) | Done | craftable_items, dont_starve_together, items |
+| [Chilled Amulet](https://dontstarve.fandom.com/wiki/Chilled_Amulet) | Done | cooling, craftable_items, equipable_items, items |
+| [Chilled Lavae](https://dontstarve.fandom.com/wiki/Chilled_Lavae) | Done | a_new_reign, dont_starve_together, items |
+| [Circuit Extractor](https://dontstarve.fandom.com/wiki/Circuit_Extractor) | Done | craftable_items, dont_starve_together, items |
 | [Circuits](https://dontstarve.fandom.com/wiki/Circuits) | Done | dont_starve_together, food_gardening_filter, infobox_missing_crafting_description |
-| [Clean Sweeper](https://dontstarve.fandom.com/wiki/Clean_Sweeper) | Done | craftable_items, decorations_filter, dont_starve_together, equipable_items |
-| [Clever Disguise](https://dontstarve.fandom.com/wiki/Clever_Disguise) | Done | craftable_items, dont_starve_together, equipable_items, hats |
-| [Clockmaker's Tools](https://dontstarve.fandom.com/wiki/Clockmaker's_Tools) | Done | craftable_items, dont_starve_together |
+| [Clairvoyant Crown](https://dontstarve.fandom.com/wiki/Clairvoyant_Crown) | Done | items |
+| [Clean Sweeper](https://dontstarve.fandom.com/wiki/Clean_Sweeper) | Done | craftable_items, decorations_filter, dont_starve_together, equipable_items, items |
+| [Clever Disguise](https://dontstarve.fandom.com/wiki/Clever_Disguise) | Done | craftable_items, dont_starve_together, equipable_items, hats, items |
+| [Clockmaker's Tools](https://dontstarve.fandom.com/wiki/Clockmaker's_Tools) | Done | craftable_items, dont_starve_together, items |
 | [Clocksmithy Tab](https://dontstarve.fandom.com/wiki/Clocksmithy_Tab) | Done | dont_starve_together |
 | [Clockwork Bishop](https://dontstarve.fandom.com/wiki/Clockwork_Bishop) | Done | cave_creatures, clockwork_monsters, followers, hostile_creatures |
 | [Clockwork Knight](https://dontstarve.fandom.com/wiki/Clockwork_Knight) | Done | clockwork_monsters, followers, hostile_creatures |
 | [Clockwork Rook](https://dontstarve.fandom.com/wiki/Clockwork_Rook) | Done | clockwork_monsters, followers, hostile_creatures |
 | [Clothes](https://dontstarve.fandom.com/wiki/Clothes) | Done | gameplay |
 | [Clothing Filter](https://dontstarve.fandom.com/wiki/Clothing_Filter) | Done | dont_starve_together |
-| [Clout Snout](https://dontstarve.fandom.com/wiki/Clout_Snout) | Done | dont_starve_together |
-| [Coaching Whistle](https://dontstarve.fandom.com/wiki/Coaching_Whistle) | Done | craftable_items, dont_starve_together |
-| [Coat of Carrots](https://dontstarve.fandom.com/wiki/Coat_of_Carrots) | Done | craftable_items, craftable_structures, dont_starve_together, equipable_items, from_beyond |
-| [Cobblestones](https://dontstarve.fandom.com/wiki/Cobblestones) | Done | craftable_items, decorations_filter, dont_starve_together, fuel |
-| [Codex Umbra](https://dontstarve.fandom.com/wiki/Codex_Umbra) | Done | craftable_items, crafting_stations, followers, fuel, health_loss |
+| [Clout Snout](https://dontstarve.fandom.com/wiki/Clout_Snout) | Done | dont_starve_together, items |
+| [Coaching Whistle](https://dontstarve.fandom.com/wiki/Coaching_Whistle) | Done | craftable_items, dont_starve_together, items |
+| [Coat of Carrots](https://dontstarve.fandom.com/wiki/Coat_of_Carrots) | Done | craftable_items, craftable_structures, dont_starve_together, equipable_items, from_beyond, items |
+| [Cobblestones](https://dontstarve.fandom.com/wiki/Cobblestones) | Done | craftable_items, decorations_filter, dont_starve_together, fuel, items |
+| [Codex Umbra](https://dontstarve.fandom.com/wiki/Codex_Umbra) | Done | craftable_items, crafting_stations, followers, fuel, health_loss, items |
 | [Codex Umbra Filter](https://dontstarve.fandom.com/wiki/Codex_Umbra_Filter) | Done | dont_starve_together |
-| [Coin](https://dontstarve.fandom.com/wiki/Coin) | Done | dont_starve_together |
-| [Collected Dust](https://dontstarve.fandom.com/wiki/Collected_Dust) | Done | craftable_items, dont_starve_together |
+| [Coin](https://dontstarve.fandom.com/wiki/Coin) | Done | dont_starve_together, items |
+| [Collected Dust](https://dontstarve.fandom.com/wiki/Collected_Dust) | Done | craftable_items, dont_starve_together, items |
 | [Combat](https://dontstarve.fandom.com/wiki/Combat) | Done | gameplay |
-| [Commander's Helm](https://dontstarve.fandom.com/wiki/Commander's_Helm) | Done | armour_filter, craftable_items, dont_starve_together |
+| [Commander's Helm](https://dontstarve.fandom.com/wiki/Commander's_Helm) | Done | armour_filter, craftable_items, dont_starve_together, items |
 | [Communal Kelp Dish](https://dontstarve.fandom.com/wiki/Communal_Kelp_Dish) | Done | craftable_structures, dont_starve_together |
-| [Compass](https://dontstarve.fandom.com/wiki/Compass) | Done | craftable_items, equipable_items |
+| [Compass](https://dontstarve.fandom.com/wiki/Compass) | Done | craftable_items, equipable_items, items |
 | [Compendium](https://dontstarve.fandom.com/wiki/Compendium) | Done | dont_starve_together |
-| [Compost](https://dontstarve.fandom.com/wiki/Compost) | Done | dont_starve_together, fertilizer |
-| [Compost Wrap](https://dontstarve.fandom.com/wiki/Compost_Wrap) | Done | craftable_items, dont_starve_together, fertilizer, food_gardening_filter, fuel, healing |
+| [Compost](https://dontstarve.fandom.com/wiki/Compost) | Done | dont_starve_together, fertilizer, items |
+| [Compost Wrap](https://dontstarve.fandom.com/wiki/Compost_Wrap) | Done | craftable_items, dont_starve_together, fertilizer, food_gardening_filter, fuel, healing, items |
 | [Composting Bin](https://dontstarve.fandom.com/wiki/Composting_Bin) | Done | craftable_structures, dont_starve_together, food_gardening_filter |
-| [Commands](https://dontstarve.fandom.com/wiki/Console/Commands) | Done | gameplay |
-| [Don't Starve Together Commands](https://dontstarve.fandom.com/wiki/Console/Don't_Starve_Together_Commands) | Done | dont_starve_together, gameplay |
+| [Console/Commands](https://dontstarve.fandom.com/wiki/Console/Commands) | Done | gameplay |
+| [Console/Don't Starve Together Commands](https://dontstarve.fandom.com/wiki/Console/Don't_Starve_Together_Commands) | Done | dont_starve_together, gameplay |
 | [Conspicuous Chest](https://dontstarve.fandom.com/wiki/Conspicuous_Chest) | Done | dont_starve_together |
-| [Construction Amulet](https://dontstarve.fandom.com/wiki/Construction_Amulet) | Done | ancient_tab, ancient_tier_1, craftable_items, equipable_items |
-| [Cookbook](https://dontstarve.fandom.com/wiki/Cookbook) | Done | cooking_filter, craftable_items, dont_starve_together |
+| [Construction Amulet](https://dontstarve.fandom.com/wiki/Construction_Amulet) | Done | ancient_tab, ancient_tier_1, craftable_items, equipable_items, items |
+| [Cookbook](https://dontstarve.fandom.com/wiki/Cookbook) | Done | cooking_filter, craftable_items, dont_starve_together, items |
 | [Cookie Cutter](https://dontstarve.fandom.com/wiki/Cookie_Cutter) | Done | dont_starve_together |
-| [Cookie Cutter Cap](https://dontstarve.fandom.com/wiki/Cookie_Cutter_Cap) | Done | armour_filter, craftable_items, dont_starve_together, equipable_items, hats |
-| [Cookie Cutter Shell](https://dontstarve.fandom.com/wiki/Cookie_Cutter_Shell) | Done | dont_starve_together |
+| [Cookie Cutter Cap](https://dontstarve.fandom.com/wiki/Cookie_Cutter_Cap) | Done | armour_filter, craftable_items, dont_starve_together, equipable_items, hats, items |
+| [Cookie Cutter Shell](https://dontstarve.fandom.com/wiki/Cookie_Cutter_Shell) | Done | dont_starve_together, items |
 | [Cooking](https://dontstarve.fandom.com/wiki/Cooking) | Done | gameplay |
 | [Cooking Filter](https://dontstarve.fandom.com/wiki/Cooking_Filter) | Done | dont_starve_together |
+| [Cookpot](https://dontstarve.fandom.com/wiki/Cookpot) | Done | items |
 | [Corn](https://dontstarve.fandom.com/wiki/Corn) | Done | food, healing |
-| [Costumes](https://dontstarve.fandom.com/wiki/Costumes) | Done | dont_starve_together |
+| [Costumes](https://dontstarve.fandom.com/wiki/Costumes) | Done | dont_starve_together, items |
 | [Crab Guard](https://dontstarve.fandom.com/wiki/Crab_Guard) | Done | dont_starve_together, hostile_creatures |
 | [Crab King](https://dontstarve.fandom.com/wiki/Crab_King) | Done | boss_monsters, dont_starve_together |
 | [Crab Meat](https://dontstarve.fandom.com/wiki/Crab_Meat) | Done | dont_starve_together, events, food |
+| [Crab Trap](https://dontstarve.fandom.com/wiki/Crab_Trap) | Done | items |
 | [Crabby Hermit](https://dontstarve.fandom.com/wiki/Crabby_Hermit) | Done | crafting_stations, dont_starve_together |
 | [Cracked Pillar](https://dontstarve.fandom.com/wiki/Cracked_Pillar) | Done | dont_starve_together |
 | [Crafting](https://dontstarve.fandom.com/wiki/Crafting) | Done | gameplay |
 | [Craftsmerm House](https://dontstarve.fandom.com/wiki/Craftsmerm_House) | Done | craftable_structures, dont_starve_together |
-| [Cratered Moonrock](https://dontstarve.fandom.com/wiki/Cratered_Moonrock) | Done | a_new_reign, craftable_items, dont_starve_together |
-| [Creamy Potato Purée](https://dontstarve.fandom.com/wiki/Creamy_Potato_Pur%C3%A9e) | Done | crock_pot_recipes, dont_starve_together, food, healing |
+| [Cratered Moonrock](https://dontstarve.fandom.com/wiki/Cratered_Moonrock) | Done | a_new_reign, craftable_items, dont_starve_together, items |
+| [Creamy Potato Purée](https://dontstarve.fandom.com/wiki/Creamy_Potato_Pur%C3%A9e) | Done | crock_pot_recipes, dont_starve_together, food, healing, items |
 | [Critters](https://dontstarve.fandom.com/wiki/Critters) | Done | a_new_reign, dont_starve_together, followers |
 | [Critters Filter](https://dontstarve.fandom.com/wiki/Critters_Filter) | Done | dont_starve_together |
 | [Crock Pot](https://dontstarve.fandom.com/wiki/Crock_Pot) | Done | containers, cooking_filter, craftable_structures, food_tab |
 | [Crocommander](https://dontstarve.fandom.com/wiki/Crocommander) | Done | dont_starve_together, events, hostile_creatures |
-| [Crumpled Package](https://dontstarve.fandom.com/wiki/Crumpled_Package) | Done | a_new_reign, dont_starve_together |
-| [Crustashine](https://dontstarve.fandom.com/wiki/Crustashine) | Done | dont_starve_together |
+| [Crumpled Package](https://dontstarve.fandom.com/wiki/Crumpled_Package) | Done | a_new_reign, dont_starve_together, items |
+| [Crustashine](https://dontstarve.fandom.com/wiki/Crustashine) | Done | dont_starve_together, items |
 | [Crystal Deerclops](https://dontstarve.fandom.com/wiki/Crystal_Deerclops) | Done | boss_monsters, dont_starve_together, from_beyond, hostile_creatures |
+| [Crystal Tiara](https://dontstarve.fandom.com/wiki/Crystal_Tiara) | Done | items |
 | [Cult of the Lamb Crossover](https://dontstarve.fandom.com/wiki/Cult_of_the_Lamb_Crossover) | Done | dont_starve_together |
 | [Curio Cabinet](https://dontstarve.fandom.com/wiki/Curio_Cabinet) | Done | dont_starve_together |
-| [Cut Grass](https://dontstarve.fandom.com/wiki/Cut_Grass) | Done | beefalo_foods, fuel |
-| [Cut Reeds](https://dontstarve.fandom.com/wiki/Cut_Reeds) | Done | beefalo_foods, fuel |
-| [Cut Stone](https://dontstarve.fandom.com/wiki/Cut_Stone) | Done | craftable_items |
-| [Cutless](https://dontstarve.fandom.com/wiki/Cutless) | Done | dont_starve_together, equipable_items, fuel |
+| [Cut Grass](https://dontstarve.fandom.com/wiki/Cut_Grass) | Done | beefalo_foods, fuel, items |
+| [Cut Reeds](https://dontstarve.fandom.com/wiki/Cut_Reeds) | Done | beefalo_foods, fuel, items |
+| [Cut Stone](https://dontstarve.fandom.com/wiki/Cut_Stone) | Done | craftable_items, items |
+| [Cutless](https://dontstarve.fandom.com/wiki/Cutless) | Done | dont_starve_together, equipable_items, fuel, items |
 | [Dairy](https://dontstarve.fandom.com/wiki/Dairy) | Done | dont_starve_together |
 | [Damaged Bishop](https://dontstarve.fandom.com/wiki/Damaged_Bishop) | Done | clockwork_monsters, followers, hostile_creatures |
 | [Damaged Knight](https://dontstarve.fandom.com/wiki/Damaged_Knight) | Done | clockwork_monsters, followers, hostile_creatures |
 | [Damaged Rook](https://dontstarve.fandom.com/wiki/Damaged_Rook) | Done | clockwork_monsters, followers, hostile_creatures |
 | [Dangling Depth Dweller](https://dontstarve.fandom.com/wiki/Dangling_Depth_Dweller) | Done | cave_creatures, followers, hostile_creatures |
-| [Dapper Vest](https://dontstarve.fandom.com/wiki/Dapper_Vest) | Done | craftable_items, equipable_items |
-| [Dark Sword](https://dontstarve.fandom.com/wiki/Dark_Sword) | Done | boss_dropped_items, craftable_items, equipable_items |
-| [Dark Tatters](https://dontstarve.fandom.com/wiki/Dark_Tatters) | Done | boss_dropped_items, dont_starve_together, from_beyond |
+| [Dapper Vest](https://dontstarve.fandom.com/wiki/Dapper_Vest) | Done | craftable_items, equipable_items, items |
+| [Dark Sword](https://dontstarve.fandom.com/wiki/Dark_Sword) | Done | boss_dropped_items, craftable_items, equipable_items, items |
+| [Dark Tatters](https://dontstarve.fandom.com/wiki/Dark_Tatters) | Done | boss_dropped_items, dont_starve_together, from_beyond, items |
 | [Dart](https://dontstarve.fandom.com/wiki/Dart) | Done | dont_starve_together |
+| [Darts](https://dontstarve.fandom.com/wiki/Darts) | Done | items |
 | [Day-Night Cycle](https://dontstarve.fandom.com/wiki/Day-Night_Cycle) | Done | gameplay |
 | [Deadly Brightshade](https://dontstarve.fandom.com/wiki/Deadly_Brightshade) | Done | dont_starve_together, from_beyond |
 | [Death](https://dontstarve.fandom.com/wiki/Death) | Done | gameplay |
 | [Deciduous Forest](https://dontstarve.fandom.com/wiki/Deciduous_Forest) | Done | dont_starve_together |
-| [Deciduous Turf](https://dontstarve.fandom.com/wiki/Deciduous_Turf) | Done | craftable_items, decorations_filter, dont_starve_together, fuel |
-| [Deck Illuminator](https://dontstarve.fandom.com/wiki/Deck_Illuminator) | Done | craftable_items, dont_starve_together |
-| [Deconstruction Staff](https://dontstarve.fandom.com/wiki/Deconstruction_Staff) | Done | ancient_tab, ancient_tier_1, craftable_items, equipable_items |
+| [Deciduous Turf](https://dontstarve.fandom.com/wiki/Deciduous_Turf) | Done | craftable_items, decorations_filter, dont_starve_together, fuel, items |
+| [Deck Illuminator](https://dontstarve.fandom.com/wiki/Deck_Illuminator) | Done | craftable_items, dont_starve_together, items |
+| [Deconstruction Staff](https://dontstarve.fandom.com/wiki/Deconstruction_Staff) | Done | ancient_tab, ancient_tier_1, craftable_items, equipable_items, items |
 | [Decorations Filter](https://dontstarve.fandom.com/wiki/Decorations_Filter) | Done | dont_starve_together |
-| [Deer Antler](https://dontstarve.fandom.com/wiki/Deer_Antler) | Done | a_new_reign, dont_starve_together |
+| [Deer Antler](https://dontstarve.fandom.com/wiki/Deer_Antler) | Done | a_new_reign, dont_starve_together, items |
 | [Deerclops](https://dontstarve.fandom.com/wiki/Deerclops) | Done | boss_monsters, hostile_creatures |
-| [Deerclops Eyeball](https://dontstarve.fandom.com/wiki/Deerclops_Eyeball) | Done | boss_dropped_items, food, healing |
-| [Den Decorating Set](https://dontstarve.fandom.com/wiki/Den_Decorating_Set) | Done | craftable_items, dont_starve_together |
+| [Deerclops Eyeball](https://dontstarve.fandom.com/wiki/Deerclops_Eyeball) | Done | boss_dropped_items, food, healing, items |
+| [Den Decorating Set](https://dontstarve.fandom.com/wiki/Den_Decorating_Set) | Done | craftable_items, dont_starve_together, items |
 | [Depths Worm](https://dontstarve.fandom.com/wiki/Depths_Worm) | Done | cave_creatures, hostile_creatures |
 | [Desert](https://dontstarve.fandom.com/wiki/Desert) | Done | dont_starve_together |
-| [Desert Stone](https://dontstarve.fandom.com/wiki/Desert_Stone) | Done | a_new_reign, boss_dropped_items, dont_starve_together |
+| [Desert Stone](https://dontstarve.fandom.com/wiki/Desert_Stone) | Done | a_new_reign, boss_dropped_items, dont_starve_together, items |
 | [Directional Sign](https://dontstarve.fandom.com/wiki/Directional_Sign) | Done | craftable_structures, decorations_filter, dont_starve_together |
 | [Disease](https://dontstarve.fandom.com/wiki/Disease) | Done | dont_starve_together, gameplay |
-| [Dock Kit](https://dontstarve.fandom.com/wiki/Dock_Kit) | Done | craftable_items, decorations_filter, dont_starve_together |
-| [Dock Piling Kit](https://dontstarve.fandom.com/wiki/Dock_Piling_Kit) | Done | craftable_items, decorations_filter, dont_starve_together |
+| [Dock Kit](https://dontstarve.fandom.com/wiki/Dock_Kit) | Done | craftable_items, decorations_filter, dont_starve_together, items |
+| [Dock Piling Kit](https://dontstarve.fandom.com/wiki/Dock_Piling_Kit) | Done | craftable_items, decorations_filter, dont_starve_together, items |
 | [Don't Starve Together](https://dontstarve.fandom.com/wiki/Don't_Starve_Together) | Done | dont_starve_together |
-| [Doohickey](https://dontstarve.fandom.com/wiki/Doohickey) | Done | dont_starve_together |
-| [Down Feather](https://dontstarve.fandom.com/wiki/Down_Feather) | Done | boss_dropped_items, dont_starve_together |
-| [Dragon Fruit](https://dontstarve.fandom.com/wiki/Dragon_Fruit) | Done | food, healing |
+| [Doohickey](https://dontstarve.fandom.com/wiki/Doohickey) | Done | dont_starve_together, items |
+| [Down Feather](https://dontstarve.fandom.com/wiki/Down_Feather) | Done | boss_dropped_items, dont_starve_together, items |
+| [Dragon Fruit](https://dontstarve.fandom.com/wiki/Dragon_Fruit) | Done | food, healing, items |
 | [Dragonfly](https://dontstarve.fandom.com/wiki/Dragonfly) | Done | boss_monsters, dont_starve_together, flying_creatures, hostile_creatures |
-| [Dragonpie](https://dontstarve.fandom.com/wiki/Dragonpie) | Done | crock_pot_recipes, food, fruits, healing |
-| [Dreaded Mudslinger](https://dontstarve.fandom.com/wiki/Dreaded_Mudslinger) | Done | craftable_items, dont_starve_together |
-| [Dreadstone](https://dontstarve.fandom.com/wiki/Dreadstone) | Done | craftable_items, dont_starve_together, from_beyond |
-| [Dreadstone Armor](https://dontstarve.fandom.com/wiki/Dreadstone_Armor) | Done | armour_filter, craftable_items, dont_starve_together, infobox_missing_crafting_description |
-| [Dreadstone Helm](https://dontstarve.fandom.com/wiki/Dreadstone_Helm) | Done | armour_filter, craftable_items, dont_starve_together, infobox_missing_crafting_description |
+| [Dragonpie](https://dontstarve.fandom.com/wiki/Dragonpie) | Done | crock_pot_recipes, food, fruits, healing, items |
+| [Dreaded Mudslinger](https://dontstarve.fandom.com/wiki/Dreaded_Mudslinger) | Done | craftable_items, dont_starve_together, items |
+| [Dreadstone](https://dontstarve.fandom.com/wiki/Dreadstone) | Done | craftable_items, dont_starve_together, from_beyond, items |
+| [Dreadstone Armor](https://dontstarve.fandom.com/wiki/Dreadstone_Armor) | Done | armour_filter, craftable_items, dont_starve_together, infobox_missing_crafting_description, items |
+| [Dreadstone Helm](https://dontstarve.fandom.com/wiki/Dreadstone_Helm) | Done | armour_filter, craftable_items, dont_starve_together, infobox_missing_crafting_description, items |
 | [Dreadstone Outcrop](https://dontstarve.fandom.com/wiki/Dreadstone_Outcrop) | Done | dont_starve_together, from_beyond |
-| [Dreadstone Wall](https://dontstarve.fandom.com/wiki/Dreadstone_Wall) | Done | craftable_items, dont_starve_together |
-| [Dried Kelp Fronds](https://dontstarve.fandom.com/wiki/Dried_Kelp_Fronds) | Done | dont_starve_together, healing |
+| [Dreadstone Wall](https://dontstarve.fandom.com/wiki/Dreadstone_Wall) | Done | craftable_items, dont_starve_together, items |
+| [Dried Kelp Fronds](https://dontstarve.fandom.com/wiki/Dried_Kelp_Fronds) | Done | dont_starve_together, healing, items |
 | [Driftwood](https://dontstarve.fandom.com/wiki/Driftwood) | Done | dont_starve_together |
-| [Driftwood Piece](https://dontstarve.fandom.com/wiki/Driftwood_Piece) | Done | dont_starve_together, fuel |
-| [Drumstick](https://dontstarve.fandom.com/wiki/Drumstick) | Done | boss_dropped_items, food, healing |
+| [Driftwood Piece](https://dontstarve.fandom.com/wiki/Driftwood_Piece) | Done | dont_starve_together, fuel, items |
+| [Drumstick](https://dontstarve.fandom.com/wiki/Drumstick) | Done | boss_dropped_items, food, healing, items |
 | [Drying Rack](https://dontstarve.fandom.com/wiki/Drying_Rack) | Done | cooking_filter, craftable_structures, food_tab |
 | [Dumbbells](https://dontstarve.fandom.com/wiki/Dumbbells) | Done | dont_starve_together, infobox_missing_crafting_description |
 | [Durability](https://dontstarve.fandom.com/wiki/Durability) | Done | gameplay |
 | [Durian](https://dontstarve.fandom.com/wiki/Durian) | Done | food, health_loss |
-| [Dust Moth](https://dontstarve.fandom.com/wiki/Dust_Moth) | Done | animals, cave_creatures, dont_starve_together |
+| [Dust Moth](https://dontstarve.fandom.com/wiki/Dust_Moth) | Done | animals, cave_creatures, dont_starve_together, innocents |
 | [Earthquake](https://dontstarve.fandom.com/wiki/Earthquake) | Done | gameplay |
 | [Ectoherbology Tab](https://dontstarve.fandom.com/wiki/Ectoherbology_Tab) | Done | dont_starve_together |
-| [Eel](https://dontstarve.fandom.com/wiki/Eel) | Done | fishes, food, healing |
-| [Egg](https://dontstarve.fandom.com/wiki/Egg) | Done | eggs, food |
+| [Eel](https://dontstarve.fandom.com/wiki/Eel) | Done | fishes, food, healing, items |
+| [Egg](https://dontstarve.fandom.com/wiki/Egg) | Done | eggs, food, items |
 | [Eggplant](https://dontstarve.fandom.com/wiki/Eggplant) | Done | food, healing |
-| [Elastispacer](https://dontstarve.fandom.com/wiki/Elastispacer) | Done | craftable_items, dont_starve_together, from_beyond |
-| [Elding Spear](https://dontstarve.fandom.com/wiki/Elding_Spear) | Done | craftable_items, dont_starve_together |
-| [Electric Milk](https://dontstarve.fandom.com/wiki/Electric_Milk) | Done | dont_starve_together, food, healing |
-| [Electrical Doodad](https://dontstarve.fandom.com/wiki/Electrical_Doodad) | Done | craftable_items |
-| [Embalming Spritz](https://dontstarve.fandom.com/wiki/Embalming_Spritz) | Done | craftable_items, dont_starve_together, from_beyond |
+| [Elastispacer](https://dontstarve.fandom.com/wiki/Elastispacer) | Done | craftable_items, dont_starve_together, from_beyond, items |
+| [Elding Spear](https://dontstarve.fandom.com/wiki/Elding_Spear) | Done | craftable_items, dont_starve_together, items |
+| [Electric Milk](https://dontstarve.fandom.com/wiki/Electric_Milk) | Done | dont_starve_together, food, healing, items |
+| [Electrical Doodad](https://dontstarve.fandom.com/wiki/Electrical_Doodad) | Done | craftable_items, items |
+| [Embalming Spritz](https://dontstarve.fandom.com/wiki/Embalming_Spritz) | Done | craftable_items, dont_starve_together, from_beyond, items |
 | [Emotes](https://dontstarve.fandom.com/wiki/Emotes) | Done | dont_starve_together |
 | [Emoticons](https://dontstarve.fandom.com/wiki/Emoticons) | Done | dont_starve_together |
-| [Empty Bottle](https://dontstarve.fandom.com/wiki/Empty_Bottle) | Done | craftable_items, dont_starve_together |
-| [Empty Frame](https://dontstarve.fandom.com/wiki/Empty_Frame) | Done | craftable_items, decorations_filter, dont_starve_together, from_beyond |
+| [Empty Bottle](https://dontstarve.fandom.com/wiki/Empty_Bottle) | Done | craftable_items, dont_starve_together, items |
+| [Empty Frame](https://dontstarve.fandom.com/wiki/Empty_Frame) | Done | craftable_items, decorations_filter, dont_starve_together, from_beyond, items |
 | [Endothermic Fire](https://dontstarve.fandom.com/wiki/Endothermic_Fire) | Done | cooling, craftable_structures, dont_starve_together |
 | [Engineering Tab](https://dontstarve.fandom.com/wiki/Engineering_Tab) | Done | dont_starve_together |
-| [Enlightened Crown](https://dontstarve.fandom.com/wiki/Enlightened_Crown) | Done | boss_dropped_items, dont_starve_together, equipable_items, hats |
-| [Enlightened Shard](https://dontstarve.fandom.com/wiki/Enlightened_Shard) | Done | dont_starve_together |
+| [Enlightened Crown](https://dontstarve.fandom.com/wiki/Enlightened_Crown) | Done | boss_dropped_items, dont_starve_together, equipable_items, hats, items |
+| [Enlightened Shard](https://dontstarve.fandom.com/wiki/Enlightened_Shard) | Done | dont_starve_together, items |
 | [Enlightenment](https://dontstarve.fandom.com/wiki/Enlightenment) | Done | dont_starve_together, gameplay |
-| [Ethereal Embers](https://dontstarve.fandom.com/wiki/Ethereal_Embers) | Done | dont_starve_together |
+| [Ethereal Embers](https://dontstarve.fandom.com/wiki/Ethereal_Embers) | Done | dont_starve_together, items |
 | [Ewecus](https://dontstarve.fandom.com/wiki/Ewecus) | Done | animals, hostile_creatures |
 | [Extra-Adorable Lavae](https://dontstarve.fandom.com/wiki/Extra-Adorable_Lavae) | Done | dont_starve_together, followers |
-| [Eye Bone](https://dontstarve.fandom.com/wiki/Eye_Bone) | Done | indestructible_object |
-| [Eye Mask](https://dontstarve.fandom.com/wiki/Eye_Mask) | Done | boss_dropped_items, dont_starve_together, equipable_items, hats |
+| [Eye Bone](https://dontstarve.fandom.com/wiki/Eye_Bone) | Done | indestructible_object, items |
+| [Eye Mask](https://dontstarve.fandom.com/wiki/Eye_Mask) | Done | boss_dropped_items, dont_starve_together, equipable_items, hats, items |
 | [Eye of Terror](https://dontstarve.fandom.com/wiki/Eye_of_Terror) | Done | boss_monsters, dont_starve_together |
-| [Eyebrella](https://dontstarve.fandom.com/wiki/Eyebrella) | Done | cooling, craftable_items, dont_starve_together, equipable_items, hats |
-| [Fancy Spiralled Tubers](https://dontstarve.fandom.com/wiki/Fancy_Spiralled_Tubers) | Done | crock_pot_recipes, dont_starve_together, food, healing |
+| [Eyebrella](https://dontstarve.fandom.com/wiki/Eyebrella) | Done | cooling, craftable_items, dont_starve_together, equipable_items, hats, items |
+| [Fancy Spiralled Tubers](https://dontstarve.fandom.com/wiki/Fancy_Spiralled_Tubers) | Done | crock_pot_recipes, dont_starve_together, food, healing, items |
 | [Farm Plant](https://dontstarve.fandom.com/wiki/Farm_Plant) | Done | dont_starve_together, gameplay |
-| [Farm Soil](https://dontstarve.fandom.com/wiki/Farm_Soil) | Done | dont_starve_together |
+| [Farm Soil](https://dontstarve.fandom.com/wiki/Farm_Soil) | Done | dont_starve_together, items |
 | [Farming](https://dontstarve.fandom.com/wiki/Farming) | Done | gameplay |
-| [Fashion Melon](https://dontstarve.fandom.com/wiki/Fashion_Melon) | Done | cooling, craftable_items, dont_starve_together, equipable_items, hats |
-| [Feather](https://dontstarve.fandom.com/wiki/Feather) | Done | a_new_reign, dont_starve_together, fuel |
-| [Feather Hat](https://dontstarve.fandom.com/wiki/Feather_Hat) | Done | craftable_items, equipable_items, hats |
-| [Feather Pencil](https://dontstarve.fandom.com/wiki/Feather_Pencil) | Done | a_new_reign, craftable_items, decorations_filter |
-| [Feathery Canvas](https://dontstarve.fandom.com/wiki/Feathery_Canvas) | Done | craftable_items, dont_starve_together |
-| [Fencing Sword](https://dontstarve.fandom.com/wiki/Fencing_Sword) | Done | craftable_items, dont_starve_together |
-| [Fertilizzzer](https://dontstarve.fandom.com/wiki/Fertilizzzer) | Done | craftable_items, dont_starve_together, fertilizer, from_beyond, fuel |
-| [Fiery Pen](https://dontstarve.fandom.com/wiki/Fiery_Pen) | Done | dont_starve_together, equipable_items |
+| [Fashion Melon](https://dontstarve.fandom.com/wiki/Fashion_Melon) | Done | cooling, craftable_items, dont_starve_together, equipable_items, hats, items |
+| [Feather](https://dontstarve.fandom.com/wiki/Feather) | Done | a_new_reign, dont_starve_together, fuel, items |
+| [Feather Hat](https://dontstarve.fandom.com/wiki/Feather_Hat) | Done | craftable_items, equipable_items, hats, items |
+| [Feather Pencil](https://dontstarve.fandom.com/wiki/Feather_Pencil) | Done | a_new_reign, craftable_items, decorations_filter, items |
+| [Feathered Reed Tunic](https://dontstarve.fandom.com/wiki/Feathered_Reed_Tunic) | Done | items |
+| [Feathered Wreath](https://dontstarve.fandom.com/wiki/Feathered_Wreath) | Done | items |
+| [Feathery Canvas](https://dontstarve.fandom.com/wiki/Feathery_Canvas) | Done | craftable_items, dont_starve_together, items |
+| [Fencing Sword](https://dontstarve.fandom.com/wiki/Fencing_Sword) | Done | craftable_items, dont_starve_together, items |
+| [Fertilizzzer](https://dontstarve.fandom.com/wiki/Fertilizzzer) | Done | craftable_items, dont_starve_together, fertilizer, from_beyond, fuel, items |
+| [Fiery Pen](https://dontstarve.fandom.com/wiki/Fiery_Pen) | Done | dont_starve_together, equipable_items, items |
 | [Fig](https://dontstarve.fandom.com/wiki/Fig) | Done | dont_starve_together, food, fruits, healing |
-| [Fig-Stuffed Trunk](https://dontstarve.fandom.com/wiki/Fig-Stuffed_Trunk) | Done | crock_pot_recipes, dont_starve_together, food, healing |
-| [Figatoni](https://dontstarve.fandom.com/wiki/Figatoni) | Done | craftable_items, crock_pot_recipes, dont_starve_together, food, healing |
-| [Figgy Frogwich](https://dontstarve.fandom.com/wiki/Figgy_Frogwich) | Done | crock_pot_recipes, dont_starve_together, food, healing |
-| [Figkabab](https://dontstarve.fandom.com/wiki/Figkabab) | Done | crock_pot_recipes, dont_starve_together, food, healing |
+| [Fig-Stuffed Trunk](https://dontstarve.fandom.com/wiki/Fig-Stuffed_Trunk) | Done | crock_pot_recipes, dont_starve_together, food, healing, items |
+| [Figatoni](https://dontstarve.fandom.com/wiki/Figatoni) | Done | craftable_items, crock_pot_recipes, dont_starve_together, food, healing, items |
+| [Figgy Frogwich](https://dontstarve.fandom.com/wiki/Figgy_Frogwich) | Done | crock_pot_recipes, dont_starve_together, food, healing, items |
+| [Figkabab](https://dontstarve.fandom.com/wiki/Figkabab) | Done | crock_pot_recipes, dont_starve_together, food, healing, items |
 | [Fire](https://dontstarve.fandom.com/wiki/Fire) | Done | gameplay, health_loss |
-| [Fire Nettle Fronds](https://dontstarve.fandom.com/wiki/Fire_Nettle_Fronds) | Done | dont_starve_together |
-| [Fire Pump](https://dontstarve.fandom.com/wiki/Fire_Pump) | Done | craftable_items, craftable_structures, dont_starve_together |
-| [Fire Staff](https://dontstarve.fandom.com/wiki/Fire_Staff) | Done | craftable_items, equipable_items |
-| [Fireflies](https://dontstarve.fandom.com/wiki/Fireflies) | Done | cave_creatures, fuel |
-| [Fish](https://dontstarve.fandom.com/wiki/Fish) | Done | fishes, food, healing |
-| [Fish Cordon Bleu](https://dontstarve.fandom.com/wiki/Fish_Cordon_Bleu) | Done | dont_starve_together, healing |
-| [Fish Food](https://dontstarve.fandom.com/wiki/Fish_Food) | Done | craftable_items, dont_starve_together |
-| [Fish Morsel](https://dontstarve.fandom.com/wiki/Fish_Morsel) | Done | dont_starve_together, fishes, food, healing |
+| [Fire Nettle Fronds](https://dontstarve.fandom.com/wiki/Fire_Nettle_Fronds) | Done | dont_starve_together, items |
+| [Fire Pump](https://dontstarve.fandom.com/wiki/Fire_Pump) | Done | craftable_items, craftable_structures, dont_starve_together, items |
+| [Fire Staff](https://dontstarve.fandom.com/wiki/Fire_Staff) | Done | craftable_items, equipable_items, items |
+| [Fireflies](https://dontstarve.fandom.com/wiki/Fireflies) | Done | cave_creatures, fuel, items |
+| [Fish](https://dontstarve.fandom.com/wiki/Fish) | Done | fishes, food, healing, items |
+| [Fish Cordon Bleu](https://dontstarve.fandom.com/wiki/Fish_Cordon_Bleu) | Done | dont_starve_together, healing, items |
+| [Fish Food](https://dontstarve.fandom.com/wiki/Fish_Food) | Done | craftable_items, dont_starve_together, items |
+| [Fish Morsel](https://dontstarve.fandom.com/wiki/Fish_Morsel) | Done | dont_starve_together, fishes, food, healing, items |
 | [Fish Scale-O-Matic](https://dontstarve.fandom.com/wiki/Fish_Scale-O-Matic) | Done | craftable_structures, decorations_filter, dont_starve_together |
-| [Fish Tacos](https://dontstarve.fandom.com/wiki/Fish_Tacos) | Done | crock_pot_recipes, food, healing |
+| [Fish Tacos](https://dontstarve.fandom.com/wiki/Fish_Tacos) | Done | crock_pot_recipes, food, healing, items |
 | [Fishing Filter](https://dontstarve.fandom.com/wiki/Fishing_Filter) | Done | dont_starve_together |
-| [Fishing Rod](https://dontstarve.fandom.com/wiki/Fishing_Rod) | Done | craftable_items, equipable_items |
+| [Fishing Rod](https://dontstarve.fandom.com/wiki/Fishing_Rod) | Done | craftable_items, equipable_items, items |
 | [Fishing Tab](https://dontstarve.fandom.com/wiki/Fishing_Tab) | Done | dont_starve_together |
-| [Fishsticks](https://dontstarve.fandom.com/wiki/Fishsticks) | Done | crock_pot_recipes, food, healing |
-| [Fist Full of Jam](https://dontstarve.fandom.com/wiki/Fist_Full_of_Jam) | Done | craftable_items, crock_pot_recipes, food, healing |
-| [Flare](https://dontstarve.fandom.com/wiki/Flare) | Done | craftable_items, dont_starve_together |
-| [Fleshy Bulb](https://dontstarve.fandom.com/wiki/Fleshy_Bulb) | Done | craftable_items, fuel, infobox_missing_crafting_description |
-| [Flint](https://dontstarve.fandom.com/wiki/Flint) | Done | craftable_items, infobox_missing_crafting_description |
-| [Floating Lantern](https://dontstarve.fandom.com/wiki/Floating_Lantern) | Done | craftable_items, dont_starve_together |
+| [Fishsticks](https://dontstarve.fandom.com/wiki/Fishsticks) | Done | crock_pot_recipes, food, healing, items |
+| [Fist Full of Jam](https://dontstarve.fandom.com/wiki/Fist_Full_of_Jam) | Done | craftable_items, crock_pot_recipes, food, healing, items |
+| [Flare](https://dontstarve.fandom.com/wiki/Flare) | Done | craftable_items, dont_starve_together, items |
+| [Fleshy Bulb](https://dontstarve.fandom.com/wiki/Fleshy_Bulb) | Done | craftable_items, fuel, infobox_missing_crafting_description, items |
+| [Flint](https://dontstarve.fandom.com/wiki/Flint) | Done | craftable_items, infobox_missing_crafting_description, items |
+| [Floating Lantern](https://dontstarve.fandom.com/wiki/Floating_Lantern) | Done | craftable_items, dont_starve_together, items |
 | [Floats](https://dontstarve.fandom.com/wiki/Floats) | Done | dont_starve_together |
-| [Floral Shirt](https://dontstarve.fandom.com/wiki/Floral_Shirt) | Done | cooling, craftable_items, dont_starve_together, equipable_items |
+| [Floral Shirt](https://dontstarve.fandom.com/wiki/Floral_Shirt) | Done | cooling, craftable_items, dont_starve_together, equipable_items, items |
 | [Florid Postern](https://dontstarve.fandom.com/wiki/Florid_Postern) | Done | dont_starve_together, indestructible_object |
+| [Flour](https://dontstarve.fandom.com/wiki/Flour) | Done | items |
 | [Flower](https://dontstarve.fandom.com/wiki/Flower) | Done | a_new_reign, dont_starve_together, health_loss |
-| [Flower Salad](https://dontstarve.fandom.com/wiki/Flower_Salad) | Done | crock_pot_recipes, dont_starve_together, food, healing |
+| [Flower Headband](https://dontstarve.fandom.com/wiki/Flower_Headband) | Done | items |
+| [Flower Salad](https://dontstarve.fandom.com/wiki/Flower_Salad) | Done | crock_pot_recipes, dont_starve_together, food, healing, items |
 | [Food & Gardening Filter](https://dontstarve.fandom.com/wiki/Food_%26_Gardening_Filter) | Done | dont_starve_together |
-| [Football Helmet](https://dontstarve.fandom.com/wiki/Football_Helmet) | Done | armour_filter, craftable_items, equipable_items, fight_tab, hats |
-| [Forest Turf](https://dontstarve.fandom.com/wiki/Forest_Turf) | Done | craftable_items, decorations_filter, fuel |
+| [Football Helmet](https://dontstarve.fandom.com/wiki/Football_Helmet) | Done | armour_filter, craftable_items, equipable_items, fight_tab, hats, items |
+| [Forest Turf](https://dontstarve.fandom.com/wiki/Forest_Turf) | Done | craftable_items, decorations_filter, fuel, items |
 | [Forge Portal](https://dontstarve.fandom.com/wiki/Forge_Portal) | Done | dont_starve_together, events, indestructible_object |
-| [Forget-Me-Lots](https://dontstarve.fandom.com/wiki/Forget-Me-Lots) | Done | dont_starve_together |
-| [Forging Hammer](https://dontstarve.fandom.com/wiki/Forging_Hammer) | Done | dont_starve_together |
-| [Fossils](https://dontstarve.fandom.com/wiki/Fossils) | Done | boss_dropped_items, dont_starve_together |
-| [Fountain of Knowledge](https://dontstarve.fandom.com/wiki/Fountain_of_Knowledge) | Done | dont_starve_together |
+| [Forget-Me-Lots](https://dontstarve.fandom.com/wiki/Forget-Me-Lots) | Done | dont_starve_together, items |
+| [Forging Hammer](https://dontstarve.fandom.com/wiki/Forging_Hammer) | Done | dont_starve_together, items |
+| [Fossils](https://dontstarve.fandom.com/wiki/Fossils) | Done | boss_dropped_items, dont_starve_together, items |
+| [Fountain of Knowledge](https://dontstarve.fandom.com/wiki/Fountain_of_Knowledge) | Done | dont_starve_together, items |
 | [Freezing](https://dontstarve.fandom.com/wiki/Freezing) | Done | gameplay, health_loss |
-| [Fresh Fruit Crepes](https://dontstarve.fandom.com/wiki/Fresh_Fruit_Crepes) | Done | dont_starve_together, food, healing |
-| [Friendly Fruit Fly Fruit](https://dontstarve.fandom.com/wiki/Friendly_Fruit_Fly_Fruit) | Done | boss_dropped_items, dont_starve_together, followers |
+| [Fresh Fruit Crepes](https://dontstarve.fandom.com/wiki/Fresh_Fruit_Crepes) | Done | dont_starve_together, food, healing, items |
+| [Friendly Fruit Fly Fruit](https://dontstarve.fandom.com/wiki/Friendly_Fruit_Fly_Fruit) | Done | boss_dropped_items, dont_starve_together, followers, items |
 | [Friendly Scarecrow](https://dontstarve.fandom.com/wiki/Friendly_Scarecrow) | Done | a_new_reign, craftable_structures, dont_starve_together |
 | [Frog](https://dontstarve.fandom.com/wiki/Frog) | Done | animals, hostile_creatures |
-| [Frog Legs](https://dontstarve.fandom.com/wiki/Frog_Legs) | Done | boss_dropped_items, food, healing |
+| [Frog Legs](https://dontstarve.fandom.com/wiki/Frog_Legs) | Done | boss_dropped_items, food, healing, items |
 | [Frog Rain](https://dontstarve.fandom.com/wiki/Frog_Rain) | Done | dont_starve_together, gameplay |
-| [Froggle Bunwich](https://dontstarve.fandom.com/wiki/Froggle_Bunwich) | Done | crock_pot_recipes, healing |
+| [Froggle Bunwich](https://dontstarve.fandom.com/wiki/Froggle_Bunwich) | Done | crock_pot_recipes, healing, items |
 | [From Beyond](https://dontstarve.fandom.com/wiki/From_Beyond) | Done | dont_starve_together, from_beyond |
 | [Frostjaw](https://dontstarve.fandom.com/wiki/Frostjaw) | Done | boss_monsters, dont_starve_together |
-| [Frozen Banana Daiquiri](https://dontstarve.fandom.com/wiki/Frozen_Banana_Daiquiri) | Done | cooling, crock_pot_recipes, dont_starve_together, food, healing |
-| [Fruit Medley](https://dontstarve.fandom.com/wiki/Fruit_Medley) | Done | cooling, crock_pot_recipes, healing |
-| [Funcap](https://dontstarve.fandom.com/wiki/Funcap) | Done | a_new_reign, clothing_filter, craftable_items, dont_starve_together, equipable_items, hats |
-| [Fungal Turf](https://dontstarve.fandom.com/wiki/Fungal_Turf) | Done | craftable_items, fuel |
-| [Fur Tuft](https://dontstarve.fandom.com/wiki/Fur_Tuft) | Done | boss_dropped_items, dont_starve_together, fuel |
+| [Frozen Banana Daiquiri](https://dontstarve.fandom.com/wiki/Frozen_Banana_Daiquiri) | Done | cooling, crock_pot_recipes, dont_starve_together, food, healing, items |
+| [Fruit Medley](https://dontstarve.fandom.com/wiki/Fruit_Medley) | Done | cooling, crock_pot_recipes, healing, items |
+| [Funcap](https://dontstarve.fandom.com/wiki/Funcap) | Done | a_new_reign, clothing_filter, craftable_items, dont_starve_together, equipable_items, hats, items |
+| [Fungal Turf](https://dontstarve.fandom.com/wiki/Fungal_Turf) | Done | craftable_items, fuel, items |
+| [Fur Tuft](https://dontstarve.fandom.com/wiki/Fur_Tuft) | Done | boss_dropped_items, dont_starve_together, fuel, items |
 | [Fused Shadeling](https://dontstarve.fandom.com/wiki/Fused_Shadeling) | Done | dont_starve_together, from_beyond |
 | [Garden Detritus](https://dontstarve.fandom.com/wiki/Garden_Detritus) | Done | dont_starve_together |
-| [Garden Digamajig](https://dontstarve.fandom.com/wiki/Garden_Digamajig) | Done | craftable_items, dont_starve_together, food_gardening_filter |
-| [Garden Hoe](https://dontstarve.fandom.com/wiki/Garden_Hoe) | Done | craftable_items, dont_starve_together, equipable_items, food_gardening_filter |
-| [Gardeneer Hat](https://dontstarve.fandom.com/wiki/Gardeneer_Hat) | Done | ancient_tier_1, craftable_items, dont_starve_together, equipable_items, food_gardening_filter, hats |
-| [Garland](https://dontstarve.fandom.com/wiki/Garland) | Done | craftable_items, equipable_items, hats |
+| [Garden Digamajig](https://dontstarve.fandom.com/wiki/Garden_Digamajig) | Done | craftable_items, dont_starve_together, food_gardening_filter, items |
+| [Garden Hoe](https://dontstarve.fandom.com/wiki/Garden_Hoe) | Done | craftable_items, dont_starve_together, equipable_items, food_gardening_filter, items |
+| [Gardeneer Hat](https://dontstarve.fandom.com/wiki/Gardeneer_Hat) | Done | ancient_tier_1, craftable_items, dont_starve_together, equipable_items, food_gardening_filter, hats, items |
+| [Garland](https://dontstarve.fandom.com/wiki/Garland) | Done | craftable_items, equipable_items, hats, items |
 | [Garlic](https://dontstarve.fandom.com/wiki/Garlic) | Done | dont_starve_together, events, food, healing |
-| [Garlic Powder](https://dontstarve.fandom.com/wiki/Garlic_Powder) | Done | craftable_items, dont_starve_together |
-| [Gears](https://dontstarve.fandom.com/wiki/Gears) | Done | food, healing |
+| [Garlic Powder](https://dontstarve.fandom.com/wiki/Garlic_Powder) | Done | craftable_items, dont_starve_together, items |
+| [Gears](https://dontstarve.fandom.com/wiki/Gears) | Done | food, healing, items |
 | [Gem Deer](https://dontstarve.fandom.com/wiki/Gem_Deer) | Done | a_new_reign, animals, dont_starve_together, hostile_creatures |
-| [Geode Fruit](https://dontstarve.fandom.com/wiki/Geode_Fruit) | Done | dont_starve_together, from_beyond |
+| [Geode Fruit](https://dontstarve.fandom.com/wiki/Geode_Fruit) | Done | dont_starve_together, from_beyond, items |
 | [Gestalt](https://dontstarve.fandom.com/wiki/Gestalt) | Done | dont_starve_together, hostile_creatures |
 | [Ghost](https://dontstarve.fandom.com/wiki/Ghost) | Done | hostile_creatures |
 | [Ghost Characters](https://dontstarve.fandom.com/wiki/Ghost_Characters) | Done | dont_starve_together |
 | [Ghostly Elixir](https://dontstarve.fandom.com/wiki/Ghostly_Elixir) | Done | dont_starve_together, healing |
 | [Giant Crops](https://dontstarve.fandom.com/wiki/Giant_Crops) | Done | dont_starve_together |
 | [Gigantic Beehive](https://dontstarve.fandom.com/wiki/Gigantic_Beehive) | Done | a_new_reign, dont_starve_together |
-| [Gizmo](https://dontstarve.fandom.com/wiki/Gizmo) | Done | dont_starve_together |
-| [Glass Cutter](https://dontstarve.fandom.com/wiki/Glass_Cutter) | Done | celestial_filter, celestial_tab, craftable_items, dont_starve_together, equipable_items |
+| [Gizmo](https://dontstarve.fandom.com/wiki/Gizmo) | Done | dont_starve_together, items |
+| [Glass Cutter](https://dontstarve.fandom.com/wiki/Glass_Cutter) | Done | celestial_filter, celestial_tab, craftable_items, dont_starve_together, equipable_items, items |
 | [Glass Sculptures](https://dontstarve.fandom.com/wiki/Glass_Sculptures) | Done | a_new_reign, dont_starve_together |
-| [Glommer](https://dontstarve.fandom.com/wiki/Glommer) | Done | animals, dont_starve_together, flying_creatures, followers |
-| [Glommer's Flower](https://dontstarve.fandom.com/wiki/Glommer's_Flower) | Done | dont_starve_together, fuel |
-| [Glommer's Goop](https://dontstarve.fandom.com/wiki/Glommer's_Goop) | Done | dont_starve_together, fertilizer, food, fuel, healing |
+| [Glommer](https://dontstarve.fandom.com/wiki/Glommer) | Done | animals, dont_starve_together, flying_creatures, followers, innocents |
+| [Glommer's Flower](https://dontstarve.fandom.com/wiki/Glommer's_Flower) | Done | dont_starve_together, fuel, items |
+| [Glommer's Goop](https://dontstarve.fandom.com/wiki/Glommer's_Goop) | Done | dont_starve_together, fertilizer, food, fuel, healing, items |
 | [Glommer's Statue](https://dontstarve.fandom.com/wiki/Glommer's_Statue) | Done | dont_starve_together, indestructible_object |
-| [Glommer's Wings](https://dontstarve.fandom.com/wiki/Glommer's_Wings) | Done | dont_starve_together, fuel |
-| [Gloomerang](https://dontstarve.fandom.com/wiki/Gloomerang) | Done | craftable_items, dont_starve_together, equipable_items, from_beyond |
+| [Glommer's Wings](https://dontstarve.fandom.com/wiki/Glommer's_Wings) | Done | dont_starve_together, fuel, items |
+| [Gloomerang](https://dontstarve.fandom.com/wiki/Gloomerang) | Done | craftable_items, dont_starve_together, equipable_items, from_beyond, items |
 | [Gloomthorn](https://dontstarve.fandom.com/wiki/Gloomthorn) | Done | dont_starve_together, from_beyond |
 | [Glossary](https://dontstarve.fandom.com/wiki/Glossary) | Done | gameplay |
-| [Glow Berry](https://dontstarve.fandom.com/wiki/Glow_Berry) | Done | food, fruits, healing |
-| [Glow Berry Mousse](https://dontstarve.fandom.com/wiki/Glow_Berry_Mousse) | Done | craftable_items, dont_starve_together, food |
+| [Glow Berry](https://dontstarve.fandom.com/wiki/Glow_Berry) | Done | food, fruits, healing, items |
+| [Glow Berry Mousse](https://dontstarve.fandom.com/wiki/Glow_Berry_Mousse) | Done | craftable_items, dont_starve_together, food, items |
 | [Gnarwail](https://dontstarve.fandom.com/wiki/Gnarwail) | Done | dont_starve_together |
-| [Gnarwail Horn](https://dontstarve.fandom.com/wiki/Gnarwail_Horn) | Done | dont_starve_together |
-| [Goat Milk](https://dontstarve.fandom.com/wiki/Goat_Milk) | Done | dont_starve_together, events |
+| [Gnarwail Horn](https://dontstarve.fandom.com/wiki/Gnarwail_Horn) | Done | dont_starve_together, items |
+| [Goat Milk](https://dontstarve.fandom.com/wiki/Goat_Milk) | Done | dont_starve_together, events, items |
 | [Gobbler](https://dontstarve.fandom.com/wiki/Gobbler) | Done | animals, birds |
 | [Goggles](https://dontstarve.fandom.com/wiki/Goggles) | Done | dont_starve_together, hats |
-| [Gold Flooring](https://dontstarve.fandom.com/wiki/Gold_Flooring) | Done | craftable_items, decorations_filter, dont_starve_together, fuel |
-| [Gold Nugget](https://dontstarve.fandom.com/wiki/Gold_Nugget) | Done | boss_dropped_items, craftable_items, infobox_missing_crafting_description |
+| [Gold Flooring](https://dontstarve.fandom.com/wiki/Gold_Flooring) | Done | craftable_items, decorations_filter, dont_starve_together, fuel, items |
+| [Gold Nugget](https://dontstarve.fandom.com/wiki/Gold_Nugget) | Done | boss_dropped_items, craftable_items, infobox_missing_crafting_description, items |
 | [Gourmet Salt Lick](https://dontstarve.fandom.com/wiki/Gourmet_Salt_Lick) | Done | craftable_structures, dont_starve_together, from_beyond |
-| [Gramophone](https://dontstarve.fandom.com/wiki/Gramophone) | Done | craftable_items, decorations_filter, dont_starve_together, from_beyond |
+| [Gramophone](https://dontstarve.fandom.com/wiki/Gramophone) | Done | craftable_items, decorations_filter, dont_starve_together, from_beyond, items |
 | [Grand Forge Boarrior](https://dontstarve.fandom.com/wiki/Grand_Forge_Boarrior) | Done | boss_monsters, dont_starve_together, events, hostile_creatures |
 | [Grass Gator](https://dontstarve.fandom.com/wiki/Grass_Gator) | Done | animals, dont_starve_together |
 | [Grass Gekko](https://dontstarve.fandom.com/wiki/Grass_Gekko) | Done | a_new_reign, dont_starve_together |
-| [Grass Raft](https://dontstarve.fandom.com/wiki/Grass_Raft) | Done | craftable_items, craftable_structures, dont_starve_together |
-| [Grass Suit](https://dontstarve.fandom.com/wiki/Grass_Suit) | Done | armour_filter, craftable_items, equipable_items, fight_tab, fuel |
-| [Grass Tuft](https://dontstarve.fandom.com/wiki/Grass_Tuft) | Done | fuel |
-| [Grass Turf](https://dontstarve.fandom.com/wiki/Grass_Turf) | Done | craftable_items, decorations_filter, fuel |
+| [Grass Raft](https://dontstarve.fandom.com/wiki/Grass_Raft) | Done | craftable_items, craftable_structures, dont_starve_together, items |
+| [Grass Suit](https://dontstarve.fandom.com/wiki/Grass_Suit) | Done | armour_filter, craftable_items, equipable_items, fight_tab, fuel, items |
+| [Grass Tuft](https://dontstarve.fandom.com/wiki/Grass_Tuft) | Done | fuel, items |
+| [Grass Turf](https://dontstarve.fandom.com/wiki/Grass_Turf) | Done | craftable_items, decorations_filter, fuel, items |
 | [Grave](https://dontstarve.fandom.com/wiki/Grave) | Done | indestructible_object |
 | [Graveyard](https://dontstarve.fandom.com/wiki/Graveyard) | Done | gameplay |
 | [Grazer](https://dontstarve.fandom.com/wiki/Grazer) | Done | dont_starve_together, from_beyond |
 | [Great Depths Worm](https://dontstarve.fandom.com/wiki/Great_Depths_Worm) | Done | boss_monsters, cave_creatures, dont_starve_together, from_beyond, hostile_creatures |
 | [Great Tree Trunk](https://dontstarve.fandom.com/wiki/Great_Tree_Trunk) | Done | dont_starve_together, indestructible_object |
 | [Green Cap](https://dontstarve.fandom.com/wiki/Green_Cap) | Done | boss_dropped_items, food, health_loss |
-| [Green Gem](https://dontstarve.fandom.com/wiki/Green_Gem) | Done | boss_dropped_items, craftable_items, infobox_missing_crafting_description |
-| [Grim Galette](https://dontstarve.fandom.com/wiki/Grim_Galette) | Done | dont_starve_together, food, healing, health_loss |
-| [Growth Formula Starter](https://dontstarve.fandom.com/wiki/Growth_Formula_Starter) | Done | craftable_items, dont_starve_together, fertilizer, food_gardening_filter |
+| [Green Gem](https://dontstarve.fandom.com/wiki/Green_Gem) | Done | boss_dropped_items, craftable_items, infobox_missing_crafting_description, items |
+| [Grim Galette](https://dontstarve.fandom.com/wiki/Grim_Galette) | Done | dont_starve_together, food, healing, health_loss, items |
+| [Growth Formula Starter](https://dontstarve.fandom.com/wiki/Growth_Formula_Starter) | Done | craftable_items, dont_starve_together, fertilizer, food_gardening_filter, items |
 | [Grumble Bee](https://dontstarve.fandom.com/wiki/Grumble_Bee) | Done | a_new_reign, dont_starve_together, flying_creatures, hostile_creatures |
-| [Guacamole](https://dontstarve.fandom.com/wiki/Guacamole) | Done | crock_pot_recipes, dont_starve_together, food, healing |
-| [Guano](https://dontstarve.fandom.com/wiki/Guano) | Done | fertilizer, fuel |
-| [Guano Turf](https://dontstarve.fandom.com/wiki/Guano_Turf) | Done | craftable_items, decorations_filter, fuel |
-| [Guardian's Horn](https://dontstarve.fandom.com/wiki/Guardian's_Horn) | Done | boss_dropped_items, food, healing |
-| [Don’t Starve Together Dedicated Servers](https://dontstarve.fandom.com/wiki/Guides/Don%E2%80%99t_Starve_Together_Dedicated_Servers) | Done | dont_starve_together |
-| [Gunpowder](https://dontstarve.fandom.com/wiki/Gunpowder) | Done | craftable_items, health_loss |
+| [Guacamole](https://dontstarve.fandom.com/wiki/Guacamole) | Done | crock_pot_recipes, dont_starve_together, food, healing, items |
+| [Guano](https://dontstarve.fandom.com/wiki/Guano) | Done | fertilizer, fuel, items |
+| [Guano Turf](https://dontstarve.fandom.com/wiki/Guano_Turf) | Done | craftable_items, decorations_filter, fuel, items |
+| [Guardian's Horn](https://dontstarve.fandom.com/wiki/Guardian's_Horn) | Done | boss_dropped_items, food, healing, items |
+| [Guides/Don’t Starve Together Dedicated Servers](https://dontstarve.fandom.com/wiki/Guides/Don%E2%80%99t_Starve_Together_Dedicated_Servers) | Done | dont_starve_together |
+| [Gunpowder](https://dontstarve.fandom.com/wiki/Gunpowder) | Done | craftable_items, health_loss, items |
 | [Hallowed Nights](https://dontstarve.fandom.com/wiki/Hallowed_Nights) | Done | dont_starve_together, events, healing |
-| [Ham Bat](https://dontstarve.fandom.com/wiki/Ham_Bat) | Done | craftable_items, equipable_items, fight_tab |
-| [Hammer](https://dontstarve.fandom.com/wiki/Hammer) | Done | craftable_items, equipable_items |
-| [Handy Remote](https://dontstarve.fandom.com/wiki/Handy_Remote) | Done | craftable_items, dont_starve_together |
-| [Hardwood Hat](https://dontstarve.fandom.com/wiki/Hardwood_Hat) | Done | armour_filter, craftable_items, dont_starve_together |
-| [Hay Wall](https://dontstarve.fandom.com/wiki/Hay_Wall) | Done | craftable_items, craftable_structures, decorations_filter |
+| [Ham Bat](https://dontstarve.fandom.com/wiki/Ham_Bat) | Done | craftable_items, equipable_items, fight_tab, items |
+| [Hammer](https://dontstarve.fandom.com/wiki/Hammer) | Done | craftable_items, equipable_items, items |
+| [Handy Remote](https://dontstarve.fandom.com/wiki/Handy_Remote) | Done | craftable_items, dont_starve_together, items |
+| [Hardwood Hat](https://dontstarve.fandom.com/wiki/Hardwood_Hat) | Done | armour_filter, craftable_items, dont_starve_together, items |
+| [Hay Wall](https://dontstarve.fandom.com/wiki/Hay_Wall) | Done | craftable_items, craftable_structures, decorations_filter, items |
 | [Healing Filter](https://dontstarve.fandom.com/wiki/Healing_Filter) | Done | dont_starve_together |
-| [Healing Glop](https://dontstarve.fandom.com/wiki/Healing_Glop) | Done | craftable_items, dont_starve_together |
-| [Healing Salve](https://dontstarve.fandom.com/wiki/Healing_Salve) | Done | craftable_items, healing |
+| [Healing Glop](https://dontstarve.fandom.com/wiki/Healing_Glop) | Done | craftable_items, dont_starve_together, items |
+| [Healing Salve](https://dontstarve.fandom.com/wiki/Healing_Salve) | Done | craftable_items, healing, items |
 | [Health](https://dontstarve.fandom.com/wiki/Health) | Done | gameplay |
+| [Hearthsfire Crystals](https://dontstarve.fandom.com/wiki/Hearthsfire_Crystals) | Done | items |
 | [Hermit Home](https://dontstarve.fandom.com/wiki/Hermit_Home) | Done | craftable_structures, dont_starve_together, infobox_missing_crafting_description |
 | [Hermit Island](https://dontstarve.fandom.com/wiki/Hermit_Island) | Done | dont_starve_together |
-| [Hibearnation Vest](https://dontstarve.fandom.com/wiki/Hibearnation_Vest) | Done | craftable_items, dont_starve_together, equipable_items |
+| [Hibearnation Vest](https://dontstarve.fandom.com/wiki/Hibearnation_Vest) | Done | craftable_items, dont_starve_together, equipable_items, items |
 | [Hollow Stump](https://dontstarve.fandom.com/wiki/Hollow_Stump) | Done | dont_starve_together |
-| [Honey](https://dontstarve.fandom.com/wiki/Honey) | Done | boss_dropped_items, food, healing |
-| [Honey Crystals](https://dontstarve.fandom.com/wiki/Honey_Crystals) | Done | craftable_items, dont_starve_together |
-| [Honey Ham](https://dontstarve.fandom.com/wiki/Honey_Ham) | Done | crock_pot_recipes, food, healing |
-| [Honey Nuggets](https://dontstarve.fandom.com/wiki/Honey_Nuggets) | Done | crock_pot_recipes, healing |
-| [Honey Poultice](https://dontstarve.fandom.com/wiki/Honey_Poultice) | Done | craftable_items, healing |
-| [Honeycomb](https://dontstarve.fandom.com/wiki/Honeycomb) | Done | boss_dropped_items |
-| [Horizon Expandinator](https://dontstarve.fandom.com/wiki/Horizon_Expandinator) | Done | dont_starve_together, from_beyond |
+| [Honey](https://dontstarve.fandom.com/wiki/Honey) | Done | boss_dropped_items, food, healing, items |
+| [Honey Crystals](https://dontstarve.fandom.com/wiki/Honey_Crystals) | Done | craftable_items, dont_starve_together, items |
+| [Honey Ham](https://dontstarve.fandom.com/wiki/Honey_Ham) | Done | crock_pot_recipes, food, healing, items |
+| [Honey Nuggets](https://dontstarve.fandom.com/wiki/Honey_Nuggets) | Done | crock_pot_recipes, healing, items |
+| [Honey Poultice](https://dontstarve.fandom.com/wiki/Honey_Poultice) | Done | craftable_items, healing, items |
+| [Honeycomb](https://dontstarve.fandom.com/wiki/Honeycomb) | Done | boss_dropped_items, items |
+| [Horizon Expandinator](https://dontstarve.fandom.com/wiki/Horizon_Expandinator) | Done | dont_starve_together, from_beyond, items |
 | [Horror Hound](https://dontstarve.fandom.com/wiki/Horror_Hound) | Done | dont_starve_together, hostile_creatures |
-| [Hostile Flare](https://dontstarve.fandom.com/wiki/Hostile_Flare) | Done | craftable_items, dont_starve_together |
-| [Hot Dragon Chili Salad](https://dontstarve.fandom.com/wiki/Hot_Dragon_Chili_Salad) | Done | dont_starve_together, health_loss |
+| [Hostile Flare](https://dontstarve.fandom.com/wiki/Hostile_Flare) | Done | craftable_items, dont_starve_together, items |
+| [Hot Dragon Chili Salad](https://dontstarve.fandom.com/wiki/Hot_Dragon_Chili_Salad) | Done | dont_starve_together, health_loss, items |
 | [Hot Spring](https://dontstarve.fandom.com/wiki/Hot_Spring) | Done | dont_starve_together |
 | [Hound](https://dontstarve.fandom.com/wiki/Hound) | Done | hostile_creatures |
-| [Hound's Tooth](https://dontstarve.fandom.com/wiki/Hound's_Tooth) | Done | craftable_items, infobox_missing_crafting_description |
-| [Houndius Shootius](https://dontstarve.fandom.com/wiki/Houndius_Shootius) | Done | ancient_tab, craftable_items, craftable_structures |
-| [Howlitzer](https://dontstarve.fandom.com/wiki/Howlitzer) | Done | craftable_items, dont_starve_together, equipable_items |
+| [Hound's Tooth](https://dontstarve.fandom.com/wiki/Hound's_Tooth) | Done | craftable_items, infobox_missing_crafting_description, items |
+| [Houndius Shootius](https://dontstarve.fandom.com/wiki/Houndius_Shootius) | Done | ancient_tab, craftable_items, craftable_structures, items |
+| [Howlitzer](https://dontstarve.fandom.com/wiki/Howlitzer) | Done | craftable_items, dont_starve_together, equipable_items, items |
 | [Humble Lamb Idol](https://dontstarve.fandom.com/wiki/Humble_Lamb_Idol) | Done | cooking_filter, craftable_structures, dont_starve_together |
 | [Hunger](https://dontstarve.fandom.com/wiki/Hunger) | Done | gameplay |
 | [Hutch](https://dontstarve.fandom.com/wiki/Hutch) | Done | cave_creatures, containers, dont_starve_together, followers |
-| [Ice](https://dontstarve.fandom.com/wiki/Ice) | Done | cooling, food, healing |
+| [Ice](https://dontstarve.fandom.com/wiki/Ice) | Done | cooling, food, healing, items |
 | [Ice Box](https://dontstarve.fandom.com/wiki/Ice_Box) | Done | containers, cooking_filter, craftable_structures, food_tab |
-| [Ice Cream](https://dontstarve.fandom.com/wiki/Ice_Cream) | Done | cooling, craftable_items, crock_pot_recipes, dont_starve_together |
-| [Ice Crystaleyezer](https://dontstarve.fandom.com/wiki/Ice_Crystaleyezer) | Done | cooling, craftable_items, craftable_structures, dont_starve_together, from_beyond |
-| [Ice Cube](https://dontstarve.fandom.com/wiki/Ice_Cube) | Done | cooling, craftable_items, dont_starve_together, equipable_items, hats |
+| [Ice Cream](https://dontstarve.fandom.com/wiki/Ice_Cream) | Done | cooling, craftable_items, crock_pot_recipes, dont_starve_together, items |
+| [Ice Crystaleyezer](https://dontstarve.fandom.com/wiki/Ice_Crystaleyezer) | Done | cooling, craftable_items, craftable_structures, dont_starve_together, from_beyond, items |
+| [Ice Cube](https://dontstarve.fandom.com/wiki/Ice_Cube) | Done | cooling, craftable_items, dont_starve_together, equipable_items, hats, items |
 | [Ice Fishing Hole](https://dontstarve.fandom.com/wiki/Ice_Fishing_Hole) | Done | dont_starve_together |
 | [Ice Flingomatic](https://dontstarve.fandom.com/wiki/Ice_Flingomatic) | Done | craftable_structures, dont_starve_together |
 | [Ice Floe](https://dontstarve.fandom.com/wiki/Ice_Floe) | Done | dont_starve_together, from_beyond |
 | [Ice Spike](https://dontstarve.fandom.com/wiki/Ice_Spike) | Done | dont_starve_together |
-| [Ice Staff](https://dontstarve.fandom.com/wiki/Ice_Staff) | Done | craftable_items, equipable_items |
+| [Ice Staff](https://dontstarve.fandom.com/wiki/Ice_Staff) | Done | craftable_items, equipable_items, items |
 | [Icker](https://dontstarve.fandom.com/wiki/Icker) | Done | cave_creatures, dont_starve_together, from_beyond, hostile_creatures |
-| [Icker Jar](https://dontstarve.fandom.com/wiki/Icker_Jar) | Done | dont_starve_together, from_beyond |
-| [Icker Preserve](https://dontstarve.fandom.com/wiki/Icker_Preserve) | Done | craftable_items, craftable_structures, dont_starve_together, from_beyond |
+| [Icker Jar](https://dontstarve.fandom.com/wiki/Icker_Jar) | Done | dont_starve_together, from_beyond, items |
+| [Icker Preserve](https://dontstarve.fandom.com/wiki/Icker_Preserve) | Done | craftable_items, craftable_structures, dont_starve_together, from_beyond, items |
+| [Infernal Staff](https://dontstarve.fandom.com/wiki/Infernal_Staff) | Done | items |
 | [Infernal Swineclops](https://dontstarve.fandom.com/wiki/Infernal_Swineclops) | Done | boss_monsters, dont_starve_together, events |
-| [Infused Moon Shard](https://dontstarve.fandom.com/wiki/Infused_Moon_Shard) | Done | boss_dropped_items, craftable_items, dont_starve_together, infobox_missing_crafting_description |
+| [Infused Moon Shard](https://dontstarve.fandom.com/wiki/Infused_Moon_Shard) | Done | boss_dropped_items, craftable_items, dont_starve_together, infobox_missing_crafting_description, items |
 | [Ink Blight](https://dontstarve.fandom.com/wiki/Ink_Blight) | Done | cave_creatures, dont_starve_together, from_beyond, hostile_creatures |
 | [Insight](https://dontstarve.fandom.com/wiki/Insight) | Done | dont_starve_together, gameplay |
-| [Inspectacles](https://dontstarve.fandom.com/wiki/Inspectacles) | Done | clothing_filter, craftable_items, dont_starve_together |
-| [Insulated Pack](https://dontstarve.fandom.com/wiki/Insulated_Pack) | Done | backpacks, containers, cooking_filter, craftable_items, dont_starve_together, equipable_items |
+| [Inspectacles](https://dontstarve.fandom.com/wiki/Inspectacles) | Done | clothing_filter, craftable_items, dont_starve_together, items |
+| [Insulated Pack](https://dontstarve.fandom.com/wiki/Insulated_Pack) | Done | backpacks, containers, cooking_filter, craftable_items, dont_starve_together, equipable_items, items |
 | [Inventory](https://dontstarve.fandom.com/wiki/Inventory) | Done | gameplay |
 | [Inviting Formation](https://dontstarve.fandom.com/wiki/Inviting_Formation) | Done | dont_starve_together |
-| [Iridescent Gem](https://dontstarve.fandom.com/wiki/Iridescent_Gem) | Done | a_new_reign, craftable_items, dont_starve_together, infobox_missing_crafting_description |
+| [Iridescent Gem](https://dontstarve.fandom.com/wiki/Iridescent_Gem) | Done | a_new_reign, craftable_items, dont_starve_together, infobox_missing_crafting_description, items |
+| [Iron Key Gorge](https://dontstarve.fandom.com/wiki/Iron_Key_Gorge) | Done | items |
 | [Items](https://dontstarve.fandom.com/wiki/Items) | Done | gameplay |
 | [Items Don't Starve Together](https://dontstarve.fandom.com/wiki/Items_Don't_Starve_Together) | Done | dont_starve_together |
-| [Jelly Salad](https://dontstarve.fandom.com/wiki/Jelly_Salad) | Done | crock_pot_recipes, dont_starve_together |
-| [Jellybeans](https://dontstarve.fandom.com/wiki/Jellybeans) | Done | a_new_reign, crock_pot_recipes, dont_starve_together, food, healing |
-| [Jerky](https://dontstarve.fandom.com/wiki/Jerky) | Done | craftable_items, healing |
-| [Juicy Berries](https://dontstarve.fandom.com/wiki/Juicy_Berries) | Done | a_new_reign, dont_starve_together, food, fruits, healing |
-| [Juicy Berry Bush](https://dontstarve.fandom.com/wiki/Juicy_Berry_Bush) | Done | a_new_reign, craftable_items, dont_starve_together, fuel |
+| [Jagged Grand Armor](https://dontstarve.fandom.com/wiki/Jagged_Grand_Armor) | Done | items |
+| [Jagged Wood Armor](https://dontstarve.fandom.com/wiki/Jagged_Wood_Armor) | Done | items |
+| [Jelly Salad](https://dontstarve.fandom.com/wiki/Jelly_Salad) | Done | crock_pot_recipes, dont_starve_together, items |
+| [Jellybeans](https://dontstarve.fandom.com/wiki/Jellybeans) | Done | a_new_reign, crock_pot_recipes, dont_starve_together, food, healing, items |
+| [Jerky](https://dontstarve.fandom.com/wiki/Jerky) | Done | craftable_items, healing, items |
+| [Juicy Berries](https://dontstarve.fandom.com/wiki/Juicy_Berries) | Done | a_new_reign, dont_starve_together, food, fruits, healing, items |
+| [Juicy Berry Bush](https://dontstarve.fandom.com/wiki/Juicy_Berry_Bush) | Done | a_new_reign, craftable_items, dont_starve_together, fuel, items |
 | [Junk Pile](https://dontstarve.fandom.com/wiki/Junk_Pile) | Done | dont_starve_together, from_beyond |
 | [Junk Yard](https://dontstarve.fandom.com/wiki/Junk_Yard) | Done | dont_starve_together, from_beyond |
 | [Junky Fence](https://dontstarve.fandom.com/wiki/Junky_Fence) | Done | dont_starve_together, from_beyond |
-| [Kabobs](https://dontstarve.fandom.com/wiki/Kabobs) | Done | craftable_items, crock_pot_recipes, healing |
+| [Kabobs](https://dontstarve.fandom.com/wiki/Kabobs) | Done | craftable_items, crock_pot_recipes, healing, items |
 | [Kelp Fronds](https://dontstarve.fandom.com/wiki/Kelp_Fronds) | Done | dont_starve_together, food, health_loss |
-| [Kelp Patch](https://dontstarve.fandom.com/wiki/Kelp_Patch) | Done | craftable_items, dont_starve_together, from_beyond, fuel |
-| [Key](https://dontstarve.fandom.com/wiki/Key) | Done | dont_starve_together, events |
+| [Kelp Patch](https://dontstarve.fandom.com/wiki/Kelp_Patch) | Done | craftable_items, dont_starve_together, from_beyond, fuel, items |
+| [Key](https://dontstarve.fandom.com/wiki/Key) | Done | dont_starve_together, events, items |
 | [King of the Merms](https://dontstarve.fandom.com/wiki/King_of_the_Merms) | Done | dont_starve_together |
-| [Kitschy Idols](https://dontstarve.fandom.com/wiki/Kitschy_Idols) | Done | craftable_items, dont_starve_together, health_loss |
+| [Kitschy Idols](https://dontstarve.fandom.com/wiki/Kitschy_Idols) | Done | craftable_items, dont_starve_together, health_loss, items |
 | [Klaus](https://dontstarve.fandom.com/wiki/Klaus) | Done | a_new_reign, boss_monsters, dont_starve_together, events, hostile_creatures |
 | [Knobbly Tree](https://dontstarve.fandom.com/wiki/Knobbly_Tree) | Done | dont_starve_together |
 | [Knockback](https://dontstarve.fandom.com/wiki/Knockback) | Done | dont_starve_together, gameplay |
 | [Koalefant](https://dontstarve.fandom.com/wiki/Koalefant) | Done | animals |
 | [Koalefant Carcass](https://dontstarve.fandom.com/wiki/Koalefant_Carcass) | Done | dont_starve_together |
-| [Koalefant Trunk](https://dontstarve.fandom.com/wiki/Koalefant_Trunk) | Done | food, healing |
+| [Koalefant Trunk](https://dontstarve.fandom.com/wiki/Koalefant_Trunk) | Done | food, healing, items |
 | [Krampus](https://dontstarve.fandom.com/wiki/Krampus) | Done | dont_starve_together |
-| [Krampus Sack](https://dontstarve.fandom.com/wiki/Krampus_Sack) | Done | backpacks, boss_dropped_items, containers |
+| [Krampus Sack](https://dontstarve.fandom.com/wiki/Krampus_Sack) | Done | backpacks, boss_dropped_items, containers, items |
 | [Lake](https://dontstarve.fandom.com/wiki/Lake) | Done | a_new_reign, dont_starve_together |
 | [Landscaping Tab](https://dontstarve.fandom.com/wiki/Landscaping_Tab) | Done | dont_starve_together |
-| [Lantern](https://dontstarve.fandom.com/wiki/Lantern) | Done | craftable_items, equipable_items |
+| [Lantern](https://dontstarve.fandom.com/wiki/Lantern) | Done | craftable_items, equipable_items, items |
+| [Large Casserole Dish](https://dontstarve.fandom.com/wiki/Large_Casserole_Dish) | Done | items |
+| [Large Cookpot](https://dontstarve.fandom.com/wiki/Large_Cookpot) | Done | items |
 | [Lavae](https://dontstarve.fandom.com/wiki/Lavae) | Done | dont_starve_together |
-| [Lavae Egg](https://dontstarve.fandom.com/wiki/Lavae_Egg) | Done | boss_dropped_items, dont_starve_together |
-| [Lavae Tooth](https://dontstarve.fandom.com/wiki/Lavae_Tooth) | Done | dont_starve_together, indestructible_object |
+| [Lavae Egg](https://dontstarve.fandom.com/wiki/Lavae_Egg) | Done | boss_dropped_items, dont_starve_together, items |
+| [Lavae Tooth](https://dontstarve.fandom.com/wiki/Lavae_Tooth) | Done | dont_starve_together, indestructible_object, items |
 | [Leafy Meat](https://dontstarve.fandom.com/wiki/Leafy_Meat) | Done | food, healing |
-| [Leafy Meatloaf](https://dontstarve.fandom.com/wiki/Leafy_Meatloaf) | Done | crock_pot_recipes, dont_starve_together, food, healing |
-| [Lesser Glow Berry](https://dontstarve.fandom.com/wiki/Lesser_Glow_Berry) | Done | dont_starve_together, food, fruits, healing |
-| [Lichen](https://dontstarve.fandom.com/wiki/Lichen) | Done | food, healing |
+| [Leafy Meatloaf](https://dontstarve.fandom.com/wiki/Leafy_Meatloaf) | Done | crock_pot_recipes, dont_starve_together, food, healing, items |
+| [Lesser Glow Berry](https://dontstarve.fandom.com/wiki/Lesser_Glow_Berry) | Done | dont_starve_together, food, fruits, healing, items |
+| [Lichen](https://dontstarve.fandom.com/wiki/Lichen) | Done | food, healing, items |
 | [Lichen Meadow](https://dontstarve.fandom.com/wiki/Lichen_Meadow) | Done | dont_starve_together |
-| [Life Giving Amulet](https://dontstarve.fandom.com/wiki/Life_Giving_Amulet) | Done | craftable_items, dont_starve_together, equipable_items, healing |
-| [Light Bulb](https://dontstarve.fandom.com/wiki/Light_Bulb) | Done | food, fuel, healing |
+| [Life Giving Amulet](https://dontstarve.fandom.com/wiki/Life_Giving_Amulet) | Done | craftable_items, dont_starve_together, equipable_items, healing, items |
+| [Light Bulb](https://dontstarve.fandom.com/wiki/Light_Bulb) | Done | food, fuel, healing, items |
 | [Light Sources Filter](https://dontstarve.fandom.com/wiki/Light_Sources_Filter) | Done | dont_starve_together |
 | [Lightning](https://dontstarve.fandom.com/wiki/Lightning) | Done | gameplay |
-| [Lightning Conductor](https://dontstarve.fandom.com/wiki/Lightning_Conductor) | Done | craftable_items, dont_starve_together |
+| [Lightning Conductor](https://dontstarve.fandom.com/wiki/Lightning_Conductor) | Done | craftable_items, dont_starve_together, items |
 | [Lightning Rod](https://dontstarve.fandom.com/wiki/Lightning_Rod) | Done | craftable_structures |
-| [Lil' Itchy](https://dontstarve.fandom.com/wiki/Lil'_Itchy) | Done | craftable_items, dont_starve_together |
-| [Living Log](https://dontstarve.fandom.com/wiki/Living_Log) | Done | boss_dropped_items, craftable_items, fuel |
-| [Log](https://dontstarve.fandom.com/wiki/Log) | Done | craftable_items, fuel, infobox_missing_crafting_description |
-| [Log Suit](https://dontstarve.fandom.com/wiki/Log_Suit) | Done | armour_filter, craftable_items, equipable_items, fight_tab, fuel |
+| [Lil' Itchy](https://dontstarve.fandom.com/wiki/Lil'_Itchy) | Done | craftable_items, dont_starve_together, items |
+| [Living Log](https://dontstarve.fandom.com/wiki/Living_Log) | Done | boss_dropped_items, craftable_items, fuel, items |
+| [Living Staff](https://dontstarve.fandom.com/wiki/Living_Staff) | Done | items |
+| [Log](https://dontstarve.fandom.com/wiki/Log) | Done | craftable_items, fuel, infobox_missing_crafting_description, items |
+| [Log Suit](https://dontstarve.fandom.com/wiki/Log_Suit) | Done | armour_filter, craftable_items, equipable_items, fight_tab, fuel, items |
 | [Loot Stash](https://dontstarve.fandom.com/wiki/Loot_Stash) | Done | a_new_reign, dont_starve_together, events |
 | [Lord of the Fruit Flies](https://dontstarve.fandom.com/wiki/Lord_of_the_Fruit_Flies) | Done | boss_monsters, dont_starve_together |
-| [Lost Scrapbook Page](https://dontstarve.fandom.com/wiki/Lost_Scrapbook_Page) | Done | dont_starve_together, from_beyond, fuel |
+| [Lost Scrapbook Page](https://dontstarve.fandom.com/wiki/Lost_Scrapbook_Page) | Done | dont_starve_together, from_beyond, fuel, items |
 | [Loyal Merm Guard](https://dontstarve.fandom.com/wiki/Loyal_Merm_Guard) | Done | dont_starve_together, followers, hostile_creatures |
-| [Lucky Beast](https://dontstarve.fandom.com/wiki/Lucky_Beast) | Done | craftable_items, dont_starve_together, equipable_items, hats |
-| [Lucky Gold Nugget](https://dontstarve.fandom.com/wiki/Lucky_Gold_Nugget) | Done | dont_starve_together |
-| [Lucy the Axe](https://dontstarve.fandom.com/wiki/Lucy_the_Axe) | Done | equipable_items |
+| [Lucky Beast](https://dontstarve.fandom.com/wiki/Lucky_Beast) | Done | craftable_items, dont_starve_together, equipable_items, hats, items |
+| [Lucky Gold Nugget](https://dontstarve.fandom.com/wiki/Lucky_Gold_Nugget) | Done | dont_starve_together, items |
+| [Lucy the Axe](https://dontstarve.fandom.com/wiki/Lucy_the_Axe) | Done | equipable_items, items |
 | [Lunar Aligned](https://dontstarve.fandom.com/wiki/Lunar_Aligned) | Done | dont_starve_together, gameplay |
 | [Lunar Altars](https://dontstarve.fandom.com/wiki/Lunar_Altars) | Done | crafting_stations, dont_starve_together |
 | [Lunar Archipelago](https://dontstarve.fandom.com/wiki/Lunar_Archipelago) | Done | dont_starve_together |
 | [Lunar Baths](https://dontstarve.fandom.com/wiki/Lunar_Baths) | Done | dont_starve_together |
-| [Lunar Experiment](https://dontstarve.fandom.com/wiki/Lunar_Experiment) | Done | craftable_items, dont_starve_together, events, fuel |
+| [Lunar Experiment](https://dontstarve.fandom.com/wiki/Lunar_Experiment) | Done | craftable_items, dont_starve_together, events, fuel, items |
 | [Lunar Forest](https://dontstarve.fandom.com/wiki/Lunar_Forest) | Done | dont_starve_together |
-| [Lunar Funcap](https://dontstarve.fandom.com/wiki/Lunar_Funcap) | Done | celestial_filter, craftable_items, dont_starve_together, equipable_items, from_beyond, hats |
+| [Lunar Funcap](https://dontstarve.fandom.com/wiki/Lunar_Funcap) | Done | celestial_filter, craftable_items, dont_starve_together, equipable_items, from_beyond, hats, items |
 | [Lunar Grotto](https://dontstarve.fandom.com/wiki/Lunar_Grotto) | Done | dont_starve_together |
 | [Lunar Hail](https://dontstarve.fandom.com/wiki/Lunar_Hail) | Done | dont_starve_together, from_beyond, gameplay |
 | [Lunar Island](https://dontstarve.fandom.com/wiki/Lunar_Island) | Done | dont_starve_together |
@@ -1400,201 +1465,206 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
 | [Lunar Spore](https://dontstarve.fandom.com/wiki/Lunar_Spore) | Done | dont_starve_together |
 | [Lunar Wobster](https://dontstarve.fandom.com/wiki/Lunar_Wobster) | Done | dont_starve_together |
 | [Lune Tree](https://dontstarve.fandom.com/wiki/Lune_Tree) | Done | dont_starve_together |
-| [Lune Tree Blossom](https://dontstarve.fandom.com/wiki/Lune_Tree_Blossom) | Done | dont_starve_together, food, healing |
+| [Lune Tree Blossom](https://dontstarve.fandom.com/wiki/Lune_Tree_Blossom) | Done | dont_starve_together, food, healing, items |
 | [Lures](https://dontstarve.fandom.com/wiki/Lures) | Done | dont_starve_together |
 | [Lurking Nightmare](https://dontstarve.fandom.com/wiki/Lurking_Nightmare) | Done | cave_creatures, dont_starve_together, from_beyond, hostile_creatures |
-| [Lush Carpet](https://dontstarve.fandom.com/wiki/Lush_Carpet) | Done | craftable_items, dont_starve_together |
-| [Luxury Fan](https://dontstarve.fandom.com/wiki/Luxury_Fan) | Done | cooling, craftable_items, dont_starve_together |
+| [Lush Carpet](https://dontstarve.fandom.com/wiki/Lush_Carpet) | Done | craftable_items, dont_starve_together, items |
+| [Luxury Fan](https://dontstarve.fandom.com/wiki/Luxury_Fan) | Done | cooling, craftable_items, dont_starve_together, items |
 | [Magician's Chest](https://dontstarve.fandom.com/wiki/Magician's_Chest) | Done | craftable_structures, dont_starve_together, infobox_missing_crafting_description |
-| [Magician's Top Hat](https://dontstarve.fandom.com/wiki/Magician's_Top_Hat) | Done | craftable_items, dont_starve_together, infobox_missing_crafting_description |
-| [Magiluminescence](https://dontstarve.fandom.com/wiki/Magiluminescence) | Done | ancient_tab, ancient_tier_1, craftable_items, equipable_items |
+| [Magician's Top Hat](https://dontstarve.fandom.com/wiki/Magician's_Top_Hat) | Done | craftable_items, dont_starve_together, infobox_missing_crafting_description, items |
+| [Magiluminescence](https://dontstarve.fandom.com/wiki/Magiluminescence) | Done | ancient_tab, ancient_tier_1, craftable_items, equipable_items, items |
 | [Magma](https://dontstarve.fandom.com/wiki/Magma) | Done | dont_starve_together, health_loss, indestructible_object |
 | [Magma Golem](https://dontstarve.fandom.com/wiki/Magma_Golem) | Done | dont_starve_together, events, followers |
 | [Malbatross](https://dontstarve.fandom.com/wiki/Malbatross) | Done | birds, boss_monsters, dont_starve_together, flying_creatures |
-| [Malbatross Bill](https://dontstarve.fandom.com/wiki/Malbatross_Bill) | Done | boss_dropped_items, dont_starve_together, equipable_items |
-| [Malbatross Feather](https://dontstarve.fandom.com/wiki/Malbatross_Feather) | Done | boss_dropped_items, dont_starve_together, fuel |
-| [Mandrake](https://dontstarve.fandom.com/wiki/Mandrake) | Done | followers, food, healing |
-| [Mandrake Soup](https://dontstarve.fandom.com/wiki/Mandrake_Soup) | Done | craftable_items, crock_pot_recipes, food, healing |
+| [Malbatross Bill](https://dontstarve.fandom.com/wiki/Malbatross_Bill) | Done | boss_dropped_items, dont_starve_together, equipable_items, items |
+| [Malbatross Feather](https://dontstarve.fandom.com/wiki/Malbatross_Feather) | Done | boss_dropped_items, dont_starve_together, fuel, items |
+| [Mandrake](https://dontstarve.fandom.com/wiki/Mandrake) | Done | followers, food, healing, items |
+| [Mandrake Soup](https://dontstarve.fandom.com/wiki/Mandrake_Soup) | Done | craftable_items, crock_pot_recipes, food, healing, items |
 | [Mannequin](https://dontstarve.fandom.com/wiki/Mannequin) | Done | craftable_structures, dont_starve_together |
-| [Manure](https://dontstarve.fandom.com/wiki/Manure) | Done | craftable_items, fertilizer, fuel, infobox_missing_crafting_description |
+| [Manure](https://dontstarve.fandom.com/wiki/Manure) | Done | craftable_items, fertilizer, fuel, infobox_missing_crafting_description, items |
 | [Map](https://dontstarve.fandom.com/wiki/Map) | Done | gameplay |
-| [Map Scroll](https://dontstarve.fandom.com/wiki/Map_Scroll) | Done | a_new_reign, craftable_items, dont_starve_together |
-| [Marble](https://dontstarve.fandom.com/wiki/Marble) | Done | craftable_items, infobox_missing_crafting_description |
-| [Marble Bean](https://dontstarve.fandom.com/wiki/Marble_Bean) | Done | a_new_reign, craftable_items, dont_starve_together |
+| [Map Scroll](https://dontstarve.fandom.com/wiki/Map_Scroll) | Done | a_new_reign, craftable_items, dont_starve_together, items |
+| [Marble](https://dontstarve.fandom.com/wiki/Marble) | Done | craftable_items, infobox_missing_crafting_description, items |
+| [Marble Bean](https://dontstarve.fandom.com/wiki/Marble_Bean) | Done | a_new_reign, craftable_items, dont_starve_together, items |
 | [Marble Sculptures](https://dontstarve.fandom.com/wiki/Marble_Sculptures) | Done | a_new_reign, dont_starve_together |
 | [Marble Shrub](https://dontstarve.fandom.com/wiki/Marble_Shrub) | Done | a_new_reign, dont_starve_together |
 | [Marble Statues](https://dontstarve.fandom.com/wiki/Marble_Statues) | Done | a_new_reign, dont_starve_together |
-| [Marble Suit](https://dontstarve.fandom.com/wiki/Marble_Suit) | Done | armour_filter, craftable_items, equipable_items, fight_tab |
+| [Marble Suit](https://dontstarve.fandom.com/wiki/Marble_Suit) | Done | armour_filter, craftable_items, equipable_items, fight_tab, items |
 | [Marotter](https://dontstarve.fandom.com/wiki/Marotter) | Done | dont_starve_together, from_beyond |
 | [Marotter Den](https://dontstarve.fandom.com/wiki/Marotter_Den) | Done | dont_starve_together, from_beyond |
-| [Marsh Turf](https://dontstarve.fandom.com/wiki/Marsh_Turf) | Done | craftable_items, fuel |
-| [Mast](https://dontstarve.fandom.com/wiki/Mast) | Done | craftable_items, dont_starve_together |
+| [Marsh Turf](https://dontstarve.fandom.com/wiki/Marsh_Turf) | Done | craftable_items, fuel, items |
+| [Mast](https://dontstarve.fandom.com/wiki/Mast) | Done | craftable_items, dont_starve_together, items |
 | [Maxwell Statue](https://dontstarve.fandom.com/wiki/Maxwell_Statue) | Done | dont_starve_together |
 | [Mealing Stone](https://dontstarve.fandom.com/wiki/Mealing_Stone) | Done | dont_starve_together, events, indestructible_object |
-| [Meat](https://dontstarve.fandom.com/wiki/Meat) | Done | boss_dropped_items, food, healing |
+| [Meat](https://dontstarve.fandom.com/wiki/Meat) | Done | boss_dropped_items, food, healing, items |
 | [Meat Effigy](https://dontstarve.fandom.com/wiki/Meat_Effigy) | Done | craftable_structures, health_loss |
-| [Meatballs](https://dontstarve.fandom.com/wiki/Meatballs) | Done | crock_pot_recipes, food, healing |
-| [Meaty Stew](https://dontstarve.fandom.com/wiki/Meaty_Stew) | Done | craftable_items, crock_pot_recipes, healing |
-| [Melonsicle](https://dontstarve.fandom.com/wiki/Melonsicle) | Done | cooling, crock_pot_recipes, dont_starve_together, food, fruits, healing |
+| [Meatballs](https://dontstarve.fandom.com/wiki/Meatballs) | Done | crock_pot_recipes, food, healing, items |
+| [Meaty Stew](https://dontstarve.fandom.com/wiki/Meaty_Stew) | Done | craftable_items, crock_pot_recipes, healing, items |
+| [Melonsicle](https://dontstarve.fandom.com/wiki/Melonsicle) | Done | cooling, crock_pot_recipes, dont_starve_together, food, fruits, healing, items |
 | [Merm](https://dontstarve.fandom.com/wiki/Merm) | Done | followers, hostile_creatures |
 | [Merm Flort-ifications](https://dontstarve.fandom.com/wiki/Merm_Flort-ifications) | Done | craftable_structures, dont_starve_together |
-| [Message in a Bottle](https://dontstarve.fandom.com/wiki/Message_in_a_Bottle) | Done | dont_starve_together |
+| [Message in a Bottle](https://dontstarve.fandom.com/wiki/Message_in_a_Bottle) | Done | dont_starve_together, items |
 | [Meteor](https://dontstarve.fandom.com/wiki/Meteor) | Done | dont_starve_together, health_loss |
 | [Miasma](https://dontstarve.fandom.com/wiki/Miasma) | Done | dont_starve_together, from_beyond |
 | [Midsummer Cawnival](https://dontstarve.fandom.com/wiki/Midsummer_Cawnival) | Done | dont_starve_together, events |
-| [Prize Booth](https://dontstarve.fandom.com/wiki/Midsummer_Cawnival/Prize_Booth) | Done | events |
+| [Midsummer Cawnival/Prize Booth](https://dontstarve.fandom.com/wiki/Midsummer_Cawnival/Prize_Booth) | Done | events |
 | [Mighty Gym](https://dontstarve.fandom.com/wiki/Mighty_Gym) | Done | craftable_structures, dont_starve_together |
-| [Milkmade Hat](https://dontstarve.fandom.com/wiki/Milkmade_Hat) | Done | crock_pot_recipes, dont_starve_together, equipable_items, food |
-| [Milky Whites](https://dontstarve.fandom.com/wiki/Milky_Whites) | Done | boss_dropped_items, dont_starve_together |
+| [Milkmade Hat](https://dontstarve.fandom.com/wiki/Milkmade_Hat) | Done | crock_pot_recipes, dont_starve_together, equipable_items, food, items |
+| [Milky Whites](https://dontstarve.fandom.com/wiki/Milky_Whites) | Done | boss_dropped_items, dont_starve_together, items |
 | [Mimicreep](https://dontstarve.fandom.com/wiki/Mimicreep) | Done | cave_creatures, dont_starve_together, from_beyond |
-| [Miner Hat](https://dontstarve.fandom.com/wiki/Miner_Hat) | Done | craftable_items, equipable_items, hats |
+| [Miner Hat](https://dontstarve.fandom.com/wiki/Miner_Hat) | Done | craftable_items, equipable_items, hats, items |
 | [Mini Glacier](https://dontstarve.fandom.com/wiki/Mini_Glacier) | Done | dont_starve_together |
-| [Mini Sign](https://dontstarve.fandom.com/wiki/Mini_Sign) | Done | a_new_reign, craftable_items, craftable_structures, decorations_filter, fuel |
-| [Misshapen Bird](https://dontstarve.fandom.com/wiki/Misshapen_Bird) | Done | birds, dont_starve_together, hostile_creatures |
+| [Mini Sign](https://dontstarve.fandom.com/wiki/Mini_Sign) | Done | a_new_reign, craftable_items, craftable_structures, decorations_filter, fuel, items |
+| [Misshapen Bird](https://dontstarve.fandom.com/wiki/Misshapen_Bird) | Done | birds, dont_starve_together, hostile_creatures, items |
 | [Mods](https://dontstarve.fandom.com/wiki/Mods) | Done | gameplay |
-| [Moggles](https://dontstarve.fandom.com/wiki/Moggles) | Done | craftable_items, dont_starve_together, equipable_items, hats |
-| [Moleworm](https://dontstarve.fandom.com/wiki/Moleworm) | Done | animals, cave_creatures, dont_starve_together |
+| [Moggles](https://dontstarve.fandom.com/wiki/Moggles) | Done | craftable_items, dont_starve_together, equipable_items, hats, items |
+| [Moleworm](https://dontstarve.fandom.com/wiki/Moleworm) | Done | animals, cave_creatures, dont_starve_together, innocents, items |
+| [Molten Darts](https://dontstarve.fandom.com/wiki/Molten_Darts) | Done | items |
 | [Monkey Hut](https://dontstarve.fandom.com/wiki/Monkey_Hut) | Done | dont_starve_together |
 | [Monkeytails](https://dontstarve.fandom.com/wiki/Monkeytails) | Done | dont_starve_together |
-| [Monster Jerky](https://dontstarve.fandom.com/wiki/Monster_Jerky) | Done | craftable_items, food, health_loss |
-| [Monster Lasagna](https://dontstarve.fandom.com/wiki/Monster_Lasagna) | Done | crock_pot_recipes, health_loss |
-| [Monster Meat](https://dontstarve.fandom.com/wiki/Monster_Meat) | Done | boss_dropped_items, food, health_loss |
-| [Monster Tartare](https://dontstarve.fandom.com/wiki/Monster_Tartare) | Done | dont_starve_together, food, healing |
-| [Moon Caller's Staff](https://dontstarve.fandom.com/wiki/Moon_Caller's_Staff) | Done | a_new_reign, cooling, dont_starve_together, equipable_items |
-| [Moon Crater Turf](https://dontstarve.fandom.com/wiki/Moon_Crater_Turf) | Done | celestial_tab, craftable_items, dont_starve_together, fuel |
+| [Monster Jerky](https://dontstarve.fandom.com/wiki/Monster_Jerky) | Done | craftable_items, food, health_loss, items |
+| [Monster Lasagna](https://dontstarve.fandom.com/wiki/Monster_Lasagna) | Done | crock_pot_recipes, health_loss, items |
+| [Monster Meat](https://dontstarve.fandom.com/wiki/Monster_Meat) | Done | boss_dropped_items, food, health_loss, items |
+| [Monster Tartare](https://dontstarve.fandom.com/wiki/Monster_Tartare) | Done | dont_starve_together, food, healing, items |
+| [Moon Caller's Staff](https://dontstarve.fandom.com/wiki/Moon_Caller's_Staff) | Done | a_new_reign, cooling, dont_starve_together, equipable_items, items |
+| [Moon Crater Turf](https://dontstarve.fandom.com/wiki/Moon_Crater_Turf) | Done | celestial_tab, craftable_items, dont_starve_together, fuel, items |
 | [Moon Cycle](https://dontstarve.fandom.com/wiki/Moon_Cycle) | Done | gameplay |
 | [Moon Dial](https://dontstarve.fandom.com/wiki/Moon_Dial) | Done | a_new_reign, craftable_structures, dont_starve_together |
 | [Moon Glass](https://dontstarve.fandom.com/wiki/Moon_Glass) | Done | dont_starve_together |
 | [Moon Glass Mound](https://dontstarve.fandom.com/wiki/Moon_Glass_Mound) | Done | dont_starve_together |
-| [Moon Glass Saw Blade](https://dontstarve.fandom.com/wiki/Moon_Glass_Saw_Blade) | Done | celestial_filter, craftable_items, dont_starve_together, from_beyond |
-| [Moon Moth](https://dontstarve.fandom.com/wiki/Moon_Moth) | Done | dont_starve_together |
-| [Moon Moth Wings](https://dontstarve.fandom.com/wiki/Moon_Moth_Wings) | Done | dont_starve_together, healing |
+| [Moon Glass Saw Blade](https://dontstarve.fandom.com/wiki/Moon_Glass_Saw_Blade) | Done | celestial_filter, craftable_items, dont_starve_together, from_beyond, items |
+| [Moon Moth](https://dontstarve.fandom.com/wiki/Moon_Moth) | Done | dont_starve_together, items |
+| [Moon Moth Wings](https://dontstarve.fandom.com/wiki/Moon_Moth_Wings) | Done | dont_starve_together, healing, items |
 | [Moon Quay](https://dontstarve.fandom.com/wiki/Moon_Quay) | Done | dont_starve_together |
-| [Moon Quay Beach Turf](https://dontstarve.fandom.com/wiki/Moon_Quay_Beach_Turf) | Done | craftable_items, decorations_filter, dont_starve_together |
+| [Moon Quay Beach Turf](https://dontstarve.fandom.com/wiki/Moon_Quay_Beach_Turf) | Done | craftable_items, decorations_filter, dont_starve_together, items |
 | [Moon Quay Pirate Banner](https://dontstarve.fandom.com/wiki/Moon_Quay_Pirate_Banner) | Done | craftable_structures, decorations_filter, dont_starve_together |
-| [Moon Rock](https://dontstarve.fandom.com/wiki/Moon_Rock) | Done | a_new_reign, boss_dropped_items, craftable_items, dont_starve_together, infobox_missing_crafting_description |
-| [Moon Rock Idol](https://dontstarve.fandom.com/wiki/Moon_Rock_Idol) | Done | celestial_tab, craftable_items, dont_starve_together |
-| [Moon Rock Wall](https://dontstarve.fandom.com/wiki/Moon_Rock_Wall) | Done | craftable_items, dont_starve_together |
-| [Moon Shard](https://dontstarve.fandom.com/wiki/Moon_Shard) | Done | boss_dropped_items, dont_starve_together |
-| [Moon Shroom](https://dontstarve.fandom.com/wiki/Moon_Shroom) | Done | dont_starve_together, food |
+| [Moon Rock](https://dontstarve.fandom.com/wiki/Moon_Rock) | Done | a_new_reign, boss_dropped_items, craftable_items, dont_starve_together, infobox_missing_crafting_description, items |
+| [Moon Rock Idol](https://dontstarve.fandom.com/wiki/Moon_Rock_Idol) | Done | celestial_tab, craftable_items, dont_starve_together, items |
+| [Moon Rock Wall](https://dontstarve.fandom.com/wiki/Moon_Rock_Wall) | Done | craftable_items, dont_starve_together, items |
+| [Moon Shard](https://dontstarve.fandom.com/wiki/Moon_Shard) | Done | boss_dropped_items, dont_starve_together, items |
+| [Moon Shroom](https://dontstarve.fandom.com/wiki/Moon_Shroom) | Done | dont_starve_together, food, items |
 | [Moon Stone](https://dontstarve.fandom.com/wiki/Moon_Stone) | Done | a_new_reign, dont_starve_together, indestructible_object |
-| [Moonblind Crow](https://dontstarve.fandom.com/wiki/Moonblind_Crow) | Done | dont_starve_together |
-| [Moongleam](https://dontstarve.fandom.com/wiki/Moongleam) | Done | dont_starve_together |
-| [Moonlens](https://dontstarve.fandom.com/wiki/Moonlens) | Done | a_new_reign, craftable_items, dont_starve_together, infobox_missing_crafting_description |
-| [Moonrock Pengull](https://dontstarve.fandom.com/wiki/Moonrock_Pengull) | Done | dont_starve_together, hostile_creatures |
+| [Moonblind Crow](https://dontstarve.fandom.com/wiki/Moonblind_Crow) | Done | dont_starve_together, items |
+| [Moongleam](https://dontstarve.fandom.com/wiki/Moongleam) | Done | dont_starve_together, items |
+| [Moonlens](https://dontstarve.fandom.com/wiki/Moonlens) | Done | a_new_reign, craftable_items, dont_starve_together, infobox_missing_crafting_description, items |
+| [Moonrock Pengull](https://dontstarve.fandom.com/wiki/Moonrock_Pengull) | Done | dont_starve_together, hostile_creatures, innocents |
 | [Moonstorm](https://dontstarve.fandom.com/wiki/Moonstorm) | Done | dont_starve_together, gameplay |
-| [Goose](https://dontstarve.fandom.com/wiki/Moose/Goose) | Done | birds, boss_monsters, dont_starve_together, hostile_creatures |
-| [Goose Egg](https://dontstarve.fandom.com/wiki/Moose/Goose_Egg) | Done | dont_starve_together, eggs |
-| [Moqueca](https://dontstarve.fandom.com/wiki/Moqueca) | Done | dont_starve_together, healing |
-| [Morning Star](https://dontstarve.fandom.com/wiki/Morning_Star) | Done | craftable_items, dont_starve_together, equipable_items, fight_tab |
-| [Morsel](https://dontstarve.fandom.com/wiki/Morsel) | Done | food, healing |
-| [Mosaic Flooring](https://dontstarve.fandom.com/wiki/Mosaic_Flooring) | Done | craftable_items, dont_starve_together |
-| [Mosling](https://dontstarve.fandom.com/wiki/Mosling) | Done | animals, birds, dont_starve_together |
-| [Mosquito](https://dontstarve.fandom.com/wiki/Mosquito) | Done | animals, flying_creatures, hostile_creatures |
-| [Mosquito Sack](https://dontstarve.fandom.com/wiki/Mosquito_Sack) | Done | healing |
+| [Moose/Goose](https://dontstarve.fandom.com/wiki/Moose/Goose) | Done | birds, boss_monsters, dont_starve_together, hostile_creatures |
+| [Moose/Goose Egg](https://dontstarve.fandom.com/wiki/Moose/Goose_Egg) | Done | dont_starve_together, eggs |
+| [Moqueca](https://dontstarve.fandom.com/wiki/Moqueca) | Done | dont_starve_together, healing, items |
+| [Morning Star](https://dontstarve.fandom.com/wiki/Morning_Star) | Done | craftable_items, dont_starve_together, equipable_items, fight_tab, items |
+| [Morsel](https://dontstarve.fandom.com/wiki/Morsel) | Done | food, healing, items |
+| [Mosaic Flooring](https://dontstarve.fandom.com/wiki/Mosaic_Flooring) | Done | craftable_items, dont_starve_together, items |
+| [Mosling](https://dontstarve.fandom.com/wiki/Mosling) | Done | animals, birds, dont_starve_together, innocents |
+| [Mosquito](https://dontstarve.fandom.com/wiki/Mosquito) | Done | animals, flying_creatures, hostile_creatures, items |
+| [Mosquito Sack](https://dontstarve.fandom.com/wiki/Mosquito_Sack) | Done | healing, items |
 | [Mossy Vine](https://dontstarve.fandom.com/wiki/Mossy_Vine) | Done | dont_starve_together |
-| [Mourning Glory](https://dontstarve.fandom.com/wiki/Mourning_Glory) | Done | dont_starve_together |
+| [Mourning Glory](https://dontstarve.fandom.com/wiki/Mourning_Glory) | Done | dont_starve_together, items |
 | [Mud Biome](https://dontstarve.fandom.com/wiki/Mud_Biome) | Done | dont_starve_together |
-| [Mud Turf](https://dontstarve.fandom.com/wiki/Mud_Turf) | Done | craftable_items, decorations_filter, fuel |
+| [Mud Turf](https://dontstarve.fandom.com/wiki/Mud_Turf) | Done | craftable_items, decorations_filter, fuel, items |
 | [Mumsy](https://dontstarve.fandom.com/wiki/Mumsy) | Done | dont_starve_together, events |
 | [Mush Gnome](https://dontstarve.fandom.com/wiki/Mush_Gnome) | Done | cave_creatures, dont_starve_together |
 | [Mushroom Lights](https://dontstarve.fandom.com/wiki/Mushroom_Lights) | Done | dont_starve_together |
 | [Mushroom Planter](https://dontstarve.fandom.com/wiki/Mushroom_Planter) | Done | a_new_reign, craftable_structures, dont_starve_together, food_gardening_filter, food_tab |
-| [Mushroom Spore](https://dontstarve.fandom.com/wiki/Mushroom_Spore) | Done | a_new_reign, dont_starve_together |
+| [Mushroom Spore](https://dontstarve.fandom.com/wiki/Mushroom_Spore) | Done | a_new_reign, dont_starve_together, items |
 | [Mushrooms](https://dontstarve.fandom.com/wiki/Mushrooms) | Done | boss_dropped_items, healing, health_loss |
 | [Mushtree](https://dontstarve.fandom.com/wiki/Mushtree) | Done | dont_starve_together |
-| [Mushy Cake](https://dontstarve.fandom.com/wiki/Mushy_Cake) | Done | crock_pot_recipes, dont_starve_together, food |
-| [Mutated Fungal Turf](https://dontstarve.fandom.com/wiki/Mutated_Fungal_Turf) | Done | celestial_tab, craftable_items, dont_starve_together |
+| [Mushy Cake](https://dontstarve.fandom.com/wiki/Mushy_Cake) | Done | crock_pot_recipes, dont_starve_together, food, items |
+| [Mutated Fungal Turf](https://dontstarve.fandom.com/wiki/Mutated_Fungal_Turf) | Done | celestial_tab, craftable_items, dont_starve_together, items |
 | [Mutated Merm](https://dontstarve.fandom.com/wiki/Mutated_Merm) | Done | dont_starve_together, followers, hostile_creatures |
 | [Mysterious Energy](https://dontstarve.fandom.com/wiki/Mysterious_Energy) | Done | dont_starve_together |
 | [Mysterious Plant](https://dontstarve.fandom.com/wiki/Mysterious_Plant) | Done | dont_starve_together |
 | [Naked Mole Bat](https://dontstarve.fandom.com/wiki/Naked_Mole_Bat) | Done | cave_creatures, dont_starve_together, hostile_creatures |
 | [Naked Mole Bat Burrow](https://dontstarve.fandom.com/wiki/Naked_Mole_Bat_Burrow) | Done | dont_starve_together |
-| [Naked Nostrils](https://dontstarve.fandom.com/wiki/Naked_Nostrils) | Done | dont_starve_together, food |
-| [Napsack](https://dontstarve.fandom.com/wiki/Napsack) | Done | a_new_reign, craftable_items, dont_starve_together, equipable_items |
-| [Nautopilot](https://dontstarve.fandom.com/wiki/Nautopilot) | Done | craftable_items, craftable_structures, dont_starve_together |
-| [Night Armor](https://dontstarve.fandom.com/wiki/Night_Armor) | Done | armour_filter, boss_dropped_items, craftable_items, equipable_items |
+| [Naked Nostrils](https://dontstarve.fandom.com/wiki/Naked_Nostrils) | Done | dont_starve_together, food, items |
+| [Napsack](https://dontstarve.fandom.com/wiki/Napsack) | Done | a_new_reign, craftable_items, dont_starve_together, equipable_items, items |
+| [Nautopilot](https://dontstarve.fandom.com/wiki/Nautopilot) | Done | craftable_items, craftable_structures, dont_starve_together, items |
+| [Night Armor](https://dontstarve.fandom.com/wiki/Night_Armor) | Done | armour_filter, boss_dropped_items, craftable_items, equipable_items, items |
 | [Night Light](https://dontstarve.fandom.com/wiki/Night_Light) | Done | craftable_structures |
-| [Nightberry](https://dontstarve.fandom.com/wiki/Nightberry) | Done | dont_starve_together, food, from_beyond, health_loss |
-| [Nightmare Amulet](https://dontstarve.fandom.com/wiki/Nightmare_Amulet) | Done | craftable_items, equipable_items |
+| [Nightberry](https://dontstarve.fandom.com/wiki/Nightberry) | Done | dont_starve_together, food, from_beyond, health_loss, items |
+| [Nightmare Amulet](https://dontstarve.fandom.com/wiki/Nightmare_Amulet) | Done | craftable_items, equipable_items, items |
 | [Nightmare Cycle](https://dontstarve.fandom.com/wiki/Nightmare_Cycle) | Done | gameplay |
-| [Nightmare Fuel](https://dontstarve.fandom.com/wiki/Nightmare_Fuel) | Done | boss_dropped_items, craftable_items, fuel |
+| [Nightmare Fuel](https://dontstarve.fandom.com/wiki/Nightmare_Fuel) | Done | boss_dropped_items, craftable_items, fuel, items |
 | [Nightmare Light](https://dontstarve.fandom.com/wiki/Nightmare_Light) | Done | dont_starve_together, indestructible_object |
-| [Nightmare Saddle](https://dontstarve.fandom.com/wiki/Nightmare_Saddle) | Done | craftable_items, dont_starve_together, from_beyond |
+| [Nightmare Saddle](https://dontstarve.fandom.com/wiki/Nightmare_Saddle) | Done | craftable_items, dont_starve_together, from_beyond, items |
 | [Nightmare Werepig](https://dontstarve.fandom.com/wiki/Nightmare_Werepig) | Done | boss_monsters, dont_starve_together |
-| [Nitre](https://dontstarve.fandom.com/wiki/Nitre) | Done | craftable_items, fuel, infobox_missing_crafting_description |
+| [Nitre](https://dontstarve.fandom.com/wiki/Nitre) | Done | craftable_items, fuel, infobox_missing_crafting_description, items |
 | [Nitre Formation](https://dontstarve.fandom.com/wiki/Nitre_Formation) | Done | dont_starve_together, from_beyond |
 | [No-Eyed Deer](https://dontstarve.fandom.com/wiki/No-Eyed_Deer) | Done | a_new_reign, animals, dont_starve_together |
 | [Non-renewable resources](https://dontstarve.fandom.com/wiki/Non-renewable_resources) | Done | gameplay |
+| [Nox Helm](https://dontstarve.fandom.com/wiki/Nox_Helm) | Done | items |
 | [Nurse Spider](https://dontstarve.fandom.com/wiki/Nurse_Spider) | Done | dont_starve_together, followers |
 | [Nutrient](https://dontstarve.fandom.com/wiki/Nutrient) | Done | dont_starve_together, gameplay |
-| [Oar](https://dontstarve.fandom.com/wiki/Oar) | Done | craftable_items, dont_starve_together, equipable_items, fuel |
+| [Oar](https://dontstarve.fandom.com/wiki/Oar) | Done | craftable_items, dont_starve_together, equipable_items, fuel, items |
 | [Obelisk](https://dontstarve.fandom.com/wiki/Obelisk) | Done | indestructible_object |
 | [Ocean](https://dontstarve.fandom.com/wiki/Ocean) | Done | gameplay |
 | [Ocean Debris](https://dontstarve.fandom.com/wiki/Ocean_Debris) | Done | dont_starve_together |
 | [Ocean Fishes](https://dontstarve.fandom.com/wiki/Ocean_Fishes) | Done | dont_starve_together |
-| [Ocean Trawler Kit](https://dontstarve.fandom.com/wiki/Ocean_Trawler_Kit) | Done | craftable_items, dont_starve_together, food_gardening_filter |
+| [Ocean Trawler Kit](https://dontstarve.fandom.com/wiki/Ocean_Trawler_Kit) | Done | craftable_items, dont_starve_together, food_gardening_filter, items |
 | [Ocuvigil](https://dontstarve.fandom.com/wiki/Ocuvigil) | Done | a_new_reign, craftable_structures, dont_starve_together |
 | [Offerings Filter](https://dontstarve.fandom.com/wiki/Offerings_Filter) | Done | dont_starve_together |
 | [Old Beefalo](https://dontstarve.fandom.com/wiki/Old_Beefalo) | Done | dont_starve_together, events |
-| [One-man Band](https://dontstarve.fandom.com/wiki/One-man_Band) | Done | craftable_items, equipable_items, food_gardening_filter |
+| [One-man Band](https://dontstarve.fandom.com/wiki/One-man_Band) | Done | craftable_items, equipable_items, food_gardening_filter, items |
 | [Onion](https://dontstarve.fandom.com/wiki/Onion) | Done | dont_starve_together, events, food, healing |
-| [Orange Gem](https://dontstarve.fandom.com/wiki/Orange_Gem) | Done | boss_dropped_items, craftable_items, infobox_missing_crafting_description |
+| [Orange Gem](https://dontstarve.fandom.com/wiki/Orange_Gem) | Done | boss_dropped_items, craftable_items, infobox_missing_crafting_description, items |
 | [Ornate Chest](https://dontstarve.fandom.com/wiki/Ornate_Chest) | Done | boss_dropped_items, containers |
 | [Ornery Chest](https://dontstarve.fandom.com/wiki/Ornery_Chest) | Done | dont_starve_together |
 | [Overheating](https://dontstarve.fandom.com/wiki/Overheating) | Done | dont_starve_together, gameplay, health_loss |
-| [Packet of Seeds](https://dontstarve.fandom.com/wiki/Packet_of_Seeds) | Done | dont_starve_together, events |
-| [Palmcone Scale](https://dontstarve.fandom.com/wiki/Palmcone_Scale) | Done | dont_starve_together |
-| [Palmcone Sprout](https://dontstarve.fandom.com/wiki/Palmcone_Sprout) | Done | dont_starve_together |
+| [Packet of Seeds](https://dontstarve.fandom.com/wiki/Packet_of_Seeds) | Done | dont_starve_together, events, items |
+| [Palmcone Scale](https://dontstarve.fandom.com/wiki/Palmcone_Scale) | Done | dont_starve_together, items |
+| [Palmcone Sprout](https://dontstarve.fandom.com/wiki/Palmcone_Sprout) | Done | dont_starve_together, items |
 | [Palmcone Tree](https://dontstarve.fandom.com/wiki/Palmcone_Tree) | Done | dont_starve_together |
-| [Pan Flute](https://dontstarve.fandom.com/wiki/Pan_Flute) | Done | craftable_items |
-| [Papyrus](https://dontstarve.fandom.com/wiki/Papyrus) | Done | craftable_items, fuel |
+| [Pan Flute](https://dontstarve.fandom.com/wiki/Pan_Flute) | Done | craftable_items, items |
+| [Papyrus](https://dontstarve.fandom.com/wiki/Papyrus) | Done | craftable_items, fuel, items |
 | [Parasitic Shadeling](https://dontstarve.fandom.com/wiki/Parasitic_Shadeling) | Done | dont_starve_together |
-| [Parrot Pirate](https://dontstarve.fandom.com/wiki/Parrot_Pirate) | Done | animals, birds, flying_creatures |
-| [Pearl's Pearl](https://dontstarve.fandom.com/wiki/Pearl's_Pearl) | Done | boss_dropped_items, dont_starve_together |
-| [Pebble Crab](https://dontstarve.fandom.com/wiki/Pebble_Crab) | Done | dont_starve_together, events |
-| [Pengull](https://dontstarve.fandom.com/wiki/Pengull) | Done | animals, birds |
+| [Parrot Pirate](https://dontstarve.fandom.com/wiki/Parrot_Pirate) | Done | animals, birds, flying_creatures, items |
+| [Pearl's Pearl](https://dontstarve.fandom.com/wiki/Pearl's_Pearl) | Done | boss_dropped_items, dont_starve_together, items |
+| [Pebble Crab](https://dontstarve.fandom.com/wiki/Pebble_Crab) | Done | dont_starve_together, events, items |
+| [Pengull](https://dontstarve.fandom.com/wiki/Pengull) | Done | animals, birds, innocents |
 | [Pepper](https://dontstarve.fandom.com/wiki/Pepper) | Done | dont_starve_together, food, health_loss |
-| [Petals](https://dontstarve.fandom.com/wiki/Petals) | Done | a_new_reign, dont_starve_together, fuel, healing |
+| [Petals](https://dontstarve.fandom.com/wiki/Petals) | Done | a_new_reign, dont_starve_together, fuel, healing, items |
 | [Petrified Tree](https://dontstarve.fandom.com/wiki/Petrified_Tree) | Done | a_new_reign, dont_starve_together |
-| [Phasmo-Encapsulator](https://dontstarve.fandom.com/wiki/Phasmo-Encapsulator) | Done | craftable_items |
-| [Phlegm](https://dontstarve.fandom.com/wiki/Phlegm) | Done | a_new_reign, dont_starve_together, food |
-| [Phobic Experiment](https://dontstarve.fandom.com/wiki/Phobic_Experiment) | Done | craftable_items, dont_starve_together, events, fuel |
-| [Axe](https://dontstarve.fandom.com/wiki/Pick/Axe) | Done | ancient_tab, ancient_tier_2, craftable_items, equipable_items |
-| [Pickaxe](https://dontstarve.fandom.com/wiki/Pickaxe) | Done | craftable_items, equipable_items |
-| [Pierogi](https://dontstarve.fandom.com/wiki/Pierogi) | Done | crock_pot_recipes, food, healing |
-| [Pig](https://dontstarve.fandom.com/wiki/Pig) | Done | animals, followers |
+| [Petrifying Tome](https://dontstarve.fandom.com/wiki/Petrifying_Tome) | Done | items |
+| [Phasmo-Encapsulator](https://dontstarve.fandom.com/wiki/Phasmo-Encapsulator) | Done | craftable_items, items |
+| [Phlegm](https://dontstarve.fandom.com/wiki/Phlegm) | Done | a_new_reign, dont_starve_together, food, items |
+| [Phobic Experiment](https://dontstarve.fandom.com/wiki/Phobic_Experiment) | Done | craftable_items, dont_starve_together, events, fuel, items |
+| [Pick/Axe](https://dontstarve.fandom.com/wiki/Pick/Axe) | Done | ancient_tab, ancient_tier_2, craftable_items, equipable_items, items |
+| [Pickaxe](https://dontstarve.fandom.com/wiki/Pickaxe) | Done | craftable_items, equipable_items, items |
+| [Pierogi](https://dontstarve.fandom.com/wiki/Pierogi) | Done | crock_pot_recipes, food, healing, items |
+| [Pig](https://dontstarve.fandom.com/wiki/Pig) | Done | animals, followers, innocents |
 | [Pig House](https://dontstarve.fandom.com/wiki/Pig_House) | Done | craftable_structures |
 | [Pig King](https://dontstarve.fandom.com/wiki/Pig_King) | Done | indestructible_object |
+| [Pig Skin](https://dontstarve.fandom.com/wiki/Pig_Skin) | Done | items |
 | [Pig Village](https://dontstarve.fandom.com/wiki/Pig_Village) | Done | gameplay |
-| [Piggyback](https://dontstarve.fandom.com/wiki/Piggyback) | Done | backpacks, clothing_filter, containers, craftable_items, equipable_items |
-| [Pile o' Balloons](https://dontstarve.fandom.com/wiki/Pile_o'_Balloons) | Done | craftable_items, hats |
+| [Piggyback](https://dontstarve.fandom.com/wiki/Piggyback) | Done | backpacks, clothing_filter, containers, craftable_items, equipable_items, items |
+| [Pile o' Balloons](https://dontstarve.fandom.com/wiki/Pile_o'_Balloons) | Done | craftable_items, hats, items |
 | [Pillars](https://dontstarve.fandom.com/wiki/Pillars) | Done | a_new_reign, dont_starve_together, indestructible_object |
 | [Pinchin' Winch](https://dontstarve.fandom.com/wiki/Pinchin'_Winch) | Done | craftable_structures, dont_starve_together |
-| [Pine Cone](https://dontstarve.fandom.com/wiki/Pine_Cone) | Done | fuel |
-| [Pinetree Pioneer Hat](https://dontstarve.fandom.com/wiki/Pinetree_Pioneer_Hat) | Done | craftable_items, dont_starve_together, equipable_items, hats |
+| [Pine Cone](https://dontstarve.fandom.com/wiki/Pine_Cone) | Done | fuel, items |
+| [Pinetree Pioneer Hat](https://dontstarve.fandom.com/wiki/Pinetree_Pioneer_Hat) | Done | craftable_items, dont_starve_together, equipable_items, hats, items |
 | [Pipspook](https://dontstarve.fandom.com/wiki/Pipspook) | Done | dont_starve_together, followers |
 | [Pipton](https://dontstarve.fandom.com/wiki/Pipton) | Done | dont_starve_together, events |
-| [Pirate Map](https://dontstarve.fandom.com/wiki/Pirate_Map) | Done | dont_starve_together |
+| [Pirate's Bandana](https://dontstarve.fandom.com/wiki/Pirate's_Bandana) | Done | dont_starve_together, items |
+| [Pirate Map](https://dontstarve.fandom.com/wiki/Pirate_Map) | Done | dont_starve_together, items |
 | [Pirate Raid](https://dontstarve.fandom.com/wiki/Pirate_Raid) | Done | dont_starve_together, gameplay |
 | [Pirate Sloop](https://dontstarve.fandom.com/wiki/Pirate_Sloop) | Done | dont_starve_together |
-| [Pirate's Bandana](https://dontstarve.fandom.com/wiki/Pirate's_Bandana) | Done | dont_starve_together |
 | [Pit Pig](https://dontstarve.fandom.com/wiki/Pit_Pig) | Done | dont_starve_together, events, hostile_creatures |
-| [Pitchfork](https://dontstarve.fandom.com/wiki/Pitchfork) | Done | craftable_items, dont_starve_together, equipable_items |
-| [Plain Omelette](https://dontstarve.fandom.com/wiki/Plain_Omelette) | Done | crock_pot_recipes, dont_starve_together, eggs, food, healing |
+| [Pitchfork](https://dontstarve.fandom.com/wiki/Pitchfork) | Done | craftable_items, dont_starve_together, equipable_items, items |
+| [Pith Pike](https://dontstarve.fandom.com/wiki/Pith_Pike) | Done | items |
+| [Plain Omelette](https://dontstarve.fandom.com/wiki/Plain_Omelette) | Done | crock_pot_recipes, dont_starve_together, eggs, food, healing, items |
 | [Planar Entity Protection](https://dontstarve.fandom.com/wiki/Planar_Entity_Protection) | Done | dont_starve_together, from_beyond, gameplay |
-| [Pleasant Portrait](https://dontstarve.fandom.com/wiki/Pleasant_Portrait) | Done | craftable_items, decorations_filter, dont_starve_together, from_beyond |
+| [Pleasant Portrait](https://dontstarve.fandom.com/wiki/Pleasant_Portrait) | Done | craftable_items, decorations_filter, dont_starve_together, from_beyond, items |
 | [Plugged Fissure](https://dontstarve.fandom.com/wiki/Plugged_Fissure) | Done | dont_starve_together |
-| [Pocket Scale](https://dontstarve.fandom.com/wiki/Pocket_Scale) | Done | craftable_items, dont_starve_together, equipable_items |
-| [Polar Bearger Bin](https://dontstarve.fandom.com/wiki/Polar_Bearger_Bin) | Done | containers, craftable_items, dont_starve_together, from_beyond |
-| [Polly Roger's Hat](https://dontstarve.fandom.com/wiki/Polly_Roger's_Hat) | Done | craftable_items, dont_starve_together |
-| [Pomegranate](https://dontstarve.fandom.com/wiki/Pomegranate) | Done | food, healing |
+| [Pocket Scale](https://dontstarve.fandom.com/wiki/Pocket_Scale) | Done | craftable_items, dont_starve_together, equipable_items, items |
+| [Polar Bearger Bin](https://dontstarve.fandom.com/wiki/Polar_Bearger_Bin) | Done | containers, craftable_items, dont_starve_together, from_beyond, items |
+| [Polly Roger's Hat](https://dontstarve.fandom.com/wiki/Polly_Roger's_Hat) | Done | craftable_items, dont_starve_together, items |
+| [Pomegranate](https://dontstarve.fandom.com/wiki/Pomegranate) | Done | food, healing, items |
 | [Pond](https://dontstarve.fandom.com/wiki/Pond) | Done | indestructible_object |
-| [Portable Crock Pot](https://dontstarve.fandom.com/wiki/Portable_Crock_Pot) | Done | containers, cooking_filter, craftable_items, dont_starve_together, food_tab |
-| [Portable Grinding Mill](https://dontstarve.fandom.com/wiki/Portable_Grinding_Mill) | Done | cooking_filter, craftable_items, crafting_stations, dont_starve_together, food_tab |
-| [Portable Seasoning Station](https://dontstarve.fandom.com/wiki/Portable_Seasoning_Station) | Done | cooking_filter, craftable_items, dont_starve_together |
-| [Portal Paraphernalia](https://dontstarve.fandom.com/wiki/Portal_Paraphernalia) | Done | celestial_filter, craftable_items, dont_starve_together |
-| [Portasol](https://dontstarve.fandom.com/wiki/Portasol) | Done | clothing_filter, craftable_items, dont_starve_together |
+| [Portable Crock Pot](https://dontstarve.fandom.com/wiki/Portable_Crock_Pot) | Done | containers, cooking_filter, craftable_items, dont_starve_together, food_tab, items |
+| [Portable Grinding Mill](https://dontstarve.fandom.com/wiki/Portable_Grinding_Mill) | Done | cooking_filter, craftable_items, crafting_stations, dont_starve_together, food_tab, items |
+| [Portable Seasoning Station](https://dontstarve.fandom.com/wiki/Portable_Seasoning_Station) | Done | cooking_filter, craftable_items, dont_starve_together, items |
+| [Portal Paraphernalia](https://dontstarve.fandom.com/wiki/Portal_Paraphernalia) | Done | celestial_filter, craftable_items, dont_starve_together, items |
+| [Portasol](https://dontstarve.fandom.com/wiki/Portasol) | Done | clothing_filter, craftable_items, dont_starve_together, items |
 | [Portrait Frames](https://dontstarve.fandom.com/wiki/Portrait_Frames) | Done | dont_starve_together |
 | [Possessed Varg](https://dontstarve.fandom.com/wiki/Possessed_Varg) | Done | boss_monsters, dont_starve_together, from_beyond, hostile_creatures |
 | [Potato](https://dontstarve.fandom.com/wiki/Potato) | Done | dont_starve_together, events, food, healing, health_loss |
@@ -1603,271 +1673,281 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
 | [Potted Succulent](https://dontstarve.fandom.com/wiki/Potted_Succulent) | Done | a_new_reign, craftable_structures, decorations_filter, dont_starve_together |
 | [Potter's Wheel](https://dontstarve.fandom.com/wiki/Potter's_Wheel) | Done | a_new_reign, craftable_structures, crafting_stations, decorations_filter, dont_starve_together |
 | [Powder Monkey](https://dontstarve.fandom.com/wiki/Powder_Monkey) | Done | animals, dont_starve_together, hostile_creatures |
-| [Powdercake](https://dontstarve.fandom.com/wiki/Powdercake) | Done | crock_pot_recipes, health_loss |
+| [Powdercake](https://dontstarve.fandom.com/wiki/Powdercake) | Done | crock_pot_recipes, health_loss, items |
 | [Prestihatitator](https://dontstarve.fandom.com/wiki/Prestihatitator) | Done | craftable_structures |
-| [Pretty Parasol](https://dontstarve.fandom.com/wiki/Pretty_Parasol) | Done | craftable_items, equipable_items, fuel |
+| [Pretty Parasol](https://dontstarve.fandom.com/wiki/Pretty_Parasol) | Done | craftable_items, equipable_items, fuel, items |
 | [Prime Mate](https://dontstarve.fandom.com/wiki/Prime_Mate) | Done | dont_starve_together |
 | [Produce Scale](https://dontstarve.fandom.com/wiki/Produce_Scale) | Done | craftable_structures, decorations_filter, dont_starve_together, food_gardening_filter |
 | [Profile Icons](https://dontstarve.fandom.com/wiki/Profile_Icons) | Done | dont_starve_together |
 | [Prototypers & Stations Filter](https://dontstarve.fandom.com/wiki/Prototypers_%26_Stations_Filter) | Done | dont_starve_together |
-| [Psychosis Experiment](https://dontstarve.fandom.com/wiki/Psychosis_Experiment) | Done | craftable_items, dont_starve_together, events, fuel |
-| [Puffed Potato Soufflé](https://dontstarve.fandom.com/wiki/Puffed_Potato_Souffl%C3%A9) | Done | dont_starve_together, healing |
-| [Puffy Vest](https://dontstarve.fandom.com/wiki/Puffy_Vest) | Done | craftable_items, equipable_items |
+| [Psychosis Experiment](https://dontstarve.fandom.com/wiki/Psychosis_Experiment) | Done | craftable_items, dont_starve_together, events, fuel, items |
+| [Puffed Potato Soufflé](https://dontstarve.fandom.com/wiki/Puffed_Potato_Souffl%C3%A9) | Done | dont_starve_together, healing, items |
+| [Puffy Vest](https://dontstarve.fandom.com/wiki/Puffy_Vest) | Done | craftable_items, equipable_items, items |
 | [Pumpkin](https://dontstarve.fandom.com/wiki/Pumpkin) | Done | food, healing |
-| [Pumpkin Cookies](https://dontstarve.fandom.com/wiki/Pumpkin_Cookies) | Done | crock_pot_recipes, food |
-| [Pumpkin Lantern](https://dontstarve.fandom.com/wiki/Pumpkin_Lantern) | Done | craftable_items |
+| [Pumpkin Cookies](https://dontstarve.fandom.com/wiki/Pumpkin_Cookies) | Done | crock_pot_recipes, food, items |
+| [Pumpkin Lantern](https://dontstarve.fandom.com/wiki/Pumpkin_Lantern) | Done | craftable_items, items |
 | [Punching Bag](https://dontstarve.fandom.com/wiki/Punching_Bag) | Done | craftable_structures, from_beyond |
-| [Pure Brilliance](https://dontstarve.fandom.com/wiki/Pure_Brilliance) | Done | craftable_items, dont_starve_together, from_beyond, infobox_missing_crafting_description |
-| [Pure Horror](https://dontstarve.fandom.com/wiki/Pure_Horror) | Done | boss_dropped_items, craftable_items, dont_starve_together, fuel, infobox_missing_crafting_description |
-| [Purple Gem](https://dontstarve.fandom.com/wiki/Purple_Gem) | Done | boss_dropped_items, craftable_items |
+| [Pure Brilliance](https://dontstarve.fandom.com/wiki/Pure_Brilliance) | Done | craftable_items, dont_starve_together, from_beyond, infobox_missing_crafting_description, items |
+| [Pure Horror](https://dontstarve.fandom.com/wiki/Pure_Horror) | Done | boss_dropped_items, craftable_items, dont_starve_together, fuel, infobox_missing_crafting_description, items |
+| [Purple Gem](https://dontstarve.fandom.com/wiki/Purple_Gem) | Done | boss_dropped_items, craftable_items, items |
 | [Queen of Moon Quay](https://dontstarve.fandom.com/wiki/Queen_of_Moon_Quay) | Done | dont_starve_together |
-| [Rabbit](https://dontstarve.fandom.com/wiki/Rabbit) | Done | animals |
-| [Rabbit Earmuffs](https://dontstarve.fandom.com/wiki/Rabbit_Earmuffs) | Done | craftable_items, equipable_items, hats |
+| [Rabbit](https://dontstarve.fandom.com/wiki/Rabbit) | Done | animals, innocents, items |
+| [Rabbit Earmuffs](https://dontstarve.fandom.com/wiki/Rabbit_Earmuffs) | Done | craftable_items, equipable_items, hats, items |
 | [Rabbit Hutch](https://dontstarve.fandom.com/wiki/Rabbit_Hutch) | Done | craftable_structures |
-| [Rabbit King Cudgel](https://dontstarve.fandom.com/wiki/Rabbit_King_Cudgel) | Done | dont_starve_together, from_beyond |
+| [Rabbit King Cudgel](https://dontstarve.fandom.com/wiki/Rabbit_King_Cudgel) | Done | dont_starve_together, from_beyond, items |
 | [Rain](https://dontstarve.fandom.com/wiki/Rain) | Done | gameplay |
-| [Rain Coat](https://dontstarve.fandom.com/wiki/Rain_Coat) | Done | craftable_items, dont_starve_together, equipable_items |
+| [Rain Coat](https://dontstarve.fandom.com/wiki/Rain_Coat) | Done | craftable_items, dont_starve_together, equipable_items, items |
 | [Rain Gear Filter](https://dontstarve.fandom.com/wiki/Rain_Gear_Filter) | Done | dont_starve_together |
-| [Rain Hat](https://dontstarve.fandom.com/wiki/Rain_Hat) | Done | craftable_items, dont_starve_together, equipable_items, hats |
+| [Rain Hat](https://dontstarve.fandom.com/wiki/Rain_Hat) | Done | craftable_items, dont_starve_together, equipable_items, hats, items |
 | [Rainometer](https://dontstarve.fandom.com/wiki/Rainometer) | Done | craftable_structures |
-| [Ratatouille](https://dontstarve.fandom.com/wiki/Ratatouille) | Done | crock_pot_recipes, healing |
-| [Raw Fish](https://dontstarve.fandom.com/wiki/Raw_Fish) | Done | boss_dropped_items, dont_starve_together, fishes, food, healing |
-| [Razor](https://dontstarve.fandom.com/wiki/Razor) | Done | craftable_items |
+| [Ratatouille](https://dontstarve.fandom.com/wiki/Ratatouille) | Done | crock_pot_recipes, healing, items |
+| [Raw Fish](https://dontstarve.fandom.com/wiki/Raw_Fish) | Done | boss_dropped_items, dont_starve_together, fishes, food, healing, items |
+| [Razor](https://dontstarve.fandom.com/wiki/Razor) | Done | craftable_items, items |
 | [Reanimated Skeleton](https://dontstarve.fandom.com/wiki/Reanimated_Skeleton) | Done | a_new_reign, boss_monsters, cave_creatures, dont_starve_together, hostile_creatures |
-| [Recipe Card](https://dontstarve.fandom.com/wiki/Recipe_Card) | Done | dont_starve_together |
-| [Record](https://dontstarve.fandom.com/wiki/Record) | Done | craftable_items, decorations_filter, dont_starve_together, from_beyond |
+| [Recipe Card](https://dontstarve.fandom.com/wiki/Recipe_Card) | Done | dont_starve_together, items |
+| [Record](https://dontstarve.fandom.com/wiki/Record) | Done | craftable_items, decorations_filter, dont_starve_together, from_beyond, items |
 | [Red Cap](https://dontstarve.fandom.com/wiki/Red_Cap) | Done | boss_dropped_items, food, healing, health_loss |
-| [Red Firecrackers](https://dontstarve.fandom.com/wiki/Red_Firecrackers) | Done | craftable_items, dont_starve_together |
-| [Red Gem](https://dontstarve.fandom.com/wiki/Red_Gem) | Done | boss_dropped_items, craftable_items, infobox_missing_crafting_description |
-| [Red Lantern](https://dontstarve.fandom.com/wiki/Red_Lantern) | Done | craftable_items, dont_starve_together, equipable_items |
+| [Red Firecrackers](https://dontstarve.fandom.com/wiki/Red_Firecrackers) | Done | craftable_items, dont_starve_together, items |
+| [Red Gem](https://dontstarve.fandom.com/wiki/Red_Gem) | Done | boss_dropped_items, craftable_items, infobox_missing_crafting_description, items |
+| [Red Lantern](https://dontstarve.fandom.com/wiki/Red_Lantern) | Done | craftable_items, dont_starve_together, equipable_items, items |
+| [Reed Tunic](https://dontstarve.fandom.com/wiki/Reed_Tunic) | Done | items |
 | [Refined Materials Filter](https://dontstarve.fandom.com/wiki/Refined_Materials_Filter) | Done | dont_starve_together |
 | [Regrowth](https://dontstarve.fandom.com/wiki/Regrowth) | Done | dont_starve_together, gameplay |
 | [Reinforced Support Pillar](https://dontstarve.fandom.com/wiki/Reinforced_Support_Pillar) | Done | craftable_structures, dont_starve_together, from_beyond |
 | [Relic](https://dontstarve.fandom.com/wiki/Relic) | Done | a_new_reign, craftable_structures, decorations_filter, infobox_missing_crafting_description |
 | [Repair Kits](https://dontstarve.fandom.com/wiki/Repair_Kits) | Done | dont_starve_together, from_beyond |
-| [Research Notes](https://dontstarve.fandom.com/wiki/Research_Notes) | Done | dont_starve_together, from_beyond, fuel |
+| [Research Notes](https://dontstarve.fandom.com/wiki/Research_Notes) | Done | dont_starve_together, from_beyond, fuel, items |
+| [Resplendent Nox Helm](https://dontstarve.fandom.com/wiki/Resplendent_Nox_Helm) | Done | items |
 | [Resting Horror](https://dontstarve.fandom.com/wiki/Resting_Horror) | Done | cave_creatures, dont_starve_together, from_beyond |
-| [Restrained Static](https://dontstarve.fandom.com/wiki/Restrained_Static) | Done | dont_starve_together |
+| [Restrained Static](https://dontstarve.fandom.com/wiki/Restrained_Static) | Done | dont_starve_together, items |
 | [Return of Them](https://dontstarve.fandom.com/wiki/Return_of_Them) | Done | dont_starve_together |
 | [Rhinocebro](https://dontstarve.fandom.com/wiki/Rhinocebro) | Done | dont_starve_together, events |
-| [Riled Lucy](https://dontstarve.fandom.com/wiki/Riled_Lucy) | Done | dont_starve_together, events |
+| [Riled Lucy](https://dontstarve.fandom.com/wiki/Riled_Lucy) | Done | dont_starve_together, events, items |
 | [Road](https://dontstarve.fandom.com/wiki/Road) | Done | gameplay |
 | [Rock Den](https://dontstarve.fandom.com/wiki/Rock_Den) | Done | a_new_reign, crafting_stations, dont_starve_together, indestructible_object |
 | [Rock Lobster](https://dontstarve.fandom.com/wiki/Rock_Lobster) | Done | animals, cave_creatures, dont_starve_together, followers |
 | [Rockjaw](https://dontstarve.fandom.com/wiki/Rockjaw) | Done | dont_starve_together |
-| [Rocks](https://dontstarve.fandom.com/wiki/Rocks) | Done | craftable_items, infobox_missing_crafting_description |
+| [Rocks](https://dontstarve.fandom.com/wiki/Rocks) | Done | craftable_items, infobox_missing_crafting_description, items |
 | [Rocky Beach](https://dontstarve.fandom.com/wiki/Rocky_Beach) | Done | dont_starve_together |
-| [Rocky Beach Turf](https://dontstarve.fandom.com/wiki/Rocky_Beach_Turf) | Done | craftable_items, decorations_filter, dont_starve_together, fuel |
-| [Rocky Turf](https://dontstarve.fandom.com/wiki/Rocky_Turf) | Done | craftable_items, decorations_filter, fuel |
-| [Rope](https://dontstarve.fandom.com/wiki/Rope) | Done | craftable_items, fuel |
-| [Rose-Colored Glasses](https://dontstarve.fandom.com/wiki/Rose-Colored_Glasses) | Done | clothing_filter, craftable_items, dont_starve_together |
-| [Rot](https://dontstarve.fandom.com/wiki/Rot) | Done | craftable_items, fertilizer, fuel, health_loss |
-| [Rotten Egg](https://dontstarve.fandom.com/wiki/Rotten_Egg) | Done | eggs, fertilizer, fuel, healing, health_loss |
-| [Royal Jelly](https://dontstarve.fandom.com/wiki/Royal_Jelly) | Done | a_new_reign, boss_dropped_items, dont_starve_together, healing |
+| [Rocky Beach Turf](https://dontstarve.fandom.com/wiki/Rocky_Beach_Turf) | Done | craftable_items, decorations_filter, dont_starve_together, fuel, items |
+| [Rocky Turf](https://dontstarve.fandom.com/wiki/Rocky_Turf) | Done | craftable_items, decorations_filter, fuel, items |
+| [Rope](https://dontstarve.fandom.com/wiki/Rope) | Done | craftable_items, fuel, items |
+| [Rose-Colored Glasses](https://dontstarve.fandom.com/wiki/Rose-Colored_Glasses) | Done | clothing_filter, craftable_items, dont_starve_together, items |
+| [Rot](https://dontstarve.fandom.com/wiki/Rot) | Done | craftable_items, fertilizer, fuel, health_loss, items |
+| [Rotten Egg](https://dontstarve.fandom.com/wiki/Rotten_Egg) | Done | eggs, fertilizer, fuel, healing, health_loss, items |
+| [Royal Jelly](https://dontstarve.fandom.com/wiki/Royal_Jelly) | Done | a_new_reign, boss_dropped_items, dont_starve_together, healing, items |
 | [Royal Rabbit Enforcer](https://dontstarve.fandom.com/wiki/Royal_Rabbit_Enforcer) | Done | dont_starve_together, from_beyond, hostile_creatures |
 | [Royal Tapestry](https://dontstarve.fandom.com/wiki/Royal_Tapestry) | Done | craftable_structures, dont_starve_together, infobox_missing_crafting_description |
-| [Rudder Kit](https://dontstarve.fandom.com/wiki/Rudder_Kit) | Done | craftable_items, dont_starve_together |
+| [Rudder Kit](https://dontstarve.fandom.com/wiki/Rudder_Kit) | Done | craftable_items, dont_starve_together, items |
 | [Ruins](https://dontstarve.fandom.com/wiki/Ruins) | Done | gameplay |
 | [Ryftstal](https://dontstarve.fandom.com/wiki/Ryftstal) | Done | dont_starve_together, from_beyond |
-| [Saddle](https://dontstarve.fandom.com/wiki/Saddle) | Done | a_new_reign, craftable_items, dont_starve_together |
-| [Saddlehorn](https://dontstarve.fandom.com/wiki/Saddlehorn) | Done | craftable_items, equipable_items |
+| [Saddle](https://dontstarve.fandom.com/wiki/Saddle) | Done | a_new_reign, craftable_items, dont_starve_together, items |
+| [Saddlehorn](https://dontstarve.fandom.com/wiki/Saddlehorn) | Done | craftable_items, equipable_items, items |
 | [Safe](https://dontstarve.fandom.com/wiki/Safe) | Done | dont_starve_together, events |
 | [Saladmander](https://dontstarve.fandom.com/wiki/Saladmander) | Done | dont_starve_together |
 | [Salmon](https://dontstarve.fandom.com/wiki/Salmon) | Done | dont_starve_together, events, food |
-| [Salsa Fresca](https://dontstarve.fandom.com/wiki/Salsa_Fresca) | Done | crock_pot_recipes, dont_starve_together, food, healing |
+| [Salsa Fresca](https://dontstarve.fandom.com/wiki/Salsa_Fresca) | Done | crock_pot_recipes, dont_starve_together, food, healing, items |
 | [Salt Box](https://dontstarve.fandom.com/wiki/Salt_Box) | Done | cooking_filter, craftable_structures, dont_starve_together, food_tab |
-| [Salt Crystals](https://dontstarve.fandom.com/wiki/Salt_Crystals) | Done | dont_starve_together, events, food |
+| [Salt Crystals](https://dontstarve.fandom.com/wiki/Salt_Crystals) | Done | dont_starve_together, events, food, items |
 | [Salt Formation](https://dontstarve.fandom.com/wiki/Salt_Formation) | Done | dont_starve_together |
 | [Salt Lick](https://dontstarve.fandom.com/wiki/Salt_Lick) | Done | a_new_reign, craftable_structures |
 | [Salt Pond](https://dontstarve.fandom.com/wiki/Salt_Pond) | Done | dont_starve_together, events |
-| [Salt Rack](https://dontstarve.fandom.com/wiki/Salt_Rack) | Done | dont_starve_together, events |
+| [Salt Rack](https://dontstarve.fandom.com/wiki/Salt_Rack) | Done | dont_starve_together, events, items |
 | [Sammy](https://dontstarve.fandom.com/wiki/Sammy) | Done | dont_starve_together, events |
 | [Sandstorm](https://dontstarve.fandom.com/wiki/Sandstorm) | Done | a_new_reign, dont_starve_together, gameplay |
-| [Sandy Turf](https://dontstarve.fandom.com/wiki/Sandy_Turf) | Done | craftable_items, decorations_filter, dont_starve_together, fuel |
-| [Sanguine Experiment](https://dontstarve.fandom.com/wiki/Sanguine_Experiment) | Done | craftable_items, dont_starve_together, events, fuel |
+| [Sandy Turf](https://dontstarve.fandom.com/wiki/Sandy_Turf) | Done | craftable_items, decorations_filter, dont_starve_together, fuel, items |
+| [Sanguine Experiment](https://dontstarve.fandom.com/wiki/Sanguine_Experiment) | Done | craftable_items, dont_starve_together, events, fuel, items |
 | [Sanity](https://dontstarve.fandom.com/wiki/Sanity) | Done | gameplay |
-| [Sap](https://dontstarve.fandom.com/wiki/Sap) | Done | dont_starve_together, events |
+| [Sap](https://dontstarve.fandom.com/wiki/Sap) | Done | dont_starve_together, events, items |
 | [Sapling](https://dontstarve.fandom.com/wiki/Sapling) | Done | dont_starve_together, fuel |
-| [Savanna Turf](https://dontstarve.fandom.com/wiki/Savanna_Turf) | Done | craftable_items, decorations_filter, fuel |
+| [Savanna Turf](https://dontstarve.fandom.com/wiki/Savanna_Turf) | Done | craftable_items, decorations_filter, fuel, items |
 | [Saving](https://dontstarve.fandom.com/wiki/Saving) | Done | gameplay |
-| [Sawhorse](https://dontstarve.fandom.com/wiki/Sawhorse) | Done | craftable_items, craftable_structures, dont_starve_together, from_beyond |
+| [Sawhorse](https://dontstarve.fandom.com/wiki/Sawhorse) | Done | craftable_items, craftable_structures, dont_starve_together, from_beyond, items |
 | [Scaled Chest](https://dontstarve.fandom.com/wiki/Scaled_Chest) | Done | containers, craftable_structures, dont_starve_together, infobox_missing_crafting_description |
-| [Scaled Flooring](https://dontstarve.fandom.com/wiki/Scaled_Flooring) | Done | craftable_items, decorations_filter, dont_starve_together, fuel |
+| [Scaled Flooring](https://dontstarve.fandom.com/wiki/Scaled_Flooring) | Done | craftable_items, decorations_filter, dont_starve_together, fuel, items |
 | [Scaled Furnace](https://dontstarve.fandom.com/wiki/Scaled_Furnace) | Done | a_new_reign, cooking_filter, craftable_structures, dont_starve_together |
-| [Scalemail](https://dontstarve.fandom.com/wiki/Scalemail) | Done | armour_filter, craftable_items, dont_starve_together, equipable_items, fight_tab |
-| [Scales](https://dontstarve.fandom.com/wiki/Scales) | Done | boss_dropped_items, dont_starve_together |
+| [Scalemail](https://dontstarve.fandom.com/wiki/Scalemail) | Done | armour_filter, craftable_items, dont_starve_together, equipable_items, fight_tab, items |
+| [Scales](https://dontstarve.fandom.com/wiki/Scales) | Done | boss_dropped_items, dont_starve_together, items |
 | [Science Machine](https://dontstarve.fandom.com/wiki/Science_Machine) | Done | craftable_structures, crafting_stations |
 | [Scorpeon](https://dontstarve.fandom.com/wiki/Scorpeon) | Done | dont_starve_together, events, hostile_creatures |
-| [Scrap](https://dontstarve.fandom.com/wiki/Scrap) | Done | dont_starve_together, from_beyond |
-| [Scrap Wall](https://dontstarve.fandom.com/wiki/Scrap_Wall) | Done | decorations_filter, dont_starve_together |
+| [Scrap](https://dontstarve.fandom.com/wiki/Scrap) | Done | dont_starve_together, from_beyond, items |
+| [Scrap Wall](https://dontstarve.fandom.com/wiki/Scrap_Wall) | Done | decorations_filter, dont_starve_together, items |
 | [Scrapbooking](https://dontstarve.fandom.com/wiki/Scrapbooking) | Done | dont_starve_together, gameplay |
-| [Scrappy Chapauldron](https://dontstarve.fandom.com/wiki/Scrappy_Chapauldron) | Done | dont_starve_together, equipable_items, from_beyond, hats |
+| [Scrappy Chapauldron](https://dontstarve.fandom.com/wiki/Scrappy_Chapauldron) | Done | dont_starve_together, equipable_items, from_beyond, hats, items |
 | [Scrappy Werepig](https://dontstarve.fandom.com/wiki/Scrappy_Werepig) | Done | boss_monsters, dont_starve_together, from_beyond |
 | [Sculptures Filter](https://dontstarve.fandom.com/wiki/Sculptures_Filter) | Done | dont_starve_together |
 | [Sea Bones](https://dontstarve.fandom.com/wiki/Sea_Bones) | Done | dont_starve_together |
-| [Sea Fishing Rod](https://dontstarve.fandom.com/wiki/Sea_Fishing_Rod) | Done | craftable_items, dont_starve_together, equipable_items |
-| [Sea Sprout Starter](https://dontstarve.fandom.com/wiki/Sea_Sprout_Starter) | Done | dont_starve_together |
+| [Sea Fishing Rod](https://dontstarve.fandom.com/wiki/Sea_Fishing_Rod) | Done | craftable_items, dont_starve_together, equipable_items, items |
+| [Sea Sprout Starter](https://dontstarve.fandom.com/wiki/Sea_Sprout_Starter) | Done | dont_starve_together, items |
 | [Sea Stack](https://dontstarve.fandom.com/wiki/Sea_Stack) | Done | dont_starve_together |
 | [Sea Strider](https://dontstarve.fandom.com/wiki/Sea_Strider) | Done | dont_starve_together, followers |
 | [Sea Strider Nest](https://dontstarve.fandom.com/wiki/Sea_Strider_Nest) | Done | dont_starve_together |
 | [Sea Weed](https://dontstarve.fandom.com/wiki/Sea_Weed) | Done | dont_starve_together |
 | [Seafaring Filter](https://dontstarve.fandom.com/wiki/Seafaring_Filter) | Done | dont_starve_together |
-| [Seafood Gumbo](https://dontstarve.fandom.com/wiki/Seafood_Gumbo) | Done | crock_pot_recipes, dont_starve_together, food, healing |
+| [Seafood Gumbo](https://dontstarve.fandom.com/wiki/Seafood_Gumbo) | Done | crock_pot_recipes, dont_starve_together, food, healing, items |
 | [Sealed Portal](https://dontstarve.fandom.com/wiki/Sealed_Portal) | Done | dont_starve_together |
-| [Seasoning Salt](https://dontstarve.fandom.com/wiki/Seasoning_Salt) | Done | craftable_items, dont_starve_together |
+| [Seasoning Salt](https://dontstarve.fandom.com/wiki/Seasoning_Salt) | Done | craftable_items, dont_starve_together, items |
 | [Seasonings Filter](https://dontstarve.fandom.com/wiki/Seasonings_Filter) | Done | dont_starve_together |
 | [Seasons](https://dontstarve.fandom.com/wiki/Seasons) | Done | dont_starve_together, gameplay |
-| [Autumn](https://dontstarve.fandom.com/wiki/Seasons/Autumn) | Done | dont_starve_together, gameplay |
-| [Spring](https://dontstarve.fandom.com/wiki/Seasons/Spring) | Done | dont_starve_together, gameplay |
-| [Summer](https://dontstarve.fandom.com/wiki/Seasons/Summer) | Done | dont_starve_together, gameplay |
-| [Winter](https://dontstarve.fandom.com/wiki/Seasons/Winter) | Done | gameplay |
-| [World](https://dontstarve.fandom.com/wiki/Seasons/World) | Done | gameplay |
-| [Seawreath](https://dontstarve.fandom.com/wiki/Seawreath) | Done | craftable_items, dont_starve_together, equipable_items, hats |
-| [Second Chance Watch](https://dontstarve.fandom.com/wiki/Second_Chance_Watch) | Done | craftable_items, dont_starve_together |
-| [Seed Pack-It](https://dontstarve.fandom.com/wiki/Seed_Pack-It) | Done | backpacks, craftable_items, dont_starve_together, equipable_items, food_gardening_filter, food_tab |
-| [Seeds](https://dontstarve.fandom.com/wiki/Seeds) | Done | food, healing |
-| [Seedshell](https://dontstarve.fandom.com/wiki/Seedshell) | Done | dont_starve_together, equipable_items |
-| [Serving](https://dontstarve.fandom.com/wiki/Serving) | Done | dont_starve_together, events |
+| [Seasons/Autumn](https://dontstarve.fandom.com/wiki/Seasons/Autumn) | Done | dont_starve_together, gameplay |
+| [Seasons/Spring](https://dontstarve.fandom.com/wiki/Seasons/Spring) | Done | dont_starve_together, gameplay |
+| [Seasons/Summer](https://dontstarve.fandom.com/wiki/Seasons/Summer) | Done | dont_starve_together, gameplay |
+| [Seasons/Winter](https://dontstarve.fandom.com/wiki/Seasons/Winter) | Done | gameplay |
+| [Seasons/World](https://dontstarve.fandom.com/wiki/Seasons/World) | Done | gameplay |
+| [Seawreath](https://dontstarve.fandom.com/wiki/Seawreath) | Done | craftable_items, dont_starve_together, equipable_items, hats, items |
+| [Second Chance Watch](https://dontstarve.fandom.com/wiki/Second_Chance_Watch) | Done | craftable_items, dont_starve_together, items |
+| [Seed Pack-It](https://dontstarve.fandom.com/wiki/Seed_Pack-It) | Done | backpacks, craftable_items, dont_starve_together, equipable_items, food_gardening_filter, food_tab, items |
+| [Seeds](https://dontstarve.fandom.com/wiki/Seeds) | Done | food, healing, items |
+| [Seedshell](https://dontstarve.fandom.com/wiki/Seedshell) | Done | dont_starve_together, equipable_items, items |
+| [Serving](https://dontstarve.fandom.com/wiki/Serving) | Done | dont_starve_together, events, items |
 | [Set Piece](https://dontstarve.fandom.com/wiki/Set_Piece) | Done | dont_starve_together, gameplay |
-| [Sewing Kit](https://dontstarve.fandom.com/wiki/Sewing_Kit) | Done | craftable_items |
+| [Sewing Kit](https://dontstarve.fandom.com/wiki/Sewing_Kit) | Done | craftable_items, items |
 | [Shadow Aligned](https://dontstarve.fandom.com/wiki/Shadow_Aligned) | Done | dont_starve_together, gameplay |
-| [Shadow Atrium](https://dontstarve.fandom.com/wiki/Shadow_Atrium) | Done | a_new_reign, boss_dropped_items, dont_starve_together, from_beyond |
+| [Shadow Atrium](https://dontstarve.fandom.com/wiki/Shadow_Atrium) | Done | a_new_reign, boss_dropped_items, dont_starve_together, from_beyond, items |
 | [Shadow Magic Filter](https://dontstarve.fandom.com/wiki/Shadow_Magic_Filter) | Done | dont_starve_together |
 | [Shadow Manipulator](https://dontstarve.fandom.com/wiki/Shadow_Manipulator) | Done | craftable_structures |
-| [Shadow Maul](https://dontstarve.fandom.com/wiki/Shadow_Maul) | Done | craftable_items, dont_starve_together, from_beyond, healing |
+| [Shadow Maul](https://dontstarve.fandom.com/wiki/Shadow_Maul) | Done | craftable_items, dont_starve_together, from_beyond, healing, items |
 | [Shadow Merm](https://dontstarve.fandom.com/wiki/Shadow_Merm) | Done | dont_starve_together, followers, hostile_creatures |
 | [Shadow Pieces](https://dontstarve.fandom.com/wiki/Shadow_Pieces) | Done | a_new_reign, boss_monsters, dont_starve_together, hostile_creatures |
-| [Shadow Reaper](https://dontstarve.fandom.com/wiki/Shadow_Reaper) | Done | craftable_items, dont_starve_together, from_beyond |
-| [Shadow Thurible](https://dontstarve.fandom.com/wiki/Shadow_Thurible) | Done | a_new_reign, boss_dropped_items, dont_starve_together |
+| [Shadow Reaper](https://dontstarve.fandom.com/wiki/Shadow_Reaper) | Done | craftable_items, dont_starve_together, from_beyond, items |
+| [Shadow Thurible](https://dontstarve.fandom.com/wiki/Shadow_Thurible) | Done | a_new_reign, boss_dropped_items, dont_starve_together, items |
 | [Shadow Traps](https://dontstarve.fandom.com/wiki/Shadow_Traps) | Done | dont_starve_together, infobox_missing_crafting_description |
 | [Shadowcraft Filter](https://dontstarve.fandom.com/wiki/Shadowcraft_Filter) | Done | dont_starve_together |
-| [Shadowcraft Plinth](https://dontstarve.fandom.com/wiki/Shadowcraft_Plinth) | Done | ancient_tier_2, craftable_items, dont_starve_together, from_beyond |
+| [Shadowcraft Plinth](https://dontstarve.fandom.com/wiki/Shadowcraft_Plinth) | Done | ancient_tier_2, craftable_items, dont_starve_together, from_beyond, items |
 | [Shattered Spider](https://dontstarve.fandom.com/wiki/Shattered_Spider) | Done | dont_starve_together, hostile_creatures |
 | [Shattered Spider Hole](https://dontstarve.fandom.com/wiki/Shattered_Spider_Hole) | Done | dont_starve_together |
-| [Shell Beach Turf](https://dontstarve.fandom.com/wiki/Shell_Beach_Turf) | Done | craftable_items, decorations_filter, dont_starve_together |
-| [Shell Bells](https://dontstarve.fandom.com/wiki/Shell_Bells) | Done | dont_starve_together |
+| [Shell Beach Turf](https://dontstarve.fandom.com/wiki/Shell_Beach_Turf) | Done | craftable_items, decorations_filter, dont_starve_together, items |
+| [Shell Bells](https://dontstarve.fandom.com/wiki/Shell_Bells) | Done | dont_starve_together, items |
 | [Shell Cluster](https://dontstarve.fandom.com/wiki/Shell_Cluster) | Done | dont_starve_together |
-| [Shelmet](https://dontstarve.fandom.com/wiki/Shelmet) | Done | equipable_items, hats |
-| [Shield of Terror](https://dontstarve.fandom.com/wiki/Shield_of_Terror) | Done | boss_dropped_items, dont_starve_together, equipable_items |
-| [Shoddy Tool](https://dontstarve.fandom.com/wiki/Shoddy_Tool) | Done | dont_starve_together |
+| [Shelmet](https://dontstarve.fandom.com/wiki/Shelmet) | Done | equipable_items, hats, items |
+| [Shield of Terror](https://dontstarve.fandom.com/wiki/Shield_of_Terror) | Done | boss_dropped_items, dont_starve_together, equipable_items, items |
+| [Shoddy Tool](https://dontstarve.fandom.com/wiki/Shoddy_Tool) | Done | dont_starve_together, items |
 | [Shoddy Tool Shed](https://dontstarve.fandom.com/wiki/Shoddy_Tool_Shed) | Done | craftable_structures, dont_starve_together |
-| [Shoo Box](https://dontstarve.fandom.com/wiki/Shoo_Box) | Done | craftable_items, dont_starve_together |
-| [Shovel](https://dontstarve.fandom.com/wiki/Shovel) | Done | craftable_items, equipable_items |
-| [Shroom Skin](https://dontstarve.fandom.com/wiki/Shroom_Skin) | Done | a_new_reign, boss_dropped_items, dont_starve_together |
+| [Shoo Box](https://dontstarve.fandom.com/wiki/Shoo_Box) | Done | craftable_items, dont_starve_together, items |
+| [Shovel](https://dontstarve.fandom.com/wiki/Shovel) | Done | craftable_items, equipable_items, items |
+| [Shroom Skin](https://dontstarve.fandom.com/wiki/Shroom_Skin) | Done | a_new_reign, boss_dropped_items, dont_starve_together, items |
 | [Siesta Lean-to](https://dontstarve.fandom.com/wiki/Siesta_Lean-to) | Done | cooling, craftable_structures, dont_starve_together, healing |
 | [Sign](https://dontstarve.fandom.com/wiki/Sign) | Done | craftable_structures, decorations_filter |
-| [Silk](https://dontstarve.fandom.com/wiki/Silk) | Done | boss_dropped_items |
-| [Silken Grand Armor](https://dontstarve.fandom.com/wiki/Silken_Grand_Armor) | Done | dont_starve_together |
+| [Silk](https://dontstarve.fandom.com/wiki/Silk) | Done | boss_dropped_items, items |
+| [Silken Grand Armor](https://dontstarve.fandom.com/wiki/Silken_Grand_Armor) | Done | dont_starve_together, items |
 | [Sinkhole](https://dontstarve.fandom.com/wiki/Sinkhole) | Done | indestructible_object |
 | [Sisturn](https://dontstarve.fandom.com/wiki/Sisturn) | Done | craftable_structures, dont_starve_together |
-| [Skeeter Bomb](https://dontstarve.fandom.com/wiki/Skeeter_Bomb) | Done | craftable_items, dont_starve_together, from_beyond |
+| [Skeeter Bomb](https://dontstarve.fandom.com/wiki/Skeeter_Bomb) | Done | craftable_items, dont_starve_together, from_beyond, items |
 | [Skeleton](https://dontstarve.fandom.com/wiki/Skeleton) | Done | dont_starve_together |
-| [Sketch](https://dontstarve.fandom.com/wiki/Sketch) | Done | a_new_reign, boss_dropped_items, celestial_tab, dont_starve_together, fuel |
+| [Sketch](https://dontstarve.fandom.com/wiki/Sketch) | Done | a_new_reign, boss_dropped_items, celestial_tab, dont_starve_together, fuel, items |
 | [Skill Spotlight Update](https://dontstarve.fandom.com/wiki/Skill_Spotlight_Update) | Done | dont_starve_together |
 | [Skins](https://dontstarve.fandom.com/wiki/Skins) | Done | dont_starve_together |
 | [Skittersquid](https://dontstarve.fandom.com/wiki/Skittersquid) | Done | dont_starve_together |
+| [Slaughter Tools](https://dontstarve.fandom.com/wiki/Slaughter_Tools) | Done | items |
 | [Sleeping](https://dontstarve.fandom.com/wiki/Sleeping) | Done | gameplay |
 | [Slimy Biome](https://dontstarve.fandom.com/wiki/Slimy_Biome) | Done | dont_starve_together |
-| [Slimy Salve](https://dontstarve.fandom.com/wiki/Slimy_Salve) | Done | craftable_items, dont_starve_together, from_beyond |
-| [Slimy Turf](https://dontstarve.fandom.com/wiki/Slimy_Turf) | Done | craftable_items, decorations_filter, fuel |
+| [Slimy Salve](https://dontstarve.fandom.com/wiki/Slimy_Salve) | Done | craftable_items, dont_starve_together, from_beyond, items |
+| [Slimy Turf](https://dontstarve.fandom.com/wiki/Slimy_Turf) | Done | craftable_items, decorations_filter, fuel, items |
 | [Slingshot Ammo](https://dontstarve.fandom.com/wiki/Slingshot_Ammo) | Done | dont_starve_together |
 | [Slingshot Ammo Tab](https://dontstarve.fandom.com/wiki/Slingshot_Ammo_Tab) | Done | dont_starve_together |
-| [Slurper](https://dontstarve.fandom.com/wiki/Slurper) | Done | equipable_items, hats, hostile_creatures |
+| [Slurper](https://dontstarve.fandom.com/wiki/Slurper) | Done | equipable_items, hats, hostile_creatures, items |
+| [Slurper Pelt](https://dontstarve.fandom.com/wiki/Slurper_Pelt) | Done | items |
 | [Slurtle](https://dontstarve.fandom.com/wiki/Slurtle) | Done | animals, cave_creatures |
-| [Slurtle Slime](https://dontstarve.fandom.com/wiki/Slurtle_Slime) | Done | fuel |
-| [Small Jerky](https://dontstarve.fandom.com/wiki/Small_Jerky) | Done | healing |
+| [Slurtle Slime](https://dontstarve.fandom.com/wiki/Slurtle_Slime) | Done | fuel, items |
+| [Small Casserole Dish](https://dontstarve.fandom.com/wiki/Small_Casserole_Dish) | Done | items |
+| [Small Jerky](https://dontstarve.fandom.com/wiki/Small_Jerky) | Done | healing, items |
 | [Snortoise](https://dontstarve.fandom.com/wiki/Snortoise) | Done | dont_starve_together, events, hostile_creatures |
-| [Snurtle Shell Armor](https://dontstarve.fandom.com/wiki/Snurtle_Shell_Armor) | Done | equipable_items |
-| [Soothing Tea](https://dontstarve.fandom.com/wiki/Soothing_Tea) | Done | crock_pot_recipes, dont_starve_together, food, healing |
-| [Soul](https://dontstarve.fandom.com/wiki/Soul) | Done | dont_starve_together |
+| [Snurtle Shell Armor](https://dontstarve.fandom.com/wiki/Snurtle_Shell_Armor) | Done | equipable_items, items |
+| [Soothing Tea](https://dontstarve.fandom.com/wiki/Soothing_Tea) | Done | crock_pot_recipes, dont_starve_together, food, healing, items |
+| [Soul](https://dontstarve.fandom.com/wiki/Soul) | Done | dont_starve_together, items |
 | [Soundtrack](https://dontstarve.fandom.com/wiki/Soundtrack) | Done | gameplay |
-| [Spark Ark](https://dontstarve.fandom.com/wiki/Spark_Ark) | Done | boss_dropped_items, dont_starve_together, from_beyond |
-| [Spear](https://dontstarve.fandom.com/wiki/Spear) | Done | craftable_items, equipable_items, fight_tab |
+| [Spark Ark](https://dontstarve.fandom.com/wiki/Spark_Ark) | Done | boss_dropped_items, dont_starve_together, from_beyond, items |
+| [Spear](https://dontstarve.fandom.com/wiki/Spear) | Done | craftable_items, equipable_items, fight_tab, items |
 | [Special Event Filter](https://dontstarve.fandom.com/wiki/Special_Event_Filter) | Done | dont_starve_together |
-| [Spelunker's Bridge Kit](https://dontstarve.fandom.com/wiki/Spelunker's_Bridge_Kit) | Done | craftable_items |
-| [Spicy Chili](https://dontstarve.fandom.com/wiki/Spicy_Chili) | Done | crock_pot_recipes, dont_starve_together, food, healing |
-| [Spicy Vegetable Stinger](https://dontstarve.fandom.com/wiki/Spicy_Vegetable_Stinger) | Done | crock_pot_recipes, dont_starve_together, food, healing |
+| [Spelunker's Bridge Kit](https://dontstarve.fandom.com/wiki/Spelunker's_Bridge_Kit) | Done | craftable_items, items |
+| [Spicy Chili](https://dontstarve.fandom.com/wiki/Spicy_Chili) | Done | crock_pot_recipes, dont_starve_together, food, healing, items |
+| [Spicy Vegetable Stinger](https://dontstarve.fandom.com/wiki/Spicy_Vegetable_Stinger) | Done | crock_pot_recipes, dont_starve_together, food, healing, items |
 | [Spider](https://dontstarve.fandom.com/wiki/Spider) | Done | cave_creatures, followers, hostile_creatures |
 | [Spider Care Tab](https://dontstarve.fandom.com/wiki/Spider_Care_Tab) | Done | dont_starve_together |
-| [Spider Eggs](https://dontstarve.fandom.com/wiki/Spider_Eggs) | Done | boss_dropped_items, craftable_items, eggs, fuel |
-| [Spider Gland](https://dontstarve.fandom.com/wiki/Spider_Gland) | Done | healing |
+| [Spider Eggs](https://dontstarve.fandom.com/wiki/Spider_Eggs) | Done | boss_dropped_items, craftable_items, eggs, fuel, items |
+| [Spider Gland](https://dontstarve.fandom.com/wiki/Spider_Gland) | Done | healing, items |
 | [Spider Queen](https://dontstarve.fandom.com/wiki/Spider_Queen) | Done | boss_monsters, cave_creatures, hostile_creatures |
 | [Spider Warrior](https://dontstarve.fandom.com/wiki/Spider_Warrior) | Done | cave_creatures, followers, hostile_creatures |
-| [Spiderhat](https://dontstarve.fandom.com/wiki/Spiderhat) | Done | boss_dropped_items, equipable_items, hats |
+| [Spiderhat](https://dontstarve.fandom.com/wiki/Spiderhat) | Done | boss_dropped_items, equipable_items, hats, items |
 | [Spiky Bush](https://dontstarve.fandom.com/wiki/Spiky_Bush) | Done | fuel, health_loss |
+| [Spiral Spear](https://dontstarve.fandom.com/wiki/Spiral_Spear) | Done | items |
 | [Spitter](https://dontstarve.fandom.com/wiki/Spitter) | Done | cave_creatures, followers, hostile_creatures |
 | [Splumonkey](https://dontstarve.fandom.com/wiki/Splumonkey) | Done | animals, hostile_creatures |
-| [Spoiled Fish](https://dontstarve.fandom.com/wiki/Spoiled_Fish) | Done | dont_starve_together, fertilizer, fuel, health_loss |
+| [Spoiled Fish](https://dontstarve.fandom.com/wiki/Spoiled_Fish) | Done | dont_starve_together, fertilizer, fuel, health_loss, items |
 | [Spools](https://dontstarve.fandom.com/wiki/Spools) | Done | dont_starve_together |
 | [Spotty Shrub](https://dontstarve.fandom.com/wiki/Spotty_Shrub) | Done | dont_starve_together, events |
-| [Spotty Sprig](https://dontstarve.fandom.com/wiki/Spotty_Sprig) | Done | dont_starve_together, events |
-| [Sprouting Stone Fruit](https://dontstarve.fandom.com/wiki/Sprouting_Stone_Fruit) | Done | dont_starve_together |
+| [Spotty Sprig](https://dontstarve.fandom.com/wiki/Spotty_Sprig) | Done | dont_starve_together, events, items |
+| [Sprouting Stone Fruit](https://dontstarve.fandom.com/wiki/Sprouting_Stone_Fruit) | Done | dont_starve_together, items |
 | [Sproutrock](https://dontstarve.fandom.com/wiki/Sproutrock) | Done | dont_starve_together, from_beyond |
-| [Stag Antler](https://dontstarve.fandom.com/wiki/Stag_Antler) | Done | a_new_reign, boss_dropped_items, dont_starve_together |
+| [Stag Antler](https://dontstarve.fandom.com/wiki/Stag_Antler) | Done | a_new_reign, boss_dropped_items, dont_starve_together, items |
 | [Stage](https://dontstarve.fandom.com/wiki/Stage) | Done | dont_starve_together |
 | [Stagecraft Tab](https://dontstarve.fandom.com/wiki/Stagecraft_Tab) | Done | dont_starve_together |
 | [Stagehand](https://dontstarve.fandom.com/wiki/Stagehand) | Done | a_new_reign, craftable_structures, decorations_filter, dont_starve_together, indestructible_object |
-| [Star Caller's Staff](https://dontstarve.fandom.com/wiki/Star_Caller's_Staff) | Done | ancient_tab, ancient_tier_1, craftable_items, equipable_items |
-| [Star-Sky](https://dontstarve.fandom.com/wiki/Star-Sky) | Done | dont_starve_together, indestructible_object |
-| [Steamed Twigs](https://dontstarve.fandom.com/wiki/Steamed_Twigs) | Done | beefalo_foods, crock_pot_recipes, dont_starve_together |
-| [Steel Wool](https://dontstarve.fandom.com/wiki/Steel_Wool) | Done | a_new_reign, dont_starve_together, fuel |
-| [Steering Wheel](https://dontstarve.fandom.com/wiki/Steering_Wheel) | Done | craftable_items, dont_starve_together |
-| [Stinger](https://dontstarve.fandom.com/wiki/Stinger) | Done | boss_dropped_items |
-| [Stone Fruit](https://dontstarve.fandom.com/wiki/Stone_Fruit) | Done | dont_starve_together, food, healing |
+| [Star-Sky](https://dontstarve.fandom.com/wiki/Star-Sky) | Done | dont_starve_together, indestructible_object, items |
+| [Star Caller's Staff](https://dontstarve.fandom.com/wiki/Star_Caller's_Staff) | Done | ancient_tab, ancient_tier_1, craftable_items, equipable_items, items |
+| [Steadfast Grand Armor](https://dontstarve.fandom.com/wiki/Steadfast_Grand_Armor) | Done | items |
+| [Steadfast Stone Armor](https://dontstarve.fandom.com/wiki/Steadfast_Stone_Armor) | Done | items |
+| [Steamed Twigs](https://dontstarve.fandom.com/wiki/Steamed_Twigs) | Done | beefalo_foods, crock_pot_recipes, dont_starve_together, items |
+| [Steel Wool](https://dontstarve.fandom.com/wiki/Steel_Wool) | Done | a_new_reign, dont_starve_together, fuel, items |
+| [Steering Wheel](https://dontstarve.fandom.com/wiki/Steering_Wheel) | Done | craftable_items, dont_starve_together, items |
+| [Stinger](https://dontstarve.fandom.com/wiki/Stinger) | Done | boss_dropped_items, items |
+| [Stone Fruit](https://dontstarve.fandom.com/wiki/Stone_Fruit) | Done | dont_starve_together, food, healing, items |
 | [Stone Fruit Bush](https://dontstarve.fandom.com/wiki/Stone_Fruit_Bush) | Done | dont_starve_together |
-| [Stone Wall](https://dontstarve.fandom.com/wiki/Stone_Wall) | Done | craftable_items |
+| [Stone Splint Mail](https://dontstarve.fandom.com/wiki/Stone_Splint_Mail) | Done | items |
+| [Stone Wall](https://dontstarve.fandom.com/wiki/Stone_Wall) | Done | craftable_items, items |
 | [Storage Solutions Filter](https://dontstarve.fandom.com/wiki/Storage_Solutions_Filter) | Done | dont_starve_together |
-| [Straw Hat](https://dontstarve.fandom.com/wiki/Straw_Hat) | Done | craftable_items, equipable_items, hats |
-| [Strident Trident](https://dontstarve.fandom.com/wiki/Strident_Trident) | Done | craftable_items, dont_starve_together, equipable_items |
+| [Straw Hat](https://dontstarve.fandom.com/wiki/Straw_Hat) | Done | craftable_items, equipable_items, hats, items |
+| [Strident Trident](https://dontstarve.fandom.com/wiki/Strident_Trident) | Done | craftable_items, dont_starve_together, equipable_items, items |
 | [Strongman Tab](https://dontstarve.fandom.com/wiki/Strongman_Tab) | Done | dont_starve_together |
 | [Structures](https://dontstarve.fandom.com/wiki/Structures) | Done | gameplay |
 | [Structures Filter](https://dontstarve.fandom.com/wiki/Structures_Filter) | Done | dont_starve_together |
-| [Stuffed Eggplant](https://dontstarve.fandom.com/wiki/Stuffed_Eggplant) | Done | crock_pot_recipes, food, healing |
-| [Stuffed Fish Heads](https://dontstarve.fandom.com/wiki/Stuffed_Fish_Heads) | Done | crock_pot_recipes, dont_starve_together, food, healing |
-| [Stuffed Night Cap](https://dontstarve.fandom.com/wiki/Stuffed_Night_Cap) | Done | dont_starve_together, food, from_beyond |
-| [Stuffed Pepper Poppers](https://dontstarve.fandom.com/wiki/Stuffed_Pepper_Poppers) | Done | crock_pot_recipes, dont_starve_together, food, healing |
+| [Stuffed Eggplant](https://dontstarve.fandom.com/wiki/Stuffed_Eggplant) | Done | crock_pot_recipes, food, healing, items |
+| [Stuffed Fish Heads](https://dontstarve.fandom.com/wiki/Stuffed_Fish_Heads) | Done | crock_pot_recipes, dont_starve_together, food, healing, items |
+| [Stuffed Night Cap](https://dontstarve.fandom.com/wiki/Stuffed_Night_Cap) | Done | dont_starve_together, food, from_beyond, items |
+| [Stuffed Pepper Poppers](https://dontstarve.fandom.com/wiki/Stuffed_Pepper_Poppers) | Done | crock_pot_recipes, dont_starve_together, food, healing, items |
 | [Sugarwood Tree](https://dontstarve.fandom.com/wiki/Sugarwood_Tree) | Done | dont_starve_together, events |
-| [Sulfuric Experiment](https://dontstarve.fandom.com/wiki/Sulfuric_Experiment) | Done | craftable_items, dont_starve_together, events, fuel |
-| [Summer Frest](https://dontstarve.fandom.com/wiki/Summer_Frest) | Done | cooling, craftable_items, dont_starve_together, equipable_items |
+| [Sulfuric Experiment](https://dontstarve.fandom.com/wiki/Sulfuric_Experiment) | Done | craftable_items, dont_starve_together, events, fuel, items |
+| [Summer Frest](https://dontstarve.fandom.com/wiki/Summer_Frest) | Done | cooling, craftable_items, dont_starve_together, equipable_items, items |
 | [Summer Items Filter](https://dontstarve.fandom.com/wiki/Summer_Items_Filter) | Done | dont_starve_together |
 | [Sunken Chest](https://dontstarve.fandom.com/wiki/Sunken_Chest) | Done | dont_starve_together |
 | [Sunken Forest](https://dontstarve.fandom.com/wiki/Sunken_Forest) | Done | gameplay |
-| [Surf 'n' Turf](https://dontstarve.fandom.com/wiki/Surf_'n'_Turf) | Done | crock_pot_recipes, dont_starve_together, food, healing |
+| [Surf 'n' Turf](https://dontstarve.fandom.com/wiki/Surf_'n'_Turf) | Done | crock_pot_recipes, dont_starve_together, food, healing, items |
 | [Surface World](https://dontstarve.fandom.com/wiki/Surface_World) | Done | gameplay |
-| [Surprising Seed](https://dontstarve.fandom.com/wiki/Surprising_Seed) | Done | dont_starve_together, from_beyond |
+| [Surprising Seed](https://dontstarve.fandom.com/wiki/Surprising_Seed) | Done | dont_starve_together, from_beyond, items |
 | [Survivor Items Filter](https://dontstarve.fandom.com/wiki/Survivor_Items_Filter) | Done | dont_starve_together |
 | [Survivor Speed](https://dontstarve.fandom.com/wiki/Survivor_Speed) | Done | gameplay |
 | [Suspicious Marble](https://dontstarve.fandom.com/wiki/Suspicious_Marble) | Done | a_new_reign, dont_starve_together, indestructible_object |
 | [Suspicious Moonrock](https://dontstarve.fandom.com/wiki/Suspicious_Moonrock) | Done | a_new_reign, dont_starve_together |
 | [Suspicious Peeper](https://dontstarve.fandom.com/wiki/Suspicious_Peeper) | Done | hostile_creatures |
-| [Swamp Brawler Helmet](https://dontstarve.fandom.com/wiki/Swamp_Brawler_Helmet) | Done | dont_starve_together |
+| [Swamp Brawler Helmet](https://dontstarve.fandom.com/wiki/Swamp_Brawler_Helmet) | Done | dont_starve_together, items |
 | [Swamp Pig](https://dontstarve.fandom.com/wiki/Swamp_Pig) | Done | dont_starve_together, events |
 | [Swamp Pig Elder](https://dontstarve.fandom.com/wiki/Swamp_Pig_Elder) | Done | dont_starve_together, events |
-| [Switcherdoodle](https://dontstarve.fandom.com/wiki/Switcherdoodle) | Done | craftable_items, dont_starve_together, food, health_loss |
-| [Syrup](https://dontstarve.fandom.com/wiki/Syrup) | Done | dont_starve_together, events |
-| [Syrup of Ipecaca](https://dontstarve.fandom.com/wiki/Syrup_of_Ipecaca) | Done | craftable_items, dont_starve_together |
-| [Table Lamp](https://dontstarve.fandom.com/wiki/Table_Lamp) | Done | craftable_items, decorations_filter, dont_starve_together, from_beyond |
-| [Table Vase](https://dontstarve.fandom.com/wiki/Table_Vase) | Done | craftable_items, decorations_filter, dont_starve_together, from_beyond |
+| [Switcherdoodle](https://dontstarve.fandom.com/wiki/Switcherdoodle) | Done | craftable_items, dont_starve_together, food, health_loss, items |
+| [Syrup](https://dontstarve.fandom.com/wiki/Syrup) | Done | dont_starve_together, events, items |
+| [Syrup of Ipecaca](https://dontstarve.fandom.com/wiki/Syrup_of_Ipecaca) | Done | craftable_items, dont_starve_together, items |
+| [Syrup Pot](https://dontstarve.fandom.com/wiki/Syrup_Pot) | Done | items |
+| [Table Lamp](https://dontstarve.fandom.com/wiki/Table_Lamp) | Done | craftable_items, decorations_filter, dont_starve_together, from_beyond, items |
+| [Table Vase](https://dontstarve.fandom.com/wiki/Table_Vase) | Done | craftable_items, decorations_filter, dont_starve_together, from_beyond, items |
 | [Tables](https://dontstarve.fandom.com/wiki/Tables) | Done | dont_starve_together, from_beyond |
-| [Tackle Box](https://dontstarve.fandom.com/wiki/Tackle_Box) | Done | craftable_items, dont_starve_together |
+| [Tackle Box](https://dontstarve.fandom.com/wiki/Tackle_Box) | Done | craftable_items, dont_starve_together, items |
 | [Tackle Receptacle](https://dontstarve.fandom.com/wiki/Tackle_Receptacle) | Done | craftable_structures, dont_starve_together |
-| [Taffy](https://dontstarve.fandom.com/wiki/Taffy) | Done | crock_pot_recipes, food, health_loss |
-| [Tail o' Three Cats](https://dontstarve.fandom.com/wiki/Tail_o'_Three_Cats) | Done | a_new_reign, craftable_items, dont_starve_together, equipable_items, fight_tab |
-| [Tall Scotch Eggs](https://dontstarve.fandom.com/wiki/Tall_Scotch_Eggs) | Done | crock_pot_recipes, dont_starve_together, food, healing |
-| [Tallbird](https://dontstarve.fandom.com/wiki/Tallbird) | Done | birds, hostile_creatures |
-| [Tallbird Egg](https://dontstarve.fandom.com/wiki/Tallbird_Egg) | Done | eggs, food, healing |
-| [Tam o' Shanter](https://dontstarve.fandom.com/wiki/Tam_o'_Shanter) | Done | equipable_items, hats |
+| [Taffy](https://dontstarve.fandom.com/wiki/Taffy) | Done | crock_pot_recipes, food, health_loss, items |
+| [Tail o' Three Cats](https://dontstarve.fandom.com/wiki/Tail_o'_Three_Cats) | Done | a_new_reign, craftable_items, dont_starve_together, equipable_items, fight_tab, items |
+| [Tall Scotch Eggs](https://dontstarve.fandom.com/wiki/Tall_Scotch_Eggs) | Done | crock_pot_recipes, dont_starve_together, food, healing, items |
+| [Tallbird](https://dontstarve.fandom.com/wiki/Tallbird) | Done | birds, hostile_creatures, innocents |
+| [Tallbird Egg](https://dontstarve.fandom.com/wiki/Tallbird_Egg) | Done | eggs, food, healing, items |
+| [Tam o' Shanter](https://dontstarve.fandom.com/wiki/Tam_o'_Shanter) | Done | equipable_items, hats, items |
 | [Telelocator Focus](https://dontstarve.fandom.com/wiki/Telelocator_Focus) | Done | craftable_structures |
-| [Telelocator Staff](https://dontstarve.fandom.com/wiki/Telelocator_Staff) | Done | craftable_items, equipable_items |
-| [Teletransport Station](https://dontstarve.fandom.com/wiki/Teletransport_Station) | Done | craftable_items, craftable_structures, dont_starve_together |
-| [Telltale Heart](https://dontstarve.fandom.com/wiki/Telltale_Heart) | Done | craftable_items, dont_starve_together, health_loss |
+| [Telelocator Staff](https://dontstarve.fandom.com/wiki/Telelocator_Staff) | Done | craftable_items, equipable_items, items |
+| [Teletransport Station](https://dontstarve.fandom.com/wiki/Teletransport_Station) | Done | craftable_items, craftable_structures, dont_starve_together, items |
+| [Telltale Heart](https://dontstarve.fandom.com/wiki/Telltale_Heart) | Done | craftable_items, dont_starve_together, health_loss, items |
 | [Tent](https://dontstarve.fandom.com/wiki/Tent) | Done | craftable_structures, healing |
-| [Tent Roll](https://dontstarve.fandom.com/wiki/Tent_Roll) | Done | craftable_items, craftable_structures, dont_starve_together, healing |
+| [Tent Roll](https://dontstarve.fandom.com/wiki/Tent_Roll) | Done | craftable_items, craftable_structures, dont_starve_together, healing, items |
 | [Tentacle](https://dontstarve.fandom.com/wiki/Tentacle) | Done | cave_creatures, hostile_creatures |
-| [Tentacle Spike](https://dontstarve.fandom.com/wiki/Tentacle_Spike) | Done | equipable_items |
-| [Tentacle Spots](https://dontstarve.fandom.com/wiki/Tentacle_Spots) | Done | fuel |
+| [Tentacle Spike](https://dontstarve.fandom.com/wiki/Tentacle_Spike) | Done | equipable_items, items |
+| [Tentacle Spots](https://dontstarve.fandom.com/wiki/Tentacle_Spots) | Done | fuel, items |
 | [Terra Firma Tamper](https://dontstarve.fandom.com/wiki/Terra_Firma_Tamper) | Done | craftable_structures, decorations_filter, dont_starve_together |
-| [Terrarium](https://dontstarve.fandom.com/wiki/Terrarium) | Done | dont_starve_together |
+| [Terrarium](https://dontstarve.fandom.com/wiki/Terrarium) | Done | dont_starve_together, items |
 | [The Altar of Gnaw](https://dontstarve.fandom.com/wiki/The_Altar_of_Gnaw) | Done | dont_starve_together, events, indestructible_object |
 | [The Curse of Moon Quay](https://dontstarve.fandom.com/wiki/The_Curse_of_Moon_Quay) | Done | dont_starve_together |
 | [The Forge](https://dontstarve.fandom.com/wiki/The_Forge) | Done | dont_starve_together, events |
@@ -1876,126 +1956,131 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
 | [The Gorge Recipes](https://dontstarve.fandom.com/wiki/The_Gorge_Recipes) | Done | dont_starve_together, events |
 | [The Gorge Seeds](https://dontstarve.fandom.com/wiki/The_Gorge_Seeds) | Done | dont_starve_together, events |
 | [The Lazy Deserter](https://dontstarve.fandom.com/wiki/The_Lazy_Deserter) | Done | a_new_reign, craftable_structures, dont_starve_together |
-| [The Lazy Explorer](https://dontstarve.fandom.com/wiki/The_Lazy_Explorer) | Done | ancient_tab, ancient_tier_2, craftable_items, equipable_items |
-| [The Lazy Forager](https://dontstarve.fandom.com/wiki/The_Lazy_Forager) | Done | ancient_tab, ancient_tier_2, craftable_items, equipable_items |
+| [The Lazy Explorer](https://dontstarve.fandom.com/wiki/The_Lazy_Explorer) | Done | ancient_tab, ancient_tier_2, craftable_items, equipable_items, items |
+| [The Lazy Forager](https://dontstarve.fandom.com/wiki/The_Lazy_Forager) | Done | ancient_tab, ancient_tier_2, craftable_items, equipable_items, items |
 | [Thermal Measurer](https://dontstarve.fandom.com/wiki/Thermal_Measurer) | Done | craftable_structures |
-| [Thermal Stone](https://dontstarve.fandom.com/wiki/Thermal_Stone) | Done | cooling, craftable_items |
-| [Thick Fur](https://dontstarve.fandom.com/wiki/Thick_Fur) | Done | boss_dropped_items, craftable_items, dont_starve_together, infobox_missing_crafting_description |
+| [Thermal Stone](https://dontstarve.fandom.com/wiki/Thermal_Stone) | Done | cooling, craftable_items, items |
+| [Thick Fur](https://dontstarve.fandom.com/wiki/Thick_Fur) | Done | boss_dropped_items, craftable_items, dont_starve_together, infobox_missing_crafting_description, items |
 | [Think Tank](https://dontstarve.fandom.com/wiki/Think_Tank) | Done | craftable_structures, dont_starve_together |
-| [Thulecite](https://dontstarve.fandom.com/wiki/Thulecite) | Done | ancient_tab, ancient_tier_1, craftable_items |
-| [Thulecite Bug Net](https://dontstarve.fandom.com/wiki/Thulecite_Bug_Net) | Done | craftable_items |
-| [Thulecite Club](https://dontstarve.fandom.com/wiki/Thulecite_Club) | Done | ancient_tab, ancient_tier_2, craftable_items, equipable_items |
-| [Thulecite Crown](https://dontstarve.fandom.com/wiki/Thulecite_Crown) | Done | ancient_tab, ancient_tier_2, craftable_items, equipable_items, hats |
-| [Thulecite Medallion](https://dontstarve.fandom.com/wiki/Thulecite_Medallion) | Done | ancient_tab, ancient_tier_1, craftable_items |
-| [Thulecite Suit](https://dontstarve.fandom.com/wiki/Thulecite_Suit) | Done | ancient_tab, ancient_tier_2, craftable_items, equipable_items |
+| [Thulecite](https://dontstarve.fandom.com/wiki/Thulecite) | Done | ancient_tab, ancient_tier_1, craftable_items, items |
+| [Thulecite Bug Net](https://dontstarve.fandom.com/wiki/Thulecite_Bug_Net) | Done | craftable_items, items |
+| [Thulecite Club](https://dontstarve.fandom.com/wiki/Thulecite_Club) | Done | ancient_tab, ancient_tier_2, craftable_items, equipable_items, items |
+| [Thulecite Crown](https://dontstarve.fandom.com/wiki/Thulecite_Crown) | Done | ancient_tab, ancient_tier_2, craftable_items, equipable_items, hats, items |
+| [Thulecite Fragments](https://dontstarve.fandom.com/wiki/Thulecite_Fragments) | Done | items |
+| [Thulecite Medallion](https://dontstarve.fandom.com/wiki/Thulecite_Medallion) | Done | ancient_tab, ancient_tier_1, craftable_items, items |
+| [Thulecite Suit](https://dontstarve.fandom.com/wiki/Thulecite_Suit) | Done | ancient_tab, ancient_tier_2, craftable_items, equipable_items, items |
 | [Thulecite Wall](https://dontstarve.fandom.com/wiki/Thulecite_Wall) | Done | ancient_tier_1 |
 | [Tidy Hidey-Hole](https://dontstarve.fandom.com/wiki/Tidy_Hidey-Hole) | Done | dont_starve_together |
-| [Tillweed Salve](https://dontstarve.fandom.com/wiki/Tillweed_Salve) | Done | craftable_items, dont_starve_together, healing |
-| [Tillweeds](https://dontstarve.fandom.com/wiki/Tillweeds) | Done | dont_starve_together, healing |
+| [Tillweed Salve](https://dontstarve.fandom.com/wiki/Tillweed_Salve) | Done | craftable_items, dont_starve_together, healing, items |
+| [Tillweeds](https://dontstarve.fandom.com/wiki/Tillweeds) | Done | dont_starve_together, healing, items |
 | [Time Pieces](https://dontstarve.fandom.com/wiki/Time_Pieces) | Done | dont_starve_together |
 | [Tin Fishin' Bin](https://dontstarve.fandom.com/wiki/Tin_Fishin'_Bin) | Done | craftable_structures, dont_starve_together |
 | [Toadstool](https://dontstarve.fandom.com/wiki/Toadstool) | Done | a_new_reign, boss_monsters, cave_creatures, dont_starve_together |
 | [Toma Root](https://dontstarve.fandom.com/wiki/Toma_Root) | Done | dont_starve_together, food, healing |
+| [Tome of Beckoning](https://dontstarve.fandom.com/wiki/Tome_of_Beckoning) | Done | items |
 | [Tools Filter](https://dontstarve.fandom.com/wiki/Tools_Filter) | Done | dont_starve_together |
-| [Tooth Trap](https://dontstarve.fandom.com/wiki/Tooth_Trap) | Done | craftable_items, fight_tab |
-| [Top Hat](https://dontstarve.fandom.com/wiki/Top_Hat) | Done | craftable_items, equipable_items, hats |
-| [Torch](https://dontstarve.fandom.com/wiki/Torch) | Done | craftable_items, equipable_items |
+| [Tooth Trap](https://dontstarve.fandom.com/wiki/Tooth_Trap) | Done | craftable_items, fight_tab, items |
+| [Top Hat](https://dontstarve.fandom.com/wiki/Top_Hat) | Done | craftable_items, equipable_items, hats, items |
+| [Torch](https://dontstarve.fandom.com/wiki/Torch) | Done | craftable_items, equipable_items, items |
 | [Touch Stone](https://dontstarve.fandom.com/wiki/Touch_Stone) | Done | dont_starve_together |
 | [Trade Inn](https://dontstarve.fandom.com/wiki/Trade_Inn) | Done | dont_starve_together |
 | [Trading Hutch Filter](https://dontstarve.fandom.com/wiki/Trading_Hutch_Filter) | Done | dont_starve_together, from_beyond |
-| [Trail Mix](https://dontstarve.fandom.com/wiki/Trail_Mix) | Done | crock_pot_recipes, dont_starve_together, food, healing |
-| [Trap](https://dontstarve.fandom.com/wiki/Trap) | Done | craftable_items, food_gardening_filter |
+| [Trail Mix](https://dontstarve.fandom.com/wiki/Trail_Mix) | Done | crock_pot_recipes, dont_starve_together, food, healing, items |
+| [Trap](https://dontstarve.fandom.com/wiki/Trap) | Done | craftable_items, food_gardening_filter, items |
 | [Treasury](https://dontstarve.fandom.com/wiki/Treasury) | Done | dont_starve_together |
-| [Tree Jam](https://dontstarve.fandom.com/wiki/Tree_Jam) | Done | craftable_items, dont_starve_together, fertilizer, food_gardening_filter |
+| [Tree Jam](https://dontstarve.fandom.com/wiki/Tree_Jam) | Done | craftable_items, dont_starve_together, fertilizer, food_gardening_filter, items |
+| [Tree Tapping Kit](https://dontstarve.fandom.com/wiki/Tree_Tapping_Kit) | Done | items |
 | [Treeguard](https://dontstarve.fandom.com/wiki/Treeguard) | Done | boss_monsters, cave_creatures |
-| [Treeguard Idol](https://dontstarve.fandom.com/wiki/Treeguard_Idol) | Done | craftable_items, dont_starve_together |
-| [Trinkets](https://dontstarve.fandom.com/wiki/Trinkets) | Done | a_new_reign, dont_starve_together |
-| [Trusty Slingshot](https://dontstarve.fandom.com/wiki/Trusty_Slingshot) | Done | craftable_items, dont_starve_together, equipable_items |
-| [Trusty Tape](https://dontstarve.fandom.com/wiki/Trusty_Tape) | Done | craftable_items, dont_starve_together |
+| [Treeguard Idol](https://dontstarve.fandom.com/wiki/Treeguard_Idol) | Done | craftable_items, dont_starve_together, items |
+| [Trinkets](https://dontstarve.fandom.com/wiki/Trinkets) | Done | a_new_reign, dont_starve_together, items |
+| [Trusty Slingshot](https://dontstarve.fandom.com/wiki/Trusty_Slingshot) | Done | craftable_items, dont_starve_together, equipable_items, items |
+| [Trusty Tape](https://dontstarve.fandom.com/wiki/Trusty_Tape) | Done | craftable_items, dont_starve_together, items |
 | [Tumbleweed](https://dontstarve.fandom.com/wiki/Tumbleweed) | Done | dont_starve_together |
-| [Turf-Raiser Helm](https://dontstarve.fandom.com/wiki/Turf-Raiser_Helm) | Done | clothing_filter, craftable_items, dont_starve_together, infobox_missing_crafting_description |
-| [Turkey Dinner](https://dontstarve.fandom.com/wiki/Turkey_Dinner) | Done | crock_pot_recipes, food, healing |
+| [Turf-Raiser Helm](https://dontstarve.fandom.com/wiki/Turf-Raiser_Helm) | Done | clothing_filter, craftable_items, dont_starve_together, infobox_missing_crafting_description, items |
+| [Turkey Dinner](https://dontstarve.fandom.com/wiki/Turkey_Dinner) | Done | crock_pot_recipes, food, healing, items |
 | [Turnip](https://dontstarve.fandom.com/wiki/Turnip) | Done | dont_starve_together, events, food |
 | [Twiggy Tree](https://dontstarve.fandom.com/wiki/Twiggy_Tree) | Done | a_new_reign, dont_starve_together |
-| [Twiggy Tree Cone](https://dontstarve.fandom.com/wiki/Twiggy_Tree_Cone) | Done | a_new_reign, dont_starve_together, fuel |
-| [Twigs](https://dontstarve.fandom.com/wiki/Twigs) | Done | beefalo_foods, craftable_items, fuel, infobox_missing_crafting_description |
-| [Umbralla](https://dontstarve.fandom.com/wiki/Umbralla) | Done | craftable_items, dont_starve_together, from_beyond |
-| [Umbrella](https://dontstarve.fandom.com/wiki/Umbrella) | Done | clothing_filter, craftable_items, equipable_items, fuel |
-| [Unagi](https://dontstarve.fandom.com/wiki/Unagi) | Done | craftable_items, crock_pot_recipes, food, healing |
+| [Twiggy Tree Cone](https://dontstarve.fandom.com/wiki/Twiggy_Tree_Cone) | Done | a_new_reign, dont_starve_together, fuel, items |
+| [Twigs](https://dontstarve.fandom.com/wiki/Twigs) | Done | beefalo_foods, craftable_items, fuel, infobox_missing_crafting_description, items |
+| [Umbralla](https://dontstarve.fandom.com/wiki/Umbralla) | Done | craftable_items, dont_starve_together, from_beyond, items |
+| [Umbrella](https://dontstarve.fandom.com/wiki/Umbrella) | Done | clothing_filter, craftable_items, equipable_items, fuel, items |
+| [Unagi](https://dontstarve.fandom.com/wiki/Unagi) | Done | craftable_items, crock_pot_recipes, food, healing, items |
 | [Underwater Salvageable](https://dontstarve.fandom.com/wiki/Underwater_Salvageable) | Done | dont_starve_together |
 | [Unnatural Portal](https://dontstarve.fandom.com/wiki/Unnatural_Portal) | Done | dont_starve_together |
-| [Unstable Transmission](https://dontstarve.fandom.com/wiki/Unstable_Transmission) | Done | dont_starve_together |
+| [Unstable Transmission](https://dontstarve.fandom.com/wiki/Unstable_Transmission) | Done | dont_starve_together, items |
 | [Varg](https://dontstarve.fandom.com/wiki/Varg) | Done | dont_starve_together, hostile_creatures |
 | [Varglet](https://dontstarve.fandom.com/wiki/Varglet) | Done | dont_starve_together |
-| [Veggie Burger](https://dontstarve.fandom.com/wiki/Veggie_Burger) | Done | crock_pot_recipes, dont_starve_together, food, healing |
+| [Veggie Burger](https://dontstarve.fandom.com/wiki/Veggie_Burger) | Done | crock_pot_recipes, dont_starve_together, food, healing, items |
 | [Vignettes](https://dontstarve.fandom.com/wiki/Vignettes) | Done | dont_starve_together |
 | [Vitreoasis](https://dontstarve.fandom.com/wiki/Vitreoasis) | Done | dont_starve_together |
-| [Void Cowl](https://dontstarve.fandom.com/wiki/Void_Cowl) | Done | craftable_items, dont_starve_together, from_beyond, infobox_missing_crafting_description |
-| [Void Robe](https://dontstarve.fandom.com/wiki/Void_Robe) | Done | craftable_items, dont_starve_together, from_beyond, infobox_missing_crafting_description |
-| [Volt Goat](https://dontstarve.fandom.com/wiki/Volt_Goat) | Done | animals, dont_starve_together, hostile_creatures |
-| [Volt Goat Chaud-Froid](https://dontstarve.fandom.com/wiki/Volt_Goat_Chaud-Froid) | Done | dont_starve_together |
-| [Volt Goat Horn](https://dontstarve.fandom.com/wiki/Volt_Goat_Horn) | Done | dont_starve_together |
-| [W.A.R.B.I.S. Armor](https://dontstarve.fandom.com/wiki/W.A.R.B.I.S._Armor) | Done | armour_filter, craftable_items, dont_starve_together, from_beyond |
-| [W.A.R.B.I.S. Head Gear](https://dontstarve.fandom.com/wiki/W.A.R.B.I.S._Head_Gear) | Done | armour_filter, craftable_items, dont_starve_together, from_beyond |
+| [Void Cowl](https://dontstarve.fandom.com/wiki/Void_Cowl) | Done | craftable_items, dont_starve_together, from_beyond, infobox_missing_crafting_description, items |
+| [Void Robe](https://dontstarve.fandom.com/wiki/Void_Robe) | Done | craftable_items, dont_starve_together, from_beyond, infobox_missing_crafting_description, items |
+| [Volt Goat](https://dontstarve.fandom.com/wiki/Volt_Goat) | Done | animals, dont_starve_together, hostile_creatures, innocents |
+| [Volt Goat Chaud-Froid](https://dontstarve.fandom.com/wiki/Volt_Goat_Chaud-Froid) | Done | dont_starve_together, items |
+| [Volt Goat Horn](https://dontstarve.fandom.com/wiki/Volt_Goat_Horn) | Done | dont_starve_together, items |
+| [W.A.R.B.I.S. Armor](https://dontstarve.fandom.com/wiki/W.A.R.B.I.S._Armor) | Done | armour_filter, craftable_items, dont_starve_together, from_beyond, items |
+| [W.A.R.B.I.S. Head Gear](https://dontstarve.fandom.com/wiki/W.A.R.B.I.S._Head_Gear) | Done | armour_filter, craftable_items, dont_starve_together, from_beyond, items |
 | [W.A.R.B.O.T.](https://dontstarve.fandom.com/wiki/W.A.R.B.O.T.) | Done | boss_monsters, dont_starve_together |
-| [W.I.N.bot](https://dontstarve.fandom.com/wiki/W.I.N.bot) | Done | dont_starve_together |
-| [W.O.B.O.T.](https://dontstarve.fandom.com/wiki/W.O.B.O.T.) | Done | dont_starve_together, from_beyond |
-| [Waffles](https://dontstarve.fandom.com/wiki/Waffles) | Done | crock_pot_recipes, food, fruits, healing |
-| [Grainy Transmission](https://dontstarve.fandom.com/wiki/Wagstaff/Grainy_Transmission) | Done | dont_starve_together |
-| [Walking Cane](https://dontstarve.fandom.com/wiki/Walking_Cane) | Done | craftable_items, equipable_items |
+| [W.I.N.bot](https://dontstarve.fandom.com/wiki/W.I.N.bot) | Done | dont_starve_together, items |
+| [W.O.B.O.T.](https://dontstarve.fandom.com/wiki/W.O.B.O.T.) | Done | dont_starve_together, from_beyond, items |
+| [Waffles](https://dontstarve.fandom.com/wiki/Waffles) | Done | crock_pot_recipes, food, fruits, healing, items |
+| [Wagstaff/Grainy Transmission](https://dontstarve.fandom.com/wiki/Wagstaff/Grainy_Transmission) | Done | dont_starve_together, items |
+| [Walking Cane](https://dontstarve.fandom.com/wiki/Walking_Cane) | Done | craftable_items, equipable_items, items |
 | [Wall](https://dontstarve.fandom.com/wiki/Wall) | Done | dont_starve_together, fuel |
 | [Walrus Camp](https://dontstarve.fandom.com/wiki/Walrus_Camp) | Done | indestructible_object |
+| [Walrus Tusk](https://dontstarve.fandom.com/wiki/Walrus_Tusk) | Done | items |
 | [Walter](https://dontstarve.fandom.com/wiki/Walter) | Done | dont_starve_together |
 | [Wanda](https://dontstarve.fandom.com/wiki/Wanda) | Done | dont_starve_together |
 | [Wanda clothes](https://dontstarve.fandom.com/wiki/Wanda_clothes) | Done | dont_starve_together |
 | [Wardrobe](https://dontstarve.fandom.com/wiki/Wardrobe) | Done | craftable_structures, decorations_filter, dont_starve_together |
 | [Warly](https://dontstarve.fandom.com/wiki/Warly) | Done | dont_starve_together |
-| [Warren Wreath](https://dontstarve.fandom.com/wiki/Warren_Wreath) | Done | craftable_items, equipable_items, from_beyond |
-| [Water Balloon](https://dontstarve.fandom.com/wiki/Water_Balloon) | Done | craftable_items, dont_starve_together, equipable_items |
-| [Watering Can](https://dontstarve.fandom.com/wiki/Watering_Can) | Done | craftable_items, dont_starve_together, equipable_items, food_gardening_filter |
+| [Warren Wreath](https://dontstarve.fandom.com/wiki/Warren_Wreath) | Done | craftable_items, equipable_items, from_beyond, items |
+| [Water Balloon](https://dontstarve.fandom.com/wiki/Water_Balloon) | Done | craftable_items, dont_starve_together, equipable_items, items |
+| [Watering Can](https://dontstarve.fandom.com/wiki/Watering_Can) | Done | craftable_items, dont_starve_together, equipable_items, food_gardening_filter, items |
 | [Waterlogged](https://dontstarve.fandom.com/wiki/Waterlogged) | Done | dont_starve_together |
-| [Watermelon](https://dontstarve.fandom.com/wiki/Watermelon) | Done | cooling, dont_starve_together, food, fruits, healing |
+| [Watermelon](https://dontstarve.fandom.com/wiki/Watermelon) | Done | cooling, dont_starve_together, food, fruits, healing, items |
 | [Waves](https://dontstarve.fandom.com/wiki/Waves) | Done | dont_starve_together, gameplay |
-| [Wax Paper](https://dontstarve.fandom.com/wiki/Wax_Paper) | Done | craftable_items, fuel |
+| [Wax Paper](https://dontstarve.fandom.com/wiki/Wax_Paper) | Done | craftable_items, fuel, items |
 | [Weapons Filter](https://dontstarve.fandom.com/wiki/Weapons_Filter) | Done | dont_starve_together |
-| [Weather Pain](https://dontstarve.fandom.com/wiki/Weather_Pain) | Done | craftable_items, dont_starve_together, equipable_items, fight_tab |
+| [Weather Pain](https://dontstarve.fandom.com/wiki/Weather_Pain) | Done | craftable_items, dont_starve_together, equipable_items, fight_tab, items |
 | [Webber](https://dontstarve.fandom.com/wiki/Webber) | Done | dont_starve_together |
-| [Webby Whistle](https://dontstarve.fandom.com/wiki/Webby_Whistle) | Done | craftable_items, dont_starve_together |
+| [Webby Whistle](https://dontstarve.fandom.com/wiki/Webby_Whistle) | Done | craftable_items, dont_starve_together, items |
 | [Weeds](https://dontstarve.fandom.com/wiki/Weeds) | Done | dont_starve_together |
 | [Weight](https://dontstarve.fandom.com/wiki/Weight) | Done | dont_starve_together, gameplay |
 | [Werepig](https://dontstarve.fandom.com/wiki/Werepig) | Done | hostile_creatures |
-| [Wet Goop](https://dontstarve.fandom.com/wiki/Wet_Goop) | Done | crock_pot_recipes |
+| [Wet Goop](https://dontstarve.fandom.com/wiki/Wet_Goop) | Done | crock_pot_recipes, items |
 | [Wetness](https://dontstarve.fandom.com/wiki/Wetness) | Done | dont_starve_together, gameplay |
-| [Wheat](https://dontstarve.fandom.com/wiki/Wheat) | Done | dont_starve_together, events |
-| [Whirly Fan](https://dontstarve.fandom.com/wiki/Whirly_Fan) | Done | clothing_filter, cooling, craftable_items, dont_starve_together, equipable_items |
-| [Whispering Grand Armor](https://dontstarve.fandom.com/wiki/Whispering_Grand_Armor) | Done | dont_starve_together |
+| [Wheat](https://dontstarve.fandom.com/wiki/Wheat) | Done | dont_starve_together, events, items |
+| [Whirly Fan](https://dontstarve.fandom.com/wiki/Whirly_Fan) | Done | clothing_filter, cooling, craftable_items, dont_starve_together, equipable_items, items |
+| [Whispering Grand Armor](https://dontstarve.fandom.com/wiki/Whispering_Grand_Armor) | Done | dont_starve_together, items |
 | [Wigfrid](https://dontstarve.fandom.com/wiki/Wigfrid) | Done | dont_starve_together |
-| [Reign of Giants](https://dontstarve.fandom.com/wiki/Wigfrid/Reign_of_Giants) | Done | dont_starve_together |
+| [Wigfrid/Reign of Giants](https://dontstarve.fandom.com/wiki/Wigfrid/Reign_of_Giants) | Done | dont_starve_together |
 | [Wild Rift Cycle](https://dontstarve.fandom.com/wiki/Wild_Rift_Cycle) | Done | dont_starve_together, from_beyond, gameplay |
-| [Willow's Lighter](https://dontstarve.fandom.com/wiki/Willow's_Lighter) | Done | cooking_filter, craftable_items, equipable_items |
-| [Don't Starve Together](https://dontstarve.fandom.com/wiki/Wilson/Don't_Starve_Together) | Done | dont_starve_together |
+| [Willow's Lighter](https://dontstarve.fandom.com/wiki/Willow's_Lighter) | Done | cooking_filter, craftable_items, equipable_items, items |
+| [Wilson/Don't Starve Together](https://dontstarve.fandom.com/wiki/Wilson/Don't_Starve_Together) | Done | dont_starve_together |
 | [Winona](https://dontstarve.fandom.com/wiki/Winona) | Done | dont_starve_together |
-| [Winona clothes](https://dontstarve.fandom.com/wiki/Winona_clothes) | Done | dont_starve_together |
-| [Winona's Catapult](https://dontstarve.fandom.com/wiki/Winona's_Catapult) | Done | craftable_items, craftable_structures, dont_starve_together, followers |
-| [Winona's G.E.M.erator](https://dontstarve.fandom.com/wiki/Winona's_G.E.M.erator) | Done | craftable_items, craftable_structures, dont_starve_together |
-| [Winona's Generator](https://dontstarve.fandom.com/wiki/Winona's_Generator) | Done | craftable_items, craftable_structures, dont_starve_together |
+| [Winona's Catapult](https://dontstarve.fandom.com/wiki/Winona's_Catapult) | Done | craftable_items, craftable_structures, dont_starve_together, followers, items |
+| [Winona's G.E.M.erator](https://dontstarve.fandom.com/wiki/Winona's_G.E.M.erator) | Done | craftable_items, craftable_structures, dont_starve_together, items |
+| [Winona's Generator](https://dontstarve.fandom.com/wiki/Winona's_Generator) | Done | craftable_items, craftable_structures, dont_starve_together, items |
 | [Winona's Spotlight](https://dontstarve.fandom.com/wiki/Winona's_Spotlight) | Done | craftable_structures, dont_starve_together |
-| [Winter Hat](https://dontstarve.fandom.com/wiki/Winter_Hat) | Done | craftable_items, equipable_items, hats |
-| [Winter Items Filter](https://dontstarve.fandom.com/wiki/Winter_Items_Filter) | Done | dont_starve_together |
+| [Winona clothes](https://dontstarve.fandom.com/wiki/Winona_clothes) | Done | dont_starve_together |
 | [Winter's Feast](https://dontstarve.fandom.com/wiki/Winter's_Feast) | Done | dont_starve_together, events |
-| [Wobster](https://dontstarve.fandom.com/wiki/Wobster) | Done | dont_starve_together, fishes, food, healing |
-| [Wobster Bisque](https://dontstarve.fandom.com/wiki/Wobster_Bisque) | Done | cooling, crock_pot_recipes, dont_starve_together, food, healing |
-| [Wobster Dinner](https://dontstarve.fandom.com/wiki/Wobster_Dinner) | Done | craftable_items, crock_pot_recipes, dont_starve_together, fishes, healing |
+| [Winter Hat](https://dontstarve.fandom.com/wiki/Winter_Hat) | Done | craftable_items, equipable_items, hats, items |
+| [Winter Items Filter](https://dontstarve.fandom.com/wiki/Winter_Items_Filter) | Done | dont_starve_together |
+| [Wobster](https://dontstarve.fandom.com/wiki/Wobster) | Done | dont_starve_together, fishes, food, healing, items |
+| [Wobster Bisque](https://dontstarve.fandom.com/wiki/Wobster_Bisque) | Done | cooling, crock_pot_recipes, dont_starve_together, food, healing, items |
+| [Wobster Dinner](https://dontstarve.fandom.com/wiki/Wobster_Dinner) | Done | craftable_items, crock_pot_recipes, dont_starve_together, fishes, healing, items |
 | [Wobster Mound](https://dontstarve.fandom.com/wiki/Wobster_Mound) | Done | dont_starve_together |
 | [Woby](https://dontstarve.fandom.com/wiki/Woby) | Done | dont_starve_together |
 | [Wonkey](https://dontstarve.fandom.com/wiki/Wonkey) | Done | dont_starve_together |
-| [Wood Fence](https://dontstarve.fandom.com/wiki/Wood_Fence) | Done | a_new_reign, craftable_items, craftable_structures, decorations_filter |
-| [Wood Gate](https://dontstarve.fandom.com/wiki/Wood_Gate) | Done | a_new_reign, craftable_items, decorations_filter |
-| [Wood Wall](https://dontstarve.fandom.com/wiki/Wood_Wall) | Done | craftable_items, craftable_structures, decorations_filter |
-| [Wooden Flooring](https://dontstarve.fandom.com/wiki/Wooden_Flooring) | Done | craftable_items, decorations_filter, fuel |
-| [Wooden Walking Stick](https://dontstarve.fandom.com/wiki/Wooden_Walking_Stick) | Done | clothing_filter, craftable_items, dont_starve_together |
+| [Wood Armor](https://dontstarve.fandom.com/wiki/Wood_Armor) | Done | items |
+| [Wood Fence](https://dontstarve.fandom.com/wiki/Wood_Fence) | Done | a_new_reign, craftable_items, craftable_structures, decorations_filter, items |
+| [Wood Gate](https://dontstarve.fandom.com/wiki/Wood_Gate) | Done | a_new_reign, craftable_items, decorations_filter, items |
+| [Wood Wall](https://dontstarve.fandom.com/wiki/Wood_Wall) | Done | craftable_items, craftable_structures, decorations_filter, items |
+| [Wooden Flooring](https://dontstarve.fandom.com/wiki/Wooden_Flooring) | Done | craftable_items, decorations_filter, fuel, items |
+| [Wooden Walking Stick](https://dontstarve.fandom.com/wiki/Wooden_Walking_Stick) | Done | clothing_filter, craftable_items, dont_starve_together, items |
 | [World Customization](https://dontstarve.fandom.com/wiki/World_Customization) | Done | gameplay |
-| [Don't Starve Together](https://dontstarve.fandom.com/wiki/World_Customization/Don't_Starve_Together) | Done | dont_starve_together, gameplay |
+| [World Customization/Don't Starve Together](https://dontstarve.fandom.com/wiki/World_Customization/Don't_Starve_Together) | Done | dont_starve_together, gameplay |
 | [World Generation](https://dontstarve.fandom.com/wiki/World_Generation) | Done | gameplay |
 | [World Generation Screen](https://dontstarve.fandom.com/wiki/World_Generation_Screen) | Done | gameplay |
 | [World Retrofit](https://dontstarve.fandom.com/wiki/World_Retrofit) | Done | gameplay |
@@ -2003,6 +2088,7 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
 | [Wormwood](https://dontstarve.fandom.com/wiki/Wormwood) | Done | dont_starve_together |
 | [Wortox](https://dontstarve.fandom.com/wiki/Wortox) | Done | dont_starve_together |
 | [Wortox clothes](https://dontstarve.fandom.com/wiki/Wortox_clothes) | Done | dont_starve_together |
+| [Woven Garland](https://dontstarve.fandom.com/wiki/Woven_Garland) | Done | items |
 | [Woven Shadow](https://dontstarve.fandom.com/wiki/Woven_Shadow) | Done | a_new_reign, dont_starve_together |
 | [Wurt](https://dontstarve.fandom.com/wiki/Wurt) | Done | dont_starve_together |
 | [Wurt clothes](https://dontstarve.fandom.com/wiki/Wurt_clothes) | Done | dont_starve_together |
@@ -2014,7 +2100,7 @@ trong batch, nhưng vẫn cần để gắn tag; chúng không làm phát sinh f
 | [Year of the Gobbler](https://dontstarve.fandom.com/wiki/Year_of_the_Gobbler) | Done | dont_starve_together, events |
 | [Year of the Pig King](https://dontstarve.fandom.com/wiki/Year_of_the_Pig_King) | Done | dont_starve_together, events |
 | [Year of the Varg](https://dontstarve.fandom.com/wiki/Year_of_the_Varg) | Done | dont_starve_together, events |
-| [Yellow Gem](https://dontstarve.fandom.com/wiki/Yellow_Gem) | Done | boss_dropped_items, craftable_items, infobox_missing_crafting_description |
+| [Yellow Gem](https://dontstarve.fandom.com/wiki/Yellow_Gem) | Done | boss_dropped_items, craftable_items, infobox_missing_crafting_description, items |
 
 Khi thêm Category khác, crawler tự thêm URL/category/status vào live registry.
 Sau mỗi batch đã review, export JSON snapshot rồi cập nhật bảng MD này để handoff.

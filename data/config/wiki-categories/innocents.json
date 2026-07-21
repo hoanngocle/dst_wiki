@@ -1,0 +1,32 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Innocents",
+  "excludedTitles": {
+    "Bottlenose Ballphin": "non_dst:shipwrecked",
+    "Dogfish": "non_dst:shipwrecked",
+    "Doydoy": "non_dst:shipwrecked",
+    "Dung Beetle": "non_dst:hamlet",
+    "Elder Mandrake": "non_dst:hamlet",
+    "Glowfly": "non_dst:hamlet",
+    "Hippopotamoose": "non_dst:hamlet",
+    "Jellyfish": "non_dst:shipwrecked",
+    "Pangolden": "non_dst:hamlet",
+    "Piko": "non_dst:hamlet",
+    "Pog": "non_dst:hamlet",
+    "Poison Dartfrog": "non_dst:hamlet",
+    "Sealnado": "non_dst:shipwrecked",
+    "Swordfish": "non_dst:shipwrecked"
+  },
+  "expectedDirectPages": 30,
+  "expectedPublishedPages": 16,
+  "game": "DST",
+  "itemType": "mob",
+  "key": "innocents",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Innocents",
+  "tags": [
+    "Innocents"
+  ]
+}
