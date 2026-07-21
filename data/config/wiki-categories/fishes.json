@@ -1,0 +1,32 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Fishes",
+  "excludedTitles": {
+    "Dead Jellyfish": "non_dst:shipwrecked",
+    "Dead Rainbow Jellyfish": "non_dst:shipwrecked",
+    "Dogfish": "non_dst:shipwrecked",
+    "Dried Jellyfish": "non_dst:shipwrecked",
+    "Limpets": "non_dst:shipwrecked",
+    "Mussel": "non_dst:shipwrecked",
+    "Neon Quattro": "non_dst:shipwrecked",
+    "Pierrot Fish": "non_dst:shipwrecked",
+    "Purple Grouper": "non_dst:shipwrecked",
+    "Roe": "non_dst:shipwrecked",
+    "Shark Fin": "non_dst:shipwrecked",
+    "Shark Fin Soup": "non_dst:shipwrecked",
+    "Swordfish": "non_dst:shipwrecked",
+    "Tropical Fish": "non_dst:shipwrecked"
+  },
+  "expectedDirectPages": 20,
+  "expectedPublishedPages": 6,
+  "game": "DST",
+  "itemType": "food",
+  "key": "fishes",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Fishes",
+  "tags": [
+    "Fishes"
+  ]
+}

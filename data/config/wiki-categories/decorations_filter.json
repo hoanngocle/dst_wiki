@@ -1,0 +1,21 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Decorations Filter",
+  "excludedTitles": {
+    "Chairs": "non_item:overview",
+    "Tables": "non_item:overview",
+    "Wall": "non_item:overview"
+  },
+  "expectedDirectPages": 52,
+  "expectedPublishedPages": 49,
+  "game": "DST",
+  "itemType": "item",
+  "key": "decorations_filter",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Decorations_Filter",
+  "tags": [
+    "Decorations Filter"
+  ]
+}

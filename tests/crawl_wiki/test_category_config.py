@@ -92,6 +92,59 @@ class CategoryConfigTests(unittest.TestCase):
             with self.assertRaisesRegex(CategoryConfigError, "difference"):
                 load_category_config("animals", root)
 
+    def test_loads_reviewed_batch_two_configs(self):
+        expected = {
+            "cooking_filter": (15, 14, "item", "Cooking Filter"),
+            "crock_pot_recipes": (83, 68, "food", "Crock Pot Recipes"),
+            "cooling": (26, 22, "item", "Cooling"),
+            "craftable_items": (496, 359, "item", "Craftable Items"),
+            "craftable_structures": (
+                165,
+                93,
+                "structure",
+                "Craftable Structures",
+            ),
+            "crafting_stations": (15, 12, "structure", "Crafting Stations"),
+            "decorations_filter": (52, 49, "item", "Decorations Filter"),
+            "eggs": (8, 7, "food", "Eggs"),
+            "equipable_items": (198, 131, "item", "Equipable Items"),
+            "events": (68, 68, "event", "Events"),
+            "fertilizer": (13, 12, "item", "Fertilizer"),
+            "food": (184, 122, "food", "Food"),
+            "fight_tab": (32, 15, "item", "Fight Tab"),
+            "fishes": (20, 6, "food", "Fishes"),
+        }
+
+        for key, values in expected.items():
+            with self.subTest(key=key):
+                direct, published, item_type, tag = values
+                config = load_category_config(key)
+                self.assertEqual(
+                    (
+                        config.expected_direct_pages,
+                        config.expected_published_pages,
+                    ),
+                    (direct, published),
+                )
+                self.assertEqual(config.item_type, item_type)
+                self.assertEqual(config.tags, (tag,))
+                self.assertEqual(config.game, "DST")
+
+        craftable_exclusions = dict(
+            load_category_config("craftable_items").excluded_titles
+        )
+        self.assertEqual(
+            craftable_exclusions["Crabby Hermit"],
+            "non_item:category_mismatch",
+        )
+        self.assertEqual(
+            craftable_exclusions["Old Bell"],
+            "non_dst:reign_of_giants",
+        )
+        food_exclusions = dict(load_category_config("food").excluded_titles)
+        self.assertNotIn("Ice", food_exclusions)
+        self.assertEqual(food_exclusions["Cooking"], "non_item:overview")
+
 
 if __name__ == "__main__":
     unittest.main()

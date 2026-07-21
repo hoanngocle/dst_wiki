@@ -1,0 +1,19 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Cooking Filter",
+  "excludedTitles": {
+    "Winter's Feast": "non_item:category_mismatch"
+  },
+  "expectedDirectPages": 15,
+  "expectedPublishedPages": 14,
+  "game": "DST",
+  "itemType": "item",
+  "key": "cooking_filter",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Cooking_Filter",
+  "tags": [
+    "Cooking Filter"
+  ]
+}

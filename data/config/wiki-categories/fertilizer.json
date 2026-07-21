@@ -1,0 +1,19 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Fertilizer",
+  "excludedTitles": {
+    "Nutrient": "non_item:overview"
+  },
+  "expectedDirectPages": 13,
+  "expectedPublishedPages": 12,
+  "game": "DST",
+  "itemType": "item",
+  "key": "fertilizer",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Fertilizer",
+  "tags": [
+    "Fertilizer"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Crock Pot Recipes",
+  "excludedTitles": {
+    "Bisque": "non_dst:shipwrecked",
+    "Caviar": "non_dst:shipwrecked",
+    "Coffee": "non_dst:shipwrecked",
+    "Feijoada": "non_dst:hamlet",
+    "Gummy Cake": "non_dst:hamlet",
+    "Hard Shell Tacos": "non_dst:hamlet",
+    "Iced Tea": "non_dst:hamlet",
+    "Jelly-O Pop": "non_dst:shipwrecked",
+    "Meated Nettles": "non_dst:hamlet",
+    "Nettle Rolls": "non_dst:hamlet",
+    "Shark Fin Soup": "non_dst:shipwrecked",
+    "Snake Bone Soup": "non_dst:hamlet",
+    "Steamed Ham Sandwich": "non_dst:hamlet",
+    "Tea": "non_dst:hamlet",
+    "Tropical Bouillabaisse": "non_dst:shipwrecked"
+  },
+  "expectedDirectPages": 83,
+  "expectedPublishedPages": 68,
+  "game": "DST",
+  "itemType": "food",
+  "key": "crock_pot_recipes",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Crock_Pot_Recipes",
+  "tags": [
+    "Crock Pot Recipes"
+  ]
+}

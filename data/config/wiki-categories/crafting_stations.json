@@ -1,0 +1,21 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Crafting Stations",
+  "excludedTitles": {
+    "Hallowed Nights": "non_item:category_mismatch",
+    "Key to the City": "non_dst:hamlet",
+    "Obsidian Workbench": "non_dst:shipwrecked"
+  },
+  "expectedDirectPages": 15,
+  "expectedPublishedPages": 12,
+  "game": "DST",
+  "itemType": "structure",
+  "key": "crafting_stations",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Crafting_Stations",
+  "tags": [
+    "Crafting Stations"
+  ]
+}

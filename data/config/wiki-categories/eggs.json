@@ -1,0 +1,19 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Eggs",
+  "excludedTitles": {
+    "Doydoy Egg": "non_dst:shipwrecked"
+  },
+  "expectedDirectPages": 8,
+  "expectedPublishedPages": 7,
+  "game": "DST",
+  "itemType": "food",
+  "key": "eggs",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Eggs",
+  "tags": [
+    "Eggs"
+  ]
+}

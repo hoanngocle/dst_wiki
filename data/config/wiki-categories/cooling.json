@@ -1,0 +1,22 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Cooling",
+  "excludedTitles": {
+    "Dumbrella": "non_dst:shipwrecked",
+    "Jelly-O Pop": "non_dst:shipwrecked",
+    "Palm Leaf Hut": "non_dst:shipwrecked",
+    "Tropical Fan": "non_dst:shipwrecked"
+  },
+  "expectedDirectPages": 26,
+  "expectedPublishedPages": 22,
+  "game": "DST",
+  "itemType": "item",
+  "key": "cooling",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Cooling",
+  "tags": [
+    "Cooling"
+  ]
+}

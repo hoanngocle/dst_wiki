@@ -1,0 +1,35 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Fight Tab",
+  "excludedTitles": {
+    "Blunderbuss": "non_dst:hamlet",
+    "Cactus Armor": "non_dst:shipwrecked",
+    "Coconade": "non_dst:shipwrecked",
+    "Cork Bat": "non_dst:hamlet",
+    "Cutlass Supreme": "non_dst:shipwrecked",
+    "Dart": "non_item:overview",
+    "Fancy Helmet": "non_dst:hamlet",
+    "Halberd": "non_dst:hamlet",
+    "Horned Helmet": "non_dst:shipwrecked",
+    "Limestone Suit": "non_dst:shipwrecked",
+    "Mant Mask": "non_dst:hamlet",
+    "Mant Suit": "non_dst:hamlet",
+    "Poison Spear": "non_dst:shipwrecked",
+    "Seashell Suit": "non_dst:shipwrecked",
+    "Spear Gun": "non_dst:shipwrecked",
+    "Tin Suit": "non_dst:hamlet",
+    "Weevole Mantle": "non_dst:hamlet"
+  },
+  "expectedDirectPages": 32,
+  "expectedPublishedPages": 15,
+  "game": "DST",
+  "itemType": "item",
+  "key": "fight_tab",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Fight_Tab",
+  "tags": [
+    "Fight Tab"
+  ]
+}

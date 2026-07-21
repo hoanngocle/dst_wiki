@@ -1,0 +1,17 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Events",
+  "excludedTitles": {},
+  "expectedDirectPages": 68,
+  "expectedPublishedPages": 68,
+  "game": "DST",
+  "itemType": "event",
+  "key": "events",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Events",
+  "tags": [
+    "Events"
+  ]
+}
