@@ -1,0 +1,32 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Science",
+  "excludedTitles": {
+    "Bottle Lantern": "non_dst:shipwrecked",
+    "Brain of Thought": "non_dst:shipwrecked",
+    "Dart": "non_item:overview",
+    "Divining Rod": "non_dst:dont_starve",
+    "Farm": "non_dst:dont_starve",
+    "Gas Mask": "non_dst:hamlet",
+    "Horned Helmet": "non_dst:shipwrecked",
+    "Ice Maker 3000": "non_dst:shipwrecked",
+    "Obsidian Fire Pit": "non_dst:shipwrecked",
+    "Poison Spear": "non_dst:shipwrecked",
+    "Research Points List": "non_item:overview",
+    "Tar Suit": "non_dst:shipwrecked",
+    "Tropical Parasol": "non_dst:shipwrecked",
+    "Wall": "non_item:overview"
+  },
+  "expectedDirectPages": 99,
+  "expectedPublishedPages": 85,
+  "game": "DST",
+  "itemType": "item",
+  "key": "science",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Science",
+  "tags": [
+    "Science"
+  ]
+}

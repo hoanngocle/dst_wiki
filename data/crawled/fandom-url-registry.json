@@ -109,7 +109,9 @@
       "artifactSha256": "9d43ba4b7cd5f1fd1d908334c74d4b499835abec34b5482d23542db8287e9553",
       "attempts": 1,
       "categories": [
-        "craftable_structures"
+        "craftable_structures",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:46:58Z",
       "completedAt": "2026-07-21T08:47:02Z",
@@ -201,7 +203,9 @@
       "artifactSha256": "534ef21bd262ef8173dfbde57441462255b97a46b907e1efbbad3eb3f53c4469",
       "attempts": 1,
       "categories": [
-        "craftable_structures"
+        "craftable_structures",
+        "science",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:46:31Z",
       "completedAt": "2026-07-21T08:46:35Z",
@@ -254,7 +258,8 @@
         "craftable_items",
         "craftable_structures",
         "dont_starve_together",
-        "items"
+        "items",
+        "seafaring_filter"
       ],
       "claimedAt": "2026-07-21T08:47:40Z",
       "completedAt": "2026-07-21T08:47:43Z",
@@ -325,7 +330,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "items"
+        "items",
+        "rare_blueprint_exclusive"
       ],
       "claimedAt": "2026-07-21T08:57:23Z",
       "completedAt": "2026-07-21T08:57:27Z",
@@ -378,7 +384,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "items"
+        "items",
+        "rare_blueprint_exclusive"
       ],
       "claimedAt": "2026-07-21T08:57:27Z",
       "completedAt": "2026-07-21T08:57:31Z",
@@ -432,7 +439,8 @@
         "boss_monsters",
         "hostile_creatures",
         "mobs",
-        "monsters"
+        "monsters",
+        "ruins_creatures"
       ],
       "claimedAt": "2026-07-21T09:46:17Z",
       "completedAt": "2026-07-21T09:46:18Z",
@@ -611,7 +619,8 @@
         "light_sources",
         "mineable_objects",
         "mob_spawning_entities",
-        "nightmare_state_indicator"
+        "nightmare_state_indicator",
+        "resources"
       ],
       "claimedAt": "2026-07-21T09:48:15Z",
       "completedAt": "2026-07-21T09:48:16Z",
@@ -629,7 +638,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "items"
+        "items",
+        "rare_blueprint_exclusive"
       ],
       "claimedAt": "2026-07-21T08:55:36Z",
       "completedAt": "2026-07-21T08:55:37Z",
@@ -647,7 +657,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "items"
+        "items",
+        "rare_blueprint_exclusive"
       ],
       "claimedAt": "2026-07-21T08:57:31Z",
       "completedAt": "2026-07-21T08:57:35Z",
@@ -951,7 +962,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "items"
+        "items",
+        "rare_blueprint_exclusive"
       ],
       "claimedAt": "2026-07-21T08:55:38Z",
       "completedAt": "2026-07-21T08:55:43Z",
@@ -971,7 +983,8 @@
         "dont_starve_together",
         "equipable_items",
         "hats",
-        "items"
+        "items",
+        "rare_blueprint_exclusive"
       ],
       "claimedAt": "2026-07-21T08:42:09Z",
       "completedAt": "2026-07-21T08:42:12Z",
@@ -1009,7 +1022,8 @@
         "dont_starve_together",
         "equipable_items",
         "items",
-        "light_sources"
+        "light_sources",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T07:33:05Z",
       "completedAt": "2026-07-21T07:33:10Z",
@@ -1046,7 +1060,9 @@
         "containers",
         "craftable_items",
         "equipable_items",
-        "items"
+        "items",
+        "science",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T07:33:40Z",
       "completedAt": "2026-07-21T07:33:41Z",
@@ -1542,7 +1558,8 @@
         "fuel",
         "infobox_missing_crafting_description",
         "items",
-        "mob_dropped_items"
+        "mob_dropped_items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T08:52:30Z",
       "completedAt": "2026-07-21T08:52:31Z",
@@ -1615,7 +1632,9 @@
         "craftable_items",
         "fuel",
         "healing",
-        "items"
+        "items",
+        "science_tier_1",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:53:08Z",
       "completedAt": "2026-07-21T08:53:10Z",
@@ -1658,7 +1677,9 @@
         "food_gardening_filter",
         "food_tab",
         "mob_housing",
-        "mob_spawning_entities"
+        "mob_spawning_entities",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:46:24Z",
       "completedAt": "2026-07-21T08:46:28Z",
@@ -1677,7 +1698,9 @@
         "craftable_items",
         "fight_tab",
         "items",
-        "mob_spawning_entities"
+        "mob_spawning_entities",
+        "science",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:20:47Z",
       "completedAt": "2026-07-21T08:20:51Z",
@@ -1761,7 +1784,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "items"
+        "items",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:55:49Z",
       "completedAt": "2026-07-21T08:55:53Z",
@@ -1798,7 +1822,8 @@
       "categories": [
         "craftable_structures",
         "decorations_filter",
-        "dont_starve_together"
+        "dont_starve_together",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:24:22Z",
       "completedAt": "2026-07-21T08:24:26Z",
@@ -1818,7 +1843,9 @@
         "craftable_items",
         "equipable_items",
         "hats",
-        "items"
+        "items",
+        "science",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T07:30:42Z",
       "completedAt": "2026-07-21T07:30:43Z",
@@ -1890,7 +1917,8 @@
         "fuel",
         "infobox_missing_crafting_description",
         "items",
-        "mob_dropped_items"
+        "mob_dropped_items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T08:52:31Z",
       "completedAt": "2026-07-21T08:52:32Z",
@@ -1948,7 +1976,9 @@
         "craftable_items",
         "equipable_items",
         "hats",
-        "items"
+        "items",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T07:28:17Z",
       "completedAt": "2026-07-21T07:28:19Z",
@@ -1965,7 +1995,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "items"
+        "items",
+        "refine_tab"
       ],
       "claimedAt": "2026-07-21T08:54:35Z",
       "completedAt": "2026-07-21T08:54:39Z",
@@ -2078,7 +2109,8 @@
         "fuel",
         "items",
         "mob_housing",
-        "mob_spawning_entities"
+        "mob_spawning_entities",
+        "plants"
       ],
       "claimedAt": "2026-07-21T10:48:49Z",
       "completedAt": "2026-07-21T10:48:51Z",
@@ -2168,7 +2200,8 @@
         "food",
         "healing",
         "items",
-        "mob_dropped_items"
+        "mob_dropped_items",
+        "plants"
       ],
       "claimedAt": "2026-07-21T08:33:36Z",
       "completedAt": "2026-07-21T08:33:37Z",
@@ -2187,7 +2220,9 @@
         "dont_starve_together",
         "mob_spawning_entities",
         "mobs",
-        "monsters"
+        "monsters",
+        "plants",
+        "resources"
       ],
       "claimedAt": "2026-07-21T10:02:57Z",
       "completedAt": "2026-07-21T10:02:59Z",
@@ -2206,7 +2241,8 @@
         "dont_starve_together",
         "hostile_creatures",
         "mobs",
-        "monsters"
+        "monsters",
+        "plants"
       ],
       "claimedAt": "2026-07-21T10:03:07Z",
       "completedAt": "2026-07-21T10:03:10Z",
@@ -2224,7 +2260,9 @@
       "categories": [
         "craftable_items",
         "food_gardening_filter",
-        "items"
+        "items",
+        "science",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:52:28Z",
       "completedAt": "2026-07-21T08:52:30Z",
@@ -2241,7 +2279,9 @@
       "attempts": 1,
       "categories": [
         "craftable_structures",
-        "food_gardening_filter"
+        "food_gardening_filter",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:46:35Z",
       "completedAt": "2026-07-21T08:46:37Z",
@@ -2280,7 +2320,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "items"
+        "items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T10:08:30Z",
       "completedAt": "2026-07-21T10:08:31Z",
@@ -2370,7 +2411,8 @@
         "boss_dropped_items",
         "craftable_items",
         "infobox_missing_crafting_description",
-        "items"
+        "items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T07:36:10Z",
       "completedAt": "2026-07-21T07:36:12Z",
@@ -2428,7 +2470,10 @@
       "categories": [
         "craftable_items",
         "fuel",
-        "items"
+        "items",
+        "refine_tab",
+        "science",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:52:14Z",
       "completedAt": "2026-07-21T08:52:19Z",
@@ -2466,7 +2511,8 @@
         "craftable_items",
         "craftable_structures",
         "dont_starve_together",
-        "items"
+        "items",
+        "seafaring_filter"
       ],
       "claimedAt": "2026-07-21T08:47:36Z",
       "completedAt": "2026-07-21T08:47:39Z",
@@ -2501,7 +2547,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "items"
+        "items",
+        "seafaring_filter"
       ],
       "claimedAt": "2026-07-21T08:55:01Z",
       "completedAt": "2026-07-21T08:55:05Z",
@@ -2581,7 +2628,8 @@
         "craftable_items",
         "infobox_missing_crafting_description",
         "items",
-        "mob_dropped_items"
+        "mob_dropped_items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T08:53:28Z",
       "completedAt": "2026-07-21T08:53:30Z",
@@ -2614,7 +2662,8 @@
       "attempts": 1,
       "categories": [
         "craftable_structures",
-        "dont_starve_together"
+        "dont_starve_together",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:48:37Z",
       "completedAt": "2026-07-21T08:48:42Z",
@@ -2633,7 +2682,10 @@
         "craftable_items",
         "equipable_items",
         "fight_tab",
-        "items"
+        "items",
+        "ranged_weapons",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:20:57Z",
       "completedAt": "2026-07-21T08:21:02Z",
@@ -2652,7 +2704,9 @@
         "craftable_items",
         "dont_starve_together",
         "healing",
-        "items"
+        "items",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:53:32Z",
       "completedAt": "2026-07-21T08:53:37Z",
@@ -2702,7 +2756,8 @@
       "attempts": 1,
       "categories": [
         "a_new_reign",
-        "mineable_objects"
+        "mineable_objects",
+        "resources"
       ],
       "claimedAt": "2026-07-21T09:48:09Z",
       "completedAt": "2026-07-21T09:48:10Z",
@@ -2799,7 +2854,9 @@
       "categories": [
         "craftable_items",
         "equipable_items",
-        "items"
+        "items",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:38:06Z",
       "completedAt": "2026-07-21T08:38:07Z",
@@ -3136,7 +3193,8 @@
       "attempts": 1,
       "categories": [
         "items",
-        "mob_dropped_items"
+        "mob_dropped_items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T14:21:52Z",
       "completedAt": "2026-07-21T14:21:53Z",
@@ -3155,7 +3213,8 @@
         "a_new_reign",
         "craftable_items",
         "equipable_items",
-        "items"
+        "items",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:39:47Z",
       "completedAt": "2026-07-21T08:39:49Z",
@@ -3176,7 +3235,8 @@
         "fertilizer",
         "food_gardening_filter",
         "food_tab",
-        "items"
+        "items",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:19:43Z",
       "completedAt": "2026-07-21T08:19:45Z",
@@ -3194,7 +3254,9 @@
       "categories": [
         "craftable_items",
         "equipable_items",
-        "items"
+        "items",
+        "science",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:37:31Z",
       "completedAt": "2026-07-21T08:37:35Z",
@@ -3238,7 +3300,8 @@
         "fuel",
         "items",
         "melee_weapons",
-        "ocean"
+        "ocean",
+        "plants"
       ],
       "claimedAt": "2026-07-21T08:40:04Z",
       "completedAt": "2026-07-21T08:40:05Z",
@@ -3257,7 +3320,8 @@
         "craftable_items",
         "craftable_structures",
         "dont_starve_together",
-        "items"
+        "items",
+        "seafaring_filter"
       ],
       "claimedAt": "2026-07-21T08:48:32Z",
       "completedAt": "2026-07-21T08:48:37Z",
@@ -3278,7 +3342,8 @@
         "dont_starve_together",
         "fuel",
         "infobox_missing_crafting_description",
-        "items"
+        "items",
+        "rare_blueprint_exclusive"
       ],
       "claimedAt": "2026-07-21T07:34:38Z",
       "completedAt": "2026-07-21T07:34:39Z",
@@ -3296,7 +3361,8 @@
       "categories": [
         "items",
         "meats",
-        "mob_dropped_items"
+        "mob_dropped_items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T14:21:51Z",
       "completedAt": "2026-07-21T14:21:52Z",
@@ -3395,7 +3461,9 @@
         "craftable_items",
         "equipable_items",
         "hats",
-        "items"
+        "items",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:38:09Z",
       "completedAt": "2026-07-21T08:38:13Z",
@@ -3525,7 +3593,8 @@
       "attempts": 1,
       "categories": [
         "a_new_reign",
-        "dont_starve_together"
+        "dont_starve_together",
+        "plants"
       ],
       "claimedAt": "2026-07-21T09:48:17Z",
       "completedAt": "2026-07-21T09:48:19Z",
@@ -3564,7 +3633,8 @@
         "dont_starve_together",
         "food",
         "healing",
-        "items"
+        "items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T08:33:40Z",
       "completedAt": "2026-07-21T08:33:41Z",
@@ -3638,7 +3708,9 @@
         "craftable_items",
         "craftable_structures",
         "dont_starve_together",
-        "items"
+        "items",
+        "rare_blueprint_exclusive",
+        "seafaring_filter"
       ],
       "claimedAt": "2026-07-21T08:48:20Z",
       "completedAt": "2026-07-21T08:48:24Z",
@@ -3656,7 +3728,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "items"
+        "items",
+        "rare_blueprint_exclusive"
       ],
       "claimedAt": "2026-07-21T08:57:00Z",
       "completedAt": "2026-07-21T08:57:04Z",
@@ -3712,7 +3785,8 @@
         "craftable_items",
         "decorations_filter",
         "fuel",
-        "items"
+        "items",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:22:55Z",
       "completedAt": "2026-07-21T08:22:56Z",
@@ -3750,7 +3824,8 @@
         "food",
         "healing",
         "items",
-        "mob_dropped_items"
+        "mob_dropped_items",
+        "plants"
       ],
       "claimedAt": "2026-07-21T08:33:21Z",
       "completedAt": "2026-07-21T08:33:23Z",
@@ -3769,7 +3844,8 @@
         "a_new_reign",
         "craftable_structures",
         "crafting_stations",
-        "dont_starve_together"
+        "dont_starve_together",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:18:58Z",
       "completedAt": "2026-07-21T08:18:59Z",
@@ -3805,7 +3881,9 @@
         "dont_starve_together",
         "equipable_items",
         "hats",
-        "items"
+        "items",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:39:28Z",
       "completedAt": "2026-07-21T08:39:32Z",
@@ -3823,7 +3901,8 @@
       "categories": [
         "dont_starve_together",
         "items",
-        "mob_dropped_items"
+        "mob_dropped_items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T10:03:11Z",
       "completedAt": "2026-07-21T10:03:12Z",
@@ -3857,6 +3936,23 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/b666739368196070fc59384f5faa2d15aed8d580c74b2943b8af37b423055a99.json",
+      "artifactSha256": "37f8029875b313b290f9e1e060aec84b925bd450339f5197d6ff5e9fb9f126e6",
+      "attempts": 1,
+      "categories": [
+        "plants",
+        "resources"
+      ],
+      "claimedAt": "2026-07-22T02:15:21Z",
+      "completedAt": "2026-07-22T02:15:22Z",
+      "createdAt": "2026-07-22T02:15:19Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-22T02:15:22Z",
+      "url": "https://dontstarve.fandom.com/wiki/Cave_Banana_Tree",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/51418f0c59c7c6f1f1f0b88fe4d6bf2624848a4d2911a133ba1e8844592d13d7.json",
       "artifactSha256": "ffe5afa109dce123ee6cbaf9e4bc7ef90d7cb1ca13813296ee185235780599b4",
       "attempts": 1,
@@ -3872,6 +3968,22 @@
       "status": "Done",
       "updatedAt": "2026-07-21T09:48:54Z",
       "url": "https://dontstarve.fandom.com/wiki/Cave_Hole",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/215f15cfd721f6d36c70a8e5ca9dff609aedc2beb3e46b5c2ec476c524a36652.json",
+      "artifactSha256": "48060a4f3d13a0c4532e46bc49babd1789dcb16a72e4e27a0158e2a7e2c5c9d5",
+      "attempts": 1,
+      "categories": [
+        "plants"
+      ],
+      "claimedAt": "2026-07-22T02:15:23Z",
+      "completedAt": "2026-07-22T02:15:24Z",
+      "createdAt": "2026-07-22T02:15:19Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-22T02:15:24Z",
+      "url": "https://dontstarve.fandom.com/wiki/Cave_Lichen",
       "workerId": null
     },
     {
@@ -4042,7 +4154,8 @@
         "craftable_structures",
         "dont_starve_together",
         "infobox_missing_crafting_description",
-        "light_sources"
+        "light_sources",
+        "resurrection"
       ],
       "claimedAt": "2026-07-21T08:47:24Z",
       "completedAt": "2026-07-21T08:47:25Z",
@@ -4131,7 +4244,8 @@
         "boss_dropped_items",
         "fuel",
         "items",
-        "mob_dropped_items"
+        "mob_dropped_items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T07:35:15Z",
       "completedAt": "2026-07-21T07:35:16Z",
@@ -4185,7 +4299,9 @@
         "craftable_items",
         "decorations_filter",
         "fuel",
-        "items"
+        "items",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:22:49Z",
       "completedAt": "2026-07-21T08:22:53Z",
@@ -4242,7 +4358,9 @@
         "containers",
         "craftable_structures",
         "dont_starve_together",
-        "infobox_missing_crafting_description"
+        "infobox_missing_crafting_description",
+        "science",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T07:34:16Z",
       "completedAt": "2026-07-21T07:34:19Z",
@@ -4392,7 +4510,8 @@
         "decorations_filter",
         "dont_starve_together",
         "equipable_items",
-        "items"
+        "items",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:24:10Z",
       "completedAt": "2026-07-21T08:24:12Z",
@@ -4467,7 +4586,8 @@
         "followers",
         "hostile_creatures",
         "mobs",
-        "monsters"
+        "monsters",
+        "ruins_creatures"
       ],
       "claimedAt": "2026-07-21T07:39:06Z",
       "completedAt": "2026-07-21T07:39:07Z",
@@ -4487,7 +4607,8 @@
         "followers",
         "hostile_creatures",
         "mobs",
-        "monsters"
+        "monsters",
+        "ruins_creatures"
       ],
       "claimedAt": "2026-07-21T09:45:19Z",
       "completedAt": "2026-07-21T09:45:21Z",
@@ -4507,7 +4628,8 @@
         "followers",
         "hostile_creatures",
         "mobs",
-        "monsters"
+        "monsters",
+        "ruins_creatures"
       ],
       "claimedAt": "2026-07-21T09:45:21Z",
       "completedAt": "2026-07-21T09:45:22Z",
@@ -4616,7 +4738,9 @@
         "decorations_filter",
         "dont_starve_together",
         "fuel",
-        "items"
+        "items",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:22:47Z",
       "completedAt": "2026-07-21T08:22:49Z",
@@ -4689,7 +4813,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "items"
+        "items",
+        "rare_blueprint_exclusive"
       ],
       "claimedAt": "2026-07-21T08:55:37Z",
       "completedAt": "2026-07-21T08:55:38Z",
@@ -4759,7 +4884,8 @@
       "categories": [
         "craftable_items",
         "equipable_items",
-        "items"
+        "items",
+        "science"
       ],
       "claimedAt": "2026-07-21T08:38:35Z",
       "completedAt": "2026-07-21T08:38:37Z",
@@ -4833,7 +4959,8 @@
       "categories": [
         "craftable_structures",
         "dont_starve_together",
-        "food_gardening_filter"
+        "food_gardening_filter",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:48:10Z",
       "completedAt": "2026-07-21T08:48:14Z",
@@ -4921,7 +5048,8 @@
         "cooking_filter",
         "craftable_items",
         "dont_starve_together",
-        "items"
+        "items",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:17:13Z",
       "completedAt": "2026-07-21T08:17:14Z",
@@ -4962,7 +5090,8 @@
         "dont_starve_together",
         "equipable_items",
         "hats",
-        "items"
+        "items",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T07:28:40Z",
       "completedAt": "2026-07-21T07:28:42Z",
@@ -4980,7 +5109,8 @@
       "categories": [
         "dont_starve_together",
         "items",
-        "mob_dropped_items"
+        "mob_dropped_items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T10:05:35Z",
       "completedAt": "2026-07-21T10:05:36Z",
@@ -5200,7 +5330,8 @@
       "categories": [
         "craftable_structures",
         "dont_starve_together",
-        "mob_housing"
+        "mob_housing",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:47:45Z",
       "completedAt": "2026-07-21T08:47:49Z",
@@ -5219,7 +5350,9 @@
         "a_new_reign",
         "craftable_items",
         "dont_starve_together",
-        "items"
+        "items",
+        "refine_tab",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:53:53Z",
       "completedAt": "2026-07-21T08:53:54Z",
@@ -5312,7 +5445,8 @@
         "cooking_filter",
         "craftable_structures",
         "food_tab",
-        "light_sources"
+        "light_sources",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T07:34:19Z",
       "completedAt": "2026-07-21T07:34:24Z",
@@ -5456,7 +5590,8 @@
         "fuel",
         "items",
         "mob_dropped_items",
-        "mob_spawning_entities"
+        "mob_spawning_entities",
+        "resources"
       ],
       "claimedAt": "2026-07-21T07:30:21Z",
       "completedAt": "2026-07-21T07:30:23Z",
@@ -5474,7 +5609,8 @@
       "categories": [
         "beefalo_foods",
         "fuel",
-        "items"
+        "items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T07:30:23Z",
       "completedAt": "2026-07-21T07:30:24Z",
@@ -5491,7 +5627,9 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "items"
+        "items",
+        "refine_tab",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:52:09Z",
       "completedAt": "2026-07-21T08:52:14Z",
@@ -5549,7 +5687,8 @@
         "followers",
         "hostile_creatures",
         "mobs",
-        "monsters"
+        "monsters",
+        "ruins_creatures"
       ],
       "claimedAt": "2026-07-21T09:45:25Z",
       "completedAt": "2026-07-21T09:45:27Z",
@@ -5569,7 +5708,8 @@
         "followers",
         "hostile_creatures",
         "mobs",
-        "monsters"
+        "monsters",
+        "ruins_creatures"
       ],
       "claimedAt": "2026-07-21T09:45:27Z",
       "completedAt": "2026-07-21T09:45:29Z",
@@ -5589,7 +5729,8 @@
         "followers",
         "hostile_creatures",
         "mobs",
-        "monsters"
+        "monsters",
+        "ruins_creatures"
       ],
       "claimedAt": "2026-07-21T09:45:22Z",
       "completedAt": "2026-07-21T09:45:25Z",
@@ -5609,7 +5750,8 @@
         "followers",
         "hostile_creatures",
         "mobs",
-        "monsters"
+        "monsters",
+        "ruins_creatures"
       ],
       "claimedAt": "2026-07-21T07:39:14Z",
       "completedAt": "2026-07-21T07:39:17Z",
@@ -5627,7 +5769,9 @@
       "categories": [
         "craftable_items",
         "equipable_items",
-        "items"
+        "items",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:37:43Z",
       "completedAt": "2026-07-21T08:37:47Z",
@@ -5940,7 +6084,8 @@
         "light_sources",
         "mobs",
         "monsters",
-        "nightmare_state_indicator"
+        "nightmare_state_indicator",
+        "ruins_creatures"
       ],
       "claimedAt": "2026-07-21T07:39:17Z",
       "completedAt": "2026-07-21T07:39:18Z",
@@ -5994,7 +6139,8 @@
       "categories": [
         "craftable_structures",
         "decorations_filter",
-        "dont_starve_together"
+        "dont_starve_together",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:23:43Z",
       "completedAt": "2026-07-21T08:23:47Z",
@@ -6030,7 +6176,8 @@
         "craftable_items",
         "decorations_filter",
         "dont_starve_together",
-        "items"
+        "items",
+        "rare_blueprint_exclusive"
       ],
       "claimedAt": "2026-07-21T08:24:26Z",
       "completedAt": "2026-07-21T08:24:30Z",
@@ -6049,7 +6196,8 @@
         "craftable_items",
         "decorations_filter",
         "dont_starve_together",
-        "items"
+        "items",
+        "rare_blueprint_exclusive"
       ],
       "claimedAt": "2026-07-21T08:24:30Z",
       "completedAt": "2026-07-21T08:24:34Z",
@@ -6101,7 +6249,8 @@
         "boss_dropped_items",
         "dont_starve_together",
         "items",
-        "mob_dropped_items"
+        "mob_dropped_items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T07:36:26Z",
       "completedAt": "2026-07-21T07:36:27Z",
@@ -6198,7 +6347,8 @@
         "craftable_items",
         "dont_starve_together",
         "from_beyond",
-        "items"
+        "items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T08:57:44Z",
       "completedAt": "2026-07-21T08:57:45Z",
@@ -6218,7 +6368,8 @@
         "craftable_items",
         "dont_starve_together",
         "infobox_missing_crafting_description",
-        "items"
+        "items",
+        "rare_blueprint_exclusive"
       ],
       "claimedAt": "2026-07-21T07:28:46Z",
       "completedAt": "2026-07-21T07:28:50Z",
@@ -6238,7 +6389,8 @@
         "craftable_items",
         "dont_starve_together",
         "infobox_missing_crafting_description",
-        "items"
+        "items",
+        "rare_blueprint_exclusive"
       ],
       "claimedAt": "2026-07-21T07:28:42Z",
       "completedAt": "2026-07-21T07:28:46Z",
@@ -6273,7 +6425,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "items"
+        "items",
+        "rare_blueprint_exclusive"
       ],
       "claimedAt": "2026-07-21T08:58:22Z",
       "completedAt": "2026-07-21T08:58:26Z",
@@ -6307,7 +6460,8 @@
       "artifactSha256": "5707c334caaa91d29eb97cc471456f74e65846344aeb4ed3f0a215a3940ccc36",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "resources"
       ],
       "claimedAt": "2026-07-21T10:05:14Z",
       "completedAt": "2026-07-21T10:05:15Z",
@@ -6325,7 +6479,8 @@
       "categories": [
         "dont_starve_together",
         "fuel",
-        "items"
+        "items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T10:05:09Z",
       "completedAt": "2026-07-21T10:05:10Z",
@@ -6364,7 +6519,9 @@
       "categories": [
         "cooking_filter",
         "craftable_structures",
-        "food_tab"
+        "food_tab",
+        "science",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:16:59Z",
       "completedAt": "2026-07-21T08:17:03Z",
@@ -6600,7 +6757,9 @@
       "categories": [
         "craftable_items",
         "items",
-        "mob_dropped_items"
+        "mob_dropped_items",
+        "science",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:53:24Z",
       "completedAt": "2026-07-21T08:53:28Z",
@@ -6671,7 +6830,10 @@
         "dont_starve_together",
         "items",
         "mob_dropped_items",
-        "ocean"
+        "ocean",
+        "refine_tab",
+        "resources",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:53:42Z",
       "completedAt": "2026-07-21T08:53:46Z",
@@ -6710,7 +6872,10 @@
         "cooling",
         "craftable_structures",
         "dont_starve_together",
-        "light_sources"
+        "light_sources",
+        "science",
+        "science_tier_1",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:17:46Z",
       "completedAt": "2026-07-21T08:17:47Z",
@@ -6816,7 +6981,9 @@
       "artifactSha256": "4ba3c71ac9e4c98befa6c6e56c713d021bf2d98fa1ae122ad7077d3d6188eb52",
       "attempts": 1,
       "categories": [
-        "mob_spawning_entities"
+        "mob_spawning_entities",
+        "plants",
+        "resources"
       ],
       "claimedAt": "2026-07-22T00:59:29Z",
       "completedAt": "2026-07-22T00:59:30Z",
@@ -6932,7 +7099,9 @@
         "dont_starve_together",
         "equipable_items",
         "hats",
-        "items"
+        "items",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:18:00Z",
       "completedAt": "2026-07-21T08:18:02Z",
@@ -7023,7 +7192,8 @@
         "dont_starve_together",
         "equipable_items",
         "hats",
-        "items"
+        "items",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:17:57Z",
       "completedAt": "2026-07-21T08:17:59Z",
@@ -7043,7 +7213,8 @@
         "dont_starve_together",
         "fuel",
         "items",
-        "mob_dropped_items"
+        "mob_dropped_items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T09:48:14Z",
       "completedAt": "2026-07-21T09:48:15Z",
@@ -7062,7 +7233,9 @@
         "craftable_items",
         "equipable_items",
         "hats",
-        "items"
+        "items",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:37:53Z",
       "completedAt": "2026-07-21T08:37:54Z",
@@ -7081,7 +7254,8 @@
         "a_new_reign",
         "craftable_items",
         "decorations_filter",
-        "items"
+        "items",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:23:51Z",
       "completedAt": "2026-07-21T08:23:52Z",
@@ -7131,7 +7305,9 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "items"
+        "items",
+        "refine_tab",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:55:17Z",
       "completedAt": "2026-07-21T08:55:21Z",
@@ -7150,7 +7326,8 @@
         "craftable_items",
         "dont_starve_together",
         "items",
-        "melee_weapons"
+        "melee_weapons",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:57:14Z",
       "completedAt": "2026-07-21T08:57:18Z",
@@ -7189,7 +7366,8 @@
       "categories": [
         "dont_starve_together",
         "equipable_items",
-        "items"
+        "items",
+        "ranged_weapons"
       ],
       "claimedAt": "2026-07-21T08:42:19Z",
       "completedAt": "2026-07-21T08:42:20Z",
@@ -7343,7 +7521,8 @@
         "craftable_items",
         "craftable_structures",
         "dont_starve_together",
-        "items"
+        "items",
+        "seafaring_filter"
       ],
       "claimedAt": "2026-07-21T08:48:08Z",
       "completedAt": "2026-07-21T08:48:10Z",
@@ -7363,7 +7542,8 @@
         "equipable_items",
         "items",
         "magic_tab",
-        "magic_tier_2"
+        "magic_tier_2",
+        "ranged_weapons"
       ],
       "claimedAt": "2026-07-21T08:38:24Z",
       "completedAt": "2026-07-21T08:38:26Z",
@@ -7483,7 +7663,8 @@
       "categories": [
         "craftable_structures",
         "decorations_filter",
-        "dont_starve_together"
+        "dont_starve_together",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:24:06Z",
       "completedAt": "2026-07-21T08:24:10Z",
@@ -7536,7 +7717,9 @@
       "categories": [
         "craftable_items",
         "equipable_items",
-        "items"
+        "items",
+        "science",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:37:21Z",
       "completedAt": "2026-07-21T08:37:22Z",
@@ -7631,7 +7814,8 @@
         "infobox_missing_crafting_description",
         "items",
         "mob_dropped_items",
-        "mob_spawning_entities"
+        "mob_spawning_entities",
+        "plants"
       ],
       "claimedAt": "2026-07-21T08:53:04Z",
       "completedAt": "2026-07-21T08:53:08Z",
@@ -7650,7 +7834,8 @@
         "craftable_items",
         "infobox_missing_crafting_description",
         "items",
-        "mob_dropped_items"
+        "mob_dropped_items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T08:51:51Z",
       "completedAt": "2026-07-21T08:51:53Z",
@@ -7704,7 +7889,9 @@
         "craftable_items",
         "dont_starve_together",
         "equipable_items",
-        "items"
+        "items",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:18:04Z",
       "completedAt": "2026-07-21T08:18:08Z",
@@ -7722,7 +7909,8 @@
       "categories": [
         "dont_starve_together",
         "indestructible_object",
-        "light_sources"
+        "light_sources",
+        "resurrection"
       ],
       "claimedAt": "2026-07-21T10:03:33Z",
       "completedAt": "2026-07-21T10:03:35Z",
@@ -7757,7 +7945,8 @@
         "a_new_reign",
         "dont_starve_together",
         "health_loss",
-        "nightmare_state_indicator"
+        "nightmare_state_indicator",
+        "plants"
       ],
       "claimedAt": "2026-07-21T09:48:13Z",
       "completedAt": "2026-07-21T09:48:14Z",
@@ -7830,7 +8019,9 @@
         "equipable_items",
         "fight_tab",
         "hats",
-        "items"
+        "items",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T07:28:14Z",
       "completedAt": "2026-07-21T07:28:15Z",
@@ -8015,7 +8206,8 @@
         "a_new_reign",
         "craftable_structures",
         "dont_starve_together",
-        "mob_spawning_entities"
+        "mob_spawning_entities",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:47:10Z",
       "completedAt": "2026-07-21T08:47:13Z",
@@ -8187,7 +8379,8 @@
         "dont_starve_together",
         "equipable_items",
         "hats",
-        "items"
+        "items",
+        "rare_blueprint_exclusive"
       ],
       "claimedAt": "2026-07-21T07:30:51Z",
       "completedAt": "2026-07-21T07:30:52Z",
@@ -8279,7 +8472,8 @@
         "craftable_items",
         "dont_starve_together",
         "food_gardening_filter",
-        "items"
+        "items",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:55:43Z",
       "completedAt": "2026-07-21T08:55:44Z",
@@ -8299,7 +8493,9 @@
         "dont_starve_together",
         "equipable_items",
         "food_gardening_filter",
-        "items"
+        "items",
+        "science_tier_1",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:41:28Z",
       "completedAt": "2026-07-21T08:41:33Z",
@@ -8321,7 +8517,8 @@
         "equipable_items",
         "food_gardening_filter",
         "hats",
-        "items"
+        "items",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:41:34Z",
       "completedAt": "2026-07-21T08:42:08Z",
@@ -8340,7 +8537,8 @@
         "craftable_items",
         "equipable_items",
         "hats",
-        "items"
+        "items",
+        "science"
       ],
       "claimedAt": "2026-07-21T08:38:07Z",
       "completedAt": "2026-07-21T08:38:09Z",
@@ -8637,7 +8835,8 @@
         "dont_starve_together",
         "fuel",
         "items",
-        "light_sources"
+        "light_sources",
+        "plants"
       ],
       "claimedAt": "2026-07-21T10:03:05Z",
       "completedAt": "2026-07-21T10:03:06Z",
@@ -8717,7 +8916,8 @@
         "dont_starve_together",
         "equipable_items",
         "from_beyond",
-        "items"
+        "items",
+        "ranged_weapons"
       ],
       "claimedAt": "2026-07-21T08:42:31Z",
       "completedAt": "2026-07-21T08:42:34Z",
@@ -8734,7 +8934,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "from_beyond"
+        "from_beyond",
+        "plants"
       ],
       "claimedAt": "2026-07-21T10:10:38Z",
       "completedAt": "2026-07-21T10:10:39Z",
@@ -8920,7 +9121,9 @@
         "craftable_items",
         "infobox_missing_crafting_description",
         "items",
-        "mob_dropped_items"
+        "mob_dropped_items",
+        "refine_tab",
+        "resources"
       ],
       "claimedAt": "2026-07-21T07:35:54Z",
       "completedAt": "2026-07-21T07:35:55Z",
@@ -8938,7 +9141,8 @@
       "categories": [
         "craftable_structures",
         "dont_starve_together",
-        "from_beyond"
+        "from_beyond",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:48:52Z",
       "completedAt": "2026-07-21T08:48:55Z",
@@ -8958,7 +9162,9 @@
         "decorations_filter",
         "dont_starve_together",
         "from_beyond",
-        "items"
+        "items",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:22:57Z",
       "completedAt": "2026-07-21T08:22:59Z",
@@ -9016,7 +9222,8 @@
         "a_new_reign",
         "dont_starve_together",
         "mobs",
-        "passive_creatures"
+        "passive_creatures",
+        "resources"
       ],
       "claimedAt": "2026-07-21T09:48:20Z",
       "completedAt": "2026-07-21T09:48:21Z",
@@ -9035,7 +9242,8 @@
         "craftable_items",
         "craftable_structures",
         "dont_starve_together",
-        "items"
+        "items",
+        "seafaring_filter"
       ],
       "claimedAt": "2026-07-21T08:48:24Z",
       "completedAt": "2026-07-21T08:48:27Z",
@@ -9056,7 +9264,8 @@
         "equipable_items",
         "fight_tab",
         "fuel",
-        "items"
+        "items",
+        "science"
       ],
       "claimedAt": "2026-07-21T07:28:24Z",
       "completedAt": "2026-07-21T07:28:29Z",
@@ -9074,7 +9283,9 @@
       "categories": [
         "fuel",
         "items",
-        "mob_spawning_entities"
+        "mob_spawning_entities",
+        "plants",
+        "resources"
       ],
       "claimedAt": "2026-07-21T10:48:52Z",
       "completedAt": "2026-07-21T10:48:53Z",
@@ -9223,7 +9434,8 @@
         "craftable_items",
         "infobox_missing_crafting_description",
         "items",
-        "mob_dropped_items"
+        "mob_dropped_items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T07:36:22Z",
       "completedAt": "2026-07-21T07:36:23Z",
@@ -9263,7 +9475,8 @@
         "dont_starve_together",
         "fertilizer",
         "food_gardening_filter",
-        "items"
+        "items",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:19:49Z",
       "completedAt": "2026-07-21T08:19:53Z",
@@ -9323,7 +9536,8 @@
         "fertilizer",
         "fuel",
         "items",
-        "mob_dropped_items"
+        "mob_dropped_items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T08:19:42Z",
       "completedAt": "2026-07-21T08:19:43Z",
@@ -9397,7 +9611,9 @@
       "categories": [
         "craftable_items",
         "health_loss",
-        "items"
+        "items",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:52:46Z",
       "completedAt": "2026-07-21T08:52:48Z",
@@ -9435,7 +9651,9 @@
         "equipable_items",
         "fight_tab",
         "items",
-        "melee_weapons"
+        "melee_weapons",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:21:02Z",
       "completedAt": "2026-07-21T08:21:04Z",
@@ -9453,7 +9671,8 @@
       "categories": [
         "craftable_items",
         "equipable_items",
-        "items"
+        "items",
+        "science"
       ],
       "claimedAt": "2026-07-21T08:37:35Z",
       "completedAt": "2026-07-21T08:37:37Z",
@@ -9506,7 +9725,8 @@
       "artifactSha256": "b3c62f4d4e8de6619de9c4f013b4150942e8f6277052dd9d76eadb1485e13732",
       "attempts": 1,
       "categories": [
-        "mineable_objects"
+        "mineable_objects",
+        "resources"
       ],
       "claimedAt": "2026-07-22T00:53:35Z",
       "completedAt": "2026-07-22T00:53:36Z",
@@ -9525,7 +9745,9 @@
         "craftable_items",
         "craftable_structures",
         "decorations_filter",
-        "items"
+        "items",
+        "science",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:22:39Z",
       "completedAt": "2026-07-21T08:22:43Z",
@@ -9577,7 +9799,9 @@
       "categories": [
         "craftable_items",
         "healing",
-        "items"
+        "items",
+        "science",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:52:53Z",
       "completedAt": "2026-07-21T08:52:58Z",
@@ -9663,7 +9887,8 @@
         "craftable_items",
         "dont_starve_together",
         "equipable_items",
-        "items"
+        "items",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:39:32Z",
       "completedAt": "2026-07-21T08:39:36Z",
@@ -9775,7 +10000,8 @@
       "categories": [
         "craftable_items",
         "healing",
-        "items"
+        "items",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:52:42Z",
       "completedAt": "2026-07-21T08:52:46Z",
@@ -9978,7 +10204,8 @@
         "craftable_items",
         "dont_starve_together",
         "equipable_items",
-        "items"
+        "items",
+        "ranged_weapons"
       ],
       "claimedAt": "2026-07-21T08:42:20Z",
       "completedAt": "2026-07-21T08:42:24Z",
@@ -9997,7 +10224,8 @@
         "cooking_filter",
         "craftable_structures",
         "dont_starve_together",
-        "light_sources"
+        "light_sources",
+        "rare_blueprint_exclusive"
       ],
       "claimedAt": "2026-07-21T08:17:14Z",
       "completedAt": "2026-07-21T08:17:19Z",
@@ -10054,7 +10282,10 @@
         "cooling",
         "food",
         "healing",
-        "items"
+        "items",
+        "refine_tab",
+        "resources",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:17:51Z",
       "completedAt": "2026-07-21T08:17:53Z",
@@ -10073,7 +10304,9 @@
         "containers",
         "cooking_filter",
         "craftable_structures",
-        "food_tab"
+        "food_tab",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T07:34:24Z",
       "completedAt": "2026-07-21T07:34:25Z",
@@ -10135,7 +10368,9 @@
         "dont_starve_together",
         "equipable_items",
         "hats",
-        "items"
+        "items",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:17:47Z",
       "completedAt": "2026-07-21T08:17:51Z",
@@ -10170,7 +10405,9 @@
       "categories": [
         "craftable_structures",
         "dont_starve_together",
-        "light_sources"
+        "light_sources",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:47:02Z",
       "completedAt": "2026-07-21T08:47:04Z",
@@ -10224,7 +10461,8 @@
         "equipable_items",
         "items",
         "magic_tab",
-        "magic_tier_1"
+        "magic_tier_1",
+        "ranged_weapons"
       ],
       "claimedAt": "2026-07-21T08:38:16Z",
       "completedAt": "2026-07-21T08:38:20Z",
@@ -10262,7 +10500,8 @@
       "categories": [
         "dont_starve_together",
         "from_beyond",
-        "items"
+        "items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T10:11:33Z",
       "completedAt": "2026-07-21T10:11:34Z",
@@ -10415,7 +10654,9 @@
         "craftable_items",
         "dont_starve_together",
         "equipable_items",
-        "items"
+        "items",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T07:33:42Z",
       "completedAt": "2026-07-21T07:33:43Z",
@@ -10468,7 +10709,8 @@
         "craftable_items",
         "dont_starve_together",
         "infobox_missing_crafting_description",
-        "items"
+        "items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T08:54:00Z",
       "completedAt": "2026-07-21T08:54:01Z",
@@ -10647,7 +10889,8 @@
         "dont_starve_together",
         "fuel",
         "items",
-        "mob_spawning_entities"
+        "mob_spawning_entities",
+        "plants"
       ],
       "claimedAt": "2026-07-21T08:53:51Z",
       "completedAt": "2026-07-21T08:53:53Z",
@@ -10755,7 +10998,8 @@
         "dont_starve_together",
         "from_beyond",
         "fuel",
-        "items"
+        "items",
+        "seafaring_filter"
       ],
       "claimedAt": "2026-07-21T08:59:01Z",
       "completedAt": "2026-07-21T08:59:05Z",
@@ -11009,7 +11253,9 @@
         "craftable_items",
         "equipable_items",
         "items",
-        "light_sources"
+        "light_sources",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:38:32Z",
       "completedAt": "2026-07-21T08:38:33Z",
@@ -11214,7 +11460,8 @@
         "healing",
         "items",
         "magic_tab",
-        "magic_tier_1"
+        "magic_tier_1",
+        "resurrection"
       ],
       "claimedAt": "2026-07-21T08:37:41Z",
       "completedAt": "2026-07-21T08:37:43Z",
@@ -11251,7 +11498,8 @@
       "artifactSha256": "70c0f2ea6e682343cc6e37fac0a00b2ccd66385fedb594a114d98bbd6afd014d",
       "attempts": 1,
       "categories": [
-        "light_sources"
+        "light_sources",
+        "plants"
       ],
       "claimedAt": "2026-07-22T00:47:51Z",
       "completedAt": "2026-07-22T00:47:52Z",
@@ -11319,7 +11567,9 @@
       "attempts": 1,
       "categories": [
         "craftable_structures",
-        "light_sources"
+        "light_sources",
+        "science",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:46:48Z",
       "completedAt": "2026-07-21T08:46:50Z",
@@ -11357,7 +11607,8 @@
         "craftable_items",
         "fuel",
         "items",
-        "mob_dropped_items"
+        "mob_dropped_items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T07:36:14Z",
       "completedAt": "2026-07-21T07:36:15Z",
@@ -11392,7 +11643,8 @@
         "craftable_items",
         "fuel",
         "infobox_missing_crafting_description",
-        "items"
+        "items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T08:51:53Z",
       "completedAt": "2026-07-21T08:51:54Z",
@@ -11413,7 +11665,9 @@
         "equipable_items",
         "fight_tab",
         "fuel",
-        "items"
+        "items",
+        "science",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T07:28:15Z",
       "completedAt": "2026-07-21T07:28:17Z",
@@ -11560,7 +11814,9 @@
       "artifactSha256": "51341461e20284f12f1890286a608f2bce227587844a78634accd9dbd497d3fa",
       "attempts": 1,
       "categories": [
-        "mob_spawning_entities"
+        "mob_spawning_entities",
+        "plants",
+        "resources"
       ],
       "claimedAt": "2026-07-22T00:59:31Z",
       "completedAt": "2026-07-22T00:59:32Z",
@@ -11768,7 +12024,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "light_sources"
+        "light_sources",
+        "plants"
       ],
       "claimedAt": "2026-07-21T10:06:56Z",
       "completedAt": "2026-07-21T10:06:57Z",
@@ -11785,7 +12042,8 @@
       "attempts": 1,
       "categories": [
         "craftable_structures",
-        "dont_starve_together"
+        "dont_starve_together",
+        "rare_blueprint_exclusive"
       ],
       "claimedAt": "2026-07-21T08:48:14Z",
       "completedAt": "2026-07-21T08:48:16Z",
@@ -11871,7 +12129,8 @@
       "attempts": 1,
       "categories": [
         "mob_spawning_entities",
-        "mobs"
+        "mobs",
+        "plants"
       ],
       "claimedAt": "2026-07-22T00:59:26Z",
       "completedAt": "2026-07-22T00:59:27Z",
@@ -11925,7 +12184,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "items"
+        "items",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:57:39Z",
       "completedAt": "2026-07-21T08:57:42Z",
@@ -11944,7 +12204,9 @@
         "cooling",
         "craftable_items",
         "dont_starve_together",
-        "items"
+        "items",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:18:02Z",
       "completedAt": "2026-07-21T08:18:04Z",
@@ -12103,7 +12365,8 @@
         "dont_starve_together",
         "fuel",
         "items",
-        "mob_dropped_items"
+        "mob_dropped_items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T07:36:54Z",
       "completedAt": "2026-07-21T07:36:56Z",
@@ -12126,7 +12389,8 @@
         "mob_dropped_items",
         "mobs",
         "nocturnals",
-        "passive_creatures"
+        "passive_creatures",
+        "plants"
       ],
       "claimedAt": "2026-07-21T08:33:11Z",
       "completedAt": "2026-07-21T08:33:12Z",
@@ -12163,7 +12427,8 @@
       "attempts": 1,
       "categories": [
         "craftable_structures",
-        "dont_starve_together"
+        "dont_starve_together",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:48:42Z",
       "completedAt": "2026-07-21T08:48:44Z",
@@ -12184,7 +12449,8 @@
         "fuel",
         "infobox_missing_crafting_description",
         "items",
-        "mob_dropped_items"
+        "mob_dropped_items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T08:19:40Z",
       "completedAt": "2026-07-21T08:19:41Z",
@@ -12237,7 +12503,8 @@
       "categories": [
         "craftable_items",
         "infobox_missing_crafting_description",
-        "items"
+        "items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T08:52:51Z",
       "completedAt": "2026-07-21T08:52:52Z",
@@ -12256,7 +12523,9 @@
         "a_new_reign",
         "craftable_items",
         "dont_starve_together",
-        "items"
+        "items",
+        "refine_tab",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:54:01Z",
       "completedAt": "2026-07-21T08:54:35Z",
@@ -12272,7 +12541,8 @@
       "artifactSha256": "89bc76f78747e2b3294442daef54cb683c92c09b5cfd40f51c7d926111efb7f2",
       "attempts": 1,
       "categories": [
-        "mineable_objects"
+        "mineable_objects",
+        "resources"
       ],
       "claimedAt": "2026-07-22T00:53:34Z",
       "completedAt": "2026-07-22T00:53:35Z",
@@ -12309,7 +12579,8 @@
       "categories": [
         "a_new_reign",
         "dont_starve_together",
-        "mineable_objects"
+        "mineable_objects",
+        "plants"
       ],
       "claimedAt": "2026-07-21T09:48:41Z",
       "completedAt": "2026-07-21T09:48:42Z",
@@ -12347,7 +12618,9 @@
         "craftable_items",
         "equipable_items",
         "fight_tab",
-        "items"
+        "items",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T07:28:20Z",
       "completedAt": "2026-07-21T07:28:24Z",
@@ -12363,7 +12636,8 @@
       "artifactSha256": "ad733d8acfb8bdbc30cc248497b9d601982439c66eb39922ff92589225d12ea1",
       "attempts": 1,
       "categories": [
-        "mineable_objects"
+        "mineable_objects",
+        "resources"
       ],
       "claimedAt": "2026-07-22T00:53:36Z",
       "completedAt": "2026-07-22T00:53:37Z",
@@ -12436,7 +12710,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "items"
+        "items",
+        "seafaring_filter"
       ],
       "claimedAt": "2026-07-21T08:55:05Z",
       "completedAt": "2026-07-21T08:55:06Z",
@@ -12454,7 +12729,8 @@
       "categories": [
         "dont_starve_together",
         "mineable_objects",
-        "mob_spawning_entities"
+        "mob_spawning_entities",
+        "resources"
       ],
       "claimedAt": "2026-07-21T10:02:40Z",
       "completedAt": "2026-07-21T10:02:41Z",
@@ -12512,7 +12788,8 @@
         "craftable_structures",
         "health_loss",
         "magic_tab",
-        "magic_tier_1"
+        "magic_tier_1",
+        "resurrection"
       ],
       "claimedAt": "2026-07-21T08:46:28Z",
       "completedAt": "2026-07-21T08:46:31Z",
@@ -12610,7 +12887,8 @@
       "categories": [
         "craftable_structures",
         "dont_starve_together",
-        "mob_housing"
+        "mob_housing",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:47:49Z",
       "completedAt": "2026-07-21T08:47:53Z",
@@ -12661,7 +12939,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "health_loss"
+        "health_loss",
+        "resources"
       ],
       "claimedAt": "2026-07-21T10:03:17Z",
       "completedAt": "2026-07-21T10:03:18Z",
@@ -12728,7 +13007,8 @@
       "attempts": 1,
       "categories": [
         "craftable_structures",
-        "dont_starve_together"
+        "dont_starve_together",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:48:16Z",
       "completedAt": "2026-07-21T08:48:20Z",
@@ -12807,7 +13087,9 @@
         "equipable_items",
         "hats",
         "items",
-        "light_sources"
+        "light_sources",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:37:37Z",
       "completedAt": "2026-07-21T08:37:41Z",
@@ -12845,7 +13127,8 @@
         "craftable_structures",
         "decorations_filter",
         "fuel",
-        "items"
+        "items",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:23:59Z",
       "completedAt": "2026-07-21T08:24:01Z",
@@ -12903,7 +13186,9 @@
         "equipable_items",
         "hats",
         "items",
-        "light_sources"
+        "light_sources",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:39:36Z",
       "completedAt": "2026-07-21T08:39:41Z",
@@ -12973,7 +13258,9 @@
       "artifactSha256": "46941d282a6a29b1aed1111353a75bcf256f781ff932a31732a7d0d7d1425ccb",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "plants",
+        "resources"
       ],
       "claimedAt": "2026-07-21T10:08:35Z",
       "completedAt": "2026-07-21T10:08:37Z",
@@ -13148,7 +13435,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "mineable_objects"
+        "mineable_objects",
+        "resources"
       ],
       "claimedAt": "2026-07-21T10:04:57Z",
       "completedAt": "2026-07-21T10:04:59Z",
@@ -13259,7 +13547,8 @@
         "craftable_items",
         "decorations_filter",
         "dont_starve_together",
-        "items"
+        "items",
+        "rare_blueprint_exclusive"
       ],
       "claimedAt": "2026-07-21T08:24:34Z",
       "completedAt": "2026-07-21T08:24:38Z",
@@ -13277,7 +13566,8 @@
       "categories": [
         "craftable_structures",
         "decorations_filter",
-        "dont_starve_together"
+        "dont_starve_together",
+        "rare_blueprint_exclusive"
       ],
       "claimedAt": "2026-07-21T08:24:38Z",
       "completedAt": "2026-07-21T08:24:42Z",
@@ -13298,7 +13588,8 @@
         "craftable_items",
         "dont_starve_together",
         "infobox_missing_crafting_description",
-        "items"
+        "items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T07:36:32Z",
       "completedAt": "2026-07-21T07:36:37Z",
@@ -13335,7 +13626,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "items"
+        "items",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:53:37Z",
       "completedAt": "2026-07-21T08:53:41Z",
@@ -13562,7 +13854,9 @@
         "fight_tab",
         "items",
         "light_sources",
-        "melee_weapons"
+        "melee_weapons",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:21:09Z",
       "completedAt": "2026-07-21T08:21:13Z",
@@ -13600,7 +13894,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "items"
+        "items",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:57:35Z",
       "completedAt": "2026-07-21T08:57:38Z",
@@ -13806,7 +14101,8 @@
         "craftable_structures",
         "dont_starve_together",
         "food_gardening_filter",
-        "food_tab"
+        "food_tab",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:47:15Z",
       "completedAt": "2026-07-21T08:47:19Z",
@@ -13862,7 +14158,9 @@
       "categories": [
         "dont_starve_together",
         "light_sources",
-        "mob_spawning_entities"
+        "mob_spawning_entities",
+        "plants",
+        "resources"
       ],
       "claimedAt": "2026-07-21T10:02:45Z",
       "completedAt": "2026-07-21T10:02:46Z",
@@ -14027,7 +14325,8 @@
         "craftable_items",
         "dont_starve_together",
         "equipable_items",
-        "items"
+        "items",
+        "rare_blueprint_exclusive"
       ],
       "claimedAt": "2026-07-21T08:39:53Z",
       "completedAt": "2026-07-21T08:39:56Z",
@@ -14046,7 +14345,8 @@
         "craftable_items",
         "craftable_structures",
         "dont_starve_together",
-        "items"
+        "items",
+        "seafaring_filter"
       ],
       "claimedAt": "2026-07-21T08:48:28Z",
       "completedAt": "2026-07-21T08:48:32Z",
@@ -14181,7 +14481,9 @@
         "fuel",
         "items",
         "magic_tier_1",
-        "mob_dropped_items"
+        "mob_dropped_items",
+        "refine_tab",
+        "resources"
       ],
       "claimedAt": "2026-07-21T07:36:07Z",
       "completedAt": "2026-07-21T07:36:09Z",
@@ -14258,7 +14560,8 @@
         "craftable_items",
         "fuel",
         "infobox_missing_crafting_description",
-        "items"
+        "items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T08:52:49Z",
       "completedAt": "2026-07-21T08:52:51Z",
@@ -14276,7 +14579,8 @@
       "categories": [
         "dont_starve_together",
         "from_beyond",
-        "mineable_objects"
+        "mineable_objects",
+        "resources"
       ],
       "claimedAt": "2026-07-21T10:09:58Z",
       "completedAt": "2026-07-21T10:09:59Z",
@@ -14585,7 +14889,8 @@
         "craftable_items",
         "infobox_missing_crafting_description",
         "items",
-        "mob_dropped_items"
+        "mob_dropped_items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T07:36:20Z",
       "completedAt": "2026-07-21T07:36:22Z",
@@ -14743,7 +15048,10 @@
       "categories": [
         "craftable_items",
         "fuel",
-        "items"
+        "items",
+        "refine_tab",
+        "science",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:52:03Z",
       "completedAt": "2026-07-21T08:52:07Z",
@@ -14877,7 +15185,8 @@
         "dont_starve_together",
         "fuel",
         "healing",
-        "items"
+        "items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T09:48:11Z",
       "completedAt": "2026-07-21T09:48:12Z",
@@ -15005,7 +15314,8 @@
       "categories": [
         "craftable_items",
         "equipable_items",
-        "items"
+        "items",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:37:22Z",
       "completedAt": "2026-07-21T08:37:26Z",
@@ -15062,7 +15372,9 @@
       "categories": [
         "craftable_structures",
         "mob_housing",
-        "mob_spawning_entities"
+        "mob_spawning_entities",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:46:19Z",
       "completedAt": "2026-07-21T08:46:23Z",
@@ -15096,7 +15408,8 @@
       "categories": [
         "items",
         "meats",
-        "mob_dropped_items"
+        "mob_dropped_items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T14:21:42Z",
       "completedAt": "2026-07-21T14:21:43Z",
@@ -15150,7 +15463,8 @@
         "containers",
         "craftable_items",
         "equipable_items",
-        "items"
+        "items",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T07:30:45Z",
       "completedAt": "2026-07-21T07:30:47Z",
@@ -15204,7 +15518,9 @@
       "attempts": 1,
       "categories": [
         "craftable_structures",
-        "dont_starve_together"
+        "dont_starve_together",
+        "rare_blueprint_exclusive",
+        "seafaring_filter"
       ],
       "claimedAt": "2026-07-21T08:48:00Z",
       "completedAt": "2026-07-21T08:48:03Z",
@@ -15221,7 +15537,8 @@
       "attempts": 1,
       "categories": [
         "fuel",
-        "items"
+        "items",
+        "plants"
       ],
       "claimedAt": "2026-07-21T10:48:51Z",
       "completedAt": "2026-07-21T10:48:52Z",
@@ -15384,7 +15701,10 @@
         "craftable_items",
         "dont_starve_together",
         "equipable_items",
-        "items"
+        "items",
+        "science",
+        "science_tier_1",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:38:01Z",
       "completedAt": "2026-07-21T08:38:06Z",
@@ -15494,7 +15814,8 @@
         "craftable_items",
         "dont_starve_together",
         "equipable_items",
-        "items"
+        "items",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:40:09Z",
       "completedAt": "2026-07-21T08:40:13Z",
@@ -15533,7 +15854,8 @@
         "craftable_items",
         "dont_starve_together",
         "items",
-        "mobs"
+        "mobs",
+        "rare_blueprint_exclusive"
       ],
       "claimedAt": "2026-07-21T08:57:13Z",
       "completedAt": "2026-07-21T08:57:14Z",
@@ -15757,7 +16079,9 @@
       "attempts": 1,
       "categories": [
         "craftable_structures",
-        "decorations_filter"
+        "decorations_filter",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:23:34Z",
       "completedAt": "2026-07-21T08:23:36Z",
@@ -15776,7 +16100,8 @@
         "a_new_reign",
         "craftable_structures",
         "decorations_filter",
-        "dont_starve_together"
+        "dont_starve_together",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:24:01Z",
       "completedAt": "2026-07-21T08:24:05Z",
@@ -15796,7 +16121,8 @@
         "craftable_structures",
         "crafting_stations",
         "decorations_filter",
-        "dont_starve_together"
+        "dont_starve_together",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:18:59Z",
       "completedAt": "2026-07-21T08:19:01Z",
@@ -15852,7 +16178,8 @@
       "categories": [
         "craftable_structures",
         "magic_tab",
-        "mob_spawning_entities"
+        "mob_spawning_entities",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:46:51Z",
       "completedAt": "2026-07-21T08:46:55Z",
@@ -15871,7 +16198,8 @@
         "craftable_items",
         "equipable_items",
         "fuel",
-        "items"
+        "items",
+        "science"
       ],
       "claimedAt": "2026-07-21T08:39:26Z",
       "completedAt": "2026-07-21T08:39:28Z",
@@ -15907,7 +16235,8 @@
         "craftable_structures",
         "decorations_filter",
         "dont_starve_together",
-        "food_gardening_filter"
+        "food_gardening_filter",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:24:17Z",
       "completedAt": "2026-07-21T08:24:22Z",
@@ -15995,7 +16324,9 @@
       "categories": [
         "craftable_items",
         "equipable_items",
-        "items"
+        "items",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:38:14Z",
       "completedAt": "2026-07-21T08:38:16Z",
@@ -16048,7 +16379,9 @@
       "categories": [
         "craftable_items",
         "items",
-        "light_sources"
+        "light_sources",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:52:24Z",
       "completedAt": "2026-07-21T08:52:28Z",
@@ -16066,7 +16399,8 @@
       "categories": [
         "craftable_structures",
         "from_beyond",
-        "magic_tier_1"
+        "magic_tier_1",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:48:45Z",
       "completedAt": "2026-07-21T08:48:46Z",
@@ -16086,7 +16420,8 @@
         "dont_starve_together",
         "from_beyond",
         "infobox_missing_crafting_description",
-        "items"
+        "items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T08:58:03Z",
       "completedAt": "2026-07-21T08:58:05Z",
@@ -16108,7 +16443,8 @@
         "fuel",
         "infobox_missing_crafting_description",
         "items",
-        "mob_dropped_items"
+        "mob_dropped_items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T07:37:10Z",
       "completedAt": "2026-07-21T07:37:11Z",
@@ -16128,7 +16464,9 @@
         "craftable_items",
         "items",
         "magic_tier_1",
-        "mob_dropped_items"
+        "mob_dropped_items",
+        "refine_tab",
+        "resources"
       ],
       "claimedAt": "2026-07-21T07:36:13Z",
       "completedAt": "2026-07-21T07:36:14Z",
@@ -16184,7 +16522,9 @@
         "craftable_items",
         "equipable_items",
         "hats",
-        "items"
+        "items",
+        "science",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:38:26Z",
       "completedAt": "2026-07-21T08:38:27Z",
@@ -16219,7 +16559,9 @@
       "categories": [
         "craftable_structures",
         "mob_housing",
-        "mob_spawning_entities"
+        "mob_spawning_entities",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:46:50Z",
       "completedAt": "2026-07-21T08:46:51Z",
@@ -16273,7 +16615,9 @@
         "craftable_items",
         "dont_starve_together",
         "equipable_items",
-        "items"
+        "items",
+        "science",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:39:22Z",
       "completedAt": "2026-07-21T08:39:26Z",
@@ -16309,7 +16653,9 @@
         "dont_starve_together",
         "equipable_items",
         "hats",
-        "items"
+        "items",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:39:18Z",
       "completedAt": "2026-07-21T08:39:22Z",
@@ -16325,7 +16671,9 @@
       "artifactSha256": "413988491b43d656e9c242a9dc9cca8cada5ab2cbd6ee411d7d5336a6bbe26cf",
       "attempts": 1,
       "categories": [
-        "craftable_structures"
+        "craftable_structures",
+        "science",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:46:43Z",
       "completedAt": "2026-07-21T08:46:46Z",
@@ -16383,7 +16731,9 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "items"
+        "items",
+        "science",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:51:57Z",
       "completedAt": "2026-07-21T08:52:01Z",
@@ -16443,7 +16793,9 @@
         "decorations_filter",
         "dont_starve_together",
         "from_beyond",
-        "items"
+        "items",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:24:42Z",
       "completedAt": "2026-07-21T08:24:46Z",
@@ -16501,7 +16853,8 @@
         "craftable_items",
         "infobox_missing_crafting_description",
         "items",
-        "mob_dropped_items"
+        "mob_dropped_items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T07:35:22Z",
       "completedAt": "2026-07-21T07:35:54Z",
@@ -16549,6 +16902,23 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/cdac36cf3ffacffa93fc9072875df225f028664b338480b853f9014179bdd08d.json",
+      "artifactSha256": "8d8bbaed634798f0142efc0b3d9360f4438499c4381520c7c44f72e9fff3ee6e",
+      "attempts": 1,
+      "categories": [
+        "plants",
+        "resources"
+      ],
+      "claimedAt": "2026-07-22T02:15:20Z",
+      "completedAt": "2026-07-22T02:15:21Z",
+      "createdAt": "2026-07-22T02:15:19Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-22T02:15:21Z",
+      "url": "https://dontstarve.fandom.com/wiki/Reeds",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/ac5e74aa63a842af9a044c3271ce19253d8114c7df8067eb3973c7e0615c6198.json",
       "artifactSha256": "42a59202c4a83558bfe809827d7af363e4b2440d69f25c667dd598977d914d41",
       "attempts": 1,
@@ -16588,7 +16958,8 @@
       "categories": [
         "craftable_structures",
         "dont_starve_together",
-        "from_beyond"
+        "from_beyond",
+        "rare_blueprint_exclusive"
       ],
       "claimedAt": "2026-07-21T08:48:46Z",
       "completedAt": "2026-07-21T08:48:48Z",
@@ -16608,7 +16979,8 @@
         "craftable_structures",
         "decorations_filter",
         "infobox_missing_crafting_description",
-        "mob_spawning_entities"
+        "mob_spawning_entities",
+        "rare_blueprint_exclusive"
       ],
       "claimedAt": "2026-07-21T08:23:33Z",
       "completedAt": "2026-07-21T08:23:34Z",
@@ -16844,7 +17216,8 @@
         "craftable_items",
         "infobox_missing_crafting_description",
         "items",
-        "mob_dropped_items"
+        "mob_dropped_items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T08:52:01Z",
       "completedAt": "2026-07-21T08:52:03Z",
@@ -16917,7 +17290,9 @@
       "categories": [
         "craftable_items",
         "fuel",
-        "items"
+        "items",
+        "refine_tab",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:51:55Z",
       "completedAt": "2026-07-21T08:51:56Z",
@@ -16936,7 +17311,8 @@
         "clothing_filter",
         "craftable_items",
         "dont_starve_together",
-        "items"
+        "items",
+        "resurrection"
       ],
       "claimedAt": "2026-07-21T07:31:01Z",
       "completedAt": "2026-07-21T07:31:04Z",
@@ -17035,7 +17411,8 @@
       "categories": [
         "craftable_structures",
         "dont_starve_together",
-        "infobox_missing_crafting_description"
+        "infobox_missing_crafting_description",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:47:43Z",
       "completedAt": "2026-07-21T08:47:45Z",
@@ -17121,7 +17498,8 @@
         "a_new_reign",
         "craftable_items",
         "dont_starve_together",
-        "items"
+        "items",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:53:46Z",
       "completedAt": "2026-07-21T08:53:51Z",
@@ -17139,7 +17517,8 @@
       "categories": [
         "craftable_items",
         "equipable_items",
-        "items"
+        "items",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:39:49Z",
       "completedAt": "2026-07-21T08:39:52Z",
@@ -17231,7 +17610,8 @@
         "cooking_filter",
         "craftable_structures",
         "dont_starve_together",
-        "food_tab"
+        "food_tab",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:17:11Z",
       "completedAt": "2026-07-21T08:17:13Z",
@@ -17285,7 +17665,8 @@
       "attempts": 1,
       "categories": [
         "a_new_reign",
-        "craftable_structures"
+        "craftable_structures",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:47:04Z",
       "completedAt": "2026-07-21T08:47:05Z",
@@ -17447,7 +17828,9 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "fuel"
+        "fuel",
+        "plants",
+        "resources"
       ],
       "claimedAt": "2026-07-21T10:02:33Z",
       "completedAt": "2026-07-21T10:02:35Z",
@@ -17502,7 +17885,8 @@
         "craftable_structures",
         "dont_starve_together",
         "from_beyond",
-        "items"
+        "items",
+        "rare_blueprint_exclusive"
       ],
       "claimedAt": "2026-07-21T08:48:48Z",
       "completedAt": "2026-07-21T08:48:52Z",
@@ -17521,7 +17905,9 @@
         "containers",
         "craftable_structures",
         "dont_starve_together",
-        "infobox_missing_crafting_description"
+        "infobox_missing_crafting_description",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T07:34:28Z",
       "completedAt": "2026-07-21T07:34:32Z",
@@ -17541,7 +17927,8 @@
         "decorations_filter",
         "dont_starve_together",
         "fuel",
-        "items"
+        "items",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:23:39Z",
       "completedAt": "2026-07-21T08:23:43Z",
@@ -17561,7 +17948,8 @@
         "cooking_filter",
         "craftable_structures",
         "dont_starve_together",
-        "light_sources"
+        "light_sources",
+        "rare_blueprint_exclusive"
       ],
       "claimedAt": "2026-07-21T08:17:05Z",
       "completedAt": "2026-07-21T08:17:07Z",
@@ -17582,7 +17970,9 @@
         "dont_starve_together",
         "equipable_items",
         "fight_tab",
-        "items"
+        "items",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T07:28:31Z",
       "completedAt": "2026-07-21T07:28:35Z",
@@ -17601,7 +17991,8 @@
         "boss_dropped_items",
         "dont_starve_together",
         "items",
-        "mob_dropped_items"
+        "mob_dropped_items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T07:36:27Z",
       "completedAt": "2026-07-21T07:36:28Z",
@@ -17618,7 +18009,8 @@
       "attempts": 1,
       "categories": [
         "craftable_structures",
-        "crafting_stations"
+        "crafting_stations",
+        "science"
       ],
       "claimedAt": "2026-07-21T08:18:54Z",
       "completedAt": "2026-07-21T08:18:55Z",
@@ -17673,7 +18065,9 @@
       "categories": [
         "decorations_filter",
         "dont_starve_together",
-        "items"
+        "items",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:25:10Z",
       "completedAt": "2026-07-21T08:25:13Z",
@@ -17782,7 +18176,8 @@
         "craftable_items",
         "dont_starve_together",
         "equipable_items",
-        "items"
+        "items",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:40:13Z",
       "completedAt": "2026-07-21T08:40:17Z",
@@ -18095,7 +18490,8 @@
       "categories": [
         "craftable_items",
         "dont_starve_together",
-        "items"
+        "items",
+        "resurrection"
       ],
       "claimedAt": "2026-07-21T08:56:43Z",
       "completedAt": "2026-07-21T08:56:47Z",
@@ -18117,7 +18513,8 @@
         "equipable_items",
         "food_gardening_filter",
         "food_tab",
-        "items"
+        "items",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T07:33:48Z",
       "completedAt": "2026-07-21T07:33:55Z",
@@ -18207,7 +18604,9 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "items"
+        "items",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:52:58Z",
       "completedAt": "2026-07-21T08:53:02Z",
@@ -18524,7 +18923,8 @@
         "craftable_items",
         "decorations_filter",
         "dont_starve_together",
-        "items"
+        "items",
+        "rare_blueprint_exclusive"
       ],
       "claimedAt": "2026-07-21T08:24:12Z",
       "completedAt": "2026-07-21T08:24:13Z",
@@ -18541,7 +18941,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "items"
+        "items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T10:06:14Z",
       "completedAt": "2026-07-21T10:06:15Z",
@@ -18668,7 +19069,10 @@
       "categories": [
         "craftable_items",
         "equipable_items",
-        "items"
+        "items",
+        "science",
+        "science_tier_1",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:37:26Z",
       "completedAt": "2026-07-21T08:37:31Z",
@@ -18707,7 +19111,8 @@
         "cooling",
         "craftable_structures",
         "dont_starve_together",
-        "healing"
+        "healing",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:17:53Z",
       "completedAt": "2026-07-21T08:17:57Z",
@@ -18724,7 +19129,8 @@
       "attempts": 1,
       "categories": [
         "craftable_structures",
-        "decorations_filter"
+        "decorations_filter",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:22:53Z",
       "completedAt": "2026-07-21T08:22:55Z",
@@ -18742,7 +19148,8 @@
       "categories": [
         "boss_dropped_items",
         "items",
-        "mob_dropped_items"
+        "mob_dropped_items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T07:35:14Z",
       "completedAt": "2026-07-21T07:35:15Z",
@@ -18778,7 +19185,9 @@
         "indestructible_object",
         "mineable_objects",
         "mob_housing",
-        "mob_spawning_entities"
+        "mob_spawning_entities",
+        "portal",
+        "resources"
       ],
       "claimedAt": "2026-07-21T12:01:01Z",
       "completedAt": "2026-07-21T12:01:02Z",
@@ -18969,7 +19378,8 @@
         "craftable_items",
         "dont_starve_together",
         "from_beyond",
-        "items"
+        "items",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:58:53Z",
       "completedAt": "2026-07-21T08:58:57Z",
@@ -19042,7 +19452,8 @@
         "items",
         "light_sources",
         "mobs",
-        "nightmare_state_indicator"
+        "nightmare_state_indicator",
+        "ruins_creatures"
       ],
       "claimedAt": "2026-07-21T08:38:45Z",
       "completedAt": "2026-07-21T08:38:46Z",
@@ -19114,7 +19525,8 @@
       "categories": [
         "fuel",
         "items",
-        "mob_dropped_items"
+        "mob_dropped_items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T10:48:57Z",
       "completedAt": "2026-07-21T10:48:58Z",
@@ -19278,7 +19690,9 @@
         "fight_tab",
         "items",
         "melee_weapons",
-        "mob_dropped_items"
+        "mob_dropped_items",
+        "science",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:20:51Z",
       "completedAt": "2026-07-21T08:20:53Z",
@@ -19311,7 +19725,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "items"
+        "items",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:59:22Z",
       "completedAt": "2026-07-21T08:59:25Z",
@@ -19524,7 +19939,9 @@
       "attempts": 1,
       "categories": [
         "fuel",
-        "health_loss"
+        "health_loss",
+        "plants",
+        "resources"
       ],
       "claimedAt": "2026-07-21T10:48:53Z",
       "completedAt": "2026-07-21T10:48:55Z",
@@ -19533,6 +19950,23 @@
       "status": "Done",
       "updatedAt": "2026-07-21T10:48:55Z",
       "url": "https://dontstarve.fandom.com/wiki/Spiky_Bush",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/22a493e002c1aed7c15a4ea925ab1269eb1f93210ba8e36d5af2e13b0022cb8b.json",
+      "artifactSha256": "b502b3544244c5160361aedb5b91d2e1d6606ac1a2e45fac84385b405b97b96d",
+      "attempts": 1,
+      "categories": [
+        "plants",
+        "resources"
+      ],
+      "claimedAt": "2026-07-22T02:15:24Z",
+      "completedAt": "2026-07-22T02:15:25Z",
+      "createdAt": "2026-07-22T02:15:19Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-22T02:15:25Z",
+      "url": "https://dontstarve.fandom.com/wiki/Spiky_Tree",
       "workerId": null
     },
     {
@@ -19600,7 +20034,8 @@
         "mobs",
         "neutral_creatures",
         "nightmare_state_indicator",
-        "nocturnals"
+        "nocturnals",
+        "ruins_creatures"
       ],
       "claimedAt": "2026-07-21T09:43:43Z",
       "completedAt": "2026-07-21T09:43:44Z",
@@ -19671,7 +20106,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "events"
+        "events",
+        "plants"
       ],
       "claimedAt": "2026-07-21T08:30:14Z",
       "completedAt": "2026-07-21T08:30:15Z",
@@ -19706,7 +20142,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "items"
+        "items",
+        "plants"
       ],
       "claimedAt": "2026-07-21T10:04:44Z",
       "completedAt": "2026-07-21T10:04:44Z",
@@ -19723,7 +20160,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "from_beyond"
+        "from_beyond",
+        "plants"
       ],
       "claimedAt": "2026-07-21T10:10:39Z",
       "completedAt": "2026-07-21T10:10:40Z",
@@ -19797,7 +20235,8 @@
         "decorations_filter",
         "dont_starve_together",
         "indestructible_object",
-        "mobs"
+        "mobs",
+        "rare_blueprint_exclusive"
       ],
       "claimedAt": "2026-07-21T08:23:52Z",
       "completedAt": "2026-07-21T08:23:53Z",
@@ -19813,7 +20252,8 @@
       "artifactSha256": "2b8bc5cdb31564dbe128449b4701a5238c0dfe3e3df8afa1e1e4a5ad9e3af52d",
       "attempts": 1,
       "categories": [
-        "mineable_objects"
+        "mineable_objects",
+        "resources"
       ],
       "claimedAt": "2026-07-22T00:53:38Z",
       "completedAt": "2026-07-22T00:53:39Z",
@@ -19924,7 +20364,8 @@
         "dont_starve_together",
         "fuel",
         "items",
-        "mob_dropped_items"
+        "mob_dropped_items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T09:48:19Z",
       "completedAt": "2026-07-21T09:48:20Z",
@@ -19996,7 +20437,8 @@
       "artifactSha256": "ba9e514dccff6589901a56f7c684a115680c2ec93ecaec41a76239f29b8d8e47",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "plants"
       ],
       "claimedAt": "2026-07-21T10:04:52Z",
       "completedAt": "2026-07-21T10:04:53Z",
@@ -20029,7 +20471,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "items"
+        "items",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:52:37Z",
       "completedAt": "2026-07-21T08:52:41Z",
@@ -20064,7 +20507,8 @@
         "craftable_items",
         "equipable_items",
         "hats",
-        "items"
+        "items",
+        "science"
       ],
       "claimedAt": "2026-07-21T08:37:51Z",
       "completedAt": "2026-07-21T08:37:53Z",
@@ -20229,7 +20673,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "events"
+        "events",
+        "plants"
       ],
       "claimedAt": "2026-07-21T08:30:13Z",
       "completedAt": "2026-07-21T08:30:14Z",
@@ -20269,7 +20714,9 @@
         "craftable_items",
         "dont_starve_together",
         "equipable_items",
-        "items"
+        "items",
+        "science",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:18:08Z",
       "completedAt": "2026-07-21T08:18:13Z",
@@ -20696,7 +21143,8 @@
       "attempts": 1,
       "categories": [
         "craftable_structures",
-        "dont_starve_together"
+        "dont_starve_together",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:47:53Z",
       "completedAt": "2026-07-21T08:47:54Z",
@@ -20737,7 +21185,8 @@
         "equipable_items",
         "fight_tab",
         "items",
-        "melee_weapons"
+        "melee_weapons",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:21:14Z",
       "completedAt": "2026-07-21T08:21:18Z",
@@ -20909,7 +21358,8 @@
         "craftable_items",
         "dont_starve_together",
         "health_loss",
-        "items"
+        "items",
+        "resurrection"
       ],
       "claimedAt": "2026-07-21T08:53:31Z",
       "completedAt": "2026-07-21T08:53:32Z",
@@ -20926,7 +21376,9 @@
       "attempts": 1,
       "categories": [
         "craftable_structures",
-        "healing"
+        "healing",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:46:17Z",
       "completedAt": "2026-07-21T08:46:19Z",
@@ -20946,7 +21398,8 @@
         "craftable_structures",
         "dont_starve_together",
         "healing",
-        "items"
+        "items",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:48:05Z",
       "completedAt": "2026-07-21T08:48:08Z",
@@ -21021,7 +21474,8 @@
       "categories": [
         "craftable_structures",
         "decorations_filter",
-        "dont_starve_together"
+        "dont_starve_together",
+        "rare_blueprint_exclusive"
       ],
       "claimedAt": "2026-07-21T08:24:13Z",
       "completedAt": "2026-07-21T08:24:17Z",
@@ -21207,7 +21661,8 @@
       "categories": [
         "a_new_reign",
         "craftable_structures",
-        "dont_starve_together"
+        "dont_starve_together",
+        "rare_blueprint_exclusive"
       ],
       "claimedAt": "2026-07-21T08:47:20Z",
       "completedAt": "2026-07-21T08:47:24Z",
@@ -21263,7 +21718,9 @@
       "artifactSha256": "4c1a1caea3be91240730d11ff0ef8d7aa329af51838c6046f7581a26a034ca24",
       "attempts": 1,
       "categories": [
-        "craftable_structures"
+        "craftable_structures",
+        "science",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:46:39Z",
       "completedAt": "2026-07-21T08:46:43Z",
@@ -21282,7 +21739,9 @@
         "cooling",
         "craftable_items",
         "items",
-        "light_sources"
+        "light_sources",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:17:40Z",
       "completedAt": "2026-07-21T08:17:44Z",
@@ -21303,7 +21762,10 @@
         "dont_starve_together",
         "infobox_missing_crafting_description",
         "items",
-        "mob_dropped_items"
+        "mob_dropped_items",
+        "refine_tab",
+        "resources",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T07:36:28Z",
       "completedAt": "2026-07-21T07:36:32Z",
@@ -21320,7 +21782,9 @@
       "attempts": 1,
       "categories": [
         "craftable_structures",
-        "dont_starve_together"
+        "dont_starve_together",
+        "science_tier_1",
+        "seafaring_filter"
       ],
       "claimedAt": "2026-07-21T08:47:34Z",
       "completedAt": "2026-07-21T08:47:35Z",
@@ -21339,7 +21803,8 @@
         "ancient_tab",
         "ancient_tier_1",
         "craftable_items",
-        "items"
+        "items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T08:53:18Z",
       "completedAt": "2026-07-21T08:53:21Z",
@@ -21356,7 +21821,8 @@
       "attempts": 1,
       "categories": [
         "craftable_items",
-        "items"
+        "items",
+        "rare_blueprint_exclusive"
       ],
       "claimedAt": "2026-07-21T08:59:31Z",
       "completedAt": "2026-07-21T08:59:34Z",
@@ -21417,7 +21883,8 @@
       "attempts": 1,
       "categories": [
         "items",
-        "mob_dropped_items"
+        "mob_dropped_items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T14:21:57Z",
       "completedAt": "2026-07-21T14:21:58Z",
@@ -21508,7 +21975,8 @@
         "craftable_items",
         "dont_starve_together",
         "healing",
-        "items"
+        "items",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:55:45Z",
       "completedAt": "2026-07-21T08:55:49Z",
@@ -21559,7 +22027,8 @@
       "attempts": 1,
       "categories": [
         "craftable_structures",
-        "dont_starve_together"
+        "dont_starve_together",
+        "seafaring_filter"
       ],
       "claimedAt": "2026-07-21T08:47:54Z",
       "completedAt": "2026-07-21T08:47:56Z",
@@ -21647,7 +22116,9 @@
       "categories": [
         "craftable_items",
         "fight_tab",
-        "items"
+        "items",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:20:53Z",
       "completedAt": "2026-07-21T08:20:57Z",
@@ -21666,7 +22137,9 @@
         "craftable_items",
         "equipable_items",
         "hats",
-        "items"
+        "items",
+        "science",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:37:47Z",
       "completedAt": "2026-07-21T08:37:51Z",
@@ -21685,7 +22158,8 @@
         "craftable_items",
         "equipable_items",
         "items",
-        "light_sources"
+        "light_sources",
+        "science"
       ],
       "claimedAt": "2026-07-21T08:37:55Z",
       "completedAt": "2026-07-21T08:37:56Z",
@@ -21697,11 +22171,29 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/e620b892d53592768b72c18834fc2321368b262ec1de9264275ae88c4aff9e04.json",
+      "artifactSha256": "bdf02a1d3c1d73496ed1cce2c4e6ef6356ec765da351ffff2784fd937a12802b",
+      "attempts": 1,
+      "categories": [
+        "plants",
+        "resources"
+      ],
+      "claimedAt": "2026-07-22T02:15:25Z",
+      "completedAt": "2026-07-22T02:15:26Z",
+      "createdAt": "2026-07-22T02:15:19Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-22T02:15:26Z",
+      "url": "https://dontstarve.fandom.com/wiki/Totally_Normal_Tree",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/9984bfcbf65a23cff61e7910f95f3b6565f66a057f7e8456b0521312677eff30.json",
       "artifactSha256": "4c4dbea2459f19923373fc94072c5b5de469a94cbb2ae87fc164a869e0ec4e15",
       "attempts": 1,
       "categories": [
-        "dont_starve_together"
+        "dont_starve_together",
+        "resurrection"
       ],
       "claimedAt": "2026-07-21T10:02:41Z",
       "completedAt": "2026-07-21T10:02:42Z",
@@ -21772,7 +22264,8 @@
       "categories": [
         "craftable_items",
         "food_gardening_filter",
-        "items"
+        "items",
+        "science"
       ],
       "claimedAt": "2026-07-21T08:51:47Z",
       "completedAt": "2026-07-21T08:51:51Z",
@@ -21808,7 +22301,8 @@
         "dont_starve_together",
         "fertilizer",
         "food_gardening_filter",
-        "items"
+        "items",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:19:55Z",
       "completedAt": "2026-07-21T08:19:59Z",
@@ -21934,7 +22428,8 @@
       "attempts": 1,
       "categories": [
         "dont_starve_together",
-        "mob_spawning_entities"
+        "mob_spawning_entities",
+        "plants"
       ],
       "claimedAt": "2026-07-21T10:02:50Z",
       "completedAt": "2026-07-21T10:02:51Z",
@@ -21954,7 +22449,8 @@
         "craftable_items",
         "dont_starve_together",
         "infobox_missing_crafting_description",
-        "items"
+        "items",
+        "rare_blueprint_exclusive"
       ],
       "claimedAt": "2026-07-21T07:30:53Z",
       "completedAt": "2026-07-21T07:30:56Z",
@@ -22009,7 +22505,8 @@
       "attempts": 1,
       "categories": [
         "a_new_reign",
-        "dont_starve_together"
+        "dont_starve_together",
+        "plants"
       ],
       "claimedAt": "2026-07-21T09:48:21Z",
       "completedAt": "2026-07-21T09:48:22Z",
@@ -22049,7 +22546,8 @@
         "fuel",
         "infobox_missing_crafting_description",
         "items",
-        "mob_dropped_items"
+        "mob_dropped_items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T07:30:20Z",
       "completedAt": "2026-07-21T07:30:21Z",
@@ -22089,7 +22587,9 @@
         "equipable_items",
         "fuel",
         "items",
-        "melee_weapons"
+        "melee_weapons",
+        "science",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T07:30:43Z",
       "completedAt": "2026-07-21T07:30:45Z",
@@ -22346,7 +22846,8 @@
       "categories": [
         "dont_starve_together",
         "items",
-        "mob_dropped_items"
+        "mob_dropped_items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T10:02:51Z",
       "completedAt": "2026-07-21T10:02:52Z",
@@ -22366,7 +22867,8 @@
         "craftable_items",
         "dont_starve_together",
         "from_beyond",
-        "items"
+        "items",
+        "rare_blueprint_exclusive"
       ],
       "claimedAt": "2026-07-21T07:29:06Z",
       "completedAt": "2026-07-21T07:29:10Z",
@@ -22386,7 +22888,8 @@
         "craftable_items",
         "dont_starve_together",
         "from_beyond",
-        "items"
+        "items",
+        "rare_blueprint_exclusive"
       ],
       "claimedAt": "2026-07-21T07:29:02Z",
       "completedAt": "2026-07-21T07:29:06Z",
@@ -22497,7 +23000,9 @@
         "craftable_items",
         "equipable_items",
         "items",
-        "melee_weapons"
+        "melee_weapons",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:38:27Z",
       "completedAt": "2026-07-21T08:38:32Z",
@@ -22550,7 +23055,8 @@
       "attempts": 1,
       "categories": [
         "items",
-        "mob_dropped_items"
+        "mob_dropped_items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T14:21:48Z",
       "completedAt": "2026-07-21T14:21:49Z",
@@ -22616,7 +23122,8 @@
       "categories": [
         "craftable_structures",
         "decorations_filter",
-        "dont_starve_together"
+        "dont_starve_together",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:23:47Z",
       "completedAt": "2026-07-21T08:23:50Z",
@@ -22670,7 +23177,9 @@
         "craftable_items",
         "dont_starve_together",
         "equipable_items",
-        "items"
+        "items",
+        "science",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:39:41Z",
       "completedAt": "2026-07-21T08:39:45Z",
@@ -22690,7 +23199,9 @@
         "dont_starve_together",
         "equipable_items",
         "food_gardening_filter",
-        "items"
+        "items",
+        "science_tier_1",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:41:33Z",
       "completedAt": "2026-07-21T08:41:34Z",
@@ -22728,7 +23239,8 @@
         "food",
         "fruits",
         "healing",
-        "items"
+        "items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T08:17:59Z",
       "completedAt": "2026-07-21T08:18:00Z",
@@ -22780,7 +23292,10 @@
       "categories": [
         "craftable_items",
         "fuel",
-        "items"
+        "items",
+        "refine_tab",
+        "science_tier_1",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:54:39Z",
       "completedAt": "2026-07-21T08:54:44Z",
@@ -22816,7 +23331,8 @@
         "dont_starve_together",
         "equipable_items",
         "fight_tab",
-        "items"
+        "items",
+        "ranged_weapons"
       ],
       "claimedAt": "2026-07-21T08:21:13Z",
       "completedAt": "2026-07-21T08:21:14Z",
@@ -23225,7 +23741,9 @@
         "craftable_items",
         "equipable_items",
         "hats",
-        "items"
+        "items",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:37:57Z",
       "completedAt": "2026-07-21T08:38:01Z",
@@ -23395,7 +23913,8 @@
         "craftable_items",
         "craftable_structures",
         "decorations_filter",
-        "items"
+        "items",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:23:54Z",
       "completedAt": "2026-07-21T08:23:55Z",
@@ -23414,7 +23933,8 @@
         "a_new_reign",
         "craftable_items",
         "decorations_filter",
-        "items"
+        "items",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:23:55Z",
       "completedAt": "2026-07-21T08:23:59Z",
@@ -23433,7 +23953,9 @@
         "craftable_items",
         "craftable_structures",
         "decorations_filter",
-        "items"
+        "items",
+        "science",
+        "science_tier_1"
       ],
       "claimedAt": "2026-07-21T08:22:35Z",
       "completedAt": "2026-07-21T08:22:39Z",
@@ -23452,7 +23974,9 @@
         "craftable_items",
         "decorations_filter",
         "fuel",
-        "items"
+        "items",
+        "science",
+        "science_tier_2"
       ],
       "claimedAt": "2026-07-21T08:22:43Z",
       "completedAt": "2026-07-21T08:22:47Z",
@@ -23568,7 +24092,8 @@
       "artifactSha256": "817a5badaff205f3828079f1875d18c5f50623840c48dc4bc1fd7a1d2f2fb119",
       "attempts": 1,
       "categories": [
-        "indestructible_object"
+        "indestructible_object",
+        "portal"
       ],
       "claimedAt": "2026-07-21T12:00:56Z",
       "completedAt": "2026-07-21T12:00:58Z",
@@ -23841,7 +24366,8 @@
         "craftable_items",
         "infobox_missing_crafting_description",
         "items",
-        "mob_dropped_items"
+        "mob_dropped_items",
+        "resources"
       ],
       "claimedAt": "2026-07-21T07:36:23Z",
       "completedAt": "2026-07-21T07:36:24Z",

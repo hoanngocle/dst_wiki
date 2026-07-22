@@ -1,0 +1,45 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Resources",
+  "excludedTitles": {
+    "A Smashing Pot": "non_dst:hamlet",
+    "Bamboo": "non_dst:shipwrecked",
+    "Bamboo Patch": "non_dst:shipwrecked",
+    "Bioluminescence": "non_dst:shipwrecked",
+    "Claw Palm Tree": "non_dst:hamlet",
+    "Coffee Plant": "non_dst:shipwrecked",
+    "Coral": "non_dst:shipwrecked",
+    "Coral Reef": "non_dst:shipwrecked",
+    "Dorsal Fin": "non_dst:shipwrecked",
+    "Flotsam": "non_dst:reign_of_giants",
+    "Food": "non_item:overview",
+    "Jungle Tree": "non_dst:shipwrecked",
+    "Limpet Rock": "non_dst:shipwrecked",
+    "Non-renewable resources": "non_item:overview",
+    "Obsidian": "non_dst:shipwrecked",
+    "Oinc": "non_dst:hamlet",
+    "Palm Leaf": "non_dst:shipwrecked",
+    "Plants": "non_item:overview",
+    "Rainforest Tree": "non_dst:hamlet",
+    "Regular Jungle Tree": "non_dst:shipwrecked",
+    "Royal Gallery Key": "non_dst:hamlet",
+    "Ruined Sculptures": "non_dst:hamlet",
+    "Sand": "non_dst:shipwrecked",
+    "Sandy Pile": "non_dst:shipwrecked",
+    "Tea Tree": "non_dst:hamlet",
+    "Tuber Tree": "non_dst:hamlet",
+    "Vine": "non_dst:shipwrecked"
+  },
+  "expectedDirectPages": 106,
+  "expectedPublishedPages": 79,
+  "game": "DST",
+  "itemType": "resource",
+  "key": "resources",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Resources",
+  "tags": [
+    "Resources"
+  ]
+}

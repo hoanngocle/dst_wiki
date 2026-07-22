@@ -1,0 +1,47 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Plants",
+  "excludedTitles": {
+    "Ash Tree": "non_dst:shipwrecked",
+    "Bamboo Patch": "non_dst:shipwrecked",
+    "Brainy Sprout": "non_dst:shipwrecked",
+    "Bramble": "non_dst:hamlet",
+    "Bramble Bloom": "non_dst:hamlet",
+    "Claw Palm Tree": "non_dst:hamlet",
+    "Coffee Plant": "non_dst:shipwrecked",
+    "Creeping Vines": "non_dst:hamlet",
+    "Elephant Cactus": "non_dst:shipwrecked",
+    "Great Leafy Stalk": "non_dst:hamlet",
+    "Hanging Vine": "non_dst:hamlet",
+    "Hedge": "non_dst:hamlet",
+    "Intricate Topiary": "non_dst:hamlet",
+    "Jungle Floor Ferns": "non_dst:hamlet",
+    "Jungle Tree": "non_dst:shipwrecked",
+    "Jungle Tree Seed": "non_dst:shipwrecked",
+    "Lotus Plant": "non_dst:hamlet",
+    "Magic Flower": "non_dst:hamlet",
+    "Mangrove Tree": "non_dst:shipwrecked",
+    "Mushrooms": "non_item:overview",
+    "Nettle Vine": "non_dst:hamlet",
+    "Palm Tree": "non_dst:shipwrecked",
+    "Rainforest Tree": "non_dst:hamlet",
+    "Regular Jungle Tree": "non_dst:shipwrecked",
+    "Seaweed Plant": "non_dst:shipwrecked",
+    "Tall Grass": "non_dst:hamlet",
+    "Tea Tree": "non_dst:hamlet",
+    "Tuber Tree": "non_dst:hamlet",
+    "Weeds": "non_item:overview"
+  },
+  "expectedDirectPages": 66,
+  "expectedPublishedPages": 37,
+  "game": "DST",
+  "itemType": "object",
+  "key": "plants",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Plants",
+  "tags": [
+    "Plants"
+  ]
+}

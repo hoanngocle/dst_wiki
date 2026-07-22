@@ -475,6 +475,87 @@ class CategoryConfigTests(unittest.TestCase):
         self.assertNotIn("Flower", indicators)
         self.assertNotIn("Runic Turf", indicators)
 
+    def test_loads_reviewed_batch_eight_configs(self):
+        expected = {
+            "plants": (66, 37, "object", "Plants"),
+            "portal": (9, 2, "object", "Portal"),
+            "ranged_weapons": (15, 7, "weapon", "Ranged Weapons"),
+            "rare_blueprint_exclusive": (
+                38,
+                35,
+                "item",
+                "Rare Blueprint Exclusive",
+            ),
+            "refine_tab": (20, 15, "item", "Refine Tab"),
+            "resources": (106, 79, "resource", "Resources"),
+            "resurrection": (11, 8, "item", "Resurrection"),
+            "ruins_creatures": (13, 11, "mob", "Ruins Creatures"),
+            "science": (99, 85, "item", "Science"),
+            "science_tier_2": (147, 96, "item", "Science Tier 2"),
+            "science_tier_1": (117, 63, "item", "Science Tier 1"),
+            "seafaring_filter": (14, 13, "item", "Seafaring Filter"),
+        }
+
+        for key, values in expected.items():
+            with self.subTest(key=key):
+                direct, published, item_type, tag = values
+                config = load_category_config(key)
+                self.assertEqual(
+                    (
+                        config.expected_direct_pages,
+                        config.expected_published_pages,
+                    ),
+                    (direct, published),
+                )
+                self.assertEqual(config.item_type, item_type)
+                self.assertEqual(config.tags, (tag,))
+                self.assertEqual(config.game, "DST")
+
+        plants = dict(load_category_config("plants").excluded_titles)
+        self.assertEqual(plants["Ash Tree"], "non_dst:shipwrecked")
+        self.assertEqual(plants["Weeds"], "non_item:overview")
+        for title in (
+            "Cave Banana Tree",
+            "Cave Lichen",
+            "Reeds",
+            "Spiky Tree",
+            "Totally Normal Tree",
+        ):
+            self.assertNotIn(title, plants)
+
+        portal = dict(load_category_config("portal").excluded_titles)
+        self.assertEqual(portal["Maxwell's Door"], "non_dst:dont_starve")
+        self.assertNotIn("Sinkhole", portal)
+        self.assertNotIn("Worm Hole", portal)
+
+        ranged = dict(load_category_config("ranged_weapons").excluded_titles)
+        self.assertEqual(ranged["Boat Cannon"], "non_dst:shipwrecked")
+        self.assertEqual(ranged["Dart"], "non_item:overview")
+
+        science = dict(load_category_config("science").excluded_titles)
+        self.assertEqual(
+            science["Research Points List"],
+            "non_item:overview",
+        )
+        self.assertNotIn("Ice", science)
+
+        seafaring = dict(
+            load_category_config("seafaring_filter").excluded_titles
+        )
+        self.assertEqual(
+            seafaring["Year of the Dragonfly"],
+            "non_item:category_mismatch",
+        )
+
+        passive = load_category_config("passive_creatures")
+        self.assertEqual(
+            (
+                passive.expected_direct_pages,
+                passive.expected_published_pages,
+            ),
+            (63, 30),
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

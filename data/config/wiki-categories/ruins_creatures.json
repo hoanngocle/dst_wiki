@@ -1,0 +1,20 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Ruins Creatures",
+  "excludedTitles": {
+    "Mobs": "non_item:overview",
+    "Shadow Creature": "non_item:overview"
+  },
+  "expectedDirectPages": 13,
+  "expectedPublishedPages": 11,
+  "game": "DST",
+  "itemType": "mob",
+  "key": "ruins_creatures",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Ruins_Creatures",
+  "tags": [
+    "Ruins Creatures"
+  ]
+}

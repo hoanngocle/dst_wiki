@@ -1,0 +1,25 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Portal",
+  "excludedTitles": {
+    "Ancient Pig Ruins": "non_dst:hamlet",
+    "BFB": "non_dst:hamlet",
+    "Electric Isosceles": "non_dst:shipwrecked",
+    "Maxwell's Door": "non_dst:dont_starve",
+    "Seaworthy": "non_dst:shipwrecked",
+    "Skyworthy": "non_dst:hamlet",
+    "Wooden Thing": "non_dst:dont_starve"
+  },
+  "expectedDirectPages": 9,
+  "expectedPublishedPages": 2,
+  "game": "DST",
+  "itemType": "object",
+  "key": "portal",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Portal",
+  "tags": [
+    "Portal"
+  ]
+}

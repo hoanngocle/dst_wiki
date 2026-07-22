@@ -1,0 +1,26 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Ranged Weapons",
+  "excludedTitles": {
+    "Blunderbuss": "non_dst:hamlet",
+    "Boat Cannon": "non_dst:shipwrecked",
+    "Coconade": "non_dst:shipwrecked",
+    "Dart": "non_item:overview",
+    "Eyeshot": "non_dst:shipwrecked",
+    "Harpoon": "non_dst:shipwrecked",
+    "Pew-matic Horn": "non_dst:hamlet",
+    "Spear Gun": "non_dst:shipwrecked"
+  },
+  "expectedDirectPages": 15,
+  "expectedPublishedPages": 7,
+  "game": "DST",
+  "itemType": "weapon",
+  "key": "ranged_weapons",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Ranged_Weapons",
+  "tags": [
+    "Ranged Weapons"
+  ]
+}

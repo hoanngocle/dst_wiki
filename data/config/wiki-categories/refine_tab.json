@@ -1,0 +1,23 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Refine Tab",
+  "excludedTitles": {
+    "Claw Palm Sapling": "non_dst:hamlet",
+    "Cloth": "non_dst:shipwrecked",
+    "Coral Nubbin": "non_dst:shipwrecked",
+    "Limestone": "non_dst:shipwrecked",
+    "Venom Gland": "non_dst:shipwrecked"
+  },
+  "expectedDirectPages": 20,
+  "expectedPublishedPages": 15,
+  "game": "DST",
+  "itemType": "item",
+  "key": "refine_tab",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Refine_Tab",
+  "tags": [
+    "Refine Tab"
+  ]
+}

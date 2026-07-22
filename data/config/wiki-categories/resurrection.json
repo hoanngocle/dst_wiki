@@ -1,0 +1,21 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Resurrection",
+  "excludedTitles": {
+    "Compromising Statue": "non_dst:dont_starve",
+    "Life Jacket": "non_dst:shipwrecked",
+    "Magic Flower": "non_dst:hamlet"
+  },
+  "expectedDirectPages": 11,
+  "expectedPublishedPages": 8,
+  "game": "DST",
+  "itemType": "item",
+  "key": "resurrection",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Resurrection",
+  "tags": [
+    "Resurrection"
+  ]
+}

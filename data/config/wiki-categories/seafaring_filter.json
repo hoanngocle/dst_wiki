@@ -1,0 +1,19 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Seafaring Filter",
+  "excludedTitles": {
+    "Year of the Dragonfly": "non_item:category_mismatch"
+  },
+  "expectedDirectPages": 14,
+  "expectedPublishedPages": 13,
+  "game": "DST",
+  "itemType": "item",
+  "key": "seafaring_filter",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Seafaring_Filter",
+  "tags": [
+    "Seafaring Filter"
+  ]
+}
