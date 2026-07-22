@@ -1,0 +1,17 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Shadow Magic Filter",
+  "excludedTitles": {},
+  "expectedDirectPages": 31,
+  "expectedPublishedPages": 31,
+  "game": "DST",
+  "itemType": "item",
+  "key": "shadow_magic_filter",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Shadow_Magic_Filter",
+  "tags": [
+    "Shadow Magic Filter"
+  ]
+}

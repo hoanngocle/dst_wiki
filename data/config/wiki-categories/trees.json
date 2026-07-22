@@ -1,0 +1,28 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Trees",
+  "excludedTitles": {
+    "Ash Tree": "non_dst:shipwrecked",
+    "Claw Palm Tree": "non_dst:hamlet",
+    "Jungle Tree": "non_dst:shipwrecked",
+    "Mangrove Tree": "non_dst:shipwrecked",
+    "Palm Tree": "non_dst:shipwrecked",
+    "Palm Treeguard": "non_dst:shipwrecked",
+    "Rainforest Tree": "non_dst:hamlet",
+    "Regular Jungle Tree": "non_dst:shipwrecked",
+    "Tea Tree": "non_dst:hamlet",
+    "Tuber Tree": "non_dst:hamlet"
+  },
+  "expectedDirectPages": 27,
+  "expectedPublishedPages": 17,
+  "game": "DST",
+  "itemType": "object",
+  "key": "trees",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Trees",
+  "tags": [
+    "Trees"
+  ]
+}

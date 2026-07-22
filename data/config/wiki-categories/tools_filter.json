@@ -1,0 +1,17 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Tools Filter",
+  "excludedTitles": {},
+  "expectedDirectPages": 38,
+  "expectedPublishedPages": 38,
+  "game": "DST",
+  "itemType": "item",
+  "key": "tools_filter",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Tools_Filter",
+  "tags": [
+    "Tools Filter"
+  ]
+}

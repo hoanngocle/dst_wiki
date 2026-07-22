@@ -1,0 +1,25 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Vegetables",
+  "excludedTitles": {
+    "Dried Seaweed": "non_dst:shipwrecked",
+    "Lotus Flower": "non_dst:hamlet",
+    "Radish": "non_dst:hamlet",
+    "Seaweed": "non_dst:shipwrecked",
+    "Sweet Potato": "non_dst:shipwrecked",
+    "Tuber": "non_dst:hamlet",
+    "Vegetable": "non_item:overview"
+  },
+  "expectedDirectPages": 33,
+  "expectedPublishedPages": 26,
+  "game": "DST",
+  "itemType": "food",
+  "key": "vegetables",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Vegetables",
+  "tags": [
+    "Vegetables"
+  ]
+}

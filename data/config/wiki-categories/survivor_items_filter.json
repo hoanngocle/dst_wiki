@@ -1,0 +1,17 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Survivor Items Filter",
+  "excludedTitles": {},
+  "expectedDirectPages": 21,
+  "expectedPublishedPages": 21,
+  "game": "DST",
+  "itemType": "item",
+  "key": "survivor_items_filter",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Survivor_Items_Filter",
+  "tags": [
+    "Survivor Items Filter"
+  ]
+}

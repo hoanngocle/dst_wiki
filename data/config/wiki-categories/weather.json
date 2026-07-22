@@ -1,0 +1,22 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Weather",
+  "excludedTitles": {
+    "Dripple Pipes": "non_dst:shipwrecked",
+    "Hail": "non_dst:shipwrecked",
+    "Howling Conch": "non_dst:shipwrecked",
+    "Sail Stick": "non_dst:shipwrecked"
+  },
+  "expectedDirectPages": 11,
+  "expectedPublishedPages": 7,
+  "game": "DST",
+  "itemType": "content",
+  "key": "weather",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Weather",
+  "tags": [
+    "Weather"
+  ]
+}

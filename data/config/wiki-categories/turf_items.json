@@ -1,0 +1,36 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Turf Items",
+  "excludedTitles": {
+    "Ashy Turf": "non_dst:shipwrecked",
+    "Cultivated Turf": "non_dst:hamlet",
+    "Dense Turf": "non_dst:hamlet",
+    "Flat Stone Turf": "non_dst:hamlet",
+    "Floor": "duplicate:canonical_redirect",
+    "Jungle Turf": "non_dst:shipwrecked",
+    "Lawn Turf": "non_dst:hamlet",
+    "Magma Turf": "non_dst:shipwrecked",
+    "Meadow Turf": "non_dst:shipwrecked",
+    "Mossy Turf": "non_dst:hamlet",
+    "Painted Sand Turf": "non_dst:hamlet",
+    "Rainforest Turf": "non_dst:hamlet",
+    "Snakeskin Rug": "non_dst:shipwrecked",
+    "Stone Road Turf": "non_dst:hamlet",
+    "Tidal Marsh Turf": "non_dst:shipwrecked",
+    "Turfs": "non_item:overview",
+    "Volcano Turf": "non_dst:shipwrecked",
+    "Wild Plains Turf": "non_dst:hamlet"
+  },
+  "expectedDirectPages": 50,
+  "expectedPublishedPages": 32,
+  "game": "DST",
+  "itemType": "item",
+  "key": "turf_items",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Turf_Items",
+  "tags": [
+    "Turf Items"
+  ]
+}

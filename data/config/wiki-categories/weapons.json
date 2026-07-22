@@ -1,0 +1,41 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Weapons",
+  "excludedTitles": {
+    "Blunderbuss": "non_dst:hamlet",
+    "Boat Cannon": "non_dst:shipwrecked",
+    "Cactus Spike": "non_dst:shipwrecked",
+    "Coconade": "non_dst:shipwrecked",
+    "Cork Bat": "non_dst:hamlet",
+    "Cutlass Supreme": "non_dst:shipwrecked",
+    "Executive Hammer": "non_dst:hamlet",
+    "Eyeshot": "non_dst:shipwrecked",
+    "Gunpowder Barrel": "non_dst:shipwrecked",
+    "Halberd": "non_dst:hamlet",
+    "Harpoon": "non_dst:shipwrecked",
+    "Magnifying Glass": "non_dst:hamlet",
+    "Obsidian Axe": "non_dst:shipwrecked",
+    "Obsidian Machete": "non_dst:shipwrecked",
+    "Obsidian Spear": "non_dst:shipwrecked",
+    "Peg Leg": "non_dst:shipwrecked",
+    "Pew-matic Horn": "non_dst:hamlet",
+    "Poison Spear": "non_dst:shipwrecked",
+    "Quackering Ram": "non_dst:shipwrecked",
+    "Spear Gun": "non_dst:shipwrecked",
+    "Stalking Stick": "non_dst:hamlet",
+    "Trident": "non_dst:shipwrecked",
+    "Weapon": "non_item:overview"
+  },
+  "expectedDirectPages": 58,
+  "expectedPublishedPages": 35,
+  "game": "DST",
+  "itemType": "weapon",
+  "key": "weapons",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Weapons",
+  "tags": [
+    "Weapons"
+  ]
+}

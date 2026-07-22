@@ -1,0 +1,19 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Spiders",
+  "excludedTitles": {
+    "Spiders": "non_item:overview"
+  },
+  "expectedDirectPages": 14,
+  "expectedPublishedPages": 13,
+  "game": "DST",
+  "itemType": "content",
+  "key": "spiders",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Spiders",
+  "tags": [
+    "Spiders"
+  ]
+}

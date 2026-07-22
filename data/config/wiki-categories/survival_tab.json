@@ -1,0 +1,28 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Survival Tab",
+  "excludedTitles": {
+    "Anti Venom": "non_dst:shipwrecked",
+    "Bird Whistle": "non_dst:hamlet",
+    "Bug B'Gone": "non_dst:hamlet",
+    "Doydoy Nest": "non_dst:shipwrecked",
+    "Palm Leaf Hut": "non_dst:shipwrecked",
+    "Sea Sack": "non_dst:shipwrecked",
+    "Silly Monkey Ball": "non_dst:shipwrecked",
+    "Thatch Pack": "non_dst:shipwrecked",
+    "Tropical Fan": "non_dst:shipwrecked",
+    "Tropical Parasol": "non_dst:shipwrecked"
+  },
+  "expectedDirectPages": 34,
+  "expectedPublishedPages": 24,
+  "game": "DST",
+  "itemType": "item",
+  "key": "survival_tab",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Survival_Tab",
+  "tags": [
+    "Survival Tab"
+  ]
+}

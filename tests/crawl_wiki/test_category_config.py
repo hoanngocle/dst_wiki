@@ -556,6 +556,68 @@ class CategoryConfigTests(unittest.TestCase):
             (63, 30),
         )
 
+    def test_loads_reviewed_batch_nine_configs(self):
+        expected = {
+            "shadow_magic_filter": (31, 31, "item", "Shadow Magic Filter"),
+            "spiders": (14, 13, "content", "Spiders"),
+            "structures": (278, 155, "structure", "Structures"),
+            "survival_tab": (34, 24, "item", "Survival Tab"),
+            "survivor_items_filter": (
+                21,
+                21,
+                "item",
+                "Survivor Items Filter",
+            ),
+            "tools_filter": (38, 38, "item", "Tools Filter"),
+            "tools_tab": (12, 10, "item", "Tools Tab"),
+            "turf_items": (50, 32, "item", "Turf Items"),
+            "trees": (27, 17, "object", "Trees"),
+            "vegetables": (33, 26, "food", "Vegetables"),
+            "weapons": (58, 35, "weapon", "Weapons"),
+            "weather": (11, 7, "content", "Weather"),
+        }
+
+        for key, values in expected.items():
+            with self.subTest(key=key):
+                direct, published, item_type, tag = values
+                config = load_category_config(key)
+                self.assertEqual(
+                    (
+                        config.expected_direct_pages,
+                        config.expected_published_pages,
+                    ),
+                    (direct, published),
+                )
+                self.assertEqual(config.item_type, item_type)
+                self.assertEqual(config.tags, (tag,))
+                self.assertEqual(config.game, "DST")
+
+        structures = dict(load_category_config("structures").excluded_titles)
+        self.assertEqual(structures["Cave Cleft"], "non_dst:hamlet")
+        self.assertEqual(structures["Crate"], "non_dst:shipwrecked")
+        self.assertEqual(structures["Structures"], "non_item:overview")
+        self.assertEqual(
+            structures["Suspicious Peeper"],
+            "non_item:category_mismatch",
+        )
+        self.assertNotIn("Merm Head", structures)
+        self.assertNotIn("Pig Head", structures)
+        self.assertNotIn("Quagmire Firepit", structures)
+
+        turf = dict(load_category_config("turf_items").excluded_titles)
+        self.assertEqual(turf["Floor"], "duplicate:canonical_redirect")
+        self.assertEqual(turf["Turfs"], "non_item:overview")
+
+        weapons = dict(load_category_config("weapons").excluded_titles)
+        self.assertEqual(weapons["Obsidian Axe"], "non_dst:shipwrecked")
+        self.assertEqual(
+            weapons["Obsidian Machete"],
+            "non_dst:shipwrecked",
+        )
+
+        weather = dict(load_category_config("weather").excluded_titles)
+        self.assertNotIn("Snow", weather)
+
 
 if __name__ == "__main__":
     unittest.main()
