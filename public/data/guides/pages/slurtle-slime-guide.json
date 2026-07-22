@@ -1,0 +1,59 @@
+{
+  "audience": "intermediate",
+  "cover": {
+    "alt": "Hướng dẫn tạo Slurtle Slime",
+    "height": 64,
+    "sha256": "be515d52ee59c5bce2fc4b1144e0120f33c6105d9908bb20b6ff2ba5d1354b5b",
+    "src": "/assets/guides/slurtle-slime.png",
+    "width": 64
+  },
+  "id": "guide:slurtle-slime-guide",
+  "readingMinutes": 4,
+  "revision": {
+    "id": 495008,
+    "sha1": "32b644ddc2f5095ba8410395604e03cdea02638e",
+    "timestamp": "2021-07-28T15:11:59Z"
+  },
+  "schemaVersion": 1,
+  "sections": [
+    {
+      "heading": "Tổng quan",
+      "html": "<p>This guide explains the mechanics of <a href=\"https://dontstarve.fandom.com/wiki/Slurtle_Slime\" rel=\"noreferrer\" target=\"_blank\">Slurtle Slime</a> production.\n</p>\n<figure><a href=\"https://static.wikia.nocookie.net/dont-starve-game/images/5/5c/Slurtle_Slime.png/revision/latest?cb=20130520052505\" rel=\"noreferrer\" target=\"_blank\"><img src=\"/assets/guides/slurtle-slime.png\" alt=\"Slurtle Slime\" loading=\"lazy\" width=\"100\" height=\"100\"></a><figcaption></figcaption></figure>\n<p>Slurtle Slime is produced when a <a href=\"https://dontstarve.fandom.com/wiki/Slurtle\" rel=\"noreferrer\" target=\"_blank\">Slurtle</a> or <a href=\"https://dontstarve.fandom.com/wiki/Snurtle\" rel=\"noreferrer\" target=\"_blank\">Snurtle</a> consumes a certain amount of <a href=\"https://dontstarve.fandom.com/wiki/Category:Minerals\" rel=\"noreferrer\" target=\"_blank\">Minerals</a>, processes these minerals, and drops Slurtle Slime on the ground as a result. It has two main functions; it can be used as an explosive (similar to, but weaker than, <a href=\"https://dontstarve.fandom.com/wiki/Gunpowder\" rel=\"noreferrer\" target=\"_blank\">Gunpowder</a>) or it can be used as fuel for <a href=\"https://dontstarve.fandom.com/wiki/Lantern\" rel=\"noreferrer\" target=\"_blank\">Lanterns</a>.\n</p>",
+      "id": "overview",
+      "level": 1
+    }
+  ],
+  "slug": "slurtle-slime-guide",
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Guides/Slurtle_Slime_Guide",
+  "summaryVi": "Giải thích cách Slurtle và Snurtle tiêu thụ khoáng vật để tạo Slurtle Slime trong DST.",
+  "title": "Slurtle Slime Guide",
+  "titleVi": "Hướng dẫn tạo Slurtle Slime",
+  "toc": [
+    {
+      "id": "contents",
+      "label": "Contents",
+      "level": 2
+    },
+    {
+      "id": "slurtle-and-snurtle-behavior",
+      "label": "Slurtle and Snurtle behavior[]",
+      "level": 2
+    },
+    {
+      "id": "mineral-values",
+      "label": "Mineral values[]",
+      "level": 2
+    },
+    {
+      "id": "slurtle-slime-production",
+      "label": "Slurtle Slime production[]",
+      "level": 2
+    },
+    {
+      "id": "trivia",
+      "label": "Trivia[]",
+      "level": 2
+    }
+  ],
+  "topic": "resources"
+}

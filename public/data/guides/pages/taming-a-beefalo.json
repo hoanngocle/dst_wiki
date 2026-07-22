@@ -1,0 +1,56 @@
+{
+  "audience": "intermediate",
+  "cover": {
+    "alt": "Thuần hóa Beefalo",
+    "height": 571,
+    "sha256": "f7f51bed0b3014f59831c9f681ba6e3495bb42ddc7fa9854a06c5623945b6f38",
+    "src": "/assets/guides/beefalo-tendencies.jpg",
+    "width": 1152
+  },
+  "id": "guide:taming-a-beefalo",
+  "readingMinutes": 7,
+  "revision": {
+    "id": 535645,
+    "sha1": "d711f6df4c230b0044ffa1022cba1fd926b53029",
+    "timestamp": "2024-07-23T17:43:42Z"
+  },
+  "schemaVersion": 1,
+  "sections": [
+    {
+      "heading": "Tổng quan",
+      "html": "<p>\nTaming a Beefalo is a <a href=\"https://dontstarve.fandom.com/wiki/Adventure_Mode\" rel=\"noreferrer\" target=\"_blank\">long, arduous</a> project. Make sure you think it is worth it before doing this. That being said, taming a <a href=\"https://dontstarve.fandom.com/wiki/Beefalo\" rel=\"noreferrer\" target=\"_blank\">Beefalo</a> has many benefits- increased movement speed, damage, and some other rather specific quirks. For example, say you are lugging the <a href=\"https://dontstarve.fandom.com/wiki/Suspicious_Marble\" rel=\"noreferrer\" target=\"_blank\">Suspicious Marble</a> around, but it is far from the <a href=\"https://dontstarve.fandom.com/wiki/Marble_Sculptures\" rel=\"noreferrer\" target=\"_blank\">Marble Sculptures</a> themselves. Riding a Beefalo while carrying it will make the long, slow walk a quick ride. So, get the materials needed. (Note: This guide is a work in progress, so check for more details later.)</p><figure> \t<a href=\"https://static.wikia.nocookie.net/dont-starve-game/images/6/6b/Beefalo_Tendencies.jpg/revision/latest?cb=20190615170311\" rel=\"noreferrer\" target=\"_blank\"><img src=\"/assets/guides/beefalo-tendencies.jpg\" alt=\"The three tendencies.\" loading=\"lazy\" width=\"180\" height=\"89\"></a> \t \t<figcaption> \t\t \t\t\t<a href=\"https://dontstarve.fandom.com/wiki/File:Beefalo_Tendencies.jpg\" rel=\"noreferrer\" target=\"_blank\"></a> \t\t \t\t \t\t \t\t\t<p>The three tendencies.</p> \t\t \t</figcaption> </figure>",
+      "id": "overview",
+      "level": 1
+    },
+    {
+      "heading": "Statistics and Tendencies[]",
+      "html": "<h2 id=\"statistics-and-tendencies\">Statistics and Tendencies</h2>\n<p>Taming a Beefalo requires some knowledge of the inside statistics. The three stats you need to look out for: Hunger, Obedience, and Domestication. Hunger is how full your Beefalo is, and it is very important. Beefalo lose hunger very quickly, so you will need a large <a href=\"https://dontstarve.fandom.com/wiki/Berry_Bush\" rel=\"noreferrer\" target=\"_blank\">Berry Bush</a>, <a href=\"https://dontstarve.fandom.com/wiki/Sapling\" rel=\"noreferrer\" target=\"_blank\">Sapling</a>, or <a href=\"https://dontstarve.fandom.com/wiki/Grass_Tuft\" rel=\"noreferrer\" target=\"_blank\">Grass Tuft</a> farm. You can also use <a href=\"https://dontstarve.fandom.com/wiki/Crock_Pot\" rel=\"noreferrer\" target=\"_blank\">Crock Pot</a> dishes, but this isn&#x27;t recommended because of the time and effort needed to consistently feed your Fluffy companion with these. I recommend using twigs, as they grow pretty quickly and feed more than cut grass. While your Beefalo&#x27;s hunger is over zero, its Obedience will grow slowly. Obedience is what you can do with the Beefalo. It has a maximum of 100. When it&#x27;s over 10, you can saddle the Beefalo. When it&#x27;s over 50, you can ride the Beefalo. The Beefalo will however shake off the saddle when Obedience is less than 40, so be careful. Obedience constantly decreases at a rate of 50 a day but is increased by 40 when you use a <a href=\"https://dontstarve.fandom.com/wiki/Brush\" rel=\"noreferrer\" target=\"_blank\">Brush</a> on it (highly recommended), and 10 when you feed it. Being overfed will decrease it by 30, starving for an entire day will remove all Obedience, and being shaved or attacked by the player will as well. Being attacked by other things will reduce it by 1. If you only want to ride it, and don&#x27;t mind being bucked off every now then, you could stop here. However, Domestication is a thing. It&#x27;s the focus of this entire process. At 100% Domestication, you will see a fourth stat that isn&#x27;t really a stat: Tendency. Depending on what you do with your Beefalo, different tendencies appear. The Ornery Beefalo will deal more damage, and appears if you fight with your Beefalo and have it tank some hits. The second part is risky, but due to the recent update has become less unadvised. The Rider tendency will appear when you ride your Beefalo around nonstop. This is by far the most useful way of getting around due to the notable speed boost. The Pudgy tendency will appear when you feed your Beefalo a lot or even overfeed it. He will grant a large sanity boost of 6.8 per minute.\n</p><p>Most likely, the player will end up getting either a Rider or a Pudgy Beefalo their first time around, if they just feed and ride it. This is okay, as they each have their uses. Rider is good for getting places fast (as well as moving heavy objects), Pudgy could be preferred if the player spends a lot of time in the caves or near monsters, and Ornery is good for dealing with the giants. Ornery is probably the hardest to pull off, yet, when combined with the power of a war saddle, becomes an extreme hard-hitter that can shield you from melee damage, at the cost of having the slowest possible speed a beefalo can have. ( And yet it still has an enormous increase in speed than just walking.) \n</p><p>The disadvantages of this power are stated below, but it is worth it in the long run.\n</p>",
+      "id": "statistics-and-tendencies",
+      "level": 2
+    },
+    {
+      "heading": "Process of Taming[]",
+      "html": "<h2 id=\"process-of-taming\">Process of Taming</h2>\n<p>Taming this hairy helper is no minor task, for it takes around 20-25 days of feeding and riding some beast, but it could take as little as 15 days if you know what you are doing. Luckily, this will tell you the forbidden knowledge on just that.\n</p><p>The first thing you will likely want to consider is tendencies. All tendencies take the same domestication time, but might be harder to pull off compared to others. A  averagely complex summary: you are going to need to keep a full 40 twigs on you at all times, as food for the beefalo so it will like you. Bonding it to a bell is a must (for myself anyways), or otherwise it will just run off eventually and your work will be wasted. You will need a saddle to ride around on your underling, but if you are skilled in killing pigs, then the pig skin is probably the hardest part for it. Also, if you are early in the game, I recommend you to forgo the brush unless you do not have (the walrus tusk is a chance drop from the dangerous Mactusk, and the steel wool comes from the Kween of Chitin&#x27; (sic) :( a Ewecus.) and instead just feed it and ride it as much as you can. Keep your own food for yourself, and just keep feeding the beefalo the twigs, unless the food is starting to go stale, then I recommend it.\n</p><p>Recently, Don’t Starve Together has released two new food exclusively for beefalo, which are <a href=\"https://dontstarve.fandom.com/wiki/Steamed_Twigs\" rel=\"noreferrer\" target=\"_blank\">Steamed Twigs</a> and <a href=\"https://dontstarve.fandom.com/wiki/Beefalo_Treats\" rel=\"noreferrer\" target=\"_blank\">Beefalo Treats</a>. I recommend only making the twigs only if you immediately feed them to the beefalo, as the steamed version spoils yet has vastly superior hunger to its ingredients of 4 twigs.The treats are an health food so it shouldn’t be made unless going into battle.\n</p><p>If you want a boss <a href=\"https://www.youtube.com/watch?v=FfQWz4gVcP8\" rel=\"noreferrer\" target=\"_blank\">face melter</a>, go for ornery with a <a href=\"https://dontstarve.fandom.com/wiki/Glossamer_Saddle\" rel=\"noreferrer\" target=\"_blank\">Glossamer Saddle</a>. If you want to get somewhere at practically the speed of sound, get rider with the aforementioned saddle. If you want a free sanity machine, go for pudgy and saddle doesn’t matter. If you want none of these, then you could theoretically try and pull off the near-impossible task of taming a neutral-tendency beefalo, which is normally done by pure mistake.\n</p><p>Theoretically, if you wanted to get a beefalo undomesticated so that you can change the tendency, a player hitting it lowers domestication by 10% and shaving does a whopping 50%. I recommend to hit it until it gets undomesticated (it should look like a normal beefalo again) with a weak tool or weapon. (lanterns and walking canes should work well.)\n</p>",
+      "id": "process-of-taming",
+      "level": 2
+    }
+  ],
+  "slug": "taming-a-beefalo",
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Guides/Taming_a_Beefalo",
+  "summaryVi": "Hướng dẫn tăng obedience, domestication và chọn tendency khi thuần hóa Beefalo.",
+  "title": "Taming a Beefalo",
+  "titleVi": "Thuần hóa Beefalo",
+  "toc": [
+    {
+      "id": "statistics-and-tendencies",
+      "label": "Statistics and Tendencies[]",
+      "level": 2
+    },
+    {
+      "id": "process-of-taming",
+      "label": "Process of Taming[]",
+      "level": 2
+    }
+  ],
+  "topic": "domestication"
+}

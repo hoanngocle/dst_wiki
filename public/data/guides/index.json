@@ -1,0 +1,78 @@
+{
+  "count": 4,
+  "guides": [
+    {
+      "audience": "advanced",
+      "cover": {
+        "alt": "Cách đánh bại các Giant trong DST",
+        "height": 1080,
+        "sha256": "516d2e1b6a71ffba8fe4f56539b6b1ac99ecb7f8fdb5a707afc5a799e938ab35",
+        "src": "/assets/guides/deerclops-steam-wallpaper.png",
+        "width": 1920
+      },
+      "id": "guide:how-to-kill-the-giants-in-dst",
+      "readingMinutes": 7,
+      "slug": "how-to-kill-the-giants-in-dst",
+      "sourceUrl": "https://dontstarve.fandom.com/wiki/Guides/How_to_Kill_the_Giants_in_DST",
+      "summaryVi": "Chuẩn bị trang bị, bẫy và chiến thuật để đối phó các Giant trong Don't Starve Together.",
+      "title": "How to Kill the Giants in DST",
+      "titleVi": "Cách đánh bại các Giant trong DST",
+      "topic": "combat"
+    },
+    {
+      "audience": "intermediate",
+      "cover": {
+        "alt": "Căn cứ hiệu quả trong 13 ngày đầu",
+        "height": 607,
+        "sha256": "8e0ae786c1c39c314cf920d4c0110c9326e08201842f1d94f5a111873f40d124",
+        "src": "/assets/guides/charlie-closeup.png",
+        "width": 471
+      },
+      "id": "guide:maximum-efficiency-day-13-base-dst-guide",
+      "readingMinutes": 8,
+      "slug": "maximum-efficiency-day-13-base-dst-guide",
+      "sourceUrl": "https://dontstarve.fandom.com/wiki/Guides/Maximum_Efficiency_Day_13_Base_DST_Guide",
+      "summaryVi": "Lộ trình khám phá, thu thập và dựng căn cứ hiệu quả trong 13 ngày đầu của một thế giới DST.",
+      "title": "Maximum Efficiency Day 13 Base DST Guide",
+      "titleVi": "Căn cứ hiệu quả trong 13 ngày đầu",
+      "topic": "base-building"
+    },
+    {
+      "audience": "intermediate",
+      "cover": {
+        "alt": "Hướng dẫn tạo Slurtle Slime",
+        "height": 64,
+        "sha256": "be515d52ee59c5bce2fc4b1144e0120f33c6105d9908bb20b6ff2ba5d1354b5b",
+        "src": "/assets/guides/slurtle-slime.png",
+        "width": 64
+      },
+      "id": "guide:slurtle-slime-guide",
+      "readingMinutes": 4,
+      "slug": "slurtle-slime-guide",
+      "sourceUrl": "https://dontstarve.fandom.com/wiki/Guides/Slurtle_Slime_Guide",
+      "summaryVi": "Giải thích cách Slurtle và Snurtle tiêu thụ khoáng vật để tạo Slurtle Slime trong DST.",
+      "title": "Slurtle Slime Guide",
+      "titleVi": "Hướng dẫn tạo Slurtle Slime",
+      "topic": "resources"
+    },
+    {
+      "audience": "intermediate",
+      "cover": {
+        "alt": "Thuần hóa Beefalo",
+        "height": 571,
+        "sha256": "f7f51bed0b3014f59831c9f681ba6e3495bb42ddc7fa9854a06c5623945b6f38",
+        "src": "/assets/guides/beefalo-tendencies.jpg",
+        "width": 1152
+      },
+      "id": "guide:taming-a-beefalo",
+      "readingMinutes": 7,
+      "slug": "taming-a-beefalo",
+      "sourceUrl": "https://dontstarve.fandom.com/wiki/Guides/Taming_a_Beefalo",
+      "summaryVi": "Hướng dẫn tăng obedience, domestication và chọn tendency khi thuần hóa Beefalo.",
+      "title": "Taming a Beefalo",
+      "titleVi": "Thuần hóa Beefalo",
+      "topic": "domestication"
+    }
+  ],
+  "schemaVersion": 1
+}
