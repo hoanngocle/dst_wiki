@@ -188,7 +188,7 @@ export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
             onKeyDown={(event) => {
               if (event.key === "Escape") updateQuery("");
             }}
-            placeholder="Tìm theo tên, prefab, nội dung Wiki hoặc nguyên liệu..."
+            placeholder="Tên Việt, tên Anh hoặc code..."
             aria-describedby="item-search-help"
             className="h-14 w-full rounded-xl border border-[#a8b8cc] bg-[#f8fafc] pl-12 pr-28 text-base text-[#14233b] placeholder:text-[#53647a] shadow-[0_10px_28px_rgba(34,61,96,0.08)] outline-none transition focus:border-[#2e5fb3] focus:ring-4 focus:ring-[#2e5fb3]/15"
           />
@@ -208,7 +208,7 @@ export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
           )}
         </div>
         <p id="item-search-help" className="sr-only">
-          Tìm theo tên tiếng Việt, tên tiếng Anh, Wiki, prefab, mô tả hoặc nguyên liệu.
+          Tìm theo tên tiếng Việt, tên tiếng Anh, code prefab, Wiki, mô tả hoặc nguyên liệu.
         </p>
       </div>
 

@@ -8,6 +8,7 @@ it("renders six named base image cards", () => {
   expect(screen.getByRole("heading", { level: 1, name: "Thư viện Base" })).toBeDefined();
   expect(screen.getByRole("link", { name: "Base" }).getAttribute("aria-current")).toBe("page");
   expect(screen.getAllByRole("img")).toHaveLength(6);
+  expect(screen.getAllByRole("img").every((image) => image.getAttribute("loading") === "eager")).toBe(true);
   expect(screen.getAllByRole("listitem")).toHaveLength(6);
   expect(screen.getByText("Base Khởi Đầu")).toBeDefined();
 });

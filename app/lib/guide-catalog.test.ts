@@ -64,6 +64,31 @@ describe("guide catalog contract", () => {
     ).toThrow(/summaryVi/);
   });
 
+  it("removes noisy and orphaned table-of-contents rows", () => {
+    const detail = parseGuideDetail({
+      ...entry,
+      schemaVersion: 1,
+      revision: { id: 7, timestamp: "2026-07-22T00:00:00Z", sha1: "sha" },
+      toc: [
+        { id: "contents", label: "Contents", level: 2 },
+        { id: "thong-ke", label: "Thống kê[]", level: 2 },
+        { id: "khong-ton-tai", label: "Mục mồ côi[]", level: 2 },
+      ],
+      sections: [
+        {
+          id: "overview",
+          heading: "Tổng quan",
+          level: 1,
+          html: '<h2 id="thong-ke">Thống kê</h2><p>Nội dung</p>',
+        },
+      ],
+    });
+
+    expect(detail.toc).toEqual([
+      { id: "thong-ke", label: "Thống kê", level: 2 },
+    ]);
+  });
+
   it("filters accent-insensitively by query, topic, and audience", () => {
     const guides = parseGuideIndex({
       schemaVersion: 1,

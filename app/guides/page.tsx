@@ -19,7 +19,7 @@ export default function GuidesPage() {
       <main className="mx-auto max-w-7xl px-4 py-9 sm:px-6 sm:py-12 lg:px-8">
         <div className="grid gap-8 border-b border-[#c7d2df] pb-9 lg:grid-cols-[minmax(0,1fr)_20rem] lg:items-end">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#2e5fb3]">DST Field Notes</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#2e5fb3]">Sổ tay DST</p>
             <h1 className="mt-3 max-w-3xl text-4xl font-semibold leading-[1.04] tracking-[-0.04em] text-[#14233b] sm:text-5xl">Guide thực chiến, đọc riêng từng bài</h1>
             <p className="mt-4 max-w-[65ch] text-base leading-7 text-[#53647a]">Nội dung áp dụng cho Don&apos;t Starve Together, có ảnh nguồn và thông tin phiên bản đã kiểm tra.</p>
           </div>

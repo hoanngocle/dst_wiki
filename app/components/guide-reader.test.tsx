@@ -27,6 +27,7 @@ const guide: GuideDetail = {
 it("renders a dedicated article with cover, toc, sections, and source attribution", () => {
   render(<GuideReader guide={guide} />);
   expect(screen.getByRole("heading", { name: "Thuần hóa Beefalo", level: 1 })).toBeDefined();
+  expect(screen.queryByText("Taming a Beefalo")).toBeNull();
   expect(screen.getByRole("navigation", { name: "Mục lục hướng dẫn" })).toBeDefined();
   expect(screen.getByRole("link", { name: "Bắt đầu" }).getAttribute("href")).toBe("#bat-dau");
   expect(screen.getByText("Nội dung")).toBeDefined();
@@ -35,4 +36,11 @@ it("renders a dedicated article with cover, toc, sections, and source attributio
       (link) => link.getAttribute("href") === guide.sourceUrl,
     ),
   ).toBe(true);
+  expect(screen.getByRole("link", { name: "Bắt đầu" }).className).toContain("min-h-11");
+});
+
+it("does not render an empty table of contents", () => {
+  render(<GuideReader guide={{ ...guide, toc: [] }} />);
+
+  expect(screen.queryByRole("navigation", { name: "Mục lục hướng dẫn" })).toBeNull();
 });

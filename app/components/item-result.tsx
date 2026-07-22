@@ -97,12 +97,12 @@ export function ItemResult({
             </h3>
             {item.englishName ? (
               <p lang="en" className="mt-0.5 truncate text-sm text-[#607188]">
-                {item.englishName}
+                <HighlightedText text={item.englishName} query={query} />
               </p>
             ) : null}
             {realPrefab ? (
               <code className="mt-1 block truncate font-mono text-[11px] text-[#68798e]">
-                {item.prefabId}
+                <HighlightedText text={item.prefabId} query={query} />
               </code>
             ) : (
               <span className="mt-1 block text-xs font-medium text-[#607188]">Wiki item</span>

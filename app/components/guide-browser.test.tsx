@@ -37,6 +37,7 @@ it("searches, filters, resets, and links to dedicated Guide pages", () => {
   expect(screen.getByRole("link", { name: /Thuần hóa Beefalo/ }).getAttribute("href")).toBe(
     "/guides/beefalo",
   );
+  expect(screen.queryByText("Taming a Beefalo")).toBeNull();
   expect(screen.getAllByRole("img")[0].getAttribute("width")).toBeTruthy();
 
   fireEvent.change(screen.getByLabelText("Tìm hướng dẫn"), { target: { value: "thuan hoa" } });

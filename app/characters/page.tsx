@@ -1,11 +1,10 @@
 import { SiteHeader } from "@/app/components/site-header";
 import { WikiSearch } from "@/app/components/wiki-search";
+import { selectCharacters } from "@/app/lib/character-catalog";
 import { parseItemPayload } from "@/app/lib/item-catalog";
 import itemPayload from "@/public/data/items.json";
 
-const characters = parseItemPayload(itemPayload).filter(
-  (item) => item.namespace === "tu_tien" && item.category === "character",
-);
+const characters = selectCharacters(parseItemPayload(itemPayload));
 
 export default function CharactersPage() {
   return (
@@ -13,7 +12,7 @@ export default function CharactersPage() {
       <SiteHeader active="characters" />
       <main className="mx-auto max-w-7xl px-4 py-9 sm:px-6 sm:py-12 lg:px-8">
         <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-[#2e5fb3]">
-          Tu Tiên
+          DST VÀ TU TIÊN
         </p>
         <h1 className="text-4xl font-semibold tracking-[-0.04em] text-[#14233b] sm:text-5xl">
           Nhân vật

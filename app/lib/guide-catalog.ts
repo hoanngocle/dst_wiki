@@ -127,7 +127,7 @@ export function parseGuideDetail(value: unknown): GuideDetail {
   }
   const entry = parseEntry(payload);
   const revision = record(payload.revision, "guide revision");
-  const toc = payload.toc.map((value, index) => {
+  const rawToc = payload.toc.map((value, index) => {
     const row = record(value, `guide toc ${index}`);
     return {
       id: text(row.id, `guide toc ${index} id`),
@@ -136,7 +136,7 @@ export function parseGuideDetail(value: unknown): GuideDetail {
     };
   });
   const anchors = new Set<string>();
-  for (const row of toc) {
+  for (const row of rawToc) {
     if (anchors.has(row.id)) throw new Error(`duplicate guide anchor: ${row.id}`);
     anchors.add(row.id);
   }
@@ -150,6 +150,17 @@ export function parseGuideDetail(value: unknown): GuideDetail {
     };
   });
   if (!sections.length) throw new Error("guide detail sections must not be empty");
+  const sectionAnchors = new Set(sections.map((section) => section.id));
+  for (const section of sections) {
+    for (const match of section.html.matchAll(/\bid=(?:"([^"]+)"|'([^']+)')/g)) {
+      const anchor = match[1] ?? match[2];
+      if (anchor) sectionAnchors.add(anchor);
+    }
+  }
+  const toc = rawToc
+    .filter((row) => row.label.toLocaleLowerCase("en") !== "contents")
+    .filter((row) => sectionAnchors.has(row.id))
+    .map((row) => ({ ...row, label: row.label.replace(/\[\]\s*$/, "").trim() }));
   return {
     ...entry,
     schemaVersion: 1,

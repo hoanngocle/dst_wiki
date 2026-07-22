@@ -18,7 +18,7 @@
   "sections": [
     {
       "heading": "Tổng quan",
-      "html": "<figure> \t<a href=\"https://static.wikia.nocookie.net/dont-starve-game/images/3/36/Deerclops_Steam_Wallpaper.png/revision/latest?cb=20140709003530\" rel=\"noreferrer\" target=\"_blank\"><img src=\"/assets/guides/deerclops-steam-wallpaper.png\" alt=\"Yes, this is he who challenges you.\" loading=\"lazy\" width=\"180\" height=\"101\"></a> \t \t<figcaption> \t\t \t\t\t<a href=\"https://dontstarve.fandom.com/wiki/File:Deerclops_Steam_Wallpaper.png\" rel=\"noreferrer\" target=\"_blank\"></a> \t\t \t\t \t\t \t\t\t<p>Yes, this is he who challenges you.</p> \t\t \t</figcaption> </figure>\n<p>So you want to kill that pesky <a href=\"https://dontstarve.fandom.com/wiki/Deerclops\" rel=\"noreferrer\" target=\"_blank\">Deerclops</a> with your friend? Well, you&#x27;re gonna need some help.\n</p>",
+      "html": "<figure><a href=\"https://static.wikia.nocookie.net/dont-starve-game/images/3/36/Deerclops_Steam_Wallpaper.png/revision/latest?cb=20140709003530\" rel=\"noreferrer\" target=\"_blank\"><img src=\"/assets/guides/deerclops-steam-wallpaper.png\" alt=\"Deerclops, đối thủ khổng lồ của người chơi\" loading=\"lazy\" width=\"180\" height=\"101\"></a><figcaption><p>Deerclops là một trong những Giant nguy hiểm nhất vào mùa đông.</p></figcaption></figure><p>Nếu muốn cùng đồng đội đánh bại <a href=\"https://dontstarve.fandom.com/wiki/Deerclops\" rel=\"noreferrer\" target=\"_blank\">Deerclops</a>, hãy chuẩn bị trước áo giáp, vũ khí, nguồn hồi phục và một khu vực chiến đấu cách xa căn cứ. Đừng giao chiến ngay cạnh các công trình quan trọng vì đòn đánh diện rộng của nó có thể phá hủy cả khu vực.</p>",
       "id": "overview",
       "level": 1
     }
@@ -28,32 +28,6 @@
   "summaryVi": "Chuẩn bị trang bị, bẫy và chiến thuật để đối phó các Giant trong Don't Starve Together.",
   "title": "How to Kill the Giants in DST",
   "titleVi": "Cách đánh bại các Giant trong DST",
-  "toc": [
-    {
-      "id": "contents",
-      "label": "Contents",
-      "level": 2
-    },
-    {
-      "id": "the-works",
-      "label": "The Works[]",
-      "level": 2
-    },
-    {
-      "id": "now-what",
-      "label": "Now what?[]",
-      "level": 2
-    },
-    {
-      "id": "tooth-traps-road-technique",
-      "label": "Tooth traps + road technique[]",
-      "level": 2
-    },
-    {
-      "id": "gunpowder-technique",
-      "label": "Gunpowder technique[]",
-      "level": 2
-    }
-  ],
+  "toc": [],
   "topic": "combat"
 }

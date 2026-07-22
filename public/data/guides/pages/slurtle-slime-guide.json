@@ -18,7 +18,7 @@
   "sections": [
     {
       "heading": "Tổng quan",
-      "html": "<p>This guide explains the mechanics of <a href=\"https://dontstarve.fandom.com/wiki/Slurtle_Slime\" rel=\"noreferrer\" target=\"_blank\">Slurtle Slime</a> production.\n</p>\n<figure><a href=\"https://static.wikia.nocookie.net/dont-starve-game/images/5/5c/Slurtle_Slime.png/revision/latest?cb=20130520052505\" rel=\"noreferrer\" target=\"_blank\"><img src=\"/assets/guides/slurtle-slime.png\" alt=\"Slurtle Slime\" loading=\"lazy\" width=\"100\" height=\"100\"></a><figcaption></figcaption></figure>\n<p>Slurtle Slime is produced when a <a href=\"https://dontstarve.fandom.com/wiki/Slurtle\" rel=\"noreferrer\" target=\"_blank\">Slurtle</a> or <a href=\"https://dontstarve.fandom.com/wiki/Snurtle\" rel=\"noreferrer\" target=\"_blank\">Snurtle</a> consumes a certain amount of <a href=\"https://dontstarve.fandom.com/wiki/Category:Minerals\" rel=\"noreferrer\" target=\"_blank\">Minerals</a>, processes these minerals, and drops Slurtle Slime on the ground as a result. It has two main functions; it can be used as an explosive (similar to, but weaker than, <a href=\"https://dontstarve.fandom.com/wiki/Gunpowder\" rel=\"noreferrer\" target=\"_blank\">Gunpowder</a>) or it can be used as fuel for <a href=\"https://dontstarve.fandom.com/wiki/Lantern\" rel=\"noreferrer\" target=\"_blank\">Lanterns</a>.\n</p>",
+      "html": "<p>Hướng dẫn này giải thích cơ chế tạo <a href=\"https://dontstarve.fandom.com/wiki/Slurtle_Slime\" rel=\"noreferrer\" target=\"_blank\">Slurtle Slime</a>.</p><figure><a href=\"https://static.wikia.nocookie.net/dont-starve-game/images/5/5c/Slurtle_Slime.png/revision/latest?cb=20130520052505\" rel=\"noreferrer\" target=\"_blank\"><img src=\"/assets/guides/slurtle-slime.png\" alt=\"Slurtle Slime\" loading=\"lazy\" width=\"100\" height=\"100\"></a><figcaption></figcaption></figure><p>Slurtle Slime được tạo ra khi <a href=\"https://dontstarve.fandom.com/wiki/Slurtle\" rel=\"noreferrer\" target=\"_blank\">Slurtle</a> hoặc <a href=\"https://dontstarve.fandom.com/wiki/Snurtle\" rel=\"noreferrer\" target=\"_blank\">Snurtle</a> ăn đủ một lượng <a href=\"https://dontstarve.fandom.com/wiki/Category:Minerals\" rel=\"noreferrer\" target=\"_blank\">khoáng vật</a>. Sau khi tiêu hóa, chúng sẽ thả Slurtle Slime xuống đất. Vật phẩm này có hai công dụng chính: dùng làm chất nổ tương tự nhưng yếu hơn <a href=\"https://dontstarve.fandom.com/wiki/Gunpowder\" rel=\"noreferrer\" target=\"_blank\">Gunpowder</a>, hoặc làm nhiên liệu cho <a href=\"https://dontstarve.fandom.com/wiki/Lantern\" rel=\"noreferrer\" target=\"_blank\">Lantern</a>.</p>",
       "id": "overview",
       "level": 1
     }
@@ -28,32 +28,6 @@
   "summaryVi": "Giải thích cách Slurtle và Snurtle tiêu thụ khoáng vật để tạo Slurtle Slime trong DST.",
   "title": "Slurtle Slime Guide",
   "titleVi": "Hướng dẫn tạo Slurtle Slime",
-  "toc": [
-    {
-      "id": "contents",
-      "label": "Contents",
-      "level": 2
-    },
-    {
-      "id": "slurtle-and-snurtle-behavior",
-      "label": "Slurtle and Snurtle behavior[]",
-      "level": 2
-    },
-    {
-      "id": "mineral-values",
-      "label": "Mineral values[]",
-      "level": 2
-    },
-    {
-      "id": "slurtle-slime-production",
-      "label": "Slurtle Slime production[]",
-      "level": 2
-    },
-    {
-      "id": "trivia",
-      "label": "Trivia[]",
-      "level": 2
-    }
-  ],
+  "toc": [],
   "topic": "resources"
 }

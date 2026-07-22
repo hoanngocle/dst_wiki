@@ -18,7 +18,7 @@
   "sections": [
     {
       "heading": "Tổng quan",
-      "html": "<p><i><b>Note:</b></i> This guide is based on my experience in the game and may be subjective. -- <a href=\"https://dontstarve.fandom.com/wiki/User:Loopuleasa\" rel=\"noreferrer\" target=\"_blank\">Loopuleasa</a></p>\n<hr>\n\n<p>This is a guide for <a href=\"http://dontstarve.wikia.com/wiki/File:Don&#x27;t_Starve_Together_icon.png\" rel=\"noreferrer\" target=\"_blank\"></a> Don&#x27;t Starve Together, that focuses on the optimal strategy for the first 13 days for one player.\n</p><p>This guide resembles a speed-running min-max approach of getting your first base setup as fast as possible, with as many resources as possible, as efficient as possible.\n</p>",
+      "html": "<p><i><b>Lưu ý:</b></i> Hướng dẫn này dựa trên trải nghiệm cá nhân của tác giả nên một số lựa chọn có thể mang tính chủ quan. — <a href=\"https://dontstarve.fandom.com/wiki/User:Loopuleasa\" rel=\"noreferrer\" target=\"_blank\">Loopuleasa</a></p><hr><p>Đây là lộ trình chơi đơn trong Don&#x27;t Starve Together, tập trung tối ưu 13 ngày đầu tiên. Mục tiêu là vừa khám phá bản đồ, vừa tích lũy tài nguyên và dựng được một căn cứ có thể vận hành ổn định.</p><p>Cách tiếp cận thiên về chơi tốc độ và tối ưu hóa: hạn chế thời gian chết, ưu tiên vật phẩm quan trọng, chế tạo đúng thời điểm và hoàn thành khu căn cứ đầu tiên nhanh nhất có thể.</p>",
       "id": "overview",
       "level": 1
     }
@@ -28,97 +28,6 @@
   "summaryVi": "Lộ trình khám phá, thu thập và dựng căn cứ hiệu quả trong 13 ngày đầu của một thế giới DST.",
   "title": "Maximum Efficiency Day 13 Base DST Guide",
   "titleVi": "Căn cứ hiệu quả trong 13 ngày đầu",
-  "toc": [
-    {
-      "id": "contents",
-      "label": "Contents",
-      "level": 2
-    },
-    {
-      "id": "the-objectives",
-      "label": "The Objectives:[]",
-      "level": 2
-    },
-    {
-      "id": "exploration",
-      "label": "Exploration:[]",
-      "level": 2
-    },
-    {
-      "id": "exploration-priorities",
-      "label": "Exploration Priorities:[]",
-      "level": 3
-    },
-    {
-      "id": "exploration-method",
-      "label": "Exploration Method:[]",
-      "level": 3
-    },
-    {
-      "id": "1-follow-the-darkness",
-      "label": "#1 Follow the Darkness[]",
-      "level": 4
-    },
-    {
-      "id": "2-spend-your-time-wisely",
-      "label": "#2 Spend your time Wisely[]",
-      "level": 4
-    },
-    {
-      "id": "3-use-shortcuts",
-      "label": "#3 Use Shortcuts[]",
-      "level": 4
-    },
-    {
-      "id": "inventory-management",
-      "label": "Inventory Management:[]",
-      "level": 2
-    },
-    {
-      "id": "1-plan-ahead",
-      "label": "#1 Plan Ahead[]",
-      "level": 3
-    },
-    {
-      "id": "2-drop-items-at-checkpoints-if-full",
-      "label": "#2 Drop items at checkpoints if full[]",
-      "level": 3
-    },
-    {
-      "id": "prototyping",
-      "label": "Prototyping:[]",
-      "level": 2
-    },
-    {
-      "id": "core-items-overview",
-      "label": "Core Items Overview:[]",
-      "level": 3
-    },
-    {
-      "id": "first-builds-day-1-3",
-      "label": "First Builds (Day 1-3):[]",
-      "level": 3
-    },
-    {
-      "id": "the-first-science-machine-day-3-5",
-      "label": "The First Science Machine (Day 3-5):[]",
-      "level": 3
-    },
-    {
-      "id": "the-first-alchemy-engine-day-5-10",
-      "label": "The First Alchemy Engine (Day 5-10):[]",
-      "level": 3
-    },
-    {
-      "id": "the-final-alchemy-engine-base-setup-day-11-13",
-      "label": "The Final Alchemy Engine (Base setup, Day 11-13):[]",
-      "level": 3
-    },
-    {
-      "id": "full-moon-timing",
-      "label": "Full Moon Timing:[]",
-      "level": 2
-    }
-  ],
+  "toc": [],
   "topic": "base-building"
 }

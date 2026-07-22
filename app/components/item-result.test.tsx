@@ -88,6 +88,18 @@ describe("ItemResult", () => {
     expect(screen.getByText("Kiếm").tagName).toBe("MARK");
   });
 
+  it("highlights a matching English name", () => {
+    const { container } = render(<ItemResult item={item} query="test sword" />);
+
+    expect(container.querySelector("mark")?.textContent).toBe("Test Sword");
+  });
+
+  it("highlights a matching prefab code", () => {
+    const { container } = render(<ItemResult item={item} query="xd_sword" />);
+
+    expect(container.querySelector("mark")?.textContent).toBe("xd_sword");
+  });
+
   it("labels referenced base-game dependencies accurately", () => {
     render(
       <ItemResult

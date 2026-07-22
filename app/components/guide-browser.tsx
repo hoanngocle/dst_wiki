@@ -96,7 +96,6 @@ export function GuideBrowser({ guides }: { guides: readonly GuideListEntry[] }) 
                     <span>{audienceLabels[guide.audience] ?? guide.audience}</span>
                   </div>
                   <h3 className="mt-3 text-xl font-semibold leading-tight tracking-[-0.025em] text-[#172943]">{guide.titleVi}</h3>
-                  <p className="mt-1 text-sm text-[#73839a]">{guide.title}</p>
                   <p className="mt-4 line-clamp-3 text-sm leading-6 text-[#53647a]">{guide.summaryVi}</p>
                   <p className="mt-auto pt-5 text-xs font-semibold text-[#607188]">{guide.readingMinutes} phút đọc</p>
                 </div>
