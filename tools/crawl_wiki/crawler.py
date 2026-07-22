@@ -57,6 +57,64 @@ class _InfoboxImageParser(HTMLParser):
             self.infobox_depth -= 1
 
 
+class _ArticleImageParser(HTMLParser):
+    _CONTAINERS = {"aside", "div", "figure", "footer", "nav", "section", "table"}
+    _VOID = _InfoboxImageParser._VOID
+    _EXCLUDED_CLASS_PARTS = {
+        "editsection",
+        "metadata",
+        "navbox",
+        "notice",
+        "portable-infobox",
+        "toc",
+    }
+
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.excluded_depth = 0
+        self.candidates: List[tuple[str, int, int]] = []
+
+    def handle_starttag(self, tag, attrs):
+        attributes = dict(attrs)
+        classes = str(attributes.get("class", "")).casefold()
+        identifier = str(attributes.get("id", "")).casefold()
+        starts_excluded = tag in self._CONTAINERS and any(
+            part in classes or part in identifier
+            for part in self._EXCLUDED_CLASS_PARTS
+        )
+        if starts_excluded and self.excluded_depth == 0:
+            self.excluded_depth = 1
+        elif self.excluded_depth and tag not in self._VOID:
+            self.excluded_depth += 1
+        if self.excluded_depth or tag != "img":
+            return
+        name = next(
+            (
+                str(attributes[key]).strip()
+                for key in ("data-image-name", "data-image-key", "alt", "title")
+                if isinstance(attributes.get(key), str)
+                and str(attributes[key]).strip()
+            ),
+            "",
+        )
+        try:
+            width = int(str(attributes.get("width", "0")))
+            height = int(str(attributes.get("height", "0")))
+        except ValueError:
+            return
+        if (
+            name
+            and min(width, height) >= 80
+            and max(width, height) >= 96
+        ):
+            self.candidates.append((name, width, height))
+
+    def handle_endtag(self, tag):
+        del tag
+        if self.excluded_depth:
+            self.excluded_depth -= 1
+
+
 def select_primary_infobox_image(
     parsed: Mapping[str, Any], wikitext: Optional[str] = None
 ) -> Optional[str]:
@@ -98,6 +156,42 @@ def select_primary_infobox_image(
             candidate = unquote(urlsplit(candidate).path.rsplit("/", 1)[-1])
         name = candidate.removeprefix("File:").strip()
         matched = by_name.get(name.casefold())
+        if matched is not None:
+            return matched
+    return None
+
+
+def select_primary_article_image(parsed: Mapping[str, Any]) -> Optional[str]:
+    images = parsed.get("images")
+    if not isinstance(images, list):
+        return None
+    by_name = {}
+    for value in images:
+        if not isinstance(value, str) or not value.strip():
+            continue
+        title = value.strip()
+        if not title.startswith("File:"):
+            title = "File:" + title
+        normalized = title.removeprefix("File:").replace("_", " ").casefold()
+        by_name[normalized] = title
+
+    rendered = parsed.get("text", "")
+    if isinstance(rendered, Mapping):
+        rendered = rendered.get("*", "")
+    if not isinstance(rendered, str) or not rendered:
+        return None
+    parser = _ArticleImageParser()
+    parser.feed(rendered)
+    parser.close()
+    ranked = sorted(
+        enumerate(parser.candidates),
+        key=lambda value: (-(value[1][1] * value[1][2]), value[0]),
+    )
+    for _, (candidate, _width, _height) in ranked:
+        normalized = (
+            candidate.removeprefix("File:").replace("_", " ").casefold()
+        )
+        matched = by_name.get(normalized)
         if matched is not None:
             return matched
     return None
@@ -592,9 +686,12 @@ class CategoryCrawler(WikiCrawler):
                         self.clock(),
                         set(self.config.allowed_namespaces),
                     )
-                    primary_image = select_primary_infobox_image(
-                        parsed, page.get("wikitext")
-                    )
+                    if self.config.item_type == "guide":
+                        primary_image = select_primary_article_image(parsed)
+                    else:
+                        primary_image = select_primary_infobox_image(
+                            parsed, page.get("wikitext")
+                        )
                     shared = {
                         "schemaVersion": 1,
                         "page": page,
@@ -604,6 +701,7 @@ class CategoryCrawler(WikiCrawler):
                         ),
                     }
                     self.url_registry.complete(registry_claim, shared)
+                shared = self._with_repaired_guide_cover(shared)
                 self._materialize_shared_page(page_id, shared)
                 LOGGER.info(
                     "completed category page id=%s title=%s source=%s",
@@ -630,6 +728,26 @@ class CategoryCrawler(WikiCrawler):
                     title,
                     error,
                 )
+
+    def _with_repaired_guide_cover(
+        self, payload: Mapping[str, Any]
+    ) -> Mapping[str, Any]:
+        if self.config.item_type != "guide" or payload.get("imageTitles"):
+            return payload
+        page = payload.get("page")
+        if not isinstance(page, Mapping):
+            return payload
+        selected = select_primary_article_image(
+            {
+                "images": page.get("images"),
+                "text": page.get("html"),
+            }
+        )
+        if selected is None:
+            return payload
+        repaired = dict(payload)
+        repaired["imageTitles"] = [selected]
+        return repaired
 
     def _materialize_shared_page(
         self, page_id: int, payload: Mapping[str, Any]

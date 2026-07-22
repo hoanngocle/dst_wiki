@@ -623,7 +623,7 @@ class CategoryConfigTests(unittest.TestCase):
 
         self.assertEqual(config.category_title, "Category:Guides")
         self.assertEqual(config.expected_direct_pages, 105)
-        self.assertEqual(config.expected_published_pages, 5)
+        self.assertEqual(config.expected_published_pages, 4)
         self.assertEqual(config.allowed_namespaces, (0,))
         self.assertEqual(config.game, "DST")
         self.assertEqual(config.item_type, "guide")
@@ -634,7 +634,7 @@ class CategoryConfigTests(unittest.TestCase):
         )
 
         exclusions = dict(config.excluded_titles)
-        self.assertEqual(len(exclusions), 100)
+        self.assertEqual(len(exclusions), 101)
         self.assertEqual(exclusions["Guides"], "non_item:overview")
         self.assertEqual(
             exclusions["Guides/Adventure Mode Guide"],
@@ -661,6 +661,10 @@ class CategoryConfigTests(unittest.TestCase):
             "non_content:no_image",
         )
         self.assertEqual(
+            exclusions["Guides/Survive and Thrive"],
+            "non_content:no_image",
+        )
+        self.assertEqual(
             exclusions["Guides/Crock Pot Dishes"],
             "non_dst:mixed_scope",
         )
@@ -668,7 +672,6 @@ class CategoryConfigTests(unittest.TestCase):
             "Guides/How to Kill the Giants in DST",
             "Guides/Maximum Efficiency Day 13 Base DST Guide",
             "Guides/Slurtle Slime Guide",
-            "Guides/Survive and Thrive",
             "Guides/Taming a Beefalo",
         ):
             self.assertNotIn(accepted, exclusions)

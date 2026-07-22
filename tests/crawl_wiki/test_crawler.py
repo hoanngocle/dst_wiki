@@ -8,7 +8,12 @@ from pathlib import Path
 
 from tools.crawl_wiki.category_config import CategoryConfig
 from tools.crawl_wiki.client import MediaWikiClient, ResolvedTitle
-from tools.crawl_wiki.crawler import CategoryCrawler, SelectiveItemsCrawler, WikiCrawler
+from tools.crawl_wiki.crawler import (
+    CategoryCrawler,
+    SelectiveItemsCrawler,
+    WikiCrawler,
+    select_primary_article_image,
+)
 from tools.crawl_wiki.storage import CrawlStorage
 from tools.crawl_wiki.url_registry import UrlRegistry
 
@@ -232,9 +237,10 @@ class CategoryClient:
     base_url = "https://dontstarve.fandom.com/"
     api_url = "https://dontstarve.fandom.com/api.php"
 
-    def __init__(self, batches, infobox_image=False):
+    def __init__(self, batches, infobox_image=False, article_image=False):
         self.batches = list(batches)
         self.infobox_image = infobox_image
+        self.article_image = article_image
         self.category_calls = []
         self.page_calls = []
         self.parsed_titles = []
@@ -305,6 +311,20 @@ class CategoryClient:
                 "{}.png".format(title),
                 "{} Primary.png".format(title),
             ]
+        elif self.article_image:
+            text = (
+                "<div class='notice'><img data-image-name='Icon Books.png' "
+                "width='40' height='49'></div>"
+                "<figure><img data-image-name='{} Guide.png' "
+                "width='320' height='180'></figure>"
+                "<table class='navbox'><img data-image-name='Navigation.png' "
+                "width='600' height='400'></table>"
+            ).format(title)
+            images = [
+                "Icon Books.png",
+                "{} Guide.png".format(title),
+                "Navigation.png",
+            ]
         else:
             text = "<aside class='portable-infobox'><p>{}</p></aside>".format(title)
             images = []
@@ -322,6 +342,7 @@ def category_config(
     expected_direct_pages=3,
     expected_published_pages=2,
     excluded_titles=(("Blue Whale", "non_dst:shipwrecked"),),
+    item_type="mob",
 ):
     return CategoryConfig(
         key="animals",
@@ -332,12 +353,68 @@ def category_config(
         allowed_namespaces=(0,),
         excluded_titles=excluded_titles,
         game="DST",
-        item_type="mob",
+        item_type=item_type,
         tags=("Animals",),
     )
 
 
 class CrawlerTests(unittest.TestCase):
+    def test_selects_largest_article_image_outside_notice_and_navigation(self):
+        parsed = {
+            "images": [
+                "Icon Books.png",
+                "Map_Icon.png",
+                "Charlie_Closeup.PNG",
+                "Navigation.png",
+            ],
+            "text": """
+                <div class="notice">
+                  <img data-image-name="Icon Books.png" width="40" height="49">
+                </div>
+                <p>Guide introduction.</p>
+                <figure>
+                  <img data-image-name="Map Icon.png" width="137" height="137">
+                </figure>
+                <figure>
+                  <img data-image-name="Charlie Closeup.PNG" width="284" height="284">
+                </figure>
+                <table class="navbox">
+                  <img data-image-name="Navigation.png" width="500" height="500">
+                </table>
+            """,
+        }
+
+        self.assertEqual(
+            select_primary_article_image(parsed),
+            "File:Charlie_Closeup.PNG",
+        )
+
+    def test_accepts_wide_article_cover_with_one_dimension_below_96(self):
+        parsed = {
+            "images": ["Beefalo_Tendencies.jpg"],
+            "text": (
+                "<figure><img data-image-name='Beefalo Tendencies.jpg' "
+                "width='180' height='89'></figure>"
+            ),
+        }
+
+        self.assertEqual(
+            select_primary_article_image(parsed),
+            "File:Beefalo_Tendencies.jpg",
+        )
+
+    def test_rejects_article_images_that_are_only_small_icons(self):
+        parsed = {
+            "images": ["Carrots.png", "Twigs.png"],
+            "text": """
+                <p>Guide introduction.</p>
+                <img data-image-name="Carrots.png" width="32" height="32">
+                <img data-image-name="Twigs.png" width="40" height="40">
+            """,
+        }
+
+        self.assertIsNone(select_primary_article_image(parsed))
+
     def test_category_crawler_skips_doing_then_reuses_when_owner_completes(self):
         with tempfile.TemporaryDirectory() as tempdir:
             root = Path(tempdir)
@@ -439,6 +516,40 @@ class CrawlerTests(unittest.TestCase):
             row = json.loads(registry.path.read_text())["items"][0]
             shared = registry.load_payload(registry.claim(row["url"], "animals", "reader").record)
             self.assertEqual(shared["imageTitles"], ["File:Beefalo Primary.png"])
+
+    def test_category_crawler_selects_article_cover_for_guides(self):
+        with tempfile.TemporaryDirectory() as tempdir:
+            root = Path(tempdir)
+            client = CategoryClient(
+                [([{"pageid": 1, "ns": 0, "title": "Beefalo"}], None)],
+                article_image=True,
+            )
+            registry = UrlRegistry(
+                root / "fandom-url-registry.json",
+                root / "shared-pages",
+                "https://dontstarve.fandom.com",
+            )
+            with CrawlStorage(
+                root / "guides",
+                client.base_url,
+                (0,),
+                profile="category:guides",
+            ) as storage:
+                CategoryCrawler(
+                    client,
+                    storage,
+                    category_config(1, 1, (), item_type="guide"),
+                    registry,
+                    page_budget=1,
+                    skip_images=True,
+                    worker_id="worker-guides",
+                ).run({"profile": "category"})
+
+            row = json.loads(registry.path.read_text())["items"][0]
+            shared = registry.load_payload(
+                registry.claim(row["url"], "guides", "reader").record
+            )
+            self.assertEqual(shared["imageTitles"], ["File:Beefalo Guide.png"])
 
     def test_category_crawler_discovers_all_members_but_queues_only_dst_pages(self):
         with tempfile.TemporaryDirectory() as tempdir:
@@ -556,6 +667,57 @@ class CrawlerTests(unittest.TestCase):
 
             self.assertEqual(client.page_calls, [])
             self.assertEqual(_records(root / "animals" / "pages.jsonl")[0]["title"], "Beefalo")
+
+    def test_category_crawler_repairs_missing_guide_cover_from_reused_page(self):
+        with tempfile.TemporaryDirectory() as tempdir:
+            root = Path(tempdir)
+            registry = UrlRegistry(
+                root / "fandom-url-registry.json",
+                root / "shared-pages",
+                "https://dontstarve.fandom.com",
+            )
+            url = "https://dontstarve.fandom.com/wiki/Beefalo"
+            claim = registry.claim(url, "other-category", "worker-other")
+            registry.complete(
+                claim,
+                {
+                    "page": {
+                        "schema_version": 1,
+                        "page_id": 1,
+                        "namespace": 0,
+                        "title": "Beefalo",
+                        "canonical_url": url,
+                        "html": (
+                            "<figure><img data-image-name='Beefalo Guide.png' "
+                            "width='320' height='180'></figure>"
+                        ),
+                        "images": ["Beefalo Guide.png"],
+                    },
+                    "links": [],
+                    "imageTitles": [],
+                },
+            )
+            client = CategoryClient(
+                [([{"pageid": 1, "ns": 0, "title": "Beefalo"}], None)]
+            )
+            with CrawlStorage(
+                root / "guides",
+                client.base_url,
+                (0,),
+                profile="category:guides",
+            ) as storage:
+                summary = CategoryCrawler(
+                    client,
+                    storage,
+                    category_config(1, 1, (), item_type="guide"),
+                    registry,
+                    page_budget=1,
+                    skip_images=True,
+                    worker_id="worker-guides",
+                ).run({"profile": "category"})
+
+            self.assertEqual(client.page_calls, [])
+            self.assertEqual(summary.pending_images, 1)
     def make_client(self, server):
         return MediaWikiClient(
             server.base_url,

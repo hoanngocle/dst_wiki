@@ -9760,6 +9760,86 @@
       "workerId": null
     },
     {
+      "artifactPath": "shared-pages/a8e0f23f72fd19b2ddfb6a32f5b2671f2f0a5285762e0e71000b1f42209a6a2f.json",
+      "artifactSha256": "8f20b1189d6a2d9c46a4eeabfe65231526563f749a4f584059cb16038d1a22a6",
+      "attempts": 1,
+      "categories": [
+        "guides"
+      ],
+      "claimedAt": "2026-07-22T04:10:48Z",
+      "completedAt": "2026-07-22T04:10:49Z",
+      "createdAt": "2026-07-22T04:10:47Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-22T04:10:49Z",
+      "url": "https://dontstarve.fandom.com/wiki/Guides/How_to_Kill_the_Giants_in_DST",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/b3947c3c3a3434851233d12b8083b72d865b2a83e0acccc98b695fdc76d94f21.json",
+      "artifactSha256": "5a2709a5154fa9b08aac5af237abe3bdac2da04f6db8145c80a3c14336304ea2",
+      "attempts": 1,
+      "categories": [
+        "guides"
+      ],
+      "claimedAt": "2026-07-22T04:10:49Z",
+      "completedAt": "2026-07-22T04:10:50Z",
+      "createdAt": "2026-07-22T04:10:47Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-22T04:10:50Z",
+      "url": "https://dontstarve.fandom.com/wiki/Guides/Maximum_Efficiency_Day_13_Base_DST_Guide",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/8d6f8c843eadca92aaf899315218ccc9acf96caeb0116d2f110deefb5b8aa189.json",
+      "artifactSha256": "7fbc90cae0b806790775ab6a7b1e404811ad80e8f0c4035bc34feb78f4dfb99b",
+      "attempts": 1,
+      "categories": [
+        "guides"
+      ],
+      "claimedAt": "2026-07-22T04:10:47Z",
+      "completedAt": "2026-07-22T04:10:48Z",
+      "createdAt": "2026-07-22T04:10:47Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-22T04:10:48Z",
+      "url": "https://dontstarve.fandom.com/wiki/Guides/Slurtle_Slime_Guide",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/d9367492140a3ef3ab0ed8326480bdaa65a47f114e025ca20b3c581f6b3d4b37.json",
+      "artifactSha256": "736790a8b7b91b8404d8171ebd22922387923e9890b71b60d9a6330ef80dda53",
+      "attempts": 1,
+      "categories": [
+        "guides"
+      ],
+      "claimedAt": "2026-07-22T04:10:51Z",
+      "completedAt": "2026-07-22T04:10:53Z",
+      "createdAt": "2026-07-22T04:10:47Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-22T04:10:53Z",
+      "url": "https://dontstarve.fandom.com/wiki/Guides/Survive_and_Thrive",
+      "workerId": null
+    },
+    {
+      "artifactPath": "shared-pages/2574cf13e0200b47a88cdd0afc28faef33ec8a618d8baaa78f23522a577a9bde.json",
+      "artifactSha256": "0c3f2e1077c0a228c62315e722af2b25fd1360080c948f3ca79ac7555d65b5b3",
+      "attempts": 1,
+      "categories": [
+        "guides"
+      ],
+      "claimedAt": "2026-07-22T04:10:50Z",
+      "completedAt": "2026-07-22T04:10:51Z",
+      "createdAt": "2026-07-22T04:10:47Z",
+      "lastError": null,
+      "status": "Done",
+      "updatedAt": "2026-07-22T04:10:51Z",
+      "url": "https://dontstarve.fandom.com/wiki/Guides/Taming_a_Beefalo",
+      "workerId": null
+    },
+    {
       "artifactPath": "shared-pages/00ab61b3c23926aecbd4be750b65ef33e1cf6374ee9f09f9792213808b5fb4a5.json",
       "artifactSha256": "6fd3770c84a89f231f31bdd18870cbc633ebc2ef2b3a41b22607d003f897670b",
       "attempts": 1,

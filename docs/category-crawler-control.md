@@ -5,14 +5,14 @@ Registry máy đọc/ghi nằm tại `<git-common-dir>/category-crawler/`; file
 Trạng thái chỉ gồm `New`, `Doing`, `Done`: URL mới/`New` được lấy tiếp, còn
 `Doing` và `Done` phải skip network fetch.
 
-> **Live audit 2026-07-22:** 1.305 URL hợp lệ, 1.305 `Done`, 0 `New`, 0
+> **Live audit 2026-07-22:** 1.310 URL hợp lệ, 1.310 `Done`, 0 `New`, 0
 > `Doing`, 0 artifact lỗi. Toàn bộ URL đã duyệt và aggregate DST đã hoàn tất.
 
 ## Category queue
 
 | Category | Source | Direct | Child category | Excluded | Publish candidates | Registry Done | Status |
 |---|---|---:|---:|---:|---:|---:|---|
-| guides | [Category:Guides](https://dontstarve.fandom.com/wiki/Category:Guides) | 105 | 1 | 100 | 5 | 0 | Doing |
+| guides | [Category:Guides](https://dontstarve.fandom.com/wiki/Category:Guides) | 105 | 1 | 101 | 4 | 4 | Done |
 | shadow_magic_filter | [Category:Shadow Magic Filter](https://dontstarve.fandom.com/wiki/Category:Shadow_Magic_Filter) | 31 | 0 | 0 | 31 | 31 | Done |
 | spiders | [Category:Spiders](https://dontstarve.fandom.com/wiki/Category:Spiders) | 14 | 0 | 1 | 13 | 13 | Done |
 | structures | [Category:Structures](https://dontstarve.fandom.com/wiki/Category:Structures) | 278 | 4 | 123 | 155 | 155 | Done |
@@ -189,11 +189,15 @@ tất cả đều `Done`.
 
 Guide review kiểm 107 direct members: 105 article namespace 0, một Board Thread
 và `Category:Dedicated Servers`. Không crawl đệ quy hoặc namespace ngoài 0. Chỉ
-giữ năm bài có phạm vi DST rõ ràng, nội dung đủ dùng và ảnh trong chính bài:
+giữ bốn bài có phạm vi DST rõ ràng, nội dung đủ dùng và ảnh cover trong chính
+bài (cạnh ngắn tối thiểu 80 px, cạnh dài tối thiểu 96 px ở bản render):
 `How to Kill the Giants in DST`, `Maximum Efficiency Day 13 Base DST Guide`,
-`Slurtle Slime Guide`, `Survive and Thrive`, `Taming a Beefalo`. Một trăm bài
+`Slurtle Slime Guide`, `Taming a Beefalo`. `Survive and Thrive` có 12 icon nhỏ
+nhưng không có ảnh cover phù hợp nên bị loại sau crawl. Một trăm lẻ một bài
 còn lại bị loại vì thuộc game/DLC khác, trộn phạm vi không thể xuất bản nguyên
 bài cho wiki DST, đã lỗi thời, quá thiếu nội dung hoặc không có ảnh phù hợp.
+Crawl hoàn tất với 4 page, 4 cover, 421 link và 0 failure/pending. URL registry
+tăng lên 1.310 URL, toàn bộ ở trạng thái `Done`.
 
 Giữ đủ 14 Category vì chúng bổ sung tag phân loại. `Craftable Items`, `Craftable
 Structures`, `Events` và `Food` mang phần lớn URL riêng. `Cooking Filter`,

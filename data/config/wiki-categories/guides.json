@@ -81,6 +81,7 @@
     "Guides/Summer Cave Base": "non_dst:reign_of_giants",
     "Guides/Summer Guide": "non_dst:reign_of_giants",
     "Guides/Survive A Year In Reign Of Giants": "non_dst:reign_of_giants",
+    "Guides/Survive and Thrive": "non_content:no_image",
     "Guides/Surviving 101 With Wilson P. Higgsbury (And Other People)": "non_dst:dont_starve",
     "Guides/Surviving In Lights Out": "non_dst:mixed_scope",
     "Guides/Surviving Shipwrecked": "non_dst:shipwrecked",
@@ -106,7 +107,7 @@
     "How to extract animations from the game": "non_content:no_image"
   },
   "expectedDirectPages": 105,
-  "expectedPublishedPages": 5,
+  "expectedPublishedPages": 4,
   "game": "DST",
   "itemType": "guide",
   "key": "guides",
