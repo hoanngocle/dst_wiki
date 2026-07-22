@@ -28,6 +28,7 @@ from tools.extract.runtime_import import (
 )
 from tools.extract.runtime_runner import run_runtime_probe
 from tools.extract.publish_web_assets import publish_web_assets
+from tools.extract.publication_quality import run_publication_quality
 from tools.extract.source_manifest import ARCHIVES, snapshot_game_sources
 from tools.extract.validate import validate_catalog, write_validation_report
 from tools.extract.wiki_import import import_wiki
@@ -64,6 +65,7 @@ WIKI_CRAWL = Path("data/crawled/dontstarve-items")
 GUIDES_CRAWL = Path("data/crawled/fandom-categories/guides")
 GUIDES_DATA = Path("public/data/guides")
 GUIDES_ASSETS = Path("public/assets/guides")
+PUBLICATION_REPORT = Path("data/generated/publication-quality-report.json")
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -190,6 +192,17 @@ def build_parser() -> argparse.ArgumentParser:
     export_guides_parser.add_argument("--crawl", type=Path, default=GUIDES_CRAWL)
     export_guides_parser.add_argument("--output", type=Path, default=GUIDES_DATA)
     export_guides_parser.add_argument("--assets", type=Path, default=GUIDES_ASSETS)
+    publication = sub.add_parser("publication-quality")
+    publication.add_argument("--items", type=Path, default=ITEMS_JSON)
+    publication.add_argument("--guides", type=Path, default=GUIDES_DATA)
+    publication.add_argument("--public-root", type=Path, default=Path("public"))
+    publication.add_argument(
+        "--category-root",
+        type=Path,
+        default=Path("data/crawled/fandom-categories"),
+    )
+    publication.add_argument("--report", type=Path, default=PUBLICATION_REPORT)
+    publication.add_argument("--apply", action="store_true")
     export_markdown = sub.add_parser("export-markdown")
     export_markdown.add_argument("--catalog", type=Path, default=CATALOG_JSON)
     export_markdown.add_argument("--runtime", type=Path, default=RUNTIME_FACTS)
@@ -534,6 +547,31 @@ def main() -> int:
             )
         )
         return 0
+    if args.command == "publication-quality":
+        report = run_publication_quality(
+            args.items,
+            args.guides,
+            args.public_root,
+            args.category_root,
+            args.report,
+            apply=args.apply,
+        )
+        summary = report["summary"]
+        print(
+            "{} before={} after={} keep={} repair={} merge={} remove={} hard_failures={}".format(
+                args.report,
+                summary["before"],
+                summary["after"],
+                summary["keep"],
+                summary["repair"],
+                summary["merge"],
+                summary["remove"],
+                len(report["postRepairIssues"]),
+            )
+        )
+        if args.apply:
+            return 1 if report["postRepairIssues"] else 0
+        return 1 if any(summary[key] for key in ("repair", "merge", "remove")) else 0
     if args.command == "export-markdown":
         _export_markdown_stage(args.catalog, args.runtime, args.output)
         return 0
