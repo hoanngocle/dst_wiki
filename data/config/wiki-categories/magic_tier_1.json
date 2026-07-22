@@ -1,0 +1,23 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Magic Tier 1",
+  "excludedTitles": {
+    "Books": "non_item:overview",
+    "Dripple Pipes": "non_dst:shipwrecked",
+    "Nightmarish Bird Whistle": "non_dst:hamlet",
+    "Root Trunk": "non_dst:hamlet",
+    "Slingshot Ammo": "non_item:overview"
+  },
+  "expectedDirectPages": 19,
+  "expectedPublishedPages": 14,
+  "game": "DST",
+  "itemType": "item",
+  "key": "magic_tier_1",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Magic_Tier_1",
+  "tags": [
+    "Magic Tier 1"
+  ]
+}

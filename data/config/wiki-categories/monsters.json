@@ -1,0 +1,42 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Monsters",
+  "excludedTitles": {
+    "Blue Hound": "duplicate:canonical_redirect",
+    "Dragoon": "non_dst:shipwrecked",
+    "Flup": "non_dst:shipwrecked",
+    "Giant Grub": "non_dst:hamlet",
+    "Glowfly": "non_dst:hamlet",
+    "Gnat Swarm": "non_dst:hamlet",
+    "Guides/Hound Wave Survival Guide": "non_item:category_mismatch",
+    "Mobs": "non_item:overview",
+    "Palm Treeguard": "non_dst:shipwrecked",
+    "Quacken": "non_dst:shipwrecked",
+    "Red Hound": "duplicate:canonical_redirect",
+    "Scorpion": "non_dst:hamlet",
+    "Sea Hound": "non_dst:shipwrecked",
+    "Sealnado": "non_dst:shipwrecked",
+    "Shadow Creature": "non_item:overview",
+    "Snake": "non_dst:shipwrecked",
+    "Snaptooth": "non_dst:hamlet",
+    "Spider Monkey": "non_dst:hamlet",
+    "Spiders": "non_item:overview",
+    "Stink Ray": "non_dst:shipwrecked",
+    "Tiger Shark": "non_dst:shipwrecked",
+    "Vampire Bat": "non_dst:hamlet",
+    "Viper": "non_dst:hamlet",
+    "Weevole": "non_dst:hamlet"
+  },
+  "expectedDirectPages": 64,
+  "expectedPublishedPages": 40,
+  "game": "DST",
+  "itemType": "mob",
+  "key": "monsters",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Monsters",
+  "tags": [
+    "Monsters"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Ocean",
+  "excludedTitles": {
+    "Ballphin Palace": "non_dst:shipwrecked",
+    "Blue Whale": "non_dst:shipwrecked",
+    "Bottlenose Ballphin": "non_dst:shipwrecked",
+    "Brainy Sprout": "non_dst:shipwrecked",
+    "Coral Reef": "non_dst:shipwrecked",
+    "Crocodog": "non_dst:shipwrecked",
+    "Dogfish": "non_dst:shipwrecked",
+    "Floaty Boaty Knight": "non_dst:shipwrecked",
+    "Flotsam": "non_dst:dont_starve",
+    "Gunpowder Barrel": "non_dst:shipwrecked",
+    "Jellyfish": "non_dst:shipwrecked",
+    "Mussel": "non_dst:shipwrecked",
+    "Mussel Bed": "non_dst:shipwrecked",
+    "Ocean Fishes": "non_item:overview",
+    "Peg Leg": "non_dst:shipwrecked",
+    "Purple Grouper": "non_dst:shipwrecked",
+    "Quacken": "non_dst:shipwrecked",
+    "Rainbow Jellyfish": "non_dst:shipwrecked",
+    "Sea Chest": "non_dst:shipwrecked",
+    "Sea Hound": "non_dst:shipwrecked",
+    "Sea Lab": "non_dst:shipwrecked",
+    "Sealnado": "non_dst:shipwrecked",
+    "Shadow Creature": "non_item:overview",
+    "Shoal": "non_dst:shipwrecked",
+    "Stink Ray": "non_dst:shipwrecked",
+    "Suspicious Bubbles": "non_dst:shipwrecked",
+    "Swordfish": "non_dst:shipwrecked",
+    "Tiger Shark": "non_dst:shipwrecked",
+    "Volcano": "non_dst:shipwrecked",
+    "Water Beefalo": "non_dst:shipwrecked",
+    "Watery Grave": "non_dst:shipwrecked",
+    "White Whale": "non_dst:shipwrecked",
+    "Wreck": "non_dst:shipwrecked"
+  },
+  "expectedDirectPages": 64,
+  "expectedPublishedPages": 31,
+  "game": "DST",
+  "itemType": "content",
+  "key": "ocean",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Ocean",
+  "tags": [
+    "Ocean"
+  ]
+}

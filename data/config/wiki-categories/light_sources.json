@@ -1,0 +1,46 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Light Sources",
+  "excludedTitles": {
+    "Ballphin Palace": "non_dst:shipwrecked",
+    "Bioluminescence": "non_dst:shipwrecked",
+    "Boat Lantern": "non_dst:shipwrecked",
+    "Boat Torch": "non_dst:shipwrecked",
+    "Bottle Lantern": "non_dst:shipwrecked",
+    "Brainy Sprout": "non_dst:shipwrecked",
+    "Buoy": "non_dst:shipwrecked",
+    "Buoyant Chiminea": "non_dst:shipwrecked",
+    "Chiminea": "non_dst:shipwrecked",
+    "Cork Candle Hat": "non_dst:hamlet",
+    "Crumbling Brazier": "non_dst:hamlet",
+    "Dragoon Heart": "non_dst:shipwrecked",
+    "Glowfly": "non_dst:hamlet",
+    "Krissure": "non_dst:shipwrecked",
+    "Lamp": "non_dst:hamlet",
+    "Lamp Post": "non_dst:hamlet",
+    "Lava Pool": "non_dst:hamlet",
+    "Machete": "non_dst:shipwrecked",
+    "Maxwell's Light": "non_dst:dont_starve",
+    "Mushroom Lights": "non_item:overview",
+    "Obsidian Fire Pit": "non_dst:shipwrecked",
+    "Obsidian Spear": "non_dst:shipwrecked",
+    "Rainbow Jellyfish": "non_dst:shipwrecked",
+    "Tar Lamp": "non_dst:shipwrecked",
+    "Town House": "non_dst:hamlet",
+    "Volcano": "non_dst:shipwrecked",
+    "Volcano Altar of Snackrifice": "non_dst:shipwrecked",
+    "Wall Brazier": "non_dst:hamlet"
+  },
+  "expectedDirectPages": 94,
+  "expectedPublishedPages": 66,
+  "game": "DST",
+  "itemType": "content",
+  "key": "light_sources",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Light_Sources",
+  "tags": [
+    "Light Sources"
+  ]
+}

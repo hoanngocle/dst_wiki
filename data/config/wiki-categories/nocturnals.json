@@ -1,0 +1,24 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Nocturnals",
+  "excludedTitles": {
+    "Elder Mandrake": "non_dst:hamlet",
+    "Scorpion": "non_dst:hamlet",
+    "Snake": "non_dst:shipwrecked",
+    "Snaptooth": "non_dst:hamlet",
+    "Spiders": "non_item:overview",
+    "Viper": "non_dst:hamlet"
+  },
+  "expectedDirectPages": 23,
+  "expectedPublishedPages": 17,
+  "game": "DST",
+  "itemType": "mob",
+  "key": "nocturnals",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Nocturnals",
+  "tags": [
+    "Nocturnals"
+  ]
+}

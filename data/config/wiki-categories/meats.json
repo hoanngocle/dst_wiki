@@ -1,0 +1,33 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Meats",
+  "excludedTitles": {
+    "\"Ballphin Free\" Tuna": "non_dst:shipwrecked",
+    "Dogfish": "non_dst:shipwrecked",
+    "Dragoon Heart": "non_dst:shipwrecked",
+    "Eye of the Tiger Shark": "non_dst:shipwrecked",
+    "Feijoada": "non_dst:hamlet",
+    "Fishes": "non_item:overview",
+    "Meated Nettles": "non_dst:hamlet",
+    "Neon Quattro": "non_dst:shipwrecked",
+    "Pierrot Fish": "non_dst:shipwrecked",
+    "Poison Dartfrog Legs": "non_dst:hamlet",
+    "Purple Grouper": "non_dst:shipwrecked",
+    "Roe": "non_dst:shipwrecked",
+    "Shark Fin": "non_dst:shipwrecked",
+    "Shark Fin Soup": "non_dst:shipwrecked",
+    "Tropical Fish": "non_dst:shipwrecked"
+  },
+  "expectedDirectPages": 48,
+  "expectedPublishedPages": 33,
+  "game": "DST",
+  "itemType": "food",
+  "key": "meats",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Meats",
+  "tags": [
+    "Meats"
+  ]
+}

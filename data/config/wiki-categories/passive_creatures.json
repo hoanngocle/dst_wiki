@@ -1,0 +1,51 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Passive Creatures",
+  "excludedTitles": {
+    "Bioluminescence": "non_dst:shipwrecked",
+    "Crabbit": "non_dst:shipwrecked",
+    "Dogfish": "non_dst:shipwrecked",
+    "Doydoy": "non_dst:shipwrecked",
+    "Dung Beetle": "non_dst:hamlet",
+    "Fishermerm": "non_dst:shipwrecked",
+    "Glowfly": "non_dst:hamlet",
+    "Mobs": "non_item:overview",
+    "Packim Baggims": "non_dst:shipwrecked",
+    "Parrot Pirate": "non_dst:shipwrecked",
+    "Peagawk": "non_dst:hamlet",
+    "Pig Traders": "non_dst:hamlet",
+    "Pig Traders/Banker": "non_dst:hamlet",
+    "Pig Traders/Beautician": "non_dst:hamlet",
+    "Pig Traders/Collector": "non_dst:hamlet",
+    "Pig Traders/Erudite": "non_dst:hamlet",
+    "Pig Traders/Farmer": "non_dst:hamlet",
+    "Pig Traders/Florist": "non_dst:hamlet",
+    "Pig Traders/Hatmaker": "non_dst:hamlet",
+    "Pig Traders/Hunter": "non_dst:hamlet",
+    "Pig Traders/Mayor Truffleston": "non_dst:hamlet",
+    "Pig Traders/Miner": "non_dst:hamlet",
+    "Pig Traders/Pig Queen": "non_dst:hamlet",
+    "Pig Traders/Professor": "non_dst:hamlet",
+    "Pig Traders/Shopkeep": "non_dst:hamlet",
+    "Pig Traders/Usher": "non_dst:hamlet",
+    "Pig Traders/Worker": "non_dst:hamlet",
+    "Rainbow Jellyfish": "non_dst:shipwrecked",
+    "Ro Bin": "non_dst:hamlet",
+    "Sealnado": "non_dst:shipwrecked",
+    "Sharkitten": "non_dst:shipwrecked",
+    "Snurtle": "duplicate:canonical_redirect",
+    "Thunderbird": "non_dst:hamlet"
+  },
+  "expectedDirectPages": 63,
+  "expectedPublishedPages": 30,
+  "game": "DST",
+  "itemType": "mob",
+  "key": "passive_creatures",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Passive_Creatures",
+  "tags": [
+    "Passive Creatures"
+  ]
+}

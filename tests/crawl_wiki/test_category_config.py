@@ -399,6 +399,82 @@ class CategoryConfigTests(unittest.TestCase):
         ):
             self.assertNotIn(title, items)
 
+    def test_loads_reviewed_batch_seven_configs(self):
+        expected = {
+            "light_sources": (94, 66, "content", "Light Sources"),
+            "magic_tab": (30, 20, "item", "Magic Tab"),
+            "magic_tier_1": (19, 14, "item", "Magic Tier 1"),
+            "magic_tier_2": (14, 9, "item", "Magic Tier 2"),
+            "meats": (48, 33, "food", "Meats"),
+            "melee_weapons": (38, 23, "weapon", "Melee Weapons"),
+            "mineable_objects": (32, 23, "object", "Mineable Objects"),
+            "mob_dropped_items": (205, 142, "item", "Mob Dropped Items"),
+            "mob_housing": (52, 23, "structure", "Mob Housing"),
+            "mob_spawning_entities": (
+                124,
+                77,
+                "object",
+                "Mob Spawning Entities",
+            ),
+            "mobs": (279, 174, "mob", "Mobs"),
+            "monster_foods": (9, 6, "food", "Monster Foods"),
+            "monsters": (64, 40, "mob", "Monsters"),
+            "neutral_creatures": (36, 22, "mob", "Neutral Creatures"),
+            "nightmare_state_indicator": (
+                9,
+                9,
+                "object",
+                "Nightmare State Indicator",
+            ),
+            "nocturnals": (23, 17, "mob", "Nocturnals"),
+            "ocean": (64, 31, "content", "Ocean"),
+            "passive_creatures": (63, 30, "mob", "Passive Creatures"),
+        }
+
+        for key, values in expected.items():
+            with self.subTest(key=key):
+                direct, published, item_type, tag = values
+                config = load_category_config(key)
+                self.assertEqual(
+                    (
+                        config.expected_direct_pages,
+                        config.expected_published_pages,
+                    ),
+                    (direct, published),
+                )
+                self.assertEqual(config.item_type, item_type)
+                self.assertEqual(config.tags, (tag,))
+                self.assertEqual(config.game, "DST")
+
+        dropped = dict(
+            load_category_config("mob_dropped_items").excluded_titles
+        )
+        self.assertNotIn("Spider Eggs", dropped)
+        self.assertEqual(dropped["Sweetener"], "non_item:overview")
+
+        spawning = dict(
+            load_category_config("mob_spawning_entities").excluded_titles
+        )
+        self.assertEqual(spawning["Plants"], "non_item:overview")
+        self.assertEqual(
+            spawning["Guides/Hatching A Smallbird"],
+            "non_item:category_mismatch",
+        )
+
+        mobs = dict(load_category_config("mobs").excluded_titles)
+        self.assertEqual(mobs["Animals"], "non_item:overview")
+        self.assertEqual(mobs["Parrot Pirate"], "non_dst:shipwrecked")
+        self.assertNotIn("Terrorclaw", mobs)
+        self.assertNotIn("Wavey Jones", mobs)
+
+        indicators = dict(
+            load_category_config(
+                "nightmare_state_indicator"
+            ).excluded_titles
+        )
+        self.assertNotIn("Flower", indicators)
+        self.assertNotIn("Runic Turf", indicators)
+
 
 if __name__ == "__main__":
     unittest.main()

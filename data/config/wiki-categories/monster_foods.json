@@ -1,0 +1,21 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Monster Foods",
+  "excludedTitles": {
+    "Dead Jellyfish": "non_dst:shipwrecked",
+    "Dried Jellyfish": "non_dst:shipwrecked",
+    "Monster Food": "non_item:overview"
+  },
+  "expectedDirectPages": 9,
+  "expectedPublishedPages": 6,
+  "game": "DST",
+  "itemType": "food",
+  "key": "monster_foods",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Monster_Foods",
+  "tags": [
+    "Monster Foods"
+  ]
+}

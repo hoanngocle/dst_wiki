@@ -1,0 +1,27 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Mineable Objects",
+  "excludedTitles": {
+    "Basalt Eruption": "non_dst:hamlet",
+    "Coral Reef": "non_dst:shipwrecked",
+    "Dragoon Egg": "non_dst:shipwrecked",
+    "Gnat Mound": "non_dst:hamlet",
+    "Limpet Rock": "non_dst:shipwrecked",
+    "Ruined Sculptures": "non_dst:hamlet",
+    "Stone Plug": "non_dst:hamlet",
+    "Stone Slab": "non_dst:hamlet",
+    "Unimportant Pillar": "non_dst:hamlet"
+  },
+  "expectedDirectPages": 32,
+  "expectedPublishedPages": 23,
+  "game": "DST",
+  "itemType": "object",
+  "key": "mineable_objects",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Mineable_Objects",
+  "tags": [
+    "Mineable Objects"
+  ]
+}

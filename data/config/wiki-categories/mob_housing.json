@@ -1,0 +1,47 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Mob Housing",
+  "excludedTitles": {
+    "'The Sty' Oddities Emporium": "non_dst:hamlet",
+    "Ballphin Palace": "non_dst:shipwrecked",
+    "Birdcage": "non_item:category_mismatch",
+    "Crabbit Den": "non_dst:shipwrecked",
+    "Curly Tails Mud Spa": "non_dst:hamlet",
+    "Dragoon Den": "non_dst:shipwrecked",
+    "Fishermerm's Hut": "non_dst:shipwrecked",
+    "Flower": "non_item:category_mismatch",
+    "Guides/Hatching A Smallbird": "non_item:category_mismatch",
+    "Jungle Tree": "non_dst:shipwrecked",
+    "Miss Sow's Floral Arrangements": "non_dst:hamlet",
+    "Palace": "non_dst:hamlet",
+    "Pigg and Pigglet's General Store": "non_dst:hamlet",
+    "Prime Ape Hut": "non_dst:shipwrecked",
+    "Sharkitten Den": "non_dst:shipwrecked",
+    "Swinesbury Academy": "non_dst:hamlet",
+    "Swinesbury City Hall": "non_dst:hamlet",
+    "Swinesbury Fine Grocer's": "non_dst:hamlet",
+    "Swinesbury Mineral Exchange": "non_dst:hamlet",
+    "The Boar's Tusk Weapon Shop": "non_dst:hamlet",
+    "The Flying Pig Arcane Shop": "non_dst:hamlet",
+    "The Sow's Ear Hat Shop": "non_dst:hamlet",
+    "The Sterling Trough Deli": "non_dst:hamlet",
+    "The Tinkerer's Tower": "non_dst:hamlet",
+    "Town House": "non_dst:hamlet",
+    "Viney Bush": "non_dst:shipwrecked",
+    "Watch Tower": "non_dst:hamlet",
+    "Wildbore House": "non_dst:shipwrecked",
+    "Wobster Den": "non_dst:shipwrecked"
+  },
+  "expectedDirectPages": 52,
+  "expectedPublishedPages": 23,
+  "game": "DST",
+  "itemType": "structure",
+  "key": "mob_housing",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Mob_Housing",
+  "tags": [
+    "Mob Housing"
+  ]
+}

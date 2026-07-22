@@ -1,0 +1,33 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Melee Weapons",
+  "excludedTitles": {
+    "Ball Pein Hammer": "non_dst:hamlet",
+    "Cactus Spike": "non_dst:shipwrecked",
+    "Cork Bat": "non_dst:hamlet",
+    "Cutlass Supreme": "non_dst:shipwrecked",
+    "Executive Hammer": "non_dst:hamlet",
+    "Gold Pan": "non_dst:hamlet",
+    "Halberd": "non_dst:hamlet",
+    "Machete": "non_dst:shipwrecked",
+    "Magnifying Glass": "non_dst:hamlet",
+    "Obsidian Spear": "non_dst:shipwrecked",
+    "Peg Leg": "non_dst:shipwrecked",
+    "Poison Spear": "non_dst:shipwrecked",
+    "Shears": "non_dst:hamlet",
+    "Stalking Stick": "non_dst:hamlet",
+    "Trident": "non_dst:shipwrecked"
+  },
+  "expectedDirectPages": 38,
+  "expectedPublishedPages": 23,
+  "game": "DST",
+  "itemType": "weapon",
+  "key": "melee_weapons",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Melee_Weapons",
+  "tags": [
+    "Melee Weapons"
+  ]
+}

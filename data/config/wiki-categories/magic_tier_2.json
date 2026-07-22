@@ -1,0 +1,23 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Magic Tier 2",
+  "excludedTitles": {
+    "Books": "non_item:overview",
+    "Pugalisk Wand": "non_dst:hamlet",
+    "Seaworthy": "non_dst:shipwrecked",
+    "Skyworthy": "non_dst:hamlet",
+    "Slingshot Ammo": "non_item:overview"
+  },
+  "expectedDirectPages": 14,
+  "expectedPublishedPages": 9,
+  "game": "DST",
+  "itemType": "item",
+  "key": "magic_tier_2",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Magic_Tier_2",
+  "tags": [
+    "Magic Tier 2"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Neutral Creatures",
+  "excludedTitles": {
+    "Blue Whale": "non_dst:shipwrecked",
+    "Bottlenose Ballphin": "non_dst:shipwrecked",
+    "Hippopotamoose": "non_dst:hamlet",
+    "Jellyfish": "non_dst:shipwrecked",
+    "Mant": "non_dst:hamlet",
+    "Mobs": "non_item:overview",
+    "Piko": "non_dst:hamlet",
+    "Platapine": "non_dst:hamlet",
+    "Pog": "non_dst:hamlet",
+    "Prime Ape": "non_dst:shipwrecked",
+    "Royal Guard": "non_dst:hamlet",
+    "Shadow Creature": "non_item:overview",
+    "Water Beefalo": "non_dst:shipwrecked",
+    "Wildbore": "non_dst:shipwrecked"
+  },
+  "expectedDirectPages": 36,
+  "expectedPublishedPages": 22,
+  "game": "DST",
+  "itemType": "mob",
+  "key": "neutral_creatures",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Neutral_Creatures",
+  "tags": [
+    "Neutral Creatures"
+  ]
+}

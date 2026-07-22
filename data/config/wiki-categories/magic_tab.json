@@ -1,0 +1,28 @@
+{
+  "allowedNamespaces": [
+    0
+  ],
+  "categoryTitle": "Category:Magic Tab",
+  "excludedTitles": {
+    "Dripple Pipes": "non_dst:shipwrecked",
+    "Hogus Porkusator": "non_dst:hamlet",
+    "Living Artifact": "non_dst:hamlet",
+    "Old Bell": "non_dst:reign_of_giants",
+    "Piratihatitator": "non_dst:shipwrecked",
+    "Pugalisk Wand": "non_dst:hamlet",
+    "Root Trunk": "non_dst:hamlet",
+    "Seaworthy": "non_dst:shipwrecked",
+    "Skyworthy": "non_dst:hamlet",
+    "Vortex Cloak": "non_dst:hamlet"
+  },
+  "expectedDirectPages": 30,
+  "expectedPublishedPages": 20,
+  "game": "DST",
+  "itemType": "item",
+  "key": "magic_tab",
+  "schema_version": 1,
+  "sourceUrl": "https://dontstarve.fandom.com/wiki/Category:Magic_Tab",
+  "tags": [
+    "Magic Tab"
+  ]
+}
