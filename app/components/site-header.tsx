@@ -4,12 +4,13 @@ const links = [
   { id: "items", href: "/", label: "Prefabs" },
   { id: "characters", href: "/characters", label: "Nhân vật" },
   { id: "base", href: "/base", label: "Base" },
+  { id: "guides", href: "/guides", label: "Guide" },
 ] as const;
 
 export function SiteHeader({ active }: { active: (typeof links)[number]["id"] }) {
   return (
     <header className="border-b border-[#cbd5e1] bg-[#f8fafc]/90">
-      <div className="mx-auto flex min-h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex min-h-16 max-w-7xl flex-wrap items-center justify-between gap-x-4 px-4 py-2 sm:px-6 lg:px-8">
         <Link
           href="/"
           className="flex min-h-11 items-center gap-3 font-semibold tracking-[-0.02em] text-[#14233b]"
@@ -20,7 +21,10 @@ export function SiteHeader({ active }: { active: (typeof links)[number]["id"] })
           />
           <span>Don&apos;t Starve Together</span>
         </Link>
-        <nav aria-label="Điều hướng chính" className="flex items-center gap-1">
+        <nav
+          aria-label="Điều hướng chính"
+          className="-mx-2 flex max-w-full items-center gap-1 overflow-x-auto px-2"
+        >
           {links.map((link) => {
             const selected = active === link.id;
 

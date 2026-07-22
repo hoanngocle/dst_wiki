@@ -64,6 +64,14 @@ input {
   margin-bottom: 0;
 }
 
+.guide-article + .guide-article {
+  margin-top: 1.75rem;
+}
+
+.guide-article [id] {
+  scroll-margin-top: 1.5rem;
+}
+
 .wiki-article h1,
 .wiki-article h2,
 .wiki-article h3,
