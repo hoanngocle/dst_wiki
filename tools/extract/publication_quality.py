@@ -442,6 +442,10 @@ def run_publication_quality(
             mirrored_assets.mkdir()
             for asset_group in child.iterdir():
                 if asset_group.name == "quality":
+                    mirrored_quality = mirrored_assets / "quality"
+                    mirrored_quality.mkdir()
+                    for asset in asset_group.iterdir():
+                        (mirrored_quality / asset.name).symlink_to(asset.resolve())
                     continue
                 (mirrored_assets / asset_group.name).symlink_to(
                     asset_group.resolve(), target_is_directory=asset_group.is_dir()

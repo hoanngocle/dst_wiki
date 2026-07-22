@@ -199,3 +199,41 @@ git diff --check
 ```
 
 Kết quả hợp lệ phải có cả `base_game` và `tu_tien`, selected evidence lớn hơn 0, foreign-key check không in dòng nào, `hard_failures` rỗng và `git diff --check` im lặng. `validate` cũng phải xác nhận tập prefab DST export khớp chính xác tập file nguồn. Trước khi ký duyệt, còn phải xác nhận mọi ingredient resolve, không có URL HTTP trong source/evidence/manifest, checksum/size archive khớp manifest, và ba thư mục mod giống byte-for-byte với bản tải gốc.
+
+## 7. Guide và publication quality
+
+Guide dùng pipeline riêng vì đây là bài đọc, không phải prefab side peek:
+
+```bash
+python3 -m tools.crawl_wiki.cli --profile category --category guides --page-budget 500
+python3 -m tools.extract.cli export-guides
+```
+
+Output gồm `public/data/guides/index.json`, detail tại
+`public/data/guides/pages/<slug>.json` và cover local tại
+`public/assets/guides/`. Exporter chỉ nhận bài DST đã review, sanitize HTML bằng
+allowlist, loại ảnh remote/notice/navigation, tạo anchor ổn định và hard-fail
+khi thiếu cover, nội dung, revision hoặc slug duy nhất.
+
+Sau mọi lần export catalog, chạy audit-only trước:
+
+```bash
+python3 -m tools.extract.cli publication-quality \
+  --items public/data/items.json \
+  --guides public/data/guides \
+  --public-root public \
+  --category-root data/crawled/fandom-categories \
+  --report data/generated/publication-quality-report.json
+```
+
+Audit-only chỉ ghi report; ảnh repair được dựng trong thư mục tạm. Evidence được
+thử đúng thứ tự: field hiện tại, duplicate canonical, Wiki detail, Category
+crawl đã review, rồi recipe/catalog. Ảnh chỉ được phục hồi từ đúng trang hoặc
+đúng identity, không dùng placeholder. Sau khi đọc toàn bộ row `remove`, chạy
+lại cùng lệnh với `--apply`; `items.json` chỉ được thay atomically khi candidate
+sau repair không còn hard failure. Report lưu action `keep`, `repair`, `merge`
+hoặc `remove`, issue trước/sau, nguồn canonical, mọi attempt và field đã sửa.
+
+Khôi phục output gần nhất bằng Git nếu apply bị gián đoạn; không chạy
+`git reset --hard`. Sau apply, chạy lại audit-only: điều kiện hoàn tất là
+`repair=merge=remove=hard_failures=0`.
