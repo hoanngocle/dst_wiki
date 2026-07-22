@@ -12,6 +12,7 @@ Trạng thái chỉ gồm `New`, `Doing`, `Done`: URL mới/`New` được lấy
 
 | Category | Source | Direct | Child category | Excluded | Publish candidates | Registry Done | Status |
 |---|---|---:|---:|---:|---:|---:|---|
+| guides | [Category:Guides](https://dontstarve.fandom.com/wiki/Category:Guides) | 105 | 1 | 100 | 5 | 0 | Doing |
 | shadow_magic_filter | [Category:Shadow Magic Filter](https://dontstarve.fandom.com/wiki/Category:Shadow_Magic_Filter) | 31 | 0 | 0 | 31 | 31 | Done |
 | spiders | [Category:Spiders](https://dontstarve.fandom.com/wiki/Category:Spiders) | 14 | 0 | 1 | 13 | 13 | Done |
 | structures | [Category:Structures](https://dontstarve.fandom.com/wiki/Category:Structures) | 278 | 4 | 123 | 155 | 155 | Done |
@@ -185,6 +186,14 @@ Category, tương ứng 51 lượt membership trùng được dedupe. Không cra
 Category con và tám member ngoài namespace 0. Mười hai output hoàn tất với 409
 page, 334 image, 292.986 link, 0 failure/pending; registry tăng lên 1.305 URL và
 tất cả đều `Done`.
+
+Guide review kiểm 107 direct members: 105 article namespace 0, một Board Thread
+và `Category:Dedicated Servers`. Không crawl đệ quy hoặc namespace ngoài 0. Chỉ
+giữ năm bài có phạm vi DST rõ ràng, nội dung đủ dùng và ảnh trong chính bài:
+`How to Kill the Giants in DST`, `Maximum Efficiency Day 13 Base DST Guide`,
+`Slurtle Slime Guide`, `Survive and Thrive`, `Taming a Beefalo`. Một trăm bài
+còn lại bị loại vì thuộc game/DLC khác, trộn phạm vi không thể xuất bản nguyên
+bài cho wiki DST, đã lỗi thời, quá thiếu nội dung hoặc không có ảnh phù hợp.
 
 Giữ đủ 14 Category vì chúng bổ sung tag phân loại. `Craftable Items`, `Craftable
 Structures`, `Events` và `Food` mang phần lớn URL riêng. `Cooking Filter`,

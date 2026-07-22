@@ -11,10 +11,14 @@ SCHEMA_VERSION = 1
 _KEY_PATTERN = re.compile(r"^[a-z0-9]+(?:[-_][a-z0-9]+)*$")
 _EXCLUSION_REASONS = {
     "duplicate:canonical_redirect",
+    "non_content:insufficient",
+    "non_content:no_image",
+    "non_content:obsolete",
     "non_item:category_mismatch",
     "non_item:overview",
     "non_dst:dont_starve",
     "non_dst:hamlet",
+    "non_dst:mixed_scope",
     "non_dst:reign_of_giants",
     "non_dst:shipwrecked",
 }
