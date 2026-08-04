@@ -36,6 +36,9 @@ describe("RecipeIngredients", () => {
 
     expect(screen.getByLabelText("Vàng, số lượng 2")).toBeDefined();
     expect(screen.getByText("×2")).toBeDefined();
+    expect(screen.getByLabelText("Vàng, số lượng 2").className).toContain(
+      "bg-nova-surface-soft",
+    );
   });
 
   it("shows a linked tooltip and emits the referenced full item", () => {

@@ -38,11 +38,11 @@ function Section({
   return (
     <section
       aria-labelledby={id}
-      className="overflow-hidden rounded-2xl border border-[#c8d3df] bg-[#f8fafc]"
+      className="overflow-hidden rounded-2xl border border-nova-border bg-nova-surface-soft"
     >
       <h3
         id={id}
-        className="border-b border-[#d5dde6] px-4 py-3 text-sm font-semibold text-[#172943]"
+        className="border-b border-nova-border px-4 py-3 text-sm font-semibold text-nova-text"
       >
         {title}
       </h3>
@@ -59,7 +59,7 @@ function StatusMessage({
   noneText: string;
 }) {
   return (
-    <p className="px-4 py-4 text-sm leading-6 text-[#607188]">
+    <p className="px-4 py-4 text-sm leading-6 text-nova-muted">
       {status === "none" ? noneText : "Chưa xác minh được dữ liệu từ mã game hoặc Wiki."}
     </p>
   );
@@ -89,7 +89,7 @@ function ReferenceButton({
       type="button"
       aria-label={target.name}
       onClick={() => onSelectItem(target)}
-      className="inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-xl px-2 py-1 font-semibold text-[#263b58] transition hover:bg-[#e9f1fb] hover:text-[#2e5fb3] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2e5fb3]/30"
+      className="inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-xl px-2 py-1 font-semibold text-nova-text transition hover:bg-nova-accent/10 hover:text-nova-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nova-accent"
     >
       {content}
     </button>
@@ -121,7 +121,7 @@ function AppearanceSection({ details, titleId }: { details: CatalogMobDetails; t
   return (
     <Section id={`${titleId}-appearance`} title="Xuất hiện">
       {appearance.status === "known" ? (
-        <div className="space-y-3 p-4 text-sm leading-6 text-[#43556d]">
+        <div className="space-y-3 p-4 text-sm leading-6 text-nova-muted">
           {appearance.sources.length ? (
             <ul className="list-disc space-y-1 pl-5">
               {appearance.sources.map((source) => <li key={source}>{source}</li>)}
@@ -129,18 +129,18 @@ function AppearanceSection({ details, titleId }: { details: CatalogMobDetails; t
           ) : null}
           <dl className="grid gap-3 sm:grid-cols-2">
             <div>
-              <dt className="text-xs font-semibold uppercase tracking-[0.06em] text-[#607188]">Spawn code</dt>
+              <dt className="text-xs font-semibold uppercase tracking-[0.06em] text-nova-muted">Spawn code</dt>
               <dd className="mt-1 break-words">{appearance.spawnCodes.join(", ")}</dd>
             </div>
             {appearance.renewable !== null ? (
               <div>
-                <dt className="text-xs font-semibold uppercase tracking-[0.06em] text-[#607188]">Tái tạo</dt>
+                <dt className="text-xs font-semibold uppercase tracking-[0.06em] text-nova-muted">Tái tạo</dt>
                 <dd className="mt-1">{appearance.renewable ? "Có" : "Không"}</dd>
               </div>
             ) : null}
             {appearance.respawn !== null ? (
               <div>
-                <dt className="text-xs font-semibold uppercase tracking-[0.06em] text-[#607188]">Hồi sinh</dt>
+                <dt className="text-xs font-semibold uppercase tracking-[0.06em] text-nova-muted">Hồi sinh</dt>
                 <dd className="mt-1">{appearance.respawn}</dd>
               </div>
             ) : null}
@@ -150,7 +150,7 @@ function AppearanceSection({ details, titleId }: { details: CatalogMobDetails; t
               href={appearance.wikiUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex font-semibold text-[#2e5fb3] underline decoration-[#9bb8df] underline-offset-4"
+              className="inline-flex font-semibold text-nova-accent underline decoration-nova-accent underline-offset-4"
             >
               Xem nguồn Wiki
             </a>
@@ -169,18 +169,18 @@ function VariantSection({ details, titleId }: { details: CatalogMobDetails; titl
       {details.variants.length ? (
         <ul className="grid gap-2 p-4 sm:grid-cols-2">
           {details.variants.map((variant) => (
-            <li key={variant.id} className="flex items-center gap-3 rounded-xl border border-[#d5dde6] bg-white p-3">
+            <li key={variant.id} className="flex items-center gap-3 rounded-xl border border-nova-border bg-nova-surface-raised p-3">
               <GameSprite sprite={variant.sprite} size={40} />
               <div className="min-w-0">
-                <p className="truncate font-semibold text-[#263b58]">{variant.name}</p>
-                <p className="text-xs text-[#607188]">{ROLE_LABEL[variant.role]}</p>
-                <code className="text-[11px] text-[#738298]">{variant.prefabId}</code>
+                <p className="truncate font-semibold text-nova-text">{variant.name}</p>
+                <p className="text-xs text-nova-muted">{ROLE_LABEL[variant.role]}</p>
+                <code className="text-[11px] text-nova-muted">{variant.prefabId}</code>
               </div>
             </li>
           ))}
         </ul>
       ) : (
-        <p className="px-4 py-4 text-sm leading-6 text-[#607188]">Chưa xác minh được biến thể.</p>
+        <p className="px-4 py-4 text-sm leading-6 text-nova-muted">Chưa xác minh được biến thể.</p>
       )}
     </Section>
   );
@@ -201,7 +201,7 @@ function CatalogMobSections({
   if (!details || details.contract !== "catalog") {
     return (
       <Section id={`${titleId}-mob-data`} title="Dữ liệu Mob / Boss">
-        <p className="px-4 py-4 text-sm leading-6 text-[#607188]">
+        <p className="px-4 py-4 text-sm leading-6 text-nova-muted">
           Chưa xác minh được dữ liệu từ mã game hoặc Wiki.
         </p>
       </Section>
@@ -214,49 +214,49 @@ function CatalogMobSections({
       <VariantSection details={details} titleId={titleId} />
       <Section id={`${titleId}-stats`} title="Chỉ số">
         {details.stats.length ? (
-          <dl className="grid grid-cols-2 gap-px bg-[#d5dde6] sm:grid-cols-3">
+          <dl className="grid grid-cols-2 gap-px bg-nova-border sm:grid-cols-3">
             {details.stats.map((stat) => (
-              <div key={`${stat.sourceVariant}:${stat.key}`} className="bg-white px-4 py-3">
-                <dt className="text-xs font-semibold text-[#607188]">{stat.label}</dt>
-                <dd className="mt-1 text-lg font-semibold text-[#172943]">
+              <div key={`${stat.sourceVariant}:${stat.key}`} className="bg-nova-surface-raised px-4 py-3">
+                <dt className="text-xs font-semibold text-nova-muted">{stat.label}</dt>
+                <dd className="mt-1 text-lg font-semibold text-nova-text">
                   {formatStat(stat.value, stat.unit)}
                 </dd>
-                <p className="mt-1 text-[11px] text-[#738298]">{sourceName(details, stat.sourceVariant)}</p>
+                <p className="mt-1 text-[11px] text-nova-muted">{sourceName(details, stat.sourceVariant)}</p>
               </div>
             ))}
           </dl>
         ) : (
-          <p className="px-4 py-4 text-sm leading-6 text-[#607188]">Chưa xác minh được chỉ số.</p>
+          <p className="px-4 py-4 text-sm leading-6 text-nova-muted">Chưa xác minh được chỉ số.</p>
         )}
       </Section>
       <Section id={`${titleId}-mechanics`} title="Kỹ năng / cơ chế đặc biệt">
         {details.mechanics.length ? (
           <ul className="space-y-2 p-4">
             {details.mechanics.map((mechanic) => (
-              <li key={`${mechanic.sourceVariant}:${mechanic.text}`} className="rounded-xl border border-[#d5dde6] bg-white px-3 py-2.5 text-sm leading-6 text-[#43556d]">
+              <li key={`${mechanic.sourceVariant}:${mechanic.text}`} className="rounded-xl border border-nova-border bg-nova-surface-raised px-3 py-2.5 text-sm leading-6 text-nova-muted">
                 <p>{mechanic.text}</p>
-                <p className="mt-1 text-xs text-[#738298]">{sourceName(details, mechanic.sourceVariant)}</p>
+                <p className="mt-1 text-xs text-nova-muted">{sourceName(details, mechanic.sourceVariant)}</p>
               </li>
             ))}
           </ul>
         ) : (
-          <p className="px-4 py-4 text-sm leading-6 text-[#607188]">Chưa xác minh được cơ chế riêng.</p>
+          <p className="px-4 py-4 text-sm leading-6 text-nova-muted">Chưa xác minh được cơ chế riêng.</p>
         )}
       </Section>
       <Section id={`${titleId}-loot`} title="Vật phẩm có thể thu được">
         {details.lootStatus === "known" ? (
           <ul className="space-y-2 p-4">
             {details.loot.map((reward) => (
-              <li key={`${reward.sourceVariant}:${reward.method}:${reward.item.id}`} className="grid gap-2 rounded-xl border border-[#d5dde6] bg-white p-3 text-sm sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center">
+              <li key={`${reward.sourceVariant}:${reward.method}:${reward.item.id}`} className="grid gap-2 rounded-xl border border-nova-border bg-nova-surface-raised p-3 text-sm sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center">
                 <div>
                   <ReferenceButton reference={reward.item} itemsById={itemsById} onSelectItem={onSelectItem} />
-                  <p className="ml-2 text-xs font-semibold text-[#2e5fb3]">{METHOD_LABEL[reward.method]}</p>
-                  <p className="ml-2 text-xs text-[#607188]">Nguồn: {sourceName(details, reward.sourceVariant)}</p>
-                  {reward.conditions ? <p className="ml-2 text-xs text-[#607188]">{reward.conditions}</p> : null}
+                  <p className="ml-2 text-xs font-semibold text-nova-accent">{METHOD_LABEL[reward.method]}</p>
+                  <p className="ml-2 text-xs text-nova-muted">Nguồn: {sourceName(details, reward.sourceVariant)}</p>
+                  {reward.conditions ? <p className="ml-2 text-xs text-nova-muted">{reward.conditions}</p> : null}
                 </div>
                 <div className="flex gap-2 text-xs font-semibold">
-                  <span className="rounded-lg bg-[#eef3f8] px-2 py-1">{formatQuantity(reward.minimum, reward.maximum)}</span>
-                  {reward.chance ? <span className="rounded-lg bg-[#e9f1fb] px-2 py-1 text-[#2e5fb3]">{reward.chance}</span> : null}
+                  <span className="rounded-lg bg-nova-surface-raised px-2 py-1">{formatQuantity(reward.minimum, reward.maximum)}</span>
+                  {reward.chance ? <span className="rounded-lg bg-nova-accent/10 px-2 py-1 text-nova-accent">{reward.chance}</span> : null}
                 </div>
               </li>
             ))}
@@ -294,13 +294,13 @@ function CategoryFactSection({
   return (
     <Section id={id} title={title}>
       {section.status === "unknown" || !values.length ? (
-        <p className="px-4 py-4 text-sm text-[#607188]">Chưa xác minh</p>
+        <p className="px-4 py-4 text-sm text-nova-muted">Chưa xác minh</p>
       ) : (
-        <dl className="grid grid-cols-2 gap-px bg-[#d5dde6] sm:grid-cols-3">
+        <dl className="grid grid-cols-2 gap-px bg-nova-border sm:grid-cols-3">
           {values.map((stat) => (
-            <div key={`${stat.sourceVariant ?? "shared"}:${stat.key}`} className="bg-white px-4 py-3">
-              <dt className="text-xs font-semibold text-[#607188]">{stat.label}</dt>
-              <dd className="mt-1 text-lg font-semibold text-[#172943]">
+            <div key={`${stat.sourceVariant ?? "shared"}:${stat.key}`} className="bg-nova-surface-raised px-4 py-3">
+              <dt className="text-xs font-semibold text-nova-muted">{stat.label}</dt>
+              <dd className="mt-1 text-lg font-semibold text-nova-text">
                 {formatStat(stat.value, stat.unit)}
               </dd>
             </div>
@@ -334,7 +334,7 @@ function CategoryMobSections({
         <div
           role="tablist"
           aria-label="Mob variants"
-          className="flex flex-wrap gap-2 rounded-2xl border border-[#c8d3df] bg-[#f8fafc] p-3"
+          className="flex flex-wrap gap-2 rounded-2xl border border-nova-border bg-nova-surface-soft p-3"
         >
           {details.variants.map((variant) => (
             <button
@@ -343,7 +343,7 @@ function CategoryMobSections({
               role="tab"
               aria-selected={selectedCode === variant.code}
               onClick={() => setSelectedCode(variant.code)}
-              className="inline-flex min-h-10 items-center gap-2 rounded-xl border border-[#c8d3df] bg-white px-3 text-sm font-semibold text-[#263b58] aria-selected:border-[#2e5fb3] aria-selected:bg-[#e9f1fb] aria-selected:text-[#2e5fb3]"
+              className="inline-flex min-h-10 items-center gap-2 rounded-xl border border-nova-border bg-nova-surface-raised px-3 text-sm font-semibold text-nova-text aria-selected:border-nova-accent aria-selected:bg-nova-accent/10 aria-selected:text-nova-accent"
             >
               <GameSprite sprite={variant.sprite} size={28} />
               {variant.label}
@@ -360,11 +360,11 @@ function CategoryMobSections({
       {details.traits.status !== "none" ? (
         <Section id={`${titleId}-traits`} title="Traits">
           {details.traits.status === "unknown" || !traits.length ? (
-            <p className="px-4 py-4 text-sm text-[#607188]">Chưa xác minh</p>
+            <p className="px-4 py-4 text-sm text-nova-muted">Chưa xác minh</p>
           ) : (
-            <ul className="space-y-2 p-4 text-sm leading-6 text-[#43556d]">
+            <ul className="space-y-2 p-4 text-sm leading-6 text-nova-muted">
               {traits.map((trait) => (
-                <li key={`${trait.sourceVariant ?? "shared"}:${trait.text}`} className="rounded-xl border border-[#d5dde6] bg-white px-3 py-2.5">
+                <li key={`${trait.sourceVariant ?? "shared"}:${trait.text}`} className="rounded-xl border border-nova-border bg-nova-surface-raised px-3 py-2.5">
                   {trait.text}
                 </li>
               ))}
@@ -376,19 +376,19 @@ function CategoryMobSections({
       {details.loot.status !== "none" ? (
         <Section id={`${titleId}-loot`} title="Loot">
           {details.loot.status === "unknown" || !loot.length ? (
-            <p className="px-4 py-4 text-sm text-[#607188]">Chưa xác minh</p>
+            <p className="px-4 py-4 text-sm text-nova-muted">Chưa xác minh</p>
           ) : (
             <ul className="space-y-2 p-4">
               {loot.map((reward) => (
-                <li key={`${reward.sourceVariant ?? "shared"}:${reward.method}:${reward.item.id}`} className="grid gap-2 rounded-xl border border-[#d5dde6] bg-white p-3 text-sm sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center">
+                <li key={`${reward.sourceVariant ?? "shared"}:${reward.method}:${reward.item.id}`} className="grid gap-2 rounded-xl border border-nova-border bg-nova-surface-raised p-3 text-sm sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center">
                   <div>
                     <ReferenceButton reference={reward.item} itemsById={itemsById} onSelectItem={onSelectItem} />
-                    <p className="ml-2 text-xs font-semibold text-[#2e5fb3]">{METHOD_LABEL[reward.method]}</p>
-                    {reward.conditions ? <p className="ml-2 text-xs text-[#607188]">{reward.conditions}</p> : null}
+                    <p className="ml-2 text-xs font-semibold text-nova-accent">{METHOD_LABEL[reward.method]}</p>
+                    {reward.conditions ? <p className="ml-2 text-xs text-nova-muted">{reward.conditions}</p> : null}
                   </div>
                   <div className="flex gap-2 text-xs font-semibold">
-                    <span className="rounded-lg bg-[#eef3f8] px-2 py-1">{reward.quantity}</span>
-                    {reward.chance ? <span className="rounded-lg bg-[#e9f1fb] px-2 py-1 text-[#2e5fb3]">{reward.chance}</span> : null}
+                    <span className="rounded-lg bg-nova-surface-raised px-2 py-1">{reward.quantity}</span>
+                    {reward.chance ? <span className="rounded-lg bg-nova-accent/10 px-2 py-1 text-nova-accent">{reward.chance}</span> : null}
                   </div>
                 </li>
               ))}
@@ -400,13 +400,13 @@ function CategoryMobSections({
       {details.spawnsFrom.status !== "none" ? (
         <Section id={`${titleId}-spawns-from`} title="Spawns from">
           {details.spawnsFrom.status === "unknown" || !spawnSources.length ? (
-            <p className="px-4 py-4 text-sm text-[#607188]">Chưa xác minh</p>
+            <p className="px-4 py-4 text-sm text-nova-muted">Chưa xác minh</p>
           ) : (
             <ul className="space-y-2 p-4">
               {spawnSources.map((spawn) => (
                 <li key={`${spawn.sourceVariant ?? "shared"}:${spawn.source.id}`}>
                   <ReferenceButton reference={spawn.source} itemsById={itemsById} onSelectItem={onSelectItem} />
-                  {spawn.conditions ? <p className="ml-2 text-xs text-[#607188]">{spawn.conditions}</p> : null}
+                  {spawn.conditions ? <p className="ml-2 text-xs text-nova-muted">{spawn.conditions}</p> : null}
                 </li>
               ))}
             </ul>
@@ -417,9 +417,9 @@ function CategoryMobSections({
       {details.notes.status !== "none" ? (
         <Section id={`${titleId}-notes`} title="Notes">
           {details.notes.status === "unknown" ? (
-            <p className="px-4 py-4 text-sm text-[#607188]">Chưa xác minh</p>
+            <p className="px-4 py-4 text-sm text-nova-muted">Chưa xác minh</p>
           ) : (
-            <ul className="space-y-2 p-4 text-sm leading-6 text-[#43556d]">
+            <ul className="space-y-2 p-4 text-sm leading-6 text-nova-muted">
               {details.notes.values.map((note) => <li key={note.sourceSha256}>{note.summaryVi}</li>)}
             </ul>
           )}
@@ -427,7 +427,7 @@ function CategoryMobSections({
       ) : null}
 
       <Section id={`${titleId}-code`} title="Code">
-        <code className="block break-words px-4 py-4 text-sm text-[#43556d]">
+        <code className="block break-words px-4 py-4 text-sm text-nova-muted">
           {details.identity.prefabCodes.join(", ")}
         </code>
       </Section>
@@ -436,7 +436,7 @@ function CategoryMobSections({
           href={details.identity.sourceUrl}
           target="_blank"
           rel="noreferrer"
-          className="block break-words px-4 py-4 text-sm font-semibold text-[#2e5fb3] underline decoration-[#9bb8df] underline-offset-4"
+          className="block break-words px-4 py-4 text-sm font-semibold text-nova-accent underline decoration-nova-accent underline-offset-4"
         >
           Fandom · revision {details.identity.revisionId}
         </a>
@@ -459,7 +459,7 @@ export function MobSections({
   if (!item.mob) {
     return (
       <Section id={`${titleId}-mob-data`} title="Dữ liệu Mob / Boss">
-        <p className="px-4 py-4 text-sm leading-6 text-[#607188]">Chưa xác minh</p>
+        <p className="px-4 py-4 text-sm leading-6 text-nova-muted">Chưa xác minh</p>
       </Section>
     );
   }

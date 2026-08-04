@@ -1366,7 +1366,7 @@ function curateItems(items: readonly ItemListEntry[]): ItemListEntry[] {
   });
 }
 
-export function parseItemPayload(value: unknown): readonly ItemListEntry[] {
+function parseCatalogPayload(value: unknown): ItemListEntry[] {
   if (
     !isRecord(value) ||
     value.schema_version !== 7 ||
@@ -1374,5 +1374,58 @@ export function parseItemPayload(value: unknown): readonly ItemListEntry[] {
   ) {
     throw new Error("item payload must use schema version 7 and contain items");
   }
-  return curateItems(value.items.map(parseItem));
+  return value.items.map(parseItem);
+}
+
+export function parseItemPayload(value: unknown): readonly ItemListEntry[] {
+  return curateItems(parseCatalogPayload(value));
+}
+
+const itemSourceOrder: Readonly<Record<ItemNamespace, number>> = {
+  tu_tien: 0,
+  base_game: 1,
+};
+
+const prefabCategoryOrder: Readonly<Record<PrefabCategory, number>> = {
+  item: 0,
+  pill: 1,
+  mob: 2,
+  boss: 3,
+  character: 4,
+  structure: 5,
+  effect: 6,
+  other: 7,
+};
+
+export function parseItemCatalog(value: unknown): readonly ItemListEntry[] {
+  const parsedItems = parseCatalogPayload(value);
+  const identities = new Set<string>();
+
+  for (const item of parsedItems) {
+    if (identities.has(item.id)) {
+      throw new Error(`duplicate item identity ${item.id}`);
+    }
+    identities.add(item.id);
+
+    if (item.wiki) {
+      const expectedUrl = `/data/wiki/pages/${item.wiki.pageId}.json`;
+      if (item.wiki.detailUrl !== expectedUrl) {
+        throw new Error(`item ${item.id} must use a static Wiki URL`);
+      }
+      for (const relatedPage of item.wiki.relatedPages) {
+        const expectedRelatedUrl = `/data/wiki/pages/${relatedPage.pageId}.json`;
+        if (relatedPage.detailUrl !== expectedRelatedUrl) {
+          throw new Error(`item ${item.id} related page must use a static Wiki URL`);
+        }
+      }
+    }
+  }
+
+  const items = curateItems(parsedItems);
+  return items.toSorted((left, right) =>
+    itemSourceOrder[left.namespace] - itemSourceOrder[right.namespace] ||
+    prefabCategoryOrder[left.category] - prefabCategoryOrder[right.category] ||
+    left.name.localeCompare(right.name, "vi") ||
+    left.id.localeCompare(right.id),
+  );
 }

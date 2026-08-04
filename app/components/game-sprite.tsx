@@ -47,7 +47,7 @@ export function GameSprite({
         {...semantics}
         data-missing="true"
         data-testid="game-sprite"
-        className={`inline-flex shrink-0 items-center justify-center overflow-hidden border border-[#c8d3df] bg-[#e5ebf1] text-[#607188] ${cornerClass} ${className}`}
+        className={`inline-flex shrink-0 items-center justify-center overflow-hidden border border-nova-border bg-nova-surface-soft text-nova-muted ${cornerClass} ${className}`}
         style={{ width: size, height: size }}
       >
         <ImageBroken aria-hidden="true" size={Math.max(16, Math.round(size * 0.42))} />
@@ -59,7 +59,7 @@ export function GameSprite({
     <span
       {...semantics}
       data-testid="game-sprite"
-      className={`inline-block shrink-0 overflow-hidden bg-[#e5ebf1] ${cornerClass} ${className}`}
+      className={`inline-block shrink-0 overflow-hidden bg-nova-surface-soft ${cornerClass} ${className}`}
       style={cropStyle(sprite, size)}
     />
   );

@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 
+import * as itemCatalog from "./item-catalog";
 import { parseItemPayload } from "./item-catalog";
 
 const validPayload = {
@@ -201,6 +202,68 @@ function makeAnimalMob() {
 }
 
 describe("parseItemPayload", () => {
+  it("rejects duplicate catalog identities before the client receives them", () => {
+    const duplicatePayload = {
+      schema_version: 7,
+      items: [
+        makeValidItem("shared", { namespace: "tu_tien" }),
+        makeValidItem("shared", { namespace: "tu_tien" }),
+      ],
+    };
+    const parseItemCatalog = (
+      itemCatalog as typeof itemCatalog & {
+        parseItemCatalog: (value: unknown) => readonly unknown[];
+      }
+    ).parseItemCatalog;
+
+    expect(() => parseItemCatalog(duplicatePayload)).toThrow(/duplicate/i);
+  });
+
+  it("orders sources and prefab categories deterministically", () => {
+    const payload = {
+      schema_version: 7,
+      items: [
+        makeValidItem("zeta", { namespace: "base_game" }),
+        { ...makeValidItem("pill", { namespace: "tu_tien" }), category: "pill" },
+        makeValidItem("alpha", { namespace: "tu_tien" }),
+      ],
+    };
+    const parseItemCatalog = (
+      itemCatalog as typeof itemCatalog & {
+        parseItemCatalog: (value: unknown) => readonly { id: string }[];
+      }
+    ).parseItemCatalog;
+
+    expect(parseItemCatalog(payload).map((item) => item.id)).toEqual([
+      "tu_tien:alpha",
+      "tu_tien:pill",
+      "base_game:zeta",
+    ]);
+  });
+
+  it("rejects legacy runtime Wiki routes from the static catalog", () => {
+    const payload = structuredClone(validPayload) as unknown as {
+      schema_version: number;
+      items: Array<Record<string, unknown>>;
+    };
+    payload.items[0].wiki = {
+      pageId: 105588,
+      title: "Cảnh giới",
+      canonicalUrl: "https://dontstarve.wiki.gg/wiki/Cultivation",
+      categories: [],
+      mappingState: "mapped",
+      detailUrl: "/dst/wiki/105588",
+      relatedPages: [],
+    };
+    const parseItemCatalog = (
+      itemCatalog as typeof itemCatalog & {
+        parseItemCatalog: (value: unknown) => readonly unknown[];
+      }
+    ).parseItemCatalog;
+
+    expect(() => parseItemCatalog(payload)).toThrow(/static Wiki URL/i);
+  });
+
   it("accepts the generated compact item contract", () => {
     const items = parseItemPayload(validPayload);
 

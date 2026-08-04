@@ -17,11 +17,11 @@ export function RecipeIngredients({
   const tooltipPrefix = useId();
 
   if (!recipe) {
-    return <p className="text-sm text-[#66768b]">Không có công thức</p>;
+    return <p className="text-sm text-nova-muted">Không có công thức</p>;
   }
 
   if (recipe.ingredients.length === 0) {
-    return <p className="text-sm font-medium text-[#53647a]">Công thức đặc biệt</p>;
+    return <p className="text-sm font-medium text-nova-muted">Công thức đặc biệt</p>;
   }
 
   return (
@@ -46,13 +46,13 @@ export function RecipeIngredients({
               aria-label={accessibleName}
               aria-describedby={tooltipId}
               onClick={() => onSelectItem(fullItem)}
-              className="group relative inline-flex min-h-10 cursor-pointer items-center gap-1.5 rounded-xl border border-[#c8d3df] bg-[#f8fafc] py-1 pl-1 pr-2.5 text-sm font-semibold text-[#263b58] transition hover:border-[#2e5fb3] hover:bg-[#eef4fb] focus-visible:border-[#2e5fb3] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2e5fb3]/30 active:scale-[0.98]"
+              className="group relative inline-flex min-h-10 cursor-pointer items-center gap-1.5 rounded-xl border border-nova-border bg-nova-surface-soft py-1 pl-1 pr-2.5 text-sm font-semibold text-nova-text transition hover:border-nova-accent hover:bg-nova-surface-soft focus-visible:border-nova-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nova-accent active:scale-[0.98]"
             >
               {content}
               <span
                 id={tooltipId}
                 role="tooltip"
-                className="pointer-events-none invisible absolute bottom-full left-1/2 z-20 mb-2 -translate-x-1/2 whitespace-nowrap rounded-lg bg-[#172943] px-2.5 py-1.5 text-xs font-medium text-white opacity-0 shadow-lg transition group-hover:visible group-hover:opacity-100 group-focus-visible:visible group-focus-visible:opacity-100"
+                className="pointer-events-none invisible absolute bottom-full left-1/2 z-20 mb-2 -translate-x-1/2 whitespace-nowrap rounded-lg bg-nova-text px-2.5 py-1.5 text-xs font-medium text-white opacity-0 shadow-lg transition group-hover:visible group-hover:opacity-100 group-focus-visible:visible group-focus-visible:opacity-100"
               >
                 {ingredient.name}
               </span>
@@ -64,7 +64,7 @@ export function RecipeIngredients({
           <span
             key={ingredient.id}
             aria-label={accessibleName}
-            className="inline-flex min-h-10 items-center gap-1.5 rounded-xl border border-[#c8d3df] bg-[#f8fafc] py-1 pl-1 pr-2.5 text-sm font-semibold text-[#263b58]"
+            className="inline-flex min-h-10 items-center gap-1.5 rounded-xl border border-nova-border bg-nova-surface-soft py-1 pl-1 pr-2.5 text-sm font-semibold text-nova-text"
             title={ingredient.name}
           >
             {content}

@@ -185,7 +185,11 @@ describe("WikiStructuredSections", () => {
       />,
     );
 
-    expect(screen.getByRole("heading", { name: "Drop table" })).toBeDefined();
+    const dropHeading = screen.getByRole("heading", { name: "Drop table" });
+    expect(dropHeading).toBeDefined();
+    expect(dropHeading.closest("section")?.className).toContain(
+      "bg-nova-surface-soft",
+    );
     expect(screen.getByText("10 nguồn từ Wiki")).toBeDefined();
     const dropTable = screen.getByRole("table", { name: "Drop table" });
     expect(within(dropTable).getAllByRole("row")).toHaveLength(11);

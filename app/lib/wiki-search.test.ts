@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import type { ItemListEntry } from "./item-catalog";
+import * as wikiSearch from "./wiki-search";
 import {
   filterItems,
   findNormalizedTextMatch,
@@ -137,6 +138,29 @@ const items: readonly ItemListEntry[] = [
 ];
 
 describe("filterItems", () => {
+  it("selects diacritic-insensitively and retains the visible search text", () => {
+    const cultivationItem: ItemListEntry = {
+      ...items[0],
+      id: "tu_tien:realm_scroll",
+      prefabId: "realm_scroll",
+      name: "Cảnh giới tu tiên",
+      description: "Các mốc cảnh giới.",
+    };
+    const selectItems = (
+      wikiSearch as typeof wikiSearch & {
+        selectItems: (
+          values: readonly ItemListEntry[],
+          filters: { query: string },
+        ) => readonly (ItemListEntry & { searchText: string })[];
+      }
+    ).selectItems;
+
+    const selected = selectItems([cultivationItem], { query: "canh gioi" });
+
+    expect(selected).toHaveLength(1);
+    expect(selected[0].searchText).toContain("cảnh giới");
+  });
+
   it("preserves all items for an empty query and all filter", () => {
     expect(filterItems(items, "", "all", "all", "all")).toEqual(items);
   });

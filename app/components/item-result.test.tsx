@@ -73,6 +73,7 @@ describe("ItemResult", () => {
     expect(screen.getByText("xd_sword")).toBeDefined();
     expect(screen.getByLabelText("Loại: Item")).toBeDefined();
     expect(screen.getByText("×2")).toBeDefined();
+    expect(screen.getByRole("article").className).toContain("bg-nova-surface");
   });
 
   it("renders the localized prefab category", () => {

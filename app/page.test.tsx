@@ -13,6 +13,14 @@ const items = parseItemPayload(itemPayload).filter(
 const summary = summarizeItems(items);
 
 describe("item catalog page", () => {
+  it("uses the shared DST shell, hero, and panel primitives", () => {
+    render(<Home />);
+
+    expect(screen.getByTestId("dst-page-shell")).toBeDefined();
+    expect(screen.getByTestId("item-catalog-hero")).toBeDefined();
+    expect(screen.getByTestId("dst-wiki-filter-panel")).toBeDefined();
+  });
+
   it("renders the non-character catalog, data summary, and primary navigation", () => {
     render(<Home />);
 

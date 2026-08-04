@@ -29,11 +29,11 @@ function DetailSection({
   return (
     <section
       aria-labelledby={id}
-      className="overflow-hidden rounded-2xl border border-[#c8d3df] bg-[#f8fafc]"
+      className="overflow-hidden rounded-2xl border border-nova-border bg-nova-surface-soft"
     >
       <h3
         id={id}
-        className="border-b border-[#d5dde6] px-4 py-3 text-sm font-semibold text-[#172943]"
+        className="border-b border-nova-border px-4 py-3 text-sm font-semibold text-nova-text"
       >
         {title}
       </h3>
@@ -50,7 +50,7 @@ function StatusMessage({
   noneText: string;
 }) {
   return (
-    <p className="px-4 py-4 text-sm leading-6 text-[#607188]">
+    <p className="px-4 py-4 text-sm leading-6 text-nova-muted">
       {status === "unknown" ? "Chưa xác định từ dữ liệu mod." : noneText}
     </p>
   );
@@ -75,7 +75,7 @@ function ReferenceButton({
 
   if (!target) {
     return (
-      <span className="inline-flex min-h-10 items-center gap-2 rounded-xl px-1.5 py-1 font-semibold text-[#263b58]">
+      <span className="inline-flex min-h-10 items-center gap-2 rounded-xl px-1.5 py-1 font-semibold text-nova-text">
         {content}
       </span>
     );
@@ -86,7 +86,7 @@ function ReferenceButton({
       type="button"
       aria-label={target.name}
       onClick={() => onSelectItem(target)}
-      className="inline-flex min-h-10 cursor-pointer items-center gap-2 rounded-xl px-1.5 py-1 font-semibold text-[#263b58] transition hover:bg-[#e9f1fb] hover:text-[#2e5fb3] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2e5fb3]/30"
+      className="inline-flex min-h-10 cursor-pointer items-center gap-2 rounded-xl px-1.5 py-1 font-semibold text-nova-text transition hover:bg-nova-accent/10 hover:text-nova-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nova-accent"
     >
       {content}
     </button>
@@ -117,12 +117,12 @@ function CraftingSection({
               itemsById={itemsById}
               onSelectItem={onSelectItem}
             />
-            <span aria-hidden="true" className="text-lg font-semibold text-[#607188]">
+            <span aria-hidden="true" className="text-lg font-semibold text-nova-muted">
               =
             </span>
             <span
               aria-label={`Kết quả: ${item.name}, số lượng ${item.recipe.outputCount}`}
-              className="inline-flex min-h-10 items-center gap-2 rounded-xl border border-[#b9cce8] bg-[#e9f1fb] py-1 pl-1 pr-3 text-sm font-semibold text-[#263b58]"
+              className="inline-flex min-h-10 items-center gap-2 rounded-xl border border-nova-accent/30 bg-nova-accent/10 py-1 pl-1 pr-3 text-sm font-semibold text-nova-text"
             >
               <GameSprite sprite={item.sprite} size={32} />
               <span>{item.name}</span>
@@ -130,7 +130,7 @@ function CraftingSection({
             </span>
           </div>
           {item.craftingNote ? (
-            <p className="border-t border-[#dce3eb] px-4 py-3 text-sm leading-6 text-[#53647a]">
+            <p className="border-t border-nova-border px-4 py-3 text-sm leading-6 text-nova-muted">
               {item.craftingNote}
             </p>
           ) : null}
@@ -155,8 +155,8 @@ function UsageRecipe({
   onSelectItem: (item: ItemListEntry) => void;
 }) {
   return (
-    <li className="rounded-xl border border-[#d5dde6] bg-white p-3">
-      <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#607188]">
+    <li className="rounded-xl border border-nova-border bg-nova-surface-raised p-3">
+      <p className="text-xs font-semibold uppercase tracking-[0.08em] text-nova-muted">
         Dùng ×{recipe.subjectAmount} để chế tạo
       </p>
       <div className="mt-2 flex flex-wrap items-center gap-2 text-sm">
@@ -166,17 +166,17 @@ function UsageRecipe({
           onSelectItem={onSelectItem}
         />
         {recipe.resultAmount > 1 ? (
-          <span className="font-mono text-xs font-semibold text-[#53647a]">
+          <span className="font-mono text-xs font-semibold text-nova-muted">
             ×{recipe.resultAmount}
           </span>
         ) : null}
       </div>
       {recipe.ingredients.length ? (
-        <div className="mt-2 flex flex-wrap gap-2 text-xs text-[#53647a]">
+        <div className="mt-2 flex flex-wrap gap-2 text-xs text-nova-muted">
           {recipe.ingredients.map((ingredient) => (
             <span
               key={`${recipe.result.id}:${ingredient.id}`}
-              className="rounded-lg bg-[#eef3f8] px-2 py-1"
+              className="rounded-lg bg-nova-surface-raised px-2 py-1"
             >
               {ingredient.name} ×{ingredient.amount}
             </span>
@@ -184,7 +184,7 @@ function UsageRecipe({
         </div>
       ) : null}
       {recipe.craftingNote ? (
-        <p className="mt-2 text-xs leading-5 text-[#607188]">{recipe.craftingNote}</p>
+        <p className="mt-2 text-xs leading-5 text-nova-muted">{recipe.craftingNote}</p>
       ) : null}
     </li>
   );
@@ -213,7 +213,7 @@ function UsageSection({
               {usage.effects.map((effect) => (
                 <li
                   key={`${effect.trigger}:${effect.text}`}
-                  className="rounded-xl border border-[#d5dde6] bg-white px-3 py-2.5 text-sm leading-6 text-[#43556d]"
+                  className="rounded-xl border border-nova-border bg-nova-surface-raised px-3 py-2.5 text-sm leading-6 text-nova-muted"
                 >
                   {effect.text}
                 </li>
@@ -250,9 +250,9 @@ function DropSourceRow({
   onSelectItem: (item: ItemListEntry) => void;
 }) {
   return (
-    <li className="grid gap-2 rounded-xl border border-[#d5dde6] bg-white p-3 text-sm sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center">
+    <li className="grid gap-2 rounded-xl border border-nova-border bg-nova-surface-raised p-3 text-sm sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center">
       <div className="min-w-0">
-        <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#607188]">
+        <p className="text-xs font-semibold uppercase tracking-[0.08em] text-nova-muted">
           {DROP_TYPE_LABEL[source.type]}
         </p>
         {source.source ? (
@@ -262,20 +262,20 @@ function DropSourceRow({
             onSelectItem={onSelectItem}
           />
         ) : (
-          <p className="mt-1 font-semibold text-[#263b58]">
+          <p className="mt-1 font-semibold text-nova-text">
             {source.conditions ?? DROP_TYPE_LABEL[source.type]}
           </p>
         )}
         {source.source && source.conditions ? (
-          <p className="mt-1 text-xs leading-5 text-[#607188]">{source.conditions}</p>
+          <p className="mt-1 text-xs leading-5 text-nova-muted">{source.conditions}</p>
         ) : null}
       </div>
-      <div className="flex flex-wrap gap-2 text-xs font-semibold text-[#43556d]">
+      <div className="flex flex-wrap gap-2 text-xs font-semibold text-nova-muted">
         {source.quantity ? (
-          <span className="rounded-lg bg-[#eef3f8] px-2 py-1">{source.quantity}</span>
+          <span className="rounded-lg bg-nova-surface-raised px-2 py-1">{source.quantity}</span>
         ) : null}
         {source.chance ? (
-          <span className="rounded-lg bg-[#e9f1fb] px-2 py-1 text-[#2e5fb3]">
+          <span className="rounded-lg bg-nova-accent/10 px-2 py-1 text-nova-accent">
             {source.chance}
           </span>
         ) : null}
@@ -327,27 +327,27 @@ function CharacterSections({ item, titleId }: { item: ItemListEntry; titleId: st
   return (
     <>
       <DetailSection id={`${titleId}-profile`} title="Hồ sơ nhân vật">
-        <dl className="grid gap-px bg-[#d5dde6] sm:grid-cols-2">
-          <div className="bg-white px-4 py-3">
-            <dt className="text-xs font-semibold text-[#607188]">Danh hiệu</dt>
-            <dd className="mt-1 font-semibold text-[#172943]">{profile.title ?? "Chưa có dữ liệu"}</dd>
+        <dl className="grid gap-px bg-nova-border sm:grid-cols-2">
+          <div className="bg-nova-surface-raised px-4 py-3">
+            <dt className="text-xs font-semibold text-nova-muted">Danh hiệu</dt>
+            <dd className="mt-1 font-semibold text-nova-text">{profile.title ?? "Chưa có dữ liệu"}</dd>
           </div>
-          <div className="bg-white px-4 py-3">
-            <dt className="text-xs font-semibold text-[#607188]">Độ sinh tồn</dt>
-            <dd className="mt-1 font-semibold text-[#172943]">{profile.survivability ?? "Chưa có dữ liệu"}</dd>
+          <div className="bg-nova-surface-raised px-4 py-3">
+            <dt className="text-xs font-semibold text-nova-muted">Độ sinh tồn</dt>
+            <dd className="mt-1 font-semibold text-nova-text">{profile.survivability ?? "Chưa có dữ liệu"}</dd>
           </div>
         </dl>
-        {profile.quote ? <blockquote className="border-t border-[#d5dde6] bg-white px-4 py-4 text-sm italic leading-6 text-[#43556d]">{profile.quote}</blockquote> : null}
+        {profile.quote ? <blockquote className="border-t border-nova-border bg-nova-surface-raised px-4 py-4 text-sm italic leading-6 text-nova-muted">{profile.quote}</blockquote> : null}
       </DetailSection>
       <DetailSection id={`${titleId}-abilities`} title="Đặc điểm / năng lực">
         {profile.abilities.length ? (
           <ul className="space-y-2 p-4">
             {profile.abilities.map((ability) => (
-              <li key={ability} className="rounded-xl border border-[#d5dde6] bg-white px-3 py-2.5 text-sm leading-6 text-[#43556d]">{ability}</li>
+              <li key={ability} className="rounded-xl border border-nova-border bg-nova-surface-raised px-3 py-2.5 text-sm leading-6 text-nova-muted">{ability}</li>
             ))}
           </ul>
         ) : (
-          <p className="px-4 py-4 text-sm leading-6 text-[#607188]">Chưa tìm thấy mô tả năng lực trong dữ liệu mod.</p>
+          <p className="px-4 py-4 text-sm leading-6 text-nova-muted">Chưa tìm thấy mô tả năng lực trong dữ liệu mod.</p>
         )}
       </DetailSection>
     </>

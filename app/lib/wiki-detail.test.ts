@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 
+import * as wikiDetail from "./wiki-detail";
 import { parseWikiPageDetail } from "./wiki-detail";
 
 const validDetail = {
@@ -81,6 +82,18 @@ const normalized = {
 };
 
 describe("parseWikiPageDetail", () => {
+  it("builds the public static Wiki detail URL from a page identity", () => {
+    const buildWikiDetailUrl = (
+      wikiDetail as typeof wikiDetail & {
+        buildWikiDetailUrl: (page: { pageId: number }) => string;
+      }
+    ).buildWikiDetailUrl;
+
+    expect(buildWikiDetailUrl({ pageId: 105588 })).toBe(
+      "/data/wiki/pages/105588.json",
+    );
+  });
+
   it("parses the exported schema and keeps only rendered fields", () => {
     expect(parseWikiPageDetail(validDetail)).toEqual({
       pageId: 100736,
@@ -162,6 +175,11 @@ describe("parseWikiPageDetail", () => {
     { ...validDetail, canonicalUrl: "" },
     { ...validDetail, categories: [1] },
     { ...validDetail, revision: null },
+    { ...validDetail, html: "<script>alert(1)</script>" },
+    {
+      ...validDetail,
+      summaryViHtml: '<a href="javascript:alert(1)">Unsafe</a>',
+    },
   ])("rejects an invalid detail contract", (value) => {
     expect(() => parseWikiPageDetail(value)).toThrow();
   });

@@ -195,7 +195,11 @@ describe("TuTienItemSections", () => {
       />,
     );
 
-    expect(screen.getByRole("heading", { name: "Công thức" })).toBeDefined();
+    const recipeHeading = screen.getByRole("heading", { name: "Công thức" });
+    expect(recipeHeading).toBeDefined();
+    expect(recipeHeading.closest("section")?.className).toContain(
+      "bg-nova-surface-soft",
+    );
     expect(screen.getByRole("heading", { name: "Usage" })).toBeDefined();
     expect(screen.getByRole("heading", { name: "Nguồn nhận" })).toBeDefined();
     expect(screen.getByText("Không có công thức chế tạo.")).toBeDefined();

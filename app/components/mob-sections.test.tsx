@@ -209,7 +209,11 @@ describe("MobSections", () => {
       />,
     );
 
-    expect(screen.getByRole("heading", { name: "Xuất hiện" })).toBeDefined();
+    const appearanceHeading = screen.getByRole("heading", { name: "Xuất hiện" });
+    expect(appearanceHeading).toBeDefined();
+    expect(appearanceHeading.closest("section")?.className).toContain(
+      "bg-nova-surface-soft",
+    );
     expect(screen.getByText("Giai đoạn hậu chiến")).toBeDefined();
     expect(screen.getByText("Khai thác xác bằng cuốc")).toBeDefined();
     expect(screen.getByText("14.000")).toBeDefined();

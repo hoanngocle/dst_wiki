@@ -102,7 +102,7 @@ function WikiUsageImage({ src }: { src: string }) {
       loading="eager"
       data-testid="wiki-usage-icon"
       onError={() => setFailed(true)}
-      className="size-[48px] shrink-0 rounded-[4px] border border-[#c8d3df] bg-[#e5ebf1] object-contain"
+      className="size-[48px] shrink-0 rounded-[4px] border border-nova-border bg-nova-surface-soft object-contain"
     />
   );
 }
@@ -147,21 +147,21 @@ function WikiUsageIcon({
     <>
       {image}
       {amount === undefined ? null : (
-        <span aria-hidden="true" className="font-mono text-xs font-semibold text-[#53647a]">
+        <span aria-hidden="true" className="font-mono text-xs font-semibold text-nova-muted">
           ×{amount}
         </span>
       )}
       <span
         id={tooltipId}
         role="tooltip"
-        className="pointer-events-none invisible absolute left-1/2 top-full z-20 mt-2 -translate-x-1/2 whitespace-nowrap rounded-lg bg-[#172943] px-2.5 py-1.5 text-xs font-medium text-white opacity-0 shadow-lg transition group-hover:visible group-hover:opacity-100 group-focus-visible:visible group-focus-visible:opacity-100"
+        className="pointer-events-none invisible absolute left-1/2 top-full z-20 mt-2 -translate-x-1/2 whitespace-nowrap rounded-lg bg-nova-text px-2.5 py-1.5 text-xs font-medium text-white opacity-0 shadow-lg transition group-hover:visible group-hover:opacity-100 group-focus-visible:visible group-focus-visible:opacity-100"
       >
         {displayTitle}
       </span>
     </>
   );
   const className =
-    "group relative inline-flex min-h-10 items-center gap-1.5 rounded-xl border border-transparent px-1.5 py-1 transition hover:border-[#b9cce8] hover:bg-[#e9f1fb] focus-visible:border-[#2e5fb3] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2e5fb3]/30 active:scale-[0.98]";
+    "group relative inline-flex min-h-10 items-center gap-1.5 rounded-xl border border-transparent px-1.5 py-1 transition hover:border-nova-accent/30 hover:bg-nova-accent/10 focus-visible:border-nova-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nova-accent active:scale-[0.98]";
 
   if (item) {
     return (
@@ -209,7 +209,7 @@ function WikiReference({
         type="button"
         title={item.name}
         onClick={() => onSelectItem(item)}
-        className="inline-flex min-h-11 max-w-full cursor-pointer items-center gap-2 whitespace-nowrap rounded-xl px-1.5 py-1 text-left font-semibold text-[#263b58] transition hover:bg-[#e9f1fb] hover:text-[#2e5fb3] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2e5fb3]/30"
+        className="inline-flex min-h-11 max-w-full cursor-pointer items-center gap-2 whitespace-nowrap rounded-xl px-1.5 py-1 text-left font-semibold text-nova-text transition hover:bg-nova-accent/10 hover:text-nova-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nova-accent"
       >
         <GameSprite
           sprite={item.sprite}
@@ -228,7 +228,7 @@ function WikiReference({
       target="_blank"
       rel="noreferrer"
       title={reference.title}
-      className="inline-flex min-h-11 max-w-full items-center gap-2 whitespace-nowrap rounded-xl px-1.5 py-1 font-semibold text-[#2e5fb3] transition hover:bg-[#e9f1fb] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2e5fb3]/30"
+      className="inline-flex min-h-11 max-w-full items-center gap-2 whitespace-nowrap rounded-xl px-1.5 py-1 font-semibold text-nova-accent transition hover:bg-nova-accent/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nova-accent"
     >
       {showFallbackIcon ? (
         reference.iconUrl ? (
@@ -238,7 +238,7 @@ function WikiReference({
             width={STRUCTURED_ICON_SIZE}
             height={STRUCTURED_ICON_SIZE}
             data-testid="wiki-source-icon"
-            className="size-[48px] shrink-0 rounded-[4px] border border-[#c8d3df] bg-[#e5ebf1] object-contain"
+            className="size-[48px] shrink-0 rounded-[4px] border border-nova-border bg-nova-surface-soft object-contain"
           />
         ) : (
           <GameSprite
@@ -290,48 +290,48 @@ export function WikiStructuredSections({
 
   return (
     <div className="space-y-4">
-      <section className="overflow-hidden rounded-2xl border border-[#c8d3df] bg-[#f8fafc]">
-        <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-[#d5dde6] px-4 py-3 sm:px-5">
-          <h3 className="font-semibold text-[#172943]">Drop table</h3>
-          <p className="font-mono text-xs font-semibold text-[#607188]">
+      <section className="overflow-hidden rounded-2xl border border-nova-border bg-nova-surface-soft">
+        <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-nova-border px-4 py-3 sm:px-5">
+          <h3 className="font-semibold text-nova-text">Drop table</h3>
+          <p className="font-mono text-xs font-semibold text-nova-muted">
             {sections.dropTable.rows.length} nguồn từ Wiki
           </p>
         </div>
         <div className="min-w-0">
           <table aria-label="Drop table" className="w-full table-fixed border-collapse text-left">
-            <thead className="bg-[#eaf0f6]">
-              <tr className="border-b border-[#c8d3df]">
+            <thead className="bg-nova-surface-soft">
+              <tr className="border-b border-nova-border">
                 <th
                   scope="col"
-                  className="w-[58%] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[#607188] sm:px-5"
+                  className="w-[58%] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-nova-muted sm:px-5"
                 >
                   Nguồn
                 </th>
                 <th
                   scope="col"
-                  className="w-[12%] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[#607188]"
+                  className="w-[12%] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-nova-muted"
                 >
                   Số lượng
                 </th>
                 <th
                   scope="col"
-                  className="w-[10%] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[#607188]"
+                  className="w-[10%] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-nova-muted"
                 >
                   Tỷ lệ
                 </th>
                 <th
                   scope="col"
-                  className="w-[20%] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[#607188] sm:pr-5"
+                  className="w-[20%] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-nova-muted sm:pr-5"
                 >
                   Điều kiện
                 </th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#d5dde6]">
+            <tbody className="divide-y divide-nova-border">
               {sections.dropTable.rows.map((row, index) => (
                 <tr
                   key={`${row.sources.map((source) => source.url).join(":")}:${index}`}
-                  className="bg-[#f8fafc] align-middle transition-colors hover:bg-[#f1f5f9]"
+                  className="bg-nova-surface-soft align-middle transition-colors hover:bg-nova-surface-raised"
                 >
                   <td className="px-4 py-2 sm:px-5">
                     <div className="flex flex-wrap gap-x-1 gap-y-1">
@@ -346,13 +346,13 @@ export function WikiStructuredSections({
                       ))}
                     </div>
                   </td>
-                  <td className="break-words px-4 py-2 font-mono text-sm font-semibold text-[#172943]">
+                  <td className="break-words px-4 py-2 font-mono text-sm font-semibold text-nova-text">
                     {row.quantity}
                   </td>
-                  <td className="whitespace-nowrap px-4 py-2 font-mono text-sm font-semibold text-[#172943]">
+                  <td className="whitespace-nowrap px-4 py-2 font-mono text-sm font-semibold text-nova-text">
                     {row.chance}
                   </td>
-                  <td className="px-4 py-2 text-xs leading-5 text-[#53647a] sm:pr-5">
+                  <td className="px-4 py-2 text-xs leading-5 text-nova-muted sm:pr-5">
                     {row.context ?? <span aria-label="Không có điều kiện">—</span>}
                   </td>
                 </tr>
@@ -362,10 +362,10 @@ export function WikiStructuredSections({
         </div>
       </section>
 
-      <section className="overflow-hidden rounded-2xl border border-[#c8d3df] bg-[#f8fafc]">
-        <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-[#d5dde6] px-4 py-3 sm:px-5">
-          <h3 className="font-semibold text-[#172943]">Usage</h3>
-          <p className="font-mono text-xs font-semibold text-[#607188]">
+      <section className="overflow-hidden rounded-2xl border border-nova-border bg-nova-surface-soft">
+        <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-nova-border px-4 py-3 sm:px-5">
+          <h3 className="font-semibold text-nova-text">Usage</h3>
+          <p className="font-mono text-xs font-semibold text-nova-muted">
             {usageRecipes.length} công thức từ Wiki
           </p>
         </div>
@@ -383,45 +383,45 @@ export function WikiStructuredSections({
               {group === "Don't Starve" ? null : (
                 <h4
                   id={`wiki-usage-${group.replace(/\W+/g, "-")}`}
-                  className="px-4 text-sm font-semibold text-[#43556d] sm:px-5"
+                  className="px-4 text-sm font-semibold text-nova-muted sm:px-5"
                 >
                   {group}
                 </h4>
               )}
               <div
-                className={`${group === "Don't Starve" ? "" : "mt-2"} min-w-0 border-y border-[#d5dde6]`}
+                className={`${group === "Don't Starve" ? "" : "mt-2"} min-w-0 border-y border-nova-border`}
               >
                 <table
                   aria-label={`Usage: ${group}`}
                   className="w-full table-fixed border-collapse text-left"
                 >
-                  <thead className="bg-[#eaf0f6]">
-                    <tr className="border-b border-[#c8d3df]">
+                  <thead className="bg-nova-surface-soft">
+                    <tr className="border-b border-nova-border">
                       <th
                         scope="col"
-                        className="w-[56%] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[#607188] sm:px-5"
+                        className="w-[56%] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-nova-muted sm:px-5"
                       >
                         Công thức
                       </th>
                       <th
                         scope="col"
-                        className="w-[22%] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[#607188]"
+                        className="w-[22%] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-nova-muted"
                       >
                         Trạm / Nhân vật
                       </th>
                       <th
                         scope="col"
-                        className="w-[22%] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[#607188] sm:pr-5"
+                        className="w-[22%] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-nova-muted sm:pr-5"
                       >
                         Thành phẩm
                       </th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-[#d5dde6]">
+                  <tbody className="divide-y divide-nova-border">
                     {recipes.map((recipe, index) => (
                       <tr
                         key={`${recipe.result.url}:${index}`}
-                        className="bg-[#f8fafc] align-middle transition-colors hover:bg-[#f1f5f9]"
+                        className="bg-nova-surface-soft align-middle transition-colors hover:bg-nova-surface-raised"
                       >
                         <td className="px-4 py-2 sm:px-5">
                           <div className="flex min-w-0 flex-wrap items-center gap-1">
@@ -439,7 +439,7 @@ export function WikiStructuredSections({
                               >
                                 <span
                                   aria-hidden="true"
-                                  className="font-mono text-sm font-semibold text-[#8290a3]"
+                                  className="font-mono text-sm font-semibold text-nova-faint"
                                 >
                                   +
                                 </span>
@@ -454,7 +454,7 @@ export function WikiStructuredSections({
                             ))}
                           </div>
                           {recipe.note ? (
-                            <p className="mt-1 text-xs leading-5 text-[#53647a]">
+                            <p className="mt-1 text-xs leading-5 text-nova-muted">
                               {recipe.note}
                             </p>
                           ) : null}
@@ -470,15 +470,15 @@ export function WikiStructuredSections({
                               />
                             ) : null}
                             {recipe.character ? (
-                              <span className="whitespace-nowrap text-xs text-[#53647a]">
-                                <span className="font-semibold text-[#43556d]">
+                              <span className="whitespace-nowrap text-xs text-nova-muted">
+                                <span className="font-semibold text-nova-muted">
                                   Nhân vật:
                                 </span>{" "}
                                 {recipe.character}
                               </span>
                             ) : null}
                             {!recipe.station && !recipe.character ? (
-                              <span className="text-xs text-[#8290a3]">Không có</span>
+                              <span className="text-xs text-nova-faint">Không có</span>
                             ) : null}
                           </div>
                         </td>

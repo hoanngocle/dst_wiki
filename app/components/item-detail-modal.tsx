@@ -8,7 +8,7 @@ import { MobSections } from "./mob-sections";
 import { RecipeIngredients } from "./recipe-ingredients";
 import { StructureSections } from "./structure-sections";
 import { TuTienItemSections } from "./tu-tien-item-sections";
-import { WikiArticle } from "./wiki-article";
+import { WikiContent } from "./wiki-content";
 
 const FOCUSABLE_SELECTOR = [
   "a[href]",
@@ -42,22 +42,22 @@ function CraftingSections({
       {item.recipe ? (
         <section
           aria-labelledby={`${titleId}-crafting`}
-          className="overflow-hidden rounded-2xl border border-[#c8d3df] bg-[#f8fafc]"
+          className="overflow-hidden rounded-2xl border border-nova-border bg-nova-surface-soft"
         >
           <h3
             id={`${titleId}-crafting`}
-            className="border-b border-[#d5dde6] px-4 py-3 text-sm font-semibold text-[#172943]"
+            className="border-b border-nova-border px-4 py-3 text-sm font-semibold text-nova-text"
           >
             Công thức
           </h3>
           <div className="flex flex-wrap items-center gap-3 p-4">
             <RecipeIngredients recipe={item.recipe} />
-            <span aria-hidden="true" className="text-lg font-semibold text-[#607188]">
+            <span aria-hidden="true" className="text-lg font-semibold text-nova-muted">
               =
             </span>
             <span
               aria-label={`Kết quả: ${item.name}, số lượng ${item.recipe.outputCount}`}
-              className="inline-flex min-h-10 items-center gap-2 rounded-xl border border-[#b9cce8] bg-[#e9f1fb] py-1 pl-1 pr-3 text-sm font-semibold text-[#263b58]"
+              className="inline-flex min-h-10 items-center gap-2 rounded-xl border border-nova-accent/30 bg-nova-accent/10 py-1 pl-1 pr-3 text-sm font-semibold text-nova-text"
             >
               <GameSprite sprite={item.sprite} size={32} />
               <span>{item.name}</span>
@@ -65,7 +65,7 @@ function CraftingSections({
             </span>
           </div>
           {item.craftingNote ? (
-            <p className="border-t border-[#dce3eb] px-4 py-3 text-sm leading-6 text-[#53647a]">
+            <p className="border-t border-nova-border px-4 py-3 text-sm leading-6 text-nova-muted">
               {item.craftingNote}
             </p>
           ) : null}
@@ -75,15 +75,15 @@ function CraftingSections({
       {!item.recipe && item.craftingNote ? (
         <section
           aria-labelledby={`${titleId}-crafting-note`}
-          className="overflow-hidden rounded-2xl border border-[#c8d3df] bg-[#f8fafc]"
+          className="overflow-hidden rounded-2xl border border-nova-border bg-nova-surface-soft"
         >
           <h3
             id={`${titleId}-crafting-note`}
-            className="border-b border-[#d5dde6] px-4 py-3 text-sm font-semibold text-[#172943]"
+            className="border-b border-nova-border px-4 py-3 text-sm font-semibold text-nova-text"
           >
             Cách tạo / ghi chú chế tạo
           </h3>
-          <p className="px-4 py-3 text-sm leading-6 text-[#53647a]">
+          <p className="px-4 py-3 text-sm leading-6 text-nova-muted">
             {item.craftingNote}
           </p>
         </section>
@@ -104,20 +104,20 @@ function ItemSummary({
   return (
     <section
       aria-labelledby={`${titleId}-summary`}
-      className="overflow-hidden rounded-2xl border border-[#c8d3df] bg-[#f8fafc]"
+      className="overflow-hidden rounded-2xl border border-nova-border bg-nova-surface-soft"
     >
       <h3
         id={`${titleId}-summary`}
-        className="border-b border-[#d5dde6] px-4 py-3 text-sm font-semibold text-[#172943]"
+        className="border-b border-nova-border px-4 py-3 text-sm font-semibold text-nova-text"
       >
         Tóm tắt
       </h3>
-      <p className="px-4 py-3 text-sm leading-6 text-[#53647a]">{description}</p>
+      <p className="px-4 py-3 text-sm leading-6 text-nova-muted">{description}</p>
     </section>
   );
 }
 
-export function ItemDetailPeek({
+export function ItemDetailModal({
   item,
   itemsById,
   onSelectItem,
@@ -129,6 +129,7 @@ export function ItemDetailPeek({
   onClose: () => void;
 }) {
   const titleId = useId();
+  const descriptionId = `${titleId}-description`;
   const dialogRef = useRef<HTMLElement>(null);
   const bodyRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
@@ -184,15 +185,21 @@ export function ItemDetailPeek({
 
       if (event.key !== "Tab") return;
 
+      const dialog = dialogRef.current;
+      if (!dialog) return;
       const focusable = Array.from(
-        dialogRef.current?.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR) ?? [],
+        dialog.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR),
       );
       if (!focusable.length) return;
 
       const first = focusable[0];
       const last = focusable[focusable.length - 1];
-      const shouldWrapBackward = event.shiftKey && document.activeElement === first;
-      const shouldWrapForward = !event.shiftKey && document.activeElement === last;
+      const activeElement = document.activeElement;
+      const focusHasEscaped = !dialog.contains(activeElement);
+      const shouldWrapBackward =
+        event.shiftKey && (focusHasEscaped || activeElement === first);
+      const shouldWrapForward =
+        !event.shiftKey && (focusHasEscaped || activeElement === last);
 
       if (shouldWrapBackward || shouldWrapForward) {
         event.preventDefault();
@@ -200,9 +207,18 @@ export function ItemDetailPeek({
       }
     }
 
+    function handleFocusIn(event: FocusEvent) {
+      const dialog = dialogRef.current;
+      const target = event.target;
+      if (!dialog || !(target instanceof Node) || dialog.contains(target)) return;
+      closeButtonRef.current?.focus();
+    }
+
     document.addEventListener("keydown", handleKeyDown);
+    document.addEventListener("focusin", handleFocusIn);
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("focusin", handleFocusIn);
       document.body.style.overflow = previousOverflow;
       if (previouslyFocused?.isConnected) previouslyFocused.focus();
     };
@@ -220,7 +236,7 @@ export function ItemDetailPeek({
 
   return (
     <div
-      className="fixed inset-0 z-50 bg-[#0f1d30]/55 backdrop-blur-[2px]"
+      className="fixed inset-0 z-50 flex cursor-pointer items-end justify-center bg-black/80 p-4 backdrop-blur-[4px] sm:items-center sm:p-6"
       onClick={(event) => {
         if (event.target === event.currentTarget) onClose();
       }}
@@ -230,41 +246,44 @@ export function ItemDetailPeek({
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
-        data-placement="right"
-        className="ml-auto h-dvh w-full overflow-hidden border-l border-[#c8d3df] bg-[#edf1f5] shadow-[-28px_0_80px_rgba(15,29,48,0.28)] motion-safe:animate-[atlas-peek-in_180ms_ease-out] sm:max-w-[560px] sm:rounded-l-3xl"
+        aria-describedby={descriptionId}
+        data-placement="center"
+        className="flex max-h-[calc(100dvh-2rem)] w-full cursor-default flex-col overflow-hidden rounded-3xl border border-nova-border bg-nova-surface-raised shadow-[0_28px_100px_rgba(0,0,0,0.56)] motion-safe:animate-[atlas-peek-in_180ms_ease-out] sm:max-w-4xl"
       >
-        <div className="flex h-full flex-col">
-        <header className="shrink-0 flex items-start gap-4 border-b border-[#d5dde6] bg-[#f8fafc] p-5 sm:p-6">
+        <p id={descriptionId} className="sr-only">
+          {`Chi tiết vật phẩm ${item.name}.`}
+        </p>
+        <header className="flex shrink-0 items-start gap-4 border-b border-nova-border bg-nova-surface-soft p-5 sm:p-6">
           <GameSprite
             sprite={item.sprite}
             size={88}
             label={`Ảnh ${item.name}`}
-            className="ring-1 ring-[#c8d3df]"
+            className="ring-1 ring-nova-border"
           />
           <div className="min-w-0 flex-1">
-            <h2 id={titleId} className="text-xl font-semibold text-[#172943] sm:text-2xl">
+            <h2 id={titleId} className="text-xl font-semibold text-nova-text sm:text-2xl">
               {item.name}
             </h2>
             {item.englishName ? (
-              <p className="mt-1 text-sm text-[#607188]">{item.englishName}</p>
+              <p className="mt-1 text-sm text-nova-muted">{item.englishName}</p>
             ) : null}
             {realPrefab ? (
-              <code className="mt-1 block truncate font-mono text-[11px] text-[#68798e]">
+              <code className="mt-1 block truncate font-mono text-[11px] text-nova-faint">
                 {item.prefabId}
               </code>
             ) : null}
             <div className="mt-3 flex flex-wrap gap-2 text-xs font-semibold">
-              <span className="rounded-full border border-[#c8d3df] bg-[#eef3f8] px-2.5 py-1 text-[#43556d]">
+              <span className="rounded-full border border-nova-border bg-nova-surface-raised px-2.5 py-1 text-nova-muted">
                 {category}
               </span>
-              <span className="rounded-full border border-[#b9cce8] bg-[#e9f1fb] px-2.5 py-1 text-[#2e5fb3]">
+              <span className="rounded-full border border-nova-accent/30 bg-nova-accent/10 px-2.5 py-1 text-nova-accent">
                 {sourceLabel}
               </span>
               {item.mob?.contract === "category"
                 ? item.mob.classification.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full border border-[#d7c5a5] bg-[#f6eee0] px-2.5 py-1 text-[#765c31]"
+                      className="rounded-full border border-nova-warning/40 bg-nova-warning/10 px-2.5 py-1 text-nova-warning"
                     >
                       {tag}
                     </span>
@@ -277,7 +296,7 @@ export function ItemDetailPeek({
             type="button"
             aria-label="Đóng chi tiết"
             onClick={onClose}
-            className="inline-flex min-h-11 min-w-11 shrink-0 cursor-pointer items-center justify-center rounded-xl border border-[#c8d3df] text-[#53647a] transition hover:border-[#2e5fb3] hover:bg-[#e9eff6] hover:text-[#2e5fb3] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2e5fb3]/30 active:scale-[0.98]"
+            className="inline-flex min-h-11 min-w-11 shrink-0 cursor-pointer items-center justify-center rounded-xl border border-nova-border text-nova-muted transition hover:border-nova-accent hover:bg-nova-surface-raised hover:text-nova-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nova-accent active:scale-[0.98]"
           >
             <X aria-hidden="true" size={20} />
           </button>
@@ -285,28 +304,27 @@ export function ItemDetailPeek({
 
         <div
           ref={bodyRef}
-          data-testid="item-detail-peek-body"
+          data-testid="item-detail-modal-body"
           className="min-h-0 flex-1 overflow-y-auto overscroll-contain [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
-        <div className="space-y-4 p-5 sm:p-6">
-          {item.wiki ? (
-            <WikiArticle
-              key={item.wiki.detailUrl}
-              detailUrl={item.wiki.detailUrl}
-              canonicalUrl={item.wiki.canonicalUrl}
-              itemsById={itemsById}
-              onSelectItem={onSelectItem}
-              fallbackSummary={fallbackSummary}
-              contentAfterSummary={craftingContent}
-            />
-          ) : (
-            <>
-              {fallbackSummary}
-              {craftingContent}
-            </>
-          )}
-        </div>
-        </div>
+          <div className="space-y-4 p-5 sm:p-6">
+            {item.wiki ? (
+              <WikiContent
+                key={item.wiki.pageId}
+                pageId={item.wiki.pageId}
+                canonicalUrl={item.wiki.canonicalUrl}
+                itemsById={itemsById}
+                onSelectItem={onSelectItem}
+                fallbackSummary={fallbackSummary}
+                contentAfterSummary={craftingContent}
+              />
+            ) : (
+              <>
+                {fallbackSummary}
+                {craftingContent}
+              </>
+            )}
+          </div>
         </div>
       </section>
     </div>

@@ -10,6 +10,7 @@ export interface DstHeroProps {
   title: string;
   description: string;
   stats?: readonly DstStat[];
+  statsAriaLabel?: string;
   children?: ReactNode;
   testId?: string;
 }
@@ -19,6 +20,7 @@ export function DstHero({
   title,
   description,
   stats,
+  statsAriaLabel,
   children,
   testId,
 }: DstHeroProps) {
@@ -53,6 +55,7 @@ export function DstHero({
 
         {hasStats ? (
           <dl
+            aria-label={statsAriaLabel}
             data-testid={statsTestId}
             className="grid gap-3 sm:grid-cols-2 lg:max-w-[34rem] lg:min-w-80 lg:justify-self-end"
           >

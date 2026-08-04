@@ -58,8 +58,27 @@ export type WikiPageDetail = {
   normalized: NormalizedWikiSections | null;
 };
 
+export function buildWikiDetailUrl(page: { pageId: number }): string {
+  if (!Number.isInteger(page.pageId) || page.pageId <= 0) {
+    throw new Error("Wiki pageId must be a positive integer");
+  }
+
+  return `/data/wiki/pages/${page.pageId}.json`;
+}
+
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+const unsafeWikiHtmlPattern =
+  /<(?:script|iframe|object|embed)\b|(?:^|\s)on[a-z]+\s*=|(?:href|src)\s*=\s*["']?\s*javascript:/i;
+
+function trustedWikiHtml(value: unknown, context: string): string {
+  const html = requiredString(value, context);
+  if (unsafeWikiHtmlPattern.test(html)) {
+    throw new Error(`${context} must contain sanitized HTML`);
+  }
+  return html;
 }
 
 function requiredString(value: unknown, field: string): string {
@@ -213,11 +232,11 @@ export function parseWikiPageDetail(value: unknown): WikiPageDetail {
     pageId: positiveInteger(value.pageId, "wiki detail pageId"),
     title: requiredString(value.title, "wiki detail title"),
     canonicalUrl: requiredString(value.canonicalUrl, "wiki detail canonicalUrl"),
-    html: requiredString(value.html, "wiki detail html"),
+    html: trustedWikiHtml(value.html, "wiki detail html"),
     summaryViHtml:
       value.summaryViHtml == null
         ? null
-        : requiredString(value.summaryViHtml, "wiki detail summaryViHtml"),
+        : trustedWikiHtml(value.summaryViHtml, "wiki detail summaryViHtml"),
     categories: value.categories.map((category, index) =>
       requiredString(category, `wiki detail category ${index}`),
     ),

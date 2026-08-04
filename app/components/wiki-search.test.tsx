@@ -124,12 +124,12 @@ describe("WikiSearch", () => {
     fireEvent.change(search, { target: { value: "kiem" } });
     const status = screen.getByRole("status");
     expect(status.textContent).toBe(
-      '1 vật phẩm khớp với "kiem" trong Tất cả, Tất cả loại.',
+      '1 vật phẩm khớp với "kiem" trong nguồn Tất cả, nhóm Tất cả.',
     );
 
     fireEvent.change(search, { target: { value: "go" } });
     expect(status.textContent).toBe(
-      '1 vật phẩm khớp với "go" trong Tất cả, Tất cả loại.',
+      '1 vật phẩm khớp với "go" trong nguồn Tất cả, nhóm Tất cả.',
     );
   });
 
@@ -142,7 +142,7 @@ describe("WikiSearch", () => {
     expect(screen.queryByText("Gỗ")).toBeNull();
   });
 
-  it("shows Đan Dược as a separate classification filter", () => {
+  it("groups pills under magic and exploration", () => {
     const pill: ItemListEntry = {
       ...items[0],
       id: "tu_tien:xd_danyao_jq",
@@ -152,7 +152,9 @@ describe("WikiSearch", () => {
     };
     render(<WikiSearch items={[...items, pill]} />);
 
-    fireEvent.click(screen.getByRole("button", { name: "Đan Dược" }));
+    fireEvent.click(
+      screen.getByRole("button", { name: "Phép thuật & khám phá, 1 vật phẩm" }),
+    );
 
     expect(screen.getByText("Tụ Khí Hoàn")).toBeDefined();
     expect(screen.queryByText("Kiếm Thử")).toBeNull();
@@ -173,7 +175,9 @@ describe("WikiSearch", () => {
     render(<WikiSearch items={items} />);
 
     expect(screen.getByRole("group", { name: "Lọc theo danh mục" })).toBeDefined();
-    fireEvent.click(screen.getByRole("button", { name: "Công trình" }));
+    fireEvent.click(
+      screen.getByRole("button", { name: "Công trình & trang trí, 1 vật phẩm" }),
+    );
     expect(screen.getByText("Gỗ")).toBeDefined();
     expect(screen.queryByText("Kiếm Thử")).toBeNull();
 
@@ -324,7 +328,9 @@ describe("WikiSearch", () => {
     fireEvent.click(screen.getByRole("button", { name: "Xem thêm" }));
     expect(screen.getAllByRole("listitem")).toHaveLength(80);
 
-    fireEvent.click(screen.getByRole("button", { name: "Khác" }));
+    fireEvent.click(
+      screen.getByRole("button", { name: "Phép thuật & khám phá, 81 vật phẩm" }),
+    );
 
     expect(screen.getAllByRole("listitem")).toHaveLength(40);
   });

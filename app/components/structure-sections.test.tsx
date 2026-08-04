@@ -142,6 +142,8 @@ describe("StructureSections", () => {
     ]) {
       expect(screen.getByRole("heading", { name: heading })).toBeDefined();
     }
+    expect(screen.getByRole("heading", { name: "Xuất hiện" }).closest("section")?.className)
+      .toContain("bg-nova-surface-soft");
     expect(screen.getByText("Khoa học cấp 1")).toBeDefined();
     expect(screen.getByText("Chế tạo trong tab Khoa học")).toBeDefined();
     expect(screen.getByAltText("Science Machine.png")).toBeDefined();

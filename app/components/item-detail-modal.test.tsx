@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 import type { ItemListEntry } from "@/app/lib/item-catalog";
-import { ItemDetailPeek } from "./item-detail-peek";
+import { ItemDetailModal } from "./item-detail-modal";
 
 const item: ItemListEntry = {
   id: "base_game:goldnugget",
@@ -156,10 +156,30 @@ afterEach(() => {
   vi.unstubAllGlobals();
 });
 
-describe("ItemDetailPeek", () => {
+describe("ItemDetailModal", () => {
+  it("describes the named dialog and bounds it to the responsive viewport", () => {
+    render(
+      <ItemDetailModal
+        item={item}
+        itemsById={new Map([[item.id, item]])}
+        onSelectItem={() => undefined}
+        onClose={() => undefined}
+      />,
+    );
+
+    const dialog = screen.getByRole("dialog", { name: "Vàng" });
+    const descriptionId = dialog.getAttribute("aria-describedby");
+
+    expect(descriptionId).toBeTruthy();
+    expect(document.getElementById(descriptionId ?? "")?.textContent).toContain(
+      "Chi tiết vật phẩm Vàng.",
+    );
+    expect(dialog.className).toContain("max-h-[calc(100dvh-2rem)]");
+  });
+
   it("renders the Đan Dược category label", () => {
     render(
-      <ItemDetailPeek
+      <ItemDetailModal
         item={{ ...item, category: "pill", name: "Tụ Khí Hoàn" }}
         itemsById={new Map()}
         onClose={() => undefined}
@@ -171,13 +191,13 @@ describe("ItemDetailPeek", () => {
   });
 
   it("renders full item details and focuses the close button", () => {
-    render(<ItemDetailPeek {...peekProps(item)} />);
+    render(<ItemDetailModal {...peekProps(item)} />);
 
     const dialog = screen.getByRole("dialog", { name: "Vàng" });
     expect(dialog).toBeDefined();
-    expect(dialog.getAttribute("data-placement")).toBe("right");
-    expect(dialog.className).toContain("h-dvh");
-    const body = screen.getByTestId("item-detail-peek-body");
+    expect(dialog.getAttribute("data-placement")).toBe("center");
+    expect(dialog.className).toContain("max-h-[calc(100dvh-2rem)]");
+    const body = screen.getByTestId("item-detail-modal-body");
     expect(body.className).toContain("overflow-y-auto");
     expect(body.className).toContain("overscroll-contain");
     const englishName = screen.getByText("Gold Nugget");
@@ -211,7 +231,7 @@ describe("ItemDetailPeek", () => {
 
   it("closes from the close button and Escape", () => {
     const onClose = vi.fn();
-    render(<ItemDetailPeek {...peekProps(item)} onClose={onClose} />);
+    render(<ItemDetailModal {...peekProps(item)} onClose={onClose} />);
 
     fireEvent.click(screen.getByRole("button", { name: "Đóng chi tiết" }));
     fireEvent.keyDown(document, { key: "Escape" });
@@ -221,7 +241,7 @@ describe("ItemDetailPeek", () => {
 
   it("closes only when the backdrop itself is clicked", () => {
     const onClose = vi.fn();
-    render(<ItemDetailPeek {...peekProps(item)} onClose={onClose} />);
+    render(<ItemDetailModal {...peekProps(item)} onClose={onClose} />);
 
     const dialog = screen.getByRole("dialog", { name: "Vàng" });
     const backdrop = dialog.parentElement as HTMLElement;
@@ -233,7 +253,7 @@ describe("ItemDetailPeek", () => {
   });
 
   it("keeps keyboard focus inside the peek", () => {
-    render(<ItemDetailPeek {...peekProps(item)} />);
+    render(<ItemDetailModal {...peekProps(item)} />);
 
     const close = screen.getByRole("button", { name: "Đóng chi tiết" });
     fireEvent.keyDown(document, { key: "Tab" });
@@ -249,7 +269,7 @@ describe("ItemDetailPeek", () => {
     opener.focus();
     const previousOverflow = document.body.style.overflow;
 
-    const { unmount } = render(<ItemDetailPeek {...peekProps(item)} />);
+    const { unmount } = render(<ItemDetailModal {...peekProps(item)} />);
     expect(document.body.style.overflow).toBe("hidden");
 
     unmount();
@@ -259,8 +279,8 @@ describe("ItemDetailPeek", () => {
   });
 
   it("keeps the peek open and scrolls its body to top when item changes", () => {
-    const { rerender } = render(<ItemDetailPeek {...peekProps(item)} />);
-    const body = screen.getByTestId("item-detail-peek-body");
+    const { rerender } = render(<ItemDetailModal {...peekProps(item)} />);
+    const body = screen.getByTestId("item-detail-modal-body");
     const scrollTo = vi.fn();
     Object.defineProperty(body, "scrollTo", {
       configurable: true,
@@ -268,7 +288,7 @@ describe("ItemDetailPeek", () => {
     });
 
     rerender(
-      <ItemDetailPeek
+      <ItemDetailModal
         {...peekProps({ ...item, id: "base_game:bunnyman", name: "Bunnyman" })}
       />,
     );
@@ -279,7 +299,7 @@ describe("ItemDetailPeek", () => {
 
   it("omits the recipe panel when no recipe exists", () => {
     render(
-      <ItemDetailPeek
+      <ItemDetailModal
         {...peekProps(item)}
         item={{ ...item, description: null, recipe: null }}
       />,
@@ -290,7 +310,7 @@ describe("ItemDetailPeek", () => {
   });
 
   it("always shows all three structured sections for Tu Tiên items", () => {
-    render(<ItemDetailPeek {...peekProps(tuTienItem)} />);
+    render(<ItemDetailModal {...peekProps(tuTienItem)} />);
 
     expect(screen.getByRole("heading", { name: "Công thức" })).toBeDefined();
     expect(screen.getByRole("heading", { name: "Usage" })).toBeDefined();
@@ -299,7 +319,7 @@ describe("ItemDetailPeek", () => {
   });
 
   it("uses the complete structure renderer for structure records", () => {
-    render(<ItemDetailPeek {...peekProps(nightLight)} />);
+    render(<ItemDetailModal {...peekProps(nightLight)} />);
 
     expect(screen.getByRole("heading", { name: "Xuất hiện" })).toBeDefined();
     expect(
@@ -310,7 +330,7 @@ describe("ItemDetailPeek", () => {
 
   it("shows a crafting note inside the runtime recipe panel", () => {
     render(
-      <ItemDetailPeek
+      <ItemDetailModal
         {...peekProps(item)}
         item={{ ...item, craftingNote: "Rèn bằng linh lực tinh khiết." }}
       />,
@@ -322,7 +342,7 @@ describe("ItemDetailPeek", () => {
 
   it("shows a note-only crafting panel without inventing ingredients", () => {
     render(
-      <ItemDetailPeek
+      <ItemDetailModal
         {...peekProps(item)}
         item={{
           ...item,
@@ -362,7 +382,7 @@ describe("ItemDetailPeek", () => {
       }),
     );
 
-    render(<ItemDetailPeek {...peekProps(wikiItem)} />);
+    render(<ItemDetailModal {...peekProps(wikiItem)} />);
 
     expect(screen.queryByText("Wiki page")).toBeNull();
     expect(screen.queryByText("100736")).toBeNull();
@@ -404,7 +424,7 @@ describe("ItemDetailPeek", () => {
     );
 
     render(
-      <ItemDetailPeek
+      <ItemDetailModal
         {...peekProps({ ...wikiItem, recipe: item.recipe })}
       />,
     );
@@ -489,7 +509,7 @@ describe("ItemDetailPeek", () => {
     );
 
     render(
-      <ItemDetailPeek
+      <ItemDetailModal
         {...peekProps(wikiItem)}
         onSelectItem={onSelectItem}
       />,

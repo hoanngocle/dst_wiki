@@ -21,11 +21,11 @@ function Section({
   return (
     <section
       aria-labelledby={id}
-      className="overflow-hidden rounded-2xl border border-[#c8d3df] bg-[#f8fafc]"
+      className="overflow-hidden rounded-2xl border border-nova-border bg-nova-surface-soft"
     >
       <h3
         id={id}
-        className="border-b border-[#d5dde6] px-4 py-3 text-sm font-semibold text-[#172943]"
+        className="border-b border-nova-border px-4 py-3 text-sm font-semibold text-nova-text"
       >
         {title}
       </h3>
@@ -44,7 +44,7 @@ function StatusMessage({
   noneText: string;
 }) {
   return (
-    <p className="px-4 py-4 text-sm leading-6 text-[#607188]">
+    <p className="px-4 py-4 text-sm leading-6 text-nova-muted">
       {reason ?? (status === "none" ? noneText : "Chưa xác minh đủ dữ liệu.")}
     </p>
   );
@@ -61,10 +61,10 @@ function FactGrid({
     <dl className="grid gap-x-5 gap-y-3 p-4 text-sm sm:grid-cols-2">
       {visible.map((row) => (
         <div key={row.label} className="min-w-0">
-          <dt className="text-xs font-semibold uppercase tracking-[0.06em] text-[#607188]">
+          <dt className="text-xs font-semibold uppercase tracking-[0.06em] text-nova-muted">
             {row.label}
           </dt>
-          <dd className="mt-1 leading-6 text-[#263b58]">{row.value}</dd>
+          <dd className="mt-1 leading-6 text-nova-text">{row.value}</dd>
         </div>
       ))}
     </dl>
@@ -95,7 +95,7 @@ function ReferenceButton({
       type="button"
       aria-label={target.name}
       onClick={() => onSelectItem(target)}
-      className="inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-xl px-2 py-1 font-semibold text-[#263b58] transition hover:bg-[#e9f1fb] hover:text-[#2e5fb3] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2e5fb3]/30"
+      className="inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-xl px-2 py-1 font-semibold text-nova-text transition hover:bg-nova-accent/10 hover:text-nova-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nova-accent"
     >
       {content}
     </button>
@@ -122,12 +122,12 @@ function OriginSection({ details, titleId }: { details: StructureDetails; titleI
         ]}
       />
       {origin.sources.length ? (
-        <ul className="border-t border-[#dce3eb] px-4 py-3 text-sm leading-6 text-[#43556d]">
+        <ul className="border-t border-nova-border px-4 py-3 text-sm leading-6 text-nova-muted">
           {origin.sources.map((source) => <li key={source}>{source}</li>)}
         </ul>
       ) : null}
       {origin.note ? (
-        <p className="border-t border-[#dce3eb] px-4 py-3 text-sm leading-6 text-[#53647a]">
+        <p className="border-t border-nova-border px-4 py-3 text-sm leading-6 text-nova-muted">
           {origin.note}
         </p>
       ) : null}
@@ -169,7 +169,7 @@ function ConstructionSection({
             ]}
           />
           {construction.note ? (
-            <p className="border-t border-[#dce3eb] px-4 py-3 text-sm leading-6 text-[#53647a]">
+            <p className="border-t border-nova-border px-4 py-3 text-sm leading-6 text-nova-muted">
               {construction.note}
             </p>
           ) : null}
@@ -192,14 +192,14 @@ function FunctionsSection({ details, titleId }: { details: StructureDetails; tit
       {section.status === "known" && section.facts.length ? (
         <ul className="grid gap-3 p-4 sm:grid-cols-2">
           {section.facts.map((fact) => (
-            <li key={fact.key} className="rounded-xl border border-[#d5dde6] bg-white p-3">
-              <p className="text-xs font-semibold uppercase tracking-[0.06em] text-[#607188]">
+            <li key={fact.key} className="rounded-xl border border-nova-border bg-nova-surface-raised p-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.06em] text-nova-muted">
                 {fact.label}
               </p>
-              <p className="mt-1 text-sm font-semibold text-[#263b58]">
+              <p className="mt-1 text-sm font-semibold text-nova-text">
                 {fact.value}{fact.unit ? ` ${fact.unit}` : ""}
               </p>
-              {fact.context ? <p className="mt-1 text-xs text-[#607188]">{fact.context}</p> : null}
+              {fact.context ? <p className="mt-1 text-xs text-nova-muted">{fact.context}</p> : null}
             </li>
           ))}
         </ul>
@@ -227,7 +227,7 @@ function CraftablesSection({
       {section.status === "known" && section.recipes.length ? (
         <ul className="space-y-3 p-4">
           {section.recipes.map((recipe) => (
-            <li key={recipe.result.id} className="rounded-xl border border-[#d5dde6] bg-white p-3">
+            <li key={recipe.result.id} className="rounded-xl border border-nova-border bg-nova-surface-raised p-3">
               <div className="flex flex-wrap items-center justify-between gap-2 text-sm">
                 <ReferenceButton
                   reference={recipe.result}
@@ -245,7 +245,7 @@ function CraftablesSection({
                   />
                 </div>
               ) : null}
-              {recipe.tech ? <p className="mt-2 text-xs text-[#607188]">{recipe.tech}</p> : null}
+              {recipe.tech ? <p className="mt-2 text-xs text-nova-muted">{recipe.tech}</p> : null}
             </li>
           ))}
         </ul>
@@ -302,7 +302,7 @@ function VisualSection({ details, titleId, item }: { details: StructureDetails; 
               width={image.width ?? 160}
               height={image.height ?? 160}
               unoptimized
-              className="max-h-44 w-auto rounded-xl border border-[#d5dde6] bg-white object-contain p-2"
+              className="max-h-44 w-auto rounded-xl border border-nova-border bg-nova-surface-raised object-contain p-2"
             />
           ) : (
             <GameSprite sprite={section.sprite ?? item.sprite} size={112} label={`Ảnh ${item.name}`} />

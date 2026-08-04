@@ -1,7 +1,8 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 
 import type { ItemListEntry } from "@/app/lib/item-catalog";
+import { parseWikiPageDetail } from "@/app/lib/wiki-detail";
 import { WikiArticle } from "./wiki-article";
 
 const detail = {
@@ -28,49 +29,18 @@ const detail = {
   },
 };
 
-afterEach(() => {
-  vi.unstubAllGlobals();
-});
-
 describe("WikiArticle", () => {
-  it("shows a loading state while the local article request is pending", () => {
-    vi.stubGlobal("fetch", vi.fn(() => new Promise(() => undefined)));
+  it("renders validated local article HTML and its canonical link", () => {
+    render(<WikiArticle detail={parseWikiPageDetail(detail)} />);
 
-    render(
-      <WikiArticle
-        detailUrl="/data/wiki/pages/100736.json"
-        canonicalUrl={detail.canonicalUrl}
-      />,
-    );
-
-    expect(screen.getByRole("status").textContent).toContain(
-      "Đang tải bài viết Wiki",
-    );
-  });
-
-  it("renders validated local article HTML and its canonical link", async () => {
-    vi.stubGlobal(
-      "fetch",
-      vi.fn().mockResolvedValue({ ok: true, json: async () => detail }),
-    );
-
-    render(
-      <WikiArticle
-        detailUrl="/data/wiki/pages/100736.json"
-        canonicalUrl={detail.canonicalUrl}
-      />,
-    );
-
-    expect(await screen.findByText("Pointy and hurty.")).toBeDefined();
+    expect(screen.getByText("Pointy and hurty.")).toBeDefined();
     expect(screen.getByRole("heading", { name: "Halberd" })).toBeDefined();
     expect(screen.getByRole("img", { name: "File:Halberd.png" })).toHaveProperty(
       "src",
       "http://localhost:3000/assets/wiki/halberd.png",
     );
     const gallery = screen.getByRole("region", { name: "Gallery" });
-    expect(gallery.querySelector("[data-gallery-grid]")?.className).toContain(
-      "grid",
-    );
+    expect(gallery.querySelector("[data-gallery-grid]")?.className).toContain("grid");
     const galleryItem = screen.getByRole("figure", { name: "Halberd.png" });
     expect(galleryItem.className).toContain("group");
     expect(galleryItem.tabIndex).toBe(0);
@@ -83,57 +53,23 @@ describe("WikiArticle", () => {
     ).toHaveProperty("href", detail.canonicalUrl);
   });
 
-  it("prefers a concise Vietnamese summary over the raw Wiki article", async () => {
-    vi.stubGlobal(
-      "fetch",
-      vi.fn().mockResolvedValue({
-        ok: true,
-        json: async () => ({
+  it("prefers a concise Vietnamese summary over the raw Wiki article", () => {
+    render(
+      <WikiArticle
+        detail={parseWikiPageDetail({
           ...detail,
           summaryViHtml:
             "<h2>Tóm tắt</h2><p>Nhiên liệu dùng cho ma thuật bóng tối.</p>",
-        }),
-      }),
-    );
-
-    render(
-      <WikiArticle
-        detailUrl="/data/wiki/pages/210449.json"
-        canonicalUrl="https://dontstarve.wiki.gg/wiki/Nightmare_Fuel"
+        })}
       />,
     );
 
-    expect(await screen.findByRole("heading", { name: "Tóm tắt" })).toBeDefined();
+    expect(screen.getByRole("heading", { name: "Tóm tắt" })).toBeDefined();
     expect(screen.getByText("Nhiên liệu dùng cho ma thuật bóng tối.")).toBeDefined();
     expect(screen.queryByText("Pointy and hurty.")).toBeNull();
   });
 
-  it("keeps the external source available and retries a failed local request", async () => {
-    const fetchMock = vi
-      .fn()
-      .mockRejectedValueOnce(new Error("offline"))
-      .mockResolvedValueOnce({ ok: true, json: async () => detail });
-    vi.stubGlobal("fetch", fetchMock);
-
-    render(
-      <WikiArticle
-        detailUrl="/data/wiki/pages/100736.json"
-        canonicalUrl={detail.canonicalUrl}
-      />,
-    );
-
-    expect(await screen.findByText("Không tải được bài viết Wiki")).toBeDefined();
-    expect(
-      screen.getByRole("link", { name: "Mở trên Don't Starve Wiki" }),
-    ).toHaveProperty("href", detail.canonicalUrl);
-
-    fireEvent.click(screen.getByRole("button", { name: "Thử lại" }));
-
-    expect(await screen.findByText("Pointy and hurty.")).toBeDefined();
-    expect(fetchMock).toHaveBeenCalledTimes(2);
-  });
-
-  it("renders normalized Wiki regions before the remaining article", async () => {
+  it("renders normalized Wiki regions before the remaining article", () => {
     const nightLight: ItemListEntry = {
       id: "base_game:nightlight",
       prefabId: "nightlight",
@@ -148,71 +84,65 @@ describe("WikiArticle", () => {
       wiki: null,
     };
     const onSelectItem = vi.fn();
-    vi.stubGlobal(
-      "fetch",
-      vi.fn().mockResolvedValue({
-        ok: true,
-        json: async () => ({
-          ...detail,
-          normalized: {
-            schema_version: 2,
-            subject: {
-              title: "Nightmare Fuel",
-              url: "https://dontstarve.wiki.gg/wiki/Nightmare_Fuel",
-              entityId: null,
-            },
-            dropTable: {
-              rows: [
+    const normalizedDetail = parseWikiPageDetail({
+      ...detail,
+      normalized: {
+        schema_version: 2,
+        subject: {
+          title: "Nightmare Fuel",
+          url: "https://dontstarve.wiki.gg/wiki/Nightmare_Fuel",
+          entityId: null,
+        },
+        dropTable: {
+          rows: [
+            {
+              sources: [
                 {
-                  sources: [
-                    {
-                      title: "Beardling",
-                      url: "https://dontstarve.wiki.gg/wiki/Beardling",
-                      entityId: null,
-                    },
-                  ],
-                  quantity: "1-3",
-                  chance: "40%",
-                  context: null,
+                  title: "Beardling",
+                  url: "https://dontstarve.wiki.gg/wiki/Beardling",
+                  entityId: null,
                 },
               ],
+              quantity: "1-3",
+              chance: "40%",
+              context: null,
             },
-            usage: {
-              recipes: [
-                {
-                  result: {
-                    title: "Night Light",
-                    url: "https://dontstarve.wiki.gg/wiki/Night_Light",
-                    entityId: "base_game:nightlight",
-                  },
-                  resultAmount: 1,
-                  subjectAmount: 2,
-                  ingredients: [],
-                  station: "Prestihatitator",
-                  dlc: null,
-                  character: null,
-                  note: null,
-                },
-              ],
+          ],
+        },
+        usage: {
+          recipes: [
+            {
+              result: {
+                title: "Night Light",
+                url: "https://dontstarve.wiki.gg/wiki/Night_Light",
+                entityId: "base_game:nightlight",
+              },
+              resultAmount: 1,
+              subjectAmount: 2,
+              ingredients: [],
+              station: "Prestihatitator",
+              dlc: null,
+              character: null,
+              note: null,
             },
-          },
-        }),
-      }),
-    );
+          ],
+        },
+      },
+    });
 
     render(
       <WikiArticle
-        detailUrl="/data/wiki/pages/100736.json"
-        canonicalUrl={detail.canonicalUrl}
+        detail={normalizedDetail}
         itemsById={new Map([[nightLight.id, nightLight]])}
         onSelectItem={onSelectItem}
       />,
     );
 
-    const dropHeading = await screen.findByRole("heading", { name: "Drop table" });
+    const dropHeading = screen.getByRole("heading", { name: "Drop table" });
     const articleHeading = screen.getByRole("heading", { name: "Halberd" });
     expect(
-      dropHeading.compareDocumentPosition(articleHeading) & Node.DOCUMENT_POSITION_FOLLOWING,
+      dropHeading.compareDocumentPosition(articleHeading) &
+        Node.DOCUMENT_POSITION_FOLLOWING,
     ).toBeTruthy();
     fireEvent.click(
       screen.getByRole("button", { name: "Đèn bóng đêm, số lượng 1" }),

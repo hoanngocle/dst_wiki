@@ -44,8 +44,8 @@ describe("GameSprite", () => {
   it("renders a stable fallback when the sprite is missing", () => {
     render(<GameSprite sprite={null} size={48} label="Thiếu ảnh" />);
 
-    expect(
-      screen.getByRole("img", { name: "Thiếu ảnh" }).getAttribute("data-missing"),
-    ).toBe("true");
+    const fallback = screen.getByRole("img", { name: "Thiếu ảnh" });
+    expect(fallback.getAttribute("data-missing")).toBe("true");
+    expect(fallback.className).toContain("bg-nova-surface-soft");
   });
 });
