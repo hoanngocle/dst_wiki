@@ -25,10 +25,6 @@ NOVA_ABSOLUTE_PATH = re.compile(
     r"[A-Za-z]:[\\/](?:[^\\/\s]+[\\/])*nova(?:[\\/][^\\/\s]+)*)[\\/]?$",
     re.IGNORECASE,
 )
-GUIDE_ASSET_SOURCE = re.compile(
-    r'''src\s*=\s*["'](?P<path>/assets/[^"'?#]+)''',
-    re.IGNORECASE,
-)
 
 
 def _key(value: str) -> str:
@@ -289,57 +285,7 @@ def _duplicate_issues(items: Iterable[Mapping[str, Any]]) -> List[JsonObject]:
     return issues
 
 
-def _audit_guides(guides_root: Path, public_root: Path) -> List[JsonObject]:
-    index_path = guides_root / "index.json"
-    if not index_path.is_file():
-        return [{"code": "missing_content", "identity": "guides:index"}]
-    payload = json.loads(index_path.read_text(encoding="utf-8"))
-    guides = payload.get("guides") if isinstance(payload, dict) else None
-    if not isinstance(guides, list):
-        return [{"code": "missing_content", "identity": "guides:index"}]
-    issues = []
-    ids = set()
-    slugs = set()
-    for guide in guides:
-        if not isinstance(guide, Mapping):
-            issues.append({"code": "missing_content", "identity": "guide:invalid"})
-            continue
-        identity = str(guide.get("id") or "")
-        slug = str(guide.get("slug") or "")
-        if identity in ids:
-            issues.append({"code": "duplicate_identity", "identity": identity})
-        if slug in slugs:
-            issues.append({"code": "duplicate_slug", "identity": identity})
-        ids.add(identity)
-        slugs.add(slug)
-        cover = guide.get("cover")
-        source = cover.get("src") if isinstance(cover, Mapping) else None
-        if not isinstance(source, str) or not _image_signature(public_root / source.lstrip("/")):
-            issues.append({"code": "missing_image", "identity": identity})
-        if not str(guide.get("summaryVi") or "").strip():
-            issues.append({"code": "missing_content", "identity": identity})
-        detail_path = guides_root / "pages" / (slug + ".json")
-        if not detail_path.is_file():
-            issues.append({"code": "missing_detail", "identity": identity})
-            continue
-        detail = json.loads(detail_path.read_text(encoding="utf-8"))
-        if not isinstance(detail.get("sections"), list) or not detail["sections"]:
-            issues.append({"code": "missing_detail", "identity": identity})
-        for section in detail.get("sections", []):
-            html = section.get("html") if isinstance(section, Mapping) else None
-            if not isinstance(html, str):
-                continue
-            for match in GUIDE_ASSET_SOURCE.finditer(html):
-                if not _image_signature(public_root / match.group("path").lstrip("/")):
-                    issues.append(
-                        {"code": "missing_guide_asset", "identity": identity}
-                    )
-    if payload.get("count") != len(guides):
-        issues.append({"code": "missing_detail", "identity": "guides:count"})
-    return issues
-
-
-def audit_publication(items_path: Path, guides_root: Path, public_root: Path) -> JsonObject:
+def audit_publication(items_path: Path, public_root: Path) -> JsonObject:
     payload = json.loads(items_path.read_text(encoding="utf-8"))
     items = payload.get("items") if isinstance(payload, dict) else None
     if not isinstance(items, list):
@@ -348,10 +294,9 @@ def audit_publication(items_path: Path, guides_root: Path, public_root: Path) ->
     for item in items:
         for code in _item_issues(item, public_root):
             issues.append({"code": code, "identity": item.get("id")})
-    issues.extend(_audit_guides(guides_root, public_root))
     publication_paths = {
         path.resolve()
-        for path in [items_path, *guides_root.rglob("*.json")]
+        for path in [items_path]
         if path.is_file()
     }
     data_root = public_root / "data"
@@ -364,7 +309,6 @@ def audit_publication(items_path: Path, guides_root: Path, public_root: Path) ->
     return {
         "schemaVersion": 1,
         "items": len(items),
-        "guides": json.loads((guides_root / "index.json").read_text()).get("count", 0),
         "issues": issues,
     }
 
@@ -572,7 +516,6 @@ def _write_json_atomic(path: Path, value: Mapping[str, Any]) -> None:
 
 def run_publication_quality(
     items_path: Path,
-    guides_root: Path,
     public_root: Path,
     category_root: Path,
     report_path: Path,
@@ -582,7 +525,7 @@ def run_publication_quality(
     items = payload.get("items") if isinstance(payload, dict) else None
     if not isinstance(items, list):
         raise ValueError("items payload must contain an items array")
-    before = audit_publication(items_path, guides_root, public_root)
+    before = audit_publication(items_path, public_root)
 
     temporary_context = None
     repair_root = public_root
@@ -613,7 +556,6 @@ def run_publication_quality(
         for item in result["items"]:
             for code in _item_issues(item, repair_root):
                 post_issues.append({"code": code, "identity": item.get("id")})
-        post_issues.extend(_audit_guides(guides_root, public_root))
     finally:
         if temporary_context is not None:
             temporary_context.cleanup()
@@ -624,7 +566,6 @@ def run_publication_quality(
         "beforeIssues": before["issues"],
         "postRepairIssues": post_issues,
         "rows": result["rows"],
-        "guides": before["guides"],
     }
     if apply and post_issues:
         _write_json_atomic(report_path, report)

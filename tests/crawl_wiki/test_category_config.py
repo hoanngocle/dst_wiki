@@ -618,63 +618,9 @@ class CategoryConfigTests(unittest.TestCase):
         weather = dict(load_category_config("weather").excluded_titles)
         self.assertNotIn("Snow", weather)
 
-    def test_loads_reviewed_guides_config(self):
-        config = load_category_config("guides")
-
-        self.assertEqual(config.category_title, "Category:Guides")
-        self.assertEqual(config.expected_direct_pages, 105)
-        self.assertEqual(config.expected_published_pages, 4)
-        self.assertEqual(config.allowed_namespaces, (0,))
-        self.assertEqual(config.game, "DST")
-        self.assertEqual(config.item_type, "guide")
-        self.assertEqual(config.tags, ("Guides",))
-        self.assertEqual(
-            config.output_path,
-            Path("data/crawled/fandom-categories/guides"),
-        )
-
-        exclusions = dict(config.excluded_titles)
-        self.assertEqual(len(exclusions), 101)
-        self.assertEqual(exclusions["Guides"], "non_item:overview")
-        self.assertEqual(
-            exclusions["Guides/Adventure Mode Guide"],
-            "non_dst:dont_starve",
-        )
-        self.assertEqual(
-            exclusions["Guides/Surviving Shipwrecked"],
-            "non_dst:shipwrecked",
-        )
-        self.assertEqual(
-            exclusions["Guides/Hamlet Survival Guide"],
-            "non_dst:hamlet",
-        )
-        self.assertEqual(
-            exclusions["Guides/Don't Starve in Reign of Giants"],
-            "non_dst:reign_of_giants",
-        )
-        self.assertEqual(
-            exclusions["Guides/Don’t Starve Together Dedicated Servers"],
-            "non_content:obsolete",
-        )
-        self.assertEqual(
-            exclusions["Guides/Killing Dragonfly DST"],
-            "non_content:no_image",
-        )
-        self.assertEqual(
-            exclusions["Guides/Survive and Thrive"],
-            "non_content:no_image",
-        )
-        self.assertEqual(
-            exclusions["Guides/Crock Pot Dishes"],
-            "non_dst:mixed_scope",
-        )
-        for accepted in (
-            "Guides/How to Kill the Giants in DST",
-            "Guides/Maximum Efficiency Day 13 Base DST Guide",
-            "Guides/Slurtle Slime Guide",
-            "Guides/Taming a Beefalo",
-        ):
-            self.assertNotIn(accepted, exclusions)
+    def test_rejects_removed_guides_category(self):
+        with self.assertRaisesRegex(CategoryConfigError, "does not exist"):
+            load_category_config("guides")
 
 
 if __name__ == "__main__":

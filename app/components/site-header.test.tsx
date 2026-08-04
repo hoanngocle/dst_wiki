@@ -21,7 +21,6 @@ it("links the standalone navigation to Vật phẩm, Nhân vật, and Cảnh gi�
   expect(screen.queryByRole("link", { name: "Base" })).toBeNull();
   expect(screen.queryByRole("link", { name: /hướng dẫn/i })).toBeNull();
   expect(container.innerHTML).not.toContain("/dst");
-  expect(container.innerHTML).not.toContain("/guides");
 });
 
 it("marks the cultivation tab as active on the Tu Tiên page", () => {

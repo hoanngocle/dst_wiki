@@ -19,7 +19,6 @@ from tools.extract.database import write_database
 from tools.extract.export_items import export_items, publish_character_sources
 from tools.extract.export_json import export_catalog
 from tools.extract.export_mod_markdown import collect_game_text, export_mod_markdown
-from tools.extract.guides import export_guides
 from tools.extract.mod_static import extract_mod_static
 from tools.extract.normalize import normalize
 from tools.extract.runtime_import import (
@@ -63,9 +62,6 @@ MOB_WIKI = Path("data/crawled/dontstarve-wiki/pages.jsonl")
 WEB_ASSETS = Path("public/assets/game")
 MOD_TEXT = Path("docs/mod-text")
 WIKI_CRAWL = Path("data/crawled/dontstarve-items")
-GUIDES_CRAWL = Path("data/crawled/fandom-categories/guides")
-GUIDES_DATA = Path("public/data/guides")
-GUIDES_ASSETS = Path("public/assets/guides")
 PUBLICATION_REPORT = Path("data/generated/publication-quality-report.json")
 
 
@@ -199,13 +195,8 @@ def build_parser() -> argparse.ArgumentParser:
     normalize_category.add_argument("--mappings", type=Path)
     normalize_category.add_argument("--summaries", type=Path)
     normalize_category.add_argument("--output", type=Path)
-    export_guides_parser = sub.add_parser("export-guides")
-    export_guides_parser.add_argument("--crawl", type=Path, default=GUIDES_CRAWL)
-    export_guides_parser.add_argument("--output", type=Path, default=GUIDES_DATA)
-    export_guides_parser.add_argument("--assets", type=Path, default=GUIDES_ASSETS)
     publication = sub.add_parser("publication-quality")
     publication.add_argument("--items", type=Path, default=ITEMS_JSON)
-    publication.add_argument("--guides", type=Path, default=GUIDES_DATA)
     publication.add_argument("--public-root", type=Path, default=Path("public"))
     publication.add_argument(
         "--category-root",
@@ -564,18 +555,9 @@ def main() -> int:
         )
         print("{} pages={}".format(output, len(artifact["pages"])))
         return 0
-    if args.command == "export-guides":
-        report = export_guides(args.crawl, args.output, args.assets)
-        print(
-            "{} guides={} assets={}".format(
-                args.output, report["guides"], report["assets"]
-            )
-        )
-        return 0
     if args.command == "publication-quality":
         report = run_publication_quality(
             args.items,
-            args.guides,
             args.public_root,
             args.category_root,
             args.report,

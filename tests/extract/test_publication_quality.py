@@ -4,7 +4,11 @@ import unittest
 from pathlib import Path
 
 from tools.extract.cli import build_parser
-from tools.extract.publication_quality import audit_publication, repair_publication
+from tools.extract.publication_quality import (
+    audit_publication,
+    repair_publication,
+    run_publication_quality,
+)
 
 
 PNG = b"\x89PNG\r\n\x1a\nquality"
@@ -72,13 +76,7 @@ def publication_fixture(tmp_path):
         ),
         encoding="utf-8",
     )
-    guides_root = tmp_path / "guides"
-    guides_root.mkdir()
-    (guides_root / "index.json").write_text(
-        json.dumps({"schemaVersion": 1, "count": 0, "guides": []}),
-        encoding="utf-8",
-    )
-    return items_path, guides_root, public_root
+    return items_path, public_root
 
 
 def add_wiki_reference(items_path, public_root, page_id=42, images=None):
@@ -106,7 +104,6 @@ class PublicationQualityTests(unittest.TestCase):
             [
                 "publication-quality",
                 "--items", "items.json",
-                "--guides", "guides",
                 "--public-root", "public",
                 "--category-root", "categories",
                 "--report", "report.json",
@@ -117,6 +114,7 @@ class PublicationQualityTests(unittest.TestCase):
         self.assertEqual(args.command, "publication-quality")
         self.assertTrue(args.apply)
         self.assertEqual(args.items, Path("items.json"))
+        self.assertFalse(hasattr(args, "guides"))
 
     def test_audit_reports_duplicate_missing_image_content_and_detail(self):
         with tempfile.TemporaryDirectory() as tempdir:
@@ -134,14 +132,7 @@ class PublicationQualityTests(unittest.TestCase):
                 ),
                 encoding="utf-8",
             )
-            guides = root / "guides"
-            guides.mkdir()
-            (guides / "index.json").write_text(
-                json.dumps({"schemaVersion": 1, "count": 0, "guides": []}),
-                encoding="utf-8",
-            )
-
-            audit = audit_publication(items_path, guides, root)
+            audit = audit_publication(items_path, root)
             codes = {issue["code"] for issue in audit["issues"]}
 
             self.assertIn("duplicate_identity", codes)
@@ -149,12 +140,26 @@ class PublicationQualityTests(unittest.TestCase):
             self.assertIn("missing_image", codes)
             self.assertIn("missing_content", codes)
             self.assertIn("missing_detail", codes)
+            self.assertNotIn("guides", audit)
+
+    def test_publication_quality_report_omits_generic_guides(self):
+        with tempfile.TemporaryDirectory() as tempdir:
+            root = Path(tempdir)
+            items_path, public_root = publication_fixture(root)
+            report = run_publication_quality(
+                items_path,
+                public_root,
+                root / "categories",
+                root / "report.json",
+            )
+
+        self.assertNotIn("guides", report)
 
     def test_publication_quality_rejects_missing_character_portrait(self):
         with tempfile.TemporaryDirectory() as tempdir:
-            items_path, guides_root, public_root = publication_fixture(Path(tempdir))
+            items_path, public_root = publication_fixture(Path(tempdir))
 
-            audit = audit_publication(items_path, guides_root, public_root)
+            audit = audit_publication(items_path, public_root)
 
         self.assertTrue(
             any(
@@ -165,9 +170,9 @@ class PublicationQualityTests(unittest.TestCase):
 
     def test_publication_quality_rejects_missing_character_equipment_asset(self):
         with tempfile.TemporaryDirectory() as tempdir:
-            items_path, guides_root, public_root = publication_fixture(Path(tempdir))
+            items_path, public_root = publication_fixture(Path(tempdir))
 
-            audit = audit_publication(items_path, guides_root, public_root)
+            audit = audit_publication(items_path, public_root)
 
         self.assertTrue(
             any(
@@ -178,12 +183,12 @@ class PublicationQualityTests(unittest.TestCase):
 
     def test_publication_quality_allows_character_equipment_without_an_icon_reference(self):
         with tempfile.TemporaryDirectory() as tempdir:
-            items_path, guides_root, public_root = publication_fixture(Path(tempdir))
+            items_path, public_root = publication_fixture(Path(tempdir))
             payload = json.loads(items_path.read_text(encoding="utf-8"))
             payload["items"][0]["character"]["startingItems"][0]["icon"] = None
             items_path.write_text(json.dumps(payload), encoding="utf-8")
 
-            audit = audit_publication(items_path, guides_root, public_root)
+            audit = audit_publication(items_path, public_root)
 
         self.assertFalse(
             any(
@@ -194,14 +199,14 @@ class PublicationQualityTests(unittest.TestCase):
 
     def test_publication_quality_rejects_evidence_inside_character_dossier(self):
         with tempfile.TemporaryDirectory() as tempdir:
-            items_path, guides_root, public_root = publication_fixture(Path(tempdir))
+            items_path, public_root = publication_fixture(Path(tempdir))
             payload = json.loads(items_path.read_text(encoding="utf-8"))
             payload["items"][0]["character"]["guide"]["combat"] = [
                 {"label": "Hàn Kiếm", "evidence": ["private:combat"]}
             ]
             items_path.write_text(json.dumps(payload), encoding="utf-8")
 
-            audit = audit_publication(items_path, guides_root, public_root)
+            audit = audit_publication(items_path, public_root)
 
         self.assertTrue(
             any(
@@ -212,13 +217,13 @@ class PublicationQualityTests(unittest.TestCase):
 
     def test_publication_quality_rejects_evidence_in_mislabeled_character_mapping(self):
         with tempfile.TemporaryDirectory() as tempdir:
-            items_path, guides_root, public_root = publication_fixture(Path(tempdir))
+            items_path, public_root = publication_fixture(Path(tempdir))
             payload = json.loads(items_path.read_text(encoding="utf-8"))
             payload["items"][0]["category"] = "other"
             payload["items"][0]["character"]["evidence"] = ["private:dossier"]
             items_path.write_text(json.dumps(payload), encoding="utf-8")
 
-            audit = audit_publication(items_path, guides_root, public_root)
+            audit = audit_publication(items_path, public_root)
 
         self.assertTrue(
             any(
@@ -229,12 +234,12 @@ class PublicationQualityTests(unittest.TestCase):
 
     def test_mislabeled_character_mapping_does_not_require_character_assets(self):
         with tempfile.TemporaryDirectory() as tempdir:
-            items_path, guides_root, public_root = publication_fixture(Path(tempdir))
+            items_path, public_root = publication_fixture(Path(tempdir))
             payload = json.loads(items_path.read_text(encoding="utf-8"))
             payload["items"][0]["category"] = "other"
             items_path.write_text(json.dumps(payload), encoding="utf-8")
 
-            audit = audit_publication(items_path, guides_root, public_root)
+            audit = audit_publication(items_path, public_root)
             codes = {issue["code"] for issue in audit["issues"]}
 
         self.assertNotIn("missing_character_portrait", codes)
@@ -242,14 +247,14 @@ class PublicationQualityTests(unittest.TestCase):
 
     def test_publication_quality_allows_evidence_outside_character_dossier(self):
         with tempfile.TemporaryDirectory() as tempdir:
-            items_path, guides_root, public_root = publication_fixture(Path(tempdir))
+            items_path, public_root = publication_fixture(Path(tempdir))
             payload = json.loads(items_path.read_text(encoding="utf-8"))
             payload["items"][0]["details"] = {
                 "usage": {"evidence": ["catalog:allowed"]}
             }
             items_path.write_text(json.dumps(payload), encoding="utf-8")
 
-            audit = audit_publication(items_path, guides_root, public_root)
+            audit = audit_publication(items_path, public_root)
 
         self.assertFalse(
             any(
@@ -260,10 +265,10 @@ class PublicationQualityTests(unittest.TestCase):
 
     def test_publication_quality_rejects_missing_required_wiki_page(self):
         with tempfile.TemporaryDirectory() as tempdir:
-            items_path, guides_root, public_root = publication_fixture(Path(tempdir))
+            items_path, public_root = publication_fixture(Path(tempdir))
             add_wiki_reference(items_path, public_root)
 
-            audit = audit_publication(items_path, guides_root, public_root)
+            audit = audit_publication(items_path, public_root)
 
         self.assertTrue(
             any(issue["code"] == "missing_wiki_detail" for issue in audit["issues"])
@@ -271,7 +276,7 @@ class PublicationQualityTests(unittest.TestCase):
 
     def test_publication_quality_rejects_missing_required_related_wiki_page(self):
         with tempfile.TemporaryDirectory() as tempdir:
-            items_path, guides_root, public_root = publication_fixture(Path(tempdir))
+            items_path, public_root = publication_fixture(Path(tempdir))
             add_wiki_reference(items_path, public_root, images=[])
             payload = json.loads(items_path.read_text(encoding="utf-8"))
             payload["items"][0]["wiki"]["relatedPages"] = [
@@ -282,7 +287,7 @@ class PublicationQualityTests(unittest.TestCase):
             ]
             items_path.write_text(json.dumps(payload), encoding="utf-8")
 
-            audit = audit_publication(items_path, guides_root, public_root)
+            audit = audit_publication(items_path, public_root)
 
         self.assertTrue(
             any(issue["code"] == "missing_wiki_detail" for issue in audit["issues"])
@@ -290,67 +295,25 @@ class PublicationQualityTests(unittest.TestCase):
 
     def test_publication_quality_rejects_missing_referenced_wiki_asset(self):
         with tempfile.TemporaryDirectory() as tempdir:
-            items_path, guides_root, public_root = publication_fixture(Path(tempdir))
+            items_path, public_root = publication_fixture(Path(tempdir))
             add_wiki_reference(
                 items_path,
                 public_root,
                 images=[{"src": "/assets/wiki/missing.png"}],
             )
 
-            audit = audit_publication(items_path, guides_root, public_root)
+            audit = audit_publication(items_path, public_root)
 
         self.assertTrue(
             any(issue["code"] == "missing_wiki_asset" for issue in audit["issues"])
         )
 
-    def test_publication_quality_rejects_missing_guide_asset_with_html_attribute_spacing(self):
-        with tempfile.TemporaryDirectory() as tempdir:
-            items_path, guides_root, public_root = publication_fixture(Path(tempdir))
-            cover_path = public_root / "assets" / "guides" / "cover.png"
-            cover_path.parent.mkdir(parents=True)
-            cover_path.write_bytes(PNG)
-            (guides_root / "pages").mkdir()
-            (guides_root / "index.json").write_text(
-                json.dumps(
-                    {
-                        "count": 1,
-                        "guides": [
-                            {
-                                "id": "guide:test",
-                                "slug": "test",
-                                "summaryVi": "Hướng dẫn thử nghiệm.",
-                                "cover": {"src": "/assets/guides/cover.png"},
-                            }
-                        ],
-                    }
-                ),
-                encoding="utf-8",
-            )
-            (guides_root / "pages" / "test.json").write_text(
-                json.dumps(
-                    {
-                        "sections": [
-                            {
-                                "html": "<img SRC = '/assets/guides/missing.png'>",
-                            }
-                        ]
-                    }
-                ),
-                encoding="utf-8",
-            )
-
-            audit = audit_publication(items_path, guides_root, public_root)
-
-        self.assertTrue(
-            any(issue["code"] == "missing_guide_asset" for issue in audit["issues"])
-        )
-
     def test_publication_quality_allows_wiki_page_without_optional_images(self):
         with tempfile.TemporaryDirectory() as tempdir:
-            items_path, guides_root, public_root = publication_fixture(Path(tempdir))
+            items_path, public_root = publication_fixture(Path(tempdir))
             add_wiki_reference(items_path, public_root, images=[])
 
-            audit = audit_publication(items_path, guides_root, public_root)
+            audit = audit_publication(items_path, public_root)
 
         self.assertFalse(
             any(issue["code"] == "missing_wiki_asset" for issue in audit["issues"])
@@ -358,12 +321,12 @@ class PublicationQualityTests(unittest.TestCase):
 
     def test_publication_quality_rejects_internal_dst_route(self):
         with tempfile.TemporaryDirectory() as tempdir:
-            items_path, guides_root, public_root = publication_fixture(Path(tempdir))
+            items_path, public_root = publication_fixture(Path(tempdir))
             payload = json.loads(items_path.read_text(encoding="utf-8"))
             payload["items"][0]["details"] = {"link": "/dst"}
             items_path.write_text(json.dumps(payload), encoding="utf-8")
 
-            audit = audit_publication(items_path, guides_root, public_root)
+            audit = audit_publication(items_path, public_root)
 
         self.assertTrue(
             any(issue["code"] == "internal_route_leak" for issue in audit["issues"])
@@ -371,14 +334,14 @@ class PublicationQualityTests(unittest.TestCase):
 
     def test_publication_quality_allows_dst_asset_namespace(self):
         with tempfile.TemporaryDirectory() as tempdir:
-            items_path, guides_root, public_root = publication_fixture(Path(tempdir))
+            items_path, public_root = publication_fixture(Path(tempdir))
             payload = json.loads(items_path.read_text(encoding="utf-8"))
             payload["items"][0]["details"] = {
                 "link": "/assets/dst/characters/xd_hantianzun.png"
             }
             items_path.write_text(json.dumps(payload), encoding="utf-8")
 
-            audit = audit_publication(items_path, guides_root, public_root)
+            audit = audit_publication(items_path, public_root)
 
         self.assertFalse(
             any(issue["code"] == "internal_route_leak" for issue in audit["issues"])
@@ -386,7 +349,7 @@ class PublicationQualityTests(unittest.TestCase):
 
     def test_publication_quality_allows_dst_suffix_in_wiki_source_text(self):
         with tempfile.TemporaryDirectory() as tempdir:
-            items_path, guides_root, public_root = publication_fixture(Path(tempdir))
+            items_path, public_root = publication_fixture(Path(tempdir))
             data_root = public_root / "data"
             data_root.mkdir()
             (data_root / "wiki-source.json").write_text(
@@ -399,7 +362,7 @@ class PublicationQualityTests(unittest.TestCase):
                 encoding="utf-8",
             )
 
-            audit = audit_publication(items_path, guides_root, public_root)
+            audit = audit_publication(items_path, public_root)
 
         self.assertFalse(
             any(issue["code"] == "internal_route_leak" for issue in audit["issues"])
@@ -407,7 +370,7 @@ class PublicationQualityTests(unittest.TestCase):
 
     def test_publication_quality_rejects_local_sqlite_path(self):
         with tempfile.TemporaryDirectory() as tempdir:
-            items_path, guides_root, public_root = publication_fixture(Path(tempdir))
+            items_path, public_root = publication_fixture(Path(tempdir))
             data_root = public_root / "data"
             data_root.mkdir()
             (data_root / "catalog.json").write_text(
@@ -415,7 +378,7 @@ class PublicationQualityTests(unittest.TestCase):
                 encoding="utf-8",
             )
 
-            audit = audit_publication(items_path, guides_root, public_root)
+            audit = audit_publication(items_path, public_root)
 
         self.assertTrue(
             any(
@@ -434,14 +397,12 @@ class PublicationQualityTests(unittest.TestCase):
         ):
             with self.subTest(nova_path=nova_path):
                 with tempfile.TemporaryDirectory() as tempdir:
-                    items_path, guides_root, public_root = publication_fixture(
-                        Path(tempdir)
-                    )
+                    items_path, public_root = publication_fixture(Path(tempdir))
                     payload = json.loads(items_path.read_text(encoding="utf-8"))
                     payload["sourcePath"] = nova_path
                     items_path.write_text(json.dumps(payload), encoding="utf-8")
 
-                    audit = audit_publication(items_path, guides_root, public_root)
+                    audit = audit_publication(items_path, public_root)
 
                 self.assertTrue(
                     any(
@@ -452,13 +413,13 @@ class PublicationQualityTests(unittest.TestCase):
 
     def test_publication_quality_allows_nova_in_urls_and_prose(self):
         with tempfile.TemporaryDirectory() as tempdir:
-            items_path, guides_root, public_root = publication_fixture(Path(tempdir))
+            items_path, public_root = publication_fixture(Path(tempdir))
             payload = json.loads(items_path.read_text(encoding="utf-8"))
             payload["sourceUrl"] = "https://example.com/workspace/nova/items.json"
             payload["note"] = "Nova is the former host application name."
             items_path.write_text(json.dumps(payload), encoding="utf-8")
 
-            audit = audit_publication(items_path, guides_root, public_root)
+            audit = audit_publication(items_path, public_root)
 
         self.assertFalse(
             any(
