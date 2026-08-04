@@ -104,6 +104,20 @@ describe("guide catalog contract", () => {
         guides: [{ ...entry, cover: { ...entry.cover, src: "/assets/guides/%E0%A4%A/beefalo.jpg" } }],
       }),
     ).toThrow(/local Guide asset/);
+    expect(() =>
+      parseGuideIndex({
+        schemaVersion: 1,
+        count: 1,
+        guides: [{ ...entry, cover: { ...entry.cover, src: "/assets/guides/%252f..%252fwiki/beefalo.jpg" } }],
+      }),
+    ).toThrow(/local Guide asset/);
+    expect(() =>
+      parseGuideIndex({
+        schemaVersion: 1,
+        count: 1,
+        guides: [{ ...entry, cover: { ...entry.cover, src: "/assets/guides/%252e%252e%2fwiki/beefalo.jpg" } }],
+      }),
+    ).toThrow(/local Guide asset/);
 
     expect(() =>
       parseGuideDetail({

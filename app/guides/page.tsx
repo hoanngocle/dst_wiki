@@ -18,6 +18,7 @@ const index = parseGuideIndex(guidePayload);
 const browserGuides: readonly GuideBrowserEntry[] = index.guides.map((guide) => ({
   id: guide.id,
   slug: guide.slug,
+  title: guide.title,
   titleVi: guide.titleVi,
   summaryVi: guide.summaryVi,
   cover: {

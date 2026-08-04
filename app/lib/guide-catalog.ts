@@ -37,7 +37,7 @@ export type GuideDetail = GuideListEntry & {
 
 export type GuideFilterEntry = Pick<
   GuideListEntry,
-  "titleVi" | "summaryVi" | "topic" | "audience"
+  "title" | "titleVi" | "summaryVi" | "topic" | "audience"
 >;
 
 const allowedGuideTags = new Set([
@@ -54,6 +54,7 @@ const allowedGuideAttributes = new Set([
   "alt", "class", "colspan", "height", "href", "id", "loading", "rel", "rowspan",
   "src", "target", "title", "width",
 ]);
+const maxGuideAssetDecodePasses = 8;
 
 function record(value: unknown, label: string): Record<string, unknown> {
   if (typeof value !== "object" || value === null || Array.isArray(value)) {
@@ -77,10 +78,27 @@ function integer(value: unknown, label: string): number {
 }
 
 function localGuideAsset(value: string, label: string): string {
-  let decodedPath: string;
-  try {
-    decodedPath = decodeURIComponent(value);
-  } catch {
+  let decodedPath = value;
+  let isStable = false;
+
+  for (let pass = 0; pass < maxGuideAssetDecodePasses; pass += 1) {
+    if (/%2f|%5c/i.test(decodedPath)) {
+      throw new Error(`${label} must be a local Guide asset`);
+    }
+
+    try {
+      const nextPath = decodeURIComponent(decodedPath);
+      if (nextPath === decodedPath) {
+        isStable = true;
+        break;
+      }
+      decodedPath = nextPath;
+    } catch {
+      throw new Error(`${label} must be a local Guide asset`);
+    }
+  }
+
+  if (!isStable) {
     throw new Error(`${label} must be a local Guide asset`);
   }
 
@@ -328,7 +346,7 @@ export function filterGuides<T extends GuideFilterEntry>(
   const needle = searchable(query.trim());
   return guides.filter((guide) => {
     const haystack = searchable(
-      `${guide.titleVi} ${guide.summaryVi}`,
+      `${guide.titleVi} ${guide.title} ${guide.summaryVi}`,
     );
     return (
       (!needle || haystack.includes(needle)) &&

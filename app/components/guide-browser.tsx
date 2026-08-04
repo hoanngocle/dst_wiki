@@ -14,7 +14,7 @@ import {
 
 export type GuideBrowserEntry = Pick<
   GuideListEntry,
-  "id" | "slug" | "titleVi" | "summaryVi" | "topic" | "audience" | "readingMinutes"
+  "id" | "slug" | "title" | "titleVi" | "summaryVi" | "topic" | "audience" | "readingMinutes"
 > & {
   cover: Pick<GuideCover, "src" | "alt" | "width" | "height">;
 };

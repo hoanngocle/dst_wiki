@@ -45,6 +45,10 @@ it("searches, filters, resets, and links to dedicated Guide pages", () => {
   expect(screen.getByText("1 hướng dẫn")).toBeDefined();
   expect(screen.queryByText("Đánh bại Giant")).toBeNull();
 
+  fireEvent.change(screen.getByLabelText("Tìm hướng dẫn"), { target: { value: "kill" } });
+  expect(screen.getByText("1 hướng dẫn")).toBeDefined();
+  expect(screen.getByText("Đánh bại Giant")).toBeDefined();
+
   fireEvent.click(screen.getByRole("button", { name: "Đặt lại bộ lọc" }));
   fireEvent.change(screen.getByLabelText("Chủ đề"), { target: { value: "combat" } });
   expect(screen.getByText("Đánh bại Giant")).toBeDefined();
@@ -58,6 +62,7 @@ it("accepts the minimal serializable guide view model", () => {
   const guide: GuideBrowserEntry = {
     id: "guide:beefalo",
     slug: "beefalo",
+    title: "Taming a Beefalo",
     titleVi: "Thuần hóa Beefalo",
     summaryVi: "Tăng obedience và domestication.",
     cover: { src: "/assets/guides/beefalo.jpg", alt: "Beefalo", width: 1152, height: 571 },
