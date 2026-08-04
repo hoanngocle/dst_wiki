@@ -35,7 +35,7 @@ const browserGuides: readonly GuideBrowserEntry[] = index.guides.map((guide) => 
 export default function GuidesPage() {
   return (
     <div className="min-h-[100dvh] bg-nova-bg text-nova-text">
-      <SiteHeader active="guides" />
+      <SiteHeader />
       <DstPageShell>
         <div className="px-4 py-9 sm:px-6 sm:py-12 lg:px-8">
           <DstHero
@@ -51,7 +51,7 @@ export default function GuidesPage() {
           />
           <DstPanel className="mt-6 overflow-hidden p-5 sm:p-6">
             <Link
-              href="/guides/canh-gioi-tu-tien"
+              href="/tu-tien"
               className="group flex min-h-11 items-center justify-between gap-4 rounded-xl border border-nova-accent/30 bg-nova-accent/10 p-4 transition hover:border-nova-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nova-accent"
             >
               <span>

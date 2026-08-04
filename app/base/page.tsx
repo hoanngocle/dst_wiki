@@ -6,7 +6,7 @@ import { baseEntries } from "@/app/data/base-entries";
 export default function BasePage() {
   return (
     <div className="min-h-[100dvh] bg-[#edf1f5] text-[#14233b]">
-      <SiteHeader active="base" />
+      <SiteHeader />
       <main>
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
           <div className="max-w-2xl">

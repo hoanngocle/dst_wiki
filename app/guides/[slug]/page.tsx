@@ -45,7 +45,7 @@ export default async function GuidePage({
 
   return (
     <div className="min-h-[100dvh] bg-nova-bg text-nova-text">
-      <SiteHeader active="guides" />
+      <SiteHeader />
       <GuideReader guide={guide} />
     </div>
   );

@@ -3,7 +3,6 @@ import Link from "next/link";
 import { cn } from "@/app/lib/cn";
 
 type SiteSection = "items" | "characters" | "tu-tien";
-type LegacySiteSection = "base" | "guides";
 
 const links = [
   { id: "items", href: "/", label: "Vật phẩm" },
@@ -11,7 +10,7 @@ const links = [
   { id: "tu-tien", href: "/tu-tien", label: "Cảnh giới Tu Tiên" },
 ] as const;
 
-export function SiteHeader({ active }: { active: SiteSection | LegacySiteSection }) {
+export function SiteHeader({ active }: { active?: SiteSection }) {
   return (
     <header className="border-b border-nova-border bg-nova-surface-raised/95 text-nova-text backdrop-blur">
       <div className="mx-auto flex min-h-16 max-w-7xl flex-wrap items-center justify-between gap-x-4 px-4 py-2 sm:px-6 lg:px-8">
