@@ -56,10 +56,12 @@ export function DialogOverlay({
 export function DialogContent({
   className,
   children,
+  centered = true,
   overlayClassName,
   showCloseButton = true,
   ...props
 }: ComponentProps<typeof DialogPrimitive.Content> & {
+  centered?: boolean;
   overlayClassName?: string;
   showCloseButton?: boolean;
 }) {
@@ -71,7 +73,9 @@ export function DialogContent({
       <DialogPrimitive.Content
         data-slot="dialog-content"
         className={cn(
-          "fixed left-1/2 top-1/2 z-50 grid w-full max-w-[calc(100%-2rem)] -translate-x-1/2 -translate-y-1/2 gap-4 rounded-lg border p-6 shadow-lg",
+          "fixed z-50 grid w-full max-w-[calc(100%-2rem)] gap-4 rounded-lg border p-6 shadow-lg",
+          centered &&
+            "left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2",
           className,
         )}
         {...props}

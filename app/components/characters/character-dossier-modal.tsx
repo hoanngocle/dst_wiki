@@ -51,6 +51,7 @@ export function CharacterDossierModal({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
         aria-modal="true"
+        centered={false}
         data-testid="character-dossier-shell"
         showCloseButton={false}
         overlayClassName="bg-black/70 motion-reduce:animate-none"

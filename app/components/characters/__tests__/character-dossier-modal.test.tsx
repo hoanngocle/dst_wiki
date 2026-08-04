@@ -65,6 +65,26 @@ describe("CharacterDossierModal", () => {
     });
   });
 
+  it("does not apply desktop centering utilities at the mobile breakpoint", () => {
+    render(
+      <CharacterDossierModal
+        character={character}
+        open
+        onOpenChange={() => undefined}
+      />,
+    );
+
+    const dialog = screen.getByRole("dialog");
+    expect(dialog.classList).toContain("left-0");
+    expect(dialog.classList).toContain("top-0");
+    expect(dialog.classList).toContain("sm:left-1/2");
+    expect(dialog.classList).toContain("sm:-translate-x-1/2");
+    expect(dialog.classList).not.toContain("left-1/2");
+    expect(dialog.classList).not.toContain("top-1/2");
+    expect(dialog.classList).not.toContain("-translate-x-1/2");
+    expect(dialog.classList).not.toContain("-translate-y-1/2");
+  });
+
   it("supports automatic arrow-key tab navigation", async () => {
     render(
       <CharacterDossierModal
