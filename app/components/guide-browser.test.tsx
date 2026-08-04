@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { expect, it } from "vitest";
 
 import type { GuideListEntry } from "@/app/lib/guide-catalog";
-import { GuideBrowser } from "./guide-browser";
+import { GuideBrowser, type GuideBrowserEntry } from "./guide-browser";
 
 const guides: GuideListEntry[] = [
   {
@@ -52,4 +52,23 @@ it("searches, filters, resets, and links to dedicated Guide pages", () => {
 
   fireEvent.change(screen.getByLabelText("Trình độ"), { target: { value: "intermediate" } });
   expect(screen.getByText("Không tìm thấy hướng dẫn phù hợp")).toBeDefined();
+});
+
+it("accepts the minimal serializable guide view model", () => {
+  const guide: GuideBrowserEntry = {
+    id: "guide:beefalo",
+    slug: "beefalo",
+    titleVi: "Thuần hóa Beefalo",
+    summaryVi: "Tăng obedience và domestication.",
+    cover: { src: "/assets/guides/beefalo.jpg", alt: "Beefalo", width: 1152, height: 571 },
+    topic: "domestication",
+    audience: "intermediate",
+    readingMinutes: 4,
+  };
+
+  render(<GuideBrowser guides={[guide]} />);
+
+  expect(screen.getByRole("link", { name: /Thuần hóa Beefalo/ }).getAttribute("href")).toBe(
+    "/guides/beefalo",
+  );
 });

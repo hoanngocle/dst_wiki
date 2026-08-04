@@ -6,7 +6,18 @@ import { useMemo, useState } from "react";
 
 import { DstField, dstControlClassName } from "@/app/components/dst-field";
 import { DstPanel } from "@/app/components/dst-panel";
-import { filterGuides, type GuideListEntry } from "@/app/lib/guide-catalog";
+import {
+  filterGuides,
+  type GuideCover,
+  type GuideListEntry,
+} from "@/app/lib/guide-catalog";
+
+export type GuideBrowserEntry = Pick<
+  GuideListEntry,
+  "id" | "slug" | "titleVi" | "summaryVi" | "topic" | "audience" | "readingMinutes"
+> & {
+  cover: Pick<GuideCover, "src" | "alt" | "width" | "height">;
+};
 
 const topicLabels: Record<string, string> = {
   "base-building": "Xây căn cứ",
@@ -22,7 +33,7 @@ const audienceLabels: Record<string, string> = {
   advanced: "Nâng cao",
 };
 
-export function GuideBrowser({ guides }: { guides: readonly GuideListEntry[] }) {
+export function GuideBrowser({ guides }: { guides: readonly GuideBrowserEntry[] }) {
   const [query, setQuery] = useState("");
   const [topic, setTopic] = useState("all");
   const [audience, setAudience] = useState("all");

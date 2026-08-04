@@ -10,4 +10,7 @@ it("renders the dedicated cultivation table from the static item catalog", () =>
   const table = screen.getByRole("table", { name: "Thứ tự cảnh giới Tu Tiên" });
   expect(within(table).getAllByRole("row")).toHaveLength(16);
   expect(within(table).getByRole("row", { name: /Cảnh giới 15: Hóa Thần Hậu Kỳ → Phản Hư Sơ Kỳ/ })).toBeDefined();
+  const sprites = within(table).getAllByTestId("static-game-sprite");
+  expect(sprites.length).toBeGreaterThan(15);
+  expect(sprites[0].style.backgroundImage).toContain("/assets/game/");
 });

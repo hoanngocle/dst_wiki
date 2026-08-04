@@ -35,6 +35,11 @@ export type GuideDetail = GuideListEntry & {
   sections: readonly GuideSection[];
 };
 
+export type GuideFilterEntry = Pick<
+  GuideListEntry,
+  "titleVi" | "summaryVi" | "topic" | "audience"
+>;
+
 const allowedGuideTags = new Set([
   "a", "aside", "b", "blockquote", "br", "code", "dd", "div", "dl", "dt",
   "em", "figcaption", "figure", "h1", "h2", "h3", "h4", "h5", "h6", "hr",
@@ -72,12 +77,29 @@ function integer(value: unknown, label: string): number {
 }
 
 function localGuideAsset(value: string, label: string): string {
+  let decodedPath: string;
+  try {
+    decodedPath = decodeURIComponent(value);
+  } catch {
+    throw new Error(`${label} must be a local Guide asset`);
+  }
+
+  let canonicalPath: string;
+  try {
+    canonicalPath = new URL(decodedPath, "https://guides.invalid").pathname;
+  } catch {
+    throw new Error(`${label} must be a local Guide asset`);
+  }
+
   if (
     !value.startsWith("/assets/guides/") ||
-    value.includes("..") ||
     value.includes("\\") ||
     value.includes("?") ||
-    value.includes("#")
+    value.includes("#") ||
+    decodedPath.includes("\\") ||
+    decodedPath.includes("?") ||
+    decodedPath.includes("#") ||
+    !canonicalPath.startsWith("/assets/guides/")
   ) {
     throw new Error(`${label} must be a local Guide asset`);
   }
@@ -297,16 +319,16 @@ function searchable(value: string): string {
     .toLocaleLowerCase("vi");
 }
 
-export function filterGuides(
-  guides: readonly GuideListEntry[],
+export function filterGuides<T extends GuideFilterEntry>(
+  guides: readonly T[],
   query: string,
   topic: string,
   audience: string,
-): readonly GuideListEntry[] {
+): readonly T[] {
   const needle = searchable(query.trim());
   return guides.filter((guide) => {
     const haystack = searchable(
-      `${guide.titleVi} ${guide.title} ${guide.summaryVi}`,
+      `${guide.titleVi} ${guide.summaryVi}`,
     );
     return (
       (!needle || haystack.includes(needle)) &&

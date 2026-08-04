@@ -4,7 +4,7 @@ import Link from "next/link";
 import { DstHero } from "@/app/components/dst-hero";
 import { DstPageShell } from "@/app/components/dst-page-shell";
 import { DstPanel } from "@/app/components/dst-panel";
-import { GuideBrowser } from "@/app/components/guide-browser";
+import { GuideBrowser, type GuideBrowserEntry } from "@/app/components/guide-browser";
 import { SiteHeader } from "@/app/components/site-header";
 import { parseGuideIndex } from "@/app/lib/guide-catalog";
 import guidePayload from "@/public/data/guides/index.json";
@@ -15,6 +15,21 @@ export const metadata: Metadata = {
 };
 
 const index = parseGuideIndex(guidePayload);
+const browserGuides: readonly GuideBrowserEntry[] = index.guides.map((guide) => ({
+  id: guide.id,
+  slug: guide.slug,
+  titleVi: guide.titleVi,
+  summaryVi: guide.summaryVi,
+  cover: {
+    src: guide.cover.src,
+    alt: guide.cover.alt,
+    width: guide.cover.width,
+    height: guide.cover.height,
+  },
+  topic: guide.topic,
+  audience: guide.audience,
+  readingMinutes: guide.readingMinutes,
+}));
 
 export default function GuidesPage() {
   return (
@@ -45,7 +60,7 @@ export default function GuidesPage() {
               </span>
               <span aria-hidden="true" className="shrink-0 text-nova-accent transition group-hover:translate-x-1">→</span>
             </Link>
-            <GuideBrowser guides={index.guides} />
+            <GuideBrowser guides={browserGuides} />
           </DstPanel>
         </div>
       </DstPageShell>
