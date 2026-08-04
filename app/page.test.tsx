@@ -31,9 +31,7 @@ describe("item catalog page", () => {
     expect(
       screen.queryByRole("heading", { level: 3, name: "abigail_attack_fx" }),
     ).toBeNull();
-    expect(screen.getByRole("link", { name: "Base" }).getAttribute("href")).toBe(
-      "/base",
-    );
+    expect(screen.queryByRole("link", { name: "Base" })).toBeNull();
     expect(screen.queryByText(/entries$/i)).toBeNull();
   });
 });

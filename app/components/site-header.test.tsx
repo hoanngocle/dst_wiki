@@ -3,18 +3,21 @@ import { expect, it } from "vitest";
 
 import { SiteHeader } from "./site-header";
 
-it("links the shared navigation to Prefabs, Nhân vật, Base, and Guide", () => {
-  render(<SiteHeader active="items" />);
+it("links the standalone navigation to Items, Nhân vật, and Hướng dẫn", () => {
+  const { container } = render(<SiteHeader active="items" />);
+
   expect(screen.getByText("Don't Starve Together")).toBeDefined();
-  expect(screen.getByRole("link", { name: "Prefabs" }).getAttribute("href")).toBe("/");
-  expect(screen.getByRole("link", { name: "Base" }).getAttribute("href")).toBe("/base");
+  expect(screen.getByRole("navigation", { name: /điều hướng chính/i })).toBeDefined();
+  expect(screen.getByRole("link", { name: /vật phẩm/i }).getAttribute("href")).toBe("/");
   expect(screen.getByRole("link", { name: "Nhân vật" }).getAttribute("href")).toBe(
     "/characters",
   );
-  expect(screen.getByRole("link", { name: "Guide" }).getAttribute("href")).toBe(
+  expect(screen.getByRole("link", { name: /hướng dẫn/i }).getAttribute("href")).toBe(
     "/guides",
   );
-  expect(screen.getByRole("link", { name: "Prefabs" }).getAttribute("aria-current")).toBe(
+  expect(screen.getByRole("link", { name: /vật phẩm/i }).getAttribute("aria-current")).toBe(
     "page",
   );
+  expect(screen.queryByRole("link", { name: "Base" })).toBeNull();
+  expect(container.innerHTML).not.toContain("/dst");
 });

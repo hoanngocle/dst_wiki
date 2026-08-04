@@ -5,9 +5,8 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   ),
-  title: "Danh mục vật phẩm DST & Tu Tiên | Don't Starve Together",
-  description:
-    "Tra cứu vật phẩm DST và Tu Tiên theo Wiki, hình ảnh, danh mục và công thức.",
+  title: "DST Wiki | Don't Starve Together",
+  description: "Tra cứu vật phẩm, nhân vật và hướng dẫn Don't Starve Together.",
 };
 
 export default function RootLayout({
@@ -17,7 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="vi" className="h-full antialiased">
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full">
+        <div className="nova-game-theme min-h-dvh text-nova-text">{children}</div>
+      </body>
     </html>
   );
 }
