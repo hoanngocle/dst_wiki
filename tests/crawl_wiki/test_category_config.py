@@ -1,4 +1,5 @@
 import json
+import re
 import tempfile
 import unittest
 from pathlib import Path
@@ -621,6 +622,44 @@ class CategoryConfigTests(unittest.TestCase):
     def test_rejects_removed_guides_category(self):
         with self.assertRaisesRegex(CategoryConfigError, "does not exist"):
             load_category_config("guides")
+
+    def test_rejects_generic_guide_pipeline_references(self):
+        project_root = Path(__file__).resolve().parents[2]
+        source_paths = [
+            *sorted((project_root / "app").rglob("*")),
+            *sorted((project_root / "tools").rglob("*")),
+            *sorted((project_root / "data" / "config").rglob("*")),
+            project_root / "docs" / "data-extraction.md",
+            project_root / "package.json",
+        ]
+        patterns = (
+            re.compile(r"/" + r"guides(?:/|\b)"),
+            re.compile(r"export" + r"-guides\b"),
+            re.compile(r"GUIDES" + r"_(?:CRAWL|DATA|ASSETS)\b"),
+            re.compile(r"_audit_" + r"guides\b"),
+            re.compile(r"public/(?:data|assets)/" + r"guides\b"),
+            re.compile(r'item_type\s*=\s*' + r'=\s*' + r'["\']guide["\']'),
+            re.compile(r"(?<!character)--" + r"guides\b"),
+            re.compile(r"guide-" + r"article\b"),
+        )
+        violations = []
+
+        for path in source_paths:
+            if not path.is_file() or path.suffix not in {
+                ".css",
+                ".json",
+                ".md",
+                ".py",
+                ".ts",
+                ".tsx",
+            }:
+                continue
+            content = path.read_text(encoding="utf-8")
+            for pattern in patterns:
+                if pattern.search(content):
+                    violations.append((path.relative_to(project_root), pattern.pattern))
+
+        self.assertEqual(violations, [])
 
 
 if __name__ == "__main__":
