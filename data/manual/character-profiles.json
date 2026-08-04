@@ -1,0 +1,441 @@
+{
+  "schemaVersion": 1,
+  "profiles": {
+    "wilson": {
+      "namespace": "base_game",
+      "name": {"vi": "Wilson", "en": "Wilson"},
+      "title": {"vi": "Nhà khoa học quý ông", "en": "The Gentleman Scientist"},
+      "description": {"vi": "Nhà khoa học đa dụng có thể nuôi bộ râu tráng lệ và chế tạo kỹ năng theo ba nhánh tri thức.", "en": "A versatile scientist who grows a magnificent beard and develops three branches of insight skills."},
+      "portrait": {"path": "/assets/dst/characters/base/wilson.png", "sourceUrl": "https://dontstarve.wiki.gg/wiki/Wilson"},
+      "stats": {"health": {"value": 150}, "hunger": {"value": 150}, "sanity": {"value": 200}},
+      "abilities": [
+        {"name": {"vi": "Bộ râu tráng lệ", "en": "Magnificent Beard"}, "effect": {"vi": "Râu mọc theo thời gian, giúp giữ ấm và có thể cạo để lấy Râu.", "en": "His beard grows over time, provides insulation, and can be shaved for Beard Hair."}},
+        {"name": {"vi": "Cây kỹ năng tri thức", "en": "Insight Skill Tree"}, "effect": {"vi": "Mở khóa năng lực liên quan đến râu, giả kim và Ánh Trăng/Bóng Tối.", "en": "Unlocks beard, alchemy, and lunar or shadow-aligned abilities."}}
+      ],
+      "startingItems": [],
+      "artifacts": [],
+      "sourceVersion": "740477"
+    },
+    "willow": {
+      "namespace": "base_game",
+      "name": {"vi": "Willow", "en": "Willow"},
+      "title": {"vi": "Kẻ châm lửa", "en": "The Firestarter"},
+      "description": {"vi": "Yêu lửa, ghét lạnh, luôn có bật lửa riêng và được gấu Bernie bảo vệ.", "en": "Fond of fire, vulnerable to cold, equipped with a reliable lighter and protected by Bernie."},
+      "portrait": {"path": "/assets/dst/characters/base/willow.png", "sourceUrl": "https://dontstarve.wiki.gg/wiki/Willow"},
+      "stats": {"health": {"value": 150}, "hunger": {"value": 150}, "sanity": {"value": 120}},
+      "abilities": [
+        {"name": {"vi": "Miễn nhiễm lửa", "en": "Fire Immunity"}, "effect": {"vi": "Không nhận sát thương từ lửa và hồi Não khi ở gần ngọn lửa.", "en": "Takes no fire damage and gains Sanity near fire."}},
+        {"name": {"vi": "Bernie", "en": "Bernie"}, "effect": {"vi": "Khi Willow mất Não, Bernie có thể sống dậy để thu hút và đánh quái bóng tối.", "en": "At low Sanity, Bernie can animate to taunt and fight shadow creatures."}}
+      ],
+      "startingItems": [
+        {"code": "lighter", "name": {"vi": "Bật lửa của Willow", "en": "Willow's Lighter"}, "quantity": 1, "effect": {"vi": "Nguồn sáng và lửa cầm tay có thể nạp lại.", "en": "A portable, refuelable light and fire source."}},
+        {"code": "bernie_inactive", "name": {"vi": "Bernie", "en": "Bernie"}, "quantity": 1, "effect": {"vi": "Gấu bông bảo vệ Willow khi tinh thần xuống thấp.", "en": "A teddy bear that protects Willow when her Sanity is low."}}
+      ],
+      "artifacts": [],
+      "sourceVersion": "740477"
+    },
+    "wolfgang": {
+      "namespace": "base_game",
+      "name": {"vi": "Wolfgang", "en": "Wolfgang"},
+      "title": {"vi": "Lực sĩ", "en": "The Strongman"},
+      "description": {"vi": "Tập luyện để trở nên hùng mạnh, mang vật nặng dễ dàng nhưng sợ quái vật và bóng tối.", "en": "Works out to become mighty, carries heavy objects easily, but fears monsters and darkness."},
+      "portrait": {"path": "/assets/dst/characters/base/wolfgang.png", "sourceUrl": "https://dontstarve.wiki.gg/wiki/Wolfgang"},
+      "stats": {"health": {"value": 200}, "hunger": {"value": 200}, "sanity": {"value": 200}},
+      "abilities": [
+        {"name": {"vi": "Thanh sức mạnh", "en": "Mightiness Meter"}, "effect": {"vi": "Tập tạ để chuyển từ yếu sang thường rồi hùng mạnh, tăng sát thương và hiệu suất lao động.", "en": "Exercises with dumbbells to become Mighty, increasing damage and work efficiency."}},
+        {"name": {"vi": "Nỗi sợ bóng tối", "en": "Fear of the Dark"}, "effect": {"vi": "Mất Não nhanh hơn khi ở gần quái vật hoặc trong bóng tối.", "en": "Loses Sanity faster around monsters and in darkness."}}
+      ],
+      "startingItems": [
+        {"code": "dumbbell", "name": {"vi": "Tạ thường", "en": "Dumbbell"}, "quantity": 1, "effect": {"vi": "Dùng để tăng thanh sức mạnh.", "en": "Used to build Mightiness."}}
+      ],
+      "artifacts": [],
+      "sourceVersion": "740477"
+    },
+    "wendy": {
+      "namespace": "base_game",
+      "name": {"vi": "Wendy", "en": "Wendy"},
+      "title": {"vi": "Người chịu tang", "en": "The Bereaved"},
+      "description": {"vi": "Được linh hồn người chị song sinh Abigail đồng hành, quen bóng tối nhưng gây sát thương trực tiếp yếu.", "en": "Haunted by her twin Abigail, comfortable in darkness, but deals less direct damage."},
+      "portrait": {"path": "/assets/dst/characters/base/wendy.png", "sourceUrl": "https://dontstarve.wiki.gg/wiki/Wendy"},
+      "stats": {"health": {"value": 150}, "hunger": {"value": 150}, "sanity": {"value": 200}},
+      "abilities": [
+        {"name": {"vi": "Abigail", "en": "Abigail"}, "effect": {"vi": "Triệu hồi hồn ma Abigail gây sát thương diện rộng và bảo vệ Wendy.", "en": "Summons Abigail, who deals area damage and protects Wendy."}},
+        {"name": {"vi": "Ngoại cảm học", "en": "Ectoherbology"}, "effect": {"vi": "Chế tạo dược liệu ma để thay đổi cách Abigail chiến đấu.", "en": "Crafts ghostly elixirs that modify Abigail's combat abilities."}}
+      ],
+      "startingItems": [
+        {"code": "abigail_flower", "name": {"vi": "Hoa của Abigail", "en": "Abigail's Flower"}, "quantity": 1, "effect": {"vi": "Triệu hồi hoặc xoa dịu Abigail.", "en": "Summons or soothes Abigail."}}
+      ],
+      "artifacts": [],
+      "sourceVersion": "740477"
+    },
+    "wx78": {
+      "namespace": "base_game",
+      "name": {"vi": "WX-78", "en": "WX-78"},
+      "title": {"vi": "Cỗ máy vô hồn", "en": "The Soulless Automaton"},
+      "description": {"vi": "Robot có thể lắp mạch nâng cấp, ăn thức ăn cũ, được sét sạc nhưng bị nước làm hỏng.", "en": "A robot upgraded with circuits, tolerant of stale food, charged by lightning and damaged by water."},
+      "portrait": {"path": "/assets/dst/characters/base/wx78.png", "sourceUrl": "https://dontstarve.wiki.gg/wiki/WX-78"},
+      "stats": {"health": {"value": 100, "note": "Có thể nâng tối đa 400 bằng mạch."}, "hunger": {"value": 100, "note": "Có thể nâng tối đa 200 bằng mạch."}, "sanity": {"value": 100, "note": "Có thể nâng tối đa 300 bằng mạch."}},
+      "abilities": [
+        {"name": {"vi": "Hệ thống mạch", "en": "Circuit System"}, "effect": {"vi": "Quét sinh vật để mở khóa và lắp mạch tăng chỉ số hoặc năng lực.", "en": "Scans creatures to unlock circuits that improve stats and grant abilities."}},
+        {"name": {"vi": "Điện và nước", "en": "Electricity and Water"}, "effect": {"vi": "Sét tăng tốc và phát sáng; độ ướt gây mất điện tích và sát thương.", "en": "Lightning grants speed and light, while wetness drains charge and causes damage."}}
+      ],
+      "startingItems": [
+        {"code": "wx78_scanner_item", "name": {"vi": "Jimmy", "en": "Bio Scanalyzer"}, "quantity": 1, "effect": {"vi": "Quét sinh vật để lấy dữ liệu sinh học chế tạo mạch.", "en": "Scans creatures for bio-data used to craft circuits."}},
+        {"code": "wx78_moduleremover", "name": {"vi": "Dụng cụ tháo mạch", "en": "Circuit Extractor"}, "quantity": 1, "effect": {"vi": "Tháo mạch đang cắm mà không phá hủy chúng.", "en": "Removes installed circuits without destroying them."}}
+      ],
+      "artifacts": [],
+      "sourceVersion": "740477"
+    },
+    "wickerbottom": {
+      "namespace": "base_game",
+      "name": {"vi": "Wickerbottom", "en": "Wickerbottom"},
+      "title": {"vi": "Thủ thư", "en": "The Librarian"},
+      "description": {"vi": "Biết nhiều tri thức, tự viết sách phép, không ngủ được và có dạ dày nhạy cảm.", "en": "Highly knowledgeable, writes magical books, cannot sleep, and has a sensitive stomach."},
+      "portrait": {"path": "/assets/dst/characters/base/wickerbottom.png", "sourceUrl": "https://dontstarve.wiki.gg/wiki/Wickerbottom"},
+      "stats": {"health": {"value": 125}, "hunger": {"value": 150}, "sanity": {"value": 250}},
+      "abilities": [
+        {"name": {"vi": "Sách phép", "en": "Books"}, "effect": {"vi": "Chế tạo và đọc sách để tạo hiệu ứng diện rộng; dùng sách làm giảm Não.", "en": "Crafts and reads books for powerful area effects at a Sanity cost."}},
+        {"name": {"vi": "Tri thức bách khoa", "en": "Encyclopedic Knowledge"}, "effect": {"vi": "Có sẵn cấp Khoa Học và nhận nhiều công thức sách độc quyền.", "en": "Starts with Science knowledge and gains exclusive book recipes."}}
+      ],
+      "startingItems": [
+        {"code": "papyrus", "name": {"vi": "Giấy cói", "en": "Papyrus"}, "quantity": 2, "effect": {"vi": "Nguyên liệu chính để chế tạo sách.", "en": "Core material for crafting books."}}
+      ],
+      "artifacts": [],
+      "sourceVersion": "740477"
+    },
+    "woodie": {
+      "namespace": "base_game",
+      "name": {"vi": "Woodie", "en": "Woodie"},
+      "title": {"vi": "Tiều phu", "en": "The Lumberjack"},
+      "description": {"vi": "Tiều phu gắn bó với rìu Lucy và lời nguyền biến thành Hải ly, Nai sừng tấm hoặc Ngỗng.", "en": "A lumberjack bonded to Lucy the Axe and cursed to become a Werebeaver, Weremoose, or Weregoose."},
+      "portrait": {"path": "/assets/dst/characters/base/woodie.png", "sourceUrl": "https://dontstarve.wiki.gg/wiki/Woodie"},
+      "stats": {"health": {"value": 150}, "hunger": {"value": 150}, "sanity": {"value": 200}},
+      "abilities": [
+        {"name": {"vi": "Ba dạng người thú", "en": "Three Wereforms"}, "effect": {"vi": "Dùng thần tượng hoặc trăng tròn để biến hình, mỗi dạng chuyên phá tài nguyên, chiến đấu hoặc di chuyển.", "en": "Transforms through idols or full moons; each form specializes in harvesting, combat, or travel."}},
+        {"name": {"vi": "Lucy", "en": "Lucy the Axe"}, "effect": {"vi": "Rìu vô hạn nói chuyện, chặt cây nhanh và luôn quay về với Woodie.", "en": "A talking infinite-use axe that chops quickly and returns to Woodie."}}
+      ],
+      "startingItems": [
+        {"code": "lucy", "name": {"vi": "Rìu Lucy", "en": "Lucy the Axe"}, "quantity": 1, "effect": {"vi": "Rìu riêng có độ bền vô hạn và tốc độ chặt cao.", "en": "Woodie's infinite-durability, fast-chopping axe."}}
+      ],
+      "artifacts": [],
+      "sourceVersion": "740477"
+    },
+    "wes": {
+      "namespace": "base_game",
+      "name": {"vi": "Wes", "en": "Wes"},
+      "title": {"vi": "Kẻ im lặng", "en": "The Silent"},
+      "description": {"vi": "Không nói được, dùng nghệ thuật bóng bay và cố ý có chỉ số cùng hiệu suất thấp để tạo thử thách.", "en": "A silent balloon artist intentionally burdened with low stats and reduced efficiency."},
+      "portrait": {"path": "/assets/dst/characters/base/wes.png", "sourceUrl": "https://dontstarve.wiki.gg/wiki/Wes"},
+      "stats": {"health": {"value": 75}, "hunger": {"value": 75}, "sanity": {"value": 75}},
+      "abilities": [
+        {"name": {"vi": "Bóng bay", "en": "Balloonomancy"}, "effect": {"vi": "Tạo nhiều loại bóng hỗ trợ di chuyển, đánh lạc hướng hoặc gây hiệu ứng.", "en": "Creates balloons for mobility, distraction, and utility effects."}},
+        {"name": {"vi": "Nhân vật thử thách", "en": "Challenge Character"}, "effect": {"vi": "Gây ít sát thương, làm việc chậm và tiêu hao Đói nhanh hơn hầu hết nhân vật.", "en": "Deals less damage, works less efficiently, and drains Hunger faster than most survivors."}}
+      ],
+      "startingItems": [
+        {"code": "balloons_empty", "name": {"vi": "Đống bóng", "en": "Pile o' Balloons"}, "quantity": 1, "effect": {"vi": "Nguyên liệu để Wes tạo các loại bóng.", "en": "Used by Wes to create different balloons."}}
+      ],
+      "artifacts": [],
+      "sourceVersion": "740477"
+    },
+    "waxwell": {
+      "namespace": "base_game",
+      "name": {"vi": "Maxwell", "en": "Maxwell"},
+      "title": {"vi": "Bậc thầy con rối", "en": "The Puppet Master"},
+      "description": {"vi": "Quý phái nhưng mỏng manh, phân tách tâm trí thành tay sai bóng tối và dùng trang bị bóng tối hiệu quả.", "en": "Dapper but frail, able to split his mind into shadow servants and master shadow equipment."},
+      "portrait": {"path": "/assets/dst/characters/base/waxwell.png", "sourceUrl": "https://dontstarve.wiki.gg/wiki/Maxwell"},
+      "stats": {"health": {"value": 75}, "hunger": {"value": 150}, "sanity": {"value": 200}},
+      "abilities": [
+        {"name": {"vi": "Mật mã Umbra", "en": "Codex Umbra"}, "effect": {"vi": "Triệu hồi Người hầu Bóng Tối làm việc hoặc đấu sĩ bóng tối chiến đấu.", "en": "Summons Shadow Servants for work or Shadow Duelists for combat."}},
+        {"name": {"vi": "Chủ nhân bóng tối", "en": "Shadow Mastery"}, "effect": {"vi": "Hồi Não tự nhiên và dùng trang bị bóng tối với ít hình phạt hơn.", "en": "Regenerates Sanity and suffers reduced penalties from shadow equipment."}}
+      ],
+      "startingItems": [
+        {"code": "waxwelljournal", "name": {"vi": "Mật mã Umbra", "en": "Codex Umbra"}, "quantity": 1, "effect": {"vi": "Sách dùng để triệu hồi và điều khiển bóng tối.", "en": "The book used to summon and command shadows."}},
+        {"code": "nightmarefuel", "name": {"vi": "Nhiên liệu ác mộng", "en": "Nightmare Fuel"}, "quantity": 6, "effect": {"vi": "Chi phí triệu hồi bóng tối và chế tạo ma thuật.", "en": "Fuel for shadow summons and magic crafting."}}
+      ],
+      "artifacts": [],
+      "sourceVersion": "740477"
+    },
+    "wathgrithr": {
+      "namespace": "base_game",
+      "name": {"vi": "Wigfrid", "en": "Wigfrid"},
+      "title": {"vi": "Nghệ sĩ trình diễn", "en": "The Performance Artist"},
+      "description": {"vi": "Chiến binh sân khấu giỏi chiến đấu, hấp thụ sức mạnh kẻ địch bị hạ và chỉ ăn thịt.", "en": "A theatrical warrior who excels in battle, absorbs power from fallen foes, and only eats meat."},
+      "portrait": {"path": "/assets/dst/characters/base/wathgrithr.png", "sourceUrl": "https://dontstarve.wiki.gg/wiki/Wigfrid"},
+      "stats": {"health": {"value": 200}, "hunger": {"value": 120}, "sanity": {"value": 120}},
+      "abilities": [
+        {"name": {"vi": "Nữ chiến binh", "en": "Battleborn"}, "effect": {"vi": "Gây thêm sát thương, giảm sát thương nhận vào và hồi Máu/Não khi đánh trúng.", "en": "Deals extra damage, takes less damage, and restores Health and Sanity on hit."}},
+        {"name": {"vi": "Chiến ca", "en": "Battle Songs"}, "effect": {"vi": "Tích cảm hứng khi chiến đấu để hát các bài tăng sức mạnh cho đồng đội.", "en": "Builds Inspiration in combat to perform team-wide battle songs."}}
+      ],
+      "startingItems": [
+        {"code": "spear_wathgrithr", "name": {"vi": "Giáo chiến đấu", "en": "Battle Spear"}, "quantity": 1, "effect": {"vi": "Vũ khí riêng có sát thương cao.", "en": "Wigfrid's high-damage signature spear."}},
+        {"code": "wathgrithrhat", "name": {"vi": "Mũ chiến đấu", "en": "Battle Helm"}, "quantity": 1, "effect": {"vi": "Giáp đầu riêng bảo vệ khi giao chiến.", "en": "Wigfrid's signature protective helmet."}},
+        {"code": "meat", "name": {"vi": "Thịt", "en": "Meat"}, "quantity": 4, "effect": {"vi": "Lương thực khởi đầu phù hợp chế độ chỉ ăn thịt.", "en": "Starting food compatible with her meat-only diet."}}
+      ],
+      "artifacts": [],
+      "sourceVersion": "740477"
+    },
+    "webber": {
+      "namespace": "base_game",
+      "name": {"vi": "Webber", "en": "Webber"},
+      "title": {"vi": "Kẻ không thể tiêu hóa", "en": "The Indigestible"},
+      "description": {"vi": "Đứa trẻ sống trong thân xác nhện, kết bạn và chỉ huy nhện, đồng thời nuôi bộ râu tơ.", "en": "A child inside a spider who befriends and commands spiders while growing a silky beard."},
+      "portrait": {"path": "/assets/dst/characters/base/webber.png", "sourceUrl": "https://dontstarve.wiki.gg/wiki/Webber"},
+      "stats": {"health": {"value": 175}, "hunger": {"value": 175}, "sanity": {"value": 100}},
+      "abilities": [
+        {"name": {"vi": "Bạn của nhện", "en": "Spider Friend"}, "effect": {"vi": "Không bị nhện thù địch tự động và có thể thuần hóa nhiều loại nhện bằng thức ăn.", "en": "Spiders are neutral and can be recruited with food."}},
+        {"name": {"vi": "Thợ chăn nhện", "en": "Spider Caretaker"}, "effect": {"vi": "Trang trí tổ, nuôi nhện và dùng còi để điều khiển đàn.", "en": "Decorates dens, raises spiders, and commands the herd with whistles."}}
+      ],
+      "startingItems": [
+        {"code": "spidereggsack", "name": {"vi": "Trứng tổ nhện", "en": "Spider Eggs"}, "quantity": 1, "effect": {"vi": "Đặt một tổ nhện mới.", "en": "Plants a new Spider Den."}},
+        {"code": "monstermeat", "name": {"vi": "Thịt quái vật", "en": "Monster Meat"}, "quantity": 2, "effect": {"vi": "Thuần hóa hoặc cho nhện ăn.", "en": "Feeds or befriends spiders."}},
+        {"code": "spider_whistle", "name": {"vi": "Còi nhện", "en": "Shoo Box"}, "quantity": 1, "effect": {"vi": "Ra lệnh cho nhện dừng chiến đấu và đi theo.", "en": "Commands spiders to disengage and follow."}}
+      ],
+      "artifacts": [],
+      "sourceVersion": "740477"
+    },
+    "winona": {
+      "namespace": "base_game",
+      "name": {"vi": "Winona", "en": "Winona"},
+      "title": {"vi": "Nữ thợ máy", "en": "The Handywoman"},
+      "description": {"vi": "Thợ xây lành nghề, miễn phí một lần đánh từ bóng tối và có hệ thống máy móc riêng.", "en": "A skilled builder with one free hit from darkness and a suite of personal gadgets."},
+      "portrait": {"path": "/assets/dst/characters/base/winona.png", "sourceUrl": "https://dontstarve.wiki.gg/wiki/Winona"},
+      "stats": {"health": {"value": 150}, "hunger": {"value": 150}, "sanity": {"value": 200}},
+      "abilities": [
+        {"name": {"vi": "Kỹ sư lành nghề", "en": "Skilled Builder"}, "effect": {"vi": "Chế tạo nhanh và dựng máy phát điện, đèn chiếu hoặc máy phóng đá.", "en": "Builds quickly and constructs generators, spotlights, and catapults."}},
+        {"name": {"vi": "Đòn đánh bóng tối miễn phí", "en": "Free Darkness Hit"}, "effect": {"vi": "Chặn lần sát thương đầu tiên từ bóng tối trước khi cần ánh sáng.", "en": "Negates the first darkness hit before light is required."}}
+      ],
+      "startingItems": [
+        {"code": "sewing_tape", "name": {"vi": "Băng keo đáng tin", "en": "Trusty Tape"}, "quantity": 3, "effect": {"vi": "Sửa độ bền quần áo và một số trang bị.", "en": "Repairs clothing and selected equipment."}}
+      ],
+      "artifacts": [],
+      "sourceVersion": "740477"
+    },
+    "warly": {
+      "namespace": "base_game",
+      "name": {"vi": "Warly", "en": "Warly"},
+      "title": {"vi": "Đầu bếp", "en": "The Culinarian"},
+      "description": {"vi": "Đầu bếp có dụng cụ nấu di động, gia vị riêng, cơn đói lớn và chỉ thích món ăn thượng hạng.", "en": "A chef with portable cookware, signature spices, a large appetite, and gourmet standards."},
+      "portrait": {"path": "/assets/dst/characters/base/warly.png", "sourceUrl": "https://dontstarve.wiki.gg/wiki/Warly"},
+      "stats": {"health": {"value": 150}, "hunger": {"value": 250}, "sanity": {"value": 200}},
+      "abilities": [
+        {"name": {"vi": "Ẩm thực di động", "en": "Portable Cuisine"}, "effect": {"vi": "Có nồi, cối xay và túi gia vị di động cùng nhiều công thức độc quyền.", "en": "Uses portable cookware and exclusive recipes anywhere."}},
+        {"name": {"vi": "Khẩu vị sành ăn", "en": "Gourmet Palate"}, "effect": {"vi": "Chỉ ăn món từ nồi hầm và nhận ít lợi ích khi lặp lại cùng món quá sớm.", "en": "Only eats crock-pot dishes and gains less from repeating meals too soon."}}
+      ],
+      "startingItems": [
+        {"code": "portablecookpot_item", "name": {"vi": "Nồi hầm di động", "en": "Portable Crock Pot"}, "quantity": 1, "effect": {"vi": "Nấu món ở bất cứ nơi đâu, gồm công thức riêng của Warly.", "en": "Cooks anywhere, including Warly-exclusive dishes."}},
+        {"code": "potato", "name": {"vi": "Khoai tây", "en": "Potato"}, "quantity": 2, "effect": {"vi": "Nguyên liệu nấu ăn khởi đầu.", "en": "Starting cooking ingredient."}},
+        {"code": "garlic", "name": {"vi": "Tỏi", "en": "Garlic"}, "quantity": 1, "effect": {"vi": "Nguyên liệu nấu ăn và chế biến gia vị.", "en": "Cooking and seasoning ingredient."}}
+      ],
+      "artifacts": [],
+      "sourceVersion": "740477"
+    },
+    "wortox": {
+      "namespace": "base_game",
+      "name": {"vi": "Wortox", "en": "Wortox"},
+      "title": {"vi": "Kẻ đói linh hồn", "en": "The Soul Starved"},
+      "description": {"vi": "Tiểu quỷ thu thập linh hồn, dùng chúng để hồi phục hoặc nhảy xuyên không gian nhưng hấp thụ thức ăn kém.", "en": "An imp who collects souls to heal or hop through space, but gains less nourishment from physical food."},
+      "portrait": {"path": "/assets/dst/characters/base/wortox.png", "sourceUrl": "https://dontstarve.wiki.gg/wiki/Wortox"},
+      "stats": {"health": {"value": 200}, "hunger": {"value": 175}, "sanity": {"value": 150}},
+      "abilities": [
+        {"name": {"vi": "Thu thập linh hồn", "en": "Soul Collection"}, "effect": {"vi": "Sinh vật chết gần đó để lại linh hồn; thả linh hồn hồi Máu cho sinh vật quanh vùng.", "en": "Nearby deaths yield souls that can be released to heal surrounding creatures."}},
+        {"name": {"vi": "Nhảy linh hồn", "en": "Soul Hop"}, "effect": {"vi": "Tiêu hao linh hồn để dịch chuyển trên bản đồ hoặc qua khoảng cách ngắn.", "en": "Consumes souls to teleport locally or across the map."}}
+      ],
+      "startingItems": [
+        {"code": "wortox_soul", "name": {"vi": "Linh hồn", "en": "Soul"}, "quantity": 6, "effect": {"vi": "Dùng để hồi phục hoặc dịch chuyển.", "en": "Spent to heal or teleport."}}
+      ],
+      "artifacts": [],
+      "sourceVersion": "740477"
+    },
+    "wormwood": {
+      "namespace": "base_game",
+      "name": {"vi": "Wormwood", "en": "Wormwood"},
+      "title": {"vi": "Kẻ cô độc", "en": "The Lonesome"},
+      "description": {"vi": "Sinh vật cây liên kết với thực vật, có Ngón Tay Xanh; thức ăn no bụng nhưng không hồi Máu.", "en": "A plant being connected to flora, gifted with a Green Thumb; food fills the stomach but not the heart."},
+      "portrait": {"path": "/assets/dst/characters/base/wormwood.png", "sourceUrl": "https://dontstarve.wiki.gg/wiki/Wormwood"},
+      "stats": {"health": {"value": 150}, "hunger": {"value": 150}, "sanity": {"value": 200}},
+      "abilities": [
+        {"name": {"vi": "Ngón Tay Xanh", "en": "Green Thumb"}, "effect": {"vi": "Trồng hạt trực tiếp, tạo vật phẩm thực vật và chăm cây hiệu quả.", "en": "Plants seeds directly, crafts living items, and tends crops efficiently."}},
+        {"name": {"vi": "Sinh mệnh thực vật", "en": "Plant Physiology"}, "effect": {"vi": "Thức ăn không hồi Máu; phải dùng phân bón, thuốc hoặc phương thức chữa lành khác.", "en": "Food does not restore Health; healing relies on compost, remedies, and special methods."}}
+      ],
+      "startingItems": [],
+      "artifacts": [],
+      "sourceVersion": "740477"
+    },
+    "wurt": {
+      "namespace": "base_game",
+      "name": {"vi": "Wurt", "en": "Wurt"},
+      "title": {"vi": "Cô bé nhỏ con", "en": "The Half-Pint"},
+      "description": {"vi": "Người Cá ăn chay sống tốt ở đầm lầy và có thể xây dựng vương quốc Người Cá.", "en": "A vegetarian Merm at home in swamps who can build and lead a Merm kingdom."},
+      "portrait": {"path": "/assets/dst/characters/base/wurt.png", "sourceUrl": "https://dontstarve.wiki.gg/wiki/Wurt"},
+      "stats": {"health": {"value": 150, "note": "Tăng lên 250 khi có Vua Người Cá."}, "hunger": {"value": 200, "note": "Tăng lên 250 khi có Vua Người Cá."}, "sanity": {"value": 150, "note": "Tăng lên 200 khi có Vua Người Cá."}},
+      "abilities": [
+        {"name": {"vi": "Vương quốc Người Cá", "en": "Merm Kingdom"}, "effect": {"vi": "Xây nhà, tuyển Người Cá và tôn Vua Người Cá để tăng sức mạnh toàn tộc.", "en": "Builds homes, recruits Merms, and crowns a King to strengthen all Mermfolk."}},
+        {"name": {"vi": "Cư dân đầm lầy", "en": "Swamp Dweller"}, "effect": {"vi": "Di chuyển nhanh trên địa hình đầm lầy, không bị ướt do mưa và không ăn thịt.", "en": "Moves quickly on swamp turf, resists rain wetness, and refuses meat."}}
+      ],
+      "startingItems": [],
+      "artifacts": [],
+      "sourceVersion": "740477"
+    },
+    "walter": {
+      "namespace": "base_game",
+      "name": {"vi": "Walter", "en": "Walter"},
+      "title": {"vi": "Người không biết sợ", "en": "The Fearless"},
+      "description": {"vi": "Hướng đạo sinh dùng ná, đi cùng Woby, không sợ bóng tối nhưng mất Não khi bị thương.", "en": "A Pinetree Pioneer with a slingshot and Woby; fearless in darkness but shaken by injury."},
+      "portrait": {"path": "/assets/dst/characters/base/walter.png", "sourceUrl": "https://dontstarve.wiki.gg/wiki/Walter"},
+      "stats": {"health": {"value": 130}, "hunger": {"value": 110}, "sanity": {"value": 200}},
+      "abilities": [
+        {"name": {"vi": "Thiện xạ", "en": "Slingshot Expert"}, "effect": {"vi": "Dùng ná và nhiều loại đạn đặc biệt để chiến đấu từ xa.", "en": "Uses a slingshot with specialized ammunition for ranged combat."}},
+        {"name": {"vi": "Woby", "en": "Woby"}, "effect": {"vi": "Chó đồng hành chứa đồ; khi lớn có thể chở Walter.", "en": "A companion dog who stores items and can carry Walter when enlarged."}},
+        {"name": {"vi": "Không sợ hãi", "en": "Fearless"}, "effect": {"vi": "Không mất Não từ bóng tối hay quái vật, nhưng mất mạnh theo sát thương nhận vào.", "en": "Ignores darkness and monster auras, but loses Sanity when hurt."}}
+      ],
+      "startingItems": [
+        {"code": "walterhat", "name": {"vi": "Mũ hướng đạo", "en": "Pinetree Pioneer Hat"}, "quantity": 1, "effect": {"vi": "Giảm tốc độ mất Não do sát thương.", "en": "Reduces injury-based Sanity loss."}},
+        {"code": "slingshot", "name": {"vi": "Ná đáng tin", "en": "Trusty Slingshot"}, "quantity": 1, "effect": {"vi": "Vũ khí tầm xa riêng của Walter.", "en": "Walter's signature ranged weapon."}},
+        {"code": "slingshotammo_rock", "name": {"vi": "Đạn cuội", "en": "Pebbles"}, "quantity": 10, "effect": {"vi": "Đạn cơ bản cho ná.", "en": "Basic slingshot ammunition."}}
+      ],
+      "artifacts": [],
+      "sourceVersion": "740477"
+    },
+    "wanda": {
+      "namespace": "base_game",
+      "name": {"vi": "Wanda", "en": "Wanda"},
+      "title": {"vi": "Người giữ thời gian", "en": "The Timekeeper"},
+      "description": {"vi": "Thợ đồng hồ điều khiển thời gian; tuổi tác thay cho Máu và năng lực thay đổi theo độ tuổi.", "en": "A clockmaker who manipulates time; age replaces Health and changes her combat profile."},
+      "portrait": {"path": "/assets/dst/characters/base/wanda.png", "sourceUrl": "https://dontstarve.wiki.gg/wiki/Wanda"},
+      "stats": {"health": {"value": null, "display": "20–80 tuổi", "note": "Thanh Tuổi thay cho Máu; 60 điểm tuổi khả dụng."}, "hunger": {"value": 175}, "sanity": {"value": 200}},
+      "abilities": [
+        {"name": {"vi": "Thanh Tuổi", "en": "Age Meter"}, "effect": {"vi": "Nhận sát thương làm già đi; đồng hồ chữa lành đảo ngược tuổi thay vì hồi Máu.", "en": "Damage ages Wanda; healing watches reverse age instead of restoring Health."}},
+        {"name": {"vi": "Đồng hồ bỏ túi", "en": "Pocket Watches"}, "effect": {"vi": "Chế tạo đồng hồ hồi tuổi, dịch chuyển, hồi sinh và tấn công tùy mục đích.", "en": "Crafts watches for age recovery, teleportation, revival, and combat."}}
+      ],
+      "startingItems": [
+        {"code": "pocketwatch_heal", "name": {"vi": "Đồng hồ Không Tuổi", "en": "Ageless Watch"}, "quantity": 1, "effect": {"vi": "Đảo ngược tuổi để phục hồi trạng thái sống.", "en": "Reverses age to restore vitality."}},
+        {"code": "pocketwatch_parts", "name": {"vi": "Mảnh thời gian", "en": "Time Pieces"}, "quantity": 3, "effect": {"vi": "Nguyên liệu chế tạo và sửa đồng hồ.", "en": "Crafting and repair material for watches."}}
+      ],
+      "artifacts": [],
+      "sourceVersion": "740477"
+    },
+    "wonkey": {
+      "namespace": "base_game",
+      "name": {"vi": "Wonkey", "en": "Wonkey"},
+      "title": {"vi": "Kẻ bị nguyền", "en": "The Accursed"},
+      "description": {"vi": "Dạng khỉ do tích đủ vật phẩm nguyền của Hải Tặc Khỉ; chạy nhanh dần nhưng đói nhanh hơn.", "en": "A monkey form caused by accumulating pirate trinkets; accelerates while running but burns Hunger faster."},
+      "portrait": {"path": "/assets/dst/characters/base/wonkey.png", "sourceUrl": "https://dontstarve.wiki.gg/wiki/Wonkey"},
+      "stats": {"health": {"value": 125}, "hunger": {"value": 175}, "sanity": {"value": 100}},
+      "abilities": [
+        {"name": {"vi": "Lời nguyền Wonkey", "en": "Wonkey Curse"}, "effect": {"vi": "Biến đổi khi tích đủ 10 Đồ Trang Sức Nguyền và trở lại bình thường khi giảm số lượng.", "en": "Transforms after collecting 10 Accursed Trinkets and reverts when the count drops."}},
+        {"name": {"vi": "Chạy lấy đà", "en": "Momentum Run"}, "effect": {"vi": "Tăng tốc sau khi chạy liên tục, đổi lại tốc độ tiêu hao Đói cao hơn.", "en": "Builds running speed over time at the cost of faster Hunger drain."}}
+      ],
+      "startingItems": [],
+      "artifacts": [],
+      "sourceVersion": "740477"
+    },
+    "xd_hantianzun": {
+      "namespace": "tu_tien",
+      "name": {"vi": "Hàn Thiên Tôn", "en": "Han Tianzun"},
+      "title": {"vi": "Đệ Nhất Kiếm Tu Thiên Nam", "en": "Foremost Sword Cultivator of Tiannan"},
+      "description": {"vi": "Tán tu hải ngoại sở hữu pháp bảo và thần thông riêng, phát triển sức mạnh theo cảnh giới.", "en": "An overseas rogue cultivator with exclusive treasures and divine arts that scale by cultivation realm."},
+      "portrait": {"path": "/assets/dst/characters/xd_hantianzun.png"},
+      "stats": {"health": {"value": 200}, "hunger": {"value": 150}, "sanity": {"value": 150}},
+      "abilities": [],
+      "startingItems": [],
+      "artifacts": [],
+      "sourceVersion": "18.0.10"
+    },
+    "xd_jingwei": {
+      "namespace": "tu_tien",
+      "name": {"vi": "Tinh Vệ", "en": "Jingwei"},
+      "title": {"vi": "Thiếu Nữ Viêm Đế", "en": "Daughter of the Flame Emperor"},
+      "description": {"vi": "Có huyền điểu đồng hành, bay vượt địa hình và dùng địa bì chuyên dụng để lấp biển.", "en": "Travels with a mystic bird, crosses terrain in flight, and uses special turf to reclaim the sea."},
+      "portrait": {"path": "/assets/dst/characters/xd_jingwei.png"},
+      "stats": {"health": {"value": 150}, "hunger": {"value": 125}, "sanity": {"value": 150}},
+      "abilities": [],
+      "startingItems": [],
+      "artifacts": [],
+      "sourceVersion": "18.0.10"
+    },
+    "xd_longtaizi": {
+      "namespace": "tu_tien",
+      "name": {"vi": "Long Thái Tử", "en": "Dragon Crown Prince"},
+      "title": {"vi": "Long Tộc Thánh Tử", "en": "Sacred Heir of the Dragon Clan"},
+      "description": {"vi": "Thao túng hàn băng linh khí và sở hữu Long Châu mang huyết mạch truyền thừa.", "en": "Commands frost spiritual energy and carries a Dragon Pearl containing inherited dragon blood."},
+      "portrait": {"path": "/assets/dst/characters/xd_longtaizi.png"},
+      "stats": {"health": {"value": 150}, "hunger": {"value": 175}, "sanity": {"value": 175}},
+      "abilities": [],
+      "startingItems": [],
+      "artifacts": [],
+      "sourceVersion": "18.0.10"
+    },
+    "xd_luoshen": {
+      "namespace": "tu_tien",
+      "name": {"vi": "Lạc Thần", "en": "Luoshen"},
+      "title": {"vi": "Con Gái Phục Hy", "en": "Daughter of Fuxi"},
+      "description": {"vi": "Trồng hoa Lạc Thần và chuyển đổi giữa hai mặt sinh–diệt để hỗ trợ hoặc chiến đấu.", "en": "Cultivates Luoshen flowers and shifts between life and death aspects for support or combat."},
+      "portrait": {"path": "/assets/dst/characters/xd_luoshen.png"},
+      "stats": {"health": {"value": 175}, "hunger": {"value": 125}, "sanity": {"value": 175}},
+      "abilities": [],
+      "startingItems": [],
+      "artifacts": [],
+      "sourceVersion": "18.0.10"
+    },
+    "xd_shiji": {
+      "namespace": "tu_tien",
+      "name": {"vi": "Thạch Cơ Nương Nương", "en": "Lady Shiji"},
+      "title": {"vi": "Yêu Tiên Tiệt Giáo", "en": "Jiejiao Stone Immortal"},
+      "description": {"vi": "Hóa thân từ đá vá trời, sai khiến Thạch Hà và có hai đồng tử phụ tá.", "en": "Born from a sky-mending stone, commands Stone Haze, and is aided by two attendants."},
+      "portrait": {"path": "/assets/dst/characters/xd_shiji.png"},
+      "stats": {"health": {"value": 200}, "hunger": {"value": 150}, "sanity": {"value": 150}},
+      "abilities": [],
+      "startingItems": [],
+      "artifacts": [],
+      "sourceVersion": "18.0.10"
+    },
+    "xd_sudaji": {
+      "namespace": "tu_tien",
+      "name": {"vi": "Tô Đát Kỷ", "en": "Su Daji"},
+      "title": {"vi": "Yêu Phi Tuyệt Đại", "en": "Peerless Demon Consort"},
+      "description": {"vi": "Tỏa yêu khí, dùng kỳ trân Trụ Vương ban tặng và ôn dưỡng Linh Ngọc bằng nguyên thần yêu vật.", "en": "Radiates demonic aura, wields royal treasures, and nourishes Spirit Jade with monster souls."},
+      "portrait": {"path": "/assets/dst/characters/xd_sudaji.png"},
+      "stats": {"health": {"value": 150}, "hunger": {"value": 125}, "sanity": {"value": 200}},
+      "abilities": [],
+      "startingItems": [],
+      "artifacts": [],
+      "sourceVersion": "18.0.10"
+    },
+    "xd_wangmazi": {
+      "namespace": "tu_tien",
+      "name": {"vi": "Vương Ma Tử", "en": "Wang Mazi"},
+      "title": {"vi": "Ma Đầu", "en": "Demon Sovereign"},
+      "description": {"vi": "Cửu Tinh Cổ Thần đứng đầu Nghịch Trần Giới, sở hữu chí bảo Định Giới La Bàn.", "en": "A Nine-Star Ancient God and ruler of the Rebel Dust Realm who possesses the Realm-Fixing Compass."},
+      "portrait": {"path": "/assets/dst/characters/xd_wangmazi.png"},
+      "stats": {"health": {"value": 200}, "hunger": {"value": 200}, "sanity": {"value": 150}},
+      "abilities": [],
+      "startingItems": [],
+      "artifacts": [],
+      "sourceVersion": "18.0.10"
+    },
+    "xd_wukong": {
+      "namespace": "tu_tien",
+      "name": {"vi": "Tôn Ngộ Không", "en": "Sun Wukong"},
+      "title": {"vi": "Thiên Mệnh Nhân", "en": "Destined One"},
+      "description": {"vi": "Thừa kế ý chí Đại Thánh, thu thập Căn Khí và chiến đấu bằng Như Ý Kim Cô Bổng.", "en": "Inherits the Great Sage's will, gathers Root Essences, and fights with the Ruyi Jingu Bang."},
+      "portrait": {"path": "/assets/dst/characters/xd_wukong.png"},
+      "stats": {"health": {"value": 175}, "hunger": {"value": 125}, "sanity": {"value": 125}},
+      "abilities": [],
+      "startingItems": [],
+      "artifacts": [],
+      "sourceVersion": "18.0.10"
+    },
+    "xd_yunxiao": {
+      "namespace": "tu_tien",
+      "name": {"vi": "Tam Tiêu Nương Nương", "en": "Three Xiao Sisters"},
+      "title": {"vi": "Đệ Tử Ngoại Môn Tiệt Giáo", "en": "Outer Disciples of Jiejiao"},
+      "description": {"vi": "Ba hình thái Vân Tiêu, Bích Tiêu và Quỳnh Tiêu đảm nhiệm hỗ trợ, lao động và chiến đấu.", "en": "Three forms—Yunxiao, Bixiao, and Qiongxiao—specialize in support, labor, and combat."},
+      "portrait": {"path": "/assets/dst/characters/xd_yunxiao.png"},
+      "stats": {"health": {"value": 175}, "hunger": {"value": 175}, "sanity": {"value": 175}},
+      "abilities": [],
+      "startingItems": [],
+      "artifacts": [],
+      "sourceVersion": "18.0.10"
+    }
+  }
+}

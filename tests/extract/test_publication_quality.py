@@ -31,6 +31,56 @@ def item(item_id="base_game:bearger", **overrides):
     return value
 
 
+def publication_fixture(tmp_path):
+    public_root = tmp_path / "public"
+    public_root.mkdir()
+    sprite_path = public_root / "assets" / "game" / "character.png"
+    sprite_path.parent.mkdir(parents=True)
+    sprite_path.write_bytes(PNG)
+    items_path = tmp_path / "items.json"
+    items_path.write_text(
+        json.dumps(
+            {
+                "schema_version": 7,
+                "items": [
+                    item(
+                        "tu_tien:xd_hantianzun",
+                        namespace="tu_tien",
+                        prefabId="xd_hantianzun",
+                        category="character",
+                        sprite={
+                            "src": "/assets/game/character.png",
+                            "uv": {"u1": 0, "u2": 1, "v1": 0, "v2": 1},
+                        },
+                        mob=None,
+                        character={
+                            "title": {"vi": "Hàn Thiên Kiếm Tu", "en": "Cold Sky Swordmaster"},
+                            "portrait": {"path": "/assets/dst/characters/xd_hantianzun.png"},
+                            "startingItems": [
+                                {
+                                    "code": "starter",
+                                    "name": {"vi": "Khởi Nguyên Kiếm", "en": "Starter Sword"},
+                                    "icon": {"src": "/assets/game/missing-starter.png"},
+                                }
+                            ],
+                            "artifacts": [],
+                            "guide": {"summary": "Một kiếm tu thiên về áp sát."},
+                        },
+                    )
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+    guides_root = tmp_path / "guides"
+    guides_root.mkdir()
+    (guides_root / "index.json").write_text(
+        json.dumps({"schemaVersion": 1, "count": 0, "guides": []}),
+        encoding="utf-8",
+    )
+    return items_path, guides_root, public_root
+
+
 class PublicationQualityTests(unittest.TestCase):
     def test_cli_exposes_audit_and_apply_modes(self):
         args = build_parser().parse_args(
@@ -80,6 +130,84 @@ class PublicationQualityTests(unittest.TestCase):
             self.assertIn("missing_image", codes)
             self.assertIn("missing_content", codes)
             self.assertIn("missing_detail", codes)
+
+    def test_publication_quality_rejects_missing_character_portrait(self):
+        with tempfile.TemporaryDirectory() as tempdir:
+            items_path, guides_root, public_root = publication_fixture(Path(tempdir))
+
+            audit = audit_publication(items_path, guides_root, public_root)
+
+        self.assertTrue(
+            any(
+                issue["code"] == "missing_character_portrait"
+                for issue in audit["issues"]
+            )
+        )
+
+    def test_publication_quality_rejects_missing_character_equipment_asset(self):
+        with tempfile.TemporaryDirectory() as tempdir:
+            items_path, guides_root, public_root = publication_fixture(Path(tempdir))
+
+            audit = audit_publication(items_path, guides_root, public_root)
+
+        self.assertTrue(
+            any(
+                issue["code"] == "missing_character_equipment_asset"
+                for issue in audit["issues"]
+            )
+        )
+
+    def test_publication_quality_allows_character_equipment_without_an_icon_reference(self):
+        with tempfile.TemporaryDirectory() as tempdir:
+            items_path, guides_root, public_root = publication_fixture(Path(tempdir))
+            payload = json.loads(items_path.read_text(encoding="utf-8"))
+            payload["items"][0]["character"]["startingItems"][0]["icon"] = None
+            items_path.write_text(json.dumps(payload), encoding="utf-8")
+
+            audit = audit_publication(items_path, guides_root, public_root)
+
+        self.assertFalse(
+            any(
+                issue["code"] == "missing_character_equipment_asset"
+                for issue in audit["issues"]
+            )
+        )
+
+    def test_publication_quality_rejects_evidence_inside_character_dossier(self):
+        with tempfile.TemporaryDirectory() as tempdir:
+            items_path, guides_root, public_root = publication_fixture(Path(tempdir))
+            payload = json.loads(items_path.read_text(encoding="utf-8"))
+            payload["items"][0]["character"]["guide"]["combat"] = [
+                {"label": "Hàn Kiếm", "evidence": ["private:combat"]}
+            ]
+            items_path.write_text(json.dumps(payload), encoding="utf-8")
+
+            audit = audit_publication(items_path, guides_root, public_root)
+
+        self.assertTrue(
+            any(
+                issue["code"] == "character_evidence_leak"
+                for issue in audit["issues"]
+            )
+        )
+
+    def test_publication_quality_allows_evidence_outside_character_dossier(self):
+        with tempfile.TemporaryDirectory() as tempdir:
+            items_path, guides_root, public_root = publication_fixture(Path(tempdir))
+            payload = json.loads(items_path.read_text(encoding="utf-8"))
+            payload["items"][0]["details"] = {
+                "usage": {"evidence": ["catalog:allowed"]}
+            }
+            items_path.write_text(json.dumps(payload), encoding="utf-8")
+
+            audit = audit_publication(items_path, guides_root, public_root)
+
+        self.assertFalse(
+            any(
+                issue["code"] == "character_evidence_leak"
+                for issue in audit["issues"]
+            )
+        )
 
     def test_repairs_cover_from_same_category_page_before_removal(self):
         with tempfile.TemporaryDirectory() as tempdir:

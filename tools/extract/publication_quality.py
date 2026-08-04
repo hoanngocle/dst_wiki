@@ -75,6 +75,49 @@ def _valid_sprite(sprite: Any, public_root: Path) -> bool:
     return path is not None and _image_signature(path)
 
 
+def _contains_evidence(value: Any) -> bool:
+    if isinstance(value, Mapping):
+        return "evidence" in value or any(
+            _contains_evidence(nested) for nested in value.values()
+        )
+    if isinstance(value, list):
+        return any(_contains_evidence(nested) for nested in value)
+    return False
+
+
+def _character_asset_issues(item: Mapping[str, Any], public_root: Path) -> List[str]:
+    if item.get("category") != "character":
+        return []
+    character = item.get("character")
+    if not isinstance(character, Mapping):
+        return []
+    portrait = character.get("portrait")
+    portrait_path = portrait.get("path") if isinstance(portrait, Mapping) else None
+    resolved_portrait = (
+        _sprite_path({"src": portrait_path}, public_root)
+        if isinstance(portrait_path, str)
+        else None
+    )
+    if (
+        resolved_portrait is None
+        or not _image_signature(resolved_portrait)
+    ):
+        issues = ["missing_character_portrait"]
+    else:
+        issues = []
+    if _contains_evidence(character):
+        issues.append("character_evidence_leak")
+    for field in ("startingItems", "artifacts"):
+        equipment = character.get(field)
+        if not isinstance(equipment, list):
+            continue
+        for entry in equipment:
+            icon = entry.get("icon") if isinstance(entry, Mapping) else None
+            if icon is not None and not _valid_sprite(icon, public_root):
+                issues.append("missing_character_equipment_asset")
+    return issues
+
+
 def _meaningful(value: Any) -> bool:
     if value is None or value is False:
         return False
@@ -128,6 +171,7 @@ def _item_issues(item: Mapping[str, Any], public_root: Path) -> List[str]:
         issues.append("missing_detail")
     if not str(item.get("id") or "").strip() or not str(item.get("namespace") or "").strip():
         issues.append("missing_source")
+    issues.extend(_character_asset_issues(item, public_root))
     scope = " ".join(
         str(item.get(field) or "") for field in ("name", "englishName", "description")
     ).casefold()

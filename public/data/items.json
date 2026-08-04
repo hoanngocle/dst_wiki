@@ -83157,10 +83157,115 @@
     {
       "category": "character",
       "character": {
-        "abilities": [],
-        "quote": null,
-        "survivability": null,
-        "title": "Exclusive to: WalterDSTQuotesGallery Walter Title The Fearless Birthday March 31 Motto \"A Pinetree Pioneer is always prepared!\" Curio Cabinet Bio Walter is an o"
+        "abilities": [
+          {
+            "effect": {
+              "en": "Uses a slingshot with specialized ammunition for ranged combat.",
+              "vi": "Dùng ná và nhiều loại đạn đặc biệt để chiến đấu từ xa."
+            },
+            "name": {
+              "en": "Slingshot Expert",
+              "vi": "Thiện xạ"
+            }
+          },
+          {
+            "effect": {
+              "en": "A companion dog who stores items and can carry Walter when enlarged.",
+              "vi": "Chó đồng hành chứa đồ; khi lớn có thể chở Walter."
+            },
+            "name": {
+              "en": "Woby",
+              "vi": "Woby"
+            }
+          },
+          {
+            "effect": {
+              "en": "Ignores darkness and monster auras, but loses Sanity when hurt.",
+              "vi": "Không mất Não từ bóng tối hay quái vật, nhưng mất mạnh theo sát thương nhận vào."
+            },
+            "name": {
+              "en": "Fearless",
+              "vi": "Không sợ hãi"
+            }
+          }
+        ],
+        "artifacts": [],
+        "description": {
+          "en": "A Pinetree Pioneer with a slingshot and Woby; fearless in darkness but shaken by injury.",
+          "vi": "Hướng đạo sinh dùng ná, đi cùng Woby, không sợ bóng tối nhưng mất Não khi bị thương."
+        },
+        "guide": null,
+        "name": {
+          "en": "Walter",
+          "vi": "Walter"
+        },
+        "portrait": {
+          "path": "/assets/dst/characters/base/walter.png"
+        },
+        "startingItems": [
+          {
+            "code": "walterhat",
+            "effect": {
+              "en": "Reduces injury-based Sanity loss.",
+              "vi": "Giảm tốc độ mất Não do sát thương."
+            },
+            "icon": null,
+            "name": {
+              "en": "Pinetree Pioneer Hat",
+              "vi": "Mũ hướng đạo"
+            },
+            "quantity": 1
+          },
+          {
+            "code": "slingshot",
+            "effect": {
+              "en": "Walter's signature ranged weapon.",
+              "vi": "Vũ khí tầm xa riêng của Walter."
+            },
+            "icon": {
+              "src": "/assets/game/692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce.png",
+              "uv": {
+                "u1": 0.937744140625,
+                "u2": 0.968505859375,
+                "v1": 0.625244140625,
+                "v2": 0.656005859375
+              }
+            },
+            "name": {
+              "en": "Trusty Slingshot",
+              "vi": "Trusty Slingshot"
+            },
+            "quantity": 1
+          },
+          {
+            "code": "slingshotammo_rock",
+            "effect": {
+              "en": "Basic slingshot ammunition.",
+              "vi": "Đạn cơ bản cho ná."
+            },
+            "icon": null,
+            "name": {
+              "en": "Pebbles",
+              "vi": "Đạn cuội"
+            },
+            "quantity": 10
+          }
+        ],
+        "stats": {
+          "health": {
+            "value": 130
+          },
+          "hunger": {
+            "value": 110
+          },
+          "sanity": {
+            "value": 200
+          }
+        },
+        "title": {
+          "en": "The Fearless",
+          "vi": "Người không biết sợ"
+        }
       },
       "craftingNote": null,
       "description": "Exclusive to: WalterDSTQuotesGallery Walter Title The Fearless Birthday March 31 Motto \"A Pinetree Pioneer is always prepared!\" Curio Cabinet Bio Walter is an odd but cheerful boy, whose ability to assess danger leaves something to be desired. Odds of Survival Slim Perks & Quirks Not afraid of anything, except getting hurt Good with a slingshot Has a…",
@@ -83187,10 +83292,94 @@
     {
       "category": "character",
       "character": {
-        "abilities": [],
-        "quote": null,
-        "survivability": null,
-        "title": "Exclusive to: WandaDSTQuotesGallery Wanda Title The Timekeeper Birthday August 8 Motto \"Time! I just need more time!\" Curio Cabinet Bio Wanda is a skilled clock"
+        "abilities": [
+          {
+            "effect": {
+              "en": "Damage ages Wanda; healing watches reverse age instead of restoring Health.",
+              "vi": "Nhận sát thương làm già đi; đồng hồ chữa lành đảo ngược tuổi thay vì hồi Máu."
+            },
+            "name": {
+              "en": "Age Meter",
+              "vi": "Thanh Tuổi"
+            }
+          },
+          {
+            "effect": {
+              "en": "Crafts watches for age recovery, teleportation, revival, and combat.",
+              "vi": "Chế tạo đồng hồ hồi tuổi, dịch chuyển, hồi sinh và tấn công tùy mục đích."
+            },
+            "name": {
+              "en": "Pocket Watches",
+              "vi": "Đồng hồ bỏ túi"
+            }
+          }
+        ],
+        "artifacts": [],
+        "description": {
+          "en": "A clockmaker who manipulates time; age replaces Health and changes her combat profile.",
+          "vi": "Thợ đồng hồ điều khiển thời gian; tuổi tác thay cho Máu và năng lực thay đổi theo độ tuổi."
+        },
+        "guide": null,
+        "name": {
+          "en": "Wanda",
+          "vi": "Wanda"
+        },
+        "portrait": {
+          "path": "/assets/dst/characters/base/wanda.png"
+        },
+        "startingItems": [
+          {
+            "code": "pocketwatch_heal",
+            "effect": {
+              "en": "Reverses age to restore vitality.",
+              "vi": "Đảo ngược tuổi để phục hồi trạng thái sống."
+            },
+            "icon": null,
+            "name": {
+              "en": "Ageless Watch",
+              "vi": "Đồng hồ Không Tuổi"
+            },
+            "quantity": 1
+          },
+          {
+            "code": "pocketwatch_parts",
+            "effect": {
+              "en": "Crafting and repair material for watches.",
+              "vi": "Nguyên liệu chế tạo và sửa đồng hồ."
+            },
+            "icon": {
+              "src": "/assets/game/8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666.png",
+              "uv": {
+                "u1": 0.375244140625,
+                "u2": 0.406005859375,
+                "v1": 0.031494140625,
+                "v2": 0.062255859375
+              }
+            },
+            "name": {
+              "en": "Time Pieces",
+              "vi": "pocketwatch_parts"
+            },
+            "quantity": 3
+          }
+        ],
+        "stats": {
+          "health": {
+            "display": "20–80 tuổi",
+            "note": "Thanh Tuổi thay cho Máu; 60 điểm tuổi khả dụng.",
+            "value": null
+          },
+          "hunger": {
+            "value": 175
+          },
+          "sanity": {
+            "value": 200
+          }
+        },
+        "title": {
+          "en": "The Timekeeper",
+          "vi": "Người giữ thời gian"
+        }
       },
       "craftingNote": null,
       "description": "Exclusive to: WandaDSTQuotesGallery Wanda Title The Timekeeper Birthday August 8 Motto \"Time! I just need more time!\" Curio Cabinet Bio Wanda is a skilled clockmaker who will stop at nothing to outrun her future. Odds of Survival Grim Perks & Quirks Has excellent time management skills. Only as old as she feels. In a constant race against the clock. Status…",
@@ -83824,10 +84013,97 @@
     {
       "category": "character",
       "character": {
-        "abilities": [],
-        "quote": null,
-        "survivability": null,
-        "title": "Exclusive to: WarlyShipwreckedDSTQuotesGallery Warly DST DS Title The Culinarian Birthday July 25 Motto \"Nothing worthwhile is ever done on an empty stomach!\" C"
+        "abilities": [
+          {
+            "effect": {
+              "en": "Uses portable cookware and exclusive recipes anywhere.",
+              "vi": "Có nồi, cối xay và túi gia vị di động cùng nhiều công thức độc quyền."
+            },
+            "name": {
+              "en": "Portable Cuisine",
+              "vi": "Ẩm thực di động"
+            }
+          },
+          {
+            "effect": {
+              "en": "Only eats crock-pot dishes and gains less from repeating meals too soon.",
+              "vi": "Chỉ ăn món từ nồi hầm và nhận ít lợi ích khi lặp lại cùng món quá sớm."
+            },
+            "name": {
+              "en": "Gourmet Palate",
+              "vi": "Khẩu vị sành ăn"
+            }
+          }
+        ],
+        "artifacts": [],
+        "description": {
+          "en": "A chef with portable cookware, signature spices, a large appetite, and gourmet standards.",
+          "vi": "Đầu bếp có dụng cụ nấu di động, gia vị riêng, cơn đói lớn và chỉ thích món ăn thượng hạng."
+        },
+        "guide": null,
+        "name": {
+          "en": "Warly",
+          "vi": "Warly"
+        },
+        "portrait": {
+          "path": "/assets/dst/characters/base/warly.png"
+        },
+        "startingItems": [
+          {
+            "code": "portablecookpot_item",
+            "effect": {
+              "en": "Cooks anywhere, including Warly-exclusive dishes.",
+              "vi": "Nấu món ở bất cứ nơi đâu, gồm công thức riêng của Warly."
+            },
+            "icon": null,
+            "name": {
+              "en": "Portable Crock Pot",
+              "vi": "Nồi hầm di động"
+            },
+            "quantity": 1
+          },
+          {
+            "code": "potato",
+            "effect": {
+              "en": "Starting cooking ingredient.",
+              "vi": "Nguyên liệu nấu ăn khởi đầu."
+            },
+            "icon": null,
+            "name": {
+              "en": "Potato",
+              "vi": "Khoai tây"
+            },
+            "quantity": 2
+          },
+          {
+            "code": "garlic",
+            "effect": {
+              "en": "Cooking and seasoning ingredient.",
+              "vi": "Nguyên liệu nấu ăn và chế biến gia vị."
+            },
+            "icon": null,
+            "name": {
+              "en": "Garlic",
+              "vi": "Tỏi"
+            },
+            "quantity": 1
+          }
+        ],
+        "stats": {
+          "health": {
+            "value": 150
+          },
+          "hunger": {
+            "value": 250
+          },
+          "sanity": {
+            "value": 200
+          }
+        },
+        "title": {
+          "en": "The Culinarian",
+          "vi": "Đầu bếp"
+        }
       },
       "craftingNote": null,
       "description": "Exclusive to: WarlyShipwreckedDSTQuotesGallery Warly DST DS Title The Culinarian Birthday July 25 Motto \"Nothing worthwhile is ever done on an empty stomach!\" Curio Cabinet Bio To Warly, cooking is a language through which to express love and gratitude to those he holds dear. Odds of Survival Grim Perks & Quirks Has his own line of custom portable cookware…",
@@ -84283,10 +84559,113 @@
     {
       "category": "character",
       "character": {
-        "abilities": [],
-        "quote": null,
-        "survivability": null,
-        "title": "Exclusive to: WigfridReign of GiantsDSTQuotesGallery Wigfrid DST DS Title The Performance Artist Birthday July 23 Motto \"All the wörld's a stage"
+        "abilities": [
+          {
+            "effect": {
+              "en": "Deals extra damage, takes less damage, and restores Health and Sanity on hit.",
+              "vi": "Gây thêm sát thương, giảm sát thương nhận vào và hồi Máu/Não khi đánh trúng."
+            },
+            "name": {
+              "en": "Battleborn",
+              "vi": "Nữ chiến binh"
+            }
+          },
+          {
+            "effect": {
+              "en": "Builds Inspiration in combat to perform team-wide battle songs.",
+              "vi": "Tích cảm hứng khi chiến đấu để hát các bài tăng sức mạnh cho đồng đội."
+            },
+            "name": {
+              "en": "Battle Songs",
+              "vi": "Chiến ca"
+            }
+          }
+        ],
+        "artifacts": [],
+        "description": {
+          "en": "A theatrical warrior who excels in battle, absorbs power from fallen foes, and only eats meat.",
+          "vi": "Chiến binh sân khấu giỏi chiến đấu, hấp thụ sức mạnh kẻ địch bị hạ và chỉ ăn thịt."
+        },
+        "guide": null,
+        "name": {
+          "en": "Wigfrid",
+          "vi": "Wigfrid"
+        },
+        "portrait": {
+          "path": "/assets/dst/characters/base/wathgrithr.png"
+        },
+        "startingItems": [
+          {
+            "code": "spear_wathgrithr",
+            "effect": {
+              "en": "Wigfrid's high-damage signature spear.",
+              "vi": "Vũ khí riêng có sát thương cao."
+            },
+            "icon": {
+              "src": "/assets/game/692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce.png",
+              "uv": {
+                "u1": 0.781494140625,
+                "u2": 0.812255859375,
+                "v1": 0.531494140625,
+                "v2": 0.562255859375
+              }
+            },
+            "name": {
+              "en": "Battle Spear",
+              "vi": "Battle Spear"
+            },
+            "quantity": 1
+          },
+          {
+            "code": "wathgrithrhat",
+            "effect": {
+              "en": "Wigfrid's signature protective helmet.",
+              "vi": "Giáp đầu riêng bảo vệ khi giao chiến."
+            },
+            "icon": null,
+            "name": {
+              "en": "Battle Helm",
+              "vi": "Mũ chiến đấu"
+            },
+            "quantity": 1
+          },
+          {
+            "code": "meat",
+            "effect": {
+              "en": "Starting food compatible with her meat-only diet.",
+              "vi": "Lương thực khởi đầu phù hợp chế độ chỉ ăn thịt."
+            },
+            "icon": {
+              "src": "/assets/game/8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666.png",
+              "uv": {
+                "u1": 0.906494140625,
+                "u2": 0.937255859375,
+                "v1": 0.343994140625,
+                "v2": 0.374755859375
+              }
+            },
+            "name": {
+              "en": "Meat",
+              "vi": "Meat"
+            },
+            "quantity": 4
+          }
+        ],
+        "stats": {
+          "health": {
+            "value": 200
+          },
+          "hunger": {
+            "value": 120
+          },
+          "sanity": {
+            "value": 120
+          }
+        },
+        "title": {
+          "en": "The Performance Artist",
+          "vi": "Nghệ sĩ trình diễn"
+        }
       },
       "craftingNote": null,
       "description": "Exclusive to: WigfridReign of GiantsDSTQuotesGallery Wigfrid DST DS Title The Performance Artist Birthday July 23 Motto \"All the wörld's a stage. För me!\" Curio Cabinet Bio Whoever Wigfrid was before her titular role has been lost to time, and the power of method acting. Odds of Survival Slim Perks & Quirks Excels in Battle Absorbs the power of fallen foes…",
@@ -84523,10 +84902,121 @@
     {
       "category": "character",
       "character": {
-        "abilities": [],
-        "quote": null,
-        "survivability": null,
-        "title": "Exclusive to: WebberReign of GiantsDSTQuotesGallery Webber DST DS Title The Indigestible Birthday April 30 Motto \"We're always together, and never alone!\" Curio"
+        "abilities": [
+          {
+            "effect": {
+              "en": "Spiders are neutral and can be recruited with food.",
+              "vi": "Không bị nhện thù địch tự động và có thể thuần hóa nhiều loại nhện bằng thức ăn."
+            },
+            "name": {
+              "en": "Spider Friend",
+              "vi": "Bạn của nhện"
+            }
+          },
+          {
+            "effect": {
+              "en": "Decorates dens, raises spiders, and commands the herd with whistles.",
+              "vi": "Trang trí tổ, nuôi nhện và dùng còi để điều khiển đàn."
+            },
+            "name": {
+              "en": "Spider Caretaker",
+              "vi": "Thợ chăn nhện"
+            }
+          }
+        ],
+        "artifacts": [],
+        "description": {
+          "en": "A child inside a spider who befriends and commands spiders while growing a silky beard.",
+          "vi": "Đứa trẻ sống trong thân xác nhện, kết bạn và chỉ huy nhện, đồng thời nuôi bộ râu tơ."
+        },
+        "guide": null,
+        "name": {
+          "en": "Webber",
+          "vi": "Webber"
+        },
+        "portrait": {
+          "path": "/assets/dst/characters/base/webber.png"
+        },
+        "startingItems": [
+          {
+            "code": "spidereggsack",
+            "effect": {
+              "en": "Plants a new Spider Den.",
+              "vi": "Đặt một tổ nhện mới."
+            },
+            "icon": {
+              "src": "/assets/game/692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce.png",
+              "uv": {
+                "u1": 0.593994140625,
+                "u2": 0.624755859375,
+                "v1": 0.500244140625,
+                "v2": 0.531005859375
+              }
+            },
+            "name": {
+              "en": "Spider Eggs",
+              "vi": "Spider Eggs"
+            },
+            "quantity": 1
+          },
+          {
+            "code": "monstermeat",
+            "effect": {
+              "en": "Feeds or befriends spiders.",
+              "vi": "Thuần hóa hoặc cho nhện ăn."
+            },
+            "icon": {
+              "src": "/assets/game/8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666.png",
+              "uv": {
+                "u1": 0.187744140625,
+                "u2": 0.218505859375,
+                "v1": 0.250244140625,
+                "v2": 0.281005859375
+              }
+            },
+            "name": {
+              "en": "Monster Meat",
+              "vi": "Monster Meat"
+            },
+            "quantity": 2
+          },
+          {
+            "code": "spider_whistle",
+            "effect": {
+              "en": "Commands spiders to disengage and follow.",
+              "vi": "Ra lệnh cho nhện dừng chiến đấu và đi theo."
+            },
+            "icon": {
+              "src": "/assets/game/692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce.png",
+              "uv": {
+                "u1": 0.968994140625,
+                "u2": 0.999755859375,
+                "v1": 0.500244140625,
+                "v2": 0.531005859375
+              }
+            },
+            "name": {
+              "en": "Webby Whistle",
+              "vi": "Webby Whistle"
+            },
+            "quantity": 1
+          }
+        ],
+        "stats": {
+          "health": {
+            "value": 175
+          },
+          "hunger": {
+            "value": 175
+          },
+          "sanity": {
+            "value": 100
+          }
+        },
+        "title": {
+          "en": "The Indigestible",
+          "vi": "Kẻ không thể tiêu hóa"
+        }
       },
       "craftingNote": null,
       "description": "Exclusive to: WebberReign of GiantsDSTQuotesGallery Webber DST DS Title The Indigestible Birthday April 30 Motto \"We're always together, and never alone!\" Curio Cabinet Bio Webber is a polite young monster who cares deeply for all his friends, human or otherwise. Odds of Survival Grim Perks & Quirks Is a monster Can befriend spiders Grows a silky smooth…",
@@ -85187,10 +85677,79 @@
     {
       "category": "character",
       "character": {
-        "abilities": [],
-        "quote": null,
-        "survivability": null,
-        "title": "Exclusive to: WinonaDSTQuotesGallery Winona Title The Handywoman Birthday September 13 Motto \"Anything can be fixed with hard work and elbow grease"
+        "abilities": [
+          {
+            "effect": {
+              "en": "Builds quickly and constructs generators, spotlights, and catapults.",
+              "vi": "Chế tạo nhanh và dựng máy phát điện, đèn chiếu hoặc máy phóng đá."
+            },
+            "name": {
+              "en": "Skilled Builder",
+              "vi": "Kỹ sư lành nghề"
+            }
+          },
+          {
+            "effect": {
+              "en": "Negates the first darkness hit before light is required.",
+              "vi": "Chặn lần sát thương đầu tiên từ bóng tối trước khi cần ánh sáng."
+            },
+            "name": {
+              "en": "Free Darkness Hit",
+              "vi": "Đòn đánh bóng tối miễn phí"
+            }
+          }
+        ],
+        "artifacts": [],
+        "description": {
+          "en": "A skilled builder with one free hit from darkness and a suite of personal gadgets.",
+          "vi": "Thợ xây lành nghề, miễn phí một lần đánh từ bóng tối và có hệ thống máy móc riêng."
+        },
+        "guide": null,
+        "name": {
+          "en": "Winona",
+          "vi": "Winona"
+        },
+        "portrait": {
+          "path": "/assets/dst/characters/base/winona.png"
+        },
+        "startingItems": [
+          {
+            "code": "sewing_tape",
+            "effect": {
+              "en": "Repairs clothing and selected equipment.",
+              "vi": "Sửa độ bền quần áo và một số trang bị."
+            },
+            "icon": {
+              "src": "/assets/game/692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce.png",
+              "uv": {
+                "u1": 0.687744140625,
+                "u2": 0.718505859375,
+                "v1": 0.687744140625,
+                "v2": 0.718505859375
+              }
+            },
+            "name": {
+              "en": "Trusty Tape",
+              "vi": "Trusty Tape"
+            },
+            "quantity": 3
+          }
+        ],
+        "stats": {
+          "health": {
+            "value": 150
+          },
+          "hunger": {
+            "value": 150
+          },
+          "sanity": {
+            "value": 200
+          }
+        },
+        "title": {
+          "en": "The Handywoman",
+          "vi": "Nữ thợ máy"
+        }
       },
       "craftingNote": null,
       "description": "Exclusive to: WinonaDSTQuotesGallery Winona Title The Handywoman Birthday September 13 Motto \"Anything can be fixed with hard work and elbow grease.\" Curio Cabinet Bio Winona is a former assembly line worker with a boisterous attitude and a love of all things mechanical. Odds of Survival Slim Perks & Quirks Is a skilled builder Gets one free hit from the…",
@@ -88006,10 +88565,57 @@
     {
       "category": "character",
       "character": {
-        "abilities": [],
-        "quote": null,
-        "survivability": null,
-        "title": "WonkeyDSTQuotesGallery Exclusive to: Wonkey Title The Accursed Motto \"Ook OOK!\" Curio Cabinet Bio This poor soul has fallen victim to the curse of the dreaded M"
+        "abilities": [
+          {
+            "effect": {
+              "en": "Transforms after collecting 10 Accursed Trinkets and reverts when the count drops.",
+              "vi": "Biến đổi khi tích đủ 10 Đồ Trang Sức Nguyền và trở lại bình thường khi giảm số lượng."
+            },
+            "name": {
+              "en": "Wonkey Curse",
+              "vi": "Lời nguyền Wonkey"
+            }
+          },
+          {
+            "effect": {
+              "en": "Builds running speed over time at the cost of faster Hunger drain.",
+              "vi": "Tăng tốc sau khi chạy liên tục, đổi lại tốc độ tiêu hao Đói cao hơn."
+            },
+            "name": {
+              "en": "Momentum Run",
+              "vi": "Chạy lấy đà"
+            }
+          }
+        ],
+        "artifacts": [],
+        "description": {
+          "en": "A monkey form caused by accumulating pirate trinkets; accelerates while running but burns Hunger faster.",
+          "vi": "Dạng khỉ do tích đủ vật phẩm nguyền của Hải Tặc Khỉ; chạy nhanh dần nhưng đói nhanh hơn."
+        },
+        "guide": null,
+        "name": {
+          "en": "Wonkey",
+          "vi": "Wonkey"
+        },
+        "portrait": {
+          "path": "/assets/dst/characters/base/wonkey.png"
+        },
+        "startingItems": [],
+        "stats": {
+          "health": {
+            "value": 125
+          },
+          "hunger": {
+            "value": 175
+          },
+          "sanity": {
+            "value": 100
+          }
+        },
+        "title": {
+          "en": "The Accursed",
+          "vi": "Kẻ bị nguyền"
+        }
       },
       "craftingNote": null,
       "description": "WonkeyDSTQuotesGallery Exclusive to: Wonkey Title The Accursed Motto \"Ook OOK!\" Curio Cabinet Bio This poor soul has fallen victim to the curse of the dreaded Moon Quay pirates. Odds of Survival Grim Perks & Quirks Whoever they were, they're a monkey now Status 125 175 100 Favorite Food Code \"wonkey\" While transforming When transformed After returning to…",
@@ -88551,10 +89157,57 @@
     {
       "category": "character",
       "character": {
-        "abilities": [],
-        "quote": null,
-        "survivability": null,
-        "title": "Exclusive to: WormwoodHamletDSTQuotesGallery Wormwood DST DS Title The Lonesome Birthday June 6 Motto \"Hello friend?\" Curio Cabinet Bio An amalgam of vines give"
+        "abilities": [
+          {
+            "effect": {
+              "en": "Plants seeds directly, crafts living items, and tends crops efficiently.",
+              "vi": "Trồng hạt trực tiếp, tạo vật phẩm thực vật và chăm cây hiệu quả."
+            },
+            "name": {
+              "en": "Green Thumb",
+              "vi": "Ngón Tay Xanh"
+            }
+          },
+          {
+            "effect": {
+              "en": "Food does not restore Health; healing relies on compost, remedies, and special methods.",
+              "vi": "Thức ăn không hồi Máu; phải dùng phân bón, thuốc hoặc phương thức chữa lành khác."
+            },
+            "name": {
+              "en": "Plant Physiology",
+              "vi": "Sinh mệnh thực vật"
+            }
+          }
+        ],
+        "artifacts": [],
+        "description": {
+          "en": "A plant being connected to flora, gifted with a Green Thumb; food fills the stomach but not the heart.",
+          "vi": "Sinh vật cây liên kết với thực vật, có Ngón Tay Xanh; thức ăn no bụng nhưng không hồi Máu."
+        },
+        "guide": null,
+        "name": {
+          "en": "Wormwood",
+          "vi": "Wormwood"
+        },
+        "portrait": {
+          "path": "/assets/dst/characters/base/wormwood.png"
+        },
+        "startingItems": [],
+        "stats": {
+          "health": {
+            "value": 150
+          },
+          "hunger": {
+            "value": 150
+          },
+          "sanity": {
+            "value": 200
+          }
+        },
+        "title": {
+          "en": "The Lonesome",
+          "vi": "Kẻ cô độc"
+        }
       },
       "craftingNote": null,
       "description": "Exclusive to: WormwoodHamletDSTQuotesGallery Wormwood DST DS Title The Lonesome Birthday June 6 Motto \"Hello friend?\" Curio Cabinet Bio An amalgam of vines given sentience by lunar magic, Wormwood searches for friends so he can finally belong. Odds of Survival Grim Perks & Quirks Plants relate to him Saddened when plants are killed Has a Green Thumb Food…",
@@ -88581,10 +89234,79 @@
     {
       "category": "character",
       "character": {
-        "abilities": [],
-        "quote": null,
-        "survivability": null,
-        "title": "Exclusive to: WortoxDSTQuotesGallery Wortox Title The Soul Starved Birthday March 28 Motto \"Pardon me if I don't shake your hand"
+        "abilities": [
+          {
+            "effect": {
+              "en": "Nearby deaths yield souls that can be released to heal surrounding creatures.",
+              "vi": "Sinh vật chết gần đó để lại linh hồn; thả linh hồn hồi Máu cho sinh vật quanh vùng."
+            },
+            "name": {
+              "en": "Soul Collection",
+              "vi": "Thu thập linh hồn"
+            }
+          },
+          {
+            "effect": {
+              "en": "Consumes souls to teleport locally or across the map.",
+              "vi": "Tiêu hao linh hồn để dịch chuyển trên bản đồ hoặc qua khoảng cách ngắn."
+            },
+            "name": {
+              "en": "Soul Hop",
+              "vi": "Nhảy linh hồn"
+            }
+          }
+        ],
+        "artifacts": [],
+        "description": {
+          "en": "An imp who collects souls to heal or hop through space, but gains less nourishment from physical food.",
+          "vi": "Tiểu quỷ thu thập linh hồn, dùng chúng để hồi phục hoặc nhảy xuyên không gian nhưng hấp thụ thức ăn kém."
+        },
+        "guide": null,
+        "name": {
+          "en": "Wortox",
+          "vi": "Wortox"
+        },
+        "portrait": {
+          "path": "/assets/dst/characters/base/wortox.png"
+        },
+        "startingItems": [
+          {
+            "code": "wortox_soul",
+            "effect": {
+              "en": "Spent to heal or teleport.",
+              "vi": "Dùng để hồi phục hoặc dịch chuyển."
+            },
+            "icon": {
+              "src": "/assets/game/4cab5b4faef790259ef173fcd52eb927f3455424ab8c7262a7c2cbdc509b8aa2.png",
+              "uv": {
+                "u1": 0.156494140625,
+                "u2": 0.187255859375,
+                "v1": 0.75048828125,
+                "v2": 0.81201171875
+              }
+            },
+            "name": {
+              "en": "Soul",
+              "vi": "wortox_soul"
+            },
+            "quantity": 6
+          }
+        ],
+        "stats": {
+          "health": {
+            "value": 200
+          },
+          "hunger": {
+            "value": 175
+          },
+          "sanity": {
+            "value": 150
+          }
+        },
+        "title": {
+          "en": "The Soul Starved",
+          "vi": "Kẻ đói linh hồn"
+        }
       },
       "craftingNote": null,
       "description": "Exclusive to: WortoxDSTQuotesGallery Wortox Title The Soul Starved Birthday March 28 Motto \"Pardon me if I don't shake your hand.\" Curio Cabinet Bio Wortox is a mischievous imp whose levity masks a deep well of guilt. He has taken many souls in his time. Odds of Survival Grim Perks & Quirks Is an imp Can hop through time and space Less nourished by physical…",
@@ -88909,10 +89631,60 @@
     {
       "category": "character",
       "character": {
-        "abilities": [],
-        "quote": null,
-        "survivability": null,
-        "title": "Exclusive to: WurtDSTQuotesGallery Wurt Title The Half-Pint Birthday October 17 Motto \"Mermfolk known for hos-per-tality, florp"
+        "abilities": [
+          {
+            "effect": {
+              "en": "Builds homes, recruits Merms, and crowns a King to strengthen all Mermfolk.",
+              "vi": "Xây nhà, tuyển Người Cá và tôn Vua Người Cá để tăng sức mạnh toàn tộc."
+            },
+            "name": {
+              "en": "Merm Kingdom",
+              "vi": "Vương quốc Người Cá"
+            }
+          },
+          {
+            "effect": {
+              "en": "Moves quickly on swamp turf, resists rain wetness, and refuses meat.",
+              "vi": "Di chuyển nhanh trên địa hình đầm lầy, không bị ướt do mưa và không ăn thịt."
+            },
+            "name": {
+              "en": "Swamp Dweller",
+              "vi": "Cư dân đầm lầy"
+            }
+          }
+        ],
+        "artifacts": [],
+        "description": {
+          "en": "A vegetarian Merm at home in swamps who can build and lead a Merm kingdom.",
+          "vi": "Người Cá ăn chay sống tốt ở đầm lầy và có thể xây dựng vương quốc Người Cá."
+        },
+        "guide": null,
+        "name": {
+          "en": "Wurt",
+          "vi": "Wurt"
+        },
+        "portrait": {
+          "path": "/assets/dst/characters/base/wurt.png"
+        },
+        "startingItems": [],
+        "stats": {
+          "health": {
+            "note": "Tăng lên 250 khi có Vua Người Cá.",
+            "value": 150
+          },
+          "hunger": {
+            "note": "Tăng lên 250 khi có Vua Người Cá.",
+            "value": 200
+          },
+          "sanity": {
+            "note": "Tăng lên 200 khi có Vua Người Cá.",
+            "value": 150
+          }
+        },
+        "title": {
+          "en": "The Half-Pint",
+          "vi": "Cô bé nhỏ con"
+        }
       },
       "craftingNote": null,
       "description": "Exclusive to: WurtDSTQuotesGallery Wurt Title The Half-Pint Birthday October 17 Motto \"Mermfolk known for hos-per-tality, florp.\" Curio Cabinet Bio Wurt is a curious young Merm trying to expand her horizons... as long as those horizons don't extend into Pig territory. Odds of Survival Slim Perks & Quirks At home in the swamp Has big plans for Merm-kind Is a…",
@@ -106044,14 +106816,135 @@
     {
       "category": "character",
       "character": {
-        "abilities": [
-          "Tán tu hải ngoại Lệ Phi Vũ",
-          "Cứu khổ cứu nạn Hàn Thiên Tôn",
-          "Sở hữu pháp bảo và thần thông riêng"
-        ],
-        "quote": "\"Ta là Lệ Phi Vũ của Hoàng Phong Cốc, chẳng đáng nhắc tới.\"",
-        "survivability": "Thoát Chết Trong Gang Tấc",
-        "title": "Đệ Nhất Kiếm Tu Thiên Nam"
+        "abilities": [],
+        "artifacts": [],
+        "description": {
+          "en": "An overseas rogue cultivator with exclusive treasures and divine arts that scale by cultivation realm.",
+          "vi": "Tán tu hải ngoại sở hữu pháp bảo và thần thông riêng, phát triển sức mạnh theo cảnh giới."
+        },
+        "guide": {
+          "artifacts": [
+            {
+              "confidence": "confirmed",
+              "description": "Trọng tâm là kiếm, cờ, đỉnh, phù bảo và các triệu hồi độc quyền được liệt kê trong Mật Quyển.",
+              "label": "Bộ pháp bảo Hàn Thiên Tôn"
+            }
+          ],
+          "attackPattern": "Luân chuyển pháp bảo và triệu hồi độc quyền, dùng linh lực để mở hoặc duy trì các thần thông mạnh hơn.",
+          "combat": [
+            {
+              "confidence": "confirmed",
+              "description": "Gồm Hư Thiên Đỉnh, Tam Diễm Phiến, Ngũ Tử Đồng Tâm Ma, Nguyên Hợp Ngũ Cực Sơn, Phá Diệt Pháp Mục, Phong Lôi Xí, Huyền Thiên Trảm Linh Kiếm, Phi Kiếm Phù Bảo, Thiên Lôi Tử, Huyết Ngọc Tri Thù và Phệ Kim Trùng.",
+              "label": "Kho kỹ thuật và pháp bảo"
+            },
+            {
+              "confidence": "confirmed",
+              "description": "Tăng 10 linh lực tiêu hao của thần thông; kỹ thuật riêng của kiếm không tốn thêm linh lực khi trạng thái thần thông còn được duy trì.",
+              "label": "Huyền Thiên Trảm Linh Kiếm"
+            },
+            {
+              "confidence": "confirmed",
+              "description": "Cho phép di chuyển trên mặt nước.",
+              "label": "Phong Lôi Xí"
+            }
+          ],
+          "complexity": "advanced",
+          "firstSteps": [
+            "Chuẩn bị pháp bảo phù hợp trước khi giao chiến.",
+            "Theo dõi linh lực khi duy trì trạng thái thần thông.",
+            "Luân chuyển triệu hồi và kiếm khí theo nhu cầu của trận đánh."
+          ],
+          "range": "hybrid",
+          "realmMilestones": [
+            {
+              "realm": "Kết Đan tiền kỳ",
+              "unlocks": [
+                {
+                  "confidence": "confirmed",
+                  "description": "Nhãn cảnh giới này có trong bản dịch runtime cục bộ.",
+                  "label": "Mốc đã xác nhận"
+                }
+              ]
+            },
+            {
+              "realm": "Kết Đan hậu kỳ",
+              "unlocks": [
+                {
+                  "confidence": "confirmed",
+                  "description": "Nhãn cảnh giới này có trong bản dịch runtime cục bộ.",
+                  "label": "Mốc đã xác nhận"
+                }
+              ]
+            },
+            {
+              "realm": "Nguyên Anh tiền kỳ",
+              "unlocks": [
+                {
+                  "confidence": "confirmed",
+                  "description": "Nhãn cảnh giới này có trong bản dịch runtime cục bộ.",
+                  "label": "Mốc đã xác nhận"
+                }
+              ]
+            },
+            {
+              "realm": "Hóa Thần tiền kỳ",
+              "unlocks": [
+                {
+                  "confidence": "confirmed",
+                  "description": "Nhãn cảnh giới này có trong bản dịch runtime cục bộ.",
+                  "label": "Mốc đã xác nhận"
+                }
+              ]
+            },
+            {
+              "realm": "Chưa rõ ánh xạ kỹ năng",
+              "unlocks": [
+                {
+                  "confidence": "unknown",
+                  "description": "Nguồn đọc được chưa cho phép gán an toàn từng kỹ thuật nêu trên vào bốn mốc cảnh giới.",
+                  "label": "Kỹ thuật theo cảnh giới"
+                }
+              ]
+            }
+          ],
+          "roles": [
+            "Kiếm tu",
+            "Pháp bảo",
+            "Triệu hồi"
+          ],
+          "strengths": [
+            "Bộ pháp bảo và triệu hồi đa dạng.",
+            "Phong Lôi Xí cho phép di chuyển trên mặt nước."
+          ],
+          "summary": "Hàn Thiên Tôn là kiếm tu phức tạp, kết hợp pháp bảo, phi kiếm và nhiều đơn vị triệu hồi.",
+          "tradeoffs": [
+            "Các thần thông mạnh cần quản lý linh lực.",
+            "Nguồn hiện tại không giữ được ánh xạ an toàn giữa mọi kỹ thuật và mốc cảnh giới."
+          ]
+        },
+        "name": {
+          "en": "Han Tianzun",
+          "vi": "Hàn Thiên Tôn"
+        },
+        "portrait": {
+          "path": "/assets/dst/characters/xd_hantianzun.png"
+        },
+        "startingItems": [],
+        "stats": {
+          "health": {
+            "value": 200
+          },
+          "hunger": {
+            "value": 150
+          },
+          "sanity": {
+            "value": 150
+          }
+        },
+        "title": {
+          "en": "Foremost Sword Cultivator of Tiannan",
+          "vi": "Đệ Nhất Kiếm Tu Thiên Nam"
+        }
       },
       "craftingNote": null,
       "description": "*Tán tu hải ngoại Lệ Phi Vũ\n*Cứu khổ cứu nạn Hàn Thiên Tôn\n*Sở hữu pháp bảo và thần thông riêng",
@@ -108224,15 +109117,110 @@
     {
       "category": "character",
       "character": {
-        "abilities": [
-          "Thiếu nữ út của Viêm Đế",
-          "Có huyền điểu đồng hành",
-          "Có thể bay vượt một khoảng cách nhất định",
-          "Có thể dùng địa bì chuyên dụng để lấp biển"
-        ],
-        "quote": "\"Không tích từng bước nhỏ, sao đến được ngàn dặm.\"",
-        "survivability": "Trong tầm tay",
-        "title": "Tinh Vệ"
+        "abilities": [],
+        "artifacts": [],
+        "description": {
+          "en": "Travels with a mystic bird, crosses terrain in flight, and uses special turf to reclaim the sea.",
+          "vi": "Có huyền điểu đồng hành, bay vượt địa hình và dùng địa bì chuyên dụng để lấp biển."
+        },
+        "guide": {
+          "artifacts": [
+            {
+              "confidence": "confirmed",
+              "description": "Tiêu hao 30 máu để tạo và có thể chuyển thành các loại lông chuyên dụng.",
+              "label": "Huyền Vũ"
+            }
+          ],
+          "attackPattern": "Dùng quạt và xuy tiễn từ xa trong khi Huyền Điểu cung cấp tiện ích và về sau tự hỗ trợ.",
+          "combat": [
+            {
+              "confidence": "confirmed",
+              "description": "Không tích lũy độ ướt; chim nhỏ và động vật không hoảng sợ quanh Tinh Vệ, nhưng cái chết của chúng ở gần làm giảm tinh thần.",
+              "label": "Đặc tính tự nhiên"
+            },
+            {
+              "confidence": "confirmed",
+              "description": "Tạo xoáy thu thập nhỏ, ổn định nhiệt độ, dập lửa và phá cây, đá cùng băng.",
+              "label": "Thanh Xuất Ư Lam"
+            },
+            {
+              "confidence": "confirmed",
+              "description": "Tấn công mục tiêu và kích hoạt ảo ảnh Huyền Điểu.",
+              "label": "Huyền Vũ Xuy Tiễn"
+            },
+            {
+              "confidence": "confirmed",
+              "description": "Bản thể cơ sở giúp giữ độ tươi và có thể phát sáng sau khi ăn Glowberry.",
+              "label": "Huyền Điểu"
+            }
+          ],
+          "complexity": "medium",
+          "firstSteps": [
+            "Tạo Huyền Vũ để mở hệ thống lông chuyên dụng.",
+            "Tận dụng Huyền Điểu cho bảo quản và tiện ích.",
+            "Giữ khoảng cách bằng quạt và Huyền Vũ Xuy Tiễn."
+          ],
+          "range": "ranged",
+          "realmMilestones": [
+            {
+              "realm": "Trúc Cơ tiền kỳ",
+              "unlocks": [
+                {
+                  "confidence": "confirmed",
+                  "description": "Huyền Điểu đổi hình thái, ổn định nhiệt độ trong vùng nhỏ và hồi tinh thần.",
+                  "label": "Huyền Điểu chuyển dạng"
+                }
+              ]
+            },
+            {
+              "realm": "Kết Đan tiền kỳ",
+              "unlocks": [
+                {
+                  "confidence": "confirmed",
+                  "description": "Huyền Điểu có thể thỉnh thoảng ăn và làm việc cho người tu luyện.",
+                  "label": "Huyền Điểu hóa hình người"
+                }
+              ]
+            }
+          ],
+          "roles": [
+            "Đánh xa",
+            "Cơ động",
+            "Đồng hành"
+          ],
+          "strengths": [
+            "Không tích lũy độ ướt.",
+            "Huyền Điểu hỗ trợ bảo quản, ánh sáng và công việc."
+          ],
+          "summary": "Tinh Vệ là nhân vật đánh xa phối hợp cùng Huyền Điểu, có nhiều tiện ích môi trường và thu thập.",
+          "tradeoffs": [
+            "Cái chết của chim nhỏ và động vật ở gần làm giảm tinh thần.",
+            "Tạo Huyền Vũ tiêu hao 30 máu."
+          ]
+        },
+        "name": {
+          "en": "Jingwei",
+          "vi": "Tinh Vệ"
+        },
+        "portrait": {
+          "path": "/assets/dst/characters/xd_jingwei.png"
+        },
+        "startingItems": [],
+        "stats": {
+          "health": {
+            "value": 150
+          },
+          "hunger": {
+            "value": 125
+          },
+          "sanity": {
+            "value": 150
+          }
+        },
+        "title": {
+          "en": "Daughter of the Flame Emperor",
+          "vi": "Thiếu Nữ Viêm Đế"
+        }
       },
       "craftingNote": null,
       "description": "*Thiếu nữ út của Viêm Đế\n*Có huyền điểu đồng hành\n*Có thể bay vượt một khoảng cách nhất định\n*Có thể dùng địa bì chuyên dụng để lấp biển",
@@ -125647,14 +126635,95 @@
     {
       "category": "character",
       "character": {
-        "abilities": [
-          "Thích mùa đông hơn",
-          "Có thể thao túng hàn băng linh khí",
-          "Sở hữu Long Châu mang huyết mạch truyền thừa của Long tộc"
-        ],
-        "quote": "\"Bổn thái tử chung ái nhất chính là cái lạnh lẽo thấu xương của hầm tuyết động băng.\"",
-        "survivability": "Như cá gặp nước",
-        "title": "Long Tộc Thánh Tử"
+        "abilities": [],
+        "artifacts": [],
+        "description": {
+          "en": "Commands frost spiritual energy and carries a Dragon Pearl containing inherited dragon blood.",
+          "vi": "Thao túng hàn băng linh khí và sở hữu Long Châu mang huyết mạch truyền thừa."
+        },
+        "guide": {
+          "artifacts": [
+            {
+              "confidence": "confirmed",
+              "description": "Cải thiện quản lý Hàn Băng Linh Khí và có thể sửa bằng một tổ hợp đủ số lượng đá quý.",
+              "label": "Long Châu"
+            }
+          ],
+          "attackPattern": "Tích lũy Hàn Băng Linh Khí, rồi tiêu hao các tầng để kiểm soát khu vực và thi triển kỹ thuật nguyên tố.",
+          "combat": [
+            {
+              "confidence": "confirmed",
+              "description": "Không thể bị đóng băng; nhiệt độ cơ thể càng thấp càng có lợi và Hàn Băng Linh Khí hồi nhanh hơn.",
+              "label": "Thể chất hàn băng"
+            },
+            {
+              "confidence": "confirmed",
+              "description": "Gồm Hàng Vũ, Lạc Lôi, Băng Lao, Băng Pháp Trận, Không Gian Trữ Vật, Cực Quang, Băng Linh Hộ Thể và Hàn Băng Linh Nhãn.",
+              "label": "Kỹ thuật Long Châu"
+            },
+            {
+              "confidence": "confirmed",
+              "description": "Có lợi thế vừa phải trước sinh vật thuộc hai phe tu luyện.",
+              "label": "Ưu thế phe phái"
+            }
+          ],
+          "complexity": "advanced",
+          "firstSteps": [
+            "Giữ nhiệt độ thấp để hỗ trợ hồi Hàn Băng Linh Khí.",
+            "Dùng Long Châu để quản lý tài nguyên kỹ năng.",
+            "Chọn kỹ thuật hàn băng phù hợp với khu vực cần khống chế."
+          ],
+          "range": "ranged",
+          "realmMilestones": [
+            {
+              "realm": "Tăng trưởng theo tài nguyên",
+              "unlocks": [
+                {
+                  "confidence": "unknown",
+                  "description": "Nguồn mô tả tăng trưởng theo tầng Hàn Băng Linh Khí nhưng chưa đủ để gán từng kỹ thuật vào một cảnh giới.",
+                  "label": "Chưa rõ ánh xạ cảnh giới"
+                }
+              ]
+            }
+          ],
+          "roles": [
+            "Pháp thuật",
+            "Khống chế",
+            "Hàn băng"
+          ],
+          "strengths": [
+            "Không thể bị đóng băng.",
+            "Nhiệt độ cơ thể thấp giúp tăng tốc hồi Hàn Băng Linh Khí."
+          ],
+          "summary": "Long Thái Tử vận hành quanh nhiệt độ thấp, Hàn Băng Linh Khí và chuỗi kỹ thuật của Long Châu.",
+          "tradeoffs": [
+            "Cần quản lý các tầng Hàn Băng Linh Khí.",
+            "Nguồn đọc được chưa chỉ rõ ánh xạ mở khóa theo cảnh giới."
+          ]
+        },
+        "name": {
+          "en": "Dragon Crown Prince",
+          "vi": "Long Thái Tử"
+        },
+        "portrait": {
+          "path": "/assets/dst/characters/xd_longtaizi.png"
+        },
+        "startingItems": [],
+        "stats": {
+          "health": {
+            "value": 150
+          },
+          "hunger": {
+            "value": 175
+          },
+          "sanity": {
+            "value": 175
+          }
+        },
+        "title": {
+          "en": "Sacred Heir of the Dragon Clan",
+          "vi": "Long Tộc Thánh Tử"
+        }
       },
       "craftingNote": null,
       "description": "*Thích mùa đông hơn\n*Có thể thao túng hàn băng linh khí\n*Sở hữu Long Châu mang huyết mạch truyền thừa của Long tộc",
@@ -125753,14 +126822,100 @@
     {
       "category": "character",
       "character": {
-        "abilities": [
-          "Có thể trồng hoa Lạc Thần",
-          "Mang hai mặt sinh và diệt",
-          "Nhẹ tựa chim hồng, uyển chuyển như rồng bơi"
-        ],
-        "quote": "\"Tàn úa… cũng là khởi đầu của tái sinh.\"",
-        "survivability": "Gai Góc Trùng Trùng",
-        "title": "Con Gái Phục Hy"
+        "abilities": [],
+        "artifacts": [],
+        "description": {
+          "en": "Cultivates Luoshen flowers and shifts between life and death aspects for support or combat.",
+          "vi": "Trồng hoa Lạc Thần và chuyển đổi giữa hai mặt sinh–diệt để hỗ trợ hoặc chiến đấu."
+        },
+        "guide": {
+          "artifacts": [
+            {
+              "confidence": "confirmed",
+              "description": "Gồm Lạc Thần Tru, Khô Vinh Song Sinh, Giáng Nhận, Cức Hoa Trạch, Lưu Quang Hoa Phấn, Định Hồn Hương Lô và bộ công trình hoa.",
+              "label": "Bộ pháp bảo Lạc Thần"
+            }
+          ],
+          "attackPattern": "Thiết lập Lạc Thần Hoa, chuyển giữa Sinh và Diệt, rồi chiến đấu bằng cây tấn công, phá giáp và vùng gai.",
+          "combat": [
+            {
+              "confidence": "confirmed",
+              "description": "Tiêu hao 10 máu để tạo cánh hoa thường hoặc tối, sau đó chuyển sang Sinh Chi Hoa hoặc Diệt Chi Hoa.",
+              "label": "Cánh hoa và hai trạng thái"
+            },
+            {
+              "confidence": "confirmed",
+              "description": "Phá giáp mục tiêu.",
+              "label": "Giáng Nhận"
+            },
+            {
+              "confidence": "confirmed",
+              "description": "Tạo một bẫy gai lớn để kiểm soát khu vực.",
+              "label": "Cức Hoa Trạch"
+            },
+            {
+              "confidence": "confirmed",
+              "description": "Đưa Lạc Thần trở về gần một Lạc Thần Hoa.",
+              "label": "Lạc Thần Dẫn"
+            }
+          ],
+          "complexity": "advanced",
+          "firstSteps": [
+            "Dựng Lạc Thần Hoa để tạo điểm vận hành bộ kỹ năng.",
+            "Chọn Sinh Chi Hoa hoặc Diệt Chi Hoa theo tình huống.",
+            "Dùng Giáng Nhận để phá giáp trước khi duy trì áp lực bằng vùng gai."
+          ],
+          "range": "summoner",
+          "realmMilestones": [
+            {
+              "realm": "Chưa rõ mốc chính xác",
+              "unlocks": [
+                {
+                  "confidence": "unknown",
+                  "description": "Nguồn cục bộ hiện tại không công bố ánh xạ mở khóa kỹ năng theo từng cảnh giới.",
+                  "label": "Ánh xạ kỹ năng theo cảnh giới"
+                }
+              ]
+            }
+          ],
+          "roles": [
+            "Triệu hồi",
+            "Khống chế",
+            "Duy trì"
+          ],
+          "strengths": [
+            "Tạo đơn vị tấn công và vùng khống chế.",
+            "Có công cụ phá giáp và quay về gần Lạc Thần Hoa."
+          ],
+          "summary": "Lạc Thần kiểm soát chiến trường qua hệ thống hoa, cánh hoa và các pháp bảo tạo vùng.",
+          "tradeoffs": [
+            "Tạo cánh hoa thường hoặc tối tiêu hao 10 máu.",
+            "Nguồn hiện tại chưa chỉ rõ kỹ năng mở theo từng cảnh giới."
+          ]
+        },
+        "name": {
+          "en": "Luoshen",
+          "vi": "Lạc Thần"
+        },
+        "portrait": {
+          "path": "/assets/dst/characters/xd_luoshen.png"
+        },
+        "startingItems": [],
+        "stats": {
+          "health": {
+            "value": 175
+          },
+          "hunger": {
+            "value": 125
+          },
+          "sanity": {
+            "value": 175
+          }
+        },
+        "title": {
+          "en": "Daughter of Fuxi",
+          "vi": "Con Gái Phục Hy"
+        }
       },
       "craftingNote": null,
       "description": "*Có thể trồng hoa Lạc Thần\n*Mang hai mặt sinh và diệt\n*Nhẹ tựa chim hồng, uyển chuyển như rồng bơi",
@@ -132468,14 +133623,105 @@
     {
       "category": "character",
       "character": {
-        "abilities": [
-          "Có thể sai khiến Thạch Hà",
-          "Hóa thân từ đá vá trời",
-          "Dưới trướng có hai đồng tử"
-        ],
-        "quote": "\"Còn núi xanh thì không lo thiếu củi đốt.\"",
-        "survivability": "Đường Đầy Chông Gai",
-        "title": "Yêu Tiên Tiệt Giáo"
+        "abilities": [],
+        "artifacts": [],
+        "description": {
+          "en": "Born from a sky-mending stone, commands Stone Haze, and is aided by two attendants.",
+          "vi": "Hóa thân từ đá vá trời, sai khiến Thạch Hà và có hai đồng tử phụ tá."
+        },
+        "guide": {
+          "artifacts": [
+            {
+              "confidence": "confirmed",
+              "description": "Cho 85% phòng thủ, ngăn quá nhiệt, làm chậm mất tinh thần, có thể chặn một đòn và được sửa bằng linh thạch hạ phẩm.",
+              "label": "Thực Tâm Trụ"
+            },
+            {
+              "confidence": "confirmed",
+              "description": "Bát Quái Vân Quang Phạ thay phân thân ngoài bằng Hoàng Cân Lực Sĩ; Bát Quái Long Tu Phạ thu đồ, bắt động vật nhỏ, thu hoạch cây gần đó và giữ độ tươi.",
+              "label": "Bát Quái pháp bảo"
+            }
+          ],
+          "attackPattern": "Dùng đồng tử và Thạch Hà để tự động hóa công việc, đồng thời điều khiển Khô Lâu Sơn và pháp bảo chống chịu trong giao tranh.",
+          "combat": [
+            {
+              "confidence": "confirmed",
+              "description": "Tồn tại bốn ngày, làm việc trong phạm vi năm ô, thu thập, trò chuyện, tưới và bón cây, sắp xếp vật phẩm và cung cấp bữa sáng.",
+              "label": "Bích Vân Đồng Tử"
+            },
+            {
+              "confidence": "confirmed",
+              "description": "Đi theo Thạch Cơ và hỗ trợ chặt, đào cùng thu thập.",
+              "label": "Thải Vân Đồng Tử"
+            },
+            {
+              "confidence": "confirmed",
+              "description": "Được điều khiển tại con trỏ qua thần niệm và cải thiện thu thập, chặt, di chuyển, đào cùng sát thương vị diện.",
+              "label": "Khô Lâu Sơn"
+            },
+            {
+              "confidence": "confirmed",
+              "description": "Thông Linh Thạch Khiếu tạo Thạch Hà trưởng thành sau bảy ngày; Tỉnh Thạch Yết Đạo Trượng triệu hồi Thạch Hà bảy ngày và có thể đánh thức đá hoặc tổ nhện.",
+              "label": "Thạch Hà"
+            }
+          ],
+          "complexity": "advanced",
+          "firstSteps": [
+            "Triệu hồi đồng tử phù hợp với nhu cầu lao động.",
+            "Dùng Khô Lâu Sơn để tăng hiệu suất thu thập.",
+            "Chuẩn bị linh thạch hạ phẩm để sửa Thực Tâm Trụ."
+          ],
+          "range": "summoner",
+          "realmMilestones": [
+            {
+              "realm": "Chưa rõ mốc chính xác",
+              "unlocks": [
+                {
+                  "confidence": "unknown",
+                  "description": "Hướng dẫn đọc được không nêu mốc cảnh giới chính xác cho các triệu hồi và pháp bảo.",
+                  "label": "Ánh xạ triệu hồi theo cảnh giới"
+                }
+              ]
+            }
+          ],
+          "roles": [
+            "Triệu hồi",
+            "Chống chịu",
+            "Tự động hóa"
+          ],
+          "strengths": [
+            "Nhiều triệu hồi hỗ trợ thu thập và chăm sóc căn cứ.",
+            "Có pháp bảo phòng thủ và công cụ điều khiển lao động từ xa."
+          ],
+          "summary": "Thạch Cơ Nương Nương kết hợp triệu hồi lao động, điều khiển từ xa và pháp bảo phòng thủ.",
+          "tradeoffs": [
+            "Nhiều triệu hồi có thời gian tồn tại giới hạn.",
+            "Nguồn hiện tại chưa nêu mốc mở khóa theo cảnh giới."
+          ]
+        },
+        "name": {
+          "en": "Lady Shiji",
+          "vi": "Thạch Cơ Nương Nương"
+        },
+        "portrait": {
+          "path": "/assets/dst/characters/xd_shiji.png"
+        },
+        "startingItems": [],
+        "stats": {
+          "health": {
+            "value": 200
+          },
+          "hunger": {
+            "value": 150
+          },
+          "sanity": {
+            "value": 150
+          }
+        },
+        "title": {
+          "en": "Jiejiao Stone Immortal",
+          "vi": "Yêu Tiên Tiệt Giáo"
+        }
       },
       "craftingNote": null,
       "description": "*Có thể sai khiến Thạch Hà\n*Hóa thân từ đá vá trời\n*Dưới trướng có hai đồng tử",
@@ -134848,14 +136094,95 @@
     {
       "category": "character",
       "character": {
-        "abilities": [
-          "Thỉnh thoảng tỏa ra yêu khí",
-          "Có kỳ trân do Trụ Vương ban tặng",
-          "Thích dùng nguyên thần yêu vật để ôn dưỡng Linh Ngọc"
-        ],
-        "quote": "\"Cuối cùng thiếp cũng trở thành người trong cuộc.\"",
-        "survivability": "Thuần Thục Tự Nhiên",
-        "title": "Yêu Phi Tuyệt Đại"
+        "abilities": [],
+        "artifacts": [],
+        "description": {
+          "en": "Radiates demonic aura, wields royal treasures, and nourishes Spirit Jade with monster souls.",
+          "vi": "Tỏa yêu khí, dùng kỳ trân Trụ Vương ban tặng và ôn dưỡng Linh Ngọc bằng nguyên thần yêu vật."
+        },
+        "guide": {
+          "artifacts": [
+            {
+              "confidence": "confirmed",
+              "description": "Thế Thân Mộc Điêu đổi máu lấy tái định vị; Ngư Long Đăng ổn định nhiệt độ và ánh sáng; Nhất Vũ Phương Hoa bảo vệ trước mưa, mưa axit, mưa đá mặt trăng và có thao tác làm khô.",
+              "label": "Bộ pháp bảo hỗ trợ"
+            }
+          ],
+          "attackPattern": "Duy trì Dưỡng Hồn Linh Ngọc, quản lý độ bền pháp bảo và phối hợp đòn đánh với hình thái Trụ Vương theo lượng máu hiện tại.",
+          "combat": [
+            {
+              "confidence": "confirmed",
+              "description": "Nuôi linh hồn Trụ Vương bằng mảnh hồn yêu thú; mỗi lần giải phóng thần thông tiêu hao 10% độ bền để tăng cường kỹ thuật.",
+              "label": "Dưỡng Hồn Linh Ngọc"
+            },
+            {
+              "confidence": "confirmed",
+              "description": "Khi độ bền từ 50% trở lên, pháp bảo tăng cường thêm thần thông, tốc độ di chuyển và hồi tinh thần.",
+              "label": "Cường hóa theo độ bền"
+            },
+            {
+              "confidence": "confirmed",
+              "description": "Công Đức Kim Thân hoặc Vô Thượng Ma Thể khiến hình thái Trụ Vương phối hợp một đòn; dùng Linh Kỹ khiến chân thân Trụ Vương phối hợp tấn công.",
+              "label": "Phối hợp Trụ Vương"
+            }
+          ],
+          "complexity": "advanced",
+          "firstSteps": [
+            "Thu thập mảnh hồn yêu thú để nuôi Dưỡng Hồn Linh Ngọc.",
+            "Theo dõi độ bền pháp bảo trước khi liên tục dùng thần thông.",
+            "Chọn ngưỡng máu phù hợp với hình thái Trụ Vương cần gọi."
+          ],
+          "range": "summoner",
+          "realmMilestones": [
+            {
+              "realm": "Theo lượng máu hiện tại",
+              "unlocks": [
+                {
+                  "confidence": "confirmed",
+                  "description": "Trên 70% máu gọi hồn hỏa hỗ trợ; trên 40% đến 70% gọi Trụ Vương Pháp Thân; từ 40% trở xuống gọi chân thân Trụ Vương.",
+                  "label": "Các bậc triệu hồi Trụ Vương"
+                }
+              ]
+            }
+          ],
+          "roles": [
+            "Triệu hồi",
+            "Duy trì",
+            "Hỗ trợ"
+          ],
+          "strengths": [
+            "Triệu hồi thay đổi theo trạng thái máu.",
+            "Có công cụ dịch chuyển, ổn định môi trường và phòng hộ thời tiết."
+          ],
+          "summary": "Tô Đát Kỷ nuôi dưỡng linh hồn Trụ Vương và đổi hình thái triệu hồi theo ngưỡng máu.",
+          "tradeoffs": [
+            "Mỗi lần dùng thần thông tiêu hao 10% độ bền pháp bảo.",
+            "Các bậc triệu hồi phụ thuộc lượng máu, không phải cảnh giới."
+          ]
+        },
+        "name": {
+          "en": "Su Daji",
+          "vi": "Tô Đát Kỷ"
+        },
+        "portrait": {
+          "path": "/assets/dst/characters/xd_sudaji.png"
+        },
+        "startingItems": [],
+        "stats": {
+          "health": {
+            "value": 150
+          },
+          "hunger": {
+            "value": 125
+          },
+          "sanity": {
+            "value": 200
+          }
+        },
+        "title": {
+          "en": "Peerless Demon Consort",
+          "vi": "Yêu Phi Tuyệt Đại"
+        }
       },
       "craftingNote": null,
       "description": "*Thỉnh thoảng tỏa ra yêu khí\n*Có kỳ trân do Trụ Vương ban tặng\n*Thích dùng nguyên thần yêu vật để ôn dưỡng Linh Ngọc",
@@ -137030,14 +138357,110 @@
     {
       "category": "character",
       "character": {
-        "abilities": [
-          "Cửu Tinh Cổ Thần",
-          "Người đứng đầu Nghịch Trần Giới",
-          "Sở hữu chí bảo Định Giới La Bàn"
-        ],
-        "quote": "\"Thuận là phàm, nghịch là tiên.\"",
-        "survivability": "Ngược Gió Dữ Sóng",
-        "title": "Ma Đầu"
+        "abilities": [],
+        "artifacts": [],
+        "description": {
+          "en": "A Nine-Star Ancient God and ruler of the Rebel Dust Realm who possesses the Realm-Fixing Compass.",
+          "vi": "Cửu Tinh Cổ Thần đứng đầu Nghịch Trần Giới, sở hữu chí bảo Định Giới La Bàn."
+        },
+        "guide": {
+          "artifacts": [
+            {
+              "confidence": "confirmed",
+              "description": "Cung cấp không gian bên trong để hồi phục.",
+              "label": "Thiên Nghịch Châu"
+            },
+            {
+              "confidence": "confirmed",
+              "description": "Hấp thụ linh hồn của sinh vật bị giết ở gần và triệu hồi chúng chiến đấu.",
+              "label": "Tôn Hồn Phiên"
+            }
+          ],
+          "attackPattern": "Khống chế mục tiêu bằng Định Thân Thuật, sau đó kết hợp kỹ thuật diện rộng, triệu hồi và công cụ kết liễu.",
+          "combat": [
+            {
+              "confidence": "confirmed",
+              "description": "Định Thân Thuật tạm thời bất động mục tiêu; Thanh Quang Thuẫn tồn tại 60 giây và có 40% máu của nhân vật.",
+              "label": "Khống chế và phòng hộ"
+            },
+            {
+              "confidence": "confirmed",
+              "description": "Lý Quảng Cung gây sát thương theo đường thẳng; Tàn Dạ liên tục gây sát thương bóng tối diện rộng; Khôn Cực Tiên gây dễ tổn thương và kết liễu quái dưới 7% máu.",
+              "label": "Kỹ thuật tấn công"
+            },
+            {
+              "confidence": "confirmed",
+              "description": "Rắc Đậu Thành Binh ném cự đậu binh tấn công liên tục; Xạ Thần Chiến Xa gọi ngẫu nhiên một hồn bướm; Sát Lục Tiên Quyết gọi phân thân Lục Mặc có thể kích hoạt Huyết Kiếm.",
+              "label": "Triệu hồi"
+            }
+          ],
+          "complexity": "advanced",
+          "firstSteps": [
+            "Mở giao tranh bằng Định Thân Thuật khi cần giữ mục tiêu.",
+            "Dùng triệu hồi để duy trì áp lực.",
+            "Giữ Khôn Cực Tiên cho mục tiêu đã xuống ngưỡng kết liễu."
+          ],
+          "range": "hybrid",
+          "realmMilestones": [
+            {
+              "realm": "Trúc Cơ tiền kỳ",
+              "unlocks": [
+                {
+                  "confidence": "confirmed",
+                  "description": "Nhãn mở khóa Trúc Cơ tiền kỳ có trong bản dịch runtime cục bộ.",
+                  "label": "Mốc đã xác nhận"
+                }
+              ]
+            },
+            {
+              "realm": "Chưa rõ ánh xạ kỹ năng",
+              "unlocks": [
+                {
+                  "confidence": "unknown",
+                  "description": "Nguồn đọc được chưa đủ để gán từng kỹ năng nêu trên vào nhãn Trúc Cơ tiền kỳ.",
+                  "label": "Kỹ năng theo Trúc Cơ"
+                }
+              ]
+            }
+          ],
+          "roles": [
+            "Khống chế",
+            "Bùng nổ",
+            "Triệu hồi"
+          ],
+          "strengths": [
+            "Có bất động mục tiêu, triệu hồi và sát thương khu vực.",
+            "Có không gian hồi phục và cơ chế thu hồn để gọi chiến đấu."
+          ],
+          "summary": "Vương Ma Tử có bộ kỹ thuật khống chế, sát thương bùng nổ và nhiều hình thức gọi trợ chiến.",
+          "tradeoffs": [
+            "Bộ kỹ thuật có nhiều công cụ cần phối hợp.",
+            "Nguồn hiện tại chỉ xác nhận nhãn Trúc Cơ tiền kỳ, chưa ánh xạ an toàn từng kỹ năng."
+          ]
+        },
+        "name": {
+          "en": "Wang Mazi",
+          "vi": "Vương Ma Tử"
+        },
+        "portrait": {
+          "path": "/assets/dst/characters/xd_wangmazi.png"
+        },
+        "startingItems": [],
+        "stats": {
+          "health": {
+            "value": 200
+          },
+          "hunger": {
+            "value": 200
+          },
+          "sanity": {
+            "value": 150
+          }
+        },
+        "title": {
+          "en": "Demon Sovereign",
+          "vi": "Ma Đầu"
+        }
       },
       "craftingNote": null,
       "description": "*Cửu Tinh Cổ Thần\n*Người đứng đầu Nghịch Trần Giới\n*Sở hữu chí bảo Định Giới La Bàn",
@@ -137784,14 +139207,120 @@
     {
       "category": "character",
       "character": {
-        "abilities": [
-          "Đầu đội vòng Kim Cô",
-          "Thừa kế ý chí của Đại Thánh",
-          "Cần thu thập đủ căn khí để hoàn thiện bản thân"
-        ],
-        "quote": "\"Lão Tôn đến đây!\"",
-        "survivability": "Dễ Như Trở Bàn Tay",
-        "title": "Thiên Mệnh Nhân"
+        "abilities": [],
+        "artifacts": [],
+        "description": {
+          "en": "Inherits the Great Sage's will, gathers Root Essences, and fights with the Ruyi Jingu Bang.",
+          "vi": "Thừa kế ý chí Đại Thánh, thu thập Căn Khí và chiến đấu bằng Như Ý Kim Cô Bổng."
+        },
+        "guide": {
+          "artifacts": [
+            {
+              "confidence": "confirmed",
+              "description": "Là điều kiện để dùng biến hóa bằng phím R.",
+              "label": "Như Ý Kim Cô Bổng"
+            }
+          ],
+          "attackPattern": "Đánh cận chiến, mở khóa Căn Khí bằng cách hạ yêu thú tương ứng, rồi phối hợp Linh Kỹ, Kỳ Thuật và biến hóa.",
+          "combat": [
+            {
+              "confidence": "confirmed",
+              "description": "Hạ yêu thú tương ứng để mở Căn Khí và hiệu ứng biến hóa; khi đủ toàn bộ Căn Khí, vòng kim cô nứt rõ ràng.",
+              "label": "Căn Khí"
+            },
+            {
+              "confidence": "confirmed",
+              "description": "Vũ khí đang cầm không thể bị đánh rơi sau khi đạt tiến triển Căn Khí tương ứng.",
+              "label": "Vũ khí sau tiến triển Căn Khí"
+            },
+            {
+              "confidence": "confirmed",
+              "description": "Kỳ Thuật dùng Alt + chuột phải; Linh Kỹ dùng chuột phải; biến hóa dùng R và yêu cầu Như Ý Kim Cô Bổng.",
+              "label": "Điều khiển kỹ thuật"
+            },
+            {
+              "confidence": "confirmed",
+              "description": "Khi tay không, Alt + chuột phải biến thành thực thể đã chọn và cho ẩn thân tạm thời.",
+              "label": "Biến hóa tay không"
+            },
+            {
+              "confidence": "confirmed",
+              "description": "Có thể sử dụng Định Thân Thuật và An Thân Thuật.",
+              "label": "Pháp Thân bên ngoài"
+            },
+            {
+              "confidence": "confirmed",
+              "description": "Gồm cách nhiệt theo mùa, giảm 25% sát thương, giữ độ tươi, giữ ấm, phân thân ngoài 600 máu, hồi tinh thần và tăng 10% tốc độ di chuyển sau khi đủ mọi Căn Khí.",
+              "label": "Phần thưởng Căn Khí"
+            }
+          ],
+          "complexity": "advanced",
+          "firstSteps": [
+            "Hạ yêu thú tương ứng để mở Căn Khí.",
+            "Dùng chuột phải cho Linh Kỹ và Alt + chuột phải cho Kỳ Thuật.",
+            "Trang bị Như Ý Kim Cô Bổng trước khi dùng R để biến hóa."
+          ],
+          "range": "melee",
+          "realmMilestones": [
+            {
+              "realm": "Trúc Cơ",
+              "unlocks": [
+                {
+                  "confidence": "confirmed",
+                  "description": "Linh Kỹ khởi đầu với Tụ Hình Tán Khí và mở Đồng Đầu Thiết Tý tại Trúc Cơ.",
+                  "label": "Đồng Đầu Thiết Tý"
+                }
+              ]
+            },
+            {
+              "realm": "Kết Đan",
+              "unlocks": [
+                {
+                  "confidence": "confirmed",
+                  "description": "Kỳ Thuật khởi đầu với Định Thân Thuật và mở An Thân Thuật tại Kết Đan.",
+                  "label": "An Thân Thuật"
+                }
+              ]
+            }
+          ],
+          "roles": [
+            "Cận chiến",
+            "Biến hóa",
+            "Khống chế"
+          ],
+          "strengths": [
+            "Có biến hóa, khống chế và phân thân ngoài.",
+            "Căn Khí cung cấp nhiều tiện ích sinh tồn và chiến đấu."
+          ],
+          "summary": "Tôn Ngộ Không tiến triển qua Căn Khí, biến hóa và các kỹ thuật mở ở Trúc Cơ cùng Kết Đan.",
+          "tradeoffs": [
+            "Biến hóa cần Như Ý Kim Cô Bổng.",
+            "Phải hạ đúng yêu thú để mở Căn Khí và hình thái tương ứng."
+          ]
+        },
+        "name": {
+          "en": "Sun Wukong",
+          "vi": "Tôn Ngộ Không"
+        },
+        "portrait": {
+          "path": "/assets/dst/characters/xd_wukong.png"
+        },
+        "startingItems": [],
+        "stats": {
+          "health": {
+            "value": 175
+          },
+          "hunger": {
+            "value": 125
+          },
+          "sanity": {
+            "value": 125
+          }
+        },
+        "title": {
+          "en": "Destined One",
+          "vi": "Thiên Mệnh Nhân"
+        }
       },
       "craftingNote": null,
       "description": "*Đầu đội vòng Kim Cô\n*Thừa kế ý chí của Đại Thánh\n*Cần thu thập đủ căn khí để hoàn thiện bản thân",
@@ -139805,14 +141334,100 @@
     {
       "category": "character",
       "character": {
-        "abilities": [
-          "Vân Tiêu thông minh, khéo tay",
-          "Bích Tiêu luôn tự mình xử lý mọi việc",
-          "Quỳnh Tiêu hiếu chiến, chuộng võ"
-        ],
-        "quote": "\"Hỗn Nguyên Kim Đấu, mở!\"",
-        "survivability": "Dễ Như Nhặt Cỏ",
-        "title": "Đệ Tử Ngoại Môn Tiệt Giáo"
+        "abilities": [],
+        "artifacts": [],
+        "description": {
+          "en": "Three forms—Yunxiao, Bixiao, and Qiongxiao—specialize in support, labor, and combat.",
+          "vi": "Ba hình thái Vân Tiêu, Bích Tiêu và Quỳnh Tiêu đảm nhiệm hỗ trợ, lao động và chiến đấu."
+        },
+        "guide": {
+          "artifacts": [
+            {
+              "confidence": "confirmed",
+              "description": "Chứa vật phẩm và dịch chuyển nhân vật, sinh vật cùng vật phẩm qua tối đa chín điểm đánh dấu.",
+              "label": "Hỗn Nguyên Kim Đẩu"
+            },
+            {
+              "confidence": "confirmed",
+              "description": "Phù Cốt Pháp Khí phá cây, đá và băng phía trước; Phược Long Tỏa trói mục tiêu; Phức Úc Thủ Trượng tăng tốc và dịch chuyển tầm ngắn.",
+              "label": "Bộ pháp bảo khống chế"
+            }
+          ],
+          "attackPattern": "Đổi giữa ba hình thái để ưu tiên chế tạo và hỗ trợ, thu thập tự động, hoặc chiến đấu có tầm đánh và chiến ý.",
+          "combat": [
+            {
+              "confidence": "confirmed",
+              "description": "Có thể làm và dùng sách, cải thiện nấu ăn, chế tạo và hồi tinh thần, nhưng có hệ số tấn công thấp.",
+              "label": "Vân Tiêu"
+            },
+            {
+              "confidence": "confirmed",
+              "description": "Có hiệu suất đào, chặt và thu thập cao, đồng thời tự chăm sóc cây trồng gần đường đi.",
+              "label": "Bích Tiêu"
+            },
+            {
+              "confidence": "confirmed",
+              "description": "Tăng hệ số tấn công, tốc độ di chuyển và tầm đánh; chiến ý tích lũy làm tăng hiệu quả chiến đấu.",
+              "label": "Quỳnh Tiêu"
+            }
+          ],
+          "complexity": "advanced",
+          "firstSteps": [
+            "Chọn hình thái phù hợp với công việc hiện tại.",
+            "Dùng Hỗn Nguyên Kim Đẩu để thiết lập các điểm dịch chuyển.",
+            "Chuyển sang Quỳnh Tiêu khi cần ưu tiên chiến đấu."
+          ],
+          "range": "hybrid",
+          "realmMilestones": [
+            {
+              "realm": "Chưa có mốc cảnh giới xác nhận",
+              "unlocks": [
+                {
+                  "confidence": "unknown",
+                  "description": "Vân Tiêu, Bích Tiêu và Quỳnh Tiêu là các hình thái nhân vật, không phải mốc cảnh giới đã được xác nhận.",
+                  "label": "Ba hình thái"
+                }
+              ]
+            }
+          ],
+          "roles": [
+            "Đa hình thái",
+            "Hỗ trợ",
+            "Khống chế"
+          ],
+          "strengths": [
+            "Ba hình thái bao phủ hỗ trợ, lao động và chiến đấu.",
+            "Có dịch chuyển qua các điểm đánh dấu và nhiều công cụ khống chế."
+          ],
+          "summary": "Tam Tiêu Nương Nương dùng ba hình thái có vai trò khác nhau cùng bộ pháp bảo dịch chuyển và khống chế.",
+          "tradeoffs": [
+            "Mỗi hình thái có trọng tâm riêng; Vân Tiêu có hệ số tấn công thấp.",
+            "Ba hình thái không phải các mốc cảnh giới đã được xác nhận."
+          ]
+        },
+        "name": {
+          "en": "Three Xiao Sisters",
+          "vi": "Tam Tiêu Nương Nương"
+        },
+        "portrait": {
+          "path": "/assets/dst/characters/xd_yunxiao.png"
+        },
+        "startingItems": [],
+        "stats": {
+          "health": {
+            "value": 175
+          },
+          "hunger": {
+            "value": 175
+          },
+          "sanity": {
+            "value": 175
+          }
+        },
+        "title": {
+          "en": "Outer Disciples of Jiejiao",
+          "vi": "Đệ Tử Ngoại Môn Tiệt Giáo"
+        }
       },
       "craftingNote": null,
       "description": "*Vân Tiêu thông minh, khéo tay\n*Bích Tiêu luôn tự mình xử lý mọi việc\n*Quỳnh Tiêu hiếu chiến, chuộng võ",

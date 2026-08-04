@@ -1,9 +1,12 @@
 import json
 import sqlite3
+import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
+from tools.extract.cli import build_parser, main
 from tools.extract.export_items import (
     apply_description_translations,
     build_item_export,
@@ -12,10 +15,218 @@ from tools.extract.export_items import (
     link_recipe_ingredients,
     load_crafting_notes,
     load_runtime_coverage,
+    publish_character_sources,
 )
 
 
+def character_catalog_fixture():
+    return {
+        "schema_version": 1,
+        "entities": [
+            {
+                "key": "tu_tien:xd_hantianzun",
+                "namespace": "tu_tien",
+                "prefab_id": "xd_hantianzun",
+                "type": "character",
+                "is_inventory_item": False,
+                "name": {"vi": "Hàn Thiên Tôn", "en": "Cold Sky Venerable"},
+                "description": {"vi": "Kiếm tu băng hệ.", "en": "An ice cultivator."},
+                "icon_key": None,
+                "recipes": [],
+                "effects": [],
+                "stats": [],
+                "relations": [],
+                "acquisition": [],
+            }
+        ],
+    }
+
+
+def character_profile_fixture():
+    return {
+        "schemaVersion": 1,
+        "profiles": {
+            "xd_hantianzun": {
+                "namespace": "tu_tien",
+                "name": {"vi": "Hàn Thiên Tôn", "en": "Cold Sky Venerable"},
+                "title": {"vi": "Hàn Thiên Kiếm Tu", "en": "Cold Sky Swordmaster"},
+                "description": {"vi": "Kiếm tu băng hệ.", "en": "An ice cultivator."},
+                "portrait": {
+                    "path": "/assets/dst/characters/xd_hantianzun.png",
+                    "sourceUrl": "https://example.com/character",
+                },
+                "stats": {
+                    "health": {
+                        "value": None,
+                        "display": "20–80 tuổi",
+                        "note": "Thanh Tuổi thay cho Máu.",
+                    },
+                    "hunger": {"value": 150},
+                    "sanity": {"value": 200},
+                },
+                "abilities": [
+                    {
+                        "name": {"vi": "Hàn Kiếm", "en": "Cold Sword"},
+                        "effect": {"vi": "Gây sát thương băng.", "en": "Deals ice damage."},
+                    }
+                ],
+                "startingItems": [],
+                "artifacts": [],
+                "sourceVersion": "18.0.10",
+            }
+        },
+    }
+
+
+def character_guide_fixture():
+    return {
+        "schemaVersion": 1,
+        "guides": {
+            "xd_hantianzun": {
+                "roles": ["Cận chiến"],
+                "attackPattern": "Áp sát rồi tung kiếm.",
+                "range": "melee",
+                "complexity": "advanced",
+                "summary": "Một kiếm tu thiên về áp sát.",
+                "strengths": ["Sát thương cao."],
+                "tradeoffs": ["Cần quản lý tài nguyên."],
+                "firstSteps": ["Trang bị kiếm."],
+                "combat": [
+                    {
+                        "label": "Hàn Kiếm",
+                        "description": "Tấn công mục tiêu.",
+                        "confidence": "confirmed",
+                        "evidence": ["private:combat"],
+                    }
+                ],
+                "realmMilestones": [
+                    {
+                        "realm": "Trúc Cơ",
+                        "unlocks": [
+                            {
+                                "label": "Kiếm khí",
+                                "description": "Mở khóa kiếm khí.",
+                                "confidence": "confirmed",
+                                "evidence": ["private:realm"],
+                            }
+                        ],
+                    }
+                ],
+                "artifacts": [
+                    {
+                        "label": "Hàn Kiếm",
+                        "description": "Pháp bảo chiến đấu.",
+                        "confidence": "confirmed",
+                        "evidence": ["private:artifact"],
+                    }
+                ],
+                "sourceVersion": "18.0.10",
+            }
+        },
+    }
+
+
 class ExportItemsTests(unittest.TestCase):
+    def test_export_cli_accepts_character_source_paths(self):
+        args = build_parser().parse_args(
+            [
+                "export",
+                "--character-profiles",
+                "profiles.json",
+                "--character-guides",
+                "guides.json",
+            ]
+        )
+
+        self.assertEqual(args.character_profiles, Path("profiles.json"))
+        self.assertEqual(args.character_guides, Path("guides.json"))
+
+    def test_publish_characters_cli_accepts_static_source_paths(self):
+        args = build_parser().parse_args(
+            [
+                "publish-characters",
+                "--items",
+                "items.json",
+                "--character-profiles",
+                "profiles.json",
+                "--character-guides",
+                "guides.json",
+            ]
+        )
+
+        self.assertEqual(args.command, "publish-characters")
+        self.assertEqual(args.items, Path("items.json"))
+        self.assertEqual(args.character_profiles, Path("profiles.json"))
+        self.assertEqual(args.character_guides, Path("guides.json"))
+
+    def test_publish_character_sources_enriches_existing_items_atomically_without_db(self):
+        items, _textures, _report = build_item_export(
+            character_catalog_fixture(),
+            {"schema_version": 1, "assets": []},
+        )
+        with tempfile.TemporaryDirectory() as tempdir:
+            root = Path(tempdir)
+            items_path = root / "items.json"
+            profiles_path = root / "profiles.json"
+            guides_path = root / "guides.json"
+            items_path.write_text(json.dumps(items), encoding="utf-8")
+            profiles_path.write_text(
+                json.dumps(character_profile_fixture()), encoding="utf-8"
+            )
+            guides_path.write_text(
+                json.dumps(character_guide_fixture()), encoding="utf-8"
+            )
+
+            publish_character_sources(items_path, profiles_path, guides_path)
+            first = items_path.read_bytes()
+            publish_character_sources(items_path, profiles_path, guides_path)
+
+            payload = json.loads(first)
+            character = payload["items"][0]["character"]
+            self.assertTrue(character["title"]["vi"])
+            self.assertTrue(character["guide"]["summary"])
+            self.assertNotIn("evidence", json.dumps(character))
+            self.assertEqual(items_path.read_bytes(), first)
+            self.assertFalse((root / ".items.json.tmp").exists())
+
+    def test_publish_characters_cli_wires_the_static_publisher(self):
+        items, _textures, _report = build_item_export(
+            character_catalog_fixture(),
+            {"schema_version": 1, "assets": []},
+        )
+        with tempfile.TemporaryDirectory() as tempdir:
+            root = Path(tempdir)
+            items_path = root / "items.json"
+            profiles_path = root / "profiles.json"
+            guides_path = root / "guides.json"
+            items_path.write_text(json.dumps(items), encoding="utf-8")
+            profiles_path.write_text(
+                json.dumps(character_profile_fixture()), encoding="utf-8"
+            )
+            guides_path.write_text(
+                json.dumps(character_guide_fixture()), encoding="utf-8"
+            )
+            with patch.object(
+                sys,
+                "argv",
+                [
+                    "dst-extract",
+                    "publish-characters",
+                    "--items",
+                    str(items_path),
+                    "--character-profiles",
+                    str(profiles_path),
+                    "--character-guides",
+                    str(guides_path),
+                ],
+            ):
+                result = main()
+
+            payload = json.loads(items_path.read_text(encoding="utf-8"))
+
+        self.assertEqual(result, 0)
+        self.assertTrue(payload["items"][0]["character"]["title"]["vi"])
+
     def test_public_item_contract_uses_schema_version_seven(self):
         items, _textures, _report = build_item_export(
             {"schema_version": 1, "entities": []},
@@ -23,6 +234,22 @@ class ExportItemsTests(unittest.TestCase):
         )
 
         self.assertEqual(items["schema_version"], 7)
+
+    def test_character_export_keeps_public_profile_and_guide_fields_without_evidence(self):
+        items, _textures, _report = build_item_export(
+            character_catalog_fixture(),
+            {"schema_version": 1, "assets": []},
+            character_profiles=character_profile_fixture(),
+            character_guides=character_guide_fixture(),
+        )
+
+        character = next(
+            item for item in items["items"] if item["category"] == "character"
+        )
+
+        self.assertTrue(character["character"]["title"]["vi"])
+        self.assertTrue(character["character"]["guide"]["summary"])
+        self.assertNotIn("evidence", json.dumps(character))
 
     def test_filters_acquisition_dependencies_not_referenced_by_public_details(self):
         items = [

@@ -1,5 +1,6 @@
 import argparse
 from pathlib import Path
+from typing import Optional
 
 from tools.crawl_wiki.category_config import load_category_config
 from tools.extract.assets import add_base_game_asset_facts
@@ -15,7 +16,7 @@ from tools.extract.category_notes import (
 )
 from tools.extract.contracts import dump_bundle, load_bundle
 from tools.extract.database import write_database
-from tools.extract.export_items import export_items
+from tools.extract.export_items import export_items, publish_character_sources
 from tools.extract.export_json import export_catalog
 from tools.extract.export_mod_markdown import collect_game_text, export_mod_markdown
 from tools.extract.guides import export_guides
@@ -167,6 +168,16 @@ def build_parser() -> argparse.ArgumentParser:
     export.add_argument("--mob-audit", type=Path, default=MOB_BOSS_AUDIT)
     export.add_argument("--mob-groups", type=Path, default=MOB_GROUPS)
     export.add_argument("--mob-wiki", type=Path, default=MOB_WIKI)
+    export.add_argument("--character-profiles", type=Path)
+    export.add_argument("--character-guides", type=Path)
+    publish_characters = sub.add_parser("publish-characters")
+    publish_characters.add_argument("--items", type=Path, required=True)
+    publish_characters.add_argument(
+        "--character-profiles", type=Path, required=True
+    )
+    publish_characters.add_argument(
+        "--character-guides", type=Path, required=True
+    )
     translate_wiki = sub.add_parser("translate-wiki")
     translate_wiki.add_argument(
         "--pages", type=Path, default=Path("public/data/wiki/pages")
@@ -338,6 +349,8 @@ def _export_stage(
     mob_audit: Path = MOB_BOSS_AUDIT,
     mob_groups: Path = MOB_GROUPS,
     mob_wiki: Path = MOB_WIKI,
+    character_profiles: Optional[Path] = None,
+    character_guides: Optional[Path] = None,
 ) -> None:
     export_catalog(database, catalog, assets)
     export_items(
@@ -357,6 +370,8 @@ def _export_stage(
         mob_audit_path=mob_audit,
         mob_groups_path=mob_groups,
         mob_wiki_path=mob_wiki,
+        character_profiles_path=character_profiles,
+        character_guides_path=character_guides,
     )
     print(
         f"{catalog} {assets} {items} {textures} {detail_report} "
@@ -495,7 +510,17 @@ def main() -> int:
             args.mob_audit,
             args.mob_groups,
             args.mob_wiki,
+            args.character_profiles,
+            args.character_guides,
         )
+        return 0
+    if args.command == "publish-characters":
+        count = publish_character_sources(
+            args.items,
+            args.character_profiles,
+            args.character_guides,
+        )
+        print(f"{args.items} characters={count}")
         return 0
     if args.command == "translate-wiki":
         summary = build_summary_translation_cache(

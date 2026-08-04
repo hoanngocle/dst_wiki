@@ -591,6 +591,318 @@ def _character_profile(entity: JsonObject) -> JsonObject:
     }
 
 
+def _public_localized_text(value: Any, field: str) -> JsonObject:
+    if not isinstance(value, dict):
+        raise ValueError(f"{field} must contain Vietnamese and English text")
+    vi = value.get("vi")
+    en = value.get("en")
+    if not isinstance(vi, str) or not isinstance(en, str) or not (vi.strip() or en.strip()):
+        raise ValueError(f"{field} must contain Vietnamese and English text")
+    return {"vi": vi.strip(), "en": en.strip()}
+
+
+def _public_character_equipment(value: Any, field: str) -> JsonObject:
+    if not isinstance(value, dict):
+        raise ValueError(f"{field} must be an object")
+    code = value.get("code")
+    if not isinstance(code, str) or not code.strip():
+        raise ValueError(f"{field} code must be a non-empty string")
+    quantity = value.get("quantity")
+    if quantity is not None:
+        quantity = _positive_integer(quantity, f"{field} quantity")
+    return {
+        "code": code.strip().lower(),
+        "name": _public_localized_text(value.get("name"), f"{field} name"),
+        "quantity": quantity,
+        "effect": _public_localized_text(value.get("effect"), f"{field} effect"),
+    }
+
+
+def _public_character_profiles(value: JsonObject) -> Dict[str, JsonObject]:
+    if not isinstance(value, dict) or value.get("schemaVersion") != 1:
+        raise ValueError("character profiles must use schema version 1")
+    profiles = value.get("profiles")
+    if not isinstance(profiles, dict):
+        raise ValueError("character profiles must contain a profiles object")
+    result: Dict[str, JsonObject] = {}
+    for raw_code, profile in profiles.items():
+        if not isinstance(raw_code, str) or not raw_code.strip() or not isinstance(profile, dict):
+            raise ValueError("character profile must be an object with a non-empty code")
+        namespace = profile.get("namespace")
+        if namespace not in {"base_game", "tu_tien"}:
+            raise ValueError(f"character profile {raw_code} namespace is invalid")
+        code = raw_code.strip().lower()
+        portrait = profile.get("portrait")
+        portrait_path = portrait.get("path") if isinstance(portrait, dict) else None
+        expected_portrait_path = (
+            f"/assets/dst/characters/base/{code}.png"
+            if namespace == "base_game"
+            else f"/assets/dst/characters/{code}.png"
+        )
+        if portrait_path != expected_portrait_path:
+            raise ValueError(f"character profile {raw_code} portrait path is invalid")
+        stats = profile.get("stats")
+        if not isinstance(stats, dict):
+            raise ValueError(f"character profile {raw_code} stats must be an object")
+        public_stats = {}
+        for stat_name, stat in stats.items():
+            if not isinstance(stat_name, str) or not isinstance(stat, dict):
+                raise ValueError(f"character profile {raw_code} stat is invalid")
+            stat_value = stat.get("value")
+            has_display = isinstance(stat.get("display"), str) and bool(
+                stat["display"].strip()
+            )
+            if (
+                (not isinstance(stat_value, (str, int, float)) or isinstance(stat_value, bool))
+                and not (stat_value is None and has_display)
+            ):
+                raise ValueError(f"character profile {raw_code} stat {stat_name} is invalid")
+            public_stat = {"value": stat_value}
+            for optional_field in ("display", "note"):
+                optional_value = stat.get(optional_field)
+                if optional_value is not None:
+                    if not isinstance(optional_value, str) or not optional_value.strip():
+                        raise ValueError(
+                            f"character profile {raw_code} stat {stat_name} "
+                            f"{optional_field} is invalid"
+                        )
+                    public_stat[optional_field] = optional_value.strip()
+            public_stats[stat_name] = public_stat
+        abilities = profile.get("abilities")
+        starting_items = profile.get("startingItems")
+        artifacts = profile.get("artifacts")
+        if (
+            not isinstance(abilities, list)
+            or not isinstance(starting_items, list)
+            or not isinstance(artifacts, list)
+        ):
+            raise ValueError(f"character profile {raw_code} must contain profile arrays")
+        public_abilities = []
+        for index, ability in enumerate(abilities):
+            if not isinstance(ability, dict):
+                raise ValueError(f"character profile {raw_code} ability {index} is invalid")
+            public_abilities.append(
+                {
+                    "name": _public_localized_text(
+                        ability.get("name"), f"character profile {raw_code} ability {index} name"
+                    ),
+                    "effect": _public_localized_text(
+                        ability.get("effect"),
+                        f"character profile {raw_code} ability {index} effect",
+                    ),
+                }
+            )
+        identity = f"{namespace}:{code}"
+        if identity in result:
+            raise ValueError(f"duplicate character identity {identity}")
+        result[identity] = {
+            "name": _public_localized_text(
+                profile.get("name"), f"character profile {raw_code} name"
+            ),
+            "title": _public_localized_text(
+                profile.get("title"), f"character profile {raw_code} title"
+            ),
+            "description": _public_localized_text(
+                profile.get("description"), f"character profile {raw_code} description"
+            ),
+            "portrait": {"path": portrait_path},
+            "stats": public_stats,
+            "abilities": public_abilities,
+            "startingItems": [
+                _public_character_equipment(
+                    equipment, f"character profile {raw_code} starting item {index}"
+                )
+                for index, equipment in enumerate(starting_items)
+            ],
+            "artifacts": [
+                _public_character_equipment(
+                    equipment, f"character profile {raw_code} artifact {index}"
+                )
+                for index, equipment in enumerate(artifacts)
+            ],
+        }
+    return result
+
+
+def _public_guide_fact(value: Any, field: str) -> JsonObject:
+    if not isinstance(value, dict):
+        raise ValueError(f"{field} must be an object")
+    result = {}
+    for key in ("label", "description", "confidence"):
+        raw = value.get(key)
+        if not isinstance(raw, str) or not raw.strip():
+            raise ValueError(f"{field} {key} must be a non-empty string")
+        result[key] = raw.strip()
+    return result
+
+
+def _public_string_list(value: Any, field: str) -> List[str]:
+    if not isinstance(value, list):
+        raise ValueError(f"{field} must be an array")
+    result = []
+    for index, raw in enumerate(value):
+        if not isinstance(raw, str) or not raw.strip():
+            raise ValueError(f"{field} {index} must be a non-empty string")
+        result.append(raw.strip())
+    return result
+
+
+def _public_character_guides(value: JsonObject) -> Dict[str, JsonObject]:
+    if not isinstance(value, dict) or value.get("schemaVersion") != 1:
+        raise ValueError("character guides must use schema version 1")
+    guides = value.get("guides")
+    if not isinstance(guides, dict):
+        raise ValueError("character guides must contain a guides object")
+    result: Dict[str, JsonObject] = {}
+    for raw_code, guide in guides.items():
+        if not isinstance(raw_code, str) or not raw_code.strip() or not isinstance(guide, dict):
+            raise ValueError("character guide must be an object with a non-empty code")
+        identity = f"tu_tien:{raw_code.strip().lower()}"
+        if identity in result:
+            raise ValueError(f"duplicate guide identity {identity}")
+        public_guide = {
+            key: _public_string_list(guide.get(key), f"character guide {raw_code} {key}")
+            for key in ("roles", "strengths", "tradeoffs", "firstSteps")
+        }
+        for key in ("attackPattern", "range", "complexity", "summary"):
+            raw = guide.get(key)
+            if not isinstance(raw, str) or not raw.strip():
+                raise ValueError(f"character guide {raw_code} {key} must be a non-empty string")
+            public_guide[key] = raw.strip()
+        combat = guide.get("combat")
+        milestones = guide.get("realmMilestones")
+        artifacts = guide.get("artifacts")
+        if (
+            not isinstance(combat, list)
+            or not isinstance(milestones, list)
+            or not isinstance(artifacts, list)
+        ):
+            raise ValueError(f"character guide {raw_code} must contain guide arrays")
+        public_guide["combat"] = [
+            _public_guide_fact(raw, f"character guide {raw_code} combat {index}")
+            for index, raw in enumerate(combat)
+        ]
+        public_milestones = []
+        for index, milestone in enumerate(milestones):
+            if not isinstance(milestone, dict) or not isinstance(milestone.get("unlocks"), list):
+                raise ValueError(f"character guide {raw_code} milestone {index} is invalid")
+            realm = milestone.get("realm")
+            if not isinstance(realm, str) or not realm.strip():
+                raise ValueError(f"character guide {raw_code} milestone {index} realm is invalid")
+            public_milestones.append(
+                {
+                    "realm": realm.strip(),
+                    "unlocks": [
+                        _public_guide_fact(
+                            unlock,
+                            f"character guide {raw_code} milestone {index} unlock {unlock_index}",
+                        )
+                        for unlock_index, unlock in enumerate(milestone["unlocks"])
+                    ],
+                }
+            )
+        public_guide["realmMilestones"] = public_milestones
+        public_guide["artifacts"] = [
+            _public_guide_fact(raw, f"character guide {raw_code} artifact {index}")
+            for index, raw in enumerate(artifacts)
+        ]
+        result[identity] = public_guide
+    return result
+
+
+def _resolve_character_equipment(
+    values: List[JsonObject],
+    namespace: str,
+    items_by_id: Dict[str, JsonObject],
+) -> List[JsonObject]:
+    result = []
+    for value in values:
+        equipment = dict(value)
+        item = items_by_id.get(f"{namespace}:{value['code']}")
+        equipment["icon"] = item.get("sprite") if item is not None else None
+        if item is not None:
+            equipment["name"] = {
+                "vi": str(item.get("name") or value["name"]["vi"]),
+                "en": str(item.get("englishName") or value["name"]["en"]),
+            }
+        result.append(equipment)
+    return result
+
+
+def _curated_character_profile(
+    identity: str,
+    profile: JsonObject,
+    guide: Optional[JsonObject],
+    items_by_id: Dict[str, JsonObject],
+) -> JsonObject:
+    namespace = identity.split(":", 1)[0]
+    return {
+        "name": profile["name"],
+        "title": profile["title"],
+        "description": profile["description"],
+        "portrait": profile["portrait"],
+        "stats": profile["stats"],
+        "abilities": profile["abilities"],
+        "startingItems": _resolve_character_equipment(
+            profile["startingItems"], namespace, items_by_id
+        ),
+        "artifacts": _resolve_character_equipment(
+            profile["artifacts"], namespace, items_by_id
+        ),
+        "guide": guide,
+    }
+
+
+def _apply_curated_character_sources(
+    items: List[JsonObject],
+    profiles: Dict[str, JsonObject],
+    guides: Dict[str, JsonObject],
+) -> List[JsonObject]:
+    items_by_id = {str(item.get("id")): item for item in items}
+    for item in items:
+        if item.get("category") != "character":
+            continue
+        identity = str(item.get("id"))
+        profile = profiles.get(identity)
+        if profile is None:
+            raise ValueError(f"missing curated character profile {identity}")
+        item["character"] = _curated_character_profile(
+            identity,
+            profile,
+            guides.get(identity),
+            items_by_id,
+        )
+    return items
+
+
+def publish_character_sources(
+    items_path: Path,
+    character_profiles_path: Path,
+    character_guides_path: Path,
+) -> int:
+    """Atomically enrich an existing static item payload with curated characters."""
+
+    payload = json.loads(Path(items_path).read_text(encoding="utf-8"))
+    if (
+        not isinstance(payload, dict)
+        or payload.get("schema_version") != 7
+        or not isinstance(payload.get("items"), list)
+    ):
+        raise ValueError("items payload must use schema version 7 and contain items")
+    profiles = _public_character_profiles(
+        json.loads(Path(character_profiles_path).read_text(encoding="utf-8"))
+    )
+    guides = _public_character_guides(
+        json.loads(Path(character_guides_path).read_text(encoding="utf-8"))
+    )
+    items = [item for item in payload["items"] if isinstance(item, dict)]
+    if len(items) != len(payload["items"]):
+        raise ValueError("items payload contains a malformed item")
+    payload["items"] = _apply_curated_character_sources(items, profiles, guides)
+    _atomic_json(Path(items_path), payload)
+    return sum(item.get("category") == "character" for item in items)
+
+
 def load_crafting_notes(database_path: Path) -> Dict[str, str]:
     """Load deterministic Tu Tiên recipe descriptions from the audit database."""
 
@@ -653,6 +965,8 @@ def build_item_export(
     crafting_notes: Optional[Dict[str, str]] = None,
     detail_overrides: Optional[JsonObject] = None,
     runtime_coverage: Optional[List[JsonObject]] = None,
+    character_profiles: Optional[JsonObject] = None,
+    character_guides: Optional[JsonObject] = None,
 ) -> Tuple[JsonObject, JsonObject, JsonObject]:
     """Build compact item and texture payloads from the public audit exports."""
 
@@ -662,6 +976,16 @@ def build_item_export(
         raise ValueError("catalog and asset payloads must contain arrays")
     source_entities, manual_crafting_notes = _apply_manual_recipe_overrides(
         source_entities, detail_overrides
+    )
+    public_character_profiles = (
+        _public_character_profiles(character_profiles)
+        if character_profiles is not None
+        else None
+    )
+    public_character_guides = (
+        _public_character_guides(character_guides)
+        if character_guides is not None
+        else {}
     )
     entities = {
         entity["key"]: entity
@@ -731,7 +1055,12 @@ def build_item_export(
                 entity, entities, items_by_id, runtime_coverage or []
             )
         elif item["category"] == "character":
-            item["character"] = _character_profile(entity)
+            if public_character_profiles is None:
+                item["character"] = _character_profile(entity)
+    if public_character_profiles is not None:
+        _apply_curated_character_sources(
+            items, public_character_profiles, public_character_guides
+        )
     return (
         {"schema_version": 7, "items": items},
         {
@@ -872,6 +1201,8 @@ def export_items(
     mob_audit_path: Path = MOB_BOSS_AUDIT,
     mob_groups_path: Path = MOB_GROUPS,
     mob_wiki_path: Path = MOB_WIKI_PAGES,
+    character_profiles_path: Optional[Path] = None,
+    character_guides_path: Optional[Path] = None,
 ) -> None:
     """Read audit JSON and atomically publish the compact frontend contracts."""
 
@@ -882,12 +1213,24 @@ def export_items(
     )
     runtime_coverage = load_runtime_coverage(database_path)
     crafting_notes = load_crafting_notes(database_path)
+    character_profiles = (
+        json.loads(Path(character_profiles_path).read_text(encoding="utf-8"))
+        if character_profiles_path is not None
+        else None
+    )
+    character_guides = (
+        json.loads(Path(character_guides_path).read_text(encoding="utf-8"))
+        if character_guides_path is not None
+        else None
+    )
     items, textures, detail_report = build_item_export(
         catalog,
         assets,
         crafting_notes,
         detail_overrides,
         runtime_coverage,
+        character_profiles,
+        character_guides,
     )
     items["items"] = apply_description_translations(
         items["items"], description_translations_path

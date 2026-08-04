@@ -1073,6 +1073,37 @@ function parseCharacter(value: unknown, itemIndex: number): CharacterProfile | n
   if (!isRecord(value) || !Array.isArray(value.abilities)) {
     throw new Error(`item ${itemIndex} character profile is invalid`);
   }
+  if (isRecord(value.title)) {
+    const publicText = (raw: unknown, field: string): string => {
+      if (!isRecord(raw) || typeof raw.vi !== "string" || typeof raw.en !== "string") {
+        throw new Error(`${field} must contain Vietnamese and English strings`);
+      }
+      const result = raw.vi.trim() || raw.en.trim();
+      if (!result) {
+        throw new Error(`${field} must contain public text`);
+      }
+      return result;
+    };
+    return {
+      title: publicText(value.title, `item ${itemIndex} character title`),
+      survivability: null,
+      quote: null,
+      abilities: value.abilities.map((raw, abilityIndex) => {
+        if (!isRecord(raw)) {
+          throw new Error(`item ${itemIndex} character ability ${abilityIndex} is invalid`);
+        }
+        const name = publicText(
+          raw.name,
+          `item ${itemIndex} character ability ${abilityIndex} name`,
+        );
+        const effect = publicText(
+          raw.effect,
+          `item ${itemIndex} character ability ${abilityIndex} effect`,
+        );
+        return `${name}: ${effect}`;
+      }),
+    };
+  }
   return {
     title: nullableString(value.title, `item ${itemIndex} character title`),
     survivability: nullableString(

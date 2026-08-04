@@ -1,0 +1,870 @@
+{
+    "schemaVersion": 1,
+    "guides": {
+        "xd_luoshen": {
+            "roles": [
+                "Triệu hồi",
+                "Khống chế",
+                "Duy trì"
+            ],
+            "attackPattern": "Thiết lập Lạc Thần Hoa, chuyển giữa Sinh và Diệt, rồi chiến đấu bằng cây tấn công, phá giáp và vùng gai.",
+            "range": "summoner",
+            "complexity": "advanced",
+            "summary": "Lạc Thần kiểm soát chiến trường qua hệ thống hoa, cánh hoa và các pháp bảo tạo vùng.",
+            "strengths": [
+                "Tạo đơn vị tấn công và vùng khống chế.",
+                "Có công cụ phá giáp và quay về gần Lạc Thần Hoa."
+            ],
+            "tradeoffs": [
+                "Tạo cánh hoa thường hoặc tối tiêu hao 10 máu.",
+                "Nguồn hiện tại chưa chỉ rõ kỹ năng mở theo từng cảnh giới."
+            ],
+            "firstSteps": [
+                "Dựng Lạc Thần Hoa để tạo điểm vận hành bộ kỹ năng.",
+                "Chọn Sinh Chi Hoa hoặc Diệt Chi Hoa theo tình huống.",
+                "Dùng Giáng Nhận để phá giáp trước khi duy trì áp lực bằng vùng gai."
+            ],
+            "combat": [
+                {
+                    "label": "Cánh hoa và hai trạng thái",
+                    "description": "Tiêu hao 10 máu để tạo cánh hoa thường hoặc tối, sau đó chuyển sang Sinh Chi Hoa hoặc Diệt Chi Hoa.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_luoshen"
+                    ]
+                },
+                {
+                    "label": "Giáng Nhận",
+                    "description": "Phá giáp mục tiêu.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_luoshen"
+                    ]
+                },
+                {
+                    "label": "Cức Hoa Trạch",
+                    "description": "Tạo một bẫy gai lớn để kiểm soát khu vực.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_luoshen"
+                    ]
+                },
+                {
+                    "label": "Lạc Thần Dẫn",
+                    "description": "Đưa Lạc Thần trở về gần một Lạc Thần Hoa.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_luoshen"
+                    ]
+                }
+            ],
+            "realmMilestones": [
+                {
+                    "realm": "Chưa rõ mốc chính xác",
+                    "unlocks": [
+                        {
+                            "label": "Ánh xạ kỹ năng theo cảnh giới",
+                            "description": "Nguồn cục bộ hiện tại không công bố ánh xạ mở khóa kỹ năng theo từng cảnh giới.",
+                            "confidence": "unknown",
+                            "evidence": [
+                                "local-handbook:3721846643@18.0.10:xd_luoshen"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "artifacts": [
+                {
+                    "label": "Bộ pháp bảo Lạc Thần",
+                    "description": "Gồm Lạc Thần Tru, Khô Vinh Song Sinh, Giáng Nhận, Cức Hoa Trạch, Lưu Quang Hoa Phấn, Định Hồn Hương Lô và bộ công trình hoa.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_luoshen",
+                        "local-strings:3721859355:xd_luoshen"
+                    ]
+                }
+            ],
+            "sourceVersion": "18.0.10"
+        },
+        "xd_jingwei": {
+            "roles": [
+                "Đánh xa",
+                "Cơ động",
+                "Đồng hành"
+            ],
+            "attackPattern": "Dùng quạt và xuy tiễn từ xa trong khi Huyền Điểu cung cấp tiện ích và về sau tự hỗ trợ.",
+            "range": "ranged",
+            "complexity": "medium",
+            "summary": "Tinh Vệ là nhân vật đánh xa phối hợp cùng Huyền Điểu, có nhiều tiện ích môi trường và thu thập.",
+            "strengths": [
+                "Không tích lũy độ ướt.",
+                "Huyền Điểu hỗ trợ bảo quản, ánh sáng và công việc."
+            ],
+            "tradeoffs": [
+                "Cái chết của chim nhỏ và động vật ở gần làm giảm tinh thần.",
+                "Tạo Huyền Vũ tiêu hao 30 máu."
+            ],
+            "firstSteps": [
+                "Tạo Huyền Vũ để mở hệ thống lông chuyên dụng.",
+                "Tận dụng Huyền Điểu cho bảo quản và tiện ích.",
+                "Giữ khoảng cách bằng quạt và Huyền Vũ Xuy Tiễn."
+            ],
+            "combat": [
+                {
+                    "label": "Đặc tính tự nhiên",
+                    "description": "Không tích lũy độ ướt; chim nhỏ và động vật không hoảng sợ quanh Tinh Vệ, nhưng cái chết của chúng ở gần làm giảm tinh thần.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_jingwei"
+                    ]
+                },
+                {
+                    "label": "Thanh Xuất Ư Lam",
+                    "description": "Tạo xoáy thu thập nhỏ, ổn định nhiệt độ, dập lửa và phá cây, đá cùng băng.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_jingwei"
+                    ]
+                },
+                {
+                    "label": "Huyền Vũ Xuy Tiễn",
+                    "description": "Tấn công mục tiêu và kích hoạt ảo ảnh Huyền Điểu.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_jingwei"
+                    ]
+                },
+                {
+                    "label": "Huyền Điểu",
+                    "description": "Bản thể cơ sở giúp giữ độ tươi và có thể phát sáng sau khi ăn Glowberry.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_jingwei"
+                    ]
+                }
+            ],
+            "realmMilestones": [
+                {
+                    "realm": "Trúc Cơ tiền kỳ",
+                    "unlocks": [
+                        {
+                            "label": "Huyền Điểu chuyển dạng",
+                            "description": "Huyền Điểu đổi hình thái, ổn định nhiệt độ trong vùng nhỏ và hồi tinh thần.",
+                            "confidence": "confirmed",
+                            "evidence": [
+                                "local-handbook:3721846643@18.0.10:xd_jingwei",
+                                "local-runtime:3721846643@18.0.10:xd_jingwei"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "realm": "Kết Đan tiền kỳ",
+                    "unlocks": [
+                        {
+                            "label": "Huyền Điểu hóa hình người",
+                            "description": "Huyền Điểu có thể thỉnh thoảng ăn và làm việc cho người tu luyện.",
+                            "confidence": "confirmed",
+                            "evidence": [
+                                "local-handbook:3721846643@18.0.10:xd_jingwei",
+                                "local-runtime:3721846643@18.0.10:xd_jingwei"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "artifacts": [
+                {
+                    "label": "Huyền Vũ",
+                    "description": "Tiêu hao 30 máu để tạo và có thể chuyển thành các loại lông chuyên dụng.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_jingwei"
+                    ]
+                }
+            ],
+            "sourceVersion": "18.0.10"
+        },
+        "xd_longtaizi": {
+            "roles": [
+                "Pháp thuật",
+                "Khống chế",
+                "Hàn băng"
+            ],
+            "attackPattern": "Tích lũy Hàn Băng Linh Khí, rồi tiêu hao các tầng để kiểm soát khu vực và thi triển kỹ thuật nguyên tố.",
+            "range": "ranged",
+            "complexity": "advanced",
+            "summary": "Long Thái Tử vận hành quanh nhiệt độ thấp, Hàn Băng Linh Khí và chuỗi kỹ thuật của Long Châu.",
+            "strengths": [
+                "Không thể bị đóng băng.",
+                "Nhiệt độ cơ thể thấp giúp tăng tốc hồi Hàn Băng Linh Khí."
+            ],
+            "tradeoffs": [
+                "Cần quản lý các tầng Hàn Băng Linh Khí.",
+                "Nguồn đọc được chưa chỉ rõ ánh xạ mở khóa theo cảnh giới."
+            ],
+            "firstSteps": [
+                "Giữ nhiệt độ thấp để hỗ trợ hồi Hàn Băng Linh Khí.",
+                "Dùng Long Châu để quản lý tài nguyên kỹ năng.",
+                "Chọn kỹ thuật hàn băng phù hợp với khu vực cần khống chế."
+            ],
+            "combat": [
+                {
+                    "label": "Thể chất hàn băng",
+                    "description": "Không thể bị đóng băng; nhiệt độ cơ thể càng thấp càng có lợi và Hàn Băng Linh Khí hồi nhanh hơn.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_longtaizi"
+                    ]
+                },
+                {
+                    "label": "Kỹ thuật Long Châu",
+                    "description": "Gồm Hàng Vũ, Lạc Lôi, Băng Lao, Băng Pháp Trận, Không Gian Trữ Vật, Cực Quang, Băng Linh Hộ Thể và Hàn Băng Linh Nhãn.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_longtaizi",
+                        "local-strings:3721859355:xd_longtaizi"
+                    ]
+                },
+                {
+                    "label": "Ưu thế phe phái",
+                    "description": "Có lợi thế vừa phải trước sinh vật thuộc hai phe tu luyện.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_longtaizi"
+                    ]
+                }
+            ],
+            "realmMilestones": [
+                {
+                    "realm": "Tăng trưởng theo tài nguyên",
+                    "unlocks": [
+                        {
+                            "label": "Chưa rõ ánh xạ cảnh giới",
+                            "description": "Nguồn mô tả tăng trưởng theo tầng Hàn Băng Linh Khí nhưng chưa đủ để gán từng kỹ thuật vào một cảnh giới.",
+                            "confidence": "unknown",
+                            "evidence": [
+                                "local-handbook:3721846643@18.0.10:xd_longtaizi",
+                                "local-runtime:3721846643@18.0.10:xd_longtaizi"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "artifacts": [
+                {
+                    "label": "Long Châu",
+                    "description": "Cải thiện quản lý Hàn Băng Linh Khí và có thể sửa bằng một tổ hợp đủ số lượng đá quý.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_longtaizi"
+                    ]
+                }
+            ],
+            "sourceVersion": "18.0.10"
+        },
+        "xd_hantianzun": {
+            "roles": [
+                "Kiếm tu",
+                "Pháp bảo",
+                "Triệu hồi"
+            ],
+            "attackPattern": "Luân chuyển pháp bảo và triệu hồi độc quyền, dùng linh lực để mở hoặc duy trì các thần thông mạnh hơn.",
+            "range": "hybrid",
+            "complexity": "advanced",
+            "summary": "Hàn Thiên Tôn là kiếm tu phức tạp, kết hợp pháp bảo, phi kiếm và nhiều đơn vị triệu hồi.",
+            "strengths": [
+                "Bộ pháp bảo và triệu hồi đa dạng.",
+                "Phong Lôi Xí cho phép di chuyển trên mặt nước."
+            ],
+            "tradeoffs": [
+                "Các thần thông mạnh cần quản lý linh lực.",
+                "Nguồn hiện tại không giữ được ánh xạ an toàn giữa mọi kỹ thuật và mốc cảnh giới."
+            ],
+            "firstSteps": [
+                "Chuẩn bị pháp bảo phù hợp trước khi giao chiến.",
+                "Theo dõi linh lực khi duy trì trạng thái thần thông.",
+                "Luân chuyển triệu hồi và kiếm khí theo nhu cầu của trận đánh."
+            ],
+            "combat": [
+                {
+                    "label": "Kho kỹ thuật và pháp bảo",
+                    "description": "Gồm Hư Thiên Đỉnh, Tam Diễm Phiến, Ngũ Tử Đồng Tâm Ma, Nguyên Hợp Ngũ Cực Sơn, Phá Diệt Pháp Mục, Phong Lôi Xí, Huyền Thiên Trảm Linh Kiếm, Phi Kiếm Phù Bảo, Thiên Lôi Tử, Huyết Ngọc Tri Thù và Phệ Kim Trùng.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_hantianzun",
+                        "local-strings:3721859355:xd_hantianzun"
+                    ]
+                },
+                {
+                    "label": "Huyền Thiên Trảm Linh Kiếm",
+                    "description": "Tăng 10 linh lực tiêu hao của thần thông; kỹ thuật riêng của kiếm không tốn thêm linh lực khi trạng thái thần thông còn được duy trì.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_hantianzun"
+                    ]
+                },
+                {
+                    "label": "Phong Lôi Xí",
+                    "description": "Cho phép di chuyển trên mặt nước.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_hantianzun"
+                    ]
+                }
+            ],
+            "realmMilestones": [
+                {
+                    "realm": "Kết Đan tiền kỳ",
+                    "unlocks": [
+                        {
+                            "label": "Mốc đã xác nhận",
+                            "description": "Nhãn cảnh giới này có trong bản dịch runtime cục bộ.",
+                            "confidence": "confirmed",
+                            "evidence": [
+                                "local-runtime:3721846643@18.0.10:xd_hantianzun"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "realm": "Kết Đan hậu kỳ",
+                    "unlocks": [
+                        {
+                            "label": "Mốc đã xác nhận",
+                            "description": "Nhãn cảnh giới này có trong bản dịch runtime cục bộ.",
+                            "confidence": "confirmed",
+                            "evidence": [
+                                "local-runtime:3721846643@18.0.10:xd_hantianzun"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "realm": "Nguyên Anh tiền kỳ",
+                    "unlocks": [
+                        {
+                            "label": "Mốc đã xác nhận",
+                            "description": "Nhãn cảnh giới này có trong bản dịch runtime cục bộ.",
+                            "confidence": "confirmed",
+                            "evidence": [
+                                "local-runtime:3721846643@18.0.10:xd_hantianzun"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "realm": "Hóa Thần tiền kỳ",
+                    "unlocks": [
+                        {
+                            "label": "Mốc đã xác nhận",
+                            "description": "Nhãn cảnh giới này có trong bản dịch runtime cục bộ.",
+                            "confidence": "confirmed",
+                            "evidence": [
+                                "local-runtime:3721846643@18.0.10:xd_hantianzun"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "realm": "Chưa rõ ánh xạ kỹ năng",
+                    "unlocks": [
+                        {
+                            "label": "Kỹ thuật theo cảnh giới",
+                            "description": "Nguồn đọc được chưa cho phép gán an toàn từng kỹ thuật nêu trên vào bốn mốc cảnh giới.",
+                            "confidence": "unknown",
+                            "evidence": [
+                                "local-handbook:3721846643@18.0.10:xd_hantianzun",
+                                "local-runtime:3721846643@18.0.10:xd_hantianzun"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "artifacts": [
+                {
+                    "label": "Bộ pháp bảo Hàn Thiên Tôn",
+                    "description": "Trọng tâm là kiếm, cờ, đỉnh, phù bảo và các triệu hồi độc quyền được liệt kê trong Mật Quyển.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_hantianzun",
+                        "local-strings:3721859355:xd_hantianzun"
+                    ]
+                }
+            ],
+            "sourceVersion": "18.0.10"
+        },
+        "xd_yunxiao": {
+            "roles": [
+                "Đa hình thái",
+                "Hỗ trợ",
+                "Khống chế"
+            ],
+            "attackPattern": "Đổi giữa ba hình thái để ưu tiên chế tạo và hỗ trợ, thu thập tự động, hoặc chiến đấu có tầm đánh và chiến ý.",
+            "range": "hybrid",
+            "complexity": "advanced",
+            "summary": "Tam Tiêu Nương Nương dùng ba hình thái có vai trò khác nhau cùng bộ pháp bảo dịch chuyển và khống chế.",
+            "strengths": [
+                "Ba hình thái bao phủ hỗ trợ, lao động và chiến đấu.",
+                "Có dịch chuyển qua các điểm đánh dấu và nhiều công cụ khống chế."
+            ],
+            "tradeoffs": [
+                "Mỗi hình thái có trọng tâm riêng; Vân Tiêu có hệ số tấn công thấp.",
+                "Ba hình thái không phải các mốc cảnh giới đã được xác nhận."
+            ],
+            "firstSteps": [
+                "Chọn hình thái phù hợp với công việc hiện tại.",
+                "Dùng Hỗn Nguyên Kim Đẩu để thiết lập các điểm dịch chuyển.",
+                "Chuyển sang Quỳnh Tiêu khi cần ưu tiên chiến đấu."
+            ],
+            "combat": [
+                {
+                    "label": "Vân Tiêu",
+                    "description": "Có thể làm và dùng sách, cải thiện nấu ăn, chế tạo và hồi tinh thần, nhưng có hệ số tấn công thấp.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_yunxiao"
+                    ]
+                },
+                {
+                    "label": "Bích Tiêu",
+                    "description": "Có hiệu suất đào, chặt và thu thập cao, đồng thời tự chăm sóc cây trồng gần đường đi.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_yunxiao"
+                    ]
+                },
+                {
+                    "label": "Quỳnh Tiêu",
+                    "description": "Tăng hệ số tấn công, tốc độ di chuyển và tầm đánh; chiến ý tích lũy làm tăng hiệu quả chiến đấu.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_yunxiao"
+                    ]
+                }
+            ],
+            "realmMilestones": [
+                {
+                    "realm": "Chưa có mốc cảnh giới xác nhận",
+                    "unlocks": [
+                        {
+                            "label": "Ba hình thái",
+                            "description": "Vân Tiêu, Bích Tiêu và Quỳnh Tiêu là các hình thái nhân vật, không phải mốc cảnh giới đã được xác nhận.",
+                            "confidence": "unknown",
+                            "evidence": [
+                                "local-handbook:3721846643@18.0.10:xd_yunxiao",
+                                "local-runtime:3721846643@18.0.10:xd_yunxiao"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "artifacts": [
+                {
+                    "label": "Hỗn Nguyên Kim Đẩu",
+                    "description": "Chứa vật phẩm và dịch chuyển nhân vật, sinh vật cùng vật phẩm qua tối đa chín điểm đánh dấu.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_yunxiao"
+                    ]
+                },
+                {
+                    "label": "Bộ pháp bảo khống chế",
+                    "description": "Phù Cốt Pháp Khí phá cây, đá và băng phía trước; Phược Long Tỏa trói mục tiêu; Phức Úc Thủ Trượng tăng tốc và dịch chuyển tầm ngắn.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_yunxiao",
+                        "local-strings:3721859355:xd_yunxiao"
+                    ]
+                }
+            ],
+            "sourceVersion": "18.0.10"
+        },
+        "xd_shiji": {
+            "roles": [
+                "Triệu hồi",
+                "Chống chịu",
+                "Tự động hóa"
+            ],
+            "attackPattern": "Dùng đồng tử và Thạch Hà để tự động hóa công việc, đồng thời điều khiển Khô Lâu Sơn và pháp bảo chống chịu trong giao tranh.",
+            "range": "summoner",
+            "complexity": "advanced",
+            "summary": "Thạch Cơ Nương Nương kết hợp triệu hồi lao động, điều khiển từ xa và pháp bảo phòng thủ.",
+            "strengths": [
+                "Nhiều triệu hồi hỗ trợ thu thập và chăm sóc căn cứ.",
+                "Có pháp bảo phòng thủ và công cụ điều khiển lao động từ xa."
+            ],
+            "tradeoffs": [
+                "Nhiều triệu hồi có thời gian tồn tại giới hạn.",
+                "Nguồn hiện tại chưa nêu mốc mở khóa theo cảnh giới."
+            ],
+            "firstSteps": [
+                "Triệu hồi đồng tử phù hợp với nhu cầu lao động.",
+                "Dùng Khô Lâu Sơn để tăng hiệu suất thu thập.",
+                "Chuẩn bị linh thạch hạ phẩm để sửa Thực Tâm Trụ."
+            ],
+            "combat": [
+                {
+                    "label": "Bích Vân Đồng Tử",
+                    "description": "Tồn tại bốn ngày, làm việc trong phạm vi năm ô, thu thập, trò chuyện, tưới và bón cây, sắp xếp vật phẩm và cung cấp bữa sáng.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_shiji"
+                    ]
+                },
+                {
+                    "label": "Thải Vân Đồng Tử",
+                    "description": "Đi theo Thạch Cơ và hỗ trợ chặt, đào cùng thu thập.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_shiji"
+                    ]
+                },
+                {
+                    "label": "Khô Lâu Sơn",
+                    "description": "Được điều khiển tại con trỏ qua thần niệm và cải thiện thu thập, chặt, di chuyển, đào cùng sát thương vị diện.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_shiji"
+                    ]
+                },
+                {
+                    "label": "Thạch Hà",
+                    "description": "Thông Linh Thạch Khiếu tạo Thạch Hà trưởng thành sau bảy ngày; Tỉnh Thạch Yết Đạo Trượng triệu hồi Thạch Hà bảy ngày và có thể đánh thức đá hoặc tổ nhện.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_shiji"
+                    ]
+                }
+            ],
+            "realmMilestones": [
+                {
+                    "realm": "Chưa rõ mốc chính xác",
+                    "unlocks": [
+                        {
+                            "label": "Ánh xạ triệu hồi theo cảnh giới",
+                            "description": "Hướng dẫn đọc được không nêu mốc cảnh giới chính xác cho các triệu hồi và pháp bảo.",
+                            "confidence": "unknown",
+                            "evidence": [
+                                "local-handbook:3721846643@18.0.10:xd_shiji"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "artifacts": [
+                {
+                    "label": "Thực Tâm Trụ",
+                    "description": "Cho 85% phòng thủ, ngăn quá nhiệt, làm chậm mất tinh thần, có thể chặn một đòn và được sửa bằng linh thạch hạ phẩm.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_shiji"
+                    ]
+                },
+                {
+                    "label": "Bát Quái pháp bảo",
+                    "description": "Bát Quái Vân Quang Phạ thay phân thân ngoài bằng Hoàng Cân Lực Sĩ; Bát Quái Long Tu Phạ thu đồ, bắt động vật nhỏ, thu hoạch cây gần đó và giữ độ tươi.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_shiji",
+                        "local-strings:3721859355:xd_shiji"
+                    ]
+                }
+            ],
+            "sourceVersion": "18.0.10"
+        },
+        "xd_sudaji": {
+            "roles": [
+                "Triệu hồi",
+                "Duy trì",
+                "Hỗ trợ"
+            ],
+            "attackPattern": "Duy trì Dưỡng Hồn Linh Ngọc, quản lý độ bền pháp bảo và phối hợp đòn đánh với hình thái Trụ Vương theo lượng máu hiện tại.",
+            "range": "summoner",
+            "complexity": "advanced",
+            "summary": "Tô Đát Kỷ nuôi dưỡng linh hồn Trụ Vương và đổi hình thái triệu hồi theo ngưỡng máu.",
+            "strengths": [
+                "Triệu hồi thay đổi theo trạng thái máu.",
+                "Có công cụ dịch chuyển, ổn định môi trường và phòng hộ thời tiết."
+            ],
+            "tradeoffs": [
+                "Mỗi lần dùng thần thông tiêu hao 10% độ bền pháp bảo.",
+                "Các bậc triệu hồi phụ thuộc lượng máu, không phải cảnh giới."
+            ],
+            "firstSteps": [
+                "Thu thập mảnh hồn yêu thú để nuôi Dưỡng Hồn Linh Ngọc.",
+                "Theo dõi độ bền pháp bảo trước khi liên tục dùng thần thông.",
+                "Chọn ngưỡng máu phù hợp với hình thái Trụ Vương cần gọi."
+            ],
+            "combat": [
+                {
+                    "label": "Dưỡng Hồn Linh Ngọc",
+                    "description": "Nuôi linh hồn Trụ Vương bằng mảnh hồn yêu thú; mỗi lần giải phóng thần thông tiêu hao 10% độ bền để tăng cường kỹ thuật.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_sudaji"
+                    ]
+                },
+                {
+                    "label": "Cường hóa theo độ bền",
+                    "description": "Khi độ bền từ 50% trở lên, pháp bảo tăng cường thêm thần thông, tốc độ di chuyển và hồi tinh thần.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_sudaji"
+                    ]
+                },
+                {
+                    "label": "Phối hợp Trụ Vương",
+                    "description": "Công Đức Kim Thân hoặc Vô Thượng Ma Thể khiến hình thái Trụ Vương phối hợp một đòn; dùng Linh Kỹ khiến chân thân Trụ Vương phối hợp tấn công.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_sudaji"
+                    ]
+                }
+            ],
+            "realmMilestones": [
+                {
+                    "realm": "Theo lượng máu hiện tại",
+                    "unlocks": [
+                        {
+                            "label": "Các bậc triệu hồi Trụ Vương",
+                            "description": "Trên 70% máu gọi hồn hỏa hỗ trợ; trên 40% đến 70% gọi Trụ Vương Pháp Thân; từ 40% trở xuống gọi chân thân Trụ Vương.",
+                            "confidence": "confirmed",
+                            "evidence": [
+                                "local-handbook:3721846643@18.0.10:xd_sudaji",
+                                "local-runtime:3721846643@18.0.10:xd_sudaji"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "artifacts": [
+                {
+                    "label": "Bộ pháp bảo hỗ trợ",
+                    "description": "Thế Thân Mộc Điêu đổi máu lấy tái định vị; Ngư Long Đăng ổn định nhiệt độ và ánh sáng; Nhất Vũ Phương Hoa bảo vệ trước mưa, mưa axit, mưa đá mặt trăng và có thao tác làm khô.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_sudaji",
+                        "local-strings:3721859355:xd_sudaji"
+                    ]
+                }
+            ],
+            "sourceVersion": "18.0.10"
+        },
+        "xd_wangmazi": {
+            "roles": [
+                "Khống chế",
+                "Bùng nổ",
+                "Triệu hồi"
+            ],
+            "attackPattern": "Khống chế mục tiêu bằng Định Thân Thuật, sau đó kết hợp kỹ thuật diện rộng, triệu hồi và công cụ kết liễu.",
+            "range": "hybrid",
+            "complexity": "advanced",
+            "summary": "Vương Ma Tử có bộ kỹ thuật khống chế, sát thương bùng nổ và nhiều hình thức gọi trợ chiến.",
+            "strengths": [
+                "Có bất động mục tiêu, triệu hồi và sát thương khu vực.",
+                "Có không gian hồi phục và cơ chế thu hồn để gọi chiến đấu."
+            ],
+            "tradeoffs": [
+                "Bộ kỹ thuật có nhiều công cụ cần phối hợp.",
+                "Nguồn hiện tại chỉ xác nhận nhãn Trúc Cơ tiền kỳ, chưa ánh xạ an toàn từng kỹ năng."
+            ],
+            "firstSteps": [
+                "Mở giao tranh bằng Định Thân Thuật khi cần giữ mục tiêu.",
+                "Dùng triệu hồi để duy trì áp lực.",
+                "Giữ Khôn Cực Tiên cho mục tiêu đã xuống ngưỡng kết liễu."
+            ],
+            "combat": [
+                {
+                    "label": "Khống chế và phòng hộ",
+                    "description": "Định Thân Thuật tạm thời bất động mục tiêu; Thanh Quang Thuẫn tồn tại 60 giây và có 40% máu của nhân vật.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_wangmazi"
+                    ]
+                },
+                {
+                    "label": "Kỹ thuật tấn công",
+                    "description": "Lý Quảng Cung gây sát thương theo đường thẳng; Tàn Dạ liên tục gây sát thương bóng tối diện rộng; Khôn Cực Tiên gây dễ tổn thương và kết liễu quái dưới 7% máu.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_wangmazi"
+                    ]
+                },
+                {
+                    "label": "Triệu hồi",
+                    "description": "Rắc Đậu Thành Binh ném cự đậu binh tấn công liên tục; Xạ Thần Chiến Xa gọi ngẫu nhiên một hồn bướm; Sát Lục Tiên Quyết gọi phân thân Lục Mặc có thể kích hoạt Huyết Kiếm.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_wangmazi"
+                    ]
+                }
+            ],
+            "realmMilestones": [
+                {
+                    "realm": "Trúc Cơ tiền kỳ",
+                    "unlocks": [
+                        {
+                            "label": "Mốc đã xác nhận",
+                            "description": "Nhãn mở khóa Trúc Cơ tiền kỳ có trong bản dịch runtime cục bộ.",
+                            "confidence": "confirmed",
+                            "evidence": [
+                                "local-runtime:3721846643@18.0.10:xd_wangmazi"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "realm": "Chưa rõ ánh xạ kỹ năng",
+                    "unlocks": [
+                        {
+                            "label": "Kỹ năng theo Trúc Cơ",
+                            "description": "Nguồn đọc được chưa đủ để gán từng kỹ năng nêu trên vào nhãn Trúc Cơ tiền kỳ.",
+                            "confidence": "unknown",
+                            "evidence": [
+                                "local-handbook:3721846643@18.0.10:xd_wangmazi",
+                                "local-runtime:3721846643@18.0.10:xd_wangmazi"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "artifacts": [
+                {
+                    "label": "Thiên Nghịch Châu",
+                    "description": "Cung cấp không gian bên trong để hồi phục.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_wangmazi"
+                    ]
+                },
+                {
+                    "label": "Tôn Hồn Phiên",
+                    "description": "Hấp thụ linh hồn của sinh vật bị giết ở gần và triệu hồi chúng chiến đấu.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_wangmazi"
+                    ]
+                }
+            ],
+            "sourceVersion": "18.0.10"
+        },
+        "xd_wukong": {
+            "roles": [
+                "Cận chiến",
+                "Biến hóa",
+                "Khống chế"
+            ],
+            "attackPattern": "Đánh cận chiến, mở khóa Căn Khí bằng cách hạ yêu thú tương ứng, rồi phối hợp Linh Kỹ, Kỳ Thuật và biến hóa.",
+            "range": "melee",
+            "complexity": "advanced",
+            "summary": "Tôn Ngộ Không tiến triển qua Căn Khí, biến hóa và các kỹ thuật mở ở Trúc Cơ cùng Kết Đan.",
+            "strengths": [
+                "Có biến hóa, khống chế và phân thân ngoài.",
+                "Căn Khí cung cấp nhiều tiện ích sinh tồn và chiến đấu."
+            ],
+            "tradeoffs": [
+                "Biến hóa cần Như Ý Kim Cô Bổng.",
+                "Phải hạ đúng yêu thú để mở Căn Khí và hình thái tương ứng."
+            ],
+            "firstSteps": [
+                "Hạ yêu thú tương ứng để mở Căn Khí.",
+                "Dùng chuột phải cho Linh Kỹ và Alt + chuột phải cho Kỳ Thuật.",
+                "Trang bị Như Ý Kim Cô Bổng trước khi dùng R để biến hóa."
+            ],
+            "combat": [
+                {
+                    "label": "Căn Khí",
+                    "description": "Hạ yêu thú tương ứng để mở Căn Khí và hiệu ứng biến hóa; khi đủ toàn bộ Căn Khí, vòng kim cô nứt rõ ràng.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_wukong"
+                    ]
+                },
+                {
+                    "label": "Vũ khí sau tiến triển Căn Khí",
+                    "description": "Vũ khí đang cầm không thể bị đánh rơi sau khi đạt tiến triển Căn Khí tương ứng.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_wukong"
+                    ]
+                },
+                {
+                    "label": "Điều khiển kỹ thuật",
+                    "description": "Kỳ Thuật dùng Alt + chuột phải; Linh Kỹ dùng chuột phải; biến hóa dùng R và yêu cầu Như Ý Kim Cô Bổng.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_wukong",
+                        "local-runtime:3721846643@18.0.10:xd_wukong"
+                    ]
+                },
+                {
+                    "label": "Biến hóa tay không",
+                    "description": "Khi tay không, Alt + chuột phải biến thành thực thể đã chọn và cho ẩn thân tạm thời.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_wukong"
+                    ]
+                },
+                {
+                    "label": "Pháp Thân bên ngoài",
+                    "description": "Có thể sử dụng Định Thân Thuật và An Thân Thuật.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_wukong"
+                    ]
+                },
+                {
+                    "label": "Phần thưởng Căn Khí",
+                    "description": "Gồm cách nhiệt theo mùa, giảm 25% sát thương, giữ độ tươi, giữ ấm, phân thân ngoài 600 máu, hồi tinh thần và tăng 10% tốc độ di chuyển sau khi đủ mọi Căn Khí.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_wukong"
+                    ]
+                }
+            ],
+            "realmMilestones": [
+                {
+                    "realm": "Trúc Cơ",
+                    "unlocks": [
+                        {
+                            "label": "Đồng Đầu Thiết Tý",
+                            "description": "Linh Kỹ khởi đầu với Tụ Hình Tán Khí và mở Đồng Đầu Thiết Tý tại Trúc Cơ.",
+                            "confidence": "confirmed",
+                            "evidence": [
+                                "local-handbook:3721846643@18.0.10:xd_wukong",
+                                "local-runtime:3721846643@18.0.10:xd_wukong"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "realm": "Kết Đan",
+                    "unlocks": [
+                        {
+                            "label": "An Thân Thuật",
+                            "description": "Kỳ Thuật khởi đầu với Định Thân Thuật và mở An Thân Thuật tại Kết Đan.",
+                            "confidence": "confirmed",
+                            "evidence": [
+                                "local-handbook:3721846643@18.0.10:xd_wukong",
+                                "local-runtime:3721846643@18.0.10:xd_wukong"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "artifacts": [
+                {
+                    "label": "Như Ý Kim Cô Bổng",
+                    "description": "Là điều kiện để dùng biến hóa bằng phím R.",
+                    "confidence": "confirmed",
+                    "evidence": [
+                        "local-handbook:3721846643@18.0.10:xd_wukong",
+                        "local-strings:3721859355:xd_wukong"
+                    ]
+                }
+            ],
+            "sourceVersion": "18.0.10"
+        }
+    }
+}
