@@ -21,12 +21,12 @@ REPAIR_ATTEMPTS = [
 ]
 INTERNAL_DST_ROUTE = re.compile(r'''(?:^|["'\s(])/dst(?:/|\b)''', re.IGNORECASE)
 NOVA_ABSOLUTE_PATH = re.compile(
-    r"(?:[A-Za-z]:[\\/]|/(?:Users|home|private|var|tmp|opt)/)"
-    r"(?:[^\\/\s]+[\\/])*nova(?:[\\/]|$)",
+    r"^(?:/(?:[^/\s]+/)*nova(?:/[^/\s]+)*|"
+    r"[A-Za-z]:[\\/](?:[^\\/\s]+[\\/])*nova(?:[\\/][^\\/\s]+)*)[\\/]?$",
     re.IGNORECASE,
 )
 GUIDE_ASSET_SOURCE = re.compile(
-    r'''src=["'](?P<path>/assets/[^"'?#]+)''',
+    r'''src\s*=\s*["'](?P<path>/assets/[^"'?#]+)''',
     re.IGNORECASE,
 )
 
@@ -177,11 +177,14 @@ def _wiki_reference_issues(item: Mapping[str, Any], public_root: Path) -> List[s
 
 
 def _character_asset_issues(item: Mapping[str, Any], public_root: Path) -> List[str]:
-    if item.get("category") != "character":
-        return []
     character = item.get("character")
     if not isinstance(character, Mapping):
         return []
+    issues = []
+    if _contains_evidence(character):
+        issues.append("character_evidence_leak")
+    if item.get("category") != "character":
+        return issues
     portrait = character.get("portrait")
     portrait_path = portrait.get("path") if isinstance(portrait, Mapping) else None
     resolved_portrait = (
@@ -193,11 +196,7 @@ def _character_asset_issues(item: Mapping[str, Any], public_root: Path) -> List[
         resolved_portrait is None
         or not _image_signature(resolved_portrait)
     ):
-        issues = ["missing_character_portrait"]
-    else:
-        issues = []
-    if _contains_evidence(character):
-        issues.append("character_evidence_leak")
+        issues.append("missing_character_portrait")
     for field in ("startingItems", "artifacts"):
         equipment = character.get(field)
         if not isinstance(equipment, list):

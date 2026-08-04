@@ -210,6 +210,36 @@ class PublicationQualityTests(unittest.TestCase):
             )
         )
 
+    def test_publication_quality_rejects_evidence_in_mislabeled_character_mapping(self):
+        with tempfile.TemporaryDirectory() as tempdir:
+            items_path, guides_root, public_root = publication_fixture(Path(tempdir))
+            payload = json.loads(items_path.read_text(encoding="utf-8"))
+            payload["items"][0]["category"] = "other"
+            payload["items"][0]["character"]["evidence"] = ["private:dossier"]
+            items_path.write_text(json.dumps(payload), encoding="utf-8")
+
+            audit = audit_publication(items_path, guides_root, public_root)
+
+        self.assertTrue(
+            any(
+                issue["code"] == "character_evidence_leak"
+                for issue in audit["issues"]
+            )
+        )
+
+    def test_mislabeled_character_mapping_does_not_require_character_assets(self):
+        with tempfile.TemporaryDirectory() as tempdir:
+            items_path, guides_root, public_root = publication_fixture(Path(tempdir))
+            payload = json.loads(items_path.read_text(encoding="utf-8"))
+            payload["items"][0]["category"] = "other"
+            items_path.write_text(json.dumps(payload), encoding="utf-8")
+
+            audit = audit_publication(items_path, guides_root, public_root)
+            codes = {issue["code"] for issue in audit["issues"]}
+
+        self.assertNotIn("missing_character_portrait", codes)
+        self.assertNotIn("missing_character_equipment_asset", codes)
+
     def test_publication_quality_allows_evidence_outside_character_dossier(self):
         with tempfile.TemporaryDirectory() as tempdir:
             items_path, guides_root, public_root = publication_fixture(Path(tempdir))
@@ -273,7 +303,7 @@ class PublicationQualityTests(unittest.TestCase):
             any(issue["code"] == "missing_wiki_asset" for issue in audit["issues"])
         )
 
-    def test_publication_quality_rejects_missing_referenced_guide_asset(self):
+    def test_publication_quality_rejects_missing_guide_asset_with_html_attribute_spacing(self):
         with tempfile.TemporaryDirectory() as tempdir:
             items_path, guides_root, public_root = publication_fixture(Path(tempdir))
             cover_path = public_root / "assets" / "guides" / "cover.png"
@@ -301,7 +331,7 @@ class PublicationQualityTests(unittest.TestCase):
                     {
                         "sections": [
                             {
-                                "html": '<img src="/assets/guides/missing.png">',
+                                "html": "<img SRC = '/assets/guides/missing.png'>",
                             }
                         ]
                     }
@@ -394,16 +424,43 @@ class PublicationQualityTests(unittest.TestCase):
             )
         )
 
-    def test_publication_quality_rejects_nova_absolute_path(self):
+    def test_publication_quality_rejects_nova_absolute_path_under_arbitrary_roots(self):
+        for nova_path in (
+            "/Users/nyx/company/nova/storage/app/wiki.json",
+            "/workspace/nova/public/data/items.json",
+            "/srv/nova/public/data/items.json",
+            "/Volumes/build/nova/public/data/items.json",
+            r"C:\build\nova\public\data\items.json",
+        ):
+            with self.subTest(nova_path=nova_path):
+                with tempfile.TemporaryDirectory() as tempdir:
+                    items_path, guides_root, public_root = publication_fixture(
+                        Path(tempdir)
+                    )
+                    payload = json.loads(items_path.read_text(encoding="utf-8"))
+                    payload["sourcePath"] = nova_path
+                    items_path.write_text(json.dumps(payload), encoding="utf-8")
+
+                    audit = audit_publication(items_path, guides_root, public_root)
+
+                self.assertTrue(
+                    any(
+                        issue["code"] == "nova_absolute_path_leak"
+                        for issue in audit["issues"]
+                    )
+                )
+
+    def test_publication_quality_allows_nova_in_urls_and_prose(self):
         with tempfile.TemporaryDirectory() as tempdir:
             items_path, guides_root, public_root = publication_fixture(Path(tempdir))
             payload = json.loads(items_path.read_text(encoding="utf-8"))
-            payload["sourcePath"] = "/Users/nyx/company/nova/storage/app/wiki.json"
+            payload["sourceUrl"] = "https://example.com/workspace/nova/items.json"
+            payload["note"] = "Nova is the former host application name."
             items_path.write_text(json.dumps(payload), encoding="utf-8")
 
             audit = audit_publication(items_path, guides_root, public_root)
 
-        self.assertTrue(
+        self.assertFalse(
             any(
                 issue["code"] == "nova_absolute_path_leak"
                 for issue in audit["issues"]
