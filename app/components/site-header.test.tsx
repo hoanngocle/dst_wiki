@@ -21,3 +21,11 @@ it("links the standalone navigation to Items, Nhân vật, and Hướng dẫn", 
   expect(screen.queryByRole("link", { name: "Base" })).toBeNull();
   expect(container.innerHTML).not.toContain("/dst");
 });
+
+it("keeps vertical room for navigation link focus rings inside the scroll area", () => {
+  render(<SiteHeader active="items" />);
+
+  expect(screen.getByRole("navigation", { name: /điều hướng chính/i }).className).toContain(
+    "py-1",
+  );
+});

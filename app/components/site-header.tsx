@@ -23,7 +23,7 @@ export function SiteHeader({ active }: { active: SiteSection }) {
         </Link>
         <nav
           aria-label="Điều hướng chính"
-          className="-mx-2 flex max-w-full items-center gap-1 overflow-x-auto px-2"
+          className="-mx-2 flex max-w-full items-center gap-1 overflow-x-auto px-2 py-1"
         >
           {links.map((link) => {
             const selected = active === link.id;
