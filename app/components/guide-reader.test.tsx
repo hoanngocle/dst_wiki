@@ -26,6 +26,7 @@ const guide: GuideDetail = {
 
 it("renders a dedicated article with cover, toc, sections, and source attribution", () => {
   render(<GuideReader guide={guide} />);
+  expect(screen.getByTestId("guide-article").className).toContain("bg-nova-surface");
   expect(screen.getByRole("heading", { name: "Thuần hóa Beefalo", level: 1 })).toBeDefined();
   expect(screen.queryByText("Taming a Beefalo")).toBeNull();
   expect(screen.getByRole("navigation", { name: "Mục lục hướng dẫn" })).toBeDefined();

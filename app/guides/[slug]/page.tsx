@@ -3,23 +3,10 @@ import { notFound } from "next/navigation";
 
 import { GuideReader } from "@/app/components/guide-reader";
 import { SiteHeader } from "@/app/components/site-header";
-import { parseGuideDetail, parseGuideIndex } from "@/app/lib/guide-catalog";
-import guideIndexPayload from "@/public/data/guides/index.json";
-import giantsPayload from "@/public/data/guides/pages/how-to-kill-the-giants-in-dst.json";
-import basePayload from "@/public/data/guides/pages/maximum-efficiency-day-13-base-dst-guide.json";
-import slimePayload from "@/public/data/guides/pages/slurtle-slime-guide.json";
-import beefaloPayload from "@/public/data/guides/pages/taming-a-beefalo.json";
+import { findGuide, guideSlugs } from "@/app/lib/guide-content";
 
-const index = parseGuideIndex(guideIndexPayload);
-const details = new Map(
-  [giantsPayload, basePayload, slimePayload, beefaloPayload].map((payload) => {
-    const guide = parseGuideDetail(payload);
-    return [guide.slug, guide] as const;
-  }),
-);
-
-export function generateStaticParams() {
-  return index.guides.map((guide) => ({ slug: guide.slug }));
+export function generateStaticParams(): { slug: string }[] {
+  return guideSlugs().map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -28,8 +15,10 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const guide = details.get(slug);
-  if (!guide) return {};
+  const guide = findGuide(slug);
+  if (!guide) {
+    return {};
+  }
   return {
     title: `${guide.titleVi} | Guide DST`,
     description: guide.summaryVi,
@@ -47,11 +36,13 @@ export default async function GuidePage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const guide = details.get(slug);
-  if (!guide) notFound();
+  const guide = findGuide(slug);
+  if (!guide) {
+    notFound();
+  }
 
   return (
-    <div className="min-h-[100dvh] bg-[#edf1f5] text-[#14233b]">
+    <div className="min-h-[100dvh] bg-nova-bg text-nova-text">
       <SiteHeader active="guides" />
       <GuideReader guide={guide} />
     </div>

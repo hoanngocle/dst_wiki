@@ -1,0 +1,13 @@
+import { render, screen, within } from "@testing-library/react";
+import { expect, it } from "vitest";
+
+import CultivationGuidePage from "./page";
+
+it("renders the dedicated cultivation table from the static item catalog", () => {
+  render(<CultivationGuidePage />);
+
+  expect(screen.getByRole("link", { name: /Trở lại thư viện Guide/ }).getAttribute("href")).toBe("/guides");
+  const table = screen.getByRole("table", { name: "Thứ tự cảnh giới Tu Tiên" });
+  expect(within(table).getAllByRole("row")).toHaveLength(16);
+  expect(within(table).getByRole("row", { name: /Cảnh giới 15: Hóa Thần Hậu Kỳ → Phản Hư Sơ Kỳ/ })).toBeDefined();
+});

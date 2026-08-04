@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 
 import { filterGuides, parseGuideDetail, parseGuideIndex } from "./guide-catalog";
 
@@ -22,6 +22,10 @@ const entry = {
 };
 
 describe("guide catalog contract", () => {
+  afterEach(() => {
+    vi.unstubAllGlobals();
+  });
+
   it("parses a strict index and detail payload", () => {
     const index = parseGuideIndex({ schemaVersion: 1, count: 1, guides: [entry] });
     const detail = parseGuideDetail({
@@ -62,6 +66,99 @@ describe("guide catalog contract", () => {
     expect(() =>
       parseGuideIndex({ schemaVersion: 1, count: 1, guides: [{ ...entry, summaryVi: "" }] }),
     ).toThrow(/summaryVi/);
+  });
+
+  it("rejects guide covers and article assets outside the published guide directory", () => {
+    expect(() =>
+      parseGuideIndex({
+        schemaVersion: 1,
+        count: 1,
+        guides: [{ ...entry, cover: { ...entry.cover, src: "/assets/wiki/beefalo.jpg" } }],
+      }),
+    ).toThrow(/local Guide asset/);
+    expect(() =>
+      parseGuideIndex({
+        schemaVersion: 1,
+        count: 1,
+        guides: [{ ...entry, cover: { ...entry.cover, src: "/assets/guides/../wiki/beefalo.jpg" } }],
+      }),
+    ).toThrow(/local Guide asset/);
+
+    expect(() =>
+      parseGuideDetail({
+        ...entry,
+        schemaVersion: 1,
+        revision: { id: 7, timestamp: "2026-07-22", sha1: "sha" },
+        toc: [],
+        sections: [
+          {
+            id: "bat-dau",
+            heading: "Bắt đầu",
+            level: 2,
+            html: '<img src="/assets/wiki/not-a-guide.png" alt="Không hợp lệ">',
+          },
+        ],
+      }),
+    ).toThrow(/local Guide asset/);
+  });
+
+  it("rejects executable markup before a guide section reaches the renderer", () => {
+    expect(() =>
+      parseGuideDetail({
+        ...entry,
+        schemaVersion: 1,
+        revision: { id: 7, timestamp: "2026-07-22", sha1: "sha" },
+        toc: [],
+        sections: [
+          {
+            id: "bat-dau",
+            heading: "Bắt đầu",
+            level: 2,
+            html: "<script>alert(1)</script>",
+          },
+        ],
+      }),
+    ).toThrow(/markup outside|disallowed script element/);
+  });
+
+  it("rejects entity-obscured executable guide links", () => {
+    expect(() =>
+      parseGuideDetail({
+        ...entry,
+        schemaVersion: 1,
+        revision: { id: 7, timestamp: "2026-07-22", sha1: "sha" },
+        toc: [],
+        sections: [
+          {
+            id: "bat-dau",
+            heading: "Bắt đầu",
+            level: 2,
+            html: '<a href="java&#x73;cript:alert(1)">Không hợp lệ</a>',
+          },
+        ],
+      }),
+    ).toThrow(/non-HTTP href/);
+  });
+
+  it("validates published guide HTML during server static generation", () => {
+    vi.stubGlobal("DOMParser", undefined);
+
+    expect(() =>
+      parseGuideDetail({
+        ...entry,
+        schemaVersion: 1,
+        revision: { id: 7, timestamp: "2026-07-22", sha1: "sha" },
+        toc: [],
+        sections: [
+          {
+            id: "bat-dau",
+            heading: "Bắt đầu",
+            level: 2,
+            html: "<p>Nội dung tĩnh.</p>",
+          },
+        ],
+      }),
+    ).not.toThrow();
   });
 
   it("removes noisy and orphaned table-of-contents rows", () => {

@@ -33,6 +33,7 @@ const guides: GuideListEntry[] = [
 
 it("searches, filters, resets, and links to dedicated Guide pages", () => {
   render(<GuideBrowser guides={guides} />);
+  expect(screen.getByTestId("guide-filter-panel").className).toContain("bg-nova-surface");
   expect(screen.getByText("2 hướng dẫn")).toBeDefined();
   expect(screen.getByRole("link", { name: /Thuần hóa Beefalo/ }).getAttribute("href")).toBe(
     "/guides/beefalo",

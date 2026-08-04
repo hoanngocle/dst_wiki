@@ -35,6 +35,21 @@ export type GuideDetail = GuideListEntry & {
   sections: readonly GuideSection[];
 };
 
+const allowedGuideTags = new Set([
+  "a", "aside", "b", "blockquote", "br", "code", "dd", "div", "dl", "dt",
+  "em", "figcaption", "figure", "h1", "h2", "h3", "h4", "h5", "h6", "hr",
+  "i", "img", "li", "ol", "p", "pre", "section", "small", "span", "strong",
+  "sub", "sup", "table", "tbody", "td", "th", "thead", "tr", "u", "ul",
+]);
+const blockedGuideTags = new Set(["embed", "iframe", "object", "script", "style", "template"]);
+const blockedGuideClasses = new Set([
+  "catlinks", "mw-editsection", "navbox", "navbox-styles", "noexcerpt", "printfooter",
+]);
+const allowedGuideAttributes = new Set([
+  "alt", "class", "colspan", "height", "href", "id", "loading", "rel", "rowspan",
+  "src", "target", "title", "width",
+]);
+
 function record(value: unknown, label: string): Record<string, unknown> {
   if (typeof value !== "object" || value === null || Array.isArray(value)) {
     throw new Error(`${label} must be an object`);
@@ -56,12 +71,111 @@ function integer(value: unknown, label: string): number {
   return value;
 }
 
+function localGuideAsset(value: string, label: string): string {
+  if (
+    !value.startsWith("/assets/guides/") ||
+    value.includes("..") ||
+    value.includes("\\") ||
+    value.includes("?") ||
+    value.includes("#")
+  ) {
+    throw new Error(`${label} must be a local Guide asset`);
+  }
+  return value;
+}
+
+function guideHtml(value: unknown, label: string): string {
+  const html = text(value, label);
+  const tagPattern = /<\s*(\/)?\s*([a-z][a-z0-9-]*)\b([^<>]*)>/gi;
+  let lastIndex = 0;
+
+  for (const match of html.matchAll(tagPattern)) {
+    const index = match.index ?? 0;
+    const unmatchedMarkup = html.slice(lastIndex, index).includes("<");
+    if (unmatchedMarkup) {
+      throw new Error(`${label} contains markup outside the sanitizer allowlist`);
+    }
+    lastIndex = index + match[0].length;
+
+    const closing = match[1] === "/";
+    const tag = match[2].toLowerCase();
+    if (blockedGuideTags.has(tag) || !allowedGuideTags.has(tag)) {
+      throw new Error(`${label} contains a disallowed ${tag} element`);
+    }
+
+    const attributes = match[3];
+    if (closing) {
+      if (attributes.trim()) {
+        throw new Error(`${label} contains markup outside the sanitizer allowlist`);
+      }
+      continue;
+    }
+
+    let attributeIndex = 0;
+    while (attributeIndex < attributes.length) {
+      const rest = attributes.slice(attributeIndex);
+      const whitespace = /^\s+/.exec(rest);
+      if (whitespace) {
+        attributeIndex += whitespace[0].length;
+        continue;
+      }
+      if (rest === "/") {
+        break;
+      }
+
+      const attribute = /^([a-z][a-z0-9-]*)\s*=\s*("[^"]*"|'[^']*')/i.exec(rest);
+      if (!attribute) {
+        throw new Error(`${label} contains markup outside the sanitizer allowlist`);
+      }
+
+      const name = attribute[1].toLowerCase();
+      const rawValue = attribute[2];
+      const attributeValue = rawValue.slice(1, -1);
+      attributeIndex += attribute[0].length;
+
+      if (name.startsWith("on") || !allowedGuideAttributes.has(name)) {
+        throw new Error(`${label} contains a disallowed ${name} attribute`);
+      }
+
+      if (name === "class") {
+        const classTokens = attributeValue.split(/\s+/).filter(Boolean);
+        if (classTokens.some((className) => blockedGuideClasses.has(className))) {
+          throw new Error(`${label} contains a blocked Wiki class`);
+        }
+      }
+
+      if (name === "src") {
+        localGuideAsset(attributeValue, `${label} src`);
+      }
+
+      if (name === "href") {
+        const href = attributeValue;
+        if (href.includes("&")) {
+          throw new Error(`${label} contains a non-HTTP href URL`);
+        }
+        let url: URL;
+        try {
+          url = new URL(href);
+        } catch {
+          throw new Error(`${label} contains a non-HTTP href URL`);
+        }
+        if (url.protocol !== "http:" && url.protocol !== "https:") {
+          throw new Error(`${label} contains a non-HTTP href URL`);
+        }
+      }
+    }
+  }
+
+  if (html.slice(lastIndex).includes("<")) {
+    throw new Error(`${label} contains markup outside the sanitizer allowlist`);
+  }
+
+  return html;
+}
+
 function parseCover(value: unknown): GuideCover {
   const cover = record(value, "guide cover");
-  const src = text(cover.src, "guide cover src");
-  if (!src.startsWith("/assets/guides/")) {
-    throw new Error("guide cover src must be a local Guide asset");
-  }
+  const src = localGuideAsset(text(cover.src, "guide cover src"), "guide cover src");
   return {
     src,
     alt: text(cover.alt, "guide cover alt"),
@@ -146,7 +260,7 @@ export function parseGuideDetail(value: unknown): GuideDetail {
       id: text(row.id, `guide section ${index} id`),
       heading: text(row.heading, `guide section ${index} heading`),
       level: integer(row.level, `guide section ${index} level`),
-      html: text(row.html, `guide section ${index} html`),
+      html: guideHtml(row.html, `guide section ${index} html`),
     };
   });
   if (!sections.length) throw new Error("guide detail sections must not be empty");

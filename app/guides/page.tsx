@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
+import { DstHero } from "@/app/components/dst-hero";
+import { DstPageShell } from "@/app/components/dst-page-shell";
+import { DstPanel } from "@/app/components/dst-panel";
 import { GuideBrowser } from "@/app/components/guide-browser";
 import { SiteHeader } from "@/app/components/site-header";
 import { parseGuideIndex } from "@/app/lib/guide-catalog";
@@ -14,22 +18,37 @@ const index = parseGuideIndex(guidePayload);
 
 export default function GuidesPage() {
   return (
-    <div className="min-h-[100dvh] bg-[#edf1f5] text-[#14233b]">
+    <div className="min-h-[100dvh] bg-nova-bg text-nova-text">
       <SiteHeader active="guides" />
-      <main className="mx-auto max-w-7xl px-4 py-9 sm:px-6 sm:py-12 lg:px-8">
-        <div className="grid gap-8 border-b border-[#c7d2df] pb-9 lg:grid-cols-[minmax(0,1fr)_20rem] lg:items-end">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#2e5fb3]">Sổ tay DST</p>
-            <h1 className="mt-3 max-w-3xl text-4xl font-semibold leading-[1.04] tracking-[-0.04em] text-[#14233b] sm:text-5xl">Guide thực chiến, đọc riêng từng bài</h1>
-            <p className="mt-4 max-w-[65ch] text-base leading-7 text-[#53647a]">Nội dung áp dụng cho Don&apos;t Starve Together, có ảnh nguồn và thông tin phiên bản đã kiểm tra.</p>
-          </div>
-          <dl className="grid grid-cols-2 overflow-hidden rounded-2xl border border-[#c7d2df] bg-[#f8fafc]">
-            <div className="border-r border-[#d7dfe8] p-4"><dt className="text-xs text-[#607188]">Bài đã duyệt</dt><dd className="mt-1 text-2xl font-semibold">{index.count}</dd></div>
-            <div className="p-4"><dt className="text-xs text-[#607188]">Phạm vi</dt><dd className="mt-1 text-2xl font-semibold">DST</dd></div>
-          </dl>
+      <DstPageShell>
+        <div className="px-4 py-9 sm:px-6 sm:py-12 lg:px-8">
+          <DstHero
+            testId="guide-library-hero"
+            eyebrow="Sổ tay DST"
+            title="Guide thực chiến, đọc riêng từng bài"
+            description="Các bài từ Wiki gốc cùng Guide Tu Tiên chuyên biệt."
+            stats={[
+              { label: "Bài đã duyệt", value: index.count + 1 },
+              { label: "Phạm vi", value: "DST" },
+            ]}
+            statsAriaLabel="Tổng quan thư viện Guide"
+          />
+          <DstPanel className="mt-6 overflow-hidden p-5 sm:p-6">
+            <Link
+              href="/guides/canh-gioi-tu-tien"
+              className="group flex min-h-11 items-center justify-between gap-4 rounded-xl border border-nova-accent/30 bg-nova-accent/10 p-4 transition hover:border-nova-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nova-accent"
+            >
+              <span>
+                <span className="block text-xs font-semibold tracking-[0.14em] text-nova-accent uppercase">Tu Tiên</span>
+                <span className="mt-1 block text-lg font-semibold text-nova-text">Cảnh giới Tu Tiên</span>
+                <span className="mt-1 block text-sm text-nova-muted">15 lần thăng cấp, đan dược và nguyên liệu tương ứng.</span>
+              </span>
+              <span aria-hidden="true" className="shrink-0 text-nova-accent transition group-hover:translate-x-1">→</span>
+            </Link>
+            <GuideBrowser guides={index.guides} />
+          </DstPanel>
         </div>
-        <GuideBrowser guides={index.guides} />
-      </main>
+      </DstPageShell>
     </div>
   );
 }

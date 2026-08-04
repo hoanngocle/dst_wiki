@@ -5,6 +5,8 @@ import base from "@/public/data/guides/pages/maximum-efficiency-day-13-base-dst-
 import slime from "@/public/data/guides/pages/slurtle-slime-guide.json";
 import beefalo from "@/public/data/guides/pages/taming-a-beefalo.json";
 
+import { findGuide, guideSlugs } from "./guide-content";
+
 const guides = [giants, base, slime, beefalo];
 
 describe("published Guide translations", () => {
@@ -20,5 +22,17 @@ describe("published Guide translations", () => {
     expect(articleText).not.toMatch(/\b(?:This guide|Taming a Beefalo|Process of Taming|Statistics and Tendencies)\b/);
     expect(tocLabels).not.toContain("Contents");
     expect(tocLabels.every((label) => !label.endsWith("[]"))).toBe(true);
+  });
+
+  it("publishes exactly the reviewed article registry in index order", () => {
+    expect(guideSlugs()).toEqual([
+      "how-to-kill-the-giants-in-dst",
+      "maximum-efficiency-day-13-base-dst-guide",
+      "slurtle-slime-guide",
+      "taming-a-beefalo",
+    ]);
+    expect(findGuide("taming-a-beefalo")?.titleVi).toBe("Thuần hóa Beefalo");
+    expect(findGuide("canh-gioi-tu-tien")).toBeUndefined();
+    expect(findGuide("unpublished-guide")).toBeUndefined();
   });
 });
