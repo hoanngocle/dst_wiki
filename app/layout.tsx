@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   ),
   title: "DST Wiki | Don't Starve Together",
-  description: "Tra cứu vật phẩm, nhân vật và hướng dẫn Don't Starve Together.",
+  description: "Tra cứu vật phẩm, nhân vật và cảnh giới Tu Tiên trong Don't Starve Together.",
 };
 
 export default function RootLayout({

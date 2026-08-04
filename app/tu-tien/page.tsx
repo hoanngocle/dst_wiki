@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 
 import { DstHero } from "@/app/components/dst-hero";
 import { DstPageShell } from "@/app/components/dst-page-shell";
@@ -64,25 +63,20 @@ function StageRow({ stage }: { stage: CultivationStage }) {
 export default function CultivationGuidePage() {
   return (
     <div className="min-h-[100dvh] bg-nova-bg text-nova-text">
-      <SiteHeader active="guides" />
+      <SiteHeader active="tu-tien" />
       <DstPageShell>
         <div className="px-4 py-9 sm:px-6 sm:py-12 lg:px-8">
-          <Link href="/guides" className="inline-flex min-h-11 items-center rounded-lg text-sm font-semibold text-nova-accent underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nova-accent">
-            ← Trở lại thư viện Guide
-          </Link>
-          <div className="mt-5">
-            <DstHero
-              testId="cultivation-hero"
-              eyebrow="Tu Tiên · Thứ tự tu luyện"
-              title="Cảnh giới Tu Tiên"
-              description="Lộ trình 15 lần thăng cấp, từ cảnh giới hiện tại qua đan dược tương ứng đến cảnh giới đạt được."
-              stats={[
-                { label: "Bước thăng cấp", value: stages.length },
-                { label: "Mốc đột phá", value: stages.filter((stage) => stage.breakthrough).length },
-              ]}
-              statsAriaLabel="Tổng quan lộ trình Tu Tiên"
-            />
-          </div>
+          <DstHero
+            testId="cultivation-hero"
+            eyebrow="Tu Tiên · Thứ tự tu luyện"
+            title="Cảnh giới Tu Tiên"
+            description="Lộ trình 15 lần thăng cấp, từ cảnh giới hiện tại qua đan dược tương ứng đến cảnh giới đạt được."
+            stats={[
+              { label: "Bước thăng cấp", value: stages.length },
+              { label: "Mốc đột phá", value: stages.filter((stage) => stage.breakthrough).length },
+            ]}
+            statsAriaLabel="Tổng quan lộ trình Tu Tiên"
+          />
           <p className="mt-8 text-sm leading-6 text-nova-muted">Công thức Đoán Thể Hoàn đã bổ sung Vòi Voi theo dữ liệu đã kiểm tra.</p>
           <DstPanel className="mt-3 overflow-hidden">
             <div role="table" aria-label="Thứ tự cảnh giới Tu Tiên" className="border border-nova-border bg-nova-surface">

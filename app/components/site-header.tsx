@@ -2,15 +2,16 @@ import Link from "next/link";
 
 import { cn } from "@/app/lib/cn";
 
-type SiteSection = "items" | "characters" | "base" | "guides";
+type SiteSection = "items" | "characters" | "tu-tien";
+type LegacySiteSection = "base" | "guides";
 
 const links = [
   { id: "items", href: "/", label: "Vật phẩm" },
   { id: "characters", href: "/characters", label: "Nhân vật" },
-  { id: "guides", href: "/guides", label: "Hướng dẫn" },
+  { id: "tu-tien", href: "/tu-tien", label: "Cảnh giới Tu Tiên" },
 ] as const;
 
-export function SiteHeader({ active }: { active: SiteSection }) {
+export function SiteHeader({ active }: { active: SiteSection | LegacySiteSection }) {
   return (
     <header className="border-b border-nova-border bg-nova-surface-raised/95 text-nova-text backdrop-blur">
       <div className="mx-auto flex min-h-16 max-w-7xl flex-wrap items-center justify-between gap-x-4 px-4 py-2 sm:px-6 lg:px-8">
@@ -36,7 +37,7 @@ export function SiteHeader({ active }: { active: SiteSection }) {
                 className={cn(
                   "inline-flex min-h-11 items-center rounded-full px-4 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nova-accent focus-visible:ring-offset-2 focus-visible:ring-offset-nova-bg",
                   selected
-                    ? "bg-nova-accent text-[#07101e]"
+                    ? "bg-nova-accent text-white"
                     : "text-nova-muted hover:bg-nova-surface-soft hover:text-nova-text",
                 )}
               >
