@@ -128,6 +128,19 @@ describe("parseWikiPageDetail", () => {
     ).toBe(summaryViHtml);
   });
 
+  it("accepts the tags, attributes, and HTTP URLs emitted by the Wiki sanitizer", () => {
+    const html = [
+      '<section id="overview" class="wiki-section">',
+      '<h2 title="Overview">Overview</h2>',
+      '<a href="https://dontstarve.wiki.gg/wiki/Halberd">',
+      '<img src="https://dontstarve.wiki.gg/images/halberd.png" alt="Halberd" width="64" height="64">',
+      "</a><br><table><tbody><tr><th colspan=\"2\">Stats</th></tr></tbody></table>",
+      "</section>",
+    ].join("");
+
+    expect(parseWikiPageDetail({ ...validDetail, html }).html).toBe(html);
+  });
+
   it("parses normalized Drop table and Usage sections", () => {
     const parsed = parseWikiPageDetail({ ...validDetail, normalized });
 
@@ -180,6 +193,11 @@ describe("parseWikiPageDetail", () => {
       ...validDetail,
       summaryViHtml: '<a href="javascript:alert(1)">Unsafe</a>',
     },
+    {
+      ...validDetail,
+      html: '<a href="java&#x73;cript:alert(1)">Unsafe</a>',
+    },
+    { ...validDetail, html: "<img/onerror=alert(1)>" },
   ])("rejects an invalid detail contract", (value) => {
     expect(() => parseWikiPageDetail(value)).toThrow();
   });

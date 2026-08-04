@@ -165,6 +165,23 @@ describe("filterItems", () => {
     expect(filterItems(items, "", "all", "all", "all")).toEqual(items);
   });
 
+  it("keeps Tu Tiên creatures visible when the source filter is narrowed", () => {
+    const tuTienMob: ItemListEntry = {
+      ...items[0],
+      id: "tu_tien:xd_spirit_beast",
+      prefabId: "xd_spirit_beast",
+      category: "mob",
+      name: "Linh thú",
+    };
+
+    expect(filterItems([tuTienMob], "", "all", "all", "all")).toEqual([
+      tuTienMob,
+    ]);
+    expect(filterItems([tuTienMob], "", "tu_tien", "all", "all")).toEqual([
+      tuTienMob,
+    ]);
+  });
+
   it.each([
     "kiem",
     "test sword",

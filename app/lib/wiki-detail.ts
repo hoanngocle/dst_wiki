@@ -70,13 +70,61 @@ function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
 
-const unsafeWikiHtmlPattern =
-  /<(?:script|iframe|object|embed)\b|(?:^|\s)on[a-z]+\s*=|(?:href|src)\s*=\s*["']?\s*javascript:/i;
+const allowedWikiTags = new Set([
+  "a", "aside", "b", "blockquote", "br", "code", "dd", "div", "dl", "dt",
+  "em", "figcaption", "figure", "h1", "h2", "h3", "h4", "h5", "h6", "hr",
+  "i", "img", "li", "ol", "p", "pre", "section", "small", "span", "strong",
+  "sub", "sup", "table", "tbody", "td", "th", "thead", "tr", "u", "ul",
+]);
+const blockedWikiTags = new Set([
+  "embed", "iframe", "object", "script", "style", "template",
+]);
+const blockedWikiClasses = new Set([
+  "catlinks", "mw-editsection", "navbox", "navbox-styles", "noexcerpt", "printfooter",
+]);
+const allowedWikiAttributes = new Set([
+  "alt", "class", "colspan", "height", "href", "id", "rowspan", "src", "title", "width",
+]);
+
+function validateWikiElement(element: Element, context: string): void {
+  const tag = element.localName.toLowerCase();
+  if (blockedWikiTags.has(tag) || !allowedWikiTags.has(tag)) {
+    throw new Error(`${context} contains a disallowed ${tag} element`);
+  }
+
+  const classTokens = element.getAttribute("class")?.split(/\s+/).filter(Boolean) ?? [];
+  if (classTokens.some((className) => blockedWikiClasses.has(className))) {
+    throw new Error(`${context} contains a blocked Wiki class`);
+  }
+
+  for (const attribute of element.getAttributeNames()) {
+    const name = attribute.toLowerCase();
+    if (name.startsWith("on") || !allowedWikiAttributes.has(name)) {
+      throw new Error(`${context} contains a disallowed ${name} attribute`);
+    }
+    if (name === "href" || name === "src") {
+      const value = element.getAttribute(attribute) ?? "";
+      let url: URL;
+      try {
+        url = new URL(value);
+      } catch {
+        throw new Error(`${context} contains a non-HTTP ${name} URL`);
+      }
+      if (url.protocol !== "http:" && url.protocol !== "https:") {
+        throw new Error(`${context} contains a non-HTTP ${name} URL`);
+      }
+    }
+  }
+}
 
 function trustedWikiHtml(value: unknown, context: string): string {
   const html = requiredString(value, context);
-  if (unsafeWikiHtmlPattern.test(html)) {
-    throw new Error(`${context} must contain sanitized HTML`);
+  const document = new DOMParser().parseFromString(html, "text/html");
+  if (document.head.children.length > 0 || document.body.getAttributeNames().length > 0) {
+    throw new Error(`${context} contains markup outside the sanitizer allowlist`);
+  }
+  for (const element of document.body.querySelectorAll("*")) {
+    validateWikiElement(element, context);
   }
   return html;
 }

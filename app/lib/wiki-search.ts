@@ -224,17 +224,10 @@ export function filterItems(
   return items.filter((item) => {
     const matchesSource = source === "all" || item.namespace === source;
     const matchesCategory = matchesCatalogCategory(item, category);
-    const isExcludedTuTienCreature =
-      source === "tu_tien" && getItemGameCategories(item).includes("creatures");
     const matchesAvailability =
       availability === "all" ||
       (availability === "recipe" ? item.recipe !== null : item.sprite !== null);
-    if (
-      !matchesSource ||
-      !matchesCategory ||
-      !matchesAvailability ||
-      isExcludedTuTienCreature
-    ) {
+    if (!matchesSource || !matchesCategory || !matchesAvailability) {
       return false;
     }
     if (!normalizedQuery) return true;

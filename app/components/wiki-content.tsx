@@ -61,6 +61,9 @@ export function WikiContent({
           throw new Error(`wiki detail request failed: ${response.status}`);
         }
         const detail = parseWikiPageDetail(await response.json());
+        if (detail.pageId !== pageId) {
+          throw new Error("wiki detail response pageId does not match the request");
+        }
         if (active) setState({ status: "ready", pageId, detail });
       } catch (error) {
         if (active && !(error instanceof DOMException && error.name === "AbortError")) {

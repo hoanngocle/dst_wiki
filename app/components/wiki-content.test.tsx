@@ -82,6 +82,21 @@ describe("WikiContent", () => {
     expect(document.querySelector("script")).toBeNull();
   });
 
+  it("rejects a valid Wiki payload for a different page identity", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: async () => ({ ...detail, pageId: 100736 }),
+      }),
+    );
+
+    render(<WikiContent pageId={105588} canonicalUrl={detail.canonicalUrl} />);
+
+    expect(await screen.findByText("Không tải được bài viết Wiki")).toBeDefined();
+    expect(screen.queryByText("Nội dung Wiki tĩnh.")).toBeNull();
+  });
+
   it("aborts the stale page request when the identity changes", () => {
     const signals: AbortSignal[] = [];
     vi.stubGlobal(
