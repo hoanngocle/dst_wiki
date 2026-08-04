@@ -1685,6 +1685,8 @@ return Prefab("slurtle", mobfn), Prefab("snurtle", mobfn)
                 mob_audit_path=mob_audit,
                 mob_groups_path=mob_groups,
                 mob_wiki_path=mob_wiki,
+                character_profiles_path=None,
+                character_guides_path=None,
             )
 
     def test_export_cli_exposes_item_detail_paths(self):

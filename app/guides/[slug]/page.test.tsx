@@ -8,9 +8,14 @@ const { notFound } = vi.hoisted(() => ({
 
 vi.mock("next/navigation", () => ({ notFound }));
 
-import GuidePage, { generateMetadata, generateStaticParams } from "./page";
+import GuidePage, {
+  dynamicParams,
+  generateMetadata,
+  generateStaticParams,
+} from "./page";
 
 it("builds only the four reviewed JSON guide routes", () => {
+  expect(dynamicParams).toBe(false);
   expect(generateStaticParams()).toEqual([
     { slug: "how-to-kill-the-giants-in-dst" },
     { slug: "maximum-efficiency-day-13-base-dst-guide" },

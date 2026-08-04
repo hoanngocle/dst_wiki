@@ -81,6 +81,25 @@ def publication_fixture(tmp_path):
     return items_path, guides_root, public_root
 
 
+def add_wiki_reference(items_path, public_root, page_id=42, images=None):
+    payload = json.loads(items_path.read_text(encoding="utf-8"))
+    payload["items"][0]["wiki"] = {
+        "pageId": page_id,
+        "detailUrl": f"/data/wiki/pages/{page_id}.json",
+        "mappingState": "mapped",
+        "relatedPages": [],
+    }
+    items_path.write_text(json.dumps(payload), encoding="utf-8")
+    page_path = public_root / "data" / "wiki" / "pages" / f"{page_id}.json"
+    if images is not None:
+        page_path.parent.mkdir(parents=True)
+        page_path.write_text(
+            json.dumps({"pageId": page_id, "images": images}),
+            encoding="utf-8",
+        )
+    return page_path
+
+
 class PublicationQualityTests(unittest.TestCase):
     def test_cli_exposes_audit_and_apply_modes(self):
         args = build_parser().parse_args(
@@ -205,6 +224,188 @@ class PublicationQualityTests(unittest.TestCase):
         self.assertFalse(
             any(
                 issue["code"] == "character_evidence_leak"
+                for issue in audit["issues"]
+            )
+        )
+
+    def test_publication_quality_rejects_missing_required_wiki_page(self):
+        with tempfile.TemporaryDirectory() as tempdir:
+            items_path, guides_root, public_root = publication_fixture(Path(tempdir))
+            add_wiki_reference(items_path, public_root)
+
+            audit = audit_publication(items_path, guides_root, public_root)
+
+        self.assertTrue(
+            any(issue["code"] == "missing_wiki_detail" for issue in audit["issues"])
+        )
+
+    def test_publication_quality_rejects_missing_required_related_wiki_page(self):
+        with tempfile.TemporaryDirectory() as tempdir:
+            items_path, guides_root, public_root = publication_fixture(Path(tempdir))
+            add_wiki_reference(items_path, public_root, images=[])
+            payload = json.loads(items_path.read_text(encoding="utf-8"))
+            payload["items"][0]["wiki"]["relatedPages"] = [
+                {
+                    "pageId": 43,
+                    "detailUrl": "/data/wiki/pages/43.json",
+                }
+            ]
+            items_path.write_text(json.dumps(payload), encoding="utf-8")
+
+            audit = audit_publication(items_path, guides_root, public_root)
+
+        self.assertTrue(
+            any(issue["code"] == "missing_wiki_detail" for issue in audit["issues"])
+        )
+
+    def test_publication_quality_rejects_missing_referenced_wiki_asset(self):
+        with tempfile.TemporaryDirectory() as tempdir:
+            items_path, guides_root, public_root = publication_fixture(Path(tempdir))
+            add_wiki_reference(
+                items_path,
+                public_root,
+                images=[{"src": "/assets/wiki/missing.png"}],
+            )
+
+            audit = audit_publication(items_path, guides_root, public_root)
+
+        self.assertTrue(
+            any(issue["code"] == "missing_wiki_asset" for issue in audit["issues"])
+        )
+
+    def test_publication_quality_rejects_missing_referenced_guide_asset(self):
+        with tempfile.TemporaryDirectory() as tempdir:
+            items_path, guides_root, public_root = publication_fixture(Path(tempdir))
+            cover_path = public_root / "assets" / "guides" / "cover.png"
+            cover_path.parent.mkdir(parents=True)
+            cover_path.write_bytes(PNG)
+            (guides_root / "pages").mkdir()
+            (guides_root / "index.json").write_text(
+                json.dumps(
+                    {
+                        "count": 1,
+                        "guides": [
+                            {
+                                "id": "guide:test",
+                                "slug": "test",
+                                "summaryVi": "Hướng dẫn thử nghiệm.",
+                                "cover": {"src": "/assets/guides/cover.png"},
+                            }
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            (guides_root / "pages" / "test.json").write_text(
+                json.dumps(
+                    {
+                        "sections": [
+                            {
+                                "html": '<img src="/assets/guides/missing.png">',
+                            }
+                        ]
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            audit = audit_publication(items_path, guides_root, public_root)
+
+        self.assertTrue(
+            any(issue["code"] == "missing_guide_asset" for issue in audit["issues"])
+        )
+
+    def test_publication_quality_allows_wiki_page_without_optional_images(self):
+        with tempfile.TemporaryDirectory() as tempdir:
+            items_path, guides_root, public_root = publication_fixture(Path(tempdir))
+            add_wiki_reference(items_path, public_root, images=[])
+
+            audit = audit_publication(items_path, guides_root, public_root)
+
+        self.assertFalse(
+            any(issue["code"] == "missing_wiki_asset" for issue in audit["issues"])
+        )
+
+    def test_publication_quality_rejects_internal_dst_route(self):
+        with tempfile.TemporaryDirectory() as tempdir:
+            items_path, guides_root, public_root = publication_fixture(Path(tempdir))
+            payload = json.loads(items_path.read_text(encoding="utf-8"))
+            payload["items"][0]["details"] = {"link": "/dst"}
+            items_path.write_text(json.dumps(payload), encoding="utf-8")
+
+            audit = audit_publication(items_path, guides_root, public_root)
+
+        self.assertTrue(
+            any(issue["code"] == "internal_route_leak" for issue in audit["issues"])
+        )
+
+    def test_publication_quality_allows_dst_asset_namespace(self):
+        with tempfile.TemporaryDirectory() as tempdir:
+            items_path, guides_root, public_root = publication_fixture(Path(tempdir))
+            payload = json.loads(items_path.read_text(encoding="utf-8"))
+            payload["items"][0]["details"] = {
+                "link": "/assets/dst/characters/xd_hantianzun.png"
+            }
+            items_path.write_text(json.dumps(payload), encoding="utf-8")
+
+            audit = audit_publication(items_path, guides_root, public_root)
+
+        self.assertFalse(
+            any(issue["code"] == "internal_route_leak" for issue in audit["issues"])
+        )
+
+    def test_publication_quality_allows_dst_suffix_in_wiki_source_text(self):
+        with tempfile.TemporaryDirectory() as tempdir:
+            items_path, guides_root, public_root = publication_fixture(Path(tempdir))
+            data_root = public_root / "data"
+            data_root.mkdir()
+            (data_root / "wiki-source.json").write_text(
+                json.dumps(
+                    {
+                        "wikitext": "{{Navbutton|link={{BASEPAGENAME}}/DST|text=DST}}",
+                        "external": "https://forums.example.com/game-updates/dst/1/",
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            audit = audit_publication(items_path, guides_root, public_root)
+
+        self.assertFalse(
+            any(issue["code"] == "internal_route_leak" for issue in audit["issues"])
+        )
+
+    def test_publication_quality_rejects_local_sqlite_path(self):
+        with tempfile.TemporaryDirectory() as tempdir:
+            items_path, guides_root, public_root = publication_fixture(Path(tempdir))
+            data_root = public_root / "data"
+            data_root.mkdir()
+            (data_root / "catalog.json").write_text(
+                json.dumps({"sourceDatabase": "/tmp/wiki.sqlite"}),
+                encoding="utf-8",
+            )
+
+            audit = audit_publication(items_path, guides_root, public_root)
+
+        self.assertTrue(
+            any(
+                issue["code"] == "local_database_path_leak"
+                for issue in audit["issues"]
+            )
+        )
+
+    def test_publication_quality_rejects_nova_absolute_path(self):
+        with tempfile.TemporaryDirectory() as tempdir:
+            items_path, guides_root, public_root = publication_fixture(Path(tempdir))
+            payload = json.loads(items_path.read_text(encoding="utf-8"))
+            payload["sourcePath"] = "/Users/nyx/company/nova/storage/app/wiki.json"
+            items_path.write_text(json.dumps(payload), encoding="utf-8")
+
+            audit = audit_publication(items_path, guides_root, public_root)
+
+        self.assertTrue(
+            any(
+                issue["code"] == "nova_absolute_path_leak"
                 for issue in audit["issues"]
             )
         )

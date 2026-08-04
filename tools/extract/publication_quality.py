@@ -19,6 +19,16 @@ REPAIR_ATTEMPTS = [
     "reviewed_category_crawl",
     "catalog_recipe_evidence",
 ]
+INTERNAL_DST_ROUTE = re.compile(r'''(?:^|["'\s(])/dst(?:/|\b)''', re.IGNORECASE)
+NOVA_ABSOLUTE_PATH = re.compile(
+    r"(?:[A-Za-z]:[\\/]|/(?:Users|home|private|var|tmp|opt)/)"
+    r"(?:[^\\/\s]+[\\/])*nova(?:[\\/]|$)",
+    re.IGNORECASE,
+)
+GUIDE_ASSET_SOURCE = re.compile(
+    r'''src=["'](?P<path>/assets/[^"'?#]+)''',
+    re.IGNORECASE,
+)
 
 
 def _key(value: str) -> str:
@@ -83,6 +93,87 @@ def _contains_evidence(value: Any) -> bool:
     if isinstance(value, list):
         return any(_contains_evidence(nested) for nested in value)
     return False
+
+
+def _strings(value: Any) -> Iterable[str]:
+    if isinstance(value, Mapping):
+        for key, nested in value.items():
+            yield str(key)
+            yield from _strings(nested)
+    elif isinstance(value, list):
+        for nested in value:
+            yield from _strings(nested)
+    elif isinstance(value, str):
+        yield value
+
+
+def _publication_leak_codes(value: Any) -> List[str]:
+    codes = set()
+    for text in _strings(value):
+        folded = text.casefold()
+        if INTERNAL_DST_ROUTE.search(text):
+            codes.add("internal_route_leak")
+        if ".sqlite" in folded or "sqlite:" in folded or folded in {
+            "database_url",
+            "db_connection",
+        }:
+            codes.add("local_database_path_leak")
+        if NOVA_ABSOLUTE_PATH.search(text):
+            codes.add("nova_absolute_path_leak")
+    return sorted(codes)
+
+
+def _wiki_reference_issues(item: Mapping[str, Any], public_root: Path) -> List[str]:
+    wiki = item.get("wiki")
+    if not isinstance(wiki, Mapping):
+        return []
+    references = [wiki]
+    related_pages = wiki.get("relatedPages")
+    if isinstance(related_pages, list):
+        references.extend(
+            reference for reference in related_pages if isinstance(reference, Mapping)
+        )
+    issues = []
+    checked_pages = set()
+    for reference in references:
+        page_id = reference.get("pageId")
+        expected_url = (
+            "/data/wiki/pages/{}.json".format(page_id)
+            if isinstance(page_id, int) and page_id > 0
+            else None
+        )
+        page_path = (
+            public_root / "data" / "wiki" / "pages" / "{}.json".format(page_id)
+            if expected_url is not None
+            else None
+        )
+        if (
+            expected_url is None
+            or reference.get("detailUrl") != expected_url
+            or page_path is None
+            or not page_path.is_file()
+        ):
+            issues.append("missing_wiki_detail")
+            continue
+        if page_id in checked_pages:
+            continue
+        checked_pages.add(page_id)
+        detail = json.loads(page_path.read_text(encoding="utf-8"))
+        if not isinstance(detail, Mapping) or detail.get("pageId") != page_id:
+            issues.append("missing_wiki_detail")
+            continue
+        images = detail.get("images")
+        if not isinstance(images, list):
+            continue
+        for image in images:
+            source = image.get("src") if isinstance(image, Mapping) else None
+            if (
+                isinstance(source, str)
+                and source.startswith("/")
+                and not _valid_sprite({"src": source}, public_root)
+            ):
+                issues.append("missing_wiki_asset")
+    return issues
 
 
 def _character_asset_issues(item: Mapping[str, Any], public_root: Path) -> List[str]:
@@ -172,6 +263,7 @@ def _item_issues(item: Mapping[str, Any], public_root: Path) -> List[str]:
     if not str(item.get("id") or "").strip() or not str(item.get("namespace") or "").strip():
         issues.append("missing_source")
     issues.extend(_character_asset_issues(item, public_root))
+    issues.extend(_wiki_reference_issues(item, public_root))
     scope = " ".join(
         str(item.get(field) or "") for field in ("name", "englishName", "description")
     ).casefold()
@@ -234,6 +326,15 @@ def _audit_guides(guides_root: Path, public_root: Path) -> List[JsonObject]:
         detail = json.loads(detail_path.read_text(encoding="utf-8"))
         if not isinstance(detail.get("sections"), list) or not detail["sections"]:
             issues.append({"code": "missing_detail", "identity": identity})
+        for section in detail.get("sections", []):
+            html = section.get("html") if isinstance(section, Mapping) else None
+            if not isinstance(html, str):
+                continue
+            for match in GUIDE_ASSET_SOURCE.finditer(html):
+                if not _image_signature(public_root / match.group("path").lstrip("/")):
+                    issues.append(
+                        {"code": "missing_guide_asset", "identity": identity}
+                    )
     if payload.get("count") != len(guides):
         issues.append({"code": "missing_detail", "identity": "guides:count"})
     return issues
@@ -249,6 +350,18 @@ def audit_publication(items_path: Path, guides_root: Path, public_root: Path) ->
         for code in _item_issues(item, public_root):
             issues.append({"code": code, "identity": item.get("id")})
     issues.extend(_audit_guides(guides_root, public_root))
+    publication_paths = {
+        path.resolve()
+        for path in [items_path, *guides_root.rglob("*.json")]
+        if path.is_file()
+    }
+    data_root = public_root / "data"
+    if data_root.is_dir():
+        publication_paths.update(path.resolve() for path in data_root.rglob("*.json"))
+    for path in sorted(publication_paths):
+        published = json.loads(path.read_text(encoding="utf-8"))
+        for code in _publication_leak_codes(published):
+            issues.append({"code": code, "identity": "publication:" + path.name})
     return {
         "schemaVersion": 1,
         "items": len(items),

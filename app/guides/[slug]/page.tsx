@@ -5,6 +5,8 @@ import { GuideReader } from "@/app/components/guide-reader";
 import { SiteHeader } from "@/app/components/site-header";
 import { findGuide, guideSlugs } from "@/app/lib/guide-content";
 
+export const dynamicParams = false;
+
 export function generateStaticParams(): { slug: string }[] {
   return guideSlugs().map((slug) => ({ slug }));
 }
