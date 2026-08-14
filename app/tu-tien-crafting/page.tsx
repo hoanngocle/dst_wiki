@@ -5,7 +5,11 @@ import { DstPageShell } from "@/app/components/dst-page-shell";
 import { SiteHeader } from "@/app/components/site-header";
 import { WikiSearch } from "@/app/components/wiki-search";
 import { parseItemPayload } from "@/app/lib/item-catalog";
-import { selectHanLapCraftables } from "@/app/lib/tu-tien-crafting";
+import {
+  type CraftingExclusionReason,
+  type HanLapCraftingSelection,
+  selectHanLapCraftables,
+} from "@/app/lib/tu-tien-crafting";
 import catalogPayload from "@/public/data/catalog.json";
 import itemsPayload from "@/public/data/items.json";
 
@@ -16,6 +20,35 @@ export const metadata: Metadata = {
 
 const allItems = parseItemPayload(itemsPayload);
 const selection = selectHanLapCraftables(allItems, catalogPayload);
+
+const exclusionReasons: readonly CraftingExclusionReason[] = [
+  "no_recipe",
+  "other_character",
+  "no_verified_use",
+  "unresolved_ingredient",
+];
+
+export function assertNonEmptySelection(
+  candidate: HanLapCraftingSelection,
+): asserts candidate is HanLapCraftingSelection {
+  if (candidate.items.length > 0) return;
+
+  const counts = new Map<CraftingExclusionReason, number>(
+    exclusionReasons.map((reason) => [reason, 0]),
+  );
+  for (const excluded of candidate.excluded) {
+    counts.set(excluded.reason, (counts.get(excluded.reason) ?? 0) + 1);
+  }
+  const diagnosticCounts = exclusionReasons
+    .map((reason) => `${reason}=${counts.get(reason) ?? 0}`)
+    .join(", ");
+
+  throw new Error(
+    `Hàn Lập crafting selection invariant failed: selected=0, excluded=${candidate.excluded.length}; ${diagnosticCounts}`,
+  );
+}
+
+assertNonEmptySelection(selection);
 
 export default function HanLapCraftingPage() {
   return (

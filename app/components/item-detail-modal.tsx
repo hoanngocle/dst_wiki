@@ -245,6 +245,7 @@ export function ItemDetailModal({
     } else {
       body.scrollTop = 0;
     }
+    closeButtonRef.current?.focus();
   }, [item.id]);
 
   return (

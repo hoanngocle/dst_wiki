@@ -44,7 +44,22 @@ function structureWithKnownFunctions(): StructureDetails {
   return {
     origin: { status: "none", naturallySpawned: false, renewable: null, spawnCode: null, sources: [], respawn: null, craftable: true, note: null, evidence: [] },
     construction: { status: "none", outputCount: null, ingredients: [], tech: null, station: null, restrictions: {}, note: null, evidence: [] },
-    functions: { status: "known", facts: [], reason: null, evidence: [] },
+    functions: {
+      status: "known",
+      facts: [
+        {
+          key: "trader_enabled",
+          label: "Có thể nhận vật phẩm",
+          value: "true",
+          unit: "boolean",
+          context: null,
+          related: [],
+          evidence: [],
+        },
+      ],
+      reason: null,
+      evidence: [],
+    },
     craftables: { status: "none", recipes: [], reason: null, evidence: [] },
     destruction: { status: "none", destroyable: null, tool: null, work: null, health: null, burnable: null, drops: [], regeneration: null, evidence: [] },
     visual: { status: "none", kind: null, sprite: null, image: null, alternatives: [], reason: null, evidence: [] },
@@ -81,6 +96,14 @@ const catalog = {
       key: "tu_tien:other_character",
       recipes: [{ restrictions: { builder_tags: ["xd_luoshen"] } }],
     },
+    {
+      key: "tu_tien:manual_beta",
+      recipes: [],
+    },
+    {
+      key: "tu_tien:no_verified_use",
+      recipes: [],
+    },
   ],
 };
 
@@ -89,7 +112,11 @@ describe("selectHanLapCraftables", () => {
     const publicRecipe = item("tu_tien:public_zeta", "Zeta", {
       details: {
         recipeStatus: "known",
-        usage: { status: "known", recipes: [], effects: [] },
+        usage: {
+          status: "known",
+          recipes: [],
+          effects: [{ trigger: "equip", text: "Đã xác minh", evidence: [] }],
+        },
         dropBy: { status: "unknown", sources: [] },
       },
     });
@@ -130,7 +157,15 @@ describe("selectHanLapCraftables", () => {
       },
     });
 
-    const selection = selectHanLapCraftables([material, product, ingredient], { entities: [] });
+    const selection = selectHanLapCraftables(
+      [material, product, ingredient],
+      {
+        entities: [
+          { key: material.id, recipes: [] },
+          { key: product.id, recipes: [] },
+        ],
+      },
+    );
 
     expect(selection.items.map(({ id }) => id)).toEqual(["tu_tien:material"]);
     expect(selection.excluded).toEqual([
@@ -176,5 +211,90 @@ describe("selectHanLapCraftables", () => {
       { id: "tu_tien:no_verified_use", reason: "no_verified_use" },
       { id: "tu_tien:unresolved", reason: "unresolved_ingredient" },
     ]);
+  });
+
+  it("requires concrete usage or structure evidence instead of a known label", () => {
+    const emptyKnownUsage = item("tu_tien:empty_usage", "Usage rỗng", {
+      details: {
+        recipeStatus: "known",
+        usage: { status: "known", recipes: [], effects: [] },
+        dropBy: { status: "unknown", sources: [] },
+      },
+    });
+    const emptyKnownFunctions = item("tu_tien:empty_functions", "Function rỗng", {
+      structureDetails: {
+        ...structureWithKnownFunctions(),
+        functions: { status: "known", facts: [], reason: null, evidence: [] },
+      },
+    });
+
+    const selection = selectHanLapCraftables(
+      [emptyKnownUsage, emptyKnownFunctions, ingredient],
+      {
+        entities: [
+          { key: emptyKnownUsage.id, recipes: [] },
+          { key: emptyKnownFunctions.id, recipes: [] },
+        ],
+      },
+    );
+
+    expect(selection.items).toEqual([]);
+    expect(selection.excluded).toEqual([
+      { id: emptyKnownUsage.id, reason: "no_verified_use" },
+      { id: emptyKnownFunctions.id, reason: "no_verified_use" },
+    ]);
+  });
+
+  it.each([
+    ["top-level entities", { entities: {} }, /catalog.*entities/i],
+    ["entity", { entities: [null] }, /entities\[0\]/i],
+    [
+      "entity key",
+      { entities: [{ key: 42, recipes: [] }] },
+      /entities\[0\]\.key/i,
+    ],
+    [
+      "entity recipes",
+      { entities: [{ key: "tu_tien:manual", recipes: null }] },
+      /entities\[0\]\.recipes/i,
+    ],
+    [
+      "recipe record",
+      { entities: [{ key: "tu_tien:manual", recipes: [null] }] },
+      /entities\[0\]\.recipes\[0\]/i,
+    ],
+    [
+      "recipe restrictions",
+      {
+        entities: [
+          { key: "tu_tien:manual", recipes: [{ restrictions: "public" }] },
+        ],
+      },
+      /restrictions/i,
+    ],
+    [
+      "builder tags",
+      {
+        entities: [
+          {
+            key: "tu_tien:manual",
+            recipes: [{ restrictions: { builder_tags: ["player", 42] } }],
+          },
+        ],
+      },
+      /builder_tags/i,
+    ],
+  ])("throws when the catalog has malformed %s", (_label, payload, message) => {
+    expect(() => selectHanLapCraftables([], payload)).toThrow(message);
+  });
+
+  it("throws when a craftable has no matching catalog entity", () => {
+    const manualRecipe = item("tu_tien:missing_entity", "Thiếu entity", {
+      mob: mobWithDocumentedMechanics(),
+    });
+
+    expect(() =>
+      selectHanLapCraftables([manualRecipe, ingredient], { entities: [] }),
+    ).toThrow(/missing catalog entity.*tu_tien:missing_entity/i);
   });
 });

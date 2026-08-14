@@ -259,11 +259,16 @@ describe("ItemDetailModal", () => {
   it("replaces a base-game recipe detail with its selected ingredient", () => {
     render(<ModalNavigationHarness />);
 
-    fireEvent.click(screen.getByRole("button", { name: "Đá, số lượng 1" }));
+    const ingredientButton = screen.getByRole("button", { name: "Đá, số lượng 1" });
+    ingredientButton.focus();
+    expect(document.activeElement).toBe(ingredientButton);
+    fireEvent.click(ingredientButton);
 
-    expect(screen.getByRole("dialog", { name: "Đá" })).toBeDefined();
+    const dialog = screen.getByRole("dialog", { name: "Đá" });
+    expect(dialog).toBeDefined();
     expect(screen.getByText("Rocks")).toBeDefined();
     expect(screen.queryByRole("dialog", { name: "Vàng" })).toBeNull();
+    expect(dialog.contains(document.activeElement)).toBe(true);
   });
 
   it("closes from the close button and Escape", () => {

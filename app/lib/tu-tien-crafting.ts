@@ -17,9 +17,7 @@ export type HanLapCraftingSelection = {
 };
 
 type RuntimeRecipe = {
-  restrictions?: {
-    builder_tags?: unknown;
-  };
+  builderTags: readonly string[];
 };
 
 function isRecord(value: unknown): value is Record<string, unknown> {
@@ -28,27 +26,53 @@ function isRecord(value: unknown): value is Record<string, unknown> {
 
 function runtimeRecipesByItem(catalogPayload: unknown): ReadonlyMap<string, readonly RuntimeRecipe[]> {
   if (!isRecord(catalogPayload) || !Array.isArray(catalogPayload.entities)) {
-    return new Map();
+    throw new Error("Invalid crafting catalog: entities must be an array");
   }
 
   const recipesByItem = new Map<string, readonly RuntimeRecipe[]>();
-  for (const entity of catalogPayload.entities) {
-    if (!isRecord(entity) || typeof entity.key !== "string" || !Array.isArray(entity.recipes)) {
-      continue;
+  for (const [entityIndex, entity] of catalogPayload.entities.entries()) {
+    const entityPath = `entities[${entityIndex}]`;
+    if (!isRecord(entity)) {
+      throw new Error(`Invalid crafting catalog: ${entityPath} must be an object`);
     }
-    recipesByItem.set(entity.key, entity.recipes.filter(isRecord));
+    if (typeof entity.key !== "string" || entity.key.length === 0) {
+      throw new Error(`Invalid crafting catalog: ${entityPath}.key must be a string`);
+    }
+    if (!Array.isArray(entity.recipes)) {
+      throw new Error(`Invalid crafting catalog: ${entityPath}.recipes must be an array`);
+    }
+    const recipes = entity.recipes.map((recipe, recipeIndex): RuntimeRecipe => {
+      const recipePath = `${entityPath}.recipes[${recipeIndex}]`;
+      if (!isRecord(recipe)) {
+        throw new Error(`Invalid crafting catalog: ${recipePath} must be an object`);
+      }
+
+      const restrictions = recipe.restrictions;
+      if (restrictions !== undefined && !isRecord(restrictions)) {
+        throw new Error(`Invalid crafting catalog: ${recipePath}.restrictions must be an object`);
+      }
+
+      const builderTags = restrictions?.builder_tags;
+      if (
+        builderTags !== undefined &&
+        (!Array.isArray(builderTags) ||
+          !builderTags.every((tag) => typeof tag === "string"))
+      ) {
+        throw new Error(
+          `Invalid crafting catalog: ${recipePath}.restrictions.builder_tags must be an array of strings`,
+        );
+      }
+
+      return { builderTags: builderTags ?? [] };
+    });
+    recipesByItem.set(entity.key, recipes);
   }
   return recipesByItem;
 }
 
-function recipeBuilderTags(recipe: RuntimeRecipe): readonly string[] {
-  const tags = recipe.restrictions?.builder_tags;
-  return Array.isArray(tags) && tags.every((tag) => typeof tag === "string") ? tags : [];
-}
-
 function hasAllowedRuntimeRecipe(recipes: readonly RuntimeRecipe[]): boolean {
   return recipes.some((recipe) =>
-    recipeBuilderTags(recipe).every((tag) => HAN_LAP_BUILDER_TAGS.has(tag)),
+    recipe.builderTags.every((tag) => HAN_LAP_BUILDER_TAGS.has(tag)),
   );
 }
 
@@ -78,8 +102,10 @@ function hasVerifiedUse(
   itemsById: ReadonlyMap<string, ItemListEntry>,
 ): boolean {
   return (
-    item.details?.usage.status === "known" ||
-    item.structureDetails?.functions.status === "known" ||
+    (item.details?.usage.status === "known" &&
+      (item.details.usage.recipes.length > 0 || item.details.usage.effects.length > 0)) ||
+    (item.structureDetails?.functions.status === "known" &&
+      item.structureDetails.functions.facts.length > 0) ||
     hasDocumentedMobMechanics(item) ||
     isReferencedByResolvedRecipe(item, items, itemsById)
   );
@@ -106,7 +132,10 @@ export function selectHanLapCraftables(
       continue;
     }
 
-    const runtimeRecipes = recipesByItem.get(item.id) ?? [];
+    const runtimeRecipes = recipesByItem.get(item.id);
+    if (!runtimeRecipes) {
+      throw new Error(`Invalid crafting catalog: missing catalog entity for ${item.id}`);
+    }
     if (runtimeRecipes.length > 0 && !hasAllowedRuntimeRecipe(runtimeRecipes)) {
       excluded.push({ id: item.id, reason: "other_character" });
       continue;
