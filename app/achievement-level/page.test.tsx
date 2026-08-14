@@ -1,0 +1,35 @@
+import { render, screen, within } from "@testing-library/react";
+import { expect, it } from "vitest";
+
+import AchievementLevelPage from "./page";
+
+it("renders the complete Achievement & Level overview", () => {
+  render(<AchievementLevelPage />);
+
+  expect(
+    screen.getByRole("link", { name: "Achievement & Level" }).getAttribute("aria-current"),
+  ).toBe("page");
+  expect(
+    screen.getByRole("heading", { level: 1, name: "Achievement & Level" }),
+  ).toBeDefined();
+  const stats = screen.getByTestId("achievement-level-hero-stats");
+  expect(within(stats).getByText("763")).toBeDefined();
+  expect(within(stats).getByText("169")).toBeDefined();
+  expect(within(stats).getByText("128")).toBeDefined();
+  expect(within(stats).getByText("18")).toBeDefined();
+  expect(screen.getByRole("heading", { name: "Hệ thống Level" })).toBeDefined();
+  expect(screen.getByText(/Mặc định bắt đầu cấp 1/)).toBeDefined();
+  expect(screen.getByRole("tab", { name: "Nhiệm vụ" }).getAttribute("data-state")).toBe(
+    "active",
+  );
+  expect(screen.getByRole("tab", { name: "Thành tựu" })).toBeDefined();
+  expect(screen.getByRole("tab", { name: "Kỹ năng" })).toBeDefined();
+});
+
+it("renders player and pet level attributes from the artifact", () => {
+  render(<AchievementLevelPage />);
+
+  expect(screen.getByRole("table", { name: "Thuộc tính người chơi" })).toBeDefined();
+  expect(screen.getByRole("table", { name: "Thuộc tính pet" })).toBeDefined();
+  expect(screen.getByText("Tốc độ pet")).toBeDefined();
+});

@@ -2,12 +2,13 @@ import Link from "next/link";
 
 import { cn } from "@/app/lib/cn";
 
-type SiteSection = "items" | "characters" | "tu-tien";
+type SiteSection = "items" | "characters" | "tu-tien" | "achievement-level";
 
 const links = [
   { id: "items", href: "/", label: "Vật phẩm" },
   { id: "characters", href: "/characters", label: "Nhân vật" },
   { id: "tu-tien", href: "/tu-tien", label: "Cảnh giới Tu Tiên" },
+  { id: "achievement-level", href: "/achievement-level", label: "Achievement & Level" },
 ] as const;
 
 export function SiteHeader({ active }: { active?: SiteSection }) {
