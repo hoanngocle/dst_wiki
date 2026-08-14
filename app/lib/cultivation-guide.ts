@@ -1,4 +1,4 @@
-import type { ItemListEntry, ItemRecipe, RecipeIngredient } from "./item-catalog";
+import type { ItemListEntry, ItemRecipe } from "./item-catalog";
 
 type CultivationStageDefinition = {
   currentRealm: string;
@@ -10,7 +10,7 @@ type CultivationStageDefinition = {
 export type CultivationStage = CultivationStageDefinition & {
   rank: number;
   pill: ItemListEntry;
-  recipe: ItemRecipe | null;
+  recipe: ItemRecipe;
 };
 
 const cultivationStageDefinitions: readonly CultivationStageDefinition[] = [
@@ -31,42 +31,34 @@ const cultivationStageDefinitions: readonly CultivationStageDefinition[] = [
   { currentRealm: "Hóa Thần Hậu Kỳ", resultingRealm: "Phản Hư Sơ Kỳ", pillId: "tu_tien:xd_danyao_kx", breakthrough: true },
 ];
 
-function correctedDoanTheRecipe(
-  recipe: ItemRecipe | null,
-  itemsById: ReadonlyMap<string, ItemListEntry>,
-): ItemRecipe | null {
-  if (!recipe || recipe.ingredients.some((ingredient) => ingredient.id === "base_game:trunk_summer")) {
-    return recipe;
-  }
-
-  const trunk = itemsById.get("base_game:trunk_summer");
-  const ingredient: RecipeIngredient = {
-    id: "base_game:trunk_summer",
-    name: "Vòi Voi",
-    amount: 1,
-    sprite: trunk?.sprite ?? null,
-  };
-
-  return { ...recipe, ingredients: [ingredient, ...recipe.ingredients] };
-}
-
 export function buildCultivationStages(
   items: readonly ItemListEntry[],
 ): readonly CultivationStage[] {
   const itemsById = new Map(items.map((item) => [item.id, item] as const));
 
-  return cultivationStageDefinitions.flatMap((definition, index) => {
+  return cultivationStageDefinitions.map((definition, index) => {
     const pill = itemsById.get(definition.pillId);
     if (!pill) {
-      return [];
+      throw new Error(`Missing cultivation pill ${definition.pillId}`);
     }
-    return [{
+
+    if (!pill.recipe) {
+      throw new Error(`Cultivation pill ${definition.pillId} is missing a recipe`);
+    }
+
+    for (const ingredient of pill.recipe.ingredients) {
+      if (!itemsById.has(ingredient.id)) {
+        throw new Error(
+          `Recipe ingredient ${ingredient.id} for cultivation pill ${definition.pillId} is missing from the catalog`,
+        );
+      }
+    }
+
+    return {
       ...definition,
       rank: index + 1,
       pill,
-      recipe: definition.pillId === "tu_tien:xd_danyao_dt"
-        ? correctedDoanTheRecipe(pill.recipe, itemsById)
-        : pill.recipe,
-    }];
+      recipe: pill.recipe,
+    };
   });
 }
