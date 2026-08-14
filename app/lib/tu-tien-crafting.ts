@@ -16,6 +16,33 @@ export type HanLapCraftingSelection = {
   }[];
 };
 
+const exclusionReasons: readonly CraftingExclusionReason[] = [
+  "no_recipe",
+  "other_character",
+  "no_verified_use",
+  "unresolved_ingredient",
+];
+
+export function assertNonEmptyHanLapCraftingSelection(
+  selection: HanLapCraftingSelection,
+): asserts selection is HanLapCraftingSelection {
+  if (selection.items.length > 0) return;
+
+  const counts = new Map<CraftingExclusionReason, number>(
+    exclusionReasons.map((reason) => [reason, 0]),
+  );
+  for (const excluded of selection.excluded) {
+    counts.set(excluded.reason, (counts.get(excluded.reason) ?? 0) + 1);
+  }
+  const diagnosticCounts = exclusionReasons
+    .map((reason) => `${reason}=${counts.get(reason) ?? 0}`)
+    .join(", ");
+
+  throw new Error(
+    `Hàn Lập crafting selection invariant failed: selected=0, excluded=${selection.excluded.length}; ${diagnosticCounts}`,
+  );
+}
+
 type RuntimeRecipe = {
   builderTags: readonly string[];
 };

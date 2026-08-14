@@ -1,7 +1,10 @@
 import { describe, expect, it } from "vitest";
 
 import type { CatalogMobDetails, ItemListEntry, StructureDetails } from "./item-catalog";
-import { selectHanLapCraftables } from "./tu-tien-crafting";
+import {
+  assertNonEmptyHanLapCraftingSelection,
+  selectHanLapCraftables,
+} from "./tu-tien-crafting";
 
 function item(
   id: string,
@@ -296,5 +299,23 @@ describe("selectHanLapCraftables", () => {
     expect(() =>
       selectHanLapCraftables([manualRecipe, ingredient], { entities: [] }),
     ).toThrow(/missing catalog entity.*tu_tien:missing_entity/i);
+  });
+});
+
+describe("assertNonEmptyHanLapCraftingSelection", () => {
+  it("reports every exclusion reason when no verified craftable remains", () => {
+    expect(() =>
+      assertNonEmptyHanLapCraftingSelection({
+        items: [],
+        excluded: [
+          { id: "tu_tien:no_recipe", reason: "no_recipe" },
+          { id: "tu_tien:locked", reason: "other_character" },
+          { id: "tu_tien:no_use", reason: "no_verified_use" },
+          { id: "tu_tien:missing", reason: "unresolved_ingredient" },
+        ],
+      }),
+    ).toThrow(
+      /selected=0.*excluded=4.*no_recipe=1.*other_character=1.*no_verified_use=1.*unresolved_ingredient=1/i,
+    );
   });
 });
