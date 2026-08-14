@@ -2,11 +2,11 @@ import Link from "next/link";
 
 import { cn } from "@/app/lib/cn";
 
-type SiteSection = "items" | "characters" | "tu-tien";
+type SiteSection = "items" | "tu-tien-crafting" | "tu-tien";
 
 const links = [
   { id: "items", href: "/", label: "Vật phẩm" },
-  { id: "characters", href: "/characters", label: "Nhân vật" },
+  { id: "tu-tien-crafting", href: "/tu-tien-crafting", label: "Chế tạo Tu Tiên" },
   { id: "tu-tien", href: "/tu-tien", label: "Cảnh giới Tu Tiên" },
 ] as const;
 
