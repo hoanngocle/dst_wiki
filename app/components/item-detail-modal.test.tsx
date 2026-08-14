@@ -1,4 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
+import { useState } from "react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 import type { ItemListEntry } from "@/app/lib/item-catalog";
@@ -27,6 +28,16 @@ const item: ItemListEntry = {
   },
   details: null,
   wiki: null,
+};
+
+const rockItem: ItemListEntry = {
+  ...item,
+  id: "base_game:rocks",
+  prefabId: "rocks",
+  name: "Đá",
+  englishName: "Rocks",
+  description: "Một viên đá.",
+  recipe: null,
 };
 
 const wikiItem: ItemListEntry = {
@@ -152,6 +163,22 @@ function peekProps(selectedItem: ItemListEntry) {
   };
 }
 
+function ModalNavigationHarness() {
+  const [selectedItem, setSelectedItem] = useState(item);
+
+  return (
+    <ItemDetailModal
+      item={selectedItem}
+      itemsById={new Map([
+        [item.id, item],
+        [rockItem.id, rockItem],
+      ])}
+      onSelectItem={setSelectedItem}
+      onClose={() => undefined}
+    />
+  );
+}
+
 afterEach(() => {
   vi.unstubAllGlobals();
 });
@@ -227,6 +254,21 @@ describe("ItemDetailModal", () => {
     const close = screen.getByRole("button", { name: "Đóng chi tiết" });
     expect(close.className).toContain("cursor-pointer");
     expect(document.activeElement).toBe(close);
+  });
+
+  it("replaces a base-game recipe detail with its selected ingredient", () => {
+    render(<ModalNavigationHarness />);
+
+    const ingredientButton = screen.getByRole("button", { name: "Đá, số lượng 1" });
+    ingredientButton.focus();
+    expect(document.activeElement).toBe(ingredientButton);
+    fireEvent.click(ingredientButton);
+
+    const dialog = screen.getByRole("dialog", { name: "Đá" });
+    expect(dialog).toBeDefined();
+    expect(screen.getByText("Rocks")).toBeDefined();
+    expect(screen.queryByRole("dialog", { name: "Vàng" })).toBeNull();
+    expect(dialog.contains(document.activeElement)).toBe(true);
   });
 
   it("closes from the close button and Escape", () => {

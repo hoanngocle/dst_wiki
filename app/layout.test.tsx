@@ -19,10 +19,11 @@ it("wraps the standalone site in the light DST shell", () => {
   expect(markup).toContain('class="nova-game-theme min-h-dvh text-nova-text"');
 });
 
-it("describes items, characters, and cultivation realms without generic guides", () => {
+it("describes items, Hàn Lập crafting, and cultivation realms without generic guides", () => {
   expect(metadata.description).toContain("vật phẩm");
-  expect(metadata.description).toContain("nhân vật");
+  expect(metadata.description).toContain("đồ chế Tu Tiên");
   expect(metadata.description).toContain("cảnh giới Tu Tiên");
+  expect(metadata.description).not.toContain("nhân vật");
   expect(metadata.description).not.toContain("hướng dẫn");
 });
 

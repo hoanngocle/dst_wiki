@@ -10,13 +10,13 @@ it("links the standalone navigation in the approved order", () => {
   const navigation = screen.getByRole("navigation", { name: /điều hướng chính/i });
   expect(within(navigation).getAllByRole("link").map((link) => link.textContent)).toEqual([
     "Vật phẩm",
-    "Nhân vật",
+    "Chế tạo Tu Tiên",
     "Cảnh giới Tu Tiên",
     "Achievement & Level",
   ]);
   expect(screen.getByRole("link", { name: /vật phẩm/i }).getAttribute("href")).toBe("/");
-  expect(screen.getByRole("link", { name: "Nhân vật" }).getAttribute("href")).toBe(
-    "/characters",
+  expect(screen.getByRole("link", { name: "Chế tạo Tu Tiên" }).getAttribute("href")).toBe(
+    "/tu-tien-crafting",
   );
   expect(screen.getByRole("link", { name: "Cảnh giới Tu Tiên" }).getAttribute("href")).toBe(
     "/tu-tien",
@@ -27,6 +27,7 @@ it("links the standalone navigation in the approved order", () => {
   expect(screen.getByRole("link", { name: /vật phẩm/i }).getAttribute("aria-current")).toBe(
     "page",
   );
+  expect(screen.queryByRole("link", { name: "Nhân vật" })).toBeNull();
   expect(screen.queryByRole("link", { name: "Base" })).toBeNull();
   expect(screen.queryByRole("link", { name: /hướng dẫn/i })).toBeNull();
   expect(container.innerHTML).not.toContain("/dst");
@@ -38,6 +39,14 @@ it("marks Achievement & Level active", () => {
   expect(
     screen.getByRole("link", { name: "Achievement & Level" }).getAttribute("aria-current"),
   ).toBe("page");
+});
+
+it("marks the crafting tab as active on the Hàn Lập crafting page", () => {
+  render(<SiteHeader active="tu-tien-crafting" />);
+
+  expect(screen.getByRole("link", { name: "Chế tạo Tu Tiên" }).getAttribute("aria-current")).toBe(
+    "page",
+  );
 });
 
 it("marks the cultivation tab as active on the Tu Tiên page", () => {
