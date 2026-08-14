@@ -70,9 +70,10 @@ Create `tests/extract/test_build_achievement_level_data.py` with these exact beh
 import json
 from pathlib import Path
 
-import pytest
+import tempfile
+import unittest
 
-from tools.extract.build_achievement_level_data import parse_report
+from tools.extract.build_achievement_level_data import build_artifact, parse_report
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -110,14 +111,15 @@ def test_task_occurrences_keep_pool_context() -> None:
     assert len({task["key"] for task in occurrences}) == len(occurrences)
 
 
-def test_parse_report_rejects_missing_required_section() -> None:
-    markdown = REPORT.read_text(encoding="utf-8").replace(
-        "## Toàn bộ perk/kỹ năng đổi bằng Sao",
-        "## Phần bị thiếu",
-    )
+class AchievementLevelDataBuilderTests(unittest.TestCase):
+    def test_parse_report_rejects_missing_required_section(self) -> None:
+        markdown = REPORT.read_text(encoding="utf-8").replace(
+            "## Toàn bộ perk/kỹ năng đổi bằng Sao",
+            "## Phần bị thiếu",
+        )
 
-    with pytest.raises(ValueError, match="perk section"):
-        parse_report(markdown)
+        with self.assertRaisesRegex(ValueError, "perk section"):
+            parse_report(markdown)
 ```
 
 - [ ] **Step 3: Run the converter tests and confirm RED**
@@ -125,10 +127,10 @@ def test_parse_report_rejects_missing_required_section() -> None:
 Run:
 
 ```bash
-python3 -m pytest tests/extract/test_build_achievement_level_data.py -q
+python3 -m unittest tests.extract.test_build_achievement_level_data -v
 ```
 
-Expected: collection fails because `tools.extract.build_achievement_level_data` does not exist.
+Expected: import fails because `tools.extract.build_achievement_level_data` does not exist.
 
 - [ ] **Step 4: Implement the deterministic converter**
 
@@ -310,7 +312,7 @@ Run:
 
 ```bash
 python3 tools/extract/build_achievement_level_data.py
-python3 -m pytest tests/extract/test_build_achievement_level_data.py -q
+python3 -m unittest tests.extract.test_build_achievement_level_data -v
 ```
 
 Expected: JSON is written with UTF-8 Vietnamese text and all three tests pass.
@@ -986,7 +988,7 @@ Expected: no diff.
 Run each command separately and record its exit code:
 
 ```bash
-python3 -m pytest tests/extract/test_build_achievement_level_data.py -q
+python3 -m unittest tests.extract.test_build_achievement_level_data -v
 npm test
 npm run lint
 npx tsc --noEmit
