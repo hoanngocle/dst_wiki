@@ -50,6 +50,12 @@ const slotOptions: readonly { value: TaskSlot | "all"; label: string }[] = [
   { value: "repeat", label: "Nhiệm vụ lặp" },
 ];
 
+const taskBlocks: readonly { slot: TaskSlot; label: string }[] = [
+  { slot: "character", label: "Nhiệm vụ nhân vật" },
+  { slot: "seasonal", label: "Nhiệm vụ theo mùa" },
+  { slot: "repeat", label: "Nhiệm vụ lặp" },
+];
+
 function uniqueSorted(values: readonly string[]): readonly string[] {
   return [...new Set(values)].toSorted((left, right) => left.localeCompare(right, "vi"));
 }
@@ -138,6 +144,18 @@ function MetaItem({ label, children }: { label: string; children: ReactNode }) {
   );
 }
 
+function InlineCodeText({ value }: { value: string }) {
+  return value.split(/(`[^`]+`)/g).map((part, index) =>
+    part.startsWith("`") && part.endsWith("`") ? (
+      <code key={`${part}-${index}`} className="break-words rounded bg-nova-surface-raised px-1">
+        {part.slice(1, -1)}
+      </code>
+    ) : (
+      part
+    ),
+  );
+}
+
 function TaskCard({ task }: { task: TaskResult }) {
   return (
     <li
@@ -145,8 +163,8 @@ function TaskCard({ task }: { task: TaskResult }) {
       className="[content-visibility:auto] [contain-intrinsic-size:auto_13rem]"
     >
       <article className={cardClassName}>
-        <h3 className="text-base font-semibold leading-6 text-nova-text">{task.name}</h3>
-        <p className="mt-2 text-sm leading-6 text-nova-muted">{task.instructions}</p>
+        <h4 className="text-base font-semibold leading-6 text-nova-text">{task.name}</h4>
+        <p className="mt-2 text-sm leading-6 text-nova-muted"><InlineCodeText value={task.instructions} /></p>
         <MetaList>
           <MetaItem label="Event"><code className="break-all">{task.event}</code></MetaItem>
           <MetaItem label="ID"><code className="break-all">{task.sourceId}</code></MetaItem>
@@ -171,7 +189,7 @@ function AchievementCard({ achievement }: { achievement: AchievementRecord }) {
             {achievement.stars} Sao
           </span>
         </div>
-        <p className="mt-2 text-sm leading-6 text-nova-muted">{achievement.description}</p>
+        <p className="mt-2 text-sm leading-6 text-nova-muted"><InlineCodeText value={achievement.description} /></p>
         <MetaList>
           <MetaItem label="Danh mục">{achievement.category}</MetaItem>
           <MetaItem label="Mục tiêu">{achievement.target}</MetaItem>
@@ -196,7 +214,7 @@ function PerkCard({ perk }: { perk: PerkRecord }) {
             {perk.cost} Sao
           </span>
         </div>
-        <p className="mt-2 text-sm leading-6 text-nova-muted">{perk.description}</p>
+        <p className="mt-2 text-sm leading-6 text-nova-muted"><InlineCodeText value={perk.description} /></p>
         <MetaList>
           <MetaItem label="Danh mục">{perk.category}</MetaItem>
           <MetaItem label="Phạm vi">{perk.scope}</MetaItem>
@@ -221,7 +239,7 @@ function RewardSection({ heading, rewards }: { heading: string; rewards: readonl
         {rewards.map((reward) => (
           <li key={reward.character} className={cardClassName}>
             <h3 className="font-semibold text-nova-text">{reward.character}</h3>
-            <p className="mt-2 text-sm leading-6 text-nova-muted">{reward.effect}</p>
+            <p className="mt-2 text-sm leading-6 text-nova-muted"><InlineCodeText value={reward.effect} /></p>
           </li>
         ))}
       </ul>
@@ -261,8 +279,10 @@ export function AchievementLevelBrowser({ data }: { data: AchievementLevelData }
     [data.perks],
   );
   const perkCharacters = useMemo(
-    () => taskCharacters.filter((character) => data.perks.some((perk) => perk.scope.includes(character))),
-    [data.perks, taskCharacters],
+    () => uniqueSorted(data.perks.flatMap((perk) =>
+      perk.scope === "Mọi nhân vật" || perk.scope === "Toàn shard" ? [] : [perk.scope],
+    )),
+    [data.perks],
   );
 
   const taskResults = useMemo(
@@ -275,13 +295,18 @@ export function AchievementLevelBrowser({ data }: { data: AchievementLevelData }
     [data, deferredTaskQuery, taskCharacter, taskSeason, taskSlot],
   );
   const groupedTaskResults = useMemo(() => {
-    const groups = new Map<string, { label: string; tasks: TaskResult[] }>();
+    const groupsBySlot = new Map<TaskSlot, Map<string, { label: string; tasks: TaskResult[] }>>();
     for (const task of taskResults) {
+      const groups = groupsBySlot.get(task.slot) ?? new Map<string, { label: string; tasks: TaskResult[] }>();
+      groupsBySlot.set(task.slot, groups);
       const group = groups.get(task.groupId);
       if (group) group.tasks.push(task);
       else groups.set(task.groupId, { label: task.groupLabel, tasks: [task] });
     }
-    return [...groups.entries()];
+    return taskBlocks.flatMap((block) => {
+      const groups = groupsBySlot.get(block.slot);
+      return groups?.size ? [{ ...block, groups: [...groups.entries()] }] : [];
+    });
   }, [taskResults]);
   const achievementResults = useMemo(
     () => filterAchievements(data, {
@@ -348,15 +373,28 @@ export function AchievementLevelBrowser({ data }: { data: AchievementLevelData }
         <ResultHeading label={`${taskResults.length} nhiệm vụ`} />
         {taskResults.length ? (
           <div className="mt-4 grid gap-7">
-            {groupedTaskResults.map(([groupId, group]) => (
-              <section key={groupId} aria-labelledby={`${groupId}-heading`}>
-                <div className="flex flex-wrap items-baseline justify-between gap-3">
-                  <h2 id={`${groupId}-heading`} className="text-xl font-semibold tracking-[-0.025em] text-nova-text">{group.label}</h2>
-                  <p className="font-mono text-xs text-nova-muted">{group.tasks.length} mục</p>
+            {groupedTaskResults.map((block) => (
+              <section key={block.slot} aria-labelledby={`task-block-${block.slot}`}>
+                <h2
+                  id={`task-block-${block.slot}`}
+                  data-testid="task-block-heading"
+                  className="text-2xl font-semibold tracking-[-0.03em] text-nova-text"
+                >
+                  {block.label}
+                </h2>
+                <div className="mt-4 grid gap-7">
+                  {block.groups.map(([groupId, group]) => (
+                    <section key={groupId} aria-labelledby={`${groupId}-heading`}>
+                      <div className="flex flex-wrap items-baseline justify-between gap-3">
+                        <h3 id={`${groupId}-heading`} data-testid="task-pool-heading" className="text-xl font-semibold tracking-[-0.025em] text-nova-text">{group.label}</h3>
+                        <p className="font-mono text-xs text-nova-muted">{group.tasks.length} mục</p>
+                      </div>
+                      <ul className="mt-3 grid gap-3 md:grid-cols-2">
+                        {group.tasks.map((task) => <TaskCard key={task.key} task={task} />)}
+                      </ul>
+                    </section>
+                  ))}
                 </div>
-                <ul className="mt-3 grid gap-3 md:grid-cols-2">
-                  {group.tasks.map((task) => <TaskCard key={task.key} task={task} />)}
-                </ul>
               </section>
             ))}
           </div>

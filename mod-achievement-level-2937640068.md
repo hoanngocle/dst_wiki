@@ -1383,6 +1383,17 @@ Chi phí dưới đây là chi phí gốc trước khi áp dụng cấu hình `P
 - XP mặc định nhận từ ăn, chế tạo, giết, làm việc, nấu, trồng/chăm cây, câu cá và thu hoạch; hệ số XP mặc định là 1x.
 - Mỗi điểm có chi phí ban đầu 1; giá tăng dần và tối đa 3 theo trường `multi` của thuộc tính.
 
+### Sao và mốc thưởng
+
+“Sao” là `coinget` trong bảng dữ liệu và là chi phí dùng để mở khóa perk/kỹ năng.
+
+| Nhiệm vụ hoàn thành | Thưởng |
+|---:|---|
+| 1 | Hồi 50 Máu, Đói và Sanity. |
+| 2 | Nhận hiệu ứng nhân vật tức thời (xem bảng mốc 2). |
+| 3 | Nhận 1 Sao. |
+| 4 | Nhận 200 XP và bật kỹ năng mùa của nhân vật nếu code có triển khai. |
+
 | Thuộc tính người chơi | Tăng mặc định mỗi điểm | Chu kỳ tăng giá (`multi`) |
 |---|---:|---:|
 | Hunger tối đa | +3 | 100 |

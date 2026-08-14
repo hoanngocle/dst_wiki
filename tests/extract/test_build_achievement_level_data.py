@@ -30,6 +30,13 @@ class AchievementLevelDataBuilderTests(unittest.TestCase):
         self.assertEqual(len(artifact["perks"]), 128)
         self.assertEqual(len(artifact["rewards"]["task2"]), 19)
         self.assertEqual(len(artifact["rewards"]["task4"]), 11)
+        self.assertEqual(len(artifact["level"]["summary"]), 3)
+        self.assertEqual(
+            [milestone["completed"] for milestone in artifact["level"]["taskMilestones"]],
+            [1, 2, 3, 4],
+        )
+        self.assertEqual(len(artifact["level"]["playerAttributes"]), 6)
+        self.assertEqual(len(artifact["level"]["petAttributes"]), 6)
 
     def test_task_occurrences_keep_pool_context(self) -> None:
         artifact = parse_report(REPORT.read_text(encoding="utf-8"))

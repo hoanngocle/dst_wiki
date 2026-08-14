@@ -8439,6 +8439,25 @@
       "XP mặc định nhận từ ăn, chế tạo, giết, làm việc, nấu, trồng/chăm cây, câu cá và thu hoạch; hệ số XP mặc định là 1x.",
       "Mỗi điểm có chi phí ban đầu 1; giá tăng dần và tối đa 3 theo trường `multi` của thuộc tính."
     ],
+    "starCurrency": "“Sao” là `coinget` trong bảng dữ liệu và là chi phí dùng để mở khóa perk/kỹ năng.",
+    "taskMilestones": [
+      {
+        "completed": 1,
+        "reward": "Hồi 50 Máu, Đói và Sanity."
+      },
+      {
+        "completed": 2,
+        "reward": "Nhận hiệu ứng nhân vật tức thời (xem bảng mốc 2)."
+      },
+      {
+        "completed": 3,
+        "reward": "Nhận 1 Sao."
+      },
+      {
+        "completed": 4,
+        "reward": "Nhận 200 XP và bật kỹ năng mùa của nhân vật nếu code có triển khai."
+      }
+    ],
     "playerAttributes": [
       {
         "name": "Hunger tối đa",

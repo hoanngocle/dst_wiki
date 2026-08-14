@@ -81,12 +81,28 @@ export default function AchievementLevelPage() {
                 <li key={line} className="rounded-xl bg-nova-surface-soft p-4">{line}</li>
               ))}
             </ul>
+            <section className="mt-6" aria-labelledby="task-milestones-heading">
+              <h3 id="task-milestones-heading" className="text-lg font-semibold text-nova-text">
+                Sao và mốc thưởng
+              </h3>
+              <p className="mt-2 text-sm leading-6 text-nova-muted">{data.level.starCurrency}</p>
+              <ol className="mt-3 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+                {data.level.taskMilestones.map((milestone) => (
+                  <li key={milestone.completed} className="rounded-xl bg-nova-surface-soft p-4">
+                    <span className="font-mono text-xs font-semibold text-nova-accent">
+                      {milestone.completed} nhiệm vụ
+                    </span>
+                    <p className="mt-2 text-sm leading-6 text-nova-muted">{milestone.reward}</p>
+                  </li>
+                ))}
+              </ol>
+            </section>
             <div className="mt-6 grid gap-6 xl:grid-cols-2">
-              <div>
+              <div className="min-w-0">
                 <h3 className="mb-3 text-base font-semibold text-nova-text">Thuộc tính người chơi</h3>
                 <LevelTable label="Thuộc tính người chơi" attributes={data.level.playerAttributes} />
               </div>
-              <div>
+              <div className="min-w-0">
                 <h3 className="mb-3 text-base font-semibold text-nova-text">Thuộc tính pet</h3>
                 <LevelTable label="Thuộc tính pet" attributes={data.level.petAttributes} />
               </div>

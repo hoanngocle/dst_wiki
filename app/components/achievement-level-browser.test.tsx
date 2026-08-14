@@ -12,6 +12,13 @@ it("shows every task occurrence by default", () => {
 
   expect(screen.getByRole("status").textContent).toContain("763 nhiệm vụ");
   expect(screen.getAllByTestId("task-record")).toHaveLength(763);
+  const blockHeadings = screen.getAllByTestId("task-block-heading");
+  expect(blockHeadings.map((heading) => heading.textContent)).toEqual([
+    "Nhiệm vụ nhân vật",
+    "Nhiệm vụ theo mùa",
+    "Nhiệm vụ lặp",
+  ]);
+  expect(screen.getAllByTestId("task-pool-heading")).toHaveLength(28);
 });
 
 it("filters tasks and resets to the full result set", () => {
@@ -71,6 +78,19 @@ it("switches to perks and exposes character rewards separately", () => {
   ).toBeDefined();
   const perkList = screen.getByRole("list", { name: "Danh sách kỹ năng" });
   expect(within(perkList).getAllByTestId("perk-record")).toHaveLength(128);
+  expect(screen.getByRole("option", { name: "Wonkey" })).toBeDefined();
+
+  fireEvent.change(screen.getByLabelText("Nhân vật của kỹ năng"), {
+    target: { value: "Wonkey" },
+  });
+  expect(screen.getAllByTestId("perk-record")).toHaveLength(2);
+});
+
+it("renders source backticks as inline code", () => {
+  render(<AchievementLevelBrowser data={data} />);
+
+  const firstPrefab = screen.getAllByText("butterflymuffin")[0];
+  expect(firstPrefab.tagName).toBe("CODE");
 });
 
 it("renders an empty state with a reset action", () => {

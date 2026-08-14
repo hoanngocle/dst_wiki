@@ -19,6 +19,10 @@ it("renders the complete Achievement & Level overview", () => {
   expect(within(stats).getByText("18")).toBeDefined();
   expect(screen.getByRole("heading", { name: "Hệ thống Level" })).toBeDefined();
   expect(screen.getByText(/Mặc định bắt đầu cấp 1/)).toBeDefined();
+  expect(screen.getByRole("heading", { name: "Sao và mốc thưởng" })).toBeDefined();
+  expect(screen.getByText(/Sao.*coinget/)).toBeDefined();
+  expect(screen.getByText("Hồi 50 Máu, Đói và Sanity.")).toBeDefined();
+  expect(screen.getByText("Nhận 1 Sao.")).toBeDefined();
   expect(screen.getByRole("tab", { name: "Nhiệm vụ" }).getAttribute("data-state")).toBe(
     "active",
   );
@@ -29,7 +33,12 @@ it("renders the complete Achievement & Level overview", () => {
 it("renders player and pet level attributes from the artifact", () => {
   render(<AchievementLevelPage />);
 
-  expect(screen.getByRole("table", { name: "Thuộc tính người chơi" })).toBeDefined();
-  expect(screen.getByRole("table", { name: "Thuộc tính pet" })).toBeDefined();
+  const playerTable = screen.getByRole("table", { name: "Thuộc tính người chơi" });
+  const petTable = screen.getByRole("table", { name: "Thuộc tính pet" });
+
+  expect(playerTable).toBeDefined();
+  expect(petTable).toBeDefined();
+  expect(playerTable.parentElement?.parentElement?.className).toContain("min-w-0");
+  expect(petTable.parentElement?.parentElement?.className).toContain("min-w-0");
   expect(screen.getByText("Tốc độ pet")).toBeDefined();
 });

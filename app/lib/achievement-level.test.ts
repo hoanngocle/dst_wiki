@@ -29,6 +29,19 @@ describe("parseAchievementLevelData", () => {
     expect(() => parseAchievementLevelData(incomplete)).toThrow(/128 perks/);
   });
 
+  it.each([
+    ["task-2 rewards", (value: typeof payload) => value.rewards.task2.pop(), /19 task-2 rewards/],
+    ["task-4 rewards", (value: typeof payload) => value.rewards.task4.pop(), /11 task-4 rewards/],
+    ["level summary", (value: typeof payload) => value.level.summary.pop(), /3 level summary lines/],
+    ["player attributes", (value: typeof payload) => value.level.playerAttributes.pop(), /6 player attributes/],
+    ["pet attributes", (value: typeof payload) => value.level.petAttributes.pop(), /6 pet attributes/],
+  ])("rejects truncated %s", (_label, truncate, message) => {
+    const incomplete = structuredClone(payload);
+    truncate(incomplete);
+
+    expect(() => parseAchievementLevelData(incomplete)).toThrow(message);
+  });
+
   it("rejects duplicate task occurrence keys", () => {
     const duplicate = structuredClone(payload);
     duplicate.taskGroups[0].tasks[1].key = duplicate.taskGroups[0].tasks[0].key;

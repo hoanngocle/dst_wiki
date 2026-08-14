@@ -191,14 +191,24 @@ def _table_blocks_between(lines: list[str], start: int, end: int) -> list[list[l
 
 
 def _parse_level(lines: list[str], start: int, end: int) -> JsonObject:
-    summary = [
-        line.removeprefix("- ")
-        for line in lines[start + 1 : end]
-        if line.startswith("- ")
-    ]
+    summary: list[str] = []
+    cursor = start + 1
+    while cursor < end and not lines[cursor].startswith("### "):
+        if lines[cursor].startswith("- "):
+            summary.append(lines[cursor].removeprefix("- "))
+        cursor += 1
+
+    star_heading = _heading_index(lines, "### Sao và mốc thưởng")
+    star_currency = next(
+        (line for line in lines[star_heading + 1 : end] if line.strip()),
+        None,
+    )
+    if star_currency is None:
+        raise ValueError("missing star currency description")
+
     tables = _table_blocks_between(lines, start, end)
-    if len(tables) != 2:
-        raise ValueError(f"expected 2 level tables, got {len(tables)}")
+    if len(tables) != 3:
+        raise ValueError(f"expected 3 level tables, got {len(tables)}")
 
     def attributes(rows: list[list[str]]) -> list[JsonObject]:
         parsed: list[JsonObject] = []
@@ -210,8 +220,13 @@ def _parse_level(lines: list[str], start: int, end: int) -> JsonObject:
 
     return {
         "summary": summary,
-        "playerAttributes": attributes(tables[0]),
-        "petAttributes": attributes(tables[1]),
+        "starCurrency": star_currency,
+        "taskMilestones": [
+            {"completed": int(row[0]), "reward": row[1]}
+            for row in tables[0]
+        ],
+        "playerAttributes": attributes(tables[1]),
+        "petAttributes": attributes(tables[2]),
     }
 
 
@@ -241,6 +256,16 @@ def parse_report(markdown: str) -> JsonObject:
         raise ValueError(f"expected 169 achievements, got {len(achievements)}")
     if len(perks) != 128:
         raise ValueError(f"expected 128 perks, got {len(perks)}")
+    if len(rewards["task2"]) != 19:
+        raise ValueError(f"expected 19 task-2 rewards, got {len(rewards['task2'])}")
+    if len(rewards["task4"]) != 11:
+        raise ValueError(f"expected 11 task-4 rewards, got {len(rewards['task4'])}")
+    if len(level["summary"]) != 3:
+        raise ValueError(f"expected 3 level summary lines, got {len(level['summary'])}")
+    if len(level["taskMilestones"]) != 4:
+        raise ValueError(f"expected 4 task milestones, got {len(level['taskMilestones'])}")
+    if len(level["playerAttributes"]) != 6 or len(level["petAttributes"]) != 6:
+        raise ValueError("expected 6 player and 6 pet attributes")
     character_groups = sum(group["slot"] == "character" for group in task_groups)
     if character_groups != 18:
         raise ValueError(f"expected 18 character task groups, got {character_groups}")

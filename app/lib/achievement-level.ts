@@ -50,6 +50,11 @@ export interface LevelAttribute {
   multi: string;
 }
 
+export interface TaskMilestone {
+  completed: number;
+  reward: string;
+}
+
 export interface AchievementLevelData {
   meta: {
     workshopId: "2937640068";
@@ -68,6 +73,8 @@ export interface AchievementLevelData {
   };
   level: {
     summary: readonly string[];
+    starCurrency: string;
+    taskMilestones: readonly TaskMilestone[];
     playerAttributes: readonly LevelAttribute[];
     petAttributes: readonly LevelAttribute[];
   };
@@ -227,6 +234,14 @@ function parseLevelAttribute(value: unknown, path: string): LevelAttribute {
   };
 }
 
+function parseTaskMilestone(value: unknown, path: string): TaskMilestone {
+  const source = record(value, path);
+  return {
+    completed: requiredNumber(source.completed, `${path}.completed`),
+    reward: requiredString(source.reward, `${path}.reward`),
+  };
+}
+
 function assertExact(value: unknown, expected: string | number, path: string): void {
   if (value !== expected) fail(path, `must equal ${String(expected)}`);
 }
@@ -269,6 +284,10 @@ export function parseAchievementLevelData(value: unknown): AchievementLevelData 
   const summary = array(levelSource.summary, "level.summary").map((line, index) =>
     requiredString(line, `level.summary[${index}]`),
   );
+  const starCurrency = requiredString(levelSource.starCurrency, "level.starCurrency");
+  const taskMilestones = array(levelSource.taskMilestones, "level.taskMilestones").map(
+    (milestone, index) => parseTaskMilestone(milestone, `level.taskMilestones[${index}]`),
+  );
   const playerAttributes = array(
     levelSource.playerAttributes,
     "level.playerAttributes",
@@ -304,6 +323,24 @@ export function parseAchievementLevelData(value: unknown): AchievementLevelData 
       `Achievement & Level data must contain 128 perks; received ${perks.length}`,
     );
   }
+  if (task2.length !== 19) {
+    throw new Error(`Achievement & Level data must contain 19 task-2 rewards; received ${task2.length}`);
+  }
+  if (task4.length !== 11) {
+    throw new Error(`Achievement & Level data must contain 11 task-4 rewards; received ${task4.length}`);
+  }
+  if (summary.length !== 3) {
+    throw new Error(`Achievement & Level data must contain 3 level summary lines; received ${summary.length}`);
+  }
+  if (taskMilestones.length !== 4 || taskMilestones.some((item, index) => item.completed !== index + 1)) {
+    throw new Error("Achievement & Level data must contain task milestones 1 through 4");
+  }
+  if (playerAttributes.length !== 6) {
+    throw new Error(`Achievement & Level data must contain 6 player attributes; received ${playerAttributes.length}`);
+  }
+  if (petAttributes.length !== 6) {
+    throw new Error(`Achievement & Level data must contain 6 pet attributes; received ${petAttributes.length}`);
+  }
 
   assertUnique(taskGroups.map((group) => group.id), "task group id");
   assertUnique(taskGroups.flatMap((group) => group.tasks.map((task) => task.key)), "task key");
@@ -323,7 +360,7 @@ export function parseAchievementLevelData(value: unknown): AchievementLevelData 
     achievements,
     perks,
     rewards: { task2, task4 },
-    level: { summary, playerAttributes, petAttributes },
+    level: { summary, starCurrency, taskMilestones, playerAttributes, petAttributes },
   };
 }
 
