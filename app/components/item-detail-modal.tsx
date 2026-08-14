@@ -33,9 +33,13 @@ const categoryLabel = {
 function CraftingSections({
   item,
   titleId,
+  itemsById,
+  onSelectItem,
 }: {
   item: ItemListEntry;
   titleId: string;
+  itemsById: ReadonlyMap<string, ItemListEntry>;
+  onSelectItem: (item: ItemListEntry) => void;
 }) {
   return (
     <>
@@ -51,7 +55,11 @@ function CraftingSections({
             Công thức
           </h3>
           <div className="flex flex-wrap items-center gap-3 p-4">
-            <RecipeIngredients recipe={item.recipe} />
+            <RecipeIngredients
+              recipe={item.recipe}
+              itemsById={itemsById}
+              onSelectItem={onSelectItem}
+            />
             <span aria-hidden="true" className="text-lg font-semibold text-nova-muted">
               =
             </span>
@@ -160,7 +168,12 @@ export function ItemDetailModal({
         titleId={titleId}
       />
     ) : (
-      <CraftingSections item={item} titleId={titleId} />
+      <CraftingSections
+        item={item}
+        titleId={titleId}
+        itemsById={itemsById}
+        onSelectItem={onSelectItem}
+      />
     );
   const fallbackSummary = item.description ? (
     <ItemSummary description={item.description} titleId={titleId} />

@@ -362,6 +362,29 @@ describe("WikiSearch", () => {
     expect(document.activeElement).toBe(ingredient);
   });
 
+  it("opens a recipe ingredient from reference items excluded from the visible catalog", () => {
+    render(<WikiSearch items={[items[0]]} referenceItems={[...items, goldItem]} />);
+
+    expect(screen.queryByText("Gỗ")).toBeNull();
+    const ingredient = screen.getByRole("button", { name: "Vàng, số lượng 2" });
+    fireEvent.click(ingredient);
+
+    expect(screen.getByRole("dialog", { name: "Vàng" })).toBeDefined();
+  });
+
+  it("hides source filters without removing the category filter", () => {
+    render(<WikiSearch items={items} hideSourceFilters />);
+
+    expect(screen.queryByRole("group", { name: "Lọc theo nguồn" })).toBeNull();
+    expect(screen.getByRole("group", { name: "Lọc theo danh mục" })).toBeDefined();
+
+    fireEvent.click(
+      screen.getByRole("button", { name: "Công trình & trang trí, 1 vật phẩm" }),
+    );
+    expect(screen.getByText("Gỗ")).toBeDefined();
+    expect(screen.queryByText("Kiếm Thử")).toBeNull();
+  });
+
   it("switches the shared modal from a mapped Wiki Usage result", async () => {
     const nightLight: ItemListEntry = {
       ...goldItem,

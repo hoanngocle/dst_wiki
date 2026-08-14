@@ -74,7 +74,17 @@ function FilterButton({
   );
 }
 
-export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
+type WikiSearchProps = {
+  items: readonly ItemListEntry[];
+  referenceItems?: readonly ItemListEntry[];
+  hideSourceFilters?: boolean;
+};
+
+export function WikiSearch({
+  items,
+  referenceItems = items,
+  hideSourceFilters = false,
+}: WikiSearchProps) {
   const [query, setQuery] = useState("");
   const [source, setSource] = useState<ItemSourceFilter>("all");
   const [category, setCategory] = useState<GameCategoryFilter>("all");
@@ -82,8 +92,8 @@ export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
   const [selectedItem, setSelectedItem] = useState<ItemListEntry | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const itemsById = useMemo(
-    () => new Map(items.map((item) => [item.id, item] as const)),
-    [items],
+    () => new Map(referenceItems.map((item) => [item.id, item] as const)),
+    [referenceItems],
   );
   const sourceItems = useMemo(
     () => filterItems(items, "", source, "all", "all"),
@@ -221,17 +231,19 @@ export function WikiSearch({ items }: { items: readonly ItemListEntry[] }) {
       </DstField>
 
       <DstPanel testId="dst-wiki-filter-panel" className="mt-5 grid gap-4 p-4">
-        <FilterGroup label="Lọc theo nguồn">
-          {sourceFilters.map((candidate) => (
-            <FilterButton
-              key={candidate.value}
-              pressed={source === candidate.value}
-              onClick={() => updateSource(candidate.value)}
-            >
-              {candidate.label}
-            </FilterButton>
-          ))}
-        </FilterGroup>
+        {!hideSourceFilters ? (
+          <FilterGroup label="Lọc theo nguồn">
+            {sourceFilters.map((candidate) => (
+              <FilterButton
+                key={candidate.value}
+                pressed={source === candidate.value}
+                onClick={() => updateSource(candidate.value)}
+              >
+                {candidate.label}
+              </FilterButton>
+            ))}
+          </FilterGroup>
+        ) : null}
         <FilterGroup label="Lọc theo danh mục">
           {visibleCategoryOptions.map((candidate) => (
             <FilterButton
