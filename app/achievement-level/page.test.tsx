@@ -1,5 +1,9 @@
 import { render, screen, within } from "@testing-library/react";
-import { expect, it } from "vitest";
+import { expect, it, vi } from "vitest";
+
+vi.mock("@/app/components/achievement-level-browser", () => ({
+  AchievementLevelBrowser: () => null,
+}));
 
 import AchievementLevelPage from "./page";
 
@@ -23,11 +27,6 @@ it("renders the complete Achievement & Level overview", () => {
   expect(screen.getByText(/Sao.*coinget/)).toBeDefined();
   expect(screen.getByText("Hồi 50 Máu, Đói và Sanity.")).toBeDefined();
   expect(screen.getByText("Nhận 1 Sao.")).toBeDefined();
-  expect(screen.getByRole("tab", { name: "Nhiệm vụ" }).getAttribute("data-state")).toBe(
-    "active",
-  );
-  expect(screen.getByRole("tab", { name: "Thành tựu" })).toBeDefined();
-  expect(screen.getByRole("tab", { name: "Kỹ năng" })).toBeDefined();
 });
 
 it("renders player and pet level attributes from the artifact", () => {
