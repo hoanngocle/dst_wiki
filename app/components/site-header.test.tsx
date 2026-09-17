@@ -13,6 +13,7 @@ it("links the standalone navigation in the approved order", () => {
     "Chế tạo Tu Tiên",
     "Cảnh giới Tu Tiên",
     "Achievement & Level",
+    "Solo Leveling",
   ]);
   expect(screen.getByRole("link", { name: /vật phẩm/i }).getAttribute("href")).toBe("/");
   expect(screen.getByRole("link", { name: "Chế tạo Tu Tiên" }).getAttribute("href")).toBe(
@@ -39,6 +40,13 @@ it("marks Achievement & Level active", () => {
   expect(
     screen.getByRole("link", { name: "Achievement & Level" }).getAttribute("aria-current"),
   ).toBe("page");
+});
+
+it("links and marks the Solo Leveling tab active", () => {
+  render(<SiteHeader active="solo-leveling" />);
+  const link = screen.getByRole("link", { name: "Solo Leveling" });
+  expect(link.getAttribute("href")).toBe("/solo-leveling");
+  expect(link.getAttribute("aria-current")).toBe("page");
 });
 
 it("marks the crafting tab as active on the Hàn Lập crafting page", () => {

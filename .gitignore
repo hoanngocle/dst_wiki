@@ -50,6 +50,9 @@ next-env.d.ts
 /data/crawled/
 /data/generated/wiki.sqlite
 /mod
+/solo_leveling/
+/public/solo-leveling/sources.json
+/public/solo-leveling/solo-leveling-sources.zip
 
 # Local resumable Fandom category checkpoints and shared payload cache
 /data/crawled/fandom-categories/

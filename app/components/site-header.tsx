@@ -2,13 +2,14 @@ import Link from "next/link";
 
 import { cn } from "@/app/lib/cn";
 
-type SiteSection = "items" | "tu-tien-crafting" | "tu-tien" | "achievement-level";
+type SiteSection = "items" | "tu-tien-crafting" | "tu-tien" | "achievement-level" | "solo-leveling";
 
 const links = [
   { id: "items", href: "/", label: "Vật phẩm" },
   { id: "tu-tien-crafting", href: "/tu-tien-crafting", label: "Chế tạo Tu Tiên" },
   { id: "tu-tien", href: "/tu-tien", label: "Cảnh giới Tu Tiên" },
   { id: "achievement-level", href: "/achievement-level", label: "Achievement & Level" },
+  { id: "solo-leveling", href: "/solo-leveling", label: "Solo Leveling" },
 ] as const;
 
 export function SiteHeader({ active }: { active?: SiteSection }) {
