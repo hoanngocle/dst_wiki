@@ -1,0 +1,3101 @@
+{
+  "version": "2.0",
+  "source": "mods/PhamNhanTuTien/modinfo.lua",
+  "sourceHash": "21cfd093a0be1d7756653e6d752deb6118fc3cc740bc6c2f10268ff8ee49027b",
+  "options": [
+    {
+      "key": "ttk_inv45_size",
+      "label": "Túi đồ: số ô",
+      "description": "",
+      "group": "Túi đồ",
+      "default": 45,
+      "choices": [
+        {
+          "label": "15 ô",
+          "value": 15,
+          "description": ""
+        },
+        {
+          "label": "25 ô",
+          "value": 25,
+          "description": ""
+        },
+        {
+          "label": "45 ô",
+          "value": 45,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_inv45_backpacks",
+      "label": "Túi đồ: cất ba lô vào túi",
+      "description": "Cho phép ba lô trở thành vật phẩm có thể cất trong túi đồ.",
+      "group": "Túi đồ",
+      "default": false,
+      "choices": [
+        {
+          "label": "Có",
+          "value": true,
+          "description": ""
+        },
+        {
+          "label": "Không",
+          "value": false,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_inv45_first",
+      "label": "Túi đồ: vị trí ô đầu",
+      "description": "",
+      "group": "Túi đồ",
+      "default": false,
+      "choices": [
+        {
+          "label": "Góc trên bên trái",
+          "value": true,
+          "description": ""
+        },
+        {
+          "label": "Góc dưới bên trái",
+          "value": false,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_inv45_spacing",
+      "label": "Túi đồ: khoảng cách nhóm",
+      "description": "",
+      "group": "Túi đồ",
+      "default": 15,
+      "choices": [
+        {
+          "label": "Chia nhóm",
+          "value": 15,
+          "description": ""
+        },
+        {
+          "label": "Cách đều",
+          "value": 7,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_portal_HungerCost",
+      "label": "Truyền Tống: Mức tiêu hao độ no",
+      "description": "",
+      "group": "Truyền Tống Trận",
+      "default": 1,
+      "choices": [
+        {
+          "label": "Không tiêu hao",
+          "value": 0,
+          "description": ""
+        },
+        {
+          "label": "0,25 lần",
+          "value": 0.25,
+          "description": ""
+        },
+        {
+          "label": "1 lần",
+          "value": 1,
+          "description": ""
+        },
+        {
+          "label": "2 lần",
+          "value": 2,
+          "description": ""
+        },
+        {
+          "label": "4 lần",
+          "value": 4,
+          "description": ""
+        },
+        {
+          "label": "8 lần",
+          "value": 8,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_portal_SanityCost",
+      "label": "Truyền Tống: Mức tiêu hao tinh thần",
+      "description": "",
+      "group": "Truyền Tống Trận",
+      "default": 1,
+      "choices": [
+        {
+          "label": "Không tiêu hao",
+          "value": 0,
+          "description": ""
+        },
+        {
+          "label": "0,25 lần",
+          "value": 0.25,
+          "description": ""
+        },
+        {
+          "label": "1 lần",
+          "value": 1,
+          "description": ""
+        },
+        {
+          "label": "2 lần",
+          "value": 2,
+          "description": ""
+        },
+        {
+          "label": "4 lần",
+          "value": 4,
+          "description": ""
+        },
+        {
+          "label": "8 lần",
+          "value": 8,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_portal_CountdownEnable",
+      "label": "Truyền Tống: Đếm ngược trước khi dịch chuyển",
+      "description": "",
+      "group": "Truyền Tống Trận",
+      "default": false,
+      "choices": [
+        {
+          "label": "Bật",
+          "value": true,
+          "description": ""
+        },
+        {
+          "label": "Tắt",
+          "value": false,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_portal_ArrowsignEnable",
+      "label": "Truyền Tống: Dùng cả biển chỉ đường",
+      "description": "",
+      "group": "Truyền Tống Trận",
+      "default": false,
+      "choices": [
+        {
+          "label": "Bật",
+          "value": true,
+          "description": ""
+        },
+        {
+          "label": "Tắt",
+          "value": false,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_portal_Ownership",
+      "label": "Truyền Tống: Giới hạn theo quyền sở hữu",
+      "description": "",
+      "group": "Truyền Tống Trận",
+      "default": true,
+      "choices": [
+        {
+          "label": "Bật",
+          "value": true,
+          "description": ""
+        },
+        {
+          "label": "Tắt",
+          "value": false,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "lucmachthankiem_slot",
+      "label": "Thần Kiếm: ô trang bị",
+      "description": "Dây chuyền dùng ô NECK nếu có; nếu game không có ô này thì dùng ô thân.",
+      "group": "Lục Mạch Thần Kiếm",
+      "default": 2,
+      "choices": [
+        {
+          "label": "Dây chuyền",
+          "value": 2,
+          "description": ""
+        },
+        {
+          "label": "Thân",
+          "value": 1,
+          "description": ""
+        },
+        {
+          "label": "Tay",
+          "value": 0,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "lucmachthankiem_durability",
+      "label": "Thần Kiếm: độ bền",
+      "description": "",
+      "group": "Lục Mạch Thần Kiếm",
+      "default": -1,
+      "choices": [
+        {
+          "label": "Vô hạn",
+          "value": -1,
+          "description": ""
+        },
+        {
+          "label": "500",
+          "value": 500,
+          "description": ""
+        },
+        {
+          "label": "1200",
+          "value": 1200,
+          "description": ""
+        },
+        {
+          "label": "1600",
+          "value": 1600,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "lucmachthankiem_damage",
+      "label": "Thần Kiếm: sát thương gốc",
+      "description": "Nền sát thương ở cấp xanh lá, trước Ngọc Lấp Lánh và cường hóa Solo.",
+      "group": "Lục Mạch Thần Kiếm",
+      "default": 34,
+      "choices": [
+        {
+          "label": "1",
+          "value": 1,
+          "description": ""
+        },
+        {
+          "label": "10",
+          "value": 10,
+          "description": ""
+        },
+        {
+          "label": "20",
+          "value": 20,
+          "description": ""
+        },
+        {
+          "label": "34",
+          "value": 34,
+          "description": ""
+        },
+        {
+          "label": "50",
+          "value": 50,
+          "description": ""
+        },
+        {
+          "label": "68",
+          "value": 68,
+          "description": ""
+        },
+        {
+          "label": "80",
+          "value": 80,
+          "description": ""
+        },
+        {
+          "label": "108",
+          "value": 108,
+          "description": ""
+        },
+        {
+          "label": "168",
+          "value": 168,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "lucmachthankiem_planardamage",
+      "label": "Thần Kiếm: planar gốc",
+      "description": "",
+      "group": "Lục Mạch Thần Kiếm",
+      "default": 10,
+      "choices": [
+        {
+          "label": "0",
+          "value": 0,
+          "description": ""
+        },
+        {
+          "label": "10",
+          "value": 10,
+          "description": ""
+        },
+        {
+          "label": "20",
+          "value": 20,
+          "description": ""
+        },
+        {
+          "label": "30",
+          "value": 30,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "lucmachthankiem_upgrade_need",
+      "label": "Thần Kiếm: ngọc mỗi cấp",
+      "description": "",
+      "group": "Lục Mạch Thần Kiếm",
+      "default": 6,
+      "choices": [
+        {
+          "label": "3",
+          "value": 3,
+          "description": ""
+        },
+        {
+          "label": "6",
+          "value": 6,
+          "description": ""
+        },
+        {
+          "label": "9",
+          "value": 9,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "lucmachthankiem_aoe_attack",
+      "label": "Thần Kiếm: đánh lan",
+      "description": "",
+      "group": "Lục Mạch Thần Kiếm",
+      "default": true,
+      "choices": [
+        {
+          "label": "Bật",
+          "value": true,
+          "description": ""
+        },
+        {
+          "label": "Tắt",
+          "value": false,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "lucmachthankiem_speed",
+      "label": "Thần Kiếm: tốc độ di chuyển",
+      "description": "",
+      "group": "Lục Mạch Thần Kiếm",
+      "default": 1,
+      "choices": [
+        {
+          "label": "Bình thường",
+          "value": 1,
+          "description": ""
+        },
+        {
+          "label": "×1,15",
+          "value": 1.15,
+          "description": ""
+        },
+        {
+          "label": "×1,25",
+          "value": 1.25,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_vhth_recipeCost",
+      "label": "Thần Hỏa: Công thức chung",
+      "description": "",
+      "group": "Vĩnh Hằng Thần Hỏa",
+      "default": "standard",
+      "choices": [
+        {
+          "label": "Thử nghiệm",
+          "value": "test",
+          "description": ""
+        },
+        {
+          "label": "Rất rẻ",
+          "value": "cheat",
+          "description": ""
+        },
+        {
+          "label": "Rẻ",
+          "value": "cheap",
+          "description": ""
+        },
+        {
+          "label": "Tiêu chuẩn",
+          "value": "standard",
+          "description": ""
+        },
+        {
+          "label": "Đắt",
+          "value": "expensive",
+          "description": ""
+        },
+        {
+          "label": "Cao cấp",
+          "value": "advanced",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_vhth_efficiency",
+      "label": "Thần Hỏa: Hiệu suất nhiên liệu",
+      "description": "",
+      "group": "Vĩnh Hằng Thần Hỏa",
+      "default": 1,
+      "choices": [
+        {
+          "label": "-25%",
+          "value": 0.75,
+          "description": ""
+        },
+        {
+          "label": "+0%",
+          "value": 1,
+          "description": ""
+        },
+        {
+          "label": "+25%",
+          "value": 1.25,
+          "description": ""
+        },
+        {
+          "label": "+50%",
+          "value": 1.5,
+          "description": ""
+        },
+        {
+          "label": "+75%",
+          "value": 1.75,
+          "description": ""
+        },
+        {
+          "label": "+100%",
+          "value": 2,
+          "description": ""
+        },
+        {
+          "label": "+150%",
+          "value": 2.5,
+          "description": ""
+        },
+        {
+          "label": "+200%",
+          "value": 3,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_vhth_maxFuel",
+      "label": "Thần Hỏa: Dung lượng nhiên liệu",
+      "description": "",
+      "group": "Vĩnh Hằng Thần Hỏa",
+      "default": 1,
+      "choices": [
+        {
+          "label": "-87.5%",
+          "value": 0.125,
+          "description": ""
+        },
+        {
+          "label": "-75%",
+          "value": 0.25,
+          "description": ""
+        },
+        {
+          "label": "-50%",
+          "value": 0.5,
+          "description": ""
+        },
+        {
+          "label": "-25%",
+          "value": 0.75,
+          "description": ""
+        },
+        {
+          "label": "+0%",
+          "value": 1,
+          "description": ""
+        },
+        {
+          "label": "+25%",
+          "value": 1.25,
+          "description": ""
+        },
+        {
+          "label": "+50%",
+          "value": 1.5,
+          "description": ""
+        },
+        {
+          "label": "+75%",
+          "value": 1.75,
+          "description": ""
+        },
+        {
+          "label": "+100%",
+          "value": 2,
+          "description": ""
+        },
+        {
+          "label": "+150%",
+          "value": 2.5,
+          "description": ""
+        },
+        {
+          "label": "+200%",
+          "value": 3,
+          "description": ""
+        },
+        {
+          "label": "+300%",
+          "value": 4,
+          "description": ""
+        },
+        {
+          "label": "+400%",
+          "value": 5,
+          "description": ""
+        },
+        {
+          "label": "+500%",
+          "value": 6,
+          "description": ""
+        },
+        {
+          "label": "+700%",
+          "value": 8,
+          "description": ""
+        },
+        {
+          "label": "+900%",
+          "value": 10,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_vhth_startFuel",
+      "label": "Thần Hỏa: Nhiên liệu ban đầu",
+      "description": "",
+      "group": "Vĩnh Hằng Thần Hỏa",
+      "default": 0.375,
+      "choices": [
+        {
+          "label": "0%",
+          "value": 0,
+          "description": ""
+        },
+        {
+          "label": "12.5%",
+          "value": 0.125,
+          "description": ""
+        },
+        {
+          "label": "25%",
+          "value": 0.25,
+          "description": ""
+        },
+        {
+          "label": "37.5%",
+          "value": 0.375,
+          "description": ""
+        },
+        {
+          "label": "50%",
+          "value": 0.5,
+          "description": ""
+        },
+        {
+          "label": "62.5%",
+          "value": 0.625,
+          "description": ""
+        },
+        {
+          "label": "75%",
+          "value": 0.75,
+          "description": ""
+        },
+        {
+          "label": "87.5%",
+          "value": 0.875,
+          "description": ""
+        },
+        {
+          "label": "100%",
+          "value": 1,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_vhth_lightRange",
+      "label": "Thần Hỏa: Phạm vi sáng",
+      "description": "",
+      "group": "Vĩnh Hằng Thần Hỏa",
+      "default": 1,
+      "choices": [
+        {
+          "label": "-50%",
+          "value": 0.5,
+          "description": ""
+        },
+        {
+          "label": "-25%",
+          "value": 0.75,
+          "description": ""
+        },
+        {
+          "label": "-12.5%",
+          "value": 0.875,
+          "description": ""
+        },
+        {
+          "label": "+0%",
+          "value": 1,
+          "description": ""
+        },
+        {
+          "label": "+12.5%",
+          "value": 1.125,
+          "description": ""
+        },
+        {
+          "label": "+25%",
+          "value": 1.25,
+          "description": ""
+        },
+        {
+          "label": "+50%",
+          "value": 1.5,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_vhth_structureSize",
+      "label": "Thần Hỏa: Kích thước bếp",
+      "description": "",
+      "group": "Vĩnh Hằng Thần Hỏa",
+      "default": 1,
+      "choices": [
+        {
+          "label": "-50%",
+          "value": 0.5,
+          "description": ""
+        },
+        {
+          "label": "-25%",
+          "value": 0.75,
+          "description": ""
+        },
+        {
+          "label": "-12.5%",
+          "value": 0.875,
+          "description": ""
+        },
+        {
+          "label": "+0%",
+          "value": 1,
+          "description": ""
+        },
+        {
+          "label": "+12.5%",
+          "value": 1.125,
+          "description": ""
+        },
+        {
+          "label": "+25%",
+          "value": 1.25,
+          "description": ""
+        },
+        {
+          "label": "+50%",
+          "value": 1.5,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_vhth_sanityBoost",
+      "label": "Thần Hỏa: Hồi tinh thần",
+      "description": "",
+      "group": "Vĩnh Hằng Thần Hỏa",
+      "default": 0.5,
+      "choices": [
+        {
+          "label": "-100%",
+          "value": 0,
+          "description": ""
+        },
+        {
+          "label": "-75%",
+          "value": 0.125,
+          "description": ""
+        },
+        {
+          "label": "-50%",
+          "value": 0.25,
+          "description": ""
+        },
+        {
+          "label": "-25%",
+          "value": 0.375,
+          "description": ""
+        },
+        {
+          "label": "+0%",
+          "value": 0.5,
+          "description": ""
+        },
+        {
+          "label": "+25%",
+          "value": 0.625,
+          "description": ""
+        },
+        {
+          "label": "+50%",
+          "value": 0.75,
+          "description": ""
+        },
+        {
+          "label": "+75%",
+          "value": 0.875,
+          "description": ""
+        },
+        {
+          "label": "+100%",
+          "value": 1,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_vhth_dropLoot",
+      "label": "Thần Hỏa: Vật phẩm khi tắt",
+      "description": "",
+      "group": "Vĩnh Hằng Thần Hỏa",
+      "default": 2,
+      "choices": [
+        {
+          "label": "Không có",
+          "value": 0,
+          "description": ""
+        },
+        {
+          "label": "Ít",
+          "value": 1,
+          "description": ""
+        },
+        {
+          "label": "Bình thường",
+          "value": 2,
+          "description": ""
+        },
+        {
+          "label": "Nhiều",
+          "value": 3,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_vhth_starsSpawnHounds",
+      "label": "Thần Hỏa: Triệu hồi chó săn khi tắt",
+      "description": "",
+      "group": "Vĩnh Hằng Thần Hỏa",
+      "default": "no",
+      "choices": [
+        {
+          "label": "Không",
+          "value": "no",
+          "description": ""
+        },
+        {
+          "label": "Ít",
+          "value": 1,
+          "description": ""
+        },
+        {
+          "label": "Vừa",
+          "value": 2,
+          "description": ""
+        },
+        {
+          "label": "Nhiều",
+          "value": 3,
+          "description": ""
+        },
+        {
+          "label": "Tối đa",
+          "value": 4,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_vhth_recipeFirepit",
+      "label": "Bếp Thần Hỏa: Công thức",
+      "description": "",
+      "group": "Vĩnh Hằng Thần Hỏa",
+      "default": "nooverride",
+      "choices": [
+        {
+          "label": "Theo thiết lập chung",
+          "value": "nooverride",
+          "description": ""
+        },
+        {
+          "label": "Rất rẻ",
+          "value": "cheat",
+          "description": ""
+        },
+        {
+          "label": "Rẻ",
+          "value": "cheap",
+          "description": ""
+        },
+        {
+          "label": "Tiêu chuẩn",
+          "value": "standard",
+          "description": ""
+        },
+        {
+          "label": "Đắt",
+          "value": "expensive",
+          "description": ""
+        },
+        {
+          "label": "Cao cấp",
+          "value": "advanced",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_vhth_efficiencyFirepit",
+      "label": "Bếp Thần Hỏa: Hiệu suất nhiên liệu",
+      "description": "",
+      "group": "Vĩnh Hằng Thần Hỏa",
+      "default": "nooverride",
+      "choices": [
+        {
+          "label": "Theo thiết lập chung",
+          "value": "nooverride",
+          "description": ""
+        },
+        {
+          "label": "-25%",
+          "value": 0.75,
+          "description": ""
+        },
+        {
+          "label": "+0%",
+          "value": 1,
+          "description": ""
+        },
+        {
+          "label": "+25%",
+          "value": 1.25,
+          "description": ""
+        },
+        {
+          "label": "+50%",
+          "value": 1.5,
+          "description": ""
+        },
+        {
+          "label": "+75%",
+          "value": 1.75,
+          "description": ""
+        },
+        {
+          "label": "+100%",
+          "value": 2,
+          "description": ""
+        },
+        {
+          "label": "+150%",
+          "value": 2.5,
+          "description": ""
+        },
+        {
+          "label": "+200%",
+          "value": 3,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_vhth_maxFuelFirepit",
+      "label": "Bếp Thần Hỏa: Dung lượng nhiên liệu",
+      "description": "",
+      "group": "Vĩnh Hằng Thần Hỏa",
+      "default": "nooverride",
+      "choices": [
+        {
+          "label": "Theo thiết lập chung",
+          "value": "nooverride",
+          "description": ""
+        },
+        {
+          "label": "-25%",
+          "value": 0.75,
+          "description": ""
+        },
+        {
+          "label": "+0%",
+          "value": 1,
+          "description": ""
+        },
+        {
+          "label": "+25%",
+          "value": 1.25,
+          "description": ""
+        },
+        {
+          "label": "+50%",
+          "value": 1.5,
+          "description": ""
+        },
+        {
+          "label": "+75%",
+          "value": 1.75,
+          "description": ""
+        },
+        {
+          "label": "+100%",
+          "value": 2,
+          "description": ""
+        },
+        {
+          "label": "+150%",
+          "value": 2.5,
+          "description": ""
+        },
+        {
+          "label": "+200%",
+          "value": 3,
+          "description": ""
+        },
+        {
+          "label": "+300%",
+          "value": 4,
+          "description": ""
+        },
+        {
+          "label": "+400%",
+          "value": 5,
+          "description": ""
+        },
+        {
+          "label": "+500%",
+          "value": 6,
+          "description": ""
+        },
+        {
+          "label": "+700%",
+          "value": 8,
+          "description": ""
+        },
+        {
+          "label": "+900%",
+          "value": 10,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_vhth_startFuelFirepit",
+      "label": "Bếp Thần Hỏa: Nhiên liệu ban đầu",
+      "description": "",
+      "group": "Vĩnh Hằng Thần Hỏa",
+      "default": "nooverride",
+      "choices": [
+        {
+          "label": "Theo thiết lập chung",
+          "value": "nooverride",
+          "description": ""
+        },
+        {
+          "label": "0%",
+          "value": 0,
+          "description": ""
+        },
+        {
+          "label": "12.5%",
+          "value": 0.125,
+          "description": ""
+        },
+        {
+          "label": "25%",
+          "value": 0.25,
+          "description": ""
+        },
+        {
+          "label": "37.5%",
+          "value": 0.375,
+          "description": ""
+        },
+        {
+          "label": "50%",
+          "value": 0.5,
+          "description": ""
+        },
+        {
+          "label": "62.5%",
+          "value": 0.625,
+          "description": ""
+        },
+        {
+          "label": "75%",
+          "value": 0.75,
+          "description": ""
+        },
+        {
+          "label": "87.5%",
+          "value": 0.875,
+          "description": ""
+        },
+        {
+          "label": "100%",
+          "value": 1,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_vhth_lightRangeFirepit",
+      "label": "Bếp Thần Hỏa: Phạm vi sáng",
+      "description": "",
+      "group": "Vĩnh Hằng Thần Hỏa",
+      "default": "nooverride",
+      "choices": [
+        {
+          "label": "Theo thiết lập chung",
+          "value": "nooverride",
+          "description": ""
+        },
+        {
+          "label": "-50%",
+          "value": 0.5,
+          "description": ""
+        },
+        {
+          "label": "-25%",
+          "value": 0.75,
+          "description": ""
+        },
+        {
+          "label": "-12.5%",
+          "value": 0.875,
+          "description": ""
+        },
+        {
+          "label": "+0%",
+          "value": 1,
+          "description": ""
+        },
+        {
+          "label": "+12.5%",
+          "value": 1.125,
+          "description": ""
+        },
+        {
+          "label": "+25%",
+          "value": 1.25,
+          "description": ""
+        },
+        {
+          "label": "+50%",
+          "value": 1.5,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_vhth_structureSizeFirepit",
+      "label": "Bếp Thần Hỏa: Kích thước bếp",
+      "description": "",
+      "group": "Vĩnh Hằng Thần Hỏa",
+      "default": "nooverride",
+      "choices": [
+        {
+          "label": "Theo thiết lập chung",
+          "value": "nooverride",
+          "description": ""
+        },
+        {
+          "label": "-50%",
+          "value": 0.5,
+          "description": ""
+        },
+        {
+          "label": "-25%",
+          "value": 0.75,
+          "description": ""
+        },
+        {
+          "label": "-12.5%",
+          "value": 0.875,
+          "description": ""
+        },
+        {
+          "label": "+0%",
+          "value": 1,
+          "description": ""
+        },
+        {
+          "label": "+12.5%",
+          "value": 1.125,
+          "description": ""
+        },
+        {
+          "label": "+25%",
+          "value": 1.25,
+          "description": ""
+        },
+        {
+          "label": "+50%",
+          "value": 1.5,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_vhth_dropLootFirePit",
+      "label": "Bếp Thần Hỏa: Vật phẩm khi tắt",
+      "description": "",
+      "group": "Vĩnh Hằng Thần Hỏa",
+      "default": "nooverride",
+      "choices": [
+        {
+          "label": "Theo thiết lập chung",
+          "value": "nooverride",
+          "description": ""
+        },
+        {
+          "label": "Không có",
+          "value": 0,
+          "description": ""
+        },
+        {
+          "label": "Ít",
+          "value": 1,
+          "description": ""
+        },
+        {
+          "label": "Bình thường",
+          "value": 2,
+          "description": ""
+        },
+        {
+          "label": "Nhiều",
+          "value": 3,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_vhth_recipeEndoFirepit",
+      "label": "Bếp Hàn Hỏa: Công thức",
+      "description": "",
+      "group": "Vĩnh Hằng Thần Hỏa",
+      "default": "nooverride",
+      "choices": [
+        {
+          "label": "Theo thiết lập chung",
+          "value": "nooverride",
+          "description": ""
+        },
+        {
+          "label": "Rất rẻ",
+          "value": "cheat",
+          "description": ""
+        },
+        {
+          "label": "Rẻ",
+          "value": "cheap",
+          "description": ""
+        },
+        {
+          "label": "Tiêu chuẩn",
+          "value": "standard",
+          "description": ""
+        },
+        {
+          "label": "Đắt",
+          "value": "expensive",
+          "description": ""
+        },
+        {
+          "label": "Cao cấp",
+          "value": "advanced",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_vhth_efficiencyEndoFirepit",
+      "label": "Bếp Hàn Hỏa: Hiệu suất nhiên liệu",
+      "description": "",
+      "group": "Vĩnh Hằng Thần Hỏa",
+      "default": "nooverride",
+      "choices": [
+        {
+          "label": "Theo thiết lập chung",
+          "value": "nooverride",
+          "description": ""
+        },
+        {
+          "label": "-25%",
+          "value": 0.75,
+          "description": ""
+        },
+        {
+          "label": "+0%",
+          "value": 1,
+          "description": ""
+        },
+        {
+          "label": "+25%",
+          "value": 1.25,
+          "description": ""
+        },
+        {
+          "label": "+50%",
+          "value": 1.5,
+          "description": ""
+        },
+        {
+          "label": "+75%",
+          "value": 1.75,
+          "description": ""
+        },
+        {
+          "label": "+100%",
+          "value": 2,
+          "description": ""
+        },
+        {
+          "label": "+150%",
+          "value": 2.5,
+          "description": ""
+        },
+        {
+          "label": "+200%",
+          "value": 3,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_vhth_maxFuelEndoFirepit",
+      "label": "Bếp Hàn Hỏa: Dung lượng nhiên liệu",
+      "description": "",
+      "group": "Vĩnh Hằng Thần Hỏa",
+      "default": "nooverride",
+      "choices": [
+        {
+          "label": "Theo thiết lập chung",
+          "value": "nooverride",
+          "description": ""
+        },
+        {
+          "label": "-25%",
+          "value": 0.75,
+          "description": ""
+        },
+        {
+          "label": "+0%",
+          "value": 1,
+          "description": ""
+        },
+        {
+          "label": "+25%",
+          "value": 1.25,
+          "description": ""
+        },
+        {
+          "label": "+50%",
+          "value": 1.5,
+          "description": ""
+        },
+        {
+          "label": "+75%",
+          "value": 1.75,
+          "description": ""
+        },
+        {
+          "label": "+100%",
+          "value": 2,
+          "description": ""
+        },
+        {
+          "label": "+150%",
+          "value": 2.5,
+          "description": ""
+        },
+        {
+          "label": "+200%",
+          "value": 3,
+          "description": ""
+        },
+        {
+          "label": "+300%",
+          "value": 4,
+          "description": ""
+        },
+        {
+          "label": "+400%",
+          "value": 5,
+          "description": ""
+        },
+        {
+          "label": "+500%",
+          "value": 6,
+          "description": ""
+        },
+        {
+          "label": "+700%",
+          "value": 8,
+          "description": ""
+        },
+        {
+          "label": "+900%",
+          "value": 10,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_vhth_startFuelEndoFirepit",
+      "label": "Bếp Hàn Hỏa: Nhiên liệu ban đầu",
+      "description": "",
+      "group": "Vĩnh Hằng Thần Hỏa",
+      "default": "nooverride",
+      "choices": [
+        {
+          "label": "Theo thiết lập chung",
+          "value": "nooverride",
+          "description": ""
+        },
+        {
+          "label": "0%",
+          "value": 0,
+          "description": ""
+        },
+        {
+          "label": "12.5%",
+          "value": 0.125,
+          "description": ""
+        },
+        {
+          "label": "25%",
+          "value": 0.25,
+          "description": ""
+        },
+        {
+          "label": "37.5%",
+          "value": 0.375,
+          "description": ""
+        },
+        {
+          "label": "50%",
+          "value": 0.5,
+          "description": ""
+        },
+        {
+          "label": "62.5%",
+          "value": 0.625,
+          "description": ""
+        },
+        {
+          "label": "75%",
+          "value": 0.75,
+          "description": ""
+        },
+        {
+          "label": "87.5%",
+          "value": 0.875,
+          "description": ""
+        },
+        {
+          "label": "100%",
+          "value": 1,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_vhth_lightRangeEndoFirepit",
+      "label": "Bếp Hàn Hỏa: Phạm vi sáng",
+      "description": "",
+      "group": "Vĩnh Hằng Thần Hỏa",
+      "default": "nooverride",
+      "choices": [
+        {
+          "label": "Theo thiết lập chung",
+          "value": "nooverride",
+          "description": ""
+        },
+        {
+          "label": "-50%",
+          "value": 0.5,
+          "description": ""
+        },
+        {
+          "label": "-25%",
+          "value": 0.75,
+          "description": ""
+        },
+        {
+          "label": "-12.5%",
+          "value": 0.875,
+          "description": ""
+        },
+        {
+          "label": "+0%",
+          "value": 1,
+          "description": ""
+        },
+        {
+          "label": "+12.5%",
+          "value": 1.125,
+          "description": ""
+        },
+        {
+          "label": "+25%",
+          "value": 1.25,
+          "description": ""
+        },
+        {
+          "label": "+50%",
+          "value": 1.5,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_vhth_structureSizeEndoFirepit",
+      "label": "Bếp Hàn Hỏa: Kích thước bếp",
+      "description": "",
+      "group": "Vĩnh Hằng Thần Hỏa",
+      "default": "nooverride",
+      "choices": [
+        {
+          "label": "Theo thiết lập chung",
+          "value": "nooverride",
+          "description": ""
+        },
+        {
+          "label": "-50%",
+          "value": 0.5,
+          "description": ""
+        },
+        {
+          "label": "-25%",
+          "value": 0.75,
+          "description": ""
+        },
+        {
+          "label": "-12.5%",
+          "value": 0.875,
+          "description": ""
+        },
+        {
+          "label": "+0%",
+          "value": 1,
+          "description": ""
+        },
+        {
+          "label": "+12.5%",
+          "value": 1.125,
+          "description": ""
+        },
+        {
+          "label": "+25%",
+          "value": 1.25,
+          "description": ""
+        },
+        {
+          "label": "+50%",
+          "value": 1.5,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_vhth_dropLootEndoFirepit",
+      "label": "Bếp Hàn Hỏa: Vật phẩm khi tắt",
+      "description": "",
+      "group": "Vĩnh Hằng Thần Hỏa",
+      "default": "nooverride",
+      "choices": [
+        {
+          "label": "Theo thiết lập chung",
+          "value": "nooverride",
+          "description": ""
+        },
+        {
+          "label": "Không có",
+          "value": 0,
+          "description": ""
+        },
+        {
+          "label": "Ít",
+          "value": 1,
+          "description": ""
+        },
+        {
+          "label": "Bình thường",
+          "value": 2,
+          "description": ""
+        },
+        {
+          "label": "Nhiều",
+          "value": 3,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_vhth_recipeHeatStar",
+      "label": "Thần Hỏa: Công thức",
+      "description": "",
+      "group": "Vĩnh Hằng Thần Hỏa",
+      "default": "nooverride",
+      "choices": [
+        {
+          "label": "Theo thiết lập chung",
+          "value": "nooverride",
+          "description": ""
+        },
+        {
+          "label": "Rất rẻ",
+          "value": "cheat",
+          "description": ""
+        },
+        {
+          "label": "Rẻ",
+          "value": "cheap",
+          "description": ""
+        },
+        {
+          "label": "Tiêu chuẩn",
+          "value": "standard",
+          "description": ""
+        },
+        {
+          "label": "Đắt",
+          "value": "expensive",
+          "description": ""
+        },
+        {
+          "label": "Cao cấp",
+          "value": "advanced",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_vhth_efficiencyHeatStar",
+      "label": "Thần Hỏa: Hiệu suất nhiên liệu",
+      "description": "",
+      "group": "Vĩnh Hằng Thần Hỏa",
+      "default": "nooverride",
+      "choices": [
+        {
+          "label": "Theo thiết lập chung",
+          "value": "nooverride",
+          "description": ""
+        },
+        {
+          "label": "-25%",
+          "value": 0.75,
+          "description": ""
+        },
+        {
+          "label": "+0%",
+          "value": 1,
+          "description": ""
+        },
+        {
+          "label": "+25%",
+          "value": 1.25,
+          "description": ""
+        },
+        {
+          "label": "+50%",
+          "value": 1.5,
+          "description": ""
+        },
+        {
+          "label": "+75%",
+          "value": 1.75,
+          "description": ""
+        },
+        {
+          "label": "+100%",
+          "value": 2,
+          "description": ""
+        },
+        {
+          "label": "+150%",
+          "value": 2.5,
+          "description": ""
+        },
+        {
+          "label": "+200%",
+          "value": 3,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_vhth_maxFuelHeatStar",
+      "label": "Thần Hỏa: Dung lượng nhiên liệu",
+      "description": "",
+      "group": "Vĩnh Hằng Thần Hỏa",
+      "default": "nooverride",
+      "choices": [
+        {
+          "label": "Theo thiết lập chung",
+          "value": "nooverride",
+          "description": ""
+        },
+        {
+          "label": "-25%",
+          "value": 0.75,
+          "description": ""
+        },
+        {
+          "label": "+0%",
+          "value": 1,
+          "description": ""
+        },
+        {
+          "label": "+25%",
+          "value": 1.25,
+          "description": ""
+        },
+        {
+          "label": "+50%",
+          "value": 1.5,
+          "description": ""
+        },
+        {
+          "label": "+75%",
+          "value": 1.75,
+          "description": ""
+        },
+        {
+          "label": "+100%",
+          "value": 2,
+          "description": ""
+        },
+        {
+          "label": "+150%",
+          "value": 2.5,
+          "description": ""
+        },
+        {
+          "label": "+200%",
+          "value": 3,
+          "description": ""
+        },
+        {
+          "label": "+300%",
+          "value": 4,
+          "description": ""
+        },
+        {
+          "label": "+400%",
+          "value": 5,
+          "description": ""
+        },
+        {
+          "label": "+500%",
+          "value": 6,
+          "description": ""
+        },
+        {
+          "label": "+700%",
+          "value": 8,
+          "description": ""
+        },
+        {
+          "label": "+900%",
+          "value": 10,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_vhth_startFuelHeatStar",
+      "label": "Thần Hỏa: Nhiên liệu ban đầu",
+      "description": "",
+      "group": "Vĩnh Hằng Thần Hỏa",
+      "default": "nooverride",
+      "choices": [
+        {
+          "label": "Theo thiết lập chung",
+          "value": "nooverride",
+          "description": ""
+        },
+        {
+          "label": "0%",
+          "value": 0,
+          "description": ""
+        },
+        {
+          "label": "12.5%",
+          "value": 0.125,
+          "description": ""
+        },
+        {
+          "label": "25%",
+          "value": 0.25,
+          "description": ""
+        },
+        {
+          "label": "37.5%",
+          "value": 0.375,
+          "description": ""
+        },
+        {
+          "label": "50%",
+          "value": 0.5,
+          "description": ""
+        },
+        {
+          "label": "62.5%",
+          "value": 0.625,
+          "description": ""
+        },
+        {
+          "label": "75%",
+          "value": 0.75,
+          "description": ""
+        },
+        {
+          "label": "87.5%",
+          "value": 0.875,
+          "description": ""
+        },
+        {
+          "label": "100%",
+          "value": 1,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_vhth_lightRangeHeatStar",
+      "label": "Thần Hỏa: Phạm vi sáng",
+      "description": "",
+      "group": "Vĩnh Hằng Thần Hỏa",
+      "default": "nooverride",
+      "choices": [
+        {
+          "label": "Theo thiết lập chung",
+          "value": "nooverride",
+          "description": ""
+        },
+        {
+          "label": "-50%",
+          "value": 0.5,
+          "description": ""
+        },
+        {
+          "label": "-25%",
+          "value": 0.75,
+          "description": ""
+        },
+        {
+          "label": "-12.5%",
+          "value": 0.875,
+          "description": ""
+        },
+        {
+          "label": "+0%",
+          "value": 1,
+          "description": ""
+        },
+        {
+          "label": "+12.5%",
+          "value": 1.125,
+          "description": ""
+        },
+        {
+          "label": "+25%",
+          "value": 1.25,
+          "description": ""
+        },
+        {
+          "label": "+50%",
+          "value": 1.5,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_vhth_structureSizeHeatStar",
+      "label": "Thần Hỏa: Kích thước bếp",
+      "description": "",
+      "group": "Vĩnh Hằng Thần Hỏa",
+      "default": "nooverride",
+      "choices": [
+        {
+          "label": "Theo thiết lập chung",
+          "value": "nooverride",
+          "description": ""
+        },
+        {
+          "label": "-50%",
+          "value": 0.5,
+          "description": ""
+        },
+        {
+          "label": "-25%",
+          "value": 0.75,
+          "description": ""
+        },
+        {
+          "label": "-12.5%",
+          "value": 0.875,
+          "description": ""
+        },
+        {
+          "label": "+0%",
+          "value": 1,
+          "description": ""
+        },
+        {
+          "label": "+12.5%",
+          "value": 1.125,
+          "description": ""
+        },
+        {
+          "label": "+25%",
+          "value": 1.25,
+          "description": ""
+        },
+        {
+          "label": "+50%",
+          "value": 1.5,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_vhth_sanityBoostHeatStar",
+      "label": "Thần Hỏa: Hồi tinh thần",
+      "description": "",
+      "group": "Vĩnh Hằng Thần Hỏa",
+      "default": "nooverride",
+      "choices": [
+        {
+          "label": "Theo thiết lập chung",
+          "value": "nooverride",
+          "description": ""
+        },
+        {
+          "label": "-100%",
+          "value": 0,
+          "description": ""
+        },
+        {
+          "label": "-75%",
+          "value": 0.125,
+          "description": ""
+        },
+        {
+          "label": "-50%",
+          "value": 0.25,
+          "description": ""
+        },
+        {
+          "label": "-25%",
+          "value": 0.375,
+          "description": ""
+        },
+        {
+          "label": "+0%",
+          "value": 0.5,
+          "description": ""
+        },
+        {
+          "label": "+25%",
+          "value": 0.625,
+          "description": ""
+        },
+        {
+          "label": "+50%",
+          "value": 0.75,
+          "description": ""
+        },
+        {
+          "label": "+75%",
+          "value": 0.875,
+          "description": ""
+        },
+        {
+          "label": "+100%",
+          "value": 1,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_vhth_dropLootHeatStar",
+      "label": "Thần Hỏa: Vật phẩm khi tắt",
+      "description": "",
+      "group": "Vĩnh Hằng Thần Hỏa",
+      "default": "nooverride",
+      "choices": [
+        {
+          "label": "Theo thiết lập chung",
+          "value": "nooverride",
+          "description": ""
+        },
+        {
+          "label": "Không có",
+          "value": 0,
+          "description": ""
+        },
+        {
+          "label": "Ít",
+          "value": 1,
+          "description": ""
+        },
+        {
+          "label": "Bình thường",
+          "value": 2,
+          "description": ""
+        },
+        {
+          "label": "Nhiều",
+          "value": 3,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_vhth_recipeIceStar",
+      "label": "Hàn Hỏa: Công thức",
+      "description": "",
+      "group": "Vĩnh Hằng Thần Hỏa",
+      "default": "nooverride",
+      "choices": [
+        {
+          "label": "Theo thiết lập chung",
+          "value": "nooverride",
+          "description": ""
+        },
+        {
+          "label": "Rất rẻ",
+          "value": "cheat",
+          "description": ""
+        },
+        {
+          "label": "Rẻ",
+          "value": "cheap",
+          "description": ""
+        },
+        {
+          "label": "Tiêu chuẩn",
+          "value": "standard",
+          "description": ""
+        },
+        {
+          "label": "Đắt",
+          "value": "expensive",
+          "description": ""
+        },
+        {
+          "label": "Cao cấp",
+          "value": "advanced",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_vhth_efficiencyIceStar",
+      "label": "Hàn Hỏa: Hiệu suất nhiên liệu",
+      "description": "",
+      "group": "Vĩnh Hằng Thần Hỏa",
+      "default": "nooverride",
+      "choices": [
+        {
+          "label": "Theo thiết lập chung",
+          "value": "nooverride",
+          "description": ""
+        },
+        {
+          "label": "-25%",
+          "value": 0.75,
+          "description": ""
+        },
+        {
+          "label": "+0%",
+          "value": 1,
+          "description": ""
+        },
+        {
+          "label": "+25%",
+          "value": 1.25,
+          "description": ""
+        },
+        {
+          "label": "+50%",
+          "value": 1.5,
+          "description": ""
+        },
+        {
+          "label": "+75%",
+          "value": 1.75,
+          "description": ""
+        },
+        {
+          "label": "+100%",
+          "value": 2,
+          "description": ""
+        },
+        {
+          "label": "+150%",
+          "value": 2.5,
+          "description": ""
+        },
+        {
+          "label": "+200%",
+          "value": 3,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_vhth_maxFuelIceStar",
+      "label": "Hàn Hỏa: Dung lượng nhiên liệu",
+      "description": "",
+      "group": "Vĩnh Hằng Thần Hỏa",
+      "default": "nooverride",
+      "choices": [
+        {
+          "label": "Theo thiết lập chung",
+          "value": "nooverride",
+          "description": ""
+        },
+        {
+          "label": "-25%",
+          "value": 0.75,
+          "description": ""
+        },
+        {
+          "label": "+0%",
+          "value": 1,
+          "description": ""
+        },
+        {
+          "label": "+25%",
+          "value": 1.25,
+          "description": ""
+        },
+        {
+          "label": "+50%",
+          "value": 1.5,
+          "description": ""
+        },
+        {
+          "label": "+75%",
+          "value": 1.75,
+          "description": ""
+        },
+        {
+          "label": "+100%",
+          "value": 2,
+          "description": ""
+        },
+        {
+          "label": "+150%",
+          "value": 2.5,
+          "description": ""
+        },
+        {
+          "label": "+200%",
+          "value": 3,
+          "description": ""
+        },
+        {
+          "label": "+300%",
+          "value": 4,
+          "description": ""
+        },
+        {
+          "label": "+400%",
+          "value": 5,
+          "description": ""
+        },
+        {
+          "label": "+500%",
+          "value": 6,
+          "description": ""
+        },
+        {
+          "label": "+700%",
+          "value": 8,
+          "description": ""
+        },
+        {
+          "label": "+900%",
+          "value": 10,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_vhth_startFuelIceStar",
+      "label": "Hàn Hỏa: Nhiên liệu ban đầu",
+      "description": "",
+      "group": "Vĩnh Hằng Thần Hỏa",
+      "default": "nooverride",
+      "choices": [
+        {
+          "label": "Theo thiết lập chung",
+          "value": "nooverride",
+          "description": ""
+        },
+        {
+          "label": "0%",
+          "value": 0,
+          "description": ""
+        },
+        {
+          "label": "12.5%",
+          "value": 0.125,
+          "description": ""
+        },
+        {
+          "label": "25%",
+          "value": 0.25,
+          "description": ""
+        },
+        {
+          "label": "37.5%",
+          "value": 0.375,
+          "description": ""
+        },
+        {
+          "label": "50%",
+          "value": 0.5,
+          "description": ""
+        },
+        {
+          "label": "62.5%",
+          "value": 0.625,
+          "description": ""
+        },
+        {
+          "label": "75%",
+          "value": 0.75,
+          "description": ""
+        },
+        {
+          "label": "87.5%",
+          "value": 0.875,
+          "description": ""
+        },
+        {
+          "label": "100%",
+          "value": 1,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_vhth_lightRangeIceStar",
+      "label": "Hàn Hỏa: Phạm vi sáng",
+      "description": "",
+      "group": "Vĩnh Hằng Thần Hỏa",
+      "default": "nooverride",
+      "choices": [
+        {
+          "label": "Theo thiết lập chung",
+          "value": "nooverride",
+          "description": ""
+        },
+        {
+          "label": "-50%",
+          "value": 0.5,
+          "description": ""
+        },
+        {
+          "label": "-25%",
+          "value": 0.75,
+          "description": ""
+        },
+        {
+          "label": "-12.5%",
+          "value": 0.875,
+          "description": ""
+        },
+        {
+          "label": "+0%",
+          "value": 1,
+          "description": ""
+        },
+        {
+          "label": "+12.5%",
+          "value": 1.125,
+          "description": ""
+        },
+        {
+          "label": "+25%",
+          "value": 1.25,
+          "description": ""
+        },
+        {
+          "label": "+50%",
+          "value": 1.5,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_vhth_structureSizeIceStar",
+      "label": "Hàn Hỏa: Kích thước bếp",
+      "description": "",
+      "group": "Vĩnh Hằng Thần Hỏa",
+      "default": "nooverride",
+      "choices": [
+        {
+          "label": "Theo thiết lập chung",
+          "value": "nooverride",
+          "description": ""
+        },
+        {
+          "label": "-50%",
+          "value": 0.5,
+          "description": ""
+        },
+        {
+          "label": "-25%",
+          "value": 0.75,
+          "description": ""
+        },
+        {
+          "label": "-12.5%",
+          "value": 0.875,
+          "description": ""
+        },
+        {
+          "label": "+0%",
+          "value": 1,
+          "description": ""
+        },
+        {
+          "label": "+12.5%",
+          "value": 1.125,
+          "description": ""
+        },
+        {
+          "label": "+25%",
+          "value": 1.25,
+          "description": ""
+        },
+        {
+          "label": "+50%",
+          "value": 1.5,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_vhth_sanityBoostIceStar",
+      "label": "Hàn Hỏa: Hồi tinh thần",
+      "description": "",
+      "group": "Vĩnh Hằng Thần Hỏa",
+      "default": "nooverride",
+      "choices": [
+        {
+          "label": "Theo thiết lập chung",
+          "value": "nooverride",
+          "description": ""
+        },
+        {
+          "label": "-100%",
+          "value": 0,
+          "description": ""
+        },
+        {
+          "label": "-75%",
+          "value": 0.125,
+          "description": ""
+        },
+        {
+          "label": "-50%",
+          "value": 0.25,
+          "description": ""
+        },
+        {
+          "label": "-25%",
+          "value": 0.375,
+          "description": ""
+        },
+        {
+          "label": "+0%",
+          "value": 0.5,
+          "description": ""
+        },
+        {
+          "label": "+25%",
+          "value": 0.625,
+          "description": ""
+        },
+        {
+          "label": "+50%",
+          "value": 0.75,
+          "description": ""
+        },
+        {
+          "label": "+75%",
+          "value": 0.875,
+          "description": ""
+        },
+        {
+          "label": "+100%",
+          "value": 1,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_vhth_dropLootIceStar",
+      "label": "Hàn Hỏa: Vật phẩm khi tắt",
+      "description": "",
+      "group": "Vĩnh Hằng Thần Hỏa",
+      "default": "nooverride",
+      "choices": [
+        {
+          "label": "Theo thiết lập chung",
+          "value": "nooverride",
+          "description": ""
+        },
+        {
+          "label": "Không có",
+          "value": 0,
+          "description": ""
+        },
+        {
+          "label": "Ít",
+          "value": 1,
+          "description": ""
+        },
+        {
+          "label": "Bình thường",
+          "value": 2,
+          "description": ""
+        },
+        {
+          "label": "Nhiều",
+          "value": 3,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "hoverer_text",
+      "label": "Solo: UI Gốc",
+      "description": "Hiện UI gốc khi di chuyển chuột vào vật thể",
+      "group": "Solo tích hợp",
+      "default": true,
+      "choices": [
+        {
+          "label": "Hiện",
+          "value": false,
+          "description": "Khi chỉ chuột sẽ hiện 2 bảng, khá rối mắt"
+        },
+        {
+          "label": "Không hiện",
+          "value": true,
+          "description": "Khuyên dùng"
+        }
+      ]
+    },
+    {
+      "key": "hoverer_effect",
+      "label": "Solo: UI Mới",
+      "description": "Hiển thị thông tin",
+      "group": "Solo tích hợp",
+      "default": true,
+      "choices": [
+        {
+          "label": "Đầy đủ",
+          "value": true,
+          "description": "Giống như mod Showme"
+        },
+        {
+          "label": "Rút gọn",
+          "value": false,
+          "description": "Chỉ hiện thị thông tin cần thiết"
+        }
+      ]
+    },
+    {
+      "key": "key_config",
+      "label": "Solo: Phím Tắt",
+      "description": "phím tắt để mở Bảng Tổng Hợp",
+      "group": "Solo tích hợp",
+      "default": 120,
+      "choices": [
+        {
+          "label": "G",
+          "value": 103,
+          "description": ""
+        },
+        {
+          "label": "H",
+          "value": 104,
+          "description": ""
+        },
+        {
+          "label": "I",
+          "value": 105,
+          "description": ""
+        },
+        {
+          "label": "J",
+          "value": 106,
+          "description": ""
+        },
+        {
+          "label": "K",
+          "value": 107,
+          "description": ""
+        },
+        {
+          "label": "L",
+          "value": 108,
+          "description": ""
+        },
+        {
+          "label": "N",
+          "value": 110,
+          "description": ""
+        },
+        {
+          "label": "O",
+          "value": 111,
+          "description": ""
+        },
+        {
+          "label": "P",
+          "value": 112,
+          "description": ""
+        },
+        {
+          "label": "R",
+          "value": 114,
+          "description": ""
+        },
+        {
+          "label": "T",
+          "value": 116,
+          "description": ""
+        },
+        {
+          "label": "X",
+          "value": 120,
+          "description": ""
+        },
+        {
+          "label": "Z",
+          "value": 122,
+          "description": ""
+        },
+        {
+          "label": "F1",
+          "value": 282,
+          "description": ""
+        },
+        {
+          "label": "F2",
+          "value": 283,
+          "description": ""
+        },
+        {
+          "label": "F3",
+          "value": 284,
+          "description": ""
+        },
+        {
+          "label": "F4",
+          "value": 285,
+          "description": ""
+        },
+        {
+          "label": "F5",
+          "value": 286,
+          "description": ""
+        },
+        {
+          "label": "F6",
+          "value": 287,
+          "description": ""
+        },
+        {
+          "label": "F7",
+          "value": 288,
+          "description": ""
+        },
+        {
+          "label": "F8",
+          "value": 289,
+          "description": ""
+        },
+        {
+          "label": "F9",
+          "value": 290,
+          "description": ""
+        },
+        {
+          "label": "F10",
+          "value": 291,
+          "description": ""
+        },
+        {
+          "label": "F11",
+          "value": 292,
+          "description": ""
+        },
+        {
+          "label": "F12",
+          "value": 293,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "teleport_hotkey",
+      "label": "Solo: Phím Dịch Chuyển",
+      "description": "Phím kích hoạt kỹ năng Dịch Chuyển. Mặc định là Z. Không thể chọn X, V, B, N, K hoặc L.",
+      "group": "Solo tích hợp",
+      "default": 122,
+      "choices": [
+        {
+          "label": "A",
+          "value": 97,
+          "description": ""
+        },
+        {
+          "label": "C",
+          "value": 99,
+          "description": ""
+        },
+        {
+          "label": "D",
+          "value": 100,
+          "description": ""
+        },
+        {
+          "label": "E",
+          "value": 101,
+          "description": ""
+        },
+        {
+          "label": "F",
+          "value": 102,
+          "description": ""
+        },
+        {
+          "label": "G",
+          "value": 103,
+          "description": ""
+        },
+        {
+          "label": "H",
+          "value": 104,
+          "description": ""
+        },
+        {
+          "label": "I",
+          "value": 105,
+          "description": ""
+        },
+        {
+          "label": "J",
+          "value": 106,
+          "description": ""
+        },
+        {
+          "label": "M",
+          "value": 109,
+          "description": ""
+        },
+        {
+          "label": "O",
+          "value": 111,
+          "description": ""
+        },
+        {
+          "label": "P",
+          "value": 112,
+          "description": ""
+        },
+        {
+          "label": "Q",
+          "value": 113,
+          "description": ""
+        },
+        {
+          "label": "R",
+          "value": 114,
+          "description": ""
+        },
+        {
+          "label": "S",
+          "value": 115,
+          "description": ""
+        },
+        {
+          "label": "T",
+          "value": 116,
+          "description": ""
+        },
+        {
+          "label": "U",
+          "value": 117,
+          "description": ""
+        },
+        {
+          "label": "W",
+          "value": 119,
+          "description": ""
+        },
+        {
+          "label": "Y",
+          "value": 121,
+          "description": ""
+        },
+        {
+          "label": "Z",
+          "value": 122,
+          "description": ""
+        },
+        {
+          "label": "0",
+          "value": 48,
+          "description": ""
+        },
+        {
+          "label": "1",
+          "value": 49,
+          "description": ""
+        },
+        {
+          "label": "2",
+          "value": 50,
+          "description": ""
+        },
+        {
+          "label": "3",
+          "value": 51,
+          "description": ""
+        },
+        {
+          "label": "4",
+          "value": 52,
+          "description": ""
+        },
+        {
+          "label": "5",
+          "value": 53,
+          "description": ""
+        },
+        {
+          "label": "6",
+          "value": 54,
+          "description": ""
+        },
+        {
+          "label": "7",
+          "value": 55,
+          "description": ""
+        },
+        {
+          "label": "8",
+          "value": 56,
+          "description": ""
+        },
+        {
+          "label": "9",
+          "value": 57,
+          "description": ""
+        },
+        {
+          "label": "F1",
+          "value": 282,
+          "description": ""
+        },
+        {
+          "label": "F2",
+          "value": 283,
+          "description": ""
+        },
+        {
+          "label": "F3",
+          "value": 284,
+          "description": ""
+        },
+        {
+          "label": "F4",
+          "value": 285,
+          "description": ""
+        },
+        {
+          "label": "F5",
+          "value": 286,
+          "description": ""
+        },
+        {
+          "label": "F6",
+          "value": 287,
+          "description": ""
+        },
+        {
+          "label": "F7",
+          "value": 288,
+          "description": ""
+        },
+        {
+          "label": "F8",
+          "value": 289,
+          "description": ""
+        },
+        {
+          "label": "F9",
+          "value": 290,
+          "description": ""
+        },
+        {
+          "label": "F10",
+          "value": 291,
+          "description": ""
+        },
+        {
+          "label": "F11",
+          "value": 292,
+          "description": ""
+        },
+        {
+          "label": "F12",
+          "value": 293,
+          "description": ""
+        },
+        {
+          "label": "Mũi tên lên",
+          "value": 273,
+          "description": ""
+        },
+        {
+          "label": "Mũi tên xuống",
+          "value": 274,
+          "description": ""
+        },
+        {
+          "label": "Mũi tên phải",
+          "value": 275,
+          "description": ""
+        },
+        {
+          "label": "Mũi tên trái",
+          "value": 276,
+          "description": ""
+        },
+        {
+          "label": "Home",
+          "value": 278,
+          "description": ""
+        },
+        {
+          "label": "Insert",
+          "value": 277,
+          "description": ""
+        },
+        {
+          "label": "Delete",
+          "value": 127,
+          "description": ""
+        },
+        {
+          "label": "End",
+          "value": 279,
+          "description": ""
+        },
+        {
+          "label": "Page Up",
+          "value": 280,
+          "description": ""
+        },
+        {
+          "label": "Page Down",
+          "value": 281,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "monster_day",
+      "label": "Solo: Giới Hạn",
+      "description": "Giới hạn về số ngày mà lượng máu hàng ngày của quái có thể tăng lên",
+      "group": "Solo tích hợp",
+      "default": false,
+      "choices": [
+        {
+          "label": "Bật",
+          "value": false,
+          "description": "Máu quái tăng đến giới hạn sẽ dừng"
+        },
+        {
+          "label": "Tắt",
+          "value": true,
+          "description": "Máu quái tăng vô hạn theo thời gian"
+        }
+      ]
+    },
+    {
+      "key": "can_show_equip",
+      "label": "Solo: Chỉ Số",
+      "description": "Hiện thông tin trang bị cho người khác thấy khi ping đồ\nPhím tắt: Shift + Alt + chuột trái",
+      "group": "Solo tích hợp",
+      "default": true,
+      "choices": [
+        {
+          "label": "Tắt",
+          "value": false,
+          "description": ""
+        },
+        {
+          "label": "Bật",
+          "value": true,
+          "description": "Khuyên dùng"
+        }
+      ]
+    },
+    {
+      "key": "can_show_text_fx",
+      "label": "Solo: Hiệu Ứng",
+      "description": "Hiện tên các hiệu ứng gây ra hoặc nhận vào\nnhư: bạo kích, xuyên giáp, độc, làm chậm... ",
+      "group": "Solo tích hợp",
+      "default": true,
+      "choices": [
+        {
+          "label": "Tắt",
+          "value": false,
+          "description": ""
+        },
+        {
+          "label": "Bật",
+          "value": true,
+          "description": "Khuyên dùng"
+        }
+      ]
+    },
+    {
+      "key": "equip",
+      "label": "Solo: Mod Khác",
+      "description": "Hỗ trợ trang bị từ mod khác (có thể gây crash)",
+      "group": "Solo tích hợp",
+      "default": false,
+      "choices": [
+        {
+          "label": "Tắt",
+          "value": false,
+          "description": "Chỉ trang bị cho phép"
+        },
+        {
+          "label": "Bật",
+          "value": true,
+          "description": "Tất cả trang bị"
+        }
+      ]
+    },
+    {
+      "key": "announcement",
+      "label": "Solo: Thông Báo",
+      "description": "Hỗ trợ hiện thông báo sự kiện",
+      "group": "Solo tích hợp",
+      "default": true,
+      "choices": [
+        {
+          "label": "Tắt",
+          "value": false,
+          "description": ""
+        },
+        {
+          "label": "Bật",
+          "value": true,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_hud_enabled",
+      "label": "HUD chiến đấu tích hợp",
+      "description": "Thanh máu và số sát thương của Phàm Nhân.",
+      "group": "HUD chiến đấu",
+      "default": true,
+      "choices": [
+        {
+          "label": "Tắt",
+          "value": false,
+          "description": ""
+        },
+        {
+          "label": "Bật",
+          "value": true,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_hud_boss_bar",
+      "label": "HUD: thanh máu boss",
+      "description": "",
+      "group": "HUD chiến đấu",
+      "default": true,
+      "choices": [
+        {
+          "label": "Tắt",
+          "value": false,
+          "description": ""
+        },
+        {
+          "label": "Bật",
+          "value": true,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_hud_overhead_bar",
+      "label": "HUD: thanh máu trên đầu",
+      "description": "",
+      "group": "HUD chiến đấu",
+      "default": true,
+      "choices": [
+        {
+          "label": "Tắt",
+          "value": false,
+          "description": ""
+        },
+        {
+          "label": "Bật",
+          "value": true,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_hud_hide_boss_overhead",
+      "label": "HUD: ẩn thanh phụ của boss",
+      "description": "",
+      "group": "HUD chiến đấu",
+      "default": true,
+      "choices": [
+        {
+          "label": "Tắt",
+          "value": false,
+          "description": ""
+        },
+        {
+          "label": "Bật",
+          "value": true,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_hud_show_values",
+      "label": "HUD: hiện số HP",
+      "description": "",
+      "group": "HUD chiến đấu",
+      "default": true,
+      "choices": [
+        {
+          "label": "Tắt",
+          "value": false,
+          "description": ""
+        },
+        {
+          "label": "Bật",
+          "value": true,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_hud_damage_numbers",
+      "label": "HUD: hiện số sát thương",
+      "description": "",
+      "group": "HUD chiến đấu",
+      "default": true,
+      "choices": [
+        {
+          "label": "Tắt",
+          "value": false,
+          "description": ""
+        },
+        {
+          "label": "Bật",
+          "value": true,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "ttk_hud_show_others",
+      "label": "HUD: sát thương đồng đội gần",
+      "description": "",
+      "group": "HUD chiến đấu",
+      "default": false,
+      "choices": [
+        {
+          "label": "Tắt",
+          "value": false,
+          "description": ""
+        },
+        {
+          "label": "Bật",
+          "value": true,
+          "description": ""
+        }
+      ]
+    }
+  ]
+}

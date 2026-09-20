@@ -1,4 +1,5 @@
-@import "tailwindcss";
+/* Keep Tailwind inside the web app; mod tooling links to external Steam data. */
+@import "tailwindcss" source("./");
 
 :root {
   --nova-bg: #edf1f5;

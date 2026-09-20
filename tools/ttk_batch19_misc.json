@@ -1,0 +1,307 @@
+[
+  {
+    "id": "ttk_qljq",
+    "name": "Quỳnh Lâu Kim Khuyết",
+    "source": "xd_qljq",
+    "recipe": [
+      [
+        "marble",
+        5
+      ],
+      [
+        "yellowgem",
+        5
+      ],
+      [
+        "log",
+        3
+      ],
+      [
+        "ttk_lingshi1",
+        1
+      ]
+    ],
+    "description": "Đèn bán kính 6; dùng Hạ Phẩm Linh Thạch, chỉ tiêu hao khi sáng ban đêm.",
+    "category": "structure",
+    "station": "Máy Khoa Học",
+    "products": []
+  },
+  {
+    "id": "ttk_sgc",
+    "name": "Sơ Quả Thương",
+    "source": "xd_sgc",
+    "recipe": [
+      [
+        "cutgrass",
+        40
+      ],
+      [
+        "rope",
+        10
+      ],
+      [
+        "ttk_lingshi1",
+        10
+      ]
+    ],
+    "description": "Kho 36 ô cho rau, quả và hạt; hồi độ tươi chậm.",
+    "category": "structure",
+    "station": "Máy Khoa Học",
+    "products": [
+      {
+        "id": "collapsed_treasurechest",
+        "quantity": "Khi quá tải",
+        "conditions": "Giữ đồ còn lại khi tháo kho đã nâng cấp."
+      },
+      {
+        "id": "alterguardianhatshard",
+        "quantity": "1",
+        "conditions": "Hoàn trả khi tháo kho đã nâng cấp."
+      }
+    ],
+    "effects": [
+      "Kho 36 ô cho rau, quả và hạt; hồi độ tươi chậm.",
+      "Hệ số bảo quản −0,2. Nâng cấp bằng mảnh vương miện để chồng đồ không giới hạn."
+    ]
+  },
+  {
+    "id": "ttk_qwsk",
+    "name": "Thiên Vị Thực Khám",
+    "source": "xd_qwsk",
+    "recipe": [
+      [
+        "goldnugget",
+        2
+      ],
+      [
+        "log",
+        7
+      ],
+      [
+        "redgem",
+        1
+      ],
+      [
+        "ttk_lingshi2",
+        1
+      ]
+    ],
+    "description": "Mỗi ngày tạo ngẫu nhiên 1–2 phần món ăn đã nêm gia vị.",
+    "category": "structure",
+    "station": "Máy Khoa Học",
+    "products": [],
+    "effects": [
+      "Mỗi ngày tạo ngẫu nhiên 1–2 phần món ăn đã nêm gia vị.",
+      "Món mới thay món chưa nhận khi sang ngày; nhận bằng thao tác Nhận món ăn."
+    ]
+  },
+  {
+    "id": "ttk_flower_sfr",
+    "name": "Thủy Phù Dung",
+    "source": "xd_flower_sfr",
+    "recipe": [
+      [
+        "butterfly",
+        2
+      ],
+      [
+        "bluegem",
+        3
+      ],
+      [
+        "ttk_lingshi1",
+        1
+      ]
+    ],
+    "description": "Hoa trang trí hồi tinh thần; có thể sinh bướm vào bình minh.",
+    "category": "structure",
+    "station": "Máy Khoa Học",
+    "products": [
+      {
+        "id": "butterfly",
+        "quantity": "1",
+        "conditions": "40% mỗi bình minh ngoài mùa đông; không sinh trong hang."
+      }
+    ]
+  },
+  {
+    "id": "ttk_flower_zyh",
+    "name": "Triều Dương Hoa",
+    "source": "xd_flower_zyh",
+    "recipe": [
+      [
+        "butterfly",
+        2
+      ],
+      [
+        "livinglog",
+        3
+      ],
+      [
+        "ttk_lingshi1",
+        1
+      ]
+    ],
+    "description": "Hoa trang trí hồi tinh thần; có thể sinh bướm vào bình minh.",
+    "category": "structure",
+    "station": "Máy Khoa Học",
+    "products": [
+      {
+        "id": "butterfly",
+        "quantity": "1",
+        "conditions": "40% mỗi bình minh ngoài mùa đông; không sinh trong hang."
+      }
+    ]
+  },
+  {
+    "id": "ttk_crc",
+    "name": "Trữ Nhục Thương",
+    "source": "xd_crc",
+    "recipe": [
+      [
+        "cutstone",
+        10
+      ],
+      [
+        "boards",
+        5
+      ],
+      [
+        "ttk_lingshi1",
+        10
+      ]
+    ],
+    "description": "Kho 36 ô cho thịt sống và sản phẩm sữa; hồi độ tươi chậm.",
+    "category": "structure",
+    "station": "Máy Khoa Học",
+    "products": [
+      {
+        "id": "collapsed_treasurechest",
+        "quantity": "Khi quá tải",
+        "conditions": "Giữ đồ còn lại khi tháo kho đã nâng cấp."
+      },
+      {
+        "id": "alterguardianhatshard",
+        "quantity": "1",
+        "conditions": "Hoàn trả khi tháo kho đã nâng cấp."
+      }
+    ],
+    "effects": [
+      "Kho 36 ô cho thịt sống và sản phẩm sữa; hồi độ tươi chậm.",
+      "Hệ số bảo quản −0,2. Nâng cấp bằng mảnh vương miện để chồng đồ không giới hạn."
+    ]
+  },
+  {
+    "id": "ttk_flower_yl",
+    "name": "U Lan",
+    "source": "xd_flower_yl",
+    "recipe": [
+      [
+        "butterfly",
+        2
+      ],
+      [
+        "marble",
+        3
+      ],
+      [
+        "ttk_lingshi1",
+        1
+      ]
+    ],
+    "description": "Hoa trang trí hồi tinh thần; có thể sinh bướm vào bình minh.",
+    "category": "structure",
+    "station": "Máy Khoa Học",
+    "products": [
+      {
+        "id": "butterfly",
+        "quantity": "1",
+        "conditions": "40% mỗi bình minh ngoài mùa đông; không sinh trong hang."
+      }
+    ]
+  },
+  {
+    "id": "ttk_yunxiao_portable_spicer",
+    "name": "Vân Yên Hương Liệu Trạm",
+    "source": "xd_yunxiao_portable_spicer",
+    "recipe": [
+      [
+        "goldnugget",
+        2
+      ],
+      [
+        "cutstone",
+        3
+      ],
+      [
+        "ttk_lingshi2",
+        1
+      ]
+    ],
+    "description": "Nêm món ăn theo chồng nguyên liệu; giữ lại phần nguyên liệu dư.",
+    "category": "structure",
+    "station": "Không cần trạm",
+    "products": [],
+    "effects": [
+      "Nêm món ăn theo chồng nguyên liệu; giữ lại phần nguyên liệu dư.",
+      "Mỗi lượt xử lý tối đa 120 cặp món ăn + gia vị; lưu số lượng mẻ qua save/load.",
+      "Bốn gia vị có công thức riêng tại Máy Khoa Học: 3 tỏi / mật ong / ớt / muối đá → 2 gia vị tương ứng; không yêu cầu Warly."
+    ]
+  },
+  {
+    "id": "ttk_wsjx",
+    "name": "Vô Song Kiếm Hạp",
+    "source": "xd_wsjx",
+    "recipe": [
+      [
+        "goldnugget",
+        6
+      ],
+      [
+        "boards",
+        2
+      ],
+      [
+        "gears",
+        1
+      ],
+      [
+        "ttk_lingshi1",
+        1
+      ]
+    ],
+    "description": "Hộp 20 ô tự nhặt vũ khí vô chủ trong bán kính 8.",
+    "category": "structure",
+    "station": "Máy Khoa Học",
+    "products": []
+  },
+  {
+    "id": "ttk_tree_yls",
+    "name": "Yên Liễu Thụ",
+    "source": "xd_tree_yls",
+    "recipe": [
+      [
+        "livinglog",
+        4
+      ],
+      [
+        "greengem",
+        1
+      ],
+      [
+        "ttk_lingshi1",
+        1
+      ]
+    ],
+    "description": "Tạo Ngọc Lục định kỳ, che chở và điều hòa nhiệt độ xung quanh.",
+    "category": "structure",
+    "station": "Máy Luyện Kim",
+    "products": [
+      {
+        "id": "greengem",
+        "quantity": "1",
+        "conditions": "Mỗi khoảng 3.360 giây + 0–100 giây."
+      }
+    ]
+  }
+]

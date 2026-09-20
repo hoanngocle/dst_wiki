@@ -15972,6 +15972,12 @@
   ],
   "files": [
     {
+      "path": "Wiki.txt",
+      "size": 22622,
+      "sha256": "e5166f83d3273c1e8b841f25d887c02ef05dc03814696dccf351e7b344c31b8a",
+      "text": true
+    },
+    {
       "path": "anim/aura_dark1.zip",
       "size": 838385,
       "sha256": "8a4727c91d8c4f66728e23e47169212a11bc9f7484482202582e5632229e4891",
@@ -19924,12 +19930,6 @@
       "size": 773184,
       "sha256": "94b7d037d31c93f99afe04bdf771d6cd7f48dccb77b61547ceea5447eaf408d2",
       "text": false
-    },
-    {
-      "path": "Wiki.txt",
-      "size": 22622,
-      "sha256": "e5166f83d3273c1e8b841f25d887c02ef05dc03814696dccf351e7b344c31b8a",
-      "text": true
     }
   ]
 }

@@ -58,3 +58,16 @@ next-env.d.ts
 /data/crawled/fandom-categories/
 /data/crawled/fandom-shared-pages/
 /data/crawled/fandom-url-registry.lock
+
+# Local dependency caches and agent scratch
+/.pnpm-store/
+/.superpowers/
+**/__pycache__/
+**/.codegraph/
+
+# Downloaded source mods, asset work directories, backups and release packages
+/mods/mod_steam/
+/mods/eva-assets-work/
+/mods/solo-assets-work/
+/mods/backups/
+/mods/dist/

@@ -10,10 +10,12 @@ it("links the standalone navigation in the approved order", () => {
   const navigation = screen.getByRole("navigation", { name: /điều hướng chính/i });
   expect(within(navigation).getAllByRole("link").map((link) => link.textContent)).toEqual([
     "Vật phẩm",
+    "Phàm Nhân",
     "Chế tạo Tu Tiên",
     "Cảnh giới Tu Tiên",
     "Achievement & Level",
     "Solo Leveling",
+    "Linh Giới",
   ]);
   expect(screen.getByRole("link", { name: /vật phẩm/i }).getAttribute("href")).toBe("/");
   expect(screen.getByRole("link", { name: "Chế tạo Tu Tiên" }).getAttribute("href")).toBe(
@@ -32,6 +34,13 @@ it("links the standalone navigation in the approved order", () => {
   expect(screen.queryByRole("link", { name: "Base" })).toBeNull();
   expect(screen.queryByRole("link", { name: /hướng dẫn/i })).toBeNull();
   expect(container.innerHTML).not.toContain("/dst");
+});
+
+it("links and marks the Phàm Nhân tab active", () => {
+  render(<SiteHeader active="tu-tien-ky" />);
+  const link = screen.getByRole("link", { name: "Phàm Nhân" });
+  expect(link.getAttribute("href")).toBe("/pham-nhan-tu-tien");
+  expect(link.getAttribute("aria-current")).toBe("page");
 });
 
 it("marks Achievement & Level active", () => {

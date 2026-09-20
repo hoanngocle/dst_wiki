@@ -2,6 +2,7 @@ import { X } from "@phosphor-icons/react";
 import { useEffect, useId, useRef } from "react";
 
 import type { ItemListEntry } from "@/app/lib/item-catalog";
+import { TuTienKySections } from "./tu-tien-ky-sections";
 import { hasRealPrefab } from "@/app/lib/wiki-search";
 import { GameSprite } from "./game-sprite";
 import { MobSections } from "./mob-sections";
@@ -146,7 +147,9 @@ export function ItemDetailModal({
   const realPrefab = hasRealPrefab(item);
   const category = categoryLabel[item.category];
   const craftingContent =
-    item.category === "mob" || item.category === "boss" ? (
+    item.id.startsWith("tu_tien_ky:") ? (
+      <TuTienKySections item={item} itemsById={itemsById} onSelectItem={onSelectItem} titleId={titleId} />
+    ) : item.category === "mob" || item.category === "boss" ? (
       <MobSections
         item={item}
         itemsById={itemsById}

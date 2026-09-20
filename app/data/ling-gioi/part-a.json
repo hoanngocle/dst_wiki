@@ -1,0 +1,402 @@
+[
+  {
+    "id": "realm_system",
+    "name": "Hệ thống cảnh giới",
+    "summary": "9 đại cảnh giới, mỗi cảnh giới có 9 bậc. Tích lũy kinh nghiệm bằng cách tiêu diệt sinh vật để thăng bậc; chết sẽ mất 1 bậc. Bao gồm ngưỡng kinh nghiệm từng bậc và thuộc tính cộng thêm của từng cảnh giới.",
+    "recipe": "",
+    "details": "Bổ sung chỉ số cảnh giới và linh lực, hiển thị tương tự 3 chỉ số cơ bản.\n\n[[图片:images/lingjie/anim/realm_badge.png|Huy hiệu cảnh giới trong trò chơi (khi cảnh giới tăng, biểu tượng ở giữa sẽ đổi thành con số tương ứng)]]\n\nCó tổng cộng 9 cảnh giới: Phàm Cảnh, Thối Thể, Luyện Cân, Tịch Cốc, Dẫn Khí, Nhập Vi, Siêu Phàm, Hợp Anh, Cụ Linh. Mỗi cảnh giới chia thành 9 bậc, như Thối Thể bậc 1, bậc 2… bậc 9.\n\nCách thăng bậc\n　Tiêu diệt sinh vật để nhận kinh nghiệm; được tính là tham chiến nếu từng tấn công trong vòng 30 giây và ở trong phạm vi 15 ô đất.\n　Kinh nghiệm nhận được = máu tối đa của mục tiêu trước khi nhập ma × 5% (có thể chọn 5% / 8% / 12% trong cài đặt mod).\n\nBình cảnh và đả tọa\n　Bậc 1 đến 3 không có bình cảnh; từ bậc 3 lên 4, bậc 6 lên 7 và bậc 9 lên cảnh giới tiếp theo đều cần đả tọa.\n　Bình cảnh giữ kinh nghiệm ngay trước ngưỡng: ví dụ đang ở Dẫn Khí bậc 3 với 8000 kinh nghiệm, dù tiêu diệt Boss cho 4000 kinh nghiệm cũng chỉ tăng tới 8499; 1 điểm còn thiếu bắt buộc phải bù bằng đả tọa.\n\nĐột phá\n　Bắt đầu từ Luyện Cân lên Tịch Cốc, mỗi lần vượt đại cảnh giới sau đó (Tịch Cốc, Dẫn Khí, Nhập Vi, Siêu Phàm, Hợp Anh, Cụ Linh) đều phải dùng đan dược tương ứng và đả tọa 10 giây. Có tổng cộng 6 loại đan dược đột phá.\n\nHình phạt khi chết\n　Mỗi lần chết mất 1 bậc. Sau khi tụt bậc, phải dùng Thanh Tâm Hoàn mới có thể tiếp tục tu luyện; nếu không sẽ bị đình trệ.\n\nNgưỡng kinh nghiệm từng bậc (theo thứ tự bậc 1 → bậc 9; các số là ngưỡng kinh nghiệm tích lũy của bậc đó)\nPhàm Cảnh　50 · 100 · 150 · 200 · 250 · 300 · 350 · 450 · 500\nThối Thể　500 · 600 · 700 · 800 · 900 · 1000 · 1100 · 1200 · 1300\nLuyện Cân　1300 · 1500 · 1700 · 1900 · 2100 · 2300 · 2500 · 2700 · 2900\nTịch Cốc　2900 · 3300 · 3700 · 4100 · 4500 · 4900 · 5300 · 5700 · 6100\nDẫn Khí　6100 · 6900 · 7700 · 8500 · 9300 · 10100 · 10900 · 11700 · 12500\nNhập Vi　12500 · 14000 · 15500 · 17000 · 18500 · 20000 · 21500 · 23000 · 24500\nSiêu Phàm　24500 · 27000 · 29500 · 32000 · 34500 · 37000 · 39500 · 42000 · 44500\nHợp Anh　44500 · 48500 · 52500 · 56500 · 60500 · 64500 · 68500 · 72500 · 76500\nCụ Linh　76500 · 82500 · 88500 · 94500 · 100500 · 106500 · 112500 · 118500 · 124500\n　7 bậc đầu của Phàm Cảnh tăng +50 mỗi bậc, bậc 8 và 9 là 450 và 500; trong các cảnh giới khác, mức tăng mỗi bậc cố định: Thối Thể +100, Luyện Cân +200, Tịch Cốc +400, Dẫn Khí +800, Nhập Vi +1500, Siêu Phàm +2500, Hợp Anh +4000, Cụ Linh +6000.\n\nThuộc tính cộng thêm của từng cảnh giới (có hiệu lực khi đạt cảnh giới đó)\nPhàm Cảnh　Máu +0, tốc độ di chuyển ×1.00, linh lực +0, tấn công ×1.00\nThối Thể　Máu +10, tốc độ di chuyển ×1.05, linh lực +5, tấn công ×1.25\nLuyện Cân　Máu +15, tốc độ di chuyển ×1.10, linh lực +10, tấn công ×1.50\nTịch Cốc　Máu +25, tốc độ di chuyển ×1.15, linh lực +15, tấn công ×1.75\nDẫn Khí　Máu +40, tốc độ di chuyển ×1.20, linh lực +20, tấn công ×2.00\nNhập Vi　Máu +55, tốc độ di chuyển ×1.25, linh lực +30, tấn công ×2.25\nSiêu Phàm　Máu +70, tốc độ di chuyển ×1.30, linh lực +40, tấn công ×2.50\nHợp Anh　Máu +80, tốc độ di chuyển ×1.35, linh lực +50, tấn công ×2.75\nCụ Linh　Máu +100, tốc độ di chuyển ×1.40, linh lực +70, tấn công ×3.00\n　Các mức cộng thêm không cộng dồn; khi tăng cảnh giới, giá trị cũ được thay trực tiếp bằng giá trị của cảnh giới mới. Máu và linh lực là lượng cố định cộng vào giới hạn tối đa; tốc độ di chuyển và tấn công là hệ số (tấn công ×1.25 nghĩa là sát thương +25%).",
+    "tags": [
+      "Cảnh giới",
+      "Tu luyện",
+      "Thăng bậc",
+      "Kinh nghiệm",
+      "Thuộc tính"
+    ]
+  },
+  {
+    "id": "reiki_value",
+    "name": "Chỉ số linh lực",
+    "summary": "Ban đầu 50, tối đa 120; hồi 3.3 mỗi phút; dưới 5 sẽ suy yếu trong 10 giây.",
+    "recipe": "",
+    "details": "[[图片:images/lingjie/anim/spirit_badge.png|Huy hiệu linh lực trong trò chơi (biểu tượng ngọn lửa và mực chất lỏng biểu thị linh lực hiện tại)]]\n\nLinh lực ban đầu là 50, tăng theo cảnh giới, giới hạn tối đa 120.\n\nHồi 3.3 điểm linh lực mỗi phút.\n\nKhi linh lực cạn kiệt (dưới 5), nhân vật rơi vào trạng thái suy yếu trong 10 giây: tích lũy buồn ngủ và choáng váng theo quy tắc của trò chơi gốc, thậm chí ngủ thiếp ngay; khi hết suy yếu sẽ hồi 10 điểm linh lực.\n\nNhiều linh kỹ và pháp bảo tiêu hao linh lực; ví dụ Huyền Băng Quán Chú của Linh Vận tiêu hao 20 điểm, Vẫn Hỏa Thích của Tinh Vẫn tiêu hao 10 điểm.",
+    "tags": [
+      "Cảnh giới",
+      "Linh lực",
+      "Chỉ số"
+    ]
+  },
+  {
+    "id": "corruption_overview",
+    "name": "Tổng quan nhập ma",
+    "summary": "Sinh vật lúc bắt đầu sẽ ngẫu nhiên nhập ma, có thể điều chỉnh mốc ngày nhập ma; khi đạt mốc đã đặt, Boss sử thi chắc chắn nhập ma sâu.",
+    "recipe": "",
+    "details": "Khi sinh ra, sinh vật được chọn ngẫu nhiên mức độ nhập ma. Có thể đặt mốc số ngày chơi là 30 / 60 / 90 ngày, mặc định 60 ngày.\n\nXác suất chọn\n　Trước mốc ngày đã đặt: nhẹ 47.5%, vừa 47.5%, sâu 5%.\n　Từ mốc ngày đã đặt: Boss sử thi chắc chắn nhập ma sâu; các sinh vật khác: nhẹ 50%, vừa 25%, sâu 25%.\n\nHồi máu: sau 10 giây liên tục không có mục tiêu hợp lệ, hồi 2% máu tối đa mỗi 5 giây (bị tấn công sẽ đặt lại bộ đếm thời gian rời giao tranh này).\n\nTất cả sinh vật nhập ma đều thù địch (ngoại trừ sinh vật trung lập như Chester; cũng ngoại trừ quan hệ thuộc tính đặc biệt của người chơi, chẳng hạn nhện không tấn công người nhện).\n\nNhập ma có 3 mức, hiển thị trong trò chơi là “Mức độ nhập ma: nhẹ / vừa / sâu”:\nNhập ma nhẹ, nhập ma vừa, nhập ma sâu.\n\nKhông nhập ma: các quái bóng tối (Crawling Horror, Terrorbeak, ác mộng, ác mộng tàn tích, Shadow Knight, Shadow Bishop, Shadow Rook…), động vật nhỏ thụ động, người chơi, bạn đồng hành, tường, mô hình trưng bày trang bị. Sinh vật được người chơi thuê sẽ lập tức mất toàn bộ hiệu ứng nhập ma.",
+    "tags": [
+      "Nhập ma",
+      "Cơ chế",
+      "Khởi đầu"
+    ]
+  },
+  {
+    "id": "corruption_light",
+    "name": "Nhập ma nhẹ",
+    "summary": "Máu sau nhập ma được tính theo hệ số 1.60 có khấu trừ (máu càng cao càng gần hệ số đầy đủ); gây Ma Khí Bao Quanh, Lời Nguyền Đói Khát và Bóng Tối Làm Chậm lên người chơi.",
+    "recipe": "",
+    "details": "Trong trò chơi hiển thị là “Nhẹ”.\n\nCường hóa cốt lõi — Máu\n　　Máu tối đa = máu tối đa trước nhập ma × (1.60 − 65 ÷ (máu tối đa trước nhập ma + 110))\n\nKết quả thực tế:\n\n　　Cơ bản 100 → 129.05 (×1.290)\n　　Cơ bản 500 → 746.72 (×1.493)\n　　Cơ bản 2000 → 3138.39 (×1.569)\n　　Cơ bản 24000 → 38335.30 (×1.597)\n\nHệ số cố định là 1.60; máu càng thấp thì phần bị trừ bởi 65 ÷ (máu + 110) càng lớn, nên sinh vật ít máu chịu thiệt hơn, còn sinh vật lớn gần đạt hệ số đầy đủ. Không có ngưỡng suy giảm có thể điều chỉnh.\n\nHiệu ứng bất lợi lên nhân vật\nMa Khí Bao Quanh: người chơi trong phạm vi 5 mất 1 điểm tinh thần mỗi 5 giây.\nLời Nguyền Đói Khát: có 30% xác suất kích hoạt khi người chơi bị sinh vật tấn công, tốc độ tiêu hao độ no tăng 20% trong 30 giây.\nBóng Tối Làm Chậm: có 20% xác suất kích hoạt khi người chơi bị sinh vật tấn công, tốc độ di chuyển -20% trong 10 giây.\n\nKhi bị tiêu diệt, rơi 1 đến 3 mảnh ma hạch + nguyên liệu vốn có của sinh vật.\nSinh vật yếu có máu cơ bản không quá 149 chỉ giữ cường hóa nhẹ, không được bổ sung nguyên liệu nhập ma (không rơi bất kỳ nguyên liệu ma hạch nào).",
+    "tags": [
+      "Nhập ma",
+      "Nhẹ"
+    ]
+  },
+  {
+    "id": "corruption_medium",
+    "name": "Nhập ma vừa",
+    "summary": "Máu sau nhập ma được tính theo hệ số 1.95 có khấu trừ (máu càng cao càng gần hệ số đầy đủ); giảm 12% sát thương, kích hoạt khiên bất tử khi còn nửa máu, phản đòn ma khí 5%.",
+    "recipe": "",
+    "details": "Trong trò chơi hiển thị là “Vừa”.\n\nCường hóa cốt lõi — Máu\n　　Máu tối đa = máu tối đa trước nhập ma × (1.95 − 65 ÷ (máu tối đa trước nhập ma + 110))\n\nKết quả thực tế:\n\n　　Cơ bản 100 → 164.05 (×1.640)\n　　Cơ bản 500 → 921.72 (×1.843)\n　　Cơ bản 2000 → 3838.39 (×1.919)\n　　Cơ bản 24000 → 46735.30 (×1.947)\n\nCường hóa cốt lõi — Giáp\nMọi sát thương từ bên ngoài nhận vào ×0.88 (tức giảm 12% sát thương vật lý).\n\nHiệu ứng bất lợi lên nhân vật\nMa Khí Bao Quanh: người chơi trong phạm vi 10 mất 3 điểm tinh thần mỗi 5 giây.\nLời Nguyền Đói Khát: có 30% xác suất kích hoạt khi người chơi bị sinh vật tấn công, tốc độ tiêu hao độ no tăng 20% trong 30 giây.\nBóng Tối Làm Chậm: có 20% xác suất kích hoạt khi người chơi bị sinh vật tấn công, tốc độ di chuyển -20% trong 10 giây.\nPhản Đòn Ma Khí: có 10% xác suất kích hoạt khi sinh vật nhận sát thương từ người chơi, phản lại 5% sát thương.\n\nCường hóa sinh vật\nDễ Tổn Thương Có Điều Kiện: khi máu giảm xuống 50% hoặc thấp hơn, kích hoạt khiên; trong thời gian đó không nhận sát thương (bất tử), kéo dài 25 giây, hồi chiêu 5 phút.\n\nKhi bị tiêu diệt, rơi 1 đến 2 ma hạch, 1 đến 3 mảnh ma hạch + nguyên liệu vốn có của sinh vật.",
+    "tags": [
+      "Nhập ma",
+      "Vừa"
+    ]
+  },
+  {
+    "id": "corruption_deep",
+    "name": "Nhập ma sâu",
+    "summary": "Máu sau nhập ma được tính theo hệ số 2.35 có khấu trừ (máu càng cao càng gần hệ số đầy đủ); bỏ qua làm chậm, Độc Thấu Cốt Tủy, Ảo Ảnh Nhiễu Loạn, Ma Hóa Cuồng Bạo và thiên kiếp Tế Thiên.",
+    "recipe": "",
+    "details": "Trong trò chơi hiển thị là “Sâu”.\n\nCường hóa cốt lõi — Máu\n　　Máu tối đa = máu tối đa trước nhập ma × (2.35 − 65 ÷ (máu tối đa trước nhập ma + 110))\n\nKết quả thực tế:\n\n　　Cơ bản 100 → 204.05 (×2.040)\n　　Cơ bản 500 → 1121.72 (×2.243)\n　　Cơ bản 2000 → 4638.39 (×2.319)\n　　Cơ bản 24000 → 56335.30 (×2.347)\n\nCường hóa cốt lõi — Giáp và kích thước\nMọi sát thương từ bên ngoài nhận vào ×0.8 (tức giảm 20% sát thương vật lý), đồng thời nhận thêm +5 điểm giữ nhiệt/phòng thủ vị diện.\nTốc độ di chuyển +10%, kích thước tăng thành 1.2 lần. (3 Boss sử thi Nguyệt Thực Tinh Dực Sư, Sí Nham Hạt Long và Phệ Hồn Xà giữ nguyên hình dạng, không phóng lớn.)\n\nCường hóa cốt lõi — Bỏ qua làm chậm\nBỏ qua mọi hiệu ứng làm chậm: chỉ chấp nhận hệ số tốc độ di chuyển lớn hơn 1.\n\nHiệu ứng bất lợi lên nhân vật\nMa Khí Bao Quanh: người chơi trong phạm vi 10 mất 5 điểm tinh thần mỗi 5 giây.\nLời Nguyền Đói Khát: có 30% xác suất kích hoạt khi người chơi bị sinh vật tấn công, tốc độ tiêu hao độ no tăng 20% trong 30 giây.\nBóng Tối Làm Chậm: có 20% xác suất kích hoạt khi người chơi bị sinh vật tấn công, tốc độ di chuyển -20% trong 10 giây.\nPhản Đòn Ma Khí: có 10% xác suất kích hoạt khi sinh vật nhận sát thương từ người chơi, phản lại 2% sát thương.\nẢo Ảnh Nhiễu Loạn: khi tấn công có 10% xác suất kích hoạt “ảo ảnh”, đảo hướng di chuyển của người chơi 180° trong 5 giây tiếp theo.\n\nCường hóa sinh vật\nDễ Tổn Thương Có Điều Kiện: khi máu nằm giữa 30% và 50% (>30% và ≤50%), kích hoạt khiên bất tử trong 25 giây, hồi chiêu 5 phút.\nĐộc Thấu Cốt Tủy: đòn đánh thường kèm độc ăn mòn xương. Mỗi lần trúng độc kéo dài 240 giây, không cộng dồn (có thể đặt lại thời gian, tối đa 240 giây); gây ngay 1 nhịp sát thương khi trúng đòn.\n　0 đến 80 giây: gây 6 sát thương mỗi 10 giây\n　80 đến 160 giây: gây 10 sát thương mỗi 10 giây\n　160 đến 240 giây: gây 14 sát thương mỗi 10 giây\n　Giải độc: có thể dùng Thanh Tâm Hoàn hoặc tuyến nhện. Giải độc bằng tuyến nhện thực tế trừ “50 + lượng hồi máu vốn có của tuyến”; nếu máu không đủ, vẫn bảo đảm còn 5 điểm.\nẢnh Linh Đồng Hành: khi thức dậy, triệu hồi thêm 1 phân thân bóng tối có máu bằng một nửa máu tối đa cơ bản của sinh vật. Phân thân không mang hiệu ứng ma hóa, không có giáp bảo vệ; Hồn Phan có thể luyện hóa trực tiếp. Mỗi bản thể chỉ triệu hồi 1 lần.\nHấp Thực Tàn Hài: mỗi khi người chơi chết, nếu trong khoảng cách 40 từ nơi chết có Boss đã nhập ma sâu, Boss đó hồi 10% lượng máu đã mất của mình.\nMa Hóa Cuồng Bạo: khi máu giảm xuống 30% hoặc thấp hơn, vào trạng thái cuồng bạo — sát thương +30%, mất hiệu lực giảm sát thương và cộng thêm phòng thủ vị diện (loại bỏ hệ số sát thương nhận vào và +5 phòng thủ vị diện); trong thời gian đó hoàn toàn không thể hồi máu (chặn mọi hồi phục).\n　　Chỉ Boss sử thi mới được thêm hiệu ứng giảm một nửa hồi chiêu kỹ năng.\n　　Cuồng bạo kéo dài 300 giây (5 phút), chỉ có thể kích hoạt lại sau khi kết thúc.\nTế Thiên: sau khi chết triệu hồi thiên kiếp kéo dài 60 giây, cứ 6 giây có 1 tia sét, giết ngay lập tức (9999 sát thương, bỏ qua bất tử và hấp thụ sát thương). Vị trí sét đánh có dấu báo trước, sau 1.5 giây sét giáng xuống.\n\nKhi bị tiêu diệt, rơi thêm 1 ma tinh + nguyên liệu vốn có của sinh vật, đồng thời nhân đôi lượng vật phẩm gốc rơi ra.\n　　Ngoại lệ: 3 Boss sử thi có bảng vật phẩm rơi hoàn chỉnh riêng là Nguyệt Thực Tinh Dực Sư, Sí Nham Hạt Long và Phệ Hồn Xà không nhân đôi vật phẩm, cũng không rơi thêm ma tinh.",
+    "tags": [
+      "Nhập ma",
+      "Sâu"
+    ]
+  },
+  {
+    "id": "corruption_drops",
+    "name": "Quy tắc vật phẩm rơi khi nhập ma",
+    "summary": "Nhập ma nhẹ rơi mảnh ma hạch, nhập ma vừa rơi ma hạch, nhập ma sâu rơi ma tinh; sinh vật gốc rơi vật phẩm theo mức độ nhập ma.",
+    "recipe": "",
+    "details": "Mảnh ma hạch: tiêu diệt sinh vật nhập ma nhẹ sẽ rơi từ 1 đến 3 mảnh (không bổ sung cho sinh vật yếu có máu cơ bản không quá 149).\n\nMa hạch: rơi khi tiêu diệt Boss và ma thú; ghép từ 99 mảnh ma hạch; sinh vật nhập ma vừa rơi từ 1 đến 2 ma hạch. Không thể phá hủy, có thể phân giải.\n\nMa tinh: rơi khi tiêu diệt ma thú; ghép từ 20 ma hạch; sinh vật nhập ma sâu rơi 1 ma tinh. Không thể phá hủy, có thể phân giải.\n\nSinh vật gốc rơi mảnh ma hạch và ma hạch theo mức độ nhập ma. Sinh vật gốc nhập ma sâu chỉ rơi 1 ma tinh; ma thú lớn rơi 2 ma tinh.",
+    "tags": [
+      "Nhập ma",
+      "Vật phẩm rơi",
+      "Nguyên liệu"
+    ]
+  },
+  {
+    "id": "alchemy_rules",
+    "name": "Quy tắc chung luyện đan",
+    "summary": "Dùng Khư Hỏa luyện đan có xác suất thành công cơ bản 50%; dị hỏa có thể tăng lên 100%. Thất bại tạo phế đan và không trả lại nguyên liệu.",
+    "recipe": "",
+    "details": "Sử dụng Khư Hỏa để luyện đan. Đan dược không kích hoạt lôi kiếp đều có xác suất luyện thành 50%; dù thành công hay thất bại, thời gian luyện đan không đổi.\n\nĐan dược có thể kích hoạt đan kiếp: có 50% xác suất không kích hoạt đan kiếp, khi đó luyện đan chắc chắn thất bại và thành phế đan; có 50% xác suất kích hoạt lôi kiếp, né tránh thành công thì luyện thành. Dùng Phá Kiếp Đan có thể bỏ qua kiểm tra lôi kiếp.\n\nPhải đặt nguyên liệu vào lò luyện đan đúng số lượng; có thể nhiều hơn nhưng không được thiếu. Luyện thất bại sẽ thành phế đan, không trả lại nguyên liệu; hãy thận trọng khi luyện đan.\n\nSử dụng dị hỏa luyện đan có thể nâng xác suất luyện thành lên 100%.",
+    "tags": [
+      "Luyện chế",
+      "Đan dược",
+      "Quy tắc"
+    ]
+  },
+  {
+    "id": "pill_tiers",
+    "name": "Phẩm cấp đan dược và đan kiếp",
+    "summary": "Thời gian luyện, sản lượng và thông số đan kiếp của 4 cấp: thấp / Hoàng, trung / Huyền, cao / Địa và Thiên / Thiên.",
+    "recipe": "",
+    "details": "Đan dược chia thành 4 cấp: thấp (Hoàng), trung (Huyền), cao (Địa), Thiên (Thiên).\n\nCấp thấp (thời gian luyện 2 phút)\nDùng Khư Hỏa luyện đan dược không kích hoạt đan kiếp có xác suất 50%; dùng dị hỏa có xác suất 100%.\nMỗi lần có 99% xác suất tạo 3 viên, 1% xác suất tạo 5 viên.\n\nCấp trung (thời gian luyện 4 phút)\nDùng Khư Hỏa luyện có xác suất 50%, thất bại sẽ tạo phế đan; dùng dị hỏa có xác suất 100%.\nMỗi lần có 99% xác suất tạo 1 viên, 1% xác suất tạo 2 viên.\nĐan kiếp cấp trung: cứ 10 giây kích hoạt 1 tia sét, giết ngay lập tức và có dấu báo; dấu xuất hiện ở giây thứ 9, sau 1 giây sét giáng xuống, kéo dài 120 giây. Người chơi phải né tránh, nếu không luyện đan thất bại. Né đan kiếp thất bại khiến lò đan nổ tung, để lại 5 [images/inventoryimages1/charcoal.png] than củi và 1 phế đan.\n\nCấp cao (thời gian luyện 8 phút)\nDùng Khư Hỏa luyện có xác suất 20%, thất bại sẽ tạo phế đan; dùng dị hỏa có xác suất 100%.\nMỗi lần chỉ tạo được 1 viên.\nĐan kiếp cấp cao: cứ 8 giây kích hoạt 1 tia sét, giết ngay lập tức và có dấu báo; dấu xuất hiện ở giây thứ 7, sau 1 giây sét giáng xuống, kéo dài 120 giây. Người chơi phải né tránh, nếu không luyện đan thất bại. Né đan kiếp thất bại khiến lò đan nổ tung, để lại 5 [images/inventoryimages1/charcoal.png] than củi và 1 phế đan.\n\nCấp Thiên (Thiên)\nChưa được triển khai.",
+    "tags": [
+      "Luyện chế",
+      "Đan dược",
+      "Đan kiếp",
+      "Chỉ số"
+    ]
+  },
+  {
+    "id": "lj_moon_vase",
+    "name": "Nguyệt Phách Ngưng Dịch Bình",
+    "summary": "Không kích hoạt đan kiếp, thành công 100%; dùng trên Linh Ngọc Đài để hấp thụ linh khí đất trời vào ban đêm.",
+    "recipe": "[images/inventoryimages1/dragon_scales.png] Vảy 1、[images/inventoryimages2/moonglass.png] Mảnh thủy tinh 5、[images/inventoryimages2/greengem.png] Ngọc lục bảo 1、[images/lingjie/icons/lj_magic_crystal.png] Ma tinh 1",
+    "details": "Luyện chế đặc biệt (không kích hoạt đan kiếp, xác suất luyện thành 100%)\n\nThời gian luyện 4 phút.\n\nKhông thể phá hủy theo cách thông thường, có thể phân giải bằng Gậy Phân Giải.",
+    "tags": [
+      "Pháp bảo",
+      "Luyện chế đặc biệt",
+      "Luyện chế"
+    ]
+  },
+  {
+    "id": "lj_reiki_gourd",
+    "name": "Linh Hư Hồ",
+    "summary": "Hồ lô 8 ô hấp thụ dị hỏa và chứa đan dược; có thể theo người chơi và tự hấp thụ dị hỏa vô chủ trong phạm vi 16.",
+    "recipe": "[images/lingjie/icons/lj_magic_core.png] Ma hạch 2、[images/inventoryimages3/thulecite.png] Thulecite 4、[images/inventoryimages1/bluegem.png] Ngọc lam 1、[images/inventoryimages3/redgem.png] Hồng ngọc 1",
+    "details": "Luyện chế đặc biệt (không kích hoạt đan kiếp, xác suất luyện thành 100%)\n\nThời gian luyện 4 phút.\n\nKhông thể phá hủy, không thể phân giải bằng Gậy Phân Giải.\n\nHấp thụ dị hỏa, cất đan dược, có 8 ô chứa.\nCó thể nhấp chuột phải để mở / đóng ngay trong túi đồ (chỉ có 1 kho chứa; kho mở khi hồ lô đi theo cũng chính là kho này). Khi mở, hồ lô sẽ luôn mở, không tự đóng khi mở các vật phẩm dạng rương khác.\nCó thể cầm bằng chuột và đặt xuống đất để hồ lô đi theo; khi đang đi theo, dị hỏa vô chủ trong phạm vi 16 sẽ tự bay vào hồ lô, sau khi hấp thụ sẽ thuộc về chủ hồ lô.\nKhi đang đi theo: nhấp chuột trái để mở / đóng hồ lô, nhấp chuột phải vào hồ lô để thu hồi.",
+    "tags": [
+      "Pháp bảo",
+      "Lưu trữ",
+      "Dị hỏa"
+    ]
+  },
+  {
+    "id": "lj_soul_banner",
+    "name": "Hồn Phan",
+    "summary": "Cắm xuống đất để tự hấp thụ quái bóng tối và chuyển thành ma hạch; cho Tử Lân Yêu Diễm để mở khóa “Luyện Hồn”.",
+    "recipe": "[images/inventoryimages2/nightmarefuel.png] Nhiên liệu ác mộng 5、[images/inventoryimages1/cutreeds.png] Sậy 5、[images/inventoryimages3/twigs.png] Cành cây 5、[images/lingjie/icons/lj_magic_crystal.png] Ma tinh 2",
+    "details": "Luyện chế đặc biệt (không kích hoạt đan kiếp, xác suất luyện thành 100%)\n\nKhông thể phá hủy, có thể phân giải.\n\nCho Tử Lân Yêu Diễm để mở khóa kỹ năng “Luyện Hồn”.\nCắm xuống đất sẽ tự hấp thụ 4 loại quái bóng tối của trò chơi gốc cùng các phân thân bóng tối sinh ra do nhập ma sâu; mỗi con hấp thụ chuyển thành 1 ma hạch, rơi thẳng xuống dưới Hồn Phan.\n　　Các quái bóng tối khác (Shadow Knight, Shadow Bishop, Shadow Rook…) không bị hút vào.",
+    "tags": [
+      "Pháp bảo",
+      "Quái bóng tối",
+      "Luyện hồn"
+    ]
+  },
+  {
+    "id": "lj_failed_pill",
+    "name": "Phế Đan",
+    "summary": "Sản phẩm luyện đan thất bại. Dùng sẽ mất 30 tinh thần, 30 máu và hồi 30 độ no.",
+    "recipe": "",
+    "details": "Đan dược luyện thất bại.\n\nSau khi dùng, mất 30 tinh thần, 30 máu và hồi 30 độ no.\n\nLuyện đan thất bại chắc chắn tạo phế đan và không trả lại nguyên liệu, hãy thận trọng trước khi khai lò.",
+    "tags": [
+      "Đan dược",
+      "Cấp thấp",
+      "Bất lợi"
+    ]
+  },
+  {
+    "id": "lj_ningqi_pill",
+    "name": "Ngưng Khí Hoàn",
+    "summary": "Đan dược cấp thấp, hồi 50 độ no; người lợn cũng thích ăn.",
+    "recipe": "[images/lingjie/icons/lj_reiki_cutgrass.png] Dung Linh Thảo đã hái 3、[images/inventoryimages2/honey.png] Mật ong 3、[images/inventoryimages1/acorn.png] Hạt sồi 3 hoặc [images/inventoryimages2/pinecone.png] Quả thông 3、[images/lingjie/icons/lj_magic_core.png] Ma hạch 1",
+    "details": "Đan dược cấp thấp (Hoàng), thời gian luyện 2 phút.\n\nHiệu quả: hồi 50 độ no, người lợn cũng thích ăn.",
+    "tags": [
+      "Đan dược",
+      "Cấp thấp",
+      "Thức ăn"
+    ]
+  },
+  {
+    "id": "lj_warming_pill",
+    "name": "Xích Diễm Đan",
+    "summary": "Đan dược cấp thấp, làm ấm và ngăn quá lạnh trong 2 ngày.",
+    "recipe": "[images/lingjie/icons/lj_reiki_cutgrass.png] Dung Linh Thảo đã hái 3、[images/inventoryimages2/nitre.png] Diêm tiêu 2、[images/inventoryimages1/butterflywings.png] Cánh bướm 2、[images/lingjie/icons/lj_magic_core.png] Ma hạch 1",
+    "details": "Đan dược cấp thấp (Hoàng), thời gian luyện 2 phút.\n\nHiệu quả: làm ấm, không bị quá lạnh, kéo dài 2 ngày.",
+    "tags": [
+      "Đan dược",
+      "Cấp thấp",
+      "Nhiệt độ"
+    ]
+  },
+  {
+    "id": "lj_cooling_pill",
+    "name": "Lãnh Diễm Đan",
+    "summary": "Đan dược cấp thấp, làm mát và ngăn quá nóng trong 2 ngày.",
+    "recipe": "[images/lingjie/icons/lj_reiki_cutgrass.png] Dung Linh Thảo đã hái 3、[images/inventoryimages2/nitre.png] Diêm tiêu 2、[images/inventoryimages2/moonbutterflywings.png] Cánh bướm đêm mặt trăng 2、[images/lingjie/icons/lj_magic_core.png] Ma hạch 1",
+    "details": "Đan dược cấp thấp (Hoàng), thời gian luyện 2 phút.\n\nHiệu quả: làm mát, không bị quá nóng, kéo dài 2 ngày.",
+    "tags": [
+      "Đan dược",
+      "Cấp thấp",
+      "Nhiệt độ"
+    ]
+  },
+  {
+    "id": "lj_stillness_pill",
+    "name": "Thanh Tâm Hoàn",
+    "summary": "Dùng sau khi chết và tụt bậc để ổn định tâm thần, tiếp tục tu luyện.",
+    "recipe": "[images/lingjie/icons/lj_magic_core.png] Ma hạch 1、[images/inventoryimages3/spidergland.png] Tuyến nhện 2、[images/inventoryimages2/glommerfuel.png] Chất nhầy Glommer 3、[images/lingjie/icons/lj_reiki_cutgrass.png] Dung Linh Thảo đã hái 3",
+    "details": "Đan dược cấp thấp (Hoàng), thời gian luyện 2 phút.\n\nHiệu quả: dùng sau khi chết và tụt bậc để ổn định tâm thần, tiếp tục tu luyện.\n\nĐây là đan dược bắt buộc để khôi phục khả năng tu luyện sau khi chết và tụt bậc; nếu không sẽ bị đình trệ.",
+    "tags": [
+      "Đan dược",
+      "Cấp thấp",
+      "Cảnh giới"
+    ]
+  },
+  {
+    "id": "lj_reiki_pill",
+    "name": "Hồi Linh Đan",
+    "summary": "Đan dược cấp trung, hồi 30 điểm linh lực.",
+    "recipe": "[images/inventoryimages2/green_cap.png] Nấm xanh lá 1、[images/lingjie/icons/lj_reiki_cutgrass.png] Dung Linh Thảo đã hái 1、[images/inventoryimages3/tallbirdegg.png] Trứng chim chân cao 1、[images/lingjie/icons/lj_magic_core.png] Ma hạch 1",
+    "details": "Đan dược cấp trung (Huyền), thời gian luyện 4 phút.\n\nHiệu quả: hồi 30 điểm linh lực.",
+    "tags": [
+      "Đan dược",
+      "Cấp trung",
+      "Linh lực"
+    ]
+  },
+  {
+    "id": "lj_explosion_pill",
+    "name": "Bạo Liệt Hoàn",
+    "summary": "Đan dược cấp trung, tăng 30% sát thương trong thời gian ngắn, kéo dài 3 phút.",
+    "recipe": "[images/inventoryimages2/pepper.png] Ớt 1、[images/inventoryimages2/nightmarefuel.png] Nhiên liệu ác mộng 1、[images/inventoryimages3/stinger.png] Ngòi ong 5、[images/lingjie/icons/lj_magic_core.png] Ma hạch 1",
+    "details": "Đan dược cấp trung (Huyền), thời gian luyện 4 phút.\n\nHiệu quả: tăng 30% sát thương trong thời gian ngắn, kéo dài 3 phút.",
+    "tags": [
+      "Đan dược",
+      "Cấp trung",
+      "Tăng sát thương"
+    ]
+  },
+  {
+    "id": "lj_drying_pill",
+    "name": "Phòng Triều Đan",
+    "summary": "Đan dược cấp trung, miễn nhiễm ẩm ướt trong 5 ngày.",
+    "recipe": "[images/lingjie/icons/lj_reiki_cutgrass.png] Dung Linh Thảo đã hái 1、[images/inventoryimages2/orangegem.png] Ngọc cam 1、[images/inventoryimages2/nitre.png] Diêm tiêu 5、[images/lingjie/icons/lj_magic_core.png] Ma hạch 1",
+    "details": "Đan dược cấp trung (Huyền), thời gian luyện 4 phút.\n\nHiệu quả: miễn nhiễm ẩm ướt, kéo dài 5 ngày.",
+    "tags": [
+      "Đan dược",
+      "Cấp trung",
+      "Chống ẩm"
+    ]
+  },
+  {
+    "id": "lj_invincible_pill",
+    "name": "Bất Diệt Đan",
+    "summary": "Đan dược cấp trung, máu không xuống dưới 1 trong 30 giây.",
+    "recipe": "[images/lingjie/icons/lj_reiki_cutgrass.png] Dung Linh Thảo đã hái 5、[images/lingjie/icons/lj_red_magic_cutflower.png] Hoa Bỉ Ngạn đã hái 2、[images/inventoryimages3/reviver.png] Trái tim mách lẻo 1、[images/lingjie/icons/lj_magic_crystal.png] Ma tinh 1",
+    "details": "Đan dược cấp trung (Huyền), thời gian luyện 4 phút.\n\nHiệu quả: trạng thái “Bất Diệt” trong 30 giây; trong 30 giây, máu thấp nhất là 1, các chỉ số khác không bị ảnh hưởng.",
+    "tags": [
+      "Đan dược",
+      "Cấp trung",
+      "Bảo mệnh"
+    ]
+  },
+  {
+    "id": "lj_bigu_pill",
+    "name": "Tịch Cốc Đan",
+    "summary": "Đan dược cấp trung, kết hợp đả tọa 10 giây trên Ngộ Đạo Thối Thể Đài để tăng từ Luyện Cân lên Tịch Cốc.",
+    "recipe": "[images/inventoryimages2/pigskin.png] Da lợn 2、[images/inventoryimages2/foliage.png] Dương xỉ 5、[images/inventoryimages1/bluegem.png] Ngọc lam 2、[images/lingjie/icons/lj_magic_core.png] Ma hạch 2",
+    "details": "Đan dược cấp trung (Huyền), thời gian luyện 4 phút.\n\nHiệu quả: dùng đan dược này và đả tọa 10 giây trên Ngộ Đạo Thối Thể Đài để tăng từ cảnh giới Luyện Cân lên Tịch Cốc.",
+    "tags": [
+      "Đan dược",
+      "Cấp trung",
+      "Cảnh giới"
+    ]
+  },
+  {
+    "id": "lj_yinqi_pill",
+    "name": "Dẫn Khí Đan",
+    "summary": "Đan dược cấp trung, kết hợp đả tọa 10 giây trên Ngộ Đạo Thối Thể Đài để tăng cảnh giới.",
+    "recipe": "[images/inventoryimages3/thulecite.png] Thulecite 2、[images/inventoryimages2/manrabbit_tail.png] Lông thỏ 5、[images/inventoryimages3/redgem.png] Hồng ngọc 2、[images/lingjie/icons/lj_magic_core.png] Ma hạch 5",
+    "details": "Đan dược cấp trung (Huyền), thời gian luyện 4 phút.\n\nHiệu quả: dùng đan dược này và đả tọa 10 giây trên Ngộ Đạo Thối Thể Đài để tăng từ cảnh giới Tịch Cốc lên Nhập Vi.",
+    "tags": [
+      "Đan dược",
+      "Cấp trung",
+      "Cảnh giới"
+    ]
+  },
+  {
+    "id": "lj_ruwei_pill",
+    "name": "Nhập Vi Đan (đan kiếp)",
+    "summary": "Đan dược đan kiếp cấp trung, giúp cường giả Dẫn Khí đột phá lên Nhập Vi.",
+    "recipe": "[images/inventoryimages1/barnacle.png] Hà biển 5、[images/inventoryimages1/cookiecuttershell.png] Vỏ Cookie Cutter 5、[images/inventoryimages2/minotaurhorn.png] Sừng tê giác 1、[images/lingjie/icons/lj_magic_crystal.png] Ma tinh 1",
+    "details": "Đan dược cấp trung (Huyền), thời gian luyện 4 phút. Có thể kích hoạt đan kiếp.\n\nHiệu quả: dùng đan dược này và đả tọa 10 giây trên Ngộ Đạo Thối Thể Đài, giúp cường giả Dẫn Khí phá vỡ giới hạn để tiến lên Nhập Vi, tăng thực lực.",
+    "tags": [
+      "Đan dược",
+      "Cấp trung",
+      "Cảnh giới",
+      "Đan kiếp"
+    ]
+  },
+  {
+    "id": "lj_restore_pill",
+    "name": "Phục Linh Đan (đan kiếp)",
+    "summary": "Đan dược đan kiếp cấp trung, làm linh khí dồi dào, hồi 1 điểm linh lực mỗi 2 giây trong 1 ngày.",
+    "recipe": "[images/lingjie/icons/lj_reiki_cutgrass.png] Dung Linh Thảo đã hái 5、[images/inventoryimages3/shroom_skin.png] Da nấm 1、[images/inventoryimages3/wormlight.png] Quả mọng phát sáng 2、[images/lingjie/icons/lj_magic_crystal.png] Ma tinh 1",
+    "details": "Đan dược cấp trung (Huyền), thời gian luyện 4 phút. Có thể kích hoạt đan kiếp.\n\nHiệu quả: linh khí dồi dào, hồi 1 điểm linh lực mỗi 2 giây, kéo dài 1 ngày.",
+    "tags": [
+      "Đan dược",
+      "Cấp trung",
+      "Linh lực",
+      "Đan kiếp"
+    ]
+  },
+  {
+    "id": "lj_extraordinary_pill",
+    "name": "Siêu Phàm Đan (đan kiếp)",
+    "summary": "Đan dược đan kiếp cấp cao, giúp cường giả Nhập Vi tăng lên cấp Siêu Phàm.",
+    "recipe": "[images/inventoryimages2/livinglog.png] Gỗ sống 5、[images/lingjie/icons/lj_soul_snake_skin.png] Da Phệ Hồn Xà 2、[images/lingjie/icons/lj_bat_blood.png] Tinh huyết Huyết Bức 1、[images/lingjie/icons/lj_magic_crystal.png] Ma tinh 3",
+    "details": "Đan dược cấp cao (Địa), thời gian luyện 8 phút. Có thể kích hoạt đan kiếp.\n\nHiệu quả: dùng đan dược này và đả tọa 10 giây trên Ngộ Đạo Thối Thể Đài, giúp người ở Nhập Vi tăng thực lực lên cấp cường giả Siêu Phàm.",
+    "tags": [
+      "Đan dược",
+      "Cấp cao",
+      "Cảnh giới",
+      "Đan kiếp"
+    ]
+  },
+  {
+    "id": "lj_heying_pill",
+    "name": "Hợp Anh Đan (đan kiếp)",
+    "summary": "Đan dược đan kiếp cấp cao, kết hợp đả tọa 10 giây trên Ngộ Đạo Thối Thể Đài để tăng thực lực của cường giả cấp Hợp Anh.",
+    "recipe": "[images/lingjie/icons/lj_red_magic_cutflower.png] Hoa Bỉ Ngạn đã hái 3、[images/inventoryimages3/yellowgem.png] Ngọc vàng 2、[images/lingjie/icons/lj_amethyst_shell.png] Vỏ Tử Tinh 1、[images/lingjie/icons/lj_magic_crystal.png] Ma tinh 5",
+    "details": "Đan dược cấp cao (Địa), thời gian luyện 8 phút. Có thể kích hoạt đan kiếp.\n\nHiệu quả: dùng đan dược này và đả tọa 10 giây trên Ngộ Đạo Thối Thể Đài để tăng thực lực của cường giả cấp Hợp Anh.",
+    "tags": [
+      "Đan dược",
+      "Cấp cao",
+      "Cảnh giới",
+      "Đan kiếp"
+    ]
+  },
+  {
+    "id": "lj_disaster_pill",
+    "name": "Phá Kiếp Đan (đan kiếp)",
+    "summary": "Đan dược cấp cao, sau khi dùng sẽ miễn nhiễm sét đan kiếp cho đến khi chết.",
+    "recipe": "[images/inventoryimages2/goatmilk.png] Sữa dê 2、[images/inventoryimages1/butter.png] Bơ 2、[images/inventoryimages3/royal_jelly.png] Sữa ong chúa 2、[images/lingjie/icons/lj_magic_crystal.png] Ma tinh 2",
+    "details": "Đan dược cấp cao (Địa), thời gian luyện 8 phút.\n\nHiệu quả: sau khi dùng sẽ miễn nhiễm sét đan kiếp cho đến khi chết.\n\nDùng để bỏ qua kiểm tra lôi kiếp khi luyện các đan dược khác — nếu không kích hoạt đan kiếp, luyện đan chắc chắn thất bại và thành phế đan; dùng Phá Kiếp Đan có thể bỏ qua kiểm tra lôi kiếp và thành công trực tiếp.",
+    "tags": [
+      "Đan dược",
+      "Cấp cao",
+      "Đan kiếp",
+      "Bảo mệnh"
+    ]
+  },
+  {
+    "id": "lj_juling_pill",
+    "name": "Cụ Linh Đan (đan kiếp)",
+    "summary": "Đan dược đan kiếp cấp cao, cực kỳ hiếm, có thể đột phá cảnh giới Cụ Linh.",
+    "recipe": "[images/inventoryimages2/opalpreciousgem.png] Ngọc cầu vồng 1、[images/inventoryimages2/glommerwings.png] Cánh Glommer 1、[images/lingjie/icons/lj_scorpion_dragon_bone.png] Xương Hạt Long 1、[images/lingjie/icons/lj_magic_crystal.png] Ma tinh 10",
+    "details": "Đan dược cấp cao (Địa), thời gian luyện 8 phút. Có thể kích hoạt đan kiếp.\n\nHiệu quả: dùng đan dược này và đả tọa 10 giây trên Ngộ Đạo Thối Thể Đài; đan dược cực kỳ hiếm, có thể đột phá cảnh giới Cụ Linh.",
+    "tags": [
+      "Đan dược",
+      "Cấp cao",
+      "Cảnh giới",
+      "Đan kiếp"
+    ]
+  },
+  {
+    "id": "lj_magic_debris",
+    "name": "Mảnh ma hạch",
+    "summary": "Kết tinh ma khí cấp thấp nhất, rơi từ sinh vật nhập ma nhẹ, có thể ghép thành ma hạch.",
+    "recipe": "",
+    "details": "Nguồn: rơi khi tiêu diệt sinh vật nhập ma nhẹ, từ 1 đến 3 mảnh.\n\nCông dụng cấp cao: 99 mảnh ma hạch có thể ghép thành 1 ma hạch; cũng là nguyên liệu chính của Thối Thiết Linh Kiếm.\n\nKhông thể phá hủy hoặc phân giải.",
+    "tags": [
+      "Nguyên liệu",
+      "Ma khí"
+    ]
+  },
+  {
+    "id": "lj_magic_core",
+    "name": "Ma hạch",
+    "summary": "Ghép từ 99 mảnh ma hạch. Rơi từ Boss, ma thú và sinh vật nhập ma vừa.",
+    "recipe": "[images/lingjie/icons/lj_magic_debris.png] Mảnh ma hạch 99",
+    "details": "Ghép: ghép từ 99 mảnh ma hạch.\n\nNguồn: rơi khi tiêu diệt Boss và ma thú; sinh vật nhập ma vừa rơi từ 1 đến 2 ma hạch.\n\nKhông thể phá hủy, có thể phân giải.\n\nCó thể chế tạo trong mục <Linh Giới>, <Nguyên liệu tinh luyện>.\n\nCông dụng cấp cao: 20 ma hạch có thể ghép thành 1 ma tinh; cũng là nguyên liệu cốt lõi của nhiều đan dược, công trình và pháp bảo.",
+    "tags": [
+      "Nguyên liệu",
+      "Ma khí",
+      "Ghép"
+    ]
+  },
+  {
+    "id": "lj_magic_crystal",
+    "name": "Ma tinh",
+    "summary": "Ghép từ 20 ma hạch. Rơi từ ma thú và sinh vật nhập ma sâu; vật liệu cần thiết cho đan dược cấp cao và giáp.",
+    "recipe": "[images/lingjie/icons/lj_magic_core.png] Ma hạch 20",
+    "details": "Ghép: ghép từ 20 ma hạch.\n\nNguồn: rơi khi tiêu diệt ma thú; sinh vật nhập ma sâu rơi 1 ma tinh.\n\nKhông thể phá hủy, có thể phân giải.\n\nSinh vật gốc nhập ma sâu chỉ rơi 1 ma tinh; ma thú lớn rơi 2 ma tinh.\n\nCó thể chế tạo trong mục <Linh Giới>, <Nguyên liệu tinh luyện>.",
+    "tags": [
+      "Nguyên liệu",
+      "Ma khí",
+      "Ghép"
+    ]
+  },
+  {
+    "id": "lj_scorpion_dragon_bone",
+    "name": "Xương Hạt Long",
+    "summary": "Xương của Boss sử thi Sí Nham Hạt Long tại tàn tích cổ đại (đảo hài cốt), dùng chế tạo Hài Long Giáp và Cụ Linh Đan.",
+    "recipe": "",
+    "details": "Nguồn: tiêu diệt Boss sử thi “Sí Nham Hạt Long” tại Tế Đàn Hài Cốt (tàn tích cổ đại) sẽ rơi 1 chiếc.\n\nCông dụng: nguyên liệu cốt lõi của Hài Long Giáp và Cụ Linh Đan.",
+    "tags": [
+      "Nguyên liệu",
+      "Vật phẩm Boss rơi"
+    ]
+  }
+]

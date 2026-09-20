@@ -1,0 +1,648 @@
+{
+  "records": [
+    {
+      "id": "ttk_ylxc",
+      "name": "Ngọc Lộ Huyền Thương",
+      "source": "xd_ylxc",
+      "category": "structure",
+      "description": "Kho 36 ô chỉ nhận linh thảo và hạt linh thảo; ngừng hư hỏng và cho phép stack vô hạn bên trong.",
+      "recipe": [
+        [
+          "ttk_lingshi2",
+          3
+        ],
+        [
+          "bluegem",
+          10
+        ],
+        [
+          "cutstone",
+          10
+        ],
+        [
+          "boards",
+          5
+        ]
+      ],
+      "station": "Máy Khoa Học",
+      "effects": [
+        "36 ô chứa đồ",
+        "Chỉ nhận item có tag ttk_ylxc_valid",
+        "Hệ số hư hỏng -1",
+        "Stack vô hạn trong kho"
+      ],
+      "products": [
+        {
+          "id": "collapsed_treasurechest",
+          "quantity": "Khi quá tải",
+          "conditions": "Giữ đồ còn lại khi tháo kho có quá nhiều chồng."
+        }
+      ]
+    },
+    {
+      "id": "ttk_ylxq",
+      "name": "Ngọc Lộ Tiên Khu",
+      "source": "xd_ylxq",
+      "category": "structure",
+      "description": "Tiên khu trồng một linh thảo theo mùa hoặc thời khắc; dùng linh khí để duy trì sinh trưởng.",
+      "recipe": [
+        [
+          "ttk_lingshi2",
+          3
+        ],
+        [
+          "livinglog",
+          8
+        ],
+        [
+          "cutstone",
+          5
+        ],
+        [
+          "greengem",
+          1
+        ]
+      ],
+      "station": "Máy Khoa Học",
+      "effects": [
+        "Linh khí 0–100",
+        "Mất 1 linh khí mỗi chu kỳ thế giới",
+        "Một Hạ Phẩm Linh Thạch nạp 25 linh khí",
+        "Lưu và khôi phục cây cùng tiến độ"
+      ],
+      "products": [
+        {
+          "id": "ttk_lc_hsc",
+          "quantity": 1,
+          "conditions": "Thu hoạch cây đã trưởng thành trong tiên khu."
+        },
+        {
+          "id": "ttk_lc_dms",
+          "quantity": 1,
+          "conditions": "Thu hoạch cây đã trưởng thành trong tiên khu."
+        },
+        {
+          "id": "ttk_lc_qfx",
+          "quantity": 1,
+          "conditions": "Thu hoạch cây đã trưởng thành trong tiên khu."
+        },
+        {
+          "id": "ttk_lc_cyh",
+          "quantity": 1,
+          "conditions": "Thu hoạch cây đã trưởng thành trong tiên khu."
+        },
+        {
+          "id": "ttk_lc_lmg",
+          "quantity": 1,
+          "conditions": "Thu hoạch cây đã trưởng thành trong tiên khu."
+        },
+        {
+          "id": "ttk_lc_yhh",
+          "quantity": 1,
+          "conditions": "Thu hoạch cây đã trưởng thành trong tiên khu."
+        }
+      ]
+    },
+    {
+      "id": "ttk_lc_hsc",
+      "name": "Hàn Sương Thảo",
+      "source": "xd_lc_hsc",
+      "category": "item",
+      "description": "Linh thảo mùa đông làm lạnh cơ thể khi ăn.",
+      "recipe": [],
+      "effects": [
+        "+10 máu",
+        "+8 đói",
+        "-30 tinh thần",
+        "-10 nhiệt độ trong 5 giây",
+        "Hái tăng lạnh bằng ngưỡng kháng đóng băng hiện tại"
+      ],
+      "products": [
+        {
+          "id": "spoiled_food",
+          "quantity": "1 mỗi món",
+          "conditions": "Khi hết độ tươi."
+        }
+      ],
+      "station": null
+    },
+    {
+      "id": "ttk_lc_dms",
+      "name": "Địa Mạch Sâm",
+      "source": "xd_lc_dms",
+      "category": "item",
+      "description": "Linh thảo ban ngày hồi phục sinh lực từ từ.",
+      "recipe": [],
+      "effects": [
+        "+10 máu",
+        "+12.5 đói",
+        "-5 tinh thần",
+        "Hồi 0.5 máu mỗi nhịp jellybean trong thời lượng jellybean"
+      ],
+      "products": [
+        {
+          "id": "spoiled_food",
+          "quantity": "1 mỗi món",
+          "conditions": "Khi hết độ tươi."
+        },
+        {
+          "id": "ttk_dms_healthregenbuff",
+          "quantity": "1 hiệu ứng",
+          "conditions": "Khi ăn linh thảo."
+        }
+      ],
+      "station": null
+    },
+    {
+      "id": "ttk_lc_qfx",
+      "name": "Thanh Phong Tiên",
+      "source": "xd_lc_qfx",
+      "category": "item",
+      "description": "Linh thảo mùa thu có thời hạn bảo quản rất ngắn.",
+      "recipe": [],
+      "effects": [
+        "-2 tinh thần",
+        "Hư sau 0.5 ngày"
+      ],
+      "products": [
+        {
+          "id": "spoiled_food",
+          "quantity": "1 mỗi món",
+          "conditions": "Khi hết độ tươi."
+        }
+      ],
+      "station": null
+    },
+    {
+      "id": "ttk_lc_cyh",
+      "name": "Xích Viêm Hoa",
+      "source": "xd_lc_cyh",
+      "category": "item",
+      "description": "Linh thảo mùa hè làm ấm cơ thể; hái tay gây bỏng.",
+      "recipe": [],
+      "effects": [
+        "+20 máu",
+        "+12.5 đói",
+        "+15 nhiệt độ trong 5 giây",
+        "Hái gây sát thương lửa 2% máu tối đa mỗi giây trong 8.1 giây"
+      ],
+      "products": [
+        {
+          "id": "spoiled_food",
+          "quantity": "1 mỗi món",
+          "conditions": "Khi hết độ tươi."
+        }
+      ],
+      "station": null
+    },
+    {
+      "id": "ttk_lc_lmg",
+      "name": "Lôi Minh Quả",
+      "source": "xd_lc_lmg",
+      "category": "item",
+      "description": "Linh thảo mùa xuân mang điện khí.",
+      "recipe": [],
+      "effects": [
+        "+20 máu",
+        "+12.5 đói",
+        "-45 tinh thần",
+        "-10 nhiệt độ trong 5 giây",
+        "Ăn gọi sét",
+        "Hái gây 100 sát thương sét nếu không cách điện"
+      ],
+      "products": [
+        {
+          "id": "spoiled_food",
+          "quantity": "1 mỗi món",
+          "conditions": "Khi hết độ tươi."
+        }
+      ],
+      "station": null
+    },
+    {
+      "id": "ttk_lc_yhh",
+      "name": "U Hồn Hoa",
+      "source": "xd_lc_yhh",
+      "category": "item",
+      "description": "Linh thảo nở trong đêm, đánh đổi tinh thần lấy sinh lực.",
+      "recipe": [],
+      "effects": [
+        "+5 máu",
+        "-60 tinh thần",
+        "Hái làm mất 100 tinh thần"
+      ],
+      "products": [
+        {
+          "id": "spoiled_food",
+          "quantity": "1 mỗi món",
+          "conditions": "Khi hết độ tươi."
+        }
+      ],
+      "station": null
+    },
+    {
+      "id": "ttk_lc_hsc_seed",
+      "name": "Hạt Hàn Sương Thảo",
+      "source": "xd_lc_hsc_seed",
+      "category": "item",
+      "description": "Hạt linh thảo chuyển hóa từ hạt măng tây.",
+      "recipe": [
+        [
+          "asparagus_seeds",
+          1
+        ],
+        [
+          "ttk_lingshi1",
+          1
+        ]
+      ],
+      "station": "Máy Luyện Kim",
+      "effects": [
+        "Ăn được: +2 máu, +5 đói",
+        "Hư sau 20 ngày"
+      ],
+      "products": [
+        {
+          "id": "ttk_plant_hsc",
+          "quantity": 1,
+          "conditions": "Gieo trong tiên khu trống rồi nạp linh khí."
+        },
+        {
+          "id": "spoiled_food",
+          "quantity": "1 mỗi món",
+          "conditions": "Khi hết độ tươi."
+        }
+      ]
+    },
+    {
+      "id": "ttk_lc_dms_seed",
+      "name": "Hạt Địa Mạch Sâm",
+      "source": "xd_lc_dms_seed",
+      "category": "item",
+      "description": "Hạt linh thảo chuyển hóa từ hạt cà rốt.",
+      "recipe": [
+        [
+          "carrot_seeds",
+          1
+        ],
+        [
+          "ttk_lingshi1",
+          1
+        ]
+      ],
+      "station": "Máy Luyện Kim",
+      "effects": [
+        "Ăn được: +2 máu, +5 đói",
+        "Hư sau 20 ngày"
+      ],
+      "products": [
+        {
+          "id": "ttk_plant_dms",
+          "quantity": 1,
+          "conditions": "Gieo trong tiên khu trống rồi nạp linh khí."
+        },
+        {
+          "id": "spoiled_food",
+          "quantity": "1 mỗi món",
+          "conditions": "Khi hết độ tươi."
+        }
+      ]
+    },
+    {
+      "id": "ttk_lc_qfx_seed",
+      "name": "Hạt Thanh Phong Tiên",
+      "source": "xd_lc_qfx_seed",
+      "category": "item",
+      "description": "Hạt linh thảo chuyển hóa từ hạt tỏi.",
+      "recipe": [
+        [
+          "garlic_seeds",
+          1
+        ],
+        [
+          "ttk_lingshi1",
+          1
+        ]
+      ],
+      "station": "Máy Luyện Kim",
+      "effects": [
+        "Ăn được: +2 máu, +5 đói",
+        "Hư sau 20 ngày"
+      ],
+      "products": [
+        {
+          "id": "ttk_plant_qfx",
+          "quantity": 1,
+          "conditions": "Gieo trong tiên khu trống rồi nạp linh khí."
+        },
+        {
+          "id": "spoiled_food",
+          "quantity": "1 mỗi món",
+          "conditions": "Khi hết độ tươi."
+        }
+      ]
+    },
+    {
+      "id": "ttk_lc_cyh_seed",
+      "name": "Hạt Xích Viêm Hoa",
+      "source": "xd_lc_cyh_seed",
+      "category": "item",
+      "description": "Hạt linh thảo chuyển hóa từ hạt tiêu.",
+      "recipe": [
+        [
+          "pepper_seeds",
+          1
+        ],
+        [
+          "ttk_lingshi1",
+          1
+        ]
+      ],
+      "station": "Máy Luyện Kim",
+      "effects": [
+        "Ăn được: +2 máu, +5 đói",
+        "Hư sau 20 ngày"
+      ],
+      "products": [
+        {
+          "id": "ttk_plant_cyh",
+          "quantity": 1,
+          "conditions": "Gieo trong tiên khu trống rồi nạp linh khí."
+        },
+        {
+          "id": "spoiled_food",
+          "quantity": "1 mỗi món",
+          "conditions": "Khi hết độ tươi."
+        }
+      ]
+    },
+    {
+      "id": "ttk_lc_lmg_seed",
+      "name": "Hạt Lôi Minh Quả",
+      "source": "xd_lc_lmg_seed",
+      "category": "item",
+      "description": "Hạt linh thảo chuyển hóa từ hạt bí ngô.",
+      "recipe": [
+        [
+          "pumpkin_seeds",
+          1
+        ],
+        [
+          "ttk_lingshi1",
+          1
+        ]
+      ],
+      "station": "Máy Luyện Kim",
+      "effects": [
+        "Ăn được: +2 máu, +5 đói",
+        "Hư sau 20 ngày"
+      ],
+      "products": [
+        {
+          "id": "ttk_plant_lmg",
+          "quantity": 1,
+          "conditions": "Gieo trong tiên khu trống rồi nạp linh khí."
+        },
+        {
+          "id": "spoiled_food",
+          "quantity": "1 mỗi món",
+          "conditions": "Khi hết độ tươi."
+        }
+      ]
+    },
+    {
+      "id": "ttk_lc_yhh_seed",
+      "name": "Hạt U Hồn Hoa",
+      "source": "xd_lc_yhh_seed",
+      "category": "item",
+      "description": "Hạt linh thảo chuyển hóa từ hạt cà chua.",
+      "recipe": [
+        [
+          "tomato_seeds",
+          1
+        ],
+        [
+          "ttk_lingshi1",
+          1
+        ]
+      ],
+      "station": "Máy Luyện Kim",
+      "effects": [
+        "Ăn được: +2 máu, +5 đói",
+        "Hư sau 20 ngày"
+      ],
+      "products": [
+        {
+          "id": "ttk_plant_yhh",
+          "quantity": 1,
+          "conditions": "Gieo trong tiên khu trống rồi nạp linh khí."
+        },
+        {
+          "id": "spoiled_food",
+          "quantity": "1 mỗi món",
+          "conditions": "Khi hết độ tươi."
+        }
+      ]
+    },
+    {
+      "id": "ttk_plant_hsc",
+      "name": "Cây Hàn Sương Thảo",
+      "source": "xd_plant_hsc",
+      "category": "structure",
+      "description": "Cây linh thảo chỉ lớn vào mùa đông.",
+      "recipe": [],
+      "effects": [
+        "Bốn giai đoạn × 720 giây, chín sau 10 giây",
+        "Chỉ lớn khi tiên khu còn linh khí và đang là mùa đông",
+        "Hái tăng lạnh bằng ngưỡng kháng đóng băng hiện tại"
+      ],
+      "products": [
+        {
+          "id": "ttk_lc_hsc",
+          "quantity": 1,
+          "conditions": "Luôn nhận khi thu hoạch."
+        },
+        {
+          "id": "ttk_lc_hsc_seed",
+          "quantity": 1,
+          "conditions": "40% khi thu hoạch; 75% nếu dùng giỏ chuyên dụng của mod nguồn."
+        }
+      ],
+      "station": null
+    },
+    {
+      "id": "ttk_plant_dms",
+      "name": "Cây Địa Mạch Sâm",
+      "source": "xd_plant_dms",
+      "category": "structure",
+      "description": "Cây linh thảo chỉ lớn ban ngày khi trời khô.",
+      "recipe": [],
+      "effects": [
+        "Bốn giai đoạn × 720 giây, chín sau 10 giây",
+        "Chỉ lớn ban ngày, dừng khi mưa hoặc tuyết",
+        "Hái gây 3 grogginess"
+      ],
+      "products": [
+        {
+          "id": "ttk_lc_dms",
+          "quantity": 1,
+          "conditions": "Luôn nhận khi thu hoạch."
+        },
+        {
+          "id": "ttk_lc_dms_seed",
+          "quantity": 1,
+          "conditions": "40% khi thu hoạch; 75% nếu dùng giỏ chuyên dụng của mod nguồn."
+        }
+      ],
+      "station": null
+    },
+    {
+      "id": "ttk_plant_qfx",
+      "name": "Cây Thanh Phong Tiên",
+      "source": "xd_plant_qfx",
+      "category": "structure",
+      "description": "Cây linh thảo chỉ lớn vào mùa thu.",
+      "recipe": [],
+      "effects": [
+        "Bốn giai đoạn × 720 giây, chín sau 10 giây",
+        "Chỉ lớn khi tiên khu còn linh khí và đang là mùa thu"
+      ],
+      "products": [
+        {
+          "id": "ttk_lc_qfx",
+          "quantity": 1,
+          "conditions": "Luôn nhận khi thu hoạch."
+        },
+        {
+          "id": "ttk_lc_qfx_seed",
+          "quantity": 1,
+          "conditions": "40% khi thu hoạch; 75% nếu dùng giỏ chuyên dụng của mod nguồn."
+        }
+      ],
+      "station": null
+    },
+    {
+      "id": "ttk_plant_cyh",
+      "name": "Cây Xích Viêm Hoa",
+      "source": "xd_plant_cyh",
+      "category": "structure",
+      "description": "Cây linh thảo chỉ lớn vào mùa hè.",
+      "recipe": [],
+      "effects": [
+        "Bốn giai đoạn × 720 giây, chín sau 10 giây",
+        "Chỉ lớn khi tiên khu còn linh khí và đang là mùa hè",
+        "Hái gây bỏng 8.1 giây"
+      ],
+      "products": [
+        {
+          "id": "ttk_lc_cyh",
+          "quantity": 1,
+          "conditions": "Luôn nhận khi thu hoạch."
+        },
+        {
+          "id": "ttk_lc_cyh_seed",
+          "quantity": 1,
+          "conditions": "40% khi thu hoạch; 75% nếu dùng giỏ chuyên dụng của mod nguồn."
+        },
+        {
+          "id": "ttk_plant_cyh_buff",
+          "quantity": "1 hiệu ứng",
+          "conditions": "Khi hái cây bằng tay."
+        }
+      ],
+      "station": null
+    },
+    {
+      "id": "ttk_plant_lmg",
+      "name": "Cây Lôi Minh Quả",
+      "source": "xd_plant_lmg",
+      "category": "structure",
+      "description": "Cây linh thảo chỉ lớn vào mùa xuân.",
+      "recipe": [],
+      "effects": [
+        "Bốn giai đoạn × 720 giây, chín sau 10 giây",
+        "Chỉ lớn khi tiên khu còn linh khí và đang là mùa xuân",
+        "Hái gây điện giật nếu không cách điện"
+      ],
+      "products": [
+        {
+          "id": "ttk_lc_lmg",
+          "quantity": 1,
+          "conditions": "Luôn nhận khi thu hoạch."
+        },
+        {
+          "id": "ttk_lc_lmg_seed",
+          "quantity": 1,
+          "conditions": "40% khi thu hoạch; 75% nếu dùng giỏ chuyên dụng của mod nguồn."
+        }
+      ],
+      "station": null
+    },
+    {
+      "id": "ttk_plant_yhh",
+      "name": "Cây U Hồn Hoa",
+      "source": "xd_plant_yhh",
+      "category": "structure",
+      "description": "Cây linh thảo chỉ lớn vào ban đêm.",
+      "recipe": [],
+      "effects": [
+        "Bốn giai đoạn × 720 giây, chín sau 10 giây",
+        "Chỉ lớn khi tiên khu còn linh khí và đang là ban đêm",
+        "Hái làm mất 100 tinh thần"
+      ],
+      "products": [
+        {
+          "id": "ttk_lc_yhh",
+          "quantity": 1,
+          "conditions": "Luôn nhận khi thu hoạch."
+        },
+        {
+          "id": "ttk_lc_yhh_seed",
+          "quantity": 1,
+          "conditions": "40% khi thu hoạch; 75% nếu dùng giỏ chuyên dụng của mod nguồn."
+        }
+      ],
+      "station": null
+    },
+    {
+      "id": "ttk_dms_healthregenbuff",
+      "name": "Hồi Sinh Lực · Địa Mạch Sâm",
+      "category": "effect",
+      "description": "Hồi 0,5 máu mỗi nhịp theo thời lượng jellybean.",
+      "recipe": [],
+      "effects": [
+        "Hồi 0,5 máu mỗi nhịp theo thời lượng jellybean."
+      ],
+      "products": []
+    },
+    {
+      "id": "ttk_plant_cyh_buff",
+      "name": "Bỏng · Xích Viêm Hoa",
+      "category": "effect",
+      "description": "Hiệu ứng khi hái tay: gây sát thương lửa trong 8,1 giây.",
+      "recipe": [],
+      "effects": [
+        "Hiệu ứng khi hái tay: gây sát thương lửa trong 8,1 giây."
+      ],
+      "products": []
+    }
+  ],
+  "excluded": [
+    {
+      "id": "xd_xcdf",
+      "name": "Tinh Thối Đan Phủ",
+      "reason": "User explicitly removed the structure and all pill/alchemy dependencies from this batch."
+    }
+  ],
+  "relatedRefs": [
+    "scripts/prefabs/xd_ylxc.lua",
+    "scripts/prefabs/xd_ylxq.lua",
+    "scripts/components/xd_ylxq_grower.lua",
+    "scripts/prefabs/xd_plant.lua",
+    "scripts/prefabs/xd_dms_healthregenbuff.lua",
+    "scripts/prefabs/xd_dy_buffs.lua",
+    "scripts/main/actions.lua",
+    "scripts/main/recipes.lua",
+    "scripts/prefabs/xd_qxdx.lua"
+  ]
+}

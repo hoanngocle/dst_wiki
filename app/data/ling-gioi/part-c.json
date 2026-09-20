@@ -1,0 +1,251 @@
+[
+  {
+    "id": "lj_constant_temperature_nucleus",
+    "name": "Hằng Ôn Tinh Hạch",
+    "summary": "Trận nhãn của Cực Ôn Tí Hộ Trận.",
+    "recipe": "[images/inventoryimages3/yellowstaff.png] Gậy Gọi Sao 1、[images/inventoryimages2/opalstaff.png] Gậy Gọi Trăng 1、[images/inventoryimages1/deerclops_eyeball.png] Mắt Hươu Khổng Lồ 1、[images/inventoryimages1/dragon_scales.png] Vảy 1、[images/inventoryimages2/nightmarefuel.png] Nhiên Liệu Ác Mộng 10、[images/lingjie/icons/lj_magic_crystal.png] Ma Tinh 2",
+    "details": "Lõi trận pháp / trận nhãn.\n\nDùng cho Cực Ôn Tí Hộ Trận: trung hòa nhiệt độ cực đoan, triệt tiêu sát thương băng và lửa, từ từ hồi phục tinh thần.\n\nCó thể chế tạo trong mục <Linh Giới>, <Ma Pháp>.",
+    "tags": ["Trận pháp", "Trận nhãn", "Ma pháp"]
+  },
+  {
+    "id": "lj_reiki_grass",
+    "name": "Dung Linh Thảo",
+    "summary": "Dược liệu cơ bản của nhiều loại đan dược. Mọc gần tổ nhện trên nền đất rừng và tổ dạ bức trên Đảo Hồ Điệp.",
+    "recipe": "",
+    "details": "Xuất hiện (hai nhóm, điều kiện nền đất khác nhau)\n　Lục địa chính: mọc cạnh tổ nhện trên nền đất rừng.\n　Đảo Hồ Điệp: mọc cạnh tổ dạ bức trên nền phân chim / nền hang động, mỗi tổ có 1 đến 3 cây.\n\nThu hái: nhận được [images/inventoryimages1/cutgrass.png] Cỏ 1, Dung Linh Thảo 1; có 5% xác suất nhận thêm Rễ Dung Linh Thảo 1.\n\nChu kỳ sinh trưởng giống cây non lấy cành trong bản gốc, có thể thúc chín.\n⚠️ Không sinh trưởng vào mùa đông.\n\nCó thể đốt cháy, đào lên; sau khi thu hái sẽ để lại gốc, tương tự cỏ trong bản gốc.\n\nCông dụng: dược liệu cơ bản của gần như mọi loại đan dược.",
+    "tags": ["Linh thực", "Nguyên liệu"]
+  },
+  {
+    "id": "lj_red_magic_flower",
+    "name": "Hoa Bỉ Ngạn",
+    "summary": "Mọc cạnh hài cốt tiền bối; hài cốt do người chơi chết để lại cũng sẽ mọc hoa sau 1 ngày.",
+    "recipe": "",
+    "details": "Xuất hiện: cạnh hài cốt tiền bối, mỗi bộ hài cốt chỉ có 1 bông. Hài cốt do người chơi chết để lại sẽ mọc Hoa Bỉ Ngạn ở gần sau 1 ngày.\n\nThu hái: nhận được [images/inventoryimages2/petals.png] Cánh Hoa 1, Hoa Bỉ Ngạn 1; có 5% xác suất nhận thêm Rễ Hoa Bỉ Ngạn 1.\n\nChu kỳ sinh trưởng giống cây non lấy cành trong bản gốc, có thể thúc chín, sinh trưởng quanh năm.\n\nCó thể đốt cháy, đào lên; sau khi thu hái sẽ để lại gốc, tương tự cỏ trong bản gốc.\n\nCông dụng: Bất Diệt Đan, Hợp Anh Đan.",
+    "tags": ["Linh thực", "Nguyên liệu"]
+  },
+  {
+    "id": "lj_purple_magic_flower",
+    "name": "Hoa Tử Tinh Tố Thể",
+    "summary": "Mọc gần đồng cỏ Mandrake, mỗi ngày sinh ra một bông hoa trong phạm vi 4 ô; bên cạnh luôn có Nguyệt Thực Tinh Dực Sư bảo vệ.",
+    "recipe": "",
+    "details": "Xuất hiện: gần đồng cỏ Mandrake, mỗi thế giới chỉ sinh ra một bông.\n\nĐặc tính: mỗi ngày sinh ra một bông hoa trong phạm vi 4 ô quanh bản thân.\n\nKhông thể đốt cháy, phải dùng rìu chặt. Bên cạnh sẽ có Nguyệt Thực Tinh Dực Sư. Không thể di dời để trồng lại.\nMọc lại sau 10 ngày kể từ khi thu hái.\n\nKhi sư vương còn tồn tại, không thể chặt Hoa Tử Tinh Tố Thể để lấy vật phẩm. Muốn hái hoa phải xử lý Nguyệt Thực Tinh Dực Sư trước.\nSau khi nguyệt sư chết, có thể hái hoa tím ngay một lần; nguyệt sư hồi sinh theo bộ đếm độc lập 20 ngày (bảng hiển thị «Thời gian còn lại để nguyệt sư hồi sinh»), khi nguyệt sư trở lại, hoa tím lập tức phục hồi.\n\nCông dụng: sửa chữa Tế Đàn Tàn Hài.",
+    "tags": ["Linh thực", "Nguyên liệu", "Boss"]
+  },
+  {
+    "id": "yihuo_rules",
+    "name": "Quy tắc sử dụng lửa",
+    "summary": "Bản thể ngọn lửa chỉ có thể đặt trong Linh Hư Hồ hoặc Hư Không Giới; để trong ba lô quá 10 giây sẽ thiêu hủy vật phẩm.",
+    "recipe": "",
+    "details": "Giới hạn cất giữ: bản thể Khư Hỏa / dị hỏa chỉ có thể được cất giữ bình thường trong Linh Hư Hồ, Hư Không Giới. Ngọn lửa tách ra là vật phẩm tiêu hao một lần, không thể xếp chồng.\n\nNguy cơ thiêu hủy: để trong hành trang / ba lô quá 10 giây sẽ tự động nuốt chửng và thiêu hủy vật phẩm bất kỳ (trừ vật phẩm độc nhất thế giới). Nếu có vật phẩm xếp chồng, sau 10 giây sẽ tiêu hao 1 vật phẩm mỗi 2 giây, bắt đầu từ ô đầu tiên của hành trang; nếu có nhiều dị hỏa trong hành trang, tốc độ nuốt chửng và thiêu hủy vật tư sẽ tăng theo bội số.\n\nChiếu sáng và dập lửa: bản thể Khư Hỏa / dị hỏa đặt trên mặt đất cung cấp ánh sáng trong phạm vi 20 yard và dập tắt mọi ngọn lửa thông thường xung quanh (các dị hỏa không bài xích nhau; ví dụ hai dị hỏa cùng đặt trên đất vẫn tự phát sáng, tỏa nhiệt và dập tắt các ngọn lửa khác). Ngọn lửa tách ra sẽ biến mất khi đặt xuống đất.\n\nTách lửa: dị hỏa được Linh Hư Hồ hấp thu có thể tách bằng chuột phải, tiêu hao 10 linh lực. Ngọn lửa tách ra có thể đặt vào Linh Hư Quang Trản để chiếu sáng, bổ sung 50% nhiên liệu, đốt vật dễ cháy, thiêu đốt công trình, hoặc đặt vào Lò Luyện Đan để dung hợp.\n\nChâm lửa bằng Hư Không Giới: khi trong nhẫn có bản thể dị hỏa, trang bị Hư Không Giới rồi nhấp chuột phải vào mục tiêu để châm lửa từ xa (cầu lửa giống Gậy Lửa, tầm bắn 8 đến 10), tiêu hao 10 linh lực; đối với thiết bị dùng nhiên liệu dễ cháy thì sẽ bổ sung nhiên liệu, bản thân thao tác này không gây sát thương.\n\nChủ nhân dị hỏa: dị hỏa mạnh (Băng Sương Nghiệp Hỏa, Long Viêm Tâm Hỏa, Cuồng Tông Diễm, Linh Huyên Trần Hỏa, Tử Lân Yêu Diễm) khi rơi xuống đất không thể nhặt bằng tay không, chỉ chủ nhân của nó mới có thể làm vậy; nằm trên đất đủ 1 ngày (8 phút) sẽ chuyển thành «Mất chủ nhân», sau đó bất kỳ Linh Hư Hồ nào cũng có thể hấp thu. Khi đưa dị hỏa mạnh vào hành trang / vật chứa, người nhặt nó trở thành chủ nhân mới. Khư Hỏa không thuộc nhóm dị hỏa mạnh, ai cũng có thể cầm bằng tay không.\n\nCái giá hấp thu: khi dùng Linh Hư Hồ để hấp thu, ngọn lửa thiêu đốt thân thể, mỗi giây trừ 1 linh lực, 2 sinh lực, kéo dài 60 giây.",
+    "tags": ["Dị hỏa", "Khư Hỏa", "Cơ chế"]
+  },
+  {
+    "id": "lj_ordinary_flame",
+    "name": "Khư Hỏa",
+    "summary": "Ngọn lửa mọi nhân vật đều có sẵn khi xuất hiện, nằm trong Hư Không Giới.",
+    "recipe": "",
+    "details": "Mọi nhân vật đều có sẵn khi xuất hiện, nằm trong Hư Không Giới.\n\nKhư Hỏa là ngọn lửa có sẵn khi nhân vật xuất hiện, có thể đặt vào lò đan để luyện đan, hoặc tách ra để dùng cho Linh Hư Quang Trản chiếu sáng.\n\nCác quy tắc chung về cất giữ, chiếu sáng, thiêu hủy v.v. xem «Quy tắc sử dụng lửa».",
+    "tags": ["Khư Hỏa", "Có sẵn khi bắt đầu", "Ngọn lửa"]
+  },
+  {
+    "id": "lj_ice_flame",
+    "name": "Băng Sương Nghiệp Hỏa",
+    "summary": "Dị hỏa nhận được khi triệu hồi Hươu Một Mắt Khổng Lồ thông qua manh mối «Nhật Ký Đóng Băng», là nguyên liệu bắt buộc để chế tạo Linh Vận.",
+    "recipe": "",
+    "details": "Dị hỏa. Cấp độ nhập ma của Boss manh mối cũng được chọn ngẫu nhiên theo số ngày của thế giới (xem «Tổng quan nhập ma»), không bị giới hạn bởi mùa; vật phẩm manh mối xuất hiện lại mỗi 20 ngày (năm loại có bộ đếm riêng, xem chi tiết ở «Nhật ký»).\n\nVật phẩm manh mối: «Nhật Ký Đóng Băng» (xuất hiện ngẫu nhiên trong rừng bạch dương, cần dùng cuốc đập vỡ để mở khóa).\n\nQuy trình thu thập: sau khi nhận nhật ký, nhấp chuột phải để mở, mảnh giấy ghi rằng «Bóng hình khổng lồ dưới ánh trăng, khi giẫm nát mặt băng, trong hơi lạnh ẩn giấu ánh sáng nhảy múa». Trên mặt đất sẽ ngẫu nhiên xuất hiện một ụ đất khả nghi lớn; lục tìm tất cả ụ đất manh mối sẽ khiến Hươu Một Mắt Khổng Lồ xuất hiện. Giết nó sẽ rơi chiến lợi phẩm thông thường và thêm Băng Sương Nghiệp Hỏa.\n\nCông dụng: chế tạo Linh Vận cần bản thể Băng Sương Nghiệp Hỏa.",
+    "tags": ["Dị hỏa", "Ngọn lửa", "Băng sương"]
+  },
+  {
+    "id": "lj_dragon_flame",
+    "name": "Long Viêm Tâm Hỏa",
+    "summary": "Dị hỏa nhận được khi triệu hồi Ruồi Rồng thông qua manh mối «Vảy Cháy Đen», là nguyên liệu bắt buộc để chế tạo Tinh Vẫn.",
+    "recipe": "",
+    "details": "Dị hỏa.\n\nVật phẩm manh mối: «Vảy Cháy Đen» (xuất hiện cạnh hồ dung nham, cần dùng bình tưới dập lửa).\n\nQuy trình thu thập: sau khi nhận nhật ký, nhấp chuột phải để mở, mảnh giấy ghi rằng «Linh thức trong tổ đá thức tỉnh, có cự thú canh giữ lãnh địa. Khi nổi giận, nó thiêu rụi cây cỏ; trong vỏ giấu hỏa hạch, một đòn bất ngờ có thể phá vỡ». Ruồi Rồng xuất hiện cạnh hang thú cưng; giết nó sẽ rơi chiến lợi phẩm thông thường và thêm Long Viêm Tâm Hỏa.\n\nCông dụng: chế tạo Tinh Vẫn cần bản thể Long Viêm Tâm Hỏa.",
+    "tags": ["Dị hỏa", "Ngọn lửa", "Thuộc tính lửa"]
+  },
+  {
+    "id": "lj_mighty_flame",
+    "name": "Cuồng Tông Diễm",
+    "summary": "Dị hỏa nhận được khi triệu hồi Gấu Lửng thông qua manh mối «Ba Lô Mục Nát», có thể cường hóa giáp.",
+    "recipe": "",
+    "details": "Dị hỏa.\n\nVật phẩm manh mối: «Ba Lô Mục Nát» (xuất hiện ngẫu nhiên trên địa hình rừng, cần dùng rìu bổ ra để mở khóa).\n\nQuy trình thu thập: sau khi nhận nhật ký, nhấp chuột phải để mở, mảnh giấy ghi rằng «Khi nó xô đổ cây thông, dưới rễ cây sẽ bắn ra tia lửa; nó sợ nước nhưng lại thích mật ong». Trò chơi sẽ tìm một tổ Ong Chúa trên bản đồ và tạo một thùng ong gần đó, Gấu Lửng ở ngay cạnh thùng ong; giết nó sẽ rơi chiến lợi phẩm thông thường và thêm Cuồng Tông Diễm.\n\nHiệu quả cường hóa\nCuồng Tông Diễm đã tách: có thể cường hóa bất kỳ giáp nào, nhân đôi độ bền của giáp đó.\nBản thể Cuồng Tông Diễm: có thể cường hóa bất kỳ giáp nào, nhận thêm 15 giảm sát thương và nhân đôi độ bền của giáp đó.\n\n15 giảm sát thương bổ sung này phòng thủ dựa trên sát thương đã nhận.\nVí dụ: giáp có phòng thủ ban đầu 80, chịu đòn tấn công 100, gây 20 sát thương, sau đó áp dụng thêm 15 giảm sát thương, sát thương thực tế là 17.",
+    "tags": ["Dị hỏa", "Ngọn lửa", "Cường hóa"]
+  },
+  {
+    "id": "lj_dust_flame",
+    "name": "Linh Huyên Trần Hỏa",
+    "summary": "Dị hỏa nhận được khi triệu hồi Sư Tử Kiến thông qua manh mối «Lông Vũ Phơi Khô».",
+    "recipe": "",
+    "details": "Dị hỏa.\n\nVật phẩm manh mối: «Lông Vũ Phơi Khô» (nhặt gần ốc đảo).\n\nQuy trình thu thập: sau khi nhận nhật ký, nhấp chuột phải để mở, mảnh giấy ghi rằng «Ở trung tâm bão cát có một vầng sáng, đó là hơi thở của hắn». Đến đó sẽ thấy Sư Tử Kiến; giết nó sẽ rơi chiến lợi phẩm thông thường và thêm Linh Huyên Trần Hỏa.\n\nCông dụng: đặt vào Hư Không Giới.\n⚠️ Hiện tại đặt vào Hư Không Giới chưa mở khóa bất kỳ thứ gì (lối chơi linh kỹ đang được phát triển, xin hãy đón chờ).",
+    "tags": ["Dị hỏa", "Ngọn lửa", "Linh kỹ"]
+  },
+  {
+    "id": "lj_purplemonster_flame",
+    "name": "Tử Lân Yêu Diễm",
+    "summary": "Dị hỏa nhận được khi triệu hồi Phệ Hồn Xà thông qua manh mối «Cuộn Giấy Ngấm Nước», có thể dùng để chế tạo Hồn Phan.",
+    "recipe": "",
+    "details": "Dị hỏa.\n\nVật phẩm manh mối: «Cuộn Giấy Ngấm Nước» (xuất hiện ngẫu nhiên cạnh xúc tu ở đầm lầy, cần hơ lửa để mở khóa).\n\nQuy trình thu thập: sau khi nhận nhật ký, nhấp chuột phải để mở, mảnh giấy ghi rằng «Hoàng hôn sắp đến, mặt nước linh mạch sẽ phản chiếu ánh lửa màu tím». Sau khi xem nhật ký, Boss sẽ xuất hiện lúc hoàng hôn bên cạnh ao trên Đảo Hồ Điệp. Đến đó sẽ thấy Phệ Hồn Xà; giết nó sẽ rơi chiến lợi phẩm thông thường và thêm Tử Lân Yêu Diễm.\n\nCông dụng: có thể chế tạo Hồn Phan; đưa cho Hồn Phan có thể mở khóa kỹ năng «Luyện Hồn».",
+    "tags": ["Dị hỏa", "Ngọn lửa", "Hồn Phan"]
+  },
+  {
+    "id": "lj_log",
+    "name": "Nhật ký",
+    "summary": "Nhật ký dùng làm manh mối dị hỏa. Năm loại manh mối có bộ đếm riêng; sau khi nhận được, đủ 20 ngày trong trò chơi sẽ xuất hiện vật phẩm tiếp theo.",
+    "recipe": "",
+    "details": "Tên gọi chung của các vật phẩm manh mối dị hỏa.\n\nCấp độ nhập ma của Boss manh mối cũng được chọn ngẫu nhiên theo số ngày của thế giới (xem «Tổng quan nhập ma»), không bị giới hạn bởi mùa.\n\nQuy tắc xuất hiện lại\n　Năm loại manh mối có bộ đếm riêng, không ảnh hưởng lẫn nhau.\n　Tính từ thời điểm «nhận được»: đập vỡ, bổ ra, dập lửa, nhặt lên, phá hủy đều được tính là nhận được.\n　Sau đủ 20 ngày trong trò chơi sẽ xuất hiện vật phẩm tiếp theo (tính cả tiến độ ngày hiện tại, là trọn vẹn 20 ngày).\n　Cùng một lúc trên thế giới chỉ có một vật phẩm manh mối cùng loại; sau khi đã nhận vào tay (dù để trong ba lô) cũng không ảnh hưởng bộ đếm xuất hiện lại sau đó.\n　Khi bắt đầu, mỗi loại trong năm manh mối được tạo một vật phẩm; cảnh giới chỉ giới hạn việc «đọc» (Nhập Vi), không giới hạn việc tạo vật phẩm.\n\nVật phẩm manh mối cụ thể ứng với từng dị hỏa: Nhật Ký Đóng Băng, Vảy Cháy Đen, Ba Lô Mục Nát, Lông Vũ Phơi Khô, Cuộn Giấy Ngấm Nước.",
+    "tags": ["Dị hỏa", "Manh mối"]
+  },
+  {
+    "id": "lj_frozen_log",
+    "name": "Nhật Ký Đóng Băng",
+    "summary": "Xuất hiện ngẫu nhiên trong rừng bạch dương, cần dùng cuốc đập vỡ để mở khóa. Dẫn đến Băng Sương Nghiệp Hỏa.",
+    "recipe": "",
+    "details": "Vật phẩm manh mối, dẫn đến Băng Sương Nghiệp Hỏa.\n\nVị trí: xuất hiện ngẫu nhiên trong rừng bạch dương.\nCách mở khóa: cần dùng cuốc đập vỡ.\n\nSau khi nhấp chuột phải để mở, mảnh giấy ghi rằng «Bóng hình khổng lồ dưới ánh trăng, khi giẫm nát mặt băng, trong hơi lạnh ẩn giấu ánh sáng nhảy múa». Sau đó trên mặt đất sẽ ngẫu nhiên xuất hiện một ụ đất khả nghi lớn; lục tìm tất cả ụ đất manh mối sẽ khiến Hươu Một Mắt Khổng Lồ xuất hiện.",
+    "tags": ["Manh mối", "Dị hỏa", "Băng Sương Nghiệp Hỏa"]
+  },
+  {
+    "id": "lj_charred_scales",
+    "name": "Vảy Cháy Đen",
+    "summary": "Xuất hiện cạnh hồ dung nham, cần dùng bình tưới dập lửa để mở khóa. Dẫn đến Long Viêm Tâm Hỏa.",
+    "recipe": "",
+    "details": "Vật phẩm manh mối, dẫn đến Long Viêm Tâm Hỏa.\n\nVị trí: xuất hiện cạnh hồ dung nham.\nCách mở khóa: cần dùng bình tưới dập lửa.\n\nSau khi nhấp chuột phải để mở, mảnh giấy ghi rằng «Linh thức trong tổ đá thức tỉnh, có cự thú canh giữ lãnh địa. Khi nổi giận, nó thiêu rụi cây cỏ; trong vỏ giấu hỏa hạch, một đòn bất ngờ có thể phá vỡ». Ruồi Rồng sẽ xuất hiện cạnh hang thú cưng.",
+    "tags": ["Manh mối", "Dị hỏa", "Long Viêm Tâm Hỏa"]
+  },
+  {
+    "id": "lj_rotten_backpack",
+    "name": "Ba Lô Mục Nát",
+    "summary": "Xuất hiện ngẫu nhiên trên địa hình rừng, cần dùng rìu bổ ra để mở khóa. Dẫn đến Cuồng Tông Diễm.",
+    "recipe": "",
+    "details": "Vật phẩm manh mối, dẫn đến Cuồng Tông Diễm.\n\nVị trí: xuất hiện ngẫu nhiên trên địa hình rừng.\nCách mở khóa: cần dùng rìu bổ ra.\n\nSau khi nhấp chuột phải để mở, mảnh giấy ghi rằng «Khi nó xô đổ cây thông, dưới rễ cây sẽ bắn ra tia lửa; nó sợ nước nhưng lại thích mật ong». Trò chơi sẽ tìm một tổ Ong Chúa trên bản đồ và tạo một thùng ong gần đó, Gấu Lửng ở ngay cạnh thùng ong.",
+    "tags": ["Manh mối", "Dị hỏa", "Cuồng Tông Diễm"]
+  },
+  {
+    "id": "lj_dried_camel_feathers",
+    "name": "Lông Vũ Phơi Khô",
+    "summary": "Nhặt gần ốc đảo. Dẫn đến Linh Huyên Trần Hỏa.",
+    "recipe": "",
+    "details": "Vật phẩm manh mối, dẫn đến Linh Huyên Trần Hỏa.\n\nVị trí: nhặt gần ốc đảo.\n\nSau khi nhấp chuột phải để mở, mảnh giấy ghi rằng «Ở trung tâm bão cát có một vầng sáng, đó là hơi thở của hắn». Đến đó sẽ thấy Sư Tử Kiến.\n\nNó còn được dùng làm nguyên liệu công thức trong Lò Luyện Đan, để luyện «Nhật Ký Trần Hỏa» (xem mục tương ứng).",
+    "tags": ["Manh mối", "Dị hỏa", "Linh Huyên Trần Hỏa"]
+  },
+  {
+    "id": "lj_swollen_scroll",
+    "name": "Cuộn Giấy Ngấm Nước",
+    "summary": "Xuất hiện ngẫu nhiên cạnh xúc tu ở đầm lầy, cần hơ lửa để mở khóa. Dẫn đến Tử Lân Yêu Diễm.",
+    "recipe": "",
+    "details": "Vật phẩm manh mối, dẫn đến Tử Lân Yêu Diễm.\n\nVị trí: xuất hiện ngẫu nhiên cạnh xúc tu ở đầm lầy.\nCách mở khóa: cần hơ lửa.\n\nSau khi nhấp chuột phải để mở, mảnh giấy ghi rằng «Hoàng hôn sắp đến, mặt nước linh mạch sẽ phản chiếu ánh lửa màu tím». Sau khi xem nhật ký, Boss sẽ xuất hiện lúc hoàng hôn bên cạnh ao trên Đảo Hồ Điệp; đến đó sẽ thấy Phệ Hồn Xà.",
+    "tags": ["Manh mối", "Dị hỏa", "Tử Lân Yêu Diễm"]
+  },
+  {
+    "id": "lj_ice_log",
+    "name": "Nhật Ký Băng Sương",
+    "summary": "Manh mối nhận được từ «Nhật Ký Đóng Băng», dẫn đến Hươu Một Mắt Khổng Lồ.",
+    "recipe": "",
+    "details": "Dị hỏa tương ứng: Băng Sương Nghiệp Hỏa.\nVật phẩm manh mối: Nhật Ký Đóng Băng.\nBoss tiếp theo: Hươu Một Mắt Khổng Lồ.\n\nĐể đọc cần đạt cảnh giới Nhập Vi.",
+    "tags": ["Nhật ký", "Manh mối dị hỏa"]
+  },
+  {
+    "id": "lj_dragon_log",
+    "name": "Nhật Ký Long Viêm",
+    "summary": "Manh mối nhận được từ «Vảy Cháy Đen», dẫn đến Ruồi Rồng.",
+    "recipe": "",
+    "details": "Dị hỏa tương ứng: Long Viêm Tâm Hỏa.\nVật phẩm manh mối: Vảy Cháy Đen.\nBoss tiếp theo: Ruồi Rồng.\n\nĐể đọc cần đạt cảnh giới Nhập Vi.",
+    "tags": ["Nhật ký", "Manh mối dị hỏa"]
+  },
+  {
+    "id": "lj_mighty_log",
+    "name": "Nhật Ký Cuồng Tông",
+    "summary": "Manh mối nhận được từ «Ba Lô Mục Nát», dẫn đến Gấu Lửng.",
+    "recipe": "",
+    "details": "Dị hỏa tương ứng: Cuồng Tông Diễm.\nVật phẩm manh mối: Ba Lô Mục Nát.\nBoss tiếp theo: Gấu Lửng.\n\nĐể đọc cần đạt cảnh giới Nhập Vi.",
+    "tags": ["Nhật ký", "Manh mối dị hỏa"]
+  },
+  {
+    "id": "lj_dust_log",
+    "name": "Nhật Ký Trần Hỏa",
+    "summary": "Nhật ký dẫn đến Sư Tử Kiến; có thể luyện trực tiếp bằng Lò Luyện Đan.",
+    "recipe": "[images/inventoryimages1/cactus_meat.png] Thịt Xương Rồng 3、[images/lingjie/icons/lj_dried_camel_feathers.png] Lông Vũ Phơi Khô 1",
+    "details": "Dị hỏa tương ứng: Linh Huyên Trần Hỏa.\nVật phẩm manh mối: Lông Vũ Phơi Khô.\nBoss tiếp theo: Sư Tử Kiến.\n\nLuyện chế (cao cấp, thời gian luyện 2 phút)\n\nĐể đọc cần đạt cảnh giới Nhập Vi.",
+    "tags": ["Nhật ký", "Manh mối dị hỏa"]
+  },
+  {
+    "id": "lj_purplemonster_log",
+    "name": "Nhật Ký Tử Lân",
+    "summary": "Manh mối nhận được từ «Cuộn Giấy Ngấm Nước», dẫn đến Phệ Hồn Xà.",
+    "recipe": "",
+    "details": "Dị hỏa tương ứng: Tử Lân Yêu Diễm.\nVật phẩm manh mối: Cuộn Giấy Ngấm Nước.\nBoss tiếp theo: Phệ Hồn Xà.\n\nĐể đọc cần đạt cảnh giới Nhập Vi.",
+    "tags": ["Nhật ký", "Manh mối dị hỏa"]
+  },
+  {
+    "id": "lj_butterfly_island",
+    "name": "Đảo Hồ Điệp",
+    "summary": "Khu vực chia thành bốn phần theo bốn mùa, bản đầu mở phần mùa đông; nơi tập trung Boss manh mối dị hỏa và ma thú.",
+    "recipe": "",
+    "details": "Cũng có thể tìm địa điểm này bằng «Rừng Ma Thú» — tên gọi khác này đã được thêm vào thẻ, cả hai tên đều tìm được.\n\nSau khi vào, khu vực chia thành bốn phần, tương ứng bốn mùa (xuân, hạ, thu, đông). Trong bản đầu, phần mùa đông luôn là mùa đông vào mọi ngày; ba phần còn lại cũng có hiệu ứng mùa, nội dung sẽ được cập nhật sau. (Kết giới khu vực: phải lên đảo mới cảm nhận được mùa của khu vực)\n\nPhần khu vực mùa đông\nVùng lõi (nền đầm lầy): có một ao đầm lầy đóng băng (nơi Boss manh mối xuất hiện); hai cây hoàn toàn bình thường được bao quanh bởi một số hoa ác; ba cây Gai Âm U; một số cây gai nhọn, một số bụi gai.\nVùng phụ (nền phân chim): nằm ở các góc của khu vực, có 4 tổ dạ bức, cạnh mỗi tổ xuất hiện ngẫu nhiên 1 đến 3 cây Dung Linh Thảo.\nNội dung mùa đông nhỏ từ bản gốc: xuất hiện ngẫu nhiên vài mỏ băng (sau khi đập một phần vẫn để lại một vũng nước, rồi từ từ hình thành mỏ băng trở lại), cùng một lãnh địa chim cánh cụt.\n\nChi tiết ẩn\nMỗi phần xuất hiện ngẫu nhiên hài cốt tiền bối, bên cạnh có vật phẩm để lại sau khi ngã xuống.\n　1. Ma Hạch ngẫu nhiên 1 đến 5 (xác suất 70%)\n　2. Ma Tinh ngẫu nhiên 1 đến 2 (xác suất 30%)\n\nMột số tổ dạ bức.\n\nCó thể điều chỉnh cách tạo Đảo Hồ Điệp trong cài đặt mod: thế giới mới và cũ / chỉ thế giới mới / tắt.",
+    "tags": ["Địa hình", "Mùa", "Ma thú", "Rừng Ma Thú"]
+  },
+  {
+    "id": "lj_remains_altar",
+    "name": "Tế Đàn Tàn Hài",
+    "summary": "Đảo tàn hài nhỏ ở vùng biển nông, nơi Sí Nham Hạt Long xuất hiện; sửa tế đàn để mở chế tạo cao cấp, mỗi lần chế tạo đều phải đứng gần.",
+    "recipe": "[images/inventoryimages1/boards.png] Ván Gỗ 10、[images/lingjie/icons/lj_reiki_cutgrass.png] Dung Linh Thảo Đã Hái 3、[images/lingjie/icons/lj_purple_magic_bloom.png] Cánh Hoa Tử Tinh Tố Thể 1、[images/inventoryimages2/fossil_piece.png] Mảnh Hóa Thạch 3",
+    "details": "Tế đàn đã sửa chữa hoàn tất\n\nĐịa hình nhỏ (đảo tàn hài), tạo ra Tế Đàn Tàn Hài và Sí Nham Hạt Long, xuất hiện ở vùng biển nông.\n\nPhải ít nhất đạt cảnh giới Tịch Cốc mới có thể sửa chữa; sau khi sửa xong sẽ giảm một đại cảnh giới (mất chín bậc) — đây là cái giá sửa chữa, không phải phần thưởng. Cảnh giới vẫn giữ trạng thái khóa khi chết vốn có.\n\nĐứng gần để mở chế tạo: mỗi lần chế tạo đều cần đứng gần Tế Đàn Tàn Hài, không phải chỉ chế tạo một lần là mở công thức vĩnh viễn.\nLinh Vận, Tinh Vẫn, Hồn Phan, Hài Long Giáp, Tinh Vũ Quan, Lõi Tứ Quý, Lõi Linh Thực, Trấn Ma Xu Hạch, Hằng Ôn Tinh Hạch, Huyền Trận Xu Nữu, Hư Không Giới.\n\nGiải thích trạm khoa học: Tế Đàn Tàn Hài là trạm khoa học riêng của Linh Giới. Cơ sở tu luyện cơ bản dùng khoa học cấp hai (Máy Giả Kim) và được mở khóa vĩnh viễn;\ncác công thức cao cấp ở trên phải được chế tạo bên cạnh Tế Đàn Tàn Hài.\n\nTế đàn đã sửa chữa hoàn tất\n\n[[图片:images/lingjie/showcase/lj_remains_altar_complete.png|Sau khi sửa chữa, tàn hài vỡ nát trở thành tế đàn hoàn chỉnh; mọi vật phẩm cao cấp đều được chế tạo tại đây]]",
+    "tags": ["Địa hình", "Chế tạo đặc biệt"]
+  },
+  {
+    "id": "lj_chiyan_scorpion_dragon",
+    "name": "Sí Nham Hạt Long",
+    "summary": "Boss sử thi ở Tế Đàn Tàn Hài. Sinh lực 30000, giáp 30; miễn đóng băng, khựng và đẩy lùi, triệu hồi ấu trùng bọ cạp độc sau nửa trận.",
+    "recipe": "",
+    "details": "Xuất hiện ở Tế Đàn Tàn Hài (đảo di tích cổ đại). Boss sử thi.\n\nChỉ số cơ bản\nSinh lực 30000, giáp 30, tốc độ di chuyển trung bình.\n\nCơ chế cốt lõi\nKhông chịu hiệu ứng đóng băng, khựng, đẩy lùi.\nMỗi khi mất 10000 sinh lực sẽ triệu hồi 4 ấu trùng bọ cạp độc (250 sinh lực, tấn công 40, sát thương độc 3/giây, kéo dài 8 giây), hồi chiêu 30 giây. Ấu trùng bọ cạp độc tồn tại liên tục; việc chúng chưa chết cũng không ảnh hưởng lần dùng kỹ năng tiếp theo triệu hồi 4 con.\n\nKỹ năng\nQuét ngang (đánh thường): vung càng tấn công, mỗi càng gây 60 sát thương, hồi chiêu 8 giây. Phạm vi tấn công khoảng 1 ô (4 yard, 1 ô = 4 yard). Sau 4 đòn đánh, đuôi quét ngang gây 90 sát thương diện rộng AOE và đẩy lùi người chơi 2 ô.\n\nThiên Thạch Băng Kích: triệu hồi một thiên thạch từ trên trời lao nhanh xuống người chơi, giống đá rơi trong khu thiên thạch (phá hủy công trình và cây cối, như khu thiên thạch bản gốc). Hồi chiêu 18 giây. Gây 120 sát thương và đánh ngã người chơi (hất tung rồi ngã xuống).\n\nPhun Cát Sỏi: phun cát trong hình nón 5 ô phía trước, kéo dài 3 giây, hồi chiêu 20 giây.\n　Phun liên tục trong 3 giây, vùng hình nón phía trước dài 5 ô, rộng 3 ô, liên tục tạo địa hình cát sỏi ăn mòn; địa hình tồn tại thêm 2 giây sau khi phun kết thúc.\n　⚠️ Hiệu ứng làm chậm và sát thương của cát sỏi đến từ chính gai cát bản gốc.\n\nHạt Long Xung Chàng: tụ lực 1 giây, lao thẳng 8 ô, gây 100 sát thương + phá hủy công trình trên đường đi, sau khi kết thúc bị choáng 2 giây, hồi chiêu 30 giây. Khoảng cách thẳng tối đa 8 ô.\n　Phá hủy công trình: mọi tường gỗ, tường đá, vật có thể thu thập và công trình nhỏ trên đường đi đều bị phá hủy trực tiếp.\n\nVật phẩm rơi khi tiêu diệt\nXương Hạt Long 1、[images/inventoryimages2/monstermeat.png] Thịt Quái Vật 4、Ma Tinh 2、Ma Hạch 6、Mảnh Ma Hạch 10、[images/inventoryimages2/orangegem.png] Ngọc Cam 2、[images/inventoryimages2/greengem.png] Ngọc Lục 2、[images/inventoryimages3/yellowgem.png] Ngọc Vàng 2.",
+    "tags": ["Boss", "Sử thi", "Tế Đàn Tàn Hài"]
+  },
+  {
+    "id": "lj_little_scorpion",
+    "name": "Ấu Trùng Bọ Cạp Độc",
+    "summary": "Sí Nham Hạt Long triệu hồi 4 con mỗi khi mất 10000 sinh lực. Sinh lực 250, tấn công 40, kèm sát thương độc.",
+    "recipe": "",
+    "details": "Được Sí Nham Hạt Long triệu hồi 4 con mỗi khi mất 10000 sinh lực.\n\nSinh lực 250, tấn công 40, sát thương độc 3/giây, kéo dài 8 giây.\n\nẤu trùng bọ cạp độc tồn tại liên tục; việc chúng chưa chết cũng không ảnh hưởng lần dùng kỹ năng tiếp theo triệu hồi 4 con.",
+    "tags": ["Boss", "Vật triệu hồi", "Tế Đàn Tàn Hài"]
+  },
+  {
+    "id": "lj_bat_nest",
+    "name": "Tổ Dạ Bức",
+    "summary": "Mỗi tổ sinh ra 6 Yêu Bức và 1 Ám Ảnh Huyết Bức, xuất hiện vào hoàng hôn và ban đêm.",
+    "recipe": "",
+    "details": "Một số tổ xuất hiện trên Đảo Hồ Điệp. Mỗi tổ sinh ra 6 Yêu Bức (mỗi 5 phút sinh lại 1 con, tối đa 6 con), 1 Ám Ảnh Huyết Bức (mỗi 45 phút sinh lại 1 con, tối đa 1 con).\n\nXuất hiện vào hoàng hôn và ban đêm (đặc tính tương tự dơi bản gốc).\n\nCạnh mỗi tổ xuất hiện ngẫu nhiên 1 đến 3 cây Dung Linh Thảo.",
+    "tags": ["Địa hình", "Đảo Hồ Điệp", "Sinh quái"]
+  },
+  {
+    "id": "lj_demon_bat",
+    "name": "Ám Ảnh Huyết Bức",
+    "summary": "Ma thú tinh anh có 2000 sinh lực. Sóng âm gây khựng diện rộng, liên tục triệu hồi Yêu Bức sau khi còn nửa máu.",
+    "recipe": "",
+    "details": "Sinh lực ban đầu 2000, tốc độ di chuyển trung bình.\n\nCách tấn công: cắn xé / phát sóng âm.\nSát thương tấn công 55, cắn xé trong phạm vi 1 ô đất, ngoài phạm vi thì dùng sóng âm.\n\nTấn công sóng âm: phát sóng âm đỏ sẫm, tấn công vùng có bán kính 8 quanh bản thân, mỗi 0.5 giây phát một xung, liên tục gây khựng trong phạm vi, kéo dài 9 giây. Ra khỏi phạm vi sẽ thoát hiệu ứng. Hồi chiêu 30 giây.\n\nCơ chế triệu hồi: sau khi sinh lực xuống 50% bắt đầu triệu hồi 1 Yêu Bức, hồi chiêu 15 giây, không giới hạn số lượng. Sau khi thoát giao tranh, tất cả đều về tổ; giới hạn chỉ 6 con, những con dư vào tổ = chết.\n\nTiêu diệt chắc chắn rơi Tinh Huyết Huyết Bức 1、[images/inventoryimages2/monstermeat.png] Thịt Quái Vật 2 (Mảnh Ma Hạch, Ma Hạch, Ma Tinh rơi tùy theo mức nhập ma hiện tại).\n\nSinh ra từ Tổ Dạ Bức, mỗi tổ 1 con, mỗi 45 phút sinh lại 1 con, tối đa 1 con.",
+    "tags": ["Ma thú", "Đảo Hồ Điệp", "Dơi", "Tinh anh"]
+  },
+  {
+    "id": "lj_blood_bat",
+    "name": "Yêu Bức",
+    "summary": "Ma thú nhỏ. Sinh lực 300, sát thương 25, chắc chắn rơi Thịt Quái Vật.",
+    "recipe": "",
+    "details": "Sinh lực ban đầu 300, sát thương tấn công 25, chu kỳ tấn công 1 giây.\n\nCách tấn công: cắn xé trong phạm vi 1 ô đất, ngoài phạm vi thì lao tới tấn công. Đòn lao trúng gây khựng ngắn, có thể di chuyển lên xuống trước để né.\n\nKhi tiêu diệt, vật phẩm chắc chắn rơi chỉ có [images/inventoryimages2/monstermeat.png] Thịt Quái Vật 1 (Mảnh Ma Hạch, Ma Hạch, Ma Tinh rơi tùy theo mức nhập ma hiện tại). Không thuộc nhóm ma thú lớn.\n\nSinh ra từ Tổ Dạ Bức, mỗi tổ 6 con, mỗi 5 phút sinh lại 1 con, tối đa 6 con.",
+    "tags": ["Ma thú", "Đảo Hồ Điệp", "Dơi"]
+  },
+  {
+    "id": "lj_soul_devouring_snake",
+    "name": "Phệ Hồn Xà (Boss ẩn)",
+    "summary": "Boss ẩn có 12000 sinh lực. Mỗi khi chịu 2000 sát thương sẽ rơi vảy; sau khi còn nửa máu sẽ nuốt vảy để hồi 1000 sinh lực.",
+    "recipe": "",
+    "details": "Boss ẩn, cấp sử thi.\n\nChỉ số cơ bản\nSinh lực 12000, đòn cắn thường gây 50 sát thương, kèm hiệu ứng trúng độc, giáp 15%, tốc độ di chuyển trung bình.\n\nCơ chế cốt lõi\nMỗi khi chịu 2000 sát thương sinh lực sẽ rơi Vảy Phệ Hồn Xà, người chơi không thể nhặt, có thể dùng dị hỏa thiêu hủy.\nSau lần đầu sinh lực Phệ Hồn Xà giảm xuống 50%, nó chủ động tìm và nuốt vảy để hồi sinh lực, mỗi chiếc hồi 1000 sinh lực.\n\nKỹ năng\nCắn Xé: đầu rắn cắn, 50 sát thương, không cộng dồn, có thể đặt lại thời gian trúng độc.\nPhun Trào Đầm Độc: phun nọc về phía mục tiêu để tạo đầm độc, vùng đầm độc tồn tại 4 phút, làm chậm 60% trong vùng, giẫm vào sẽ chịu thêm hiệu ứng trúng độc, hồi chiêu 15 giây.\nĐịnh Thân Hóa Đá: trong vùng tròn bán kính 16 quanh bản thân, bất động mục tiêu 3 giây, hồi chiêu 30 giây. (Phạm vi hình tròn)\nKịch Độc Giam Cầm: đuôi rắn đập mạnh xuống đất, tạo ra một thân rắn giống quái bóng tối quấn mục tiêu trong 5 giây; trong thời gian đó Boss sẽ tiến đến mục tiêu bị giam để đánh thường.\n\nVật phẩm rơi khi tiêu diệt\nDa Phệ Hồn Xà 3、[images/inventoryimages2/monstermeat.png] Thịt Quái Vật 5、Ma Tinh 2、Ma Hạch 6、Mảnh Ma Hạch 10、[images/inventoryimages3/redgem.png] Ngọc Đỏ 2、Tử Lân Yêu Diễm 1.",
+    "tags": ["Boss", "Sử thi", "Ẩn", "Đảo Hồ Điệp"]
+  },
+  {
+    "id": "lj_moon_lion",
+    "name": "Nguyệt Thực Tinh Dực Sư",
+    "summary": "Boss sử thi có 24000 sinh lực. Hồi máu nhờ hoa xung quanh, sẽ ngủ mê khi đến gần Mandrake.",
+    "recipe": "",
+    "details": "Xuất hiện gần Hoa Tử Tinh Tố Thể. Boss sử thi.\n\nChỉ số cơ bản\nSinh lực 24000, giáp 15%, tốc độ di chuyển trung bình.\n\nCơ chế cốt lõi\nKhi có hoa trong phạm vi 5 ô đất xung quanh, mỗi bông hồi 60 sinh lực mỗi 10 giây (Hoa Tử Tinh Tố Thể được tính là một đơn vị hoa, sinh ra bướm giống hoa cho cánh hoa).\nNgười chơi phá hủy hoặc hái hoa gần đó sẽ ngắt hồi máu, bắt buộc kích hoạt một lần Sư Hống Chấn Nhiếp trong 10 giây (hái cánh hoa trong 10 giây chỉ bắt buộc kích hoạt một lần).\nĐến gần Mandrake sẽ ngủ mê 8 giây, trạng thái ngủ mê chỉ kích hoạt một lần trong 1 phút.\n\nKỹ năng\nTinh Trảo Mãnh Kích: đòn cận chiến mạnh vào một mục tiêu. Sát thương 70, hồi chiêu 8 giây, phạm vi khoảng 1 ô (3 yard), đánh ngã sinh vật nhỏ, khiến người chơi khựng 0.6 giây khi trúng đòn. Nếu người chơi cách dưới 1 ô, có 60% xác suất vung cả tay trái lẫn tay phải mỗi bên một lần, mỗi đòn 70 sát thương (tổng 140), 40% xác suất chỉ vung một lần.\nĐạn Phấn Vảy (cấu rỉa tầm xa): vỗ một bên cánh bắn 3 cầu sáng phấn bướm tỏa theo hình tam giác. Một phát gây 40 sát thương, trúng cả ba gây 120. Bán kính nổ khoảng 0.4 ô (1.5 yard), sau khi nổ sẽ tạo một cánh hoa tại điểm nổ. Hồi chiêu 18 giây, khoảng bay 8 ô, gặp vật cản sẽ nổ ngay.\nSư Hống Chấn Nhiếp (kỹ năng khống chế): sóng âm xung kích toàn màn hình trong phạm vi 6 ô. Không gây sát thương nhưng khiến người chơi khựng 1.2 giây, buộc vũ khí rơi xuống đất. Hồi chiêu 20 giây.\nLiệt Địa Tù Bộ: sư tử nhấc một chân trước, hạ thân tụ lực, mặt đất rung nhẹ liên tục, dưới chân xuất hiện hiệu ứng bụi cát li ti, màn hình rung nhẹ báo cho người chơi né tránh.\n　Phạm vi tạo hố: lấy bản thân làm tâm trong phạm vi 8 ô đất (32 đơn vị), tạo một hố sụt tạm thời dưới chân mỗi người chơi trong phạm vi; các hố không chồng lên nhau, không tạo tại vị trí không thể đi lại dưới chân.\n　Hố không phá hủy công trình, nền đất, tường, cây trồng; khi xuất hiện chỉ lộ vết nứt cảnh báo trong 1 giây đầu.\n　Sau đó mỗi giây tiến thêm một giai đoạn sụt lở, tổng cộng 3 giai đoạn: giai đoạn 1 và giai đoạn 3 mỗi giai đoạn gây 60 sát thương diện rộng, giai đoạn 2 chỉ có hiệu ứng hình ảnh.\n　Từ giây thứ 2, mỗi giây gây thêm 1 sát thương diện rộng; bán kính sụt lở và sát thương đều là 2.5 đơn vị (khoảng 0.6 ô).\n　Sau khi giai đoạn 3 kết thúc, hố sụt lập tức biến mất, tổng thời gian tồn tại khoảng 3 giây (khác hố sụt vĩnh viễn của Sư Tử Kiến).\n　⚠️ Hố sụt chỉ gây sát thương, không làm chậm.\n　Hồi chiêu 18 giây.\n\nVật phẩm rơi khi tiêu diệt\nVỏ Tử Tinh 1、Xương Sư Tử 1、[images/inventoryimages2/monstermeat.png] Thịt Quái Vật 4、Ma Tinh 2、Ma Hạch 6、Mảnh Ma Hạch 10、[images/inventoryimages3/redgem.png] Ngọc Đỏ 2、[images/inventoryimages1/bluegem.png] Ngọc Lam 2、[images/inventoryimages2/purplegem.png] Ngọc Tím 2.",
+    "tags": ["Boss", "Sử thi", "Hoa Tử Tinh Tố Thể"]
+  }
+]
+

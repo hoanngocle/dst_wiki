@@ -332,6 +332,11 @@ export type WikiItemMetadata = {
 };
 
 export type ItemListEntry = {
+  products?: readonly {
+    item: ItemReference;
+    quantity: string;
+    conditions: string;
+  }[];
   id: string;
   prefabId: string;
   namespace: ItemNamespace;

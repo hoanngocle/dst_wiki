@@ -1,0 +1,815 @@
+{
+  "url": "https://eyanhuahu.github.io/lingjie/",
+  "importedAt": "2026-09-20T06:02:39.946Z",
+  "sourceSha256": "c7e8237b8fd1f29de62cef2dfd1bc1342d3ecbbf2f13bd9f01af12836ce022f5",
+  "permission": "User confirmed author permission to republish and translate in this task.",
+  "sections": 13,
+  "items": 97,
+  "assets": [
+    {
+      "path": "images/lingjie/anim/realm_badge.png",
+      "bytes": 15787,
+      "sha256": "9c73f4c2467c1734c99099aca029650b608c3377a8b61594259fd3c5f13273da"
+    },
+    {
+      "path": "images/lingjie/anim/spirit_badge.png",
+      "bytes": 14258,
+      "sha256": "69c03dcd2b5a1e1827fa2d25c70652c21edab708bb59c1a149ade432f130683e"
+    },
+    {
+      "path": "images/inventoryimages1/charcoal.png",
+      "bytes": 2684,
+      "sha256": "ab54feaedcaebf22ecbebdee68f3728f1f2f462d7b61b9d1f3dd308e04935b53"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_moon_vase.png",
+      "bytes": 44713,
+      "sha256": "f8d7ab809f88806a8216eb890870deed596a5f796be89296f51c98e30469898c"
+    },
+    {
+      "path": "images/inventoryimages1/dragon_scales.png",
+      "bytes": 3263,
+      "sha256": "b92640025ae40e5157a6b2ebd04ffbf7411b5d7d917871f853054e1e2e9c0a2a"
+    },
+    {
+      "path": "images/inventoryimages2/moonglass.png",
+      "bytes": 4426,
+      "sha256": "402e948d3c05bc31070292dcfb021d008aedc19f9779e015727685f2aadc35e9"
+    },
+    {
+      "path": "images/inventoryimages2/greengem.png",
+      "bytes": 3009,
+      "sha256": "6b6e4fe932f0dc150fa87d9983203508a8d4e3c96e3f48fd6fc7b3f922cfbc81"
+    },
+    {
+      "path": "images/lingjie/icons/lj_magic_crystal.png",
+      "bytes": 3675,
+      "sha256": "7ed3714d77e9c50f0412aeac03eb3dcc0e894fbf7ec1aa12806876506aae0977"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_reiki_gourd.png",
+      "bytes": 84388,
+      "sha256": "fa08dfb8545a8049ebfb3ebfb5bfedb14f08fb7c2eabeca34f28e1aab623bd6d"
+    },
+    {
+      "path": "images/lingjie/icons/lj_magic_core.png",
+      "bytes": 3857,
+      "sha256": "3f15707a42ba4c28dc3258de83e34794fe421471a763791942af88d06d6980b8"
+    },
+    {
+      "path": "images/inventoryimages3/thulecite.png",
+      "bytes": 3511,
+      "sha256": "3fd0976a8bf0ab9548edc589c90331d0c3de6c363c5ea2c4d00890a682d07876"
+    },
+    {
+      "path": "images/inventoryimages1/bluegem.png",
+      "bytes": 3089,
+      "sha256": "e016970168106eaa2f50453376f42b54f954e5696ff4563e7346a8cb005387e5"
+    },
+    {
+      "path": "images/inventoryimages3/redgem.png",
+      "bytes": 2943,
+      "sha256": "97a7f17ca5a82263094bb8c07d4b86fbe841236778a189ea3c1b7e971435a7c9"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_soul_banner.png",
+      "bytes": 124174,
+      "sha256": "a784432e3f479c923a1c40072da9b9f28ca57ac9fb7ed49b741142e780507b41"
+    },
+    {
+      "path": "images/inventoryimages2/nightmarefuel.png",
+      "bytes": 2841,
+      "sha256": "d70a2e067d34a960ff3f3745871fbc967c538c9275a5b0053095f58aa4fa9ff2"
+    },
+    {
+      "path": "images/inventoryimages1/cutreeds.png",
+      "bytes": 4251,
+      "sha256": "c40795a1392b1cc115906dccfc51a4c4badb1b3c17b743690195dac91ea54d66"
+    },
+    {
+      "path": "images/inventoryimages3/twigs.png",
+      "bytes": 3135,
+      "sha256": "a01a2f9e5ea1f0d62fab2b057ea14fe38351ad837c85707767c320ea7ab78887"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_failed_pill.png",
+      "bytes": 30425,
+      "sha256": "99a658319850a58ea2f68c1e9d4ce66c9158d7e7fed6076160f80d22b4a74d76"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_ningqi_pill.png",
+      "bytes": 37373,
+      "sha256": "0fc3da31c6565256c2a1c33fc0bc935607f67a22a7742f5e615375ff5d46f8d9"
+    },
+    {
+      "path": "images/lingjie/icons/lj_reiki_cutgrass.png",
+      "bytes": 2882,
+      "sha256": "481c4f0498f93488c79b3dcba193621d04dca94398fede63595f7aa6c751e48d"
+    },
+    {
+      "path": "images/inventoryimages2/honey.png",
+      "bytes": 1973,
+      "sha256": "770ea5fce6b01a2ff61a8b06e966d7392ff6639ea9f4d869a8720c099208e112"
+    },
+    {
+      "path": "images/inventoryimages1/acorn.png",
+      "bytes": 2852,
+      "sha256": "2f9f328340ea13467f58a4819671ded8ae8450e74e638e728c7bddf53c4a8cf5"
+    },
+    {
+      "path": "images/inventoryimages2/pinecone.png",
+      "bytes": 2416,
+      "sha256": "1e3ea86f119c33afa3eccd93cafae284cb3a3febbafa7bb05a4f4e78aa9db832"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_warming_pill.png",
+      "bytes": 43462,
+      "sha256": "fb9ab1fe242e3de0c755996f99cf5a871a16bbc940bd13c9d1ff059674893ea8"
+    },
+    {
+      "path": "images/inventoryimages2/nitre.png",
+      "bytes": 3771,
+      "sha256": "372b5e36b4274ff836d2310087df4ffe48675c1d11159c9a52d07d7e0ddc7141"
+    },
+    {
+      "path": "images/inventoryimages1/butterflywings.png",
+      "bytes": 3553,
+      "sha256": "acfce00a84a2d3acdd41fd627947d7f472f37b0d0aadbdc42acc94183a25654f"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_cooling_pill.png",
+      "bytes": 54064,
+      "sha256": "6bafc9220c3d26325959d3634b7fdb47d29dc77d68a07e83be9c4d025909f570"
+    },
+    {
+      "path": "images/inventoryimages2/moonbutterflywings.png",
+      "bytes": 4191,
+      "sha256": "0153365b1f5373963cfc83a52244e65a82b7062f963eb69db23af638a6a08bdf"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_stillness_pill.png",
+      "bytes": 46810,
+      "sha256": "5e537634e18ebf6ba5c710b871ee3a6782ca347758e938669b8c0a57fc7abc1c"
+    },
+    {
+      "path": "images/inventoryimages3/spidergland.png",
+      "bytes": 2774,
+      "sha256": "0e261ae9eb0692ca519c82da23cf62116463f12f6121be677d6b3bdf9f8c5b1b"
+    },
+    {
+      "path": "images/inventoryimages2/glommerfuel.png",
+      "bytes": 2618,
+      "sha256": "16910f434cae40d6bf3d8af2909a57f95d12605fd9ef6cec4ce6a8cec0d335c2"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_reiki_pill.png",
+      "bytes": 60863,
+      "sha256": "0e47e30bdc3e6051f624e9cc244fa68fda3e208d8b928c965fa98d61eb47d84d"
+    },
+    {
+      "path": "images/inventoryimages2/green_cap.png",
+      "bytes": 3624,
+      "sha256": "20ef0ded2abab1fe883a3df107da2c432c9389ce6e8667c617ab9ee2b02bc394"
+    },
+    {
+      "path": "images/inventoryimages3/tallbirdegg.png",
+      "bytes": 2927,
+      "sha256": "650d55fd0ec252b614ed185d57609844f9cec804f2079ca4d27e176918ffa083"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_explosion_pill.png",
+      "bytes": 78539,
+      "sha256": "50e8f6c217882f9c304d97e90b7426ed35d6084eb15c6492988e8ec64496a406"
+    },
+    {
+      "path": "images/inventoryimages2/pepper.png",
+      "bytes": 2436,
+      "sha256": "edcbff53b259b4cc6ae3bb19dee2258e039e02b6bd66dd3ac5ab25b4675cd597"
+    },
+    {
+      "path": "images/inventoryimages3/stinger.png",
+      "bytes": 1584,
+      "sha256": "77964c0ad8e81c29ccaef3a360734226ca654d263ae03dd4e930bf8d294ecd79"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_drying_pill.png",
+      "bytes": 67637,
+      "sha256": "83488ccfd2d742b50e34c2e78629dd668392ec943d7355be6495ea6122d8caeb"
+    },
+    {
+      "path": "images/inventoryimages2/orangegem.png",
+      "bytes": 3155,
+      "sha256": "8c981ad1f93f258894d7bebfe0ce4460f378e393043d1ce763171b24b076f752"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_invincible_pill.png",
+      "bytes": 65156,
+      "sha256": "910ce84ffef2bd90a33ec4e500c1e2048f2197cd869ec5a57e95c9e106476779"
+    },
+    {
+      "path": "images/lingjie/icons/lj_red_magic_cutflower.png",
+      "bytes": 4412,
+      "sha256": "f18b2d8b58bb670c27e5ac5fb77264a5f7d7e93e6c53ae3792d5467641ffa8f4"
+    },
+    {
+      "path": "images/inventoryimages3/reviver.png",
+      "bytes": 3838,
+      "sha256": "1ef58e713c256da3b7a1c08188442f31e781fb179a73875195f25cd523eab7a9"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_bigu_pill.png",
+      "bytes": 57722,
+      "sha256": "4245e03b95965b5a5ea4ed5a9693a52cb2ba2a7e8dedcfff742c6d12a1291d17"
+    },
+    {
+      "path": "images/inventoryimages2/pigskin.png",
+      "bytes": 3034,
+      "sha256": "2d999cd6ed25afb4f78255ebb8f2811f56ccded5a1e244f35e545c3725942b39"
+    },
+    {
+      "path": "images/inventoryimages2/foliage.png",
+      "bytes": 3505,
+      "sha256": "4f0175affef64b03b9af8b1ce1a907699d8b816c2495b768ccde8a9ff0c5d7ba"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_yinqi_pill.png",
+      "bytes": 62561,
+      "sha256": "e1524c7b2a0d4e2917dfced54a13abab80bea127c33e9073c1cc7e5703861646"
+    },
+    {
+      "path": "images/inventoryimages2/manrabbit_tail.png",
+      "bytes": 2905,
+      "sha256": "2998661e7dc55fa306ff0a000a8ff1a333fdd372e5df3f4653108f8be3487180"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_ruwei_pill.png",
+      "bytes": 63291,
+      "sha256": "7d92b432a6b82ff0abd02d05066fdf3ab3795b7aed121bb1c16620cbe11b3291"
+    },
+    {
+      "path": "images/inventoryimages1/barnacle.png",
+      "bytes": 3826,
+      "sha256": "eb498d93933218ac4848b2f494bce1e13f13e82250817df06f08fc9d87d52e9c"
+    },
+    {
+      "path": "images/inventoryimages1/cookiecuttershell.png",
+      "bytes": 3953,
+      "sha256": "1de67e78fd55e730f88148549b95cce4e66b5c7a6f2eaff25fb12f88042f5423"
+    },
+    {
+      "path": "images/inventoryimages2/minotaurhorn.png",
+      "bytes": 2771,
+      "sha256": "04f2c527b019d946b765d6e9d55ace75a6070589b44122a78c66c6ba94d9a537"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_restore_pill.png",
+      "bytes": 68396,
+      "sha256": "eae656ed9d6eb3057985a1a418928cd6a90e55322db1916f364cb8c59b82e01f"
+    },
+    {
+      "path": "images/inventoryimages3/shroom_skin.png",
+      "bytes": 4710,
+      "sha256": "9c37cdbac2afeaacaf40aa7adfe6174a4ff19664b76294f850808beb6b9073e0"
+    },
+    {
+      "path": "images/inventoryimages3/wormlight.png",
+      "bytes": 3302,
+      "sha256": "4b9133fa36815f0f8db2b7ba173d61b461ad544b3e0a6b4211a653cbdab59750"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_extraordinary_pill.png",
+      "bytes": 89136,
+      "sha256": "c60153cadacc966df45043df2eef2c51093f408350680e6fa67fc3352bb71181"
+    },
+    {
+      "path": "images/inventoryimages2/livinglog.png",
+      "bytes": 4009,
+      "sha256": "ab8f167234b843284656520629ff5161ef378e70d5ec80c03dc35de09d511632"
+    },
+    {
+      "path": "images/lingjie/icons/lj_soul_snake_skin.png",
+      "bytes": 4540,
+      "sha256": "76ae378bbad92658226f945ab60479cf6f630f944490fcfc1ba5cf6521274b2b"
+    },
+    {
+      "path": "images/lingjie/icons/lj_bat_blood.png",
+      "bytes": 4608,
+      "sha256": "4cb945a9fe3eeade7753e7b9c95c6b1f1fac8aa27604a6b77929bf1907867009"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_heying_pill.png",
+      "bytes": 91350,
+      "sha256": "45597bc3a5030fcd4a452d2973c304acad5539050b12dd530389bab13750cb11"
+    },
+    {
+      "path": "images/inventoryimages3/yellowgem.png",
+      "bytes": 3159,
+      "sha256": "45c525feb005357eb21a6202b8e20e69829d4dc23c81e36771f510e75f78e2fb"
+    },
+    {
+      "path": "images/lingjie/icons/lj_amethyst_shell.png",
+      "bytes": 5226,
+      "sha256": "d8cdd6075cad2b71ef93615585931daea5a1f9dda109c315cf286c99ab626a32"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_disaster_pill.png",
+      "bytes": 92687,
+      "sha256": "c1d4dbb5123acd60ec0a66a7667a7b39bec39c599ae69afcc87d7acec7a2caeb"
+    },
+    {
+      "path": "images/inventoryimages2/goatmilk.png",
+      "bytes": 2723,
+      "sha256": "5424a6464fb48f0ae1cdc6e134c76c515a380d3991810ef6f1bd6374b9a51045"
+    },
+    {
+      "path": "images/inventoryimages1/butter.png",
+      "bytes": 2963,
+      "sha256": "8980a6341bddc4fd8f0fef66bdc75be642aa0fe8c937896131ce94f75e42ff84"
+    },
+    {
+      "path": "images/inventoryimages3/royal_jelly.png",
+      "bytes": 4104,
+      "sha256": "15b0fa2a68a5f5abed411a70807e2037bfcf2ce5ab6ddb86a1864e388eaf600f"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_juling_pill.png",
+      "bytes": 90706,
+      "sha256": "f990a9beabbdf07f05a3b980c2709c48295025a9897ad0d95985dcf3e7496204"
+    },
+    {
+      "path": "images/inventoryimages2/opalpreciousgem.png",
+      "bytes": 3199,
+      "sha256": "5ce7f4c987b31d266f433e01ed1fe4f1f8d3c89b1075c99f6843514404d7dabe"
+    },
+    {
+      "path": "images/inventoryimages2/glommerwings.png",
+      "bytes": 3118,
+      "sha256": "394b1cc60700a44c12ff3f80b2364da6682f0e5ed7c255a79d3608d351bd9732"
+    },
+    {
+      "path": "images/lingjie/icons/lj_scorpion_dragon_bone.png",
+      "bytes": 4020,
+      "sha256": "99136e92abe3391f53c25b0894063799ae13ea70c1159a2e4ff0c86a01eb162a"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_magic_debris.png",
+      "bytes": 57035,
+      "sha256": "fba6daf1ca275a1df3e1c8d9f624e708f614c5e08d17177860673abee16d70bb"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_magic_core.png",
+      "bytes": 33740,
+      "sha256": "f769104ecdf2fd8756916662f8511d67317907a665b9c6fd5205b1d6d1eddac4"
+    },
+    {
+      "path": "images/lingjie/icons/lj_magic_debris.png",
+      "bytes": 3746,
+      "sha256": "ca1f8ef147797d4e8d272e3cffb684a0983daf2e4b9d5cfc6fbb9fa250fdcd45"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_magic_crystal.png",
+      "bytes": 29517,
+      "sha256": "8f7ac0d88e05aca6c865fa02b48ffdf6b43938292b395f59f593e2b5bde3c4a8"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_scorpion_dragon_bone.png",
+      "bytes": 45863,
+      "sha256": "b7e4bf1f7813a69bce27f9debd9d12c18efab51f30f208e73d6024e16227c6ae"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_amethyst_shell.png",
+      "bytes": 32286,
+      "sha256": "36819df4999996e6cb2231b388cc32bd66ebeec182f7ea3467b9f26c91b0022c"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_lion_bone.png",
+      "bytes": 92595,
+      "sha256": "2260977ac6bc7563398e4e84210964668330e91ae0157f4c2e18ca50ecddf24f"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_bat_blood.png",
+      "bytes": 44638,
+      "sha256": "1cbf3bf111f883ca5e78514a62107ce31782efb013da7f2ae7702cba15c2fc67"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_soul_snake_skin.png",
+      "bytes": 116557,
+      "sha256": "7a8f790f660d42268108a03b20893ef221d7d47d64078e6bf861c85ad5caff81"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_snake_skin.png",
+      "bytes": 119519,
+      "sha256": "fa3384709a52ab210d445e070b633b50172519529b8aaaf014c954e26e068fbb"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_reiki_cutgrass.png",
+      "bytes": 18573,
+      "sha256": "ebe4cad9777ed227853a9ef785dc334751025f5da5479092a373181d75aecfe7"
+    },
+    {
+      "path": "images/inventoryimages1/cutgrass.png",
+      "bytes": 3531,
+      "sha256": "7203b5f6b076d0543ab433ef75b71c8df2003df951cd81f5152e804e9644c09e"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_reiki_dug_grass.png",
+      "bytes": 150457,
+      "sha256": "c9ccf2dac0cf5d7914bea157c75de24c3a58eeae5acd4286d0f5c41f86340db6"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_red_magic_cutflower.png",
+      "bytes": 29379,
+      "sha256": "f27c7f970ac69de33f486bf8a7fa25227aa0a59ca58c41c7aab8a409c15236d9"
+    },
+    {
+      "path": "images/inventoryimages2/petals.png",
+      "bytes": 3320,
+      "sha256": "d3a29a1150cbcc03c77f9f208438364e425b650065410064fda447a86d918e0b"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_red_magic_dug_flower.png",
+      "bytes": 145587,
+      "sha256": "71288e2b8623f744ad6deb38596a4002182bdeb86e191ccf145b603bd47df2ab"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_purple_magic_bloom.png",
+      "bytes": 216427,
+      "sha256": "08ab91f7391e55d9acef73adb344355e2a3b26f6905151d4cc0a5ffd88172594"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_alchemy_furnace.png",
+      "bytes": 310608,
+      "sha256": "af8437dce30ee042872376e63187d539003cca5c19b98dbc7757751fdf607eae"
+    },
+    {
+      "path": "images/inventoryimages1/boards.png",
+      "bytes": 3258,
+      "sha256": "6b91f336644869e4f32ae456cc869fd35ebf1e7fc4348cd2c640627a15d182b0"
+    },
+    {
+      "path": "images/inventoryimages1/cutstone.png",
+      "bytes": 3784,
+      "sha256": "46a507cebfbdc913f8bad86eb0122293fe352cca33ea9b523dba806294440da4"
+    },
+    {
+      "path": "images/inventoryimages3/rope.png",
+      "bytes": 3746,
+      "sha256": "64383700af8dbcbb35bc3aada49288819109106ed7d0691d189de3acfa86addc"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_wudao_chair.png",
+      "bytes": 154650,
+      "sha256": "fdf13c54c3c3772b6d32ad7b3367a603a8de1b3f68e699b976175d984d36c3ef"
+    },
+    {
+      "path": "images/inventoryimages3/rocks.png",
+      "bytes": 2629,
+      "sha256": "9682a54dca19c25c621dd475355e862438d0680133a4ac513a3b59a77123ca87"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_huangjie_box.png",
+      "bytes": 94515,
+      "sha256": "8ac3f91f766244a29cc6da1fd0d8210c6315ce3b7e3bc27ea11cee5c75622483"
+    },
+    {
+      "path": "images/inventoryimages2/papyrus.png",
+      "bytes": 3396,
+      "sha256": "965946993c12a786285310999f922703c678b6d4040a2f563f985092b35fb969"
+    },
+    {
+      "path": "images/lingjie/anim/huangjie_box_ui.png",
+      "bytes": 228588,
+      "sha256": "8bb71dfc22b8ca7bf502fdb1ba0e660ca4294a0eeab99dd47d32435ab44b7bf7"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_cuiju_box.png",
+      "bytes": 214477,
+      "sha256": "81fff643e17957a64a502dc989df6aeb6004717af5d7139aa5faf3e10ee3ebd3"
+    },
+    {
+      "path": "images/lingjie/anim/cuiju_box_ui.png",
+      "bytes": 173240,
+      "sha256": "3e5af7aeca272169b0b1de16891a0df123b073b495793b45df8f9bbefeb3d65e"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_reiki_tablelamp.png",
+      "bytes": 83800,
+      "sha256": "edc15d21c3f6c63727280d68c0a6346d2bd0d9e493ed627e7fd1e652cddc5253"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_reiki_table.png",
+      "bytes": 214918,
+      "sha256": "6dd61803c6e3f598b87400c7ee2a7e0c44984de65a39d9d459df811e4800112e"
+    },
+    {
+      "path": "images/inventoryimages2/goldnugget.png",
+      "bytes": 3386,
+      "sha256": "0c93056849336a8cfad006a417dbf7f6c36d6b8d9d26ce0912571046d82a8c90"
+    },
+    {
+      "path": "images/inventoryimages2/log.png",
+      "bytes": 3650,
+      "sha256": "ac5bc2605d11982bc773a42522428d9aa514de6c31267ba51614baf93eba0f79"
+    },
+    {
+      "path": "images/inventoryimages2/flint.png",
+      "bytes": 3165,
+      "sha256": "177dd1fa8ac7607499f007ec78554bc577e1ed0553373b1b4d87b9cf4f1c1700"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_flag.png",
+      "bytes": 86510,
+      "sha256": "06ae7e1f16dfe875d400ea0892dce90d49e2decc047ad23fc6597b6de2453cde"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_supernatural_power_pivot.png",
+      "bytes": 151953,
+      "sha256": "adaf1ab10130eb61108549fa1da5e1bf58067a41b27c46acb0864e3013c69168"
+    },
+    {
+      "path": "images/inventoryimages3/transistor.png",
+      "bytes": 2794,
+      "sha256": "be39fbb6ba81f7278316472111f0b25f1e265d1c5e6602ceca70e37fe9fe4f43"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_ordinary_sword.png",
+      "bytes": 34500,
+      "sha256": "fb76539657cc174c3c77a04cf0b4e4e214fdfee97815025f8b5b9ef533e7dffa"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_reiki_bow.png",
+      "bytes": 66550,
+      "sha256": "756ec346005dfc1e06e9c552a36519f9cfc467f63f36325d85ec361256e73047"
+    },
+    {
+      "path": "images/inventoryimages2/lightninggoathorn.png",
+      "bytes": 2037,
+      "sha256": "df7ad27463163bf1d93ea52c864eb4bb10cc65fd0d5ebe4eca35055919973874"
+    },
+    {
+      "path": "images/lingjie/icons/lj_ice_flame.png",
+      "bytes": 3037,
+      "sha256": "b8eb1058753ae4745c2051d62fd37d3fa7202d8f43682a33103419bcf62ad706"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_star_sword.png",
+      "bytes": 44961,
+      "sha256": "eec81058c59eaabbfe5bc1809517c22f986f4b209055262ef6104b1d0fa2b375"
+    },
+    {
+      "path": "images/inventoryimages2/gnarwail_horn.png",
+      "bytes": 2511,
+      "sha256": "d1f4b8d088c82ff7a8e916993a6a6d2b6c191672a3c9e2491fde01a4415776e3"
+    },
+    {
+      "path": "images/lingjie/icons/lj_dragon_flame.png",
+      "bytes": 4318,
+      "sha256": "09d63a095828649d97f6dbbd213071256f374a432f3b4868de6bd26460466829"
+    },
+    {
+      "path": "images/lingjie/anim/star_sword_charge.png",
+      "bytes": 22425,
+      "sha256": "3b97023a9ce60dd3786d73365e3efd5896b10297d57110b7cd041f7df0f572b4"
+    },
+    {
+      "path": "images/lingjie/anim/star_sword_hit.png",
+      "bytes": 34579,
+      "sha256": "4416f224afe374d0074bf0a72fb43a1efc6fc17255c1803c6c4be96e5e3b34c3"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_keel_armour.png",
+      "bytes": 31310,
+      "sha256": "c5668a93cbb03d411858c3f1fd802e068e18f0076184162a07a2977a0e01b0a7"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_crystalcrown.png",
+      "bytes": 97241,
+      "sha256": "13a943786dd9dbeeaf8785bb3c17a28f6d024234b6c64aeb712aaa5dcec76b81"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_void_ring.png",
+      "bytes": 165548,
+      "sha256": "6071c3e835246c36fb2c49acfac18610025a0b82286dc06152ecc1032db67e38"
+    },
+    {
+      "path": "images/inventoryimages2/purplegem.png",
+      "bytes": 2765,
+      "sha256": "fd5c7a830409301e171f8993d3396df2953140b7a93a66780d193d264d8fdd6e"
+    },
+    {
+      "path": "images/inventoryimages1/deerclops_eyeball.png",
+      "bytes": 2678,
+      "sha256": "a3c7c498d25d61fba0d18f2345b8398fbf1c1f36008d5b05aaa9eab07bacf176"
+    },
+    {
+      "path": "images/inventoryimages2/klaussackkey.png",
+      "bytes": 3872,
+      "sha256": "6256282e4bc1746afac2ed736a788fee2ece621318fee0ad584a3e9e523b41c9"
+    },
+    {
+      "path": "images/inventoryimages3/shadowheart.png",
+      "bytes": 3811,
+      "sha256": "e77d879a13b6f6cd2a37f7562d490e200a42347c9cdff31c4e4ee9faf1594779"
+    },
+    {
+      "path": "images/inventoryimages3/yellowstaff.png",
+      "bytes": 2520,
+      "sha256": "f74338f44a5dd7b9049ef30b1497f045cee4c2817714f0a0ac9b235e51e7fc5b"
+    },
+    {
+      "path": "images/inventoryimages2/opalstaff.png",
+      "bytes": 2580,
+      "sha256": "3b80f104c2cba04012ff499688123df24153d6e6b906193e8d69da7d99bc916c"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_seasons_nucleus.png",
+      "bytes": 104098,
+      "sha256": "770fcfcc822a877de8be2072d2cde3a2d1cf72ce4719dff7a903e015cbbf725d"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_plant_nucleus.png",
+      "bytes": 104557,
+      "sha256": "7e3b0b9fd5483ac1a8e3e6e35bb7c3d296553c30e6909ba1c7cd512fb1a6b133"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_subdue_demons_nucleus.png",
+      "bytes": 82032,
+      "sha256": "d1f400a1691aa27ff4427b5bacf8b9872cc1c69de58a677b2493620615fcc90a"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_constant_temperature_nucleus.png",
+      "bytes": 105785,
+      "sha256": "ec36a75ecd6c75da49f3f1702a367aff81746ecb95a4e58c58ced107e7b25431"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_reiki_grass.png",
+      "bytes": 139678,
+      "sha256": "3f502b81b01c137ec802f9c08abac88ae00f21ddf8384ae78e44ab2a713d1592"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_red_magic_flower.png",
+      "bytes": 148322,
+      "sha256": "8b9cc3c64f26f2045215305cb759ef3a6bf928084a8db259d303a55b9fda6cc1"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_purple_magic_flower.png",
+      "bytes": 163119,
+      "sha256": "18d541ee126a5e580f1657586a8e1908fcb30ac3ae8334d043d06d206af6cfb4"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_ordinary_flame.png",
+      "bytes": 40360,
+      "sha256": "5b1b0fc401eedbc52822cb44b23b40c6b7cdd5f47b728bd45ab52988493a6bd9"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_ice_flame.png",
+      "bytes": 39300,
+      "sha256": "2140732dc66b1d9a31e5776572831dab2a56832d97ba98be0a934c11899c9512"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_dragon_flame.png",
+      "bytes": 43189,
+      "sha256": "0dbe5fcb06be86be45dd58c3ab4c9ee9dad9a392dce62b50a398a49b2fad6666"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_mighty_flame.png",
+      "bytes": 54487,
+      "sha256": "55b8a5e83d9f4cbc8082d4c5a4028cb5a6efb001a4a22a23cd6171dbbd7a7c46"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_dust_flame.png",
+      "bytes": 43887,
+      "sha256": "a69a62134443e813db4c93aa0b5da26ea40f39a9ce712ed40623f534b6fa8564"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_purplemonster_flame.png",
+      "bytes": 48092,
+      "sha256": "be90e7a766e7e493e868d20224c5f3111ba5544d5924c7331eb966a507f84724"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_log.png",
+      "bytes": 17927,
+      "sha256": "3889fdcb9b48ee699a04f169bfab5451ec3ce030bbfc892f8026a63609e183cf"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_frozen_log.png",
+      "bytes": 23208,
+      "sha256": "6819c063e32615f94d2b7cbda397d5110edd61889c3815931cd8603a8fa0db09"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_charred_scales.png",
+      "bytes": 20266,
+      "sha256": "ab452b5d386a384e407a08875c9bba33b73dfdb155b77aec8f652916348bb421"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_rotten_backpack.png",
+      "bytes": 14537,
+      "sha256": "5de832c23b886696a1ed054020f239d2d564f7325d83ecdc16052a4c538b2756"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_dried_camel_feathers.png",
+      "bytes": 16490,
+      "sha256": "054d7f862d2636e1ff4a139fdfc16ea8a390ee1228404f62ef3802316379144c"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_swollen_scroll.png",
+      "bytes": 24474,
+      "sha256": "65369580bfb8c0c00a6741197140317c0410a893528b40950bb92d0981046c48"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_ice_log.png",
+      "bytes": 17927,
+      "sha256": "3889fdcb9b48ee699a04f169bfab5451ec3ce030bbfc892f8026a63609e183cf"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_dragon_log.png",
+      "bytes": 17927,
+      "sha256": "3889fdcb9b48ee699a04f169bfab5451ec3ce030bbfc892f8026a63609e183cf"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_mighty_log.png",
+      "bytes": 17927,
+      "sha256": "3889fdcb9b48ee699a04f169bfab5451ec3ce030bbfc892f8026a63609e183cf"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_dust_log.png",
+      "bytes": 17927,
+      "sha256": "3889fdcb9b48ee699a04f169bfab5451ec3ce030bbfc892f8026a63609e183cf"
+    },
+    {
+      "path": "images/inventoryimages1/cactus_meat.png",
+      "bytes": 2871,
+      "sha256": "6041e71fc5a96355aa86098d0f3be7bc2d8cecf4aa40c56880880260e1f16c9a"
+    },
+    {
+      "path": "images/lingjie/icons/lj_dried_camel_feathers.png",
+      "bytes": 3104,
+      "sha256": "07f33ede29245eafb8e352384d0ac07383ae78754dee37aa96f94b799e8fbc48"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_purplemonster_log.png",
+      "bytes": 17927,
+      "sha256": "3889fdcb9b48ee699a04f169bfab5451ec3ce030bbfc892f8026a63609e183cf"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_remains_altar.png",
+      "bytes": 75631,
+      "sha256": "7398a395b890e1b3d198f523adc75253e7244eed114c30dd198bbd3d4c00aea7"
+    },
+    {
+      "path": "images/lingjie/icons/lj_purple_magic_bloom.png",
+      "bytes": 3887,
+      "sha256": "7be50cc937d4b534a054ff881d98c3bbce128f1187c8fc05d650c92786d28d95"
+    },
+    {
+      "path": "images/inventoryimages2/fossil_piece.png",
+      "bytes": 3866,
+      "sha256": "f66033a00edd17498417a20970397d8203d967a901029aabfbb722098423ef18"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_remains_altar_complete.png",
+      "bytes": 276394,
+      "sha256": "f320c2692662cd9da1e1b03c991f0abe8a6c186142729a2624925b8662e36dba"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_chiyan_scorpion_dragon.png",
+      "bytes": 245800,
+      "sha256": "6154031abc1a112f01673c6274ad6879f08b7da1d845f0894965852c280f827e"
+    },
+    {
+      "path": "images/inventoryimages2/monstermeat.png",
+      "bytes": 2994,
+      "sha256": "40ee5ed99425e5f6d585eec4123857324766583c2c42848dbd5e98877c246e0b"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_little_scorpion.png",
+      "bytes": 123583,
+      "sha256": "857a9f52ca8380cbf883c0d97c080d041a916db30a8536a9eaf8901d700fa808"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_bat_nest.png",
+      "bytes": 232133,
+      "sha256": "d2d9992d32a5c6399a6487276bed44df955d5e0e8506a1e4dbaf15e853111f67"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_demon_bat.png",
+      "bytes": 157421,
+      "sha256": "d7af94feb3cab7a6c225be64d57a2646100d328617173c2523cb9ffe296b85c1"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_blood_bat.png",
+      "bytes": 113557,
+      "sha256": "b70b8fc686b8936db5a3cc09a9e39dc4275af1d4745551f1e0b20f95a29a0951"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_soul_devouring_snake.png",
+      "bytes": 187795,
+      "sha256": "6297b12f7339045a62bfbb18a69508dae5a4789ea0ffbd3eaeed589f660de65d"
+    },
+    {
+      "path": "images/lingjie/showcase/lj_moon_lion.png",
+      "bytes": 165048,
+      "sha256": "bb6d74008e91c4ceb816168949aa579aa496a98122c17244fd1a00082f71ed8a"
+    }
+  ]
+}
