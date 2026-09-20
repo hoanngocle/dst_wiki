@@ -28,6 +28,7 @@ def publish_config():
         if len(choices) == 1 and not choices[0]["label"].strip():
             continue
         group = ("Túi đồ" if row.name.startswith("ttk_inv45_") else
+                 "EVA" if row.name.startswith("eva_") else
                  "Truyền Tống Trận" if row.name.startswith("ttk_portal_") else
                  "Lục Mạch Thần Kiếm" if row.name.startswith("lucmachthankiem_") else
                  "Vĩnh Hằng Thần Hỏa" if row.name.startswith("ttk_vhth_") else
@@ -61,7 +62,7 @@ def publish_catalog():
                 effect["text"] = "Solo đã tích hợp trong Phàm Nhân. Cường hóa tăng sát thương vật lý phi kiếm; không nhân phần thưởng cường hóa vào sát thương planar."
 
     def add(code, name, category, description, materials=(), station=None, source="modinfo.lua"):
-        atlas = next((p for p in [MOD/f"images/inventoryimages/{code}.xml", MOD/f"images/map_icons/{code}.xml", MOD/f"images/{code}/icon.xml"] if p.exists()), None)
+        atlas = next((p for p in [MOD/f"images/inventoryimages/{code}.xml", MOD/f"images/map_icons/{code}.xml", MOD/f"images/{code}/icon.xml", MOD/f"images/avatars/avatar_{code}.xml"] if p.exists()), None)
         sprite = None
         if atlas:
             tree = ET.parse(atlas).getroot()
@@ -82,7 +83,7 @@ def publish_catalog():
                  "name": name, "englishName": None, "description": description, "craftingNote": station, "sprite": sprite,
                  "recipe": {"outputCount": 1, "ingredients": ingredients} if ingredients else None, "wiki": None,
                  "details": {"recipeStatus": "known" if ingredients else "unknown", "usage": {"status": "known", "recipes": [],
-                 "effects": [{"trigger": "Sử dụng", "text": description, "evidence": [{"source": "Phàm Nhân Tu Tiên 2.0", "locator": "mods/PhamNhanTuTien/"+source}]}]},
+                 "effects": [{"trigger": "Sử dụng", "text": description, "evidence": [{"source": "Phàm Nhân Tu Tiên " + re.search(r'version\s*=\s*"([^"]+)"', (MOD/"modinfo.lua").read_text(encoding="utf-8-sig")).group(1), "locator": "mods/PhamNhanTuTien/"+source}]}]},
                  "dropBy": {"status": "unknown", "sources": []}}}
         if code not in by_code:
             items.append(entry)
@@ -106,7 +107,7 @@ def publish_catalog():
     for code, name, desc in [("ttk_rock1","Mỏ Linh Thạch Thường","6 lượt công: 3 Đá, 1 Đá Lửa và 3 Hạ Phẩm; 50% thêm 1 Hạ Phẩm."),("ttk_rock2","Mỏ Linh Thạch Hiếm","6 lượt công: 3 Đá, 1 Đá Lửa và 1 Trung Phẩm."),("ttk_rock3","Mỏ Linh Thạch Tuyệt Phẩm","12 lượt công: 3 Đá và 1 Thượng Phẩm.")]:
         add(code,name,"structure",desc+" Mỏ tự nhiên khai thác bằng cuốc, đào hết biến mất. Sinh ngoài mặt đất, bổ sung theo mùa; không có công thức chế tạo.", source="SPIRIT_MINES_VI.md")
     for code,name in [("deluxe_firepit","Bếp Thần Hỏa"),("endo_firepit","Bếp Hàn Hỏa"),("heat_star","Vĩnh Hằng Thần Hỏa"),("ice_star","Vĩnh Hằng Hàn Hỏa")]:
-        add(code,name,"structure","Thuộc Vĩnh Hằng Thần Hỏa đã tích hợp. Công thức, nhiên liệu, phạm vi sáng và nhiệt độ phụ thuộc thiết lập mod; xem nhóm Vĩnh Hằng Thần Hỏa tại trang Config.",source="main/ttk_vinhhangthanhoa.lua")
+        add(code,name,"structure","Thuộc Vĩnh Hằng Thần Hỏa đã tích hợp. Công thức, nhiên liệu, phạm vi sáng và nhiệt độ được cố định trong bản tích hợp; không còn nhóm Config riêng.",source="main/ttk_vinhhangthanhoa.lua")
     for skin in json.loads((MOD/"skins_manifest.json").read_text(encoding="utf-8")):
         parent = by_code.get(skin["base"])
         if parent is None or skin["name"] in by_code:
@@ -115,14 +116,22 @@ def publish_catalog():
         child = by_code[skin["name"]]
         child["products"] = [{"item": {k: parent[k] for k in ["id","name","sprite"]}, "quantity": "Công trình gốc", "conditions": "Xem công thức và công dụng."}]
         parent.setdefault("products", []).append({"item": {k: child[k] for k in ["id","name","sprite"]}, "quantity": "Skin có sẵn", "conditions": "Ngoại hình, không phải vật phẩm rơi."})
+    from tools.pham_nhan_wiki_updates import refresh_current_content
+    refresh_current_content(MOD, items, by_code, add)
     # Update source revision, retaining historical evidence labels.
     prefix = text.split("export const tuTienKyItems = ",1)[0]
+    version = re.search(r'^version\s*=\s*"([^"]+)"', (MOD/"modinfo.lua").read_text(encoding="utf-8-sig"), re.M).group(1)
+    prefix = re.sub(r'export const tuTienKyVersion = "[^"]+"', 'export const tuTienKyVersion = "'+version+'"', prefix)
     path.write_text(prefix+"export const tuTienKyItems = "+json.dumps(items,ensure_ascii=False,indent=2)+marker+"\n\nexport const tuTienKyReferences = "+json.dumps(refs,ensure_ascii=False,indent=2)+marker+"\n",encoding="utf-8")
     return len(items)
 
 
 def publish_guides():
     docs = [
+        ("eva", "EVA · Nhân vật và Hồn Lực", "EVA_INTEGRATION_VI.md"),
+        ("bosses", "Chín boss và sáu linh vật", "BOSSES_VI.md"),
+        ("boss-drops", "Chiến lợi phẩm boss và bản vẽ", "BOSS_DROPS_VI.md"),
+        ("seed-tree", "Hạt Tử Chi và thu hoạch hạt", "SEED_TREE_VI.md"),
         ("spirit-mines", "Linh Tuyền và mỏ tự nhiên", "SPIRIT_MINES_VI.md"),
         ("garden", "Dụng cụ hái, hồ cá và cây trồng", "GARDEN_EXPANSION_VI.md"),
         ("armor", "Bộ giáp và Vân Mạc Thượng Trang", "ARMOR_SET_VI.md"),
@@ -132,10 +141,10 @@ def publish_guides():
         ("structures", "Kho, hoa và công trình", "BATCH19_MISC_VI.md"),
         ("solo", "Solo tích hợp · Thế giới và save", "SOLO_INTEGRATION_VI.md"),
     ]
-    guides = [{"id": "utilities", "title": "Tiện ích đã tích hợp", "source": "mods/PhamNhanTuTien/main", "text": "# Tiện ích Phàm Nhân\n\n- Túi đồ mặc định 45 ô; có lựa chọn 15 hoặc 25 ô trong Config.\n- Những vật phẩm có thể xếp chồng được tăng giới hạn lên 120.\n- Nhấn G để sắp xếp túi đồ.\n- Mở quà ở mọi nơi, không cần đứng cạnh Máy Khoa Học.\n- Cỏ không biến thành Grass Gekko.\n- Máy Phóng Băng thông minh giữ lửa trại và các bếp Vĩnh Hằng Thần Hỏa, dùng dung lượng nhiên liệu chuẩn.\n- HUD chiến đấu đã tích hợp; xem Config để tra các lựa chọn thanh máu và số sát thương.\n\nCác tiện ích cố định như stack 120, mở quà và ngăn Grass Gekko không có nút bật/tắt riêng trong Config hiện tại."}]
+    guides = [{"id": "utilities", "title": "Tiện ích đã tích hợp", "source": "mods/PhamNhanTuTien/main", "text": "# Tiện ích Phàm Nhân\n\n- Túi đồ mặc định 45 ô; cố định, không còn lựa chọn số ô trong Config.\n- Những vật phẩm có thể xếp chồng được tăng giới hạn lên 120.\n- Nhấn G để sắp xếp túi đồ.\n- Mở quà ở mọi nơi, không cần đứng cạnh Máy Khoa Học.\n- Cỏ không biến thành Grass Gekko.\n- Máy Phóng Băng thông minh giữ lửa trại và các bếp Vĩnh Hằng Thần Hỏa, dùng dung lượng nhiên liệu chuẩn.\n- HUD chiến đấu luôn bật, không còn menu config riêng; hiện HP và sát thương, không hiện sát thương đồng đội gần.\n\nCác tiện ích cố định như stack 120, mở quà và ngăn Grass Gekko không có nút bật/tắt riêng trong Config hiện tại."}]
     for key,title,filename in docs:
         text = (MOD/filename).read_text(encoding="utf-8-sig")
-        text = re.split(r"(?m)^## (?:Kiểm tra|Kiểm chứng|Nguồn và kiểm tra|Nguồn|Tài nguyên|Đối chiếu|Kiểm thử)",text)[0]
+        text = re.split(r"(?m)^## (?:Kiểm tra|Kiểm chứng|Nguồn và kiểm tra|Nguồn|Tài nguyên|Kiểm thử|Các sửa chữa)",text)[0]
         text = re.sub(r"(?ms)^### Hình ảnh mới.*?(?=^### |^## |\Z)","",text)
         text = re.sub(r"!\[[^\]]*\]\([^)]*\)","",text)
         guides.append({"id":key,"title":title,"source":"mods/PhamNhanTuTien/"+filename,"text":text.strip()})
@@ -147,4 +156,4 @@ if __name__ == "__main__":
     configs = publish_config()
     items = publish_catalog()
     publish_guides()
-    print(f"Published {items} entries, {configs} configuration options and 9 guides.")
+    print(f"Published {items} entries, {configs} configuration options.")

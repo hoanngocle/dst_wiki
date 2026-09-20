@@ -3,6 +3,18 @@ import { expect, it } from "vitest";
 import Page from "./page";
 import nextConfig from "@/next.config";
 import { tuTienKyItems } from "@/app/data/tu-tien-ky";
+import { tuTienKyVersion } from "@/app/data/tu-tien-ky";
+
+it("reflects integrated EVA, nine bosses and blueprint-locked armor", () => {
+  expect(tuTienKyVersion).toBe("2.0.3");
+  expect(tuTienKyItems.filter((item) => item.category === "boss")).toHaveLength(9);
+  expect(tuTienKyItems.some((item) => item.prefabId === "calliope_mori")).toBe(false);
+  expect(tuTienKyItems.find((item) => item.prefabId === "eva")?.description).toContain("Achievement & Level");
+  const armor = tuTienKyItems.find((item) => item.prefabId === "ttk_xshj")!;
+  expect(armor.craftingNote).toContain("học bản vẽ");
+  expect(armor.recipe?.ingredients[0].id).toBe("tu_tien_ky:ttk_boss_mgqg");
+  expect(tuTienKyItems.find((item) => item.prefabId === "ttk_boss_back_xh")?.description).toContain("18 ô");
+});
 
 it("preserves old links with an exact redirect without redirecting image assets", async () => {
   expect(await nextConfig.redirects!()).toContainEqual({ source: "/tu-tien-ky", destination: "/pham-nhan-tu-tien", permanent: true });

@@ -15,7 +15,7 @@ export function PhamNhanConfigBrowser() {
   );
   return (
     <div className="space-y-5">
-      <p className="text-sm leading-6 text-nova-muted">Đây là cấu hình mặc định của Phàm Nhân {data.version}. Các giá trị trên trang dùng để tra cứu, không phải cấu hình đang chạy của máy chủ.</p>
+      <p className="text-sm leading-6 text-nova-muted">Đây là cấu hình mặc định của Phàm Nhân {data.version}. Chỉ liệt kê tùy chọn còn có trong menu mod. Túi đồ 45 ô và HUD chiến đấu đã cố định, không còn công tắc riêng. Các giá trị trên trang dùng để tra cứu, không phải cấu hình đang chạy của máy chủ.</p>
       <div className="grid gap-4 sm:grid-cols-[1fr_240px]">
         <DstField label="Tìm config" htmlFor="config-query"><input id="config-query" type="search" value={query} onChange={(event) => setQuery(event.target.value)} className={dstControlClassName} placeholder="Tên tùy chọn hoặc nội dung…" /></DstField>
         <DstField label="Nhóm config" htmlFor="config-group"><select id="config-group" value={group} onChange={(event) => setGroup(event.target.value)} className={dstControlClassName}>{["Tất cả", ...groups].map((name) => <option key={name}>{name}</option>)}</select></DstField>
