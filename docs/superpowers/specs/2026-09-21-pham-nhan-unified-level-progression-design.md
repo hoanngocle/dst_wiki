@@ -2,7 +2,7 @@
 
 **Date:** 2026-09-21
 
-**Status:** Proposed for user review
+**Status:** Approved
 
 **Target:** `mods/PhamNhanTuTien` (Phàm Nhân Tu Tiên 2.0)
 
@@ -57,6 +57,16 @@ The separate Achievement task owns its own refactor. Its integration contract wi
 - Achievement completion grants Star, not EXP;
 - it must not attach or maintain a second player level component;
 - it may consume the canonical Phàm Nhân level as read-only context if needed.
+
+Achievement has **not yet been merged into Phàm Nhân** at the time this design is implemented. This task must therefore leave a documented, stable integration seam for the later merge without importing or editing the current standalone Achievement mod. When that merge happens:
+
+- gameplay actions originating from the merged Achievement code may request EXP only through the central Phàm Nhân EXP award API;
+- Achievement and Star completion handlers must never request EXP;
+- the historical Achievement `levelsystem` component, its replicated level state, and its save fields must not be attached to players;
+- any UI or gameplay code that needs a player level must read `hh_leveling` through a small compatibility adapter rather than reaching into a second level implementation;
+- missing or not-yet-merged Achievement code must not cause startup errors, missing-require errors, or conditional branches in the current Phàm Nhân runtime.
+
+The implementation must include a short integration note beside the public EXP API identifying these rules and the exact functions the future merge should call. This seam is documentation plus stable Phàm Nhân interfaces; it is not a partial merge of Achievement in the current task.
 
 This design is accepted against a fresh save starting at level 1, EXP 0, and AP 0. No cross-system save migration is required. The existing `hh_leveling` save format should remain readable where practical, but old-save conversion is not an acceptance requirement.
 
