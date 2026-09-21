@@ -25,8 +25,8 @@ Nếu tài liệu cũ còn gọi mod là Tu Tiên Ký hoặc coi Solo Leveling l
 
 - Đưa Thành Tựu, Star, Perk và nhiệm vụ mùa vào chính `mods/PhamNhanTuTien`.
 - Chỉ có một hệ Level/EXP: `hh_leveling` của Phàm Nhân.
-- Có 231 định nghĩa thành tựu đã duyệt, trong đó 209 thành tựu hoạt động và 22 mục tương lai ẩn.
-- 209 thành tựu hoạt động cho đúng 1.000 Star khi claim hết.
+- Có 231 thành tựu hoạt động đã duyệt; không còn mục `NEED`/tương lai ẩn trong catalog này.
+- 231 thành tựu cho đúng 1.000 Star khi claim hết.
 - Có 39 Perk được giữ lại: 7 chỉ số lặp, 14 khả năng một lần và 18 gói chế tạo một lần.
 - Tổng chi phí mua tối đa hiện tại là 945 Star, để lại 55 Star dư sau khi hoàn thành mọi thành tựu hoạt động.
 - Nhiệm vụ mùa có bốn catalog khác nhau, mỗi mùa 50 nhiệm vụ và rút cố định 20 nhiệm vụ khi bắt đầu mùa.
@@ -36,8 +36,6 @@ Nếu tài liệu cũ còn gọi mod là Tu Tiên Ký hoặc coi Solo Leveling l
 ## 3. Ngoài phạm vi
 
 - Không thay EXP curve, nguồn EXP, AP hay quy tắc lên cấp đã chốt trong task unified progression.
-- Không quyết định vật phẩm của bốn rương mùa. Task này chỉ xây mốc và điểm móc phần thưởng.
-- Không kích hoạt 22 thành tựu `NEED`/tương lai.
 - Không thêm lại perk đã bị loại trong phiên duyệt.
 - Không hỗ trợ chạy đồng thời mod Achievement & Level độc lập với Phàm Nhân.
 - Không chỉnh nguồn Workshop gốc `mods/2937640068`.
@@ -75,6 +73,17 @@ Client chỉ nhận snapshot cần hiển thị và gửi yêu cầu claim/mua. 
 
 Logic thuần không phụ thuộc DST entity được tách khỏi component để kiểm thử catalog, claim, giá và state transition bằng Lua harness.
 
+### 4.4. Tu luyện và luyện đan là tiến trình riêng, không phải Level thứ hai
+
+Việc đưa đan dược Tu Tiên trở lại không khôi phục `levelsystem` của Achievement & Level. Phàm Nhân có hai khái niệm độc lập:
+
+- `hh_leveling` tiếp tục là Level/EXP chính duy nhất, dùng cho Level 1–100, AP và hạng thợ săn;
+- cảnh giới Tu Tiên là một tiến trình tuần tự riêng gồm 15 lần dùng đan, không có EXP bar, AP hay level component thứ hai.
+
+Đan tăng cảnh giới chỉ dùng được đúng ở cảnh giới liền trước. Dùng đúng đan thì thăng cảnh giới chắc chắn; dùng sai thứ tự bị từ chối và không tiêu hao vật phẩm. Không có xác suất thất bại khi luyện đan hoặc khi đột phá.
+
+Đan Lô `xd_liandanlu` được đưa vào Phàm Nhân với công thức 5 Cục Vàng + 3 Đá Cắt + 3 Đá Lửa + 5 Hạ Phẩm Linh Thạch. Một mẻ hợp lệ hoàn thành sau 180 giây và luôn trả đúng thành phẩm. Không port Thế Tử Phản Hồn Đan, Phế Đan hay nhánh kết quả thất bại.
+
 ## 5. Catalog Thành Tựu
 
 ### 5.1. Nguồn sự thật
@@ -103,42 +112,42 @@ ID là khóa save ổn định và không đổi khi sửa tên hiển thị. `t
 ### 5.2. Số lượng cố định
 
 - Tổng định nghĩa: 231.
-- Hoạt động, hiển thị và claim được: 209.
-- Tương lai ẩn: 22.
+- Hoạt động, hiển thị và claim được: 231.
+- Tương lai ẩn: 0.
 - Nhóm: 13 nhóm đã duyệt.
 - Mỗi thành tựu chỉ thuộc một nhóm.
 
 | Nhóm | Tổng | Active | Future ẩn |
 |---|---:|---:|---:|
 | Sinh tồn | 10 | 10 | 0 |
-| Ẩm thực | 40 | 21 | 19 |
+| Ẩm thực | 40 | 40 | 0 |
 | Thu thập | 33 | 33 | 0 |
 | Lao động | 11 | 11 | 0 |
-| Chế tạo | 20 | 19 | 1 |
+| Chế tạo | 20 | 20 | 0 |
 | Nông nghiệp | 15 | 15 | 0 |
 | Chiến đấu | 14 | 14 | 0 |
 | Boss | 33 | 33 | 0 |
-| Cấp và hạng | 13 | 11 | 2 |
+| Cấp và hạng | 13 | 13 | 0 |
 | Cường hóa | 12 | 12 | 0 |
 | Hầm ngục và Hiệp hội | 12 | 12 | 0 |
 | Nhiệm vụ mùa | 8 | 8 | 0 |
 | Gacha và cửa hàng | 10 | 10 | 0 |
-| **Tổng** | **231** | **209** | **22** |
+| **Tổng** | **231** | **231** | **0** |
 
 Ba nhóm cũ bị xóa hoàn toàn, không chỉ ẩn: Khám phá và Hang động; Bóng Ma và Đệ Tử; Đại dương và Hàng hải.
 
-22 mục tương lai phải có `status = "future"`, `visibility = "hidden"`, không đăng ký tracker, không hoàn thành, không claim và không tham gia tổng 1.000 Star. Muốn kích hoạt chúng trong tương lai phải có một lần duyệt balance riêng.
+Toàn bộ 22 mục từng được để `NEED` đã có quyết định sản phẩm: 19 mục Ẩm thực được đóng đinh tại mục 5.4, một mục Chế tạo là Đan Lô, và hai mục Cấp/Hạng là SS cùng SSS. Catalog phát hành không còn placeholder `future`.
 
 ### 5.3. Phân phối đúng 1.000 Star
 
 | Độ khó | Số lượng | Star/mục | Thành tiền |
 |---|---:|---:|---:|
-| Dễ | 31 | 2 | 62 |
-| Thường | 62 | 3 | 186 |
-| Khó | 68 | 5 | 340 |
+| Dễ | 71 | 2 | 142 |
+| Thường | 57 | 3 | 171 |
+| Khó | 55 | 5 | 275 |
 | Tinh Anh | 34 | 8 | 272 |
 | Huyền Thoại | 14 | 10 | 140 |
-| **Tổng** | **209** |  | **1.000** |
+| **Tổng** | **231** |  | **1.000** |
 
 Catalog validator phải fail nếu lệch bất kỳ số lượng hoặc tổng nào.
 
@@ -146,9 +155,8 @@ Catalog validator phải fail nếu lệch bất kỳ số lượng hoặc tổn
 
 Catalog cuối phải phản ánh toàn bộ lựa chọn đã duyệt, gồm các ràng buộc nổi bật sau:
 
-- Nhóm ẩm thực có các nội dung Phàm Nhân/Tu Tiên, vật phẩm boss và đan dược tương lai; có một thành tựu uống đủ `nn_liquidluck`, `nn_liquidluck_2`, `nn_liquidluck_3`.
+- Nhóm ẩm thực có các nội dung Phàm Nhân/Tu Tiên, vật phẩm boss và đan dược; có một thành tựu uống đủ `nn_liquidluck`, `nn_liquidluck_2`, `nn_liquidluck_3`.
 - Đan dược Thao Thiết chỉ dùng cấp đầu tiên nhưng tên hiển thị bỏ chữ “Nhất Phẩm”.
-- Các mục chưa có prefab/hook hoàn chỉnh được giữ trong 22 mục tương lai ẩn thay vì làm tracker giả.
 - Nhóm thu thập có các mốc sở hữu 10.000 linh thạch hạ phẩm, 10.000 trung phẩm, 1.000 thượng phẩm và 100 cực phẩm.
 - Không có thành tựu hoàn thành bộ Dreadstone/Lunarplant/Voidcloth.
 - Không có các thành tựu bắt Ice Bream, Scorching Sunfish, Bloomfin Tuna hoặc Fallounder.
@@ -157,10 +165,40 @@ Catalog cuối phải phản ánh toàn bộ lựa chọn đã duyệt, gồm c�
 - Không có các thành tựu bẫy/sát thương gián tiếp, thiêu cháy, đóng băng, điện, sáu Nguyên Kiếm hoặc tay không đã bị loại.
 - Boss chỉ giữ boss có ý nghĩa; loại boss cấp thấp và boss có chuỗi nhiệm vụ/triệu hồi quá phức tạp theo danh sách đã duyệt.
 - Mốc Level là 10, 20, 30, 50 và 100.
-- Hạng thợ săn là E, D, C, B, A, S; SS và SSS nằm trong mục tương lai ẩn.
+- Hạng thợ săn là E, D, C, B, A, S, SS và SSS. Mốc cấp tương ứng là 1/10/20/30/40/50/70/100. SS và SSS tạm thời chỉ đổi tên hạng và hoàn thành thành tựu, không tăng chỉ số, EXP multiplier, shop tier hay quyền gameplay khác.
 - Nhóm nhiệm vụ mùa giữ “Nhiệm Vụ Đầu Tiên”, không có “Trọn Bộ Nhiệm Vụ Mùa”.
 
-### 5.5. Claim Star
+### 5.5. Danh sách chính xác 19 mục Ẩm thực từng để TODO
+
+19 mục sau là thành tựu hoạt động, không còn là placeholder:
+
+| ID ổn định | Tên hiển thị | Điều kiện |
+|---|---|---|
+| `food_liquid_luck_trinity` | Phúc Lạc Tam Dược | Uống đủ Phúc Lạc Dược I, II và III. |
+| `food_cultivation_pill_path` | Đan Đạo Thông Huyền | Dùng đủ 15 đan tăng cảnh giới theo đúng tiến trình từ Tụ Khí Hoàn đến Khấu Hư Đan. |
+| `food_fasting_pill` | Tịch Cốc | Dùng một Tịch Cốc Đan. |
+| `food_buff_cyfxd` | Xích Dương Phần Huyết Đan | Dùng `xd_dy_cyfxd_1`; tên hiển thị bỏ “Nhất Phẩm”. |
+| `food_buff_dmhsd` | Địa Mạch Hồi Sinh Đan | Dùng `xd_dy_dmhsd_1`; tên hiển thị bỏ “Nhất Phẩm”. |
+| `food_buff_lmsqd` | Lôi Minh Sát Khí Đan | Dùng `xd_dy_lmsqd_1`; tên hiển thị bỏ “Nhất Phẩm”. |
+| `food_buff_qxdhd` | Thanh Tâm Địch Hồn Đan | Dùng `xd_dy_qxdhd_1`; tên hiển thị bỏ “Nhất Phẩm”. |
+| `food_buff_yfsxd` | Ngự Phong Thần Hành Đan | Dùng `xd_dy_yfsxd_1`; tên hiển thị bỏ “Nhất Phẩm”. |
+| `food_buff_pshsd` | Bàn Thạch Hộ Thân Đan | Dùng `xd_dy_pshsd_1`; tên hiển thị bỏ “Nhất Phẩm”. |
+| `food_buff_qjqsd` | Thiên Cơ Xảo Thủ Đan | Dùng `xd_dy_qjqsd_1`; tên hiển thị bỏ “Nhất Phẩm”. |
+| `food_buff_xynyd` | Huyền Dương Noãn Ngọc Đan | Dùng `xd_dy_xynyd_1`; tên hiển thị bỏ “Nhất Phẩm”. |
+| `food_buff_hsphd` | Hàn Tủy Tịch Hỏa Đan | Dùng `xd_dy_hsphd_1`; tên hiển thị bỏ “Nhất Phẩm”. |
+| `food_buff_xttyd` | Huyết Thao Thiết Nguyên Đan | Dùng `xd_dy_xttyd_1`; tên hiển thị bỏ “Nhất Phẩm”. |
+| `food_boss_baihu` | Bạch Hổ Huyết Tủy | Ăn một `ttk_boss_core_baihu`. |
+| `food_boss_jfsn` | Kim Phượng Tinh Huyết | Ăn một `ttk_boss_core_jfsn`. |
+| `food_boss_qlch` | Kỳ Lân Linh Đan | Ăn một `ttk_boss_core_qlch`. |
+| `food_boss_spiderqueen` | Ma Thù Nội Đan | Ăn một `ttk_boss_core_spiderqueen`. |
+| `food_boss_stalke` | Hắc Ám Hồn Tinh | Ăn một `ttk_boss_core_stalke_fuben`. |
+| `food_boss_deerclops` | Băng Phách Tinh Tủy | Ăn một `ttk_boss_core_deerclops_ziyun`. |
+
+Sáu vật phẩm Boss trên đã có prefab và logic ăn trong Phàm Nhân; ghi chú cũ nói chúng chưa có prefab là sai và bị loại khỏi đặc tả.
+
+15 đan tăng cảnh giới của `food_cultivation_pill_path` là: Tụ Khí Hoàn, Đoán Thể Hoàn, Trúc Cơ Đan, Tẩy Tủy Hoàn, Hóa Tinh Đan, Vân Trung Đan, Sơ Mạch Hoàn, Dung Linh Hoàn, Kết Anh Đan, Uẩn Huyết Hoàn, Ngưng Thần Hoàn, Hóa Thần Đan, Hồi Nguyên Hoàn, Hợp Linh Hoàn và Khấu Hư Đan.
+
+### 5.6. Claim Star
 
 Hoàn thành và nhận thưởng là hai trạng thái khác nhau:
 
@@ -213,7 +251,7 @@ Quy tắc tích hợp:
 - Lifesteal ghi vào `bloodSuck` và vẫn chịu các giới hạn an toàn/heal budget của combat pipeline hiện có.
 - Planar Damage/Defense dùng component planar hiện có, không tạo damage pipeline mới.
 - Scale thay đổi kích thước hiển thị của EVA; không tăng tầm đánh, collision hoặc bán kính tương tác.
-- XP Multiplier là modifier vĩnh viễn do progression API đọc. Để cả 25 cấp đều có giá trị, pipeline trước tiên tính và kẹp các modifier tình huống hiện có theo trần 1,75× của unified progression, sau đó mới nhân hệ số perk `1 + 0,05 × cấp`. Nó không áp dụng cho Achievement Star và không nhân Star.
+- XP Multiplier là modifier vĩnh viễn do progression API đọc. Không có trần tổng EXP multiplier. Pipeline nhân toàn bộ modifier hợp lệ rồi nhân hệ số perk `1 + 0,05 × cấp`; cấp 25 riêng perk này cho 2,25×. Nó không áp dụng cho Achievement Star và không nhân Star.
 - Mua cấp mới phải reapply hiệu ứng ngay; load/respawn dựng lại hiệu ứng từ save mà không cộng chồng.
 
 ### 6.3. Nhóm Khả Năng — mua một lần
@@ -322,16 +360,22 @@ Phàm Nhân đã có World Rank tự động nên không dựng thêm hệ tăng
 - Mỗi claim gọi progression API với source dành cho seasonal task và một claim key idempotent.
 - Số EXP nằm trong tuning/progression task riêng; catalog chỉ giữ reward key, không hardcode curve thứ hai.
 
-### 8.3. Mốc rương
+### 8.3. Mốc rương và phần thưởng đã chốt
 
 Mốc là 5, 10, 15 và 20 nhiệm vụ khác nhau đã có ít nhất một claim. Các lần lặp thứ 2–5 không tăng tiến độ rương.
 
-Vì bốn vật phẩm thưởng chưa được quyết định:
+Mỗi mùa dùng một linh thảo đặc trưng và một bộ vật phẩm cuối mùa. Bốn rương của mùa đang chạy trao thưởng như sau:
 
-- UI vẫn hiển thị bốn rương và trạng thái đạt mốc;
-- server giữ bốn reward hook riêng;
-- nút nhận rương chưa được bật và không ghi trạng thái “đã nhận” khi reward definition còn trống;
-- không tái sử dụng ngầm reward cũ của Achievement & Level.
+| Mùa | Linh thảo/hạt đặc trưng | Mốc 5 | Mốc 10 | Mốc 15 | Mốc 20 |
+|---|---|---|---|---|---|
+| Xuân | Lôi Minh Quả — `ttk_lc_lmg_seed` | 3 hạt | 5 hạt + 10 `ttk_lingshi1` | 2 `ttk_lingshi2` + 1 Ngọc Vàng | 1 `ttk_lingshi3` + 1 Lông Moose/Goose |
+| Hạ | Xích Viêm Hoa — `ttk_lc_cyh_seed` | 3 hạt | 5 hạt + 10 `ttk_lingshi1` | 2 `ttk_lingshi2` + 1 Ngọc Cam | 1 `ttk_lingshi3` + 1 Vảy Rồng |
+| Thu | Thanh Phong Tiên — `ttk_lc_qfx_seed` | 3 hạt | 5 hạt + 10 `ttk_lingshi1` | 2 `ttk_lingshi2` + 1 Ngọc Lục | 1 `ttk_lingshi3` + 1 Lông Bearger |
+| Đông | Hàn Sương Thảo — `ttk_lc_hsc_seed` | 3 hạt | 5 hạt + 10 `ttk_lingshi1` | 2 `ttk_lingshi2` + 1 Ngọc Lam | 1 `ttk_lingshi3` + 1 Nhãn Cầu Deerclops |
+
+Prefab vanilla tương ứng là `yellowgem`, `orangegem`, `greengem`, `bluegem`, `goose_feather`, `dragon_scales`, `bearger_fur` và `deerclops_eyeball`.
+
+Mỗi rương chỉ claim một lần trong mùa. Server kiểm tra mốc, mùa hiện tại, reward definition và `chest_claimed[index]`, trao toàn bộ bundle rồi mới ghi trạng thái đã nhận. Nếu một prefab không tạo được, transaction không đánh dấu đã claim và báo lỗi rõ ràng; không trao một phần bundle.
 
 ### 8.4. Trạng thái lưu
 
@@ -367,6 +411,7 @@ Save envelope mới có version rõ ràng:
     },
     stars = { earned = 0, spent = 0 },
     perks = { levels = {}, unlocked = {} },
+    cultivation = { stage = 0, consumed = {} },
     seasonal = {...},
 }
 ```
@@ -381,6 +426,7 @@ Quy tắc:
 - Load/respawn reapply effect idempotently từ state, không cộng delta lặp lại.
 - Save Phàm Nhân hiện có vẫn giữ nguyên `hh_leveling`, AP, rank, kỹ năng và các component khác.
 - Không nhập dữ liệu `levelsystem` cũ. Đây là chủ đích để tránh hai nguồn Level và tránh chuyển các perk đã bị loại.
+- `cultivation.stage` chỉ lưu tiến trình cảnh giới Tu Tiên 0–15; không chứa EXP, Level hoặc AP. `consumed` là bitset phục vụ thành tựu dùng đủ 15 đan.
 
 ## 10. Theo dõi sự kiện
 
@@ -418,7 +464,7 @@ RPC tối thiểu:
 - mua một cấp/unlock Perk theo ID;
 - yêu cầu snapshot khi mở UI nếu replica chưa sẵn sàng.
 
-Server không tin reward, price, level hoặc progress do client gửi. Snapshot dùng compact fields/net events; không khai báo hàng trăm netvar cố định cho 209 thành tựu.
+Server không tin reward, price, level hoặc progress do client gửi. Snapshot dùng compact fields/net events; không khai báo hàng trăm netvar cố định cho 231 thành tựu.
 
 ## 12. Wiki
 
@@ -432,8 +478,7 @@ Tạo trang con trong khu vực Phàm Nhân:
 
 `PhamNhanNav` thêm mục **Tiến trình**. Trang này trình bày:
 
-- 209 thành tựu hoạt động theo nhóm;
-- các mục tương lai dưới nhãn “Đang phát triển” chỉ khi muốn công khai, mặc định ẩn;
+- 231 thành tựu hoạt động theo nhóm;
 - quy tắc 1.000 Star;
 - 39 Perk và bảng giá;
 - nhiệm vụ mùa 4 × 50, cách rút 20 và claim EXP;
@@ -450,16 +495,18 @@ Thực hiện trong worktree riêng bằng sub-agent-driven development. Mỗi t
 Thứ tự kỹ thuật dự kiến:
 
 1. Đóng băng catalog Thành Tựu/Perk bằng validator và artifact review.
-2. Hoàn tất catalog + state machine nhiệm vụ mùa độc lập.
-3. Tạo component save/state/RPC server-authoritative trong Phàm Nhân.
-4. Nối tracker Thành Tựu với các event/API Phàm Nhân.
-5. Nối Star claim và transaction mua perk.
-6. Port 7 perk chỉ số vào combat/progression hiện có.
-7. Port 14 perk khả năng với test chống duplicate.
-8. Port 11 gói craft gốc và 7 gói truyền thừa EVA.
-9. Xây UI ba tab, smoke test host/dedicated/client.
-10. Chuyển wiki vào `/pham-nhan-tu-tien/tien-trinh` và xóa route cũ.
-11. Chạy full regression, audit save/load, provenance và cleanup phần AchievementLevel không còn dùng.
+2. Port Đan Lô, 15 đan cảnh giới, Tịch Cốc Đan và 10 đan buff cấp đầu; thêm tiến trình cảnh giới tuần tự.
+3. Hoàn tất catalog + state machine nhiệm vụ mùa cùng bốn bảng reward đã chốt.
+4. Mở rộng hạng thợ săn SS ở Level 70 và SSS ở Level 100 nhưng chưa gắn bonus mới.
+5. Tạo component save/state/RPC server-authoritative trong Phàm Nhân.
+6. Nối tracker Thành Tựu với các event/API Phàm Nhân.
+7. Nối Star claim và transaction mua perk.
+8. Port 7 perk chỉ số vào combat/progression hiện có.
+9. Port 14 perk khả năng với test chống duplicate.
+10. Port 11 gói craft gốc và 7 gói truyền thừa EVA.
+11. Xây UI ba tab, smoke test host/dedicated/client.
+12. Chuyển wiki vào `/pham-nhan-tu-tien/tien-trinh` và xóa route cũ.
+13. Chạy full regression, audit save/load, provenance và cleanup phần AchievementLevel không còn dùng.
 
 Worktree hiện tại có nhiều thay đổi chưa commit trong Phàm Nhân. Trước khi triển khai, plan phải lập manifest các file đụng nhau và chọn một baseline có đủ thay đổi hợp lệ; không được tạo worktree sạch rồi vô tình xây trên code cũ, cũng không được copy nguyên cả working tree bẩn.
 
@@ -467,10 +514,10 @@ Worktree hiện tại có nhiều thay đổi chưa commit trong Phàm Nhân. Tr
 
 ### 14.1. Catalog
 
-- Đúng 231 định nghĩa, 209 active, 22 future hidden, 13 nhóm.
+- Đúng 231 định nghĩa active, 0 future hidden, 13 nhóm.
 - Không trùng ID hoặc chữ ký ngữ nghĩa.
-- Phân phối Star đúng 31/62/68/34/14 và tổng đúng 1.000.
-- Mọi prefab/hook active tồn tại; mục chưa tồn tại phải hidden future.
+- Phân phối Star đúng 71/57/55/34/14 và tổng đúng 1.000.
+- Mọi prefab/hook active tồn tại; không có placeholder hoặc tracker giả.
 
 ### 14.2. Star và Perk
 
@@ -483,7 +530,7 @@ Worktree hiện tại có nhiều thay đổi chưa commit trong Phàm Nhân. Tr
 ### 14.3. Combat/progression
 
 - Crit, lifesteal và planar dùng đúng effect/component hiện có.
-- XP Multiplier đi qua progression API sau khi stack modifier tình huống đã chịu trần 1,75×; cấp 25 thực sự cho hệ số perk 2,25× và không có cấp mua vô dụng.
+- XP Multiplier đi qua progression API không có trần tổng; cấp 25 thực sự cho hệ số perk 2,25× và không có cấp mua vô dụng.
 - Achievement claim không tăng EXP.
 - Seasonal claim tăng EXP đúng một lần vào `hh_leveling`.
 - Không có component/netvar/UI/save của `levelsystem` cũ.
@@ -494,10 +541,13 @@ Worktree hiện tại có nhiều thay đổi chưa commit trong Phàm Nhân. Tr
 - Lượt rút luôn 20 = 16 once + 4 repeat, không trùng và không đổi khi reload.
 - Repeat claim đúng năm lần; lần thứ sáu bị từ chối.
 - Mốc rương đúng 5/10/15/20 distinct task.
-- Reward rương chưa định nghĩa không thể bị đánh dấu đã nhận.
+- Bốn mùa trao đúng bundle riêng tại mốc 5/10/15/20; claim lỗi không trao một phần và không đánh dấu đã nhận.
 
 ### 14.5. Chế tạo
 
+- Đan Lô luôn trả thành phẩm hợp lệ sau 180 giây; không có Phế Đan hoặc roll thất bại.
+- 15 đan cảnh giới chỉ dùng đúng thứ tự và tăng chắc chắn một bậc; không tạo Level/EXP thứ hai.
+- Không đăng ký Thế Tử Phản Hồn Đan hoặc Phế Đan.
 - Unlock gói làm công thức xuất hiện ngay cho EVA.
 - Chưa unlock thì EVA không thấy/không craft được công thức gói.
 - Nhân vật khác không nhận builder tag.
@@ -515,4 +565,4 @@ Worktree hiện tại có nhiều thay đổi chưa commit trong Phàm Nhân. Tr
 
 ## 15. Định nghĩa hoàn tất
 
-Tính năng hoàn tất khi một save solo Phàm Nhân có thể theo dõi và claim 209 thành tựu để nhận đúng 1.000 Star, dùng Star mua đúng 39 Perk với trần chi 945, chơi vòng nhiệm vụ mùa 20/50 và claim EXP vào `hh_leveling`, mở công thức truyền thừa cho EVA ngay sau khi mua, reload không mất hoặc nhân đôi dữ liệu, và wiki chỉ còn nội dung tiến trình bên trong khu vực Phàm Nhân.
+Tính năng hoàn tất khi một save solo Phàm Nhân có thể theo dõi và claim 231 thành tựu để nhận đúng 1.000 Star, dùng Star mua đúng 39 Perk với trần chi 945, luyện đan và thăng 15 bậc cảnh giới không tạo Level thứ hai, chơi vòng nhiệm vụ mùa 20/50 cùng bốn mốc thưởng đã chốt, claim EXP vào `hh_leveling`, mở công thức truyền thừa cho EVA ngay sau khi mua, reload không mất hoặc nhân đôi dữ liệu, và wiki chỉ còn nội dung tiến trình bên trong khu vực Phàm Nhân.

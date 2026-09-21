@@ -34,7 +34,7 @@ This design covers:
 2. gameplay actions that award EXP;
 3. combat and boss EXP;
 4. daily quest EXP;
-5. EXP modifiers and their cap;
+5. EXP modifiers and their stacking order;
 6. solo kill ownership and removal of party sharing;
 7. anti-exploit rules;
 8. dungeon rank gates matching the gate's displayed rank;
@@ -173,7 +173,7 @@ The central path must:
 1. reject invalid, zero, negative, or ineligible awards;
 2. resolve the one eligible solo recipient;
 3. apply only modifiers valid for the source category;
-4. cap the combined effective multiplier at 1.75;
+4. multiply all eligible modifiers without a total multiplier cap;
 5. round once, after all modifiers, with `math.floor(value + 0.5)`;
 6. award at least 1 EXP when a positive eligible base award survives all reductions;
 7. call the canonical `hh_leveling:AddExp` exactly once.
@@ -258,7 +258,7 @@ Targets or killers marked `noxp`, invalid ownership chains, and player-owned all
 
 ## 10. EXP modifiers
 
-Applicable modifiers multiply the base award, then the combined result is capped at **1.75×**.
+Applicable modifiers multiply the base award. There is no combined EXP multiplier cap.
 
 | Modifier | Value | Applies to |
 |---|---:|---|
@@ -275,7 +275,7 @@ The application order is:
 3. Rank S combat bonus, if applicable;
 4. player EXP buff, if applicable;
 5. dungeon EXP buff, if applicable;
-6. clamp the total effective multiplier relative to base to 1.75;
+6. apply any permanent perk multiplier, including Achievement XP Multiplier when present;
 7. round once and award.
 
 Quest scaling is not a multiplier and daily quest rewards bypass this stack. No character-specific modifier is introduced.
@@ -354,7 +354,7 @@ central Phàm Nhân EXP award service
   - validates event and recipient
   - resolves solo ownership
   - looks up base reward
-  - applies allowed modifiers and 1.75x cap
+  - multiplies all allowed modifiers without a total cap
   - rounds once
         |
         v
@@ -411,8 +411,8 @@ This list is a discovery boundary, not permission to rewrite every file. The imp
 
 - Rank S contributes 1.25× to combat EXP, not 2.0×.
 - Player and dungeon buffs retain their intended 1.25× and 1.35× values.
-- Any valid combination is capped at 1.75× relative to base.
-- Rounding occurs once after the final capped multiplier.
+- Every valid modifier multiplies normally; there is no total EXP multiplier cap.
+- Rounding occurs once after the final multiplier.
 - Daily quests do not receive these multipliers.
 
 ### 16.5 Quest tests

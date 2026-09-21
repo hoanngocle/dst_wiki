@@ -274,7 +274,7 @@ def test_daily_rewards_scale_from_current_goal_without_modifiers(self):
     )()
     self.assertEqual(rewards, (20, 419, 629))
 
-def test_combined_bonus_is_capped_at_one_point_seven_five(self):
+def test_combined_bonus_multiplies_without_a_total_cap(self):
     lua = progression_runtime()
     ok, amount = lua.eval(
         "function() local p=require('progression/hh_progression'); local x=NewAwardPlayer(); "
@@ -284,7 +284,7 @@ def test_combined_bonus_is_capped_at_one_point_seven_five(self):
         "return p.Award(x,'dungeon',100,{is_combat=true,is_dungeon=true}) end"
     )()
     self.assertTrue(ok)
-    self.assertEqual(amount, 175)
+    self.assertEqual(amount, 211)
 ```
 
 Also test that `AddExp` returning `false, "sealed"` propagates the failure and does not report an awarded amount.
@@ -305,7 +305,6 @@ Extend `TUNING.HH_EXP_BALANCE` and `TUNING.HH_DAILY_QUEST`:
 
 ```lua
 TUNING.HH_EXP_BALANCE = {
-    MAX_BONUS_MULTIPLIER = 1.75,
     LEVEL_FACTORS = {
         { gap = 40, factor = 0.10 },
         { gap = 30, factor = 0.25 },
@@ -338,8 +337,7 @@ end
 
 function HHDungeonEffects:GetExpMultiplier(is_dungeon)
     local player_factor, dungeon_factor = self:GetExpFactors(is_dungeon)
-    return math.min(TUNING.HH_EXP_BALANCE.MAX_BONUS_MULTIPLIER or 1.75,
-        player_factor * dungeon_factor)
+    return player_factor * dungeon_factor
 end
 ```
 
@@ -394,7 +392,6 @@ function M.Award(player, source, base_amount, context)
             local player_factor, dungeon_factor = effects:GetExpFactors(context.is_dungeon == true)
             bonus = bonus * player_factor * dungeon_factor
         end
-        bonus = math.min(TUNING.HH_EXP_BALANCE.MAX_BONUS_MULTIPLIER or 1.75, bonus)
     end
 
     local amount = math.max(1, math.floor(base_amount * level_factor * bonus + 0.5))
@@ -1283,7 +1280,7 @@ git commit -m "test: verify unified Pham Nhan progression pacing"
 - [ ] All approved survival/production actions award their exact base values once per successful completion.
 - [ ] Failed actions, free recipes, repeated recipe learning, duplicate death callbacks, owned victims, and `noxp` targets award zero.
 - [ ] One direct player or owned shadow receives 100% of kill EXP; nearby players receive nothing.
-- [ ] Rank S is 1.25× combat EXP, player buff is 1.25×, dungeon buff is 1.35×, and combined bonus is capped at 1.75×.
+- [ ] Rank S is 1.25× combat EXP, player buff is 1.25×, dungeon buff is 1.35×, and valid modifiers multiply without a total EXP cap.
 - [ ] Daily quests use 6%/10%/15% with minimums 20/35/50 and no modifiers.
 - [ ] Dungeon waves 2–10 display and enforce E/D/C/B/A/S/S/S/S.
 - [ ] Achievement is still unmerged, no runtime dependency exists, and the future integration contract names the only allowed APIs.
