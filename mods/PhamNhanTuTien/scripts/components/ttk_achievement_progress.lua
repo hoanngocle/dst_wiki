@@ -62,7 +62,6 @@ local TtkAchievementProgress = Class(function(self, inst)
     self.version = 1
     self.effect_callback = nil
     self.cultivation_reference = {}
-    self.seasonal_state = {}
     self.core = Core.New(inst, function(_, perk, level, mode)
         return self:ApplyPerk(perk, level, mode)
     end)
@@ -117,22 +116,44 @@ function TtkAchievementProgress:SetCultivationReference(snapshot)
     self.cultivation_reference = CopyScalarTree(snapshot, 0, { count = 96 }) or {}
 end
 
-function TtkAchievementProgress:SetSeasonalState(snapshot)
-    self.seasonal_state = CopyScalarTree(snapshot, 0, { count = 256 }) or {}
+function TtkAchievementProgress:SetSeasonalXPCallback(callback)
+    self.core:SetSeasonalXPCallback(callback)
+end
+
+function TtkAchievementProgress:StartSeason(season, epoch, random)
+    local ok, result = self.core:StartSeason(season, epoch, random)
+    if ok then self:PushSnapshot() end
+    return ok, result
+end
+
+function TtkAchievementProgress:AdvanceSeasonal(id, amount, evidence)
+    local ok, result = self.core:AdvanceSeasonal(id, amount, evidence)
+    if ok then self:PushSnapshot() end
+    return ok, result
+end
+
+function TtkAchievementProgress:ClaimSeasonal(id, request_id)
+    local ok, result = self.core:ClaimSeasonal(id, request_id)
+    if ok then self:PushSnapshot() end
+    return ok, result
+end
+
+function TtkAchievementProgress:ClaimChest(season, milestone, request_id)
+    local ok, result = self.core:ClaimChest(self.inst, season, milestone, request_id)
+    if ok then self:PushSnapshot() end
+    return ok, result
 end
 
 function TtkAchievementProgress:OnSave()
     local state = self.core:GetSaveData()
     state.version = self.version
     state.cultivation = CopyScalarTree(self.cultivation_reference, 0, { count = 96 }) or {}
-    state.seasonal = CopyScalarTree(self.seasonal_state, 0, { count = 256 }) or {}
     return state
 end
 
 function TtkAchievementProgress:OnLoad(data)
     local state = type(data) == "table" and data or {}
     self.cultivation_reference = CopyScalarTree(state.cultivation, 0, { count = 96 }) or {}
-    self.seasonal_state = CopyScalarTree(state.seasonal, 0, { count = 256 }) or {}
     self.core:Load(state)
     self:PushSnapshot()
 end

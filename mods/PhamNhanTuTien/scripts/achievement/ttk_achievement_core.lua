@@ -1,5 +1,7 @@
 local AchievementCatalog = require("achievement/ttk_achievement_catalog")
 local PerkCatalog = require("achievement/ttk_perk_catalog")
+local SeasonalCatalog = require("achievement/ttk_seasonal_catalog")
+local Rewards = require("achievement/ttk_seasonal_rewards")
 
 local Core = {}
 Core.__index = Core
@@ -57,7 +59,211 @@ function Core.New(inst, apply_effect)
     self.spent = 0
     self.replays = {}
     self.replay_order = {}
+    self.seasonal = nil
+    self.seasonal_replays = {}
+    self.seasonal_replay_order = {}
+    self.seasonal_pending = {}
+    self.seasonal_busy = false
+    self.seasonal_xp = nil
     return self
+end
+
+local function IsServer()
+    return TheWorld ~= nil and TheWorld.ismastersim == true
+end
+
+local function SlotStatus(slot, definition)
+    return slot.claims >= definition.max_claims and "claimed"
+        or slot.progress >= definition.target and "ready_to_claim" or "active"
+end
+
+function Core:SetSeasonalXPCallback(callback)
+    self.seasonal_xp = type(callback) == "function" and callback or nil
+end
+
+function Core:StartSeason(season, epoch, random)
+    if not IsServer() then return false, NewResult(false, "not_server") end
+    if not SeasonalCatalog.IsSeason(season) or not IsValidRequestId(epoch)
+        or TheWorld.state == nil or TheWorld.state.season ~= season then
+        return false, NewResult(false, "invalid_season")
+    end
+    if self.seasonal_busy then return false, NewResult(false, "pending") end
+    if self.seasonal ~= nil and self.seasonal.season == season and self.seasonal.epoch == epoch then
+        return true, Copy(self.seasonal)
+    end
+    self.seasonal = {version=2, season=season, epoch=epoch, slots=SeasonalCatalog.Draw(season, random), first_claims=0, chest_claimed={}}
+    return true, Copy(self.seasonal)
+end
+
+function Core:ActiveSeason(season)
+    return IsServer() and self.seasonal ~= nil and self.seasonal.season == season
+        and TheWorld.state ~= nil and TheWorld.state.season == season
+end
+
+function Core:FindSeasonalSlot(id)
+    if self.seasonal == nil or type(id) ~= "string" then return nil end
+    for _, slot in ipairs(self.seasonal.slots) do
+        if slot.task_id == id then return slot end
+    end
+end
+
+-- Only the server's successful-action adapter calls this method. It supplies
+-- normalized evidence; no RPC may supply progress or arbitrary event payloads.
+function Core:AdvanceSeasonal(id, amount, evidence)
+    local definition = SeasonalCatalog.ById(id)
+    if definition == nil or not self:ActiveSeason(definition.season) then
+        return false, NewResult(false, "inactive_task")
+    end
+    if self.seasonal_busy then return false, NewResult(false, "pending") end
+    if not IsFiniteInteger(amount) or amount <= 0 then return false, NewResult(false, "invalid_amount") end
+    local slot = self:FindSeasonalSlot(id)
+    if slot == nil or SlotStatus(slot, definition) ~= "active" then return false, NewResult(false, "task_closed") end
+    if type(evidence) ~= "table" or evidence.event ~= definition.event then return false, NewResult(false, "invalid_evidence") end
+    for key, value in pairs(definition.params) do
+        if evidence[key] ~= value then return false, NewResult(false, "invalid_evidence") end
+    end
+    slot.progress = math.min(definition.target, slot.progress + amount)
+    return true, NewResult(true, SlotStatus(slot, definition), {id=id, progress=slot.progress})
+end
+
+function Core:StoreSeasonalReplay(request_id, result)
+    if self.seasonal_replays[request_id] == nil then
+        self.seasonal_replay_order[#self.seasonal_replay_order + 1] = request_id
+    end
+    self.seasonal_replays[request_id] = Copy(result)
+    while #self.seasonal_replay_order > MAX_REPLAYS do
+        self.seasonal_replays[table.remove(self.seasonal_replay_order, 1)] = nil
+    end
+end
+
+function Core:ClaimSeasonal(id, request_id)
+    if not IsServer() then return false, NewResult(false, "not_server") end
+    if not IsValidRequestId(request_id) then return false, NewResult(false, "invalid_request") end
+    local replay = self.seasonal_replays[request_id]
+    if replay ~= nil then return replay.ok, Copy(replay) end
+    if self.seasonal_busy or self.seasonal_pending[request_id] then return false, NewResult(false, "pending") end
+    local definition = SeasonalCatalog.ById(id)
+    if definition == nil or not self:ActiveSeason(definition.season) then return false, NewResult(false, "inactive_task") end
+    local slot = self:FindSeasonalSlot(id)
+    if slot == nil or SlotStatus(slot, definition) ~= "ready_to_claim" then return false, NewResult(false, "not_claimable") end
+    if self.seasonal_xp == nil then return false, NewResult(false, "xp_unavailable") end
+    local number = slot.claims + 1
+    local claim_key = self.seasonal.epoch .. ":" .. id .. ":" .. tostring(number)
+    self.seasonal_pending[request_id], self.seasonal_busy = true, true
+    -- The progression adapter owns XP tuning and idempotency for claim_key.
+    -- Retrying after an adapter exception uses this same key, never a new award.
+    local called, awarded = pcall(self.seasonal_xp, self.inst, id, definition.kind, number, claim_key)
+    if not called or awarded ~= true then
+        self.seasonal_pending[request_id], self.seasonal_busy = nil, false
+        return false, NewResult(false, "xp_failed")
+    end
+    if slot.claims == 0 then self.seasonal.first_claims = self.seasonal.first_claims + 1 end
+    slot.claims, slot.progress = number, 0
+    local result = NewResult(true, "seasonal_claimed", {
+        id=id, season=definition.season, epoch=self.seasonal.epoch, claims=number,
+        first_claims=self.seasonal.first_claims, claim_key=claim_key,
+    })
+    self:StoreSeasonalReplay(request_id, result)
+    self.seasonal_pending[request_id], self.seasonal_busy = nil, false
+    return true, Copy(result)
+end
+
+function Core:ClaimChest(player, season, milestone, request_id)
+    if not IsServer() or player ~= self.inst then return false, NewResult(false, "not_server") end
+    if not IsValidRequestId(request_id) then return false, NewResult(false, "invalid_request") end
+    local replay = self.seasonal_replays[request_id]
+    if replay ~= nil then return replay.ok, Copy(replay) end
+    if self.seasonal_busy or self.seasonal_pending[request_id] then return false, NewResult(false, "pending") end
+    local bundle = Rewards.GetBundle(season, milestone)
+    if bundle == nil then return false, NewResult(false, "invalid_chest") end
+    if not self:ActiveSeason(season) then return false, NewResult(false, "inactive_season") end
+    local state = self.seasonal
+    if state.chest_claimed[milestone] or state.first_claims < milestone then
+        return false, NewResult(false, "not_claimable")
+    end
+    local plan, error_code = Rewards.Preflight(player, season, milestone, bundle)
+    if plan == nil then return false, NewResult(false, error_code) end
+    self.seasonal_pending[request_id] = true
+    self.seasonal_busy = true
+    local staged
+    staged, error_code = Rewards.Stage(bundle, plan)
+    if staged == nil then
+        self.seasonal_pending[request_id], self.seasonal_busy = nil, false
+        return false, NewResult(false, error_code)
+    end
+    plan = Rewards.PlanDelivery(plan, staged)
+    local result = NewResult(true, "chest_claimed", {season=season, epoch=state.epoch, milestone=milestone, bundle=bundle})
+    -- Commit before the first inventory callback. Reentrant requests return this
+    -- exact result, and a different request cannot pay the same chest again.
+    state.chest_claimed[milestone] = true
+    self:StoreSeasonalReplay(request_id, result)
+    Rewards.Deliver(plan, staged)
+    self.seasonal_pending[request_id], self.seasonal_busy = nil, false
+    return true, Copy(result)
+end
+
+function Core:LoadSeasonal(saved, requests)
+    self.seasonal, self.seasonal_replays, self.seasonal_replay_order = nil, {}, {}
+    self.seasonal_pending, self.seasonal_busy = {}, false
+    if type(saved) == "table" and SeasonalCatalog.IsSeason(saved.season) and IsValidRequestId(saved.epoch)
+        and type(saved.slots) == "table" then
+        local slots, seen, counts, valid, first_claims = {}, {}, {once=0, repeatable=0}, true, 0
+        for key in pairs(saved.slots) do
+            if not IsFiniteInteger(key) or key < 1 or key > 20 then valid = false end
+        end
+        for index = 1, 20 do
+            local raw = saved.slots[index]
+            local definition = type(raw) == "table" and SeasonalCatalog.ById(raw.task_id) or nil
+            if definition == nil or definition.season ~= saved.season or seen[definition.id] then
+                valid = false
+                break
+            end
+            seen[definition.id] = true
+            local kind = definition.kind == "once" and "once" or "repeatable"
+            counts[kind] = counts[kind] + 1
+            local claims, progress = raw.claims, raw.progress
+            if not IsFiniteInteger(claims) or claims < 0 or claims > definition.max_claims then claims = 0 end
+            if not IsFiniteInteger(progress) or progress < 0 then progress = 0 end
+            progress = claims == definition.max_claims and 0 or math.min(progress, definition.target)
+            slots[index] = {task_id=definition.id, progress=progress, claims=claims}
+            if claims > 0 then first_claims = first_claims + 1 end
+        end
+        if valid and counts.once == 16 and counts.repeatable == 4 then
+            local chest_claimed = {}
+            local raw_chests = type(saved.chest_claimed) == "table" and saved.chest_claimed or {}
+            for _, milestone in ipairs({5, 10, 15, 20}) do
+                if raw_chests[milestone] == true and first_claims >= milestone then chest_claimed[milestone] = true end
+            end
+            self.seasonal = {version=2, season=saved.season, epoch=saved.epoch, slots=slots, first_claims=first_claims, chest_claimed=chest_claimed}
+        end
+    end
+    -- Keep only small canonical success records. Saved client payloads, arbitrary
+    -- item tables, pending reservations and false results never become authority.
+    for _, entry in ipairs(type(requests) == "table" and requests or {}) do
+        local raw = type(entry) == "table" and entry.result or nil
+        if type(entry) == "table" and IsValidRequestId(entry.id) and type(raw) == "table"
+            and raw.ok == true and SeasonalCatalog.IsSeason(raw.season) and IsValidRequestId(raw.epoch) then
+            local result = nil
+            local current = self.seasonal ~= nil and self.seasonal.epoch == raw.epoch and self.seasonal.season == raw.season
+            if raw.code == "chest_claimed" then
+                local bundle = Rewards.GetBundle(raw.season, raw.milestone)
+                if bundle ~= nil and (not current or self.seasonal.chest_claimed[raw.milestone]) then
+                    result = NewResult(true, "chest_claimed", {season=raw.season, epoch=raw.epoch, milestone=raw.milestone, bundle=bundle})
+                end
+            elseif raw.code == "seasonal_claimed" then
+                local definition = SeasonalCatalog.ById(raw.id)
+                local slot = current and self:FindSeasonalSlot(raw.id) or nil
+                if definition ~= nil and definition.season == raw.season and IsFiniteInteger(raw.claims)
+                    and raw.claims >= 1 and raw.claims <= definition.max_claims and IsFiniteInteger(raw.first_claims)
+                    and raw.first_claims >= 1 and raw.first_claims <= 20
+                    and (not current or slot ~= nil and slot.claims >= raw.claims and self.seasonal.first_claims >= raw.first_claims) then
+                    result = NewResult(true, "seasonal_claimed", {id=raw.id, season=raw.season, epoch=raw.epoch,
+                        claims=raw.claims, first_claims=raw.first_claims, claim_key=raw.epoch .. ":" .. raw.id .. ":" .. tostring(raw.claims)})
+                end
+            end
+            if result ~= nil then self:StoreSeasonalReplay(entry.id, result) end
+        end
+    end
 end
 
 function Core:GetReplay(request_id)
@@ -223,6 +429,7 @@ end
 
 function Core:Load(data)
     local state = type(data) == "table" and data or {}
+    self:LoadSeasonal(state.seasonal, state.seasonal_requests)
     self.achievements, self.replays, self.replay_order = {}, {}, {}
     local saved_achievements = type(state.achievements) == "table" and state.achievements or {}
     self.earned = 0
@@ -247,15 +454,21 @@ function Core:GetSaveData()
     for _, request_id in ipairs(self.replay_order) do
         table.insert(replays, { id = request_id, result = Copy(self.replays[request_id]) })
     end
+    local seasonal_requests = {}
+    for _, request_id in ipairs(self.seasonal_replay_order) do
+        seasonal_requests[#seasonal_requests + 1] = {id=request_id, result=Copy(self.seasonal_replays[request_id])}
+    end
     return {
         version = 1, achievements = Copy(self.achievements),
         perks = { levels = Copy(self.levels), unlocked = Copy(self.unlocked) }, replays = replays,
+        seasonal = Copy(self.seasonal), seasonal_requests = seasonal_requests,
     }
 end
 
 function Core:GetSnapshot()
     return {
         version = 1, achievements = Copy(self.achievements),
+        seasonal = Copy(self.seasonal),
         perks = { levels = Copy(self.levels), unlocked = Copy(self.unlocked) },
         earned = self.earned, spent = self.spent, balance = self:Balance(),
     }
