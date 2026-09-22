@@ -139,12 +139,21 @@ class ActivityReachability(unittest.TestCase):
             local manure=entity("poop"); manure.components.fertilizer={nutrients={1,1,1}}
             function manure:OnUsedAsItem() end
             action("DEPLOY",nil,0,true,a,manure):Do()
+            action("DEPLOY_TILEARRIVE",nil,0,true,a,manure):Do()
+            action("DEPLOY_TILEARRIVE",nil,1,false,a,manure):Do()
+            action("DEPLOY_TILEARRIVE",nil,1,true,a,manure):Fail()
+            action("DEPLOY_TILEARRIVE",nil,1,true,b,manure):Do()
+            action("DEPLOY_TILEARRIVE",nil,1,true,a,entity("sapling")):Do()
             action("DEPLOY",nil,1,true,a,entity("sapling")):Do()
             action("FERTILIZE",entity("campfire"),1,true,a,manure):Do()
             assert(progress(a,"farming_fertilize_plants")==0)
             action("DEPLOY",nil,1,true,a,manure):Do()
             action("FERTILIZE",farm,0,true,a,manure):Do()
             assert(progress(a,"farming_fertilize_plants")==2)
+            -- Native tile_deploy fertilizer uses this action ID on farming soil.
+            action("DEPLOY_TILEARRIVE",nil,1,true,a,manure):Do()
+            assert(progress(a,"farming_fertilize_plants")==3,"native tile fertilizer must credit its committing actor once")
+            assert(progress(b,"farming_fertilize_plants")==0)
             a:PushEvent("tilling"); assert(progress(a,"farming_till_soil")==1)
         ''')
 
@@ -167,6 +176,29 @@ class ActivityReachability(unittest.TestCase):
             a.components.inventory.overflow.slots[1].components.stackable.size=97
             a.components.inventory.overflow.slots[1]:PushEvent("stacksizechange"); a:flush()
             assert(progress(a,"collection_lingshi4")==100)
+        ''')
+
+    def test_dropped_and_removed_items_do_not_retain_former_players(self):
+        self.lua.execute('''
+            kept_items={}; former_players=setmetatable({}, {__mode="v"})
+            for index,event in ipairs({"ondropped","onremove"}) do
+                local owner=player("owner_"..event)
+                local held=item(owner,"ttk_lingshi4",4)
+                kept_items[index]=held; former_players[index]=owner
+                owner.components.inventory.itemslots[1]=held
+                held:PushEvent("onputininventory"); owner:flush()
+                assert(progress(owner,"collection_lingshi4")==4)
+                held.owner=nil; owner.components.inventory.itemslots={}
+                held:PushEvent(event)
+                assert(owner._ttk_ownership_pending,"item lifecycle must still queue former-owner observation")
+                owner:flush()
+                assert(not owner._ttk_ownership_pending)
+                assert(progress(owner,"collection_lingshi4")==4,"loss must preserve observed high-water progress")
+            end
+            AllPlayers={}
+            collectgarbage("collect"); collectgarbage("collect")
+            assert(former_players[1]==nil,"a surviving dropped item must not retain its former player")
+            assert(former_players[2]==nil,"a referenced removed item must not retain its former player")
         ''')
 
     def test_native_cook_commit_chef_save_load_and_callback_preservation(self):

@@ -245,6 +245,8 @@ end
 -- fresh event tables, bag transfers, and stack splits are not new acquisitions.
 local inventory_depth = 0
 local pending_inventory = setmetatable({}, { __mode="k" })
+-- Dropped/removed items may outlive their former player; keep neither alive.
+local last_inventory_owner = setmetatable({}, { __mode="kv" })
 
 local function ItemAmount(item)
     local stack = item.components ~= nil and item.components.stackable or nil
@@ -305,7 +307,7 @@ local function CreditInventoryItem(item)
     local inventoryitem = item.components.inventoryitem
     local player = inventoryitem ~= nil and inventoryitem:GetGrandOwner() or nil
     if ResolveSender(player) == nil then return end
-    item._ttk_achievement_last_owner = player
+    last_inventory_owner[item] = player
     QueueOwnership(player)
     local amount = ItemAmount(item)
     local receipts = Receipts(item, amount)
@@ -353,12 +355,13 @@ local function OnFarmAction(inst, data)
         or Seen(inst._ttk_achievement_state, "farm_actions", act) then return end
     local id = act.action.id
     local water = id == "POUR_WATER" or id == "POUR_WATER_GROUNDTILE"
-    if not water and id ~= "FERTILIZE" and id ~= "DEPLOY" then return end
+    local deploy = id == "DEPLOY" or id == "DEPLOY_TILEARRIVE"
+    if not water and id ~= "FERTILIZE" and not deploy then return end
     local fertilizer = act.invobject ~= nil and act.invobject.components ~= nil
         and act.invobject.components.fertilizer ~= nil
     if not water and not fertilizer then return end
     local eligible = FarmTarget(act.target)
-    if act.target == nil and (water or id == "DEPLOY") then
+    if act.target == nil and (water or deploy) then
         local pt = act:GetActionPoint()
         eligible = pt ~= nil and G.WORLD_TILES ~= nil
             and G.TheWorld.Map:GetTileAtPoint(pt:Get()) == G.WORLD_TILES.FARMING_SOIL
@@ -504,8 +507,12 @@ AddComponentPostInit("inventoryitem", function(self)
     if not Master() or self._ttk_achievement_hook then return end
     self._ttk_achievement_hook = true
     self.inst:ListenForEvent("onputininventory", function(item) CreditInventoryItem(item) end)
-    self.inst:ListenForEvent("ondropped", function(item) QueueOwnership(item._ttk_achievement_last_owner) end)
-    self.inst:ListenForEvent("onremove", function(item) QueueOwnership(item._ttk_achievement_last_owner) end)
+    local function LostOwner(item)
+        QueueOwnership(last_inventory_owner[item])
+        last_inventory_owner[item] = nil
+    end
+    self.inst:ListenForEvent("ondropped", LostOwner)
+    self.inst:ListenForEvent("onremove", LostOwner)
 end)
 AddComponentPostInit("container", function(self)
     if not Master() or self._ttk_achievement_hook then return end
