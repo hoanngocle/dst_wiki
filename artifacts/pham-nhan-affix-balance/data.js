@@ -102,12 +102,17 @@
     {tier:'I', code:'add_max_use_small', id:87, name:'Bền Bỉ I', value:'+20-80 độ bền'},
     {tier:'II', code:'add_max_use_big', id:88, name:'Bền Bỉ II', value:'+40-160 độ bền'},
   ]});
+  add({ code:'add_max_use_tier_iii', name:'Bền Bỉ III', family:'Bền Bỉ', tier:'III', category:'Độ bền', slot:'Trang bị có độ bền', status:'Đề xuất - dùng ngay', effectKey:'add_max_use', current:'Chưa có', proposed:'+120-280 độ bền', cap:'Chỉ 1 viên Bền Bỉ', exclusiveGroup:'durability_capacity', source:SOURCE_ENCHANT, note:'Dùng lại cơ chế cộng độ bền tối đa hiện có.' });
+  add({ code:'add_max_use_tier_iv', name:'Bền Bỉ IV', family:'Bền Bỉ', tier:'IV', category:'Độ bền', slot:'Trang bị có độ bền', status:'Đề xuất - dùng ngay', effectKey:'add_max_use', current:'Chưa có', proposed:'+240-400 độ bền', cap:'Chỉ 1 viên Bền Bỉ', exclusiveGroup:'durability_capacity', source:SOURCE_ENCHANT, note:'Dùng lại cơ chế cộng độ bền tối đa hiện có.' });
+  add({ code:'add_max_use_tier_v', name:'Bền Bỉ V', family:'Bền Bỉ', tier:'V', category:'Độ bền', slot:'Trang bị có độ bền', status:'Đề xuất - dùng ngay', effectKey:'add_max_use', current:'Chưa có', proposed:'+360-640 độ bền', cap:'Chỉ 1 viên Bền Bỉ', exclusiveGroup:'durability_capacity', source:SOURCE_ENCHANT, note:'Dùng lại cơ chế cộng độ bền tối đa hiện có.' });
   existingTierFamily({ family:'Bạo Kích', category:'Tấn công', slot:'Không phải giáp', effectKey:'criticalHitRate + criticalHitEffect', entries:[
     {tier:'I', code:'add_critical_hit_rate_small', id:79, name:'Bạo Kích I', value:'+1-10% tỷ lệ và ST chí mạng'},
     {tier:'II', code:'add_critical_hit_rate_med', id:80, name:'Bạo Kích II', value:'+1-20% tỷ lệ và ST chí mạng'},
     {tier:'III', code:'add_critical_hit_rate_big', id:77, name:'☆Bạo Kích III', value:'+1-30% tỷ lệ và ST chí mạng'},
     {tier:'IV', code:'add_critical_hit_rate_special', id:78, name:'★Bạo Kích IV', value:'+1-50% tỷ lệ và ST chí mạng'},
   ]});
+  proposalFamily({ family:'Tỷ Lệ Bạo Kích', code:'equip_critical_rate', effectKey:'criticalHitRate', category:'Tấn công', slot:'Không phải giáp', status:'Đề xuất - adapter', values:['1-5%','3-10%','5-15%','10-20%','15-30%'], cap:'Tổng 100%', exclusiveGroup:'critical_rate', source:`${SOURCE_ENCHANT} + ${SOURCE_EFFECTS}`, note:'Tách phần tỷ lệ khỏi Bạo Kích cũ. Effect key đã có, cần affix riêng.' });
+  proposalFamily({ family:'Sát Thương Bạo Kích', code:'equip_critical_damage', effectKey:'criticalHitEffect', category:'Tấn công', slot:'Không phải giáp', status:'Đề xuất - adapter', values:['2-10%','6-20%','10-30%','20-40%','30-60%'], cap:'Không cap', exclusiveGroup:'critical_damage', source:`${SOURCE_ENCHANT} + ${SOURCE_EFFECTS}`, note:'Mỗi khoảng gấp đôi khoảng Tỷ Lệ Bạo Kích cùng tier.' });
   existingTierFamily({ family:'Liên Kích', category:'Tấn công', slot:'Vũ khí', effectKey:'atk_speed', exclusiveGroup:'attack_speed', entries:[
     {tier:'I', code:'atk_speed_small', id:75, name:'Liên Kích I', value:'+5-10% tốc đánh'},
     {tier:'II', code:'atk_speed_med', id:76, name:'Liên Kích II', value:'+15-25% tốc đánh'},
