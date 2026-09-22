@@ -171,3 +171,10 @@ The original user-approved execution method is subagent-driven development. Task
 - [ ] Make health/sanity regeneration buffs retain deadlines and save/load duration; reload must not replay immediate health healing.
 - [ ] Preserve a saved claimed reward exactly when valid, reconstruct earned Star from persisted awarded values, and only use catalog reward for unclaimed/missing legacy claim fields.
 - [ ] Run native combined-registration, condition-level reachability, edible removal, effects save/load, historical reward, all focused suites, wiki export/build, then fresh whole-branch review.
+
+### Task 21: Native Food and Seasonal Prefab Corrections
+
+- [ ] Correct active food conditions to native `perogies` and `hotchili`, preserving achievement IDs/rewards/targets.
+- [ ] Correct seasonal conditions to native `frogglebunwich`, `coldfirepit`, and `perogies`.
+- [ ] Add executable eater/build/seasonal route tests that reject the obsolete IDs and advance only on the real native products.
+- [ ] Regenerate the canonical wiki export, run catalog/seasonal/export/wiki checks, and send the five-ID diff to a scoped reviewer.
