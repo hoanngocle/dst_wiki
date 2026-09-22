@@ -69,11 +69,14 @@ local function Route(inst, tracker, evidence, amount, absolute)
     if component == nil then return end
     for _, row in ipairs(AchievementCatalog.ByEvent(tracker)) do
         if row.id ~= "food_cultivation_pill_path" and Matches(row.params, evidence) then
+            -- Only distinct rows consume the canonical prefab string. Keep the
+            -- complete server event evidence for ordinary and seasonal routes.
+            local progress_evidence = row.distinct == "prefab" and evidence.prefab or evidence
             if absolute then
-                AdvanceTo(component, row, row.target, evidence)
+                AdvanceTo(component, row, row.target, progress_evidence)
             else
                 local saved = component.core.achievements[row.id]
-                if saved == nil or saved.progress < row.target then component:Advance(row.id, amount or 1, evidence) end
+                if saved == nil or saved.progress < row.target then component:Advance(row.id, amount or 1, progress_evidence) end
             end
         end
     end

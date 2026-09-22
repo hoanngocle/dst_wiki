@@ -236,6 +236,80 @@ class AchievementLuaStateTests(unittest.TestCase):
             state = Core.New({})
         ''')
 
+    def test_eater_adapter_normalizes_only_distinct_prefab_evidence(self):
+        """Real Eat -> Route -> component -> Core must credit each luck tier once."""
+        self.lua.execute('''
+            GLOBAL = _G
+            env = {}
+            TheWorld = {ismastersim=true, state={season="spring"}}
+            function Class(ctor)
+                local cls = {}; cls.__index = cls
+                return setmetatable(cls, {__call=function(_, inst)
+                    local self = setmetatable({}, cls); ctor(self, inst); return self
+                end})
+            end
+            function AddReplicableComponent() end
+            function AddPlayerPostInit(fn) player_init = fn end
+            function AddComponentPostInit() end
+            function AddModRPCHandler() end
+            function modimport() end
+            function net_string() return {set=function() end} end
+            local Progress = require("components/ttk_achievement_progress")
+            player = {components={}, events={}, _ttk_achievement_perks={}}
+            function player:IsValid() return true end
+            function player:HasTag(tag) return tag == "player" end
+            function player:ListenForEvent(event, fn)
+                self.events[event] = self.events[event] or {}
+                table.insert(self.events[event], fn)
+            end
+            function player:PushEvent(event, data)
+                for _, fn in ipairs(self.events[event] or {}) do fn(self, data) end
+            end
+            function player:WatchWorldState() end
+            function player:DoTaskInTime() end
+            player.components.hunger = {IsStarving=function() return true end}
+            player.components.eater = {inst=player, Eat=function(self, food)
+                if food.reject then return false end
+                self.inst:PushEvent("oneat", {food=food})
+                self.inst:PushEvent("oneat", {food=food})
+                food.prefab = nil -- removal must not discard the captured prefab
+                return true
+            end}
+            progress = Progress(player)
+            player.components.ttk_achievement_progress = progress
+            local advance = progress.Advance
+            ordinary_evidence = {}
+            function progress:Advance(ident, amount, evidence)
+                if ident ~= id then ordinary_evidence[ident] = evidence end
+                return advance(self, ident, amount, evidence)
+            end
+        ''')
+        self.lua.execute((MOD / "main/ttk_achievement.lua").read_text(encoding="utf-8"))
+        self.lua.execute('''
+            player_init(player)
+            local eater = player.components.eater
+            assert(not eater:Eat({prefab="nn_liquidluck_3", reject=true}))
+            assert(progress.core.achievements[id] == nil)
+            for _ = 1, 3 do assert(eater:Eat({prefab="nn_liquidluck"})) end
+            local row = progress.core.achievements[id]
+            assert(row ~= nil and row.progress == 1, "Eat luck I three times must credit one tier")
+            assert(not progress:ClaimAchievement(id, "early-adapter"))
+            assert(eater:Eat({prefab="nn_liquidluck_2"}))
+            assert(progress.core.achievements[id].progress == 2)
+            progress:OnLoad(progress:OnSave())
+            assert(eater:Eat({prefab="nn_liquidluck_3"}))
+            assert(progress.core.achievements[id].progress == 3, "Eat I+II+III must complete trinity")
+            assert(progress:ClaimAchievement(id, "adapter-claim"))
+            progress:OnLoad(progress:OnSave())
+            assert(not progress:ClaimAchievement(id, "adapter-claim-again"))
+            for _ = 1, 3 do assert(eater:Eat({prefab="meatballs"})) end
+            assert(progress.core.achievements.food_meatballs.progress == 3)
+            local evidence = ordinary_evidence.food_meatballs
+            assert(type(evidence) == "table" and evidence.prefab == "meatballs" and evidence.starving)
+            assert(eater:Eat({prefab="xd_danyao_jq"}))
+            assert(progress.core.achievements.food_cultivation_pill_path == nil)
+        ''')
+
     def test_distinct_food_evidence_round_trips_and_claims_once(self):
         self.lua.execute('''
             for _ = 1, 3 do state:Advance(id, 1, "nn_liquidluck") end
