@@ -102,7 +102,9 @@ class AchievementCatalogTests(unittest.TestCase):
 
     def test_exact_contract_totals_fields_and_distribution(self):
         self.assertEqual(231, len(self.rows))
-        self.assertEqual(set(name for name, _ in GROUPS), set(row["group"] for row in self.rows))
+        observed = [row["group"] for row in self.rows]
+        self.assertEqual([name for name, _ in GROUPS], list(dict.fromkeys(observed)))
+        self.assertEqual(sum(1 for before, after in zip(observed, observed[1:]) if before != after), len(GROUPS) - 1)
         self.assertEqual(dict(GROUPS), Counter(row["group"] for row in self.rows))
         self.assertEqual(Counter({"2": 71, "3": 57, "5": 55, "8": 34, "10": 14}), Counter(row["reward"] for row in self.rows))
         self.assertEqual(1000, sum(int(row["reward"]) for row in self.rows))
