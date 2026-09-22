@@ -17,6 +17,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[3]
 RANK_DEFS = ROOT / "mods/PhamNhanTuTien/scripts/guild/hh_rank_defs.lua"
 RANK_COMPONENT = ROOT / "mods/PhamNhanTuTien/scripts/components/hh_rank.lua"
+GUILD_MAIN = ROOT / "mods/PhamNhanTuTien/main/hh_guild_main.lua"
 EXAM_DEFS = ROOT / "mods/PhamNhanTuTien/scripts/guild/hh_rank_exam_defs.lua"
 SHOP_DEFS = ROOT / "mods/PhamNhanTuTien/scripts/guild/hh_guild_shop_defs.lua"
 EXPECTED = {
@@ -130,6 +131,7 @@ class ExtendedRankContractTests(unittest.TestCase):
     def setUpClass(cls) -> None:
         cls.defs = RANK_DEFS.read_text(encoding="utf-8")
         cls.component = RANK_COMPONENT.read_text(encoding="utf-8")
+        cls.guild_main = GUILD_MAIN.read_text(encoding="utf-8")
         cls.ranks = rank_table(cls.defs, "RANK")
         cls.names = name_table(cls.defs)
         cls.requirements = rank_table(cls.defs, "LEVEL_REQUIREMENTS")
@@ -174,6 +176,20 @@ class ExtendedRankContractTests(unittest.TestCase):
         for value in (6.5, 0, 9, float("nan"), float("inf"), float("-inf"), "7", None):
             self.assertFalse(is_valid_rank(value, self.ranks), value)
             self.assertEqual(load_rank(value, self.ranks), self.ranks["E"], value)
+
+    def test_rank_netvar_can_replicate_sss_without_duplicate_declaration(self) -> None:
+        """A three-bit tinybyte silently truncates SSS=8 instead of replicating it to clients."""
+        declarations = re.findall(
+            r'inst\.hh_guild_rank\s*=\s*(net_\w+)\(inst\.GUID, "hh_guild\.rank", "hh_guild_rankdirty"\)',
+            self.guild_main,
+        )
+        self.assertEqual(declarations, ["net_smallbyte"])
+        capacity = {"net_tinybyte": 7, "net_smallbyte": 255}
+        self.assertGreaterEqual(capacity[declarations[0]], self.ranks["SSS"])
+        self.assertRegex(
+            component_method(self.component, "Sync"),
+            r"inst\.hh_guild_rank:set\(self\.rank\)",
+        )
 
     def test_extended_ranks_do_not_register_gameplay_rows(self) -> None:
         """SS/SSS stay labels: no exam, shop, EXP, combat, or bonus consumer registers them."""
