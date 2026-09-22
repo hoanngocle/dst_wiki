@@ -60,6 +60,10 @@ SCREENS = {
     "forge-cleanse": artifact_preview("than-binh-pho/v4/thanh-tay.png"),
     "forge-stone-change": artifact_preview("than-binh-pho/v4/duc-linh.png"),
     "forge-inherit": artifact_preview("than-binh-pho/v4/ke-thua.png"),
+    "strengthen-empty": artifact_preview("lam-phuong-ui/trong.png"),
+    "strengthen-ready": artifact_preview("lam-phuong-ui/cuong-hoa.png"),
+    "strengthen-protected": artifact_preview("lam-phuong-ui/bao-ve.png"),
+    "strengthen-maxed": artifact_preview("lam-phuong-ui/toi-da.png"),
 }
 
 

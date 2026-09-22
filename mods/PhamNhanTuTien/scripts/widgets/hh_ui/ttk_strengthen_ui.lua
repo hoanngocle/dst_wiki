@@ -2,13 +2,15 @@ local Widget = require('widgets/widget')
 local Image = require('widgets/image')
 local Text = require('widgets/text')
 local ImageButton = require('widgets/imagebutton')
-local FONT, FS = 'ttk_forge_serif', 97 / 80
+local Theme = require('widgets/hh_ui/ttk_unified_theme')
+local FS = 97 / 80
+local function Font() return Theme.GetFont() end
 local SKIN = 'images/ttk_forge/controls.xml'
 local WHITE, BLUE, MUTED = {.92,.96,1,1}, {.48,.80,1,1}, {.66,.73,.82,1}
 local WARN = {1,.71,.40,1}
 
 local function Label(parent, text, x, y, size, colour)
-    local t = parent:AddChild(Text(FONT, size * FS, text, colour or WHITE))
+    local t = parent:AddChild(Text(Font(), size * FS, text, colour or WHITE))
     t:SetPosition(x,y); t:SetClickable(false)
     return t
 end
@@ -26,7 +28,7 @@ local function Button(parent,text,x,y,w,h,fn)
     local b=parent:AddChild(ImageButton(SKIN,'primary.tex'))
     b:SetPosition(x,y); b:ForceImageSize(w,h)
     b:SetNormalScale(1); b:SetFocusScale(1.015)
-    b:SetFont(FONT); b:SetDisabledFont(FONT); b:SetTextSize(25*FS); b:SetText(text)
+    b:SetFont(Font()); b:SetDisabledFont(Font()); b:SetTextSize(25*FS); b:SetText(text)
     b:SetTextColour(unpack(WHITE)); b:SetTextFocusColour(1,1,1,1)
     b:SetTextDisabledColour(.48,.56,.65,1)
     b:SetImageNormalColour(.60,.85,1,1); b:SetImageFocusColour(.75,.95,1,1)
@@ -79,9 +81,20 @@ function StrengthenUI:AttachContainerWidget(native)
     slot.base_scale,slot.highlight_scale=1.3,1.3
     slot.bgimage:SetTexture(SKIN,'slot.tex'); slot.bgimage:SetSize(90,88)
     slot.bgimage:SetTint(.68,.88,1,1)
-    slot:SetHoverText('Trang bị cần cường hóa',{font=FONT,font_size=18*FS})
+    slot:SetHoverText('Trang bị cần cường hóa',{font=Font(),font_size=18*FS})
     slot:SetOnTileChangedFn(function() self:Refresh(self.data) end)
     slot:MoveToFront()
+end
+
+function StrengthenUI:ViewState(data,item)
+    data=data or {}
+    if not item or not item.Network or data.item_id~=tostring(item.Network:GetNetworkID()) then
+        return 'empty'
+    end
+    local level=tonumber(data.c_level) or 0
+    if level>=13 then return 'maxed' end
+    if level+1>=10 and data.has_protection then return 'protected' end
+    return 'ready'
 end
 
 function StrengthenUI:Refresh(data)
