@@ -1,10 +1,10 @@
 {
   "achievements": [
     {
-      "description": "Hoàn thành thử thách sinh tồn autumn.",
+      "description": "Còn sống khi mùa thu kết thúc và thế giới chuyển mùa.",
       "group": "survival",
       "id": "survive_autumn",
-      "name": "Sinh tồn autumn",
+      "name": "Qua Mùa Thu",
       "params": {
         "key": "autumn"
       },
@@ -15,10 +15,10 @@
       "visibility": "visible"
     },
     {
-      "description": "Hoàn thành thử thách sinh tồn winter.",
+      "description": "Còn sống khi mùa đông kết thúc và thế giới chuyển mùa.",
       "group": "survival",
       "id": "survive_winter",
-      "name": "Sinh tồn winter",
+      "name": "Qua Mùa Đông",
       "params": {
         "key": "winter"
       },
@@ -29,10 +29,10 @@
       "visibility": "visible"
     },
     {
-      "description": "Hoàn thành thử thách sinh tồn spring.",
+      "description": "Còn sống khi mùa xuân kết thúc và thế giới chuyển mùa.",
       "group": "survival",
       "id": "survive_spring",
-      "name": "Sinh tồn spring",
+      "name": "Qua Mùa Xuân",
       "params": {
         "key": "spring"
       },
@@ -43,10 +43,10 @@
       "visibility": "visible"
     },
     {
-      "description": "Hoàn thành thử thách sinh tồn summer.",
+      "description": "Còn sống khi mùa hạ kết thúc và thế giới chuyển mùa.",
       "group": "survival",
       "id": "survive_summer",
-      "name": "Sinh tồn summer",
+      "name": "Qua Mùa Hạ",
       "params": {
         "key": "summer"
       },
@@ -57,10 +57,10 @@
       "visibility": "visible"
     },
     {
-      "description": "Hoàn thành thử thách sinh tồn hundred days.",
+      "description": "Còn sống qua một trăm lần kết thúc ngày trong thế giới.",
       "group": "survival",
       "id": "survive_hundred_days",
-      "name": "Sinh tồn hundred days",
+      "name": "Sinh Tồn Trăm Ngày",
       "params": {
         "key": "hundred_days"
       },
@@ -71,10 +71,10 @@
       "visibility": "visible"
     },
     {
-      "description": "Hoàn thành thử thách sinh tồn revive.",
+      "description": "Hồi sinh từ dạng hồn ma và trở lại thân thể sống.",
       "group": "survival",
       "id": "survive_revive",
-      "name": "Sinh tồn revive",
+      "name": "Trở Về Từ Cõi Chết",
       "params": {
         "key": "revive"
       },
@@ -85,24 +85,24 @@
       "visibility": "visible"
     },
     {
-      "description": "Hoàn thành thử thách sinh tồn rescue friend.",
+      "description": "Còn sống qua ba mươi lần kết thúc ngày; có thể hoàn thành khi chơi một mình.",
       "group": "survival",
       "id": "survive_rescue_friend",
-      "name": "Sinh tồn rescue friend",
+      "name": "Sinh Tồn Ba Mươi Ngày",
       "params": {
-        "key": "rescue_friend"
+        "key": "solo_days"
       },
       "reward": 2,
       "status": "active",
-      "target": 1,
+      "target": 30,
       "tracker": "survival_event",
       "visibility": "visible"
     },
     {
-      "description": "Hoàn thành thử thách sinh tồn heat.",
+      "description": "Sống sót sau khi thân nhiệt quá nóng và trở về mức an toàn.",
       "group": "survival",
       "id": "survive_heat",
-      "name": "Sinh tồn heat",
+      "name": "Thoát Cơn Nóng",
       "params": {
         "key": "heat"
       },
@@ -113,10 +113,10 @@
       "visibility": "visible"
     },
     {
-      "description": "Hoàn thành thử thách sinh tồn cold.",
+      "description": "Sống sót sau khi thân nhiệt đóng băng và trở về mức an toàn.",
       "group": "survival",
       "id": "survive_cold",
-      "name": "Sinh tồn cold",
+      "name": "Thoát Cơn Lạnh",
       "params": {
         "key": "cold"
       },
@@ -127,10 +127,10 @@
       "visibility": "visible"
     },
     {
-      "description": "Hoàn thành thử thách sinh tồn night.",
+      "description": "Sống từ lúc đêm bắt đầu cho tới bình minh mà không chết.",
       "group": "survival",
       "id": "survive_night",
-      "name": "Sinh tồn night",
+      "name": "Đón Bình Minh",
       "params": {
         "key": "night"
       },
@@ -381,7 +381,8 @@
       "visibility": "visible"
     },
     {
-      "description": "Hoàn thành thử thách ẩm thực Phúc Lạc Tam Dược.",
+      "description": "Dùng đủ Phúc Lạc Dược I, II và III.",
+      "distinct": "prefab",
       "group": "food",
       "id": "food_liquid_luck_trinity",
       "name": "Phúc Lạc Tam Dược",
@@ -2908,17 +2909,17 @@
       "visibility": "visible"
     },
     {
-      "description": "Dùng Cuộn Tẩy Tủy để hoàn nguyên trang bị.",
+      "description": "Cường hóa thành công một trang bị lần đầu tiên.",
       "group": "enhancement",
       "id": "enhancement_relic_one",
-      "name": "Nghi Thức Tẩy Luyện",
+      "name": "Cường Hóa Thành Công Đầu Tiên",
       "params": {
-        "prefab": "wb_strengthen_clearpaper"
+        "category": "any"
       },
       "reward": 8,
       "status": "active",
       "target": 1,
-      "tracker": "strengthen_clear_used",
+      "tracker": "strengthen_success",
       "visibility": "visible"
     },
     {
@@ -3333,12 +3334,13 @@
       "visibility": "visible"
     },
     {
-      "description": "Mở lại kho hàng sau một lượt hầm ngục.",
+      "description": "Dùng Phiếu Bổ Sung để bổ sung hàng đã bán hết trong cửa hàng hầm ngục.",
       "group": "gacha_shop",
       "id": "gacha_shop_shop_refresh",
-      "name": "Làm Mới Kho Hàng",
+      "name": "Bổ Sung Kho Hàng",
       "params": {
-        "source": "hh_dungeon_shop"
+        "source": "hh_dungeon_shop",
+        "use_id": "dq_stock_token"
       },
       "reward": 8,
       "status": "active",

@@ -23,7 +23,7 @@ class ActivityReachability(unittest.TestCase):
             function AddPlayerPostInit(fn) player_init=fn end
             function AddComponentPostInit(name,fn) hooks[name]=fn end
             function AddPrefabPostInit(name,fn) prefab_hooks[name]=fn end
-            function AddModRPCHandler() end
+            rpc={}; function AddModRPCHandler(_,name,fn) rpc[name]=fn end
             function modimport() end
             function net_string() return {set=function() end} end
             function GetTime() return 0 end
@@ -31,6 +31,7 @@ class ActivityReachability(unittest.TestCase):
             package.loaded["achievement/ttk_perk_effects"]={Install=function() end,Apply=function() end}
             package.loaded.cooking={CalculateRecipe=function() return "meatballs",1 end,
                 GetRecipe=function() return {perishtime=100} end}
+            math.randomseed(18092026)
             function entity(prefab)
                 local e={prefab=prefab,components={},events={},watch={},tasks={},tags={},valid=true,Transform={SetPosition=function() end}}
                 function e:IsValid() return self.valid end
@@ -84,6 +85,23 @@ class ActivityReachability(unittest.TestCase):
             for name, var in (("bufferedaction", "NativeAction"), ("components/farmplantable", "Plantable"), ("components/stewer", "Stewer")):
                 self.lua.execute(var + " = (function() " + archive.read("scripts/" + name + ".lua").decode() + " end)()")
         self.lua.execute((MOD / "main/ttk_achievement.lua").read_text(encoding="utf-8"))
+        if getattr(self, "audit_routes", False):
+            self.lua.execute('''
+                audit_hits={}
+                local catalog=require("achievement/ttk_achievement_catalog")
+                local core=require("achievement/ttk_achievement_core")
+                local advance=core.Advance
+                function core:Advance(id,amount,evidence)
+                    -- Observe the real route; do not replace its authority guard.
+                    assert(TheWorld.ismastersim==true,id.." routed client evidence")
+                    local before=self.achievements[id]
+                    local value=before and before.progress or 0
+                    local accepted,result=advance(self,id,amount,evidence)
+                    local after=self.achievements[id]
+                    if after and after.progress>value then audit_hits[catalog.ById(id).tracker]=true end
+                    return accepted,result
+                end
+            ''')
 
     def test_pick_regrowth_fish_identity_and_two_actors(self):
         self.lua.execute('''
@@ -766,6 +784,258 @@ class GuildDungeonReachability(unittest.TestCase):
             TheWorld.ismastershard=true; TheWorld.ismastersim=false; wallet:Add(100,"reward")
             assert(progress(b,"dungeon_guild_earn_dungeon_coin")==0)
         ''')
+
+
+class AcceptanceRoutes(unittest.TestCase):
+    setUp = ActivityReachability.setUp
+
+    def test_client_player_receipts_cannot_advance(self):
+        self.lua.execute('''
+            local p=player("client-probe",function(p)
+                p.components.eater={inst=p,Eat=function(s,food) s.inst:PushEvent("oneat",{food=food}); return true end}
+                p.components.hh_leveling={level=100}
+                p.components.hh_rank={GetRank=function() return 8 end}
+            end,true)
+            local crop=entity("farm_plant_carrot"); crop.tags.farm_plant=true
+            local victim=entity("spider"); victim.components.health={IsDead=function() return true end}
+            local boss=entity("deerclops"); boss.components.health={IsDead=function() return true end}
+            TheWorld.ismastersim=false
+            p.components.eater:Eat({prefab="meatballs"})
+            for _,event in ipairs({
+                {"builditem",{item=entity("xd_liandanlu")}},
+                {"buildstructure",{item=entity("researchlab")}},
+                {"finishedwork",{target=entity("evergreen"),action={id="CHOP"}}},
+                {"picksomething",{object=crop}}, {"killed",{victim=victim}}, {"killed",{victim=boss}},
+                {"hh_levelup",{level=100}}, {"hh_rank_changed",{source="claim_exam"}},
+                {"hh_guild_quest_assigned",{}}, {"hh_guild_quest_completed",{}},
+                {"hh_guild_opened",{}}, {"hh_guild_shop_purchased",{cost=10,count=1}},
+                {"hh_dungeon_entered",{}}, {"hh_dungeon_completed",{}},
+                {"hh_dungeon_coin_changed",{amount=100}}, {"hh_dungeon_shop_open_server",{}},
+                {"hh_dungeon_shop_purchased",{}}, {"hh_dungeon_stock_token_used",{}},
+                {"itemget",{item=item(p,"twigs",10)}},
+                {"itemget",{item=item(p,"redgem",10)}},
+                {"fishingcollect",{fish=entity("fish")}}, {"tilling",{}},
+            }) do p:PushEvent(event[1],event[2]) end
+            world("season","winter"); world("cycles",1); p:flush()
+            assert(next(p.components.ttk_achievement_progress.core.achievements)==nil)
+        ''')
+
+    def test_basic_producers_distinct_save_and_canonical_level(self):
+        self.lua.execute('''
+            a=player("a",function(p)
+                p.components.eater={inst=p,Eat=function(s,food)
+                    s.inst:PushEvent("oneat",{food=food}); return not food.reject
+                end}
+                p.components.hh_leveling={level=1}
+                p.components.levelsystem={level=100000} -- poison legacy authority
+            end)
+            b=player("b")
+            assert(progress(a,"level_100")==0)
+            local eater=a.components.eater
+            eater:Eat({prefab="nn_liquidluck",reject=true})
+            assert(progress(a,"food_liquid_luck_trinity")==0)
+            for i=1,3 do eater:Eat({prefab="nn_liquidluck"}) end
+            assert(progress(a,"food_liquid_luck_trinity")==1)
+            local component=a.components.ttk_achievement_progress
+            component:OnLoad(component:OnSave())
+            eater:Eat({prefab="nn_liquidluck"}); eater:Eat({prefab="nn_liquidluck_2"})
+            eater:Eat({prefab="nn_liquidluck_3"})
+            assert(progress(a,"food_liquid_luck_trinity")==3)
+            assert(component:ClaimAchievement("food_liquid_luck_trinity","distinct"))
+            component:OnLoad(component:OnSave())
+            assert(not component:ClaimAchievement("food_liquid_luck_trinity","distinct-again"))
+            for _,prefab in ipairs({"twigs","redgem"}) do
+                local i=item(a,prefab,2); a:PushEvent("itemget",{item=i}); a:PushEvent("itemget",{item=i})
+            end
+            assert(progress(a,"collection_twigs")==2 and progress(a,"collection_gems")==2)
+            local catalog=require("achievement/ttk_achievement_catalog")
+            for _,tracker in ipairs({"craft_prefab","crafting_event"}) do
+                local row=catalog.ByEvent(tracker)[1]; local made=entity(row.params.prefab)
+                a:PushEvent("builditem",{item=made}); a:PushEvent("buildstructure",{item=made})
+                assert(progress(a,row.id)==1 and progress(b,row.id)==0)
+            end
+            local work={target=entity("evergreen"),action={id="CHOP"}}
+            a:PushEvent("finishedwork",work); a:PushEvent("finishedwork",work)
+            assert(progress(a,"labor_chop_trees")==1)
+            local crop=entity("farm_plant_carrot"); crop.tags.farm_plant=true
+            a:PushEvent("picksomething",{object=crop})
+            assert(progress(a,"farming_harvest_crops")==1)
+            local victim=entity("spider"); victim.components.health={IsDead=function() return true end}
+            a:PushEvent("killed",{victim=victim,attacker=b}); assert(progress(a,"combat_spider")==0)
+            a:PushEvent("killed",{victim=victim}); a:PushEvent("killed",{victim=victim})
+            assert(progress(a,"combat_spider")==1 and progress(b,"combat_spider")==0)
+            a.components.hh_leveling.level=70; a:PushEvent("hh_levelup",{level=100000})
+            assert(progress(a,"level_50")==50 and progress(a,"level_100")==0)
+            a.components.hh_leveling.level=100; a:PushEvent("hh_levelup")
+            assert(progress(a,"level_100")==100)
+            TheWorld.ismastersim=false
+            eater:Eat({prefab="meatballs"}); a:PushEvent("itemget",{item=item(a,"twigs",10)})
+            a:PushEvent("finishedwork",{target=entity("evergreen"),action={id="CHOP"}})
+            a:PushEvent("picksomething",{object=crop})
+            assert(progress(a,"food_meatballs")==0 and progress(a,"collection_twigs")==2)
+            assert(progress(a,"labor_chop_trees")==1 and progress(a,"farming_harvest_crops")==1)
+        ''')
+
+    def test_seasonal_configuration_boundary_and_idempotent_real_rpc(self):
+        self.lua.execute('''
+            local catalog=require("achievement/ttk_seasonal_catalog")
+            local function make(id,value)
+                TUNING.TTK_SEASONAL_CLAIM_XP=value
+                local p=player(id,function(p)
+                    p.xp_calls=0; p.xp_total=0
+                    p.components.hh_leveling={level=1,AddExp=function(_,amount)
+                        p.xp_calls=p.xp_calls+1; p.xp_total=p.xp_total+amount; return true
+                    end}
+                end)
+                local c=p.components.ttk_achievement_progress
+                assert(c:StartSeason("autumn","audit:"..id,function(first) return first end))
+                return p,c
+            end
+            local function ready(c,index)
+                local slot=c.core.seasonal.slots[index]; local row=catalog.ById(slot.task_id)
+                local evidence={event=row.event}
+                for key,value in pairs(row.params) do evidence[key]=value end
+                local ok,result=c:AdvanceSeasonal(row.id,row.target,evidence)
+                assert(ok,result.code)
+                return row,slot
+            end
+            -- The injected amount below is a fixture sentinel, never a production default.
+            for index,value in ipairs({false,0,-1,0/0,math.huge,-math.huge,"7"}) do
+                local p,c=make("invalid"..index,value~=false and value or nil)
+                local row,slot=ready(c,1)
+                local before=c:OnSave()
+                local ok,result=c:ClaimSeasonal(row.id,"unavailable")
+                assert(not ok and result.code=="xp_unavailable")
+                rpc.AchievementSeasonal(p,"task",1,row.id,"rpc-unavailable")
+                assert(slot.progress==row.target and slot.claims==0 and c.core.seasonal.first_claims==0)
+                assert(next(c.core.seasonal_replays)==nil and next(c.core.seasonal_pending)==nil)
+                assert(not c.core.seasonal_busy and next(c.core.seasonal.chest_claimed)==nil)
+                assert(p.xp_calls==0 and c:OnSave().earned==before.earned)
+                assert(progress(p,"season_claim_reward")==0)
+            end
+            local p,c=make("configured",7.25); local other=player("other")
+            local row,slot=ready(c,1)
+            rpc.AchievementSeasonal(p,"task",2,row.id,"wrong-slot")
+            rpc.AchievementSeasonal(p,"task",1,row.id,"extra",{})
+            TheWorld.ismastersim=false; rpc.AchievementSeasonal(p,"task",1,row.id,"client")
+            assert(p.xp_calls==0 and slot.claims==0); TheWorld.ismastersim=true
+            rpc.AchievementSeasonal(p,"task",1,row.id,"once")
+            rpc.AchievementSeasonal(p,"task",1,row.id,"once")
+            rpc.AchievementSeasonal(p,"task",1,row.id,"once-new-request")
+            assert(p.xp_calls==1 and p.xp_total==7.25 and slot.claims==1)
+            c:OnLoad(c:OnSave()); rpc.AchievementSeasonal(p,"task",1,row.id,"once")
+            assert(p.xp_calls==1)
+            local repeat_row=catalog.ById(c.core.seasonal.slots[17].task_id)
+            assert(repeat_row.kind=="repeat")
+            for number=1,5 do
+                ready(c,17)
+                rpc.AchievementSeasonal(p,"task",17,repeat_row.id,"repeat"..number)
+                rpc.AchievementSeasonal(p,"task",17,repeat_row.id,"repeat"..number)
+                assert(p.xp_calls==1+number)
+            end
+            assert(c.core.seasonal.first_claims==2 and p.xp_total==43.5)
+            assert(progress(p,"season_first_mission")==1 and progress(p,"season_repeat")==1)
+            assert(progress(p,"season_claim_reward")==1 and progress(other,"season_claim_reward")==0)
+            TUNING.TTK_SEASONAL_CLAIM_XP=nil
+        ''')
+
+
+# Each entry names executable producer tests, not event-name/source-text guesses.
+# Seasonal XP and missing perks are external seams, never tracker exemptions.
+PRODUCER_TESTS = {
+    ActivityReachability: {
+        "test_pick_regrowth_fish_identity_and_two_actors": {"pick_prefab", "fish_caught"},
+        "test_native_plant_success_failure_and_explicit_map": {"plant_seed"},
+        "test_native_success_callbacks_reject_failed_canceled_and_nonfarm": {"farm_action"},
+        "test_inventory_observes_partial_amount_overflow_and_transfers": {"own_prefab"},
+        "test_native_cook_commit_chef_save_load_and_callback_preservation": {"cook_product"},
+        "test_all_survival_keys_in_solo_authoritative_state": {"survival_event", "season_mission_assigned"},
+    },
+    GuildDungeonReachability: {
+        "test_entry_reentry_clear_snapshot_and_duplicate_final_death": {"dungeon_entered", "dungeon_completed"},
+        "test_dungeon_kills_require_current_member_and_owned_run": {"kill_prefab"},
+        "test_coin_add_spend_load_and_dungeon_purchase_commit": {"dungeon_coin_earned", "dungeon_shop_purchase"},
+        "test_guild_quest_and_exam_commit_not_auto_promotion": {"guild_quest_assigned", "guild_quest_completed", "guild_rank_exam_passed", "hunter_rank"},
+        "test_guild_staff_validation_and_shop_credit_rollback": {"guild_opened", "guild_shop_purchase", "guild_credit_spent"},
+        "test_existing_dungeon_open_validation_and_surface_only_routes": {"dungeon_shop_opened"},
+    },
+    StrengthenSlotReachability: {
+        "test_gem_commit_and_success_threshold_wildcard": {"strengthen_gem_spent", "strengthen_success"},
+        "test_protection_consumption_branches": {"strengthen_protection_used"},
+        "test_level_paper_compatible_incompatible_return_and_zero": {"strengthen_scroll_used"},
+        "test_slot_actor_save_load_repeat_payout_failed_spawn_and_classification": {"slotmachine_spin", "slotmachine_reward"},
+        "test_real_prize_data_and_restock_committed_actor": {"dungeon_shop_restocked"},
+    },
+    AcceptanceRoutes: {
+        "test_basic_producers_distinct_save_and_canonical_level": {"eat_prefabs", "collect_prefab", "collect_prefabs", "craft_prefab", "crafting_event", "work_action", "harvest_crop", "combat_event", "level_reached"},
+        "test_seasonal_configuration_boundary_and_idempotent_real_rpc": {"season_mission_completed", "season_mission_claimed", "season_mission_repeat"},
+    },
+}
+
+CLIENT_GUARD_TESTS = {
+    ActivityReachability: {
+        "test_death_reload_and_client_cannot_fabricate_receipts": {"survival_event", "pick_prefab", "fish_caught", "season_mission_assigned"},
+        "test_every_new_component_route_is_master_only": {"plant_seed", "cook_product", "own_prefab", "farm_action"},
+    },
+    StrengthenSlotReachability: {
+        "test_every_active_task17_tracker_rejects_client_receipts": {"strengthen_gem_spent", "strengthen_success", "strengthen_protection_used", "strengthen_scroll_used", "slotmachine_spin", "slotmachine_reward", "dungeon_shop_restocked"},
+    },
+    AcceptanceRoutes: {
+        "test_client_player_receipts_cannot_advance": {"eat_prefabs", "collect_prefab", "collect_prefabs", "craft_prefab", "crafting_event", "work_action", "harvest_crop", "combat_event", "kill_prefab", "level_reached", "hunter_rank", "guild_rank_exam_passed", "guild_quest_assigned", "guild_quest_completed", "guild_opened", "guild_shop_purchase", "guild_credit_spent", "dungeon_entered", "dungeon_completed", "dungeon_coin_earned", "dungeon_shop_opened", "dungeon_shop_purchase"},
+        "test_seasonal_configuration_boundary_and_idempotent_real_rpc": {"season_mission_completed", "season_mission_claimed", "season_mission_repeat"},
+    },
+}
+
+
+def validate_tracker_coverage(active, observed):
+    """Fail closed for new/dead types; no exception list can hide a dead route."""
+    missing = sorted(set(active) - {tracker for tracker, routes in observed.items() if routes})
+    if missing:
+        raise AssertionError("No tested master-only producer route: " + ", ".join(missing))
+
+
+class AcceptanceAudit(unittest.TestCase):
+    def test_every_active_tracker_has_an_executed_master_only_producer(self):
+        observed = {}
+        active = set()
+        for fixture, cases in PRODUCER_TESTS.items():
+            for method, expected in cases.items():
+                with self.subTest(route=fixture.__name__ + "." + method):
+                    case = fixture(method)
+                    case.audit_routes = True
+                    case.setUp()
+                    try:
+                        getattr(case, method)()
+                        hits = set(case.lua.globals().audit_hits.keys())
+                        self.assertFalse(expected - hits, "Producer did not advance: " + str(sorted(expected - hits)))
+                        for tracker in expected & hits:
+                            observed.setdefault(tracker, set()).add(fixture.__name__ + "." + method)
+                        catalog = case.lua.eval('require("achievement/ttk_achievement_catalog").All()')
+                        active.update(row.tracker for row in catalog.values() if row.status == "active")
+                    finally:
+                        case.tearDown()
+        validate_tracker_coverage(active, observed)
+        guarded = {}
+        for fixture, cases in CLIENT_GUARD_TESTS.items():
+            for method, trackers in cases.items():
+                with self.subTest(client_guard=fixture.__name__ + "." + method):
+                    case = fixture(method)
+                    case.audit_routes = True
+                    case.setUp()
+                    try:
+                        getattr(case, method)()
+                        for tracker in trackers:
+                            guarded.setdefault(tracker, set()).add(fixture.__name__ + "." + method)
+                    finally:
+                        case.tearDown()
+        validate_tracker_coverage(active, guarded)
+        self.assertEqual(len(active), 40)
+        # Negative controls prove that stale map entries and new types fail closed.
+        for tracker in sorted(active):
+            with self.subTest(dead_type=tracker), self.assertRaisesRegex(AssertionError, tracker):
+                validate_tracker_coverage(active, {key: value for key, value in observed.items() if key != tracker})
+        with self.assertRaisesRegex(AssertionError, "unrouted_future_type"):
+            validate_tracker_coverage(active | {"unrouted_future_type"}, observed)
 
 
 if __name__ == "__main__":

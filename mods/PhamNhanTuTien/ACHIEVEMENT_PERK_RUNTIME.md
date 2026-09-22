@@ -2,6 +2,8 @@
 
 Task 10 implements the available gameplay adapters, but **does not complete all 39 approved perks**. The catalog, prices, seven 25-level caps, 945-Star maximum and all 50 inheritance source IDs remain intact. Missing upstream content is not replaced by a similarly named weapon or empty unlock.
 
+The exported availability is **29 implemented, 5 partial, 5 unavailable**. This describes current source coverage; it is not a live multiplayer certification.
+
 ## Implemented integration
 
 - Seven stats use one idempotent provider. Crit/lifesteal contributions are separate from the existing `hh_player` effect table; planar bonuses use native named sources; scale uses `AnimState` only. Kill EXP multiplies the rank, dungeon, level, sharing and perk factors before one final rounding. The dungeon multiplier clamp is removed. Daily reward and seasonal EXP tuning are unchanged.
@@ -48,6 +50,6 @@ Tinh Vệ, Hàn Thiên Tôn and Vương Ma Tử therefore reject purchase comple
 
 `no_deconstruction` on an alias is recipe metadata, not a guarantee on the spawned product. DST's green staff reads `AllRecipes[target.prefab]`, so a product with an existing native recipe retains that native recipe's deconstruction behavior. Native product recipes have not been modified globally, and no anti-arbitrage safeguard is claimed. Ingredient discounts still use DST's positive-ingredient minimum of one; that minimum does not prove deconstruction-loop safety.
 
-Tests are Python standard-library source contracts; no Lua interpreter or running DST server is available. They do not establish in-game correctness, native recipe asset rendering, or server/client synchronization. Installed DST `scripts.zip` was read to verify component APIs and action success semantics.
+The Task 18 acceptance audit runs Python 3.14 with Lupa Lua 5.1, executes shipped achievement components/adapters and selected installed DST `scripts.zip` components, and maps all 40 active tracker types to executed producer scenarios and client rejection tests. Other focused suites include source contracts and independent models; passing them does not establish normal-play acquisition of every recipe ingredient. The audit identified unresolved historical ingredient IDs in the canonical alchemy recipes, including unavailable second-grade inputs for stage 15; that acquisition defect requires a separate recipe repair before full progression acceptance.
 
-The complete mod discovery run encountered absent `lupa` and absent `.superpowers/luoshen-runtime` dependencies; the repository npm suite cannot start without `vitest`. The focused achievement/alchemy/cultivation/rank regression files run independently of those unavailable harnesses.
+The focused achievement/alchemy/cultivation/rank/seasonal suites, strengthening and slot regressions pass. The wiki exporter check, 212 Vitest tests and webpack production build also pass after synchronizing stale achievement rows in the generated export. Broad mod discovery still has ten pre-existing standalone-argument/missing-extraction-fixture import errors; Lupa and Vitest are available. No live DST host/client, multiplayer or dedicated-server session was run. Native recipe asset rendering and server/client synchronization remain unverified.
