@@ -80,10 +80,18 @@ class PerkRuntimeTests(unittest.TestCase):
         self.assertNotRegex(aliases, r"xd_wmz_|xd_jingwei_|xd_htz_")
         self.assertIn("Prefabs[recipe.product] == nil", src)
 
-    def test_each_positive_ingredient_has_native_minimum_and_no_deconstruction_arbitrage(self):
-        src = self.source("scripts/achievement/ttk_perk_crafts.lua")
-        self.assertIn("config.no_deconstruction = true", src)
+    def test_each_positive_ingredient_uses_native_discount_minimum(self):
         self.assertIn("green and .25 or .5", self.source("scripts/achievement/ttk_perk_effects.lua"))
+
+    def test_skill_gated_native_recipes_are_rejected_before_any_alias_clone(self):
+        """Walter's lunar ammo/frame must not become unusable EVA aliases."""
+        src = self.source("scripts/achievement/ttk_perk_crafts.lua")
+        clone = src.split("local function Clone(id, name, source)", 1)[1].split("-- Snapshot native", 1)[0]
+        self.assertIn("if source.builder_skill ~= nil then return end", clone)
+        self.assertLess(clone.index("source.builder_skill"), clone.index("G.deepcopy(source)"))
+        self.assertNotIn("config.builder_skill = nil", clone)
+        preflight = src.split("function M.CanUnlock", 1)[1].split("function M.Register", 1)[0]
+        self.assertIn("recipe.builder_skill ~= nil", preflight)
 
     def test_structure_recipes_have_native_art_placement_prefabs(self):
         src = self.source("scripts/prefabs/ttk_achievement_placers.lua")

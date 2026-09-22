@@ -26,7 +26,8 @@ function M.CanUnlock(perk)
     if perk.builder_tag == nil or recipes == nil or #recipes == 0 then return false end
     for _, name in ipairs(recipes) do
         local recipe = AllRecipes[name]
-        if recipe == nil or recipe.builder_tag ~= perk.builder_tag or Prefabs[recipe.product] == nil then return false end
+        if recipe == nil or recipe.builder_tag ~= perk.builder_tag or recipe.builder_skill ~= nil
+            or Prefabs[recipe.product] == nil then return false end
     end
     return true
 end
@@ -37,6 +38,8 @@ function M.Register(env)
         local perk = Catalog.ById(id)
         config.builder_tag = perk.builder_tag
         config.nounlock = true
+        -- Alias recipe metadata only. Native deconstruction looks up the product
+        -- prefab's original recipe, so this does not protect the spawned item.
         config.no_deconstruction = true
         local product = string.upper(config.product or name)
         G.STRINGS.NAMES[string.upper(name)] = G.STRINGS.NAMES[product] or config.product or name
@@ -46,6 +49,10 @@ function M.Register(env)
         table.insert(registered[id], name)
     end
     local function Clone(id, name, source)
+        -- A technology unlock does not grant another character's skill tree.
+        -- Includes Walter's slingshotammo_moonglass and slingshot_frame_gems;
+        -- inheritance mappings also need explicit adaptation before bypassing it.
+        if source.builder_skill ~= nil then return end
         local config = G.deepcopy(source)
         config.product = source.product
         config.builder_tag = nil

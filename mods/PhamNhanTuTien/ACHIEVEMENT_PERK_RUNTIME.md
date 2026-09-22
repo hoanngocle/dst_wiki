@@ -10,6 +10,7 @@ Task 10 implements the available gameplay adapters, but **does not complete all 
 - Cage protection applies after the perk owner successfully builds or stores a bird in that cage, and persists on that cage. It does not change `PERISH_CAGE_MULT` globally.
 - Easy Farm adds one additional native fertilizer nutrient dose to the exact successfully fertilized farm-soil tile. Native nutrient caps remain. This improves later nutrient-stress checks instead of changing all farms' growth rules globally.
 - Eleven original craft packages register native technology-family aliases and retained source ingredient costs. Christmas/Pokeball structure recipes have 13 native-art placers. Existing open recipes remain open. Perk aliases use the catalog's EVA-only tags and refresh crafting immediately.
+- Native recipes requiring a character skill (`builder_skill`) are excluded from every alias-cloning path. For example, Walter's `slingshotammo_moonglass` and `slingshot_frame_gems` cannot be granted to EVA by a lunar technology unlock. Purchase preflight also rejects skill-gated aliases.
 - Four inheritance packages register eight exact source recipe names producing their audited current equivalents (table below). Their remaining source entries are not registered.
 
 ## Safe inheritance mappings
@@ -44,6 +45,8 @@ The 42 unavailable inheritance recipes are:
 Tinh Vệ, Hàn Thiên Tôn and Vương Ma Tử therefore reject purchase completely. Wang Mazi's eight forms have no registered EVA-safe prefab/component implementation; related art and existing weapons are not proof of compatible source spell state. The runtime exposes `UnavailableInheritance()` for this exact dependency list.
 
 ## Verification limits
+
+`no_deconstruction` on an alias is recipe metadata, not a guarantee on the spawned product. DST's green staff reads `AllRecipes[target.prefab]`, so a product with an existing native recipe retains that native recipe's deconstruction behavior. Native product recipes have not been modified globally, and no anti-arbitrage safeguard is claimed. Ingredient discounts still use DST's positive-ingredient minimum of one; that minimum does not prove deconstruction-loop safety.
 
 Tests are Python standard-library source contracts; no Lua interpreter or running DST server is available. They do not establish in-game correctness, native recipe asset rendering, or server/client synchronization. Installed DST `scripts.zip` was read to verify component APIs and action success semantics.
 
