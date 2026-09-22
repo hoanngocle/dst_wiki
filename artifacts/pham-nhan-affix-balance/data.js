@@ -10,6 +10,7 @@
   const SOURCE_EFFECTS = 'scripts/enums/hh_effects.lua';
   const SOURCE_DUNGEON = 'scripts/components/hh_dungeon_effects.lua';
   const SOURCE_ALCHEMY = 'scripts/components/ttk_alchemy_effects.lua';
+  const REMOVED_NOTE = 'Đã loại khỏi thiết kế đá cường hóa.';
 
   function add(row) {
     rows.push({
@@ -64,6 +65,7 @@
       cap: def.cap || '',
       exclusiveGroup: def.exclusiveGroup || '',
       source: def.source,
+      decision: def.decision || 'Đánh giá',
       note: def.note || '',
     }));
   }
@@ -88,13 +90,15 @@
     });
   }
 
-  // Workbench giữ 69 affix hiện hành sau khi loại hai dòng Trợ Thủ khỏi phạm vi cân bằng.
+  // Workbench giữ cả các dòng đã bị loại để theo dõi lịch sử quyết định cân bằng.
+  add({ code:'follow_reduce_damage', numericId:'96', name:'Trợ Thủ-PT', family:'Trợ thủ phòng thủ', tier:'IV', category:'Đệ tử', slot:'Mọi trang bị', status:'Đang có', effectKey:'addFollowReduceDamage', current:'Giảm 5-10 ST đệ tử nhận', proposed:'Giảm 5-10 ST đệ tử nhận', source:SOURCE_ENCHANT, decision:'Bỏ', note:REMOVED_NOTE });
+  add({ code:'follow_add_damage', numericId:'95', name:'Trợ Thủ-TC', family:'Trợ thủ tấn công', tier:'IV', category:'Đệ tử', slot:'Mọi trang bị', status:'Đang có', effectKey:'addFollowDamage', current:'Tăng 10-20 ST đệ tử', proposed:'Tăng 10-20 ST đệ tử', source:SOURCE_ENCHANT, decision:'Bỏ', note:REMOVED_NOTE });
   add({ code:'fast_act', numericId:'94', name:'Tháo Vát-TH', family:'Tương tác nhanh', tier:'UTILITY', category:'Tiện ích', slot:'Mọi trang bị', status:'Đang có', effectKey:'fast_act', current:'Tăng tốc thu hoạch, xây, đổi, chế tạo, nấu', proposed:'Giữ nguyên', source:SOURCE_ENCHANT });
   add({ code:'work_speed', numericId:'93', name:'Tháo Vát-KT', family:'Khai thác nhanh', tier:'UTILITY', category:'Tiện ích', slot:'Mọi trang bị', status:'Đang có', effectKey:'workAddSpeed', current:'Gấp đôi tốc độ làm việc', proposed:'Gấp đôi tốc độ làm việc', source:SOURCE_ENCHANT });
   add({ code:'shadow_camp', numericId:'92', name:'Phục Ma-BT', family:'Thân thiện Shadow', tier:'UTILITY', category:'Tiện ích', slot:'Mọi trang bị', status:'Đang có', effectKey:'shadowCamp', current:'Sinh vật shadow không tấn công', proposed:'Giữ nguyên', source:SOURCE_ENCHANT });
   add({ code:'moon_camp', numericId:'91', name:'Phục Ma-VĐ', family:'Thân thiện Gestalt', tier:'UTILITY', category:'Tiện ích', slot:'Mọi trang bị', status:'Đang có', effectKey:'moonCamp', current:'Sinh vật gestalt không tấn công', proposed:'Giữ nguyên', source:SOURCE_ENCHANT });
-  add({ code:'add_speed', numericId:'89', name:'Nhanh Nhẹn', family:'Tốc chạy', tier:'III', category:'Cơ động', slot:'Vũ khí', status:'Đang có', effectKey:'addSpeedPercent', current:'5-25%', proposed:'5-25%', source:SOURCE_ENCHANT });
-  proposalFamily({ family:'Nhanh Nhẹn', code:'equip_speed', effectKey:'addSpeedPercent', category:'Cơ động', slot:'Vũ khí', status:'Đề xuất - adapter', values:['1-5%','3-10%','5-15%','10-20%','15-30%'], exclusiveGroup:'move_speed', source:`${SOURCE_ENCHANT} + ${SOURCE_EFFECTS}`, note:'Tách dòng Nhanh Nhẹn hiện tại thành 5 tier để cân bằng.' });
+  add({ code:'add_speed', numericId:'89', name:'Nhanh Nhẹn', family:'Tốc chạy', tier:'III', category:'Cơ động', slot:'Vũ khí', status:'Đang có', effectKey:'addSpeedPercent', current:'5-25%', proposed:'5-25%', source:SOURCE_ENCHANT, decision:'Bỏ', note:REMOVED_NOTE });
+  proposalFamily({ family:'Nhanh Nhẹn', code:'equip_speed', effectKey:'addSpeedPercent', category:'Cơ động', slot:'Vũ khí', status:'Đề xuất - adapter', values:['1-5%','3-10%','5-15%','10-20%','15-30%'], exclusiveGroup:'move_speed', source:`${SOURCE_ENCHANT} + ${SOURCE_EFFECTS}`, decision:'Bỏ', note:REMOVED_NOTE });
   add({ code:'add_light', numericId:'90', name:'☆Phổ Độ', family:'Phát sáng', tier:'UTILITY', category:'Tiện ích', slot:'Mọi trang bị', status:'Đang có', effectKey:'add_light', current:'Phát sáng khi trang bị', proposed:'Giữ nguyên', source:SOURCE_ENCHANT });
 
   existingTierFamily({ family:'Bền Bỉ', category:'Độ bền', slot:'Trang bị có độ bền', effectKey:'add_max_use', entries:[
@@ -209,10 +213,17 @@
   proposalFamily({ family:'Tụ Linh', code:'equip_mana_regen', effectKey:'equipManaRegen', category:'Mana', slot:'Mũ hoặc phụ kiện', status:'Đề xuất - adapter', values:['+0,1/s','+0,2/s','+0,35/s','+0,5/s','+0,75/s'], cap:'Tổng từ đá +1 mana/s', exclusiveGroup:'mana_regen', source:'scripts/components/hh_mana.lua', note:'Cộng vào GetRegenPerSecond, vẫn tôn trọng trì hoãn hồi mana.' });
   proposalFamily({ family:'Tiết Linh', code:'equip_mana_save', effectKey:'equipManaCostReduction', category:'Mana', slot:'Mũ hoặc phụ kiện', status:'Đề xuất - adapter', values:['3%','5%','8%','12%','18%'], cap:'Tổng giảm mana 50%', exclusiveGroup:'mana_cost', source:`scripts/components/hh_mana.lua + ${SOURCE_DUNGEON}`, note:'Áp dụng cho kỹ năng và chi phí duy trì, không cho chi phí bằng vật phẩm.' });
   proposalFamily({ family:'Ngộ Đạo', code:'equip_skill_cooldown', effectKey:'skillCooldownReduction', category:'Kỹ năng', slot:'Mũ hoặc phụ kiện', status:'Đề xuất - adapter', values:['2%','4%','6%','8%','12%'], cap:'Tổng 30%', exclusiveGroup:'cooldown', source:'scripts/components/hh_shadow_manager.lua + components kỹ năng', note:'Giảm phần cooldown mới tạo, không tua ngược timer đang chạy.' });
+  proposalFamily({ family:'Trợ Kích', code:'equip_follower_crit', effectKey:'addFollowCritical', category:'Đệ tử', slot:'Mọi trang bị', status:'Đề xuất - dùng ngay', values:['3%','5%','8%','12%','18%'], cap:'Tổng 40%', exclusiveGroup:'follower_crit', source:`${SOURCE_EFFECTS} + main/hh_api.lua`, decision:'Bỏ', note:REMOVED_NOTE });
   proposalFamily({ family:'Hắc Sinh Mệnh', code:'equip_shadow_health', effectKey:'shadowHealthPercent', category:'Đệ tử', slot:'Mọi trang bị', status:'Đề xuất - adapter', values:['3-8%','7-15%','14-24%','23-32%','31-40%'], cap:'Tổng 40%', exclusiveGroup:'shadow_health', source:SOURCE_DUNGEON, note:'Mỗi viên ngọc random một giá trị trong range của tier.' });
   proposalFamily({ family:'Hắc Công Kích', code:'equip_shadow_damage', effectKey:'shadowDamagePercent', category:'Đệ tử', slot:'Mọi trang bị', status:'Đề xuất - adapter', values:['2-4%','3-7%','6-11%','10-15%','14-20%'], cap:'Tổng 20%', exclusiveGroup:'shadow_damage', source:SOURCE_DUNGEON, note:'Mỗi viên ngọc random một giá trị trong range của tier.' });
+  proposalFamily({ family:'Hắc Phòng Ngự', code:'equip_shadow_guard', effectKey:'shadowGuardPercent', category:'Đệ tử', slot:'Mọi trang bị', status:'Đề xuất - adapter', values:['3%','5%','8%','12%','16%'], cap:'Tổng 30%', exclusiveGroup:'shadow_guard', source:SOURCE_DUNGEON, decision:'Bỏ', note:REMOVED_NOTE });
+  proposalFamily({ family:'Hắc Tốc Hành', code:'equip_shadow_speed', effectKey:'shadowSpeedPercent', category:'Đệ tử', slot:'Mọi trang bị', status:'Đề xuất - adapter', values:['5%','8%','12%','16%','22%'], cap:'Tổng 35%', exclusiveGroup:'shadow_speed', source:SOURCE_DUNGEON, decision:'Bỏ', note:REMOVED_NOTE });
+  proposalFamily({ family:'Hắc Liên Kích', code:'equip_shadow_attack_speed', effectKey:'shadowAttackSpeed', category:'Đệ tử', slot:'Mọi trang bị', status:'Đề xuất - adapter', values:['3%','5%','8%','11%','15%'], cap:'Tổng 25%', exclusiveGroup:'shadow_attack_speed', source:SOURCE_DUNGEON, decision:'Bỏ', note:REMOVED_NOTE });
+  proposalFamily({ family:'Hắc Tái Sinh', code:'equip_shadow_regen', effectKey:'shadowHealthRegen', category:'Đệ tử', slot:'Mọi trang bị', status:'Đề xuất - adapter', values:['0,1%/s','0,2%/s','0,3%/s','0,5%/s','0,75%/s'], cap:'Tổng 1% máu tối đa mỗi giây', exclusiveGroup:'shadow_regen', source:SOURCE_DUNGEON, decision:'Bỏ', note:REMOVED_NOTE });
+  proposalFamily({ family:'Quân Đoàn Ma', code:'equip_shadow_mana', effectKey:'shadowManaReduction', category:'Đệ tử', slot:'Mũ hoặc phụ kiện', status:'Đề xuất - adapter', values:['3%','5%','8%','12%','18%'], cap:'Tổng 40%', exclusiveGroup:'shadow_mana', source:`scripts/components/hh_mana.lua + ${SOURCE_DUNGEON}`, decision:'Bỏ', note:REMOVED_NOTE });
 
   utility({ name:'Nhiếp Vật', code:'utility_auto_pickup', effectKey:'utilityAutoPickup', value:'Tự nhặt trong bán kính 6', source:SOURCE_DUNGEON, note:'Mượn OrangeAmuletPickup. Không nhặt đồ đang cháy, trong container hoặc thuộc người khác.' });
+  utility({ name:'Bền Lực', code:'utility_durability_save', effectKey:'utilityDurabilitySave', value:'25% không hao độ bền', source:SOURCE_DUNGEON, decision:'Bỏ', note:REMOVED_NOTE });
   utility({ name:'Bích Cốc', code:'utility_hunger_rate', effectKey:'utilityHungerRate', value:'Giảm 25% tốc độ hao đói', source:SOURCE_ALCHEMY, note:'Không dùng mức giảm 80% của Bích Cốc Đan.' });
   utility({ name:'Cường Kình', code:'utility_work_efficiency', effectKey:'utilityWorkEfficiency', value:'+35% hiệu suất chặt, đập và đào', source:SOURCE_ALCHEMY, note:'Không tăng tốc đào đất, hái hoặc thu hoạch.' });
   utility({ name:'Hàn Ngọc', code:'utility_cold_protection', effectKey:'utilityColdProtection', value:'+120 cách nhiệt mùa đông', source:SOURCE_ALCHEMY, note:'Là chống lạnh, không phải miễn nhiễm lạnh cóng.' });

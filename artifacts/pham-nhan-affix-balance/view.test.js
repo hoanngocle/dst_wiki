@@ -37,6 +37,28 @@ test('escapes catalog copy before rendering editable table rows', () => {
   assert.ok(html.includes('data-field="proposed"'));
 });
 
+test('renders Bỏ as the selected decision for rejected rows', () => {
+  const html = View.renderRow({
+    key: 'removed',
+    name: 'Nhanh Nhẹn',
+    family: 'Nhanh Nhẹn',
+    code: 'equip_speed_i',
+    effectKey: 'addSpeedPercent',
+    tier: 'I',
+    category: 'Cơ động',
+    slot: 'Vũ khí',
+    status: 'Đề xuất - adapter',
+    current: 'Chưa có',
+    proposed: '1-5%',
+    cap: '',
+    source: 'data.js',
+    decision: 'Bỏ',
+    note: 'Đã loại khỏi thiết kế đá cường hóa.',
+  });
+
+  assert.ok(html.includes('<option value="Bỏ" selected>Bỏ</option>'));
+});
+
 test('summarizes visible and edited rows for the header', () => {
   const summary = View.summarize(
     [

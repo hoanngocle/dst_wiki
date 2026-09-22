@@ -6,7 +6,7 @@
   'use strict';
 
   const TIERS = ['I', 'II', 'III', 'IV', 'V', 'UTILITY'];
-  const DECISIONS = ['Giữ và cân lại', 'Đánh giá', 'Ưu tiên làm', 'Tạm hoãn', 'Loại bỏ', 'Cân nhắc'];
+  const DECISIONS = ['Giữ và cân lại', 'Đánh giá', 'Ưu tiên làm', 'Tạm hoãn', 'Bỏ', 'Cân nhắc'];
 
   function escapeHtml(value) {
     return String(value ?? '')

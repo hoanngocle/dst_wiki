@@ -3,9 +3,9 @@ const assert = require('node:assert/strict');
 
 const Catalog = require('./data.js');
 
-test('ships the 69 current affixes retained in the workbench', () => {
+test('ships all 71 current affixes including entries marked for removal', () => {
   const current = Catalog.rows.filter((row) => row.status === 'Đang có');
-  assert.equal(current.length, 69);
+  assert.equal(current.length, 71);
 });
 
 test('gives every row a unique key and the fields required by the workbench', () => {
@@ -84,15 +84,42 @@ test('splits Nhanh Nhẹn into five proposed tiers while preserving the runtime 
 
 test('keeps only the two requested disciple families with overlapping random ranges', () => {
   const discipleRows = Catalog.rows.filter((row) => row.category === 'Đệ tử');
-  assert.deepEqual([...new Set(discipleRows.map((row) => row.family))], ['Hắc Sinh Mệnh', 'Hắc Công Kích']);
+  const retainedRows = discipleRows.filter((row) => row.decision !== 'Bỏ');
+  assert.deepEqual([...new Set(retainedRows.map((row) => row.family))], ['Hắc Sinh Mệnh', 'Hắc Công Kích']);
 
-  const health = discipleRows.filter((row) => row.family === 'Hắc Sinh Mệnh');
-  const damage = discipleRows.filter((row) => row.family === 'Hắc Công Kích');
+  const health = retainedRows.filter((row) => row.family === 'Hắc Sinh Mệnh');
+  const damage = retainedRows.filter((row) => row.family === 'Hắc Công Kích');
   assert.deepEqual(health.map((row) => row.proposed), ['3-8%', '7-15%', '14-24%', '23-32%', '31-40%']);
   assert.deepEqual(damage.map((row) => row.proposed), ['2-4%', '3-7%', '6-11%', '10-15%', '14-20%']);
   assert.ok(health.every((row) => row.cap === 'Tổng 40%'));
   assert.ok(damage.every((row) => row.cap === 'Tổng 20%'));
-  assert.equal(Catalog.rows.some((row) => row.code === 'follow_reduce_damage' || row.code === 'follow_add_damage'), false);
+});
+
+test('keeps every rejected idea visible with a removal decision and note', () => {
+  const rejected = Catalog.rows.filter((row) => row.decision === 'Bỏ');
+  const expectedFamilies = [
+    'Tốc chạy',
+    'Nhanh Nhẹn',
+    'Bền Lực',
+    'Trợ thủ phòng thủ',
+    'Trợ thủ tấn công',
+    'Trợ Kích',
+    'Hắc Phòng Ngự',
+    'Hắc Tốc Hành',
+    'Hắc Liên Kích',
+    'Hắc Tái Sinh',
+    'Quân Đoàn Ma',
+  ];
+
+  assert.equal(rejected.length, 39);
+  for (const family of expectedFamilies) {
+    assert.ok(rejected.some((row) => row.family === family), `missing rejected family: ${family}`);
+  }
+  assert.ok(rejected.every((row) => row.note === 'Đã loại khỏi thiết kế đá cường hóa.'));
+  assert.equal(rejected.filter((row) => row.name.startsWith('Nhanh Nhẹn')).length, 6);
+  assert.ok(rejected.some((row) => row.code === 'follow_reduce_damage'));
+  assert.ok(rejected.some((row) => row.code === 'follow_add_damage'));
+  assert.ok(rejected.some((row) => row.code === 'utility_durability_save'));
 });
 
 test('promotes permanent armor to tier V and adds the requested tier IV proposal', () => {
@@ -118,8 +145,7 @@ test('adds Gia Trì V as a web-only permanent durability proposal', () => {
   assert.equal(tierV.cap, 'Chỉ 1 viên Gia Trì');
 });
 
-test('removes Bền Lực and uses the accurate one-second Gia Trì code', () => {
-  assert.equal(Catalog.rows.some((row) => row.code === 'utility_durability_save' || row.name === 'Bền Lực'), false);
+test('uses the accurate one-second Gia Trì code in the web catalog', () => {
   assert.equal(Catalog.rows.some((row) => row.code === 'restore_use_3s_1use'), false);
   const restoration = Catalog.rows.find((row) => row.code === 'restore_use_1s_1use');
   assert.equal(restoration.name, '☆Gia Trì III');
