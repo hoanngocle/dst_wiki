@@ -996,16 +996,21 @@ function HHRank:ClaimExam()
         fx.entity:SetParent(self.inst.entity)
         fx.Transform:SetPosition(0, 0, 0)
     end
-    if self.inst.components.talker then
-        self.inst.components.talker:Say("Thăng hạng thành công! Rank " .. RankDefs.GetName(self.rank) .. ".")
-    end
     self:AddCredit(exam.reward_credit)
     self:AddPendingItems(exam.reward_items)
     self.pending_exam_reward = true
-    self:RefreshExamAvailability()
-    local quest = self.inst.components.hh_guild_quest
-    if quest then
-        quest:RefreshOffers()
+    local level_promoted = self:ReconcileLevelPromotion()
+    if not level_promoted then
+        self:RefreshExamAvailability()
+    end
+    if not level_promoted then
+        local quest = self.inst.components.hh_guild_quest
+        if quest then
+            quest:RefreshOffers()
+        end
+    end
+    if self.inst.components.talker then
+        self.inst.components.talker:Say("Thăng hạng thành công! Rank " .. RankDefs.GetName(self.rank) .. ".")
     end
     self:SetNotice("Chúc mừng! Bạn đã đạt Rank " .. RankDefs.GetName(self.rank) .. ".")
     return true

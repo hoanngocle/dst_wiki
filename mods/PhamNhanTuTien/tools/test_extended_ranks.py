@@ -72,6 +72,23 @@ def reconcile_level_promotion(current: str, level: int, ranks: dict[str, int], r
     return target if ranks[target] > ranks[current] else current
 
 
+def claim_exam_then_reconcile(current: str, level: int, ranks: dict[str, int], requirements: dict[str, int]) -> str:
+    """Model a completed exam claim followed by the component catch-up contract."""
+    claimed = next(name for name, value in ranks.items() if value == ranks[current] + 1)
+    return reconcile_level_promotion(claimed, level, ranks, requirements)
+
+
+def component_method(source: str, method_name: str) -> str:
+    match = re.search(
+        rf"function HHRank:{method_name}\([^)]*\)(?P<body>.*?)(?=\nfunction HHRank:|\nreturn HHRank)",
+        source,
+        re.DOTALL,
+    )
+    if match is None:
+        raise AssertionError(f"missing HHRank:{method_name}")
+    return match.group("body")
+
+
 class ExtendedRankContractTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
@@ -117,13 +134,7 @@ class ExtendedRankContractTests(unittest.TestCase):
     def test_component_reconciles_level_only_promotions_without_demoting(self) -> None:
         """Removing the level listener, load reconciliation, or S gate breaks promotion safety."""
         self.assertRegex(self.component, r'ListenForEvent\("hh_levelup", function\(\)\s*self:ReconcileLevelPromotion\(\)')
-        method = re.search(
-            r"function HHRank:ReconcileLevelPromotion\(\)(?P<body>.*?)(?=\nfunction HHRank:|\nreturn HHRank)",
-            self.component,
-            re.DOTALL,
-        )
-        self.assertIsNotNone(method)
-        body = method.group("body")
+        body = component_method(self.component, "ReconcileLevelPromotion")
         self.assertRegex(body, r"(?:self\.rank|old_rank) < RankDefs\.RANK\.S")
         self.assertRegex(body, r"RankDefs\.GetRankForLevel\(GetLevel\(self\.inst\)\)")
         self.assertRegex(body, r"level_rank <= self\.rank")
@@ -138,6 +149,20 @@ class ExtendedRankContractTests(unittest.TestCase):
         self.assertEqual(reconcile_level_promotion("SS", 100, self.ranks, self.requirements), "SSS")
         self.assertEqual(reconcile_level_promotion("A", 100, self.ranks, self.requirements), "A")
         self.assertEqual(reconcile_level_promotion("SSS", 1, self.ranks, self.requirements), "SSS")
+
+    def test_claiming_s_exam_catches_up_to_current_level_rank(self) -> None:
+        """Removing post-claim reconciliation leaves a Level 70/100 hunter incorrectly at S."""
+        claim_exam = component_method(self.component, "ClaimExam")
+        self.assertRegex(
+            claim_exam,
+            r"self\.pending_exam_reward = true\s*\n\s*local level_promoted = self:ReconcileLevelPromotion\(\)",
+        )
+        self.assertLess(claim_exam.index('source = "claim_exam"'), claim_exam.index("self:ReconcileLevelPromotion()"))
+        self.assertIn('source = "level_promotion"', component_method(self.component, "ReconcileLevelPromotion"))
+        self.assertRegex(claim_exam, r"if not level_promoted then\s*\n\s*self:RefreshExamAvailability\(\)")
+        self.assertRegex(claim_exam, r"if not level_promoted then\s*\n\s*local quest = self\.inst\.components\.hh_guild_quest")
+        self.assertEqual(claim_exam_then_reconcile("A", 70, self.ranks, self.requirements), "SS")
+        self.assertEqual(claim_exam_then_reconcile("A", 100, self.ranks, self.requirements), "SSS")
 
     def test_component_clears_exam_presentation_when_extended_rank_has_no_exam(self) -> None:
         """A missing SS/SSS exam must clear a stale S exam instead of leaving it visible."""
