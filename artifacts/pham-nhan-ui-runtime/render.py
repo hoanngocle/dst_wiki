@@ -113,6 +113,31 @@ def quest_preview(mode: int) -> Image.Image:
     return image
 
 
+def army_preview() -> Image.Image:
+    image, draw = unified_canvas(3, "QUAN DOAN")
+    names = ("Igris Lv.10", "Beru [Khoa]", "Fruitfly [Khoa]", "Mac Anh [Khoa]", "Hac Anh [Khoa]")
+    for i, name in enumerate(names):
+        x1 = 190 + i * 230
+        draw.rounded_rectangle((x1, 375, x1 + 210, 425), 7,
+                               fill=(89, 60, 127, 255) if i == 0 else (26, 23, 35, 255),
+                               outline=SILVER, width=2)
+        draw.text((x1 + 105, 400), name, font=font(18), fill=SILVER, anchor="mm")
+    draw.rounded_rectangle((190, 455, 640, 815), 14, fill=(22, 21, 34, 255), outline=(105, 92, 126, 255), width=2)
+    draw.text((415, 505), "IGRIS", font=font(31), fill=(203, 129, 244, 255), anchor="mm")
+    draw.polygon(((415, 545), (485, 655), (415, 735), (345, 655)), fill=(78, 38, 133, 255), outline=SILVER)
+    draw.text((415, 775), "Cap 10 / 30  •  EXP 250 / 820", font=font(19), fill=SILVER, anchor="mm")
+    draw.rounded_rectangle((680, 455, 1345, 815), 14, fill=(22, 21, 34, 255), outline=(105, 92, 126, 255), width=2)
+    talents = ((5, "Thep Den", "Giam 10% sat thuong nhan vao"), (10, "Khieu Khich", "Tang mau va uu tien muc tieu"),
+               (15, "Kiem Thuat", "Tang sat thuong gay ra"), (20, "Ho Chu", "Phan ung khi chu nhan bi danh"),
+               (25, "Bat Khuat", "Tang toc do khi thap mau"), (30, "Loi The Ky Si", "Hoi sinh mot lan moi luot"))
+    for i, (level, name, desc) in enumerate(talents):
+        y = 495 + i * 49
+        draw.text((712, y), f"Lv.{level}", font=font(17), fill=(255, 216, 91, 255), anchor="lm")
+        draw.text((805, y), name, font=font(19), fill=SILVER if level <= 10 else (110, 110, 125, 255), anchor="lm")
+        draw.text((1020, y), desc, font=font(15), fill=(174, 175, 194, 255), anchor="lm")
+    return image
+
+
 SCREENS = {
     "theme": theme_preview,
     "shell": shell_preview,
@@ -129,6 +154,7 @@ SCREENS = {
     "quests-daily": lambda: quest_preview(0),
     "quests-guild": lambda: quest_preview(1),
     "quests-promotion": lambda: quest_preview(2),
+    "army": army_preview,
 }
 
 
