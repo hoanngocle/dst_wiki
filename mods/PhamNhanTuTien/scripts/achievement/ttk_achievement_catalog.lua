@@ -54,9 +54,9 @@ E{id="food_fruitmedley",group="food",name="Trái Cây Trộn",description="Hoàn
 E{id="collection_twigs",group="collection",name="Thu thập twigs",description="Thu thập vật liệu twigs.",tracker="collect_prefab",target=100,reward=2,status="active",visibility="visible",params={ prefab="twigs" }},
 E{id="collection_grass",group="collection",name="Thu thập grass",description="Thu thập vật liệu grass.",tracker="collect_prefab",target=100,reward=2,status="active",visibility="visible",params={ prefab="grass" }},
 E{id="collection_flint",group="collection",name="Thu thập flint",description="Thu thập vật liệu flint.",tracker="collect_prefab",target=100,reward=2,status="active",visibility="visible",params={ prefab="flint" }},
-E{id="collection_logs",group="collection",name="Thu thập logs",description="Thu thập vật liệu logs.",tracker="collect_prefab",target=100,reward=2,status="active",visibility="visible",params={ prefab="logs" }},
+E{id="collection_logs",group="collection",name="Kho Gỗ",description="Thu thập một trăm Khúc Gỗ.",tracker="collect_prefab",target=100,reward=2,status="active",visibility="visible",params={ prefab="log" }},
 E{id="collection_rocks",group="collection",name="Thu thập rocks",description="Thu thập vật liệu rocks.",tracker="collect_prefab",target=100,reward=2,status="active",visibility="visible",params={ prefab="rocks" }},
-E{id="collection_gold",group="collection",name="Thu thập gold",description="Thu thập vật liệu gold.",tracker="collect_prefab",target=100,reward=2,status="active",visibility="visible",params={ prefab="gold" }},
+E{id="collection_gold",group="collection",name="Kho Vàng",description="Thu thập một trăm Cục Vàng.",tracker="collect_prefab",target=100,reward=2,status="active",visibility="visible",params={ prefab="goldnugget" }},
 E{id="collection_nitre",group="collection",name="Thu thập nitre",description="Thu thập vật liệu nitre.",tracker="collect_prefab",target=100,reward=2,status="active",visibility="visible",params={ prefab="nitre" }},
 E{id="collection_charcoal",group="collection",name="Thu thập charcoal",description="Thu thập vật liệu charcoal.",tracker="collect_prefab",target=100,reward=2,status="active",visibility="visible",params={ prefab="charcoal" }},
 E{id="collection_cutstone",group="collection",name="Thu thập cutstone",description="Thu thập vật liệu cutstone.",tracker="collect_prefab",target=100,reward=2,status="active",visibility="visible",params={ prefab="cutstone" }},
@@ -96,8 +96,8 @@ E{id="labor_cook_meals",group="labor",name="cook meals",description="Hoàn thàn
 E{id="labor_plant_seeds",group="labor",name="plant seeds",description="Hoàn thành mục tiêu plant seeds.",tracker="labor_event",target=1,reward=3,status="active",visibility="visible",params={ prefab="plant_seeds" }},
 E{id="labor_harvest_plants",group="labor",name="harvest plants",description="Hoàn thành mục tiêu harvest plants.",tracker="labor_event",target=1,reward=3,status="active",visibility="visible",params={ prefab="harvest_plants" }},
 E{id="craft_alchemy_furnace",group="crafting",name="alchemy furnace",description="Hoàn thành mục tiêu alchemy furnace.",tracker="crafting_event",target=1,reward=3,status="active",visibility="visible",params={ prefab="xd_liandanlu" }},
-E{id="crafting_science_machine",group="crafting",name="science machine",description="Hoàn thành mục tiêu science machine.",tracker="crafting_event",target=1,reward=3,status="active",visibility="visible",params={ prefab="science_machine" }},
-E{id="crafting_alchemy_engine",group="crafting",name="alchemy engine",description="Hoàn thành mục tiêu alchemy engine.",tracker="crafting_event",target=1,reward=3,status="active",visibility="visible",params={ prefab="alchemy_engine" }},
+E{id="crafting_science_machine",group="crafting",name="Máy Khoa Học",description="Chế tạo một Máy Khoa Học.",tracker="craft_prefab",target=1,reward=3,status="active",visibility="visible",params={ prefab="researchlab" }},
+E{id="crafting_alchemy_engine",group="crafting",name="Máy Luyện Kim",description="Chế tạo một Máy Luyện Kim.",tracker="craft_prefab",target=1,reward=3,status="active",visibility="visible",params={ prefab="researchlab2" }},
 E{id="crafting_prestihatitator",group="crafting",name="prestihatitator",description="Hoàn thành mục tiêu prestihatitator.",tracker="crafting_event",target=1,reward=3,status="active",visibility="visible",params={ prefab="prestihatitator" }},
 E{id="crafting_shadow_manipulator",group="crafting",name="shadow manipulator",description="Hoàn thành mục tiêu shadow manipulator.",tracker="crafting_event",target=1,reward=3,status="active",visibility="visible",params={ prefab="shadow_manipulator" }},
 E{id="crafting_cartographers_desk",group="crafting",name="cartographers desk",description="Hoàn thành mục tiêu cartographers desk.",tracker="crafting_event",target=1,reward=3,status="active",visibility="visible",params={ prefab="cartographers_desk" }},
@@ -108,12 +108,12 @@ E{id="crafting_thermal_measurer",group="crafting",name="thermal measurer",descri
 E{id="crafting_sewing_kit",group="crafting",name="sewing kit",description="Hoàn thành mục tiêu sewing kit.",tracker="crafting_event",target=1,reward=3,status="active",visibility="visible",params={ prefab="sewing_kit" }},
 E{id="crafting_backpack",group="crafting",name="backpack",description="Hoàn thành mục tiêu backpack.",tracker="crafting_event",target=1,reward=3,status="active",visibility="visible",params={ prefab="backpack" }},
 E{id="crafting_football_hat",group="crafting",name="football hat",description="Hoàn thành mục tiêu football hat.",tracker="crafting_event",target=1,reward=3,status="active",visibility="visible",params={ prefab="football_hat" }},
-E{id="crafting_ham_bat",group="crafting",name="ham bat",description="Hoàn thành mục tiêu ham bat.",tracker="crafting_event",target=1,reward=3,status="active",visibility="visible",params={ prefab="ham_bat" }},
+E{id="crafting_ham_bat",group="crafting",name="Gậy Giăm Bông",description="Chế tạo một Gậy Giăm Bông.",tracker="craft_prefab",target=1,reward=3,status="active",visibility="visible",params={ prefab="hambat" }},
 E{id="crafting_tent",group="crafting",name="tent",description="Hoàn thành mục tiêu tent.",tracker="crafting_event",target=1,reward=3,status="active",visibility="visible",params={ prefab="tent" }},
 E{id="crafting_endothermic_fire",group="crafting",name="endothermic fire",description="Hoàn thành mục tiêu endothermic fire.",tracker="crafting_event",target=1,reward=3,status="active",visibility="visible",params={ prefab="endothermic_fire" }},
 E{id="crafting_firepit",group="crafting",name="firepit",description="Hoàn thành mục tiêu firepit.",tracker="crafting_event",target=1,reward=3,status="active",visibility="visible",params={ prefab="firepit" }},
 E{id="crafting_cookpot",group="crafting",name="cookpot",description="Hoàn thành mục tiêu cookpot.",tracker="crafting_event",target=1,reward=3,status="active",visibility="visible",params={ prefab="cookpot" }},
-E{id="crafting_bee_box",group="crafting",name="bee box",description="Hoàn thành mục tiêu bee box.",tracker="crafting_event",target=1,reward=3,status="active",visibility="visible",params={ prefab="bee_box" }},
+E{id="crafting_bee_box",group="crafting",name="Thùng Ong",description="Chế tạo một Thùng Ong.",tracker="craft_prefab",target=1,reward=3,status="active",visibility="visible",params={ prefab="beebox" }},
 E{id="crafting_salt_box",group="crafting",name="salt box",description="Hoàn thành mục tiêu salt box.",tracker="crafting_event",target=1,reward=3,status="active",visibility="visible",params={ prefab="salt_box" }},
 E{id="farming_till_soil",group="farming",name="till soil",description="Hoàn thành mục tiêu till soil.",tracker="farming_event",target=1,reward=3,status="active",visibility="visible",params={ prefab="till_soil" }},
 E{id="farming_water_plants",group="farming",name="water plants",description="Hoàn thành mục tiêu water plants.",tracker="farming_event",target=1,reward=3,status="active",visibility="visible",params={ prefab="water_plants" }},
@@ -164,10 +164,10 @@ E{id="boss_guardian",group="boss",name="guardian",description="Hoàn thành mụ
 E{id="boss_eyeofterror",group="boss",name="eyeofterror",description="Hoàn thành mục tiêu eyeofterror.",tracker="kill_prefab",target=1,reward=5,status="active",visibility="visible",params={ prefab="eyeofterror" }},
 E{id="boss_twinofterror1",group="boss",name="twinofterror1",description="Hoàn thành mục tiêu twinofterror1.",tracker="kill_prefab",target=1,reward=5,status="active",visibility="visible",params={ prefab="twinofterror1" }},
 E{id="boss_twinofterror2",group="boss",name="twinofterror2",description="Hoàn thành mục tiêu twinofterror2.",tracker="kill_prefab",target=1,reward=5,status="active",visibility="visible",params={ prefab="twinofterror2" }},
-E{id="boss_ttk_boss_baihu",group="boss",name="ttk boss baihu",description="Hoàn thành mục tiêu ttk boss baihu.",tracker="kill_prefab",target=1,reward=5,status="active",visibility="visible",params={ prefab="ttk_boss_baihu" }},
-E{id="boss_ttk_boss_jfsn",group="boss",name="ttk boss jfsn",description="Hoàn thành mục tiêu ttk boss jfsn.",tracker="kill_prefab",target=1,reward=5,status="active",visibility="visible",params={ prefab="ttk_boss_jfsn" }},
-E{id="boss_ttk_boss_qlch",group="boss",name="ttk boss qlch",description="Hoàn thành mục tiêu ttk boss qlch.",tracker="kill_prefab",target=1,reward=5,status="active",visibility="visible",params={ prefab="ttk_boss_qlch" }},
-E{id="boss_ttk_boss_spiderqueen",group="boss",name="ttk boss spiderqueen",description="Hoàn thành mục tiêu ttk boss spiderqueen.",tracker="kill_prefab",target=1,reward=5,status="active",visibility="visible",params={ prefab="ttk_boss_spiderqueen" }},
+E{id="boss_ttk_boss_baihu",group="boss",name="Bạch Hổ",description="Đánh bại Bạch Hổ của Phàm Nhân.",tracker="kill_prefab",target=1,reward=5,status="active",visibility="visible",params={ prefab="ttk_baihu" }},
+E{id="boss_ttk_boss_jfsn",group="boss",name="Kim Phượng",description="Đánh bại Kim Phượng của Phàm Nhân.",tracker="kill_prefab",target=1,reward=5,status="active",visibility="visible",params={ prefab="ttk_jfsn" }},
+E{id="boss_ttk_boss_qlch",group="boss",name="Kỳ Lân",description="Đánh bại Kỳ Lân của Phàm Nhân.",tracker="kill_prefab",target=1,reward=5,status="active",visibility="visible",params={ prefab="ttk_qlch" }},
+E{id="boss_ttk_boss_spiderqueen",group="boss",name="Nữ Hoàng Ma Thù",description="Đánh bại Nữ Hoàng Ma Thù.",tracker="kill_prefab",target=1,reward=5,status="active",visibility="visible",params={ prefab="ttk_spiderqueen" }},
 E{id="boss_ttk_stalke_fuben",group="boss",name="ttk stalke fuben",description="Hoàn thành mục tiêu ttk stalke fuben.",tracker="kill_prefab",target=1,reward=5,status="active",visibility="visible",params={ prefab="ttk_stalke_fuben" }},
 E{id="boss_ttk_boss_deerclops_ziyun",group="boss",name="ttk boss deerclops ziyun",description="Hoàn thành mục tiêu ttk boss deerclops ziyun.",tracker="kill_prefab",target=1,reward=5,status="active",visibility="visible",params={ prefab="ttk_boss_deerclops_ziyun" }},
 E{id="boss_ttk_ziyunboss",group="boss",name="ttk ziyunboss",description="Hoàn thành mục tiêu ttk ziyunboss.",tracker="kill_prefab",target=1,reward=5,status="active",visibility="visible",params={ prefab="ttk_ziyunboss" }},
@@ -240,17 +240,18 @@ function Catalog.All() return definitions end
 function Catalog.ById(id) return by_id[id] end
 function Catalog.ByEvent(event) return by_event[event] or {} end
 function Catalog.Validate()
- local seen,counts,rewards,total={}, {}, {}, 0
+ local seen,next_by_id,next_by_event,counts,rewards,total={}, {}, {}, {}, {}, 0
  for _,row in ipairs(definitions) do
-  if by_id[row.id] then error("duplicate achievement id: "..row.id) end
+  if next_by_id[row.id] then error("duplicate achievement id: "..row.id) end
   if type(row.params)~="table" or row.target<=0 or row.status~="active" or row.visibility~="visible" then error("invalid achievement: "..row.id) end
   local signature=row.tracker.."|"..canonical(row.params).."|"..row.target
   if seen[signature] then error("duplicate achievement signature: "..row.id) end
-  seen[signature],by_id[row.id]=true,row; by_event[row.tracker]=by_event[row.tracker] or {}; table.insert(by_event[row.tracker],row)
+  seen[signature],next_by_id[row.id]=true,row; next_by_event[row.tracker]=next_by_event[row.tracker] or {}; table.insert(next_by_event[row.tracker],row)
   counts[row.group]=(counts[row.group] or 0)+1; rewards[row.reward]=(rewards[row.reward] or 0)+1; total=total+row.reward
  end
  for name,expected in pairs(groups) do if counts[name]~=expected then error("wrong group total: "..name) end end
  if #definitions~=231 or total~=1000 or rewards[2]~=71 or rewards[3]~=57 or rewards[5]~=55 or rewards[8]~=34 or rewards[10]~=14 then error("wrong achievement totals") end
+ by_id,by_event=next_by_id,next_by_event
  return true,{definitions=#definitions,active=#definitions,visible=#definitions,stars=total,groups=counts,rewards=rewards}
 end
 Catalog.Validate()
