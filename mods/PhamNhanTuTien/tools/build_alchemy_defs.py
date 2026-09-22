@@ -58,22 +58,71 @@ DISPLAY_NAMES = {
 }
 
 
+def require_mapping(value: Any, field: str) -> dict[str, Any]:
+    if type(value) is not dict:
+        raise ValueError(f"{field} must be a JSON object")
+    return value
+
+
+def require_list(value: Any, field: str) -> list[Any]:
+    if type(value) is not list:
+        raise ValueError(f"{field} must be a JSON array")
+    return value
+
+
+def require_string(value: Any, field: str, *, non_empty: bool = False) -> str:
+    if type(value) is not str:
+        raise ValueError(f"{field} must be a JSON string")
+    if non_empty and not value.strip():
+        raise ValueError(f"{field} must not be empty")
+    return value
+
+
+def require_positive_int(value: Any, field: str) -> int:
+    if type(value) is not int or value <= 0:
+        raise ValueError(f"{field} must be a positive JSON integer")
+    return value
+
+
 def runtime_prefab(item_id: str) -> str:
     """Normalize a namespaced manual id to a runtime prefab."""
+    item_id = require_string(item_id, "ingredient id", non_empty=True)
     _, separator, prefab = item_id.partition(":")
-    if not separator or not prefab:
+    if not separator or not prefab.strip():
         raise ValueError(f"Invalid manual item id: {item_id!r}")
     return prefab
 
 
 def lua_string(value: str) -> str:
-    escaped = value.replace("\\", "\\\\").replace('"', '\\"')
-    return '"' + escaped.replace("\n", "\\n").replace("\r", "\\r") + '"'
+    """Encode a validated Python string as a Lua 5.1-compatible literal."""
+    value = require_string(value, "Lua string")
+    escapes = {
+        "\\": "\\\\",
+        '"': '\\"',
+        "\a": "\\a",
+        "\b": "\\b",
+        "\f": "\\f",
+        "\n": "\\n",
+        "\r": "\\r",
+        "\t": "\\t",
+        "\v": "\\v",
+    }
+    encoded = "".join(
+        escapes.get(character, f"\\{ord(character):03d}" if ord(character) < 32 or ord(character) == 127 else character)
+        for character in value
+    )
+    return f'"{encoded}"'
 
 
 def read_records() -> list[tuple[str, dict[str, Any]]]:
     with MANUAL_PATH.open(encoding="utf-8") as manual_file:
-        items = json.load(manual_file)["items"]
+        document = require_mapping(json.load(manual_file), "manual document")
+    return records_from_items(require_mapping(document.get("items"), "manual items"))
+
+
+def records_from_items(items: dict[str, Any]) -> list[tuple[str, dict[str, Any]]]:
+    """Select and validate the exact manual fields that are rendered to Lua."""
+    items = require_mapping(items, "manual items")
 
     allowed = (*CULTIVATION_PREFABS, *BUFF_PREFABS, FASTING_PREFAB)
     if len(DISPLAY_NAMES) != len(allowed) or set(DISPLAY_NAMES) != set(allowed):
@@ -82,15 +131,25 @@ def read_records() -> list[tuple[str, dict[str, Any]]]:
     records: list[tuple[str, dict[str, Any]]] = []
     for prefab in allowed:
         record = items.get(f"tu_tien:{prefab}")
-        if not isinstance(record, dict):
+        if type(record) is not dict:
             raise ValueError(f"Missing manual record for {prefab}")
-        recipe = record.get("recipe")
-        ingredients = recipe.get("ingredients") if isinstance(recipe, dict) else None
-        if not isinstance(ingredients, list) or not 1 <= len(ingredients) <= 4:
+        recipe = require_mapping(record.get("recipe"), f"{prefab}.recipe")
+        require_positive_int(recipe.get("outputCount"), f"{prefab}.recipe.outputCount")
+        ingredients = require_list(recipe.get("ingredients"), f"{prefab}.recipe.ingredients")
+        if not 1 <= len(ingredients) <= 4:
             raise ValueError(f"{prefab} must have one to four recipe ingredients")
-        for ingredient in ingredients:
-            if not isinstance(ingredient, dict) or not ingredient.get("id") or not isinstance(ingredient.get("amount"), int) or ingredient["amount"] <= 0:
-                raise ValueError(f"{prefab} has an invalid ingredient")
+        for index, ingredient in enumerate(ingredients, start=1):
+            ingredient = require_mapping(ingredient, f"{prefab}.recipe.ingredients[{index}]")
+            runtime_prefab(require_string(ingredient.get("id"), f"{prefab}.recipe.ingredients[{index}].id", non_empty=True))
+            require_positive_int(ingredient.get("amount"), f"{prefab}.recipe.ingredients[{index}].amount")
+        require_string(recipe.get("craftingNote"), f"{prefab}.recipe.craftingNote")
+
+        usage = require_mapping(record.get("usage"), f"{prefab}.usage")
+        effects = require_list(usage.get("effects"), f"{prefab}.usage.effects")
+        for index, effect in enumerate(effects, start=1):
+            effect = require_mapping(effect, f"{prefab}.usage.effects[{index}]")
+            require_string(effect.get("trigger"), f"{prefab}.usage.effects[{index}].trigger")
+            require_string(effect.get("text"), f"{prefab}.usage.effects[{index}].text")
         records.append((prefab, record))
     return records
 
@@ -109,11 +168,11 @@ def append_row(lines: list[str], prefab: str, record: dict[str, Any]) -> None:
         lines.append(f"      {{ prefab={lua_string(runtime_prefab(ingredient['id']))}, amount={ingredient['amount']} }},")
     lines.extend((
         "    },",
-        f"    crafting_note = {lua_string(recipe.get('craftingNote') or '')},",
+        f"    crafting_note = {lua_string(recipe['craftingNote'])},",
         "  },",
         "  effects = {",
     ))
-    for effect in record.get("usage", {}).get("effects", []):
+    for effect in record["usage"]["effects"]:
         lines.append(f"    {{ trigger={lua_string(effect['trigger'])}, text={lua_string(effect['text'])} }},")
     lines.extend(("  },", "}", ""))
 

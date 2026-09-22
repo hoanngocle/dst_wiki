@@ -1,8 +1,13 @@
 """Catalog contract tests for the generated Phàm Nhân alchemy definitions."""
 
+import copy
+import json
 from pathlib import Path
 import re
 import unittest
+from unittest.mock import patch
+
+import build_alchemy_defs as generator
 
 
 ROOT = Path(__file__).resolve().parents[3]
@@ -24,6 +29,15 @@ FORBIDDEN = {"xd_dy_fd", "xd_dy_tsfhd"}
 
 
 class AlchemyCatalogTest(unittest.TestCase):
+    def manual_items(self) -> dict:
+        with generator.MANUAL_PATH.open(encoding="utf-8") as manual_file:
+            return json.load(manual_file)["items"]
+
+    def assert_manual_rejected(self, items: dict) -> None:
+        with patch.object(generator.json, "load", return_value={"items": items}):
+            with self.assertRaises(ValueError):
+                generator.read_records()
+
     def assert_ingredients_valid(self, source: str) -> None:
         for prefab in [*CULTIVATION, *BUFFS, "xd_danyao_bg"]:
             match = re.search(
@@ -69,6 +83,43 @@ class AlchemyCatalogTest(unittest.TestCase):
         self.assertNotIn("xd_dy_tsfhd", source)
 
         self.assert_ingredients_valid(source)
+
+    def test_committed_catalog_exactly_matches_generator_and_manual(self):
+        """A stale checked-in Lua catalog must differ from fresh manual generation."""
+        self.assertEqual(
+            OUTPUT.read_text(encoding="utf-8"),
+            generator.render(generator.read_records()),
+        )
+
+    def test_generator_rejects_malformed_manual_scalars(self):
+        """Malformed JSON scalars cannot reach Lua interpolation."""
+        target = "tu_tien:xd_danyao_jq"
+        cases = [
+            ("boolean output count", lambda item: item["recipe"].__setitem__("outputCount", True)),
+            ("zero output count", lambda item: item["recipe"].__setitem__("outputCount", 0)),
+            ("string output count", lambda item: item["recipe"].__setitem__("outputCount", "1")),
+            ("boolean amount", lambda item: item["recipe"]["ingredients"][0].__setitem__("amount", True)),
+            ("zero amount", lambda item: item["recipe"]["ingredients"][0].__setitem__("amount", 0)),
+            ("string amount", lambda item: item["recipe"]["ingredients"][0].__setitem__("amount", "1")),
+            ("empty ingredient prefab", lambda item: item["recipe"]["ingredients"][0].__setitem__("id", "")),
+            ("missing crafting note", lambda item: item["recipe"].__setitem__("craftingNote", None)),
+            ("non-string crafting note", lambda item: item["recipe"].__setitem__("craftingNote", 1)),
+            ("non-list effects", lambda item: item["usage"].__setitem__("effects", {})),
+            ("non-mapping effect", lambda item: item["usage"].__setitem__("effects", ["bad"])),
+            ("non-string trigger", lambda item: item["usage"]["effects"][0].__setitem__("trigger", 1)),
+            ("non-string text", lambda item: item["usage"]["effects"][0].__setitem__("text", None)),
+        ]
+        for label, mutate in cases:
+            with self.subTest(label=label):
+                items = copy.deepcopy(self.manual_items())
+                mutate(items[target])
+                self.assert_manual_rejected(items)
+
+    def test_lua_string_escapes_lua_control_characters(self):
+        """Control characters must be emitted as Lua-safe escape sequences."""
+        value = 'quote" slash\\ newline\n tab\t backspace\b formfeed\f vertical\v bell\a unit\x1f null\0 delete\x7f'
+        expected = '"quote\\" slash\\\\ newline\\n tab\\t backspace\\b formfeed\\f vertical\\v bell\\a unit\\031 null\\000 delete\\127"'
+        self.assertEqual(generator.lua_string(value), expected)
 
     def test_invalid_ingredient_row_is_rejected(self):
         """A malformed emitted row cannot be skipped by ingredient validation."""
