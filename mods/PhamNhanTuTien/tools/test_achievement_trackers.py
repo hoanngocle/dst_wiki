@@ -119,6 +119,74 @@ class TrackerContracts(unittest.TestCase):
             self.assertNotIn(forbidden, rpc)
         self.assertIn("component.inst ~= sender", self.source)
 
+    def test_inventory_receipts_follow_units_through_merges_and_splits(self):
+        self.assertIn("local function CreditInventoryItem", self.source)
+        self.assertIn("inventoryitem:GetGrandOwner()", self.source)
+        self.assertIn("inventory.isloading", self.source)
+        self.assertIn("amount - credited", self.source)
+        self.assertIn('AddComponentPostInit("stackable"', self.source)
+        self.assertIn("self.Get = function", self.source)
+        self.assertIn("self.Put = function", self.source)
+        self.assertIn('ListenForEvent("stacksizechange"', self.source)
+        self.assertIn("CreditInventoryItem(data.item)", self.source)
+        self.assertNotIn('Seen(state, "items", data)', self.source)
+
+
+class ReceiptModel:
+    """Unit receipts survive stack entity replacement; no event-table identity."""
+    def __init__(self, size, credited=0):
+        self.size, self.credited = size, credited
+
+    def receive(self, loading=False):
+        delta = max(0, self.size - self.credited)
+        self.credited = self.size
+        return 0 if loading else delta
+
+    def split(self, size):
+        moved = min(self.credited, size)
+        self.size -= size
+        self.credited -= moved
+        return ReceiptModel(size, moved)
+
+    def merge(self, donor, room):
+        moved = min(room, donor.size)
+        received = min(donor.credited, moved)
+        self.size += moved
+        self.credited += received
+        donor.size -= moved
+        donor.credited -= received
+        return self.receive()
+
+
+class InventoryReceiptModels(unittest.TestCase):
+    def test_new_slot_repeated_events_and_internal_transfers(self):
+        item = ReceiptModel(10)
+        self.assertEqual(item.receive(), 10)
+        self.assertEqual(item.receive(), 0)  # fresh itemget table, same units
+        self.assertEqual(item.receive(), 0)  # active slot -> bag -> slot
+        split = item.split(4)
+        self.assertEqual(split.receive(), 0)
+        self.assertEqual(item.merge(split, 10), 0)
+
+    def test_merge_new_units_partial_acceptance_and_leftovers(self):
+        held, incoming = ReceiptModel(18, 18), ReceiptModel(7)
+        self.assertEqual(held.merge(incoming, 2), 2)
+        self.assertEqual((held.size, incoming.size), (20, 5))
+        self.assertEqual(incoming.receive(), 5)
+        self.assertEqual(held.receive(), 0)
+        self.assertEqual(incoming.receive(), 0)
+
+    def test_failed_pickup_loaded_inventory_and_consumed_units(self):
+        item = ReceiptModel(12)
+        self.assertEqual(item.receive(loading=True), 0)
+        self.assertEqual(item.receive(), 0)
+        # Eating/removing units clamps surviving receipts before a later merge.
+        item.size = item.credited = 9
+        self.assertEqual(item.merge(ReceiptModel(3), 11), 3)
+        rejected = ReceiptModel(4)
+        self.assertEqual(item.merge(rejected, 0), 0)
+        self.assertEqual((rejected.size, rejected.credited), (4, 0))
+
 
 class EvidenceModels(unittest.TestCase):
     def test_level_70_100_and_extended_rank_milestones(self):

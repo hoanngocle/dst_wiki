@@ -231,6 +231,67 @@ local function RefreshSeason(inst)
     end
 end
 
+-- Inventory:GiveItem emits itemget only for a new slot. Stackable:Put instead
+-- emits stacksizechange, and Stackable:Get replaces split units with a new
+-- entity. Track receipts per player/unit, carrying them through both operations;
+-- fresh event tables, bag transfers, and stack splits are not new acquisitions.
+local inventory_depth = 0
+local pending_inventory = setmetatable({}, { __mode="k" })
+
+local function ItemAmount(item)
+    local stack = item.components ~= nil and item.components.stackable or nil
+    local amount = stack ~= nil and stack:StackSize() or 1
+    return Integer(amount, 1, 1000000) and amount or 0
+end
+
+local function Receipts(item, amount)
+    local receipts = item._ttk_achievement_receipts
+    if receipts == nil then
+        receipts = setmetatable({}, { __mode="k" })
+        item._ttk_achievement_receipts = receipts
+    end
+    for player, count in pairs(receipts) do receipts[player] = math.min(count, amount) end
+    return receipts
+end
+
+local function CopyReceipts(item, amount)
+    local copy = {}
+    for player, count in pairs(Receipts(item, amount)) do copy[player] = count end
+    return copy
+end
+
+local function CreditInventoryItem(item)
+    if item == nil or not item:IsValid() or item.components == nil then return end
+    if inventory_depth > 0 then pending_inventory[item] = true; return end
+    local inventoryitem = item.components.inventoryitem
+    local player = inventoryitem ~= nil and inventoryitem:GetGrandOwner() or nil
+    if ResolveSender(player) == nil then return end
+    local amount = ItemAmount(item)
+    local receipts = Receipts(item, amount)
+    local credited = receipts[player] or 0
+    receipts[player] = amount -- Commit before Route can invoke other callbacks.
+    local inventory = player.components.inventory
+    if amount > credited and inventory ~= nil and not inventory.isloading then
+        local evidence = { prefab=item.prefab }
+        Route(player, "collect_prefab", evidence, amount - credited)
+        Route(player, "collect_prefabs", evidence, amount - credited)
+        Seasonal(player, "itemget", evidence, amount - credited)
+    end
+    -- Restored backpack contents get a baseline while Inventory:OnLoad still
+    -- has isloading=true; equipping/moving a bag must not collect its contents.
+    local container = item.components.container
+    if container ~= nil then
+        for _, child in pairs(container.slots) do CreditInventoryItem(child) end
+    end
+end
+
+local function FlushInventory()
+    if inventory_depth > 0 then return end
+    local pending = pending_inventory
+    pending_inventory = setmetatable({}, { __mode="k" })
+    for item in pairs(pending) do CreditInventoryItem(item) end
+end
+
 local function OnBuild(inst, data, event)
     local state = inst._ttk_achievement_state
     if data == nil or data.item == nil or Seen(state, "builds", data.item) then return end
@@ -271,17 +332,7 @@ local function InstallPlayer(inst)
         end
     end)
     inst:ListenForEvent("itemget", function(player, data)
-        if data == nil or data.item == nil or Seen(state, "items", data) then return end
-        local item = data.item
-        if item.components == nil or item.components.inventoryitem == nil
-            or item.components.inventoryitem.owner ~= player then return end
-        local stack = item.components.stackable
-        local amount = stack ~= nil and stack:StackSize() or 1
-        if not Integer(amount, 1, 1000000) then return end
-        local evidence = { prefab=data.item.prefab }
-        Route(player, "collect_prefab", evidence, amount)
-        Route(player, "collect_prefabs", evidence, amount)
-        Seasonal(player, "itemget", evidence, amount)
+        if data ~= nil then CreditInventoryItem(data.item) end
     end)
     -- farmtiller.lua and oar.lua emit these only after the successful action.
     inst:ListenForEvent("tilling", function(player)
@@ -310,6 +361,56 @@ end
 
 AddPlayerPostInit(InstallPlayer)
 AddComponentPostInit("eater", InstallEater)
+AddComponentPostInit("inventoryitem", function(self)
+    if not Master() or self._ttk_achievement_hook then return end
+    self._ttk_achievement_hook = true
+    self.inst:ListenForEvent("onputininventory", function(item) CreditInventoryItem(item) end)
+end)
+AddComponentPostInit("stackable", function(self)
+    if not Master() or self._ttk_achievement_hook then return end
+    self._ttk_achievement_hook = true
+    self.inst:ListenForEvent("stacksizechange", function(item) CreditInventoryItem(item) end)
+    local previous_get, previous_put = self.Get, self.Put
+    self.Get = function(stack, ...)
+        local before = CopyReceipts(stack.inst, ItemAmount(stack.inst))
+        inventory_depth = inventory_depth + 1
+        local ok, child = pcall(previous_get, stack, ...)
+        if ok and child ~= nil and child ~= stack.inst then
+            local size = ItemAmount(child)
+            local original, split = Receipts(stack.inst, ItemAmount(stack.inst)), Receipts(child, size)
+            for player, count in pairs(before) do
+                local moved = math.min(count, size)
+                original[player], split[player] = count - moved, moved
+            end
+            pending_inventory[child] = true
+        end
+        inventory_depth = inventory_depth - 1
+        FlushInventory()
+        if not ok then error(child) end
+        return child
+    end
+    self.Put = function(stack, item, ...)
+        local oldsize = ItemAmount(stack.inst)
+        local destination, donor = CopyReceipts(stack.inst, oldsize), CopyReceipts(item, ItemAmount(item))
+        inventory_depth = inventory_depth + 1
+        local ok, leftovers = pcall(previous_put, stack, item, ...)
+        if ok then
+            local moved = math.max(0, ItemAmount(stack.inst) - oldsize)
+            local received = Receipts(stack.inst, ItemAmount(stack.inst))
+            local remaining = Receipts(item, item:IsValid() and ItemAmount(item) or 0)
+            for player, count in pairs(donor) do
+                local carried = math.min(count, moved)
+                received[player] = (destination[player] or 0) + carried
+                remaining[player] = count - carried
+            end
+            pending_inventory[stack.inst] = true
+        end
+        inventory_depth = inventory_depth - 1
+        FlushInventory()
+        if not ok then error(leftovers) end
+        return leftovers
+    end
+end)
 AddComponentPostInit("follower", function(self)
     if not Master() or self._ttk_achievement_hook then return end
     self._ttk_achievement_hook = true
