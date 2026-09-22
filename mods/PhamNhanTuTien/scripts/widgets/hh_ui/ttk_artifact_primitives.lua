@@ -37,10 +37,16 @@ function Primitive.Button(parent, value, width, height, x, y, onclick, variant)
     local button = parent:AddChild(TextButton())
     local background = button:AddChild(Image(CONTROL_ATLAS, texture))
     background:SetSize(width, height)
+    if background.SetClickable ~= nil then background:SetClickable(false) end
     if background.MoveToBack ~= nil then background:MoveToBack() end
     button.background = background
-    button:SetSize(width, height)
     button:SetText(value or "")
+    if button.text ~= nil and button.text.SetRegionSize ~= nil then
+        button.text:SetRegionSize(width, height)
+    end
+    if button.image ~= nil and button.image.SetSize ~= nil then
+        button.image:SetSize(width, height)
+    end
     button:SetFont(Theme.GetFont())
     button:SetTextSize(math.floor((height or 54) * .48))
     button:SetTextColour(unpack(Theme.colours.text))
