@@ -24,6 +24,38 @@ FORBIDDEN = {"xd_dy_fd", "xd_dy_tsfhd"}
 
 
 class AlchemyCatalogTest(unittest.TestCase):
+    def assert_ingredients_valid(self, source: str) -> None:
+        for prefab in [*CULTIVATION, *BUFFS, "xd_danyao_bg"]:
+            match = re.search(
+                rf'M\.by_prefab\["{prefab}"\] = \{{(?P<row>.*?)\n\}}',
+                source,
+                re.DOTALL,
+            )
+            self.assertIsNotNone(match, prefab)
+            ingredient_block = re.search(
+                r'ingredients = \{\n(?P<ingredients>.*?)\n    \},',
+                match.group("row"),
+                re.DOTALL,
+            )
+            self.assertIsNotNone(ingredient_block, prefab)
+            ingredient_lines = [
+                line.strip()
+                for line in ingredient_block.group("ingredients").splitlines()
+                if line.strip()
+            ]
+            ingredients = [
+                re.fullmatch(r'\{ prefab="([^"]*)", amount=(-?\d+) \},', line)
+                for line in ingredient_lines
+            ]
+            self.assertEqual(len(ingredients), len(ingredient_lines), prefab)
+            self.assertGreaterEqual(len(ingredients), 1, prefab)
+            self.assertLessEqual(len(ingredients), 4, prefab)
+            for ingredient in ingredients:
+                self.assertIsNotNone(ingredient, prefab)
+                ingredient_prefab, amount = ingredient.groups()
+                self.assertTrue(ingredient_prefab, prefab)
+                self.assertGreater(int(amount), 0, prefab)
+
     def test_generated_catalog_has_only_approved_pills_and_valid_recipes(self):
         """Removing an approved pill or emitting a forbidden or empty recipe fails."""
         source = OUTPUT.read_text(encoding="utf-8")
@@ -36,21 +68,19 @@ class AlchemyCatalogTest(unittest.TestCase):
         self.assertNotIn("xd_dy_fd", source)
         self.assertNotIn("xd_dy_tsfhd", source)
 
-        for prefab in [*CULTIVATION, *BUFFS, "xd_danyao_bg"]:
-            match = re.search(
-                rf'M\.by_prefab\["{prefab}"\] = \{{(?P<row>.*?)\n\}}',
-                source,
-                re.DOTALL,
-            )
-            self.assertIsNotNone(match, prefab)
-            ingredients = re.findall(
-                r'\{ prefab="([^"]+)", amount=(\d+) \}', match.group("row"),
-            )
-            self.assertGreaterEqual(len(ingredients), 1, prefab)
-            self.assertLessEqual(len(ingredients), 4, prefab)
-            for ingredient_prefab, amount in ingredients:
-                self.assertTrue(ingredient_prefab, prefab)
-                self.assertGreater(int(amount), 0, prefab)
+        self.assert_ingredients_valid(source)
+
+    def test_invalid_ingredient_row_is_rejected(self):
+        """A malformed emitted row cannot be skipped by ingredient validation."""
+        source = OUTPUT.read_text(encoding="utf-8")
+        malformed = source.replace(
+            '{ prefab="spidergland", amount=5 }',
+            '{ prefab="", amount=0 }',
+            1,
+        )
+
+        with self.assertRaises(AssertionError):
+            self.assert_ingredients_valid(malformed)
 
 
 if __name__ == "__main__":
