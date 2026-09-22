@@ -1128,6 +1128,11 @@ function HHRank:OnLoad(data)
     self:ReconcileLevelPromotion()
     self:RefreshExamAvailability()
     self:Sync()
+    self.inst:DoTaskInTime(0, function(inst)
+        if inst:IsValid() and inst.components.hh_rank == self then
+            self:ReconcileLevelPromotion()
+        end
+    end)
 end
 
 return HHRank

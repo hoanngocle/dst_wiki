@@ -78,6 +78,26 @@ def claim_exam_then_reconcile(current: str, level: int, ranks: dict[str, int], r
     return reconcile_level_promotion(claimed, level, ranks, requirements)
 
 
+def rank_load_before_leveling_then_deferred(
+    saved_rank: str, restored_level: int, ranks: dict[str, int], requirements: dict[str, int]
+) -> tuple[str, list[tuple[str, str]]]:
+    """Model rank-load-first, then level-load, then one or more zero-delay callbacks."""
+    current = saved_rank
+    events: list[tuple[str, str]] = []
+
+    def reconcile(level: int) -> None:
+        nonlocal current
+        promoted = reconcile_level_promotion(current, level, ranks, requirements)
+        if promoted != current:
+            events.append((current, promoted))
+            current = promoted
+
+    reconcile(1)  # Rank OnLoad runs before hh_leveling restores its saved level.
+    reconcile(restored_level)  # The scheduled post-load callback.
+    reconcile(restored_level)  # A duplicate callback or favorable load order is a no-op.
+    return current, events
+
+
 def component_method(source: str, method_name: str) -> str:
     match = re.search(
         rf"function HHRank:{method_name}\([^)]*\)(?P<body>.*?)(?=\nfunction HHRank:|\nreturn HHRank)",
@@ -163,6 +183,25 @@ class ExtendedRankContractTests(unittest.TestCase):
         self.assertRegex(claim_exam, r"if not level_promoted then\s*\n\s*local quest = self\.inst\.components\.hh_guild_quest")
         self.assertEqual(claim_exam_then_reconcile("A", 70, self.ranks, self.requirements), "SS")
         self.assertEqual(claim_exam_then_reconcile("A", 100, self.ranks, self.requirements), "SSS")
+
+    def test_rank_load_before_leveling_uses_one_deferred_catch_up_event(self) -> None:
+        """Without a guarded zero-delay callback, rank-first loading strands S at its stale level."""
+        on_load = component_method(self.component, "OnLoad")
+        self.assertRegex(
+            on_load,
+            r"self:Sync\(\)\s*\n\s*self\.inst:DoTaskInTime\(0, function\(inst\)",
+        )
+        self.assertRegex(on_load, r"if inst:IsValid\(\) and inst\.components\.hh_rank == self then")
+        self.assertRegex(on_load, r"self:ReconcileLevelPromotion\(\)")
+        self.assertNotRegex(on_load, r'PushEvent\("hh_rank_changed"')
+        self.assertEqual(
+            rank_load_before_leveling_then_deferred("S", 70, self.ranks, self.requirements),
+            ("SS", [("S", "SS")]),
+        )
+        self.assertEqual(
+            rank_load_before_leveling_then_deferred("S", 100, self.ranks, self.requirements),
+            ("SSS", [("S", "SSS")]),
+        )
 
     def test_component_clears_exam_presentation_when_extended_rank_has_no_exam(self) -> None:
         """A missing SS/SSS exam must clear a stale S exam instead of leaving it visible."""
