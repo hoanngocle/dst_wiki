@@ -45,6 +45,32 @@ class EffectModel:
         if self.active.get(prefab, 0) <= now: self.active.pop(prefab, None)
 
 
+class AttackModel:
+    """Independent event model: lightning's nested hit is not a new credit."""
+    def __init__(self):
+        self.processing_auxiliary_hit = False
+        self.bonus_hits = 0
+        self.healing = 0
+
+    def hit(self, damage, fail_auxiliary=False):
+        if self.processing_auxiliary_hit:
+            return
+        self.healing += damage * .5
+        self.processing_auxiliary_hit = True
+        try:
+            self.bonus_hits += 1
+            if fail_auxiliary:
+                raise RuntimeError("auxiliary damage failed")
+            self.hit(180)
+        finally:
+            self.processing_auxiliary_hit = False
+
+    @staticmethod
+    def lifesteal(data):
+        damage = data.get("damageresolved", data.get("damage"))
+        return damage * .5 if isinstance(damage, (int, float)) and damage > 0 else 0
+
+
 class AlchemyRuntimeTest(unittest.TestCase):
     def read(self, path): return path.read_text(encoding="utf-8")
 
@@ -97,11 +123,34 @@ class AlchemyRuntimeTest(unittest.TestCase):
     def test_regen_combat_work_and_fasting_guards_are_present(self):
         """Applying after expiry, invalid damage, extra work actions, or stacked fasting fails."""
         source = self.read(EFFECTS)
-        for token in ('IsDead()', 'data.damage <= 0', 'CHOP', 'MINE', 'HAMMER',
+        for token in ('IsDead()', 'damage <= 0', 'CHOP', 'MINE', 'HAMMER',
                       'burnratemodifiers:SetModifier', 'OnSave', 'OnLoad',
                       'VALID_KINDS', 'type(enabled) == "number"', 'math.min', 'math.max'):
             self.assertIn(token, source)
         self.assertNotIn('DIG', re.search(r'work_efficiency.*?end', source, re.S).group(0))
+
+    def test_lightning_nested_hit_is_guarded_and_never_lifesteals_twice(self):
+        """Removing the shared guard would recurse and heal from its own +180 hit."""
+        source = self.read(EFFECTS)
+        self.assertIn('self.processing_auxiliary_hit', source)
+        self.assertIn('pcall(target.components.combat.GetAttacked', source)
+        self.assertRegex(source, r'(?s)pcall\(target\.components\.combat\.GetAttacked.*?self\.processing_auxiliary_hit = false')
+        model = AttackModel()
+        model.hit(100)
+        self.assertEqual(model.bonus_hits, 1)
+        self.assertEqual(model.healing, 50)
+        with self.assertRaises(RuntimeError):
+            model.hit(100, fail_auxiliary=True)
+        self.assertFalse(model.processing_auxiliary_hit)
+
+    def test_lifesteal_uses_positive_resolved_damage_once(self):
+        """Using pre-mitigation damage would over-heal through armor or resistance."""
+        source = self.read(EFFECTS)
+        self.assertIn('local damage = data.damageresolved or data.damage', source)
+        self.assertIn('components.health:DoDelta(damage * effect.fraction)', source)
+        self.assertEqual(AttackModel.lifesteal({"damage": 100, "damageresolved": 40}), 20)
+        self.assertEqual(AttackModel.lifesteal({"damage": 100, "damageresolved": 0}), 0)
+        self.assertEqual(AttackModel.lifesteal({"damage": -10}), 0)
 
 
 if __name__ == "__main__":

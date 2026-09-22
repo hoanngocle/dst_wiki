@@ -16,6 +16,7 @@ local TtkAlchemyEffects = Class(function(self, inst)
     self.expiry_tasks = {}
     self.listeners = {}
     self.insulation = {}
+    self.processing_auxiliary_hit = false
 end)
 
 local function Key(prefab) return "ttk_alchemy_" .. prefab end
@@ -125,14 +126,19 @@ function TtkAlchemyEffects:Apply(prefab, saved_duration)
         return true
     elseif kind == "lightning_damage" or kind == "lifesteal" then
         self.listeners[prefab] = function(_, data)
-            if data == nil or type(data.damage) ~= "number" or data.damage <= 0 then return end
+            if self.processing_auxiliary_hit then return end
+            if data == nil then return end
+            local damage = data.damageresolved or data.damage
+            if type(damage) ~= "number" or damage <= 0 then return end
             if kind == "lightning_damage" then
                 local target = data.target
                 if target ~= nil and target.components.combat ~= nil then
-                    target.components.combat:GetAttacked(self.inst, effect.amount, nil, "electric")
+                    self.processing_auxiliary_hit = true
+                    pcall(target.components.combat.GetAttacked, target.components.combat, self.inst, effect.amount, nil, "electric")
+                    self.processing_auxiliary_hit = false
                 end
             elseif Alive(self.inst) and components.health ~= nil then
-                components.health:DoDelta(data.damage * effect.fraction)
+                components.health:DoDelta(damage * effect.fraction)
             end
         end
         self.inst:ListenForEvent("onhitother", self.listeners[prefab])
