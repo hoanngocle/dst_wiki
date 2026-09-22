@@ -211,6 +211,76 @@ class SeasonalRollover(unittest.TestCase):
             assert(s.slots[1].xp_receipt=="pending" and s.slots[1].claims==0)
         ''')
 
+    def test_automatic_claims_credit_all_season_achievements_once(self):
+        self.lua.execute('''
+            Prefabs.ttk_lingshi2={}; Prefabs.greengem={}; Prefabs.ttk_lingshi3={}; Prefabs.bearger_fur={}
+            local Core=require("achievement/ttk_achievement_core")
+            local configure=Core.SetSeasonalClaimCallback
+            local receipts={}; local delivered=0
+            Core.SetSeasonalClaimCallback=function(core,fn)
+                configure(core,function(player,receipt,state)
+                    assert(not receipts[receipt.claim_key],"duplicate committed claim receipt")
+                    receipts[receipt.claim_key]=true; delivered=delivered+1
+                    return fn(player,receipt,state)
+                end)
+            end
+            local p=player("achievements",setup); local c=p.components.ttk_achievement_progress
+            local s=ready(p,17); assert(c:ClaimSeasonal(s.task_id,"first-repeat"))
+            for i=1,20 do ready(p,i) end
+            local advances=0; local advance=c.core.Advance
+            c.core.Advance=function(core,id,...)
+                if id:match("^season_") then advances=advances+1 end
+                return advance(core,id,...)
+            end
+            winter(p); checkwinter(p)
+            local function check(q)
+                for id,target in pairs({season_first_mission=1,season_mission_five=5,season_mission_ten=10,
+                    season_mission_fifteen=15,season_mission_twenty=20,season_participate=1,
+                    season_repeat=1,season_claim_reward=1}) do
+                    assert(progress(q,id)==target,"automatic settlement omitted "..id)
+                end
+            end
+            check(p); assert(xp==210 and xp_calls==21 and grants.bearger_fur==1)
+            local before=advances
+            world("season","winter"); world("season","winter"); p:flush()
+            assert(advances==before,"duplicate watcher repeated achievement credit")
+            p=reload(p); world("season","winter"); p:flush(); check(p)
+            assert(xp==210 and xp_calls==21 and grants.bearger_fur==1 and delivered==21)
+        ''')
+
+    def test_manual_receipts_replay_and_pending_rollover_reload_share_one_boundary(self):
+        self.lua.execute('''
+            local p=player("manual-replay",setup); local c=p.components.ttk_achievement_progress
+            local slot=ready(p,17)
+            local addexp=p.components.hh_leveling.AddExp
+            p.components.hh_leveling.AddExp=function() return false end
+            rpc.AchievementSeasonal(p,"task",17,slot.task_id,"rejected")
+            assert(slot.claims==0 and progress(p,"season_claim_reward")==0)
+            rpc.AchievementSeasonal(p,"task",1,slot.task_id,"wrong-slot")
+            assert(slot.claims==0 and progress(p,"season_first_mission")==0)
+            p.components.hh_leveling.AddExp=addexp
+            rpc.AchievementSeasonal(p,"task",17,slot.task_id,"manual-repeat")
+            assert(slot.claims==1 and progress(p,"season_claim_reward")==1)
+            local receipts=0; local callback=c.core.seasonal_claimed
+            c.core.seasonal_claimed=function(...) receipts=receipts+1; return callback(...) end
+            ready(p,17)
+            rpc.AchievementSeasonal(p,"task",17,slot.task_id,"manual-repeat")
+            assert(slot.claims==1 and receipts==0 and progress(p,"season_repeat")==0)
+            for i=1,9 do ready(p,i) end
+            Prefabs.ttk_lingshi1=nil
+            winter(p)
+            assert(c.core.seasonal.rollover_pending and receipts==10 and xp==110)
+            assert(progress(p,"season_repeat")==1 and progress(p,"season_mission_ten")==10)
+            p=reload(p); c=p.components.ttk_achievement_progress
+            receipts=0; callback=c.core.seasonal_claimed
+            c.core.seasonal_claimed=function(...) receipts=receipts+1; return callback(...) end
+            world("season","winter"); p:flush()
+            assert(receipts==0 and xp==110 and grants.ttk_lc_qfx_seed==3)
+            Prefabs.ttk_lingshi1={}; world("season","winter"); p:flush(); checkwinter(p)
+            assert(receipts==0 and xp==110 and grants.ttk_lc_qfx_seed==8 and grants.ttk_lingshi1==10)
+            assert(progress(p,"season_repeat")==1 and progress(p,"season_mission_ten")==10)
+        ''')
+
 
 if __name__ == "__main__":
     unittest.main()

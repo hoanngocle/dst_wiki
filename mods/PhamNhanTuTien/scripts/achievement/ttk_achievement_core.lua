@@ -117,6 +117,10 @@ function Core:SetSeasonalXPCallback(callback)
     self.seasonal_xp = type(callback) == "function" and callback or nil
 end
 
+function Core:SetSeasonalClaimCallback(callback)
+    self.seasonal_claimed = type(callback) == "function" and callback or nil
+end
+
 local SettleSeason
 
 function Core:StartSeason(season, epoch, random)
@@ -204,6 +208,10 @@ local function CommitSeasonal(self, definition, slot, request_id)
         first_claims=state.first_claims, claim_key=claim_key,
     })
     if request_id ~= nil then self:StoreSeasonalReplay(request_id, result) end
+    -- Both manual and rollover claims cross this boundary exactly once. The
+    -- saved slot.claims is the durable receipt for epoch:task:claim_number;
+    -- replay lookups and already committed slots never invoke the callback.
+    if self.seasonal_claimed ~= nil then self.seasonal_claimed(self.inst, Copy(result), state) end
     self.seasonal_busy = false
     return true, Copy(result)
 end

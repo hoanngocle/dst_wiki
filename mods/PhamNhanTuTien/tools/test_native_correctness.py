@@ -171,6 +171,7 @@ class NativeCorrectness(unittest.TestCase):
             STRINGS={NAMES={},RECIPE_DESC={},ACTIONS={},CHARACTERS={GENERIC={DESCRIBE={}}}}
             TECH={SCIENCE_TWO={}}; AddRecipe2=function() end; Action=function(v) return v end
             AddAction=function() end; AddComponentAction=function() end
+            RegisterInventoryItemAtlas=function() end
             ActionHandler=function() end; AddStategraphActionHandler=function() end
         ''')
         self.native("components/eater", "NativeEater")

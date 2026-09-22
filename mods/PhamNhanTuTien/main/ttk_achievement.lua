@@ -237,6 +237,19 @@ local function ConfigureXP(inst, component)
     end)
 end
 
+local function ConfigureSeasonalClaims(inst, component)
+    component.core:SetSeasonalClaimCallback(function(player, receipt, state)
+        if not Master() or player ~= inst or ResolveSender(inst) ~= component
+            or state ~= component.core.seasonal or not component.core.seasonal_busy then return end
+        local slot = component.core:FindSeasonalSlot(receipt.id)
+        local expected = state.epoch .. ":" .. receipt.id .. ":" .. tostring(receipt.claims)
+        if slot == nil or slot.claims ~= receipt.claims or receipt.claim_key ~= expected then return end
+        Route(inst, "season_mission_completed", { milestone=state.first_claims }, 1, true)
+        Route(inst, "season_mission_claimed", { source="seasonal" }, 1)
+        if slot.claims > 1 then Route(inst, "season_mission_repeat", { source="seasonal" }, 1) end
+    end)
+end
+
 local function RefreshSeason(inst)
     local component = ResolveSender(inst)
     if component == nil then return end
@@ -419,6 +432,7 @@ local function InstallPlayer(inst)
     local component = inst.components.ttk_achievement_progress
     PerkEffects.Install(inst)
     component:SetEffectCallback(PerkEffects.Apply)
+    ConfigureSeasonalClaims(inst, component)
     component:ReapplyPurchased()
     local state = { kills=setmetatable({}, { __mode="k" }), dead=inst:HasTag("playerghost"),
         season=G.TheWorld.state.season, cycle=G.TheWorld.state.cycles }
@@ -795,13 +809,7 @@ AddModRPCHandler(modname, "AchievementSeasonal", function(sender, kind, slot_ind
         if not Integer(slot_index, 1, 20) then return end
         local slot = seasonal.slots[slot_index]
         if slot == nil or slot.task_id ~= id then return end
-        local before = slot.claims
-        local ok = component:ClaimSeasonal(slot.task_id, request_id)
-        if ok and slot.claims > before then
-            Route(sender, "season_mission_completed", { milestone=seasonal.first_claims }, 1, true)
-            Route(sender, "season_mission_claimed", { source="seasonal" }, 1)
-            if slot.claims > 1 then Route(sender, "season_mission_repeat", { source="seasonal" }, 1) end
-        end
+        component:ClaimSeasonal(slot.task_id, request_id)
     elseif kind == "chest" then
         if not Integer(slot_index, 1, 4) then return end
         local milestone = CHEST_MILESTONES[slot_index]

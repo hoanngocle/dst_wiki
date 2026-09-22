@@ -21,22 +21,34 @@ local function OnEaten(inst, eater)
 end
 
 local function MakePill(prefab)
+    -- Reuse the shipped pill art. Cultivation/fasting pills share the healing
+    -- pill presentation until bespoke art exists; prefab/save IDs stay intact.
+    local animation = prefab:match("^xd_dy_(%w+)_1$") or "dmhsd"
+    local image = "xd_dy_" .. animation .. "_5"
+    local atlas = "images/inventoryimages/" .. image .. ".xml"
+    local assets = {
+        Asset("ANIM", "anim/xd_danyao_new.zip"),
+        Asset("ATLAS", atlas),
+        Asset("IMAGE", "images/inventoryimages/" .. image .. ".tex"),
+    }
     local function fn()
         local inst = CreateEntity()
         inst.entity:AddTransform(); inst.entity:AddAnimState(); inst.entity:AddNetwork()
         MakeInventoryPhysics(inst)
         inst:AddTag("xd_danyao")
-        inst.AnimState:SetBank("quagmire_food"); inst.AnimState:SetBuild("quagmire_food"); inst.AnimState:PlayAnimation("idle")
+        inst.AnimState:SetBank("xd_danyao_new"); inst.AnimState:SetBuild("xd_danyao_new"); inst.AnimState:PlayAnimation(animation, true)
         inst.entity:SetPristine()
         if not TheWorld.ismastersim then return inst end
         inst:AddComponent("inspectable")
         inst:AddComponent("inventoryitem")
+        inst.components.inventoryitem.atlasname = atlas
+        inst.components.inventoryitem.imagename = image
         inst:AddComponent("edible")
         inst.components.edible.foodtype = FOODTYPE.GOODIES
         inst.components.edible:SetOnEatenFn(OnEaten)
         return inst
     end
-    return Prefab(prefab, fn)
+    return Prefab(prefab, fn, assets)
 end
 
 local function OnFurnaceHammered(inst, worker)
@@ -45,6 +57,7 @@ local function OnFurnaceHammered(inst, worker)
         inst.components.workable:SetWorkLeft(3)
         return
     end
+    if inst.components.container ~= nil then inst.components.container:DropEverything() end
     local fx = SpawnPrefab("collapse_small")
     if fx ~= nil then fx.Transform:SetPosition(inst.Transform:GetWorldPosition()) end
     inst:Remove()

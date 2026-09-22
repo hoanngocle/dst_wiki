@@ -2,6 +2,13 @@ local G = GLOBAL
 local containers = G.require("containers")
 local Defs = G.require("alchemy/ttk_alchemy_defs")
 
+for prefab, row in pairs(Defs.by_prefab) do
+    local animation = prefab:match("^xd_dy_(%w+)_1$") or "dmhsd"
+    local image = "xd_dy_" .. animation .. "_5"
+    RegisterInventoryItemAtlas("images/inventoryimages/" .. image .. ".xml", image .. ".tex")
+    G.STRINGS.NAMES[string.upper(prefab)] = row.name
+end
+
 local cultivation_pills = {}
 for stage = 1, 15 do
     local row = Defs.GetCultivationStage(stage)
