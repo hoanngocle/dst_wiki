@@ -96,6 +96,7 @@
   add({ code:'shadow_camp', numericId:'92', name:'Phục Ma-BT', family:'Thân thiện Shadow', tier:'UTILITY', category:'Tiện ích', slot:'Mọi trang bị', status:'Đang có', effectKey:'shadowCamp', current:'Sinh vật shadow không tấn công', proposed:'Giữ nguyên', source:SOURCE_ENCHANT });
   add({ code:'moon_camp', numericId:'91', name:'Phục Ma-VĐ', family:'Thân thiện Gestalt', tier:'UTILITY', category:'Tiện ích', slot:'Mọi trang bị', status:'Đang có', effectKey:'moonCamp', current:'Sinh vật gestalt không tấn công', proposed:'Giữ nguyên', source:SOURCE_ENCHANT });
   add({ code:'add_speed', numericId:'89', name:'Nhanh Nhẹn', family:'Tốc chạy', tier:'III', category:'Cơ động', slot:'Vũ khí', status:'Đang có', effectKey:'addSpeedPercent', current:'5-25%', proposed:'5-25%', source:SOURCE_ENCHANT });
+  proposalFamily({ family:'Nhanh Nhẹn', code:'equip_speed', effectKey:'addSpeedPercent', category:'Cơ động', slot:'Vũ khí', status:'Đề xuất - adapter', values:['1-5%','3-10%','5-15%','10-20%','15-30%'], exclusiveGroup:'move_speed', source:`${SOURCE_ENCHANT} + ${SOURCE_EFFECTS}`, note:'Tách dòng Nhanh Nhẹn hiện tại thành 5 tier để cân bằng.' });
   add({ code:'add_light', numericId:'90', name:'☆Phổ Độ', family:'Phát sáng', tier:'UTILITY', category:'Tiện ích', slot:'Mọi trang bị', status:'Đang có', effectKey:'add_light', current:'Phát sáng khi trang bị', proposed:'Giữ nguyên', source:SOURCE_ENCHANT });
 
   existingTierFamily({ family:'Bền Bỉ', category:'Độ bền', slot:'Trang bị có độ bền', effectKey:'add_max_use', entries:[
@@ -122,15 +123,16 @@
   existingTierFamily({ family:'Gia Trì', category:'Độ bền', slot:'Trang bị có độ bền', effectKey:'durabilityRegen', entries:[
     {tier:'I', code:'restore_use_10s_1use', id:71, name:'Gia Trì I', value:'Hồi 1 độ bền mỗi 10 giây'},
     {tier:'II', code:'restore_use_5s_1use', id:72, name:'Gia Trì II', value:'Hồi 1 độ bền mỗi 5 giây'},
-    {tier:'III', code:'restore_use_3s_1use', id:69, name:'☆Gia Trì III', value:'Hồi 1 độ bền mỗi giây', note:'Tên code còn ghi 3s nhưng mô tả và runtime dùng 1s.'},
+    {tier:'III', code:'restore_use_1s_1use', id:69, name:'☆Gia Trì III', value:'Hồi 1 độ bền mỗi giây'},
     {tier:'IV', code:'restore_use_1s_2_percent', id:70, name:'★Gia Trì IV', value:'Hồi 2% độ bền mỗi giây'},
   ]});
   existingTierFamily({ family:'Hộ Giáp', category:'Độ bền', slot:'Giáp', effectKey:'armorDurability', entries:[
     {tier:'I', code:'add_max_use_armor_01', id:67, name:'Hộ Giáp I', value:'+200-500 độ bền giáp'},
     {tier:'II', code:'add_max_use_armor_02', id:68, name:'Hộ Giáp II', value:'+500-1000 độ bền giáp'},
     {tier:'III', code:'add_max_use_armor_03', id:65, name:'☆Hộ Giáp III', value:'+1000-3000 độ bền giáp'},
-    {tier:'IV', code:'armor_immune_amount', id:66, name:'★Hộ Giáp IV', value:'Giáp không mất độ bền', note:'value_range 10-80 không tham gia hiệu ứng chính.'},
   ]});
+  add({ code:'add_max_use_armor_04', name:'★Hộ Giáp IV', family:'Hộ Giáp', tier:'IV', category:'Độ bền', slot:'Giáp', status:'Đề xuất - dùng ngay', effectKey:'armorDurability', current:'Chưa có', proposed:'+2000-5000 độ bền giáp', cap:'Chỉ 1 viên Hộ Giáp', exclusiveGroup:'armor_durability', source:SOURCE_ENCHANT, note:'Dùng lại cơ chế cộng độ bền giáp hiện có.' });
+  add({ code:'armor_immune_amount', numericId:'66', name:'★Hộ Giáp V', family:'Hộ Giáp', tier:'V', category:'Độ bền', slot:'Giáp', status:'Đang có', effectKey:'armorDurability', current:'Giáp không mất độ bền', proposed:'Giáp không mất độ bền', cap:'Chỉ 1 viên Hộ Giáp', exclusiveGroup:'armor_durability', source:SOURCE_ENCHANT, note:'value_range 10-80 không tham gia hiệu ứng chính.' });
   existingTierFamily({ family:'Xuyên Giáp', category:'Tấn công', slot:'Vũ khí', effectKey:'trueDamageNum', cap:'Tổng 40%', exclusiveGroup:'armor_pierce', entries:[
     {tier:'I', code:'true_damage_small', id:63, name:'Xuyên Giáp I', value:'3-5% ST đòn chính bỏ qua giáp'},
     {tier:'II', code:'true_damage_med', id:64, name:'Xuyên Giáp II', value:'6-10% ST đòn chính bỏ qua giáp'},
@@ -218,7 +220,6 @@
   proposalFamily({ family:'Quân Đoàn Ma', code:'equip_shadow_mana', effectKey:'shadowManaReduction', category:'Đệ tử', slot:'Mũ hoặc phụ kiện', status:'Đề xuất - adapter', values:['3%','5%','8%','12%','18%'], cap:'Tổng 40%', exclusiveGroup:'shadow_mana', source:`scripts/components/hh_mana.lua + ${SOURCE_DUNGEON}`, note:'Chỉ giảm mana triệu hồi và duy trì Shadow.' });
 
   utility({ name:'Nhiếp Vật', code:'utility_auto_pickup', effectKey:'utilityAutoPickup', value:'Tự nhặt trong bán kính 6', source:SOURCE_DUNGEON, note:'Mượn OrangeAmuletPickup. Không nhặt đồ đang cháy, trong container hoặc thuộc người khác.' });
-  utility({ name:'Bền Lực', code:'utility_durability_save', effectKey:'utilityDurabilitySave', value:'25% không hao độ bền', source:SOURCE_DUNGEON, note:'Khác Bền Bỉ: đây là xác suất bảo toàn, không tăng dung lượng.' });
   utility({ name:'Bích Cốc', code:'utility_hunger_rate', effectKey:'utilityHungerRate', value:'Giảm 25% tốc độ hao đói', source:SOURCE_ALCHEMY, note:'Không dùng mức giảm 80% của Bích Cốc Đan.' });
   utility({ name:'Cường Kình', code:'utility_work_efficiency', effectKey:'utilityWorkEfficiency', value:'+35% hiệu suất chặt, đập và đào', source:SOURCE_ALCHEMY, note:'Không tăng tốc đào đất, hái hoặc thu hoạch.' });
   utility({ name:'Hàn Ngọc', code:'utility_cold_protection', effectKey:'utilityColdProtection', value:'+120 cách nhiệt mùa đông', source:SOURCE_ALCHEMY, note:'Là chống lạnh, không phải miễn nhiễm lạnh cóng.' });

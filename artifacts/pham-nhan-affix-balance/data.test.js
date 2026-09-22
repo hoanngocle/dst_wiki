@@ -72,6 +72,35 @@ test('splits critical rate and critical damage into five requested tiers', () =>
   assert.ok(damage.every((row) => row.effectKey === 'criticalHitEffect' && row.cap === 'Không cap'));
 });
 
+test('splits Nhanh Nhẹn into five proposed tiers while preserving the runtime row', () => {
+  const proposals = Catalog.rows.filter((row) => row.family === 'Nhanh Nhẹn');
+  assert.deepEqual(proposals.map((row) => row.proposed), ['1-5%', '3-10%', '5-15%', '10-20%', '15-30%']);
+  assert.ok(proposals.every((row) => row.effectKey === 'addSpeedPercent' && row.status === 'Đề xuất - adapter'));
+
+  const runtime = Catalog.rows.find((row) => row.code === 'add_speed');
+  assert.equal(runtime.current, '5-25%');
+  assert.equal(runtime.status, 'Đang có');
+});
+
+test('promotes permanent armor to tier V and adds the requested tier IV proposal', () => {
+  const rows = Catalog.rows.filter((row) => row.family === 'Hộ Giáp');
+  assert.deepEqual(rows.map((row) => row.tier), ['I', 'II', 'III', 'IV', 'V']);
+  assert.equal(rows[3].name, '★Hộ Giáp IV');
+  assert.equal(rows[3].proposed, '+2000-5000 độ bền giáp');
+  assert.equal(rows[3].status, 'Đề xuất - dùng ngay');
+  assert.equal(rows[4].code, 'armor_immune_amount');
+  assert.equal(rows[4].name, '★Hộ Giáp V');
+  assert.equal(rows[4].current, 'Giáp không mất độ bền');
+});
+
+test('removes Bền Lực and uses the accurate one-second Gia Trì code', () => {
+  assert.equal(Catalog.rows.some((row) => row.code === 'utility_durability_save' || row.name === 'Bền Lực'), false);
+  assert.equal(Catalog.rows.some((row) => row.code === 'restore_use_3s_1use'), false);
+  const restoration = Catalog.rows.find((row) => row.code === 'restore_use_1s_1use');
+  assert.equal(restoration.name, '☆Gia Trì III');
+  assert.equal(restoration.note, '');
+});
+
 test('contains no forbidden long dash in visible catalog copy', () => {
   const visible = JSON.stringify(Catalog.rows);
   assert.equal(visible.includes('—'), false);

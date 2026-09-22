@@ -951,11 +951,11 @@ local af = {
             a:HHKillTask(s, "restore_use_5s_1use_task")
         end
     },
-    ["restore_use_3s_1use"] = {
+    ["restore_use_1s_1use"] = {
         ["id"] = 69,
         ["name"] = "☆Gia Trì III",
         ["client_text"] = "GT\nIII",
-        ["desc"] = b["restore_use_3s_1use"],
+        ["desc"] = b["restore_use_1s_1use"],
         ["can_add"] = false,
         ["only_one"] = true,
         ["star_rating"] = 8,
@@ -967,8 +967,8 @@ local af = {
             return false, "trang bị ko phù hợp"
         end,
         ["start_fn"] = function(s)
-            a:HHKillTask(s, "restore_use_3s_1use_task")
-            s["restore_use_3s_1use_task"] =
+            a:HHKillTask(s, "restore_use_1s_1use_task")
+            s["restore_use_1s_1use_task"] =
                 s:DoPeriodicTask(
                 1,
                 function()
@@ -977,7 +977,7 @@ local af = {
             )
         end,
         ["end_fn"] = function(s)
-            a:HHKillTask(s, "restore_use_3s_1use_task")
+            a:HHKillTask(s, "restore_use_1s_1use_task")
         end
     },
     ["restore_use_1s_2_percent"] = {
@@ -1109,8 +1109,8 @@ local af = {
     },
     ["armor_immune_amount"] = {
         ["id"] = 66,
-        ["name"] = "★Hộ Giáp IV",
-        ["client_text"] = "HG\nIV",
+        ["name"] = "★Hộ Giáp V",
+        ["client_text"] = "HG\nV",
         ["desc"] = b["armor_immune_amount"],
         ["can_add"] = false,
         ["only_one"] = true,

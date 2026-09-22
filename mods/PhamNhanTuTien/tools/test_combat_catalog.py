@@ -501,6 +501,21 @@ end
     def test_deleted_flat_tag_description_is_absent(self):
         self.check("assert(TUNING.HH_FORMAT_CONFIG.EQUIP_EFFECT.add_hit_damage_fish==nil,'deleted fish damage description')")
 
+    def test_one_second_restoration_code_migrates_old_saves(self):
+        self.check('''
+assert(affixes.restore_use_3s_1use==nil,'misleading restoration code still registered')
+assert(affixes.restore_use_1s_1use,'accurate restoration code missing')
+assert(TUNING.HH_FORMAT_CONFIG.EQUIP_EFFECT.restore_use_1s_1use=='hồi 1 độ bền/1s')
+local e=entity(EQUIPSLOTS.HANDS);e.components.finiteuses={GetPercent=function() return 1 end}
+e.components.hh_equip:OnLoad({equip_buff_list={{name='restore_use_3s_1use',value=1}}})
+assert(#e.components.hh_equip.equip_buff_list==1,'old restoration affix was lost during load')
+assert(e.components.hh_equip.equip_buff_list[1].name=='restore_use_1s_1use','old restoration affix was not migrated')
+assert(e.components.hh_equip:OnSave().equip_buff_list[1].name=='restore_use_1s_1use','migrated affix saved under old code')
+''')
+
+    def test_permanent_armor_is_displayed_as_tier_five(self):
+        self.check("assert(affixes.armor_immune_amount.name=='★Hộ Giáp V' and affixes.armor_immune_amount.client_text=='HG\\nV')")
+
     def test_custom_reflection_visual_helper_is_absent(self):
         self.check("assert(utils.SpawnBrambleFx==nil,'deleted custom reflection helper remains')")
 
