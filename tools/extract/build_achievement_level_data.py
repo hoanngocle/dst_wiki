@@ -307,7 +307,7 @@ def main() -> None:
     parser.add_argument(
         "--output",
         type=Path,
-        default=Path("data/manual/achievement-level.json"),
+        default=Path("artifacts/achievement-level-source.json"),
     )
     args = parser.parse_args()
     build_artifact(args.report, args.output)

@@ -31,7 +31,7 @@ export default function TuTienKyPage() {
           />
           <PhamNhanNav active="catalog" />
           <div className="mb-6 rounded-2xl border border-nova-border bg-nova-surface-soft p-4 text-sm leading-6 text-nova-muted">
-            <p><strong className="text-nova-text">Phàm Nhân {tuTienKyVersion}:</strong> Solo đã tích hợp đầy đủ. Wiki gồm công trình, pháp bảo, bộ giáp, linh thảo, thú nuôi, Máy Quay Thưởng, Linh Tuyền và Vĩnh Hằng Thần Hỏa. Xem Hướng dẫn để tra cứu cách chơi và Config để xem tùy chọn mặc định. EVA đã tích hợp, dùng cấp từ Achievement & Level. Đã bổ sung chín boss, linh vật, chiến lợi phẩm và hạt cây.</p>
+            <p><strong className="text-nova-text">Phàm Nhân {tuTienKyVersion}:</strong> Solo đã tích hợp đầy đủ. Wiki gồm công trình, pháp bảo, bộ giáp, linh thảo, thú nuôi, Máy Quay Thưởng, Linh Tuyền và Vĩnh Hằng Thần Hỏa. Xem Hướng dẫn để tra cứu cách chơi, Tiến trình để xem thành tựu và đan dược, Config để xem tùy chọn mặc định. EVA dùng chung cấp nhân vật đã tích hợp. Đã bổ sung chín boss, linh vật, chiến lợi phẩm và hạt cây.</p>
           </div>
           <WikiSearch items={tuTienKyItems} referenceItems={[...tuTienKyReferences, ...tuTienKyItems]} hideSourceFilters />
         </div>

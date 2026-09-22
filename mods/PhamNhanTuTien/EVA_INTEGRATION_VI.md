@@ -4,9 +4,8 @@ EVA là nhân vật độc lập trong màn chọn nhân vật của Phàm Nhân
 
 ## Sử dụng
 
-- Bật Phàm Nhân và Achievement & Level; tắt bản EVA độc lập. Phàm Nhân tự nạp toàn bộ mã/tài nguyên EVA.
-- EVA vẫn lưu cấp riêng và đọc `levelsystem.level` từ Achievement & Level; không đọc cấp `hh_leveling`.
-- Nếu không bật Achievement & Level, nhân vật mới không tự tăng cấp EVA.
+- Bật Phàm Nhân; tắt bản EVA độc lập. Phàm Nhân tự nạp toàn bộ mã/tài nguyên EVA.
+- EVA dùng chung cấp nhân vật `hh_leveling` đã tích hợp trong Phàm Nhân.
 - Giữ toàn bộ Hồn Lực, mốc mở kỹ năng, giá kỹ năng và HUD đã duyệt. Bảng mặc định thu gọn; mở theo cấp 10/20/30/50/100. Hồ Ảnh ở chuột phải.
 - Cấu hình EVA được thêm vào menu Phàm Nhân. Không thay đổi cấu hình Solo tích hợp.
 

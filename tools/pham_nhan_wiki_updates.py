@@ -28,7 +28,7 @@ def refresh_current_content(mod, items, by_code, add):
         old=by_code[code]
         add(code,old["name"],"item",old["description"],recipe,"Phải học bản vẽ tương ứng; sau đó không cần trạm chế tạo.","ARMOR_SET_VI.md")
     items[:] = [item for item in items if item["prefabId"] != "calliope_mori"]
-    add("eva","EVA","character","Nhân vật đã tích hợp trong Phàm Nhân 2.0.3, một ngoại hình mặc định, dùng cho world mới. Hồn Lực và kỹ năng mở theo cấp 10/20/30/50/100. Cấp EVA lấy từ Achievement & Level, không lấy từ cấp Solo; cần bật Achievement & Level để tăng cấp. Tắt mod EVA độc lập khi dùng bản tích hợp.",source="EVA_INTEGRATION_VI.md")
+    add("eva","EVA","character","Nhân vật đã tích hợp trong Phàm Nhân 2.0.3, một ngoại hình mặc định, dùng cho world mới. Hồn Lực và kỹ năng mở theo cấp 10/20/30/50/100. EVA dùng chung cấp nhân vật hh_leveling đã tích hợp trong Phàm Nhân. Tắt mod EVA độc lập khi dùng bản tích hợp.",source="EVA_INTEGRATION_VI.md")
     tool=by_code.get("ttk_yhsyz")
     if tool:
         description="Hái linh thảo bằng dụng cụ còn độ bền: 75% cơ hội nhận hạt; khi có hạt, 75% nhận 1 và 25% nhận 2 hạt cùng loại. Tốn 1 độ bền; vẫn nhận 1 linh thảo. Hái tay: 40% nhận 1 hạt."

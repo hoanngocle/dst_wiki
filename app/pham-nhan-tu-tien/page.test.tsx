@@ -9,7 +9,7 @@ it("reflects integrated EVA, nine bosses and blueprint-locked armor", () => {
   expect(tuTienKyVersion).toBe("2.0.3");
   expect(tuTienKyItems.filter((item) => item.category === "boss")).toHaveLength(9);
   expect(tuTienKyItems.some((item) => item.prefabId === "calliope_mori")).toBe(false);
-  expect(tuTienKyItems.find((item) => item.prefabId === "eva")?.description).toContain("Achievement & Level");
+  expect(tuTienKyItems.find((item) => item.prefabId === "eva")?.description).toContain("hh_leveling");
   const armor = tuTienKyItems.find((item) => item.prefabId === "ttk_xshj")!;
   expect(armor.craftingNote).toContain("học bản vẽ");
   expect(armor.recipe?.ingredients[0].id).toBe("tu_tien_ky:ttk_boss_mgqg");

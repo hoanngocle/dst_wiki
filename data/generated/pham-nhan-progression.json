@@ -1,0 +1,7757 @@
+{
+  "achievements": [
+    {
+      "description": "Hoàn thành thử thách sinh tồn autumn.",
+      "group": "survival",
+      "id": "survive_autumn",
+      "name": "Sinh tồn autumn",
+      "params": {
+        "key": "autumn"
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 1,
+      "tracker": "survival_event",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách sinh tồn winter.",
+      "group": "survival",
+      "id": "survive_winter",
+      "name": "Sinh tồn winter",
+      "params": {
+        "key": "winter"
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 1,
+      "tracker": "survival_event",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách sinh tồn spring.",
+      "group": "survival",
+      "id": "survive_spring",
+      "name": "Sinh tồn spring",
+      "params": {
+        "key": "spring"
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 1,
+      "tracker": "survival_event",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách sinh tồn summer.",
+      "group": "survival",
+      "id": "survive_summer",
+      "name": "Sinh tồn summer",
+      "params": {
+        "key": "summer"
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 1,
+      "tracker": "survival_event",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách sinh tồn hundred days.",
+      "group": "survival",
+      "id": "survive_hundred_days",
+      "name": "Sinh tồn hundred days",
+      "params": {
+        "key": "hundred_days"
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 100,
+      "tracker": "survival_event",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách sinh tồn revive.",
+      "group": "survival",
+      "id": "survive_revive",
+      "name": "Sinh tồn revive",
+      "params": {
+        "key": "revive"
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 1,
+      "tracker": "survival_event",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách sinh tồn rescue friend.",
+      "group": "survival",
+      "id": "survive_rescue_friend",
+      "name": "Sinh tồn rescue friend",
+      "params": {
+        "key": "rescue_friend"
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 1,
+      "tracker": "survival_event",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách sinh tồn heat.",
+      "group": "survival",
+      "id": "survive_heat",
+      "name": "Sinh tồn heat",
+      "params": {
+        "key": "heat"
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 1,
+      "tracker": "survival_event",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách sinh tồn cold.",
+      "group": "survival",
+      "id": "survive_cold",
+      "name": "Sinh tồn cold",
+      "params": {
+        "key": "cold"
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 1,
+      "tracker": "survival_event",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách sinh tồn night.",
+      "group": "survival",
+      "id": "survive_night",
+      "name": "Sinh tồn night",
+      "params": {
+        "key": "night"
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 1,
+      "tracker": "survival_event",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách ẩm thực Viên Thịt.",
+      "group": "food",
+      "id": "food_meatballs",
+      "name": "Viên Thịt",
+      "params": {
+        "prefabs": [
+          "meatballs"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 10,
+      "tracker": "eat_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách ẩm thực Bánh Xếp.",
+      "group": "food",
+      "id": "food_pierogi",
+      "name": "Bánh Xếp",
+      "params": {
+        "prefabs": [
+          "pierogi"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 5,
+      "tracker": "eat_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách ẩm thực Trứng Thịt.",
+      "group": "food",
+      "id": "food_bacon_eggs",
+      "name": "Trứng Thịt",
+      "params": {
+        "prefabs": [
+          "baconeggs"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 5,
+      "tracker": "eat_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách ẩm thực Que Cá.",
+      "group": "food",
+      "id": "food_fishsticks",
+      "name": "Que Cá",
+      "params": {
+        "prefabs": [
+          "fishsticks"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 5,
+      "tracker": "eat_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách ẩm thực Hỗn Hợp Rừng.",
+      "group": "food",
+      "id": "food_trailmix",
+      "name": "Hỗn Hợp Rừng",
+      "params": {
+        "prefabs": [
+          "trailmix"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 5,
+      "tracker": "eat_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách ẩm thực Giăm Bông Mật.",
+      "group": "food",
+      "id": "food_honeyham",
+      "name": "Giăm Bông Mật",
+      "params": {
+        "prefabs": [
+          "honeyham"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 3,
+      "tracker": "eat_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách ẩm thực Tiệc Gà Tây.",
+      "group": "food",
+      "id": "food_turkey_dinner",
+      "name": "Tiệc Gà Tây",
+      "params": {
+        "prefabs": [
+          "turkeydinner"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 3,
+      "tracker": "eat_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách ẩm thực Bánh Thanh Long.",
+      "group": "food",
+      "id": "food_dragonpie",
+      "name": "Bánh Thanh Long",
+      "params": {
+        "prefabs": [
+          "dragonpie"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 3,
+      "tracker": "eat_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách ẩm thực Bánh Waffle.",
+      "group": "food",
+      "id": "food_waffles",
+      "name": "Bánh Waffle",
+      "params": {
+        "prefabs": [
+          "waffles"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 3,
+      "tracker": "eat_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách ẩm thực Kẹo Đậu.",
+      "group": "food",
+      "id": "food_jellybeans",
+      "name": "Kẹo Đậu",
+      "params": {
+        "prefabs": [
+          "jellybean"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 10,
+      "tracker": "eat_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách ẩm thực Kem Mùa Hạ.",
+      "group": "food",
+      "id": "food_icecream",
+      "name": "Kem Mùa Hạ",
+      "params": {
+        "prefabs": [
+          "icecream"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 5,
+      "tracker": "eat_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách ẩm thực Ớt Cay.",
+      "group": "food",
+      "id": "food_spicychili",
+      "name": "Ớt Cay",
+      "params": {
+        "prefabs": [
+          "spicychili"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 5,
+      "tracker": "eat_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách ẩm thực Cà Tím Nhồi.",
+      "group": "food",
+      "id": "food_stuffed_eggplant",
+      "name": "Cà Tím Nhồi",
+      "params": {
+        "prefabs": [
+          "stuffedeggplant"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 5,
+      "tracker": "eat_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách ẩm thực Guacamole.",
+      "group": "food",
+      "id": "food_guacamole",
+      "name": "Guacamole",
+      "params": {
+        "prefabs": [
+          "guacamole"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 5,
+      "tracker": "eat_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách ẩm thực Bánh Mật.",
+      "group": "food",
+      "id": "food_powcake",
+      "name": "Bánh Mật",
+      "params": {
+        "prefabs": [
+          "powcake"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 3,
+      "tracker": "eat_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách ẩm thực Phúc Lạc Tam Dược.",
+      "group": "food",
+      "id": "food_liquid_luck_trinity",
+      "name": "Phúc Lạc Tam Dược",
+      "params": {
+        "prefabs": [
+          "nn_liquidluck",
+          "nn_liquidluck_2",
+          "nn_liquidluck_3"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 3,
+      "tracker": "eat_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách ẩm thực Đan Đạo Thông Huyền.",
+      "group": "food",
+      "id": "food_cultivation_pill_path",
+      "name": "Đan Đạo Thông Huyền",
+      "params": {
+        "prefabs": [
+          "xd_danyao_jq",
+          "xd_danyao_dt",
+          "xd_danyao_zj",
+          "xd_danyao_xs",
+          "xd_danyao_hj",
+          "xd_danyao_yz",
+          "xd_danyao_sm",
+          "xd_danyao_rl",
+          "xd_danyao_jy",
+          "xd_danyao_yx",
+          "xd_danyao_ns",
+          "xd_danyao_hs",
+          "xd_danyao_hy",
+          "xd_danyao_hl",
+          "xd_danyao_kx"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 15,
+      "tracker": "eat_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách ẩm thực Tịch Cốc.",
+      "group": "food",
+      "id": "food_fasting_pill",
+      "name": "Tịch Cốc",
+      "params": {
+        "prefabs": [
+          "xd_danyao_bg"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 1,
+      "tracker": "eat_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách ẩm thực Xích Dương Phần Huyết Đan.",
+      "group": "food",
+      "id": "food_buff_cyfxd",
+      "name": "Xích Dương Phần Huyết Đan",
+      "params": {
+        "prefabs": [
+          "xd_dy_cyfxd_1"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 1,
+      "tracker": "eat_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách ẩm thực Địa Mạch Hồi Sinh Đan.",
+      "group": "food",
+      "id": "food_buff_dmhsd",
+      "name": "Địa Mạch Hồi Sinh Đan",
+      "params": {
+        "prefabs": [
+          "xd_dy_dmhsd_1"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 1,
+      "tracker": "eat_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách ẩm thực Lôi Minh Sát Khí Đan.",
+      "group": "food",
+      "id": "food_buff_lmsqd",
+      "name": "Lôi Minh Sát Khí Đan",
+      "params": {
+        "prefabs": [
+          "xd_dy_lmsqd_1"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 1,
+      "tracker": "eat_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách ẩm thực Thanh Tâm Địch Hồn Đan.",
+      "group": "food",
+      "id": "food_buff_qxdhd",
+      "name": "Thanh Tâm Địch Hồn Đan",
+      "params": {
+        "prefabs": [
+          "xd_dy_qxdhd_1"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 1,
+      "tracker": "eat_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách ẩm thực Ngự Phong Thần Hành Đan.",
+      "group": "food",
+      "id": "food_buff_yfsxd",
+      "name": "Ngự Phong Thần Hành Đan",
+      "params": {
+        "prefabs": [
+          "xd_dy_yfsxd_1"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 1,
+      "tracker": "eat_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách ẩm thực Bàn Thạch Hộ Thân Đan.",
+      "group": "food",
+      "id": "food_buff_pshsd",
+      "name": "Bàn Thạch Hộ Thân Đan",
+      "params": {
+        "prefabs": [
+          "xd_dy_pshsd_1"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 1,
+      "tracker": "eat_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách ẩm thực Thiên Cơ Xảo Thủ Đan.",
+      "group": "food",
+      "id": "food_buff_qjqsd",
+      "name": "Thiên Cơ Xảo Thủ Đan",
+      "params": {
+        "prefabs": [
+          "xd_dy_qjqsd_1"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 1,
+      "tracker": "eat_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách ẩm thực Huyền Dương Noãn Ngọc Đan.",
+      "group": "food",
+      "id": "food_buff_xynyd",
+      "name": "Huyền Dương Noãn Ngọc Đan",
+      "params": {
+        "prefabs": [
+          "xd_dy_xynyd_1"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 1,
+      "tracker": "eat_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách ẩm thực Hàn Tủy Tịch Hỏa Đan.",
+      "group": "food",
+      "id": "food_buff_hsphd",
+      "name": "Hàn Tủy Tịch Hỏa Đan",
+      "params": {
+        "prefabs": [
+          "xd_dy_hsphd_1"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 1,
+      "tracker": "eat_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách ẩm thực Huyết Thao Thiết Nguyên Đan.",
+      "group": "food",
+      "id": "food_buff_xttyd",
+      "name": "Huyết Thao Thiết Nguyên Đan",
+      "params": {
+        "prefabs": [
+          "xd_dy_xttyd_1"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 1,
+      "tracker": "eat_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách ẩm thực Bạch Hổ Huyết Tủy.",
+      "group": "food",
+      "id": "food_boss_baihu",
+      "name": "Bạch Hổ Huyết Tủy",
+      "params": {
+        "prefabs": [
+          "ttk_boss_core_baihu"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 1,
+      "tracker": "eat_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách ẩm thực Kim Phượng Tinh Huyết.",
+      "group": "food",
+      "id": "food_boss_jfsn",
+      "name": "Kim Phượng Tinh Huyết",
+      "params": {
+        "prefabs": [
+          "ttk_boss_core_jfsn"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 1,
+      "tracker": "eat_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách ẩm thực Kỳ Lân Linh Đan.",
+      "group": "food",
+      "id": "food_boss_qlch",
+      "name": "Kỳ Lân Linh Đan",
+      "params": {
+        "prefabs": [
+          "ttk_boss_core_qlch"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 1,
+      "tracker": "eat_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách ẩm thực Ma Thù Nội Đan.",
+      "group": "food",
+      "id": "food_boss_spiderqueen",
+      "name": "Ma Thù Nội Đan",
+      "params": {
+        "prefabs": [
+          "ttk_boss_core_spiderqueen"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 1,
+      "tracker": "eat_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách ẩm thực Hắc Ám Hồn Tinh.",
+      "group": "food",
+      "id": "food_boss_stalke",
+      "name": "Hắc Ám Hồn Tinh",
+      "params": {
+        "prefabs": [
+          "ttk_boss_core_stalke_fuben"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 1,
+      "tracker": "eat_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách ẩm thực Băng Phách Tinh Tủy.",
+      "group": "food",
+      "id": "food_boss_deerclops",
+      "name": "Băng Phách Tinh Tủy",
+      "params": {
+        "prefabs": [
+          "ttk_boss_core_deerclops_ziyun"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 1,
+      "tracker": "eat_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách ẩm thực Súp Mandrake.",
+      "group": "food",
+      "id": "food_mandrake_soup",
+      "name": "Súp Mandrake",
+      "params": {
+        "prefabs": [
+          "mandrakesoup"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 1,
+      "tracker": "eat_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách ẩm thực Kem Chuối.",
+      "group": "food",
+      "id": "food_banana_pop",
+      "name": "Kem Chuối",
+      "params": {
+        "prefabs": [
+          "bananapop"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 5,
+      "tracker": "eat_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách ẩm thực Muffin Bướm.",
+      "group": "food",
+      "id": "food_butterfly_muffin",
+      "name": "Muffin Bướm",
+      "params": {
+        "prefabs": [
+          "butterflymuffin"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 3,
+      "tracker": "eat_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách ẩm thực Bánh Ếch.",
+      "group": "food",
+      "id": "food_frogglebunwich",
+      "name": "Bánh Ếch",
+      "params": {
+        "prefabs": [
+          "frogglebunwich"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 3,
+      "tracker": "eat_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách ẩm thực Ratatouille.",
+      "group": "food",
+      "id": "food_ratatouille",
+      "name": "Ratatouille",
+      "params": {
+        "prefabs": [
+          "ratatouille"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 3,
+      "tracker": "eat_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành thử thách ẩm thực Trái Cây Trộn.",
+      "group": "food",
+      "id": "food_fruitmedley",
+      "name": "Trái Cây Trộn",
+      "params": {
+        "prefabs": [
+          "fruitmedley"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 3,
+      "tracker": "eat_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Thu thập vật liệu twigs.",
+      "group": "collection",
+      "id": "collection_twigs",
+      "name": "Thu thập twigs",
+      "params": {
+        "prefab": "twigs"
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 100,
+      "tracker": "collect_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Thu thập một trăm Cỏ Cắt.",
+      "group": "collection",
+      "id": "collection_grass",
+      "name": "Cỏ Khô Dự Trữ",
+      "params": {
+        "prefab": "cutgrass"
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 100,
+      "tracker": "collect_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Thu thập vật liệu flint.",
+      "group": "collection",
+      "id": "collection_flint",
+      "name": "Thu thập flint",
+      "params": {
+        "prefab": "flint"
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 100,
+      "tracker": "collect_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Thu thập một trăm Khúc Gỗ.",
+      "group": "collection",
+      "id": "collection_logs",
+      "name": "Kho Gỗ",
+      "params": {
+        "prefab": "log"
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 100,
+      "tracker": "collect_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Thu thập vật liệu rocks.",
+      "group": "collection",
+      "id": "collection_rocks",
+      "name": "Thu thập rocks",
+      "params": {
+        "prefab": "rocks"
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 100,
+      "tracker": "collect_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Thu thập một trăm Cục Vàng.",
+      "group": "collection",
+      "id": "collection_gold",
+      "name": "Kho Vàng",
+      "params": {
+        "prefab": "goldnugget"
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 100,
+      "tracker": "collect_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Thu thập vật liệu nitre.",
+      "group": "collection",
+      "id": "collection_nitre",
+      "name": "Thu thập nitre",
+      "params": {
+        "prefab": "nitre"
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 100,
+      "tracker": "collect_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Thu thập vật liệu charcoal.",
+      "group": "collection",
+      "id": "collection_charcoal",
+      "name": "Thu thập charcoal",
+      "params": {
+        "prefab": "charcoal"
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 100,
+      "tracker": "collect_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Thu thập vật liệu cutstone.",
+      "group": "collection",
+      "id": "collection_cutstone",
+      "name": "Thu thập cutstone",
+      "params": {
+        "prefab": "cutstone"
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 100,
+      "tracker": "collect_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Thu thập vật liệu boards.",
+      "group": "collection",
+      "id": "collection_boards",
+      "name": "Thu thập boards",
+      "params": {
+        "prefab": "boards"
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 100,
+      "tracker": "collect_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Thu thập vật liệu rope.",
+      "group": "collection",
+      "id": "collection_rope",
+      "name": "Thu thập rope",
+      "params": {
+        "prefab": "rope"
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 100,
+      "tracker": "collect_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Thu thập vật liệu silk.",
+      "group": "collection",
+      "id": "collection_silk",
+      "name": "Thu thập silk",
+      "params": {
+        "prefab": "silk"
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 100,
+      "tracker": "collect_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Thu thập vật liệu houndstooth.",
+      "group": "collection",
+      "id": "collection_houndstooth",
+      "name": "Thu thập houndstooth",
+      "params": {
+        "prefab": "houndstooth"
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 100,
+      "tracker": "collect_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Thu thập vật liệu gears.",
+      "group": "collection",
+      "id": "collection_gears",
+      "name": "Thu thập gears",
+      "params": {
+        "prefab": "gears"
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 100,
+      "tracker": "collect_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Thu thập ba mươi Đá Quý hiện có.",
+      "group": "collection",
+      "id": "collection_gems",
+      "name": "Đá Quý Đa Sắc",
+      "params": {
+        "prefabs": [
+          "redgem",
+          "bluegem",
+          "purplegem",
+          "greengem",
+          "yellowgem",
+          "orangegem"
+        ]
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 30,
+      "tracker": "collect_prefabs",
+      "visibility": "visible"
+    },
+    {
+      "description": "Thu thập vật liệu livinglog.",
+      "group": "collection",
+      "id": "collection_livinglog",
+      "name": "Thu thập livinglog",
+      "params": {
+        "prefab": "livinglog"
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 100,
+      "tracker": "collect_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Thu thập vật liệu thulecite.",
+      "group": "collection",
+      "id": "collection_thulecite",
+      "name": "Thu thập thulecite",
+      "params": {
+        "prefab": "thulecite"
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 100,
+      "tracker": "collect_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Thu thập một trăm Đá Mặt Trăng.",
+      "group": "collection",
+      "id": "collection_moonrock",
+      "name": "Đá Mặt Trăng",
+      "params": {
+        "prefab": "moonrocknugget"
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 100,
+      "tracker": "collect_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Thu thập vật liệu purebrilliance.",
+      "group": "collection",
+      "id": "collection_purebrilliance",
+      "name": "Thu thập purebrilliance",
+      "params": {
+        "prefab": "purebrilliance"
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 100,
+      "tracker": "collect_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Thu thập vật liệu horrorfuel.",
+      "group": "collection",
+      "id": "collection_horrorfuel",
+      "name": "Thu thập horrorfuel",
+      "params": {
+        "prefab": "horrorfuel"
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 100,
+      "tracker": "collect_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Thu thập vật liệu spidergland.",
+      "group": "collection",
+      "id": "collection_spidergland",
+      "name": "Thu thập spidergland",
+      "params": {
+        "prefab": "spidergland"
+      },
+      "reward": 2,
+      "status": "active",
+      "target": 100,
+      "tracker": "collect_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Thu thập vật liệu stinger.",
+      "group": "collection",
+      "id": "collection_stinger",
+      "name": "Thu thập stinger",
+      "params": {
+        "prefab": "stinger"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 100,
+      "tracker": "collect_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Thu thập vật liệu tentaclespots.",
+      "group": "collection",
+      "id": "collection_tentaclespots",
+      "name": "Thu thập tentaclespots",
+      "params": {
+        "prefab": "tentaclespots"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 100,
+      "tracker": "collect_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Thu thập vật liệu beardhair.",
+      "group": "collection",
+      "id": "collection_beardhair",
+      "name": "Thu thập beardhair",
+      "params": {
+        "prefab": "beardhair"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 100,
+      "tracker": "collect_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Thu thập vật liệu feather crow.",
+      "group": "collection",
+      "id": "collection_feather_crow",
+      "name": "Thu thập feather crow",
+      "params": {
+        "prefab": "feather_crow"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 100,
+      "tracker": "collect_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Thu thập vật liệu feather robin.",
+      "group": "collection",
+      "id": "collection_feather_robin",
+      "name": "Thu thập feather robin",
+      "params": {
+        "prefab": "feather_robin"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 100,
+      "tracker": "collect_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Thu thập vật liệu feather robin winter.",
+      "group": "collection",
+      "id": "collection_feather_robin_winter",
+      "name": "Thu thập feather robin winter",
+      "params": {
+        "prefab": "feather_robin_winter"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 100,
+      "tracker": "collect_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Thu thập vật liệu slurtle shellpieces.",
+      "group": "collection",
+      "id": "collection_slurtle_shellpieces",
+      "name": "Thu thập slurtle shellpieces",
+      "params": {
+        "prefab": "slurtle_shellpieces"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 100,
+      "tracker": "collect_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Thu thập vật liệu nightmarefuel.",
+      "group": "collection",
+      "id": "collection_nightmarefuel",
+      "name": "Thu thập nightmarefuel",
+      "params": {
+        "prefab": "nightmarefuel"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 100,
+      "tracker": "collect_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Sở hữu linh thạch cấp 1.",
+      "group": "collection",
+      "id": "collection_lingshi1",
+      "name": "Linh thạch 1",
+      "params": {
+        "prefab": "ttk_lingshi1"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 10000,
+      "tracker": "own_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Sở hữu linh thạch cấp 2.",
+      "group": "collection",
+      "id": "collection_lingshi2",
+      "name": "Linh thạch 2",
+      "params": {
+        "prefab": "ttk_lingshi2"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 10000,
+      "tracker": "own_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Sở hữu linh thạch cấp 3.",
+      "group": "collection",
+      "id": "collection_lingshi3",
+      "name": "Linh thạch 3",
+      "params": {
+        "prefab": "ttk_lingshi3"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 1000,
+      "tracker": "own_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Sở hữu linh thạch cấp 4.",
+      "group": "collection",
+      "id": "collection_lingshi4",
+      "name": "Linh thạch 4",
+      "params": {
+        "prefab": "ttk_lingshi4"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 100,
+      "tracker": "own_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Chặt hạ năm mươi cây bằng rìu.",
+      "group": "labor",
+      "id": "labor_chop_trees",
+      "name": "Tiều Phu Cần Mẫn",
+      "params": {
+        "action": "CHOP"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 50,
+      "tracker": "work_action",
+      "visibility": "visible"
+    },
+    {
+      "description": "Khai thác năm mươi tảng đá bằng cuốc.",
+      "group": "labor",
+      "id": "labor_mine_rocks",
+      "name": "Thợ Mỏ Bền Bỉ",
+      "params": {
+        "action": "MINE"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 50,
+      "tracker": "work_action",
+      "visibility": "visible"
+    },
+    {
+      "description": "Đào bỏ hai mươi gốc cây.",
+      "group": "labor",
+      "id": "labor_dig_stumps",
+      "name": "Dọn Gốc Cây",
+      "params": {
+        "action": "DIG",
+        "prefab": "stump"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 20,
+      "tracker": "work_action",
+      "visibility": "visible"
+    },
+    {
+      "description": "Tháo dỡ mười công trình bằng búa.",
+      "group": "labor",
+      "id": "labor_hammer_structures",
+      "name": "Thợ Tháo Dỡ",
+      "params": {
+        "action": "HAMMER"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 10,
+      "tracker": "work_action",
+      "visibility": "visible"
+    },
+    {
+      "description": "Thu hoạch một trăm bụi cỏ.",
+      "group": "labor",
+      "id": "labor_pick_grass",
+      "name": "Cắt Cỏ Ngoài Đồng",
+      "params": {
+        "prefab": "grass"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 100,
+      "tracker": "pick_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Thu hoạch một trăm bụi cành.",
+      "group": "labor",
+      "id": "labor_pick_twigs",
+      "name": "Nhặt Cành Rừng",
+      "params": {
+        "prefab": "sapling"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 100,
+      "tracker": "pick_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Thu hoạch năm mươi bụi quả.",
+      "group": "labor",
+      "id": "labor_pick_berries",
+      "name": "Hái Quả Chín",
+      "params": {
+        "prefab": "berrybush"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 50,
+      "tracker": "pick_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Câu được hai mươi con cá ao.",
+      "group": "labor",
+      "id": "labor_fish_pond",
+      "name": "Cần Thủ Ao Hồ",
+      "params": {
+        "source": "pond"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 20,
+      "tracker": "fish_caught",
+      "visibility": "visible"
+    },
+    {
+      "description": "Nấu hai mươi món trong Nồi Hầm.",
+      "group": "labor",
+      "id": "labor_cook_meals",
+      "name": "Đầu Bếp Lửa Trại",
+      "params": {
+        "cooker": "cookpot"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 20,
+      "tracker": "cook_product",
+      "visibility": "visible"
+    },
+    {
+      "description": "Gieo năm mươi hạt giống trên luống.",
+      "group": "labor",
+      "id": "labor_plant_seeds",
+      "name": "Người Gieo Hạt",
+      "params": {
+        "prefab": "seeds"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 50,
+      "tracker": "plant_seed",
+      "visibility": "visible"
+    },
+    {
+      "description": "Thu hoạch năm mươi cây trồng.",
+      "group": "labor",
+      "id": "labor_harvest_plants",
+      "name": "Mùa Vụ Sung Túc",
+      "params": {
+        "source": "farm"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 50,
+      "tracker": "harvest_crop",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu alchemy furnace.",
+      "group": "crafting",
+      "id": "craft_alchemy_furnace",
+      "name": "alchemy furnace",
+      "params": {
+        "prefab": "xd_liandanlu"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 1,
+      "tracker": "crafting_event",
+      "visibility": "visible"
+    },
+    {
+      "description": "Chế tạo một Máy Khoa Học.",
+      "group": "crafting",
+      "id": "crafting_science_machine",
+      "name": "Máy Khoa Học",
+      "params": {
+        "prefab": "researchlab"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 1,
+      "tracker": "craft_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Chế tạo một Máy Luyện Kim.",
+      "group": "crafting",
+      "id": "crafting_alchemy_engine",
+      "name": "Máy Luyện Kim",
+      "params": {
+        "prefab": "researchlab2"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 1,
+      "tracker": "craft_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Chế tạo một Mũ Pháp Sư.",
+      "group": "crafting",
+      "id": "crafting_prestihatitator",
+      "name": "Mũ Pháp Sư",
+      "params": {
+        "prefab": "researchlab4"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 1,
+      "tracker": "craft_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Chế tạo Máy Thao Túng Bóng Tối.",
+      "group": "crafting",
+      "id": "crafting_shadow_manipulator",
+      "name": "Máy Thao Túng Bóng Tối",
+      "params": {
+        "prefab": "researchlab3"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 1,
+      "tracker": "craft_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Chế tạo một Bàn Bản Đồ.",
+      "group": "crafting",
+      "id": "crafting_cartographers_desk",
+      "name": "Bàn Bản Đồ",
+      "params": {
+        "prefab": "cartographydesk"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 1,
+      "tracker": "craft_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu birdcage.",
+      "group": "crafting",
+      "id": "crafting_birdcage",
+      "name": "birdcage",
+      "params": {
+        "prefab": "birdcage"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 1,
+      "tracker": "crafting_event",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu icebox.",
+      "group": "crafting",
+      "id": "crafting_icebox",
+      "name": "icebox",
+      "params": {
+        "prefab": "icebox"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 1,
+      "tracker": "crafting_event",
+      "visibility": "visible"
+    },
+    {
+      "description": "Chế tạo một Cột Thu Lôi.",
+      "group": "crafting",
+      "id": "crafting_lightning_rod",
+      "name": "Cột Thu Lôi",
+      "params": {
+        "prefab": "lightningrod"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 1,
+      "tracker": "craft_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Chế tạo một Nhiệt Kế.",
+      "group": "crafting",
+      "id": "crafting_thermal_measurer",
+      "name": "Nhiệt Kế",
+      "params": {
+        "prefab": "winterometer"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 1,
+      "tracker": "craft_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu sewing kit.",
+      "group": "crafting",
+      "id": "crafting_sewing_kit",
+      "name": "sewing kit",
+      "params": {
+        "prefab": "sewing_kit"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 1,
+      "tracker": "crafting_event",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu backpack.",
+      "group": "crafting",
+      "id": "crafting_backpack",
+      "name": "backpack",
+      "params": {
+        "prefab": "backpack"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 1,
+      "tracker": "crafting_event",
+      "visibility": "visible"
+    },
+    {
+      "description": "Chế tạo một Mũ Bóng Bầu Dục.",
+      "group": "crafting",
+      "id": "crafting_football_hat",
+      "name": "Mũ Bóng Bầu Dục",
+      "params": {
+        "prefab": "footballhat"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 1,
+      "tracker": "craft_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Chế tạo một Gậy Giăm Bông.",
+      "group": "crafting",
+      "id": "crafting_ham_bat",
+      "name": "Gậy Giăm Bông",
+      "params": {
+        "prefab": "hambat"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 1,
+      "tracker": "craft_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu tent.",
+      "group": "crafting",
+      "id": "crafting_tent",
+      "name": "tent",
+      "params": {
+        "prefab": "tent"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 1,
+      "tracker": "crafting_event",
+      "visibility": "visible"
+    },
+    {
+      "description": "Chế tạo một Lửa Lạnh.",
+      "group": "crafting",
+      "id": "crafting_endothermic_fire",
+      "name": "Lửa Lạnh",
+      "params": {
+        "prefab": "coldfire"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 1,
+      "tracker": "craft_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu firepit.",
+      "group": "crafting",
+      "id": "crafting_firepit",
+      "name": "firepit",
+      "params": {
+        "prefab": "firepit"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 1,
+      "tracker": "crafting_event",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu cookpot.",
+      "group": "crafting",
+      "id": "crafting_cookpot",
+      "name": "cookpot",
+      "params": {
+        "prefab": "cookpot"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 1,
+      "tracker": "crafting_event",
+      "visibility": "visible"
+    },
+    {
+      "description": "Chế tạo một Thùng Ong.",
+      "group": "crafting",
+      "id": "crafting_bee_box",
+      "name": "Thùng Ong",
+      "params": {
+        "prefab": "beebox"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 1,
+      "tracker": "craft_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Chế tạo một Hộp Muối.",
+      "group": "crafting",
+      "id": "crafting_salt_box",
+      "name": "Hộp Muối",
+      "params": {
+        "prefab": "saltbox"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 1,
+      "tracker": "craft_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Xới hai mươi luống đất nông nghiệp.",
+      "group": "farming",
+      "id": "farming_till_soil",
+      "name": "Xới Luống",
+      "params": {
+        "action": "TILL"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 20,
+      "tracker": "farm_action",
+      "visibility": "visible"
+    },
+    {
+      "description": "Tưới hai mươi cây trồng.",
+      "group": "farming",
+      "id": "farming_water_plants",
+      "name": "Tưới Nước",
+      "params": {
+        "action": "WATER"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 20,
+      "tracker": "farm_action",
+      "visibility": "visible"
+    },
+    {
+      "description": "Bón phân cho hai mươi cây trồng.",
+      "group": "farming",
+      "id": "farming_fertilize_plants",
+      "name": "Bón Phân",
+      "params": {
+        "action": "FERTILIZE"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 20,
+      "tracker": "farm_action",
+      "visibility": "visible"
+    },
+    {
+      "description": "Gieo hạt Cà Rốt trên luống.",
+      "group": "farming",
+      "id": "farming_plant_carrot",
+      "name": "Gieo Cà Rốt",
+      "params": {
+        "crop": "carrot",
+        "prefab": "carrot_seeds"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 20,
+      "tracker": "plant_seed",
+      "visibility": "visible"
+    },
+    {
+      "description": "Gieo hạt Bí Ngô trên luống.",
+      "group": "farming",
+      "id": "farming_plant_pumpkin",
+      "name": "Gieo Bí Ngô",
+      "params": {
+        "crop": "pumpkin",
+        "prefab": "pumpkin_seeds"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 20,
+      "tracker": "plant_seed",
+      "visibility": "visible"
+    },
+    {
+      "description": "Gieo hạt Cà Tím trên luống.",
+      "group": "farming",
+      "id": "farming_plant_eggplant",
+      "name": "Gieo Cà Tím",
+      "params": {
+        "crop": "eggplant",
+        "prefab": "eggplant_seeds"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 20,
+      "tracker": "plant_seed",
+      "visibility": "visible"
+    },
+    {
+      "description": "Gieo hạt Thanh Long trên luống.",
+      "group": "farming",
+      "id": "farming_plant_dragonfruit",
+      "name": "Gieo Thanh Long",
+      "params": {
+        "crop": "dragonfruit",
+        "prefab": "dragonfruit_seeds"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 20,
+      "tracker": "plant_seed",
+      "visibility": "visible"
+    },
+    {
+      "description": "Gieo hạt Măng Tây trên luống.",
+      "group": "farming",
+      "id": "farming_plant_asparagus",
+      "name": "Gieo Măng Tây",
+      "params": {
+        "crop": "asparagus",
+        "prefab": "asparagus_seeds"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 20,
+      "tracker": "plant_seed",
+      "visibility": "visible"
+    },
+    {
+      "description": "Gieo hạt Cà Chua trên luống.",
+      "group": "farming",
+      "id": "farming_plant_tomato",
+      "name": "Gieo Cà Chua",
+      "params": {
+        "crop": "tomato",
+        "prefab": "tomato_seeds"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 20,
+      "tracker": "plant_seed",
+      "visibility": "visible"
+    },
+    {
+      "description": "Gieo hạt Khoai Tây trên luống.",
+      "group": "farming",
+      "id": "farming_plant_potato",
+      "name": "Gieo Khoai Tây",
+      "params": {
+        "crop": "potato",
+        "prefab": "potato_seeds"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 20,
+      "tracker": "plant_seed",
+      "visibility": "visible"
+    },
+    {
+      "description": "Gieo hạt Tỏi trên luống.",
+      "group": "farming",
+      "id": "farming_plant_garlic",
+      "name": "Gieo Tỏi",
+      "params": {
+        "crop": "garlic",
+        "prefab": "garlic_seeds"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 20,
+      "tracker": "plant_seed",
+      "visibility": "visible"
+    },
+    {
+      "description": "Gieo hạt Hành trên luống.",
+      "group": "farming",
+      "id": "farming_plant_onion",
+      "name": "Gieo Hành",
+      "params": {
+        "crop": "onion",
+        "prefab": "onion_seeds"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 20,
+      "tracker": "plant_seed",
+      "visibility": "visible"
+    },
+    {
+      "description": "Gieo hạt Ớt trên luống.",
+      "group": "farming",
+      "id": "farming_plant_pepper",
+      "name": "Gieo Ớt",
+      "params": {
+        "crop": "pepper",
+        "prefab": "pepper_seeds"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 20,
+      "tracker": "plant_seed",
+      "visibility": "visible"
+    },
+    {
+      "description": "Gieo hạt Lựu trên luống.",
+      "group": "farming",
+      "id": "farming_plant_pomegranate",
+      "name": "Gieo Lựu",
+      "params": {
+        "crop": "pomegranate",
+        "prefab": "pomegranate_seeds"
+      },
+      "reward": 3,
+      "status": "active",
+      "target": 20,
+      "tracker": "plant_seed",
+      "visibility": "visible"
+    },
+    {
+      "description": "Thu hoạch năm mươi cây trồng.",
+      "group": "farming",
+      "id": "farming_harvest_crops",
+      "name": "Thu Hoạch Mùa Vụ",
+      "params": {
+        "action": "HARVEST"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 50,
+      "tracker": "harvest_crop",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu spider.",
+      "group": "combat",
+      "id": "combat_spider",
+      "name": "spider",
+      "params": {
+        "prefab": "spider"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "combat_event",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu hound.",
+      "group": "combat",
+      "id": "combat_hound",
+      "name": "hound",
+      "params": {
+        "prefab": "hound"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "combat_event",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu pigman.",
+      "group": "combat",
+      "id": "combat_pigman",
+      "name": "pigman",
+      "params": {
+        "prefab": "pigman"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "combat_event",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu mactusk.",
+      "group": "combat",
+      "id": "combat_mactusk",
+      "name": "mactusk",
+      "params": {
+        "prefab": "mactusk"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "combat_event",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu knight.",
+      "group": "combat",
+      "id": "combat_knight",
+      "name": "knight",
+      "params": {
+        "prefab": "knight"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "combat_event",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu bishop.",
+      "group": "combat",
+      "id": "combat_bishop",
+      "name": "bishop",
+      "params": {
+        "prefab": "bishop"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "combat_event",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu rook.",
+      "group": "combat",
+      "id": "combat_rook",
+      "name": "rook",
+      "params": {
+        "prefab": "rook"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "combat_event",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu depths worm.",
+      "group": "combat",
+      "id": "combat_depths_worm",
+      "name": "depths worm",
+      "params": {
+        "prefab": "depths_worm"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "combat_event",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu slurtle.",
+      "group": "combat",
+      "id": "combat_slurtle",
+      "name": "slurtle",
+      "params": {
+        "prefab": "slurtle"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "combat_event",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu tentacle.",
+      "group": "combat",
+      "id": "combat_tentacle",
+      "name": "tentacle",
+      "params": {
+        "prefab": "tentacle"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "combat_event",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu shadow creature.",
+      "group": "combat",
+      "id": "combat_shadow_creature",
+      "name": "shadow creature",
+      "params": {
+        "prefab": "shadow_creature"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "combat_event",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu clockwork.",
+      "group": "combat",
+      "id": "combat_clockwork",
+      "name": "clockwork",
+      "params": {
+        "prefab": "clockwork"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "combat_event",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu treeguard.",
+      "group": "combat",
+      "id": "combat_treeguard",
+      "name": "treeguard",
+      "params": {
+        "prefab": "treeguard"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "combat_event",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu walrus.",
+      "group": "combat",
+      "id": "combat_walrus",
+      "name": "walrus",
+      "params": {
+        "prefab": "walrus"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "combat_event",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu deerclops.",
+      "group": "boss",
+      "id": "boss_deerclops",
+      "name": "deerclops",
+      "params": {
+        "prefab": "deerclops"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "kill_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu bearger.",
+      "group": "boss",
+      "id": "boss_bearger",
+      "name": "bearger",
+      "params": {
+        "prefab": "bearger"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "kill_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu moose.",
+      "group": "boss",
+      "id": "boss_moose",
+      "name": "moose",
+      "params": {
+        "prefab": "moose"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "kill_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu dragonfly.",
+      "group": "boss",
+      "id": "boss_dragonfly",
+      "name": "dragonfly",
+      "params": {
+        "prefab": "dragonfly"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "kill_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu beequeen.",
+      "group": "boss",
+      "id": "boss_beequeen",
+      "name": "beequeen",
+      "params": {
+        "prefab": "beequeen"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "kill_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu klaus.",
+      "group": "boss",
+      "id": "boss_klaus",
+      "name": "klaus",
+      "params": {
+        "prefab": "klaus"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "kill_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu antlion.",
+      "group": "boss",
+      "id": "boss_antlion",
+      "name": "antlion",
+      "params": {
+        "prefab": "antlion"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "kill_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu toadstool.",
+      "group": "boss",
+      "id": "boss_toadstool",
+      "name": "toadstool",
+      "params": {
+        "prefab": "toadstool"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "kill_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu toadstool dark.",
+      "group": "boss",
+      "id": "boss_toadstool_dark",
+      "name": "toadstool dark",
+      "params": {
+        "prefab": "toadstool_dark"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "kill_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu fuelweaver.",
+      "group": "boss",
+      "id": "boss_fuelweaver",
+      "name": "fuelweaver",
+      "params": {
+        "prefab": "fuelweaver"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "kill_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu stalker.",
+      "group": "boss",
+      "id": "boss_stalker",
+      "name": "stalker",
+      "params": {
+        "prefab": "stalker"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "kill_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu stalker atrium.",
+      "group": "boss",
+      "id": "boss_stalker_atrium",
+      "name": "stalker atrium",
+      "params": {
+        "prefab": "stalker_atrium"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "kill_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu crabking.",
+      "group": "boss",
+      "id": "boss_crabking",
+      "name": "crabking",
+      "params": {
+        "prefab": "crabking"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "kill_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu malbat.",
+      "group": "boss",
+      "id": "boss_malbat",
+      "name": "malbat",
+      "params": {
+        "prefab": "malbat"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "kill_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu minotaur.",
+      "group": "boss",
+      "id": "boss_minotaur",
+      "name": "minotaur",
+      "params": {
+        "prefab": "minotaur"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "kill_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu spiderqueen.",
+      "group": "boss",
+      "id": "boss_spiderqueen",
+      "name": "spiderqueen",
+      "params": {
+        "prefab": "spiderqueen"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "kill_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu guardian.",
+      "group": "boss",
+      "id": "boss_guardian",
+      "name": "guardian",
+      "params": {
+        "prefab": "guardian"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "kill_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu eyeofterror.",
+      "group": "boss",
+      "id": "boss_eyeofterror",
+      "name": "eyeofterror",
+      "params": {
+        "prefab": "eyeofterror"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "kill_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu twinofterror1.",
+      "group": "boss",
+      "id": "boss_twinofterror1",
+      "name": "twinofterror1",
+      "params": {
+        "prefab": "twinofterror1"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "kill_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu twinofterror2.",
+      "group": "boss",
+      "id": "boss_twinofterror2",
+      "name": "twinofterror2",
+      "params": {
+        "prefab": "twinofterror2"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "kill_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Đánh bại Bạch Hổ của Phàm Nhân.",
+      "group": "boss",
+      "id": "boss_ttk_boss_baihu",
+      "name": "Bạch Hổ",
+      "params": {
+        "prefab": "ttk_baihu"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "kill_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Đánh bại Kim Phượng của Phàm Nhân.",
+      "group": "boss",
+      "id": "boss_ttk_boss_jfsn",
+      "name": "Kim Phượng",
+      "params": {
+        "prefab": "ttk_jfsn"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "kill_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Đánh bại Kỳ Lân của Phàm Nhân.",
+      "group": "boss",
+      "id": "boss_ttk_boss_qlch",
+      "name": "Kỳ Lân",
+      "params": {
+        "prefab": "ttk_qlch"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "kill_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Đánh bại Nữ Hoàng Ma Thù.",
+      "group": "boss",
+      "id": "boss_ttk_boss_spiderqueen",
+      "name": "Nữ Hoàng Ma Thù",
+      "params": {
+        "prefab": "ttk_spiderqueen"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "kill_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu ttk stalke fuben.",
+      "group": "boss",
+      "id": "boss_ttk_stalke_fuben",
+      "name": "ttk stalke fuben",
+      "params": {
+        "prefab": "ttk_stalke_fuben"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "kill_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu ttk boss deerclops ziyun.",
+      "group": "boss",
+      "id": "boss_ttk_boss_deerclops_ziyun",
+      "name": "ttk boss deerclops ziyun",
+      "params": {
+        "prefab": "ttk_boss_deerclops_ziyun"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "kill_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu ttk ziyunboss.",
+      "group": "boss",
+      "id": "boss_ttk_ziyunboss",
+      "name": "ttk ziyunboss",
+      "params": {
+        "prefab": "ttk_ziyunboss"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "kill_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu ttk boss ziyunwarg.",
+      "group": "boss",
+      "id": "boss_ttk_boss_ziyunwarg",
+      "name": "ttk boss ziyunwarg",
+      "params": {
+        "prefab": "ttk_boss_ziyunwarg"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "kill_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu ttk boss jcbird.",
+      "group": "boss",
+      "id": "boss_ttk_boss_jcbird",
+      "name": "ttk boss jcbird",
+      "params": {
+        "prefab": "ttk_boss_jcbird"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "kill_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu ttk boss ziyunshadow.",
+      "group": "boss",
+      "id": "boss_ttk_boss_ziyunshadow",
+      "name": "ttk boss ziyunshadow",
+      "params": {
+        "prefab": "ttk_boss_ziyunshadow"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "kill_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu ttk boss gongdeshadow.",
+      "group": "boss",
+      "id": "boss_ttk_boss_gongdeshadow",
+      "name": "ttk boss gongdeshadow",
+      "params": {
+        "prefab": "ttk_boss_gongdeshadow"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "kill_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu hh igris dungeon.",
+      "group": "boss",
+      "id": "boss_hh_igris_dungeon",
+      "name": "hh igris dungeon",
+      "params": {
+        "prefab": "hh_igris_dungeon"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "kill_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mục tiêu hh beru dungeon.",
+      "group": "boss",
+      "id": "boss_hh_beru_dungeon",
+      "name": "hh beru dungeon",
+      "params": {
+        "prefab": "hh_beru_dungeon"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "kill_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Đạt cấp độ 10.",
+      "group": "level_rank",
+      "id": "level_10",
+      "name": "Cấp độ 10",
+      "params": {
+        "level": 10
+      },
+      "reward": 10,
+      "status": "active",
+      "target": 10,
+      "tracker": "level_reached",
+      "visibility": "visible"
+    },
+    {
+      "description": "Đạt cấp độ 20.",
+      "group": "level_rank",
+      "id": "level_20",
+      "name": "Cấp độ 20",
+      "params": {
+        "level": 20
+      },
+      "reward": 10,
+      "status": "active",
+      "target": 20,
+      "tracker": "level_reached",
+      "visibility": "visible"
+    },
+    {
+      "description": "Đạt cấp độ 30.",
+      "group": "level_rank",
+      "id": "level_30",
+      "name": "Cấp độ 30",
+      "params": {
+        "level": 30
+      },
+      "reward": 10,
+      "status": "active",
+      "target": 30,
+      "tracker": "level_reached",
+      "visibility": "visible"
+    },
+    {
+      "description": "Đạt cấp độ 50.",
+      "group": "level_rank",
+      "id": "level_50",
+      "name": "Cấp độ 50",
+      "params": {
+        "level": 50
+      },
+      "reward": 10,
+      "status": "active",
+      "target": 50,
+      "tracker": "level_reached",
+      "visibility": "visible"
+    },
+    {
+      "description": "Đạt cấp độ 100.",
+      "group": "level_rank",
+      "id": "level_100",
+      "name": "Cấp độ 100",
+      "params": {
+        "level": 100
+      },
+      "reward": 10,
+      "status": "active",
+      "target": 100,
+      "tracker": "level_reached",
+      "visibility": "visible"
+    },
+    {
+      "description": "Đạt hạng thợ săn E.",
+      "group": "level_rank",
+      "id": "rank_e",
+      "name": "Hạng thợ săn E",
+      "params": {
+        "rank": "E"
+      },
+      "reward": 10,
+      "status": "active",
+      "target": 1,
+      "tracker": "hunter_rank",
+      "visibility": "visible"
+    },
+    {
+      "description": "Đạt hạng thợ săn D.",
+      "group": "level_rank",
+      "id": "rank_d",
+      "name": "Hạng thợ săn D",
+      "params": {
+        "rank": "D"
+      },
+      "reward": 10,
+      "status": "active",
+      "target": 10,
+      "tracker": "hunter_rank",
+      "visibility": "visible"
+    },
+    {
+      "description": "Đạt hạng thợ săn C.",
+      "group": "level_rank",
+      "id": "rank_c",
+      "name": "Hạng thợ săn C",
+      "params": {
+        "rank": "C"
+      },
+      "reward": 10,
+      "status": "active",
+      "target": 20,
+      "tracker": "hunter_rank",
+      "visibility": "visible"
+    },
+    {
+      "description": "Đạt hạng thợ săn B.",
+      "group": "level_rank",
+      "id": "rank_b",
+      "name": "Hạng thợ săn B",
+      "params": {
+        "rank": "B"
+      },
+      "reward": 10,
+      "status": "active",
+      "target": 30,
+      "tracker": "hunter_rank",
+      "visibility": "visible"
+    },
+    {
+      "description": "Đạt hạng thợ săn A.",
+      "group": "level_rank",
+      "id": "rank_a",
+      "name": "Hạng thợ săn A",
+      "params": {
+        "rank": "A"
+      },
+      "reward": 10,
+      "status": "active",
+      "target": 40,
+      "tracker": "hunter_rank",
+      "visibility": "visible"
+    },
+    {
+      "description": "Đạt hạng thợ săn S.",
+      "group": "level_rank",
+      "id": "rank_s",
+      "name": "Hạng thợ săn S",
+      "params": {
+        "rank": "S"
+      },
+      "reward": 10,
+      "status": "active",
+      "target": 50,
+      "tracker": "hunter_rank",
+      "visibility": "visible"
+    },
+    {
+      "description": "Đạt hạng thợ săn SS.",
+      "group": "level_rank",
+      "id": "rank_ss",
+      "name": "Hạng thợ săn SS",
+      "params": {
+        "rank": "SS"
+      },
+      "reward": 10,
+      "status": "active",
+      "target": 70,
+      "tracker": "hunter_rank",
+      "visibility": "visible"
+    },
+    {
+      "description": "Đạt hạng thợ săn SSS.",
+      "group": "level_rank",
+      "id": "rank_sss",
+      "name": "Hạng thợ săn SSS",
+      "params": {
+        "rank": "SSS"
+      },
+      "reward": 10,
+      "status": "active",
+      "target": 100,
+      "tracker": "hunter_rank",
+      "visibility": "visible"
+    },
+    {
+      "description": "Cường hóa thành công một vũ khí lên +1.",
+      "group": "enhancement",
+      "id": "enhancement_weapon_one",
+      "name": "Vũ Khí Cường Hóa +1",
+      "params": {
+        "category": "weapon",
+        "level": 1
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "strengthen_success",
+      "visibility": "visible"
+    },
+    {
+      "description": "Cường hóa thành công một vũ khí lên +3.",
+      "group": "enhancement",
+      "id": "enhancement_weapon_two",
+      "name": "Vũ Khí Cường Hóa +3",
+      "params": {
+        "category": "weapon",
+        "level": 3
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 3,
+      "tracker": "strengthen_success",
+      "visibility": "visible"
+    },
+    {
+      "description": "Cường hóa thành công một vũ khí lên +6.",
+      "group": "enhancement",
+      "id": "enhancement_weapon_three",
+      "name": "Vũ Khí Cường Hóa +6",
+      "params": {
+        "category": "weapon",
+        "level": 6
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 6,
+      "tracker": "strengthen_success",
+      "visibility": "visible"
+    },
+    {
+      "description": "Cường hóa thành công một giáp lên +1.",
+      "group": "enhancement",
+      "id": "enhancement_armor_one",
+      "name": "Giáp Cường Hóa +1",
+      "params": {
+        "category": "armor",
+        "level": 1
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 1,
+      "tracker": "strengthen_success",
+      "visibility": "visible"
+    },
+    {
+      "description": "Cường hóa thành công một giáp lên +3.",
+      "group": "enhancement",
+      "id": "enhancement_armor_two",
+      "name": "Giáp Cường Hóa +3",
+      "params": {
+        "category": "armor",
+        "level": 3
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 3,
+      "tracker": "strengthen_success",
+      "visibility": "visible"
+    },
+    {
+      "description": "Cường hóa thành công một giáp lên +6.",
+      "group": "enhancement",
+      "id": "enhancement_armor_three",
+      "name": "Giáp Cường Hóa +6",
+      "params": {
+        "category": "armor",
+        "level": 6
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 6,
+      "tracker": "strengthen_success",
+      "visibility": "visible"
+    },
+    {
+      "description": "Dùng mười Đá Cường Hóa tại bàn cường hóa.",
+      "group": "enhancement",
+      "id": "enhancement_bag_one",
+      "name": "Đá Cường Hóa Đầu Tiên",
+      "params": {
+        "prefab": "wb_enhancegem"
+      },
+      "reward": 5,
+      "status": "active",
+      "target": 10,
+      "tracker": "strengthen_gem_spent",
+      "visibility": "visible"
+    },
+    {
+      "description": "Dùng một Bùa Bảo Vệ khi cường hóa.",
+      "group": "enhancement",
+      "id": "enhancement_bag_two",
+      "name": "Bùa Bảo Vệ",
+      "params": {
+        "prefab": "wb_strengthen_strengthen_protectpaper"
+      },
+      "reward": 8,
+      "status": "active",
+      "target": 1,
+      "tracker": "strengthen_protection_used",
+      "visibility": "visible"
+    },
+    {
+      "description": "Dùng Cuộn Cường Hóa +6.",
+      "group": "enhancement",
+      "id": "enhancement_ring_one",
+      "name": "Cuộn Tất Thành +6",
+      "params": {
+        "prefab": "wb_strengthen_strengthen_6_levelpaper"
+      },
+      "reward": 8,
+      "status": "active",
+      "target": 1,
+      "tracker": "strengthen_scroll_used",
+      "visibility": "visible"
+    },
+    {
+      "description": "Dùng Cuộn Cường Hóa +9.",
+      "group": "enhancement",
+      "id": "enhancement_ring_two",
+      "name": "Cuộn Tất Thành +9",
+      "params": {
+        "prefab": "wb_strengthen_strengthen_9_levelpaper"
+      },
+      "reward": 8,
+      "status": "active",
+      "target": 1,
+      "tracker": "strengthen_scroll_used",
+      "visibility": "visible"
+    },
+    {
+      "description": "Dùng Cuộn Tẩy Tủy để hoàn nguyên trang bị.",
+      "group": "enhancement",
+      "id": "enhancement_relic_one",
+      "name": "Nghi Thức Tẩy Luyện",
+      "params": {
+        "prefab": "wb_strengthen_clearpaper"
+      },
+      "reward": 8,
+      "status": "active",
+      "target": 1,
+      "tracker": "strengthen_clear_used",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mười hai lần cường hóa thành công.",
+      "group": "enhancement",
+      "id": "enhancement_relic_two",
+      "name": "Bậc Thầy Cường Hóa",
+      "params": {
+        "category": "any"
+      },
+      "reward": 8,
+      "status": "active",
+      "target": 12,
+      "tracker": "strengthen_success",
+      "visibility": "visible"
+    },
+    {
+      "description": "Đi qua cổng `dungeon_gate` lần đầu.",
+      "group": "dungeon_guild",
+      "id": "dungeon_guild_enter_dungeon",
+      "name": "Cổng Hầm Ngục",
+      "params": {
+        "prefab": "dungeon_gate"
+      },
+      "reward": 8,
+      "status": "active",
+      "target": 1,
+      "tracker": "dungeon_entered",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn tất một lượt hầm ngục.",
+      "group": "dungeon_guild",
+      "id": "dungeon_guild_clear_dungeon",
+      "name": "Chinh Phục Hầm Ngục",
+      "params": {
+        "source": "dungeon_manager"
+      },
+      "reward": 8,
+      "status": "active",
+      "target": 1,
+      "tracker": "dungeon_completed",
+      "visibility": "visible"
+    },
+    {
+      "description": "Đánh bại Igris trong hầm ngục.",
+      "group": "dungeon_guild",
+      "id": "dungeon_guild_defeat_igris",
+      "name": "Hạ Igris",
+      "params": {
+        "context": "dungeon",
+        "prefab": "hh_igris_dungeon"
+      },
+      "reward": 8,
+      "status": "active",
+      "target": 1,
+      "tracker": "kill_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Đánh bại Beru trong hầm ngục.",
+      "group": "dungeon_guild",
+      "id": "dungeon_guild_defeat_beru",
+      "name": "Hạ Beru",
+      "params": {
+        "context": "dungeon",
+        "prefab": "hh_beru_dungeon"
+      },
+      "reward": 8,
+      "status": "active",
+      "target": 1,
+      "tracker": "kill_prefab",
+      "visibility": "visible"
+    },
+    {
+      "description": "Mua một vật phẩm tại Cửa Hàng Hầm Ngục.",
+      "group": "dungeon_guild",
+      "id": "dungeon_guild_buy_dungeon_item",
+      "name": "Giao Dịch Hầm Ngục",
+      "params": {
+        "source": "hh_dungeon_shop"
+      },
+      "reward": 8,
+      "status": "active",
+      "target": 1,
+      "tracker": "dungeon_shop_purchase",
+      "visibility": "visible"
+    },
+    {
+      "description": "Nhận một trăm Xu Hầm Ngục.",
+      "group": "dungeon_guild",
+      "id": "dungeon_guild_earn_dungeon_coin",
+      "name": "Xu Hầm Ngục",
+      "params": {
+        "currency": "dungeon_coin"
+      },
+      "reward": 8,
+      "status": "active",
+      "target": 100,
+      "tracker": "dungeon_coin_earned",
+      "visibility": "visible"
+    },
+    {
+      "description": "Mở giao diện Nhân Viên Hiệp Hội.",
+      "group": "dungeon_guild",
+      "id": "dungeon_guild_meet_guild",
+      "name": "Gặp Nhân Viên Hiệp Hội",
+      "params": {
+        "prefab": "guild_staff"
+      },
+      "reward": 8,
+      "status": "active",
+      "target": 1,
+      "tracker": "guild_opened",
+      "visibility": "visible"
+    },
+    {
+      "description": "Nhận một ủy thác Hiệp Hội.",
+      "group": "dungeon_guild",
+      "id": "dungeon_guild_accept_guild_quest",
+      "name": "Nhận Ủy Thác",
+      "params": {
+        "event": "hh_guild_quest_assigned"
+      },
+      "reward": 8,
+      "status": "active",
+      "target": 1,
+      "tracker": "guild_quest_assigned",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành một ủy thác Hiệp Hội.",
+      "group": "dungeon_guild",
+      "id": "dungeon_guild_complete_guild_quest",
+      "name": "Hoàn Thành Ủy Thác",
+      "params": {
+        "event": "hh_guild_quest_completed"
+      },
+      "reward": 8,
+      "status": "active",
+      "target": 1,
+      "tracker": "guild_quest_completed",
+      "visibility": "visible"
+    },
+    {
+      "description": "Vượt qua một kỳ thi thăng hạng.",
+      "group": "dungeon_guild",
+      "id": "dungeon_guild_pass_rank_exam",
+      "name": "Kỳ Thi Thợ Săn",
+      "params": {
+        "source": "hh_rank"
+      },
+      "reward": 8,
+      "status": "active",
+      "target": 1,
+      "tracker": "guild_rank_exam_passed",
+      "visibility": "visible"
+    },
+    {
+      "description": "Tiêu tín dụng tại cửa hàng Hiệp Hội.",
+      "group": "dungeon_guild",
+      "id": "dungeon_guild_spend_guild_credit",
+      "name": "Dùng Tín Dụng Hiệp Hội",
+      "params": {
+        "source": "hh_guild_shop"
+      },
+      "reward": 8,
+      "status": "active",
+      "target": 1,
+      "tracker": "guild_credit_spent",
+      "visibility": "visible"
+    },
+    {
+      "description": "Mua một vật phẩm tại cửa hàng Hiệp Hội.",
+      "group": "dungeon_guild",
+      "id": "dungeon_guild_visit_guild_shop",
+      "name": "Cửa Hàng Hiệp Hội",
+      "params": {
+        "source": "hh_guild_shop"
+      },
+      "reward": 8,
+      "status": "active",
+      "target": 1,
+      "tracker": "guild_shop_purchase",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành nhiệm vụ mùa đầu tiên.",
+      "group": "seasonal",
+      "id": "season_first_mission",
+      "name": "Nhiệm Vụ Đầu Tiên",
+      "params": {
+        "milestone": 1
+      },
+      "reward": 8,
+      "status": "active",
+      "target": 1,
+      "tracker": "season_mission_completed",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành năm nhiệm vụ mùa.",
+      "group": "seasonal",
+      "id": "season_mission_five",
+      "name": "Năm Nhiệm Vụ Mùa",
+      "params": {
+        "milestone": 5
+      },
+      "reward": 8,
+      "status": "active",
+      "target": 5,
+      "tracker": "season_mission_completed",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mười nhiệm vụ mùa.",
+      "group": "seasonal",
+      "id": "season_mission_ten",
+      "name": "Mười Nhiệm Vụ Mùa",
+      "params": {
+        "milestone": 10
+      },
+      "reward": 8,
+      "status": "active",
+      "target": 10,
+      "tracker": "season_mission_completed",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành mười lăm nhiệm vụ mùa.",
+      "group": "seasonal",
+      "id": "season_mission_fifteen",
+      "name": "Mười Lăm Nhiệm Vụ Mùa",
+      "params": {
+        "milestone": 15
+      },
+      "reward": 8,
+      "status": "active",
+      "target": 15,
+      "tracker": "season_mission_completed",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành hai mươi nhiệm vụ mùa.",
+      "group": "seasonal",
+      "id": "season_mission_twenty",
+      "name": "Hai Mươi Nhiệm Vụ Mùa",
+      "params": {
+        "milestone": 20
+      },
+      "reward": 8,
+      "status": "active",
+      "target": 20,
+      "tracker": "season_mission_completed",
+      "visibility": "visible"
+    },
+    {
+      "description": "Nhận một nhiệm vụ mùa đã phát hành.",
+      "group": "seasonal",
+      "id": "season_participate",
+      "name": "Bước Vào Mùa",
+      "params": {
+        "source": "seasonal"
+      },
+      "reward": 8,
+      "status": "active",
+      "target": 1,
+      "tracker": "season_mission_assigned",
+      "visibility": "visible"
+    },
+    {
+      "description": "Hoàn thành nhiệm vụ mùa lặp lại.",
+      "group": "seasonal",
+      "id": "season_repeat",
+      "name": "Kiên Trì Theo Mùa",
+      "params": {
+        "source": "seasonal"
+      },
+      "reward": 8,
+      "status": "active",
+      "target": 1,
+      "tracker": "season_mission_repeat",
+      "visibility": "visible"
+    },
+    {
+      "description": "Nhận phần thưởng của một nhiệm vụ mùa.",
+      "group": "seasonal",
+      "id": "season_claim_reward",
+      "name": "Nhận Thưởng Mùa",
+      "params": {
+        "source": "seasonal"
+      },
+      "reward": 8,
+      "status": "active",
+      "target": 1,
+      "tracker": "season_mission_claimed",
+      "visibility": "visible"
+    },
+    {
+      "description": "Quay Máy Rút Thưởng một lần.",
+      "group": "gacha_shop",
+      "id": "gacha_shop_spin_once",
+      "name": "Lần Quay Đầu Tiên",
+      "params": {
+        "prefab": "ttk_choujiangji"
+      },
+      "reward": 8,
+      "status": "active",
+      "target": 1,
+      "tracker": "slotmachine_spin",
+      "visibility": "visible"
+    },
+    {
+      "description": "Quay Máy Rút Thưởng mười lần.",
+      "group": "gacha_shop",
+      "id": "gacha_shop_spin_ten",
+      "name": "Mười Lần May Mắn",
+      "params": {
+        "prefab": "ttk_choujiangji"
+      },
+      "reward": 8,
+      "status": "active",
+      "target": 10,
+      "tracker": "slotmachine_spin",
+      "visibility": "visible"
+    },
+    {
+      "description": "Mua Linh Thạch tại Máy Rút Thưởng.",
+      "group": "gacha_shop",
+      "id": "gacha_shop_buy_lingshi",
+      "name": "Đổi Linh Thạch",
+      "params": {
+        "prefab": "ttk_lingshi2"
+      },
+      "reward": 8,
+      "status": "active",
+      "target": 1,
+      "tracker": "slotmachine_reward",
+      "visibility": "visible"
+    },
+    {
+      "description": "Nhận một đan dược từ Máy Rút Thưởng.",
+      "group": "gacha_shop",
+      "id": "gacha_shop_buy_pill",
+      "name": "Đổi Đan Dược",
+      "params": {
+        "kind": "pill",
+        "source": "ttk_choujiangji"
+      },
+      "reward": 8,
+      "status": "active",
+      "target": 1,
+      "tracker": "slotmachine_reward",
+      "visibility": "visible"
+    },
+    {
+      "description": "Nhận phần thưởng hiếm từ Máy Rút Thưởng.",
+      "group": "gacha_shop",
+      "id": "gacha_shop_buy_relic",
+      "name": "Báu Vật May Mắn",
+      "params": {
+        "kind": "rare",
+        "source": "ttk_choujiangji"
+      },
+      "reward": 8,
+      "status": "active",
+      "target": 1,
+      "tracker": "slotmachine_reward",
+      "visibility": "visible"
+    },
+    {
+      "description": "Nhận nguyên liệu từ Máy Rút Thưởng.",
+      "group": "gacha_shop",
+      "id": "gacha_shop_buy_material",
+      "name": "Nguyên Liệu May Mắn",
+      "params": {
+        "kind": "material",
+        "source": "ttk_choujiangji"
+      },
+      "reward": 8,
+      "status": "active",
+      "target": 1,
+      "tracker": "slotmachine_reward",
+      "visibility": "visible"
+    },
+    {
+      "description": "Mở giao diện Cửa Hàng Hầm Ngục.",
+      "group": "gacha_shop",
+      "id": "gacha_shop_shop_visit",
+      "name": "Mở Cửa Hàng Hầm Ngục",
+      "params": {
+        "source": "hh_dungeon_shop"
+      },
+      "reward": 8,
+      "status": "active",
+      "target": 1,
+      "tracker": "dungeon_shop_opened",
+      "visibility": "visible"
+    },
+    {
+      "description": "Mua năm vật phẩm tại Cửa Hàng Hầm Ngục.",
+      "group": "gacha_shop",
+      "id": "gacha_shop_shop_purchase",
+      "name": "Đơn Hàng Hầm Ngục",
+      "params": {
+        "source": "hh_dungeon_shop"
+      },
+      "reward": 8,
+      "status": "active",
+      "target": 5,
+      "tracker": "dungeon_shop_purchase",
+      "visibility": "visible"
+    },
+    {
+      "description": "Mở lại kho hàng sau một lượt hầm ngục.",
+      "group": "gacha_shop",
+      "id": "gacha_shop_shop_refresh",
+      "name": "Làm Mới Kho Hàng",
+      "params": {
+        "source": "hh_dungeon_shop"
+      },
+      "reward": 8,
+      "status": "active",
+      "target": 1,
+      "tracker": "dungeon_shop_restocked",
+      "visibility": "visible"
+    },
+    {
+      "description": "Mua vật phẩm bằng tín dụng Hiệp Hội.",
+      "group": "gacha_shop",
+      "id": "gacha_shop_shop_discount",
+      "name": "Khách Hàng Hiệp Hội",
+      "params": {
+        "currency": "credit",
+        "source": "hh_guild_shop"
+      },
+      "reward": 10,
+      "status": "active",
+      "target": 1,
+      "tracker": "guild_shop_purchase",
+      "visibility": "visible"
+    }
+  ],
+  "buffs": [
+    {
+      "effect": {
+        "duration": 2400,
+        "kind": "damage_mult",
+        "multiplier": 1.4
+      },
+      "effects": [
+        {
+          "text": "Tăng 40% sát thương gây ra trong 2400 giây.",
+          "trigger": "consume"
+        }
+      ],
+      "name": "Cuồng Ý Phúc Xà Đan",
+      "prefab": "xd_dy_cyfxd_1",
+      "recipe": {
+        "crafting_note": "Luyện tại Đan Lô trong 180 giây.",
+        "ingredients": [
+          {
+            "amount": 4,
+            "prefab": "dragon_scales"
+          },
+          {
+            "amount": 12,
+            "prefab": "pepper"
+          },
+          {
+            "amount": 16,
+            "prefab": "xd_lc_cyh"
+          },
+          {
+            "amount": 2,
+            "prefab": "xd_npxsz"
+          }
+        ],
+        "output_count": 1
+      }
+    },
+    {
+      "effect": {
+        "amount": 15,
+        "duration": 2400,
+        "immediate": 120,
+        "interval": 6,
+        "kind": "health_regen"
+      },
+      "effects": [
+        {
+          "text": "Hồi ngay 120 Máu; sau đó hồi thêm 15 Máu mỗi 6 giây trong 2400 giây.",
+          "trigger": "consume"
+        }
+      ],
+      "name": "Đại Mệnh Hồi Sinh Đan",
+      "prefab": "xd_dy_dmhsd_1",
+      "recipe": {
+        "crafting_note": "Luyện tại Đan Lô trong 180 giây.",
+        "ingredients": [
+          {
+            "amount": 1,
+            "prefab": "mandrake"
+          },
+          {
+            "amount": 12,
+            "prefab": "royal_jelly"
+          },
+          {
+            "amount": 16,
+            "prefab": "xd_lc_dms"
+          },
+          {
+            "amount": 2,
+            "prefab": "xd_npxsz"
+          }
+        ],
+        "output_count": 1
+      }
+    },
+    {
+      "effect": {
+        "duration": 2400,
+        "kind": "heat_protection"
+      },
+      "effects": [
+        {
+          "text": "Tạo buff chống nóng trong 2400 giây. Runtime xác nhận thời lượng nhưng phần mã đã mã hóa không để lộ hệ số chống nóng.",
+          "trigger": "consume"
+        }
+      ],
+      "name": "Hỏa Sát Phích Hàn Đan",
+      "prefab": "xd_dy_hsphd_1",
+      "recipe": {
+        "crafting_note": "Luyện tại Đan Lô trong 180 giây.",
+        "ingredients": [
+          {
+            "amount": 3,
+            "prefab": "deerclops_eyeball"
+          },
+          {
+            "amount": 12,
+            "prefab": "watermelon"
+          },
+          {
+            "amount": 16,
+            "prefab": "xd_lc_hsc"
+          },
+          {
+            "amount": 2,
+            "prefab": "xd_npxsz"
+          }
+        ],
+        "output_count": 1
+      }
+    },
+    {
+      "effect": {
+        "amount": 180,
+        "duration": 2400,
+        "kind": "lightning_damage"
+      },
+      "effects": [
+        {
+          "text": "Mỗi đòn đánh gây thêm 180 sát thương lôi trong 2400 giây; kích hoạt ở 100% số đòn trong phép thử runtime.",
+          "trigger": "consume"
+        }
+      ],
+      "name": "Lôi Mãng Sát Khí Đan",
+      "prefab": "xd_dy_lmsqd_1",
+      "recipe": {
+        "crafting_note": "Luyện tại Đan Lô trong 180 giây.",
+        "ingredients": [
+          {
+            "amount": 12,
+            "prefab": "asparagus"
+          },
+          {
+            "amount": 16,
+            "prefab": "xd_lc_lmg"
+          },
+          {
+            "amount": 2,
+            "prefab": "xd_npxsz"
+          },
+          {
+            "amount": 4,
+            "prefab": "xd_qlr"
+          }
+        ],
+        "output_count": 1
+      }
+    },
+    {
+      "effect": {
+        "duration": 2400,
+        "kind": "damage_reduction",
+        "multiplier": 0.65
+      },
+      "effects": [
+        {
+          "text": "Giảm 35% sát thương nhận vào trong 2400 giây.",
+          "trigger": "consume"
+        }
+      ],
+      "name": "Phòng Sát Hộ Thân Đan",
+      "prefab": "xd_dy_pshsd_1",
+      "recipe": {
+        "crafting_note": "Luyện tại Đan Lô trong 180 giây.",
+        "ingredients": [
+          {
+            "amount": 12,
+            "prefab": "potato"
+          },
+          {
+            "amount": 16,
+            "prefab": "xd_lc_dms"
+          },
+          {
+            "amount": 4,
+            "prefab": "xd_mgqg"
+          },
+          {
+            "amount": 2,
+            "prefab": "xd_npxsz"
+          }
+        ],
+        "output_count": 1
+      }
+    },
+    {
+      "effect": {
+        "duration": 2400,
+        "kind": "work_efficiency",
+        "multiplier": 1.9
+      },
+      "effects": [
+        {
+          "text": "Tăng 90% hiệu suất Chặt, Đập và Đào mỏ trong 2400 giây; không tăng tốc Đào đất, Hái hoặc Thu hoạch.",
+          "trigger": "consume"
+        }
+      ],
+      "name": "Cường Kình Khai Sơn Đan",
+      "prefab": "xd_dy_qjqsd_1",
+      "recipe": {
+        "crafting_note": "Luyện tại Đan Lô trong 180 giây.",
+        "ingredients": [
+          {
+            "amount": 12,
+            "prefab": "corn"
+          },
+          {
+            "amount": 4,
+            "prefab": "shroom_skin"
+          },
+          {
+            "amount": 16,
+            "prefab": "xd_lc_qfx"
+          },
+          {
+            "amount": 2,
+            "prefab": "xd_npxsz"
+          }
+        ],
+        "output_count": 1
+      }
+    },
+    {
+      "effect": {
+        "amount": 6.666666666666667,
+        "duration": 2400,
+        "kind": "sanity_regen"
+      },
+      "effects": [
+        {
+          "text": "hồi khoảng 6.67 Tinh thần/giây trong 2400 giây (số đo runtime thực tế).",
+          "trigger": "consume"
+        }
+      ],
+      "name": "Thanh Tâm Đan",
+      "prefab": "xd_dy_qxdhd_1",
+      "recipe": {
+        "crafting_note": "Luyện tại Đan Lô trong 180 giây.",
+        "ingredients": [
+          {
+            "amount": 12,
+            "prefab": "green_cap"
+          },
+          {
+            "amount": 6,
+            "prefab": "purebrilliance"
+          },
+          {
+            "amount": 16,
+            "prefab": "xd_lc_yhh"
+          },
+          {
+            "amount": 2,
+            "prefab": "xd_npxsz"
+          }
+        ],
+        "output_count": 1
+      }
+    },
+    {
+      "effect": {
+        "duration": 2400,
+        "fraction": 0.5,
+        "kind": "lifesteal"
+      },
+      "effects": [
+        {
+          "text": "Hồi Máu bằng 50% sát thương gây ra trong 2400 giây; kích hoạt ở 100% số đòn trong phép thử runtime.",
+          "trigger": "consume"
+        }
+      ],
+      "name": "Huyết Thực Thiên Ý Đan",
+      "prefab": "xd_dy_xttyd_1",
+      "recipe": {
+        "crafting_note": "Luyện tại Đan Lô trong 180 giây.",
+        "ingredients": [
+          {
+            "amount": 12,
+            "prefab": "tomato"
+          },
+          {
+            "amount": 16,
+            "prefab": "xd_lc_yhh"
+          },
+          {
+            "amount": 2,
+            "prefab": "xd_npxsz"
+          },
+          {
+            "amount": 4,
+            "prefab": "xd_zcmy"
+          }
+        ],
+        "output_count": 1
+      }
+    },
+    {
+      "effect": {
+        "duration": 2400,
+        "kind": "cold_protection"
+      },
+      "effects": [
+        {
+          "text": "Tạo buff chống lạnh trong 2400 giây. Runtime xác nhận thời lượng nhưng phần mã đã mã hóa không để lộ hệ số chống lạnh.",
+          "trigger": "consume"
+        }
+      ],
+      "name": "Huyền Nguyên Ninh Dương Đan",
+      "prefab": "xd_dy_xynyd_1",
+      "recipe": {
+        "crafting_note": "Luyện tại Đan Lô trong 180 giây.",
+        "ingredients": [
+          {
+            "amount": 12,
+            "prefab": "dragonfruit"
+          },
+          {
+            "amount": 4,
+            "prefab": "xd_fs"
+          },
+          {
+            "amount": 16,
+            "prefab": "xd_lc_cyh"
+          },
+          {
+            "amount": 2,
+            "prefab": "xd_npxsz"
+          }
+        ],
+        "output_count": 1
+      }
+    },
+    {
+      "effect": {
+        "duration": 2400,
+        "kind": "speed_mult",
+        "multiplier": 1.25
+      },
+      "effects": [
+        {
+          "text": "Tăng 25% tốc độ đi bộ và chạy trong 2400 giây.",
+          "trigger": "consume"
+        }
+      ],
+      "name": "Ngự Phong Thần Hành Đan",
+      "prefab": "xd_dy_yfsxd_1",
+      "recipe": {
+        "crafting_note": "Luyện tại Đan Lô trong 180 giây.",
+        "ingredients": [
+          {
+            "amount": 12,
+            "prefab": "carrot"
+          },
+          {
+            "amount": 32,
+            "prefab": "malbatross_feather"
+          },
+          {
+            "amount": 16,
+            "prefab": "xd_lc_qfx"
+          },
+          {
+            "amount": 2,
+            "prefab": "xd_npxsz"
+          }
+        ],
+        "output_count": 1
+      }
+    }
+  ],
+  "cultivation": [
+    {
+      "effects": [
+        {
+          "text": "Sau khi dùng, đặt cảnh giới mục tiêu thành cấp 1 (Tụ Khí); quá trình chuyển cấp hoàn tất sau khoảng 3 giây.",
+          "trigger": "consume"
+        }
+      ],
+      "name": "Tụ Khí Hoàn",
+      "prefab": "xd_danyao_jq",
+      "recipe": {
+        "crafting_note": "Luyện tại Đan Lô.",
+        "ingredients": [
+          {
+            "amount": 5,
+            "prefab": "spidergland"
+          },
+          {
+            "amount": 10,
+            "prefab": "stinger"
+          },
+          {
+            "amount": 1,
+            "prefab": "tallbirdegg"
+          },
+          {
+            "amount": 10,
+            "prefab": "xd_lingshi1"
+          }
+        ],
+        "output_count": 1
+      }
+    },
+    {
+      "effects": [
+        {
+          "text": "Sau khi dùng, đặt cảnh giới mục tiêu thành cấp 2 (Đoán Thể); quá trình chuyển cấp hoàn tất sau khoảng 3 giây.",
+          "trigger": "consume"
+        }
+      ],
+      "name": "Đột Phá Đan",
+      "prefab": "xd_danyao_dt",
+      "recipe": {
+        "crafting_note": "Luyện tại Đan Lô.",
+        "ingredients": [
+          {
+            "amount": 3,
+            "prefab": "pigskin"
+          },
+          {
+            "amount": 3,
+            "prefab": "redgem"
+          },
+          {
+            "amount": 30,
+            "prefab": "xd_lingshi1"
+          }
+        ],
+        "output_count": 1
+      }
+    },
+    {
+      "effects": [
+        {
+          "text": "Dùng ở cảnh giới cấp 2 để thực hiện đột phá lên cấp 3 (Trúc Cơ). Runtime xác nhận đây là đan đột phá có điều kiện; không đọc được xác suất thành công từ phần mã đã mã hóa.",
+          "trigger": "consume"
+        }
+      ],
+      "name": "Trúc Cơ Đan",
+      "prefab": "xd_danyao_zj",
+      "recipe": {
+        "crafting_note": "Luyện tại Đan Lô.",
+        "ingredients": [
+          {
+            "amount": 1,
+            "prefab": "dragon_scales"
+          },
+          {
+            "amount": 10,
+            "prefab": "houndstooth"
+          },
+          {
+            "amount": 3,
+            "prefab": "livinglog"
+          },
+          {
+            "amount": 1,
+            "prefab": "xd_lingshi2"
+          }
+        ],
+        "output_count": 1
+      }
+    },
+    {
+      "effects": [
+        {
+          "text": "Sau khi dùng, đặt cảnh giới mục tiêu thành cấp 4 (Tẩy Tủy); quá trình chuyển cấp hoàn tất sau khoảng 3 giây.",
+          "trigger": "consume"
+        }
+      ],
+      "name": "Tẩy Tủy Đan",
+      "prefab": "xd_danyao_xs",
+      "recipe": {
+        "crafting_note": "Luyện tại Đan Lô.",
+        "ingredients": [
+          {
+            "amount": 10,
+            "prefab": "lightbulb"
+          },
+          {
+            "amount": 3,
+            "prefab": "slurtle_shellpieces"
+          },
+          {
+            "amount": 3,
+            "prefab": "wormlight"
+          },
+          {
+            "amount": 20,
+            "prefab": "xd_lingshi1"
+          }
+        ],
+        "output_count": 1
+      }
+    },
+    {
+      "effects": [
+        {
+          "text": "Sau khi dùng, đặt cảnh giới mục tiêu thành cấp 5 (Hóa Tinh); quá trình chuyển cấp hoàn tất sau khoảng 3 giây.",
+          "trigger": "consume"
+        }
+      ],
+      "name": "Hóa Tinh Đan",
+      "prefab": "xd_danyao_hj",
+      "recipe": {
+        "crafting_note": "Luyện tại Đan Lô.",
+        "ingredients": [
+          {
+            "amount": 3,
+            "prefab": "purplegem"
+          },
+          {
+            "amount": 3,
+            "prefab": "thulecite"
+          },
+          {
+            "amount": 3,
+            "prefab": "xd_ayhx"
+          },
+          {
+            "amount": 50,
+            "prefab": "xd_lingshi1"
+          }
+        ],
+        "output_count": 1
+      }
+    },
+    {
+      "effects": [
+        {
+          "text": "Dùng ở cảnh giới cấp 5 để thực hiện đột phá lên cấp 6 (Kim Đan). Runtime xác nhận đây là đan đột phá có điều kiện; không đọc được xác suất thành công từ phần mã đã mã hóa.",
+          "trigger": "consume"
+        }
+      ],
+      "name": "Ngưng Chân Đan",
+      "prefab": "xd_danyao_yz",
+      "recipe": {
+        "crafting_note": "Luyện tại Đan Lô.",
+        "ingredients": [
+          {
+            "amount": 5,
+            "prefab": "manrabbit_tail"
+          },
+          {
+            "amount": 2,
+            "prefab": "xd_lingshi2"
+          },
+          {
+            "amount": 1,
+            "prefab": "xd_qlr"
+          }
+        ],
+        "output_count": 1
+      }
+    },
+    {
+      "effects": [
+        {
+          "text": "Sau khi dùng, đặt cảnh giới mục tiêu thành cấp 7 (Sơ Mạch); quá trình chuyển cấp hoàn tất sau khoảng 3 giây.",
+          "trigger": "consume"
+        }
+      ],
+      "name": "Sơ Mạch Đan",
+      "prefab": "xd_danyao_sm",
+      "recipe": {
+        "crafting_note": "Luyện tại Đan Lô.",
+        "ingredients": [
+          {
+            "amount": 10,
+            "prefab": "fig"
+          },
+          {
+            "amount": 1,
+            "prefab": "royal_jelly"
+          },
+          {
+            "amount": 15,
+            "prefab": "saltrock"
+          },
+          {
+            "amount": 30,
+            "prefab": "xd_lingshi1"
+          }
+        ],
+        "output_count": 1
+      }
+    },
+    {
+      "effects": [
+        {
+          "text": "Sau khi dùng, đặt cảnh giới mục tiêu thành cấp 8 (Dung Linh); quá trình chuyển cấp hoàn tất sau khoảng 3 giây.",
+          "trigger": "consume"
+        }
+      ],
+      "name": "Dung Linh Đan",
+      "prefab": "xd_danyao_rl",
+      "recipe": {
+        "crafting_note": "Luyện tại Đan Lô.",
+        "ingredients": [
+          {
+            "amount": 7,
+            "prefab": "cookiecuttershell"
+          },
+          {
+            "amount": 1,
+            "prefab": "gnarwail_horn"
+          },
+          {
+            "amount": 1,
+            "prefab": "xd_aymg"
+          },
+          {
+            "amount": 1,
+            "prefab": "xd_lingshi2"
+          }
+        ],
+        "output_count": 1
+      }
+    },
+    {
+      "effects": [
+        {
+          "text": "Dùng ở cảnh giới cấp 8 để thực hiện đột phá lên cấp 9 (Nguyên Anh). Runtime xác nhận đây là đan đột phá có điều kiện; không đọc được xác suất thành công từ phần mã đã mã hóa.",
+          "trigger": "consume"
+        }
+      ],
+      "name": "Kết Anh Đan",
+      "prefab": "xd_danyao_jy",
+      "recipe": {
+        "crafting_note": "Luyện tại Đan Lô.",
+        "ingredients": [
+          {
+            "amount": 1,
+            "prefab": "butter"
+          },
+          {
+            "amount": 1,
+            "prefab": "shroom_skin"
+          },
+          {
+            "amount": 1,
+            "prefab": "xd_fs"
+          },
+          {
+            "amount": 3,
+            "prefab": "xd_lingshi2"
+          }
+        ],
+        "output_count": 1
+      }
+    },
+    {
+      "effects": [
+        {
+          "text": "Sau khi dùng, đặt cảnh giới mục tiêu thành cấp 10 (Uẩn Huyết); quá trình chuyển cấp hoàn tất sau khoảng 3 giây.",
+          "trigger": "consume"
+        }
+      ],
+      "name": "Uẩn Huyết Đan",
+      "prefab": "xd_danyao_yx",
+      "recipe": {
+        "crafting_note": "Luyện tại Đan Lô.",
+        "ingredients": [
+          {
+            "amount": 5,
+            "prefab": "cursed_monkey_token"
+          },
+          {
+            "amount": 1,
+            "prefab": "rabbitkingspear"
+          },
+          {
+            "amount": 8,
+            "prefab": "voidcloth"
+          },
+          {
+            "amount": 1,
+            "prefab": "xd_lingshi3"
+          }
+        ],
+        "output_count": 1
+      }
+    },
+    {
+      "effects": [
+        {
+          "text": "Sau khi dùng, đặt cảnh giới mục tiêu thành cấp 11 (Ngưng Thần); quá trình chuyển cấp hoàn tất sau khoảng 3 giây.",
+          "trigger": "consume"
+        }
+      ],
+      "name": "Ngưng Thần Đan",
+      "prefab": "xd_danyao_ns",
+      "recipe": {
+        "crafting_note": "Luyện tại Đan Lô.",
+        "ingredients": [
+          {
+            "amount": 1,
+            "prefab": "alterguardianhatshard"
+          },
+          {
+            "amount": 4,
+            "prefab": "lunarplant_husk"
+          },
+          {
+            "amount": 3,
+            "prefab": "milkywhites"
+          },
+          {
+            "amount": 1,
+            "prefab": "xd_lingshi3"
+          }
+        ],
+        "output_count": 1
+      }
+    },
+    {
+      "effects": [
+        {
+          "text": "Dùng ở cảnh giới cấp 11 để thực hiện đột phá lên cấp 12 (Hóa Thần). Runtime xác nhận đây là đan đột phá có điều kiện; không đọc được xác suất thành công từ phần mã đã mã hóa.",
+          "trigger": "consume"
+        }
+      ],
+      "name": "Hóa Thần Đan",
+      "prefab": "xd_danyao_hs",
+      "recipe": {
+        "crafting_note": "Luyện tại Đan Lô.",
+        "ingredients": [
+          {
+            "amount": 8,
+            "prefab": "horrorfuel"
+          },
+          {
+            "amount": 8,
+            "prefab": "purebrilliance"
+          },
+          {
+            "amount": 1,
+            "prefab": "xd_baihu_skin"
+          },
+          {
+            "amount": 1,
+            "prefab": "xd_lingshi3"
+          }
+        ],
+        "output_count": 1
+      }
+    },
+    {
+      "effects": [
+        {
+          "text": "Sau khi dùng, đặt cảnh giới mục tiêu thành cấp 13 (Hồi Nguyên); quá trình chuyển cấp hoàn tất sau khoảng 3 giây.",
+          "trigger": "consume"
+        }
+      ],
+      "name": "Hồi Nguyên Đan",
+      "prefab": "xd_danyao_hy",
+      "recipe": {
+        "crafting_note": "Luyện tại Đan Lô.",
+        "ingredients": [
+          {
+            "amount": 1,
+            "prefab": "xd_lingshi3"
+          },
+          {
+            "amount": 3,
+            "prefab": "xd_pog_tail"
+          },
+          {
+            "amount": 2,
+            "prefab": "xd_qianyu"
+          },
+          {
+            "amount": 1,
+            "prefab": "xd_spider_leg"
+          }
+        ],
+        "output_count": 1
+      }
+    },
+    {
+      "effects": [
+        {
+          "text": "Sau khi dùng, đặt cảnh giới mục tiêu thành cấp 14 (Hợp Linh); quá trình chuyển cấp hoàn tất sau khoảng 3 giây.",
+          "trigger": "consume"
+        }
+      ],
+      "name": "Hợp Linh Đan",
+      "prefab": "xd_danyao_hl",
+      "recipe": {
+        "crafting_note": "Luyện tại Đan Lô.",
+        "ingredients": [
+          {
+            "amount": 1,
+            "prefab": "shadowheart"
+          },
+          {
+            "amount": 1,
+            "prefab": "xd_lingshi3"
+          },
+          {
+            "amount": 1,
+            "prefab": "xd_mgqg"
+          },
+          {
+            "amount": 1,
+            "prefab": "xd_zcmy"
+          }
+        ],
+        "output_count": 1
+      }
+    },
+    {
+      "effects": [
+        {
+          "text": "Dùng ở cảnh giới cấp 14 để thực hiện đột phá lên cấp 15 (Phản Hư). Runtime xác nhận đây là đan đột phá có điều kiện; không đọc được xác suất thành công từ phần mã đã mã hóa.",
+          "trigger": "consume"
+        }
+      ],
+      "name": "Khuy Hư Đan",
+      "prefab": "xd_danyao_kx",
+      "recipe": {
+        "crafting_note": "Luyện tại Đan Lô.",
+        "ingredients": [
+          {
+            "amount": 1,
+            "prefab": "xd_dy_pshsd_2"
+          },
+          {
+            "amount": 1,
+            "prefab": "xd_dy_xttyd_2"
+          },
+          {
+            "amount": 1,
+            "prefab": "xd_lingshi3"
+          },
+          {
+            "amount": 1,
+            "prefab": "xd_npxsz"
+          }
+        ],
+        "output_count": 1
+      }
+    }
+  ],
+  "fasting": {
+    "effect": {
+      "kind": "hunger_rate",
+      "multiplier": 0.2
+    },
+    "effects": [
+      {
+        "text": "Giảm tốc độ hao Đói còn 20% bình thường (giảm 80%). Runtime không ghi nhận bộ đếm thời gian, nên hiệu ứng được xem là duy trì cho đến khi trạng thái nhân vật bị thay đổi.",
+        "trigger": "consume"
+      }
+    ],
+    "name": "Bích Cốc Đan",
+    "prefab": "xd_danyao_bg",
+    "recipe": {
+      "crafting_note": "Luyện tại Đan Lô.",
+      "ingredients": [
+        {
+          "amount": 3,
+          "prefab": "cutgrass"
+        },
+        {
+          "amount": 3,
+          "prefab": "honey"
+        },
+        {
+          "amount": 5,
+          "prefab": "xd_lingshi1"
+        }
+      ],
+      "output_count": 1
+    }
+  },
+  "furnace": {
+    "duration": 180,
+    "ingredients": [
+      {
+        "amount": 5,
+        "prefab": "goldnugget"
+      },
+      {
+        "amount": 3,
+        "prefab": "cutstone"
+      },
+      {
+        "amount": 3,
+        "prefab": "flint"
+      },
+      {
+        "amount": 5,
+        "prefab": "ttk_lingshi1"
+      }
+    ],
+    "prefab": "xd_liandanlu"
+  },
+  "groups": [
+    "boss",
+    "collection",
+    "combat",
+    "crafting",
+    "dungeon_guild",
+    "enhancement",
+    "farming",
+    "food",
+    "gacha_shop",
+    "labor",
+    "level_rank",
+    "seasonal",
+    "survival"
+  ],
+  "perks": [
+    {
+      "effect_per_level": 0.5,
+      "group": "stats",
+      "id": "planar_defense",
+      "levelPrices": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "maxCost": 80,
+      "max_level": 25,
+      "name": "Planar Defense +"
+    },
+    {
+      "effect_per_level": 1,
+      "group": "stats",
+      "id": "planar_damage",
+      "levelPrices": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "maxCost": 80,
+      "max_level": 25,
+      "name": "Planar Damage +"
+    },
+    {
+      "effect_per_level": 0.01,
+      "group": "stats",
+      "id": "critical_hit",
+      "levelPrices": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "maxCost": 80,
+      "max_level": 25,
+      "name": "Critical Hit +"
+    },
+    {
+      "effect_per_level": 0.02,
+      "group": "stats",
+      "id": "critical_damage",
+      "levelPrices": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "maxCost": 80,
+      "max_level": 25,
+      "name": "Critical Damage +"
+    },
+    {
+      "effect_per_level": 0.01,
+      "group": "stats",
+      "id": "lifesteal",
+      "levelPrices": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "maxCost": 80,
+      "max_level": 25,
+      "name": "Lifesteal +"
+    },
+    {
+      "effect_per_level": 0.01,
+      "group": "stats",
+      "id": "scale",
+      "levelPrices": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "maxCost": 80,
+      "max_level": 25,
+      "name": "Scale +"
+    },
+    {
+      "effect_per_level": 0.05,
+      "group": "stats",
+      "id": "xp_multiplier",
+      "levelPrices": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "maxCost": 80,
+      "max_level": 25,
+      "name": "XP Multiplier +"
+    },
+    {
+      "group": "ability",
+      "id": "fast_worker",
+      "levelPrices": [],
+      "maxCost": 8,
+      "name": "Tay Nhanh",
+      "price": 8
+    },
+    {
+      "group": "ability",
+      "id": "mine_faster",
+      "levelPrices": [],
+      "maxCost": 6,
+      "name": "Búa Tạ",
+      "price": 6
+    },
+    {
+      "group": "ability",
+      "id": "chop_faster",
+      "levelPrices": [],
+      "maxCost": 6,
+      "name": "Máy Cưa",
+      "price": 6
+    },
+    {
+      "group": "ability",
+      "id": "fish_faster",
+      "levelPrices": [],
+      "maxCost": 6,
+      "name": "Ngư Thần",
+      "price": 6
+    },
+    {
+      "group": "ability",
+      "id": "cook_faster",
+      "levelPrices": [],
+      "maxCost": 6,
+      "name": "Siêu Đầu Bếp",
+      "price": 6
+    },
+    {
+      "group": "ability",
+      "id": "warly_chef",
+      "levelPrices": [],
+      "maxCost": 8,
+      "name": "Michelin 5 Sao",
+      "price": 8
+    },
+    {
+      "group": "ability",
+      "id": "trinket_owner",
+      "levelPrices": [],
+      "maxCost": 12,
+      "name": "Enchantmemento",
+      "price": 12
+    },
+    {
+      "group": "ability",
+      "id": "double_healed",
+      "levelPrices": [],
+      "maxCost": 15,
+      "name": "Trị Liệu Sư",
+      "price": 15
+    },
+    {
+      "group": "ability",
+      "id": "double_pick",
+      "levelPrices": [],
+      "maxCost": 20,
+      "name": "Thu Hoạch",
+      "price": 20
+    },
+    {
+      "group": "ability",
+      "id": "double_drop",
+      "levelPrices": [],
+      "maxCost": 30,
+      "name": "Khát Máu",
+      "price": 30
+    },
+    {
+      "group": "ability",
+      "id": "build_cheaper",
+      "levelPrices": [],
+      "maxCost": 35,
+      "name": "Bậc Thầy Chế Tác",
+      "price": 35
+    },
+    {
+      "group": "ability",
+      "id": "eternal_cage",
+      "levelPrices": [],
+      "maxCost": 5,
+      "name": "Phước Lành Fawkes",
+      "price": 5
+    },
+    {
+      "group": "ability",
+      "id": "easy_farm",
+      "levelPrices": [],
+      "maxCost": 12,
+      "name": "Phân Bón Tốt",
+      "price": 12
+    },
+    {
+      "group": "ability",
+      "id": "icy_weed",
+      "levelPrices": [],
+      "maxCost": 10,
+      "name": "Icy-Breezy",
+      "price": 10
+    },
+    {
+      "builder_tag": "ttk_achievement_craft_ancient_builder",
+      "group": "craft",
+      "id": "ancient_builder",
+      "levelPrices": [],
+      "maxCost": 15,
+      "name": "Ancient Builder",
+      "price": 15
+    },
+    {
+      "builder_tag": "ttk_achievement_craft_lunar_knight",
+      "group": "craft",
+      "id": "lunar_knight",
+      "levelPrices": [],
+      "maxCost": 10,
+      "name": "Kỵ Sĩ Ánh Trăng",
+      "price": 10
+    },
+    {
+      "builder_tag": "ttk_achievement_craft_pearl_bff",
+      "group": "craft",
+      "id": "pearl_bff",
+      "levelPrices": [],
+      "maxCost": 8,
+      "name": "Pearl BFF",
+      "price": 8
+    },
+    {
+      "builder_tag": "ttk_achievement_craft_benevolent_mind",
+      "group": "craft",
+      "id": "benevolent_mind",
+      "levelPrices": [],
+      "maxCost": 8,
+      "name": "Benevolent Mind",
+      "price": 8
+    },
+    {
+      "builder_tag": "ttk_achievement_craft_mad_scientist",
+      "group": "craft",
+      "id": "mad_scientist",
+      "levelPrices": [],
+      "maxCost": 10,
+      "name": "Nhà Khoa Học Điên",
+      "price": 10
+    },
+    {
+      "builder_tag": "ttk_achievement_craft_celebrate",
+      "group": "craft",
+      "id": "celebrate",
+      "levelPrices": [],
+      "maxCost": 5,
+      "name": "Celebrate!",
+      "price": 5
+    },
+    {
+      "builder_tag": "ttk_achievement_craft_festive",
+      "group": "craft",
+      "id": "festive",
+      "levelPrices": [],
+      "maxCost": 5,
+      "name": "Festive!",
+      "price": 5
+    },
+    {
+      "builder_tag": "ttk_achievement_craft_christmas_gift",
+      "group": "craft",
+      "id": "christmas_gift",
+      "levelPrices": [],
+      "maxCost": 8,
+      "name": "Quà Giáng Sinh",
+      "price": 8
+    },
+    {
+      "builder_tag": "ttk_achievement_craft_legendary_smith",
+      "group": "craft",
+      "id": "legendary_smith",
+      "levelPrices": [],
+      "maxCost": 15,
+      "name": "Thợ Rèn Huyền Thoại",
+      "price": 15
+    },
+    {
+      "builder_tag": "ttk_achievement_craft_pokeball",
+      "group": "craft",
+      "id": "pokeball",
+      "levelPrices": [],
+      "maxCost": 12,
+      "name": "Pokeball",
+      "price": 12
+    },
+    {
+      "builder_tag": "ttk_achievement_craft_antique_shop",
+      "group": "craft",
+      "id": "antique_shop",
+      "levelPrices": [],
+      "maxCost": 8,
+      "name": "Antique Shop",
+      "price": 8
+    },
+    {
+      "builder_tag": "ttk_inheritance_luoshen",
+      "group": "craft",
+      "id": "inherit_luoshen",
+      "levelPrices": [],
+      "maxCost": 20,
+      "name": "Truyền Thừa Lạc Thần",
+      "price": 20,
+      "recipes": [
+        "fence_gate_luoshen_item",
+        "xd_luoshen_jihuaze",
+        "xd_luoshen_jiangren",
+        "xd_luoshen_huazhong",
+        "xd_luoshen_liuguanghuafen",
+        "xd_luoshen_yin",
+        "xd_luoshen_huaxia",
+        "fence_luoshen_item",
+        "wall_luoshen_item",
+        "xd_luoshen_dinghunxianglu"
+      ]
+    },
+    {
+      "builder_tag": "ttk_inheritance_sanxiao",
+      "group": "craft",
+      "id": "inherit_sanxiao",
+      "levelPrices": [],
+      "maxCost": 14,
+      "name": "Truyền Thừa Tam Tiêu",
+      "price": 14,
+      "recipes": [
+        "xd_yunxiao_hyjditem",
+        "xd_yunxiao_fgfq",
+        "xd_yunxiao_fls",
+        "xd_yunxiao_fysz",
+        "xd_yunxiao_ymsz",
+        "xd_yunxiao_hyjdyqd",
+        "xd_yunxiao_portable_spicer"
+      ]
+    },
+    {
+      "builder_tag": "ttk_inheritance_shiji",
+      "group": "craft",
+      "id": "inherit_shiji",
+      "levelPrices": [],
+      "maxCost": 16,
+      "name": "Truyền Thừa Thạch Cơ",
+      "price": 16,
+      "recipes": [
+        "xd_sj_bglxp",
+        "xd_sj_bgygp",
+        "xd_sj_by_builder",
+        "xd_sj_kls",
+        "xd_sj_tlsq",
+        "xd_sj_cy_builder",
+        "xd_sj_sxz",
+        "xd_sj_xsydz"
+      ]
+    },
+    {
+      "builder_tag": "ttk_inheritance_jingwei",
+      "group": "craft",
+      "id": "inherit_jingwei",
+      "levelPrices": [],
+      "maxCost": 14,
+      "name": "Truyền Thừa Tinh Vệ",
+      "price": 14,
+      "recipes": [
+        "xd_xuanyu",
+        "xd_jingwei_blowdart",
+        "xd_jingwei_fenice_builder",
+        "xd_jingwei_fan",
+        "xd_jingwei_hat",
+        "turf_jingweitile",
+        "xd_qianyu"
+      ]
+    },
+    {
+      "builder_tag": "ttk_inheritance_sudaji",
+      "group": "craft",
+      "id": "inherit_sudaji",
+      "levelPrices": [],
+      "maxCost": 10,
+      "name": "Truyền Thừa Tô Đát Kỷ",
+      "price": 10,
+      "recipes": [
+        "xd_sudaji_redlantern",
+        "xd_sudaji_ywfh",
+        "xd_qwsk",
+        "xd_sudaji_sjpn",
+        "xd_sudaji_tsmd"
+      ]
+    },
+    {
+      "builder_tag": "ttk_inheritance_hantianzun",
+      "group": "craft",
+      "id": "inherit_hantianzun",
+      "levelPrices": [],
+      "maxCost": 8,
+      "name": "Truyền Thừa Hàn Thiên Tôn",
+      "price": 8,
+      "recipes": [
+        "xd_htz_xyzzl",
+        "xd_htz_sjcx",
+        "xd_htz_tlz"
+      ]
+    },
+    {
+      "builder_tag": "ttk_inheritance_wangmazi",
+      "group": "craft",
+      "id": "inherit_wangmazi",
+      "levelPrices": [],
+      "maxCost": 20,
+      "name": "Truyền Thừa Vương Ma Tử",
+      "price": 20,
+      "recipes": [
+        "xd_wmz_kjb",
+        "xd_wmz_slxj",
+        "xd_wmz_md1",
+        "xd_wmz_md2",
+        "xd_wmz_md3",
+        "xd_wmz_md4",
+        "xd_wmz_md5",
+        "xd_wmz_md6",
+        "xd_wmz_md7",
+        "xd_wmz_md8"
+      ]
+    }
+  ],
+  "ranks": [
+    {
+      "level": 0,
+      "name": "E"
+    },
+    {
+      "level": 10,
+      "name": "D"
+    },
+    {
+      "level": 20,
+      "name": "C"
+    },
+    {
+      "level": 30,
+      "name": "B"
+    },
+    {
+      "level": 40,
+      "name": "A"
+    },
+    {
+      "level": 50,
+      "name": "S"
+    },
+    {
+      "level": 70,
+      "name": "SS"
+    },
+    {
+      "level": 100,
+      "name": "SSS"
+    }
+  ],
+  "seasons": [
+    {
+      "draw": {
+        "once": 16,
+        "repeat": 4
+      },
+      "id": "spring",
+      "milestones": [
+        {
+          "completed": 5,
+          "items": [
+            {
+              "amount": 3,
+              "prefab": "ttk_lc_lmg_seed"
+            }
+          ]
+        },
+        {
+          "completed": 10,
+          "items": [
+            {
+              "amount": 5,
+              "prefab": "ttk_lc_lmg_seed"
+            },
+            {
+              "amount": 10,
+              "prefab": "ttk_lingshi1"
+            }
+          ]
+        },
+        {
+          "completed": 15,
+          "items": [
+            {
+              "amount": 2,
+              "prefab": "ttk_lingshi2"
+            },
+            {
+              "amount": 1,
+              "prefab": "yellowgem"
+            }
+          ]
+        },
+        {
+          "completed": 20,
+          "items": [
+            {
+              "amount": 1,
+              "prefab": "ttk_lingshi3"
+            },
+            {
+              "amount": 1,
+              "prefab": "goose_feather"
+            }
+          ]
+        }
+      ],
+      "tasks": [
+        {
+          "description": "Ăn 3 bánh bướm trong mùa xuân.",
+          "event": "oneat",
+          "id": "spring_muffin",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Bánh Bướm",
+          "params": {
+            "prefab": "butterflymuffin"
+          },
+          "season": "spring",
+          "target": 3
+        },
+        {
+          "description": "Ăn 3 bánh kẹp chân ếch.",
+          "event": "oneat",
+          "id": "spring_frogglebun",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Bánh Kẹp Ếch",
+          "params": {
+            "prefab": "frogglebun"
+          },
+          "season": "spring",
+          "target": 3
+        },
+        {
+          "description": "Ăn 3 bánh thanh long.",
+          "event": "oneat",
+          "id": "spring_dragonpie",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Bánh Thanh Long",
+          "params": {
+            "prefab": "dragonpie"
+          },
+          "season": "spring",
+          "target": 3
+        },
+        {
+          "description": "Ăn 3 viên kẹo mật ong.",
+          "event": "oneat",
+          "id": "spring_taffy",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Kẹo Mật Xuân",
+          "params": {
+            "prefab": "taffy"
+          },
+          "season": "spring",
+          "target": 3
+        },
+        {
+          "description": "Ăn 3 bánh quy bí ngô.",
+          "event": "oneat",
+          "id": "spring_cookie",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Bánh Bí Ngô",
+          "params": {
+            "prefab": "pumpkincookie"
+          },
+          "season": "spring",
+          "target": 3
+        },
+        {
+          "description": "Ăn 3 phần cà tím nhồi.",
+          "event": "oneat",
+          "id": "spring_eggplant",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Cà Tím Nhồi",
+          "params": {
+            "prefab": "stuffedeggplant"
+          },
+          "season": "spring",
+          "target": 3
+        },
+        {
+          "description": "Ăn 3 phần rau củ hầm.",
+          "event": "oneat",
+          "id": "spring_ratatouille",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Rau Hầm Xuân",
+          "params": {
+            "prefab": "ratatouille"
+          },
+          "season": "spring",
+          "target": 3
+        },
+        {
+          "description": "Ăn 1 chiếc bánh bột ngô Powcake.",
+          "event": "oneat",
+          "id": "spring_powcake",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Bánh Bột Ngô",
+          "params": {
+            "prefab": "powcake"
+          },
+          "season": "spring",
+          "target": 1
+        },
+        {
+          "description": "Ăn 10 quả mọng chưa nấu.",
+          "event": "oneat",
+          "id": "spring_berries",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Quả Mọng Tươi",
+          "params": {
+            "prefab": "berries"
+          },
+          "season": "spring",
+          "target": 10
+        },
+        {
+          "description": "Ăn 5 củ cà rốt chưa nấu.",
+          "event": "oneat",
+          "id": "spring_carrot",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Cà Rốt Tươi",
+          "params": {
+            "prefab": "carrot"
+          },
+          "season": "spring",
+          "target": 5
+        },
+        {
+          "description": "Hạ 15 nhện thường trong mùa xuân.",
+          "event": "killed",
+          "id": "spring_spider",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Dọn Nhện Vườn",
+          "params": {
+            "prefab": "spider"
+          },
+          "season": "spring",
+          "target": 15
+        },
+        {
+          "description": "Hạ 5 nhện chiến binh.",
+          "event": "killed",
+          "id": "spring_warrior",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Nhện Chiến Binh",
+          "params": {
+            "prefab": "spider_warrior"
+          },
+          "season": "spring",
+          "target": 5
+        },
+        {
+          "description": "Hạ 3 xúc tu đầm lầy.",
+          "event": "killed",
+          "id": "spring_tentacle",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Đầm Lầy An Toàn",
+          "params": {
+            "prefab": "tentacle"
+          },
+          "season": "spring",
+          "target": 3
+        },
+        {
+          "description": "Hạ 5 ngư nhân Merm.",
+          "event": "killed",
+          "id": "spring_merm",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Ngư Nhân Đầm Lầy",
+          "params": {
+            "prefab": "merm"
+          },
+          "season": "spring",
+          "target": 5
+        },
+        {
+          "description": "Hạ 8 con dơi trong hang.",
+          "event": "killed",
+          "id": "spring_bat",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Dơi Trong Hang",
+          "params": {
+            "prefab": "bat"
+          },
+          "season": "spring",
+          "target": 8
+        },
+        {
+          "description": "Hạ 2 Slurtle trong hang.",
+          "event": "killed",
+          "id": "spring_slurtle",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Ốc Sên Giáp Nhọn",
+          "params": {
+            "prefab": "slurtle"
+          },
+          "season": "spring",
+          "target": 2
+        },
+        {
+          "description": "Hạ 1 Snurtle trong hang.",
+          "event": "killed",
+          "id": "spring_snurtle",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Ốc Sên Mai Tròn",
+          "params": {
+            "prefab": "snurtle"
+          },
+          "season": "spring",
+          "target": 1
+        },
+        {
+          "description": "Hạ 10 mắt cây ăn thịt.",
+          "event": "killed",
+          "id": "spring_eyeplant",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Nhổ Mắt Ăn Thịt",
+          "params": {
+            "prefab": "eyeplant"
+          },
+          "season": "spring",
+          "target": 10
+        },
+        {
+          "description": "Hạ 3 ngỗng non Mosling.",
+          "event": "killed",
+          "id": "spring_mosling",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Đàn Ngỗng Non",
+          "params": {
+            "prefab": "mossling"
+          },
+          "season": "spring",
+          "target": 3
+        },
+        {
+          "description": "Hạ 1 Moose/Goose trong mùa xuân.",
+          "event": "killed",
+          "id": "spring_goose",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Chúa Tể Mưa Xuân",
+          "params": {
+            "prefab": "moose"
+          },
+          "season": "spring",
+          "target": 1
+        },
+        {
+          "description": "Chế tạo 1 chiếc ô chống mưa.",
+          "event": "builditem",
+          "id": "spring_umbrella",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Chiếc Ô Đầu Mùa",
+          "params": {
+            "prefab": "umbrella"
+          },
+          "season": "spring",
+          "target": 1
+        },
+        {
+          "description": "Chế tạo 1 chiếc mũ đi mưa.",
+          "event": "builditem",
+          "id": "spring_rainhat",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Mũ Đi Mưa",
+          "params": {
+            "prefab": "rainhat"
+          },
+          "season": "spring",
+          "target": 1
+        },
+        {
+          "description": "Chế tạo 1 chiếc áo đi mưa.",
+          "event": "builditem",
+          "id": "spring_raincoat",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Áo Đi Mưa",
+          "params": {
+            "prefab": "raincoat"
+          },
+          "season": "spring",
+          "target": 1
+        },
+        {
+          "description": "Dựng 1 cột thu lôi bảo vệ căn cứ.",
+          "event": "buildstructure",
+          "id": "spring_lightningrod",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Cột Thu Lôi",
+          "params": {
+            "prefab": "lightningrod"
+          },
+          "season": "spring",
+          "target": 1
+        },
+        {
+          "description": "Dựng 1 thùng chứa cá sống Tin Fishin' Bin.",
+          "event": "buildstructure",
+          "id": "spring_fishbox",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Thùng Nuôi Cá",
+          "params": {
+            "prefab": "fish_box"
+          },
+          "season": "spring",
+          "target": 1
+        },
+        {
+          "description": "Chế tạo 1 cần câu dùng tại ao.",
+          "event": "builditem",
+          "id": "spring_fishingrod",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Cần Câu Ao",
+          "params": {
+            "prefab": "fishingrod"
+          },
+          "season": "spring",
+          "target": 1
+        },
+        {
+          "description": "Chế tạo 2 bẫy chim.",
+          "event": "builditem",
+          "id": "spring_birdtrap",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Bẫy Chim Xuân",
+          "params": {
+            "prefab": "birdtrap"
+          },
+          "season": "spring",
+          "target": 2
+        },
+        {
+          "description": "Chế tạo 1 vợt bắt côn trùng.",
+          "event": "builditem",
+          "id": "spring_bugnet",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Vợt Bắt Côn Trùng",
+          "params": {
+            "prefab": "bugnet"
+          },
+          "season": "spring",
+          "target": 1
+        },
+        {
+          "description": "Chế tạo 1 mũ rơm.",
+          "event": "builditem",
+          "id": "spring_strawhat",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Mũ Rơm Ra Vườn",
+          "params": {
+            "prefab": "strawhat"
+          },
+          "season": "spring",
+          "target": 1
+        },
+        {
+          "description": "Chế tạo 1 ba lô cho chuyến thu hái.",
+          "event": "builditem",
+          "id": "spring_backpack",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Ba Lô Thu Hái",
+          "params": {
+            "prefab": "backpack"
+          },
+          "season": "spring",
+          "target": 1
+        },
+        {
+          "description": "Thu hoạch 10 bụi quả mọng thường.",
+          "event": "picksomething",
+          "id": "spring_berrybush",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Bụi Quả Mọng",
+          "params": {
+            "prefab": "berrybush"
+          },
+          "season": "spring",
+          "target": 10
+        },
+        {
+          "description": "Thu hoạch 10 bụi quả mọng lá rộng.",
+          "event": "picksomething",
+          "id": "spring_berrybush_leaf",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Quả Mọng Lá Rộng",
+          "params": {
+            "prefab": "berrybush2"
+          },
+          "season": "spring",
+          "target": 10
+        },
+        {
+          "description": "Thu hoạch 8 bụi quả mọng nước.",
+          "event": "picksomething",
+          "id": "spring_juicybush",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Quả Mọng Mọng Nước",
+          "params": {
+            "prefab": "berrybush_juicy"
+          },
+          "season": "spring",
+          "target": 8
+        },
+        {
+          "description": "Hái 6 cây nấm đỏ.",
+          "event": "picksomething",
+          "id": "spring_redmushroom",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Nấm Đỏ Ban Ngày",
+          "params": {
+            "prefab": "red_mushroom"
+          },
+          "season": "spring",
+          "target": 6
+        },
+        {
+          "description": "Hái 6 cây nấm xanh lá.",
+          "event": "picksomething",
+          "id": "spring_greenmushroom",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Nấm Xanh Chiều Tà",
+          "params": {
+            "prefab": "green_mushroom"
+          },
+          "season": "spring",
+          "target": 6
+        },
+        {
+          "description": "Hái 6 cây nấm xanh dương.",
+          "event": "picksomething",
+          "id": "spring_bluemushroom",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Nấm Lam Ban Đêm",
+          "params": {
+            "prefab": "blue_mushroom"
+          },
+          "season": "spring",
+          "target": 6
+        },
+        {
+          "description": "Thu hoạch 15 bụi lau sậy.",
+          "event": "picksomething",
+          "id": "spring_reeds",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Lau Sậy Đầm Lầy",
+          "params": {
+            "prefab": "reeds"
+          },
+          "season": "spring",
+          "target": 15
+        },
+        {
+          "description": "Thu hoạch 8 bụi gai đầm lầy.",
+          "event": "picksomething",
+          "id": "spring_marshbush",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Bụi Gai Đầm Lầy",
+          "params": {
+            "prefab": "marsh_bush"
+          },
+          "season": "spring",
+          "target": 8
+        },
+        {
+          "description": "Hái 10 cây dương xỉ trong hang.",
+          "event": "picksomething",
+          "id": "spring_fern",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Dương Xỉ Trong Hang",
+          "params": {
+            "prefab": "cave_fern"
+          },
+          "season": "spring",
+          "target": 10
+        },
+        {
+          "description": "Hái 6 bông hoa ác.",
+          "event": "picksomething",
+          "id": "spring_evilflower",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Hoa Tối",
+          "params": {
+            "prefab": "flower_evil"
+          },
+          "season": "spring",
+          "target": 6
+        },
+        {
+          "description": "Ăn 3 phần Wet Goop mỗi lượt.",
+          "event": "oneat",
+          "id": "spring_wetgoop",
+          "kind": "repeat",
+          "max_claims": 5,
+          "name": "Món Hầm Vụng Về",
+          "params": {
+            "prefab": "wetgoop"
+          },
+          "season": "spring",
+          "target": 3
+        },
+        {
+          "description": "Ăn khi đang đói cạn 3 lần mỗi lượt; xét đói trước bữa ăn.",
+          "event": "oneat",
+          "id": "spring_starving",
+          "kind": "repeat",
+          "max_claims": 5,
+          "name": "Bữa Ăn Cứu Đói",
+          "params": {
+            "starving": true
+          },
+          "season": "spring",
+          "target": 3
+        },
+        {
+          "description": "Hạ 8 ong thường mỗi lượt.",
+          "event": "killed",
+          "id": "spring_bee",
+          "kind": "repeat",
+          "max_claims": 5,
+          "name": "Ong Trong Vườn",
+          "params": {
+            "prefab": "bee"
+          },
+          "season": "spring",
+          "target": 8
+        },
+        {
+          "description": "Hạ 8 ong sát thủ mỗi lượt.",
+          "event": "killed",
+          "id": "spring_killerbee",
+          "kind": "repeat",
+          "max_claims": 5,
+          "name": "Ong Hung Hãn",
+          "params": {
+            "prefab": "killerbee"
+          },
+          "season": "spring",
+          "target": 8
+        },
+        {
+          "description": "Hạ 10 con ếch mỗi lượt.",
+          "event": "killed",
+          "id": "spring_frog",
+          "kind": "repeat",
+          "max_claims": 5,
+          "name": "Mưa Ếch",
+          "params": {
+            "prefab": "frog"
+          },
+          "season": "spring",
+          "target": 10
+        },
+        {
+          "description": "Hạ 3 Crawling Horror mỗi lượt.",
+          "event": "killed",
+          "id": "spring_horror",
+          "kind": "repeat",
+          "max_claims": 5,
+          "name": "Bóng Bò Trườn",
+          "params": {
+            "prefab": "crawlinghorror"
+          },
+          "season": "spring",
+          "target": 3
+        },
+        {
+          "description": "Dùng vợt bắt 5 con bướm mỗi lượt.",
+          "event": "finishedwork",
+          "id": "spring_butterfly",
+          "kind": "repeat",
+          "max_claims": 5,
+          "name": "Bắt Bướm",
+          "params": {
+            "action": "NET",
+            "prefab": "butterfly"
+          },
+          "season": "spring",
+          "target": 5
+        },
+        {
+          "description": "Hoàn tất 10 lần bắt bằng vợt mỗi lượt.",
+          "event": "finishedwork",
+          "id": "spring_netcatches",
+          "kind": "repeat",
+          "max_claims": 5,
+          "name": "Tay Vợt Khéo",
+          "params": {
+            "action": "NET"
+          },
+          "season": "spring",
+          "target": 10
+        },
+        {
+          "description": "Hái 10 bông hoa thường mỗi lượt.",
+          "event": "picksomething",
+          "id": "spring_flowers",
+          "kind": "repeat",
+          "max_claims": 5,
+          "name": "Bó Hoa Xuân",
+          "params": {
+            "prefab": "flower"
+          },
+          "season": "spring",
+          "target": 10
+        },
+        {
+          "description": "Cày thành công 8 ô đất mỗi lượt.",
+          "event": "tilling",
+          "id": "spring_till",
+          "kind": "repeat",
+          "max_claims": 5,
+          "name": "Luống Đất Mới",
+          "params": {
+            "action": "TILL"
+          },
+          "season": "spring",
+          "target": 8
+        }
+      ]
+    },
+    {
+      "draw": {
+        "once": 16,
+        "repeat": 4
+      },
+      "id": "summer",
+      "milestones": [
+        {
+          "completed": 5,
+          "items": [
+            {
+              "amount": 3,
+              "prefab": "ttk_lc_cyh_seed"
+            }
+          ]
+        },
+        {
+          "completed": 10,
+          "items": [
+            {
+              "amount": 5,
+              "prefab": "ttk_lc_cyh_seed"
+            },
+            {
+              "amount": 10,
+              "prefab": "ttk_lingshi1"
+            }
+          ]
+        },
+        {
+          "completed": 15,
+          "items": [
+            {
+              "amount": 2,
+              "prefab": "ttk_lingshi2"
+            },
+            {
+              "amount": 1,
+              "prefab": "orangegem"
+            }
+          ]
+        },
+        {
+          "completed": 20,
+          "items": [
+            {
+              "amount": 1,
+              "prefab": "ttk_lingshi3"
+            },
+            {
+              "amount": 1,
+              "prefab": "dragon_scales"
+            }
+          ]
+        }
+      ],
+      "tasks": [
+        {
+          "description": "Ăn 2 phần kem trong mùa hạ.",
+          "event": "oneat",
+          "id": "summer_icecream",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Kem Ngày Nóng",
+          "params": {
+            "prefab": "icecream"
+          },
+          "season": "summer",
+          "target": 2
+        },
+        {
+          "description": "Ăn 3 que kem dưa hấu.",
+          "event": "oneat",
+          "id": "summer_watermelonicle",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Kem Dưa Hấu",
+          "params": {
+            "prefab": "watermelonicle"
+          },
+          "season": "summer",
+          "target": 3
+        },
+        {
+          "description": "Ăn 3 phần guacamole.",
+          "event": "oneat",
+          "id": "summer_guacamole",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Guacamole Mùa Hạ",
+          "params": {
+            "prefab": "guacamole"
+          },
+          "season": "summer",
+          "target": 3
+        },
+        {
+          "description": "Ăn 3 phần salad hoa xương rồng.",
+          "event": "oneat",
+          "id": "summer_flowersalad",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Salad Hoa",
+          "params": {
+            "prefab": "flowersalad"
+          },
+          "season": "summer",
+          "target": 3
+        },
+        {
+          "description": "Ăn 3 phần ceviche.",
+          "event": "oneat",
+          "id": "summer_ceviche",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Cá Ướp Lạnh",
+          "params": {
+            "prefab": "ceviche"
+          },
+          "season": "summer",
+          "target": 3
+        },
+        {
+          "description": "Ăn 3 phần Surf 'n' Turf.",
+          "event": "oneat",
+          "id": "summer_surfnturf",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Tiệc Biển Và Rừng",
+          "params": {
+            "prefab": "surfnturf"
+          },
+          "season": "summer",
+          "target": 3
+        },
+        {
+          "description": "Ăn 3 phần unagi.",
+          "event": "oneat",
+          "id": "summer_unagi",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Lươn Nướng",
+          "params": {
+            "prefab": "unagi"
+          },
+          "season": "summer",
+          "target": 3
+        },
+        {
+          "description": "Ăn 3 que kem chuối.",
+          "event": "oneat",
+          "id": "summer_bananapop",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Kem Chuối",
+          "params": {
+            "prefab": "bananapop"
+          },
+          "season": "summer",
+          "target": 3
+        },
+        {
+          "description": "Ăn 3 phần trái cây trộn.",
+          "event": "oneat",
+          "id": "summer_fruitmedley",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Đĩa Trái Cây",
+          "params": {
+            "prefab": "fruitmedley"
+          },
+          "season": "summer",
+          "target": 3
+        },
+        {
+          "description": "Ăn 5 miếng dưa hấu đã nấu.",
+          "event": "oneat",
+          "id": "summer_watermelon",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Dưa Hấu Nướng",
+          "params": {
+            "prefab": "watermelon_cooked"
+          },
+          "season": "summer",
+          "target": 5
+        },
+        {
+          "description": "Hạ 12 chó săn thường.",
+          "event": "killed",
+          "id": "summer_hound",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Đàn Chó Săn",
+          "params": {
+            "prefab": "hound"
+          },
+          "season": "summer",
+          "target": 12
+        },
+        {
+          "description": "Hạ 5 chó săn lửa.",
+          "event": "killed",
+          "id": "summer_firehound",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Chó Săn Lửa",
+          "params": {
+            "prefab": "firehound"
+          },
+          "season": "summer",
+          "target": 5
+        },
+        {
+          "description": "Hạ 5 nhện thả từ trần hang.",
+          "event": "killed",
+          "id": "summer_dropper",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Nhện Treo Hang",
+          "params": {
+            "prefab": "spider_dropper"
+          },
+          "season": "summer",
+          "target": 5
+        },
+        {
+          "description": "Hạ 5 nhện phun tơ trong hang.",
+          "event": "killed",
+          "id": "summer_spitter",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Nhện Phun Tơ",
+          "params": {
+            "prefab": "spider_spitter"
+          },
+          "season": "summer",
+          "target": 5
+        },
+        {
+          "description": "Hạ 5 thỏ người Bunnyman.",
+          "event": "killed",
+          "id": "summer_bunnyman",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Thỏ Người",
+          "params": {
+            "prefab": "bunnyman"
+          },
+          "season": "summer",
+          "target": 5
+        },
+        {
+          "description": "Hạ 3 chim Tallbird.",
+          "event": "killed",
+          "id": "summer_tallbird",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Chim Chân Dài",
+          "params": {
+            "prefab": "tallbird"
+          },
+          "season": "summer",
+          "target": 3
+        },
+        {
+          "description": "Hạ 1 Antlion trong mùa hạ.",
+          "event": "killed",
+          "id": "summer_antlion",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Chúa Cát",
+          "params": {
+            "prefab": "antlion"
+          },
+          "season": "summer",
+          "target": 1
+        },
+        {
+          "description": "Hạ 1 Dragonfly tại sa mạc.",
+          "event": "killed",
+          "id": "summer_dragonfly",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Rồng Sa Mạc",
+          "params": {
+            "prefab": "dragonfly"
+          },
+          "season": "summer",
+          "target": 1
+        },
+        {
+          "description": "Hạ 1 Varg dẫn đàn chó săn.",
+          "event": "killed",
+          "id": "summer_warg",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Đầu Đàn Chó Săn",
+          "params": {
+            "prefab": "warg"
+          },
+          "season": "summer",
+          "target": 1
+        },
+        {
+          "description": "Hạ 1 nữ hoàng nhện.",
+          "event": "killed",
+          "id": "summer_queen",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Nữ Hoàng Nhện",
+          "params": {
+            "prefab": "spiderqueen"
+          },
+          "season": "summer",
+          "target": 1
+        },
+        {
+          "description": "Dựng 1 bếp lửa thu nhiệt cố định.",
+          "event": "buildstructure",
+          "id": "summer_coldfire",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Bếp Lửa Lạnh",
+          "params": {
+            "prefab": "endothermicfirepit"
+          },
+          "season": "summer",
+          "target": 1
+        },
+        {
+          "description": "Dựng 1 tủ lạnh bảo quản thức ăn.",
+          "event": "buildstructure",
+          "id": "summer_icebox",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Tủ Lạnh Mùa Hạ",
+          "params": {
+            "prefab": "icebox"
+          },
+          "season": "summer",
+          "target": 1
+        },
+        {
+          "description": "Chế tạo 1 mũ dưa hấu.",
+          "event": "builditem",
+          "id": "summer_watermelonhat",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Mũ Dưa Hấu",
+          "params": {
+            "prefab": "watermelonhat"
+          },
+          "season": "summer",
+          "target": 1
+        },
+        {
+          "description": "Chế tạo 1 quạt lông vũ.",
+          "event": "builditem",
+          "id": "summer_featherfan",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Quạt Lông Vũ",
+          "params": {
+            "prefab": "featherfan"
+          },
+          "season": "summer",
+          "target": 1
+        },
+        {
+          "description": "Chế tạo 1 khối băng đội đầu.",
+          "event": "builditem",
+          "id": "summer_icehat",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Mũ Băng",
+          "params": {
+            "prefab": "icehat"
+          },
+          "season": "summer",
+          "target": 1
+        },
+        {
+          "description": "Chế tạo 1 kính thời trang tại ốc đảo.",
+          "event": "builditem",
+          "id": "summer_goggles",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Kính Thời Trang",
+          "params": {
+            "prefab": "goggleshat"
+          },
+          "season": "summer",
+          "target": 1
+        },
+        {
+          "description": "Chế tạo 1 kính chống bão cát.",
+          "event": "builditem",
+          "id": "summer_deserthat",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Kính Sa Mạc",
+          "params": {
+            "prefab": "deserthat"
+          },
+          "season": "summer",
+          "target": 1
+        },
+        {
+          "description": "Chế tạo 1 bình tưới thường.",
+          "event": "builditem",
+          "id": "summer_wateringcan",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Bình Tưới Vườn",
+          "params": {
+            "prefab": "wateringcan"
+          },
+          "season": "summer",
+          "target": 1
+        },
+        {
+          "description": "Chế tạo 1 cuốc làm vườn.",
+          "event": "builditem",
+          "id": "summer_farmhoe",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Cuốc Làm Vườn",
+          "params": {
+            "prefab": "farm_hoe"
+          },
+          "season": "summer",
+          "target": 1
+        },
+        {
+          "description": "Dựng 1 máy ném tuyết bảo vệ căn cứ.",
+          "event": "buildstructure",
+          "id": "summer_flingomatic",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Máy Dập Lửa",
+          "params": {
+            "prefab": "firesuppressor"
+          },
+          "season": "summer",
+          "target": 1
+        },
+        {
+          "description": "Đào vỡ 8 tảng đá thường.",
+          "event": "finishedwork",
+          "id": "summer_rock",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Đá Ven Sa Mạc",
+          "params": {
+            "action": "MINE",
+            "prefab": "rock1"
+          },
+          "season": "summer",
+          "target": 8
+        },
+        {
+          "description": "Đào vỡ 6 tảng đá chứa vàng.",
+          "event": "finishedwork",
+          "id": "summer_goldrock",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Mạch Vàng",
+          "params": {
+            "action": "MINE",
+            "prefab": "rock2"
+          },
+          "season": "summer",
+          "target": 6
+        },
+        {
+          "description": "Đào vỡ 6 tảng đá không chứa đá lửa.",
+          "event": "finishedwork",
+          "id": "summer_flintless",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Đá Không Đá Lửa",
+          "params": {
+            "action": "MINE",
+            "prefab": "rock_flintless"
+          },
+          "season": "summer",
+          "target": 6
+        },
+        {
+          "description": "Đào vỡ 3 tảng đá mặt trăng.",
+          "event": "finishedwork",
+          "id": "summer_moonrock",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Thiên Thạch Mặt Trăng",
+          "params": {
+            "action": "MINE",
+            "prefab": "rock_moon"
+          },
+          "season": "summer",
+          "target": 3
+        },
+        {
+          "description": "Thu hoạch 8 bụi quả đá trên đảo trăng.",
+          "event": "picksomething",
+          "id": "summer_stonefruitbush",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Bụi Quả Đá",
+          "params": {
+            "prefab": "rock_avocado_bush"
+          },
+          "season": "summer",
+          "target": 8
+        },
+        {
+          "description": "Chặt hạ 5 cây cọ Palmcone.",
+          "event": "finishedwork",
+          "id": "summer_palm",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Gỗ Cọ Bờ Biển",
+          "params": {
+            "action": "CHOP",
+            "prefab": "palmconetree"
+          },
+          "season": "summer",
+          "target": 5
+        },
+        {
+          "description": "Thu hoạch 6 cây dưa hấu trong vườn.",
+          "event": "picksomething",
+          "id": "summer_farmwatermelon",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Vụ Dưa Hấu",
+          "params": {
+            "prefab": "farm_plant_watermelon"
+          },
+          "season": "summer",
+          "target": 6
+        },
+        {
+          "description": "Thu hoạch 6 cây thanh long trong vườn.",
+          "event": "picksomething",
+          "id": "summer_farmdragonfruit",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Vụ Thanh Long",
+          "params": {
+            "prefab": "farm_plant_dragonfruit"
+          },
+          "season": "summer",
+          "target": 6
+        },
+        {
+          "description": "Thu hoạch 6 cây lựu trong vườn.",
+          "event": "picksomething",
+          "id": "summer_farmpomegranate",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Vụ Lựu",
+          "params": {
+            "prefab": "farm_plant_pomegranate"
+          },
+          "season": "summer",
+          "target": 6
+        },
+        {
+          "description": "Thu hoạch 6 cây sầu riêng trong vườn.",
+          "event": "picksomething",
+          "id": "summer_farmdurian",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Vụ Sầu Riêng",
+          "params": {
+            "prefab": "farm_plant_durian"
+          },
+          "season": "summer",
+          "target": 6
+        },
+        {
+          "description": "Ăn 3 phần mứt quả mỗi lượt.",
+          "event": "oneat",
+          "id": "summer_jam",
+          "kind": "repeat",
+          "max_claims": 5,
+          "name": "Mứt Quả Mùa Hạ",
+          "params": {
+            "prefab": "jammypreserves"
+          },
+          "season": "summer",
+          "target": 3
+        },
+        {
+          "description": "Ăn 3 phần bánh xếp mỗi lượt.",
+          "event": "oneat",
+          "id": "summer_pierogi",
+          "kind": "repeat",
+          "max_claims": 5,
+          "name": "Bánh Xếp Hồi Sức",
+          "params": {
+            "prefab": "pierogi"
+          },
+          "season": "summer",
+          "target": 3
+        },
+        {
+          "description": "Hạ 8 con muỗi mỗi lượt.",
+          "event": "killed",
+          "id": "summer_mosquito",
+          "kind": "repeat",
+          "max_claims": 5,
+          "name": "Dẹp Muỗi",
+          "params": {
+            "prefab": "mosquito"
+          },
+          "season": "summer",
+          "target": 8
+        },
+        {
+          "description": "Đập mở 10 quả đá mỗi lượt.",
+          "event": "finishedwork",
+          "id": "summer_stonefruit",
+          "kind": "repeat",
+          "max_claims": 5,
+          "name": "Tách Quả Đá",
+          "params": {
+            "action": "MINE",
+            "prefab": "rock_avocado_fruit"
+          },
+          "season": "summer",
+          "target": 10
+        },
+        {
+          "description": "Hoàn tất 5 lần phá bằng búa mỗi lượt.",
+          "event": "finishedwork",
+          "id": "summer_hammer",
+          "kind": "repeat",
+          "max_claims": 5,
+          "name": "Tháo Dỡ Công Trình",
+          "params": {
+            "action": "HAMMER"
+          },
+          "season": "summer",
+          "target": 5
+        },
+        {
+          "description": "Thu hoạch 6 cây chuối hang mỗi lượt.",
+          "event": "picksomething",
+          "id": "summer_banana",
+          "kind": "repeat",
+          "max_claims": 5,
+          "name": "Chuối Trong Hang",
+          "params": {
+            "prefab": "cave_banana_tree"
+          },
+          "season": "summer",
+          "target": 6
+        },
+        {
+          "description": "Thu hoạch 8 cây đuôi khỉ mỗi lượt.",
+          "event": "picksomething",
+          "id": "summer_monkeytail",
+          "kind": "repeat",
+          "max_claims": 5,
+          "name": "Cỏ Đuôi Khỉ",
+          "params": {
+            "prefab": "monkeytail"
+          },
+          "season": "summer",
+          "target": 8
+        },
+        {
+          "description": "Thu hoạch 8 cây xương rồng thường mỗi lượt.",
+          "event": "picksomething",
+          "id": "summer_cactus",
+          "kind": "repeat",
+          "max_claims": 5,
+          "name": "Xương Rồng Sa Mạc",
+          "params": {
+            "prefab": "cactus"
+          },
+          "season": "summer",
+          "target": 8
+        },
+        {
+          "description": "Thu hoạch 8 cây xương rồng ốc đảo mỗi lượt.",
+          "event": "picksomething",
+          "id": "summer_oasiscactus",
+          "kind": "repeat",
+          "max_claims": 5,
+          "name": "Xương Rồng Ốc Đảo",
+          "params": {
+            "prefab": "oasis_cactus"
+          },
+          "season": "summer",
+          "target": 8
+        },
+        {
+          "description": "Thực hiện thành công 30 nhịp chèo thuyền mỗi lượt.",
+          "event": "rowing",
+          "id": "summer_row",
+          "kind": "repeat",
+          "max_claims": 5,
+          "name": "Tay Chèo Mùa Hạ",
+          "params": {
+            "action": "ROW"
+          },
+          "season": "summer",
+          "target": 30
+        }
+      ]
+    },
+    {
+      "draw": {
+        "once": 16,
+        "repeat": 4
+      },
+      "id": "autumn",
+      "milestones": [
+        {
+          "completed": 5,
+          "items": [
+            {
+              "amount": 3,
+              "prefab": "ttk_lc_qfx_seed"
+            }
+          ]
+        },
+        {
+          "completed": 10,
+          "items": [
+            {
+              "amount": 5,
+              "prefab": "ttk_lc_qfx_seed"
+            },
+            {
+              "amount": 10,
+              "prefab": "ttk_lingshi1"
+            }
+          ]
+        },
+        {
+          "completed": 15,
+          "items": [
+            {
+              "amount": 2,
+              "prefab": "ttk_lingshi2"
+            },
+            {
+              "amount": 1,
+              "prefab": "greengem"
+            }
+          ]
+        },
+        {
+          "completed": 20,
+          "items": [
+            {
+              "amount": 1,
+              "prefab": "ttk_lingshi3"
+            },
+            {
+              "amount": 1,
+              "prefab": "bearger_fur"
+            }
+          ]
+        }
+      ],
+      "tasks": [
+        {
+          "description": "Ăn 10 quả mọng đã nấu.",
+          "event": "oneat",
+          "id": "autumn_roastberries",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Quả Mọng Nướng",
+          "params": {
+            "prefab": "berries_cooked"
+          },
+          "season": "autumn",
+          "target": 10
+        },
+        {
+          "description": "Ăn 10 quả mọng nước chưa nấu.",
+          "event": "oneat",
+          "id": "autumn_juicyberries",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Quả Mọng Nước Tươi",
+          "params": {
+            "prefab": "berries_juicy"
+          },
+          "season": "autumn",
+          "target": 10
+        },
+        {
+          "description": "Ăn 10 quả mọng nước đã nấu.",
+          "event": "oneat",
+          "id": "autumn_roastjuicy",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Quả Mọng Nước Nướng",
+          "params": {
+            "prefab": "berries_juicy_cooked"
+          },
+          "season": "autumn",
+          "target": 10
+        },
+        {
+          "description": "Ăn 5 củ cà rốt đã nấu.",
+          "event": "oneat",
+          "id": "autumn_roastcarrot",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Cà Rốt Nướng",
+          "params": {
+            "prefab": "carrot_cooked"
+          },
+          "season": "autumn",
+          "target": 5
+        },
+        {
+          "description": "Ăn 5 bắp ngô chưa nấu.",
+          "event": "oneat",
+          "id": "autumn_corn",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Bắp Tươi",
+          "params": {
+            "prefab": "corn"
+          },
+          "season": "autumn",
+          "target": 5
+        },
+        {
+          "description": "Ăn 5 phần bắp rang.",
+          "event": "oneat",
+          "id": "autumn_popcorn",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Bắp Rang",
+          "params": {
+            "prefab": "corn_cooked"
+          },
+          "season": "autumn",
+          "target": 5
+        },
+        {
+          "description": "Ăn 5 quả bí ngô chưa nấu.",
+          "event": "oneat",
+          "id": "autumn_pumpkin",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Bí Ngô Tươi",
+          "params": {
+            "prefab": "pumpkin"
+          },
+          "season": "autumn",
+          "target": 5
+        },
+        {
+          "description": "Ăn 5 phần bí ngô đã nấu.",
+          "event": "oneat",
+          "id": "autumn_roastpumpkin",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Bí Ngô Nướng",
+          "params": {
+            "prefab": "pumpkin_cooked"
+          },
+          "season": "autumn",
+          "target": 5
+        },
+        {
+          "description": "Ăn 3 quả thanh long chưa nấu.",
+          "event": "oneat",
+          "id": "autumn_dragonfruit",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Thanh Long Tươi",
+          "params": {
+            "prefab": "dragonfruit"
+          },
+          "season": "autumn",
+          "target": 3
+        },
+        {
+          "description": "Ăn 3 quả thanh long đã nấu.",
+          "event": "oneat",
+          "id": "autumn_roastdragonfruit",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Thanh Long Nướng",
+          "params": {
+            "prefab": "dragonfruit_cooked"
+          },
+          "season": "autumn",
+          "target": 3
+        },
+        {
+          "description": "Hạ 5 người lợn thường.",
+          "event": "killed",
+          "id": "autumn_pigman",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Thợ Săn Lợn",
+          "params": {
+            "prefab": "pigman"
+          },
+          "season": "autumn",
+          "target": 5
+        },
+        {
+          "description": "Hạ 2 lính gác lợn.",
+          "event": "killed",
+          "id": "autumn_pigguard",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Lính Gác Lợn",
+          "params": {
+            "prefab": "pigguard"
+          },
+          "season": "autumn",
+          "target": 2
+        },
+        {
+          "description": "Hạ 3 Beefalo hoang dã.",
+          "event": "killed",
+          "id": "autumn_beefalo",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Săn Beefalo",
+          "params": {
+            "prefab": "beefalo"
+          },
+          "season": "autumn",
+          "target": 3
+        },
+        {
+          "description": "Hạ 3 dê điện Lightning Goat.",
+          "event": "killed",
+          "id": "autumn_goat",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Dê Điện",
+          "params": {
+            "prefab": "lightninggoat"
+          },
+          "season": "autumn",
+          "target": 3
+        },
+        {
+          "description": "Hạ 1 Koalefant không có lông mùa đông.",
+          "event": "killed",
+          "id": "autumn_koalefant",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Dấu Chân Voi",
+          "params": {
+            "prefab": "koalefant_summer"
+          },
+          "season": "autumn",
+          "target": 1
+        },
+        {
+          "description": "Hạ 3 Catcoon trong rừng bạch dương.",
+          "event": "killed",
+          "id": "autumn_catcoon",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Mèo Gấu Rừng",
+          "params": {
+            "prefab": "catcoon"
+          },
+          "season": "autumn",
+          "target": 3
+        },
+        {
+          "description": "Hạ 5 chuột chũi.",
+          "event": "killed",
+          "id": "autumn_mole",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Chuột Chũi",
+          "params": {
+            "prefab": "mole"
+          },
+          "season": "autumn",
+          "target": 5
+        },
+        {
+          "description": "Hạ 8 con thỏ đồng.",
+          "event": "killed",
+          "id": "autumn_rabbit",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Thỏ Đồng",
+          "params": {
+            "prefab": "rabbit"
+          },
+          "season": "autumn",
+          "target": 8
+        },
+        {
+          "description": "Hạ 5 thằn lằn cỏ Grass Gekko.",
+          "event": "killed",
+          "id": "autumn_grassgekko",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Thằn Lằn Cỏ",
+          "params": {
+            "prefab": "grassgekko"
+          },
+          "season": "autumn",
+          "target": 5
+        },
+        {
+          "description": "Hạ 1 Bearger trong mùa thu.",
+          "event": "killed",
+          "id": "autumn_bearger",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Gấu Lửng Mùa Thu",
+          "params": {
+            "prefab": "bearger"
+          },
+          "season": "autumn",
+          "target": 1
+        },
+        {
+          "description": "Chế tạo 2 chiếc rìu thường.",
+          "event": "builditem",
+          "id": "autumn_axe",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Rìu Khai Hoang",
+          "params": {
+            "prefab": "axe"
+          },
+          "season": "autumn",
+          "target": 2
+        },
+        {
+          "description": "Chế tạo 2 cuốc chim thường.",
+          "event": "builditem",
+          "id": "autumn_pickaxe",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Cuốc Khai Mỏ",
+          "params": {
+            "prefab": "pickaxe"
+          },
+          "season": "autumn",
+          "target": 2
+        },
+        {
+          "description": "Chế tạo 2 chiếc xẻng thường.",
+          "event": "builditem",
+          "id": "autumn_shovel",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Xẻng Làm Vườn",
+          "params": {
+            "prefab": "shovel"
+          },
+          "season": "autumn",
+          "target": 2
+        },
+        {
+          "description": "Chế tạo 1 chiếc búa.",
+          "event": "builditem",
+          "id": "autumn_hammer",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Búa Của Thợ",
+          "params": {
+            "prefab": "hammer"
+          },
+          "season": "autumn",
+          "target": 1
+        },
+        {
+          "description": "Chế tạo 2 cây giáo thường.",
+          "event": "builditem",
+          "id": "autumn_spear",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Giáo Phòng Thân",
+          "params": {
+            "prefab": "spear"
+          },
+          "season": "autumn",
+          "target": 2
+        },
+        {
+          "description": "Chế tạo 2 bộ giáp gỗ.",
+          "event": "builditem",
+          "id": "autumn_logarmor",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Áo Giáp Gỗ",
+          "params": {
+            "prefab": "armorwood"
+          },
+          "season": "autumn",
+          "target": 2
+        },
+        {
+          "description": "Chế tạo 2 mũ bóng bầu dục.",
+          "event": "builditem",
+          "id": "autumn_footballhat",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Mũ Bảo Hộ",
+          "params": {
+            "prefab": "footballhat"
+          },
+          "season": "autumn",
+          "target": 2
+        },
+        {
+          "description": "Dựng 3 rương gỗ chứa vật tư.",
+          "event": "buildstructure",
+          "id": "autumn_chest",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Kho Dự Trữ",
+          "params": {
+            "prefab": "treasurechest"
+          },
+          "season": "autumn",
+          "target": 3
+        },
+        {
+          "description": "Dựng 1 nồi hầm.",
+          "event": "buildstructure",
+          "id": "autumn_cookpot",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Bếp Thu Hoạch",
+          "params": {
+            "prefab": "cookpot"
+          },
+          "season": "autumn",
+          "target": 1
+        },
+        {
+          "description": "Dựng 1 máy khoa học.",
+          "event": "buildstructure",
+          "id": "autumn_science",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Máy Khoa Học",
+          "params": {
+            "prefab": "researchlab"
+          },
+          "season": "autumn",
+          "target": 1
+        },
+        {
+          "description": "Thu hoạch 8 cây bí ngô trong vườn.",
+          "event": "picksomething",
+          "id": "autumn_farmpumpkin",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Thu Hoạch Bí Ngô",
+          "params": {
+            "prefab": "farm_plant_pumpkin"
+          },
+          "season": "autumn",
+          "target": 8
+        },
+        {
+          "description": "Thu hoạch 8 cây ngô trong vườn.",
+          "event": "picksomething",
+          "id": "autumn_farmcorn",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Thu Hoạch Bắp",
+          "params": {
+            "prefab": "farm_plant_corn"
+          },
+          "season": "autumn",
+          "target": 8
+        },
+        {
+          "description": "Thu hoạch 8 cây cà rốt trong vườn.",
+          "event": "picksomething",
+          "id": "autumn_farmcarrot",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Thu Hoạch Cà Rốt",
+          "params": {
+            "prefab": "farm_plant_carrot"
+          },
+          "season": "autumn",
+          "target": 8
+        },
+        {
+          "description": "Thu hoạch 8 cây khoai tây trong vườn.",
+          "event": "picksomething",
+          "id": "autumn_farmpotato",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Thu Hoạch Khoai Tây",
+          "params": {
+            "prefab": "farm_plant_potato"
+          },
+          "season": "autumn",
+          "target": 8
+        },
+        {
+          "description": "Thu hoạch 6 cây tỏi trong vườn.",
+          "event": "picksomething",
+          "id": "autumn_farmgarlic",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Thu Hoạch Tỏi",
+          "params": {
+            "prefab": "farm_plant_garlic"
+          },
+          "season": "autumn",
+          "target": 6
+        },
+        {
+          "description": "Thu hoạch 6 cây hành trong vườn.",
+          "event": "picksomething",
+          "id": "autumn_farmonion",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Thu Hoạch Hành",
+          "params": {
+            "prefab": "farm_plant_onion"
+          },
+          "season": "autumn",
+          "target": 6
+        },
+        {
+          "description": "Thu hoạch 8 cây cà chua trong vườn.",
+          "event": "picksomething",
+          "id": "autumn_farmtomato",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Thu Hoạch Cà Chua",
+          "params": {
+            "prefab": "farm_plant_tomato"
+          },
+          "season": "autumn",
+          "target": 8
+        },
+        {
+          "description": "Thu hoạch 6 cây cà tím trong vườn.",
+          "event": "picksomething",
+          "id": "autumn_farmeggplant",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Thu Hoạch Cà Tím",
+          "params": {
+            "prefab": "farm_plant_eggplant"
+          },
+          "season": "autumn",
+          "target": 6
+        },
+        {
+          "description": "Thu hoạch 6 cây măng tây trong vườn.",
+          "event": "picksomething",
+          "id": "autumn_farmasparagus",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Thu Hoạch Măng Tây",
+          "params": {
+            "prefab": "farm_plant_asparagus"
+          },
+          "season": "autumn",
+          "target": 6
+        },
+        {
+          "description": "Thu hoạch 6 cây ớt trong vườn.",
+          "event": "picksomething",
+          "id": "autumn_farmpepper",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Thu Hoạch Ớt",
+          "params": {
+            "prefab": "farm_plant_pepper"
+          },
+          "season": "autumn",
+          "target": 6
+        },
+        {
+          "description": "Ăn 3 phần giăm bông mật ong mỗi lượt.",
+          "event": "oneat",
+          "id": "autumn_honeyham",
+          "kind": "repeat",
+          "max_claims": 5,
+          "name": "Giăm Bông Mật Ong",
+          "params": {
+            "prefab": "honeyham"
+          },
+          "season": "autumn",
+          "target": 3
+        },
+        {
+          "description": "Ăn 3 phần thịt viên mật ong mỗi lượt.",
+          "event": "oneat",
+          "id": "autumn_honeynuggets",
+          "kind": "repeat",
+          "max_claims": 5,
+          "name": "Thịt Viên Mật Ong",
+          "params": {
+            "prefab": "honeynuggets"
+          },
+          "season": "autumn",
+          "target": 3
+        },
+        {
+          "description": "Ăn 3 phần hỗn hợp hạt và quả mỗi lượt.",
+          "event": "oneat",
+          "id": "autumn_trailmix",
+          "kind": "repeat",
+          "max_claims": 5,
+          "name": "Lương Khô Đường Rừng",
+          "params": {
+            "prefab": "trailmix"
+          },
+          "season": "autumn",
+          "target": 3
+        },
+        {
+          "description": "Hạ 5 con quạ mỗi lượt.",
+          "event": "killed",
+          "id": "autumn_crow",
+          "kind": "repeat",
+          "max_claims": 5,
+          "name": "Quạ Đồng",
+          "params": {
+            "prefab": "crow"
+          },
+          "season": "autumn",
+          "target": 5
+        },
+        {
+          "description": "Hạ 5 chim đỏ mỗi lượt.",
+          "event": "killed",
+          "id": "autumn_redbird",
+          "kind": "repeat",
+          "max_claims": 5,
+          "name": "Chim Đỏ",
+          "params": {
+            "prefab": "robin"
+          },
+          "season": "autumn",
+          "target": 5
+        },
+        {
+          "description": "Chặt hạ 8 cây bạch dương mỗi lượt.",
+          "event": "finishedwork",
+          "id": "autumn_birchnut",
+          "kind": "repeat",
+          "max_claims": 5,
+          "name": "Gỗ Bạch Dương",
+          "params": {
+            "action": "CHOP",
+            "prefab": "deciduoustree"
+          },
+          "season": "autumn",
+          "target": 8
+        },
+        {
+          "description": "Hoàn tất 12 lần chặt cây mỗi lượt.",
+          "event": "finishedwork",
+          "id": "autumn_chop",
+          "kind": "repeat",
+          "max_claims": 5,
+          "name": "Thợ Đốn Củi",
+          "params": {
+            "action": "CHOP"
+          },
+          "season": "autumn",
+          "target": 12
+        },
+        {
+          "description": "Thu hoạch 20 bụi cỏ mỗi lượt.",
+          "event": "picksomething",
+          "id": "autumn_grass",
+          "kind": "repeat",
+          "max_claims": 5,
+          "name": "Bó Cỏ Khô",
+          "params": {
+            "prefab": "grass"
+          },
+          "season": "autumn",
+          "target": 20
+        },
+        {
+          "description": "Thu hoạch 20 cây non mỗi lượt.",
+          "event": "picksomething",
+          "id": "autumn_sapling",
+          "kind": "repeat",
+          "max_claims": 5,
+          "name": "Cành Cây Dự Trữ",
+          "params": {
+            "prefab": "sapling"
+          },
+          "season": "autumn",
+          "target": 20
+        },
+        {
+          "description": "Trồng thành công 8 hạt bạch dương mỗi lượt.",
+          "event": "deployitem",
+          "id": "autumn_plantbirchnut",
+          "kind": "repeat",
+          "max_claims": 5,
+          "name": "Gieo Rừng Mới",
+          "params": {
+            "action": "DEPLOY",
+            "prefab": "acorn"
+          },
+          "season": "autumn",
+          "target": 8
+        }
+      ]
+    },
+    {
+      "draw": {
+        "once": 16,
+        "repeat": 4
+      },
+      "id": "winter",
+      "milestones": [
+        {
+          "completed": 5,
+          "items": [
+            {
+              "amount": 3,
+              "prefab": "ttk_lc_hsc_seed"
+            }
+          ]
+        },
+        {
+          "completed": 10,
+          "items": [
+            {
+              "amount": 5,
+              "prefab": "ttk_lc_hsc_seed"
+            },
+            {
+              "amount": 10,
+              "prefab": "ttk_lingshi1"
+            }
+          ]
+        },
+        {
+          "completed": 15,
+          "items": [
+            {
+              "amount": 2,
+              "prefab": "ttk_lingshi2"
+            },
+            {
+              "amount": 1,
+              "prefab": "bluegem"
+            }
+          ]
+        },
+        {
+          "completed": 20,
+          "items": [
+            {
+              "amount": 1,
+              "prefab": "ttk_lingshi3"
+            },
+            {
+              "amount": 1,
+              "prefab": "deerclops_eyeball"
+            }
+          ]
+        }
+      ],
+      "tasks": [
+        {
+          "description": "Ăn 3 phần ớt hầm cay.",
+          "event": "oneat",
+          "id": "winter_chili",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Ớt Hầm Giữ Ấm",
+          "params": {
+            "prefab": "hotchili"
+          },
+          "season": "winter",
+          "target": 3
+        },
+        {
+          "description": "Ăn 3 phần thịt xông khói và trứng.",
+          "event": "oneat",
+          "id": "winter_baconeggs",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Trứng Thịt No Lâu",
+          "params": {
+            "prefab": "baconeggs"
+          },
+          "season": "winter",
+          "target": 3
+        },
+        {
+          "description": "Ăn 3 phần que cá.",
+          "event": "oneat",
+          "id": "winter_fishsticks",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Que Cá Nóng",
+          "params": {
+            "prefab": "fishsticks"
+          },
+          "season": "winter",
+          "target": 3
+        },
+        {
+          "description": "Ăn 2 phần tiệc gà tây.",
+          "event": "oneat",
+          "id": "winter_turkeydinner",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Tiệc Gà Tây",
+          "params": {
+            "prefab": "turkeydinner"
+          },
+          "season": "winter",
+          "target": 2
+        },
+        {
+          "description": "Ăn 1 phần bánh waffle.",
+          "event": "oneat",
+          "id": "winter_waffles",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Bánh Waffle",
+          "params": {
+            "prefab": "waffles"
+          },
+          "season": "winter",
+          "target": 1
+        },
+        {
+          "description": "Ăn 8 miếng thịt lớn đã nấu.",
+          "event": "oneat",
+          "id": "winter_cookedmeat",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Thịt Nướng Bên Lửa",
+          "params": {
+            "prefab": "cookedmeat"
+          },
+          "season": "winter",
+          "target": 8
+        },
+        {
+          "description": "Ăn 8 miếng thịt nhỏ đã nấu.",
+          "event": "oneat",
+          "id": "winter_smallmeat",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Miếng Thịt Nhỏ",
+          "params": {
+            "prefab": "cookedsmallmeat"
+          },
+          "season": "winter",
+          "target": 8
+        },
+        {
+          "description": "Ăn 3 miếng thịt quái vật đã nấu.",
+          "event": "oneat",
+          "id": "winter_monstermeat",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Thịt Quái Nướng",
+          "params": {
+            "prefab": "cookedmonstermeat"
+          },
+          "season": "winter",
+          "target": 3
+        },
+        {
+          "description": "Ăn 5 con cá ao đã nấu.",
+          "event": "oneat",
+          "id": "winter_cookedfish",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Cá Nướng Mùa Đông",
+          "params": {
+            "prefab": "fish_cooked"
+          },
+          "season": "winter",
+          "target": 5
+        },
+        {
+          "description": "Ăn 3 con lươn đã nấu.",
+          "event": "oneat",
+          "id": "winter_cookedeel",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Lươn Nướng Than",
+          "params": {
+            "prefab": "eel_cooked"
+          },
+          "season": "winter",
+          "target": 3
+        },
+        {
+          "description": "Hạ 5 chó săn băng.",
+          "event": "killed",
+          "id": "winter_icehound",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Chó Săn Băng",
+          "params": {
+            "prefab": "icehound"
+          },
+          "season": "winter",
+          "target": 5
+        },
+        {
+          "description": "Hạ 1 Koalefant mùa đông.",
+          "event": "killed",
+          "id": "winter_koalefant",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Voi Lông Dày",
+          "params": {
+            "prefab": "koalefant_winter"
+          },
+          "season": "winter",
+          "target": 1
+        },
+        {
+          "description": "Hạ 2 MacTusk trong mùa đông.",
+          "event": "killed",
+          "id": "winter_walrus",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Thợ Săn Hải Mã",
+          "params": {
+            "prefab": "walrus"
+          },
+          "season": "winter",
+          "target": 2
+        },
+        {
+          "description": "Hạ 2 Wee MacTusk trong mùa đông.",
+          "event": "killed",
+          "id": "winter_littlewalrus",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Hải Mã Con",
+          "params": {
+            "prefab": "little_walrus"
+          },
+          "season": "winter",
+          "target": 2
+        },
+        {
+          "description": "Hạ 1 Treeguard thường.",
+          "event": "killed",
+          "id": "winter_treeguard",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Thần Rừng Thông",
+          "params": {
+            "prefab": "leif"
+          },
+          "season": "winter",
+          "target": 1
+        },
+        {
+          "description": "Hạ 1 Treeguard từ cây thông thưa.",
+          "event": "killed",
+          "id": "winter_lumpytreeguard",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Thần Rừng Thưa",
+          "params": {
+            "prefab": "leif_sparse"
+          },
+          "season": "winter",
+          "target": 1
+        },
+        {
+          "description": "Hạ 3 Terrorbeak do mất tỉnh táo.",
+          "event": "killed",
+          "id": "winter_terrorbeak",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Mỏ Kinh Hoàng",
+          "params": {
+            "prefab": "terrorbeak"
+          },
+          "season": "winter",
+          "target": 3
+        },
+        {
+          "description": "Hạ 1 Deerclops trong mùa đông.",
+          "event": "killed",
+          "id": "winter_deerclops",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Người Khổng Lồ Một Mắt",
+          "params": {
+            "prefab": "deerclops"
+          },
+          "season": "winter",
+          "target": 1
+        },
+        {
+          "description": "Hạ 1 Krampus sau khi tích lũy độ nghịch.",
+          "event": "killed",
+          "id": "winter_krampus",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Kẻ Trộm Mùa Đông",
+          "params": {
+            "prefab": "krampus"
+          },
+          "season": "winter",
+          "target": 1
+        },
+        {
+          "description": "Hạ 2 quân xe máy Clockwork Rook.",
+          "event": "killed",
+          "id": "winter_rook",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Xe Máy Canh Gác",
+          "params": {
+            "prefab": "rook"
+          },
+          "season": "winter",
+          "target": 2
+        },
+        {
+          "description": "Chế tạo 1 viên đá giữ nhiệt.",
+          "event": "builditem",
+          "id": "winter_heatrock",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Đá Giữ Nhiệt",
+          "params": {
+            "prefab": "heatrock"
+          },
+          "season": "winter",
+          "target": 1
+        },
+        {
+          "description": "Chế tạo 1 mũ mùa đông.",
+          "event": "builditem",
+          "id": "winter_winterhat",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Mũ Len Mùa Đông",
+          "params": {
+            "prefab": "winterhat"
+          },
+          "season": "winter",
+          "target": 1
+        },
+        {
+          "description": "Chế tạo 1 mũ Beefalo giữ ấm.",
+          "event": "builditem",
+          "id": "winter_beefalohat",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Mũ Lông Beefalo",
+          "params": {
+            "prefab": "beefalohat"
+          },
+          "season": "winter",
+          "target": 1
+        },
+        {
+          "description": "Chế tạo 1 áo voi mùa đông.",
+          "event": "builditem",
+          "id": "winter_trunkvest",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Áo Lông Dày",
+          "params": {
+            "prefab": "trunkvest_winter"
+          },
+          "season": "winter",
+          "target": 1
+        },
+        {
+          "description": "Chế tạo 3 băng mật ong.",
+          "event": "builditem",
+          "id": "winter_bandage",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Băng Mật Ong",
+          "params": {
+            "prefab": "bandage"
+          },
+          "season": "winter",
+          "target": 3
+        },
+        {
+          "description": "Chế tạo 3 thuốc bôi hồi máu.",
+          "event": "builditem",
+          "id": "winter_salve",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Thuốc Bôi Vết Thương",
+          "params": {
+            "prefab": "healingsalve"
+          },
+          "season": "winter",
+          "target": 3
+        },
+        {
+          "description": "Dựng 1 bếp lửa đá.",
+          "event": "buildstructure",
+          "id": "winter_firepit",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Bếp Sưởi Đá",
+          "params": {
+            "prefab": "firepit"
+          },
+          "season": "winter",
+          "target": 1
+        },
+        {
+          "description": "Chế tạo 1 đèn lồng.",
+          "event": "builditem",
+          "id": "winter_lantern",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Đèn Lồng Đêm Dài",
+          "params": {
+            "prefab": "lantern"
+          },
+          "season": "winter",
+          "target": 1
+        },
+        {
+          "description": "Chế tạo 1 mũ đèn thợ mỏ.",
+          "event": "builditem",
+          "id": "winter_minerhat",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Mũ Đèn Thợ Mỏ",
+          "params": {
+            "prefab": "minerhat"
+          },
+          "season": "winter",
+          "target": 1
+        },
+        {
+          "description": "Dựng 1 lều nghỉ tại căn cứ.",
+          "event": "buildstructure",
+          "id": "winter_tent",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Lều Trú Đông",
+          "params": {
+            "prefab": "tent"
+          },
+          "season": "winter",
+          "target": 1
+        },
+        {
+          "description": "Nhận vào hành trang tổng cộng 30 viên băng.",
+          "event": "itemget",
+          "id": "winter_ice",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Dự Trữ Băng",
+          "params": {
+            "prefab": "ice"
+          },
+          "season": "winter",
+          "target": 30
+        },
+        {
+          "description": "Nhận vào hành trang tổng cộng 12 đá cắt.",
+          "event": "itemget",
+          "id": "winter_cutstone",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Đá Xây Trú Ẩn",
+          "params": {
+            "prefab": "cutstone"
+          },
+          "season": "winter",
+          "target": 12
+        },
+        {
+          "description": "Nhận vào hành trang tổng cộng 15 diêm tiêu.",
+          "event": "itemget",
+          "id": "winter_nitre",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Diêm Tiêu Dự Trữ",
+          "params": {
+            "prefab": "nitre"
+          },
+          "season": "winter",
+          "target": 15
+        },
+        {
+          "description": "Nhận vào hành trang tổng cộng 20 vàng.",
+          "event": "itemget",
+          "id": "winter_gold",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Vàng Dưới Tuyết",
+          "params": {
+            "prefab": "goldnugget"
+          },
+          "season": "winter",
+          "target": 20
+        },
+        {
+          "description": "Nhận vào hành trang tổng cộng 12 cẩm thạch.",
+          "event": "itemget",
+          "id": "winter_marble",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Cẩm Thạch Trắng",
+          "params": {
+            "prefab": "marble"
+          },
+          "season": "winter",
+          "target": 12
+        },
+        {
+          "description": "Nhận vào hành trang tổng cộng 12 đá mặt trăng.",
+          "event": "itemget",
+          "id": "winter_moonrock",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Đá Trăng Lạnh",
+          "params": {
+            "prefab": "moonrocknugget"
+          },
+          "season": "winter",
+          "target": 12
+        },
+        {
+          "description": "Nhận vào hành trang tổng cộng 6 Thulecite.",
+          "event": "itemget",
+          "id": "winter_thulecite",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Khoáng Cổ Đại",
+          "params": {
+            "prefab": "thulecite"
+          },
+          "season": "winter",
+          "target": 6
+        },
+        {
+          "description": "Nhận vào hành trang tổng cộng 18 mảnh Thulecite.",
+          "event": "itemget",
+          "id": "winter_fragments",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Mảnh Khoáng Cổ",
+          "params": {
+            "prefab": "thulecite_pieces"
+          },
+          "season": "winter",
+          "target": 18
+        },
+        {
+          "description": "Nhận vào hành trang tổng cộng 3 ngọc đỏ.",
+          "event": "itemget",
+          "id": "winter_redgem",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Ngọc Đỏ Sưởi Ấm",
+          "params": {
+            "prefab": "redgem"
+          },
+          "season": "winter",
+          "target": 3
+        },
+        {
+          "description": "Nhận vào hành trang tổng cộng 2 ngọc tím.",
+          "event": "itemget",
+          "id": "winter_purplegem",
+          "kind": "once",
+          "max_claims": 1,
+          "name": "Ngọc Tím Huyền Thuật",
+          "params": {
+            "prefab": "purplegem"
+          },
+          "season": "winter",
+          "target": 2
+        },
+        {
+          "description": "Ăn 3 xiên thịt mỗi lượt.",
+          "event": "oneat",
+          "id": "winter_kabob",
+          "kind": "repeat",
+          "max_claims": 5,
+          "name": "Xiên Thịt Nóng",
+          "params": {
+            "prefab": "kabobs"
+          },
+          "season": "winter",
+          "target": 3
+        },
+        {
+          "description": "Ăn 3 phần thịt viên mỗi lượt.",
+          "event": "oneat",
+          "id": "winter_meatballs",
+          "kind": "repeat",
+          "max_claims": 5,
+          "name": "Thịt Viên No Bụng",
+          "params": {
+            "prefab": "meatballs"
+          },
+          "season": "winter",
+          "target": 3
+        },
+        {
+          "description": "Ăn 3 phần thịt hầm mỗi lượt.",
+          "event": "oneat",
+          "id": "winter_stew",
+          "kind": "repeat",
+          "max_claims": 5,
+          "name": "Nồi Thịt Hầm",
+          "params": {
+            "prefab": "bonestew"
+          },
+          "season": "winter",
+          "target": 3
+        },
+        {
+          "description": "Hạ 5 chim tuyết mỗi lượt.",
+          "event": "killed",
+          "id": "winter_snowbird",
+          "kind": "repeat",
+          "max_claims": 5,
+          "name": "Chim Tuyết",
+          "params": {
+            "prefab": "robin_winter"
+          },
+          "season": "winter",
+          "target": 5
+        },
+        {
+          "description": "Hạ 5 Puffin trên biển mỗi lượt.",
+          "event": "killed",
+          "id": "winter_puffin",
+          "kind": "repeat",
+          "max_claims": 5,
+          "name": "Chim Hải Âu Cụt",
+          "params": {
+            "prefab": "puffin"
+          },
+          "season": "winter",
+          "target": 5
+        },
+        {
+          "description": "Hạ 5 Pengull mỗi lượt.",
+          "event": "killed",
+          "id": "winter_pengull",
+          "kind": "repeat",
+          "max_claims": 5,
+          "name": "Đàn Pengull",
+          "params": {
+            "prefab": "penguin"
+          },
+          "season": "winter",
+          "target": 5
+        },
+        {
+          "description": "Chặt hạ 8 cây thông thường mỗi lượt.",
+          "event": "finishedwork",
+          "id": "winter_evergreen",
+          "kind": "repeat",
+          "max_claims": 5,
+          "name": "Củi Thông",
+          "params": {
+            "action": "CHOP",
+            "prefab": "evergreen"
+          },
+          "season": "winter",
+          "target": 8
+        },
+        {
+          "description": "Chặt hạ 8 cây thông thưa mỗi lượt.",
+          "event": "finishedwork",
+          "id": "winter_lumpy",
+          "kind": "repeat",
+          "max_claims": 5,
+          "name": "Củi Thông Thưa",
+          "params": {
+            "action": "CHOP",
+            "prefab": "evergreen_sparse"
+          },
+          "season": "winter",
+          "target": 8
+        },
+        {
+          "description": "Đào vỡ 8 tảng băng nhỏ mỗi lượt.",
+          "event": "finishedwork",
+          "id": "winter_glacier",
+          "kind": "repeat",
+          "max_claims": 5,
+          "name": "Khai Thác Băng",
+          "params": {
+            "action": "MINE",
+            "prefab": "rock_ice"
+          },
+          "season": "winter",
+          "target": 8
+        },
+        {
+          "description": "Hái 8 bụi địa y mỗi lượt.",
+          "event": "picksomething",
+          "id": "winter_lichen",
+          "kind": "repeat",
+          "max_claims": 5,
+          "name": "Địa Y Dưới Hang",
+          "params": {
+            "prefab": "lichen"
+          },
+          "season": "winter",
+          "target": 8
+        }
+      ]
+    }
+  ],
+  "sources": [
+    "mods/PhamNhanTuTien/scripts/achievement/ttk_achievement_catalog.lua",
+    "mods/PhamNhanTuTien/scripts/achievement/ttk_perk_catalog.lua",
+    "mods/PhamNhanTuTien/scripts/achievement/ttk_seasonal_catalog.lua",
+    "mods/PhamNhanTuTien/scripts/achievement/ttk_seasonal_rewards.lua",
+    "mods/PhamNhanTuTien/scripts/alchemy/ttk_alchemy_defs.lua",
+    "mods/PhamNhanTuTien/scripts/guild/hh_rank_defs.lua"
+  ]
+}

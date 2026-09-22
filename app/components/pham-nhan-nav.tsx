@@ -1,11 +1,12 @@
 import Link from "next/link";
 
-export function PhamNhanNav({ active }: { active: "catalog" | "guides" | "config" }) {
+export function PhamNhanNav({ active }: { active: "catalog" | "guides" | "config" | "progression" }) {
   return (
     <nav aria-label="Danh mục Phàm Nhân" className="my-6 flex flex-wrap gap-2">
       {[
         { id: "catalog", href: "/pham-nhan-tu-tien", label: "Danh mục vật phẩm" },
         { id: "guides", href: "/pham-nhan-tu-tien/huong-dan", label: "Hướng dẫn" },
+        { id: "progression", href: "/pham-nhan-tu-tien/tien-trinh", label: "Tiến trình" },
         { id: "config", href: "/pham-nhan-tu-tien/config", label: "Config" },
       ].map((link) => (
         <Link key={link.id} href={link.href} aria-current={active === link.id ? "page" : undefined}
