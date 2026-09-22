@@ -3392,11 +3392,11 @@
           },
           {
             "amount": 16,
-            "prefab": "xd_lc_cyh"
+            "prefab": "ttk_lc_cyh"
           },
           {
             "amount": 2,
-            "prefab": "xd_npxsz"
+            "prefab": "ttk_npxsz"
           }
         ],
         "output_count": 1
@@ -3431,11 +3431,11 @@
           },
           {
             "amount": 16,
-            "prefab": "xd_lc_dms"
+            "prefab": "ttk_lc_dms"
           },
           {
             "amount": 2,
-            "prefab": "xd_npxsz"
+            "prefab": "ttk_npxsz"
           }
         ],
         "output_count": 1
@@ -3467,11 +3467,11 @@
           },
           {
             "amount": 16,
-            "prefab": "xd_lc_hsc"
+            "prefab": "ttk_lc_hsc"
           },
           {
             "amount": 2,
-            "prefab": "xd_npxsz"
+            "prefab": "ttk_npxsz"
           }
         ],
         "output_count": 1
@@ -3500,15 +3500,15 @@
           },
           {
             "amount": 16,
-            "prefab": "xd_lc_lmg"
+            "prefab": "ttk_lc_lmg"
           },
           {
             "amount": 2,
-            "prefab": "xd_npxsz"
+            "prefab": "ttk_npxsz"
           },
           {
             "amount": 4,
-            "prefab": "xd_qlr"
+            "prefab": "ttk_boss_core_qlch"
           }
         ],
         "output_count": 1
@@ -3537,15 +3537,15 @@
           },
           {
             "amount": 16,
-            "prefab": "xd_lc_dms"
+            "prefab": "ttk_lc_dms"
           },
           {
             "amount": 4,
-            "prefab": "xd_mgqg"
+            "prefab": "ttk_boss_core_stalke_fuben"
           },
           {
             "amount": 2,
-            "prefab": "xd_npxsz"
+            "prefab": "ttk_npxsz"
           }
         ],
         "output_count": 1
@@ -3578,11 +3578,11 @@
           },
           {
             "amount": 16,
-            "prefab": "xd_lc_qfx"
+            "prefab": "ttk_lc_qfx"
           },
           {
             "amount": 2,
-            "prefab": "xd_npxsz"
+            "prefab": "ttk_npxsz"
           }
         ],
         "output_count": 1
@@ -3615,11 +3615,11 @@
           },
           {
             "amount": 16,
-            "prefab": "xd_lc_yhh"
+            "prefab": "ttk_lc_yhh"
           },
           {
             "amount": 2,
-            "prefab": "xd_npxsz"
+            "prefab": "ttk_npxsz"
           }
         ],
         "output_count": 1
@@ -3648,15 +3648,15 @@
           },
           {
             "amount": 16,
-            "prefab": "xd_lc_yhh"
+            "prefab": "ttk_lc_yhh"
           },
           {
             "amount": 2,
-            "prefab": "xd_npxsz"
+            "prefab": "ttk_npxsz"
           },
           {
             "amount": 4,
-            "prefab": "xd_zcmy"
+            "prefab": "ttk_boss_core_deerclops_ziyun"
           }
         ],
         "output_count": 1
@@ -3684,15 +3684,15 @@
           },
           {
             "amount": 4,
-            "prefab": "xd_fs"
+            "prefab": "ttk_boss_core_jfsn"
           },
           {
             "amount": 16,
-            "prefab": "xd_lc_cyh"
+            "prefab": "ttk_lc_cyh"
           },
           {
             "amount": 2,
-            "prefab": "xd_npxsz"
+            "prefab": "ttk_npxsz"
           }
         ],
         "output_count": 1
@@ -3725,11 +3725,11 @@
           },
           {
             "amount": 16,
-            "prefab": "xd_lc_qfx"
+            "prefab": "ttk_lc_qfx"
           },
           {
             "amount": 2,
-            "prefab": "xd_npxsz"
+            "prefab": "ttk_npxsz"
           }
         ],
         "output_count": 1
@@ -3763,7 +3763,7 @@
           },
           {
             "amount": 10,
-            "prefab": "xd_lingshi1"
+            "prefab": "ttk_lingshi1"
           }
         ],
         "output_count": 1
@@ -3791,7 +3791,7 @@
           },
           {
             "amount": 30,
-            "prefab": "xd_lingshi1"
+            "prefab": "ttk_lingshi1"
           }
         ],
         "output_count": 1
@@ -3823,7 +3823,7 @@
           },
           {
             "amount": 1,
-            "prefab": "xd_lingshi2"
+            "prefab": "ttk_lingshi2"
           }
         ],
         "output_count": 1
@@ -3855,7 +3855,7 @@
           },
           {
             "amount": 20,
-            "prefab": "xd_lingshi1"
+            "prefab": "ttk_lingshi1"
           }
         ],
         "output_count": 1
@@ -3883,11 +3883,11 @@
           },
           {
             "amount": 3,
-            "prefab": "xd_ayhx"
+            "prefab": "ttk_boss_core_stalke_fuben"
           },
           {
             "amount": 50,
-            "prefab": "xd_lingshi1"
+            "prefab": "ttk_lingshi1"
           }
         ],
         "output_count": 1
@@ -3911,11 +3911,11 @@
           },
           {
             "amount": 2,
-            "prefab": "xd_lingshi2"
+            "prefab": "ttk_lingshi2"
           },
           {
             "amount": 1,
-            "prefab": "xd_qlr"
+            "prefab": "ttk_boss_core_qlch"
           }
         ],
         "output_count": 1
@@ -3947,7 +3947,7 @@
           },
           {
             "amount": 30,
-            "prefab": "xd_lingshi1"
+            "prefab": "ttk_lingshi1"
           }
         ],
         "output_count": 1
@@ -3975,11 +3975,11 @@
           },
           {
             "amount": 1,
-            "prefab": "xd_aymg"
+            "prefab": "ttk_boss_core_stalke_fuben"
           },
           {
             "amount": 1,
-            "prefab": "xd_lingshi2"
+            "prefab": "ttk_lingshi2"
           }
         ],
         "output_count": 1
@@ -4007,11 +4007,11 @@
           },
           {
             "amount": 1,
-            "prefab": "xd_fs"
+            "prefab": "ttk_boss_core_jfsn"
           },
           {
             "amount": 3,
-            "prefab": "xd_lingshi2"
+            "prefab": "ttk_lingshi2"
           }
         ],
         "output_count": 1
@@ -4043,7 +4043,7 @@
           },
           {
             "amount": 1,
-            "prefab": "xd_lingshi3"
+            "prefab": "ttk_lingshi3"
           }
         ],
         "output_count": 1
@@ -4075,7 +4075,7 @@
           },
           {
             "amount": 1,
-            "prefab": "xd_lingshi3"
+            "prefab": "ttk_lingshi3"
           }
         ],
         "output_count": 1
@@ -4103,11 +4103,11 @@
           },
           {
             "amount": 1,
-            "prefab": "xd_baihu_skin"
+            "prefab": "ttk_boss_core_baihu"
           },
           {
             "amount": 1,
-            "prefab": "xd_lingshi3"
+            "prefab": "ttk_lingshi3"
           }
         ],
         "output_count": 1
@@ -4127,19 +4127,19 @@
         "ingredients": [
           {
             "amount": 1,
-            "prefab": "xd_lingshi3"
+            "prefab": "ttk_lingshi3"
           },
           {
             "amount": 3,
-            "prefab": "xd_pog_tail"
+            "prefab": "ttk_pog_tail"
           },
           {
             "amount": 2,
-            "prefab": "xd_qianyu"
+            "prefab": "ttk_boss_core_deerclops_ziyun"
           },
           {
             "amount": 1,
-            "prefab": "xd_spider_leg"
+            "prefab": "ttk_spider_leg"
           }
         ],
         "output_count": 1
@@ -4163,15 +4163,15 @@
           },
           {
             "amount": 1,
-            "prefab": "xd_lingshi3"
+            "prefab": "ttk_lingshi3"
           },
           {
             "amount": 1,
-            "prefab": "xd_mgqg"
+            "prefab": "ttk_boss_core_stalke_fuben"
           },
           {
             "amount": 1,
-            "prefab": "xd_zcmy"
+            "prefab": "ttk_boss_core_deerclops_ziyun"
           }
         ],
         "output_count": 1
@@ -4191,19 +4191,19 @@
         "ingredients": [
           {
             "amount": 1,
-            "prefab": "xd_dy_pshsd_2"
+            "prefab": "xd_dy_pshsd_1"
           },
           {
             "amount": 1,
-            "prefab": "xd_dy_xttyd_2"
+            "prefab": "xd_dy_xttyd_1"
           },
           {
             "amount": 1,
-            "prefab": "xd_lingshi3"
+            "prefab": "ttk_lingshi3"
           },
           {
             "amount": 1,
-            "prefab": "xd_npxsz"
+            "prefab": "ttk_npxsz"
           }
         ],
         "output_count": 1
@@ -4236,7 +4236,7 @@
         },
         {
           "amount": 5,
-          "prefab": "xd_lingshi1"
+          "prefab": "ttk_lingshi1"
         }
       ],
       "output_count": 1
