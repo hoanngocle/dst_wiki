@@ -153,6 +153,16 @@ class AchievementCatalogTests(unittest.TestCase):
         self.assertIn("by_id,by_event=next_by_id,next_by_event", self.source)
         self.assertNotRegex(self.source, r"(?:dofile|io\.|require)\s*\(?[^\n]*(?:achievement-level|AchievementLevel|2937640068)")
 
+    def test_concrete_collection_crafting_and_farming_parameters_are_grounded(self):
+        forbidden = {"grass", "gems", "moonrock", "prestihatitator", "shadow_manipulator", "cartographers_desk", "lightning_rod", "thermal_measurer", "football_hat", "endothermic_fire", "salt_box", "till_soil", "water_plants", "fertilize_plants", "harvest_crops"}
+        by_id = {row["id"]: row for row in self.rows}
+        for identifier in ("collection_grass", "collection_gems", "collection_moonrock", "crafting_prestihatitator", "crafting_shadow_manipulator", "crafting_cartographers_desk", "crafting_lightning_rod", "crafting_thermal_measurer", "crafting_football_hat", "crafting_endothermic_fire", "crafting_salt_box"):
+            self.assertFalse(prefabs(by_id[identifier]["params"]) & forbidden, identifier)
+        for row in self.rows:
+            if row["group"] == "farming":
+                self.assertNotIn("farming_event", row["tracker"])
+                self.assertNotIn('prefab="plant_', row["params"])
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
