@@ -338,7 +338,7 @@ local function b_u__G()
     return _B_Ug__
 end
 local _BU_G__ = {
-    Asset("ANIM", "anim/elec_charged_fx.zip"),
+    Asset("ANIM", "anim/ttk_solo_elec_charged_fx.zip"),
     Asset("ANIM", "anim/halloween_embers_cold.zip"),
     Asset("ANIM", "anim/mossling_spin_fx.zip")
 }
@@ -393,8 +393,8 @@ local function __BUg__()
     B_U__G__["entity"]:AddSoundEmitter()
     B_U__G__["entity"]:AddLight()
     B_U__G__["entity"]:AddNetwork()
-    B_U__G__["AnimState"]:SetBank "elec_charged_fx"
-    B_U__G__["AnimState"]:SetBuild "elec_charged_fx"
+    B_U__G__["AnimState"]:SetBank "ttk_solo_elec_charged_fx"
+    B_U__G__["AnimState"]:SetBuild "ttk_solo_elec_charged_fx"
     B_U__G__["AnimState"]:PlayAnimation("discharged", (222 - 124 - 375 * 451 * 461 == -77966527))
     B_U__G__:AddTag "FX"
     B_U__G__:AddTag "NOCLICK"

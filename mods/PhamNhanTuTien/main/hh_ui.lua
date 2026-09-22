@@ -8,6 +8,8 @@ modimport("main/ttk_forge_fonts.lua")
 local HHGuideLock = require("utils/hh_guide_lock")
 local HHSummaryLock = require("utils/hh_summary_lock")
 local HHacNguyetHoItems = require("utils/hh_hac_nguyet_ho_items")
+local TTKUnifiedRegistry = require("ui/ttk_unified_registry")
+local TTKNativeBridge = require("ui/ttk_native_bridge")
 local MONARCH_STORAGE_PREFAB = "hh_monarch_storage_container"
 
 local function IsGuideInputControl(control)
@@ -1131,6 +1133,9 @@ local function gFcUuckKi(self, uFfUucnkk)
         local owner = self["owner"]
         local container = select(1, ...)
         local prefab = container ~= nil and container["prefab"] or nil
+        if TTKUnifiedRegistry.Get(owner) == nil and TTKNativeBridge.RejectCancelled(owner, prefab) then
+            return
+        end
         if HHGuideLock.IsOpen(owner) then
             return
         end
@@ -1144,7 +1149,12 @@ local function gFcUuckKi(self, uFfUucnkk)
             end
         end
         local active_screen = TheFrontEnd ~= nil and TheFrontEnd:GetActiveScreen() or nil
-        if active_screen ~= nil and active_screen ~= owner["HUD"] then
+        local unified_screen = TTKUnifiedRegistry.Get(owner)
+        if active_screen ~= nil and active_screen ~= owner["HUD"] and active_screen ~= unified_screen then
+            return
+        end
+        if unified_screen ~= nil and not unified_screen:WantsNativeContainer(prefab) then
+            unified_screen:RejectNativeContainer(prefab)
             return
         end
         fFgUccfKi(self, ...)
@@ -1192,12 +1202,19 @@ local function gFcUuckKi(self, uFfUucnkk)
                 end
             end
         end
+        if unified_screen ~= nil and unified_screen.AttachNativeContainer ~= nil then
+            unified_screen:AttachNativeContainer(self, prefab)
+        end
     end
     local gfiUgcfKi = self["Close"]
     self["Close"] = function(self, ...)
         local container = self["container"]
         local is_summary = container ~= nil and container["prefab"] == "hh_ui_container"
         local is_monarch_storage = container ~= nil and container["prefab"] == MONARCH_STORAGE_PREFAB
+        local unified_screen = TTKUnifiedRegistry.Get(self["owner"])
+        if unified_screen ~= nil and unified_screen.DetachNativeContainer ~= nil then
+            unified_screen:DetachNativeContainer(self)
+        end
         if is_monarch_storage and self["owner"] ~= nil then
             self["owner"].HHMonarchStorageOpen = nil
         end

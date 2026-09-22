@@ -35,6 +35,7 @@
     "**/*.sc"
   ],
   "exclude": [
+    "mods/mod_steam/**",
     "**/.git/**",
     "**/node_modules/**",
     "**/vendor/**",

@@ -82,6 +82,6 @@ for spice, ingredient in pairs({garlic="garlic", sugar="honey", chili="pepper", 
     G.STRINGS.NAMES[string.upper(name)] = G.STRINGS.NAMES[string.upper(product)]
     G.STRINGS.RECIPE_DESC[string.upper(name)] = "Gia vị dùng tại Vân Yên Hương Liệu Trạm."
     AddRecipe2(name, {G.Ingredient(ingredient, 3)}, G.TECH.SCIENCE_ONE,
-        {product = product, numtogive = 2, atlas = G.GetInventoryItemAtlas(product .. ".tex"),
+        {product = product, numtogive = 2, atlas = "images/inventoryimages3.xml",
             image = product .. ".tex"}, {"COOKING"})
 end

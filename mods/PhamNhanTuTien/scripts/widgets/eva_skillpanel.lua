@@ -38,7 +38,7 @@ local EvaSkillPanel = Class(Widget, function(self, owner)
         button.state = button:AddChild(Text(BODYTEXTFONT, 18, ""))
         button.state:SetPosition(0, -31)
         button.state:SetColour(0.65, 1, 0.78, 1)
-        button:SetOnClick(function() self:ActivateSkill(Router.SPELL_INDEX[skill], skill) end)
+        button:SetOnClick(function() self:ActivateSkill(skill) end)
         button.ongainfocus = function()
             self.skill_tooltip_text:SetString(Router.GetSkillTooltip(self.owner, skill))
             self.skill_tooltip_text:Show()
@@ -63,23 +63,8 @@ function EvaSkillPanel:SetExpanded(expanded)
     self.skill_tooltip_text:Hide()
 end
 
-function EvaSkillPanel:ActivateSkill(index, skill)
-    if not Router.CanUsePanel(self.owner, TheFrontEnd) then return end
-    if not Router.IsSkillUnlocked(self.owner, skill) then return end
-    if skill ~= "wings" and Router.GetCooldownSeconds(self.owner, skill) > 0 then
-        return
-    end
-    local book = self.owner._eva_skillbook ~= nil
-        and self.owner._eva_skillbook:value() or nil
-    if book == nil or not book:IsValid() or book.components.spellbook == nil
-        or not Router.IsBoundBook(book, self.owner) then
-        return
-    end
-    local spellbook = book.components.spellbook
-    if spellbook:SelectSpell(index) then
-        local item = spellbook.items[index]
-        if item ~= nil and item.execute ~= nil then item.execute(book) end
-    end
+function EvaSkillPanel:ActivateSkill(skill)
+    return Router.ActivateSkill(self.owner, TheFrontEnd, skill)
 end
 
 function EvaSkillPanel:OnUpdate()
@@ -92,8 +77,8 @@ function EvaSkillPanel:OnUpdate()
         local cooldown = Router.GetCooldownSeconds(self.owner, skill)
         local unlocked = Router.IsSkillUnlocked(self.owner, skill)
         button.cooldown:SetString(unlocked and cooldown > 0 and tostring(cooldown) or "")
-        button.state:SetString(not unlocked and ("Cấp " .. tostring(Router.GetRequiredLevel(skill)))
-            or (skill == "wings" and Router.GetWingsActive(self.owner) and "ĐANG MỞ" or ""))
+        button.state:SetString(unlocked and skill == "wings"
+            and Router.GetWingsActive(self.owner) and "ĐANG MỞ" or "")
         if not unlocked or cooldown > 0 then
             button:SetImageNormalColour(0.38, 0.38, 0.42, 0.9)
         else

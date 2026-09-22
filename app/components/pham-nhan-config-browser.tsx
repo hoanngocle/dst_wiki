@@ -5,6 +5,10 @@ import data from "@/app/data/pham-nhan-config.json";
 import { normalizeSearchText } from "@/app/lib/wiki-search";
 import { DstField, dstControlClassName } from "@/app/components/dst-field";
 
+function compactChoiceLabel(label: string) {
+  return label.replace(/\s*\(Mặc định\)/g, "");
+}
+
 export function PhamNhanConfigBrowser() {
   const [query, setQuery] = useState("");
   const [group, setGroup] = useState("Tất cả");
@@ -15,7 +19,7 @@ export function PhamNhanConfigBrowser() {
   );
   return (
     <div className="space-y-5">
-      <p className="text-sm leading-6 text-nova-muted">Đây là cấu hình mặc định của Phàm Nhân {data.version}. Chỉ liệt kê tùy chọn còn có trong menu mod. Túi đồ 45 ô và HUD chiến đấu đã cố định, không còn công tắc riêng. Các giá trị trên trang dùng để tra cứu, không phải cấu hình đang chạy của máy chủ.</p>
+      <p className="text-sm leading-6 text-nova-muted">Các tùy chọn còn trong menu Phàm Nhân {data.version}. Phím EVA theo cấp mở khóa: 1 Sinh Chi Hoa, 2 Tử Phong Tụ Linh, 3 Tinh Vũ Nguyệt Dực, 4 Dạ Du, 5 Trảm Linh. Lưỡi hái có 1000 độ bền và nạp bằng vũ khí. Chỉ số nền: 125 Máu, 125 Độ no, 200 Tinh thần; tốc độ, tiêu hao và sát thương x1.</p>
       <div className="grid gap-4 sm:grid-cols-[1fr_240px]">
         <DstField label="Tìm config" htmlFor="config-query"><input id="config-query" type="search" value={query} onChange={(event) => setQuery(event.target.value)} className={dstControlClassName} placeholder="Tên tùy chọn hoặc nội dung…" /></DstField>
         <DstField label="Nhóm config" htmlFor="config-group"><select id="config-group" value={group} onChange={(event) => setGroup(event.target.value)} className={dstControlClassName}>{["Tất cả", ...groups].map((name) => <option key={name}>{name}</option>)}</select></DstField>
@@ -31,11 +35,10 @@ export function PhamNhanConfigBrowser() {
               <h2 className="text-lg font-semibold">{option.label}</h2>
               {option.description && <p className="mt-2 whitespace-pre-line text-sm leading-6 text-nova-muted">{option.description}</p>}
               <p className="mt-3 text-sm"><strong>Mặc định:</strong> {defaultChoice?.label ?? String(option.default)}</p>
-              <details className="mt-4 border-t border-nova-border pt-3">
-                <summary className="cursor-pointer text-sm font-medium">Các giá trị có thể chọn ({option.choices.length})</summary>
-                <ul className="mt-3 space-y-2 text-sm text-nova-muted">{option.choices.map((choice, index) => <li key={index} className="rounded-lg bg-nova-surface-soft px-3 py-2"><span className={choice.value === option.default ? "font-semibold text-nova-accent" : ""}>{choice.label}{choice.value === option.default ? " · Mặc định" : ""}</span>{choice.description && <p className="mt-1">{choice.description}</p>}</li>)}</ul>
-                <p className="mt-3 break-all text-xs text-nova-faint">Mã cấu hình: <code>{option.key}</code></p>
-              </details>
+              <p className="mt-3 border-t border-nova-border pt-3 text-sm leading-6 text-nova-muted">
+                {option.choices.map((choice) => compactChoiceLabel(choice.label)).join(" · ")}
+              </p>
+              <p className="mt-2 break-all text-xs text-nova-faint">Mã: <code>{option.key}</code></p>
             </article>
           );
         })}

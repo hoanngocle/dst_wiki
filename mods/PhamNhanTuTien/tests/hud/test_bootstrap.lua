@@ -1,9 +1,9 @@
 local function run(config, standalone_owner)
-    local manifests, rpc = {}, nil
+    local manifests, rpc, damage_handler = {}, nil, nil
     local host_prefabs, host_assets = { "host_prefab" }, { "host_asset" }
     local game = {
         TUNING = { HH_CAN_SHOW_TEXT_FX = true },
-        rawget = rawget, setmetatable = setmetatable, setfenv = setfenv,
+        rawget = rawget, rawset = rawset, setmetatable = setmetatable, setfenv = setfenv,
         ipairs = ipairs, pairs = pairs, type = type, error = error, print = function() end,
         table = table,
         ManifestManager = { AddFileToModManifest = function(_, _, path) manifests[#manifests + 1] = path end },
@@ -25,12 +25,12 @@ local function run(config, standalone_owner)
     PrefabFiles, Assets = host_prefabs, host_assets
     GetModConfigData = function(name) error("HUD must not read removed config: " .. name) end
     Asset = function(kind, path) return kind .. ":" .. path end
-    AddClientModRPCHandler = function(namespace, name) rpc = namespace .. ":" .. name end
+    AddClientModRPCHandler = function(namespace, name, fn) rpc = namespace .. ":" .. name; damage_handler = fn end
     package.preload["ttk_hud/core"] = function() return {} end
     package.preload["ttk_hud/overhead"] = function() return { install = function() end } end
     package.preload["ttk_hud/server_damage"] = function() return { install = function() end } end
     dofile("main/ttk_combat_hud.lua")
-    return game, host_prefabs, host_assets, manifests, rpc, env
+    return game, host_prefabs, host_assets, manifests, rpc, env, damage_handler
 end
 
 local fixed, prefabs = run({ ttk_hud_enabled = false, ttk_hud_show_others = true })
@@ -43,7 +43,7 @@ assert(fixed.TUNING.TTK_HUD.SHOW_OTHERS == false, "old config cannot enable team
 local blocked, blocked_prefabs = run({}, "SoloCombatHUD")
 assert(blocked.TTK_COMBAT_HUD_OWNER == nil and #blocked_prefabs == 1, "standalone-first guard prevents duplicate integrated hooks")
 
-local game, prefabs, assets, manifests, rpc, host_env = run({})
+local game, prefabs, assets, manifests, rpc, host_env, damage_handler = run({})
 assert(game.TTK_COMBAT_HUD_OWNER == "PhamNhanTuTien", "integrated owner marker set")
 assert(game.TUNING.TTK_HUD.ENABLED and game.TUNING.TTK_HUD.BOSS_BAR, "HUD defaults enabled")
 assert(game.TUNING.TTK_HUD.SHOW_OTHERS == false, "nearby teammate popups default off")
@@ -56,6 +56,17 @@ assert(rpc == "ttk_hud:damage", "integrated RPC namespace registered")
 assert(host_env.postinitfns.host and host_env.postinitfns.private == nil and host_env.postinitdata.host,
     "child helper registries do not mutate host mod environment")
 assert(host_env.false_sentinel == false, "child fallback preserves false host values")
+
+game.SpawnPrefab = function()
+    return { IsValid = function() return true end, Display = function() end }
+end
+setmetatable(game, {
+    __index = function(_, key) error("variable '" .. key .. "' is not declared", 2) end,
+    __newindex = function(_, key) error("assign to undeclared variable '" .. key .. "'", 2) end,
+})
+damage_handler(1, 10, 'normal', 0, 0, 0)
+damage_handler(1, 10, 'normal', 0, 0, 0)
+assert(#rawget(game, 'TTK_HUD_POPUPS') == 2, 'first damage initializes and reuses popup registry')
 
 local modmain = assert(io.open("modmain.lua", "r")):read("*all")
 local solo_at = assert(modmain:find('modimport%("main/ttk_solo_bootstrap.lua"%)'))

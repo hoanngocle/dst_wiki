@@ -131,14 +131,15 @@ def put_string(out: bytearray, value: str) -> None:
 
 
 def write_build(build: BuildData) -> bytes:
-    frame_count = sum(len(build.symbols[name]) for name in build.order)
-    out = bytearray(struct.pack("<4sIII", b"BILD", 6, len(build.order), frame_count))
+    symbol_order = sorted(build.order, key=lambda name: build.hashes[name])
+    frame_count = sum(len(build.symbols[name]) for name in symbol_order)
+    out = bytearray(struct.pack("<4sIII", b"BILD", 6, len(symbol_order), frame_count))
     put_string(out, build.name)
     out.extend(struct.pack("<I", len(build.atlases)))
     for atlas in build.atlases:
         put_string(out, atlas)
     flat_vertices = []
-    for symbol in build.order:
+    for symbol in symbol_order:
         frames = build.symbols[symbol]
         out.extend(struct.pack("<II", build.hashes[symbol], len(frames)))
         for frame in frames:

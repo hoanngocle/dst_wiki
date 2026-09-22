@@ -2,6 +2,7 @@ local iFkuiCkKf = require("utils/hh_utils")
 local HHGuideLock = require("utils/hh_guide_lock")
 local HHSummaryLock = require("utils/hh_summary_lock")
 local HHRankDefs = require("guild/hh_rank_defs")
+local TTKNativeOpenAck = require("ui/ttk_native_open_ack")
 local iffugcgKk = require("enums/hh_items")
 local uFfUgCkKf = require("enums/hh_hoverer")
 local kFiUcCikf = require("enums/hh_enchant")
@@ -849,25 +850,35 @@ local function IsHHContainerOpen(player, use_suit)
         container["components"]["container"] ~= nil and
         container["components"]["container"]:IsOpenedBy(player)
 end
-local function kfkUkcuKu(iFcUcCcKc, ffgUfcuku)
+local function kfkUkcuKu(iFcUcCcKc, container_mode, request_id)
+    local use_suit = container_mode == true or container_mode == "forge_container"
+    local prefab = use_suit and "hh_forge_container" or "hh_ui_container"
     if not uFkUcCikg(iFcUcCcKc) or iFcUcCcKc:HasTag("playerghost") then
+        TTKNativeOpenAck.SendFailure(iFcUcCcKc, prefab, request_id, "Không thể mở giao diện trong trạng thái hiện tại")
         return
     end
-    local is_closing = IsHHContainerOpen(iFcUcCcKc, ffgUfcuku)
+    local is_closing = IsHHContainerOpen(iFcUcCcKc, use_suit)
     if iFcUcCcKc["components"]["rider"] ~= nil and iFcUcCcKc["components"]["rider"]:IsRiding() and not is_closing then
-        iFkuiCkKf:HHSay(iFcUcCcKc, "Không thể hoạt động ở trạng thái đang cưỡi bò")
+        local reason = "Không thể hoạt động ở trạng thái đang cưỡi bò"
+        iFkuiCkKf:HHSay(iFcUcCcKc, reason)
+        TTKNativeOpenAck.SendFailure(iFcUcCcKc, prefab, request_id, reason)
         return
     end
     if iFcUcCcKc["time_refiner"] and not is_closing then
-        iFkuiCkKf:HHSay(iFcUcCcKc, "Nhanh quá")
+        local reason = "Nhanh quá"
+        iFkuiCkKf:HHSay(iFcUcCcKc, reason)
+        TTKNativeOpenAck.SendFailure(iFcUcCcKc, prefab, request_id, reason)
         return
     end
     if iFcUcCcKc["components"]["hh_player"] ~= nil then
-        if ffgUfcuku then
+        if use_suit then
             iFcUcCcKc["components"]["hh_player"]:OpenSuitContainer()
         else
             iFcUcCcKc["components"]["hh_player"]:OpenContainer("ui_container")
         end
+    else
+        TTKNativeOpenAck.SendFailure(iFcUcCcKc, prefab, request_id, "Không có quyền sử dụng")
+        return
     end
     iFcUcCcKc["time_refiner"] = (236 - 255 + 325 == 306)
     iFcUcCcKc:DoTaskInTime(
@@ -884,14 +895,29 @@ local function GetMonarchStorage(player)
     return hh_player, hh_player ~= nil and hh_player.monarch_storage or nil
 end
 
-AddModRPCHandler("hh_rpc", "hh_monarch_storage_open", function(player)
+AddModRPCHandler("hh_rpc", "hh_monarch_storage_open", function(player, request_id)
     if not uFkUcCikg(player) or player:HasTag("playerghost") then
+        TTKNativeOpenAck.SendFailure(
+            player, "hh_monarch_storage_container", request_id,
+            "Không thể mở Kho Quân Vương trong trạng thái hiện tại"
+        )
         return
     end
     local rank = player.components.hh_rank ~= nil and player.components.hh_rank:GetRank() or HHRankDefs.RANK.E
     local hh_player = GetMonarchStorage(player)
     if rank >= HHRankDefs.RANK.A and hh_player ~= nil then
         hh_player:OpenMonarchStorage()
+    else
+        TTKNativeOpenAck.SendFailure(
+            player, "hh_monarch_storage_container", request_id,
+            rank < HHRankDefs.RANK.A and "Yêu cầu cấp bậc A để mở Kho Quân Vương" or "Không có quyền sử dụng"
+        )
+    end
+end)
+
+AddClientModRPCHandler("hh_rpc", "hh_native_open_failed", function(prefab, request_id, reason)
+    if ThePlayer ~= nil then
+        TTKNativeOpenAck.HandleFailure(ThePlayer, prefab, request_id, reason)
     end
 end)
 
@@ -1053,10 +1079,16 @@ if uFuukCfkn == KEY_B or uFuukCfkn == KEY_V then
     uFuukCfkn = KEY_X
 end
 if uFuukCfkn ~= KEY_L then
+    local UnifiedOpen = require("ui/ttk_unified_open")
+    local UnifiedRegistry = require("ui/ttk_unified_registry")
     TheInput:AddKeyUpHandler(
         uFuukCfkn,
         function()
             if HHGuideLock.IsOpen(ThePlayer) then
+                return
+            end
+            if UnifiedRegistry.Get(ThePlayer) ~= nil then
+                UnifiedOpen.Toggle(ThePlayer, "equipment")
                 return
             end
             if ThePlayer ~= nil and ThePlayer.HHMonarchStorageOpen then
@@ -1067,10 +1099,7 @@ if uFuukCfkn ~= KEY_L then
                 return
             end
             if ThePlayer then
-                local active_screen = TheFrontEnd ~= nil and TheFrontEnd:GetActiveScreen() or nil
-                if active_screen == ThePlayer.HUD then
-                    SendModRPCToServer(MOD_RPC["hh_rpc"]["hh_ui_container"])
-                end
+                UnifiedOpen.Open(ThePlayer, "equipment")
             end
         end
     )

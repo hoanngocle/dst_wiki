@@ -514,7 +514,6 @@ local B_u__g__ = {
                     "hitAddPoison",
                     "hitChanceAddFreeze",
                     "hitChanceReduceSpeed",
-                    "addReboundDamageNum",
                     "reducePercentDamage"
                 }
             )
@@ -641,7 +640,7 @@ local B_u__g__ = {
             elseif bu__g__ <= 0.3 then
                 _B__u__g_(Bug__, "add_critical_hit_rate_special")
             elseif bu__g__ <= 0.4 then
-                _B__u__g_(Bug__, "reflexive_injury_special")
+                _B__u__g_(Bug__, "true_damage_special")
             elseif bu__g__ <= 0.5 then
                 _B__u__g_(Bug__, "true_damage_special")
             elseif bu__g__ <= 0.6 then
@@ -706,7 +705,7 @@ local B_u__g__ = {
             elseif _B_U__g <= 0.3 then
                 _B__u__g_(b_ug__, "add_critical_hit_rate_special")
             elseif _B_U__g <= 0.4 then
-                _B__u__g_(b_ug__, "reflexive_injury_special")
+                _B__u__g_(b_ug__, "true_damage_special")
             elseif _B_U__g <= 0.5 then
                 _B__u__g_(b_ug__, "true_damage_special")
             elseif _B_U__g <= 0.6 then
@@ -772,7 +771,7 @@ local B_u__g__ = {
             elseif bUg_ <= 0.3 then
                 _B__u__g_(inst, "add_critical_hit_rate_special")
             elseif bUg_ <= 0.4 then
-                _B__u__g_(inst, "reflexive_injury_special")
+                _B__u__g_(inst, "true_damage_special")
             elseif bUg_ <= 0.5 then
                 _B__u__g_(inst, "true_damage_special")
             elseif bUg_ <= 0.6 then
@@ -835,7 +834,7 @@ local B_u__g__ = {
             elseif bUg_ <= 0.3 then
                 _B__u__g_(inst, "add_critical_hit_rate_special")
             elseif bUg_ <= 0.4 then
-                _B__u__g_(inst, "reflexive_injury_special")
+                _B__u__g_(inst, "true_damage_special")
             elseif bUg_ <= 0.5 then
                 _B__u__g_(inst, "true_damage_special")
             elseif bUg_ <= 0.6 then
@@ -899,7 +898,7 @@ local B_u__g__ = {
             elseif bUg_ <= 0.3 then
                 _B__u__g_(_BU_g_, "add_critical_hit_rate_special")
             elseif bUg_ <= 0.4 then
-                _B__u__g_(_BU_g_, "reflexive_injury_special")
+                _B__u__g_(_BU_g_, "true_damage_special")
             elseif bUg_ <= 0.5 then
                 _B__u__g_(_BU_g_, "true_damage_special")
             elseif bUg_ <= 0.6 then
@@ -964,7 +963,7 @@ local B_u__g__ = {
             elseif bUg_ <= 0.3 then
                 _B__u__g_(_BU_g_, "add_critical_hit_rate_special")
             elseif bUg_ <= 0.4 then
-                _B__u__g_(_BU_g_, "reflexive_injury_special")
+                _B__u__g_(_BU_g_, "true_damage_special")
             elseif bUg_ <= 0.5 then
                 _B__u__g_(_BU_g_, "true_damage_special")
             elseif bUg_ <= 0.6 then

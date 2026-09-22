@@ -148,7 +148,8 @@ AddComponentPostInit("hh_player", function(component)
     component.GetEffectValueByKey = function(self, key, ...)
         local base = old_get(self, key, ...) or 0
         local progress = GetProgress(self.inst)
-        return base + (progress ~= nil and progress:GetEffectBonus(key) or 0)
+        local value = base + (progress ~= nil and progress:GetEffectBonus(key) or 0)
+        return self:ClampEffectValue(key, value)
     end
 end)
 

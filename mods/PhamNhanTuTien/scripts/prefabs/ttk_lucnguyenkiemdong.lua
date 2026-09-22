@@ -39,7 +39,7 @@ local assets = {
     Asset("ANIM", "anim/ttk_lucnguyen_weapon.zip"),
     Asset("ANIM", "anim/ttk_lucnguyen_kim.zip"),
     Asset("ANIM", "anim/ttk_lucnguyen_moc.zip"),
-    Asset("ANIM", "anim/ttk_lucnguyen_thuy.zip"),
+    Asset("ANIM", "anim/ttk_tinhlakiem.zip"),
     Asset("ANIM", "anim/ttk_lucnguyen_hoa.zip"),
     Asset("ANIM", "anim/ttk_lucnguyen_tho.zip"),
     Asset("ANIM", "anim/ttk_lucnguyen_loi.zip"),

@@ -1,4 +1,5 @@
 local soulbadge = GLOBAL.require "widgets/eva_badge"
+local huddrag = GLOBAL.require "util/eva_hud_drag"
 
 local function SoulMax(owner)
     local maximum = owner.maxsouls ~= nil and owner.maxsouls:value() or 0
@@ -32,6 +33,7 @@ local function onstatusdisplaysconstruct(self)
 
     self.hud_souls = self:AddChild(soulbadge(self, self.owner))
     self.hud_souls:SetPosition(-80, -40, 0)
+    huddrag.Attach(self.hud_souls)
     self.owner.soulhud = self.hud_souls
     self.owner.UpdateBadges = function()
         local current = self.owner.currentsouls ~= nil and self.owner.currentsouls:value() or 0

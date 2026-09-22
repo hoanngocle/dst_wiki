@@ -203,10 +203,10 @@ function M.Install(env)
     if globals == nil or globals.TheNet == nil or globals.TheNet:IsDedicated() then
         return false
     end
-    if globals.TTK_BOSS_INDICATORS_INSTALLED then
+    if rawget(globals, "TTK_BOSS_INDICATORS_INSTALLED") then
         return false
     end
-    globals.TTK_BOSS_INDICATORS_INSTALLED = true
+    rawset(globals, "TTK_BOSS_INDICATORS_INSTALLED", true)
     env.AddClassPostConstruct("screens/playerhud", function(hud)
         local BossIndicator = require "widgets/ttk_bossindicator"
         local function factory(target, config)

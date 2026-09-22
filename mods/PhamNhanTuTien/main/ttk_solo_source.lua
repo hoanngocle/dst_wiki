@@ -919,23 +919,22 @@ local nFuUucuKf = ufnuccgkc["require"]
 local ifuufccku = nFuUucuKf "widgets/redux/loadingwidget"
 if not ufnuccgkc["TheNet"]:IsDedicated() then
     ufnuccgkc["GetLoaderAtlasAndTex"] = function(gFkUkcfkn)
-        return "images/loading_screen.xml", "loading_screen.tex"
+        return "images/ttk_loading_screen.xml", "loading_screen.tex"
     end
-    local ffguiCfkn = {Asset("ATLAS", "images/loading_screen.xml"), Asset("IMAGE", "images/loading_screen.tex")}
-    RegisterPrefabs(
-        Prefab(
-            "MOD_CTF_LOADING_SCREEN",
-            function()
-            end,
-            ffguiCfkn,
-            nil
-        )
-    )
-    TheSim:LoadPrefabs({"MOD_CTF_LOADING_SCREEN"})
-    local ffuugciKu = ifuufccku["KeepAlive"]
-    ifuufccku["KeepAlive"] = function(self, ffkuncikf)
-        TheSim:LoadPrefabs({"MOD_CTF_LOADING_SCREEN"})
-        return ffuugciKu(self, ffkuncikf)
+    local ffguiCfkn = {Asset("ATLAS", "images/ttk_loading_screen.xml"), Asset("IMAGE", "images/ttk_loading_screen.tex")}
+    for _, asset in ipairs(ffguiCfkn) do table.insert(Assets, asset) end
+    -- Loading widgets run before normal mod assets and survive prefab resets.
+    -- Use a lowercase private prefab, re-registering before each preload.
+    local loading_prefab = Prefab("ttk_loading_screen", function() end, ffguiCfkn)
+    local function LoadLoadingScreen()
+        RegisterPrefabs(loading_prefab)
+        TheSim:LoadPrefabs({"ttk_loading_screen"})
+    end
+    LoadLoadingScreen()
+    local old_keep_alive = ifuufccku.KeepAlive
+    ifuufccku.KeepAlive = function(self, ...)
+        LoadLoadingScreen()
+        return old_keep_alive(self, ...)
     end
     local nFuUfCfkc = ifuufccku["SetEnabled"]
     ifuufccku["SetEnabled"] = function(self, kFkunCuKu)
@@ -2659,29 +2658,11 @@ end
 
 -- Bảng Trạng Thái (Hotkey B)
 if not GLOBAL.TheNet:IsDedicated() then
-    local active_status_screen = nil
+    local UnifiedOpen = GLOBAL.require("ui/ttk_unified_open")
     GLOBAL.TheInput:AddKeyDownHandler(GLOBAL.KEY_B, function()
-        if IsGuideOpen() or IsSummaryOpen()
-            or GLOBAL.ThePlayer ~= nil and GLOBAL.ThePlayer.HHMonarchStorageOpen then
-            return
-        end
+        if IsGuideOpen() then return end
         if GLOBAL.ThePlayer and GLOBAL.TheFrontEnd then
-            local active_screen = GLOBAL.TheFrontEnd:GetActiveScreen()
-            if active_screen and active_screen.name == "HUD" then
-                if active_status_screen ~= nil and active_status_screen.inst:IsValid() then
-                    GLOBAL.TheFrontEnd:PopScreen(active_status_screen)
-                    active_status_screen = nil
-                else
-                    local HHStatusUI = require("widgets/hh_status_ui")
-                    active_status_screen = HHStatusUI(GLOBAL.ThePlayer, function()
-                        active_status_screen = nil
-                    end)
-                    GLOBAL.TheFrontEnd:PushScreen(active_status_screen)
-                end
-            elseif active_status_screen ~= nil and active_status_screen.inst:IsValid() and active_screen == active_status_screen then
-                GLOBAL.TheFrontEnd:PopScreen(active_status_screen)
-                active_status_screen = nil
-            end
+            UnifiedOpen.Toggle(GLOBAL.ThePlayer, "character")
         end
     end)
 end
@@ -2697,7 +2678,7 @@ if not GLOBAL.TheNet:IsDedicated() then
     end
 
     local function TryOpenMonarchStorage()
-        GLOBAL.SendModRPCToServer(GLOBAL.GetModRPC("hh_rpc", "hh_monarch_storage_open"))
+        GLOBAL.require("ui/ttk_unified_open").Open(GLOBAL.ThePlayer, "storage")
     end
 
     local SKILL_DEFS = {

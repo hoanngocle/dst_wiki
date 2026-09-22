@@ -4,7 +4,36 @@ local M = {}
 function M.Art(name)
     return type(name)=="string" and name:gsub("^ttk_boss_","xd_"):gsub("^ttk_","xd_") or name
 end
-function M.ArtPath(path) return path:gsub("ttk_boss_","xd_") end
+-- Return one path only: gsub's replacement count must never become Asset.param.
+local ART_PATH_ALIASES = {
+    ["anim/nn_well.zip"] = "anim/hh_hac_nguyet_ho.zip",
+    ["anim/ttk_lucnguyen_thuy.zip"] = "anim/ttk_tinhlakiem.zip",
+    ["anim/vanhonphien_cloakfx.zip"] = "anim/cloak_fx.zip",
+    ["anim/xd_ftj.zip"] = "anim/ttk_lucnguyen_hoa.zip",
+    ["anim/xd_futu.zip"] = "anim/ttk_futu.zip",
+    ["anim/xd_jingwei_blowdart.zip"] = "anim/ttk_lucnguyen_weapon.zip",
+    ["anim/xd_lunar_fx.zip"] = "anim/ttk_lunar_fx.zip",
+    ["anim/xd_npxsz.zip"] = "anim/ttk_npxsz.zip",
+    ["anim/xd_pog_fire.zip"] = "anim/ttk_pog_fire.zip",
+    ["anim/xd_pog_firefire.zip"] = "anim/ttk_pog_firefire.zip",
+    ["anim/xd_qlch.zip"] = "anim/ttk_skin_spirit.zip",
+    ["anim/xd_slow_buff_ent.zip"] = "anim/ttk_slow_buff_ent.zip",
+    ["anim/xd_spider.zip"] = "anim/ttk_spider.zip",
+    ["anim/xd_spider_leg.zip"] = "anim/ttk_spider_leg.zip",
+    ["anim/xd_spider_pro.zip"] = "anim/ttk_spider_pro.zip",
+    ["anim/xd_spider_puff.zip"] = "anim/ttk_spider_puff.zip",
+    ["anim/xd_spiderden.zip"] = "anim/ttk_spiderden.zip",
+    ["anim/xd_sword_mo.zip"] = "anim/ttk_lucnguyen_loi.zip",
+    ["anim/xd_sword_red.zip"] = "anim/ttk_lucnguyen_tho.zip",
+    ["anim/xd_tianjiwu.zip"] = "anim/ttk_tianjiwu.zip",
+    ["anim/xd_tianjiwu_skins_byj.zip"] = "anim/ttk_tianjiwu_skins_byj.zip",
+    ["anim/xd_vortex_fx.zip"] = "anim/vanhonphien_vortexfx.zip",
+    ["anim/xd_xlj.zip"] = "anim/ttk_tinhlakiem.zip",
+}
+function M.ArtPath(path)
+    local resolved = path:gsub("ttk_boss_", "xd_")
+    return ART_PATH_ALIASES[resolved] or resolved
+end
 M.TUNING = setmetatable({
     XD_QLCH_HEALTH=28000, XD_QLCH_DAMAGE=60,
     XD_QLCH_FS_HEALTH=13500, XD_QLCH_FS_DAMAGE=100,

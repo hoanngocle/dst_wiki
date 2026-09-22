@@ -34,6 +34,7 @@ local runtime_files = {
     "scripts/util/ttk_hud_modutil.lua", "scripts/util/ttk_hud_simutil.lua",
     "scripts/util/ttk_hud_persistentdata.lua",
     "scripts/widgets/ttk_hud_epichealthbar.lua", "scripts/widgets/ttk_hud_overhead.lua",
+    "scripts/widgets/ttk_hud_standard_bar.lua",
     "scripts/prefabs/ttk_hud_damage_number.lua", "scripts/prefabs/ttk_hud_epichealth_proxy.lua",
     "scripts/prefabs/ttk_hud_overhead_proxy.lua",
 }
@@ -74,8 +75,8 @@ for _, prefab in G.ipairs(child.PrefabFiles or {}) do append_unique(PrefabFiles,
 append_unique(PrefabFiles, "ttk_hud_damage_number")
 append_unique(PrefabFiles, "ttk_hud_overhead_proxy")
 for _, asset in G.ipairs(child.Assets or {}) do Assets[#Assets + 1] = asset end
-Assets[#Assets + 1] = Asset("ATLAS", "images/ttk_hud_overhead.xml")
-Assets[#Assets + 1] = Asset("IMAGE", "images/ttk_hud_overhead.tex")
+Assets[#Assets + 1] = Asset("ATLAS", "images/ttk_dyc_white.xml")
+Assets[#Assets + 1] = Asset("IMAGE", "images/ttk_dyc_white.tex")
 
 if not G.TheNet:IsDedicated() and G.TUNING.TTK_HUD.OVERHEAD_BAR then
     child.AddClassPostInit("widgets/controls", function(self)
@@ -99,7 +100,7 @@ if not G.TheNet:IsDedicated() and G.TUNING.TTK_HUD.OVERHEAD_BAR then
                     count = count + 1
                 end
             end
-            for proxy in G.pairs(G.TTK_HUD_OVERHEAD_PROXIES or {}) do
+            for proxy in G.pairs(G.rawget(G, "TTK_HUD_OVERHEAD_PROXIES") or {}) do
                 local parent = proxy.entity:GetParent()
                 if count < 32 and self._ttk_hud_overhead_widgets[proxy] == nil
                     and proxy._visible:value() and eligible(parent) then
@@ -115,8 +116,11 @@ if G.TheNet:GetIsServer() then require("ttk_hud/server_damage").install(env) end
 
 AddClientModRPCHandler("ttk_hud", "damage", function(guid, amount, kind, x, y, z)
     if not G.TUNING.TTK_HUD.DAMAGE_NUMBERS then return end
-    G.TTK_HUD_POPUPS = G.TTK_HUD_POPUPS or {}
-    local active = G.TTK_HUD_POPUPS
+    local active = G.rawget(G, "TTK_HUD_POPUPS")
+    if active == nil then
+        active = {}
+        G.rawset(G, "TTK_HUD_POPUPS", active)
+    end
     for i = #active, 1, -1 do if not active[i]:IsValid() then G.table.remove(active, i) end end
     if #active >= 32 then active[1]:Remove(); G.table.remove(active, 1) end
     local same_target = 0

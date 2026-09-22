@@ -4,6 +4,8 @@ local Text = require("widgets/text")
 local TextButton = require("widgets/textbutton")
 local Image = require("widgets/image")
 local DungeonShopLayout = require("dungeon_shop/hh_dungeon_shop_layout")
+local RequestGate = require("ui/ttk_request_gate")
+local Theme = require("widgets/hh_ui/ttk_unified_theme")
 
 local NONCE = 0
 
@@ -124,11 +126,18 @@ local function ApplyCardLayout(card, category, index)
     ApplyButtonLayout(card.buy, config.buy)
 end
 
-local HHDungeonShopScreen = Class(Screen, function(self, owner, defs, on_close)
+local HHDungeonShopScreen = Class(Screen, function(self, owner, defs, on_close, options)
     Screen._ctor(self, "HHDungeonShopScreen")
+    options = options or {}
     self.owner = owner
     self.defs = defs
     self.on_close = on_close
+    self.embedded = options.embedded == true
+    self.request_gate = RequestGate()
+    self.open_gate = RequestGate()
+    self.open_request = options.open_request or function()
+        SendModRPCToServer(MOD_RPC.hh_rpc.hh_dungeon_shop_open)
+    end
     self.category = "player_potion"
 
 
@@ -138,12 +147,15 @@ local HHDungeonShopScreen = Class(Screen, function(self, owner, defs, on_close)
     self.root:SetScaleMode(SCALEMODE_PROPORTIONAL)
     self.root:SetPosition(0, 0, 0)
 
-    self.panel = self.root:AddChild(Image("images/hud_dungeon_store.xml", "hud_dungeon_store.tex"))
+    local panel_atlas = self.embedded and "images/global.xml" or "images/hud_dungeon_store.xml"
+    local panel_texture = self.embedded and "square.tex" or "hud_dungeon_store.tex"
+    self.panel = self.root:AddChild(Image(panel_atlas, panel_texture))
     self.panel:SetSize(PANEL_W, PANEL_H)
+    if self.embedded then self.panel:SetTint(unpack(Theme.colours.panel)) end
 
     self.title = self.root:AddChild(Text(TITLEFONT, 44, "CỬA HÀNG HẦM NGỤC"))
     ApplyTextLayout(self.title, HUD_LAYOUT.title)
-    self.title:SetColour(.55, .78, 1, 1)
+    self.title:SetColour(unpack(self.embedded and Theme.colours.purple_soft or { .55, .78, 1, 1 }))
 
     self.coins = AddText(self.root, 316, 276, 294, 42, 28, { 1, .84, .25, 1 })
     ApplyTextLayout(self.coins, HUD_LAYOUT.coins)
@@ -154,7 +166,11 @@ local HHDungeonShopScreen = Class(Screen, function(self, owner, defs, on_close)
     for index, entry in ipairs(CATEGORY_LAYOUT) do
         local tab = self.root:AddChild(Widget("dungeon_shop_tab_" .. tostring(index)))
         tab.button = AddTextButton(tab, 0, 0, 148, 50, 17)
-        ApplyTabLayout(tab, HUD_LAYOUT[entry.id] or { x = -438, y = 190 - (index - 1) * 78, width = 148, height = 50, font = UIFONT, size = 17 })
+        local tab_layout = self.embedded
+            and { x = -285 + (index - 1) * 190, y = 210, width = 180, height = 50, font = UIFONT, size = 18 }
+            or HUD_LAYOUT[entry.id]
+            or { x = -438, y = 190 - (index - 1) * 78, width = 148, height = 50, font = UIFONT, size = 17 }
+        ApplyTabLayout(tab, tab_layout)
         tab.button:SetText(entry.name)
         local category_id = entry.id
         tab.category_id = category_id
@@ -196,22 +212,49 @@ local HHDungeonShopScreen = Class(Screen, function(self, owner, defs, on_close)
     ApplyButtonLayout(self.close, HUD_LAYOUT.close)
     self.close:SetText("Đóng")
     self.close:SetOnClick(function()
-        TheFrontEnd:PopScreen(self)
+        if self.embedded then
+            if options.close ~= nil then options.close() end
+        else
+            TheFrontEnd:PopScreen(self)
+        end
     end)
+    if self.embedded then self.close:Hide() end
 
-    self.inst:ListenForEvent("hh_dungeon_coindirty", function() self:Refresh() end, owner)
-    self.inst:ListenForEvent("hh_dungeon_coin_noticedirty", function() self:Refresh() end, owner)
-    self.inst:ListenForEvent("hh_dungeon_shopdirty", function() self:Refresh() end, owner)
+    local function OnShopDirty()
+        self.request_gate:Acknowledge()
+        self.open_gate:Acknowledge()
+        if self.shown then self:Refresh() end
+    end
+    self.inst:ListenForEvent("hh_dungeon_coindirty", OnShopDirty, owner)
+    self.inst:ListenForEvent("hh_dungeon_coin_noticedirty", OnShopDirty, owner)
+    self.inst:ListenForEvent("hh_dungeon_shopdirty", OnShopDirty, owner)
     self:Refresh()
 end)
 
 function HHDungeonShopScreen:OnDestroy()
+    self.request_gate:Dispose()
+    self.open_gate:Dispose()
     if self.on_close ~= nil then
         local callback = self.on_close
         self.on_close = nil
         callback()
     end
     HHDungeonShopScreen._base.OnDestroy(self)
+end
+
+function HHDungeonShopScreen:ShowPanel()
+    self:Show()
+    self.open_gate:Try(self.open_request)
+    self:Refresh()
+end
+
+function HHDungeonShopScreen:HidePanel()
+    self.open_gate:Acknowledge()
+    self:Hide()
+end
+
+function HHDungeonShopScreen:DisposePanel()
+    self:Kill()
 end
 
 function HHDungeonShopScreen:Refresh()
@@ -270,7 +313,11 @@ function HHDungeonShopScreen:Refresh()
             card.stock:SetString("Stock " .. tostring(amount))
             card.stock:SetColour(amount > 0 and .72 or 1, amount > 0 and .86 or .28, amount > 0 and .92 or .28, 1)
 
-            if amount <= 0 then
+            local pending = self.request_gate:IsPending()
+            if pending then
+                card.buy:SetText("Đang mua…")
+                card.buy:SetTextColour(unpack(Theme.colours.muted))
+            elseif amount <= 0 then
                 card.buy:SetText("Hết")
                 card.buy:SetTextColour(.55, .35, .35, 1)
             elseif not affordable then
@@ -282,8 +329,13 @@ function HHDungeonShopScreen:Refresh()
             end
 
             card.buy:SetOnClick(function()
-                NONCE = NONCE + 1
-                SendModRPCToServer(MOD_RPC.hh_rpc.hh_dungeon_shop_buy, product.id, NONCE)
+                if amount > 0 and affordable then
+                    self.request_gate:Try(function()
+                        NONCE = NONCE + 1
+                        SendModRPCToServer(MOD_RPC.hh_rpc.hh_dungeon_shop_buy, product.id, NONCE)
+                    end)
+                    self:Refresh()
+                end
             end)
         else
             card:Hide()
@@ -293,6 +345,7 @@ end
 
 function HHDungeonShopScreen:OnControl(control, down)
     if HHDungeonShopScreen._base.OnControl(self, control, down) then return true end
+    if self.embedded then return false end
     if not down and control == CONTROL_CANCEL then
         TheFrontEnd:PopScreen(self)
         return true

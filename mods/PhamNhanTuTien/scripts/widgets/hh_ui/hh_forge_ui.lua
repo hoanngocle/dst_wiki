@@ -13,8 +13,8 @@ local PURPLE = { .64, .49, .80, 1 }
 local DARK = { .12, .11, .16, 1 }
 local WARN = { 1, .72, .42, 1 }
 local FONT = "ttk_forge_serif"
--- DST normalizes this atlas by its 97px line height; design sizes are 80px-em.
-local FONT_SCALE = 97 / 80
+-- Compiled atlas line height is 99px; the design uses an 80px em.
+local FONT_SCALE = 99 / 80
 local SKIN = "images/ttk_forge/controls.xml"
 local EFFECT_SKIN = "images/ttk_forge/effect_row.xml"
 local EFFECTS_PER_PAGE = 3

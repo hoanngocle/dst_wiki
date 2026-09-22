@@ -1,14 +1,6 @@
 local Ingredient = GLOBAL.Ingredient
 local TECH = GLOBAL.TECH
 
-local eva_tab = AddRecipeTab(
-    "EVA",
-    99,
-    "images/inventoryimages/evatab.xml",
-    "evatab.tex",
-    "eva"
-)
-
 local ingredients
 if TUNING.EVA_SCYTHE_RECIPE == 0 then
     ingredients = {
@@ -30,16 +22,10 @@ else
     }
 end
 
-AddRecipe(
+AddRecipe2(
     "eva_scythe",
     ingredients,
-    eva_tab,
     TECH.NONE,
-    nil,
-    nil,
-    nil,
-    1,
-    "eva",
-    "images/inventoryimages/eva_scythe.xml",
-    "eva_scythe.tex"
+    {numtogive = 1, builder_tag = "eva", atlas = "images/inventoryimages/eva_scythe.xml", image = "eva_scythe.tex"},
+    {"CHARACTER"}
 )

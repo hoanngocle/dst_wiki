@@ -701,27 +701,12 @@ AddComponentPostInit(
                 and nfnugckkc > 0 then
                 nfnugckkc = 0
             end
-            if cffUucfkn:HasComponents(self["inst"], "hh_player")
-                and cffUucfkn:IsHHType(nfnugckkc, "number") and nfnugckkc < 0
-                and nffuiCgkc ~= nil and iFiunckKf ~= "hh_true_damage" then
-                local vit_reduction = self["inst"]["components"]["hh_player"]:GetEffectValueByKey("reduceAttackedDamage") or 0
-                nfnugckkc = math.min(0, nfnugckkc + vit_reduction)
-            end
-            if not is_death_threshold_regen and
-                cffUucfkn:HasComponents(self["inst"], "hh_player") and cffUucfkn:IsHHType(nfnugckkc, "number") and
-                    nfnugckkc > 0
-             then
-                if self["inst"]["components"]["hh_player"]:HasSpecialEffect("healthSuppressNum") then
-                    nfnugckkc = nfnugckkc * 0.1
-                end
-            end
-            if not is_death_threshold_regen and
-                cffUucfkn:HasComponents(self["inst"], "hh_monster") and cffUucfkn:IsHHType(nfnugckkc, "number") and
-                    nfnugckkc > 0
-             then
-                if self["inst"]["components"]["hh_monster"]:HasSpecialEffect("healthSuppressNum") then
-                    nfnugckkc = nfnugckkc * 0.1
-                end
+            local suppression_player = self.inst.components.hh_player
+            local suppression_monster = self.inst.components.hh_monster
+            if not is_death_threshold_regen and type(nfnugckkc) == "number" and nfnugckkc > 0
+                and ((suppression_player ~= nil and suppression_player:HasSpecialEffect("healthSuppressNum"))
+                    or (suppression_monster ~= nil and suppression_monster:HasSpecialEffect("healthSuppressNum"))) then
+                nfnugckkc = nfnugckkc * .1
             end
             local previous_death_threshold_guard = self["_hh_death_threshold_guard"]
             local death_threshold = self["inst"]["components"] ~= nil
@@ -745,19 +730,13 @@ AddComponentPostInit(
             if death_threshold_guard ~= nil and death_threshold_guard.prevented then
                 death_threshold:FinishDamageGuard(death_threshold_guard)
             end
-            if cffUucfkn:IsValidCombat(self["inst"]) then
-                if
-                    cffUucfkn:HasComponents(nffuiCgkc, "hh_player") and cffUucfkn:IsHHType(iFguucikc, "number") and
-                        iFguucikc < 0
-                 then
-                    nffuiCgkc["components"]["hh_player"]:HandleBloodSuck(iFguucikc)
-                end
-                if
-                    cffUucfkn:HasComponents(nffuiCgkc, "hh_monster") and cffUucfkn:IsHHType(iFguucikc, "number") and
-                        iFguucikc < 0
-                 then
-                    nffuiCgkc["components"]["hh_monster"]:HandleBloodSuck(iFguucikc)
-                end
+            local hit = require("combat/hh_combat_context").Current(nffuiCgkc, self.inst)
+            if hit ~= nil and death_threshold_prevented then hit.death_threshold_prevented = true end
+            if cffUucfkn:IsValidCombat(self.inst)
+                and require("combat/hh_combat_context").PacketKind() == nil
+                and cffUucfkn:HasComponents(nffuiCgkc, "hh_monster")
+                and type(iFguucikc) == "number" and iFguucikc < 0 then
+                nffuiCgkc.components.hh_monster:HandleBloodSuck(iFguucikc)
             end
             
             local executer = nil
@@ -787,33 +766,6 @@ AddComponentPostInit(
                 end
             end
 
-            if executer and cffUucfkn:HasComponents(executer, "hh_player") then
-                local kill_threshold = executer["components"]["hh_player"]:GetEffectValueByKey("killUnderThreshold")
-                if kill_threshold and kill_threshold > 0 and not self:IsDead()
-                    and not death_threshold_prevented then
-                    local is_boss = false
-                    local prefab = self["inst"]["prefab"]
-                    if cffUucfkn:HasComponents(self["inst"], "hh_monster") then
-                        local mtype = self["inst"]["components"]["hh_monster"]:GetMonsterType()
-                        if mtype == "boss_monster" or mtype == "endgameboss_monster" then
-                            is_boss = true
-                        end
-                    else
-                        if nfkUiCukg and nfkUiCukg[prefab] then
-                            is_boss = true
-                        elseif cFgUccikn and cFgUccikn[prefab] then
-                            is_boss = true
-                        end
-                    end
-                    if not is_boss then
-                        local maxhp = self["maxhealth"] or 0
-                        local curhp = self["currenthealth"] or 0
-                        if maxhp > 0 and curhp > 0 and curhp <= maxhp * (kill_threshold / 100) then
-                            self:Kill()
-                        end
-                    end
-                end
-            end
 
             if was_alive and self:IsDead() then
                 local kill_source = nffuiCgkc or executer
@@ -901,7 +853,52 @@ local HH_FOLLOWER_CRITICAL_PREFABS = {
     hh_hacanh_shadow = true,
 }
 
-local function ApplyFollowerCritical(attacker, damage)
+local CombatMath = require("combat/hh_combat_math")
+local CombatContext = require("combat/hh_combat_context")
+local SpDamageUtil = require("components/spdamageutil")
+if not SpDamageUtil._SpTypeMap.hh_armor_pierce then
+    SpDamageUtil.DefineSpType("hh_armor_pierce", {
+        GetDamage = function() return 0 end,
+        GetDefense = function() return 0 end,
+        GetTakenMult = function(ent)
+            local combat = ent.components ~= nil and ent.components.combat or nil
+            if combat == nil then return 1 end
+            local attacker = combat.lastattacker
+            local hit = CombatContext.Current(attacker, combat.redirected_from or ent)
+            local mult = combat.externaldamagetakenmultipliers:Get()
+            if hit ~= nil and combat.conditionexternaldamagetakenmultipliers ~= nil then
+                mult = mult * combat:ApplyConditionExternalDamageTakenMultiplier(1, attacker, hit.weapon)
+            end
+            -- Combat already applies damage-type resistance to special damage.
+            -- These extra factors preserve the non-armor defense of the receiver.
+            return mult
+        end,
+    })
+end
+if not SpDamageUtil._SpTypeMap.hh_poison then
+    SpDamageUtil.DefineSpType("hh_poison", {
+        GetDamage = function() return 0 end,
+        GetDefense = function() return 0 end,
+        GetTakenMult = SpDamageUtil._SpTypeMap.hh_armor_pierce.GetTakenMult,
+    })
+end
+local function PackHitResults(...)
+    return {n = select("#", ...), ...}
+end
+
+local function ApplyFollowerHitModifier(normal, spdamage, player, modifier)
+    local pierce = spdamage ~= nil and spdamage.hh_armor_pierce or 0
+    local total = normal + pierce
+    local adjusted = modifier(player, total)
+    if pierce > 0 and total > 0 then
+        local adjusted_pierce = adjusted * pierce / total
+        spdamage.hh_armor_pierce = adjusted_pierce
+        return adjusted - adjusted_pierce
+    end
+    return adjusted
+end
+
+local function ApplyFollowerCritical(attacker, target, damage, rng)
     if attacker == nil
         or not HH_FOLLOWER_CRITICAL_PREFABS[attacker["prefab"]]
         or not cffUucfkn:IsHHType(damage, "number")
@@ -924,7 +921,10 @@ local function ApplyFollowerCritical(attacker, damage)
     end
 
     local critical_rate = player_effects:GetEffectValueByKey("addFollowCritical")
-    if math["random"](0, 100) <= critical_rate then
+    local critical = CombatMath.RollPercent(critical_rate, rng or math.random)
+    local metadata = CombatContext.Current(attacker, target)
+    if metadata ~= nil then metadata.critical = critical end
+    if critical then
         -- hh_monster uses 2 + criticalHitEffect / 100. These combat Shadow
         -- prefabs intentionally have no hh_monster/effect store, while
         -- followCritical only supplies the chance, so the existing zero-effect
@@ -939,154 +939,183 @@ AddComponentPostInit(
     function(self)
         local cFfuucgkc = self["GetAttacked"]
         self["GetAttacked"] = function(self, nfkuccnkc, kFuuncgKg, weapon, stimuli, spdamage, ...)
-            local is_dodged = false
-            if cffUucfkn:HasComponents(nfkuccnkc, "hh_player") then
-                kFuuncgKg = nfkuccnkc["components"]["hh_player"]:DoAttackDamage(nfkuccnkc, self["inst"], kFuuncgKg)
+            -- Vanilla forwards an already-resolved packet when mounting/parrying
+            -- redirects a hit. Carry its context and rank guard, without rerolls.
+            local redirected = self.redirected_from ~= nil
+                and CombatContext.Current(nfkuccnkc, self.redirected_from) or nil
+            if redirected ~= nil then
+                local previous = self.inst._hh_world_rank_combat_damage_source
+                self.inst._hh_world_rank_combat_damage_source = self.redirected_from._hh_world_rank_combat_damage_source
+                local token = CombatContext.Begin(nfkuccnkc, self.inst, redirected)
+                local results = PackHitResults(pcall(cFfuucgkc, self, nfkuccnkc, kFuuncgKg, weapon, stimuli, spdamage, ...))
+                self.inst._hh_world_rank_combat_damage_source = previous
+                CombatContext.Finish(token)
+                if not results[1] then error(results[2], 0) end
+                return unpack(results, 2, results.n)
             end
-            if cffUucfkn:HasComponents(nfkuccnkc, "hh_monster") then
-                kFuuncgKg = nfkuccnkc["components"]["hh_monster"]:DoAttackDamage(nfkuccnkc, self["inst"], kFuuncgKg)
-            end
-            kFuuncgKg = ApplyFollowerCritical(nfkuccnkc, kFuuncgKg)
-            if cffUucfkn:HasComponents(self["inst"], "hh_player") then
-                local ret_dmg, ret_dodge = self["inst"]["components"]["hh_player"]:GetBlockDamage(self["inst"], nfkuccnkc, kFuuncgKg)
-                kFuuncgKg = ret_dmg
-                if ret_dodge then is_dodged = true end
-            end
-            if cffUucfkn:HasComponents(self["inst"], "hh_monster") then
-                kFuuncgKg = self["inst"]["components"]["hh_monster"]:GetBlockDamage(self["inst"], nfkuccnkc, kFuuncgKg)
-            end
-            if
-                cffUucfkn:HasComponents(nfkuccnkc, "follower") and nfkuccnkc["components"]["follower"]["leader"] and
-                    cffUucfkn:HasComponents(nfkuccnkc["components"]["follower"]["leader"], "hh_player")
-             then
-                local gFiuucgKn = nfkuccnkc["components"]["follower"]["leader"]
-                kFuuncgKg = gFiuucgKn["components"]["hh_player"]:GetFollowerDamage(kFuuncgKg)
-            end
-            if
-                cffUucfkn:HasComponents(self["inst"], "follower") and self["inst"]["components"]["follower"]["leader"] and
-                    cffUucfkn:HasComponents(self["inst"]["components"]["follower"]["leader"], "hh_player")
-             then
-                local nfgUucfKu = self["inst"]["components"]["follower"]["leader"]
-                kFuuncgKg = nfgUucfKu["components"]["hh_player"]:GetFollowerArmor(kFuuncgKg)
-            end
-            if is_dodged then
-                return false
-            end
-            kFuuncgKg = math["max"](kFuuncgKg, 0)
-            local godslayer =
-                cffUucfkn:HasComponents(nfkuccnkc, "hh_player") and
-                cffUucfkn:HasComponents(nfkuccnkc, "hh_godslayer") and
-                nfkuccnkc["components"]["hh_godslayer"] or nil
-            if
-                kFuuncgKg > 0 and
-                    godslayer ~= nil and
-                    self["inst"]["components"] ~= nil and
-                    self["inst"]["components"]["planarentity"] ~= nil
-             then
-                local godslayer_bonus = godslayer:GetBonusDamage(self["inst"])
-                if godslayer_bonus > 0 then
-                    local new_spdamage = {}
-                    if type(spdamage) == "table" then
-                        for k, v in pairs(spdamage) do
-                            new_spdamage[k] = v
-                        end
+            local packet_kind = CombatContext.PacketKind()
+            if packet_kind ~= nil then
+                local defender = self.inst.components.hh_player
+                local monster = self.inst.components.hh_monster
+                local reduction = defender ~= nil and defender:GetPhamNhanReduction()
+                    or monster ~= nil and monster:GetEffectValueByKey("reducePercentDamage") or 0
+                kFuuncgKg = CombatMath.ApplyReduction(kFuuncgKg or 0, reduction)
+                if spdamage ~= nil then
+                    local copy = {}
+                    for key, value in pairs(spdamage) do
+                        copy[key] = key == "hh_poison" and CombatMath.ApplyReduction(value, reduction) or value
                     end
-                    new_spdamage["planar"] =
-                        (tonumber(new_spdamage["planar"]) or 0) + godslayer_bonus
-                    spdamage = new_spdamage
+                    spdamage = copy
                 end
+                local metadata = {attacker = nfkuccnkc, target = self.inst, weapon = weapon}
+                local token = CombatContext.Begin(nfkuccnkc, self.inst, metadata)
+                local results = PackHitResults(pcall(cFfuucgkc, self, nfkuccnkc, kFuuncgKg, weapon, stimuli, spdamage, ...))
+                CombatContext.Finish(token)
+                if not results[1] then error(results[2], 0) end
+                if packet_kind == "splash" and metadata.event ~= nil
+                    and cffUucfkn:HasComponents(nfkuccnkc, "hh_player") then
+                    nfkuccnkc.components.hh_player:HandleBloodSuck(metadata.event.damageresolved or 0, "splash")
+                end
+                return unpack(results, 2, results.n)
             end
-
-            -- World rank difficulty is applied after Solo Leveling's custom
-            -- attacker/block/critical math, but still before vanilla armor and
-            -- damage resistance in the original Combat:GetAttacked path.
-            -- Health:DoDelta has a matching guard so this same hit is not
-            -- multiplied a second time after mitigation.
-            local world_rank_damage_source = nil
-            local world_rank = TheWorld ~= nil
-                and TheWorld["components"] ~= nil
-                and TheWorld["components"]["hh_world"] or nil
-            if TheWorld ~= nil and TheWorld["ismastersim"]
-                and world_rank ~= nil
-                and world_rank["ResolveWorldRankDamageSource"] ~= nil then
-                local resolved_world_rank_source = world_rank:ResolveWorldRankDamageSource(nfkuccnkc)
-                if resolved_world_rank_source ~= nil then
-                    local world_rank_multiplier = world_rank:GetWorldRankDamageMultiplier()
-                    if world_rank_multiplier ~= 1 then
-                        kFuuncgKg = kFuuncgKg * world_rank_multiplier
-                        if type(spdamage) == "table" then
-                            local scaled_spdamage = {}
-                            for key, value in pairs(spdamage) do
-                                scaled_spdamage[key] = type(value) == "number"
-                                    and value * world_rank_multiplier or value
+            if type(kFuuncgKg) ~= "number" or kFuuncgKg <= 0
+                or not cffUucfkn:NotIsDead(nfkuccnkc) or not cffUucfkn:NotIsDead(self.inst) then
+                return cFfuucgkc(self, nfkuccnkc, kFuuncgKg, weapon, stimuli, spdamage, ...)
+            end
+            local defender = self.inst.components.hh_player
+            if defender ~= nil and stimuli ~= "hh_unavoidable" and defender:TryDodge(nfkuccnkc) then return false end
+            local args = PackHitResults(...)
+            local token = CombatContext.Begin(nfkuccnkc, self.inst, {weapon = weapon, critical = false, burst = false})
+            local world_rank_target = self.inst
+            local previous_world_rank_source = world_rank_target._hh_world_rank_combat_damage_source
+            local function ResolveHit()
+                -- DST mutates special-damage tables during defense processing.
+                if type(spdamage) == "table" then
+                    local copy = {}
+                    for key, value in pairs(spdamage) do copy[key] = value end
+                    spdamage = copy
+                end
+                if cffUucfkn:HasComponents(nfkuccnkc, "hh_player") then
+                    local pierce
+                    kFuuncgKg, pierce = nfkuccnkc.components.hh_player:ResolvePrimaryHit(self.inst, kFuuncgKg, weapon)
+                    if pierce > 0 then
+                        spdamage = spdamage or {}
+                        spdamage.hh_armor_pierce = (spdamage.hh_armor_pierce or 0) + pierce
+                    end
+                elseif cffUucfkn:HasComponents(nfkuccnkc, "hh_monster") then
+                    kFuuncgKg = nfkuccnkc["components"]["hh_monster"]:DoAttackDamage(nfkuccnkc, self["inst"], kFuuncgKg)
+                else
+                    kFuuncgKg = ApplyFollowerCritical(nfkuccnkc, self.inst, kFuuncgKg)
+                end
+                if defender ~= nil then
+                    local reduction = defender:GetPhamNhanReduction()
+                    kFuuncgKg = CombatMath.ApplyReduction(kFuuncgKg, reduction)
+                    if spdamage ~= nil then
+                        for key, value in pairs(spdamage) do
+                            if type(key) == "string" and string.sub(key, 1, 3) == "hh_"
+                                and key ~= "hh_armor_pierce" and type(value) == "number" then
+                                spdamage[key] = CombatMath.ApplyReduction(value, reduction)
                             end
-                            spdamage = scaled_spdamage
                         end
-                        world_rank_damage_source = resolved_world_rank_source
                     end
-                end
-            end
-
-            local world_rank_target = self["inst"]
-            local previous_world_rank_source = world_rank_target["_hh_world_rank_combat_damage_source"]
-            if world_rank_damage_source ~= nil then
-                world_rank_target["_hh_world_rank_combat_damage_source"] = world_rank_damage_source
-            end
-            local result = { cFfuucgkc(self, nfkuccnkc, kFuuncgKg, weapon, stimuli, spdamage, ...) }
-            if world_rank_damage_source ~= nil then
-                world_rank_target["_hh_world_rank_combat_damage_source"] = previous_world_rank_source
-            end
-            return unpack(result)
-        end
-        self["GetBrambleFx"] = function(self, ufgUccfKi, nFcUicfkc)
-            if not cffUucfkn:NotIsDead(self["inst"]) then
-                return (361 + 42 - 167 ~= 236)
-            end
-            if self["inst"]["hh_bramble_cd"] then
-                return (189 * 456 + 363 - 440 == 86110)
-            end
-            self["inst"]["hh_bramble_cd"] = (347 * 398 * 169 + 83 == 23339997)
-            if not self["inst"]["hh_bramble_cd_task"] then
-                self["inst"]["hh_bramble_cd_task"] =
-                    self["inst"]:DoTaskInTime(
-                    0.3,
-                    function(nFuUncikk)
-                        nFuUncikk["hh_bramble_cd"] = (383 * 130 * 282 == 14040788)
-                        cffUucfkn:HHKillTask(nFuUncikk, "hh_bramble_cd_task")
-                    end
-                )
-            end
-            if not cffUucfkn:IsHHType(nFcUicfkc, "number") then
-                return (408 - 211 + 54 + 322 + 437 ~= 1010)
-            end
-            if nFcUicfkc <= 0 then
-                return (false and false or false or false and false and false or
-                    not false and false and not true and false and true)
-            end
-            if ufgUccfKi and cffUucfkn:NotIsDead(ufgUccfKi) then
-                cffUucfkn:SpawnBrambleFx(ufgUccfKi)
-                if cffUucfkn:HasComponents(self["inst"], "hh_player") then
-                    if self["inst"]["components"]["hh_player"]:HasSpecialEffect("immuneBramble") then
-                        return (348 - 51 * 85 == -3987)
-                    end
-                    nFcUicfkc = self["inst"]["components"]["hh_player"]:GetHitByBrambleFxDamage(nFcUicfkc)
                 end
                 if cffUucfkn:HasComponents(self["inst"], "hh_monster") then
-                    nFcUicfkc = self["inst"]["components"]["hh_monster"]:GetHitByBrambleFxDamage(nFcUicfkc)
+                    local monster = self["inst"]["components"]["hh_monster"]
+                    local pre_monster_defense = kFuuncgKg
+                    kFuuncgKg = monster:GetBlockDamage(self["inst"], nfkuccnkc, pre_monster_defense)
+                    local defense_factor = pre_monster_defense > 0
+                        and CombatMath.Clamp(kFuuncgKg / pre_monster_defense, 0, 1) or 0
+                    if spdamage ~= nil then
+                        local reduction = monster:GetEffectValueByKey("reducePercentDamage")
+                        for key, value in pairs(spdamage) do
+                            if type(key) == "string" and string.sub(key, 1, 3) == "hh_" and type(value) == "number" then
+                                spdamage[key] = key == "hh_armor_pierce"
+                                    and value * defense_factor or CombatMath.ApplyReduction(value, reduction)
+                            end
+                        end
+                    end
                 end
-                nFcUicfkc = nFcUicfkc * self["externaldamagetakenmultipliers"]:Get()
-                if cffUucfkn:HasComponents(self["inst"], "inventory") then
-                    nFcUicfkc = self["inst"]["components"]["inventory"]:ApplyDamage(nFcUicfkc, ufgUccfKi)
+                if
+                    cffUucfkn:HasComponents(nfkuccnkc, "follower") and nfkuccnkc["components"]["follower"]["leader"] and
+                        cffUucfkn:HasComponents(nfkuccnkc["components"]["follower"]["leader"], "hh_player")
+                 then
+                    local gFiuucgKn = nfkuccnkc["components"]["follower"]["leader"]
+                    local player = gFiuucgKn.components.hh_player
+                    kFuuncgKg = ApplyFollowerHitModifier(kFuuncgKg, spdamage, player, player.GetFollowerDamage)
                 end
-                if nFcUicfkc > 0 then
-                    self["inst"]["components"]["health"]:DoDelta(
-                        -nFcUicfkc,
-                        (447 * 223 + 145 * 481 * 329 ~= 23045786),
-                        "hh_bramble_damage"
-                    )
-                    self:SetTarget(ufgUccfKi)
+                if
+                    cffUucfkn:HasComponents(self["inst"], "follower") and self["inst"]["components"]["follower"]["leader"] and
+                        cffUucfkn:HasComponents(self["inst"]["components"]["follower"]["leader"], "hh_player")
+                 then
+                    local nfgUucfKu = self["inst"]["components"]["follower"]["leader"]
+                    local player = nfgUucfKu.components.hh_player
+                    kFuuncgKg = ApplyFollowerHitModifier(kFuuncgKg, spdamage, player, player.GetFollowerArmor)
                 end
+                kFuuncgKg = math["max"](kFuuncgKg, 0)
+                local godslayer =
+                    cffUucfkn:HasComponents(nfkuccnkc, "hh_player") and
+                    cffUucfkn:HasComponents(nfkuccnkc, "hh_godslayer") and
+                    nfkuccnkc["components"]["hh_godslayer"] or nil
+                if
+                    kFuuncgKg > 0 and
+                        godslayer ~= nil and
+                        self["inst"]["components"] ~= nil and
+                        self["inst"]["components"]["planarentity"] ~= nil
+                 then
+                    local godslayer_bonus = godslayer:GetBonusDamage(self["inst"])
+                    if godslayer_bonus > 0 then
+                        local new_spdamage = {}
+                        if type(spdamage) == "table" then
+                            for k, v in pairs(spdamage) do
+                                new_spdamage[k] = v
+                            end
+                        end
+                        new_spdamage["planar"] =
+                            (tonumber(new_spdamage["planar"]) or 0) + godslayer_bonus
+                        spdamage = new_spdamage
+                    end
+                end
+
+                -- World rank difficulty is applied after Solo Leveling's custom
+                -- attacker/block/critical math, but still before vanilla armor and
+                -- damage resistance in the original Combat:GetAttacked path.
+                -- Health:DoDelta has a matching guard so this same hit is not
+                -- multiplied a second time after mitigation.
+                local world_rank_damage_source = nil
+                local world_rank = TheWorld ~= nil
+                    and TheWorld["components"] ~= nil
+                    and TheWorld["components"]["hh_world"] or nil
+                if TheWorld ~= nil and TheWorld["ismastersim"]
+                    and world_rank ~= nil
+                    and world_rank["ResolveWorldRankDamageSource"] ~= nil then
+                    local resolved_world_rank_source = world_rank:ResolveWorldRankDamageSource(nfkuccnkc)
+                    if resolved_world_rank_source ~= nil then
+                        local world_rank_multiplier = world_rank:GetWorldRankDamageMultiplier()
+                        if world_rank_multiplier ~= 1 then
+                            kFuuncgKg = kFuuncgKg * world_rank_multiplier
+                            if type(spdamage) == "table" then
+                                local scaled_spdamage = {}
+                                for key, value in pairs(spdamage) do
+                                    scaled_spdamage[key] = type(value) == "number"
+                                        and value * world_rank_multiplier or value
+                                end
+                                spdamage = scaled_spdamage
+                            end
+                            world_rank_damage_source = resolved_world_rank_source
+                        end
+                    end
+                end
+
+                if world_rank_damage_source ~= nil then
+                    world_rank_target["_hh_world_rank_combat_damage_source"] = world_rank_damage_source
+                end
+                return cFfuucgkc(self, nfkuccnkc, kFuuncgKg, weapon, stimuli, spdamage, unpack(args, 1, args.n))
             end
+            local result = PackHitResults(pcall(ResolveHit))
+            world_rank_target._hh_world_rank_combat_damage_source = previous_world_rank_source
+            CombatContext.Finish(token)
+            if not result[1] then error(result[2], 0) end
+            return unpack(result, 2, result.n)
         end
         return (218 * 480 * 238 ~= 24904329)
     end

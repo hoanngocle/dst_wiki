@@ -80,10 +80,12 @@ function ImageButton:ForceImageSize(width, height) self.image_size = {width, hei
 function ImageButton:SetOnClick(callback) self.onclick = callback end
 function ImageButton:SetImageNormalColour(...) self.normal_colour = {...} end
 
-local Router = {
+Router = {
     DISPLAY_ORDER = {"life", "harvest", "wings", "daydu", "array"},
     SKILLS = {},
     SPELL_INDEX = {},
+    unlocked = {},
+    wings_active = false,
 }
 for index, skill in ipairs(Router.DISPLAY_ORDER) do
     Router.SKILLS[skill] = {texture = skill .. ".tex", atlas = "skills.xml"}
@@ -91,10 +93,10 @@ for index, skill in ipairs(Router.DISPLAY_ORDER) do
 end
 function Router.GetSkillTooltip(_, skill) return "TIP:" .. skill end
 function Router.CanUsePanel() return true end
-function Router.IsSkillUnlocked() return true end
+function Router.IsSkillUnlocked(_, skill) return Router.unlocked[skill] ~= false end
 function Router.GetCooldownSeconds() return 0 end
 function Router.GetRequiredLevel() return 1 end
-function Router.GetWingsActive() return false end
+function Router.GetWingsActive() return Router.wings_active end
 function Router.IsBoundBook() return true end
 
 function GetInventoryItemAtlas() return "inventory.xml" end
@@ -128,6 +130,14 @@ local label = panel.skill_tooltip_text or panel.tooltip
 assert(label ~= nil, "custom skill tooltip label is missing")
 assert(panel.expanded == false and label.shown == false)
 for _, button in pairs(panel.icons) do assert(button.shown == false) end
+
+Router.unlocked.life = false
+Router.wings_active = true
+panel:OnUpdate()
+assert(panel.icons.life.state.string == "",
+    "locked skills must not show the below-icon level label")
+assert(panel.icons.wings.state.string == "ĐANG MỞ",
+    "the wings active-state text must remain visible")
 
 FocusPath(panel, panel.collapse)
 panel.collapse.ongainfocus()

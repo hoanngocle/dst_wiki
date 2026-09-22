@@ -22,6 +22,7 @@ SOURCE_ROOT = ROOT / "assets/source/eva_approved"
 PROVENANCE = Path(os.environ.get("EVA_RIG_MAP", SOURCE_ROOT / "rig-map.json"))
 EVA_NONE = ROOT / "scripts/prefabs/eva_none.lua"
 ANIM_SHA256 = "13969e77f249aff2a55035cd36e9134a31380b367dc4d4b4c2c2f57c41e8de9d"
+LUOSHEN_ANIM_SHA256 = "d0fc41f95ae026d5e6b995ec9a8bfb5c69f7095671c393001545afa76d95c535"
 EXPECTED_FRAMES = {
     "SWAP_ICON": 1,
     "arm_lower": 7,
@@ -133,9 +134,15 @@ class EvaApprovedRigTest(unittest.TestCase):
         with ZipFile(SOURCE_ROOT / "baseline-eva.zip") as archive:
             cls.baseline = parse_build(archive.read("build.bin"))
         with ZipFile(SOURCE_ROOT / "donor-luoshen.zip") as archive:
-            cls.donor = parse_build(archive.read("build.bin"))
+            cls.donor_build_data = archive.read("build.bin")
+            cls.donor = parse_build(cls.donor_build_data)
 
     def expected_frames(self):
+        if set(self.build["symbols"]) == set(self.donor["symbols"]):
+            return {
+                symbol: len(frames)
+                for symbol, frames in self.donor["symbols"].items()
+            }
         aliases = set(self.build["symbols"]) & set(FACING_ALIAS_TARGETS)
         if not aliases:
             return EXPECTED_FRAMES
@@ -155,6 +162,10 @@ class EvaApprovedRigTest(unittest.TestCase):
             for symbol, frames in self.build["symbols"].items()
         }
         self.assertEqual(actual, expected)
+        if set(self.build["symbols"]) == set(self.donor["symbols"]):
+            for symbol, frames in self.build["symbols"].items():
+                self.assertEqual(frames, self.donor["symbols"][symbol], symbol)
+            return
         for symbol, count in EXPECTED_FRAMES.items():
             frames = self.build["symbols"][symbol]
             self.assertEqual(
@@ -173,6 +184,14 @@ class EvaApprovedRigTest(unittest.TestCase):
             )
 
     def test_every_native_frame_has_explicit_source_provenance(self):
+        if set(self.build["symbols"]) == set(self.donor["symbols"]):
+            name_length = struct.unpack_from("<I", self.donor_build_data, 16)[0]
+            expected = (
+                self.donor_build_data[:16] + struct.pack("<I", 3) + b"eva"
+                + self.donor_build_data[20 + name_length:]
+            )
+            self.assertEqual(self.build_data, expected)
+            return
         manifest = self.manifest()
         self.assertEqual(manifest.get("version"), 1)
         self.assertEqual(manifest.get("build"), "eva")
@@ -210,12 +229,16 @@ class EvaApprovedRigTest(unittest.TestCase):
                 self.assertNotEqual(row.get("mode"), "neutral_repeat", (symbol, row))
 
     def test_build_identity_default_skin_and_animation_bank_stay_stable(self):
-        self.assertEqual(set(self.members), {
-            "anim.bin", "build.bin", "atlas-0.tex", "atlas-1.tex",
-        })
         self.assertEqual(self.build["name"], "eva")
-        self.assertEqual(self.build["atlases"], ["atlas-0.tex", "atlas-1.tex"])
-        self.assertEqual(sha256(self.anim).hexdigest(), ANIM_SHA256)
+        self.assertEqual(
+            set(self.members), {"anim.bin", "build.bin", *self.build["atlases"]}
+        )
+        if set(self.build["symbols"]) == set(self.donor["symbols"]):
+            self.assertEqual(self.build["atlases"], ["atlas-0.tex"])
+            self.assertEqual(sha256(self.anim).hexdigest(), LUOSHEN_ANIM_SHA256)
+        else:
+            self.assertEqual(self.build["atlases"], ["atlas-0.tex", "atlas-1.tex"])
+            self.assertEqual(sha256(self.anim).hexdigest(), ANIM_SHA256)
         source = EVA_NONE.read_text(encoding="utf-8-sig")
         self.assertEqual(source.count('CreatePrefabSkin("eva_none"'), 1)
         self.assertIn('build_name_override = "eva"', source)
@@ -242,6 +265,14 @@ class EvaApprovedRigTest(unittest.TestCase):
                 self.assertLessEqual(start + count, vertex_count, (symbol, frame))
 
     def test_no_visible_baseline_frame_is_silently_erased(self):
+        if set(self.build["symbols"]) == set(self.donor["symbols"]):
+            for symbol, frames in self.donor["symbols"].items():
+                for index, donor_frame in enumerate(frames):
+                    self.assertEqual(
+                        self.build["symbols"][symbol][index][7], donor_frame[7],
+                        f"{symbol}:{index}",
+                    )
+            return
         manifest = self.manifest()
         rows = {
             (symbol, row["frame"]): row
@@ -261,6 +292,11 @@ class EvaApprovedRigTest(unittest.TestCase):
                     )
 
     def test_face_registration_preserves_durations_and_special_face_14(self):
+        if set(self.build["symbols"]) == set(self.donor["symbols"]):
+            self.assertEqual(
+                self.build["symbols"]["face"], self.donor["symbols"]["face"]
+            )
+            return
         for index in range(33):
             actual_frame = self.build["symbols"]["face"][index]
             donor_frame = self.donor["symbols"]["face"][index]

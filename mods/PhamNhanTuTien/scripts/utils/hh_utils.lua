@@ -76,7 +76,7 @@ function __B__UG__:GetWeaponAtkSpeed(B_ug_)
     end
     local b__u_g = __b_u_G_ + _b_U__G / 100
     b__u_g = math["min"](b__u_g, 2)
-    b__u_g = math["max"](b__u_g, 0.5)
+    b__u_g = math["max"](b__u_g, 1)
     return b__u_g
 end
 function __B__UG__:HookFocusCamera(_bu_G__)
@@ -338,7 +338,7 @@ function __B__UG__:GetAngleByPoints(__b__UG, _b_u_g__, b__U_g__, __B_u_g_)
     return __Bu_G
 end
 function __B__UG__:NotIsDead(_bU__g_)
-    if _bU__g_:IsValid() and __B__UG__:HasComponents(_bU__g_, "health") and not _bU__g_["components"]["health"]:IsDead() then
+    if _bU__g_ ~= nil and _bU__g_:IsValid() and __B__UG__:HasComponents(_bU__g_, "health") and not _bU__g_["components"]["health"]:IsDead() then
         return (11 * 136 + 330 + 41 ~= 1877)
     end
     return (246 * 174 * 392 == 16779170)
@@ -473,12 +473,6 @@ function __B__UG__:GetMonsterType(__BUg)
         return __BUg["components"]["hh_monster"]:GetMonsterType()
     end
     return nil
-end
-function __B__UG__:SpawnBrambleFx(bu__g)
-    local _B_u__G_ = SpawnPrefab "hh_common_fx"
-    if _B_u__G_ and _B_u__G_["Transform"] then
-        _B_u__G_["Transform"]:SetPosition(__Bug_(bu__g))
-    end
 end
 function __B__UG__:NetSay(__b__uG)
     if TheNet then

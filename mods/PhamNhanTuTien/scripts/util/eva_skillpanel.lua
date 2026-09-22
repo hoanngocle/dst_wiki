@@ -2,6 +2,7 @@ local Progression = require "util/eva_progression"
 local Panel = {
     NAMESPACE = "EVA_SKILL_PANEL_V1",
     RPC_NAME = "IMMEDIATE",
+    HOTKEY_ORDER = {"life", "harvest", "wings", "daydu", "array"},
     DISPLAY_ORDER = {"life", "harvest", "wings", "daydu", "array"},
     SPELL_INDEX = {life = 1, wings = 2, array = 3, harvest = 4, daydu = 5},
     SKILLS = {
@@ -177,6 +178,28 @@ function Panel.GetWingsActive(player)
         and player._eva_wings_active:value() == true
 end
 
+function Panel.ActivateSkill(player, frontend, skill)
+    if not Panel.CanUsePanel(player, frontend) then return false, "invalid_state" end
+    if not Panel.IsSkillUnlocked(player, skill) then return false, "level_locked" end
+    if skill ~= "wings" and Panel.GetCooldownSeconds(player, skill) > 0 then
+        return false, "cooldown"
+    end
+
+    local index = Panel.SPELL_INDEX[skill]
+    local book = GetBoundBook(player)
+    local spellbook = book ~= nil and book.components ~= nil
+        and book.components.spellbook or nil
+    if index == nil or spellbook == nil or not IsBoundBook(book, player) then
+        return false, "missing_book"
+    end
+    if not spellbook:SelectSpell(index) then return false, "selection_failed" end
+
+    local item = spellbook.items ~= nil and spellbook.items[index] or nil
+    if item == nil or item.execute == nil then return false, "missing_spell" end
+    item.execute(book)
+    return true
+end
+
 function Panel.HandleImmediate(player, skill)
     if skill ~= "life" and skill ~= "wings" then
         return false, "invalid_skill"
@@ -273,6 +296,21 @@ function Panel.Install(deps)
         return Panel.HandleImmediate(player, skill)
     end)
     client_send_immediate = deps.send_rpc
+
+    if deps.add_key_handler ~= nil and deps.keys ~= nil then
+        for index, skill in ipairs(Panel.HOTKEY_ORDER) do
+            local selected_skill = skill
+            local key = deps.keys[index]
+            if key ~= nil then
+                deps.add_key_handler(key, function()
+                    return Panel.ActivateSkill(
+                        deps.get_player ~= nil and deps.get_player() or nil,
+                        deps.get_frontend ~= nil and deps.get_frontend() or nil,
+                        selected_skill)
+                end)
+            end
+        end
+    end
 end
 
 function Panel.CanUseGroundFox(player, picker, position, target, spellbook, frontend)

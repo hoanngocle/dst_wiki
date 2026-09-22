@@ -289,7 +289,8 @@ AddPrefabPostInit("world", function(inst)
 end)
 
 if not TheNet:IsDedicated() then
-    local active_guild_screen = nil
+    local UnifiedOpen = require("ui/ttk_unified_open")
+    local UnifiedRegistry = require("ui/ttk_unified_registry")
     AddClassPostConstruct("widgets/controls", function(self)
         self.inst:ListenForEvent("hh_guild_ui_opendirty", function()
             local owner = self.owner
@@ -297,17 +298,11 @@ if not TheNet:IsDedicated() then
                 if HHGuideLock.IsOpen(owner) or HHSummaryLock.IsOpen(owner) then
                     return
                 end
-                if active_guild_screen == nil or not active_guild_screen.inst:IsValid() then
-                    local HHGuildUI = require("widgets/hh_guild_ui")
-                    active_guild_screen = HHGuildUI(owner, function()
-                        active_guild_screen = nil
-                    end)
-                    TheFrontEnd:PushScreen(active_guild_screen)
-                end
+                UnifiedOpen.Open(owner, "quests")
             else
-                if active_guild_screen ~= nil and active_guild_screen.inst:IsValid() then
-                    TheFrontEnd:PopScreen(active_guild_screen)
-                    active_guild_screen = nil
+                local screen = UnifiedRegistry.Get(owner)
+                if screen ~= nil and screen.active_tab == "quests" then
+                    screen:Close()
                 end
             end
         end, self.owner)

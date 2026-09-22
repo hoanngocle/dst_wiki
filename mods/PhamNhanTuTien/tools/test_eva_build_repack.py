@@ -11,6 +11,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 ARCHIVE = Path(os.environ.get("EVA_ARCHIVE", ROOT / "anim/eva.zip"))
 ANIM_SHA256 = "13969e77f249aff2a55035cd36e9134a31380b367dc4d4b4c2c2f57c41e8de9d"
+LUOSHEN_ANIM_SHA256 = "d0fc41f95ae026d5e6b995ec9a8bfb5c69f7095671c393001545afa76d95c535"
 EVA_NONE_SHA256 = "3d0affa46060d013be8572168983ab817410a1e2b3304f167c99d652b200cd41"
 RIG_MAP = Path(os.environ.get(
     "EVA_RIG_MAP",
@@ -75,6 +76,43 @@ def inspect_build(data):
     return name, atlases, indices, digest.hexdigest(), symbol_count
 
 
+def symbol_hash_order(data):
+    reader = Reader(data)
+    magic = reader.take(4)
+    version = reader.uint()
+    if (magic, version) != (b"BILD", 6):
+        raise ValueError("expected BILD v6")
+    symbol_count, _ = reader.uint(), reader.uint()
+    reader.string()
+    for _ in range(reader.uint()):
+        reader.string()
+    hashes = []
+    for _ in range(symbol_count):
+        symbol_hash, frame_total = reader.uint(), reader.uint()
+        hashes.append(symbol_hash)
+        reader.take(frame_total * 32)
+    vertex_count = reader.uint()
+    reader.take(vertex_count * 24)
+    names = {}
+    for _ in range(reader.uint()):
+        key = reader.uint()
+        names[key] = reader.string()
+    if reader.pos != len(data):
+        raise ValueError("trailing BILD bytes")
+    return hashes, names
+
+
+def binary_search(values, target):
+    low, high = 0, len(values)
+    while low < high:
+        middle = (low + high) // 2
+        if values[middle] < target:
+            low = middle + 1
+        else:
+            high = middle
+    return low < len(values) and values[low] == target
+
+
 def inspect_ktex(data):
     if data[:4] != b"KTEX":
         raise ValueError("invalid KTEX")
@@ -97,24 +135,40 @@ def inspect_ktex(data):
 
 
 class EvaBuildRepackTest(unittest.TestCase):
-    def test_archive_uses_two_native_atlases(self):
+    def test_symbol_table_is_unsigned_hash_sorted_for_engine_binary_search(self):
         with ZipFile(ARCHIVE) as archive:
-            self.assertEqual(set(archive.namelist()), {
-                "anim.bin", "build.bin", "atlas-0.tex", "atlas-1.tex",
-            })
+            hashes, names = symbol_hash_order(archive.read("build.bin"))
+        self.assertEqual(hashes, sorted(hashes))
+        self.assertEqual(set(hashes), set(names))
+        for symbol_hash in names:
+            self.assertTrue(binary_search(hashes, symbol_hash), names[symbol_hash])
+
+    def test_archive_uses_declared_native_atlases(self):
+        with ZipFile(ARCHIVE) as archive:
             name, atlases, indices, digest, symbol_count = inspect_build(
                 archive.read("build.bin")
             )
             self.assertEqual(name, "eva")
-            self.assertIn(symbol_count, {20, 35})
-            self.assertEqual(atlases, ["atlas-0.tex", "atlas-1.tex"])
-            self.assertLessEqual(indices, {0, 1})
-            manifest = json.loads(RIG_MAP.read_text(encoding="utf8"))
-            self.assertEqual(
-                manifest["build_sha256"],
-                hashlib.sha256(archive.read("build.bin")).hexdigest(),
-            )
-            self.assertEqual(hashlib.sha256(archive.read("anim.bin")).hexdigest(), ANIM_SHA256)
+            self.assertIn(symbol_count, {12, 20, 35})
+            expected_members = {"anim.bin", "build.bin", *atlases}
+            self.assertEqual(set(archive.namelist()), expected_members)
+            self.assertLessEqual(indices, set(range(len(atlases))))
+            if symbol_count == 12:
+                self.assertEqual(atlases, ["atlas-0.tex"])
+                self.assertEqual(
+                    hashlib.sha256(archive.read("anim.bin")).hexdigest(),
+                    LUOSHEN_ANIM_SHA256,
+                )
+            else:
+                self.assertEqual(atlases, ["atlas-0.tex", "atlas-1.tex"])
+                manifest = json.loads(RIG_MAP.read_text(encoding="utf8"))
+                self.assertEqual(
+                    manifest["build_sha256"],
+                    hashlib.sha256(archive.read("build.bin")).hexdigest(),
+                )
+                self.assertEqual(
+                    hashlib.sha256(archive.read("anim.bin")).hexdigest(), ANIM_SHA256
+                )
             for atlas in atlases:
                 compression, metadata, payloads = inspect_ktex(archive.read(atlas))
                 self.assertEqual(compression, 2)

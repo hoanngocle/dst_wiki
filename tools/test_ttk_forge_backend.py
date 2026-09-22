@@ -84,6 +84,13 @@ assert(not component:CanUseForge('cleanse'), 'hidden legacy contents must reject
 ''')
 lua.execute('''
 _B__Ug__.IsHHType=function(_,v,t) return type(v)==t end
+-- Load the production validator against this fixture's crafted registry.
+Class=function() return {} end
+package.preload['utils/hh_utils']=function() return _B__Ug__ end
+package.preload['enums/hh_enchant']=function()
+    return {HH_EQUIP_BUFF_LIST=B_U_g,HH_GEM_BUFF_LIST=__b__UG_,HH_SUIT_LIST={}}
+end
+local HHEquip=require('components/hh_equip')
 local slots=test_slots
 slots[4]=nil
 slots[1]=gear
@@ -128,6 +135,8 @@ donor.components.hh_equip.GetEffectsNum=function() return 2 end
 receiver.components.hh_equip.GetEffectsNum=function() return 0 end
 receiver.components.hh_equip.equip_buff_list={}
 receiver.components.hh_equip.equip_buff_limit=6
+receiver.components.hh_equip.inst=receiver
+receiver.components.hh_equip.ValidateEquipBuff=HHEquip.ValidateEquipBuff
 receiver.components.hh_equip.AddEquipBuff=function(self,name,value) table.insert(self.equip_buff_list,{name=name,value=value}) end
 local costs={hh_essence=20,nightmarefuel=20}
 container.Has=function(_,prefab,n) return costs[prefab]>=n end

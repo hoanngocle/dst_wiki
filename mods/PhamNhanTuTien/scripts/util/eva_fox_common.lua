@@ -26,6 +26,7 @@ local TARGET_CANT_TAGS = {
     "INLIMBO", "NOCLICK", "notarget", "noattack", "playerghost",
     "flight", "invisible", "companion", "wall",
 }
+local LUNGE_TARGET_CANT_TAGS = {"INLIMBO", "playerghost"}
 
 function Fox.IsFiniteNumber(value)
     return type(value) == "number"
@@ -134,6 +135,45 @@ function Fox.FindTargetsAt(owner, x, z)
     return targets
 end
 
+local function IsAlive(inst)
+    return inst ~= nil
+        and inst:IsValid()
+        and not inst:IsInLimbo()
+        and inst.components ~= nil
+        and inst.components.health ~= nil
+        and not inst.components.health:IsDead()
+end
+
+local function IsPlayerProtected(target)
+    return target:HasTag("player")
+        and (TheNet == nil or not TheNet:GetPVPEnabled())
+end
+
+local function IsProtectedFollower(owner, target)
+    local follower = target.components.follower
+    if follower == nil or follower.leader == nil then return false end
+    if follower.leader == owner then return true end
+    return (TheNet == nil or not TheNet:GetPVPEnabled())
+        and follower.leader:HasTag("player")
+end
+
+function Fox.IsValidLungeTarget(owner, target)
+    if not IsAlive(owner) or not IsAlive(target) or target == owner then
+        return false
+    end
+    if target.components.combat == nil
+        or target:HasTag("playerghost")
+        or target:HasTag("INLIMBO")
+        or target:HasTag("companion")
+        or IsPlayerProtected(target)
+        or IsProtectedFollower(owner, target) then
+        return false
+    end
+    local combat = owner.components.combat
+    if combat == nil then return false end
+    return combat.IsAlly == nil or not combat:IsAlly(target)
+end
+
 local function PointToSegmentDistanceSq(px, pz, x1, z1, x2, z2)
     local dx, dz = x2 - x1, z2 - z1
     local length_sq = dx * dx + dz * dz
@@ -157,10 +197,10 @@ function Fox.FindTargetsAlongPath(owner, origin_x, origin_z, target_x, target_z)
     local found = TheSim:FindEntities(
         center_x, 0, center_z,
         distance * 0.5 + Fox.LUNGE_PHYSICS_PADDING,
-        TARGET_MUST_TAGS, TARGET_CANT_TAGS)
+        TARGET_MUST_TAGS, LUNGE_TARGET_CANT_TAGS)
     local targets, seen = {}, {}
     for _, target in ipairs(found) do
-        if not seen[target] and Life.IsValidTarget(owner, target, nil) then
+        if not seen[target] and Fox.IsValidLungeTarget(owner, target) then
             seen[target] = true
             local tx, _, tz = target.Transform:GetWorldPosition()
             local radius = target.GetPhysicsRadius ~= nil

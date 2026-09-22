@@ -1,12 +1,12 @@
-# Phàm Nhân Tu Tiên — dữ liệu Wiki
+# Phàm Nhân Tu Tiên runtime wiki
 
-- Danh mục: `/pham-nhan-tu-tien`.
-- Hướng dẫn: `/pham-nhan-tu-tien/huong-dan`.
-- Config: `/pham-nhan-tu-tien/config`.
-- URL `/tu-tien-ky` chuyển hướng 308; giữ nguyên URL ảnh `/tu-tien-ky/icons/`.
+Nguồn chuẩn là snapshot `data/generated/pham-nhan-items.json`, dựng trực tiếp từ `mods/PhamNhanTuTien`; catalog cũ và JSON Solo không được dùng để quyết định item hay công thức.
 
-Chạy `python tools/build_pham_nhan_wiki.py` sau khi cập nhật mod. Công cụ cần Pillow và Lua 5.1 từ gói Lupa cục bộ tại `mods/mod_steam/.fasttravel-test-runtime`.
+```powershell
+& 'C:\Users\NYX\AppData\Local\Programs\Python\Python313\python.exe' tools/build_pham_nhan_items.py
+& 'C:\Users\NYX\AppData\Local\Programs\Python\Python313\python.exe' tools/build_pham_nhan_items.py --check
+```
 
-Công cụ cập nhật danh mục hiện có (giữ nội dung của các task khác), bổ sung các bản ghi đã đối chiếu, đồng bộ skin từ `skins_manifest.json`, giải mã icon, xuất hướng dẫn từ tài liệu mod và đọc `configuration_options` bằng môi trường Lua không có I/O. `app/data/pham-nhan-config.json` lưu hash nguồn để đối chiếu. Dữ liệu này là mặc định trong mod, không đọc cấu hình máy chủ hoặc save người chơi.
+Builder đi từ `modmain.lua`, lưu hash và evidence theo registration. `--check` chỉ so byte, không ghi file. Metadata chỉ được dùng để bổ sung thông tin đã có evidence; không phải nguồn membership. Báo cáo cạnh snapshot liệt kê candidate, exclusion, unresolved và icon chưa có. Builder catalog cũ không cập nhật dữ liệu Phàm Nhân mới.
 
-Các trang dùng dữ liệu tĩnh. Sau khi chạy công cụ cần build/deploy web để công bố dữ liệu mới. Không chạy riêng công cụ cũ `build_tu_tien_ky_web.py` để làm mới toàn bộ Wiki: công cụ đó chỉ chứa danh mục nền, không bao quát các phần được bổ sung bởi những task sau.
+Tình trạng hiện hành: resolver icon không thay atlas element bằng icon tùy ý; item không resolve sprite vẫn được giữ kèm diagnostic. Cần hoàn tất decoder/atlas publication trước khi coi coverage asset là đạt.

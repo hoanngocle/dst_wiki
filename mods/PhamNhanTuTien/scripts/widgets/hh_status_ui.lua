@@ -48,10 +48,14 @@ local function HSVToRGB(h, s, v)
     end
 end
 
-local HHStatusUI = Class(Screen, function(self, owner, on_close)
+local HHStatusUI = Class(Screen, function(self, owner, on_close, options)
     Screen._ctor(self, "HHStatusUI")
+    options = options or {}
     self.owner = owner
     self.on_close = on_close
+    self.embedded = options.embedded == true
+    self.content_mode = options.content_mode or "character"
+    self.select_tab = options.select_tab
 
     self.root = self:AddChild(Widget("root"))
     self.root:SetPosition(0, 0, 0)
@@ -97,8 +101,13 @@ local HHStatusUI = Class(Screen, function(self, owner, on_close)
     self.close_btn.focus_scale = { CLOSE_BUTTON_AAA_SCALE * 1.2, CLOSE_BUTTON_AAA_SCALE * 1.2, 1 }
     self.close_btn.image:SetScale(CLOSE_BUTTON_AAA_SCALE, CLOSE_BUTTON_AAA_SCALE, 1)
     self.close_btn:SetOnClick(function()
-        TheFrontEnd:PopScreen(self)
+        if self.embedded then
+            if options.close ~= nil then options.close() end
+        else
+            TheFrontEnd:PopScreen(self)
+        end
     end)
+    if self.embedded then self.close_btn:Hide() end
 
     -- Basic Info
     self.level_text = self.panel:AddChild(Text(UIFONT, 30))
@@ -182,6 +191,10 @@ local HHStatusUI = Class(Screen, function(self, owner, on_close)
     self.shadow_upgrade_btn.image:SetPosition(SHADOW_UPGRADE_BUTTON_AAA_IMAGE_X, SHADOW_UPGRADE_BUTTON_AAA_IMAGE_Y, 0)
     self.shadow_upgrade_btn.image:SetScale(SHADOW_UPGRADE_BUTTON_AAA_IMAGE_SCALE_X, SHADOW_UPGRADE_BUTTON_AAA_IMAGE_SCALE_Y, 1)
     self.shadow_upgrade_btn:SetOnClick(function()
+        if self.embedded and self.select_tab ~= nil then
+            self.select_tab("army")
+            return
+        end
         if HHGuideLock.IsOpen(self.owner) or HHSummaryLock.IsOpen(self.owner) then
             return
         end
@@ -199,6 +212,10 @@ local HHStatusUI = Class(Screen, function(self, owner, on_close)
     self.portrait_toggle:SetText("Nhiệm vụ")
     self.portrait_toggle:SetTextSize(26)
     self.portrait_toggle:SetOnClick(function()
+        if self.embedded and self.select_tab ~= nil then
+            self.select_tab("quests")
+            return
+        end
         self.showing_quests = not self.showing_quests
         if self.showing_quests then
             self.portrait_picker:Hide()
@@ -245,12 +262,43 @@ local HHStatusUI = Class(Screen, function(self, owner, on_close)
             self:RefreshRankExam()
         end
     end)
+    if self.embedded and self.content_mode == "character" then
+        self.quest_panel:Hide()
+        self.portrait_picker:Show()
+    elseif self.embedded and self.content_mode == "quests" then
+        for _, row in pairs(self.stats) do row:Hide() end
+        self.portrait_picker:Hide()
+        self.portrait_toggle:Hide()
+        self.shadow_upgrade_btn:Hide()
+        self.quest_panel:Show()
+    end
 
     self:Refresh()
     self:RefreshQuest()
     self:RefreshGuildQuest()
     self:RefreshRankExam()
 end)
+
+function HHStatusUI:SetQuestFocus()
+    self.quest_panel:Show()
+    self:RefreshQuest()
+    self:RefreshGuildQuest()
+    self:RefreshRankExam()
+end
+
+function HHStatusUI:ShowPanel()
+    self:Show()
+    self:Refresh()
+    if self.content_mode == "quests" then self:SetQuestFocus("daily") end
+end
+
+function HHStatusUI:HidePanel()
+    self:Hide()
+end
+
+function HHStatusUI:DisposePanel()
+    self:Kill()
+end
 
 function HHStatusUI:CreateStatRow(key, name, desc_format, val1, val2, y)
     if not y then 
@@ -503,6 +551,7 @@ end
 
 function HHStatusUI:OnControl(control, down)
     if HHStatusUI._base.OnControl(self, control, down) then return true end
+    if self.embedded then return false end
     if not down and (control == CONTROL_CANCEL or control == KEY_B) then
         TheFrontEnd:PopScreen(self)
         return true

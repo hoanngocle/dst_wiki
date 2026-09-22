@@ -8,6 +8,28 @@ Thanh máu boss theo phase, thanh máu trên đầu và số sát thương serve
 
 Đã chạy smoke test bằng server DST offline thực: HUD và RPC đăng ký thành công; prefab Phàm Nhân cũ và component Solo tích hợp vẫn nạp; sát thương thường, xuyên giáp và chí mạng thật phát đúng loại gói RPC; mục tiêu nhận proxy thanh máu trên đầu. Chưa kiểm tra hình ảnh, HUD scale hoặc đồng bộ qua mạng với client thật, nên vẫn cần playtest host/client trước khi phát hành.
 
+## Hệ chiến đấu — Mục 2 (2026-09-21)
+
+Đã triển khai cho world mới; không chuyển đổi save cũ. **Achievement chưa được merge**: phần hợp nhất Level/EXP là việc riêng, thành tựu thưởng **Star**, không thưởng EXP. Không dùng các con số chiến đấu dưới đây để suy ra tiến trình EXP đã đổi.
+
+- Sát thương nền `B = sát thương gốc + cộng phẳng còn hợp lệ`. Đòn chính: `B × (1 + (Công Kích + Nghịch Cảnh)/100) × Bạo Kích × Bạo Phát`. Sát thương lan dùng Công Kích và hai hệ số crit/proc, không nhận Nghịch Cảnh. Độc và Xuyên Giáp chỉ dùng `B`, không nhận các bonus này.
+- Bạo Kích mặc định ×2; hiệu quả crit cộng vào hệ số này, ví dụ +150% → ×3,5. Tỷ lệ dùng miền 1–100 và chặn 0–100%; né xảy ra trước, không tiêu lượt quay crit/proc.
+- Bạo Phát là affix vũ khí trong pool đá huyền thoại cực hiếm; mỗi vũ khí chỉ một cấp: I 30% ×1,5; II 20% ×2; III 10% ×3; IV 8% ×5. Độc lập với Bạo Kích, được nhân nhau; không còn bốn proc nội tại cùng kích hoạt.
+- STR: mỗi điểm +0,1% Xuyên Giáp. Gói Xuyên bổ sung `B × min(tổng %, 40)/100`, không cắt một phần từ đòn chính. Bỏ qua giáp vật lý và pool giảm thương người chơi Phàm Nhân; vẫn tôn trọng miễn nhiễm `immuneTrue`, phòng thủ không phải giáp, phòng thủ quái, world rank, chuyển hướng, bất tử và Ngưỡng Sinh Tử. Đòn hụt/không gây mất máu không tạo gói Xuyên.
+- AGI: mỗi điểm +1% né, tổng trần 70%. VIT: mỗi điểm +1% vào pool giảm thương Phàm Nhân, tổng pool tối đa 80%; không còn trừ sát thương phẳng. Pool chỉ giảm sát thương thường, không giảm planar.
+- DST lấy tỷ lệ giáp cao nhất, không nhân mũ với áo. Ví dụ pool Phàm Nhân 80% và lớp giáp DST 80% khiến nhận `20% × 20% = 4%`, tức giảm 96%; đây là hai lớp khác nhau, không phải hai món giáp vanilla.
+- Thanh Long I–IV: +3–5 / 6–10 / 11–15 / 16–20% Công Kích, tối đa một cấp trên vũ khí; IV giữ Trọng Thương. Bảo★Sát +15%, Siêu★Sát +20%, Đá Sức Mạnh +10%; cùng cộng vào pool Công Kích, cho phép khảm lặp theo số lỗ, chưa đặt trần pool này. Đá Sát Thương +20 đã bỏ.
+- Xuyên Giáp I–IV: 3–5 / 6–10 / 11–15 / 16–20%, tối đa một cấp trên vũ khí. Nghịch Cảnh chỉ một trong ba dòng Máu/Đói/Tinh Thần trên một vũ khí; bonus tối đa +50% theo phần tài nguyên đã mất.
+- Siêu★Lan: 20% mỗi viên, tối đa một viên mỗi món và tổng 60%; bán kính 3 quanh mục tiêu chính, hỗ trợ đòn cận chiến/tầm xa. Mỗi mục tiêu phụ chịu giáp riêng; không đánh người chơi/đồng minh/pet và không sinh thêm proc.
+- Hút Máu chỉ tính phần HP thực mất bởi đòn chính thường và sát thương lan: tối đa 15% máu tối đa mỗi lần, tổng 90% trong cửa sổ một giây. Xuyên, Độc, Trọng Thương, Kết Liễu và sát thương gián tiếp không cho hút máu; hiệu ứng giảm/cấm hồi máu áp dụng sau giới hạn.
+- Hạ Độc I–IV: 10/20/30/40% trên vũ khí, tối đa một cấp. Mỗi lần thêm một tầng, tối đa 5, làm mới cả hiệu ứng 10 giây; nhịp 2 giây, mỗi tầng gây 20% sát thương nền lúc đặt tầng. Độc bỏ giáp vật lý nhưng vẫn chịu pool giảm thương Phàm Nhân và miễn nhiễm; không hút máu hoặc sinh proc.
+- Trọng Thương: tối đa 3% HP hiện tại quái thường hoặc 1% boss, tính sau đòn chính và vẫn chịu giáp/giảm thương. Kết Liễu chỉ áp dụng quái thường khi còn ≤15% HP; không kết liễu boss/endgame boss.
+- Giảm Hồi Máu: giảm 90% hồi máu dương trong 5 giây, đòn chính làm mới; không gây sát thương, không cộng tầng. Đóng Băng I–IV có tỷ lệ 5/10/15/20%: quái thường đóng băng 2 giây, boss chỉ chậm 20% trong 2 giây; hồi chiêu riêng trên mục tiêu 5 giây.
+- Liên Kích I–IV: 5–10 / 15–25 / 30–45 / 50–70% tốc đánh, tổng thưởng Phàm Nhân tối đa +100%. Nhanh Nhẹn: 5–25% tốc chạy; pool tốc chạy Phàm Nhân tối đa +50%, các hệ số vanilla vẫn riêng.
+- Đã bỏ custom Phản Kích/Phản Đòn, kể cả Phản Chấn giáp +7; giữ nguyên gai/phản đòn vanilla và nội tại Bất Diệt của giáp. Đã bỏ Lá Chắn tinh thần, Ban Phúc, Hồi Não, sát thương điều kiện cũ (`soakStrike`...), các nhánh độc/đóng băng/giảm hồi máu phản ứng cũ, và ba set Bạch Hổ Thiên Cương, Phi Vân Dật Ảnh, Thánh Quang Tí Hựu. Các mốc cường hóa còn lại không đổi số.
+
+Kiểm chứng và giới hạn được ghi tại `../../.superpowers/sdd/2026-09-21-pham-nhan-combat-pipeline/task-5-report.md`. Cổng provenance vẫn báo lệch hash có sẵn ở nguồn Solo `main/hh_tunning.lua`; không sửa nguồn hay hạ điều kiện kiểm tra để che lỗi. Chưa thể coi toàn bộ Mục 2 đã qua mọi cổng phát hành, và kiểm thử server không thay thế playtest đồ họa/client.
+
 ## Tế Đàn thử luyện boss
 
 - Chế **Tế Đàn** tại Máy Luyện Kim bằng 12 Đá Cắt + 6 Vàng + 2 Thượng Phẩm Linh Thạch; chế **Linh Lung Bảo Sương** bằng 6 Ván Gỗ + 4 Vàng + 1 Thượng Phẩm Linh Thạch. Đặt rương trong bán kính 32 trước khi dâng lễ.

@@ -66,8 +66,7 @@ next-env.d.ts
 **/.codegraph/
 
 # Downloaded source mods, asset work directories, backups and release packages
-/mods/mod_steam/
-/mods/eva-assets-work/
-/mods/solo-assets-work/
-/mods/backups/
-/mods/dist/
+/mods/2937640068
+/mods/3780347550
+/mods/AchievementLevel
+/mods/SoloCombatHUD

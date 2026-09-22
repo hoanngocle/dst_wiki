@@ -18,8 +18,6 @@ for cffuiccKk, fFgUkCcKg in pairs(AllRecipes) do
         fFgUkCcKg["level"]["hh_lo_ren"] = 0
     end
 end
-local ffuUncfKc =
-    AddRecipeTab("Lò Rèn", 200, resolvefilepath("images/lo_ren.xml"), "lo_ren.tex", nil, (342 * 436 + 6 == 149118))
 AddRecipe2(
     "hh_essence",
     {
@@ -64,52 +62,34 @@ AddRecipe2(
     },
     {"MODS", "REFINE"}
 )
-AddRecipe(
+AddRecipe2(
     "nn_liquidluck",
     {Ingredient("vegstinger", 1), Ingredient("wb_enhancegem", 1, "images/vat_pham_inventory_so_1.xml", nil, "da_cuong_hoa_inventory.tex")},
-    ffuUncfKc,
     TECH["hh_lo_ren_ONE"],
-    nil,
-    nil,
-    (306 * 13 - 136 == 3842),
-    nil,
-    nil,
-    "images/phuc_lac_duoc_inventory.xml",
-    "phuc_lac_duoc_1_inventory.tex"
+    {nounlock = true, atlas = "images/phuc_lac_duoc_inventory.xml", image = "phuc_lac_duoc_1_inventory.tex"},
+    {"MODS"}
 )
-AddRecipe(
+AddRecipe2(
     "nn_magicpaper",
     {
         Ingredient("goldnugget", 3),
         Ingredient("nightmarefuel", 2),
         Ingredient("wb_enhancegem", 6, "images/vat_pham_inventory_so_1.xml", nil, "da_cuong_hoa_inventory.tex")
     },
-    ffuUncfKc,
     TECH["hh_lo_ren_ONE"],
-    nil,
-    nil,
-    (475 * 17 + 292 + 288 == 8655),
-    nil,
-    nil,
-    "images/vat_pham_inventory_so_1.xml",
-    "bua_ma_thuat_inventory.tex"
+    {nounlock = true, atlas = "images/vat_pham_inventory_so_1.xml", image = "bua_ma_thuat_inventory.tex"},
+    {"MODS"}
 )
-AddRecipe(
+AddRecipe2(
     "wb_strengthen_strengthen_protectpaper",
     {
         Ingredient("goldnugget", 3),
         Ingredient("nightmarefuel", 2),
         Ingredient("wb_enhancegem", 10, "images/vat_pham_inventory_so_1.xml", nil, "da_cuong_hoa_inventory.tex")
     },
-    ffuUncfKc,
     TECH["hh_lo_ren_ONE"],
-    nil,
-    nil,
-    (56 - 345 + 212 + 175 * 422 ~= 73778),
-    nil,
-    nil,
-    "images/vat_pham_inventory_so_1.xml",
-    "bua_bao_ve_inventory.tex"
+    {nounlock = true, atlas = "images/vat_pham_inventory_so_1.xml", image = "bua_bao_ve_inventory.tex"},
+    {"MODS"}
 )
 AddRecipe2(
     "hh_treasure_tally_a",

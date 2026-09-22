@@ -13,7 +13,6 @@ it("links the standalone navigation in the approved order", () => {
     "Phàm Nhân",
     "Chế tạo Tu Tiên",
     "Cảnh giới Tu Tiên",
-    "Achievement & Level",
     "Solo Leveling",
     "Linh Giới",
   ]);
@@ -24,9 +23,7 @@ it("links the standalone navigation in the approved order", () => {
   expect(screen.getByRole("link", { name: "Cảnh giới Tu Tiên" }).getAttribute("href")).toBe(
     "/tu-tien",
   );
-  expect(screen.getByRole("link", { name: "Achievement & Level" }).getAttribute("href")).toBe(
-    "/achievement-level",
-  );
+  expect(screen.queryByRole("link", { name: "Achievement & Level" })).toBeNull();
   expect(screen.getByRole("link", { name: /vật phẩm/i }).getAttribute("aria-current")).toBe(
     "page",
   );
@@ -41,14 +38,6 @@ it("links and marks the Phàm Nhân tab active", () => {
   const link = screen.getByRole("link", { name: "Phàm Nhân" });
   expect(link.getAttribute("href")).toBe("/pham-nhan-tu-tien");
   expect(link.getAttribute("aria-current")).toBe("page");
-});
-
-it("marks Achievement & Level active", () => {
-  render(<SiteHeader active="achievement-level" />);
-
-  expect(
-    screen.getByRole("link", { name: "Achievement & Level" }).getAttribute("aria-current"),
-  ).toBe("page");
 });
 
 it("links and marks the Solo Leveling tab active", () => {

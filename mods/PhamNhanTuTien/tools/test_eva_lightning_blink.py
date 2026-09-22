@@ -154,7 +154,7 @@ function MakeOwner()
     owner.components.health = {IsDead = function() return false end}
     owner.components.combat = {
         ignorehitrange = "outer",
-        CanTarget = function() return true end,
+        CanTarget = function(_, target) return target._can_target ~= false end,
         IsAlly = function(_, target) return target._ally == true end,
     }
     owner.sg = {
@@ -212,8 +212,19 @@ local second = MakeTarget("second", 9.5, 1.2)
 local off_path = MakeTarget("off_path", 5, 1.6)
 local ally = MakeTarget("ally", 5, 0); ally._ally = true
 local player = MakeTarget("player", 5, 0, tags("hostile", "player"))
-local neutral = MakeTarget("neutral", 5, 0, {})
-find_results = {first, first, second, off_path, ally, player, neutral}
+local companion = MakeTarget("companion", 5, 0, tags("companion"))
+local follower = MakeTarget("follower", 5, 0, {})
+follower.components.follower = {
+    leader = {HasTag = function(_, tag) return tag == "player" end},
+}
+local grounded_bird = MakeTarget("grounded_bird", 5, 0, tags("bird"))
+local flying_bird = MakeTarget("flying_bird", 5, 0, tags("bird", "flight"))
+flying_bird.sg = {HasStateTag = function(_, tag) return tag == "flight" end}
+flying_bird._can_target = false
+find_results = {
+    first, first, second, off_path, ally, player, companion, follower,
+    grounded_bird, flying_bird,
+}
 
 local blink = EvaFoxBlink(owner)
 local ok, reason = blink:CastAt(10, 0)
@@ -242,7 +253,13 @@ assert(find_call.x == 5 and find_call.z == 0 and find_call.radius == 8)
 assert(#first.hits == 1 and #second.hits == 1, "each eligible enemy needs exactly one hit")
 assert(first.hits[1].damage == 600 and first.hits[1].stimuli == "eva_fox_blink")
 assert(first.hits[1].ignorehitrange == true)
-assert(#off_path.hits == 0 and #ally.hits == 0 and #player.hits == 0 and #neutral.hits == 0)
+assert(#grounded_bird.hits == 1, "grounded attackable bird must be hit")
+assert(grounded_bird.hits[1].damage == 600)
+assert(#flying_bird.hits == 1, "flying bird on the path must also be hit")
+assert(flying_bird.hits[1].damage == 600)
+assert(#off_path.hits == 0 and #ally.hits == 0 and #player.hits == 0)
+assert(#companion.hits == 0 and #follower.hits == 0,
+    "companions and player followers must stay protected")
 assert(owner.components.combat.ignorehitrange == "outer", "outer combat guard must be restored")
 '''
         )

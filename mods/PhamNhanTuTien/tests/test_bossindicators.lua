@@ -134,6 +134,16 @@ local client_global = {
     TUNING = {MAX_INDICATOR_RANGE = 30},
     STRINGS = globals.STRINGS,
 }
+-- DST's strict GLOBAL rejects undeclared reads and writes inside Install.
+-- A plain table hides the client startup crash (dedicated servers skip it).
+setmetatable(client_global, {
+    __index = function(_, name)
+        error("variable '" .. name .. "' is not declared", 2)
+    end,
+    __newindex = function(_, name)
+        error("assign to undeclared variable '" .. name .. "'", 2)
+    end,
+})
 local client = {GLOBAL = client_global, AddClassPostConstruct = function(pathname, fn)
     assert(pathname == "screens/playerhud" and type(fn) == "function")
     installed_hook = fn

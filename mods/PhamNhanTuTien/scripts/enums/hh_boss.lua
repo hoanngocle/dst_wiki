@@ -364,7 +364,7 @@ local b__u_g = {
             __bUg__(inst, 1000, inst["physicsradiusoverride"])
 
             inst["AnimState"]:SetBank("boarrior")
-            inst["AnimState"]:SetBuild("lavaarena_boarrior_basic")
+            inst["AnimState"]:SetBuild("ttk_igris_dungeon")
             inst["AnimState"]:PlayAnimation("idle_loop", true)
             inst["Transform"]:SetFourFaced()
 

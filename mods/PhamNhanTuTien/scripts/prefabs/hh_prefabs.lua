@@ -2302,7 +2302,7 @@ local function _bUg()
     return _b__u__g_
 end
 local B__u_G_ = {
-    Asset("ANIM", "anim/nn_well.zip"),
+    Asset("ANIM", "anim/hh_hac_nguyet_ho.zip"),
     Asset("ATLAS", "images/nn_well.xml"),
     Asset("IMAGE", "images/nn_well.tex")
 }

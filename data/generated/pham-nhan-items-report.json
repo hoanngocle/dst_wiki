@@ -1,0 +1,1845 @@
+{
+  "candidates": 199,
+  "conflicts": [
+    {
+      "guide": "book-intro",
+      "reason": "historical book omitted until runtime facts are verified"
+    },
+    {
+      "guide": "book-instructions",
+      "reason": "historical book omitted until runtime facts are verified"
+    },
+    {
+      "guide": "book-effects",
+      "reason": "historical book omitted until runtime facts are verified"
+    },
+    {
+      "guide": "book-gems",
+      "reason": "historical book omitted until runtime facts are verified"
+    },
+    {
+      "guide": "book-wiki",
+      "reason": "historical book omitted until runtime facts are verified"
+    },
+    {
+      "guide": "book-updates",
+      "reason": "historical book omitted until runtime facts are verified"
+    }
+  ],
+  "diagnostics": [
+    {
+      "locator": "AddRecipe2@1964",
+      "path": "scripts/ttk_registration.lua",
+      "reason": "dynamic recipe id"
+    },
+    {
+      "locator": "AddRecipe2@1872",
+      "path": "main/ttk_elemental_swords.lua",
+      "reason": "dynamic recipe id"
+    },
+    {
+      "locator": "AddRecipe2@3549",
+      "path": "main/ttk_garden.lua",
+      "reason": "dynamic recipe id"
+    },
+    {
+      "locator": "AddRecipe2@5579",
+      "path": "main/ttk_buildings.lua",
+      "reason": "dynamic recipe id"
+    },
+    {
+      "locator": "AddRecipe2@10712",
+      "path": "main/ttk_rituals.lua",
+      "reason": "dynamic recipe id"
+    },
+    {
+      "locator": "AddRecipe2@4524",
+      "path": "main/ttk_batch19_misc.lua",
+      "reason": "dynamic recipe id"
+    },
+    {
+      "locator": "AddRecipe2@5554",
+      "path": "main/ttk_batch19_misc.lua",
+      "reason": "dynamic recipe id"
+    },
+    {
+      "locator": "AddRecipe2@2824",
+      "path": "main/ttk_batch19_herbs.lua",
+      "reason": "dynamic recipe id"
+    },
+    {
+      "locator": "AddRecipe2@3723",
+      "path": "main/ttk_batch19_herbs.lua",
+      "reason": "dynamic recipe id"
+    },
+    {
+      "locator": "AddRecipe2@1200",
+      "path": "main/ttk_armor_set.lua",
+      "reason": "dynamic recipe id"
+    },
+    {
+      "locator": "AddRecipe2@8593",
+      "path": "main/ttk_batch19_houses.lua",
+      "reason": "dynamic recipe id"
+    },
+    {
+      "locator": "AddRecipe2@9890",
+      "path": "main/ttk_batch19_houses.lua",
+      "reason": "dynamic recipe id"
+    },
+    {
+      "locator": "AddRecipe2@1716",
+      "path": "main/ttk_garden_expansion.lua",
+      "reason": "dynamic recipe id"
+    }
+  ],
+  "excluded": [
+    {
+      "evidence": [
+        {
+          "kind": "runtime",
+          "locator": "Prefab@14082",
+          "path": "scripts/prefabs/ttk_lucnguyenkiemdong.lua",
+          "sha256": "fa0d97d67feb9a17dda40c704f1a7dc5c131109f721b696d98faaedb456dde84"
+        }
+      ],
+      "prefab": "ttk_lucnguyen_primary_projectile",
+      "reason": "runtime helper or creature"
+    },
+    {
+      "evidence": [
+        {
+          "kind": "runtime",
+          "locator": "Prefab@5869",
+          "path": "scripts/prefabs/ttk_hhlmz.lua",
+          "sha256": "03d43b76bbde120c12ea2a5bd2bdf82c0ea8092782bad89b4ecb123b4046d2ac"
+        }
+      ],
+      "prefab": "ttk_hhlmz_placer",
+      "reason": "runtime helper or creature"
+    },
+    {
+      "evidence": [
+        {
+          "kind": "runtime",
+          "locator": "Prefab@5504",
+          "path": "scripts/prefabs/ttk_tianji.lua",
+          "sha256": "a5ddb2c2c0fd76a7fc62b52ec6880d1fd105c26d8861ca0f1b643547799f984b"
+        }
+      ],
+      "prefab": "ttk_tianji_juanzhou_placer",
+      "reason": "runtime helper or creature"
+    },
+    {
+      "evidence": [
+        {
+          "kind": "runtime",
+          "locator": "Prefab@5062",
+          "path": "scripts/prefabs/ttk_choujiangji.lua",
+          "sha256": "763388ec8c98a6b2144dd42a46f84bf6e2f9170c3ae75cc8c96e8b111339dd76"
+        }
+      ],
+      "prefab": "ttk_choujiangji_placer",
+      "reason": "runtime helper or creature"
+    },
+    {
+      "evidence": [
+        {
+          "kind": "runtime",
+          "locator": "Prefab@3026",
+          "path": "scripts/prefabs/ttk_spirit_workshop.lua",
+          "sha256": "56cdb6e31e3702753cb908beb7d6b561d7ae5e76839d9e1a4150f889ef191377"
+        }
+      ],
+      "prefab": "ttk_spirit_workshop_placer",
+      "reason": "runtime helper or creature"
+    },
+    {
+      "evidence": [
+        {
+          "kind": "runtime",
+          "locator": "Prefab@1474",
+          "path": "scripts/prefabs/ttk_sj_kls.lua",
+          "sha256": "c44aed085970a172522bfe29d75e52c00405e766444dc2531c18fe474f9ee2d6"
+        }
+      ],
+      "prefab": "ttk_sj_kls_placer",
+      "reason": "runtime helper or creature"
+    },
+    {
+      "evidence": [
+        {
+          "kind": "runtime",
+          "locator": "Prefab@4328",
+          "path": "scripts/prefabs/ttk_lbjlt.lua",
+          "sha256": "8f125c734a2ad11e949c738d7b442580793d0db01f565700c61b52a341830fa0"
+        }
+      ],
+      "prefab": "ttk_lbjlt_fx",
+      "reason": "runtime helper or creature"
+    },
+    {
+      "evidence": [
+        {
+          "kind": "runtime",
+          "locator": "Prefab@4362",
+          "path": "scripts/prefabs/ttk_lbjlt.lua",
+          "sha256": "8f125c734a2ad11e949c738d7b442580793d0db01f565700c61b52a341830fa0"
+        }
+      ],
+      "prefab": "ttk_lbjlt_placer",
+      "reason": "runtime helper or creature"
+    },
+    {
+      "evidence": [
+        {
+          "kind": "runtime",
+          "locator": "Prefab@5085",
+          "path": "scripts/prefabs/ttk_huapen.lua",
+          "sha256": "0a580b3a9a57d4c3938b6b9d82a721f11ae4026a7fa380b5f440313d32d1feb0"
+        }
+      ],
+      "prefab": "ttk_huapen_placer",
+      "reason": "runtime helper or creature"
+    },
+    {
+      "evidence": [
+        {
+          "kind": "runtime",
+          "locator": "Prefab@11868",
+          "path": "scripts/prefabs/ttk_luoshen_hua.lua",
+          "sha256": "a0d8e874e961ce428a701ae74f582d75010a060199b05bab07b9c721339213fc"
+        }
+      ],
+      "prefab": "ttk_luoshen_huazhong_placer",
+      "reason": "runtime helper or creature"
+    },
+    {
+      "evidence": [
+        {
+          "kind": "runtime",
+          "locator": "Prefab@3043",
+          "path": "scripts/prefabs/ttk_boss_back_xh.lua",
+          "sha256": "c5b9b5cbdaa8a3f1625158a89387cb4d7cdcc5bc5125500b87149749fb235a02"
+        }
+      ],
+      "prefab": "ttk_boss_back_xh",
+      "reason": "runtime helper or creature"
+    },
+    {
+      "evidence": [
+        {
+          "kind": "runtime",
+          "locator": "Prefab@4522",
+          "path": "scripts/prefabs/ttk_spirit_mines.lua",
+          "sha256": "83f3bcf997643426d5702967ba8359bae4bc9152db7c673dbf504146a2256bef"
+        }
+      ],
+      "prefab": "ttk_rock1_placer",
+      "reason": "runtime helper or creature"
+    },
+    {
+      "evidence": [
+        {
+          "kind": "runtime",
+          "locator": "Prefab@4591",
+          "path": "scripts/prefabs/ttk_spirit_mines.lua",
+          "sha256": "83f3bcf997643426d5702967ba8359bae4bc9152db7c673dbf504146a2256bef"
+        }
+      ],
+      "prefab": "ttk_rock2_placer",
+      "reason": "runtime helper or creature"
+    },
+    {
+      "evidence": [
+        {
+          "kind": "runtime",
+          "locator": "Prefab@4660",
+          "path": "scripts/prefabs/ttk_spirit_mines.lua",
+          "sha256": "83f3bcf997643426d5702967ba8359bae4bc9152db7c673dbf504146a2256bef"
+        }
+      ],
+      "prefab": "ttk_rock3_placer",
+      "reason": "runtime helper or creature"
+    },
+    {
+      "evidence": [
+        {
+          "kind": "runtime",
+          "locator": "Prefab@1275",
+          "path": "scripts/prefabs/ttk_fsct.lua",
+          "sha256": "757c5d1e5204f8ea73e19a2beb3b6b7aeb42bd8747c205b8d77589a8efb461a4"
+        }
+      ],
+      "prefab": "ttk_fsct_placer",
+      "reason": "runtime helper or creature"
+    },
+    {
+      "evidence": [
+        {
+          "kind": "runtime",
+          "locator": "Prefab@27525",
+          "path": "scripts/prefabs/vanhonphien.lua",
+          "sha256": "4262e23559fbc522f3d85a79d763e5fd1892721d28676b31a1b3923ebab1b2fe"
+        }
+      ],
+      "prefab": "vanhonphien_placer",
+      "reason": "runtime helper or creature"
+    },
+    {
+      "evidence": [
+        {
+          "kind": "runtime",
+          "locator": "Prefab@27735",
+          "path": "scripts/prefabs/vanhonphien.lua",
+          "sha256": "4262e23559fbc522f3d85a79d763e5fd1892721d28676b31a1b3923ebab1b2fe"
+        }
+      ],
+      "prefab": "vanhonphien_hit_fx",
+      "reason": "runtime helper or creature"
+    }
+  ],
+  "included": 199,
+  "missingSprites": [
+    "aa_punchStone",
+    "ab_decoderStone",
+    "ac_refreshStone",
+    "ad_cleanStone",
+    "alterguardianhat",
+    "amulet",
+    "armor_lunarplant",
+    "armor_voidcloth",
+    "armordreadstone",
+    "armorruins",
+    "armorskeleton",
+    "baconOmeletteAOE",
+    "baconOmeletteBlessArmor",
+    "baconOmeletteBlessAtk",
+    "baconOmeletteBlessCritical",
+    "baconOmeletteDodge",
+    "baconOmeletteFire",
+    "baconOmeletteKill",
+    "baconOmeletteSpeed",
+    "baconOmeletteTrueDamage",
+    "bearger_fur",
+    "beargerfur_sack",
+    "blueamulet",
+    "bluegem",
+    "boat_item",
+    "boat_rotator_kit",
+    "boatpatch",
+    "bundlewrap",
+    "chestupgrade_stacksize",
+    "critStrikeStone",
+    "deerclops_eyeball",
+    "deerclopseyeball_sentryward_kit",
+    "deluxe_firepit",
+    "dragon_scales",
+    "dreadstonehat",
+    "durableGem",
+    "eightPigGem",
+    "elementBead",
+    "endo_firepit",
+    "eva_scythe",
+    "eyebrellahat",
+    "eyemaskhat",
+    "flowersalad_spice_chili",
+    "followArmor",
+    "followCritical",
+    "followDamage",
+    "frostGuardCrystal",
+    "fxGem",
+    "greenamulet",
+    "greengem",
+    "greenstaff",
+    "heatGuardCrystal",
+    "heat_star",
+    "hh_cat_box",
+    "hh_duck_box",
+    "hh_dungeon_potion",
+    "hh_essence",
+    "hh_hac_nguyet_ho",
+    "hh_lo_ren",
+    "hh_quat_long_vu",
+    "hh_suit_build",
+    "hh_treasure_tally",
+    "ice_star",
+    "is_item",
+    "item_fn",
+    "jellybean",
+    "jellybean_spice_chili",
+    "klaussackkey",
+    "krampus_sack",
+    "lifeinjector",
+    "lightninggoathorn",
+    "lucmachthankiem",
+    "lunarplanthat",
+    "malbatross_beak",
+    "mandrakesoup",
+    "minotaurhorn",
+    "molehat",
+    "moonglass",
+    "moonglassaxe",
+    "multitool_axe_pickaxe",
+    "name",
+    "nhatvuphuonghoa",
+    "nhatvuphuonghoa_buff",
+    "nkGem",
+    "nn_liquidluck",
+    "nn_liquidluck_2",
+    "nn_liquidluck_3",
+    "nn_magicpaper",
+    "opalstaff",
+    "orangeamulet",
+    "orangegem",
+    "orangestaff",
+    "person_only",
+    "phGem",
+    "pickaxe_lunarplant",
+    "polly_rogershat",
+    "powerMettleStone",
+    "purpleamulet",
+    "redgem",
+    "resistDamageGem",
+    "reviver",
+    "rock_avocado_fruit_sprout",
+    "ruinshat",
+    "seafoodgumbo_spice_chili",
+    "shovel_lunarplant",
+    "shroom_skin",
+    "spidereggsack",
+    "spiderhat",
+    "staff_tornado",
+    "strideBead",
+    "thanhiquangtruong",
+    "thanhiquangtruongfx",
+    "thulecite",
+    "townportaltalisman",
+    "treasure_armor",
+    "treasure_atk",
+    "treasure_bj",
+    "treasure_fireGem",
+    "ttk_choujiangji",
+    "ttk_chuongthienbinh",
+    "ttk_fsct",
+    "ttk_hhlmz",
+    "ttk_huapen",
+    "ttk_jitan",
+    "ttk_lbjlt",
+    "ttk_lc_cyh",
+    "ttk_lc_cyh_seed",
+    "ttk_lc_dms",
+    "ttk_lc_dms_seed",
+    "ttk_lc_hsc",
+    "ttk_lc_hsc_seed",
+    "ttk_lc_lmg",
+    "ttk_lc_lmg_seed",
+    "ttk_lc_qfx",
+    "ttk_lc_qfx_seed",
+    "ttk_lc_yhh",
+    "ttk_lc_yhh_seed",
+    "ttk_lingshi1",
+    "ttk_lingshi2",
+    "ttk_llbx",
+    "ttk_loading_screen",
+    "ttk_lucnguyen_sword_",
+    "ttk_lucnguyen_trail_",
+    "ttk_lucnguyenkiemdong",
+    "ttk_luoshen_hua",
+    "ttk_luoshen_huayin",
+    "ttk_luoshen_huazhong",
+    "ttk_luoshen_qingshu",
+    "ttk_luoxiang_pengrou",
+    "ttk_luoxiang_pengrou_buff",
+    "ttk_ngulongdang",
+    "ttk_ngulongdangbody",
+    "ttk_ngulongdanglight",
+    "ttk_npxsz",
+    "ttk_pog_tail",
+    "ttk_sj_kls",
+    "ttk_spider_leg",
+    "ttk_spirit_workshop",
+    "ttk_tianji_juanzhou",
+    "ttk_tianji_lingpai",
+    "ttk_tianji_room",
+    "ttk_tianji_wall",
+    "ttk_tianjiwu",
+    "ttk_tinhlakiem",
+    "ttk_xshj",
+    "ttk_xshj_blueprint",
+    "ttk_yunxiao_ymsz",
+    "ttk_zcmj",
+    "ttt_travelable_classified",
+    "vanhonphien",
+    "vanhonphien_ground",
+    "vanhonphien_soul",
+    "vanhonphien_soulfx",
+    "vanhonphien_soulfx_in",
+    "vanhonphien_vortexfx",
+    "vanhonphien_vortexspawner",
+    "vigorousStone",
+    "voidcloth_scythe",
+    "voidcloth_umbrella",
+    "voidclothhat",
+    "voltgoatjelly",
+    "walrushat",
+    "wb_enhancegem",
+    "wb_strengthen_strengthen_protectpaper",
+    "yellowamulet",
+    "yellowgem",
+    "yellowstaff",
+    "z_fertilizer",
+    "z_fz_weapon",
+    "z_fz_wing",
+    "z_ls_gem",
+    "z_plant",
+    "z_rain",
+    "z_sleep",
+    "z_soil",
+    "z_spl_gem",
+    "z_stone",
+    "z_xl_gem",
+    "z_xm_gem"
+  ],
+  "modules": [
+    {
+      "order": 0,
+      "parent": null,
+      "path": "modmain.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 1,
+      "parent": "modmain.lua",
+      "path": "scripts/ttk_solo_guard.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 2,
+      "parent": "modmain.lua",
+      "path": "main/ttk_weapon_solo.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 3,
+      "parent": "modmain.lua",
+      "path": "main/ttk_stacksize.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 3,
+      "parent": "main/ttk_weapon_solo.lua",
+      "path": "scripts/ttk_weapon_damage.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 4,
+      "parent": "modmain.lua",
+      "path": "main/ttk_qualityoflife.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 5,
+      "parent": "modmain.lua",
+      "path": "main/ttk_smarter_flingomatic.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 6,
+      "parent": "modmain.lua",
+      "path": "scripts/ttk_inventorysort.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 7,
+      "parent": "modmain.lua",
+      "path": "scripts/ttk_bossindicators.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 8,
+      "parent": "modmain.lua",
+      "path": "main/ttk_inventory45.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 8,
+      "parent": "scripts/ttk_bossindicators.lua",
+      "path": "scripts/widgets/ttk_bossindicator.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 9,
+      "parent": "modmain.lua",
+      "path": "main/ttk_inventory45_compat.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 9,
+      "parent": "main/ttk_inventory45.lua",
+      "path": "main/ttk_inventory45_ui.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 10,
+      "parent": "modmain.lua",
+      "path": "scripts/ttk_skins.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 11,
+      "parent": "main/ttk_inventory45_ui.lua",
+      "path": "scripts/ttk_inventory45_layout.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 11,
+      "parent": "modmain.lua",
+      "path": "scripts/ttk_registration.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 11,
+      "parent": "scripts/ttk_skins.lua",
+      "path": "scripts/ttk_skin_data.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 12,
+      "parent": "scripts/ttk_registration.lua",
+      "path": "scripts/ttk_defs.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 12,
+      "parent": "modmain.lua",
+      "path": "scripts/ttk_loot.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 12,
+      "parent": "scripts/ttk_skins.lua",
+      "path": "scripts/ttt_portal_visuals.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 13,
+      "parent": "modmain.lua",
+      "path": "main/lucmachthankiem.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 13,
+      "parent": "scripts/ttk_skins.lua",
+      "path": "scripts/ttk_skin_effects.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 14,
+      "parent": "main/lucmachthankiem.lua",
+      "path": "main/lucmachthankiem_autoattack.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 14,
+      "parent": "modmain.lua",
+      "path": "main/vanhonphien.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 14,
+      "parent": "scripts/ttk_loot.lua",
+      "path": "scripts/ttk_enemy_rules.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 15,
+      "parent": "main/lucmachthankiem.lua",
+      "path": "main/lucmachthankiem_recharge.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 15,
+      "parent": "modmain.lua",
+      "path": "main/thanhiquangtruong.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 16,
+      "parent": "main/lucmachthankiem.lua",
+      "path": "main/lucmachthankiem_enemyselect.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 16,
+      "parent": "modmain.lua",
+      "path": "main/nhatvuphuonghoa.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 16,
+      "parent": "main/thanhiquangtruong.lua",
+      "path": "scripts/thanhiquangtruong_common.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 16,
+      "parent": "main/lucmachthankiem_recharge.lua",
+      "path": "scripts/ttk_tinhlakiem_repair.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 17,
+      "parent": "modmain.lua",
+      "path": "main/ttk_elemental_swords.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 18,
+      "parent": "modmain.lua",
+      "path": "main/ttk_tinhlakiem.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 19,
+      "parent": "modmain.lua",
+      "path": "main/ttk_lucnguyenkiemdong.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 20,
+      "parent": "modmain.lua",
+      "path": "main/ttk_ngulongdang.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 20,
+      "parent": "main/ttk_lucnguyenkiemdong.lua",
+      "path": "scripts/ttk_lucnguyen_combat.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 21,
+      "parent": "modmain.lua",
+      "path": "main/ttk_fsct.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 21,
+      "parent": "scripts/ttk_lucnguyen_combat.lua",
+      "path": "scripts/ttk_lucnguyen_rules.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 22,
+      "parent": "modmain.lua",
+      "path": "main/ttk_garden.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 23,
+      "parent": "modmain.lua",
+      "path": "main/ttk_luoshen_food.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 24,
+      "parent": "modmain.lua",
+      "path": "main/ttk_buildings.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 24,
+      "parent": "main/ttk_luoshen_food.lua",
+      "path": "scripts/ttk_luoshen_fooddefs.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 25,
+      "parent": "modmain.lua",
+      "path": "main/ttk_rituals.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 26,
+      "parent": "modmain.lua",
+      "path": "main/ttk_jitan.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 27,
+      "parent": "modmain.lua",
+      "path": "main/ttk_batch19_misc.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 27,
+      "parent": "main/ttk_jitan.lua",
+      "path": "scripts/ttk_jitan_boss_adapters.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 27,
+      "parent": "main/ttk_rituals.lua",
+      "path": "scripts/vanhonphien_damage.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 28,
+      "parent": "modmain.lua",
+      "path": "main/ttk_batch19_herbs.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 28,
+      "parent": "main/ttk_jitan.lua",
+      "path": "scripts/ttk_jitan_encounter_setup.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 29,
+      "parent": "modmain.lua",
+      "path": "main/ttk_portal.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 29,
+      "parent": "main/ttk_jitan.lua",
+      "path": "scripts/ttk_jitan_bosses.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 29,
+      "parent": "main/ttk_batch19_herbs.lua",
+      "path": "scripts/ttk_seed_fooddefs.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 30,
+      "parent": "modmain.lua",
+      "path": "main/ttk_vinhhangthanhoa.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 30,
+      "parent": "main/ttk_portal.lua",
+      "path": "scripts/screens/ttt_travelscreen.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 31,
+      "parent": "modmain.lua",
+      "path": "main/ttk_chuongthienbinh.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 31,
+      "parent": "main/ttk_jitan.lua",
+      "path": "scripts/ttk_jitan_defs.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 31,
+      "parent": "scripts/ttk_jitan_bosses.lua",
+      "path": "scripts/ttk_jitan_encounter_catalog.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 32,
+      "parent": "modmain.lua",
+      "path": "main/ttk_armor_set.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 32,
+      "parent": "main/ttk_portal.lua",
+      "path": "scripts/ttt_debugutil.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 33,
+      "parent": "modmain.lua",
+      "path": "main/ttk_tianji.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 34,
+      "parent": "modmain.lua",
+      "path": "main/ttk_batch19_houses.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 34,
+      "parent": "main/ttk_tianji.lua",
+      "path": "scripts/ttk_tianjimap.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 35,
+      "parent": "modmain.lua",
+      "path": "main/ttk_choujiangji.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 35,
+      "parent": "main/ttk_tianji.lua",
+      "path": "scripts/ttk_tianjicamera.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 36,
+      "parent": "modmain.lua",
+      "path": "main/ttk_garden_expansion.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 36,
+      "parent": "main/ttk_choujiangji.lua",
+      "path": "scripts/ttk_slot_bosses.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 37,
+      "parent": "modmain.lua",
+      "path": "main/ttk_spirit_mines.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 38,
+      "parent": "modmain.lua",
+      "path": "main/ttk_solo_bootstrap.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 38,
+      "parent": "main/ttk_spirit_mines.lua",
+      "path": "scripts/ttk_mine_defs.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 39,
+      "parent": "modmain.lua",
+      "path": "main/ttk_combat_hud.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 39,
+      "parent": "main/ttk_solo_bootstrap.lua",
+      "path": "main/ttk_solo_source.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 40,
+      "parent": "modmain.lua",
+      "path": "main/ttk_bosses.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 40,
+      "parent": "main/ttk_combat_hud.lua",
+      "path": "scripts/ttk_hud/core.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 40,
+      "parent": "main/ttk_solo_source.lua",
+      "path": "scripts/utils/hh_monster_autostack.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 41,
+      "parent": "main/ttk_solo_source.lua",
+      "path": "main/hh_assets.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 41,
+      "parent": "modmain.lua",
+      "path": "main/ttk_eva.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 41,
+      "parent": "main/ttk_bosses.lua",
+      "path": "scripts/ttk_boss_defs.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 41,
+      "parent": "main/ttk_combat_hud.lua",
+      "path": "scripts/widgets/ttk_hud_overhead.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 42,
+      "parent": "main/ttk_solo_source.lua",
+      "path": "main/hh_config.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 42,
+      "parent": "main/ttk_bosses.lua",
+      "path": "main/ttk_boss_combat.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 42,
+      "parent": "main/ttk_eva.lua",
+      "path": "main/ttk_eva_source.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 42,
+      "parent": "main/ttk_combat_hud.lua",
+      "path": "scripts/ttk_hud/server_damage.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 43,
+      "parent": "main/ttk_solo_source.lua",
+      "path": "main/hh_tunning.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 43,
+      "parent": "main/ttk_bosses.lua",
+      "path": "main/ttk_boss_backpack.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 43,
+      "parent": "main/ttk_boss_combat.lua",
+      "path": "scripts/ttk_boss_collectible_defs.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 43,
+      "parent": "main/ttk_combat_hud.lua",
+      "path": "scripts/ttk_hud/overhead.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 43,
+      "parent": "scripts/ttk_hud/server_damage.lua",
+      "path": "scripts/ttk_hud/resolver.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 43,
+      "parent": "main/ttk_eva_source.lua",
+      "path": "scripts/util/eva_settings.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 44,
+      "parent": "main/ttk_solo_source.lua",
+      "path": "main/hh_string.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 44,
+      "parent": "main/ttk_bosses.lua",
+      "path": "main/ttk_boss_seed.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 44,
+      "parent": "scripts/util/eva_settings.lua",
+      "path": "scripts/speech_eva.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 44,
+      "parent": "scripts/ttk_hud/server_damage.lua",
+      "path": "scripts/ttk_hud/solo_bridge.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 44,
+      "parent": "main/ttk_eva_source.lua",
+      "path": "scripts/util/eva_recipes.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 45,
+      "parent": "main/ttk_solo_source.lua",
+      "path": "main/hh_api.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 45,
+      "parent": "main/ttk_bosses.lua",
+      "path": "main/ttk_boss_food.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 45,
+      "parent": "main/ttk_eva_source.lua",
+      "path": "scripts/util/eva_widget.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 46,
+      "parent": "main/ttk_solo_source.lua",
+      "path": "main/hh_world_rank.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 46,
+      "parent": "main/ttk_eva_source.lua",
+      "path": "scripts/announcestrings.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 46,
+      "parent": "main/ttk_bosses.lua",
+      "path": "scripts/ttk_boss_lifecycle.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 46,
+      "parent": "scripts/util/eva_widget.lua",
+      "path": "scripts/widgets/eva_badge.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 47,
+      "parent": "main/ttk_solo_source.lua",
+      "path": "main/hh_act.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 47,
+      "parent": "main/hh_api.lua",
+      "path": "scripts/enums/hh_shadow_progression_defs.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 47,
+      "parent": "scripts/util/eva_widget.lua",
+      "path": "scripts/util/eva_hud_drag.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 47,
+      "parent": "main/ttk_eva_source.lua",
+      "path": "scripts/util/eva_skins.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 48,
+      "parent": "main/ttk_solo_source.lua",
+      "path": "main/hh_ui.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 48,
+      "parent": "main/ttk_eva_source.lua",
+      "path": "scripts/util/eva_skillpanel.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 49,
+      "parent": "main/ttk_solo_source.lua",
+      "path": "main/hh_rpc.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 49,
+      "parent": "main/hh_ui.lua",
+      "path": "main/ttk_forge_fonts.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 49,
+      "parent": "main/hh_api.lua",
+      "path": "scripts/enums/hh_prefab_list.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 49,
+      "parent": "scripts/util/eva_skillpanel.lua",
+      "path": "scripts/util/eva_progression.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 49,
+      "parent": "main/ttk_eva_source.lua",
+      "path": "scripts/util/eva_skillpanel_states.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 50,
+      "parent": "main/ttk_solo_source.lua",
+      "path": "main/hh_guild_main.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 50,
+      "parent": "main/ttk_eva_source.lua",
+      "path": "scripts/util/eva_hud_layout.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 51,
+      "parent": "main/ttk_solo_source.lua",
+      "path": "main/hh_guild_rpc.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 51,
+      "parent": "main/hh_api.lua",
+      "path": "scripts/combat/hh_combat_context.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 51,
+      "parent": "main/hh_act.lua",
+      "path": "scripts/screens/hh_shadow_popup.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 51,
+      "parent": "main/ttk_eva_source.lua",
+      "path": "scripts/widgets/eva_skillpanel.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 52,
+      "parent": "main/ttk_solo_source.lua",
+      "path": "main/hh_sg.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 52,
+      "parent": "main/hh_ui.lua",
+      "path": "scripts/utils/hh_hac_nguyet_ho_items.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 53,
+      "parent": "main/ttk_solo_source.lua",
+      "path": "main/hh_recipe.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 53,
+      "parent": "main/hh_api.lua",
+      "path": "scripts/combat/hh_combat_math.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 53,
+      "parent": "main/hh_ui.lua",
+      "path": "scripts/ui/ttk_unified_registry.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 54,
+      "parent": "main/ttk_solo_source.lua",
+      "path": "main/hh_dungeon_mobs_sg.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 54,
+      "parent": "main/hh_ui.lua",
+      "path": "scripts/ui/ttk_native_bridge.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 54,
+      "parent": "main/hh_rpc.lua",
+      "path": "scripts/ui/ttk_native_open_ack.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 55,
+      "parent": "main/ttk_solo_source.lua",
+      "path": "main/hh_skill_cost.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 55,
+      "parent": "main/hh_rpc.lua",
+      "path": "scripts/enums/hh_items.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 55,
+      "parent": "main/hh_ui.lua",
+      "path": "scripts/utils/ttk_forge_rules.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 56,
+      "parent": "main/ttk_solo_source.lua",
+      "path": "main/hh_daogam_main.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 56,
+      "parent": "main/hh_rpc.lua",
+      "path": "scripts/enums/hh_hoverer.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 57,
+      "parent": "main/hh_rpc.lua",
+      "path": "scripts/enums/hh_enchant.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 57,
+      "parent": "main/hh_daogam_main.lua",
+      "path": "scripts/utils/hh_daogam_durability.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 57,
+      "parent": "main/ttk_solo_source.lua",
+      "path": "scripts/utils/hh_guide_lock.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 58,
+      "parent": "main/ttk_solo_source.lua",
+      "path": "scripts/utils/hh_summary_lock.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 59,
+      "parent": "main/ttk_solo_source.lua",
+      "path": "scripts/utils/hh_dungeon_authority.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 60,
+      "parent": "main/ttk_solo_source.lua",
+      "path": "scripts/utils/hh_utils.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 61,
+      "parent": "main/ttk_solo_source.lua",
+      "path": "scripts/ui/ttk_unified_open.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 62,
+      "parent": "main/ttk_solo_source.lua",
+      "path": "scripts/guild/hh_rank_defs.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 64,
+      "parent": "scripts/ui/ttk_unified_open.lua",
+      "path": "scripts/screens/ttk_unified_screen.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 64,
+      "parent": "main/ttk_solo_source.lua",
+      "path": "scripts/widgets/hh_skill_wheel.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 65,
+      "parent": "main/ttk_solo_source.lua",
+      "path": "scripts/widgets/hh_mana_ui.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 66,
+      "parent": "main/ttk_solo_source.lua",
+      "path": "scripts/widgets/hh_shadow_count_ui.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 67,
+      "parent": "main/ttk_solo_source.lua",
+      "path": "scripts/widgets/hh_shadow_ui.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 68,
+      "parent": "main/ttk_solo_source.lua",
+      "path": "main/hh_dungeon_shop.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 70,
+      "parent": "scripts/screens/ttk_unified_screen.lua",
+      "path": "scripts/ui/ttk_unified_controller.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 72,
+      "parent": "scripts/widgets/hh_shadow_ui.lua",
+      "path": "scripts/dungeon_shop/hh_dungeon_shop_defs.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 73,
+      "parent": "scripts/screens/ttk_unified_screen.lua",
+      "path": "scripts/ui/ttk_native_input.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 74,
+      "parent": "main/hh_dungeon_shop.lua",
+      "path": "scripts/widgets/hh_dungeon_coin_hud.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 74,
+      "parent": "scripts/screens/ttk_unified_screen.lua",
+      "path": "scripts/widgets/hh_ui/ttk_unified_theme.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 75,
+      "parent": "scripts/screens/ttk_unified_screen.lua",
+      "path": "scripts/widgets/hh_ui/ttk_native_panel.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 76,
+      "parent": "scripts/screens/ttk_unified_screen.lua",
+      "path": "scripts/widgets/hh_status_ui.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 77,
+      "parent": "scripts/screens/ttk_unified_screen.lua",
+      "path": "scripts/widgets/hh_ui/ttk_quest_panel.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 78,
+      "parent": "scripts/screens/ttk_unified_screen.lua",
+      "path": "scripts/screens/hh_shadow_upgrade_screen.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 80,
+      "parent": "scripts/screens/ttk_unified_screen.lua",
+      "path": "scripts/screens/hh_dungeon_shop_screen.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 82,
+      "parent": "scripts/widgets/hh_status_ui.lua",
+      "path": "scripts/quests/hh_daily_quest_defs.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 82,
+      "parent": "scripts/widgets/hh_ui/ttk_quest_panel.lua",
+      "path": "scripts/widgets/hh_guild_ui.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 83,
+      "parent": "scripts/widgets/hh_status_ui.lua",
+      "path": "scripts/guild/hh_guild_quest_defs.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 85,
+      "parent": "scripts/widgets/hh_status_ui.lua",
+      "path": "scripts/guild/hh_rank_exam_defs.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 85,
+      "parent": "scripts/screens/hh_shadow_upgrade_screen.lua",
+      "path": "scripts/shadow_upgrade/hh_shadow_upgrade_layout.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 86,
+      "parent": "scripts/screens/hh_dungeon_shop_screen.lua",
+      "path": "scripts/dungeon_shop/hh_dungeon_shop_layout.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 86,
+      "parent": "scripts/shadow_upgrade/hh_shadow_upgrade_layout.lua",
+      "path": "scripts/shadow_upgrade/hh_shadow_upgrade_manual_layout.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 87,
+      "parent": "scripts/dungeon_shop/hh_dungeon_shop_layout.lua",
+      "path": "scripts/dungeon_shop/hh_dungeon_shop_manual_layout.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 87,
+      "parent": "scripts/screens/hh_dungeon_shop_screen.lua",
+      "path": "scripts/ui/ttk_request_gate.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 89,
+      "parent": "scripts/widgets/hh_status_ui.lua",
+      "path": "scripts/widgets/ttk_eva_portrait_picker.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 91,
+      "parent": "scripts/widgets/hh_guild_ui.lua",
+      "path": "scripts/guild/hh_guild_shop_defs.lua",
+      "reason": null,
+      "status": "loaded"
+    },
+    {
+      "order": 94,
+      "parent": "scripts/widgets/ttk_eva_portrait_picker.lua",
+      "path": "scripts/ttk_eva_portraits.lua",
+      "reason": null,
+      "status": "loaded"
+    }
+  ],
+  "recipes": {
+    "byKind": {
+      "cooking": 2,
+      "crafting": 36,
+      "fusion": 2
+    },
+    "total": 40
+  },
+  "sourceHashes": {
+    "main/hh_act.lua": "200d28ad436374b9862a817c79565b4cf6a702fd40c36af98906e9c681ff8b6b",
+    "main/hh_api.lua": "2ace97ef4727fac788066545f0f16d76b2130498d8c38d304f1b93c1db398b41",
+    "main/hh_assets.lua": "67fbfc004d9e9a8ae154c4103b4d5ea158939867a59a4d59fdb6bc3f0700730f",
+    "main/hh_config.lua": "7369ef6da72c0495a2c6f6f091a9b567f254edf079f2dcbffa0a798bbf05a229",
+    "main/hh_daogam_main.lua": "4909b2fe74276b074cefac49daab05bed1e9c35a4f81d109140b919f6475b7f3",
+    "main/hh_dungeon_mobs_sg.lua": "bc890a8c849d41db5fe510e3aec825affcfa761704be6301b47d1fb088bd36f9",
+    "main/hh_dungeon_shop.lua": "3e9d4371c89383e37be0842be6d6b21ad04042b4eda1a9ade583a3726d128f71",
+    "main/hh_guild_main.lua": "5e453c539d951ae58c89458bab76fdc871cbda6c302f8407278d888c88abced0",
+    "main/hh_guild_rpc.lua": "889b772991720b6dc9ae7e8905098e4495b0ac641a5b9d773b682612d14d4aac",
+    "main/hh_recipe.lua": "265afa505c626440bb40fe46d4a6d99e4a8d0ef7e022b7ffbc752991f27c4cab",
+    "main/hh_rpc.lua": "e10adf281b06c5a27424ec9ad19e50e894cc0d19ae2dbecb250c10d68fb4dd6b",
+    "main/hh_sg.lua": "a16291c9718eb3e76b7b06e506230f4e5ea31a5142b88544c99399b0c1fb7327",
+    "main/hh_skill_cost.lua": "09a6d6a4aec713c20d837c032237dd50b79fefe021cc8ce67ee0b647fb8d7ffa",
+    "main/hh_string.lua": "c38aee5fe502aece929111a86c7aa78da5e314e17a4e9a6b80d29754104b12f8",
+    "main/hh_tunning.lua": "bfd6986f32dd7d68d19d5896e3c742c8ef6200b7e95e1c6888188b8e2dc5ab37",
+    "main/hh_ui.lua": "f969ac3aad1cacaa2754939e1e9b539d8a1ef26f1d0ed418e176b77d5e523097",
+    "main/hh_world_rank.lua": "b8f19020c24bdbe878ce2a024ddc6dec3a3de2a088cd3118d9fb6d5bb30a58ac",
+    "main/lucmachthankiem.lua": "465638cb74e53162bdb50f935b4bc6362dd09711f5e9fd7e8adb15fe30280ef6",
+    "main/lucmachthankiem_autoattack.lua": "67e935b9a6077ddacd48df6c7a03d363cbed7ee0b59adc7392deff4327036cee",
+    "main/lucmachthankiem_enemyselect.lua": "989b3fbae9d19f034cc23040abf053fd30a769b112a4509a2ba9f17b9fcc62f9",
+    "main/lucmachthankiem_recharge.lua": "6bddd3c2d5812dcb95f71612aff23b0b62fd6f5a4f32000c8d45af3fc26c6535",
+    "main/nhatvuphuonghoa.lua": "61abeeb576c2a3666582432722bd952a46c4877450c55539a002f0c3c00ee203",
+    "main/thanhiquangtruong.lua": "5f453e7c2d23d6a6a5023bae0c1a75800eea6a8ca988e4fba368cbe161fc7cf0",
+    "main/ttk_armor_set.lua": "adabb5753c2352679544658ddadd95d4cf29d6d57a9d897cccd7ccddc86cd26c",
+    "main/ttk_batch19_herbs.lua": "131b6c7331e961ec507cd36bd797170daa21b02444a220fbf3a85a6030cc83e6",
+    "main/ttk_batch19_houses.lua": "e3593485f0cd80201112c15affbbe8cbfd060b25017b23d84d20386d007abb18",
+    "main/ttk_batch19_misc.lua": "0454c0fabd455900c9dba3d7e976e99df2c67e073db4ce755dc9ab71d6f7cc57",
+    "main/ttk_boss_backpack.lua": "1ca34752411c97ac945f62f0becd366fd2985b8274ac98122e4ee8525c3e24ce",
+    "main/ttk_boss_combat.lua": "8992bf8a645aae1dcb7be7447e6b545f81cc3747418c29c79deae833521fb994",
+    "main/ttk_boss_food.lua": "598c918869ec23a6ff4046db3798f34b590bd331e27e6e9aa9ccdd6b35c84dac",
+    "main/ttk_boss_seed.lua": "7db7d90a23975e69b69ea11abddd068deae4a2f7990e276eaae75e2095f5d1e3",
+    "main/ttk_bosses.lua": "e342602a943e7b687bde730e635665d81ac33cc83a5af136308823192e621a47",
+    "main/ttk_buildings.lua": "c3872025fb946f4ac57884a2dc0834ae6b28cb13e0455305857f31d37b172ea1",
+    "main/ttk_choujiangji.lua": "fd0fadfb0e62a79824841d3870d3c0305fd51beb298a90e6e3024ea99a966624",
+    "main/ttk_chuongthienbinh.lua": "fc1bc2aa4f6728f161437157605b9a7413f2ad077515e9068b3a632c6efeaf8c",
+    "main/ttk_combat_hud.lua": "c41162e0226e4aebaa687e112f7b476370499abfed3bd65a4bdc3e618fdb4c38",
+    "main/ttk_elemental_swords.lua": "e823a52fa784fa0e7a2208f64ff7187deb360a7f10469e6d842d890bb8e5a335",
+    "main/ttk_eva.lua": "7366598689a121830687351d8a6ecc8cba410e3fd0b4895c5f8a6704c72c5a99",
+    "main/ttk_eva_source.lua": "1b0b802d17b1165bfe04d7868753e3349c60da0b82a5a5e8c31fc94031c64ef3",
+    "main/ttk_forge_fonts.lua": "f9058752dacf32154fd657978931b4abfe74d47f4344857008b0efb8ea24c106",
+    "main/ttk_fsct.lua": "648caed40e487d37f800c66ac8a8be7065182cbce02bcfa1c44c5e91ac9ed11a",
+    "main/ttk_garden.lua": "85d6660c7b1518cb6ca47b320a8db825f1d238279a551f08c1c8e98add465e39",
+    "main/ttk_garden_expansion.lua": "1442d685ed6c88a360fb203ab29564aa1d251dc76515d0a463991613e1ae6592",
+    "main/ttk_inventory45.lua": "1c0473fc6a387e68a392799573d1bb632e0123532b00553e90e8a399310fa852",
+    "main/ttk_inventory45_compat.lua": "feaf1e7c1f29c56b72c606554e526f1836bfb670d1ff4fa280238b714650a2a0",
+    "main/ttk_inventory45_ui.lua": "ecd763a7031dc733bd8693306a4be405be0bf14ed7b3e09ec414fd668148632a",
+    "main/ttk_jitan.lua": "d47eb2b96d2f388da37631e4460b4506671fadfe0f08915e8e9cdf4040548ea0",
+    "main/ttk_lucnguyenkiemdong.lua": "b1b1c43819a441fc7d8c0581a636981d03a38d11dde234bb128bc125866e1861",
+    "main/ttk_luoshen_food.lua": "67335d1644d511807924d72b548902df21a1456f320391659924b8e59f809347",
+    "main/ttk_ngulongdang.lua": "9310e38bf478c1fee16e9e5f90b8f286702b3a33b34fbee2454d029ae2c8a22b",
+    "main/ttk_portal.lua": "322400e0095c8973708511681e05d1d0033b72953a5f4b1aae7d8bf914e112ac",
+    "main/ttk_qualityoflife.lua": "0f83f80cc9094be75c49dec46f36d6409d03475eb9ef47f86ada8a1c49eeaa6c",
+    "main/ttk_rituals.lua": "7d1be092974dc4e94c458492b10ea01f703a7ed968f2fe0b59656d461d08cdf6",
+    "main/ttk_smarter_flingomatic.lua": "45625b7c1eeb02fd6ca94f2931b8c3d91adcd939760c8766363ca74ce5ba783d",
+    "main/ttk_solo_bootstrap.lua": "51606f6e48329b1fc99581984c3aff9bc2136e238f035c0884a7df6251c11277",
+    "main/ttk_solo_source.lua": "b07af708d3e124964716eab0310730134d000b984626b44907cc552054a91d46",
+    "main/ttk_spirit_mines.lua": "e1c7d79dc265b3724cd83a600695214b4dec232f52436efe5304927222376b34",
+    "main/ttk_stacksize.lua": "5db6b1c74702c3f50d0eb2780f5aa6b72e19f1c3bbfd3b40a131b735baf7da09",
+    "main/ttk_tianji.lua": "07d22cc94595f654f195cd2a16a9d05a98a13f9a265557ab9c559601fde5f733",
+    "main/ttk_tinhlakiem.lua": "4681c3cc888d6a9e7c3f28c791dfe2b801452a7cd8a5a0de548a3aacc65289ce",
+    "main/ttk_vinhhangthanhoa.lua": "cbdf10b072ddd7ca3400e270d6905f12617545f47df7b3e89152c289d65c5861",
+    "main/ttk_weapon_solo.lua": "ccafae1335ae32d9c51dc9042922ad21f61b89cd5c440694755aa0e9afcba783",
+    "main/vanhonphien.lua": "81932747cc03057962b80a82b60988b0339cf6867528866bcde0a2fc93b841be",
+    "modmain.lua": "66d2e05366536c3822f6d92c23677c94a4e2719319b7754c3c49d16cb27a7c99",
+    "scripts/announcestrings.lua": "50b62e0d6d7ed2b9ffcabd5c458a8308084052e7caa5726326e42794f7146cdb",
+    "scripts/combat/hh_combat_context.lua": "8374aed3e3b11a0f3f1782e4bd4e0210bcdc69fa490cd4c7837015526e1b16ea",
+    "scripts/combat/hh_combat_math.lua": "7218e027744ad169b9f0d85b5ff5ead17117c7d271dd77afb8e3780872f997aa",
+    "scripts/dungeon_shop/hh_dungeon_shop_defs.lua": "fe7decc291b066d9ce2453f24bcd45f514d07b04463efb254fea185b18a986d8",
+    "scripts/dungeon_shop/hh_dungeon_shop_layout.lua": "e12bde4c7b3f617821e33514eeb03b528ab04429d8763dc775683f7225131c49",
+    "scripts/dungeon_shop/hh_dungeon_shop_manual_layout.lua": "61d24399a6735045a225a8a39691e0f1e475c0d40fea7246bfc9f31cc9e9d2b5",
+    "scripts/enums/hh_enchant.lua": "77bac9b84311edb3ea6a74956a0e34ec792d4bfad901a1798768e6173aca221b",
+    "scripts/enums/hh_hoverer.lua": "836d5b68205840f017e904ea17a57826d630d92f23d2dd5df1eb6bb144c0b064",
+    "scripts/enums/hh_items.lua": "f7dc8e4b0920c2fec9d38fba330282c4a1f94408ffa7d099c22a8ffda9f61990",
+    "scripts/enums/hh_prefab_list.lua": "a928aa8f4671fd6a8a44cc5c0ed25294911fa1935e55b762eee25ea75f9aa2df",
+    "scripts/enums/hh_shadow_progression_defs.lua": "cfe6d099159bedab8f1ede84da88693e2149be6c705f547aeb845e9431aa6c32",
+    "scripts/guild/hh_guild_quest_defs.lua": "fb0fad79ec266e4804fdd7b68f57a8b33ef3950aeb8d8112d5f05642d5eb682d",
+    "scripts/guild/hh_guild_shop_defs.lua": "36236ec933f87cc643394acfc96d6481c1cdcc9d2a2ebb16b03cef1ed7286267",
+    "scripts/guild/hh_rank_defs.lua": "8fa3d2a84e37b141b0dde08a51a06d2fc8aeb3f1e14bcfecd68962eee32ff8c6",
+    "scripts/guild/hh_rank_exam_defs.lua": "c8fbd49e78e073993bbd979b1e25eda241331b910c39b93990076cbf6f3e87e5",
+    "scripts/quests/hh_daily_quest_defs.lua": "1b33707dff8b20021cbc80b6980532200e93c352e4458c8cd32f84ce1ecac815",
+    "scripts/screens/hh_dungeon_shop_screen.lua": "1a5337f6a48084fc082ae850477b57d8098624a5532d8e4a087929214a090c86",
+    "scripts/screens/hh_shadow_popup.lua": "0730dd3e6bd049cc32f74dc93f71a30e4f3e229c2e6e9fad0dd8cdd158316bc2",
+    "scripts/screens/hh_shadow_upgrade_screen.lua": "9337a7296c801d65723105d3dd836c6b9ccfa60586054222c0a6bd29c94d13ce",
+    "scripts/screens/ttk_unified_screen.lua": "cb6d5763dfa352d10470a913dd596c9da90ef71329e95fc65b7e4fabb1971d0b",
+    "scripts/screens/ttt_travelscreen.lua": "088879c4f01288d07b23c13f0e443e1bc9757a376bed15fa57d17f576a6567a2",
+    "scripts/shadow_upgrade/hh_shadow_upgrade_layout.lua": "b7a0aafaed78afb6e02265ac9076362751ebd494bab0afb0a5875962c25658e0",
+    "scripts/shadow_upgrade/hh_shadow_upgrade_manual_layout.lua": "9a0fd3c842470f5ac080934058c36ee424214fed212b198dd6f60898c312f0ed",
+    "scripts/speech_eva.lua": "e99b231b8d52ea01e4b97b88d872be330c4a2e5220aaf8f51fa2df16cf8123e0",
+    "scripts/thanhiquangtruong_common.lua": "8a2746c441af7f9f46d22d7c96a8fc01f0914caeaa2a4965025c16b8025c1ba4",
+    "scripts/ttk_boss_collectible_defs.lua": "6e9d4e014edfa48543c65f2d4983af8065b6be65b7f5b901884e67d30e63c217",
+    "scripts/ttk_boss_defs.lua": "0cb73e4bdeaf7db9d1127676a3c248b38db3e688ab358d992199875f00bab723",
+    "scripts/ttk_boss_lifecycle.lua": "53e96eeffef1c007f44226e270047c5b1cce96310a52dc4f873eed1a1a0dfbbc",
+    "scripts/ttk_bossindicators.lua": "4684def99f1a22c5c03a6639feebc69eaad48a0c51e5ebc89b92165bde3cdf35",
+    "scripts/ttk_defs.lua": "5e7f8fb6967cb9ef4bca5d7c6e5d7e09bab72977195d74b575641af65f2286aa",
+    "scripts/ttk_enemy_rules.lua": "353d72b3aede05803d8471ea4e9f259847a9d073ec8ce420dae5c42a2398116e",
+    "scripts/ttk_eva_portraits.lua": "4625f2b73d194adaf5113a1d44a81349f8c6ffa9e7b1632cce2cc03f16bd6caf",
+    "scripts/ttk_hud/core.lua": "252544737f6440df6a1cfe7fb5c928f9156338d3ecc3d723ba4c2f01bdeeffff",
+    "scripts/ttk_hud/overhead.lua": "1f7266ad4292d5972a4f10b8e431e223e85551fcd4d709d6016a3086b072cfca",
+    "scripts/ttk_hud/resolver.lua": "f4d581dbc106fa7156509c564236586a606a9ce87bdce078ba6d231c70904415",
+    "scripts/ttk_hud/server_damage.lua": "43896c4d41683be155ed12136e57f38c2b2d3a38ad62ba0a758cb5b44014b1e1",
+    "scripts/ttk_hud/solo_bridge.lua": "b716662c29b9d6f2b79bba4064d99cf9c168ce5b6563a8727a717ceabc0bbe8d",
+    "scripts/ttk_inventory45_layout.lua": "7bb407289298c7dd205a6730a3889c9204e4329234527b444d99141ee533345a",
+    "scripts/ttk_inventorysort.lua": "cb08ba5f84360742ad12a87f3c9379f4e6aaa92256acdd73f6f7917e9fbb805b",
+    "scripts/ttk_jitan_boss_adapters.lua": "8fc7eff8a8714cc1672863fa62dd20c50a945e97c8e0a6cd48f25c951aa7bc15",
+    "scripts/ttk_jitan_bosses.lua": "9a8714271f67bd7ee20708160f49eb9d2e2c4ddf2011d9bc692490052fb71177",
+    "scripts/ttk_jitan_defs.lua": "bf9fd4c0ef835fa3a7664d32281c86615e1fb7d155057b214e78536169eee16b",
+    "scripts/ttk_jitan_encounter_catalog.lua": "e07b0b3bd2f194d7418a0f6545bb0c4d7095a2be9d7ba2f507bedbe022e78c3c",
+    "scripts/ttk_jitan_encounter_setup.lua": "d72bfe666860e1f98ebb20271da38e4f925306e157630c9b86d81ddb56756a5d",
+    "scripts/ttk_loot.lua": "a2d471485a21bfeecb4fc4f39a1ad043550ef761e47a5de080d2bd5ad2c9ea16",
+    "scripts/ttk_lucnguyen_combat.lua": "b9a54db344b3bedf4a09de7ba88e5dce6ec47ed7be666315987b101d5c25868f",
+    "scripts/ttk_lucnguyen_rules.lua": "01e713f3c17eb4ae2be454c8a7081bc33992868f182534a37f1ccc496c81cfbe",
+    "scripts/ttk_luoshen_fooddefs.lua": "12f3ba9d200508faabef2bc06906b7307d2531c0ae9262ab58f7f2f73a3625df",
+    "scripts/ttk_mine_defs.lua": "0ea0d3be977ac9bdd839d86f93dbc852fecd83868903a66a642970cf76a56dd3",
+    "scripts/ttk_registration.lua": "bae0348e2e1fec79f3dff0ad6e981ca7e875e3685e2e3ac804ddecd3e819a657",
+    "scripts/ttk_seed_fooddefs.lua": "bcfdce294908aa4da0565243a561f7a65d4db47b2f5a0596a5854fad0273da88",
+    "scripts/ttk_skin_data.lua": "335d53e1a887ed875f8f85036f9d9dc69392149892eb468bd0cd966a4b5aa60e",
+    "scripts/ttk_skin_effects.lua": "a758621d640c9144db9f2ca59ee13904621245e03ce4f9c0e0bb9d7470b829dc",
+    "scripts/ttk_skins.lua": "74754fab02c191dc75c9c76a857c7a108453369c176df00a2c23637d7f7b177f",
+    "scripts/ttk_slot_bosses.lua": "a241c7ac5969eb0904881f2637c71844f1ccea44006c8de5d94ed73e04269192",
+    "scripts/ttk_solo_guard.lua": "2a16bcfc90bda71ead6d2f4874e570ce847a8518b667accc70bfac4dcce06abe",
+    "scripts/ttk_tianjicamera.lua": "83fa94fd614c9837a0d27b05eed9c4c6cb07b1d07a8ea24ab1fb78cb6350cad3",
+    "scripts/ttk_tianjimap.lua": "22bc71695b06abb956be70eef12e5509b7ab8febf311c83b4cf41a2892568707",
+    "scripts/ttk_tinhlakiem_repair.lua": "827aea0d1af02ca4f27f61b47d92f1b5f87cbcbeb556ee18b330992ccc1d140e",
+    "scripts/ttk_weapon_damage.lua": "eae534d0b746c36ca76dea5ef1ccd2f9ea5089429b55a84be58bab95fb1d8707",
+    "scripts/ttt_debugutil.lua": "0e0ec192ead6033e1125f15f2180026822065e887590127716e18b5fad6feaaf",
+    "scripts/ttt_portal_visuals.lua": "fe278720212e1672e3f69fd7a3d125a113c9a67e1ae19eadeea921133635e3cb",
+    "scripts/ui/ttk_native_bridge.lua": "5a4bd9a34b11602e71c256e6c28073eb7f7a55054efbaf2c9e74a8490d26a6da",
+    "scripts/ui/ttk_native_input.lua": "852181d9ed518d8de0ef4299c4ae05337d49d585652577154efe1d417a00317e",
+    "scripts/ui/ttk_native_open_ack.lua": "5ee0f5804401c32e04849e68f81a6a5368cf9204292f7317ce3c92f7586b6f9d",
+    "scripts/ui/ttk_request_gate.lua": "efcd79db2b5043be0b3cf131cd7e32390f2c47e820ee328a41c977ceced73060",
+    "scripts/ui/ttk_unified_controller.lua": "b35f02714ba32f0c6397c34a10ecf46b6e2c1871f17294f17296ceef3d24c837",
+    "scripts/ui/ttk_unified_open.lua": "c604bd6deefb69f3f125023cf1ff3d2c90983e040ed58116a79f986279226a49",
+    "scripts/ui/ttk_unified_registry.lua": "f02cfb8fa8503909b9c18bab8abcf373d27baed4d785fb227b88c8d61eb7699a",
+    "scripts/util/eva_hud_drag.lua": "f895cc30ac5d39d44aeb1ece6ef15fb321a6ac0d6f50cb476e4c43ca6b8460ed",
+    "scripts/util/eva_hud_layout.lua": "50417e8866482885100b3e84c6541c0a28b18e8c3f6f3e4e057badfade361c31",
+    "scripts/util/eva_progression.lua": "b78f59b31ecdafce45ffc79e70f3c04d5bcfb1ea899aa95a06931e6535870e38",
+    "scripts/util/eva_recipes.lua": "da102223427f7964105e523f1b62addd04d24e0de6d012dcfd8b08b61a21d461",
+    "scripts/util/eva_settings.lua": "e7619ef6e7140d6e4258b81ce6c5dae3b85557786ebf563b8765fcc933ac9c12",
+    "scripts/util/eva_skillpanel.lua": "b6395e813aa206ffd8655e7e851121f6f6809324b080e21bbf8dd96f0d7b3cf4",
+    "scripts/util/eva_skillpanel_states.lua": "e4275552a41551da7a45ce3b26e28d7f79755d797ab3c30d1139698a8e962510",
+    "scripts/util/eva_skins.lua": "4aeebd5c80ccd03f4ca6ad05b4a305276b8bbc7c895f2dd6e1304164dfe7b0dd",
+    "scripts/util/eva_widget.lua": "9b4270996a5e941ce75f75f62a3791e58ecde84230c78c80cebfaa5e9a473442",
+    "scripts/utils/hh_daogam_durability.lua": "c940f462a444572d6d89c1b2598905fefc66bb16fc240d73e30041d97da6f7c7",
+    "scripts/utils/hh_dungeon_authority.lua": "fee4618e7a25a692ea3c124bafd127d96ed08cb7af19982e1257c90ae678f358",
+    "scripts/utils/hh_guide_lock.lua": "d8fe4e7cd01ca681ee5622838ca0802d20640c50c67f093f84dc79fea426ec3b",
+    "scripts/utils/hh_hac_nguyet_ho_items.lua": "f6c787141f8d2f6f6db8d921fc0fc5726dd8fbd68e857139488ea65cbe64f1db",
+    "scripts/utils/hh_monster_autostack.lua": "32c95be37ca00c22b1adecc137c631f3d092444e97264e925d85cc919d418aa4",
+    "scripts/utils/hh_summary_lock.lua": "678abdbbf8f8659079950a094180d4082f6fa71883c32704ab3013d7573e6a3b",
+    "scripts/utils/hh_utils.lua": "9c13d224e6fb5915008f6f32d1e0a4eea7153abe0625ee6d32f4b5ea68d587b5",
+    "scripts/utils/ttk_forge_rules.lua": "2a9b64bda53b95a039da8fa1572e8aef30558e27a0b553dcd29d34efa89404f5",
+    "scripts/vanhonphien_damage.lua": "2b8de032b61d9b71d8774587c5c695b8061e10a29b98eafcf9e29ed447ba63cf",
+    "scripts/widgets/eva_badge.lua": "346e34ac37b9c48b4c458c95f8b515140e645b0ed7e29f567f68a7ffca9a4fa0",
+    "scripts/widgets/eva_skillpanel.lua": "af8f08724a6feeb0ce92306870c39b95244fd3bc86811a6e9f70f03cff82f44d",
+    "scripts/widgets/hh_dungeon_coin_hud.lua": "ca4d22ca6b7d7a7e2537e6f0e16dc6a390caaf5b5944e6eaa56ed6d0a3e34f6e",
+    "scripts/widgets/hh_guild_ui.lua": "404748f7196a6d4e7c768c8bcd97430f8a9d9fd7fc49c6dd140ac8bcd612b242",
+    "scripts/widgets/hh_mana_ui.lua": "502b36c68aedfa8c7ffeab32901e9b5e516fa54300436689e169c2e33afe8933",
+    "scripts/widgets/hh_shadow_count_ui.lua": "4ae5b510df36dea8edbcecabbc07905ecbf96dc8996f1bf58a2f7524dfa682e8",
+    "scripts/widgets/hh_shadow_ui.lua": "3ef6377d2036d45ee9c19cab90bf5741a4c701ed740b7184d229c4f3a4f7e21f",
+    "scripts/widgets/hh_skill_wheel.lua": "8c6cfb5d9e40d2bd0a2f47bcc492f65bd0966ceacf9becc3db086e6bb2d199c9",
+    "scripts/widgets/hh_status_ui.lua": "36144c28b60ed092fc8af4ba9044e1605aa1e0e24001521aeeadba42fae2ed04",
+    "scripts/widgets/hh_ui/ttk_native_panel.lua": "ebe9647cd95cc0bb43a459f96fbdcfb61cbf399031350d215017c69f5c59c723",
+    "scripts/widgets/hh_ui/ttk_quest_panel.lua": "222ab55f1a050206074d5608967846e5babf8cba8c172db6bd490a1fde33ed46",
+    "scripts/widgets/hh_ui/ttk_unified_theme.lua": "da1cf28910d16f7fb83c8b657e8bee581a937faef43f2ce12cc85e77c5aef7de",
+    "scripts/widgets/ttk_bossindicator.lua": "764b2f600f627c3022f0d35b0c85c816b005eced6eacb4e8c666eaa49192c691",
+    "scripts/widgets/ttk_eva_portrait_picker.lua": "aa44c201ad03a78bc7a1a407edb61fca9d5a5e47a68c27a61944b0bd9eec1e2b",
+    "scripts/widgets/ttk_hud_overhead.lua": "246500e7d471d9cca95617b38d697aab11f36a90047d2fae892cb8152b2b5f63"
+  },
+  "unresolved": []
+}

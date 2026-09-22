@@ -16,7 +16,7 @@ local PRODUCTS = {
     { id="dp_player_cc_guard", name="Thuốc Kháng Thể", desc="Kháng đóng băng, làm chậm và thiêu đốt.", category="player_potion", prefab="amulet", prefab_id="hh_thuoc_khang_the", price=250, stock=2, effect_id="player_cc_guard", duration=480, icon="hh_thuoc_khang_the", visual=14, ground_anim="idle_khang_the" },
     { id="dp_player_allround", name="Thuốc Toàn Năng", desc="Tăng 8% sát thương, tốc độ và giảm thương.", category="player_potion", prefab="opalpreciousgem", prefab_id="hh_thuoc_toan_nang", price=300, stock=2, effect_id="player_allround", duration=480, icon="hh_thuoc_toan_nang", visual=15, ground_anim="idle_toan_nang" },
 
-    -- Thuốc đệ tử (15)
+    -- Thuốc đệ tử (14)
     { id="dp_shadow_health", name="Hắc Sinh Mệnh", desc="Đệ tử tăng 20% máu tối đa.", category="disciple_potion", prefab="healingsalve", prefab_id="hh_hac_duoc_sinh_menh", price=160, stock=2, effect_id="shadow_health", duration=600, visual=16, ground_anim="idle_hac_duoc_sinh_menh" },
     { id="dp_shadow_damage", name="Hắc Công Kích", desc="Đệ tử tăng 15% ST và 15 ST cơ bản.", category="disciple_potion", prefab="redgem", prefab_id="hh_hac_duoc_cong_kich", price=180, stock=2, effect_id="shadow_damage", duration=600, visual=17, ground_anim="idle_hac_duoc_cong_kich" },
     { id="dp_shadow_guard", name="Hắc Phòng Ngự", desc="Đệ tử giảm 12% ST và 12 ST nhận vào.", category="disciple_potion", prefab="bluegem", prefab_id="hh_hac_duoc_phong_ngu", price=180, stock=2, effect_id="shadow_guard", duration=600, visual=18, ground_anim="idle_hac_duoc_phong_ngu" },

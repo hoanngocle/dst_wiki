@@ -4,6 +4,22 @@ local assets = {
     Asset("ATLAS", "images/inventoryimages/eva_scythe.xml"),
 }
 
+local MAX_USES = 1000
+local repairvalues = require "ttk_tinhlakiem_repair"
+
+local function CanRepair(inst, item, giver, count)
+    return item ~= nil and item ~= inst and repairvalues[item.prefab] ~= nil
+        and (count == nil or count == 1)
+        and inst.components.finiteuses:GetPercent() < 1
+end
+
+local function OnRepair(inst, giver, item)
+    inst.components.finiteuses:Repair(repairvalues[item.prefab])
+    if giver ~= nil and giver.SoundEmitter ~= nil then
+        giver.SoundEmitter:PlaySound("dontstarve/common/nightmareAddFuel")
+    end
+end
+
 local function OnEquip(inst, owner)
     owner.AnimState:OverrideSymbol("swap_object", "swap_eva_scythe", "swap_eva_scythe")
     owner.AnimState:Show("ARM_carry")
@@ -35,6 +51,7 @@ local function fn()
     inst:AddTag("shadow")
     inst:AddTag("sharp")
     inst:AddTag("weapon")
+    inst:AddTag("alltrader")
 
     local swap_data = {sym_build = "swap_eva_scythe"}
     MakeInventoryFloatable(inst, "large", 0.05, {0.8, 0.35, 0.8}, true, -27, swap_data)
@@ -48,12 +65,9 @@ local function fn()
     inst:AddComponent("weapon")
     inst.components.weapon:SetDamage(TUNING.EVA_SCYTHE_DMG)
 
-    if TUNING.EVA_SCYTHE_DURABILITY ~= 9999 then
-        inst:AddComponent("finiteuses")
-        inst.components.finiteuses:SetMaxUses(TUNING.EVA_SCYTHE_DURABILITY)
-        inst.components.finiteuses:SetUses(TUNING.EVA_SCYTHE_DURABILITY)
-        inst.components.finiteuses:SetOnFinished(inst.Remove)
-    end
+    inst:AddComponent("finiteuses")
+    inst.components.finiteuses:SetMaxUses(MAX_USES)
+    inst.components.finiteuses:SetUses(MAX_USES)
 
     inst:AddComponent("inspectable")
     inst:AddComponent("inventoryitem")
@@ -63,6 +77,11 @@ local function fn()
     inst:AddComponent("equippable")
     inst.components.equippable:SetOnEquip(OnEquip)
     inst.components.equippable:SetOnUnequip(OnUnequip)
+
+    inst:AddComponent("trader")
+    inst.components.trader.acceptnontradable = true
+    inst.components.trader:SetAbleToAcceptTest(CanRepair)
+    inst.components.trader.onaccept = OnRepair
 
     MakeHauntableLaunch(inst)
 

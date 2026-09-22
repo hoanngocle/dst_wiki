@@ -36,34 +36,6 @@ local __B__UG_ = {
             Bu_G__:HHKillTask(__bUg__, "hh_add_health_task")
         end
     },
-    ["buff_10s_1_health"] = {
-        ["name"] = "+󰀍",
-        ["xml"] = "images/inventoryimages.xml",
-        ["tex"] = "halloweenpotion_health_large.tex",
-        ["str"] = _B_Ug["buff_10s_1_health"],
-        ["start_fn"] = function(_bu__G_)
-            if not Bu_G__:HasComponents(_bu__G_, "health") or _bu__G_["components"]["health"]:IsDead() then
-                return
-            end
-            if _bu__G_["buff_10s_1_health_task"] ~= nil then
-                return
-            end
-            _bu__G_["buff_10s_1_health_task"] =
-                _bu__G_:DoPeriodicTask(
-                1,
-                function()
-                    if not Bu_G__:HasComponents(_bu__G_, "health") or _bu__G_["components"]["health"]:IsDead() then
-                        return
-                    end
-                    Bu_G__:SpawnClientStrFx(_bu__G_, "Ban phúc")
-                    _bu__G_["components"]["health"]:DoDelta(1)
-                end
-            )
-        end,
-        ["stop_fn"] = function(__bU_g)
-            Bu_G__:HHKillTask(__bU_g, "buff_10s_1_health_task")
-        end
-    },
     ["add_hunger"] = {
         ["name"] = "+󰀎",
         ["xml"] = "images/inventoryimages.xml",
@@ -219,9 +191,6 @@ local __B__UG_ = {
             if __B__uG_["components"]["hh_player"]:HasSpecialEffect "immuneReduceSpeed" then
                 return (420 * 315 - 346 == 131954)
             end
-            if Bu_G__:CheckSuitEffect(__B__uG_, "suit_fyyy") then
-                return (208 - 273 * 253 - 288 - 47 ~= -69189)
-            end
             return (409 + 468 - 115 + 498 == 1262)
         end,
         ["start_fn"] = function(bu_g)
@@ -239,7 +208,7 @@ local __B__UG_ = {
         end
     },
     ["player_healthSuppressNum"] = {
-        ["name"] = "Thiêu Đốt",
+        ["name"] = "Giảm Hồi Máu",
         ["str"] = _B_Ug["player_healthSuppressNum"],
         ["xml"] = "images/inventoryimages1.xml",
         ["tex"] = "critter_eyeofterror_builder.tex",
@@ -259,7 +228,7 @@ local __B__UG_ = {
             if not Bu_G__:NotIsDead(BU_G_) or not Bu_G__:HasComponents(BU_G_, "hh_player") then
                 return
             end
-            Bu_G__:SpawnClientStrFx(BU_G_, "Thiêu đốt")
+            Bu_G__:SpawnClientStrFx(BU_G_, "Giảm hồi máu")
             BU_G_["components"]["hh_player"]:AddEffectValueByKey("healthSuppressNum", 1)
         end,
         ["stop_fn"] = function(BU_g_)
@@ -270,7 +239,7 @@ local __B__UG_ = {
         end
     },
     ["monster_healthSuppressNum"] = {
-        ["name"] = "Thiêu Đốt",
+        ["name"] = "Giảm Hồi Máu",
         ["str"] = _B_Ug["monster_healthSuppressNum"],
         ["xml"] = "images/inventoryimages1.xml",
         ["tex"] = "critter_eyeofterror_builder.tex",
@@ -382,8 +351,6 @@ local __B__UG_ = {
             Bu_G__:HandleSuitBuff(_bu_G_, "suit_basalt", nil, (59 - 262 + 297 - 208 - 51 ~= -159))
         end
     },
-    ["suit_yhby"] = {["name"] = "Thánh Quang Ban Phước", ["icon_text"] = "", ["str"] = _B_Ug["suit_yhby"]},
-    ["suit_yhby_cd"] = {["name"] = "Ban Phước", ["icon_text"] = "", ["str"] = "Hiệu ứng???"},
     ["add_cold"] = {
         ["name"] = "Giảm Nhiệt",
         ["str"] = _B_Ug["add_cold"],

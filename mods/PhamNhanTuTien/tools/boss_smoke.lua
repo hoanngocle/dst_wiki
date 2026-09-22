@@ -109,8 +109,19 @@ local function AssertProgressRoundTrip(x, z)
         end
     end
 
-    Check(progress:GetEffectBonus("trueDamageNum") == 40, "true damage bonus mismatch")
-    Check(progress:GetEffectBonus("reduceAttackedDamage") == 20, "flat defense bonus mismatch")
+    Check(progress:GetEffectBonus("trueDamageNum") == 40, "40% armor-pierce bonus mismatch")
+    Check(progress:GetEffectBonus("reduceAttackedDamage") == 0, "removed flat defense survived")
+    Check(progress:GetEffectBonus("absorbDamage") == 20, "20% reduction pool bonus mismatch")
+    local combat = Check(player.components.hh_player, "hh_player missing for percentage assertion")
+    local target = Check(SpawnPrefab("hound"), "armor-pierce target missing")
+    local function NoProc() return 100 end
+    local _, pierce, metadata = combat:ResolvePrimaryHit(target, 200, nil, NoProc)
+    Check(pierce == metadata.pierce_base * .4, "boss food Xuyen is not percentage of isolated base")
+    combat:AddEffectValueByKey("trueDamageNum", 30)
+    local _, capped, capped_metadata = combat:ResolvePrimaryHit(target, 200, nil, NoProc)
+    Check(capped == capped_metadata.pierce_base * .4, "boss food plus equipment exceeded 40% Xuyen cap")
+    combat:ReduceEffectValueByKey("trueDamageNum", 30)
+    target:Remove()
     Check(player.components.health.maxhealth == base_health + 200, "health max recalculation mismatch")
     Check(player.components.hunger.max == base_hunger + 200, "hunger max recalculation mismatch")
     Check(player.components.sanity.max == base_sanity + 200, "sanity max recalculation mismatch")

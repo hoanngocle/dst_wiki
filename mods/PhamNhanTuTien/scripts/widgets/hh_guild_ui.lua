@@ -7,6 +7,7 @@ local RankDefs = require("guild/hh_rank_defs")
 local ExamDefs = require("guild/hh_rank_exam_defs")
 local QuestDefs = require("guild/hh_guild_quest_defs")
 local ShopDefs = require("guild/hh_guild_shop_defs")
+local RequestGate = require("ui/ttk_request_gate")
 
 local ITEMS_PER_PAGE = 5
 local REQUEST_NONCE = 0
@@ -133,10 +134,14 @@ local function SendAction(action, value)
     end
 end
 
-local HHGuildUI = Class(Screen, function(self, owner, on_close)
+local HHGuildUI = Class(Screen, function(self, owner, on_close, options)
     Screen._ctor(self, "HHGuildUI")
+    options = options or {}
     self.owner = owner
     self.on_close = on_close
+    self.embedded = options.embedded == true
+    self.request_gate = RequestGate()
+    self.server_closed = false
     self.page = 1
     self.max_page = 1
     self.selected_offer_id = nil
@@ -145,7 +150,8 @@ local HHGuildUI = Class(Screen, function(self, owner, on_close)
     self.root:SetScaleMode(SCALEMODE_PROPORTIONAL)
     self.root:SetHAnchor(ANCHOR_MIDDLE)
     self.root:SetVAnchor(ANCHOR_MIDDLE)
-    self.root:SetScale(HUD_ROOT_SCALE, HUD_ROOT_SCALE, 1)
+    local root_scale = self.embedded and 1.05 or HUD_ROOT_SCALE
+    self.root:SetScale(root_scale, root_scale, 1)
 
     self.bg = self.root:AddChild(Image(HUD_ATLAS, HUD_TEXTURE))
     self.bg:SetScale(HUD_SCALE, HUD_SCALE, 1)
@@ -157,9 +163,14 @@ local HHGuildUI = Class(Screen, function(self, owner, on_close)
     self.close_btn = AddTextButton(self.root, 290, 240, 48, 48, 28)
     self.close_btn:SetText("X")
     self.close_btn:SetOnClick(function()
-        SendAction("close")
-        TheFrontEnd:PopScreen(self)
+        self:CloseRemote()
+        if self.embedded then
+            if options.close ~= nil then options.close() end
+        else
+            TheFrontEnd:PopScreen(self)
+        end
     end)
+    if self.embedded then self.close_btn:Hide() end
 
     self.rank_current_text = AddText(self.root, -155, 195, 235, 34, 20, nil, ANCHOR_LEFT)
     self.rank_requirement_text = AddText(self.root, -175, 165, 235, 34, 20, nil, ANCHOR_LEFT)
@@ -175,11 +186,11 @@ local HHGuildUI = Class(Screen, function(self, owner, on_close)
 
     self.exam_start_btn = AddTextButton(self.root, -45, 97, 115, 34, 20)
     self.exam_start_btn:SetText("Chấp Nhận")
-    self.exam_start_btn:SetOnClick(function() SendAction("exam_start") end)
+    self.exam_start_btn:SetOnClick(function() self:RequestAction("exam_start") end)
 
     self.exam_claim_btn = AddTextButton(self.root, 60, 97, 115, 34, 17)
     self.exam_claim_btn:SetText("Xác Nhận Rank")
-    self.exam_claim_btn:SetOnClick(function() SendAction("exam_claim") end)
+    self.exam_claim_btn:SetOnClick(function() self:RequestAction("exam_claim") end)
 
     self.quest_header = self.root:AddChild(Text(TITLEFONT, 40, "NHIỆM VỤ"))
     self.quest_header:SetPosition(-185, 48, 0)
@@ -220,13 +231,13 @@ local HHGuildUI = Class(Screen, function(self, owner, on_close)
     self.quest_primary_btn = AddTextButton(self.root, -220, -193, 185, 35, 19)
     self.quest_primary_btn:SetOnClick(function()
         if self.quest_primary_action ~= nil then
-            SendAction(self.quest_primary_action, self.quest_primary_value)
+            self:RequestAction(self.quest_primary_action, self.quest_primary_value)
         end
     end)
 
     self.quest_abandon_btn = AddTextButton(self.root, -40, -193, 205, 35, 19)
     self.quest_abandon_btn:SetText("Hủy Quest (Thất Bại)")
-    self.quest_abandon_btn:SetOnClick(function() SendAction("quest_abandon") end)
+    self.quest_abandon_btn:SetOnClick(function() self:RequestAction("quest_abandon") end)
 
     self.reward_header = self.root:AddChild(Text(TITLEFONT, 20, "PHẦN THƯỞNG"))
     self.reward_header:SetPosition(220, 148, 0)
@@ -235,8 +246,9 @@ local HHGuildUI = Class(Screen, function(self, owner, on_close)
     self.reward_btn = AddTextButton(self.root, 220, 101, 210, 30, 18)
     self.reward_btn:SetText("Nhận Phần Thưởng")
     self.reward_btn:SetOnClick(function()
-        SendAction("reward_claim")
-        TheFrontEnd:PopScreen(self)
+        if self:RequestAction("reward_claim") and not self.embedded then
+            TheFrontEnd:PopScreen(self)
+        end
     end)
 
  -- self.shop_header = self.root:AddChild(Text(TITLEFONT, 24, "CỬA HÀNG GUILD"))
@@ -297,6 +309,7 @@ local HHGuildUI = Class(Screen, function(self, owner, on_close)
     }
     for _, event_name in ipairs(dirty_events) do
         self.inst:ListenForEvent(event_name, function()
+            self.request_gate:Acknowledge()
             if self.shown then self:Refresh() end
         end, owner)
     end
@@ -311,6 +324,37 @@ local HHGuildUI = Class(Screen, function(self, owner, on_close)
 
     self:Refresh()
 end)
+
+function HHGuildUI:RequestAction(action, value)
+    return self.request_gate:Try(function() SendAction(action, value) end)
+end
+
+function HHGuildUI:SetQuestFocus(mode)
+    local Theme = require("widgets/hh_ui/ttk_unified_theme")
+    self.quest_header:SetColour(unpack(mode == "guild" and Theme.colours.purple_soft or Theme.colours.silver))
+    self.exam_header:SetColour(unpack(mode == "promotion" and Theme.colours.purple_soft or Theme.colours.silver))
+end
+
+function HHGuildUI:CloseRemote()
+    if not self.server_closed then
+        self.server_closed = true
+        SendAction("close")
+    end
+end
+
+function HHGuildUI:ShowPanel()
+    self:Show()
+    SendAction("refresh")
+end
+
+function HHGuildUI:HidePanel()
+    self:Hide()
+end
+
+function HHGuildUI:DisposePanel()
+    self:CloseRemote()
+    self:Kill()
+end
 
 function HHGuildUI:Refresh()
     local rank = NetValue(self.owner, "hh_guild_rank", 1)
@@ -462,7 +506,7 @@ function HHGuildUI:Refresh()
             row.label:SetString(string.format("[Rank %s] %s x%d\n%d Xu | Stock %d",
                 RankDefs.GetName(product.rank), product.name, product.amount or 1, product.price, current_stock))
             row.buy:SetOnClick(function()
-                SendAction("shop_buy", product.id)
+                self:RequestAction("shop_buy", product.id)
             end)
             if rank >= product.rank and current_stock > 0 then
                 row.buy:Show()
@@ -478,6 +522,7 @@ function HHGuildUI:Refresh()
 end
 
 function HHGuildUI:OnDestroy()
+    self.request_gate:Dispose()
     if self.on_close ~= nil then
         local callback = self.on_close
         self.on_close = nil
@@ -488,8 +533,9 @@ end
 
 function HHGuildUI:OnControl(control, down)
     if HHGuildUI._base.OnControl(self, control, down) then return true end
+    if self.embedded then return false end
     if not down and control == CONTROL_CANCEL then
-        SendAction("close")
+        self:CloseRemote()
         TheFrontEnd:PopScreen(self)
         return true
     end

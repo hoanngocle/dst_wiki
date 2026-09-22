@@ -6,12 +6,10 @@ import { DstPanel } from "@/app/components/dst-panel";
 import { SoloLevelingContentCard } from "@/app/components/solo-leveling-content-card";
 import { SoloLevelingQuestRow } from "@/app/components/solo-leveling-quest-row";
 import { SoloLevelingShopCard } from "@/app/components/solo-leveling-shop-card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/app/components/ui/tabs";
 import { filterSoloLeveling, guildQuestDifficulty, visibleSoloLevelingGroups, type SoloLevelingData } from "@/app/lib/solo-leveling";
 
 const PAGE_SIZE = 12;
 const ranks = ["E", "D", "C", "B", "A", "S"];
-const tabClassName = "cursor-pointer rounded-xl px-3 py-2 text-left text-sm font-semibold text-nova-muted transition-colors hover:bg-nova-surface-soft data-[state=active]:bg-nova-accent data-[state=active]:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-nova-accent";
 const pageButtonClassName = "min-h-11 cursor-pointer rounded-xl border border-nova-border bg-nova-surface px-4 text-sm font-semibold focus-visible:outline-2 focus-visible:outline-nova-accent disabled:cursor-default disabled:opacity-40";
 
 function subscribeToTopic(onChange: () => void) {
@@ -121,7 +119,8 @@ function SoloLevelingTopic({ data, activeGroup, linkedEntryId }: {
 export function SoloLevelingBrowser({ data }: { data: SoloLevelingData }) {
   const groups = visibleSoloLevelingGroups(data);
   const hash = useSyncExternalStore(subscribeToTopic, topicFromHash, () => `solo-${groups[0].id}`);
-  const namedTopic = hash.replace(/^solo-/, "");
+  const requestedTopic = hash.replace(/^solo-/, "");
+  const namedTopic = requestedTopic === "items" ? "crafting" : requestedTopic;
   const activeGroup = groups.find((group) => group.id === namedTopic)
     ?? groups.find((group) => group.entries.some((entry) => entry.id === hash))
     ?? groups[0];
@@ -134,13 +133,27 @@ export function SoloLevelingBrowser({ data }: { data: SoloLevelingData }) {
   }
 
   return (
-    <Tabs value={topic} onValueChange={changeTopic} className="mt-8 min-w-0">
-      <TabsList aria-label="Chủ đề Solo Leveling" className="flex-wrap gap-1 rounded-2xl border border-nova-border bg-nova-surface p-2">
-        {groups.map((group) => <TabsTrigger key={group.id} value={group.id} className={tabClassName}>{group.title} <span className="ml-1 text-xs opacity-70">{group.entries.length}</span></TabsTrigger>)}
-      </TabsList>
-      <TabsContent key={topic} value={topic} className="mt-6">
+    <div className="mt-8 grid min-w-0 items-start gap-6 lg:grid-cols-[220px_minmax(0,1fr)]">
+      <aside className="rounded-2xl border border-nova-border bg-nova-surface p-3 lg:sticky lg:top-4">
+        <p className="px-3 py-2 text-xs font-semibold uppercase tracking-widest text-nova-muted">Mục lục Solo Leveling</p>
+        <nav aria-label="Mục lục Solo Leveling" className="flex gap-1 overflow-x-auto lg:flex-col">
+          {groups.map((group) => (
+            <button
+              key={group.id}
+              type="button"
+              aria-pressed={topic === group.id}
+              onClick={() => changeTopic(group.id)}
+              className={`flex min-h-11 shrink-0 cursor-pointer items-center justify-between gap-3 rounded-xl px-3 py-2 text-left text-sm font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-nova-accent ${topic === group.id ? "bg-nova-accent text-white" : "text-nova-muted hover:bg-nova-surface-soft"}`}
+            >
+              <span>{group.title}</span>
+              <span className="text-xs opacity-70">{group.entries.length}</span>
+            </button>
+          ))}
+        </nav>
+      </aside>
+      <div className="min-w-0">
         <SoloLevelingTopic key={linkedEntryId ?? topic} data={data} activeGroup={activeGroup} linkedEntryId={linkedEntryId} />
-      </TabsContent>
-    </Tabs>
+      </div>
+    </div>
   );
 }

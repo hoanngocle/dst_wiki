@@ -7,6 +7,22 @@ local function GetWorldSeconds()
     return math.floor(((TheWorld.state.cycles or 0) + (TheWorld.state.time or 0)) * TUNING.TOTAL_DAY_TIME)
 end
 
+local function GetFiniteNumber(value, fallback)
+    value = tonumber(value)
+    if value == nil or value ~= value or value == math.huge or value == -math.huge then
+        return fallback
+    end
+    return value
+end
+
+local function GetNonNegativeInteger(value, fallback)
+    return math.max(0, math.floor(GetFiniteNumber(value, fallback) or 0))
+end
+
+local function GetLoadedStat(value, cap)
+    return math.min(GetNonNegativeInteger(value, 0), cap or math.huge)
+end
+
 local function SyncToClient(self)
     if self.inst.hh_lv_level then
         self.inst.hh_lv_level:set(self.level)
@@ -304,11 +320,13 @@ function HHLeveling:ApplyStat(stat_name)
     if not player then return end
 
     if stat_name == "str" then
-        player:AddEffectValueByKey("trueDamageNum", T.STR_GAIN)
+        local current = math.min(math.max(self.stat_str, 0) * T.STR_GAIN, 20)
+        local previous = math.min(math.max(self.stat_str - 1, 0) * T.STR_GAIN, 20)
+        player:AddEffectValueByKey("trueDamageNum", current - previous)
     elseif stat_name == "agi" then
         player:AddEffectValueByKey("chanceDodgeAttack", T.AGI_GAIN)
     elseif stat_name == "vit" then
-        player:AddEffectValueByKey("reduceAttackedDamage", T.VIT_GAIN)
+        player:AddEffectValueByKey("absorbDamage", T.VIT_GAIN)
     elseif stat_name == "sen" then
         player:AddEffectValueByKey("criticalHitRate", T.SEN_CRIT_RATE)
         player:AddEffectValueByKey("criticalHitEffect", T.SEN_CRIT_DMG)
@@ -323,9 +341,9 @@ function HHLeveling:ApplyAllStats()
     if not player then return end
 
     -- Re-apply all stats
-    player:AddEffectValueByKey("trueDamageNum", self.stat_str * T.STR_GAIN)
+    player:AddEffectValueByKey("trueDamageNum", math.min(math.max(self.stat_str, 0) * T.STR_GAIN, 20))
     player:AddEffectValueByKey("chanceDodgeAttack", self.stat_agi * T.AGI_GAIN)
-    player:AddEffectValueByKey("reduceAttackedDamage", self.stat_vit * T.VIT_GAIN)
+    player:AddEffectValueByKey("absorbDamage", self.stat_vit * T.VIT_GAIN)
     player:AddEffectValueByKey("criticalHitRate", self.stat_sen * T.SEN_CRIT_RATE)
     player:AddEffectValueByKey("criticalHitEffect", self.stat_sen * T.SEN_CRIT_DMG)
     
@@ -362,14 +380,15 @@ end
 
 function HHLeveling:OnLoad(data)
     if data then
-        self.level = data.level or 1
-        self.exp = data.exp or 0
-        self.ap = data.ap or 0
-        self.stat_str = data.stat_str or 0
-        self.stat_agi = data.stat_agi or 0
-        self.stat_vit = data.stat_vit or 0
-        self.stat_sen = data.stat_sen or 0
-        self.stat_int = data.stat_int or 0
+        local caps = TUNING.HH_LEVELING.STAT_CAPS or {}
+        self.level = math.max(1, GetNonNegativeInteger(data.level, 1))
+        self.exp = GetNonNegativeInteger(data.exp, 0)
+        self.ap = GetNonNegativeInteger(data.ap, 0)
+        self.stat_str = GetLoadedStat(data.stat_str, caps.STR)
+        self.stat_agi = GetLoadedStat(data.stat_agi, caps.AGI)
+        self.stat_vit = GetLoadedStat(data.stat_vit, caps.VIT)
+        self.stat_sen = GetLoadedStat(data.stat_sen, caps.SEN)
+        self.stat_int = GetLoadedStat(data.stat_int, caps.INT)
         if data.exp_seal_remaining ~= nil then
             local remaining = math.max(0, tonumber(data.exp_seal_remaining) or 0)
             self.exp_seal_deadline = remaining > 0 and GetWorldSeconds() + remaining or 0
@@ -396,13 +415,29 @@ function HHLeveling:TransferComponent(newinst)
         return
     end
 
+    target.level = self.level
+    target.exp = self.exp
+    target.ap = self.ap
+    target.stat_str = self.stat_str
+    target.stat_agi = self.stat_agi
+    target.stat_vit = self.stat_vit
+    target.stat_sen = self.stat_sen
+    target.stat_int = self.stat_int
+
     local exp_seal_remaining = self:GetExpSealRemaining()
     target.exp_seal_deadline = exp_seal_remaining > 0
         and GetWorldSeconds() + exp_seal_remaining
         or 0
     target:ScheduleExpSealExpiry()
 
-    newinst:DoTaskInTime(0, function()
+    newinst:DoTaskInTime(0, function(inst)
+        if not inst:IsValid() or inst.components.hh_leveling ~= target then
+            return
+        end
+        target:ApplyAllStats()
+        if inst.components.hh_mana then
+            inst.components.hh_mana:RecalculateMax(false)
+        end
         SyncToClient(target)
     end)
 end

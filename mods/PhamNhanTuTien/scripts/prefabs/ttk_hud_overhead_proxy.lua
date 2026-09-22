@@ -18,9 +18,13 @@ local function fn()
     inst.entity:SetPristine()
 
     if not TheNet:IsDedicated() then
-        TTK_HUD_OVERHEAD_PROXIES = TTK_HUD_OVERHEAD_PROXIES or setmetatable({}, { __mode = "k" })
-        TTK_HUD_OVERHEAD_PROXIES[inst] = true
-        inst:ListenForEvent("onremove", function() TTK_HUD_OVERHEAD_PROXIES[inst] = nil end)
+        local proxies = rawget(_G, "TTK_HUD_OVERHEAD_PROXIES")
+        if proxies == nil then
+            proxies = setmetatable({}, { __mode = "k" })
+            rawset(_G, "TTK_HUD_OVERHEAD_PROXIES", proxies)
+        end
+        proxies[inst] = true
+        inst:ListenForEvent("onremove", function() proxies[inst] = nil end)
     end
 
     if not TheWorld.ismastersim then

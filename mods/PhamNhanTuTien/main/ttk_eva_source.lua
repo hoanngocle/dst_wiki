@@ -1,6 +1,7 @@
 PrefabFiles = {
 	"eva",
     "eva_none",
+    "eva_purple",
     "eva_scythe",
     "eva_life_fx",
     "eva_wings_fx",
@@ -81,61 +82,9 @@ modimport("scripts/util/eva_recipes.lua")
 modimport("scripts/util/eva_widget.lua")
 modimport("scripts/announcestrings.lua")
 
-local EvaLifeInput = require "util/eva_life_input"
-EvaLifeInput.Install({
-    key = GetModConfigData("eva_life_key"),
-    add_rpc = AddModRPCHandler,
-    add_key_handler = function(key, fn)
-        if GLOBAL.TheInput ~= nil
-            and (GLOBAL.TheNet == nil or not GLOBAL.TheNet:IsDedicated()) then
-            GLOBAL.TheInput:AddKeyDownHandler(key, fn)
-        end
-    end,
-    send_rpc = function(namespace, name)
-        SendModRPCToServer(MOD_RPC[namespace][name])
-    end,
-    get_player = function() return GLOBAL.ThePlayer end,
-    get_frontend = function() return GLOBAL.TheFrontEnd end,
-})
-
-local EvaWingsInput = require "util/eva_wings_input"
-EvaWingsInput.Install({
-    key = GetModConfigData("eva_wings_key"),
-    life_key = GetModConfigData("eva_life_key"),
-    add_rpc = AddModRPCHandler,
-    add_key_handler = function(key, fn)
-        if GLOBAL.TheInput ~= nil
-            and (GLOBAL.TheNet == nil or not GLOBAL.TheNet:IsDedicated()) then
-            GLOBAL.TheInput:AddKeyDownHandler(key, fn)
-        end
-    end,
-    send_rpc = function(namespace, name)
-        SendModRPCToServer(MOD_RPC[namespace][name])
-    end,
-    get_player = function() return GLOBAL.ThePlayer end,
-    get_frontend = function() return GLOBAL.TheFrontEnd end,
-})
-
-local EvaScytheArrayInput = require "util/eva_scythe_array_input"
-EvaScytheArrayInput.Install({
-    key = GetModConfigData("eva_scythe_array_key"),
-    life_key = GetModConfigData("eva_life_key"),
-    wings_key = GetModConfigData("eva_wings_key"),
-    add_rpc = AddModRPCHandler,
-    add_key_handler = function(key, fn)
-        if GLOBAL.TheInput ~= nil
-            and (GLOBAL.TheNet == nil or not GLOBAL.TheNet:IsDedicated()) then
-            GLOBAL.TheInput:AddKeyDownHandler(key, fn)
-        end
-    end,
-    send_rpc = function(namespace, name, x, z)
-        SendModRPCToServer(MOD_RPC[namespace][name], x, z)
-    end,
-    get_player = function() return GLOBAL.ThePlayer end,
-    get_frontend = function() return GLOBAL.TheFrontEnd end,
-    get_world_position = function()
-        return GLOBAL.TheInput ~= nil and GLOBAL.TheInput:GetWorldPosition() or nil
-    end,
+require("util/eva_skins").Install({
+    GLOBAL = GLOBAL,
+    require = require,
 })
 
 local EvaSkillPanel = require "util/eva_skillpanel"
@@ -150,9 +99,18 @@ fox_action.mount_valid = false
 
 EvaSkillPanel.Install({
     add_rpc = AddModRPCHandler,
+    keys = {GLOBAL.KEY_1, GLOBAL.KEY_2, GLOBAL.KEY_3, GLOBAL.KEY_4, GLOBAL.KEY_5},
+    add_key_handler = function(key, fn)
+        if GLOBAL.TheInput ~= nil
+            and (GLOBAL.TheNet == nil or not GLOBAL.TheNet:IsDedicated()) then
+            GLOBAL.TheInput:AddKeyDownHandler(key, fn)
+        end
+    end,
     send_rpc = function(namespace, name, skill)
         SendModRPCToServer(MOD_RPC[namespace][name], skill)
     end,
+    get_player = function() return GLOBAL.ThePlayer end,
+    get_frontend = function() return GLOBAL.TheFrontEnd end,
 })
 
 require("util/eva_skillpanel_states").Install({
@@ -176,8 +134,7 @@ AddComponentPostInit("playeractionpicker", function(picker)
 end)
 
 if GLOBAL.TheNet == nil or not GLOBAL.TheNet:IsDedicated() then
-    local EvaFacingAliasRuntime = require "util/eva_facing_alias_runtime"
-    EvaFacingAliasRuntime.InstallSkinsPuppet(AddClassPostConstruct)
+    require("util/eva_hud_layout").Install(AddClassPostConstruct)
 
     local EvaSkillPanelWidget = require "widgets/eva_skillpanel"
     AddClassPostConstruct("widgets/controls", function(controls)

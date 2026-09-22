@@ -80,7 +80,7 @@ function EvaFoxBlink:_DamagePath(targets)
     end
     local ok, problem = pcall(function()
         for _, target in ipairs(targets) do
-            if Common.IsValidTarget(self.inst, target) then
+            if Common.IsValidLungeTarget(self.inst, target) then
                 SkillDamage.Apply(
                     self.inst, target, Common.LUNGE_DAMAGE, "eva_fox_blink")
                 if self.inst:IsValid() then

@@ -62,14 +62,17 @@ function HHMana:Spend(amount, reason)
         return false
     end
     self:DoDelta(-amount)
-    self.regen_delay_end = 0
+    if amount > 0 then
+        self.regen_delay_end = GetTime() + (TUNING.HH_MANA.REGEN_DELAY or 0)
+    end
     self.inst:PushEvent("hh_mana_spent", {amount = amount, reason = reason})
     return true
 end
 
 function HHMana:RegenTick()
     if not self.inst:IsValid() or not self.inst.components.health or self.inst.components.health:IsDead()
-        or self.inst:HasTag("playerghost") or self.current >= self.max then return end
+        or self.inst:HasTag("playerghost") or self.current >= self.max
+        or GetTime() < (self.regen_delay_end or 0) then return end
     local interval = TUNING.HH_MANA.REGEN_INTERVAL or 0.5
     self:DoDelta(self:GetRegenPerSecond() * interval)
 end
@@ -92,6 +95,25 @@ function HHMana:OnLoad(data)
             self.current = math.max(0, math.min(self.max, loaded_current))
             self:Sync()
         end
+    end)
+end
+
+function HHMana:TransferComponent(newinst)
+    local target = newinst and newinst.components and newinst.components.hh_mana
+    if not target then
+        return
+    end
+
+    local current = self.current
+    local remaining_delay = math.max(0, (self.regen_delay_end or 0) - GetTime())
+    newinst:DoTaskInTime(0, function(inst)
+        if not inst:IsValid() or inst.components.hh_mana ~= target then
+            return
+        end
+        target:RecalculateMax(false)
+        target.current = math.max(0, math.min(target.max, current))
+        target.regen_delay_end = GetTime() + remaining_delay
+        target:Sync()
     end)
 end
 

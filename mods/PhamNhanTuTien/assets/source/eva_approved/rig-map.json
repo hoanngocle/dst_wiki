@@ -3,8 +3,8 @@
   "build": "eva",
   "atlas_limit": 2,
   "animation_sha256": "13969e77f249aff2a55035cd36e9134a31380b367dc4d4b4c2c2f57c41e8de9d",
-  "build_sha256": "efbd7cbcbe6deaa7b42a1809bcd2cbbc8764014c7e9f701453b6472a5c37724a",
-  "archive_sha256": "9cae351ef02f17af4112d074fdddcd512b8dfa503f60ca8276545f949c3a14d8",
+  "build_sha256": "7e4219bb08addbfda4bfef691f721ff2741f86e42e2ddf0d970758a772bd5301",
+  "archive_sha256": "2ba94d79903fca84e33e26c8309737835acadfa6f5787aef45ec87144978a5d0",
   "sources": {
     "approved_front": {
       "path": "front-parts.png",

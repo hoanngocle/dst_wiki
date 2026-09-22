@@ -5,6 +5,7 @@ local TextButton = require('widgets/textbutton')
 local Widget = require('widgets/widget')
 local ShadowDefs = require('enums/hh_shadow_progression_defs')
 local ShadowUpgradeLayout = require('shadow_upgrade/hh_shadow_upgrade_layout')
+local Theme = require('widgets/hh_ui/ttk_unified_theme')
 
 local function HSVToRGB(h, s, v)
     local i = math.floor(h * 6)
@@ -74,9 +75,11 @@ local function ApplyTalentRowLayout(row, config)
     row:SetPosition(config.row and config.row.x or 0, config.row and config.row.y or 0, 0)
 end
 
-local HHShadowUpgradeScreen = Class(Screen, function(self, owner)
+local HHShadowUpgradeScreen = Class(Screen, function(self, owner, options)
     Screen._ctor(self, 'HHShadowUpgradeScreen')
+    options = options or {}
     self.owner = owner
+    self.embedded = options.embedded == true
     self.selected_prefab = ShadowDefs.ORDER[1]
     self.disciple_buttons = {}
     self.talent_rows = {}
@@ -93,20 +96,28 @@ local HHShadowUpgradeScreen = Class(Screen, function(self, owner)
     self.root:SetHAnchor(ANCHOR_MIDDLE)
     self.root:SetScaleMode(SCALEMODE_PROPORTIONAL)
     self.scaler = self.root:AddChild(Widget("scaler"))
-    self.scaler:SetScale(0.7) -- Thay số 0.8 bằng tỷ lệ bạn muốn (0.8 = 80% kích thước gốc)
+    self.scaler:SetScale(self.embedded and .88 or .7)
 
-    self.panel = self.scaler:AddChild(Image('images/hud_nang_cap_quan_doan.xml', 'hud_nang_cap_quan_doan.tex'))
+    local panel_atlas = self.embedded and 'images/global.xml' or 'images/hud_nang_cap_quan_doan.xml'
+    local panel_texture = self.embedded and 'square.tex' or 'hud_nang_cap_quan_doan.tex'
+    self.panel = self.scaler:AddChild(Image(panel_atlas, panel_texture))
     self.panel:SetSize(1180, 700)
+    if self.embedded then self.panel:SetTint(unpack(Theme.colours.panel)) end
 
-    self.title = self.scaler:AddChild(Text(TITLEFONT, 48, 'ĐỆ TỬ BÓNG TỐI'))
+    self.title = self.scaler:AddChild(Text(TITLEFONT, 48, 'QUÂN ĐOÀN'))
     ApplyTextLayout(self.title, ShadowUpgradeLayout.hud.title)
 
     self.close_button = self.scaler:AddChild(TextButton())
     ApplyButtonLayout(self.close_button, ShadowUpgradeLayout.hud.close)
     self.close_button:SetText('Đóng')
     self.close_button:SetOnClick(function()
-        TheFrontEnd:PopScreen(self)
+        if self.embedded then
+            if options.close ~= nil then options.close() end
+        else
+            TheFrontEnd:PopScreen(self)
+        end
     end)
+    if self.embedded then self.close_button:Hide() end
 
     for _, prefab in ipairs(ShadowDefs.ORDER) do
         local selected_prefab = prefab
@@ -159,9 +170,9 @@ function HHShadowUpgradeScreen:Refresh()
             or string.format('%s  [%s]', def.name, 'Khóa')
         button:SetText(label)
         if prefab == self.selected_prefab then
-            button:SetTextColour(.35, .85, 1, 1)
+            button:SetTextColour(unpack(Theme.colours.purple_soft))
         else
-            button:SetTextColour(.90, .80, .65, 1)
+            button:SetTextColour(unpack(Theme.colours.silver))
         end
     end
 
@@ -215,14 +226,7 @@ function HHShadowUpgradeScreen:Refresh()
                 end
 
                 local main_star = star_container:AddChild(Text(TITLEFONT, 38, "★"))
-                local initial_hue = (GetTime() * 0.2) % 1
-                local ir, ig, ib = HSVToRGB(initial_hue, 1, 1)
-                main_star:SetColour(ir, ig, ib, 1)
-                main_star.rainbow_task = main_star.inst:DoPeriodicTask(0, function()
-                    local hue = (GetTime() * 0.2) % 1
-                    local r, g, b = HSVToRGB(hue, 1, 1)
-                    main_star:SetColour(r, g, b, 1)
-                end)
+                main_star:SetColour(unpack(Theme.colours.purple_soft))
 
                 table.insert(self.star_widgets, star_container)
                 start_x = start_x + star_w + 10
@@ -261,17 +265,10 @@ function HHShadowUpgradeScreen:Refresh()
         end
 
         if unlocked then
-            row.status_text:SetColour(.95, .85, .15, 1)
+            row.status_text:SetColour(unpack(Theme.colours.purple_soft))
             row.icon:SetTint(1, 1, 1, 1)
             row.desc_text:SetColour(.72, .76, .84, 1)
-            local initial_hue = (GetTime() * 0.2) % 1
-            local ir, ig, ib = HSVToRGB(initial_hue, 1, 1)
-            row.name_text:SetColour(ir, ig, ib, 1)
-            row.name_text.rainbow_task = row.name_text.inst:DoPeriodicTask(0, function()
-                local hue = (GetTime() * 0.2) % 1
-                local r, g, b = HSVToRGB(hue, 1, 1)
-                row.name_text:SetColour(r, g, b, 1)
-            end)
+            row.name_text:SetColour(unpack(Theme.colours.purple_soft))
         else
             row.status_text:SetColour(.55, .58, .65, 1)
             row.icon:SetTint(.40, .40, .45, 1)
@@ -360,10 +357,24 @@ function HHShadowUpgradeScreen:Refresh()
     end
 end
 
+function HHShadowUpgradeScreen:ShowPanel()
+    self:Show()
+    self:Refresh()
+end
+
+function HHShadowUpgradeScreen:HidePanel()
+    self:Hide()
+end
+
+function HHShadowUpgradeScreen:DisposePanel()
+    self:Kill()
+end
+
 function HHShadowUpgradeScreen:OnControl(control, down)
     if HHShadowUpgradeScreen._base.OnControl(self, control, down) then
         return true
     end
+    if self.embedded then return false end
     if not down and control == CONTROL_CANCEL then
         TheFrontEnd:PopScreen(self)
         return true

@@ -5,7 +5,7 @@
 - Nguồn: **Solo Leveling 2.2.7**, tác giả **Saikuno**, Workshop `3780347550`, bản sao trong repository.
 - Toàn bộ 660 file nguồn được giữ nguyên nội dung; entrypoint và metadata/manifest gốc được chuyển vị trí để dùng chung gói Phàm Nhân Tu Tiên. Ánh xạ và SHA-256 nằm trong `SOLO_SOURCE_MANIFEST.json`.
 - Phần mới của Phàm Nhân Tu Tiên: bootstrap hợp nhất, bảo vệ chống bật hai bản Solo, cấu hình chung và kiểm chứng chuyển gói.
-- HUD chiến đấu tích hợp tái sử dụng widget/proxy, định nghĩa boss/phase và atlas từ **Epic Healthbar v102** của Tykvesh; hành vi và atlas thanh trên đầu tham chiếu **Simple Health Bar DST 2.16** của DYC. Runtime được cô lập dưới namespace `ttk_hud_` / `TTK_HUD`; không nhập hook chat, lệnh debug hoặc global `Tykvesh` của hai bản nguồn. Thư mục `mods/SoloCombatHUD` được giữ làm bằng chứng/provenance nhưng không cần bật khi dùng Phàm Nhân.
+- HUD chiến đấu tích hợp tái sử dụng widget/proxy, định nghĩa boss/phase và atlas từ **Epic Healthbar v102** của Tykvesh. Thanh máu trên đầu chuyển thể renderer **Standard** và texture trắng gốc từ **Simple Health Bar DST 2.16** của DYC, Workshop `1207269058`: kích thước, lề, màu `dynamic2`, vị trí `overhead2`, hoạt ảnh và vệt mất máu được giữ; phần nối chỉ đọc proxy đã đồng bộ của Phàm Nhân và ẩn thanh khi Epic HUD cục bộ đang hiển thị cùng mục tiêu. Runtime được cô lập dưới namespace `ttk_hud_` / `TTK_HUD`; không nhập hook chat, lệnh debug, updater, cấu hình, popup sát thương hoặc global của hai bản nguồn. Thư mục `mods/SoloCombatHUD` được giữ làm bằng chứng/provenance nhưng không cần bật khi dùng Phàm Nhân.
 - Các ghi chú “không import Solo” bên dưới mô tả từng đợt chuyển thể trước 0.10.0; từ 0.10.0 Solo là một phần của gói.
 
 ## Bộ giáp Tử Xá và Vân Mạc Thượng Trang

@@ -69,7 +69,7 @@ Khoảng cách dùng đơn vị thế giới DST, không phải pixel màn hình
 - Chuột phải lên vị trí hợp lệ để thi triển. Máy chủ kiểm tra điểm ban đầu và kiểm tra lại sau 0,25 giây; điểm sai địa hình, ngoài tầm hoặc bị luật dịch chuyển chặn không gây sát thương, không mất tài nguyên và không vào hồi chiêu.
 - EVA giữ nguyên ngoại hình trong toàn bộ kỹ năng: không hóa cáo, không ẩn nhân vật và không tạo hoa/lửa ở hai đầu.
 - Dịch chuyển tới con trỏ tối đa 20 đơn vị, đồng thời tạo hiệu ứng lôi thương Trần Bình An ở giữa đường và điểm đến.
-- Mỗi mục tiêu địch hợp lệ trên đường đi chịu đúng một lần **600 sát thương cơ bản**, qua hệ thống sát thương Phàm Nhân. Bề rộng đường đánh là 1 cộng bán kính vật lý của mục tiêu; đồng minh, pet được bảo vệ và người chơi khi tắt PvP không bị đánh.
+- Mỗi sinh vật còn sống có thành phần chiến đấu trên đường đi chịu đúng một lần **600 sát thương cơ bản**, qua hệ thống sát thương Phàm Nhân; không cần đang thù địch và chim đang bay vẫn có thể trúng. Bề rộng đường đánh là 1 cộng bán kính vật lý của mục tiêu; EVA, đồng minh, companion/pet được bảo vệ và người chơi khi tắt PvP không bị đánh.
 - Hồi chiêu **15 giây** chỉ bắt đầu sau khi máy chủ dịch chuyển thành công. Hồ Ảnh vẫn không tốn Hồn Lực.
 
 ### Sinh Chi Hoa
@@ -228,7 +228,7 @@ Nhện có thể tấn công và chết nhanh. Tạo từng con trong world test
 5. **Cánh:** bật trừ đúng 100, đứng chờ không mất thêm do cánh. Ở cấp cao có thể thấy Hồn Lực tăng do tự hồi. Đi trên biển, quay về đất, tắt; thử tắt ngoài biển phải bị chặn. Kiểm tra sau reconnect.
 6. **Dạ Du:** trừ 5, dấu tồn tại 5 giây, dùng đòn khác so sánh sát thương trước/trong/sau dấu; không đòi sát thương ngay lúc phóng.
 7. **Trảm Linh:** trừ 100, thấy đủ 5 lưỡi hái, đòn giữa và các nhịp sau; hết trận không sót thực thể/khống chế; hồi 60 giây.
-8. **Hồ Ảnh:** chuột phải điểm hợp lệ trong tầm; sau 0,25 giây EVA giữ nguyên hình và dịch chuyển, có lôi quang giữa đường/điểm đến, không có hoa/lửa. Xếp nhiều quái dọc đường để xác nhận mỗi con chỉ nhận một lần sát thương cơ bản 600. Thử điểm xa quá tầm, điểm bị chặn, sát bờ biển, PvP/đồng minh, khi bật cánh và sau khi thi triển liên tục; lần lỗi không được vào hồi chiêu.
+8. **Hồ Ảnh:** chuột phải điểm hợp lệ trong tầm; sau 0,25 giây EVA giữ nguyên hình và dịch chuyển, có lôi quang giữa đường/điểm đến, không có hoa/lửa. Xếp nhiều sinh vật dọc đường, gồm quái thù địch, chim trung lập dưới đất và chim đang bay, để xác nhận mỗi con chỉ nhận một lần sát thương cơ bản 600. Thử điểm xa quá tầm, điểm bị chặn, sát bờ biển, PvP/đồng minh/pet, khi bật cánh và sau khi thi triển liên tục; lần lỗi không được vào hồi chiêu.
 9. **Kiếm khí:** dùng lưỡi hái rồi một vũ khí cận chiến khác, mỗi hai đòn hợp lệ sinh kiếm khí; đánh hụt và kỹ năng không tự nhân vòng kích hoạt.
 10. **Cấp/Hồn Lực:** 150 có 994, 151 có 1000; cấp 100 chưa tự hồi, 101 bắt đầu hồi. Test tăng cấp thật qua Achievement & Level riêng với lệnh tăng cấp EVA.
 11. **Chết/hồi sinh/save:** ghi Hồn Lực trước chết, tắt bất tử, thử chết tự nhiên; còn 10% làm tròn xuống, không bị trừ lần hai do reload. Lưu, thoát, vào lại để kiểm tra cấp và tài nguyên.

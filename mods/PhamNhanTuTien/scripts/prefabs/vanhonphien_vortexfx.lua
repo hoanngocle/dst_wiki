@@ -1,6 +1,6 @@
 -- Original banner's wisps, isolated from unrelated Tu Tien effects.
 local assets = {
-    Asset("ANIM", "anim/vanhonphien_cloakfx.zip"),
+    Asset("ANIM", "anim/cloak_fx.zip"),
     Asset("ANIM", "anim/vanhonphien_vortexfx.zip"),
 }
 

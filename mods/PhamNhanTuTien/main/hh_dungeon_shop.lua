@@ -540,20 +540,11 @@ AddModRPCHandler("hh_rpc", "hh_dungeon_shop_buy", function(player, product_id, n
 end)
 
 if not TheNet:IsDedicated() then
-    local active_shop_screen = nil
+    local UnifiedOpen = require("ui/ttk_unified_open")
     local function OpenDungeonShop()
-        if HHGuideLock.IsOpen(ThePlayer) or HHSummaryLock.IsOpen(ThePlayer)
-            or ThePlayer ~= nil and ThePlayer.HHMonarchStorageOpen then return end
+        if HHGuideLock.IsOpen(ThePlayer) then return end
         if ThePlayer == nil or ThePlayer:HasTag("playerghost") or TheWorld:HasTag("cave") then return end
-        if active_shop_screen ~= nil and active_shop_screen.inst ~= nil and active_shop_screen.inst:IsValid() then
-            return
-        end
-        SendModRPCToServer(MOD_RPC.hh_rpc.hh_dungeon_shop_open)
-        local Screen = require("screens/hh_dungeon_shop_screen")
-        active_shop_screen = Screen(ThePlayer, ShopDefs, function()
-            active_shop_screen = nil
-        end)
-        TheFrontEnd:PushScreen(active_shop_screen)
+        UnifiedOpen.Open(ThePlayer, "shop")
     end
     TheInput:AddKeyDownHandler(TUNING.HH_DUNGEON_SHOP.OPEN_KEY or KEY_J, OpenDungeonShop)
     AddClassPostConstruct("screens/playerhud", function(self)

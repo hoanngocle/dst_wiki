@@ -1,5 +1,6 @@
 local assets = {
 	Asset("ANIM", "anim/lavaarena_boarrior_basic.zip"),
+	Asset("ANIM", "anim/igris_dungeon.zip"),
 	Asset("ANIM", "anim/igris_shadow.zip"),
 	Asset("ANIM", "anim/hh_beru_dungeon.zip"),
 	Asset("ANIM", "anim/beru_shadow.zip"),
@@ -182,6 +183,6 @@ local function MakeCorpse(name, bank, build, anim_name, display_name)
 end
 
 return MakeShadow("hh_igris_shadow", "boarrior", "igris_shadow", 8, 5000, 300, "SGhh_igris_shadow", "Igris"),
-	MakeCorpse("hh_corpse_igris", "boarrior", "lavaarena_boarrior_basic", "death2", "Xác Igris"),
+	MakeCorpse("hh_corpse_igris", "boarrior", "ttk_igris_dungeon", "death2", "Xác Igris"),
 	MakeShadow("hh_beru_shadow", "beetletaur", "beru_shadow", 9, 10000, 600, "SGhh_beru_shadow", "Beru"),
 	MakeCorpse("hh_corpse_beru", "beetletaur", "hh_beru_dungeon", "death", "Xác Beru")

@@ -2,13 +2,28 @@ import { fireEvent, render, screen, within } from "@testing-library/react";
 import { beforeEach, expect, it } from "vitest";
 
 import payload from "@/data/generated/solo-leveling.json";
+import { visibleSoloLevelingGroups } from "@/app/lib/solo-leveling";
 import { SoloLevelingBrowser } from "./solo-leveling-browser";
 
 beforeEach(() => window.history.replaceState(null, "", "/solo-leveling"));
 
-function selectTab(name: string) {
-  fireEvent.mouseDown(screen.getByRole("tab", { name: new RegExp(name) }), { button: 0 });
+function selectTopic(name: string) {
+  fireEvent.click(screen.getByRole("button", { name: new RegExp(name) }));
 }
+
+it("uses a Linh Gioi-style topic filter navigation and keeps topic links shareable", () => {
+  render(<SoloLevelingBrowser data={payload} />);
+
+  const navigation = screen.getByRole("navigation", { name: "Mục lục Solo Leveling" });
+  const guide = within(navigation).getByRole("button", { name: /Hướng dẫn/ });
+  const daily = within(navigation).getByRole("button", { name: /Daily Quest/ });
+
+  expect(guide.getAttribute("aria-pressed")).toBe("true");
+  fireEvent.click(daily);
+  expect(daily.getAttribute("aria-pressed")).toBe("true");
+  expect(window.location.hash).toBe("#solo-daily");
+  expect(screen.getByRole("heading", { name: "Daily Quest" })).toBeDefined();
+});
 
 it("lists daily quests in full-width rows with distinct difficulty colors and complete details", () => {
   window.history.replaceState(null, "", "#solo-daily");
@@ -26,7 +41,7 @@ it("lists daily quests in full-width rows with distinct difficulty colors and co
   fireEvent.click(within(easy).getByText("Cách tính tiến độ & điều kiện"));
   expect(within(easy).getByText(/Phải chặt hạ cây/)).toBeDefined();
   expect(screen.getByRole("heading", { name: "Cách làm nhiệm vụ ngày" })).toBeDefined();
-  expect(screen.getByRole("tab", { name: /Daily Quest/, selected: true })).toBeDefined();
+  expect(screen.getByRole("button", { name: /Daily Quest/, pressed: true })).toBeDefined();
   expect(screen.getByRole("heading", { name: "Daily Quest", level: 2 })).toBeDefined();
   expect(screen.queryByLabelText("Rank", { exact: true })).toBeNull();
   fireEvent.change(screen.getByLabelText("Độ khó", { exact: true }), { target: { value: "Khó" } });
@@ -55,9 +70,9 @@ it("shows guild quests as rows and combines Rank and browsing difficulty filters
 it("names Rank exams Rank Up and lists each exam as a full-width row", () => {
   window.history.replaceState(null, "", "#solo-exams");
   render(<SoloLevelingBrowser data={payload} />);
-  expect(screen.getByRole("tab", { name: /Rank Up/, selected: true })).toBeDefined();
+  expect(screen.getByRole("button", { name: /Rank Up/, pressed: true })).toBeDefined();
   expect(screen.getByRole("heading", { name: "Rank Up", level: 2 })).toBeDefined();
-  expect(screen.queryByRole("tab", { name: /Thăng Rank/ })).toBeNull();
+  expect(screen.queryByRole("button", { name: /Thăng Rank/ })).toBeNull();
   const exam = screen.getByRole("article", { name: "Bài Kiểm Tra: Cánh cửa đầu tiên" });
   expect(exam.parentElement!.className).not.toContain("sm:grid-cols-2");
   expect(within(exam).getByText("Rank: D")).toBeDefined();
@@ -69,52 +84,60 @@ it("names Rank exams Rank Up and lists each exam as a full-width row", () => {
   expect(within(exam).getByText(/Vật phẩm thưởng: 10 × bluegem/)).toBeDefined();
 });
 
-it("shows recipe ingredient icons, actual output quantity, and dungeon currency", () => {
+it("shows Item recipes without a separate product output box", () => {
   render(<SoloLevelingBrowser data={payload} />);
-  selectTab("Chế tạo & dung hợp");
+  selectTopic("Item");
   const gem = screen.getByRole("article", { name: "Đá Cường Hoá" });
   expect(within(gem).getByRole("img", { name: "Icon Đá Cường Hoá" }).getAttribute("data-missing")).toBeNull();
-  expect(within(gem).getByRole("img", { name: "Nguyên liệu Linh Thạch" })).toBeDefined();
-  expect(within(gem).getByText("8 × Đá Cường Hoá")).toBeDefined();
-  selectTab("Cửa hàng Hầm Ngục");
+  expect(within(gem).queryByText("Sản phẩm nhận được")).toBeNull();
+  expect(within(gem).queryByText("8 × Đá Cường Hoá")).toBeNull();
+  expect(within(gem).getByText("Nguyên liệu")).toBeDefined();
+  const spiritStoneIngredient = within(gem).getByLabelText("Linh Thạch, số lượng 8");
+  expect(spiritStoneIngredient.textContent).toBe("×8");
+  expect(spiritStoneIngredient.getAttribute("title")).toBe("Linh Thạch");
+  expect(within(gem).queryByText("8 × Linh Thạch")).toBeNull();
+
+  fireEvent.change(screen.getByRole("searchbox"), { target: { value: "Khối Ma Thạch" } });
+  const treasureRock = screen.getByRole("article", { name: "Khối Ma Thạch" });
+  expect(within(treasureRock).queryByText("1 × Khối Ma Thạch")).toBeNull();
+  expect(within(treasureRock).getByText("Không có công thức")).toBeDefined();
+
+  selectTopic("Cửa hàng Hầm Ngục");
   const potion = screen.getByRole("article", { name: "Thuốc Sức Mạnh" });
   expect(within(potion).getByText("120 Xu Hầm Ngục")).toBeDefined();
   expect(within(potion).getByRole("img", { name: "Icon Thuốc Sức Mạnh" }).getAttribute("data-missing")).toBeNull();
-  selectTab("Đệ tử & quân đoàn");
+  selectTopic("Đệ tử & quân đoàn");
   const igris = screen.getByRole("article", { name: "Igris" });
   expect(within(igris).getByText("Thép Đen")).toBeDefined();
   expect(within(igris).getByText("Cấp 5")).toBeDefined();
 });
 
-it("filters by recipe station, dungeon product type, and quest difficulty and resets on tab changes", () => {
+it("filters dungeon products and quest difficulty and resets on topic changes", () => {
   render(<SoloLevelingBrowser data={payload} />);
-  selectTab("Chế tạo & dung hợp");
-  fireEvent.change(screen.getByLabelText("Loại nội dung"), { target: { value: "Dung hợp" } });
-  expect(screen.getAllByRole("article")).toHaveLength(2);
-  expect(screen.getByRole("heading", { name: "Dung hợp Phúc Lạc Dược III" })).toBeDefined();
-  selectTab("Cửa hàng Hầm Ngục");
-  expect((screen.getByLabelText("Loại nội dung") as HTMLSelectElement).value).toBe("all");
+  selectTopic("Item");
+  expect(screen.queryByLabelText("Loại nội dung")).toBeNull();
+  selectTopic("Cửa hàng Hầm Ngục");
   fireEvent.change(screen.getByLabelText("Loại nội dung"), { target: { value: "Vũ khí" } });
   expect(screen.getAllByRole("article")).toHaveLength(7);
   expect(screen.queryByRole("heading", { name: "Thuốc Sức Mạnh" })).toBeNull();
-  selectTab("Daily Quest");
+  selectTopic("Daily Quest");
   fireEvent.change(screen.getByLabelText("Độ khó"), { target: { value: "Khó" } });
   expect(screen.getAllByRole("article").every((card) => within(card).queryByText("Độ khó: Khó"))).toBe(true);
   fireEvent.click(screen.getByRole("button", { name: "Xóa bộ lọc" }));
   expect(screen.getByRole("heading", { name: "Cách làm nhiệm vụ ngày" })).toBeDefined();
 });
 
-it("shows one topic at a time and searches only the selected tab without accents", () => {
+it("shows one topic at a time and searches only the selected topic without accents", () => {
   render(<SoloLevelingBrowser data={payload} />);
-  expect(screen.getByRole("tab", { name: /Hướng dẫn/, selected: true })).toBeDefined();
+  expect(screen.getByRole("button", { name: /Hướng dẫn/, pressed: true })).toBeDefined();
   expect(screen.queryByRole("heading", { name: "Cỏ cắt" })).toBeNull();
   expect(screen.queryByRole("heading", { name: "Lâm tặc tập sự" })).toBeNull();
-  selectTab("Daily Quest");
+  selectTopic("Daily Quest");
   fireEvent.change(screen.getByRole("searchbox", { name: "Tìm trong Solo Leveling" }), { target: { value: "lam tac tap su" } });
   expect(screen.getByRole("heading", { name: "Lâm tặc tập sự" })).toBeDefined();
   expect(screen.getByText("50 EXP")).toBeDefined();
   expect(screen.queryByRole("heading", { name: "Chạy marathon" })).toBeNull();
-  selectTab("Chế tạo & dung hợp");
+  selectTopic("Item");
   expect(screen.getByRole("searchbox").getAttribute("value")).toBe("");
   expect(screen.queryByRole("heading", { name: "Lâm tặc tập sự" })).toBeNull();
   expect(screen.getByRole("heading", { name: "Đá Cường Hoá" })).toBeDefined();
@@ -122,7 +145,7 @@ it("shows one topic at a time and searches only the selected tab without accents
 
 it("renders guild shop icons and clear purchase quantities, filters by Rank, and paginates", () => {
   render(<SoloLevelingBrowser data={payload} />);
-  selectTab("Cửa hàng Hiệp Hội");
+  selectTopic("Cửa hàng Hiệp Hội");
   const grass = screen.getByRole("article", { name: "Cỏ cắt" });
   expect(within(grass).getByRole("img", { name: "Icon Cỏ cắt" }).getAttribute("data-missing")).toBeNull();
   expect(within(grass).getByText("2 Xu Hiệp Hội")).toBeDefined();
@@ -140,38 +163,72 @@ it("renders guild shop icons and clear purchase quantities, filters by Rank, and
   expect(screen.getByText("Không tìm thấy nội dung phù hợp.")).toBeDefined();
   fireEvent.click(screen.getByRole("button", { name: "Xóa bộ lọc" }));
   expect(screen.getByRole("article", { name: "Cỏ cắt" })).toBeDefined();
-  expect(screen.getByRole("tab", { name: /Cửa hàng Hiệp Hội/, selected: true })).toBeDefined();
+  expect(screen.getByRole("button", { name: /Cửa hàng Hiệp Hội/, pressed: true })).toBeDefined();
 });
 
-it("keeps Wiki tables while removing configuration and source tabs, including their old hash links", () => {
+it("merges crafting and items into one Item topic without duplicate prefab cards", () => {
+  const groups = visibleSoloLevelingGroups(payload);
+  const items = groups.find((group) => group.id === "crafting")!;
+  const itemPrefabs = items.entries
+    .map((entry) => entry.lines.find((line) => /^\s*-?\s*Prefab\s*:/i.test(line))?.replace(/^\s*-?\s*Prefab\s*:\s*/i, ""))
+    .filter(Boolean);
+
+  expect(groups.some((group) => group.id === "wiki")).toBe(false);
+  expect(groups.some((group) => group.id === "items")).toBe(false);
+  expect(items.title).toBe("Item");
+  expect(items.entries).toHaveLength(39);
+  expect(new Set(itemPrefabs).size).toBe(itemPrefabs.length);
+
   render(<SoloLevelingBrowser data={payload} />);
-  selectTab("Wiki");
-  fireEvent.change(screen.getByRole("searchbox"), { target: { value: "CƯỜNG HOÁ" } });
-  expect(screen.getByRole("table", { name: "CƯỜNG HOÁ — bảng 1" })).toBeDefined();
-  expect(screen.getByText("93.50")).toBeDefined();
+  selectTopic("Item");
+  const spiritStone = screen.getByRole("article", { name: "Linh Thạch" });
+  expect(within(spiritStone).getByText("Prefab: hh_essence")).toBeDefined();
+  expect(within(spiritStone).getByText(/Sửa chữa trang bị/)).toBeDefined();
+  expect(within(spiritStone).queryByText("Wiki")).toBeNull();
+  expect(within(spiritStone).queryByText(/Nguồn:/)).toBeNull();
+  expect(screen.getAllByRole("article", { name: "Linh Thạch" })).toHaveLength(1);
   expect(screen.queryByRole("heading", { name: "File nguồn & tài liệu gốc" })).toBeNull();
-  expect(screen.queryByRole("tab", { name: /File nguồn/ })).toBeNull();
-  expect(screen.queryByRole("tab", { name: /Thông số & cấu hình/ })).toBeNull();
-  expect(screen.queryByRole("tab", { name: /Thuộc tính & hiệu ứng/ })).toBeNull();
-  expect(screen.getAllByRole("tab")).toHaveLength(10);
-  for (const hash of ["#solo-sources", "#solo-config", "#solo-effects"]) {
+  const navigation = screen.getByRole("navigation", { name: "Mục lục Solo Leveling" });
+  expect(within(navigation).queryByRole("button", { name: /^Wiki/ })).toBeNull();
+  expect(within(navigation).queryByRole("button", { name: /File nguồn/ })).toBeNull();
+  expect(within(navigation).queryByRole("button", { name: /Thông số & cấu hình/ })).toBeNull();
+  expect(within(navigation).queryByRole("button", { name: /Thuộc tính & hiệu ứng/ })).toBeNull();
+  expect(within(navigation).queryByRole("button", { name: /Vật phẩm & sinh vật/ })).toBeNull();
+  expect(within(navigation).queryByRole("button", { name: /Chế tạo & dung hợp/ })).toBeNull();
+  expect(within(navigation).getAllByRole("button")).toHaveLength(8);
+  for (const hash of ["#solo-wiki", "#solo-sources", "#solo-config", "#solo-effects"]) {
     window.history.replaceState(null, "", hash);
     fireEvent(window, new Event("hashchange"));
-    expect(screen.getByRole("tab", { name: /Hướng dẫn/, selected: true })).toBeDefined();
+    expect(screen.getByRole("button", { name: /Hướng dẫn/, pressed: true })).toBeDefined();
     expect(screen.getByRole("heading", { name: "Hướng dẫn", level: 2 })).toBeDefined();
   }
+});
+
+it("keeps both old topic hashes and alternate recipes usable from the Item topic", () => {
+  for (const hash of ["#solo-crafting", "#solo-items"]) {
+    window.history.replaceState(null, "", hash);
+    const view = render(<SoloLevelingBrowser data={payload} />);
+    expect(screen.getByRole("button", { name: /Item/, pressed: true })).toBeDefined();
+    view.unmount();
+  }
+
+  window.history.replaceState(null, "", "#solo-crafting");
+  render(<SoloLevelingBrowser data={payload} />);
+  fireEvent.change(screen.getByRole("searchbox"), { target: { value: "Tầm Bảo Quyển Trục" } });
+  const treasureScroll = screen.getByRole("article", { name: "Tầm Bảo Quyển Trục" });
+  expect(within(treasureScroll).getAllByLabelText("Nguyên liệu chế tạo")).toHaveLength(2);
 });
 
 it("opens a topic from existing hash links", () => {
   window.history.replaceState(null, "", "/solo-leveling#solo-guild-shop");
   render(<SoloLevelingBrowser data={payload} />);
-  expect(screen.getByRole("tab", { name: /Cửa hàng Hiệp Hội/, selected: true })).toBeDefined();
+  expect(screen.getByRole("button", { name: /Cửa hàng Hiệp Hội/, pressed: true })).toBeDefined();
   expect(screen.getByRole("article", { name: "Cỏ cắt" })).toBeDefined();
 });
 
 it("resets incompatible filters when navigating to another topic through a hash link", () => {
   render(<SoloLevelingBrowser data={payload} />);
-  selectTab("Cửa hàng Hiệp Hội");
+  selectTopic("Cửa hàng Hiệp Hội");
   fireEvent.change(screen.getByLabelText("Rank yêu cầu"), { target: { value: "S" } });
   window.history.replaceState(null, "", "#solo-daily");
   fireEvent(window, new Event("hashchange"));
@@ -182,7 +239,7 @@ it("resets incompatible filters when navigating to another topic through a hash 
 it("opens the containing topic and page for existing entry deep links", () => {
   window.history.replaceState(null, "", "#guild-shop-73");
   render(<SoloLevelingBrowser data={payload} />);
-  expect(screen.getByRole("tab", { name: /Cửa hàng Hiệp Hội/, selected: true })).toBeDefined();
+  expect(screen.getByRole("button", { name: /Cửa hàng Hiệp Hội/, pressed: true })).toBeDefined();
   expect(screen.getByRole("article", { name: "Giáp xương" })).toBeDefined();
   expect(screen.getByRole("status").textContent).toContain("73–84");
   window.history.replaceState(null, "", "#guild-shop-89");
