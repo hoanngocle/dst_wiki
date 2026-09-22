@@ -1,3 +1,5 @@
+local PerkCatalog = require("achievement/ttk_perk_catalog")
+
 local MAX_SNAPSHOT_BYTES = 16384
 
 local function Copy(value)
@@ -21,6 +23,12 @@ local function NonNegativeInteger(value)
     return number ~= nil and number == math.floor(number) and number >= 0 and number or nil
 end
 
+local function CanonicalNumber(value)
+    if type(value) ~= "string" or not string.match(value, "^%d[%d%.eE%+%-]*$") then return nil end
+    local number = tonumber(value)
+    return number ~= nil and number == number and number ~= math.huge and number ~= -math.huge and number >= 0 and number or nil
+end
+
 local function DecodeSnapshot(encoded)
     if type(encoded) ~= "string" or #encoded == 0 or #encoded > MAX_SNAPSHOT_BYTES then return nil end
     local sections = {}
@@ -34,16 +42,23 @@ local function DecodeSnapshot(encoded)
     if earned == nil or spent == nil or spent > earned or sections.a == nil or sections.p == nil then return nil end
     local snapshot = { version = 1, earned = earned, spent = spent, balance = earned - spent, achievements = {}, perks = { levels = {}, unlocked = {} } }
     for entry in string.gmatch(sections.a, "[^,]+") do
-        local id, progress, status = string.match(entry, "^([a-z][a-z0-9_]*):(%d+):([luc])$")
-        progress = NonNegativeInteger(progress)
+        local id, progress, status = string.match(entry, "^([a-z][a-z0-9_]*):([^:]+):([luc])$")
+        progress = CanonicalNumber(progress)
         if id == nil or progress == nil or snapshot.achievements[id] ~= nil then return nil end
         snapshot.achievements[id] = { progress = progress, status = status == "c" and "claimed" or status == "u" and "completed_unclaimed" or "locked" }
     end
     for entry in string.gmatch(sections.p, "[^,]+") do
         local id, level = string.match(entry, "^([a-z][a-z0-9_]*):(%d+)$")
         level = NonNegativeInteger(level)
-        if id == nil or level == nil or level == 0 or snapshot.perks.levels[id] ~= nil then return nil end
-        snapshot.perks.levels[id] = level
+        local perk = id ~= nil and PerkCatalog.ById(id) or nil
+        if perk == nil or level == nil or level == 0 then return nil end
+        if perk.max_level ~= nil then
+            if level > perk.max_level or snapshot.perks.levels[id] ~= nil then return nil end
+            snapshot.perks.levels[id] = level
+        else
+            if level ~= 1 or snapshot.perks.unlocked[id] ~= nil then return nil end
+            snapshot.perks.unlocked[id] = true
+        end
     end
     return snapshot
 end

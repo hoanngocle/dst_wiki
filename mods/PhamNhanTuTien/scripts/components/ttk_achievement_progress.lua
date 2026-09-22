@@ -8,12 +8,17 @@ local function StatusCode(status)
     return status == "claimed" and "c" or status == "completed_unclaimed" and "u" or "l"
 end
 
+local function FormatNumber(value)
+    if type(value) ~= "number" or value ~= value or value == math.huge or value == -math.huge then return "0" end
+    return string.format("%.17g", value)
+end
+
 local function SerializeSnapshot(snapshot)
     local achievements, perks = {}, {}
     for _, definition in ipairs(AchievementCatalog.All()) do
         local state = snapshot.achievements[definition.id]
         if state ~= nil then
-            table.insert(achievements, definition.id .. ":" .. tostring(state.progress) .. ":" .. StatusCode(state.status))
+            table.insert(achievements, definition.id .. ":" .. FormatNumber(state.progress) .. ":" .. StatusCode(state.status))
         end
     end
     for _, perk in ipairs(PerkCatalog.All()) do

@@ -35,7 +35,7 @@ end
 
 local function CanonicalAchievement(definition, saved)
     local progress = type(saved) == "table" and saved.progress or 0
-    if not IsFiniteInteger(progress) or progress < 0 then progress = 0 end
+    if not IsFinite(progress) or progress < 0 then progress = 0 end
     progress = math.min(definition.target, progress)
     local state = { progress = progress, status = "locked", claimed_reward = nil }
     local status = type(saved) == "table" and saved.status or nil
@@ -200,8 +200,9 @@ end
 
 function Core:CanonicalizePerks(saved)
     self.levels, self.unlocked, self.spent = {}, {}, 0
-    local saved_levels = type(saved) == "table" and saved.levels or {}
-    local saved_unlocked = type(saved) == "table" and saved.unlocked or {}
+    saved = type(saved) == "table" and saved or {}
+    local saved_levels = type(saved.levels) == "table" and saved.levels or {}
+    local saved_unlocked = type(saved.unlocked) == "table" and saved.unlocked or {}
     for _, perk in ipairs(PerkCatalog.All()) do
         if perk.max_level ~= nil then
             local level = saved_levels[perk.id]

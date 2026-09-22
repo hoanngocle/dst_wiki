@@ -197,6 +197,33 @@ class AchievementStateTests(unittest.TestCase):
         self.assertNotRegex(source, r"reward\s*=\s*\d+")
         self.assertTrue(ACHIEVEMENTS.exists())
 
+    def test_load_canonicalizes_malformed_nested_containers_without_indexing_them(self):
+        """A corrupt nested table must not turn load into an indexing exception."""
+        source = CORE.read_text(encoding="utf-8")
+        self.assertIn('type(saved.levels) == "table"', source)
+        self.assertIn('type(saved.unlocked) == "table"', source)
+        self.assertIn('type(state.replays) == "table"', source)
+        self.assertIn('type(state.achievements) == "table"', source)
+
+    def test_replica_decodes_one_time_unlocks_and_repeatable_levels_by_catalog_shape(self):
+        """A one-time perk must remain an unlock in the client shape, not level 1."""
+        source = REPLICA.read_text(encoding="utf-8")
+        self.assertIn('require("achievement/ttk_perk_catalog")', source)
+        self.assertIn("PerkCatalog.ById(id)", source)
+        self.assertIn("snapshot.perks.unlocked[id] = true", source)
+        self.assertIn("snapshot.perks.levels[id] = level", source)
+
+    def test_fractional_progress_round_trips_snapshot_replica_and_save_contract(self):
+        """Finite fractional tracker amounts must not be truncated by either boundary."""
+        state = Model()
+        self.assertEqual((True, "locked"), state.advance("a", .25))
+        self.assertEqual(.25, state.ach["a"]["progress"])
+        core, component, replica = CORE.read_text(encoding="utf-8"), COMPONENT.read_text(encoding="utf-8"), REPLICA.read_text(encoding="utf-8")
+        self.assertIn("IsFinite(progress)", core)
+        self.assertIn("FormatNumber(state.progress)", component)
+        self.assertIn("CanonicalNumber(value)", replica)
+        self.assertNotIn("NonNegativeInteger(progress)", replica)
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
