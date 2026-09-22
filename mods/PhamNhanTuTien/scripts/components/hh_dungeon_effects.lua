@@ -562,8 +562,11 @@ function HHDungeonEffects:UseUtility(use_id, duration)
     elseif use_id == "dq_durability_charm" then
         return self:AddEffect("utility_durability", duration or 600)
     elseif use_id == "dq_stock_token" then
+        if not require("utils/hh_dungeon_authority")(TheWorld) then return false end
         local shop = TheWorld.components.hh_dungeon_shop
-        return shop ~= nil and shop:RestockOne() or false
+        local changed = shop ~= nil and shop:RestockOne() or false
+        if changed then player:PushEvent("hh_dungeon_stock_token_used", { use_id=use_id }) end
+        return changed
     end
     return false
 end

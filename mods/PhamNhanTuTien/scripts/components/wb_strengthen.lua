@@ -1620,6 +1620,12 @@ function _B_uG_:DoSuccess(_B__ug__, __BU_G_, B_U_G_, __B__U_G__)
     self["do_mode"] = __BU_G_
     local _B_U__g_ = "cường hoá"
     self:SetLevel(B_U_G_)
+    if TheWorld ~= nil and TheWorld.ismastersim and __BU_G_ == "strengthen"
+        and _B__ug__ ~= nil and _B__ug__.PushEvent ~= nil and self.level == B_U_G_ then
+        local components = self.inst.components
+        local category = components.weapon ~= nil and "weapon" or components.armor ~= nil and "armor" or "other"
+        _B__ug__:PushEvent("ttk_strengthen_success", { category=category, level=self.level, prefab=self.inst.prefab })
+    end
     if B_U_G_ >= 13 then
         local _b__u_g_ = {"Bát Hoang Lục Hợp, Duy Ngã Độc Tôn", "Ngộ Thần Sát Thần, Ngộ Phật Sát Phật"}
         local __bu__G__ = math["random"](#_b__u_g_)

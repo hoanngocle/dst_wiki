@@ -332,6 +332,235 @@ class ActivityReachability(unittest.TestCase):
         ''')
 
 
+class StrengthenSlotReachability(unittest.TestCase):
+    def setUp(self):
+        ActivityReachability.setUp(self)
+        self.lua.globals().MOD_PATH = MOD.as_posix()
+        self.lua.execute('''
+            TheNet={Announce=function() end}; TheWorld.components={}; TheWorld.ismastershard=true
+            function TheWorld:HasTag(t) return t=="forest" end
+            local S=require("components/wb_strengthen")
+            function strengthen(level,category)
+                local i=entity("test_equipment"); i.components[category or "weapon"]={}
+                local s=setmetatable({inst=i,level=level,do_mode="strengthen",original_name="Test",
+                    buffs_status={},prize_buff_list={},manual_buff_list={}}, {__index=S})
+                function s:Refresh() end
+                i.components.wb_strengthen=s; return s
+            end
+            function actor(id)
+                local p=player(id); p.name=id; p.components.talker={Say=function() end}
+                p.components.inventory.stock={wb_enhancegem=100}
+                function p.components.inventory:Has(n,c) return (self.stock[n] or 0)>=c end
+                function p.components.inventory:ConsumeByName(n,c) self.stock[n]=self.stock[n]-c end
+                function p.components.inventory:GiveItem() end
+                return p
+            end
+            function machine()
+                local i=entity("ttk_choujiangji"); i.GUID=123
+                i.Transform.GetWorldPosition=function() return 0,0,0 end
+                i.SoundEmitter={PlaySound=function() end}
+                i.components.ttk_slotmachine=require("components/ttk_slotmachine")(i)
+                function i:DispensePrize(n) local e=entity(n); return e end
+                return i,i.components.ttk_slotmachine
+            end
+        ''')
+        source = (MOD / "main/ttk_solo_source.lua").read_text(encoding="utf-8")
+        block = source[source.index('nfcufCiki(\n    "hh_lo_ren",\n    "strengthen",'):]
+        block = block[:block.index('AddPrefabPostInit("dragonfly"')]
+        self.lua.execute('function nfcufCiki(_,_,fn) forge=fn end\n' + block)
+
+    def test_gem_commit_and_success_threshold_wildcard(self):
+        self.lua.execute('''
+            local a=actor("a"); local b=actor("b"); local s=strengthen(2)
+            local station=entity("hh_lo_ren"); station.components.container={openlist={[a]=true},GetItemInSlot=function() return s.inst end}
+            station.UpdateContainerData=function() end; a.GetDistanceSqToInst=function() return 0 end
+            forge(b,station,s.inst); assert(progress(b,"enhancement_bag_one")==0)
+            a.components.inventory.stock.wb_enhancegem=0; forge(a,station,s.inst)
+            assert(progress(a,"enhancement_bag_one")==0)
+            a.components.inventory.stock.wb_enhancegem=100
+            s.GetProbability=function() return 0 end; forge(a,station,s.inst)
+            assert(progress(a,"enhancement_bag_one")==3,"committed failed attempt spends gems")
+            assert(progress(a,"enhancement_relic_two")==0)
+            s.GetProbability=function() return 1 end; forge(a,station,s.inst)
+            assert(progress(a,"enhancement_bag_one")==6)
+            assert(progress(a,"enhancement_weapon_two")==3,"one committed +3 completes the threshold")
+            assert(progress(a,"enhancement_armor_two")==0)
+            assert(progress(a,"enhancement_relic_two")==1,"any is a wildcard")
+            assert(progress(a,"enhancement_relic_one")==1,"unavailable clear row must use first success")
+            s:DoSuccess(a,"strengthen",6); assert(progress(a,"enhancement_weapon_three")==6)
+            local armor=strengthen(0,"armor"); armor:DoSuccess(b,"strengthen",6)
+            assert(progress(b,"enhancement_armor_three")==6 and progress(b,"enhancement_weapon_three")==0)
+            s:SetLevel(0); s:OnLoad({level=6}); assert(progress(a,"enhancement_relic_two")==2)
+            TheWorld.ismastersim=false; forge(a,station,s.inst); s:DoSuccess(a,"strengthen",7)
+            assert(progress(a,"enhancement_relic_two")==2 and progress(a,"enhancement_bag_one")==6)
+        ''')
+
+    def test_slot_actor_save_load_repeat_payout_failed_spawn_and_classification(self):
+        self.lua.execute('''
+            local a=actor("a"); local b=actor("b"); local i,s=machine()
+            assert(not s:Start(nil,a)); assert(progress(a,"gacha_shop_spin_ten")==0)
+            assert(s:Start({category="good",items={{prefab="xd_dy_cyfxd_1",count=1},{prefab="ttk_spider_leg",count=1}}},a))
+            assert(not s:Start({items={}},b)); assert(progress(a,"gacha_shop_spin_ten")==1 and progress(b,"gacha_shop_spin_ten")==0)
+            local saved=s:OnSave(); assert(saved.actor_id=="a" and saved.receipt_id,"job must persist actor and receipt")
+            local j,t=machine(); t:OnLoad(saved); t.task.run()
+            assert(progress(a,"gacha_shop_buy_pill")==1 and progress(b,"gacha_shop_buy_pill")==0)
+            local saved2=t:OnSave(); local k,u=machine(); u:OnLoad(saved2)
+            local task=u.task; task.run(); task.run(); u:Pay()
+            assert(progress(a,"gacha_shop_buy_material")==1 and progress(a,"gacha_shop_spin_ten")==1)
+            assert(not u.busy)
+            assert(u:Start({items={{prefab="krampus_sack",count=1}}},b))
+            function k:DispensePrize() return nil end
+            u:Pay(); u.task.run(); assert(progress(b,"gacha_shop_buy_relic")==0)
+            function k:DispensePrize() return entity("ttk_lingshi2") end
+            u:Pay(); if u.task then u.task.run() end
+            assert(progress(b,"gacha_shop_buy_relic")==0,"requested rare is not received fallback")
+            assert(progress(b,"gacha_shop_buy_lingshi")==1,"failed spawn remains pending; fallback uses actual prefab")
+            TheWorld.ismastersim=false
+            assert(not u:Start({items={{prefab="krampus_sack",count=1}}},a))
+        ''')
+
+    def test_real_prize_data_and_restock_committed_actor(self):
+        GuildDungeonReachability.setUp(self)
+        self.lua.execute('''
+            local prizes=require("ttk_slot_prizes"); local pill=false
+            for _,g in pairs(prizes.groups) do for _,b in ipairs(g.bundles) do for _,i in ipairs(b.items) do
+                if i.prefab=="xd_dy_cyfxd_1" then pill=true end
+            end end end
+            assert(pill,"real pool must contain first grade buff pill")
+            assert(prizes.Classify("xd_dy_cyfxd_1")=="pill")
+            assert(prizes.Classify("krampus_sack")=="rare")
+            assert(prizes.Classify("ttk_spider_leg")=="material")
+            assert(prizes.Classify("good")==nil and prizes.Classify("beequeen")~="rare")
+            local a=player("a"); local b=player("b")
+            local shop=require("components/hh_dungeon_shop")(TheWorld); TheWorld.components.hh_dungeon_shop=shop
+            shop:EnsureCycle(); for _,id in ipairs(shop.active) do shop.stock[id]=1 end
+            local E=require("components/hh_dungeon_effects"); local effects=setmetatable({inst=a},{__index=E})
+            assert(not effects:UseUtility("dq_stock_token")); assert(progress(a,"gacha_shop_shop_refresh")==0)
+            shop.stock[shop.active[1]]=0; assert(effects:UseUtility("dq_stock_token"))
+            assert(progress(a,"gacha_shop_shop_refresh")==1 and progress(b,"gacha_shop_shop_refresh")==0)
+            shop.stock[shop.active[1]]=0; effects.inst=b; TheWorld.ismastersim=false
+            assert(not effects:UseUtility("dq_stock_token")); assert(shop.stock[shop.active[1]]==0)
+        ''')
+
+    def test_protection_consumption_branches(self):
+        source = (MOD / "main/ttk_solo_source.lua").read_text(encoding="utf-8")
+        block = source[source.index('            self["DoFail"] ='):source.index('            self["GetProbability"] =', source.index('            self["DoFail"] ='))]
+        self.lua.execute('ffiUgCiKi=require("util/wb_util"); function protect(self) ' + block + ' end')
+        self.lua.execute('''
+            local paper="wb_strengthen_strengthen_protectpaper"
+            for _,case in ipairs({{9,true,true,1},{9,true,false,1},{5,true,false,0},{9,false,true,0},{0,true,true,0}}) do
+                local a=actor("p"..#AllPlayers); local s=strengthen(case[1]); protect(s)
+                a.components.inventory.stock[paper]=case[2] and 1 or 0
+                a.components.inventory.stock.nn_magicpaper=case[3] and 1 or 0
+                s:DoFail(a,"strengthen",case[1]+1,function() end)
+                assert(progress(a,"enhancement_bag_two")==case[4],"only consumed protection counts")
+                assert(a.components.inventory.stock[paper]==(case[2] and 1 or 0)-case[4])
+            end
+        ''')
+
+    def test_level_paper_compatible_incompatible_return_and_zero(self):
+        self.lua.execute('''
+            function Asset() end; TUNING.SMALL_FUEL=1
+            function Prefab(n,fn) return {name=n,fn=fn} end
+            function MakeInventoryPhysics() end; function MakeInventoryFloatable() end; function MakeHauntableLaunch() end
+            function CreateEntity()
+                local i=entity("paper_bundle"); local noop=function() end
+                i.entity={AddTransform=noop,AddAnimState=noop,AddNetwork=noop,SetPristine=noop}
+                function i:AddComponent(n) self.components[n]={} end
+                return i
+            end
+            papers={dofile(MOD_PATH.."/scripts/prefabs/wb_strengthen_levelpaper.lua")}
+            function wrap(a,s,level)
+                a.components.bundler={bundlinginst={mode="strengthen",level=level},itemprefab="wb_strengthen_strengthen_"..level.."_levelpaper"}
+                local bundle=papers[2].fn(); bundle.components.unwrappable:WrapItems({s.inst},a)
+            end
+            local a=actor("a"); local s=strengthen(4)
+            wrap(a,s,6); assert(s.level==4 and progress(a,"enhancement_ring_one")==0)
+            s:SetLevel(5); wrap(a,s,6); assert(s.level==6 and progress(a,"enhancement_ring_one")==1,"compatible paper commits")
+            assert(progress(a,"enhancement_relic_two")==0,"scroll is not a DoSuccess")
+            local b=actor("b"); local v=strengthen(8); wrap(b,v,9)
+            assert(v.level==9 and progress(b,"enhancement_ring_two")==1)
+            wrap(b,v,0); assert(v.level==0 and progress(b,"enhancement_relic_one")==0)
+            local c=actor("c"); local incompatible={inst=entity("twigs")}
+            wrap(c,incompatible,6); assert(progress(c,"enhancement_ring_one")==0)
+            local d=actor("d"); local wrong=strengthen(5); wrong.do_mode="other"
+            wrap(d,wrong,6); assert(wrong.level==5 and progress(d,"enhancement_ring_one")==0)
+        ''')
+
+    def test_real_slot_accept_and_dispense_fallback(self):
+        source = (MOD / "scripts/prefabs/ttk_choujiangji.lua").read_text(encoding="utf-8")
+        start = source.index('local function DispensePrize(')
+        stop = source.index('local function OnHammered(')
+        self.lua.execute('local prizes=require("ttk_slot_prizes"); local bosses={}; ' + source[start:stop] + '\nSlotAccept=OnAccept; SlotDispense=DispensePrize')
+        self.lua.execute('''
+            PI=math.pi
+            function SpawnPrefab(n)
+                if n=="krampus_sack" or all_fail then return nil end
+                local e=entity(n); e.components.inventoryitem={}; return e
+            end
+            local a=actor("a"); local b=actor("b"); local i,s=machine(); i.DispensePrize=SlotDispense
+            local prize={category="good",items={{prefab="krampus_sack",count=1}}}
+            i.pendingprize=prize; SlotAccept(i,a,entity("twigs"))
+            assert(not s.busy and progress(a,"gacha_shop_spin_ten")==0)
+            i.pendingprize=prize; SlotAccept(i,b,entity("ttk_lingshi2")); s:Pay(); s.task.run()
+            assert(progress(b,"gacha_shop_spin_ten")==1 and progress(a,"gacha_shop_spin_ten")==0)
+            assert(progress(b,"gacha_shop_buy_lingshi")==1 and progress(b,"gacha_shop_buy_relic")==0)
+            all_fail=true; i.pendingprize=prize; SlotAccept(i,a,entity("ttk_lingshi2")); s:Pay(); s.task.run()
+            assert(progress(a,"gacha_shop_buy_lingshi")==0 and progress(a,"gacha_shop_buy_relic")==0)
+        ''')
+
+    def test_native_trader_failed_payment_and_consumed_currency_before_spin(self):
+        with ZipFile(GAME) as archive:
+            self.lua.execute('Trader=(function() ' + archive.read('scripts/components/trader.lua').decode() + ' end)()')
+        source = (MOD / "scripts/prefabs/ttk_choujiangji.lua").read_text(encoding="utf-8")
+        block = source[source.index('local function ShouldAccept('):source.index('local function OnHammered(')]
+        self.lua.execute('local prizes=require("ttk_slot_prizes"); ' + block + '\nSlotAccept=OnAccept; SlotTest=ShouldAccept')
+        self.lua.execute('''
+            Prefabs={krampus_sack=true,ttk_luoshen_qingshu=true}
+            local a=actor("a"); local b=actor("b"); local i,s=machine(); local trader=Trader(i)
+            trader.test=SlotTest; trader.onaccept=SlotAccept
+            local coin=entity("ttk_lingshi2")
+            coin.components.inventoryitem={RemoveFromOwner=function() coin.detached=true end}
+            trader:Disable(); assert(not trader:AcceptGift(a,coin)); trader:Enable()
+            assert(not trader:AcceptGift(a,entity("twigs")))
+            assert(coin.valid and not coin.detached and progress(a,"gacha_shop_spin_ten")==0)
+            a:ListenForEvent("ttk_slot_spin_committed",function() assert(not coin.valid and coin.detached) end)
+            assert(trader:AcceptGift(a,coin)); assert(progress(a,"gacha_shop_spin_ten")==1)
+            assert(not trader:AcceptGift(b,entity("ttk_lingshi2")))
+            s:Pay(); s.task.run(); assert(progress(a,"gacha_shop_buy_relic")==1)
+            assert(progress(b,"gacha_shop_spin_ten")==0)
+        ''')
+
+    def test_every_active_task17_tracker_rejects_client_receipts(self):
+        self.lua.execute('''
+            local a=actor("a"); TheWorld.ismastersim=false
+            a:PushEvent("ttk_strengthen_gems_spent",{amount=10})
+            a:PushEvent("ttk_strengthen_success",{category="weapon",level=6})
+            a:PushEvent("ttk_strengthen_protection_used",{prefab="wb_strengthen_strengthen_protectpaper"})
+            a:PushEvent("ttk_strengthen_scroll_used",{prefab="wb_strengthen_strengthen_6_levelpaper"})
+            a:PushEvent("ttk_slot_spin_committed",{})
+            a:PushEvent("ttk_slot_reward_committed",{prefab="ttk_lingshi2",source="ttk_choujiangji",kind="rare"})
+            a:PushEvent("hh_dungeon_stock_token_used",{use_id="dq_stock_token"})
+            local trackers={strengthen_success=true,strengthen_gem_spent=true,strengthen_protection_used=true,
+                strengthen_scroll_used=true,slotmachine_spin=true,slotmachine_reward=true,dungeon_shop_restocked=true}
+            for tracker in pairs(trackers) do
+                local rows=require("achievement/ttk_achievement_catalog").ByEvent(tracker)
+                assert(#rows>0,tracker)
+                for _,row in ipairs(rows) do assert(progress(a,row.id)==0,row.id) end
+            end
+        ''')
+
+    def test_catalog_runtime_totals_after_source_corrections(self):
+        self.lua.execute('''
+            local c=require("achievement/ttk_achievement_catalog"); assert(c.Validate())
+            local groups={}; local stars=0
+            for _,row in ipairs(c.All()) do groups[row.group]=true; stars=stars+row.reward end
+            local n=0; for _ in pairs(groups) do n=n+1 end
+            assert(#c.All()==231 and n==13 and stars==1000)
+            assert(#c.ByEvent("strengthen_clear_used")==0,"no unavailable clear-scroll achievement")
+        ''')
+
+
 class GuildDungeonReachability(unittest.TestCase):
     def setUp(self):
         ActivityReachability.setUp(self)

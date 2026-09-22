@@ -48,6 +48,8 @@ local function Matches(params, evidence)
             if not found then return false end
         elseif key == "level" or key == "milestone" then
             if type(evidence[key]) ~= "number" or evidence[key] < value then return false end
+        elseif key == "category" and value == "any" then
+            -- Success rows may count any committed equipment category.
         elseif key == "rank" then
             if RankDefs.RANK[evidence.rank] == nil or RankDefs.RANK[value] == nil
                 or RankDefs.RANK[evidence.rank] < RankDefs.RANK[value] then return false end
@@ -462,6 +464,35 @@ local function InstallPlayer(inst)
     end)
     SurfaceReceipt("hh_dungeon_shop_purchased", function(player)
         Route(player, "dungeon_shop_purchase", { source="hh_dungeon_shop" }, 1)
+    end)
+    SurfaceReceipt("hh_dungeon_stock_token_used", function(player)
+        Route(player, "dungeon_shop_restocked", { source="hh_dungeon_shop", use_id="dq_stock_token" }, 1)
+    end)
+    inst:ListenForEvent("ttk_strengthen_gems_spent", function(player, data)
+        if data ~= nil and Integer(data.amount, 1, 13) then
+            Route(player, "strengthen_gem_spent", { prefab="wb_enhancegem" }, data.amount)
+        end
+    end)
+    inst:ListenForEvent("ttk_strengthen_success", function(player, data)
+        if not Master() or data == nil or not Integer(data.level, 1, 13) then return end
+        for _, row in ipairs(AchievementCatalog.ByEvent("strengthen_success")) do
+            if Matches(row.params, data) then
+                if row.params.level ~= nil then AdvanceTo(component, row, row.target, data)
+                else component:Advance(row.id, 1, data) end
+            end
+        end
+    end)
+    inst:ListenForEvent("ttk_strengthen_protection_used", function(player, data)
+        if data ~= nil then Route(player, "strengthen_protection_used", data, 1) end
+    end)
+    inst:ListenForEvent("ttk_strengthen_scroll_used", function(player, data)
+        if data ~= nil then Route(player, "strengthen_scroll_used", data, 1) end
+    end)
+    inst:ListenForEvent("ttk_slot_spin_committed", function(player, data)
+        if data ~= nil then Route(player, "slotmachine_spin", { prefab="ttk_choujiangji" }, 1) end
+    end)
+    inst:ListenForEvent("ttk_slot_reward_committed", function(player, data)
+        if data ~= nil then Route(player, "slotmachine_reward", data, 1) end
     end)
     inst:ListenForEvent("oneat", OnEat)
     inst:ListenForEvent("killed", OnKilled)
