@@ -153,3 +153,21 @@ The original user-approved execution method is subagent-driven development. Task
 - [ ] Replace the two unregistered stage-15 `_2` buff-pill ingredients with their approved first-grade `_1` variants. Do not register second-grade pills.
 - [ ] Add a validator proving every generated ingredient is a registered/runtime-provided current prefab and no `xd_` historical ingredient remains. Include exact stage-15 regression and rerun every 26 recipe through `FindExactRecipe`.
 - [ ] Regenerate deterministically, run alchemy/catalog/runtime/cultivation tests, then commit only Task 19 paths. A fresh reviewer must verify alias evidence and no fake prefab.
+
+### Task 20: Final Native Correctness Fix Wave
+
+**Files:**
+- Modify: `mods/PhamNhanTuTien/scripts/achievement/ttk_achievement_catalog.lua`
+- Modify: `mods/PhamNhanTuTien/main/ttk_achievement.lua`
+- Modify: `mods/PhamNhanTuTien/main/ttk_alchemy.lua`
+- Modify: `mods/PhamNhanTuTien/scripts/prefabs/ttk_alchemy.lua`
+- Modify: `mods/PhamNhanTuTien/scripts/components/ttk_alchemy_effects.lua`
+- Modify: `mods/PhamNhanTuTien/scripts/achievement/ttk_achievement_core.lua`
+- Modify: affected native/Lupa tests under `mods/PhamNhanTuTien/tools/`
+
+- [ ] Correct every active catalog condition that uses a nonexistent alias/general label to actual registered prefab evidence, and route the stump row by real stump tag rather than a fake `stump` prefab. Add a test that executes every corrected condition through its real adapter.
+- [ ] Give achievement cooking a dedicated postinit flag, preserving the perk stewer hook and allowing both callbacks in runtime registration.
+- [ ] Gate cultivation pills before `Eater` removes them using the native edible/action validation seam. Wrong-order, duplicate, and max-stage pills must not be consumed; valid ordered pills must consume once and advance once.
+- [ ] Make health/sanity regeneration buffs retain deadlines and save/load duration; reload must not replay immediate health healing.
+- [ ] Preserve a saved claimed reward exactly when valid, reconstruct earned Star from persisted awarded values, and only use catalog reward for unclaimed/missing legacy claim fields.
+- [ ] Run native combined-registration, condition-level reachability, edible removal, effects save/load, historical reward, all focused suites, wiki export/build, then fresh whole-branch review.
