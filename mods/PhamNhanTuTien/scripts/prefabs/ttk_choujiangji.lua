@@ -53,6 +53,7 @@ local function DispensePrize(inst, name)
             end)
         end
     end
+    return item
 end
 
 local function ShouldAccept(inst, item)
@@ -61,8 +62,9 @@ local function ShouldAccept(inst, item)
     return inst.pendingprize ~= nil
 end
 
-local function OnAccept(inst)
-    inst.components.ttk_slotmachine:Start(inst.pendingprize)
+local function OnAccept(inst, giver, item)
+    if not TheWorld.ismastersim or item == nil or item.prefab ~= "ttk_lingshi2" then return end
+    inst.components.ttk_slotmachine:Start(inst.pendingprize, giver)
     inst.pendingprize = nil
 end
 

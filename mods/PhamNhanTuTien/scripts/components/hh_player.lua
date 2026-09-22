@@ -535,14 +535,16 @@ function b_u__G:ClampEffectValue(key, value)
     return cap ~= nil and math.min(value, cap) or value
 end
 function b_u__G:GetEffectValueByKey(__b_U__g__)
+    local achievement = self.inst.ttk_achievement_effects
+    local achievement_bonus = achievement ~= nil and (achievement[__b_U__g__] or 0) or 0
     if not self["hh_effects"] or not self["hh_effects"][__b_U__g__] then
-        return 0
+        return self:ClampEffectValue(__b_U__g__, achievement_bonus)
     end
     local B_ug = self["hh_effects"][__b_U__g__]
     if not _B__Ug__:IsHHType(B_ug, "number") or B_ug < 0 then
-        return 0
+        return self:ClampEffectValue(__b_U__g__, achievement_bonus)
     end
-    return self:ClampEffectValue(__b_U__g__, B_ug)
+    return self:ClampEffectValue(__b_U__g__, B_ug + achievement_bonus)
 end
 function b_u__G:AddEffectValueByKey(B__u__g__, __B_u_g_)
     if

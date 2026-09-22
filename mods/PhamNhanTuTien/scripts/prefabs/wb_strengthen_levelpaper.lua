@@ -90,7 +90,8 @@ local function __buG__(bU_G)
                 local __b__u__g_ = 0
                 for _b_Ug, __b_ug__ in ipairs(buG) do
                     local _BUG_ = __b_ug__ and __b_ug__["components"]["wb_strengthen"]
-                    if _BUG_ and BU_G__["force"] or not _BUG_["do_mode"] or _BUG_["do_mode"] == BU_G__["mode"] then
+                    local previous_level = _BUG_ and _BUG_:GetLevel()
+                    if _BUG_ and (BU_G__["force"] or not _BUG_["do_mode"] or _BUG_["do_mode"] == BU_G__["mode"]) then
                         __b_ug__["components"]["wb_strengthen"]["do_mode"] = BU_G__["mode"]
                         if
                             BU_G__["level"] and BU_G__["level"] == 6 and
@@ -155,6 +156,10 @@ local function __buG__(bU_G)
                             return b__U_G_["components"]["talker"]:Say "Trang bị không tương thích với cuộn cường hoá này"
                         end
                         __b__u__g_ = __b__u__g_ + 1
+                        if TheWorld.ismastersim and _BUG_:GetLevel() ~= previous_level then
+                            b__U_G_:PushEvent("ttk_strengthen_scroll_used", {
+                                prefab=b__U_G_.components.bundler.itemprefab, level=_BUG_:GetLevel() })
+                        end
                     end
                     b__U_G_["components"]["inventory"]:GiveItem(__b_ug__, nil, b__U_G_:GetPosition())
                 end
@@ -246,7 +251,7 @@ local function __b__ug(_b_uG)
                 local B__U_G_ = 0
                 for BU_g_, B_U__G__ in ipairs(_bu__G) do
                     local __bUg = B_U__G__ and B_U__G__["components"]["wb_strengthen"]
-                    if __bUg and __BuG["force"] or not __bUg["do_mode"] or __bUg["do_mode"] == __BuG["mode"] then
+                    if __bUg and (__BuG["force"] or not __bUg["do_mode"] or __bUg["do_mode"] == __BuG["mode"]) then
                         B_U__G__["components"]["wb_strengthen"]["do_mode"] = __BuG["mode"]
                         if __BuG["level"] and __BuG["level"] == 5 then
                             B_U__G__["components"]["wb_strengthen"]:SetLevel(5, (253 + 471 - 365 == 359))

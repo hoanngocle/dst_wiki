@@ -1,5 +1,6 @@
 -- Each entry is a complete themed bundle. Equipment is always one of each kind.
-local function gear(name) return {prefab=name, count=1, kind="equipment"} end
+local function gear(name) return {prefab=name, count=1, kind="equipment", reward_kind="rare"} end
+local function pill(name) return {prefab=name, count=1, kind="supply", reward_kind="pill"} end
 local function goods(name, count) return {prefab=name, count=count, kind="supply"} end
 local function creature(name, count) return {prefab=name, count=count, kind="creature"} end
 local function bundle(label, ...)
@@ -48,7 +49,7 @@ local groups = {
         bundle("Linh thạch hoàn thưởng", goods("ttk_lingshi2",2)),
     }},
     ok2 = {weight=3.5, bundles={
-        bundle("Linh thực Lạc Thần", goods("ttk_luoshen_qingshu",2), goods("ttk_luoxiang_pengrou",2)),
+        bundle("Linh thực Lạc Thần", goods("ttk_luoshen_qingshu",2), goods("ttk_luoxiang_pengrou",2), pill("xd_dy_cyfxd_1")),
         bundle("Hạt dưỡng sinh", goods("ttk_lc_hsc_seed",4), goods("ttk_lc_cyh_seed",4)),
         bundle("Hạt dưỡng thần", goods("ttk_lc_qfx_seed",4), goods("ttk_lc_yhh_seed",4)),
         bundle("Hạt dưỡng khí", goods("ttk_lc_dms_seed",4), goods("ttk_lc_lmg_seed",4)),
@@ -160,4 +161,19 @@ local function Pick(available)
     return {category=group.category, items=prize.items}
 end
 
-return {groups=groups, Pick=Pick}
+-- Classification belongs to the received prefab, never the requested bundle/category.
+local reward_kinds = {}
+for _, name in ipairs({"redgem", "bluegem", "yellowgem", "greengem", "orangegem", "thulecite", "moonglass",
+    "ttk_pog_tail", "ttk_spider_leg", "ttk_npxsz", "bearger_fur", "dragon_scales", "shroom_skin",
+    "ttk_lc_hsc", "ttk_lc_cyh", "ttk_lc_dms", "ttk_lc_qfx", "ttk_lc_lmg", "ttk_lc_yhh"}) do
+    reward_kinds[name] = "material"
+end
+for _, group in pairs(groups) do
+    for _, prize in ipairs(group.bundles) do
+        for _, item in ipairs(prize.items) do
+            if item.reward_kind ~= nil then reward_kinds[item.prefab] = item.reward_kind end
+        end
+    end
+end
+local function Classify(prefab) return reward_kinds[prefab] end
+return {groups=groups, Pick=Pick, Classify=Classify}

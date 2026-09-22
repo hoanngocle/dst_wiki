@@ -1416,6 +1416,9 @@ if gFfUgCfKf then
                         and has_magic
                     if preserve_both_charms then
                         inventory:ConsumeByName(protection_prefab, 1)
+                        if GLOBAL.TheWorld ~= nil and GLOBAL.TheWorld.ismastersim then
+                            ifiUicnku:PushEvent("ttk_strengthen_protection_used", { prefab=protection_prefab })
+                        end
                         inventory:ConsumeByName("nn_magicpaper", 1)
                         kfgukCnKu["__bothpaper_preserve_fail"] = true
                         kfgukCnKu["__protectpaper_isprotect"] = true
@@ -1460,6 +1463,10 @@ if gFfUgCfKf then
                                 "wb_strengthen_" .. uffUkCcKk .. "_protectpaper",
                                 1
                             )
+                            if GLOBAL.TheWorld ~= nil and GLOBAL.TheWorld.ismastersim then
+                                gfkUkCgkn:PushEvent("ttk_strengthen_protection_used", {
+                                    prefab="wb_strengthen_" .. uffUkCcKk .. "_protectpaper" })
+                            end
                             self["__protectpaper_isprotect"] = (468 + 226 * 296 + 493 ~= 67865)
                             return
                         end
@@ -1744,6 +1751,7 @@ nfcufCiki(
     "hh_lo_ren",
     "strengthen",
     function(uFfUcCkKg, gFfucCiki, kFcUuccKc, ifnUkcgki, revision)
+        if GLOBAL.TheWorld == nil or not GLOBAL.TheWorld.ismastersim then return end
         if not gFfucCiki or not gFfucCiki:IsValid() or gFfucCiki.prefab ~= "hh_lo_ren"
             or not uFfUcCkKg or not uFfUcCkKg:IsValid() then return end
         local station = gFfucCiki.components.container
@@ -1766,6 +1774,7 @@ nfcufCiki(
         local inventory = uFfUcCkKg["components"]["inventory"]
         if inventory:Has("wb_enhancegem", kFuUfcikk) then
             inventory:ConsumeByName("wb_enhancegem", kFuUfcikk)
+            uFfUcCkKg:PushEvent("ttk_strengthen_gems_spent", { amount=kFuUfcikk })
             iFnUnCgKi:DoStrengthen(uFfUcCkKg)
             gFfucCiki:PushEvent("hh_lam_phuong_forge")
         end

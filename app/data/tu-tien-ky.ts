@@ -42064,7 +42064,7 @@ export const tuTienKyItems = [
     "category": "character",
     "name": "EVA",
     "englishName": null,
-    "description": "Nhân vật đã tích hợp trong Phàm Nhân 2.0.3, một ngoại hình mặc định, dùng cho world mới. Hồn Lực và kỹ năng mở theo cấp 10/20/30/50/100. Cấp EVA lấy từ Achievement & Level, không lấy từ cấp Solo; cần bật Achievement & Level để tăng cấp. Tắt mod EVA độc lập khi dùng bản tích hợp.",
+    "description": "Nhân vật đã tích hợp trong Phàm Nhân 2.0.3, một ngoại hình mặc định, dùng cho world mới. Hồn Lực và kỹ năng mở theo cấp 10/20/30/50/100. EVA dùng chung cấp nhân vật hh_leveling đã tích hợp trong Phàm Nhân. Tắt mod EVA độc lập khi dùng bản tích hợp.",
     "craftingNote": null,
     "sprite": {
       "src": "/tu-tien-ky/icons/eva.png",
@@ -42085,7 +42085,7 @@ export const tuTienKyItems = [
         "effects": [
           {
             "trigger": "Sử dụng",
-            "text": "Nhân vật đã tích hợp trong Phàm Nhân 2.0.3, một ngoại hình mặc định, dùng cho world mới. Hồn Lực và kỹ năng mở theo cấp 10/20/30/50/100. Cấp EVA lấy từ Achievement & Level, không lấy từ cấp Solo; cần bật Achievement & Level để tăng cấp. Tắt mod EVA độc lập khi dùng bản tích hợp.",
+            "text": "Nhân vật đã tích hợp trong Phàm Nhân 2.0.3, một ngoại hình mặc định, dùng cho world mới. Hồn Lực và kỹ năng mở theo cấp 10/20/30/50/100. EVA dùng chung cấp nhân vật hh_leveling đã tích hợp trong Phàm Nhân. Tắt mod EVA độc lập khi dùng bản tích hợp.",
             "evidence": [
               {
                 "source": "Phàm Nhân Tu Tiên 2.0.3",

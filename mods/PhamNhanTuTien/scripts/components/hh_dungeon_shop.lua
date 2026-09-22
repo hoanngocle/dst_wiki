@@ -1,4 +1,5 @@
 local ShopDefs = require("dungeon_shop/hh_dungeon_shop_defs")
+local IsSurfaceAuthority = require("utils/hh_dungeon_authority")
 
 local function GetCycle()
     local days = TUNING.HH_DUNGEON_SHOP and TUNING.HH_DUNGEON_SHOP.RESET_DAYS or 2
@@ -106,6 +107,9 @@ function HHDungeonShop:Sync()
 end
 
 function HHDungeonShop:Purchase(player, id)
+    if not IsSurfaceAuthority(TheWorld) or player == nil or not player:IsValid()
+        or not player:HasTag("player") or player:HasTag("playerghost")
+        or player:HasTag("hh_dungeon_transition") then return false, "Giao dịch không khả dụng." end
     self:EnsureCycle()
     local product = ShopDefs.Get(id)
     local wallet = player and player.components.hh_dungeon_coin
@@ -133,6 +137,7 @@ function HHDungeonShop:Purchase(player, id)
     self.stock[id] = self.stock[id] - 1
     self:Sync()
     wallet:SetNotice("Đã mua " .. tostring(product.name or id) .. ".")
+    player:PushEvent("hh_dungeon_shop_purchased", { product_id=id, cost=product.price })
     return true
 end
 

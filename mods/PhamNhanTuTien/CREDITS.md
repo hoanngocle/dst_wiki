@@ -156,3 +156,7 @@ Bộ kiếm cầm tay nguyên tố dùng lại sáu mẫu trên; icon Tiên Ki�
 ## EVA
 
 Tích hợp từ EVA 1.1.9 trong workspace. Khung nhân vật ban đầu: khung nhân vật của ZeroRyuk; kỹ năng tham chiếu Tu Tiên gốc. Hình EVA, lưỡi hái và icon theo thiết kế người dùng duyệt. Artwork bổ sung qua imagegen; nguồn/prompt lưu trong mods/eva-assets-work.
+
+## Perk Thành Tựu — Phàm Nhân Tu Tiên 2.0
+
+Danh mục khả năng, họ công thức, chi phí nguyên liệu và cấu hình placer được chuyển thể từ Achievement & Level (Workshop `2937640068`, bản sao tham chiếu `mods/AchievementLevel`), cụ thể `main_recipes.lua`, `scripts/components/allachivcoin.lua`, `scripts/postInits/perk_abilities.lua`, `perk_global.lua`, `perk_produce.lua` và hai prefab placer. Runtime độc lập dùng API DST và provider `ttk_achievement_*`; không nhập hệ Level hoặc phụ thuộc mod nguồn. Các công thức truyền thừa hiện dùng lại tám prefab đã chuyển thể trong Phàm Nhân; catalog vẫn giữ đủ danh sách gốc. Những nội dung thiếu prefab/component không được kích hoạt bằng alias giả.

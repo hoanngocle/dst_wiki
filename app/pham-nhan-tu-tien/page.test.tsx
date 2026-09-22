@@ -7,6 +7,9 @@ it("renders the generated runtime snapshot instead of legacy Solo data", () => {
   render(<Page />);
   expect(screen.getByRole("heading", { name: "Phàm Nhân Tu Tiên" })).toBeDefined();
   expect(screen.getByRole("button", { name: "Vật phẩm" })).toBeDefined();
+  expect(screen.getByRole("link", { name: "Tiến trình" }).getAttribute("href")).toBe(
+    "/pham-nhan-tu-tien/tien-trinh",
+  );
   expect(screen.queryByRole("link", { name: "Config" })).toBeNull();
 });
 

@@ -10,8 +10,10 @@ local ok, err = pcall(function()
     local souls = assert(p.components.eva_souls)
     assert(p.components.hh_leveling, "host player progression missing")
     assert(souls.level == 1 and souls.current == 100)
-    souls.level = 151 -- Fixture unlocks skills; production still reads Achievement & Level.
-    souls:RefreshLevel(); souls:DoDelta(1000)
+    p.components.hh_leveling.level = 151 -- Disposable fixture uses unified progression.
+    p:PushEvent("hh_levelup")
+    assert(souls.level == 151 and souls.max == 1000)
+    souls:DoDelta(1000)
     p.components.health:SetInvincible(true)
     local target = assert(SpawnPrefab("spider"))
     target.Transform:SetPosition(x + 1.5,y,z)

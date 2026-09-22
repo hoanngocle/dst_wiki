@@ -73,7 +73,7 @@ AddStategraphActionHandler("wilson", ActionHandler(ACTIONS.HH_GUILD_OPEN, "dosho
 AddStategraphActionHandler("wilson_client", ActionHandler(ACTIONS.HH_GUILD_OPEN, "doshortaction"))
 
 AddPlayerPostInit(function(inst)
-    inst.hh_guild_rank = net_tinybyte(inst.GUID, "hh_guild.rank", "hh_guild_rankdirty")
+    inst.hh_guild_rank = net_smallbyte(inst.GUID, "hh_guild.rank", "hh_guild_rankdirty")
     inst.hh_guild_credit = net_int(inst.GUID, "hh_guild.credit", "hh_guild_creditdirty")
     inst.hh_guild_exam_id = net_tinybyte(inst.GUID, "hh_guild.exam_id", "hh_guild_examdirty")
     inst.hh_guild_exam_status = net_tinybyte(inst.GUID, "hh_guild.exam_status", "hh_guild_examdirty")

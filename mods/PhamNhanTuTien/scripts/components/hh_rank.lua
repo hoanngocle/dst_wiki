@@ -1,6 +1,7 @@
 local RankDefs = require("guild/hh_rank_defs")
 local ExamDefs = require("guild/hh_rank_exam_defs")
 local Event = require("guild/hh_guild_event")
+local IsSurfaceAuthority = require("utils/hh_dungeon_authority")
 
 local STATUS_LOCKED = 0
 local STATUS_AVAILABLE = 1
@@ -645,6 +646,10 @@ local HHRank = Class(function(self, inst)
         end
     end, TheWorld)
 
+    inst:ListenForEvent("hh_levelup", function()
+        self:ReconcileLevelPromotion()
+    end)
+
     for _, exam in ipairs(ExamDefs.list) do
         self.exam_states[exam.id] = STATUS_LOCKED
     end
@@ -702,6 +707,32 @@ function HHRank:GetRank()
     return self.rank
 end
 
+function HHRank:ReconcileLevelPromotion()
+    local old_rank = self.rank
+    if old_rank < RankDefs.RANK.S then
+        return false
+    end
+
+    local level_rank = RankDefs.GetRankForLevel(GetLevel(self.inst))
+    if level_rank <= self.rank then
+        return false
+    end
+
+    self.rank = level_rank
+    self.inst:PushEvent("hh_rank_changed", {
+        old_rank = old_rank,
+        new_rank = self.rank,
+        source = "level_promotion",
+    })
+    local quest = self.inst.components.hh_guild_quest
+    if quest then
+        quest:RefreshOffers()
+    end
+    self:RefreshExamAvailability()
+    self:Sync()
+    return true
+end
+
 function HHRank:AddPendingItems(items)
     for _, item in ipairs(items or {}) do
         local amount = math.max(0, math.floor(tonumber(item.amount) or 0))
@@ -729,7 +760,7 @@ function HHRank:CanReceiveItems(items)
     return ok
 end
 
-function HHRank:GiveItems(items)
+function HHRank:GiveItems(items, commit)
     local inventory = self.inst.components.inventory
     local preflight_ok, descriptors, preflight_reason = PreflightReward(inventory, items)
     if not preflight_ok then
@@ -766,6 +797,11 @@ function HHRank:GiveItems(items)
     end
     inventory.ignorefull = previous_ignorefull
 
+    -- Purchases keep the delivery snapshot until their debit succeeds.
+    if committed and commit ~= nil then
+        local ok, result = pcall(commit)
+        committed = ok and result == true
+    end
     if not committed then
         RollbackRewardCommit(inventory, prepared, snapshot)
         return false, "commit"
@@ -867,6 +903,11 @@ function HHRank:RefreshExamAvailability()
         end
     end
     if exam == nil then
+        self.exam_id = 0
+        self.exam_status = STATUS_CLAIMED
+        self.exam_progress = 0
+        self.exam_target = 0
+        self:Sync()
         return
     end
 
@@ -935,6 +976,7 @@ function HHRank:CompleteExam()
 end
 
 function HHRank:ClaimExam()
+    if not IsSurfaceAuthority(TheWorld) then return false end
     local exam = ExamDefs.Get(self.exam_id)
     if exam == nil or self.exam_status ~= STATUS_COMPLETED then
         self:SetNotice("Rank Exam chưa hoàn thành.")
@@ -947,30 +989,33 @@ function HHRank:ClaimExam()
 
     local old_rank = self.rank
     self.rank = exam.rank
-    if old_rank ~= self.rank then
-        self.inst:PushEvent("hh_rank_changed", {
-            old_rank = old_rank,
-            new_rank = self.rank,
-            source = "claim_exam",
-        })
-    end
     self.exam_states[exam.id] = STATUS_CLAIMED
     self.exam_status = STATUS_CLAIMED
+    self.inst:PushEvent("hh_rank_changed", {
+        old_rank = old_rank,
+        new_rank = self.rank,
+        source = "claim_exam",
+    })
     local fx = SpawnPrefab("hh_guild_complete_fx")
     if fx then
         fx.entity:SetParent(self.inst.entity)
         fx.Transform:SetPosition(0, 0, 0)
     end
-    if self.inst.components.talker then
-        self.inst.components.talker:Say("Thăng hạng thành công! Rank " .. RankDefs.GetName(self.rank) .. ".")
-    end
     self:AddCredit(exam.reward_credit)
     self:AddPendingItems(exam.reward_items)
     self.pending_exam_reward = true
-    self:RefreshExamAvailability()
-    local quest = self.inst.components.hh_guild_quest
-    if quest then
-        quest:RefreshOffers()
+    local level_promoted = self:ReconcileLevelPromotion()
+    if not level_promoted then
+        self:RefreshExamAvailability()
+    end
+    if not level_promoted then
+        local quest = self.inst.components.hh_guild_quest
+        if quest then
+            quest:RefreshOffers()
+        end
+    end
+    if self.inst.components.talker then
+        self.inst.components.talker:Say("Thăng hạng thành công! Rank " .. RankDefs.GetName(self.rank) .. ".")
     end
     self:SetNotice("Chúc mừng! Bạn đã đạt Rank " .. RankDefs.GetName(self.rank) .. ".")
     return true
@@ -1005,6 +1050,13 @@ function HHRank:TryProgressFromEvent(event_name, data, quest_defs)
 end
 
 function HHRank:OpenInterface(staff)
+    if not IsSurfaceAuthority(TheWorld) or not self.inst:IsValid()
+        or not self.inst:HasTag("player") or self.inst:HasTag("playerghost")
+        or TheWorld.state.phase == "night" or staff == nil or not staff:IsValid()
+        or staff.prefab ~= "guild_staff" or not staff:HasTag("hh_guild_employee")
+        or staff.BeginGuildInteraction == nil or self.inst.hh_guild_ui_open == nil then
+        return false
+    end
     if self.interface_staff ~= nil
         and self.interface_staff ~= staff
         and self.interface_staff:IsValid()
@@ -1026,6 +1078,8 @@ function HHRank:OpenInterface(staff)
             self:CloseInterface()
         end
     end)
+    self.inst:PushEvent("hh_guild_opened", { staff=staff })
+    return true
 end
 
 function HHRank:CloseInterface()
@@ -1085,8 +1139,14 @@ function HHRank:OnLoad(data)
     end
     self.pending_credit = math.max(0, math.floor(tonumber(data.pending_credit) or 0))
     self.pending_exam_reward = data.pending_exam_reward == true
+    self:ReconcileLevelPromotion()
     self:RefreshExamAvailability()
     self:Sync()
+    self.inst:DoTaskInTime(0, function(inst)
+        if inst:IsValid() and inst.components.hh_rank == self then
+            self:ReconcileLevelPromotion()
+        end
+    end)
 end
 
 return HHRank

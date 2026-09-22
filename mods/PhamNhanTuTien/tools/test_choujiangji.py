@@ -13,6 +13,10 @@ with ZipFile("C:/Program Files (x86)/Steam/steamapps/common/Don't Starve Togethe
     lua.execute(archive.read('scripts/class.lua').decode())
 lua.execute("package.path = ... .. '/scripts/?.lua;' .. package.path", ROOT.as_posix())
 lua.execute(r'''
+TheWorld={ismastersim=true}
+local actor={userid='paid-player',IsValid=function() return true end,HasTag=function(_,tag) return tag=='player' end,
+    PushEvent=function() end}
+AllPlayers={actor}
 local Slot = require('components/ttk_slotmachine')
 local function machine()
     local inst = {events={}, tasks={}, delivered={}}
@@ -25,7 +29,7 @@ local function machine()
         local task={fn=fn}; function task:Cancel() self.cancelled=true end
         self.tasks[#self.tasks+1]=task; return task
     end
-    function inst:DispensePrize(name) self.delivered[#self.delivered+1]=name end
+    function inst:DispensePrize(name) self.delivered[#self.delivered+1]=name; return {prefab=name} end
     function inst:step()
         local t=table.remove(self.tasks,1)
         if t and not t.cancelled then t.fn(self) end
@@ -39,7 +43,7 @@ for _,name in ipairs({'ttk_lingshi1','ttk_lingshi3','ttk_lingshi4','goldnugget',
     assert(not slot:CanAccept({prefab=name}),name)
 end
 assert(not slot:CanAccept(nil))
-slot:Start({category='ok',items={{prefab='goldnugget',count=3},{prefab='footballhat',count=1}}})
+slot:Start({category='ok',items={{prefab='goldnugget',count=3},{prefab='footballhat',count=1}}},actor)
 assert(not slot:CanAccept({prefab='ttk_lingshi2'}))
 assert(not slot:Start({category='good',items={{prefab='krampus_sack',count=1}}}))
 local before=slot:OnSave()
@@ -55,7 +59,7 @@ assert(resumed.busy)
 for i=1,10 do restored:step() end
 assert(#restored.delivered==3, 'Save/load must dispense only remaining items')
 assert(restored.delivered[3]=='footballhat')
-assert(not resumed.busy and resumed:OnSave()==nil)
+assert(not resumed.busy and resumed:OnSave().queue==nil and resumed:OnSave().sequence==1)
 for i=1,10 do inst:step() end
 assert(#inst.delivered==4, 'Repeated Pay must not duplicate a bundle')
 local fresh, pending=machine(); pending:OnLoad(before)
@@ -71,7 +75,7 @@ for category,group in pairs(prizes.groups) do
         for _,item in ipairs(bundle.items) do
             assert(not seen[item.prefab], 'Repeated item in a bundle: '..item.prefab)
             seen[item.prefab]=true
-            assert(not item.prefab:match('^xd_'), 'Unported original prefab: '..item.prefab)
+            assert(not item.prefab:match('^xd_') or item.prefab=='xd_dy_cyfxd_1', 'Unported original prefab: '..item.prefab)
             assert(item.prefab~='panflute', 'User excluded the Pan Flute')
             assert(item.prefab~='armorwood' and item.prefab~='goldenpickaxe' and item.prefab~='meatballs',
                 'Low-value starter rewards must be replaced with TTK items')

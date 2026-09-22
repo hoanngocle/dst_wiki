@@ -112,6 +112,26 @@ end
         except Exception as error:
             self.fail(str(error))
 
+    def test_achievement_effects_contribute_without_exceeding_combat_caps(self):
+        self.check('''
+local player=entity('hh_player',{
+ trueDamageNum=35, absorbDamage=70, addSplashDamageAOE=55, criticalHitRate=5,
+})
+player.ttk_achievement_effects={
+ trueDamageNum=20, absorbDamage=20, addSplashDamageAOE=20, criticalHitRate=7,
+}
+local effects=player.components.hh_player
+assert(effects:GetEffectValueByKey('trueDamageNum')==40)
+assert(effects:GetEffectValueByKey('absorbDamage')==80)
+assert(effects:GetEffectValueByKey('addSplashDamageAOE')==60)
+assert(effects:GetEffectValueByKey('criticalHitRate')==12)
+
+effects.hh_effects.trueDamageNum=nil
+player.ttk_achievement_effects.trueDamageNum=55
+assert(effects:GetEffectValueByKey('trueDamageNum')==40,
+ 'achievement-only fallback must obey the combat cap')
+''')
+
     def test_missing_health_and_dead_entities_skip_procs(self):
         self.check('''
 for _,mode in ipairs({'missing','attacker_dead','target_dead'}) do
