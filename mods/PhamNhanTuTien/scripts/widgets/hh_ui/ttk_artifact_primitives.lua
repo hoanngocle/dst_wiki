@@ -1,7 +1,7 @@
 local Widget = require("widgets/widget")
 local Image = require("widgets/image")
 local Text = require("widgets/text")
-local ImageButton = require("widgets/imagebutton")
+local TextButton = require("widgets/textbutton")
 local Theme = require("widgets/hh_ui/ttk_unified_theme")
 
 local Primitive = {}
@@ -34,12 +34,17 @@ function Primitive.Button(parent, value, width, height, x, y, onclick, variant)
     local texture = variant == "primary" and "primary.tex"
         or variant == "active" and "tab_active.tex"
         or "tab_idle.tex"
-    local button = parent:AddChild(ImageButton(CONTROL_ATLAS, texture, texture, texture, texture))
+    local button = parent:AddChild(TextButton())
+    local background = button:AddChild(Image(CONTROL_ATLAS, texture))
+    background:SetSize(width, height)
+    if background.MoveToBack ~= nil then background:MoveToBack() end
+    button.background = background
     button:SetSize(width, height)
     button:SetText(value or "")
     button:SetFont(Theme.GetFont())
     button:SetTextSize(math.floor((height or 54) * .48))
     button:SetTextColour(unpack(Theme.colours.text))
+    button:SetTextFocusColour(unpack(Theme.colours.purple_soft))
     button:SetOnClick(onclick or function() end)
     return position(button, x, y)
 end

@@ -41,7 +41,12 @@ def theme_preview() -> Image.Image:
     return image
 
 
-SCREENS = {"theme": theme_preview}
+def shell_preview() -> Image.Image:
+    reference = Path(__file__).parents[1] / "pham-nhan-unified-ui/trang-bi-phac-thao.png"
+    return Image.open(reference).convert("RGBA")
+
+
+SCREENS = {"theme": theme_preview, "shell": shell_preview}
 
 
 def fit(image: Image.Image, width: int, height: int) -> Image.Image:

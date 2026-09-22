@@ -27,6 +27,7 @@ function Node:SetFont(value) self.font = value end
 function Node:SetText(value) self.value = value end
 function Node:SetTextSize(value) self.text_size = value end
 function Node:SetTextColour(...) self.text_colour = { ... } end
+function Node:SetTextFocusColour(...) self.focus_colour = { ... } end
 function Node:SetOnClick(fn) self.onclick = fn end
 function Node:SetScaleMode() scale_mode_calls = scale_mode_calls + 1 end
 
@@ -36,11 +37,11 @@ end
 package.preload["widgets/widget"] = function() return factory("widget") end
 package.preload["widgets/image"] = function() return factory("image") end
 package.preload["widgets/text"] = function() return factory("text") end
-package.preload["widgets/imagebutton"] = function() return factory("button") end
+package.preload["widgets/textbutton"] = function() return factory("button") end
 package.loaded["widgets/widget"] = nil
 package.loaded["widgets/image"] = nil
 package.loaded["widgets/text"] = nil
-package.loaded["widgets/imagebutton"] = nil
+package.loaded["widgets/textbutton"] = nil
 package.loaded["widgets/hh_ui/ttk_artifact_primitives"] = nil
 
 local Primitive = require("widgets/hh_ui/ttk_artifact_primitives")

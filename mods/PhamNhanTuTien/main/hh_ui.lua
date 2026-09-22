@@ -1125,7 +1125,7 @@ local nfnUfcuki = cfcugCckg("widgets/hh_ui/hh_equip_ui")
 local ufuufCgKc = cfcugCckg("widgets/hh_ui/hh_forge_ui")
 local ifuUgcikc = {
     ["hh_ui_container"] = {["ui"] = nfnUfcuki, ["ui_id"] = "hh_equip_ui"},
-    ["hh_forge_container"] = {["ui"] = ufuufCgKc, ["ui_id"] = "hh_equip_ui", ["scale"] = 1.05}
+    ["hh_forge_container"] = {["ui"] = ufuufCgKc, ["ui_id"] = "hh_equip_ui", ["scale"] = 0.7}
 }
 local function gFcUuckKi(self, uFfUucnkk)
     local fFgUccfKi = self["Open"]
@@ -1202,8 +1202,8 @@ local function gFcUuckKi(self, uFfUucnkk)
                 end
             end
         end
-        if unified_screen ~= nil and unified_screen.AttachNativeContainer ~= nil then
-            unified_screen:AttachNativeContainer(self, prefab)
+        if unified_screen ~= nil and unified_screen.TrackNativeContainer ~= nil then
+            unified_screen:TrackNativeContainer(self, prefab)
         end
     end
     local gfiUgcfKi = self["Close"]
@@ -1212,8 +1212,8 @@ local function gFcUuckKi(self, uFfUucnkk)
         local is_summary = container ~= nil and container["prefab"] == "hh_ui_container"
         local is_monarch_storage = container ~= nil and container["prefab"] == MONARCH_STORAGE_PREFAB
         local unified_screen = TTKUnifiedRegistry.Get(self["owner"])
-        if unified_screen ~= nil and unified_screen.DetachNativeContainer ~= nil then
-            unified_screen:DetachNativeContainer(self)
+        if unified_screen ~= nil and unified_screen.UntrackNativeContainer ~= nil then
+            unified_screen:UntrackNativeContainer(self)
         end
         if is_monarch_storage and self["owner"] ~= nil then
             self["owner"].HHMonarchStorageOpen = nil
