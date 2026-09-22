@@ -124,6 +124,7 @@
     {tier:'III', code:'restore_use_1s_1use', id:69, name:'☆Gia Trì III', value:'Hồi 1 độ bền mỗi giây'},
     {tier:'IV', code:'restore_use_1s_2_percent', id:70, name:'★Gia Trì IV', value:'Hồi 2% độ bền mỗi giây'},
   ]});
+  add({ code:'durability_immune_amount', name:'★Gia Trì V', family:'Gia Trì', tier:'V', category:'Độ bền', slot:'Trang bị có độ bền', status:'Đề xuất - adapter', effectKey:'durabilityImmune', current:'Chưa có', proposed:'Đồ không mất độ bền', cap:'Chỉ 1 viên Gia Trì', exclusiveGroup:'durability_regen', source:SOURCE_ENCHANT, note:'Đề xuất web, chưa triển khai trong runtime.' });
   existingTierFamily({ family:'Hộ Giáp', category:'Độ bền', slot:'Giáp', effectKey:'armorDurability', entries:[
     {tier:'I', code:'add_max_use_armor_01', id:67, name:'Hộ Giáp I', value:'+200-500 độ bền giáp'},
     {tier:'II', code:'add_max_use_armor_02', id:68, name:'Hộ Giáp II', value:'+500-1000 độ bền giáp'},

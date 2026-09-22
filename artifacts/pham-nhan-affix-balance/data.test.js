@@ -106,6 +106,18 @@ test('promotes permanent armor to tier V and adds the requested tier IV proposal
   assert.equal(rows[4].current, 'Giáp không mất độ bền');
 });
 
+test('adds Gia Trì V as a web-only permanent durability proposal', () => {
+  const rows = Catalog.rows.filter((row) => row.family === 'Gia Trì');
+  assert.deepEqual(rows.map((row) => row.tier), ['I', 'II', 'III', 'IV', 'V']);
+
+  const tierV = rows[4];
+  assert.equal(tierV.name, '★Gia Trì V');
+  assert.equal(tierV.code, 'durability_immune_amount');
+  assert.equal(tierV.proposed, 'Đồ không mất độ bền');
+  assert.equal(tierV.status, 'Đề xuất - adapter');
+  assert.equal(tierV.cap, 'Chỉ 1 viên Gia Trì');
+});
+
 test('removes Bền Lực and uses the accurate one-second Gia Trì code', () => {
   assert.equal(Catalog.rows.some((row) => row.code === 'utility_durability_save' || row.name === 'Bền Lực'), false);
   assert.equal(Catalog.rows.some((row) => row.code === 'restore_use_3s_1use'), false);
