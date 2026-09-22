@@ -117,6 +117,8 @@ function Core:SetSeasonalXPCallback(callback)
     self.seasonal_xp = type(callback) == "function" and callback or nil
 end
 
+local SettleSeason
+
 function Core:StartSeason(season, epoch, random)
     if not IsServer() then return false, NewResult(false, "not_server") end
     if not SeasonalCatalog.IsSeason(season) or not IsValidRequestId(epoch)
@@ -124,8 +126,16 @@ function Core:StartSeason(season, epoch, random)
         return false, NewResult(false, "invalid_season")
     end
     if self.seasonal_busy then return false, NewResult(false, "pending") end
-    if self.seasonal ~= nil and self.seasonal.season == season and self.seasonal.epoch == epoch then
+    if self.seasonal ~= nil and self.seasonal.season == season and self.seasonal.epoch == epoch
+        and not self.seasonal.rollover_pending then
         return true, Copy(self.seasonal)
+    end
+    if self.seasonal ~= nil then
+        -- Retain the outgoing pool as the durable settlement record. Committed
+        -- slot/chest receipts survive retries; no new draw can erase unpaid work.
+        self.seasonal.rollover_pending = true
+        local ok, result = SettleSeason(self)
+        if not ok then return false, result end
     end
     self.seasonal = {version=2, season=season, epoch=epoch, slots=SeasonalCatalog.Draw(season, random), first_claims=0, chest_claimed={}}
     return true, Copy(self.seasonal)
@@ -133,6 +143,7 @@ end
 
 function Core:ActiveSeason(season)
     return IsServer() and self.seasonal ~= nil and self.seasonal.season == season
+        and not self.seasonal.rollover_pending
         and TheWorld.state ~= nil and TheWorld.state.season == season
 end
 
@@ -172,6 +183,31 @@ function Core:StoreSeasonalReplay(request_id, result)
     end
 end
 
+local function CommitSeasonal(self, definition, slot, request_id)
+    if self.seasonal_xp == nil then return false, NewResult(false, "xp_unavailable") end
+    local id, state = definition.id, self.seasonal
+    local number = slot.claims + 1
+    local claim_key = state.epoch .. ":" .. id .. ":" .. tostring(number)
+    self.seasonal_busy = true
+    -- The progression adapter owns XP tuning and idempotency for claim_key.
+    -- Retrying after an adapter exception uses this same key, never a new award.
+    local called, awarded = pcall(self.seasonal_xp, self.inst, id, definition.kind, number, claim_key, state)
+    if not called or awarded ~= true then
+        self.seasonal_busy = false
+        return false, NewResult(false, "xp_failed")
+    end
+    if slot.claims == 0 then state.first_claims = state.first_claims + 1 end
+    slot.claims, slot.progress = number, 0
+    slot.xp_receipt = nil
+    local result = NewResult(true, "seasonal_claimed", {
+        id=id, season=definition.season, epoch=state.epoch, claims=number,
+        first_claims=state.first_claims, claim_key=claim_key,
+    })
+    if request_id ~= nil then self:StoreSeasonalReplay(request_id, result) end
+    self.seasonal_busy = false
+    return true, Copy(result)
+end
+
 function Core:ClaimSeasonal(id, request_id)
     if not IsServer() then return false, NewResult(false, "not_server") end
     if not IsValidRequestId(request_id) then return false, NewResult(false, "invalid_request") end
@@ -182,25 +218,31 @@ function Core:ClaimSeasonal(id, request_id)
     if definition == nil or not self:ActiveSeason(definition.season) then return false, NewResult(false, "inactive_task") end
     local slot = self:FindSeasonalSlot(id)
     if slot == nil or SlotStatus(slot, definition) ~= "ready_to_claim" then return false, NewResult(false, "not_claimable") end
-    if self.seasonal_xp == nil then return false, NewResult(false, "xp_unavailable") end
-    local number = slot.claims + 1
-    local claim_key = self.seasonal.epoch .. ":" .. id .. ":" .. tostring(number)
-    self.seasonal_pending[request_id], self.seasonal_busy = true, true
-    -- The progression adapter owns XP tuning and idempotency for claim_key.
-    -- Retrying after an adapter exception uses this same key, never a new award.
-    local called, awarded = pcall(self.seasonal_xp, self.inst, id, definition.kind, number, claim_key)
-    if not called or awarded ~= true then
-        self.seasonal_pending[request_id], self.seasonal_busy = nil, false
-        return false, NewResult(false, "xp_failed")
+    return CommitSeasonal(self, definition, slot, request_id)
+end
+
+local function CommitChest(self, player, season, milestone, bundle, request_id)
+    local state = self.seasonal
+    if state.chest_claimed[milestone] or state.first_claims < milestone then
+        return false, NewResult(false, "not_claimable")
     end
-    if slot.claims == 0 then self.seasonal.first_claims = self.seasonal.first_claims + 1 end
-    slot.claims, slot.progress = number, 0
-    local result = NewResult(true, "seasonal_claimed", {
-        id=id, season=definition.season, epoch=self.seasonal.epoch, claims=number,
-        first_claims=self.seasonal.first_claims, claim_key=claim_key,
-    })
-    self:StoreSeasonalReplay(request_id, result)
-    self.seasonal_pending[request_id], self.seasonal_busy = nil, false
+    local plan, error_code = Rewards.Preflight(player, season, milestone, bundle)
+    if plan == nil then return false, NewResult(false, error_code) end
+    self.seasonal_busy = true
+    local staged
+    staged, error_code = Rewards.Stage(bundle, plan)
+    if staged == nil then
+        self.seasonal_busy = false
+        return false, NewResult(false, error_code)
+    end
+    plan = Rewards.PlanDelivery(plan, staged)
+    local result = NewResult(true, "chest_claimed", {season=season, epoch=state.epoch, milestone=milestone, bundle=bundle})
+    -- Commit before the first inventory callback. Reentrant requests return this
+    -- exact result, and a different request cannot pay the same chest again.
+    state.chest_claimed[milestone] = true
+    if request_id ~= nil then self:StoreSeasonalReplay(request_id, result) end
+    Rewards.Deliver(plan, staged)
+    self.seasonal_busy = false
     return true, Copy(result)
 end
 
@@ -213,29 +255,28 @@ function Core:ClaimChest(player, season, milestone, request_id)
     local bundle = Rewards.GetBundle(season, milestone)
     if bundle == nil then return false, NewResult(false, "invalid_chest") end
     if not self:ActiveSeason(season) then return false, NewResult(false, "inactive_season") end
-    local state = self.seasonal
-    if state.chest_claimed[milestone] or state.first_claims < milestone then
-        return false, NewResult(false, "not_claimable")
+    return CommitChest(self, player, season, milestone, bundle, request_id)
+end
+
+SettleSeason = function(self)
+    local state, failure = self.seasonal, nil
+    for _, slot in ipairs(state.slots) do
+        local definition = SeasonalCatalog.ById(slot.task_id)
+        if SlotStatus(slot, definition) == "ready_to_claim" then
+            local ok, result = CommitSeasonal(self, definition, slot)
+            if not ok then failure = failure or result end
+        end
     end
-    local plan, error_code = Rewards.Preflight(player, season, milestone, bundle)
-    if plan == nil then return false, NewResult(false, error_code) end
-    self.seasonal_pending[request_id] = true
-    self.seasonal_busy = true
-    local staged
-    staged, error_code = Rewards.Stage(bundle, plan)
-    if staged == nil then
-        self.seasonal_pending[request_id], self.seasonal_busy = nil, false
-        return false, NewResult(false, error_code)
+    -- First claims above may unlock another milestone. Resolve every eligible
+    -- outgoing chest through the same atomic transaction as a manual claim.
+    for _, milestone in ipairs({5, 10, 15, 20}) do
+        if state.first_claims >= milestone and not state.chest_claimed[milestone] then
+            local ok, result = CommitChest(self, self.inst, state.season, milestone,
+                Rewards.GetBundle(state.season, milestone))
+            if not ok then failure = failure or result end
+        end
     end
-    plan = Rewards.PlanDelivery(plan, staged)
-    local result = NewResult(true, "chest_claimed", {season=season, epoch=state.epoch, milestone=milestone, bundle=bundle})
-    -- Commit before the first inventory callback. Reentrant requests return this
-    -- exact result, and a different request cannot pay the same chest again.
-    state.chest_claimed[milestone] = true
-    self:StoreSeasonalReplay(request_id, result)
-    Rewards.Deliver(plan, staged)
-    self.seasonal_pending[request_id], self.seasonal_busy = nil, false
-    return true, Copy(result)
+    return failure == nil, failure
 end
 
 function Core:LoadSeasonal(saved, requests)
@@ -262,6 +303,10 @@ function Core:LoadSeasonal(saved, requests)
             if not IsFiniteInteger(progress) or progress < 0 then progress = 0 end
             progress = claims == definition.max_claims and 0 or math.min(progress, definition.target)
             slots[index] = {task_id=definition.id, progress=progress, claims=claims}
+            if progress >= definition.target and claims < definition.max_claims
+                and (raw.xp_receipt == "pending" or raw.xp_receipt == "awarded") then
+                slots[index].xp_receipt = raw.xp_receipt
+            end
             if claims > 0 then first_claims = first_claims + 1 end
         end
         if valid and counts.once == 16 and counts.repeatable == 4 then
@@ -271,6 +316,7 @@ function Core:LoadSeasonal(saved, requests)
                 if raw_chests[milestone] == true and first_claims >= milestone then chest_claimed[milestone] = true end
             end
             self.seasonal = {version=2, season=saved.season, epoch=saved.epoch, slots=slots, first_claims=first_claims, chest_claimed=chest_claimed}
+            if saved.rollover_pending == true then self.seasonal.rollover_pending = true end
         end
     end
     -- Keep only small canonical success records. Saved client payloads, arbitrary

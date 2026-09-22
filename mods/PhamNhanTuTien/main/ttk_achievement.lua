@@ -206,27 +206,33 @@ local function ConfigureXP(inst, component)
     -- configured, Core keeps its nil callback and reports xp_unavailable.
     local SEASONAL_CLAIM_XP = G.TUNING and G.TUNING.TTK_SEASONAL_CLAIM_XP
     if type(SEASONAL_CLAIM_XP) ~= "number" or SEASONAL_CLAIM_XP ~= SEASONAL_CLAIM_XP
-        or SEASONAL_CLAIM_XP <= 0 or SEASONAL_CLAIM_XP == math.huge then return end
-    local awarded = {}
-    component:SetSeasonalXPCallback(function(player, id, kind, number, claim_key)
+        or SEASONAL_CLAIM_XP <= 0 or SEASONAL_CLAIM_XP == math.huge then
+        component:SetSeasonalXPCallback(nil)
+        return
+    end
+    component:SetSeasonalXPCallback(function(player, id, kind, number, claim_key, outgoing)
         if not Master() or player ~= inst or ResolveSender(inst) ~= component then return false end
         local row = SeasonalCatalog.ById(id)
         local seasonal = component.core.seasonal
         local slot = component.core:FindSeasonalSlot(id)
         if row == nil or row.kind ~= kind or seasonal == nil or slot == nil
-            or seasonal.season ~= G.TheWorld.state.season or row.season ~= seasonal.season
+            or (seasonal.season ~= G.TheWorld.state.season
+                and not (outgoing == seasonal and seasonal.rollover_pending and component.core.seasonal_busy))
+            or row.season ~= seasonal.season
             or not Integer(number, 1, row.max_claims) then return false end
         local expected = seasonal.epoch .. ":" .. id .. ":" .. tostring(number)
         if claim_key ~= expected then return false end
-        if awarded[claim_key] == true then return true end
-        if awarded[claim_key] ~= nil or number ~= slot.claims + 1 or slot.progress < row.target then return false end
+        if number ~= slot.claims + 1 or slot.progress < row.target then return false end
+        if slot.xp_receipt == "awarded" then return true end
+        if slot.xp_receipt ~= nil then return false end
         local leveling = inst.components.hh_leveling
         if leveling == nil or SEASONAL_CLAIM_XP <= 0 then return false end
         -- Reserve before callbacks. If AddExp throws after changing EXP, retain
-        -- the reservation (fail closed) rather than retrying an uncertain award.
-        awarded[claim_key] = "pending"
+        -- the saved slot reservation (fail closed), including after reload,
+        -- rather than retrying an uncertain award.
+        slot.xp_receipt = "pending"
         local ok = leveling:AddExp(SEASONAL_CLAIM_XP)
-        awarded[claim_key] = ok == true and true or nil
+        slot.xp_receipt = ok == true and "awarded" or nil
         return ok == true
     end)
 end
@@ -243,7 +249,8 @@ local function RefreshSeason(inst)
     local start_cycle = math.max(0, state.cycles - state.elapseddaysinseason)
     local epoch = state.season .. ":" .. tostring(start_cycle)
     local saved = component.core.seasonal
-    if saved ~= nil and saved.season == state.season and saved.epoch == epoch then return end
+    if saved ~= nil and saved.season == state.season and saved.epoch == epoch and not saved.rollover_pending then return end
+    ConfigureXP(inst, component)
     if component:StartSeason(state.season, epoch) then
         Route(inst, "season_mission_assigned", { source="seasonal" }, 1)
     end
@@ -560,6 +567,8 @@ local function InstallPlayer(inst)
             Route(player, "survival_event", { key="solo_days" }, 1)
         end
         state.cycle = cycle
+        local seasonal = component.core.seasonal
+        if seasonal ~= nil and seasonal.rollover_pending then player:DoTaskInTime(0, RefreshSeason) end
     end)
     inst:WatchWorldState("isnight", function(player)
         if G.TheWorld.state.isnight then state.night = Living(player) end

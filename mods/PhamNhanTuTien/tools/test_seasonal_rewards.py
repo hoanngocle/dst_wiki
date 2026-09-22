@@ -264,8 +264,8 @@ class SeasonalTests(unittest.TestCase):
             self.assertIn(signature, core)
         for marker in ("first_claims", "chest_claimed", "SeasonalCatalog.ById", "SeasonalCatalog.Draw", "self.seasonal_busy", "self.seasonal_pending", "xp_unavailable"):
             self.assertIn(marker, core)
-        claim = core[core.index("function Core:ClaimChest("):core.index("function Core:LoadSeasonal(")]
-        self.assertLess(claim.index("Rewards.Preflight"), claim.index("self.seasonal_pending[request_id] = true"))
+        claim = core[core.index("local function CommitChest("):core.index("function Core:ClaimChest(")]
+        self.assertLess(claim.index("Rewards.Preflight"), claim.index("self.seasonal_busy = true"))
         self.assertLess(claim.index("Rewards.Stage"), claim.index("state.chest_claimed[milestone] = true"))
         self.assertLess(claim.index("self:StoreSeasonalReplay"), claim.index("Rewards.Deliver"))
         for marker in ("function Rewards.Preflight", "function Rewards.Stage", "function Rewards.Deliver", "CanAcceptCount", "GiveItem", "SetPosition", "item:Remove()", "pcall"):

@@ -106,14 +106,14 @@ class TrackerContracts(unittest.TestCase):
         self.assertIn("state.cycles - state.elapseddaysinseason", self.source)
         self.assertIn('WatchWorldState("season"', self.source)
         xp = self.block("ConfigureXP", "RefreshSeason")
-        for contract in ("SetSeasonalXPCallback", "player ~= inst", "row.kind ~= kind", "slot.claims + 1", "claim_key ~= expected", "awarded[claim_key]", "leveling:AddExp(SEASONAL_CLAIM_XP)"):
+        for contract in ("SetSeasonalXPCallback", "player ~= inst", "row.kind ~= kind", "slot.claims + 1", "claim_key ~= expected", "leveling:AddExp(SEASONAL_CLAIM_XP)"):
             self.assertIn(contract, xp)
         self.assertIn("local SEASONAL_CLAIM_XP = G.TUNING and G.TUNING.TTK_SEASONAL_CLAIM_XP", xp)
         self.assertIn('type(SEASONAL_CLAIM_XP) ~= "number"', xp)
         self.assertIn("SEASONAL_CLAIM_XP ~= SEASONAL_CLAIM_XP", xp)
         self.assertIn("SEASONAL_CLAIM_XP <= 0", xp)
-        self.assertIn("SEASONAL_CLAIM_XP == math.huge then return end", xp)
-        self.assertLess(xp.index("then return end"), xp.index("component:SetSeasonalXPCallback(function"))
+        # Invalid configuration and durable XP idempotency are exercised through
+        # the registered adapter in test_seasonal_rollover, including save/load.
         self.assertNotRegex(xp, r"SEASONAL_CLAIM_XP\s*=\s*\d|TTK_SEASONAL_CLAIM_XP\s+or\s+\d")
         self.assertEqual(self.source.count(":AddExp("), 1)
 
