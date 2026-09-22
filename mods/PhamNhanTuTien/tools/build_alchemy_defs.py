@@ -1,0 +1,176 @@
+"""Generate the checked-in Phàm Nhân alchemy catalog from manual records."""
+
+from __future__ import annotations
+
+import json
+from pathlib import Path
+import tempfile
+from typing import Any
+
+
+ROOT = Path(__file__).resolve().parents[3]
+MANUAL_PATH = ROOT / "data" / "manual" / "tu_tien_item_details.json"
+OUTPUT_PATH = ROOT / "mods" / "PhamNhanTuTien" / "scripts" / "alchemy" / "ttk_alchemy_defs.lua"
+
+CULTIVATION_PREFABS = (
+    "xd_danyao_jq", "xd_danyao_dt", "xd_danyao_zj", "xd_danyao_xs",
+    "xd_danyao_hj", "xd_danyao_yz", "xd_danyao_sm", "xd_danyao_rl",
+    "xd_danyao_jy", "xd_danyao_yx", "xd_danyao_ns", "xd_danyao_hs",
+    "xd_danyao_hy", "xd_danyao_hl", "xd_danyao_kx",
+)
+BUFF_PREFABS = (
+    "xd_dy_cyfxd_1", "xd_dy_dmhsd_1", "xd_dy_lmsqd_1",
+    "xd_dy_qxdhd_1", "xd_dy_yfsxd_1", "xd_dy_pshsd_1",
+    "xd_dy_qjqsd_1", "xd_dy_xynyd_1", "xd_dy_hsphd_1",
+    "xd_dy_xttyd_1",
+)
+FASTING_PREFAB = "xd_danyao_bg"
+
+# Manual records deliberately do not carry a stable user-facing name. These
+# approved names must remain explicit rather than inferred during generation.
+DISPLAY_NAMES = {
+    "xd_danyao_jq": "Tụ Khí Hoàn",
+    "xd_danyao_dt": "Đột Phá Đan",
+    "xd_danyao_zj": "Trúc Cơ Đan",
+    "xd_danyao_xs": "Tẩy Tủy Đan",
+    "xd_danyao_hj": "Hóa Tinh Đan",
+    "xd_danyao_yz": "Ngưng Chân Đan",
+    "xd_danyao_sm": "Sơ Mạch Đan",
+    "xd_danyao_rl": "Dung Linh Đan",
+    "xd_danyao_jy": "Kết Anh Đan",
+    "xd_danyao_yx": "Uẩn Huyết Đan",
+    "xd_danyao_ns": "Ngưng Thần Đan",
+    "xd_danyao_hs": "Hóa Thần Đan",
+    "xd_danyao_hy": "Hồi Nguyên Đan",
+    "xd_danyao_hl": "Hợp Linh Đan",
+    "xd_danyao_kx": "Khuy Hư Đan",
+    "xd_dy_cyfxd_1": "Cuồng Ý Phúc Xà Đan",
+    "xd_dy_dmhsd_1": "Đại Mệnh Hồi Sinh Đan",
+    "xd_dy_lmsqd_1": "Lôi Mãng Sát Khí Đan",
+    "xd_dy_qxdhd_1": "Thanh Tâm Đan",
+    "xd_dy_yfsxd_1": "Ngự Phong Thần Hành Đan",
+    "xd_dy_pshsd_1": "Phòng Sát Hộ Thân Đan",
+    "xd_dy_qjqsd_1": "Cường Kình Khai Sơn Đan",
+    "xd_dy_xynyd_1": "Huyền Nguyên Ninh Dương Đan",
+    "xd_dy_hsphd_1": "Hỏa Sát Phích Hàn Đan",
+    "xd_dy_xttyd_1": "Huyết Thực Thiên Ý Đan",
+    "xd_danyao_bg": "Bích Cốc Đan",
+}
+
+
+def runtime_prefab(item_id: str) -> str:
+    """Normalize a namespaced manual id to a runtime prefab."""
+    _, separator, prefab = item_id.partition(":")
+    if not separator or not prefab:
+        raise ValueError(f"Invalid manual item id: {item_id!r}")
+    return prefab
+
+
+def lua_string(value: str) -> str:
+    escaped = value.replace("\\", "\\\\").replace('"', '\\"')
+    return '"' + escaped.replace("\n", "\\n").replace("\r", "\\r") + '"'
+
+
+def read_records() -> list[tuple[str, dict[str, Any]]]:
+    with MANUAL_PATH.open(encoding="utf-8") as manual_file:
+        items = json.load(manual_file)["items"]
+
+    allowed = (*CULTIVATION_PREFABS, *BUFF_PREFABS, FASTING_PREFAB)
+    if len(DISPLAY_NAMES) != len(allowed) or set(DISPLAY_NAMES) != set(allowed):
+        raise ValueError("Display-name overrides must cover exactly the allowed alchemy records")
+
+    records: list[tuple[str, dict[str, Any]]] = []
+    for prefab in allowed:
+        record = items.get(f"tu_tien:{prefab}")
+        if not isinstance(record, dict):
+            raise ValueError(f"Missing manual record for {prefab}")
+        recipe = record.get("recipe")
+        ingredients = recipe.get("ingredients") if isinstance(recipe, dict) else None
+        if not isinstance(ingredients, list) or not 1 <= len(ingredients) <= 4:
+            raise ValueError(f"{prefab} must have one to four recipe ingredients")
+        for ingredient in ingredients:
+            if not isinstance(ingredient, dict) or not ingredient.get("id") or not isinstance(ingredient.get("amount"), int) or ingredient["amount"] <= 0:
+                raise ValueError(f"{prefab} has an invalid ingredient")
+        records.append((prefab, record))
+    return records
+
+
+def append_row(lines: list[str], prefab: str, record: dict[str, Any]) -> None:
+    recipe = record["recipe"]
+    lines.extend((
+        f"M.by_prefab[{lua_string(prefab)}] = {{",
+        f"  prefab = {lua_string(prefab)},",
+        f"  name = {lua_string(DISPLAY_NAMES[prefab])},",
+        "  recipe = {",
+        f"    output_count = {recipe['outputCount']},",
+        "    ingredients = {",
+    ))
+    for ingredient in recipe["ingredients"]:
+        lines.append(f"      {{ prefab={lua_string(runtime_prefab(ingredient['id']))}, amount={ingredient['amount']} }},")
+    lines.extend((
+        "    },",
+        f"    crafting_note = {lua_string(recipe.get('craftingNote') or '')},",
+        "  },",
+        "  effects = {",
+    ))
+    for effect in record.get("usage", {}).get("effects", []):
+        lines.append(f"    {{ trigger={lua_string(effect['trigger'])}, text={lua_string(effect['text'])} }},")
+    lines.extend(("  },", "}", ""))
+
+
+def render(records: list[tuple[str, dict[str, Any]]]) -> str:
+    lines = [
+        "-- Generated by tools/build_alchemy_defs.py; do not edit manually.",
+        "local M = {}",
+        "",
+        "M.furnace = {",
+        '  prefab = "xd_liandanlu",',
+        "  duration = 180,",
+        "  ingredients = {",
+        '    { prefab="goldnugget", amount=5 },',
+        '    { prefab="cutstone", amount=3 },',
+        '    { prefab="flint", amount=3 },',
+        '    { prefab="ttk_lingshi1", amount=5 },',
+        "  },",
+        "}",
+        "",
+        "M.by_prefab = {}",
+        "",
+    ]
+    for prefab, record in records:
+        append_row(lines, prefab, record)
+
+    lines.append("M.cultivation = {}")
+    for stage, prefab in enumerate(CULTIVATION_PREFABS, start=1):
+        lines.append(f"M.cultivation[{stage}] = M.by_prefab[{lua_string(prefab)}]")
+    lines.extend(("", f"M.fasting = M.by_prefab[{lua_string(FASTING_PREFAB)}]", "", "M.buffs = {}"))
+    for prefab in BUFF_PREFABS:
+        lines.append(f"M.buffs[{lua_string(prefab)}] = M.by_prefab[{lua_string(prefab)}]")
+    lines.extend((
+        "",
+        "function M.Get(prefab) return M.by_prefab[prefab] end",
+        "function M.GetCultivationStage(stage) return M.cultivation[stage] end",
+        "function M.GetRecipe(prefab) local row=M.Get(prefab); return row and row.recipe or nil end",
+        "return M",
+        "",
+    ))
+    return "\n".join(lines)
+
+
+def write_output(source: str) -> None:
+    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.NamedTemporaryFile(
+        "w", encoding="utf-8", newline="\n", dir=OUTPUT_PATH.parent,
+        prefix=f".{OUTPUT_PATH.name}.", suffix=".tmp", delete=False,
+    ) as temporary:
+        temporary.write(source)
+        temporary_path = Path(temporary.name)
+    temporary_path.replace(OUTPUT_PATH)
+
+
+def main() -> None:
+    write_output(render(read_records()))
+
+
+if __name__ == "__main__":
+    main()
