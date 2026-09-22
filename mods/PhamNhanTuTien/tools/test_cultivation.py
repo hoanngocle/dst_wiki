@@ -86,7 +86,8 @@ class CultivationModel:
         return True, self.stage
 
     def on_save(self) -> dict[str, int]:
-        return {"version": 1, "stage": self.stage, "consumed_mask": prefix_mask(self.stage)}
+        stage = load_stage(self.stage)
+        return {"version": 1, "stage": stage, "consumed_mask": prefix_mask(stage)}
 
     def on_load(self, data: object) -> None:
         candidate = data.get("stage") if isinstance(data, dict) else None
@@ -140,11 +141,27 @@ class CultivationContractTests(unittest.TestCase):
         self.assertEqual((state.stage, state.consumed, state.events), (0, set(), []))
 
     def test_save_uses_a_canonical_prefix_mask(self) -> None:
-        """A sparse mask would let a save claim pills that were never consumed in order."""
+        """Unchecked in-memory stages would serialize corrupt or non-prefix save data."""
         state = CultivationModel()
         for prefab in CULTIVATION[:4]:
             state.consume(prefab)
         self.assertEqual(state.on_save(), {"version": 1, "stage": 4, "consumed_mask": 15})
+        for stage, expected in (
+            (1.5, 0),
+            (float("nan"), 0),
+            (float("inf"), 0),
+            (float("-inf"), 0),
+            (-3, 0),
+            (True, 0),
+            ("4", 0),
+            (19, 15),
+        ):
+            state.stage = stage  # type: ignore[assignment]
+            self.assertEqual(
+                state.on_save(),
+                {"version": 1, "stage": expected, "consumed_mask": prefix_mask(expected)},
+                stage,
+            )
 
     def test_save_load_preserves_every_canonical_prefix(self) -> None:
         """A load/save mismatch would lose or invent a valid completed prefix."""
@@ -188,6 +205,15 @@ class CultivationContractTests(unittest.TestCase):
         for method in ("CanConsume", "Consume", "GetStage", "OnSave", "OnLoad"):
             self.assertRegex(source, rf"function TtkCultivation:{method}\(")
         self.assertRegex(source, r'PushEvent\("ttk_cultivation_advanced", \{stage=self\.stage, prefab=prefab\}\)')
+        on_save = re.search(
+            r"function TtkCultivation:OnSave\(\)(?P<body>.*?)\nend",
+            source,
+            re.DOTALL,
+        )
+        self.assertIsNotNone(on_save)
+        self.assertRegex(on_save.group("body"), r"local stage = NormalizeStage\(self\.stage\)")
+        self.assertRegex(on_save.group("body"), r"stage = stage,")
+        self.assertRegex(on_save.group("body"), r"consumed_mask = PrefixMask\(stage\)")
         for forbidden in ("hh_leveling", "EXP", "AP", "Achievement & Level"):
             self.assertNotIn(forbidden, source)
 

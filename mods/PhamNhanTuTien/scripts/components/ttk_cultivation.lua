@@ -69,10 +69,11 @@ function TtkCultivation:Consume(prefab)
 end
 
 function TtkCultivation:OnSave()
+    local stage = NormalizeStage(self.stage)
     return {
         version = self.version,
-        stage = self.stage,
-        consumed_mask = PrefixMask(self.stage),
+        stage = stage,
+        consumed_mask = PrefixMask(stage),
     }
 end
 
