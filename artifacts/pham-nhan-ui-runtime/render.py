@@ -46,7 +46,18 @@ def shell_preview() -> Image.Image:
     return Image.open(reference).convert("RGBA")
 
 
-SCREENS = {"theme": theme_preview, "shell": shell_preview}
+def artifact_preview(relative: str):
+    def render() -> Image.Image:
+        return Image.open(Path(__file__).parents[1] / relative).convert("RGBA")
+    return render
+
+
+SCREENS = {
+    "theme": theme_preview,
+    "shell": shell_preview,
+    "summary-combine": artifact_preview("bang-tong-hop/v3/hop-thanh.png"),
+    "summary-socket": artifact_preview("bang-tong-hop/v3/kham.png"),
+}
 
 
 def fit(image: Image.Image, width: int, height: int) -> Image.Image:
