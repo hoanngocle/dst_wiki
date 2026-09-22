@@ -1,8 +1,6 @@
-"""Contract/model checks for authoritative Pham Nhan achievement state.
+"""Contract/model and Lua 5.1 behavior checks for authoritative Pham Nhan state.
 
-Lua is not available in this workspace.  The model below makes the transaction
-invariants executable, while source checks bind the shipped Lua boundary to
-those invariants.
+Runtime checks require lupa.lua51 (the audit runtime can be set via PYTHONPATH).
 """
 from __future__ import annotations
 
@@ -11,6 +9,8 @@ import re
 import unittest
 from copy import deepcopy
 from pathlib import Path
+
+from lupa.lua51 import LuaRuntime
 
 
 MOD = Path(__file__).resolve().parents[1]
@@ -223,6 +223,192 @@ class AchievementStateTests(unittest.TestCase):
         self.assertIn("FormatNumber(state.progress)", component)
         self.assertIn("CanonicalNumber(value)", replica)
         self.assertNotIn("NonNegativeInteger(progress)", replica)
+
+
+class AchievementLuaStateTests(unittest.TestCase):
+    def setUp(self):
+        self.lua = LuaRuntime(unpack_returned_tuples=True)
+        self.lua.execute("package.path = ... .. package.path", (MOD / "scripts/?.lua").as_posix() + ";")
+        self.lua.execute('''
+            Core = require("achievement/ttk_achievement_core")
+            Catalog = require("achievement/ttk_achievement_catalog")
+            id = "food_liquid_luck_trinity"
+            state = Core.New({})
+        ''')
+
+    def test_distinct_food_evidence_round_trips_and_claims_once(self):
+        self.lua.execute('''
+            for _ = 1, 3 do state:Advance(id, 1, "nn_liquidluck") end
+            assert(state.achievements[id].progress == 1, "luck I repeated must count once")
+            assert(not state:ClaimAchievement(id, "early"))
+            state:Advance(id, 1, "nn_liquidluck_2")
+            assert(state.achievements[id].progress == 2)
+            local saved = state:GetSaveData()
+            assert(saved.achievements[id].seen_prefabs.nn_liquidluck == true)
+            state = Core.New({}); state:Load(saved)
+            assert(state.achievements[id].progress == 2)
+            state:Advance(id, 1, "nn_liquidluck_3")
+            assert(state.achievements[id].progress == 3)
+            assert(state:ClaimAchievement(id, "claim"))
+            assert(state.earned == 2)
+            saved = state:GetSaveData()
+            state = Core.New({}); state:Load(saved)
+            assert(state.achievements[id].status == "claimed")
+            assert(state:ClaimAchievement(id, "claim"))
+            assert(not state:ClaimAchievement(id, "claim-again"))
+            assert(not state:Advance(id, 100, "nn_liquidluck"))
+            assert(state.earned == 2)
+        ''')
+
+    def test_bad_evidence_and_large_amount_cannot_inflate_distinct_progress(self):
+        self.lua.execute('''
+            assert(state:Advance(id, 100, "nn_liquidluck"))
+            assert(state.achievements[id].progress == 1, "amount cannot multiply evidence")
+            for _, evidence in ipairs({"unknown", false, 42, {}, {prefab="nn_liquidluck_2"},
+                {nn_liquidluck_2=true}, {nn_liquidluck_2=false}, {nn_liquidluck_2={}}}) do
+                assert(not state:Advance(id, 100, evidence), "bad evidence accepted")
+                assert(state.achievements[id].progress == 1)
+            end
+            assert(not state:Advance(id, 100, nil))
+            for _, amount in ipairs({0, -1, false, "100", {}, math.huge, 0/0}) do
+                assert(not state:Advance(id, amount, "nn_liquidluck_2"))
+            end
+            state:Advance(id, 100, "nn_liquidluck")
+            assert(state.achievements[id].progress == 1)
+            state:Advance(id, 100, "nn_liquidluck_2")
+            assert(state.achievements[id].progress == 2)
+        ''')
+
+    def test_load_uses_only_allowlisted_true_evidence_not_scalar_progress(self):
+        self.lua.execute('''
+            state:Load({achievements={[id]={progress=100, status="claimed", seen_prefabs={
+                nn_liquidluck=true, nn_liquidluck_2=false, nn_liquidluck_3={nested=true},
+                unknown=true, [1]=true}}}})
+            local row = state:GetSaveData().achievements[id]
+            assert(row.progress == 1 and row.status == "locked", "load must derive evidence count")
+            assert(row.seen_prefabs.nn_liquidluck == true)
+            local count = 0; for _ in pairs(row.seen_prefabs) do count = count + 1 end
+            assert(count == 1 and state.earned == 0)
+            for _, evidence in ipairs({false, 3, "nn_liquidluck", {}}) do
+                state:Load({achievements={[id]={progress=3, status="claimed", seen_prefabs=evidence}}})
+                assert(state.achievements[id] == nil or state.achievements[id].progress == 0)
+                assert(state.earned == 0)
+            end
+            state:Load({achievements={[id]={progress=3, status="completed_unclaimed"}}})
+            assert(not state:ClaimAchievement(id, "legacy"))
+            state:Advance(id, 1, "nn_liquidluck_3")
+            assert(state.achievements[id].progress == 1)
+        ''')
+
+    def test_quantity_objectives_keep_quantity_semantics(self):
+        self.lua.execute('''
+            state:Advance("collection_gems", 2, "redgem")
+            state:Advance("collection_gems", 2, "redgem")
+            assert(state.achievements.collection_gems.progress == 4)
+            local saved = state:GetSaveData()
+            state:Load(saved)
+            assert(state.achievements.collection_gems.progress == 4)
+            for _, row in ipairs(Catalog.All()) do
+                assert(row.distinct == nil or row.id == id)
+            end
+        ''')
+
+    def test_distinct_evidence_stays_off_snapshot_wire(self):
+        self.lua.execute('''
+            function Class(ctor)
+                local cls = {}; cls.__index = cls
+                return setmetatable(cls, {__call=function(_, inst)
+                    local self = setmetatable({}, cls); ctor(self, inst); return self
+                end})
+            end
+            local Progress = require("components/ttk_achievement_progress")
+            local player = {ListenForEvent=function() end, PushEvent=function() end}
+            local component = Progress(player)
+            component:Advance(id, 1, "nn_liquidluck")
+            local wire = component:PushSnapshot()
+            assert(wire:find("food_liquid_luck_trinity:1:l", 1, true))
+            assert(not wire:find("seen_prefabs", 1, true))
+            assert(not wire:find("nn_liquidluck", 1, true))
+            local achievements = wire:match(";a([^;]+)")
+            for row in achievements:gmatch("[^,]+") do
+                assert(row:match("^[%w_]+:[%d.]+:[lcu]$"), "achievement wire shape changed")
+            end
+        ''')
+
+
+class SoulAuthorityTests(unittest.TestCase):
+    def test_unified_level_load_orders_events_and_death_reload(self):
+        lua = LuaRuntime(unpack_returned_tuples=True)
+        lua.execute("package.path = ... .. package.path", (MOD / "scripts/?.lua").as_posix() + ";")
+        lua.execute('''
+            function Class(ctor)
+                local cls = {}; cls.__index = cls
+                return setmetatable(cls, {__call=function(_, inst)
+                    local self = setmetatable({}, cls); ctor(self, inst); return self
+                end})
+            end
+            local Souls = require("components/eva_souls")
+            local function net()
+                return {set=function(self, v) self.value = v end}
+            end
+            local function player()
+                local p = {components={hh_leveling={level=1}, levelsystem={level=999},
+                    health={IsDead=function() return false end}}, events={}, tasks={},
+                    eva_level=net(), maxsouls=net(), currentsouls=net()}
+                function p:ListenForEvent(event, fn) self.events[event] = fn end
+                function p:RemoveEventCallback(event, fn)
+                    if self.events[event] == fn then self.events[event] = nil end
+                end
+                function p:PushEvent(event, data)
+                    if self.events[event] then self.events[event](self, data) end
+                end
+                function p:HasTag(tag) return tag == "playerghost" and self.ghost == true end
+                function p:DoTaskInTime(_, fn)
+                    local task = {fn=fn, Cancel=function(t) t.cancelled=true end}
+                    table.insert(self.tasks, task); return task
+                end
+                function p:DoPeriodicTask(_, fn) return self:DoTaskInTime(1, fn) end
+                function p:FlushTasks()
+                    local tasks = self.tasks; self.tasks = {}
+                    for _, t in ipairs(tasks) do if not t.cancelled then t.fn(self) end end
+                end
+                return p
+            end
+            for _, souls_first in ipairs({true, false}) do
+                local p = player(); local souls = Souls(p)
+                local saved = {level=151, current=400, maxsouls=1000, death_applied=false}
+                if not souls_first then p.components.hh_leveling.level = 70 end
+                souls:OnLoad(saved)
+                if souls_first then p.components.hh_leveling.level = 70 end
+                p:FlushTasks()
+                assert(souls.level == 70 and souls:GetLevel() == 70, "saved soul level must not override hh_leveling")
+                assert(souls.max == 514 and souls.current == 400)
+                assert(p.eva_level.value == 70 and p.maxsouls.value == 514 and p.currentsouls.value == 400)
+                p.components.hh_leveling.level = 71; p:PushEvent("hh_levelup")
+                assert(souls.level == 71 and souls.max == 520, "hh_levelup must refresh immediately")
+                p.components.levelsystem.level = 1000; p:PushEvent("chasni_levelup")
+                assert(souls.level == 71)
+                p.components.hh_leveling.level = 151; p:PushEvent("hh_levelup")
+                assert(souls.max == 1000)
+                souls.current = 257; souls:UpdateProgression(); assert(souls.current == 258)
+                souls.current = 257; p:PushEvent("death"); p.ghost = true
+                assert(souls.current == 25)
+                local dead = souls:OnSave()
+                assert(dead.level == 151 and dead.current == 25 and dead.death_applied)
+                local restored = player(); restored.ghost = true
+                restored.components.hh_leveling.level = 151
+                local reloaded = Souls(restored); reloaded:OnLoad(dead); restored:FlushTasks()
+                restored:PushEvent("death"); reloaded:UpdateProgression()
+                assert(reloaded.current == 25 and reloaded._death_applied)
+                restored.ghost = false; restored:PushEvent("ms_respawnedfromghost")
+                reloaded:UpdateProgression(); assert(reloaded.current == 26)
+                restored.components.hh_leveling.level = 70; restored:PushEvent("hh_levelup")
+                assert(reloaded.level == 70 and reloaded.max == 514)
+                reloaded:OnRemoveFromEntity()
+                restored.components.hh_leveling.level = 80; restored:PushEvent("hh_levelup")
+                assert(reloaded.level == 70)
+            end
+        ''')
 
 
 if __name__ == "__main__":

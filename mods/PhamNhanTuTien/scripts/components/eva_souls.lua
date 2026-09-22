@@ -23,7 +23,7 @@ local eva_souls = Class(function(self, inst)
     self._onlevelup = function() self:RefreshLevel() end
     self._ondeath = function() self:ApplyDeathPenalty() end
     self._onrespawn = function() self._death_applied = false end
-    inst:ListenForEvent("chasni_levelup", self._onlevelup)
+    inst:ListenForEvent("hh_levelup", self._onlevelup)
     inst:ListenForEvent("death", self._ondeath)
     inst:ListenForEvent("ms_respawnedfromghost", self._onrespawn)
     -- Component OnLoad order is unspecified. Reconcile after all components load.
@@ -36,11 +36,9 @@ local eva_souls = Class(function(self, inst)
 end)
 
 function eva_souls:GetLevel()
-    local levels = self.inst.components.levelsystem
-    local external_level = NormalizeLevel(levels ~= nil and levels.level or nil)
-    -- Achievement & Level supplies attained levels; EVA owns their persistence.
-    -- Disabling/resetting that mod cannot erase EVA's recorded progression.
-    self.level = math.max(self.level, external_level)
+    local levels = self.inst.components.hh_leveling
+    -- Unified progression is authoritative, including after a legacy save load.
+    self.level = NormalizeLevel(levels ~= nil and levels.level or nil)
     return self.level
 end
 
@@ -57,7 +55,7 @@ function eva_souls:RefreshLevel()
 end
 
 function eva_souls:UpdateProgression()
-    -- Also detects delayed level restoration by Achievement & Level.
+    -- Also detects delayed restoration of unified progression.
     local level = self:RefreshLevel()
     local health = self.inst.components.health
     if level > 100 and self.current < self.max
@@ -98,8 +96,8 @@ function eva_souls:OnSave()
 end
 
 function eva_souls:OnLoad(data)
-    self.level = NormalizeLevel(data ~= nil and data.level or nil)
-    -- Do not clamp to the temporary level-1 cap before levelsystem:OnLoad runs.
+    self:GetLevel()
+    -- Do not clamp to the temporary level-1 cap before hh_leveling:OnLoad runs.
     self.current = Clamp(math.floor(data ~= nil and data.current or 0), 0, HARD_MAX)
     self._death_applied = data ~= nil and data.death_applied == true or false
     if self._initial_task ~= nil then self._initial_task:Cancel() end
@@ -159,7 +157,7 @@ end
 function eva_souls:OnRemoveFromEntity()
     if self._initial_task ~= nil then self._initial_task:Cancel() end
     if self._regen_task ~= nil then self._regen_task:Cancel() end
-    self.inst:RemoveEventCallback("chasni_levelup", self._onlevelup)
+    self.inst:RemoveEventCallback("hh_levelup", self._onlevelup)
     self.inst:RemoveEventCallback("death", self._ondeath)
     self.inst:RemoveEventCallback("ms_respawnedfromghost", self._onrespawn)
 end

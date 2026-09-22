@@ -35,11 +35,34 @@ local function NewResult(ok, code, extra)
     return result
 end
 
+local function CanonicalPrefabs(definition, saved)
+    local seen, count = {}, 0
+    for _, prefab in ipairs(definition.params.prefabs) do
+        if type(saved) == "table" and saved[prefab] == true and not seen[prefab] then
+            seen[prefab], count = true, count + 1
+        end
+    end
+    return seen, math.min(definition.target, count)
+end
+
+local function IsAllowedPrefab(definition, evidence)
+    if type(evidence) ~= "string" then return false end
+    for _, prefab in ipairs(definition.params.prefabs) do
+        if evidence == prefab then return true end
+    end
+    return false
+end
+
 local function CanonicalAchievement(definition, saved)
     local progress = type(saved) == "table" and saved.progress or 0
     if not IsFinite(progress) or progress < 0 then progress = 0 end
     progress = math.min(definition.target, progress)
     local state = { progress = progress, status = "locked", claimed_reward = nil }
+    if definition.distinct == "prefab" then
+        state.seen_prefabs, progress = CanonicalPrefabs(definition,
+            type(saved) == "table" and saved.seen_prefabs or nil)
+        state.progress = progress
+    end
     local status = type(saved) == "table" and saved.status or nil
     if progress >= definition.target then
         state.status = status == "claimed" and "claimed" or "completed_unclaimed"
@@ -301,9 +324,18 @@ function Core:Advance(id, amount, evidence)
     if not IsFinite(amount) or amount <= 0 then
         return false, NewResult(false, "invalid_amount")
     end
+    if definition.distinct == "prefab" and not IsAllowedPrefab(definition, evidence) then
+        return false, NewResult(false, "invalid_evidence")
+    end
     local state = self:EnsureAchievement(definition)
     if state.status == "claimed" then return false, NewResult(false, "already_claimed") end
-    state.progress = math.min(definition.target, state.progress + amount)
+    if definition.distinct == "prefab" then
+        state.seen_prefabs = CanonicalPrefabs(definition, state.seen_prefabs)
+        state.seen_prefabs[evidence] = true
+        state.seen_prefabs, state.progress = CanonicalPrefabs(definition, state.seen_prefabs)
+    else
+        state.progress = math.min(definition.target, state.progress + amount)
+    end
     if state.progress >= definition.target then state.status = "completed_unclaimed" end
     return true, NewResult(true, state.status, { id = id, progress = state.progress })
 end
