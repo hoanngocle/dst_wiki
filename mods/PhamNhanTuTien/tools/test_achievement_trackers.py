@@ -1,7 +1,8 @@
 """Server adapter source contracts and independent evidence model (not a Lua VM).
 
 These tests catch boundary regressions; DST multiplayer smoke testing is still
-required. Event shapes were checked against the installed DST scripts.zip.
+required. Native/Lupa route coverage lives in test_achievement_reachability.py.
+Event shapes were checked against the installed DST scripts.zip.
 """
 from pathlib import Path
 import re
@@ -136,6 +137,16 @@ class TrackerContracts(unittest.TestCase):
         self.assertIn('ListenForEvent("stacksizechange"', self.source)
         self.assertIn("CreditInventoryItem(data.item)", self.source)
         self.assertNotIn('Seen(state, "items", data)', self.source)
+
+    def test_activity_receipts_do_not_use_animation_or_target_jumps(self):
+        self.assertNotIn('ListenForEvent("fishingcatch"', self.source)
+        self.assertIn('ListenForEvent("fishingcollect"', self.source)
+        self.assertEqual(self.source.count('ListenForEvent("performaction"'), 1)
+        ownership = self.block("ObserveOwnership", "QueueOwnership")
+        self.assertIn('AchievementCatalog.ByEvent("own_prefab")', ownership)
+        self.assertIn("amounts[row.params.prefab] or 0", ownership)
+        self.assertNotIn("row.target,", ownership)
+        self.assertNotIn("opencontainers", ownership)
 
 
 class ReceiptModel:

@@ -252,6 +252,37 @@ local function ItemAmount(item)
     return Integer(amount, 1, 1000000) and amount or 0
 end
 
+-- Ownership is a high-water observation of simultaneously held units, never a
+-- sum of receipt deltas. Read only physical inventory and its worn overflow.
+local function ObserveOwnership(inst)
+    local component = ResolveSender(inst)
+    local inventory = component ~= nil and inst.components.inventory or nil
+    if inventory == nil or inventory.isloading then return end
+    local amounts, seen = {}, {}
+    local function Add(item)
+        if item == nil or seen[item] or not item:IsValid() then return end
+        seen[item] = true
+        amounts[item.prefab] = (amounts[item.prefab] or 0) + ItemAmount(item)
+    end
+    for _, item in pairs(inventory.itemslots or {}) do Add(item) end
+    for _, item in pairs(inventory.equipslots or {}) do Add(item) end
+    Add(inventory.activeitem)
+    local overflow = inventory:GetOverflowContainer()
+    if overflow ~= nil then for _, item in pairs(overflow.slots or {}) do Add(item) end end
+    for _, row in ipairs(AchievementCatalog.ByEvent("own_prefab")) do
+        AdvanceTo(component, row, amounts[row.params.prefab] or 0, { prefab=row.params.prefab })
+    end
+end
+
+local function QueueOwnership(inst)
+    if ResolveSender(inst) == nil or inst._ttk_ownership_pending then return end
+    inst._ttk_ownership_pending = true
+    inst:DoTaskInTime(0, function(player)
+        player._ttk_ownership_pending = nil
+        ObserveOwnership(player)
+    end)
+end
+
 local function Receipts(item, amount)
     local receipts = item._ttk_achievement_receipts
     if receipts == nil then
@@ -274,6 +305,8 @@ local function CreditInventoryItem(item)
     local inventoryitem = item.components.inventoryitem
     local player = inventoryitem ~= nil and inventoryitem:GetGrandOwner() or nil
     if ResolveSender(player) == nil then return end
+    item._ttk_achievement_last_owner = player
+    QueueOwnership(player)
     local amount = ItemAmount(item)
     local receipts = Receipts(item, amount)
     local credited = receipts[player] or 0
@@ -309,6 +342,56 @@ local function OnBuild(inst, data, event)
     Seasonal(inst, event, evidence, 1)
 end
 
+local function FarmTarget(target)
+    return target ~= nil and (target:HasTag("farm_plant") or target:HasTag("soil")
+        or (target.components ~= nil and (target.components.crop ~= nil or target.components.grower ~= nil)))
+end
+
+local function OnFarmAction(inst, data)
+    local act = data ~= nil and data.action or nil
+    if ResolveSender(inst) == nil or act == nil or act.doer ~= inst or act.action == nil
+        or Seen(inst._ttk_achievement_state, "farm_actions", act) then return end
+    local id = act.action.id
+    local water = id == "POUR_WATER" or id == "POUR_WATER_GROUNDTILE"
+    if not water and id ~= "FERTILIZE" and id ~= "DEPLOY" then return end
+    local fertilizer = act.invobject ~= nil and act.invobject.components ~= nil
+        and act.invobject.components.fertilizer ~= nil
+    if not water and not fertilizer then return end
+    local eligible = FarmTarget(act.target)
+    if act.target == nil and (water or id == "DEPLOY") then
+        local pt = act:GetActionPoint()
+        eligible = pt ~= nil and G.WORLD_TILES ~= nil
+            and G.TheWorld.Map:GetTileAtPoint(pt:Get()) == G.WORLD_TILES.FARMING_SOIL
+    end
+    if not eligible then return end
+    local credited = false
+    act:AddSuccessAction(function()
+        if credited then return end
+        credited = true
+        Route(inst, "farm_action", { action=water and "WATER" or "FERTILIZE" }, 1)
+    end)
+end
+
+local function Living(inst)
+    return ResolveSender(inst) ~= nil and not inst:HasTag("playerghost")
+        and inst.components.health ~= nil and not inst.components.health:IsDead()
+end
+
+local function ObserveTemperature(inst)
+    local state = inst._ttk_achievement_state
+    if not Living(inst) then state.hot, state.cold = nil, nil; return end
+    local temperature = inst.components.temperature
+    if temperature == nil then return end
+    local hot, cold = temperature:IsOverheating(), temperature:IsFreezing()
+    if not hot and not cold then
+        if state.hot then Route(inst, "survival_event", { key="heat" }, 1) end
+        if state.cold then Route(inst, "survival_event", { key="cold" }, 1) end
+        state.hot, state.cold = nil, nil
+    else
+        state.hot, state.cold = state.hot or hot, state.cold or cold
+    end
+end
+
 local function InstallPlayer(inst)
     if not Master() or inst._ttk_achievement_installed then return end
     inst._ttk_achievement_installed = true
@@ -317,7 +400,8 @@ local function InstallPlayer(inst)
     PerkEffects.Install(inst)
     component:SetEffectCallback(PerkEffects.Apply)
     component:ReapplyPurchased()
-    local state = { kills=setmetatable({}, { __mode="k" }), dead=false }
+    local state = { kills=setmetatable({}, { __mode="k" }), dead=inst:HasTag("playerghost"),
+        season=G.TheWorld.state.season, cycle=G.TheWorld.state.cycles }
     inst._ttk_achievement_state = state
     ConfigureXP(inst, component)
     if inst.components.eater ~= nil then InstallEater(inst.components.eater) end
@@ -337,6 +421,7 @@ local function InstallPlayer(inst)
     inst:ListenForEvent("picksomething", function(player, data)
         if data == nil or data.object == nil or Seen(state, "picks", data) then return end
         local evidence = { prefab=data.object.prefab }
+        Route(player, "pick_prefab", evidence, 1)
         Seasonal(player, "picksomething", evidence, 1)
         if data.object:HasTag("farm_plant") then
             Route(player, "harvest_crop", { source="farm", action="HARVEST" }, 1)
@@ -344,7 +429,19 @@ local function InstallPlayer(inst)
     end)
     inst:ListenForEvent("itemget", function(player, data)
         if data ~= nil then CreditInventoryItem(data.item) end
+        QueueOwnership(player)
     end)
+    for _, event in ipairs({ "itemlose", "newactiveitem", "equip", "unequip" }) do
+        inst:ListenForEvent(event, QueueOwnership)
+    end
+    inst:ListenForEvent("fishingcollect", function(player, data)
+        local fish = data ~= nil and data.fish or nil
+        if fish == nil or (fish.prefab ~= "fish" and fish.prefab ~= "eel")
+            or Seen(state, "fish", fish) then return end
+        Route(player, "fish_caught", { source="pond", prefab=fish.prefab }, 1)
+    end)
+    inst:ListenForEvent("performaction", OnFarmAction)
+    inst:ListenForEvent("temperaturedelta", ObserveTemperature)
     -- farmtiller.lua and oar.lua emit these only after the successful action.
     inst:ListenForEvent("tilling", function(player)
         Route(player, "farm_action", { action="TILL" }, 1)
@@ -354,19 +451,45 @@ local function InstallPlayer(inst)
     inst:ListenForEvent("death", function(player)
         if state.dead or player.components.health == nil or not player.components.health:IsDead() then return end
         state.dead = true
+        state.hot, state.cold, state.night = nil, nil, nil
     end)
     inst:ListenForEvent("ms_respawnedfromghost", function(player)
-        if not state.dead then return end
+        if not state.dead or not Living(player) then return end
         state.dead = false
         Route(player, "survival_event", { key="revive" }, 1)
     end)
     inst:WatchWorldState("season", function(player)
+        local season = G.TheWorld.state.season
+        if state.season ~= season then
+            if Living(player) then Route(player, "survival_event", { key=state.season }, 1) end
+            state.season = season
+        end
         player:DoTaskInTime(0, RefreshSeason)
     end)
+    inst:WatchWorldState("cycles", function(player)
+        local cycle = G.TheWorld.state.cycles
+        if type(cycle) ~= "number" then return end
+        if state.cycle ~= nil and cycle > state.cycle and Living(player) then
+            Route(player, "survival_event", { key="hundred_days" }, 1)
+            Route(player, "survival_event", { key="solo_days" }, 1)
+        end
+        state.cycle = cycle
+    end)
+    inst:WatchWorldState("isnight", function(player)
+        if G.TheWorld.state.isnight then state.night = Living(player) end
+    end)
+    inst:WatchWorldState("isday", function(player)
+        if not G.TheWorld.state.isday then return end
+        if state.night and Living(player) then Route(player, "survival_event", { key="night" }, 1) end
+        state.night = nil
+    end)
     inst:DoTaskInTime(0, function(player)
+        state.dead = player:HasTag("playerghost")
+            or (player.components.health ~= nil and player.components.health:IsDead())
         RefreshSeason(player)
         OnCultivation(player)
         OnProgression(player)
+        ObserveOwnership(player)
     end)
 end
 
@@ -381,6 +504,98 @@ AddComponentPostInit("inventoryitem", function(self)
     if not Master() or self._ttk_achievement_hook then return end
     self._ttk_achievement_hook = true
     self.inst:ListenForEvent("onputininventory", function(item) CreditInventoryItem(item) end)
+    self.inst:ListenForEvent("ondropped", function(item) QueueOwnership(item._ttk_achievement_last_owner) end)
+    self.inst:ListenForEvent("onremove", function(item) QueueOwnership(item._ttk_achievement_last_owner) end)
+end)
+AddComponentPostInit("container", function(self)
+    if not Master() or self._ttk_achievement_hook then return end
+    self._ttk_achievement_hook = true
+    local function Changed(container)
+        local item = container.components.inventoryitem
+        local owner = item ~= nil and item:GetGrandOwner() or nil
+        QueueOwnership(owner)
+    end
+    -- Container emits itemlose on the bag, not its player. Deferred observation
+    -- waits until removal/transfer has finished and still excludes remote boxes.
+    self.inst:ListenForEvent("itemget", Changed)
+    self.inst:ListenForEvent("itemlose", Changed)
+end)
+
+-- farmplantable.lua returns true only after replacing soil and consuming seed.
+-- These are supported native seed prefabs, not string-derived crop evidence.
+local SEED_CROPS = {
+    seeds="random", carrot_seeds="carrot", pumpkin_seeds="pumpkin", eggplant_seeds="eggplant",
+    dragonfruit_seeds="dragonfruit", asparagus_seeds="asparagus", tomato_seeds="tomato",
+    potato_seeds="potato", garlic_seeds="garlic", onion_seeds="onion", pepper_seeds="pepper",
+    pomegranate_seeds="pomegranate", corn_seeds="corn", durian_seeds="durian", watermelon_seeds="watermelon",
+}
+AddComponentPostInit("farmplantable", function(self)
+    if not Master() or self._ttk_achievement_hook then return end
+    self._ttk_achievement_hook = true
+    local previous = self.Plant
+    self.Plant = function(plantable, target, planter, ...)
+        local prefab = plantable.inst.prefab
+        local crop = SEED_CROPS[prefab]
+        local success = previous(plantable, target, planter, ...)
+        if success == true and crop ~= nil then Route(planter, "plant_seed", { prefab=prefab, crop=crop }, 1) end
+        return success
+    end
+end)
+
+-- Native stewer calls ondonecooking before setting done=true. Defer receipt;
+-- settle before save/harvest too so those cannot erase a committed product.
+AddComponentPostInit("stewer", function(self)
+    if not Master() or self.inst.prefab ~= "cookpot" or self._ttk_achievement_hook then return end
+    self._ttk_achievement_hook = true
+    local pending, awarded, callback
+    local function Settle()
+        if not Master() or pending == nil or awarded or not self.done then return end
+        awarded = true
+        local receipt = pending
+        pending = nil
+        for _, player in ipairs(G.AllPlayers or {}) do
+            if player.userid == receipt.chef_id then
+                Route(player, "cook_product", { cooker="cookpot", prefab=receipt.product }, 1)
+                break
+            end
+        end
+    end
+    local function HookCallback()
+        if callback ~= nil and self.ondonecooking == callback then return end
+        local previous = self.ondonecooking
+        callback = function(inst, ...)
+            if previous ~= nil then previous(inst, ...) end
+            if not awarded and self.product ~= nil and self.chef_id ~= nil then
+                pending = { chef_id=self.chef_id, product=self.product }
+                inst:DoTaskInTime(0, Settle)
+            end
+        end
+        self.ondonecooking = callback
+    end
+    local start, save, load, harvest = self.StartCooking, self.OnSave, self.OnLoad, self.Harvest
+    self.StartCooking = function(stewer, ...)
+        Settle()
+        if stewer.targettime == nil and stewer.inst.components.container ~= nil then pending, awarded = nil, false end
+        HookCallback()
+        return start(stewer, ...)
+    end
+    self.OnSave = function(stewer, ...)
+        Settle()
+        local data = save(stewer, ...)
+        data.ttk_achievement_cook_awarded = awarded == true
+        return data
+    end
+    self.OnLoad = function(stewer, data, ...)
+        pending = nil
+        awarded = data ~= nil and (data.ttk_achievement_cook_awarded == true or data.done == true)
+        HookCallback()
+        return load(stewer, data, ...)
+    end
+    self.Harvest = function(stewer, ...)
+        Settle()
+        return harvest(stewer, ...)
+    end
+    self.inst:DoTaskInTime(0, HookCallback)
 end)
 AddComponentPostInit("stackable", function(self)
     if not Master() or self._ttk_achievement_hook then return end
