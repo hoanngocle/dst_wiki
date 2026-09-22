@@ -150,3 +150,6 @@ modimport("main/ttk_bosses.lua")
 
 -- EVA character; progression comes from Achievement & Level.
 modimport("main/ttk_eva.lua")
+
+-- Achievement evidence adapters load after Phàm Nhân/Solo player systems.
+modimport("main/ttk_achievement.lua")
