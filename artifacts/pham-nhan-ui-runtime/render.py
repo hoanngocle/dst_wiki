@@ -138,6 +138,28 @@ def army_preview() -> Image.Image:
     return image
 
 
+def shop_preview() -> Image.Image:
+    image, draw = unified_canvas(4, "CUA HANG HAM NGUC")
+    categories = ("Thuoc Tho San", "Thuoc De Tu", "Vat Pham", "Vu Khi")
+    for i, label in enumerate(categories):
+        x1 = 260 + i * 260
+        draw.text((x1 + 100, 392), label, font=font(19), fill=(255, 211, 55, 255) if i == 0 else SILVER, anchor="mm")
+    draw.text((230, 438), "Stock luan phien • Chu ky 0", font=font(19), fill=SILVER, anchor="lm")
+    products = ("Thuoc Chinh Phat", "Thuoc Ho The", "Thuoc Tinh Tam", "Thuoc Hon Huyet", "Thuoc Hoc Gia",
+                "Thuoc Ma Luc", "Thuoc Bao Kich", "Thuoc Toan Nang", "Thuoc Phong Toc", "Thuoc Sinh Menh")
+    prices = (220, 150, 90, 240, 180, 120, 210, 300, 100, 170)
+    for i, name in enumerate(products):
+        col, row = i % 5, i // 5
+        x = 250 + col * 220
+        y = 510 + row * 165
+        draw.polygon(((x, y - 36), (x + 34, y), (x, y + 36), (x - 34, y)), fill=(71, 34, 119, 255), outline=SILVER)
+        draw.text((x, y + 58), name, font=font(17), fill=SILVER, anchor="mm")
+        draw.text((x, y + 88), f"{prices[i]} Xu   Stock 2", font=font(16), fill=(255, 214, 56, 255), anchor="mm")
+        draw.text((x, y + 114), "Thieu xu", font=font(15), fill=(245, 112, 77, 255), anchor="mm")
+    draw.text((1240, 836), "So Xu: 0", font=font(24), fill=(255, 214, 56, 255), anchor="rm")
+    return image
+
+
 SCREENS = {
     "theme": theme_preview,
     "shell": shell_preview,
@@ -155,6 +177,7 @@ SCREENS = {
     "quests-guild": lambda: quest_preview(1),
     "quests-promotion": lambda: quest_preview(2),
     "army": army_preview,
+    "shop": shop_preview,
 }
 
 
