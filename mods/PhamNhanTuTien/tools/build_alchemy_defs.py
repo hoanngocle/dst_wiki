@@ -87,8 +87,14 @@ def require_positive_int(value: Any, field: str) -> int:
 def runtime_prefab(item_id: str) -> str:
     """Normalize a namespaced manual id to a runtime prefab."""
     item_id = require_string(item_id, "ingredient id", non_empty=True)
-    _, separator, prefab = item_id.partition(":")
-    if not separator or not prefab.strip():
+    namespace, separator, prefab = item_id.partition(":")
+    if (
+        item_id.count(":") != 1
+        or namespace not in {"base_game", "tu_tien"}
+        or not separator
+        or not prefab
+        or prefab != prefab.strip()
+    ):
         raise ValueError(f"Invalid manual item id: {item_id!r}")
     return prefab
 

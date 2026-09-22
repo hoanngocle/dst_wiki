@@ -121,6 +121,20 @@ class AlchemyCatalogTest(unittest.TestCase):
         expected = '"quote\\" slash\\\\ newline\\n tab\\t backspace\\b formfeed\\f vertical\\v bell\\a unit\\031 null\\000 delete\\127"'
         self.assertEqual(generator.lua_string(value), expected)
 
+    def test_runtime_prefab_rejects_noncanonical_manual_ids(self):
+        """Only one approved namespace and one canonical prefab segment are valid."""
+        invalid_ids = (
+            "bogus:spidergland",
+            "base_game: spidergland ",
+            "base_game:spidergland ",
+            " base_game:spidergland",
+            "base_game:foo:bar",
+        )
+        for item_id in invalid_ids:
+            with self.subTest(item_id=item_id):
+                with self.assertRaises(ValueError):
+                    generator.runtime_prefab(item_id)
+
     def test_invalid_ingredient_row_is_rejected(self):
         """A malformed emitted row cannot be skipped by ingredient validation."""
         source = OUTPUT.read_text(encoding="utf-8")
