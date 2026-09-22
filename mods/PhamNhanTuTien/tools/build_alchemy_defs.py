@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+import re
 import tempfile
 from typing import Any
 
@@ -94,6 +95,7 @@ def runtime_prefab(item_id: str) -> str:
         or not separator
         or not prefab
         or prefab != prefab.strip()
+        or re.fullmatch(r"[a-z0-9_]+", prefab) is None
     ):
         raise ValueError(f"Invalid manual item id: {item_id!r}")
     return prefab

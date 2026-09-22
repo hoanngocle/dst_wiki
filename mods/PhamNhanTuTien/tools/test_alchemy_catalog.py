@@ -135,6 +135,28 @@ class AlchemyCatalogTest(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     generator.runtime_prefab(item_id)
 
+    def test_runtime_prefab_rejects_invalid_dst_prefab_characters(self):
+        """Runtime prefabs only permit lowercase ASCII letters, digits, and underscores."""
+        invalid_ids = (
+            "base_game:spider gland",
+            "base_game:spider\ngland",
+            "base_game:spider\0gland",
+            "base_game:Spidergland",
+            "base_game:spider-gland",
+            "base_game:spider.gland",
+        )
+        for item_id in invalid_ids:
+            with self.subTest(item_id=item_id):
+                with self.assertRaises(ValueError):
+                    generator.runtime_prefab(item_id)
+
+    def test_runtime_prefab_accepts_every_manual_ingredient_id(self):
+        """The current manual catalog contains only valid DST runtime prefabs."""
+        for prefab, record in generator.read_records():
+            for ingredient in record["recipe"]["ingredients"]:
+                with self.subTest(catalog_prefab=prefab, item_id=ingredient["id"]):
+                    self.assertRegex(generator.runtime_prefab(ingredient["id"]), r"^[a-z0-9_]+$")
+
     def test_invalid_ingredient_row_is_rejected(self):
         """A malformed emitted row cannot be skipped by ingredient validation."""
         source = OUTPUT.read_text(encoding="utf-8")
