@@ -83,11 +83,7 @@ function AlchemyStation:Finish()
 
     local item = SpawnPrefab(output)
     local container = self.inst.components.container
-    local placed = false
-    if item ~= nil and container ~= nil and container:HasSpaceFor(item) then
-        container:GiveItem(item)
-        placed = item.components.inventoryitem ~= nil and item.components.inventoryitem.owner == self.inst
-    end
+    local placed = item ~= nil and container ~= nil and container:GiveItem(item, nil, nil, false)
     if item ~= nil and not placed and item:IsValid() then
         item.Transform:SetPosition(self.inst.Transform:GetWorldPosition())
     end

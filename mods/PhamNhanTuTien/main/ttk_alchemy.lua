@@ -38,9 +38,8 @@ refine.fn = function(action)
 end
 AddAction(refine)
 G.STRINGS.ACTIONS.TTK_ALCHEMY_REFINE = "Luyện Đan"
-AddComponentAction("SCENE", "inspectable", function(inst, doer, actions, right)
-    local station = inst.components ~= nil and inst.components.ttk_alchemy_station or nil
-    if right and station ~= nil and station:CanStart() then table.insert(actions, refine) end
+AddComponentAction("SCENE", "container", function(inst, doer, actions, right)
+    if right and inst:HasTag("ttk_alchemy_station") then table.insert(actions, refine) end
 end)
 for _, stategraph in ipairs({ "wilson", "wilson_client" }) do
     AddStategraphActionHandler(stategraph, G.ActionHandler(refine, "give"))

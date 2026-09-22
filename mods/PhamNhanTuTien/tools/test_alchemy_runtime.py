@@ -102,12 +102,12 @@ class FurnaceModel:
         self.output, self.end = "pill", now + self.duration
         return True
 
-    def finish(self, full=False):
+    def finish(self, give_item=True):
         if not self.output:
             return False
         output = self.output
         self.output = self.end = None
-        self.deliveries.append((output, "ground" if full else "container"))
+        self.deliveries.append((output, "container" if give_item else "ground"))
         return True
 
     def load(self, output, remaining, approved):
@@ -226,8 +226,8 @@ class AlchemyRuntimeTest(unittest.TestCase):
         self.assertEqual(furnace.deliveries, [("pill", "container")])
         furnace = FurnaceModel()
         self.assertTrue(furnace.start([("spidergland", 5), ("stinger", 10)], {"spidergland": 5, "stinger": 10}, 0))
-        self.assertTrue(furnace.finish(full=True))
-        self.assertFalse(furnace.finish(full=True))
+        self.assertTrue(furnace.finish(give_item=False))
+        self.assertFalse(furnace.finish(give_item=False))
         self.assertEqual(furnace.deliveries, [("pill", "ground")])
 
     def test_furnace_timing_save_load_and_expiry_are_deterministic(self):
@@ -259,6 +259,9 @@ class AlchemyRuntimeTest(unittest.TestCase):
         self.assertIn('return { output = self.output, remaining = math.max(0, remaining) }', station)
         self.assertIn("OnFurnaceHammered", prefab)
         self.assertIn("station:IsBusy()", prefab)
+        self.assertNotIn("HasSpaceFor", station)
+        self.assertIn("container:GiveItem(item, nil, nil, false)", station)
+        self.assertRegex(station, r'(?s)self\.output = nil.*?container:GiveItem\(item, nil, nil, false\)')
         self.assertIn('Prefab("xd_liandanlu"', prefab)
         self.assertIn('MakePlacer("xd_liandanlu_placer"', prefab)
         self.assertEqual(prefab.count('Prefab("xd_liandanlu"'), 1)
@@ -272,7 +275,12 @@ class AlchemyRuntimeTest(unittest.TestCase):
             self.assertIn(ingredient, main)
         self.assertIn('not TheWorld.ismastersim', main)
         self.assertIn('station:Start(action.doer)', main)
-        self.assertIn('station:CanStart()', main)
+        self.assertIn('function AlchemyStation:CanStart()', station)
+        self.assertIn('if not TheWorld.ismastersim or self:IsBusy() then return false end', station)
+        self.assertIn('local recipe, output = self:GetRecipe()', station)
+        self.assertIn('AddComponentAction("SCENE", "container"', main)
+        self.assertIn('inst:HasTag("ttk_alchemy_station")', main)
+        self.assertIn('if right and inst:HasTag("ttk_alchemy_station") then table.insert(actions, refine) end', main)
 
 
 if __name__ == "__main__":
