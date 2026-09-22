@@ -142,6 +142,7 @@ class AchievementCatalogTests(unittest.TestCase):
             self.assertNotIn(forbidden.lower(), lowered)
         for row in self.rows:
             self.assertNotRegex((row["id"] + row["name"] + row["description"]).lower(), r"todo|need|future|mục\\s*\\d+|placeholder")
+            self.assertNotRegex((row["name"] + " " + row["description"]).lower(), r"\b(?:weapon|armor|bag|ring|relic|mission|shop|spin|buy)\s+(?:one|two|three|five|ten)\b")
         signatures = [(row["tracker"], re.sub(r"\\s+", "", row["params"]), row["target"]) for row in self.rows]
         self.assertEqual(len(signatures), len(set(signatures)))
 
