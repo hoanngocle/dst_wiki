@@ -107,7 +107,13 @@ class TrackerContracts(unittest.TestCase):
         xp = self.block("ConfigureXP", "RefreshSeason")
         for contract in ("SetSeasonalXPCallback", "player ~= inst", "row.kind ~= kind", "slot.claims + 1", "claim_key ~= expected", "awarded[claim_key]", "leveling:AddExp(SEASONAL_CLAIM_XP)"):
             self.assertIn(contract, xp)
-        self.assertRegex(self.source, r"local SEASONAL_CLAIM_XP = [1-9][0-9]*")
+        self.assertIn("local SEASONAL_CLAIM_XP = G.TUNING and G.TUNING.TTK_SEASONAL_CLAIM_XP", xp)
+        self.assertIn('type(SEASONAL_CLAIM_XP) ~= "number"', xp)
+        self.assertIn("SEASONAL_CLAIM_XP ~= SEASONAL_CLAIM_XP", xp)
+        self.assertIn("SEASONAL_CLAIM_XP <= 0", xp)
+        self.assertIn("SEASONAL_CLAIM_XP == math.huge then return end", xp)
+        self.assertLess(xp.index("then return end"), xp.index("component:SetSeasonalXPCallback(function"))
+        self.assertNotRegex(xp, r"SEASONAL_CLAIM_XP\s*=\s*\d|TTK_SEASONAL_CLAIM_XP\s+or\s+\d")
         self.assertEqual(self.source.count(":AddExp("), 1)
 
     def test_four_strict_rpc_boundaries(self):

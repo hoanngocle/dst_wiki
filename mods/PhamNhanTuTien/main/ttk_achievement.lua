@@ -186,9 +186,12 @@ local function OnKilled(killer, data)
 end
 
 local function ConfigureXP(inst, component)
-    -- Task 12 tuning policy: every claimed seasonal task, including repeats,
-    -- grants exactly 100 base EXP through hh_leveling (its seal still applies).
-    local SEASONAL_CLAIM_XP = 100
+    -- EXP calibration belongs to the separate tuning task. Only an explicit
+    -- server tuning value enables claims; no default is invented here. Until
+    -- configured, Core keeps its nil callback and reports xp_unavailable.
+    local SEASONAL_CLAIM_XP = G.TUNING and G.TUNING.TTK_SEASONAL_CLAIM_XP
+    if type(SEASONAL_CLAIM_XP) ~= "number" or SEASONAL_CLAIM_XP ~= SEASONAL_CLAIM_XP
+        or SEASONAL_CLAIM_XP <= 0 or SEASONAL_CLAIM_XP == math.huge then return end
     local awarded = {}
     component:SetSeasonalXPCallback(function(player, id, kind, number, claim_key)
         if not Master() or player ~= inst or ResolveSender(inst) ~= component then return false end
