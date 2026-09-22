@@ -27,6 +27,44 @@ BUFF_PREFABS = (
 )
 FASTING_PREFAB = "xd_danyao_bg"
 
+# Verified identity renames: ttk_lingshi, ttk_herbs and ttk_batch19_houseitems
+# are loaded by the current mod's registration chain.
+# Keep this explicit: replacing an xd_ prefix does not prove a prefab exists.
+INGREDIENT_ALIASES = {
+    "xd_lingshi1": "ttk_lingshi1",
+    "xd_lingshi2": "ttk_lingshi2",
+    "xd_lingshi3": "ttk_lingshi3",
+    "xd_lc_hsc": "ttk_lc_hsc",
+    "xd_lc_dms": "ttk_lc_dms",
+    "xd_lc_qfx": "ttk_lc_qfx",
+    "xd_lc_cyh": "ttk_lc_cyh",
+    "xd_lc_lmg": "ttk_lc_lmg",
+    "xd_lc_yhh": "ttk_lc_yhh",
+    "xd_npxsz": "ttk_npxsz",
+    "xd_pog_tail": "ttk_pog_tail",
+    "xd_spider_leg": "ttk_spider_leg",
+}
+
+# Task 19 controller ruling (2026-09-22): these source materials are absent,
+# retired, or limited to one-time unique-boss drops. These are approved recipe
+# substitutions, NOT identity renames. Preserve quantities and use existing
+# repeatable ttk_boss_cores instead of one-time ttk_boss_mgqg/ttk_boss_zcmy.
+# Stage 15 uses approved grade-one pills exported by ttk_alchemy; grade two
+# is unavailable. No runtime crafting aliases or new prefabs are introduced.
+INGREDIENT_SUBSTITUTIONS = {
+    "xd_ayhx": "ttk_boss_core_stalke_fuben",
+    "xd_aymg": "ttk_boss_core_stalke_fuben",
+    "xd_baihu_skin": "ttk_boss_core_baihu",
+    "xd_fs": "ttk_boss_core_jfsn",
+    "xd_qlr": "ttk_boss_core_qlch",
+    "xd_qianyu": "ttk_boss_core_deerclops_ziyun",
+    "xd_mgqg": "ttk_boss_core_stalke_fuben",
+    "xd_zcmy": "ttk_boss_core_deerclops_ziyun",
+    "xd_dy_pshsd_2": "xd_dy_pshsd_1",
+    "xd_dy_xttyd_2": "xd_dy_xttyd_1",
+}
+CURRENT_XD_INGREDIENTS = frozenset({"xd_dy_pshsd_1", "xd_dy_xttyd_1"})
+
 # Runtime behavior is deliberately explicit: gameplay never parses manual prose.
 RUNTIME_EFFECTS = {
     "xd_dy_cyfxd_1": {"kind": "damage_mult", "multiplier": 1.4, "duration": 2400},
@@ -101,7 +139,7 @@ def require_positive_int(value: Any, field: str) -> int:
 
 
 def runtime_prefab(item_id: str) -> str:
-    """Normalize a namespaced manual id to a runtime prefab."""
+    """Resolve a source ingredient during generation, never at craft time."""
     item_id = require_string(item_id, "ingredient id", non_empty=True)
     namespace, separator, prefab = item_id.partition(":")
     if (
@@ -113,7 +151,10 @@ def runtime_prefab(item_id: str) -> str:
         or re.fullmatch(r"[a-z0-9_]+", prefab) is None
     ):
         raise ValueError(f"Invalid manual item id: {item_id!r}")
-    return prefab
+    resolved = INGREDIENT_ALIASES.get(prefab, INGREDIENT_SUBSTITUTIONS.get(prefab, prefab))
+    if resolved.startswith("xd_") and resolved not in CURRENT_XD_INGREDIENTS:
+        raise ValueError(f"Unmapped historical alchemy ingredient: {item_id!r}")
+    return resolved
 
 
 def lua_string(value: str) -> str:

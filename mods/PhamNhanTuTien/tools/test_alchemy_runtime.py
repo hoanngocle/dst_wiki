@@ -1,14 +1,15 @@
-"""Source-contract tests for the approved Phàm Nhân pill runtime.
+"""Lua 5.1 behavior and source contracts for the approved Phàm Nhân pills.
 
-No Lua interpreter is shipped with this repository, so these checks protect the
-runtime boundary and a tiny model protects refresh/expiry invariants.
+Runtime checks require lupa.lua51 (the audit runtime can be set via PYTHONPATH).
 """
 
 from pathlib import Path
 import re
 import unittest
+import zipfile
 
 import build_alchemy_defs as generator
+from lupa.lua51 import LuaRuntime
 
 
 ROOT = Path(__file__).resolve().parents[3]
@@ -119,6 +120,93 @@ class FurnaceModel:
 
 class AlchemyRuntimeTest(unittest.TestCase):
     def read(self, path): return path.read_text(encoding="utf-8")
+
+    def alchemy_runtime(self):
+        lua = LuaRuntime(unpack_returned_tuples=True)
+        lua.execute("package.path = ... .. package.path", (MOD / "scripts" / "?.lua;").as_posix())
+        defs = lua.eval('require("alchemy/ttk_alchemy_defs")')
+        rules = lua.eval('require("alchemy/ttk_alchemy_rules")')
+        return lua, defs, rules
+
+    def test_all_26_recipes_match_current_inputs_and_reject_historical_inputs(self):
+        """An obsolete generated ingredient makes its historical-input form craftable."""
+        lua, defs, rules = self.alchemy_runtime()
+        records = generator.read_records()
+        self.assertEqual(len(records), 26)
+        for output, record in records:
+            with self.subTest(output=output):
+                recipe = defs.GetRecipe(output)
+                current = {row.prefab: row.amount for row in recipe.ingredients.values()}
+                matched, actual = rules.FindExactRecipe(lua.table_from(current))
+                self.assertEqual(actual, output)
+                self.assertEqual(matched.output_count, record["recipe"]["outputCount"])
+                historical = {}
+                for row in record["recipe"]["ingredients"]:
+                    prefab = row["id"].split(":", 1)[1]
+                    historical[prefab] = historical.get(prefab, 0) + row["amount"]
+                self.assertIsNone(rules.FindExactRecipe(lua.table_from(historical)))
+
+    def test_stage_15_consumes_only_registered_first_grade_buffers(self):
+        """Second-grade source pills are unavailable; stage 15 must use approved grade one."""
+        lua, defs, _ = self.alchemy_runtime()
+        ingredients = {row.prefab: row.amount for row in defs.GetCultivationStage(15).recipe.ingredients.values()}
+        self.assertEqual(ingredients.get("xd_dy_pshsd_1"), 1)
+        self.assertEqual(ingredients.get("xd_dy_xttyd_1"), 1)
+        self.assertNotIn("xd_dy_pshsd_2", ingredients)
+        self.assertNotIn("xd_dy_xttyd_2", ingredients)
+        # Capture the names emitted by the real factory, without creating entities.
+        lua.execute('Asset = function(...) return {} end; Prefab = function(name) return name end; MakePlacer = Prefab')
+        registered = set(lua.execute(self.read(PREFAB)))
+        self.assertTrue({"xd_dy_pshsd_1", "xd_dy_xttyd_1"} <= registered)
+        self.assertFalse({"xd_dy_pshsd_2", "xd_dy_xttyd_2"} & registered)
+
+    def test_every_emitted_ingredient_has_a_current_registered_provider(self):
+        """A renamed ingredient must be exported by a loaded factory or supplied by DST."""
+        lua, defs, _ = self.alchemy_runtime()
+        lua.execute('Asset = function(...) return {} end; Prefab = function(name) return name end; MakePlacer = Prefab')
+        providers = {
+            "ttk_lingshi": ("modmain.lua",),
+            "ttk_alchemy": ("modmain.lua",),
+            "ttk_herbs": ("modmain.lua", "main/ttk_batch19_herbs.lua"),
+            "ttk_batch19_houseitems": ("modmain.lua", "main/ttk_batch19_houses.lua"),
+            "ttk_boss_cores": ("modmain.lua", "main/ttk_bosses.lua", "main/ttk_boss_food.lua"),
+        }
+        registered = set()
+        for factory, chain in providers.items():
+            # Protect the load path as well as the factory's actual return values.
+            for parent, child in zip(chain, chain[1:]):
+                self.assertRegex(self.read(MOD / parent), rf'modimport\s*\(?\s*"{re.escape(child)}"')
+            self.assertIn('"' + factory + '"', self.read(MOD / chain[-1]))
+            self.assertIn("PrefabFiles", self.read(MOD / chain[-1]))
+            registered.update(lua.execute(self.read(MOD / "scripts" / "prefabs" / (factory + ".lua"))))
+
+        # Native providers are audited against the installed game's loaded prefab
+        # files, not references in arbitrary source, assets, loot, or recipe text.
+        game = Path("C:/Program Files (x86)/Steam/steamapps/common/Don't Starve Together/data/databundles/scripts.zip")
+        with zipfile.ZipFile(game) as archive:
+            prefab_files = re.findall(r'"([a-z0-9_]+)"', archive.read("scripts/prefablist.lua").decode())
+            sources = {name: archive.read(f"scripts/prefabs/{name}.lua").decode("utf-8-sig") for name in prefab_files}
+        for source in sources.values():
+            registered.update(re.findall(r'\bPrefab\(\s*["\']([a-z0-9_]+)["\']', source))
+        # Three native families declare names through data-driven factories.
+        veggies = sources["veggies"]
+        self.assertRegex(veggies, r'Prefab\(name,\s*fn,')
+        self.assertRegex(veggies, r'for veggiename,veggiedata in pairs\(VEGGIES\) do\s+local veggies = MakeVeggie\(veggiename,')
+        registered.update(re.findall(r'\b([a-z0-9_]+)\s*=\s*MakeVegStats\(', veggies))
+        mushrooms = sources["mushrooms"]
+        self.assertIn("Prefab(data.pickloot, capfn", mushrooms)
+        self.assertIn("MakeMushroom(v)", mushrooms)
+        registered.update(re.findall(r'pickloot\s*=\s*"([a-z0-9_]+)"', mushrooms))
+        gems = sources["gem"]
+        self.assertIn('Prefab(colour..(precious and "preciousgem" or "gem")', gems)
+        registered.update(colour + "gem" for colour in re.findall(r'buildgem\("([a-z]+)"\)', gems))
+
+        for output, row in defs.by_prefab.items():
+            for ingredient in row.recipe.ingredients.values():
+                with self.subTest(output=output, ingredient=ingredient.prefab):
+                    self.assertTrue(ingredient.prefab in registered, f"No registered provider for {ingredient.prefab}")
+        for ingredient in defs.furnace.ingredients.values():
+            self.assertIn(ingredient.prefab, registered)
 
     def test_exact_pills_are_registered_once_and_share_factory(self):
         """Omitting, duplicating, or registering an unapproved pill must fail."""

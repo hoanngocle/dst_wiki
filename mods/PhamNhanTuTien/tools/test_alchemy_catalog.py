@@ -1,6 +1,7 @@
 """Catalog contract tests for the generated Phàm Nhân alchemy definitions."""
 
 import copy
+from collections import Counter
 import json
 from pathlib import Path
 import re
@@ -34,6 +35,23 @@ RUNTIME_KINDS = {
     "xd_dy_hsphd_1": "heat_protection", "xd_dy_xttyd_1": "lifesteal",
     "xd_danyao_bg": "hunger_rate",
 }
+
+# Independently reviewed against the current factories, not inferred prefixes.
+EXPECTED_RENAMES = {
+    "xd_lingshi1": "ttk_lingshi1", "xd_lingshi2": "ttk_lingshi2", "xd_lingshi3": "ttk_lingshi3",
+    "xd_lc_hsc": "ttk_lc_hsc", "xd_lc_dms": "ttk_lc_dms", "xd_lc_qfx": "ttk_lc_qfx",
+    "xd_lc_cyh": "ttk_lc_cyh", "xd_lc_lmg": "ttk_lc_lmg", "xd_lc_yhh": "ttk_lc_yhh",
+    "xd_npxsz": "ttk_npxsz", "xd_pog_tail": "ttk_pog_tail", "xd_spider_leg": "ttk_spider_leg",
+}
+# Task-19 controller-approved recipe changes; these are NOT identity aliases.
+EXPECTED_SUBSTITUTIONS = {
+    "xd_ayhx": "ttk_boss_core_stalke_fuben", "xd_aymg": "ttk_boss_core_stalke_fuben",
+    "xd_baihu_skin": "ttk_boss_core_baihu", "xd_fs": "ttk_boss_core_jfsn",
+    "xd_qlr": "ttk_boss_core_qlch", "xd_qianyu": "ttk_boss_core_deerclops_ziyun",
+    "xd_mgqg": "ttk_boss_core_stalke_fuben", "xd_zcmy": "ttk_boss_core_deerclops_ziyun",
+    "xd_dy_pshsd_2": "xd_dy_pshsd_1", "xd_dy_xttyd_2": "xd_dy_xttyd_1",
+}
+CURRENT_XD_INGREDIENTS = {"xd_dy_pshsd_1", "xd_dy_xttyd_1"}
 
 
 class AlchemyCatalogTest(unittest.TestCase):
@@ -91,6 +109,44 @@ class AlchemyCatalogTest(unittest.TestCase):
         self.assertNotIn("xd_dy_tsfhd", source)
 
         self.assert_ingredients_valid(source)
+
+    def test_every_historical_input_resolves_to_the_reviewed_current_ingredient(self):
+        """A missing or guessed alias must not silently emit a non-existent ingredient."""
+        expected = EXPECTED_RENAMES | EXPECTED_SUBSTITUTIONS
+        historical = {row["id"].split(":", 1)[1]
+                      for _, record in generator.read_records()
+                      for row in record["recipe"]["ingredients"] if row["id"].startswith("tu_tien:xd_")}
+        self.assertEqual(historical, set(expected))
+        for source, current in expected.items():
+            with self.subTest(source=source):
+                self.assertEqual(generator.runtime_prefab("tu_tien:" + source), current)
+
+    def test_generator_rejects_unmapped_historical_inputs(self):
+        """A newly introduced source ingredient needs an explicit reviewed resolution."""
+        for item_id in ("tu_tien:xd_unmapped", "base_game:xd_unmapped"):
+            with self.subTest(item_id=item_id):
+                items = self.manual_items()
+                items["tu_tien:xd_danyao_jq"]["recipe"]["ingredients"][0]["id"] = item_id
+                self.assert_manual_rejected(items)
+
+    def test_generated_recipes_preserve_exact_mapped_amounts_and_outputs(self):
+        """Mapping must neither lose ingredient amounts nor leave obsolete IDs behind."""
+        source = generator.render(generator.read_records())
+        expected_ids = EXPECTED_RENAMES | EXPECTED_SUBSTITUTIONS
+        for output, record in generator.read_records():
+            with self.subTest(output=output):
+                row = re.search(rf'M\.by_prefab\["{output}"\] = \{{(.*?)\n\}}', source, re.S).group(1)
+                emitted = re.findall(r'\{ prefab="([^"]+)", amount=(\d+) \}', row)
+                expected = Counter()
+                for ingredient in record["recipe"]["ingredients"]:
+                    historical = ingredient["id"].split(":", 1)[1]
+                    expected[expected_ids.get(historical, historical)] += ingredient["amount"]
+                self.assertEqual(dict(emitted), {name: str(amount) for name, amount in expected.items()})
+                self.assertEqual(len(emitted), len(expected))
+                self.assertFalse({name for name, _ in emitted if name.startswith("xd_")} - CURRENT_XD_INGREDIENTS)
+                self.assertFalse({name for name, _ in emitted} & {"ttk_boss_mgqg", "ttk_boss_zcmy"})
+                self.assertIn(f"output_count = {record['recipe']['outputCount']},", row)
+        self.assertEqual(source, generator.render(generator.read_records()))
 
     def test_committed_catalog_exactly_matches_generator_and_manual(self):
         """A stale checked-in Lua catalog must differ from fresh manual generation."""
