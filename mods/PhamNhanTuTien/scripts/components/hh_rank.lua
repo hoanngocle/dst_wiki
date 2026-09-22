@@ -645,6 +645,10 @@ local HHRank = Class(function(self, inst)
         end
     end, TheWorld)
 
+    inst:ListenForEvent("hh_levelup", function()
+        self:ReconcileLevelPromotion()
+    end)
+
     for _, exam in ipairs(ExamDefs.list) do
         self.exam_states[exam.id] = STATUS_LOCKED
     end
@@ -700,6 +704,32 @@ end
 
 function HHRank:GetRank()
     return self.rank
+end
+
+function HHRank:ReconcileLevelPromotion()
+    local old_rank = self.rank
+    if old_rank < RankDefs.RANK.S then
+        return false
+    end
+
+    local level_rank = RankDefs.GetRankForLevel(GetLevel(self.inst))
+    if level_rank <= self.rank then
+        return false
+    end
+
+    self.rank = level_rank
+    self.inst:PushEvent("hh_rank_changed", {
+        old_rank = old_rank,
+        new_rank = self.rank,
+        source = "level_promotion",
+    })
+    local quest = self.inst.components.hh_guild_quest
+    if quest then
+        quest:RefreshOffers()
+    end
+    self:RefreshExamAvailability()
+    self:Sync()
+    return true
 end
 
 function HHRank:AddPendingItems(items)
@@ -867,6 +897,11 @@ function HHRank:RefreshExamAvailability()
         end
     end
     if exam == nil then
+        self.exam_id = 0
+        self.exam_status = STATUS_CLAIMED
+        self.exam_progress = 0
+        self.exam_target = 0
+        self:Sync()
         return
     end
 
@@ -1085,6 +1120,7 @@ function HHRank:OnLoad(data)
     end
     self.pending_credit = math.max(0, math.floor(tonumber(data.pending_credit) or 0))
     self.pending_exam_reward = data.pending_exam_reward == true
+    self:ReconcileLevelPromotion()
     self:RefreshExamAvailability()
     self:Sync()
 end

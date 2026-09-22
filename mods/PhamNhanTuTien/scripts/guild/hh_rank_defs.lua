@@ -7,6 +7,8 @@ M.RANK = {
     B = 4,
     A = 5,
     S = 6,
+    SS = 7,
+    SSS = 8,
 }
 
 M.NAMES = {
@@ -16,6 +18,8 @@ M.NAMES = {
     [M.RANK.B] = "B",
     [M.RANK.A] = "A",
     [M.RANK.S] = "S",
+    [M.RANK.SS] = "SS",
+    [M.RANK.SSS] = "SSS",
 }
 
 M.LEVEL_REQUIREMENTS = {
@@ -24,6 +28,8 @@ M.LEVEL_REQUIREMENTS = {
     [M.RANK.B] = 30,
     [M.RANK.A] = 40,
     [M.RANK.S] = 50,
+    [M.RANK.SS] = 70,
+    [M.RANK.SSS] = 100,
 }
 
 function M.GetName(rank)
@@ -37,7 +43,7 @@ end
 function M.GetRankForLevel(level)
     local result = M.RANK.E
     level = tonumber(level) or 1
-    for rank = M.RANK.D, M.RANK.S do
+    for rank = M.RANK.D, M.RANK.SSS do
         if level >= (M.LEVEL_REQUIREMENTS[rank] or math.huge) then
             result = rank
         end
@@ -46,11 +52,11 @@ function M.GetRankForLevel(level)
 end
 
 function M.IsValidRank(rank)
-    return type(rank) == "number" and rank >= M.RANK.E and rank <= M.RANK.S
+    return type(rank) == "number" and rank >= M.RANK.E and rank <= M.RANK.SSS
 end
 
 function M.GetNextRank(rank)
-    if rank < M.RANK.S then
+    if rank < M.RANK.SSS then
         return rank + 1
     end
     return nil
