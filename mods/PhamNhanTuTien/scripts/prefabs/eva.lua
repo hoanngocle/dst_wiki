@@ -12,6 +12,7 @@ for mode, items in pairs(TUNING.GAMEMODE_STARTING_ITEMS) do
     start_inv[string.lower(mode)] = items.EVA
 end
 local prefabs = FlattenTree(start_inv, true)
+table.insert(prefabs, "spear_wathgrithr_lightning_lunge_fx")
 
 local function onbecamehuman(inst)
     inst.components.locomotor:SetExternalSpeedMultiplier(

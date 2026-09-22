@@ -14,7 +14,7 @@ local function ServerState()
             local fox = inst.components.eva_fox_blink
             if inst.sg.currentstate.name == "eva_skill_cast"
                 and fox ~= nil and fox.IsActive ~= nil and fox:IsActive() then
-                inst.sg:SetTimeout(2.3)
+                inst.sg:SetTimeout(0.5)
             elseif inst.sg.currentstate.name == "eva_skill_cast" then
                 inst.sg:GoToState("idle")
             end

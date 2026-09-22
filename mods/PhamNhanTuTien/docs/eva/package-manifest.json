@@ -1,9 +1,9 @@
 {
-  "status": "STAGED_NOT_INSTALLED",
-  "candidate_source": "C:\\Users\\NYX\\company\\dst_wiki\\artifacts\\eva-approved-sprite\\concept-registration\\joint-retarget-trial\\front-body-authoritative-sources-candidate.zip",
+  "status": "INSTALLED_WORKSPACE_AND_STEAM",
+  "candidate_source": "anim/eva.zip",
   "candidate_sha256": "9cae351ef02f17af4112d074fdddcd512b8dfa503f60ca8276545f949c3a14d8",
   "animation": {
-    "archive": "C:\\Users\\NYX\\company\\dst_wiki\\artifacts\\eva-approved-sprite\\concept-registration\\game-test-package\\staged\\anim\\ttk_eva_run_loop.zip",
+    "archive": "anim/ttk_eva_run_loop.zip",
     "archive_sha256": "33da77c46429c2b6a8c9a0b6b3da1206db45a7ca86f5554d4c0f5153d91d6ed8",
     "anim_sha256": "1e3e9561a56d4697c71a32342b956b1123350c3f7b385e6bd5a7c0a624897b56",
     "source_player_basic_sha256": "15f87d4cc80c78eb49cd41ca343fb516c2327bcc906f3a654b23b34599b625d4",
@@ -34,8 +34,20 @@
       "size": 7489
     },
     "scripts/prefabs/eva.lua": {
-      "sha256": "6f14b7d1d826d73832e1b104ec813e9033fc4cd49af07630b1dd709d87ff2abc",
-      "size": 5596
+      "sha256": "69e77f734718d9263ef93886e4d321ba6e5d54a9d73f2dff6a903bff1b546f0a",
+      "size": 5657
+    },
+    "scripts/components/eva_fox_blink.lua": {
+      "sha256": "2f0fcbd9405621280b3b4fd14be62545e3c528b9e8f1f3e2412db97f595aabb4",
+      "size": 6366
+    },
+    "scripts/util/eva_fox_common.lua": {
+      "sha256": "d788165aed90262d58481a091e4dcc97b89ab88c52007ced5b84f01563c40e8d",
+      "size": 6841
+    },
+    "scripts/util/eva_skillpanel_states.lua": {
+      "sha256": "e4275552a41551da7a45ce3b26e28d7f79755d797ab3c30d1139698a8e962510",
+      "size": 3417
     },
     "scripts/util/eva_facing_alias.lua": {
       "sha256": "a201666b31bd03c855dff3ec60babfb6cbb8881893cfb3272ec36fecfbbf6428",
