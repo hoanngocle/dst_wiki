@@ -2,6 +2,7 @@
 from pathlib import Path
 import sys
 from zipfile import ZipFile
+import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[3]
 MOD = ROOT / "mods" / "PhamNhanTuTien"
@@ -12,6 +13,14 @@ from lupa.lua51 import LuaRuntime
 
 
 if __name__ == "__main__":
+    with ZipFile(MOD / "fonts" / "ttk_forge_serif.zip") as archive:
+        common = ET.fromstring(archive.read("font.fnt")).find("common")
+    assert common is not None
+    assert common.attrib["alphaChnl"] == "1"
+    assert common.attrib["redChnl"] == "0"
+    assert common.attrib["greenChnl"] == "0"
+    assert common.attrib["blueChnl"] == "0"
+    print("Forge font channel metadata PASS")
     lua = LuaRuntime(unpack_returned_tuples=True)
     with ZipFile("C:/Program Files (x86)/Steam/steamapps/common/Don't Starve Together/data/databundles/scripts.zip") as scripts:
         lua.execute(scripts.read("scripts/class.lua").decode())
@@ -40,11 +49,15 @@ if __name__ == "__main__":
         "scripts/widgets/hh_status_ui.lua",
         "scripts/widgets/hh_ui/ttk_native_panel.lua",
         "scripts/widgets/hh_ui/ttk_quest_panel.lua",
+        "scripts/widgets/hh_ui/ttk_artifact_primitives.lua",
         "scripts/widgets/hh_ui/ttk_unified_theme.lua",
     )
     for relative_path in syntax_files:
         lua.globals().__syntax_path = str(MOD / relative_path).replace("\\", "/")
         lua.execute("assert(loadfile(__syntax_path))")
     print(f"Lua syntax checks PASS ({len(syntax_files)} files)")
+    lua.globals().__font_loader_path = str(MOD / "main" / "ttk_forge_fonts.lua").replace("\\", "/")
+    lua.execute((MOD / "tests" / "ui" / "test_forge_fonts.lua").read_text(encoding="utf-8"))
     for test_name in ("test_unified_controller.lua", "test_unified_screen.lua"):
         lua.execute((MOD / "tests" / "ui" / test_name).read_text(encoding="utf-8"))
+    lua.execute((MOD / "tests" / "ui" / "test_artifact_theme.lua").read_text(encoding="utf-8"))

@@ -35,7 +35,7 @@ def build():
     ascent, descent = font.getmetrics()
     element(root, 'common', lineHeight=ascent+descent, base=ascent,
             scaleW=2048, scaleH=2048, pages=1, packed=0,
-            alphaChnl=0, redChnl=4, greenChnl=4, blueChnl=4)
+            alphaChnl=1, redChnl=0, greenChnl=0, blueChnl=0)
     element(element(root, 'pages'), 'page', id=0, file='font.png')
     records = element(root, 'chars', count=len(chars))
     x = y = row = 0
@@ -61,13 +61,26 @@ def build():
     atlas.save(BUILD / 'font.png')
     ET.indent(root)
     (BUILD / 'font.fnt').write_bytes(b'<?xml version="1.0"?>\n'+ET.tostring(root, encoding='utf-8'))
-    subprocess.run([str(CONVERTER), '-i', str(BUILD/'font.png'), '-o', str(BUILD/'font.tex'),
-                    '-f', 'bc3', '-p', 'opengl', '--mipmap'], check=True)
     output = MOD / 'fonts/ttk_forge_serif.zip'
+    reused_texture = False
+    if CONVERTER.exists():
+        subprocess.run([str(CONVERTER), '-i', str(BUILD/'font.png'), '-o', str(BUILD/'font.tex'),
+                        '-f', 'bc3', '-p', 'opengl', '--mipmap'], check=True)
+    elif output.exists():
+        # A source-only checkout may not include Don't Starve Mod Tools.  The
+        # deterministic glyph layout is unchanged, so metadata-only rebuilds
+        # can safely retain the already compiled texture from the archive.
+        with ZipFile(output) as previous:
+            (BUILD / 'font.tex').write_bytes(previous.read('font.tex'))
+        reused_texture = True
+    else:
+        raise FileNotFoundError(
+            f'{CONVERTER} is unavailable and no compiled font texture exists to reuse')
     with ZipFile(output, 'w', ZIP_DEFLATED) as archive:
         for name in ('font.fnt', 'font.tex'):
             archive.write(BUILD/name, name)
     report = dict(glyphs=len(chars), kernings=len(kernings), line_height=ascent+descent,
+                  reused_texture=reused_texture,
                   source_sha256=hashlib.sha256(source.read_bytes()).hexdigest(),
                   zip_sha256=hashlib.sha256(output.read_bytes()).hexdigest())
     (BUILD/'build.json').write_text(json.dumps(report, indent=2)+'\n')
