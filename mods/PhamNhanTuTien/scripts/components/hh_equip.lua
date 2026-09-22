@@ -5,12 +5,6 @@ local _b__u_g_ = b_U_G__["HH_GEM_BUFF_LIST"]
 local __b__U__G__ = b_U_G__["HH_SUIT_LIST"]
 local B_U__g_ = 4
 local _B__ug__ = "hh_equip"
-local EQUIP_BUFF_NAME_ALIASES = {
-    ["restore_use_3s_1use"] = "restore_use_1s_1use"
-}
-local function NormalizeEquipBuffName(name)
-    return EQUIP_BUFF_NAME_ALIASES[name] or name
-end
 local function B_UG(_B_ug__)
     if not B_U_G_:HasComponents(_B_ug__, "equippable") then
         return
@@ -314,7 +308,6 @@ function _BuG:AddEquipBuff(name, value)
         if #candidates == 0 then return false, "Ko có mục mới để thêm !!!" end
         name = candidates[math.random(1, #candidates)]
     end
-    name = NormalizeEquipBuffName(name)
     local accepted, reason = self:ValidateEquipBuff(name)
     if not accepted then return false, reason end
     local definition = b__u_g__[name]
