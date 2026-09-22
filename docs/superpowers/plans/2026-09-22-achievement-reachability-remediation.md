@@ -178,3 +178,10 @@ The original user-approved execution method is subagent-driven development. Task
 - [ ] Correct seasonal conditions to native `frogglebunwich`, `coldfirepit`, and `perogies`.
 - [ ] Add executable eater/build/seasonal route tests that reject the obsolete IDs and advance only on the real native products.
 - [ ] Regenerate the canonical wiki export, run catalog/seasonal/export/wiki checks, and send the five-ID diff to a scoped reviewer.
+
+### Task 22: Seasonal Rollover Settlement
+
+- [ ] Before replacing the seasonal pool, settle every outgoing ready task exactly once through the configured XP callback and settle each eligible unclaimed chest through the existing atomic reward grant path.
+- [ ] Preserve correct outgoing-season identity after world state already changes; receipt keys must remain idempotent across a deferred refresh, load, or duplicate watcher event.
+- [ ] If XP/reward settlement cannot commit, persist an outgoing settlement record and retry before starting a new pool; never silently discard a ready task or chest.
+- [ ] Add executable native world-watcher rollover tests: five claimed tasks plus chest, one ready unclaimed task, configured/invalid XP, reward/preflight failure, retry/load, and duplicate season event.
