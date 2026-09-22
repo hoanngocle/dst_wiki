@@ -43,11 +43,14 @@ it("shows documented runtime availability separately from the complete perk cata
   expect(screen.getByText(/39 kỹ năng.*945 Star.*toàn bộ danh mục/)).toBeDefined();
 });
 
-it("explains manual seasonal XP claims and the missing-configuration case", () => {
+it("explains manual XP claims, durable rollover settlement and missing configuration", () => {
   render(<Page />);
   const instructions = screen.getByLabelText("Nhận EXP nhiệm vụ mùa");
   expect(instructions.textContent).toMatch(/mỗi lần hoàn thành.*kể cả mỗi lượt lặp lại.*Claim EXP/i);
   expect(instructions.textContent).toMatch(/1 lượt nhận/);
   expect(instructions.textContent).toMatch(/EXP.*cấu hình máy chủ/);
   expect(instructions.textContent).toMatch(/chưa.*cấu hình.*chưa.*khả dụng/);
+  expect(instructions.textContent).toMatch(/chuyển mùa.*tự động.*nhiệm vụ.*rương.*đủ điều kiện/i);
+  expect(instructions.textContent).toMatch(/lưu.*trước khi.*bộ nhiệm vụ mới/i);
+  expect(instructions.textContent).toMatch(/thất bại.*chờ.*không.*mất/i);
 });
