@@ -1123,9 +1123,11 @@ end
 AddClassPostConstruct("widgets/equipslot", kFiugCkKi)
 local nfnUfcuki = cfcugCckg("widgets/hh_ui/hh_equip_ui")
 local ufuufCgKc = cfcugCckg("widgets/hh_ui/hh_forge_ui")
+local ttkStorageUI = cfcugCckg("widgets/hh_ui/ttk_storage_ui")
 local ifuUgcikc = {
     ["hh_ui_container"] = {["ui"] = nfnUfcuki, ["ui_id"] = "hh_equip_ui"},
-    ["hh_forge_container"] = {["ui"] = ufuufCgKc, ["ui_id"] = "hh_equip_ui", ["scale"] = 0.7}
+    ["hh_forge_container"] = {["ui"] = ufuufCgKc, ["ui_id"] = "hh_equip_ui", ["scale"] = 0.7},
+    [MONARCH_STORAGE_PREFAB] = {["ui"] = ttkStorageUI, ["ui_id"] = "ttk_storage_ui", ["scale"] = 0.82}
 }
 local function gFcUuckKi(self, uFfUucnkk)
     local fFgUccfKi = self["Open"]

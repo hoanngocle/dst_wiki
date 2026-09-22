@@ -160,6 +160,23 @@ def shop_preview() -> Image.Image:
     return image
 
 
+def storage_preview(locked: bool) -> Image.Image:
+    image, draw = unified_canvas(5, "KHO QUAN VUONG")
+    draw.text((768, 390), "120 o luu tru  •  Alt + chuot phai de khoa", font=font(19), fill=(174, 175, 194, 255), anchor="mm")
+    first_x, first_y = 405, 455
+    for index in range(40):
+        col, row = index % 8, index // 8
+        x = first_x + col * 92
+        y = first_y + row * 75
+        fill = (30, 30, 45, 255) if not locked or index % 7 else (70, 35, 50, 255)
+        draw.rounded_rectangle((x - 31, y - 31, x + 31, y + 31), 7, fill=fill, outline=SILVER, width=2)
+        if locked and index % 7 == 0:
+            draw.text((x + 19, y + 17), "★", font=font(20), fill=(255, 80, 95, 255), anchor="mm")
+    draw.text((768, 825), "‹        1 / 3        ›", font=font(24), fill=SILVER, anchor="mm")
+    draw.text((768, 866), "Hien thi o 1-40 / 120" if not locked else "Vat pham khoa van giu nguyen trang thai", font=font(18), fill=CYAN, anchor="mm")
+    return image
+
+
 SCREENS = {
     "theme": theme_preview,
     "shell": shell_preview,
@@ -178,6 +195,8 @@ SCREENS = {
     "quests-promotion": lambda: quest_preview(2),
     "army": army_preview,
     "shop": shop_preview,
+    "storage-page-1": lambda: storage_preview(False),
+    "storage-locked": lambda: storage_preview(True),
 }
 
 

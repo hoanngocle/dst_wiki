@@ -49,6 +49,7 @@ if __name__ == "__main__":
         "scripts/widgets/hh_status_ui.lua",
         "scripts/widgets/hh_ui/ttk_native_panel.lua",
         "scripts/widgets/hh_ui/ttk_quest_panel.lua",
+        "scripts/widgets/hh_ui/ttk_storage_ui.lua",
         "scripts/widgets/hh_ui/ttk_artifact_primitives.lua",
         "scripts/widgets/hh_ui/ttk_unified_theme.lua",
     )
