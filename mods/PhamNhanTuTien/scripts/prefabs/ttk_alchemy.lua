@@ -1,5 +1,11 @@
 local Defs = require("alchemy/ttk_alchemy_defs")
 
+local furnace_assets = {
+    Asset("ANIM", "anim/xd_liandanlu.zip"),
+    Asset("ATLAS", "images/inventoryimages/xd_liandanlu.xml"),
+    Asset("IMAGE", "images/inventoryimages/xd_liandanlu.tex"),
+}
+
 local function OnEaten(inst, eater)
     if eater == nil or not TheWorld.ismastersim then return end
     local cultivation = eater.components.ttk_cultivation
@@ -35,6 +41,52 @@ local function MakePill(prefab)
     return Prefab(prefab, fn)
 end
 
+local function OnFurnaceHammered(inst, worker)
+    local station = inst.components.ttk_alchemy_station
+    if station ~= nil and station:IsBusy() then
+        inst.components.workable:SetWorkLeft(3)
+        return
+    end
+    local fx = SpawnPrefab("collapse_small")
+    if fx ~= nil then fx.Transform:SetPosition(inst.Transform:GetWorldPosition()) end
+    inst:Remove()
+end
+
+local function OnFurnaceHit(inst)
+    local station = inst.components.ttk_alchemy_station
+    if station ~= nil and station:IsBusy() then inst.components.workable:SetWorkLeft(3) end
+end
+
+local function MakeFurnace()
+    local inst = CreateEntity()
+    inst.entity:AddTransform(); inst.entity:AddAnimState(); inst.entity:AddSoundEmitter(); inst.entity:AddNetwork()
+    MakeObstaclePhysics(inst, .7)
+    inst.AnimState:SetBank("xd_liandanlu"); inst.AnimState:SetBuild("xd_liandanlu"); inst.AnimState:PlayAnimation("idle")
+    inst:AddTag("structure")
+    inst:AddTag("ttk_alchemy_station")
+    inst.entity:SetPristine()
+    if not TheWorld.ismastersim then return inst end
+
+    inst:AddComponent("inspectable")
+    inst:AddComponent("container")
+    inst.components.container:WidgetSetup("xd_liandanlu")
+    local Open = inst.components.container.Open
+    inst.components.container.Open = function(container, doer)
+        if inst.components.ttk_alchemy_station:IsBusy() then return false end
+        return Open(container, doer)
+    end
+    inst:AddComponent("ttk_alchemy_station")
+    inst:AddComponent("workable")
+    inst.components.workable:SetWorkAction(ACTIONS.HAMMER)
+    inst.components.workable:SetWorkLeft(3)
+    inst.components.workable:SetOnWorkCallback(OnFurnaceHit)
+    inst.components.workable:SetOnFinishCallback(OnFurnaceHammered)
+    inst.OnSave = function(furnace, data) data.ttk_alchemy_station = furnace.components.ttk_alchemy_station:OnSave() end
+    inst.OnLoad = function(furnace, data) furnace.components.ttk_alchemy_station:OnLoad(data ~= nil and data.ttk_alchemy_station or nil) end
+    MakeHauntableWork(inst)
+    return inst
+end
+
 return MakePill("xd_danyao_jq"), MakePill("xd_danyao_dt"), MakePill("xd_danyao_zj"),
     MakePill("xd_danyao_xs"), MakePill("xd_danyao_hj"), MakePill("xd_danyao_yz"),
     MakePill("xd_danyao_sm"), MakePill("xd_danyao_rl"), MakePill("xd_danyao_jy"),
@@ -43,4 +95,6 @@ return MakePill("xd_danyao_jq"), MakePill("xd_danyao_dt"), MakePill("xd_danyao_z
     MakePill("xd_danyao_bg"), MakePill("xd_dy_cyfxd_1"), MakePill("xd_dy_dmhsd_1"),
     MakePill("xd_dy_lmsqd_1"), MakePill("xd_dy_qxdhd_1"), MakePill("xd_dy_yfsxd_1"),
     MakePill("xd_dy_pshsd_1"), MakePill("xd_dy_qjqsd_1"), MakePill("xd_dy_xynyd_1"),
-    MakePill("xd_dy_hsphd_1"), MakePill("xd_dy_xttyd_1")
+    MakePill("xd_dy_hsphd_1"), MakePill("xd_dy_xttyd_1"),
+    Prefab("xd_liandanlu", MakeFurnace, furnace_assets, { "collapse_small" }),
+    MakePlacer("xd_liandanlu_placer", "xd_liandanlu", "xd_liandanlu", "idle")
