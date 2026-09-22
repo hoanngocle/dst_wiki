@@ -185,3 +185,10 @@ The original user-approved execution method is subagent-driven development. Task
 - [ ] Preserve correct outgoing-season identity after world state already changes; receipt keys must remain idempotent across a deferred refresh, load, or duplicate watcher event.
 - [ ] If XP/reward settlement cannot commit, persist an outgoing settlement record and retry before starting a new pool; never silently discard a ready task or chest.
 - [ ] Add executable native world-watcher rollover tests: five claimed tasks plus chest, one ready unclaimed task, configured/invalid XP, reward/preflight failure, retry/load, and duplicate season event.
+
+### Task 23: Final Runtime Integrity Patch
+
+- [ ] Before removing an idle furnace, drop every container item exactly once; preserve existing busy-job safety behavior.
+- [ ] Route automatic seasonal settlement through the same idempotent achievement credit boundary as manual seasonal claims so completion/claim/repeat rows advance exactly once.
+- [ ] Register valid, existing animation/inventory assets and names for all 26 pill prefabs; do not use dummy `quagmire_food`, nil icons, or undefined names.
+- [ ] Add executable destruction, watcher settlement credit, and prefab/bootstrap presentation tests; run the focused acceptance suite and a scoped final review.
