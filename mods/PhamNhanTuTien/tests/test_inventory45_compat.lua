@@ -81,7 +81,7 @@ removedbackpack.components.equippable.onunequipfn(removedbackpack, owner)
 if events.unequip then events.unequip(owner, {eslot = "back"}) end
 assert(anim.build == "amulets", "backpack removal must restore remaining necklace")
 
-local function checkwidget(path, method)
+local function checkwidget(path, method, strict)
     local seen
     local widget = {recipe = {}, owner = {replica = {inventory = {
         GetEquippedItem = function(self, slot) seen = slot; return slot == "neck" and {prefab = "greenamulet"} or nil end,
@@ -90,11 +90,20 @@ local function checkwidget(path, method)
         local item = self.owner.replica.inventory:GetEquippedItem(EQUIPSLOTS.BODY)
         self.showamulet = item and item.prefab == "greenamulet"
     end
-    if classes[path] then classes[path](widget) end
+    if strict then
+        local original = {EQUIPSLOTS = EQUIPSLOTS}
+        setmetatable(original, {__index = function(_, key)
+            error("variable '" .. key .. "' is not declared", 2)
+        end})
+        setfenv(widget[method], original)
+    end
+    local constructor = assert(classes[path], path .. " post-constructor was not registered")
+    local ok, err = pcall(constructor, widget)
+    assert(ok, path .. " crashed under its original function environment: " .. tostring(err))
     widget[method](widget, widget.recipe)
     assert(widget.showamulet and seen == "neck", path .. " did not find green necklace")
     assert(EQUIPSLOTS.BODY == "body", "UI compatibility changed global equipment slots")
 end
-checkwidget("widgets/redux/craftingmenu_ingredients", "SetRecipe")
+checkwidget("widgets/redux/craftingmenu_ingredients", "SetRecipe", true)
 checkwidget("widgets/recipepopup", "Refresh")
 print("inventory45 compatibility tests passed")

@@ -2,8 +2,12 @@ local Life = require "util/eva_life_common"
 
 local Fox = {}
 
-Fox.COOLDOWN = 12
+Fox.COOLDOWN = 15
 Fox.CAST_RANGE = 20
+Fox.BLINK_DELAY = 0.25
+Fox.LUNGE_DAMAGE = 600
+Fox.LUNGE_SIDE_RANGE = 1
+Fox.LUNGE_PHYSICS_PADDING = 3
 Fox.FADE_TIME = 0.5
 Fox.TELEPORT_TIME = 1.75
 Fox.RESTORE_TIME = 2.0
@@ -123,6 +127,49 @@ function Fox.FindTargetsAt(owner, x, z)
             local tx, _, tz = target.Transform:GetWorldPosition()
             local dx, dz = tx - x, tz - z
             if dx * dx + dz * dz <= Fox.FIRE_RADIUS * Fox.FIRE_RADIUS then
+                targets[#targets + 1] = target
+            end
+        end
+    end
+    return targets
+end
+
+local function PointToSegmentDistanceSq(px, pz, x1, z1, x2, z2)
+    local dx, dz = x2 - x1, z2 - z1
+    local length_sq = dx * dx + dz * dz
+    if length_sq <= 0 then
+        local ox, oz = px - x1, pz - z1
+        return ox * ox + oz * oz
+    end
+    local t = ((px - x1) * dx + (pz - z1) * dz) / length_sq
+    t = math.max(0, math.min(1, t))
+    local nearest_x, nearest_z = x1 + t * dx, z1 + t * dz
+    local ox, oz = px - nearest_x, pz - nearest_z
+    return ox * ox + oz * oz
+end
+
+function Fox.FindTargetsAlongPath(owner, origin_x, origin_z, target_x, target_z)
+    if not Life.CanRemainActive(owner) then return {} end
+    local dx, dz = target_x - origin_x, target_z - origin_z
+    local distance = math.sqrt(dx * dx + dz * dz)
+    local center_x = (origin_x + target_x) * 0.5
+    local center_z = (origin_z + target_z) * 0.5
+    local found = TheSim:FindEntities(
+        center_x, 0, center_z,
+        distance * 0.5 + Fox.LUNGE_PHYSICS_PADDING,
+        TARGET_MUST_TAGS, TARGET_CANT_TAGS)
+    local targets, seen = {}, {}
+    for _, target in ipairs(found) do
+        if not seen[target] and Life.IsValidTarget(owner, target, nil) then
+            seen[target] = true
+            local tx, _, tz = target.Transform:GetWorldPosition()
+            local radius = target.GetPhysicsRadius ~= nil
+                and target:GetPhysicsRadius(0.5) or 0.5
+            radius = Fox.IsFiniteNumber(radius) and math.max(0, radius) or 0.5
+            local hit_range = Fox.LUNGE_SIDE_RANGE + radius
+            if PointToSegmentDistanceSq(
+                    tx, tz, origin_x, origin_z, target_x, target_z)
+                < hit_range * hit_range then
                 targets[#targets + 1] = target
             end
         end

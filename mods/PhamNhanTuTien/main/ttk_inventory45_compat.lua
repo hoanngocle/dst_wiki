@@ -82,7 +82,7 @@ local function neckindicator(self, method)
     local fn = self[method]
     if fn == nil then return end
     local original = G.getfenv(fn)
-    if original._ttk_neck_indicator then return end
+    if G.rawget(original, "_ttk_neck_indicator") then return end
     local slots = {}
     for key, value in pairs(G.EQUIPSLOTS) do slots[key] = value end
     slots.BODY = G.EQUIPSLOTS.NECK

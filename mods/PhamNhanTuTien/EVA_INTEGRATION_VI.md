@@ -12,7 +12,7 @@ EVA là nhân vật độc lập trong màn chọn nhân vật của Phàm Nhân
 ## Các sửa chữa khi kiểm tra
 
 - Cánh/Hồ Ảnh đọc `locomotor.hopping`; không gọi bắt buộc `IsHopping()` vì DST đang cài không có phương thức đó.
-- Bank/build Hồ Ảnh dùng tên `eva_fox`/`eva_fox_fire`, tránh trùng với tài nguyên gốc trong Phàm Nhân. Hình, khung animation và texture không đổi.
+- Hồ Ảnh giữ action/component cũ để tương thích save nhưng nay dịch chuyển sau 0,25 giây, hồi 15 giây và gây một lần 600 sát thương cơ bản dọc đường qua pipeline Phàm Nhân. EVA không hóa cáo/ẩn hình, không sinh hoa/lửa; hiệu ứng dùng `spear_wathgrithr_lightning_lunge_fx` đã precache theo dependency nhân vật.
 - Tuning chi phí cánh thống nhất 100 Hồn Lực.
 - Bỏ cơ chế skin nhân vật cũ cũ và hỗ trợ alias save cũ theo yêu cầu mới.
 - Bộ kiểm tra cập nhật tên Dạ Du, giá cánh và cấp mở kỹ năng để kiểm tra đúng hành vi hiện tại.

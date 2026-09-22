@@ -4,6 +4,7 @@ local EvaSkillPanel = require "util/eva_skillpanel"
 
 local assets = {
     Asset("SCRIPT", "scripts/prefabs/player_common.lua"),
+    Asset("ANIM", "anim/ttk_eva_run_loop.zip"),
 }
 
 local start_inv = {}
@@ -11,6 +12,7 @@ for mode, items in pairs(TUNING.GAMEMODE_STARTING_ITEMS) do
     start_inv[string.lower(mode)] = items.EVA
 end
 local prefabs = FlattenTree(start_inv, true)
+table.insert(prefabs, "spear_wathgrithr_lightning_lunge_fx")
 
 local function onbecamehuman(inst)
     inst.components.locomotor:SetExternalSpeedMultiplier(
@@ -108,6 +110,10 @@ local common_postinit = function(inst)
     if not TheWorld.ismastersim then
         EvaWingsInput.InstallReplica(inst)
     end
+    if TheNet == nil or not TheNet:IsDedicated() then
+        require("util/eva_facing_alias_runtime").AttachPlayer(inst, TheNet)
+    end
+    require("util/eva_run_route").Attach(inst)
 end
 
 local master_postinit = function(inst)
