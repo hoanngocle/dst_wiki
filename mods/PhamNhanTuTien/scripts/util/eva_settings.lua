@@ -11,7 +11,7 @@ end
 
 STRINGS.CHARACTER_TITLES.eva = "Linh Hồn Tử Sắc"
 STRINGS.CHARACTER_NAMES.eva = "EVA"
-STRINGS.CHARACTER_DESCRIPTIONS.eva = "\n󰀍 Sinh Chi Hoa tấn công và bảo hộ.\n󰀉 Hồn Lực nuôi dưỡng sáu kỹ năng.\n󰀀 Lưỡi hái tím bạc, kiếm khí theo đòn đánh."
+STRINGS.CHARACTER_DESCRIPTIONS.eva = "\n󰀍 EVA — Người bảo hộ cuối cùng.\n󰀉 Hồn Lực nuôi dưỡng sáu kỹ năng.\n󰀀 Lưỡi hái tím bạc, kiếm khí theo đòn đánh."
 STRINGS.CHARACTER_QUOTES.eva = "\"Linh hồn vẫn luôn ghi nhớ.\""
 STRINGS.CHARACTER_SURVIVABILITY.eva = "Khó"
 
@@ -47,8 +47,8 @@ if TUNING.EVA_STARTERS then
         "eva_scythe",
     }
     TUNING.STARTING_ITEM_IMAGE_OVERRIDE["eva_scythe"] = {
-        atlas = "images/inventoryimages/eva_scythe.xml",
-        image = "eva_scythe.tex",
+        atlas = "images/inventoryimages/eva_scythe_starting.xml",
+        image = "eva_scythe_starting.tex",
     }
 else
     TUNING.GAMEMODE_STARTING_ITEMS.DEFAULT.EVA = {}

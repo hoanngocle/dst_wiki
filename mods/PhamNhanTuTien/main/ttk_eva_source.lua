@@ -20,6 +20,8 @@ Assets = {
     Asset("ATLAS", "images/inventoryimages/eva_moon_wings.xml"),
     Asset("IMAGE", "images/inventoryimages/eva_life_flower.tex"),
     Asset("ATLAS", "images/inventoryimages/eva_life_flower.xml"),
+    Asset("IMAGE", "images/inventoryimages/eva_scythe_starting.tex"),
+    Asset("ATLAS", "images/inventoryimages/eva_scythe_starting.xml"),
     Asset( "IMAGE", "images/saveslot_portraits/eva.tex" ),
     Asset( "ATLAS", "images/saveslot_portraits/eva.xml" ),
 
@@ -174,6 +176,9 @@ AddComponentPostInit("playeractionpicker", function(picker)
 end)
 
 if GLOBAL.TheNet == nil or not GLOBAL.TheNet:IsDedicated() then
+    local EvaFacingAliasRuntime = require "util/eva_facing_alias_runtime"
+    EvaFacingAliasRuntime.InstallSkinsPuppet(AddClassPostConstruct)
+
     local EvaSkillPanelWidget = require "widgets/eva_skillpanel"
     AddClassPostConstruct("widgets/controls", function(controls)
         local owner = controls.owner

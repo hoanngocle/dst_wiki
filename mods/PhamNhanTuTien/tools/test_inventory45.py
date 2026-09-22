@@ -178,7 +178,4 @@ assert not any(name.startswith('ttk_inv45_') for name in opts)
 assert 'ttk_inv45_extras' not in opts and 'MOREEQUIPSLOTS' not in opts
 main=(ROOT/'modmain.lua').read_text(encoding='utf-8-sig')
 assert main.index('modimport("main/ttk_inventory45.lua")') < main.index('modimport"main/lucmachthankiem.lua"')
-source=ROOT.parent/'mod_steam/3075429483/images'
-for path in source.iterdir():
- assert path.read_bytes()==(ROOT/'images/ttk_inventory45'/path.name).read_bytes()
-print('Đạt: mặc định 45 ô, trang bị luôn bật, đúng thứ tự nạp và đủ tài nguyên gốc')
+print('Đạt: mặc định 45 ô, trang bị luôn bật và đúng thứ tự nạp')

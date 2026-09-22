@@ -20,10 +20,11 @@ local EvaSkillPanel = Class(Widget, function(self, owner)
     self.collapse:ForceImageSize(ICON_SIZE, ICON_SIZE)
     self.collapse:SetOnClick(function() self:SetExpanded(not self.expanded) end)
 
-    self.tooltip = self.content:AddChild(Text(BODYTEXTFONT, 24, ""))
-    self.tooltip:SetPosition(-168, 52)
-    self.tooltip:SetColour(0.9, 0.82, 1, 1)
-    self.tooltip:Hide()
+    self.skill_tooltip_text = self.content:AddChild(Text(BODYTEXTFONT, 24, ""))
+    self.skill_tooltip_text:SetPosition(-168, 52)
+    self.skill_tooltip_text:SetColour(0.9, 0.82, 1, 1)
+    self.skill_tooltip_text:SetClickable(false)
+    self.skill_tooltip_text:Hide()
 
     for index, skill in ipairs(ORDER) do
         local definition = Router.SKILLS[skill]
@@ -39,17 +40,17 @@ local EvaSkillPanel = Class(Widget, function(self, owner)
         button.state:SetColour(0.65, 1, 0.78, 1)
         button:SetOnClick(function() self:ActivateSkill(Router.SPELL_INDEX[skill], skill) end)
         button.ongainfocus = function()
-            self.tooltip:SetString(Router.GetSkillTooltip(self.owner, skill))
-            self.tooltip:Show()
+            self.skill_tooltip_text:SetString(Router.GetSkillTooltip(self.owner, skill))
+            self.skill_tooltip_text:Show()
         end
-        button.onlosefocus = function() self.tooltip:Hide() end
+        button.onlosefocus = function() self.skill_tooltip_text:Hide() end
         self.icons[skill] = button
     end
     self.collapse.ongainfocus = function()
-        self.tooltip:SetString(self.expanded and "Thu gọn bảng kỹ năng" or "Mở bảng kỹ năng EVA")
-        self.tooltip:Show()
+        self.skill_tooltip_text:SetString(self.expanded and "Thu gọn bảng kỹ năng" or "Mở bảng kỹ năng EVA")
+        self.skill_tooltip_text:Show()
     end
-    self.collapse.onlosefocus = function() self.tooltip:Hide() end
+    self.collapse.onlosefocus = function() self.skill_tooltip_text:Hide() end
     self:SetExpanded(false)
     self:StartUpdating()
 end)
@@ -59,7 +60,7 @@ function EvaSkillPanel:SetExpanded(expanded)
     for _, button in pairs(self.icons) do
         if self.expanded then button:Show() else button:Hide() end
     end
-    self.tooltip:Hide()
+    self.skill_tooltip_text:Hide()
 end
 
 function EvaSkillPanel:ActivateSkill(index, skill)

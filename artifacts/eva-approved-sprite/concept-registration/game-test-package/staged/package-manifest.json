@@ -1,0 +1,59 @@
+{
+  "status": "STAGED_NOT_INSTALLED",
+  "candidate_source": "C:\\Users\\NYX\\company\\dst_wiki\\artifacts\\eva-approved-sprite\\concept-registration\\joint-retarget-trial\\front-body-authoritative-sources-candidate.zip",
+  "candidate_sha256": "9cae351ef02f17af4112d074fdddcd512b8dfa503f60ca8276545f949c3a14d8",
+  "animation": {
+    "archive": "C:\\Users\\NYX\\company\\dst_wiki\\artifacts\\eva-approved-sprite\\concept-registration\\game-test-package\\staged\\anim\\ttk_eva_run_loop.zip",
+    "archive_sha256": "33da77c46429c2b6a8c9a0b6b3da1206db45a7ca86f5554d4c0f5153d91d6ed8",
+    "anim_sha256": "1e3e9561a56d4697c71a32342b956b1123350c3f7b385e6bd5a7c0a624897b56",
+    "source_player_basic_sha256": "15f87d4cc80c78eb49cd41ca343fb516c2327bcc906f3a654b23b34599b625d4",
+    "source_retarget_sha256": "de9f21aaf3f89c777538dc67762fa4e85f0078b55e4a15b6d27b73870c4b5a4d",
+    "clip_name": "ttk_eva_run_loop",
+    "bank": "wilson",
+    "facing_keys": [
+      2,
+      5,
+      8
+    ],
+    "front_facing": 8,
+    "front_saved_float32_exact": true,
+    "other_facings_native_exact": true,
+    "timing_events_exact": true
+  },
+  "files": {
+    "anim/eva.zip": {
+      "sha256": "9cae351ef02f17af4112d074fdddcd512b8dfa503f60ca8276545f949c3a14d8",
+      "size": 2236766
+    },
+    "anim/ttk_eva_run_loop.zip": {
+      "sha256": "33da77c46429c2b6a8c9a0b6b3da1206db45a7ca86f5554d4c0f5153d91d6ed8",
+      "size": 36967
+    },
+    "main/ttk_eva_source.lua": {
+      "sha256": "438ef3b6c352ed73a1e8b60b77837337f24ceb54cd7ccff263d2443260284695",
+      "size": 7489
+    },
+    "scripts/prefabs/eva.lua": {
+      "sha256": "6f14b7d1d826d73832e1b104ec813e9033fc4cd49af07630b1dd709d87ff2abc",
+      "size": 5596
+    },
+    "scripts/util/eva_facing_alias.lua": {
+      "sha256": "a201666b31bd03c855dff3ec60babfb6cbb8881893cfb3272ec36fecfbbf6428",
+      "size": 3777
+    },
+    "scripts/util/eva_facing_alias_runtime.lua": {
+      "sha256": "c2b9ac4a45dd34f4337e76d3b8285c1dcb24d4a8051e839b0c29fda881f529e2",
+      "size": 2308
+    },
+    "scripts/util/eva_run_route.lua": {
+      "sha256": "314ecf323ba998564e7fd64250a97d3102aa80e7bbcbb074f72fb5cff522cbe3",
+      "size": 6006
+    }
+  },
+  "limitations": [
+    "Per-instance AnimState assignment requires live-engine verification.",
+    "If routing is unavailable, native motion may mismatch the shortened EVA limbs.",
+    "Only front run_loop is retargeted; profile/rear run and other actions stay native.",
+    "Mocks do not establish multiplayer prediction or facing continuity."
+  ]
+}
