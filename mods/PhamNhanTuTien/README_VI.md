@@ -10,7 +10,7 @@ Thanh máu boss theo phase, thanh máu trên đầu và số sát thương serve
 
 ## Hệ chiến đấu — Mục 2 (2026-09-21)
 
-Đã triển khai cho world mới; không chuyển đổi save cũ. **Achievement chưa được merge**: phần hợp nhất Level/EXP là việc riêng, thành tựu thưởng **Star**, không thưởng EXP. Không dùng các con số chiến đấu dưới đây để suy ra tiến trình EXP đã đổi.
+Đã triển khai cho world mới; không chuyển đổi save cũ. Achievement đã tích hợp trong Phàm Nhân: thành tựu thưởng **Star**, nhiệm vụ mùa claim EXP vào `hh_leveling`. Phạm vi perk còn thiếu và điều kiện cấu hình EXP nhiệm vụ mùa được ghi tại [ACHIEVEMENT_PERK_RUNTIME.md](ACHIEVEMENT_PERK_RUNTIME.md). Không dùng các con số chiến đấu dưới đây để suy ra tiến trình EXP đã đổi.
 
 - Sát thương nền `B = sát thương gốc + cộng phẳng còn hợp lệ`. Đòn chính: `B × (1 + (Công Kích + Nghịch Cảnh)/100) × Bạo Kích × Bạo Phát`. Sát thương lan dùng Công Kích và hai hệ số crit/proc, không nhận Nghịch Cảnh. Độc và Xuyên Giáp chỉ dùng `B`, không nhận các bonus này.
 - Bạo Kích mặc định ×2; hiệu quả crit cộng vào hệ số này, ví dụ +150% → ×3,5. Tỷ lệ dùng miền 1–100 và chặn 0–100%; né xảy ra trước, không tiêu lượt quay crit/proc.
@@ -106,7 +106,7 @@ Ba cấp mỏ tự nhiên đào hết sẽ mất, mỗi mùa sinh thêm mỏ m�
 - Kiểm thử callback Lua và rà cú pháp/tài nguyên được chạy cho phần này. Máy chủ thử hiện bị chặn bởi atlas DST `images/cookbook_unagi_spice_salt.xml` bị thiếu, nên chưa xác nhận hình ảnh và thao tác trực tiếp trong game cho ô mới.
 
 Đợt kiểm tra trước khi thêm ô đã rà đăng ký và chạy máy chủ DST thật với 80 thực thể, 14 skin và 24 công thức.
-Các lỗi đã sửa, bằng chứng và giới hạn thử nghiệm: [AUDIT_RUNTIME_VI.md](AUDIT_RUNTIME_VI.md).
+Đây là kết quả lịch sử của bản 0.8.4, không phải chứng nhận cho toàn bộ runtime hiện tại. Các sửa lỗi tương ứng được giữ trong [CHANGELOG.md](CHANGELOG.md).
 
 ## Chỉ báo boss lớn (0.9.0)
 
@@ -177,7 +177,7 @@ Không giảm số ô hoặc gỡ tính năng khi các ô cuối còn đồ; chu
 
 Mod độc lập cho Don't Starve Together, gồm bàn, linh thạch, vũ khí/pháp bảo, Truyền Tống Trận và nhóm công trình/cây cảnh bên dưới. Mod dùng tài nguyên hình ảnh đã ghi trong `CREDITS.md`, không cần bật toàn bộ mod Tu Tiên hoặc mod kiếm riêng.
 
-Bảng đối chiếu sản vật/thực thể và kết quả rà soát toàn bộ phần đã gộp: [AUDIT_VI.md](AUDIT_VI.md). Bản 0.6.2 sửa tải save khi đang đạp nước, thả thú khi phá chuồng ban đêm và chọn điểm đến an toàn cho cổng sát bờ. Rà soát tĩnh chưa thay thế thử trong game/multiplayer.
+Bản 0.6.2 từng sửa tải save khi đang đạp nước, thả thú khi phá chuồng ban đêm và chọn điểm đến an toàn cho cổng sát bờ; lịch sử nằm trong [CHANGELOG.md](CHANGELOG.md). Rà soát tĩnh chưa thay thế thử trong game/multiplayer.
 
 
 ## Chuồng nuôi, kho và đèn (0.6.0)
@@ -278,12 +278,12 @@ Kiểm tra bản 0.3.0: compile cú pháp Lua bằng runtime có sẵn, rà modu
 
 ## Cài đặt
 
-1. Sử dụng thư mục mod `TuTienKy` có `modinfo.lua` và `modmain.lua` nằm trực tiếp bên trong.
-2. Chép cả thư mục `TuTienKy` vào thư mục `mods` của Don't Starve Together trên máy host và mọi máy client.
+1. Sử dụng thư mục mod `PhamNhanTuTien` có `modinfo.lua` và `modmain.lua` nằm trực tiếp bên trong.
+2. Chép cả thư mục `PhamNhanTuTien` vào thư mục `mods` của Don't Starve Together trên máy host và mọi máy client.
 3. Bật `Phàm Nhân Tu Tiên` và tắt `Solo Leveling` riêng cho cụm máy chủ. Nếu cụm có hang động, dùng cùng bản mod và cấu hình cho cả shard Master và Caves.
 4. Khởi động lại server sau khi mọi máy đã có cùng phiên bản.
 
-Bản gộp được phát hành trong thư mục `TuTienKy` và gói `TuTienKy_v0.10.0.zip`. Mod không tự cài hoặc tự bật trong game.
+Bản hiện tại dùng thư mục `PhamNhanTuTien`. Các gói `TuTienKy_v0.10.0.zip` là bản lịch sử. Mod không tự cài hoặc tự bật trong game.
 
 ## Nội dung
 

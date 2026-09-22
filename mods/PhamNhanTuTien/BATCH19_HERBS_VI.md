@@ -7,7 +7,7 @@ Batch này chuyển độc lập hai công trình từ nguồn `3235319974`:
 - `xd_ylxc` → `ttk_ylxc` — **Ngọc Lộ Huyền Thương**.
 - `xd_ylxq` → `ttk_ylxq` — **Ngọc Lộ Tiên Khu**.
 
-Theo quyết định mới nhất, `xd_xcdf` (Tinh Thối Đan Phủ), Đan Lô và toàn bộ hệ đan dược bị loại khỏi batch. Không có prefab, action, recipe hay dependency đan dược nào được nhập.
+Đợt chuyển hai công trình này không gồm `xd_xcdf` (Tinh Thối Đan Phủ). Đan Lô và đan dược đã được tích hợp sau đó qua `main/ttk_alchemy.lua`; ghi chú loại trừ của batch cũ không áp dụng cho toàn bộ mod hiện tại.
 
 ## Ngọc Lộ Huyền Thương
 

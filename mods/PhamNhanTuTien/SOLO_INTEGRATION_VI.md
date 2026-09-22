@@ -5,7 +5,7 @@ Gói này chứa đầy đủ bản Solo Leveling 2.2.7 đang có trong dự án
 ## Cài đặt
 
 1. Dừng server và sao lưu toàn bộ cụm save trước khi đổi bản mod.
-2. Dùng thư mục `mods/PhamNhanTuTien` của bản Phàm Nhân 2.0 và chép thư mục `TuTienKy` vào `mods` của game/server. Gói `TuTienKy_v0.10.0.zip` thuộc bản phát hành cũ, không phải gói 2.0. Máy khách và hai shard Master/Caves cần cùng phiên bản.
+2. Chép thư mục `PhamNhanTuTien` vào `mods` của game/server. Gói `TuTienKy_v0.10.0.zip` thuộc bản phát hành cũ, không phải gói 2.0. Máy khách và hai shard Master/Caves cần cùng phiên bản.
 3. Chỉ bật **Phàm Nhân Tu Tiên**; tắt Solo Leveling riêng (`workshop-3780347550`, `3780347550`, `SoloLeveling` hoặc bản đổi tên). Nếu bật trùng, bản gộp báo lỗi và hướng dẫn tắt Solo riêng trước khi nạp hệ thống.
 4. Đặt cấu hình Solo trong bảng cấu hình Phàm Nhân Tu Tiên, dưới các nhãn `Solo:`. Những thiết lập riêng đã lưu dưới mod Solo cũ không tự chuyển; cần chép các giá trị mong muốn sang Phàm Nhân Tu Tiên. Giá trị mặc định Solo được giữ nguyên, kể cả các lựa chọn `false`.
 5. Khởi động lại cụm sau khi cập nhật đủ các máy. Gói không tự sửa modoverrides hoặc save đang sử dụng.
@@ -20,7 +20,7 @@ Smoke test trên server DST offline đã xác nhận bootstrap tích hợp, comp
 - Thế giới mới tạo khi bật bản gộp có địa hình đấu trường Solo trong Forest. Cơ chế worldgen gốc được giữ nguyên.
 - Save trước đó đã bật Solo và đã có đấu trường có thể tiếp tục dùng địa hình đó; bản gộp không tái tạo bản đồ.
 - Save chưa từng có đấu trường/`dungeon_exit` sẽ không tự xuất hiện hầm ngục khi nâng cấp. Đây là giới hạn của Solo gốc: các tính năng còn lại vẫn được nạp, nhưng muốn đủ hầm ngục cần thế giới mới hoặc một save đã có đấu trường. Không tự sửa địa hình save cũ.
-- Không đổi tên thư mục TuTienKy đang dùng. Nếu game báo thay đổi danh sách mod khi mở save, kiểm tra trên bản sao rằng TuTienKy đã bật và Solo riêng đã tắt.
+- Bản hiện tại dùng tên thư mục `PhamNhanTuTien`. Nếu game báo thay đổi danh sách mod khi mở save, kiểm tra trên bản sao rằng Phàm Nhân đã bật và Solo riêng đã tắt; không đổi prefab/component/RPC để xử lý thông báo này.
 
 ## Kiểm chứng
 
@@ -36,4 +36,4 @@ Kiểm thử server offline và serialization không thay thế kiểm tra giao 
 
 ## Nguồn
 
-Solo Leveling 2.2.7 — Saikuno. Danh sách nguồn và checksum: `SOLO_SOURCE_MANIFEST.json`; metadata/manifest gốc: `provenance/solo`. Mã Solo gốc được giữ nguyên; mã kết nối mới chỉ hợp nhất vòng đời mod và cấu hình.
+Solo Leveling 2.2.7 — Saikuno. Danh sách nguồn và checksum lịch sử: `SOLO_SOURCE_MANIFEST.json`; metadata/manifest gốc: `provenance/solo`. Runtime tích hợp đã có các thay đổi riêng của Phàm Nhân; checksum nguồn không đại diện cho checksum runtime hiện tại.

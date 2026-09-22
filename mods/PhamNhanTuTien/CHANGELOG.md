@@ -66,7 +66,7 @@
 - Sửa lỗi nạp `modinfo.lua` do dùng `ipairs` ngoài môi trường cho phép của game.
 - Sửa vị trí khởi tạo mạng của bốn bếp và hệ số ánh sáng ở một mức nhiên liệu Thần Hỏa.
 - Sửa xung đột hiển thị áo giáp/ba lô/dây chuyền và chỉ báo giảm nguyên liệu của bùa xanh; bỏ hook hồi sinh lỗi thời.
-- Rà toàn bộ đăng ký/tài nguyên, chạy máy chủ ngoại tuyến thật và kiểm tra tạo thực thể/skin/công thức. Xem `AUDIT_RUNTIME_VI.md`.
+- Rà toàn bộ đăng ký/tài nguyên, chạy máy chủ ngoại tuyến thật và kiểm tra tạo thực thể/skin/công thức của bản 0.8.4.
 
 ## 0.8.3 — 2026-09-19
 
@@ -123,7 +123,7 @@
 
 ## 0.6.2 — 2026-09-19
 
-- Rà soát toàn bộ nội dung đã gộp vào Tu Tiên Ký, lập `AUDIT_VI.md` với bảng sản vật, thực thể, phụ thuộc và phần loại trừ có chủ ý. Không rà/sửa nhân vật cũ Mori theo yêu cầu.
+- Rà soát nội dung đã gộp vào Tu Tiên Ký 0.6.2, đối chiếu sản vật, thực thể, phụ thuộc và phần loại trừ có chủ ý. Không rà/sửa nhân vật cũ Mori theo yêu cầu.
 - Sửa tải save khi hiệu lực Sa Đường còn và người chơi đứng trên nước: chặn riêng bước sửa vị trí của `player_common`, khôi phục cờ drownable ngay sau bước tải.
 - Sửa đập ba chuồng ban đêm: bỏ điều kiện ngày khi thả đàn. Nếu không có chỗ ra, giữ chuồng với số thú còn bên trong để tránh mất thú; không phát loot tháo dỡ trước khi thả xong.
 - Khai báo trực tiếp lông/sừng/sữa/vòi trong dependencies của chuồng.

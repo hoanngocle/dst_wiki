@@ -1,6 +1,6 @@
 # Phàm Nhân Tu Tiên — tích hợp nhân vật EVA
 
-EVA là nhân vật độc lập trong màn chọn nhân vật của Phàm Nhân 2.0.3, có một ngoại hình mặc định; không có hệ skin riêng. Dùng cho world mới theo yêu cầu người dùng. Đã bỏ hook giao diện skin, RPC đổi skin và alias shadow kế thừa. Tên prefab kỹ thuật vẫn là `eva`; `eva_none` chỉ mô tả ngoại hình mặc định của engine, không phải skin thứ hai.
+EVA là nhân vật trong màn chọn nhân vật của Phàm Nhân, prefab `eva`. Ngoại hình mặc định EVA3 dùng `eva_none`; trang phục tím EVA2 dùng `eva_purple`, đăng ký qua `scripts/util/eva_skins.lua`. Bộ alias chuyển động/đầu thử nghiệm cũ đã được gỡ. Dùng cho world mới theo yêu cầu người dùng.
 
 ## Sử dụng
 
@@ -14,12 +14,12 @@ EVA là nhân vật độc lập trong màn chọn nhân vật của Phàm Nhân
 - Cánh/Hồ Ảnh đọc `locomotor.hopping`; không gọi bắt buộc `IsHopping()` vì DST đang cài không có phương thức đó.
 - Hồ Ảnh giữ action/component cũ để tương thích save nhưng nay dịch chuyển sau 0,25 giây, hồi 15 giây và gây một lần 600 sát thương cơ bản dọc đường qua pipeline Phàm Nhân. EVA không hóa cáo/ẩn hình, không sinh hoa/lửa; hiệu ứng dùng `spear_wathgrithr_lightning_lunge_fx` đã precache theo dependency nhân vật.
 - Tuning chi phí cánh thống nhất 100 Hồn Lực.
-- Bỏ cơ chế skin nhân vật cũ cũ và hỗ trợ alias save cũ theo yêu cầu mới.
+- Bỏ cơ chế alias nhân vật cũ; các skin hiện hành là `eva_none` và `eva_purple`.
 - Bộ kiểm tra cập nhật tên Dạ Du, giá cánh và cấp mở kỹ năng để kiểm tra đúng hành vi hiện tại.
 
 ## Kiểm chứng và giới hạn
 
-22/22 bộ kiểm tra Python/Lua đạt, gồm sát thương, Hồn Lực/cấp, sáu kỹ năng chủ động, kiếm khí, targeting, host/client giả lập, cleanup và đối chiếu một số API engine cài trên máy. 90 file runtime EVA trong Phàm Nhân khớp bản độc lập đã kiểm tra.
+Đợt tích hợp ban đầu có 22/22 bộ kiểm tra Python/Lua đạt. Đây là kết quả lịch sử; runtime hiện tại đã đổi cấp chung, ngoại hình và phím tắt, không còn là bản sao byte-identical của EVA độc lập. Hướng dẫn kiểm tra hiện tại: [docs/eva/EVA_TINH_NANG_VA_LENH_TEST.md](docs/eva/EVA_TINH_NANG_VA_LENH_TEST.md).
 
 Chạy DST dedicated offline trong `.superpowers/eva-vietnamese/fresh-server`, dùng world kiểm thử riêng, không đụng save thật/Steam mods. Script `tools/eva_integration_smoke.lua` kiểm tra sinh EVA cùng component Phàm Nhân, trang bị lưỡi hái, 5 chiêu trên bảng, Hồ Ảnh, hai đòn đánh sinh kiếm khí, sát thương, Hồn Lực và kết thúc hiệu ứng. Chạy bằng `tools/run_eva_integration_smoke.py` ở gốc workspace.
 

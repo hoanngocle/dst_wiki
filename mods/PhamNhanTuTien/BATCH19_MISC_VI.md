@@ -1,6 +1,6 @@
 # Nhóm công trình và vườn trong đợt 18 món
 
-Tinh Thối Đan Phủ (`xd_xcdf`) đã bị loại theo yêu cầu. Không nhập Đan Lô hay hệ đan dược chỉ để phục vụ món đó.
+Tinh Thối Đan Phủ (`xd_xcdf`) đã bị loại theo yêu cầu. Đan Lô và hệ đan dược hiện được tích hợp độc lập qua `main/ttk_alchemy.lua`, không phụ thuộc công trình đã loại này.
 
 ## Các món và sản vật
 
