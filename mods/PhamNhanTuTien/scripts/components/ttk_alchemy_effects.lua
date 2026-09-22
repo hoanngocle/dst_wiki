@@ -112,17 +112,17 @@ function TtkAlchemyEffects:Apply(prefab, saved_duration)
         local function heal()
             if Alive(self.inst) and components.health ~= nil then components.health:DoDelta(effect.amount) end
         end
-        if Alive(self.inst) and components.health ~= nil then components.health:DoDelta(effect.immediate) end
-        self.active[prefab] = kind
+        if saved_duration == nil and Alive(self.inst) and components.health ~= nil then
+            components.health:DoDelta(effect.immediate)
+        end
         self.tasks[prefab] = self.inst:DoPeriodicTask(effect.interval, heal)
-        self.expiry_tasks[prefab] = self.inst:DoTaskInTime(duration, function() self:Expire(prefab) end)
+        self:SetTimed(prefab, kind, duration)
         return true
     elseif kind == "sanity_regen" then
-        self.active[prefab] = kind
         self.tasks[prefab] = self.inst:DoPeriodicTask(1, function()
             if Alive(self.inst) and components.sanity ~= nil then components.sanity:DoDelta(effect.amount) end
         end)
-        self.expiry_tasks[prefab] = self.inst:DoTaskInTime(duration, function() self:Expire(prefab) end)
+        self:SetTimed(prefab, kind, duration)
         return true
     elseif kind == "lightning_damage" or kind == "lifesteal" then
         self.listeners[prefab] = function(_, data)

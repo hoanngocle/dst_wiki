@@ -1,5 +1,28 @@
 local G = GLOBAL
 local containers = G.require("containers")
+local Defs = G.require("alchemy/ttk_alchemy_defs")
+
+local cultivation_pills = {}
+for stage = 1, 15 do
+    local row = Defs.GetCultivationStage(stage)
+    cultivation_pills[row.prefab] = true
+end
+
+-- Both native CanEat (action eligibility) and PrefersToEat (Eat's final
+-- pre-consumption check) call TestFood. A rejected pill must never reach
+-- Edible:OnEaten or HandleEatRemove, which cannot veto consumption.
+AddComponentPostInit("eater", function(self)
+    if not TheWorld.ismastersim or self._ttk_cultivation_food_hook then return end
+    self._ttk_cultivation_food_hook = true
+    local test = self.TestFood
+    self.TestFood = function(eater, food, ...)
+        if food ~= nil and cultivation_pills[food.prefab] then
+            local cultivation = eater.inst.components.ttk_cultivation
+            if cultivation == nil or not cultivation:CanConsume(food.prefab) then return false end
+        end
+        return test(eater, food, ...)
+    end
+end)
 
 table.insert(Assets, Asset("ANIM", "anim/ui_xd_liandanlu_1x4.zip"))
 

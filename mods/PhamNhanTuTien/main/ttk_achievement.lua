@@ -500,7 +500,7 @@ local function InstallPlayer(inst)
     inst:ListenForEvent("buildstructure", function(player, data) OnBuild(player, data, "buildstructure") end)
     inst:ListenForEvent("finishedwork", function(player, data)
         if data == nil or data.target == nil or data.action == nil or Seen(state, "work", data) then return end
-        local evidence = { prefab=data.target.prefab, action=data.action.id }
+        local evidence = { prefab=data.target.prefab, action=data.action.id, stump=data.target:HasTag("stump") }
         Route(player, "work_action", evidence, 1)
         Seasonal(player, "finishedwork", evidence, 1)
     end)
@@ -635,8 +635,8 @@ end)
 -- Native stewer calls ondonecooking before setting done=true. Defer receipt;
 -- settle before save/harvest too so those cannot erase a committed product.
 AddComponentPostInit("stewer", function(self)
-    if not Master() or self.inst.prefab ~= "cookpot" or self._ttk_achievement_hook then return end
-    self._ttk_achievement_hook = true
+    if not Master() or self.inst.prefab ~= "cookpot" or self._ttk_achievement_cooking_hook then return end
+    self._ttk_achievement_cooking_hook = true
     local pending, awarded, callback
     local function Settle()
         if not Master() or pending == nil or awarded or not self.done then return end

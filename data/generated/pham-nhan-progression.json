@@ -1301,7 +1301,7 @@
       "name": "Dọn Gốc Cây",
       "params": {
         "action": "DIG",
-        "prefab": "stump"
+        "stump": true
       },
       "reward": 3,
       "status": "active",
@@ -1965,16 +1965,16 @@
       "visibility": "visible"
     },
     {
-      "description": "Hoàn thành mục tiêu mactusk.",
+      "description": "Đánh bại MacTusk hai lần.",
       "group": "combat",
       "id": "combat_mactusk",
-      "name": "mactusk",
+      "name": "Hai Lần Hạ MacTusk",
       "params": {
-        "prefab": "mactusk"
+        "prefab": "walrus"
       },
       "reward": 5,
       "status": "active",
-      "target": 1,
+      "target": 2,
       "tracker": "combat_event",
       "visibility": "visible"
     },
@@ -2026,7 +2026,7 @@
       "id": "combat_depths_worm",
       "name": "depths worm",
       "params": {
-        "prefab": "depths_worm"
+        "prefab": "worm"
       },
       "reward": 5,
       "status": "active",
@@ -2068,7 +2068,10 @@
       "id": "combat_shadow_creature",
       "name": "shadow creature",
       "params": {
-        "prefab": "shadow_creature"
+        "prefabs": [
+          "crawlinghorror",
+          "terrorbeak"
+        ]
       },
       "reward": 5,
       "status": "active",
@@ -2082,7 +2085,14 @@
       "id": "combat_clockwork",
       "name": "clockwork",
       "params": {
-        "prefab": "clockwork"
+        "prefabs": [
+          "knight",
+          "bishop",
+          "rook",
+          "knight_nightmare",
+          "bishop_nightmare",
+          "rook_nightmare"
+        ]
       },
       "reward": 5,
       "status": "active",
@@ -2096,7 +2106,10 @@
       "id": "combat_treeguard",
       "name": "treeguard",
       "params": {
-        "prefab": "treeguard"
+        "prefabs": [
+          "leif",
+          "leif_sparse"
+        ]
       },
       "reward": 5,
       "status": "active",
@@ -2245,16 +2258,16 @@
       "visibility": "visible"
     },
     {
-      "description": "Hoàn thành mục tiêu fuelweaver.",
+      "description": "Đánh bại Ancient Fuelweaver hai lần.",
       "group": "boss",
       "id": "boss_fuelweaver",
-      "name": "fuelweaver",
+      "name": "Hai Lần Hạ Fuelweaver",
       "params": {
-        "prefab": "fuelweaver"
+        "prefab": "stalker_atrium"
       },
       "reward": 5,
       "status": "active",
-      "target": 1,
+      "target": 2,
       "tracker": "kill_prefab",
       "visibility": "visible"
     },
@@ -2306,7 +2319,7 @@
       "id": "boss_malbat",
       "name": "malbat",
       "params": {
-        "prefab": "malbat"
+        "prefab": "malbatross"
       },
       "reward": 5,
       "status": "active",
@@ -2348,7 +2361,7 @@
       "id": "boss_guardian",
       "name": "guardian",
       "params": {
-        "prefab": "guardian"
+        "prefab": "alterguardian_phase3"
       },
       "reward": 5,
       "status": "active",
@@ -2474,7 +2487,7 @@
       "id": "boss_ttk_boss_deerclops_ziyun",
       "name": "ttk boss deerclops ziyun",
       "params": {
-        "prefab": "ttk_boss_deerclops_ziyun"
+        "prefab": "ttk_deerclops_ziyun"
       },
       "reward": 5,
       "status": "active",
@@ -2525,26 +2538,26 @@
       "visibility": "visible"
     },
     {
-      "description": "Hoàn thành mục tiêu ttk boss ziyunshadow.",
+      "description": "Đánh bại Hồn Phách Tinh Thể Hươu Một Mắt hai lần.",
       "group": "boss",
       "id": "boss_ttk_boss_ziyunshadow",
-      "name": "ttk boss ziyunshadow",
+      "name": "Hai Lần Hạ Hồn Phách Hươu",
       "params": {
-        "prefab": "ttk_boss_ziyunshadow"
+        "prefab": "ttk_deerclops_ziyun"
       },
       "reward": 5,
       "status": "active",
-      "target": 1,
+      "target": 2,
       "tracker": "kill_prefab",
       "visibility": "visible"
     },
     {
-      "description": "Hoàn thành mục tiêu ttk boss gongdeshadow.",
+      "description": "Đánh bại Thanh Tụ Đan Tiên.",
       "group": "boss",
       "id": "boss_ttk_boss_gongdeshadow",
-      "name": "ttk boss gongdeshadow",
+      "name": "Thanh Tụ Đan Tiên",
       "params": {
-        "prefab": "ttk_boss_gongdeshadow"
+        "prefab": "ttk_qxdx"
       },
       "reward": 5,
       "status": "active",

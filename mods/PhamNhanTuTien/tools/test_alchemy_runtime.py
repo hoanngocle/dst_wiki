@@ -228,12 +228,6 @@ class AlchemyRuntimeTest(unittest.TestCase):
             for item in expected:
                 self.assertIn(item, row.group("row"), prefab)
 
-    def test_cultivation_consumes_only_after_component_accepts(self):
-        """Destroying a rejected cultivation item must fail this contract."""
-        source = self.read(PREFAB)
-        self.assertIn('ttk_cultivation:Consume(inst.prefab)', source)
-        self.assertRegex(source, r'if ok then\s+inst:Remove\(\)')
-
     def test_buff_dispatch_is_server_only_and_uses_owned_effect_component(self):
         """Client-side effects or bypassing the owned component must fail."""
         source = self.read(PREFAB)

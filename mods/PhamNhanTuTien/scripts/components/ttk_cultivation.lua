@@ -49,6 +49,9 @@ end
 
 function TtkCultivation:CanConsume(prefab)
     if type(prefab) ~= "string" then return false, "invalid_prefab" end
+    if not IsFiniteInteger(self.stage) or self.stage < 0 or self.stage > MAX_STAGE then
+        return false, "invalid_stage"
+    end
     if self.consumed[prefab] then return false, "already_consumed" end
 
     local nextrow = Defs.GetCultivationStage(self.stage + 1)

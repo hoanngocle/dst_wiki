@@ -12,10 +12,8 @@ local function OnEaten(inst, eater)
     if cultivation ~= nil and Defs.GetCultivationStage(cultivation:GetStage() + 1) ~= nil then
         local row = Defs.Get(inst.prefab)
         if row ~= nil and row == Defs.GetCultivationStage(cultivation:GetStage() + 1) then
-            local ok = eater.components.ttk_cultivation:Consume(inst.prefab)
-            if ok then
-                inst:Remove()
-            end
+            eater.components.ttk_cultivation:Consume(inst.prefab)
+            -- Native Eater owns removal after the committed OnEaten callback.
             return
         end
     end

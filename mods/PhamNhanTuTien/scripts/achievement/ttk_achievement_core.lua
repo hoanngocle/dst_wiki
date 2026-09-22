@@ -53,6 +53,12 @@ local function IsAllowedPrefab(definition, evidence)
     return false
 end
 
+-- These former one-kill aliases now have explicit repeat conditions. Preserve
+-- their already-claimed saves without granting the new target to unclaimed rows.
+local LEGACY_SINGLE_KILL_CLAIMS = {
+    combat_mactusk=true, boss_fuelweaver=true, boss_ttk_boss_ziyunshadow=true,
+}
+
 local function CanonicalAchievement(definition, saved)
     local progress = type(saved) == "table" and saved.progress or 0
     if not IsFinite(progress) or progress < 0 then progress = 0 end
@@ -64,9 +70,16 @@ local function CanonicalAchievement(definition, saved)
         state.progress = progress
     end
     local status = type(saved) == "table" and saved.status or nil
+    if status == "claimed" and LEGACY_SINGLE_KILL_CLAIMS[definition.id] and progress >= 1 then
+        progress = definition.target
+        state.progress = progress
+    end
     if progress >= definition.target then
         state.status = status == "claimed" and "claimed" or "completed_unclaimed"
-        if state.status == "claimed" then state.claimed_reward = definition.reward end
+        if state.status == "claimed" then
+            local reward = saved.claimed_reward
+            state.claimed_reward = IsFiniteInteger(reward) and reward >= 0 and reward or definition.reward
+        end
     end
     return state
 end
@@ -468,7 +481,7 @@ function Core:Load(data)
     for _, definition in ipairs(AchievementCatalog.All()) do
         local achievement = CanonicalAchievement(definition, saved_achievements[definition.id])
         if achievement.progress > 0 or achievement.status ~= "locked" then self.achievements[definition.id] = achievement end
-        if achievement.status == "claimed" then self.earned = self.earned + definition.reward end
+        if achievement.status == "claimed" then self.earned = self.earned + achievement.claimed_reward end
     end
     self:CanonicalizePerks(state.perks)
     local saved_replays = type(state.replays) == "table" and state.replays or {}
