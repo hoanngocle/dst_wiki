@@ -169,7 +169,7 @@ class SeasonalTests(unittest.TestCase):
     def test_repeat_seed_activities_preserved(self):
         required = {
             "spring": ["wetgoop", "starving", "bee", "killerbee", "frog", "crawlinghorror", "butterfly", "NET", "flower", "TILL"],
-            "summer": ["jammypreserves", "pierogi", "mosquito", "rock_avocado_fruit", "HAMMER", "cave_banana_tree", "monkeytail", "cactus", "oasis_cactus", "ROW"],
+            "summer": ["jammypreserves", "perogies", "mosquito", "rock_avocado_fruit", "HAMMER", "cave_banana_tree", "monkeytail", "cactus", "oasis_cactus", "ROW"],
             "autumn": ["honeyham", "honeynuggets", "trailmix", "crow", "robin", "deciduoustree", "CHOP", "grass", "sapling", "acorn"],
             "winter": ["kabobs", "meatballs", "bonestew", "robin_winter", "puffin", "penguin", "evergreen", "evergreen_sparse", "rock_ice", "lichen"],
         }

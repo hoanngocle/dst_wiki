@@ -3,7 +3,7 @@
 local Catalog = {}
 local definitions = {
 {id="spring_muffin",season="spring",kind="once",name="Bánh Bướm",description="Ăn 3 bánh bướm trong mùa xuân.",event="oneat",target=3,params={prefab="butterflymuffin"},max_claims=1},
-{id="spring_frogglebun",season="spring",kind="once",name="Bánh Kẹp Ếch",description="Ăn 3 bánh kẹp chân ếch.",event="oneat",target=3,params={prefab="frogglebun"},max_claims=1},
+{id="spring_frogglebun",season="spring",kind="once",name="Bánh Kẹp Ếch",description="Ăn 3 bánh kẹp chân ếch.",event="oneat",target=3,params={prefab="frogglebunwich"},max_claims=1},
 {id="spring_dragonpie",season="spring",kind="once",name="Bánh Thanh Long",description="Ăn 3 bánh thanh long.",event="oneat",target=3,params={prefab="dragonpie"},max_claims=1},
 {id="spring_taffy",season="spring",kind="once",name="Kẹo Mật Xuân",description="Ăn 3 viên kẹo mật ong.",event="oneat",target=3,params={prefab="taffy"},max_claims=1},
 {id="spring_cookie",season="spring",kind="once",name="Bánh Bí Ngô",description="Ăn 3 bánh quy bí ngô.",event="oneat",target=3,params={prefab="pumpkincookie"},max_claims=1},
@@ -72,7 +72,7 @@ local definitions = {
 {id="summer_dragonfly",season="summer",kind="once",name="Rồng Sa Mạc",description="Hạ 1 Dragonfly tại sa mạc.",event="killed",target=1,params={prefab="dragonfly"},max_claims=1},
 {id="summer_warg",season="summer",kind="once",name="Đầu Đàn Chó Săn",description="Hạ 1 Varg dẫn đàn chó săn.",event="killed",target=1,params={prefab="warg"},max_claims=1},
 {id="summer_queen",season="summer",kind="once",name="Nữ Hoàng Nhện",description="Hạ 1 nữ hoàng nhện.",event="killed",target=1,params={prefab="spiderqueen"},max_claims=1},
-{id="summer_coldfire",season="summer",kind="once",name="Bếp Lửa Lạnh",description="Dựng 1 bếp lửa thu nhiệt cố định.",event="buildstructure",target=1,params={prefab="endothermicfirepit"},max_claims=1},
+{id="summer_coldfire",season="summer",kind="once",name="Bếp Lửa Lạnh",description="Dựng 1 bếp lửa thu nhiệt cố định.",event="buildstructure",target=1,params={prefab="coldfirepit"},max_claims=1},
 {id="summer_icebox",season="summer",kind="once",name="Tủ Lạnh Mùa Hạ",description="Dựng 1 tủ lạnh bảo quản thức ăn.",event="buildstructure",target=1,params={prefab="icebox"},max_claims=1},
 {id="summer_watermelonhat",season="summer",kind="once",name="Mũ Dưa Hấu",description="Chế tạo 1 mũ dưa hấu.",event="builditem",target=1,params={prefab="watermelonhat"},max_claims=1},
 {id="summer_featherfan",season="summer",kind="once",name="Quạt Lông Vũ",description="Chế tạo 1 quạt lông vũ.",event="builditem",target=1,params={prefab="featherfan"},max_claims=1},
@@ -93,7 +93,7 @@ local definitions = {
 {id="summer_farmpomegranate",season="summer",kind="once",name="Vụ Lựu",description="Thu hoạch 6 cây lựu trong vườn.",event="picksomething",target=6,params={prefab="farm_plant_pomegranate"},max_claims=1},
 {id="summer_farmdurian",season="summer",kind="once",name="Vụ Sầu Riêng",description="Thu hoạch 6 cây sầu riêng trong vườn.",event="picksomething",target=6,params={prefab="farm_plant_durian"},max_claims=1},
 {id="summer_jam",season="summer",kind="repeat",name="Mứt Quả Mùa Hạ",description="Ăn 3 phần mứt quả mỗi lượt.",event="oneat",target=3,params={prefab="jammypreserves"},max_claims=5},
-{id="summer_pierogi",season="summer",kind="repeat",name="Bánh Xếp Hồi Sức",description="Ăn 3 phần bánh xếp mỗi lượt.",event="oneat",target=3,params={prefab="pierogi"},max_claims=5},
+{id="summer_pierogi",season="summer",kind="repeat",name="Bánh Xếp Hồi Sức",description="Ăn 3 phần bánh xếp mỗi lượt.",event="oneat",target=3,params={prefab="perogies"},max_claims=5},
 {id="summer_mosquito",season="summer",kind="repeat",name="Dẹp Muỗi",description="Hạ 8 con muỗi mỗi lượt.",event="killed",target=8,params={prefab="mosquito"},max_claims=5},
 {id="summer_stonefruit",season="summer",kind="repeat",name="Tách Quả Đá",description="Đập mở 10 quả đá mỗi lượt.",event="finishedwork",target=10,params={action="MINE",prefab="rock_avocado_fruit"},max_claims=5},
 {id="summer_hammer",season="summer",kind="repeat",name="Tháo Dỡ Công Trình",description="Hoàn tất 5 lần phá bằng búa mỗi lượt.",event="finishedwork",target=5,params={action="HAMMER"},max_claims=5},

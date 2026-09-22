@@ -163,7 +163,7 @@
       "name": "Bánh Xếp",
       "params": {
         "prefabs": [
-          "pierogi"
+          "perogies"
         ]
       },
       "reward": 2,
@@ -323,7 +323,7 @@
       "name": "Ớt Cay",
       "params": {
         "prefabs": [
-          "spicychili"
+          "hotchili"
         ]
       },
       "reward": 2,
@@ -5147,7 +5147,7 @@
           "max_claims": 1,
           "name": "Bánh Kẹp Ếch",
           "params": {
-            "prefab": "frogglebun"
+            "prefab": "frogglebunwich"
           },
           "season": "spring",
           "target": 3
@@ -6104,7 +6104,7 @@
           "max_claims": 1,
           "name": "Bếp Lửa Lạnh",
           "params": {
-            "prefab": "endothermicfirepit"
+            "prefab": "coldfirepit"
           },
           "season": "summer",
           "target": 1
@@ -6382,7 +6382,7 @@
           "max_claims": 5,
           "name": "Bánh Xếp Hồi Sức",
           "params": {
-            "prefab": "pierogi"
+            "prefab": "perogies"
           },
           "season": "summer",
           "target": 3
