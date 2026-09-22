@@ -133,6 +133,8 @@ class AchievementCatalogTests(unittest.TestCase):
         expected_ranks = {"E": 1, "D": 10, "C": 20, "B": 30, "A": 40, "S": 50, "SS": 70, "SSS": 100}
         self.assertEqual(expected_ranks, {next(iter(prefabs(row["params"]))): int(row["target"]) for row in self.rows if row["tracker"] == "hunter_rank"})
         self.assertIn("season_first_mission", by_id)
+        seasonal = [row for row in self.rows if row["group"] == "seasonal"]
+        self.assertEqual({1, 5, 10, 15, 20}, {int(row["target"]) for row in seasonal if row["tracker"] == "season_mission_completed"})
 
     def test_no_placeholder_removed_or_duplicate_semantics(self):
         lowered = "\n".join(row["id"] + " " + row["name"] + " " + row["description"] + " " + row["params"] for row in self.rows).lower()
@@ -146,6 +148,8 @@ class AchievementCatalogTests(unittest.TestCase):
     def test_runtime_lookup_and_validation_contracts_are_present(self):
         for contract in ("function Catalog.All()", "function Catalog.ById(id)", "function Catalog.ByEvent(event)", "function Catalog.Validate()"):
             self.assertIn(contract, self.source)
+        self.assertIn("local seen,next_by_id,next_by_event", self.source)
+        self.assertIn("by_id,by_event=next_by_id,next_by_event", self.source)
         self.assertNotRegex(self.source, r"(?:dofile|io\.|require)\s*\(?[^\n]*(?:achievement-level|AchievementLevel|2937640068)")
 
 
