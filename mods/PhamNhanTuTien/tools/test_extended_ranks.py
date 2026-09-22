@@ -8,6 +8,7 @@ runtime execution.
 
 from __future__ import annotations
 
+import math
 import re
 import unittest
 from pathlib import Path
@@ -98,6 +99,21 @@ def rank_load_before_leveling_then_deferred(
     return current, events
 
 
+def is_valid_rank(value: object, ranks: dict[str, int]) -> bool:
+    return (
+        isinstance(value, (int, float))
+        and not isinstance(value, bool)
+        and math.isfinite(value)
+        and value == math.floor(value)
+        and ranks["E"] <= value <= ranks["SSS"]
+    )
+
+
+def load_rank(saved_rank: object, ranks: dict[str, int]) -> int:
+    """Model the persisted-rank boundary used by HHRank:OnLoad."""
+    return int(saved_rank) if is_valid_rank(saved_rank, ranks) else ranks["E"]
+
+
 def component_method(source: str, method_name: str) -> str:
     match = re.search(
         rf"function HHRank:{method_name}\([^)]*\)(?P<body>.*?)(?=\nfunction HHRank:|\nreturn HHRank)",
@@ -138,6 +154,26 @@ class ExtendedRankContractTests(unittest.TestCase):
         """A numeric S capability gate remains available to SS and SSS hunters."""
         self.assertTrue({"S", "SS", "SSS"}.issubset(self.ranks))
         self.assertTrue(all(self.ranks[name] >= self.ranks["S"] for name in ("S", "SS", "SSS")))
+
+    def test_rank_validation_and_load_reject_arbitrary_numeric_values(self) -> None:
+        """Allowing 6.5 or non-finite values lets an untrusted save corrupt rank state."""
+        validator = re.search(
+            r"function M\.IsValidRank\(rank\)(?P<body>.*?)\nend",
+            self.defs,
+            re.DOTALL,
+        )
+        self.assertIsNotNone(validator)
+        self.assertRegex(validator.group("body"), r"rank == math\.floor\(rank\)")
+        self.assertRegex(
+            component_method(self.component, "OnLoad"),
+            r"self\.rank = RankDefs\.IsValidRank\(data\.rank\) and data\.rank or RankDefs\.RANK\.E",
+        )
+        for value in range(self.ranks["E"], self.ranks["SSS"] + 1):
+            self.assertTrue(is_valid_rank(value, self.ranks), value)
+            self.assertEqual(load_rank(value, self.ranks), value)
+        for value in (6.5, 0, 9, float("nan"), float("inf"), float("-inf"), "7", None):
+            self.assertFalse(is_valid_rank(value, self.ranks), value)
+            self.assertEqual(load_rank(value, self.ranks), self.ranks["E"], value)
 
     def test_extended_ranks_do_not_register_gameplay_rows(self) -> None:
         """SS/SSS stay labels: no exam, shop, EXP, combat, or bonus consumer registers them."""

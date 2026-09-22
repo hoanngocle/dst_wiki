@@ -52,7 +52,10 @@ function M.GetRankForLevel(level)
 end
 
 function M.IsValidRank(rank)
-    return type(rank) == "number" and rank >= M.RANK.E and rank <= M.RANK.SSS
+    return type(rank) == "number"
+        and rank == math.floor(rank)
+        and rank >= M.RANK.E
+        and rank <= M.RANK.SSS
 end
 
 function M.GetNextRank(rank)
