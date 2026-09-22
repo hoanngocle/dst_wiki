@@ -298,6 +298,7 @@ M.by_prefab["xd_dy_cyfxd_1"] = {
   effects = {
     { trigger="consume", text="Tăng 40% sát thương gây ra trong 2400 giây." },
   },
+  effect = { kind = "damage_mult", multiplier = 1.4, duration = 2400 },
 }
 
 M.by_prefab["xd_dy_dmhsd_1"] = {
@@ -316,6 +317,7 @@ M.by_prefab["xd_dy_dmhsd_1"] = {
   effects = {
     { trigger="consume", text="Hồi ngay 120 Máu; sau đó hồi thêm 15 Máu mỗi 6 giây trong 2400 giây." },
   },
+  effect = { kind = "health_regen", immediate = 120, amount = 15, interval = 6, duration = 2400 },
 }
 
 M.by_prefab["xd_dy_lmsqd_1"] = {
@@ -334,6 +336,7 @@ M.by_prefab["xd_dy_lmsqd_1"] = {
   effects = {
     { trigger="consume", text="Mỗi đòn đánh gây thêm 180 sát thương lôi trong 2400 giây; kích hoạt ở 100% số đòn trong phép thử runtime." },
   },
+  effect = { kind = "lightning_damage", amount = 180, duration = 2400 },
 }
 
 M.by_prefab["xd_dy_qxdhd_1"] = {
@@ -352,6 +355,7 @@ M.by_prefab["xd_dy_qxdhd_1"] = {
   effects = {
     { trigger="consume", text="hồi khoảng 6.67 Tinh thần/giây trong 2400 giây (số đo runtime thực tế)." },
   },
+  effect = { kind = "sanity_regen", amount = 6.666666666666667, duration = 2400 },
 }
 
 M.by_prefab["xd_dy_yfsxd_1"] = {
@@ -370,6 +374,7 @@ M.by_prefab["xd_dy_yfsxd_1"] = {
   effects = {
     { trigger="consume", text="Tăng 25% tốc độ đi bộ và chạy trong 2400 giây." },
   },
+  effect = { kind = "speed_mult", multiplier = 1.25, duration = 2400 },
 }
 
 M.by_prefab["xd_dy_pshsd_1"] = {
@@ -388,6 +393,7 @@ M.by_prefab["xd_dy_pshsd_1"] = {
   effects = {
     { trigger="consume", text="Giảm 35% sát thương nhận vào trong 2400 giây." },
   },
+  effect = { kind = "damage_reduction", multiplier = 0.65, duration = 2400 },
 }
 
 M.by_prefab["xd_dy_qjqsd_1"] = {
@@ -406,6 +412,7 @@ M.by_prefab["xd_dy_qjqsd_1"] = {
   effects = {
     { trigger="consume", text="Tăng 90% hiệu suất Chặt, Đập và Đào mỏ trong 2400 giây; không tăng tốc Đào đất, Hái hoặc Thu hoạch." },
   },
+  effect = { kind = "work_efficiency", multiplier = 1.9, duration = 2400 },
 }
 
 M.by_prefab["xd_dy_xynyd_1"] = {
@@ -424,6 +431,7 @@ M.by_prefab["xd_dy_xynyd_1"] = {
   effects = {
     { trigger="consume", text="Tạo buff chống lạnh trong 2400 giây. Runtime xác nhận thời lượng nhưng phần mã đã mã hóa không để lộ hệ số chống lạnh." },
   },
+  effect = { kind = "cold_protection", duration = 2400 },
 }
 
 M.by_prefab["xd_dy_hsphd_1"] = {
@@ -442,6 +450,7 @@ M.by_prefab["xd_dy_hsphd_1"] = {
   effects = {
     { trigger="consume", text="Tạo buff chống nóng trong 2400 giây. Runtime xác nhận thời lượng nhưng phần mã đã mã hóa không để lộ hệ số chống nóng." },
   },
+  effect = { kind = "heat_protection", duration = 2400 },
 }
 
 M.by_prefab["xd_dy_xttyd_1"] = {
@@ -460,6 +469,7 @@ M.by_prefab["xd_dy_xttyd_1"] = {
   effects = {
     { trigger="consume", text="Hồi Máu bằng 50% sát thương gây ra trong 2400 giây; kích hoạt ở 100% số đòn trong phép thử runtime." },
   },
+  effect = { kind = "lifesteal", fraction = 0.5, duration = 2400 },
 }
 
 M.by_prefab["xd_danyao_bg"] = {
@@ -477,6 +487,7 @@ M.by_prefab["xd_danyao_bg"] = {
   effects = {
     { trigger="consume", text="Giảm tốc độ hao Đói còn 20% bình thường (giảm 80%). Runtime không ghi nhận bộ đếm thời gian, nên hiệu ứng được xem là duy trì cho đến khi trạng thái nhân vật bị thay đổi." },
   },
+  effect = { kind = "hunger_rate", multiplier = 0.2 },
 }
 
 M.cultivation = {}

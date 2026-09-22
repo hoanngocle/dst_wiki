@@ -24,6 +24,8 @@ PrefabFiles = {
 
     "ttk_lingshi",
 
+    "ttk_alchemy",
+
 }
 
 

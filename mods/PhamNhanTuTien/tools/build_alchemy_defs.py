@@ -27,6 +27,21 @@ BUFF_PREFABS = (
 )
 FASTING_PREFAB = "xd_danyao_bg"
 
+# Runtime behavior is deliberately explicit: gameplay never parses manual prose.
+RUNTIME_EFFECTS = {
+    "xd_dy_cyfxd_1": {"kind": "damage_mult", "multiplier": 1.4, "duration": 2400},
+    "xd_dy_dmhsd_1": {"kind": "health_regen", "immediate": 120, "amount": 15, "interval": 6, "duration": 2400},
+    "xd_dy_lmsqd_1": {"kind": "lightning_damage", "amount": 180, "duration": 2400},
+    "xd_dy_qxdhd_1": {"kind": "sanity_regen", "amount": 20 / 3, "duration": 2400},
+    "xd_dy_yfsxd_1": {"kind": "speed_mult", "multiplier": 1.25, "duration": 2400},
+    "xd_dy_pshsd_1": {"kind": "damage_reduction", "multiplier": 0.65, "duration": 2400},
+    "xd_dy_qjqsd_1": {"kind": "work_efficiency", "multiplier": 1.9, "duration": 2400},
+    "xd_dy_xynyd_1": {"kind": "cold_protection", "duration": 2400},
+    "xd_dy_hsphd_1": {"kind": "heat_protection", "duration": 2400},
+    "xd_dy_xttyd_1": {"kind": "lifesteal", "fraction": 0.5, "duration": 2400},
+    FASTING_PREFAB: {"kind": "hunger_rate", "multiplier": 0.2},
+}
+
 # Manual records deliberately do not carry a stable user-facing name. These
 # approved names must remain explicit rather than inferred during generation.
 DISPLAY_NAMES = {
@@ -135,6 +150,8 @@ def records_from_items(items: dict[str, Any]) -> list[tuple[str, dict[str, Any]]
     allowed = (*CULTIVATION_PREFABS, *BUFF_PREFABS, FASTING_PREFAB)
     if len(DISPLAY_NAMES) != len(allowed) or set(DISPLAY_NAMES) != set(allowed):
         raise ValueError("Display-name overrides must cover exactly the allowed alchemy records")
+    if set(RUNTIME_EFFECTS) != set(BUFF_PREFABS) | {FASTING_PREFAB}:
+        raise ValueError("Runtime-effect overrides must cover exactly the approved buff records")
 
     records: list[tuple[str, dict[str, Any]]] = []
     for prefab in allowed:
@@ -182,7 +199,15 @@ def append_row(lines: list[str], prefab: str, record: dict[str, Any]) -> None:
     ))
     for effect in record["usage"]["effects"]:
         lines.append(f"    {{ trigger={lua_string(effect['trigger'])}, text={lua_string(effect['text'])} }},")
-    lines.extend(("  },", "}", ""))
+    lines.append("  },")
+    runtime = RUNTIME_EFFECTS.get(prefab)
+    if runtime is not None:
+        parts = []
+        for key, value in runtime.items():
+            encoded = lua_string(value) if type(value) is str else repr(value)
+            parts.append(f"{key} = {encoded}")
+        lines.append(f"  effect = {{ {', '.join(parts)} }},")
+    lines.extend(("}", ""))
 
 
 def render(records: list[tuple[str, dict[str, Any]]]) -> str:

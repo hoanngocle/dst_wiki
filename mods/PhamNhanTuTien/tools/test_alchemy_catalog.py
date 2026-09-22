@@ -26,6 +26,14 @@ BUFFS = [
     "xd_dy_xttyd_1",
 ]
 FORBIDDEN = {"xd_dy_fd", "xd_dy_tsfhd"}
+RUNTIME_KINDS = {
+    "xd_dy_cyfxd_1": "damage_mult", "xd_dy_dmhsd_1": "health_regen",
+    "xd_dy_lmsqd_1": "lightning_damage", "xd_dy_qxdhd_1": "sanity_regen",
+    "xd_dy_yfsxd_1": "speed_mult", "xd_dy_pshsd_1": "damage_reduction",
+    "xd_dy_qjqsd_1": "work_efficiency", "xd_dy_xynyd_1": "cold_protection",
+    "xd_dy_hsphd_1": "heat_protection", "xd_dy_xttyd_1": "lifesteal",
+    "xd_danyao_bg": "hunger_rate",
+}
 
 
 class AlchemyCatalogTest(unittest.TestCase):
@@ -90,6 +98,14 @@ class AlchemyCatalogTest(unittest.TestCase):
             OUTPUT.read_text(encoding="utf-8"),
             generator.render(generator.read_records()),
         )
+
+    def test_approved_runtime_metadata_is_machine_readable(self):
+        """Replacing effect kinds with prose or omitting an approved kind must fail."""
+        source = OUTPUT.read_text(encoding="utf-8")
+        for prefab, kind in RUNTIME_KINDS.items():
+            row = re.search(rf'M\.by_prefab\["{prefab}"\] = \{{(?P<row>.*?)\n\}}', source, re.DOTALL)
+            self.assertIsNotNone(row, prefab)
+            self.assertIn(f'effect = {{ kind = "{kind}"', row.group("row"), prefab)
 
     def test_generator_rejects_malformed_manual_scalars(self):
         """Malformed JSON scalars cannot reach Lua interpolation."""

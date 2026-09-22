@@ -3,4 +3,7 @@ AddPlayerPostInit(function(inst)
     if inst.components.ttk_cultivation == nil then
         inst:AddComponent("ttk_cultivation")
     end
+    if inst.components.ttk_alchemy_effects == nil then
+        inst:AddComponent("ttk_alchemy_effects")
+    end
 end)
