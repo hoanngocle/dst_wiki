@@ -9,6 +9,9 @@ local RankDefs = require "guild/hh_rank_defs"
 local ExamDefs = require "guild/hh_rank_exam_defs"
 local HHGuideLock = require "utils/hh_guide_lock"
 local HHSummaryLock = require "utils/hh_summary_lock"
+local Theme = require "widgets/hh_ui/ttk_unified_theme"
+local UIFONT = Theme.GetFont()
+local TITLEFONT = Theme.GetFont()
 
 -- Scale chung cho background và toàn bộ widget trong hệ tọa độ artwork 1536x1024.
 local HUD_SCALE = 0.55
@@ -59,15 +62,23 @@ local HHStatusUI = Class(Screen, function(self, owner, on_close, options)
 
     self.root = self:AddChild(Widget("root"))
     self.root:SetPosition(0, 0, 0)
-    self.root:SetScaleMode(SCALEMODE_PROPORTIONAL)
-    self.root:SetHAnchor(ANCHOR_MIDDLE)
-    self.root:SetVAnchor(ANCHOR_MIDDLE)
+    if not self.embedded then
+        self.root:SetScaleMode(SCALEMODE_PROPORTIONAL)
+        self.root:SetHAnchor(ANCHOR_MIDDLE)
+        self.root:SetVAnchor(ANCHOR_MIDDLE)
+    end
 
     -- Mọi widget dùng chung hệ tọa độ artwork 1536x1024.
     self.panel = self.root:AddChild(Widget("status_panel"))
-    self.panel:SetScale(HUD_SCALE, HUD_SCALE, 1)
+    self.panel:SetScale(self.embedded and 1 or HUD_SCALE, self.embedded and 1 or HUD_SCALE, 1)
 
-    self.bg = self.panel:AddChild(Image("images/hh_icon/hud_status.xml", "hud_status.tex"))
+    if self.embedded then
+        self.bg = self.panel:AddChild(Image("images/ttk_forge/frame.xml", "frame.tex"))
+        self.bg:SetSize(1280, 680)
+        self.bg:SetTint(unpack(Theme.colours.panel))
+    else
+        self.bg = self.panel:AddChild(Image("images/hh_icon/hud_status.xml", "hud_status.tex"))
+    end
 
     -- Title
     self.title = self.panel:AddChild(Text(TITLEFONT, 54))
@@ -75,6 +86,7 @@ local HHStatusUI = Class(Screen, function(self, owner, on_close, options)
     self.title:SetString(STRINGS.HH_LEVELING.TITLE)
     
     self.inst:DoPeriodicTask(0, function()
+        if self.embedded then return end
         local hue = (GetTime() * 0.2) % 1
         local r, g, b = HSVToRGB(hue, 1, 1)
         self.title:SetColour(r, g, b, 1)

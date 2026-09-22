@@ -52,6 +52,45 @@ def artifact_preview(relative: str):
     return render
 
 
+def unified_canvas(active: int, title: str) -> tuple[Image.Image, ImageDraw.ImageDraw]:
+    image = shell_preview().copy()
+    draw = ImageDraw.Draw(image)
+    draw.rectangle((132, 286, 1404, 900), fill=(12, 14, 23, 255))
+    tabs = ("Nhan vat", "Trang bi", "Nhiem vu", "Quan doan", "Cua hang", "Kho")
+    for index, label in enumerate(tabs):
+        x1 = 142 + index * 203
+        fill = (164, 116, 216, 255) if index == active else (25, 22, 32, 255)
+        draw.rectangle((x1, 178, x1 + 194, 226), fill=fill, outline=SILVER, width=2)
+        draw.text((x1 + 97, 202), label, font=font(24), fill=(18, 16, 24, 255) if index == active else SILVER, anchor="mm")
+    draw.text((768, 320), title, font=font(38), fill=SILVER, anchor="mm")
+    draw.line((190, 354, 1346, 354), fill=CYAN, width=2)
+    return image, draw
+
+
+def character_preview() -> Image.Image:
+    image, draw = unified_canvas(0, "NHAN VAT")
+    draw.text((350, 408), "THUOC TINH", font=font(26), fill=CYAN, anchor="mm")
+    rows = (("Suc manh", "18", "+1.5 sat thuong"), ("Nhanh nhen", "14", "+1.2% toc do"),
+            ("The chat", "22", "+20 mau"), ("Cam quan", "12", "+1% chi mang"),
+            ("Tri tue", "16", "+20 mana"))
+    for i, (name, value, desc) in enumerate(rows):
+        y = 470 + i * 76
+        draw.rounded_rectangle((190, y - 28, 620, y + 28), 8, fill=(27, 27, 42, 255), outline=(92, 82, 115, 255), width=2)
+        draw.text((214, y), name, font=font(23), fill=SILVER, anchor="lm")
+        draw.text((475, y), value, font=font(24), fill=CYAN, anchor="mm")
+        draw.text((602, y), desc, font=font(16), fill=(170, 170, 187, 255), anchor="rm")
+    draw.line((700, 390, 700, 830), fill=(92, 82, 115, 255), width=2)
+    draw.rounded_rectangle((770, 418, 1260, 650), 16, fill=(22, 21, 34, 255), outline=SILVER, width=2)
+    draw.text((1015, 462), "CAP 35  •  RANK A", font=font(27), fill=CYAN, anchor="mm")
+    draw.text((1015, 522), "EXP 7,850 / 10,000", font=font(23), fill=SILVER, anchor="mm")
+    draw.rectangle((835, 554, 1195, 570), fill=(49, 45, 62, 255))
+    draw.rectangle((835, 554, 1118, 570), fill=PURPLE)
+    draw.text((1015, 610), "Diem tiem nang: 4", font=font(24), fill=(255, 215, 76, 255), anchor="mm")
+    draw.rounded_rectangle((812, 700, 1218, 765), 8, fill=(75, 54, 112, 255), outline=SILVER, width=2)
+    draw.text((1015, 732), "Thanh tuu • Mua • Dac quyen", font=font(22), fill=SILVER, anchor="mm")
+    return image
+
+
 SCREENS = {
     "theme": theme_preview,
     "shell": shell_preview,
@@ -64,6 +103,7 @@ SCREENS = {
     "strengthen-ready": artifact_preview("lam-phuong-ui/cuong-hoa.png"),
     "strengthen-protected": artifact_preview("lam-phuong-ui/bao-ve.png"),
     "strengthen-maxed": artifact_preview("lam-phuong-ui/toi-da.png"),
+    "character": character_preview,
 }
 
 
