@@ -129,6 +129,9 @@ modimport("main/ttk_choujiangji.lua")
 modimport("main/ttk_garden_expansion.lua")
 modimport("main/ttk_spirit_mines.lua")
 
+-- Phàm Nhân cultivation progression is server-authoritative.
+modimport("main/ttk_alchemy.lua")
+
 -- Solo is included and always loaded by this single mod.
 GLOBAL.ManifestManager:AddFileToModManifest(modname, "scripts/ttk_hover_theme.lua")
 for _, path in ipairs({ "scripts/ttk_eva_portraits.lua", "scripts/widgets/ttk_eva_portrait_picker.lua" }) do
