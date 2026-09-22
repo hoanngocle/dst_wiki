@@ -57,6 +57,9 @@ SCREENS = {
     "shell": shell_preview,
     "summary-combine": artifact_preview("bang-tong-hop/v3/hop-thanh.png"),
     "summary-socket": artifact_preview("bang-tong-hop/v3/kham.png"),
+    "forge-cleanse": artifact_preview("than-binh-pho/v4/thanh-tay.png"),
+    "forge-stone-change": artifact_preview("than-binh-pho/v4/duc-linh.png"),
+    "forge-inherit": artifact_preview("than-binh-pho/v4/ke-thua.png"),
 }
 
 
