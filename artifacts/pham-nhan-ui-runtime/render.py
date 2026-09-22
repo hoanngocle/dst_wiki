@@ -91,6 +91,28 @@ def character_preview() -> Image.Image:
     return image
 
 
+def quest_preview(mode: int) -> Image.Image:
+    image, draw = unified_canvas(2, "NHIEM VU")
+    subtabs = ("Hang ngay", "Hiep hoi", "Thang rank")
+    for i, label in enumerate(subtabs):
+        x1 = 350 + i * 280
+        draw.rounded_rectangle((x1, 374, x1 + 250, 424), 7,
+                               fill=(164, 116, 216, 255) if i == mode else (26, 23, 35, 255),
+                               outline=SILVER, width=2)
+        draw.text((x1 + 125, 399), label, font=font(22), fill=SILVER, anchor="mm")
+    titles = ("NHIEM VU NGAY", "NHIEM VU HIEP HOI", "THU THACH THANG RANK")
+    accents = (CYAN, (255, 154, 55, 255), (208, 118, 242, 255))
+    draw.text((768, 475), titles[mode], font=font(31), fill=accents[mode], anchor="mm")
+    cards = ((210, 520, 650, 795), (688, 520, 1128, 795)) if mode != 2 else ((330, 520, 1206, 795),)
+    for index, box in enumerate(cards):
+        draw.rounded_rectangle(box, 14, fill=(25, 25, 39, 255), outline=(105, 92, 126, 255), width=2)
+        cx = (box[0] + box[2]) // 2
+        draw.text((cx, box[1] + 55), "Muc tieu" if index == 0 else "Phan thuong", font=font(25), fill=SILVER, anchor="mm")
+        draw.text((cx, box[1] + 125), "Tieu diet quai va hoan thanh tien do", font=font(19), fill=(180, 181, 198, 255), anchor="mm")
+        draw.text((cx, box[1] + 205), "Con lai 02:35", font=font(19), fill=CYAN, anchor="mm")
+    return image
+
+
 SCREENS = {
     "theme": theme_preview,
     "shell": shell_preview,
@@ -104,6 +126,9 @@ SCREENS = {
     "strengthen-protected": artifact_preview("lam-phuong-ui/bao-ve.png"),
     "strengthen-maxed": artifact_preview("lam-phuong-ui/toi-da.png"),
     "character": character_preview,
+    "quests-daily": lambda: quest_preview(0),
+    "quests-guild": lambda: quest_preview(1),
+    "quests-promotion": lambda: quest_preview(2),
 }
 
 

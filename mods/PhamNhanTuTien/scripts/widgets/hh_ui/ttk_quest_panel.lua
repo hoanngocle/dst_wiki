@@ -32,7 +32,7 @@ local TTKQuestPanel = Class(Widget, function(self, owner, options)
     for index, mode in ipairs(MODES) do
         local button = self:AddChild(TextButton())
         button:SetPosition((index - 2) * 260, 286, 5)
-        button:SetFont(Theme.font)
+        button:SetFont(Theme.GetFont())
         button:SetTextSize(23)
         button:SetText(mode.label)
         button:SetTextColour(unpack(Theme.colours.text))
