@@ -192,3 +192,9 @@ The original user-approved execution method is subagent-driven development. Task
 - [ ] Route automatic seasonal settlement through the same idempotent achievement credit boundary as manual seasonal claims so completion/claim/repeat rows advance exactly once.
 - [ ] Register valid, existing animation/inventory assets and names for all 26 pill prefabs; do not use dummy `quagmire_food`, nil icons, or undefined names.
 - [ ] Add executable destruction, watcher settlement credit, and prefab/bootstrap presentation tests; run the focused acceptance suite and a scoped final review.
+
+### Task 24: Pocket-Only Furnace Ingredient and Rollover Wiki Copy
+
+- [ ] Keep `cursed_monkey_token` as the canonical stage-10 recipe input but account and consume its required count directly from the doer’s pocket inventory atomically at furnace start; do not relax native container rules or replace the recipe material.
+- [ ] Extend exact-recipe/preflight/save tests to prove normal token slots are rejected, pocket tokens permit the exact recipe, failed starts consume nothing, and success consumes exactly five once.
+- [ ] Update the progression wiki to state that ordinary completions use manual Claim EXP while ready tasks/eligible chests settle automatically and durably at seasonal rollover before the next pool is drawn.
