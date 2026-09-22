@@ -10,6 +10,7 @@ local PerkCatalog = require("achievement/ttk_perk_catalog")
 local PerkEffects = require("achievement/ttk_perk_effects")
 local RankDefs = require("guild/hh_rank_defs")
 local AlchemyDefs = require("alchemy/ttk_alchemy_defs")
+local IsDungeonSurfaceAuthority = require("utils/hh_dungeon_authority")
 local CHEST_MILESTONES = { 5, 10, 15, 20 }
 
 local function Master()
@@ -185,6 +186,13 @@ local function OnKilled(killer, data)
     if state == nil or state.kills[victim] then return end
     state.kills[victim] = true
     local evidence = { prefab=victim.prefab }
+    local manager = victim.hh_dungeon_manager
+    if IsDungeonSurfaceAuthority(G.TheWorld) and manager ~= nil
+        and G.TheWorld.components ~= nil and G.TheWorld.components.dungeon_manager == manager
+        and victim.hh_dungeon_run_epoch == manager.run_epoch
+        and manager.state == "IN_PROGRESS" and manager.players_in_dungeon[inst] == true then
+        evidence.context = "dungeon"
+    end
     Route(inst, "kill_prefab", evidence, 1)
     Route(inst, "combat_event", evidence, 1)
     Seasonal(inst, "killed", evidence, 1)
@@ -411,6 +419,50 @@ local function InstallPlayer(inst)
     inst:ListenForEvent("ttk_cultivation_advanced", OnCultivation)
     inst:ListenForEvent("hh_levelup", OnProgression)
     inst:ListenForEvent("hh_rank_changed", OnProgression)
+    -- These receipts are emitted by committed server component methods only.
+    local function SurfaceReceipt(event, fn)
+        inst:ListenForEvent(event, function(player, data)
+            if IsDungeonSurfaceAuthority(G.TheWorld) and ResolveSender(player) ~= nil then fn(player, data) end
+        end)
+    end
+    SurfaceReceipt("hh_guild_quest_assigned", function(player)
+        Route(player, "guild_quest_assigned", { event="hh_guild_quest_assigned" }, 1)
+    end)
+    SurfaceReceipt("hh_guild_quest_completed", function(player)
+        Route(player, "guild_quest_completed", { event="hh_guild_quest_completed" }, 1)
+    end)
+    SurfaceReceipt("hh_rank_changed", function(player, data)
+        if data ~= nil and data.source == "claim_exam" then
+            Route(player, "guild_rank_exam_passed", { source="hh_rank" }, 1)
+        end
+    end)
+    SurfaceReceipt("hh_guild_opened", function(player)
+        Route(player, "guild_opened", { prefab="guild_staff" }, 1)
+    end)
+    SurfaceReceipt("hh_guild_shop_purchased", function(player, data)
+        if data ~= nil and Integer(data.cost, 1, 2000000000) then
+            local evidence = { source="hh_guild_shop", currency="credit" }
+            Route(player, "guild_shop_purchase", evidence, data.count)
+            Route(player, "guild_credit_spent", evidence, data.cost)
+        end
+    end)
+    SurfaceReceipt("hh_dungeon_entered", function(player)
+        Route(player, "dungeon_entered", { prefab="dungeon_gate" }, 1)
+    end)
+    SurfaceReceipt("hh_dungeon_completed", function(player)
+        Route(player, "dungeon_completed", { source="dungeon_manager" }, 1)
+    end)
+    SurfaceReceipt("hh_dungeon_coin_changed", function(player, data)
+        if data ~= nil and Integer(data.amount, 1, 2000000000) then
+            Route(player, "dungeon_coin_earned", { currency="dungeon_coin" }, data.amount)
+        end
+    end)
+    SurfaceReceipt("hh_dungeon_shop_open_server", function(player)
+        Route(player, "dungeon_shop_opened", { source="hh_dungeon_shop" }, 1)
+    end)
+    SurfaceReceipt("hh_dungeon_shop_purchased", function(player)
+        Route(player, "dungeon_shop_purchase", { source="hh_dungeon_shop" }, 1)
+    end)
     inst:ListenForEvent("oneat", OnEat)
     inst:ListenForEvent("killed", OnKilled)
     inst:ListenForEvent("builditem", function(player, data) OnBuild(player, data, "builditem") end)

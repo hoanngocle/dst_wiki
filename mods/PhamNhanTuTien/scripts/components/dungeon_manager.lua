@@ -1301,7 +1301,7 @@ function DungeonManager:CanEnterDungeon(player, say_reason)
 end
 
 function DungeonManager:EnterDungeon(player)
-    if not self:CanEnterDungeon(player, true) then
+    if not self:IsSurfaceAuthority() or not self:CanEnterDungeon(player, true) then
         return false
     end
 
@@ -1355,6 +1355,15 @@ function DungeonManager:EnterDungeon(player)
                     self:StartWave(1)
                 end
             end))
+        end
+        if self.entry_receipt_epoch ~= self.run_epoch then
+            self.entry_receipt_epoch = self.run_epoch
+            self.entry_receipts = {}
+        end
+        local actor = player.userid or player
+        if not self.entry_receipts[actor] then
+            self.entry_receipts[actor] = true
+            player:PushEvent("hh_dungeon_entered", { run_epoch=self.run_epoch })
         end
         return true
     else
@@ -1795,17 +1804,21 @@ function DungeonManager:StartWave(wave_num)
 end
 
 function DungeonManager:OnMonsterDeath(monster)
-    if monster == nil or monster.hh_dungeon_run_epoch ~= self.run_epoch then
+    if not self:IsSurfaceAuthority() or self.state ~= "IN_PROGRESS" or self.is_cleared
+        or monster == nil or monster.hh_dungeon_run_epoch ~= self.run_epoch then
         return
     end
 
     local run_epoch = self.run_epoch
+    local removed = false
     for i, v in ipairs(self.monsters) do
         if v == monster then
             table.remove(self.monsters, i)
+            removed = true
             break
         end
     end
+    if not removed then return end
     
     if #self.monsters == 0 and (self.pending_spawns or 0) <= 0 then
         if self.current_wave < self.max_waves then
@@ -1972,6 +1985,16 @@ function DungeonManager:OnMonsterDeath(monster)
             TheNet:Announce("Hầm Ngục: BOSS ĐÃ BỊ TIÊU DIỆT ! Tổ đội sẽ được dịch chuyển sau 180 giây...")
             self.is_cleared = true
             self.cleared_end_time = GetTime() + 180
+            -- Snapshot before callbacks: only this run's committed members share the clear.
+            local completed_players = {}
+            for player, member in pairs(self.players_in_dungeon) do
+                if member and player:IsValid() and player:HasTag("player") then
+                    table.insert(completed_players, player)
+                end
+            end
+            for _, player in ipairs(completed_players) do
+                player:PushEvent("hh_dungeon_completed", { run_epoch=run_epoch })
+            end
             TheWorld:PushEvent("dungeon_state_changed", {state = "COOLDOWN"})
 
             self:TrackLifecycleTask(self.inst:DoTaskInTime(DUNGEON_SUCCESS_TIMEOUT, function()

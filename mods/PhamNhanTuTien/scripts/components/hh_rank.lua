@@ -1,6 +1,7 @@
 local RankDefs = require("guild/hh_rank_defs")
 local ExamDefs = require("guild/hh_rank_exam_defs")
 local Event = require("guild/hh_guild_event")
+local IsSurfaceAuthority = require("utils/hh_dungeon_authority")
 
 local STATUS_LOCKED = 0
 local STATUS_AVAILABLE = 1
@@ -759,7 +760,7 @@ function HHRank:CanReceiveItems(items)
     return ok
 end
 
-function HHRank:GiveItems(items)
+function HHRank:GiveItems(items, commit)
     local inventory = self.inst.components.inventory
     local preflight_ok, descriptors, preflight_reason = PreflightReward(inventory, items)
     if not preflight_ok then
@@ -796,6 +797,11 @@ function HHRank:GiveItems(items)
     end
     inventory.ignorefull = previous_ignorefull
 
+    -- Purchases keep the delivery snapshot until their debit succeeds.
+    if committed and commit ~= nil then
+        local ok, result = pcall(commit)
+        committed = ok and result == true
+    end
     if not committed then
         RollbackRewardCommit(inventory, prepared, snapshot)
         return false, "commit"
@@ -970,6 +976,7 @@ function HHRank:CompleteExam()
 end
 
 function HHRank:ClaimExam()
+    if not IsSurfaceAuthority(TheWorld) then return false end
     local exam = ExamDefs.Get(self.exam_id)
     if exam == nil or self.exam_status ~= STATUS_COMPLETED then
         self:SetNotice("Rank Exam chưa hoàn thành.")
@@ -982,15 +989,13 @@ function HHRank:ClaimExam()
 
     local old_rank = self.rank
     self.rank = exam.rank
-    if old_rank ~= self.rank then
-        self.inst:PushEvent("hh_rank_changed", {
-            old_rank = old_rank,
-            new_rank = self.rank,
-            source = "claim_exam",
-        })
-    end
     self.exam_states[exam.id] = STATUS_CLAIMED
     self.exam_status = STATUS_CLAIMED
+    self.inst:PushEvent("hh_rank_changed", {
+        old_rank = old_rank,
+        new_rank = self.rank,
+        source = "claim_exam",
+    })
     local fx = SpawnPrefab("hh_guild_complete_fx")
     if fx then
         fx.entity:SetParent(self.inst.entity)
@@ -1045,6 +1050,13 @@ function HHRank:TryProgressFromEvent(event_name, data, quest_defs)
 end
 
 function HHRank:OpenInterface(staff)
+    if not IsSurfaceAuthority(TheWorld) or not self.inst:IsValid()
+        or not self.inst:HasTag("player") or self.inst:HasTag("playerghost")
+        or TheWorld.state.phase == "night" or staff == nil or not staff:IsValid()
+        or staff.prefab ~= "guild_staff" or not staff:HasTag("hh_guild_employee")
+        or staff.BeginGuildInteraction == nil or self.inst.hh_guild_ui_open == nil then
+        return false
+    end
     if self.interface_staff ~= nil
         and self.interface_staff ~= staff
         and self.interface_staff:IsValid()
@@ -1066,6 +1078,8 @@ function HHRank:OpenInterface(staff)
             self:CloseInterface()
         end
     end)
+    self.inst:PushEvent("hh_guild_opened", { staff=staff })
+    return true
 end
 
 function HHRank:CloseInterface()

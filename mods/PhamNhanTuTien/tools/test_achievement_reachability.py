@@ -332,5 +332,212 @@ class ActivityReachability(unittest.TestCase):
         ''')
 
 
+class GuildDungeonReachability(unittest.TestCase):
+    def setUp(self):
+        ActivityReachability.setUp(self)
+        self.lua.execute('''
+            TheWorld.ismastershard=true; TheWorld.components={}
+            function TheWorld:HasTag(tag) return tag == "forest" and not self.cave end
+            TUNING.TOTAL_DAY_TIME=480
+            local basic_entity=entity
+            function entity(prefab)
+                local e=basic_entity(prefab)
+                e.Transform.GetWorldPosition=function() return 0,0,0 end
+                e.DoPeriodicTask=e.DoTaskInTime
+                e.entity={SetParent=function() end}
+                return e
+            end
+            function SpawnPrefab(prefab)
+                if prefab=="minotaurchest" then return nil end
+                local e=entity(prefab)
+                e.components.inventoryitem={owner=nil}
+                e.SetDungeonProduct=function() return true end
+                return e
+            end
+            TheNet={Announce=function() end}
+            exit_gate=entity("dungeon_exit")
+            TheSim={FindFirstEntityWithTag=function(_,tag) if tag=="dungeon_exit" then return exit_gate end end}
+            function inventory(p)
+                local inv=p.components.inventory; inv.inst=p; inv.maxslots=40
+                function inv:GetItemInSlot(slot) return self.itemslots[slot] end
+                function inv:CanTakeItemInSlot() return true end
+                function inv:CanAcceptCount(_,count) return count end
+                function inv:GiveItem(item)
+                    if self.fail then return nil end
+                    for slot=1,self.maxslots do if not self.itemslots[slot] then
+                        self.itemslots[slot]=item; item.components.inventoryitem.owner=p; return item
+                    end end
+                end
+                function inv:RemoveItem(item)
+                    for slot,v in pairs(self.itemslots) do if v==item then self.itemslots[slot]=nil end end
+                    item.components.inventoryitem.owner=nil; return item
+                end
+                function inv:FindItems() local r={} for _,v in pairs(self.itemslots) do table.insert(r,v) end return r end
+                return inv
+            end
+            function rank(p)
+                local r=require("components/hh_rank")(p); p.components.hh_rank=r; inventory(p); return r
+            end
+            function manager()
+                local w=entity("forest"); w.ismastersim=true; w.ismastershard=true; w.tags.forest=true
+                local m=require("components/dungeon_manager")(w)
+                m.state="READY"; m.run_epoch=1; m.active_gate=entity("dungeon_gate"); m.active_gate.tags.dungeon_gate=true
+                TheWorld.components.dungeon_manager=m; return m
+            end
+            function counts(p,event)
+                local result={n=0}
+                p:ListenForEvent(event,function(_,data) result.n=result.n+1; result.data=data end)
+                return result
+            end
+        ''')
+
+    def test_entry_reentry_clear_snapshot_and_duplicate_final_death(self):
+        self.lua.execute('''
+            local m=manager(); local a=player("a"); local b=player("b"); local nearby=player("nearby")
+            local entries=counts(a,"hh_dungeon_entered"); local clears=counts(a,"hh_dungeon_completed")
+            assert(m:EnterDungeon(a)); assert(not m:EnterDungeon(a)); assert(m:EnterDungeon(b))
+            m.players_in_dungeon[a]=nil; a:RemoveTag("in_solo_dungeon"); assert(m:EnterDungeon(a))
+            assert(entries.n==1,"entry must emit once per actor per run")
+            assert(progress(a,"dungeon_guild_enter_dungeon")==1 and progress(nearby,"dungeon_guild_enter_dungeon")==0)
+            local stale=entity("hh_igris_dungeon"); stale.hh_dungeon_run_epoch=0
+            m:OnMonsterDeath(stale); assert(not m.is_cleared)
+            m.current_wave=m.max_waves
+            local boss=entity("hh_beru_dungeon"); boss.hh_dungeon_run_epoch=1; m.monsters={boss}
+            -- Removing B during A's receipt must not change the committed snapshot.
+            a:ListenForEvent("hh_dungeon_completed",function() assert(m.is_cleared); m.players_in_dungeon[b]=nil end)
+            m:OnMonsterDeath(boss); m:OnMonsterDeath(boss)
+            assert(clears.n==1,"duplicate death must not replay final clear")
+            assert(progress(a,"dungeon_guild_clear_dungeon")==1 and progress(b,"dungeon_guild_clear_dungeon")==1)
+            assert(progress(nearby,"dungeon_guild_clear_dungeon")==0)
+            m.run_epoch=2; m.is_cleared=false; m.state="READY"; m.current_wave=0; m.players_in_dungeon={}
+            assert(m:EnterDungeon(a)); assert(entries.n==2)
+        ''')
+
+    def test_dungeon_kills_require_current_member_and_owned_run(self):
+        self.lua.execute('''
+            local m=manager(); local a=player("member"); local b=player("nearby"); assert(m:EnterDungeon(a))
+            local function kill(p,prefab,epoch,owner)
+                local v=entity(prefab); v.components.health={IsDead=function() return true end}
+                v.hh_dungeon_manager=owner; v.hh_dungeon_run_epoch=epoch
+                p:PushEvent("killed",{victim=v}); p:PushEvent("killed",{victim=v})
+            end
+            kill(b,"hh_igris_dungeon",1,m); kill(a,"hh_igris_dungeon",0,m); kill(a,"hh_igris_dungeon",1,{})
+            assert(progress(a,"dungeon_guild_defeat_igris")==0 and progress(b,"dungeon_guild_defeat_igris")==0)
+            kill(a,"hh_igris_dungeon",1,m); kill(a,"hh_beru_dungeon",1,m)
+            assert(progress(a,"dungeon_guild_defeat_igris")==1 and progress(a,"dungeon_guild_defeat_beru")==1)
+        ''')
+
+    def test_coin_add_spend_load_and_dungeon_purchase_commit(self):
+        self.lua.execute('''
+            local a=player("a"); local b=player("b"); local inv=inventory(a)
+            local wallet=require("components/hh_dungeon_coin")(a); a.components.hh_dungeon_coin=wallet
+            wallet:OnLoad({coins=100000}); wallet:Spend(10); wallet:Add(0)
+            assert(progress(a,"dungeon_guild_earn_dungeon_coin")==0)
+            wallet:Add(40,"reward"); assert(progress(a,"dungeon_guild_earn_dungeon_coin")==40)
+            local shop=require("components/hh_dungeon_shop")(TheWorld); shop:EnsureCycle()
+            local id=shop.active[1]; local before=shop.stock[id]; local coins=wallet.coins
+            local receipts=counts(a,"hh_dungeon_shop_purchased")
+            a.tags.playerghost=true; assert(not shop:Purchase(a,id)); a.tags.playerghost=nil
+            a.tags.hh_dungeon_transition=true; assert(not shop:Purchase(a,id)); a.tags.hh_dungeon_transition=nil
+            assert(not shop:Purchase(a,"invalid")); inv.fail=true; assert(not shop:Purchase(a,id)); inv.fail=false
+            local spend=wallet.Spend; wallet.Spend=function() return false end
+            assert(not shop:Purchase(a,id)); wallet.Spend=spend
+            assert(next(inv.itemslots)==nil and receipts.n==0 and shop.stock[id]==before and wallet.coins==coins)
+            a:ListenForEvent("hh_dungeon_shop_purchased",function() assert(shop.stock[id]==before-1 and wallet.coins<coins) end)
+            assert(shop:Purchase(a,id)); assert(receipts.n==1)
+            assert(progress(a,"dungeon_guild_buy_dungeon_item")==1 and progress(a,"gacha_shop_shop_purchase")==1)
+            assert(progress(b,"gacha_shop_shop_purchase")==0 and progress(a,"dungeon_guild_earn_dungeon_coin")==40)
+        ''')
+
+    def test_guild_quest_and_exam_commit_not_auto_promotion(self):
+        self.lua.execute('''
+            local a=player("a"); local r=rank(a)
+            local q=require("components/hh_guild_quest")(a); a.components.hh_guild_quest=q
+            q:EnsureOffers(); local id=q.offers[1]; assert(id)
+            assert(not q:StartQuest(-99)); q:CompleteQuest()
+            assert(progress(a,"dungeon_guild_accept_guild_quest")==0 and progress(a,"dungeon_guild_complete_guild_quest")==0)
+            assert(q:StartQuest(id)); assert(progress(a,"dungeon_guild_accept_guild_quest")==1)
+            q:AddProgress(q.target); q:CompleteQuest(); assert(progress(a,"dungeon_guild_complete_guild_quest")==1)
+            assert(not r:ClaimExam()); r.rank=6; a.components.hh_leveling={level=70}; assert(r:ReconcileLevelPromotion())
+            assert(r.rank==7 and progress(a,"dungeon_guild_pass_rank_exam")==0)
+            a.components.hh_leveling.level=100; assert(r:ReconcileLevelPromotion()); assert(r.rank==8)
+            assert(progress(a,"dungeon_guild_pass_rank_exam")==0)
+            r.rank=1; r.exam_id=1; r.exam_status=3; assert(r:ClaimExam())
+            assert(progress(a,"dungeon_guild_pass_rank_exam")==1)
+        ''')
+
+    def test_guild_staff_validation_and_shop_credit_rollback(self):
+        self.lua.execute('''
+            local a=player("a"); local r=rank(a); local ui=false
+            a.hh_guild_ui_open={set=function(_,v) ui=v end}
+            assert(not r:OpenInterface(nil)); assert(not ui and progress(a,"dungeon_guild_meet_guild")==0)
+            local staff=entity("guild_staff"); staff.tags.hh_guild_employee=true
+            staff.BeginGuildInteraction=function() end
+            staff.valid=false; assert(not r:OpenInterface(staff)); staff.valid=true
+            staff.tags.hh_guild_employee=nil; assert(not r:OpenInterface(staff)); staff.tags.hh_guild_employee=true
+            a.tags.playerghost=true; assert(not r:OpenInterface(staff)); a.tags.playerghost=nil
+            TheWorld.state.phase="night"; assert(not r:OpenInterface(staff)); TheWorld.state.phase="day"
+            assert(r:OpenInterface(staff)); assert(ui and progress(a,"dungeon_guild_meet_guild")==1)
+            local shop=require("components/hh_guild_shop")(a); a.components.hh_guild_shop=shop; r.credit=100000; r.rank=8
+            local id=shop.active_products[1]; local before=shop.stock[id]; local inv=a.components.inventory
+            local receipts=counts(a,"hh_guild_shop_purchased")
+            inv.fail=true; assert(not shop:Purchase(id,1)); inv.fail=false
+            local spend=r.SpendCredit; r.SpendCredit=function() return false end
+            assert(not shop:Purchase(id,1)); r.SpendCredit=spend
+            assert(next(inv.itemslots)==nil,"failed credit debit must roll delivery back")
+            assert(receipts.n==0 and shop.stock[id]==before and r.credit==100000)
+            -- The delivery transaction must also rollback a debit callback exception.
+            r.SpendCredit=function(s) s.credit=s.credit-1; error("failed debit sync") end
+            assert(not shop:Purchase(id,1)); r.SpendCredit=spend
+            assert(next(inv.itemslots)==nil and receipts.n==0 and shop.stock[id]==before and r.credit==100000)
+            a:ListenForEvent("hh_guild_shop_purchased",function() assert(shop.stock[id]==before-1 and r.credit<100000) end)
+            assert(shop:Purchase(id,1)); assert(receipts.n==1)
+            for _,id in ipairs({"dungeon_guild_spend_guild_credit","dungeon_guild_visit_guild_shop","gacha_shop_shop_discount"}) do
+                assert(progress(a,id)==1,id)
+            end
+        ''')
+
+    def test_component_methods_reject_non_surface_and_client_transactions(self):
+        self.lua.execute('''
+            local a=player("a"); local r=rank(a); r.rank=8; r.credit=100000
+            local guild=require("components/hh_guild_shop")(a); local id=guild.active_products[1]
+            local dungeon=require("components/hh_dungeon_shop")(TheWorld); dungeon:EnsureCycle()
+            local wallet=require("components/hh_dungeon_coin")(a); a.components.hh_dungeon_coin=wallet; wallet.coins=100000
+            local m=manager(); local w=m.inst
+            for _,mode in ipairs({"client","cave","secondary"}) do
+                TheWorld.ismastersim=mode~="client"; TheWorld.ismastershard=mode~="secondary"; TheWorld.cave=mode=="cave"
+                w.ismastersim=TheWorld.ismastersim; w.ismastershard=TheWorld.ismastershard; w.tags.forest=not TheWorld.cave
+                assert(not m:EnterDungeon(a)); assert(not guild:Purchase(id,1)); assert(not dungeon:Purchase(a,dungeon.active[1]))
+                r.rank=1; r.exam_id=1; r.exam_status=3; assert(not r:ClaimExam())
+                local q=require("components/hh_guild_quest")(a); a.components.hh_guild_quest=q
+                q:EnsureOffers(); local quest=q.offers[1]; assert(q:StartQuest(quest)); q:AddProgress(q.target)
+                assert(progress(a,"dungeon_guild_accept_guild_quest")==0 and progress(a,"dungeon_guild_complete_guild_quest")==0)
+            end
+            assert(next(a.components.inventory.itemslots)==nil and r.credit==100000 and wallet.coins==100000)
+            assert(progress(a,"dungeon_guild_enter_dungeon")==0 and progress(a,"dungeon_guild_pass_rank_exam")==0)
+        ''')
+
+    def test_existing_dungeon_open_validation_and_surface_only_routes(self):
+        # Execute the existing server validator/handler verbatim, without loading client UI.
+        source=(MOD / "main/hh_dungeon_shop.lua").read_text(encoding="utf-8")
+        block=source[source.index("local function CanOpen(player)"):source.index('AddModRPCHandler("hh_rpc", "hh_dungeon_shop_buy"')]
+        self.lua.execute('function AddModRPCHandler(_,_,fn) open_shop=fn end')
+        self.lua.execute(block)
+        self.lua.execute('''
+            local a=player("a"); local b=player("b")
+            TheWorld.components.hh_dungeon_shop=require("components/hh_dungeon_shop")(TheWorld)
+            a.tags.playerghost=true; open_shop(a); a.tags.playerghost=nil
+            a.tags.hh_dungeon_transition=true; open_shop(a); a.tags.hh_dungeon_transition=nil
+            TheWorld.cave=true; open_shop(a); TheWorld.cave=false
+            assert(progress(a,"gacha_shop_shop_visit")==0)
+            open_shop(a); assert(progress(a,"gacha_shop_shop_visit")==1 and progress(b,"gacha_shop_shop_visit")==0)
+            TheWorld.ismastershard=false
+            local wallet=require("components/hh_dungeon_coin")(b); wallet:Add(100,"reward"); open_shop(b)
+            assert(progress(b,"dungeon_guild_earn_dungeon_coin")==0 and progress(b,"gacha_shop_shop_visit")==0)
+            TheWorld.ismastershard=true; TheWorld.ismastersim=false; wallet:Add(100,"reward")
+            assert(progress(b,"dungeon_guild_earn_dungeon_coin")==0)
+        ''')
+
+
 if __name__ == "__main__":
     unittest.main()

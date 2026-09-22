@@ -1,4 +1,5 @@
 local ShopDefs = require("guild/hh_guild_shop_defs")
+local IsSurfaceAuthority = require("utils/hh_dungeon_authority")
 
 local function GetResetDays()
     return TUNING.HH_GUILD and TUNING.HH_GUILD.SHOP_RESET_DAYS or 4
@@ -102,6 +103,10 @@ function HHGuildShop:GetStock(product_id)
 end
 
 function HHGuildShop:Purchase(product_id, purchase_count)
+    if not IsSurfaceAuthority(TheWorld) or not self.inst:IsValid()
+        or not self.inst:HasTag("player") or self.inst:HasTag("playerghost") then
+        return false, "Giao dịch không khả dụng."
+    end
     self:EnsureCycle()
     product_id = tonumber(product_id)
     purchase_count = tonumber(purchase_count) or 1
@@ -141,16 +146,17 @@ function HHGuildShop:Purchase(product_id, purchase_count)
         return false, "Kho đồ không đủ chỗ."
     end
 
-    if not rank:GiveItems(items) then
+    local credit_before = rank.credit
+    if not rank:GiveItems(items, function() return rank:SpendCredit(total_cost) end) then
+        rank.credit = credit_before
+        rank:Sync()
         return false, "Không thể tạo vật phẩm. Giao dịch đã hủy."
-    end
-    if not rank:SpendCredit(total_cost) then
-        return false, "Không thể trừ Xu Hiệp Hội. Giao dịch đã hủy."
     end
 
     self.stock[product.id] = self.stock[product.id] - purchase_count
     self:Sync()
     rank:SetNotice("Đã mua " .. tostring((product.amount or 1) * purchase_count) .. " " .. product.name .. ".")
+    self.inst:PushEvent("hh_guild_shop_purchased", { product_id=product.id, count=purchase_count, cost=total_cost })
     return true
 end
 
