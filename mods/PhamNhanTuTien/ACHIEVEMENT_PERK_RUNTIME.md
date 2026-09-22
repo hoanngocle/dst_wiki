@@ -1,0 +1,50 @@
+# Phàm Nhân Tu Tiên 2.0 — achievement perk runtime audit
+
+Task 10 implements the available gameplay adapters, but **does not complete all 39 approved perks**. The catalog, prices, seven 25-level caps, 945-Star maximum and all 50 inheritance source IDs remain intact. Missing upstream content is not replaced by a similarly named weapon or empty unlock.
+
+## Implemented integration
+
+- Seven stats use one idempotent provider. Crit/lifesteal contributions are separate from the existing `hh_player` effect table; planar bonuses use native named sources; scale uses `AnimState` only. Kill EXP multiplies the rank, dungeon, level, sharing and perk factors before one final rounding. The dungeon multiplier clamp is removed. Daily reward and seasonal EXP tuning are unchanged.
+- Twelve abilities have scoped adapters: fast pick/build, instant eligible mining/chopping, immediate pond-fishing bite, instant successful stewing, Warly cookware access, doubled healing, successful pick yield, eligible dead-monster loot, native ingredient discount, protected cages and enhanced fertilizer.
+- Mining/chopping preserve native recoil/tool eligibility. Healing preserves other efficient-user modifiers. Pick callbacks and kill victims are deduplicated. Loading/reapplying does not add listeners twice.
+- Cage protection applies after the perk owner successfully builds or stores a bird in that cage, and persists on that cage. It does not change `PERISH_CAGE_MULT` globally.
+- Easy Farm adds one additional native fertilizer nutrient dose to the exact successfully fertilized farm-soil tile. Native nutrient caps remain. This improves later nutrient-stress checks instead of changing all farms' growth rules globally.
+- Eleven original craft packages register native technology-family aliases and retained source ingredient costs. Christmas/Pokeball structure recipes have 13 native-art placers. Existing open recipes remain open. Perk aliases use the catalog's EVA-only tags and refresh crafting immediately.
+- Four inheritance packages register eight exact source recipe names producing their audited current equivalents (table below). Their remaining source entries are not registered.
+
+## Safe inheritance mappings
+
+| Source recipe | Current product |
+|---|---|
+| `xd_luoshen_huazhong` | `ttk_luoshen_huazhong` |
+| `xd_yunxiao_fysz` | `thanhiquangtruong` |
+| `xd_yunxiao_ymsz` | `ttk_yunxiao_ymsz` |
+| `xd_yunxiao_portable_spicer` | `ttk_yunxiao_portable_spicer` |
+| `xd_sj_kls` | `ttk_sj_kls` |
+| `xd_sudaji_redlantern` | `ttk_ngulongdang` |
+| `xd_sudaji_ywfh` | `nhatvuphuonghoa` |
+| `xd_qwsk` | `ttk_qwsk` |
+
+## Unavailable content
+
+Purchasing `trinket_owner` fails without the missing `trinketowner` component. Purchasing `icy_weed` fails without `chasni_icyweed`. No Star is spent on these failed applications. The catalog entries are retained.
+
+Antique Shop currently supplies the native `trinket_1..NUM_TRINKETS` recipes. Its 21 source-specific products are absent: `trinket_chasni_3`, `4`, `5`, `7`, `8`, `9`, `10`, `11`, `12`, `13`, `14`, `15`, `16`, `17`, `18a`, `18b`, `19`, `20`, `21`, `23`, `24` (all with the same `trinket_chasni_` prefix). Those prefab/assets and equipment-effect dependencies need a separate port; this package is partial.
+
+The 42 unavailable inheritance recipes are:
+
+- Lạc Thần (9): `fence_gate_luoshen_item`, `xd_luoshen_jihuaze`, `xd_luoshen_jiangren`, `xd_luoshen_liuguanghuafen`, `xd_luoshen_yin`, `xd_luoshen_huaxia`, `fence_luoshen_item`, `wall_luoshen_item`, `xd_luoshen_dinghunxianglu`.
+- Tam Tiêu (4): `xd_yunxiao_hyjditem`, `xd_yunxiao_fgfq`, `xd_yunxiao_fls`, `xd_yunxiao_hyjdyqd`.
+- Thạch Cơ (7): `xd_sj_bglxp`, `xd_sj_bgygp`, `xd_sj_by_builder`, `xd_sj_tlsq`, `xd_sj_cy_builder`, `xd_sj_sxz`, `xd_sj_xsydz`.
+- Tinh Vệ (7): `xd_xuanyu`, `xd_jingwei_blowdart`, `xd_jingwei_fenice_builder`, `xd_jingwei_fan`, `xd_jingwei_hat`, `turf_jingweitile`, `xd_qianyu`.
+- Tô Đát Kỷ (2): `xd_sudaji_sjpn`, `xd_sudaji_tsmd`.
+- Hàn Thiên Tôn (3): `xd_htz_xyzzl`, `xd_htz_sjcx`, `xd_htz_tlz`.
+- Vương Ma Tử (10): `xd_wmz_kjb`, `xd_wmz_slxj`, `xd_wmz_md1..8`.
+
+Tinh Vệ, Hàn Thiên Tôn and Vương Ma Tử therefore reject purchase completely. Wang Mazi's eight forms have no registered EVA-safe prefab/component implementation; related art and existing weapons are not proof of compatible source spell state. The runtime exposes `UnavailableInheritance()` for this exact dependency list.
+
+## Verification limits
+
+Tests are Python standard-library source contracts; no Lua interpreter or running DST server is available. They do not establish in-game correctness, native recipe asset rendering, or server/client synchronization. Installed DST `scripts.zip` was read to verify component APIs and action success semantics.
+
+The complete mod discovery run encountered absent `lupa` and absent `.superpowers/luoshen-runtime` dependencies; the repository npm suite cannot start without `vitest`. The focused achievement/alchemy/cultivation/rank regression files run independently of those unavailable harnesses.

@@ -1,4 +1,4 @@
--- Phàm Nhân Tu Tiên: authoritative evidence adapters, no UI or perk effects.
+-- Phàm Nhân Tu Tiên: authoritative evidence adapters and perk installation.
 local G = GLOBAL
 if rawget(env, "_ttk_achievement_registered") then return end
 rawset(env, "_ttk_achievement_registered", true)
@@ -6,6 +6,7 @@ rawset(env, "_ttk_achievement_registered", true)
 local AchievementCatalog = require("achievement/ttk_achievement_catalog")
 local SeasonalCatalog = require("achievement/ttk_seasonal_catalog")
 local PerkCatalog = require("achievement/ttk_perk_catalog")
+local PerkEffects = require("achievement/ttk_perk_effects")
 local RankDefs = require("guild/hh_rank_defs")
 local AlchemyDefs = require("alchemy/ttk_alchemy_defs")
 local CHEST_MILESTONES = { 5, 10, 15, 20 }
@@ -309,6 +310,9 @@ local function InstallPlayer(inst)
     inst._ttk_achievement_installed = true
     if inst.components.ttk_achievement_progress == nil then inst:AddComponent("ttk_achievement_progress") end
     local component = inst.components.ttk_achievement_progress
+    PerkEffects.Install(inst)
+    component:SetEffectCallback(PerkEffects.Apply)
+    component:ReapplyPurchased()
     local state = { kills=setmetatable({}, { __mode="k" }), dead=false }
     inst._ttk_achievement_state = state
     ConfigureXP(inst, component)
@@ -363,6 +367,7 @@ local function InstallPlayer(inst)
 end
 
 AddPlayerPostInit(InstallPlayer)
+modimport("main/ttk_achievement_perks.lua")
 AddComponentPostInit("eater", InstallEater)
 AddComponentPostInit("inventoryitem", function(self)
     if not Master() or self._ttk_achievement_hook then return end
@@ -427,8 +432,12 @@ AddComponentPostInit("deployable", function(self)
     local previous = self.Deploy
     self.Deploy = function(deployable, pt, deployer, ...)
         local prefab = deployable.inst.prefab
+        local fertilizer = deployable.inst.components.fertilizer
+        local nutrients = fertilizer ~= nil and fertilizer.nutrients ~= nil
+            and { fertilizer.nutrients[1], fertilizer.nutrients[2], fertilizer.nutrients[3] } or nil
         local ok, reason = previous(deployable, pt, deployer, ...)
         if ok == true and ResolveSender(deployer) ~= nil then
+            PerkEffects.ApplyFertilizer(deployer, pt, nutrients)
             Seasonal(deployer, "deployitem", { action="DEPLOY", prefab=prefab }, 1)
         end
         return ok, reason

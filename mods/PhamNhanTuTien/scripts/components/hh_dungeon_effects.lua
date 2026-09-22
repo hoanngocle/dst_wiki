@@ -241,7 +241,7 @@ function HHDungeonEffects:GetExpMultiplier(is_dungeon)
     elseif self:IsActive("player_exp") then
         multiplier = multiplier * 1.25
     end
-    return math.min(1.50, multiplier)
+    return multiplier
 end
 
 function HHDungeonEffects:GetManaCostMultiplier(reason)

@@ -135,8 +135,9 @@ local function HHAwardKillExp(killer, victim)
             and (tonumber(super_growth.KILL_EXP_MULT) or 2) or 1
         local exp_multiplier = effects ~= nil
             and effects:GetExpMultiplier(victim.hh_is_dungeon_monster or victim.hh_is_dungeon_boss) or 1
+        local achievement_multiplier = require("achievement/ttk_perk_effects").GetXPMultiplier(player)
         local amount = math.max(1, math.floor(meta.exp * HHGetLevelFactor(player, meta)
-            * rank_multiplier * exp_multiplier / #recipients + 0.5))
+            * rank_multiplier * exp_multiplier * achievement_multiplier / #recipients + 0.5))
         if player.components.hh_leveling:AddExp(amount) then
             HHUtils:SpawnClientStrFx(player, "+" .. tostring(amount) .. " EXP")
         end

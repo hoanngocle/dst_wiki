@@ -636,14 +636,16 @@ function b_u__G:LoadWorldValue()
         not true and not true)
 end
 function b_u__G:GetEffectValueByKey(__b_U__g__)
+    local achievement = self.inst.ttk_achievement_effects
+    local achievement_bonus = achievement ~= nil and (achievement[__b_U__g__] or 0) or 0
     if not self["hh_effects"] or not self["hh_effects"][__b_U__g__] then
-        return 0
+        return achievement_bonus
     end
     local B_ug = self["hh_effects"][__b_U__g__]
     if not _B__Ug__:IsHHType(B_ug, "number") or B_ug < 0 then
-        return 0
+        return achievement_bonus
     end
-    return B_ug
+    return B_ug + achievement_bonus
 end
 function b_u__G:AddEffectValueByKey(B__u__g__, __B_u_g_)
     if
