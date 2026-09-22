@@ -6,7 +6,7 @@ local bosses = {
     futu = {name="Ma Tướng Phù Đồ", unique=true, blueprint="ttk_xshj_blueprint"},
     spiderqueen = {name="Tà Sát Thù Vương", food_name="Ma Thù Nội Đan", summon_name="Huyết Ngọc Tri Thù Noãn", stat="hunger", gain=20, effect="immunePoison"},
     ziyunboss = {name="Tử Vân Ma Quân", unique=true, blueprint="ttk_zcmj_blueprint"},
-    stalke_fuben = {name="Thượng Cổ Hắc Ám", food_name="Hắc Ám Hồn Tinh", summon_name="Tâm Nhĩ Hắc Ám", summon_icon="shadowheart", stat="reduceAttackedDamage", gain=2, effect="immunitySleep"},
+    stalke_fuben = {name="Thượng Cổ Hắc Ám", food_name="Hắc Ám Hồn Tinh", summon_name="Tâm Nhĩ Hắc Ám", summon_icon="shadowheart", stat="absorbDamage", gain=2, effect="immunitySleep"},
     deerclops_ziyun = {name="Hồn Phách Tinh Thể Hươu Một Mắt", food_name="Băng Phách Tinh Tủy", summon_name="Độc Nhãn Tàn Hồn", stat="sanity", gain=20, effect="immuneFreeze"},
 }
 local order={"baihu","jfsn","qlch","qxdx","futu","spiderqueen","ziyunboss","stalke_fuben","deerclops_ziyun"}

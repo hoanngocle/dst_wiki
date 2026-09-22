@@ -240,7 +240,6 @@ local function L(M)
         M["components"]["hh_player"]:AddEffectValueByKey("immunePoison", 1)
         M["components"]["hh_player"]:AddEffectValueByKey("immuneCold", 1)
         M["components"]["hh_player"]:AddEffectValueByKey("immuneHot", 1)
-        M["components"]["hh_player"]:AddEffectValueByKey("immuneBramble", 1)
         M["components"]["hh_player"]:AddEffectValueByKey("immuneReduceSpeed", 1)
         M["components"]["hh_player"]:AddEffectValueByKey("immuneSuppressNum", 1)
     end
@@ -254,7 +253,6 @@ local function N(M)
         M["components"]["hh_player"]:ReduceEffectValueByKey("immunePoison", 1)
         M["components"]["hh_player"]:ReduceEffectValueByKey("immuneCold", 1)
         M["components"]["hh_player"]:ReduceEffectValueByKey("immuneHot", 1)
-        M["components"]["hh_player"]:ReduceEffectValueByKey("immuneBramble", 1)
         M["components"]["hh_player"]:ReduceEffectValueByKey("immuneReduceSpeed", 1)
         M["components"]["hh_player"]:ReduceEffectValueByKey("immuneSuppressNum", 1)
     end
@@ -536,7 +534,7 @@ local af = {
         ["check_desc"] = "trang bị tay",
         ["only_one"] = true,
         ["can_add"] = true,
-        ["value_range"] = {["min"] = 1, ["max"] = 25},
+        ["value_range"] = {["min"] = 5, ["max"] = 25},
         ["star_rating"] = 8,
         ["check_equip_can_add"] = function(s)
             if r(s, EQUIPSLOTS["HANDS"]) then
@@ -639,165 +637,6 @@ local af = {
         end,
         ["end_fn"] = function(s, I)
             a8(s, -I)
-        end
-    },
-    ["san_replace_damage_small"] = {
-        ["id"] = 85,
-        ["name"] = "Lá Chắn I",
-        ["client_text"] = "LC\nI",
-        ["desc"] = b["san_replace_damage"],
-        ["check_desc"] = "tất cả",
-        ["can_add"] = true,
-        ["only_one"] = true,
-        ["star_rating"] = 4,
-        ["value_range"] = {["min"] = 1, ["max"] = 10},
-        ["on_equip_fn"] = function(s, M, I)
-            if a:HasComponents(M, "hh_player") then
-                M["components"]["hh_player"]:AddEffectValueByKey("sanReplaceDamageChance", I)
-            end
-        end,
-        ["un_equip_fn"] = function(s, M, I)
-            if a:HasComponents(M, "hh_player") then
-                M["components"]["hh_player"]:ReduceEffectValueByKey("sanReplaceDamageChance", I)
-            end
-        end
-    },
-    ["san_replace_damage_big"] = {
-        ["id"] = 86,
-        ["name"] = "Lá Chắn II",
-        ["client_text"] = "LC\nII",
-        ["desc"] = b["san_replace_damage"],
-        ["check_desc"] = "tất cả",
-        ["can_add"] = true,
-        ["only_one"] = true,
-        ["star_rating"] = 6,
-        ["value_range"] = {["min"] = 1, ["max"] = 20},
-        ["on_equip_fn"] = function(s, M, I)
-            if a:HasComponents(M, "hh_player") then
-                M["components"]["hh_player"]:AddEffectValueByKey("sanReplaceDamageChance", I)
-            end
-        end,
-        ["un_equip_fn"] = function(s, M, I)
-            if a:HasComponents(M, "hh_player") then
-                M["components"]["hh_player"]:ReduceEffectValueByKey("sanReplaceDamageChance", I)
-            end
-        end
-    },
-    ["reflexive_injury_small"] = {
-        ["id"] = 83,
-        ["name"] = "Phản Kích I",
-        ["client_text"] = "PK\nI",
-        ["desc"] = b["reflexive_injury"],
-        ["check_desc"] = "ngoại trừ vũ khí",
-        ["can_add"] = true,
-        ["only_one"] = true,
-        ["star_rating"] = 4,
-        ["value_range"] = {["min"] = 1, ["max"] = 10},
-        ["check_equip_can_add"] = function(s)
-            if a:HasComponents(s, "weapon") then
-                return false, "ko ép được vũ khí"
-            end
-            return true, "đáp ứng các điều kiện"
-        end,
-        ["on_equip_fn"] = function(s, M, I)
-            if not a:HasComponents(M, "hh_player") then
-                return
-            end
-            M["components"]["hh_player"]:AddEffectValueByKey("reflexiveInjury", I)
-        end,
-        ["un_equip_fn"] = function(s, M, I)
-            if not a:HasComponents(M, "hh_player") then
-                return
-            end
-            M["components"]["hh_player"]:ReduceEffectValueByKey("reflexiveInjury", I)
-        end
-    },
-    ["reflexive_injury_med"] = {
-        ["id"] = 84,
-        ["name"] = "Phản Kích II",
-        ["client_text"] = "PK\nII",
-        ["desc"] = b["reflexive_injury"],
-        ["check_desc"] = "ngoại trừ vũ khí",
-        ["can_add"] = true,
-        ["only_one"] = true,
-        ["star_rating"] = 4,
-        ["value_range"] = {["min"] = 5, ["max"] = 15},
-        ["check_equip_can_add"] = function(s)
-            if a:HasComponents(s, "weapon") then
-                return false, "ko ép được vũ khí"
-            end
-            return true, "đáp ứng các điều kiện"
-        end,
-        ["on_equip_fn"] = function(s, M, I)
-            if not a:HasComponents(M, "hh_player") then
-                return
-            end
-            M["components"]["hh_player"]:AddEffectValueByKey("reflexiveInjury", I)
-        end,
-        ["un_equip_fn"] = function(s, M, I)
-            if not a:HasComponents(M, "hh_player") then
-                return
-            end
-            M["components"]["hh_player"]:ReduceEffectValueByKey("reflexiveInjury", I)
-        end
-    },
-    ["reflexive_injury_big"] = {
-        ["id"] = 81,
-        ["name"] = "☆Phản Kích III",
-        ["client_text"] = "PK\nIII",
-        ["desc"] = b["reflexive_injury"],
-        ["check_desc"] = "ngoại trừ vũ khí",
-        ["can_add"] = false,
-        ["only_one"] = true,
-        ["star_rating"] = 8,
-        ["value_range"] = {["min"] = 10, ["max"] = 20},
-        ["check_equip_can_add"] = function(s)
-            if a:HasComponents(s, "weapon") then
-                return false, "ko ép được vũ khí"
-            end
-            return true, "đáp ứng các điều kiện"
-        end,
-        ["on_equip_fn"] = function(s, M, I)
-            if not a:HasComponents(M, "hh_player") then
-                return
-            end
-            M["components"]["hh_player"]:AddEffectValueByKey("reflexiveInjury", I)
-        end,
-        ["un_equip_fn"] = function(s, M, I)
-            if not a:HasComponents(M, "hh_player") then
-                return
-            end
-            M["components"]["hh_player"]:ReduceEffectValueByKey("reflexiveInjury", I)
-        end
-    },
-    ["reflexive_injury_special"] = {
-        ["id"] = 82,
-        ["name"] = "★Phản Kích IV",
-        ["client_text"] = "PK\nIV",
-        ["desc"] = b["reflexive_injury"],
-        ["check_desc"] = "ngoại trừ vũ khí",
-        ["can_add"] = false,
-        ["only_one"] = true,
-        ["client_color"] = {255 / 255, 0 / 255, 0 / 255, 1},
-        ["star_rating"] = 8,
-        ["value_range"] = {["min"] = 15, ["max"] = 30},
-        ["check_equip_can_add"] = function(s)
-            if a:HasComponents(s, "weapon") then
-                return false, "ko ép được vũ khí"
-            end
-            return true, "đáp ứng các điều kiện"
-        end,
-        ["on_equip_fn"] = function(s, M, I)
-            if not a:HasComponents(M, "hh_player") then
-                return
-            end
-            M["components"]["hh_player"]:AddEffectValueByKey("reflexiveInjury", I)
-        end,
-        ["un_equip_fn"] = function(s, M, I)
-            if not a:HasComponents(M, "hh_player") then
-                return
-            end
-            M["components"]["hh_player"]:ReduceEffectValueByKey("reflexiveInjury", I)
         end
     },
     ["add_critical_hit_rate_small"] = {
@@ -919,6 +758,8 @@ local af = {
         end
     },
     ["atk_speed_small"] = {
+        ["slot"] = "hand",
+        ["exclusive_group"] = "attack_speed",
         ["id"] = 75,
         ["name"] = "Liên Kích I",
         ["client_text"] = "LK\nI",
@@ -927,7 +768,7 @@ local af = {
         ["can_add"] = true,
         ["only_one"] = true,
         ["star_rating"] = 4,
-        ["value_range"] = {["min"] = 1, ["max"] = 10},
+        ["value_range"] = {["min"] = 5, ["max"] = 10},
         ["check_equip_can_add"] = function(s)
             if r(s, EQUIPSLOTS["HANDS"]) then
                 return true, "đáp ứng các điều kiện"
@@ -950,6 +791,8 @@ local af = {
         end
     },
     ["atk_speed_med"] = {
+        ["slot"] = "hand",
+        ["exclusive_group"] = "attack_speed",
         ["id"] = 76,
         ["name"] = "Liên Kích II",
         ["client_text"] = "LK\nII",
@@ -958,7 +801,7 @@ local af = {
         ["can_add"] = true,
         ["only_one"] = true,
         ["star_rating"] = 6,
-        ["value_range"] = {["min"] = 5, ["max"] = 20},
+        ["value_range"] = {["min"] = 15, ["max"] = 25},
         ["check_equip_can_add"] = function(s)
             if r(s, EQUIPSLOTS["HANDS"]) then
                 return true, "đáp ứng các điều kiện"
@@ -981,6 +824,8 @@ local af = {
         end
     },
     ["atk_speed_big"] = {
+        ["slot"] = "hand",
+        ["exclusive_group"] = "attack_speed",
         ["id"] = 73,
         ["name"] = "☆Liên Kích III",
         ["client_text"] = "LK\nIII",
@@ -989,7 +834,7 @@ local af = {
         ["can_add"] = false,
         ["only_one"] = true,
         ["star_rating"] = 8,
-        ["value_range"] = {["min"] = 10, ["max"] = 35},
+        ["value_range"] = {["min"] = 30, ["max"] = 45},
         ["check_equip_can_add"] = function(s)
             if r(s, EQUIPSLOTS["HANDS"]) then
                 return true, "đáp ứng các điều kiện"
@@ -1012,6 +857,8 @@ local af = {
         end
     },
     ["atk_speed_special"] = {
+        ["slot"] = "hand",
+        ["exclusive_group"] = "attack_speed",
         ["id"] = 74,
         ["name"] = "★Liên Kích IV",
         ["client_text"] = "LK\nIV",
@@ -1022,7 +869,7 @@ local af = {
         ["client_color"] = {255 / 255, 0 / 255, 0 / 255, 1},
         ["only_compound"] = true,
         ["star_rating"] = 10,
-        ["value_range"] = {["min"] = 20, ["max"] = 70},
+        ["value_range"] = {["min"] = 50, ["max"] = 70},
         ["check_equip_can_add"] = function(s)
             if r(s, EQUIPSLOTS["HANDS"]) then
                 return true, "đáp ứng các điều kiện"
@@ -1294,6 +1141,8 @@ local af = {
         end
     },
     ["true_damage_small"] = {
+        ["slot"] = "hand",
+        ["exclusive_group"] = "armor_pierce",
         ["id"] = 63,
         ["name"] = "Xuyên Giáp I",
         ["client_text"] = "XG\nI",
@@ -1302,7 +1151,7 @@ local af = {
         ["can_add"] = true,
         ["only_one"] = true,
         ["star_rating"] = 4,
-        ["value_range"] = {["min"] = 10, ["max"] = 30},
+        ["value_range"] = {["min"] = 3, ["max"] = 5},
         ["check_equip_can_add"] = function(s)
             if a:HasComponents(s, "weapon") then
                 return true, "đáp ứng các điều kiện"
@@ -1321,6 +1170,8 @@ local af = {
         end
     },
     ["true_damage_med"] = {
+        ["slot"] = "hand",
+        ["exclusive_group"] = "armor_pierce",
         ["id"] = 64,
         ["name"] = "Xuyên Giáp II",
         ["client_text"] = "XG\nII",
@@ -1329,7 +1180,7 @@ local af = {
         ["can_add"] = true,
         ["only_one"] = true,
         ["star_rating"] = 6,
-        ["value_range"] = {["min"] = 20, ["max"] = 60},
+        ["value_range"] = {["min"] = 6, ["max"] = 10},
         ["check_equip_can_add"] = function(s)
             if a:HasComponents(s, "weapon") then
                 return true, "đáp ứng các điều kiện"
@@ -1348,6 +1199,8 @@ local af = {
         end
     },
     ["true_damage_big"] = {
+        ["slot"] = "hand",
+        ["exclusive_group"] = "armor_pierce",
         ["id"] = 61,
         ["name"] = "☆Xuyên Giáp III",
         ["client_text"] = "XG\nIII",
@@ -1356,7 +1209,7 @@ local af = {
         ["can_add"] = false,
         ["only_one"] = true,
         ["star_rating"] = 8,
-        ["value_range"] = {["min"] = 40, ["max"] = 120},
+        ["value_range"] = {["min"] = 11, ["max"] = 15},
         ["check_equip_can_add"] = function(s)
             if a:HasComponents(s, "weapon") then
                 return true, "đáp ứng các điều kiện"
@@ -1375,6 +1228,8 @@ local af = {
         end
     },
     ["true_damage_special"] = {
+        ["slot"] = "hand",
+        ["exclusive_group"] = "armor_pierce",
         ["id"] = 62,
         ["name"] = "★Xuyên Giáp IV",
         ["client_text"] = "XG\nIV",
@@ -1385,7 +1240,7 @@ local af = {
         ["client_color"] = {255 / 255, 0 / 255, 0 / 255, 1},
         ["only_compound"] = true,
         ["star_rating"] = 10,
-        ["value_range"] = {["min"] = 80, ["max"] = 240},
+        ["value_range"] = {["min"] = 16, ["max"] = 20},
         ["check_equip_can_add"] = function(s)
             if a:HasComponents(s, "weapon") then
                 return true, "đáp ứng các điều kiện"
@@ -1399,76 +1254,12 @@ local af = {
             d(M, {["trueDamageNum"] = I}, false)
         end
     },
-    ["add_day_damage"] = {
-        ["id"] = 51,
-        ["name"] = "Thanh Long-Sáng",
-        ["client_text"] = "TL\nSáng",
-        ["desc"] = b["add_day_damage"],
-        ["check_desc"] = "tất cả",
-        ["can_add"] = true,
-        ["star_rating"] = 8,
-        ["value_range"] = {["min"] = 20, ["max"] = 80},
-        ["on_equip_fn"] = function(s, M, I)
-            if not a:HasComponents(M, "hh_player") then
-                return
-            end
-            M["components"]["hh_player"]:AddEffectValueByKey("sunlightStrike", I)
-        end,
-        ["un_equip_fn"] = function(s, M, I)
-            if not a:HasComponents(M, "hh_player") then
-                return
-            end
-            M["components"]["hh_player"]:ReduceEffectValueByKey("sunlightStrike", I)
-        end
-    },
-    ["add_dusk_damage"] = {
-        ["id"] = 52,
-        ["name"] = "Thanh Long-Chiều",
-        ["client_text"] = "TL\nChiều",
-        ["desc"] = b["add_dusk_damage"],
-        ["check_desc"] = "tất cả",
-        ["can_add"] = true,
-        ["star_rating"] = 8,
-        ["value_range"] = {["min"] = 20, ["max"] = 80},
-        ["on_equip_fn"] = function(s, M, I)
-            if not a:HasComponents(M, "hh_player") then
-                return
-            end
-            M["components"]["hh_player"]:AddEffectValueByKey("afterglowStrike", I)
-        end,
-        ["un_equip_fn"] = function(s, M, I)
-            if not a:HasComponents(M, "hh_player") then
-                return
-            end
-            M["components"]["hh_player"]:ReduceEffectValueByKey("afterglowStrike", I)
-        end
-    },
-    ["add_night_damage"] = {
-        ["id"] = 49,
-        ["name"] = "Thanh Long-Tối",
-        ["client_text"] = "TL\nTối",
-        ["desc"] = b["add_night_damage"],
-        ["check_desc"] = "tất cả",
-        ["can_add"] = true,
-        ["star_rating"] = 8,
-        ["value_range"] = {["min"] = 20, ["max"] = 80},
-        ["on_equip_fn"] = function(s, M, I)
-            if not a:HasComponents(M, "hh_player") then
-                return
-            end
-            M["components"]["hh_player"]:AddEffectValueByKey("nightMenace", I)
-        end,
-        ["un_equip_fn"] = function(s, M, I)
-            if not a:HasComponents(M, "hh_player") then
-                return
-            end
-            M["components"]["hh_player"]:ReduceEffectValueByKey("nightMenace", I)
-        end
-    },
     ["blood_outburst"] = {
+        ["slot"] = "hand",
+        ["exclusive_group"] = "adversity",
         ["id"] = 50,
-        ["name"] = "Thanh Long-Máu",
-        ["client_text"] = "TL\nMáu",
+        ["name"] = "Nghịch Cảnh-Máu",
+        ["client_text"] = "NC\nMáu",
         ["desc"] = b["blood_outburst"],
         ["check_desc"] = "vũ khí",
         ["can_add"] = true,
@@ -1494,9 +1285,11 @@ local af = {
         end
     },
     ["spirit_fade"] = {
+        ["slot"] = "hand",
+        ["exclusive_group"] = "adversity",
         ["id"] = 48,
-        ["name"] = "Thanh Long-Não",
-        ["client_text"] = "TL\nNão",
+        ["name"] = "Nghịch Cảnh-Não",
+        ["client_text"] = "NC\nNão",
         ["desc"] = b["spirit_fade"],
         ["check_desc"] = "vũ khí",
         ["can_add"] = true,
@@ -1522,9 +1315,11 @@ local af = {
         end
     },
     ["hunger_assault"] = {
+        ["slot"] = "hand",
+        ["exclusive_group"] = "adversity",
         ["id"] = 47,
-        ["name"] = "Thanh Long-Đói",
-        ["client_text"] = "TL\nĐói",
+        ["name"] = "Nghịch Cảnh-Đói",
+        ["client_text"] = "NC\nĐói",
         ["desc"] = b["hunger_assault"],
         ["check_desc"] = "vũ khí",
         ["can_add"] = true,
@@ -1549,237 +1344,18 @@ local af = {
             M["components"]["hh_player"]:ReduceEffectValueByKey("hungerAssault", 1)
         end
     },
-    ["add_hit_damage_monkey"] = {
-        ["id"] = 46,
-        ["name"] = "Thanh Long-Khỉ",
-        ["client_text"] = "TL\nKhỉ",
-        ["desc"] = b["add_hit_damage_monkey"],
-        ["check_desc"] = "tất cả",
-        ["can_add"] = true,
-        ["star_rating"] = 4,
-        ["value_range"] = {["min"] = 10, ["max"] = 40},
-        ["on_equip_fn"] = function(s, M, I)
-            if not a:HasComponents(M, "hh_player") then
-                return
-            end
-            M["components"]["hh_player"]:AddEffectValueByKey("addHitMonkeyDamage", I)
-        end,
-        ["un_equip_fn"] = function(s, M, I)
-            if not a:HasComponents(M, "hh_player") then
-                return
-            end
-            M["components"]["hh_player"]:ReduceEffectValueByKey("addHitMonkeyDamage", I)
-        end
-    },
-    ["add_hit_damage_boss"] = {
-        ["id"] = 45,
-        ["name"] = "Thanh Long-Trùm",
-        ["client_text"] = "TL\nTrùm",
-        ["desc"] = b["add_hit_damage_boss"],
-        ["check_desc"] = "tất cả",
-        ["can_add"] = true,
-        ["only_one"] = true,
-        ["star_rating"] = 6,
-        ["value_range"] = {["min"] = 10, ["max"] = 40},
-        ["on_equip_fn"] = function(s, M, I)
-            if not a:HasComponents(M, "hh_player") then
-                return
-            end
-            M["components"]["hh_player"]:AddEffectValueByKey("addHitBossDamage", I)
-        end,
-        ["un_equip_fn"] = function(s, M, I)
-            if not a:HasComponents(M, "hh_player") then
-                return
-            end
-            M["components"]["hh_player"]:ReduceEffectValueByKey("addHitBossDamage", I)
-        end
-    },
-    ["add_hit_damage_pig"] = {
-        ["id"] = 44,
-        ["name"] = "Thanh Long-Heo",
-        ["client_text"] = "TL\nHeo",
-        ["desc"] = b["add_hit_damage_pig"],
-        ["check_desc"] = "tất cả",
-        ["can_add"] = true,
-        ["star_rating"] = 4,
-        ["value_range"] = {["min"] = 10, ["max"] = 40},
-        ["on_equip_fn"] = function(s, M, I)
-            if not a:HasComponents(M, "hh_player") then
-                return
-            end
-            M["components"]["hh_player"]:AddEffectValueByKey("addHitPigDamage", I)
-        end,
-        ["un_equip_fn"] = function(s, M, I)
-            if not a:HasComponents(M, "hh_player") then
-                return
-            end
-            M["components"]["hh_player"]:ReduceEffectValueByKey("addHitPigDamage", I)
-        end
-    },
-    ["add_hit_damage_frog"] = {
-        ["id"] = 41,
-        ["name"] = "Thanh Long-Ếch",
-        ["client_text"] = "TL\nẾch",
-        ["desc"] = b["add_hit_damage_frog"],
-        ["check_desc"] = "tất cả",
-        ["can_add"] = true,
-        ["star_rating"] = 4,
-        ["value_range"] = {["min"] = 10, ["max"] = 40},
-        ["on_equip_fn"] = function(s, M, I)
-            if not a:HasComponents(M, "hh_player") then
-                return
-            end
-            M["components"]["hh_player"]:AddEffectValueByKey("addHitFrogDamage", I)
-        end,
-        ["un_equip_fn"] = function(s, M, I)
-            if not a:HasComponents(M, "hh_player") then
-                return
-            end
-            M["components"]["hh_player"]:ReduceEffectValueByKey("addHitFrogDamage", I)
-        end
-    },
-    ["add_hit_damage_spider"] = {
-        ["id"] = 40,
-        ["name"] = "Thanh Long-Nhện",
-        ["client_text"] = "TL\nNhện",
-        ["desc"] = b["add_hit_damage_spider"],
-        ["check_desc"] = "tất cả",
-        ["can_add"] = true,
-        ["star_rating"] = 4,
-        ["value_range"] = {["min"] = 10, ["max"] = 40},
-        ["on_equip_fn"] = function(s, M, I)
-            if not a:HasComponents(M, "hh_player") then
-                return
-            end
-            M["components"]["hh_player"]:AddEffectValueByKey("addHitSpiderDamage", I)
-        end,
-        ["un_equip_fn"] = function(s, M, I)
-            if not a:HasComponents(M, "hh_player") then
-                return
-            end
-            M["components"]["hh_player"]:ReduceEffectValueByKey("addHitSpiderDamage", I)
-        end
-    },
-    ["add_hit_damage_dog"] = {
-        ["id"] = 39,
-        ["name"] = "Thanh Long-Sói",
-        ["client_text"] = "TL\nSói",
-        ["desc"] = b["add_hit_damage_dog"],
-        ["check_desc"] = "tất cả",
-        ["can_add"] = true,
-        ["star_rating"] = 4,
-        ["value_range"] = {["min"] = 10, ["max"] = 40},
-        ["on_equip_fn"] = function(s, M, I)
-            if not a:HasComponents(M, "hh_player") then
-                return
-            end
-            M["components"]["hh_player"]:AddEffectValueByKey("addHitDogDamage", I)
-        end,
-        ["un_equip_fn"] = function(s, M, I)
-            if not a:HasComponents(M, "hh_player") then
-                return
-            end
-            M["components"]["hh_player"]:ReduceEffectValueByKey("addHitDogDamage", I)
-        end
-    },
-    ["add_hit_damage_gear"] = {
-        ["id"] = 38,
-        ["name"] = "Thanh Long-ĐH",
-        ["client_text"] = "TL\nĐH",
-        ["desc"] = b["add_hit_damage_gear"],
-        ["check_desc"] = "tất cả",
-        ["can_add"] = true,
-        ["star_rating"] = 4,
-        ["value_range"] = {["min"] = 10, ["max"] = 40},
-        ["on_equip_fn"] = function(s, M, I)
-            if not a:HasComponents(M, "hh_player") then
-                return
-            end
-            M["components"]["hh_player"]:AddEffectValueByKey("addHitGearDamage", I)
-        end,
-        ["un_equip_fn"] = function(s, M, I)
-            if not a:HasComponents(M, "hh_player") then
-                return
-            end
-            M["components"]["hh_player"]:ReduceEffectValueByKey("addHitGearDamage", I)
-        end
-    },
-    ["add_hit_damage_insect"] = {
-        ["id"] = 37,
-        ["name"] = "Thanh Long-CT",
-        ["client_text"] = "TL\nCT",
-        ["desc"] = b["add_hit_damage_insect"],
-        ["check_desc"] = "tất cả",
-        ["can_add"] = true,
-        ["star_rating"] = 4,
-        ["value_range"] = {["min"] = 10, ["max"] = 40},
-        ["on_equip_fn"] = function(s, M, I)
-            if not a:HasComponents(M, "hh_player") then
-                return
-            end
-            M["components"]["hh_player"]:AddEffectValueByKey("addHitInsectDamage", I)
-        end,
-        ["un_equip_fn"] = function(s, M, I)
-            if not a:HasComponents(M, "hh_player") then
-                return
-            end
-            M["components"]["hh_player"]:ReduceEffectValueByKey("addHitInsectDamage", I)
-        end
-    },
-    ["add_hit_damage_shadow"] = {
-        ["id"] = 36,
-        ["name"] = "Thanh Long-BT",
-        ["client_text"] = "TL\nBT",
-        ["desc"] = b["add_hit_damage_shadow"],
-        ["check_desc"] = "tất cả",
-        ["can_add"] = true,
-        ["star_rating"] = 4,
-        ["value_range"] = {["min"] = 10, ["max"] = 40},
-        ["on_equip_fn"] = function(s, M, I)
-            if not a:HasComponents(M, "hh_player") then
-                return
-            end
-            M["components"]["hh_player"]:AddEffectValueByKey("addHitShadowDamage", I)
-        end,
-        ["un_equip_fn"] = function(s, M, I)
-            if not a:HasComponents(M, "hh_player") then
-                return
-            end
-            M["components"]["hh_player"]:ReduceEffectValueByKey("addHitShadowDamage", I)
-        end
-    },
-    ["add_hit_damage_plant"] = {
-        ["id"] = 35,
-        ["name"] = "Thanh Long-TV",
-        ["client_text"] = "TL\nTV",
-        ["desc"] = b["add_hit_damage_plant"],
-        ["check_desc"] = "tất cả",
-        ["can_add"] = true,
-        ["star_rating"] = 4,
-        ["value_range"] = {["min"] = 10, ["max"] = 40},
-        ["on_equip_fn"] = function(s, M, I)
-            if not a:HasComponents(M, "hh_player") then
-                return
-            end
-            M["components"]["hh_player"]:AddEffectValueByKey("addHitPlantDamage", I)
-        end,
-        ["un_equip_fn"] = function(s, M, I)
-            if not a:HasComponents(M, "hh_player") then
-                return
-            end
-            M["components"]["hh_player"]:ReduceEffectValueByKey("addHitPlantDamage", I)
-        end
-    },
     ["add_damage_small"] = {
+        ["slot"] = "hand",
+        ["exclusive_group"] = "dragon_damage",
         ["id"] = 33,
         ["name"] = "Thanh Long I",
         ["client_text"] = "TL\nI",
         ["desc"] = b["add_damage_small"],
         ["check_desc"] = "vũ khí",
         ["can_add"] = true,
-        ["only_one"] = false,
+        ["only_one"] = true,
         ["star_rating"] = 4,
-        ["value_range"] = {["min"] = 5, ["max"] = 20},
+        ["value_range"] = {["min"] = 3, ["max"] = 5},
         ["check_equip_can_add"] = function(s)
             if r(s, EQUIPSLOTS["HANDS"]) then
                 return true, "đáp ứng các điều kiện"
@@ -1790,25 +1366,27 @@ local af = {
             if not a:HasComponents(M, "hh_player") then
                 return
             end
-            M["components"]["hh_player"]:AddEffectValueByKey("addComDamage", I)
+            M["components"]["hh_player"]:AddEffectValueByKey("addComDamagePercent", I)
         end,
         ["un_equip_fn"] = function(s, M, I)
             if not a:HasComponents(M, "hh_player") then
                 return
             end
-            M["components"]["hh_player"]:ReduceEffectValueByKey("addComDamage", I)
+            M["components"]["hh_player"]:ReduceEffectValueByKey("addComDamagePercent", I)
         end
     },
     ["add_damage_med"] = {
+        ["slot"] = "hand",
+        ["exclusive_group"] = "dragon_damage",
         ["id"] = 34,
         ["name"] = "Thanh Long II",
         ["client_text"] = "TL\nII",
         ["desc"] = b["add_damage_med"],
         ["check_desc"] = "vũ khí",
         ["can_add"] = true,
-        ["only_one"] = false,
+        ["only_one"] = true,
         ["star_rating"] = 6,
-        ["value_range"] = {["min"] = 10, ["max"] = 40},
+        ["value_range"] = {["min"] = 6, ["max"] = 10},
         ["check_equip_can_add"] = function(s)
             if r(s, EQUIPSLOTS["HANDS"]) then
                 return true, "đáp ứng các điều kiện"
@@ -1819,25 +1397,27 @@ local af = {
             if not a:HasComponents(M, "hh_player") then
                 return
             end
-            M["components"]["hh_player"]:AddEffectValueByKey("addComDamage", I)
+            M["components"]["hh_player"]:AddEffectValueByKey("addComDamagePercent", I)
         end,
         ["un_equip_fn"] = function(s, M, I)
             if not a:HasComponents(M, "hh_player") then
                 return
             end
-            M["components"]["hh_player"]:ReduceEffectValueByKey("addComDamage", I)
+            M["components"]["hh_player"]:ReduceEffectValueByKey("addComDamagePercent", I)
         end
     },
     ["add_damage_big"] = {
+        ["slot"] = "hand",
+        ["exclusive_group"] = "dragon_damage",
         ["id"] = 31,
         ["name"] = "☆Thanh Long III",
         ["client_text"] = "TL\nIII",
         ["desc"] = b["add_damage_big"],
         ["check_desc"] = "vũ khí",
         ["can_add"] = false,
-        ["only_one"] = false,
+        ["only_one"] = true,
         ["star_rating"] = 8,
-        ["value_range"] = {["min"] = 20, ["max"] = 80},
+        ["value_range"] = {["min"] = 11, ["max"] = 15},
         ["check_equip_can_add"] = function(s)
             if r(s, EQUIPSLOTS["HANDS"]) then
                 return true, "đáp ứng các điều kiện"
@@ -1848,27 +1428,29 @@ local af = {
             if not a:HasComponents(M, "hh_player") then
                 return
             end
-            M["components"]["hh_player"]:AddEffectValueByKey("addComDamage", I)
+            M["components"]["hh_player"]:AddEffectValueByKey("addComDamagePercent", I)
         end,
         ["un_equip_fn"] = function(s, M, I)
             if not a:HasComponents(M, "hh_player") then
                 return
             end
-            M["components"]["hh_player"]:ReduceEffectValueByKey("addComDamage", I)
+            M["components"]["hh_player"]:ReduceEffectValueByKey("addComDamagePercent", I)
         end
     },
     ["special_bhtg"] = {
+        ["slot"] = "hand",
+        ["exclusive_group"] = "dragon_damage",
         ["id"] = 32,
         ["name"] = "★Thanh Long IV",
         ["client_text"] = "TL\nIV",
         ["desc"] = b["special_bhtg"],
         ["check_desc"] = "vũ khí",
         ["can_add"] = false,
-        ["only_one"] = false,
+        ["only_one"] = true,
         ["client_color"] = {255 / 255, 0 / 255, 0 / 255, 1},
         ["only_compound"] = true,
         ["star_rating"] = 10,
-        ["value_range"] = {["min"] = 1, ["max"] = 3},
+        ["value_range"] = {["min"] = 16, ["max"] = 20},
         ["check_equip_can_add"] = function(s)
             if r(s, EQUIPSLOTS["HANDS"]) then
                 return true, "đáp ứng các điều kiện"
@@ -1877,14 +1459,14 @@ local af = {
         end,
         ["on_equip_fn"] = function(s, M, I)
             if a:HasComponents(M, "hh_player") then
-                M["components"]["hh_player"]:AddEffectValueByKey("addComDamage", 160)
-                M["components"]["hh_player"]:AddEffectValueByKey("targetPercentDamage", I)
+                M["components"]["hh_player"]:AddEffectValueByKey("addComDamagePercent", I)
+                M["components"]["hh_player"]:AddEffectValueByKey("targetPercentDamage", 3)
             end
         end,
         ["un_equip_fn"] = function(s, M, I)
             if a:HasComponents(M, "hh_player") then
-                M["components"]["hh_player"]:ReduceEffectValueByKey("addComDamage", 160)
-                M["components"]["hh_player"]:ReduceEffectValueByKey("targetPercentDamage", I)
+                M["components"]["hh_player"]:ReduceEffectValueByKey("addComDamagePercent", I)
+                M["components"]["hh_player"]:ReduceEffectValueByKey("targetPercentDamage", 3)
             end
         end
     },
@@ -1983,13 +1565,13 @@ local af = {
             if not a:HasComponents(M, "hh_player") then
                 return
             end
-            M["components"]["hh_player"]:AddEffectValueByKey("reduceAttackedDamage", I)
+            M["components"]["hh_player"]:AddEffectValueByKey("absorbDamage", I)
         end,
         ["un_equip_fn"] = function(s, M, I)
             if not a:HasComponents(M, "hh_player") then
                 return
             end
-            M["components"]["hh_player"]:ReduceEffectValueByKey("reduceAttackedDamage", I)
+            M["components"]["hh_player"]:ReduceEffectValueByKey("absorbDamage", I)
         end
     },
     ["reduce_damage_mid"] = {
@@ -2019,13 +1601,13 @@ local af = {
             if not a:HasComponents(M, "hh_player") then
                 return
             end
-            M["components"]["hh_player"]:AddEffectValueByKey("reduceAttackedDamage", I)
+            M["components"]["hh_player"]:AddEffectValueByKey("absorbDamage", I)
         end,
         ["un_equip_fn"] = function(s, M, I)
             if not a:HasComponents(M, "hh_player") then
                 return
             end
-            M["components"]["hh_player"]:ReduceEffectValueByKey("reduceAttackedDamage", I)
+            M["components"]["hh_player"]:ReduceEffectValueByKey("absorbDamage", I)
         end
     },
     ["reduce_damage_big"] = {
@@ -2055,13 +1637,13 @@ local af = {
             if not a:HasComponents(M, "hh_player") then
                 return
             end
-            M["components"]["hh_player"]:AddEffectValueByKey("reduceAttackedDamage", I)
+            M["components"]["hh_player"]:AddEffectValueByKey("absorbDamage", I)
         end,
         ["un_equip_fn"] = function(s, M, I)
             if not a:HasComponents(M, "hh_player") then
                 return
             end
-            M["components"]["hh_player"]:ReduceEffectValueByKey("reduceAttackedDamage", I)
+            M["components"]["hh_player"]:ReduceEffectValueByKey("absorbDamage", I)
         end
     },
     ["special_sgsy"] = {
@@ -2092,14 +1674,14 @@ local af = {
         ["on_equip_fn"] = function(s, M, I)
             d(
                 M,
-                {["absorbDamage"] = 45, ["reduceAttackedDamage"] = 35, ["immuneBramble"] = 1, ["immuneSuppressNum"] = 1},
+                {["absorbDamage"] = 80, ["immuneSuppressNum"] = 1},
                 true
             )
         end,
         ["un_equip_fn"] = function(s, M, I)
             d(
                 M,
-                {["absorbDamage"] = 45, ["reduceAttackedDamage"] = 35, ["immuneBramble"] = 1, ["immuneSuppressNum"] = 1},
+                {["absorbDamage"] = 80, ["immuneSuppressNum"] = 1},
                 false
             )
         end
@@ -2247,30 +1829,10 @@ local af = {
             d(M, {["immunitySleep"] = 1}, false)
         end
     },
-    ["immune_bramble"] = {
-        ["id"] = 14,
-        ["name"] = "Huyền Vũ-PĐ",
-        ["client_text"] = "HV\nPĐ",
-        ["desc"] = b["immune_bramble"],
-        ["check_desc"] = "tất cả",
-        ["can_add"] = true,
-        ["only_one"] = true,
-        ["star_rating"] = 8,
-        ["on_equip_fn"] = function(s, M, I)
-            if a:HasComponents(M, "hh_player") then
-                M["components"]["hh_player"]:AddEffectValueByKey("immuneBramble", 1)
-            end
-        end,
-        ["un_equip_fn"] = function(s, M, I)
-            if a:HasComponents(M, "hh_player") then
-                M["components"]["hh_player"]:ReduceEffectValueByKey("immuneBramble", 1)
-            end
-        end
-    },
     ["immune_suppress"] = {
         ["id"] = 11,
-        ["name"] = "Huyền Vũ-TĐ",
-        ["client_text"] = "HV\nTĐ",
+        ["name"] = "Miễn Giảm Hồi Máu",
+        ["client_text"] = "Miễn\nGHM",
         ["desc"] = b["immune_suppress"],
         ["can_add"] = true,
         ["only_one"] = true,
@@ -2395,9 +1957,9 @@ local af = {
     },
     ["health_suppress_num"] = {
         ["id"] = 3,
-        ["name"] = "Chu Tước-TĐ",
+        ["name"] = "Giảm Hồi Máu",
         ["only_one"] = true,
-        ["client_text"] = "CT\nTĐ",
+        ["client_text"] = "Giảm\nHM",
         ["desc"] = b["health_suppress_num"],
         ["check_desc"] = "vũ khí",
         ["can_add"] = true,
@@ -2421,35 +1983,6 @@ local af = {
                 return
             end
             M["components"]["hh_player"]:ReduceEffectValueByKey("addSuppressAddHealth", I)
-        end
-    },
-    ["atk_add_san"] = {
-        ["id"] = 4,
-        ["name"] = "Chu Tước-HN",
-        ["client_text"] = "CT\nHN",
-        ["desc"] = b["atk_add_san"],
-        ["check_desc"] = "vũ khí" .. c,
-        ["can_add"] = true,
-        ["only_one"] = true,
-        ["star_rating"] = 8,
-        ["value_range"] = {["min"] = 1, ["max"] = 3},
-        ["check_equip_can_add"] = function(s)
-            if a:HasComponents(s, "weapon") then
-                return true, "đáp ứng các điều kiện"
-            end
-            return false, "chỉ ép vào vũ khí"
-        end,
-        ["on_equip_fn"] = function(s, M, I)
-            if not a:HasComponents(M, "hh_player") then
-                return
-            end
-            M["components"]["hh_player"]:AddEffectValueByKey("restoreSpirit", I)
-        end,
-        ["un_equip_fn"] = function(s, M, I)
-            if not a:HasComponents(M, "hh_player") then
-                return
-            end
-            M["components"]["hh_player"]:ReduceEffectValueByKey("restoreSpirit", I)
         end
     },
     ["atk_blood_suck"] = {
@@ -2504,7 +2037,6 @@ local af = {
                 return
             end
             M["components"]["hh_player"]:AddEffectValueByKey("bloodSuck", I)
-            M["components"]["hh_player"]:AddEffectValueByKey("restoreSpirit", I)
             M["components"]["hh_player"]:AddEffectValueByKey("addSuppressAddHealth", 100)
         end,
         ["un_equip_fn"] = function(s, M, I)
@@ -2512,11 +2044,45 @@ local af = {
                 return
             end
             M["components"]["hh_player"]:ReduceEffectValueByKey("bloodSuck", I)
-            M["components"]["hh_player"]:ReduceEffectValueByKey("restoreSpirit", I)
             M["components"]["hh_player"]:ReduceEffectValueByKey("addSuppressAddHealth", 100)
         end
     }
 }
+-- Canonical weapon procs share the same slot/group validation as rolled affixes.
+local function WeaponProc(id, name, short_name, group, effect, value, desc, rare)
+    return {
+        id = id, name = name, client_text = short_name, desc = desc,
+        check_desc = "vũ khí", slot = "hand", exclusive_group = group,
+        only_one = true, can_add = not rare, star_rating = rare and 8 or 4,
+        value_range = {min = value, max = value},
+        on_equip_fn = function(_, player) d(player, {[effect] = value}, true) end,
+        un_equip_fn = function(_, player) d(player, {[effect] = value}, false) end,
+    }
+end
+
+local burst_tiers = {
+    {"more_damage_30_150", "moreDamage30To150", "I", 30, 150},
+    {"more_damage_20_200", "moreDamage20To200", "II", 20, 200},
+    {"more_damage_15_300", "moreDamage10To300", "III", 10, 300},
+    {"more_damage_8_500", "moreDamage8To500", "IV", 8, 500},
+}
+for tier, row in ipairs(burst_tiers) do
+    local effect = WeaponProc(96 + tier, "Bạo Phát " .. row[3], "BP\n" .. row[3],
+        "burst", row[2], row[5], b[row[1]], true)
+    effect.only_compound = true
+    effect.chance, effect.multiplier = row[4], row[5] / 100
+    af[row[1]] = effect
+end
+for tier, suffix in ipairs({"small", "med", "big", "special"}) do
+    local roman = ({"I", "II", "III", "IV"})[tier]
+    af["atk_add_poison_" .. suffix] = WeaponProc(100 + tier, "Hạ Độc " .. roman, "Độc\n" .. roman,
+        "poison", "atkAddPoisonChance", tier * 10, b.atk_add_poison, tier >= 3)
+    af["atk_add_poison_" .. suffix].chance = tier * 10
+    af["atk_add_freeze_" .. suffix] = WeaponProc(104 + tier, "Đóng Băng " .. roman, "Băng\n" .. roman,
+        "freeze", "atkChanceAddFreeze", tier * 5, b.atk_add_freeze, tier >= 3)
+    af["atk_add_freeze_" .. suffix].chance = tier * 5
+end
+
 local function ai(aj)
     if a:IsHHType(aj, "number") then
         return aj
@@ -2592,19 +2158,6 @@ local aF = {
             a:HHKillTask(s, "gem_durableGem_task")
         end
     },
-    ["damageBoostGem"] = {
-        ["name"] = TUNING["HH_FORMAT_CONFIG"]["GEM_EFFECT"]["damageBoostGem"],
-        ["on_equip_fn"] = function(s, M)
-            if a:HasComponents(M, "hh_player") then
-                M["components"]["hh_player"]:AddEffectValueByKey("addComDamage", 20)
-            end
-        end,
-        ["un_equip_fn"] = function(s, M)
-            if a:HasComponents(M, "hh_player") then
-                M["components"]["hh_player"]:ReduceEffectValueByKey("addComDamage", 20)
-            end
-        end
-    },
     ["powerMettleStone"] = {
         ["name"] = TUNING["HH_FORMAT_CONFIG"]["GEM_EFFECT"]["powerMettleStone"],
         ["on_equip_fn"] = function(s, M)
@@ -2631,45 +2184,6 @@ local aF = {
             end
         end
     },
-    ["shadowNightBead"] = {
-        ["name"] = TUNING["HH_FORMAT_CONFIG"]["GEM_EFFECT"]["shadowNightBead"],
-        ["on_equip_fn"] = function(s, M)
-            if a:HasComponents(M, "hh_player") then
-                M["components"]["hh_player"]:AddEffectValueByKey("nightMenace", 40)
-            end
-        end,
-        ["un_equip_fn"] = function(s, M)
-            if a:HasComponents(M, "hh_player") then
-                M["components"]["hh_player"]:ReduceEffectValueByKey("nightMenace", 40)
-            end
-        end
-    },
-    ["twilightBead"] = {
-        ["name"] = TUNING["HH_FORMAT_CONFIG"]["GEM_EFFECT"]["twilightBead"],
-        ["on_equip_fn"] = function(s, M)
-            if a:HasComponents(M, "hh_player") then
-                M["components"]["hh_player"]:AddEffectValueByKey("afterglowStrike", 40)
-            end
-        end,
-        ["un_equip_fn"] = function(s, M)
-            if a:HasComponents(M, "hh_player") then
-                M["components"]["hh_player"]:ReduceEffectValueByKey("afterglowStrike", 40)
-            end
-        end
-    },
-    ["dayShineBead"] = {
-        ["name"] = TUNING["HH_FORMAT_CONFIG"]["GEM_EFFECT"]["dayShineBead"],
-        ["on_equip_fn"] = function(s, M)
-            if a:HasComponents(M, "hh_player") then
-                M["components"]["hh_player"]:AddEffectValueByKey("sunlightStrike", 40)
-            end
-        end,
-        ["un_equip_fn"] = function(s, M)
-            if a:HasComponents(M, "hh_player") then
-                M["components"]["hh_player"]:ReduceEffectValueByKey("sunlightStrike", 40)
-            end
-        end
-    },
     ["critStrikeStone"] = {
         ["name"] = TUNING["HH_FORMAT_CONFIG"]["GEM_EFFECT"]["critStrikeStone"],
         ["on_equip_fn"] = function(s, M)
@@ -2687,77 +2201,12 @@ local aF = {
         ["name"] = TUNING["HH_FORMAT_CONFIG"]["GEM_EFFECT"]["resistDamageGem"],
         ["on_equip_fn"] = function(s, M)
             if a:HasComponents(M, "hh_player") then
-                M["components"]["hh_player"]:AddEffectValueByKey("reduceAttackedDamage", 5)
+                M["components"]["hh_player"]:AddEffectValueByKey("absorbDamage", 5)
             end
         end,
         ["un_equip_fn"] = function(s, M)
             if a:HasComponents(M, "hh_player") then
-                M["components"]["hh_player"]:ReduceEffectValueByKey("reduceAttackedDamage", 5)
-            end
-        end
-    },
-    ["retaliateGem"] = {
-        ["name"] = TUNING["HH_FORMAT_CONFIG"]["GEM_EFFECT"]["retaliateGem"],
-        ["on_equip_fn"] = function(s, M)
-            if a:HasComponents(M, "hh_player") then
-                M["components"]["hh_player"]:AddEffectValueByKey("reflexiveInjury", 10)
-            end
-        end,
-        ["un_equip_fn"] = function(s, M)
-            if a:HasComponents(M, "hh_player") then
-                M["components"]["hh_player"]:ReduceEffectValueByKey("reflexiveInjury", 10)
-            end
-        end
-    },
-    ["spiderVengeance"] = {
-        ["name"] = TUNING["HH_FORMAT_CONFIG"]["GEM_EFFECT"]["spiderVengeance"],
-        ["on_equip_fn"] = function(s, M)
-            if a:HasComponents(M, "hh_player") then
-                M["components"]["hh_player"]:AddEffectValueByKey("addHitSpiderDamage", 40)
-            end
-        end,
-        ["un_equip_fn"] = function(s, M)
-            if a:HasComponents(M, "hh_player") then
-                M["components"]["hh_player"]:ReduceEffectValueByKey("addHitSpiderDamage", 40)
-            end
-        end
-    },
-    ["insectStrikeCrystal"] = {
-        ["name"] = TUNING["HH_FORMAT_CONFIG"]["GEM_EFFECT"]["insectStrikeCrystal"],
-        ["on_equip_fn"] = function(s, M)
-            if a:HasComponents(M, "hh_player") then
-                M["components"]["hh_player"]:AddEffectValueByKey("addHitInsectDamage", 40)
-            end
-        end,
-        ["un_equip_fn"] = function(s, M)
-            if a:HasComponents(M, "hh_player") then
-                M["components"]["hh_player"]:ReduceEffectValueByKey("addHitInsectDamage", 40)
-            end
-        end
-    },
-    ["shadowStrikeLuminary"] = {
-        ["name"] = TUNING["HH_FORMAT_CONFIG"]["GEM_EFFECT"]["shadowStrikeLuminary"],
-        ["on_equip_fn"] = function(s, M)
-            if a:HasComponents(M, "hh_player") then
-                M["components"]["hh_player"]:AddEffectValueByKey("addHitShadowDamage", 40)
-            end
-        end,
-        ["un_equip_fn"] = function(s, M)
-            if a:HasComponents(M, "hh_player") then
-                M["components"]["hh_player"]:ReduceEffectValueByKey("addHitShadowDamage", 40)
-            end
-        end
-    },
-    ["bossStrikeGem"] = {
-        ["name"] = TUNING["HH_FORMAT_CONFIG"]["GEM_EFFECT"]["bossStrikeGem"],
-        ["on_equip_fn"] = function(s, M)
-            if a:HasComponents(M, "hh_player") then
-                M["components"]["hh_player"]:AddEffectValueByKey("addHitBossDamage", 40)
-            end
-        end,
-        ["un_equip_fn"] = function(s, M)
-            if a:HasComponents(M, "hh_player") then
-                M["components"]["hh_player"]:ReduceEffectValueByKey("addHitBossDamage", 40)
+                M["components"]["hh_player"]:ReduceEffectValueByKey("absorbDamage", 5)
             end
         end
     },
@@ -3014,12 +2463,12 @@ local aF = {
         ["name"] = TUNING["HH_FORMAT_CONFIG"]["GEM_EFFECT"]["baconOmeletteBlessAtk"],
         ["on_equip_fn"] = function(s, M)
             if a:HasComponents(M, "hh_player") then
-                M["components"]["hh_player"]:AddEffectValueByKey("addComDamage", 100)
+                M["components"]["hh_player"]:AddEffectValueByKey("addComDamagePercent", 20)
             end
         end,
         ["un_equip_fn"] = function(s, M)
             if a:HasComponents(M, "hh_player") then
-                M["components"]["hh_player"]:ReduceEffectValueByKey("addComDamage", 100)
+                M["components"]["hh_player"]:ReduceEffectValueByKey("addComDamagePercent", 20)
             end
         end
     },
@@ -3057,12 +2506,12 @@ local aF = {
         ["name"] = TUNING["HH_FORMAT_CONFIG"]["GEM_EFFECT"]["baconOmeletteTrueDamage"],
         ["on_equip_fn"] = function(s, M)
             if a:HasComponents(M, "hh_player") then
-                M["components"]["hh_player"]:AddEffectValueByKey("trueDamageNum", 100)
+                M["components"]["hh_player"]:AddEffectValueByKey("trueDamageNum", 20)
             end
         end,
         ["un_equip_fn"] = function(s, M)
             if a:HasComponents(M, "hh_player") then
-                M["components"]["hh_player"]:ReduceEffectValueByKey("trueDamageNum", 100)
+                M["components"]["hh_player"]:ReduceEffectValueByKey("trueDamageNum", 20)
             end
         end
     },
@@ -3198,12 +2647,12 @@ local aF = {
         ["name"] = TUNING["HH_FORMAT_CONFIG"]["GEM_EFFECT"]["treasure_atk"],
         ["on_equip_fn"] = function(s, M)
             if a:HasComponents(M, "hh_player") then
-                M["components"]["hh_player"]:AddEffectValueByKey("addComDamage", 50)
+                M["components"]["hh_player"]:AddEffectValueByKey("addComDamagePercent", 15)
             end
         end,
         ["un_equip_fn"] = function(s, M)
             if a:HasComponents(M, "hh_player") then
-                M["components"]["hh_player"]:ReduceEffectValueByKey("addComDamage", 50)
+                M["components"]["hh_player"]:ReduceEffectValueByKey("addComDamagePercent", 15)
             end
         end
     },
@@ -3287,106 +2736,21 @@ local function aK(M, aL)
     a:HandleSuitBuff(M, "suit_basalt")
     a:HandleSuitBuff(M, "suit_basalt_cd", 20, true)
 end
-local function aM(M, aL)
-    if not a:NotIsDead(M) then
-        return
-    end
-    if aI(M, "suit_yhby_cd") then
-        return
-    end
-    local ay, az, aA = M["Transform"]:GetWorldPosition()
-    local aN = TheSim:FindEntities(ay, az, aA, 10, {"player"})
-    if aN then
-        for h, i in ipairs(aN) do
-            if a:NotIsDead(i) and a:HasComponents(i, "hh_player") and a:HasComponents(i, "hh_buff") then
-                if not aI(M, "suit_yhby_cd") then
-                    a:HandleSuitBuff(i, "add_health", 10, true)
-                end
-            end
-        end
-    end
-    a:SpawnClientStrFx(M, "Eternal blessing trigger")
-    a:HandleSuitBuff(M, "suit_yhby_cd", 20, true)
-end
 local aO = {
-    ["suit_yhby"] = {
-        ["check_fn"] = aG,
-        ["effect_list"] = {"z_suit_yhby_hand", "z_suit_yhby_body", "z_suit_yhby_hat"},
-        ["start_fn"] = function(e, R)
-            d(
-                e,
-                {
-                    ["immuneSuppressNum"] = 1,
-                    ["immunityMoisture"] = 1,
-                    ["immunePoison"] = 1,
-                    ["reduceAttackedDamage"] = 10
-                },
-                true
-            )
-            a:HandleSuitBuff(e, "player_healthSuppressNum")
-            a:HandleSuitBuff(e, "poison")
-            a:HandleSuitBuff(e, "suit_yhby", nil, true)
-            e:ListenForEvent("attacked", aM)
-        end,
-        ["stop_fn"] = function(e, R)
-            d(
-                e,
-                {
-                    ["immuneSuppressNum"] = 1,
-                    ["immunityMoisture"] = 1,
-                    ["immunePoison"] = 1,
-                    ["reduceAttackedDamage"] = 10
-                },
-                false
-            )
-            a:HandleSuitBuff(e, "suit_yhby")
-            e:RemoveEventCallback("attacked", aM)
-        end
-    },
-    ["suit_bhtg"] = {
-        ["check_fn"] = aG,
-        ["effect_list"] = {"z_suit_bhtg_hand", "z_suit_bhtg_body", "z_suit_bhtg_hat"},
-        ["start_fn"] = function(e, R)
-            d(
-                e,
-                {
-                    ["targetPercentDamage"] = 2,
-                    ["restoreSpirit"] = 3,
-                    ["addComDamage"] = 50,
-                    ["addComDamagePercent"] = 10,
-                    ["addSuppressAddHealth"] = 100
-                },
-                true
-            )
-        end,
-        ["stop_fn"] = function(e, R)
-            d(
-                e,
-                {
-                    ["targetPercentDamage"] = 2,
-                    ["restoreSpirit"] = 3,
-                    ["addComDamage"] = 50,
-                    ["addComDamagePercent"] = 10,
-                    ["addSuppressAddHealth"] = 100
-                },
-                false
-            )
-        end
-    },
     ["suit_zqrf"] = {
         ["check_fn"] = aG,
         ["effect_list"] = {"z_suit_zqrf_hand", "z_suit_zqrf_body", "z_suit_zqrf_hat"},
         ["start_fn"] = function(e, R)
             d(
                 e,
-                {["trueDamageNum"] = 50, ["bloodSuck"] = 3, ["immuneSuppressNum"] = 1, ["immuneReduceSpeed"] = 1},
+                {["trueDamageNum"] = 10, ["bloodSuck"] = 3, ["immuneSuppressNum"] = 1, ["immuneReduceSpeed"] = 1},
                 true
             )
         end,
         ["stop_fn"] = function(e, R)
             d(
                 e,
-                {["trueDamageNum"] = 50, ["bloodSuck"] = 3, ["immuneSuppressNum"] = 1, ["immuneReduceSpeed"] = 1},
+                {["trueDamageNum"] = 10, ["bloodSuck"] = 3, ["immuneSuppressNum"] = 1, ["immuneReduceSpeed"] = 1},
                 false
             )
         end
@@ -3395,60 +2759,6 @@ local aO = {
 local aP, aQ = "images/dyc_gem_enc.xml", "dyc_gem_enc.tex"
 local aR = "images/inventoryimages.xml"
 local aS = {
-    {
-        ["id"] = "z_suit_yhby_hand",
-        ["recipe"] = {
-            {["id"] = "hh_essence", ["num"] = 10, ["xml"] = aP, ["tex"] = "dyc_gem_enc.tex"},
-            {["id"] = "rocks", ["num"] = 20, ["xml"] = aR, ["tex"] = "rocks.tex"},
-            {["id"] = "blue_cap", ["num"] = 10, ["xml"] = aR, ["tex"] = "blue_cap.tex"},
-            {["id"] = "beefalowool", ["num"] = 5, ["xml"] = aR, ["tex"] = "beefalowool.tex"}
-        }
-    },
-    {
-        ["id"] = "z_suit_yhby_body",
-        ["recipe"] = {
-            {["id"] = "hh_essence", ["num"] = 10, ["xml"] = aP, ["tex"] = "dyc_gem_enc.tex"},
-            {["id"] = "rocks", ["num"] = 20, ["xml"] = aR, ["tex"] = "rocks.tex"},
-            {["id"] = "bandage", ["num"] = 3, ["xml"] = aR, ["tex"] = "bandage.tex"},
-            {["id"] = "red_cap", ["num"] = 10, ["xml"] = aR, ["tex"] = "red_cap.tex"}
-        }
-    },
-    {
-        ["id"] = "z_suit_yhby_hat",
-        ["recipe"] = {
-            {["id"] = "hh_essence", ["num"] = 10, ["xml"] = aP, ["tex"] = "dyc_gem_enc.tex"},
-            {["id"] = "rocks", ["num"] = 20, ["xml"] = aR, ["tex"] = "rocks.tex"},
-            {["id"] = "jellybean", ["num"] = 3, ["xml"] = aR, ["tex"] = "jellybean.tex"},
-            {["id"] = "green_cap", ["num"] = 10, ["xml"] = aR, ["tex"] = "green_cap.tex"}
-        }
-    },
-    {
-        ["id"] = "z_suit_bhtg_hand",
-        ["recipe"] = {
-            {["id"] = "hh_essence", ["num"] = 10, ["xml"] = aP, ["tex"] = "dyc_gem_enc.tex"},
-            {["id"] = "coontail", ["num"] = 10, ["xml"] = aR, ["tex"] = "coontail.tex"},
-            {["id"] = "thulecite", ["num"] = 5, ["xml"] = aR, ["tex"] = "thulecite.tex"},
-            {["id"] = "goldnugget", ["num"] = 20, ["xml"] = aR, ["tex"] = "goldnugget.tex"}
-        }
-    },
-    {
-        ["id"] = "z_suit_bhtg_body",
-        ["recipe"] = {
-            {["id"] = "hh_essence", ["num"] = 10, ["xml"] = aP, ["tex"] = "dyc_gem_enc.tex"},
-            {["id"] = "horn", ["num"] = 1, ["xml"] = aR, ["tex"] = "horn.tex"},
-            {["id"] = "steelwool", ["num"] = 5, ["xml"] = aR, ["tex"] = "steelwool.tex"},
-            {["id"] = "stinger", ["num"] = 40, ["xml"] = aR, ["tex"] = "stinger.tex"}
-        }
-    },
-    {
-        ["id"] = "z_suit_bhtg_hat",
-        ["recipe"] = {
-            {["id"] = "hh_essence", ["num"] = 10, ["xml"] = aP, ["tex"] = "dyc_gem_enc.tex"},
-            {["id"] = "pigskin", ["num"] = 10, ["xml"] = aR, ["tex"] = "pigskin.tex"},
-            {["id"] = "tentaclespots", ["num"] = 10, ["xml"] = aR, ["tex"] = "tentaclespots.tex"},
-            {["id"] = "slurper_pelt", ["num"] = 10, ["xml"] = aR, ["tex"] = "slurper_pelt.tex"}
-        }
-    },
     {
         ["id"] = "z_suit_zqrf_hand",
         ["recipe"] = {

@@ -13,11 +13,7 @@ end)
 
 local PLAYER_TARGET_EFFECTS = {
     player_power={ damage=1.15 },
-    player_speed={ speed=1.15 },
-    player_attack_speed={ attack=1.12 },
-    player_guard={ absorb=.12 },
     player_health={ health=1.20 },
-    player_allround={ damage=1.08, speed=1.08, absorb=.08 },
 }
 
 local SHADOW_TARGET_EFFECTS = {
@@ -31,6 +27,14 @@ local SHADOW_TARGET_EFFECTS = {
 }
 
 local HH_PLAYER_KEYS = {
+    player_speed={ { key="addSpeedPercent", value=15 } },
+    player_attack_speed={ { key="atk_speed", value=12 } },
+    player_guard={ { key="absorbDamage", value=12 } },
+    player_allround={
+        { key="addComDamagePercent", value=8 },
+        { key="addSpeedPercent", value=8 },
+        { key="absorbDamage", value=8 },
+    },
     player_crit={ { key="criticalHitRate", value=8 } },
     player_lifesteal={ { key="bloodSuck", value=5 } },
     player_cc_guard={
@@ -102,7 +106,11 @@ local function ApplyHHPlayerKeys(inst, effect_id, enabled)
     for _, entry in ipairs(entries) do
         if enabled then player:AddEffectValueByKey(entry.key, entry.value)
         else player:ReduceEffectValueByKey(entry.key, entry.value) end
+        if entry.key == "atk_speed" then
+            require("utils/hh_utils"):HHClientRpc(inst, "hh_atk_speed", player:GetEffectValueByKey("atk_speed"))
+        end
     end
+    inst:PushEvent("handle_equip_to_player")
 end
 
 local function EnsureShadowHooks(shadow)

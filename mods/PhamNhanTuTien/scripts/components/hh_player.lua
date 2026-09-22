@@ -280,7 +280,7 @@ local function b_uG(__B__U__g, _B_U__g)
                 __B__U__g["components"]["locomotor"]:SetExternalSpeedMultiplier(
                     __B__U__g,
                     "hh_equip_speed",
-                    _b__uG_ / 100 + 1
+                    math.min(_b__uG_, 50) / 100 + 1
                 )
             else
                 __B__U__g["components"]["locomotor"]:RemoveExternalSpeedMultiplier(__B__U__g, "hh_equip_speed")
@@ -288,117 +288,12 @@ local function b_uG(__B__U__g, _B_U__g)
         end
     end
 end
-local function _b__U__g(__Bug_, __B__U__G_)
-    if not _B__Ug__:HasComponents(__Bug_, "hh_player") then
-        return
+local function _b__U__g(attacker, event)
+    local metadata = event ~= nil and require("combat/hh_combat_context").Current(attacker, event.target) or nil
+    if metadata ~= nil and (event.damageresolved or 0) > 0 then
+        metadata.attacker, metadata.target, metadata.event = attacker, event.target, event
     end
-    if __B__U__G_ and __B__U__G_["target"] then
-        local __B_U_G__ = __B__U__G_["target"]
-        
-        if _B__Ug__:NotIsDead(__B_U_G__) then
-            if _B__Ug__:HasComponents(__B_U_G__, "hh_buff") then
-                local Bu_G = __Bug_["components"]["hh_player"]:GetEffectValueByKey "atkChanceAddPoison"
-                local __bU_g = math["random"](1, 100)
-                if __bU_g <= Bu_G then
-                    local target_buff = __B_U_G__["components"]["hh_buff"]
-                    target_buff:AddBuff("poison", 240)
-                    if target_buff:HasBuff("poison") then
-                        target_buff.hh_poison_attacker = __Bug_
-                    end
-                end
-                local Bu_G_ = __Bug_["components"]["hh_player"]:GetEffectValueByKey "addSuppressAddHealth"
-                local b_u__g = math["random"](1, 100)
-                if b_u__g <= Bu_G_ then
-                    if _B__Ug__:HasComponents(__B_U_G__, "hh_monster") then
-                        __B_U_G__["components"]["hh_buff"]:AddBuff("monster_healthSuppressNum", 5)
-                    elseif _B__Ug__:HasComponents(__B_U_G__, "hh_player") then
-                        __B_U_G__["components"]["hh_buff"]:AddBuff("player_healthSuppressNum", 5)
-                    end
-                end
-            end
-            if _B__Ug__:HasComponents(__B_U_G__, "freezable") then
-                local __B__u_g__ = __Bug_["components"]["hh_player"]:GetEffectValueByKey "atkChanceAddFreeze"
-                local __Bu__g = math["random"](1, 100)
-                if __Bu__g <= __B__u_g__ then
-                    __B_U_G__["components"]["freezable"]:Freeze(2)
-                end
-            end
-            if
-                __Bug_["components"]["hh_player"]:HasSpecialEffect "trueDamageNum" and
-                    IsValidOffensiveTarget(__B_U_G__) and
-                    __B_U_G__["components"]["health"]["DoHHDelta"]
-             then
-                local target_hh_monster = __B_U_G__["components"]["hh_monster"]
-                if target_hh_monster == nil or not target_hh_monster:HasSpecialEffect "immuneTrue" then
-                    local _B_U__g_ = __Bug_["components"]["hh_player"]:GetEffectValueByKey "trueDamageNum"
-                    if _B_U__g_ > 0 then
-                        __B_U_G__["components"]["health"]:DoHHDelta(-_B_U__g_, __Bug_, "Xuyên Giáp")
-                    end
-                end
-            end
-        end
-
-        local splash_aoe_pct = __Bug_["components"]["hh_player"]:GetEffectValueByKey("addSplashDamageAOE") or 0
-        if splash_aoe_pct > 0 and not __Bug_._is_splashing_aoe then
-            local weapon = __B__U__G_["weapon"]
-            local is_melee = true
-            if weapon and weapon["components"]["weapon"] and weapon["components"]["weapon"].projectile ~= nil then
-                is_melee = false
-            end
-            if is_melee then
-                local dmg = __B__U__G_["damage"] or 0
-                
-                if dmg and dmg > 0 then
-                    local splash_dmg = dmg * (splash_aoe_pct / 100)
-                    local x, y, z = __Bug_.Transform:GetWorldPosition()
-                    local ents = TheSim:FindEntities(x, y, z, 3, {"_combat"}, {"player", "companion", "INLIMBO", "wall", "structure"})
-                    
-                    __Bug_._is_splashing_aoe = true
-                    for i, v in ipairs(ents) do
-                        if v ~= __B_U_G__ and v ~= __Bug_ and v.components.health and not v.components.health:IsDead() then
-                            v.components.combat:GetAttacked(__Bug_, splash_dmg, weapon)
-                        end
-                    end
-                    __Bug_._is_splashing_aoe = false
-                end
-            end
-        end
-    end
-end
-local function _BU_G_(b_U_g, b__Ug_)
-    if not _B__Ug__:HasComponents(b_U_g, "hh_player") then
-        return
-    end
-    if b__Ug_ and b__Ug_["attacker"] and _B__Ug__:NotIsDead(b__Ug_["attacker"]) then
-        local __B__UG = b__Ug_["attacker"]
-        if _B__Ug__:HasComponents(__B__UG, "hh_buff") then
-            local Bu_G__ = b_U_g["components"]["hh_player"]:GetEffectValueByKey "hitChanceAddPoison"
-            local __bUG_ = math["random"](1, 100)
-            if __bUG_ <= Bu_G__ then
-                local target_buff = __B__UG["components"]["hh_buff"]
-                target_buff:AddBuff("poison", 240)
-                if target_buff:HasBuff("poison") then
-                    target_buff.hh_poison_attacker = b_U_g
-                end
-            end
-            local __bug__ = b_U_g["components"]["hh_player"]:GetEffectValueByKey "hitSuppressAddHealth"
-            local __b__u__G_ = math["random"](1, 100)
-            if __b__u__G_ <= __bug__ then
-                if _B__Ug__:HasComponents(__B__UG, "hh_monster") then
-                    __B__UG["components"]["hh_buff"]:AddBuff("monster_healthSuppressNum", 20)
-                elseif _B__Ug__:HasComponents(__B__UG, "hh_player") then
-                    __B__UG["components"]["hh_buff"]:AddBuff("player_healthSuppressNum", 20)
-                end
-            end
-        end
-        if _B__Ug__:HasComponents(__B__UG, "freezable") then
-            local __BU__g__ = b_U_g["components"]["hh_player"]:GetEffectValueByKey "hitChanceAddFreeze"
-            local b__uG_ = math["random"](1, 100)
-            if b__uG_ <= __BU__g__ then
-                __B__UG["components"]["freezable"]:Freeze(2)
-            end
-        end
-    end
+    require("combat/hh_combat_status").AfterPrimary(metadata, event ~= nil and event.damageresolved or 0)
 end
 local function _B_U__g__(__B__u_g_, _B_u_G)
     if __B__u_g_ and _B__Ug__:HasComponents(_B_u_G, "hh_player") then
@@ -574,7 +469,6 @@ local b_u__G =
         )
         self["inst"]:ListenForEvent("killed", _BU_g_)
         self["inst"]:ListenForEvent("onhitother", _b__U__g)
-        self["inst"]:ListenForEvent("attacked", _BU_G_)
         self["inst"]:ListenForEvent("handle_equip_to_player", b_uG)
         self["inst"]:ListenForEvent(
             "ms_playerreroll",
@@ -635,6 +529,11 @@ function b_u__G:LoadWorldValue()
         (false or false and not false or false or false or true and false and false and not false and false or
         not true and not true)
 end
+local COMBAT_EFFECT_CAPS = { trueDamageNum = 40, absorbDamage = 80, addSplashDamageAOE = 60 }
+function b_u__G:ClampEffectValue(key, value)
+    local cap = COMBAT_EFFECT_CAPS[key]
+    return cap ~= nil and math.min(value, cap) or value
+end
 function b_u__G:GetEffectValueByKey(__b_U__g__)
     if not self["hh_effects"] or not self["hh_effects"][__b_U__g__] then
         return 0
@@ -643,7 +542,7 @@ function b_u__G:GetEffectValueByKey(__b_U__g__)
     if not _B__Ug__:IsHHType(B_ug, "number") or B_ug < 0 then
         return 0
     end
-    return B_ug
+    return self:ClampEffectValue(__b_U__g__, B_ug)
 end
 function b_u__G:AddEffectValueByKey(B__u__g__, __B_u_g_)
     if
@@ -665,172 +564,65 @@ function b_u__G:ReduceEffectValueByKey(_B__u_G__, _B_u_g)
     self["hh_effects"][_B__u_G__] = math["max"](self["hh_effects"][_B__u_G__] - _B_u_g, 0)
     return (38 * 164 - 386 + 284 == 6130)
 end
-local function __B_UG__(self, _bu_G, __b_u__G__, __b__u_g_, _B_U_g)
-    if _bu_G:HasHHTag(__b__u_g_) then
-        local _bU_g_ = self:GetEffectValueByKey(_B_U_g)
-        if _bU_g_ > 0 then
-            __b_u__G__ = __b_u__G__ + _bU_g_
-        end
-    end
-    return __b_u__G__
-end
-function b_u__G:DoAttackDamage(bU__G, _B__U_g, b__u_G_)
+local CombatMath = require("combat/hh_combat_math")
+local CombatContext = require("combat/hh_combat_context")
+
+function b_u__G:DoAttackDamage(bU__G, _B__U_g, b__u_G_, rng)
     if not _B__Ug__:IsHHType(b__u_G_, "number") then
         return 0
     end
-    if not _B__Ug__:HasComponents(bU__G, "health") and bU__G["components"]["health"]:IsDead() then
+    if not _B__Ug__:HasComponents(bU__G, "health") or bU__G["components"]["health"]:IsDead()
+        or not _B__Ug__:HasComponents(_B__U_g, "health") or _B__U_g.components.health:IsDead() then
         return b__u_G_
     end
     local _b__u_G_ = self:GetEffectValueByKey "addComDamage"
     b__u_G_ = b__u_G_ + _b__u_G_
-    if TheWorld and TheWorld["state"] then
-        if TheWorld["state"]["isday"] then
-            local B__ug = self:GetEffectValueByKey "sunlightStrike"
-            b__u_G_ = b__u_G_ + B__ug
-        elseif TheWorld["state"]["isdusk"] then
-            local _b_u_G__ = self:GetEffectValueByKey "afterglowStrike"
-            b__u_G_ = b__u_G_ + _b_u_G__
-        elseif TheWorld["state"]["isnight"] then
-            local _bu_g_ = self:GetEffectValueByKey "nightMenace"
-            b__u_G_ = b__u_G_ + _bu_g_
+    local base_damage = b__u_G_
+    local attack_percent = self:GetEffectValueByKey "addComDamagePercent"
+    local adversity_percent = 0
+    for _, resource in ipairs({
+        {"bloodOutburst", "health"}, {"spiritFade", "sanity"}, {"hungerAssault", "hunger"},
+    }) do
+        local component = bU__G.components[resource[2]]
+        if self:GetEffectValueByKey(resource[1]) > 0 and component ~= nil then
+            adversity_percent = 50 * (1 - CombatMath.Clamp(component:GetPercent(), 0, 1))
+            break
         end
     end
-    if _B__U_g["HasHHTag"] then
-        b__u_G_ = __B_UG__(self, _B__U_g, b__u_G_, "pig", "addHitPigDamage")
-        b__u_G_ = __B_UG__(self, _B__U_g, b__u_G_, "fish", "addHitFishDamage")
-        b__u_G_ = __B_UG__(self, _B__U_g, b__u_G_, "monkey", "addHitMonkeyDamage")
-        b__u_G_ = __B_UG__(self, _B__U_g, b__u_G_, "gear", "addHitGearDamage")
-        b__u_G_ = __B_UG__(self, _B__U_g, b__u_G_, "spider", "addHitSpiderDamage")
-        b__u_G_ = __B_UG__(self, _B__U_g, b__u_G_, "dog", "addHitDogDamage")
-        b__u_G_ = __B_UG__(self, _B__U_g, b__u_G_, "frog", "addHitFrogDamage")
-        b__u_G_ = __B_UG__(self, _B__U_g, b__u_G_, "insect", "addHitInsectDamage")
-        b__u_G_ = __B_UG__(self, _B__U_g, b__u_G_, "shadow", "addHitShadowDamage")
-        b__u_G_ = __B_UG__(self, _B__U_g, b__u_G_, "boss_monster", "addHitBossDamage")
-        b__u_G_ = __B_UG__(self, _B__U_g, b__u_G_, "endgameboss_monster", "addHitBossDamage")
-        b__u_G_ = __B_UG__(self, _B__U_g, b__u_G_, "plant", "addHitPlantDamage")
-    end
-    if _B__Ug__:HasComponents(bU__G, "moisture") then
-        local b_u__g_ = self:GetEffectValueByKey "soakStrike"
-        if b_u__g_ > 0 then
-            local _bu_g__ = bU__G["components"]["moisture"]:GetMoisturePercent()
-            if _bu_g__ >= 50 then
-                b__u_G_ = b__u_G_ + _bu_g__
-            end
+    local burst = nil
+    for _, tier in ipairs({
+        {"moreDamage8To500", 8}, {"moreDamage10To300", 10},
+        {"moreDamage20To200", 20}, {"moreDamage30To150", 30},
+    }) do
+        local value = self:GetEffectValueByKey(tier[1])
+        if value > 0 then
+            burst = {chance = tier[2], multiplier = math.max(value / 100, 1)}
+            break
         end
     end
-    local b_U_G_ = 0
-    local __B_U__G__ = self:GetEffectValueByKey "addComDamagePercent"
-    b_U_G_ = b_U_G_ + __B_U__G__
-    if _B__Ug__:HasComponents(bU__G, "health") and not bU__G["components"]["health"]:IsDead() then
-        local b_UG__ = self:GetEffectValueByKey "bloodOutburst"
-        if b_UG__ > 0 then
-            local _b__ug__ = bU__G["components"]["health"]:GetPercent()
-            if _b__ug__ >= 0 then
-                local __Bu__G_ = (1 - _b__ug__) * 0.5
-                b_U_G_ = b_U_G_ + __Bu__G_ * 100
-            end
-        end
+    local resolved = CombatMath.ResolvePrimary(base_damage, 0, attack_percent + adversity_percent,
+        self:GetEffectValueByKey("criticalHitRate"), self:GetEffectValueByKey("criticalHitEffect"),
+        burst, rng or math.random)
+    -- Capture each packet's approved sources before defenses or later observers.
+    -- The same successful crit/burst rolls feed direct damage and splash only.
+    resolved.base_damage = base_damage
+    resolved.direct_pre_crit = resolved.pre_crit
+    resolved.normal_final = resolved.final
+    resolved.poison_base = base_damage
+    resolved.pierce_base = base_damage
+    resolved.splash_final = base_damage * (1 + attack_percent / 100)
+        * resolved.critical_multiplier * resolved.burst_multiplier
+    b__u_G_ = resolved.final
+    local metadata = CombatContext.Current(bU__G, _B__U_g)
+    if metadata ~= nil then
+        for key, value in pairs(resolved) do metadata[key] = value end
     end
-    if _B__Ug__:HasComponents(bU__G, "hunger") then
-        local __b_U_g__ = self:GetEffectValueByKey "hungerAssault"
-        if __b_U_g__ > 0 then
-            local __B_uG_ = bU__G["components"]["hunger"]:GetPercent()
-            if __B_uG_ >= 0 then
-                local __b_u_G = (1 - __B_uG_) * 0.5
-                b_U_G_ = b_U_G_ + __b_u_G * 100
-            end
-        end
+    if resolved.critical then
+        _B__Ug__:SpawnExplodeFx(_B__U_g)
+        _B__Ug__:SpawnClientStrFx(_B__U_g, "chí mạng")
     end
-    if _B__Ug__:HasComponents(bU__G, "sanity") then
-        local B_u_G_ = self:GetEffectValueByKey "spiritFade"
-        if B_u_G_ > 0 then
-            local B__u__g_ = bU__G["components"]["sanity"]:GetPercent()
-            if B__u__g_ >= 0 then
-                local _bu__G__ = (1 - B__u__g_) * 0.5
-                b_U_G_ = b_U_G_ + _bu__G__ * 100
-            end
-        end
-    end
-    b__u_G_ = b__u_G_ * (1 + b_U_G_ / 100)
-    if self:HasSpecialEffect "moreDamage30To150" then
-        local _Bu_g__ = math["random"]()
-        if _Bu_g__ <= 0.3 then
-            local B_u__G_ = self:GetEffectValueByKey "moreDamage30To150"
-            b__u_G_ = b__u_G_ * (math["max"](B_u__G_ / 100, 1))
-            _B__Ug__:SpawnClientStrFx(_B__U_g, "chí mạng x1.5")
-        end
-    end
-    if self:HasSpecialEffect "moreDamage20To200" then
-        local _b_uG__ = math["random"]()
-        if _b_uG__ <= 0.2 then
-            local __B_u_g__ = self:GetEffectValueByKey "moreDamage20To200"
-            b__u_G_ = b__u_G_ * (math["max"](__B_u_g__ / 100, 1))
-            _B__Ug__:SpawnClientStrFx(_B__U_g, "chí mạng x2")
-        end
-    end
-    if self:HasSpecialEffect "moreDamage10To300" then
-        local b_U__G_ = math["random"]()
-        if b_U__G_ <= 0.1 then
-            local BuG_ = self:GetEffectValueByKey "moreDamage10To300"
-            b__u_G_ = b__u_G_ * (math["max"](BuG_ / 100, 1))
-            _B__Ug__:SpawnClientStrFx(_B__U_g, "chí mạng x3")
-        end
-    end
-    if self:HasSpecialEffect "moreDamage8To500" then
-        local __B_U__g = math["random"]()
-        if __B_U__g <= 0.08 then
-            local _bUG_ = self:GetEffectValueByKey "moreDamage8To500"
-            b__u_G_ = b__u_G_ * (math["max"](_bUG_ / 100, 1))
-            _B__Ug__:SpawnClientStrFx(_B__U_g, "chí mạng x5")
-        end
-    end
-    local b_u_g_ = self:GetEffectValueByKey "criticalHitRate"
-    if b_u_g_ > 0 then
-        local BUG__ = math["random"](0, 100)
-        if BUG__ <= b_u_g_ then
-            _B__Ug__:SpawnExplodeFx(_B__U_g)
-            local _b_U_g = self:GetEffectValueByKey "criticalHitEffect"
-            b__u_G_ = b__u_G_ * (2 + _b_U_g / 100)
-            _B__Ug__:SpawnClientStrFx(_B__U_g, "chí mạng")
-        end
-    end
-    if _B__Ug__:HasComponents(bU__G, "hh_buff") then
-        if b__u_G_ > 0 then
-            if self:HasSpecialEffect "attackToAddHealth" then
-                local B_U_g_ = math["random"]()
-                if B_U_g_ <= TUNING["HH_CHANCE_CONFIG"]["ATK_10s_HEALTH"] then
-                    bU__G["components"]["hh_buff"]:AddBuff("buff_10s_1_health", 120)
-                end
-            end
-        end
-    end
-    if _B__Ug__:HasComponents(_B__U_g, "hh_buff") and _B__Ug__:HasComponents(_B__U_g, "hh_monster") then
-        local bu_G_ = self:GetEffectValueByKey "atkAddPoisonChance"
-        if bu_G_ > 0 then
-            local B_U__g = math["random"](1, 100)
-            if B_U__g <= bu_G_ then
-                _B__U_g["components"]["hh_buff"]:AddBuff("monster_poison", 60)
-                _B__U_g["components"]["hh_buff"]["hh_poison_attacker"] = self["inst"]
-            end
-        end
-        if self:HasSpecialEffect "healthSuppressNum" then
-            local __b_U_G__ = math["random"](1, 100)
-            if __b_U_G__ <= 10 then
-                _B__U_g["components"]["hh_buff"]:AddBuff("monster_healthSuppressNum", 20)
-            end
-        end
-    end
-    if
-        self:HasSpecialEffect "targetPercentDamage" and IsValidOffensiveTarget(_B__U_g) and
-            _B__Ug__:IsHHType(_B__U_g["components"]["health"]["currenthealth"], "number") and
-            _B__U_g["components"]["health"]["currenthealth"] > 0
-     then
-        local target_hh_monster = _B__U_g["components"]["hh_monster"]
-        if target_hh_monster == nil or not target_hh_monster:HasSpecialEffect "immuneTearing" then
-            local bu_g = self:GetEffectValueByKey "targetPercentDamage"
-            local _b__u_G__ = _B__U_g["components"]["health"]["currenthealth"]
-            b__u_G_ = b__u_G_ + _b__u_G__ * (math["min"](bu_g, 3) / 100)
-        end
+    if resolved.burst then
+        _B__Ug__:SpawnClientStrFx(_B__U_g, "Bạo Phát x" .. tostring(resolved.burst_multiplier))
     end
     local godslayer = self.inst["components"] ~= nil and self.inst["components"]["hh_godslayer"] or nil
     if
@@ -841,87 +633,66 @@ function b_u__G:DoAttackDamage(bU__G, _B__U_g, b__u_G_)
     end
     return b__u_G_
 end
-function b_u__G:GetBlockDamage(b__uG__, _b__Ug, _B__Ug_)
-    if not _B__Ug__:IsHHType(_B__Ug_, "number") or _B__Ug_ <= 0 then
-        return 0
+function b_u__G:ResolvePrimaryHit(target, damage, weapon, rng)
+    if not _B__Ug__:HasComponents(self.inst, "health") or self.inst.components.health:IsDead()
+        or not _B__Ug__:HasComponents(target, "health") or target.components.health:IsDead() then
+        return damage, 0, {}
     end
-    if not _B__Ug__:HasComponents(b__uG__, "health") and b__uG__["components"]["health"]:IsDead() then
-        return _B__Ug_
+    -- Keep the established DoAttackDamage observer boundary for Lục Nguyên.
+    local metadata = CombatContext.Current(self.inst, target)
+    local token
+    if metadata == nil then
+        metadata = {weapon = weapon}
+        token = CombatContext.Begin(self.inst, target, metadata)
     end
-
-    local dodge_chance = self:GetEffectValueByKey("chanceDodgeAttack") or 0
-    if dodge_chance > 0 then
-        local roll = math.random(1, 100)
-        if roll <= dodge_chance then
-            _B__Ug__:SpawnClientStrFx(self["inst"], "NÉ !")
-            
-            local x, y, z = self["inst"].Transform:GetWorldPosition()
-            local fx = SpawnPrefab("maxwell_smoke")
-            if fx then
-                fx.Transform:SetPosition(x, y, z)
-            end
-            
-            if self["inst"].SoundEmitter then
-                self["inst"].SoundEmitter:PlaySound("dontstarve/wilson/attack_whoosh")
-            end
-            
-            return 0, true
-        end
-    end
-    if self:HasSuitEffect "suit_fyyy" then
-        local BU__g_ = math["random"]()
-        if BU__g_ <= 0.3 then
-            _B__Ug__:SpawnClientStrFx(self["inst"], "né tránh")
-            _B__Ug__:SpawnClientStrFx(self["inst"], "kích hoạt phi vân")
-            return 0
-        end
-    end
-    if _B__Ug__:HasComponents(b__uG__, "sanity") then
-        local __b__UG__ = self:GetEffectValueByKey "sanReplaceDamageChance"
-        if __b__UG__ > 0 then
-            __b__UG__ = math["min"](__b__UG__, 80)
-            local __B_u__G__ = math["random"](1, 100)
-            if __B_u__G__ <= __b__UG__ then
-                local __bUG = math["abs"](_B__Ug_)
-                b__uG__["components"]["sanity"]:DoDelta(-__bUG)
-                _B__Ug__:SpawnShadowFx(b__uG__)
-                return 0
-            end
-        end
-    end
-    if _B__Ug__:HasComponents(_b__Ug, "combat") then
-        local __B_U__g__ = self:GetEffectValueByKey "reflexiveInjury"
-        if __B_U__g__ > 0 then
-            if _b__Ug["components"]["combat"]["GetBrambleFx"] then
-                _b__Ug["components"]["combat"]:GetBrambleFx(b__uG__, __B_U__g__)
-            end
-        end
-    end
-    local BU__g__ = self:GetEffectValueByKey "absorbDamage"
-    if BU__g__ and BU__g__ > 0 then
-        local __B__u_g = math["min"](BU__g__ / 100, 0.8)
-        _B__Ug_ = _B__Ug_ * (1 - __B__u_g)
-    end
-    local _B_u_g__ = math["max"](_B__Ug_, 0)
-    if self:HasSuitEffect "suit_bhtg" then
-        _B_u_g__ = _B_u_g__ * 1.2
-    end
-    return _B_u_g__
+    local ok, resolved = pcall(self.DoAttackDamage, self, self.inst, target, damage, rng)
+    if token ~= nil then CombatContext.Finish(token) end
+    if not ok then error(resolved, 0) end
+    local monster = target.components.hh_monster
+    local pierce = monster ~= nil and monster:HasSpecialEffect("immuneTrue")
+        and 0 or self:GetEffectValueByKey("trueDamageNum")
+    local piercing = CombatMath.CalculateArmorPierce(metadata.pierce_base, pierce)
+    return resolved, piercing, metadata
 end
-function b_u__G:HandleBloodSuck(_b__uG)
-    if B__Ug_(self["inst"]) then
-        local __b__U__g = math["abs"](_b__uG)
-        local b__U__g__ = self["inst"]["components"]["hh_player"]:GetEffectValueByKey "bloodSuck"
-        if b__U__g__ > 0 then
-            local B__U_G_ = __b__U__g * b__U__g__ / 100
-            self["inst"]["components"]["health"]:DoDelta(B__U_G_, (448 * 291 - 452 * 139 - 389 ~= 67153), "bloodSuck")
-        end
-        local __bu__G = self["inst"]["components"]["hh_player"]:GetEffectValueByKey "restoreSpirit"
-        if __bu__G > 0 and _B__Ug__:HasComponents(self["inst"], "sanity") then
-            local B__U__g = __b__U__g * __bu__G / 100
-            self["inst"]["components"]["sanity"]:DoDelta(B__U__g)
-        end
+
+function b_u__G:TryDodge(attacker, rng)
+    if not _B__Ug__:NotIsDead(self.inst) or not _B__Ug__:NotIsDead(attacker) then return false end
+    local chance = CombatMath.Clamp(self:GetEffectValueByKey("chanceDodgeAttack"), 0, 70)
+    if not CombatMath.RollPercent(chance, rng or math.random) then
+        return false
     end
+    _B__Ug__:SpawnClientStrFx(self.inst, "NÉ !")
+    if self.inst.Transform ~= nil then
+        local x, y, z = self.inst.Transform:GetWorldPosition()
+        local fx = SpawnPrefab("maxwell_smoke")
+        if fx ~= nil then fx.Transform:SetPosition(x, y, z) end
+    end
+    if self.inst.SoundEmitter ~= nil then
+        self.inst.SoundEmitter:PlaySound("dontstarve/wilson/attack_whoosh")
+    end
+    return true
+end
+
+function b_u__G:GetPhamNhanReduction()
+    return CombatMath.Clamp(self:GetEffectValueByKey("absorbDamage"), 0, 80)
+end
+
+function b_u__G:GetBlockDamage(target, attacker, damage)
+    if not _B__Ug__:IsHHType(damage, "number") or damage <= 0 then return 0 end
+    if not _B__Ug__:HasComponents(target, "health") or target.components.health:IsDead() then
+        return damage
+    end
+    return CombatMath.ApplyReduction(damage, self:GetPhamNhanReduction())
+end
+function b_u__G:HandleBloodSuck(damage, kind)
+    if (kind ~= "primary" and kind ~= "splash") or type(damage) ~= "number"
+        or damage <= 0 or not B__Ug_(self.inst) then return end
+    local health = self.inst.components.health
+    self._hh_lifesteal_budget = self._hh_lifesteal_budget or {}
+    local maximum = health.GetMaxWithPenalty ~= nil and health:GetMaxWithPenalty() or health.maxhealth
+    local healing = CombatMath.TakeLifestealBudget(self._hh_lifesteal_budget, GetTime(),
+        damage * self:GetEffectValueByKey("bloodSuck") / 100, maximum)
+    if healing > 0 then health:DoDelta(healing, false, "bloodSuck") end
 end
 function b_u__G:GetFollowerDamage(__bu__g_)
     if not _B__Ug__:IsHHType(__bu__g_, "number") or __bu__g_ < 0 then
@@ -942,18 +713,6 @@ function b_u__G:GetFollowerArmor(b_U__g_)
         b_U__g_ = b_U__g_ - Bu_g_
     end
     return math["max"](b_U__g_, 0)
-end
-function b_u__G:GetHitByBrambleFxDamage(B__ug__)
-    if not _B__Ug__:IsHHType(B__ug__, "number") or B__ug__ <= 0 then
-        return 0
-    end
-    local __b__uG = self:GetEffectValueByKey "reduceAttackedDamage"
-    B__ug__ = B__ug__ - __b__uG
-    local _Bug__ = self:GetEffectValueByKey "reduceBrambleDamage"
-    if _Bug__ > 0 then
-        B__ug__ = math["max"](0, B__ug__ * (1 - _Bug__ / 100))
-    end
-    return math["max"](B__ug__, 0)
 end
 function b_u__G:HasSpecialEffect(_B_u__g_)
     local __b_uG__ = self:GetEffectValueByKey(_B_u__g_)
@@ -1438,19 +1197,9 @@ function b_u__G:EquipEffectInherit()
     if type(BUG.equip_buff_limit) ~= "number" or #_BUg_ > BUG.equip_buff_limit then
         return false, "Trang bị nhận không đủ chỗ cho toàn bộ thuộc tính."
     end
-    local seen, has_suit = {}, false
-    for _, entry in ipairs(_BUg_) do
-        local definition = type(entry) == "table" and B_U_g[entry.name] or nil
-        if definition == nil or (definition.only_one and seen[entry.name])
-            or (definition.is_suit and has_suit) then
-            return false, "Danh sách thuộc tính không thể kế thừa."
-        end
-        if definition.check_equip_can_add ~= nil then
-            local accepted, reason = definition.check_equip_can_add(__BU_g_)
-            if not accepted then return false, reason or "Trang bị nhận không tương thích với thuộc tính." end
-        end
-        seen[entry.name] = true
-        has_suit = has_suit or definition.is_suit
+    for index, entry in ipairs(_BUg_) do
+        local accepted, reason = BUG:ValidateEquipBuff(type(entry) == "table" and entry.name, _BUg_, index)
+        if not accepted then return false, reason end
     end
     for __B__U__G, __B_U__G in ipairs(_BUg_) do
         if __B_U__G and __B_U__G["name"] then
@@ -1985,8 +1734,8 @@ local __BU_g__ = {
     {["id"] = "criticalHitEffect", ["format_str"] = "+%s%% ST chí mạng"},
     {["id"] = "addComDamage", ["format_str"] = "+%s ST"},
     {["id"] = "addComDamagePercent", ["format_str"] = "+%s%% ST"},
-    {["id"] = "reduceAttackedDamage", ["format_str"] = "-%s ST nhận vào"},
-    {["id"] = "trueDamageNum", ["format_str"] = "+%s xuyên giáp"},
+    {["id"] = "absorbDamage", ["format_str"] = "-%s%% ST nhận vào"},
+    {["id"] = "trueDamageNum", ["format_str"] = "+%s%% xuyên giáp"},
     {["id"] = "addSpeedPercent", ["format_str"] = "+%s%% tốc chạy"}
 }
 function b_u__G:GetDebugStr()

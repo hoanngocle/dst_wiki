@@ -1,5 +1,6 @@
 -- Shared authoritative effects for Lục Nguyên projectiles and held swords.
 local Bridge = require("ttk_lucnguyen_combat")
+local CombatContext = require("combat/hh_combat_context")
 
 local M = {}
 local SLOW_KEY = "ttk_elemental_slow"
@@ -215,6 +216,7 @@ function M.IsLandedPrimary(owner, data, weapon)
         and type(data.damageresolved) == "number"
         and data.damageresolved > 0
         and IsValid(data.target)
+        and CombatContext.PacketKind() == nil
         and not Bridge.IsAuxiliaryAttack(owner, data.target)
 end
 

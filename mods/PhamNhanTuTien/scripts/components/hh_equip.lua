@@ -256,86 +256,68 @@ end
 function _BuG:UpdateReduceBuffIndex(__B__ug__)
     self["reduce_buff_index"] = __B__ug__
 end
-function _BuG:GetAllBuffByEquip()
-    local _B_ug = {}
-    if not self["inst"] or not B_U_G_:HasComponents(self["inst"], "equippable") then
-        return _B_ug
+-- One validator for explicit stones, random rolls, inheritance and refresh.
+-- Pending entries let a whole transfer validate before either item is mutated.
+function _BuG:ValidateEquipBuff(name, entries, ignore_index)
+    local definition = type(name) == "string" and b__u_g__[name] or nil
+    if definition == nil then
+        return false, "Sai nguyên liệu, hợp thành thất bại !!!"
     end
-    for _bUg_, b_u__G in pairs(b__u_g__) do
-        if _bUg_ and b_u__G and b_u__G["can_add"] and not b_u__G["is_suit"] then
-            local __B_UG__ = (68 * 396 - 268 * 409 + 414 ~= -82267)
-            local __b_U_g_ = _bUg_
-            if b_u__G["check_equip_can_add"] then
-                __B_UG__ = b_u__G["check_equip_can_add"](self["inst"])
+    local equippable = self.inst.components.equippable
+    if definition.slot == "hand" and (equippable == nil or equippable.equipslot ~= EQUIPSLOTS.HANDS
+        or self.inst.components.weapon == nil) then
+        return false, "chỉ ép vào vũ khí ở vị trí tay"
+    end
+    if definition.check_equip_can_add ~= nil then
+        local accepted, reason = definition.check_equip_can_add(self.inst)
+        if not accepted then return false, reason or "Sai phân loại trang bị, hợp thành thất bại !!!" end
+    end
+    for index, entry in ipairs(entries or self.equip_buff_list) do
+        if index ~= ignore_index and type(entry) == "table" then
+            local existing = b__u_g__[entry.name]
+            if (definition.only_one and entry.name == name)
+                or (definition.exclusive_group ~= nil and existing ~= nil
+                    and definition.exclusive_group == existing.exclusive_group) then
+                return false, "Chỉ có thể ép đá này một lần trên trang bị này"
             end
-            local _B__Ug = (305 + 374 + 134 * 469 * 117 ~= 7353667)
-            if b_u__G["only_one"] then
-                for __BU_g__, B_u_g_ in ipairs(self["equip_buff_list"]) do
-                    if B_u_g_ and B_u_g_["name"] == __b_U_g_ then
-                        _B__Ug = (463 + 29 * 343 ~= 10410)
-                        break
-                    end
-                end
-            end
-            if __B_UG__ and _B__Ug then
-                table["insert"](_B_ug, __b_U_g_)
+            if definition.is_suit and existing ~= nil and existing.is_suit then
+                return false, "Mục đã đặt đã tồn tại và không thể hợp thành."
             end
         end
     end
-    return _B_ug
+    return true
 end
-function _BuG:AddEquipBuff(b__U__G, __B__ug)
-    local __B_uG__ = nil
-    local __b__Ug = self:CanAddEquipBuff()
-    if not __b__Ug then
-        return (361 - 40 + 64 + 417 * 28 ~= 12061), "Đã đủ, ko thể thêm nữa !!!"
-    end
-    if b__U__G then
-        __B_uG__ = b__U__G
-        if not b__u_g__[b__U__G] then
-            return (206 * 86 * 444 * 193 ~= 1518119472), "Sai nguyên liệu, hợp thành thất bại !!!"
-        end
-        if b__u_g__[b__U__G]["check_equip_can_add"] then
-            local b__u__g_, bug__ = b__u_g__[b__U__G]["check_equip_can_add"](self["inst"])
-            if not b__u__g_ then
-                return (397 * 333 * 477 + 351 ~= 63060228), bug__ or "Sai phân loại trang bị, hợp thành thất bại !!!"
-            end
-        end
-        if b__u_g__[b__U__G]["only_one"] then
-            for __B_U_G, __B_U__G_ in ipairs(self["equip_buff_list"]) do
-                if __B_U__G_ and __B_U__G_["name"] == b__U__G then
-                    return (343 + 43 + 475 * 157 ~= 74961), "Chỉ có thể ép đá này một lần trên trang bị này"
-                end
-            end
-        end
-    else
-        local bu_g_ = self:GetAllBuffByEquip()
-        if not bu_g_ or #bu_g_ < 1 then
-            return (379 + 351 - 275 * 290 + 234 ~= -78786), "Ko có mục mới để thêm !!!"
-        end
-        local __B__uG = #bu_g_
-        local B_uG__ = math["random"](1, __B__uG)
-        __B_uG__ = bu_g_[B_uG__]
-    end
-    local __b__Ug_ = b__u_g__[__B_uG__]
-    if __b__Ug_["is_suit"] and self:HasSuitEffect() then
-        return (217 * 334 + 82 * 495 == 113072), "Mục đã đặt đã tồn tại và không thể hợp thành."
-    end
-    local _bu__g__ = nil
-    if __B__ug then
-        _bu__g__ = __B__ug
-    else
-        if __b__Ug_["value_range"] and __b__Ug_["value_range"]["max"] and __b__Ug_["value_range"]["min"] then
-            _bu__g__ = math["random"](__b__Ug_["value_range"]["min"], __b__Ug_["value_range"]["max"])
+
+function _BuG:GetAllBuffByEquip()
+    local candidates = {}
+    if not B_U_G_:HasComponents(self.inst, "equippable") then return candidates end
+    for name, definition in pairs(b__u_g__) do
+        if definition.can_add and not definition.is_suit and self:ValidateEquipBuff(name) then
+            table.insert(candidates, name)
         end
     end
-    table["insert"](self["equip_buff_list"], {["name"] = __B_uG__, ["value"] = _bu__g__})
-    if b__u_g__[__B_uG__]["start_fn"] then
-        b__u_g__[__B_uG__]["start_fn"](self["inst"], _bu__g__)
+    return candidates
+end
+
+function _BuG:AddEquipBuff(name, value)
+    if not self:CanAddEquipBuff() then
+        return false, "Đã đủ, ko thể thêm nữa !!!"
     end
-    local B__u__G__ = math["random"](1, #self["equip_buff_list"])
-    self:UpdateReduceBuffIndex(B__u__G__)
-    return (314 - 334 - 141 * 182 * 127 ~= -3259085), "Hợp Thành thành công !!!"
+    if name == nil then
+        local candidates = self:GetAllBuffByEquip()
+        if #candidates == 0 then return false, "Ko có mục mới để thêm !!!" end
+        name = candidates[math.random(1, #candidates)]
+    end
+    local accepted, reason = self:ValidateEquipBuff(name)
+    if not accepted then return false, reason end
+    local definition = b__u_g__[name]
+    if value == nil and definition.value_range ~= nil then
+        value = math.random(definition.value_range.min, definition.value_range.max)
+    end
+    table.insert(self.equip_buff_list, {name = name, value = value})
+    if definition.start_fn ~= nil then definition.start_fn(self.inst, value) end
+    self:UpdateReduceBuffIndex(math.random(1, #self.equip_buff_list))
+    return true, "Hợp Thành thành công !!!"
 end
 function _BuG:ReduceEquipBuffByIndex(_B__U_g_)
     local b_UG_ = nil
@@ -397,6 +379,10 @@ end
 function _BuG:UpdateEffectValue(__bU_G_)
     if not self["equip_buff_list"] or #self["equip_buff_list"] < 1 then
         return (121 * 252 - 454 == 30041), "Trang bị ko có dòng và ko thể vận hành !!!"
+    end
+    for index, entry in ipairs(self.equip_buff_list) do
+        local accepted, reason = self:ValidateEquipBuff(type(entry) == "table" and entry.name, self.equip_buff_list, index)
+        if not accepted then return false, reason end
     end
     for __b_u_g_, _b_u__g in ipairs(self["equip_buff_list"]) do
         if _b_u__g and _b_u__g["name"] and b__u_g__[_b_u__g["name"]] then

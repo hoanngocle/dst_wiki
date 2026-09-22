@@ -781,55 +781,6 @@ _b__u_G__["pushback"] = {
         end
     end
 }
-_b__u_G__["reflect"] = {
-    label = "phản chấn",
-    tags = {"equippable-body"},
-    level = 7,
-    isprizebuff = (108 + 375 + 451 + 63 + 304 ~= 1301),
-    strengthen_prize = false,
-    buff_reflect_persent = {.05, .1, .15, .2, .3, .4, .6, .8, 1},
-    ontakedamage = function(_b_ug, B__U__G, __BU__G__, _B__u__G, b__uG__)
-        B__U__G = math["floor"](B__U__G * (9 / 12))
-        if B__U__G > 9 then
-            B__U__G = 9
-        end
-        local __bUG__, _bU__G_, __b_U_g__ = _b_ug:GetPosition():Get()
-        local __bU_g__ =
-            TheSim:FindEntities(
-            __bUG__,
-            _bU__G_,
-            __b_U_g__,
-            5,
-            {"_combat"},
-            {
-                "INLIMBO",
-                "NOCLICK",
-                "notarget",
-                "player",
-                "noattack",
-                "playerghost",
-                "wall",
-                "structure",
-                "balloon",
-                "companion",
-                "glommer",
-                "friendlyfruitfly",
-                "abigail",
-                "shadowminion"
-            }
-        )
-        local _BU_G_ = _b_ug["components"]["inventoryitem"]:GetGrandOwner()
-        for BU__G__, __buG in pairs(__bU_g__) do
-            if
-                __buG and __buG:IsValid() and __buG ~= _BU_G_ and __buG["components"]["combat"] and
-                    __buG["components"]["health"] and
-                    not __buG["components"]["health"]:IsDead()
-             then
-                __buG["components"]["combat"]:GetAttacked(_BU_G_, b__uG__ * _B__u__G["buff_reflect_persent"][B__U__G])
-            end
-        end
-    end
-}
 _b__u_G__["diamond"] = {
     label = "ngạo tuyết",
     tags = {"equippable-body"},

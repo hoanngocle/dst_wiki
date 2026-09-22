@@ -282,6 +282,7 @@ local function bu_G__(__B_U_G)
     end
 end
 local function B_ug__(__b_u_g_, _b_u__g)
+    if require("combat/hh_combat_context").PacketKind() ~= nil then return end
     if not BU_g:HasComponents(__b_u_g_, "hh_monster") then
         return
     end
@@ -359,6 +360,7 @@ local function _B__u_g_(_Bug_, b__u_G)
     return (356 + 175 - 257 ~= 274)
 end
 local function _B_U_g_(__Bu_g, __b_U__G)
+    if require("combat/hh_combat_context").PacketKind() ~= nil then return end
     if not BU_g:HasComponents(__Bu_g, "hh_monster") then
         return
     end
@@ -863,19 +865,13 @@ function __b__U_G__:HasSpecialEffect(b_U__G_)
     local BuG_ = self:GetEffectValueByKey(b_U__G_)
     return BuG_ > 0
 end
-function __b__U_G__:GetHitByBrambleFxDamage(__B_U__g)
-    if not BU_g:IsHHType(__B_U__g, "number") or __B_U__g <= 0 then
-        return 0
-    end
-    local _bUG_ = self:GetEffectValueByKey "reduceAttackedDamage"
-    __B_U__g = __B_U__g - _bUG_
-    return math["max"](__B_U__g, 0)
-end
-function __b__U_G__:DoAttackDamage(BUG__, _b_U_g, B_U_g_)
+local CombatMath = require("combat/hh_combat_math")
+local CombatContext = require("combat/hh_combat_context")
+function __b__U_G__:DoAttackDamage(BUG__, _b_U_g, B_U_g_, rng)
     if not BU_g:IsHHType(B_U_g_, "number") or B_U_g_ <= 0 then
         return 0
     end
-    if not BU_g:NotIsDead(BUG__) then
+    if not BU_g:NotIsDead(BUG__) or not BU_g:NotIsDead(_b_U_g) then
         return B_U_g_
     end
     local bu_G_ = self:GetEffectValueByKey "addComDamageNum"
@@ -907,12 +903,12 @@ function __b__U_G__:DoAttackDamage(BUG__, _b_U_g, B_U_g_)
             bu_g = bu_g + __B__U_g
         end
     end
-    if bu_g > 0 then
-        local BU__g__ = math["random"](0, 100)
-        if BU__g__ <= bu_g then
-            local _B_u_g__ = self:GetEffectValueByKey "criticalHitEffect"
-            B_U_g_ = B_U_g_ * (2 + _B_u_g__ / 100)
-        end
+    local critical = CombatMath.RollPercent(bu_g, rng or math.random)
+    local metadata = CombatContext.Current(BUG__, _b_U_g)
+    if metadata ~= nil then metadata.critical = critical end
+    if critical then
+        local _B_u_g__ = self:GetEffectValueByKey "criticalHitEffect"
+        B_U_g_ = B_U_g_ * (2 + _B_u_g__ / 100)
     end
     if BU_g:HasComponents(_b_U_g, "hh_buff") then
         local BU__g_ = self:GetEffectValueByKey "addTargetDamage"
@@ -958,20 +954,6 @@ function __b__U_G__:GetBlockDamage(__B_u__G__, __bUG, __B_U__g__)
     local __b__U__g = self:GetEffectValueByKey "reducePercentDamage"
     if __b__U__g > 0 then
         __B_U__g__ = __B_U__g__ * (1 - math["min"](__b__U__g / 100, 0.8))
-    end
-    if BU_g:HasComponents(__bUG, "combat") then
-        local _B__U__G_ = self:GetEffectValueByKey "reboundDamageNum"
-        if _B__U__G_ > 0 then
-            if __bUG["components"]["combat"]["GetBrambleFx"] then
-                __bUG["components"]["combat"]:GetBrambleFx(__B_u__G__, _B__U__G_)
-            end
-        end
-        local b_U__g_ = self:GetEffectValueByKey "reboundDamagePercent"
-        if b_U__g_ > 0 then
-            if __bUG["components"]["combat"]["GetBrambleFx"] then
-                __bUG["components"]["combat"]:GetBrambleFx(__B_u__G__, __B_U__g__ * b_U__g_ / 100)
-            end
-        end
     end
     local b__U__g__ = self["inst"]
     if

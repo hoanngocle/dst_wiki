@@ -369,15 +369,6 @@ local bu_G__ = {
                 end
             end
         },
-        ["addReboundDamageNum"] = {
-            ["name"] = TUNING["HH_FORMAT_CONFIG"]["MONSTER_CONFIG"]["addReboundDamageNum"],
-            ["rangeValue"] = {["min"] = 5, ["max"] = 10},
-            ["start_fn"] = function(_b__u__g, BuG__)
-                if __B_ug_:NotIsDead(_b__u__g) and __B_ug_:HasComponents(_b__u__g, "hh_monster") then
-                    _b__u__g["components"]["hh_monster"]:AddEffectValueByKey("reboundDamageNum", BuG__)
-                end
-            end
-        },
         ["addDayDamage"] = {
             ["name"] = TUNING["HH_FORMAT_CONFIG"]["MONSTER_CONFIG"]["addDayDamage"],
             ["rangeValue"] = {["min"] = 10, ["max"] = 30},
@@ -722,24 +713,6 @@ local bu_G__ = {
             ["start_fn"] = function(_B__Ug_, _bu_G__)
                 if __B_ug_:NotIsDead(_B__Ug_) and __B_ug_:HasComponents(_B__Ug_, "hh_monster") then
                     _B__Ug_["components"]["hh_monster"]:AddEffectValueByKey("reduceAttackedDamage", _bu_G__)
-                end
-            end
-        },
-        ["addReboundDamageNum"] = {
-            ["name"] = TUNING["HH_FORMAT_CONFIG"]["MONSTER_CONFIG"]["addReboundDamageNum"],
-            ["rangeValue"] = {["min"] = 10, ["max"] = 30},
-            ["start_fn"] = function(__b__u__G, _B_ug__)
-                if __B_ug_:NotIsDead(__b__u__G) and __B_ug_:HasComponents(__b__u__G, "hh_monster") then
-                    __b__u__G["components"]["hh_monster"]:AddEffectValueByKey("reboundDamageNum", _B_ug__)
-                end
-            end
-        },
-        ["reboundDamagePercent"] = {
-            ["name"] = TUNING["HH_FORMAT_CONFIG"]["MONSTER_CONFIG"]["reboundDamagePercent"],
-            ["rangeValue"] = {["min"] = 5, ["max"] = 10},
-            ["start_fn"] = function(_bu_g__, _B__U_G_)
-                if __B_ug_:NotIsDead(_bu_g__) and __B_ug_:HasComponents(_bu_g__, "hh_monster") then
-                    _bu_g__["components"]["hh_monster"]:AddEffectValueByKey("reboundDamagePercent", _B__U_G_)
                 end
             end
         },
@@ -1122,24 +1095,6 @@ local bu_G__ = {
                 end
             end
         },
-        ["addReboundDamageNum"] = {
-            ["name"] = TUNING["HH_FORMAT_CONFIG"]["MONSTER_CONFIG"]["addReboundDamageNum"],
-            ["rangeValue"] = {["min"] = 30, ["max"] = 40},
-            ["start_fn"] = function(B__u_G__, b__U__g_)
-                if __B_ug_:NotIsDead(B__u_G__) and __B_ug_:HasComponents(B__u_G__, "hh_monster") then
-                    B__u_G__["components"]["hh_monster"]:AddEffectValueByKey("reboundDamageNum", b__U__g_)
-                end
-            end
-        },
-        ["reboundDamagePercent"] = {
-            ["name"] = TUNING["HH_FORMAT_CONFIG"]["MONSTER_CONFIG"]["reboundDamagePercent"],
-            ["rangeValue"] = {["min"] = 10, ["max"] = 25},
-            ["start_fn"] = function(bU__g, B_u__G)
-                if __B_ug_:NotIsDead(bU__g) and __B_ug_:HasComponents(bU__g, "hh_monster") then
-                    bU__g["components"]["hh_monster"]:AddEffectValueByKey("reboundDamagePercent", B_u__G)
-                end
-            end
-        },
         ["iceTurret"] = {
             ["name"] = TUNING["HH_FORMAT_CONFIG"]["MONSTER_CONFIG"]["iceTurret"],
             ["only_one"] = (true and not true and false or
@@ -1440,15 +1395,6 @@ local bu_G__ = {
             ["start_fn"] = function(__bU_g_, _BU__g__)
                 if __B_ug_:NotIsDead(__bU_g_) and __B_ug_:HasComponents(__bU_g_, "hh_monster") then
                     __bU_g_["components"]["hh_monster"]:AddEffectValueByKey("hitSuppressAddHealth", _BU__g__)
-                end
-            end
-        },
-        ["reboundDamagePercent"] = {
-            ["name"] = TUNING["HH_FORMAT_CONFIG"]["MONSTER_CONFIG"]["reboundDamagePercent"],
-            ["rangeValue"] = {["min"] = 50, ["max"] = 100},
-            ["start_fn"] = function(Bug__, b_U__g_)
-                if __B_ug_:NotIsDead(Bug__) and __B_ug_:HasComponents(Bug__, "hh_monster") then
-                    Bug__["components"]["hh_monster"]:AddEffectValueByKey("reboundDamagePercent", b_U__g_)
                 end
             end
         },

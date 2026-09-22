@@ -36,7 +36,6 @@ local items = {
 
 
     ["hh_true_damage"] = { "Hiệu ứng xuyên giáp", "hh_true_damage", "hh_true_damage" },
-    ["hh_bramble_damage"] = { "Hiệu ứng phản đòn", "Hiệu ứng phản đòn", "Hiệu ứng phản đòn" },
     ["hh_poison"] = { "Hiệu ứng trúng độc", "Hiệu ứng trúng độc", "Hiệu ứng trúng độc" },
     ["hh_monster_kj"] = { "Hiệu ứng sợ hãi", "Hiệu ứng sợ hãi", "Hiệu ứng sợ hãi" },
     ["hh_turret"] = { "Pháo Kích", "Pháo Kích", "Pháo Kích" },

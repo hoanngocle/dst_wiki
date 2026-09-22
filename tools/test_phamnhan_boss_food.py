@@ -27,6 +27,11 @@ def make_lua():
     lua = LuaRuntime(unpack_returned_tuples=True)
     lua.globals().root = (MOD / "scripts").as_posix()
     lua.globals().modroot = MOD.as_posix()
+    player_source = (MOD / "scripts/components/hh_player.lua").read_text(encoding="utf-8")
+    cap_start = player_source.index("local COMBAT_EFFECT_CAPS")
+    cap_end = player_source.index("function b_u__G:GetEffectValueByKey", cap_start)
+    lua.execute("local b_u__G={}\n" + player_source[cap_start:cap_end]
+                + "\nRealClampEffectValue=b_u__G.ClampEffectValue")
     lua.execute(
         r'''
 package.path = root .. '/?.lua;' .. package.path
@@ -148,9 +153,10 @@ function NewPlayer()
     function sanity:OnLoad(data) self.current=math.max(0,math.min(data.current,self.max)) end
     inst.components.sanity=sanity
 
-    local hh_player={inst=inst,hh_effects={trueDamageNum=7,criticalHitRate=3,reduceAttackedDamage=5,
+    local hh_player={inst=inst,hh_effects={trueDamageNum=7,criticalHitRate=3,absorbDamage=5,
         immuneHot=0,immuneCold=0,immunePoison=0,immunitySleep=0,immuneFreeze=0}}
-    function hh_player:GetEffectValueByKey(key) return self.hh_effects[key] or 0 end
+    hh_player.ClampEffectValue=RealClampEffectValue
+    function hh_player:GetEffectValueByKey(key) return self:ClampEffectValue(key,self.hh_effects[key] or 0) end
     function hh_player:HasSpecialEffect(key) return self:GetEffectValueByKey(key)>0 end
     inst.components.hh_player=hh_player
 
@@ -212,18 +218,18 @@ assert(progress:GetCount('qlch')==0)
 LoadFoodMain()
 local p=NewPlayer(); local progress=p.components.ttk_bossprogress
 for i=1,10 do progress:Absorb('baihu') end
-assert(p.components.hh_player:GetEffectValueByKey('trueDamageNum')==47)
+assert(p.components.hh_player:GetEffectValueByKey('trueDamageNum')==40)
 assert(p.components.hh_player:GetEffectValueByKey('criticalHitRate')==13)
 assert(p.ttk_bossprogress_baihu:value()==10)
 p.components.ttk_bossprogress=nil
 assert(p:GetTtkBossProgressCount('baihu')==10)
 p.components.ttk_bossprogress=progress
 p.components.hh_player.hh_effects.trueDamageNum=2
-assert(p.components.hh_player:GetEffectValueByKey('trueDamageNum')==42)
+assert(p.components.hh_player:GetEffectValueByKey('trueDamageNum')==40)
 local data=progress:OnSave()
 progress:OnLoad(data); progress:OnLoad(data); progress:Refresh()
 assert(progress:GetCount('baihu')==10)
-assert(p.components.hh_player:GetEffectValueByKey('trueDamageNum')==42)
+assert(p.components.hh_player:GetEffectValueByKey('trueDamageNum')==40)
 assert(p.components.hh_player:GetEffectValueByKey('criticalHitRate')==13)
 """
         )
@@ -366,10 +372,10 @@ old.tags.playerghost=true
 progress:Refresh()
 old.tags.playerghost=nil
 assert(progress:GetCount('stalke_fuben')==7)
-assert(old.components.hh_player:GetEffectValueByKey('reduceAttackedDamage')==19)
+assert(old.components.hh_player:GetEffectValueByKey('absorbDamage')==19)
 local new=NewPlayer(); progress:TransferComponent(new)
 assert(new.components.ttk_bossprogress:GetCount('stalke_fuben')==7)
-assert(new.components.hh_player:GetEffectValueByKey('reduceAttackedDamage')==19)
+assert(new.components.hh_player:GetEffectValueByKey('absorbDamage')==19)
 """
         )
 

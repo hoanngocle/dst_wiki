@@ -304,11 +304,13 @@ function HHLeveling:ApplyStat(stat_name)
     if not player then return end
 
     if stat_name == "str" then
-        player:AddEffectValueByKey("trueDamageNum", T.STR_GAIN)
+        local current = math.min(math.max(self.stat_str, 0) * T.STR_GAIN, 20)
+        local previous = math.min(math.max(self.stat_str - 1, 0) * T.STR_GAIN, 20)
+        player:AddEffectValueByKey("trueDamageNum", current - previous)
     elseif stat_name == "agi" then
         player:AddEffectValueByKey("chanceDodgeAttack", T.AGI_GAIN)
     elseif stat_name == "vit" then
-        player:AddEffectValueByKey("reduceAttackedDamage", T.VIT_GAIN)
+        player:AddEffectValueByKey("absorbDamage", T.VIT_GAIN)
     elseif stat_name == "sen" then
         player:AddEffectValueByKey("criticalHitRate", T.SEN_CRIT_RATE)
         player:AddEffectValueByKey("criticalHitEffect", T.SEN_CRIT_DMG)
@@ -323,9 +325,9 @@ function HHLeveling:ApplyAllStats()
     if not player then return end
 
     -- Re-apply all stats
-    player:AddEffectValueByKey("trueDamageNum", self.stat_str * T.STR_GAIN)
+    player:AddEffectValueByKey("trueDamageNum", math.min(math.max(self.stat_str, 0) * T.STR_GAIN, 20))
     player:AddEffectValueByKey("chanceDodgeAttack", self.stat_agi * T.AGI_GAIN)
-    player:AddEffectValueByKey("reduceAttackedDamage", self.stat_vit * T.VIT_GAIN)
+    player:AddEffectValueByKey("absorbDamage", self.stat_vit * T.VIT_GAIN)
     player:AddEffectValueByKey("criticalHitRate", self.stat_sen * T.SEN_CRIT_RATE)
     player:AddEffectValueByKey("criticalHitEffect", self.stat_sen * T.SEN_CRIT_DMG)
     

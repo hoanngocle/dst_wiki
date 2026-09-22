@@ -2,6 +2,7 @@
 from pathlib import Path
 from zipfile import ZipFile
 import sys
+import unittest
 
 sys.stdout.reconfigure(encoding="utf-8")
 ROOT = Path(__file__).resolve().parents[1]
@@ -359,3 +360,119 @@ print("PASS: independent prefabs, native Kim planar, exact recipes, namespaced i
 for path in ROOT.rglob("*.lua"):
     lua.execute("assert(loadstring(...))",path.read_text(encoding="utf-8-sig"))
 print("PASS: all TuTienKy Lua parses as Lua 5.1.")
+
+
+class PhamNhanPacketBoundaryTests(unittest.TestCase):
+    """Exercise real elemental listeners against the installed DST combat hook."""
+
+    def setUp(self):
+        from test_combat_pipeline import PipelineTests
+
+        self.pipeline = PipelineTests()
+        self.pipeline.setUp()
+        self.lua = self.pipeline.lua
+        self.lua.execute(r'''
+Elements=require('ttk_elemental_combat')
+utils.GetTopFollowerOwner=function() return nil end
+function listenable(inst)
+ inst.listeners={}
+ function inst:ListenForEvent(name,fn)
+  self.listeners[name]=self.listeners[name] or {}
+  table.insert(self.listeners[name],fn)
+ end
+ function inst:RemoveEventCallback(name,fn)
+  for i=#(self.listeners[name] or {}),1,-1 do
+   if self.listeners[name][i]==fn then table.remove(self.listeners[name],i) end
+  end
+ end
+ function inst:PushEvent(name,data)
+  self.events[name]=data
+  for _,fn in ipairs(self.listeners[name] or {}) do fn(self,data) end
+ end
+end
+''')
+
+    def test_primary_with_actual_splash_advances_equipped_counter_once(self):
+        # If splash passes the primary guard, Mộc counts twice and procs early.
+        self.pipeline.check(r'''
+for _,start in ipairs({0,2}) do
+ local a=entity('hh_player',{addSplashDamageAOE=20})
+ local target,secondary=entity(),entity()
+ secondary.HasTag=function(_,tag) return tag=='hostile' end
+ local weapon={components={weapon={GetDamage=function() return 100 end}},_ttk_moc_hits=start}
+ listenable(a)
+ a:ListenForEvent('onhitother',player_onhitother)
+ Elements.Equip(weapon,a,2)
+ local spawned=0
+ SpawnPrefab=function()
+  spawned=spawned+1
+  return {Launch=function() end}
+ end
+ TheSim={FindEntities=function() return {target,secondary} end}
+ local direct,splash=install(target),install(secondary)
+ direct:GetAttacked(a,100,weapon)
+ assert(target.components.health.currenthealth==9900 and secondary.components.health.currenthealth==9980,
+  'the real primary and real Pham Nhan splash must both land')
+ assert(direct.calls==1 and splash.calls==1)
+ assert(weapon._ttk_moc_hits==start+1,'one direct hit plus splash must advance Moc only once')
+ assert(spawned==0,'splash must not trigger an early elemental projectile')
+ assert(Context.PacketKind()==nil)
+ Elements.Unequip(weapon)
+end
+''')
+
+    def test_each_auxiliary_packet_rejects_all_held_elemental_effects(self):
+        # Any missing packet guard leaks counters or consumes elemental RNG.
+        for kind in ('splash', 'poison', 'heavy_wound', 'execute'):
+            with self.subTest(kind=kind):
+                self.lua.globals().test_packet_kind = kind
+                self.pipeline.check(r'''
+local a,target=entity('hh_player'),entity()
+local weapon={components={weapon={GetDamage=function() return 100 end}},_ttk_moc_hits=3,_ttk_tho_hits=4}
+local data={target=target,weapon=weapon,damageresolved=10}
+local rng_calls,spawn_calls=0,0
+local function rng() rng_calls=rng_calls+1; return 1 end
+local function spawn() spawn_calls=spawn_calls+1; return {Launch=function() end} end
+local landed,handled
+local results={}
+Context.WithPacket(test_packet_kind,function()
+ landed=Elements.IsLandedPrimary(a,data,weapon)
+ for element=2,6 do results[element]=Elements.HandleHeldHit(weapon,a,data,element,rng,spawn) end
+end)
+assert(landed==false,test_packet_kind..' is not a primary event')
+for element=2,6 do assert(results[element]==false,'auxiliary event must not handle any held element') end
+assert(weapon._ttk_moc_hits==3 and weapon._ttk_tho_hits==4,'auxiliary event must not advance counters')
+assert(rng_calls==0 and spawn_calls==0 and a._ttk_elemental_shield==nil,
+ 'auxiliary event must not roll, spawn, or activate elemental effects')
+assert(Context.PacketKind()==nil)
+''')
+
+    def test_packet_error_restores_context_for_the_next_primary(self):
+        self.pipeline.check(r'''
+local a,target=entity('hh_player'),entity()
+local weapon={components={weapon={GetDamage=function() return 100 end}}}
+local data={target=target,weapon=weapon,damageresolved=10}
+Context.WithPacket('splash',function()
+ local ok,err=pcall(function()
+  Context.WithPacket('poison',function() error('packet callback failure') end)
+ end)
+ assert(not ok and string.find(err,'packet callback failure'))
+ assert(Context.PacketKind()=='splash','inner error must restore outer packet context')
+ assert(not Elements.IsLandedPrimary(a,data,weapon))
+end)
+assert(Context.PacketKind()==nil)
+assert(Elements.IsLandedPrimary(a,data,weapon))
+assert(Elements.HandleHeldHit(weapon,a,data,2))
+assert(weapon._ttk_moc_hits==1,'a primary after error must still advance exactly once')
+local Bridge=require('ttk_lucnguyen_combat')
+listenable(a)
+install(target)
+assert(Bridge.ApplyAuxiliary(a,target,10,weapon,function()
+ assert(not Elements.IsLandedPrimary(a,data,weapon),'the original Luc Nguyen guard must remain active')
+ return true
+end))
+''')
+
+
+if __name__ == '__main__':
+    unittest.main()
