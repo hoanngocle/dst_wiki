@@ -1,5 +1,6 @@
 local AchievementCatalog = require("achievement/ttk_achievement_catalog")
 local PerkCatalog = require("achievement/ttk_perk_catalog")
+local SeasonalCatalog = require("achievement/ttk_seasonal_catalog")
 local Core = require("achievement/ttk_achievement_core")
 
 local MAX_SNAPSHOT_BYTES = 16384
@@ -13,24 +14,47 @@ local function FormatNumber(value)
     return string.format("%.17g", value)
 end
 
-local function SerializeSnapshot(snapshot)
-    local achievements, perks = {}, {}
+local function SerializeSnapshot(snapshot, revision)
+    local achievements, perks, quotes, tasks, chests = {}, {}, {}, {}, {}
     for _, definition in ipairs(AchievementCatalog.All()) do
-        local state = snapshot.achievements[definition.id]
-        if state ~= nil then
-            table.insert(achievements, definition.id .. ":" .. FormatNumber(state.progress) .. ":" .. StatusCode(state.status))
-        end
+        local state = snapshot.achievements[definition.id] or { progress=0, status="locked" }
+        table.insert(achievements, definition.id .. ":" .. FormatNumber(state.progress) .. ":" .. StatusCode(state.status))
     end
     for _, perk in ipairs(PerkCatalog.All()) do
         local level = perk.max_level ~= nil and (snapshot.perks.levels[perk.id] or 0)
             or (snapshot.perks.unlocked[perk.id] and 1 or 0)
         if level > 0 then table.insert(perks, perk.id .. ":" .. tostring(level)) end
+        local capped = level >= (perk.max_level or 1)
+        local current_cost = level > 0 and (perk.max_level and PerkCatalog.PriceForLevel(level) or perk.price) or 0
+        local next_cost = not capped and PerkCatalog.NextPrice(perk, level) or 0
+        local current_effect = perk.effect_per_level and perk.effect_per_level * level or level
+        local next_effect = perk.effect_per_level and perk.effect_per_level * math.min(level + 1, perk.max_level) or 1
+        quotes[#quotes + 1] = table.concat({perk.id, current_cost, next_cost,
+            FormatNumber(current_effect), FormatNumber(next_effect),
+            capped and "c" or snapshot.balance >= next_cost and "u" or "l"}, ":")
+    end
+    local seasonal = snapshot.seasonal
+    if seasonal ~= nil then
+        for _, slot in ipairs(seasonal.slots) do
+            local definition = SeasonalCatalog.ById(slot.task_id)
+            local status = slot.claims >= definition.max_claims and "c"
+                or slot.progress >= definition.target and "u" or "l"
+            tasks[#tasks + 1] = table.concat({slot.task_id, slot.progress, slot.claims, status}, ":")
+        end
+        for _, milestone in ipairs({5, 10, 15, 20}) do
+            chests[#chests + 1] = tostring(milestone) .. ":" .. (seasonal.chest_claimed[milestone] and "c"
+                or seasonal.first_claims >= milestone and "u" or "l")
+        end
     end
     local encoded = table.concat({
-        "v1", "e" .. tostring(snapshot.earned), "s" .. tostring(snapshot.spent),
+        "v2", "r" .. tostring(revision), "e" .. tostring(snapshot.earned), "s" .. tostring(snapshot.spent),
         "a" .. table.concat(achievements, ","), "p" .. table.concat(perks, ","),
+        "q" .. table.concat(quotes, ","),
+        "t" .. (seasonal and seasonal.season .. ":" .. tostring(seasonal.first_claims) or ""),
+        "u" .. table.concat(tasks, ","), "c" .. table.concat(chests, ","),
     }, ";")
-    return #encoded <= MAX_SNAPSHOT_BYTES and encoded or "v1;e0;s0;a;p"
+    -- Keep the last valid state instead of publishing a false zero balance.
+    return #encoded <= MAX_SNAPSHOT_BYTES and encoded or nil
 end
 
 local function CopyScalarTree(value, depth, budget)
@@ -60,6 +84,7 @@ end
 local TtkAchievementProgress = Class(function(self, inst)
     self.inst = inst
     self.version = 1
+    self.snapshot_revision = 0
     self.effect_callback = nil
     self.cultivation_reference = {}
     self.core = Core.New(inst, function(_, perk, level, mode)
@@ -79,8 +104,11 @@ function TtkAchievementProgress:ApplyPerk(perk, level, mode)
 end
 
 function TtkAchievementProgress:PushSnapshot()
-    local encoded = SerializeSnapshot(self.core:GetSnapshot())
+    self.snapshot_revision = self.snapshot_revision + 1
+    local encoded = SerializeSnapshot(self.core:GetSnapshot(), self.snapshot_revision)
+    if encoded == nil then return nil end
     self.snapshot = encoded
+    if self.inst._ttk_achievement_snapshot ~= nil then self.inst._ttk_achievement_snapshot:set(encoded) end
     self.inst:PushEvent("ttk_achievement_dirty", encoded)
     return encoded
 end
@@ -134,13 +162,13 @@ end
 
 function TtkAchievementProgress:ClaimSeasonal(id, request_id)
     local ok, result = self.core:ClaimSeasonal(id, request_id)
-    if ok then self:PushSnapshot() end
+    if type(request_id) == "string" and #request_id > 0 then self:PushSnapshot() end
     return ok, result
 end
 
 function TtkAchievementProgress:ClaimChest(season, milestone, request_id)
     local ok, result = self.core:ClaimChest(self.inst, season, milestone, request_id)
-    if ok then self:PushSnapshot() end
+    if type(request_id) == "string" and #request_id > 0 then self:PushSnapshot() end
     return ok, result
 end
 

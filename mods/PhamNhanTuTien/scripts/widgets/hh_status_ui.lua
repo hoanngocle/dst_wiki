@@ -191,6 +191,18 @@ local HHStatusUI = Class(Screen, function(self, owner, on_close)
         TheFrontEnd:PushScreen(HHShadowUpgradeScreen(owner))
     end)
 
+    self.progression_btn = self.panel:AddChild(require("widgets/textbutton")())
+    self.progression_btn:SetPosition(345, -355)
+    self.progression_btn:SetText("Thành tựu · Mùa · Đặc quyền")
+    self.progression_btn:SetTextSize(28)
+    self.progression_btn:SetOnClick(function()
+        if TheNet:IsDedicated() or HHGuideLock.IsOpen(self.owner) or HHSummaryLock.IsOpen(self.owner) then return end
+        local ProgressionScreen = require("screens/ttk_progression_screen")
+        local owner = self.owner
+        TheFrontEnd:PopScreen(self)
+        TheFrontEnd:PushScreen(ProgressionScreen(owner))
+    end)
+
     self.portrait_picker = self.panel:AddChild(require("widgets/ttk_eva_portrait_picker")())
     self.portrait_picker:SetPosition(345, -20)
     self.quest_panel:Hide()

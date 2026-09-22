@@ -2,6 +2,7 @@
 local G = GLOBAL
 if rawget(env, "_ttk_achievement_registered") then return end
 rawset(env, "_ttk_achievement_registered", true)
+AddReplicableComponent("ttk_achievement_progress")
 
 local AchievementCatalog = require("achievement/ttk_achievement_catalog")
 local SeasonalCatalog = require("achievement/ttk_seasonal_catalog")
@@ -366,7 +367,11 @@ local function InstallPlayer(inst)
     end)
 end
 
-AddPlayerPostInit(InstallPlayer)
+AddPlayerPostInit(function(inst)
+    inst._ttk_achievement_rpc_namespace = modname
+    inst._ttk_achievement_snapshot = G.net_string(inst.GUID, "ttk.achievement.snapshot", "ttk_achievement_netdirty")
+    InstallPlayer(inst)
+end)
 modimport("main/ttk_achievement_perks.lua")
 AddComponentPostInit("eater", InstallEater)
 AddComponentPostInit("inventoryitem", function(self)
@@ -453,7 +458,7 @@ AddModRPCHandler(modname, "AchievementClaim", function(sender, id, request_id, .
     local component = ResolveSender(sender)
     if component == nil or AchievementCatalog.ById(id) == nil then return end
     local ok = component.core:ClaimAchievement(id, request_id)
-    if ok then component:PushSnapshot() end
+    component:PushSnapshot() -- Also acknowledge rejected requests to release UI pending state.
 end)
 
 AddModRPCHandler(modname, "AchievementPerk", function(sender, id, request_id, ...)
@@ -461,7 +466,7 @@ AddModRPCHandler(modname, "AchievementPerk", function(sender, id, request_id, ..
     local component = ResolveSender(sender)
     if component == nil or PerkCatalog.ById(id) == nil then return end
     local ok = component.core:PurchasePerk(id, request_id)
-    if ok then component:PushSnapshot() end
+    component:PushSnapshot()
 end)
 
 AddModRPCHandler(modname, "AchievementSeasonal", function(sender, kind, slot_index, id, request_id, ...)
