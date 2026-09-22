@@ -4277,8 +4277,13 @@
     "seasonal",
     "survival"
   ],
+  "perkRuntimeSource": "mods/PhamNhanTuTien/ACHIEVEMENT_PERK_RUNTIME.md",
   "perks": [
     {
+      "availability": {
+        "note": "Đã có triển khai theo kiểm kê; chưa xác nhận đầy đủ trong DST.",
+        "status": "implemented"
+      },
       "effect_per_level": 0.5,
       "group": "stats",
       "id": "planar_defense",
@@ -4314,6 +4319,10 @@
       "name": "Planar Defense +"
     },
     {
+      "availability": {
+        "note": "Đã có triển khai theo kiểm kê; chưa xác nhận đầy đủ trong DST.",
+        "status": "implemented"
+      },
       "effect_per_level": 1,
       "group": "stats",
       "id": "planar_damage",
@@ -4349,6 +4358,10 @@
       "name": "Planar Damage +"
     },
     {
+      "availability": {
+        "note": "Đã có triển khai theo kiểm kê; chưa xác nhận đầy đủ trong DST.",
+        "status": "implemented"
+      },
       "effect_per_level": 0.01,
       "group": "stats",
       "id": "critical_hit",
@@ -4384,6 +4397,10 @@
       "name": "Critical Hit +"
     },
     {
+      "availability": {
+        "note": "Đã có triển khai theo kiểm kê; chưa xác nhận đầy đủ trong DST.",
+        "status": "implemented"
+      },
       "effect_per_level": 0.02,
       "group": "stats",
       "id": "critical_damage",
@@ -4419,6 +4436,10 @@
       "name": "Critical Damage +"
     },
     {
+      "availability": {
+        "note": "Đã có triển khai theo kiểm kê; chưa xác nhận đầy đủ trong DST.",
+        "status": "implemented"
+      },
       "effect_per_level": 0.01,
       "group": "stats",
       "id": "lifesteal",
@@ -4454,6 +4475,10 @@
       "name": "Lifesteal +"
     },
     {
+      "availability": {
+        "note": "Đã có triển khai theo kiểm kê; chưa xác nhận đầy đủ trong DST.",
+        "status": "implemented"
+      },
       "effect_per_level": 0.01,
       "group": "stats",
       "id": "scale",
@@ -4489,6 +4514,10 @@
       "name": "Scale +"
     },
     {
+      "availability": {
+        "note": "Đã có triển khai theo kiểm kê; chưa xác nhận đầy đủ trong DST.",
+        "status": "implemented"
+      },
       "effect_per_level": 0.05,
       "group": "stats",
       "id": "xp_multiplier",
@@ -4524,6 +4553,10 @@
       "name": "XP Multiplier +"
     },
     {
+      "availability": {
+        "note": "Đã có triển khai theo kiểm kê; chưa xác nhận đầy đủ trong DST.",
+        "status": "implemented"
+      },
       "group": "ability",
       "id": "fast_worker",
       "levelPrices": [],
@@ -4532,6 +4565,10 @@
       "price": 8
     },
     {
+      "availability": {
+        "note": "Đã có triển khai theo kiểm kê; chưa xác nhận đầy đủ trong DST.",
+        "status": "implemented"
+      },
       "group": "ability",
       "id": "mine_faster",
       "levelPrices": [],
@@ -4540,6 +4577,10 @@
       "price": 6
     },
     {
+      "availability": {
+        "note": "Đã có triển khai theo kiểm kê; chưa xác nhận đầy đủ trong DST.",
+        "status": "implemented"
+      },
       "group": "ability",
       "id": "chop_faster",
       "levelPrices": [],
@@ -4548,6 +4589,10 @@
       "price": 6
     },
     {
+      "availability": {
+        "note": "Đã có triển khai theo kiểm kê; chưa xác nhận đầy đủ trong DST.",
+        "status": "implemented"
+      },
       "group": "ability",
       "id": "fish_faster",
       "levelPrices": [],
@@ -4556,6 +4601,10 @@
       "price": 6
     },
     {
+      "availability": {
+        "note": "Đã có triển khai theo kiểm kê; chưa xác nhận đầy đủ trong DST.",
+        "status": "implemented"
+      },
       "group": "ability",
       "id": "cook_faster",
       "levelPrices": [],
@@ -4564,6 +4613,10 @@
       "price": 6
     },
     {
+      "availability": {
+        "note": "Đã có triển khai theo kiểm kê; chưa xác nhận đầy đủ trong DST.",
+        "status": "implemented"
+      },
       "group": "ability",
       "id": "warly_chef",
       "levelPrices": [],
@@ -4572,6 +4625,10 @@
       "price": 8
     },
     {
+      "availability": {
+        "note": "Thiếu component trinketowner; mua bị từ chối và không trừ Star.",
+        "status": "unavailable"
+      },
       "group": "ability",
       "id": "trinket_owner",
       "levelPrices": [],
@@ -4580,6 +4637,10 @@
       "price": 12
     },
     {
+      "availability": {
+        "note": "Đã có triển khai theo kiểm kê; chưa xác nhận đầy đủ trong DST.",
+        "status": "implemented"
+      },
       "group": "ability",
       "id": "double_healed",
       "levelPrices": [],
@@ -4588,6 +4649,10 @@
       "price": 15
     },
     {
+      "availability": {
+        "note": "Đã có triển khai theo kiểm kê; chưa xác nhận đầy đủ trong DST.",
+        "status": "implemented"
+      },
       "group": "ability",
       "id": "double_pick",
       "levelPrices": [],
@@ -4596,6 +4661,10 @@
       "price": 20
     },
     {
+      "availability": {
+        "note": "Đã có triển khai theo kiểm kê; chưa xác nhận đầy đủ trong DST.",
+        "status": "implemented"
+      },
       "group": "ability",
       "id": "double_drop",
       "levelPrices": [],
@@ -4604,6 +4673,10 @@
       "price": 30
     },
     {
+      "availability": {
+        "note": "Đã có triển khai theo kiểm kê; chưa xác nhận đầy đủ trong DST.",
+        "status": "implemented"
+      },
       "group": "ability",
       "id": "build_cheaper",
       "levelPrices": [],
@@ -4612,6 +4685,10 @@
       "price": 35
     },
     {
+      "availability": {
+        "note": "Đã có triển khai theo kiểm kê; chưa xác nhận đầy đủ trong DST.",
+        "status": "implemented"
+      },
       "group": "ability",
       "id": "eternal_cage",
       "levelPrices": [],
@@ -4620,6 +4697,10 @@
       "price": 5
     },
     {
+      "availability": {
+        "note": "Đã có triển khai theo kiểm kê; chưa xác nhận đầy đủ trong DST.",
+        "status": "implemented"
+      },
       "group": "ability",
       "id": "easy_farm",
       "levelPrices": [],
@@ -4628,6 +4709,10 @@
       "price": 12
     },
     {
+      "availability": {
+        "note": "Thiếu component chasni_icyweed; mua bị từ chối và không trừ Star.",
+        "status": "unavailable"
+      },
       "group": "ability",
       "id": "icy_weed",
       "levelPrices": [],
@@ -4636,6 +4721,10 @@
       "price": 10
     },
     {
+      "availability": {
+        "note": "Đã có triển khai theo kiểm kê; chưa xác nhận đầy đủ trong DST.",
+        "status": "implemented"
+      },
       "builder_tag": "ttk_achievement_craft_ancient_builder",
       "group": "craft",
       "id": "ancient_builder",
@@ -4645,6 +4734,10 @@
       "price": 15
     },
     {
+      "availability": {
+        "note": "Đã có triển khai theo kiểm kê; chưa xác nhận đầy đủ trong DST.",
+        "status": "implemented"
+      },
       "builder_tag": "ttk_achievement_craft_lunar_knight",
       "group": "craft",
       "id": "lunar_knight",
@@ -4654,6 +4747,10 @@
       "price": 10
     },
     {
+      "availability": {
+        "note": "Đã có triển khai theo kiểm kê; chưa xác nhận đầy đủ trong DST.",
+        "status": "implemented"
+      },
       "builder_tag": "ttk_achievement_craft_pearl_bff",
       "group": "craft",
       "id": "pearl_bff",
@@ -4663,6 +4760,10 @@
       "price": 8
     },
     {
+      "availability": {
+        "note": "Đã có triển khai theo kiểm kê; chưa xác nhận đầy đủ trong DST.",
+        "status": "implemented"
+      },
       "builder_tag": "ttk_achievement_craft_benevolent_mind",
       "group": "craft",
       "id": "benevolent_mind",
@@ -4672,6 +4773,10 @@
       "price": 8
     },
     {
+      "availability": {
+        "note": "Đã có triển khai theo kiểm kê; chưa xác nhận đầy đủ trong DST.",
+        "status": "implemented"
+      },
       "builder_tag": "ttk_achievement_craft_mad_scientist",
       "group": "craft",
       "id": "mad_scientist",
@@ -4681,6 +4786,10 @@
       "price": 10
     },
     {
+      "availability": {
+        "note": "Đã có triển khai theo kiểm kê; chưa xác nhận đầy đủ trong DST.",
+        "status": "implemented"
+      },
       "builder_tag": "ttk_achievement_craft_celebrate",
       "group": "craft",
       "id": "celebrate",
@@ -4690,6 +4799,10 @@
       "price": 5
     },
     {
+      "availability": {
+        "note": "Đã có triển khai theo kiểm kê; chưa xác nhận đầy đủ trong DST.",
+        "status": "implemented"
+      },
       "builder_tag": "ttk_achievement_craft_festive",
       "group": "craft",
       "id": "festive",
@@ -4699,6 +4812,10 @@
       "price": 5
     },
     {
+      "availability": {
+        "note": "Đã có triển khai theo kiểm kê; chưa xác nhận đầy đủ trong DST.",
+        "status": "implemented"
+      },
       "builder_tag": "ttk_achievement_craft_christmas_gift",
       "group": "craft",
       "id": "christmas_gift",
@@ -4708,6 +4825,10 @@
       "price": 8
     },
     {
+      "availability": {
+        "note": "Đã có triển khai theo kiểm kê; chưa xác nhận đầy đủ trong DST.",
+        "status": "implemented"
+      },
       "builder_tag": "ttk_achievement_craft_legendary_smith",
       "group": "craft",
       "id": "legendary_smith",
@@ -4717,6 +4838,10 @@
       "price": 15
     },
     {
+      "availability": {
+        "note": "Đã có triển khai theo kiểm kê; chưa xác nhận đầy đủ trong DST.",
+        "status": "implemented"
+      },
       "builder_tag": "ttk_achievement_craft_pokeball",
       "group": "craft",
       "id": "pokeball",
@@ -4726,6 +4851,10 @@
       "price": 12
     },
     {
+      "availability": {
+        "note": "Có công thức trinket gốc; còn thiếu 21 sản phẩm trinket_chasni của nguồn.",
+        "status": "partial"
+      },
       "builder_tag": "ttk_achievement_craft_antique_shop",
       "group": "craft",
       "id": "antique_shop",
@@ -4735,6 +4864,10 @@
       "price": 8
     },
     {
+      "availability": {
+        "note": "Có 1/10 công thức nguồn: xd_luoshen_huazhong; còn thiếu 9.",
+        "status": "partial"
+      },
       "builder_tag": "ttk_inheritance_luoshen",
       "group": "craft",
       "id": "inherit_luoshen",
@@ -4756,6 +4889,10 @@
       ]
     },
     {
+      "availability": {
+        "note": "Có 3/7 công thức nguồn: xd_yunxiao_fysz, xd_yunxiao_ymsz, xd_yunxiao_portable_spicer; còn thiếu 4.",
+        "status": "partial"
+      },
       "builder_tag": "ttk_inheritance_sanxiao",
       "group": "craft",
       "id": "inherit_sanxiao",
@@ -4774,6 +4911,10 @@
       ]
     },
     {
+      "availability": {
+        "note": "Có 1/8 công thức nguồn: xd_sj_kls; còn thiếu 7.",
+        "status": "partial"
+      },
       "builder_tag": "ttk_inheritance_shiji",
       "group": "craft",
       "id": "inherit_shiji",
@@ -4793,6 +4934,10 @@
       ]
     },
     {
+      "availability": {
+        "note": "Thiếu cả 7 công thức nguồn; mua gói bị từ chối.",
+        "status": "unavailable"
+      },
       "builder_tag": "ttk_inheritance_jingwei",
       "group": "craft",
       "id": "inherit_jingwei",
@@ -4811,6 +4956,10 @@
       ]
     },
     {
+      "availability": {
+        "note": "Có 3/5 công thức nguồn: xd_sudaji_redlantern, xd_sudaji_ywfh, xd_qwsk; còn thiếu 2.",
+        "status": "partial"
+      },
       "builder_tag": "ttk_inheritance_sudaji",
       "group": "craft",
       "id": "inherit_sudaji",
@@ -4827,6 +4976,10 @@
       ]
     },
     {
+      "availability": {
+        "note": "Thiếu cả 3 công thức nguồn; mua gói bị từ chối.",
+        "status": "unavailable"
+      },
       "builder_tag": "ttk_inheritance_hantianzun",
       "group": "craft",
       "id": "inherit_hantianzun",
@@ -4841,6 +4994,10 @@
       ]
     },
     {
+      "availability": {
+        "note": "Thiếu cả 10 công thức nguồn và triển khai 8 dạng tương thích EVA; mua gói bị từ chối.",
+        "status": "unavailable"
+      },
       "builder_tag": "ttk_inheritance_wangmazi",
       "group": "craft",
       "id": "inherit_wangmazi",
@@ -7749,6 +7906,7 @@
   "sources": [
     "mods/PhamNhanTuTien/scripts/achievement/ttk_achievement_catalog.lua",
     "mods/PhamNhanTuTien/scripts/achievement/ttk_perk_catalog.lua",
+    "mods/PhamNhanTuTien/ACHIEVEMENT_PERK_RUNTIME.md",
     "mods/PhamNhanTuTien/scripts/achievement/ttk_seasonal_catalog.lua",
     "mods/PhamNhanTuTien/scripts/achievement/ttk_seasonal_rewards.lua",
     "mods/PhamNhanTuTien/scripts/alchemy/ttk_alchemy_defs.lua",

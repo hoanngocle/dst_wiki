@@ -8,6 +8,23 @@ import argparse
 import json
 from pathlib import Path
 
+# Reviewed exceptions from ACHIEVEMENT_PERK_RUNTIME.md, sections
+# "Safe inheritance mappings" and "Unavailable content". These annotate the
+# canonical catalog; they do not remove entries or change its price totals.
+PERK_RUNTIME_SOURCE = "mods/PhamNhanTuTien/ACHIEVEMENT_PERK_RUNTIME.md"
+PERK_RUNTIME_EXCEPTIONS = {
+    "trinket_owner": ("unavailable", "Thiếu component trinketowner; mua bị từ chối và không trừ Star."),
+    "icy_weed": ("unavailable", "Thiếu component chasni_icyweed; mua bị từ chối và không trừ Star."),
+    "antique_shop": ("partial", "Có công thức trinket gốc; còn thiếu 21 sản phẩm trinket_chasni của nguồn."),
+    "inherit_luoshen": ("partial", "Có 1/10 công thức nguồn: xd_luoshen_huazhong; còn thiếu 9."),
+    "inherit_sanxiao": ("partial", "Có 3/7 công thức nguồn: xd_yunxiao_fysz, xd_yunxiao_ymsz, xd_yunxiao_portable_spicer; còn thiếu 4."),
+    "inherit_shiji": ("partial", "Có 1/8 công thức nguồn: xd_sj_kls; còn thiếu 7."),
+    "inherit_sudaji": ("partial", "Có 3/5 công thức nguồn: xd_sudaji_redlantern, xd_sudaji_ywfh, xd_qwsk; còn thiếu 2."),
+    "inherit_jingwei": ("unavailable", "Thiếu cả 7 công thức nguồn; mua gói bị từ chối."),
+    "inherit_hantianzun": ("unavailable", "Thiếu cả 3 công thức nguồn; mua gói bị từ chối."),
+    "inherit_wangmazi": ("unavailable", "Thiếu cả 10 công thức nguồn và triển khai 8 dạng tương thích EVA; mua gói bị từ chối."),
+}
+
 
 def build_data(root: Path) -> dict:
     from lupa.lua51 import LuaRuntime, lua_type
@@ -33,10 +50,16 @@ def build_data(root: Path) -> dict:
     achievements = plain(load("achievement/ttk_achievement_catalog").All())
     perks_catalog = load("achievement/ttk_perk_catalog")
     perks = plain(perks_catalog.All())
+    # Do not publish availability without the audit document it cites.
+    if not (root / PERK_RUNTIME_SOURCE).is_file():
+        raise ValueError("Missing perk runtime audit: " + PERK_RUNTIME_SOURCE)
+    sources.append(PERK_RUNTIME_SOURCE)
     for perk in perks:
         prices = [perks_catalog.PriceForLevel(level) for level in range(1, perk.get("max_level", 0) + 1)]
         perk["levelPrices"] = prices
         perk["maxCost"] = sum(prices) if prices else perk["price"]
+        status, note = PERK_RUNTIME_EXCEPTIONS.get(perk["id"], ("implemented", "Đã có triển khai theo kiểm kê; chưa xác nhận đầy đủ trong DST."))
+        perk["availability"] = {"status": status, "note": note}
 
     catalog = load("achievement/ttk_seasonal_catalog")
     rewards = load("achievement/ttk_seasonal_rewards")
@@ -60,6 +83,7 @@ def build_data(root: Path) -> dict:
         "achievements": achievements,
         "groups": sorted({row["group"] for row in achievements}),
         "perks": perks,
+        "perkRuntimeSource": PERK_RUNTIME_SOURCE,
         "seasons": seasons,
         "furnace": plain(alchemy.furnace),
         "cultivation": plain(alchemy.cultivation),

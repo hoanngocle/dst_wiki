@@ -19,6 +19,16 @@ class ProgressionExportTests(unittest.TestCase):
         self.assertEqual(sum(row["reward"] for row in data["achievements"]), 1000)
         self.assertEqual(len(data["perks"]), 39)
         self.assertEqual(sum(row["maxCost"] for row in data["perks"]), 945)
+        self.assertEqual(data.get("perkRuntimeSource"), "mods/PhamNhanTuTien/ACHIEVEMENT_PERK_RUNTIME.md")
+        availability = {row["id"]: row["availability"] for row in data["perks"]}
+        self.assertEqual(sorted(key for key, value in availability.items() if value["status"] == "unavailable"),
+                         ["icy_weed", "inherit_hantianzun", "inherit_jingwei", "inherit_wangmazi", "trinket_owner"])
+        self.assertEqual(sorted(key for key, value in availability.items() if value["status"] == "partial"),
+                         ["antique_shop", "inherit_luoshen", "inherit_sanxiao", "inherit_shiji", "inherit_sudaji"])
+        self.assertEqual(sum(value["status"] == "implemented" for value in availability.values()), 29)
+        self.assertIn("trinketowner", availability["trinket_owner"]["note"])
+        self.assertIn("chasni_icyweed", availability["icy_weed"]["note"])
+        self.assertIn("21", availability["antique_shop"]["note"])
         self.assertEqual(data["perks"][0]["levelPrices"], [2]*10 + [3]*5 + [4]*5 + [5]*5)
         seasons = data["seasons"]
         self.assertEqual([len(row["tasks"]) for row in seasons], [50]*4)

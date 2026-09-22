@@ -17,8 +17,8 @@ export default function PhamNhanProgressionPage() {
       { label: "Thành tựu", value: data.achievements.length },
       { label: "Nhóm", value: data.groups.length },
       { label: "Star thành tựu", value: data.achievements.reduce((total, row) => total + row.reward, 0) },
-      { label: "Kỹ năng", value: data.perks.length },
-      { label: "Star tối đa để mua", value: data.perks.reduce((total, row) => total + row.maxCost, 0) },
+      { label: "Kỹ năng trong danh mục", value: data.perks.length },
+      { label: "Star toàn bộ danh mục", value: data.perks.reduce((total, row) => total + row.maxCost, 0) },
     ]} statsAriaLabel="Tổng quan tiến trình" />
     <PhamNhanNav active="progression" /><PhamNhanProgression />
   </div></DstPageShell></div>;

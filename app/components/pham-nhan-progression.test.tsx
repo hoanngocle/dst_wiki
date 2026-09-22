@@ -27,3 +27,27 @@ it("lets readers search achievements without losing seasonal rewards", () => {
   expect(screen.getByText(/goose_feather × 1/)).toBeDefined();
   expect(screen.getByText(/deerclops_eyeball × 1/)).toBeDefined();
 });
+
+it("shows documented runtime availability separately from the complete perk catalog", () => {
+  render(<Page />);
+  const table = screen.getByRole("table", { name: "Kỹ năng Star" });
+  for (const id of ["trinket_owner", "icy_weed", "inherit_jingwei", "inherit_hantianzun", "inherit_wangmazi"]) {
+    const row = within(table).getByText(id).closest("tr")!;
+    expect(within(row).getByText("Chưa khả dụng")).toBeDefined();
+  }
+  for (const id of ["antique_shop", "inherit_luoshen", "inherit_sanxiao", "inherit_shiji", "inherit_sudaji"]) {
+    const row = within(table).getByText(id).closest("tr")!;
+    expect(within(row).getByText("Một phần")).toBeDefined();
+  }
+  expect(within(table).getAllByText("Đã có triển khai")).toHaveLength(29);
+  expect(screen.getByText(/39 kỹ năng.*945 Star.*toàn bộ danh mục/)).toBeDefined();
+});
+
+it("explains manual seasonal XP claims and the missing-configuration case", () => {
+  render(<Page />);
+  const instructions = screen.getByLabelText("Nhận EXP nhiệm vụ mùa");
+  expect(instructions.textContent).toMatch(/mỗi lần hoàn thành.*kể cả mỗi lượt lặp lại.*Claim EXP/i);
+  expect(instructions.textContent).toMatch(/1 lượt nhận/);
+  expect(instructions.textContent).toMatch(/EXP.*cấu hình máy chủ/);
+  expect(instructions.textContent).toMatch(/chưa.*cấu hình.*chưa.*khả dụng/);
+});
