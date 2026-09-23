@@ -5,11 +5,13 @@ local ImageButton = require('widgets/imagebutton')
 local Items = require('enums/hh_items')
 local Lock = require('utils/hh_summary_lock')
 local Utils = require('utils/hh_utils')
-local FONT, FS = 'ttk_forge_serif',97/80
+local Theme = require('widgets/hh_ui/ttk_unified_theme')
+local FS = 97/80
+local function Font() return Theme.GetFont() end
 local SKIN = 'images/ttk_forge/controls.xml'
 local WHITE,MUTED,PURPLE,GOLD={.94,.91,.96,1},{.72,.68,.79,1},{.78,.64,.95,1},{1,.75,.43,1}
 local function Label(parent,text,x,y,size,colour,width)
-    local t=parent:AddChild(Text(FONT,size*FS,text,colour or WHITE))
+    local t=parent:AddChild(Text(Font(),size*FS,text,colour or WHITE))
     t:SetPosition(x,y);t:SetClickable(false)
     if width then t:SetTruncatedString(text,width,nil,true) end
     return t
@@ -22,7 +24,7 @@ end
 local function Button(parent,text,x,y,w,h,fn,size)
     local b=parent:AddChild(ImageButton(SKIN,'tab_idle.tex'))
     b:SetPosition(x,y);b:ForceImageSize(w,h);b:SetNormalScale(1);b:SetFocusScale(1.015)
-    b:SetFont(FONT);b:SetDisabledFont(FONT);b:SetTextSize((size or 18)*FS);b:SetText(text)
+    b:SetFont(Font());b:SetDisabledFont(Font());b:SetTextSize((size or 18)*FS);b:SetText(text)
     b:SetTextColour(unpack(WHITE));b:SetTextFocusColour(1,1,1,1);b:SetTextDisabledColour(.43,.40,.49,1)
     b:SetOnClick(fn);return b
 end
@@ -97,10 +99,27 @@ function Summary:AttachContainerWidget(native)
     for i,slot in ipairs(native.inv) do
         slot:SetPosition(unpack(positions[i]));slot.bgimage:SetTexture(SKIN,'slot.tex')
         slot.bgimage:SetSize(64,64)
-        slot:SetHoverText(i<=24 and 'Trang bị cần tái chế' or i==25 and 'Trang bị cần đổi thuộc tính' or i==26 and 'Chỉ nhận Đá hoặc Giấy Thuộc Tính' or i==27 and 'Chỉ nhận Lục Bảo Thạch' or 'Trang bị cần khảm',{font=FONT,font_size=18*FS})
+        slot:SetHoverText(i<=24 and 'Trang bị cần tái chế' or i==25 and 'Trang bị cần đổi thuộc tính' or i==26 and 'Chỉ nhận Đá hoặc Giấy Thuộc Tính' or i==27 and 'Chỉ nhận Lục Bảo Thạch' or 'Trang bị cần khảm',{font=Font(),font_size=18*FS})
         slot:SetOnTileChangedFn(function()self:Refresh()end)
     end
     self:RefreshSlots()
+end
+function Summary:GetSlotLayout(index)
+    local point=positions[index]
+    return point and { x=point[1], y=point[2] } or nil
+end
+function Summary:GetVisibleSlots(tab)
+    local visible={}
+    for i=1,24 do visible[#visible+1]=i end
+    if tab=='combine' then
+        visible[#visible+1],visible[#visible+2],visible[#visible+3]=25,26,27
+    elseif tab=='socket' then
+        visible[#visible+1]=28
+    end
+    return visible
+end
+function Summary:GetActionRPC(action)
+    return ({reroll='UpdateEffectValue',add='AddEquipEffect',remove='RemoveEquipEffect',socket='EquipGems'})[action]
 end
 function Summary:RefreshSlots()
     if not self.native then return end
@@ -153,7 +172,7 @@ function Summary:Refresh()
             local def=Items[entry.id];b:Show()
             local name=def.name:gsub('★',' ')
             b:SetText(name..' · '..entry.num);b.text:SetTruncatedString(name..' · '..entry.num,230,nil,true)
-            b:SetHoverText(def.name..' · '..entry.num,{font=FONT,font_size=18*FS})
+            b:SetHoverText(def.name..' · '..entry.num,{font=Font(),font_size=18*FS})
             b:SetTextColour(unpack(def.name:find('★',1,true) and GOLD or WHITE))
             Enabled(b,def.is_item or self:GetItem(28))
         else b:Hide() end

@@ -6,6 +6,8 @@ local Image = require("widgets/image")
 local DungeonShopLayout = require("dungeon_shop/hh_dungeon_shop_layout")
 local RequestGate = require("ui/ttk_request_gate")
 local Theme = require("widgets/hh_ui/ttk_unified_theme")
+local UIFONT = Theme.GetFont()
+local TITLEFONT = Theme.GetFont()
 
 local NONCE = 0
 
@@ -142,13 +144,15 @@ local HHDungeonShopScreen = Class(Screen, function(self, owner, defs, on_close, 
 
 
     self.root = self:AddChild(Widget("dungeon_shop_root"))
-    self.root:SetVAnchor(ANCHOR_MIDDLE)
-    self.root:SetHAnchor(ANCHOR_MIDDLE)
-    self.root:SetScaleMode(SCALEMODE_PROPORTIONAL)
+    if not self.embedded then
+        self.root:SetVAnchor(ANCHOR_MIDDLE)
+        self.root:SetHAnchor(ANCHOR_MIDDLE)
+        self.root:SetScaleMode(SCALEMODE_PROPORTIONAL)
+    end
     self.root:SetPosition(0, 0, 0)
 
-    local panel_atlas = self.embedded and "images/global.xml" or "images/hud_dungeon_store.xml"
-    local panel_texture = self.embedded and "square.tex" or "hud_dungeon_store.tex"
+    local panel_atlas = self.embedded and "images/ttk_forge/frame.xml" or "images/hud_dungeon_store.xml"
+    local panel_texture = self.embedded and "frame.tex" or "hud_dungeon_store.tex"
     self.panel = self.root:AddChild(Image(panel_atlas, panel_texture))
     self.panel:SetSize(PANEL_W, PANEL_H)
     if self.embedded then self.panel:SetTint(unpack(Theme.colours.panel)) end

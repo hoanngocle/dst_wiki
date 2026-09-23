@@ -8,6 +8,9 @@ local ExamDefs = require("guild/hh_rank_exam_defs")
 local QuestDefs = require("guild/hh_guild_quest_defs")
 local ShopDefs = require("guild/hh_guild_shop_defs")
 local RequestGate = require("ui/ttk_request_gate")
+local Theme = require("widgets/hh_ui/ttk_unified_theme")
+local UIFONT = Theme.GetFont()
+local TITLEFONT = Theme.GetFont()
 
 local ITEMS_PER_PAGE = 5
 local REQUEST_NONCE = 0
@@ -147,14 +150,22 @@ local HHGuildUI = Class(Screen, function(self, owner, on_close, options)
     self.selected_offer_id = nil
 
     self.root = self:AddChild(Widget("root"))
-    self.root:SetScaleMode(SCALEMODE_PROPORTIONAL)
-    self.root:SetHAnchor(ANCHOR_MIDDLE)
-    self.root:SetVAnchor(ANCHOR_MIDDLE)
+    if not self.embedded then
+        self.root:SetScaleMode(SCALEMODE_PROPORTIONAL)
+        self.root:SetHAnchor(ANCHOR_MIDDLE)
+        self.root:SetVAnchor(ANCHOR_MIDDLE)
+    end
     local root_scale = self.embedded and 1.05 or HUD_ROOT_SCALE
     self.root:SetScale(root_scale, root_scale, 1)
 
-    self.bg = self.root:AddChild(Image(HUD_ATLAS, HUD_TEXTURE))
-    self.bg:SetScale(HUD_SCALE, HUD_SCALE, 1)
+    if self.embedded then
+        self.bg = self.root:AddChild(Image("images/ttk_forge/frame.xml", "frame.tex"))
+        self.bg:SetSize(900, 600)
+        self.bg:SetTint(unpack(Theme.colours.panel))
+    else
+        self.bg = self.root:AddChild(Image(HUD_ATLAS, HUD_TEXTURE))
+        self.bg:SetScale(HUD_SCALE, HUD_SCALE, 1)
+    end
 
     self.title = self.root:AddChild(Text(TITLEFONT, 45, "HIỆP HỘI THỢ SĂN"))
     self.title:SetPosition(0, 255, 0)

@@ -1,13 +1,11 @@
 local Screen = require("widgets/screen")
 local Widget = require("widgets/widget")
-local Image = require("widgets/image")
-local Text = require("widgets/text")
-local TextButton = require("widgets/textbutton")
 local Controller = require("ui/ttk_unified_controller")
 local Registry = require("ui/ttk_unified_registry")
 local NativeBridge = require("ui/ttk_native_bridge")
 local NativeInput = require("ui/ttk_native_input")
 local Theme = require("widgets/hh_ui/ttk_unified_theme")
+local Primitive = require("widgets/hh_ui/ttk_artifact_primitives")
 
 local TABS = {
     { id = "character", label = "Nhân vật" },
@@ -17,18 +15,6 @@ local TABS = {
     { id = "shop", label = "Cửa hàng" },
     { id = "storage", label = "Kho" },
 }
-
-local function Tint(image, colour)
-    image:SetTint(unpack(colour))
-end
-
-local function AddRect(parent, width, height, x, y, colour)
-    local image = parent:AddChild(Image("images/global.xml", "square.tex"))
-    image:SetSize(width, height)
-    image:SetPosition(x or 0, y or 0, 0)
-    Tint(image, colour)
-    return image
-end
 
 local function Embedded(child)
     return {
@@ -120,43 +106,33 @@ local TTKUnifiedScreen = Class(Screen, function(self, owner, options)
     self.root:SetScaleMode(SCALEMODE_PROPORTIONAL)
     self.root:SetHAnchor(ANCHOR_MIDDLE)
     self.root:SetVAnchor(ANCHOR_MIDDLE)
-    self.root:SetScale(Theme.shell.scale)
+    local viewport_width, viewport_height = Theme.design.width, Theme.design.height
+    if options.viewport_width ~= nil and options.viewport_height ~= nil then
+        viewport_width, viewport_height = options.viewport_width, options.viewport_height
+    elseif TheSim ~= nil and TheSim.GetScreenSize ~= nil then
+        viewport_width, viewport_height = TheSim:GetScreenSize()
+    end
+    self.design_bounds = self:GetDesignBounds(viewport_width, viewport_height)
+    self.root:SetScale(self.design_bounds.scale)
 
-    AddRect(self.root, Theme.shell.width, Theme.shell.height, 0, 0, Theme.colours.backdrop)
-    AddRect(self.root, Theme.shell.width - 18, Theme.shell.height - 18, 0, 0, Theme.colours.silver_dim)
-    AddRect(self.root, Theme.shell.width - 26, Theme.shell.height - 26, 0, 0, Theme.colours.panel)
-    AddRect(self.root, Theme.content.width + 12, Theme.content.height + 12, 0, Theme.content.y, Theme.colours.silver_dim)
-    AddRect(self.root, Theme.content.width, Theme.content.height, 0, Theme.content.y, Theme.colours.backdrop)
-
-    self.title = self.root:AddChild(Text(Theme.font, 38, "PHÀM NHÂN TU TIÊN"))
-    self.title:SetPosition(0, 377, 0)
-    self.title:SetColour(unpack(Theme.colours.silver))
+    self.backdrop = Primitive.Frame(
+        self.root, 0, 0, Theme.shell.width, Theme.shell.height, Theme.colours.backdrop)
+    self.title = Primitive.Label(
+        self.root, "PHÀM NHÂN TU TIÊN", 42, 0, 382, Theme.colours.silver)
+    self.top_divider = Primitive.Divider(self.root, 1280, 0, 292)
 
     self.content_root = self.root:AddChild(Widget("ttk_unified_content"))
     self.content_root:SetPosition(0, Theme.content.y, 1)
 
-    self.close_button = self.root:AddChild(TextButton())
-    self.close_button:SetPosition(685, 377, 2)
-    self.close_button:SetFont(Theme.font)
-    self.close_button:SetTextSize(24)
-    self.close_button:SetText("Đóng")
-    self.close_button:SetTextColour(unpack(Theme.colours.text))
-    self.close_button:SetTextFocusColour(unpack(Theme.colours.purple_soft))
-    self.close_button.text:SetRegionSize(90, 40)
-    self.close_button:SetOnClick(function() self:Close() end)
+    self.close_button = Primitive.Button(
+        self.root, "×", 54, 54, 650, 382, function() self:Close() end)
 
     self.tab_buttons = {}
     for index, tab in ipairs(TABS) do
-        local button = self.root:AddChild(TextButton())
-        button:SetPosition(-575 + (index - 1) * 230, 322, 2)
-        button:SetFont(Theme.font)
-        button:SetTextSize(25)
-        button:SetText(tab.label)
-        button:SetTextColour(unpack(Theme.colours.text))
-        button:SetTextFocusColour(unpack(Theme.colours.purple_soft))
-        button:SetTextSelectedColour(unpack(Theme.colours.purple_soft))
-        button.text:SetRegionSize(220, 48)
-        button:SetOnClick(function() self:SelectTab(tab.id) end)
+        local button = Primitive.Button(
+            self.root, tab.label, 204, 58,
+            -535 + (index - 1) * 214, 330,
+            function() self:SelectTab(tab.id) end)
         self.tab_buttons[index] = button
     end
     for index, button in ipairs(self.tab_buttons) do
@@ -174,6 +150,26 @@ local TTKUnifiedScreen = Class(Screen, function(self, owner, options)
     Registry.Set(owner, self)
     self:SelectTab(options.initial_tab or "character")
 end)
+
+function TTKUnifiedScreen:GetDesignBounds(viewport_width, viewport_height)
+    viewport_width = math.max(1, viewport_width or Theme.design.width)
+    viewport_height = math.max(1, viewport_height or Theme.design.height)
+    local scale = Theme.GetFitScale(viewport_width, viewport_height)
+    local width = Theme.design.width * scale
+    local height = Theme.design.height * scale
+    local left = (viewport_width - width) * .5
+    local bottom = (viewport_height - height) * .5
+    local right = left + width
+    local top = bottom + height
+    return {
+        inside = left >= 0 and bottom >= 0 and right <= viewport_width and top <= viewport_height,
+        left = left,
+        right = right,
+        top = top,
+        bottom = bottom,
+        scale = scale,
+    }
+end
 
 function TTKUnifiedScreen:SelectTab(id)
     if self.closed or id == self.active_tab then return false end
@@ -250,26 +246,14 @@ function TTKUnifiedScreen:OnNativeOpenFailed(prefab, reason)
     return false
 end
 
-function TTKUnifiedScreen:AttachNativeContainer(widget, prefab)
+function TTKUnifiedScreen:TrackNativeContainer(widget, prefab)
     if not self:WantsNativeContainer(prefab) then
         return false
     end
     Registry.ResolveNative(self.owner, self, prefab)
-
-    local old_parent = widget.GetParent ~= nil and widget:GetParent() or widget.parent
-    if old_parent ~= nil and old_parent ~= self.content_root and old_parent.RemoveChild ~= nil then
-        old_parent:RemoveChild(widget)
-    end
-    local current_parent = widget.GetParent ~= nil and widget:GetParent() or widget.parent
-    if current_parent ~= self.content_root then
-        self.content_root:AddChild(widget)
-    end
-    widget:SetHAnchor(ANCHOR_MIDDLE)
-    widget:SetVAnchor(ANCHOR_MIDDLE)
-    widget:SetScaleMode(SCALEMODE_PROPORTIONAL)
-    local scale = prefab == "hh_monarch_storage_container" and .69 or .88
+    local surface = prefab == "hh_forge_container" and "forge" or "native"
+    local scale = Theme.GetSurfaceScale(surface)
     widget:SetScale(scale, scale, 1)
-    widget:SetPosition(0, prefab == "hh_monarch_storage_container" and -30 or -18, 5)
     widget:Show()
     widget:MoveToFront()
     self.native_widget = widget
@@ -292,7 +276,7 @@ function TTKUnifiedScreen:AttachNativeContainer(widget, prefab)
     return true
 end
 
-function TTKUnifiedScreen:DetachNativeContainer(widget)
+function TTKUnifiedScreen:UntrackNativeContainer(widget)
     if self.native_widget ~= widget then return false end
     self.native_widget = nil
     self.native_token = nil
@@ -301,6 +285,10 @@ function TTKUnifiedScreen:DetachNativeContainer(widget)
     if panel ~= nil and panel.DetachNative ~= nil then panel:DetachNative(widget) end
     return true
 end
+
+-- Compatibility aliases for old container hooks and tests during migration.
+TTKUnifiedScreen.AttachNativeContainer = TTKUnifiedScreen.TrackNativeContainer
+TTKUnifiedScreen.DetachNativeContainer = TTKUnifiedScreen.UntrackNativeContainer
 
 function TTKUnifiedScreen:CloseNative()
     return self.controller:CloseNative()

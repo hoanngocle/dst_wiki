@@ -5,6 +5,7 @@ local ImageButton = require("widgets/imagebutton")
 local Utils = require("utils/hh_utils")
 local Rules = require("utils/ttk_forge_rules")
 local Effects = require("enums/hh_enchant").HH_EQUIP_BUFF_LIST
+local Theme = require("widgets/hh_ui/ttk_unified_theme")
 
 local WHITE = { .94, .91, .96, 1 }
 local MUTED = { .73, .70, .79, 1 }
@@ -12,7 +13,7 @@ local SILVER = { .54, .49, .62, 1 }
 local PURPLE = { .64, .49, .80, 1 }
 local DARK = { .12, .11, .16, 1 }
 local WARN = { 1, .72, .42, 1 }
-local FONT = "ttk_forge_serif"
+local function Font() return Theme.GetFont() end
 -- Compiled atlas line height is 99px; the design uses an 80px em.
 local FONT_SCALE = 99 / 80
 local SKIN = "images/ttk_forge/controls.xml"
@@ -56,7 +57,7 @@ local function Rect(parent, x, y, w, h, colour)
 end
 
 local function Label(parent, text, x, y, size, colour, width, lines)
-    local label = parent:AddChild(Text(FONT, (size or 22) * FONT_SCALE, text, colour or WHITE))
+    local label = parent:AddChild(Text(Font(), (size or 22) * FONT_SCALE, text, colour or WHITE))
     label:SetPosition(x, y)
     label:SetClickable(false)
     if width then label:SetMultilineTruncatedString(text, lines or 1, width, nil, true) end
@@ -83,8 +84,8 @@ local function Button(parent, text, x, y, w, h, click, style)
     button:ForceImageSize(w, h)
     button:SetNormalScale(1)
     button:SetFocusScale(1.015)
-    button:SetFont(FONT)
-    button:SetDisabledFont(FONT)
+    button:SetFont(Font())
+    button:SetDisabledFont(Font())
     button:SetTextSize((style == "primary" and 27 or 23) * FONT_SCALE)
     button:SetText(text)
     button:SetTextColour(unpack(WHITE))
@@ -127,6 +128,7 @@ end
 local ForgeUI = Class(Widget, function(self, owner, container)
     Widget._ctor(self, "Thần Binh Phổ")
     self.owner, self.container = owner, container
+    self.surface_scale = Theme.GetSurfaceScale("forge")
     self.mode = Rules.GetMode(container)
     self.selected, self.effects, self.page = {}, {}, 1
     self.elapsed, self.ready = 0, false
@@ -166,6 +168,20 @@ end)
 function ForgeUI:GetItem(slot)
     local replica = self.container and self.container.replica and self.container.replica.container
     return replica and replica:GetItemInSlot(slot) or nil
+end
+
+function ForgeUI:GetModeLayout(mode)
+    local layout = { slots = {} }
+    for _, info in ipairs(LAYOUTS[mode] or {}) do
+        layout.slots[#layout.slots + 1] = {
+            container_slot = info.slot,
+            prefab = info.prefab,
+            count = info.count,
+            x = info.x,
+            label = info.label,
+        }
+    end
+    return layout
 end
 
 function ForgeUI:BuildBody()
@@ -243,8 +259,8 @@ function ForgeUI:AttachContainerWidget(widget)
     self.native = widget
     -- Native widgets retain drag/drop, item tiles, inventory controls and tooltips.
     for _, slot in ipairs(widget.inv) do
-        slot:SetScale(1.05)
-        slot.base_scale, slot.highlight_scale = 1.05, 1.05
+        slot:SetScale(1)
+        slot.base_scale, slot.highlight_scale = 1, 1
         slot:SetOnTileChangedFn(function() self:RefreshGhosts() end)
     end
     self:LayoutSlots()
@@ -261,9 +277,9 @@ function ForgeUI:LayoutSlots()
         local slot = self.native.inv[info.slot]
         slot:Show()
         slot:SetPosition(info.x, -132)
-        slot:SetHoverText(info.hint, { font = FONT, font_size = 18 * FONT_SCALE })
+        slot:SetHoverText(info.hint, { font = Font(), font_size = 18 * FONT_SCALE })
         slot.bgimage:SetTexture(SKIN, "slot.tex")
-        slot.bgimage:SetSize(90 / 1.05, 88 / 1.05)
+        slot.bgimage:SetSize(90, 88)
         slot.bgimage:SetTint(1, 1, 1, 1)
         if info.prefab then
             local atlas, image = FixedIcon(info.prefab)
@@ -366,7 +382,7 @@ function ForgeUI:Refresh()
                 if self.selected[index] then button.emptycheck:Hide() else button.emptycheck:Show() end
                 local cfg = Effects[effect.name] or {}
                 local ok, desc = pcall(string.format, cfg.desc or cfg.name or effect.name, effect.value)
-                button:SetHoverText(ok and desc or EffectText(effect), { font = FONT, font_size = 18 * FONT_SCALE })
+                button:SetHoverText(ok and desc or EffectText(effect), { font = Font(), font_size = 18 * FONT_SCALE })
                 button:SetImageNormalColour(1, 1, 1, self.selected[index] and 1 or 0)
                 button:SetImageFocusColour(1, 1, 1, self.selected[index] and 1 or 0)
             else button:Hide() end

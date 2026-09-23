@@ -6,7 +6,7 @@ local Theme = require("widgets/hh_ui/ttk_unified_theme")
 local function AddButton(parent, label, x, callback)
     local button = parent:AddChild(TextButton())
     button:SetPosition(x, 284, 0)
-    button:SetFont(Theme.font)
+    button:SetFont(Theme.GetFont())
     button:SetTextSize(24)
     button:SetText(label)
     button:SetTextColour(unpack(Theme.colours.text))
@@ -29,7 +29,7 @@ local TTKNativePanel = Class(Widget, function(self, owner, shell, panel_id, mode
     self.request_pending = false
     self.disposed = false
 
-    self.message = self:AddChild(Text(Theme.font, 24, ""))
+    self.message = self:AddChild(Text(Theme.GetFont(), 24, ""))
     self.message:SetPosition(0, 0, 0)
     self.message:SetRegionSize(900, 100)
     self.message:EnableWordWrap(true)

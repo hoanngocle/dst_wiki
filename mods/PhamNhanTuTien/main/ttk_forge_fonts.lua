@@ -1,22 +1,20 @@
 -- Noto Serif Medium (OFL), compiled by tools/build_forge_font.py.
--- LoadFonts runs after asset registration. Calling LoadFont in modmain is
--- too early and causes a native assertion, even with a stock DST font.
+-- The alias is deliberately published only after TheSim accepts the archive;
+-- widgets then fall back to BODYTEXTFONT instead of rendering white blocks.
 local G = GLOBAL
+G.TTK_FORGE_SERIF = nil
 if G.TheNet:IsDedicated() then return end
 local alias = "ttk_forge_serif"
 local filename = MODROOT .. "fonts/ttk_forge_serif.zip"
-G.TTK_FORGE_SERIF = alias
 Assets = Assets or {}
 table.insert(Assets, Asset("FONT", "fonts/ttk_forge_serif.zip"))
-for _, font in ipairs(G.FONTS) do
-    if font.alias == alias then
-        font.filename = filename
-        font.fallback = G.DEFAULT_FALLBACK_TABLE
-        return
-    end
-end
-table.insert(G.FONTS, {
-    filename = filename,
-    alias = alias,
-    fallback = G.DEFAULT_FALLBACK_TABLE,
-})
+
+AddSimPostInit(function()
+    local sim = G.TheSim
+    if sim == nil or type(sim.LoadFont) ~= "function" then return false end
+    local loaded = pcall(function()
+        sim:LoadFont(filename, alias)
+    end)
+    G.TTK_FORGE_SERIF = loaded and alias or nil
+    return loaded
+end)

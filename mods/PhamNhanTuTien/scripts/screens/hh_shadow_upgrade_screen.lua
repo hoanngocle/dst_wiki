@@ -6,6 +6,9 @@ local Widget = require('widgets/widget')
 local ShadowDefs = require('enums/hh_shadow_progression_defs')
 local ShadowUpgradeLayout = require('shadow_upgrade/hh_shadow_upgrade_layout')
 local Theme = require('widgets/hh_ui/ttk_unified_theme')
+local UIFONT = Theme.GetFont()
+local TITLEFONT = Theme.GetFont()
+local NUMBERFONT = Theme.GetFont()
 
 local function HSVToRGB(h, s, v)
     local i = math.floor(h * 6)
@@ -92,14 +95,16 @@ local HHShadowUpgradeScreen = Class(Screen, function(self, owner, options)
     end
 
     self.root = self:AddChild(Widget('shadow_upgrade_root'))
-    self.root:SetVAnchor(ANCHOR_MIDDLE)
-    self.root:SetHAnchor(ANCHOR_MIDDLE)
-    self.root:SetScaleMode(SCALEMODE_PROPORTIONAL)
+    if not self.embedded then
+        self.root:SetVAnchor(ANCHOR_MIDDLE)
+        self.root:SetHAnchor(ANCHOR_MIDDLE)
+        self.root:SetScaleMode(SCALEMODE_PROPORTIONAL)
+    end
     self.scaler = self.root:AddChild(Widget("scaler"))
-    self.scaler:SetScale(self.embedded and .88 or .7)
+    self.scaler:SetScale(self.embedded and 1 or .7)
 
-    local panel_atlas = self.embedded and 'images/global.xml' or 'images/hud_nang_cap_quan_doan.xml'
-    local panel_texture = self.embedded and 'square.tex' or 'hud_nang_cap_quan_doan.tex'
+    local panel_atlas = self.embedded and 'images/ttk_forge/frame.xml' or 'images/hud_nang_cap_quan_doan.xml'
+    local panel_texture = self.embedded and 'frame.tex' or 'hud_nang_cap_quan_doan.tex'
     self.panel = self.scaler:AddChild(Image(panel_atlas, panel_texture))
     self.panel:SetSize(1180, 700)
     if self.embedded then self.panel:SetTint(unpack(Theme.colours.panel)) end

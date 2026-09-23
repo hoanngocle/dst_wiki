@@ -197,12 +197,24 @@ assert(integrated_screen:SelectTab("equipment"), "real native panel can be selec
 assert(integrated_open_count == 1, "real native panel sends its initial request once")
 assert(integrated_screen:WantsNativeContainer("hh_ui_container"),
     "initial native response remains valid after the panel ShowPanel call")
-local detached_widget = Widget("detached_native")
+local native_hud_parent = Widget("native_hud_parent")
+local detached_widget = native_hud_parent:AddChild(Widget("detached_native"))
 detached_widget.isopen = true
 detached_widget.Close = function(self) self.isopen = false end
-assert(integrated_screen:AttachNativeContainer(detached_widget, "hh_ui_container"),
-    "real native widget attaches to the pending panel")
-integrated_screen:DetachNativeContainer(detached_widget)
+assert(integrated_screen:TrackNativeContainer(detached_widget, "hh_ui_container"),
+    "real native widget is tracked for the pending panel")
+assert(detached_widget:GetParent() == native_hud_parent,
+    "tracking keeps the Solo container under its original HUD parent")
+assert(detached_widget.scale[1] == 1, "summary container keeps native surface scale")
+assert(integrated_screen.root.scale_mode == SCALEMODE_PROPORTIONAL,
+    "shell owns the only proportional scaling root")
+local compact_bounds = integrated_screen:GetDesignBounds(1024, 768)
+assert(compact_bounds.inside and compact_bounds.scale == .625,
+    "1536x1024 design fits a smaller viewport without clipping")
+assert(compact_bounds.left >= 0 and compact_bounds.right <= 1024
+    and compact_bounds.bottom >= 0 and compact_bounds.top <= 768,
+    "fit bounds remain inside the viewport safe area")
+integrated_screen:UntrackNativeContainer(detached_widget)
 local rpc_count_after_detach = #sent_rpcs
 assert(not integrated_screen:CloseNative(),
     "authoritative native detach clears the registered closer")
