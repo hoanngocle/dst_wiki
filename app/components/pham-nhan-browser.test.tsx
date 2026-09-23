@@ -14,3 +14,25 @@ it("searches Vietnamese without accents and opens an item dialog", () => {
   fireEvent.keyDown(screen.getByRole("dialog"), { key: "Escape" });
   expect(screen.queryByRole("dialog")).toBeNull();
 });
+
+it("returns to the first page when the search changes", () => {
+  const paginatedData: PhamNhanSnapshot = {
+    ...data,
+    items: Array.from({ length: 13 }, (_, index) => ({
+      ...data.items[0],
+      id: `item:${index + 1}`,
+      prefab: `item_${index + 1}`,
+      name: `Vật phẩm ${index + 1}`,
+    })),
+  };
+
+  render(<PhamNhanBrowser data={paginatedData} />);
+  fireEvent.click(screen.getByRole("button", { name: "Sau →" }));
+  expect(screen.getByText("Trang 2 / 2")).toBeDefined();
+
+  const search = screen.getByRole("searchbox", { name: "Tìm trong Phàm Nhân" });
+  fireEvent.change(search, { target: { value: "vat pham 13" } });
+  fireEvent.change(search, { target: { value: "" } });
+
+  expect(screen.getByText("Trang 1 / 2")).toBeDefined();
+});

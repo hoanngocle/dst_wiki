@@ -26,6 +26,7 @@
 # misc
 .DS_Store
 *.pem
+/.idea/
 
 # debug
 npm-debug.log*
@@ -64,9 +65,3 @@ next-env.d.ts
 /.superpowers/
 **/__pycache__/
 **/.codegraph/
-
-# Downloaded source mods, asset work directories, backups and release packages
-/mods/2937640068
-/mods/3780347550
-/mods/AchievementLevel
-/mods/SoloCombatHUD

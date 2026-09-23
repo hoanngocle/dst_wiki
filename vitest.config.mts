@@ -9,7 +9,6 @@ export default defineConfig({
     exclude: [
       ...configDefaults.exclude,
       ".worktrees/**",
-      "artifacts/pham-nhan-affix-balance/*.test.js",
     ],
     globals: true,
   },
