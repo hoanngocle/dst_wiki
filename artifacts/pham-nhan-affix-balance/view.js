@@ -28,6 +28,14 @@
     return `<option value="${escapeHtml(value)}"${value === selected ? ' selected' : ''}>${escapeHtml(value)}</option>`;
   }
 
+  function renderImage(row) {
+    if (!row.imageSrc) return '<span class="image-missing">Chưa gán ảnh</span>';
+    return `<figure class="affix-image">
+      <img src="${escapeHtml(row.imageSrc)}" alt="Ảnh ${escapeHtml(row.name)}" loading="lazy">
+      <figcaption>${escapeHtml(row.imageId)}</figcaption>
+    </figure>`;
+  }
+
   function renderRow(row) {
     const key = escapeHtml(row.key);
     const statusClass = row.status === 'Đang có' ? 'status-current'
@@ -40,6 +48,7 @@
             ${TIERS.map((tier) => option(tier, row.tier)).join('')}
           </select>
         </td>
+        <td class="image-cell">${renderImage(row)}</td>
         <td class="name-cell">
           <strong>${escapeHtml(row.name)}</strong>
           <span>${escapeHtml(row.family)}</span>
@@ -52,6 +61,7 @@
         <td><strong>${escapeHtml(row.category)}</strong><span class="subline">${escapeHtml(row.slot)}</span></td>
         <td><span class="status ${statusClass}">${escapeHtml(row.status)}</span></td>
         <td class="current-cell">${escapeHtml(row.current)}</td>
+        <td class="meaning-cell${row.meaning ? '' : ' is-empty'}">${row.meaning ? escapeHtml(row.meaning) : 'Chưa có mô tả bổ sung.'}</td>
         <td><input class="cell-input editor" data-key="${key}" data-field="proposed" value="${escapeHtml(row.proposed)}" aria-label="Thông số đề xuất của ${escapeHtml(row.name)}"></td>
         <td><input class="cell-input editor" data-key="${key}" data-field="cap" value="${escapeHtml(row.cap)}" placeholder="Chưa đặt cap" aria-label="Cap của ${escapeHtml(row.name)}"></td>
         <td><code>${escapeHtml(row.exclusiveGroup || 'Không')}</code></td>
@@ -75,5 +85,5 @@
     };
   }
 
-  return { escapeHtml, tierClass, renderRow, summarize };
+  return { escapeHtml, tierClass, renderImage, renderRow, summarize };
 });

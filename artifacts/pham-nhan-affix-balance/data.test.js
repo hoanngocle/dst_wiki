@@ -1,5 +1,8 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 const test = require('node:test');
 const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
 
 const Catalog = require('./data.js');
 
@@ -156,4 +159,30 @@ test('contains no forbidden long dash in visible catalog copy', () => {
   const visible = JSON.stringify(Catalog.rows);
   assert.equal(visible.includes('—'), false);
   assert.equal(visible.includes('–'), false);
+});
+
+test('gives every current runtime affix its reviewed image and meaning', () => {
+  const current = Catalog.rows.filter((row) => row.status === 'Đang có');
+
+  for (const row of current) {
+    assert.match(row.imageId, /^[AB]\d{2}$/, `${row.code}.imageId`);
+    assert.equal(row.imageSrc, `images/affixes/${row.imageId}.png`, `${row.code}.imageSrc`);
+    assert.ok(row.meaning.length > 0, `${row.code}.meaning`);
+    assert.equal(
+      fs.existsSync(path.join(__dirname, row.imageSrc)),
+      true,
+      `missing image asset: ${row.imageSrc}`,
+    );
+  }
+});
+
+test('reuses reviewed family images for added tiers and leaves new families unassigned', () => {
+  const durabilityV = Catalog.rows.find((row) => row.code === 'add_max_use_tier_v');
+  assert.equal(durabilityV.imageId, 'A03');
+  assert.equal(durabilityV.meaning, 'Tăng độ tươi hoặc độ bền tối đa của trang bị phù hợp.');
+
+  const dodgeI = Catalog.rows.find((row) => row.code === 'equip_dodge_i');
+  assert.equal(dodgeI.imageId, '');
+  assert.equal(dodgeI.imageSrc, '');
+  assert.equal(dodgeI.meaning, '');
 });

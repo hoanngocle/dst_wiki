@@ -12,7 +12,65 @@
   const SOURCE_ALCHEMY = 'scripts/components/ttk_alchemy_effects.lua';
   const REMOVED_NOTE = 'Đã loại khỏi thiết kế đá cường hóa.';
 
+  function display(imageId, meaning) {
+    return { imageId, imageSrc: `images/affixes/${imageId}.png`, meaning };
+  }
+
+  const REVIEWED_DISPLAY_BY_FAMILY = {
+    'Bạch Hổ-G': display('B10', 'Giảm phần trăm sát thương nhận vào; cùng tham gia giới hạn giảm sát thương tối đa 80%.'),
+    'Bạo Kích': display('B22', 'Tăng tỷ lệ chí mạng và đồng thời tăng sát thương chí mạng.'),
+    'Tỷ Lệ Bạo Kích': display('B22', 'Tăng tỷ lệ chí mạng.'),
+    'Sát Thương Bạo Kích': display('B22', 'Tăng sát thương chí mạng.'),
+    'Thanh Long': display('A06', 'Tăng sát thương đòn chính; cấp IV còn gây Trọng Thương theo máu hiện tại của mục tiêu.'),
+    'Hộ Giáp': display('A15', 'Tăng độ bền của giáp; cấp V khiến giáp bền vĩnh cửu.'),
+    'Bền Bỉ': display('A03', 'Tăng độ tươi hoặc độ bền tối đa của trang bị phù hợp.'),
+    'Nhanh Nhẹn': display('A14', 'Tăng tốc độ di chuyển; pool tốc chạy Phàm Nhân có giới hạn riêng.'),
+    'Tốc chạy': display('A14', 'Tăng tốc độ di chuyển; pool tốc chạy Phàm Nhân có giới hạn riêng.'),
+    'Đóng Băng': display('A01', 'Đòn đánh có tỷ lệ đóng băng quái thường 2 giây; boss bị chậm 20% trong 2 giây, hồi riêng 5 giây.'),
+    'Hạ Độc': display('A04', 'Đòn đánh có tỷ lệ hạ độc; tối đa 5 tầng trong 10 giây, mỗi tầng gây 20% sát thương nền mỗi 2 giây.'),
+    'Liên Kích': display('B02', 'Tăng tốc độ đánh; tổng thưởng tốc đánh Phàm Nhân bị giới hạn.'),
+    'Bạo Phát': display('A08', 'I: 30% x1,5; II: 20% x2; III: 10% x3; IV: 8% x5 sát thương đòn chính.'),
+    'Bạch Hổ': display('B04', 'Giảm sát thương nhận vào trên giáp; cấp IV đạt 80% và miễn Giảm Hồi Máu.'),
+    'Gia Trì': display('B18', 'Tự hồi độ bền: I 1/10 giây; II 1/5 giây; III 1/giây; IV 2%/giây; cấp V không mất độ bền.'),
+    'Xuyên Giáp': display('B07', 'Gây thêm gói sát thương nền theo phần trăm bỏ qua giáp; tổng tỷ lệ tối đa 40%.'),
+  };
+
+  const REVIEWED_DISPLAY_BY_CODE = {
+    follow_reduce_damage: display('B12', 'Giảm sát thương nhận vào cho sinh vật đang đi theo người chơi.'),
+    follow_add_damage: display('A05', 'Tăng sát thương cho sinh vật đang đi theo người chơi.'),
+    fast_act: display('B01', 'Tăng tốc thu hoạch, xây dựng, trao đổi, chế tạo và nướng thức ăn.'),
+    work_speed: display('B17', 'Tăng tốc khai thác tài nguyên.'),
+    shadow_camp: display('B09', 'Sinh vật Bóng Tối không chủ động tấn công người sở hữu.'),
+    moon_camp: display('A10', 'Sinh vật Vô Định hoặc Gestalt không chủ động tấn công người sở hữu.'),
+    add_speed: display('A14', 'Tăng tốc độ di chuyển; pool tốc chạy Phàm Nhân có giới hạn riêng.'),
+    add_light: display('B13', 'Cho trang bị hoặc người dùng khả năng phát sáng.'),
+    blood_outburst: display('B21', 'Máu càng thấp thì sát thương đòn chính càng cao, tối đa +50%.'),
+    spirit_fade: display('B06', 'Tinh thần càng thấp thì sát thương đòn chính càng cao, tối đa +50%.'),
+    hunger_assault: display('B20', 'Độ no càng thấp thì sát thương đòn chính càng cao, tối đa +50%.'),
+    add_immune_cold: display('B15', 'Miễn nhiễm lạnh cóng.'),
+    add_immune_hot: display('A11', 'Miễn nhiễm quá nhiệt.'),
+    add_immune_poison: display('B14', 'Miễn nhiễm trúng độc.'),
+    add_immune_freeze: display('B08', 'Miễn nhiễm đóng băng.'),
+    immunity_moisture: display('B11', 'Miễn nhiễm ẩm ướt.'),
+    immunity_reduce_speed: display('B19', 'Miễn nhiễm hiệu ứng làm chậm.'),
+    immune_sleep: display('A09', 'Miễn nhiễm ru ngủ.'),
+    immune_suppress: display('A13', 'Không bị hiệu ứng Giảm Hồi Máu.'),
+    immune_debuff: display('B03', 'Miễn nhiễm đồng thời quá nhiệt, lạnh cóng và ẩm ướt.'),
+    immune_debuff_2: display('B05', 'Miễn nhiễm đồng thời đóng băng, độc, làm chậm và ru ngủ.'),
+    special_zqrf: display('B16', 'Miễn nhiễm toàn bộ: nóng, lạnh, băng, độc, ướt, chậm và ru ngủ.'),
+    health_suppress_num: display('A02', 'Đòn chính gây hiệu ứng giảm 90% hồi máu dương của mục tiêu trong 5 giây; không cộng tầng.'),
+    atk_blood_suck: display('A12', 'Hồi máu theo phần trăm sát thương hợp lệ thực sự gây ra khi tấn công.'),
+    special_xwsh: display('A07', 'Đòn đánh gây Giảm Hồi Máu cho mục tiêu và hồi máu theo sát thương hợp lệ.'),
+  };
+
+  function reviewedDisplay(row) {
+    return REVIEWED_DISPLAY_BY_CODE[row.code]
+      || REVIEWED_DISPLAY_BY_FAMILY[row.family]
+      || { imageId: '', imageSrc: '', meaning: '' };
+  }
+
   function add(row) {
+    const reviewed = reviewedDisplay(row);
     rows.push({
       numericId: '',
       family: row.name,
@@ -23,6 +81,7 @@
       decision: row.status === 'Đang có' ? 'Giữ và cân lại' : 'Đánh giá',
       note: '',
       ...row,
+      ...reviewed,
       key: row.key || row.code,
     });
   }

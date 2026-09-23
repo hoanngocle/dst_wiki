@@ -6,7 +6,11 @@ export default defineConfig({
   plugins: [tsconfigPaths(), react()],
   test: {
     environment: "jsdom",
-    exclude: [...configDefaults.exclude, ".worktrees/**"],
+    exclude: [
+      ...configDefaults.exclude,
+      ".worktrees/**",
+      "artifacts/pham-nhan-affix-balance/*.test.js",
+    ],
     globals: true,
   },
 });
