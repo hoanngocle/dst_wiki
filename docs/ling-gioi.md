@@ -9,9 +9,7 @@
 
 ## Cập nhật
 
-Chạy `node tools/import_ling_gioi.mjs --fetch` để cập nhật bản nguồn và tải ảnh mới. Lệnh này không tự dịch hoặc ghi đè bản dịch. Khi nguồn thay đổi, so sánh snapshot với bản trước và cập nhật từng bản dịch theo ID; kiểm tra cả thay đổi trong bài cũ.
-
-Chạy `node tools/audit_ling_gioi.mjs` để tìm số liệu có thể bị bỏ sót. Báo cáo cần được đối chiếu ngữ cảnh; phép đếm số không thay thế kiểm duyệt bản dịch.
+Tool nhập và audit nguồn được duy trì ngoài repo web. Khi cập nhật snapshot, đối chiếu bản nguồn và bản dịch theo ID; kiểm tra thay đổi trong từng bài và các số liệu theo ngữ cảnh.
 
 Chạy `node node_modules/vitest/vitest.mjs run app/lib/ling-gioi.test.ts app/components/ling-gioi-browser.test.tsx app/components/site-header.test.tsx` để kiểm tra độ phủ, ảnh cục bộ, tìm kiếm và điều hướng.
 

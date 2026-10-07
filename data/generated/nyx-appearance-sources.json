@@ -1,0 +1,260 @@
+{
+  "animation": {
+    "source": "base_game/anim/player_idles.zip",
+    "sha256": "72f02ea740209464032e180303e226bab5b3355135475bf7db6ca104758caf08"
+  },
+  "appearances": {
+    "appearance:xd_chenpingan": {
+      "build": "xd_chenpingan",
+      "source": "TuTien-18.1/anim/xd_chenpingan.zip",
+      "sha256": "4a882198f2dae27e542f5b0bc0262d096457d7352de9c059da7dddde3a7ddeff",
+      "animation": "idle_loop",
+      "facing": 8
+    },
+    "appearance:xd_chenpingan_hphz": {
+      "build": "xd_chenpingan_hphz",
+      "source": "TuTien-18.1/anim/xd_chenpingan_hphz.zip",
+      "sha256": "e7861fbd55aaf2219abb0b46f3b79d834a6aad68349ece87c31ada48bc67e386",
+      "animation": "idle_loop",
+      "facing": 8
+    },
+    "appearance:xd_chenpingan_shadow": {
+      "build": "xd_chenpingan_shadow",
+      "source": "TuTien-18.1/anim/xd_chenpingan_shadow.zip",
+      "sha256": "f2c4db441ce2fd040862cf2f9ac6ff96299a5907c990e865c1f123eaf3b3142f",
+      "animation": "idle_loop",
+      "facing": 8
+    },
+    "appearance:xd_hantianzun": {
+      "build": "xd_hantianzun",
+      "source": "TuTien-18.1/anim/xd_hantianzun.zip",
+      "sha256": "2b915d36ce69e3976383ea1391c80178c063c7e49713a6c0eb392f162417b479",
+      "animation": "idle_loop",
+      "facing": 8
+    },
+    "appearance:xd_hantianzun_qh": {
+      "build": "xd_hantianzun_qh",
+      "source": "TuTien-18.1/anim/xd_hantianzun_qh.zip",
+      "sha256": "20b12d9e2c575c07282f77a1e9bcb751276f64183cf93fc8abaeccfd360359aa",
+      "animation": "idle_loop",
+      "facing": 8
+    },
+    "appearance:xd_hantianzun_qzxx": {
+      "build": "xd_hantianzun_qzxx",
+      "source": "TuTien-18.1/anim/xd_hantianzun_qzxx.zip",
+      "sha256": "3e31a0ddc1a52f0f9825245a789e5e2964cc1919284a2179462edb5a05bf4b88",
+      "animation": "idle_loop",
+      "facing": 8
+    },
+    "appearance:xd_hantianzun_zymj": {
+      "build": "xd_hantianzun_zymj",
+      "source": "TuTien-18.1/anim/xd_hantianzun_zymj.zip",
+      "sha256": "23218b8257de1f9d633b022263057a41616c2c98d9f7bc62dea598881a11d87f",
+      "animation": "idle_loop",
+      "facing": 8
+    },
+    "appearance:xd_jingwei": {
+      "build": "xd_jingwei",
+      "source": "TuTien-18.1/anim/xd_jingwei.zip",
+      "sha256": "2e59d787601bf45bc77943c8b06010ea22c8ddc3b27d7f9c4c26170ff381ead9",
+      "animation": "idle_loop",
+      "facing": 8
+    },
+    "appearance:xd_jingwei_clys": {
+      "build": "xd_jingwei_clys",
+      "source": "TuTien-18.1/anim/xd_jingwei_clys.zip",
+      "sha256": "861f9355faa687de0a681b177e465faf518d25c15772f09c9463b5d149e4c012",
+      "animation": "idle_loop",
+      "facing": 8
+    },
+    "appearance:xd_jingwei_dfjm": {
+      "build": "xd_jingwei_dfjm",
+      "source": "TuTien-18.1/anim/xd_jingwei_dfjm.zip",
+      "sha256": "fa7871ed51ca812b58965608b0535412a442f6b07a9652fb928065e618ab25af",
+      "animation": "idle_loop",
+      "facing": 8
+    },
+    "appearance:xd_jingwei_fenice3": {
+      "build": "xd_jingwei_fenice3",
+      "source": "TuTien-18.1/anim/xd_jingwei_fenice3.zip",
+      "sha256": "a9047c0959536abc1eca3f16397c07a280b2c0836e9892abf115f3e12dc0e64f",
+      "animation": "idle_loop",
+      "facing": 8
+    },
+    "appearance:xd_jingwei_fenice3_gxsl": {
+      "build": "xd_jingwei_fenice3_gxsl",
+      "source": "TuTien-18.1/anim/xd_jingwei_fenice3_gxsl.zip",
+      "sha256": "90f7fc16f7623b0131b610433f3061e4ac999b3f6fd68b6f1c37fd0ac0852615",
+      "animation": "idle_loop",
+      "facing": 8
+    },
+    "appearance:xd_jingwei_gxsl": {
+      "build": "xd_jingwei_gxsl",
+      "source": "TuTien-18.1/anim/xd_jingwei_gxsl.zip",
+      "sha256": "f9debc91c581a0c9cf8e2e874edbe545382c37d3be3cc824420a0bdccdbdcd9d",
+      "animation": "idle_loop",
+      "facing": 8
+    },
+    "appearance:xd_longtaizi": {
+      "build": "xd_longtaizi",
+      "source": "TuTien-18.1/anim/xd_longtaizi.zip",
+      "sha256": "cf10d070b9056480cc3daa5abf09afe0266c522f64d83c597ba0559bd6b5a12b",
+      "animation": "idle_loop",
+      "facing": 8
+    },
+    "appearance:xd_longtaizi_hysj": {
+      "build": "xd_longtaizi_hysj",
+      "source": "TuTien-18.1/anim/xd_longtaizi_hysj.zip",
+      "sha256": "45d03b1899464fb9f4717f6c7c0a1271fae62d6fee7a6816632752cc9c368b69",
+      "animation": "idle_loop",
+      "facing": 8
+    },
+    "appearance:xd_longtaizi_nl": {
+      "build": "xd_longtaizi_nl",
+      "source": "TuTien-18.1/anim/xd_longtaizi_nl.zip",
+      "sha256": "152d55d85a1ac98393d12913336df2ed5096b3363e41e221583095ca55d256f8",
+      "animation": "idle_loop",
+      "facing": 8
+    },
+    "appearance:xd_luoshen": {
+      "build": "xd_luoshen",
+      "source": "TuTien-18.1/anim/xd_luoshen.zip",
+      "sha256": "83ded69ce707e7851966aaf518e25c1466a3898d04665911894011f09a56d02d",
+      "animation": "idle_loop",
+      "facing": 8
+    },
+    "appearance:xd_luoshen_mksny": {
+      "build": "xd_luoshen_mksny",
+      "source": "TuTien-18.1/anim/xd_luoshen_mksny.zip",
+      "sha256": "045b279cc7305ec81e630307871154289c5a06f477b581e2340f844f35a12b78",
+      "animation": "idle_loop",
+      "facing": 8
+    },
+    "appearance:xd_shiji": {
+      "build": "xd_shiji",
+      "source": "TuTien-18.1/anim/xd_shiji.zip",
+      "sha256": "2bba86098d57a4498fd0a54e5cafe8ac84279725927e6fe7fed38a128d3a6932",
+      "animation": "idle_loop",
+      "facing": 8
+    },
+    "appearance:xd_shiji_jyxx": {
+      "build": "xd_shiji_jyxx",
+      "source": "TuTien-18.1/anim/xd_shiji_jyxx.zip",
+      "sha256": "8ecb84ad37daf8f9a623ec2bfb8d52d9158620c6eedb87701609622a28fb97dd",
+      "animation": "idle_loop",
+      "facing": 8
+    },
+    "appearance:xd_shiji_kl": {
+      "build": "xd_shiji_kl",
+      "source": "TuTien-18.1/anim/xd_shiji_kl.zip",
+      "sha256": "c100defa8ac7796b9199e688ddbd1b249fa8ae2af20168122d4a1d2b20ce4676",
+      "animation": "idle_loop",
+      "facing": 8
+    },
+    "appearance:xd_sudaji": {
+      "build": "xd_sudaji",
+      "source": "TuTien-18.1/anim/xd_sudaji.zip",
+      "sha256": "9f527f5e7281a279cea79d1c7de22a759dd1a97fc82ac3936692800769214622",
+      "animation": "idle_loop",
+      "facing": 8
+    },
+    "appearance:xd_sudaji_gstx": {
+      "build": "xd_sudaji_gstx",
+      "source": "TuTien-18.1/anim/xd_sudaji_gstx.zip",
+      "sha256": "0c054437211988cde5fb31a7e594926d34c1c87a9eb0cde41c3d4d7ef3b208c5",
+      "animation": "idle_loop",
+      "facing": 8
+    },
+    "appearance:xd_sudaji_qrsy": {
+      "build": "xd_sudaji_qrsy",
+      "source": "TuTien-18.1/anim/xd_sudaji_qrsy.zip",
+      "sha256": "d58b3fa236b49c918a409a100415aa32a4e3d22c7ec7664c14d34e03d57c85d4",
+      "animation": "idle_loop",
+      "facing": 8
+    },
+    "appearance:xd_sudaji_qsdc": {
+      "build": "xd_sudaji_qsdc",
+      "source": "TuTien-18.1/anim/xd_sudaji_qsdc.zip",
+      "sha256": "b70c6b169c794f3e970b1b312c65ddb47df8e2790e144a0430a1b09d2180c382",
+      "animation": "idle_loop",
+      "facing": 8
+    },
+    "appearance:xd_sudaji_wcgz": {
+      "build": "xd_sudaji_wcgz",
+      "source": "TuTien-18.1/anim/xd_sudaji_wcgz.zip",
+      "sha256": "e25f59dc9e1ab6d14eb1ce918b9f75d78fcf064f8deeab88378eba3e38d04d36",
+      "animation": "idle_loop",
+      "facing": 8
+    },
+    "appearance:xd_wangmazi": {
+      "build": "xd_wangmazi",
+      "source": "TuTien-18.1/anim/xd_wangmazi.zip",
+      "sha256": "612d040b3e9fb95fdd662dadd38b6132044b151f1e92b41fb522cb2961591cce",
+      "animation": "idle_loop",
+      "facing": 8
+    },
+    "appearance:xd_wangmazi_jxgs": {
+      "build": "xd_wangmazi_jxgs",
+      "source": "TuTien-18.1/anim/xd_wangmazi_jxgs.zip",
+      "sha256": "4e521b2a6b920f4864bbfb9e3ffbe1e505e53237590f0df04bb17487d32a4f48",
+      "animation": "idle_loop",
+      "facing": 8
+    },
+    "appearance:xd_wangmazi_tymh": {
+      "build": "xd_wangmazi_tymh",
+      "source": "TuTien-18.1/anim/xd_wangmazi_tymh.zip",
+      "sha256": "bdf02636b0732761ed9e39f208c389b5e46dfb2435e3c3411db5791b2ddd7024",
+      "animation": "idle_loop",
+      "facing": 8
+    },
+    "appearance:xd_wukong": {
+      "build": "xd_wukong",
+      "source": "TuTien-18.1/anim/xd_wukong.zip",
+      "sha256": "3cbe06861cb8a987eccc81a79f53002c6af5301044335d6ec31c92f4270b29e9",
+      "animation": "idle_loop",
+      "facing": 8
+    },
+    "appearance:xd_wukong_ds": {
+      "build": "xd_wukong_ds",
+      "source": "TuTien-18.1/anim/xd_wukong_ds.zip",
+      "sha256": "11c57312fd51747c6ac1719fb005554d9ac7046f0c25068b58b88a8125e5f070",
+      "animation": "idle_loop",
+      "facing": 8
+    },
+    "appearance:xd_wukong_hsmy": {
+      "build": "xd_wukong_hsmy",
+      "source": "TuTien-18.1/anim/xd_wukong_hsmy.zip",
+      "sha256": "3d00e6f2a7bca0cb396c1540fcc6bc1fe544fdfa9f357e2f560579f367bdbd1b",
+      "animation": "idle_loop",
+      "facing": 8
+    },
+    "appearance:xd_wukong_sxz": {
+      "build": "xd_wukong_sxz",
+      "source": "TuTien-18.1/anim/xd_wukong_sxz.zip",
+      "sha256": "e29bbbf7660d9e3e4e91e8830df612cc8bc17ca131f9e87113392229294b8697",
+      "animation": "idle_loop",
+      "facing": 8
+    },
+    "appearance:xd_yunxiao": {
+      "build": "xd_yunxiao",
+      "source": "TuTien-18.1/anim/xd_yunxiao.zip",
+      "sha256": "f67a6587add3d6c0c009a249d68939b39e78e9ab876d4f3df04865583abe12e6",
+      "animation": "idle_loop",
+      "facing": 8
+    },
+    "appearance:xd_yunxiao_msnzs": {
+      "build": "xd_yunxiao_msnzs",
+      "source": "TuTien-18.1/anim/xd_yunxiao_msnzs.zip",
+      "sha256": "56065ed67e074136486c44ecb5859d0961c34b7ca87c0ff9cc03014074d61ea0",
+      "animation": "idle_loop",
+      "facing": 8
+    },
+    "appearance:xd_yunxiao_zwzy": {
+      "build": "xd_yunxiao_zwzy",
+      "source": "TuTien-18.1/anim/xd_yunxiao_zwzy.zip",
+      "sha256": "e93f8bb5034bcfd6afbde42f4f6c84c42838c31bb28e7a69b17e141607cee284",
+      "animation": "idle_loop",
+      "facing": 8
+    }
+  }
+}

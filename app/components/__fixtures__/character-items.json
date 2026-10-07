@@ -1,0 +1,251 @@
+[
+  {
+    "category": "item",
+    "character": null,
+    "craftingNote": null,
+    "description": "Kỷ vật của Wendy, dùng để gọi hồn người chị song sinh Abigail đồng hành và hỗ trợ chiến đấu.",
+    "details": null,
+    "englishName": "Abigail's Flower",
+    "id": "base_game:abigail_flower",
+    "mob": null,
+    "name": "Abigail's Flower",
+    "namespace": "base_game",
+    "prefabId": "abigail_flower",
+    "recipe": {
+      "ingredients": [
+        {
+          "amount": 1,
+          "id": "base_game:ghostflower",
+          "name": "ghostflower",
+          "sprite": {
+            "src": "/assets/game/8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666.png",
+            "uv": {
+              "u1": 0.781494140625,
+              "u2": 0.812255859375,
+              "v1": 0.750244140625,
+              "v2": 0.781005859375
+            }
+          }
+        },
+        {
+          "amount": 1,
+          "id": "base_game:nightmarefuel",
+          "name": "Nightmare Fuel",
+          "sprite": {
+            "src": "/assets/game/8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666.png",
+            "uv": {
+              "u1": 0.468994140625,
+              "u2": 0.499755859375,
+              "v1": 0.187744140625,
+              "v2": 0.218505859375
+            }
+          }
+        }
+      ],
+      "outputCount": 1
+    },
+    "sprite": {
+      "src": "/assets/game/7fe94715ca23b6fb030cf809b42792625c64511198813952f2acd200927422fb.png",
+      "uv": {
+        "u1": 0.000244140625,
+        "u2": 0.031005859375,
+        "v1": 0.968994140625,
+        "v2": 0.999755859375
+      }
+    },
+    "structureDetails": null,
+    "wiki": {
+      "canonicalUrl": "https://dontstarve.wiki.gg/wiki/Abigail%27s_Flower/DST",
+      "categories": [
+        "Always_Available",
+        "Craftable_Items_and_Structures_on_DST",
+        "Indestructible_Object",
+        "Items",
+        "Magic_Filter",
+        "Mob_Dropped_Items",
+        "Non-Flammable",
+        "Pages_using_Tabber_parser_tag",
+        "Pages_with_navboxes",
+        "Sanity_Loss",
+        "Survivor_Items_Filter",
+        "Unstealable_Object"
+      ],
+      "detailUrl": "/data/wiki/pages/218864.json",
+      "mappingState": "mapped",
+      "pageId": 218864,
+      "relatedPages": [],
+      "title": "Abigail's Flower/DST"
+    },
+    "summary": {
+      "usage": {
+        "status": "known",
+        "text": "Wendy dùng để triệu hồi hoặc thu hồi Abigail và điều chỉnh trạng thái chiến đấu của cô ấy.",
+        "sources": [
+          "public/data/wiki/pages/218864.json#perk"
+        ]
+      },
+      "fuel": {
+        "status": "unknown",
+        "text": null,
+        "sources": []
+      },
+      "recycling": {
+        "status": "unknown",
+        "text": null,
+        "sources": []
+      },
+      "acquisition": {
+        "status": "known",
+        "text": "Wendy chế tạo từ 1 ghostflower + 1 Nightmare Fuel.",
+        "sources": [
+          "public/data/items.json#base_game:abigail_flower/recipe",
+          "public/data/catalog.json#base_game:abigail_flower/recipes"
+        ]
+      }
+    },
+    "characterRequirements": {
+      "crafting": {
+        "status": "known",
+        "text": "Wendy — công thức riêng của nhân vật.",
+        "sources": [
+          "public/data/wiki/pages/218864.json#recipe",
+          "public/data/catalog.json#base_game:abigail_flower/recipes",
+          "public/data/wiki/pages/152732.json#recipe"
+        ]
+      },
+      "usage": {
+        "status": "known",
+        "text": "Wendy",
+        "sources": [
+          "public/data/wiki/pages/218864.json#perk"
+        ]
+      }
+    }
+  },
+  {
+    "category": "item",
+    "character": null,
+    "craftingNote": null,
+    "description": "Bramble Husk là một Vật phẩm Giáp dành riêng cho nhân vật chỉ có thể chế tạo được bởi Wormwood. Nó được tìm thấy trong Thẻ Ngón Tay Cái Màu Xanh Lá Cây, yêu cầu 2 Gỗ Sống và 4 Mảnh Xương để chế tạo.",
+    "details": null,
+    "englishName": "Bramble Husk",
+    "id": "base_game:armor_bramble",
+    "mob": null,
+    "name": "Bramble Husk",
+    "namespace": "base_game",
+    "prefabId": "armor_bramble",
+    "recipe": {
+      "ingredients": [
+        {
+          "amount": 2,
+          "id": "base_game:livinglog",
+          "name": "Living Log",
+          "sprite": {
+            "src": "/assets/game/8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666.png",
+            "uv": {
+              "u1": 0.687744140625,
+              "u2": 0.718505859375,
+              "v1": 0.406494140625,
+              "v2": 0.437255859375
+            }
+          }
+        },
+        {
+          "amount": 4,
+          "id": "base_game:stinger",
+          "name": "Stinger",
+          "sprite": {
+            "src": "/assets/game/692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce.png",
+            "uv": {
+              "u1": 0.593994140625,
+              "u2": 0.624755859375,
+              "v1": 0.468994140625,
+              "v2": 0.499755859375
+            }
+          }
+        }
+      ],
+      "outputCount": 1
+    },
+    "sprite": {
+      "src": "/assets/game/7fe94715ca23b6fb030cf809b42792625c64511198813952f2acd200927422fb.png",
+      "uv": {
+        "u1": 0.031494140625,
+        "u2": 0.062255859375,
+        "v1": 0.843994140625,
+        "v2": 0.874755859375
+      }
+    },
+    "structureDetails": null,
+    "wiki": {
+      "canonicalUrl": "https://dontstarve.wiki.gg/wiki/Bramble_Husk",
+      "categories": [
+        "Always_Available",
+        "Armor",
+        "Character-Specific",
+        "Craftable_Items_and_Structures_on_DST",
+        "DST-Specific_Pages",
+        "Equipable_Items",
+        "Flammable_Objects",
+        "Fuel",
+        "Green_Thumb_Tab",
+        "Pages_using_Tabber_parser_tag",
+        "Pages_with_navboxes"
+      ],
+      "detailUrl": "/data/wiki/pages/126086.json",
+      "mappingState": "mapped",
+      "pageId": 126086,
+      "relatedPages": [
+        {
+          "canonicalUrl": "https://dontstarve.wiki.gg/wiki/Bramble_Husk/DST",
+          "detailUrl": "/data/wiki/pages/218869.json",
+          "pageId": 218869,
+          "title": "Bramble Husk/DST"
+        }
+      ],
+      "title": "Bramble Husk"
+    },
+    "summary": {
+      "usage": {
+        "status": "known",
+        "text": "Bramble Husk là một Vật phẩm Giáp dành riêng cho nhân vật chỉ có thể chế tạo được bởi Wormwood. Nó được tìm thấy trong Thẻ Ngón Tay Cái Màu Xanh Lá Cây, yêu cầu 2 Gỗ Sống và 4 Mảnh Xương để chế tạo.",
+        "sources": [
+          "public/data/wiki/pages/126086.json#summaryViHtml"
+        ]
+      },
+      "fuel": {
+        "status": "unknown",
+        "text": null,
+        "sources": []
+      },
+      "recycling": {
+        "status": "unknown",
+        "text": null,
+        "sources": []
+      },
+      "acquisition": {
+        "status": "known",
+        "text": "Chế tạo từ 2 Living Log + 4 Stinger.",
+        "sources": [
+          "public/data/items.json#base_game:armor_bramble/recipe"
+        ]
+      }
+    },
+    "characterRequirements": {
+      "crafting": {
+        "status": "known",
+        "text": "Wormwood — công thức riêng của nhân vật.",
+        "sources": [
+          "public/data/wiki/pages/126086.json#recipe",
+          "public/data/catalog.json#base_game:armor_bramble/recipes",
+          "public/data/wiki/pages/50474.json#recipe"
+        ]
+      },
+      "usage": {
+        "status": "unknown",
+        "text": null,
+        "sources": []
+      }
+    }
+  }
+]

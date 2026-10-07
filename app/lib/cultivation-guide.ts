@@ -31,6 +31,10 @@ const cultivationStageDefinitions: readonly CultivationStageDefinition[] = [
   { currentRealm: "Hóa Thần Hậu Kỳ", resultingRealm: "Phản Hư Sơ Kỳ", pillId: "tu_tien:xd_danyao_kx", breakthrough: true },
 ];
 
+export function isCultivationPill(itemId: string): boolean {
+  return cultivationStageDefinitions.some(stage => stage.pillId === itemId);
+}
+
 export function buildCultivationStages(
   items: readonly ItemListEntry[],
 ): readonly CultivationStage[] {

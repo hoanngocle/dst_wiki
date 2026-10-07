@@ -1,3 +1,9 @@
+export type ItemSummaryFact = {
+  status: "known" | "unknown" | "not_applicable";
+  text: string | null;
+  sources: readonly string[];
+};
+export type ItemSummaryData = Record<"usage" | "fuel" | "recycling" | "acquisition", ItemSummaryFact>;
 export type ItemNamespace = "tu_tien" | "base_game";
 export type ItemSourceFilter = "all" | ItemNamespace;
 export type ItemAvailabilityFilter = "all" | "recipe" | "image";
@@ -346,6 +352,8 @@ export type ItemListEntry = {
   englishName: string | null;
   description: string | null;
   craftingNote: string | null;
+  summary?: ItemSummaryData;
+  characterRequirements?: { crafting: ItemSummaryFact; usage: ItemSummaryFact };
   sprite: SpriteDescriptor | null;
   recipe: ItemRecipe | null;
   details?: ItemDetails | null;
@@ -1320,6 +1328,24 @@ function parseStructureDetails(
   };
 }
 
+function parseSummary(value: unknown, index: number): ItemSummaryData | undefined {
+  if (value === undefined) return undefined;
+  if (!isRecord(value)) throw new Error(`item ${index} summary must be an object`);
+  const result = {} as ItemSummaryData;
+  for (const key of ["usage", "fuel", "recycling", "acquisition"] as const) {
+    const fact = value[key];
+    const field = `item ${index} summary.${key}`;
+    if (!isRecord(fact) || !["known", "unknown", "not_applicable"].includes(String(fact.status)) || !Array.isArray(fact.sources)) {
+      throw new Error(`${field} is invalid`);
+    }
+    const text = fact.status === "known" ? requiredString(fact.text, field) : null;
+    if (fact.status !== "known" && fact.text !== null) throw new Error(`${field} must have null text when unknown or not applicable`);
+    if (fact.status === "known" && fact.sources.length === 0) throw new Error(`${field} must cite a source`);
+    result[key] = { status: fact.status as ItemSummaryFact["status"], text, sources: fact.sources.map((source) => requiredString(source, `${field} source`)) };
+  }
+  return result;
+}
+
 function parseItem(value: unknown, index: number): ItemListEntry {
   if (!isRecord(value)) {
     throw new Error(`item ${index} must be an object`);
@@ -1337,6 +1363,17 @@ function parseItem(value: unknown, index: number): ItemListEntry {
     name: requiredString(value.name, `item ${index} name`),
     englishName: nullableString(value.englishName, `item ${index} englishName`),
     description: nullableString(value.description, `item ${index} description`),
+    summary: parseSummary(value.summary, index),
+    characterRequirements: value.characterRequirements == null ? undefined : (() => {
+      if (!isRecord(value.characterRequirements)) throw new Error(`item ${index} characterRequirements is invalid`);
+      const parsed = parseSummary({
+        usage: value.characterRequirements.usage,
+        acquisition: value.characterRequirements.crafting,
+        fuel: { status: "unknown", text: null, sources: [] },
+        recycling: { status: "unknown", text: null, sources: [] },
+      }, index)!;
+      return { crafting: parsed.acquisition, usage: parsed.usage };
+    })(),
     craftingNote: nullableString(value.craftingNote, `item ${index} craftingNote`),
     sprite: parseSprite(value.sprite, `item ${index}`),
     recipe: parseRecipe(value.recipe, index),

@@ -31,3 +31,16 @@ it("includes required choice ingredients in addition to the main pill ingredient
     ["base_game:spore_small", 10], ["base_game:spore_tall", 10], ["base_game:spore_medium", 10],
   ]);
 });
+
+
+it("keeps source-backed rare materials available in furnace recipes and ingredient dialogs", () => {
+  const result = buildDanLoCatalog(parseItemPayload(itemsPayload));
+  for (const prefab of ["horrorfuel", "purebrilliance", "livinglog"]) {
+    const id = `base_game:${prefab}`;
+    const reference = result.referenceItems.find(item => item.id === id);
+    expect(reference).toBeDefined();
+    expect(reference!.prefabId).toBe(prefab);
+    expect(reference!.sprite).not.toBeNull();
+    expect(result.items.some(item => item.recipe!.ingredients.some(ingredient => ingredient.id === id))).toBe(true);
+  }
+});

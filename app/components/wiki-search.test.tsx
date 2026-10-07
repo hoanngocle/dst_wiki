@@ -153,7 +153,7 @@ describe("WikiSearch", () => {
     render(<WikiSearch items={[...items, pill]} />);
 
     fireEvent.click(
-      screen.getByRole("button", { name: "Phép thuật & khám phá, 1 vật phẩm" }),
+      screen.getByRole("button", { name: "Đan Dược, 1 vật phẩm" }),
     );
 
     expect(screen.getByText("Tụ Khí Hoàn")).toBeDefined();
@@ -329,7 +329,7 @@ describe("WikiSearch", () => {
     expect(screen.getAllByRole("listitem")).toHaveLength(80);
 
     fireEvent.click(
-      screen.getByRole("button", { name: "Phép thuật & khám phá, 81 vật phẩm" }),
+      screen.getByRole("button", { name: "Đan Dược, 81 vật phẩm" }),
     );
 
     expect(screen.getAllByRole("listitem")).toHaveLength(40);

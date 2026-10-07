@@ -89,10 +89,11 @@ describe("ItemResult", () => {
     expect(screen.getByText("Kiếm").tagName).toBe("MARK");
   });
 
-  it("highlights a matching English name", () => {
+  it("does not restore the removed subtitle when the query matches its English name", () => {
     const { container } = render(<ItemResult item={item} query="test sword" />);
 
-    expect(container.querySelector("mark")?.textContent).toBe("Test Sword");
+    expect(container.querySelector("mark")).toBeNull();
+    expect(screen.queryByText("Test Sword")).toBeNull();
   });
 
   it("highlights a matching prefab code", () => {
@@ -113,13 +114,11 @@ describe("ItemResult", () => {
     expect(screen.queryByText("DST gốc liên quan")).toBeNull();
   });
 
-  it("shows an available English name below Vietnamese and omits an empty subtitle", () => {
+  it("shows the prefab directly below the title without an English subtitle", () => {
     const { container, rerender } = render(<ItemResult item={item} query="" />);
     const vietnameseHeading = screen.getByRole("heading", { name: "Kiếm Thử" });
-    const englishName = screen.getByText("Test Sword");
-
-    expect(vietnameseHeading.nextElementSibling).toBe(englishName);
-    expect(englishName.getAttribute("lang")).toBe("en");
+    expect(vietnameseHeading.nextElementSibling).toBe(screen.getByText("xd_sword"));
+    expect(screen.queryByText("Test Sword")).toBeNull();
 
     rerender(<ItemResult item={{ ...item, englishName: null }} query="" />);
     expect(container.querySelector('[lang="en"]')).toBeNull();

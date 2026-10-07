@@ -1,0 +1,2266 @@
+{
+  "removed": [
+    {
+      "reason": "character-exclusive",
+      "item": {
+        "category": "item",
+        "character": null,
+        "craftingNote": null,
+        "description": "Flutter Strip là một vật phẩm dành riêng cho từng nhân vật chỉ có trong Don't Starve Together. Nó chỉ có thể được chế tạo bởi Walter sau khi mở khóa kỹ năng Field Medic.",
+        "details": null,
+        "englishName": "Flutter Strip",
+        "id": "base_game:bandage_butterflywings",
+        "mob": null,
+        "name": "Flutter Strip",
+        "namespace": "base_game",
+        "prefabId": "bandage_butterflywings",
+        "recipe": {
+          "ingredients": [
+            {
+              "amount": 3,
+              "id": "base_game:butterflywings",
+              "name": "Butterfly Wings",
+              "sprite": {
+                "src": "/assets/game/7fe94715ca23b6fb030cf809b42792625c64511198813952f2acd200927422fb.png",
+                "uv": {
+                  "u1": 0.250244140625,
+                  "u2": 0.281005859375,
+                  "v1": 0.468994140625,
+                  "v2": 0.499755859375
+                }
+              }
+            }
+          ],
+          "outputCount": 1
+        },
+        "sprite": {
+          "src": "/assets/game/7fe94715ca23b6fb030cf809b42792625c64511198813952f2acd200927422fb.png",
+          "uv": {
+            "u1": 0.031494140625,
+            "u2": 0.062255859375,
+            "v1": 0.718994140625,
+            "v2": 0.749755859375
+          }
+        },
+        "structureDetails": null,
+        "wiki": {
+          "canonicalUrl": "https://dontstarve.wiki.gg/wiki/Flutter_Strip",
+          "categories": [
+            "Craftable_Items_and_Structures_on_DST",
+            "DST-Specific_Pages",
+            "Pages_with_navboxes"
+          ],
+          "detailUrl": "/data/wiki/pages/226219.json",
+          "mappingState": "mapped",
+          "pageId": 226219,
+          "relatedPages": [],
+          "title": "Flutter Strip"
+        },
+        "summary": {
+          "usage": {
+            "status": "known",
+            "text": "Flutter Strip là một vật phẩm dành riêng cho từng nhân vật chỉ có trong Don't Starve Together.",
+            "sources": [
+              "public/data/wiki/pages/226219.json#summaryViHtml"
+            ]
+          },
+          "fuel": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "recycling": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "acquisition": {
+            "status": "known",
+            "text": "Chế tạo từ 3 Butterfly Wings. Nó chỉ có thể được chế tạo bởi Walter sau khi mở khóa kỹ năng Field Medic. Nó cần 3 Cánh Bướm để chế tạo.",
+            "sources": [
+              "public/data/items.json#base_game:bandage_butterflywings/recipe",
+              "public/data/wiki/pages/226219.json#summaryViHtml"
+            ]
+          }
+        },
+        "characterRequirements": {
+          "crafting": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "usage": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          }
+        }
+      }
+    },
+    {
+      "reason": "character-exclusive",
+      "item": {
+        "category": "item",
+        "character": null,
+        "craftingNote": null,
+        "description": "Exclusive to: See also: Wigfrid Battle Songs are ten Wigfrid-exclusive items craftable in the Survivor Items Filter in Don't Starve Together. They can be used to give nearby players boosts to their abilities when her Inspiration meter goes up, and others can be used for an instant effect at the cost of Inspiration.",
+        "details": null,
+        "englishName": null,
+        "id": "base_game:battlesongs",
+        "mob": null,
+        "name": "battlesongs",
+        "namespace": "base_game",
+        "prefabId": "battlesongs",
+        "recipe": null,
+        "sprite": {
+          "src": "/assets/quality/5a8c3718e09b91a1c3930ffe6acbc9cb3fd481e9b79c3be34041a4a8cddf81ca.png",
+          "uv": {
+            "u1": 0,
+            "u2": 1,
+            "v1": 0,
+            "v2": 1
+          }
+        },
+        "structureDetails": null,
+        "wiki": null,
+        "summary": {
+          "usage": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "fuel": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "recycling": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "acquisition": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          }
+        },
+        "characterRequirements": {
+          "crafting": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "usage": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          }
+        }
+      }
+    },
+    {
+      "reason": "module-or-duplicate",
+      "item": {
+        "category": "item",
+        "character": null,
+        "craftingNote": null,
+        "description": "Bed Rolls are craftable items that can be used to sleep through the night. There are two types of bed rolls: Straw Rolls and Fur Rolls.",
+        "details": null,
+        "englishName": null,
+        "id": "base_game:bedroll",
+        "mob": null,
+        "name": "bedroll",
+        "namespace": "base_game",
+        "prefabId": "bedroll",
+        "recipe": null,
+        "sprite": {
+          "src": "/assets/quality/5a8c3718e09b91a1c3930ffe6acbc9cb3fd481e9b79c3be34041a4a8cddf81ca.png",
+          "uv": {
+            "u1": 0,
+            "u2": 1,
+            "v1": 0,
+            "v2": 1
+          }
+        },
+        "structureDetails": null,
+        "wiki": null,
+        "summary": {
+          "usage": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "fuel": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "recycling": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "acquisition": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          }
+        },
+        "characterRequirements": {
+          "crafting": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "usage": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          }
+        }
+      }
+    },
+    {
+      "reason": "character-exclusive",
+      "item": {
+        "category": "item",
+        "character": null,
+        "craftingNote": null,
+        "description": "Winona có thể lấy được Fragile Rose bằng kỹ năng Shadow Seeker II. Người chơi cần trang bị Kính màu hoa hồng và kiểm tra chặt chẽ một bông hoa hoặc hoa hồng.",
+        "details": null,
+        "englishName": "Fragile Rose",
+        "id": "base_game:charlierose",
+        "mob": null,
+        "name": "Fragile Rose",
+        "namespace": "base_game",
+        "prefabId": "charlierose",
+        "recipe": null,
+        "sprite": {
+          "src": "/assets/game/7fe94715ca23b6fb030cf809b42792625c64511198813952f2acd200927422fb.png",
+          "uv": {
+            "u1": 0.093994140625,
+            "u2": 0.124755859375,
+            "v1": 0.343994140625,
+            "v2": 0.374755859375
+          }
+        },
+        "structureDetails": null,
+        "wiki": {
+          "canonicalUrl": "https://dontstarve.wiki.gg/wiki/Fragile_Rose",
+          "categories": [
+            "DST-Specific_Pages",
+            "From_Beyond",
+            "Pages_with_navboxes",
+            "Resurrection"
+          ],
+          "detailUrl": "/data/wiki/pages/223562.json",
+          "mappingState": "mapped",
+          "pageId": 223562,
+          "relatedPages": [],
+          "title": "Fragile Rose"
+        },
+        "summary": {
+          "usage": {
+            "status": "known",
+            "text": "Winona có thể lấy được Fragile Rose bằng kỹ năng Shadow Seeker II. Người chơi cần trang bị Kính màu hoa hồng và kiểm tra chặt chẽ một bông hoa hoặc hoa hồng. Sau khi kiểm tra, Bông hoa sẽ biến thành Hoa hồng và người chơi có thể nhấp lại vào đó để nhặt Hoa hồng mong manh. Người chơi cũng có thể kiểm tra lại để loại bỏ nó, nhưng Bông hoa sẽ vẫn là Hoa hồng.",
+            "sources": [
+              "public/data/wiki/pages/223562.json#summaryViHtml"
+            ]
+          },
+          "fuel": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "recycling": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "acquisition": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          }
+        },
+        "characterRequirements": {
+          "crafting": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "usage": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          }
+        }
+      }
+    },
+    {
+      "reason": "module-or-duplicate",
+      "item": {
+        "category": "item",
+        "character": null,
+        "craftingNote": null,
+        "description": "Exclusive to: For sculptures players can repair using Suspicious Marble, see Marble Sculptures. For decorative sculptures dropping Sketches when mined, see Marble Statues.",
+        "details": null,
+        "englishName": null,
+        "id": "base_game:chesspieces",
+        "mob": null,
+        "name": "chesspieces",
+        "namespace": "base_game",
+        "prefabId": "chesspieces",
+        "recipe": null,
+        "sprite": {
+          "src": "/assets/quality/5a8c3718e09b91a1c3930ffe6acbc9cb3fd481e9b79c3be34041a4a8cddf81ca.png",
+          "uv": {
+            "u1": 0,
+            "u2": 1,
+            "v1": 0,
+            "v2": 1
+          }
+        },
+        "structureDetails": null,
+        "wiki": null,
+        "summary": {
+          "usage": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "fuel": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "recycling": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "acquisition": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          }
+        },
+        "characterRequirements": {
+          "crafting": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "usage": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          }
+        }
+      }
+    },
+    {
+      "reason": "character-exclusive",
+      "item": {
+        "category": "item",
+        "character": null,
+        "craftingNote": null,
+        "description": "Exclusive to: Dumbbells are items crafted by Wolfgang and can only be held by him. They can be used as weapons or can be lifted to fill up Wolfgang's Mightiness Meter each time he lifts them, depending on his current strength.",
+        "details": null,
+        "englishName": null,
+        "id": "base_game:dumbbells",
+        "mob": null,
+        "name": "dumbbells",
+        "namespace": "base_game",
+        "prefabId": "dumbbells",
+        "recipe": null,
+        "sprite": {
+          "src": "/assets/quality/5a8c3718e09b91a1c3930ffe6acbc9cb3fd481e9b79c3be34041a4a8cddf81ca.png",
+          "uv": {
+            "u1": 0,
+            "u2": 1,
+            "v1": 0,
+            "v2": 1
+          }
+        },
+        "structureDetails": null,
+        "wiki": null,
+        "summary": {
+          "usage": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "fuel": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "recycling": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "acquisition": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          }
+        },
+        "characterRequirements": {
+          "crafting": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "usage": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          }
+        }
+      }
+    },
+    {
+      "reason": "character-exclusive",
+      "item": {
+        "category": "item",
+        "character": null,
+        "craftingNote": null,
+        "description": "Strike while the pen's hot!",
+        "details": null,
+        "englishName": "Fiery Pen",
+        "id": "base_game:firepen",
+        "mob": null,
+        "name": "Fiery Pen",
+        "namespace": "base_game",
+        "prefabId": "firepen",
+        "recipe": null,
+        "sprite": {
+          "src": "/assets/game/8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666.png",
+          "uv": {
+            "u1": 0.281494140625,
+            "u2": 0.312255859375,
+            "v1": 0.843994140625,
+            "v2": 0.874755859375
+          }
+        },
+        "structureDetails": null,
+        "wiki": null,
+        "summary": {
+          "usage": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "fuel": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "recycling": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "acquisition": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          }
+        },
+        "characterRequirements": {
+          "crafting": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "usage": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          }
+        }
+      }
+    },
+    {
+      "reason": "character-exclusive",
+      "item": {
+        "category": "item",
+        "character": null,
+        "craftingNote": null,
+        "description": "Mourning Glory là một Vật phẩm độc quyền của Don't Starve Together. Cần phải chế tạo Hoa của Abigail và Thuốc tiên ma quái với tư cách là Wendy.",
+        "details": null,
+        "englishName": "Mourning Glory",
+        "id": "base_game:ghostflower",
+        "mob": null,
+        "name": "ghostflower",
+        "namespace": "base_game",
+        "prefabId": "ghostflower",
+        "recipe": null,
+        "sprite": {
+          "src": "/assets/game/8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666.png",
+          "uv": {
+            "u1": 0.781494140625,
+            "u2": 0.812255859375,
+            "v1": 0.750244140625,
+            "v2": 0.781005859375
+          }
+        },
+        "structureDetails": null,
+        "wiki": {
+          "canonicalUrl": "https://dontstarve.wiki.gg/wiki/Mourning_Glory",
+          "categories": [
+            "DST-Specific_Pages",
+            "Pages_with_navboxes"
+          ],
+          "detailUrl": "/data/wiki/pages/51172.json",
+          "mappingState": "mapped",
+          "pageId": 51172,
+          "relatedPages": [],
+          "title": "Mourning Glory"
+        },
+        "summary": {
+          "usage": {
+            "status": "known",
+            "text": "Mourning Glory là một Vật phẩm độc quyền của Don't Starve Together.",
+            "sources": [
+              "public/data/wiki/pages/51172.json#summaryViHtml"
+            ]
+          },
+          "fuel": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "recycling": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "acquisition": {
+            "status": "known",
+            "text": "Cần phải chế tạo Hoa của Abigail và Thuốc tiên ma quái với tư cách là Wendy.",
+            "sources": [
+              "public/data/wiki/pages/51172.json#summaryViHtml"
+            ]
+          }
+        },
+        "characterRequirements": {
+          "crafting": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "usage": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          }
+        }
+      }
+    },
+    {
+      "reason": "character-exclusive",
+      "item": {
+        "category": "item",
+        "character": null,
+        "craftingNote": null,
+        "description": "Spirit Vessel là một vật phẩm độc quyền của Don't Starve Together. Nó chỉ có thể được chế tạo bởi Wendy sau khi mở khóa kỹ năng \" Gravestones By Wendy \" và nó cần 1 Tro tàn và 1 Vỏ vỡ để chế tạo.",
+        "details": null,
+        "englishName": "Spirit Vessel",
+        "id": "base_game:graveurn",
+        "mob": null,
+        "name": "Spirit Vessel",
+        "namespace": "base_game",
+        "prefabId": "graveurn",
+        "recipe": {
+          "ingredients": [
+            {
+              "amount": 1,
+              "id": "base_game:ash",
+              "name": "Ashes",
+              "sprite": {
+                "src": "/assets/game/7fe94715ca23b6fb030cf809b42792625c64511198813952f2acd200927422fb.png",
+                "uv": {
+                  "u1": 0.593994140625,
+                  "u2": 0.624755859375,
+                  "v1": 0.812744140625,
+                  "v2": 0.843505859375
+                }
+              }
+            },
+            {
+              "amount": 1,
+              "id": "base_game:slurtle_shellpieces",
+              "name": "Broken Shell",
+              "sprite": {
+                "src": "/assets/game/692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce.png",
+                "uv": {
+                  "u1": 0.125244140625,
+                  "u2": 0.156005859375,
+                  "v1": 0.531494140625,
+                  "v2": 0.562255859375
+                }
+              }
+            }
+          ],
+          "outputCount": 1
+        },
+        "sprite": {
+          "src": "/assets/game/8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666.png",
+          "uv": {
+            "u1": 0.531494140625,
+            "u2": 0.562255859375,
+            "v1": 0.687744140625,
+            "v2": 0.718505859375
+          }
+        },
+        "structureDetails": null,
+        "wiki": {
+          "canonicalUrl": "https://dontstarve.wiki.gg/wiki/Spirit_Vessel",
+          "categories": [
+            "Craftable_Items_and_Structures_on_DST",
+            "DST-Specific_Pages",
+            "Pages_using_Tabber_parser_tag",
+            "Pages_with_navboxes"
+          ],
+          "detailUrl": "/data/wiki/pages/226310.json",
+          "mappingState": "mapped",
+          "pageId": 226310,
+          "relatedPages": [],
+          "title": "Spirit Vessel"
+        },
+        "summary": {
+          "usage": {
+            "status": "known",
+            "text": "Spirit Vessel là một vật phẩm độc quyền của Don't Starve Together.",
+            "sources": [
+              "public/data/wiki/pages/226310.json#summaryViHtml"
+            ]
+          },
+          "fuel": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "recycling": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "acquisition": {
+            "status": "known",
+            "text": "Chế tạo từ 1 Ashes + 1 Broken Shell. Nó chỉ có thể được chế tạo bởi Wendy sau khi mở khóa kỹ năng \" Gravestones By Wendy \" và nó cần 1 Tro tàn và 1 Vỏ vỡ để chế tạo.",
+            "sources": [
+              "public/data/items.json#base_game:graveurn/recipe",
+              "public/data/wiki/pages/226310.json#summaryViHtml"
+            ]
+          }
+        },
+        "characterRequirements": {
+          "crafting": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "usage": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          }
+        }
+      }
+    },
+    {
+      "reason": "character-exclusive",
+      "item": {
+        "category": "item",
+        "character": null,
+        "craftingNote": null,
+        "description": "Syrup of Ipecaca là một loại thực phẩm Rau dành riêng cho từng nhân vật dành riêng cho Don't Starve Together. Nó chỉ có thể được chế tạo bởi Wormwood sau khi mở khóa Poor Sap trong Cây Kỹ năng của ông ta.",
+        "details": null,
+        "englishName": "Syrup of Ipecaca",
+        "id": "base_game:ipecacsyrup",
+        "mob": null,
+        "name": "Syrup of Ipecaca",
+        "namespace": "base_game",
+        "prefabId": "ipecacsyrup",
+        "recipe": {
+          "ingredients": [
+            {
+              "amount": 1,
+              "id": "base_game:red_cap",
+              "name": "Red Cap",
+              "sprite": {
+                "src": "/assets/game/692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce.png",
+                "uv": {
+                  "u1": 0.125244140625,
+                  "u2": 0.156005859375,
+                  "v1": 0.812744140625,
+                  "v2": 0.843505859375
+                }
+              }
+            },
+            {
+              "amount": 1,
+              "id": "base_game:honey",
+              "name": "Honey",
+              "sprite": {
+                "src": "/assets/game/8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666.png",
+                "uv": {
+                  "u1": 0.125244140625,
+                  "u2": 0.156005859375,
+                  "v1": 0.531494140625,
+                  "v2": 0.562255859375
+                }
+              }
+            },
+            {
+              "amount": 1,
+              "id": "base_game:spoiled_food",
+              "name": "Rot",
+              "sprite": {
+                "src": "/assets/game/692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce.png",
+                "uv": {
+                  "u1": 0.062744140625,
+                  "u2": 0.093505859375,
+                  "v1": 0.468994140625,
+                  "v2": 0.499755859375
+                }
+              }
+            }
+          ],
+          "outputCount": 1
+        },
+        "sprite": {
+          "src": "/assets/game/8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666.png",
+          "uv": {
+            "u1": 0.531494140625,
+            "u2": 0.562255859375,
+            "v1": 0.500244140625,
+            "v2": 0.531005859375
+          }
+        },
+        "structureDetails": null,
+        "wiki": {
+          "canonicalUrl": "https://dontstarve.wiki.gg/wiki/Syrup_of_Ipecaca",
+          "categories": [
+            "Craftable_Items_and_Structures_on_DST",
+            "DST-Specific_Pages",
+            "Pages_using_Tabber_parser_tag",
+            "Pages_with_navboxes"
+          ],
+          "detailUrl": "/data/wiki/pages/46132.json",
+          "mappingState": "mapped",
+          "pageId": 46132,
+          "relatedPages": [],
+          "title": "Syrup of Ipecaca"
+        },
+        "summary": {
+          "usage": {
+            "status": "known",
+            "text": "Syrup of Ipecaca là một loại thực phẩm Rau dành riêng cho từng nhân vật dành riêng cho Don't Starve Together. Khi ăn (chỉ số cơ bản): máu -20, độ no +9,4, tinh thần 0.",
+            "sources": [
+              "public/data/wiki/pages/46132.json#summaryViHtml",
+              "public/data/wiki/pages/46132.json#wikitext"
+            ]
+          },
+          "fuel": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "recycling": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "acquisition": {
+            "status": "known",
+            "text": "Chế tạo từ 1 Red Cap + 1 Honey + 1 Rot. Nó chỉ có thể được chế tạo bởi Wormwood sau khi mở khóa Poor Sap trong Cây Kỹ năng của ông ta.",
+            "sources": [
+              "public/data/items.json#base_game:ipecacsyrup/recipe",
+              "public/data/wiki/pages/46132.json#summaryViHtml"
+            ]
+          }
+        },
+        "characterRequirements": {
+          "crafting": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "usage": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          }
+        }
+      }
+    },
+    {
+      "reason": "character-exclusive",
+      "item": {
+        "category": "item",
+        "character": null,
+        "craftingNote": null,
+        "description": "That's a prettier axe than I'm used to.",
+        "details": null,
+        "englishName": "Lucy the Axe",
+        "id": "base_game:lucy",
+        "mob": null,
+        "name": "Lucy the Axe",
+        "namespace": "base_game",
+        "prefabId": "lucy",
+        "recipe": null,
+        "sprite": {
+          "src": "/assets/game/8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666.png",
+          "uv": {
+            "u1": 0.906494140625,
+            "u2": 0.937255859375,
+            "v1": 0.406494140625,
+            "v2": 0.437255859375
+          }
+        },
+        "structureDetails": null,
+        "wiki": null,
+        "summary": {
+          "usage": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "fuel": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "recycling": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "acquisition": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          }
+        },
+        "characterRequirements": {
+          "crafting": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "usage": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          }
+        }
+      }
+    },
+    {
+      "reason": "character-exclusive",
+      "item": {
+        "category": "item",
+        "character": null,
+        "craftingNote": null,
+        "description": "It does so much, badly.",
+        "details": null,
+        "englishName": "Shoddy Tool",
+        "id": "base_game:merm_tool",
+        "mob": null,
+        "name": "Shoddy Tool",
+        "namespace": "base_game",
+        "prefabId": "merm_tool",
+        "recipe": null,
+        "sprite": {
+          "src": "/assets/game/8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666.png",
+          "uv": {
+            "u1": 0.750244140625,
+            "u2": 0.781005859375,
+            "v1": 0.312744140625,
+            "v2": 0.343505859375
+          }
+        },
+        "structureDetails": null,
+        "wiki": null,
+        "summary": {
+          "usage": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "fuel": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "recycling": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "acquisition": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          }
+        },
+        "characterRequirements": {
+          "crafting": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "usage": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          }
+        }
+      }
+    },
+    {
+      "reason": "character-exclusive",
+      "item": {
+        "category": "item",
+        "character": null,
+        "craftingNote": null,
+        "description": "Lil' Itchy là một Vật phẩm dành riêng cho nhân vật chỉ có thể chế tạo bởi Wurt với kỹ năng \"Muỗi ẩn danh\". Lil' Itchy khiến tất cả Mosquitos bị động đối với người chơi có vật phẩm này trong kho của họ.",
+        "details": null,
+        "englishName": "Lil' Itchy",
+        "id": "base_game:mosquitomusk",
+        "mob": null,
+        "name": "Lil' Itchy",
+        "namespace": "base_game",
+        "prefabId": "mosquitomusk",
+        "recipe": {
+          "ingredients": [
+            {
+              "amount": 1,
+              "id": "base_game:mosquitosack",
+              "name": "Mosquito Sack",
+              "sprite": {
+                "src": "/assets/game/8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666.png",
+                "uv": {
+                  "u1": 0.531494140625,
+                  "u2": 0.562255859375,
+                  "v1": 0.218994140625,
+                  "v2": 0.249755859375
+                }
+              }
+            },
+            {
+              "amount": 1,
+              "id": "base_game:beefalowool",
+              "name": "Beefalo Wool",
+              "sprite": {
+                "src": "/assets/game/7fe94715ca23b6fb030cf809b42792625c64511198813952f2acd200927422fb.png",
+                "uv": {
+                  "u1": 0.531494140625,
+                  "u2": 0.562255859375,
+                  "v1": 0.656494140625,
+                  "v2": 0.687255859375
+                }
+              }
+            }
+          ],
+          "outputCount": 1
+        },
+        "sprite": {
+          "src": "/assets/game/8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666.png",
+          "uv": {
+            "u1": 0.500244140625,
+            "u2": 0.531005859375,
+            "v1": 0.218994140625,
+            "v2": 0.249755859375
+          }
+        },
+        "structureDetails": null,
+        "wiki": {
+          "canonicalUrl": "https://dontstarve.wiki.gg/wiki/Lil%27_Itchy",
+          "categories": [
+            "Craftable_Items_and_Structures_on_DST",
+            "DST-Specific_Pages",
+            "From_Beyond",
+            "Pages_with_navboxes"
+          ],
+          "detailUrl": "/data/wiki/pages/223558.json",
+          "mappingState": "mapped",
+          "pageId": 223558,
+          "relatedPages": [],
+          "title": "Lil' Itchy"
+        },
+        "summary": {
+          "usage": {
+            "status": "known",
+            "text": "Lil' Itchy khiến tất cả Mosquitos bị động đối với người chơi có vật phẩm này trong kho của họ.",
+            "sources": [
+              "public/data/wiki/pages/223558.json#summaryViHtml"
+            ]
+          },
+          "fuel": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "recycling": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "acquisition": {
+            "status": "known",
+            "text": "Chế tạo từ 1 Mosquito Sack + 1 Beefalo Wool. Lil' Itchy là một Vật phẩm dành riêng cho nhân vật chỉ có thể chế tạo bởi Wurt với kỹ năng \"Muỗi ẩn danh\".",
+            "sources": [
+              "public/data/items.json#base_game:mosquitomusk/recipe",
+              "public/data/wiki/pages/223558.json#summaryViHtml"
+            ]
+          }
+        },
+        "characterRequirements": {
+          "crafting": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "usage": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          }
+        }
+      }
+    },
+    {
+      "reason": "module-or-duplicate",
+      "item": {
+        "category": "item",
+        "character": null,
+        "craftingNote": null,
+        "description": "Doesn't look all that much different dead.",
+        "details": null,
+        "englishName": null,
+        "id": "base_game:slurperpelt",
+        "mob": null,
+        "name": "slurperpelt",
+        "namespace": "base_game",
+        "prefabId": "slurperpelt",
+        "recipe": null,
+        "sprite": {
+          "src": "/assets/quality/be34441edb92695c159ce746c8d3b431027e1b07ed63ad1deec17beb979576db.png",
+          "uv": {
+            "u1": 0,
+            "u2": 1,
+            "v1": 0,
+            "v2": 1
+          }
+        },
+        "structureDetails": null,
+        "wiki": null,
+        "summary": {
+          "usage": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "fuel": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "recycling": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "acquisition": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          }
+        },
+        "characterRequirements": {
+          "crafting": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "usage": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          }
+        }
+      }
+    },
+    {
+      "reason": "character-exclusive",
+      "item": {
+        "category": "item",
+        "character": null,
+        "craftingNote": null,
+        "description": "Điều khiển từ xa tiện dụng là một vật phẩm đặc biệt chỉ có thể chế tạo và sử dụng bởi Winona với kỹ năng \"Portability\".",
+        "details": null,
+        "englishName": "Handy Remote",
+        "id": "base_game:winona_remote",
+        "mob": null,
+        "name": "winona_remote",
+        "namespace": "base_game",
+        "prefabId": "winona_remote",
+        "recipe": {
+          "ingredients": [
+            {
+              "amount": 1,
+              "id": "base_game:transistor",
+              "name": "Electrical Doodad",
+              "sprite": {
+                "src": "/assets/game/692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce.png",
+                "uv": {
+                  "u1": 0.312744140625,
+                  "u2": 0.343505859375,
+                  "v1": 0.312744140625,
+                  "v2": 0.343505859375
+                }
+              }
+            }
+          ],
+          "outputCount": 1
+        },
+        "sprite": {
+          "src": "/assets/game/692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce.png",
+          "uv": {
+            "u1": 0.875244140625,
+            "u2": 0.906005859375,
+            "v1": 0.031494140625,
+            "v2": 0.062255859375
+          }
+        },
+        "structureDetails": null,
+        "wiki": {
+          "canonicalUrl": "https://dontstarve.wiki.gg/wiki/Handy_Remote",
+          "categories": [
+            "Craftable_Items_and_Structures_on_DST",
+            "DST-Specific_Pages",
+            "From_Beyond",
+            "Pages_using_Tabber_parser_tag",
+            "Pages_with_navboxes",
+            "Survivor_Items_Filter",
+            "Tools_Filter"
+          ],
+          "detailUrl": "/data/wiki/pages/223566.json",
+          "mappingState": "mapped",
+          "pageId": 223566,
+          "relatedPages": [],
+          "title": "Handy Remote"
+        },
+        "summary": {
+          "usage": {
+            "status": "known",
+            "text": "Điều khiển từ xa tiện dụng là một vật phẩm đặc biệt chỉ có thể chế tạo và sử dụng bởi Winona với kỹ năng \"Portability\".",
+            "sources": [
+              "public/data/wiki/pages/223566.json#summaryViHtml"
+            ]
+          },
+          "fuel": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "recycling": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "acquisition": {
+            "status": "known",
+            "text": "Chế tạo từ 1 Electrical Doodad. Điều khiển từ xa tiện dụng là một vật phẩm đặc biệt chỉ có thể chế tạo và sử dụng bởi Winona với kỹ năng \"Portability\".",
+            "sources": [
+              "public/data/items.json#base_game:winona_remote/recipe",
+              "public/data/wiki/pages/223566.json#summaryViHtml"
+            ]
+          }
+        },
+        "characterRequirements": {
+          "crafting": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "usage": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          }
+        }
+      }
+    },
+    {
+      "reason": "character-exclusive",
+      "item": {
+        "category": "item",
+        "character": null,
+        "craftingNote": null,
+        "description": "W.I.N.bot là một robot chỉ có thể được chế tạo bởi Winona với kỹ năng \"Người giữ người sáng lập I\". Để mở khóa bản thiết kế, người chơi Winona cần sử dụng Bộ nhận biết đã hiệu chỉnh trên W.O.B.O.T.",
+        "details": null,
+        "englishName": "W.I.N.bot",
+        "id": "base_game:winona_storage_robot",
+        "mob": null,
+        "name": "W.I.N.bot",
+        "namespace": "base_game",
+        "prefabId": "winona_storage_robot",
+        "recipe": {
+          "ingredients": [
+            {
+              "amount": 8,
+              "id": "base_game:wagpunk_bits",
+              "name": "Scrap",
+              "sprite": {
+                "src": "/assets/game/692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce.png",
+                "uv": {
+                  "u1": 0.656494140625,
+                  "u2": 0.687255859375,
+                  "v1": 0.156494140625,
+                  "v2": 0.187255859375
+                }
+              }
+            },
+            {
+              "amount": 4,
+              "id": "base_game:transistor",
+              "name": "Electrical Doodad",
+              "sprite": {
+                "src": "/assets/game/692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce.png",
+                "uv": {
+                  "u1": 0.312744140625,
+                  "u2": 0.343505859375,
+                  "v1": 0.312744140625,
+                  "v2": 0.343505859375
+                }
+              }
+            },
+            {
+              "amount": 3,
+              "id": "base_game:winona_machineparts_1",
+              "name": "Doohickey",
+              "sprite": {
+                "src": "/assets/game/692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce.png",
+                "uv": {
+                  "u1": 0.812744140625,
+                  "u2": 0.843505859375,
+                  "v1": 0.031494140625,
+                  "v2": 0.062255859375
+                }
+              }
+            }
+          ],
+          "outputCount": 1
+        },
+        "sprite": {
+          "src": "/assets/game/692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce.png",
+          "uv": {
+            "u1": 0.093994140625,
+            "u2": 0.124755859375,
+            "v1": 0.000244140625,
+            "v2": 0.031005859375
+          }
+        },
+        "structureDetails": null,
+        "wiki": {
+          "canonicalUrl": "https://dontstarve.wiki.gg/wiki/W.I.N.bot",
+          "categories": [
+            "Craftable_Items_and_Structures_on_DST",
+            "DST-Specific_Pages",
+            "Pages_using_Tabber_parser_tag",
+            "Pages_with_navboxes"
+          ],
+          "detailUrl": "/data/wiki/pages/223605.json",
+          "mappingState": "mapped",
+          "pageId": 223605,
+          "relatedPages": [],
+          "title": "W.I.N.bot"
+        },
+        "summary": {
+          "usage": {
+            "status": "known",
+            "text": "Để mở khóa bản thiết kế, người chơi Winona cần sử dụng Bộ nhận biết đã hiệu chỉnh trên W.O.B.O.T.",
+            "sources": [
+              "public/data/wiki/pages/223605.json#summaryViHtml"
+            ]
+          },
+          "fuel": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "recycling": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "acquisition": {
+            "status": "known",
+            "text": "Chế tạo từ 8 Scrap + 4 Electrical Doodad + 3 Doohickey. W.I.N.bot là một robot chỉ có thể được chế tạo bởi Winona với kỹ năng \"Người giữ người sáng lập I\".",
+            "sources": [
+              "public/data/items.json#base_game:winona_storage_robot/recipe",
+              "public/data/wiki/pages/223605.json#summaryViHtml"
+            ]
+          }
+        },
+        "characterRequirements": {
+          "crafting": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "usage": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          }
+        }
+      }
+    },
+    {
+      "reason": "character-exclusive",
+      "item": {
+        "category": "item",
+        "character": null,
+        "craftingNote": null,
+        "description": "Ba Lô là một vật phẩm độc quyền của Don't Starve Together. Nó chỉ có thể được chế tạo bởi Wortox sau khi mở khóa kỹ năng \" Knabsacker \" và cần 2 Tơ và 4 Linh hồn để chế tạo.",
+        "details": null,
+        "englishName": "Knabsack",
+        "id": "base_game:wortox_nabbag",
+        "mob": null,
+        "name": "wortox_nabbag",
+        "namespace": "base_game",
+        "prefabId": "wortox_nabbag",
+        "recipe": {
+          "ingredients": [
+            {
+              "amount": 4,
+              "id": "base_game:wortox_soul",
+              "name": "wortox_soul",
+              "sprite": {
+                "src": "/assets/game/4cab5b4faef790259ef173fcd52eb927f3455424ab8c7262a7c2cbdc509b8aa2.png",
+                "uv": {
+                  "u1": 0.156494140625,
+                  "u2": 0.187255859375,
+                  "v1": 0.75048828125,
+                  "v2": 0.81201171875
+                }
+              }
+            },
+            {
+              "amount": 2,
+              "id": "base_game:silk",
+              "name": "Silk",
+              "sprite": {
+                "src": "/assets/game/692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce.png",
+                "uv": {
+                  "u1": 0.718994140625,
+                  "u2": 0.749755859375,
+                  "v1": 0.656494140625,
+                  "v2": 0.687255859375
+                }
+              }
+            }
+          ],
+          "outputCount": 1
+        },
+        "sprite": {
+          "src": "/assets/game/4cab5b4faef790259ef173fcd52eb927f3455424ab8c7262a7c2cbdc509b8aa2.png",
+          "uv": {
+            "u1": 0.031494140625,
+            "u2": 0.062255859375,
+            "v1": 0.75048828125,
+            "v2": 0.81201171875
+          }
+        },
+        "structureDetails": null,
+        "wiki": {
+          "canonicalUrl": "https://dontstarve.wiki.gg/wiki/Knabsack",
+          "categories": [
+            "Craftable_Items_and_Structures_on_DST",
+            "DST-Specific_Pages",
+            "Pages_using_Tabber_parser_tag",
+            "Pages_with_navboxes"
+          ],
+          "detailUrl": "/data/wiki/pages/225660.json",
+          "mappingState": "mapped",
+          "pageId": 225660,
+          "relatedPages": [],
+          "title": "Knabsack"
+        },
+        "summary": {
+          "usage": {
+            "status": "known",
+            "text": "Ba Lô là một vật phẩm độc quyền của Don't Starve Together.",
+            "sources": [
+              "public/data/wiki/pages/225660.json#summaryViHtml"
+            ]
+          },
+          "fuel": {
+            "status": "known",
+            "text": "15 giây",
+            "sources": [
+              "public/data/wiki/pages/225660.json#burnTime"
+            ]
+          },
+          "recycling": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "acquisition": {
+            "status": "known",
+            "text": "Chế tạo từ 4 wortox_soul + 2 Silk. Nó chỉ có thể được chế tạo bởi Wortox sau khi mở khóa kỹ năng \" Knabsacker \" và cần 2 Tơ và 4 Linh hồn để chế tạo.",
+            "sources": [
+              "public/data/items.json#base_game:wortox_nabbag/recipe",
+              "public/data/wiki/pages/225660.json#summaryViHtml"
+            ]
+          }
+        },
+        "characterRequirements": {
+          "crafting": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "usage": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          }
+        }
+      }
+    },
+    {
+      "reason": "character-exclusive",
+      "item": {
+        "category": "item",
+        "character": null,
+        "craftingNote": null,
+        "description": "Linh hồn là một vật phẩm độc quyền của Wortox trong Don't Starve Together. Nó sinh ra khi một mob hoặc người chơi khác chết trong phạm vi 20 đơn vị của Wortox.",
+        "details": null,
+        "englishName": "Soul",
+        "id": "base_game:wortox_soul",
+        "mob": null,
+        "name": "wortox_soul",
+        "namespace": "base_game",
+        "prefabId": "wortox_soul",
+        "recipe": null,
+        "sprite": {
+          "src": "/assets/game/4cab5b4faef790259ef173fcd52eb927f3455424ab8c7262a7c2cbdc509b8aa2.png",
+          "uv": {
+            "u1": 0.156494140625,
+            "u2": 0.187255859375,
+            "v1": 0.75048828125,
+            "v2": 0.81201171875
+          }
+        },
+        "structureDetails": null,
+        "wiki": {
+          "canonicalUrl": "https://dontstarve.wiki.gg/wiki/Soul",
+          "categories": [
+            "DST-Specific_Pages",
+            "Pages_with_navboxes"
+          ],
+          "detailUrl": "/data/wiki/pages/31718.json",
+          "mappingState": "mapped",
+          "pageId": 31718,
+          "relatedPages": [],
+          "title": "Soul"
+        },
+        "summary": {
+          "usage": {
+            "status": "known",
+            "text": "Linh hồn là một vật phẩm độc quyền của Wortox trong Don't Starve Together. Nó sinh ra khi một mob hoặc người chơi khác chết trong phạm vi 20 đơn vị của Wortox. Nó sẽ chảy đến Wortox khi anh ta ở trong phạm vi 8 đơn vị (2 ô ) của Linh hồn. Nếu nó không được thu thập trong vòng 10 giây, nó sẽ biến mất. Dùng làm nguyên liệu chế tạo wortox_nabbag, Twintailed Heart.",
+            "sources": [
+              "public/data/wiki/pages/31718.json#summaryViHtml",
+              "public/data/items.json#base_game:wortox_nabbag/recipe",
+              "public/data/items.json#base_game:wortox_reviver/recipe"
+            ]
+          },
+          "fuel": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "recycling": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "acquisition": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          }
+        },
+        "characterRequirements": {
+          "crafting": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "usage": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          }
+        }
+      }
+    },
+    {
+      "reason": "character-exclusive",
+      "item": {
+        "category": "item",
+        "character": null,
+        "craftingNote": null,
+        "description": "Nutribrick là một Đồ Ăn trong Don't Starve Together. Nó được tạo ra từ quá trình xử lý 5 Thối, Trứng Thối, Cá Thối hoặc Miếng Cá Hư bằng cách sử dụng Mạch Tái Tiêu Hóa của WX-78.",
+        "details": null,
+        "englishName": "Nutribrick",
+        "id": "base_game:wx78_foodbrick",
+        "mob": null,
+        "name": "Nutribrick",
+        "namespace": "base_game",
+        "prefabId": "wx78_foodbrick",
+        "recipe": null,
+        "sprite": {
+          "src": "/assets/game/4cab5b4faef790259ef173fcd52eb927f3455424ab8c7262a7c2cbdc509b8aa2.png",
+          "uv": {
+            "u1": 0.531494140625,
+            "u2": 0.562255859375,
+            "v1": 0.68798828125,
+            "v2": 0.74951171875
+          }
+        },
+        "structureDetails": null,
+        "wiki": {
+          "canonicalUrl": "https://dontstarve.wiki.gg/wiki/Nutribrick",
+          "categories": [
+            "DST-Specific_Pages",
+            "Pages_using_Tabber_parser_tag",
+            "Pages_with_navboxes"
+          ],
+          "detailUrl": "/data/wiki/pages/232306.json",
+          "mappingState": "mapped",
+          "pageId": 232306,
+          "relatedPages": [],
+          "title": "Nutribrick"
+        },
+        "summary": {
+          "usage": {
+            "status": "known",
+            "text": "Nutribrick là một Đồ Ăn trong Don't Starve Together. Dùng làm nguyên liệu chế tạo Steamed Twigs.",
+            "sources": [
+              "public/data/wiki/pages/232306.json#summaryViHtml",
+              "public/data/items.json#wiki:160542/recipe"
+            ]
+          },
+          "fuel": {
+            "status": "known",
+            "text": "1.5 phút",
+            "sources": [
+              "public/data/wiki/pages/232306.json#burnTime"
+            ]
+          },
+          "recycling": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "acquisition": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          }
+        },
+        "characterRequirements": {
+          "crafting": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "usage": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          }
+        }
+      }
+    },
+    {
+      "reason": "character-exclusive",
+      "item": {
+        "category": "item",
+        "craftingNote": null,
+        "description": "Bánh Mousse Phát Sáng là một Thực phẩm đặc trưng của Warly được nấu trong Nồi Hầm Di Động dành riêng cho Don't Starve Together.",
+        "details": null,
+        "englishName": "Glow Berry Mousse",
+        "id": "wiki:12577",
+        "name": "Glow Berry Mousse",
+        "namespace": "base_game",
+        "prefabId": "wiki-12577",
+        "recipe": {
+          "ingredients": [
+            {
+              "amount": 2,
+              "id": "wiki:53394",
+              "name": "Lesser Glow Berry",
+              "sprite": {
+                "src": "/assets/wiki/00ae95cf5839f0cd9abbf7f6fe448c290e5ab491b53551f0db2bdd8060bafe02.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            },
+            {
+              "amount": 1,
+              "id": "wiki-ingredient:berry",
+              "name": "Berry",
+              "sprite": null
+            },
+            {
+              "amount": 1,
+              "id": "wiki-ingredient:berry",
+              "name": "Berry",
+              "sprite": null
+            }
+          ],
+          "outputCount": 1
+        },
+        "sprite": {
+          "src": "/assets/wiki/6ac9b7c224432b2cb5930cdd1e2d53aae832ccf8506379461b277e1e9de3dc8d.png",
+          "uv": {
+            "u1": 0,
+            "u2": 1,
+            "v1": 0,
+            "v2": 1
+          }
+        },
+        "structureDetails": null,
+        "wiki": {
+          "canonicalUrl": "https://dontstarve.wiki.gg/wiki/Glow_Berry_Mousse",
+          "categories": [
+            "DST-Specific_Pages",
+            "Food",
+            "Pages_using_Tabber_parser_tag",
+            "Pages_with_image_sizes_containing_extra_px",
+            "Pages_with_navboxes",
+            "Perishables",
+            "Portable_Crock_Pot_Recipes",
+            "Sanity_Boost"
+          ],
+          "detailUrl": "/data/wiki/pages/12577.json",
+          "mappingState": "unmatched",
+          "pageId": 12577,
+          "relatedPages": [],
+          "title": "Glow Berry Mousse"
+        },
+        "summary": {
+          "usage": {
+            "status": "known",
+            "text": "Bánh Mousse Phát Sáng là một Thực phẩm đặc trưng của Warly được nấu trong Nồi Hầm Di Động dành riêng cho Don't Starve Together. Khi ăn (chỉ số cơ bản): máu +3, độ no +37,5, tinh thần +10.",
+            "sources": [
+              "public/data/wiki/pages/12577.json#summaryViHtml",
+              "public/data/wiki/pages/12577.json#wikitext"
+            ]
+          },
+          "fuel": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "recycling": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "acquisition": {
+            "status": "known",
+            "text": "Chế tạo từ 2 Lesser Glow Berry + 1 berry + 1 berry.",
+            "sources": [
+              "public/data/items.json#wiki:12577/recipe"
+            ]
+          }
+        },
+        "characterRequirements": {
+          "crafting": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "usage": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          }
+        }
+      }
+    },
+    {
+      "reason": "single-player-only",
+      "item": {
+        "category": "item",
+        "craftingNote": null,
+        "description": "Visor là Áo giáp dành riêng cho Nhân vật và chỉ có thể được chế tạo bởi Wagstaff. Nó được tìm thấy trong Thẻ Tinkering và yêu cầu Kính đeo mắt và Đá cắt để chế tạo.",
+        "details": null,
+        "englishName": "Visor",
+        "id": "wiki:127001",
+        "name": "Visor",
+        "namespace": "base_game",
+        "prefabId": "wiki-127001",
+        "recipe": null,
+        "sprite": {
+          "src": "/assets/wiki/df10405e7697546c119eae50b10c948c76b5c5369f71524eeecda246f0251bb5.png",
+          "uv": {
+            "u1": 0,
+            "u2": 1,
+            "v1": 0,
+            "v2": 1
+          }
+        },
+        "structureDetails": null,
+        "wiki": {
+          "canonicalUrl": "https://dontstarve.wiki.gg/wiki/Visor",
+          "categories": [
+            "Always_Available",
+            "Craftable_Items_and_Structures_on_DST",
+            "DST-Specific_Pages",
+            "Equipable_Items",
+            "Hats",
+            "Items",
+            "Pages_using_Tabber_parser_tag",
+            "Pages_with_navboxes",
+            "Tinkering_Tab"
+          ],
+          "detailUrl": "/data/wiki/pages/127001.json",
+          "mappingState": "unmatched",
+          "pageId": 127001,
+          "relatedPages": [],
+          "title": "Visor"
+        },
+        "summary": {
+          "usage": {
+            "status": "known",
+            "text": "Visor là Áo giáp dành riêng cho Nhân vật và chỉ có thể được chế tạo bởi Wagstaff. Nó được tìm thấy trong Thẻ Tinkering và yêu cầu Kính đeo mắt và Đá cắt để chế tạo.",
+            "sources": [
+              "public/data/wiki/pages/127001.json#summaryViHtml"
+            ]
+          },
+          "fuel": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "recycling": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "acquisition": {
+            "status": "known",
+            "text": "Visor là Áo giáp dành riêng cho Nhân vật và chỉ có thể được chế tạo bởi Wagstaff. Nó được tìm thấy trong Thẻ Tinkering và yêu cầu Kính đeo mắt và Đá cắt để chế tạo.",
+            "sources": [
+              "public/data/wiki/pages/127001.json#summaryViHtml"
+            ]
+          }
+        },
+        "characterRequirements": {
+          "crafting": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "usage": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          }
+        }
+      }
+    },
+    {
+      "reason": "character-exclusive",
+      "item": {
+        "category": "item",
+        "craftingNote": null,
+        "description": "Monster Tartare là một Thức Ăn đặc trưng của Warly được nấu trong Nồi Hầm Di Động bằng cách thêm 2 Thức Ăn Quái, 1 Rau và 1 Trứng. Phải mất 40 giây để nấu ăn.",
+        "details": null,
+        "englishName": "Monster Tartare",
+        "id": "wiki:151301",
+        "name": "Monster Tartare",
+        "namespace": "base_game",
+        "prefabId": "wiki-151301",
+        "recipe": {
+          "ingredients": [
+            {
+              "amount": 2,
+              "id": "wiki-ingredient:monster-foods",
+              "name": "Monster Foods",
+              "sprite": null
+            },
+            {
+              "amount": 1,
+              "id": "wiki-ingredient:vegetables",
+              "name": "Vegetables",
+              "sprite": null
+            },
+            {
+              "amount": 1,
+              "id": "wiki-ingredient:eggs",
+              "name": "Eggs",
+              "sprite": null
+            }
+          ],
+          "outputCount": 1
+        },
+        "sprite": {
+          "src": "/assets/wiki/591177946451f3c79e8e6d35744c353c09ab62b661f148342bddbb371de3ea9e.png",
+          "uv": {
+            "u1": 0,
+            "u2": 1,
+            "v1": 0,
+            "v2": 1
+          }
+        },
+        "structureDetails": null,
+        "wiki": {
+          "canonicalUrl": "https://dontstarve.wiki.gg/wiki/Monster_Tartare",
+          "categories": [
+            "DST-Specific_Pages",
+            "Flammable_Objects",
+            "Food",
+            "Healing",
+            "Monster_Foods",
+            "Pages_using_Tabber_parser_tag",
+            "Pages_with_image_sizes_containing_extra_px",
+            "Pages_with_navboxes",
+            "Perishables",
+            "Portable_Crock_Pot_Recipes",
+            "Sanity_Boost"
+          ],
+          "detailUrl": "/data/wiki/pages/151301.json",
+          "mappingState": "unmatched",
+          "pageId": 151301,
+          "relatedPages": [],
+          "title": "Monster Tartare"
+        },
+        "summary": {
+          "usage": {
+            "status": "known",
+            "text": "Monster Tartare là một Thức Ăn đặc trưng của Warly được nấu trong Nồi Hầm Di Động bằng cách thêm 2 Thức Ăn Quái, 1 Rau và 1 Trứng. Phải mất 40 giây để nấu ăn. Khi ăn (chỉ số cơ bản): máu +3, độ no +37,5, tinh thần +10.",
+            "sources": [
+              "public/data/wiki/pages/151301.json#summaryViHtml",
+              "public/data/wiki/pages/151301.json#wikitext"
+            ]
+          },
+          "fuel": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "recycling": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "acquisition": {
+            "status": "known",
+            "text": "Chế tạo từ 2 monster-foods + 1 vegetables + 1 eggs.",
+            "sources": [
+              "public/data/items.json#wiki:151301/recipe"
+            ]
+          }
+        },
+        "characterRequirements": {
+          "crafting": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "usage": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          }
+        }
+      }
+    },
+    {
+      "reason": "single-player-only",
+      "item": {
+        "category": "item",
+        "craftingNote": null,
+        "description": "Telebrella là Vật phẩm dành riêng cho Nhân vật chỉ có thể chế tạo bởi Wagstaff. Nó được tìm thấy trong Thẻ Tinkering và yêu cầu Doodad Điện và Dù Đẹp để chế tạo.",
+        "details": null,
+        "englishName": "Telebrella",
+        "id": "wiki:190199",
+        "name": "Telebrella",
+        "namespace": "base_game",
+        "prefabId": "wiki-190199",
+        "recipe": null,
+        "sprite": {
+          "src": "/assets/wiki/f5dad1af7da76ea2a495b2d123d561dc87efb33b593b92e2ecbbbc225ddc9a5d.png",
+          "uv": {
+            "u1": 0,
+            "u2": 1,
+            "v1": 0,
+            "v2": 1
+          }
+        },
+        "structureDetails": null,
+        "wiki": {
+          "canonicalUrl": "https://dontstarve.wiki.gg/wiki/Telebrella",
+          "categories": [
+            "Always_Available",
+            "Craftable_Items_and_Structures_on_DST",
+            "DST-Specific_Pages",
+            "Equipable_Items",
+            "Items",
+            "Pages_using_Tabber_parser_tag",
+            "Pages_with_navboxes",
+            "Tinkering_Tab",
+            "Water_Resistant"
+          ],
+          "detailUrl": "/data/wiki/pages/190199.json",
+          "mappingState": "unmatched",
+          "pageId": 190199,
+          "relatedPages": [],
+          "title": "Telebrella"
+        },
+        "summary": {
+          "usage": {
+            "status": "known",
+            "text": "Telebrella là Vật phẩm dành riêng cho Nhân vật chỉ có thể chế tạo bởi Wagstaff. Nó được tìm thấy trong Thẻ Tinkering và yêu cầu Doodad Điện và Dù Đẹp để chế tạo.",
+            "sources": [
+              "public/data/wiki/pages/190199.json#summaryViHtml"
+            ]
+          },
+          "fuel": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "recycling": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "acquisition": {
+            "status": "known",
+            "text": "Telebrella là Vật phẩm dành riêng cho Nhân vật chỉ có thể chế tạo bởi Wagstaff. Nó được tìm thấy trong Thẻ Tinkering và yêu cầu Doodad Điện và Dù Đẹp để chế tạo.",
+            "sources": [
+              "public/data/wiki/pages/190199.json#summaryViHtml"
+            ]
+          }
+        },
+        "characterRequirements": {
+          "crafting": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "usage": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          }
+        }
+      }
+    },
+    {
+      "reason": "single-player-only",
+      "item": {
+        "category": "item",
+        "craftingNote": null,
+        "description": "Fryfocals là một Vật phẩm Mũ dành riêng cho Nhân vật được Wagstaff chế tạo thông qua Thẻ Tinkering. Chúng được chế tạo bằng Spectoggles và Red Gem.",
+        "details": null,
+        "englishName": "Fryfocals",
+        "id": "wiki:202331",
+        "name": "Fryfocals",
+        "namespace": "base_game",
+        "prefabId": "wiki-202331",
+        "recipe": null,
+        "sprite": {
+          "src": "/assets/wiki/e35967e082fad039c26c59cfb8540d5b052a51c7141f0e01edbfdded1f0e5e50.png",
+          "uv": {
+            "u1": 0,
+            "u2": 1,
+            "v1": 0,
+            "v2": 1
+          }
+        },
+        "structureDetails": null,
+        "wiki": {
+          "canonicalUrl": "https://dontstarve.wiki.gg/wiki/Fryfocals",
+          "categories": [
+            "Always_Available",
+            "Craftable_Items_and_Structures_on_DST",
+            "DST-Specific_Pages",
+            "Hats",
+            "Items",
+            "Pages_using_Tabber_parser_tag",
+            "Pages_with_navboxes",
+            "Tinkering_Tab"
+          ],
+          "detailUrl": "/data/wiki/pages/202331.json",
+          "mappingState": "unmatched",
+          "pageId": 202331,
+          "relatedPages": [],
+          "title": "Fryfocals"
+        },
+        "summary": {
+          "usage": {
+            "status": "known",
+            "text": "Fryfocals là một Vật phẩm Mũ dành riêng cho Nhân vật được Wagstaff chế tạo thông qua Thẻ Tinkering. Chúng được chế tạo bằng Spectoggles và Red Gem.",
+            "sources": [
+              "public/data/wiki/pages/202331.json#summaryViHtml"
+            ]
+          },
+          "fuel": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "recycling": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "acquisition": {
+            "status": "known",
+            "text": "Fryfocals là một Vật phẩm Mũ dành riêng cho Nhân vật được Wagstaff chế tạo thông qua Thẻ Tinkering. Chúng được chế tạo bằng Spectoggles và Red Gem.",
+            "sources": [
+              "public/data/wiki/pages/202331.json#summaryViHtml"
+            ]
+          }
+        },
+        "characterRequirements": {
+          "crafting": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "usage": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          }
+        }
+      }
+    },
+    {
+      "reason": "character-exclusive",
+      "item": {
+        "category": "other",
+        "craftingNote": null,
+        "description": "Volt Goat Chaud-Froid là một Thức Ăn đặc trưng của Warly được nấu trong Nồi Hầm Di Động, độc quyền cho Don't Starve Together. Nó yêu cầu một chiếc sừng dê Volt và hai chất làm ngọt và mất 40 giây để nấu.",
+        "details": null,
+        "englishName": "Volt Goat Chaud-Froid",
+        "id": "wiki:22618",
+        "name": "Volt Goat Chaud-Froid",
+        "namespace": "base_game",
+        "prefabId": "wiki-22618",
+        "recipe": {
+          "ingredients": [
+            {
+              "amount": 1,
+              "id": "base_game:lightninggoathorn",
+              "name": "Volt Goat Horn",
+              "sprite": {
+                "src": "/assets/wiki/cd515f16d8bf36bc2096c00e6a6394f401e802cb7a47ca690392f7a46ad9756b.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            },
+            {
+              "amount": 2,
+              "id": "base_game:honey",
+              "name": "Honey",
+              "sprite": {
+                "src": "/assets/wiki/1d02a0e24e4b8243a67b36299f48f411d4375659bae21065cc89a61e8ee3d5b2.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            },
+            {
+              "amount": 1,
+              "id": "base_game:red_cap",
+              "name": "Red Cap",
+              "sprite": {
+                "src": "/assets/wiki/604a5ab80798f534060eec8ffbf8d48c7b22f7227103b71354dc89b7a903ecb3.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "outputCount": 1
+        },
+        "sprite": {
+          "src": "/assets/wiki/dd2439b0a1f4ae8145ed9d53fed00c7121294e7fa53f55b337757127a9ce67ed.png",
+          "uv": {
+            "u1": 0,
+            "u2": 1,
+            "v1": 0,
+            "v2": 1
+          }
+        },
+        "structureDetails": null,
+        "wiki": {
+          "canonicalUrl": "https://dontstarve.wiki.gg/wiki/Volt_Goat_Chaud-Froid",
+          "categories": [
+            "DST-Specific_Pages",
+            "Pages_using_Tabber_parser_tag",
+            "Pages_with_image_sizes_containing_extra_px",
+            "Pages_with_navboxes",
+            "Perishables",
+            "Portable_Crock_Pot_Recipes"
+          ],
+          "detailUrl": "/data/wiki/pages/22618.json",
+          "mappingState": "unmatched",
+          "pageId": 22618,
+          "relatedPages": [],
+          "title": "Volt Goat Chaud-Froid"
+        },
+        "summary": {
+          "usage": {
+            "status": "known",
+            "text": "Volt Goat Chaud-Froid là một Thức Ăn đặc trưng của Warly được nấu trong Nồi Hầm Di Động, độc quyền cho Don't Starve Together. Nó yêu cầu một chiếc sừng dê Volt và hai chất làm ngọt và mất 40 giây để nấu.",
+            "sources": [
+              "public/data/wiki/pages/22618.json#summaryViHtml"
+            ]
+          },
+          "fuel": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "recycling": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "acquisition": {
+            "status": "known",
+            "text": "Chế tạo từ 1 Volt Goat Horn + 2 Honey + 1 Red Cap.",
+            "sources": [
+              "public/data/items.json#wiki:22618/recipe"
+            ]
+          }
+        },
+        "characterRequirements": {
+          "crafting": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "usage": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          }
+        }
+      }
+    },
+    {
+      "reason": "single-player-only",
+      "item": {
+        "category": "item",
+        "craftingNote": null,
+        "description": "Seed of Ruin là một vật phẩm độc quyền của Don't Starve và các DLC của nó cho phép bạn tái tạo hoàn toàn Hang Động. Nó bị đánh rơi bởi Ancient Guardian.",
+        "details": null,
+        "englishName": "Seed of Ruin",
+        "id": "wiki:49191",
+        "name": "Seed of Ruin",
+        "namespace": "base_game",
+        "prefabId": "wiki-49191",
+        "recipe": null,
+        "sprite": {
+          "src": "/assets/wiki/23685f358483ae11e9f90289f2360ce686417486fd00bb0786d5e66d63f59096.png",
+          "uv": {
+            "u1": 0,
+            "u2": 1,
+            "v1": 0,
+            "v2": 1
+          }
+        },
+        "structureDetails": null,
+        "wiki": {
+          "canonicalUrl": "https://dontstarve.wiki.gg/wiki/Seed_of_Ruin",
+          "categories": [
+            "Boss_Dropped_Items",
+            "DST-Specific_Pages",
+            "Items",
+            "Pages_using_Tabber_parser_tag",
+            "Pages_with_navboxes"
+          ],
+          "detailUrl": "/data/wiki/pages/49191.json",
+          "mappingState": "unmatched",
+          "pageId": 49191,
+          "relatedPages": [],
+          "title": "Seed of Ruin"
+        },
+        "summary": {
+          "usage": {
+            "status": "known",
+            "text": "Nó bị đánh rơi bởi Ancient Guardian.",
+            "sources": [
+              "public/data/wiki/pages/49191.json#summaryViHtml"
+            ]
+          },
+          "fuel": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "recycling": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "acquisition": {
+            "status": "known",
+            "text": "Nguồn nhận: Ornate Chest.",
+            "sources": [
+              "public/data/wiki/pages/49191.json#normalized/dropTable"
+            ]
+          }
+        },
+        "characterRequirements": {
+          "crafting": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          },
+          "usage": {
+            "status": "unknown",
+            "text": null,
+            "sources": []
+          }
+        }
+      }
+    }
+  ]
+}

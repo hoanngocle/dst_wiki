@@ -1,0 +1,385 @@
+{
+  "version": "18.1.0",
+  "source": "TuTien-18.1/scripts/main/recipes.lua",
+  "sha256": "0583b2d868def304e29a67cd116b2daecaa6fe83f9b386278c1bf91d036c21b5",
+  "recipes": {
+    "xd_htz_tlz": {
+      "name": "Thiên Lôi Tử",
+      "ingredients": [
+        {
+          "prefab": "goldnugget",
+          "amount": 1
+        },
+        {
+          "prefab": "yellowgem",
+          "amount": 1
+        },
+        {
+          "prefab": "purebrilliance",
+          "amount": 1
+        },
+        {
+          "prefab": "xd_lingshi3",
+          "amount": 1
+        }
+      ],
+      "outputCount": 1,
+      "healthCost": 0,
+      "research": "Không cần máy nghiên cứu",
+      "formula": "Gold Nugget ×1 + Yellow Gem ×1 + Pure Brilliance ×1 + Thượng Phẩm Linh Thạch ×1"
+    },
+    "xd_htz_sjcx": {
+      "name": "Phệ Kim Trùng Hạp",
+      "ingredients": [
+        {
+          "prefab": "lavae_egg",
+          "amount": 1
+        },
+        {
+          "prefab": "dragon_scales",
+          "amount": 1
+        },
+        {
+          "prefab": "xd_lingshi2",
+          "amount": 1
+        }
+      ],
+      "outputCount": 1,
+      "healthCost": 90,
+      "research": "Không cần máy nghiên cứu",
+      "formula": "Lavae Egg ×1 + Scales ×1 + Trung Phẩm Linh Thạch ×1"
+    },
+    "xd_htz_xyzzl": {
+      "name": "Huyết Ngọc Tri Thù Noãn",
+      "ingredients": [
+        {
+          "prefab": "spidereggsack",
+          "amount": 3
+        },
+        {
+          "prefab": "redgem",
+          "amount": 3
+        },
+        {
+          "prefab": "xd_lingshi2",
+          "amount": 1
+        }
+      ],
+      "outputCount": 1,
+      "healthCost": 120,
+      "research": "Không cần máy nghiên cứu",
+      "formula": "Spider Eggs ×3 + Red Gem ×3 + Trung Phẩm Linh Thạch ×1"
+    },
+    "turf_jingweitile": {
+      "name": "Thảm Đất Điền Hải",
+      "ingredients": [
+        {
+          "prefab": "xd_xuanyu",
+          "amount": 1
+        },
+        {
+          "prefab": "twigs",
+          "amount": 4
+        }
+      ],
+      "outputCount": 4,
+      "healthCost": 0,
+      "research": "Không cần máy nghiên cứu",
+      "formula": "Huyền Vũ ×1 + Twigs ×4"
+    },
+    "xd_jingwei_hat": {
+      "name": "Thúy Vũ Tiên Tung",
+      "ingredients": [
+        {
+          "prefab": "xd_xuanyu",
+          "amount": 4
+        },
+        {
+          "prefab": "xd_lingshi2",
+          "amount": 1
+        },
+        {
+          "prefab": "goldnugget",
+          "amount": 2
+        }
+      ],
+      "outputCount": 1,
+      "healthCost": 0,
+      "research": "Không cần máy nghiên cứu",
+      "formula": "Huyền Vũ ×4 + Trung Phẩm Linh Thạch ×1 + Gold Nugget ×2"
+    },
+    "wall_luoshen_item": {
+      "name": "Tú Tường",
+      "ingredients": [
+        {
+          "prefab": "petals",
+          "amount": 6
+        },
+        {
+          "prefab": "twigs",
+          "amount": 2
+        }
+      ],
+      "outputCount": 6,
+      "healthCost": 0,
+      "research": "Không cần máy nghiên cứu",
+      "formula": "Petals ×6 + Twigs ×2"
+    },
+    "fence_luoshen_item": {
+      "name": "Phương Phi Sách Lan",
+      "ingredients": [
+        {
+          "prefab": "petals",
+          "amount": 6
+        },
+        {
+          "prefab": "log",
+          "amount": 3
+        }
+      ],
+      "outputCount": 6,
+      "healthCost": 0,
+      "research": "Không cần máy nghiên cứu",
+      "formula": "Petals ×6 + Log ×3"
+    },
+    "fence_gate_luoshen_item": {
+      "name": "Cẩm Môn",
+      "ingredients": [
+        {
+          "prefab": "petals",
+          "amount": 6
+        },
+        {
+          "prefab": "log",
+          "amount": 6
+        }
+      ],
+      "outputCount": 1,
+      "healthCost": 0,
+      "research": "Không cần máy nghiên cứu",
+      "formula": "Petals ×6 + Log ×6"
+    },
+    "xd_luoshen_jihuaze": {
+      "name": "Cức Hoa Trạch",
+      "ingredients": [
+        {
+          "prefab": "petals",
+          "amount": 20
+        },
+        {
+          "prefab": "plantmeat",
+          "amount": 2
+        },
+        {
+          "prefab": "xd_lingshi2",
+          "amount": 1
+        }
+      ],
+      "outputCount": 1,
+      "healthCost": 0,
+      "research": "Không cần máy nghiên cứu",
+      "formula": "Petals ×20 + Leafy Meat ×2 + Trung Phẩm Linh Thạch ×1"
+    },
+    "xd_luoshen_huazhong": {
+      "name": "Hạt Giống Lạc Thần Hoa",
+      "ingredients": [
+        {
+          "prefab": "petals",
+          "amount": 60
+        },
+        {
+          "prefab": "plantmeat",
+          "amount": 3
+        },
+        {
+          "prefab": "xd_lingshi2",
+          "amount": 1
+        }
+      ],
+      "outputCount": 1,
+      "healthCost": 0,
+      "research": "Không cần máy nghiên cứu",
+      "formula": "Petals ×60 + Leafy Meat ×3 + Trung Phẩm Linh Thạch ×1"
+    },
+    "xd_luoshen_huaxia": {
+      "name": "Lạc Thần Hoa Hạp",
+      "ingredients": [
+        {
+          "prefab": "petals",
+          "amount": 99
+        }
+      ],
+      "outputCount": 1,
+      "healthCost": 0,
+      "research": "Không cần máy nghiên cứu",
+      "formula": "Petals ×99"
+    },
+    "xd_qwsk": {
+      "name": "Thiên Vị Thực Khám",
+      "ingredients": [
+        {
+          "prefab": "goldnugget",
+          "amount": 2
+        },
+        {
+          "prefab": "log",
+          "amount": 7
+        },
+        {
+          "prefab": "redgem",
+          "amount": 1
+        },
+        {
+          "prefab": "xd_lingshi2",
+          "amount": 1
+        }
+      ],
+      "outputCount": 1,
+      "healthCost": 0,
+      "research": "Máy Khoa Học",
+      "formula": "Gold Nugget ×2 + Log ×7 + Red Gem ×1 + Trung Phẩm Linh Thạch ×1"
+    },
+    "xd_sudaji_redlantern": {
+      "name": "Ngư Long Đăng",
+      "ingredients": [
+        {
+          "prefab": "goldnugget",
+          "amount": 3
+        },
+        {
+          "prefab": "log",
+          "amount": 2
+        },
+        {
+          "prefab": "papyrus",
+          "amount": 3
+        },
+        {
+          "prefab": "xd_lingshi2",
+          "amount": 1
+        }
+      ],
+      "outputCount": 1,
+      "healthCost": 0,
+      "research": "Máy Khoa Học",
+      "formula": "Gold Nugget ×3 + Log ×2 + Papyrus ×3 + Trung Phẩm Linh Thạch ×1"
+    },
+    "xd_sudaji_ywfh": {
+      "name": "Nhất Vũ Phương Hoa",
+      "ingredients": [
+        {
+          "prefab": "papyrus",
+          "amount": 6
+        },
+        {
+          "prefab": "silk",
+          "amount": 3
+        },
+        {
+          "prefab": "xd_lingshi2",
+          "amount": 2
+        },
+        {
+          "prefab": "livinglog",
+          "amount": 2
+        }
+      ],
+      "outputCount": 1,
+      "healthCost": 0,
+      "research": "Máy Luyện Kim",
+      "formula": "Papyrus ×6 + Silk ×3 + Trung Phẩm Linh Thạch ×2 + Living Log ×2"
+    },
+    "xd_yunxiao_hyjditem": {
+      "name": "Hỗn Nguyên Kim Đẩu",
+      "ingredients": [
+        {
+          "prefab": "townportaltalisman",
+          "amount": 6
+        },
+        {
+          "prefab": "greengem",
+          "amount": 3
+        },
+        {
+          "prefab": "xd_lingshi2",
+          "amount": 6
+        },
+        {
+          "prefab": "goldnugget",
+          "amount": 20
+        }
+      ],
+      "outputCount": 1,
+      "healthCost": 0,
+      "research": "Không cần máy nghiên cứu",
+      "formula": "Desert Stone ×6 + Green Gem ×3 + Trung Phẩm Linh Thạch ×6 + Gold Nugget ×20"
+    },
+    "xd_yunxiao_hyjdyqd": {
+      "name": "Điểm Truyền Tống Hỗn Nguyên Kim Đẩu",
+      "ingredients": [
+        {
+          "prefab": "townportaltalisman",
+          "amount": 1
+        },
+        {
+          "prefab": "yellowgem",
+          "amount": 1
+        },
+        {
+          "prefab": "xd_lingshi2",
+          "amount": 5
+        },
+        {
+          "prefab": "cutstone",
+          "amount": 5
+        }
+      ],
+      "outputCount": 1,
+      "healthCost": 0,
+      "research": "Không cần máy nghiên cứu",
+      "formula": "Desert Stone ×1 + Yellow Gem ×1 + Trung Phẩm Linh Thạch ×5 + Cut Stone ×5"
+    },
+    "xd_yunxiao_portable_spicer": {
+      "name": "Vân Yên Hương Liệu Trạm",
+      "ingredients": [
+        {
+          "prefab": "goldnugget",
+          "amount": 2
+        },
+        {
+          "prefab": "cutstone",
+          "amount": 3
+        },
+        {
+          "prefab": "xd_lingshi2",
+          "amount": 1
+        }
+      ],
+      "outputCount": 1,
+      "healthCost": 0,
+      "research": "Không cần máy nghiên cứu",
+      "formula": "Gold Nugget ×2 + Cut Stone ×3 + Trung Phẩm Linh Thạch ×1"
+    },
+    "xd_yunxiao_ymsz": {
+      "name": "Vân Mạc Thượng Trang",
+      "ingredients": [
+        {
+          "prefab": "beefalowool",
+          "amount": 8
+        },
+        {
+          "prefab": "goldnugget",
+          "amount": 10
+        },
+        {
+          "prefab": "xd_lingshi2",
+          "amount": 2
+        }
+      ],
+      "outputCount": 1,
+      "healthCost": 0,
+      "research": "Không cần máy nghiên cứu",
+      "formula": "Beefalo Wool ×8 + Gold Nugget ×10 + Trung Phẩm Linh Thạch ×2"
+    }
+  }
+}

@@ -1,5 +1,8 @@
 import { describe, expect, it } from "vitest";
 
+import catalog from "@/public/data/catalog.json";
+import weaponPrefabs from "@/data/generated/tu-tien-weapon-prefabs.json";
+
 import type { ItemListEntry } from "./item-catalog";
 import * as wikiSearch from "./wiki-search";
 import {
@@ -254,4 +257,35 @@ describe("catalog presentation semantics", () => {
     expect(hasRealPrefab(items[1])).toBe(true);
     expect(hasRealPrefab(items[4])).toBe(false);
   });
+});
+
+
+it("keeps weapons and armor in combat equipment without including durability-only treasures", () => {
+  const sword = { ...items[0], prefabId: "xd_htz_qzj" };
+  const treasure = { ...items[0], prefabId: "xd_ztp" };
+  const weapon = { ...items[1], wiki: { ...items[1].wiki!, categories: ["Melee Weapons"] } };
+  const armor = { ...items[1], wiki: { ...items[1].wiki!, categories: ["Armor"] } };
+  const entries = [sword, treasure, weapon, armor];
+  expect(filterItems(entries, "", "all", "combat-equipment", "all")).toEqual([sword, weapon, armor]);
+  expect(wikiSearch.countGameCategories(entries)["combat-equipment"]).toBe(3);
+});
+
+
+it("keeps the weapon snapshot synchronized with inventory damage in the catalog", () => {
+  const verified = catalog.entities.filter(entity =>
+    entity.namespace === "tu_tien" && entity.is_inventory_item &&
+    entity.stats.some(stat => stat.key === "damage" && typeof stat.value === "number" && stat.value > 0),
+  ).map(entity => entity.prefab_id).sort();
+  expect(weaponPrefabs).toEqual(verified);
+});
+
+
+it("excludes realm advancement pills from Đan Dược while retaining ordinary pills", () => {
+  const realmPill: ItemListEntry = { ...items[0], id: "tu_tien:xd_danyao_jq", prefabId: "xd_danyao_jq", category: "pill" };
+  const breakthrough: ItemListEntry = { ...realmPill, id: "tu_tien:xd_danyao_kx", prefabId: "xd_danyao_kx" };
+  const ordinary: ItemListEntry = { ...realmPill, id: "tu_tien:xd_danyao_bg", prefabId: "xd_danyao_bg" };
+  const entries = [realmPill, breakthrough, ordinary];
+  expect(filterItems(entries, "", "all", "magic-exploration", "all")).toEqual([ordinary]);
+  expect(wikiSearch.countGameCategories(entries)["magic-exploration"]).toBe(1);
+  expect(filterItems(entries, "", "all", "all", "all")).toEqual(entries);
 });

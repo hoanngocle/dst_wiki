@@ -82,3 +82,29 @@ describe("RecipeIngredients", () => {
     expect(screen.getByText("Công thức đặc biệt")).toBeDefined();
   });
 });
+
+it.each([false, true])("preserves repeated ingredients without duplicate keys (linked: %s)", (linked) => {
+  const onSelectItem = vi.fn();
+  const repeatedRecipe: ItemRecipe = {
+    outputCount: 1,
+    ingredients: [
+      { id: "wiki-ingredient:cave-bananas", name: "Cave Bananas", amount: 1, sprite: null },
+      { id: "wiki-ingredient:cave-bananas", name: "Cave Bananas", amount: 2, sprite: null },
+    ],
+  };
+  const bananaItem = { ...fullItem, id: "wiki-ingredient:cave-bananas", name: "Cave Bananas" };
+  const consoleError = vi.spyOn(console, "error").mockImplementation(() => {});
+  try {
+    const { rerender } = render(<RecipeIngredients recipe={repeatedRecipe} itemsById={linked ? new Map([[bananaItem.id, bananaItem]]) : new Map()} onSelectItem={onSelectItem} />);
+    expect(screen.getByLabelText("Cave Bananas, số lượng 1")).toBeDefined();
+    expect(screen.getByLabelText("Cave Bananas, số lượng 2")).toBeDefined();
+    rerender(<RecipeIngredients recipe={repeatedRecipe} itemsById={linked ? new Map([[bananaItem.id, bananaItem]]) : new Map()} onSelectItem={onSelectItem} />);
+    if (linked) {
+      fireEvent.click(screen.getByRole("button", { name: "Cave Bananas, số lượng 2" }));
+      expect(onSelectItem).toHaveBeenCalledWith(bananaItem);
+    }
+    expect(consoleError).not.toHaveBeenCalled();
+  } finally {
+    consoleError.mockRestore();
+  }
+});

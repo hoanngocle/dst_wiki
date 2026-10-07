@@ -1,0 +1,1423 @@
+{
+  "base_game:acorn": {
+    "usage": "Trồng xuống đất để tạo Cây Dẻ Bulô mới; cây non cần khoảng 2,5–5 phút để lớn thành cây nhỏ. Nấu trên lửa để lấy Roasted Birchnut làm thức ăn.",
+    "acquisition": "Thu được khi chặt Cây Dẻ Bulô trưởng thành hoặc tiêu diệt Birchnutter.",
+    "sources": [
+      "public/data/wiki/pages/203845.json#summaryViHtml",
+      "public/data/wiki/pages/203845.json#normalized/dropTable"
+    ]
+  },
+  "base_game:goldnugget": {
+    "usage": "Nguyên liệu cho máy khoa học, dụng cụ vàng và nhiều công thức chế tạo khác. Có thể đổi thịt hoặc đồ chơi với Pig King để duy trì nguồn vàng; Slurtle và Snurtle có thể ăn vàng nên cần cất giữ khi khám phá hang động.",
+    "acquisition": "Dùng cuốc khai thác đá có vân vàng hoặc nhũ đá trong hang; cũng có thể nhặt tại nghĩa địa, vùng đá và sau động đất trong hang. Pig King đổi một số thức ăn và đồ chơi lấy vàng.",
+    "sources": [
+      "public/data/wiki/pages/219673.json#plainText"
+    ]
+  },
+  "base_game:chester_eyebone": {
+    "usage": "Nhặt lên để gọi Chester; Chester đi theo người giữ Eye Bone và chứa đồ giúp bạn. Đặt Eye Bone xuống để Chester đứng gần vị trí đó. Khi Chester chết, mắt nhắm lại; Chester hồi sinh sau một ngày và tiếp tục đi theo vật phẩm.",
+    "acquisition": "Tìm trên mặt đất, thường gần đường lát đá ở vùng đồng cỏ. Không chế tạo được.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/Eye_Bone"
+    ]
+  },
+  "base_game:hivehat": {
+    "usage": "Đội ở ô đầu để hấp thụ 70% sát thương vật lý, với 945 độ bền. Biến hào quang làm giảm tinh thần thành hồi tinh thần bằng một nửa cường độ ban đầu; không đảo ngược mất tinh thần do thức ăn hoặc bóng tối.",
+    "acquisition": "Rơi khi đánh bại Bee Queen; cũng có thể xuất hiện trong quà từ Loot Stash.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/Bee_Queen_Crown"
+    ]
+  },
+  "base_game:krampus_sack": {
+    "usage": "Trang bị ở ô thân để có thêm 14 ô chứa đồ mà không bị giảm tốc độ. Không thể cất trong túi đồ hoặc rương; khi tháo sẽ đặt xuống đất. Túi không cháy và không chìm dưới biển.",
+    "acquisition": "Có 1% khả năng rơi khi hạ Krampus.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/Krampus_Sack"
+    ]
+  },
+  "base_game:shieldofterror": {
+    "usage": "Trang bị ở ô tay, vừa đánh gây 51 sát thương vừa hấp thụ 80% sát thương vật lý. Có 315 độ bền; mỗi lần tấn công tiêu hao 2 độ bền. Cho khiên ăn thức ăn để sửa trước khi độ bền về 0 và khiên bị phá hủy.",
+    "acquisition": "Chiến lợi phẩm khi đánh bại Twins of Terror, được triệu hồi bằng Terrarium sau khi cho nó Nightmare Fuel.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/Shield_of_Terror"
+    ]
+  },
+  "base_game:tentaclespike": {
+    "usage": "Vũ khí cận chiến gây 51 sát thương mỗi đòn, dùng được 100 lần. Trang bị ở ô tay; hết lượt sử dụng thì vũ khí vỡ.",
+    "acquisition": "Có 50% khả năng rơi khi giết Tentacle. Big Tentacle cũng có thể cho Tentacle Spike khi bị đánh lui.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/Tentacle_Spike"
+    ]
+  },
+  "base_game:alterguardianhat": {
+    "usage": "Đội để hồi 10 tinh thần/phút. Khi tinh thần trên 85%, vương miện phát sáng và tạo Gestalt nhỏ hỗ trợ những đòn đánh của bạn; mỗi Gestalt gây 42,5 sát thương và tiêu hao 1 tinh thần. Có 5 ô chứa bào tử để đổi màu ánh sáng; đồng thời bảo vệ người đội khỏi Gestalt tự nhiên.",
+    "acquisition": "Nhận sau khi đánh bại giai đoạn cuối của Celestial Champion.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/Enlightened_Crown"
+    ]
+  },
+  "base_game:fruitflyfruit": {
+    "usage": "Gọi Friendly Fruit Fly và khiến nó đi theo vật phẩm. Đặt gần ruộng để ruồi tự chăm cây, giúp giảm stress của cây trồng; nó không chăm cỏ dại. Nếu ruồi chết, quả mất tác dụng. Không mang được giữa mặt đất và hang động.",
+    "acquisition": "Rơi từ Lord of the Fruit Flies khi khu vực chưa có quả còn hoạt động; mặt đất và hang có giới hạn riêng. Sau khi ruồi chết, hạ boss lần nữa để nhận quả mới.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/Friendly_Fruit_Fly"
+    ]
+  },
+  "base_game:hutch_fishbowl": {
+    "usage": "Nhặt lên để gọi Hutch; Hutch đi theo Star-Sky và cung cấp 9 ô chứa đồ. Bỏ nguồn sáng thích hợp vào Hutch để có ánh sáng di động. Không đưa Star-Sky lên mặt đất được: vật phẩm rơi lại khi rời hang.",
+    "acquisition": "Tìm trên nền hang động, thường ở vùng bùn gần nền đá, hoa phát sáng hoặc ao xanh của Toadstool. Mỗi thế giới có một Star-Sky.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/Star-Sky",
+      "https://dontstarve.wiki.gg/wiki/Music_Box_Hutch"
+    ]
+  },
+  "base_game:storage_robot": {
+    "usage": "Đặt xuống để tự nhặt đồ trong bán kính 3,75 ô nền và cất vào thùng đã chứa cùng loại đồ. Hoạt động khoảng 28 phút rồi hỏng; mưa làm hao độ bền nhanh hơn. Sửa bằng Auto-Mat-O-Chanic; có thể đội mũ chống mưa cho robot. Robot rơi khỏi túi khi vào hang hoặc rời máy chủ.",
+    "acquisition": "Tìm robot hỏng tại Junk Yard, rồi dùng Auto-Mat-O-Chanic sửa để kích hoạt.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/W.O.B.O.T."
+    ]
+  },
+  "base_game:archive_lockbox": {
+    "usage": "Đặt lên Ancient Orchestrina và giải câu đố để nhận Blueprint. Mỗi người chơi ở gần chưa học công thức tương ứng sẽ nhận bản vẽ; người đã biết không nhận thêm.",
+    "acquisition": "Lấy tại Fountain of Knowledge sau khi cấp điện bằng Archive Switch. Các đài vàng, xanh dương và đỏ nằm ở Ancient Archive; xanh lá và cam ở Sanctum.",
+    "sources": [
+      "public/data/wiki/pages/9901.json#plainText"
+    ]
+  },
+  "base_game:boat_magnet_beacon": {
+    "usage": "Kích hoạt trong túi rồi đặt xuống đất làm điểm đến cho Nautopilot. Khi bật Nautopilot trên thuyền trong phạm vi 6 ô nền, thuyền sẽ được kéo về beacon, giúp cập bờ và điều khiển thuyền nối nhau.",
+    "sources": [
+      "public/data/wiki/pages/112371.json#plainText"
+    ]
+  },
+  "base_game:cursed_monkey_token": {
+    "usage": "Chiếm một ô túi và tự quay lại nếu cố vứt hoặc chuyển vào thùng. Đủ 10 món sẽ biến người chơi thành Wonkey. Đưa chuối cho Queen of Moon Quay để gỡ 4 món mỗi quả; cần bỏ hết để trở lại nhân vật ban đầu.",
+    "acquisition": "Tự vào túi khi Powder Monkey bị giết gần người chơi. Khi người mang chết, chúng rơi xuống và biến mất nếu nằm trên đất 4 phút.",
+    "sources": [
+      "public/data/wiki/pages/191209.json#plainText"
+    ]
+  },
+  "base_game:driftwood": {
+    "usage": "Dùng rìu chặt để lấy Driftwood Pieces và Twigs. Dạng cao để lại gốc; đào gốc bằng xẻng để lấy thêm Driftwood Piece.",
+    "acquisition": "Xuất hiện tự nhiên ở Rocky Beach trên Lunar Island. Đây là cây gỗ trôi dạt trong môi trường, không phải mảnh gỗ đã nhặt.",
+    "sources": [
+      "public/data/wiki/pages/174678.json#plainText"
+    ]
+  },
+  "base_game:egg": {
+    "usage": "Dùng nấu các món như Bacon and Eggs, Pierogi và Waffles, hoặc đổi với Pig King lấy vàng. Trứng thường không ấp được; để hỏng sẽ thành Rotten Egg. Mang trứng bên mình có thể khiến Bunnyman tấn công.",
+    "acquisition": "Cho chim trong Birdcage ăn thịt hoặc cá; trong Together có thể dùng cả Monster Meat sống. Cũng có thể nhặt tại bãi làm tổ của Pengull.",
+    "sources": [
+      "public/data/wiki/pages/121150.json#plainText"
+    ]
+  },
+  "base_game:feather_canary": {
+    "usage": "Nguyên liệu chế tạo Electric Dart. Có thể dự trữ để làm đạn điện trước các trận chiến.",
+    "acquisition": "Canary có 9% khả năng rơi lông khi bị giết. Nhốt Canary trong hang đến khi nhiễm độc rồi thả trên mặt đất để lấy 5–6 lông, hoặc để nổ trong hang lấy 1–2 lông.",
+    "sources": [
+      "public/data/wiki/pages/218883.json#plainText"
+    ]
+  },
+  "base_game:feather_crow": {
+    "usage": "Lông đen dùng trong các công thức như Sleep Dart và Feather Pencil. Không phải lông nào cũng thay thế được nhau khi chế tạo.",
+    "acquisition": "Có thể rơi từ Crow hoặc Buzzard; cũng có thể tìm trong Tumbleweed và quà của Catcoon.",
+    "sources": [
+      "public/data/wiki/pages/218883.json#plainText"
+    ]
+  },
+  "base_game:feather_robin": {
+    "acquisition": "Có thể rơi khi giết Redbird hoặc giết chim đã bắt trong túi. Cũng có thể nhận từ Tumbleweed và Catcoon.",
+    "sources": [
+      "public/data/wiki/pages/218883.json#plainText"
+    ]
+  },
+  "base_game:feather_robin_winter": {
+    "usage": "Lông xanh dùng trong các công thức như Blow Dart và trang bị cần Azure Feather; không thể thay bằng lông đen hoặc đỏ.",
+    "acquisition": "Có thể rơi khi giết Snowbird hoặc Pengull. Cũng có thể tìm trong Tumbleweed và quà của Catcoon.",
+    "sources": [
+      "public/data/wiki/pages/218883.json#plainText"
+    ]
+  },
+  "base_game:firenettles": {
+    "usage": "Ăn làm mất 3 máu, 5 tinh thần nhưng tăng nhiệt độ cảm nhận 60° trong 1 phút để chống lạnh. Có thể phơi khô rồi dùng làm trà tại Pearl’s Tea Shop.",
+    "acquisition": "Thu hoạch từ Fire Nettles mọc trên đất trồng.",
+    "sources": [
+      "public/data/wiki/pages/56130.json#plainText"
+    ]
+  },
+  "base_game:fish": {
+    "acquisition": "Dùng Fishing Rod câu tại ao; cũng rơi khi giết Merm. Đây là cá nước ngọt, khác nhóm cá biển bắt bằng Sea Fishing Rod.",
+    "sources": [
+      "public/data/wiki/pages/44451.json#plainText"
+    ]
+  },
+  "base_game:forgetmelots": {
+    "usage": "Dùng trong Crock Pot để nấu Soothing Tea hoặc Beefalo Treats. Có thể phơi khô trên Drying Rack để làm trà tại Pearl’s Tea Shop.",
+    "acquisition": "Thu hoạch từ Forget-Me-Lots Plant trên đất trồng.",
+    "sources": [
+      "public/data/wiki/pages/182706.json#plainText"
+    ]
+  },
+  "base_game:goatmilk": {
+    "usage": "Có thể uống trực tiếp hoặc dùng như nguyên liệu sữa trong Crock Pot, chẳng hạn làm Ice Cream.",
+    "acquisition": "Hạ Volt Goat đang mang điện, sau khi nó trúng sét hoặc bị đánh bằng Morning Star hay Electric Dart. Volt Goat thường không cho Electric Milk.",
+    "sources": [
+      "public/data/wiki/pages/43260.json#plainText"
+    ]
+  },
+  "base_game:hareball": {
+    "usage": "Vật phẩm trong trò Spin the Carrot của Cozy Bunnymen. Khi cà rốt chỉ vào bạn, nhặt Hare Ball để nhận Red Pouches.",
+    "acquisition": "Xuất hiện khi Cozy Bunnyman nhổ ra trong trò Spin the Carrot thuộc sự kiện Year of the Bunnyman.",
+    "sources": [
+      "public/data/wiki/pages/97265.json#plainText"
+    ]
+  },
+  "base_game:horseshoe": {
+    "acquisition": "Rơi khi đánh bại Gilded Knight. Mang trong túi để nhận hiệu ứng may mắn; hiệu quả tăng trong sự kiện Year of the Clockwork Knight và khi mặc bộ trang phục tương ứng.",
+    "sources": [
+      "public/data/wiki/pages/231208.json#plainText"
+    ]
+  },
+  "base_game:lunar_seed": {
+    "usage": "Gắn vào Enlightened Crown để tăng sức mạnh Gestalt. Lắp đủ 5 viên giữ trạng thái hiển thị ở mức Enlightenment tối đa; tinh thần thật vẫn thay đổi và trở lại khi tháo mũ.",
+    "acquisition": "Rơi từ Celestial Scion trong tiến trình sau khi mở Lunar Rift.",
+    "sources": [
+      "public/data/wiki/pages/227832.json#plainText"
+    ]
+  },
+  "base_game:mandrake": {
+    "usage": "Ăn sống hồi 60 máu và 75 độ no nhưng gây ngủ cho người và sinh vật gần đó. Có thể chế tạo Pan Flute hoặc nấu Mandrake Soup. Nấu trực tiếp cũng gây ngủ; súp không gây hiệu ứng này. Vật phẩm không bị hỏng.",
+    "acquisition": "Tìm Mandrake hiếm trong rừng. Nhổ lúc chạng vạng hoặc đêm khiến nó sống dậy và đi theo; giết để lấy vật phẩm. Ngoài ra có thể nhận Mandrake từ Loot Stash.",
+    "sources": [
+      "public/data/wiki/pages/222051.json#plainText"
+    ]
+  },
+  "base_game:monstermeat_dried": {
+    "usage": "Dùng như nguyên liệu thịt/quái vật trong Crock Pot hoặc cho chim trong lồng ăn để lấy trứng. Ăn trực tiếp vẫn mất máu và tinh thần. Thường chỉ dùng một phần Monster Food trong nồi để tránh Monster Lasagna.",
+    "acquisition": "Phơi Monster Meat sống trên Drying Rack để nhận Monster Jerky.",
+    "sources": [
+      "public/data/wiki/pages/200397.json#plainText"
+    ]
+  },
+  "base_game:moon_altar_glass": {
+    "usage": "Mang mảnh Base tới Celestial Fissure và lắp đầu tiên, theo thứ tự Base → Orb → Idol. Bàn thờ hoàn chỉnh mở công thức Celestial khi đứng gần. Đây là vật nặng, phải mang bằng ô thân.",
+    "acquisition": "Đập Inviting Formation ở Lunar Mine trên Lunar Island. Có thể tháo bàn thờ bằng búa để lấy lại các mảnh khi chưa kích hoạt Mysterious Energy.",
+    "sources": [
+      "public/data/wiki/pages/82729.json#plainText"
+    ]
+  },
+  "base_game:moon_altar_seed": {
+    "usage": "Mang mảnh Orb tới Celestial Fissure và lắp thứ hai, theo thứ tự Base → Orb → Idol. Bàn thờ hoàn chỉnh mở công thức Celestial khi đứng gần. Đây là vật nặng, phải mang bằng ô thân.",
+    "acquisition": "Đập Inviting Formation ở Lunar Mine trên Lunar Island. Có thể tháo bàn thờ bằng búa để lấy lại các mảnh khi chưa kích hoạt Mysterious Energy.",
+    "sources": [
+      "public/data/wiki/pages/82729.json#plainText"
+    ]
+  },
+  "base_game:moon_altar_idol": {
+    "usage": "Mang mảnh Idol tới Celestial Fissure và lắp cuối cùng, theo thứ tự Base → Orb → Idol. Bàn thờ hoàn chỉnh mở công thức Celestial khi đứng gần. Đây là vật nặng, phải mang bằng ô thân.",
+    "acquisition": "Đập Inviting Formation ở Lunar Mine trên Lunar Island. Có thể tháo bàn thờ bằng búa để lấy lại các mảnh khi chưa kích hoạt Mysterious Energy.",
+    "sources": [
+      "public/data/wiki/pages/82729.json#plainText"
+    ]
+  },
+  "base_game:moon_altar_icon": {
+    "usage": "Mang tới Celestial Fissure và ghép với mảnh Celestial Sanctum còn lại để tạo bàn thờ. Đặt Sanctum gần Celestial Altar và Celestial Tribute để mở tiến trình Moonstorm. Đây là vật nặng, mang bằng ô thân.",
+    "acquisition": "Dùng Astral Detector tìm vị trí các mảnh Celestial Sanctum bị chôn và đào lên.",
+    "sources": [
+      "public/data/wiki/pages/82729.json#plainText"
+    ]
+  },
+  "base_game:moon_altar_ward": {
+    "usage": "Mang tới Celestial Fissure và ghép với mảnh Celestial Sanctum còn lại để tạo bàn thờ. Đặt Sanctum gần Celestial Altar và Celestial Tribute để mở tiến trình Moonstorm. Đây là vật nặng, mang bằng ô thân.",
+    "acquisition": "Dùng Astral Detector tìm vị trí các mảnh Celestial Sanctum bị chôn và đào lên.",
+    "sources": [
+      "public/data/wiki/pages/82729.json#plainText"
+    ]
+  },
+  "base_game:moon_altar_crown": {
+    "usage": "Đặt vào Celestial Fissure để tạo Celestial Tribute. Xây gần Celestial Altar và Celestial Sanctum, trong phạm vi 5 ô nền, để gọi Mysterious Energy và khởi động Moonstorm.",
+    "acquisition": "Hạ Crab King đã gắn Pearl’s Pearl, rồi dùng Pinchin’ Winch trục vớt vật phẩm khỏi biển.",
+    "sources": [
+      "public/data/wiki/pages/82729.json#plainText"
+    ]
+  },
+  "base_game:moonstorm_spark": {
+    "usage": "Dùng xây các giai đoạn Lunar Siphonator, tổng cộng cần 15 Moongleam để hoàn tất. Cũng có thể đưa vào Unnatural Portal ở Moon Quay để thúc đẩy việc tạo vật phẩm.",
+    "acquisition": "Bắt các đốm sáng bay trong Moonstorm bằng Bug Net. Cẩn thận các đợt phóng điện gây sát thương khi tới gần.",
+    "sources": [
+      "public/data/wiki/pages/75896.json#plainText"
+    ]
+  },
+  "base_game:mushrooms": {
+    "usage": "Nấm thu được dùng như rau trong Crock Pot hoặc cho Pig ăn để lấy Manure. Tác động lên máu, đói và tinh thần khác nhau theo màu và trạng thái sống/chín, nên kiểm tra đúng loại trước khi ăn.",
+    "acquisition": "Hái nấm đỏ ban ngày, xanh lá lúc chạng vạng, xanh dương ban đêm. Dùng xẻng đào bất cứ lúc nào để lấy 2 mũ nấm nhưng sẽ phá điểm mọc; nấm hái bình thường mọc lại sau mưa và không mọc trong mùa đông.",
+    "sources": [
+      "public/data/wiki/pages/9623.json#plainText"
+    ]
+  },
+  "wiki:9623": {
+    "usage": "Nấm thu được dùng như rau trong Crock Pot hoặc cho Pig ăn để lấy Manure. Tác động lên máu, đói và tinh thần khác nhau theo màu và trạng thái sống/chín, nên kiểm tra đúng loại trước khi ăn.",
+    "acquisition": "Hái nấm đỏ ban ngày, xanh lá lúc chạng vạng, xanh dương ban đêm. Dùng xẻng đào bất cứ lúc nào để lấy 2 mũ nấm nhưng sẽ phá điểm mọc; nấm hái bình thường mọc lại sau mưa và không mọc trong mùa đông.",
+    "sources": [
+      "public/data/wiki/pages/9623.json#plainText"
+    ]
+  },
+  "base_game:oceantreenut": {
+    "usage": "Thả xuống biển bằng Pinchin’ Winch để trồng Knobbly Tree; hạt nảy thành cây sau khoảng 2 ngày. Khi cây lớn, bón Tree Jam nhiều lần để phát triển thành cây có tán che rộng.",
+    "acquisition": "Cho thuyền va vào Great Tree Trunk ở Waterlogged để làm rơi hạt, sau đó dùng Pinchin’ Winch trục vớt.",
+    "sources": [
+      "public/data/wiki/pages/66902.json#plainText"
+    ]
+  },
+  "base_game:pinecone": {
+    "usage": "Trồng xuống đất để tạo Evergreen mới. Trồng gần Treeguard đang giận có cơ hội làm nó dịu lại. Cây non cần thời gian lớn trước khi hiện trên bản đồ.",
+    "acquisition": "Chặt Evergreen cỡ vừa nhận 1 Pine Cone, cỡ lớn nhận 2; cây nhỏ không cho hạt.",
+    "sources": [
+      "public/data/wiki/pages/136728.json#plainText"
+    ]
+  },
+  "base_game:redpouch": {
+    "usage": "Mở để lấy Lucky Gold Nuggets, dùng đổi vật phẩm ở các đền sự kiện Tết. Số vàng tùy loại túi và hoạt động đã hoàn thành.",
+    "acquisition": "Nhận trong các sự kiện Lunar New Year, qua hoạt động tương ứng như đấu vật, đua Carrat, thi Beefalo hoặc đấu gối với Cozy Bunnyman.",
+    "sources": [
+      "public/data/wiki/pages/130473.json#plainText"
+    ]
+  },
+  "base_game:saddle": {
+    "usage": "Gắn lên Beefalo để cưỡi. Cần tăng độ phục tùng bằng cho ăn; dưới 10% nó từ chối yên, dưới 40% có thể hất yên, từ 50% mới cho cưỡi. Dùng Saddlehorn tháo yên mà không mất độ bền.",
+    "acquisition": "Yên thường được chế tạo tại Alchemy Engine bằng 4 Pig Skin, 4 Gold Nugget và 4 Beefalo Wool. Các loại yên khác có công thức và chỉ số riêng.",
+    "sources": [
+      "public/data/wiki/pages/218895.json#plainText"
+    ]
+  },
+  "base_game:security_pulse_cage_full": {
+    "usage": "Spark Ark đã nạp năng lượng dùng chế tạo Polar Bearger Bin, Ice Crystaleyezer hoặc Howlitzer tại Brightsmithy. Dạng rỗng chưa dùng được cho các công thức này.",
+    "acquisition": "Lấy Spark Ark rỗng qua nhiệm vụ của Grainy Transmission, rồi đặt ở Ancient Archive đã kích hoạt để hút Security Pulse. Sau khi hạ Celestial Scion, chế tạo dạng rỗng tại Notional Fabricator thay cho phần thưởng cũ.",
+    "sources": [
+      "public/data/wiki/pages/218341.json#plainText"
+    ]
+  },
+  "base_game:snowball_item": {
+    "usage": "Cầm và ném để gây hiệu ứng lạnh nhẹ hoặc dập lửa. Lăn trên nền có tuyết để làm cầu tuyết lớn và xếp thành người tuyết. Bảo quản trong Ice Box để tránh tan.",
+    "acquisition": "Xuất hiện ngẫu nhiên trên mặt đất khi tuyết rơi vào mùa đông. Cũng có thể thu từ việc đập người tuyết hoặc cầu tuyết lớn.",
+    "sources": [
+      "public/data/wiki/pages/225493.json#plainText"
+    ]
+  },
+  "base_game:succulent_picked": {
+    "usage": "Ăn hồi 1 máu hoặc dùng chế tạo Potted Succulent để trang trí. Phơi khô trên Drying Rack để dùng làm Succulent Tea ở Pearl’s Tea Shop.",
+    "acquisition": "Hái Succulent quanh hồ Oasis vào mùa hè, mỗi cây cho 1 Succulent.",
+    "sources": [
+      "public/data/wiki/pages/122141.json#plainText"
+    ]
+  },
+  "base_game:trinkets": {
+    "usage": "Đổi với Pig King lấy Gold Nuggets; giá trị phụ thuộc từng loại đồ chơi. Có thể giữ lại làm đồ trang trí.",
+    "acquisition": "Tìm bằng cách đào mộ, nhặt Tumbleweed, nhận quà Catcoon hoặc đập Ancient Pseudoscience Station.",
+    "sources": [
+      "public/data/wiki/pages/172748.json#plainText"
+    ]
+  },
+  "base_game:trunk_winter": {
+    "usage": "Dùng chế tạo Puffy Vest giữ ấm. Có thể nướng làm Koalefant Trunk Steak hoặc cho chim trong lồng ăn để lấy trứng. Không dùng trong Crock Pot hay phơi trên Drying Rack.",
+    "acquisition": "Rơi khi hạ Winter Koalefant, tìm theo dấu chân đáng ngờ vào mùa đông.",
+    "sources": [
+      "public/data/wiki/pages/144336.json#plainText"
+    ]
+  },
+  "base_game:vault_key": {
+    "usage": "Đưa cho Beckoning Hand tại Ancient Gateway và xác nhận để đặt lại Sanctum. Cần hạ Ancient Fuelweaver, sau đó đưa 5 Dreadstone cho bàn tay đầu tiên sửa cổng; bàn tay tiếp theo mới nhận chìa khóa. Không mang được lên mặt đất.",
+    "acquisition": "Lấy từ Reliquary trong Key Room của Sanctum.",
+    "sources": [
+      "public/data/wiki/pages/233118.json#plainText"
+    ]
+  },
+  "base_game:vault_orb": {
+    "usage": "Dùng sửa Broken Sanctum Waymark hoặc chế tạo Portation Orb Fragments. Waymark giúp dịch chuyển giữa các phòng Sanctum; cần kích hoạt nguồn điện ở Ancient Archive.",
+    "acquisition": "Tìm gần Broken Sanctum Waymark bên trong Sanctum.",
+    "sources": [
+      "public/data/wiki/pages/229583.json#plainText"
+    ]
+  },
+  "wiki:131558": {
+    "acquisition": "Hái Cactus trong sa mạc; thao tác gây 6 sát thương cơ bản nên hãy mặc giáp. Cây vẫn có thể thu hoạch vào mùa đông.",
+    "sources": [
+      "public/data/wiki/pages/131558.json#plainText"
+    ]
+  },
+  "wiki:151499": {
+    "usage": "Đặt lên ô nền trống để lát Sandy Turf. Loại nền này ngăn Eyeplant mọc, có thể tận dụng khi bố trí Lureplant.",
+    "acquisition": "Dùng Pitchfork đào nền sa mạc để thu Sandy Turf.",
+    "sources": [
+      "public/data/wiki/pages/151499.json#plainText"
+    ]
+  },
+  "wiki:158786": {
+    "usage": "Dùng Pickaxe, Opulent Pickaxe hoặc Pick/Axe khai thác để lấy khoáng sản. Loại và trạng thái nhũ đá quyết định vật liệu nhận được.",
+    "acquisition": "Xuất hiện tự nhiên trong hang động; là vật thể môi trường, không phải vật phẩm chế tạo để đặt xuống.",
+    "sources": [
+      "public/data/wiki/pages/158786.json#plainText"
+    ]
+  },
+  "wiki:180623": {
+    "usage": "Đây là nhóm giá trị nguyên liệu của Crock Pot. Nhiều món cấm nguyên liệu Inedible, một số món cần chúng; phải kiểm tra công thức trước khi dùng làm chất độn.",
+    "acquisition": "Không phải một vật phẩm riêng. Thu thập từng nguyên liệu thuộc nhóm, chẳng hạn Twigs từ Sapling.",
+    "sources": [
+      "public/data/wiki/pages/180623.json#plainText"
+    ]
+  },
+  "wiki:218911": {
+    "usage": "Hái để nhận Berries; bụi cần khoảng 3–5 ngày mọc lại và không ra quả mới trong mùa đông. Sau khi đào và trồng lại phải bón phân; tiếp tục bón khi bụi cạn dinh dưỡng.",
+    "acquisition": "Tìm bụi tự nhiên ở đồng cỏ hoặc rừng, dùng xẻng đào bụi khỏe để mang về trồng. Đào bụi chưa được bón phân có thể phá hủy bụi thành Twigs.",
+    "sources": [
+      "public/data/wiki/pages/218911.json#plainText"
+    ]
+  },
+  "wiki:193546": {
+    "usage": "Nhóm thức ăn thường làm giảm máu và tinh thần khi ăn trực tiếp. Dùng một phần trong Crock Pot để làm món an toàn; từ hai phần có thể tạo Monster Lasagna nếu không có công thức ưu tiên khác.",
+    "acquisition": "Không phải một vật phẩm riêng. Ví dụ: Monster Meat rơi từ quái vật, còn Durian được trồng từ hạt.",
+    "sources": [
+      "public/data/wiki/pages/193546.json#plainText"
+    ]
+  },
+  "wiki:222591": {
+    "acquisition": "Xuất hiện tự nhiên và được tái sinh qua World Regrowth. Không cho Pine Cone để tự trồng như Evergreen thường.",
+    "sources": [
+      "public/data/wiki/pages/222591.json#plainText"
+    ]
+  },
+  "wiki:222736": {
+    "acquisition": "Tìm trong hang động. Các loại cây nấm được tái sinh theo mùa nở: xanh dương vào đông, xanh lá vào xuân và đỏ vào hè.",
+    "sources": [
+      "public/data/wiki/pages/222736.json#plainText"
+    ]
+  },
+  "wiki:66211": {
+    "acquisition": "Tìm cây tự nhiên hoặc trồng Twiggy Tree Cone thu được khi chặt cây.",
+    "sources": [
+      "public/data/wiki/pages/66211.json#plainText"
+    ]
+  },
+  "wiki:66627": {
+    "acquisition": "Dùng Sea Fishing Rod câu ở vùng biển phù hợp, bắt bằng Ocean Trawler hoặc dùng Strident Trident đẩy cá khỏi nước. Mỗi loài có mùa, vùng sinh sống và loại mồi ưa thích riêng.",
+    "sources": [
+      "public/data/wiki/pages/66627.json#plainText"
+    ]
+  },
+  "base_game:bullkelp_root": {
+    "usage": "Trồng xuống biển để tạo Bull Kelp mới. Có thể dùng như roi tầm đánh dài, gây 27,2 sát thương; mỗi đòn làm giảm độ tươi 2–4%. Khi độ tươi dưới 50%, mỗi đòn có 10% khả năng làm gãy thân tảo.",
+    "acquisition": "Hái Bull Kelp bị dạt lên bờ; đôi khi tìm được trong Ocean Debris.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/Bull_Kelp_Stalk"
+    ]
+  },
+  "base_game:cutless": {
+    "usage": "Vũ khí 27,2 sát thương, dùng được 150 lần. Đánh mục tiêu có túi đồ sẽ làm rơi vật phẩm ở ô ngoài cùng bên trái, kể cả người chơi khác.",
+    "acquisition": "Hạ Powder Monkey đang sử dụng Cutless để nhặt vũ khí của nó.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/Cutless"
+    ]
+  },
+  "base_game:terrarium": {
+    "usage": "Đặt xuống rồi chạm để triệu hồi Eye of Terror vào ban đêm. Cho 1 Nightmare Fuel trước khi kích hoạt để gọi Twins of Terror. Sau trận đấu, vật phẩm có thể ngủ 15 ngày theo thiết lập mặc định; không mang được xuống hang.",
+    "acquisition": "Tìm trong Conspicuous Chest xuất hiện ngẫu nhiên ở rừng.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/Terrarium"
+    ]
+  },
+  "base_game:thurible": {
+    "usage": "Cầm để dẫn Reanimated Skeleton đi theo. Khi còn năng lượng, bảo vệ người chơi trong bán kính 1,5 ô nền khỏi lồng xương, kể cả của Ancient Fuelweaver; không điều khiển được boss này. Dùng được 9 phút, thêm Nightmare Fuel hồi 3 phút; cạn thì ngừng hoạt động nhưng không biến mất.",
+    "acquisition": "Rơi sau khi hạ Ancient Fuelweaver.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/Shadow_Thurible"
+    ]
+  },
+  "base_game:bluemooneye": {
+    "usage": "Đặt trên đất để đánh dấu vị trí trên bản đồ của mọi người, kể cả vùng chưa khám phá. Cũng dùng chế tạo Moon Dial.",
+    "acquisition": "Gắn Blue Gem vào Cratered Moonrock để tạo Moonlens cùng màu.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/Moonlens"
+    ]
+  },
+  "base_game:orangemooneye": {
+    "usage": "Đặt trên đất để đánh dấu vị trí trên bản đồ của mọi người, kể cả vùng chưa khám phá. Cũng dùng chế tạo The Lazy Deserter.",
+    "acquisition": "Gắn Orange Gem vào Cratered Moonrock để tạo Moonlens cùng màu.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/Moonlens"
+    ]
+  },
+  "base_game:purplemooneye": {
+    "usage": "Đặt trên đất để đánh dấu vị trí trên bản đồ của mọi người, kể cả vùng chưa khám phá. Cũng dùng chế tạo Ocuvigil.",
+    "acquisition": "Gắn Purple Gem vào Cratered Moonrock để tạo Moonlens cùng màu.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/Moonlens"
+    ]
+  },
+  "base_game:rabbitkingspear": {
+    "usage": "Vũ khí gây 51 sát thương, có 125 lượt dùng. Đánh Bunnyman hoặc Royal Rabbit Enforcer tiêu hao 5 tinh thần để tăng sát thương lên 71,4; cầm vũ khí cũng khiến Bunnyman bỏ chạy.",
+    "acquisition": "Rơi khi giết Wrathful Rabbit King.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/Rabbit_King_Cudgel"
+    ]
+  },
+  "base_game:scrap_monoclehat": {
+    "usage": "Đội ở ô đầu để mở rộng tầm nhìn và kéo camera ra xa hơn. Hồi 2 tinh thần/phút ban ngày nhưng giảm khoảng 1,3 tinh thần/phút ban đêm. Độ bền tương đương 12 ngày trang bị.",
+    "acquisition": "Rơi khi đánh bại Scrappy Werepig.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/Horizon_Expandinator"
+    ]
+  },
+  "base_game:potatosack": {
+    "usage": "Vật nặng dùng làm tạ cho Mighty Gym của Wolfgang, có trọng lượng 1. Mang bằng ô thân như Suspicious Marble; không phải túi thực phẩm có thể mở lấy khoai.",
+    "acquisition": "Xuất hiện khi Wolfgang xây Mighty Gym.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/Potato_Sack"
+    ]
+  },
+  "base_game:oceanfishableflotsam": {
+    "usage": "Sau khi vớt lên, tương tác để tách đống rác và nhận 2 vật phẩm ngẫu nhiên. Có thể có vật liệu thông thường hoặc Bull Kelp Stalk hiếm.",
+    "acquisition": "Xuất hiện trôi nổi trên biển. Dùng Sea Fishing Rod hoặc Pinchin’ Winch để lấy lên; bỏ lâu sẽ chìm mất.",
+    "sources": [
+      "https://dontstarve.wiki.gg/zh/wiki/%E6%B5%B7%E6%B4%8B%E6%AE%8B%E9%AA%B8?variant=zh-hk"
+    ]
+  },
+  "base_game:pig_token": {
+    "usage": "Đưa cho Pig King để bắt đầu đấu vật khi còn đủ thời gian trước đêm. Cần dọn trống khu vực và không ở trong tình huống nguy hiểm; phần thưởng thay đổi tùy có bật sự kiện hay không.",
+    "acquisition": "Pig hoặc Guardian Pig có thể mang đai; cho ăn hoặc hạ nó để nhận. Tỷ lệ xuất hiện là 1% thông thường, tăng lên 50% trong Year of the Pig King.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/Golden_Belt"
+    ]
+  },
+  "base_game:pig_coin": {
+    "usage": "Kích hoạt một đồng để gọi ngẫu nhiên một Elite Pig hỗ trợ chiến đấu. Nó theo người dùng khoảng 10 giây rồi biến mất; mỗi đồng chỉ dùng một lần.",
+    "acquisition": "Nhận làm phần thưởng từ Pig King Wrestling Match.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/Clout_Snout"
+    ]
+  },
+  "base_game:glommerflower": {
+    "usage": "Mang trong túi để Glommer đi theo; đặt xuống hoặc cất trong thùng cố định để nó ở lại gần hoa. Nếu Glommer chết, hoa bắt đầu hỏng sau 6 ngày.",
+    "acquisition": "Hái tại Glommer’s Statue vào đêm trăng tròn. Có thể nhận hoa mới vào các kỳ trăng tròn tiếp theo.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/Glommer%27s_Flower"
+    ]
+  },
+  "base_game:malbatross_beak": {
+    "usage": "Dùng như mái chèo mạnh, có 1.500 lượt chèo và lực đẩy khoảng 2,66 lần Oar thường. Chèo sai nhịp làm tăng độ ướt và hao nhiều lượt. Có thể đánh cận chiến gây 27,2 sát thương hoặc dùng chế tạo Waterfowl Can.",
+    "acquisition": "Rơi khi đánh bại Malbatross; cũng có thể nhận trong Loot Stash.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/Malbatross_Bill"
+    ]
+  },
+  "base_game:shell_cluster": {
+    "usage": "Mang bằng ô thân vì là vật nặng. Dùng cuốc khai thác để nhận Shell Bells với ba cỡ âm khác nhau.",
+    "acquisition": "Trục vớt các cụm vỏ sò chìm quanh Hermit Island bằng Pinchin’ Winch.",
+    "sources": [
+      "https://dontstarve.fandom.com/wiki/Shell_Cluster"
+    ]
+  },
+  "base_game:fishingnet": {
+    "usage": "Lưới thử nghiệm dùng kéo vật phẩm nổi trên biển về bằng thao tác chuột phải. Đây là nội dung đã bị loại khỏi lối chơi chính thức, hoạt ảnh còn chưa hoàn thiện.",
+    "acquisition": "Không có cách nhận trong sinh tồn thông thường. Chỉ còn có thể tạo bằng console với mã fishingnet.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/Fishing_Net"
+    ]
+  },
+  "base_game:ancienttree_seed": {
+    "usage": "Trồng để phát triển thành Gloomthorn hoặc Sproutrock. Cây cần đúng loại nền để ra Nightberries hoặc Geode Fruits; cây trưởng thành cho quả theo chu kỳ riêng khoảng 12–25 ngày, nhanh hơn vào mùa xuân.",
+    "acquisition": "Tìm trong Sunken Chest. Khả năng có hạt tăng theo tuổi thế giới, từ 10% ngày đầu lên tối đa 60% ở ngày 150.",
+    "sources": [
+      "public/data/wiki/pages/223570.json#plainText"
+    ]
+  },
+  "base_game:archive_orchestrina_main": {
+    "usage": "Kích hoạt Archive Switch rồi đặt Distilled Knowledge lên vòng tròn trung tâm. Bước lên 8 vòng ngoài theo thứ tự số để giải câu đố; làm sai sẽ lùi tiến độ. Khi giải xong, Knowledge bị tiêu thụ và người ở gần chưa học công thức nhận Blueprint.",
+    "acquisition": "Công trình có sẵn ở Ancient Archive trong hang động.",
+    "sources": [
+      "public/data/wiki/pages/209322.json#plainText"
+    ]
+  },
+  "base_game:armor_dragonfly": {
+    "usage": "Trang bị ô thân để hấp thụ 70% sát thương vật lý, có 1.350 độ bền và hồi 3,3 tinh thần/phút. Miễn sát thương do lửa và khiến kẻ đánh bạn bốc cháy; chú ý nguy cơ làm cháy chiến lợi phẩm.",
+    "acquisition": "Chế tạo tại Alchemy Engine bằng 1 Scales, 1 Log Suit và 3 Pig Skin.",
+    "sources": [
+      "public/data/wiki/pages/180022.json#plainText"
+    ]
+  },
+  "base_game:armor_dreadstone": {
+    "usage": "Giáp ô thân với 840 độ bền, giảm 90% sát thương vật lý và có 5 Planar Defense. Có bảo vệ bổ sung trước sinh vật Shadow; hiệu quả tăng khi phối với mũ tương ứng. Khi đang hồi độ bền, giáp làm hao tinh thần.",
+    "acquisition": "Học Blueprint rơi từ Nightmare Werepig, rồi chế tạo bằng 6 Dreadstone và 4 Pure Horror.",
+    "sources": [
+      "public/data/wiki/pages/2835.json#plainText"
+    ]
+  },
+  "base_game:armor_grass": {
+    "usage": "Giáp ô thân dùng đầu game, hấp thụ 60% sát thương vật lý và có 225 độ bền. Trang bị trước khi bị đánh; giáp vỡ khi độ bền cạn.",
+    "acquisition": "Chế tạo ngay từ đầu bằng 10 Cut Grass và 2 Twigs, không cần máy nghiên cứu.",
+    "sources": [
+      "public/data/wiki/pages/218871.json#plainText"
+    ]
+  },
+  "base_game:armor_marble": {
+    "usage": "Giáp ô thân hấp thụ 95% sát thương vật lý, có 735 độ bền nhưng giảm tốc độ di chuyển 30%. Phù hợp chịu đòn tại chỗ; bất lợi khi né hoặc truy đuổi.",
+    "acquisition": "Chế tạo bằng 6 Marble và 2 Rope; cần Alchemy Engine để học công thức.",
+    "sources": [
+      "public/data/wiki/pages/218873.json#plainText"
+    ]
+  },
+  "base_game:armor_ruins": {
+    "usage": "Giáp ô thân hấp thụ 90% sát thương vật lý, có 1.800 độ bền và hồi 3,3 tinh thần/phút khi mặc.",
+    "acquisition": "Chế tạo bằng 4 Nightmare Fuel và 6 Thulecite cạnh Ancient Pseudoscience Station. Không học để chế tạo từ xa được; cũng có thể tìm trong Large Ornate Chest.",
+    "sources": [
+      "public/data/wiki/pages/218882.json#plainText"
+    ]
+  },
+  "base_game:armor_sanity": {
+    "usage": "Giáp ô thân có 750 độ bền và hấp thụ 95% sát thương vật lý. Khi mặc mất 10 tinh thần/phút; mỗi lần chịu đòn còn mất tinh thần bằng 10% sát thương gốc của đòn đánh.",
+    "acquisition": "Cần Shadow Manipulator để học; chế tạo bằng 5 Nightmare Fuel và 3 Papyrus.",
+    "sources": [
+      "public/data/wiki/pages/218874.json#plainText"
+    ]
+  },
+  "base_game:armor_slurper": {
+    "usage": "Đeo ở ô thân để giảm 40% tốc độ hao đói và hồi 2 tinh thần/phút. Nhân vật bình thường giảm hao đói từ 75 xuống 45 mỗi ngày. Sewing Kit sửa khoảng 63% độ bền.",
+    "acquisition": "Chế tạo bằng 6 Slurper Pelt, 2 Rope và 2 Nightmare Fuel; cần Shadow Manipulator để học.",
+    "sources": [
+      "public/data/wiki/pages/218961.json#plainText"
+    ]
+  },
+  "base_game:armor_voidcloth": {
+    "usage": "Giáp ô thân có 830 độ bền, hấp thụ 80% sát thương vật lý và 10 Planar Defense. Có bảo vệ bổ sung trước kẻ địch Shadow, tăng khi phối với Void Cowl.",
+    "acquisition": "Chế tạo cạnh Shadowcraft Plinth bằng 4 Pure Horror và 4 Dark Tatters trong tiến trình Shadow Rift.",
+    "sources": [
+      "public/data/wiki/pages/106905.json#plainText"
+    ]
+  },
+  "base_game:armor_wagpunk": {
+    "usage": "Giáp ô thân hấp thụ 85% sát thương vật lý, có 5 Planar Defense và 730 độ bền. Chống sét, chuyển sát thương điện thành vật lý. Chiến đấu liên tục với cùng một mục tiêu tăng dần tốc độ chạy tới 30%; đổi mục tiêu hoặc đi quá xa sẽ mất tích lũy.",
+    "acquisition": "Học Blueprint có thể rơi khi đập Abandoned Junk sau Lunar Rift, rồi chế tạo bằng 8 Scrap, 3 Electrical Doodad và 1 Enlightened Shard.",
+    "sources": [
+      "public/data/wiki/pages/218232.json#plainText"
+    ]
+  },
+  "base_game:bathbomb": {
+    "usage": "Ném vào Hot Spring để tạo hơi nóng và ánh sáng trong một ngày; ngâm mình giúp hồi máu, tinh thần. Suối được xử lý sẽ làm Saladmander chín và tạo đá Moon Glass khi trăng tròn để khai thác.",
+    "acquisition": "Chế tạo bằng 1 Lune Tree Blossom và 1 Nitre cạnh Celestial Altar. Có một quả xuất hiện tự nhiên gần Hot Spring và bộ xương.",
+    "sources": [
+      "public/data/wiki/pages/102234.json#plainText"
+    ]
+  },
+  "base_game:beargerfur_sack": {
+    "usage": "Hộp di động chứa tối đa 6 chồng món đã nấu bằng Crock Pot, mở ngay trong túi đồ. Thức ăn hỏng chậm 20 lần; không nhận thực phẩm thô. Khi đóng, bảo vệ món ăn khỏi hiệu ứng làm hỏng của bào tử Toadstool.",
+    "acquisition": "Chế tạo cạnh Brightsmithy bằng 1 Spark Ark đã nạp, 1 Thick Fur, 3 Pure Brilliance và 5 Moon Rock.",
+    "sources": [
+      "public/data/wiki/pages/218234.json#plainText"
+    ]
+  },
+  "base_game:beemine": {
+    "usage": "Nhấp chuột phải để đặt bẫy; thả bằng chuột trái chỉ đặt vật phẩm xuống đất. Khi sinh vật phù hợp kích hoạt, bẫy thả 4 con ong tấn công nó. Có thể bắt lại ong còn sống để làm bẫy mới.",
+    "acquisition": "Chế tạo bằng 1 Board, 4 Bees và 1 Flint; học công thức tại Science Machine.",
+    "sources": [
+      "public/data/wiki/pages/218894.json#plainText"
+    ]
+  },
+  "base_game:blowdart_pipe": {
+    "usage": "Trang bị và bắn vào mục tiêu để gây 100 sát thương từ xa. Mỗi Blow Dart dùng một lần; bắn sinh vật trung lập sẽ khiến nó phản công.",
+    "acquisition": "Chế tạo tại Science Machine bằng 2 Cut Reeds, 1 Hound’s Tooth và 1 Azure Feather, hoặc nhặt từ MacTusk.",
+    "sources": [
+      "public/data/wiki/pages/221872.json#plainText"
+    ]
+  },
+  "base_game:boat_bumper_crabking_kit": {
+    "usage": "Lắp lên mép thuyền để chịu va chạm, có 150 độ bền và không hỏng do đụng đất liền. Sửa bằng Rocks, Cut Stone hoặc Stone Wall trước khi bị phá hủy.",
+    "acquisition": "Crab King rơi 8 bộ khi bị đánh bại.",
+    "sources": [
+      "public/data/wiki/pages/183142.json#plainText"
+    ]
+  },
+  "base_game:boatpatch": {
+    "usage": "Dùng trực tiếp lên thuyền để hồi 25 máu thuyền hoặc vá lỗ rò đồng thời hồi lượng tương tự. Nên mang theo trước khi ra khơi để xử lý va chạm.",
+    "sources": [
+      "public/data/wiki/pages/187421.json#plainText"
+    ]
+  },
+  "base_game:bomb_lunarplant": {
+    "usage": "Trang bị rồi nhấp chuột phải để ném. Bom gây 200 sát thương Planar trong vùng nổ và phá công trình, vì vậy tránh dùng gần căn cứ.",
+    "acquisition": "Chế tạo cạnh Brightsmithy bằng 4 Pure Brilliance, 4 Brightshade Husk và 1 Infused Moon Shard; mỗi lần tạo 6 bom.",
+    "sources": [
+      "public/data/wiki/pages/19388.json#plainText"
+    ]
+  },
+  "base_game:boomerang": {
+    "usage": "Ném đánh từ xa rồi giữ phím hành động (mặc định Space) để bắt khi bay về. Không bắt được sẽ khiến boomerang đánh trúng bạn, hao thêm độ bền và rơi xuống đất.",
+    "acquisition": "Chế tạo bằng 1 Board, 1 Silk và 1 Charcoal; cần Alchemy Engine để học.",
+    "sources": [
+      "public/data/wiki/pages/221875.json#plainText"
+    ]
+  },
+  "base_game:brush": {
+    "usage": "Dùng lên Beefalo để nhận 1 Beefalo Wool và tăng độ phục tùng 40%. Tăng thuần hóa 1,6% chỉ áp dụng một lần mỗi ngày, nên không chải liên tục để tăng nhanh hơn.",
+    "acquisition": "Chế tạo bằng 1 Steel Wool, 1 Walrus Tusk và 2 Gold Nugget; học tại Alchemy Engine.",
+    "sources": [
+      "public/data/wiki/pages/221606.json#plainText"
+    ]
+  },
+  "base_game:bugnet": {
+    "usage": "Bắt ong, bướm, muỗi và đom đóm sống. Ong dùng xây Bee Box, bướm có thể trồng thành hoa; côn trùng bắt được có thể thả hoặc giết trong túi. Cẩn thận ong gần đó có thể phản công khi bắt đồng loại.",
+    "acquisition": "Chế tạo bằng 4 Twigs, 2 Silk và 1 Rope; học tại Science Machine.",
+    "sources": [
+      "public/data/wiki/pages/221610.json#plainText"
+    ]
+  },
+  "base_game:cactus": {
+    "usage": "Hái để lấy Cactus Flesh, mùa hè có thêm Cactus Flower. Mỗi lần hái gây 6 sát thương cơ bản, giảm được bằng giáp. Cây mọc lại sau khoảng 4 ngày (3 ngày mùa xuân) và vẫn ra nguyên liệu trong mùa đông; không đào chuyển bằng xẻng được.",
+    "acquisition": "Tìm tự nhiên trong hai vùng sa mạc, gồm cả sa mạc Oasis.",
+    "sources": [
+      "public/data/wiki/pages/222791.json#plainText"
+    ]
+  },
+  "base_game:cattoy_mouse": {
+    "usage": "Đặt trên đất để Kitcoon hoặc Catcoon tới chơi. Khi tương tác, chuột chạy qua lại ngắn; Kitcoon sẽ đuổi theo. Đây là đồ chơi trang trí, không phải bẫy hay vật phẩm chiến đấu.",
+    "acquisition": "Chế tạo tại Catcoon Shrine trong sự kiện Year of the Catcoon.",
+    "sources": [
+      "public/data/wiki/pages/224404.json#plainText"
+    ]
+  },
+  "base_game:chestupgrade_stacksize": {
+    "usage": "Dùng lên Chest hoặc Scaled Chest để nâng cấp khả năng gộp vật phẩm. Mỗi ô chứa được lượng rất lớn cùng loại; trên 999 sẽ hiện 999+. Khi lấy ra, mỗi lần vẫn chỉ lấy một chồng theo giới hạn bình thường.",
+    "acquisition": "Học Blueprint từ Abandoned Junk hoặc Scrappy Werepig sau Lunar Rift, rồi chế tạo bằng 4 Scrap, 2 Pure Brilliance và 1 Enlightened Shard.",
+    "sources": [
+      "public/data/wiki/pages/222678.json#plainText"
+    ]
+  },
+  "base_game:compost": {
+    "usage": "Bón lên Farm Soil để bổ sung 24 điểm dinh dưỡng Compost, phục vụ các cây tiêu thụ nhóm dưỡng chất này.",
+    "acquisition": "Cho vật liệu hữu cơ thích hợp vào Composting Bin và chờ ủ xong để thu.",
+    "sources": [
+      "public/data/wiki/pages/45225.json#plainText"
+    ]
+  },
+  "base_game:cookbook": {
+    "usage": "Mở để xem các công thức nấu đã khám phá, nguyên liệu và tác dụng món ăn. Tự nấu rồi lấy món khỏi Crock Pot để ghi công thức; ăn món để mở thông tin chỉ số. Kiến thức gắn với hồ sơ người chơi, giữ giữa các máy chủ.",
+    "acquisition": "Chế tạo bằng 1 Papyrus và 1 Carrot; học tại Science Machine.",
+    "sources": [
+      "public/data/wiki/pages/87978.json#plainText"
+    ]
+  },
+  "base_game:coolant": {
+    "usage": "Nguyên liệu chế tạo Spark Ark tại Notional Fabricator trong tiến trình cuối của Lunar Rift.",
+    "acquisition": "Sau khi thế giới đã hạ Celestial Scion, nhận từ Armored Bearger, Crystal Deerclops hoặc Possessed Varg.",
+    "sources": [
+      "public/data/wiki/pages/228486.json#plainText"
+    ]
+  },
+  "base_game:cotl_trinket": {
+    "usage": "Đưa cho Antlion để nhận Blueprint của Humble Lamb Idol, Gold Flooring và Brick Flooring.",
+    "acquisition": "Câu tại hồ Oasis để lấy Crumpled Package, rồi mở gói để nhận Red Crown.",
+    "sources": [
+      "public/data/wiki/pages/217321.json#plainText"
+    ]
+  },
+  "base_game:desiccant": {
+    "usage": "Giữ trong túi để hút độ ẩm. Khi túi đầy nước, đặt cạnh lửa trại hoặc Dwarf Star để hong khô và dùng lại.",
+    "acquisition": "Chế tạo tại Combriner cấp 1.",
+    "sources": [
+      "public/data/wiki/pages/230469.json#plainText"
+    ]
+  },
+  "base_game:eel": {
+    "usage": "Dùng làm nguyên liệu cá trong Crock Pot, phơi thành Small Jerky hoặc đổi với Pig King lấy 5 Gold Nuggets mỗi con. Cá đã nấu không phơi được.",
+    "acquisition": "Dùng Fishing Rod câu trong các ao ở vùng Wilds/Ruins hoặc khu vực ao Toadstool dưới hang.",
+    "sources": [
+      "public/data/wiki/pages/27270.json#plainText"
+    ]
+  },
+  "base_game:farm_hoe": {
+    "usage": "Dùng trên Farm Soil Turf để tạo hoặc điều chỉnh ụ đất trồng hạt; có 25 lượt sử dụng. Cần có đất ruộng trước, không dùng thay Pitchfork để đào nền.",
+    "acquisition": "Chế tạo bằng 2 Twigs và 2 Flint tại Science Machine.",
+    "sources": [
+      "public/data/wiki/pages/87476.json#plainText"
+    ]
+  },
+  "base_game:fence_rotator": {
+    "usage": "Dùng xoay hàng rào, cổng gỗ, biển chỉ hướng, ghế và một số vật trang trí. Cũng đánh cận chiến 34 sát thương, có 200 lượt dùng nhưng ra đòn chậm hơn Spear.",
+    "acquisition": "Chế tạo bằng 2 Flint và 1 Spear; học tại Alchemy Engine.",
+    "sources": [
+      "public/data/wiki/pages/132107.json#plainText"
+    ]
+  },
+  "base_game:firecrackers": {
+    "usage": "Đặt rồi châm bằng Torch hoặc Lighter để tạo pháo hoa. Tiếng nổ khiến sinh vật như Hound hoảng sợ trong chốc lát; pháo bị tiêu thụ sau khi nổ.",
+    "acquisition": "Đổi 1 Lucky Gold Nugget lấy 3 pháo tại đền của sự kiện Lunar New Year.",
+    "sources": [
+      "public/data/wiki/pages/110317.json#plainText"
+    ]
+  },
+  "base_game:gestalt_cage": {
+    "usage": "Dùng bắt Gestalt, Grazer hoặc Celestial Revenant. Đưa dạng đã chứa sinh vật cho Grainy Transmission để tiếp tục nhiệm vụ tạo Terramite/Warbler; cần đủ loại mẫu theo yêu cầu.",
+    "acquisition": "Grainy Transmission cho một cái sau lần đầu đánh bại Celestial Revenant. Công thức tại Notional Fabricator mở sau khi phủ Hermit Island bằng 76 Substrate Extrapolator.",
+    "sources": [
+      "public/data/wiki/pages/227741.json#plainText"
+    ]
+  },
+  "base_game:hawaiianshirt": {
+    "usage": "Mặc để có 240 điểm cách nhiệt chống nóng và hồi 3,3 tinh thần/phút. Áo hỏng theo thời gian dù không mặc, không sửa bằng Sewing Kit; bảo quản lạnh giúp kéo dài thời gian.",
+    "acquisition": "Chế tạo bằng 3 Papyrus, 3 Silk và 5 Cactus Flower; học tại Alchemy Engine. Cần thu hoa xương rồng vào mùa hè.",
+    "sources": [
+      "public/data/wiki/pages/218968.json#plainText"
+    ]
+  },
+  "base_game:healingsalve": {
+    "usage": "Bôi để hồi 20 máu ngay. Walter có Field Medic dùng nhanh hơn và hồi 30 máu; các nhân vật khác dùng hiệu quả cơ bản.",
+    "acquisition": "Chế tạo bằng 1 Spider Gland, 2 Ashes và 1 Rock.",
+    "sources": [
+      "public/data/wiki/pages/220659.json#plainText"
+    ]
+  },
+  "base_game:hermit_pearl": {
+    "usage": "Gắn vào Crab King trước trận đấu để boss rơi Inactive Celestial Tribute khi bị hạ. Ngọc làm boss mạnh hơn và biến thành Cracked Pearl sau trận. Đem ngọc nứt về cho Pearl để tiếp tục đoạn hội thoại và lợi ích tìm kho báu.",
+    "acquisition": "Hoàn thành chuỗi nhiệm vụ giúp đỡ Crabby Hermit tại Hermit Island.",
+    "sources": [
+      "public/data/wiki/pages/77715.json#plainText"
+    ]
+  },
+  "base_game:hermitcrab_relocation_kit": {
+    "usage": "Cầm để xem hình chiếu nhà Pearl cùng các công trình đi kèm. Chọn vùng có đủ chỗ và thỏa các điều kiện hiển thị rồi xác nhận để chuyển Pearl cùng khu nhà tới đó.",
+    "acquisition": "Sau khi đưa Map of Totally Uninhabited Island cho Pearl để chuyển bà tới Moon Quay, đứng gần bà và chế tạo bằng 4 Cookie Cutter Shell cùng 4 Moon Rock.",
+    "sources": [
+      "public/data/wiki/pages/227849.json#plainText"
+    ]
+  },
+  "base_game:hermitcrab_shell": {
+    "usage": "Thổi để dịch chuyển tới Hermit Home, không giới hạn khoảng cách trên mặt đất; không dùng được trong hang. Mỗi lần tăng 15 độ ướt, có thể giảm bằng đồ chống ướt. Có 10 lượt dùng và đồng thời chăm cây trong phạm vi 3 ô nền.",
+    "acquisition": "Chế tạo tại Combriner cấp 2 trong tiến trình Lunar Rift.",
+    "sources": [
+      "public/data/wiki/pages/230468.json#plainText"
+    ]
+  },
+  "base_game:hermithouse_ornament": {
+    "usage": "Treo lên Hermit Home hoặc Winter’s Feast Tree để trang trí. Có nhiều biến thể; Winter’s Feast bổ sung thêm các mẫu theo mùa.",
+    "acquisition": "Nâng Hermit Home lên cấp 5 rồi chế tạo khi đứng gần Pearl.",
+    "sources": [
+      "public/data/wiki/pages/230467.json#plainText"
+    ]
+  },
+  "base_game:houndstooth_blowpipe": {
+    "usage": "Nạp Hound’s Teeth làm đạn, mỗi phát tiêu thụ 1 răng và gây 34 sát thương vật lý cùng 34 Planar. Gây thêm 10% sát thương lên mục tiêu Shadow; vũ khí không bị tiêu thụ sau mỗi phát và không có độ bền.",
+    "acquisition": "Chế tạo cạnh Brightsmithy bằng 1 Spark Ark đã nạp, 3 Brightshade Husk, 3 Pure Brilliance và 3 Moon Rock. Không học công thức để làm từ xa được.",
+    "sources": [
+      "public/data/wiki/pages/218236.json#plainText"
+    ]
+  },
+  "base_game:lavae_cocoon": {
+    "usage": "Dùng tại Rock Den để nhận nuôi Broodling. Đây là nguyên liệu nhận thú cưng, không phải trứng để ấp cạnh lửa.",
+    "acquisition": "Đóng băng rồi giết Extra-Adorable Lavae.",
+    "sources": [
+      "public/data/wiki/pages/43640.json#plainText"
+    ]
+  },
+  "base_game:lavae_egg": {
+    "usage": "Giữ cạnh lửa trong 2 ngày để nở Extra-Adorable Lavae. Trứng bị lạnh sẽ đổi màu rồi vỡ thành Rocks; không ăn được. Khi nở để lại Lavae Tooth, mang răng theo để Lavae đi cùng.",
+    "acquisition": "Dragonfly có 33% khả năng rơi trứng khi bị hạ; cũng có thể nhận từ Loot Stash mở bằng Stag Antler của Klaus.",
+    "sources": [
+      "public/data/wiki/pages/168280.json#plainText"
+    ]
+  },
+  "base_game:mapscroll": {
+    "usage": "Ghi lại vùng bản đồ người chế tạo đã khám phá tại thời điểm tạo. Người khác đọc để bổ sung bản đồ của họ. Bản đồ mặt đất và hang động tách riêng; cần tạo và dùng ở đúng khu vực.",
+    "acquisition": "Chế tạo bằng 1 Feather Pencil và 1 Papyrus khi đứng cạnh Cartographer’s Desk; phải quay lại bàn mỗi lần làm.",
+    "sources": [
+      "public/data/wiki/pages/170590.json#plainText"
+    ]
+  },
+  "base_game:miniboatlantern": {
+    "usage": "Đặt xuống để chiếu sáng trong khoảng 6 ngày, hoặc thả trên biển cho đèn trôi chậm. Đèn tự cháy khi hết thời gian.",
+    "acquisition": "Đổi 3 Lucky Gold Nugget tại đền sự kiện Lunar New Year.",
+    "sources": [
+      "public/data/wiki/pages/107079.json#plainText"
+    ]
+  },
+  "base_game:moonrockidol": {
+    "usage": "Đưa cho Celestial Portal để quay lại màn hình chọn nhân vật. Toàn bộ đồ rơi tại cổng; giữ số ngày, bản đồ khám phá và công thức đã học. Idol bị tiêu thụ sau khi đổi.",
+    "acquisition": "Chế tạo trong Celestial Filter bằng 1 Moon Rock và 1 Purple Gem. Cần nâng Florid Postern thành Celestial Portal để sử dụng.",
+    "sources": [
+      "public/data/wiki/pages/2021.json#plainText"
+    ]
+  },
+  "base_game:nightmare_timepiece": {
+    "usage": "Xem màu và kiểm tra huy chương để biết giai đoạn Nightmare Cycle trong Ruins. Khi mang theo, Ancient Key hiện trên bản đồ dù ở vùng chưa khám phá; nếu chưa hạ Ancient Guardian sẽ hiển thị vị trí boss.",
+    "acquisition": "Chế tạo cạnh Broken Ancient Pseudoscience Station bằng 2 Nightmare Fuel và 2 Thulecite; không học để làm từ xa được.",
+    "sources": [
+      "public/data/wiki/pages/221596.json#plainText"
+    ]
+  },
+  "base_game:nightstick": {
+    "usage": "Vũ khí điện gây sát thương mạnh hơn lên mục tiêu ướt, đồng thời phát sáng khi cầm. Hao độ bền theo thời gian trang bị, không theo số lần đánh. Có thể sạc lại ở nguồn điện phù hợp như Lightning Rod vừa trúng sét.",
+    "acquisition": "Chế tạo bằng 1 Volt Goat Horn, 2 Electrical Doodad và 2 Nitre; học tại Alchemy Engine.",
+    "sources": [
+      "public/data/wiki/pages/221920.json#plainText"
+    ]
+  },
+  "base_game:nightsword": {
+    "usage": "Trang bị ô tay để đánh 68 sát thương mỗi đòn, dùng được 100 lần. Cầm kiếm làm giảm 20 tinh thần/phút, nên cất đi khi không chiến đấu.",
+    "acquisition": "Chế tạo bằng 5 Nightmare Fuel và 1 Living Log; học tại Shadow Manipulator.",
+    "sources": [
+      "public/data/wiki/pages/221881.json#plainText"
+    ]
+  },
+  "base_game:nonslipgrit": {
+    "usage": "Giữ trong túi để tránh trượt trên bề mặt trơn. Độ bền chỉ giảm khi di chuyển trên mặt trơn, đủ khoảng 1,39 phút sử dụng thực tế.",
+    "acquisition": "Chế tạo Grit Duster tại Combriner cấp 1.",
+    "sources": [
+      "public/data/wiki/pages/230471.json#plainText"
+    ]
+  },
+  "base_game:oar": {
+    "usage": "Cầm để chèo thuyền hoặc bè theo hướng chọn. Chèo quá nhanh, sai nhịp sẽ làm tăng 9 độ ướt và hao độ bền tương đương 25 lượt chèo.",
+    "acquisition": "Chế tạo trong Seafaring Filter bằng 1 Log.",
+    "sources": [
+      "public/data/wiki/pages/150324.json#plainText"
+    ]
+  },
+  "base_game:oceanfishingrod": {
+    "usage": "Dùng câu cá biển, Wobster, Lunar Wobster hoặc Ocean Debris. Lắp phao để cải thiện tầm và độ chính xác, lắp mồi để thu hút đúng loài. Không dùng để câu cá nước ngọt hay Eel trong ao.",
+    "sources": [
+      "public/data/wiki/pages/90462.json#plainText"
+    ]
+  },
+  "base_game:panflute": {
+    "usage": "Thổi để gây ngủ cho sinh vật có thể ngủ trong bán kính 3,75 ô nền. Có thể dùng làm dịu Dragonfly hoặc tạo thời gian rút lui. Đánh sinh vật đang ngủ sẽ đánh thức chúng; hiệu ứng còn phụ thuộc khả năng ngủ của mục tiêu.",
+    "acquisition": "Chế tạo bằng 5 Cut Reeds, 1 Mandrake và 1 Rope; học tại Prestihatitator. Cũng có thể tìm Pan Flute xuất hiện sẵn trong thế giới.",
+    "sources": [
+      "public/data/wiki/pages/221639.json#plainText"
+    ]
+  },
+  "base_game:pickaxe_lunarplant": {
+    "usage": "Kết hợp chức năng cuốc và búa, làm việc nhanh hơn dụng cụ thường. Khai thác được vật liệu cứng như Dreadstone Outcrop và Ryftstal mà không bị choáng. Có thể đánh 32,5 sát thương vật lý cùng 10 Planar; tăng hiệu quả lên kẻ địch Shadow.",
+    "acquisition": "Chế tạo cạnh Brightsmithy bằng 1 Pure Brilliance và 2 Brightshade Husk.",
+    "sources": [
+      "public/data/wiki/pages/151275.json#plainText"
+    ]
+  },
+  "base_game:pitchfork": {
+    "usage": "Trang bị rồi nhấp chuột phải lên ô được đánh dấu để đào nền. Đặt Turf khác vào ô đất trống để lát lại. Có 200 lượt đào; không dùng thay xẻng để đào cây hoặc gốc.",
+    "acquisition": "Chế tạo bằng 2 Twigs và 2 Flint; học tại Science Machine.",
+    "sources": [
+      "public/data/wiki/pages/167194.json#plainText"
+    ]
+  },
+  "base_game:pocket_scale": {
+    "usage": "Cân cá biển để biết trọng lượng trước khi đem thi Fish Scale-O-Matic hoặc tặng Pearl. Cá lớn, nặng có thể cho thêm phần thịt khi giết.",
+    "acquisition": "Chế tạo bằng 1 Log, 1 Cut Stone và 1 Gold Nugget; học tại Science Machine.",
+    "sources": [
+      "public/data/wiki/pages/31260.json#plainText"
+    ]
+  },
+  "base_game:raincoat": {
+    "usage": "Mặc ở ô thân để ngăn độ ướt tăng do mưa, bảo vệ khỏi sét và điện của Volt Goat mang điện. Có 60 điểm cách nhiệt chống lạnh, bền 10 ngày; Sewing Kit sửa 50%.",
+    "acquisition": "Chế tạo bằng 2 Tentacle Spots, 2 Rope và 2 Bone Shards; học tại Science Machine.",
+    "sources": [
+      "public/data/wiki/pages/219190.json#plainText"
+    ]
+  },
+  "base_game:redlantern": {
+    "usage": "Cầm ở ô tay để chiếu sáng. Vùng sáng nhỏ hơn Lantern thường nhưng thời gian sử dụng dài, khoảng 12 ngày.",
+    "acquisition": "Đổi 3 Lucky Gold Nugget tại đền sự kiện Lunar New Year.",
+    "sources": [
+      "public/data/wiki/pages/39822.json#plainText"
+    ]
+  },
+  "base_game:reviver": {
+    "usage": "Người sống dùng lên hồn ma người chơi để hồi sinh đồng đội; hồn ma không tự ám tim để sống lại được. Người trao nhận 80 tinh thần, người hồi sinh chịu giảm 25% máu tối đa; dùng Booster Shot để gỡ phạt này.",
+    "acquisition": "Chế tạo bằng 3 Cut Grass và 1 Spider Gland, không cần máy. Mất 40 máu khi tạo nên phải có đủ máu trước.",
+    "sources": [
+      "public/data/wiki/pages/149837.json#plainText"
+    ]
+  },
+  "base_game:ruins_bat": {
+    "usage": "Vũ khí 59,5 sát thương, có 200 lượt đánh và tăng 10% tốc độ khi cầm. Mỗi đòn có 20% cơ hội gọi Shadow Tentacle tạm thời hỗ trợ; đứng gần xúc tu làm hao tinh thần.",
+    "acquisition": "Chế tạo cạnh Ancient Pseudoscience Station bằng 3 Living Log, 4 Thulecite và 4 Nightmare Fuel. Cũng có thể tìm trong Large Ornate Chest.",
+    "sources": [
+      "public/data/wiki/pages/221931.json#plainText"
+    ]
+  },
+  "base_game:security_pulse_cage": {
+    "usage": "Đặt dạng rỗng tại Ancient Archive đã cấp điện để hút Security Pulse. Sau khi đầy, dùng Spark Ark trong các công thức trang bị tại Brightsmithy.",
+    "acquisition": "Ban đầu nhận qua nhiệm vụ Grainy Transmission liên quan ba boss đột biến Lunar. Sau khi hạ Celestial Scion, chế tạo dạng rỗng tại Notional Fabricator thay cho phần thưởng cũ.",
+    "sources": [
+      "public/data/wiki/pages/218341.json#plainText"
+    ]
+  },
+  "base_game:seedpouch": {
+    "usage": "Ba lô 14 ô dành cho hạt giống và vật liệu trồng cây như Pine Cone, Birchnut, Marble Bean. Hạt nhặt được ưu tiên vào túi; vật phẩm bên trong hỏng chậm một nửa.",
+    "sources": [
+      "public/data/wiki/pages/211982.json#plainText"
+    ]
+  },
+  "base_game:shadow_battleaxe": {
+    "usage": "Vũ khí kiêm rìu, cơ bản gây 38 sát thương vật lý và 10 Planar, hiệu quả hơn với mục tiêu Lunar. Hạ boss bằng rìu để tăng cấp; sau khi lên cấp phải duy trì độ đói bằng giết sinh vật. Đánh hồi máu nhưng tốn tinh thần. Hỏng có thể sửa bằng Void Repair Kit, mất cấp tích lũy.",
+    "acquisition": "Chế tạo cạnh Shadowcraft Plinth bằng 1 Possessed Shadow Atrium, 5 Pure Horror, 3 Dreadstone và 2 Dark Tatters.",
+    "sources": [
+      "public/data/wiki/pages/224497.json#plainText"
+    ]
+  },
+  "base_game:shadowheart_infused": {
+    "usage": "Nguyên liệu cho trang bị Shadow như Shadow Maul. Nhặt nhanh khi nó vừa rơi; khi bắt đầu chạy phải dùng Trap. Không thay thế Shadow Atrium thường để triệu hồi Ancient Fuelweaver được.",
+    "acquisition": "Cho Ornery Chest ăn Shadow Atrium, hoặc đặt vào trước khi rương thức dậy, rồi giết rương.",
+    "sources": [
+      "public/data/wiki/pages/224607.json#plainText"
+    ]
+  },
+  "base_game:shovel_lunarplant": {
+    "usage": "Kết hợp xẻng và Garden Hoe: đào cây/gốc và làm ụ đất ruộng. Khi đánh gây 17,2 sát thương vật lý cùng 10 Planar; tăng sát thương lên kẻ địch Shadow và khi phối Brightshade Helm.",
+    "acquisition": "Chế tạo cạnh Brightsmithy bằng 1 Pure Brilliance và 2 Brightshade Husk.",
+    "sources": [
+      "public/data/wiki/pages/146782.json#plainText"
+    ]
+  },
+  "base_game:staff_lunarplant": {
+    "usage": "Bắn đạn đuổi mục tiêu gây 10 Planar mỗi lần trúng, nảy giữa các mục tiêu tối đa 5 lần trúng. Brightshade Helm nâng lên 7 lần; mục tiêu Shadow chịu 20 Planar mỗi lần. Đạn không đánh cùng một mục tiêu hai lần liên tiếp.",
+    "acquisition": "Chế tạo cạnh Brightsmithy bằng 3 Pure Brilliance và 6 Brightshade Husk.",
+    "sources": [
+      "public/data/wiki/pages/37465.json#plainText"
+    ]
+  },
+  "base_game:staff_tornado": {
+    "usage": "Phóng lốc về điểm chọn, gây sát thương nhiều lần và phá vật thể trên đường. Có thể dùng dọn công trình hoặc hỗ trợ đánh boss; tránh sử dụng cạnh căn cứ. Sát thương lốc không nhận hệ số sát thương của nhân vật.",
+    "acquisition": "Chế tạo bằng 10 Down Feather, 1 Volt Goat Horn và 1 Gears; học tại Alchemy Engine.",
+    "sources": [
+      "public/data/wiki/pages/221937.json#plainText"
+    ]
+  },
+  "base_game:steelwool": {
+    "usage": "Nguyên liệu chế tạo War Saddle và Brush, phục vụ cưỡi và thuần hóa Beefalo.",
+    "acquisition": "Hạ Ewecus để nhận Steel Wool.",
+    "sources": [
+      "public/data/wiki/pages/57976.json#plainText"
+    ]
+  },
+  "base_game:sword_lunarplant": {
+    "usage": "Vũ khí cận chiến gây 38 sát thương vật lý và 30 Planar, thêm 10% tổng sát thương lên mục tiêu Shadow. Phối Brightshade Helm tăng thêm sát thương vật lý và 5 Planar mỗi đòn.",
+    "acquisition": "Chế tạo cạnh Brightsmithy bằng 4 Pure Brilliance và 3 Brightshade Husk.",
+    "sources": [
+      "public/data/wiki/pages/169760.json#plainText"
+    ]
+  },
+  "base_game:tacklecontainer": {
+    "usage": "Hộp 6 ô chứa phao và mồi câu, gồm cả vật liệu có thể dùng làm mồi. Mở ngay trong túi hoặc khi đặt xuống; đang mở trong túi mà di chuyển thì hộp tự đóng.",
+    "acquisition": "Đổi 3 Empty Bottle với Crabby Hermit khi đạt thân thiết cấp 3.",
+    "sources": [
+      "public/data/wiki/pages/97221.json#plainText"
+    ]
+  },
+  "base_game:tillweed": {
+    "usage": "Dùng làm Tillweed Salve để hồi máu. Có thể phơi khô trên Drying Rack và dùng làm Tillweed Tea tại Pearl’s Tea Shop.",
+    "acquisition": "Thu hoạch từ Tillweed mọc trên đất ruộng.",
+    "sources": [
+      "public/data/wiki/pages/104499.json#plainText"
+    ]
+  },
+  "base_game:tillweedsalve": {
+    "usage": "Bôi để hồi 8 máu ngay và thêm 20 máu trong một phút. Hồi dần nên không thay thế hoàn toàn thuốc hồi tức thời lúc đang nguy hiểm.",
+    "sources": [
+      "public/data/wiki/pages/79509.json#plainText"
+    ]
+  },
+  "base_game:torch": {
+    "usage": "Cầm để chiếu sáng khoảng 75 giây; mưa làm đuốc cháy nhanh hơn. Nhấp chuột phải lên vật dễ cháy để châm lửa, cẩn thận lửa lan. Cất đuốc khi không cần sáng để tiết kiệm thời gian sử dụng.",
+    "acquisition": "Chế tạo ngay từ đầu bằng 2 Cut Grass và 2 Twigs.",
+    "sources": [
+      "public/data/wiki/pages/221933.json#plainText"
+    ]
+  },
+  "base_game:trap": {
+    "usage": "Đặt xuống để bắt thú nhỏ như Rabbit, Frog và Spider. Không bắt buộc có mồi: có thể dẫn mục tiêu chạy qua hoặc đặt trên đường đi. Khi bẫy rung, nhặt để thu con vật rồi đặt lại; kích hoạt sẽ hao độ bền.",
+    "acquisition": "Chế tạo ngay từ đầu bằng 6 Cut Grass và 2 Twigs.",
+    "sources": [
+      "public/data/wiki/pages/221664.json#plainText"
+    ]
+  },
+  "base_game:trap_fumarole": {
+    "usage": "Đặt làm nền than nóng. Khi được nung hoặc vào mùa hè, gây sát thương lửa lên sinh vật đứng trên, kể cả người chơi; có thể nấu thức ăn nhưng làm vật dễ cháy bốc khói. Dùng Watering Can để làm nguội trước khi xử lý.",
+    "acquisition": "Chế tạo tại Alchemy Engine bằng 4 Flint, 2 Heat Gland sống và 4 Nitre; mỗi lần tạo 4 Coals.",
+    "sources": [
+      "public/data/wiki/pages/233108.json#plainText"
+    ]
+  },
+  "base_game:trap_teeth": {
+    "usage": "Đặt bẫy gây 60 sát thương khi sinh vật giẫm lên. Có 10 lượt và phải đặt lại sau mỗi lần kích hoạt. Sát thương bẫy không cộng điểm nghịch ngợm và không kéo thêm đồng loại gần đó vào đánh.",
+    "acquisition": "Chế tạo bằng 1 Log, 1 Rope và 1 Hound’s Tooth; học tại Alchemy Engine.",
+    "sources": [
+      "public/data/wiki/pages/221659.json#plainText"
+    ]
+  },
+  "base_game:treegrowthsolution": {
+    "usage": "Bón cây để tăng ngay một giai đoạn; dùng nhiều lần trên Knobbly Tree lớn để tạo Above-Average Tree Trunk. Cũng dùng bón đất ruộng hoặc vá lỗ rò thuyền, hồi 20 máu thuyền.",
+    "acquisition": "Chế tạo bằng 2 Figs và 1 Glommer’s Goop.",
+    "sources": [
+      "public/data/wiki/pages/133372.json#plainText"
+    ]
+  },
+  "base_game:trident": {
+    "usage": "Đánh cận chiến 51 sát thương trên đất và 76,5 trên biển, có 200 lượt. Phép tạo cột nước tiêu hao 4 lượt, có thể gây sát thương, khai thác và hất cá lên. Không dùng sát thuyền vì có thể tạo lỗ rò.",
+    "acquisition": "Học Blueprint rơi từ Crab King, rồi chế tạo bằng 3 Gnarwail Horn, 4 Kelp Fronds và 2 Twigs.",
+    "sources": [
+      "public/data/wiki/pages/135879.json#plainText"
+    ]
+  },
+  "base_game:vault_orb_refined": {
+    "usage": "Gắn đủ 3 mảnh vào Telelocator Focus để tạo điểm đến. Nhấp chuột phải lên một mảnh khác để dịch chuyển tới Focus: tiêu thụ mảnh đang dùng nhưng không tốn tinh thần. Hoạt động trong cùng mặt đất hoặc cùng hang, không xuyên giữa hai khu vực.",
+    "acquisition": "Tách Portation Orb thành mảnh tại Sanctum Smithy.",
+    "sources": [
+      "public/data/wiki/pages/234194.json#plainText"
+    ]
+  },
+  "base_game:voidcloth_boomerang": {
+    "usage": "Vũ khí ném tự quay lại, không cần bắt; cầm tăng 10% tốc độ. Sát thương tăng theo khoảng cách lúc ném, hiệu quả hơn với mục tiêu Lunar. Hỏng thì không trang bị được, dùng Void Repair Kit sửa lại.",
+    "acquisition": "Chế tạo cạnh Shadowcraft Plinth bằng 4 Pure Horror và 2 Dark Tatters.",
+    "sources": [
+      "public/data/wiki/pages/224498.json#plainText"
+    ]
+  },
+  "base_game:voidcloth_scythe": {
+    "usage": "Vung để thu hoạch nhiều cây trong phạm vi, trừ một số loại nhỏ như hoa/nấm. Đánh gây 38 sát thương vật lý cùng 18 Planar, thêm 10% lên mục tiêu Lunar. Phối Void Cowl và đánh liên tục tăng sát thương; ngừng lâu sẽ mất tích lũy.",
+    "acquisition": "Chế tạo cạnh Shadowcraft Plinth bằng 3 Pure Horror và 1 Dark Tatters.",
+    "sources": [
+      "public/data/wiki/pages/107193.json#plainText"
+    ]
+  },
+  "base_game:voidcloth_umbrella": {
+    "usage": "Cầm để chống ướt hoàn toàn, giảm nóng và bảo vệ khỏi mưa axit nhưng hao 3,3 tinh thần/phút. Có thể đặt xuống rồi kích hoạt mái che cho khu vực xung quanh. Mưa axit giúp ô tự phục hồi độ bền khi trang bị.",
+    "acquisition": "Chế tạo cạnh Shadowcraft Plinth bằng 5 Pure Horror và 1 Dark Tatters.",
+    "sources": [
+      "public/data/wiki/pages/20529.json#plainText"
+    ]
+  },
+  "base_game:wagdrone_parts": {
+    "usage": "Sau khi hạ Celestial Scion, dùng sửa Terramite đã bị đánh bại để biến thành thiết bị thân thiện có thể nhặt. Cũng sửa Terramite hỏng về 100% độ bền.",
+    "acquisition": "Dùng búa đập Terramite hoặc Warbler để lấy.",
+    "sources": [
+      "public/data/wiki/pages/227936.json#plainText"
+    ]
+  },
+  "base_game:wagpunk_floor_kit": {
+    "usage": "Cầm để thấy vị trí có thể xây trên biển sát Hermit Island. Phủ đủ 76 vị trí để tạo Undisclosed Construct và mở công thức Phasmo-Encapsulator.",
+    "acquisition": "Mở sau khi chuyển Pearl khỏi Hermit Island bằng Map of Totally Uninhabited Island; chế tạo tại Notional Fabricator. Tổng 76 bộ cần 19 Cut Stone và 19 Scrap.",
+    "sources": [
+      "public/data/wiki/pages/227743.json#plainText"
+    ]
+  },
+  "base_game:waterplant_bomb": {
+    "usage": "Ném vào vị trí chọn để gây 59,5 sát thương vùng. Có thể làm choáng sinh vật nhỏ còn sống sau đòn. Khi bật PvP, bom có thể tạo lỗ rò nhỏ trên thuyền.",
+    "acquisition": "Nhận khi hạ Sea Weed: dạng hồng/trắng cho 2–3, dạng vàng cho 3–5 Seedshell.",
+    "sources": [
+      "public/data/wiki/pages/107752.json#plainText"
+    ]
+  },
+  "base_game:waterplant_planter": {
+    "usage": "Đặt lên Sea Stack để trồng lại Sea Sprout. Cần chọn cột đá ngoài biển phù hợp, không trồng như cây trên đất liền.",
+    "acquisition": "Mỗi Sea Weed bị hạ rơi một Sea Sprout Starter.",
+    "sources": [
+      "public/data/wiki/pages/7290.json#plainText"
+    ]
+  },
+  "wiki:218868": {
+    "usage": "Đội để hấp thụ 80% sát thương từ Bees, Killer Bees, Grumble Bees và Bee Queen, có 1.050 độ bền. Mũ chuyên chống ong, không bảo vệ tương tự trước các loại quái vật khác.",
+    "acquisition": "Chế tạo bằng 8 Silk và 1 Rope; học tại Alchemy Engine.",
+    "sources": [
+      "public/data/wiki/pages/218868.json#plainText"
+    ]
+  },
+  "wiki:218870": {
+    "usage": "Mũ giáp hấp thụ 80% sát thương vật lý, có 450 độ bền. Để trống ô thân cho ba lô khi chiến đấu; cũng có thể cho Pig hoặc Bunnyman đội.",
+    "acquisition": "Chế tạo bằng 1 Pig Skin và 1 Rope tại Alchemy Engine; đôi khi tìm được trong Ornate Chest ở Ruins.",
+    "sources": [
+      "public/data/wiki/pages/218870.json#plainText"
+    ]
+  },
+  "wiki:219193": {
+    "usage": "Đeo ô thân để tự nhặt đồ trên đất vào túi, có 225 lượt nhặt và hồi 2 tinh thần/phút. Thêm Nightmare Fuel hồi khoảng 22% độ bền; chú ý cất đi khi không muốn tự nhặt.",
+    "acquisition": "Chế tạo cạnh Ancient Pseudoscience Station bằng 1 Orange Gem, 2 Thulecite và 3 Nightmare Fuel.",
+    "sources": [
+      "public/data/wiki/pages/219193.json#plainText"
+    ]
+  },
+  "wiki:220439": {
+    "usage": "Đội để có 240 điểm cách nhiệt chống lạnh và khiến Beefalo trung lập với bạn trong mùa động dục. Sewing Kit sửa 50% độ bền.",
+    "acquisition": "Chế tạo bằng 8 Beefalo Wool và 1 Beefalo Horn; học tại Science Machine.",
+    "sources": [
+      "public/data/wiki/pages/220439.json#plainText"
+    ]
+  },
+  "wiki:220443": {
+    "usage": "Đội rồi nhấp chuột phải lên mũ để ẩn thành bụi cây. Di chuyển sẽ hủy ngụy trang; không thoát được kẻ đã khóa mục tiêu vào bạn và không bảo vệ khỏi Charlie trong bóng tối.",
+    "acquisition": "Chế tạo bằng 1 Straw Hat, 1 Rope và 1 Berry Bush; học tại Alchemy Engine.",
+    "sources": [
+      "public/data/wiki/pages/220443.json#plainText"
+    ]
+  },
+  "wiki:220492": {
+    "usage": "Đội ở ô đầu để chống mưa hoàn toàn, chống sét và có 240 điểm cách nhiệt chống nóng. Giữ trống ô tay và thân; dùng Sewing Kit sửa khoảng 55,5% độ bền.",
+    "acquisition": "Chế tạo bằng 1 Deerclops Eyeball, 15 Twigs và 4 Bone Shards; học tại Alchemy Engine.",
+    "sources": [
+      "public/data/wiki/pages/220492.json#plainText"
+    ]
+  },
+  "wiki:220615": {
+    "usage": "Đội để nhìn toàn màn hình trong tối và tránh Charlie, nhưng không chiếu sáng cho đồng đội. Dùng được khoảng 1,5 ngày; nạp Glow Berry hồi gần 4 phút hoặc Lesser Glow Berry hồi 45 giây.",
+    "acquisition": "Chế tạo bằng 2 Moleworm, 2 Electrical Doodad và 1 Glow Berry; học tại Alchemy Engine.",
+    "sources": [
+      "public/data/wiki/pages/220615.json#plainText"
+    ]
+  },
+  "wiki:220637": {
+    "usage": "Mũ giảm 70% độ ướt do mưa và bảo vệ khỏi sét/điện của Volt Goat mang điện. Có thể kết hợp trang bị chống mưa khác; Sewing Kit sửa 50% độ bền.",
+    "acquisition": "Chế tạo bằng 2 Moleworm, 1 Straw Hat và 1 Bone Shard; học tại Alchemy Engine.",
+    "sources": [
+      "public/data/wiki/pages/220637.json#plainText"
+    ]
+  },
+  "wiki:220704": {
+    "usage": "Quạt để dập lửa gần đó, làm khô và hạ nhiệt cho người chơi xung quanh. Trong Together nhiệt độ không bị hạ dưới 2,5°, nên hữu ích để ứng phó cháy và nóng mùa hè.",
+    "acquisition": "Chế tạo bằng 5 Down Feather, 2 Cut Reeds và 2 Rope; học tại Alchemy Engine.",
+    "sources": [
+      "public/data/wiki/pages/220704.json#plainText"
+    ]
+  },
+  "wiki:221912": {
+    "usage": "Bắn để tích lũy đóng băng mục tiêu; sinh vật lớn cần nhiều phát hơn. Có 20 lượt, mỗi phát mất 1 tinh thần. Đóng băng tạo thời gian thoát hoặc xử lý mục tiêu chứ không trực tiếp gây sát thương.",
+    "acquisition": "Chế tạo bằng 1 Spear và 1 Blue Gem; học tại Prestihatitator. Cũng có thể nhận từ Ornate Chest hoặc Ancient Pseudoscience Station.",
+    "sources": [
+      "public/data/wiki/pages/221912.json#plainText"
+    ]
+  },
+  "wiki:36600": {
+    "usage": "Kết hợp cuốc và rìu, giảm khoảng 20% số nhát cần thiết cho công việc đủ lớn. Tiết kiệm ô túi; đào đá hao độ bền nhanh hơn chặt cây.",
+    "acquisition": "Chế tạo cạnh Ancient Pseudoscience Station bằng 1 Luxury Axe, 1 Opulent Pickaxe và 2 Thulecite; cũng có thể nhận trong rương ở Ruins.",
+    "sources": [
+      "public/data/wiki/pages/36600.json#plainText"
+    ]
+  },
+  "wiki:77497": {
+    "usage": "Đội để tự hồi 3,9 độ no mỗi 5 giây, tổng 187,5 trong 4 phút. Chỉ hỏng khi trang bị, có thể hỗ trợ ngủ lâu hơn. Wigfrid không dùng được vì chế độ ăn.",
+    "acquisition": "Nấu trong Crock Pot bằng 1 Naked Nostrils, 1 Kelp Fronds sống, 1 nguyên liệu sữa và một nguyên liệu độn hợp lệ.",
+    "sources": [
+      "public/data/wiki/pages/77497.json#plainText"
+    ]
+  },
+  "base_game:livinglog": {
+    "usage": "Nguyên liệu cho Shadow Manipulator và nhiều vật phẩm phép thuật như Dark Sword. Có thể dùng sửa tường gỗ, hiệu quả gấp ba Log thường.",
+    "acquisition": "Nhận từ Treeguard, Poison Birchnut Tree hoặc Mush Gnome; cũng lấy khi chặt Totally Normal Tree và đào gốc. Không bắt buộc dùng nhân vật độc quyền để kiếm.",
+    "sources": [
+      "public/data/wiki/pages/219708.json#plainText"
+    ]
+  },
+  "base_game:armor_yoth_knight": {
+    "usage": "Giáp thân của Gilded Knight, hấp thụ 90% sát thương khi được trang bị. Dùng để bảo vệ nhân vật trong giao tranh; cần kết hợp với trang bị ở ô đầu tùy tình huống.",
+    "acquisition": "Nhận khi đánh bại Gilded Knight cuối cùng trong thử thách của sự kiện Year of the Clockwork Knight.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/Gilded_Knight"
+    ]
+  },
+  "base_game:yoth_lance": {
+    "usage": "Vũ khí gây 51 sát thương khi đánh thường, có 200 lượt sử dụng. Nhấp chuột phải để lao theo một hướng cố định, gây 68 sát thương; không thể đổi hướng trong lúc lao. Va vào Gilded Knight hoặc người chơi khác đang lao sẽ làm cú lao dừng lại và khiến nhân vật choáng.",
+    "acquisition": "Gilded Knight có 25% cơ hội rơi Joust-a-Dash trong sự kiện Year of the Clockwork Knight.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/Joust-a-Dash"
+    ]
+  },
+  "base_game:fireflies": {
+    "usage": "Dùng để chế tạo Miner Hat, Pumpkin Lantern và nạp lại 39% nhiên liệu cho Miner Hat hoặc Lantern. Có thể thả xuống đất để tạo một điểm sáng; ánh sáng ẩn đi khi nhân vật đến gần nên không nên dùng thay nguồn sáng mang theo.",
+    "acquisition": "Dùng Bug Net bắt đom đóm xuất hiện vào ban đêm trên mặt đất hoặc quanh Mushtree trong hang động.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/Fireflies"
+    ]
+  },
+  "base_game:walrushat": {
+    "usage": "Mũ giữ ấm với 120 điểm cách nhiệt mùa đông và hồi 6,7 tinh thần mỗi phút khi đội. Có độ bền 25 ngày sử dụng; mỗi lần dùng Sewing Kit phục hồi 20% độ bền. Phù hợp khi cần hồi tinh thần trong lúc khám phá.",
+    "acquisition": "MacTusk có 25% cơ hội rơi mũ khi bị hạ gục. Tìm trại Walrus vào mùa đông và đánh MacTusk.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/Tam_o%27_Shanter/DST"
+    ]
+  },
+  "base_game:slurper_pelt": {
+    "usage": "Nguyên liệu chế tạo Belt of Hunger để giảm tốc độ tiêu hao độ no. Có thể cho Pig ăn để kết bạn hoặc đổi với Pig King lấy 1 Gold Nugget. Đây không phải thức ăn thông thường cho người chơi.",
+    "acquisition": "Slurper trong khu vực Ruins có 50% cơ hội rơi bộ da khi bị hạ gục.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/Slurper_Pelt"
+    ]
+  },
+  "wiki:119289": {
+    "usage": "Món ăn hồi 20 máu, 37,5 độ no và 10 tinh thần khi còn tươi; bảo quản được 10 ngày. Dùng để tận dụng cá và Kelp Fronds thành khẩu phần hồi phục.",
+    "acquisition": "Nấu trong Crock Pot với đúng 2 Kelp Fronds, nguyên liệu đủ 1 giá trị cá và một nguyên liệu độn phù hợp. Tránh thêm nguyên liệu làm đổi sang công thức có độ ưu tiên cao hơn.",
+    "sources": [
+      "https://dontstarve.wiki.gg/vi/wiki/California_Roll"
+    ]
+  },
+  "wiki:18574": {
+    "usage": "Món ăn hồi 20 máu, 25 độ no và 5 tinh thần khi còn tươi, đồng thời giúp hạ thân nhiệt trong thời gian ngắn. Hỏng sau 10 ngày.",
+    "acquisition": "Nấu trong Crock Pot với tổng 2 giá trị cá và 1 Ice; không dùng trứng hoặc nguyên liệu không ăn được làm chất độn. Cá ao chỉ có 0,5 giá trị cá nên cần phối hợp cá lớn hoặc Raw Fish. Thêm Wobster sẽ chuyển sang Lobster Bisque.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/Ceviche/DST"
+    ]
+  },
+  "wiki:42100": {
+    "usage": "Món ăn hồi 40 máu, 37,5 độ no và 20 tinh thần khi còn tươi; hỏng sau 10 ngày. Phù hợp khi cần hồi cả máu và tinh thần từ nguồn cá trong hang.",
+    "acquisition": "Nấu trong Crock Pot với hơn 2 giá trị cá. Dùng Eel để tăng giá trị cá nhưng giữ tổng thịt dưới 2,5, tránh nấu thành Surf ’n’ Turf. Không thêm Ice, Corn hoặc Twigs vì chúng có thể làm đổi món.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/Seafood_Gumbo/DST"
+    ]
+  },
+  "wiki:34279": {
+    "usage": "Quả lựu ăn sống hồi 3 máu, 9,375 độ no và không đổi tinh thần; có 1 giá trị trái cây trong Crock Pot. Nướng thành Sliced Pomegranate để hồi 20 máu và 12,5 độ no, nhưng thời gian bảo quản giảm từ 6 xuống 3 ngày.",
+    "acquisition": "Trồng Windblown Seeds/Pomegranate Seeds trên Farm Soil rồi thu hoạch cây trưởng thành. Gieo Seeds thường cũng có thể mọc cây lựu. Cây thích mùa xuân và mùa hè; chăm sóc tốt giúp nhận thêm hạt hoặc quả khổng lồ.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/Pomegranate",
+      "https://dontstarve.wiki.gg/wiki/Pomegranate_Branch"
+    ]
+  },
+  "wiki:95716": {
+    "usage": "Dùng bón đất để bổ sung 16 điểm dinh dưỡng Growth Formula. Có thể dùng Hammer đập thành 1 Rot và 1 Bone Shards. Không nên ăn: làm mất 1 máu và 10 độ no.",
+    "acquisition": "Nhận khi Raw Fish, Eel hoặc Wobster bị hỏng. Fish Morsel hỏng tạo Spoiled Fish Morsel, là vật phẩm khác.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/Spoiled_Fish/DST"
+    ]
+  },
+  "base_game:messagebottle": {
+    "usage": "Đọc để tìm vị trí Crabby Hermit hoặc nhận chỉ dẫn tới Sunken Chest. Sau khi đã gặp bà, mỗi chai có 60% cơ hội chỉ rương mới; sau khi đánh Crab King và trả Cracked Pearl, cơ hội là 100% nếu bản đồ chưa có 10 dấu rương. Đọc xong nhận Empty Bottle.",
+    "acquisition": "Vớt các chai nổi tự nhiên trên đại dương, đặc biệt vùng ven bờ. Chai mới có thể xuất hiện trong quá trình khám phá biển.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/Message_in_a_Bottle/DST"
+    ]
+  },
+  "base_game:beargervest": {
+    "usage": "Áo giữ ấm với 240 điểm cách nhiệt mùa đông, hồi khoảng 4,4 tinh thần mỗi phút và giảm 25% tốc độ mất độ no khi mặc. Dùng được 7 ngày; Sewing Kit sửa khoảng 71% độ bền mỗi lần.",
+    "acquisition": "Chế tạo từ 1 Thick Fur + 1 Dapper Vest + 2 Rope; cần Alchemy Engine để tạo mẫu lần đầu.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/Hibearnation_Vest/DST"
+    ]
+  },
+  "base_game:dragonfruit": {
+    "usage": "Ăn sống hồi 3 máu và 9,375 độ no. Nên nấu 1 Dragon Fruit với 3 Twigs thành Dragonpie để hồi phục tốt hơn; có thể cho chim trong Birdcage ăn để nhận 1 Bulbous Seed và nhân giống.",
+    "acquisition": "Trồng Bulbous Seeds/Dragon Fruit Seeds trên Farm Soil rồi thu hoạch. Seeds thường cũng có cơ hội mọc cây thanh long. Cây phát triển thuận lợi trong mùa xuân và mùa hè.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/Dragon_Fruit/DST",
+      "https://dontstarve.wiki.gg/wiki/Dragon_Fruit_Vine"
+    ]
+  },
+  "base_game:lightninggoathorn": {
+    "usage": "Nguyên liệu chế tạo Morning Star và Weather Pain. Nên giữ sừng để làm các vũ khí chuyên dụng thay vì coi đây là thức ăn thông thường.",
+    "acquisition": "Volt Goat trong sa mạc Oasis có 25% cơ hội rơi sừng khi bị hạ gục. Giữ lại ít nhất một con nếu muốn đàn tiếp tục sinh sản.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/Volt_Goat/DST"
+    ]
+  },
+  "base_game:bearger_fur": {
+    "usage": "Nguyên liệu chế tạo Hibearnation Vest, Insulated Pack và Polar Bearger Bin. Thu thập để làm trang bị giữ ấm hoặc bảo quản thực phẩm.",
+    "acquisition": "Bearger rơi Thick Fur khi bị hạ gục. Có thể chế tạo 3 Thick Fur từ 90 Fur Tuft trong bộ lọc Refined Materials.",
+    "sources": [
+      "public/data/items.json#base_game:bearger_fur/recipe",
+      "public/data/catalog.json#base_game:bearger_fur/acquisition",
+      "public/data/wiki/pages/221590.json#summaryViHtml",
+      "https://dontstarve.wiki.gg/wiki/Thick_Fur/DST"
+    ]
+  },
+  "base_game:coontail": {
+    "usage": "Nguyên liệu chế tạo Cat Cap, Tail o’ Three Cats và Table Lamp. Giữ lại để làm trang phục, vũ khí hoặc đồ trang trí.",
+    "acquisition": "Nó rơi ra từ Catcoon và có thể dùng để chế tạo Mũ Mèo.",
+    "sources": [
+      "public/data/wiki/pages/22014.json#summaryViHtml"
+    ]
+  },
+  "wiki:94391": {
+    "usage": "Bắn đạn lửa để đốt mục tiêu và vật dễ cháy từ xa. Có 20 lần dùng, mỗi lần mất 1 tinh thần. Lửa có thể lan sang căn cứ và làm cháy chiến lợi phẩm; chờ mục tiêu tắt lửa trước khi bắn lại nếu muốn tận dụng sát thương đốt.",
+    "acquisition": "Chế tạo từ 2 Nightmare Fuel + 1 Spear + 1 Red Gem; cần Shadow Manipulator để tạo mẫu. Cũng có thể nhặt trong một số set piece có Fire Hound canh giữ.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/Fire_Staff/DST"
+    ]
+  },
+  "wiki:221571": {
+    "usage": "Dịch chuyển bản thân hoặc sinh vật tới vị trí ngẫu nhiên trên mặt đất. Nếu có Telelocator Focus nạp đủ 3 Purple Gem, mục tiêu được chuyển tới đó và tiêu hao ngọc. Có 5 lần dùng, tốn 50 tinh thần mỗi lần. Trong hang chỉ gây đá rơi, không dịch chuyển; sét khi dùng có thể gây cháy.",
+    "acquisition": "Chế tạo từ 4 Nightmare Fuel + 2 Living Log + 2 Purple Gem; cần Shadow Manipulator để tạo mẫu.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/Telelocator_Staff/DST"
+    ]
+  },
+  "wiki:219288": {
+    "usage": "Tháo rời vật phẩm hoặc công trình phù hợp để hoàn lại nguyên liệu chế tạo. Phần lớn ngọc bị mất trong quá trình này. Có 5 lần dùng và tiêu hao 20 tinh thần mỗi lần; hữu ích để thu lại nguyên liệu quý từ trang bị sắp hỏng.",
+    "acquisition": "Chế tạo từ 4 Nightmare Fuel + 2 Living Log + 2 Green Gem tại Ancient Pseudoscience Station phù hợp. Công thức không được ghi nhớ để chế tạo từ xa.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/Deconstruction_Staff"
+    ]
+  },
+  "base_game:shadowheart": {
+    "usage": "Đặt vào Odd Skeleton để tạo Reanimated Skeleton; đây là một thành phần của quy trình triệu hồi Ancient Fuelweaver tại Atrium. Nếu bị Ornery Chest nuốt, nó biến thành Possessed Shadow Atrium. Khi hạ Fuelweaver bình thường, trái tim đã dùng sẽ bị tiêu hao.",
+    "acquisition": "Đánh bại một Shadow Piece cấp 3 để nhận Shadow Atrium.",
+    "sources": [
+      "https://dontstarve.wiki.gg/wiki/Shadow_Atrium"
+    ]
+  },
+  "base_game:smallmeat": {
+    "acquisition": "Có thể rơi từ Buzzard (33%). Có thể rơi từ Dust Moth (100%). Có thể rơi từ Moleworm (100%). Có thể rơi từ otter (100%). Có thể rơi từ Pengull (10%). Có thể rơi từ Powder Monkey (100%). Có thể rơi từ smallbird (100%).",
+    "sources": [
+      "public/data/catalog.json#base_game:smallmeat/acquisition"
+    ]
+  },
+  "wiki:220151": {
+    "usage": "Dùng để ngủ lúc chạng vạng hoặc ban đêm, đổi độ no lấy hồi phục. Straw Roll dùng 1 lần; Fur Roll dùng 3 lần và hồi cả máu lẫn tinh thần. Không thể ngủ khi có nguy hiểm gần đó; bị tấn công sẽ tỉnh dậy. Chuẩn bị thức ăn trước khi ngủ.",
+    "acquisition": "Straw Roll: 6 Cut Grass + 1 Rope, tạo mẫu tại Science Machine. Fur Roll: 1 Straw Roll + 2 Bunny Puff, tạo mẫu tại Alchemy Engine.",
+    "sources": [
+      "public/data/wiki/pages/220151.json#plainText"
+    ]
+  },
+  "wiki:222343": {
+    "usage": "Gắn lên Mast hoặc Winged Sail để chiếu sáng khi đi biển. Không thể gắn cùng Lightning Conductor trên một cột buồm. Đèn sáng tối đa 6 phút mỗi lần nạp đầy; Wavey Jones có thể dập tắt ngay cả khi đèn còn đầy.",
+    "acquisition": "Chế tạo bằng 3 Lucky Gold Nugget trong sự kiện Year of the Dragonfly.",
+    "sources": [
+      "public/data/wiki/pages/222343.json#plainText"
+    ]
+  },
+  "wiki:12148": {
+    "usage": "Dùng lát nền bằng thảm tím đậm để trang trí căn cứ. Đặt trên ô nền đã dọn bằng Pitchfork; có thể đào lên để di chuyển hoặc thay loại nền khác.",
+    "acquisition": "Chế tạo từ 1 Boards + 1 Beefalo Wool, cần Alchemy Engine để tạo mẫu. Cũng có thể lấy từ nền quanh Stage hoặc set piece Briar Wolf.",
+    "sources": [
+      "public/data/wiki/pages/12148.json#plainText"
+    ]
+  },
+  "wiki:229437": {
+    "usage": "Dùng lát nền theo phong cách Sanctum. Không thể trồng cây trên loại nền này. Nền có rêu sẵn trong Sanctum không thể đào lên để mang về.",
+    "acquisition": "Giải Distilled Knowledge lấy từ Fountain of Knowledge màu xanh lá trong Sanctum để nhận Blueprint. Sau khi học, chế tạo bằng 1 Moon Rock + 1 Thulecite Fragments.",
+    "sources": [
+      "public/data/wiki/pages/229437.json#plainText"
+    ]
+  },
+  "base_game:lavae_tooth": {
+    "usage": "Mang theo để Extra-Adorable Lavae nở từ cùng quả trứng đi theo. Đặt răng xuống đất hoặc vào một rương cố định để giữ Lavae quanh vị trí đó. Nếu Lavae chết, chiếc răng biến thành Ashes.",
+    "acquisition": "Ấp cho Lavae Egg nở; nhận Lavae Tooth cùng với Extra-Adorable Lavae.",
+    "sources": [
+      "public/data/wiki/pages/171147.json#plainText"
+    ]
+  },
+  "base_game:bootleg": {
+    "usage": "Trang bị và ném từ Boat hoặc Grass Raft, rồi chọn một vị trí biển đã mở trên bản đồ để tạo cổng xoáy hai chiều. Cổng tồn tại 4 phút, cho thuyền đi qua và làm người trên thuyền tăng 20 độ ướt. Đứng tránh bờ hoặc thuyền khác ở hướng ném để vật phẩm rơi xuống nước.",
+    "acquisition": "Hạ Frostjaw để nhận Bootleg Getaway.",
+    "sources": [
+      "public/data/wiki/pages/219818.json#plainText"
+    ]
+  },
+  "base_game:rock_avocado_fruit": {
+    "usage": "Quả còn vỏ đá không ăn được. Dùng Pickaxe đập: 65% nhận Ripe Stone Fruit, 34% nhận Rocks, 1% nhận Sprouting Stone Fruit để trồng thêm bụi. Phần ruột dùng làm rau trong Crock Pot hoặc nấu trên lửa.",
+    "acquisition": "Hái Stone Fruit Bush để nhận 3 quả mỗi lượt trước khi quả nứt trên cây. Cũng có thể rơi trong động đất tại Lunar Grotto.",
+    "sources": [
+      "public/data/wiki/pages/74303.json#plainText"
+    ]
+  },
+  "base_game:horrorfuel": {
+    "usage": "Nguyên liệu chế tạo Dreadstone Armor, Dreadstone Helm, Shadowcraft Plinth và các công thức Shadowcraft. Có thể nạp cho trang bị dùng Nightmare Fuel với hiệu quả gấp đôi; mỗi Pure Horror phục hồi 50% Bone Armor.",
+    "acquisition": "Hạ Nightmare Werepig để nhận 4–5 Pure Horror. Sau khi mở Shadow Rifts, có thể lấy từ Fused Shadeling (3–4), Ink Blight và Resting Horror (1).",
+    "sources": [
+      "public/data/wiki/pages/174585.json#plainText"
+    ]
+  }
+}

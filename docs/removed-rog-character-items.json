@@ -1,0 +1,1055 @@
+{
+  "date": "2026-10-07",
+  "removed": [
+    {
+      "id": "base_game:abigail_flower",
+      "name": "Abigail's Flower",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:armor_bramble",
+      "name": "Bramble Husk",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:balloon",
+      "name": "Balloon",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:balloonparty",
+      "name": "Party Balloon",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:balloons_empty",
+      "name": "Pile o' Balloons",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:balloonspeed",
+      "name": "Speedy Balloon",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:balloonvest",
+      "name": "Inflatable Vest",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:battlesong_container",
+      "name": "Battle Call Canister",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:bernie_inactive",
+      "name": "Bernie",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:bookstation",
+      "name": "Bookcase",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:compostwrap",
+      "name": "compostwrap",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:diviningrod",
+      "name": "Divining Rod",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "base_game:dreadstone",
+      "name": "dreadstone",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:elixir_container",
+      "name": "Picnic Casket",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:horrorfuel",
+      "name": "Pure Horror",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:leif_idol",
+      "name": "leif_idol",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:lighter",
+      "name": "Willow's Lighter",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:livinglog",
+      "name": "Living Log",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:magician_chest",
+      "name": "Magician's Chest",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:mermwatchtower",
+      "name": "Merm Flort-ifications",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:mighty_gym",
+      "name": "mighty_gym",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:monkeytail",
+      "name": "Monkeytails",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:moonglass_charged",
+      "name": "Infused Moon Shard",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:moonrocknugget",
+      "name": "Moon Rock",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:mosquitomermsalve",
+      "name": "Blood Shot",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:offering_pot",
+      "name": "Communal Kelp Dish",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:opalpreciousgem",
+      "name": "Iridescent Gem",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:pocketwatch_dismantler",
+      "name": "Clockmaker's Tools",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:pocketwatch_parts",
+      "name": "pocketwatch_parts",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:pocketwatch_portal",
+      "name": "Rift Watch",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:pocketwatch_recall",
+      "name": "Backtrek Watch",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:pocketwatch_weapon",
+      "name": "Alarming Clock",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:portableblender",
+      "name": "Portable Grinding Mill",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:portablespicer",
+      "name": "Portable Seasoning Station",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:portabletent",
+      "name": "Camper's Tent",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:purebrilliance",
+      "name": "Pure Brilliance",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:sewing_tape",
+      "name": "Trusty Tape",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:sisturn",
+      "name": "Sisturn",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:slingshot",
+      "name": "Trusty Slingshot",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:slingshotammo_container",
+      "name": "Ammo Pouch",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:slingshotmodkit",
+      "name": "Slingshot Field Kit",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:spear_wathgrithr",
+      "name": "Battle Spear",
+      "reasons": [
+        "Reign of Giants",
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:spicepack",
+      "name": "Chef Pouch",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:spider_healer_item",
+      "name": "Healing Glop",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:spider_repellent",
+      "name": "Shoo Box",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:spider_whistle",
+      "name": "Webby Whistle",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:spiderden_bedazzler",
+      "name": "Den Decorating Set",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:spidereggsack",
+      "name": "Spider Eggs",
+      "reasons": [
+        "Reign of Giants",
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:trap_bramble",
+      "name": "Bramble Trap",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:walking_stick",
+      "name": "Wooden Walking Stick",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:wathgrithr_shield",
+      "name": "Battle Rönd",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:waxwelljournal",
+      "name": "waxwelljournal",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:wendy_resurrectiongrave",
+      "name": "Perennial Altar",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:winona_battery_high",
+      "name": "Winona's G.E.M.erator",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:winona_battery_low",
+      "name": "Winona's Generator",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:winona_catapult",
+      "name": "winona_catapult",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:winona_spotlight",
+      "name": "Winona's Spotlight",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:wolfgang_whistle",
+      "name": "Coaching Whistle",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:wx78_backupbody",
+      "name": "Backup Chassis",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:wx78_drone_delivery",
+      "name": "Portable Storage Unit",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:wx78_drone_scout",
+      "name": "wx78_drone_scout",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:wx78_gestalttrapper",
+      "name": "Spectral Transfer Module",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:wx78_inventorycontainer",
+      "name": "Collapsed Storage Unit",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:wx78_moduleremover",
+      "name": "Circuit Extractor",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:wx78_shadowdrone_debuffer",
+      "name": "Exploiterator",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "base_game:wx78_shadowdrone_harvester",
+      "name": "Auto-Grabber",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "wiki:105588",
+      "name": "Kitschy Idols",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "wiki:1161",
+      "name": "Clever Disguise",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "wiki:130062",
+      "name": "Juicy Berry Bush",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "wiki:132751",
+      "name": "Craftsmerm House",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "wiki:138227",
+      "name": "Battle Helm",
+      "reasons": [
+        "Reign of Giants",
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "wiki:154240",
+      "name": "Dumbbells",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "wiki:162206",
+      "name": "Slingshot Ammo",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "wiki:163699",
+      "name": "Switcherdoodle",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "wiki:187709",
+      "name": "Ghostly Elixir",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "wiki:187982",
+      "name": "Ageless Watch",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "wiki:188988",
+      "name": "Books",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "wiki:194111",
+      "name": "Second Chance Watch",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "wiki:206457",
+      "name": "Hardwood Hat",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "wiki:20838",
+      "name": "Battle Calls",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "wiki:218867",
+      "name": "Battle Helm/DST",
+      "reasons": [
+        "Reign of Giants",
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "wiki:218911",
+      "name": "Berry Bush/DST",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "wiki:218917",
+      "name": "Books/DST",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "wiki:218918",
+      "name": "Codex Umbra/DST",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "wiki:219827",
+      "name": "Commander's Helm",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "wiki:219989",
+      "name": "Elding Spear",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "wiki:223553",
+      "name": "Brilliant Mudslinger",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "wiki:223554",
+      "name": "Dreaded Mudslinger",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "wiki:223556",
+      "name": "Fertilizzzer",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "wiki:223591",
+      "name": "Armermry",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "wiki:223592",
+      "name": "Shoddy Tool Shed",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "wiki:225672",
+      "name": "Wraith's Wreath",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "wiki:25584",
+      "name": "Magician's Top Hat",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "wiki:41296",
+      "name": "Backstep Watch",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "wiki:61698",
+      "name": "Pinetree Pioneer Hat",
+      "reasons": [
+        "Character requirement"
+      ]
+    },
+    {
+      "id": "wiki:67682",
+      "name": "Bernie",
+      "reasons": [
+        "Character requirement"
+      ]
+    }
+  ],
+  "restoredForTogether": [
+    {
+      "id": "base_game:acorn",
+      "name": "acorn",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "base_game:armor_dragonfly",
+      "name": "armor_dragonfly",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "base_game:bearger_fur",
+      "name": "Thick Fur",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "base_game:beargervest",
+      "name": "Hibearnation Vest",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "base_game:cactus",
+      "name": "Cactus",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "base_game:cactus_flower",
+      "name": "Cactus Flower",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "base_game:catcoonden",
+      "name": "Hollow Stump",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "base_game:coldfire",
+      "name": "Endothermic Fire",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "base_game:coontail",
+      "name": "Cat Tail",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "base_game:deciduous_root",
+      "name": "Birchnut Tree",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "base_game:dragon_scales",
+      "name": "Scales",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "base_game:dragonfly_chest",
+      "name": "dragonfly_chest",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "base_game:fertilizer",
+      "name": "Bucket-o-poop",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "base_game:firesuppressor",
+      "name": "Ice Flingomatic",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "base_game:glommerfuel",
+      "name": "Glommer's Goop",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "base_game:glommerwings",
+      "name": "Glommer's Wings",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "base_game:goatmilk",
+      "name": "Electric Milk",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "base_game:goose_feather",
+      "name": "Down Feather",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "base_game:hawaiianshirt",
+      "name": "Floral Shirt",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "base_game:ice",
+      "name": "Ice",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "base_game:icepack",
+      "name": "Insulated Pack",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "base_game:lightninggoathorn",
+      "name": "Volt Goat Horn",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "base_game:molehill",
+      "name": "Burrow",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "base_game:mooseegg",
+      "name": "mooseegg",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "base_game:nightstick",
+      "name": "Morning Star",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "base_game:raincoat",
+      "name": "Rain Coat",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "base_game:reflectivevest",
+      "name": "Summer Frest",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "base_game:rock_ice",
+      "name": "Mini Glacier",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "base_game:staff_tornado",
+      "name": "Weather Pain",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "base_game:statueglommer",
+      "name": "Glommer's Statue",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "base_game:statuemaxwell",
+      "name": "Maxwell Statue",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "base_game:tumbleweed",
+      "name": "Tumbleweed",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "wiki:131558",
+      "name": "Cactus Flesh",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "wiki:133283",
+      "name": "Cat Cap",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "wiki:143987",
+      "name": "Flower Salad",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "wiki:151499",
+      "name": "Sandy Turf",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "wiki:161688",
+      "name": "Ice Cream",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "wiki:188170",
+      "name": "Dairy",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "wiki:202989",
+      "name": "Spicy Chili",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "wiki:207442",
+      "name": "Melonsicle",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "wiki:208910",
+      "name": "Ice Cube",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "wiki:220492",
+      "name": "Eyebrella/DST",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "wiki:220637",
+      "name": "Rain Hat/DST",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "wiki:220704",
+      "name": "Luxury Fan/DST",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "wiki:221748",
+      "name": "Deciduous Turf/DST",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "wiki:27425",
+      "name": "Trail Mix",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "wiki:29052",
+      "name": "Fashion Melon",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "wiki:34175",
+      "name": "Watermelon",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "wiki:72428",
+      "name": "Rain Hat",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "wiki:75657",
+      "name": "Guacamole",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "wiki:82250",
+      "name": "Luxury Fan",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "wiki:86014",
+      "name": "Eyebrella",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "wiki:93493",
+      "name": "Merm Head",
+      "reasons": [
+        "Reign of Giants"
+      ]
+    }
+  ],
+  "note": "Reign of Giants items also available in Together are retained; character-restricted exclusions still apply."
+}

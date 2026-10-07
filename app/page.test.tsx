@@ -8,7 +8,7 @@ import Loading from "./loading";
 import Home from "./page";
 
 const items = parseItemPayload(itemPayload).filter(
-  (item) => item.category !== "character",
+  (item) => item.category !== "character" && item.namespace === "base_game",
 );
 const summary = summarizeItems(items);
 

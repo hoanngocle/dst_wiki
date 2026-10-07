@@ -1,0 +1,2206 @@
+{
+  "date": "2026-10-07",
+  "reason": "Remove single-player DLC entries; retain DST and mod items.",
+  "removed": [
+    {
+      "id": "wiki:100736",
+      "name": "Halberd",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:100805",
+      "name": "Sand",
+      "excl": [
+        "Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:101588",
+      "name": "Tables Tab",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:103039",
+      "name": "Howling Conch",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:103252",
+      "name": "Clippings",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:103566",
+      "name": "Anti Venom",
+      "excl": [
+        "Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:10418",
+      "name": "Mussel Stick",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:104242",
+      "name": "Neon Quattro",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:104574",
+      "name": "Root Trunk",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:105741",
+      "name": "Viney Bush",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:107130",
+      "name": "Thunderhat",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:107298",
+      "name": "Blunderbuss",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:107331",
+      "name": "Poison Dartfrog Legs",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:107369",
+      "name": "Sea Chest",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:107736",
+      "name": "Can of Silly String",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:107834",
+      "name": "Dumbrella",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:108189",
+      "name": "The Flying Pig Arcane Shop",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:108483",
+      "name": "Hogus Porkusator",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:108614",
+      "name": "Plantholders Tab",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:109058",
+      "name": "Bug B'Gone",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:109296",
+      "name": "Horn",
+      "excl": [
+        "Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:109860",
+      "name": "Webber's Skull",
+      "excl": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "wiki:109913",
+      "name": "Royal Gallery Key",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:111048",
+      "name": "Shelves Tab",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:111358",
+      "name": "Dead Jellyfish",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:112381",
+      "name": "Spear Gun",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:113615",
+      "name": "Doydoy Nest",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:11509",
+      "name": "Tar",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:116946",
+      "name": "Tin Suit",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:117609",
+      "name": "Coconade",
+      "excl": [
+        "Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:119097",
+      "name": "Pigg and Pigglet's General Store",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:119174",
+      "name": "Surfboard",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:119914",
+      "name": "Magic Water",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:121632",
+      "name": "Snakeskin Rug",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:121723",
+      "name": "Bird Whistle",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:122899",
+      "name": "Infused Iron",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:124087",
+      "name": "Captain Hat",
+      "excl": [
+        "Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:124256",
+      "name": "Obsidian Axe",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:124467",
+      "name": "Mussel",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:125046",
+      "name": "Coral",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:12832",
+      "name": "Weevole Carapace",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:12853",
+      "name": "Lamp Post",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:129754",
+      "name": "Life Jacket",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:130386",
+      "name": "Log Raft",
+      "excl": [
+        "Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:132181",
+      "name": "Stone Egg",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:133291",
+      "name": "Boat Repair Kit",
+      "excl": [
+        "Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:133828",
+      "name": "Sweet Potato",
+      "excl": [
+        "Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:134829",
+      "name": "Ballphin Palace",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:134861",
+      "name": "Dubloons",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:134965",
+      "name": "Seaweed",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:135514",
+      "name": "Machete",
+      "excl": [
+        "Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:136509",
+      "name": "Dense Turf",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:136917",
+      "name": "Bioluminescence",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:136962",
+      "name": "Sea Lab",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:137624",
+      "name": "The Boar's Tusk Weapon Shop",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:138041",
+      "name": "Treasure Hunting Tab",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:13860",
+      "name": "Science Tab",
+      "excl": [
+        "Don't Starve|Reign of Giants|Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:138785",
+      "name": "Demolition Permit",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:138943",
+      "name": "Bottle Lantern",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:139432",
+      "name": "Refine Tab",
+      "excl": [
+        "Don't Starve|Reign of Giants|Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:139438",
+      "name": "Lamps Tab",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:139626",
+      "name": "Dorsal Fin",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:139777",
+      "name": "Swinesbury Fine Grocer's",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:142139",
+      "name": "Cork",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:14353",
+      "name": "Sprinkler",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:14436",
+      "name": "Mant Mask",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:146480",
+      "name": "Tropical Fan",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:149737",
+      "name": "Turbine Blades",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:150613",
+      "name": "Tea",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:151858",
+      "name": "Security Contract",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:151870",
+      "name": "Coconut",
+      "excl": [
+        "Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:152110",
+      "name": "The Sow's Ear Hat Shop",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:152594",
+      "name": "Windows Tab",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:152761",
+      "name": "Bug",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:153313",
+      "name": "Cloth",
+      "excl": [
+        "Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:154275",
+      "name": "Coffee",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:154280",
+      "name": "Seashell Suit",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:155309",
+      "name": "Silly Monkey Ball",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:157143",
+      "name": "Shark Fin",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:157682",
+      "name": "Cork Bowl Canoe",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:157883",
+      "name": "Curly Tails Mud Spa",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:158946",
+      "name": "Sail Stick",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:159297",
+      "name": "Volcano Staff",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:159811",
+      "name": "Dragoon Heart",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:161651",
+      "name": "Disarming Tools",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:162934",
+      "name": "Dogfish",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:163493",
+      "name": "Palm Leaf",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:163837",
+      "name": "Swinesbury Mineral Exchange",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:164388",
+      "name": "Tropical Parasol",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:164850",
+      "name": "Prime Ape Hut",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:165379",
+      "name": "Renovate Tab",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:165503",
+      "name": "Coral Nubbin",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:167634",
+      "name": "Snakeskin",
+      "excl": [
+        "Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:169098",
+      "name": "The Sterling Trough Deli",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:170709",
+      "name": "Weevole Mantle",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:170776",
+      "name": "Thatch Pack",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:171417",
+      "name": "Home Kits Tab",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:171809",
+      "name": "Living Artifact",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:17219",
+      "name": "Tar Suit",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:173280",
+      "name": "Pirate Hat",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:17383",
+      "name": "Blubber Suit",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:174292",
+      "name": "Buoyant Chiminea",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:174671",
+      "name": "Iron Ore",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:175484",
+      "name": "Green Thumb Tab",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:175527",
+      "name": "Nectar",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:176689",
+      "name": "Sleek Hat",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:176972",
+      "name": "Oscillating Fan",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:177148",
+      "name": "Skyworthy",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:177797",
+      "name": "Farm",
+      "excl": [
+        "Don't Starve|Reign of Giants|Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:178485",
+      "name": "Sea Trap",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:17852",
+      "name": "Armored Boat",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:17942",
+      "name": "Tar Lamp",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:180311",
+      "name": "Fight Tab",
+      "excl": [
+        "Don't Starve|Reign of Giants|Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:180939",
+      "name": "Coffee Plant",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:182048",
+      "name": "Pugalisk Skull",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:18227",
+      "name": "Stone Road Turf",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:18292",
+      "name": "Tuber",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:183110",
+      "name": "Obsidian Armor",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:183667",
+      "name": "Seed Pod",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:18409",
+      "name": "Roe",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:184106",
+      "name": "Jelly-O Pop",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:184140",
+      "name": "Hard Shell Tacos",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:184213",
+      "name": "'The Sty' Oddities Emporium",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:185010",
+      "name": "Palm Leaf Hut",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:185077",
+      "name": "Encrusted Boat",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:185378",
+      "name": "Obsidian Fire Pit",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:18668",
+      "name": "Venom Gland",
+      "excl": [
+        "Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:186697",
+      "name": "The Tinkerer's Tower",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:187465",
+      "name": "Limestone",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:18864",
+      "name": "Seaworthy",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:18877",
+      "name": "Structures Tab",
+      "excl": [
+        "Don't Starve|Reign of Giants|Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:190750",
+      "name": "Smelter",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:19226",
+      "name": "Volcanic Tab",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:193622",
+      "name": "Tropical Fish",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:194897",
+      "name": "Blubber",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:196632",
+      "name": "Tools Tab",
+      "excl": [
+        "Don't Starve|Reign of Giants|Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:196863",
+      "name": "Flytrap Stalk",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:197745",
+      "name": "Nettle Rolls",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:198773",
+      "name": "Bamboo",
+      "excl": [
+        "Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:198843",
+      "name": "Rugs Tab",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:201326",
+      "name": "Cork Barrel",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:201388",
+      "name": "Bile-Covered Slop",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:202941",
+      "name": "Claw Palm Sapling",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:203826",
+      "name": "Watch Tower",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:206042",
+      "name": "Vine",
+      "excl": [
+        "Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:207090",
+      "name": "Tar Extractor",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:208268",
+      "name": "Spyglass",
+      "excl": [
+        "Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:208894",
+      "name": "Bean Bugs",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:209321",
+      "name": "Seashell",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:210761",
+      "name": "Eye of the Tiger Shark",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:216600",
+      "name": "Miss Sow's Floral Arrangements",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:22774",
+      "name": "Dripple Pipes",
+      "excl": [
+        "Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:2452",
+      "name": "Hanging Lamps Tab",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:24891",
+      "name": "Horned Helmet",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:25377",
+      "name": "Dragoon Den",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:2659",
+      "name": "Chairs Tab",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:26811",
+      "name": "Purple Grouper",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:26831",
+      "name": "Meated Nettles",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:27474",
+      "name": "Radish",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:27911",
+      "name": "Gummy Cake",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:27981",
+      "name": "Doydoy Feather",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:2801",
+      "name": "Windbreaker",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:28598",
+      "name": "Old Bell",
+      "excl": [
+        "Reign of Giants"
+      ]
+    },
+    {
+      "id": "wiki:29219",
+      "name": "Magnifying Glass",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:29406",
+      "name": "Snake Bone Soup",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:2969",
+      "name": "Fish Farm",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:30635",
+      "name": "Shears",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:31152",
+      "name": "Wildbore House",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:31502",
+      "name": "Poison Spear",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:32487",
+      "name": "Steamed Ham Sandwich",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:33031",
+      "name": "Bandit Stash Map",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:33899",
+      "name": "Columns Tab",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:35409",
+      "name": "Shark Fin Soup",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:37089",
+      "name": "Jungle Tree Seed",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:37254",
+      "name": "Tropical Bouillabaisse",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:39252",
+      "name": "Nautical Tab",
+      "excl": [
+        "Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:40427",
+      "name": "Lotus Flower",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:40466",
+      "name": "Nightmarish Bird Whistle",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:4164",
+      "name": "Aloe",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:42017",
+      "name": "Mussel Bed",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:42106",
+      "name": "Sea Wall",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:42406",
+      "name": "Ball Pein Hammer",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:4352",
+      "name": "Broken AAC Device",
+      "excl": [
+        "Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:43803",
+      "name": "The 'Sea Legs'",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:43859",
+      "name": "Floors Tab",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:44475",
+      "name": "Platapine Quill",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:47440",
+      "name": "Iced Tea",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:47643",
+      "name": "Wallpaper Tab",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:48260",
+      "name": "Piratihatitator",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:49248",
+      "name": "Obsidian",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:49486",
+      "name": "Caviar",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:49647",
+      "name": "Snakeskin Hat",
+      "excl": [
+        "Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:49885",
+      "name": "Sea Yard",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:50036",
+      "name": "Gold Dust",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:50387",
+      "name": "Doydoy Egg",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:50764",
+      "name": "Mant Suit",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:51253",
+      "name": "Trawl Net",
+      "excl": [
+        "Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:5136",
+      "name": "Hedge",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:51417",
+      "name": "Limpets",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:51679",
+      "name": "Magic Tab",
+      "excl": [
+        "Don't Starve|Reign of Giants|Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:52605",
+      "name": "Bisque",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:52865",
+      "name": "Boat Torch",
+      "excl": [
+        "Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:53632",
+      "name": "Particulate Purifier",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:54674",
+      "name": "Ice Maker 3000",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:55592",
+      "name": "Brain of Thought",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:56723",
+      "name": "Ornaments Tab",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:57773",
+      "name": "Bramble Bulb",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:59833",
+      "name": "Quacken Beak",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:59966",
+      "name": "Sand Castle",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:60874",
+      "name": "Sea Sack",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:62094",
+      "name": "Row Boat",
+      "excl": [
+        "Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:64151",
+      "name": "Brainy Matter",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:64160",
+      "name": "City Planning Tab",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:64228",
+      "name": "Gummy Slug",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:64556",
+      "name": "Boat Lantern",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:64628",
+      "name": "Quackering Ram",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:64751",
+      "name": "Cutlass Supreme",
+      "excl": [
+        "Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:64963",
+      "name": "Cargo Boat",
+      "excl": [
+        "Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:66389",
+      "name": "Cultivated Turf",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:66437",
+      "name": "Poison Balm",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:66583",
+      "name": "Limestone Suit",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:67783",
+      "name": "Gas Mask",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:69869",
+      "name": "Feijoada",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:70254",
+      "name": "Coffee Beans",
+      "excl": [
+        "Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:72278",
+      "name": "Shark Tooth Crown",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:73112",
+      "name": "Quacken Drill",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:73481",
+      "name": "Nettle",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:74404",
+      "name": "Peagawk Plume",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:75294",
+      "name": "Mussel Bouillabaisse",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:76475",
+      "name": "Jungle Burr",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:76684",
+      "name": "Lawn Turf",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:77574",
+      "name": "Town House",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:79127",
+      "name": "Cork Candle Hat",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:81171",
+      "name": "Pith Hat",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:81766",
+      "name": "Snake Oil",
+      "excl": [
+        "Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:82205",
+      "name": "Slanty Shanty",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:8289",
+      "name": "Obsidian Spear",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:83412",
+      "name": "Shark Gills",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:83507",
+      "name": "Pugalisk Wand",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:83644",
+      "name": "Buoy",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:83878",
+      "name": "Cowl",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:84694",
+      "name": "Dead Rainbow Jellyfish",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:84998",
+      "name": "Cork Bat",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:85158",
+      "name": "Survival Tab",
+      "excl": [
+        "Don't Starve|Reign of Giants|Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:86596",
+      "name": "Doors Tab",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:86829",
+      "name": "Fancy Helmet",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:87296",
+      "name": "Sandbag",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:87794",
+      "name": "Flat Stone Turf",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:88005",
+      "name": "Snakeskin Jacket",
+      "excl": [
+        "Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:88575",
+      "name": "House Expansion Permit",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:89117",
+      "name": "Lucky Hat",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:89407",
+      "name": "Snake Bone",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:9069",
+      "name": "Shamlet Mask",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:91042",
+      "name": "Vortex Cloak",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:91671",
+      "name": "Tarnished Crown",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:91751",
+      "name": "Chiminea",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:91766",
+      "name": "Raft",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:93916",
+      "name": "Pierrot Fish",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:94464",
+      "name": "Gold Pan",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:9511",
+      "name": "Limestone Wall",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:95125",
+      "name": "Swinesbury City Hall",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:95421",
+      "name": "Hippopotamoose Antler",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:96076",
+      "name": "Cactus Armor",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:96177",
+      "name": "Light Tab",
+      "excl": [
+        "Don't Starve|Reign of Giants|Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:102671",
+      "name": "Old Boot",
+      "excl": [
+        "Don't Starve|Reign of Giants"
+      ]
+    },
+    {
+      "id": "wiki:150909",
+      "name": "Sextant",
+      "excl": [
+        "Don't Starve|Reign of Giants"
+      ]
+    },
+    {
+      "id": "wiki:154314",
+      "name": "Queen Malfalfa",
+      "excl": [
+        "Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:176850",
+      "name": "Sea Worther",
+      "excl": [
+        "Don't Starve|Reign of Giants|Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:28570",
+      "name": "Soaked Candle",
+      "excl": [
+        "Don't Starve|Reign of Giants"
+      ]
+    },
+    {
+      "id": "wiki:30060",
+      "name": "One True Earring",
+      "excl": [
+        "Shipwrecked"
+      ]
+    },
+    {
+      "id": "wiki:3371",
+      "name": "Ancient Vase",
+      "excl": [
+        "Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:3470",
+      "name": "Toy Boat",
+      "excl": [
+        "Don't Starve|Reign of Giants"
+      ]
+    },
+    {
+      "id": "wiki:53350",
+      "name": "Voodoo Doll",
+      "excl": [
+        "Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:67199",
+      "name": "Ukulele",
+      "excl": [
+        "Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:74067",
+      "name": "License Plate",
+      "excl": [
+        "Shipwrecked|Hamlet"
+      ]
+    },
+    {
+      "id": "wiki:8483",
+      "name": "Brain Cloud Pill",
+      "excl": [
+        "Shipwrecked|Hamlet"
+      ]
+    }
+  ],
+  "clearedRecipes": [
+    {
+      "id": "wiki:119289",
+      "name": "California Roll",
+      "reason": "Imported recipe contains single-player DLC ingredients",
+      "recipe": {
+        "ingredients": [
+          {
+            "amount": 1,
+            "id": "wiki:111358",
+            "name": "Dead Jellyfish",
+            "sprite": {
+              "src": "/assets/wiki/6bab0b7065acf991e6b78a3d4003dad1d042e14cc3650d12f4e97c0e51674b81.png",
+              "uv": {
+                "u1": 0,
+                "u2": 1,
+                "v1": 0,
+                "v2": 1
+              }
+            }
+          },
+          {
+            "amount": 2,
+            "id": "wiki:134965",
+            "name": "Seaweed",
+            "sprite": {
+              "src": "/assets/wiki/436f0422f66ea76e91d8105377480dec500d1b52799f8c354acf967bdc9c793e.png",
+              "uv": {
+                "u1": 0,
+                "u2": 1,
+                "v1": 0,
+                "v2": 1
+              }
+            }
+          },
+          {
+            "amount": 1,
+            "id": "base_game:twigs",
+            "name": "Twigs",
+            "sprite": {
+              "src": "/assets/wiki/a2d6ece7a7ff9888b65c8475d0c530d0da3740b360ecd4dacdb269bfef58d506.png",
+              "uv": {
+                "u1": 0,
+                "u2": 1,
+                "v1": 0,
+                "v2": 1
+              }
+            }
+          }
+        ],
+        "outputCount": 1
+      }
+    },
+    {
+      "id": "wiki:18574",
+      "name": "Ceviche",
+      "reason": "Imported recipe contains single-player DLC ingredients",
+      "recipe": {
+        "ingredients": [
+          {
+            "amount": 1,
+            "id": "wiki-ingredient:cooked-jellyfish",
+            "name": "Cooked Jellyfish",
+            "sprite": null
+          },
+          {
+            "amount": 1,
+            "id": "base_game:ice",
+            "name": "Ice",
+            "sprite": {
+              "src": "/assets/wiki/7745782ad146078fe5131324e44cec3ac01f04eef1280d15afb7a58d617346ed.png",
+              "uv": {
+                "u1": 0,
+                "u2": 1,
+                "v1": 0,
+                "v2": 1
+              }
+            }
+          },
+          {
+            "amount": 1,
+            "id": "base_game:twigs",
+            "name": "Twigs",
+            "sprite": {
+              "src": "/assets/wiki/a2d6ece7a7ff9888b65c8475d0c530d0da3740b360ecd4dacdb269bfef58d506.png",
+              "uv": {
+                "u1": 0,
+                "u2": 1,
+                "v1": 0,
+                "v2": 1
+              }
+            }
+          },
+          {
+            "amount": 1,
+            "id": "wiki:157143",
+            "name": "Shark Fin",
+            "sprite": {
+              "src": "/assets/wiki/1f171c54c41e019eb01cb3245c3805841ff819eab9579c434c43e623eea6a37a.png",
+              "uv": {
+                "u1": 0,
+                "u2": 1,
+                "v1": 0,
+                "v2": 1
+              }
+            }
+          }
+        ],
+        "outputCount": 1
+      }
+    },
+    {
+      "id": "wiki:28691",
+      "name": "Asparagus Soup",
+      "reason": "Imported recipe contains single-player DLC ingredients",
+      "recipe": {
+        "ingredients": [
+          {
+            "amount": 1,
+            "id": "wiki:11814",
+            "name": "Asparagus",
+            "sprite": {
+              "src": "/assets/wiki/7f2a69531e6f29d63c06edd05cf6d9cd448107ee4773a8e5e8cca0a6ed7879aa.png",
+              "uv": {
+                "u1": 0,
+                "u2": 1,
+                "v1": 0,
+                "v2": 1
+              }
+            }
+          },
+          {
+            "amount": 1,
+            "id": "wiki:27474",
+            "name": "Radish",
+            "sprite": {
+              "src": "/assets/wiki/70683b7b616b90aa150d1a4cd57b30852aa04fb10bfb64a9deff3c5581e09779.png",
+              "uv": {
+                "u1": 0,
+                "u2": 1,
+                "v1": 0,
+                "v2": 1
+              }
+            }
+          },
+          {
+            "amount": 1,
+            "id": "base_game:monstermeat",
+            "name": "Monster Meat",
+            "sprite": {
+              "src": "/assets/wiki/93e83f2437929d97c4814324a922d27d728c3e91a7f61a32e358fc9291628a6a.png",
+              "uv": {
+                "u1": 0,
+                "u2": 1,
+                "v1": 0,
+                "v2": 1
+              }
+            }
+          },
+          {
+            "amount": 1,
+            "id": "base_game:monstermeat",
+            "name": "Monster Meat",
+            "sprite": {
+              "src": "/assets/wiki/93e83f2437929d97c4814324a922d27d728c3e91a7f61a32e358fc9291628a6a.png",
+              "uv": {
+                "u1": 0,
+                "u2": 1,
+                "v1": 0,
+                "v2": 1
+              }
+            }
+          }
+        ],
+        "outputCount": 1
+      }
+    },
+    {
+      "id": "wiki:42100",
+      "name": "Seafood Gumbo",
+      "reason": "Imported recipe contains single-player DLC ingredients",
+      "recipe": {
+        "ingredients": [
+          {
+            "amount": 1,
+            "id": "base_game:wobster_sheller_land",
+            "name": "Wobster",
+            "sprite": {
+              "src": "/assets/wiki/32e5c417dd6a39217c725d86568e3635d59c417a1b9ca59e7e4ba377580cd3d2.png",
+              "uv": {
+                "u1": 0,
+                "u2": 1,
+                "v1": 0,
+                "v2": 1
+              }
+            }
+          },
+          {
+            "amount": 1,
+            "id": "wiki:51417",
+            "name": "Limpets",
+            "sprite": {
+              "src": "/assets/wiki/89ad031700c1014e07a3beee65194e77a41991eb66ff0f4696a5f5d76e4475fb.png",
+              "uv": {
+                "u1": 0,
+                "u2": 1,
+                "v1": 0,
+                "v2": 1
+              }
+            }
+          },
+          {
+            "amount": 2,
+            "id": "base_game:twigs",
+            "name": "Twigs",
+            "sprite": {
+              "src": "/assets/wiki/a2d6ece7a7ff9888b65c8475d0c530d0da3740b360ecd4dacdb269bfef58d506.png",
+              "uv": {
+                "u1": 0,
+                "u2": 1,
+                "v1": 0,
+                "v2": 1
+              }
+            }
+          }
+        ],
+        "outputCount": 1
+      }
+    },
+    {
+      "id": "wiki:7111",
+      "name": "Spicy Vegetable Stinger",
+      "reason": "Imported recipe contains single-player DLC ingredients",
+      "recipe": {
+        "ingredients": [
+          {
+            "amount": 3,
+            "id": "wiki:27474",
+            "name": "Radish",
+            "sprite": {
+              "src": "/assets/wiki/70683b7b616b90aa150d1a4cd57b30852aa04fb10bfb64a9deff3c5581e09779.png",
+              "uv": {
+                "u1": 0,
+                "u2": 1,
+                "v1": 0,
+                "v2": 1
+              }
+            }
+          },
+          {
+            "amount": 1,
+            "id": "base_game:ice",
+            "name": "Ice",
+            "sprite": {
+              "src": "/assets/wiki/7745782ad146078fe5131324e44cec3ac01f04eef1280d15afb7a58d617346ed.png",
+              "uv": {
+                "u1": 0,
+                "u2": 1,
+                "v1": 0,
+                "v2": 1
+              }
+            }
+          }
+        ],
+        "outputCount": 1
+      }
+    }
+  ]
+}

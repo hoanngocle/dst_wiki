@@ -107,7 +107,8 @@ export function WikiSearch({
     () =>
       GAME_CATEGORY_OPTIONS.filter(
         (candidate) =>
-          candidate.value === "all" || categoryCounts[candidate.value] > 0,
+          candidate.value !== "creatures" &&
+          (candidate.value === "all" || categoryCounts[candidate.value] > 0),
       ),
     [categoryCounts],
   );

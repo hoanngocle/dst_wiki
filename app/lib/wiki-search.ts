@@ -1,3 +1,6 @@
+import weaponPrefabs from "@/data/generated/tu-tien-weapon-prefabs.json";
+import { isCultivationPill } from "./cultivation-guide";
+
 import type {
   CatalogSummary,
   ItemAvailabilityFilter,
@@ -27,7 +30,7 @@ export const GAME_CATEGORY_OPTIONS: readonly {
   { value: "combat-equipment", label: "Chiến đấu & trang bị" },
   { value: "crafting-resources", label: "Chế tạo & tài nguyên" },
   { value: "structures-decor", label: "Công trình & trang trí" },
-  { value: "magic-exploration", label: "Phép thuật & khám phá" },
+  { value: "magic-exploration", label: "Đan Dược" },
   { value: "creatures", label: "Sinh vật" },
 ];
 
@@ -96,6 +99,9 @@ const GAME_CATEGORY_LOOKUP: Readonly<Record<GameCategory, ReadonlySet<string>>> 
   creatures: new Set(GAME_CATEGORY_NAMES.creatures.map(normalizeWikiCategory)),
 };
 
+// Inventory prefabs with positive damage in the source-backed catalog snapshot.
+const TU_TIEN_WEAPONS = new Set(weaponPrefabs);
+
 function fallbackGameCategory(item: ItemListEntry): GameCategory {
   if (["mob", "boss", "character"].includes(item.category)) return "creatures";
   if (item.category === "structure") return "structures-decor";
@@ -117,7 +123,13 @@ export function getItemGameCategories(item: ItemListEntry): readonly GameCategor
       : [];
   });
 
-  return groups.length ? groups : [fallbackGameCategory(item)];
+  if (item.namespace === "tu_tien" && TU_TIEN_WEAPONS.has(item.prefabId)) {
+    if (!groups.includes("combat-equipment")) groups.push("combat-equipment");
+  }
+  const categories = groups.length ? groups : [fallbackGameCategory(item)];
+  return isCultivationPill(item.id)
+    ? categories.filter(category => category !== "magic-exploration")
+    : categories;
 }
 
 function matchesCatalogCategory(

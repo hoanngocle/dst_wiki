@@ -41,7 +41,7 @@ export function RecipeIngredients({
 
           return (
             <button
-              key={ingredient.id}
+              key={`${ingredient.id}:${index}`}
               type="button"
               aria-label={accessibleName}
               aria-describedby={tooltipId}
@@ -62,7 +62,7 @@ export function RecipeIngredients({
 
         return (
           <span
-            key={ingredient.id}
+            key={`${ingredient.id}:${index}`}
             aria-label={accessibleName}
             className="inline-flex min-h-10 items-center gap-1.5 rounded-xl border border-nova-border bg-nova-surface-soft py-1 pl-1 pr-2.5 text-sm font-semibold text-nova-text"
             title={ingredient.name}
@@ -76,7 +76,7 @@ export function RecipeIngredients({
           <p className="mb-2 text-xs font-semibold text-nova-muted">Bắt buộc thêm một trong các lựa chọn:</p>
           <div className="flex flex-wrap items-center gap-2">
             {recipe.requiredIngredientChoice.map((ingredient, index) => (
-              <div key={ingredient.id} className="flex flex-wrap items-center gap-2">
+              <div key={`${ingredient.id}:${index}`} className="flex flex-wrap items-center gap-2">
                 {index > 0 ? <span className="text-xs font-medium text-nova-muted">hoặc</span> : null}
                 <RecipeIngredients recipe={{ outputCount: 1, ingredients: [ingredient] }} itemsById={itemsById} onSelectItem={onSelectItem} />
                 <span className="text-xs text-nova-text">{ingredient.name}</span>

@@ -9,7 +9,7 @@ import { MobSections } from "./mob-sections";
 import { RecipeIngredients } from "./recipe-ingredients";
 import { StructureSections } from "./structure-sections";
 import { TuTienItemSections } from "./tu-tien-item-sections";
-import { WikiContent } from "./wiki-content";
+import { ItemUsage, CharacterRequirement } from "./item-summary";
 
 const FOCUSABLE_SELECTOR = [
   "a[href]",
@@ -42,6 +42,8 @@ function CraftingSections({
   itemsById: ReadonlyMap<string, ItemListEntry>;
   onSelectItem: (item: ItemListEntry) => void;
 }) {
+  const acquisition = item.summary?.acquisition;
+  const acquisitionText = acquisition?.status === "known" ? acquisition.text : item.craftingNote;
   return (
     <>
       {item.recipe ? (
@@ -55,6 +57,7 @@ function CraftingSections({
           >
             Công thức
           </h3>
+          <CharacterRequirement item={item} mode="crafting" />
           <div className="flex flex-wrap items-center gap-3 p-4">
             <RecipeIngredients
               recipe={item.recipe}
@@ -73,15 +76,15 @@ function CraftingSections({
               {item.recipe.outputCount > 1 ? <span>×{item.recipe.outputCount}</span> : null}
             </span>
           </div>
-          {item.craftingNote ? (
+          {acquisitionText ? (
             <p className="border-t border-nova-border px-4 py-3 text-sm leading-6 text-nova-muted">
-              {item.craftingNote}
+              {acquisitionText}
             </p>
           ) : null}
         </section>
       ) : null}
 
-      {!item.recipe && item.craftingNote ? (
+      {!item.recipe ? (
         <section
           aria-labelledby={`${titleId}-crafting-note`}
           className="overflow-hidden rounded-2xl border border-nova-border bg-nova-surface-soft"
@@ -90,39 +93,16 @@ function CraftingSections({
             id={`${titleId}-crafting-note`}
             className="border-b border-nova-border px-4 py-3 text-sm font-semibold text-nova-text"
           >
-            Cách tạo / ghi chú chế tạo
+            Công thức
           </h3>
+          <CharacterRequirement item={item} mode="crafting" />
           <p className="px-4 py-3 text-sm leading-6 text-nova-muted">
-            {item.craftingNote}
+            {acquisitionText || "Chưa có dữ liệu về cách sở hữu."}
           </p>
         </section>
       ) : null}
+      <ItemUsage item={item} titleId={titleId} />
     </>
-  );
-}
-
-function ItemSummary({
-  description,
-  titleId,
-}: {
-  description: string | null;
-  titleId: string;
-}) {
-  if (!description) return null;
-
-  return (
-    <section
-      aria-labelledby={`${titleId}-summary`}
-      className="overflow-hidden rounded-2xl border border-nova-border bg-nova-surface-soft"
-    >
-      <h3
-        id={`${titleId}-summary`}
-        className="border-b border-nova-border px-4 py-3 text-sm font-semibold text-nova-text"
-      >
-        Tóm tắt
-      </h3>
-      <p className="px-4 py-3 text-sm leading-6 text-nova-muted">{description}</p>
-    </section>
   );
 }
 
@@ -178,9 +158,6 @@ export function ItemDetailModal({
         onSelectItem={onSelectItem}
       />
     );
-  const fallbackSummary = item.description ? (
-    <ItemSummary description={item.description} titleId={titleId} />
-  ) : null;
 
   useEffect(() => {
     onCloseRef.current = onClose;
@@ -281,9 +258,6 @@ export function ItemDetailModal({
             <h2 id={titleId} className="text-xl font-semibold text-nova-text sm:text-2xl">
               {item.name}
             </h2>
-            {item.englishName ? (
-              <p className="mt-1 text-sm text-nova-muted">{item.englishName}</p>
-            ) : null}
             {realPrefab ? (
               <code className="mt-1 block truncate font-mono text-[11px] text-nova-faint">
                 {item.prefabId}
@@ -325,22 +299,7 @@ export function ItemDetailModal({
           className="min-h-0 flex-1 overflow-y-auto overscroll-contain [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           <div className="space-y-4 p-5 sm:p-6">
-            {item.wiki ? (
-              <WikiContent
-                key={item.wiki.pageId}
-                pageId={item.wiki.pageId}
-                canonicalUrl={item.wiki.canonicalUrl}
-                itemsById={itemsById}
-                onSelectItem={onSelectItem}
-                fallbackSummary={fallbackSummary}
-                contentAfterSummary={craftingContent}
-              />
-            ) : (
-              <>
-                {fallbackSummary}
-                {craftingContent}
-              </>
-            )}
+            {craftingContent}
           </div>
         </div>
       </section>

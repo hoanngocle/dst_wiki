@@ -8,7 +8,7 @@ export interface DstStat {
 export interface DstHeroProps {
   eyebrow: string;
   title: string;
-  description: string;
+  description?: string;
   stats?: readonly DstStat[];
   statsAriaLabel?: string;
   children?: ReactNode;
@@ -48,9 +48,9 @@ export function DstHero({
           <h1 className="mt-3 text-4xl font-semibold tracking-[-0.04em] text-nova-text sm:text-5xl">
             {title}
           </h1>
-          <p className="mt-4 max-w-[62ch] text-base leading-7 text-nova-muted">
+          {description ? <p className="mt-4 max-w-[62ch] text-base leading-7 text-nova-muted">
             {description}
-          </p>
+          </p> : null}
         </div>
 
         {hasStats ? (

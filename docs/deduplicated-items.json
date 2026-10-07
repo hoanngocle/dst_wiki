@@ -1,0 +1,358 @@
+{
+  "removed": [
+    {
+      "id": "wiki:134252",
+      "name": "Ancient Gateway",
+      "keptId": "base_game:atrium_gate",
+      "keptName": "Ancient Gateway"
+    },
+    {
+      "id": "wiki:39353",
+      "name": "Ancient Key",
+      "keptId": "base_game:atrium_key",
+      "keptName": "Ancient Key"
+    },
+    {
+      "id": "wiki:222051",
+      "name": "Mandrake/DST",
+      "keptId": "base_game:mandrake_active",
+      "keptName": "Mandrake"
+    },
+    {
+      "id": "wiki:162524",
+      "name": "Mandrake",
+      "keptId": "base_game:mandrake_active",
+      "keptName": "Mandrake"
+    },
+    {
+      "id": "wiki:126517",
+      "name": "Saddle",
+      "keptId": "wiki:218895",
+      "keptName": "Saddle/DST"
+    },
+    {
+      "id": "wiki:65013",
+      "name": "Toadstool",
+      "keptId": "base_game:toadstool",
+      "keptName": "Toadstool"
+    },
+    {
+      "id": "wiki:109409",
+      "name": "The Lazy Explorer",
+      "keptId": "wiki:221929",
+      "keptName": "The Lazy Explorer/DST"
+    },
+    {
+      "id": "wiki:110769",
+      "name": "Garland",
+      "keptId": "wiki:220532",
+      "keptName": "Garland/DST"
+    },
+    {
+      "id": "wiki:110936",
+      "name": "Beekeeper Hat",
+      "keptId": "wiki:218868",
+      "keptName": "Beekeeper Hat/DST"
+    },
+    {
+      "id": "wiki:125733",
+      "name": "Telelocator Staff",
+      "keptId": "wiki:221571",
+      "keptName": "Telelocator Staff/DST"
+    },
+    {
+      "id": "wiki:126636",
+      "name": "Drying Rack",
+      "keptId": "wiki:219112",
+      "keptName": "Drying Rack/DST"
+    },
+    {
+      "id": "wiki:129101",
+      "name": "Bush Hat",
+      "keptId": "wiki:220443",
+      "keptName": "Bush Hat/DST"
+    },
+    {
+      "id": "wiki:131100",
+      "name": "Breezy Vest",
+      "keptId": "wiki:218962",
+      "keptName": "Breezy Vest/DST"
+    },
+    {
+      "id": "wiki:133283",
+      "name": "Cat Cap",
+      "keptId": "wiki:220448",
+      "keptName": "Cat Cap/DST"
+    },
+    {
+      "id": "wiki:133779",
+      "name": "Broken Clockworks",
+      "keptId": "wiki:223176",
+      "keptName": "Broken Clockworks/DST"
+    },
+    {
+      "id": "wiki:143244",
+      "name": "Thulecite Crown",
+      "keptId": "wiki:218881",
+      "keptName": "Thulecite Crown/DST"
+    },
+    {
+      "id": "wiki:145790",
+      "name": "Wood Gate",
+      "keptId": "wiki:221943",
+      "keptName": "Wood Gate/DST"
+    },
+    {
+      "id": "wiki:146677",
+      "name": "Moggles",
+      "keptId": "wiki:220615",
+      "keptName": "Moggles/DST"
+    },
+    {
+      "id": "wiki:149411",
+      "name": "Siesta Lean-to",
+      "keptId": "wiki:223073",
+      "keptName": "Siesta Lean-to/DST"
+    },
+    {
+      "id": "wiki:156534",
+      "name": "Winter Hat",
+      "keptId": "wiki:220656",
+      "keptName": "Winter Hat/DST"
+    },
+    {
+      "id": "wiki:158",
+      "name": "Fish Morsel",
+      "keptId": "wiki:222041",
+      "keptName": "Fish Morsel/DST"
+    },
+    {
+      "id": "wiki:158535",
+      "name": "Science Machine",
+      "keptId": "wiki:219674",
+      "keptName": "Science Machine/DST"
+    },
+    {
+      "id": "wiki:159925",
+      "name": "Wood Wall",
+      "keptId": "wiki:221858",
+      "keptName": "Wood Wall/DST"
+    },
+    {
+      "id": "wiki:16271",
+      "name": "Magiluminescence",
+      "keptId": "wiki:219131",
+      "keptName": "Magiluminescence/DST"
+    },
+    {
+      "id": "wiki:165666",
+      "name": "Bed Roll",
+      "keptId": "wiki:220151",
+      "keptName": "Bed Roll/DST"
+    },
+    {
+      "id": "wiki:174148",
+      "name": "Alchemy Engine",
+      "keptId": "wiki:219675",
+      "keptName": "Alchemy Engine/DST"
+    },
+    {
+      "id": "wiki:178462",
+      "name": "Thulecite Wall",
+      "keptId": "wiki:221851",
+      "keptName": "Thulecite Wall/DST"
+    },
+    {
+      "id": "wiki:184001",
+      "name": "Pretty Parasol",
+      "keptId": "wiki:220794",
+      "keptName": "Pretty Parasol/DST"
+    },
+    {
+      "id": "wiki:185469",
+      "name": "Luxury Axe",
+      "keptId": "wiki:221600",
+      "keptName": "Luxury Axe/DST"
+    },
+    {
+      "id": "wiki:187353",
+      "name": "Top Hat",
+      "keptId": "wiki:220651",
+      "keptName": "Top Hat/DST"
+    },
+    {
+      "id": "wiki:191502",
+      "name": "Rabbit Earmuffs",
+      "keptId": "wiki:220634",
+      "keptName": "Rabbit Earmuffs/DST"
+    },
+    {
+      "id": "wiki:197778",
+      "name": "Ice Staff",
+      "keptId": "wiki:221912",
+      "keptName": "Ice Staff/DST"
+    },
+    {
+      "id": "wiki:200315",
+      "name": "Football Helmet",
+      "keptId": "wiki:218870",
+      "keptName": "Football Helmet/DST"
+    },
+    {
+      "id": "wiki:208910",
+      "name": "Ice Cube",
+      "keptId": "wiki:220607",
+      "keptName": "Ice Cube/DST"
+    },
+    {
+      "id": "wiki:209386",
+      "name": "Opulent Pickaxe",
+      "keptId": "wiki:221635",
+      "keptName": "Opulent Pickaxe/DST"
+    },
+    {
+      "id": "wiki:212354",
+      "name": "Beefalo Hat",
+      "keptId": "wiki:220439",
+      "keptName": "Beefalo Hat/DST"
+    },
+    {
+      "id": "wiki:59229",
+      "name": "Chilled Amulet",
+      "keptId": "wiki:218963",
+      "keptName": "Chilled Amulet/DST"
+    },
+    {
+      "id": "wiki:24181",
+      "name": "Construction Amulet",
+      "keptId": "wiki:218965",
+      "keptName": "Construction Amulet/DST"
+    },
+    {
+      "id": "wiki:54616",
+      "name": "Nightmare Amulet",
+      "keptId": "wiki:219132",
+      "keptName": "Nightmare Amulet/DST"
+    },
+    {
+      "id": "wiki:89271",
+      "name": "Puffy Vest",
+      "keptId": "wiki:219155",
+      "keptName": "Puffy Vest/DST"
+    },
+    {
+      "id": "wiki:22550",
+      "name": "The Lazy Forager",
+      "keptId": "wiki:219193",
+      "keptName": "The Lazy Forager/DST"
+    },
+    {
+      "id": "wiki:7880",
+      "name": "Deconstruction Staff",
+      "keptId": "wiki:219288",
+      "keptName": "Deconstruction Staff/DST"
+    },
+    {
+      "id": "wiki:86014",
+      "name": "Eyebrella",
+      "keptId": "wiki:220492",
+      "keptName": "Eyebrella/DST"
+    },
+    {
+      "id": "wiki:29052",
+      "name": "Fashion Melon",
+      "keptId": "wiki:220499",
+      "keptName": "Fashion Melon/DST"
+    },
+    {
+      "id": "wiki:59839",
+      "name": "Feather Hat",
+      "keptId": "wiki:220519",
+      "keptName": "Feather Hat/DST"
+    },
+    {
+      "id": "wiki:39558",
+      "name": "Miner Hat",
+      "keptId": "wiki:220612",
+      "keptName": "Miner Hat/DST"
+    },
+    {
+      "id": "wiki:72428",
+      "name": "Rain Hat",
+      "keptId": "wiki:220637",
+      "keptName": "Rain Hat/DST"
+    },
+    {
+      "id": "wiki:92307",
+      "name": "Straw Hat",
+      "keptId": "wiki:220645",
+      "keptName": "Straw Hat/DST"
+    },
+    {
+      "id": "wiki:41866",
+      "name": "Lantern",
+      "keptId": "wiki:220698",
+      "keptName": "Lantern/DST"
+    },
+    {
+      "id": "wiki:82250",
+      "name": "Luxury Fan",
+      "keptId": "wiki:220704",
+      "keptName": "Luxury Fan/DST"
+    },
+    {
+      "id": "wiki:86230",
+      "name": "Regal Shovel",
+      "keptId": "wiki:221650",
+      "keptName": "Regal Shovel/DST"
+    },
+    {
+      "id": "wiki:94506",
+      "name": "Beard Hair Rug",
+      "keptId": "wiki:221738",
+      "keptName": "Beard Hair Rug/DST"
+    },
+    {
+      "id": "wiki:70536",
+      "name": "Checkerboard Flooring",
+      "keptId": "wiki:221744",
+      "keptName": "Checkerboard Flooring/DST"
+    },
+    {
+      "id": "wiki:80629",
+      "name": "Cobblestones",
+      "keptId": "wiki:221745",
+      "keptName": "Cobblestones/DST"
+    },
+    {
+      "id": "wiki:4459",
+      "name": "Wooden Flooring",
+      "keptId": "wiki:221779",
+      "keptName": "Wooden Flooring/DST"
+    },
+    {
+      "id": "wiki:45240",
+      "name": "Hay Wall",
+      "keptId": "wiki:221816",
+      "keptName": "Hay Wall/DST"
+    },
+    {
+      "id": "wiki:33681",
+      "name": "Stone Wall",
+      "keptId": "wiki:221839",
+      "keptName": "Stone Wall/DST"
+    },
+    {
+      "id": "wiki:82772",
+      "name": "Mushtree",
+      "keptId": "wiki:222736",
+      "keptName": "Mushtree/DST"
+    },
+    {
+      "id": "wiki:188844",
+      "name": "Berry Bush",
+      "keptId": "wiki:218911",
+      "keptName": "Berry Bush/DST"
+    }
+  ]
+}

@@ -1,0 +1,2341 @@
+{
+  "version": "1.6.2",
+  "entries": [
+    {
+      "prefab": "nova_lingshi_recycler",
+      "name": "Máy Tái Luyện",
+      "group": "Máy Tái Luyện",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "cutstone",
+              "amount": 4
+            },
+            {
+              "prefab": "boards",
+              "amount": 4
+            },
+            {
+              "prefab": "goldnugget",
+              "amount": 2
+            },
+            {
+              "prefab": "gears",
+              "amount": 1
+            }
+          ],
+          "technology": "Máy Luyện Kim",
+          "outputCount": 1,
+          "condition": ""
+        }
+      ],
+      "usage": [
+        "Mở máy, đặt đồ dư vào 9 ô rồi xem giá trị Lô hiện tại. Nhấn Luyện hóa để chuyển các món được nhận thành số dư Linh Thạch Hạ Phẩm; món bị từ chối vẫn ở trong máy.",
+        "Món trị giá từ 100 Hạ Phẩm mỗi món cần nhấn Xác nhận lần nữa trong 8 giây. Thay đồ trong máy sẽ hủy xác nhận.",
+        "Nhấn Rút Linh Thạch để nhận xd_lingshi1 vào túi. Chỉ rút phần nguyên; nửa viên còn lại và phần chưa rút do túi đầy được giữ trong số dư.",
+        "Máy giữ số dư khi lưu thế giới. Chỉ đập máy khi đã lấy hết vật phẩm và rút hết số dư.",
+        "Không nhận Linh Thạch, Tinh Chất, vật phẩm nhiệm vụ được bảo vệ, đồ không thể thay thế hoặc vật chứa còn đồ. Công thức tạo lãi từ chế tạo–tái luyện bị từ chối.",
+        "Bảng dưới là giá nền khi chưa có công thức. Đồ chế tính theo giá nguyên liệu của công thức rẻ nhất và số lượng đầu ra; giá giảm theo độ bền còn lại, tối thiểu 0,5 Hạ Phẩm mỗi món. Lấy giá Lô hiện tại trong game làm kết quả thực tế."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_lingshi_recycler.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/nova_lingshi_pricing.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/prefabs/nova_lingshi_recycler.lua"
+      ]
+    },
+    {
+      "prefab": "nova_treasure_scroll",
+      "name": "Tầm Bảo Quyển Trục",
+      "group": "Kho báu",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "stinger",
+              "amount": 40
+            }
+          ],
+          "technology": "Không cần máy",
+          "outputCount": 1,
+          "condition": ""
+        },
+        {
+          "ingredients": [
+            {
+              "prefab": "silk",
+              "amount": 40
+            },
+            {
+              "prefab": "spidergland",
+              "amount": 20
+            }
+          ],
+          "technology": "Không cần máy",
+          "outputCount": 1,
+          "condition": ""
+        }
+      ],
+      "usage": [
+        "Chế quyển trục bằng một trong hai công thức. Chuột phải chọn Mở trong túi để tạo điểm Kho Báu trên đất liền và đánh dấu vị trí trên bản đồ. Mỗi lần mở thành công tiêu hao một quyển trục.",
+        "Tới điểm đã đánh dấu, dùng xẻng đào một lần để nhận một kết quả. Có thể xuất hiện vật phẩm, quái hoặc boss; các dòng Quái/Boss trong bảng là sinh vật được triệu hồi.",
+        "Hai công thức tạo cùng một loại quyển trục và dùng chung tỷ lệ. Nếu không tìm được vị trí hợp lệ, quyển trục không bị tiêu hao."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_treasure.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/nova_treasure_logic.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/nova_treasure_rewards.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/prefabs/nova_treasure_site.lua"
+      ]
+    },
+    {
+      "prefab": "homesign",
+      "name": "Truyền Tống Trận",
+      "group": "Công trình",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "boards",
+              "amount": 1.0
+            }
+          ],
+          "technology": "Máy Khoa Học",
+          "outputCount": 1,
+          "condition": ""
+        }
+      ],
+      "usage": [
+        "Công trình dùng Bảng Gỗ (homesign) làm điểm dịch chuyển. Đặt ít nhất hai bảng trong cùng thế giới, ghi tên để dễ nhận biết, rồi tương tác Truyền tống và chọn điểm đến.",
+        "Chi phí tăng theo khoảng cách: độ no = làm tròn lên min(75, 5 + khoảng cách/32); tinh thần = làm tròn lên 20% giá độ no trước khi làm tròn, nhân 1,25 mùa đông hoặc 0,75 mùa hè. Giao diện hiển thị chi phí từng điểm đến.",
+        "Không dùng khi đang cháy, bị kẻ địch truy đuổi hoặc có đợt chó săn; cổng cháy/hỏng không phải điểm đến hợp lệ."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_portal.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/components/ttt_travelable.lua",
+        "public/data/catalog.json · homesign"
+      ]
+    },
+    {
+      "prefab": "deluxe_firepit",
+      "name": "Bếp Thần Hỏa",
+      "group": "Công trình",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "log",
+              "amount": 6
+            },
+            {
+              "prefab": "goldnugget",
+              "amount": 3
+            },
+            {
+              "prefab": "cutstone",
+              "amount": 14
+            }
+          ],
+          "technology": "Máy Luyện Kim",
+          "outputCount": 1,
+          "condition": ""
+        }
+      ],
+      "usage": [
+        "Bếp lửa bền bỉ, không bị máy phóng băng dập tắt.",
+        "Đặt công trình và thêm nhiên liệu khi lửa tắt hoặc cháy yếu. Dùng lửa nóng để sưởi vào mùa đông, lửa lạnh để làm mát vào mùa hè."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_eternal_fire.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/prefabs/deluxe_firepit.lua"
+      ]
+    },
+    {
+      "prefab": "endo_firepit",
+      "name": "Bếp Hàn Hỏa",
+      "group": "Công trình",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "nitre",
+              "amount": 5
+            },
+            {
+              "prefab": "cutstone",
+              "amount": 14
+            },
+            {
+              "prefab": "transistor",
+              "amount": 2
+            }
+          ],
+          "technology": "Máy Luyện Kim",
+          "outputCount": 1,
+          "condition": ""
+        }
+      ],
+      "usage": [
+        "Ngọn lửa lạnh giúp xua tan cái nóng.",
+        "Đặt công trình và thêm nhiên liệu khi lửa tắt hoặc cháy yếu. Dùng lửa nóng để sưởi vào mùa đông, lửa lạnh để làm mát vào mùa hè."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_eternal_fire.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/prefabs/endo_firepit.lua"
+      ]
+    },
+    {
+      "prefab": "heat_star",
+      "name": "Vĩnh Hằng Thần Hỏa",
+      "group": "Công trình",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "cutstone",
+              "amount": 30
+            },
+            {
+              "prefab": "transistor",
+              "amount": 3
+            },
+            {
+              "prefab": "redgem",
+              "amount": 2
+            }
+          ],
+          "technology": "Máy Thao Túng Bóng Tối",
+          "outputCount": 1,
+          "condition": ""
+        }
+      ],
+      "usage": [
+        "Linh hỏa tỏa sáng và sưởi ấm một vùng rộng lớn.",
+        "Đặt công trình và thêm nhiên liệu khi lửa tắt hoặc cháy yếu. Dùng lửa nóng để sưởi vào mùa đông, lửa lạnh để làm mát vào mùa hè."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_eternal_fire.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/prefabs/heat_star.lua"
+      ]
+    },
+    {
+      "prefab": "ice_star",
+      "name": "Vĩnh Hằng Hàn Hỏa",
+      "group": "Công trình",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "cutstone",
+              "amount": 30
+            },
+            {
+              "prefab": "transistor",
+              "amount": 3
+            },
+            {
+              "prefab": "bluegem",
+              "amount": 2
+            }
+          ],
+          "technology": "Máy Thao Túng Bóng Tối",
+          "outputCount": 1,
+          "condition": ""
+        }
+      ],
+      "usage": [
+        "Linh hỏa lạnh soi sáng và làm mát xung quanh.",
+        "Đặt công trình và thêm nhiên liệu khi lửa tắt hoặc cháy yếu. Dùng lửa nóng để sưởi vào mùa đông, lửa lạnh để làm mát vào mùa hè."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_eternal_fire.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/prefabs/ice_star.lua"
+      ]
+    },
+    {
+      "prefab": "ttk_fsct",
+      "name": "Luân Hồi Đài",
+      "group": "Công trình",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "cutstone",
+              "amount": 10
+            },
+            {
+              "prefab": "goldnugget",
+              "amount": 6
+            },
+            {
+              "prefab": "reviver",
+              "amount": 2
+            },
+            {
+              "prefab": "xd_lingshi3",
+              "amount": 2
+            }
+          ],
+          "technology": "Máy Luyện Kim",
+          "outputCount": 1,
+          "condition": ""
+        }
+      ],
+      "usage": [
+        "Khi chết, đưa hồn ma tới đài và chọn Ám để hồi sinh. Dùng không giới hạn lượt, không cần nạp lại hoặc chờ hồi."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_fsct.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/prefabs/ttk_fsct.lua"
+      ]
+    },
+    {
+      "prefab": "xd_wmz_tnz",
+      "name": "Thiên Nghịch Châu",
+      "group": "Vật phẩm",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "xd_fs",
+              "amount": 1
+            },
+            {
+              "prefab": "xd_lingshi3",
+              "amount": 3
+            },
+            {
+              "prefab": "ttk_huyen_tinh_thuong_pham",
+              "amount": 2
+            },
+            {
+              "prefab": "purplegem",
+              "amount": 3
+            }
+          ],
+          "technology": "Không cần máy",
+          "outputCount": 1,
+          "condition": "Nyx chế tạo; Nyx và Vương Ma Tử được phép dùng."
+        }
+      ],
+      "usage": [
+        "Nyx dùng Thiên Nghịch Châu để vào không gian riêng của Tu Tiên, nghỉ ngơi và hồi phục. Mod giữ nguyên cơ chế phòng, dịch chuyển và lưu vị trí của Tu Tiên."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_thien_nghich_chau.lua"
+      ]
+    },
+    {
+      "prefab": "turf_py_carpet1",
+      "name": "Thảm Lộng Lẫy",
+      "group": "Thảm",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "boards",
+              "amount": 1
+            },
+            {
+              "prefab": "beefalowool",
+              "amount": 1
+            }
+          ],
+          "technology": "Máy Luyện Kim",
+          "outputCount": 4,
+          "condition": ""
+        }
+      ],
+      "usage": [
+        "Chọn thảm trong túi và đặt lên nền để trang trí căn cứ. Mỗi lần chế nhận 4 miếng thảm."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_carpet.lua"
+      ]
+    },
+    {
+      "prefab": "turf_py_carpet2",
+      "name": "Thảm Trang Nhã",
+      "group": "Thảm",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "boards",
+              "amount": 1
+            },
+            {
+              "prefab": "beefalowool",
+              "amount": 1
+            }
+          ],
+          "technology": "Máy Luyện Kim",
+          "outputCount": 4,
+          "condition": ""
+        }
+      ],
+      "usage": [
+        "Chọn thảm trong túi và đặt lên nền để trang trí căn cứ. Mỗi lần chế nhận 4 miếng thảm."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_carpet.lua"
+      ]
+    },
+    {
+      "prefab": "turf_py_carpet3",
+      "name": "Thảm Rực Rỡ",
+      "group": "Thảm",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "boards",
+              "amount": 1
+            },
+            {
+              "prefab": "beefalowool",
+              "amount": 1
+            }
+          ],
+          "technology": "Máy Luyện Kim",
+          "outputCount": 4,
+          "condition": ""
+        }
+      ],
+      "usage": [
+        "Chọn thảm trong túi và đặt lên nền để trang trí căn cứ. Mỗi lần chế nhận 4 miếng thảm."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_carpet.lua"
+      ]
+    },
+    {
+      "prefab": "turf_py_carpet4",
+      "name": "Thảm Sặc Sỡ",
+      "group": "Thảm",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "boards",
+              "amount": 1
+            },
+            {
+              "prefab": "beefalowool",
+              "amount": 1
+            }
+          ],
+          "technology": "Máy Luyện Kim",
+          "outputCount": 4,
+          "condition": ""
+        }
+      ],
+      "usage": [
+        "Chọn thảm trong túi và đặt lên nền để trang trí căn cứ. Mỗi lần chế nhận 4 miếng thảm."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_carpet.lua"
+      ]
+    },
+    {
+      "prefab": "turf_py_carpet5",
+      "name": "Thảm Xanh Ngọc",
+      "group": "Thảm",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "boards",
+              "amount": 1
+            },
+            {
+              "prefab": "beefalowool",
+              "amount": 1
+            }
+          ],
+          "technology": "Máy Luyện Kim",
+          "outputCount": 4,
+          "condition": ""
+        }
+      ],
+      "usage": [
+        "Chọn thảm trong túi và đặt lên nền để trang trí căn cứ. Mỗi lần chế nhận 4 miếng thảm."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_carpet.lua"
+      ]
+    },
+    {
+      "prefab": "turf_py_carpet6",
+      "name": "Thảm Cổ Điển",
+      "group": "Thảm",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "boards",
+              "amount": 1
+            },
+            {
+              "prefab": "beefalowool",
+              "amount": 1
+            }
+          ],
+          "technology": "Máy Luyện Kim",
+          "outputCount": 4,
+          "condition": ""
+        }
+      ],
+      "usage": [
+        "Chọn thảm trong túi và đặt lên nền để trang trí căn cứ. Mỗi lần chế nhận 4 miếng thảm."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_carpet.lua"
+      ]
+    },
+    {
+      "prefab": "turf_py_carpet7",
+      "name": "Thảm Bươm Bướm",
+      "group": "Thảm",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "boards",
+              "amount": 1
+            },
+            {
+              "prefab": "beefalowool",
+              "amount": 1
+            }
+          ],
+          "technology": "Máy Luyện Kim",
+          "outputCount": 4,
+          "condition": ""
+        }
+      ],
+      "usage": [
+        "Chọn thảm trong túi và đặt lên nền để trang trí căn cứ. Mỗi lần chế nhận 4 miếng thảm."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_carpet.lua"
+      ]
+    },
+    {
+      "prefab": "turf_py_carpet8",
+      "name": "Thảm Đỏ Tươi",
+      "group": "Thảm",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "boards",
+              "amount": 1
+            },
+            {
+              "prefab": "beefalowool",
+              "amount": 1
+            }
+          ],
+          "technology": "Máy Luyện Kim",
+          "outputCount": 4,
+          "condition": ""
+        }
+      ],
+      "usage": [
+        "Chọn thảm trong túi và đặt lên nền để trang trí căn cứ. Mỗi lần chế nhận 4 miếng thảm."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_carpet.lua"
+      ]
+    },
+    {
+      "prefab": "turf_py_carpet9",
+      "name": "Thảm Ma Thuật",
+      "group": "Thảm",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "boards",
+              "amount": 1
+            },
+            {
+              "prefab": "beefalowool",
+              "amount": 1
+            }
+          ],
+          "technology": "Máy Luyện Kim",
+          "outputCount": 4,
+          "condition": ""
+        }
+      ],
+      "usage": [
+        "Chọn thảm trong túi và đặt lên nền để trang trí căn cứ. Mỗi lần chế nhận 4 miếng thảm."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_carpet.lua"
+      ]
+    },
+    {
+      "prefab": "turf_py_carpet10",
+      "name": "Thảm Kẻ Ô",
+      "group": "Thảm",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "boards",
+              "amount": 1
+            },
+            {
+              "prefab": "beefalowool",
+              "amount": 1
+            }
+          ],
+          "technology": "Máy Luyện Kim",
+          "outputCount": 4,
+          "condition": ""
+        }
+      ],
+      "usage": [
+        "Chọn thảm trong túi và đặt lên nền để trang trí căn cứ. Mỗi lần chế nhận 4 miếng thảm."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_carpet.lua"
+      ]
+    },
+    {
+      "prefab": "turf_py_carpet11",
+      "name": "Thảm Hoạt Hình",
+      "group": "Thảm",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "boards",
+              "amount": 1
+            },
+            {
+              "prefab": "beefalowool",
+              "amount": 1
+            }
+          ],
+          "technology": "Máy Luyện Kim",
+          "outputCount": 4,
+          "condition": ""
+        }
+      ],
+      "usage": [
+        "Chọn thảm trong túi và đặt lên nền để trang trí căn cứ. Mỗi lần chế nhận 4 miếng thảm."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_carpet.lua"
+      ]
+    },
+    {
+      "prefab": "turf_py_carpet12",
+      "name": "Thảm Hình Vuông",
+      "group": "Thảm",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "boards",
+              "amount": 1
+            },
+            {
+              "prefab": "beefalowool",
+              "amount": 1
+            }
+          ],
+          "technology": "Máy Luyện Kim",
+          "outputCount": 4,
+          "condition": ""
+        }
+      ],
+      "usage": [
+        "Chọn thảm trong túi và đặt lên nền để trang trí căn cứ. Mỗi lần chế nhận 4 miếng thảm."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_carpet.lua"
+      ]
+    },
+    {
+      "prefab": "turf_py_carpet13",
+      "name": "Thảm Gợn Sóng",
+      "group": "Thảm",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "boards",
+              "amount": 1
+            },
+            {
+              "prefab": "beefalowool",
+              "amount": 1
+            }
+          ],
+          "technology": "Máy Luyện Kim",
+          "outputCount": 4,
+          "condition": ""
+        }
+      ],
+      "usage": [
+        "Chọn thảm trong túi và đặt lên nền để trang trí căn cứ. Mỗi lần chế nhận 4 miếng thảm."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_carpet.lua"
+      ]
+    },
+    {
+      "prefab": "turf_py_carpet14",
+      "name": "Thảm Mắt Quỷ",
+      "group": "Thảm",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "boards",
+              "amount": 1
+            },
+            {
+              "prefab": "beefalowool",
+              "amount": 1
+            }
+          ],
+          "technology": "Máy Luyện Kim",
+          "outputCount": 4,
+          "condition": ""
+        }
+      ],
+      "usage": [
+        "Chọn thảm trong túi và đặt lên nền để trang trí căn cứ. Mỗi lần chế nhận 4 miếng thảm."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_carpet.lua"
+      ]
+    },
+    {
+      "prefab": "turf_py_carpet15",
+      "name": "Thảm Da Báo",
+      "group": "Thảm",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "boards",
+              "amount": 1
+            },
+            {
+              "prefab": "beefalowool",
+              "amount": 1
+            }
+          ],
+          "technology": "Máy Luyện Kim",
+          "outputCount": 4,
+          "condition": ""
+        }
+      ],
+      "usage": [
+        "Chọn thảm trong túi và đặt lên nền để trang trí căn cứ. Mỗi lần chế nhận 4 miếng thảm."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_carpet.lua"
+      ]
+    },
+    {
+      "prefab": "dyc_fence_item",
+      "name": "Hàng Rào Gỗ Siêu Cấp",
+      "group": "Tường & cửa",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "twigs",
+              "amount": 4
+            }
+          ],
+          "technology": "Không cần máy",
+          "outputCount": 4,
+          "condition": "Cần bật chế tạo hàng rào. Chế độ công thức mặc định: Bình thường. Chế độ Khó thêm 4 Linh Kiện Điện cho mỗi lần chế."
+        }
+      ],
+      "usage": [
+        "Chế vật phẩm rồi đặt xuống đất để xây công trình phòng thủ. Cửa/cổng tự mở khi người được phép đến gần; khoảng cách mặc định 2,5. Quyền sử dụng, độ bền và phản sát thương tùy cấu hình thế giới."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_superwall.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/ttk_superwall_vi.lua"
+      ]
+    },
+    {
+      "prefab": "dyc_fence_gate_item",
+      "name": "Cổng Hàng Rào Gỗ Siêu Cấp",
+      "group": "Tường & cửa",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "log",
+              "amount": 4
+            }
+          ],
+          "technology": "Không cần máy",
+          "outputCount": 2,
+          "condition": "Cần bật chế tạo hàng rào. Chế độ công thức mặc định: Bình thường. Chế độ Khó thêm 2 Linh Kiện Điện và 1 Bánh Răng cho mỗi lần chế."
+        }
+      ],
+      "usage": [
+        "Chế vật phẩm rồi đặt xuống đất để xây công trình phòng thủ. Cửa/cổng tự mở khi người được phép đến gần; khoảng cách mặc định 2,5. Quyền sử dụng, độ bền và phản sát thương tùy cấu hình thế giới."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_superwall.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/ttk_superwall_vi.lua"
+      ]
+    },
+    {
+      "prefab": "dyc_park_fence_item",
+      "name": "Hàng Rào Công Viên Siêu Cấp",
+      "group": "Tường & cửa",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "flint",
+              "amount": 4
+            }
+          ],
+          "technology": "Không cần máy",
+          "outputCount": 4,
+          "condition": "Cần bật chế tạo hàng rào. Chế độ công thức mặc định: Bình thường. Chế độ Khó thêm 4 Linh Kiện Điện cho mỗi lần chế."
+        }
+      ],
+      "usage": [
+        "Chế vật phẩm rồi đặt xuống đất để xây công trình phòng thủ. Cửa/cổng tự mở khi người được phép đến gần; khoảng cách mặc định 2,5. Quyền sử dụng, độ bền và phản sát thương tùy cấu hình thế giới."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_superwall.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/ttk_superwall_vi.lua"
+      ]
+    },
+    {
+      "prefab": "dyc_park_door_item",
+      "name": "Cửa Công Viên Siêu Cấp",
+      "group": "Tường & cửa",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "flint",
+              "amount": 4
+            }
+          ],
+          "technology": "Không cần máy",
+          "outputCount": 4,
+          "condition": "Cần bật chế tạo hàng rào. Chế độ công thức mặc định: Bình thường. Chế độ Khó thêm 4 Linh Kiện Điện và 2 Bánh Răng cho mỗi lần chế."
+        }
+      ],
+      "usage": [
+        "Chế vật phẩm rồi đặt xuống đất để xây công trình phòng thủ. Cửa/cổng tự mở khi người được phép đến gần; khoảng cách mặc định 2,5. Quyền sử dụng, độ bền và phản sát thương tùy cấu hình thế giới."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_superwall.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/ttk_superwall_vi.lua"
+      ]
+    },
+    {
+      "prefab": "dyc_park_gate_item",
+      "name": "Cổng Công Viên Siêu Cấp",
+      "group": "Tường & cửa",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "flint",
+              "amount": 4
+            }
+          ],
+          "technology": "Không cần máy",
+          "outputCount": 2,
+          "condition": "Cần bật chế tạo hàng rào. Chế độ công thức mặc định: Bình thường. Chế độ Khó thêm 2 Linh Kiện Điện và 1 Bánh Răng cho mỗi lần chế."
+        }
+      ],
+      "usage": [
+        "Chế vật phẩm rồi đặt xuống đất để xây công trình phòng thủ. Cửa/cổng tự mở khi người được phép đến gần; khoảng cách mặc định 2,5. Quyền sử dụng, độ bền và phản sát thương tùy cấu hình thế giới."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_superwall.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/ttk_superwall_vi.lua"
+      ]
+    },
+    {
+      "prefab": "dyc_door_hedge_block_item",
+      "name": "Cửa Hàng Rào Cây Khối Siêu Cấp",
+      "group": "Tường & cửa",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "cutgrass",
+              "amount": 4
+            }
+          ],
+          "technology": "Không cần máy",
+          "outputCount": 4,
+          "condition": "Cần bật chế tạo cửa. Chế độ công thức mặc định: Bình thường. Chế độ Khó thêm 4 Linh Kiện Điện và 2 Bánh Răng cho mỗi lần chế."
+        }
+      ],
+      "usage": [
+        "Chế vật phẩm rồi đặt xuống đất để xây công trình phòng thủ. Cửa/cổng tự mở khi người được phép đến gần; khoảng cách mặc định 2,5. Quyền sử dụng, độ bền và phản sát thương tùy cấu hình thế giới."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_superwall.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/ttk_superwall_vi.lua"
+      ]
+    },
+    {
+      "prefab": "dyc_door_hedge_cone_item",
+      "name": "Cửa Hàng Rào Cây Nón Siêu Cấp",
+      "group": "Tường & cửa",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "cutgrass",
+              "amount": 4
+            }
+          ],
+          "technology": "Không cần máy",
+          "outputCount": 4,
+          "condition": "Cần bật chế tạo cửa. Chế độ công thức mặc định: Bình thường. Chế độ Khó thêm 4 Linh Kiện Điện và 2 Bánh Răng cho mỗi lần chế."
+        }
+      ],
+      "usage": [
+        "Chế vật phẩm rồi đặt xuống đất để xây công trình phòng thủ. Cửa/cổng tự mở khi người được phép đến gần; khoảng cách mặc định 2,5. Quyền sử dụng, độ bền và phản sát thương tùy cấu hình thế giới."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_superwall.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/ttk_superwall_vi.lua"
+      ]
+    },
+    {
+      "prefab": "dyc_door_hedge_layered_item",
+      "name": "Cửa Hàng Rào Cây Tầng Siêu Cấp",
+      "group": "Tường & cửa",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "cutgrass",
+              "amount": 4
+            }
+          ],
+          "technology": "Không cần máy",
+          "outputCount": 4,
+          "condition": "Cần bật chế tạo cửa. Chế độ công thức mặc định: Bình thường. Chế độ Khó thêm 4 Linh Kiện Điện và 2 Bánh Răng cho mỗi lần chế."
+        }
+      ],
+      "usage": [
+        "Chế vật phẩm rồi đặt xuống đất để xây công trình phòng thủ. Cửa/cổng tự mở khi người được phép đến gần; khoảng cách mặc định 2,5. Quyền sử dụng, độ bền và phản sát thương tùy cấu hình thế giới."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_superwall.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/ttk_superwall_vi.lua"
+      ]
+    },
+    {
+      "prefab": "dyc_door_hay_item",
+      "name": "Cửa Cỏ Siêu Cấp",
+      "group": "Tường & cửa",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "cutgrass",
+              "amount": 4
+            }
+          ],
+          "technology": "Không cần máy",
+          "outputCount": 4,
+          "condition": "Cần bật chế tạo cửa. Chế độ công thức mặc định: Bình thường. Chế độ Khó thêm 4 Linh Kiện Điện và 2 Bánh Răng cho mỗi lần chế."
+        }
+      ],
+      "usage": [
+        "Chế vật phẩm rồi đặt xuống đất để xây công trình phòng thủ. Cửa/cổng tự mở khi người được phép đến gần; khoảng cách mặc định 2,5. Quyền sử dụng, độ bền và phản sát thương tùy cấu hình thế giới."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_superwall.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/ttk_superwall_vi.lua"
+      ]
+    },
+    {
+      "prefab": "dyc_door_wood_item",
+      "name": "Cửa Gỗ Siêu Cấp",
+      "group": "Tường & cửa",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "log",
+              "amount": 4
+            }
+          ],
+          "technology": "Không cần máy",
+          "outputCount": 4,
+          "condition": "Cần bật chế tạo cửa. Chế độ công thức mặc định: Bình thường. Chế độ Khó thêm 4 Linh Kiện Điện và 2 Bánh Răng cho mỗi lần chế."
+        }
+      ],
+      "usage": [
+        "Chế vật phẩm rồi đặt xuống đất để xây công trình phòng thủ. Cửa/cổng tự mở khi người được phép đến gần; khoảng cách mặc định 2,5. Quyền sử dụng, độ bền và phản sát thương tùy cấu hình thế giới."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_superwall.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/ttk_superwall_vi.lua"
+      ]
+    },
+    {
+      "prefab": "dyc_door_stone_item",
+      "name": "Cửa Đá Siêu Cấp",
+      "group": "Tường & cửa",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "rocks",
+              "amount": 4
+            }
+          ],
+          "technology": "Không cần máy",
+          "outputCount": 4,
+          "condition": "Cần bật chế tạo cửa. Chế độ công thức mặc định: Bình thường. Chế độ Khó thêm 4 Linh Kiện Điện và 2 Bánh Răng cho mỗi lần chế."
+        }
+      ],
+      "usage": [
+        "Chế vật phẩm rồi đặt xuống đất để xây công trình phòng thủ. Cửa/cổng tự mở khi người được phép đến gần; khoảng cách mặc định 2,5. Quyền sử dụng, độ bền và phản sát thương tùy cấu hình thế giới."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_superwall.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/ttk_superwall_vi.lua"
+      ]
+    },
+    {
+      "prefab": "dyc_door_ruin_item",
+      "name": "Cửa Thulecite Siêu Cấp",
+      "group": "Tường & cửa",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "thulecite_pieces",
+              "amount": 4
+            }
+          ],
+          "technology": "Không cần máy",
+          "outputCount": 4,
+          "condition": "Cần bật chế tạo cửa. Chế độ công thức mặc định: Bình thường. Chế độ Khó thêm 4 Linh Kiện Điện và 2 Bánh Răng cho mỗi lần chế."
+        }
+      ],
+      "usage": [
+        "Chế vật phẩm rồi đặt xuống đất để xây công trình phòng thủ. Cửa/cổng tự mở khi người được phép đến gần; khoảng cách mặc định 2,5. Quyền sử dụng, độ bền và phản sát thương tùy cấu hình thế giới."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_superwall.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/ttk_superwall_vi.lua"
+      ]
+    },
+    {
+      "prefab": "dyc_door_limestone_item",
+      "name": "Cửa Đá Vôi Siêu Cấp",
+      "group": "Tường & cửa",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "rocks",
+              "amount": 4
+            }
+          ],
+          "technology": "Không cần máy",
+          "outputCount": 4,
+          "condition": "Cần bật chế tạo cửa. Chế độ công thức mặc định: Bình thường. Chế độ Khó thêm 4 Linh Kiện Điện và 2 Bánh Răng cho mỗi lần chế."
+        }
+      ],
+      "usage": [
+        "Chế vật phẩm rồi đặt xuống đất để xây công trình phòng thủ. Cửa/cổng tự mở khi người được phép đến gần; khoảng cách mặc định 2,5. Quyền sử dụng, độ bền và phản sát thương tùy cấu hình thế giới."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_superwall.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/ttk_superwall_vi.lua"
+      ]
+    },
+    {
+      "prefab": "dyc_door_moonrock_item",
+      "name": "Cửa Đá Mặt Trăng Siêu Cấp",
+      "group": "Tường & cửa",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "moonrocknugget",
+              "amount": 4
+            }
+          ],
+          "technology": "Không cần máy",
+          "outputCount": 4,
+          "condition": "Cần bật chế tạo cửa. Chế độ công thức mặc định: Bình thường. Chế độ Khó thêm 4 Linh Kiện Điện và 2 Bánh Răng cho mỗi lần chế."
+        }
+      ],
+      "usage": [
+        "Chế vật phẩm rồi đặt xuống đất để xây công trình phòng thủ. Cửa/cổng tự mở khi người được phép đến gần; khoảng cách mặc định 2,5. Quyền sử dụng, độ bền và phản sát thương tùy cấu hình thế giới."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_superwall.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/ttk_superwall_vi.lua"
+      ]
+    },
+    {
+      "prefab": "dyc_door_ice_item",
+      "name": "Cửa Băng Siêu Cấp",
+      "group": "Tường & cửa",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "ice",
+              "amount": 4
+            }
+          ],
+          "technology": "Không cần máy",
+          "outputCount": 4,
+          "condition": "Cần bật chế tạo cửa. Chế độ công thức mặc định: Bình thường. Chế độ Khó thêm 4 Linh Kiện Điện và 2 Bánh Răng cho mỗi lần chế."
+        }
+      ],
+      "usage": [
+        "Chế vật phẩm rồi đặt xuống đất để xây công trình phòng thủ. Cửa/cổng tự mở khi người được phép đến gần; khoảng cách mặc định 2,5. Quyền sử dụng, độ bền và phản sát thương tùy cấu hình thế giới."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_superwall.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/ttk_superwall_vi.lua"
+      ]
+    },
+    {
+      "prefab": "dyc_door_sea_item",
+      "name": "Cửa Biển Siêu Cấp",
+      "group": "Tường & cửa",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "cutreeds",
+              "amount": 4
+            },
+            {
+              "prefab": "rocks",
+              "amount": 4
+            }
+          ],
+          "technology": "Không cần máy",
+          "outputCount": 4,
+          "condition": "Cần bật chế tạo cửa. Chế độ công thức mặc định: Bình thường. Chế độ Khó thêm 4 Linh Kiện Điện và 2 Bánh Răng cho mỗi lần chế."
+        }
+      ],
+      "usage": [
+        "Chế vật phẩm rồi đặt xuống đất để xây công trình phòng thủ. Cửa/cổng tự mở khi người được phép đến gần; khoảng cách mặc định 2,5. Quyền sử dụng, độ bền và phản sát thương tùy cấu hình thế giới."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_superwall.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/ttk_superwall_vi.lua"
+      ]
+    },
+    {
+      "prefab": "dyc_door_pigruin_item",
+      "name": "Cửa Hàng Rào Cây  Siêu Cấp",
+      "group": "Tường & cửa",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "rocks",
+              "amount": 4
+            }
+          ],
+          "technology": "Không cần máy",
+          "outputCount": 4,
+          "condition": "Cần bật chế tạo cửa. Chế độ công thức mặc định: Bình thường. Chế độ Khó thêm 4 Linh Kiện Điện và 2 Bánh Răng cho mỗi lần chế."
+        }
+      ],
+      "usage": [
+        "Chế vật phẩm rồi đặt xuống đất để xây công trình phòng thủ. Cửa/cổng tự mở khi người được phép đến gần; khoảng cách mặc định 2,5. Quyền sử dụng, độ bền và phản sát thương tùy cấu hình thế giới."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_superwall.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/ttk_superwall_vi.lua"
+      ]
+    },
+    {
+      "prefab": "dyc_wall_hedge_block_item",
+      "name": "Tường Hàng Rào Cây Khối Siêu Cấp",
+      "group": "Tường & cửa",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "cutgrass",
+              "amount": 4
+            }
+          ],
+          "technology": "Không cần máy",
+          "outputCount": 4,
+          "condition": "Cần bật chế tạo tường. Chế độ công thức mặc định: Bình thường. Chế độ Khó thêm 4 Linh Kiện Điện cho mỗi lần chế."
+        }
+      ],
+      "usage": [
+        "Chế vật phẩm rồi đặt xuống đất để xây công trình phòng thủ. Cửa/cổng tự mở khi người được phép đến gần; khoảng cách mặc định 2,5. Quyền sử dụng, độ bền và phản sát thương tùy cấu hình thế giới."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_superwall.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/ttk_superwall_vi.lua"
+      ]
+    },
+    {
+      "prefab": "dyc_wall_hedge_cone_item",
+      "name": "Tường Hàng Rào Cây Nón Siêu Cấp",
+      "group": "Tường & cửa",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "cutgrass",
+              "amount": 4
+            }
+          ],
+          "technology": "Không cần máy",
+          "outputCount": 4,
+          "condition": "Cần bật chế tạo tường. Chế độ công thức mặc định: Bình thường. Chế độ Khó thêm 4 Linh Kiện Điện cho mỗi lần chế."
+        }
+      ],
+      "usage": [
+        "Chế vật phẩm rồi đặt xuống đất để xây công trình phòng thủ. Cửa/cổng tự mở khi người được phép đến gần; khoảng cách mặc định 2,5. Quyền sử dụng, độ bền và phản sát thương tùy cấu hình thế giới."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_superwall.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/ttk_superwall_vi.lua"
+      ]
+    },
+    {
+      "prefab": "dyc_wall_hedge_layered_item",
+      "name": "Tường Hàng Rào Cây Tầng Siêu Cấp",
+      "group": "Tường & cửa",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "cutgrass",
+              "amount": 4
+            }
+          ],
+          "technology": "Không cần máy",
+          "outputCount": 4,
+          "condition": "Cần bật chế tạo tường. Chế độ công thức mặc định: Bình thường. Chế độ Khó thêm 4 Linh Kiện Điện cho mỗi lần chế."
+        }
+      ],
+      "usage": [
+        "Chế vật phẩm rồi đặt xuống đất để xây công trình phòng thủ. Cửa/cổng tự mở khi người được phép đến gần; khoảng cách mặc định 2,5. Quyền sử dụng, độ bền và phản sát thương tùy cấu hình thế giới."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_superwall.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/ttk_superwall_vi.lua"
+      ]
+    },
+    {
+      "prefab": "dyc_wall_hay_item",
+      "name": "Tường Cỏ Siêu Cấp",
+      "group": "Tường & cửa",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "cutgrass",
+              "amount": 4
+            }
+          ],
+          "technology": "Không cần máy",
+          "outputCount": 4,
+          "condition": "Cần bật chế tạo tường. Chế độ công thức mặc định: Bình thường. Chế độ Khó thêm 4 Linh Kiện Điện cho mỗi lần chế."
+        }
+      ],
+      "usage": [
+        "Chế vật phẩm rồi đặt xuống đất để xây công trình phòng thủ. Cửa/cổng tự mở khi người được phép đến gần; khoảng cách mặc định 2,5. Quyền sử dụng, độ bền và phản sát thương tùy cấu hình thế giới."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_superwall.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/ttk_superwall_vi.lua"
+      ]
+    },
+    {
+      "prefab": "dyc_wall_wood_item",
+      "name": "Tường Gỗ Siêu Cấp",
+      "group": "Tường & cửa",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "log",
+              "amount": 4
+            }
+          ],
+          "technology": "Không cần máy",
+          "outputCount": 4,
+          "condition": "Cần bật chế tạo tường. Chế độ công thức mặc định: Bình thường. Chế độ Khó thêm 4 Linh Kiện Điện cho mỗi lần chế."
+        }
+      ],
+      "usage": [
+        "Chế vật phẩm rồi đặt xuống đất để xây công trình phòng thủ. Cửa/cổng tự mở khi người được phép đến gần; khoảng cách mặc định 2,5. Quyền sử dụng, độ bền và phản sát thương tùy cấu hình thế giới."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_superwall.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/ttk_superwall_vi.lua"
+      ]
+    },
+    {
+      "prefab": "dyc_wall_stone_item",
+      "name": "Tường Đá Siêu Cấp",
+      "group": "Tường & cửa",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "rocks",
+              "amount": 4
+            }
+          ],
+          "technology": "Không cần máy",
+          "outputCount": 4,
+          "condition": "Cần bật chế tạo tường. Chế độ công thức mặc định: Bình thường. Chế độ Khó thêm 4 Linh Kiện Điện cho mỗi lần chế."
+        }
+      ],
+      "usage": [
+        "Chế vật phẩm rồi đặt xuống đất để xây công trình phòng thủ. Cửa/cổng tự mở khi người được phép đến gần; khoảng cách mặc định 2,5. Quyền sử dụng, độ bền và phản sát thương tùy cấu hình thế giới."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_superwall.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/ttk_superwall_vi.lua"
+      ]
+    },
+    {
+      "prefab": "dyc_wall_ruin_item",
+      "name": "Tường Thulecite Siêu Cấp",
+      "group": "Tường & cửa",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "thulecite_pieces",
+              "amount": 4
+            }
+          ],
+          "technology": "Không cần máy",
+          "outputCount": 4,
+          "condition": "Cần bật chế tạo tường. Chế độ công thức mặc định: Bình thường. Chế độ Khó thêm 4 Linh Kiện Điện cho mỗi lần chế."
+        }
+      ],
+      "usage": [
+        "Chế vật phẩm rồi đặt xuống đất để xây công trình phòng thủ. Cửa/cổng tự mở khi người được phép đến gần; khoảng cách mặc định 2,5. Quyền sử dụng, độ bền và phản sát thương tùy cấu hình thế giới."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_superwall.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/ttk_superwall_vi.lua"
+      ]
+    },
+    {
+      "prefab": "dyc_wall_limestone_item",
+      "name": "Tường Đá Vôi Siêu Cấp",
+      "group": "Tường & cửa",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "rocks",
+              "amount": 4
+            }
+          ],
+          "technology": "Không cần máy",
+          "outputCount": 4,
+          "condition": "Cần bật chế tạo tường. Chế độ công thức mặc định: Bình thường. Chế độ Khó thêm 4 Linh Kiện Điện cho mỗi lần chế."
+        }
+      ],
+      "usage": [
+        "Chế vật phẩm rồi đặt xuống đất để xây công trình phòng thủ. Cửa/cổng tự mở khi người được phép đến gần; khoảng cách mặc định 2,5. Quyền sử dụng, độ bền và phản sát thương tùy cấu hình thế giới."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_superwall.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/ttk_superwall_vi.lua"
+      ]
+    },
+    {
+      "prefab": "dyc_wall_moonrock_item",
+      "name": "Tường Đá Mặt Trăng Siêu Cấp",
+      "group": "Tường & cửa",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "moonrocknugget",
+              "amount": 4
+            }
+          ],
+          "technology": "Không cần máy",
+          "outputCount": 4,
+          "condition": "Cần bật chế tạo tường. Chế độ công thức mặc định: Bình thường. Chế độ Khó thêm 4 Linh Kiện Điện cho mỗi lần chế."
+        }
+      ],
+      "usage": [
+        "Chế vật phẩm rồi đặt xuống đất để xây công trình phòng thủ. Cửa/cổng tự mở khi người được phép đến gần; khoảng cách mặc định 2,5. Quyền sử dụng, độ bền và phản sát thương tùy cấu hình thế giới."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_superwall.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/ttk_superwall_vi.lua"
+      ]
+    },
+    {
+      "prefab": "dyc_wall_ice_item",
+      "name": "Tường Băng Siêu Cấp",
+      "group": "Tường & cửa",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "ice",
+              "amount": 4
+            }
+          ],
+          "technology": "Không cần máy",
+          "outputCount": 4,
+          "condition": "Cần bật chế tạo tường. Chế độ công thức mặc định: Bình thường. Chế độ Khó thêm 4 Linh Kiện Điện cho mỗi lần chế."
+        }
+      ],
+      "usage": [
+        "Chế vật phẩm rồi đặt xuống đất để xây công trình phòng thủ. Cửa/cổng tự mở khi người được phép đến gần; khoảng cách mặc định 2,5. Quyền sử dụng, độ bền và phản sát thương tùy cấu hình thế giới."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_superwall.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/ttk_superwall_vi.lua"
+      ]
+    },
+    {
+      "prefab": "dyc_wall_sea_item",
+      "name": "Tường Biển Siêu Cấp",
+      "group": "Tường & cửa",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "cutreeds",
+              "amount": 4
+            },
+            {
+              "prefab": "rocks",
+              "amount": 4
+            }
+          ],
+          "technology": "Không cần máy",
+          "outputCount": 4,
+          "condition": "Cần bật chế tạo tường. Chế độ công thức mặc định: Bình thường. Chế độ Khó thêm 4 Linh Kiện Điện cho mỗi lần chế."
+        }
+      ],
+      "usage": [
+        "Chế vật phẩm rồi đặt xuống đất để xây công trình phòng thủ. Cửa/cổng tự mở khi người được phép đến gần; khoảng cách mặc định 2,5. Quyền sử dụng, độ bền và phản sát thương tùy cấu hình thế giới."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_superwall.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/ttk_superwall_vi.lua"
+      ]
+    },
+    {
+      "prefab": "dyc_wall_pigruin_item",
+      "name": "Tường Hàng Rào Cây  Siêu Cấp",
+      "group": "Tường & cửa",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "rocks",
+              "amount": 4
+            }
+          ],
+          "technology": "Không cần máy",
+          "outputCount": 4,
+          "condition": "Cần bật chế tạo tường. Chế độ công thức mặc định: Bình thường. Chế độ Khó thêm 4 Linh Kiện Điện cho mỗi lần chế."
+        }
+      ],
+      "usage": [
+        "Chế vật phẩm rồi đặt xuống đất để xây công trình phòng thủ. Cửa/cổng tự mở khi người được phép đến gần; khoảng cách mặc định 2,5. Quyền sử dụng, độ bền và phản sát thương tùy cấu hình thế giới."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_superwall.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/ttk_superwall_vi.lua"
+      ]
+    },
+    {
+      "prefab": "dyc_wallbuilderitem",
+      "name": "Dụng Cụ Xây Tường Nhanh",
+      "group": "Tường & cửa",
+      "recipes": [
+        {
+          "ingredients": [
+            {
+              "prefab": "cutgrass",
+              "amount": 2
+            },
+            {
+              "prefab": "twigs",
+              "amount": 2
+            },
+            {
+              "prefab": "rocks",
+              "amount": 4
+            }
+          ],
+          "technology": "Không cần máy",
+          "outputCount": 1,
+          "condition": "Cần bật chế tạo dụng cụ xây nhanh."
+        }
+      ],
+      "usage": [
+        "Mang vật phẩm tường và cửa trong túi rồi dùng dụng cụ để dựng tổ hợp. Chuột giữa/F5 xoay; cuộn chuột/F1/F2 đổi mẫu; F3/F4 đổi độ cao; Alt + chuột phải phá bỏ."
+      ],
+      "sources": [
+        "CongTrinhTuTien_Steam_2026-09-27/main/ttk_superwall.lua",
+        "CongTrinhTuTien_Steam_2026-09-27/scripts/ttk_superwall_vi.lua"
+      ]
+    }
+  ],
+  "prices": [
+    {
+      "prefab": "cutgrass",
+      "stones": 1.0
+    },
+    {
+      "prefab": "twigs",
+      "stones": 1.0
+    },
+    {
+      "prefab": "rocks",
+      "stones": 1.0
+    },
+    {
+      "prefab": "flint",
+      "stones": 1.0
+    },
+    {
+      "prefab": "petals",
+      "stones": 1.0
+    },
+    {
+      "prefab": "petals_evil",
+      "stones": 1.0
+    },
+    {
+      "prefab": "ash",
+      "stones": 1.0
+    },
+    {
+      "prefab": "pinecone",
+      "stones": 1.0
+    },
+    {
+      "prefab": "seeds",
+      "stones": 1.0
+    },
+    {
+      "prefab": "spoiled_food",
+      "stones": 1.0
+    },
+    {
+      "prefab": "meat",
+      "stones": 5.0
+    },
+    {
+      "prefab": "smallmeat",
+      "stones": 2.5
+    },
+    {
+      "prefab": "log",
+      "stones": 2.0
+    },
+    {
+      "prefab": "nitre",
+      "stones": 2.0
+    },
+    {
+      "prefab": "goldnugget",
+      "stones": 2.0
+    },
+    {
+      "prefab": "charcoal",
+      "stones": 2.0
+    },
+    {
+      "prefab": "cutreeds",
+      "stones": 2.0
+    },
+    {
+      "prefab": "silk",
+      "stones": 2.0
+    },
+    {
+      "prefab": "houndstooth",
+      "stones": 2.0
+    },
+    {
+      "prefab": "pigskin",
+      "stones": 2.0
+    },
+    {
+      "prefab": "manrabbit_tail",
+      "stones": 2.0
+    },
+    {
+      "prefab": "beefalowool",
+      "stones": 2.0
+    },
+    {
+      "prefab": "boards",
+      "stones": 5.0
+    },
+    {
+      "prefab": "cutstone",
+      "stones": 5.0
+    },
+    {
+      "prefab": "rope",
+      "stones": 5.0
+    },
+    {
+      "prefab": "moonrocknugget",
+      "stones": 10.0
+    },
+    {
+      "prefab": "nightmarefuel",
+      "stones": 10.0
+    },
+    {
+      "prefab": "redgem",
+      "stones": 10.0
+    },
+    {
+      "prefab": "bluegem",
+      "stones": 10.0
+    },
+    {
+      "prefab": "purplegem",
+      "stones": 10.0
+    },
+    {
+      "prefab": "orangegem",
+      "stones": 10.0
+    },
+    {
+      "prefab": "yellowgem",
+      "stones": 10.0
+    },
+    {
+      "prefab": "greengem",
+      "stones": 10.0
+    },
+    {
+      "prefab": "thulecite",
+      "stones": 10.0
+    },
+    {
+      "prefab": "gears",
+      "stones": 25.0
+    },
+    {
+      "prefab": "livinglog",
+      "stones": 25.0
+    },
+    {
+      "prefab": "moonstorm_spark",
+      "stones": 25.0
+    },
+    {
+      "prefab": "royal_jelly",
+      "stones": 25.0
+    },
+    {
+      "prefab": "shadowheart",
+      "stones": 25.0
+    },
+    {
+      "prefab": "dragon_scales",
+      "stones": 100.0
+    },
+    {
+      "prefab": "deerclops_eyeball",
+      "stones": 100.0
+    },
+    {
+      "prefab": "bearger_fur",
+      "stones": 100.0
+    },
+    {
+      "prefab": "shroom_skin",
+      "stones": 100.0
+    },
+    {
+      "prefab": "malbatross_beak",
+      "stones": 200.0
+    },
+    {
+      "prefab": "minotaurhorn",
+      "stones": 200.0
+    },
+    {
+      "prefab": "klaus_sack",
+      "stones": 200.0
+    },
+    {
+      "prefab": "purebrilliance",
+      "stones": 200.0
+    },
+    {
+      "prefab": "horrorfuel",
+      "stones": 200.0
+    },
+    {
+      "prefab": "alterguardianhatshard",
+      "stones": 200.0
+    },
+    {
+      "prefab": "walrus_tusk",
+      "stones": 25.0
+    },
+    {
+      "prefab": "steelwool",
+      "stones": 25.0
+    },
+    {
+      "prefab": "mandrake",
+      "stones": 25.0
+    },
+    {
+      "prefab": "horn",
+      "stones": 25.0
+    },
+    {
+      "prefab": "lightninggoathorn",
+      "stones": 25.0
+    },
+    {
+      "prefab": "armorsnurtleshell",
+      "stones": 100.0
+    },
+    {
+      "prefab": "lunarplant_husk",
+      "stones": 100.0
+    },
+    {
+      "prefab": "voidcloth",
+      "stones": 100.0
+    },
+    {
+      "prefab": "dreadstone",
+      "stones": 100.0
+    },
+    {
+      "prefab": "eyemaskhat",
+      "stones": 100.0
+    },
+    {
+      "prefab": "krampus_sack",
+      "stones": 200.0
+    },
+    {
+      "prefab": "armorskeleton",
+      "stones": 200.0
+    },
+    {
+      "prefab": "skeletonhat",
+      "stones": 200.0
+    },
+    {
+      "prefab": "hivehat",
+      "stones": 200.0
+    },
+    {
+      "prefab": "shieldofterror",
+      "stones": 200.0
+    },
+    {
+      "prefab": "xd_bysp",
+      "stones": 100.0
+    },
+    {
+      "prefab": "xd_spider_leg",
+      "stones": 100.0
+    },
+    {
+      "prefab": "xd_mgqg",
+      "stones": 100.0
+    },
+    {
+      "prefab": "xd_baihu_skin",
+      "stones": 200.0
+    },
+    {
+      "prefab": "xd_qlr",
+      "stones": 200.0
+    },
+    {
+      "prefab": "xd_fs",
+      "stones": 200.0
+    }
+  ],
+  "attributePrices": [
+    {
+      "tier": "I",
+      "stones": 20.0
+    },
+    {
+      "tier": "II",
+      "stones": 50.0
+    },
+    {
+      "tier": "III",
+      "stones": 100.0
+    },
+    {
+      "tier": "IV",
+      "stones": 200.0
+    },
+    {
+      "tier": "V",
+      "stones": 400.0
+    },
+    {
+      "tier": "UTILITY",
+      "stones": 100.0
+    }
+  ],
+  "defaultPrice": 5,
+  "treasureGroups": [
+    {
+      "id": "common",
+      "name": "Thông thường",
+      "weight": 35,
+      "prefabs": [
+        "amulet",
+        "armormarble",
+        "armorslurper",
+        "armorwood",
+        "bandage",
+        "bird_egg_cooked",
+        "butter",
+        "butterfly",
+        "chum",
+        "cutless",
+        "cutreeds",
+        "drumstick",
+        "dug_trap_starfish",
+        "eyemaskhat",
+        "farm_plow_item",
+        "fishingrod",
+        "footballhat",
+        "golden_farm_hoe",
+        "goldenaxe",
+        "goldenpickaxe",
+        "goldenpitchfork",
+        "goldenshovel",
+        "honeycomb",
+        "icehat",
+        "lifeinjector",
+        "lightninggoathorn",
+        "livinglog",
+        "mandrake_planted",
+        "mandrakesoup",
+        "meatballs",
+        "minotaurhorn",
+        "molehat",
+        "monkey_mediumhat",
+        "monkey_smallhat",
+        "moonglass",
+        "multitool_axe_pickaxe",
+        "oceanfishingrod",
+        "panflute",
+        "pigskin",
+        "polly_rogershat",
+        "powcake",
+        "raincoat",
+        "ratatouille",
+        "reflectivevest",
+        "reviver",
+        "saltrock",
+        "sewing_kit",
+        "spidereggsack",
+        "spiderhat",
+        "sweatervest",
+        "taffy",
+        "tentaclespike",
+        "townportaltalisman",
+        "umbrella",
+        "walrushat",
+        "watermelonhat"
+      ]
+    },
+    {
+      "id": "good",
+      "name": "Tốt",
+      "weight": 15,
+      "prefabs": [
+        "amulet",
+        "armorruins",
+        "bearger_fur",
+        "blueamulet",
+        "boat_item",
+        "boat_rotator_kit",
+        "boatpatch",
+        "bonestew",
+        "bundlewrap",
+        "chestupgrade_stacksize",
+        "deerclops_eyeball",
+        "deerclopseyeball_sentryward_kit",
+        "dragon_scales",
+        "dragonpie",
+        "eyebrellahat",
+        "greenamulet",
+        "icecream",
+        "jellybean",
+        "klaussackkey",
+        "malbatross_beak",
+        "moonglassaxe",
+        "nightsword",
+        "orangeamulet",
+        "perogies",
+        "pickaxe_lunarplant",
+        "purpleamulet",
+        "rock_avocado_fruit_sprout",
+        "ruinshat",
+        "shovel_lunarplant",
+        "shroom_skin",
+        "staff_tornado",
+        "xd_lingshi2",
+        "yellowamulet"
+      ]
+    },
+    {
+      "id": "rare",
+      "name": "Hiếm",
+      "weight": 5,
+      "prefabs": [
+        "alterguardianhat",
+        "armor_lunarplant",
+        "armor_voidcloth",
+        "armordreadstone",
+        "armorskeleton",
+        "beargerfur_sack",
+        "dreadstonehat",
+        "flowersalad_spice_chili",
+        "greengem",
+        "greenstaff",
+        "jellybean_spice_chili",
+        "krampus_sack",
+        "lunarplanthat",
+        "opalstaff",
+        "orangegem",
+        "orangestaff",
+        "seafoodgumbo_spice_chili",
+        "voidcloth_scythe",
+        "voidcloth_umbrella",
+        "voidclothhat",
+        "voltgoatjelly",
+        "xd_danyao_dt",
+        "xd_danyao_hj",
+        "xd_danyao_jq",
+        "xd_danyao_xs",
+        "xd_danyao_yz",
+        "xd_danyao_zj",
+        "xd_fs",
+        "xd_ftj",
+        "xd_qlr",
+        "xd_zhf",
+        "yellowgem",
+        "yellowstaff"
+      ]
+    },
+    {
+      "id": "monster",
+      "name": "Quái",
+      "weight": 42,
+      "prefabs": [
+        "bat",
+        "bishop",
+        "bunnyman",
+        "buzzard",
+        "catcoon",
+        "crawlingnightmare",
+        "eyeofterror_mini",
+        "firehound",
+        "frog",
+        "fruitdragon",
+        "fruitfly",
+        "fused_shadeling_bomb",
+        "icehound",
+        "killerbee",
+        "knight",
+        "koalefant_summer",
+        "koalefant_winter",
+        "krampus",
+        "lightninggoat",
+        "lordfruitfly",
+        "lunarfrog",
+        "lunarthrall_plant",
+        "mermguard",
+        "monkey",
+        "spider_moon",
+        "mushgnome",
+        "nightmarebeak",
+        "pigguard",
+        "powder_monkey",
+        "rook",
+        "shadowthrall_hands",
+        "shadowthrall_horns",
+        "shadowthrall_wings",
+        "slurper",
+        "slurtle",
+        "snurtle",
+        "spat",
+        "spider",
+        "spider_healer",
+        "spider_hider",
+        "spider_warrior",
+        "tallbird",
+        "tentacle",
+        "walrus",
+        "warg",
+        "worm"
+      ]
+    },
+    {
+      "id": "boss",
+      "name": "Boss",
+      "weight": 8,
+      "prefabs": [
+        "alterguardian_phase3",
+        "bearger",
+        "beequeen",
+        "deerclops",
+        "dragonfly",
+        "klaus",
+        "lunarthrall_plant",
+        "minotaur",
+        "mutatedbearger",
+        "mutateddeerclops",
+        "mutatedwarg",
+        "shadow_bishop",
+        "shadow_knight",
+        "shadow_rook",
+        "spiderqueen",
+        "xd_jfsn",
+        "xd_qlch"
+      ]
+    }
+  ],
+  "names": {
+    "alterguardian_phase3": "Celestial Champion",
+    "alterguardianhat": "Enlightened Crown",
+    "alterguardianhatshard": "Enlightened Shard",
+    "amulet": "Life Giving Amulet",
+    "armor_lunarplant": "Brightshade Armor",
+    "armor_voidcloth": "Void Robe",
+    "armorsnurtleshell": "Snurtle Shell Armor",
+    "ash": "Ashes",
+    "bandage": "Honey Poultice",
+    "bat": "Batilisk",
+    "bearger": "Bearger",
+    "bearger_fur": "Thick Fur",
+    "beargerfur_sack": "Polar Bearger Bin",
+    "beefalowool": "Beefalo Wool",
+    "beequeen": "Bee Queen",
+    "bishop": "Clockwork Bishop",
+    "bluegem": "Blue Gem",
+    "boards": "Boards",
+    "boatpatch": "Boat Patch",
+    "bunnyman": "Bunnyman",
+    "butter": "Butter",
+    "butterfly": "Butterfly",
+    "buzzard": "Buzzard",
+    "catcoon": "Catcoon",
+    "charcoal": "Charcoal",
+    "chestupgrade_stacksize": "Elastispacer",
+    "chum": "Fish Food",
+    "cutgrass": "Cut Grass",
+    "cutless": "Cutless",
+    "cutreeds": "Cut Reeds",
+    "cutstone": "Cut Stone",
+    "deerclops": "Deerclops",
+    "deerclops_eyeball": "Deerclops Eyeball",
+    "dragon_scales": "Scales",
+    "dragonfly": "Dragonfly",
+    "dreadstone": "dreadstone",
+    "drumstick": "Drumstick",
+    "eyeofterror_mini": "Suspicious Peeper",
+    "fishingrod": "Freshwater Fishing Rod",
+    "flint": "Flint",
+    "frog": "Frog",
+    "fruitdragon": "Saladmander",
+    "fruitfly": "Fruit Fly",
+    "fused_shadeling_bomb": "Dread Mite",
+    "gears": "Gears",
+    "goldnugget": "Gold Nugget",
+    "greengem": "Green Gem",
+    "hivehat": "Bee Queen Crown",
+    "honeycomb": "Honeycomb",
+    "horn": "Beefalo Horn",
+    "horrorfuel": "Pure Horror",
+    "houndstooth": "Hound's Tooth",
+    "ice": "Ice",
+    "icehound": "Ice Hound",
+    "killerbee": "Killer Bee",
+    "klaus": "Klaus",
+    "klaus_sack": "Loot Stash",
+    "knight": "Clockwork Knight",
+    "koalefant_summer": "Koalefant",
+    "koalefant_winter": "Koalefant",
+    "krampus": "Krampus",
+    "krampus_sack": "Krampus Sack",
+    "lifeinjector": "Booster Shot",
+    "lightninggoat": "Volt Goat",
+    "lightninggoathorn": "Volt Goat Horn",
+    "livinglog": "Living Log",
+    "log": "Log",
+    "lordfruitfly": "Lord of the Fruit Flies",
+    "lunarfrog": "Bright-Eyed Frog",
+    "lunarplant_husk": "Brightshade Husk",
+    "lunarthrall_plant": "Deadly Brightshade",
+    "malbatross_beak": "Malbatross Bill",
+    "mandrake": "Mandrake",
+    "mandrake_planted": "Mandrake",
+    "manrabbit_tail": "Bunny Puff",
+    "meat": "Meat",
+    "minotaur": "Ancient Guardian",
+    "minotaurhorn": "Guardian's Horn",
+    "monkey": "Splumonkey",
+    "moonglass": "Moon Shard",
+    "moonrocknugget": "Moon Rock",
+    "moonstorm_spark": "Moongleam",
+    "mushgnome": "Mush Gnome",
+    "mutatedbearger": "Armored Bearger",
+    "nightmarefuel": "Nightmare Fuel",
+    "nightsword": "Dark Sword",
+    "nitre": "Nitre",
+    "oceanfishingrod": "Sea Fishing Rod",
+    "orangegem": "Orange Gem",
+    "panflute": "Pan Flute",
+    "petals": "Petals",
+    "petals_evil": "Dark Petals",
+    "pickaxe_lunarplant": "Brightshade Smasher",
+    "pigguard": "Guard Pig",
+    "pigskin": "Pig Skin",
+    "pinecone": "Pine Cone",
+    "powder_monkey": "Powder Monkey",
+    "purebrilliance": "Pure Brilliance",
+    "purplegem": "Purple Gem",
+    "raincoat": "Rain Coat",
+    "redgem": "Red Gem",
+    "reflectivevest": "Summer Frest",
+    "reviver": "Telltale Heart",
+    "rock_avocado_fruit_sprout": "Sprouting Stone Fruit",
+    "rocks": "Rocks",
+    "rook": "Clockwork Rook",
+    "rope": "Rope",
+    "royal_jelly": "Royal Jelly",
+    "saltrock": "Salt Crystals",
+    "seeds": "Seeds",
+    "shadow_bishop": "Shadow Bishop",
+    "shadow_knight": "Shadow Knight",
+    "shadow_rook": "Shadow Rook",
+    "shadowheart": "Shadow Atrium",
+    "shadowthrall_hands": "Ink Blight",
+    "shadowthrall_horns": "Ink Blight",
+    "shadowthrall_wings": "Ink Blight",
+    "shieldofterror": "Shield of Terror",
+    "shovel_lunarplant": "Brightshade Shoevel",
+    "shroom_skin": "Shroom Skin",
+    "silk": "Silk",
+    "slurper": "Slurper",
+    "slurtle": "Slurtle",
+    "smallmeat": "Morsel",
+    "snurtle": "Snurtle",
+    "spat": "Ewecus",
+    "spider": "Spider",
+    "spider_healer": "Nurse Spider",
+    "spider_hider": "Cave Spider",
+    "spider_moon": "Shattered Spider",
+    "spider_warrior": "Spider Warrior",
+    "spidereggsack": "Spider Eggs",
+    "spidergland": "Spider Gland",
+    "spiderqueen": "Spider Queen",
+    "spoiled_food": "Rot",
+    "staff_tornado": "Weather Pain",
+    "steelwool": "Steel Wool",
+    "stinger": "Stinger",
+    "sweatervest": "Dapper Vest",
+    "tallbird": "Tallbird",
+    "tentacle": "Tentacle",
+    "tentaclespike": "Tentacle Spike",
+    "thulecite": "Thulecite",
+    "thulecite_pieces": "Thulecite Fragments",
+    "townportaltalisman": "Desert Stone",
+    "transistor": "Electrical Doodad",
+    "twigs": "Twigs",
+    "umbrella": "Umbrella",
+    "voidcloth": "Dark Tatters",
+    "voidcloth_scythe": "Shadow Reaper",
+    "voidcloth_umbrella": "Umbralla",
+    "walrus": "MacTusk",
+    "walrus_tusk": "Walrus Tusk",
+    "walrushat": "Tam o' Shanter",
+    "warg": "Varg",
+    "worm": "Depths Worm",
+    "xd_baihu_skin": "Cẩm Mao Hổ Bì",
+    "xd_bysp": "Mảnh Bản Nguyên",
+    "xd_danyao_dt": "Đoán Thể Hoàn",
+    "xd_danyao_hj": "Hóa Tinh Đan",
+    "xd_danyao_jq": "Tụ Khí Hoàn",
+    "xd_danyao_xs": "Tẩy Tủy Hoàn",
+    "xd_danyao_yz": "Vân Trung Đan",
+    "xd_danyao_zj": "Trúc Cơ Đan",
+    "xd_fs": "Phượng Tủy",
+    "xd_ftj": "Phần Thiên Kiếm",
+    "xd_jfsn": "Kim Phượng Thần Niệm",
+    "xd_lingshi2": "Trung Phẩm Linh Thạch",
+    "xd_lingshi3": "Thượng Phẩm Linh Thạch",
+    "xd_mgqg": "Ma Quái Kiềm Cốt",
+    "xd_qlch": "Kỳ Lân Tàn Hồn",
+    "xd_qlr": "Kỳ Lân Nhung",
+    "xd_spider_leg": "Tà Sát Bộ Túc",
+    "xd_zhf": "Tôn Hồn Phiên",
+    "yellowgem": "Yellow Gem"
+  },
+  "spriteAliases": {
+    "dyc_fence_item": "fence",
+    "dyc_fence_gate_item": "fencegate",
+    "dyc_park_fence_item": "parkfence",
+    "dyc_park_door_item": "parkdoor",
+    "dyc_park_gate_item": "parkgate",
+    "dyc_door_hedge_block_item": "dychedgeblockdoor",
+    "dyc_door_hedge_cone_item": "dychedgeconedoor",
+    "dyc_door_hedge_layered_item": "dychedgelayereddoor",
+    "dyc_door_hay_item": "haydoor",
+    "dyc_door_wood_item": "wooddoor",
+    "dyc_door_stone_item": "stonedoor",
+    "dyc_door_ruin_item": "ruindoor",
+    "dyc_door_limestone_item": "limestonedoor",
+    "dyc_door_moonrock_item": "moonrockdoor",
+    "dyc_door_ice_item": "icedoor",
+    "dyc_door_sea_item": "seadoor",
+    "dyc_door_pigruin_item": "dycpigruindoor",
+    "dyc_wall_hedge_block_item": "dychedgeblockwall",
+    "dyc_wall_hedge_cone_item": "dychedgeconewall",
+    "dyc_wall_hedge_layered_item": "dychedgelayeredwall",
+    "dyc_wall_hay_item": "haywall",
+    "dyc_wall_wood_item": "woodwall",
+    "dyc_wall_stone_item": "stonewall",
+    "dyc_wall_ruin_item": "ruinwall",
+    "dyc_wall_limestone_item": "limestonewall",
+    "dyc_wall_moonrock_item": "moonrockwall",
+    "dyc_wall_ice_item": "icewall",
+    "dyc_wall_sea_item": "seawall",
+    "dyc_wall_pigruin_item": "dycpigruinwall",
+    "dyc_wallbuilderitem": "wallbuilder"
+  },
+  "sources": [
+    {
+      "path": "CongTrinhTuTien_Steam_2026-09-27/main/ttk_carpet.lua",
+      "sha256": "dcef968fb1036fdd4f94b46624ec3bb61049211c7c8c93c1785adb109ed8e6a4"
+    },
+    {
+      "path": "CongTrinhTuTien_Steam_2026-09-27/main/ttk_eternal_fire.lua",
+      "sha256": "bf2d033a2f8926117b401228096a5b99c9ac0786dcaf8c7f8591c969add53eda"
+    },
+    {
+      "path": "CongTrinhTuTien_Steam_2026-09-27/main/ttk_fsct.lua",
+      "sha256": "4f13aa1cfc70d68588eacdea35243845e171e79e0224fc7f0c7f835ae54cbadb"
+    },
+    {
+      "path": "CongTrinhTuTien_Steam_2026-09-27/main/ttk_lingshi_recycler.lua",
+      "sha256": "a2a3c4a28d94a523302f1452a4de88edf220619aaadb02a07eead18f298afb8c"
+    },
+    {
+      "path": "CongTrinhTuTien_Steam_2026-09-27/main/ttk_portal.lua",
+      "sha256": "322400e0095c8973708511681e05d1d0033b72953a5f4b1aae7d8bf914e112ac"
+    },
+    {
+      "path": "CongTrinhTuTien_Steam_2026-09-27/main/ttk_superwall.lua",
+      "sha256": "0f4fc72033cd28a26196f83352c19acbef414ad38dd3506972118b611855dfe5"
+    },
+    {
+      "path": "CongTrinhTuTien_Steam_2026-09-27/main/ttk_thien_nghich_chau.lua",
+      "sha256": "0dd5d5bcd94a1dcca79cce8f7af739438431ce03680316801416e9902814119c"
+    },
+    {
+      "path": "CongTrinhTuTien_Steam_2026-09-27/main/ttk_treasure.lua",
+      "sha256": "edefe6914ca49c75033c5496317210292ec03bf50e2e0ce9100a613212cfcc70"
+    },
+    {
+      "path": "CongTrinhTuTien_Steam_2026-09-27/modinfo.lua",
+      "sha256": "328b1aec4451399c5da4e285f9b89c366ae288fcacbdde908bfd746917cd2e73"
+    },
+    {
+      "path": "CongTrinhTuTien_Steam_2026-09-27/scripts/components/ttt_travelable.lua",
+      "sha256": "c2a11076a2f1c2f31692ac7212584a551ceefa74d320b63d667474f65eb80d90"
+    },
+    {
+      "path": "CongTrinhTuTien_Steam_2026-09-27/scripts/nova_lingshi_pricing.lua",
+      "sha256": "4df304e70ae4ac7d180edc23a0cd669ffe8e573ac7a1c82802cd9c5403fa72ae"
+    },
+    {
+      "path": "CongTrinhTuTien_Steam_2026-09-27/scripts/nova_treasure_logic.lua",
+      "sha256": "44841bd884f3b02b7e209ba74186e3ea224bb4e6887e24000f858527f9243051"
+    },
+    {
+      "path": "CongTrinhTuTien_Steam_2026-09-27/scripts/nova_treasure_rewards.lua",
+      "sha256": "377255b9b5ab6bc772ee681c32710ee97391f8663e2a63e327bf79fe1f518569"
+    },
+    {
+      "path": "CongTrinhTuTien_Steam_2026-09-27/scripts/prefabs/deluxe_firepit.lua",
+      "sha256": "8c80f9a34323a403a16d7fb3305e1c9aeef56cdec37af51ff9583e7d7665dbbc"
+    },
+    {
+      "path": "CongTrinhTuTien_Steam_2026-09-27/scripts/prefabs/endo_firepit.lua",
+      "sha256": "8901af3264107e30a6786d070bbb3b27637403acf713edd1c047e6b5d09296f7"
+    },
+    {
+      "path": "CongTrinhTuTien_Steam_2026-09-27/scripts/prefabs/heat_star.lua",
+      "sha256": "dbe4edf2557c82bb92fe2e6ee8b3ad6b93333bbb5c1890b35e78f46b0834ab77"
+    },
+    {
+      "path": "CongTrinhTuTien_Steam_2026-09-27/scripts/prefabs/ice_star.lua",
+      "sha256": "890e8eba3f421af0b2b2d67027b93abc14a9e0e3dbc16b385d622a81b3eeaac7"
+    },
+    {
+      "path": "CongTrinhTuTien_Steam_2026-09-27/scripts/prefabs/nova_lingshi_recycler.lua",
+      "sha256": "48409fa500d67e33aa5de83fcbb629b5db25622a9b23a270a3702f68ddbdd8bf"
+    },
+    {
+      "path": "CongTrinhTuTien_Steam_2026-09-27/scripts/prefabs/nova_treasure_site.lua",
+      "sha256": "5726d2ff03f6226bda8dd06fbe738e8dcece41b4288f449a7553da0ee536f923"
+    },
+    {
+      "path": "CongTrinhTuTien_Steam_2026-09-27/scripts/prefabs/ttk_fsct.lua",
+      "sha256": "ec1a2e473696c45fd2219d3dec43698a717f3d78338ad4178a9cd478e39a074c"
+    },
+    {
+      "path": "CongTrinhTuTien_Steam_2026-09-27/scripts/ttk_superwall_vi.lua",
+      "sha256": "303f319150fd19ee7c250e54e3a2b25c26153a85b42794a2b94c7ac799c0d5c2"
+    }
+  ]
+}

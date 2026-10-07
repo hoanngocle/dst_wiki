@@ -7,6 +7,7 @@ import type {
 } from "@/app/lib/item-catalog";
 import { GameSprite } from "./game-sprite";
 import { RecipeIngredients } from "./recipe-ingredients";
+import { ItemUsageFacts, CharacterRequirement } from "./item-summary";
 
 
 const DROP_TYPE_LABEL = {
@@ -109,6 +110,7 @@ function CraftingSection({
 
   return (
     <DetailSection id={`${titleId}-crafting`} title="Công thức">
+      <CharacterRequirement item={item} mode="crafting" />
       {details.recipeStatus === "known" && item.recipe ? (
         <>
           <div className="flex flex-wrap items-center gap-3 p-4">
@@ -141,6 +143,15 @@ function CraftingSection({
           noneText="Không có công thức chế tạo."
         />
       )}
+      {item.summary?.acquisition.status === "known" && !item.details?.dropBy.sources.length ? (
+        <p className="border-t border-nova-border px-4 py-3 text-sm leading-6 text-nova-muted">{item.summary.acquisition.text}</p>
+      ) : null}
+      <DropBySection
+        item={item}
+        titleId={titleId}
+        itemsById={itemsById}
+        onSelectItem={onSelectItem}
+      />
     </DetailSection>
   );
 }
@@ -205,7 +216,7 @@ function UsageSection({
   if (!usage) return null;
 
   return (
-    <DetailSection id={`${titleId}-usage`} title="Usage">
+    <DetailSection id={`${titleId}-usage`} title="Cách Sử dụng">
       {usage.status === "known" ? (
         <div className="space-y-3 p-4">
           {usage.effects.length ? (
@@ -234,8 +245,9 @@ function UsageSection({
           ) : null}
         </div>
       ) : (
-        <StatusMessage status={usage.status} noneText="Không có cách sử dụng đã biết." />
+        null
       )}
+      <ItemUsageFacts item={item} includeUsage={usage.status !== "known"} />
     </DetailSection>
   );
 }
@@ -299,7 +311,7 @@ function DropBySection({
   if (!dropBy) return null;
 
   return (
-    <DetailSection id={`${titleId}-drop-by`} title="Nguồn nhận">
+    <div id={`${titleId}-drop-by`} className="border-t border-nova-border">
       {dropBy.status === "known" ? (
         <ul className="space-y-2 p-4">
           {dropBy.sources.map((source, index) => (
@@ -317,7 +329,7 @@ function DropBySection({
           noneText="Không có nguồn nhận ngoài chế tạo."
         />
       )}
-    </DetailSection>
+    </div>
   );
 }
 
@@ -385,12 +397,7 @@ export function TuTienItemSections({
         itemsById={itemsById}
         onSelectItem={onSelectItem}
       />
-      <DropBySection
-        item={item}
-        titleId={titleId}
-        itemsById={itemsById}
-        onSelectItem={onSelectItem}
-      />
+
     </>
   );
 }

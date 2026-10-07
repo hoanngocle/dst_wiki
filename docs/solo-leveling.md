@@ -54,29 +54,7 @@ the atlas UV coordinates. It uses installed Pillow, performs format/size checks,
 and never modifies mod textures or executes Lua. There are 40 published icon
 atlases in `public/solo-leveling/icons/`.
 
-Regenerate after updating the local mod:
-
-```powershell
-python -m tools.extract.build_solo_leveling_data
-# Use a Python environment with Pillow (the bundled Codex Python has it):
-python -m tools.extract.publish_solo_leveling_assets
-python -m unittest tests.extract.test_build_solo_leveling_data
-python -m unittest tests.extract.test_publish_solo_leveling_assets
-```
-
-The extractor reads local files without executing the mod. It folds literal
-TUNING assignments, references to already-defined tuning values and the mod's
-explicit EXP remapping loops. Arbitrary functions and values supplied by the
-game/server are not evaluated. The configuration section describes the static
-defaults; conditional overrides in `hh_config.lua` are excluded, since they
-depend on the chosen difficulty/server settings. Actual values may depend on
-the server.
-
-The extractor creates `public/solo-leveling/sources.json` and a ZIP with the
-original Lua, XML and TXT files for local offline reference. These archives
-and the local `solo_leveling/` input directory are excluded from Git.
-The file inventory lists every file, including binary animation, textures,
-manifest and audio; the source reader does not preview arbitrary binary assets.
+Extraction and asset publishing tools are maintained outside this web repository. Update the checked-in JSON and icon assets together after verifying them against the current mod source.
 
 `Wiki.txt` is preserved as published by the mod. The crafting section separately
 notes discrepancies with current recipes (marble for Hắc Nguyệt Hồ and the

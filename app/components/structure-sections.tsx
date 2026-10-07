@@ -8,6 +8,7 @@ import type {
 } from "@/app/lib/item-catalog";
 import { GameSprite } from "./game-sprite";
 import { RecipeIngredients } from "./recipe-ingredients";
+import { CharacterRequirement } from "./item-summary";
 
 function Section({
   id,
@@ -136,11 +137,13 @@ function OriginSection({ details, titleId }: { details: StructureDetails; titleI
 }
 
 function ConstructionSection({
+  item,
   details,
   titleId,
   itemsById,
   onSelectItem,
 }: {
+  item: ItemListEntry;
   details: StructureDetails;
   titleId: string;
   itemsById: ReadonlyMap<string, ItemListEntry>;
@@ -149,6 +152,7 @@ function ConstructionSection({
   const construction = details.construction;
   return (
     <Section id={`${titleId}-construction`} title="Công thức xây dựng">
+      <CharacterRequirement item={item} mode="crafting" />
       {construction.status === "known" ? (
         <>
           <div className="p-4">
@@ -332,6 +336,7 @@ export function StructureSections({
     <div className="space-y-4">
       <OriginSection details={details} titleId={titleId} />
       <ConstructionSection
+        item={item}
         details={details}
         titleId={titleId}
         itemsById={itemsById}

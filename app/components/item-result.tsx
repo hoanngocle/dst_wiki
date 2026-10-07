@@ -95,11 +95,6 @@ export function ItemResult({
             <h3 className="truncate text-[17px] font-semibold text-nova-text">
               <HighlightedText text={item.name} query={query} />
             </h3>
-            {item.englishName ? (
-              <p lang="en" className="mt-0.5 truncate text-sm text-nova-muted">
-                <HighlightedText text={item.englishName} query={query} />
-              </p>
-            ) : null}
             {realPrefab ? (
               <code className="mt-1 block truncate font-mono text-[11px] text-nova-faint">
                 <HighlightedText text={item.prefabId} query={query} />

@@ -227,10 +227,10 @@ describe("ItemDetailModal", () => {
     const body = screen.getByTestId("item-detail-modal-body");
     expect(body.className).toContain("overflow-y-auto");
     expect(body.className).toContain("overscroll-contain");
-    const englishName = screen.getByText("Gold Nugget");
+    expect(screen.queryByText("Gold Nugget")).toBeNull();
     const prefabCode = screen.getByText("goldnugget");
     expect(prefabCode.tagName).toBe("CODE");
-    expect(englishName.nextElementSibling).toBe(prefabCode);
+
     expect(screen.getByLabelText("Đá, số lượng 1")).toBeDefined();
     expect(screen.getByText("Item")).toBeDefined();
     expect(screen.getByText("DST")).toBeDefined();
@@ -238,13 +238,8 @@ describe("ItemDetailModal", () => {
     expect(screen.getByRole("heading", { name: "Công thức" })).toBeDefined();
     expect(screen.getByText("=")).toBeDefined();
     expect(screen.getByLabelText("Kết quả: Vàng, số lượng 1")).toBeDefined();
-    const summaryHeading = screen.getByRole("heading", { name: "Tóm tắt" });
-    const craftingHeading = screen.getByRole("heading", { name: "Công thức" });
-    expect(screen.getByText("Một cục vàng.")).toBeDefined();
-    expect(
-      summaryHeading.compareDocumentPosition(craftingHeading) &
-        Node.DOCUMENT_POSITION_FOLLOWING,
-    ).toBeTruthy();
+    expect(screen.queryByRole("heading", { name: "Tóm tắt" })).toBeNull();
+    expect(screen.getAllByRole("listitem")).toHaveLength(1);
     expect(screen.queryByRole("heading", { name: "Mô tả" })).toBeNull();
     expect(screen.queryByRole("heading", { name: "Source" })).toBeNull();
     expect(screen.queryByText("Dropped by")).toBeNull();
@@ -266,7 +261,7 @@ describe("ItemDetailModal", () => {
 
     const dialog = screen.getByRole("dialog", { name: "Đá" });
     expect(dialog).toBeDefined();
-    expect(screen.getByText("Rocks")).toBeDefined();
+    expect(screen.getByText("rocks").tagName).toBe("CODE");
     expect(screen.queryByRole("dialog", { name: "Vàng" })).toBeNull();
     expect(dialog.contains(document.activeElement)).toBe(true);
   });
@@ -339,7 +334,7 @@ describe("ItemDetailModal", () => {
     expect(scrollTo).toHaveBeenCalledWith({ top: 0, behavior: "auto" });
   });
 
-  it("omits the recipe panel when no recipe exists", () => {
+  it("shows acquisition in the recipe panel even without a recipe", () => {
     render(
       <ItemDetailModal
         {...peekProps(item)}
@@ -347,17 +342,17 @@ describe("ItemDetailModal", () => {
       />,
     );
 
-    expect(screen.queryByRole("heading", { name: "Công thức" })).toBeNull();
+    expect(screen.getByRole("heading", { name: "Công thức" })).toBeDefined();
     expect(screen.queryByRole("heading", { name: "Thông tin kỹ thuật" })).toBeNull();
   });
 
-  it("always shows all three structured sections for Tu Tiên items", () => {
+  it("groups Tu Tiên acquisition under crafting alongside Usage", () => {
     render(<ItemDetailModal {...peekProps(tuTienItem)} />);
 
     expect(screen.getByRole("heading", { name: "Công thức" })).toBeDefined();
-    expect(screen.getByRole("heading", { name: "Usage" })).toBeDefined();
-    expect(screen.getByRole("heading", { name: "Nguồn nhận" })).toBeDefined();
-    expect(screen.getAllByText("Chưa xác định từ dữ liệu mod.")).toHaveLength(3);
+    expect(screen.getByRole("heading", { name: "Cách Sử dụng" })).toBeDefined();
+    expect(screen.queryByRole("heading", { name: "Nguồn nhận" })).toBeNull();
+    expect(screen.getAllByText("Chưa xác định từ dữ liệu mod.")).toHaveLength(2);
   });
 
   it("uses the complete structure renderer for structure records", () => {
@@ -395,171 +390,34 @@ describe("ItemDetailModal", () => {
     );
 
     expect(
-      screen.getByRole("heading", { name: "Cách tạo / ghi chú chế tạo" }),
+      screen.getByRole("heading", { name: "Công thức" }),
     ).toBeDefined();
     expect(screen.getByText("Tiêu hao 10 điểm máu để tạo ra một cánh hoa.")).toBeDefined();
     expect(screen.queryByText("=")).toBeNull();
   });
 
-  it("loads a standalone wiki article without obsolete metadata panels", async () => {
-    vi.stubGlobal(
-      "fetch",
-      vi.fn().mockResolvedValue({
-        ok: true,
-        json: async () => ({
-          schema_version: 1,
-          pageId: 100736,
-          title: "Halberd",
-          canonicalUrl: "https://dontstarve.wiki.gg/wiki/Halberd",
-          html: "<p>Full Halberd article.</p>",
-          categories: ["Items"],
-          images: [],
-          recipes: [],
-          revision: {
-            id: 569319,
-            sha1: "5bf67f6c77b1a0d0c5bb66b0ef02ccf5c04dba64",
-            timestamp: "2026-07-12T08:43:43Z",
-          },
-        }),
-      }),
-    );
-
-    render(<ItemDetailModal {...peekProps(wikiItem)} />);
-
-    expect(screen.queryByText("Wiki page")).toBeNull();
-    expect(screen.queryByText("100736")).toBeNull();
-    expect(screen.queryByText("wiki-100736")).toBeNull();
-    expect(screen.queryByRole("heading", { name: "Trang liên quan" })).toBeNull();
-    expect(screen.queryByRole("link", { name: "Halberd/DST" })).toBeNull();
-    expect(await screen.findByText("Full Halberd article.")).toBeDefined();
-    const summaryHeading = screen.getByRole("heading", { name: "Tóm tắt" });
-    const articleHeading = screen.getByRole("heading", { name: "Bài viết Wiki" });
-    expect(screen.getByText("Pointy and hurty.")).toBeDefined();
-    expect(
-      summaryHeading.compareDocumentPosition(articleHeading) &
-        Node.DOCUMENT_POSITION_FOLLOWING,
-    ).toBeTruthy();
-  });
-
-  it("places the Wiki summary before the crafting section", async () => {
-    vi.stubGlobal(
-      "fetch",
-      vi.fn().mockResolvedValue({
-        ok: true,
-        json: async () => ({
-          schema_version: 1,
-          pageId: 100736,
-          title: "Halberd",
-          canonicalUrl: "https://dontstarve.wiki.gg/wiki/Halberd",
-          html: "<p>Full Halberd article.</p>",
-          summaryViHtml: "<h2>Tóm tắt</h2><p>Tóm tắt tiếng Việt.</p>",
-          categories: ["Items"],
-          images: [],
-          recipes: [],
-          revision: {
-            id: 569319,
-            sha1: "5bf67f6c77b1a0d0c5bb66b0ef02ccf5c04dba64",
-            timestamp: "2026-07-12T08:43:43Z",
-          },
-        }),
-      }),
-    );
-
-    render(
-      <ItemDetailModal
-        {...peekProps({ ...wikiItem, recipe: item.recipe })}
-      />,
-    );
-
-    const summaryHeading = await screen.findByRole("heading", { name: "Tóm tắt" });
-    const craftingHeading = screen.getByRole("heading", { name: "Công thức" });
-    const articleHeading = screen.getByRole("heading", { name: "Bài viết Wiki" });
+  it("shows usage and acquisition without an overview or Wiki article", () => {
+    const fetchMock = vi.fn();
+    vi.stubGlobal("fetch", fetchMock);
+    render(<ItemDetailModal {...peekProps({ ...wikiItem, recipe: item.recipe, summary: {
+      usage: { status: "known", text: "Học công thức.", sources: ["test"] },
+      fuel: { status: "known", text: "15 giây.", sources: ["test"] },
+      recycling: { status: "not_applicable", text: null, sources: [] },
+      acquisition: { status: "known", text: "Mua từ Bà Cua.", sources: ["test"] },
+    } })} />);
+    expect(screen.getAllByRole("listitem")).toHaveLength(1);
+    expect(screen.queryByText("Cách sử dụng:")).toBeNull();
+    expect(screen.getByText("Học công thức.", { exact: false })).toBeDefined();
+    expect(screen.queryByText("Giá trị nhiên liệu:")).toBeNull();
+    expect(screen.queryByText("Tái chế:")).toBeNull();
+    expect(screen.getByText("Mua từ Bà Cua.")).toBeDefined();
     expect(screen.queryByText("Pointy and hurty.")).toBeNull();
-    expect(
-      summaryHeading.compareDocumentPosition(craftingHeading) &
-        Node.DOCUMENT_POSITION_FOLLOWING,
-    ).toBeTruthy();
-    expect(
-      craftingHeading.compareDocumentPosition(articleHeading) &
-        Node.DOCUMENT_POSITION_FOLLOWING,
-    ).toBeTruthy();
-  });
-
-  it("forwards mapped Wiki item selections to the shared detail flow", async () => {
-    const onSelectItem = vi.fn();
-    vi.stubGlobal(
-      "fetch",
-      vi.fn().mockResolvedValue({
-        ok: true,
-        json: async () => ({
-          schema_version: 1,
-          pageId: 100736,
-          title: "Halberd",
-          canonicalUrl: "https://dontstarve.wiki.gg/wiki/Halberd",
-          html: "<p>Remaining article.</p>",
-          categories: ["Items"],
-          images: [],
-          revision: {
-            id: 569319,
-            sha1: "5bf67f6c77b1a0d0c5bb66b0ef02ccf5c04dba64",
-            timestamp: "2026-07-12T08:43:43Z",
-          },
-          normalized: {
-            schema_version: 2,
-            subject: {
-              title: "Nightmare Fuel",
-              url: "https://dontstarve.wiki.gg/wiki/Nightmare_Fuel",
-              entityId: null,
-            },
-            dropTable: {
-              rows: [
-                {
-                  sources: [
-                    {
-                      title: "Beardling",
-                      url: "https://dontstarve.wiki.gg/wiki/Beardling",
-                      entityId: null,
-                    },
-                  ],
-                  quantity: "1",
-                  chance: "40%",
-                  context: null,
-                },
-              ],
-            },
-            usage: {
-              recipes: [
-                {
-                  result: {
-                    title: "Night Light",
-                    url: "https://dontstarve.wiki.gg/wiki/Night_Light",
-                    entityId: nightLight.id,
-                  },
-                  resultAmount: 1,
-                  subjectAmount: 2,
-                  ingredients: [],
-                  station: "Prestihatitator",
-                  dlc: null,
-                  character: null,
-                  note: null,
-                },
-              ],
-            },
-          },
-        }),
-      }),
-    );
-
-    render(
-      <ItemDetailModal
-        {...peekProps(wikiItem)}
-        onSelectItem={onSelectItem}
-      />,
-    );
-
-    fireEvent.click(
-      await screen.findByRole("button", { name: "Đèn bóng đêm, số lượng 1" }),
-    );
-    expect(onSelectItem).toHaveBeenCalledWith(nightLight);
+    expect(screen.getByText("Học công thức.", { exact: false }).closest("section")?.textContent).toContain("Cách Sử dụng");
+    expect(screen.getByText("Mua từ Bà Cua.").closest("section")?.textContent).toContain("Công thức");
+    expect(screen.queryByText("Bài viết Wiki")).toBeNull();
+    expect(screen.queryByRole("region", { name: "Gallery" })).toBeNull();
+    expect(fetchMock).not.toHaveBeenCalled();
+    expect(screen.queryByRole("heading", { name: "Tóm tắt" })).toBeNull();
+    expect(screen.getByRole("heading", { name: "Công thức" })).toBeDefined();
   });
 });

@@ -158,7 +158,7 @@ describe("TuTienItemSections", () => {
     );
 
     const headings = screen.getAllByRole("heading").map((heading) => heading.textContent);
-    expect(headings).toEqual(["Công thức", "Usage", "Nguồn nhận"]);
+    expect(headings).toEqual(["Công thức", "Cách Sử dụng"]);
     expect(screen.getByLabelText("Cánh hoa, số lượng 3")).toBeDefined();
     expect(screen.getByLabelText("Kết quả: Linh Thảo, số lượng 2")).toBeDefined();
     expect(screen.getByText("Khi ăn: hồi 20 Máu và hồi 10 Tinh thần.")).toBeDefined();
@@ -200,10 +200,10 @@ describe("TuTienItemSections", () => {
     expect(recipeHeading.closest("section")?.className).toContain(
       "bg-nova-surface-soft",
     );
-    expect(screen.getByRole("heading", { name: "Usage" })).toBeDefined();
-    expect(screen.getByRole("heading", { name: "Nguồn nhận" })).toBeDefined();
+    expect(screen.getByRole("heading", { name: "Cách Sử dụng" })).toBeDefined();
+    expect(screen.queryByRole("heading", { name: "Nguồn nhận" })).toBeNull();
     expect(screen.getByText("Không có công thức chế tạo.")).toBeDefined();
-    expect(screen.getByText("Chưa xác định từ dữ liệu mod.")).toBeDefined();
+    expect(screen.getAllByText(/Chưa có dữ liệu./)).toHaveLength(1);
     expect(screen.getByText("Không có nguồn nhận ngoài chế tạo.")).toBeDefined();
   });
 });
