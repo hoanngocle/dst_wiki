@@ -1,12 +1,12 @@
 import { fireEvent, render, screen, within } from "@testing-library/react";
 import { expect, it } from "vitest";
-import Page from "@/app/pham-nhan-tu-tien/tien-trinh/page";
+import Page from "@/app/nova/tien-trinh/page";
 
 it("publishes integrated progression with complete totals and active navigation", () => {
   render(<Page />);
-  expect(screen.getByRole("heading", { level: 1, name: "Tiến trình Phàm Nhân Tu Tiên" })).toBeDefined();
+  expect(screen.getByRole("heading", { level: 1, name: "Tiến trình NOVA" })).toBeDefined();
   const nav = screen.getByRole("link", { name: "Tiến trình" });
-  expect(nav.getAttribute("href")).toBe("/pham-nhan-tu-tien/tien-trinh");
+  expect(nav.getAttribute("href")).toBe("/nova/tien-trinh");
   expect(nav.getAttribute("aria-current")).toBe("page");
   expect(screen.queryByRole("link", { name: "Achievement & Level" })).toBeNull();
   const stats = screen.getByLabelText("Tổng quan tiến trình");

@@ -1,6 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      { source: "/hot-key", destination: "/nova/hot-key", permanent: true },
+    ];
+  },
   images: {
     remotePatterns: [
       {

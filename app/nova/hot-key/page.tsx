@@ -6,8 +6,8 @@ import { PhamNhanNav } from "@/app/components/pham-nhan-nav";
 import { SiteHeader } from "@/app/components/site-header";
 
 export const metadata: Metadata = {
-  title: "Hướng dẫn hotkey | Phàm Nhân Tu Tiên",
-  description: "Danh sách phím tắt, chức năng và điều kiện sử dụng trong Phàm Nhân Tu Tiên.",
+  title: "Hướng dẫn hotkey | NOVA",
+  description: "Danh sách phím tắt, chức năng và điều kiện sử dụng trong NOVA.",
 };
 
 interface HotkeyItem {
@@ -93,7 +93,7 @@ const combatHotkeys: readonly HotkeyItem[] = [
   {
     keys: ["Shift", "Alt", "Chuột trái"],
     action: "Chia sẻ chỉ số trang bị",
-    note: "Dùng trên trang bị Phàm Nhân hoặc Đá Hiệu Ứng. Tính năng phải được bật trong cấu hình mod.",
+    note: "Dùng trên trang bị NOVA hoặc Đá Hiệu Ứng. Tính năng phải được bật trong cấu hình mod.",
   },
   {
     keys: ["Alt", "Chuột phải"],
@@ -160,11 +160,11 @@ function HotkeyGroup({ id, title, description, items }: HotkeyGroupProps) {
 export default function HotKeyPage() {
   return (
     <div className="min-h-[100dvh] bg-nova-bg text-nova-text">
-      <SiteHeader active="tu-tien-ky" />
+      <SiteHeader active="nova" />
       <DstPageShell>
         <div className="px-4 py-9 sm:px-6 sm:py-12 lg:px-8">
           <DstHero
-            eyebrow="PHÀM NHÂN TU TIÊN"
+            eyebrow="NOVA"
             title="Hướng dẫn hotkey"
             description="Chọn một phím để xem chức năng, điều kiện mở khóa và cách sử dụng trong game."
           />

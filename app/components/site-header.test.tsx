@@ -10,7 +10,7 @@ it("links the standalone navigation in the approved order", () => {
   const navigation = screen.getByRole("navigation", { name: /điều hướng chính/i });
   expect(within(navigation).getAllByRole("link").map((link) => link.textContent)).toEqual([
     "Vật phẩm",
-    "Phàm Nhân",
+    "NOVA",
     "Chế tạo Tu Tiên",
     "Cảnh giới Tu Tiên",
     "Solo Leveling",
@@ -33,10 +33,10 @@ it("links the standalone navigation in the approved order", () => {
   expect(container.innerHTML).not.toContain("/dst");
 });
 
-it("links and marks the Phàm Nhân tab active", () => {
-  render(<SiteHeader active="tu-tien-ky" />);
-  const link = screen.getByRole("link", { name: "Phàm Nhân" });
-  expect(link.getAttribute("href")).toBe("/pham-nhan-tu-tien");
+it("links and marks the NOVA tab active", () => {
+  render(<SiteHeader active="nova" />);
+  const link = screen.getByRole("link", { name: "NOVA" });
+  expect(link.getAttribute("href")).toBe("/nova");
   expect(link.getAttribute("aria-current")).toBe("page");
 });
 

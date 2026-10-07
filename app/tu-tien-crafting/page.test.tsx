@@ -1,30 +1,15 @@
 import { fireEvent, render, screen, within } from "@testing-library/react";
 import { expect, it } from "vitest";
+import Page from "./page";
 
-import HanLapCraftingPage from "./page";
-
-it("renders only verified Hàn Lập craftables with full catalog references", () => {
-  render(<HanLapCraftingPage />);
-
-  expect(
-    screen.getByRole("heading", { level: 1, name: "Đồ chế Tu Tiên của Hàn Lập" }),
-  ).toBeDefined();
-  expect(screen.getByRole("link", { name: "Chế tạo Tu Tiên" }).getAttribute("aria-current")).toBe(
-    "page",
-  );
-  expect(screen.getByText("Đoán Thể Hoàn")).toBeDefined();
-  expect(screen.queryByText("Cẩm Môn")).toBeNull();
-  expect(screen.queryByRole("group", { name: "Lọc theo nguồn" })).toBeNull();
-  expect(screen.getByRole("group", { name: "Lọc theo danh mục" })).toBeDefined();
-
-  fireEvent.change(screen.getByRole("searchbox", { name: "Tìm kiếm vật phẩm." }), {
-    target: { value: "Đoán Thể Hoàn" },
-  });
-
-  const result = screen
-    .getByRole("button", { name: "Xem chi tiết Đoán Thể Hoàn" })
-    .closest("li") as HTMLElement;
-  fireEvent.click(within(result).getByRole("button", { name: "Pig Skin, số lượng 3" }));
-
-  expect(screen.getByRole("dialog", { name: "Pig Skin" })).toBeDefined();
+it("shows furnace recipes and lets readers inspect a previously missing recipe and its ingredients", () => {
+  render(<Page />);
+  expect(screen.getByRole("heading", { level: 1, name: "Chế tạo Tu Tiên" })).toBeDefined();
+  expect(screen.getByRole("button", { name: "Đan Lô (78)" }).getAttribute("aria-pressed")).toBe("true");
+  expect(screen.getByText("Vũ khí chuyên thuộc")).toBeDefined();
+  fireEvent.change(screen.getByRole("searchbox"), { target: { value: "Thiên Nghịch Châu" } });
+  fireEvent.click(screen.getByRole("button", { name: "Xem chi tiết Thiên Nghịch Châu" }));
+  const modal = screen.getByRole("dialog", { name: "Thiên Nghịch Châu" });
+  expect(within(modal).getByText(/Luyện tại Đan Lô/)).toBeDefined();
+  expect(within(modal).getAllByText(/Tử Xá Ma Vũ/).length).toBeGreaterThan(0);
 });

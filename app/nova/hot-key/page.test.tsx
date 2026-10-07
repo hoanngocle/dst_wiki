@@ -35,11 +35,11 @@ describe("HotKeyPage", () => {
     ).toBeDefined();
   });
 
-  it("links the hotkey guide from the Pham Nhan section navigation", () => {
+  it("links the hotkey guide from the NOVA section navigation", () => {
     render(<Page />);
 
     const link = screen.getByRole("link", { name: "Hotkey" });
-    expect(link.getAttribute("href")).toBe("/hot-key");
+    expect(link.getAttribute("href")).toBe("/nova/hot-key");
     expect(link.getAttribute("aria-current")).toBe("page");
   });
 

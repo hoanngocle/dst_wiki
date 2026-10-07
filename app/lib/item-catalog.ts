@@ -39,6 +39,7 @@ export type RecipeIngredient = {
 export type ItemRecipe = {
   outputCount: number;
   ingredients: readonly RecipeIngredient[];
+  requiredIngredientChoice?: readonly RecipeIngredient[];
 };
 
 export type ItemDetailStatus = "known" | "none" | "unknown";

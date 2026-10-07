@@ -1,0 +1,1905 @@
+{
+  "modVersion": "18.1.0",
+  "verifiedDate": "2026-10-07",
+  "source": "TUNING.XD_PILL_RECIPES.xd_liandanlu",
+  "engineBuild": 747465,
+  "recipes": [
+    {
+      "key": "xd_danyao_bg",
+      "timeSeconds": null,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "cutgrass",
+          "amount": 3
+        },
+        {
+          "prefab": "honey",
+          "amount": 3
+        },
+        {
+          "prefab": "xd_lingshi1",
+          "amount": 5
+        }
+      ],
+      "alternatives": [
+        [
+          {
+            "prefab": "trunk_summer",
+            "amount": 1
+          },
+          {
+            "prefab": "trunk_winter",
+            "amount": 1
+          }
+        ]
+      ]
+    },
+    {
+      "key": "xd_danyao_dt",
+      "timeSeconds": null,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "pigskin",
+          "amount": 3
+        },
+        {
+          "prefab": "redgem",
+          "amount": 3
+        },
+        {
+          "prefab": "xd_lingshi1",
+          "amount": 30
+        }
+      ],
+      "alternatives": [
+        [
+          {
+            "prefab": "trunk_summer",
+            "amount": 1
+          },
+          {
+            "prefab": "trunk_winter",
+            "amount": 1
+          }
+        ]
+      ]
+    },
+    {
+      "key": "xd_danyao_hj",
+      "timeSeconds": null,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "purplegem",
+          "amount": 3
+        },
+        {
+          "prefab": "thulecite",
+          "amount": 3
+        },
+        {
+          "prefab": "xd_ayhx",
+          "amount": 3
+        },
+        {
+          "prefab": "xd_lingshi1",
+          "amount": 50
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_danyao_hl",
+      "timeSeconds": null,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "shadowheart",
+          "amount": 1
+        },
+        {
+          "prefab": "xd_lingshi3",
+          "amount": 1
+        },
+        {
+          "prefab": "xd_mgqg",
+          "amount": 1
+        },
+        {
+          "prefab": "xd_zcmy",
+          "amount": 1
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_danyao_hs",
+      "timeSeconds": null,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "horrorfuel",
+          "amount": 8
+        },
+        {
+          "prefab": "purebrilliance",
+          "amount": 8
+        },
+        {
+          "prefab": "xd_baihu_skin",
+          "amount": 1
+        },
+        {
+          "prefab": "xd_lingshi3",
+          "amount": 1
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_danyao_hy",
+      "timeSeconds": null,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "xd_lingshi3",
+          "amount": 1
+        },
+        {
+          "prefab": "xd_pog_tail",
+          "amount": 3
+        },
+        {
+          "prefab": "xd_qianyu",
+          "amount": 2
+        },
+        {
+          "prefab": "xd_spider_leg",
+          "amount": 1
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_danyao_jq",
+      "timeSeconds": null,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "spidergland",
+          "amount": 5
+        },
+        {
+          "prefab": "stinger",
+          "amount": 10
+        },
+        {
+          "prefab": "tallbirdegg",
+          "amount": 1
+        },
+        {
+          "prefab": "xd_lingshi1",
+          "amount": 10
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_danyao_jy",
+      "timeSeconds": null,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "butter",
+          "amount": 1
+        },
+        {
+          "prefab": "shroom_skin",
+          "amount": 1
+        },
+        {
+          "prefab": "xd_fs",
+          "amount": 1
+        },
+        {
+          "prefab": "xd_lingshi2",
+          "amount": 3
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_danyao_kx",
+      "timeSeconds": null,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "xd_dy_pshsd_2",
+          "amount": 1
+        },
+        {
+          "prefab": "xd_dy_xttyd_2",
+          "amount": 1
+        },
+        {
+          "prefab": "xd_lingshi3",
+          "amount": 1
+        },
+        {
+          "prefab": "xd_npxsz",
+          "amount": 1
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_danyao_ns",
+      "timeSeconds": null,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "alterguardianhatshard",
+          "amount": 1
+        },
+        {
+          "prefab": "lunarplant_husk",
+          "amount": 4
+        },
+        {
+          "prefab": "milkywhites",
+          "amount": 3
+        },
+        {
+          "prefab": "xd_lingshi3",
+          "amount": 1
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_danyao_rl",
+      "timeSeconds": null,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "cookiecuttershell",
+          "amount": 7
+        },
+        {
+          "prefab": "gnarwail_horn",
+          "amount": 1
+        },
+        {
+          "prefab": "xd_aymg",
+          "amount": 1
+        },
+        {
+          "prefab": "xd_lingshi2",
+          "amount": 1
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_danyao_sm",
+      "timeSeconds": null,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "fig",
+          "amount": 10
+        },
+        {
+          "prefab": "royal_jelly",
+          "amount": 1
+        },
+        {
+          "prefab": "saltrock",
+          "amount": 15
+        },
+        {
+          "prefab": "xd_lingshi1",
+          "amount": 30
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_danyao_xs",
+      "timeSeconds": null,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "lightbulb",
+          "amount": 10
+        },
+        {
+          "prefab": "slurtle_shellpieces",
+          "amount": 3
+        },
+        {
+          "prefab": "wormlight",
+          "amount": 3
+        },
+        {
+          "prefab": "xd_lingshi1",
+          "amount": 20
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_danyao_yx",
+      "timeSeconds": null,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "cursed_monkey_token",
+          "amount": 5
+        },
+        {
+          "prefab": "rabbitkingspear",
+          "amount": 1
+        },
+        {
+          "prefab": "voidcloth",
+          "amount": 8
+        },
+        {
+          "prefab": "xd_lingshi3",
+          "amount": 1
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_danyao_yz",
+      "timeSeconds": null,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "manrabbit_tail",
+          "amount": 5
+        },
+        {
+          "prefab": "xd_lingshi2",
+          "amount": 2
+        },
+        {
+          "prefab": "xd_qlr",
+          "amount": 1
+        }
+      ],
+      "alternatives": [
+        [
+          {
+            "prefab": "spore_small",
+            "amount": 10
+          },
+          {
+            "prefab": "spore_tall",
+            "amount": 10
+          },
+          {
+            "prefab": "spore_medium",
+            "amount": 10
+          }
+        ]
+      ]
+    },
+    {
+      "key": "xd_danyao_zj",
+      "timeSeconds": null,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "dragon_scales",
+          "amount": 1
+        },
+        {
+          "prefab": "houndstooth",
+          "amount": 10
+        },
+        {
+          "prefab": "livinglog",
+          "amount": 3
+        },
+        {
+          "prefab": "xd_lingshi2",
+          "amount": 1
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_cyfxd_1",
+      "timeSeconds": 180,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "dragon_scales",
+          "amount": 4
+        },
+        {
+          "prefab": "pepper",
+          "amount": 12
+        },
+        {
+          "prefab": "xd_lc_cyh",
+          "amount": 16
+        },
+        {
+          "prefab": "xd_npxsz",
+          "amount": 2
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_cyfxd_2",
+      "timeSeconds": 120,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "dragon_scales",
+          "amount": 2
+        },
+        {
+          "prefab": "pepper",
+          "amount": 8
+        },
+        {
+          "prefab": "wormlight",
+          "amount": 4
+        },
+        {
+          "prefab": "xd_lc_cyh",
+          "amount": 8
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_cyfxd_3",
+      "timeSeconds": 60,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "dragon_scales",
+          "amount": 1
+        },
+        {
+          "prefab": "pepper",
+          "amount": 6
+        },
+        {
+          "prefab": "wormlight",
+          "amount": 3
+        },
+        {
+          "prefab": "xd_lc_cyh",
+          "amount": 4
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_cyfxd_4",
+      "timeSeconds": 30,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "meat",
+          "amount": 4
+        },
+        {
+          "prefab": "pepper",
+          "amount": 4
+        },
+        {
+          "prefab": "wormlight",
+          "amount": 2
+        },
+        {
+          "prefab": "xd_lc_cyh",
+          "amount": 2
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_cyfxd_5",
+      "timeSeconds": 20,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "pepper",
+          "amount": 2
+        },
+        {
+          "prefab": "smallmeat",
+          "amount": 2
+        },
+        {
+          "prefab": "wormlight",
+          "amount": 1
+        },
+        {
+          "prefab": "xd_lc_cyh",
+          "amount": 1
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_dmhsd_1",
+      "timeSeconds": 180,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "mandrake",
+          "amount": 1
+        },
+        {
+          "prefab": "royal_jelly",
+          "amount": 12
+        },
+        {
+          "prefab": "xd_lc_dms",
+          "amount": 16
+        },
+        {
+          "prefab": "xd_npxsz",
+          "amount": 2
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_dmhsd_2",
+      "timeSeconds": 120,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "mandrake",
+          "amount": 1
+        },
+        {
+          "prefab": "royal_jelly",
+          "amount": 6
+        },
+        {
+          "prefab": "spidergland",
+          "amount": 8
+        },
+        {
+          "prefab": "xd_lc_dms",
+          "amount": 8
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_dmhsd_3",
+      "timeSeconds": 60,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "royal_jelly",
+          "amount": 3
+        },
+        {
+          "prefab": "spidergland",
+          "amount": 6
+        },
+        {
+          "prefab": "tillweed",
+          "amount": 6
+        },
+        {
+          "prefab": "xd_lc_dms",
+          "amount": 4
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_dmhsd_4",
+      "timeSeconds": 30,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "plantmeat",
+          "amount": 7
+        },
+        {
+          "prefab": "spidergland",
+          "amount": 4
+        },
+        {
+          "prefab": "tillweed",
+          "amount": 4
+        },
+        {
+          "prefab": "xd_lc_dms",
+          "amount": 2
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_dmhsd_5",
+      "timeSeconds": 20,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "bird_egg",
+          "amount": 2
+        },
+        {
+          "prefab": "spidergland",
+          "amount": 2
+        },
+        {
+          "prefab": "tillweed",
+          "amount": 2
+        },
+        {
+          "prefab": "xd_lc_dms",
+          "amount": 1
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_hsphd_1",
+      "timeSeconds": 180,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "deerclops_eyeball",
+          "amount": 3
+        },
+        {
+          "prefab": "watermelon",
+          "amount": 12
+        },
+        {
+          "prefab": "xd_lc_hsc",
+          "amount": 16
+        },
+        {
+          "prefab": "xd_npxsz",
+          "amount": 2
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_hsphd_2",
+      "timeSeconds": 120,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "deerclops_eyeball",
+          "amount": 2
+        },
+        {
+          "prefab": "ice",
+          "amount": 8
+        },
+        {
+          "prefab": "watermelon",
+          "amount": 8
+        },
+        {
+          "prefab": "xd_lc_hsc",
+          "amount": 8
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_hsphd_3",
+      "timeSeconds": 60,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "deerclops_eyeball",
+          "amount": 1
+        },
+        {
+          "prefab": "ice",
+          "amount": 6
+        },
+        {
+          "prefab": "watermelon",
+          "amount": 6
+        },
+        {
+          "prefab": "xd_lc_hsc",
+          "amount": 4
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_hsphd_4",
+      "timeSeconds": 30,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "bluegem",
+          "amount": 1
+        },
+        {
+          "prefab": "ice",
+          "amount": 4
+        },
+        {
+          "prefab": "watermelon",
+          "amount": 4
+        },
+        {
+          "prefab": "xd_lc_hsc",
+          "amount": 2
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_hsphd_5",
+      "timeSeconds": 20,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "bluegem",
+          "amount": 1
+        },
+        {
+          "prefab": "ice",
+          "amount": 2
+        },
+        {
+          "prefab": "watermelon",
+          "amount": 2
+        },
+        {
+          "prefab": "xd_lc_hsc",
+          "amount": 1
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_lmsqd_1",
+      "timeSeconds": 180,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "asparagus",
+          "amount": 12
+        },
+        {
+          "prefab": "xd_lc_lmg",
+          "amount": 16
+        },
+        {
+          "prefab": "xd_npxsz",
+          "amount": 2
+        },
+        {
+          "prefab": "xd_qlr",
+          "amount": 4
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_lmsqd_2",
+      "timeSeconds": 120,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "asparagus",
+          "amount": 8
+        },
+        {
+          "prefab": "lightninggoathorn",
+          "amount": 2
+        },
+        {
+          "prefab": "xd_lc_lmg",
+          "amount": 8
+        },
+        {
+          "prefab": "xd_qlr",
+          "amount": 2
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_lmsqd_3",
+      "timeSeconds": 60,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "asparagus",
+          "amount": 6
+        },
+        {
+          "prefab": "lightninggoathorn",
+          "amount": 2
+        },
+        {
+          "prefab": "xd_lc_lmg",
+          "amount": 4
+        },
+        {
+          "prefab": "xd_qlr",
+          "amount": 1
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_lmsqd_4",
+      "timeSeconds": 30,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "asparagus",
+          "amount": 4
+        },
+        {
+          "prefab": "lightninggoathorn",
+          "amount": 1
+        },
+        {
+          "prefab": "steelwool",
+          "amount": 1
+        },
+        {
+          "prefab": "xd_lc_lmg",
+          "amount": 2
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_lmsqd_5",
+      "timeSeconds": 20,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "asparagus",
+          "amount": 2
+        },
+        {
+          "prefab": "goldnugget",
+          "amount": 2
+        },
+        {
+          "prefab": "lightninggoathorn",
+          "amount": 1
+        },
+        {
+          "prefab": "xd_lc_lmg",
+          "amount": 1
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_pshsd_1",
+      "timeSeconds": 180,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "potato",
+          "amount": 12
+        },
+        {
+          "prefab": "xd_lc_dms",
+          "amount": 16
+        },
+        {
+          "prefab": "xd_mgqg",
+          "amount": 4
+        },
+        {
+          "prefab": "xd_npxsz",
+          "amount": 2
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_pshsd_2",
+      "timeSeconds": 120,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "potato",
+          "amount": 8
+        },
+        {
+          "prefab": "thulecite",
+          "amount": 4
+        },
+        {
+          "prefab": "xd_lc_dms",
+          "amount": 8
+        },
+        {
+          "prefab": "xd_mgqg",
+          "amount": 2
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_pshsd_3",
+      "timeSeconds": 60,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "potato",
+          "amount": 6
+        },
+        {
+          "prefab": "thulecite",
+          "amount": 3
+        },
+        {
+          "prefab": "xd_lc_dms",
+          "amount": 4
+        },
+        {
+          "prefab": "xd_mgqg",
+          "amount": 1
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_pshsd_4",
+      "timeSeconds": 30,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "marble",
+          "amount": 4
+        },
+        {
+          "prefab": "potato",
+          "amount": 4
+        },
+        {
+          "prefab": "thulecite",
+          "amount": 2
+        },
+        {
+          "prefab": "xd_lc_dms",
+          "amount": 2
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_pshsd_5",
+      "timeSeconds": 20,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "potato",
+          "amount": 2
+        },
+        {
+          "prefab": "rocks",
+          "amount": 2
+        },
+        {
+          "prefab": "thulecite",
+          "amount": 1
+        },
+        {
+          "prefab": "xd_lc_dms",
+          "amount": 1
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_qjqsd_1",
+      "timeSeconds": 180,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "corn",
+          "amount": 12
+        },
+        {
+          "prefab": "shroom_skin",
+          "amount": 4
+        },
+        {
+          "prefab": "xd_lc_qfx",
+          "amount": 16
+        },
+        {
+          "prefab": "xd_npxsz",
+          "amount": 2
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_qjqsd_2",
+      "timeSeconds": 120,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "corn",
+          "amount": 8
+        },
+        {
+          "prefab": "gears",
+          "amount": 4
+        },
+        {
+          "prefab": "shroom_skin",
+          "amount": 2
+        },
+        {
+          "prefab": "xd_lc_qfx",
+          "amount": 8
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_qjqsd_3",
+      "timeSeconds": 60,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "corn",
+          "amount": 6
+        },
+        {
+          "prefab": "gears",
+          "amount": 3
+        },
+        {
+          "prefab": "shroom_skin",
+          "amount": 1
+        },
+        {
+          "prefab": "xd_lc_qfx",
+          "amount": 4
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_qjqsd_4",
+      "timeSeconds": 30,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "corn",
+          "amount": 4
+        },
+        {
+          "prefab": "gears",
+          "amount": 2
+        },
+        {
+          "prefab": "moonglass",
+          "amount": 2
+        },
+        {
+          "prefab": "xd_lc_qfx",
+          "amount": 2
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_qjqsd_5",
+      "timeSeconds": 20,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "corn",
+          "amount": 2
+        },
+        {
+          "prefab": "flint",
+          "amount": 1
+        },
+        {
+          "prefab": "gears",
+          "amount": 1
+        },
+        {
+          "prefab": "xd_lc_qfx",
+          "amount": 1
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_qxdhd_1",
+      "timeSeconds": 180,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "green_cap",
+          "amount": 12
+        },
+        {
+          "prefab": "purebrilliance",
+          "amount": 6
+        },
+        {
+          "prefab": "xd_lc_yhh",
+          "amount": 16
+        },
+        {
+          "prefab": "xd_npxsz",
+          "amount": 2
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_qxdhd_2",
+      "timeSeconds": 120,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "green_cap",
+          "amount": 8
+        },
+        {
+          "prefab": "nightmarefuel",
+          "amount": 40
+        },
+        {
+          "prefab": "purebrilliance",
+          "amount": 3
+        },
+        {
+          "prefab": "xd_lc_yhh",
+          "amount": 8
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_qxdhd_3",
+      "timeSeconds": 60,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "green_cap",
+          "amount": 6
+        },
+        {
+          "prefab": "nightmarefuel",
+          "amount": 20
+        },
+        {
+          "prefab": "purebrilliance",
+          "amount": 1
+        },
+        {
+          "prefab": "xd_lc_yhh",
+          "amount": 4
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_qxdhd_4",
+      "timeSeconds": 30,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "green_cap",
+          "amount": 4
+        },
+        {
+          "prefab": "nightmarefuel",
+          "amount": 10
+        },
+        {
+          "prefab": "shroomcake",
+          "amount": 2
+        },
+        {
+          "prefab": "xd_lc_yhh",
+          "amount": 2
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_qxdhd_5",
+      "timeSeconds": 20,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "blue_cap",
+          "amount": 2
+        },
+        {
+          "prefab": "green_cap",
+          "amount": 2
+        },
+        {
+          "prefab": "nightmarefuel",
+          "amount": 5
+        },
+        {
+          "prefab": "xd_lc_yhh",
+          "amount": 1
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_tsfhd",
+      "timeSeconds": 120,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "dragon_scales",
+          "amount": 5
+        },
+        {
+          "prefab": "xd_fs",
+          "amount": 3
+        },
+        {
+          "prefab": "xd_lingshi3",
+          "amount": 3
+        },
+        {
+          "prefab": "xd_qlr",
+          "amount": 3
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_xttyd_1",
+      "timeSeconds": 180,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "tomato",
+          "amount": 12
+        },
+        {
+          "prefab": "xd_lc_yhh",
+          "amount": 16
+        },
+        {
+          "prefab": "xd_npxsz",
+          "amount": 2
+        },
+        {
+          "prefab": "xd_zcmy",
+          "amount": 4
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_xttyd_2",
+      "timeSeconds": 120,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "batwing",
+          "amount": 4
+        },
+        {
+          "prefab": "tomato",
+          "amount": 8
+        },
+        {
+          "prefab": "xd_lc_yhh",
+          "amount": 8
+        },
+        {
+          "prefab": "xd_zcmy",
+          "amount": 2
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_xttyd_3",
+      "timeSeconds": 60,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "batwing",
+          "amount": 3
+        },
+        {
+          "prefab": "tomato",
+          "amount": 6
+        },
+        {
+          "prefab": "xd_lc_yhh",
+          "amount": 4
+        },
+        {
+          "prefab": "xd_zcmy",
+          "amount": 1
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_xttyd_4",
+      "timeSeconds": 30,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "batwing",
+          "amount": 2
+        },
+        {
+          "prefab": "purplegem",
+          "amount": 1
+        },
+        {
+          "prefab": "tomato",
+          "amount": 4
+        },
+        {
+          "prefab": "xd_lc_yhh",
+          "amount": 2
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_xttyd_5",
+      "timeSeconds": 20,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "batwing",
+          "amount": 1
+        },
+        {
+          "prefab": "mosquitosack",
+          "amount": 1
+        },
+        {
+          "prefab": "tomato",
+          "amount": 2
+        },
+        {
+          "prefab": "xd_lc_yhh",
+          "amount": 1
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_xynyd_1",
+      "timeSeconds": 180,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "dragonfruit",
+          "amount": 12
+        },
+        {
+          "prefab": "xd_fs",
+          "amount": 4
+        },
+        {
+          "prefab": "xd_lc_cyh",
+          "amount": 16
+        },
+        {
+          "prefab": "xd_npxsz",
+          "amount": 2
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_xynyd_2",
+      "timeSeconds": 120,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "dragonfruit",
+          "amount": 8
+        },
+        {
+          "prefab": "monstermeat",
+          "amount": 8
+        },
+        {
+          "prefab": "xd_fs",
+          "amount": 2
+        },
+        {
+          "prefab": "xd_lc_cyh",
+          "amount": 8
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_xynyd_3",
+      "timeSeconds": 60,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "dragonfruit",
+          "amount": 6
+        },
+        {
+          "prefab": "monstermeat",
+          "amount": 6
+        },
+        {
+          "prefab": "xd_fs",
+          "amount": 1
+        },
+        {
+          "prefab": "xd_lc_cyh",
+          "amount": 4
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_xynyd_4",
+      "timeSeconds": 30,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "dragonfruit",
+          "amount": 4
+        },
+        {
+          "prefab": "monstermeat",
+          "amount": 4
+        },
+        {
+          "prefab": "redgem",
+          "amount": 1
+        },
+        {
+          "prefab": "xd_lc_cyh",
+          "amount": 2
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_xynyd_5",
+      "timeSeconds": 20,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "berries",
+          "amount": 3
+        },
+        {
+          "prefab": "dragonfruit",
+          "amount": 2
+        },
+        {
+          "prefab": "monstermeat",
+          "amount": 2
+        },
+        {
+          "prefab": "xd_lc_cyh",
+          "amount": 1
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_yfsxd_1",
+      "timeSeconds": 180,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "carrot",
+          "amount": 12
+        },
+        {
+          "prefab": "malbatross_feather",
+          "amount": 32
+        },
+        {
+          "prefab": "xd_lc_qfx",
+          "amount": 16
+        },
+        {
+          "prefab": "xd_npxsz",
+          "amount": 2
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_yfsxd_2",
+      "timeSeconds": 120,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "carrot",
+          "amount": 8
+        },
+        {
+          "prefab": "malbatross_feather",
+          "amount": 16
+        },
+        {
+          "prefab": "manrabbit_tail",
+          "amount": 8
+        },
+        {
+          "prefab": "xd_lc_qfx",
+          "amount": 8
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_yfsxd_3",
+      "timeSeconds": 60,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "carrot",
+          "amount": 6
+        },
+        {
+          "prefab": "malbatross_feather",
+          "amount": 8
+        },
+        {
+          "prefab": "manrabbit_tail",
+          "amount": 6
+        },
+        {
+          "prefab": "xd_lc_qfx",
+          "amount": 4
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_yfsxd_4",
+      "timeSeconds": 30,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "carrot",
+          "amount": 4
+        },
+        {
+          "prefab": "feather_canary",
+          "amount": 2
+        },
+        {
+          "prefab": "manrabbit_tail",
+          "amount": 4
+        },
+        {
+          "prefab": "xd_lc_qfx",
+          "amount": 2
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_dy_yfsxd_5",
+      "timeSeconds": 20,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "carrot",
+          "amount": 2
+        },
+        {
+          "prefab": "feather_crow",
+          "amount": 1
+        },
+        {
+          "prefab": "manrabbit_tail",
+          "amount": 2
+        },
+        {
+          "prefab": "xd_lc_qfx",
+          "amount": 1
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_htz_ztp",
+      "timeSeconds": null,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "greengem",
+          "amount": 7
+        },
+        {
+          "prefab": "moonglass",
+          "amount": 15
+        },
+        {
+          "prefab": "xd_lingshi2",
+          "amount": 5
+        },
+        {
+          "prefab": "xd_zcmy",
+          "amount": 1
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_hxyp",
+      "timeSeconds": null,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "goldnugget",
+          "amount": 10
+        },
+        {
+          "prefab": "livinglog",
+          "amount": 15
+        },
+        {
+          "prefab": "spidergland",
+          "amount": 3
+        },
+        {
+          "prefab": "xd_lingshi1",
+          "amount": 30
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_longzhu",
+      "timeSeconds": null,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "bluegem",
+          "amount": 4
+        },
+        {
+          "prefab": "ice",
+          "amount": 13
+        },
+        {
+          "prefab": "marble",
+          "amount": 9
+        },
+        {
+          "prefab": "xd_lingshi2",
+          "amount": 1
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_sskl",
+      "timeSeconds": null,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "goldnugget",
+          "amount": 7
+        },
+        {
+          "prefab": "redgem",
+          "amount": 1
+        },
+        {
+          "prefab": "xd_fs",
+          "amount": 1
+        },
+        {
+          "prefab": "xd_lingshi1",
+          "amount": 30
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_sudaji_yhly",
+      "timeSeconds": null,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "goldnugget",
+          "amount": 3
+        },
+        {
+          "prefab": "redgem",
+          "amount": 3
+        },
+        {
+          "prefab": "rope",
+          "amount": 1
+        },
+        {
+          "prefab": "xd_lingshi2",
+          "amount": 3
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_tianji_juanzhou",
+      "timeSeconds": null,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "livinglog",
+          "amount": 6
+        },
+        {
+          "prefab": "marble",
+          "amount": 15
+        },
+        {
+          "prefab": "papyrus",
+          "amount": 7
+        },
+        {
+          "prefab": "xd_lingshi1",
+          "amount": 45
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_wmz_tnz",
+      "timeSeconds": null,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "goldnugget",
+          "amount": 5
+        },
+        {
+          "prefab": "greengem",
+          "amount": 10
+        },
+        {
+          "prefab": "xd_lingshi3",
+          "amount": 3
+        },
+        {
+          "prefab": "xd_zcmy",
+          "amount": 2
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_wmz_zhf",
+      "timeSeconds": null,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "papyrus",
+          "amount": 5
+        },
+        {
+          "prefab": "redgem",
+          "amount": 5
+        },
+        {
+          "prefab": "xd_lingshi3",
+          "amount": 1
+        },
+        {
+          "prefab": "xd_zcmy",
+          "amount": 1
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_yhbs",
+      "timeSeconds": null,
+      "hasPrefn": true,
+      "ingredients": [
+        {
+          "prefab": "livinglog",
+          "amount": 5
+        },
+        {
+          "prefab": "nightmarefuel",
+          "amount": 10
+        },
+        {
+          "prefab": "shadowheart",
+          "amount": 1
+        },
+        {
+          "prefab": "xd_lingshi1",
+          "amount": 30
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_zhuanshu_weapon",
+      "timeSeconds": null,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "boneshard",
+          "amount": 1
+        },
+        {
+          "prefab": "livinglog",
+          "amount": 3
+        },
+        {
+          "prefab": "redgem",
+          "amount": 5
+        },
+        {
+          "prefab": "xd_lingshi1",
+          "amount": 30
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "key": "xd_ztp",
+      "timeSeconds": null,
+      "hasPrefn": false,
+      "ingredients": [
+        {
+          "prefab": "bluegem",
+          "amount": 3
+        },
+        {
+          "prefab": "moonglass",
+          "amount": 6
+        },
+        {
+          "prefab": "xd_lingshi1",
+          "amount": 30
+        },
+        {
+          "prefab": "xd_qlr",
+          "amount": 1
+        }
+      ],
+      "alternatives": []
+    }
+  ]
+}

@@ -5,6 +5,7 @@ import { DstHero } from "@/app/components/dst-hero";
 import { DstPageShell } from "@/app/components/dst-page-shell";
 import { SiteHeader } from "@/app/components/site-header";
 import { buildCultivationStages } from "@/app/lib/cultivation-guide";
+import { buildDanLoCatalog } from "@/app/lib/tu-tien-danlo";
 import { parseItemCatalog } from "@/app/lib/item-catalog";
 import itemPayload from "@/public/data/items.json";
 
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
   description: "Lộ trình 15 lần thăng cấp Tu Tiên cùng đan dược và nguyên liệu tương ứng.",
 };
 
-const items = parseItemCatalog(itemPayload);
+const items = buildDanLoCatalog(parseItemCatalog(itemPayload)).referenceItems;
 const stages = buildCultivationStages(items);
 
 export default function CultivationGuidePage() {

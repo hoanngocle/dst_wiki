@@ -25,6 +25,17 @@ it("renders the strict cultivation guide with clickable catalog ingredients", ()
   const doanTheRow = within(table).getByRole("row", {
     name: "Cảnh giới 2: Luyện Khí Trung Kỳ → Luyện Khí Hậu Kỳ",
   });
+  const choiceGroup = within(doanTheRow).getByLabelText("Nguyên liệu bổ sung bắt buộc");
+  expect(within(choiceGroup).getByRole("button", { name: "Vòi Voi Mùa Hè, số lượng 1" })).toBeDefined();
+  expect(within(choiceGroup).getByRole("button", { name: "Vòi Voi Mùa Đông, số lượng 1" })).toBeDefined();
+  expect(within(choiceGroup).getByText("hoặc")).toBeDefined();
+  const vanTrungRow = within(table).getByRole("row", {
+    name: "Cảnh giới 6: Trúc Cơ Hậu Kỳ → Kết Đan Sơ Kỳ",
+  });
+  const sporeGroup = within(vanTrungRow).getByLabelText("Nguyên liệu bổ sung bắt buộc");
+  expect(within(sporeGroup).getByLabelText("Bào Tử Xanh Lục, số lượng 10")).toBeDefined();
+  expect(within(sporeGroup).getByLabelText("Bào Tử Xanh Lam, số lượng 10")).toBeDefined();
+  expect(within(sporeGroup).getByLabelText("Bào Tử Đỏ, số lượng 10")).toBeDefined();
   fireEvent.click(
     within(doanTheRow).getByRole("button", { name: "Pig Skin, số lượng 3" }),
   );

@@ -19,7 +19,7 @@ export function PhamNhanConfigBrowser() {
   );
   return (
     <div className="space-y-5">
-      <p className="text-sm leading-6 text-nova-muted">Các tùy chọn còn trong menu Phàm Nhân {data.version}. Phím EVA theo cấp mở khóa: 1 Sinh Chi Hoa, 2 Tử Phong Tụ Linh, 3 Tinh Vũ Nguyệt Dực, 4 Dạ Du, 5 Trảm Linh. Lưỡi hái có 1000 độ bền và nạp bằng vũ khí. Chỉ số nền: 125 Máu, 125 Độ no, 200 Tinh thần; tốc độ, tiêu hao và sát thương x1.</p>
+      <p className="text-sm leading-6 text-nova-muted">Các tùy chọn còn trong menu NOVA {data.version}. Phím EVA theo cấp mở khóa: 1 Sinh Chi Hoa, 2 Tử Phong Tụ Linh, 3 Tinh Vũ Nguyệt Dực, 4 Dạ Du, 5 Trảm Linh. Lưỡi hái có 1000 độ bền và nạp bằng vũ khí. Chỉ số nền: 125 Máu, 125 Độ no, 200 Tinh thần; tốc độ, tiêu hao và sát thương x1.</p>
       <div className="grid gap-4 sm:grid-cols-[1fr_240px]">
         <DstField label="Tìm config" htmlFor="config-query"><input id="config-query" type="search" value={query} onChange={(event) => setQuery(event.target.value)} className={dstControlClassName} placeholder="Tên tùy chọn hoặc nội dung…" /></DstField>
         <DstField label="Nhóm config" htmlFor="config-group"><select id="config-group" value={group} onChange={(event) => setGroup(event.target.value)} className={dstControlClassName}>{["Tất cả", ...groups].map((name) => <option key={name}>{name}</option>)}</select></DstField>

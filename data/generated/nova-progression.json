@@ -2412,7 +2412,7 @@
       "visibility": "visible"
     },
     {
-      "description": "Đánh bại Bạch Hổ của Phàm Nhân.",
+      "description": "Đánh bại Bạch Hổ của NOVA.",
       "group": "boss",
       "id": "boss_ttk_boss_baihu",
       "name": "Bạch Hổ",
@@ -2426,7 +2426,7 @@
       "visibility": "visible"
     },
     {
-      "description": "Đánh bại Kim Phượng của Phàm Nhân.",
+      "description": "Đánh bại Kim Phượng của NOVA.",
       "group": "boss",
       "id": "boss_ttk_boss_jfsn",
       "name": "Kim Phượng",
@@ -2440,7 +2440,7 @@
       "visibility": "visible"
     },
     {
-      "description": "Đánh bại Kỳ Lân của Phàm Nhân.",
+      "description": "Đánh bại Kỳ Lân của NOVA.",
       "group": "boss",
       "id": "boss_ttk_boss_qlch",
       "name": "Kỳ Lân",
@@ -4292,7 +4292,7 @@
     "seasonal",
     "survival"
   ],
-  "perkRuntimeSource": "mods/PhamNhanTuTien/ACHIEVEMENT_PERK_RUNTIME.md",
+  "perkRuntimeSource": "NOVA/ACHIEVEMENT_PERK_RUNTIME.md",
   "perks": [
     {
       "availability": {
@@ -7919,12 +7919,12 @@
     }
   ],
   "sources": [
-    "mods/PhamNhanTuTien/scripts/achievement/ttk_achievement_catalog.lua",
-    "mods/PhamNhanTuTien/scripts/achievement/ttk_perk_catalog.lua",
-    "mods/PhamNhanTuTien/ACHIEVEMENT_PERK_RUNTIME.md",
-    "mods/PhamNhanTuTien/scripts/achievement/ttk_seasonal_catalog.lua",
-    "mods/PhamNhanTuTien/scripts/achievement/ttk_seasonal_rewards.lua",
-    "mods/PhamNhanTuTien/scripts/alchemy/ttk_alchemy_defs.lua",
-    "mods/PhamNhanTuTien/scripts/guild/hh_rank_defs.lua"
+    "NOVA/scripts/achievement/ttk_achievement_catalog.lua",
+    "NOVA/scripts/achievement/ttk_perk_catalog.lua",
+    "NOVA/ACHIEVEMENT_PERK_RUNTIME.md",
+    "NOVA/scripts/achievement/ttk_seasonal_catalog.lua",
+    "NOVA/scripts/achievement/ttk_seasonal_rewards.lua",
+    "NOVA/scripts/alchemy/ttk_alchemy_defs.lua",
+    "NOVA/scripts/guild/hh_rank_defs.lua"
   ]
 }

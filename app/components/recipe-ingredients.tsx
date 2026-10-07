@@ -71,6 +71,20 @@ export function RecipeIngredients({
           </span>
         );
       })}
+      {recipe.requiredIngredientChoice?.length ? (
+        <div className="w-full rounded-xl border border-nova-border bg-nova-surface-raised p-3" aria-label="Nguyên liệu bổ sung bắt buộc">
+          <p className="mb-2 text-xs font-semibold text-nova-muted">Bắt buộc thêm một trong các lựa chọn:</p>
+          <div className="flex flex-wrap items-center gap-2">
+            {recipe.requiredIngredientChoice.map((ingredient, index) => (
+              <div key={ingredient.id} className="flex flex-wrap items-center gap-2">
+                {index > 0 ? <span className="text-xs font-medium text-nova-muted">hoặc</span> : null}
+                <RecipeIngredients recipe={{ outputCount: 1, ingredients: [ingredient] }} itemsById={itemsById} onSelectItem={onSelectItem} />
+                <span className="text-xs text-nova-text">{ingredient.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }

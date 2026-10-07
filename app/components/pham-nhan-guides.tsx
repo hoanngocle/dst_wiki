@@ -27,7 +27,7 @@ export function PhamNhanGuides() {
   const [query, setQuery] = useState("");
   const matches = guides.filter((guide) => normalizeSearchText(guide.title+" "+guide.text).includes(normalizeSearchText(query)));
   return <div className="space-y-4">
-    <p className="text-sm leading-6 text-nova-muted">Solo đã được tích hợp đầy đủ trong Phàm Nhân. <Link href="/solo-leveling" className="font-semibold text-nova-accent underline">Xem Wiki kỹ năng, nhiệm vụ, quân đoàn và hầm ngục.</Link></p>
+    <p className="text-sm leading-6 text-nova-muted">Solo đã được tích hợp đầy đủ trong NOVA. <Link href="/solo-leveling" className="font-semibold text-nova-accent underline">Xem Wiki kỹ năng, nhiệm vụ, quân đoàn và hầm ngục.</Link></p>
     <DstField label="Tìm hướng dẫn" htmlFor="guide-query"><input id="guide-query" type="search" className={dstControlClassName} value={query} onChange={(event) => setQuery(event.target.value)} /></DstField>
     <p role="status" className="text-sm text-nova-muted">{matches.length} chủ đề</p>
     {matches.map((guide) => <details key={guide.id} id={guide.id} className="rounded-2xl border border-nova-border bg-nova-surface p-5"><summary className="cursor-pointer text-lg font-semibold">{guide.title}</summary><div className="mt-4"><GuideText text={guide.text} /></div></details>)}

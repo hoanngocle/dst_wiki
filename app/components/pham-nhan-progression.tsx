@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import data from "@/data/generated/pham-nhan-progression.json";
+import data from "@/data/generated/nova-progression.json";
 import { DstPanel } from "./dst-panel";
 
 const seasons: Record<string, string> = { spring: "Xuân", summer: "Hạ", autumn: "Thu", winter: "Đông" };
