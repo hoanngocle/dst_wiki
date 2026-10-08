@@ -1,0 +1,4206 @@
+{
+  "version": "1.6.3",
+  "groups": [
+    {
+      "key": "good",
+      "id": "hiem",
+      "name": "Hiếm",
+      "weight": 0.5,
+      "bundles": [
+        {
+          "name": "Dreadstone",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "dreadstonehat",
+              "count": 1,
+              "name": "dreadstonehat",
+              "amount": 1,
+              "sprite": null
+            },
+            {
+              "prefab": "armordreadstone",
+              "count": 1,
+              "name": "armordreadstone",
+              "amount": 1,
+              "sprite": null
+            }
+          ],
+          "id": "hiem_01",
+          "chance": "0.2070"
+        },
+        {
+          "name": "Nguyệt thực",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "lunarplanthat",
+              "count": 1,
+              "name": "lunarplanthat",
+              "amount": 1,
+              "sprite": null
+            },
+            {
+              "prefab": "armor_lunarplant",
+              "count": 1,
+              "name": "Brightshade Armor",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/game/7fe94715ca23b6fb030cf809b42792625c64511198813952f2acd200927422fb.png",
+                "uv": {
+                  "u1": 0.343994140625,
+                  "u2": 0.374755859375,
+                  "v1": 0.843994140625,
+                  "v2": 0.874755859375
+                }
+              }
+            }
+          ],
+          "id": "hiem_02",
+          "chance": "0.2070"
+        },
+        {
+          "name": "Hư không",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "voidclothhat",
+              "count": 1,
+              "name": "voidclothhat",
+              "amount": 1,
+              "sprite": null
+            },
+            {
+              "prefab": "armor_voidcloth",
+              "count": 1,
+              "name": "Void Robe",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/game/7fe94715ca23b6fb030cf809b42792625c64511198813952f2acd200927422fb.png",
+                "uv": {
+                  "u1": 0.218994140625,
+                  "u2": 0.249755859375,
+                  "v1": 0.812744140625,
+                  "v2": 0.843505859375
+                }
+              }
+            },
+            {
+              "prefab": "voidcloth_scythe",
+              "count": 1,
+              "name": "Shadow Reaper",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/game/692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce.png",
+                "uv": {
+                  "u1": 0.250244140625,
+                  "u2": 0.281005859375,
+                  "v1": 0.156494140625,
+                  "v2": 0.187255859375
+                }
+              }
+            },
+            {
+              "prefab": "voidcloth_umbrella",
+              "count": 1,
+              "name": "Umbralla",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/game/692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce.png",
+                "uv": {
+                  "u1": 0.281494140625,
+                  "u2": 0.312255859375,
+                  "v1": 0.156494140625,
+                  "v2": 0.187255859375
+                }
+              }
+            }
+          ],
+          "id": "hiem_03",
+          "chance": "0.2070"
+        },
+        {
+          "name": "Trượng dịch chuyển",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "orangestaff",
+              "count": 1,
+              "name": "orangestaff",
+              "amount": 1,
+              "sprite": null
+            },
+            {
+              "prefab": "xd_luoshen_huayin",
+              "count": 3,
+              "legacy": "ttk_luoshen_huayin",
+              "name": "Lạc Thần Hoa Nhân",
+              "amount": 3,
+              "sprite": {
+                "src": "/assets/game/39b82b4d56f4b4619fda7565766489ce6718155b2f1748737617ab8ba3a0b4bd.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "hiem_04",
+          "chance": "0.2070"
+        },
+        {
+          "name": "Tử Xá Diện Giáp",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "xd_zcmj",
+              "count": 1,
+              "legacy": "ttk_zcmj",
+              "name": "Tử Xá Diện Giáp",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/game/3c4090c484e5ff0723d2546fa6f2bc2770a28ce67a6ab6268eff98f0c438c459.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            },
+            {
+              "prefab": "xd_pog_tail",
+              "count": 3,
+              "legacy": "ttk_pog_tail",
+              "name": "Đuôi Linh Hồ",
+              "amount": 3,
+              "sprite": {
+                "src": "/assets/game/442b97557455e028cad416624656db9400f9d81fb0be168303a16f5ccc490b69.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "hiem_05",
+          "chance": "0.2070"
+        },
+        {
+          "name": "Tà Sát Hộ Giáp",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "xd_xshj",
+              "count": 1,
+              "legacy": "ttk_xshj",
+              "name": "Tà Sát Hộ Giáp",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/game/965a4d0f7e5eb6657ec0a393999a233b7d86e615ade3c4bd75fb2d668c8d5b21.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            },
+            {
+              "prefab": "xd_spider_leg",
+              "count": 2,
+              "legacy": "ttk_spider_leg",
+              "name": "Tà Sát Bộ Túc",
+              "amount": 2,
+              "sprite": {
+                "src": "/assets/game/3c7ac3498add559ded2aea04f9f8087348c59063bc545ecdb8c217bc3324c7bb.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "hiem_06",
+          "chance": "0.2070"
+        },
+        {
+          "name": "Vương miện và Giáp Xương",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "alterguardianhat",
+              "count": 1,
+              "name": "Enlightened Crown",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/game/7fe94715ca23b6fb030cf809b42792625c64511198813952f2acd200927422fb.png",
+                "uv": {
+                  "u1": 0.531494140625,
+                  "u2": 0.562255859375,
+                  "v1": 0.906494140625,
+                  "v2": 0.937255859375
+                }
+              }
+            },
+            {
+              "prefab": "armorskeleton",
+              "count": 1,
+              "name": "armorskeleton",
+              "amount": 1,
+              "sprite": null
+            }
+          ],
+          "id": "hiem_07",
+          "chance": "0.2070"
+        },
+        {
+          "name": "Trượng ngọc",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "yellowstaff",
+              "count": 1,
+              "name": "yellowstaff",
+              "amount": 1,
+              "sprite": null
+            },
+            {
+              "prefab": "opalstaff",
+              "count": 1,
+              "name": "opalstaff",
+              "amount": 1,
+              "sprite": null
+            },
+            {
+              "prefab": "greenstaff",
+              "count": 1,
+              "name": "greenstaff",
+              "amount": 1,
+              "sprite": null
+            }
+          ],
+          "id": "hiem_08",
+          "chance": "0.2070"
+        },
+        {
+          "name": "Linh thực cay",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "jellybean_spice_chili",
+              "count": 2,
+              "name": "jellybean_spice_chili",
+              "amount": 2,
+              "sprite": null
+            },
+            {
+              "prefab": "seafoodgumbo_spice_chili",
+              "count": 2,
+              "name": "seafoodgumbo_spice_chili",
+              "amount": 2,
+              "sprite": null
+            },
+            {
+              "prefab": "flowersalad_spice_chili",
+              "count": 2,
+              "name": "flowersalad_spice_chili",
+              "amount": 2,
+              "sprite": null
+            }
+          ],
+          "id": "hiem_09",
+          "chance": "0.2070"
+        },
+        {
+          "name": "Thạch dê điện",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "voltgoatjelly",
+              "count": 7,
+              "name": "voltgoatjelly",
+              "amount": 7,
+              "sprite": null
+            },
+            {
+              "prefab": "xd_luoxiang_pengrou",
+              "count": 2,
+              "legacy": "ttk_luoxiang_pengrou",
+              "name": "Lạc Hương Phanh Nhục",
+              "amount": 2,
+              "sprite": {
+                "src": "/assets/game/9fbc8f91608b4f9204d00927cbce619cde1278153e5da13c54cf1f28ac623469.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "hiem_10",
+          "chance": "0.2070"
+        },
+        {
+          "name": "Lục Mạch Thần Kiếm",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "lucmachthankiem",
+              "count": 1,
+              "name": "Lục Mạch Thần Kiếm",
+              "amount": 1,
+              "sprite": {
+                "src": "/tu-tien-ky/icons/lucmachthankiem.png",
+                "uv": {
+                  "u1": 0.00390625,
+                  "u2": 0.50390625,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            },
+            {
+              "prefab": "xd_lc_lmg_seed",
+              "count": 3,
+              "legacy": "ttk_lc_lmg_seed",
+              "name": "Hạt Giống Điện Khuẩn",
+              "amount": 3,
+              "sprite": {
+                "src": "/assets/game/6576f09ae6d5adb7b47d86a3ef85330372dbd39154b02a155be807227b73d51c.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "hiem_11",
+          "chance": "0.2070"
+        },
+        {
+          "name": "Tinh La Kiếm",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "ttk_tinhlakiem",
+              "count": 1,
+              "name": "Tinh La Kiếm",
+              "amount": 1,
+              "sprite": {
+                "src": "/tu-tien-ky/icons/ttk_tinhlakiem.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            },
+            {
+              "prefab": "xd_luoshen_qingshu",
+              "count": 2,
+              "legacy": "ttk_luoshen_qingshu",
+              "name": "Lạc Thần Thanh Sơ",
+              "amount": 2,
+              "sprite": {
+                "src": "/assets/game/4887781bb49ec70984e091b639f593a95a4a65543c111bf2a0983badc2495096.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "hiem_12",
+          "chance": "0.2070"
+        },
+        {
+          "name": "Phần Thiên Kiếm",
+          "weight": 0.5,
+          "items": [
+            {
+              "prefab": "xd_ftj",
+              "count": 1,
+              "name": "Phần Thiên Kiếm",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/game/37cf5b5109374b926bd544fcc0672a21bdfce7ee4d8423180a4f4fd1c33f6d1c.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "hiem_13",
+          "chance": "0.1035"
+        },
+        {
+          "name": "Tôn Hồn Phiên",
+          "weight": 0.5,
+          "items": [
+            {
+              "prefab": "xd_zhf",
+              "count": 1,
+              "name": "Tôn Hồn Phiên",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/game/e5d11235beb2a2c920a3df8314e347a66ea970578be5591a5e15a3d829fcccb5.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "hiem_14",
+          "chance": "0.1035"
+        },
+        {
+          "name": "Tẩy Tủy Hoàn",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "xd_danyao_xs",
+              "count": 1,
+              "name": "Tẩy Tủy Hoàn",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/game/ab97916b259f07dae6d1ce2ca488cee11c2535ae1073fafc1abb4aff34a99ae4.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "hiem_15",
+          "chance": "0.2070"
+        },
+        {
+          "name": "Hóa Tinh Đan",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "xd_danyao_hj",
+              "count": 1,
+              "name": "Hóa Tinh Đan",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/game/1a3a80f92d9ca89b16158588aabb388b64a30516052821d963a6b79957a726ea.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "hiem_16",
+          "chance": "0.2070"
+        },
+        {
+          "name": "Vân Trung Đan",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "xd_danyao_yz",
+              "count": 1,
+              "name": "Vân Trung Đan",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/game/f3cdecfd84c17504aba74b7d50c549d99b3eecb66084c854d923a279c92567dc.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "hiem_17",
+          "chance": "0.2070"
+        },
+        {
+          "name": "Nguyên liệu quý",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "xd_fs",
+              "count": 1,
+              "name": "Phượng Tủy",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/game/625a725310f4fcfe97e56fce49e13f725dc512d7567c0bf68cb4f2e4321d6ae7.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            },
+            {
+              "prefab": "xd_qlr",
+              "count": 1,
+              "name": "Kỳ Lân Nhung",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/game/8c84b4b20d923891d85ab82e15f69f6e0ba1b2ad64ae6742f696881e4b6f96c6.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "hiem_18",
+          "chance": "0.2070"
+        },
+        {
+          "name": "Huyền Tinh quý",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "wb_enhancegem",
+              "count": 1,
+              "name": "wb_enhancegem",
+              "amount": 1,
+              "sprite": null
+            }
+          ],
+          "id": "hiem_19",
+          "chance": "0.2070"
+        },
+        {
+          "name": "Bùa cường hóa",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "nn_magicpaper",
+              "count": 2,
+              "name": "nn_magicpaper",
+              "amount": 2,
+              "sprite": null
+            },
+            {
+              "prefab": "wb_strengthen_strengthen_protectpaper",
+              "count": 1,
+              "name": "wb_strengthen_strengthen_protectpaper",
+              "amount": 1,
+              "sprite": null
+            }
+          ],
+          "id": "hiem_20",
+          "chance": "0.2070"
+        },
+        {
+          "name": "Chỉnh thuộc tính",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "ac_refreshstone",
+              "count": 3,
+              "name": "ac_refreshstone",
+              "amount": 3,
+              "sprite": null
+            },
+            {
+              "prefab": "ad_cleanstone",
+              "count": 2,
+              "name": "ad_cleanstone",
+              "amount": 2,
+              "sprite": null
+            }
+          ],
+          "id": "hiem_21",
+          "chance": "0.2070"
+        },
+        {
+          "name": "Cuộn cường hóa +6",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "wb_strengthen_strengthen_6_levelpaper",
+              "count": 1,
+              "name": "wb_strengthen_strengthen_6_levelpaper",
+              "amount": 1,
+              "sprite": null
+            }
+          ],
+          "id": "hiem_22",
+          "chance": "0.2070"
+        },
+        {
+          "name": "Shadow Atrium",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "shadowheart",
+              "count": 1,
+              "name": "Shadow Atrium",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/game/692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce.png",
+                "uv": {
+                  "u1": 0.781494140625,
+                  "u2": 0.812255859375,
+                  "v1": 0.687744140625,
+                  "v2": 0.718505859375
+                }
+              }
+            }
+          ],
+          "id": "hiem_23",
+          "chance": "0.2070"
+        },
+        {
+          "name": "Hoa Hồng Ám Ảnh",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "xd_aymg",
+              "count": 1,
+              "name": "Hoa Hồng Ám Ảnh",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/game/b58d32c7f47db3cf74daf953412dd3f90d0b76d8597c6ea69473a7dcca4a304c.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "hiem_24",
+          "chance": "0.2070"
+        }
+      ],
+      "count": 24,
+      "chance": "4.7619"
+    },
+    {
+      "key": "ok",
+      "id": "kha",
+      "name": "Khá",
+      "weight": 1.5,
+      "bundles": [
+        {
+          "name": "Hạt Giống Phủ Băng",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "xd_lc_hsc_seed",
+              "count": 3,
+              "legacy": "ttk_lc_hsc_seed",
+              "name": "Hạt Giống Phủ Băng",
+              "amount": 3,
+              "sprite": {
+                "src": "/assets/game/2d858ad5af54f42b9d735a9c410368aab7ab0618110d3785dc8785f86a0c211a.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "kha_01",
+          "chance": "0.6803"
+        },
+        {
+          "name": "Đá Sa Mạc",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "townportaltalisman",
+              "count": 3,
+              "name": "Desert Stone",
+              "amount": 3,
+              "sprite": {
+                "src": "/assets/game/692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce.png",
+                "uv": {
+                  "u1": 0.187744140625,
+                  "u2": 0.218505859375,
+                  "v1": 0.312744140625,
+                  "v2": 0.343505859375
+                }
+              }
+            }
+          ],
+          "id": "kha_02",
+          "chance": "0.6803"
+        },
+        {
+          "name": "Ngư Long Đăng",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "xd_sudaji_redlantern",
+              "count": 1,
+              "legacy": "ttk_ngulongdang",
+              "name": "Ngư Long Đăng",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/game/a90702999ae421363f4811e19537b4564ed3b397c0a69cfd57f2141eda5e5b53.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            },
+            {
+              "prefab": "xd_lingshi1",
+              "count": 20,
+              "legacy": "ttk_lingshi1",
+              "name": "Hạ Phẩm Linh Thạch",
+              "amount": 20,
+              "sprite": {
+                "src": "/assets/game/67ef5f850c6e54b4efd567ffec21720ccedc95c8278021a9ced90cb8f242d5a5.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "kha_03",
+          "chance": "0.6803"
+        },
+        {
+          "name": "Chưởng Thiên Bình",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "xd_ztp",
+              "count": 1,
+              "legacy": "ttk_chuongthienbinh",
+              "name": "Chưởng Thiên Bình",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/game/8e8f86338ba88fffa28ddfc07d0bb880a3cbfa398c86217d7d11d0371177368c.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            },
+            {
+              "prefab": "xd_luoshen_huazhong",
+              "count": 2,
+              "legacy": "ttk_luoshen_huazhong",
+              "name": "Hạt Giống Lạc Thần Hoa",
+              "amount": 2,
+              "sprite": {
+                "src": "/assets/game/47cc3ce885b1b03c9ee0c4b5c508b42fadeed6574f2be833a5076d3911255cb3.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "kha_04",
+          "chance": "0.6803"
+        },
+        {
+          "name": "Di tích",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "armorruins",
+              "count": 3,
+              "name": "armorruins",
+              "amount": 3,
+              "sprite": null
+            },
+            {
+              "prefab": "ruinshat",
+              "count": 3,
+              "name": "ruinshat",
+              "amount": 3,
+              "sprite": null
+            },
+            {
+              "prefab": "thulecite",
+              "count": 3,
+              "name": "Thulecite",
+              "amount": 3,
+              "sprite": {
+                "src": "/assets/game/692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce.png",
+                "uv": {
+                  "u1": 0.625244140625,
+                  "u2": 0.656005859375,
+                  "v1": 0.375244140625,
+                  "v2": 0.406005859375
+                }
+              }
+            }
+          ],
+          "id": "kha_05",
+          "chance": "0.6803"
+        },
+        {
+          "name": "Mùa mưa",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "eyebrellahat",
+              "count": 2,
+              "name": "eyebrellahat",
+              "amount": 2,
+              "sprite": null
+            },
+            {
+              "prefab": "xd_luoxiang_pengrou",
+              "count": 2,
+              "legacy": "ttk_luoxiang_pengrou",
+              "name": "Lạc Hương Phanh Nhục",
+              "amount": 2,
+              "sprite": {
+                "src": "/assets/game/9fbc8f91608b4f9204d00927cbce619cde1278153e5da13c54cf1f28ac623469.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "kha_06",
+          "chance": "0.6803"
+        },
+        {
+          "name": "Linh thực",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "jellybean",
+              "count": 10,
+              "name": "jellybean",
+              "amount": 10,
+              "sprite": null
+            },
+            {
+              "prefab": "xd_luoshen_qingshu",
+              "count": 3,
+              "legacy": "ttk_luoshen_qingshu",
+              "name": "Lạc Thần Thanh Sơ",
+              "amount": 3,
+              "sprite": {
+                "src": "/assets/game/4887781bb49ec70984e091b639f593a95a4a65543c111bf2a0983badc2495096.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "kha_07",
+          "chance": "0.6803"
+        },
+        {
+          "name": "Chiến lợi phẩm",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "deerclops_eyeball",
+              "count": 1,
+              "name": "Deerclops Eyeball",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/game/7fe94715ca23b6fb030cf809b42792625c64511198813952f2acd200927422fb.png",
+                "uv": {
+                  "u1": 0.531494140625,
+                  "u2": 0.562255859375,
+                  "v1": 0.031494140625,
+                  "v2": 0.062255859375
+                }
+              }
+            },
+            {
+              "prefab": "bearger_fur",
+              "count": 1,
+              "name": "Thick Fur",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/game/7fe94715ca23b6fb030cf809b42792625c64511198813952f2acd200927422fb.png",
+                "uv": {
+                  "u1": 0.593994140625,
+                  "u2": 0.624755859375,
+                  "v1": 0.687744140625,
+                  "v2": 0.718505859375
+                }
+              }
+            },
+            {
+              "prefab": "xd_npxsz",
+              "count": 3,
+              "legacy": "ttk_npxsz",
+              "name": "Niết Bàn Huyết Tủy Trúc",
+              "amount": 3,
+              "sprite": {
+                "src": "/assets/game/ab3e2045d75f6fc3d2d05587a6047e1dcb99253274e818681ea84dcf0c6f4208.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "kha_08",
+          "chance": "0.6803"
+        },
+        {
+          "name": "Vảy và da",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "dragon_scales",
+              "count": 1,
+              "name": "Scales",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/game/7fe94715ca23b6fb030cf809b42792625c64511198813952f2acd200927422fb.png",
+                "uv": {
+                  "u1": 0.906494140625,
+                  "u2": 0.937255859375,
+                  "v1": 0.000244140625,
+                  "v2": 0.031005859375
+                }
+              }
+            },
+            {
+              "prefab": "shroom_skin",
+              "count": 1,
+              "name": "Shroom Skin",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/game/692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce.png",
+                "uv": {
+                  "u1": 0.562744140625,
+                  "u2": 0.593505859375,
+                  "v1": 0.656494140625,
+                  "v2": 0.687255859375
+                }
+              }
+            }
+          ],
+          "id": "kha_09",
+          "chance": "0.6803"
+        },
+        {
+          "name": "Làm vườn",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "shovel_lunarplant",
+              "count": 1,
+              "name": "Brightshade Shoevel",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/game/692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce.png",
+                "uv": {
+                  "u1": 0.375244140625,
+                  "u2": 0.406005859375,
+                  "v1": 0.656494140625,
+                  "v2": 0.687255859375
+                }
+              }
+            },
+            {
+              "prefab": "rock_avocado_fruit_sprout",
+              "count": 5,
+              "name": "rock_avocado_fruit_sprout",
+              "amount": 5,
+              "sprite": null
+            },
+            {
+              "prefab": "xd_luoshen_huazhong",
+              "count": 2,
+              "legacy": "ttk_luoshen_huazhong",
+              "name": "Hạt Giống Lạc Thần Hoa",
+              "amount": 2,
+              "sprite": {
+                "src": "/assets/game/47cc3ce885b1b03c9ee0c4b5c508b42fadeed6574f2be833a5076d3911255cb3.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "kha_10",
+          "chance": "0.6803"
+        },
+        {
+          "name": "Vân Mạc Thượng Trang",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "xd_yunxiao_ymsz",
+              "count": 1,
+              "legacy": "ttk_yunxiao_ymsz",
+              "name": "Vân Mạc Thượng Trang",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/game/106853cc2ca2bca7d7a2f37552eeeda0b1699669d1da5f5bfd0553e26ba6c665.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            },
+            {
+              "prefab": "xd_lc_cyh",
+              "count": 3,
+              "legacy": "ttk_lc_cyh",
+              "name": "Xích Dương Hoa",
+              "amount": 3,
+              "sprite": {
+                "src": "/assets/game/94daaec0031352181effee4f2a31f061039570c1d73fff119e16e50636e2184b.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "kha_11",
+          "chance": "0.6803"
+        },
+        {
+          "name": "Sáu bùa",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "blueamulet",
+              "count": 1,
+              "name": "blueamulet",
+              "amount": 1,
+              "sprite": null
+            },
+            {
+              "prefab": "greenamulet",
+              "count": 1,
+              "name": "greenamulet",
+              "amount": 1,
+              "sprite": null
+            },
+            {
+              "prefab": "purpleamulet",
+              "count": 1,
+              "name": "purpleamulet",
+              "amount": 1,
+              "sprite": null
+            },
+            {
+              "prefab": "orangeamulet",
+              "count": 1,
+              "name": "orangeamulet",
+              "amount": 1,
+              "sprite": null
+            },
+            {
+              "prefab": "yellowamulet",
+              "count": 1,
+              "name": "yellowamulet",
+              "amount": 1,
+              "sprite": null
+            },
+            {
+              "prefab": "amulet",
+              "count": 1,
+              "name": "Life Giving Amulet",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/game/7fe94715ca23b6fb030cf809b42792625c64511198813952f2acd200927422fb.png",
+                "uv": {
+                  "u1": 0.843994140625,
+                  "u2": 0.874755859375,
+                  "v1": 0.906494140625,
+                  "v2": 0.937255859375
+                }
+              }
+            }
+          ],
+          "id": "kha_12",
+          "chance": "0.6803"
+        },
+        {
+          "name": "Linh thực đóng gói",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "xd_luoxiang_pengrou",
+              "count": 3,
+              "legacy": "ttk_luoxiang_pengrou",
+              "name": "Lạc Hương Phanh Nhục",
+              "amount": 3,
+              "sprite": {
+                "src": "/assets/game/9fbc8f91608b4f9204d00927cbce619cde1278153e5da13c54cf1f28ac623469.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            },
+            {
+              "prefab": "xd_luoshen_qingshu",
+              "count": 3,
+              "legacy": "ttk_luoshen_qingshu",
+              "name": "Lạc Thần Thanh Sơ",
+              "amount": 3,
+              "sprite": {
+                "src": "/assets/game/4887781bb49ec70984e091b639f593a95a4a65543c111bf2a0983badc2495096.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            },
+            {
+              "prefab": "bundlewrap",
+              "count": 7,
+              "name": "bundlewrap",
+              "amount": 7,
+              "sprite": null
+            }
+          ],
+          "id": "kha_13",
+          "chance": "0.6803"
+        },
+        {
+          "name": "Công cụ mặt trăng",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "pickaxe_lunarplant",
+              "count": 1,
+              "name": "Brightshade Smasher",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/game/8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666.png",
+                "uv": {
+                  "u1": 0.375244140625,
+                  "u2": 0.406005859375,
+                  "v1": 0.062744140625,
+                  "v2": 0.093505859375
+                }
+              }
+            },
+            {
+              "prefab": "moonglassaxe",
+              "count": 4,
+              "name": "moonglassaxe",
+              "amount": 4,
+              "sprite": null
+            }
+          ],
+          "id": "kha_14",
+          "chance": "0.6803"
+        },
+        {
+          "name": "Chìa khóa và mỏ biển",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "klaussackkey",
+              "count": 1,
+              "name": "klaussackkey",
+              "amount": 1,
+              "sprite": null
+            },
+            {
+              "prefab": "malbatross_beak",
+              "count": 1,
+              "name": "Malbatross Bill",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/game/8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666.png",
+                "uv": {
+                  "u1": 0.562744140625,
+                  "u2": 0.593505859375,
+                  "v1": 0.375244140625,
+                  "v2": 0.406005859375
+                }
+              }
+            }
+          ],
+          "id": "kha_15",
+          "chance": "0.6803"
+        },
+        {
+          "name": "Bữa ăn tiếp tế",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "bonestew",
+              "count": 2,
+              "name": "bonestew",
+              "amount": 2,
+              "sprite": null
+            },
+            {
+              "prefab": "dragonpie",
+              "count": 5,
+              "name": "dragonpie",
+              "amount": 5,
+              "sprite": null
+            },
+            {
+              "prefab": "perogies",
+              "count": 5,
+              "name": "perogies",
+              "amount": 5,
+              "sprite": null
+            }
+          ],
+          "id": "kha_16",
+          "chance": "0.6803"
+        },
+        {
+          "name": "Kem",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "icecream",
+              "count": 10,
+              "name": "icecream",
+              "amount": 10,
+              "sprite": null
+            }
+          ],
+          "id": "kha_17",
+          "chance": "0.6803"
+        },
+        {
+          "name": "Linh Thạch Solo",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "hh_essence",
+              "count": 10,
+              "name": "hh_essence",
+              "amount": 10,
+              "sprite": null
+            }
+          ],
+          "id": "kha_18",
+          "chance": "0.6803"
+        },
+        {
+          "name": "Vật liệu thuộc tính Solo",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "hh_effect_tally",
+              "count": 3,
+              "name": "hh_effect_tally",
+              "amount": 3,
+              "sprite": null
+            },
+            {
+              "prefab": "hh_remove_stone",
+              "count": 2,
+              "name": "hh_remove_stone",
+              "amount": 2,
+              "sprite": null
+            }
+          ],
+          "id": "kha_19",
+          "chance": "0.6803"
+        },
+        {
+          "name": "Đá Thuộc Tính Solo",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "hh_effect_stone",
+              "count": 2,
+              "name": "hh_effect_stone",
+              "amount": 2,
+              "sprite": null
+            }
+          ],
+          "id": "kha_20",
+          "chance": "0.6803"
+        },
+        {
+          "name": "Phúc Lạc Dược II",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "nn_liquidluck_2",
+              "count": 1,
+              "name": "nn_liquidluck_2",
+              "amount": 1,
+              "sprite": null
+            }
+          ],
+          "id": "kha_21",
+          "chance": "0.6803"
+        }
+      ],
+      "count": 21,
+      "chance": "14.2857"
+    },
+    {
+      "key": "ok2",
+      "id": "thuong",
+      "name": "Thường",
+      "weight": 3.5,
+      "bundles": [
+        {
+          "name": "Linh thực Lạc Thần",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "xd_luoshen_qingshu",
+              "count": 2,
+              "legacy": "ttk_luoshen_qingshu",
+              "name": "Lạc Thần Thanh Sơ",
+              "amount": 2,
+              "sprite": {
+                "src": "/assets/game/4887781bb49ec70984e091b639f593a95a4a65543c111bf2a0983badc2495096.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            },
+            {
+              "prefab": "xd_luoxiang_pengrou",
+              "count": 2,
+              "legacy": "ttk_luoxiang_pengrou",
+              "name": "Lạc Hương Phanh Nhục",
+              "amount": 2,
+              "sprite": {
+                "src": "/assets/game/9fbc8f91608b4f9204d00927cbce619cde1278153e5da13c54cf1f28ac623469.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "thuong_01",
+          "chance": "1.1111"
+        },
+        {
+          "name": "Hạt dưỡng sinh",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "xd_lc_hsc_seed",
+              "count": 4,
+              "legacy": "ttk_lc_hsc_seed",
+              "name": "Hạt Giống Phủ Băng",
+              "amount": 4,
+              "sprite": {
+                "src": "/assets/game/2d858ad5af54f42b9d735a9c410368aab7ab0618110d3785dc8785f86a0c211a.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            },
+            {
+              "prefab": "xd_lc_cyh_seed",
+              "count": 4,
+              "legacy": "ttk_lc_cyh_seed",
+              "name": "Hạt Giống Sí Nhiệt",
+              "amount": 4,
+              "sprite": {
+                "src": "/assets/game/ca40f390a359353784829a8ed5a856689ebafebaf990fd1ff3e6ff701ad4ad35.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "thuong_02",
+          "chance": "1.1111"
+        },
+        {
+          "name": "Hạt dưỡng thần",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "xd_lc_qfx_seed",
+              "count": 4,
+              "legacy": "ttk_lc_qfx_seed",
+              "name": "Hạt Giống Thanh Nang",
+              "amount": 4,
+              "sprite": {
+                "src": "/assets/game/da0862aa3340f0168df7afc384a560eb5edb2dda119aa62152602e45eec9b96e.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            },
+            {
+              "prefab": "xd_lc_yhh_seed",
+              "count": 4,
+              "legacy": "ttk_lc_yhh_seed",
+              "name": "Hạt Giống U Ảnh",
+              "amount": 4,
+              "sprite": {
+                "src": "/assets/game/0e35d49723d82ea4c172aacd10481d22d40e209cade0104ea023638358174a2b.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "thuong_03",
+          "chance": "1.1111"
+        },
+        {
+          "name": "Hạt dưỡng khí",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "xd_lc_dms_seed",
+              "count": 4,
+              "legacy": "ttk_lc_dms_seed",
+              "name": "Hạt Giống Địa Tủy",
+              "amount": 4,
+              "sprite": {
+                "src": "/assets/game/fc523294e9cfdd8852e2683e5a8c2b6f88f5ea6457b23d9cd48ceac45858312a.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            },
+            {
+              "prefab": "xd_lc_lmg_seed",
+              "count": 4,
+              "legacy": "ttk_lc_lmg_seed",
+              "name": "Hạt Giống Điện Khuẩn",
+              "amount": 4,
+              "sprite": {
+                "src": "/assets/game/6576f09ae6d5adb7b47d86a3ef85330372dbd39154b02a155be807227b73d51c.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "thuong_04",
+          "chance": "1.1111"
+        },
+        {
+          "name": "Linh thảo băng hỏa",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "xd_lc_hsc",
+              "count": 3,
+              "legacy": "ttk_lc_hsc",
+              "name": "Sương Hàn Thảo",
+              "amount": 3,
+              "sprite": {
+                "src": "/assets/game/be4b81a13c1ce995c7f674d0ff6c3b1c2516452d403ef96b6707239b78a988f6.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            },
+            {
+              "prefab": "xd_lc_cyh",
+              "count": 3,
+              "legacy": "ttk_lc_cyh",
+              "name": "Xích Dương Hoa",
+              "amount": 3,
+              "sprite": {
+                "src": "/assets/game/94daaec0031352181effee4f2a31f061039570c1d73fff119e16e50636e2184b.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            },
+            {
+              "prefab": "xd_lc_dms_seed",
+              "count": 3,
+              "legacy": "ttk_lc_dms_seed",
+              "name": "Hạt Giống Địa Tủy",
+              "amount": 3,
+              "sprite": {
+                "src": "/assets/game/fc523294e9cfdd8852e2683e5a8c2b6f88f5ea6457b23d9cd48ceac45858312a.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "thuong_05",
+          "chance": "1.1111"
+        },
+        {
+          "name": "Địa Mạch Sâm",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "xd_lc_dms",
+              "count": 4,
+              "legacy": "ttk_lc_dms",
+              "name": "Địa Mạch Sâm",
+              "amount": 4,
+              "sprite": {
+                "src": "/assets/game/7353e2513fc7d1c2a9c03e19d6f81e496c49f402ab2bd7a79cbe800d6bb41a45.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            },
+            {
+              "prefab": "xd_lc_dms_seed",
+              "count": 3,
+              "legacy": "ttk_lc_dms_seed",
+              "name": "Hạt Giống Địa Tủy",
+              "amount": 3,
+              "sprite": {
+                "src": "/assets/game/fc523294e9cfdd8852e2683e5a8c2b6f88f5ea6457b23d9cd48ceac45858312a.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "thuong_06",
+          "chance": "1.1111"
+        },
+        {
+          "name": "Thanh Phong Tiên",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "xd_lc_qfx",
+              "count": 3,
+              "legacy": "ttk_lc_qfx",
+              "name": "Thanh Phong Nhứ",
+              "amount": 3,
+              "sprite": {
+                "src": "/assets/game/0d8236024a052668cc8567ac7fd788793ecc0bc224dfa0dc6cffc702e64489ea.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            },
+            {
+              "prefab": "xd_lc_qfx_seed",
+              "count": 4,
+              "legacy": "ttk_lc_qfx_seed",
+              "name": "Hạt Giống Thanh Nang",
+              "amount": 4,
+              "sprite": {
+                "src": "/assets/game/da0862aa3340f0168df7afc384a560eb5edb2dda119aa62152602e45eec9b96e.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "thuong_07",
+          "chance": "1.1111"
+        },
+        {
+          "name": "Lôi Minh Quả",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "xd_lc_lmg",
+              "count": 3,
+              "legacy": "ttk_lc_lmg",
+              "name": "Lôi Minh Cô",
+              "amount": 3,
+              "sprite": {
+                "src": "/assets/game/005d4cd7b9be06a60159856c1fa0fbe440298759f18fb177be20d94f7eabc61f.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            },
+            {
+              "prefab": "xd_lc_lmg_seed",
+              "count": 4,
+              "legacy": "ttk_lc_lmg_seed",
+              "name": "Hạt Giống Điện Khuẩn",
+              "amount": 4,
+              "sprite": {
+                "src": "/assets/game/6576f09ae6d5adb7b47d86a3ef85330372dbd39154b02a155be807227b73d51c.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "thuong_08",
+          "chance": "1.1111"
+        },
+        {
+          "name": "U Hồn Hoa",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "xd_lc_yhh",
+              "count": 3,
+              "legacy": "ttk_lc_yhh",
+              "name": "U Hồn Hoa",
+              "amount": 3,
+              "sprite": {
+                "src": "/assets/game/6abcbcd9f367db93a539794d7276d15506064bffeaccbadaa62304c68fae6020.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            },
+            {
+              "prefab": "xd_lc_yhh_seed",
+              "count": 4,
+              "legacy": "ttk_lc_yhh_seed",
+              "name": "Hạt Giống U Ảnh",
+              "amount": 4,
+              "sprite": {
+                "src": "/assets/game/0e35d49723d82ea4c172aacd10481d22d40e209cade0104ea023638358174a2b.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "thuong_09",
+          "chance": "1.1111"
+        },
+        {
+          "name": "Vườn Lạc Thần",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "xd_luoshen_huazhong",
+              "count": 2,
+              "legacy": "ttk_luoshen_huazhong",
+              "name": "Hạt Giống Lạc Thần Hoa",
+              "amount": 2,
+              "sprite": {
+                "src": "/assets/game/47cc3ce885b1b03c9ee0c4b5c508b42fadeed6574f2be833a5076d3911255cb3.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            },
+            {
+              "prefab": "xd_luoshen_huayin",
+              "count": 3,
+              "legacy": "ttk_luoshen_huayin",
+              "name": "Lạc Thần Hoa Nhân",
+              "amount": 3,
+              "sprite": {
+                "src": "/assets/game/39b82b4d56f4b4619fda7565766489ce6718155b2f1748737617ab8ba3a0b4bd.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "thuong_10",
+          "chance": "1.1111"
+        },
+        {
+          "name": "Nguyên liệu Tu Tiên",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "xd_pog_tail",
+              "count": 3,
+              "legacy": "ttk_pog_tail",
+              "name": "Đuôi Linh Hồ",
+              "amount": 3,
+              "sprite": {
+                "src": "/assets/game/442b97557455e028cad416624656db9400f9d81fb0be168303a16f5ccc490b69.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            },
+            {
+              "prefab": "xd_spider_leg",
+              "count": 2,
+              "legacy": "ttk_spider_leg",
+              "name": "Tà Sát Bộ Túc",
+              "amount": 2,
+              "sprite": {
+                "src": "/assets/game/3c7ac3498add559ded2aea04f9f8087348c59063bc545ecdb8c217bc3324c7bb.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            },
+            {
+              "prefab": "xd_npxsz",
+              "count": 3,
+              "legacy": "ttk_npxsz",
+              "name": "Niết Bàn Huyết Tủy Trúc",
+              "amount": 3,
+              "sprite": {
+                "src": "/assets/game/ab3e2045d75f6fc3d2d05587a6047e1dcb99253274e818681ea84dcf0c6f4208.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "thuong_11",
+          "chance": "1.1111"
+        },
+        {
+          "name": "Linh khí dự trữ",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "xd_lingshi1",
+              "count": 30,
+              "legacy": "ttk_lingshi1",
+              "name": "Hạ Phẩm Linh Thạch",
+              "amount": 30,
+              "sprite": {
+                "src": "/assets/game/67ef5f850c6e54b4efd567ffec21720ccedc95c8278021a9ced90cb8f242d5a5.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            },
+            {
+              "prefab": "xd_luoshen_qingshu",
+              "count": 2,
+              "legacy": "ttk_luoshen_qingshu",
+              "name": "Lạc Thần Thanh Sơ",
+              "amount": 2,
+              "sprite": {
+                "src": "/assets/game/4887781bb49ec70984e091b639f593a95a4a65543c111bf2a0983badc2495096.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "thuong_12",
+          "chance": "1.1111"
+        },
+        {
+          "name": "Ngọc sơ cấp",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "redgem",
+              "count": 1,
+              "name": "Red Gem",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/game/692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce.png",
+                "uv": {
+                  "u1": 0.468994140625,
+                  "u2": 0.499755859375,
+                  "v1": 0.843994140625,
+                  "v2": 0.874755859375
+                }
+              }
+            },
+            {
+              "prefab": "bluegem",
+              "count": 1,
+              "name": "Blue Gem",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/game/7fe94715ca23b6fb030cf809b42792625c64511198813952f2acd200927422fb.png",
+                "uv": {
+                  "u1": 0.375244140625,
+                  "u2": 0.406005859375,
+                  "v1": 0.593994140625,
+                  "v2": 0.624755859375
+                }
+              }
+            },
+            {
+              "prefab": "xd_lc_lmg_seed",
+              "count": 3,
+              "legacy": "ttk_lc_lmg_seed",
+              "name": "Hạt Giống Điện Khuẩn",
+              "amount": 3,
+              "sprite": {
+                "src": "/assets/game/6576f09ae6d5adb7b47d86a3ef85330372dbd39154b02a155be807227b73d51c.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "thuong_13",
+          "chance": "1.1111"
+        },
+        {
+          "name": "Trở về",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "amulet",
+              "count": 1,
+              "name": "Life Giving Amulet",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/game/7fe94715ca23b6fb030cf809b42792625c64511198813952f2acd200927422fb.png",
+                "uv": {
+                  "u1": 0.843994140625,
+                  "u2": 0.874755859375,
+                  "v1": 0.906494140625,
+                  "v2": 0.937255859375
+                }
+              }
+            },
+            {
+              "prefab": "reviver",
+              "count": 2,
+              "name": "Telltale Heart",
+              "amount": 2,
+              "sprite": {
+                "src": "/assets/game/692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce.png",
+                "uv": {
+                  "u1": 0.843994140625,
+                  "u2": 0.874755859375,
+                  "v1": 0.781494140625,
+                  "v2": 0.812255859375
+                }
+              }
+            },
+            {
+              "prefab": "xd_lc_dms_seed",
+              "count": 3,
+              "legacy": "ttk_lc_dms_seed",
+              "name": "Hạt Giống Địa Tủy",
+              "amount": 3,
+              "sprite": {
+                "src": "/assets/game/fc523294e9cfdd8852e2683e5a8c2b6f88f5ea6457b23d9cd48ceac45858312a.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "thuong_14",
+          "chance": "1.1111"
+        },
+        {
+          "name": "Mắt và sinh lực",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "eyemaskhat",
+              "count": 1,
+              "name": "eyemaskhat",
+              "amount": 1,
+              "sprite": null
+            },
+            {
+              "prefab": "lifeinjector",
+              "count": 3,
+              "name": "Booster Shot",
+              "amount": 3,
+              "sprite": {
+                "src": "/assets/game/8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666.png",
+                "uv": {
+                  "u1": 0.125244140625,
+                  "u2": 0.156005859375,
+                  "v1": 0.406494140625,
+                  "v2": 0.437255859375
+                }
+              }
+            },
+            {
+              "prefab": "xd_luoshen_qingshu",
+              "count": 2,
+              "legacy": "ttk_luoshen_qingshu",
+              "name": "Lạc Thần Thanh Sơ",
+              "amount": 2,
+              "sprite": {
+                "src": "/assets/game/4887781bb49ec70984e091b639f593a95a4a65543c111bf2a0983badc2495096.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "thuong_15",
+          "chance": "1.1111"
+        },
+        {
+          "name": "Mandrake",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "mandrake_planted",
+              "count": 1,
+              "name": "Mandrake",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/quality/f4e6d92193b2f72b4d6483c0abd7f9a8c22c1032cd344b23cf566b6ade916ab4.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            },
+            {
+              "prefab": "mandrakesoup",
+              "count": 1,
+              "name": "mandrakesoup",
+              "amount": 1,
+              "sprite": null
+            }
+          ],
+          "id": "thuong_16",
+          "chance": "1.1111"
+        },
+        {
+          "name": "Sừng cổ đại",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "minotaurhorn",
+              "count": 1,
+              "name": "Guardian's Horn",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/game/8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666.png",
+                "uv": {
+                  "u1": 0.718994140625,
+                  "u2": 0.749755859375,
+                  "v1": 0.281494140625,
+                  "v2": 0.312255859375
+                }
+              }
+            },
+            {
+              "prefab": "xd_spider_leg",
+              "count": 2,
+              "legacy": "ttk_spider_leg",
+              "name": "Tà Sát Bộ Túc",
+              "amount": 2,
+              "sprite": {
+                "src": "/assets/game/3c7ac3498add559ded2aea04f9f8087348c59063bc545ecdb8c217bc3324c7bb.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "thuong_17",
+          "chance": "1.1111"
+        },
+        {
+          "name": "Khai khoáng đa năng",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "multitool_axe_pickaxe",
+              "count": 2,
+              "name": "multitool_axe_pickaxe",
+              "amount": 2,
+              "sprite": null
+            },
+            {
+              "prefab": "moonglass",
+              "count": 12,
+              "name": "Moon Shard",
+              "amount": 12,
+              "sprite": {
+                "src": "/assets/game/8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666.png",
+                "uv": {
+                  "u1": 0.406494140625,
+                  "u2": 0.437255859375,
+                  "v1": 0.250244140625,
+                  "v2": 0.281005859375
+                }
+              }
+            }
+          ],
+          "id": "thuong_18",
+          "chance": "1.1111"
+        },
+        {
+          "name": "Thuyền trưởng",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "polly_rogershat",
+              "count": 1,
+              "name": "polly_rogershat",
+              "amount": 1,
+              "sprite": null
+            },
+            {
+              "prefab": "xd_lc_hsc_seed",
+              "count": 3,
+              "legacy": "ttk_lc_hsc_seed",
+              "name": "Hạt Giống Phủ Băng",
+              "amount": 3,
+              "sprite": {
+                "src": "/assets/game/2d858ad5af54f42b9d735a9c410368aab7ab0618110d3785dc8785f86a0c211a.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "thuong_19",
+          "chance": "1.1111"
+        },
+        {
+          "name": "Nhện đồng hành",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "spidereggsack",
+              "count": 2,
+              "name": "spidereggsack",
+              "amount": 2,
+              "sprite": null
+            },
+            {
+              "prefab": "spiderhat",
+              "count": 1,
+              "name": "spiderhat",
+              "amount": 1,
+              "sprite": null
+            },
+            {
+              "prefab": "xd_spider_leg",
+              "count": 2,
+              "legacy": "ttk_spider_leg",
+              "name": "Tà Sát Bộ Túc",
+              "amount": 2,
+              "sprite": {
+                "src": "/assets/game/3c7ac3498add559ded2aea04f9f8087348c59063bc545ecdb8c217bc3324c7bb.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "thuong_20",
+          "chance": "1.1111"
+        },
+        {
+          "name": "Mũ hải mã",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "walrushat",
+              "count": 1,
+              "name": "Tam o' Shanter",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/game/692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce.png",
+                "uv": {
+                  "u1": 0.718994140625,
+                  "u2": 0.749755859375,
+                  "v1": 0.125244140625,
+                  "v2": 0.156005859375
+                }
+              }
+            },
+            {
+              "prefab": "xd_lc_qfx_seed",
+              "count": 3,
+              "legacy": "ttk_lc_qfx_seed",
+              "name": "Hạt Giống Thanh Nang",
+              "amount": 3,
+              "sprite": {
+                "src": "/assets/game/da0862aa3340f0168df7afc384a560eb5edb2dda119aa62152602e45eec9b96e.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "thuong_21",
+          "chance": "1.1111"
+        },
+        {
+          "name": "Dịch chuyển",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "townportaltalisman",
+              "count": 6,
+              "name": "Desert Stone",
+              "amount": 6,
+              "sprite": {
+                "src": "/assets/game/692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce.png",
+                "uv": {
+                  "u1": 0.187744140625,
+                  "u2": 0.218505859375,
+                  "v1": 0.312744140625,
+                  "v2": 0.343505859375
+                }
+              }
+            },
+            {
+              "prefab": "xd_lc_yhh_seed",
+              "count": 3,
+              "legacy": "ttk_lc_yhh_seed",
+              "name": "Hạt Giống U Ảnh",
+              "amount": 3,
+              "sprite": {
+                "src": "/assets/game/0e35d49723d82ea4c172aacd10481d22d40e209cade0104ea023638358174a2b.png",
+                "uv": {
+                  "u1": 0.0078125,
+                  "u2": 0.9921875,
+                  "v1": 0.0078125,
+                  "v2": 0.9921875
+                }
+              }
+            }
+          ],
+          "id": "thuong_22",
+          "chance": "1.1111"
+        },
+        {
+          "name": "Nguyên liệu ma thuật",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "livinglog",
+              "count": 6,
+              "name": "Living Log",
+              "amount": 6,
+              "sprite": {
+                "src": "/assets/game/8e415235caa8c6de658c1a48154d3994189afd009b3fe0c5f6e2247d61dc6666.png",
+                "uv": {
+                  "u1": 0.687744140625,
+                  "u2": 0.718505859375,
+                  "v1": 0.406494140625,
+                  "v2": 0.437255859375
+                }
+              }
+            },
+            {
+              "prefab": "cutreeds",
+              "count": 20,
+              "name": "Cut Reeds",
+              "amount": 20,
+              "sprite": {
+                "src": "/assets/game/7fe94715ca23b6fb030cf809b42792625c64511198813952f2acd200927422fb.png",
+                "uv": {
+                  "u1": 0.187744140625,
+                  "u2": 0.218505859375,
+                  "v1": 0.093994140625,
+                  "v2": 0.124755859375
+                }
+              }
+            }
+          ],
+          "id": "thuong_23",
+          "chance": "1.1111"
+        },
+        {
+          "name": "Hồi phục",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "bandage",
+              "count": 3,
+              "name": "Honey Poultice",
+              "amount": 3,
+              "sprite": {
+                "src": "/assets/game/7fe94715ca23b6fb030cf809b42792625c64511198813952f2acd200927422fb.png",
+                "uv": {
+                  "u1": 0.000244140625,
+                  "u2": 0.031005859375,
+                  "v1": 0.718994140625,
+                  "v2": 0.749755859375
+                }
+              }
+            },
+            {
+              "prefab": "taffy",
+              "count": 6,
+              "name": "taffy",
+              "amount": 6,
+              "sprite": null
+            }
+          ],
+          "id": "thuong_24",
+          "chance": "1.1111"
+        },
+        {
+          "name": "Linh Thạch Solo",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "hh_essence",
+              "count": 3,
+              "name": "hh_essence",
+              "amount": 3,
+              "sprite": null
+            }
+          ],
+          "id": "thuong_25",
+          "chance": "1.1111"
+        },
+        {
+          "name": "Giấy Thuộc Tính",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "hh_effect_tally",
+              "count": 2,
+              "name": "hh_effect_tally",
+              "amount": 2,
+              "sprite": null
+            }
+          ],
+          "id": "thuong_26",
+          "chance": "1.1111"
+        },
+        {
+          "name": "Lục Bảo Thạch",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "hh_remove_stone",
+              "count": 2,
+              "name": "hh_remove_stone",
+              "amount": 2,
+              "sprite": null
+            }
+          ],
+          "id": "thuong_27",
+          "chance": "1.1111"
+        },
+        {
+          "name": "Phúc Lạc Dược I",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "nn_liquidluck",
+              "count": 2,
+              "name": "nn_liquidluck",
+              "amount": 2,
+              "sprite": null
+            }
+          ],
+          "id": "thuong_28",
+          "chance": "1.1111"
+        },
+        {
+          "name": "Thuốc Tái Sinh Solo",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "hh_thuoc_tai_sinh",
+              "count": 2,
+              "name": "hh_thuoc_tai_sinh",
+              "amount": 2,
+              "sprite": null
+            }
+          ],
+          "id": "thuong_29",
+          "chance": "1.1111"
+        },
+        {
+          "name": "Thuốc Ma Lực Solo",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "hh_thuoc_ma_luc",
+              "count": 2,
+              "name": "hh_thuoc_ma_luc",
+              "amount": 2,
+              "sprite": null
+            }
+          ],
+          "id": "thuong_30",
+          "chance": "1.1111"
+        }
+      ],
+      "count": 30,
+      "chance": "33.3333"
+    },
+    {
+      "key": "bad",
+      "id": "boss",
+      "name": "Boss",
+      "weight": 0.8,
+      "bundles": [
+        {
+          "name": "Bee Queen",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "beequeen",
+              "count": 1,
+              "name": "Bee Queen",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/quality/ee73e1c8c32ad35c51b6acf26c0c4cdb32b0fe6f43ccfb4ee5eb00f679577f59.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "id": "boss_01",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Dragonfly",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "dragonfly",
+              "count": 1,
+              "name": "Dragonfly",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/quality/91fadafb8b569d141e223d2dd13ca2471a08f801c685cd367f4610da9b842ba3.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "id": "boss_02",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Bearger + Deerclops",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "bearger",
+              "count": 1,
+              "name": "Bearger",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/quality/2a61904ad529e3321d51b1f8c5a2709d511d4cff264bdb6764c5603b67251a5b.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            },
+            {
+              "prefab": "deerclops",
+              "count": 1,
+              "name": "Deerclops",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/quality/91fadafb8b569d141e223d2dd13ca2471a08f801c685cd367f4610da9b842ba3.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "id": "boss_03",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Spider Queen",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "spiderqueen",
+              "count": 2,
+              "name": "Spider Queen",
+              "amount": 2,
+              "sprite": {
+                "src": "/assets/quality/cdba4aadc74e0798bcfa5b759061f07949f750ac488f63b58753085661d397d7.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "id": "boss_04",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Armored Bearger",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "mutatedbearger",
+              "count": 1,
+              "name": "Armored Bearger",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/quality/9fe5f8d36f174743f52c9b383ab725829157ef7fd800d9778449bd82964d5fba.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "id": "boss_05",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Crystal Deerclops",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "mutateddeerclops",
+              "count": 1,
+              "name": "mutateddeerclops",
+              "amount": 1,
+              "sprite": null
+            }
+          ],
+          "id": "boss_06",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Possessed Varg",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "mutatedwarg",
+              "count": 2,
+              "name": "mutatedwarg",
+              "amount": 2,
+              "sprite": null
+            }
+          ],
+          "id": "boss_07",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Bộ ba cờ bóng tối",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "shadow_knight",
+              "count": 1,
+              "name": "shadow_knight",
+              "amount": 1,
+              "sprite": null
+            },
+            {
+              "prefab": "shadow_bishop",
+              "count": 1,
+              "name": "shadow_bishop",
+              "amount": 1,
+              "sprite": null
+            },
+            {
+              "prefab": "shadow_rook",
+              "count": 1,
+              "name": "shadow_rook",
+              "amount": 1,
+              "sprite": null
+            }
+          ],
+          "id": "boss_08",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Klaus",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "klaus",
+              "count": 1,
+              "name": "Klaus",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/quality/04274aa18db6f4f85badffb980990d85f25f60ca71bbe0fc0cab2d64a700ae96.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "id": "boss_09",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Celestial Champion giai đoạn 3",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "alterguardian_phase3",
+              "count": 1,
+              "name": "Celestial Champion",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/quality/f295915fceebf23f4bda23ade68ecc5f118c48289bb039250693e73a904251d2.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "id": "boss_10",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Ancient Guardian",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "minotaur",
+              "count": 1,
+              "name": "Ancient Guardian",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/quality/91fadafb8b569d141e223d2dd13ca2471a08f801c685cd367f4610da9b842ba3.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "id": "boss_11",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Brightshade",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "lunarthrall_plant",
+              "count": 3,
+              "name": "Deadly Brightshade",
+              "amount": 3,
+              "sprite": {
+                "src": "/assets/quality/b9131bfa694a948e2d817f7f243373d5762e3adf89efb0691b76aff08e27023a.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "id": "boss_12",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Kim Phượng Thần Niệm",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "xd_jfsn",
+              "count": 1,
+              "name": "xd_jfsn",
+              "amount": 1,
+              "sprite": null
+            }
+          ],
+          "id": "boss_13",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Kỳ Lân Tàn Hồn",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "xd_qlch",
+              "count": 1,
+              "name": "xd_qlch",
+              "amount": 1,
+              "sprite": null
+            }
+          ],
+          "id": "boss_14",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Moose/Goose",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "moose",
+              "count": 1,
+              "name": "moose",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/quality/3a19a96742e2e2e1b456b8985848e777949b42cd7d72fdc034c9ae54433fa332.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "id": "boss_15",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Antlion",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "antlion",
+              "count": 1,
+              "name": "Antlion",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/wiki/5989882ae7ee658524d05ca3a5af0c03b89ac9a6ae5c99e9712d915d8ce28d1e.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "id": "boss_16",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Toadstool",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "toadstool",
+              "count": 1,
+              "name": "Toadstool",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/quality/04274aa18db6f4f85badffb980990d85f25f60ca71bbe0fc0cab2d64a700ae96.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "id": "boss_17",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Misery Toadstool",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "toadstool_dark",
+              "count": 1,
+              "name": "toadstool_dark",
+              "amount": 1,
+              "sprite": null
+            }
+          ],
+          "id": "boss_18",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Eye of Terror",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "eyeofterror",
+              "count": 1,
+              "name": "eyeofterror",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/quality/91fadafb8b569d141e223d2dd13ca2471a08f801c685cd367f4610da9b842ba3.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "id": "boss_19",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Twins of Terror",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "twinofterror1",
+              "count": 1,
+              "name": "twinofterror1",
+              "amount": 1,
+              "sprite": null
+            },
+            {
+              "prefab": "twinofterror2",
+              "count": 1,
+              "name": "twinofterror2",
+              "amount": 1,
+              "sprite": null
+            }
+          ],
+          "adapter": "twins",
+          "id": "boss_20",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Nightmare Werepig",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "daywalker",
+              "count": 1,
+              "name": "Nightmare Werepig",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/quality/91fadafb8b569d141e223d2dd13ca2471a08f801c685cd367f4610da9b842ba3.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "id": "boss_21",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Scrappy Werepig",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "daywalker2",
+              "count": 1,
+              "name": "Scrappy Werepig",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/quality/56eff872445b465241ffbf9dace09548ca4e310e3542980a6ae2efec05fe1ffb.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "id": "boss_22",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Great Depths Worm",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "worm_boss",
+              "count": 1,
+              "name": "Great Depths Worm",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/quality/91fadafb8b569d141e223d2dd13ca2471a08f801c685cd367f4610da9b842ba3.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "id": "boss_23",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Igris",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "hh_igris_dungeon",
+              "count": 1,
+              "name": "hh_igris_dungeon",
+              "amount": 1,
+              "sprite": null
+            }
+          ],
+          "id": "boss_24",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Beru",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "hh_beru_dungeon",
+              "count": 1,
+              "name": "hh_beru_dungeon",
+              "amount": 1,
+              "sprite": null
+            }
+          ],
+          "id": "boss_25",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Super Frostjaw",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "hh_sharkboi",
+              "count": 1,
+              "name": "hh_sharkboi",
+              "amount": 1,
+              "sprite": null
+            }
+          ],
+          "id": "boss_26",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Lợn Rừng Bọ Hung",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "hh_beetle_pig",
+              "count": 1,
+              "name": "hh_beetle_pig",
+              "amount": 1,
+              "sprite": null
+            }
+          ],
+          "id": "boss_27",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Siêu Lợn Song Kiếm",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "hh_dual_wield_pig",
+              "count": 1,
+              "name": "hh_dual_wield_pig",
+              "amount": 1,
+              "sprite": null
+            }
+          ],
+          "id": "boss_28",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Multiverse Guardian",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "minotau",
+              "count": 1,
+              "name": "minotau",
+              "amount": 1,
+              "sprite": null
+            }
+          ],
+          "id": "boss_29",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Super MacTusk",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "walrus",
+              "count": 1,
+              "treasure": "walrus_adc",
+              "name": "walrus",
+              "amount": 1,
+              "sprite": null
+            }
+          ],
+          "solo": true,
+          "id": "boss_30",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Super Crystal Deerclops",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "mutateddeerclops",
+              "count": 1,
+              "treasure": "mutateddeerclops_boss",
+              "name": "mutateddeerclops",
+              "amount": 1,
+              "sprite": null
+            }
+          ],
+          "solo": true,
+          "id": "boss_31",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Super Armored Bearger",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "mutatedbearger",
+              "count": 1,
+              "treasure": "mutatedbearger_boss",
+              "name": "Armored Bearger",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/quality/9fe5f8d36f174743f52c9b383ab725829157ef7fd800d9778449bd82964d5fba.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "solo": true,
+          "id": "boss_32",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Super Mutated Warg",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "mutatedwarg",
+              "count": 1,
+              "treasure": "mutatedwarg_boss",
+              "name": "mutatedwarg",
+              "amount": 1,
+              "sprite": null
+            }
+          ],
+          "solo": true,
+          "id": "boss_33",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Super Frostjaw — bản kho báu",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "hh_sharkboi",
+              "count": 1,
+              "treasure": "hh_sharkboi_boss",
+              "name": "hh_sharkboi",
+              "amount": 1,
+              "sprite": null
+            }
+          ],
+          "solo": true,
+          "id": "boss_34",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Super Krampus",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "krampus",
+              "count": 1,
+              "treasure": "treasure_kps",
+              "name": "Krampus",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/quality/b9131bfa694a948e2d817f7f243373d5762e3adf89efb0691b76aff08e27023a.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "solo": true,
+          "id": "boss_35",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Super Catcoon",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "catcoon",
+              "count": 1,
+              "treasure": "treasure_cat_you",
+              "name": "Catcoon",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/quality/704fe126c7c9346afe0386d40721f4c75563eba468f726eafb834e976ef16013.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "solo": true,
+          "id": "boss_36",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Lord of the Fruit Flies",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "lordfruitfly",
+              "count": 1,
+              "name": "Lord of the Fruit Flies",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/quality/91fadafb8b569d141e223d2dd13ca2471a08f801c685cd367f4610da9b842ba3.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "id": "boss_37",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Treeguard",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "leif",
+              "count": 1,
+              "name": "Treeguard",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/quality/91fadafb8b569d141e223d2dd13ca2471a08f801c685cd367f4610da9b842ba3.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "id": "boss_38",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Treeguard — cây thưa",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "leif_sparse",
+              "count": 1,
+              "name": "Treeguard",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/quality/91fadafb8b569d141e223d2dd13ca2471a08f801c685cd367f4610da9b842ba3.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "id": "boss_39",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Varg",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "warg",
+              "count": 1,
+              "name": "Varg",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/quality/3f7fe66f3d7bca4e33c639a196364071fc92e203fc5714ce662dfbafaabb0943.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "id": "boss_40",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Clay Varg",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "claywarg",
+              "count": 1,
+              "name": "claywarg",
+              "amount": 1,
+              "sprite": null
+            }
+          ],
+          "id": "boss_41",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Gingerbread Varg",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "gingerbreadwarg",
+              "count": 1,
+              "name": "gingerbreadwarg",
+              "amount": 1,
+              "sprite": null
+            }
+          ],
+          "id": "boss_42",
+          "chance": "0.1772"
+        },
+        {
+          "name": "Reanimated Skeleton — hang",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "stalker",
+              "count": 1,
+              "name": "Reanimated Skeleton",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/quality/04274aa18db6f4f85badffb980990d85f25f60ca71bbe0fc0cab2d64a700ae96.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "id": "boss_43",
+          "chance": "0.1772"
+        }
+      ],
+      "count": 43,
+      "chance": "7.6190"
+    },
+    {
+      "key": "bad2",
+      "id": "quai",
+      "name": "Quái",
+      "weight": 4.2,
+      "bundles": [
+        {
+          "name": "Chó nguyên tố",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "firehound",
+              "count": 5,
+              "name": "firehound",
+              "amount": 5,
+              "sprite": null
+            },
+            {
+              "prefab": "icehound",
+              "count": 5,
+              "name": "icehound",
+              "amount": 5,
+              "sprite": null
+            }
+          ],
+          "id": "quai_01",
+          "chance": "1.2903"
+        },
+        {
+          "name": "Khỉ hang",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "monkey",
+              "count": 7,
+              "name": "Splumonkey",
+              "amount": 7,
+              "sprite": {
+                "src": "/assets/quality/f4e6d92193b2f72b4d6483c0abd7f9a8c22c1032cd344b23cf566b6ade916ab4.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "id": "quai_02",
+          "chance": "1.2903"
+        },
+        {
+          "name": "Lính heo",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "pigguard",
+              "count": 5,
+              "name": "pigguard",
+              "amount": 5,
+              "sprite": null
+            }
+          ],
+          "id": "quai_03",
+          "chance": "1.2903"
+        },
+        {
+          "name": "Sâu hang và Slurper",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "worm",
+              "count": 5,
+              "name": "Depths Worm",
+              "amount": 5,
+              "sprite": {
+                "src": "/assets/quality/b2ec770aa4d48f61aa2971f561a1b33752f08a91f7bf51fa0eccedb49e40ac21.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            },
+            {
+              "prefab": "slurper",
+              "count": 4,
+              "name": "Slurper",
+              "amount": 4,
+              "sprite": {
+                "src": "/assets/game/692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce.png",
+                "uv": {
+                  "u1": 0.000244140625,
+                  "u2": 0.031005859375,
+                  "v1": 0.531494140625,
+                  "v2": 0.562255859375
+                }
+              }
+            }
+          ],
+          "id": "quai_04",
+          "chance": "1.2903"
+        },
+        {
+          "name": "Chó săn — từ bản cũ",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "hound",
+              "count": 3,
+              "name": "Hound",
+              "amount": 3,
+              "sprite": {
+                "src": "/assets/quality/1fec1853c540c65a241a64e0b6213d4b66b83cb98e3663833c1e2481b6d44650.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "id": "quai_05",
+          "chance": "1.2903"
+        },
+        {
+          "name": "Ewecus",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "spat",
+              "count": 2,
+              "name": "Ewecus",
+              "amount": 2,
+              "sprite": {
+                "src": "/assets/quality/f4e6d92193b2f72b4d6483c0abd7f9a8c22c1032cd344b23cf566b6ade916ab4.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "id": "quai_06",
+          "chance": "1.2903"
+        },
+        {
+          "name": "Thợ săn hải mã",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "walrus",
+              "count": 3,
+              "name": "walrus",
+              "amount": 3,
+              "sprite": null
+            }
+          ],
+          "id": "quai_07",
+          "chance": "1.2903"
+        },
+        {
+          "name": "Chim cao cổ",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "tallbird",
+              "count": 3,
+              "name": "Tallbird",
+              "amount": 3,
+              "sprite": {
+                "src": "/assets/quality/c72f4f00cdd5264506edc55c934721c5863e9a85f9fe046ac37ed9326da5363b.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "id": "quai_08",
+          "chance": "1.2903"
+        },
+        {
+          "name": "Quân cờ máy",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "bishop",
+              "count": 1,
+              "name": "Clockwork Bishop",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/quality/3bdaa62cb8627954e0a7fc3a98f0401cc771af53f02be14ffda4211dca3bd50a.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            },
+            {
+              "prefab": "rook",
+              "count": 1,
+              "name": "Clockwork Rook",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/quality/1d0eedeefe0dd159bccf555325789512f00cf6bf690ff8b4c34a3837899a1a48.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            },
+            {
+              "prefab": "knight",
+              "count": 1,
+              "name": "Clockwork Knight",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/quality/7ea256fa839e2f77818abac5008217e6780837170c95d21bfdab29273fd856ba.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "id": "quai_09",
+          "chance": "1.2903"
+        },
+        {
+          "name": "Khỉ cướp biển",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "powder_monkey",
+              "count": 5,
+              "name": "Powder Monkey",
+              "amount": 5,
+              "sprite": {
+                "src": "/assets/quality/f4e6d92193b2f72b4d6483c0abd7f9a8c22c1032cd344b23cf566b6ade916ab4.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "id": "quai_10",
+          "chance": "1.2903"
+        },
+        {
+          "name": "Ếch",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "frog",
+              "count": 4,
+              "name": "Frog",
+              "amount": 4,
+              "sprite": {
+                "src": "/assets/quality/dadc9e345b1fd939f68f2fd79e37055bbcb4871bba3ecdf631a7b918d8566a89.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            },
+            {
+              "prefab": "lunarfrog",
+              "count": 2,
+              "name": "Bright-Eyed Frog",
+              "amount": 2,
+              "sprite": {
+                "src": "/assets/quality/f4e6d92193b2f72b4d6483c0abd7f9a8c22c1032cd344b23cf566b6ade916ab4.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "id": "quai_11",
+          "chance": "1.2903"
+        },
+        {
+          "name": "Xúc tu",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "tentacle",
+              "count": 8,
+              "name": "Tentacle",
+              "amount": 8,
+              "sprite": {
+                "src": "/assets/quality/e920a2742f7ae38f9c9c4c6a0f5c5fcdd101698adcd28b80cdafd7fe2aaee8c5.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "id": "quai_12",
+          "chance": "1.2903"
+        },
+        {
+          "name": "Dơi",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "bat",
+              "count": 10,
+              "name": "Batilisk",
+              "amount": 10,
+              "sprite": {
+                "src": "/assets/game/7fe94715ca23b6fb030cf809b42792625c64511198813952f2acd200927422fb.png",
+                "uv": {
+                  "u1": 0.250244140625,
+                  "u2": 0.281005859375,
+                  "v1": 0.718994140625,
+                  "v2": 0.749755859375
+                }
+              }
+            }
+          ],
+          "id": "quai_13",
+          "chance": "1.2903"
+        },
+        {
+          "name": "Người thỏ",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "bunnyman",
+              "count": 4,
+              "name": "Bunnyman",
+              "amount": 4,
+              "sprite": {
+                "src": "/assets/quality/f4e6d92193b2f72b4d6483c0abd7f9a8c22c1032cd344b23cf566b6ade916ab4.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "id": "quai_14",
+          "chance": "1.2903"
+        },
+        {
+          "name": "Ong sát thủ",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "killerbee",
+              "count": 12,
+              "name": "killerbee",
+              "amount": 12,
+              "sprite": null
+            }
+          ],
+          "id": "quai_15",
+          "chance": "1.2903"
+        },
+        {
+          "name": "Ác mộng",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "crawlingnightmare",
+              "count": 3,
+              "name": "crawlingnightmare",
+              "amount": 3,
+              "sprite": null
+            },
+            {
+              "prefab": "nightmarebeak",
+              "count": 2,
+              "name": "nightmarebeak",
+              "amount": 2,
+              "sprite": null
+            }
+          ],
+          "id": "quai_16",
+          "chance": "1.2903"
+        },
+        {
+          "name": "Ruồi trái cây",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "fruitfly",
+              "count": 4,
+              "name": "fruitfly",
+              "amount": 4,
+              "sprite": null
+            }
+          ],
+          "id": "quai_17",
+          "chance": "1.2903"
+        },
+        {
+          "name": "Mèo gấu",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "catcoon",
+              "count": 5,
+              "name": "Catcoon",
+              "amount": 5,
+              "sprite": {
+                "src": "/assets/quality/704fe126c7c9346afe0386d40721f4c75563eba468f726eafb834e976ef16013.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "id": "quai_18",
+          "chance": "1.2903"
+        },
+        {
+          "name": "Nhện y tá",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "spider_healer",
+              "count": 5,
+              "name": "Nurse Spider",
+              "amount": 5,
+              "sprite": {
+                "src": "/assets/game/692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce.png",
+                "uv": {
+                  "u1": 0.718994140625,
+                  "u2": 0.749755859375,
+                  "v1": 0.500244140625,
+                  "v2": 0.531005859375
+                }
+              }
+            }
+          ],
+          "id": "quai_19",
+          "chance": "1.2903"
+        },
+        {
+          "name": "Bộ ba Ink Blight",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "shadowthrall_horns",
+              "count": 1,
+              "name": "Ink Blight",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/quality/685f2b287713f9c3e522f59c3525e7282e8e9d61914c0750db1bc6d92a3c47be.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            },
+            {
+              "prefab": "shadowthrall_hands",
+              "count": 1,
+              "name": "Ink Blight",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/quality/685f2b287713f9c3e522f59c3525e7282e8e9d61914c0750db1bc6d92a3c47be.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            },
+            {
+              "prefab": "shadowthrall_wings",
+              "count": 1,
+              "name": "Ink Blight",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/quality/685f2b287713f9c3e522f59c3525e7282e8e9d61914c0750db1bc6d92a3c47be.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "id": "quai_20",
+          "chance": "1.2903"
+        },
+        {
+          "name": "Sên hang",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "slurtle",
+              "count": 4,
+              "name": "Slurtle",
+              "amount": 4,
+              "sprite": {
+                "src": "/assets/quality/7071a62cb04a8e38999ac762344cd8c5b77a73f3d64e7eadd1e8dd59d04197ee.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            },
+            {
+              "prefab": "snurtle",
+              "count": 1,
+              "name": "snurtle",
+              "amount": 1,
+              "sprite": null
+            }
+          ],
+          "id": "quai_21",
+          "chance": "1.2903"
+        },
+        {
+          "name": "Người nấm",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "mushgnome",
+              "count": 3,
+              "name": "Mush Gnome",
+              "amount": 3,
+              "sprite": {
+                "src": "/assets/quality/911df9a419ec8050f126d03c3f8832c4d1de5df6308b8f8b58ef9dc6d9e1393f.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "id": "quai_22",
+          "chance": "1.2903"
+        },
+        {
+          "name": "Voi Koala",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "koalefant_summer",
+              "count": 1,
+              "name": "Koalefant",
+              "amount": 1,
+              "sprite": {
+                "src": "/assets/quality/f4e6d92193b2f72b4d6483c0abd7f9a8c22c1032cd344b23cf566b6ade916ab4.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            },
+            {
+              "prefab": "koalefant_winter",
+              "count": 1,
+              "name": "koalefant_winter",
+              "amount": 1,
+              "sprite": null
+            }
+          ],
+          "id": "quai_23",
+          "chance": "1.2903"
+        },
+        {
+          "name": "Mắt bay nhỏ",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "eyeofterror_mini",
+              "count": 6,
+              "name": "Suspicious Peeper",
+              "amount": 6,
+              "sprite": {
+                "src": "/assets/quality/ca5e113d641d42a58ce62eebf28ce4fb7affd037eec7fa4781595eb9389de243.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "id": "quai_24",
+          "chance": "1.2903"
+        },
+        {
+          "name": "Kền kền",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "buzzard",
+              "count": 4,
+              "name": "Buzzard",
+              "amount": 4,
+              "sprite": {
+                "src": "/assets/quality/353ef69f9ef6094dfc8dd0292c5320ffbdd327750c2340802eb9de946cbcf166.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "id": "quai_25",
+          "chance": "1.2903"
+        },
+        {
+          "name": "Nhện hang",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "spider_hider",
+              "count": 4,
+              "name": "Cave Spider",
+              "amount": 4,
+              "sprite": {
+                "src": "/assets/game/692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce.png",
+                "uv": {
+                  "u1": 0.781494140625,
+                  "u2": 0.812255859375,
+                  "v1": 0.500244140625,
+                  "v2": 0.531005859375
+                }
+              }
+            },
+            {
+              "prefab": "spider_spitter",
+              "count": 2,
+              "name": "Spitter",
+              "amount": 2,
+              "sprite": {
+                "src": "/assets/game/692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce.png",
+                "uv": {
+                  "u1": 0.875244140625,
+                  "u2": 0.906005859375,
+                  "v1": 0.500244140625,
+                  "v2": 0.531005859375
+                }
+              }
+            }
+          ],
+          "id": "quai_26",
+          "chance": "1.2903"
+        },
+        {
+          "name": "Krampus thường",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "krampus",
+              "count": 2,
+              "name": "Krampus",
+              "amount": 2,
+              "sprite": {
+                "src": "/assets/quality/b9131bfa694a948e2d817f7f243373d5762e3adf89efb0691b76aff08e27023a.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "id": "quai_27",
+          "chance": "1.2903"
+        },
+        {
+          "name": "Rồng trái cây",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "fruitdragon",
+              "count": 5,
+              "name": "Saladmander",
+              "amount": 5,
+              "sprite": {
+                "src": "/assets/wiki/e94283128e74b7ec9f6344e010b32a14013dcbc1670dd34c8572603d1ab28d01.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "id": "quai_28",
+          "chance": "1.2903"
+        },
+        {
+          "name": "Dê điện",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "lightninggoat",
+              "count": 3,
+              "name": "Volt Goat",
+              "amount": 3,
+              "sprite": {
+                "src": "/assets/quality/f4e6d92193b2f72b4d6483c0abd7f9a8c22c1032cd344b23cf566b6ade916ab4.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "id": "quai_29",
+          "chance": "1.2903"
+        },
+        {
+          "name": "Bầy nhện",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "spider",
+              "count": 5,
+              "name": "Spider",
+              "amount": 5,
+              "sprite": {
+                "src": "/assets/game/692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce.png",
+                "uv": {
+                  "u1": 0.531494140625,
+                  "u2": 0.562255859375,
+                  "v1": 0.500244140625,
+                  "v2": 0.531005859375
+                }
+              }
+            },
+            {
+              "prefab": "spider_warrior",
+              "count": 2,
+              "name": "Spider Warrior",
+              "amount": 2,
+              "sprite": {
+                "src": "/assets/game/692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce.png",
+                "uv": {
+                  "u1": 0.906494140625,
+                  "u2": 0.937255859375,
+                  "v1": 0.500244140625,
+                  "v2": 0.531005859375
+                }
+              }
+            },
+            {
+              "prefab": "moonspider_spike",
+              "count": 2,
+              "name": "Shattered Spider",
+              "amount": 2,
+              "sprite": {
+                "src": "/assets/quality/b9131bfa694a948e2d817f7f243373d5762e3adf89efb0691b76aff08e27023a.png",
+                "uv": {
+                  "u1": 0,
+                  "u2": 1,
+                  "v1": 0,
+                  "v2": 1
+                }
+              }
+            }
+          ],
+          "id": "quai_30",
+          "chance": "1.2903"
+        },
+        {
+          "name": "Lính người cá",
+          "weight": 1,
+          "items": [
+            {
+              "prefab": "mermguard",
+              "count": 5,
+              "name": "mermguard",
+              "amount": 5,
+              "sprite": null
+            }
+          ],
+          "id": "quai_31",
+          "chance": "1.2903"
+        }
+      ],
+      "count": 31,
+      "chance": "40.0000"
+    }
+  ]
+}
