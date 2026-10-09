@@ -1,5 +1,5 @@
 {
-  "version": "1.6.3",
+  "version": "1.6.4",
   "groups": [
     {
       "key": "good",
@@ -3379,51 +3379,6 @@
       "weight": 4.2,
       "bundles": [
         {
-          "name": "Chó nguyên tố",
-          "weight": 1,
-          "items": [
-            {
-              "prefab": "firehound",
-              "count": 5,
-              "name": "firehound",
-              "amount": 5,
-              "sprite": null
-            },
-            {
-              "prefab": "icehound",
-              "count": 5,
-              "name": "icehound",
-              "amount": 5,
-              "sprite": null
-            }
-          ],
-          "id": "quai_01",
-          "chance": "1.2903"
-        },
-        {
-          "name": "Khỉ hang",
-          "weight": 1,
-          "items": [
-            {
-              "prefab": "monkey",
-              "count": 7,
-              "name": "Splumonkey",
-              "amount": 7,
-              "sprite": {
-                "src": "/assets/quality/f4e6d92193b2f72b4d6483c0abd7f9a8c22c1032cd344b23cf566b6ade916ab4.png",
-                "uv": {
-                  "u1": 0,
-                  "u2": 1,
-                  "v1": 0,
-                  "v2": 1
-                }
-              }
-            }
-          ],
-          "id": "quai_02",
-          "chance": "1.2903"
-        },
-        {
           "name": "Lính heo",
           "weight": 1,
           "items": [
@@ -3436,68 +3391,7 @@
             }
           ],
           "id": "quai_03",
-          "chance": "1.2903"
-        },
-        {
-          "name": "Sâu hang và Slurper",
-          "weight": 1,
-          "items": [
-            {
-              "prefab": "worm",
-              "count": 5,
-              "name": "Depths Worm",
-              "amount": 5,
-              "sprite": {
-                "src": "/assets/quality/b2ec770aa4d48f61aa2971f561a1b33752f08a91f7bf51fa0eccedb49e40ac21.png",
-                "uv": {
-                  "u1": 0,
-                  "u2": 1,
-                  "v1": 0,
-                  "v2": 1
-                }
-              }
-            },
-            {
-              "prefab": "slurper",
-              "count": 4,
-              "name": "Slurper",
-              "amount": 4,
-              "sprite": {
-                "src": "/assets/game/692decc2a9beb8ba858056d84dd7992a88b25723972a97b4412209ca9a54a5ce.png",
-                "uv": {
-                  "u1": 0.000244140625,
-                  "u2": 0.031005859375,
-                  "v1": 0.531494140625,
-                  "v2": 0.562255859375
-                }
-              }
-            }
-          ],
-          "id": "quai_04",
-          "chance": "1.2903"
-        },
-        {
-          "name": "Chó săn — từ bản cũ",
-          "weight": 1,
-          "items": [
-            {
-              "prefab": "hound",
-              "count": 3,
-              "name": "Hound",
-              "amount": 3,
-              "sprite": {
-                "src": "/assets/quality/1fec1853c540c65a241a64e0b6213d4b66b83cb98e3663833c1e2481b6d44650.png",
-                "uv": {
-                  "u1": 0,
-                  "u2": 1,
-                  "v1": 0,
-                  "v2": 1
-                }
-              }
-            }
-          ],
-          "id": "quai_05",
-          "chance": "1.2903"
+          "chance": "2.6667"
         },
         {
           "name": "Ewecus",
@@ -3520,22 +3414,7 @@
             }
           ],
           "id": "quai_06",
-          "chance": "1.2903"
-        },
-        {
-          "name": "Thợ săn hải mã",
-          "weight": 1,
-          "items": [
-            {
-              "prefab": "walrus",
-              "count": 3,
-              "name": "walrus",
-              "amount": 3,
-              "sprite": null
-            }
-          ],
-          "id": "quai_07",
-          "chance": "1.2903"
+          "chance": "2.6667"
         },
         {
           "name": "Chim cao cổ",
@@ -3558,7 +3437,7 @@
             }
           ],
           "id": "quai_08",
-          "chance": "1.2903"
+          "chance": "2.6667"
         },
         {
           "name": "Quân cờ máy",
@@ -3611,7 +3490,7 @@
             }
           ],
           "id": "quai_09",
-          "chance": "1.2903"
+          "chance": "2.6667"
         },
         {
           "name": "Khỉ cướp biển",
@@ -3634,68 +3513,7 @@
             }
           ],
           "id": "quai_10",
-          "chance": "1.2903"
-        },
-        {
-          "name": "Ếch",
-          "weight": 1,
-          "items": [
-            {
-              "prefab": "frog",
-              "count": 4,
-              "name": "Frog",
-              "amount": 4,
-              "sprite": {
-                "src": "/assets/quality/dadc9e345b1fd939f68f2fd79e37055bbcb4871bba3ecdf631a7b918d8566a89.png",
-                "uv": {
-                  "u1": 0,
-                  "u2": 1,
-                  "v1": 0,
-                  "v2": 1
-                }
-              }
-            },
-            {
-              "prefab": "lunarfrog",
-              "count": 2,
-              "name": "Bright-Eyed Frog",
-              "amount": 2,
-              "sprite": {
-                "src": "/assets/quality/f4e6d92193b2f72b4d6483c0abd7f9a8c22c1032cd344b23cf566b6ade916ab4.png",
-                "uv": {
-                  "u1": 0,
-                  "u2": 1,
-                  "v1": 0,
-                  "v2": 1
-                }
-              }
-            }
-          ],
-          "id": "quai_11",
-          "chance": "1.2903"
-        },
-        {
-          "name": "Xúc tu",
-          "weight": 1,
-          "items": [
-            {
-              "prefab": "tentacle",
-              "count": 8,
-              "name": "Tentacle",
-              "amount": 8,
-              "sprite": {
-                "src": "/assets/quality/e920a2742f7ae38f9c9c4c6a0f5c5fcdd101698adcd28b80cdafd7fe2aaee8c5.png",
-                "uv": {
-                  "u1": 0,
-                  "u2": 1,
-                  "v1": 0,
-                  "v2": 1
-                }
-              }
-            }
-          ],
-          "id": "quai_12",
-          "chance": "1.2903"
+          "chance": "2.6667"
         },
         {
           "name": "Dơi",
@@ -3718,45 +3536,7 @@
             }
           ],
           "id": "quai_13",
-          "chance": "1.2903"
-        },
-        {
-          "name": "Người thỏ",
-          "weight": 1,
-          "items": [
-            {
-              "prefab": "bunnyman",
-              "count": 4,
-              "name": "Bunnyman",
-              "amount": 4,
-              "sprite": {
-                "src": "/assets/quality/f4e6d92193b2f72b4d6483c0abd7f9a8c22c1032cd344b23cf566b6ade916ab4.png",
-                "uv": {
-                  "u1": 0,
-                  "u2": 1,
-                  "v1": 0,
-                  "v2": 1
-                }
-              }
-            }
-          ],
-          "id": "quai_14",
-          "chance": "1.2903"
-        },
-        {
-          "name": "Ong sát thủ",
-          "weight": 1,
-          "items": [
-            {
-              "prefab": "killerbee",
-              "count": 12,
-              "name": "killerbee",
-              "amount": 12,
-              "sprite": null
-            }
-          ],
-          "id": "quai_15",
-          "chance": "1.2903"
+          "chance": "2.6667"
         },
         {
           "name": "Ác mộng",
@@ -3778,45 +3558,7 @@
             }
           ],
           "id": "quai_16",
-          "chance": "1.2903"
-        },
-        {
-          "name": "Ruồi trái cây",
-          "weight": 1,
-          "items": [
-            {
-              "prefab": "fruitfly",
-              "count": 4,
-              "name": "fruitfly",
-              "amount": 4,
-              "sprite": null
-            }
-          ],
-          "id": "quai_17",
-          "chance": "1.2903"
-        },
-        {
-          "name": "Mèo gấu",
-          "weight": 1,
-          "items": [
-            {
-              "prefab": "catcoon",
-              "count": 5,
-              "name": "Catcoon",
-              "amount": 5,
-              "sprite": {
-                "src": "/assets/quality/704fe126c7c9346afe0386d40721f4c75563eba468f726eafb834e976ef16013.png",
-                "uv": {
-                  "u1": 0,
-                  "u2": 1,
-                  "v1": 0,
-                  "v2": 1
-                }
-              }
-            }
-          ],
-          "id": "quai_18",
-          "chance": "1.2903"
+          "chance": "2.6667"
         },
         {
           "name": "Nhện y tá",
@@ -3839,7 +3581,7 @@
             }
           ],
           "id": "quai_19",
-          "chance": "1.2903"
+          "chance": "2.6667"
         },
         {
           "name": "Bộ ba Ink Blight",
@@ -3892,90 +3634,7 @@
             }
           ],
           "id": "quai_20",
-          "chance": "1.2903"
-        },
-        {
-          "name": "Sên hang",
-          "weight": 1,
-          "items": [
-            {
-              "prefab": "slurtle",
-              "count": 4,
-              "name": "Slurtle",
-              "amount": 4,
-              "sprite": {
-                "src": "/assets/quality/7071a62cb04a8e38999ac762344cd8c5b77a73f3d64e7eadd1e8dd59d04197ee.png",
-                "uv": {
-                  "u1": 0,
-                  "u2": 1,
-                  "v1": 0,
-                  "v2": 1
-                }
-              }
-            },
-            {
-              "prefab": "snurtle",
-              "count": 1,
-              "name": "snurtle",
-              "amount": 1,
-              "sprite": null
-            }
-          ],
-          "id": "quai_21",
-          "chance": "1.2903"
-        },
-        {
-          "name": "Người nấm",
-          "weight": 1,
-          "items": [
-            {
-              "prefab": "mushgnome",
-              "count": 3,
-              "name": "Mush Gnome",
-              "amount": 3,
-              "sprite": {
-                "src": "/assets/quality/911df9a419ec8050f126d03c3f8832c4d1de5df6308b8f8b58ef9dc6d9e1393f.png",
-                "uv": {
-                  "u1": 0,
-                  "u2": 1,
-                  "v1": 0,
-                  "v2": 1
-                }
-              }
-            }
-          ],
-          "id": "quai_22",
-          "chance": "1.2903"
-        },
-        {
-          "name": "Voi Koala",
-          "weight": 1,
-          "items": [
-            {
-              "prefab": "koalefant_summer",
-              "count": 1,
-              "name": "Koalefant",
-              "amount": 1,
-              "sprite": {
-                "src": "/assets/quality/f4e6d92193b2f72b4d6483c0abd7f9a8c22c1032cd344b23cf566b6ade916ab4.png",
-                "uv": {
-                  "u1": 0,
-                  "u2": 1,
-                  "v1": 0,
-                  "v2": 1
-                }
-              }
-            },
-            {
-              "prefab": "koalefant_winter",
-              "count": 1,
-              "name": "koalefant_winter",
-              "amount": 1,
-              "sprite": null
-            }
-          ],
-          "id": "quai_23",
-          "chance": "1.2903"
+          "chance": "2.6667"
         },
         {
           "name": "Mắt bay nhỏ",
@@ -3998,30 +3657,7 @@
             }
           ],
           "id": "quai_24",
-          "chance": "1.2903"
-        },
-        {
-          "name": "Kền kền",
-          "weight": 1,
-          "items": [
-            {
-              "prefab": "buzzard",
-              "count": 4,
-              "name": "Buzzard",
-              "amount": 4,
-              "sprite": {
-                "src": "/assets/quality/353ef69f9ef6094dfc8dd0292c5320ffbdd327750c2340802eb9de946cbcf166.png",
-                "uv": {
-                  "u1": 0,
-                  "u2": 1,
-                  "v1": 0,
-                  "v2": 1
-                }
-              }
-            }
-          ],
-          "id": "quai_25",
-          "chance": "1.2903"
+          "chance": "2.6667"
         },
         {
           "name": "Nhện hang",
@@ -4059,7 +3695,7 @@
             }
           ],
           "id": "quai_26",
-          "chance": "1.2903"
+          "chance": "2.6667"
         },
         {
           "name": "Krampus thường",
@@ -4082,7 +3718,7 @@
             }
           ],
           "id": "quai_27",
-          "chance": "1.2903"
+          "chance": "2.6667"
         },
         {
           "name": "Rồng trái cây",
@@ -4105,30 +3741,7 @@
             }
           ],
           "id": "quai_28",
-          "chance": "1.2903"
-        },
-        {
-          "name": "Dê điện",
-          "weight": 1,
-          "items": [
-            {
-              "prefab": "lightninggoat",
-              "count": 3,
-              "name": "Volt Goat",
-              "amount": 3,
-              "sprite": {
-                "src": "/assets/quality/f4e6d92193b2f72b4d6483c0abd7f9a8c22c1032cd344b23cf566b6ade916ab4.png",
-                "uv": {
-                  "u1": 0,
-                  "u2": 1,
-                  "v1": 0,
-                  "v2": 1
-                }
-              }
-            }
-          ],
-          "id": "quai_29",
-          "chance": "1.2903"
+          "chance": "2.6667"
         },
         {
           "name": "Bầy nhện",
@@ -4181,7 +3794,7 @@
             }
           ],
           "id": "quai_30",
-          "chance": "1.2903"
+          "chance": "2.6667"
         },
         {
           "name": "Lính người cá",
@@ -4196,10 +3809,10 @@
             }
           ],
           "id": "quai_31",
-          "chance": "1.2903"
+          "chance": "2.6667"
         }
       ],
-      "count": 31,
+      "count": 15,
       "chance": "40.0000"
     }
   ]

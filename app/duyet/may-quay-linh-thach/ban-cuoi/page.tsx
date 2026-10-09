@@ -20,7 +20,7 @@ export default function FinalSlotRewardsPage() {
       </div>
       <p className="mt-7 text-sm font-semibold text-nova-accent">BẢN CHỐT · CÔNG TRÌNH TU TIÊN {rewards.version}</p>
       <h1 className="mt-2 text-3xl font-semibold sm:text-4xl">Máy Quay Linh Thạch</h1>
-      <p className="mt-3 max-w-3xl leading-7 text-nova-muted">149 gói hợp nhất, đã chốt ngày 08/10/2026. Trúng một gói sẽ nhận đủ các món trong hàng đó. Boss và quái xuất hiện quanh máy.</p>
+      <p className="mt-3 max-w-3xl leading-7 text-nova-muted">133 gói hợp nhất, cập nhật ngày 09/10/2026. Nhóm Quái đã rút còn 15 gói. Trúng một gói sẽ nhận đủ các món trong hàng đó. Boss và quái xuất hiện quanh máy.</p>
       <section className="mt-6 rounded-2xl border border-nova-border bg-nova-surface p-5">
         <h2 className="text-xl font-semibold">Chi phí và tỷ lệ</h2>
         <p className="mt-3 leading-7 text-nova-muted">Mỗi lượt dùng 60 Hạ Phẩm Linh Thạch hoặc 1 Linh Thạch Trung / Thượng / Cực Phẩm. Các phẩm cấp dùng chung tỷ lệ.</p>
@@ -44,7 +44,7 @@ export default function FinalSlotRewardsPage() {
           </tr>)}</tbody>
         </table></div>
       </section>)}</div>
-      <a href="/duyet/may-quay-linh-thach/SLOT_REWARDS_FINAL.md" download className="mt-7 inline-block text-nova-accent underline underline-offset-4">Tải bảng chốt 149 gói (.md)</a>
+      <a href="/duyet/may-quay-linh-thach/SLOT_REWARDS_FINAL.md" download className="mt-7 inline-block text-nova-accent underline underline-offset-4">Tải bảng chốt 133 gói (.md)</a>
     </div></DstPageShell>
   </div>;
 }
